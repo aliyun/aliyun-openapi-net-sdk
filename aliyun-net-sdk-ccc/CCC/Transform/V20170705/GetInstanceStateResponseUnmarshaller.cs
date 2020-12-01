@@ -26,24 +26,24 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class GetInstanceStateResponseUnmarshaller
     {
-        public static GetInstanceStateResponse Unmarshall(UnmarshallerContext context)
+        public static GetInstanceStateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetInstanceStateResponse getInstanceStateResponse = new GetInstanceStateResponse();
 
-			getInstanceStateResponse.HttpResponse = context.HttpResponse;
-			getInstanceStateResponse.RequestId = context.StringValue("GetInstanceState.RequestId");
-			getInstanceStateResponse.Success = context.BooleanValue("GetInstanceState.Success");
-			getInstanceStateResponse.Code = context.StringValue("GetInstanceState.Code");
-			getInstanceStateResponse.Message = context.StringValue("GetInstanceState.Message");
-			getInstanceStateResponse.HttpStatusCode = context.IntegerValue("GetInstanceState.HttpStatusCode");
+			getInstanceStateResponse.HttpResponse = _ctx.HttpResponse;
+			getInstanceStateResponse.RequestId = _ctx.StringValue("GetInstanceState.RequestId");
+			getInstanceStateResponse.Success = _ctx.BooleanValue("GetInstanceState.Success");
+			getInstanceStateResponse.Code = _ctx.StringValue("GetInstanceState.Code");
+			getInstanceStateResponse.Message = _ctx.StringValue("GetInstanceState.Message");
+			getInstanceStateResponse.HttpStatusCode = _ctx.IntegerValue("GetInstanceState.HttpStatusCode");
 
 			GetInstanceStateResponse.GetInstanceState_RealTimeInstanceState realTimeInstanceState = new GetInstanceStateResponse.GetInstanceState_RealTimeInstanceState();
 
 			List<GetInstanceStateResponse.GetInstanceState_RealTimeInstanceState.GetInstanceState_AgentStateCount> realTimeInstanceState_agentStateDistributions = new List<GetInstanceStateResponse.GetInstanceState_RealTimeInstanceState.GetInstanceState_AgentStateCount>();
-			for (int i = 0; i < context.Length("GetInstanceState.RealTimeInstanceState.AgentStateDistributions.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetInstanceState.RealTimeInstanceState.AgentStateDistributions.Length"); i++) {
 				GetInstanceStateResponse.GetInstanceState_RealTimeInstanceState.GetInstanceState_AgentStateCount agentStateCount = new GetInstanceStateResponse.GetInstanceState_RealTimeInstanceState.GetInstanceState_AgentStateCount();
-				agentStateCount.State = context.StringValue("GetInstanceState.RealTimeInstanceState.AgentStateDistributions["+ i +"].State");
-				agentStateCount.Count = context.LongValue("GetInstanceState.RealTimeInstanceState.AgentStateDistributions["+ i +"].Count");
+				agentStateCount.State = _ctx.StringValue("GetInstanceState.RealTimeInstanceState.AgentStateDistributions["+ i +"].State");
+				agentStateCount.Count = _ctx.LongValue("GetInstanceState.RealTimeInstanceState.AgentStateDistributions["+ i +"].Count");
 
 				realTimeInstanceState_agentStateDistributions.Add(agentStateCount);
 			}

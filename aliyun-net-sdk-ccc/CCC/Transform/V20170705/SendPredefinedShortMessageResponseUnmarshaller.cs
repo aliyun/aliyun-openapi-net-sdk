@@ -26,17 +26,17 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class SendPredefinedShortMessageResponseUnmarshaller
     {
-        public static SendPredefinedShortMessageResponse Unmarshall(UnmarshallerContext context)
+        public static SendPredefinedShortMessageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SendPredefinedShortMessageResponse sendPredefinedShortMessageResponse = new SendPredefinedShortMessageResponse();
 
-			sendPredefinedShortMessageResponse.HttpResponse = context.HttpResponse;
-			sendPredefinedShortMessageResponse.RequestId = context.StringValue("SendPredefinedShortMessage.RequestId");
-			sendPredefinedShortMessageResponse.Success = context.BooleanValue("SendPredefinedShortMessage.Success");
-			sendPredefinedShortMessageResponse.Code = context.StringValue("SendPredefinedShortMessage.Code");
-			sendPredefinedShortMessageResponse.Message = context.StringValue("SendPredefinedShortMessage.Message");
-			sendPredefinedShortMessageResponse.HttpStatusCode = context.IntegerValue("SendPredefinedShortMessage.HttpStatusCode");
-			sendPredefinedShortMessageResponse.BizId = context.StringValue("SendPredefinedShortMessage.BizId");
+			sendPredefinedShortMessageResponse.HttpResponse = _ctx.HttpResponse;
+			sendPredefinedShortMessageResponse.RequestId = _ctx.StringValue("SendPredefinedShortMessage.RequestId");
+			sendPredefinedShortMessageResponse.Success = _ctx.BooleanValue("SendPredefinedShortMessage.Success");
+			sendPredefinedShortMessageResponse.Code = _ctx.StringValue("SendPredefinedShortMessage.Code");
+			sendPredefinedShortMessageResponse.Message = _ctx.StringValue("SendPredefinedShortMessage.Message");
+			sendPredefinedShortMessageResponse.HttpStatusCode = _ctx.IntegerValue("SendPredefinedShortMessage.HttpStatusCode");
+			sendPredefinedShortMessageResponse.BizId = _ctx.StringValue("SendPredefinedShortMessage.BizId");
         
 			return sendPredefinedShortMessageResponse;
         }

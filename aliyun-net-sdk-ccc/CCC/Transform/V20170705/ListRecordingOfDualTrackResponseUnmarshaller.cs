@@ -26,38 +26,38 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class ListRecordingOfDualTrackResponseUnmarshaller
     {
-        public static ListRecordingOfDualTrackResponse Unmarshall(UnmarshallerContext context)
+        public static ListRecordingOfDualTrackResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListRecordingOfDualTrackResponse listRecordingOfDualTrackResponse = new ListRecordingOfDualTrackResponse();
 
-			listRecordingOfDualTrackResponse.HttpResponse = context.HttpResponse;
-			listRecordingOfDualTrackResponse.RequestId = context.StringValue("ListRecordingOfDualTrack.RequestId");
-			listRecordingOfDualTrackResponse.Success = context.BooleanValue("ListRecordingOfDualTrack.Success");
-			listRecordingOfDualTrackResponse.Code = context.StringValue("ListRecordingOfDualTrack.Code");
-			listRecordingOfDualTrackResponse.Message = context.StringValue("ListRecordingOfDualTrack.Message");
-			listRecordingOfDualTrackResponse.HttpStatusCode = context.IntegerValue("ListRecordingOfDualTrack.HttpStatusCode");
+			listRecordingOfDualTrackResponse.HttpResponse = _ctx.HttpResponse;
+			listRecordingOfDualTrackResponse.RequestId = _ctx.StringValue("ListRecordingOfDualTrack.RequestId");
+			listRecordingOfDualTrackResponse.Success = _ctx.BooleanValue("ListRecordingOfDualTrack.Success");
+			listRecordingOfDualTrackResponse.Code = _ctx.StringValue("ListRecordingOfDualTrack.Code");
+			listRecordingOfDualTrackResponse.Message = _ctx.StringValue("ListRecordingOfDualTrack.Message");
+			listRecordingOfDualTrackResponse.HttpStatusCode = _ctx.IntegerValue("ListRecordingOfDualTrack.HttpStatusCode");
 
 			ListRecordingOfDualTrackResponse.ListRecordingOfDualTrack_Recordings recordings = new ListRecordingOfDualTrackResponse.ListRecordingOfDualTrack_Recordings();
-			recordings.TotalCount = context.IntegerValue("ListRecordingOfDualTrack.Recordings.TotalCount");
-			recordings.PageNumber = context.IntegerValue("ListRecordingOfDualTrack.Recordings.PageNumber");
-			recordings.PageSize = context.IntegerValue("ListRecordingOfDualTrack.Recordings.PageSize");
+			recordings.TotalCount = _ctx.IntegerValue("ListRecordingOfDualTrack.Recordings.TotalCount");
+			recordings.PageNumber = _ctx.IntegerValue("ListRecordingOfDualTrack.Recordings.PageNumber");
+			recordings.PageSize = _ctx.IntegerValue("ListRecordingOfDualTrack.Recordings.PageSize");
 
 			List<ListRecordingOfDualTrackResponse.ListRecordingOfDualTrack_Recordings.ListRecordingOfDualTrack_Recording> recordings_list = new List<ListRecordingOfDualTrackResponse.ListRecordingOfDualTrack_Recordings.ListRecordingOfDualTrack_Recording>();
-			for (int i = 0; i < context.Length("ListRecordingOfDualTrack.Recordings.List.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListRecordingOfDualTrack.Recordings.List.Length"); i++) {
 				ListRecordingOfDualTrackResponse.ListRecordingOfDualTrack_Recordings.ListRecordingOfDualTrack_Recording recording = new ListRecordingOfDualTrackResponse.ListRecordingOfDualTrack_Recordings.ListRecordingOfDualTrack_Recording();
-				recording.ContactId = context.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].ContactId");
-				recording.ContactType = context.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].ContactType");
-				recording.AgentId = context.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].AgentId");
-				recording.AgentName = context.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].AgentName");
-				recording.CallingNumber = context.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].CallingNumber");
-				recording.CalledNumber = context.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].CalledNumber");
-				recording.StartTime = context.LongValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].StartTime");
-				recording.Duration = context.IntegerValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].Duration");
-				recording.FileName = context.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].FileName");
-				recording.FilePath = context.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].FilePath");
-				recording.FileDescription = context.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].FileDescription");
-				recording.Channel = context.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].Channel");
-				recording.InstanceId = context.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].InstanceId");
+				recording.ContactId = _ctx.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].ContactId");
+				recording.ContactType = _ctx.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].ContactType");
+				recording.AgentId = _ctx.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].AgentId");
+				recording.AgentName = _ctx.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].AgentName");
+				recording.CallingNumber = _ctx.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].CallingNumber");
+				recording.CalledNumber = _ctx.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].CalledNumber");
+				recording.StartTime = _ctx.LongValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].StartTime");
+				recording.Duration = _ctx.IntegerValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].Duration");
+				recording.FileName = _ctx.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].FileName");
+				recording.FilePath = _ctx.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].FilePath");
+				recording.FileDescription = _ctx.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].FileDescription");
+				recording.Channel = _ctx.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].Channel");
+				recording.InstanceId = _ctx.StringValue("ListRecordingOfDualTrack.Recordings.List["+ i +"].InstanceId");
 
 				recordings_list.Add(recording);
 			}

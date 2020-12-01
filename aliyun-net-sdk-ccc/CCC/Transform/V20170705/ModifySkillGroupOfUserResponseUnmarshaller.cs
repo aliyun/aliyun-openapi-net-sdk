@@ -26,16 +26,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class ModifySkillGroupOfUserResponseUnmarshaller
     {
-        public static ModifySkillGroupOfUserResponse Unmarshall(UnmarshallerContext context)
+        public static ModifySkillGroupOfUserResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifySkillGroupOfUserResponse modifySkillGroupOfUserResponse = new ModifySkillGroupOfUserResponse();
 
-			modifySkillGroupOfUserResponse.HttpResponse = context.HttpResponse;
-			modifySkillGroupOfUserResponse.RequestId = context.StringValue("ModifySkillGroupOfUser.RequestId");
-			modifySkillGroupOfUserResponse.Success = context.BooleanValue("ModifySkillGroupOfUser.Success");
-			modifySkillGroupOfUserResponse.Code = context.StringValue("ModifySkillGroupOfUser.Code");
-			modifySkillGroupOfUserResponse.Message = context.StringValue("ModifySkillGroupOfUser.Message");
-			modifySkillGroupOfUserResponse.HttpStatusCode = context.IntegerValue("ModifySkillGroupOfUser.HttpStatusCode");
+			modifySkillGroupOfUserResponse.HttpResponse = _ctx.HttpResponse;
+			modifySkillGroupOfUserResponse.RequestId = _ctx.StringValue("ModifySkillGroupOfUser.RequestId");
+			modifySkillGroupOfUserResponse.Success = _ctx.BooleanValue("ModifySkillGroupOfUser.Success");
+			modifySkillGroupOfUserResponse.Code = _ctx.StringValue("ModifySkillGroupOfUser.Code");
+			modifySkillGroupOfUserResponse.Message = _ctx.StringValue("ModifySkillGroupOfUser.Message");
+			modifySkillGroupOfUserResponse.HttpStatusCode = _ctx.IntegerValue("ModifySkillGroupOfUser.HttpStatusCode");
         
 			return modifySkillGroupOfUserResponse;
         }

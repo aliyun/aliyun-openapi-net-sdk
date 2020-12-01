@@ -26,16 +26,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class DeletePhoneTagsResponseUnmarshaller
     {
-        public static DeletePhoneTagsResponse Unmarshall(UnmarshallerContext context)
+        public static DeletePhoneTagsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeletePhoneTagsResponse deletePhoneTagsResponse = new DeletePhoneTagsResponse();
 
-			deletePhoneTagsResponse.HttpResponse = context.HttpResponse;
-			deletePhoneTagsResponse.RequestId = context.StringValue("DeletePhoneTags.RequestId");
-			deletePhoneTagsResponse.Success = context.BooleanValue("DeletePhoneTags.Success");
-			deletePhoneTagsResponse.Code = context.StringValue("DeletePhoneTags.Code");
-			deletePhoneTagsResponse.Message = context.StringValue("DeletePhoneTags.Message");
-			deletePhoneTagsResponse.HttpStatusCode = context.IntegerValue("DeletePhoneTags.HttpStatusCode");
+			deletePhoneTagsResponse.HttpResponse = _ctx.HttpResponse;
+			deletePhoneTagsResponse.RequestId = _ctx.StringValue("DeletePhoneTags.RequestId");
+			deletePhoneTagsResponse.Success = _ctx.BooleanValue("DeletePhoneTags.Success");
+			deletePhoneTagsResponse.Code = _ctx.StringValue("DeletePhoneTags.Code");
+			deletePhoneTagsResponse.Message = _ctx.StringValue("DeletePhoneTags.Message");
+			deletePhoneTagsResponse.HttpStatusCode = _ctx.IntegerValue("DeletePhoneTags.HttpStatusCode");
         
 			return deletePhoneTagsResponse;
         }

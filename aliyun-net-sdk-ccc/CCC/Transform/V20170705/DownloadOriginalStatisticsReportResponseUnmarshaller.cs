@@ -26,19 +26,19 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class DownloadOriginalStatisticsReportResponseUnmarshaller
     {
-        public static DownloadOriginalStatisticsReportResponse Unmarshall(UnmarshallerContext context)
+        public static DownloadOriginalStatisticsReportResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DownloadOriginalStatisticsReportResponse downloadOriginalStatisticsReportResponse = new DownloadOriginalStatisticsReportResponse();
 
-			downloadOriginalStatisticsReportResponse.HttpResponse = context.HttpResponse;
-			downloadOriginalStatisticsReportResponse.RequestId = context.StringValue("DownloadOriginalStatisticsReport.RequestId");
-			downloadOriginalStatisticsReportResponse.Success = context.BooleanValue("DownloadOriginalStatisticsReport.Success");
-			downloadOriginalStatisticsReportResponse.Code = context.StringValue("DownloadOriginalStatisticsReport.Code");
-			downloadOriginalStatisticsReportResponse.Message = context.StringValue("DownloadOriginalStatisticsReport.Message");
-			downloadOriginalStatisticsReportResponse.HttpStatusCode = context.IntegerValue("DownloadOriginalStatisticsReport.HttpStatusCode");
+			downloadOriginalStatisticsReportResponse.HttpResponse = _ctx.HttpResponse;
+			downloadOriginalStatisticsReportResponse.RequestId = _ctx.StringValue("DownloadOriginalStatisticsReport.RequestId");
+			downloadOriginalStatisticsReportResponse.Success = _ctx.BooleanValue("DownloadOriginalStatisticsReport.Success");
+			downloadOriginalStatisticsReportResponse.Code = _ctx.StringValue("DownloadOriginalStatisticsReport.Code");
+			downloadOriginalStatisticsReportResponse.Message = _ctx.StringValue("DownloadOriginalStatisticsReport.Message");
+			downloadOriginalStatisticsReportResponse.HttpStatusCode = _ctx.IntegerValue("DownloadOriginalStatisticsReport.HttpStatusCode");
 
 			DownloadOriginalStatisticsReportResponse.DownloadOriginalStatisticsReport_DownloadParams downloadParams = new DownloadOriginalStatisticsReportResponse.DownloadOriginalStatisticsReport_DownloadParams();
-			downloadParams.SignatureUrl = context.StringValue("DownloadOriginalStatisticsReport.DownloadParams.SignatureUrl");
+			downloadParams.SignatureUrl = _ctx.StringValue("DownloadOriginalStatisticsReport.DownloadParams.SignatureUrl");
 			downloadOriginalStatisticsReportResponse.DownloadParams = downloadParams;
         
 			return downloadOriginalStatisticsReportResponse;

@@ -26,22 +26,22 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class GetServiceExtensionsResponseUnmarshaller
     {
-        public static GetServiceExtensionsResponse Unmarshall(UnmarshallerContext context)
+        public static GetServiceExtensionsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetServiceExtensionsResponse getServiceExtensionsResponse = new GetServiceExtensionsResponse();
 
-			getServiceExtensionsResponse.HttpResponse = context.HttpResponse;
-			getServiceExtensionsResponse.RequestId = context.StringValue("GetServiceExtensions.RequestId");
-			getServiceExtensionsResponse.Success = context.BooleanValue("GetServiceExtensions.Success");
-			getServiceExtensionsResponse.Code = context.StringValue("GetServiceExtensions.Code");
-			getServiceExtensionsResponse.Message = context.StringValue("GetServiceExtensions.Message");
-			getServiceExtensionsResponse.HttpStatusCode = context.IntegerValue("GetServiceExtensions.HttpStatusCode");
+			getServiceExtensionsResponse.HttpResponse = _ctx.HttpResponse;
+			getServiceExtensionsResponse.RequestId = _ctx.StringValue("GetServiceExtensions.RequestId");
+			getServiceExtensionsResponse.Success = _ctx.BooleanValue("GetServiceExtensions.Success");
+			getServiceExtensionsResponse.Code = _ctx.StringValue("GetServiceExtensions.Code");
+			getServiceExtensionsResponse.Message = _ctx.StringValue("GetServiceExtensions.Message");
+			getServiceExtensionsResponse.HttpStatusCode = _ctx.IntegerValue("GetServiceExtensions.HttpStatusCode");
 
 			List<GetServiceExtensionsResponse.GetServiceExtensions_ServiceExtension> getServiceExtensionsResponse_serviceExtensions = new List<GetServiceExtensionsResponse.GetServiceExtensions_ServiceExtension>();
-			for (int i = 0; i < context.Length("GetServiceExtensions.ServiceExtensions.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetServiceExtensions.ServiceExtensions.Length"); i++) {
 				GetServiceExtensionsResponse.GetServiceExtensions_ServiceExtension serviceExtension = new GetServiceExtensionsResponse.GetServiceExtensions_ServiceExtension();
-				serviceExtension.Name = context.StringValue("GetServiceExtensions.ServiceExtensions["+ i +"].Name");
-				serviceExtension.Number = context.StringValue("GetServiceExtensions.ServiceExtensions["+ i +"].Number");
+				serviceExtension.Name = _ctx.StringValue("GetServiceExtensions.ServiceExtensions["+ i +"].Name");
+				serviceExtension.Number = _ctx.StringValue("GetServiceExtensions.ServiceExtensions["+ i +"].Number");
 
 				getServiceExtensionsResponse_serviceExtensions.Add(serviceExtension);
 			}

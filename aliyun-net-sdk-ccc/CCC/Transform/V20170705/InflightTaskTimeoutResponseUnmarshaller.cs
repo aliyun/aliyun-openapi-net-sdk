@@ -26,16 +26,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class InflightTaskTimeoutResponseUnmarshaller
     {
-        public static InflightTaskTimeoutResponse Unmarshall(UnmarshallerContext context)
+        public static InflightTaskTimeoutResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			InflightTaskTimeoutResponse inflightTaskTimeoutResponse = new InflightTaskTimeoutResponse();
 
-			inflightTaskTimeoutResponse.HttpResponse = context.HttpResponse;
-			inflightTaskTimeoutResponse.RequestId = context.StringValue("InflightTaskTimeout.RequestId");
-			inflightTaskTimeoutResponse.Success = context.BooleanValue("InflightTaskTimeout.Success");
-			inflightTaskTimeoutResponse.Code = context.StringValue("InflightTaskTimeout.Code");
-			inflightTaskTimeoutResponse.Message = context.StringValue("InflightTaskTimeout.Message");
-			inflightTaskTimeoutResponse.HttpStatusCode = context.IntegerValue("InflightTaskTimeout.HttpStatusCode");
+			inflightTaskTimeoutResponse.HttpResponse = _ctx.HttpResponse;
+			inflightTaskTimeoutResponse.RequestId = _ctx.StringValue("InflightTaskTimeout.RequestId");
+			inflightTaskTimeoutResponse.Success = _ctx.BooleanValue("InflightTaskTimeout.Success");
+			inflightTaskTimeoutResponse.Code = _ctx.StringValue("InflightTaskTimeout.Code");
+			inflightTaskTimeoutResponse.Message = _ctx.StringValue("InflightTaskTimeout.Message");
+			inflightTaskTimeoutResponse.HttpStatusCode = _ctx.IntegerValue("InflightTaskTimeout.HttpStatusCode");
         
 			return inflightTaskTimeoutResponse;
         }

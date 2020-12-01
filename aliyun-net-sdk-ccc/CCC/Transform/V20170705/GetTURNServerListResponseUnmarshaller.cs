@@ -26,17 +26,17 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class GetTURNServerListResponseUnmarshaller
     {
-        public static GetTURNServerListResponse Unmarshall(UnmarshallerContext context)
+        public static GetTURNServerListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetTURNServerListResponse getTURNServerListResponse = new GetTURNServerListResponse();
 
-			getTURNServerListResponse.HttpResponse = context.HttpResponse;
-			getTURNServerListResponse.RequestId = context.StringValue("GetTURNServerList.RequestId");
-			getTURNServerListResponse.Success = context.BooleanValue("GetTURNServerList.Success");
-			getTURNServerListResponse.Code = context.StringValue("GetTURNServerList.Code");
-			getTURNServerListResponse.Message = context.StringValue("GetTURNServerList.Message");
-			getTURNServerListResponse.HttpStatusCode = context.IntegerValue("GetTURNServerList.HttpStatusCode");
-			getTURNServerListResponse.TurnServerListConfig = context.StringValue("GetTURNServerList.TurnServerListConfig");
+			getTURNServerListResponse.HttpResponse = _ctx.HttpResponse;
+			getTURNServerListResponse.RequestId = _ctx.StringValue("GetTURNServerList.RequestId");
+			getTURNServerListResponse.Success = _ctx.BooleanValue("GetTURNServerList.Success");
+			getTURNServerListResponse.Code = _ctx.StringValue("GetTURNServerList.Code");
+			getTURNServerListResponse.Message = _ctx.StringValue("GetTURNServerList.Message");
+			getTURNServerListResponse.HttpStatusCode = _ctx.IntegerValue("GetTURNServerList.HttpStatusCode");
+			getTURNServerListResponse.TurnServerListConfig = _ctx.StringValue("GetTURNServerList.TurnServerListConfig");
         
 			return getTURNServerListResponse;
         }

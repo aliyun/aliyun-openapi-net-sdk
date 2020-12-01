@@ -26,17 +26,17 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class AssignJobsResponseUnmarshaller
     {
-        public static AssignJobsResponse Unmarshall(UnmarshallerContext context)
+        public static AssignJobsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AssignJobsResponse assignJobsResponse = new AssignJobsResponse();
 
-			assignJobsResponse.HttpResponse = context.HttpResponse;
-			assignJobsResponse.RequestId = context.StringValue("AssignJobs.RequestId");
-			assignJobsResponse.Success = context.BooleanValue("AssignJobs.Success");
-			assignJobsResponse.Code = context.StringValue("AssignJobs.Code");
-			assignJobsResponse.Message = context.StringValue("AssignJobs.Message");
-			assignJobsResponse.HttpStatusCode = context.IntegerValue("AssignJobs.HttpStatusCode");
-			assignJobsResponse.GroupId = context.StringValue("AssignJobs.GroupId");
+			assignJobsResponse.HttpResponse = _ctx.HttpResponse;
+			assignJobsResponse.RequestId = _ctx.StringValue("AssignJobs.RequestId");
+			assignJobsResponse.Success = _ctx.BooleanValue("AssignJobs.Success");
+			assignJobsResponse.Code = _ctx.StringValue("AssignJobs.Code");
+			assignJobsResponse.Message = _ctx.StringValue("AssignJobs.Message");
+			assignJobsResponse.HttpStatusCode = _ctx.IntegerValue("AssignJobs.HttpStatusCode");
+			assignJobsResponse.GroupId = _ctx.StringValue("AssignJobs.GroupId");
         
 			return assignJobsResponse;
         }

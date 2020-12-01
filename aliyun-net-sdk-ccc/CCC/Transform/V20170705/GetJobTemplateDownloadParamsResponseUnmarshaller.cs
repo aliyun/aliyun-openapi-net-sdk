@@ -26,19 +26,19 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class GetJobTemplateDownloadParamsResponseUnmarshaller
     {
-        public static GetJobTemplateDownloadParamsResponse Unmarshall(UnmarshallerContext context)
+        public static GetJobTemplateDownloadParamsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetJobTemplateDownloadParamsResponse getJobTemplateDownloadParamsResponse = new GetJobTemplateDownloadParamsResponse();
 
-			getJobTemplateDownloadParamsResponse.HttpResponse = context.HttpResponse;
-			getJobTemplateDownloadParamsResponse.RequestId = context.StringValue("GetJobTemplateDownloadParams.RequestId");
-			getJobTemplateDownloadParamsResponse.Success = context.BooleanValue("GetJobTemplateDownloadParams.Success");
-			getJobTemplateDownloadParamsResponse.Code = context.StringValue("GetJobTemplateDownloadParams.Code");
-			getJobTemplateDownloadParamsResponse.Message = context.StringValue("GetJobTemplateDownloadParams.Message");
-			getJobTemplateDownloadParamsResponse.HttpStatusCode = context.IntegerValue("GetJobTemplateDownloadParams.HttpStatusCode");
+			getJobTemplateDownloadParamsResponse.HttpResponse = _ctx.HttpResponse;
+			getJobTemplateDownloadParamsResponse.RequestId = _ctx.StringValue("GetJobTemplateDownloadParams.RequestId");
+			getJobTemplateDownloadParamsResponse.Success = _ctx.BooleanValue("GetJobTemplateDownloadParams.Success");
+			getJobTemplateDownloadParamsResponse.Code = _ctx.StringValue("GetJobTemplateDownloadParams.Code");
+			getJobTemplateDownloadParamsResponse.Message = _ctx.StringValue("GetJobTemplateDownloadParams.Message");
+			getJobTemplateDownloadParamsResponse.HttpStatusCode = _ctx.IntegerValue("GetJobTemplateDownloadParams.HttpStatusCode");
 
 			GetJobTemplateDownloadParamsResponse.GetJobTemplateDownloadParams_DownloadParams downloadParams = new GetJobTemplateDownloadParamsResponse.GetJobTemplateDownloadParams_DownloadParams();
-			downloadParams.SignatureUrl = context.StringValue("GetJobTemplateDownloadParams.DownloadParams.SignatureUrl");
+			downloadParams.SignatureUrl = _ctx.StringValue("GetJobTemplateDownloadParams.DownloadParams.SignatureUrl");
 			getJobTemplateDownloadParamsResponse.DownloadParams = downloadParams;
         
 			return getJobTemplateDownloadParamsResponse;

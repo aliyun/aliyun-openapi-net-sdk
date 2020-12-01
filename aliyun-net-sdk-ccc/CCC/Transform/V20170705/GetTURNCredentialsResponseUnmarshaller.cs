@@ -26,18 +26,18 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class GetTURNCredentialsResponseUnmarshaller
     {
-        public static GetTURNCredentialsResponse Unmarshall(UnmarshallerContext context)
+        public static GetTURNCredentialsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetTURNCredentialsResponse getTURNCredentialsResponse = new GetTURNCredentialsResponse();
 
-			getTURNCredentialsResponse.HttpResponse = context.HttpResponse;
-			getTURNCredentialsResponse.RequestId = context.StringValue("GetTURNCredentials.RequestId");
-			getTURNCredentialsResponse.Success = context.BooleanValue("GetTURNCredentials.Success");
-			getTURNCredentialsResponse.Code = context.StringValue("GetTURNCredentials.Code");
-			getTURNCredentialsResponse.Message = context.StringValue("GetTURNCredentials.Message");
-			getTURNCredentialsResponse.HttpStatusCode = context.IntegerValue("GetTURNCredentials.HttpStatusCode");
-			getTURNCredentialsResponse.Username = context.StringValue("GetTURNCredentials.Username");
-			getTURNCredentialsResponse.Password = context.StringValue("GetTURNCredentials.Password");
+			getTURNCredentialsResponse.HttpResponse = _ctx.HttpResponse;
+			getTURNCredentialsResponse.RequestId = _ctx.StringValue("GetTURNCredentials.RequestId");
+			getTURNCredentialsResponse.Success = _ctx.BooleanValue("GetTURNCredentials.Success");
+			getTURNCredentialsResponse.Code = _ctx.StringValue("GetTURNCredentials.Code");
+			getTURNCredentialsResponse.Message = _ctx.StringValue("GetTURNCredentials.Message");
+			getTURNCredentialsResponse.HttpStatusCode = _ctx.IntegerValue("GetTURNCredentials.HttpStatusCode");
+			getTURNCredentialsResponse.Username = _ctx.StringValue("GetTURNCredentials.Username");
+			getTURNCredentialsResponse.Password = _ctx.StringValue("GetTURNCredentials.Password");
         
 			return getTURNCredentialsResponse;
         }

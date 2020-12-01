@@ -26,22 +26,22 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class DownloadAllTypeRecordingResponseUnmarshaller
     {
-        public static DownloadAllTypeRecordingResponse Unmarshall(UnmarshallerContext context)
+        public static DownloadAllTypeRecordingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DownloadAllTypeRecordingResponse downloadAllTypeRecordingResponse = new DownloadAllTypeRecordingResponse();
 
-			downloadAllTypeRecordingResponse.HttpResponse = context.HttpResponse;
-			downloadAllTypeRecordingResponse.RequestId = context.StringValue("DownloadAllTypeRecording.RequestId");
-			downloadAllTypeRecordingResponse.Success = context.BooleanValue("DownloadAllTypeRecording.Success");
-			downloadAllTypeRecordingResponse.Code = context.StringValue("DownloadAllTypeRecording.Code");
-			downloadAllTypeRecordingResponse.Message = context.StringValue("DownloadAllTypeRecording.Message");
-			downloadAllTypeRecordingResponse.HttpStatusCode = context.IntegerValue("DownloadAllTypeRecording.HttpStatusCode");
+			downloadAllTypeRecordingResponse.HttpResponse = _ctx.HttpResponse;
+			downloadAllTypeRecordingResponse.RequestId = _ctx.StringValue("DownloadAllTypeRecording.RequestId");
+			downloadAllTypeRecordingResponse.Success = _ctx.BooleanValue("DownloadAllTypeRecording.Success");
+			downloadAllTypeRecordingResponse.Code = _ctx.StringValue("DownloadAllTypeRecording.Code");
+			downloadAllTypeRecordingResponse.Message = _ctx.StringValue("DownloadAllTypeRecording.Message");
+			downloadAllTypeRecordingResponse.HttpStatusCode = _ctx.IntegerValue("DownloadAllTypeRecording.HttpStatusCode");
 
 			List<DownloadAllTypeRecordingResponse.DownloadAllTypeRecording_MediaDownloadParam> downloadAllTypeRecordingResponse_mediaDownloadParamList = new List<DownloadAllTypeRecordingResponse.DownloadAllTypeRecording_MediaDownloadParam>();
-			for (int i = 0; i < context.Length("DownloadAllTypeRecording.MediaDownloadParamList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DownloadAllTypeRecording.MediaDownloadParamList.Length"); i++) {
 				DownloadAllTypeRecordingResponse.DownloadAllTypeRecording_MediaDownloadParam mediaDownloadParam = new DownloadAllTypeRecordingResponse.DownloadAllTypeRecording_MediaDownloadParam();
-				mediaDownloadParam.SignatureUrl = context.StringValue("DownloadAllTypeRecording.MediaDownloadParamList["+ i +"].SignatureUrl");
-				mediaDownloadParam.FileName = context.StringValue("DownloadAllTypeRecording.MediaDownloadParamList["+ i +"].FileName");
+				mediaDownloadParam.SignatureUrl = _ctx.StringValue("DownloadAllTypeRecording.MediaDownloadParamList["+ i +"].SignatureUrl");
+				mediaDownloadParam.FileName = _ctx.StringValue("DownloadAllTypeRecording.MediaDownloadParamList["+ i +"].FileName");
 
 				downloadAllTypeRecordingResponse_mediaDownloadParamList.Add(mediaDownloadParam);
 			}

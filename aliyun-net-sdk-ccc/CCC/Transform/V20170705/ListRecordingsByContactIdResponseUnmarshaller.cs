@@ -26,35 +26,35 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class ListRecordingsByContactIdResponseUnmarshaller
     {
-        public static ListRecordingsByContactIdResponse Unmarshall(UnmarshallerContext context)
+        public static ListRecordingsByContactIdResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListRecordingsByContactIdResponse listRecordingsByContactIdResponse = new ListRecordingsByContactIdResponse();
 
-			listRecordingsByContactIdResponse.HttpResponse = context.HttpResponse;
-			listRecordingsByContactIdResponse.RequestId = context.StringValue("ListRecordingsByContactId.RequestId");
-			listRecordingsByContactIdResponse.Success = context.BooleanValue("ListRecordingsByContactId.Success");
-			listRecordingsByContactIdResponse.Code = context.StringValue("ListRecordingsByContactId.Code");
-			listRecordingsByContactIdResponse.Message = context.StringValue("ListRecordingsByContactId.Message");
-			listRecordingsByContactIdResponse.HttpStatusCode = context.IntegerValue("ListRecordingsByContactId.HttpStatusCode");
+			listRecordingsByContactIdResponse.HttpResponse = _ctx.HttpResponse;
+			listRecordingsByContactIdResponse.RequestId = _ctx.StringValue("ListRecordingsByContactId.RequestId");
+			listRecordingsByContactIdResponse.Success = _ctx.BooleanValue("ListRecordingsByContactId.Success");
+			listRecordingsByContactIdResponse.Code = _ctx.StringValue("ListRecordingsByContactId.Code");
+			listRecordingsByContactIdResponse.Message = _ctx.StringValue("ListRecordingsByContactId.Message");
+			listRecordingsByContactIdResponse.HttpStatusCode = _ctx.IntegerValue("ListRecordingsByContactId.HttpStatusCode");
 
 			List<ListRecordingsByContactIdResponse.ListRecordingsByContactId_Recording> listRecordingsByContactIdResponse_recordings = new List<ListRecordingsByContactIdResponse.ListRecordingsByContactId_Recording>();
-			for (int i = 0; i < context.Length("ListRecordingsByContactId.Recordings.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListRecordingsByContactId.Recordings.Length"); i++) {
 				ListRecordingsByContactIdResponse.ListRecordingsByContactId_Recording recording = new ListRecordingsByContactIdResponse.ListRecordingsByContactId_Recording();
-				recording.ContactId = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].ContactId");
-				recording.ContactType = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].ContactType");
-				recording.AgentId = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].AgentId");
-				recording.AgentName = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].AgentName");
-				recording.CallingNumber = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].CallingNumber");
-				recording.CalledNumber = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].CalledNumber");
-				recording.StartTime = context.LongValue("ListRecordingsByContactId.Recordings["+ i +"].StartTime");
-				recording.Duration = context.IntegerValue("ListRecordingsByContactId.Recordings["+ i +"].Duration");
-				recording.FileName = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].FileName");
-				recording.FilePath = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].FilePath");
-				recording.FileDescription = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].FileDescription");
-				recording.Channel = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].Channel");
-				recording.InstanceId = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].InstanceId");
-				recording.QualityCheckTid = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].QualityCheckTid");
-				recording.QualityCheckTaskId = context.StringValue("ListRecordingsByContactId.Recordings["+ i +"].QualityCheckTaskId");
+				recording.ContactId = _ctx.StringValue("ListRecordingsByContactId.Recordings["+ i +"].ContactId");
+				recording.ContactType = _ctx.StringValue("ListRecordingsByContactId.Recordings["+ i +"].ContactType");
+				recording.AgentId = _ctx.StringValue("ListRecordingsByContactId.Recordings["+ i +"].AgentId");
+				recording.AgentName = _ctx.StringValue("ListRecordingsByContactId.Recordings["+ i +"].AgentName");
+				recording.CallingNumber = _ctx.StringValue("ListRecordingsByContactId.Recordings["+ i +"].CallingNumber");
+				recording.CalledNumber = _ctx.StringValue("ListRecordingsByContactId.Recordings["+ i +"].CalledNumber");
+				recording.StartTime = _ctx.LongValue("ListRecordingsByContactId.Recordings["+ i +"].StartTime");
+				recording.Duration = _ctx.IntegerValue("ListRecordingsByContactId.Recordings["+ i +"].Duration");
+				recording.FileName = _ctx.StringValue("ListRecordingsByContactId.Recordings["+ i +"].FileName");
+				recording.FilePath = _ctx.StringValue("ListRecordingsByContactId.Recordings["+ i +"].FilePath");
+				recording.FileDescription = _ctx.StringValue("ListRecordingsByContactId.Recordings["+ i +"].FileDescription");
+				recording.Channel = _ctx.StringValue("ListRecordingsByContactId.Recordings["+ i +"].Channel");
+				recording.InstanceId = _ctx.StringValue("ListRecordingsByContactId.Recordings["+ i +"].InstanceId");
+				recording.QualityCheckTid = _ctx.StringValue("ListRecordingsByContactId.Recordings["+ i +"].QualityCheckTid");
+				recording.QualityCheckTaskId = _ctx.StringValue("ListRecordingsByContactId.Recordings["+ i +"].QualityCheckTaskId");
 
 				listRecordingsByContactIdResponse_recordings.Add(recording);
 			}

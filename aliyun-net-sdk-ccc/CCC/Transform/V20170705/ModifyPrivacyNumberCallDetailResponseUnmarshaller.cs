@@ -26,16 +26,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class ModifyPrivacyNumberCallDetailResponseUnmarshaller
     {
-        public static ModifyPrivacyNumberCallDetailResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyPrivacyNumberCallDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyPrivacyNumberCallDetailResponse modifyPrivacyNumberCallDetailResponse = new ModifyPrivacyNumberCallDetailResponse();
 
-			modifyPrivacyNumberCallDetailResponse.HttpResponse = context.HttpResponse;
-			modifyPrivacyNumberCallDetailResponse.RequestId = context.StringValue("ModifyPrivacyNumberCallDetail.RequestId");
-			modifyPrivacyNumberCallDetailResponse.Success = context.BooleanValue("ModifyPrivacyNumberCallDetail.Success");
-			modifyPrivacyNumberCallDetailResponse.Code = context.StringValue("ModifyPrivacyNumberCallDetail.Code");
-			modifyPrivacyNumberCallDetailResponse.Message = context.StringValue("ModifyPrivacyNumberCallDetail.Message");
-			modifyPrivacyNumberCallDetailResponse.HttpStatusCode = context.IntegerValue("ModifyPrivacyNumberCallDetail.HttpStatusCode");
+			modifyPrivacyNumberCallDetailResponse.HttpResponse = _ctx.HttpResponse;
+			modifyPrivacyNumberCallDetailResponse.RequestId = _ctx.StringValue("ModifyPrivacyNumberCallDetail.RequestId");
+			modifyPrivacyNumberCallDetailResponse.Success = _ctx.BooleanValue("ModifyPrivacyNumberCallDetail.Success");
+			modifyPrivacyNumberCallDetailResponse.Code = _ctx.StringValue("ModifyPrivacyNumberCallDetail.Code");
+			modifyPrivacyNumberCallDetailResponse.Message = _ctx.StringValue("ModifyPrivacyNumberCallDetail.Message");
+			modifyPrivacyNumberCallDetailResponse.HttpStatusCode = _ctx.IntegerValue("ModifyPrivacyNumberCallDetail.HttpStatusCode");
         
 			return modifyPrivacyNumberCallDetailResponse;
         }

@@ -26,24 +26,24 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class GetJobDataUploadParamsResponseUnmarshaller
     {
-        public static GetJobDataUploadParamsResponse Unmarshall(UnmarshallerContext context)
+        public static GetJobDataUploadParamsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetJobDataUploadParamsResponse getJobDataUploadParamsResponse = new GetJobDataUploadParamsResponse();
 
-			getJobDataUploadParamsResponse.HttpResponse = context.HttpResponse;
-			getJobDataUploadParamsResponse.RequestId = context.StringValue("GetJobDataUploadParams.RequestId");
-			getJobDataUploadParamsResponse.Success = context.BooleanValue("GetJobDataUploadParams.Success");
-			getJobDataUploadParamsResponse.Code = context.StringValue("GetJobDataUploadParams.Code");
-			getJobDataUploadParamsResponse.Message = context.StringValue("GetJobDataUploadParams.Message");
-			getJobDataUploadParamsResponse.HttpStatusCode = context.IntegerValue("GetJobDataUploadParams.HttpStatusCode");
+			getJobDataUploadParamsResponse.HttpResponse = _ctx.HttpResponse;
+			getJobDataUploadParamsResponse.RequestId = _ctx.StringValue("GetJobDataUploadParams.RequestId");
+			getJobDataUploadParamsResponse.Success = _ctx.BooleanValue("GetJobDataUploadParams.Success");
+			getJobDataUploadParamsResponse.Code = _ctx.StringValue("GetJobDataUploadParams.Code");
+			getJobDataUploadParamsResponse.Message = _ctx.StringValue("GetJobDataUploadParams.Message");
+			getJobDataUploadParamsResponse.HttpStatusCode = _ctx.IntegerValue("GetJobDataUploadParams.HttpStatusCode");
 
 			GetJobDataUploadParamsResponse.GetJobDataUploadParams_UploadParams uploadParams = new GetJobDataUploadParamsResponse.GetJobDataUploadParams_UploadParams();
-			uploadParams.AccessId = context.StringValue("GetJobDataUploadParams.UploadParams.AccessId");
-			uploadParams.Policy = context.StringValue("GetJobDataUploadParams.UploadParams.Policy");
-			uploadParams.Signature = context.StringValue("GetJobDataUploadParams.UploadParams.Signature");
-			uploadParams.Folder = context.StringValue("GetJobDataUploadParams.UploadParams.Folder");
-			uploadParams.Host = context.StringValue("GetJobDataUploadParams.UploadParams.Host");
-			uploadParams.Expire = context.IntegerValue("GetJobDataUploadParams.UploadParams.Expire");
+			uploadParams.AccessId = _ctx.StringValue("GetJobDataUploadParams.UploadParams.AccessId");
+			uploadParams.Policy = _ctx.StringValue("GetJobDataUploadParams.UploadParams.Policy");
+			uploadParams.Signature = _ctx.StringValue("GetJobDataUploadParams.UploadParams.Signature");
+			uploadParams.Folder = _ctx.StringValue("GetJobDataUploadParams.UploadParams.Folder");
+			uploadParams.Host = _ctx.StringValue("GetJobDataUploadParams.UploadParams.Host");
+			uploadParams.Expire = _ctx.IntegerValue("GetJobDataUploadParams.UploadParams.Expire");
 			getJobDataUploadParamsResponse.UploadParams = uploadParams;
         
 			return getJobDataUploadParamsResponse;

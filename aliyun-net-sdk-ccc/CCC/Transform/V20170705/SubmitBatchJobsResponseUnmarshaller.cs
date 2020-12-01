@@ -26,16 +26,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class SubmitBatchJobsResponseUnmarshaller
     {
-        public static SubmitBatchJobsResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitBatchJobsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitBatchJobsResponse submitBatchJobsResponse = new SubmitBatchJobsResponse();
 
-			submitBatchJobsResponse.HttpResponse = context.HttpResponse;
-			submitBatchJobsResponse.RequestId = context.StringValue("SubmitBatchJobs.RequestId");
-			submitBatchJobsResponse.Success = context.BooleanValue("SubmitBatchJobs.Success");
-			submitBatchJobsResponse.Code = context.StringValue("SubmitBatchJobs.Code");
-			submitBatchJobsResponse.Message = context.StringValue("SubmitBatchJobs.Message");
-			submitBatchJobsResponse.HttpStatusCode = context.IntegerValue("SubmitBatchJobs.HttpStatusCode");
+			submitBatchJobsResponse.HttpResponse = _ctx.HttpResponse;
+			submitBatchJobsResponse.RequestId = _ctx.StringValue("SubmitBatchJobs.RequestId");
+			submitBatchJobsResponse.Success = _ctx.BooleanValue("SubmitBatchJobs.Success");
+			submitBatchJobsResponse.Code = _ctx.StringValue("SubmitBatchJobs.Code");
+			submitBatchJobsResponse.Message = _ctx.StringValue("SubmitBatchJobs.Message");
+			submitBatchJobsResponse.HttpStatusCode = _ctx.IntegerValue("SubmitBatchJobs.HttpStatusCode");
         
 			return submitBatchJobsResponse;
         }

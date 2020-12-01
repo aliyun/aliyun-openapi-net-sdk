@@ -26,16 +26,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class CreateFaultResponseUnmarshaller
     {
-        public static CreateFaultResponse Unmarshall(UnmarshallerContext context)
+        public static CreateFaultResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateFaultResponse createFaultResponse = new CreateFaultResponse();
 
-			createFaultResponse.HttpResponse = context.HttpResponse;
-			createFaultResponse.RequestId = context.StringValue("CreateFault.RequestId");
-			createFaultResponse.Success = context.BooleanValue("CreateFault.Success");
-			createFaultResponse.Code = context.StringValue("CreateFault.Code");
-			createFaultResponse.Message = context.StringValue("CreateFault.Message");
-			createFaultResponse.HttpStatusCode = context.IntegerValue("CreateFault.HttpStatusCode");
+			createFaultResponse.HttpResponse = _ctx.HttpResponse;
+			createFaultResponse.RequestId = _ctx.StringValue("CreateFault.RequestId");
+			createFaultResponse.Success = _ctx.BooleanValue("CreateFault.Success");
+			createFaultResponse.Code = _ctx.StringValue("CreateFault.Code");
+			createFaultResponse.Message = _ctx.StringValue("CreateFault.Message");
+			createFaultResponse.HttpStatusCode = _ctx.IntegerValue("CreateFault.HttpStatusCode");
         
 			return createFaultResponse;
         }

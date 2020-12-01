@@ -26,52 +26,52 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class ListUsersOfSkillGroupResponseUnmarshaller
     {
-        public static ListUsersOfSkillGroupResponse Unmarshall(UnmarshallerContext context)
+        public static ListUsersOfSkillGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListUsersOfSkillGroupResponse listUsersOfSkillGroupResponse = new ListUsersOfSkillGroupResponse();
 
-			listUsersOfSkillGroupResponse.HttpResponse = context.HttpResponse;
-			listUsersOfSkillGroupResponse.RequestId = context.StringValue("ListUsersOfSkillGroup.RequestId");
-			listUsersOfSkillGroupResponse.Success = context.BooleanValue("ListUsersOfSkillGroup.Success");
-			listUsersOfSkillGroupResponse.Code = context.StringValue("ListUsersOfSkillGroup.Code");
-			listUsersOfSkillGroupResponse.Message = context.StringValue("ListUsersOfSkillGroup.Message");
-			listUsersOfSkillGroupResponse.HttpStatusCode = context.IntegerValue("ListUsersOfSkillGroup.HttpStatusCode");
+			listUsersOfSkillGroupResponse.HttpResponse = _ctx.HttpResponse;
+			listUsersOfSkillGroupResponse.RequestId = _ctx.StringValue("ListUsersOfSkillGroup.RequestId");
+			listUsersOfSkillGroupResponse.Success = _ctx.BooleanValue("ListUsersOfSkillGroup.Success");
+			listUsersOfSkillGroupResponse.Code = _ctx.StringValue("ListUsersOfSkillGroup.Code");
+			listUsersOfSkillGroupResponse.Message = _ctx.StringValue("ListUsersOfSkillGroup.Message");
+			listUsersOfSkillGroupResponse.HttpStatusCode = _ctx.IntegerValue("ListUsersOfSkillGroup.HttpStatusCode");
 
 			ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users users = new ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users();
-			users.TotalCount = context.IntegerValue("ListUsersOfSkillGroup.Users.TotalCount");
-			users.PageNumber = context.IntegerValue("ListUsersOfSkillGroup.Users.PageNumber");
-			users.PageSize = context.IntegerValue("ListUsersOfSkillGroup.Users.PageSize");
+			users.TotalCount = _ctx.IntegerValue("ListUsersOfSkillGroup.Users.TotalCount");
+			users.PageNumber = _ctx.IntegerValue("ListUsersOfSkillGroup.Users.PageNumber");
+			users.PageSize = _ctx.IntegerValue("ListUsersOfSkillGroup.Users.PageSize");
 
 			List<ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User> users_list = new List<ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User>();
-			for (int i = 0; i < context.Length("ListUsersOfSkillGroup.Users.List.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListUsersOfSkillGroup.Users.List.Length"); i++) {
 				ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User user = new ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User();
-				user.UserId = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].UserId");
-				user.RamId = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].RamId");
-				user.InstanceId = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].InstanceId");
+				user.UserId = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].UserId");
+				user.RamId = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].RamId");
+				user.InstanceId = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].InstanceId");
 
 				ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User.ListUsersOfSkillGroup_Detail detail = new ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User.ListUsersOfSkillGroup_Detail();
-				detail.LoginName = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Detail.LoginName");
-				detail.DisplayName = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Detail.DisplayName");
-				detail.Phone = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Detail.Phone");
-				detail.Email = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Detail.Email");
-				detail.Department = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Detail.Department");
+				detail.LoginName = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Detail.LoginName");
+				detail.DisplayName = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Detail.DisplayName");
+				detail.Phone = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Detail.Phone");
+				detail.Email = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Detail.Email");
+				detail.Department = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Detail.Department");
 				user.Detail = detail;
 
 				List<ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User.ListUsersOfSkillGroup_Role> user_roles = new List<ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User.ListUsersOfSkillGroup_Role>();
-				for (int j = 0; j < context.Length("ListUsersOfSkillGroup.Users.List["+ i +"].Roles.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("ListUsersOfSkillGroup.Users.List["+ i +"].Roles.Length"); j++) {
 					ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User.ListUsersOfSkillGroup_Role role = new ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User.ListUsersOfSkillGroup_Role();
-					role.RoleId = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Roles["+ j +"].RoleId");
-					role.InstanceId = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Roles["+ j +"].InstanceId");
-					role.RoleName = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Roles["+ j +"].RoleName");
-					role.RoleDescription = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Roles["+ j +"].RoleDescription");
-					role.UserCount = context.IntegerValue("ListUsersOfSkillGroup.Users.List["+ i +"].Roles["+ j +"].UserCount");
+					role.RoleId = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Roles["+ j +"].RoleId");
+					role.InstanceId = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Roles["+ j +"].InstanceId");
+					role.RoleName = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Roles["+ j +"].RoleName");
+					role.RoleDescription = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Roles["+ j +"].RoleDescription");
+					role.UserCount = _ctx.IntegerValue("ListUsersOfSkillGroup.Users.List["+ i +"].Roles["+ j +"].UserCount");
 
 					List<ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User.ListUsersOfSkillGroup_Role.ListUsersOfSkillGroup_Privilege> role_privileges = new List<ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User.ListUsersOfSkillGroup_Role.ListUsersOfSkillGroup_Privilege>();
-					for (int k = 0; k < context.Length("ListUsersOfSkillGroup.Users.List["+ i +"].Roles["+ j +"].Privileges.Length"); k++) {
+					for (int k = 0; k < _ctx.Length("ListUsersOfSkillGroup.Users.List["+ i +"].Roles["+ j +"].Privileges.Length"); k++) {
 						ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User.ListUsersOfSkillGroup_Role.ListUsersOfSkillGroup_Privilege privilege = new ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User.ListUsersOfSkillGroup_Role.ListUsersOfSkillGroup_Privilege();
-						privilege.PrivilegeId = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Roles["+ j +"].Privileges["+ k +"].PrivilegeId");
-						privilege.PrivilegeName = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Roles["+ j +"].Privileges["+ k +"].PrivilegeName");
-						privilege.PrivilegeDescription = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Roles["+ j +"].Privileges["+ k +"].PrivilegeDescription");
+						privilege.PrivilegeId = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Roles["+ j +"].Privileges["+ k +"].PrivilegeId");
+						privilege.PrivilegeName = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Roles["+ j +"].Privileges["+ k +"].PrivilegeName");
+						privilege.PrivilegeDescription = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].Roles["+ j +"].Privileges["+ k +"].PrivilegeDescription");
 
 						role_privileges.Add(privilege);
 					}
@@ -82,16 +82,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				user.Roles = user_roles;
 
 				List<ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User.ListUsersOfSkillGroup_SkillLevel> user_skillLevels = new List<ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User.ListUsersOfSkillGroup_SkillLevel>();
-				for (int j = 0; j < context.Length("ListUsersOfSkillGroup.Users.List["+ i +"].SkillLevels.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("ListUsersOfSkillGroup.Users.List["+ i +"].SkillLevels.Length"); j++) {
 					ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User.ListUsersOfSkillGroup_SkillLevel skillLevel = new ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User.ListUsersOfSkillGroup_SkillLevel();
-					skillLevel.SkillLevelId = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].SkillLevels["+ j +"].SkillLevelId");
-					skillLevel.Level = context.IntegerValue("ListUsersOfSkillGroup.Users.List["+ i +"].SkillLevels["+ j +"].Level");
+					skillLevel.SkillLevelId = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].SkillLevels["+ j +"].SkillLevelId");
+					skillLevel.Level = _ctx.IntegerValue("ListUsersOfSkillGroup.Users.List["+ i +"].SkillLevels["+ j +"].Level");
 
 					ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User.ListUsersOfSkillGroup_SkillLevel.ListUsersOfSkillGroup_Skill skill = new ListUsersOfSkillGroupResponse.ListUsersOfSkillGroup_Users.ListUsersOfSkillGroup_User.ListUsersOfSkillGroup_SkillLevel.ListUsersOfSkillGroup_Skill();
-					skill.SkillGroupId = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupId");
-					skill.InstanceId = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].SkillLevels["+ j +"].Skill.InstanceId");
-					skill.SkillGroupName = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupName");
-					skill.SkillGroupDescription = context.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupDescription");
+					skill.SkillGroupId = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupId");
+					skill.InstanceId = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].SkillLevels["+ j +"].Skill.InstanceId");
+					skill.SkillGroupName = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupName");
+					skill.SkillGroupDescription = _ctx.StringValue("ListUsersOfSkillGroup.Users.List["+ i +"].SkillLevels["+ j +"].Skill.SkillGroupDescription");
 					skillLevel.Skill = skill;
 
 					user_skillLevels.Add(skillLevel);

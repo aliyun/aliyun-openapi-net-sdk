@@ -26,30 +26,30 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class GetConversationListResponseUnmarshaller
     {
-        public static GetConversationListResponse Unmarshall(UnmarshallerContext context)
+        public static GetConversationListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetConversationListResponse getConversationListResponse = new GetConversationListResponse();
 
-			getConversationListResponse.HttpResponse = context.HttpResponse;
-			getConversationListResponse.RequestId = context.StringValue("GetConversationList.RequestId");
-			getConversationListResponse.Success = context.BooleanValue("GetConversationList.Success");
-			getConversationListResponse.Code = context.StringValue("GetConversationList.Code");
-			getConversationListResponse.Message = context.StringValue("GetConversationList.Message");
-			getConversationListResponse.HttpStatusCode = context.IntegerValue("GetConversationList.HttpStatusCode");
+			getConversationListResponse.HttpResponse = _ctx.HttpResponse;
+			getConversationListResponse.RequestId = _ctx.StringValue("GetConversationList.RequestId");
+			getConversationListResponse.Success = _ctx.BooleanValue("GetConversationList.Success");
+			getConversationListResponse.Code = _ctx.StringValue("GetConversationList.Code");
+			getConversationListResponse.Message = _ctx.StringValue("GetConversationList.Message");
+			getConversationListResponse.HttpStatusCode = _ctx.IntegerValue("GetConversationList.HttpStatusCode");
 
 			List<GetConversationListResponse.GetConversationList_ConversationDetail> getConversationListResponse_conversations = new List<GetConversationListResponse.GetConversationList_ConversationDetail>();
-			for (int i = 0; i < context.Length("GetConversationList.Conversations.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetConversationList.Conversations.Length"); i++) {
 				GetConversationListResponse.GetConversationList_ConversationDetail conversationDetail = new GetConversationListResponse.GetConversationList_ConversationDetail();
-				conversationDetail.Timestamp = context.LongValue("GetConversationList.Conversations["+ i +"].Timestamp");
-				conversationDetail.Speaker = context.StringValue("GetConversationList.Conversations["+ i +"].Speaker");
-				conversationDetail.Script = context.StringValue("GetConversationList.Conversations["+ i +"].Script");
+				conversationDetail.Timestamp = _ctx.LongValue("GetConversationList.Conversations["+ i +"].Timestamp");
+				conversationDetail.Speaker = _ctx.StringValue("GetConversationList.Conversations["+ i +"].Speaker");
+				conversationDetail.Script = _ctx.StringValue("GetConversationList.Conversations["+ i +"].Script");
 
 				List<GetConversationListResponse.GetConversationList_ConversationDetail.GetConversationList_SummaryItem> conversationDetail_summary = new List<GetConversationListResponse.GetConversationList_ConversationDetail.GetConversationList_SummaryItem>();
-				for (int j = 0; j < context.Length("GetConversationList.Conversations["+ i +"].Summary.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("GetConversationList.Conversations["+ i +"].Summary.Length"); j++) {
 					GetConversationListResponse.GetConversationList_ConversationDetail.GetConversationList_SummaryItem summaryItem = new GetConversationListResponse.GetConversationList_ConversationDetail.GetConversationList_SummaryItem();
-					summaryItem.Category = context.StringValue("GetConversationList.Conversations["+ i +"].Summary["+ j +"].Category");
-					summaryItem.SummaryName = context.StringValue("GetConversationList.Conversations["+ i +"].Summary["+ j +"].SummaryName");
-					summaryItem.Content = context.StringValue("GetConversationList.Conversations["+ i +"].Summary["+ j +"].Content");
+					summaryItem.Category = _ctx.StringValue("GetConversationList.Conversations["+ i +"].Summary["+ j +"].Category");
+					summaryItem.SummaryName = _ctx.StringValue("GetConversationList.Conversations["+ i +"].Summary["+ j +"].SummaryName");
+					summaryItem.Content = _ctx.StringValue("GetConversationList.Conversations["+ i +"].Summary["+ j +"].Content");
 
 					conversationDetail_summary.Add(summaryItem);
 				}

@@ -26,17 +26,17 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class TaskPreparingResponseUnmarshaller
     {
-        public static TaskPreparingResponse Unmarshall(UnmarshallerContext context)
+        public static TaskPreparingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TaskPreparingResponse taskPreparingResponse = new TaskPreparingResponse();
 
-			taskPreparingResponse.HttpResponse = context.HttpResponse;
-			taskPreparingResponse.RequestId = context.StringValue("TaskPreparing.RequestId");
-			taskPreparingResponse.Success = context.BooleanValue("TaskPreparing.Success");
-			taskPreparingResponse.Code = context.StringValue("TaskPreparing.Code");
-			taskPreparingResponse.Message = context.StringValue("TaskPreparing.Message");
-			taskPreparingResponse.HttpStatusCode = context.IntegerValue("TaskPreparing.HttpStatusCode");
-			taskPreparingResponse.TaskId = context.StringValue("TaskPreparing.TaskId");
+			taskPreparingResponse.HttpResponse = _ctx.HttpResponse;
+			taskPreparingResponse.RequestId = _ctx.StringValue("TaskPreparing.RequestId");
+			taskPreparingResponse.Success = _ctx.BooleanValue("TaskPreparing.Success");
+			taskPreparingResponse.Code = _ctx.StringValue("TaskPreparing.Code");
+			taskPreparingResponse.Message = _ctx.StringValue("TaskPreparing.Message");
+			taskPreparingResponse.HttpStatusCode = _ctx.IntegerValue("TaskPreparing.HttpStatusCode");
+			taskPreparingResponse.TaskId = _ctx.StringValue("TaskPreparing.TaskId");
         
 			return taskPreparingResponse;
         }

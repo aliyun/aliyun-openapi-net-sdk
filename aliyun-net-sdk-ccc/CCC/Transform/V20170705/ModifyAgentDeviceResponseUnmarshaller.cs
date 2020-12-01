@@ -26,16 +26,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class ModifyAgentDeviceResponseUnmarshaller
     {
-        public static ModifyAgentDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyAgentDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyAgentDeviceResponse modifyAgentDeviceResponse = new ModifyAgentDeviceResponse();
 
-			modifyAgentDeviceResponse.HttpResponse = context.HttpResponse;
-			modifyAgentDeviceResponse.RequestId = context.StringValue("ModifyAgentDevice.RequestId");
-			modifyAgentDeviceResponse.Success = context.BooleanValue("ModifyAgentDevice.Success");
-			modifyAgentDeviceResponse.Code = context.StringValue("ModifyAgentDevice.Code");
-			modifyAgentDeviceResponse.Message = context.StringValue("ModifyAgentDevice.Message");
-			modifyAgentDeviceResponse.HttpStatusCode = context.IntegerValue("ModifyAgentDevice.HttpStatusCode");
+			modifyAgentDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			modifyAgentDeviceResponse.RequestId = _ctx.StringValue("ModifyAgentDevice.RequestId");
+			modifyAgentDeviceResponse.Success = _ctx.BooleanValue("ModifyAgentDevice.Success");
+			modifyAgentDeviceResponse.Code = _ctx.StringValue("ModifyAgentDevice.Code");
+			modifyAgentDeviceResponse.Message = _ctx.StringValue("ModifyAgentDevice.Message");
+			modifyAgentDeviceResponse.HttpStatusCode = _ctx.IntegerValue("ModifyAgentDevice.HttpStatusCode");
         
 			return modifyAgentDeviceResponse;
         }

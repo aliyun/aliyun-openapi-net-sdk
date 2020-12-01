@@ -26,24 +26,24 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class ListRolesResponseUnmarshaller
     {
-        public static ListRolesResponse Unmarshall(UnmarshallerContext context)
+        public static ListRolesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListRolesResponse listRolesResponse = new ListRolesResponse();
 
-			listRolesResponse.HttpResponse = context.HttpResponse;
-			listRolesResponse.RequestId = context.StringValue("ListRoles.RequestId");
-			listRolesResponse.Success = context.BooleanValue("ListRoles.Success");
-			listRolesResponse.Code = context.StringValue("ListRoles.Code");
-			listRolesResponse.Message = context.StringValue("ListRoles.Message");
-			listRolesResponse.HttpStatusCode = context.IntegerValue("ListRoles.HttpStatusCode");
+			listRolesResponse.HttpResponse = _ctx.HttpResponse;
+			listRolesResponse.RequestId = _ctx.StringValue("ListRoles.RequestId");
+			listRolesResponse.Success = _ctx.BooleanValue("ListRoles.Success");
+			listRolesResponse.Code = _ctx.StringValue("ListRoles.Code");
+			listRolesResponse.Message = _ctx.StringValue("ListRoles.Message");
+			listRolesResponse.HttpStatusCode = _ctx.IntegerValue("ListRoles.HttpStatusCode");
 
 			List<ListRolesResponse.ListRoles_Role> listRolesResponse_roles = new List<ListRolesResponse.ListRoles_Role>();
-			for (int i = 0; i < context.Length("ListRoles.Roles.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListRoles.Roles.Length"); i++) {
 				ListRolesResponse.ListRoles_Role role = new ListRolesResponse.ListRoles_Role();
-				role.RoleId = context.StringValue("ListRoles.Roles["+ i +"].RoleId");
-				role.InstanceId = context.StringValue("ListRoles.Roles["+ i +"].InstanceId");
-				role.RoleName = context.StringValue("ListRoles.Roles["+ i +"].RoleName");
-				role.RoleDescription = context.StringValue("ListRoles.Roles["+ i +"].RoleDescription");
+				role.RoleId = _ctx.StringValue("ListRoles.Roles["+ i +"].RoleId");
+				role.InstanceId = _ctx.StringValue("ListRoles.Roles["+ i +"].InstanceId");
+				role.RoleName = _ctx.StringValue("ListRoles.Roles["+ i +"].RoleName");
+				role.RoleDescription = _ctx.StringValue("ListRoles.Roles["+ i +"].RoleDescription");
 
 				listRolesResponse_roles.Add(role);
 			}

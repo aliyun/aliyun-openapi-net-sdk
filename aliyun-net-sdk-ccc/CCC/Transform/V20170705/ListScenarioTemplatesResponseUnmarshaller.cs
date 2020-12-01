@@ -26,48 +26,48 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class ListScenarioTemplatesResponseUnmarshaller
     {
-        public static ListScenarioTemplatesResponse Unmarshall(UnmarshallerContext context)
+        public static ListScenarioTemplatesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListScenarioTemplatesResponse listScenarioTemplatesResponse = new ListScenarioTemplatesResponse();
 
-			listScenarioTemplatesResponse.HttpResponse = context.HttpResponse;
-			listScenarioTemplatesResponse.RequestId = context.StringValue("ListScenarioTemplates.RequestId");
-			listScenarioTemplatesResponse.Success = context.BooleanValue("ListScenarioTemplates.Success");
-			listScenarioTemplatesResponse.Code = context.StringValue("ListScenarioTemplates.Code");
-			listScenarioTemplatesResponse.Message = context.StringValue("ListScenarioTemplates.Message");
-			listScenarioTemplatesResponse.HttpStatusCode = context.IntegerValue("ListScenarioTemplates.HttpStatusCode");
+			listScenarioTemplatesResponse.HttpResponse = _ctx.HttpResponse;
+			listScenarioTemplatesResponse.RequestId = _ctx.StringValue("ListScenarioTemplates.RequestId");
+			listScenarioTemplatesResponse.Success = _ctx.BooleanValue("ListScenarioTemplates.Success");
+			listScenarioTemplatesResponse.Code = _ctx.StringValue("ListScenarioTemplates.Code");
+			listScenarioTemplatesResponse.Message = _ctx.StringValue("ListScenarioTemplates.Message");
+			listScenarioTemplatesResponse.HttpStatusCode = _ctx.IntegerValue("ListScenarioTemplates.HttpStatusCode");
 
 			List<ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario> listScenarioTemplatesResponse_scenarioTemplates = new List<ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario>();
-			for (int i = 0; i < context.Length("ListScenarioTemplates.ScenarioTemplates.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListScenarioTemplates.ScenarioTemplates.Length"); i++) {
 				ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario scenario = new ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario();
-				scenario.Id = context.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Id");
-				scenario.Name = context.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Name");
-				scenario.Description = context.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Description");
-				scenario.Type = context.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Type");
-				scenario.IsTemplate = context.BooleanValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].IsTemplate");
+				scenario.Id = _ctx.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Id");
+				scenario.Name = _ctx.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Name");
+				scenario.Description = _ctx.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Description");
+				scenario.Type = _ctx.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Type");
+				scenario.IsTemplate = _ctx.BooleanValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].IsTemplate");
 
 				List<ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario.ListScenarioTemplates_Survey> scenario_surveys = new List<ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario.ListScenarioTemplates_Survey>();
-				for (int j = 0; j < context.Length("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys.Length"); j++) {
 					ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario.ListScenarioTemplates_Survey survey = new ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario.ListScenarioTemplates_Survey();
-					survey.Id = context.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Id");
-					survey.Name = context.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Name");
-					survey.Description = context.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Description");
-					survey.Role = context.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Role");
-					survey.Round = context.IntegerValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Round");
-					survey.BeebotId = context.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].BeebotId");
-					survey.GlobalQuestions = context.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].GlobalQuestions");
+					survey.Id = _ctx.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Id");
+					survey.Name = _ctx.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Name");
+					survey.Description = _ctx.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Description");
+					survey.Role = _ctx.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Role");
+					survey.Round = _ctx.IntegerValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Round");
+					survey.BeebotId = _ctx.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].BeebotId");
+					survey.GlobalQuestions = _ctx.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].GlobalQuestions");
 
 					ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario.ListScenarioTemplates_Survey.ListScenarioTemplates_Flow flow = new ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario.ListScenarioTemplates_Survey.ListScenarioTemplates_Flow();
-					flow.FlowId = context.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Flow.FlowId");
-					flow.IsPublished = context.BooleanValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Flow.IsPublished");
-					flow.FlowJson = context.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Flow.FlowJson");
+					flow.FlowId = _ctx.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Flow.FlowId");
+					flow.IsPublished = _ctx.BooleanValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Flow.IsPublished");
+					flow.FlowJson = _ctx.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Flow.FlowJson");
 					survey.Flow = flow;
 
 					List<ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario.ListScenarioTemplates_Survey.ListScenarioTemplates_IntentNode> survey_intents = new List<ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario.ListScenarioTemplates_Survey.ListScenarioTemplates_IntentNode>();
-					for (int k = 0; k < context.Length("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Intents.Length"); k++) {
+					for (int k = 0; k < _ctx.Length("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Intents.Length"); k++) {
 						ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario.ListScenarioTemplates_Survey.ListScenarioTemplates_IntentNode intentNode = new ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario.ListScenarioTemplates_Survey.ListScenarioTemplates_IntentNode();
-						intentNode.NodeId = context.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Intents["+ k +"].NodeId");
-						intentNode.IntentId = context.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Intents["+ k +"].IntentId");
+						intentNode.NodeId = _ctx.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Intents["+ k +"].NodeId");
+						intentNode.IntentId = _ctx.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Surveys["+ j +"].Intents["+ k +"].IntentId");
 
 						survey_intents.Add(intentNode);
 					}
@@ -78,10 +78,10 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				scenario.Surveys = scenario_surveys;
 
 				List<ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario.ListScenarioTemplates_KeyValuePair> scenario_variables = new List<ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario.ListScenarioTemplates_KeyValuePair>();
-				for (int j = 0; j < context.Length("ListScenarioTemplates.ScenarioTemplates["+ i +"].Variables.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("ListScenarioTemplates.ScenarioTemplates["+ i +"].Variables.Length"); j++) {
 					ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario.ListScenarioTemplates_KeyValuePair keyValuePair = new ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario.ListScenarioTemplates_KeyValuePair();
-					keyValuePair.Key = context.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Variables["+ j +"].Key");
-					keyValuePair._Value = context.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Variables["+ j +"].Value");
+					keyValuePair.Key = _ctx.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Variables["+ j +"].Key");
+					keyValuePair._Value = _ctx.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Variables["+ j +"].Value");
 
 					scenario_variables.Add(keyValuePair);
 				}

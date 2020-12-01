@@ -26,27 +26,27 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class ListCallMeasureSummaryReportsResponseUnmarshaller
     {
-        public static ListCallMeasureSummaryReportsResponse Unmarshall(UnmarshallerContext context)
+        public static ListCallMeasureSummaryReportsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListCallMeasureSummaryReportsResponse listCallMeasureSummaryReportsResponse = new ListCallMeasureSummaryReportsResponse();
 
-			listCallMeasureSummaryReportsResponse.HttpResponse = context.HttpResponse;
-			listCallMeasureSummaryReportsResponse.RequestId = context.StringValue("ListCallMeasureSummaryReports.RequestId");
-			listCallMeasureSummaryReportsResponse.Success = context.BooleanValue("ListCallMeasureSummaryReports.Success");
-			listCallMeasureSummaryReportsResponse.Code = context.StringValue("ListCallMeasureSummaryReports.Code");
-			listCallMeasureSummaryReportsResponse.Message = context.StringValue("ListCallMeasureSummaryReports.Message");
-			listCallMeasureSummaryReportsResponse.HttpStatusCode = context.IntegerValue("ListCallMeasureSummaryReports.HttpStatusCode");
+			listCallMeasureSummaryReportsResponse.HttpResponse = _ctx.HttpResponse;
+			listCallMeasureSummaryReportsResponse.RequestId = _ctx.StringValue("ListCallMeasureSummaryReports.RequestId");
+			listCallMeasureSummaryReportsResponse.Success = _ctx.BooleanValue("ListCallMeasureSummaryReports.Success");
+			listCallMeasureSummaryReportsResponse.Code = _ctx.StringValue("ListCallMeasureSummaryReports.Code");
+			listCallMeasureSummaryReportsResponse.Message = _ctx.StringValue("ListCallMeasureSummaryReports.Message");
+			listCallMeasureSummaryReportsResponse.HttpStatusCode = _ctx.IntegerValue("ListCallMeasureSummaryReports.HttpStatusCode");
 
 			List<ListCallMeasureSummaryReportsResponse.ListCallMeasureSummaryReports_CallMeasureSummaryReport> listCallMeasureSummaryReportsResponse_callMeasureSummaryReportList = new List<ListCallMeasureSummaryReportsResponse.ListCallMeasureSummaryReports_CallMeasureSummaryReport>();
-			for (int i = 0; i < context.Length("ListCallMeasureSummaryReports.CallMeasureSummaryReportList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListCallMeasureSummaryReports.CallMeasureSummaryReportList.Length"); i++) {
 				ListCallMeasureSummaryReportsResponse.ListCallMeasureSummaryReports_CallMeasureSummaryReport callMeasureSummaryReport = new ListCallMeasureSummaryReportsResponse.ListCallMeasureSummaryReports_CallMeasureSummaryReport();
-				callMeasureSummaryReport.Year = context.StringValue("ListCallMeasureSummaryReports.CallMeasureSummaryReportList["+ i +"].Year");
-				callMeasureSummaryReport.Month = context.StringValue("ListCallMeasureSummaryReports.CallMeasureSummaryReportList["+ i +"].Month");
-				callMeasureSummaryReport.Day = context.StringValue("ListCallMeasureSummaryReports.CallMeasureSummaryReportList["+ i +"].Day");
-				callMeasureSummaryReport.InboundCount = context.LongValue("ListCallMeasureSummaryReports.CallMeasureSummaryReportList["+ i +"].InboundCount");
-				callMeasureSummaryReport.OutboundCount = context.LongValue("ListCallMeasureSummaryReports.CallMeasureSummaryReportList["+ i +"].OutboundCount");
-				callMeasureSummaryReport.OutboundDurationByMinute = context.LongValue("ListCallMeasureSummaryReports.CallMeasureSummaryReportList["+ i +"].OutboundDurationByMinute");
-				callMeasureSummaryReport.InboundDurationByMinute = context.LongValue("ListCallMeasureSummaryReports.CallMeasureSummaryReportList["+ i +"].InboundDurationByMinute");
+				callMeasureSummaryReport.Year = _ctx.StringValue("ListCallMeasureSummaryReports.CallMeasureSummaryReportList["+ i +"].Year");
+				callMeasureSummaryReport.Month = _ctx.StringValue("ListCallMeasureSummaryReports.CallMeasureSummaryReportList["+ i +"].Month");
+				callMeasureSummaryReport.Day = _ctx.StringValue("ListCallMeasureSummaryReports.CallMeasureSummaryReportList["+ i +"].Day");
+				callMeasureSummaryReport.InboundCount = _ctx.LongValue("ListCallMeasureSummaryReports.CallMeasureSummaryReportList["+ i +"].InboundCount");
+				callMeasureSummaryReport.OutboundCount = _ctx.LongValue("ListCallMeasureSummaryReports.CallMeasureSummaryReportList["+ i +"].OutboundCount");
+				callMeasureSummaryReport.OutboundDurationByMinute = _ctx.LongValue("ListCallMeasureSummaryReports.CallMeasureSummaryReportList["+ i +"].OutboundDurationByMinute");
+				callMeasureSummaryReport.InboundDurationByMinute = _ctx.LongValue("ListCallMeasureSummaryReports.CallMeasureSummaryReportList["+ i +"].InboundDurationByMinute");
 
 				listCallMeasureSummaryReportsResponse_callMeasureSummaryReportList.Add(callMeasureSummaryReport);
 			}

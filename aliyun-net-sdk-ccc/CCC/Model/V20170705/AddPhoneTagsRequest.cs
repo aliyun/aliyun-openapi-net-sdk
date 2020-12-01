@@ -35,9 +35,10 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.CCC.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.CCC.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string regionNameProvince;
@@ -53,6 +54,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 		private List<string> phoneNumberLists = new List<string>(){ };
 
 		private string serviceTag;
+
+		private string sipTag;
 
 		private string regionNameCity;
 
@@ -148,6 +151,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				serviceTag = value;
 				DictionaryUtil.Add(QueryParameters, "ServiceTag", value);
+			}
+		}
+
+		public string SipTag
+		{
+			get
+			{
+				return sipTag;
+			}
+			set	
+			{
+				sipTag = value;
+				DictionaryUtil.Add(QueryParameters, "SipTag", value);
 			}
 		}
 

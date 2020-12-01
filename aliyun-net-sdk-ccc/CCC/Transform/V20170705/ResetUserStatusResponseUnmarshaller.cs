@@ -26,16 +26,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class ResetUserStatusResponseUnmarshaller
     {
-        public static ResetUserStatusResponse Unmarshall(UnmarshallerContext context)
+        public static ResetUserStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResetUserStatusResponse resetUserStatusResponse = new ResetUserStatusResponse();
 
-			resetUserStatusResponse.HttpResponse = context.HttpResponse;
-			resetUserStatusResponse.RequestId = context.StringValue("ResetUserStatus.RequestId");
-			resetUserStatusResponse.Success = context.BooleanValue("ResetUserStatus.Success");
-			resetUserStatusResponse.Code = context.StringValue("ResetUserStatus.Code");
-			resetUserStatusResponse.Message = context.StringValue("ResetUserStatus.Message");
-			resetUserStatusResponse.HttpStatusCode = context.IntegerValue("ResetUserStatus.HttpStatusCode");
+			resetUserStatusResponse.HttpResponse = _ctx.HttpResponse;
+			resetUserStatusResponse.RequestId = _ctx.StringValue("ResetUserStatus.RequestId");
+			resetUserStatusResponse.Success = _ctx.BooleanValue("ResetUserStatus.Success");
+			resetUserStatusResponse.Code = _ctx.StringValue("ResetUserStatus.Code");
+			resetUserStatusResponse.Message = _ctx.StringValue("ResetUserStatus.Message");
+			resetUserStatusResponse.HttpStatusCode = _ctx.IntegerValue("ResetUserStatus.HttpStatusCode");
         
 			return resetUserStatusResponse;
         }

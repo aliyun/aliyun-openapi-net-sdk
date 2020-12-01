@@ -26,16 +26,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class ModifySkillGroupOutboundNumbersResponseUnmarshaller
     {
-        public static ModifySkillGroupOutboundNumbersResponse Unmarshall(UnmarshallerContext context)
+        public static ModifySkillGroupOutboundNumbersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifySkillGroupOutboundNumbersResponse modifySkillGroupOutboundNumbersResponse = new ModifySkillGroupOutboundNumbersResponse();
 
-			modifySkillGroupOutboundNumbersResponse.HttpResponse = context.HttpResponse;
-			modifySkillGroupOutboundNumbersResponse.RequestId = context.StringValue("ModifySkillGroupOutboundNumbers.RequestId");
-			modifySkillGroupOutboundNumbersResponse.Success = context.BooleanValue("ModifySkillGroupOutboundNumbers.Success");
-			modifySkillGroupOutboundNumbersResponse.Code = context.StringValue("ModifySkillGroupOutboundNumbers.Code");
-			modifySkillGroupOutboundNumbersResponse.Message = context.StringValue("ModifySkillGroupOutboundNumbers.Message");
-			modifySkillGroupOutboundNumbersResponse.HttpStatusCode = context.IntegerValue("ModifySkillGroupOutboundNumbers.HttpStatusCode");
+			modifySkillGroupOutboundNumbersResponse.HttpResponse = _ctx.HttpResponse;
+			modifySkillGroupOutboundNumbersResponse.RequestId = _ctx.StringValue("ModifySkillGroupOutboundNumbers.RequestId");
+			modifySkillGroupOutboundNumbersResponse.Success = _ctx.BooleanValue("ModifySkillGroupOutboundNumbers.Success");
+			modifySkillGroupOutboundNumbersResponse.Code = _ctx.StringValue("ModifySkillGroupOutboundNumbers.Code");
+			modifySkillGroupOutboundNumbersResponse.Message = _ctx.StringValue("ModifySkillGroupOutboundNumbers.Message");
+			modifySkillGroupOutboundNumbersResponse.HttpStatusCode = _ctx.IntegerValue("ModifySkillGroupOutboundNumbers.HttpStatusCode");
         
 			return modifySkillGroupOutboundNumbersResponse;
         }

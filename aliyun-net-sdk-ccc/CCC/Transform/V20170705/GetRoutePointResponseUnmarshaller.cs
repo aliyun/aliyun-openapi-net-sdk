@@ -26,19 +26,19 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class GetRoutePointResponseUnmarshaller
     {
-        public static GetRoutePointResponse Unmarshall(UnmarshallerContext context)
+        public static GetRoutePointResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetRoutePointResponse getRoutePointResponse = new GetRoutePointResponse();
 
-			getRoutePointResponse.HttpResponse = context.HttpResponse;
-			getRoutePointResponse.RequestId = context.StringValue("GetRoutePoint.RequestId");
-			getRoutePointResponse.Success = context.BooleanValue("GetRoutePoint.Success");
-			getRoutePointResponse.Code = context.StringValue("GetRoutePoint.Code");
-			getRoutePointResponse.Message = context.StringValue("GetRoutePoint.Message");
-			getRoutePointResponse.HttpStatusCode = context.IntegerValue("GetRoutePoint.HttpStatusCode");
-			getRoutePointResponse.StatusCode = context.StringValue("GetRoutePoint.StatusCode");
-			getRoutePointResponse.StatusDesc = context.StringValue("GetRoutePoint.StatusDesc");
-			getRoutePointResponse.RoutePoint = context.StringValue("GetRoutePoint.RoutePoint");
+			getRoutePointResponse.HttpResponse = _ctx.HttpResponse;
+			getRoutePointResponse.RequestId = _ctx.StringValue("GetRoutePoint.RequestId");
+			getRoutePointResponse.Success = _ctx.BooleanValue("GetRoutePoint.Success");
+			getRoutePointResponse.Code = _ctx.StringValue("GetRoutePoint.Code");
+			getRoutePointResponse.Message = _ctx.StringValue("GetRoutePoint.Message");
+			getRoutePointResponse.HttpStatusCode = _ctx.IntegerValue("GetRoutePoint.HttpStatusCode");
+			getRoutePointResponse.StatusCode = _ctx.StringValue("GetRoutePoint.StatusCode");
+			getRoutePointResponse.StatusDesc = _ctx.StringValue("GetRoutePoint.StatusDesc");
+			getRoutePointResponse.RoutePoint = _ctx.StringValue("GetRoutePoint.RoutePoint");
         
 			return getRoutePointResponse;
         }

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class AddPhoneTagsResponseUnmarshaller
     {
-        public static AddPhoneTagsResponse Unmarshall(UnmarshallerContext context)
+        public static AddPhoneTagsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddPhoneTagsResponse addPhoneTagsResponse = new AddPhoneTagsResponse();
 
-			addPhoneTagsResponse.HttpResponse = context.HttpResponse;
-			addPhoneTagsResponse.RequestId = context.StringValue("AddPhoneTags.RequestId");
-			addPhoneTagsResponse.Success = context.BooleanValue("AddPhoneTags.Success");
-			addPhoneTagsResponse.Code = context.StringValue("AddPhoneTags.Code");
-			addPhoneTagsResponse.Message = context.StringValue("AddPhoneTags.Message");
-			addPhoneTagsResponse.HttpStatusCode = context.IntegerValue("AddPhoneTags.HttpStatusCode");
+			addPhoneTagsResponse.HttpResponse = _ctx.HttpResponse;
+			addPhoneTagsResponse.RequestId = _ctx.StringValue("AddPhoneTags.RequestId");
+			addPhoneTagsResponse.Success = _ctx.BooleanValue("AddPhoneTags.Success");
+			addPhoneTagsResponse.Code = _ctx.StringValue("AddPhoneTags.Code");
+			addPhoneTagsResponse.Message = _ctx.StringValue("AddPhoneTags.Message");
+			addPhoneTagsResponse.HttpStatusCode = _ctx.IntegerValue("AddPhoneTags.HttpStatusCode");
         
 			return addPhoneTagsResponse;
         }

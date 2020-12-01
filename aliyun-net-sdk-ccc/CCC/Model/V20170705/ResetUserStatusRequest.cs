@@ -35,12 +35,15 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.CCC.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.CCC.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string instanceId;
+
+		private List<long?> ramIdLists = new List<long?>(){ };
 
 		public string InstanceId
 		{
@@ -52,6 +55,23 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public List<long?> RamIdLists
+		{
+			get
+			{
+				return ramIdLists;
+			}
+
+			set
+			{
+				ramIdLists = value;
+				for (int i = 0; i < ramIdLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"RamIdList." + (i + 1) , ramIdLists[i]);
+				}
 			}
 		}
 

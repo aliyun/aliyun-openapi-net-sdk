@@ -26,53 +26,53 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class GetUserResponseUnmarshaller
     {
-        public static GetUserResponse Unmarshall(UnmarshallerContext context)
+        public static GetUserResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetUserResponse getUserResponse = new GetUserResponse();
 
-			getUserResponse.HttpResponse = context.HttpResponse;
-			getUserResponse.RequestId = context.StringValue("GetUser.RequestId");
-			getUserResponse.Success = context.BooleanValue("GetUser.Success");
-			getUserResponse.Code = context.StringValue("GetUser.Code");
-			getUserResponse.Message = context.StringValue("GetUser.Message");
-			getUserResponse.HttpStatusCode = context.IntegerValue("GetUser.HttpStatusCode");
+			getUserResponse.HttpResponse = _ctx.HttpResponse;
+			getUserResponse.RequestId = _ctx.StringValue("GetUser.RequestId");
+			getUserResponse.Success = _ctx.BooleanValue("GetUser.Success");
+			getUserResponse.Code = _ctx.StringValue("GetUser.Code");
+			getUserResponse.Message = _ctx.StringValue("GetUser.Message");
+			getUserResponse.HttpStatusCode = _ctx.IntegerValue("GetUser.HttpStatusCode");
 
 			GetUserResponse.GetUser_User user = new GetUserResponse.GetUser_User();
-			user.UserId = context.StringValue("GetUser.User.UserId");
-			user.RamId = context.StringValue("GetUser.User.RamId");
-			user.InstanceId = context.StringValue("GetUser.User.InstanceId");
+			user.UserId = _ctx.StringValue("GetUser.User.UserId");
+			user.RamId = _ctx.StringValue("GetUser.User.RamId");
+			user.InstanceId = _ctx.StringValue("GetUser.User.InstanceId");
 
 			GetUserResponse.GetUser_User.GetUser_Detail detail = new GetUserResponse.GetUser_User.GetUser_Detail();
-			detail.LoginName = context.StringValue("GetUser.User.Detail.LoginName");
-			detail.DisplayName = context.StringValue("GetUser.User.Detail.DisplayName");
-			detail.Phone = context.StringValue("GetUser.User.Detail.Phone");
-			detail.Email = context.StringValue("GetUser.User.Detail.Email");
-			detail.Department = context.StringValue("GetUser.User.Detail.Department");
+			detail.LoginName = _ctx.StringValue("GetUser.User.Detail.LoginName");
+			detail.DisplayName = _ctx.StringValue("GetUser.User.Detail.DisplayName");
+			detail.Phone = _ctx.StringValue("GetUser.User.Detail.Phone");
+			detail.Email = _ctx.StringValue("GetUser.User.Detail.Email");
+			detail.Department = _ctx.StringValue("GetUser.User.Detail.Department");
 			user.Detail = detail;
 
 			List<GetUserResponse.GetUser_User.GetUser_Role> user_roles = new List<GetUserResponse.GetUser_User.GetUser_Role>();
-			for (int i = 0; i < context.Length("GetUser.User.Roles.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetUser.User.Roles.Length"); i++) {
 				GetUserResponse.GetUser_User.GetUser_Role role = new GetUserResponse.GetUser_User.GetUser_Role();
-				role.RoleId = context.StringValue("GetUser.User.Roles["+ i +"].RoleId");
-				role.InstanceId = context.StringValue("GetUser.User.Roles["+ i +"].InstanceId");
-				role.RoleName = context.StringValue("GetUser.User.Roles["+ i +"].RoleName");
-				role.RoleDescription = context.StringValue("GetUser.User.Roles["+ i +"].RoleDescription");
+				role.RoleId = _ctx.StringValue("GetUser.User.Roles["+ i +"].RoleId");
+				role.InstanceId = _ctx.StringValue("GetUser.User.Roles["+ i +"].InstanceId");
+				role.RoleName = _ctx.StringValue("GetUser.User.Roles["+ i +"].RoleName");
+				role.RoleDescription = _ctx.StringValue("GetUser.User.Roles["+ i +"].RoleDescription");
 
 				user_roles.Add(role);
 			}
 			user.Roles = user_roles;
 
 			List<GetUserResponse.GetUser_User.GetUser_SkillLevel> user_skillLevels = new List<GetUserResponse.GetUser_User.GetUser_SkillLevel>();
-			for (int i = 0; i < context.Length("GetUser.User.SkillLevels.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetUser.User.SkillLevels.Length"); i++) {
 				GetUserResponse.GetUser_User.GetUser_SkillLevel skillLevel = new GetUserResponse.GetUser_User.GetUser_SkillLevel();
-				skillLevel.SkillLevelId = context.StringValue("GetUser.User.SkillLevels["+ i +"].SkillLevelId");
-				skillLevel.Level = context.IntegerValue("GetUser.User.SkillLevels["+ i +"].Level");
+				skillLevel.SkillLevelId = _ctx.StringValue("GetUser.User.SkillLevels["+ i +"].SkillLevelId");
+				skillLevel.Level = _ctx.IntegerValue("GetUser.User.SkillLevels["+ i +"].Level");
 
 				GetUserResponse.GetUser_User.GetUser_SkillLevel.GetUser_Skill skill = new GetUserResponse.GetUser_User.GetUser_SkillLevel.GetUser_Skill();
-				skill.SkillGroupId = context.StringValue("GetUser.User.SkillLevels["+ i +"].Skill.SkillGroupId");
-				skill.InstanceId = context.StringValue("GetUser.User.SkillLevels["+ i +"].Skill.InstanceId");
-				skill.SkillGroupName = context.StringValue("GetUser.User.SkillLevels["+ i +"].Skill.SkillGroupName");
-				skill.SkillGroupDescription = context.StringValue("GetUser.User.SkillLevels["+ i +"].Skill.SkillGroupDescription");
+				skill.SkillGroupId = _ctx.StringValue("GetUser.User.SkillLevels["+ i +"].Skill.SkillGroupId");
+				skill.InstanceId = _ctx.StringValue("GetUser.User.SkillLevels["+ i +"].Skill.InstanceId");
+				skill.SkillGroupName = _ctx.StringValue("GetUser.User.SkillLevels["+ i +"].Skill.SkillGroupName");
+				skill.SkillGroupDescription = _ctx.StringValue("GetUser.User.SkillLevels["+ i +"].Skill.SkillGroupDescription");
 				skillLevel.Skill = skill;
 
 				user_skillLevels.Add(skillLevel);

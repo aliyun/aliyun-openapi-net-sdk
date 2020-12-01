@@ -26,20 +26,20 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class DialExResponseUnmarshaller
     {
-        public static DialExResponse Unmarshall(UnmarshallerContext context)
+        public static DialExResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DialExResponse dialExResponse = new DialExResponse();
 
-			dialExResponse.HttpResponse = context.HttpResponse;
-			dialExResponse.RequestId = context.StringValue("DialEx.RequestId");
-			dialExResponse.Success = context.BooleanValue("DialEx.Success");
-			dialExResponse.Code = context.StringValue("DialEx.Code");
-			dialExResponse.Message = context.StringValue("DialEx.Message");
-			dialExResponse.HttpStatusCode = context.IntegerValue("DialEx.HttpStatusCode");
-			dialExResponse.StatusCode = context.StringValue("DialEx.StatusCode");
-			dialExResponse.StatusDesc = context.StringValue("DialEx.StatusDesc");
-			dialExResponse.TaskId = context.StringValue("DialEx.TaskId");
-			dialExResponse.TimeStamp = context.StringValue("DialEx.TimeStamp");
+			dialExResponse.HttpResponse = _ctx.HttpResponse;
+			dialExResponse.RequestId = _ctx.StringValue("DialEx.RequestId");
+			dialExResponse.Success = _ctx.BooleanValue("DialEx.Success");
+			dialExResponse.Code = _ctx.StringValue("DialEx.Code");
+			dialExResponse.Message = _ctx.StringValue("DialEx.Message");
+			dialExResponse.HttpStatusCode = _ctx.IntegerValue("DialEx.HttpStatusCode");
+			dialExResponse.StatusCode = _ctx.StringValue("DialEx.StatusCode");
+			dialExResponse.StatusDesc = _ctx.StringValue("DialEx.StatusDesc");
+			dialExResponse.TaskId = _ctx.StringValue("DialEx.TaskId");
+			dialExResponse.TimeStamp = _ctx.StringValue("DialEx.TimeStamp");
         
 			return dialExResponse;
         }

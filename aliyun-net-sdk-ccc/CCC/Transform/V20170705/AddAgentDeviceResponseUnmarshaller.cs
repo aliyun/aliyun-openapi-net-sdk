@@ -26,17 +26,17 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class AddAgentDeviceResponseUnmarshaller
     {
-        public static AddAgentDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static AddAgentDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddAgentDeviceResponse addAgentDeviceResponse = new AddAgentDeviceResponse();
 
-			addAgentDeviceResponse.HttpResponse = context.HttpResponse;
-			addAgentDeviceResponse.RequestId = context.StringValue("AddAgentDevice.RequestId");
-			addAgentDeviceResponse.Success = context.BooleanValue("AddAgentDevice.Success");
-			addAgentDeviceResponse.Code = context.StringValue("AddAgentDevice.Code");
-			addAgentDeviceResponse.Message = context.StringValue("AddAgentDevice.Message");
-			addAgentDeviceResponse.HttpStatusCode = context.IntegerValue("AddAgentDevice.HttpStatusCode");
-			addAgentDeviceResponse.AgentDeviceId = context.LongValue("AddAgentDevice.AgentDeviceId");
+			addAgentDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			addAgentDeviceResponse.RequestId = _ctx.StringValue("AddAgentDevice.RequestId");
+			addAgentDeviceResponse.Success = _ctx.BooleanValue("AddAgentDevice.Success");
+			addAgentDeviceResponse.Code = _ctx.StringValue("AddAgentDevice.Code");
+			addAgentDeviceResponse.Message = _ctx.StringValue("AddAgentDevice.Message");
+			addAgentDeviceResponse.HttpStatusCode = _ctx.IntegerValue("AddAgentDevice.HttpStatusCode");
+			addAgentDeviceResponse.AgentDeviceId = _ctx.LongValue("AddAgentDevice.AgentDeviceId");
         
 			return addAgentDeviceResponse;
         }

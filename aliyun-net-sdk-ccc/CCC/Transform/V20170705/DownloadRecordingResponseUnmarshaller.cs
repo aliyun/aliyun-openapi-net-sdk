@@ -26,20 +26,20 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class DownloadRecordingResponseUnmarshaller
     {
-        public static DownloadRecordingResponse Unmarshall(UnmarshallerContext context)
+        public static DownloadRecordingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DownloadRecordingResponse downloadRecordingResponse = new DownloadRecordingResponse();
 
-			downloadRecordingResponse.HttpResponse = context.HttpResponse;
-			downloadRecordingResponse.RequestId = context.StringValue("DownloadRecording.RequestId");
-			downloadRecordingResponse.Success = context.BooleanValue("DownloadRecording.Success");
-			downloadRecordingResponse.Code = context.StringValue("DownloadRecording.Code");
-			downloadRecordingResponse.Message = context.StringValue("DownloadRecording.Message");
-			downloadRecordingResponse.HttpStatusCode = context.IntegerValue("DownloadRecording.HttpStatusCode");
+			downloadRecordingResponse.HttpResponse = _ctx.HttpResponse;
+			downloadRecordingResponse.RequestId = _ctx.StringValue("DownloadRecording.RequestId");
+			downloadRecordingResponse.Success = _ctx.BooleanValue("DownloadRecording.Success");
+			downloadRecordingResponse.Code = _ctx.StringValue("DownloadRecording.Code");
+			downloadRecordingResponse.Message = _ctx.StringValue("DownloadRecording.Message");
+			downloadRecordingResponse.HttpStatusCode = _ctx.IntegerValue("DownloadRecording.HttpStatusCode");
 
 			DownloadRecordingResponse.DownloadRecording_MediaDownloadParam mediaDownloadParam = new DownloadRecordingResponse.DownloadRecording_MediaDownloadParam();
-			mediaDownloadParam.SignatureUrl = context.StringValue("DownloadRecording.MediaDownloadParam.SignatureUrl");
-			mediaDownloadParam.FileName = context.StringValue("DownloadRecording.MediaDownloadParam.FileName");
+			mediaDownloadParam.SignatureUrl = _ctx.StringValue("DownloadRecording.MediaDownloadParam.SignatureUrl");
+			mediaDownloadParam.FileName = _ctx.StringValue("DownloadRecording.MediaDownloadParam.FileName");
 			downloadRecordingResponse.MediaDownloadParam = mediaDownloadParam;
         
 			return downloadRecordingResponse;

@@ -26,24 +26,24 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class CreateMediaResponseUnmarshaller
     {
-        public static CreateMediaResponse Unmarshall(UnmarshallerContext context)
+        public static CreateMediaResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateMediaResponse createMediaResponse = new CreateMediaResponse();
 
-			createMediaResponse.HttpResponse = context.HttpResponse;
-			createMediaResponse.RequestId = context.StringValue("CreateMedia.RequestId");
-			createMediaResponse.Success = context.BooleanValue("CreateMedia.Success");
-			createMediaResponse.Code = context.StringValue("CreateMedia.Code");
-			createMediaResponse.Message = context.StringValue("CreateMedia.Message");
-			createMediaResponse.HttpStatusCode = context.IntegerValue("CreateMedia.HttpStatusCode");
+			createMediaResponse.HttpResponse = _ctx.HttpResponse;
+			createMediaResponse.RequestId = _ctx.StringValue("CreateMedia.RequestId");
+			createMediaResponse.Success = _ctx.BooleanValue("CreateMedia.Success");
+			createMediaResponse.Code = _ctx.StringValue("CreateMedia.Code");
+			createMediaResponse.Message = _ctx.StringValue("CreateMedia.Message");
+			createMediaResponse.HttpStatusCode = _ctx.IntegerValue("CreateMedia.HttpStatusCode");
 
 			CreateMediaResponse.CreateMedia_MediaUploadParam mediaUploadParam = new CreateMediaResponse.CreateMedia_MediaUploadParam();
-			mediaUploadParam.Id = context.StringValue("CreateMedia.MediaUploadParam.Id");
-			mediaUploadParam.Instance = context.StringValue("CreateMedia.MediaUploadParam.Instance");
-			mediaUploadParam.Name = context.StringValue("CreateMedia.MediaUploadParam.Name");
-			mediaUploadParam.FileName = context.StringValue("CreateMedia.MediaUploadParam.FileName");
-			mediaUploadParam.OssFileName = context.StringValue("CreateMedia.MediaUploadParam.OssFileName");
-			mediaUploadParam.OssFilePath = context.StringValue("CreateMedia.MediaUploadParam.OssFilePath");
+			mediaUploadParam.Id = _ctx.StringValue("CreateMedia.MediaUploadParam.Id");
+			mediaUploadParam.Instance = _ctx.StringValue("CreateMedia.MediaUploadParam.Instance");
+			mediaUploadParam.Name = _ctx.StringValue("CreateMedia.MediaUploadParam.Name");
+			mediaUploadParam.FileName = _ctx.StringValue("CreateMedia.MediaUploadParam.FileName");
+			mediaUploadParam.OssFileName = _ctx.StringValue("CreateMedia.MediaUploadParam.OssFileName");
+			mediaUploadParam.OssFilePath = _ctx.StringValue("CreateMedia.MediaUploadParam.OssFilePath");
 			createMediaResponse.MediaUploadParam = mediaUploadParam;
         
 			return createMediaResponse;

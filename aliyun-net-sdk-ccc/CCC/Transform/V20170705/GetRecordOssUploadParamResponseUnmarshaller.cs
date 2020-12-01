@@ -26,23 +26,23 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class GetRecordOssUploadParamResponseUnmarshaller
     {
-        public static GetRecordOssUploadParamResponse Unmarshall(UnmarshallerContext context)
+        public static GetRecordOssUploadParamResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetRecordOssUploadParamResponse getRecordOssUploadParamResponse = new GetRecordOssUploadParamResponse();
 
-			getRecordOssUploadParamResponse.HttpResponse = context.HttpResponse;
-			getRecordOssUploadParamResponse.RequestId = context.StringValue("GetRecordOssUploadParam.RequestId");
-			getRecordOssUploadParamResponse.Success = context.BooleanValue("GetRecordOssUploadParam.Success");
-			getRecordOssUploadParamResponse.Code = context.StringValue("GetRecordOssUploadParam.Code");
-			getRecordOssUploadParamResponse.Message = context.StringValue("GetRecordOssUploadParam.Message");
-			getRecordOssUploadParamResponse.HttpStatusCode = context.IntegerValue("GetRecordOssUploadParam.HttpStatusCode");
-			getRecordOssUploadParamResponse.OssAccessKeyId = context.StringValue("GetRecordOssUploadParam.OssAccessKeyId");
-			getRecordOssUploadParamResponse.Policy = context.StringValue("GetRecordOssUploadParam.Policy");
-			getRecordOssUploadParamResponse.Signature = context.StringValue("GetRecordOssUploadParam.Signature");
-			getRecordOssUploadParamResponse.Expires = context.StringValue("GetRecordOssUploadParam.Expires");
-			getRecordOssUploadParamResponse.Dir = context.StringValue("GetRecordOssUploadParam.Dir");
-			getRecordOssUploadParamResponse.Host = context.StringValue("GetRecordOssUploadParam.Host");
-			getRecordOssUploadParamResponse.OssFileName = context.StringValue("GetRecordOssUploadParam.OssFileName");
+			getRecordOssUploadParamResponse.HttpResponse = _ctx.HttpResponse;
+			getRecordOssUploadParamResponse.RequestId = _ctx.StringValue("GetRecordOssUploadParam.RequestId");
+			getRecordOssUploadParamResponse.Success = _ctx.BooleanValue("GetRecordOssUploadParam.Success");
+			getRecordOssUploadParamResponse.Code = _ctx.StringValue("GetRecordOssUploadParam.Code");
+			getRecordOssUploadParamResponse.Message = _ctx.StringValue("GetRecordOssUploadParam.Message");
+			getRecordOssUploadParamResponse.HttpStatusCode = _ctx.IntegerValue("GetRecordOssUploadParam.HttpStatusCode");
+			getRecordOssUploadParamResponse.OssAccessKeyId = _ctx.StringValue("GetRecordOssUploadParam.OssAccessKeyId");
+			getRecordOssUploadParamResponse.Policy = _ctx.StringValue("GetRecordOssUploadParam.Policy");
+			getRecordOssUploadParamResponse.Signature = _ctx.StringValue("GetRecordOssUploadParam.Signature");
+			getRecordOssUploadParamResponse.Expires = _ctx.StringValue("GetRecordOssUploadParam.Expires");
+			getRecordOssUploadParamResponse.Dir = _ctx.StringValue("GetRecordOssUploadParam.Dir");
+			getRecordOssUploadParamResponse.Host = _ctx.StringValue("GetRecordOssUploadParam.Host");
+			getRecordOssUploadParamResponse.OssFileName = _ctx.StringValue("GetRecordOssUploadParam.OssFileName");
         
 			return getRecordOssUploadParamResponse;
         }

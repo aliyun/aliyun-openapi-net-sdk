@@ -26,17 +26,17 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class SaveWebRTCStatsResponseUnmarshaller
     {
-        public static SaveWebRTCStatsResponse Unmarshall(UnmarshallerContext context)
+        public static SaveWebRTCStatsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SaveWebRTCStatsResponse saveWebRTCStatsResponse = new SaveWebRTCStatsResponse();
 
-			saveWebRTCStatsResponse.HttpResponse = context.HttpResponse;
-			saveWebRTCStatsResponse.RequestId = context.StringValue("SaveWebRTCStats.RequestId");
-			saveWebRTCStatsResponse.Success = context.BooleanValue("SaveWebRTCStats.Success");
-			saveWebRTCStatsResponse.Code = context.StringValue("SaveWebRTCStats.Code");
-			saveWebRTCStatsResponse.Message = context.StringValue("SaveWebRTCStats.Message");
-			saveWebRTCStatsResponse.HttpStatusCode = context.IntegerValue("SaveWebRTCStats.HttpStatusCode");
-			saveWebRTCStatsResponse.RowCount = context.LongValue("SaveWebRTCStats.RowCount");
+			saveWebRTCStatsResponse.HttpResponse = _ctx.HttpResponse;
+			saveWebRTCStatsResponse.RequestId = _ctx.StringValue("SaveWebRTCStats.RequestId");
+			saveWebRTCStatsResponse.Success = _ctx.BooleanValue("SaveWebRTCStats.Success");
+			saveWebRTCStatsResponse.Code = _ctx.StringValue("SaveWebRTCStats.Code");
+			saveWebRTCStatsResponse.Message = _ctx.StringValue("SaveWebRTCStats.Message");
+			saveWebRTCStatsResponse.HttpStatusCode = _ctx.IntegerValue("SaveWebRTCStats.HttpStatusCode");
+			saveWebRTCStatsResponse.RowCount = _ctx.LongValue("SaveWebRTCStats.RowCount");
         
 			return saveWebRTCStatsResponse;
         }

@@ -334,6 +334,10 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 					private long? oneTransferCalls;
 
+					private string firstLogInTime;
+
+					private string lastLogOutTime;
+
 					public long? TotalCalls
 					{
 						get
@@ -535,6 +539,30 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 						set	
 						{
 							oneTransferCalls = value;
+						}
+					}
+
+					public string FirstLogInTime
+					{
+						get
+						{
+							return firstLogInTime;
+						}
+						set	
+						{
+							firstLogInTime = value;
+						}
+					}
+
+					public string LastLogOutTime
+					{
+						get
+						{
+							return lastLogOutTime;
+						}
+						set	
+						{
+							lastLogOutTime = value;
 						}
 					}
 				}

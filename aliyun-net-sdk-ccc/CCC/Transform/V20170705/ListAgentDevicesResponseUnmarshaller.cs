@@ -26,28 +26,28 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class ListAgentDevicesResponseUnmarshaller
     {
-        public static ListAgentDevicesResponse Unmarshall(UnmarshallerContext context)
+        public static ListAgentDevicesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListAgentDevicesResponse listAgentDevicesResponse = new ListAgentDevicesResponse();
 
-			listAgentDevicesResponse.HttpResponse = context.HttpResponse;
-			listAgentDevicesResponse.RequestId = context.StringValue("ListAgentDevices.RequestId");
-			listAgentDevicesResponse.Success = context.BooleanValue("ListAgentDevices.Success");
-			listAgentDevicesResponse.Code = context.StringValue("ListAgentDevices.Code");
-			listAgentDevicesResponse.Message = context.StringValue("ListAgentDevices.Message");
-			listAgentDevicesResponse.HttpStatusCode = context.IntegerValue("ListAgentDevices.HttpStatusCode");
+			listAgentDevicesResponse.HttpResponse = _ctx.HttpResponse;
+			listAgentDevicesResponse.RequestId = _ctx.StringValue("ListAgentDevices.RequestId");
+			listAgentDevicesResponse.Success = _ctx.BooleanValue("ListAgentDevices.Success");
+			listAgentDevicesResponse.Code = _ctx.StringValue("ListAgentDevices.Code");
+			listAgentDevicesResponse.Message = _ctx.StringValue("ListAgentDevices.Message");
+			listAgentDevicesResponse.HttpStatusCode = _ctx.IntegerValue("ListAgentDevices.HttpStatusCode");
 
 			List<ListAgentDevicesResponse.ListAgentDevices_AgentDevice> listAgentDevicesResponse_agentDeviceList = new List<ListAgentDevicesResponse.ListAgentDevices_AgentDevice>();
-			for (int i = 0; i < context.Length("ListAgentDevices.AgentDeviceList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListAgentDevices.AgentDeviceList.Length"); i++) {
 				ListAgentDevicesResponse.ListAgentDevices_AgentDevice agentDevice = new ListAgentDevicesResponse.ListAgentDevices_AgentDevice();
-				agentDevice.InstanceId = context.StringValue("ListAgentDevices.AgentDeviceList["+ i +"].InstanceId");
-				agentDevice.RamId = context.LongValue("ListAgentDevices.AgentDeviceList["+ i +"].RamId");
-				agentDevice.LoginTime = context.LongValue("ListAgentDevices.AgentDeviceList["+ i +"].LoginTime");
-				agentDevice.ClientIp = context.StringValue("ListAgentDevices.AgentDeviceList["+ i +"].ClientIp");
-				agentDevice.ClientPort = context.StringValue("ListAgentDevices.AgentDeviceList["+ i +"].ClientPort");
-				agentDevice.BrowserVersion = context.StringValue("ListAgentDevices.AgentDeviceList["+ i +"].BrowserVersion");
-				agentDevice.IsLogin = context.IntegerValue("ListAgentDevices.AgentDeviceList["+ i +"].IsLogin");
-				agentDevice.Remark = context.StringValue("ListAgentDevices.AgentDeviceList["+ i +"].Remark");
+				agentDevice.InstanceId = _ctx.StringValue("ListAgentDevices.AgentDeviceList["+ i +"].InstanceId");
+				agentDevice.RamId = _ctx.LongValue("ListAgentDevices.AgentDeviceList["+ i +"].RamId");
+				agentDevice.LoginTime = _ctx.LongValue("ListAgentDevices.AgentDeviceList["+ i +"].LoginTime");
+				agentDevice.ClientIp = _ctx.StringValue("ListAgentDevices.AgentDeviceList["+ i +"].ClientIp");
+				agentDevice.ClientPort = _ctx.StringValue("ListAgentDevices.AgentDeviceList["+ i +"].ClientPort");
+				agentDevice.BrowserVersion = _ctx.StringValue("ListAgentDevices.AgentDeviceList["+ i +"].BrowserVersion");
+				agentDevice.IsLogin = _ctx.IntegerValue("ListAgentDevices.AgentDeviceList["+ i +"].IsLogin");
+				agentDevice.Remark = _ctx.StringValue("ListAgentDevices.AgentDeviceList["+ i +"].Remark");
 
 				listAgentDevicesResponse_agentDeviceList.Add(agentDevice);
 			}

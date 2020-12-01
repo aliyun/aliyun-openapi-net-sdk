@@ -26,32 +26,32 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class ListAgentStatesResponseUnmarshaller
     {
-        public static ListAgentStatesResponse Unmarshall(UnmarshallerContext context)
+        public static ListAgentStatesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListAgentStatesResponse listAgentStatesResponse = new ListAgentStatesResponse();
 
-			listAgentStatesResponse.HttpResponse = context.HttpResponse;
-			listAgentStatesResponse.RequestId = context.StringValue("ListAgentStates.RequestId");
-			listAgentStatesResponse.Success = context.BooleanValue("ListAgentStates.Success");
-			listAgentStatesResponse.Code = context.StringValue("ListAgentStates.Code");
-			listAgentStatesResponse.Message = context.StringValue("ListAgentStates.Message");
-			listAgentStatesResponse.HttpStatusCode = context.IntegerValue("ListAgentStates.HttpStatusCode");
+			listAgentStatesResponse.HttpResponse = _ctx.HttpResponse;
+			listAgentStatesResponse.RequestId = _ctx.StringValue("ListAgentStates.RequestId");
+			listAgentStatesResponse.Success = _ctx.BooleanValue("ListAgentStates.Success");
+			listAgentStatesResponse.Code = _ctx.StringValue("ListAgentStates.Code");
+			listAgentStatesResponse.Message = _ctx.StringValue("ListAgentStates.Message");
+			listAgentStatesResponse.HttpStatusCode = _ctx.IntegerValue("ListAgentStates.HttpStatusCode");
 
 			ListAgentStatesResponse.ListAgentStates_Data data = new ListAgentStatesResponse.ListAgentStates_Data();
-			data.TotalCount = context.IntegerValue("ListAgentStates.Data.TotalCount");
-			data.PageNumber = context.IntegerValue("ListAgentStates.Data.PageNumber");
-			data.PageSize = context.IntegerValue("ListAgentStates.Data.PageSize");
+			data.TotalCount = _ctx.IntegerValue("ListAgentStates.Data.TotalCount");
+			data.PageNumber = _ctx.IntegerValue("ListAgentStates.Data.PageNumber");
+			data.PageSize = _ctx.IntegerValue("ListAgentStates.Data.PageSize");
 
 			List<ListAgentStatesResponse.ListAgentStates_Data.ListAgentStates_RealTimeAgentState> data_list = new List<ListAgentStatesResponse.ListAgentStates_Data.ListAgentStates_RealTimeAgentState>();
-			for (int i = 0; i < context.Length("ListAgentStates.Data.List.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListAgentStates.Data.List.Length"); i++) {
 				ListAgentStatesResponse.ListAgentStates_Data.ListAgentStates_RealTimeAgentState realTimeAgentState = new ListAgentStatesResponse.ListAgentStates_Data.ListAgentStates_RealTimeAgentState();
-				realTimeAgentState.InstanceId = context.StringValue("ListAgentStates.Data.List["+ i +"].InstanceId");
-				realTimeAgentState.AgentId = context.StringValue("ListAgentStates.Data.List["+ i +"].AgentId");
-				realTimeAgentState.LoginName = context.StringValue("ListAgentStates.Data.List["+ i +"].LoginName");
-				realTimeAgentState.AgentName = context.StringValue("ListAgentStates.Data.List["+ i +"].AgentName");
-				realTimeAgentState.State = context.StringValue("ListAgentStates.Data.List["+ i +"].State");
-				realTimeAgentState.Dn = context.StringValue("ListAgentStates.Data.List["+ i +"].Dn");
-				realTimeAgentState.StateDuration = context.StringValue("ListAgentStates.Data.List["+ i +"].StateDuration");
+				realTimeAgentState.InstanceId = _ctx.StringValue("ListAgentStates.Data.List["+ i +"].InstanceId");
+				realTimeAgentState.AgentId = _ctx.StringValue("ListAgentStates.Data.List["+ i +"].AgentId");
+				realTimeAgentState.LoginName = _ctx.StringValue("ListAgentStates.Data.List["+ i +"].LoginName");
+				realTimeAgentState.AgentName = _ctx.StringValue("ListAgentStates.Data.List["+ i +"].AgentName");
+				realTimeAgentState.State = _ctx.StringValue("ListAgentStates.Data.List["+ i +"].State");
+				realTimeAgentState.Dn = _ctx.StringValue("ListAgentStates.Data.List["+ i +"].Dn");
+				realTimeAgentState.StateDuration = _ctx.StringValue("ListAgentStates.Data.List["+ i +"].StateDuration");
 
 				data_list.Add(realTimeAgentState);
 			}

@@ -26,43 +26,43 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class GetCallMeasureSummaryReportResponseUnmarshaller
     {
-        public static GetCallMeasureSummaryReportResponse Unmarshall(UnmarshallerContext context)
+        public static GetCallMeasureSummaryReportResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetCallMeasureSummaryReportResponse getCallMeasureSummaryReportResponse = new GetCallMeasureSummaryReportResponse();
 
-			getCallMeasureSummaryReportResponse.HttpResponse = context.HttpResponse;
-			getCallMeasureSummaryReportResponse.RequestId = context.StringValue("GetCallMeasureSummaryReport.RequestId");
-			getCallMeasureSummaryReportResponse.Success = context.BooleanValue("GetCallMeasureSummaryReport.Success");
-			getCallMeasureSummaryReportResponse.Code = context.StringValue("GetCallMeasureSummaryReport.Code");
-			getCallMeasureSummaryReportResponse.Message = context.StringValue("GetCallMeasureSummaryReport.Message");
-			getCallMeasureSummaryReportResponse.HttpStatusCode = context.IntegerValue("GetCallMeasureSummaryReport.HttpStatusCode");
+			getCallMeasureSummaryReportResponse.HttpResponse = _ctx.HttpResponse;
+			getCallMeasureSummaryReportResponse.RequestId = _ctx.StringValue("GetCallMeasureSummaryReport.RequestId");
+			getCallMeasureSummaryReportResponse.Success = _ctx.BooleanValue("GetCallMeasureSummaryReport.Success");
+			getCallMeasureSummaryReportResponse.Code = _ctx.StringValue("GetCallMeasureSummaryReport.Code");
+			getCallMeasureSummaryReportResponse.Message = _ctx.StringValue("GetCallMeasureSummaryReport.Message");
+			getCallMeasureSummaryReportResponse.HttpStatusCode = _ctx.IntegerValue("GetCallMeasureSummaryReport.HttpStatusCode");
 
 			GetCallMeasureSummaryReportResponse.GetCallMeasureSummaryReport_SummaryReport summaryReport = new GetCallMeasureSummaryReportResponse.GetCallMeasureSummaryReport_SummaryReport();
-			summaryReport.Year = context.IntegerValue("GetCallMeasureSummaryReport.SummaryReport.Year");
-			summaryReport.Month = context.IntegerValue("GetCallMeasureSummaryReport.SummaryReport.Month");
-			summaryReport.Day = context.IntegerValue("GetCallMeasureSummaryReport.SummaryReport.Day");
-			summaryReport.InboundCount = context.LongValue("GetCallMeasureSummaryReport.SummaryReport.InboundCount");
-			summaryReport.OutboundCount = context.LongValue("GetCallMeasureSummaryReport.SummaryReport.OutboundCount");
-			summaryReport.OutboundDurationByMinute = context.LongValue("GetCallMeasureSummaryReport.SummaryReport.OutboundDurationByMinute");
-			summaryReport.InboundDurationByMinute = context.LongValue("GetCallMeasureSummaryReport.SummaryReport.InboundDurationByMinute");
+			summaryReport.Year = _ctx.IntegerValue("GetCallMeasureSummaryReport.SummaryReport.Year");
+			summaryReport.Month = _ctx.IntegerValue("GetCallMeasureSummaryReport.SummaryReport.Month");
+			summaryReport.Day = _ctx.IntegerValue("GetCallMeasureSummaryReport.SummaryReport.Day");
+			summaryReport.InboundCount = _ctx.LongValue("GetCallMeasureSummaryReport.SummaryReport.InboundCount");
+			summaryReport.OutboundCount = _ctx.LongValue("GetCallMeasureSummaryReport.SummaryReport.OutboundCount");
+			summaryReport.OutboundDurationByMinute = _ctx.LongValue("GetCallMeasureSummaryReport.SummaryReport.OutboundDurationByMinute");
+			summaryReport.InboundDurationByMinute = _ctx.LongValue("GetCallMeasureSummaryReport.SummaryReport.InboundDurationByMinute");
 			getCallMeasureSummaryReportResponse.SummaryReport = summaryReport;
 
 			GetCallMeasureSummaryReportResponse.GetCallMeasureSummaryReport_NumberReports numberReports = new GetCallMeasureSummaryReportResponse.GetCallMeasureSummaryReport_NumberReports();
-			numberReports.TotalCount = context.IntegerValue("GetCallMeasureSummaryReport.NumberReports.TotalCount");
-			numberReports.PageNumber = context.IntegerValue("GetCallMeasureSummaryReport.NumberReports.PageNumber");
-			numberReports.PageSize = context.IntegerValue("GetCallMeasureSummaryReport.NumberReports.PageSize");
+			numberReports.TotalCount = _ctx.IntegerValue("GetCallMeasureSummaryReport.NumberReports.TotalCount");
+			numberReports.PageNumber = _ctx.IntegerValue("GetCallMeasureSummaryReport.NumberReports.PageNumber");
+			numberReports.PageSize = _ctx.IntegerValue("GetCallMeasureSummaryReport.NumberReports.PageSize");
 
 			List<GetCallMeasureSummaryReportResponse.GetCallMeasureSummaryReport_NumberReports.GetCallMeasureSummaryReport_NumberReport> numberReports_list = new List<GetCallMeasureSummaryReportResponse.GetCallMeasureSummaryReport_NumberReports.GetCallMeasureSummaryReport_NumberReport>();
-			for (int i = 0; i < context.Length("GetCallMeasureSummaryReport.NumberReports.List.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetCallMeasureSummaryReport.NumberReports.List.Length"); i++) {
 				GetCallMeasureSummaryReportResponse.GetCallMeasureSummaryReport_NumberReports.GetCallMeasureSummaryReport_NumberReport numberReport = new GetCallMeasureSummaryReportResponse.GetCallMeasureSummaryReport_NumberReports.GetCallMeasureSummaryReport_NumberReport();
-				numberReport.Number = context.StringValue("GetCallMeasureSummaryReport.NumberReports.List["+ i +"].Number");
-				numberReport.Year = context.IntegerValue("GetCallMeasureSummaryReport.NumberReports.List["+ i +"].Year");
-				numberReport.Month = context.IntegerValue("GetCallMeasureSummaryReport.NumberReports.List["+ i +"].Month");
-				numberReport.Day = context.IntegerValue("GetCallMeasureSummaryReport.NumberReports.List["+ i +"].Day");
-				numberReport.InboundCount = context.LongValue("GetCallMeasureSummaryReport.NumberReports.List["+ i +"].InboundCount");
-				numberReport.OutboundCount = context.LongValue("GetCallMeasureSummaryReport.NumberReports.List["+ i +"].OutboundCount");
-				numberReport.OutboundDurationByMinute = context.LongValue("GetCallMeasureSummaryReport.NumberReports.List["+ i +"].OutboundDurationByMinute");
-				numberReport.InboundDurationByMinute = context.LongValue("GetCallMeasureSummaryReport.NumberReports.List["+ i +"].InboundDurationByMinute");
+				numberReport.Number = _ctx.StringValue("GetCallMeasureSummaryReport.NumberReports.List["+ i +"].Number");
+				numberReport.Year = _ctx.IntegerValue("GetCallMeasureSummaryReport.NumberReports.List["+ i +"].Year");
+				numberReport.Month = _ctx.IntegerValue("GetCallMeasureSummaryReport.NumberReports.List["+ i +"].Month");
+				numberReport.Day = _ctx.IntegerValue("GetCallMeasureSummaryReport.NumberReports.List["+ i +"].Day");
+				numberReport.InboundCount = _ctx.LongValue("GetCallMeasureSummaryReport.NumberReports.List["+ i +"].InboundCount");
+				numberReport.OutboundCount = _ctx.LongValue("GetCallMeasureSummaryReport.NumberReports.List["+ i +"].OutboundCount");
+				numberReport.OutboundDurationByMinute = _ctx.LongValue("GetCallMeasureSummaryReport.NumberReports.List["+ i +"].OutboundDurationByMinute");
+				numberReport.InboundDurationByMinute = _ctx.LongValue("GetCallMeasureSummaryReport.NumberReports.List["+ i +"].InboundDurationByMinute");
 
 				numberReports_list.Add(numberReport);
 			}

@@ -26,17 +26,17 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class SaveStatsResponseUnmarshaller
     {
-        public static SaveStatsResponse Unmarshall(UnmarshallerContext context)
+        public static SaveStatsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SaveStatsResponse saveStatsResponse = new SaveStatsResponse();
 
-			saveStatsResponse.HttpResponse = context.HttpResponse;
-			saveStatsResponse.RequestId = context.StringValue("SaveStats.RequestId");
-			saveStatsResponse.Success = context.BooleanValue("SaveStats.Success");
-			saveStatsResponse.Code = context.StringValue("SaveStats.Code");
-			saveStatsResponse.Message = context.StringValue("SaveStats.Message");
-			saveStatsResponse.HttpStatusCode = context.IntegerValue("SaveStats.HttpStatusCode");
-			saveStatsResponse.RowCount = context.LongValue("SaveStats.RowCount");
+			saveStatsResponse.HttpResponse = _ctx.HttpResponse;
+			saveStatsResponse.RequestId = _ctx.StringValue("SaveStats.RequestId");
+			saveStatsResponse.Success = _ctx.BooleanValue("SaveStats.Success");
+			saveStatsResponse.Code = _ctx.StringValue("SaveStats.Code");
+			saveStatsResponse.Message = _ctx.StringValue("SaveStats.Message");
+			saveStatsResponse.HttpStatusCode = _ctx.IntegerValue("SaveStats.HttpStatusCode");
+			saveStatsResponse.RowCount = _ctx.LongValue("SaveStats.RowCount");
         
 			return saveStatsResponse;
         }

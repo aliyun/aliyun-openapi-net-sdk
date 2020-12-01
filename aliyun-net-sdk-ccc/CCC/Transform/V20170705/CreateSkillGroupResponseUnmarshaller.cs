@@ -26,17 +26,17 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class CreateSkillGroupResponseUnmarshaller
     {
-        public static CreateSkillGroupResponse Unmarshall(UnmarshallerContext context)
+        public static CreateSkillGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateSkillGroupResponse createSkillGroupResponse = new CreateSkillGroupResponse();
 
-			createSkillGroupResponse.HttpResponse = context.HttpResponse;
-			createSkillGroupResponse.RequestId = context.StringValue("CreateSkillGroup.RequestId");
-			createSkillGroupResponse.Success = context.BooleanValue("CreateSkillGroup.Success");
-			createSkillGroupResponse.Code = context.StringValue("CreateSkillGroup.Code");
-			createSkillGroupResponse.Message = context.StringValue("CreateSkillGroup.Message");
-			createSkillGroupResponse.HttpStatusCode = context.IntegerValue("CreateSkillGroup.HttpStatusCode");
-			createSkillGroupResponse.SkillGroupId = context.StringValue("CreateSkillGroup.SkillGroupId");
+			createSkillGroupResponse.HttpResponse = _ctx.HttpResponse;
+			createSkillGroupResponse.RequestId = _ctx.StringValue("CreateSkillGroup.RequestId");
+			createSkillGroupResponse.Success = _ctx.BooleanValue("CreateSkillGroup.Success");
+			createSkillGroupResponse.Code = _ctx.StringValue("CreateSkillGroup.Code");
+			createSkillGroupResponse.Message = _ctx.StringValue("CreateSkillGroup.Message");
+			createSkillGroupResponse.HttpStatusCode = _ctx.IntegerValue("CreateSkillGroup.HttpStatusCode");
+			createSkillGroupResponse.SkillGroupId = _ctx.StringValue("CreateSkillGroup.SkillGroupId");
         
 			return createSkillGroupResponse;
         }

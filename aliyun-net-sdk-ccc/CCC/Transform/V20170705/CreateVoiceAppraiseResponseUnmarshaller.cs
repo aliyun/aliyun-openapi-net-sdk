@@ -26,16 +26,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class CreateVoiceAppraiseResponseUnmarshaller
     {
-        public static CreateVoiceAppraiseResponse Unmarshall(UnmarshallerContext context)
+        public static CreateVoiceAppraiseResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateVoiceAppraiseResponse createVoiceAppraiseResponse = new CreateVoiceAppraiseResponse();
 
-			createVoiceAppraiseResponse.HttpResponse = context.HttpResponse;
-			createVoiceAppraiseResponse.RequestId = context.StringValue("CreateVoiceAppraise.RequestId");
-			createVoiceAppraiseResponse.Success = context.BooleanValue("CreateVoiceAppraise.Success");
-			createVoiceAppraiseResponse.Code = context.StringValue("CreateVoiceAppraise.Code");
-			createVoiceAppraiseResponse.Message = context.StringValue("CreateVoiceAppraise.Message");
-			createVoiceAppraiseResponse.HttpStatusCode = context.IntegerValue("CreateVoiceAppraise.HttpStatusCode");
+			createVoiceAppraiseResponse.HttpResponse = _ctx.HttpResponse;
+			createVoiceAppraiseResponse.RequestId = _ctx.StringValue("CreateVoiceAppraise.RequestId");
+			createVoiceAppraiseResponse.Success = _ctx.BooleanValue("CreateVoiceAppraise.Success");
+			createVoiceAppraiseResponse.Code = _ctx.StringValue("CreateVoiceAppraise.Code");
+			createVoiceAppraiseResponse.Message = _ctx.StringValue("CreateVoiceAppraise.Message");
+			createVoiceAppraiseResponse.HttpStatusCode = _ctx.IntegerValue("CreateVoiceAppraise.HttpStatusCode");
         
 			return createVoiceAppraiseResponse;
         }

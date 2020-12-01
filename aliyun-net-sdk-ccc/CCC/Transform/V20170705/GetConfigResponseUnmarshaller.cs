@@ -26,20 +26,20 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class GetConfigResponseUnmarshaller
     {
-        public static GetConfigResponse Unmarshall(UnmarshallerContext context)
+        public static GetConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetConfigResponse getConfigResponse = new GetConfigResponse();
 
-			getConfigResponse.HttpResponse = context.HttpResponse;
-			getConfigResponse.RequestId = context.StringValue("GetConfig.RequestId");
-			getConfigResponse.Success = context.BooleanValue("GetConfig.Success");
-			getConfigResponse.Code = context.StringValue("GetConfig.Code");
-			getConfigResponse.Message = context.StringValue("GetConfig.Message");
-			getConfigResponse.HttpStatusCode = context.IntegerValue("GetConfig.HttpStatusCode");
+			getConfigResponse.HttpResponse = _ctx.HttpResponse;
+			getConfigResponse.RequestId = _ctx.StringValue("GetConfig.RequestId");
+			getConfigResponse.Success = _ctx.BooleanValue("GetConfig.Success");
+			getConfigResponse.Code = _ctx.StringValue("GetConfig.Code");
+			getConfigResponse.Message = _ctx.StringValue("GetConfig.Message");
+			getConfigResponse.HttpStatusCode = _ctx.IntegerValue("GetConfig.HttpStatusCode");
 
 			GetConfigResponse.GetConfig_ConfigItem configItem = new GetConfigResponse.GetConfig_ConfigItem();
-			configItem.Name = context.StringValue("GetConfig.ConfigItem.Name");
-			configItem._Value = context.StringValue("GetConfig.ConfigItem.Value");
+			configItem.Name = _ctx.StringValue("GetConfig.ConfigItem.Name");
+			configItem._Value = _ctx.StringValue("GetConfig.ConfigItem.Value");
 			getConfigResponse.ConfigItem = configItem;
         
 			return getConfigResponse;

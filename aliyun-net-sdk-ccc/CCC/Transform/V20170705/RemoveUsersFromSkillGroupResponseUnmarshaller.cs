@@ -26,16 +26,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class RemoveUsersFromSkillGroupResponseUnmarshaller
     {
-        public static RemoveUsersFromSkillGroupResponse Unmarshall(UnmarshallerContext context)
+        public static RemoveUsersFromSkillGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RemoveUsersFromSkillGroupResponse removeUsersFromSkillGroupResponse = new RemoveUsersFromSkillGroupResponse();
 
-			removeUsersFromSkillGroupResponse.HttpResponse = context.HttpResponse;
-			removeUsersFromSkillGroupResponse.RequestId = context.StringValue("RemoveUsersFromSkillGroup.RequestId");
-			removeUsersFromSkillGroupResponse.Success = context.BooleanValue("RemoveUsersFromSkillGroup.Success");
-			removeUsersFromSkillGroupResponse.Code = context.StringValue("RemoveUsersFromSkillGroup.Code");
-			removeUsersFromSkillGroupResponse.Message = context.StringValue("RemoveUsersFromSkillGroup.Message");
-			removeUsersFromSkillGroupResponse.HttpStatusCode = context.IntegerValue("RemoveUsersFromSkillGroup.HttpStatusCode");
+			removeUsersFromSkillGroupResponse.HttpResponse = _ctx.HttpResponse;
+			removeUsersFromSkillGroupResponse.RequestId = _ctx.StringValue("RemoveUsersFromSkillGroup.RequestId");
+			removeUsersFromSkillGroupResponse.Success = _ctx.BooleanValue("RemoveUsersFromSkillGroup.Success");
+			removeUsersFromSkillGroupResponse.Code = _ctx.StringValue("RemoveUsersFromSkillGroup.Code");
+			removeUsersFromSkillGroupResponse.Message = _ctx.StringValue("RemoveUsersFromSkillGroup.Message");
+			removeUsersFromSkillGroupResponse.HttpStatusCode = _ctx.IntegerValue("RemoveUsersFromSkillGroup.HttpStatusCode");
         
 			return removeUsersFromSkillGroupResponse;
         }

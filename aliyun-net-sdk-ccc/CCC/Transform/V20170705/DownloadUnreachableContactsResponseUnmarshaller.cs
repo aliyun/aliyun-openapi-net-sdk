@@ -26,19 +26,19 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class DownloadUnreachableContactsResponseUnmarshaller
     {
-        public static DownloadUnreachableContactsResponse Unmarshall(UnmarshallerContext context)
+        public static DownloadUnreachableContactsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DownloadUnreachableContactsResponse downloadUnreachableContactsResponse = new DownloadUnreachableContactsResponse();
 
-			downloadUnreachableContactsResponse.HttpResponse = context.HttpResponse;
-			downloadUnreachableContactsResponse.RequestId = context.StringValue("DownloadUnreachableContacts.RequestId");
-			downloadUnreachableContactsResponse.Success = context.BooleanValue("DownloadUnreachableContacts.Success");
-			downloadUnreachableContactsResponse.Code = context.StringValue("DownloadUnreachableContacts.Code");
-			downloadUnreachableContactsResponse.Message = context.StringValue("DownloadUnreachableContacts.Message");
-			downloadUnreachableContactsResponse.HttpStatusCode = context.IntegerValue("DownloadUnreachableContacts.HttpStatusCode");
+			downloadUnreachableContactsResponse.HttpResponse = _ctx.HttpResponse;
+			downloadUnreachableContactsResponse.RequestId = _ctx.StringValue("DownloadUnreachableContacts.RequestId");
+			downloadUnreachableContactsResponse.Success = _ctx.BooleanValue("DownloadUnreachableContacts.Success");
+			downloadUnreachableContactsResponse.Code = _ctx.StringValue("DownloadUnreachableContacts.Code");
+			downloadUnreachableContactsResponse.Message = _ctx.StringValue("DownloadUnreachableContacts.Message");
+			downloadUnreachableContactsResponse.HttpStatusCode = _ctx.IntegerValue("DownloadUnreachableContacts.HttpStatusCode");
 
 			DownloadUnreachableContactsResponse.DownloadUnreachableContacts_DownloadParams downloadParams = new DownloadUnreachableContactsResponse.DownloadUnreachableContacts_DownloadParams();
-			downloadParams.SignatureUrl = context.StringValue("DownloadUnreachableContacts.DownloadParams.SignatureUrl");
+			downloadParams.SignatureUrl = _ctx.StringValue("DownloadUnreachableContacts.DownloadParams.SignatureUrl");
 			downloadUnreachableContactsResponse.DownloadParams = downloadParams;
         
 			return downloadUnreachableContactsResponse;

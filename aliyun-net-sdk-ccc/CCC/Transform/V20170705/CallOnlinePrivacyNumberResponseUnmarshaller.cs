@@ -26,23 +26,23 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class CallOnlinePrivacyNumberResponseUnmarshaller
     {
-        public static CallOnlinePrivacyNumberResponse Unmarshall(UnmarshallerContext context)
+        public static CallOnlinePrivacyNumberResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CallOnlinePrivacyNumberResponse callOnlinePrivacyNumberResponse = new CallOnlinePrivacyNumberResponse();
 
-			callOnlinePrivacyNumberResponse.HttpResponse = context.HttpResponse;
-			callOnlinePrivacyNumberResponse.RequestId = context.StringValue("CallOnlinePrivacyNumber.RequestId");
-			callOnlinePrivacyNumberResponse.Success = context.BooleanValue("CallOnlinePrivacyNumber.Success");
-			callOnlinePrivacyNumberResponse.Code = context.StringValue("CallOnlinePrivacyNumber.Code");
-			callOnlinePrivacyNumberResponse.Message = context.StringValue("CallOnlinePrivacyNumber.Message");
-			callOnlinePrivacyNumberResponse.HttpStatusCode = context.IntegerValue("CallOnlinePrivacyNumber.HttpStatusCode");
+			callOnlinePrivacyNumberResponse.HttpResponse = _ctx.HttpResponse;
+			callOnlinePrivacyNumberResponse.RequestId = _ctx.StringValue("CallOnlinePrivacyNumber.RequestId");
+			callOnlinePrivacyNumberResponse.Success = _ctx.BooleanValue("CallOnlinePrivacyNumber.Success");
+			callOnlinePrivacyNumberResponse.Code = _ctx.StringValue("CallOnlinePrivacyNumber.Code");
+			callOnlinePrivacyNumberResponse.Message = _ctx.StringValue("CallOnlinePrivacyNumber.Message");
+			callOnlinePrivacyNumberResponse.HttpStatusCode = _ctx.IntegerValue("CallOnlinePrivacyNumber.HttpStatusCode");
 
 			CallOnlinePrivacyNumberResponse.CallOnlinePrivacyNumber_Data data = new CallOnlinePrivacyNumberResponse.CallOnlinePrivacyNumber_Data();
-			data.StatusCode = context.StringValue("CallOnlinePrivacyNumber.Data.StatusCode");
-			data.DateCreated = context.StringValue("CallOnlinePrivacyNumber.Data.DateCreated");
-			data.Represent = context.StringValue("CallOnlinePrivacyNumber.Data.Represent");
-			data.TelX = context.StringValue("CallOnlinePrivacyNumber.Data.TelX");
-			data.CallId = context.StringValue("CallOnlinePrivacyNumber.Data.CallId");
+			data.StatusCode = _ctx.StringValue("CallOnlinePrivacyNumber.Data.StatusCode");
+			data.DateCreated = _ctx.StringValue("CallOnlinePrivacyNumber.Data.DateCreated");
+			data.Represent = _ctx.StringValue("CallOnlinePrivacyNumber.Data.Represent");
+			data.TelX = _ctx.StringValue("CallOnlinePrivacyNumber.Data.TelX");
+			data.CallId = _ctx.StringValue("CallOnlinePrivacyNumber.Data.CallId");
 			callOnlinePrivacyNumberResponse.Data = data;
         
 			return callOnlinePrivacyNumberResponse;

@@ -26,37 +26,37 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class ModifySurveyResponseUnmarshaller
     {
-        public static ModifySurveyResponse Unmarshall(UnmarshallerContext context)
+        public static ModifySurveyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifySurveyResponse modifySurveyResponse = new ModifySurveyResponse();
 
-			modifySurveyResponse.HttpResponse = context.HttpResponse;
-			modifySurveyResponse.RequestId = context.StringValue("ModifySurvey.RequestId");
-			modifySurveyResponse.Success = context.BooleanValue("ModifySurvey.Success");
-			modifySurveyResponse.Code = context.StringValue("ModifySurvey.Code");
-			modifySurveyResponse.Message = context.StringValue("ModifySurvey.Message");
-			modifySurveyResponse.HttpStatusCode = context.IntegerValue("ModifySurvey.HttpStatusCode");
+			modifySurveyResponse.HttpResponse = _ctx.HttpResponse;
+			modifySurveyResponse.RequestId = _ctx.StringValue("ModifySurvey.RequestId");
+			modifySurveyResponse.Success = _ctx.BooleanValue("ModifySurvey.Success");
+			modifySurveyResponse.Code = _ctx.StringValue("ModifySurvey.Code");
+			modifySurveyResponse.Message = _ctx.StringValue("ModifySurvey.Message");
+			modifySurveyResponse.HttpStatusCode = _ctx.IntegerValue("ModifySurvey.HttpStatusCode");
 
 			ModifySurveyResponse.ModifySurvey_Survey survey = new ModifySurveyResponse.ModifySurvey_Survey();
-			survey.Id = context.StringValue("ModifySurvey.Survey.Id");
-			survey.ScenarioUuid = context.StringValue("ModifySurvey.Survey.ScenarioUuid");
-			survey.Name = context.StringValue("ModifySurvey.Survey.Name");
-			survey.Description = context.StringValue("ModifySurvey.Survey.Description");
-			survey.Role = context.StringValue("ModifySurvey.Survey.Role");
-			survey.Round = context.IntegerValue("ModifySurvey.Survey.Round");
-			survey.HotWords = context.StringValue("ModifySurvey.Survey.HotWords");
-			survey.SpeechOptimizationParam = context.StringValue("ModifySurvey.Survey.SpeechOptimizationParam");
-			survey.GlobalQuestions = context.StringValue("ModifySurvey.Survey.GlobalQuestions");
+			survey.Id = _ctx.StringValue("ModifySurvey.Survey.Id");
+			survey.ScenarioUuid = _ctx.StringValue("ModifySurvey.Survey.ScenarioUuid");
+			survey.Name = _ctx.StringValue("ModifySurvey.Survey.Name");
+			survey.Description = _ctx.StringValue("ModifySurvey.Survey.Description");
+			survey.Role = _ctx.StringValue("ModifySurvey.Survey.Role");
+			survey.Round = _ctx.IntegerValue("ModifySurvey.Survey.Round");
+			survey.HotWords = _ctx.StringValue("ModifySurvey.Survey.HotWords");
+			survey.SpeechOptimizationParam = _ctx.StringValue("ModifySurvey.Survey.SpeechOptimizationParam");
+			survey.GlobalQuestions = _ctx.StringValue("ModifySurvey.Survey.GlobalQuestions");
 
 			ModifySurveyResponse.ModifySurvey_Survey.ModifySurvey_Flow flow = new ModifySurveyResponse.ModifySurvey_Survey.ModifySurvey_Flow();
-			flow.FlowId = context.StringValue("ModifySurvey.Survey.Flow.FlowId");
-			flow.IsPublished = context.BooleanValue("ModifySurvey.Survey.Flow.IsPublished");
-			flow.FlowJson = context.StringValue("ModifySurvey.Survey.Flow.FlowJson");
+			flow.FlowId = _ctx.StringValue("ModifySurvey.Survey.Flow.FlowId");
+			flow.IsPublished = _ctx.BooleanValue("ModifySurvey.Survey.Flow.IsPublished");
+			flow.FlowJson = _ctx.StringValue("ModifySurvey.Survey.Flow.FlowJson");
 			survey.Flow = flow;
 
 			ModifySurveyResponse.ModifySurvey_Survey.ModifySurvey_AsrCustomModel asrCustomModel = new ModifySurveyResponse.ModifySurvey_Survey.ModifySurvey_AsrCustomModel();
-			asrCustomModel.Corpora = context.StringValue("ModifySurvey.Survey.AsrCustomModel.Corpora");
-			asrCustomModel.CustomModelStatus = context.IntegerValue("ModifySurvey.Survey.AsrCustomModel.CustomModelStatus");
+			asrCustomModel.Corpora = _ctx.StringValue("ModifySurvey.Survey.AsrCustomModel.Corpora");
+			asrCustomModel.CustomModelStatus = _ctx.IntegerValue("ModifySurvey.Survey.AsrCustomModel.CustomModelStatus");
 			survey.AsrCustomModel = asrCustomModel;
 			modifySurveyResponse.Survey = survey;
         

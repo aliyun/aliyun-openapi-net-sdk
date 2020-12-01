@@ -26,16 +26,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class PublishContactFlowVersionResponseUnmarshaller
     {
-        public static PublishContactFlowVersionResponse Unmarshall(UnmarshallerContext context)
+        public static PublishContactFlowVersionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PublishContactFlowVersionResponse publishContactFlowVersionResponse = new PublishContactFlowVersionResponse();
 
-			publishContactFlowVersionResponse.HttpResponse = context.HttpResponse;
-			publishContactFlowVersionResponse.RequestId = context.StringValue("PublishContactFlowVersion.RequestId");
-			publishContactFlowVersionResponse.Success = context.BooleanValue("PublishContactFlowVersion.Success");
-			publishContactFlowVersionResponse.Code = context.StringValue("PublishContactFlowVersion.Code");
-			publishContactFlowVersionResponse.Message = context.StringValue("PublishContactFlowVersion.Message");
-			publishContactFlowVersionResponse.HttpStatusCode = context.IntegerValue("PublishContactFlowVersion.HttpStatusCode");
+			publishContactFlowVersionResponse.HttpResponse = _ctx.HttpResponse;
+			publishContactFlowVersionResponse.RequestId = _ctx.StringValue("PublishContactFlowVersion.RequestId");
+			publishContactFlowVersionResponse.Success = _ctx.BooleanValue("PublishContactFlowVersion.Success");
+			publishContactFlowVersionResponse.Code = _ctx.StringValue("PublishContactFlowVersion.Code");
+			publishContactFlowVersionResponse.Message = _ctx.StringValue("PublishContactFlowVersion.Message");
+			publishContactFlowVersionResponse.HttpStatusCode = _ctx.IntegerValue("PublishContactFlowVersion.HttpStatusCode");
         
 			return publishContactFlowVersionResponse;
         }

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class PublishSurveyResponseUnmarshaller
     {
-        public static PublishSurveyResponse Unmarshall(UnmarshallerContext context)
+        public static PublishSurveyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PublishSurveyResponse publishSurveyResponse = new PublishSurveyResponse();
 
-			publishSurveyResponse.HttpResponse = context.HttpResponse;
-			publishSurveyResponse.RequestId = context.StringValue("PublishSurvey.RequestId");
-			publishSurveyResponse.Success = context.BooleanValue("PublishSurvey.Success");
-			publishSurveyResponse.Code = context.StringValue("PublishSurvey.Code");
-			publishSurveyResponse.Message = context.StringValue("PublishSurvey.Message");
-			publishSurveyResponse.HttpStatusCode = context.IntegerValue("PublishSurvey.HttpStatusCode");
+			publishSurveyResponse.HttpResponse = _ctx.HttpResponse;
+			publishSurveyResponse.RequestId = _ctx.StringValue("PublishSurvey.RequestId");
+			publishSurveyResponse.Success = _ctx.BooleanValue("PublishSurvey.Success");
+			publishSurveyResponse.Code = _ctx.StringValue("PublishSurvey.Code");
+			publishSurveyResponse.Message = _ctx.StringValue("PublishSurvey.Message");
+			publishSurveyResponse.HttpStatusCode = _ctx.IntegerValue("PublishSurvey.HttpStatusCode");
         
 			return publishSurveyResponse;
         }

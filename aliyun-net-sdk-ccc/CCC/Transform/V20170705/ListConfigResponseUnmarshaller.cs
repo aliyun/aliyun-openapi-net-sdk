@@ -26,22 +26,22 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class ListConfigResponseUnmarshaller
     {
-        public static ListConfigResponse Unmarshall(UnmarshallerContext context)
+        public static ListConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListConfigResponse listConfigResponse = new ListConfigResponse();
 
-			listConfigResponse.HttpResponse = context.HttpResponse;
-			listConfigResponse.RequestId = context.StringValue("ListConfig.RequestId");
-			listConfigResponse.Success = context.BooleanValue("ListConfig.Success");
-			listConfigResponse.Code = context.StringValue("ListConfig.Code");
-			listConfigResponse.Message = context.StringValue("ListConfig.Message");
-			listConfigResponse.HttpStatusCode = context.IntegerValue("ListConfig.HttpStatusCode");
+			listConfigResponse.HttpResponse = _ctx.HttpResponse;
+			listConfigResponse.RequestId = _ctx.StringValue("ListConfig.RequestId");
+			listConfigResponse.Success = _ctx.BooleanValue("ListConfig.Success");
+			listConfigResponse.Code = _ctx.StringValue("ListConfig.Code");
+			listConfigResponse.Message = _ctx.StringValue("ListConfig.Message");
+			listConfigResponse.HttpStatusCode = _ctx.IntegerValue("ListConfig.HttpStatusCode");
 
 			List<ListConfigResponse.ListConfig_ConfigItem> listConfigResponse_configItems = new List<ListConfigResponse.ListConfig_ConfigItem>();
-			for (int i = 0; i < context.Length("ListConfig.ConfigItems.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListConfig.ConfigItems.Length"); i++) {
 				ListConfigResponse.ListConfig_ConfigItem configItem = new ListConfigResponse.ListConfig_ConfigItem();
-				configItem.Name = context.StringValue("ListConfig.ConfigItems["+ i +"].Name");
-				configItem._Value = context.StringValue("ListConfig.ConfigItems["+ i +"].Value");
+				configItem.Name = _ctx.StringValue("ListConfig.ConfigItems["+ i +"].Name");
+				configItem._Value = _ctx.StringValue("ListConfig.ConfigItems["+ i +"].Value");
 
 				listConfigResponse_configItems.Add(configItem);
 			}

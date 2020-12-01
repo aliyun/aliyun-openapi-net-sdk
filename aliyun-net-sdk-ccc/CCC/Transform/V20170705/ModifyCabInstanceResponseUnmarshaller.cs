@@ -26,25 +26,25 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class ModifyCabInstanceResponseUnmarshaller
     {
-        public static ModifyCabInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyCabInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyCabInstanceResponse modifyCabInstanceResponse = new ModifyCabInstanceResponse();
 
-			modifyCabInstanceResponse.HttpResponse = context.HttpResponse;
-			modifyCabInstanceResponse.RequestId = context.StringValue("ModifyCabInstance.RequestId");
-			modifyCabInstanceResponse.Success = context.BooleanValue("ModifyCabInstance.Success");
-			modifyCabInstanceResponse.Code = context.StringValue("ModifyCabInstance.Code");
-			modifyCabInstanceResponse.Message = context.StringValue("ModifyCabInstance.Message");
-			modifyCabInstanceResponse.HttpStatusCode = context.IntegerValue("ModifyCabInstance.HttpStatusCode");
+			modifyCabInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			modifyCabInstanceResponse.RequestId = _ctx.StringValue("ModifyCabInstance.RequestId");
+			modifyCabInstanceResponse.Success = _ctx.BooleanValue("ModifyCabInstance.Success");
+			modifyCabInstanceResponse.Code = _ctx.StringValue("ModifyCabInstance.Code");
+			modifyCabInstanceResponse.Message = _ctx.StringValue("ModifyCabInstance.Message");
+			modifyCabInstanceResponse.HttpStatusCode = _ctx.IntegerValue("ModifyCabInstance.HttpStatusCode");
 
 			ModifyCabInstanceResponse.ModifyCabInstance_Instance instance = new ModifyCabInstanceResponse.ModifyCabInstance_Instance();
-			instance.InstanceId = context.StringValue("ModifyCabInstance.Instance.InstanceId");
-			instance.InstanceName = context.StringValue("ModifyCabInstance.Instance.InstanceName");
-			instance.InstanceDescription = context.StringValue("ModifyCabInstance.Instance.InstanceDescription");
-			instance.MaxConcurrentConversation = context.IntegerValue("ModifyCabInstance.Instance.MaxConcurrentConversation");
-			instance.Owner = context.StringValue("ModifyCabInstance.Instance.Owner");
-			instance.CreationTime = context.LongValue("ModifyCabInstance.Instance.CreationTime");
-			instance.CallCenterInstanceId = context.StringValue("ModifyCabInstance.Instance.CallCenterInstanceId");
+			instance.InstanceId = _ctx.StringValue("ModifyCabInstance.Instance.InstanceId");
+			instance.InstanceName = _ctx.StringValue("ModifyCabInstance.Instance.InstanceName");
+			instance.InstanceDescription = _ctx.StringValue("ModifyCabInstance.Instance.InstanceDescription");
+			instance.MaxConcurrentConversation = _ctx.IntegerValue("ModifyCabInstance.Instance.MaxConcurrentConversation");
+			instance.Owner = _ctx.StringValue("ModifyCabInstance.Instance.Owner");
+			instance.CreationTime = _ctx.LongValue("ModifyCabInstance.Instance.CreationTime");
+			instance.CallCenterInstanceId = _ctx.StringValue("ModifyCabInstance.Instance.CallCenterInstanceId");
 			modifyCabInstanceResponse.Instance = instance;
         
 			return modifyCabInstanceResponse;

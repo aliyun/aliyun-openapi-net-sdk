@@ -26,36 +26,36 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class RequestLoginInfoResponseUnmarshaller
     {
-        public static RequestLoginInfoResponse Unmarshall(UnmarshallerContext context)
+        public static RequestLoginInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RequestLoginInfoResponse requestLoginInfoResponse = new RequestLoginInfoResponse();
 
-			requestLoginInfoResponse.HttpResponse = context.HttpResponse;
-			requestLoginInfoResponse.RequestId = context.StringValue("RequestLoginInfo.RequestId");
-			requestLoginInfoResponse.Success = context.BooleanValue("RequestLoginInfo.Success");
-			requestLoginInfoResponse.Code = context.StringValue("RequestLoginInfo.Code");
-			requestLoginInfoResponse.Message = context.StringValue("RequestLoginInfo.Message");
-			requestLoginInfoResponse.HttpStatusCode = context.IntegerValue("RequestLoginInfo.HttpStatusCode");
+			requestLoginInfoResponse.HttpResponse = _ctx.HttpResponse;
+			requestLoginInfoResponse.RequestId = _ctx.StringValue("RequestLoginInfo.RequestId");
+			requestLoginInfoResponse.Success = _ctx.BooleanValue("RequestLoginInfo.Success");
+			requestLoginInfoResponse.Code = _ctx.StringValue("RequestLoginInfo.Code");
+			requestLoginInfoResponse.Message = _ctx.StringValue("RequestLoginInfo.Message");
+			requestLoginInfoResponse.HttpStatusCode = _ctx.IntegerValue("RequestLoginInfo.HttpStatusCode");
 
 			RequestLoginInfoResponse.RequestLoginInfo_LoginInfo loginInfo = new RequestLoginInfoResponse.RequestLoginInfo_LoginInfo();
-			loginInfo.UserName = context.StringValue("RequestLoginInfo.LoginInfo.UserName");
-			loginInfo.DisplayName = context.StringValue("RequestLoginInfo.LoginInfo.DisplayName");
-			loginInfo.PhoneNumber = context.StringValue("RequestLoginInfo.LoginInfo.PhoneNumber");
-			loginInfo.Region = context.StringValue("RequestLoginInfo.LoginInfo.Region");
-			loginInfo.WebRtcUrl = context.StringValue("RequestLoginInfo.LoginInfo.WebRtcUrl");
-			loginInfo.AgentServerUrl = context.StringValue("RequestLoginInfo.LoginInfo.AgentServerUrl");
-			loginInfo.Extension = context.StringValue("RequestLoginInfo.LoginInfo.Extension");
-			loginInfo.TenantId = context.StringValue("RequestLoginInfo.LoginInfo.TenantId");
-			loginInfo.Signature = context.StringValue("RequestLoginInfo.LoginInfo.Signature");
-			loginInfo.SignData = context.StringValue("RequestLoginInfo.LoginInfo.SignData");
+			loginInfo.UserName = _ctx.StringValue("RequestLoginInfo.LoginInfo.UserName");
+			loginInfo.DisplayName = _ctx.StringValue("RequestLoginInfo.LoginInfo.DisplayName");
+			loginInfo.PhoneNumber = _ctx.StringValue("RequestLoginInfo.LoginInfo.PhoneNumber");
+			loginInfo.Region = _ctx.StringValue("RequestLoginInfo.LoginInfo.Region");
+			loginInfo.WebRtcUrl = _ctx.StringValue("RequestLoginInfo.LoginInfo.WebRtcUrl");
+			loginInfo.AgentServerUrl = _ctx.StringValue("RequestLoginInfo.LoginInfo.AgentServerUrl");
+			loginInfo.Extension = _ctx.StringValue("RequestLoginInfo.LoginInfo.Extension");
+			loginInfo.TenantId = _ctx.StringValue("RequestLoginInfo.LoginInfo.TenantId");
+			loginInfo.Signature = _ctx.StringValue("RequestLoginInfo.LoginInfo.Signature");
+			loginInfo.SignData = _ctx.StringValue("RequestLoginInfo.LoginInfo.SignData");
 
 			List<RequestLoginInfoResponse.RequestLoginInfo_LoginInfo.RequestLoginInfo_Role> loginInfo_roles = new List<RequestLoginInfoResponse.RequestLoginInfo_LoginInfo.RequestLoginInfo_Role>();
-			for (int i = 0; i < context.Length("RequestLoginInfo.LoginInfo.Roles.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("RequestLoginInfo.LoginInfo.Roles.Length"); i++) {
 				RequestLoginInfoResponse.RequestLoginInfo_LoginInfo.RequestLoginInfo_Role role = new RequestLoginInfoResponse.RequestLoginInfo_LoginInfo.RequestLoginInfo_Role();
-				role.RoleId = context.StringValue("RequestLoginInfo.LoginInfo.Roles["+ i +"].RoleId");
-				role.InstanceId = context.StringValue("RequestLoginInfo.LoginInfo.Roles["+ i +"].InstanceId");
-				role.RoleName = context.StringValue("RequestLoginInfo.LoginInfo.Roles["+ i +"].RoleName");
-				role.RoleDescription = context.StringValue("RequestLoginInfo.LoginInfo.Roles["+ i +"].RoleDescription");
+				role.RoleId = _ctx.StringValue("RequestLoginInfo.LoginInfo.Roles["+ i +"].RoleId");
+				role.InstanceId = _ctx.StringValue("RequestLoginInfo.LoginInfo.Roles["+ i +"].InstanceId");
+				role.RoleName = _ctx.StringValue("RequestLoginInfo.LoginInfo.Roles["+ i +"].RoleName");
+				role.RoleDescription = _ctx.StringValue("RequestLoginInfo.LoginInfo.Roles["+ i +"].RoleDescription");
 
 				loginInfo_roles.Add(role);
 			}

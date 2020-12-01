@@ -26,16 +26,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 {
     public class SubmitCabRecordingResponseUnmarshaller
     {
-        public static SubmitCabRecordingResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitCabRecordingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitCabRecordingResponse submitCabRecordingResponse = new SubmitCabRecordingResponse();
 
-			submitCabRecordingResponse.HttpResponse = context.HttpResponse;
-			submitCabRecordingResponse.RequestId = context.StringValue("SubmitCabRecording.RequestId");
-			submitCabRecordingResponse.Success = context.BooleanValue("SubmitCabRecording.Success");
-			submitCabRecordingResponse.Code = context.StringValue("SubmitCabRecording.Code");
-			submitCabRecordingResponse.Message = context.StringValue("SubmitCabRecording.Message");
-			submitCabRecordingResponse.HttpStatusCode = context.IntegerValue("SubmitCabRecording.HttpStatusCode");
+			submitCabRecordingResponse.HttpResponse = _ctx.HttpResponse;
+			submitCabRecordingResponse.RequestId = _ctx.StringValue("SubmitCabRecording.RequestId");
+			submitCabRecordingResponse.Success = _ctx.BooleanValue("SubmitCabRecording.Success");
+			submitCabRecordingResponse.Code = _ctx.StringValue("SubmitCabRecording.Code");
+			submitCabRecordingResponse.Message = _ctx.StringValue("SubmitCabRecording.Message");
+			submitCabRecordingResponse.HttpStatusCode = _ctx.IntegerValue("SubmitCabRecording.HttpStatusCode");
         
 			return submitCabRecordingResponse;
         }
