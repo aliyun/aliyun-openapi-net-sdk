@@ -26,16 +26,16 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 {
     public class DebugBeginDialogueResponseUnmarshaller
     {
-        public static DebugBeginDialogueResponse Unmarshall(UnmarshallerContext context)
+        public static DebugBeginDialogueResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DebugBeginDialogueResponse debugBeginDialogueResponse = new DebugBeginDialogueResponse();
 
-			debugBeginDialogueResponse.HttpResponse = context.HttpResponse;
-			debugBeginDialogueResponse.RequestId = context.StringValue("DebugBeginDialogue.RequestId");
-			debugBeginDialogueResponse.TextResponse = context.StringValue("DebugBeginDialogue.TextResponse");
-			debugBeginDialogueResponse.Interruptible = context.BooleanValue("DebugBeginDialogue.Interruptible");
-			debugBeginDialogueResponse.Action = context.StringValue("DebugBeginDialogue.Action");
-			debugBeginDialogueResponse.ActionParams = context.StringValue("DebugBeginDialogue.ActionParams");
+			debugBeginDialogueResponse.HttpResponse = _ctx.HttpResponse;
+			debugBeginDialogueResponse.Action = _ctx.StringValue("DebugBeginDialogue.Action");
+			debugBeginDialogueResponse.ActionParams = _ctx.StringValue("DebugBeginDialogue.ActionParams");
+			debugBeginDialogueResponse.Interruptible = _ctx.BooleanValue("DebugBeginDialogue.Interruptible");
+			debugBeginDialogueResponse.RequestId = _ctx.StringValue("DebugBeginDialogue.RequestId");
+			debugBeginDialogueResponse.TextResponse = _ctx.StringValue("DebugBeginDialogue.TextResponse");
         
 			return debugBeginDialogueResponse;
         }

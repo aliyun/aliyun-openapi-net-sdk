@@ -27,19 +27,24 @@ using Aliyun.Acs.VoiceNavigator.Transform.V20180612;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 {
-    public class DescribeCategoryTreeRequest : RpcAcsRequest<DescribeCategoryTreeResponse>
+    public class AssociateChatbotInstanceRequest : RpcAcsRequest<AssociateChatbotInstanceResponse>
     {
-        public DescribeCategoryTreeRequest()
-            : base("VoiceNavigator", "2018-06-12", "DescribeCategoryTree", "voicebot", "openAPI")
+        public AssociateChatbotInstanceRequest()
+            : base("VoiceNavigator", "2018-06-12", "AssociateChatbotInstance", "voicebot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.VoiceNavigator.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.VoiceNavigator.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string instanceId;
+
+		private string chatbotInstanceId;
+
+		private string chatbotName;
 
 		public string InstanceId
 		{
@@ -54,14 +59,40 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
+		public string ChatbotInstanceId
+		{
+			get
+			{
+				return chatbotInstanceId;
+			}
+			set	
+			{
+				chatbotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "ChatbotInstanceId", value);
+			}
+		}
+
+		public string ChatbotName
+		{
+			get
+			{
+				return chatbotName;
+			}
+			set	
+			{
+				chatbotName = value;
+				DictionaryUtil.Add(QueryParameters, "ChatbotName", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DescribeCategoryTreeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override AssociateChatbotInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCategoryTreeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AssociateChatbotInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

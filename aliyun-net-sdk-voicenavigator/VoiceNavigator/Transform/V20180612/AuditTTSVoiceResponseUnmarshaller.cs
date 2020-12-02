@@ -26,13 +26,13 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 {
     public class AuditTTSVoiceResponseUnmarshaller
     {
-        public static AuditTTSVoiceResponse Unmarshall(UnmarshallerContext context)
+        public static AuditTTSVoiceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AuditTTSVoiceResponse auditTTSVoiceResponse = new AuditTTSVoiceResponse();
 
-			auditTTSVoiceResponse.HttpResponse = context.HttpResponse;
-			auditTTSVoiceResponse.RequestId = context.StringValue("AuditTTSVoice.RequestId");
-			auditTTSVoiceResponse.AuditionUrl = context.StringValue("AuditTTSVoice.AuditionUrl");
+			auditTTSVoiceResponse.HttpResponse = _ctx.HttpResponse;
+			auditTTSVoiceResponse.RequestId = _ctx.StringValue("AuditTTSVoice.RequestId");
+			auditTTSVoiceResponse.AuditionUrl = _ctx.StringValue("AuditTTSVoice.AuditionUrl");
         
 			return auditTTSVoiceResponse;
         }

@@ -25,51 +25,15 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 	public class SilenceTimeoutResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string textResponse;
-
-		private bool? interruptible;
-
 		private string action;
 
 		private string actionParams;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private bool? interruptible;
 
-		public string TextResponse
-		{
-			get
-			{
-				return textResponse;
-			}
-			set	
-			{
-				textResponse = value;
-			}
-		}
+		private string requestId;
 
-		public bool? Interruptible
-		{
-			get
-			{
-				return interruptible;
-			}
-			set	
-			{
-				interruptible = value;
-			}
-		}
+		private string textResponse;
 
 		public string Action
 		{
@@ -92,6 +56,42 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			set	
 			{
 				actionParams = value;
+			}
+		}
+
+		public bool? Interruptible
+		{
+			get
+			{
+				return interruptible;
+			}
+			set	
+			{
+				interruptible = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string TextResponse
+		{
+			get
+			{
+				return textResponse;
+			}
+			set	
+			{
+				textResponse = value;
 			}
 		}
 	}

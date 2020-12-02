@@ -26,20 +26,20 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 {
     public class DescribeConversationResponseUnmarshaller
     {
-        public static DescribeConversationResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeConversationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeConversationResponse describeConversationResponse = new DescribeConversationResponse();
 
-			describeConversationResponse.HttpResponse = context.HttpResponse;
-			describeConversationResponse.RequestId = context.StringValue("DescribeConversation.RequestId");
-			describeConversationResponse.CallingNumber = context.StringValue("DescribeConversation.CallingNumber");
-			describeConversationResponse.BeginTime = context.LongValue("DescribeConversation.BeginTime");
-			describeConversationResponse.EndTime = context.LongValue("DescribeConversation.EndTime");
-			describeConversationResponse.TransferredToAgent = context.BooleanValue("DescribeConversation.TransferredToAgent");
-			describeConversationResponse.SkillGroupId = context.StringValue("DescribeConversation.SkillGroupId");
-			describeConversationResponse.UserUtteranceCount = context.IntegerValue("DescribeConversation.UserUtteranceCount");
-			describeConversationResponse.EffectiveAnswerCount = context.IntegerValue("DescribeConversation.EffectiveAnswerCount");
-			describeConversationResponse.ConversationId = context.StringValue("DescribeConversation.ConversationId");
+			describeConversationResponse.HttpResponse = _ctx.HttpResponse;
+			describeConversationResponse.RequestId = _ctx.StringValue("DescribeConversation.RequestId");
+			describeConversationResponse.CallingNumber = _ctx.StringValue("DescribeConversation.CallingNumber");
+			describeConversationResponse.BeginTime = _ctx.LongValue("DescribeConversation.BeginTime");
+			describeConversationResponse.EndTime = _ctx.LongValue("DescribeConversation.EndTime");
+			describeConversationResponse.TransferredToAgent = _ctx.BooleanValue("DescribeConversation.TransferredToAgent");
+			describeConversationResponse.SkillGroupId = _ctx.StringValue("DescribeConversation.SkillGroupId");
+			describeConversationResponse.UserUtteranceCount = _ctx.IntegerValue("DescribeConversation.UserUtteranceCount");
+			describeConversationResponse.EffectiveAnswerCount = _ctx.IntegerValue("DescribeConversation.EffectiveAnswerCount");
+			describeConversationResponse.ConversationId = _ctx.StringValue("DescribeConversation.ConversationId");
         
 			return describeConversationResponse;
         }

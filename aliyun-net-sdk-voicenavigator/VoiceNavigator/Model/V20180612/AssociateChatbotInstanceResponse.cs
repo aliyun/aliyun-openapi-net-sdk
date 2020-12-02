@@ -16,25 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.VoiceNavigator.Model.V20180612;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
+namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 {
-    public class RollbackInstanceResponseUnmarshaller
-    {
-        public static RollbackInstanceResponse Unmarshall(UnmarshallerContext context)
-        {
-			RollbackInstanceResponse rollbackInstanceResponse = new RollbackInstanceResponse();
+	public class AssociateChatbotInstanceResponse : AcsResponse
+	{
 
-			rollbackInstanceResponse.HttpResponse = context.HttpResponse;
-			rollbackInstanceResponse.RequestId = context.StringValue("RollbackInstance.RequestId");
-			rollbackInstanceResponse.Status = context.StringValue("RollbackInstance.Status");
-        
-			return rollbackInstanceResponse;
-        }
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

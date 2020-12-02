@@ -27,47 +27,34 @@ using Aliyun.Acs.VoiceNavigator.Transform.V20180612;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 {
-    public class AuthorizedRequest : RpcAcsRequest<AuthorizedResponse>
+    public class ListChatbotInstancesRequest : RpcAcsRequest<ListChatbotInstancesResponse>
     {
-        public AuthorizedRequest()
-            : base("VoiceNavigator", "2018-06-12", "Authorized", "voicebot", "openAPI")
+        public ListChatbotInstancesRequest()
+            : base("VoiceNavigator", "2018-06-12", "ListChatbotInstances", "voicebot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.VoiceNavigator.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.VoiceNavigator.Endpoint.endpointRegionalType, null);
             }
         }
 
-		private string conversationId;
-
-		private string initialContext;
+		private int? pageNumber;
 
 		private string instanceId;
 
-		public string ConversationId
-		{
-			get
-			{
-				return conversationId;
-			}
-			set	
-			{
-				conversationId = value;
-				DictionaryUtil.Add(QueryParameters, "ConversationId", value);
-			}
-		}
+		private int? pageSize;
 
-		public string InitialContext
+		public int? PageNumber
 		{
 			get
 			{
-				return initialContext;
+				return pageNumber;
 			}
 			set	
 			{
-				initialContext = value;
-				DictionaryUtil.Add(QueryParameters, "InitialContext", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -84,14 +71,27 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override AuthorizedResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListChatbotInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AuthorizedResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListChatbotInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 {
     public class ModifySilenceTimeoutConfigResponseUnmarshaller
     {
-        public static ModifySilenceTimeoutConfigResponse Unmarshall(UnmarshallerContext context)
+        public static ModifySilenceTimeoutConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifySilenceTimeoutConfigResponse modifySilenceTimeoutConfigResponse = new ModifySilenceTimeoutConfigResponse();
 
-			modifySilenceTimeoutConfigResponse.HttpResponse = context.HttpResponse;
-			modifySilenceTimeoutConfigResponse.RequestId = context.StringValue("ModifySilenceTimeoutConfig.RequestId");
+			modifySilenceTimeoutConfigResponse.HttpResponse = _ctx.HttpResponse;
+			modifySilenceTimeoutConfigResponse.RequestId = _ctx.StringValue("ModifySilenceTimeoutConfig.RequestId");
         
 			return modifySilenceTimeoutConfigResponse;
         }

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 {
     public class DescribeTTSConfigResponseUnmarshaller
     {
-        public static DescribeTTSConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeTTSConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeTTSConfigResponse describeTTSConfigResponse = new DescribeTTSConfigResponse();
 
-			describeTTSConfigResponse.HttpResponse = context.HttpResponse;
-			describeTTSConfigResponse.RequestId = context.StringValue("DescribeTTSConfig.RequestId");
-			describeTTSConfigResponse.Voice = context.StringValue("DescribeTTSConfig.Voice");
-			describeTTSConfigResponse.SpeechRate = context.IntegerValue("DescribeTTSConfig.SpeechRate");
-			describeTTSConfigResponse.Volume = context.IntegerValue("DescribeTTSConfig.Volume");
+			describeTTSConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeTTSConfigResponse.RequestId = _ctx.StringValue("DescribeTTSConfig.RequestId");
+			describeTTSConfigResponse.Voice = _ctx.StringValue("DescribeTTSConfig.Voice");
+			describeTTSConfigResponse.SpeechRate = _ctx.IntegerValue("DescribeTTSConfig.SpeechRate");
+			describeTTSConfigResponse.Volume = _ctx.IntegerValue("DescribeTTSConfig.Volume");
         
 			return describeTTSConfigResponse;
         }

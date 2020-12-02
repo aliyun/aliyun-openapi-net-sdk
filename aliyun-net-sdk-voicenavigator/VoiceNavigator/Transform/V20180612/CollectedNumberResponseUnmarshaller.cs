@@ -26,16 +26,16 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 {
     public class CollectedNumberResponseUnmarshaller
     {
-        public static CollectedNumberResponse Unmarshall(UnmarshallerContext context)
+        public static CollectedNumberResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CollectedNumberResponse collectedNumberResponse = new CollectedNumberResponse();
 
-			collectedNumberResponse.HttpResponse = context.HttpResponse;
-			collectedNumberResponse.RequestId = context.StringValue("CollectedNumber.RequestId");
-			collectedNumberResponse.TextResponse = context.StringValue("CollectedNumber.TextResponse");
-			collectedNumberResponse.Interruptible = context.BooleanValue("CollectedNumber.Interruptible");
-			collectedNumberResponse.Action = context.StringValue("CollectedNumber.Action");
-			collectedNumberResponse.ActionParams = context.StringValue("CollectedNumber.ActionParams");
+			collectedNumberResponse.HttpResponse = _ctx.HttpResponse;
+			collectedNumberResponse.RequestId = _ctx.StringValue("CollectedNumber.RequestId");
+			collectedNumberResponse.TextResponse = _ctx.StringValue("CollectedNumber.TextResponse");
+			collectedNumberResponse.Interruptible = _ctx.BooleanValue("CollectedNumber.Interruptible");
+			collectedNumberResponse.Action = _ctx.StringValue("CollectedNumber.Action");
+			collectedNumberResponse.ActionParams = _ctx.StringValue("CollectedNumber.ActionParams");
         
 			return collectedNumberResponse;
         }

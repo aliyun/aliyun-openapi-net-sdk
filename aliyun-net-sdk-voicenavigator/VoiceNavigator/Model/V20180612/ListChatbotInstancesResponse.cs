@@ -22,18 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 {
-	public class QueryNavigationScriptsResponse : AcsResponse
+	public class ListChatbotInstancesResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private long? totalCount;
-
 		private int? pageNumber;
 
-		private int? pageSize;
+		private long? totalCount;
 
-		private List<QueryNavigationScripts_NavigationScript> navigationScripts;
+		private long? pageSize;
+
+		private List<ListChatbotInstances_Bot> bots;
 
 		public string RequestId
 		{
@@ -44,18 +44,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public long? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,7 +59,19 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public int? PageSize
+		public long? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public long? PageSize
 		{
 			get
 			{
@@ -83,74 +83,116 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public List<QueryNavigationScripts_NavigationScript> NavigationScripts
+		public List<ListChatbotInstances_Bot> Bots
 		{
 			get
 			{
-				return navigationScripts;
+				return bots;
 			}
 			set	
 			{
-				navigationScripts = value;
+				bots = value;
 			}
 		}
 
-		public class QueryNavigationScripts_NavigationScript
+		public class ListChatbotInstances_Bot
 		{
 
-			private string navigationScriptId;
+			private string instanceId;
 
-			private string title;
+			private string timeZone;
 
-			private long? modifyTime;
+			private string avatar;
 
-			private string type;
+			private string languageCode;
 
-			public string NavigationScriptId
+			private string name;
+
+			private string introduction;
+
+			private string createTime;
+
+			public string InstanceId
 			{
 				get
 				{
-					return navigationScriptId;
+					return instanceId;
 				}
 				set	
 				{
-					navigationScriptId = value;
+					instanceId = value;
 				}
 			}
 
-			public string Title
+			public string TimeZone
 			{
 				get
 				{
-					return title;
+					return timeZone;
 				}
 				set	
 				{
-					title = value;
+					timeZone = value;
 				}
 			}
 
-			public long? ModifyTime
+			public string Avatar
 			{
 				get
 				{
-					return modifyTime;
+					return avatar;
 				}
 				set	
 				{
-					modifyTime = value;
+					avatar = value;
 				}
 			}
 
-			public string Type
+			public string LanguageCode
 			{
 				get
 				{
-					return type;
+					return languageCode;
 				}
 				set	
 				{
-					type = value;
+					languageCode = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string Introduction
+			{
+				get
+				{
+					return introduction;
+				}
+				set	
+				{
+					introduction = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
 				}
 			}
 		}

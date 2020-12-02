@@ -26,12 +26,12 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 {
     public class ModifyInstanceResponseUnmarshaller
     {
-        public static ModifyInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyInstanceResponse modifyInstanceResponse = new ModifyInstanceResponse();
 
-			modifyInstanceResponse.HttpResponse = context.HttpResponse;
-			modifyInstanceResponse.RequestId = context.StringValue("ModifyInstance.RequestId");
+			modifyInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			modifyInstanceResponse.RequestId = _ctx.StringValue("ModifyInstance.RequestId");
         
 			return modifyInstanceResponse;
         }

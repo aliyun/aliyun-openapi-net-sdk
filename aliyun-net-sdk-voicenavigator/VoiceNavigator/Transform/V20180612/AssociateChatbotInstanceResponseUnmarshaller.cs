@@ -24,20 +24,16 @@ using Aliyun.Acs.VoiceNavigator.Model.V20180612;
 
 namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 {
-    public class AuthorizedResponseUnmarshaller
+    public class AssociateChatbotInstanceResponseUnmarshaller
     {
-        public static AuthorizedResponse Unmarshall(UnmarshallerContext context)
+        public static AssociateChatbotInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			AuthorizedResponse authorizedResponse = new AuthorizedResponse();
+			AssociateChatbotInstanceResponse associateChatbotInstanceResponse = new AssociateChatbotInstanceResponse();
 
-			authorizedResponse.HttpResponse = context.HttpResponse;
-			authorizedResponse.RequestId = context.StringValue("Authorized.RequestId");
-			authorizedResponse.TextResponse = context.StringValue("Authorized.TextResponse");
-			authorizedResponse.Interruptible = context.BooleanValue("Authorized.Interruptible");
-			authorizedResponse.Action = context.StringValue("Authorized.Action");
-			authorizedResponse.ActionParams = context.StringValue("Authorized.ActionParams");
+			associateChatbotInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			associateChatbotInstanceResponse.RequestId = _ctx.StringValue("AssociateChatbotInstance.RequestId");
         
-			return authorizedResponse;
+			return associateChatbotInstanceResponse;
         }
     }
 }
