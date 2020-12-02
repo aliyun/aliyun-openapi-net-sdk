@@ -25,17 +25,65 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class CreateGlobalQuestionResponse : AcsResponse
 	{
 
+		private string code;
+
+		private string globalQuestionId;
+
+		private int? httpStatusCode;
+
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
 
-		private string message;
+		public string GlobalQuestionId
+		{
+			get
+			{
+				return globalQuestionId;
+			}
+			set	
+			{
+				globalQuestionId = value;
+			}
+		}
 
-		private int? httpStatusCode;
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
 
-		private string globalQuestionId;
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -58,54 +106,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
-		public string GlobalQuestionId
-		{
-			get
-			{
-				return globalQuestionId;
-			}
-			set	
-			{
-				globalQuestionId = value;
 			}
 		}
 	}

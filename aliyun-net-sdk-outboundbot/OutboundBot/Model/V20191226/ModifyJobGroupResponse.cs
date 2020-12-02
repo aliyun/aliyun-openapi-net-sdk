@@ -25,17 +25,53 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class ModifyJobGroupResponse : AcsResponse
 	{
 
+		private string code;
+
+		private int? httpStatusCode;
+
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
-
-		private string message;
-
-		private int? httpStatusCode;
-
 		private ModifyJobGroup_JobGroup jobGroup;
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,42 +97,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
 		public ModifyJobGroup_JobGroup JobGroup
 		{
 			get
@@ -112,21 +112,57 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class ModifyJobGroup_JobGroup
 		{
 
+			private long? creationTime;
+
+			private string jobFilePath;
+
+			private string jobGroupDescription;
+
 			private string jobGroupId;
 
 			private string jobGroupName;
 
-			private string jobGroupDescription;
-
 			private string scenarioId;
-
-			private string jobFilePath;
-
-			private long? creationTime;
 
 			private List<string> callingNumbers;
 
 			private ModifyJobGroup_Strategy strategy;
+
+			public long? CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
+
+			public string JobFilePath
+			{
+				get
+				{
+					return jobFilePath;
+				}
+				set	
+				{
+					jobFilePath = value;
+				}
+			}
+
+			public string JobGroupDescription
+			{
+				get
+				{
+					return jobGroupDescription;
+				}
+				set	
+				{
+					jobGroupDescription = value;
+				}
+			}
 
 			public string JobGroupId
 			{
@@ -152,18 +188,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string JobGroupDescription
-			{
-				get
-				{
-					return jobGroupDescription;
-				}
-				set	
-				{
-					jobGroupDescription = value;
-				}
-			}
-
 			public string ScenarioId
 			{
 				get
@@ -173,30 +197,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					scenarioId = value;
-				}
-			}
-
-			public string JobFilePath
-			{
-				get
-				{
-					return jobFilePath;
-				}
-				set	
-				{
-					jobFilePath = value;
-				}
-			}
-
-			public long? CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
 				}
 			}
 
@@ -227,93 +227,45 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			public class ModifyJobGroup_Strategy
 			{
 
-				private string strategyId;
-
-				private string strategyName;
-
-				private string strategyDescription;
-
-				private string type;
-
-				private long? startTime;
-
-				private long? endTime;
-
-				private string repeatBy;
-
-				private int? maxAttemptsPerDay;
-
-				private int? minAttemptInterval;
-
 				private string customized;
 
-				private string routingStrategy;
+				private long? endTime;
 
 				private string followUpStrategy;
 
 				private bool? isTemplate;
 
+				private int? maxAttemptsPerDay;
+
+				private int? minAttemptInterval;
+
+				private string repeatBy;
+
+				private string routingStrategy;
+
+				private long? startTime;
+
+				private string strategyDescription;
+
+				private string strategyId;
+
+				private string strategyName;
+
+				private string type;
+
 				private List<ModifyJobGroup_TimeFrame> workingTime;
 
 				private List<string> repeatDays;
 
-				public string StrategyId
+				public string Customized
 				{
 					get
 					{
-						return strategyId;
+						return customized;
 					}
 					set	
 					{
-						strategyId = value;
-					}
-				}
-
-				public string StrategyName
-				{
-					get
-					{
-						return strategyName;
-					}
-					set	
-					{
-						strategyName = value;
-					}
-				}
-
-				public string StrategyDescription
-				{
-					get
-					{
-						return strategyDescription;
-					}
-					set	
-					{
-						strategyDescription = value;
-					}
-				}
-
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
-					}
-				}
-
-				public long? StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
+						customized = value;
 					}
 				}
 
@@ -329,15 +281,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string RepeatBy
+				public string FollowUpStrategy
 				{
 					get
 					{
-						return repeatBy;
+						return followUpStrategy;
 					}
 					set	
 					{
-						repeatBy = value;
+						followUpStrategy = value;
+					}
+				}
+
+				public bool? IsTemplate
+				{
+					get
+					{
+						return isTemplate;
+					}
+					set	
+					{
+						isTemplate = value;
 					}
 				}
 
@@ -365,15 +329,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string Customized
+				public string RepeatBy
 				{
 					get
 					{
-						return customized;
+						return repeatBy;
 					}
 					set	
 					{
-						customized = value;
+						repeatBy = value;
 					}
 				}
 
@@ -389,27 +353,63 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string FollowUpStrategy
+				public long? StartTime
 				{
 					get
 					{
-						return followUpStrategy;
+						return startTime;
 					}
 					set	
 					{
-						followUpStrategy = value;
+						startTime = value;
 					}
 				}
 
-				public bool? IsTemplate
+				public string StrategyDescription
 				{
 					get
 					{
-						return isTemplate;
+						return strategyDescription;
 					}
 					set	
 					{
-						isTemplate = value;
+						strategyDescription = value;
+					}
+				}
+
+				public string StrategyId
+				{
+					get
+					{
+						return strategyId;
+					}
+					set	
+					{
+						strategyId = value;
+					}
+				}
+
+				public string StrategyName
+				{
+					get
+					{
+						return strategyName;
+					}
+					set	
+					{
+						strategyName = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
 					}
 				}
 

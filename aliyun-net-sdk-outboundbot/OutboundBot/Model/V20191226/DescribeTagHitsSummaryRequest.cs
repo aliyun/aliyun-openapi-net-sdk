@@ -27,34 +27,22 @@ using Aliyun.Acs.OutboundBot.Transform.V20191226;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-    public class GetJobStatusByCallIdRequest : RpcAcsRequest<GetJobStatusByCallIdResponse>
+    public class DescribeTagHitsSummaryRequest : RpcAcsRequest<DescribeTagHitsSummaryResponse>
     {
-        public GetJobStatusByCallIdRequest()
-            : base("OutboundBot", "2019-12-26", "GetJobStatusByCallId", "outboundbot", "openAPI")
+        public DescribeTagHitsSummaryRequest()
+            : base("OutboundBot", "2019-12-26", "DescribeTagHitsSummary", "outboundbot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
-
-		private string callId;
 
 		private string instanceId;
 
-		public string CallId
-		{
-			get
-			{
-				return callId;
-			}
-			set	
-			{
-				callId = value;
-				DictionaryUtil.Add(QueryParameters, "CallId", value);
-			}
-		}
+		private string jobGroupId;
 
 		public string InstanceId
 		{
@@ -69,14 +57,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
+		public string JobGroupId
+		{
+			get
+			{
+				return jobGroupId;
+			}
+			set	
+			{
+				jobGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "JobGroupId", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GetJobStatusByCallIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeTagHitsSummaryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetJobStatusByCallIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeTagHitsSummaryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

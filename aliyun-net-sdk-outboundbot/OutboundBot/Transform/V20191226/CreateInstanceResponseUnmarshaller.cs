@@ -26,25 +26,32 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class CreateInstanceResponseUnmarshaller
     {
-        public static CreateInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static CreateInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateInstanceResponse createInstanceResponse = new CreateInstanceResponse();
 
-			createInstanceResponse.HttpResponse = context.HttpResponse;
-			createInstanceResponse.RequestId = context.StringValue("CreateInstance.RequestId");
-			createInstanceResponse.Success = context.BooleanValue("CreateInstance.Success");
-			createInstanceResponse.Code = context.StringValue("CreateInstance.Code");
-			createInstanceResponse.Message = context.StringValue("CreateInstance.Message");
-			createInstanceResponse.HttpStatusCode = context.IntegerValue("CreateInstance.HttpStatusCode");
+			createInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			createInstanceResponse.Code = _ctx.StringValue("CreateInstance.Code");
+			createInstanceResponse.HttpStatusCode = _ctx.IntegerValue("CreateInstance.HttpStatusCode");
+			createInstanceResponse.Message = _ctx.StringValue("CreateInstance.Message");
+			createInstanceResponse.RequestId = _ctx.StringValue("CreateInstance.RequestId");
+			createInstanceResponse.Success = _ctx.BooleanValue("CreateInstance.Success");
 
 			CreateInstanceResponse.CreateInstance_Instance instance = new CreateInstanceResponse.CreateInstance_Instance();
-			instance.InstanceId = context.StringValue("CreateInstance.Instance.InstanceId");
-			instance.InstanceName = context.StringValue("CreateInstance.Instance.InstanceName");
-			instance.InstanceDescription = context.StringValue("CreateInstance.Instance.InstanceDescription");
-			instance.MaxConcurrentConversation = context.IntegerValue("CreateInstance.Instance.MaxConcurrentConversation");
-			instance.Owner = context.StringValue("CreateInstance.Instance.Owner");
-			instance.CreationTime = context.LongValue("CreateInstance.Instance.CreationTime");
-			instance.CallCenterInstanceId = context.StringValue("CreateInstance.Instance.CallCenterInstanceId");
+			instance.CallCenterInstanceId = _ctx.StringValue("CreateInstance.Instance.CallCenterInstanceId");
+			instance.CreationTime = _ctx.LongValue("CreateInstance.Instance.CreationTime");
+			instance.InstanceDescription = _ctx.StringValue("CreateInstance.Instance.InstanceDescription");
+			instance.InstanceId = _ctx.StringValue("CreateInstance.Instance.InstanceId");
+			instance.InstanceName = _ctx.StringValue("CreateInstance.Instance.InstanceName");
+			instance.MaxConcurrentConversation = _ctx.IntegerValue("CreateInstance.Instance.MaxConcurrentConversation");
+			instance.Owner = _ctx.StringValue("CreateInstance.Instance.Owner");
+			instance.NluServiceType = _ctx.StringValue("CreateInstance.Instance.NluServiceType");
+
+			CreateInstanceResponse.CreateInstance_Instance.CreateInstance_NluProfile nluProfile = new CreateInstanceResponse.CreateInstance_Instance.CreateInstance_NluProfile();
+			nluProfile.Endpoint = _ctx.StringValue("CreateInstance.Instance.NluProfile.Endpoint");
+			nluProfile.AccessKey = _ctx.StringValue("CreateInstance.Instance.NluProfile.AccessKey");
+			nluProfile.SecretKey = _ctx.StringValue("CreateInstance.Instance.NluProfile.SecretKey");
+			instance.NluProfile = nluProfile;
 			createInstanceResponse.Instance = instance;
         
 			return createInstanceResponse;

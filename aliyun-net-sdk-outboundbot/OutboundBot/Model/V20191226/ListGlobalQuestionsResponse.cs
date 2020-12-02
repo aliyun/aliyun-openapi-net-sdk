@@ -25,17 +25,53 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class ListGlobalQuestionsResponse : AcsResponse
 	{
 
+		private string code;
+
+		private int? httpStatusCode;
+
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
-
-		private string message;
-
-		private int? httpStatusCode;
-
 		private ListGlobalQuestions_GlobalQuestions globalQuestions;
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,42 +97,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
 		public ListGlobalQuestions_GlobalQuestions GlobalQuestions
 		{
 			get
@@ -112,25 +112,13 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class ListGlobalQuestions_GlobalQuestions
 		{
 
-			private int? totalCount;
-
 			private int? pageNumber;
 
 			private int? pageSize;
 
-			private List<ListGlobalQuestions_GlobalQuestion> list;
+			private int? totalCount;
 
-			public int? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
+			private List<ListGlobalQuestions_GlobalQuestion> list;
 
 			public int? PageNumber
 			{
@@ -156,6 +144,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
+			public int? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
+				}
+			}
+
 			public List<ListGlobalQuestions_GlobalQuestion> List
 			{
 				get
@@ -171,9 +171,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			public class ListGlobalQuestions_GlobalQuestion
 			{
 
-				private string globalQuestionId;
+				private string answers;
 
-				private string scriptId;
+				private string globalQuestionId;
 
 				private string globalQuestionName;
 
@@ -181,7 +181,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 				private string questions;
 
-				private string answers;
+				private string scriptId;
+
+				public string Answers
+				{
+					get
+					{
+						return answers;
+					}
+					set	
+					{
+						answers = value;
+					}
+				}
 
 				public string GlobalQuestionId
 				{
@@ -192,18 +204,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						globalQuestionId = value;
-					}
-				}
-
-				public string ScriptId
-				{
-					get
-					{
-						return scriptId;
-					}
-					set	
-					{
-						scriptId = value;
 					}
 				}
 
@@ -243,15 +243,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string Answers
+				public string ScriptId
 				{
 					get
 					{
-						return answers;
+						return scriptId;
 					}
 					set	
 					{
-						answers = value;
+						scriptId = value;
 					}
 				}
 			}

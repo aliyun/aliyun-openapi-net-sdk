@@ -26,17 +26,17 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class CreateScriptWaveformResponseUnmarshaller
     {
-        public static CreateScriptWaveformResponse Unmarshall(UnmarshallerContext context)
+        public static CreateScriptWaveformResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateScriptWaveformResponse createScriptWaveformResponse = new CreateScriptWaveformResponse();
 
-			createScriptWaveformResponse.HttpResponse = context.HttpResponse;
-			createScriptWaveformResponse.RequestId = context.StringValue("CreateScriptWaveform.RequestId");
-			createScriptWaveformResponse.Success = context.BooleanValue("CreateScriptWaveform.Success");
-			createScriptWaveformResponse.Code = context.StringValue("CreateScriptWaveform.Code");
-			createScriptWaveformResponse.Message = context.StringValue("CreateScriptWaveform.Message");
-			createScriptWaveformResponse.HttpStatusCode = context.IntegerValue("CreateScriptWaveform.HttpStatusCode");
-			createScriptWaveformResponse.ScriptWaveformId = context.StringValue("CreateScriptWaveform.ScriptWaveformId");
+			createScriptWaveformResponse.HttpResponse = _ctx.HttpResponse;
+			createScriptWaveformResponse.Code = _ctx.StringValue("CreateScriptWaveform.Code");
+			createScriptWaveformResponse.HttpStatusCode = _ctx.IntegerValue("CreateScriptWaveform.HttpStatusCode");
+			createScriptWaveformResponse.Message = _ctx.StringValue("CreateScriptWaveform.Message");
+			createScriptWaveformResponse.RequestId = _ctx.StringValue("CreateScriptWaveform.RequestId");
+			createScriptWaveformResponse.ScriptWaveformId = _ctx.StringValue("CreateScriptWaveform.ScriptWaveformId");
+			createScriptWaveformResponse.Success = _ctx.BooleanValue("CreateScriptWaveform.Success");
         
 			return createScriptWaveformResponse;
         }

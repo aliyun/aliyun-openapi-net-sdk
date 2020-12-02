@@ -34,24 +34,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string callId;
 
-		private string actionParams;
-
-		private string callingNumber;
-
-		private string instanceId;
-
-		private long? instanceOwnerId;
-
 		private string calledNumber;
-
-		private string actionKey;
 
 		private string callType;
 
@@ -60,6 +51,14 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private string taskId;
 
 		private string utterance;
+
+		private string actionParams;
+
+		private string callingNumber;
+
+		private string instanceId;
+
+		private string actionKey;
 
 		public string CallId
 		{
@@ -74,58 +73,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string ActionParams
-		{
-			get
-			{
-				return actionParams;
-			}
-			set	
-			{
-				actionParams = value;
-				DictionaryUtil.Add(QueryParameters, "ActionParams", value);
-			}
-		}
-
-		public string CallingNumber
-		{
-			get
-			{
-				return callingNumber;
-			}
-			set	
-			{
-				callingNumber = value;
-				DictionaryUtil.Add(QueryParameters, "CallingNumber", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public long? InstanceOwnerId
-		{
-			get
-			{
-				return instanceOwnerId;
-			}
-			set	
-			{
-				instanceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceOwnerId", value.ToString());
-			}
-		}
-
 		public string CalledNumber
 		{
 			get
@@ -136,19 +83,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				calledNumber = value;
 				DictionaryUtil.Add(QueryParameters, "CalledNumber", value);
-			}
-		}
-
-		public string ActionKey
-		{
-			get
-			{
-				return actionKey;
-			}
-			set	
-			{
-				actionKey = value;
-				DictionaryUtil.Add(QueryParameters, "ActionKey", value);
 			}
 		}
 
@@ -201,6 +135,58 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				utterance = value;
 				DictionaryUtil.Add(QueryParameters, "Utterance", value);
+			}
+		}
+
+		public string ActionParams
+		{
+			get
+			{
+				return actionParams;
+			}
+			set	
+			{
+				actionParams = value;
+				DictionaryUtil.Add(QueryParameters, "ActionParams", value);
+			}
+		}
+
+		public string CallingNumber
+		{
+			get
+			{
+				return callingNumber;
+			}
+			set	
+			{
+				callingNumber = value;
+				DictionaryUtil.Add(QueryParameters, "CallingNumber", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string ActionKey
+		{
+			get
+			{
+				return actionKey;
+			}
+			set	
+			{
+				actionKey = value;
+				DictionaryUtil.Add(QueryParameters, "ActionKey", value);
 			}
 		}
 

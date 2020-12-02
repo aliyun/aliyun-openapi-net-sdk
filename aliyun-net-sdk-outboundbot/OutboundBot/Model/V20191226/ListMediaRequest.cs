@@ -27,21 +27,39 @@ using Aliyun.Acs.OutboundBot.Transform.V20191226;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-    public class DownloadConversationDetailsRequest : RpcAcsRequest<DownloadConversationDetailsResponse>
+    public class ListMediaRequest : RpcAcsRequest<ListMediaResponse>
     {
-        public DownloadConversationDetailsRequest()
-            : base("OutboundBot", "2019-12-26", "DownloadConversationDetails", "outboundbot", "openAPI")
+        public ListMediaRequest()
+            : base("OutboundBot", "2019-12-26", "ListMedia", "outboundbot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private int? pageNumber;
 
 		private string instanceId;
 
-		private string jobGroupId;
+		private int? pageSize;
+
+		private string namePrefix;
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
 
 		public string InstanceId
 		{
@@ -56,16 +74,29 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string JobGroupId
+		public int? PageSize
 		{
 			get
 			{
-				return jobGroupId;
+				return pageSize;
 			}
 			set	
 			{
-				jobGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "JobGroupId", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string NamePrefix
+		{
+			get
+			{
+				return namePrefix;
+			}
+			set	
+			{
+				namePrefix = value;
+				DictionaryUtil.Add(QueryParameters, "NamePrefix", value);
 			}
 		}
 
@@ -74,9 +105,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			return false;
 		}
 
-        public override DownloadConversationDetailsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListMediaResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DownloadConversationDetailsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListMediaResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

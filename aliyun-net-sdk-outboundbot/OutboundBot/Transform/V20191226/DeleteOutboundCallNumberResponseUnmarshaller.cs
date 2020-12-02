@@ -26,16 +26,16 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class DeleteOutboundCallNumberResponseUnmarshaller
     {
-        public static DeleteOutboundCallNumberResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteOutboundCallNumberResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteOutboundCallNumberResponse deleteOutboundCallNumberResponse = new DeleteOutboundCallNumberResponse();
 
-			deleteOutboundCallNumberResponse.HttpResponse = context.HttpResponse;
-			deleteOutboundCallNumberResponse.RequestId = context.StringValue("DeleteOutboundCallNumber.RequestId");
-			deleteOutboundCallNumberResponse.Success = context.BooleanValue("DeleteOutboundCallNumber.Success");
-			deleteOutboundCallNumberResponse.Code = context.StringValue("DeleteOutboundCallNumber.Code");
-			deleteOutboundCallNumberResponse.Message = context.StringValue("DeleteOutboundCallNumber.Message");
-			deleteOutboundCallNumberResponse.HttpStatusCode = context.IntegerValue("DeleteOutboundCallNumber.HttpStatusCode");
+			deleteOutboundCallNumberResponse.HttpResponse = _ctx.HttpResponse;
+			deleteOutboundCallNumberResponse.Code = _ctx.StringValue("DeleteOutboundCallNumber.Code");
+			deleteOutboundCallNumberResponse.HttpStatusCode = _ctx.IntegerValue("DeleteOutboundCallNumber.HttpStatusCode");
+			deleteOutboundCallNumberResponse.Message = _ctx.StringValue("DeleteOutboundCallNumber.Message");
+			deleteOutboundCallNumberResponse.RequestId = _ctx.StringValue("DeleteOutboundCallNumber.RequestId");
+			deleteOutboundCallNumberResponse.Success = _ctx.BooleanValue("DeleteOutboundCallNumber.Success");
         
 			return deleteOutboundCallNumberResponse;
         }

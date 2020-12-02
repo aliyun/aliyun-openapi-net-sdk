@@ -25,17 +25,53 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class ModifyOutboundCallNumberResponse : AcsResponse
 	{
 
+		private string code;
+
+		private int? httpStatusCode;
+
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
-
-		private string message;
-
-		private int? httpStatusCode;
-
 		private ModifyOutboundCallNumber_OutboundCallNumber outboundCallNumber;
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,42 +97,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
 		public ModifyOutboundCallNumber_OutboundCallNumber OutboundCallNumber
 		{
 			get
@@ -112,25 +112,13 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class ModifyOutboundCallNumber_OutboundCallNumber
 		{
 
-			private string outboundCallNumberId;
-
 			private string number;
 
-			private string rateLimitPeriod;
+			private string outboundCallNumberId;
 
 			private string rateLimitCount;
 
-			public string OutboundCallNumberId
-			{
-				get
-				{
-					return outboundCallNumberId;
-				}
-				set	
-				{
-					outboundCallNumberId = value;
-				}
-			}
+			private string rateLimitPeriod;
 
 			public string Number
 			{
@@ -144,15 +132,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string RateLimitPeriod
+			public string OutboundCallNumberId
 			{
 				get
 				{
-					return rateLimitPeriod;
+					return outboundCallNumberId;
 				}
 				set	
 				{
-					rateLimitPeriod = value;
+					outboundCallNumberId = value;
 				}
 			}
 
@@ -165,6 +153,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					rateLimitCount = value;
+				}
+			}
+
+			public string RateLimitPeriod
+			{
+				get
+				{
+					return rateLimitPeriod;
+				}
+				set	
+				{
+					rateLimitPeriod = value;
 				}
 			}
 		}

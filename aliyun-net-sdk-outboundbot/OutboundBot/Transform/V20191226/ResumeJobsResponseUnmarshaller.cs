@@ -26,16 +26,16 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class ResumeJobsResponseUnmarshaller
     {
-        public static ResumeJobsResponse Unmarshall(UnmarshallerContext context)
+        public static ResumeJobsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResumeJobsResponse resumeJobsResponse = new ResumeJobsResponse();
 
-			resumeJobsResponse.HttpResponse = context.HttpResponse;
-			resumeJobsResponse.RequestId = context.StringValue("ResumeJobs.RequestId");
-			resumeJobsResponse.Success = context.BooleanValue("ResumeJobs.Success");
-			resumeJobsResponse.Code = context.StringValue("ResumeJobs.Code");
-			resumeJobsResponse.Message = context.StringValue("ResumeJobs.Message");
-			resumeJobsResponse.HttpStatusCode = context.IntegerValue("ResumeJobs.HttpStatusCode");
+			resumeJobsResponse.HttpResponse = _ctx.HttpResponse;
+			resumeJobsResponse.Code = _ctx.StringValue("ResumeJobs.Code");
+			resumeJobsResponse.HttpStatusCode = _ctx.IntegerValue("ResumeJobs.HttpStatusCode");
+			resumeJobsResponse.Message = _ctx.StringValue("ResumeJobs.Message");
+			resumeJobsResponse.RequestId = _ctx.StringValue("ResumeJobs.RequestId");
+			resumeJobsResponse.Success = _ctx.BooleanValue("ResumeJobs.Success");
         
 			return resumeJobsResponse;
         }

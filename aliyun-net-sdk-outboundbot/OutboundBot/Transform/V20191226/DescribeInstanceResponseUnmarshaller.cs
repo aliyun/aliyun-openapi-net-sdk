@@ -26,25 +26,32 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class DescribeInstanceResponseUnmarshaller
     {
-        public static DescribeInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeInstanceResponse describeInstanceResponse = new DescribeInstanceResponse();
 
-			describeInstanceResponse.HttpResponse = context.HttpResponse;
-			describeInstanceResponse.RequestId = context.StringValue("DescribeInstance.RequestId");
-			describeInstanceResponse.Success = context.BooleanValue("DescribeInstance.Success");
-			describeInstanceResponse.Code = context.StringValue("DescribeInstance.Code");
-			describeInstanceResponse.Message = context.StringValue("DescribeInstance.Message");
-			describeInstanceResponse.HttpStatusCode = context.IntegerValue("DescribeInstance.HttpStatusCode");
+			describeInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			describeInstanceResponse.Code = _ctx.StringValue("DescribeInstance.Code");
+			describeInstanceResponse.HttpStatusCode = _ctx.IntegerValue("DescribeInstance.HttpStatusCode");
+			describeInstanceResponse.Message = _ctx.StringValue("DescribeInstance.Message");
+			describeInstanceResponse.RequestId = _ctx.StringValue("DescribeInstance.RequestId");
+			describeInstanceResponse.Success = _ctx.BooleanValue("DescribeInstance.Success");
 
 			DescribeInstanceResponse.DescribeInstance_Instance instance = new DescribeInstanceResponse.DescribeInstance_Instance();
-			instance.InstanceId = context.StringValue("DescribeInstance.Instance.InstanceId");
-			instance.InstanceName = context.StringValue("DescribeInstance.Instance.InstanceName");
-			instance.InstanceDescription = context.StringValue("DescribeInstance.Instance.InstanceDescription");
-			instance.MaxConcurrentConversation = context.IntegerValue("DescribeInstance.Instance.MaxConcurrentConversation");
-			instance.Owner = context.StringValue("DescribeInstance.Instance.Owner");
-			instance.CreationTime = context.LongValue("DescribeInstance.Instance.CreationTime");
-			instance.CallCenterInstanceId = context.StringValue("DescribeInstance.Instance.CallCenterInstanceId");
+			instance.CallCenterInstanceId = _ctx.StringValue("DescribeInstance.Instance.CallCenterInstanceId");
+			instance.CreationTime = _ctx.LongValue("DescribeInstance.Instance.CreationTime");
+			instance.InstanceDescription = _ctx.StringValue("DescribeInstance.Instance.InstanceDescription");
+			instance.InstanceId = _ctx.StringValue("DescribeInstance.Instance.InstanceId");
+			instance.InstanceName = _ctx.StringValue("DescribeInstance.Instance.InstanceName");
+			instance.MaxConcurrentConversation = _ctx.IntegerValue("DescribeInstance.Instance.MaxConcurrentConversation");
+			instance.Owner = _ctx.StringValue("DescribeInstance.Instance.Owner");
+			instance.NluServiceType = _ctx.StringValue("DescribeInstance.Instance.NluServiceType");
+
+			DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_NluProfile nluProfile = new DescribeInstanceResponse.DescribeInstance_Instance.DescribeInstance_NluProfile();
+			nluProfile.Endpoint = _ctx.StringValue("DescribeInstance.Instance.NluProfile.Endpoint");
+			nluProfile.AccessKey = _ctx.StringValue("DescribeInstance.Instance.NluProfile.AccessKey");
+			nluProfile.SecretKey = _ctx.StringValue("DescribeInstance.Instance.NluProfile.SecretKey");
+			instance.NluProfile = nluProfile;
 			describeInstanceResponse.Instance = instance;
         
 			return describeInstanceResponse;

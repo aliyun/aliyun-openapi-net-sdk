@@ -26,36 +26,37 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class ListScriptsResponseUnmarshaller
     {
-        public static ListScriptsResponse Unmarshall(UnmarshallerContext context)
+        public static ListScriptsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListScriptsResponse listScriptsResponse = new ListScriptsResponse();
 
-			listScriptsResponse.HttpResponse = context.HttpResponse;
-			listScriptsResponse.RequestId = context.StringValue("ListScripts.RequestId");
-			listScriptsResponse.Success = context.BooleanValue("ListScripts.Success");
-			listScriptsResponse.Code = context.StringValue("ListScripts.Code");
-			listScriptsResponse.Message = context.StringValue("ListScripts.Message");
-			listScriptsResponse.HttpStatusCode = context.IntegerValue("ListScripts.HttpStatusCode");
+			listScriptsResponse.HttpResponse = _ctx.HttpResponse;
+			listScriptsResponse.Code = _ctx.StringValue("ListScripts.Code");
+			listScriptsResponse.HttpStatusCode = _ctx.IntegerValue("ListScripts.HttpStatusCode");
+			listScriptsResponse.Message = _ctx.StringValue("ListScripts.Message");
+			listScriptsResponse.RequestId = _ctx.StringValue("ListScripts.RequestId");
+			listScriptsResponse.Success = _ctx.BooleanValue("ListScripts.Success");
 
 			ListScriptsResponse.ListScripts_Scripts scripts = new ListScriptsResponse.ListScripts_Scripts();
-			scripts.TotalCount = context.IntegerValue("ListScripts.Scripts.TotalCount");
-			scripts.PageNumber = context.IntegerValue("ListScripts.Scripts.PageNumber");
-			scripts.PageSize = context.IntegerValue("ListScripts.Scripts.PageSize");
+			scripts.PageNumber = _ctx.IntegerValue("ListScripts.Scripts.PageNumber");
+			scripts.PageSize = _ctx.IntegerValue("ListScripts.Scripts.PageSize");
+			scripts.TotalCount = _ctx.IntegerValue("ListScripts.Scripts.TotalCount");
 
 			List<ListScriptsResponse.ListScripts_Scripts.ListScripts_Script> scripts_list = new List<ListScriptsResponse.ListScripts_Scripts.ListScripts_Script>();
-			for (int i = 0; i < context.Length("ListScripts.Scripts.List.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListScripts.Scripts.List.Length"); i++) {
 				ListScriptsResponse.ListScripts_Scripts.ListScripts_Script script = new ListScriptsResponse.ListScripts_Scripts.ListScripts_Script();
-				script.ScriptId = context.StringValue("ListScripts.Scripts.List["+ i +"].ScriptId");
-				script.ScriptName = context.StringValue("ListScripts.Scripts.List["+ i +"].ScriptName");
-				script.ScriptDescription = context.StringValue("ListScripts.Scripts.List["+ i +"].ScriptDescription");
-				script.Industry = context.StringValue("ListScripts.Scripts.List["+ i +"].Industry");
-				script.Scene = context.StringValue("ListScripts.Scripts.List["+ i +"].Scene");
-				script.Status = context.StringValue("ListScripts.Scripts.List["+ i +"].Status");
-				script.DebugStatus = context.StringValue("ListScripts.Scripts.List["+ i +"].DebugStatus");
-				script.UpdateTime = context.LongValue("ListScripts.Scripts.List["+ i +"].UpdateTime");
-				script.IsDrafted = context.BooleanValue("ListScripts.Scripts.List["+ i +"].IsDrafted");
-				script.IsDebugDrafted = context.BooleanValue("ListScripts.Scripts.List["+ i +"].IsDebugDrafted");
-				script.FailReason = context.StringValue("ListScripts.Scripts.List["+ i +"].FailReason");
+				script.DebugStatus = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].DebugStatus");
+				script.FailReason = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].FailReason");
+				script.Industry = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].Industry");
+				script.IsDebugDrafted = _ctx.BooleanValue("ListScripts.Scripts.List["+ i +"].IsDebugDrafted");
+				script.IsDrafted = _ctx.BooleanValue("ListScripts.Scripts.List["+ i +"].IsDrafted");
+				script.Scene = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].Scene");
+				script.ScriptDescription = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].ScriptDescription");
+				script.ScriptId = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].ScriptId");
+				script.ScriptName = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].ScriptName");
+				script.Status = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].Status");
+				script.UpdateTime = _ctx.LongValue("ListScripts.Scripts.List["+ i +"].UpdateTime");
+				script.RejectReason = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].RejectReason");
 
 				scripts_list.Add(script);
 			}

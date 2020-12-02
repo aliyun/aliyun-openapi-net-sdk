@@ -26,17 +26,17 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class DuplicateScriptResponseUnmarshaller
     {
-        public static DuplicateScriptResponse Unmarshall(UnmarshallerContext context)
+        public static DuplicateScriptResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DuplicateScriptResponse duplicateScriptResponse = new DuplicateScriptResponse();
 
-			duplicateScriptResponse.HttpResponse = context.HttpResponse;
-			duplicateScriptResponse.RequestId = context.StringValue("DuplicateScript.RequestId");
-			duplicateScriptResponse.Success = context.BooleanValue("DuplicateScript.Success");
-			duplicateScriptResponse.Code = context.StringValue("DuplicateScript.Code");
-			duplicateScriptResponse.Message = context.StringValue("DuplicateScript.Message");
-			duplicateScriptResponse.HttpStatusCode = context.IntegerValue("DuplicateScript.HttpStatusCode");
-			duplicateScriptResponse.ScriptId = context.StringValue("DuplicateScript.ScriptId");
+			duplicateScriptResponse.HttpResponse = _ctx.HttpResponse;
+			duplicateScriptResponse.Code = _ctx.StringValue("DuplicateScript.Code");
+			duplicateScriptResponse.HttpStatusCode = _ctx.IntegerValue("DuplicateScript.HttpStatusCode");
+			duplicateScriptResponse.Message = _ctx.StringValue("DuplicateScript.Message");
+			duplicateScriptResponse.RequestId = _ctx.StringValue("DuplicateScript.RequestId");
+			duplicateScriptResponse.ScriptId = _ctx.StringValue("DuplicateScript.ScriptId");
+			duplicateScriptResponse.Success = _ctx.BooleanValue("DuplicateScript.Success");
         
 			return duplicateScriptResponse;
         }

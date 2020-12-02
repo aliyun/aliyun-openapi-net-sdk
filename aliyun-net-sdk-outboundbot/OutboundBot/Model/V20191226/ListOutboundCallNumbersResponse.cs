@@ -25,17 +25,53 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class ListOutboundCallNumbersResponse : AcsResponse
 	{
 
+		private string code;
+
+		private int? httpStatusCode;
+
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
-
-		private string message;
-
-		private int? httpStatusCode;
-
 		private ListOutboundCallNumbers_OutboundCallNumbers outboundCallNumbers;
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,42 +97,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
 		public ListOutboundCallNumbers_OutboundCallNumbers OutboundCallNumbers
 		{
 			get
@@ -112,25 +112,13 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class ListOutboundCallNumbers_OutboundCallNumbers
 		{
 
-			private int? totalCount;
-
 			private int? pageNumber;
 
 			private int? pageSize;
 
-			private List<ListOutboundCallNumbers_OutboundCallNumber> list;
+			private int? totalCount;
 
-			public int? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
+			private List<ListOutboundCallNumbers_OutboundCallNumber> list;
 
 			public int? PageNumber
 			{
@@ -156,6 +144,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
+			public int? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
+				}
+			}
+
 			public List<ListOutboundCallNumbers_OutboundCallNumber> List
 			{
 				get
@@ -171,25 +171,13 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			public class ListOutboundCallNumbers_OutboundCallNumber
 			{
 
-				private string outboundCallNumberId;
-
 				private string number;
 
-				private string rateLimitPeriod;
+				private string outboundCallNumberId;
 
 				private string rateLimitCount;
 
-				public string OutboundCallNumberId
-				{
-					get
-					{
-						return outboundCallNumberId;
-					}
-					set	
-					{
-						outboundCallNumberId = value;
-					}
-				}
+				private string rateLimitPeriod;
 
 				public string Number
 				{
@@ -203,15 +191,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string RateLimitPeriod
+				public string OutboundCallNumberId
 				{
 					get
 					{
-						return rateLimitPeriod;
+						return outboundCallNumberId;
 					}
 					set	
 					{
-						rateLimitPeriod = value;
+						outboundCallNumberId = value;
 					}
 				}
 
@@ -224,6 +212,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						rateLimitCount = value;
+					}
+				}
+
+				public string RateLimitPeriod
+				{
+					get
+					{
+						return rateLimitPeriod;
+					}
+					set	
+					{
+						rateLimitPeriod = value;
 					}
 				}
 			}

@@ -26,17 +26,17 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class ModifyIntentResponseUnmarshaller
     {
-        public static ModifyIntentResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyIntentResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyIntentResponse modifyIntentResponse = new ModifyIntentResponse();
 
-			modifyIntentResponse.HttpResponse = context.HttpResponse;
-			modifyIntentResponse.RequestId = context.StringValue("ModifyIntent.RequestId");
-			modifyIntentResponse.Success = context.BooleanValue("ModifyIntent.Success");
-			modifyIntentResponse.Code = context.StringValue("ModifyIntent.Code");
-			modifyIntentResponse.Message = context.StringValue("ModifyIntent.Message");
-			modifyIntentResponse.HttpStatusCode = context.IntegerValue("ModifyIntent.HttpStatusCode");
-			modifyIntentResponse.IntentId = context.StringValue("ModifyIntent.IntentId");
+			modifyIntentResponse.HttpResponse = _ctx.HttpResponse;
+			modifyIntentResponse.Code = _ctx.StringValue("ModifyIntent.Code");
+			modifyIntentResponse.HttpStatusCode = _ctx.IntegerValue("ModifyIntent.HttpStatusCode");
+			modifyIntentResponse.IntentId = _ctx.StringValue("ModifyIntent.IntentId");
+			modifyIntentResponse.Message = _ctx.StringValue("ModifyIntent.Message");
+			modifyIntentResponse.RequestId = _ctx.StringValue("ModifyIntent.RequestId");
+			modifyIntentResponse.Success = _ctx.BooleanValue("ModifyIntent.Success");
         
 			return modifyIntentResponse;
         }

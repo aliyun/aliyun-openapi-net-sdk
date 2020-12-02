@@ -26,17 +26,17 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class AssignJobsResponseUnmarshaller
     {
-        public static AssignJobsResponse Unmarshall(UnmarshallerContext context)
+        public static AssignJobsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AssignJobsResponse assignJobsResponse = new AssignJobsResponse();
 
-			assignJobsResponse.HttpResponse = context.HttpResponse;
-			assignJobsResponse.RequestId = context.StringValue("AssignJobs.RequestId");
-			assignJobsResponse.Success = context.BooleanValue("AssignJobs.Success");
-			assignJobsResponse.Code = context.StringValue("AssignJobs.Code");
-			assignJobsResponse.Message = context.StringValue("AssignJobs.Message");
-			assignJobsResponse.HttpStatusCode = context.IntegerValue("AssignJobs.HttpStatusCode");
-			assignJobsResponse.JobGroupId = context.StringValue("AssignJobs.JobGroupId");
+			assignJobsResponse.HttpResponse = _ctx.HttpResponse;
+			assignJobsResponse.Code = _ctx.StringValue("AssignJobs.Code");
+			assignJobsResponse.HttpStatusCode = _ctx.IntegerValue("AssignJobs.HttpStatusCode");
+			assignJobsResponse.JobGroupId = _ctx.StringValue("AssignJobs.JobGroupId");
+			assignJobsResponse.Message = _ctx.StringValue("AssignJobs.Message");
+			assignJobsResponse.RequestId = _ctx.StringValue("AssignJobs.RequestId");
+			assignJobsResponse.Success = _ctx.BooleanValue("AssignJobs.Success");
         
 			return assignJobsResponse;
         }

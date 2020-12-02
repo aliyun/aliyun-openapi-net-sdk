@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-	public class DownloadBasicStatisticsReportResponse : AcsResponse
+	public class DescribeTTSDemoResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -35,7 +35,7 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private int? httpStatusCode;
 
-		private DownloadBasicStatisticsReport_DownloadParams downloadParams;
+		private string auditionUrl;
 
 		public string RequestId
 		{
@@ -97,33 +97,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public DownloadBasicStatisticsReport_DownloadParams DownloadParams
+		public string AuditionUrl
 		{
 			get
 			{
-				return downloadParams;
+				return auditionUrl;
 			}
 			set	
 			{
-				downloadParams = value;
-			}
-		}
-
-		public class DownloadBasicStatisticsReport_DownloadParams
-		{
-
-			private string signatureUrl;
-
-			public string SignatureUrl
-			{
-				get
-				{
-					return signatureUrl;
-				}
-				set	
-				{
-					signatureUrl = value;
-				}
+				auditionUrl = value;
 			}
 		}
 	}

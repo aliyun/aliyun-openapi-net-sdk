@@ -26,16 +26,16 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class DeleteIntentResponseUnmarshaller
     {
-        public static DeleteIntentResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteIntentResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteIntentResponse deleteIntentResponse = new DeleteIntentResponse();
 
-			deleteIntentResponse.HttpResponse = context.HttpResponse;
-			deleteIntentResponse.RequestId = context.StringValue("DeleteIntent.RequestId");
-			deleteIntentResponse.Success = context.BooleanValue("DeleteIntent.Success");
-			deleteIntentResponse.Code = context.StringValue("DeleteIntent.Code");
-			deleteIntentResponse.Message = context.StringValue("DeleteIntent.Message");
-			deleteIntentResponse.HttpStatusCode = context.IntegerValue("DeleteIntent.HttpStatusCode");
+			deleteIntentResponse.HttpResponse = _ctx.HttpResponse;
+			deleteIntentResponse.Code = _ctx.StringValue("DeleteIntent.Code");
+			deleteIntentResponse.HttpStatusCode = _ctx.IntegerValue("DeleteIntent.HttpStatusCode");
+			deleteIntentResponse.Message = _ctx.StringValue("DeleteIntent.Message");
+			deleteIntentResponse.RequestId = _ctx.StringValue("DeleteIntent.RequestId");
+			deleteIntentResponse.Success = _ctx.BooleanValue("DeleteIntent.Success");
         
 			return deleteIntentResponse;
         }

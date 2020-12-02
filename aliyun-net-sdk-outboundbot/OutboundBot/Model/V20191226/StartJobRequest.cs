@@ -34,9 +34,10 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string jobJson;
@@ -46,8 +47,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private string instanceId;
 
 		private string jobGroupId;
-
-		private bool? selfHostedCallCenter;
 
 		private string scenarioId;
 
@@ -104,19 +103,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				jobGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "JobGroupId", value);
-			}
-		}
-
-		public bool? SelfHostedCallCenter
-		{
-			get
-			{
-				return selfHostedCallCenter;
-			}
-			set	
-			{
-				selfHostedCallCenter = value;
-				DictionaryUtil.Add(QueryParameters, "SelfHostedCallCenter", value.ToString());
 			}
 		}
 

@@ -27,36 +27,67 @@ using Aliyun.Acs.OutboundBot.Transform.V20191226;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-    public class ListUnreachableContactsRequest : RpcAcsRequest<ListUnreachableContactsResponse>
+    public class DescribeTTSDemoRequest : RpcAcsRequest<DescribeTTSDemoResponse>
     {
-        public ListUnreachableContactsRequest()
-            : base("OutboundBot", "2019-12-26", "ListUnreachableContacts", "outboundbot", "openAPI")
+        public DescribeTTSDemoRequest()
+            : base("OutboundBot", "2019-12-26", "DescribeTTSDemo", "outboundbot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private int? pageNumber;
+		private string voice;
+
+		private int? volume;
+
+		private string scriptId;
 
 		private string instanceId;
 
-		private string jobGroupId;
+		private string text;
 
-		private int? pageSize;
+		private int? speechRate;
 
-		public int? PageNumber
+		public string Voice
 		{
 			get
 			{
-				return pageNumber;
+				return voice;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				voice = value;
+				DictionaryUtil.Add(QueryParameters, "Voice", value);
+			}
+		}
+
+		public int? Volume
+		{
+			get
+			{
+				return volume;
+			}
+			set	
+			{
+				volume = value;
+				DictionaryUtil.Add(QueryParameters, "Volume", value.ToString());
+			}
+		}
+
+		public string ScriptId
+		{
+			get
+			{
+				return scriptId;
+			}
+			set	
+			{
+				scriptId = value;
+				DictionaryUtil.Add(QueryParameters, "ScriptId", value);
 			}
 		}
 
@@ -73,29 +104,29 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string JobGroupId
+		public string Text
 		{
 			get
 			{
-				return jobGroupId;
+				return text;
 			}
 			set	
 			{
-				jobGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "JobGroupId", value);
+				text = value;
+				DictionaryUtil.Add(QueryParameters, "Text", value);
 			}
 		}
 
-		public int? PageSize
+		public int? SpeechRate
 		{
 			get
 			{
-				return pageSize;
+				return speechRate;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				speechRate = value;
+				DictionaryUtil.Add(QueryParameters, "SpeechRate", value.ToString());
 			}
 		}
 
@@ -104,9 +135,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			return false;
 		}
 
-        public override ListUnreachableContactsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeTTSDemoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListUnreachableContactsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeTTSDemoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

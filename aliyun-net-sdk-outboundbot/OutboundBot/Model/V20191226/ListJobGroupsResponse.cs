@@ -25,17 +25,53 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class ListJobGroupsResponse : AcsResponse
 	{
 
+		private string code;
+
+		private int? httpStatusCode;
+
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
-
-		private string message;
-
-		private int? httpStatusCode;
-
 		private ListJobGroups_JobGroups jobGroups;
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,42 +97,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
 		public ListJobGroups_JobGroups JobGroups
 		{
 			get
@@ -112,25 +112,13 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class ListJobGroups_JobGroups
 		{
 
-			private int? totalCount;
-
 			private int? pageNumber;
 
 			private int? pageSize;
 
-			private List<ListJobGroups_JobGroup> list;
+			private int? totalCount;
 
-			public int? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
+			private List<ListJobGroups_JobGroup> list;
 
 			public int? PageNumber
 			{
@@ -156,6 +144,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
+			public int? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
+				}
+			}
+
 			public List<ListJobGroups_JobGroup> List
 			{
 				get
@@ -171,21 +171,45 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			public class ListJobGroups_JobGroup
 			{
 
+				private long? creationTime;
+
+				private string jobGroupDescription;
+
 				private string jobGroupId;
 
 				private string jobGroupName;
-
-				private string jobGroupDescription;
 
 				private string scriptId;
 
 				private string scriptName;
 
-				private long? creationTime;
+				private ListJobGroups_Progress progress;
 
 				private ListJobGroups_Strategy strategy;
 
-				private ListJobGroups_Progress progress;
+				public long? CreationTime
+				{
+					get
+					{
+						return creationTime;
+					}
+					set	
+					{
+						creationTime = value;
+					}
+				}
+
+				public string JobGroupDescription
+				{
+					get
+					{
+						return jobGroupDescription;
+					}
+					set	
+					{
+						jobGroupDescription = value;
+					}
+				}
 
 				public string JobGroupId
 				{
@@ -208,18 +232,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						jobGroupName = value;
-					}
-				}
-
-				public string JobGroupDescription
-				{
-					get
-					{
-						return jobGroupDescription;
-					}
-					set	
-					{
-						jobGroupDescription = value;
 					}
 				}
 
@@ -247,15 +259,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public long? CreationTime
+				public ListJobGroups_Progress Progress
 				{
 					get
 					{
-						return creationTime;
+						return progress;
 					}
 					set	
 					{
-						creationTime = value;
+						progress = value;
 					}
 				}
 
@@ -271,24 +283,32 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public ListJobGroups_Progress Progress
+				public class ListJobGroups_Progress
 				{
-					get
-					{
-						return progress;
-					}
-					set	
-					{
-						progress = value;
-					}
-				}
 
-				public class ListJobGroups_Strategy
-				{
+					private int? duration;
 
 					private long? startTime;
 
-					private long? endTime;
+					private string status;
+
+					private int? totalCompleted;
+
+					private int? totalJobs;
+
+					private int? totalNotAnswered;
+
+					public int? Duration
+					{
+						get
+						{
+							return duration;
+						}
+						set	
+						{
+							duration = value;
+						}
+					}
 
 					public long? StartTime
 					{
@@ -299,46 +319,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						set	
 						{
 							startTime = value;
-						}
-					}
-
-					public long? EndTime
-					{
-						get
-						{
-							return endTime;
-						}
-						set	
-						{
-							endTime = value;
-						}
-					}
-				}
-
-				public class ListJobGroups_Progress
-				{
-
-					private int? totalJobs;
-
-					private string status;
-
-					private int? totalNotAnswered;
-
-					private int? totalCompleted;
-
-					private long? startTime;
-
-					private int? duration;
-
-					public int? TotalJobs
-					{
-						get
-						{
-							return totalJobs;
-						}
-						set	
-						{
-							totalJobs = value;
 						}
 					}
 
@@ -354,18 +334,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						}
 					}
 
-					public int? TotalNotAnswered
-					{
-						get
-						{
-							return totalNotAnswered;
-						}
-						set	
-						{
-							totalNotAnswered = value;
-						}
-					}
-
 					public int? TotalCompleted
 					{
 						get
@@ -378,6 +346,50 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						}
 					}
 
+					public int? TotalJobs
+					{
+						get
+						{
+							return totalJobs;
+						}
+						set	
+						{
+							totalJobs = value;
+						}
+					}
+
+					public int? TotalNotAnswered
+					{
+						get
+						{
+							return totalNotAnswered;
+						}
+						set	
+						{
+							totalNotAnswered = value;
+						}
+					}
+				}
+
+				public class ListJobGroups_Strategy
+				{
+
+					private long? endTime;
+
+					private long? startTime;
+
+					public long? EndTime
+					{
+						get
+						{
+							return endTime;
+						}
+						set	
+						{
+							endTime = value;
+						}
+					}
+
 					public long? StartTime
 					{
 						get
@@ -387,18 +399,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						set	
 						{
 							startTime = value;
-						}
-					}
-
-					public int? Duration
-					{
-						get
-						{
-							return duration;
-						}
-						set	
-						{
-							duration = value;
 						}
 					}
 				}

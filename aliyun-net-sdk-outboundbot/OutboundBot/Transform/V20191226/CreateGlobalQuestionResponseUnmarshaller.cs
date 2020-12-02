@@ -26,17 +26,17 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class CreateGlobalQuestionResponseUnmarshaller
     {
-        public static CreateGlobalQuestionResponse Unmarshall(UnmarshallerContext context)
+        public static CreateGlobalQuestionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateGlobalQuestionResponse createGlobalQuestionResponse = new CreateGlobalQuestionResponse();
 
-			createGlobalQuestionResponse.HttpResponse = context.HttpResponse;
-			createGlobalQuestionResponse.RequestId = context.StringValue("CreateGlobalQuestion.RequestId");
-			createGlobalQuestionResponse.Success = context.BooleanValue("CreateGlobalQuestion.Success");
-			createGlobalQuestionResponse.Code = context.StringValue("CreateGlobalQuestion.Code");
-			createGlobalQuestionResponse.Message = context.StringValue("CreateGlobalQuestion.Message");
-			createGlobalQuestionResponse.HttpStatusCode = context.IntegerValue("CreateGlobalQuestion.HttpStatusCode");
-			createGlobalQuestionResponse.GlobalQuestionId = context.StringValue("CreateGlobalQuestion.GlobalQuestionId");
+			createGlobalQuestionResponse.HttpResponse = _ctx.HttpResponse;
+			createGlobalQuestionResponse.Code = _ctx.StringValue("CreateGlobalQuestion.Code");
+			createGlobalQuestionResponse.GlobalQuestionId = _ctx.StringValue("CreateGlobalQuestion.GlobalQuestionId");
+			createGlobalQuestionResponse.HttpStatusCode = _ctx.IntegerValue("CreateGlobalQuestion.HttpStatusCode");
+			createGlobalQuestionResponse.Message = _ctx.StringValue("CreateGlobalQuestion.Message");
+			createGlobalQuestionResponse.RequestId = _ctx.StringValue("CreateGlobalQuestion.RequestId");
+			createGlobalQuestionResponse.Success = _ctx.BooleanValue("CreateGlobalQuestion.Success");
         
 			return createGlobalQuestionResponse;
         }

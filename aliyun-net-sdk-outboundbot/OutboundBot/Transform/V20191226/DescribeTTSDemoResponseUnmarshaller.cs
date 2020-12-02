@@ -24,20 +24,21 @@ using Aliyun.Acs.OutboundBot.Model.V20191226;
 
 namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
-    public class SubmitScriptReviewResponseUnmarshaller
+    public class DescribeTTSDemoResponseUnmarshaller
     {
-        public static SubmitScriptReviewResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DescribeTTSDemoResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			SubmitScriptReviewResponse submitScriptReviewResponse = new SubmitScriptReviewResponse();
+			DescribeTTSDemoResponse describeTTSDemoResponse = new DescribeTTSDemoResponse();
 
-			submitScriptReviewResponse.HttpResponse = _ctx.HttpResponse;
-			submitScriptReviewResponse.Code = _ctx.StringValue("SubmitScriptReview.Code");
-			submitScriptReviewResponse.HttpStatusCode = _ctx.IntegerValue("SubmitScriptReview.HttpStatusCode");
-			submitScriptReviewResponse.Message = _ctx.StringValue("SubmitScriptReview.Message");
-			submitScriptReviewResponse.RequestId = _ctx.StringValue("SubmitScriptReview.RequestId");
-			submitScriptReviewResponse.Success = _ctx.BooleanValue("SubmitScriptReview.Success");
+			describeTTSDemoResponse.HttpResponse = _ctx.HttpResponse;
+			describeTTSDemoResponse.RequestId = _ctx.StringValue("DescribeTTSDemo.RequestId");
+			describeTTSDemoResponse.Success = _ctx.BooleanValue("DescribeTTSDemo.Success");
+			describeTTSDemoResponse.Code = _ctx.StringValue("DescribeTTSDemo.Code");
+			describeTTSDemoResponse.Message = _ctx.StringValue("DescribeTTSDemo.Message");
+			describeTTSDemoResponse.HttpStatusCode = _ctx.IntegerValue("DescribeTTSDemo.HttpStatusCode");
+			describeTTSDemoResponse.AuditionUrl = _ctx.StringValue("DescribeTTSDemo.AuditionUrl");
         
-			return submitScriptReviewResponse;
+			return describeTTSDemoResponse;
         }
     }
 }

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class RecordFailureResponseUnmarshaller
     {
-        public static RecordFailureResponse Unmarshall(UnmarshallerContext context)
+        public static RecordFailureResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RecordFailureResponse recordFailureResponse = new RecordFailureResponse();
 
-			recordFailureResponse.HttpResponse = context.HttpResponse;
-			recordFailureResponse.RequestId = context.StringValue("RecordFailure.RequestId");
-			recordFailureResponse.Success = context.BooleanValue("RecordFailure.Success");
-			recordFailureResponse.Code = context.StringValue("RecordFailure.Code");
-			recordFailureResponse.Message = context.StringValue("RecordFailure.Message");
-			recordFailureResponse.HttpStatusCode = context.IntegerValue("RecordFailure.HttpStatusCode");
+			recordFailureResponse.HttpResponse = _ctx.HttpResponse;
+			recordFailureResponse.Code = _ctx.StringValue("RecordFailure.Code");
+			recordFailureResponse.HttpStatusCode = _ctx.IntegerValue("RecordFailure.HttpStatusCode");
+			recordFailureResponse.Message = _ctx.StringValue("RecordFailure.Message");
+			recordFailureResponse.RequestId = _ctx.StringValue("RecordFailure.RequestId");
+			recordFailureResponse.Success = _ctx.BooleanValue("RecordFailure.Success");
         
 			return recordFailureResponse;
         }

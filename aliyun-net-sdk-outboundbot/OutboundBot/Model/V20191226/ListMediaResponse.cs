@@ -22,20 +22,86 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-	public class DownloadUnreachableContactsResponse : AcsResponse
+	public class ListMediaResponse : AcsResponse
 	{
+
+		private string code;
+
+		private int? httpStatusCode;
+
+		private string message;
+
+		private int? pageNumber;
+
+		private int? pageSize;
 
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
+		private int? totalCount;
 
-		private string message;
+		private List<ListMedia_Media> mediaList;
 
-		private int? httpStatusCode;
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
 
-		private DownloadUnreachableContacts_DownloadParams downloadParams;
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,68 +127,58 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string Code
+		public int? TotalCount
 		{
 			get
 			{
-				return code;
+				return totalCount;
 			}
 			set	
 			{
-				code = value;
+				totalCount = value;
 			}
 		}
 
-		public string Message
+		public List<ListMedia_Media> MediaList
 		{
 			get
 			{
-				return message;
+				return mediaList;
 			}
 			set	
 			{
-				message = value;
+				mediaList = value;
 			}
 		}
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
-		public DownloadUnreachableContacts_DownloadParams DownloadParams
-		{
-			get
-			{
-				return downloadParams;
-			}
-			set	
-			{
-				downloadParams = value;
-			}
-		}
-
-		public class DownloadUnreachableContacts_DownloadParams
+		public class ListMedia_Media
 		{
 
-			private string signatureUrl;
+			private string mediaId;
 
-			public string SignatureUrl
+			private string name;
+
+			public string MediaId
 			{
 				get
 				{
-					return signatureUrl;
+					return mediaId;
 				}
 				set	
 				{
-					signatureUrl = value;
+					mediaId = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 		}

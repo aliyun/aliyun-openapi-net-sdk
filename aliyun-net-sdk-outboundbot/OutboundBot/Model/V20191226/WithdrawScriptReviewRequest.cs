@@ -27,21 +27,35 @@ using Aliyun.Acs.OutboundBot.Transform.V20191226;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-    public class GenerateBasicStatisticsReportRequest : RpcAcsRequest<GenerateBasicStatisticsReportResponse>
+    public class WithdrawScriptReviewRequest : RpcAcsRequest<WithdrawScriptReviewResponse>
     {
-        public GenerateBasicStatisticsReportRequest()
-            : base("OutboundBot", "2019-12-26", "GenerateBasicStatisticsReport", "outboundbot", "openAPI")
+        public WithdrawScriptReviewRequest()
+            : base("OutboundBot", "2019-12-26", "WithdrawScriptReview", "outboundbot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.OutboundBot.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private string scriptId;
 
 		private string instanceId;
 
-		private string jobGroupId;
+		public string ScriptId
+		{
+			get
+			{
+				return scriptId;
+			}
+			set	
+			{
+				scriptId = value;
+				DictionaryUtil.Add(QueryParameters, "ScriptId", value);
+			}
+		}
 
 		public string InstanceId
 		{
@@ -56,27 +70,14 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string JobGroupId
-		{
-			get
-			{
-				return jobGroupId;
-			}
-			set	
-			{
-				jobGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "JobGroupId", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GenerateBasicStatisticsReportResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override WithdrawScriptReviewResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GenerateBasicStatisticsReportResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return WithdrawScriptReviewResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

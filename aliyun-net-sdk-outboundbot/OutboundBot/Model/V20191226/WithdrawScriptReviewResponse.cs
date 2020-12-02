@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-	public class WithdrawScriptResponse : AcsResponse
+	public class WithdrawScriptReviewResponse : AcsResponse
 	{
 
 		private string code;
@@ -35,7 +35,7 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private bool? success;
 
-		private WithdrawScript_Script script;
+		private WithdrawScriptReview_Script script;
 
 		public string Code
 		{
@@ -97,7 +97,7 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public WithdrawScript_Script Script
+		public WithdrawScriptReview_Script Script
 		{
 			get
 			{
@@ -109,7 +109,7 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public class WithdrawScript_Script
+		public class WithdrawScriptReview_Script
 		{
 
 			private string debugStatus;

@@ -22,22 +22,58 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-	public class GetTagHitsSummaryResponse : AcsResponse
+	public class DescribeTagHitsSummaryResponse : AcsResponse
 	{
+
+		private string code;
+
+		private int? httpStatusCode;
+
+		private string message;
 
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
+		private List<DescribeTagHitsSummary_TagGroup> tagGroups;
 
-		private string message;
+		private List<DescribeTagHitsSummary_TagHits> tagHitsList;
 
-		private int? httpStatusCode;
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
 
-		private List<GetTagHitsSummary_TagHits> tagHitsList;
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
 
-		private List<GetTagHitsSummary_TagGroup> tagGroups;
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -63,55 +99,7 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
-		public List<GetTagHitsSummary_TagHits> TagHitsList
-		{
-			get
-			{
-				return tagHitsList;
-			}
-			set	
-			{
-				tagHitsList = value;
-			}
-		}
-
-		public List<GetTagHitsSummary_TagGroup> TagGroups
+		public List<DescribeTagHitsSummary_TagGroup> TagGroups
 		{
 			get
 			{
@@ -123,62 +111,28 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public class GetTagHitsSummary_TagHits
+		public List<DescribeTagHitsSummary_TagHits> TagHitsList
 		{
-
-			private string tagName;
-
-			private int? hitCount;
-
-			private string tagGroup;
-
-			public string TagName
+			get
 			{
-				get
-				{
-					return tagName;
-				}
-				set	
-				{
-					tagName = value;
-				}
+				return tagHitsList;
 			}
-
-			public int? HitCount
+			set	
 			{
-				get
-				{
-					return hitCount;
-				}
-				set	
-				{
-					hitCount = value;
-				}
-			}
-
-			public string TagGroup
-			{
-				get
-				{
-					return tagGroup;
-				}
-				set	
-				{
-					tagGroup = value;
-				}
+				tagHitsList = value;
 			}
 		}
 
-		public class GetTagHitsSummary_TagGroup
+		public class DescribeTagHitsSummary_TagGroup
 		{
 
 			private string id;
 
-			private int? tagGroupIndex;
-
 			private string scriptId;
 
 			private string tagGroup;
+
+			private int? tagGroupIndex;
 
 			public string Id
 			{
@@ -189,18 +143,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					id = value;
-				}
-			}
-
-			public int? TagGroupIndex
-			{
-				get
-				{
-					return tagGroupIndex;
-				}
-				set	
-				{
-					tagGroupIndex = value;
 				}
 			}
 
@@ -225,6 +167,64 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					tagGroup = value;
+				}
+			}
+
+			public int? TagGroupIndex
+			{
+				get
+				{
+					return tagGroupIndex;
+				}
+				set	
+				{
+					tagGroupIndex = value;
+				}
+			}
+		}
+
+		public class DescribeTagHitsSummary_TagHits
+		{
+
+			private int? hitCount;
+
+			private string tagGroup;
+
+			private string tagName;
+
+			public int? HitCount
+			{
+				get
+				{
+					return hitCount;
+				}
+				set	
+				{
+					hitCount = value;
+				}
+			}
+
+			public string TagGroup
+			{
+				get
+				{
+					return tagGroup;
+				}
+				set	
+				{
+					tagGroup = value;
+				}
+			}
+
+			public string TagName
+			{
+				get
+				{
+					return tagName;
+				}
+				set	
+				{
+					tagName = value;
 				}
 			}
 		}

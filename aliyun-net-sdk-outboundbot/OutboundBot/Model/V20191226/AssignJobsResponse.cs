@@ -25,41 +25,17 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class AssignJobsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
-
-		private string message;
 
 		private int? httpStatusCode;
 
 		private string jobGroupId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string message;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private string requestId;
+
+		private bool? success;
 
 		public string Code
 		{
@@ -70,18 +46,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -106,6 +70,42 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				jobGroupId = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

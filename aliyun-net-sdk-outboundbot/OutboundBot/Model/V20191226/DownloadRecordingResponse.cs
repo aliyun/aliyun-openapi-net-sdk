@@ -25,17 +25,53 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class DownloadRecordingResponse : AcsResponse
 	{
 
+		private string code;
+
+		private int? httpStatusCode;
+
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
-
-		private string message;
-
-		private int? httpStatusCode;
-
 		private DownloadRecording_DownloadParams downloadParams;
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,42 +97,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
 		public DownloadRecording_DownloadParams DownloadParams
 		{
 			get
@@ -112,21 +112,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class DownloadRecording_DownloadParams
 		{
 
-			private string signatureUrl;
-
 			private string fileName;
 
-			public string SignatureUrl
-			{
-				get
-				{
-					return signatureUrl;
-				}
-				set	
-				{
-					signatureUrl = value;
-				}
-			}
+			private string signatureUrl;
 
 			public string FileName
 			{
@@ -137,6 +125,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					fileName = value;
+				}
+			}
+
+			public string SignatureUrl
+			{
+				get
+				{
+					return signatureUrl;
+				}
+				set	
+				{
+					signatureUrl = value;
 				}
 			}
 		}

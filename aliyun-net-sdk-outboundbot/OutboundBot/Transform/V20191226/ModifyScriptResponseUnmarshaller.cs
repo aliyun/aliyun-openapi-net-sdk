@@ -26,28 +26,29 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class ModifyScriptResponseUnmarshaller
     {
-        public static ModifyScriptResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyScriptResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyScriptResponse modifyScriptResponse = new ModifyScriptResponse();
 
-			modifyScriptResponse.HttpResponse = context.HttpResponse;
-			modifyScriptResponse.RequestId = context.StringValue("ModifyScript.RequestId");
-			modifyScriptResponse.Success = context.BooleanValue("ModifyScript.Success");
-			modifyScriptResponse.Code = context.StringValue("ModifyScript.Code");
-			modifyScriptResponse.Message = context.StringValue("ModifyScript.Message");
-			modifyScriptResponse.HttpStatusCode = context.IntegerValue("ModifyScript.HttpStatusCode");
+			modifyScriptResponse.HttpResponse = _ctx.HttpResponse;
+			modifyScriptResponse.Code = _ctx.StringValue("ModifyScript.Code");
+			modifyScriptResponse.HttpStatusCode = _ctx.IntegerValue("ModifyScript.HttpStatusCode");
+			modifyScriptResponse.Message = _ctx.StringValue("ModifyScript.Message");
+			modifyScriptResponse.RequestId = _ctx.StringValue("ModifyScript.RequestId");
+			modifyScriptResponse.Success = _ctx.BooleanValue("ModifyScript.Success");
+			modifyScriptResponse.ChatbotId = _ctx.StringValue("ModifyScript.ChatbotId");
 
 			ModifyScriptResponse.ModifyScript_Script script = new ModifyScriptResponse.ModifyScript_Script();
-			script.ScriptId = context.StringValue("ModifyScript.Script.ScriptId");
-			script.ScriptName = context.StringValue("ModifyScript.Script.ScriptName");
-			script.ScriptDescription = context.StringValue("ModifyScript.Script.ScriptDescription");
-			script.Industry = context.StringValue("ModifyScript.Script.Industry");
-			script.Scene = context.StringValue("ModifyScript.Script.Scene");
-			script.Status = context.StringValue("ModifyScript.Script.Status");
-			script.DebugStatus = context.StringValue("ModifyScript.Script.DebugStatus");
-			script.UpdateTime = context.LongValue("ModifyScript.Script.UpdateTime");
-			script.IsDrafted = context.BooleanValue("ModifyScript.Script.IsDrafted");
-			script.IsDebugDrafted = context.BooleanValue("ModifyScript.Script.IsDebugDrafted");
+			script.DebugStatus = _ctx.StringValue("ModifyScript.Script.DebugStatus");
+			script.Industry = _ctx.StringValue("ModifyScript.Script.Industry");
+			script.IsDebugDrafted = _ctx.BooleanValue("ModifyScript.Script.IsDebugDrafted");
+			script.IsDrafted = _ctx.BooleanValue("ModifyScript.Script.IsDrafted");
+			script.Scene = _ctx.StringValue("ModifyScript.Script.Scene");
+			script.ScriptDescription = _ctx.StringValue("ModifyScript.Script.ScriptDescription");
+			script.ScriptId = _ctx.StringValue("ModifyScript.Script.ScriptId");
+			script.ScriptName = _ctx.StringValue("ModifyScript.Script.ScriptName");
+			script.Status = _ctx.StringValue("ModifyScript.Script.Status");
+			script.UpdateTime = _ctx.LongValue("ModifyScript.Script.UpdateTime");
 			modifyScriptResponse.Script = script;
         
 			return modifyScriptResponse;

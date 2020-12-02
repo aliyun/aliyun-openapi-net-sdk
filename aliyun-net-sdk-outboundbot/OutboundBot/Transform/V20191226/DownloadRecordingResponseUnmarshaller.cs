@@ -26,20 +26,20 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class DownloadRecordingResponseUnmarshaller
     {
-        public static DownloadRecordingResponse Unmarshall(UnmarshallerContext context)
+        public static DownloadRecordingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DownloadRecordingResponse downloadRecordingResponse = new DownloadRecordingResponse();
 
-			downloadRecordingResponse.HttpResponse = context.HttpResponse;
-			downloadRecordingResponse.RequestId = context.StringValue("DownloadRecording.RequestId");
-			downloadRecordingResponse.Success = context.BooleanValue("DownloadRecording.Success");
-			downloadRecordingResponse.Code = context.StringValue("DownloadRecording.Code");
-			downloadRecordingResponse.Message = context.StringValue("DownloadRecording.Message");
-			downloadRecordingResponse.HttpStatusCode = context.IntegerValue("DownloadRecording.HttpStatusCode");
+			downloadRecordingResponse.HttpResponse = _ctx.HttpResponse;
+			downloadRecordingResponse.Code = _ctx.StringValue("DownloadRecording.Code");
+			downloadRecordingResponse.HttpStatusCode = _ctx.IntegerValue("DownloadRecording.HttpStatusCode");
+			downloadRecordingResponse.Message = _ctx.StringValue("DownloadRecording.Message");
+			downloadRecordingResponse.RequestId = _ctx.StringValue("DownloadRecording.RequestId");
+			downloadRecordingResponse.Success = _ctx.BooleanValue("DownloadRecording.Success");
 
 			DownloadRecordingResponse.DownloadRecording_DownloadParams downloadParams = new DownloadRecordingResponse.DownloadRecording_DownloadParams();
-			downloadParams.SignatureUrl = context.StringValue("DownloadRecording.DownloadParams.SignatureUrl");
-			downloadParams.FileName = context.StringValue("DownloadRecording.DownloadParams.FileName");
+			downloadParams.FileName = _ctx.StringValue("DownloadRecording.DownloadParams.FileName");
+			downloadParams.SignatureUrl = _ctx.StringValue("DownloadRecording.DownloadParams.SignatureUrl");
 			downloadRecordingResponse.DownloadParams = downloadParams;
         
 			return downloadRecordingResponse;

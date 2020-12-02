@@ -26,17 +26,17 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class ImportScriptResponseUnmarshaller
     {
-        public static ImportScriptResponse Unmarshall(UnmarshallerContext context)
+        public static ImportScriptResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ImportScriptResponse importScriptResponse = new ImportScriptResponse();
 
-			importScriptResponse.HttpResponse = context.HttpResponse;
-			importScriptResponse.RequestId = context.StringValue("ImportScript.RequestId");
-			importScriptResponse.Success = context.BooleanValue("ImportScript.Success");
-			importScriptResponse.Code = context.StringValue("ImportScript.Code");
-			importScriptResponse.Message = context.StringValue("ImportScript.Message");
-			importScriptResponse.HttpStatusCode = context.IntegerValue("ImportScript.HttpStatusCode");
-			importScriptResponse.ScriptId = context.StringValue("ImportScript.ScriptId");
+			importScriptResponse.HttpResponse = _ctx.HttpResponse;
+			importScriptResponse.Code = _ctx.StringValue("ImportScript.Code");
+			importScriptResponse.HttpStatusCode = _ctx.IntegerValue("ImportScript.HttpStatusCode");
+			importScriptResponse.Message = _ctx.StringValue("ImportScript.Message");
+			importScriptResponse.RequestId = _ctx.StringValue("ImportScript.RequestId");
+			importScriptResponse.ScriptId = _ctx.StringValue("ImportScript.ScriptId");
+			importScriptResponse.Success = _ctx.BooleanValue("ImportScript.Success");
         
 			return importScriptResponse;
         }

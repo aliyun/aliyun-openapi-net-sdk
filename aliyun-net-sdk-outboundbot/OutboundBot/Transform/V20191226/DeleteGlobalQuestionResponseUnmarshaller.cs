@@ -26,16 +26,16 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class DeleteGlobalQuestionResponseUnmarshaller
     {
-        public static DeleteGlobalQuestionResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteGlobalQuestionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteGlobalQuestionResponse deleteGlobalQuestionResponse = new DeleteGlobalQuestionResponse();
 
-			deleteGlobalQuestionResponse.HttpResponse = context.HttpResponse;
-			deleteGlobalQuestionResponse.RequestId = context.StringValue("DeleteGlobalQuestion.RequestId");
-			deleteGlobalQuestionResponse.Success = context.BooleanValue("DeleteGlobalQuestion.Success");
-			deleteGlobalQuestionResponse.Code = context.StringValue("DeleteGlobalQuestion.Code");
-			deleteGlobalQuestionResponse.Message = context.StringValue("DeleteGlobalQuestion.Message");
-			deleteGlobalQuestionResponse.HttpStatusCode = context.IntegerValue("DeleteGlobalQuestion.HttpStatusCode");
+			deleteGlobalQuestionResponse.HttpResponse = _ctx.HttpResponse;
+			deleteGlobalQuestionResponse.Code = _ctx.StringValue("DeleteGlobalQuestion.Code");
+			deleteGlobalQuestionResponse.HttpStatusCode = _ctx.IntegerValue("DeleteGlobalQuestion.HttpStatusCode");
+			deleteGlobalQuestionResponse.Message = _ctx.StringValue("DeleteGlobalQuestion.Message");
+			deleteGlobalQuestionResponse.RequestId = _ctx.StringValue("DeleteGlobalQuestion.RequestId");
+			deleteGlobalQuestionResponse.Success = _ctx.BooleanValue("DeleteGlobalQuestion.Success");
         
 			return deleteGlobalQuestionResponse;
         }

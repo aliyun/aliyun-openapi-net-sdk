@@ -25,17 +25,53 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class ListJobsByGroupResponse : AcsResponse
 	{
 
+		private string code;
+
+		private int? httpStatusCode;
+
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
-
-		private string message;
-
-		private int? httpStatusCode;
-
 		private ListJobsByGroup_Jobs jobs;
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,42 +97,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
 		public ListJobsByGroup_Jobs Jobs
 		{
 			get
@@ -112,25 +112,13 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class ListJobsByGroup_Jobs
 		{
 
-			private int? totalCount;
-
 			private int? pageNumber;
 
 			private int? pageSize;
 
-			private List<ListJobsByGroup_Job> list;
+			private int? totalCount;
 
-			public int? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
+			private List<ListJobsByGroup_Job> list;
 
 			public int? PageNumber
 			{
@@ -156,6 +144,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
+			public int? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
+				}
+			}
+
 			public List<ListJobsByGroup_Job> List
 			{
 				get
@@ -171,23 +171,23 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			public class ListJobsByGroup_Job
 			{
 
-				private string jobId;
+				private string failureReason;
 
 				private string jobGroupId;
 
-				private string scenarioId;
-
-				private string strategyId;
+				private string jobId;
 
 				private int? priority;
 
-				private int? systemPriority;
+				private string referenceId;
+
+				private string scenarioId;
 
 				private string status;
 
-				private string referenceId;
+				private string strategyId;
 
-				private string failureReason;
+				private int? systemPriority;
 
 				private List<ListJobsByGroup_Contact> contacts;
 
@@ -197,15 +197,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 				private List<string> callingNumbers;
 
-				public string JobId
+				public string FailureReason
 				{
 					get
 					{
-						return jobId;
+						return failureReason;
 					}
 					set	
 					{
-						jobId = value;
+						failureReason = value;
 					}
 				}
 
@@ -221,27 +221,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string ScenarioId
+				public string JobId
 				{
 					get
 					{
-						return scenarioId;
+						return jobId;
 					}
 					set	
 					{
-						scenarioId = value;
-					}
-				}
-
-				public string StrategyId
-				{
-					get
-					{
-						return strategyId;
-					}
-					set	
-					{
-						strategyId = value;
+						jobId = value;
 					}
 				}
 
@@ -257,15 +245,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public int? SystemPriority
+				public string ReferenceId
 				{
 					get
 					{
-						return systemPriority;
+						return referenceId;
 					}
 					set	
 					{
-						systemPriority = value;
+						referenceId = value;
+					}
+				}
+
+				public string ScenarioId
+				{
+					get
+					{
+						return scenarioId;
+					}
+					set	
+					{
+						scenarioId = value;
 					}
 				}
 
@@ -281,27 +281,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string ReferenceId
+				public string StrategyId
 				{
 					get
 					{
-						return referenceId;
+						return strategyId;
 					}
 					set	
 					{
-						referenceId = value;
+						strategyId = value;
 					}
 				}
 
-				public string FailureReason
+				public int? SystemPriority
 				{
 					get
 					{
-						return failureReason;
+						return systemPriority;
 					}
 					set	
 					{
-						failureReason = value;
+						systemPriority = value;
 					}
 				}
 
@@ -362,15 +362,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 					private string honorific;
 
-					private string role;
+					private string jobId;
 
 					private string phoneNumber;
 
-					private string state;
-
 					private string referenceId;
 
-					private string jobId;
+					private string role;
+
+					private string state;
 
 					public string ContactId
 					{
@@ -408,15 +408,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						}
 					}
 
-					public string Role
+					public string JobId
 					{
 						get
 						{
-							return role;
+							return jobId;
 						}
 						set	
 						{
-							role = value;
+							jobId = value;
 						}
 					}
 
@@ -432,18 +432,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						}
 					}
 
-					public string State
-					{
-						get
-						{
-							return state;
-						}
-						set	
-						{
-							state = value;
-						}
-					}
-
 					public string ReferenceId
 					{
 						get
@@ -456,15 +444,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						}
 					}
 
-					public string JobId
+					public string Role
 					{
 						get
 						{
-							return jobId;
+							return role;
 						}
 						set	
 						{
-							jobId = value;
+							role = value;
+						}
+					}
+
+					public string State
+					{
+						get
+						{
+							return state;
+						}
+						set	
+						{
+							state = value;
 						}
 					}
 				}
@@ -504,31 +504,55 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				public class ListJobsByGroup_SummaryItem
 				{
 
-					private string summaryId;
+					private string category;
+
+					private string content;
+
+					private string conversationDetailId;
 
 					private string jobGroupId;
 
 					private string jobId;
 
-					private string taskId;
-
-					private string conversationDetailId;
-
-					private string category;
+					private string summaryId;
 
 					private string summaryName;
 
-					private string content;
+					private string taskId;
 
-					public string SummaryId
+					public string Category
 					{
 						get
 						{
-							return summaryId;
+							return category;
 						}
 						set	
 						{
-							summaryId = value;
+							category = value;
+						}
+					}
+
+					public string Content
+					{
+						get
+						{
+							return content;
+						}
+						set	
+						{
+							content = value;
+						}
+					}
+
+					public string ConversationDetailId
+					{
+						get
+						{
+							return conversationDetailId;
+						}
+						set	
+						{
+							conversationDetailId = value;
 						}
 					}
 
@@ -556,39 +580,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						}
 					}
 
-					public string TaskId
+					public string SummaryId
 					{
 						get
 						{
-							return taskId;
+							return summaryId;
 						}
 						set	
 						{
-							taskId = value;
-						}
-					}
-
-					public string ConversationDetailId
-					{
-						get
-						{
-							return conversationDetailId;
-						}
-						set	
-						{
-							conversationDetailId = value;
-						}
-					}
-
-					public string Category
-					{
-						get
-						{
-							return category;
-						}
-						set	
-						{
-							category = value;
+							summaryId = value;
 						}
 					}
 
@@ -604,15 +604,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						}
 					}
 
-					public string Content
+					public string TaskId
 					{
 						get
 						{
-							return content;
+							return taskId;
 						}
 						set	
 						{
-							content = value;
+							taskId = value;
 						}
 					}
 				}

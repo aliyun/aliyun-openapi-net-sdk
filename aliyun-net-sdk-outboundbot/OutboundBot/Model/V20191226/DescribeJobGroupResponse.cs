@@ -25,17 +25,53 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class DescribeJobGroupResponse : AcsResponse
 	{
 
+		private string code;
+
+		private int? httpStatusCode;
+
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
-
-		private string message;
-
-		private int? httpStatusCode;
-
 		private DescribeJobGroup_JobGroup jobGroup;
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,42 +97,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
 		public DescribeJobGroup_JobGroup JobGroup
 		{
 			get
@@ -112,11 +112,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class DescribeJobGroup_JobGroup
 		{
 
+			private long? creationTime;
+
+			private string jobFilePath;
+
+			private string jobGroupDescription;
+
 			private string jobGroupId;
 
 			private string jobGroupName;
-
-			private string jobGroupDescription;
 
 			private string scenarioId;
 
@@ -124,15 +128,47 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private string scriptName;
 
-			private string jobFilePath;
-
-			private long? creationTime;
-
 			private List<string> callingNumbers;
+
+			private DescribeJobGroup_Progress progress;
 
 			private DescribeJobGroup_Strategy strategy;
 
-			private DescribeJobGroup_Progress progress;
+			public long? CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
+
+			public string JobFilePath
+			{
+				get
+				{
+					return jobFilePath;
+				}
+				set	
+				{
+					jobFilePath = value;
+				}
+			}
+
+			public string JobGroupDescription
+			{
+				get
+				{
+					return jobGroupDescription;
+				}
+				set	
+				{
+					jobGroupDescription = value;
+				}
+			}
 
 			public string JobGroupId
 			{
@@ -155,18 +191,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					jobGroupName = value;
-				}
-			}
-
-			public string JobGroupDescription
-			{
-				get
-				{
-					return jobGroupDescription;
-				}
-				set	
-				{
-					jobGroupDescription = value;
 				}
 			}
 
@@ -206,30 +230,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string JobFilePath
-			{
-				get
-				{
-					return jobFilePath;
-				}
-				set	
-				{
-					jobFilePath = value;
-				}
-			}
-
-			public long? CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
-
 			public List<string> CallingNumbers
 			{
 				get
@@ -239,18 +239,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					callingNumbers = value;
-				}
-			}
-
-			public DescribeJobGroup_Strategy Strategy
-			{
-				get
-				{
-					return strategy;
-				}
-				set	
-				{
-					strategy = value;
 				}
 			}
 
@@ -266,84 +254,116 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public class DescribeJobGroup_Strategy
+			public DescribeJobGroup_Strategy Strategy
+			{
+				get
+				{
+					return strategy;
+				}
+				set	
+				{
+					strategy = value;
+				}
+			}
+
+			public class DescribeJobGroup_Progress
 			{
 
-				private string strategyId;
+				private int? cancelled;
 
-				private string strategyName;
+				private int? duration;
 
-				private string strategyDescription;
+				private int? executing;
 
-				private string type;
+				private int? failed;
+
+				private int? paused;
+
+				private int? scheduling;
 
 				private long? startTime;
 
-				private long? endTime;
+				private string status;
 
-				private string repeatBy;
+				private int? totalCompleted;
 
-				private int? maxAttemptsPerDay;
+				private int? totalJobs;
 
-				private int? minAttemptInterval;
+				private int? totalNotAnswered;
 
-				private string customized;
+				private List<DescribeJobGroup_KeyValuePair> briefs;
 
-				private string routingStrategy;
+				private List<DescribeJobGroup_KeyValuePair> categories;
 
-				private string followUpStrategy;
-
-				private bool? isTemplate;
-
-				private List<DescribeJobGroup_TimeFrame> workingTime;
-
-				private List<string> repeatDays;
-
-				public string StrategyId
+				public int? Cancelled
 				{
 					get
 					{
-						return strategyId;
+						return cancelled;
 					}
 					set	
 					{
-						strategyId = value;
+						cancelled = value;
 					}
 				}
 
-				public string StrategyName
+				public int? Duration
 				{
 					get
 					{
-						return strategyName;
+						return duration;
 					}
 					set	
 					{
-						strategyName = value;
+						duration = value;
 					}
 				}
 
-				public string StrategyDescription
+				public int? Executing
 				{
 					get
 					{
-						return strategyDescription;
+						return executing;
 					}
 					set	
 					{
-						strategyDescription = value;
+						executing = value;
 					}
 				}
 
-				public string Type
+				public int? Failed
 				{
 					get
 					{
-						return type;
+						return failed;
 					}
 					set	
 					{
-						type = value;
+						failed = value;
+					}
+				}
+
+				public int? Paused
+				{
+					get
+					{
+						return paused;
+					}
+					set	
+					{
+						paused = value;
+					}
+				}
+
+				public int? Scheduling
+				{
+					get
+					{
+						return scheduling;
+					}
+					set	
+					{
+						scheduling = value;
 					}
 				}
 
@@ -359,6 +379,156 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public int? TotalCompleted
+				{
+					get
+					{
+						return totalCompleted;
+					}
+					set	
+					{
+						totalCompleted = value;
+					}
+				}
+
+				public int? TotalJobs
+				{
+					get
+					{
+						return totalJobs;
+					}
+					set	
+					{
+						totalJobs = value;
+					}
+				}
+
+				public int? TotalNotAnswered
+				{
+					get
+					{
+						return totalNotAnswered;
+					}
+					set	
+					{
+						totalNotAnswered = value;
+					}
+				}
+
+				public List<DescribeJobGroup_KeyValuePair> Briefs
+				{
+					get
+					{
+						return briefs;
+					}
+					set	
+					{
+						briefs = value;
+					}
+				}
+
+				public List<DescribeJobGroup_KeyValuePair> Categories
+				{
+					get
+					{
+						return categories;
+					}
+					set	
+					{
+						categories = value;
+					}
+				}
+
+				public class DescribeJobGroup_KeyValuePair
+				{
+
+					private string key;
+
+					private string _value;
+
+					public string Key
+					{
+						get
+						{
+							return key;
+						}
+						set	
+						{
+							key = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
+						}
+					}
+				}
+			}
+
+			public class DescribeJobGroup_Strategy
+			{
+
+				private string customized;
+
+				private long? endTime;
+
+				private string followUpStrategy;
+
+				private bool? isTemplate;
+
+				private int? maxAttemptsPerDay;
+
+				private int? minAttemptInterval;
+
+				private string repeatBy;
+
+				private string routingStrategy;
+
+				private long? startTime;
+
+				private string strategyDescription;
+
+				private string strategyId;
+
+				private string strategyName;
+
+				private string type;
+
+				private List<DescribeJobGroup_TimeFrame> workingTime;
+
+				private List<string> repeatDays;
+
+				public string Customized
+				{
+					get
+					{
+						return customized;
+					}
+					set	
+					{
+						customized = value;
+					}
+				}
+
 				public long? EndTime
 				{
 					get
@@ -371,15 +541,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string RepeatBy
+				public string FollowUpStrategy
 				{
 					get
 					{
-						return repeatBy;
+						return followUpStrategy;
 					}
 					set	
 					{
-						repeatBy = value;
+						followUpStrategy = value;
+					}
+				}
+
+				public bool? IsTemplate
+				{
+					get
+					{
+						return isTemplate;
+					}
+					set	
+					{
+						isTemplate = value;
 					}
 				}
 
@@ -407,15 +589,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string Customized
+				public string RepeatBy
 				{
 					get
 					{
-						return customized;
+						return repeatBy;
 					}
 					set	
 					{
-						customized = value;
+						repeatBy = value;
 					}
 				}
 
@@ -431,27 +613,63 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string FollowUpStrategy
+				public long? StartTime
 				{
 					get
 					{
-						return followUpStrategy;
+						return startTime;
 					}
 					set	
 					{
-						followUpStrategy = value;
+						startTime = value;
 					}
 				}
 
-				public bool? IsTemplate
+				public string StrategyDescription
 				{
 					get
 					{
-						return isTemplate;
+						return strategyDescription;
 					}
 					set	
 					{
-						isTemplate = value;
+						strategyDescription = value;
+					}
+				}
+
+				public string StrategyId
+				{
+					get
+					{
+						return strategyId;
+					}
+					set	
+					{
+						strategyId = value;
+					}
+				}
+
+				public string StrategyName
+				{
+					get
+					{
+						return strategyName;
+					}
+					set	
+					{
+						strategyName = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
 					}
 				}
 
@@ -507,224 +725,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						set	
 						{
 							endTime = value;
-						}
-					}
-				}
-			}
-
-			public class DescribeJobGroup_Progress
-			{
-
-				private int? totalJobs;
-
-				private string status;
-
-				private int? totalNotAnswered;
-
-				private int? totalCompleted;
-
-				private long? startTime;
-
-				private int? duration;
-
-				private int? scheduling;
-
-				private int? executing;
-
-				private int? paused;
-
-				private int? failed;
-
-				private int? cancelled;
-
-				private List<DescribeJobGroup_KeyValuePair> categories;
-
-				private List<DescribeJobGroup_KeyValuePair> briefs;
-
-				public int? TotalJobs
-				{
-					get
-					{
-						return totalJobs;
-					}
-					set	
-					{
-						totalJobs = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public int? TotalNotAnswered
-				{
-					get
-					{
-						return totalNotAnswered;
-					}
-					set	
-					{
-						totalNotAnswered = value;
-					}
-				}
-
-				public int? TotalCompleted
-				{
-					get
-					{
-						return totalCompleted;
-					}
-					set	
-					{
-						totalCompleted = value;
-					}
-				}
-
-				public long? StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
-					}
-				}
-
-				public int? Duration
-				{
-					get
-					{
-						return duration;
-					}
-					set	
-					{
-						duration = value;
-					}
-				}
-
-				public int? Scheduling
-				{
-					get
-					{
-						return scheduling;
-					}
-					set	
-					{
-						scheduling = value;
-					}
-				}
-
-				public int? Executing
-				{
-					get
-					{
-						return executing;
-					}
-					set	
-					{
-						executing = value;
-					}
-				}
-
-				public int? Paused
-				{
-					get
-					{
-						return paused;
-					}
-					set	
-					{
-						paused = value;
-					}
-				}
-
-				public int? Failed
-				{
-					get
-					{
-						return failed;
-					}
-					set	
-					{
-						failed = value;
-					}
-				}
-
-				public int? Cancelled
-				{
-					get
-					{
-						return cancelled;
-					}
-					set	
-					{
-						cancelled = value;
-					}
-				}
-
-				public List<DescribeJobGroup_KeyValuePair> Categories
-				{
-					get
-					{
-						return categories;
-					}
-					set	
-					{
-						categories = value;
-					}
-				}
-
-				public List<DescribeJobGroup_KeyValuePair> Briefs
-				{
-					get
-					{
-						return briefs;
-					}
-					set	
-					{
-						briefs = value;
-					}
-				}
-
-				public class DescribeJobGroup_KeyValuePair
-				{
-
-					private string key;
-
-					private string _value;
-
-					public string Key
-					{
-						get
-						{
-							return key;
-						}
-						set	
-						{
-							key = value;
-						}
-					}
-
-					public string _Value
-					{
-						get
-						{
-							return _value;
-						}
-						set	
-						{
-							_value = value;
 						}
 					}
 				}

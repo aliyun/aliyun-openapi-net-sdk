@@ -26,102 +26,113 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
     public class DescribeJobResponseUnmarshaller
     {
-        public static DescribeJobResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeJobResponse describeJobResponse = new DescribeJobResponse();
 
-			describeJobResponse.HttpResponse = context.HttpResponse;
-			describeJobResponse.RequestId = context.StringValue("DescribeJob.RequestId");
-			describeJobResponse.Success = context.BooleanValue("DescribeJob.Success");
-			describeJobResponse.Code = context.StringValue("DescribeJob.Code");
-			describeJobResponse.Message = context.StringValue("DescribeJob.Message");
-			describeJobResponse.HttpStatusCode = context.IntegerValue("DescribeJob.HttpStatusCode");
+			describeJobResponse.HttpResponse = _ctx.HttpResponse;
+			describeJobResponse.Code = _ctx.StringValue("DescribeJob.Code");
+			describeJobResponse.HttpStatusCode = _ctx.IntegerValue("DescribeJob.HttpStatusCode");
+			describeJobResponse.Message = _ctx.StringValue("DescribeJob.Message");
+			describeJobResponse.RequestId = _ctx.StringValue("DescribeJob.RequestId");
+			describeJobResponse.Success = _ctx.BooleanValue("DescribeJob.Success");
 
 			DescribeJobResponse.DescribeJob_Job job = new DescribeJobResponse.DescribeJob_Job();
-			job.JobId = context.StringValue("DescribeJob.Job.JobId");
-			job.JobGroupId = context.StringValue("DescribeJob.Job.JobGroupId");
-			job.ScenarioId = context.StringValue("DescribeJob.Job.ScenarioId");
-			job.StrategyId = context.StringValue("DescribeJob.Job.StrategyId");
-			job.Priority = context.IntegerValue("DescribeJob.Job.Priority");
-			job.SystemPriority = context.IntegerValue("DescribeJob.Job.SystemPriority");
-			job.Status = context.StringValue("DescribeJob.Job.Status");
-			job.ReferenceId = context.StringValue("DescribeJob.Job.ReferenceId");
-			job.FailureReason = context.StringValue("DescribeJob.Job.FailureReason");
+			job.FailureReason = _ctx.StringValue("DescribeJob.Job.FailureReason");
+			job.JobGroupId = _ctx.StringValue("DescribeJob.Job.JobGroupId");
+			job.JobId = _ctx.StringValue("DescribeJob.Job.JobId");
+			job.Priority = _ctx.IntegerValue("DescribeJob.Job.Priority");
+			job.ReferenceId = _ctx.StringValue("DescribeJob.Job.ReferenceId");
+			job.ScenarioId = _ctx.StringValue("DescribeJob.Job.ScenarioId");
+			job.Status = _ctx.StringValue("DescribeJob.Job.Status");
+			job.StrategyId = _ctx.StringValue("DescribeJob.Job.StrategyId");
+			job.SystemPriority = _ctx.IntegerValue("DescribeJob.Job.SystemPriority");
 
 			List<string> job_callingNumbers = new List<string>();
-			for (int i = 0; i < context.Length("DescribeJob.Job.CallingNumbers.Length"); i++) {
-				job_callingNumbers.Add(context.StringValue("DescribeJob.Job.CallingNumbers["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeJob.Job.CallingNumbers.Length"); i++) {
+				job_callingNumbers.Add(_ctx.StringValue("DescribeJob.Job.CallingNumbers["+ i +"]"));
 			}
 			job.CallingNumbers = job_callingNumbers;
 
 			List<DescribeJobResponse.DescribeJob_Job.DescribeJob_Contact> job_contacts = new List<DescribeJobResponse.DescribeJob_Job.DescribeJob_Contact>();
-			for (int i = 0; i < context.Length("DescribeJob.Job.Contacts.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeJob.Job.Contacts.Length"); i++) {
 				DescribeJobResponse.DescribeJob_Job.DescribeJob_Contact contact = new DescribeJobResponse.DescribeJob_Job.DescribeJob_Contact();
-				contact.ContactId = context.StringValue("DescribeJob.Job.Contacts["+ i +"].ContactId");
-				contact.ContactName = context.StringValue("DescribeJob.Job.Contacts["+ i +"].ContactName");
-				contact.Honorific = context.StringValue("DescribeJob.Job.Contacts["+ i +"].Honorific");
-				contact.Role = context.StringValue("DescribeJob.Job.Contacts["+ i +"].Role");
-				contact.PhoneNumber = context.StringValue("DescribeJob.Job.Contacts["+ i +"].PhoneNumber");
-				contact.State = context.StringValue("DescribeJob.Job.Contacts["+ i +"].State");
-				contact.ReferenceId = context.StringValue("DescribeJob.Job.Contacts["+ i +"].ReferenceId");
-				contact.JobId = context.StringValue("DescribeJob.Job.Contacts["+ i +"].JobId");
+				contact.ContactId = _ctx.StringValue("DescribeJob.Job.Contacts["+ i +"].ContactId");
+				contact.ContactName = _ctx.StringValue("DescribeJob.Job.Contacts["+ i +"].ContactName");
+				contact.Honorific = _ctx.StringValue("DescribeJob.Job.Contacts["+ i +"].Honorific");
+				contact.JobId = _ctx.StringValue("DescribeJob.Job.Contacts["+ i +"].JobId");
+				contact.PhoneNumber = _ctx.StringValue("DescribeJob.Job.Contacts["+ i +"].PhoneNumber");
+				contact.ReferenceId = _ctx.StringValue("DescribeJob.Job.Contacts["+ i +"].ReferenceId");
+				contact.Role = _ctx.StringValue("DescribeJob.Job.Contacts["+ i +"].Role");
+				contact.State = _ctx.StringValue("DescribeJob.Job.Contacts["+ i +"].State");
 
 				job_contacts.Add(contact);
 			}
 			job.Contacts = job_contacts;
 
 			List<DescribeJobResponse.DescribeJob_Job.DescribeJob_KeyValuePair> job_extras = new List<DescribeJobResponse.DescribeJob_Job.DescribeJob_KeyValuePair>();
-			for (int i = 0; i < context.Length("DescribeJob.Job.Extras.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeJob.Job.Extras.Length"); i++) {
 				DescribeJobResponse.DescribeJob_Job.DescribeJob_KeyValuePair keyValuePair = new DescribeJobResponse.DescribeJob_Job.DescribeJob_KeyValuePair();
-				keyValuePair.Key = context.StringValue("DescribeJob.Job.Extras["+ i +"].Key");
-				keyValuePair._Value = context.StringValue("DescribeJob.Job.Extras["+ i +"].Value");
+				keyValuePair.Key = _ctx.StringValue("DescribeJob.Job.Extras["+ i +"].Key");
+				keyValuePair._Value = _ctx.StringValue("DescribeJob.Job.Extras["+ i +"].Value");
 
 				job_extras.Add(keyValuePair);
 			}
 			job.Extras = job_extras;
 
-			List<DescribeJobResponse.DescribeJob_Job.DescribeJob_Task> job_tasks = new List<DescribeJobResponse.DescribeJob_Job.DescribeJob_Task>();
-			for (int i = 0; i < context.Length("DescribeJob.Job.Tasks.Length"); i++) {
-				DescribeJobResponse.DescribeJob_Job.DescribeJob_Task task = new DescribeJobResponse.DescribeJob_Job.DescribeJob_Task();
-				task.TaskId = context.StringValue("DescribeJob.Job.Tasks["+ i +"].TaskId");
-				task.JobId = context.StringValue("DescribeJob.Job.Tasks["+ i +"].JobId");
-				task.ScenarioId = context.StringValue("DescribeJob.Job.Tasks["+ i +"].ScenarioId");
-				task.ChatbotId = context.StringValue("DescribeJob.Job.Tasks["+ i +"].ChatbotId");
-				task.PlanedTime = context.LongValue("DescribeJob.Job.Tasks["+ i +"].PlanedTime");
-				task.ActualTime = context.LongValue("DescribeJob.Job.Tasks["+ i +"].ActualTime");
-				task.CallingNumber = context.StringValue("DescribeJob.Job.Tasks["+ i +"].CallingNumber");
-				task.CalledNumber = context.StringValue("DescribeJob.Job.Tasks["+ i +"].CalledNumber");
-				task.CallId = context.StringValue("DescribeJob.Job.Tasks["+ i +"].CallId");
-				task.Status = context.StringValue("DescribeJob.Job.Tasks["+ i +"].Status");
-				task.Brief = context.StringValue("DescribeJob.Job.Tasks["+ i +"].Brief");
-				task.Duration = context.IntegerValue("DescribeJob.Job.Tasks["+ i +"].Duration");
+			List<DescribeJobResponse.DescribeJob_Job.DescribeJob_SummaryItem> job_summary = new List<DescribeJobResponse.DescribeJob_Job.DescribeJob_SummaryItem>();
+			for (int i = 0; i < _ctx.Length("DescribeJob.Job.Summary.Length"); i++) {
+				DescribeJobResponse.DescribeJob_Job.DescribeJob_SummaryItem summaryItem = new DescribeJobResponse.DescribeJob_Job.DescribeJob_SummaryItem();
+				summaryItem.Category = _ctx.StringValue("DescribeJob.Job.Summary["+ i +"].Category");
+				summaryItem.Content = _ctx.StringValue("DescribeJob.Job.Summary["+ i +"].Content");
+				summaryItem.SummaryName = _ctx.StringValue("DescribeJob.Job.Summary["+ i +"].SummaryName");
 
-				DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_Contact2 contact2 = new DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_Contact2();
-				contact2.ContactId = context.StringValue("DescribeJob.Job.Tasks["+ i +"].Contact.ContactId");
-				contact2.ContactName = context.StringValue("DescribeJob.Job.Tasks["+ i +"].Contact.ContactName");
-				contact2.Honorific = context.StringValue("DescribeJob.Job.Tasks["+ i +"].Contact.Honorific");
-				contact2.Role = context.StringValue("DescribeJob.Job.Tasks["+ i +"].Contact.Role");
-				contact2.PhoneNumber = context.StringValue("DescribeJob.Job.Tasks["+ i +"].Contact.PhoneNumber");
-				contact2.State = context.StringValue("DescribeJob.Job.Tasks["+ i +"].Contact.State");
-				contact2.ReferenceId = context.StringValue("DescribeJob.Job.Tasks["+ i +"].Contact.ReferenceId");
-				contact2.JobId = context.StringValue("DescribeJob.Job.Tasks["+ i +"].Contact.JobId");
-				task.Contact2 = contact2;
+				job_summary.Add(summaryItem);
+			}
+			job.Summary = job_summary;
+
+			List<DescribeJobResponse.DescribeJob_Job.DescribeJob_Task> job_tasks = new List<DescribeJobResponse.DescribeJob_Job.DescribeJob_Task>();
+			for (int i = 0; i < _ctx.Length("DescribeJob.Job.Tasks.Length"); i++) {
+				DescribeJobResponse.DescribeJob_Job.DescribeJob_Task task = new DescribeJobResponse.DescribeJob_Job.DescribeJob_Task();
+				task.ActualTime = _ctx.LongValue("DescribeJob.Job.Tasks["+ i +"].ActualTime");
+				task.Brief = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Brief");
+				task.CallId = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].CallId");
+				task.CalledNumber = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].CalledNumber");
+				task.CallingNumber = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].CallingNumber");
+				task.ChatbotId = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].ChatbotId");
+				task.Duration = _ctx.IntegerValue("DescribeJob.Job.Tasks["+ i +"].Duration");
+				task.JobId = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].JobId");
+				task.PlanedTime = _ctx.LongValue("DescribeJob.Job.Tasks["+ i +"].PlanedTime");
+				task.ScenarioId = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].ScenarioId");
+				task.Status = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Status");
+				task.TaskId = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].TaskId");
+
+				DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_Contact3 contact3 = new DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_Contact3();
+				contact3.ContactId = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Contact.ContactId");
+				contact3.ContactName = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Contact.ContactName");
+				contact3.Honorific = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Contact.Honorific");
+				contact3.JobId = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Contact.JobId");
+				contact3.PhoneNumber = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Contact.PhoneNumber");
+				contact3.ReferenceId = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Contact.ReferenceId");
+				contact3.Role = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Contact.Role");
+				contact3.State = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Contact.State");
+				task.Contact3 = contact3;
 
 				List<DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_ConversationDetail> task_conversation = new List<DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_ConversationDetail>();
-				for (int j = 0; j < context.Length("DescribeJob.Job.Tasks["+ i +"].Conversation.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeJob.Job.Tasks["+ i +"].Conversation.Length"); j++) {
 					DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_ConversationDetail conversationDetail = new DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_ConversationDetail();
-					conversationDetail.Timestamp = context.LongValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Timestamp");
-					conversationDetail.Speaker = context.StringValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Speaker");
-					conversationDetail.Script = context.StringValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Script");
+					conversationDetail.Script = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Script");
+					conversationDetail.Speaker = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Speaker");
+					conversationDetail.Timestamp = _ctx.LongValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Timestamp");
 
-					List<DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_ConversationDetail.DescribeJob_SummaryItem> conversationDetail_summary1 = new List<DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_ConversationDetail.DescribeJob_SummaryItem>();
-					for (int k = 0; k < context.Length("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Summary.Length"); k++) {
-						DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_ConversationDetail.DescribeJob_SummaryItem summaryItem = new DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_ConversationDetail.DescribeJob_SummaryItem();
-						summaryItem.Category = context.StringValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].Category");
-						summaryItem.SummaryName = context.StringValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].SummaryName");
-						summaryItem.Content = context.StringValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].Content");
+					List<DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_ConversationDetail.DescribeJob_SummaryItem2> conversationDetail_summary1 = new List<DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_ConversationDetail.DescribeJob_SummaryItem2>();
+					for (int k = 0; k < _ctx.Length("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Summary.Length"); k++) {
+						DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_ConversationDetail.DescribeJob_SummaryItem2 summaryItem2 = new DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_ConversationDetail.DescribeJob_SummaryItem2();
+						summaryItem2.Category = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].Category");
+						summaryItem2.Content = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].Content");
+						summaryItem2.SummaryName = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Summary["+ k +"].SummaryName");
 
-						conversationDetail_summary1.Add(summaryItem);
+						conversationDetail_summary1.Add(summaryItem2);
 					}
 					conversationDetail.Summary1 = conversationDetail_summary1;
 
@@ -132,17 +143,6 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				job_tasks.Add(task);
 			}
 			job.Tasks = job_tasks;
-
-			List<DescribeJobResponse.DescribeJob_Job.DescribeJob_SummaryItem3> job_summary = new List<DescribeJobResponse.DescribeJob_Job.DescribeJob_SummaryItem3>();
-			for (int i = 0; i < context.Length("DescribeJob.Job.Summary.Length"); i++) {
-				DescribeJobResponse.DescribeJob_Job.DescribeJob_SummaryItem3 summaryItem3 = new DescribeJobResponse.DescribeJob_Job.DescribeJob_SummaryItem3();
-				summaryItem3.Category = context.StringValue("DescribeJob.Job.Summary["+ i +"].Category");
-				summaryItem3.SummaryName = context.StringValue("DescribeJob.Job.Summary["+ i +"].SummaryName");
-				summaryItem3.Content = context.StringValue("DescribeJob.Job.Summary["+ i +"].Content");
-
-				job_summary.Add(summaryItem3);
-			}
-			job.Summary = job_summary;
 			describeJobResponse.Job = job;
         
 			return describeJobResponse;

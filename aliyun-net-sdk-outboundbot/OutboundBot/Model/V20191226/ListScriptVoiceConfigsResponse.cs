@@ -25,17 +25,53 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class ListScriptVoiceConfigsResponse : AcsResponse
 	{
 
+		private string code;
+
+		private int? httpStatusCode;
+
+		private string message;
+
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
-
-		private string message;
-
-		private int? httpStatusCode;
-
 		private ListScriptVoiceConfigs_ScriptVoiceConfigs scriptVoiceConfigs;
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,42 +97,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
 		public ListScriptVoiceConfigs_ScriptVoiceConfigs ScriptVoiceConfigs
 		{
 			get
@@ -112,25 +112,13 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class ListScriptVoiceConfigs_ScriptVoiceConfigs
 		{
 
-			private int? totalCount;
-
 			private int? pageNumber;
 
 			private int? pageSize;
 
-			private List<ListScriptVoiceConfigs_ScriptVoiceConfig> list;
+			private int? totalCount;
 
-			public int? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
+			private List<ListScriptVoiceConfigs_ScriptVoiceConfig> list;
 
 			public int? PageNumber
 			{
@@ -156,6 +144,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
+			public int? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
+				}
+			}
+
 			public List<ListScriptVoiceConfigs_ScriptVoiceConfig> List
 			{
 				get
@@ -171,31 +171,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			public class ListScriptVoiceConfigs_ScriptVoiceConfig
 			{
 
-				private string scriptVoiceConfigId;
-
 				private string instanceId;
+
+				private string scriptContent;
 
 				private string scriptId;
 
-				private string scriptContent;
+				private string scriptVoiceConfigId;
+
+				private string scriptWaveformRelation;
 
 				private string source;
 
 				private string type;
-
-				private string scriptWaveformRelation;
-
-				public string ScriptVoiceConfigId
-				{
-					get
-					{
-						return scriptVoiceConfigId;
-					}
-					set	
-					{
-						scriptVoiceConfigId = value;
-					}
-				}
 
 				public string InstanceId
 				{
@@ -206,6 +194,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						instanceId = value;
+					}
+				}
+
+				public string ScriptContent
+				{
+					get
+					{
+						return scriptContent;
+					}
+					set	
+					{
+						scriptContent = value;
 					}
 				}
 
@@ -221,15 +221,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string ScriptContent
+				public string ScriptVoiceConfigId
 				{
 					get
 					{
-						return scriptContent;
+						return scriptVoiceConfigId;
 					}
 					set	
 					{
-						scriptContent = value;
+						scriptVoiceConfigId = value;
+					}
+				}
+
+				public string ScriptWaveformRelation
+				{
+					get
+					{
+						return scriptWaveformRelation;
+					}
+					set	
+					{
+						scriptWaveformRelation = value;
 					}
 				}
 
@@ -254,18 +266,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						type = value;
-					}
-				}
-
-				public string ScriptWaveformRelation
-				{
-					get
-					{
-						return scriptWaveformRelation;
-					}
-					set	
-					{
-						scriptWaveformRelation = value;
 					}
 				}
 			}
