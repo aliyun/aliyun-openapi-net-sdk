@@ -26,19 +26,19 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 {
     public class DescribeRegionsResponseUnmarshaller
     {
-        public static DescribeRegionsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRegionsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRegionsResponse describeRegionsResponse = new DescribeRegionsResponse();
 
-			describeRegionsResponse.HttpResponse = context.HttpResponse;
-			describeRegionsResponse.RequestId = context.StringValue("DescribeRegions.RequestId");
+			describeRegionsResponse.HttpResponse = _ctx.HttpResponse;
+			describeRegionsResponse.RequestId = _ctx.StringValue("DescribeRegions.RequestId");
 
 			List<DescribeRegionsResponse.DescribeRegions_Region> describeRegionsResponse_regions = new List<DescribeRegionsResponse.DescribeRegions_Region>();
-			for (int i = 0; i < context.Length("DescribeRegions.Regions.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRegions.Regions.Length"); i++) {
 				DescribeRegionsResponse.DescribeRegions_Region region = new DescribeRegionsResponse.DescribeRegions_Region();
-				region.RegionId = context.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
-				region.RegionEndpoint = context.StringValue("DescribeRegions.Regions["+ i +"].RegionEndpoint");
-				region.LocalName = context.StringValue("DescribeRegions.Regions["+ i +"].LocalName");
+				region.RegionId = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
+				region.RegionEndpoint = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionEndpoint");
+				region.LocalName = _ctx.StringValue("DescribeRegions.Regions["+ i +"].LocalName");
 
 				describeRegionsResponse_regions.Add(region);
 			}

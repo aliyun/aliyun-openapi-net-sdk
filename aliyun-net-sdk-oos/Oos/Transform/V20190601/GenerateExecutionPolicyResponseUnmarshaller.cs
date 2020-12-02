@@ -26,13 +26,13 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 {
     public class GenerateExecutionPolicyResponseUnmarshaller
     {
-        public static GenerateExecutionPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static GenerateExecutionPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GenerateExecutionPolicyResponse generateExecutionPolicyResponse = new GenerateExecutionPolicyResponse();
 
-			generateExecutionPolicyResponse.HttpResponse = context.HttpResponse;
-			generateExecutionPolicyResponse.RequestId = context.StringValue("GenerateExecutionPolicy.RequestId");
-			generateExecutionPolicyResponse.Policy = context.StringValue("GenerateExecutionPolicy.Policy");
+			generateExecutionPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			generateExecutionPolicyResponse.RequestId = _ctx.StringValue("GenerateExecutionPolicy.RequestId");
+			generateExecutionPolicyResponse.Policy = _ctx.StringValue("GenerateExecutionPolicy.Policy");
         
 			return generateExecutionPolicyResponse;
         }

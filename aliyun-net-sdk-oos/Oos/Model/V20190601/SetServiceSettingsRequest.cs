@@ -28,10 +28,10 @@ using Aliyun.Acs.oos.Transform.V20190601;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-    public class GetSecretParametersByPathRequest : RpcAcsRequest<GetSecretParametersByPathResponse>
+    public class SetServiceSettingsRequest : RpcAcsRequest<SetServiceSettingsResponse>
     {
-        public GetSecretParametersByPathRequest()
-            : base("oos", "2019-06-01", "GetSecretParametersByPath", "oos", "openAPI")
+        public SetServiceSettingsRequest()
+            : base("oos", "2019-06-01", "SetServiceSettings", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,78 +41,78 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			Method = MethodType.POST;
         }
 
-		private bool? withDecryption;
+		private bool? deliverySlsEnabled;
 
-		private bool? recursive;
+		private string deliveryOssKeyPrefix;
 
-		private string path;
+		private bool? deliveryOssEnabled;
 
-		private string nextToken;
+		private string deliverySlsProjectName;
 
-		private int? maxResults;
+		private string deliveryOssBucketName;
 
-		public bool? WithDecryption
+		public bool? DeliverySlsEnabled
 		{
 			get
 			{
-				return withDecryption;
+				return deliverySlsEnabled;
 			}
 			set	
 			{
-				withDecryption = value;
-				DictionaryUtil.Add(QueryParameters, "WithDecryption", value.ToString());
+				deliverySlsEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "DeliverySlsEnabled", value.ToString());
 			}
 		}
 
-		public bool? Recursive
+		public string DeliveryOssKeyPrefix
 		{
 			get
 			{
-				return recursive;
+				return deliveryOssKeyPrefix;
 			}
 			set	
 			{
-				recursive = value;
-				DictionaryUtil.Add(QueryParameters, "Recursive", value.ToString());
+				deliveryOssKeyPrefix = value;
+				DictionaryUtil.Add(QueryParameters, "DeliveryOssKeyPrefix", value);
 			}
 		}
 
-		public string Path
+		public bool? DeliveryOssEnabled
 		{
 			get
 			{
-				return path;
+				return deliveryOssEnabled;
 			}
 			set	
 			{
-				path = value;
-				DictionaryUtil.Add(QueryParameters, "Path", value);
+				deliveryOssEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "DeliveryOssEnabled", value.ToString());
 			}
 		}
 
-		public string NextToken
+		public string DeliverySlsProjectName
 		{
 			get
 			{
-				return nextToken;
+				return deliverySlsProjectName;
 			}
 			set	
 			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+				deliverySlsProjectName = value;
+				DictionaryUtil.Add(QueryParameters, "DeliverySlsProjectName", value);
 			}
 		}
 
-		public int? MaxResults
+		public string DeliveryOssBucketName
 		{
 			get
 			{
-				return maxResults;
+				return deliveryOssBucketName;
 			}
 			set	
 			{
-				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+				deliveryOssBucketName = value;
+				DictionaryUtil.Add(QueryParameters, "DeliveryOssBucketName", value);
 			}
 		}
 
@@ -121,9 +121,9 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			return false;
 		}
 
-        public override GetSecretParametersByPathResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SetServiceSettingsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetSecretParametersByPathResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetServiceSettingsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

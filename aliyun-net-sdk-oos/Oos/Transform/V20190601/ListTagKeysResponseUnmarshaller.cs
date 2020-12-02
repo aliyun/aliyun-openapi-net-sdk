@@ -26,18 +26,18 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 {
     public class ListTagKeysResponseUnmarshaller
     {
-        public static ListTagKeysResponse Unmarshall(UnmarshallerContext context)
+        public static ListTagKeysResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListTagKeysResponse listTagKeysResponse = new ListTagKeysResponse();
 
-			listTagKeysResponse.HttpResponse = context.HttpResponse;
-			listTagKeysResponse.RequestId = context.StringValue("ListTagKeys.RequestId");
-			listTagKeysResponse.MaxResults = context.IntegerValue("ListTagKeys.MaxResults");
-			listTagKeysResponse.NextToken = context.StringValue("ListTagKeys.NextToken");
+			listTagKeysResponse.HttpResponse = _ctx.HttpResponse;
+			listTagKeysResponse.RequestId = _ctx.StringValue("ListTagKeys.RequestId");
+			listTagKeysResponse.MaxResults = _ctx.IntegerValue("ListTagKeys.MaxResults");
+			listTagKeysResponse.NextToken = _ctx.StringValue("ListTagKeys.NextToken");
 
 			List<string> listTagKeysResponse_keys = new List<string>();
-			for (int i = 0; i < context.Length("ListTagKeys.Keys.Length"); i++) {
-				listTagKeysResponse_keys.Add(context.StringValue("ListTagKeys.Keys["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("ListTagKeys.Keys.Length"); i++) {
+				listTagKeysResponse_keys.Add(_ctx.StringValue("ListTagKeys.Keys["+ i +"]"));
 			}
 			listTagKeysResponse.Keys = listTagKeysResponse_keys;
         

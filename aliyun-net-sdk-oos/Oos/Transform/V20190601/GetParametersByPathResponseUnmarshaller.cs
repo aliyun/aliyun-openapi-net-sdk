@@ -26,31 +26,31 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 {
     public class GetParametersByPathResponseUnmarshaller
     {
-        public static GetParametersByPathResponse Unmarshall(UnmarshallerContext context)
+        public static GetParametersByPathResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetParametersByPathResponse getParametersByPathResponse = new GetParametersByPathResponse();
 
-			getParametersByPathResponse.HttpResponse = context.HttpResponse;
-			getParametersByPathResponse.RequestId = context.StringValue("GetParametersByPath.RequestId");
-			getParametersByPathResponse.NextToken = context.StringValue("GetParametersByPath.NextToken");
-			getParametersByPathResponse.MaxResults = context.IntegerValue("GetParametersByPath.MaxResults");
-			getParametersByPathResponse.TotalCount = context.IntegerValue("GetParametersByPath.TotalCount");
+			getParametersByPathResponse.HttpResponse = _ctx.HttpResponse;
+			getParametersByPathResponse.RequestId = _ctx.StringValue("GetParametersByPath.RequestId");
+			getParametersByPathResponse.NextToken = _ctx.StringValue("GetParametersByPath.NextToken");
+			getParametersByPathResponse.MaxResults = _ctx.IntegerValue("GetParametersByPath.MaxResults");
+			getParametersByPathResponse.TotalCount = _ctx.IntegerValue("GetParametersByPath.TotalCount");
 
 			List<GetParametersByPathResponse.GetParametersByPath_Parameter> getParametersByPathResponse_parameters = new List<GetParametersByPathResponse.GetParametersByPath_Parameter>();
-			for (int i = 0; i < context.Length("GetParametersByPath.Parameters.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetParametersByPath.Parameters.Length"); i++) {
 				GetParametersByPathResponse.GetParametersByPath_Parameter parameter = new GetParametersByPathResponse.GetParametersByPath_Parameter();
-				parameter.Id = context.StringValue("GetParametersByPath.Parameters["+ i +"].Id");
-				parameter.Name = context.StringValue("GetParametersByPath.Parameters["+ i +"].Name");
-				parameter.CreatedDate = context.StringValue("GetParametersByPath.Parameters["+ i +"].CreatedDate");
-				parameter.CreatedBy = context.StringValue("GetParametersByPath.Parameters["+ i +"].CreatedBy");
-				parameter.UpdatedDate = context.StringValue("GetParametersByPath.Parameters["+ i +"].UpdatedDate");
-				parameter.UpdatedBy = context.StringValue("GetParametersByPath.Parameters["+ i +"].UpdatedBy");
-				parameter.Description = context.StringValue("GetParametersByPath.Parameters["+ i +"].Description");
-				parameter.ShareType = context.StringValue("GetParametersByPath.Parameters["+ i +"].ShareType");
-				parameter.ParameterVersion = context.IntegerValue("GetParametersByPath.Parameters["+ i +"].ParameterVersion");
-				parameter.Type = context.StringValue("GetParametersByPath.Parameters["+ i +"].Type");
-				parameter._Value = context.StringValue("GetParametersByPath.Parameters["+ i +"].Value");
-				parameter.Constraints = context.StringValue("GetParametersByPath.Parameters["+ i +"].Constraints");
+				parameter.Id = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].Id");
+				parameter.Name = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].Name");
+				parameter.CreatedDate = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].CreatedDate");
+				parameter.CreatedBy = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].CreatedBy");
+				parameter.UpdatedDate = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].UpdatedDate");
+				parameter.UpdatedBy = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].UpdatedBy");
+				parameter.Description = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].Description");
+				parameter.ShareType = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].ShareType");
+				parameter.ParameterVersion = _ctx.IntegerValue("GetParametersByPath.Parameters["+ i +"].ParameterVersion");
+				parameter.Type = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].Type");
+				parameter._Value = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].Value");
+				parameter.Constraints = _ctx.StringValue("GetParametersByPath.Parameters["+ i +"].Constraints");
 
 				getParametersByPathResponse_parameters.Add(parameter);
 			}

@@ -26,24 +26,24 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 {
     public class ListActionsResponseUnmarshaller
     {
-        public static ListActionsResponse Unmarshall(UnmarshallerContext context)
+        public static ListActionsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListActionsResponse listActionsResponse = new ListActionsResponse();
 
-			listActionsResponse.HttpResponse = context.HttpResponse;
-			listActionsResponse.RequestId = context.StringValue("ListActions.RequestId");
-			listActionsResponse.MaxResults = context.IntegerValue("ListActions.MaxResults");
-			listActionsResponse.NextToken = context.StringValue("ListActions.NextToken");
+			listActionsResponse.HttpResponse = _ctx.HttpResponse;
+			listActionsResponse.RequestId = _ctx.StringValue("ListActions.RequestId");
+			listActionsResponse.MaxResults = _ctx.IntegerValue("ListActions.MaxResults");
+			listActionsResponse.NextToken = _ctx.StringValue("ListActions.NextToken");
 
 			List<ListActionsResponse.ListActions_Action> listActionsResponse_actions = new List<ListActionsResponse.ListActions_Action>();
-			for (int i = 0; i < context.Length("ListActions.Actions.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListActions.Actions.Length"); i++) {
 				ListActionsResponse.ListActions_Action action = new ListActionsResponse.ListActions_Action();
-				action.OOSActionName = context.StringValue("ListActions.Actions["+ i +"].OOSActionName");
-				action.Description = context.StringValue("ListActions.Actions["+ i +"].Description");
-				action.ActionType = context.StringValue("ListActions.Actions["+ i +"].ActionType");
-				action.CreatedDate = context.StringValue("ListActions.Actions["+ i +"].CreatedDate");
-				action.Properties = context.StringValue("ListActions.Actions["+ i +"].Properties");
-				action.TemplateVersion = context.StringValue("ListActions.Actions["+ i +"].TemplateVersion");
+				action.OOSActionName = _ctx.StringValue("ListActions.Actions["+ i +"].OOSActionName");
+				action.Description = _ctx.StringValue("ListActions.Actions["+ i +"].Description");
+				action.ActionType = _ctx.StringValue("ListActions.Actions["+ i +"].ActionType");
+				action.CreatedDate = _ctx.StringValue("ListActions.Actions["+ i +"].CreatedDate");
+				action.Properties = _ctx.StringValue("ListActions.Actions["+ i +"].Properties");
+				action.TemplateVersion = _ctx.StringValue("ListActions.Actions["+ i +"].TemplateVersion");
 
 				listActionsResponse_actions.Add(action);
 			}

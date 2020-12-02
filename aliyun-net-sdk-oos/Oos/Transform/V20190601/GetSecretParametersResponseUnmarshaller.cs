@@ -26,35 +26,35 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 {
     public class GetSecretParametersResponseUnmarshaller
     {
-        public static GetSecretParametersResponse Unmarshall(UnmarshallerContext context)
+        public static GetSecretParametersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetSecretParametersResponse getSecretParametersResponse = new GetSecretParametersResponse();
 
-			getSecretParametersResponse.HttpResponse = context.HttpResponse;
-			getSecretParametersResponse.RequestId = context.StringValue("GetSecretParameters.RequestId");
+			getSecretParametersResponse.HttpResponse = _ctx.HttpResponse;
+			getSecretParametersResponse.RequestId = _ctx.StringValue("GetSecretParameters.RequestId");
 
 			List<string> getSecretParametersResponse_invalidParameters = new List<string>();
-			for (int i = 0; i < context.Length("GetSecretParameters.InvalidParameters.Length"); i++) {
-				getSecretParametersResponse_invalidParameters.Add(context.StringValue("GetSecretParameters.InvalidParameters["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetSecretParameters.InvalidParameters.Length"); i++) {
+				getSecretParametersResponse_invalidParameters.Add(_ctx.StringValue("GetSecretParameters.InvalidParameters["+ i +"]"));
 			}
 			getSecretParametersResponse.InvalidParameters = getSecretParametersResponse_invalidParameters;
 
 			List<GetSecretParametersResponse.GetSecretParameters_Parameter> getSecretParametersResponse_parameters = new List<GetSecretParametersResponse.GetSecretParameters_Parameter>();
-			for (int i = 0; i < context.Length("GetSecretParameters.Parameters.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetSecretParameters.Parameters.Length"); i++) {
 				GetSecretParametersResponse.GetSecretParameters_Parameter parameter = new GetSecretParametersResponse.GetSecretParameters_Parameter();
-				parameter.Id = context.StringValue("GetSecretParameters.Parameters["+ i +"].Id");
-				parameter.Name = context.StringValue("GetSecretParameters.Parameters["+ i +"].Name");
-				parameter.CreatedDate = context.StringValue("GetSecretParameters.Parameters["+ i +"].CreatedDate");
-				parameter.CreatedBy = context.StringValue("GetSecretParameters.Parameters["+ i +"].CreatedBy");
-				parameter.UpdatedDate = context.StringValue("GetSecretParameters.Parameters["+ i +"].UpdatedDate");
-				parameter.UpdatedBy = context.StringValue("GetSecretParameters.Parameters["+ i +"].UpdatedBy");
-				parameter.Description = context.StringValue("GetSecretParameters.Parameters["+ i +"].Description");
-				parameter.ShareType = context.StringValue("GetSecretParameters.Parameters["+ i +"].ShareType");
-				parameter.ParameterVersion = context.IntegerValue("GetSecretParameters.Parameters["+ i +"].ParameterVersion");
-				parameter.Type = context.StringValue("GetSecretParameters.Parameters["+ i +"].Type");
-				parameter._Value = context.StringValue("GetSecretParameters.Parameters["+ i +"].Value");
-				parameter.Constraints = context.StringValue("GetSecretParameters.Parameters["+ i +"].Constraints");
-				parameter.KeyId = context.StringValue("GetSecretParameters.Parameters["+ i +"].KeyId");
+				parameter.Id = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].Id");
+				parameter.Name = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].Name");
+				parameter.CreatedDate = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].CreatedDate");
+				parameter.CreatedBy = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].CreatedBy");
+				parameter.UpdatedDate = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].UpdatedDate");
+				parameter.UpdatedBy = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].UpdatedBy");
+				parameter.Description = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].Description");
+				parameter.ShareType = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].ShareType");
+				parameter.ParameterVersion = _ctx.IntegerValue("GetSecretParameters.Parameters["+ i +"].ParameterVersion");
+				parameter.Type = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].Type");
+				parameter._Value = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].Value");
+				parameter.Constraints = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].Constraints");
+				parameter.KeyId = _ctx.StringValue("GetSecretParameters.Parameters["+ i +"].KeyId");
 
 				getSecretParametersResponse_parameters.Add(parameter);
 			}

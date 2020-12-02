@@ -28,10 +28,10 @@ using Aliyun.Acs.oos.Transform.V20190601;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-    public class GetSecretParametersByPathRequest : RpcAcsRequest<GetSecretParametersByPathResponse>
+    public class GetServiceSettingsRequest : RpcAcsRequest<GetServiceSettingsResponse>
     {
-        public GetSecretParametersByPathRequest()
-            : base("oos", "2019-06-01", "GetSecretParametersByPath", "oos", "openAPI")
+        public GetServiceSettingsRequest()
+            : base("oos", "2019-06-01", "GetServiceSettings", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,89 +41,14 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			Method = MethodType.POST;
         }
 
-		private bool? withDecryption;
-
-		private bool? recursive;
-
-		private string path;
-
-		private string nextToken;
-
-		private int? maxResults;
-
-		public bool? WithDecryption
-		{
-			get
-			{
-				return withDecryption;
-			}
-			set	
-			{
-				withDecryption = value;
-				DictionaryUtil.Add(QueryParameters, "WithDecryption", value.ToString());
-			}
-		}
-
-		public bool? Recursive
-		{
-			get
-			{
-				return recursive;
-			}
-			set	
-			{
-				recursive = value;
-				DictionaryUtil.Add(QueryParameters, "Recursive", value.ToString());
-			}
-		}
-
-		public string Path
-		{
-			get
-			{
-				return path;
-			}
-			set	
-			{
-				path = value;
-				DictionaryUtil.Add(QueryParameters, "Path", value);
-			}
-		}
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GetSecretParametersByPathResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetServiceSettingsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetSecretParametersByPathResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetServiceSettingsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

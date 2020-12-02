@@ -26,27 +26,27 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 {
     public class GetSecretParameterResponseUnmarshaller
     {
-        public static GetSecretParameterResponse Unmarshall(UnmarshallerContext context)
+        public static GetSecretParameterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetSecretParameterResponse getSecretParameterResponse = new GetSecretParameterResponse();
 
-			getSecretParameterResponse.HttpResponse = context.HttpResponse;
-			getSecretParameterResponse.RequestId = context.StringValue("GetSecretParameter.RequestId");
+			getSecretParameterResponse.HttpResponse = _ctx.HttpResponse;
+			getSecretParameterResponse.RequestId = _ctx.StringValue("GetSecretParameter.RequestId");
 
 			GetSecretParameterResponse.GetSecretParameter_Parameter parameter = new GetSecretParameterResponse.GetSecretParameter_Parameter();
-			parameter.Id = context.StringValue("GetSecretParameter.Parameter.Id");
-			parameter.Name = context.StringValue("GetSecretParameter.Parameter.Name");
-			parameter.CreatedDate = context.StringValue("GetSecretParameter.Parameter.CreatedDate");
-			parameter.CreatedBy = context.StringValue("GetSecretParameter.Parameter.CreatedBy");
-			parameter.UpdatedDate = context.StringValue("GetSecretParameter.Parameter.UpdatedDate");
-			parameter.UpdatedBy = context.StringValue("GetSecretParameter.Parameter.UpdatedBy");
-			parameter.Description = context.StringValue("GetSecretParameter.Parameter.Description");
-			parameter.ShareType = context.StringValue("GetSecretParameter.Parameter.ShareType");
-			parameter.ParameterVersion = context.IntegerValue("GetSecretParameter.Parameter.ParameterVersion");
-			parameter.Type = context.StringValue("GetSecretParameter.Parameter.Type");
-			parameter._Value = context.StringValue("GetSecretParameter.Parameter.Value");
-			parameter.Constraints = context.StringValue("GetSecretParameter.Parameter.Constraints");
-			parameter.KeyId = context.StringValue("GetSecretParameter.Parameter.KeyId");
+			parameter.Id = _ctx.StringValue("GetSecretParameter.Parameter.Id");
+			parameter.Name = _ctx.StringValue("GetSecretParameter.Parameter.Name");
+			parameter.CreatedDate = _ctx.StringValue("GetSecretParameter.Parameter.CreatedDate");
+			parameter.CreatedBy = _ctx.StringValue("GetSecretParameter.Parameter.CreatedBy");
+			parameter.UpdatedDate = _ctx.StringValue("GetSecretParameter.Parameter.UpdatedDate");
+			parameter.UpdatedBy = _ctx.StringValue("GetSecretParameter.Parameter.UpdatedBy");
+			parameter.Description = _ctx.StringValue("GetSecretParameter.Parameter.Description");
+			parameter.ShareType = _ctx.StringValue("GetSecretParameter.Parameter.ShareType");
+			parameter.ParameterVersion = _ctx.IntegerValue("GetSecretParameter.Parameter.ParameterVersion");
+			parameter.Type = _ctx.StringValue("GetSecretParameter.Parameter.Type");
+			parameter._Value = _ctx.StringValue("GetSecretParameter.Parameter.Value");
+			parameter.Constraints = _ctx.StringValue("GetSecretParameter.Parameter.Constraints");
+			parameter.KeyId = _ctx.StringValue("GetSecretParameter.Parameter.KeyId");
 			getSecretParameterResponse.Parameter = parameter;
         
 			return getSecretParameterResponse;
