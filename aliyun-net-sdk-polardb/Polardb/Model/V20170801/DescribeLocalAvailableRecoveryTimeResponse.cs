@@ -22,24 +22,16 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-	public class DescribeDBClusterVersionResponse : AcsResponse
+	public class DescribeLocalAvailableRecoveryTimeResponse : AcsResponse
 	{
 
 		private string requestId;
 
+		private string recoveryEndTime;
+
+		private string recoveryBeginTime;
+
 		private string dBClusterId;
-
-		private string dBVersion;
-
-		private string dBMinorVersion;
-
-		private string dBRevisionVersion;
-
-		private string dBVersionStatus;
-
-		private string isLatestVersion;
-
-		private string latestRevisionVersion;
 
 		public string RequestId
 		{
@@ -53,6 +45,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string RecoveryEndTime
+		{
+			get
+			{
+				return recoveryEndTime;
+			}
+			set	
+			{
+				recoveryEndTime = value;
+			}
+		}
+
+		public string RecoveryBeginTime
+		{
+			get
+			{
+				return recoveryBeginTime;
+			}
+			set	
+			{
+				recoveryBeginTime = value;
+			}
+		}
+
 		public string DBClusterId
 		{
 			get
@@ -62,78 +78,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				dBClusterId = value;
-			}
-		}
-
-		public string DBVersion
-		{
-			get
-			{
-				return dBVersion;
-			}
-			set	
-			{
-				dBVersion = value;
-			}
-		}
-
-		public string DBMinorVersion
-		{
-			get
-			{
-				return dBMinorVersion;
-			}
-			set	
-			{
-				dBMinorVersion = value;
-			}
-		}
-
-		public string DBRevisionVersion
-		{
-			get
-			{
-				return dBRevisionVersion;
-			}
-			set	
-			{
-				dBRevisionVersion = value;
-			}
-		}
-
-		public string DBVersionStatus
-		{
-			get
-			{
-				return dBVersionStatus;
-			}
-			set	
-			{
-				dBVersionStatus = value;
-			}
-		}
-
-		public string IsLatestVersion
-		{
-			get
-			{
-				return isLatestVersion;
-			}
-			set	
-			{
-				isLatestVersion = value;
-			}
-		}
-
-		public string LatestRevisionVersion
-		{
-			get
-			{
-				return latestRevisionVersion;
-			}
-			set	
-			{
-				latestRevisionVersion = value;
 			}
 		}
 	}

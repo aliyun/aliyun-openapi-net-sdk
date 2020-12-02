@@ -22,24 +22,20 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-	public class DescribeDBClusterVersionResponse : AcsResponse
+	public class DescribeMetaListResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string dBClusterId;
+		private string totalRecordCount;
 
-		private string dBVersion;
+		private string totalPageCount;
 
-		private string dBMinorVersion;
+		private string pageSize;
 
-		private string dBRevisionVersion;
+		private string pageNumber;
 
-		private string dBVersionStatus;
-
-		private string isLatestVersion;
-
-		private string latestRevisionVersion;
+		private List<DescribeMetaList_MetaItem> items;
 
 		public string RequestId
 		{
@@ -53,87 +49,95 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DBClusterId
+		public string TotalRecordCount
 		{
 			get
 			{
-				return dBClusterId;
+				return totalRecordCount;
 			}
 			set	
 			{
-				dBClusterId = value;
+				totalRecordCount = value;
 			}
 		}
 
-		public string DBVersion
+		public string TotalPageCount
 		{
 			get
 			{
-				return dBVersion;
+				return totalPageCount;
 			}
 			set	
 			{
-				dBVersion = value;
+				totalPageCount = value;
 			}
 		}
 
-		public string DBMinorVersion
+		public string PageSize
 		{
 			get
 			{
-				return dBMinorVersion;
+				return pageSize;
 			}
 			set	
 			{
-				dBMinorVersion = value;
+				pageSize = value;
 			}
 		}
 
-		public string DBRevisionVersion
+		public string PageNumber
 		{
 			get
 			{
-				return dBRevisionVersion;
+				return pageNumber;
 			}
 			set	
 			{
-				dBRevisionVersion = value;
+				pageNumber = value;
 			}
 		}
 
-		public string DBVersionStatus
+		public List<DescribeMetaList_MetaItem> Items
 		{
 			get
 			{
-				return dBVersionStatus;
+				return items;
 			}
 			set	
 			{
-				dBVersionStatus = value;
+				items = value;
 			}
 		}
 
-		public string IsLatestVersion
+		public class DescribeMetaList_MetaItem
 		{
-			get
-			{
-				return isLatestVersion;
-			}
-			set	
-			{
-				isLatestVersion = value;
-			}
-		}
 
-		public string LatestRevisionVersion
-		{
-			get
+			private string database;
+
+			private List<string> tables;
+
+			public string Database
 			{
-				return latestRevisionVersion;
+				get
+				{
+					return database;
+				}
+				set	
+				{
+					database = value;
+				}
 			}
-			set	
+
+			public List<string> Tables
 			{
-				latestRevisionVersion = value;
+				get
+				{
+					return tables;
+				}
+				set	
+				{
+					tables = value;
+				}
 			}
 		}
 	}

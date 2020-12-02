@@ -32,7 +32,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 
 			describeDBClusterVersionResponse.HttpResponse = _ctx.HttpResponse;
 			describeDBClusterVersionResponse.RequestId = _ctx.StringValue("DescribeDBClusterVersion.RequestId");
-			describeDBClusterVersionResponse.DBInstanceName = _ctx.StringValue("DescribeDBClusterVersion.DBInstanceName");
+			describeDBClusterVersionResponse.DBClusterId = _ctx.StringValue("DescribeDBClusterVersion.DBClusterId");
 			describeDBClusterVersionResponse.DBVersion = _ctx.StringValue("DescribeDBClusterVersion.DBVersion");
 			describeDBClusterVersionResponse.DBMinorVersion = _ctx.StringValue("DescribeDBClusterVersion.DBMinorVersion");
 			describeDBClusterVersionResponse.DBRevisionVersion = _ctx.StringValue("DescribeDBClusterVersion.DBRevisionVersion");
