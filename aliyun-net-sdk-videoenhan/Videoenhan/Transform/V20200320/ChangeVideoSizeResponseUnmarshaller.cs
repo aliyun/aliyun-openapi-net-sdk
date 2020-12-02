@@ -26,16 +26,16 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 {
     public class ChangeVideoSizeResponseUnmarshaller
     {
-        public static ChangeVideoSizeResponse Unmarshall(UnmarshallerContext context)
+        public static ChangeVideoSizeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ChangeVideoSizeResponse changeVideoSizeResponse = new ChangeVideoSizeResponse();
 
-			changeVideoSizeResponse.HttpResponse = context.HttpResponse;
-			changeVideoSizeResponse.RequestId = context.StringValue("ChangeVideoSize.RequestId");
+			changeVideoSizeResponse.HttpResponse = _ctx.HttpResponse;
+			changeVideoSizeResponse.RequestId = _ctx.StringValue("ChangeVideoSize.RequestId");
 
 			ChangeVideoSizeResponse.ChangeVideoSize_Data data = new ChangeVideoSizeResponse.ChangeVideoSize_Data();
-			data.VideoUrl = context.StringValue("ChangeVideoSize.Data.VideoUrl");
-			data.VideoCoverUrl = context.StringValue("ChangeVideoSize.Data.VideoCoverUrl");
+			data.VideoUrl = _ctx.StringValue("ChangeVideoSize.Data.VideoUrl");
+			data.VideoCoverUrl = _ctx.StringValue("ChangeVideoSize.Data.VideoCoverUrl");
 			changeVideoSizeResponse.Data = data;
         
 			return changeVideoSizeResponse;

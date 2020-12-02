@@ -24,21 +24,20 @@ using Aliyun.Acs.videoenhan.Model.V20200320;
 
 namespace Aliyun.Acs.videoenhan.Transform.V20200320
 {
-    public class GenerateVideoResponseUnmarshaller
+    public class MergeVideoFaceResponseUnmarshaller
     {
-        public static GenerateVideoResponse Unmarshall(UnmarshallerContext _ctx)
+        public static MergeVideoFaceResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GenerateVideoResponse generateVideoResponse = new GenerateVideoResponse();
+			MergeVideoFaceResponse mergeVideoFaceResponse = new MergeVideoFaceResponse();
 
-			generateVideoResponse.HttpResponse = _ctx.HttpResponse;
-			generateVideoResponse.RequestId = _ctx.StringValue("GenerateVideo.RequestId");
+			mergeVideoFaceResponse.HttpResponse = _ctx.HttpResponse;
+			mergeVideoFaceResponse.RequestId = _ctx.StringValue("MergeVideoFace.RequestId");
 
-			GenerateVideoResponse.GenerateVideo_Data data = new GenerateVideoResponse.GenerateVideo_Data();
-			data.VideoUrl = _ctx.StringValue("GenerateVideo.Data.VideoUrl");
-			data.VideoCoverUrl = _ctx.StringValue("GenerateVideo.Data.VideoCoverUrl");
-			generateVideoResponse.Data = data;
+			MergeVideoFaceResponse.MergeVideoFace_Data data = new MergeVideoFaceResponse.MergeVideoFace_Data();
+			data.VideoURL = _ctx.StringValue("MergeVideoFace.Data.VideoURL");
+			mergeVideoFaceResponse.Data = data;
         
-			return generateVideoResponse;
+			return mergeVideoFaceResponse;
         }
     }
 }

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.videoenhan.Transform.V20200320
 {
     public class EraseVideoLogoResponseUnmarshaller
     {
-        public static EraseVideoLogoResponse Unmarshall(UnmarshallerContext context)
+        public static EraseVideoLogoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			EraseVideoLogoResponse eraseVideoLogoResponse = new EraseVideoLogoResponse();
 
-			eraseVideoLogoResponse.HttpResponse = context.HttpResponse;
-			eraseVideoLogoResponse.RequestId = context.StringValue("EraseVideoLogo.RequestId");
+			eraseVideoLogoResponse.HttpResponse = _ctx.HttpResponse;
+			eraseVideoLogoResponse.RequestId = _ctx.StringValue("EraseVideoLogo.RequestId");
 
 			EraseVideoLogoResponse.EraseVideoLogo_Data data = new EraseVideoLogoResponse.EraseVideoLogo_Data();
-			data.VideoUrl = context.StringValue("EraseVideoLogo.Data.VideoUrl");
+			data.VideoUrl = _ctx.StringValue("EraseVideoLogo.Data.VideoUrl");
 			eraseVideoLogoResponse.Data = data;
         
 			return eraseVideoLogoResponse;

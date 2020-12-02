@@ -16,28 +16,59 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.videoenhan.Model.V20200320;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.videoenhan.Transform.V20200320
+namespace Aliyun.Acs.videoenhan.Model.V20200320
 {
-    public class AbstractFilmVideoResponseUnmarshaller
-    {
-        public static AbstractFilmVideoResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			AbstractFilmVideoResponse abstractFilmVideoResponse = new AbstractFilmVideoResponse();
+	public class MergeVideoFaceResponse : AcsResponse
+	{
 
-			abstractFilmVideoResponse.HttpResponse = _ctx.HttpResponse;
-			abstractFilmVideoResponse.RequestId = _ctx.StringValue("AbstractFilmVideo.RequestId");
+		private string requestId;
 
-			AbstractFilmVideoResponse.AbstractFilmVideo_Data data = new AbstractFilmVideoResponse.AbstractFilmVideo_Data();
-			data.VideoUrl = _ctx.StringValue("AbstractFilmVideo.Data.VideoUrl");
-			abstractFilmVideoResponse.Data = data;
-        
-			return abstractFilmVideoResponse;
-        }
-    }
+		private MergeVideoFace_Data data;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public MergeVideoFace_Data Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class MergeVideoFace_Data
+		{
+
+			private string videoURL;
+
+			public string VideoURL
+			{
+				get
+				{
+					return videoURL;
+				}
+				set	
+				{
+					videoURL = value;
+				}
+			}
+		}
+	}
 }
