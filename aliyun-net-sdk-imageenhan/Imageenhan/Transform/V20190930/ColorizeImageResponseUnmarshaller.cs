@@ -24,20 +24,20 @@ using Aliyun.Acs.imageenhan.Model.V20190930;
 
 namespace Aliyun.Acs.imageenhan.Transform.V20190930
 {
-    public class AssessExposureResponseUnmarshaller
+    public class ColorizeImageResponseUnmarshaller
     {
-        public static AssessExposureResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ColorizeImageResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			AssessExposureResponse assessExposureResponse = new AssessExposureResponse();
+			ColorizeImageResponse colorizeImageResponse = new ColorizeImageResponse();
 
-			assessExposureResponse.HttpResponse = _ctx.HttpResponse;
-			assessExposureResponse.RequestId = _ctx.StringValue("AssessExposure.RequestId");
+			colorizeImageResponse.HttpResponse = _ctx.HttpResponse;
+			colorizeImageResponse.RequestId = _ctx.StringValue("ColorizeImage.RequestId");
 
-			AssessExposureResponse.AssessExposure_Data data = new AssessExposureResponse.AssessExposure_Data();
-			data.Exposure = _ctx.FloatValue("AssessExposure.Data.Exposure");
-			assessExposureResponse.Data = data;
+			ColorizeImageResponse.ColorizeImage_Data data = new ColorizeImageResponse.ColorizeImage_Data();
+			data.ImageURL = _ctx.StringValue("ColorizeImage.Data.ImageURL");
+			colorizeImageResponse.Data = data;
         
-			return assessExposureResponse;
+			return colorizeImageResponse;
         }
     }
 }

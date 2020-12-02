@@ -26,15 +26,15 @@ namespace Aliyun.Acs.imageenhan.Transform.V20190930
 {
     public class RemoveImageSubtitlesResponseUnmarshaller
     {
-        public static RemoveImageSubtitlesResponse Unmarshall(UnmarshallerContext context)
+        public static RemoveImageSubtitlesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RemoveImageSubtitlesResponse removeImageSubtitlesResponse = new RemoveImageSubtitlesResponse();
 
-			removeImageSubtitlesResponse.HttpResponse = context.HttpResponse;
-			removeImageSubtitlesResponse.RequestId = context.StringValue("RemoveImageSubtitles.RequestId");
+			removeImageSubtitlesResponse.HttpResponse = _ctx.HttpResponse;
+			removeImageSubtitlesResponse.RequestId = _ctx.StringValue("RemoveImageSubtitles.RequestId");
 
 			RemoveImageSubtitlesResponse.RemoveImageSubtitles_Data data = new RemoveImageSubtitlesResponse.RemoveImageSubtitles_Data();
-			data.ImageURL = context.StringValue("RemoveImageSubtitles.Data.ImageURL");
+			data.ImageURL = _ctx.StringValue("RemoveImageSubtitles.Data.ImageURL");
 			removeImageSubtitlesResponse.Data = data;
         
 			return removeImageSubtitlesResponse;

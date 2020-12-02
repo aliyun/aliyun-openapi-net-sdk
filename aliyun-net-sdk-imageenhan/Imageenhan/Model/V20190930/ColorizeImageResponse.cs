@@ -16,28 +16,59 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.imageenhan.Model.V20190930;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.imageenhan.Transform.V20190930
+namespace Aliyun.Acs.imageenhan.Model.V20190930
 {
-    public class AssessExposureResponseUnmarshaller
-    {
-        public static AssessExposureResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			AssessExposureResponse assessExposureResponse = new AssessExposureResponse();
+	public class ColorizeImageResponse : AcsResponse
+	{
 
-			assessExposureResponse.HttpResponse = _ctx.HttpResponse;
-			assessExposureResponse.RequestId = _ctx.StringValue("AssessExposure.RequestId");
+		private string requestId;
 
-			AssessExposureResponse.AssessExposure_Data data = new AssessExposureResponse.AssessExposure_Data();
-			data.Exposure = _ctx.FloatValue("AssessExposure.Data.Exposure");
-			assessExposureResponse.Data = data;
-        
-			return assessExposureResponse;
-        }
-    }
+		private ColorizeImage_Data data;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public ColorizeImage_Data Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class ColorizeImage_Data
+		{
+
+			private string imageURL;
+
+			public string ImageURL
+			{
+				get
+				{
+					return imageURL;
+				}
+				set	
+				{
+					imageURL = value;
+				}
+			}
+		}
+	}
 }

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.imageenhan.Transform.V20190930
 {
     public class ImageBlindPicWatermarkResponseUnmarshaller
     {
-        public static ImageBlindPicWatermarkResponse Unmarshall(UnmarshallerContext context)
+        public static ImageBlindPicWatermarkResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ImageBlindPicWatermarkResponse imageBlindPicWatermarkResponse = new ImageBlindPicWatermarkResponse();
 
-			imageBlindPicWatermarkResponse.HttpResponse = context.HttpResponse;
-			imageBlindPicWatermarkResponse.RequestId = context.StringValue("ImageBlindPicWatermark.RequestId");
+			imageBlindPicWatermarkResponse.HttpResponse = _ctx.HttpResponse;
+			imageBlindPicWatermarkResponse.RequestId = _ctx.StringValue("ImageBlindPicWatermark.RequestId");
 
 			ImageBlindPicWatermarkResponse.ImageBlindPicWatermark_Data data = new ImageBlindPicWatermarkResponse.ImageBlindPicWatermark_Data();
-			data.WatermarkImageURL = context.StringValue("ImageBlindPicWatermark.Data.WatermarkImageURL");
-			data.LogoURL = context.StringValue("ImageBlindPicWatermark.Data.LogoURL");
+			data.WatermarkImageURL = _ctx.StringValue("ImageBlindPicWatermark.Data.WatermarkImageURL");
+			data.LogoURL = _ctx.StringValue("ImageBlindPicWatermark.Data.LogoURL");
 			imageBlindPicWatermarkResponse.Data = data;
         
 			return imageBlindPicWatermarkResponse;

@@ -26,23 +26,23 @@ namespace Aliyun.Acs.imageenhan.Transform.V20190930
 {
     public class IntelligentCompositionResponseUnmarshaller
     {
-        public static IntelligentCompositionResponse Unmarshall(UnmarshallerContext context)
+        public static IntelligentCompositionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			IntelligentCompositionResponse intelligentCompositionResponse = new IntelligentCompositionResponse();
 
-			intelligentCompositionResponse.HttpResponse = context.HttpResponse;
-			intelligentCompositionResponse.RequestId = context.StringValue("IntelligentComposition.RequestId");
+			intelligentCompositionResponse.HttpResponse = _ctx.HttpResponse;
+			intelligentCompositionResponse.RequestId = _ctx.StringValue("IntelligentComposition.RequestId");
 
 			IntelligentCompositionResponse.IntelligentComposition_Data data = new IntelligentCompositionResponse.IntelligentComposition_Data();
 
 			List<IntelligentCompositionResponse.IntelligentComposition_Data.IntelligentComposition_Element> data_elements = new List<IntelligentCompositionResponse.IntelligentComposition_Data.IntelligentComposition_Element>();
-			for (int i = 0; i < context.Length("IntelligentComposition.Data.Elements.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("IntelligentComposition.Data.Elements.Length"); i++) {
 				IntelligentCompositionResponse.IntelligentComposition_Data.IntelligentComposition_Element element = new IntelligentCompositionResponse.IntelligentComposition_Data.IntelligentComposition_Element();
-				element.MinX = context.IntegerValue("IntelligentComposition.Data.Elements["+ i +"].MinX");
-				element.MinY = context.IntegerValue("IntelligentComposition.Data.Elements["+ i +"].MinY");
-				element.MaxX = context.IntegerValue("IntelligentComposition.Data.Elements["+ i +"].MaxX");
-				element.MaxY = context.IntegerValue("IntelligentComposition.Data.Elements["+ i +"].MaxY");
-				element.Score = context.FloatValue("IntelligentComposition.Data.Elements["+ i +"].Score");
+				element.MinX = _ctx.IntegerValue("IntelligentComposition.Data.Elements["+ i +"].MinX");
+				element.MinY = _ctx.IntegerValue("IntelligentComposition.Data.Elements["+ i +"].MinY");
+				element.MaxX = _ctx.IntegerValue("IntelligentComposition.Data.Elements["+ i +"].MaxX");
+				element.MaxY = _ctx.IntegerValue("IntelligentComposition.Data.Elements["+ i +"].MaxY");
+				element.Score = _ctx.FloatValue("IntelligentComposition.Data.Elements["+ i +"].Score");
 
 				data_elements.Add(element);
 			}

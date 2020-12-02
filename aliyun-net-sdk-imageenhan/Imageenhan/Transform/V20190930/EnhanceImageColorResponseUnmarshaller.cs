@@ -26,15 +26,15 @@ namespace Aliyun.Acs.imageenhan.Transform.V20190930
 {
     public class EnhanceImageColorResponseUnmarshaller
     {
-        public static EnhanceImageColorResponse Unmarshall(UnmarshallerContext context)
+        public static EnhanceImageColorResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			EnhanceImageColorResponse enhanceImageColorResponse = new EnhanceImageColorResponse();
 
-			enhanceImageColorResponse.HttpResponse = context.HttpResponse;
-			enhanceImageColorResponse.RequestId = context.StringValue("EnhanceImageColor.RequestId");
+			enhanceImageColorResponse.HttpResponse = _ctx.HttpResponse;
+			enhanceImageColorResponse.RequestId = _ctx.StringValue("EnhanceImageColor.RequestId");
 
 			EnhanceImageColorResponse.EnhanceImageColor_Data data = new EnhanceImageColorResponse.EnhanceImageColor_Data();
-			data.ImageURL = context.StringValue("EnhanceImageColor.Data.ImageURL");
+			data.ImageURL = _ctx.StringValue("EnhanceImageColor.Data.ImageURL");
 			enhanceImageColorResponse.Data = data;
         
 			return enhanceImageColorResponse;

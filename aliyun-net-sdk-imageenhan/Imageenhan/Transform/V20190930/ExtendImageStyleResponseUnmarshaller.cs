@@ -26,16 +26,16 @@ namespace Aliyun.Acs.imageenhan.Transform.V20190930
 {
     public class ExtendImageStyleResponseUnmarshaller
     {
-        public static ExtendImageStyleResponse Unmarshall(UnmarshallerContext context)
+        public static ExtendImageStyleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ExtendImageStyleResponse extendImageStyleResponse = new ExtendImageStyleResponse();
 
-			extendImageStyleResponse.HttpResponse = context.HttpResponse;
-			extendImageStyleResponse.RequestId = context.StringValue("ExtendImageStyle.RequestId");
+			extendImageStyleResponse.HttpResponse = _ctx.HttpResponse;
+			extendImageStyleResponse.RequestId = _ctx.StringValue("ExtendImageStyle.RequestId");
 
 			ExtendImageStyleResponse.ExtendImageStyle_Data data = new ExtendImageStyleResponse.ExtendImageStyle_Data();
-			data.Url = context.StringValue("ExtendImageStyle.Data.Url");
-			data.MajorUrl = context.StringValue("ExtendImageStyle.Data.MajorUrl");
+			data.Url = _ctx.StringValue("ExtendImageStyle.Data.Url");
+			data.MajorUrl = _ctx.StringValue("ExtendImageStyle.Data.MajorUrl");
 			extendImageStyleResponse.Data = data;
         
 			return extendImageStyleResponse;
