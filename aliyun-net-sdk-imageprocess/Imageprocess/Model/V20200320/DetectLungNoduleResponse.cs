@@ -75,6 +75,8 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 
 				private string seriesInstanceUid;
 
+				private string report;
+
 				private List<DetectLungNodule_Element> elements;
 
 				private List<string> origin;
@@ -90,6 +92,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 					set	
 					{
 						seriesInstanceUid = value;
+					}
+				}
+
+				public string Report
+				{
+					get
+					{
+						return report;
+					}
+					set	
+					{
+						report = value;
 					}
 				}
 
@@ -155,6 +169,10 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 					private float? imageZ;
 
 					private string sOPInstanceUID;
+
+					private float? volume;
+
+					private float? meanValue;
 
 					public string Category
 					{
@@ -297,6 +315,30 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 						set	
 						{
 							sOPInstanceUID = value;
+						}
+					}
+
+					public float? Volume
+					{
+						get
+						{
+							return volume;
+						}
+						set	
+						{
+							volume = value;
+						}
+					}
+
+					public float? MeanValue
+					{
+						get
+						{
+							return meanValue;
+						}
+						set	
+						{
+							meanValue = value;
 						}
 					}
 				}

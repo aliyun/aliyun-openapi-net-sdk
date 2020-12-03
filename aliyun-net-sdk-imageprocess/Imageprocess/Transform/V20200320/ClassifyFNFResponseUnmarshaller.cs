@@ -26,31 +26,31 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 {
     public class ClassifyFNFResponseUnmarshaller
     {
-        public static ClassifyFNFResponse Unmarshall(UnmarshallerContext context)
+        public static ClassifyFNFResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ClassifyFNFResponse classifyFNFResponse = new ClassifyFNFResponse();
 
-			classifyFNFResponse.HttpResponse = context.HttpResponse;
-			classifyFNFResponse.RequestId = context.StringValue("ClassifyFNF.RequestId");
+			classifyFNFResponse.HttpResponse = _ctx.HttpResponse;
+			classifyFNFResponse.RequestId = _ctx.StringValue("ClassifyFNF.RequestId");
 
 			ClassifyFNFResponse.ClassifyFNF_Data data = new ClassifyFNFResponse.ClassifyFNF_Data();
-			data.ImageUrl = context.StringValue("ClassifyFNF.Data.ImageUrl");
-			data.OrgId = context.StringValue("ClassifyFNF.Data.OrgId");
-			data.OrgName = context.StringValue("ClassifyFNF.Data.OrgName");
+			data.ImageUrl = _ctx.StringValue("ClassifyFNF.Data.ImageUrl");
+			data.OrgId = _ctx.StringValue("ClassifyFNF.Data.OrgId");
+			data.OrgName = _ctx.StringValue("ClassifyFNF.Data.OrgName");
 
 			List<ClassifyFNFResponse.ClassifyFNF_Data.ClassifyFNF_FracturesItem> data_fractures = new List<ClassifyFNFResponse.ClassifyFNF_Data.ClassifyFNF_FracturesItem>();
-			for (int i = 0; i < context.Length("ClassifyFNF.Data.Fractures.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ClassifyFNF.Data.Fractures.Length"); i++) {
 				ClassifyFNFResponse.ClassifyFNF_Data.ClassifyFNF_FracturesItem fracturesItem = new ClassifyFNFResponse.ClassifyFNF_Data.ClassifyFNF_FracturesItem();
-				fracturesItem._Value = context.FloatValue("ClassifyFNF.Data.Fractures["+ i +"].Value");
+				fracturesItem._Value = _ctx.FloatValue("ClassifyFNF.Data.Fractures["+ i +"].Value");
 
 				List<string> fracturesItem_boxes = new List<string>();
-				for (int j = 0; j < context.Length("ClassifyFNF.Data.Fractures["+ i +"].Boxes.Length"); j++) {
-					fracturesItem_boxes.Add(context.StringValue("ClassifyFNF.Data.Fractures["+ i +"].Boxes["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("ClassifyFNF.Data.Fractures["+ i +"].Boxes.Length"); j++) {
+					fracturesItem_boxes.Add(_ctx.StringValue("ClassifyFNF.Data.Fractures["+ i +"].Boxes["+ j +"]"));
 				}
 				fracturesItem.Boxes = fracturesItem_boxes;
 
 				ClassifyFNFResponse.ClassifyFNF_Data.ClassifyFNF_FracturesItem.ClassifyFNF_Tag tag = new ClassifyFNFResponse.ClassifyFNF_Data.ClassifyFNF_FracturesItem.ClassifyFNF_Tag();
-				tag.Label = context.StringValue("ClassifyFNF.Data.Fractures["+ i +"].Tag.Label");
+				tag.Label = _ctx.StringValue("ClassifyFNF.Data.Fractures["+ i +"].Tag.Label");
 				fracturesItem.Tag = tag;
 
 				data_fractures.Add(fracturesItem);

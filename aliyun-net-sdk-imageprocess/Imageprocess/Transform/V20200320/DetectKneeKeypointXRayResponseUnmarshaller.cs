@@ -26,32 +26,32 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 {
     public class DetectKneeKeypointXRayResponseUnmarshaller
     {
-        public static DetectKneeKeypointXRayResponse Unmarshall(UnmarshallerContext context)
+        public static DetectKneeKeypointXRayResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetectKneeKeypointXRayResponse detectKneeKeypointXRayResponse = new DetectKneeKeypointXRayResponse();
 
-			detectKneeKeypointXRayResponse.HttpResponse = context.HttpResponse;
-			detectKneeKeypointXRayResponse.RequestId = context.StringValue("DetectKneeKeypointXRay.RequestId");
+			detectKneeKeypointXRayResponse.HttpResponse = _ctx.HttpResponse;
+			detectKneeKeypointXRayResponse.RequestId = _ctx.StringValue("DetectKneeKeypointXRay.RequestId");
 
 			DetectKneeKeypointXRayResponse.DetectKneeKeypointXRay_Data data = new DetectKneeKeypointXRayResponse.DetectKneeKeypointXRay_Data();
-			data.ImageUrl = context.StringValue("DetectKneeKeypointXRay.Data.ImageUrl");
-			data.OrgId = context.StringValue("DetectKneeKeypointXRay.Data.OrgId");
-			data.OrgName = context.StringValue("DetectKneeKeypointXRay.Data.OrgName");
+			data.ImageUrl = _ctx.StringValue("DetectKneeKeypointXRay.Data.ImageUrl");
+			data.OrgId = _ctx.StringValue("DetectKneeKeypointXRay.Data.OrgId");
+			data.OrgName = _ctx.StringValue("DetectKneeKeypointXRay.Data.OrgName");
 
 			List<DetectKneeKeypointXRayResponse.DetectKneeKeypointXRay_Data.DetectKneeKeypointXRay_KeyPointsItem> data_keyPoints = new List<DetectKneeKeypointXRayResponse.DetectKneeKeypointXRay_Data.DetectKneeKeypointXRay_KeyPointsItem>();
-			for (int i = 0; i < context.Length("DetectKneeKeypointXRay.Data.KeyPoints.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DetectKneeKeypointXRay.Data.KeyPoints.Length"); i++) {
 				DetectKneeKeypointXRayResponse.DetectKneeKeypointXRay_Data.DetectKneeKeypointXRay_KeyPointsItem keyPointsItem = new DetectKneeKeypointXRayResponse.DetectKneeKeypointXRay_Data.DetectKneeKeypointXRay_KeyPointsItem();
-				keyPointsItem._Value = context.FloatValue("DetectKneeKeypointXRay.Data.KeyPoints["+ i +"].Value");
+				keyPointsItem._Value = _ctx.FloatValue("DetectKneeKeypointXRay.Data.KeyPoints["+ i +"].Value");
 
 				List<string> keyPointsItem_coordinates = new List<string>();
-				for (int j = 0; j < context.Length("DetectKneeKeypointXRay.Data.KeyPoints["+ i +"].Coordinates.Length"); j++) {
-					keyPointsItem_coordinates.Add(context.StringValue("DetectKneeKeypointXRay.Data.KeyPoints["+ i +"].Coordinates["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DetectKneeKeypointXRay.Data.KeyPoints["+ i +"].Coordinates.Length"); j++) {
+					keyPointsItem_coordinates.Add(_ctx.StringValue("DetectKneeKeypointXRay.Data.KeyPoints["+ i +"].Coordinates["+ j +"]"));
 				}
 				keyPointsItem.Coordinates = keyPointsItem_coordinates;
 
 				DetectKneeKeypointXRayResponse.DetectKneeKeypointXRay_Data.DetectKneeKeypointXRay_KeyPointsItem.DetectKneeKeypointXRay_Tag tag = new DetectKneeKeypointXRayResponse.DetectKneeKeypointXRay_Data.DetectKneeKeypointXRay_KeyPointsItem.DetectKneeKeypointXRay_Tag();
-				tag.Direction = context.StringValue("DetectKneeKeypointXRay.Data.KeyPoints["+ i +"].Tag.Direction");
-				tag.Label = context.StringValue("DetectKneeKeypointXRay.Data.KeyPoints["+ i +"].Tag.Label");
+				tag.Direction = _ctx.StringValue("DetectKneeKeypointXRay.Data.KeyPoints["+ i +"].Tag.Direction");
+				tag.Label = _ctx.StringValue("DetectKneeKeypointXRay.Data.KeyPoints["+ i +"].Tag.Label");
 				keyPointsItem.Tag = tag;
 
 				data_keyPoints.Add(keyPointsItem);

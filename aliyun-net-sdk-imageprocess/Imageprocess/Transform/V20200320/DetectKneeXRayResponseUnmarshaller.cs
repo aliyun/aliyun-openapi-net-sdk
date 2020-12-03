@@ -26,22 +26,22 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 {
     public class DetectKneeXRayResponseUnmarshaller
     {
-        public static DetectKneeXRayResponse Unmarshall(UnmarshallerContext context)
+        public static DetectKneeXRayResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetectKneeXRayResponse detectKneeXRayResponse = new DetectKneeXRayResponse();
 
-			detectKneeXRayResponse.HttpResponse = context.HttpResponse;
-			detectKneeXRayResponse.RequestId = context.StringValue("DetectKneeXRay.RequestId");
+			detectKneeXRayResponse.HttpResponse = _ctx.HttpResponse;
+			detectKneeXRayResponse.RequestId = _ctx.StringValue("DetectKneeXRay.RequestId");
 
 			DetectKneeXRayResponse.DetectKneeXRay_Data data = new DetectKneeXRayResponse.DetectKneeXRay_Data();
 
 			List<DetectKneeXRayResponse.DetectKneeXRay_Data.DetectKneeXRay_KLDetectionsItem> data_kLDetections = new List<DetectKneeXRayResponse.DetectKneeXRay_Data.DetectKneeXRay_KLDetectionsItem>();
-			for (int i = 0; i < context.Length("DetectKneeXRay.Data.KLDetections.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DetectKneeXRay.Data.KLDetections.Length"); i++) {
 				DetectKneeXRayResponse.DetectKneeXRay_Data.DetectKneeXRay_KLDetectionsItem kLDetectionsItem = new DetectKneeXRayResponse.DetectKneeXRay_Data.DetectKneeXRay_KLDetectionsItem();
 
 				List<string> kLDetectionsItem_detections = new List<string>();
-				for (int j = 0; j < context.Length("DetectKneeXRay.Data.KLDetections["+ i +"].Detections.Length"); j++) {
-					kLDetectionsItem_detections.Add(context.StringValue("DetectKneeXRay.Data.KLDetections["+ i +"].Detections["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DetectKneeXRay.Data.KLDetections["+ i +"].Detections.Length"); j++) {
+					kLDetectionsItem_detections.Add(_ctx.StringValue("DetectKneeXRay.Data.KLDetections["+ i +"].Detections["+ j +"]"));
 				}
 				kLDetectionsItem.Detections = kLDetectionsItem_detections;
 

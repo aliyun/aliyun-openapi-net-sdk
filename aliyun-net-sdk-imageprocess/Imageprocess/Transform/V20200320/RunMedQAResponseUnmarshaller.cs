@@ -26,19 +26,19 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 {
     public class RunMedQAResponseUnmarshaller
     {
-        public static RunMedQAResponse Unmarshall(UnmarshallerContext context)
+        public static RunMedQAResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RunMedQAResponse runMedQAResponse = new RunMedQAResponse();
 
-			runMedQAResponse.HttpResponse = context.HttpResponse;
-			runMedQAResponse.RequestId = context.StringValue("RunMedQA.RequestId");
+			runMedQAResponse.HttpResponse = _ctx.HttpResponse;
+			runMedQAResponse.RequestId = _ctx.StringValue("RunMedQA.RequestId");
 
 			RunMedQAResponse.RunMedQA_Data data = new RunMedQAResponse.RunMedQA_Data();
-			data.Answer = context.StringValue("RunMedQA.Data.Answer");
+			data.Answer = _ctx.StringValue("RunMedQA.Data.Answer");
 
 			List<string> data_similarQuestion = new List<string>();
-			for (int i = 0; i < context.Length("RunMedQA.Data.SimilarQuestion.Length"); i++) {
-				data_similarQuestion.Add(context.StringValue("RunMedQA.Data.SimilarQuestion["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("RunMedQA.Data.SimilarQuestion.Length"); i++) {
+				data_similarQuestion.Add(_ctx.StringValue("RunMedQA.Data.SimilarQuestion["+ i +"]"));
 			}
 			data.SimilarQuestion = data_similarQuestion;
 			runMedQAResponse.Data = data;
