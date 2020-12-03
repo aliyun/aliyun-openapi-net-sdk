@@ -43,11 +43,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string startTime;
 
+		private string cycle;
+
 		private string domainName;
 
 		private string endTime;
 
 		private long? ownerId;
+
+		private string timePoint;
 
 		public string StartTime
 		{
@@ -59,6 +63,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string Cycle
+		{
+			get
+			{
+				return cycle;
+			}
+			set	
+			{
+				cycle = value;
+				DictionaryUtil.Add(QueryParameters, "Cycle", value);
 			}
 		}
 
@@ -98,6 +115,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string TimePoint
+		{
+			get
+			{
+				return timePoint;
+			}
+			set	
+			{
+				timePoint = value;
+				DictionaryUtil.Add(QueryParameters, "TimePoint", value);
 			}
 		}
 
