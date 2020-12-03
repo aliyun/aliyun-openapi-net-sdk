@@ -40,15 +40,17 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			Method = MethodType.POST;
         }
 
+		private string networkType;
+
+		private string engineVersion;
+
 		private string resourceGroupId;
 
 		private string dBNodeClass;
 
-		private string dBInstanceDescription;
-
 		private string period;
 
-		private string securityIPList;
+		private bool? isReadDBInstance;
 
 		private string vSwitchId;
 
@@ -56,7 +58,7 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 
 		private string zoneId;
 
-		private string instanceNetworkType;
+		private string primaryDBInstanceName;
 
 		private string clientToken;
 
@@ -67,6 +69,32 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 		private string vPCId;
 
 		private string payType;
+
+		public string NetworkType
+		{
+			get
+			{
+				return networkType;
+			}
+			set	
+			{
+				networkType = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+			}
+		}
+
+		public string EngineVersion
+		{
+			get
+			{
+				return engineVersion;
+			}
+			set	
+			{
+				engineVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
 
 		public string ResourceGroupId
 		{
@@ -94,19 +122,6 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			}
 		}
 
-		public string DBInstanceDescription
-		{
-			get
-			{
-				return dBInstanceDescription;
-			}
-			set	
-			{
-				dBInstanceDescription = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceDescription", value);
-			}
-		}
-
 		public string Period
 		{
 			get
@@ -120,16 +135,16 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			}
 		}
 
-		public string SecurityIPList
+		public bool? IsReadDBInstance
 		{
 			get
 			{
-				return securityIPList;
+				return isReadDBInstance;
 			}
 			set	
 			{
-				securityIPList = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityIPList", value);
+				isReadDBInstance = value;
+				DictionaryUtil.Add(QueryParameters, "IsReadDBInstance", value.ToString());
 			}
 		}
 
@@ -172,16 +187,16 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			}
 		}
 
-		public string InstanceNetworkType
+		public string PrimaryDBInstanceName
 		{
 			get
 			{
-				return instanceNetworkType;
+				return primaryDBInstanceName;
 			}
 			set	
 			{
-				instanceNetworkType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceNetworkType", value);
+				primaryDBInstanceName = value;
+				DictionaryUtil.Add(QueryParameters, "PrimaryDBInstanceName", value);
 			}
 		}
 

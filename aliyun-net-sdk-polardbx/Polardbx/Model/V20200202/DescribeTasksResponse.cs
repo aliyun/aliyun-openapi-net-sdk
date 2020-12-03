@@ -112,13 +112,15 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 
 			private string progress;
 
-			private string expectedFinishTime;
+			private string finishTime1;
 
 			private string status;
 
 			private string taskErrorCode;
 
 			private string taskErrorMessage;
+
+			private string scaleOutToken;
 
 			public string DBName
 			{
@@ -204,15 +206,15 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 				}
 			}
 
-			public string ExpectedFinishTime
+			public string FinishTime1
 			{
 				get
 				{
-					return expectedFinishTime;
+					return finishTime1;
 				}
 				set	
 				{
-					expectedFinishTime = value;
+					finishTime1 = value;
 				}
 			}
 
@@ -249,6 +251,18 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 				set	
 				{
 					taskErrorMessage = value;
+				}
+			}
+
+			public string ScaleOutToken
+			{
+				get
+				{
+					return scaleOutToken;
+				}
+				set	
+				{
+					scaleOutToken = value;
 				}
 			}
 		}

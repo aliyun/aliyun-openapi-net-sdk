@@ -22,14 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardbx.Model.V20200202
 {
-	public class CreateDBInstanceResponse : AcsResponse
+	public class CreatePolarxOrderResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string dBInstanceName;
-
-		private string orderId;
+		private List<CreatePolarxOrder_OrderResult> orderResultList;
 
 		public string RequestId
 		{
@@ -43,27 +41,47 @@ namespace Aliyun.Acs.polardbx.Model.V20200202
 			}
 		}
 
-		public string DBInstanceName
+		public List<CreatePolarxOrder_OrderResult> OrderResultList
 		{
 			get
 			{
-				return dBInstanceName;
+				return orderResultList;
 			}
 			set	
 			{
-				dBInstanceName = value;
+				orderResultList = value;
 			}
 		}
 
-		public string OrderId
+		public class CreatePolarxOrder_OrderResult
 		{
-			get
+
+			private long? orderId;
+
+			private string dBInstanceName;
+
+			public long? OrderId
 			{
-				return orderId;
+				get
+				{
+					return orderId;
+				}
+				set	
+				{
+					orderId = value;
+				}
 			}
-			set	
+
+			public string DBInstanceName
 			{
-				orderId = value;
+				get
+				{
+					return dBInstanceName;
+				}
+				set	
+				{
+					dBInstanceName = value;
+				}
 			}
 		}
 	}

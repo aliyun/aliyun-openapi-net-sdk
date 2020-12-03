@@ -46,10 +46,11 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 				taskProgressInfo.TaskAction = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskAction");
 				taskProgressInfo.TaskId = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskId");
 				taskProgressInfo.Progress = _ctx.StringValue("DescribeTasks.Items["+ i +"].Progress");
-				taskProgressInfo.ExpectedFinishTime = _ctx.StringValue("DescribeTasks.Items["+ i +"].ExpectedFinishTime");
+				taskProgressInfo.FinishTime1 = _ctx.StringValue("DescribeTasks.Items["+ i +"].FinishTime");
 				taskProgressInfo.Status = _ctx.StringValue("DescribeTasks.Items["+ i +"].Status");
 				taskProgressInfo.TaskErrorCode = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskErrorCode");
 				taskProgressInfo.TaskErrorMessage = _ctx.StringValue("DescribeTasks.Items["+ i +"].TaskErrorMessage");
+				taskProgressInfo.ScaleOutToken = _ctx.StringValue("DescribeTasks.Items["+ i +"].ScaleOutToken");
 
 				describeTasksResponse_items.Add(taskProgressInfo);
 			}

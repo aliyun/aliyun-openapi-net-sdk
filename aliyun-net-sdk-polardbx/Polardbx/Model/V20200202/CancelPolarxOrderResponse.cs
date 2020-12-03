@@ -16,26 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.polardbx.Model.V20200202;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.polardbx.Transform.V20200202
+namespace Aliyun.Acs.polardbx.Model.V20200202
 {
-    public class CreateDBInstanceResponseUnmarshaller
-    {
-        public static CreateDBInstanceResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			CreateDBInstanceResponse createDBInstanceResponse = new CreateDBInstanceResponse();
+	public class CancelPolarxOrderResponse : AcsResponse
+	{
 
-			createDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			createDBInstanceResponse.RequestId = _ctx.StringValue("CreateDBInstance.RequestId");
-			createDBInstanceResponse.DBInstanceName = _ctx.StringValue("CreateDBInstance.DBInstanceName");
-			createDBInstanceResponse.OrderId = _ctx.StringValue("CreateDBInstance.OrderId");
-        
-			return createDBInstanceResponse;
-        }
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

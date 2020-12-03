@@ -24,18 +24,16 @@ using Aliyun.Acs.polardbx.Model.V20200202;
 
 namespace Aliyun.Acs.polardbx.Transform.V20200202
 {
-    public class CreateDBInstanceResponseUnmarshaller
+    public class RetryPolarxOrderResponseUnmarshaller
     {
-        public static CreateDBInstanceResponse Unmarshall(UnmarshallerContext _ctx)
+        public static RetryPolarxOrderResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CreateDBInstanceResponse createDBInstanceResponse = new CreateDBInstanceResponse();
+			RetryPolarxOrderResponse retryPolarxOrderResponse = new RetryPolarxOrderResponse();
 
-			createDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			createDBInstanceResponse.RequestId = _ctx.StringValue("CreateDBInstance.RequestId");
-			createDBInstanceResponse.DBInstanceName = _ctx.StringValue("CreateDBInstance.DBInstanceName");
-			createDBInstanceResponse.OrderId = _ctx.StringValue("CreateDBInstance.OrderId");
+			retryPolarxOrderResponse.HttpResponse = _ctx.HttpResponse;
+			retryPolarxOrderResponse.RequestId = _ctx.StringValue("RetryPolarxOrder.RequestId");
         
-			return createDBInstanceResponse;
+			return retryPolarxOrderResponse;
         }
     }
 }

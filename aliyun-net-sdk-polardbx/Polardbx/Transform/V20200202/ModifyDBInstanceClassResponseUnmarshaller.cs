@@ -32,6 +32,7 @@ namespace Aliyun.Acs.polardbx.Transform.V20200202
 
 			modifyDBInstanceClassResponse.HttpResponse = _ctx.HttpResponse;
 			modifyDBInstanceClassResponse.RequestId = _ctx.StringValue("ModifyDBInstanceClass.RequestId");
+			modifyDBInstanceClassResponse.OrderId = _ctx.StringValue("ModifyDBInstanceClass.OrderId");
         
 			return modifyDBInstanceClassResponse;
         }
