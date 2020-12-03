@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class ImportThingModelTslResponseUnmarshaller
     {
-        public static ImportThingModelTslResponse Unmarshall(UnmarshallerContext context)
+        public static ImportThingModelTslResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ImportThingModelTslResponse importThingModelTslResponse = new ImportThingModelTslResponse();
 
-			importThingModelTslResponse.HttpResponse = context.HttpResponse;
-			importThingModelTslResponse.RequestId = context.StringValue("ImportThingModelTsl.RequestId");
-			importThingModelTslResponse.Success = context.BooleanValue("ImportThingModelTsl.Success");
-			importThingModelTslResponse.Code = context.StringValue("ImportThingModelTsl.Code");
-			importThingModelTslResponse.ErrorMessage = context.StringValue("ImportThingModelTsl.ErrorMessage");
+			importThingModelTslResponse.HttpResponse = _ctx.HttpResponse;
+			importThingModelTslResponse.RequestId = _ctx.StringValue("ImportThingModelTsl.RequestId");
+			importThingModelTslResponse.Success = _ctx.BooleanValue("ImportThingModelTsl.Success");
+			importThingModelTslResponse.Code = _ctx.StringValue("ImportThingModelTsl.Code");
+			importThingModelTslResponse.ErrorMessage = _ctx.StringValue("ImportThingModelTsl.ErrorMessage");
         
 			return importThingModelTslResponse;
         }

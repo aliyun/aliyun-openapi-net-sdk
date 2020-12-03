@@ -26,24 +26,24 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryDeviceGroupInfoResponseUnmarshaller
     {
-        public static QueryDeviceGroupInfoResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDeviceGroupInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDeviceGroupInfoResponse queryDeviceGroupInfoResponse = new QueryDeviceGroupInfoResponse();
 
-			queryDeviceGroupInfoResponse.HttpResponse = context.HttpResponse;
-			queryDeviceGroupInfoResponse.RequestId = context.StringValue("QueryDeviceGroupInfo.RequestId");
-			queryDeviceGroupInfoResponse.Success = context.BooleanValue("QueryDeviceGroupInfo.Success");
-			queryDeviceGroupInfoResponse.Code = context.StringValue("QueryDeviceGroupInfo.Code");
-			queryDeviceGroupInfoResponse.ErrorMessage = context.StringValue("QueryDeviceGroupInfo.ErrorMessage");
+			queryDeviceGroupInfoResponse.HttpResponse = _ctx.HttpResponse;
+			queryDeviceGroupInfoResponse.RequestId = _ctx.StringValue("QueryDeviceGroupInfo.RequestId");
+			queryDeviceGroupInfoResponse.Success = _ctx.BooleanValue("QueryDeviceGroupInfo.Success");
+			queryDeviceGroupInfoResponse.Code = _ctx.StringValue("QueryDeviceGroupInfo.Code");
+			queryDeviceGroupInfoResponse.ErrorMessage = _ctx.StringValue("QueryDeviceGroupInfo.ErrorMessage");
 
 			QueryDeviceGroupInfoResponse.QueryDeviceGroupInfo_Data data = new QueryDeviceGroupInfoResponse.QueryDeviceGroupInfo_Data();
-			data.GroupId = context.StringValue("QueryDeviceGroupInfo.Data.GroupId");
-			data.UtcCreate = context.StringValue("QueryDeviceGroupInfo.Data.UtcCreate");
-			data.GroupName = context.StringValue("QueryDeviceGroupInfo.Data.GroupName");
-			data.GroupDesc = context.StringValue("QueryDeviceGroupInfo.Data.GroupDesc");
-			data.DeviceCount = context.IntegerValue("QueryDeviceGroupInfo.Data.DeviceCount");
-			data.DeviceActive = context.IntegerValue("QueryDeviceGroupInfo.Data.DeviceActive");
-			data.DeviceOnline = context.IntegerValue("QueryDeviceGroupInfo.Data.DeviceOnline");
+			data.GroupId = _ctx.StringValue("QueryDeviceGroupInfo.Data.GroupId");
+			data.UtcCreate = _ctx.StringValue("QueryDeviceGroupInfo.Data.UtcCreate");
+			data.GroupName = _ctx.StringValue("QueryDeviceGroupInfo.Data.GroupName");
+			data.GroupDesc = _ctx.StringValue("QueryDeviceGroupInfo.Data.GroupDesc");
+			data.DeviceCount = _ctx.IntegerValue("QueryDeviceGroupInfo.Data.DeviceCount");
+			data.DeviceActive = _ctx.IntegerValue("QueryDeviceGroupInfo.Data.DeviceActive");
+			data.DeviceOnline = _ctx.IntegerValue("QueryDeviceGroupInfo.Data.DeviceOnline");
 			queryDeviceGroupInfoResponse.Data = data;
         
 			return queryDeviceGroupInfoResponse;

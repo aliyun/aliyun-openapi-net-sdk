@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class DeleteEdgeDriverVersionResponseUnmarshaller
     {
-        public static DeleteEdgeDriverVersionResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteEdgeDriverVersionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteEdgeDriverVersionResponse deleteEdgeDriverVersionResponse = new DeleteEdgeDriverVersionResponse();
 
-			deleteEdgeDriverVersionResponse.HttpResponse = context.HttpResponse;
-			deleteEdgeDriverVersionResponse.RequestId = context.StringValue("DeleteEdgeDriverVersion.RequestId");
-			deleteEdgeDriverVersionResponse.Success = context.BooleanValue("DeleteEdgeDriverVersion.Success");
-			deleteEdgeDriverVersionResponse.Code = context.StringValue("DeleteEdgeDriverVersion.Code");
-			deleteEdgeDriverVersionResponse.ErrorMessage = context.StringValue("DeleteEdgeDriverVersion.ErrorMessage");
+			deleteEdgeDriverVersionResponse.HttpResponse = _ctx.HttpResponse;
+			deleteEdgeDriverVersionResponse.RequestId = _ctx.StringValue("DeleteEdgeDriverVersion.RequestId");
+			deleteEdgeDriverVersionResponse.Success = _ctx.BooleanValue("DeleteEdgeDriverVersion.Success");
+			deleteEdgeDriverVersionResponse.Code = _ctx.StringValue("DeleteEdgeDriverVersion.Code");
+			deleteEdgeDriverVersionResponse.ErrorMessage = _ctx.StringValue("DeleteEdgeDriverVersion.ErrorMessage");
         
 			return deleteEdgeDriverVersionResponse;
         }

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BindGatewayToEdgeInstanceResponseUnmarshaller
     {
-        public static BindGatewayToEdgeInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static BindGatewayToEdgeInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BindGatewayToEdgeInstanceResponse bindGatewayToEdgeInstanceResponse = new BindGatewayToEdgeInstanceResponse();
 
-			bindGatewayToEdgeInstanceResponse.HttpResponse = context.HttpResponse;
-			bindGatewayToEdgeInstanceResponse.RequestId = context.StringValue("BindGatewayToEdgeInstance.RequestId");
-			bindGatewayToEdgeInstanceResponse.Success = context.BooleanValue("BindGatewayToEdgeInstance.Success");
-			bindGatewayToEdgeInstanceResponse.Code = context.StringValue("BindGatewayToEdgeInstance.Code");
-			bindGatewayToEdgeInstanceResponse.ErrorMessage = context.StringValue("BindGatewayToEdgeInstance.ErrorMessage");
+			bindGatewayToEdgeInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			bindGatewayToEdgeInstanceResponse.RequestId = _ctx.StringValue("BindGatewayToEdgeInstance.RequestId");
+			bindGatewayToEdgeInstanceResponse.Success = _ctx.BooleanValue("BindGatewayToEdgeInstance.Success");
+			bindGatewayToEdgeInstanceResponse.Code = _ctx.StringValue("BindGatewayToEdgeInstance.Code");
+			bindGatewayToEdgeInstanceResponse.ErrorMessage = _ctx.StringValue("BindGatewayToEdgeInstance.ErrorMessage");
         
 			return bindGatewayToEdgeInstanceResponse;
         }

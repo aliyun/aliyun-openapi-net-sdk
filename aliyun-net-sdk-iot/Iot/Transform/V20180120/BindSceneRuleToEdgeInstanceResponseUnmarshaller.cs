@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BindSceneRuleToEdgeInstanceResponseUnmarshaller
     {
-        public static BindSceneRuleToEdgeInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static BindSceneRuleToEdgeInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BindSceneRuleToEdgeInstanceResponse bindSceneRuleToEdgeInstanceResponse = new BindSceneRuleToEdgeInstanceResponse();
 
-			bindSceneRuleToEdgeInstanceResponse.HttpResponse = context.HttpResponse;
-			bindSceneRuleToEdgeInstanceResponse.RequestId = context.StringValue("BindSceneRuleToEdgeInstance.RequestId");
-			bindSceneRuleToEdgeInstanceResponse.Success = context.BooleanValue("BindSceneRuleToEdgeInstance.Success");
-			bindSceneRuleToEdgeInstanceResponse.ErrorMessage = context.StringValue("BindSceneRuleToEdgeInstance.ErrorMessage");
-			bindSceneRuleToEdgeInstanceResponse.Code = context.StringValue("BindSceneRuleToEdgeInstance.Code");
+			bindSceneRuleToEdgeInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			bindSceneRuleToEdgeInstanceResponse.RequestId = _ctx.StringValue("BindSceneRuleToEdgeInstance.RequestId");
+			bindSceneRuleToEdgeInstanceResponse.Success = _ctx.BooleanValue("BindSceneRuleToEdgeInstance.Success");
+			bindSceneRuleToEdgeInstanceResponse.ErrorMessage = _ctx.StringValue("BindSceneRuleToEdgeInstance.ErrorMessage");
+			bindSceneRuleToEdgeInstanceResponse.Code = _ctx.StringValue("BindSceneRuleToEdgeInstance.Code");
         
 			return bindSceneRuleToEdgeInstanceResponse;
         }

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BatchDeleteEdgeInstanceChannelResponseUnmarshaller
     {
-        public static BatchDeleteEdgeInstanceChannelResponse Unmarshall(UnmarshallerContext context)
+        public static BatchDeleteEdgeInstanceChannelResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchDeleteEdgeInstanceChannelResponse batchDeleteEdgeInstanceChannelResponse = new BatchDeleteEdgeInstanceChannelResponse();
 
-			batchDeleteEdgeInstanceChannelResponse.HttpResponse = context.HttpResponse;
-			batchDeleteEdgeInstanceChannelResponse.RequestId = context.StringValue("BatchDeleteEdgeInstanceChannel.RequestId");
-			batchDeleteEdgeInstanceChannelResponse.Success = context.BooleanValue("BatchDeleteEdgeInstanceChannel.Success");
-			batchDeleteEdgeInstanceChannelResponse.Code = context.StringValue("BatchDeleteEdgeInstanceChannel.Code");
-			batchDeleteEdgeInstanceChannelResponse.ErrorMessage = context.StringValue("BatchDeleteEdgeInstanceChannel.ErrorMessage");
+			batchDeleteEdgeInstanceChannelResponse.HttpResponse = _ctx.HttpResponse;
+			batchDeleteEdgeInstanceChannelResponse.RequestId = _ctx.StringValue("BatchDeleteEdgeInstanceChannel.RequestId");
+			batchDeleteEdgeInstanceChannelResponse.Success = _ctx.BooleanValue("BatchDeleteEdgeInstanceChannel.Success");
+			batchDeleteEdgeInstanceChannelResponse.Code = _ctx.StringValue("BatchDeleteEdgeInstanceChannel.Code");
+			batchDeleteEdgeInstanceChannelResponse.ErrorMessage = _ctx.StringValue("BatchDeleteEdgeInstanceChannel.ErrorMessage");
         
 			return batchDeleteEdgeInstanceChannelResponse;
         }

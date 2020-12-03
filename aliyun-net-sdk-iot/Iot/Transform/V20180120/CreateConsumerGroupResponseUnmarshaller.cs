@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class CreateConsumerGroupResponseUnmarshaller
     {
-        public static CreateConsumerGroupResponse Unmarshall(UnmarshallerContext context)
+        public static CreateConsumerGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateConsumerGroupResponse createConsumerGroupResponse = new CreateConsumerGroupResponse();
 
-			createConsumerGroupResponse.HttpResponse = context.HttpResponse;
-			createConsumerGroupResponse.RequestId = context.StringValue("CreateConsumerGroup.RequestId");
-			createConsumerGroupResponse.Success = context.BooleanValue("CreateConsumerGroup.Success");
-			createConsumerGroupResponse.ErrorMessage = context.StringValue("CreateConsumerGroup.ErrorMessage");
-			createConsumerGroupResponse.GroupId = context.StringValue("CreateConsumerGroup.GroupId");
-			createConsumerGroupResponse.Code = context.StringValue("CreateConsumerGroup.Code");
+			createConsumerGroupResponse.HttpResponse = _ctx.HttpResponse;
+			createConsumerGroupResponse.RequestId = _ctx.StringValue("CreateConsumerGroup.RequestId");
+			createConsumerGroupResponse.Success = _ctx.BooleanValue("CreateConsumerGroup.Success");
+			createConsumerGroupResponse.ErrorMessage = _ctx.StringValue("CreateConsumerGroup.ErrorMessage");
+			createConsumerGroupResponse.GroupId = _ctx.StringValue("CreateConsumerGroup.GroupId");
+			createConsumerGroupResponse.Code = _ctx.StringValue("CreateConsumerGroup.Code");
         
 			return createConsumerGroupResponse;
         }

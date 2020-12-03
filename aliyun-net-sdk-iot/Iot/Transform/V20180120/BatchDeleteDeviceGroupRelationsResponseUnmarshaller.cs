@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BatchDeleteDeviceGroupRelationsResponseUnmarshaller
     {
-        public static BatchDeleteDeviceGroupRelationsResponse Unmarshall(UnmarshallerContext context)
+        public static BatchDeleteDeviceGroupRelationsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchDeleteDeviceGroupRelationsResponse batchDeleteDeviceGroupRelationsResponse = new BatchDeleteDeviceGroupRelationsResponse();
 
-			batchDeleteDeviceGroupRelationsResponse.HttpResponse = context.HttpResponse;
-			batchDeleteDeviceGroupRelationsResponse.RequestId = context.StringValue("BatchDeleteDeviceGroupRelations.RequestId");
-			batchDeleteDeviceGroupRelationsResponse.Success = context.BooleanValue("BatchDeleteDeviceGroupRelations.Success");
-			batchDeleteDeviceGroupRelationsResponse.Code = context.StringValue("BatchDeleteDeviceGroupRelations.Code");
-			batchDeleteDeviceGroupRelationsResponse.ErrorMessage = context.StringValue("BatchDeleteDeviceGroupRelations.ErrorMessage");
-			batchDeleteDeviceGroupRelationsResponse.ValidDeviceCount = context.IntegerValue("BatchDeleteDeviceGroupRelations.ValidDeviceCount");
-			batchDeleteDeviceGroupRelationsResponse.AlreadyRelatedGroupDeviceCount = context.IntegerValue("BatchDeleteDeviceGroupRelations.AlreadyRelatedGroupDeviceCount");
-			batchDeleteDeviceGroupRelationsResponse.SuccessDeviceCount = context.IntegerValue("BatchDeleteDeviceGroupRelations.SuccessDeviceCount");
+			batchDeleteDeviceGroupRelationsResponse.HttpResponse = _ctx.HttpResponse;
+			batchDeleteDeviceGroupRelationsResponse.RequestId = _ctx.StringValue("BatchDeleteDeviceGroupRelations.RequestId");
+			batchDeleteDeviceGroupRelationsResponse.Success = _ctx.BooleanValue("BatchDeleteDeviceGroupRelations.Success");
+			batchDeleteDeviceGroupRelationsResponse.Code = _ctx.StringValue("BatchDeleteDeviceGroupRelations.Code");
+			batchDeleteDeviceGroupRelationsResponse.ErrorMessage = _ctx.StringValue("BatchDeleteDeviceGroupRelations.ErrorMessage");
+			batchDeleteDeviceGroupRelationsResponse.ValidDeviceCount = _ctx.IntegerValue("BatchDeleteDeviceGroupRelations.ValidDeviceCount");
+			batchDeleteDeviceGroupRelationsResponse.AlreadyRelatedGroupDeviceCount = _ctx.IntegerValue("BatchDeleteDeviceGroupRelations.AlreadyRelatedGroupDeviceCount");
+			batchDeleteDeviceGroupRelationsResponse.SuccessDeviceCount = _ctx.IntegerValue("BatchDeleteDeviceGroupRelations.SuccessDeviceCount");
         
 			return batchDeleteDeviceGroupRelationsResponse;
         }

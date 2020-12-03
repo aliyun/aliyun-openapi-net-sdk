@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryDevicePropResponseUnmarshaller
     {
-        public static QueryDevicePropResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDevicePropResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDevicePropResponse queryDevicePropResponse = new QueryDevicePropResponse();
 
-			queryDevicePropResponse.HttpResponse = context.HttpResponse;
-			queryDevicePropResponse.RequestId = context.StringValue("QueryDeviceProp.RequestId");
-			queryDevicePropResponse.Success = context.BooleanValue("QueryDeviceProp.Success");
-			queryDevicePropResponse.Code = context.StringValue("QueryDeviceProp.Code");
-			queryDevicePropResponse.ErrorMessage = context.StringValue("QueryDeviceProp.ErrorMessage");
-			queryDevicePropResponse.Props = context.StringValue("QueryDeviceProp.Props");
+			queryDevicePropResponse.HttpResponse = _ctx.HttpResponse;
+			queryDevicePropResponse.RequestId = _ctx.StringValue("QueryDeviceProp.RequestId");
+			queryDevicePropResponse.Success = _ctx.BooleanValue("QueryDeviceProp.Success");
+			queryDevicePropResponse.Code = _ctx.StringValue("QueryDeviceProp.Code");
+			queryDevicePropResponse.ErrorMessage = _ctx.StringValue("QueryDeviceProp.ErrorMessage");
+			queryDevicePropResponse.Props = _ctx.StringValue("QueryDeviceProp.Props");
         
 			return queryDevicePropResponse;
         }

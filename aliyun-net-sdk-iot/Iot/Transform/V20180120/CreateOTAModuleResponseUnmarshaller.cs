@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class CreateOTAModuleResponseUnmarshaller
     {
-        public static CreateOTAModuleResponse Unmarshall(UnmarshallerContext context)
+        public static CreateOTAModuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateOTAModuleResponse createOTAModuleResponse = new CreateOTAModuleResponse();
 
-			createOTAModuleResponse.HttpResponse = context.HttpResponse;
-			createOTAModuleResponse.RequestId = context.StringValue("CreateOTAModule.RequestId");
-			createOTAModuleResponse.Success = context.BooleanValue("CreateOTAModule.Success");
-			createOTAModuleResponse.Code = context.StringValue("CreateOTAModule.Code");
-			createOTAModuleResponse.ErrorMessage = context.StringValue("CreateOTAModule.ErrorMessage");
+			createOTAModuleResponse.HttpResponse = _ctx.HttpResponse;
+			createOTAModuleResponse.RequestId = _ctx.StringValue("CreateOTAModule.RequestId");
+			createOTAModuleResponse.Success = _ctx.BooleanValue("CreateOTAModule.Success");
+			createOTAModuleResponse.Code = _ctx.StringValue("CreateOTAModule.Code");
+			createOTAModuleResponse.ErrorMessage = _ctx.StringValue("CreateOTAModule.ErrorMessage");
         
 			return createOTAModuleResponse;
         }

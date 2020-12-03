@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BatchGetDeviceBindStatusResponseUnmarshaller
     {
-        public static BatchGetDeviceBindStatusResponse Unmarshall(UnmarshallerContext context)
+        public static BatchGetDeviceBindStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchGetDeviceBindStatusResponse batchGetDeviceBindStatusResponse = new BatchGetDeviceBindStatusResponse();
 
-			batchGetDeviceBindStatusResponse.HttpResponse = context.HttpResponse;
-			batchGetDeviceBindStatusResponse.RequestId = context.StringValue("BatchGetDeviceBindStatus.RequestId");
-			batchGetDeviceBindStatusResponse.Success = context.BooleanValue("BatchGetDeviceBindStatus.Success");
-			batchGetDeviceBindStatusResponse.Code = context.StringValue("BatchGetDeviceBindStatus.Code");
-			batchGetDeviceBindStatusResponse.ErrorMessage = context.StringValue("BatchGetDeviceBindStatus.ErrorMessage");
+			batchGetDeviceBindStatusResponse.HttpResponse = _ctx.HttpResponse;
+			batchGetDeviceBindStatusResponse.RequestId = _ctx.StringValue("BatchGetDeviceBindStatus.RequestId");
+			batchGetDeviceBindStatusResponse.Success = _ctx.BooleanValue("BatchGetDeviceBindStatus.Success");
+			batchGetDeviceBindStatusResponse.Code = _ctx.StringValue("BatchGetDeviceBindStatus.Code");
+			batchGetDeviceBindStatusResponse.ErrorMessage = _ctx.StringValue("BatchGetDeviceBindStatus.ErrorMessage");
 
 			List<BatchGetDeviceBindStatusResponse.BatchGetDeviceBindStatus_DeviceStatus> batchGetDeviceBindStatusResponse_data = new List<BatchGetDeviceBindStatusResponse.BatchGetDeviceBindStatus_DeviceStatus>();
-			for (int i = 0; i < context.Length("BatchGetDeviceBindStatus.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("BatchGetDeviceBindStatus.Data.Length"); i++) {
 				BatchGetDeviceBindStatusResponse.BatchGetDeviceBindStatus_DeviceStatus deviceStatus = new BatchGetDeviceBindStatusResponse.BatchGetDeviceBindStatus_DeviceStatus();
-				deviceStatus.IotId = context.StringValue("BatchGetDeviceBindStatus.Data["+ i +"].IotId");
-				deviceStatus.BindStatus = context.IntegerValue("BatchGetDeviceBindStatus.Data["+ i +"].BindStatus");
+				deviceStatus.IotId = _ctx.StringValue("BatchGetDeviceBindStatus.Data["+ i +"].IotId");
+				deviceStatus.BindStatus = _ctx.IntegerValue("BatchGetDeviceBindStatus.Data["+ i +"].BindStatus");
 
 				batchGetDeviceBindStatusResponse_data.Add(deviceStatus);
 			}

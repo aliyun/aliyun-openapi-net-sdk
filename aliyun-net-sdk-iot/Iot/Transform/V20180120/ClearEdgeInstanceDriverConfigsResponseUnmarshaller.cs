@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class ClearEdgeInstanceDriverConfigsResponseUnmarshaller
     {
-        public static ClearEdgeInstanceDriverConfigsResponse Unmarshall(UnmarshallerContext context)
+        public static ClearEdgeInstanceDriverConfigsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ClearEdgeInstanceDriverConfigsResponse clearEdgeInstanceDriverConfigsResponse = new ClearEdgeInstanceDriverConfigsResponse();
 
-			clearEdgeInstanceDriverConfigsResponse.HttpResponse = context.HttpResponse;
-			clearEdgeInstanceDriverConfigsResponse.RequestId = context.StringValue("ClearEdgeInstanceDriverConfigs.RequestId");
-			clearEdgeInstanceDriverConfigsResponse.Success = context.BooleanValue("ClearEdgeInstanceDriverConfigs.Success");
-			clearEdgeInstanceDriverConfigsResponse.Code = context.StringValue("ClearEdgeInstanceDriverConfigs.Code");
-			clearEdgeInstanceDriverConfigsResponse.ErrorMessage = context.StringValue("ClearEdgeInstanceDriverConfigs.ErrorMessage");
+			clearEdgeInstanceDriverConfigsResponse.HttpResponse = _ctx.HttpResponse;
+			clearEdgeInstanceDriverConfigsResponse.RequestId = _ctx.StringValue("ClearEdgeInstanceDriverConfigs.RequestId");
+			clearEdgeInstanceDriverConfigsResponse.Success = _ctx.BooleanValue("ClearEdgeInstanceDriverConfigs.Success");
+			clearEdgeInstanceDriverConfigsResponse.Code = _ctx.StringValue("ClearEdgeInstanceDriverConfigs.Code");
+			clearEdgeInstanceDriverConfigsResponse.ErrorMessage = _ctx.StringValue("ClearEdgeInstanceDriverConfigs.ErrorMessage");
         
 			return clearEdgeInstanceDriverConfigsResponse;
         }

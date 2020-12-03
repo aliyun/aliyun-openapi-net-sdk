@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class CloseEdgeInstanceDeploymentResponseUnmarshaller
     {
-        public static CloseEdgeInstanceDeploymentResponse Unmarshall(UnmarshallerContext context)
+        public static CloseEdgeInstanceDeploymentResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CloseEdgeInstanceDeploymentResponse closeEdgeInstanceDeploymentResponse = new CloseEdgeInstanceDeploymentResponse();
 
-			closeEdgeInstanceDeploymentResponse.HttpResponse = context.HttpResponse;
-			closeEdgeInstanceDeploymentResponse.RequestId = context.StringValue("CloseEdgeInstanceDeployment.RequestId");
-			closeEdgeInstanceDeploymentResponse.Success = context.BooleanValue("CloseEdgeInstanceDeployment.Success");
-			closeEdgeInstanceDeploymentResponse.Code = context.StringValue("CloseEdgeInstanceDeployment.Code");
-			closeEdgeInstanceDeploymentResponse.ErrorMessage = context.StringValue("CloseEdgeInstanceDeployment.ErrorMessage");
+			closeEdgeInstanceDeploymentResponse.HttpResponse = _ctx.HttpResponse;
+			closeEdgeInstanceDeploymentResponse.RequestId = _ctx.StringValue("CloseEdgeInstanceDeployment.RequestId");
+			closeEdgeInstanceDeploymentResponse.Success = _ctx.BooleanValue("CloseEdgeInstanceDeployment.Success");
+			closeEdgeInstanceDeploymentResponse.Code = _ctx.StringValue("CloseEdgeInstanceDeployment.Code");
+			closeEdgeInstanceDeploymentResponse.ErrorMessage = _ctx.StringValue("CloseEdgeInstanceDeployment.ErrorMessage");
         
 			return closeEdgeInstanceDeploymentResponse;
         }

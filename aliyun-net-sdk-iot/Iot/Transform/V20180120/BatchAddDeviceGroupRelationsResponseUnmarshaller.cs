@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BatchAddDeviceGroupRelationsResponseUnmarshaller
     {
-        public static BatchAddDeviceGroupRelationsResponse Unmarshall(UnmarshallerContext context)
+        public static BatchAddDeviceGroupRelationsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchAddDeviceGroupRelationsResponse batchAddDeviceGroupRelationsResponse = new BatchAddDeviceGroupRelationsResponse();
 
-			batchAddDeviceGroupRelationsResponse.HttpResponse = context.HttpResponse;
-			batchAddDeviceGroupRelationsResponse.RequestId = context.StringValue("BatchAddDeviceGroupRelations.RequestId");
-			batchAddDeviceGroupRelationsResponse.Success = context.BooleanValue("BatchAddDeviceGroupRelations.Success");
-			batchAddDeviceGroupRelationsResponse.Code = context.StringValue("BatchAddDeviceGroupRelations.Code");
-			batchAddDeviceGroupRelationsResponse.ValidDeviceCount = context.IntegerValue("BatchAddDeviceGroupRelations.ValidDeviceCount");
-			batchAddDeviceGroupRelationsResponse.ExceedTenGroupDeviceCount = context.IntegerValue("BatchAddDeviceGroupRelations.ExceedTenGroupDeviceCount");
-			batchAddDeviceGroupRelationsResponse.AlreadyRelatedGroupDeviceCount = context.IntegerValue("BatchAddDeviceGroupRelations.AlreadyRelatedGroupDeviceCount");
-			batchAddDeviceGroupRelationsResponse.SuccessAddedDeviceCount = context.IntegerValue("BatchAddDeviceGroupRelations.SuccessAddedDeviceCount");
-			batchAddDeviceGroupRelationsResponse.ErrorMessage = context.StringValue("BatchAddDeviceGroupRelations.ErrorMessage");
+			batchAddDeviceGroupRelationsResponse.HttpResponse = _ctx.HttpResponse;
+			batchAddDeviceGroupRelationsResponse.RequestId = _ctx.StringValue("BatchAddDeviceGroupRelations.RequestId");
+			batchAddDeviceGroupRelationsResponse.Success = _ctx.BooleanValue("BatchAddDeviceGroupRelations.Success");
+			batchAddDeviceGroupRelationsResponse.Code = _ctx.StringValue("BatchAddDeviceGroupRelations.Code");
+			batchAddDeviceGroupRelationsResponse.ValidDeviceCount = _ctx.IntegerValue("BatchAddDeviceGroupRelations.ValidDeviceCount");
+			batchAddDeviceGroupRelationsResponse.ExceedTenGroupDeviceCount = _ctx.IntegerValue("BatchAddDeviceGroupRelations.ExceedTenGroupDeviceCount");
+			batchAddDeviceGroupRelationsResponse.AlreadyRelatedGroupDeviceCount = _ctx.IntegerValue("BatchAddDeviceGroupRelations.AlreadyRelatedGroupDeviceCount");
+			batchAddDeviceGroupRelationsResponse.SuccessAddedDeviceCount = _ctx.IntegerValue("BatchAddDeviceGroupRelations.SuccessAddedDeviceCount");
+			batchAddDeviceGroupRelationsResponse.ErrorMessage = _ctx.StringValue("BatchAddDeviceGroupRelations.ErrorMessage");
         
 			return batchAddDeviceGroupRelationsResponse;
         }

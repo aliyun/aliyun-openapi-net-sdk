@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class GetRuleActionResponseUnmarshaller
     {
-        public static GetRuleActionResponse Unmarshall(UnmarshallerContext context)
+        public static GetRuleActionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetRuleActionResponse getRuleActionResponse = new GetRuleActionResponse();
 
-			getRuleActionResponse.HttpResponse = context.HttpResponse;
-			getRuleActionResponse.RequestId = context.StringValue("GetRuleAction.RequestId");
-			getRuleActionResponse.Success = context.BooleanValue("GetRuleAction.Success");
-			getRuleActionResponse.Code = context.StringValue("GetRuleAction.Code");
-			getRuleActionResponse.ErrorMessage = context.StringValue("GetRuleAction.ErrorMessage");
+			getRuleActionResponse.HttpResponse = _ctx.HttpResponse;
+			getRuleActionResponse.RequestId = _ctx.StringValue("GetRuleAction.RequestId");
+			getRuleActionResponse.Success = _ctx.BooleanValue("GetRuleAction.Success");
+			getRuleActionResponse.Code = _ctx.StringValue("GetRuleAction.Code");
+			getRuleActionResponse.ErrorMessage = _ctx.StringValue("GetRuleAction.ErrorMessage");
 
 			GetRuleActionResponse.GetRuleAction_RuleActionInfo ruleActionInfo = new GetRuleActionResponse.GetRuleAction_RuleActionInfo();
-			ruleActionInfo.Id = context.LongValue("GetRuleAction.RuleActionInfo.Id");
-			ruleActionInfo.RuleId = context.LongValue("GetRuleAction.RuleActionInfo.RuleId");
-			ruleActionInfo.Type = context.StringValue("GetRuleAction.RuleActionInfo.Type");
-			ruleActionInfo.Configuration = context.StringValue("GetRuleAction.RuleActionInfo.Configuration");
-			ruleActionInfo.ErrorActionFlag = context.BooleanValue("GetRuleAction.RuleActionInfo.ErrorActionFlag");
+			ruleActionInfo.Id = _ctx.LongValue("GetRuleAction.RuleActionInfo.Id");
+			ruleActionInfo.RuleId = _ctx.LongValue("GetRuleAction.RuleActionInfo.RuleId");
+			ruleActionInfo.Type = _ctx.StringValue("GetRuleAction.RuleActionInfo.Type");
+			ruleActionInfo.Configuration = _ctx.StringValue("GetRuleAction.RuleActionInfo.Configuration");
+			ruleActionInfo.ErrorActionFlag = _ctx.BooleanValue("GetRuleAction.RuleActionInfo.ErrorActionFlag");
 			getRuleActionResponse.RuleActionInfo = ruleActionInfo;
         
 			return getRuleActionResponse;

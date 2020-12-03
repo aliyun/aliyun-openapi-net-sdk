@@ -26,25 +26,25 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class GenerateDeviceNameListURLResponseUnmarshaller
     {
-        public static GenerateDeviceNameListURLResponse Unmarshall(UnmarshallerContext context)
+        public static GenerateDeviceNameListURLResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GenerateDeviceNameListURLResponse generateDeviceNameListURLResponse = new GenerateDeviceNameListURLResponse();
 
-			generateDeviceNameListURLResponse.HttpResponse = context.HttpResponse;
-			generateDeviceNameListURLResponse.RequestId = context.StringValue("GenerateDeviceNameListURL.RequestId");
-			generateDeviceNameListURLResponse.Success = context.BooleanValue("GenerateDeviceNameListURL.Success");
-			generateDeviceNameListURLResponse.Code = context.StringValue("GenerateDeviceNameListURL.Code");
-			generateDeviceNameListURLResponse.ErrorMessage = context.StringValue("GenerateDeviceNameListURL.ErrorMessage");
+			generateDeviceNameListURLResponse.HttpResponse = _ctx.HttpResponse;
+			generateDeviceNameListURLResponse.RequestId = _ctx.StringValue("GenerateDeviceNameListURL.RequestId");
+			generateDeviceNameListURLResponse.Success = _ctx.BooleanValue("GenerateDeviceNameListURL.Success");
+			generateDeviceNameListURLResponse.Code = _ctx.StringValue("GenerateDeviceNameListURL.Code");
+			generateDeviceNameListURLResponse.ErrorMessage = _ctx.StringValue("GenerateDeviceNameListURL.ErrorMessage");
 
 			GenerateDeviceNameListURLResponse.GenerateDeviceNameListURL_Data data = new GenerateDeviceNameListURLResponse.GenerateDeviceNameListURL_Data();
-			data.Key = context.StringValue("GenerateDeviceNameListURL.Data.Key");
-			data.Host = context.StringValue("GenerateDeviceNameListURL.Data.Host");
-			data.Policy = context.StringValue("GenerateDeviceNameListURL.Data.Policy");
-			data.AccessKeyId = context.StringValue("GenerateDeviceNameListURL.Data.AccessKeyId");
-			data.Signature = context.StringValue("GenerateDeviceNameListURL.Data.Signature");
-			data.FileUrl = context.StringValue("GenerateDeviceNameListURL.Data.FileUrl");
-			data.UtcCreate = context.StringValue("GenerateDeviceNameListURL.Data.UtcCreate");
-			data.ObjectStorage = context.StringValue("GenerateDeviceNameListURL.Data.ObjectStorage");
+			data.Key = _ctx.StringValue("GenerateDeviceNameListURL.Data.Key");
+			data.Host = _ctx.StringValue("GenerateDeviceNameListURL.Data.Host");
+			data.Policy = _ctx.StringValue("GenerateDeviceNameListURL.Data.Policy");
+			data.AccessKeyId = _ctx.StringValue("GenerateDeviceNameListURL.Data.AccessKeyId");
+			data.Signature = _ctx.StringValue("GenerateDeviceNameListURL.Data.Signature");
+			data.FileUrl = _ctx.StringValue("GenerateDeviceNameListURL.Data.FileUrl");
+			data.UtcCreate = _ctx.StringValue("GenerateDeviceNameListURL.Data.UtcCreate");
+			data.ObjectStorage = _ctx.StringValue("GenerateDeviceNameListURL.Data.ObjectStorage");
 			generateDeviceNameListURLResponse.Data = data;
         
 			return generateDeviceNameListURLResponse;

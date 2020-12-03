@@ -26,34 +26,34 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryProductResponseUnmarshaller
     {
-        public static QueryProductResponse Unmarshall(UnmarshallerContext context)
+        public static QueryProductResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryProductResponse queryProductResponse = new QueryProductResponse();
 
-			queryProductResponse.HttpResponse = context.HttpResponse;
-			queryProductResponse.RequestId = context.StringValue("QueryProduct.RequestId");
-			queryProductResponse.Success = context.BooleanValue("QueryProduct.Success");
-			queryProductResponse.Code = context.StringValue("QueryProduct.Code");
-			queryProductResponse.ErrorMessage = context.StringValue("QueryProduct.ErrorMessage");
+			queryProductResponse.HttpResponse = _ctx.HttpResponse;
+			queryProductResponse.RequestId = _ctx.StringValue("QueryProduct.RequestId");
+			queryProductResponse.Success = _ctx.BooleanValue("QueryProduct.Success");
+			queryProductResponse.Code = _ctx.StringValue("QueryProduct.Code");
+			queryProductResponse.ErrorMessage = _ctx.StringValue("QueryProduct.ErrorMessage");
 
 			QueryProductResponse.QueryProduct_Data data = new QueryProductResponse.QueryProduct_Data();
-			data.GmtCreate = context.LongValue("QueryProduct.Data.GmtCreate");
-			data.DataFormat = context.IntegerValue("QueryProduct.Data.DataFormat");
-			data.Description = context.StringValue("QueryProduct.Data.Description");
-			data.DeviceCount = context.IntegerValue("QueryProduct.Data.DeviceCount");
-			data.NodeType = context.IntegerValue("QueryProduct.Data.NodeType");
-			data.ProductKey = context.StringValue("QueryProduct.Data.ProductKey");
-			data.ProductName = context.StringValue("QueryProduct.Data.ProductName");
-			data.ProductSecret = context.StringValue("QueryProduct.Data.ProductSecret");
-			data.CategoryName = context.StringValue("QueryProduct.Data.CategoryName");
-			data.CategoryKey = context.StringValue("QueryProduct.Data.CategoryKey");
-			data.AliyunCommodityCode = context.StringValue("QueryProduct.Data.AliyunCommodityCode");
-			data.Id2 = context.BooleanValue("QueryProduct.Data.Id2");
-			data.ProtocolType = context.StringValue("QueryProduct.Data.ProtocolType");
-			data.ProductStatus = context.StringValue("QueryProduct.Data.ProductStatus");
-			data.Owner = context.BooleanValue("QueryProduct.Data.Owner");
-			data.NetType = context.IntegerValue("QueryProduct.Data.NetType");
-			data.AuthType = context.StringValue("QueryProduct.Data.AuthType");
+			data.GmtCreate = _ctx.LongValue("QueryProduct.Data.GmtCreate");
+			data.DataFormat = _ctx.IntegerValue("QueryProduct.Data.DataFormat");
+			data.Description = _ctx.StringValue("QueryProduct.Data.Description");
+			data.DeviceCount = _ctx.IntegerValue("QueryProduct.Data.DeviceCount");
+			data.NodeType = _ctx.IntegerValue("QueryProduct.Data.NodeType");
+			data.ProductKey = _ctx.StringValue("QueryProduct.Data.ProductKey");
+			data.ProductName = _ctx.StringValue("QueryProduct.Data.ProductName");
+			data.ProductSecret = _ctx.StringValue("QueryProduct.Data.ProductSecret");
+			data.CategoryName = _ctx.StringValue("QueryProduct.Data.CategoryName");
+			data.CategoryKey = _ctx.StringValue("QueryProduct.Data.CategoryKey");
+			data.AliyunCommodityCode = _ctx.StringValue("QueryProduct.Data.AliyunCommodityCode");
+			data.Id2 = _ctx.BooleanValue("QueryProduct.Data.Id2");
+			data.ProtocolType = _ctx.StringValue("QueryProduct.Data.ProtocolType");
+			data.ProductStatus = _ctx.StringValue("QueryProduct.Data.ProductStatus");
+			data.Owner = _ctx.BooleanValue("QueryProduct.Data.Owner");
+			data.NetType = _ctx.IntegerValue("QueryProduct.Data.NetType");
+			data.AuthType = _ctx.StringValue("QueryProduct.Data.AuthType");
 			queryProductResponse.Data = data;
         
 			return queryProductResponse;

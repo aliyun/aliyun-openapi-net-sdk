@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryDeviceServiceDataResponseUnmarshaller
     {
-        public static QueryDeviceServiceDataResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDeviceServiceDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDeviceServiceDataResponse queryDeviceServiceDataResponse = new QueryDeviceServiceDataResponse();
 
-			queryDeviceServiceDataResponse.HttpResponse = context.HttpResponse;
-			queryDeviceServiceDataResponse.RequestId = context.StringValue("QueryDeviceServiceData.RequestId");
-			queryDeviceServiceDataResponse.Success = context.BooleanValue("QueryDeviceServiceData.Success");
-			queryDeviceServiceDataResponse.Code = context.StringValue("QueryDeviceServiceData.Code");
-			queryDeviceServiceDataResponse.ErrorMessage = context.StringValue("QueryDeviceServiceData.ErrorMessage");
+			queryDeviceServiceDataResponse.HttpResponse = _ctx.HttpResponse;
+			queryDeviceServiceDataResponse.RequestId = _ctx.StringValue("QueryDeviceServiceData.RequestId");
+			queryDeviceServiceDataResponse.Success = _ctx.BooleanValue("QueryDeviceServiceData.Success");
+			queryDeviceServiceDataResponse.Code = _ctx.StringValue("QueryDeviceServiceData.Code");
+			queryDeviceServiceDataResponse.ErrorMessage = _ctx.StringValue("QueryDeviceServiceData.ErrorMessage");
 
 			QueryDeviceServiceDataResponse.QueryDeviceServiceData_Data data = new QueryDeviceServiceDataResponse.QueryDeviceServiceData_Data();
-			data.NextTime = context.LongValue("QueryDeviceServiceData.Data.NextTime");
-			data.NextValid = context.BooleanValue("QueryDeviceServiceData.Data.NextValid");
+			data.NextTime = _ctx.LongValue("QueryDeviceServiceData.Data.NextTime");
+			data.NextValid = _ctx.BooleanValue("QueryDeviceServiceData.Data.NextValid");
 
 			List<QueryDeviceServiceDataResponse.QueryDeviceServiceData_Data.QueryDeviceServiceData_ServiceInfo> data_list = new List<QueryDeviceServiceDataResponse.QueryDeviceServiceData_Data.QueryDeviceServiceData_ServiceInfo>();
-			for (int i = 0; i < context.Length("QueryDeviceServiceData.Data.List.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryDeviceServiceData.Data.List.Length"); i++) {
 				QueryDeviceServiceDataResponse.QueryDeviceServiceData_Data.QueryDeviceServiceData_ServiceInfo serviceInfo = new QueryDeviceServiceDataResponse.QueryDeviceServiceData_Data.QueryDeviceServiceData_ServiceInfo();
-				serviceInfo.Time = context.StringValue("QueryDeviceServiceData.Data.List["+ i +"].Time");
-				serviceInfo.Identifier = context.StringValue("QueryDeviceServiceData.Data.List["+ i +"].Identifier");
-				serviceInfo.Name = context.StringValue("QueryDeviceServiceData.Data.List["+ i +"].Name");
-				serviceInfo.InputData = context.StringValue("QueryDeviceServiceData.Data.List["+ i +"].InputData");
-				serviceInfo.OutputData = context.StringValue("QueryDeviceServiceData.Data.List["+ i +"].OutputData");
+				serviceInfo.Time = _ctx.StringValue("QueryDeviceServiceData.Data.List["+ i +"].Time");
+				serviceInfo.Identifier = _ctx.StringValue("QueryDeviceServiceData.Data.List["+ i +"].Identifier");
+				serviceInfo.Name = _ctx.StringValue("QueryDeviceServiceData.Data.List["+ i +"].Name");
+				serviceInfo.InputData = _ctx.StringValue("QueryDeviceServiceData.Data.List["+ i +"].InputData");
+				serviceInfo.OutputData = _ctx.StringValue("QueryDeviceServiceData.Data.List["+ i +"].OutputData");
 
 				data_list.Add(serviceInfo);
 			}

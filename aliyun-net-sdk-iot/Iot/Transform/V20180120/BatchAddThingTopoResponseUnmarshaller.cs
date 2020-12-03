@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BatchAddThingTopoResponseUnmarshaller
     {
-        public static BatchAddThingTopoResponse Unmarshall(UnmarshallerContext context)
+        public static BatchAddThingTopoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchAddThingTopoResponse batchAddThingTopoResponse = new BatchAddThingTopoResponse();
 
-			batchAddThingTopoResponse.HttpResponse = context.HttpResponse;
-			batchAddThingTopoResponse.RequestId = context.StringValue("BatchAddThingTopo.RequestId");
-			batchAddThingTopoResponse.Success = context.BooleanValue("BatchAddThingTopo.Success");
-			batchAddThingTopoResponse.Code = context.StringValue("BatchAddThingTopo.Code");
-			batchAddThingTopoResponse.ErrorMessage = context.StringValue("BatchAddThingTopo.ErrorMessage");
+			batchAddThingTopoResponse.HttpResponse = _ctx.HttpResponse;
+			batchAddThingTopoResponse.RequestId = _ctx.StringValue("BatchAddThingTopo.RequestId");
+			batchAddThingTopoResponse.Success = _ctx.BooleanValue("BatchAddThingTopo.Success");
+			batchAddThingTopoResponse.Code = _ctx.StringValue("BatchAddThingTopo.Code");
+			batchAddThingTopoResponse.ErrorMessage = _ctx.StringValue("BatchAddThingTopo.ErrorMessage");
         
 			return batchAddThingTopoResponse;
         }

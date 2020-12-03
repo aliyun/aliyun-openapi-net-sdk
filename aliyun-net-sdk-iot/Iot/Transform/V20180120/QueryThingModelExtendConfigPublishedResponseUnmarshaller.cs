@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryThingModelExtendConfigPublishedResponseUnmarshaller
     {
-        public static QueryThingModelExtendConfigPublishedResponse Unmarshall(UnmarshallerContext context)
+        public static QueryThingModelExtendConfigPublishedResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryThingModelExtendConfigPublishedResponse queryThingModelExtendConfigPublishedResponse = new QueryThingModelExtendConfigPublishedResponse();
 
-			queryThingModelExtendConfigPublishedResponse.HttpResponse = context.HttpResponse;
-			queryThingModelExtendConfigPublishedResponse.RequestId = context.StringValue("QueryThingModelExtendConfigPublished.RequestId");
-			queryThingModelExtendConfigPublishedResponse.Success = context.BooleanValue("QueryThingModelExtendConfigPublished.Success");
-			queryThingModelExtendConfigPublishedResponse.Code = context.StringValue("QueryThingModelExtendConfigPublished.Code");
-			queryThingModelExtendConfigPublishedResponse.ErrorMessage = context.StringValue("QueryThingModelExtendConfigPublished.ErrorMessage");
+			queryThingModelExtendConfigPublishedResponse.HttpResponse = _ctx.HttpResponse;
+			queryThingModelExtendConfigPublishedResponse.RequestId = _ctx.StringValue("QueryThingModelExtendConfigPublished.RequestId");
+			queryThingModelExtendConfigPublishedResponse.Success = _ctx.BooleanValue("QueryThingModelExtendConfigPublished.Success");
+			queryThingModelExtendConfigPublishedResponse.Code = _ctx.StringValue("QueryThingModelExtendConfigPublished.Code");
+			queryThingModelExtendConfigPublishedResponse.ErrorMessage = _ctx.StringValue("QueryThingModelExtendConfigPublished.ErrorMessage");
 
 			QueryThingModelExtendConfigPublishedResponse.QueryThingModelExtendConfigPublished_Data data = new QueryThingModelExtendConfigPublishedResponse.QueryThingModelExtendConfigPublished_Data();
-			data.Configuration = context.StringValue("QueryThingModelExtendConfigPublished.Data.Configuration");
+			data.Configuration = _ctx.StringValue("QueryThingModelExtendConfigPublished.Data.Configuration");
 			queryThingModelExtendConfigPublishedResponse.Data = data;
         
 			return queryThingModelExtendConfigPublishedResponse;

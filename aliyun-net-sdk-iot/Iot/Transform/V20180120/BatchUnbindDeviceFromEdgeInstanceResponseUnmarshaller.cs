@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BatchUnbindDeviceFromEdgeInstanceResponseUnmarshaller
     {
-        public static BatchUnbindDeviceFromEdgeInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static BatchUnbindDeviceFromEdgeInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchUnbindDeviceFromEdgeInstanceResponse batchUnbindDeviceFromEdgeInstanceResponse = new BatchUnbindDeviceFromEdgeInstanceResponse();
 
-			batchUnbindDeviceFromEdgeInstanceResponse.HttpResponse = context.HttpResponse;
-			batchUnbindDeviceFromEdgeInstanceResponse.RequestId = context.StringValue("BatchUnbindDeviceFromEdgeInstance.RequestId");
-			batchUnbindDeviceFromEdgeInstanceResponse.Success = context.BooleanValue("BatchUnbindDeviceFromEdgeInstance.Success");
-			batchUnbindDeviceFromEdgeInstanceResponse.Code = context.StringValue("BatchUnbindDeviceFromEdgeInstance.Code");
-			batchUnbindDeviceFromEdgeInstanceResponse.ErrorMessage = context.StringValue("BatchUnbindDeviceFromEdgeInstance.ErrorMessage");
+			batchUnbindDeviceFromEdgeInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			batchUnbindDeviceFromEdgeInstanceResponse.RequestId = _ctx.StringValue("BatchUnbindDeviceFromEdgeInstance.RequestId");
+			batchUnbindDeviceFromEdgeInstanceResponse.Success = _ctx.BooleanValue("BatchUnbindDeviceFromEdgeInstance.Success");
+			batchUnbindDeviceFromEdgeInstanceResponse.Code = _ctx.StringValue("BatchUnbindDeviceFromEdgeInstance.Code");
+			batchUnbindDeviceFromEdgeInstanceResponse.ErrorMessage = _ctx.StringValue("BatchUnbindDeviceFromEdgeInstance.ErrorMessage");
         
 			return batchUnbindDeviceFromEdgeInstanceResponse;
         }

@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class GetSceneRuleResponseUnmarshaller
     {
-        public static GetSceneRuleResponse Unmarshall(UnmarshallerContext context)
+        public static GetSceneRuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetSceneRuleResponse getSceneRuleResponse = new GetSceneRuleResponse();
 
-			getSceneRuleResponse.HttpResponse = context.HttpResponse;
-			getSceneRuleResponse.RequestId = context.StringValue("GetSceneRule.RequestId");
-			getSceneRuleResponse.Success = context.BooleanValue("GetSceneRule.Success");
-			getSceneRuleResponse.ErrorMessage = context.StringValue("GetSceneRule.ErrorMessage");
-			getSceneRuleResponse.Code = context.StringValue("GetSceneRule.Code");
+			getSceneRuleResponse.HttpResponse = _ctx.HttpResponse;
+			getSceneRuleResponse.RequestId = _ctx.StringValue("GetSceneRule.RequestId");
+			getSceneRuleResponse.Success = _ctx.BooleanValue("GetSceneRule.Success");
+			getSceneRuleResponse.ErrorMessage = _ctx.StringValue("GetSceneRule.ErrorMessage");
+			getSceneRuleResponse.Code = _ctx.StringValue("GetSceneRule.Code");
 
 			GetSceneRuleResponse.GetSceneRule_Data data = new GetSceneRuleResponse.GetSceneRule_Data();
-			data.GmtCreate = context.LongValue("GetSceneRule.Data.GmtCreate");
-			data.GmtModified = context.LongValue("GetSceneRule.Data.GmtModified");
-			data.RuleName = context.StringValue("GetSceneRule.Data.RuleName");
-			data.RuleContent = context.StringValue("GetSceneRule.Data.RuleContent");
-			data.RuleDescription = context.StringValue("GetSceneRule.Data.RuleDescription");
-			data.RuleStatus = context.IntegerValue("GetSceneRule.Data.RuleStatus");
+			data.GmtCreate = _ctx.LongValue("GetSceneRule.Data.GmtCreate");
+			data.GmtModified = _ctx.LongValue("GetSceneRule.Data.GmtModified");
+			data.RuleName = _ctx.StringValue("GetSceneRule.Data.RuleName");
+			data.RuleContent = _ctx.StringValue("GetSceneRule.Data.RuleContent");
+			data.RuleDescription = _ctx.StringValue("GetSceneRule.Data.RuleDescription");
+			data.RuleStatus = _ctx.IntegerValue("GetSceneRule.Data.RuleStatus");
 			getSceneRuleResponse.Data = data;
         
 			return getSceneRuleResponse;

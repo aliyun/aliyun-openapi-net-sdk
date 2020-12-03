@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BindRoleToEdgeInstanceResponseUnmarshaller
     {
-        public static BindRoleToEdgeInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static BindRoleToEdgeInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BindRoleToEdgeInstanceResponse bindRoleToEdgeInstanceResponse = new BindRoleToEdgeInstanceResponse();
 
-			bindRoleToEdgeInstanceResponse.HttpResponse = context.HttpResponse;
-			bindRoleToEdgeInstanceResponse.RequestId = context.StringValue("BindRoleToEdgeInstance.RequestId");
-			bindRoleToEdgeInstanceResponse.Success = context.BooleanValue("BindRoleToEdgeInstance.Success");
-			bindRoleToEdgeInstanceResponse.Code = context.StringValue("BindRoleToEdgeInstance.Code");
-			bindRoleToEdgeInstanceResponse.ErrorMessage = context.StringValue("BindRoleToEdgeInstance.ErrorMessage");
+			bindRoleToEdgeInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			bindRoleToEdgeInstanceResponse.RequestId = _ctx.StringValue("BindRoleToEdgeInstance.RequestId");
+			bindRoleToEdgeInstanceResponse.Success = _ctx.BooleanValue("BindRoleToEdgeInstance.Success");
+			bindRoleToEdgeInstanceResponse.Code = _ctx.StringValue("BindRoleToEdgeInstance.Code");
+			bindRoleToEdgeInstanceResponse.ErrorMessage = _ctx.StringValue("BindRoleToEdgeInstance.ErrorMessage");
         
 			return bindRoleToEdgeInstanceResponse;
         }

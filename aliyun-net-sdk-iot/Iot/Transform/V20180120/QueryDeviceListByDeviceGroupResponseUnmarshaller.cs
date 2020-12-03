@@ -26,27 +26,27 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryDeviceListByDeviceGroupResponseUnmarshaller
     {
-        public static QueryDeviceListByDeviceGroupResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDeviceListByDeviceGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDeviceListByDeviceGroupResponse queryDeviceListByDeviceGroupResponse = new QueryDeviceListByDeviceGroupResponse();
 
-			queryDeviceListByDeviceGroupResponse.HttpResponse = context.HttpResponse;
-			queryDeviceListByDeviceGroupResponse.RequestId = context.StringValue("QueryDeviceListByDeviceGroup.RequestId");
-			queryDeviceListByDeviceGroupResponse.Success = context.BooleanValue("QueryDeviceListByDeviceGroup.Success");
-			queryDeviceListByDeviceGroupResponse.Code = context.StringValue("QueryDeviceListByDeviceGroup.Code");
-			queryDeviceListByDeviceGroupResponse.ErrorMessage = context.StringValue("QueryDeviceListByDeviceGroup.ErrorMessage");
-			queryDeviceListByDeviceGroupResponse.Page = context.IntegerValue("QueryDeviceListByDeviceGroup.Page");
-			queryDeviceListByDeviceGroupResponse.PageSize = context.IntegerValue("QueryDeviceListByDeviceGroup.PageSize");
-			queryDeviceListByDeviceGroupResponse.PageCount = context.IntegerValue("QueryDeviceListByDeviceGroup.PageCount");
-			queryDeviceListByDeviceGroupResponse.Total = context.IntegerValue("QueryDeviceListByDeviceGroup.Total");
+			queryDeviceListByDeviceGroupResponse.HttpResponse = _ctx.HttpResponse;
+			queryDeviceListByDeviceGroupResponse.RequestId = _ctx.StringValue("QueryDeviceListByDeviceGroup.RequestId");
+			queryDeviceListByDeviceGroupResponse.Success = _ctx.BooleanValue("QueryDeviceListByDeviceGroup.Success");
+			queryDeviceListByDeviceGroupResponse.Code = _ctx.StringValue("QueryDeviceListByDeviceGroup.Code");
+			queryDeviceListByDeviceGroupResponse.ErrorMessage = _ctx.StringValue("QueryDeviceListByDeviceGroup.ErrorMessage");
+			queryDeviceListByDeviceGroupResponse.Page = _ctx.IntegerValue("QueryDeviceListByDeviceGroup.Page");
+			queryDeviceListByDeviceGroupResponse.PageSize = _ctx.IntegerValue("QueryDeviceListByDeviceGroup.PageSize");
+			queryDeviceListByDeviceGroupResponse.PageCount = _ctx.IntegerValue("QueryDeviceListByDeviceGroup.PageCount");
+			queryDeviceListByDeviceGroupResponse.Total = _ctx.IntegerValue("QueryDeviceListByDeviceGroup.Total");
 
 			List<QueryDeviceListByDeviceGroupResponse.QueryDeviceListByDeviceGroup_SimpleDeviceInfo> queryDeviceListByDeviceGroupResponse_data = new List<QueryDeviceListByDeviceGroupResponse.QueryDeviceListByDeviceGroup_SimpleDeviceInfo>();
-			for (int i = 0; i < context.Length("QueryDeviceListByDeviceGroup.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryDeviceListByDeviceGroup.Data.Length"); i++) {
 				QueryDeviceListByDeviceGroupResponse.QueryDeviceListByDeviceGroup_SimpleDeviceInfo simpleDeviceInfo = new QueryDeviceListByDeviceGroupResponse.QueryDeviceListByDeviceGroup_SimpleDeviceInfo();
-				simpleDeviceInfo.ProductName = context.StringValue("QueryDeviceListByDeviceGroup.Data["+ i +"].ProductName");
-				simpleDeviceInfo.ProductKey = context.StringValue("QueryDeviceListByDeviceGroup.Data["+ i +"].ProductKey");
-				simpleDeviceInfo.DeviceName = context.StringValue("QueryDeviceListByDeviceGroup.Data["+ i +"].DeviceName");
-				simpleDeviceInfo.IotId = context.StringValue("QueryDeviceListByDeviceGroup.Data["+ i +"].IotId");
+				simpleDeviceInfo.ProductName = _ctx.StringValue("QueryDeviceListByDeviceGroup.Data["+ i +"].ProductName");
+				simpleDeviceInfo.ProductKey = _ctx.StringValue("QueryDeviceListByDeviceGroup.Data["+ i +"].ProductKey");
+				simpleDeviceInfo.DeviceName = _ctx.StringValue("QueryDeviceListByDeviceGroup.Data["+ i +"].DeviceName");
+				simpleDeviceInfo.IotId = _ctx.StringValue("QueryDeviceListByDeviceGroup.Data["+ i +"].IotId");
 
 				queryDeviceListByDeviceGroupResponse_data.Add(simpleDeviceInfo);
 			}

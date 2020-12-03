@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class UpdateDeviceGroupResponseUnmarshaller
     {
-        public static UpdateDeviceGroupResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateDeviceGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateDeviceGroupResponse updateDeviceGroupResponse = new UpdateDeviceGroupResponse();
 
-			updateDeviceGroupResponse.HttpResponse = context.HttpResponse;
-			updateDeviceGroupResponse.RequestId = context.StringValue("UpdateDeviceGroup.RequestId");
-			updateDeviceGroupResponse.Success = context.BooleanValue("UpdateDeviceGroup.Success");
-			updateDeviceGroupResponse.Code = context.StringValue("UpdateDeviceGroup.Code");
-			updateDeviceGroupResponse.ErrorMessage = context.StringValue("UpdateDeviceGroup.ErrorMessage");
+			updateDeviceGroupResponse.HttpResponse = _ctx.HttpResponse;
+			updateDeviceGroupResponse.RequestId = _ctx.StringValue("UpdateDeviceGroup.RequestId");
+			updateDeviceGroupResponse.Success = _ctx.BooleanValue("UpdateDeviceGroup.Success");
+			updateDeviceGroupResponse.Code = _ctx.StringValue("UpdateDeviceGroup.Code");
+			updateDeviceGroupResponse.ErrorMessage = _ctx.StringValue("UpdateDeviceGroup.ErrorMessage");
         
 			return updateDeviceGroupResponse;
         }

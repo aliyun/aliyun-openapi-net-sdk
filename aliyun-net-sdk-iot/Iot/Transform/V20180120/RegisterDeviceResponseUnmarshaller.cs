@@ -26,24 +26,24 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class RegisterDeviceResponseUnmarshaller
     {
-        public static RegisterDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static RegisterDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RegisterDeviceResponse registerDeviceResponse = new RegisterDeviceResponse();
 
-			registerDeviceResponse.HttpResponse = context.HttpResponse;
-			registerDeviceResponse.RequestId = context.StringValue("RegisterDevice.RequestId");
-			registerDeviceResponse.Success = context.BooleanValue("RegisterDevice.Success");
-			registerDeviceResponse.Code = context.StringValue("RegisterDevice.Code");
-			registerDeviceResponse.ErrorMessage = context.StringValue("RegisterDevice.ErrorMessage");
+			registerDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			registerDeviceResponse.RequestId = _ctx.StringValue("RegisterDevice.RequestId");
+			registerDeviceResponse.Success = _ctx.BooleanValue("RegisterDevice.Success");
+			registerDeviceResponse.Code = _ctx.StringValue("RegisterDevice.Code");
+			registerDeviceResponse.ErrorMessage = _ctx.StringValue("RegisterDevice.ErrorMessage");
 
 			RegisterDeviceResponse.RegisterDevice_Data data = new RegisterDeviceResponse.RegisterDevice_Data();
-			data.IotId = context.StringValue("RegisterDevice.Data.IotId");
-			data.ProductKey = context.StringValue("RegisterDevice.Data.ProductKey");
-			data.DeviceName = context.StringValue("RegisterDevice.Data.DeviceName");
-			data.DeviceSecret = context.StringValue("RegisterDevice.Data.DeviceSecret");
-			data.DevEui = context.StringValue("RegisterDevice.Data.DevEui");
-			data.JoinEui = context.StringValue("RegisterDevice.Data.JoinEui");
-			data.Nickname = context.StringValue("RegisterDevice.Data.Nickname");
+			data.IotId = _ctx.StringValue("RegisterDevice.Data.IotId");
+			data.ProductKey = _ctx.StringValue("RegisterDevice.Data.ProductKey");
+			data.DeviceName = _ctx.StringValue("RegisterDevice.Data.DeviceName");
+			data.DeviceSecret = _ctx.StringValue("RegisterDevice.Data.DeviceSecret");
+			data.DevEui = _ctx.StringValue("RegisterDevice.Data.DevEui");
+			data.JoinEui = _ctx.StringValue("RegisterDevice.Data.JoinEui");
+			data.Nickname = _ctx.StringValue("RegisterDevice.Data.Nickname");
 			registerDeviceResponse.Data = data;
         
 			return registerDeviceResponse;

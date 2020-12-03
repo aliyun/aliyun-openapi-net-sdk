@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class GetDeviceShadowResponseUnmarshaller
     {
-        public static GetDeviceShadowResponse Unmarshall(UnmarshallerContext context)
+        public static GetDeviceShadowResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetDeviceShadowResponse getDeviceShadowResponse = new GetDeviceShadowResponse();
 
-			getDeviceShadowResponse.HttpResponse = context.HttpResponse;
-			getDeviceShadowResponse.RequestId = context.StringValue("GetDeviceShadow.RequestId");
-			getDeviceShadowResponse.Success = context.BooleanValue("GetDeviceShadow.Success");
-			getDeviceShadowResponse.Code = context.StringValue("GetDeviceShadow.Code");
-			getDeviceShadowResponse.ErrorMessage = context.StringValue("GetDeviceShadow.ErrorMessage");
-			getDeviceShadowResponse.ShadowMessage = context.StringValue("GetDeviceShadow.ShadowMessage");
+			getDeviceShadowResponse.HttpResponse = _ctx.HttpResponse;
+			getDeviceShadowResponse.RequestId = _ctx.StringValue("GetDeviceShadow.RequestId");
+			getDeviceShadowResponse.Success = _ctx.BooleanValue("GetDeviceShadow.Success");
+			getDeviceShadowResponse.Code = _ctx.StringValue("GetDeviceShadow.Code");
+			getDeviceShadowResponse.ErrorMessage = _ctx.StringValue("GetDeviceShadow.ErrorMessage");
+			getDeviceShadowResponse.ShadowMessage = _ctx.StringValue("GetDeviceShadow.ShadowMessage");
         
 			return getDeviceShadowResponse;
         }

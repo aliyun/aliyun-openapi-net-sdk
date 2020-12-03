@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class CreateEdgeInstanceChannelResponseUnmarshaller
     {
-        public static CreateEdgeInstanceChannelResponse Unmarshall(UnmarshallerContext context)
+        public static CreateEdgeInstanceChannelResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateEdgeInstanceChannelResponse createEdgeInstanceChannelResponse = new CreateEdgeInstanceChannelResponse();
 
-			createEdgeInstanceChannelResponse.HttpResponse = context.HttpResponse;
-			createEdgeInstanceChannelResponse.RequestId = context.StringValue("CreateEdgeInstanceChannel.RequestId");
-			createEdgeInstanceChannelResponse.Success = context.BooleanValue("CreateEdgeInstanceChannel.Success");
-			createEdgeInstanceChannelResponse.Code = context.StringValue("CreateEdgeInstanceChannel.Code");
-			createEdgeInstanceChannelResponse.ErrorMessage = context.StringValue("CreateEdgeInstanceChannel.ErrorMessage");
-			createEdgeInstanceChannelResponse.Data = context.StringValue("CreateEdgeInstanceChannel.Data");
+			createEdgeInstanceChannelResponse.HttpResponse = _ctx.HttpResponse;
+			createEdgeInstanceChannelResponse.RequestId = _ctx.StringValue("CreateEdgeInstanceChannel.RequestId");
+			createEdgeInstanceChannelResponse.Success = _ctx.BooleanValue("CreateEdgeInstanceChannel.Success");
+			createEdgeInstanceChannelResponse.Code = _ctx.StringValue("CreateEdgeInstanceChannel.Code");
+			createEdgeInstanceChannelResponse.ErrorMessage = _ctx.StringValue("CreateEdgeInstanceChannel.ErrorMessage");
+			createEdgeInstanceChannelResponse.Data = _ctx.StringValue("CreateEdgeInstanceChannel.Data");
         
 			return createEdgeInstanceChannelResponse;
         }

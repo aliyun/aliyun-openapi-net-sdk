@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QuerySuperDeviceGroupResponseUnmarshaller
     {
-        public static QuerySuperDeviceGroupResponse Unmarshall(UnmarshallerContext context)
+        public static QuerySuperDeviceGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QuerySuperDeviceGroupResponse querySuperDeviceGroupResponse = new QuerySuperDeviceGroupResponse();
 
-			querySuperDeviceGroupResponse.HttpResponse = context.HttpResponse;
-			querySuperDeviceGroupResponse.RequestId = context.StringValue("QuerySuperDeviceGroup.RequestId");
-			querySuperDeviceGroupResponse.Success = context.BooleanValue("QuerySuperDeviceGroup.Success");
-			querySuperDeviceGroupResponse.Code = context.StringValue("QuerySuperDeviceGroup.Code");
-			querySuperDeviceGroupResponse.ErrorMessage = context.StringValue("QuerySuperDeviceGroup.ErrorMessage");
+			querySuperDeviceGroupResponse.HttpResponse = _ctx.HttpResponse;
+			querySuperDeviceGroupResponse.RequestId = _ctx.StringValue("QuerySuperDeviceGroup.RequestId");
+			querySuperDeviceGroupResponse.Success = _ctx.BooleanValue("QuerySuperDeviceGroup.Success");
+			querySuperDeviceGroupResponse.Code = _ctx.StringValue("QuerySuperDeviceGroup.Code");
+			querySuperDeviceGroupResponse.ErrorMessage = _ctx.StringValue("QuerySuperDeviceGroup.ErrorMessage");
 
 			List<QuerySuperDeviceGroupResponse.QuerySuperDeviceGroup_GroupInfo> querySuperDeviceGroupResponse_data = new List<QuerySuperDeviceGroupResponse.QuerySuperDeviceGroup_GroupInfo>();
-			for (int i = 0; i < context.Length("QuerySuperDeviceGroup.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QuerySuperDeviceGroup.Data.Length"); i++) {
 				QuerySuperDeviceGroupResponse.QuerySuperDeviceGroup_GroupInfo groupInfo = new QuerySuperDeviceGroupResponse.QuerySuperDeviceGroup_GroupInfo();
-				groupInfo.GroupId = context.StringValue("QuerySuperDeviceGroup.Data["+ i +"].GroupId");
-				groupInfo.GroupName = context.StringValue("QuerySuperDeviceGroup.Data["+ i +"].GroupName");
-				groupInfo.GroupDesc = context.StringValue("QuerySuperDeviceGroup.Data["+ i +"].GroupDesc");
+				groupInfo.GroupId = _ctx.StringValue("QuerySuperDeviceGroup.Data["+ i +"].GroupId");
+				groupInfo.GroupName = _ctx.StringValue("QuerySuperDeviceGroup.Data["+ i +"].GroupName");
+				groupInfo.GroupDesc = _ctx.StringValue("QuerySuperDeviceGroup.Data["+ i +"].GroupDesc");
 
 				querySuperDeviceGroupResponse_data.Add(groupInfo);
 			}

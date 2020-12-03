@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class DeleteProductTopicResponseUnmarshaller
     {
-        public static DeleteProductTopicResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteProductTopicResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteProductTopicResponse deleteProductTopicResponse = new DeleteProductTopicResponse();
 
-			deleteProductTopicResponse.HttpResponse = context.HttpResponse;
-			deleteProductTopicResponse.RequestId = context.StringValue("DeleteProductTopic.RequestId");
-			deleteProductTopicResponse.Success = context.BooleanValue("DeleteProductTopic.Success");
-			deleteProductTopicResponse.Code = context.StringValue("DeleteProductTopic.Code");
-			deleteProductTopicResponse.ErrorMessage = context.StringValue("DeleteProductTopic.ErrorMessage");
+			deleteProductTopicResponse.HttpResponse = _ctx.HttpResponse;
+			deleteProductTopicResponse.RequestId = _ctx.StringValue("DeleteProductTopic.RequestId");
+			deleteProductTopicResponse.Success = _ctx.BooleanValue("DeleteProductTopic.Success");
+			deleteProductTopicResponse.Code = _ctx.StringValue("DeleteProductTopic.Code");
+			deleteProductTopicResponse.ErrorMessage = _ctx.StringValue("DeleteProductTopic.ErrorMessage");
         
 			return deleteProductTopicResponse;
         }

@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryBatchRegisterDeviceStatusResponseUnmarshaller
     {
-        public static QueryBatchRegisterDeviceStatusResponse Unmarshall(UnmarshallerContext context)
+        public static QueryBatchRegisterDeviceStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryBatchRegisterDeviceStatusResponse queryBatchRegisterDeviceStatusResponse = new QueryBatchRegisterDeviceStatusResponse();
 
-			queryBatchRegisterDeviceStatusResponse.HttpResponse = context.HttpResponse;
-			queryBatchRegisterDeviceStatusResponse.RequestId = context.StringValue("QueryBatchRegisterDeviceStatus.RequestId");
-			queryBatchRegisterDeviceStatusResponse.Success = context.BooleanValue("QueryBatchRegisterDeviceStatus.Success");
-			queryBatchRegisterDeviceStatusResponse.Code = context.StringValue("QueryBatchRegisterDeviceStatus.Code");
-			queryBatchRegisterDeviceStatusResponse.ErrorMessage = context.StringValue("QueryBatchRegisterDeviceStatus.ErrorMessage");
+			queryBatchRegisterDeviceStatusResponse.HttpResponse = _ctx.HttpResponse;
+			queryBatchRegisterDeviceStatusResponse.RequestId = _ctx.StringValue("QueryBatchRegisterDeviceStatus.RequestId");
+			queryBatchRegisterDeviceStatusResponse.Success = _ctx.BooleanValue("QueryBatchRegisterDeviceStatus.Success");
+			queryBatchRegisterDeviceStatusResponse.Code = _ctx.StringValue("QueryBatchRegisterDeviceStatus.Code");
+			queryBatchRegisterDeviceStatusResponse.ErrorMessage = _ctx.StringValue("QueryBatchRegisterDeviceStatus.ErrorMessage");
 
 			QueryBatchRegisterDeviceStatusResponse.QueryBatchRegisterDeviceStatus_Data data = new QueryBatchRegisterDeviceStatusResponse.QueryBatchRegisterDeviceStatus_Data();
-			data.Status = context.StringValue("QueryBatchRegisterDeviceStatus.Data.Status");
+			data.Status = _ctx.StringValue("QueryBatchRegisterDeviceStatus.Data.Status");
 
 			List<string> data_validList = new List<string>();
-			for (int i = 0; i < context.Length("QueryBatchRegisterDeviceStatus.Data.ValidList.Length"); i++) {
-				data_validList.Add(context.StringValue("QueryBatchRegisterDeviceStatus.Data.ValidList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("QueryBatchRegisterDeviceStatus.Data.ValidList.Length"); i++) {
+				data_validList.Add(_ctx.StringValue("QueryBatchRegisterDeviceStatus.Data.ValidList["+ i +"]"));
 			}
 			data.ValidList = data_validList;
 
 			List<string> data_invalidList = new List<string>();
-			for (int i = 0; i < context.Length("QueryBatchRegisterDeviceStatus.Data.InvalidList.Length"); i++) {
-				data_invalidList.Add(context.StringValue("QueryBatchRegisterDeviceStatus.Data.InvalidList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("QueryBatchRegisterDeviceStatus.Data.InvalidList.Length"); i++) {
+				data_invalidList.Add(_ctx.StringValue("QueryBatchRegisterDeviceStatus.Data.InvalidList["+ i +"]"));
 			}
 			data.InvalidList = data_invalidList;
 			queryBatchRegisterDeviceStatusResponse.Data = data;

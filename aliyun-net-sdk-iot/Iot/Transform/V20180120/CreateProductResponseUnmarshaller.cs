@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class CreateProductResponseUnmarshaller
     {
-        public static CreateProductResponse Unmarshall(UnmarshallerContext context)
+        public static CreateProductResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateProductResponse createProductResponse = new CreateProductResponse();
 
-			createProductResponse.HttpResponse = context.HttpResponse;
-			createProductResponse.RequestId = context.StringValue("CreateProduct.RequestId");
-			createProductResponse.Success = context.BooleanValue("CreateProduct.Success");
-			createProductResponse.Code = context.StringValue("CreateProduct.Code");
-			createProductResponse.ErrorMessage = context.StringValue("CreateProduct.ErrorMessage");
-			createProductResponse.ProductKey = context.StringValue("CreateProduct.ProductKey");
+			createProductResponse.HttpResponse = _ctx.HttpResponse;
+			createProductResponse.RequestId = _ctx.StringValue("CreateProduct.RequestId");
+			createProductResponse.Success = _ctx.BooleanValue("CreateProduct.Success");
+			createProductResponse.Code = _ctx.StringValue("CreateProduct.Code");
+			createProductResponse.ErrorMessage = _ctx.StringValue("CreateProduct.ErrorMessage");
+			createProductResponse.ProductKey = _ctx.StringValue("CreateProduct.ProductKey");
 
 			CreateProductResponse.CreateProduct_Data data = new CreateProductResponse.CreateProduct_Data();
-			data.DataFormat = context.IntegerValue("CreateProduct.Data.DataFormat");
-			data.Description = context.StringValue("CreateProduct.Data.Description");
-			data.NodeType = context.IntegerValue("CreateProduct.Data.NodeType");
-			data.ProductKey = context.StringValue("CreateProduct.Data.ProductKey");
-			data.ProductName = context.StringValue("CreateProduct.Data.ProductName");
-			data.AliyunCommodityCode = context.StringValue("CreateProduct.Data.AliyunCommodityCode");
-			data.Id2 = context.BooleanValue("CreateProduct.Data.Id2");
-			data.ProtocolType = context.StringValue("CreateProduct.Data.ProtocolType");
-			data.AuthType = context.StringValue("CreateProduct.Data.AuthType");
-			data.ProductSecret = context.StringValue("CreateProduct.Data.ProductSecret");
+			data.DataFormat = _ctx.IntegerValue("CreateProduct.Data.DataFormat");
+			data.Description = _ctx.StringValue("CreateProduct.Data.Description");
+			data.NodeType = _ctx.IntegerValue("CreateProduct.Data.NodeType");
+			data.ProductKey = _ctx.StringValue("CreateProduct.Data.ProductKey");
+			data.ProductName = _ctx.StringValue("CreateProduct.Data.ProductName");
+			data.AliyunCommodityCode = _ctx.StringValue("CreateProduct.Data.AliyunCommodityCode");
+			data.Id2 = _ctx.BooleanValue("CreateProduct.Data.Id2");
+			data.ProtocolType = _ctx.StringValue("CreateProduct.Data.ProtocolType");
+			data.AuthType = _ctx.StringValue("CreateProduct.Data.AuthType");
+			data.ProductSecret = _ctx.StringValue("CreateProduct.Data.ProductSecret");
 			createProductResponse.Data = data;
         
 			return createProductResponse;

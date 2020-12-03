@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class SetEdgeInstanceDriverConfigsResponseUnmarshaller
     {
-        public static SetEdgeInstanceDriverConfigsResponse Unmarshall(UnmarshallerContext context)
+        public static SetEdgeInstanceDriverConfigsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetEdgeInstanceDriverConfigsResponse setEdgeInstanceDriverConfigsResponse = new SetEdgeInstanceDriverConfigsResponse();
 
-			setEdgeInstanceDriverConfigsResponse.HttpResponse = context.HttpResponse;
-			setEdgeInstanceDriverConfigsResponse.RequestId = context.StringValue("SetEdgeInstanceDriverConfigs.RequestId");
-			setEdgeInstanceDriverConfigsResponse.Success = context.BooleanValue("SetEdgeInstanceDriverConfigs.Success");
-			setEdgeInstanceDriverConfigsResponse.Code = context.StringValue("SetEdgeInstanceDriverConfigs.Code");
-			setEdgeInstanceDriverConfigsResponse.ErrorMessage = context.StringValue("SetEdgeInstanceDriverConfigs.ErrorMessage");
+			setEdgeInstanceDriverConfigsResponse.HttpResponse = _ctx.HttpResponse;
+			setEdgeInstanceDriverConfigsResponse.RequestId = _ctx.StringValue("SetEdgeInstanceDriverConfigs.RequestId");
+			setEdgeInstanceDriverConfigsResponse.Success = _ctx.BooleanValue("SetEdgeInstanceDriverConfigs.Success");
+			setEdgeInstanceDriverConfigsResponse.Code = _ctx.StringValue("SetEdgeInstanceDriverConfigs.Code");
+			setEdgeInstanceDriverConfigsResponse.ErrorMessage = _ctx.StringValue("SetEdgeInstanceDriverConfigs.ErrorMessage");
         
 			return setEdgeInstanceDriverConfigsResponse;
         }

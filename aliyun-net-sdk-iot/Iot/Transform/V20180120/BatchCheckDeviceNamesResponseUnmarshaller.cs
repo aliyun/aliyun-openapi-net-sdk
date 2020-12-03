@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BatchCheckDeviceNamesResponseUnmarshaller
     {
-        public static BatchCheckDeviceNamesResponse Unmarshall(UnmarshallerContext context)
+        public static BatchCheckDeviceNamesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchCheckDeviceNamesResponse batchCheckDeviceNamesResponse = new BatchCheckDeviceNamesResponse();
 
-			batchCheckDeviceNamesResponse.HttpResponse = context.HttpResponse;
-			batchCheckDeviceNamesResponse.RequestId = context.StringValue("BatchCheckDeviceNames.RequestId");
-			batchCheckDeviceNamesResponse.Success = context.BooleanValue("BatchCheckDeviceNames.Success");
-			batchCheckDeviceNamesResponse.Code = context.StringValue("BatchCheckDeviceNames.Code");
-			batchCheckDeviceNamesResponse.ErrorMessage = context.StringValue("BatchCheckDeviceNames.ErrorMessage");
+			batchCheckDeviceNamesResponse.HttpResponse = _ctx.HttpResponse;
+			batchCheckDeviceNamesResponse.RequestId = _ctx.StringValue("BatchCheckDeviceNames.RequestId");
+			batchCheckDeviceNamesResponse.Success = _ctx.BooleanValue("BatchCheckDeviceNames.Success");
+			batchCheckDeviceNamesResponse.Code = _ctx.StringValue("BatchCheckDeviceNames.Code");
+			batchCheckDeviceNamesResponse.ErrorMessage = _ctx.StringValue("BatchCheckDeviceNames.ErrorMessage");
 
 			BatchCheckDeviceNamesResponse.BatchCheckDeviceNames_Data data = new BatchCheckDeviceNamesResponse.BatchCheckDeviceNames_Data();
-			data.ApplyId = context.LongValue("BatchCheckDeviceNames.Data.ApplyId");
+			data.ApplyId = _ctx.LongValue("BatchCheckDeviceNames.Data.ApplyId");
 
 			List<string> data_invalidDeviceNameList = new List<string>();
-			for (int i = 0; i < context.Length("BatchCheckDeviceNames.Data.InvalidDeviceNameList.Length"); i++) {
-				data_invalidDeviceNameList.Add(context.StringValue("BatchCheckDeviceNames.Data.InvalidDeviceNameList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("BatchCheckDeviceNames.Data.InvalidDeviceNameList.Length"); i++) {
+				data_invalidDeviceNameList.Add(_ctx.StringValue("BatchCheckDeviceNames.Data.InvalidDeviceNameList["+ i +"]"));
 			}
 			data.InvalidDeviceNameList = data_invalidDeviceNameList;
 
 			List<string> data_invalidDeviceNicknameList = new List<string>();
-			for (int i = 0; i < context.Length("BatchCheckDeviceNames.Data.InvalidDeviceNicknameList.Length"); i++) {
-				data_invalidDeviceNicknameList.Add(context.StringValue("BatchCheckDeviceNames.Data.InvalidDeviceNicknameList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("BatchCheckDeviceNames.Data.InvalidDeviceNicknameList.Length"); i++) {
+				data_invalidDeviceNicknameList.Add(_ctx.StringValue("BatchCheckDeviceNames.Data.InvalidDeviceNicknameList["+ i +"]"));
 			}
 			data.InvalidDeviceNicknameList = data_invalidDeviceNicknameList;
 			batchCheckDeviceNamesResponse.Data = data;

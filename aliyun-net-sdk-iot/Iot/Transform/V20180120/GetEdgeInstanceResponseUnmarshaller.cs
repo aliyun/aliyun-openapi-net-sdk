@@ -26,33 +26,33 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class GetEdgeInstanceResponseUnmarshaller
     {
-        public static GetEdgeInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static GetEdgeInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetEdgeInstanceResponse getEdgeInstanceResponse = new GetEdgeInstanceResponse();
 
-			getEdgeInstanceResponse.HttpResponse = context.HttpResponse;
-			getEdgeInstanceResponse.RequestId = context.StringValue("GetEdgeInstance.RequestId");
-			getEdgeInstanceResponse.Success = context.BooleanValue("GetEdgeInstance.Success");
-			getEdgeInstanceResponse.Code = context.StringValue("GetEdgeInstance.Code");
-			getEdgeInstanceResponse.ErrorMessage = context.StringValue("GetEdgeInstance.ErrorMessage");
+			getEdgeInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			getEdgeInstanceResponse.RequestId = _ctx.StringValue("GetEdgeInstance.RequestId");
+			getEdgeInstanceResponse.Success = _ctx.BooleanValue("GetEdgeInstance.Success");
+			getEdgeInstanceResponse.Code = _ctx.StringValue("GetEdgeInstance.Code");
+			getEdgeInstanceResponse.ErrorMessage = _ctx.StringValue("GetEdgeInstance.ErrorMessage");
 
 			GetEdgeInstanceResponse.GetEdgeInstance_Data data = new GetEdgeInstanceResponse.GetEdgeInstance_Data();
-			data.InstanceId = context.StringValue("GetEdgeInstance.Data.InstanceId");
-			data.Name = context.StringValue("GetEdgeInstance.Data.Name");
-			data.Tags = context.StringValue("GetEdgeInstance.Data.Tags");
-			data.Type = context.StringValue("GetEdgeInstance.Data.Type");
-			data.Spec = context.IntegerValue("GetEdgeInstance.Data.Spec");
-			data.BizEnable = context.BooleanValue("GetEdgeInstance.Data.BizEnable");
-			data.GmtCreate = context.StringValue("GetEdgeInstance.Data.GmtCreate");
-			data.GmtModified = context.StringValue("GetEdgeInstance.Data.GmtModified");
-			data.RoleArn = context.StringValue("GetEdgeInstance.Data.RoleArn");
-			data.RoleName = context.StringValue("GetEdgeInstance.Data.RoleName");
-			data.RoleAttachTime = context.StringValue("GetEdgeInstance.Data.RoleAttachTime");
-			data.LatestDeploymentStatus = context.IntegerValue("GetEdgeInstance.Data.LatestDeploymentStatus");
-			data.LatestDeploymentType = context.StringValue("GetEdgeInstance.Data.LatestDeploymentType");
-			data.GmtCreateTimestamp = context.LongValue("GetEdgeInstance.Data.GmtCreateTimestamp");
-			data.GmtModifiedTimestamp = context.LongValue("GetEdgeInstance.Data.GmtModifiedTimestamp");
-			data.RoleAttachTimestamp = context.LongValue("GetEdgeInstance.Data.RoleAttachTimestamp");
+			data.InstanceId = _ctx.StringValue("GetEdgeInstance.Data.InstanceId");
+			data.Name = _ctx.StringValue("GetEdgeInstance.Data.Name");
+			data.Tags = _ctx.StringValue("GetEdgeInstance.Data.Tags");
+			data.Type = _ctx.StringValue("GetEdgeInstance.Data.Type");
+			data.Spec = _ctx.IntegerValue("GetEdgeInstance.Data.Spec");
+			data.BizEnable = _ctx.BooleanValue("GetEdgeInstance.Data.BizEnable");
+			data.GmtCreate = _ctx.StringValue("GetEdgeInstance.Data.GmtCreate");
+			data.GmtModified = _ctx.StringValue("GetEdgeInstance.Data.GmtModified");
+			data.RoleArn = _ctx.StringValue("GetEdgeInstance.Data.RoleArn");
+			data.RoleName = _ctx.StringValue("GetEdgeInstance.Data.RoleName");
+			data.RoleAttachTime = _ctx.StringValue("GetEdgeInstance.Data.RoleAttachTime");
+			data.LatestDeploymentStatus = _ctx.IntegerValue("GetEdgeInstance.Data.LatestDeploymentStatus");
+			data.LatestDeploymentType = _ctx.StringValue("GetEdgeInstance.Data.LatestDeploymentType");
+			data.GmtCreateTimestamp = _ctx.LongValue("GetEdgeInstance.Data.GmtCreateTimestamp");
+			data.GmtModifiedTimestamp = _ctx.LongValue("GetEdgeInstance.Data.GmtModifiedTimestamp");
+			data.RoleAttachTimestamp = _ctx.LongValue("GetEdgeInstance.Data.RoleAttachTimestamp");
 			getEdgeInstanceResponse.Data = data;
         
 			return getEdgeInstanceResponse;

@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryDeviceCertResponseUnmarshaller
     {
-        public static QueryDeviceCertResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDeviceCertResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDeviceCertResponse queryDeviceCertResponse = new QueryDeviceCertResponse();
 
-			queryDeviceCertResponse.HttpResponse = context.HttpResponse;
-			queryDeviceCertResponse.RequestId = context.StringValue("QueryDeviceCert.RequestId");
-			queryDeviceCertResponse.Success = context.BooleanValue("QueryDeviceCert.Success");
-			queryDeviceCertResponse.Code = context.StringValue("QueryDeviceCert.Code");
-			queryDeviceCertResponse.ErrorMessage = context.StringValue("QueryDeviceCert.ErrorMessage");
+			queryDeviceCertResponse.HttpResponse = _ctx.HttpResponse;
+			queryDeviceCertResponse.RequestId = _ctx.StringValue("QueryDeviceCert.RequestId");
+			queryDeviceCertResponse.Success = _ctx.BooleanValue("QueryDeviceCert.Success");
+			queryDeviceCertResponse.Code = _ctx.StringValue("QueryDeviceCert.Code");
+			queryDeviceCertResponse.ErrorMessage = _ctx.StringValue("QueryDeviceCert.ErrorMessage");
 
 			QueryDeviceCertResponse.QueryDeviceCert_DeviceCertInfo deviceCertInfo = new QueryDeviceCertResponse.QueryDeviceCert_DeviceCertInfo();
-			deviceCertInfo.Status = context.IntegerValue("QueryDeviceCert.DeviceCertInfo.Status");
-			deviceCertInfo.Certificate = context.StringValue("QueryDeviceCert.DeviceCertInfo.Certificate");
-			deviceCertInfo.PrivateKey = context.StringValue("QueryDeviceCert.DeviceCertInfo.PrivateKey");
-			deviceCertInfo.CertSN = context.StringValue("QueryDeviceCert.DeviceCertInfo.CertSN");
+			deviceCertInfo.Status = _ctx.IntegerValue("QueryDeviceCert.DeviceCertInfo.Status");
+			deviceCertInfo.Certificate = _ctx.StringValue("QueryDeviceCert.DeviceCertInfo.Certificate");
+			deviceCertInfo.PrivateKey = _ctx.StringValue("QueryDeviceCert.DeviceCertInfo.PrivateKey");
+			deviceCertInfo.CertSN = _ctx.StringValue("QueryDeviceCert.DeviceCertInfo.CertSN");
 			queryDeviceCertResponse.DeviceCertInfo = deviceCertInfo;
         
 			return queryDeviceCertResponse;

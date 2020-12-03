@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class PubBroadcastResponseUnmarshaller
     {
-        public static PubBroadcastResponse Unmarshall(UnmarshallerContext context)
+        public static PubBroadcastResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PubBroadcastResponse pubBroadcastResponse = new PubBroadcastResponse();
 
-			pubBroadcastResponse.HttpResponse = context.HttpResponse;
-			pubBroadcastResponse.RequestId = context.StringValue("PubBroadcast.RequestId");
-			pubBroadcastResponse.Success = context.BooleanValue("PubBroadcast.Success");
-			pubBroadcastResponse.Code = context.StringValue("PubBroadcast.Code");
-			pubBroadcastResponse.ErrorMessage = context.StringValue("PubBroadcast.ErrorMessage");
-			pubBroadcastResponse.MessageId = context.LongValue("PubBroadcast.MessageId");
+			pubBroadcastResponse.HttpResponse = _ctx.HttpResponse;
+			pubBroadcastResponse.RequestId = _ctx.StringValue("PubBroadcast.RequestId");
+			pubBroadcastResponse.Success = _ctx.BooleanValue("PubBroadcast.Success");
+			pubBroadcastResponse.Code = _ctx.StringValue("PubBroadcast.Code");
+			pubBroadcastResponse.ErrorMessage = _ctx.StringValue("PubBroadcast.ErrorMessage");
+			pubBroadcastResponse.MessageId = _ctx.LongValue("PubBroadcast.MessageId");
         
 			return pubBroadcastResponse;
         }

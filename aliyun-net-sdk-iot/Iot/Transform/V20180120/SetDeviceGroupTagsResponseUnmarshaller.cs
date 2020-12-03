@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class SetDeviceGroupTagsResponseUnmarshaller
     {
-        public static SetDeviceGroupTagsResponse Unmarshall(UnmarshallerContext context)
+        public static SetDeviceGroupTagsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetDeviceGroupTagsResponse setDeviceGroupTagsResponse = new SetDeviceGroupTagsResponse();
 
-			setDeviceGroupTagsResponse.HttpResponse = context.HttpResponse;
-			setDeviceGroupTagsResponse.RequestId = context.StringValue("SetDeviceGroupTags.RequestId");
-			setDeviceGroupTagsResponse.Success = context.BooleanValue("SetDeviceGroupTags.Success");
-			setDeviceGroupTagsResponse.Code = context.StringValue("SetDeviceGroupTags.Code");
-			setDeviceGroupTagsResponse.ErrorMessage = context.StringValue("SetDeviceGroupTags.ErrorMessage");
+			setDeviceGroupTagsResponse.HttpResponse = _ctx.HttpResponse;
+			setDeviceGroupTagsResponse.RequestId = _ctx.StringValue("SetDeviceGroupTags.RequestId");
+			setDeviceGroupTagsResponse.Success = _ctx.BooleanValue("SetDeviceGroupTags.Success");
+			setDeviceGroupTagsResponse.Code = _ctx.StringValue("SetDeviceGroupTags.Code");
+			setDeviceGroupTagsResponse.ErrorMessage = _ctx.StringValue("SetDeviceGroupTags.ErrorMessage");
         
 			return setDeviceGroupTagsResponse;
         }

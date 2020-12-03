@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class DeleteEdgeInstanceResponseUnmarshaller
     {
-        public static DeleteEdgeInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteEdgeInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteEdgeInstanceResponse deleteEdgeInstanceResponse = new DeleteEdgeInstanceResponse();
 
-			deleteEdgeInstanceResponse.HttpResponse = context.HttpResponse;
-			deleteEdgeInstanceResponse.RequestId = context.StringValue("DeleteEdgeInstance.RequestId");
-			deleteEdgeInstanceResponse.Success = context.BooleanValue("DeleteEdgeInstance.Success");
-			deleteEdgeInstanceResponse.Code = context.StringValue("DeleteEdgeInstance.Code");
-			deleteEdgeInstanceResponse.ErrorMessage = context.StringValue("DeleteEdgeInstance.ErrorMessage");
+			deleteEdgeInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			deleteEdgeInstanceResponse.RequestId = _ctx.StringValue("DeleteEdgeInstance.RequestId");
+			deleteEdgeInstanceResponse.Success = _ctx.BooleanValue("DeleteEdgeInstance.Success");
+			deleteEdgeInstanceResponse.Code = _ctx.StringValue("DeleteEdgeInstance.Code");
+			deleteEdgeInstanceResponse.ErrorMessage = _ctx.StringValue("DeleteEdgeInstance.ErrorMessage");
         
 			return deleteEdgeInstanceResponse;
         }

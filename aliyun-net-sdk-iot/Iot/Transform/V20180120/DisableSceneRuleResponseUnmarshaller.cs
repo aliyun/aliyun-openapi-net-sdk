@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class DisableSceneRuleResponseUnmarshaller
     {
-        public static DisableSceneRuleResponse Unmarshall(UnmarshallerContext context)
+        public static DisableSceneRuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DisableSceneRuleResponse disableSceneRuleResponse = new DisableSceneRuleResponse();
 
-			disableSceneRuleResponse.HttpResponse = context.HttpResponse;
-			disableSceneRuleResponse.RequestId = context.StringValue("DisableSceneRule.RequestId");
-			disableSceneRuleResponse.Success = context.BooleanValue("DisableSceneRule.Success");
-			disableSceneRuleResponse.ErrorMessage = context.StringValue("DisableSceneRule.ErrorMessage");
-			disableSceneRuleResponse.Code = context.StringValue("DisableSceneRule.Code");
+			disableSceneRuleResponse.HttpResponse = _ctx.HttpResponse;
+			disableSceneRuleResponse.RequestId = _ctx.StringValue("DisableSceneRule.RequestId");
+			disableSceneRuleResponse.Success = _ctx.BooleanValue("DisableSceneRule.Success");
+			disableSceneRuleResponse.ErrorMessage = _ctx.StringValue("DisableSceneRule.ErrorMessage");
+			disableSceneRuleResponse.Code = _ctx.StringValue("DisableSceneRule.Code");
         
 			return disableSceneRuleResponse;
         }

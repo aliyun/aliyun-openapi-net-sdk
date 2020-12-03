@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class DeleteOTAFirmwareResponseUnmarshaller
     {
-        public static DeleteOTAFirmwareResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteOTAFirmwareResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteOTAFirmwareResponse deleteOTAFirmwareResponse = new DeleteOTAFirmwareResponse();
 
-			deleteOTAFirmwareResponse.HttpResponse = context.HttpResponse;
-			deleteOTAFirmwareResponse.RequestId = context.StringValue("DeleteOTAFirmware.RequestId");
-			deleteOTAFirmwareResponse.Success = context.BooleanValue("DeleteOTAFirmware.Success");
-			deleteOTAFirmwareResponse.Code = context.StringValue("DeleteOTAFirmware.Code");
-			deleteOTAFirmwareResponse.ErrorMessage = context.StringValue("DeleteOTAFirmware.ErrorMessage");
+			deleteOTAFirmwareResponse.HttpResponse = _ctx.HttpResponse;
+			deleteOTAFirmwareResponse.RequestId = _ctx.StringValue("DeleteOTAFirmware.RequestId");
+			deleteOTAFirmwareResponse.Success = _ctx.BooleanValue("DeleteOTAFirmware.Success");
+			deleteOTAFirmwareResponse.Code = _ctx.StringValue("DeleteOTAFirmware.Code");
+			deleteOTAFirmwareResponse.ErrorMessage = _ctx.StringValue("DeleteOTAFirmware.ErrorMessage");
         
 			return deleteOTAFirmwareResponse;
         }

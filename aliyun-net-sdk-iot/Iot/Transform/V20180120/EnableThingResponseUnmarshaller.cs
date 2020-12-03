@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class EnableThingResponseUnmarshaller
     {
-        public static EnableThingResponse Unmarshall(UnmarshallerContext context)
+        public static EnableThingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			EnableThingResponse enableThingResponse = new EnableThingResponse();
 
-			enableThingResponse.HttpResponse = context.HttpResponse;
-			enableThingResponse.RequestId = context.StringValue("EnableThing.RequestId");
-			enableThingResponse.Success = context.BooleanValue("EnableThing.Success");
-			enableThingResponse.Code = context.StringValue("EnableThing.Code");
-			enableThingResponse.ErrorMessage = context.StringValue("EnableThing.ErrorMessage");
+			enableThingResponse.HttpResponse = _ctx.HttpResponse;
+			enableThingResponse.RequestId = _ctx.StringValue("EnableThing.RequestId");
+			enableThingResponse.Success = _ctx.BooleanValue("EnableThing.Success");
+			enableThingResponse.Code = _ctx.StringValue("EnableThing.Code");
+			enableThingResponse.ErrorMessage = _ctx.StringValue("EnableThing.ErrorMessage");
         
 			return enableThingResponse;
         }

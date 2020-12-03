@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryDevicePropertiesDataResponseUnmarshaller
     {
-        public static QueryDevicePropertiesDataResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDevicePropertiesDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDevicePropertiesDataResponse queryDevicePropertiesDataResponse = new QueryDevicePropertiesDataResponse();
 
-			queryDevicePropertiesDataResponse.HttpResponse = context.HttpResponse;
-			queryDevicePropertiesDataResponse.RequestId = context.StringValue("QueryDevicePropertiesData.RequestId");
-			queryDevicePropertiesDataResponse.Success = context.BooleanValue("QueryDevicePropertiesData.Success");
-			queryDevicePropertiesDataResponse.Code = context.StringValue("QueryDevicePropertiesData.Code");
-			queryDevicePropertiesDataResponse.ErrorMessage = context.StringValue("QueryDevicePropertiesData.ErrorMessage");
-			queryDevicePropertiesDataResponse.NextValid = context.BooleanValue("QueryDevicePropertiesData.NextValid");
-			queryDevicePropertiesDataResponse.NextTime = context.LongValue("QueryDevicePropertiesData.NextTime");
+			queryDevicePropertiesDataResponse.HttpResponse = _ctx.HttpResponse;
+			queryDevicePropertiesDataResponse.RequestId = _ctx.StringValue("QueryDevicePropertiesData.RequestId");
+			queryDevicePropertiesDataResponse.Success = _ctx.BooleanValue("QueryDevicePropertiesData.Success");
+			queryDevicePropertiesDataResponse.Code = _ctx.StringValue("QueryDevicePropertiesData.Code");
+			queryDevicePropertiesDataResponse.ErrorMessage = _ctx.StringValue("QueryDevicePropertiesData.ErrorMessage");
+			queryDevicePropertiesDataResponse.NextValid = _ctx.BooleanValue("QueryDevicePropertiesData.NextValid");
+			queryDevicePropertiesDataResponse.NextTime = _ctx.LongValue("QueryDevicePropertiesData.NextTime");
 
 			List<QueryDevicePropertiesDataResponse.QueryDevicePropertiesData_PropertyDataInfo> queryDevicePropertiesDataResponse_propertyDataInfos = new List<QueryDevicePropertiesDataResponse.QueryDevicePropertiesData_PropertyDataInfo>();
-			for (int i = 0; i < context.Length("QueryDevicePropertiesData.PropertyDataInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryDevicePropertiesData.PropertyDataInfos.Length"); i++) {
 				QueryDevicePropertiesDataResponse.QueryDevicePropertiesData_PropertyDataInfo propertyDataInfo = new QueryDevicePropertiesDataResponse.QueryDevicePropertiesData_PropertyDataInfo();
-				propertyDataInfo.Identifier = context.StringValue("QueryDevicePropertiesData.PropertyDataInfos["+ i +"].Identifier");
+				propertyDataInfo.Identifier = _ctx.StringValue("QueryDevicePropertiesData.PropertyDataInfos["+ i +"].Identifier");
 
 				List<QueryDevicePropertiesDataResponse.QueryDevicePropertiesData_PropertyDataInfo.QueryDevicePropertiesData_PropertyInfo> propertyDataInfo_list = new List<QueryDevicePropertiesDataResponse.QueryDevicePropertiesData_PropertyDataInfo.QueryDevicePropertiesData_PropertyInfo>();
-				for (int j = 0; j < context.Length("QueryDevicePropertiesData.PropertyDataInfos["+ i +"].List.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("QueryDevicePropertiesData.PropertyDataInfos["+ i +"].List.Length"); j++) {
 					QueryDevicePropertiesDataResponse.QueryDevicePropertiesData_PropertyDataInfo.QueryDevicePropertiesData_PropertyInfo propertyInfo = new QueryDevicePropertiesDataResponse.QueryDevicePropertiesData_PropertyDataInfo.QueryDevicePropertiesData_PropertyInfo();
-					propertyInfo.Time = context.LongValue("QueryDevicePropertiesData.PropertyDataInfos["+ i +"].List["+ j +"].Time");
-					propertyInfo._Value = context.StringValue("QueryDevicePropertiesData.PropertyDataInfos["+ i +"].List["+ j +"].Value");
+					propertyInfo.Time = _ctx.LongValue("QueryDevicePropertiesData.PropertyDataInfos["+ i +"].List["+ j +"].Time");
+					propertyInfo._Value = _ctx.StringValue("QueryDevicePropertiesData.PropertyDataInfos["+ i +"].List["+ j +"].Value");
 
 					propertyDataInfo_list.Add(propertyInfo);
 				}

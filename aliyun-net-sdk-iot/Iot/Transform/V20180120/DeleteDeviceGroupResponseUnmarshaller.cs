@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class DeleteDeviceGroupResponseUnmarshaller
     {
-        public static DeleteDeviceGroupResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDeviceGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDeviceGroupResponse deleteDeviceGroupResponse = new DeleteDeviceGroupResponse();
 
-			deleteDeviceGroupResponse.HttpResponse = context.HttpResponse;
-			deleteDeviceGroupResponse.RequestId = context.StringValue("DeleteDeviceGroup.RequestId");
-			deleteDeviceGroupResponse.Success = context.BooleanValue("DeleteDeviceGroup.Success");
-			deleteDeviceGroupResponse.Code = context.StringValue("DeleteDeviceGroup.Code");
-			deleteDeviceGroupResponse.ErrorMessage = context.StringValue("DeleteDeviceGroup.ErrorMessage");
+			deleteDeviceGroupResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDeviceGroupResponse.RequestId = _ctx.StringValue("DeleteDeviceGroup.RequestId");
+			deleteDeviceGroupResponse.Success = _ctx.BooleanValue("DeleteDeviceGroup.Success");
+			deleteDeviceGroupResponse.Code = _ctx.StringValue("DeleteDeviceGroup.Code");
+			deleteDeviceGroupResponse.ErrorMessage = _ctx.StringValue("DeleteDeviceGroup.ErrorMessage");
         
 			return deleteDeviceGroupResponse;
         }

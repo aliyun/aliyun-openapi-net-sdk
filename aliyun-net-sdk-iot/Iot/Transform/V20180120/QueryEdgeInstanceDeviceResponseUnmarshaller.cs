@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryEdgeInstanceDeviceResponseUnmarshaller
     {
-        public static QueryEdgeInstanceDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static QueryEdgeInstanceDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryEdgeInstanceDeviceResponse queryEdgeInstanceDeviceResponse = new QueryEdgeInstanceDeviceResponse();
 
-			queryEdgeInstanceDeviceResponse.HttpResponse = context.HttpResponse;
-			queryEdgeInstanceDeviceResponse.RequestId = context.StringValue("QueryEdgeInstanceDevice.RequestId");
-			queryEdgeInstanceDeviceResponse.Success = context.BooleanValue("QueryEdgeInstanceDevice.Success");
-			queryEdgeInstanceDeviceResponse.Code = context.StringValue("QueryEdgeInstanceDevice.Code");
-			queryEdgeInstanceDeviceResponse.ErrorMessage = context.StringValue("QueryEdgeInstanceDevice.ErrorMessage");
+			queryEdgeInstanceDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			queryEdgeInstanceDeviceResponse.RequestId = _ctx.StringValue("QueryEdgeInstanceDevice.RequestId");
+			queryEdgeInstanceDeviceResponse.Success = _ctx.BooleanValue("QueryEdgeInstanceDevice.Success");
+			queryEdgeInstanceDeviceResponse.Code = _ctx.StringValue("QueryEdgeInstanceDevice.Code");
+			queryEdgeInstanceDeviceResponse.ErrorMessage = _ctx.StringValue("QueryEdgeInstanceDevice.ErrorMessage");
 
 			QueryEdgeInstanceDeviceResponse.QueryEdgeInstanceDevice_Data data = new QueryEdgeInstanceDeviceResponse.QueryEdgeInstanceDevice_Data();
-			data.Total = context.IntegerValue("QueryEdgeInstanceDevice.Data.Total");
-			data.PageSize = context.IntegerValue("QueryEdgeInstanceDevice.Data.PageSize");
-			data.CurrentPage = context.IntegerValue("QueryEdgeInstanceDevice.Data.CurrentPage");
+			data.Total = _ctx.IntegerValue("QueryEdgeInstanceDevice.Data.Total");
+			data.PageSize = _ctx.IntegerValue("QueryEdgeInstanceDevice.Data.PageSize");
+			data.CurrentPage = _ctx.IntegerValue("QueryEdgeInstanceDevice.Data.CurrentPage");
 
 			List<QueryEdgeInstanceDeviceResponse.QueryEdgeInstanceDevice_Data.QueryEdgeInstanceDevice_Device> data_deviceList = new List<QueryEdgeInstanceDeviceResponse.QueryEdgeInstanceDevice_Data.QueryEdgeInstanceDevice_Device>();
-			for (int i = 0; i < context.Length("QueryEdgeInstanceDevice.Data.DeviceList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryEdgeInstanceDevice.Data.DeviceList.Length"); i++) {
 				QueryEdgeInstanceDeviceResponse.QueryEdgeInstanceDevice_Data.QueryEdgeInstanceDevice_Device device = new QueryEdgeInstanceDeviceResponse.QueryEdgeInstanceDevice_Data.QueryEdgeInstanceDevice_Device();
-				device.IotId = context.StringValue("QueryEdgeInstanceDevice.Data.DeviceList["+ i +"].IotId");
-				device.ProductKey = context.StringValue("QueryEdgeInstanceDevice.Data.DeviceList["+ i +"].ProductKey");
-				device.DeviceName = context.StringValue("QueryEdgeInstanceDevice.Data.DeviceList["+ i +"].DeviceName");
-				device.DriverId = context.StringValue("QueryEdgeInstanceDevice.Data.DeviceList["+ i +"].DriverId");
+				device.IotId = _ctx.StringValue("QueryEdgeInstanceDevice.Data.DeviceList["+ i +"].IotId");
+				device.ProductKey = _ctx.StringValue("QueryEdgeInstanceDevice.Data.DeviceList["+ i +"].ProductKey");
+				device.DeviceName = _ctx.StringValue("QueryEdgeInstanceDevice.Data.DeviceList["+ i +"].DeviceName");
+				device.DriverId = _ctx.StringValue("QueryEdgeInstanceDevice.Data.DeviceList["+ i +"].DriverId");
 
 				data_deviceList.Add(device);
 			}

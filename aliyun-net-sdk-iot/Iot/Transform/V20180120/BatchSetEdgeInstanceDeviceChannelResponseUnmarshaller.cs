@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BatchSetEdgeInstanceDeviceChannelResponseUnmarshaller
     {
-        public static BatchSetEdgeInstanceDeviceChannelResponse Unmarshall(UnmarshallerContext context)
+        public static BatchSetEdgeInstanceDeviceChannelResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchSetEdgeInstanceDeviceChannelResponse batchSetEdgeInstanceDeviceChannelResponse = new BatchSetEdgeInstanceDeviceChannelResponse();
 
-			batchSetEdgeInstanceDeviceChannelResponse.HttpResponse = context.HttpResponse;
-			batchSetEdgeInstanceDeviceChannelResponse.RequestId = context.StringValue("BatchSetEdgeInstanceDeviceChannel.RequestId");
-			batchSetEdgeInstanceDeviceChannelResponse.Success = context.BooleanValue("BatchSetEdgeInstanceDeviceChannel.Success");
-			batchSetEdgeInstanceDeviceChannelResponse.Code = context.StringValue("BatchSetEdgeInstanceDeviceChannel.Code");
-			batchSetEdgeInstanceDeviceChannelResponse.ErrorMessage = context.StringValue("BatchSetEdgeInstanceDeviceChannel.ErrorMessage");
+			batchSetEdgeInstanceDeviceChannelResponse.HttpResponse = _ctx.HttpResponse;
+			batchSetEdgeInstanceDeviceChannelResponse.RequestId = _ctx.StringValue("BatchSetEdgeInstanceDeviceChannel.RequestId");
+			batchSetEdgeInstanceDeviceChannelResponse.Success = _ctx.BooleanValue("BatchSetEdgeInstanceDeviceChannel.Success");
+			batchSetEdgeInstanceDeviceChannelResponse.Code = _ctx.StringValue("BatchSetEdgeInstanceDeviceChannel.Code");
+			batchSetEdgeInstanceDeviceChannelResponse.ErrorMessage = _ctx.StringValue("BatchSetEdgeInstanceDeviceChannel.ErrorMessage");
         
 			return batchSetEdgeInstanceDeviceChannelResponse;
         }

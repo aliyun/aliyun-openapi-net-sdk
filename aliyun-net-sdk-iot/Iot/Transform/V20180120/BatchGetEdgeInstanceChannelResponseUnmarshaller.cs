@@ -26,29 +26,29 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class BatchGetEdgeInstanceChannelResponseUnmarshaller
     {
-        public static BatchGetEdgeInstanceChannelResponse Unmarshall(UnmarshallerContext context)
+        public static BatchGetEdgeInstanceChannelResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchGetEdgeInstanceChannelResponse batchGetEdgeInstanceChannelResponse = new BatchGetEdgeInstanceChannelResponse();
 
-			batchGetEdgeInstanceChannelResponse.HttpResponse = context.HttpResponse;
-			batchGetEdgeInstanceChannelResponse.RequestId = context.StringValue("BatchGetEdgeInstanceChannel.RequestId");
-			batchGetEdgeInstanceChannelResponse.Success = context.BooleanValue("BatchGetEdgeInstanceChannel.Success");
-			batchGetEdgeInstanceChannelResponse.Code = context.StringValue("BatchGetEdgeInstanceChannel.Code");
-			batchGetEdgeInstanceChannelResponse.ErrorMessage = context.StringValue("BatchGetEdgeInstanceChannel.ErrorMessage");
+			batchGetEdgeInstanceChannelResponse.HttpResponse = _ctx.HttpResponse;
+			batchGetEdgeInstanceChannelResponse.RequestId = _ctx.StringValue("BatchGetEdgeInstanceChannel.RequestId");
+			batchGetEdgeInstanceChannelResponse.Success = _ctx.BooleanValue("BatchGetEdgeInstanceChannel.Success");
+			batchGetEdgeInstanceChannelResponse.Code = _ctx.StringValue("BatchGetEdgeInstanceChannel.Code");
+			batchGetEdgeInstanceChannelResponse.ErrorMessage = _ctx.StringValue("BatchGetEdgeInstanceChannel.ErrorMessage");
 
 			List<BatchGetEdgeInstanceChannelResponse.BatchGetEdgeInstanceChannel_Channel> batchGetEdgeInstanceChannelResponse_data = new List<BatchGetEdgeInstanceChannelResponse.BatchGetEdgeInstanceChannel_Channel>();
-			for (int i = 0; i < context.Length("BatchGetEdgeInstanceChannel.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("BatchGetEdgeInstanceChannel.Data.Length"); i++) {
 				BatchGetEdgeInstanceChannelResponse.BatchGetEdgeInstanceChannel_Channel channel = new BatchGetEdgeInstanceChannelResponse.BatchGetEdgeInstanceChannel_Channel();
-				channel.ChannelId = context.StringValue("BatchGetEdgeInstanceChannel.Data["+ i +"].ChannelId");
-				channel.ChannelName = context.StringValue("BatchGetEdgeInstanceChannel.Data["+ i +"].ChannelName");
+				channel.ChannelId = _ctx.StringValue("BatchGetEdgeInstanceChannel.Data["+ i +"].ChannelId");
+				channel.ChannelName = _ctx.StringValue("BatchGetEdgeInstanceChannel.Data["+ i +"].ChannelName");
 
 				List<BatchGetEdgeInstanceChannelResponse.BatchGetEdgeInstanceChannel_Channel.BatchGetEdgeInstanceChannel_Config> channel_configList = new List<BatchGetEdgeInstanceChannelResponse.BatchGetEdgeInstanceChannel_Channel.BatchGetEdgeInstanceChannel_Config>();
-				for (int j = 0; j < context.Length("BatchGetEdgeInstanceChannel.Data["+ i +"].ConfigList.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("BatchGetEdgeInstanceChannel.Data["+ i +"].ConfigList.Length"); j++) {
 					BatchGetEdgeInstanceChannelResponse.BatchGetEdgeInstanceChannel_Channel.BatchGetEdgeInstanceChannel_Config config = new BatchGetEdgeInstanceChannelResponse.BatchGetEdgeInstanceChannel_Channel.BatchGetEdgeInstanceChannel_Config();
-					config.ConfigId = context.StringValue("BatchGetEdgeInstanceChannel.Data["+ i +"].ConfigList["+ j +"].ConfigId");
-					config.Format = context.StringValue("BatchGetEdgeInstanceChannel.Data["+ i +"].ConfigList["+ j +"].Format");
-					config.Content = context.StringValue("BatchGetEdgeInstanceChannel.Data["+ i +"].ConfigList["+ j +"].Content");
-					config.Key = context.StringValue("BatchGetEdgeInstanceChannel.Data["+ i +"].ConfigList["+ j +"].Key");
+					config.ConfigId = _ctx.StringValue("BatchGetEdgeInstanceChannel.Data["+ i +"].ConfigList["+ j +"].ConfigId");
+					config.Format = _ctx.StringValue("BatchGetEdgeInstanceChannel.Data["+ i +"].ConfigList["+ j +"].Format");
+					config.Content = _ctx.StringValue("BatchGetEdgeInstanceChannel.Data["+ i +"].ConfigList["+ j +"].Content");
+					config.Key = _ctx.StringValue("BatchGetEdgeInstanceChannel.Data["+ i +"].ConfigList["+ j +"].Key");
 
 					channel_configList.Add(config);
 				}

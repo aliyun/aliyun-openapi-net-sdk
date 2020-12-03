@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class ReleaseEdgeDriverVersionResponseUnmarshaller
     {
-        public static ReleaseEdgeDriverVersionResponse Unmarshall(UnmarshallerContext context)
+        public static ReleaseEdgeDriverVersionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ReleaseEdgeDriverVersionResponse releaseEdgeDriverVersionResponse = new ReleaseEdgeDriverVersionResponse();
 
-			releaseEdgeDriverVersionResponse.HttpResponse = context.HttpResponse;
-			releaseEdgeDriverVersionResponse.RequestId = context.StringValue("ReleaseEdgeDriverVersion.RequestId");
-			releaseEdgeDriverVersionResponse.Success = context.BooleanValue("ReleaseEdgeDriverVersion.Success");
-			releaseEdgeDriverVersionResponse.Code = context.StringValue("ReleaseEdgeDriverVersion.Code");
-			releaseEdgeDriverVersionResponse.ErrorMessage = context.StringValue("ReleaseEdgeDriverVersion.ErrorMessage");
+			releaseEdgeDriverVersionResponse.HttpResponse = _ctx.HttpResponse;
+			releaseEdgeDriverVersionResponse.RequestId = _ctx.StringValue("ReleaseEdgeDriverVersion.RequestId");
+			releaseEdgeDriverVersionResponse.Success = _ctx.BooleanValue("ReleaseEdgeDriverVersion.Success");
+			releaseEdgeDriverVersionResponse.Code = _ctx.StringValue("ReleaseEdgeDriverVersion.Code");
+			releaseEdgeDriverVersionResponse.ErrorMessage = _ctx.StringValue("ReleaseEdgeDriverVersion.ErrorMessage");
         
 			return releaseEdgeDriverVersionResponse;
         }

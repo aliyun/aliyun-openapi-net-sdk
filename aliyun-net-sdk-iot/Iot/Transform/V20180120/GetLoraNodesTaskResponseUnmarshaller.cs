@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class GetLoraNodesTaskResponseUnmarshaller
     {
-        public static GetLoraNodesTaskResponse Unmarshall(UnmarshallerContext context)
+        public static GetLoraNodesTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetLoraNodesTaskResponse getLoraNodesTaskResponse = new GetLoraNodesTaskResponse();
 
-			getLoraNodesTaskResponse.HttpResponse = context.HttpResponse;
-			getLoraNodesTaskResponse.RequestId = context.StringValue("GetLoraNodesTask.RequestId");
-			getLoraNodesTaskResponse.Success = context.BooleanValue("GetLoraNodesTask.Success");
-			getLoraNodesTaskResponse.Code = context.StringValue("GetLoraNodesTask.Code");
-			getLoraNodesTaskResponse.ErrorMessage = context.StringValue("GetLoraNodesTask.ErrorMessage");
-			getLoraNodesTaskResponse.TaskId = context.StringValue("GetLoraNodesTask.TaskId");
-			getLoraNodesTaskResponse.TaskState = context.StringValue("GetLoraNodesTask.TaskState");
-			getLoraNodesTaskResponse.TotalCount = context.LongValue("GetLoraNodesTask.TotalCount");
-			getLoraNodesTaskResponse.SuccessCount = context.LongValue("GetLoraNodesTask.SuccessCount");
+			getLoraNodesTaskResponse.HttpResponse = _ctx.HttpResponse;
+			getLoraNodesTaskResponse.RequestId = _ctx.StringValue("GetLoraNodesTask.RequestId");
+			getLoraNodesTaskResponse.Success = _ctx.BooleanValue("GetLoraNodesTask.Success");
+			getLoraNodesTaskResponse.Code = _ctx.StringValue("GetLoraNodesTask.Code");
+			getLoraNodesTaskResponse.ErrorMessage = _ctx.StringValue("GetLoraNodesTask.ErrorMessage");
+			getLoraNodesTaskResponse.TaskId = _ctx.StringValue("GetLoraNodesTask.TaskId");
+			getLoraNodesTaskResponse.TaskState = _ctx.StringValue("GetLoraNodesTask.TaskState");
+			getLoraNodesTaskResponse.TotalCount = _ctx.LongValue("GetLoraNodesTask.TotalCount");
+			getLoraNodesTaskResponse.SuccessCount = _ctx.LongValue("GetLoraNodesTask.SuccessCount");
 
 			List<string> getLoraNodesTaskResponse_successDevEuis = new List<string>();
-			for (int i = 0; i < context.Length("GetLoraNodesTask.SuccessDevEuis.Length"); i++) {
-				getLoraNodesTaskResponse_successDevEuis.Add(context.StringValue("GetLoraNodesTask.SuccessDevEuis["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetLoraNodesTask.SuccessDevEuis.Length"); i++) {
+				getLoraNodesTaskResponse_successDevEuis.Add(_ctx.StringValue("GetLoraNodesTask.SuccessDevEuis["+ i +"]"));
 			}
 			getLoraNodesTaskResponse.SuccessDevEuis = getLoraNodesTaskResponse_successDevEuis;
         

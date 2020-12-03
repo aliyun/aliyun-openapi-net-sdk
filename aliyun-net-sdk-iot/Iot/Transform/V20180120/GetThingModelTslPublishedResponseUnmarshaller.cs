@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class GetThingModelTslPublishedResponseUnmarshaller
     {
-        public static GetThingModelTslPublishedResponse Unmarshall(UnmarshallerContext context)
+        public static GetThingModelTslPublishedResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetThingModelTslPublishedResponse getThingModelTslPublishedResponse = new GetThingModelTslPublishedResponse();
 
-			getThingModelTslPublishedResponse.HttpResponse = context.HttpResponse;
-			getThingModelTslPublishedResponse.RequestId = context.StringValue("GetThingModelTslPublished.RequestId");
-			getThingModelTslPublishedResponse.Success = context.BooleanValue("GetThingModelTslPublished.Success");
-			getThingModelTslPublishedResponse.Code = context.StringValue("GetThingModelTslPublished.Code");
-			getThingModelTslPublishedResponse.ErrorMessage = context.StringValue("GetThingModelTslPublished.ErrorMessage");
+			getThingModelTslPublishedResponse.HttpResponse = _ctx.HttpResponse;
+			getThingModelTslPublishedResponse.RequestId = _ctx.StringValue("GetThingModelTslPublished.RequestId");
+			getThingModelTslPublishedResponse.Success = _ctx.BooleanValue("GetThingModelTslPublished.Success");
+			getThingModelTslPublishedResponse.Code = _ctx.StringValue("GetThingModelTslPublished.Code");
+			getThingModelTslPublishedResponse.ErrorMessage = _ctx.StringValue("GetThingModelTslPublished.ErrorMessage");
 
 			GetThingModelTslPublishedResponse.GetThingModelTslPublished_Data data = new GetThingModelTslPublishedResponse.GetThingModelTslPublished_Data();
-			data.TslStr = context.StringValue("GetThingModelTslPublished.Data.TslStr");
-			data.TslUri = context.StringValue("GetThingModelTslPublished.Data.TslUri");
+			data.TslStr = _ctx.StringValue("GetThingModelTslPublished.Data.TslStr");
+			data.TslUri = _ctx.StringValue("GetThingModelTslPublished.Data.TslUri");
 			getThingModelTslPublishedResponse.Data = data;
         
 			return getThingModelTslPublishedResponse;

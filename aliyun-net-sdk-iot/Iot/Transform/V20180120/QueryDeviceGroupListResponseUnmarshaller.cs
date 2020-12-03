@@ -26,27 +26,27 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryDeviceGroupListResponseUnmarshaller
     {
-        public static QueryDeviceGroupListResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDeviceGroupListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDeviceGroupListResponse queryDeviceGroupListResponse = new QueryDeviceGroupListResponse();
 
-			queryDeviceGroupListResponse.HttpResponse = context.HttpResponse;
-			queryDeviceGroupListResponse.RequestId = context.StringValue("QueryDeviceGroupList.RequestId");
-			queryDeviceGroupListResponse.Success = context.BooleanValue("QueryDeviceGroupList.Success");
-			queryDeviceGroupListResponse.Code = context.StringValue("QueryDeviceGroupList.Code");
-			queryDeviceGroupListResponse.ErrorMessage = context.StringValue("QueryDeviceGroupList.ErrorMessage");
-			queryDeviceGroupListResponse.CurrentPage = context.IntegerValue("QueryDeviceGroupList.CurrentPage");
-			queryDeviceGroupListResponse.PageCount = context.IntegerValue("QueryDeviceGroupList.PageCount");
-			queryDeviceGroupListResponse.PageSize = context.IntegerValue("QueryDeviceGroupList.PageSize");
-			queryDeviceGroupListResponse.Total = context.IntegerValue("QueryDeviceGroupList.Total");
+			queryDeviceGroupListResponse.HttpResponse = _ctx.HttpResponse;
+			queryDeviceGroupListResponse.RequestId = _ctx.StringValue("QueryDeviceGroupList.RequestId");
+			queryDeviceGroupListResponse.Success = _ctx.BooleanValue("QueryDeviceGroupList.Success");
+			queryDeviceGroupListResponse.Code = _ctx.StringValue("QueryDeviceGroupList.Code");
+			queryDeviceGroupListResponse.ErrorMessage = _ctx.StringValue("QueryDeviceGroupList.ErrorMessage");
+			queryDeviceGroupListResponse.CurrentPage = _ctx.IntegerValue("QueryDeviceGroupList.CurrentPage");
+			queryDeviceGroupListResponse.PageCount = _ctx.IntegerValue("QueryDeviceGroupList.PageCount");
+			queryDeviceGroupListResponse.PageSize = _ctx.IntegerValue("QueryDeviceGroupList.PageSize");
+			queryDeviceGroupListResponse.Total = _ctx.IntegerValue("QueryDeviceGroupList.Total");
 
 			List<QueryDeviceGroupListResponse.QueryDeviceGroupList_GroupInfo> queryDeviceGroupListResponse_data = new List<QueryDeviceGroupListResponse.QueryDeviceGroupList_GroupInfo>();
-			for (int i = 0; i < context.Length("QueryDeviceGroupList.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryDeviceGroupList.Data.Length"); i++) {
 				QueryDeviceGroupListResponse.QueryDeviceGroupList_GroupInfo groupInfo = new QueryDeviceGroupListResponse.QueryDeviceGroupList_GroupInfo();
-				groupInfo.GroupId = context.StringValue("QueryDeviceGroupList.Data["+ i +"].GroupId");
-				groupInfo.UtcCreate = context.StringValue("QueryDeviceGroupList.Data["+ i +"].UtcCreate");
-				groupInfo.GroupName = context.StringValue("QueryDeviceGroupList.Data["+ i +"].GroupName");
-				groupInfo.GroupDesc = context.StringValue("QueryDeviceGroupList.Data["+ i +"].GroupDesc");
+				groupInfo.GroupId = _ctx.StringValue("QueryDeviceGroupList.Data["+ i +"].GroupId");
+				groupInfo.UtcCreate = _ctx.StringValue("QueryDeviceGroupList.Data["+ i +"].UtcCreate");
+				groupInfo.GroupName = _ctx.StringValue("QueryDeviceGroupList.Data["+ i +"].GroupName");
+				groupInfo.GroupDesc = _ctx.StringValue("QueryDeviceGroupList.Data["+ i +"].GroupDesc");
 
 				queryDeviceGroupListResponse_data.Add(groupInfo);
 			}

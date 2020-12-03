@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 {
     public class QueryConsumerGroupByGroupIdResponseUnmarshaller
     {
-        public static QueryConsumerGroupByGroupIdResponse Unmarshall(UnmarshallerContext context)
+        public static QueryConsumerGroupByGroupIdResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryConsumerGroupByGroupIdResponse queryConsumerGroupByGroupIdResponse = new QueryConsumerGroupByGroupIdResponse();
 
-			queryConsumerGroupByGroupIdResponse.HttpResponse = context.HttpResponse;
-			queryConsumerGroupByGroupIdResponse.RequestId = context.StringValue("QueryConsumerGroupByGroupId.RequestId");
-			queryConsumerGroupByGroupIdResponse.Success = context.BooleanValue("QueryConsumerGroupByGroupId.Success");
-			queryConsumerGroupByGroupIdResponse.ErrorMessage = context.StringValue("QueryConsumerGroupByGroupId.ErrorMessage");
-			queryConsumerGroupByGroupIdResponse.Code = context.StringValue("QueryConsumerGroupByGroupId.Code");
+			queryConsumerGroupByGroupIdResponse.HttpResponse = _ctx.HttpResponse;
+			queryConsumerGroupByGroupIdResponse.RequestId = _ctx.StringValue("QueryConsumerGroupByGroupId.RequestId");
+			queryConsumerGroupByGroupIdResponse.Success = _ctx.BooleanValue("QueryConsumerGroupByGroupId.Success");
+			queryConsumerGroupByGroupIdResponse.ErrorMessage = _ctx.StringValue("QueryConsumerGroupByGroupId.ErrorMessage");
+			queryConsumerGroupByGroupIdResponse.Code = _ctx.StringValue("QueryConsumerGroupByGroupId.Code");
 
 			QueryConsumerGroupByGroupIdResponse.QueryConsumerGroupByGroupId_Data data = new QueryConsumerGroupByGroupIdResponse.QueryConsumerGroupByGroupId_Data();
-			data.IotId = context.StringValue("QueryConsumerGroupByGroupId.Data.IotId");
-			data.GroupId = context.StringValue("QueryConsumerGroupByGroupId.Data.GroupId");
-			data.GroupName = context.StringValue("QueryConsumerGroupByGroupId.Data.GroupName");
-			data.Creator = context.StringValue("QueryConsumerGroupByGroupId.Data.Creator");
-			data.CreateTime = context.StringValue("QueryConsumerGroupByGroupId.Data.CreateTime");
-			data.AuthType = context.StringValue("QueryConsumerGroupByGroupId.Data.AuthType");
+			data.IotId = _ctx.StringValue("QueryConsumerGroupByGroupId.Data.IotId");
+			data.GroupId = _ctx.StringValue("QueryConsumerGroupByGroupId.Data.GroupId");
+			data.GroupName = _ctx.StringValue("QueryConsumerGroupByGroupId.Data.GroupName");
+			data.Creator = _ctx.StringValue("QueryConsumerGroupByGroupId.Data.Creator");
+			data.CreateTime = _ctx.StringValue("QueryConsumerGroupByGroupId.Data.CreateTime");
+			data.AuthType = _ctx.StringValue("QueryConsumerGroupByGroupId.Data.AuthType");
 			queryConsumerGroupByGroupIdResponse.Data = data;
         
 			return queryConsumerGroupByGroupIdResponse;
