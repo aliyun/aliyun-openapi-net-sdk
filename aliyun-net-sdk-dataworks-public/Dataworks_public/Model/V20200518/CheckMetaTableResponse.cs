@@ -27,14 +27,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string requestId;
 
-		private string errorCode;
-
-		private string errorMessage;
-
-		private int? httpStatusCode;
-
-		private bool? success;
-
 		private bool? data;
 
 		public string RequestId
@@ -46,54 +38,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
 			}
 		}
 

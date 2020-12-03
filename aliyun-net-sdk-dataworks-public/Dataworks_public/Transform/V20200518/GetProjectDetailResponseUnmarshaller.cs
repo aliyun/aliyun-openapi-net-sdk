@@ -26,37 +26,37 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetProjectDetailResponseUnmarshaller
     {
-        public static GetProjectDetailResponse Unmarshall(UnmarshallerContext context)
+        public static GetProjectDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetProjectDetailResponse getProjectDetailResponse = new GetProjectDetailResponse();
 
-			getProjectDetailResponse.HttpResponse = context.HttpResponse;
-			getProjectDetailResponse.HttpStatusCode = context.IntegerValue("GetProjectDetail.HttpStatusCode");
-			getProjectDetailResponse.Success = context.BooleanValue("GetProjectDetail.Success");
-			getProjectDetailResponse.RequestId = context.StringValue("GetProjectDetail.RequestId");
+			getProjectDetailResponse.HttpResponse = _ctx.HttpResponse;
+			getProjectDetailResponse.HttpStatusCode = _ctx.IntegerValue("GetProjectDetail.HttpStatusCode");
+			getProjectDetailResponse.Success = _ctx.BooleanValue("GetProjectDetail.Success");
+			getProjectDetailResponse.RequestId = _ctx.StringValue("GetProjectDetail.RequestId");
 
 			GetProjectDetailResponse.GetProjectDetail_Data data = new GetProjectDetailResponse.GetProjectDetail_Data();
-			data.GmtModified = context.StringValue("GetProjectDetail.Data.GmtModified");
-			data.DefaultDiResourceGroupIdentifier = context.StringValue("GetProjectDetail.Data.DefaultDiResourceGroupIdentifier");
-			data.IsAllowDownload = context.IntegerValue("GetProjectDetail.Data.IsAllowDownload");
-			data.SchedulerRetryInterval = context.IntegerValue("GetProjectDetail.Data.SchedulerRetryInterval");
-			data.ResidentArea = context.StringValue("GetProjectDetail.Data.ResidentArea");
-			data.ProjectOwnerBaseId = context.StringValue("GetProjectDetail.Data.ProjectOwnerBaseId");
-			data.ProjectMode = context.IntegerValue("GetProjectDetail.Data.ProjectMode");
-			data.GmtCreate = context.StringValue("GetProjectDetail.Data.GmtCreate");
-			data.ProtectedMode = context.IntegerValue("GetProjectDetail.Data.ProtectedMode");
-			data.TenantId = context.LongValue("GetProjectDetail.Data.TenantId");
-			data.ProjectDescription = context.StringValue("GetProjectDetail.Data.ProjectDescription");
-			data.SchedulerMaxRetryTimes = context.IntegerValue("GetProjectDetail.Data.SchedulerMaxRetryTimes");
-			data.ProjectName = context.StringValue("GetProjectDetail.Data.ProjectName");
-			data.ProjectIdentifier = context.StringValue("GetProjectDetail.Data.ProjectIdentifier");
-			data.ProjectId = context.IntegerValue("GetProjectDetail.Data.ProjectId");
-			data.Status = context.IntegerValue("GetProjectDetail.Data.Status");
-			data.DevelopmentType = context.IntegerValue("GetProjectDetail.Data.DevelopmentType");
+			data.GmtModified = _ctx.StringValue("GetProjectDetail.Data.GmtModified");
+			data.DefaultDiResourceGroupIdentifier = _ctx.StringValue("GetProjectDetail.Data.DefaultDiResourceGroupIdentifier");
+			data.IsAllowDownload = _ctx.IntegerValue("GetProjectDetail.Data.IsAllowDownload");
+			data.SchedulerRetryInterval = _ctx.IntegerValue("GetProjectDetail.Data.SchedulerRetryInterval");
+			data.ResidentArea = _ctx.StringValue("GetProjectDetail.Data.ResidentArea");
+			data.ProjectOwnerBaseId = _ctx.StringValue("GetProjectDetail.Data.ProjectOwnerBaseId");
+			data.ProjectMode = _ctx.IntegerValue("GetProjectDetail.Data.ProjectMode");
+			data.GmtCreate = _ctx.StringValue("GetProjectDetail.Data.GmtCreate");
+			data.ProtectedMode = _ctx.IntegerValue("GetProjectDetail.Data.ProtectedMode");
+			data.TenantId = _ctx.LongValue("GetProjectDetail.Data.TenantId");
+			data.ProjectDescription = _ctx.StringValue("GetProjectDetail.Data.ProjectDescription");
+			data.SchedulerMaxRetryTimes = _ctx.IntegerValue("GetProjectDetail.Data.SchedulerMaxRetryTimes");
+			data.ProjectName = _ctx.StringValue("GetProjectDetail.Data.ProjectName");
+			data.ProjectIdentifier = _ctx.StringValue("GetProjectDetail.Data.ProjectIdentifier");
+			data.ProjectId = _ctx.IntegerValue("GetProjectDetail.Data.ProjectId");
+			data.Status = _ctx.IntegerValue("GetProjectDetail.Data.Status");
+			data.DevelopmentType = _ctx.IntegerValue("GetProjectDetail.Data.DevelopmentType");
 
 			List<string> data_envTypes = new List<string>();
-			for (int i = 0; i < context.Length("GetProjectDetail.Data.EnvTypes.Length"); i++) {
-				data_envTypes.Add(context.StringValue("GetProjectDetail.Data.EnvTypes["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetProjectDetail.Data.EnvTypes.Length"); i++) {
+				data_envTypes.Add(_ctx.StringValue("GetProjectDetail.Data.EnvTypes["+ i +"]"));
 			}
 			data.EnvTypes = data_envTypes;
 			getProjectDetailResponse.Data = data;

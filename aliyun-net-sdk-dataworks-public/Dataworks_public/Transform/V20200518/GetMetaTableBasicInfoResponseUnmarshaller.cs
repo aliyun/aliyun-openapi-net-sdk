@@ -26,33 +26,38 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetMetaTableBasicInfoResponseUnmarshaller
     {
-        public static GetMetaTableBasicInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetMetaTableBasicInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMetaTableBasicInfoResponse getMetaTableBasicInfoResponse = new GetMetaTableBasicInfoResponse();
 
-			getMetaTableBasicInfoResponse.HttpResponse = context.HttpResponse;
-			getMetaTableBasicInfoResponse.RequestId = context.StringValue("GetMetaTableBasicInfo.RequestId");
-			getMetaTableBasicInfoResponse.ErrorCode = context.StringValue("GetMetaTableBasicInfo.ErrorCode");
-			getMetaTableBasicInfoResponse.ErrorMessage = context.StringValue("GetMetaTableBasicInfo.ErrorMessage");
-			getMetaTableBasicInfoResponse.HttpStatusCode = context.IntegerValue("GetMetaTableBasicInfo.HttpStatusCode");
-			getMetaTableBasicInfoResponse.Success = context.BooleanValue("GetMetaTableBasicInfo.Success");
+			getMetaTableBasicInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getMetaTableBasicInfoResponse.RequestId = _ctx.StringValue("GetMetaTableBasicInfo.RequestId");
+			getMetaTableBasicInfoResponse.ErrorCode = _ctx.StringValue("GetMetaTableBasicInfo.ErrorCode");
+			getMetaTableBasicInfoResponse.ErrorMessage = _ctx.StringValue("GetMetaTableBasicInfo.ErrorMessage");
+			getMetaTableBasicInfoResponse.HttpStatusCode = _ctx.IntegerValue("GetMetaTableBasicInfo.HttpStatusCode");
+			getMetaTableBasicInfoResponse.Success = _ctx.BooleanValue("GetMetaTableBasicInfo.Success");
 
 			GetMetaTableBasicInfoResponse.GetMetaTableBasicInfo_Data data = new GetMetaTableBasicInfoResponse.GetMetaTableBasicInfo_Data();
-			data.TableName = context.StringValue("GetMetaTableBasicInfo.Data.TableName");
-			data.TableGuid = context.StringValue("GetMetaTableBasicInfo.Data.TableGuid");
-			data.OwnerId = context.StringValue("GetMetaTableBasicInfo.Data.OwnerId");
-			data.TenantId = context.LongValue("GetMetaTableBasicInfo.Data.TenantId");
-			data.ProjectId = context.LongValue("GetMetaTableBasicInfo.Data.ProjectId");
-			data.CreateTime = context.LongValue("GetMetaTableBasicInfo.Data.CreateTime");
-			data.LastModifyTime = context.LongValue("GetMetaTableBasicInfo.Data.LastModifyTime");
-			data.LifeCycle = context.IntegerValue("GetMetaTableBasicInfo.Data.LifeCycle");
-			data.IsVisible = context.IntegerValue("GetMetaTableBasicInfo.Data.IsVisible");
-			data.LastDdlTime = context.LongValue("GetMetaTableBasicInfo.Data.LastDdlTime");
-			data.LastAccessTime = context.LongValue("GetMetaTableBasicInfo.Data.LastAccessTime");
-			data.EnvType = context.IntegerValue("GetMetaTableBasicInfo.Data.EnvType");
-			data.DataSize = context.LongValue("GetMetaTableBasicInfo.Data.DataSize");
-			data.Comment = context.StringValue("GetMetaTableBasicInfo.Data.Comment");
-			data.ProjectName = context.StringValue("GetMetaTableBasicInfo.Data.ProjectName");
+			data.TableName = _ctx.StringValue("GetMetaTableBasicInfo.Data.TableName");
+			data.TableGuid = _ctx.StringValue("GetMetaTableBasicInfo.Data.TableGuid");
+			data.OwnerId = _ctx.StringValue("GetMetaTableBasicInfo.Data.OwnerId");
+			data.TenantId = _ctx.LongValue("GetMetaTableBasicInfo.Data.TenantId");
+			data.ProjectId = _ctx.LongValue("GetMetaTableBasicInfo.Data.ProjectId");
+			data.CreateTime = _ctx.LongValue("GetMetaTableBasicInfo.Data.CreateTime");
+			data.LastModifyTime = _ctx.LongValue("GetMetaTableBasicInfo.Data.LastModifyTime");
+			data.LifeCycle = _ctx.IntegerValue("GetMetaTableBasicInfo.Data.LifeCycle");
+			data.IsVisible = _ctx.IntegerValue("GetMetaTableBasicInfo.Data.IsVisible");
+			data.LastDdlTime = _ctx.LongValue("GetMetaTableBasicInfo.Data.LastDdlTime");
+			data.LastAccessTime = _ctx.LongValue("GetMetaTableBasicInfo.Data.LastAccessTime");
+			data.EnvType = _ctx.IntegerValue("GetMetaTableBasicInfo.Data.EnvType");
+			data.DataSize = _ctx.LongValue("GetMetaTableBasicInfo.Data.DataSize");
+			data.Comment = _ctx.StringValue("GetMetaTableBasicInfo.Data.Comment");
+			data.ProjectName = _ctx.StringValue("GetMetaTableBasicInfo.Data.ProjectName");
+			data.DatabaseName = _ctx.StringValue("GetMetaTableBasicInfo.Data.DatabaseName");
+			data.PartitionKeys = _ctx.StringValue("GetMetaTableBasicInfo.Data.PartitionKeys");
+			data.Location = _ctx.StringValue("GetMetaTableBasicInfo.Data.Location");
+			data.ClusterId = _ctx.StringValue("GetMetaTableBasicInfo.Data.ClusterId");
+			data.Caption = _ctx.StringValue("GetMetaTableBasicInfo.Data.Caption");
 			getMetaTableBasicInfoResponse.Data = data;
         
 			return getMetaTableBasicInfoResponse;

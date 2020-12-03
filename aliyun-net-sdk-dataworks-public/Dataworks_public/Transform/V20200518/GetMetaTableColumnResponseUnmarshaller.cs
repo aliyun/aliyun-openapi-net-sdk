@@ -26,33 +26,33 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetMetaTableColumnResponseUnmarshaller
     {
-        public static GetMetaTableColumnResponse Unmarshall(UnmarshallerContext context)
+        public static GetMetaTableColumnResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMetaTableColumnResponse getMetaTableColumnResponse = new GetMetaTableColumnResponse();
 
-			getMetaTableColumnResponse.HttpResponse = context.HttpResponse;
-			getMetaTableColumnResponse.RequestId = context.StringValue("GetMetaTableColumn.RequestId");
-			getMetaTableColumnResponse.ErrorCode = context.StringValue("GetMetaTableColumn.ErrorCode");
-			getMetaTableColumnResponse.ErrorMessage = context.StringValue("GetMetaTableColumn.ErrorMessage");
-			getMetaTableColumnResponse.HttpStatusCode = context.IntegerValue("GetMetaTableColumn.HttpStatusCode");
-			getMetaTableColumnResponse.Success = context.BooleanValue("GetMetaTableColumn.Success");
+			getMetaTableColumnResponse.HttpResponse = _ctx.HttpResponse;
+			getMetaTableColumnResponse.RequestId = _ctx.StringValue("GetMetaTableColumn.RequestId");
+			getMetaTableColumnResponse.ErrorCode = _ctx.StringValue("GetMetaTableColumn.ErrorCode");
+			getMetaTableColumnResponse.ErrorMessage = _ctx.StringValue("GetMetaTableColumn.ErrorMessage");
+			getMetaTableColumnResponse.HttpStatusCode = _ctx.IntegerValue("GetMetaTableColumn.HttpStatusCode");
+			getMetaTableColumnResponse.Success = _ctx.BooleanValue("GetMetaTableColumn.Success");
 
 			GetMetaTableColumnResponse.GetMetaTableColumn_Data data = new GetMetaTableColumnResponse.GetMetaTableColumn_Data();
-			data.TotalCount = context.LongValue("GetMetaTableColumn.Data.TotalCount");
-			data.PageNum = context.IntegerValue("GetMetaTableColumn.Data.PageNum");
-			data.PageSize = context.IntegerValue("GetMetaTableColumn.Data.PageSize");
+			data.TotalCount = _ctx.LongValue("GetMetaTableColumn.Data.TotalCount");
+			data.PageNum = _ctx.IntegerValue("GetMetaTableColumn.Data.PageNum");
+			data.PageSize = _ctx.IntegerValue("GetMetaTableColumn.Data.PageSize");
 
 			List<GetMetaTableColumnResponse.GetMetaTableColumn_Data.GetMetaTableColumn_ColumnListItem> data_columnList = new List<GetMetaTableColumnResponse.GetMetaTableColumn_Data.GetMetaTableColumn_ColumnListItem>();
-			for (int i = 0; i < context.Length("GetMetaTableColumn.Data.ColumnList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetMetaTableColumn.Data.ColumnList.Length"); i++) {
 				GetMetaTableColumnResponse.GetMetaTableColumn_Data.GetMetaTableColumn_ColumnListItem columnListItem = new GetMetaTableColumnResponse.GetMetaTableColumn_Data.GetMetaTableColumn_ColumnListItem();
-				columnListItem.ColumnName = context.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].ColumnName");
-				columnListItem.ColumnGuid = context.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].ColumnGuid");
-				columnListItem.Comment = context.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].Comment");
-				columnListItem.IsPrimaryKey = context.BooleanValue("GetMetaTableColumn.Data.ColumnList["+ i +"].IsPrimaryKey");
-				columnListItem.ColumnType = context.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].ColumnType");
-				columnListItem.IsPartitionColumn = context.BooleanValue("GetMetaTableColumn.Data.ColumnList["+ i +"].IsPartitionColumn");
-				columnListItem.IsForeignKey = context.BooleanValue("GetMetaTableColumn.Data.ColumnList["+ i +"].IsForeignKey");
-				columnListItem.Caption = context.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].Caption");
+				columnListItem.ColumnName = _ctx.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].ColumnName");
+				columnListItem.ColumnGuid = _ctx.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].ColumnGuid");
+				columnListItem.Comment = _ctx.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].Comment");
+				columnListItem.IsPrimaryKey = _ctx.BooleanValue("GetMetaTableColumn.Data.ColumnList["+ i +"].IsPrimaryKey");
+				columnListItem.ColumnType = _ctx.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].ColumnType");
+				columnListItem.IsPartitionColumn = _ctx.BooleanValue("GetMetaTableColumn.Data.ColumnList["+ i +"].IsPartitionColumn");
+				columnListItem.IsForeignKey = _ctx.BooleanValue("GetMetaTableColumn.Data.ColumnList["+ i +"].IsForeignKey");
+				columnListItem.Caption = _ctx.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].Caption");
 
 				data_columnList.Add(columnListItem);
 			}

@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class CreateFolderResponseUnmarshaller
     {
-        public static CreateFolderResponse Unmarshall(UnmarshallerContext context)
+        public static CreateFolderResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateFolderResponse createFolderResponse = new CreateFolderResponse();
 
-			createFolderResponse.HttpResponse = context.HttpResponse;
-			createFolderResponse.RequestId = context.StringValue("CreateFolder.RequestId");
-			createFolderResponse.Success = context.BooleanValue("CreateFolder.Success");
-			createFolderResponse.ErrorCode = context.StringValue("CreateFolder.ErrorCode");
-			createFolderResponse.ErrorMessage = context.StringValue("CreateFolder.ErrorMessage");
-			createFolderResponse.Data = context.StringValue("CreateFolder.Data");
-			createFolderResponse.HttpStatusCode = context.IntegerValue("CreateFolder.HttpStatusCode");
+			createFolderResponse.HttpResponse = _ctx.HttpResponse;
+			createFolderResponse.RequestId = _ctx.StringValue("CreateFolder.RequestId");
+			createFolderResponse.Success = _ctx.BooleanValue("CreateFolder.Success");
+			createFolderResponse.ErrorCode = _ctx.StringValue("CreateFolder.ErrorCode");
+			createFolderResponse.ErrorMessage = _ctx.StringValue("CreateFolder.ErrorMessage");
+			createFolderResponse.Data = _ctx.StringValue("CreateFolder.Data");
+			createFolderResponse.HttpStatusCode = _ctx.IntegerValue("CreateFolder.HttpStatusCode");
         
 			return createFolderResponse;
         }

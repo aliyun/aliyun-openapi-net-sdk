@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class CheckMetaPartitionResponseUnmarshaller
     {
-        public static CheckMetaPartitionResponse Unmarshall(UnmarshallerContext context)
+        public static CheckMetaPartitionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckMetaPartitionResponse checkMetaPartitionResponse = new CheckMetaPartitionResponse();
 
-			checkMetaPartitionResponse.HttpResponse = context.HttpResponse;
-			checkMetaPartitionResponse.RequestId = context.StringValue("CheckMetaPartition.RequestId");
-			checkMetaPartitionResponse.ErrorCode = context.StringValue("CheckMetaPartition.ErrorCode");
-			checkMetaPartitionResponse.ErrorMessage = context.StringValue("CheckMetaPartition.ErrorMessage");
-			checkMetaPartitionResponse.HttpStatusCode = context.IntegerValue("CheckMetaPartition.HttpStatusCode");
-			checkMetaPartitionResponse.Success = context.BooleanValue("CheckMetaPartition.Success");
-			checkMetaPartitionResponse.Data = context.BooleanValue("CheckMetaPartition.Data");
+			checkMetaPartitionResponse.HttpResponse = _ctx.HttpResponse;
+			checkMetaPartitionResponse.RequestId = _ctx.StringValue("CheckMetaPartition.RequestId");
+			checkMetaPartitionResponse.ErrorCode = _ctx.StringValue("CheckMetaPartition.ErrorCode");
+			checkMetaPartitionResponse.ErrorMessage = _ctx.StringValue("CheckMetaPartition.ErrorMessage");
+			checkMetaPartitionResponse.HttpStatusCode = _ctx.IntegerValue("CheckMetaPartition.HttpStatusCode");
+			checkMetaPartitionResponse.Success = _ctx.BooleanValue("CheckMetaPartition.Success");
+			checkMetaPartitionResponse.Data = _ctx.BooleanValue("CheckMetaPartition.Data");
         
 			return checkMetaPartitionResponse;
         }

@@ -142,6 +142,16 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private string projectName;
 
+			private string databaseName;
+
+			private string partitionKeys;
+
+			private string location;
+
+			private string clusterId;
+
+			private string caption;
+
 			public string TableName
 			{
 				get
@@ -319,6 +329,66 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					projectName = value;
+				}
+			}
+
+			public string DatabaseName
+			{
+				get
+				{
+					return databaseName;
+				}
+				set	
+				{
+					databaseName = value;
+				}
+			}
+
+			public string PartitionKeys
+			{
+				get
+				{
+					return partitionKeys;
+				}
+				set	
+				{
+					partitionKeys = value;
+				}
+			}
+
+			public string Location
+			{
+				get
+				{
+					return location;
+				}
+				set	
+				{
+					location = value;
+				}
+			}
+
+			public string ClusterId
+			{
+				get
+				{
+					return clusterId;
+				}
+				set	
+				{
+					clusterId = value;
+				}
+			}
+
+			public string Caption
+			{
+				get
+				{
+					return caption;
+				}
+				set	
+				{
+					caption = value;
 				}
 			}
 		}

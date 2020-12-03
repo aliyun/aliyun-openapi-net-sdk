@@ -26,32 +26,32 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetBaselineConfigResponseUnmarshaller
     {
-        public static GetBaselineConfigResponse Unmarshall(UnmarshallerContext context)
+        public static GetBaselineConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetBaselineConfigResponse getBaselineConfigResponse = new GetBaselineConfigResponse();
 
-			getBaselineConfigResponse.HttpResponse = context.HttpResponse;
-			getBaselineConfigResponse.Success = context.BooleanValue("GetBaselineConfig.Success");
-			getBaselineConfigResponse.ErrorCode = context.StringValue("GetBaselineConfig.ErrorCode");
-			getBaselineConfigResponse.ErrorMessage = context.StringValue("GetBaselineConfig.ErrorMessage");
-			getBaselineConfigResponse.HttpStatusCode = context.IntegerValue("GetBaselineConfig.HttpStatusCode");
-			getBaselineConfigResponse.RequestId = context.StringValue("GetBaselineConfig.RequestId");
+			getBaselineConfigResponse.HttpResponse = _ctx.HttpResponse;
+			getBaselineConfigResponse.Success = _ctx.BooleanValue("GetBaselineConfig.Success");
+			getBaselineConfigResponse.ErrorCode = _ctx.StringValue("GetBaselineConfig.ErrorCode");
+			getBaselineConfigResponse.ErrorMessage = _ctx.StringValue("GetBaselineConfig.ErrorMessage");
+			getBaselineConfigResponse.HttpStatusCode = _ctx.IntegerValue("GetBaselineConfig.HttpStatusCode");
+			getBaselineConfigResponse.RequestId = _ctx.StringValue("GetBaselineConfig.RequestId");
 
 			GetBaselineConfigResponse.GetBaselineConfig_Data data = new GetBaselineConfigResponse.GetBaselineConfig_Data();
-			data.BaselineId = context.LongValue("GetBaselineConfig.Data.BaselineId");
-			data.Priority = context.IntegerValue("GetBaselineConfig.Data.Priority");
-			data.BaselineName = context.StringValue("GetBaselineConfig.Data.BaselineName");
-			data.Owner = context.StringValue("GetBaselineConfig.Data.Owner");
-			data.ProjectId = context.LongValue("GetBaselineConfig.Data.ProjectId");
-			data.UseFlag = context.BooleanValue("GetBaselineConfig.Data.UseFlag");
-			data.BaselineType = context.StringValue("GetBaselineConfig.Data.BaselineType");
-			data.ExpHour = context.IntegerValue("GetBaselineConfig.Data.ExpHour");
-			data.ExpMinu = context.IntegerValue("GetBaselineConfig.Data.ExpMinu");
-			data.SlaHour = context.IntegerValue("GetBaselineConfig.Data.SlaHour");
-			data.SlaMinu = context.IntegerValue("GetBaselineConfig.Data.SlaMinu");
-			data.HourExpDetail = context.StringValue("GetBaselineConfig.Data.HourExpDetail");
-			data.HourSlaDetail = context.StringValue("GetBaselineConfig.Data.HourSlaDetail");
-			data.IsDefault = context.BooleanValue("GetBaselineConfig.Data.IsDefault");
+			data.BaselineId = _ctx.LongValue("GetBaselineConfig.Data.BaselineId");
+			data.Priority = _ctx.IntegerValue("GetBaselineConfig.Data.Priority");
+			data.BaselineName = _ctx.StringValue("GetBaselineConfig.Data.BaselineName");
+			data.Owner = _ctx.StringValue("GetBaselineConfig.Data.Owner");
+			data.ProjectId = _ctx.LongValue("GetBaselineConfig.Data.ProjectId");
+			data.UseFlag = _ctx.BooleanValue("GetBaselineConfig.Data.UseFlag");
+			data.BaselineType = _ctx.StringValue("GetBaselineConfig.Data.BaselineType");
+			data.ExpHour = _ctx.IntegerValue("GetBaselineConfig.Data.ExpHour");
+			data.ExpMinu = _ctx.IntegerValue("GetBaselineConfig.Data.ExpMinu");
+			data.SlaHour = _ctx.IntegerValue("GetBaselineConfig.Data.SlaHour");
+			data.SlaMinu = _ctx.IntegerValue("GetBaselineConfig.Data.SlaMinu");
+			data.HourExpDetail = _ctx.StringValue("GetBaselineConfig.Data.HourExpDetail");
+			data.HourSlaDetail = _ctx.StringValue("GetBaselineConfig.Data.HourSlaDetail");
+			data.IsDefault = _ctx.BooleanValue("GetBaselineConfig.Data.IsDefault");
 			getBaselineConfigResponse.Data = data;
         
 			return getBaselineConfigResponse;

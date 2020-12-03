@@ -421,6 +421,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private string dependentNodeIdList;
 
+				private long? resourceGroupId;
+
 				private List<GetFile_NodeInputOutput> inputList;
 
 				private List<GetFile_NodeInputOutput1> outputList;
@@ -554,6 +556,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						dependentNodeIdList = value;
+					}
+				}
+
+				public long? ResourceGroupId
+				{
+					get
+					{
+						return resourceGroupId;
+					}
+					set	
+					{
+						resourceGroupId = value;
 					}
 				}
 

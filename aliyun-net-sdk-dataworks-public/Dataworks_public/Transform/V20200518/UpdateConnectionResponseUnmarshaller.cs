@@ -26,15 +26,15 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class UpdateConnectionResponseUnmarshaller
     {
-        public static UpdateConnectionResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateConnectionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateConnectionResponse updateConnectionResponse = new UpdateConnectionResponse();
 
-			updateConnectionResponse.HttpResponse = context.HttpResponse;
-			updateConnectionResponse.Success = context.BooleanValue("UpdateConnection.Success");
-			updateConnectionResponse.HttpStatusCode = context.StringValue("UpdateConnection.HttpStatusCode");
-			updateConnectionResponse.Data = context.BooleanValue("UpdateConnection.Data");
-			updateConnectionResponse.RequestId = context.StringValue("UpdateConnection.RequestId");
+			updateConnectionResponse.HttpResponse = _ctx.HttpResponse;
+			updateConnectionResponse.Success = _ctx.BooleanValue("UpdateConnection.Success");
+			updateConnectionResponse.HttpStatusCode = _ctx.StringValue("UpdateConnection.HttpStatusCode");
+			updateConnectionResponse.Data = _ctx.BooleanValue("UpdateConnection.Data");
+			updateConnectionResponse.RequestId = _ctx.StringValue("UpdateConnection.RequestId");
         
 			return updateConnectionResponse;
         }

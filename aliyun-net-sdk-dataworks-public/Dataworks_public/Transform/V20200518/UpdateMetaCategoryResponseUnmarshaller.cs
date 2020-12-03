@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class UpdateMetaCategoryResponseUnmarshaller
     {
-        public static UpdateMetaCategoryResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateMetaCategoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateMetaCategoryResponse updateMetaCategoryResponse = new UpdateMetaCategoryResponse();
 
-			updateMetaCategoryResponse.HttpResponse = context.HttpResponse;
-			updateMetaCategoryResponse.RequestId = context.StringValue("UpdateMetaCategory.RequestId");
-			updateMetaCategoryResponse.ErrorCode = context.StringValue("UpdateMetaCategory.ErrorCode");
-			updateMetaCategoryResponse.ErrorMessage = context.StringValue("UpdateMetaCategory.ErrorMessage");
-			updateMetaCategoryResponse.HttpStatusCode = context.IntegerValue("UpdateMetaCategory.HttpStatusCode");
-			updateMetaCategoryResponse.Success = context.BooleanValue("UpdateMetaCategory.Success");
-			updateMetaCategoryResponse.Data = context.BooleanValue("UpdateMetaCategory.Data");
+			updateMetaCategoryResponse.HttpResponse = _ctx.HttpResponse;
+			updateMetaCategoryResponse.RequestId = _ctx.StringValue("UpdateMetaCategory.RequestId");
+			updateMetaCategoryResponse.ErrorCode = _ctx.StringValue("UpdateMetaCategory.ErrorCode");
+			updateMetaCategoryResponse.ErrorMessage = _ctx.StringValue("UpdateMetaCategory.ErrorMessage");
+			updateMetaCategoryResponse.HttpStatusCode = _ctx.IntegerValue("UpdateMetaCategory.HttpStatusCode");
+			updateMetaCategoryResponse.Success = _ctx.BooleanValue("UpdateMetaCategory.Success");
+			updateMetaCategoryResponse.Data = _ctx.BooleanValue("UpdateMetaCategory.Data");
         
 			return updateMetaCategoryResponse;
         }

@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class CreateDagTestResponseUnmarshaller
     {
-        public static CreateDagTestResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDagTestResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDagTestResponse createDagTestResponse = new CreateDagTestResponse();
 
-			createDagTestResponse.HttpResponse = context.HttpResponse;
-			createDagTestResponse.ErrorCode = context.StringValue("CreateDagTest.ErrorCode");
-			createDagTestResponse.ErrorMessage = context.StringValue("CreateDagTest.ErrorMessage");
-			createDagTestResponse.HttpStatusCode = context.IntegerValue("CreateDagTest.HttpStatusCode");
-			createDagTestResponse.RequestId = context.StringValue("CreateDagTest.RequestId");
-			createDagTestResponse.Success = context.BooleanValue("CreateDagTest.Success");
-			createDagTestResponse.Data = context.LongValue("CreateDagTest.Data");
+			createDagTestResponse.HttpResponse = _ctx.HttpResponse;
+			createDagTestResponse.ErrorCode = _ctx.StringValue("CreateDagTest.ErrorCode");
+			createDagTestResponse.ErrorMessage = _ctx.StringValue("CreateDagTest.ErrorMessage");
+			createDagTestResponse.HttpStatusCode = _ctx.IntegerValue("CreateDagTest.HttpStatusCode");
+			createDagTestResponse.RequestId = _ctx.StringValue("CreateDagTest.RequestId");
+			createDagTestResponse.Success = _ctx.BooleanValue("CreateDagTest.Success");
+			createDagTestResponse.Data = _ctx.LongValue("CreateDagTest.Data");
         
 			return createDagTestResponse;
         }

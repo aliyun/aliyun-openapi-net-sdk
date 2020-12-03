@@ -26,29 +26,29 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetDeploymentResponseUnmarshaller
     {
-        public static GetDeploymentResponse Unmarshall(UnmarshallerContext context)
+        public static GetDeploymentResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetDeploymentResponse getDeploymentResponse = new GetDeploymentResponse();
 
-			getDeploymentResponse.HttpResponse = context.HttpResponse;
-			getDeploymentResponse.RequestId = context.StringValue("GetDeployment.RequestId");
-			getDeploymentResponse.Success = context.BooleanValue("GetDeployment.Success");
-			getDeploymentResponse.ErrorCode = context.StringValue("GetDeployment.ErrorCode");
-			getDeploymentResponse.ErrorMessage = context.StringValue("GetDeployment.ErrorMessage");
-			getDeploymentResponse.HttpStatusCode = context.IntegerValue("GetDeployment.HttpStatusCode");
+			getDeploymentResponse.HttpResponse = _ctx.HttpResponse;
+			getDeploymentResponse.RequestId = _ctx.StringValue("GetDeployment.RequestId");
+			getDeploymentResponse.Success = _ctx.BooleanValue("GetDeployment.Success");
+			getDeploymentResponse.ErrorCode = _ctx.StringValue("GetDeployment.ErrorCode");
+			getDeploymentResponse.ErrorMessage = _ctx.StringValue("GetDeployment.ErrorMessage");
+			getDeploymentResponse.HttpStatusCode = _ctx.IntegerValue("GetDeployment.HttpStatusCode");
 
 			GetDeploymentResponse.GetDeployment_Data data = new GetDeploymentResponse.GetDeployment_Data();
 
 			GetDeploymentResponse.GetDeployment_Data.GetDeployment_Deployment deployment = new GetDeploymentResponse.GetDeployment_Data.GetDeployment_Deployment();
-			deployment.Name = context.StringValue("GetDeployment.Data.Deployment.Name");
-			deployment.CreatorId = context.StringValue("GetDeployment.Data.Deployment.CreatorId");
-			deployment.HandlerId = context.StringValue("GetDeployment.Data.Deployment.HandlerId");
-			deployment.CreateTime = context.LongValue("GetDeployment.Data.Deployment.CreateTime");
-			deployment.ExecuteTime = context.LongValue("GetDeployment.Data.Deployment.ExecuteTime");
-			deployment.Status = context.IntegerValue("GetDeployment.Data.Deployment.Status");
-			deployment.FromEnvironment = context.IntegerValue("GetDeployment.Data.Deployment.FromEnvironment");
-			deployment.ToEnvironment = context.IntegerValue("GetDeployment.Data.Deployment.ToEnvironment");
-			deployment.ErrorMessage = context.StringValue("GetDeployment.Data.Deployment.ErrorMessage");
+			deployment.Name = _ctx.StringValue("GetDeployment.Data.Deployment.Name");
+			deployment.CreatorId = _ctx.StringValue("GetDeployment.Data.Deployment.CreatorId");
+			deployment.HandlerId = _ctx.StringValue("GetDeployment.Data.Deployment.HandlerId");
+			deployment.CreateTime = _ctx.LongValue("GetDeployment.Data.Deployment.CreateTime");
+			deployment.ExecuteTime = _ctx.LongValue("GetDeployment.Data.Deployment.ExecuteTime");
+			deployment.Status = _ctx.IntegerValue("GetDeployment.Data.Deployment.Status");
+			deployment.FromEnvironment = _ctx.IntegerValue("GetDeployment.Data.Deployment.FromEnvironment");
+			deployment.ToEnvironment = _ctx.IntegerValue("GetDeployment.Data.Deployment.ToEnvironment");
+			deployment.ErrorMessage = _ctx.StringValue("GetDeployment.Data.Deployment.ErrorMessage");
 			data.Deployment = deployment;
 			getDeploymentResponse.Data = data;
         

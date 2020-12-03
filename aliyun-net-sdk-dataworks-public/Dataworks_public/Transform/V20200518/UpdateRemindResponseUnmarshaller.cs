@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class UpdateRemindResponseUnmarshaller
     {
-        public static UpdateRemindResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateRemindResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateRemindResponse updateRemindResponse = new UpdateRemindResponse();
 
-			updateRemindResponse.HttpResponse = context.HttpResponse;
-			updateRemindResponse.Success = context.BooleanValue("UpdateRemind.Success");
-			updateRemindResponse.ErrorCode = context.StringValue("UpdateRemind.ErrorCode");
-			updateRemindResponse.ErrorMessage = context.StringValue("UpdateRemind.ErrorMessage");
-			updateRemindResponse.HttpStatusCode = context.IntegerValue("UpdateRemind.HttpStatusCode");
-			updateRemindResponse.RequestId = context.StringValue("UpdateRemind.RequestId");
-			updateRemindResponse.Data = context.BooleanValue("UpdateRemind.Data");
+			updateRemindResponse.HttpResponse = _ctx.HttpResponse;
+			updateRemindResponse.Success = _ctx.BooleanValue("UpdateRemind.Success");
+			updateRemindResponse.ErrorCode = _ctx.StringValue("UpdateRemind.ErrorCode");
+			updateRemindResponse.ErrorMessage = _ctx.StringValue("UpdateRemind.ErrorMessage");
+			updateRemindResponse.HttpStatusCode = _ctx.IntegerValue("UpdateRemind.HttpStatusCode");
+			updateRemindResponse.RequestId = _ctx.StringValue("UpdateRemind.RequestId");
+			updateRemindResponse.Data = _ctx.BooleanValue("UpdateRemind.Data");
         
 			return updateRemindResponse;
         }

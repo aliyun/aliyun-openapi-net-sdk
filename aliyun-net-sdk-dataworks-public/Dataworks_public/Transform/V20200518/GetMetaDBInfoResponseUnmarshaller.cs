@@ -26,29 +26,30 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetMetaDBInfoResponseUnmarshaller
     {
-        public static GetMetaDBInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetMetaDBInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMetaDBInfoResponse getMetaDBInfoResponse = new GetMetaDBInfoResponse();
 
-			getMetaDBInfoResponse.HttpResponse = context.HttpResponse;
-			getMetaDBInfoResponse.ErrorCode = context.StringValue("GetMetaDBInfo.ErrorCode");
-			getMetaDBInfoResponse.ErrorMessage = context.StringValue("GetMetaDBInfo.ErrorMessage");
-			getMetaDBInfoResponse.HttpStatusCode = context.IntegerValue("GetMetaDBInfo.HttpStatusCode");
-			getMetaDBInfoResponse.RequestId = context.StringValue("GetMetaDBInfo.RequestId");
-			getMetaDBInfoResponse.Success = context.BooleanValue("GetMetaDBInfo.Success");
+			getMetaDBInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getMetaDBInfoResponse.RequestId = _ctx.StringValue("GetMetaDBInfo.RequestId");
 
 			GetMetaDBInfoResponse.GetMetaDBInfo_Data data = new GetMetaDBInfoResponse.GetMetaDBInfo_Data();
-			data.AppGuid = context.StringValue("GetMetaDBInfo.Data.AppGuid");
-			data.TenantId = context.LongValue("GetMetaDBInfo.Data.TenantId");
-			data.Endpoint = context.StringValue("GetMetaDBInfo.Data.Endpoint");
-			data.ProjectId = context.LongValue("GetMetaDBInfo.Data.ProjectId");
-			data.EnvType = context.IntegerValue("GetMetaDBInfo.Data.EnvType");
-			data.ProjectName = context.StringValue("GetMetaDBInfo.Data.ProjectName");
-			data.ProjectNameCn = context.StringValue("GetMetaDBInfo.Data.ProjectNameCn");
-			data.CreateTime = context.LongValue("GetMetaDBInfo.Data.CreateTime");
-			data.ModifyTime = context.LongValue("GetMetaDBInfo.Data.ModifyTime");
-			data.OwnerId = context.StringValue("GetMetaDBInfo.Data.OwnerId");
-			data.OwnerName = context.StringValue("GetMetaDBInfo.Data.OwnerName");
+			data.AppGuid = _ctx.StringValue("GetMetaDBInfo.Data.AppGuid");
+			data.TenantId = _ctx.LongValue("GetMetaDBInfo.Data.TenantId");
+			data.Endpoint = _ctx.StringValue("GetMetaDBInfo.Data.Endpoint");
+			data.ProjectId = _ctx.LongValue("GetMetaDBInfo.Data.ProjectId");
+			data.EnvType = _ctx.IntegerValue("GetMetaDBInfo.Data.EnvType");
+			data.ProjectName = _ctx.StringValue("GetMetaDBInfo.Data.ProjectName");
+			data.ProjectNameCn = _ctx.StringValue("GetMetaDBInfo.Data.ProjectNameCn");
+			data.CreateTime = _ctx.LongValue("GetMetaDBInfo.Data.CreateTime");
+			data.ModifyTime = _ctx.LongValue("GetMetaDBInfo.Data.ModifyTime");
+			data.OwnerId = _ctx.StringValue("GetMetaDBInfo.Data.OwnerId");
+			data.OwnerName = _ctx.StringValue("GetMetaDBInfo.Data.OwnerName");
+			data.Name = _ctx.StringValue("GetMetaDBInfo.Data.Name");
+			data.Type = _ctx.StringValue("GetMetaDBInfo.Data.Type");
+			data.Comment = _ctx.StringValue("GetMetaDBInfo.Data.Comment");
+			data.Location = _ctx.StringValue("GetMetaDBInfo.Data.Location");
+			data.ClusterBizId = _ctx.StringValue("GetMetaDBInfo.Data.ClusterBizId");
 			getMetaDBInfoResponse.Data = data;
         
 			return getMetaDBInfoResponse;

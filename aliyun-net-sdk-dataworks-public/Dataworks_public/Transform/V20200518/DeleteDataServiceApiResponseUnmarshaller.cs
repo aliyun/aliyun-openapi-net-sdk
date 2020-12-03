@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class DeleteDataServiceApiResponseUnmarshaller
     {
-        public static DeleteDataServiceApiResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDataServiceApiResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDataServiceApiResponse deleteDataServiceApiResponse = new DeleteDataServiceApiResponse();
 
-			deleteDataServiceApiResponse.HttpResponse = context.HttpResponse;
-			deleteDataServiceApiResponse.Data = context.BooleanValue("DeleteDataServiceApi.Data");
-			deleteDataServiceApiResponse.ErrorCode = context.StringValue("DeleteDataServiceApi.ErrorCode");
-			deleteDataServiceApiResponse.ErrorMessage = context.StringValue("DeleteDataServiceApi.ErrorMessage");
-			deleteDataServiceApiResponse.HttpStatusCode = context.IntegerValue("DeleteDataServiceApi.HttpStatusCode");
-			deleteDataServiceApiResponse.RequestId = context.StringValue("DeleteDataServiceApi.RequestId");
-			deleteDataServiceApiResponse.Success = context.BooleanValue("DeleteDataServiceApi.Success");
+			deleteDataServiceApiResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDataServiceApiResponse.Data = _ctx.BooleanValue("DeleteDataServiceApi.Data");
+			deleteDataServiceApiResponse.ErrorCode = _ctx.StringValue("DeleteDataServiceApi.ErrorCode");
+			deleteDataServiceApiResponse.ErrorMessage = _ctx.StringValue("DeleteDataServiceApi.ErrorMessage");
+			deleteDataServiceApiResponse.HttpStatusCode = _ctx.IntegerValue("DeleteDataServiceApi.HttpStatusCode");
+			deleteDataServiceApiResponse.RequestId = _ctx.StringValue("DeleteDataServiceApi.RequestId");
+			deleteDataServiceApiResponse.Success = _ctx.BooleanValue("DeleteDataServiceApi.Success");
         
 			return deleteDataServiceApiResponse;
         }

@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class DeleteQualityRuleResponseUnmarshaller
     {
-        public static DeleteQualityRuleResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteQualityRuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteQualityRuleResponse deleteQualityRuleResponse = new DeleteQualityRuleResponse();
 
-			deleteQualityRuleResponse.HttpResponse = context.HttpResponse;
-			deleteQualityRuleResponse.ErrorCode = context.StringValue("DeleteQualityRule.ErrorCode");
-			deleteQualityRuleResponse.Data = context.BooleanValue("DeleteQualityRule.Data");
-			deleteQualityRuleResponse.ErrorMessage = context.StringValue("DeleteQualityRule.ErrorMessage");
-			deleteQualityRuleResponse.Success = context.BooleanValue("DeleteQualityRule.Success");
-			deleteQualityRuleResponse.HttpStatusCode = context.IntegerValue("DeleteQualityRule.HttpStatusCode");
-			deleteQualityRuleResponse.RequestId = context.StringValue("DeleteQualityRule.RequestId");
+			deleteQualityRuleResponse.HttpResponse = _ctx.HttpResponse;
+			deleteQualityRuleResponse.ErrorCode = _ctx.StringValue("DeleteQualityRule.ErrorCode");
+			deleteQualityRuleResponse.Data = _ctx.BooleanValue("DeleteQualityRule.Data");
+			deleteQualityRuleResponse.ErrorMessage = _ctx.StringValue("DeleteQualityRule.ErrorMessage");
+			deleteQualityRuleResponse.Success = _ctx.BooleanValue("DeleteQualityRule.Success");
+			deleteQualityRuleResponse.HttpStatusCode = _ctx.IntegerValue("DeleteQualityRule.HttpStatusCode");
+			deleteQualityRuleResponse.RequestId = _ctx.StringValue("DeleteQualityRule.RequestId");
         
 			return deleteQualityRuleResponse;
         }

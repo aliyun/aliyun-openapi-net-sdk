@@ -26,26 +26,26 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetQualityFollowerResponseUnmarshaller
     {
-        public static GetQualityFollowerResponse Unmarshall(UnmarshallerContext context)
+        public static GetQualityFollowerResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetQualityFollowerResponse getQualityFollowerResponse = new GetQualityFollowerResponse();
 
-			getQualityFollowerResponse.HttpResponse = context.HttpResponse;
-			getQualityFollowerResponse.ErrorCode = context.StringValue("GetQualityFollower.ErrorCode");
-			getQualityFollowerResponse.Success = context.BooleanValue("GetQualityFollower.Success");
-			getQualityFollowerResponse.ErrorMessage = context.StringValue("GetQualityFollower.ErrorMessage");
-			getQualityFollowerResponse.HttpStatusCode = context.IntegerValue("GetQualityFollower.HttpStatusCode");
-			getQualityFollowerResponse.RequestId = context.StringValue("GetQualityFollower.RequestId");
+			getQualityFollowerResponse.HttpResponse = _ctx.HttpResponse;
+			getQualityFollowerResponse.ErrorCode = _ctx.StringValue("GetQualityFollower.ErrorCode");
+			getQualityFollowerResponse.Success = _ctx.BooleanValue("GetQualityFollower.Success");
+			getQualityFollowerResponse.ErrorMessage = _ctx.StringValue("GetQualityFollower.ErrorMessage");
+			getQualityFollowerResponse.HttpStatusCode = _ctx.IntegerValue("GetQualityFollower.HttpStatusCode");
+			getQualityFollowerResponse.RequestId = _ctx.StringValue("GetQualityFollower.RequestId");
 
 			List<GetQualityFollowerResponse.GetQualityFollower_Follower> getQualityFollowerResponse_data = new List<GetQualityFollowerResponse.GetQualityFollower_Follower>();
-			for (int i = 0; i < context.Length("GetQualityFollower.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetQualityFollower.Data.Length"); i++) {
 				GetQualityFollowerResponse.GetQualityFollower_Follower follower = new GetQualityFollowerResponse.GetQualityFollower_Follower();
-				follower.ProjectName = context.StringValue("GetQualityFollower.Data["+ i +"].ProjectName");
-				follower.TableName = context.StringValue("GetQualityFollower.Data["+ i +"].TableName");
-				follower.Id = context.LongValue("GetQualityFollower.Data["+ i +"].Id");
-				follower.EntityId = context.StringValue("GetQualityFollower.Data["+ i +"].EntityId");
-				follower.Follower = context.StringValue("GetQualityFollower.Data["+ i +"].Follower");
-				follower.AlarmMode = context.IntegerValue("GetQualityFollower.Data["+ i +"].AlarmMode");
+				follower.ProjectName = _ctx.StringValue("GetQualityFollower.Data["+ i +"].ProjectName");
+				follower.TableName = _ctx.StringValue("GetQualityFollower.Data["+ i +"].TableName");
+				follower.Id = _ctx.LongValue("GetQualityFollower.Data["+ i +"].Id");
+				follower.EntityId = _ctx.StringValue("GetQualityFollower.Data["+ i +"].EntityId");
+				follower.Follower = _ctx.StringValue("GetQualityFollower.Data["+ i +"].Follower");
+				follower.AlarmMode = _ctx.IntegerValue("GetQualityFollower.Data["+ i +"].AlarmMode");
 
 				getQualityFollowerResponse_data.Add(follower);
 			}

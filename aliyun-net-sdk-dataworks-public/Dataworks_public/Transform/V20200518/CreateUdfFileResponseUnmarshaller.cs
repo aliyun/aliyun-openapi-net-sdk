@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class CreateUdfFileResponseUnmarshaller
     {
-        public static CreateUdfFileResponse Unmarshall(UnmarshallerContext context)
+        public static CreateUdfFileResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateUdfFileResponse createUdfFileResponse = new CreateUdfFileResponse();
 
-			createUdfFileResponse.HttpResponse = context.HttpResponse;
-			createUdfFileResponse.RequestId = context.StringValue("CreateUdfFile.RequestId");
-			createUdfFileResponse.Success = context.BooleanValue("CreateUdfFile.Success");
-			createUdfFileResponse.ErrorCode = context.StringValue("CreateUdfFile.ErrorCode");
-			createUdfFileResponse.ErrorMessage = context.StringValue("CreateUdfFile.ErrorMessage");
-			createUdfFileResponse.Data = context.LongValue("CreateUdfFile.Data");
-			createUdfFileResponse.HttpStatusCode = context.IntegerValue("CreateUdfFile.HttpStatusCode");
+			createUdfFileResponse.HttpResponse = _ctx.HttpResponse;
+			createUdfFileResponse.RequestId = _ctx.StringValue("CreateUdfFile.RequestId");
+			createUdfFileResponse.Success = _ctx.BooleanValue("CreateUdfFile.Success");
+			createUdfFileResponse.ErrorCode = _ctx.StringValue("CreateUdfFile.ErrorCode");
+			createUdfFileResponse.ErrorMessage = _ctx.StringValue("CreateUdfFile.ErrorMessage");
+			createUdfFileResponse.Data = _ctx.LongValue("CreateUdfFile.Data");
+			createUdfFileResponse.HttpStatusCode = _ctx.IntegerValue("CreateUdfFile.HttpStatusCode");
         
 			return createUdfFileResponse;
         }

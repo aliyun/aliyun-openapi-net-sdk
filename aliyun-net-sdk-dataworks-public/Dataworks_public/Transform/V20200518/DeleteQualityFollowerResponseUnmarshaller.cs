@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class DeleteQualityFollowerResponseUnmarshaller
     {
-        public static DeleteQualityFollowerResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteQualityFollowerResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteQualityFollowerResponse deleteQualityFollowerResponse = new DeleteQualityFollowerResponse();
 
-			deleteQualityFollowerResponse.HttpResponse = context.HttpResponse;
-			deleteQualityFollowerResponse.ErrorCode = context.StringValue("DeleteQualityFollower.ErrorCode");
-			deleteQualityFollowerResponse.Data = context.BooleanValue("DeleteQualityFollower.Data");
-			deleteQualityFollowerResponse.Success = context.BooleanValue("DeleteQualityFollower.Success");
-			deleteQualityFollowerResponse.ErrorMessage = context.StringValue("DeleteQualityFollower.ErrorMessage");
-			deleteQualityFollowerResponse.HttpStatusCode = context.IntegerValue("DeleteQualityFollower.HttpStatusCode");
-			deleteQualityFollowerResponse.RequestId = context.StringValue("DeleteQualityFollower.RequestId");
+			deleteQualityFollowerResponse.HttpResponse = _ctx.HttpResponse;
+			deleteQualityFollowerResponse.ErrorCode = _ctx.StringValue("DeleteQualityFollower.ErrorCode");
+			deleteQualityFollowerResponse.Data = _ctx.BooleanValue("DeleteQualityFollower.Data");
+			deleteQualityFollowerResponse.Success = _ctx.BooleanValue("DeleteQualityFollower.Success");
+			deleteQualityFollowerResponse.ErrorMessage = _ctx.StringValue("DeleteQualityFollower.ErrorMessage");
+			deleteQualityFollowerResponse.HttpStatusCode = _ctx.IntegerValue("DeleteQualityFollower.HttpStatusCode");
+			deleteQualityFollowerResponse.RequestId = _ctx.StringValue("DeleteQualityFollower.RequestId");
         
 			return deleteQualityFollowerResponse;
         }

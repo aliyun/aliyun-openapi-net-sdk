@@ -146,6 +146,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private int? visibleRange;
 
+			private long? folderId;
+
 			private List<string> protocols;
 
 			private GetDataServiceApi_RegistrationDetails registrationDetails;
@@ -355,6 +357,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					visibleRange = value;
+				}
+			}
+
+			public long? FolderId
+			{
+				get
+				{
+					return folderId;
+				}
+				set	
+				{
+					folderId = value;
 				}
 			}
 

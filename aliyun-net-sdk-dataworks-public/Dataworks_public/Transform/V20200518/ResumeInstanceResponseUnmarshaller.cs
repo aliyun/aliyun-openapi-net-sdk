@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class ResumeInstanceResponseUnmarshaller
     {
-        public static ResumeInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static ResumeInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResumeInstanceResponse resumeInstanceResponse = new ResumeInstanceResponse();
 
-			resumeInstanceResponse.HttpResponse = context.HttpResponse;
-			resumeInstanceResponse.ErrorCode = context.StringValue("ResumeInstance.ErrorCode");
-			resumeInstanceResponse.ErrorMessage = context.StringValue("ResumeInstance.ErrorMessage");
-			resumeInstanceResponse.HttpStatusCode = context.IntegerValue("ResumeInstance.HttpStatusCode");
-			resumeInstanceResponse.RequestId = context.StringValue("ResumeInstance.RequestId");
-			resumeInstanceResponse.Success = context.BooleanValue("ResumeInstance.Success");
-			resumeInstanceResponse.Data = context.BooleanValue("ResumeInstance.Data");
+			resumeInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			resumeInstanceResponse.ErrorCode = _ctx.StringValue("ResumeInstance.ErrorCode");
+			resumeInstanceResponse.ErrorMessage = _ctx.StringValue("ResumeInstance.ErrorMessage");
+			resumeInstanceResponse.HttpStatusCode = _ctx.IntegerValue("ResumeInstance.HttpStatusCode");
+			resumeInstanceResponse.RequestId = _ctx.StringValue("ResumeInstance.RequestId");
+			resumeInstanceResponse.Success = _ctx.BooleanValue("ResumeInstance.Success");
+			resumeInstanceResponse.Data = _ctx.BooleanValue("ResumeInstance.Data");
         
 			return resumeInstanceResponse;
         }

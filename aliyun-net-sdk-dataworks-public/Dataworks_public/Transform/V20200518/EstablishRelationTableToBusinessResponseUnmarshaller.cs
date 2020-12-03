@@ -26,16 +26,16 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class EstablishRelationTableToBusinessResponseUnmarshaller
     {
-        public static EstablishRelationTableToBusinessResponse Unmarshall(UnmarshallerContext context)
+        public static EstablishRelationTableToBusinessResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			EstablishRelationTableToBusinessResponse establishRelationTableToBusinessResponse = new EstablishRelationTableToBusinessResponse();
 
-			establishRelationTableToBusinessResponse.HttpResponse = context.HttpResponse;
-			establishRelationTableToBusinessResponse.RequestId = context.StringValue("EstablishRelationTableToBusiness.RequestId");
-			establishRelationTableToBusinessResponse.Success = context.BooleanValue("EstablishRelationTableToBusiness.Success");
-			establishRelationTableToBusinessResponse.ErrorCode = context.StringValue("EstablishRelationTableToBusiness.ErrorCode");
-			establishRelationTableToBusinessResponse.ErrorMessage = context.StringValue("EstablishRelationTableToBusiness.ErrorMessage");
-			establishRelationTableToBusinessResponse.HttpStatusCode = context.IntegerValue("EstablishRelationTableToBusiness.HttpStatusCode");
+			establishRelationTableToBusinessResponse.HttpResponse = _ctx.HttpResponse;
+			establishRelationTableToBusinessResponse.RequestId = _ctx.StringValue("EstablishRelationTableToBusiness.RequestId");
+			establishRelationTableToBusinessResponse.Success = _ctx.BooleanValue("EstablishRelationTableToBusiness.Success");
+			establishRelationTableToBusinessResponse.ErrorCode = _ctx.StringValue("EstablishRelationTableToBusiness.ErrorCode");
+			establishRelationTableToBusinessResponse.ErrorMessage = _ctx.StringValue("EstablishRelationTableToBusiness.ErrorMessage");
+			establishRelationTableToBusinessResponse.HttpStatusCode = _ctx.IntegerValue("EstablishRelationTableToBusiness.HttpStatusCode");
         
 			return establishRelationTableToBusinessResponse;
         }

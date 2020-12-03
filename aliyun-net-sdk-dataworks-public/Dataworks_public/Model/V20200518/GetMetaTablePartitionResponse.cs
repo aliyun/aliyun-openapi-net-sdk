@@ -185,6 +185,14 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private string tableGuid;
 
+				private string comment;
+
+				private string partitionType;
+
+				private string partitionPath;
+
+				private string partitionLocation;
+
 				public string PartitionGuid
 				{
 					get
@@ -266,6 +274,54 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						tableGuid = value;
+					}
+				}
+
+				public string Comment
+				{
+					get
+					{
+						return comment;
+					}
+					set	
+					{
+						comment = value;
+					}
+				}
+
+				public string PartitionType
+				{
+					get
+					{
+						return partitionType;
+					}
+					set	
+					{
+						partitionType = value;
+					}
+				}
+
+				public string PartitionPath
+				{
+					get
+					{
+						return partitionPath;
+					}
+					set	
+					{
+						partitionPath = value;
+					}
+				}
+
+				public string PartitionLocation
+				{
+					get
+					{
+						return partitionLocation;
+					}
+					set	
+					{
+						partitionLocation = value;
 					}
 				}
 			}

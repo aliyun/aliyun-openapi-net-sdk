@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class DeleteQualityRelativeNodeResponseUnmarshaller
     {
-        public static DeleteQualityRelativeNodeResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteQualityRelativeNodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteQualityRelativeNodeResponse deleteQualityRelativeNodeResponse = new DeleteQualityRelativeNodeResponse();
 
-			deleteQualityRelativeNodeResponse.HttpResponse = context.HttpResponse;
-			deleteQualityRelativeNodeResponse.Success = context.BooleanValue("DeleteQualityRelativeNode.Success");
-			deleteQualityRelativeNodeResponse.ErrorCode = context.StringValue("DeleteQualityRelativeNode.ErrorCode");
-			deleteQualityRelativeNodeResponse.ErrorMessage = context.StringValue("DeleteQualityRelativeNode.ErrorMessage");
-			deleteQualityRelativeNodeResponse.HttpStatusCode = context.IntegerValue("DeleteQualityRelativeNode.HttpStatusCode");
-			deleteQualityRelativeNodeResponse.Data = context.BooleanValue("DeleteQualityRelativeNode.Data");
-			deleteQualityRelativeNodeResponse.RequestId = context.StringValue("DeleteQualityRelativeNode.RequestId");
+			deleteQualityRelativeNodeResponse.HttpResponse = _ctx.HttpResponse;
+			deleteQualityRelativeNodeResponse.Success = _ctx.BooleanValue("DeleteQualityRelativeNode.Success");
+			deleteQualityRelativeNodeResponse.ErrorCode = _ctx.StringValue("DeleteQualityRelativeNode.ErrorCode");
+			deleteQualityRelativeNodeResponse.ErrorMessage = _ctx.StringValue("DeleteQualityRelativeNode.ErrorMessage");
+			deleteQualityRelativeNodeResponse.HttpStatusCode = _ctx.IntegerValue("DeleteQualityRelativeNode.HttpStatusCode");
+			deleteQualityRelativeNodeResponse.Data = _ctx.BooleanValue("DeleteQualityRelativeNode.Data");
+			deleteQualityRelativeNodeResponse.RequestId = _ctx.StringValue("DeleteQualityRelativeNode.RequestId");
         
 			return deleteQualityRelativeNodeResponse;
         }

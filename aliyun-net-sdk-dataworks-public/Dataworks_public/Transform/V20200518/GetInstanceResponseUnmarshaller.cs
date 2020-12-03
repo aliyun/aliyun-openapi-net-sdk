@@ -26,33 +26,42 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetInstanceResponseUnmarshaller
     {
-        public static GetInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static GetInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetInstanceResponse getInstanceResponse = new GetInstanceResponse();
 
-			getInstanceResponse.HttpResponse = context.HttpResponse;
-			getInstanceResponse.ErrorCode = context.StringValue("GetInstance.ErrorCode");
-			getInstanceResponse.ErrorMessage = context.StringValue("GetInstance.ErrorMessage");
-			getInstanceResponse.HttpStatusCode = context.IntegerValue("GetInstance.HttpStatusCode");
-			getInstanceResponse.RequestId = context.StringValue("GetInstance.RequestId");
-			getInstanceResponse.Success = context.BooleanValue("GetInstance.Success");
+			getInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			getInstanceResponse.ErrorCode = _ctx.StringValue("GetInstance.ErrorCode");
+			getInstanceResponse.ErrorMessage = _ctx.StringValue("GetInstance.ErrorMessage");
+			getInstanceResponse.HttpStatusCode = _ctx.IntegerValue("GetInstance.HttpStatusCode");
+			getInstanceResponse.RequestId = _ctx.StringValue("GetInstance.RequestId");
+			getInstanceResponse.Success = _ctx.BooleanValue("GetInstance.Success");
 
 			GetInstanceResponse.GetInstance_Data data = new GetInstanceResponse.GetInstance_Data();
-			data.NodeId = context.LongValue("GetInstance.Data.NodeId");
-			data.InstanceId = context.LongValue("GetInstance.Data.InstanceId");
-			data.DagId = context.LongValue("GetInstance.Data.DagId");
-			data.DagType = context.StringValue("GetInstance.Data.DagType");
-			data.Status = context.StringValue("GetInstance.Data.Status");
-			data.Bizdate = context.LongValue("GetInstance.Data.Bizdate");
-			data.ParamValues = context.StringValue("GetInstance.Data.ParamValues");
-			data.CycTime = context.LongValue("GetInstance.Data.CycTime");
-			data.FinishTime = context.LongValue("GetInstance.Data.FinishTime");
-			data.BeginWaitTimeTime = context.LongValue("GetInstance.Data.BeginWaitTimeTime");
-			data.BeginWaitResTime = context.LongValue("GetInstance.Data.BeginWaitResTime");
-			data.BeginRunningTime = context.LongValue("GetInstance.Data.BeginRunningTime");
-			data.CreateTime = context.LongValue("GetInstance.Data.CreateTime");
-			data.ModifyTime = context.LongValue("GetInstance.Data.ModifyTime");
-			data.NodeName = context.StringValue("GetInstance.Data.NodeName");
+			data.NodeId = _ctx.LongValue("GetInstance.Data.NodeId");
+			data.InstanceId = _ctx.LongValue("GetInstance.Data.InstanceId");
+			data.DagId = _ctx.LongValue("GetInstance.Data.DagId");
+			data.DagType = _ctx.StringValue("GetInstance.Data.DagType");
+			data.Status = _ctx.StringValue("GetInstance.Data.Status");
+			data.Bizdate = _ctx.LongValue("GetInstance.Data.Bizdate");
+			data.ParamValues = _ctx.StringValue("GetInstance.Data.ParamValues");
+			data.CycTime = _ctx.LongValue("GetInstance.Data.CycTime");
+			data.FinishTime = _ctx.LongValue("GetInstance.Data.FinishTime");
+			data.BeginWaitTimeTime = _ctx.LongValue("GetInstance.Data.BeginWaitTimeTime");
+			data.BeginWaitResTime = _ctx.LongValue("GetInstance.Data.BeginWaitResTime");
+			data.BeginRunningTime = _ctx.LongValue("GetInstance.Data.BeginRunningTime");
+			data.CreateTime = _ctx.LongValue("GetInstance.Data.CreateTime");
+			data.ModifyTime = _ctx.LongValue("GetInstance.Data.ModifyTime");
+			data.NodeName = _ctx.StringValue("GetInstance.Data.NodeName");
+			data.Priority = _ctx.IntegerValue("GetInstance.Data.Priority");
+			data.BaselineId = _ctx.LongValue("GetInstance.Data.BaselineId");
+			data.Repeatability = _ctx.BooleanValue("GetInstance.Data.Repeatability");
+			data.RepeatInterval = _ctx.LongValue("GetInstance.Data.RepeatInterval");
+			data.Connection = _ctx.StringValue("GetInstance.Data.Connection");
+			data.DqcType = _ctx.IntegerValue("GetInstance.Data.DqcType");
+			data.DqcDescription = _ctx.StringValue("GetInstance.Data.DqcDescription");
+			data.ErrorMessage = _ctx.StringValue("GetInstance.Data.ErrorMessage");
+			data.RelatedFlowId = _ctx.LongValue("GetInstance.Data.RelatedFlowId");
 			getInstanceResponse.Data = data;
         
 			return getInstanceResponse;

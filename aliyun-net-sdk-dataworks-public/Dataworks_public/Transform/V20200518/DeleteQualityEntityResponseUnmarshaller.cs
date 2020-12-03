@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class DeleteQualityEntityResponseUnmarshaller
     {
-        public static DeleteQualityEntityResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteQualityEntityResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteQualityEntityResponse deleteQualityEntityResponse = new DeleteQualityEntityResponse();
 
-			deleteQualityEntityResponse.HttpResponse = context.HttpResponse;
-			deleteQualityEntityResponse.Success = context.BooleanValue("DeleteQualityEntity.Success");
-			deleteQualityEntityResponse.ErrorCode = context.StringValue("DeleteQualityEntity.ErrorCode");
-			deleteQualityEntityResponse.ErrorMessage = context.StringValue("DeleteQualityEntity.ErrorMessage");
-			deleteQualityEntityResponse.HttpStatusCode = context.IntegerValue("DeleteQualityEntity.HttpStatusCode");
-			deleteQualityEntityResponse.Data = context.BooleanValue("DeleteQualityEntity.Data");
-			deleteQualityEntityResponse.RequestId = context.StringValue("DeleteQualityEntity.RequestId");
+			deleteQualityEntityResponse.HttpResponse = _ctx.HttpResponse;
+			deleteQualityEntityResponse.Success = _ctx.BooleanValue("DeleteQualityEntity.Success");
+			deleteQualityEntityResponse.ErrorCode = _ctx.StringValue("DeleteQualityEntity.ErrorCode");
+			deleteQualityEntityResponse.ErrorMessage = _ctx.StringValue("DeleteQualityEntity.ErrorMessage");
+			deleteQualityEntityResponse.HttpStatusCode = _ctx.IntegerValue("DeleteQualityEntity.HttpStatusCode");
+			deleteQualityEntityResponse.Data = _ctx.BooleanValue("DeleteQualityEntity.Data");
+			deleteQualityEntityResponse.RequestId = _ctx.StringValue("DeleteQualityEntity.RequestId");
         
 			return deleteQualityEntityResponse;
         }

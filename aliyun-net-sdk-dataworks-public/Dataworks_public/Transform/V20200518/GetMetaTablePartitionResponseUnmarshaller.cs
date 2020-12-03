@@ -26,32 +26,36 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetMetaTablePartitionResponseUnmarshaller
     {
-        public static GetMetaTablePartitionResponse Unmarshall(UnmarshallerContext context)
+        public static GetMetaTablePartitionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMetaTablePartitionResponse getMetaTablePartitionResponse = new GetMetaTablePartitionResponse();
 
-			getMetaTablePartitionResponse.HttpResponse = context.HttpResponse;
-			getMetaTablePartitionResponse.RequestId = context.StringValue("GetMetaTablePartition.RequestId");
-			getMetaTablePartitionResponse.ErrorCode = context.StringValue("GetMetaTablePartition.ErrorCode");
-			getMetaTablePartitionResponse.ErrorMessage = context.StringValue("GetMetaTablePartition.ErrorMessage");
-			getMetaTablePartitionResponse.HttpStatusCode = context.IntegerValue("GetMetaTablePartition.HttpStatusCode");
-			getMetaTablePartitionResponse.Success = context.BooleanValue("GetMetaTablePartition.Success");
+			getMetaTablePartitionResponse.HttpResponse = _ctx.HttpResponse;
+			getMetaTablePartitionResponse.RequestId = _ctx.StringValue("GetMetaTablePartition.RequestId");
+			getMetaTablePartitionResponse.ErrorCode = _ctx.StringValue("GetMetaTablePartition.ErrorCode");
+			getMetaTablePartitionResponse.ErrorMessage = _ctx.StringValue("GetMetaTablePartition.ErrorMessage");
+			getMetaTablePartitionResponse.HttpStatusCode = _ctx.IntegerValue("GetMetaTablePartition.HttpStatusCode");
+			getMetaTablePartitionResponse.Success = _ctx.BooleanValue("GetMetaTablePartition.Success");
 
 			GetMetaTablePartitionResponse.GetMetaTablePartition_Data data = new GetMetaTablePartitionResponse.GetMetaTablePartition_Data();
-			data.PageNumber = context.IntegerValue("GetMetaTablePartition.Data.PageNumber");
-			data.PageSize = context.IntegerValue("GetMetaTablePartition.Data.PageSize");
-			data.TotalCount = context.LongValue("GetMetaTablePartition.Data.TotalCount");
+			data.PageNumber = _ctx.IntegerValue("GetMetaTablePartition.Data.PageNumber");
+			data.PageSize = _ctx.IntegerValue("GetMetaTablePartition.Data.PageSize");
+			data.TotalCount = _ctx.LongValue("GetMetaTablePartition.Data.TotalCount");
 
 			List<GetMetaTablePartitionResponse.GetMetaTablePartition_Data.GetMetaTablePartition_DataEntityListItem> data_dataEntityList = new List<GetMetaTablePartitionResponse.GetMetaTablePartition_Data.GetMetaTablePartition_DataEntityListItem>();
-			for (int i = 0; i < context.Length("GetMetaTablePartition.Data.DataEntityList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetMetaTablePartition.Data.DataEntityList.Length"); i++) {
 				GetMetaTablePartitionResponse.GetMetaTablePartition_Data.GetMetaTablePartition_DataEntityListItem dataEntityListItem = new GetMetaTablePartitionResponse.GetMetaTablePartition_Data.GetMetaTablePartition_DataEntityListItem();
-				dataEntityListItem.PartitionGuid = context.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].PartitionGuid");
-				dataEntityListItem.PartitionName = context.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].PartitionName");
-				dataEntityListItem.CreateTime = context.LongValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].CreateTime");
-				dataEntityListItem.DataSize = context.LongValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].DataSize");
-				dataEntityListItem.RecordCount = context.LongValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].RecordCount");
-				dataEntityListItem.ModifiedTime = context.LongValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].ModifiedTime");
-				dataEntityListItem.TableGuid = context.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].TableGuid");
+				dataEntityListItem.PartitionGuid = _ctx.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].PartitionGuid");
+				dataEntityListItem.PartitionName = _ctx.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].PartitionName");
+				dataEntityListItem.CreateTime = _ctx.LongValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].CreateTime");
+				dataEntityListItem.DataSize = _ctx.LongValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].DataSize");
+				dataEntityListItem.RecordCount = _ctx.LongValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].RecordCount");
+				dataEntityListItem.ModifiedTime = _ctx.LongValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].ModifiedTime");
+				dataEntityListItem.TableGuid = _ctx.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].TableGuid");
+				dataEntityListItem.Comment = _ctx.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].Comment");
+				dataEntityListItem.PartitionType = _ctx.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].PartitionType");
+				dataEntityListItem.PartitionPath = _ctx.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].PartitionPath");
+				dataEntityListItem.PartitionLocation = _ctx.StringValue("GetMetaTablePartition.Data.DataEntityList["+ i +"].PartitionLocation");
 
 				data_dataEntityList.Add(dataEntityListItem);
 			}

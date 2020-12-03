@@ -187,6 +187,10 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private string projectName;
 
+				private string clusterId;
+
+				private string databaseName;
+
 				public string TableName
 				{
 					get
@@ -280,6 +284,30 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						projectName = value;
+					}
+				}
+
+				public string ClusterId
+				{
+					get
+					{
+						return clusterId;
+					}
+					set	
+					{
+						clusterId = value;
+					}
+				}
+
+				public string DatabaseName
+				{
+					get
+					{
+						return databaseName;
+					}
+					set	
+					{
+						databaseName = value;
 					}
 				}
 			}

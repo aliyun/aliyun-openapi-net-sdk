@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class CreateQualityRelativeNodeResponseUnmarshaller
     {
-        public static CreateQualityRelativeNodeResponse Unmarshall(UnmarshallerContext context)
+        public static CreateQualityRelativeNodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateQualityRelativeNodeResponse createQualityRelativeNodeResponse = new CreateQualityRelativeNodeResponse();
 
-			createQualityRelativeNodeResponse.HttpResponse = context.HttpResponse;
-			createQualityRelativeNodeResponse.Success = context.BooleanValue("CreateQualityRelativeNode.Success");
-			createQualityRelativeNodeResponse.ErrorCode = context.StringValue("CreateQualityRelativeNode.ErrorCode");
-			createQualityRelativeNodeResponse.ErrorMessage = context.StringValue("CreateQualityRelativeNode.ErrorMessage");
-			createQualityRelativeNodeResponse.HttpStatusCode = context.IntegerValue("CreateQualityRelativeNode.HttpStatusCode");
-			createQualityRelativeNodeResponse.Data = context.BooleanValue("CreateQualityRelativeNode.Data");
-			createQualityRelativeNodeResponse.RequestId = context.StringValue("CreateQualityRelativeNode.RequestId");
+			createQualityRelativeNodeResponse.HttpResponse = _ctx.HttpResponse;
+			createQualityRelativeNodeResponse.Success = _ctx.BooleanValue("CreateQualityRelativeNode.Success");
+			createQualityRelativeNodeResponse.ErrorCode = _ctx.StringValue("CreateQualityRelativeNode.ErrorCode");
+			createQualityRelativeNodeResponse.ErrorMessage = _ctx.StringValue("CreateQualityRelativeNode.ErrorMessage");
+			createQualityRelativeNodeResponse.HttpStatusCode = _ctx.IntegerValue("CreateQualityRelativeNode.HttpStatusCode");
+			createQualityRelativeNodeResponse.Data = _ctx.BooleanValue("CreateQualityRelativeNode.Data");
+			createQualityRelativeNodeResponse.RequestId = _ctx.StringValue("CreateQualityRelativeNode.RequestId");
         
 			return createQualityRelativeNodeResponse;
         }

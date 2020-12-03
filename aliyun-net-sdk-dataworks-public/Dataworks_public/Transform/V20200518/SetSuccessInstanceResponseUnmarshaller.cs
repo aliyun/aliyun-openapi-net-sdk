@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class SetSuccessInstanceResponseUnmarshaller
     {
-        public static SetSuccessInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static SetSuccessInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetSuccessInstanceResponse setSuccessInstanceResponse = new SetSuccessInstanceResponse();
 
-			setSuccessInstanceResponse.HttpResponse = context.HttpResponse;
-			setSuccessInstanceResponse.ErrorCode = context.StringValue("SetSuccessInstance.ErrorCode");
-			setSuccessInstanceResponse.ErrorMessage = context.StringValue("SetSuccessInstance.ErrorMessage");
-			setSuccessInstanceResponse.HttpStatusCode = context.IntegerValue("SetSuccessInstance.HttpStatusCode");
-			setSuccessInstanceResponse.RequestId = context.StringValue("SetSuccessInstance.RequestId");
-			setSuccessInstanceResponse.Success = context.BooleanValue("SetSuccessInstance.Success");
-			setSuccessInstanceResponse.Data = context.BooleanValue("SetSuccessInstance.Data");
+			setSuccessInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			setSuccessInstanceResponse.ErrorCode = _ctx.StringValue("SetSuccessInstance.ErrorCode");
+			setSuccessInstanceResponse.ErrorMessage = _ctx.StringValue("SetSuccessInstance.ErrorMessage");
+			setSuccessInstanceResponse.HttpStatusCode = _ctx.IntegerValue("SetSuccessInstance.HttpStatusCode");
+			setSuccessInstanceResponse.RequestId = _ctx.StringValue("SetSuccessInstance.RequestId");
+			setSuccessInstanceResponse.Success = _ctx.BooleanValue("SetSuccessInstance.Success");
+			setSuccessInstanceResponse.Data = _ctx.BooleanValue("SetSuccessInstance.Data");
         
 			return setSuccessInstanceResponse;
         }

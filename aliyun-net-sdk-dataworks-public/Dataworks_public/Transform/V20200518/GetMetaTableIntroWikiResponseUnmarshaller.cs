@@ -26,24 +26,24 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetMetaTableIntroWikiResponseUnmarshaller
     {
-        public static GetMetaTableIntroWikiResponse Unmarshall(UnmarshallerContext context)
+        public static GetMetaTableIntroWikiResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMetaTableIntroWikiResponse getMetaTableIntroWikiResponse = new GetMetaTableIntroWikiResponse();
 
-			getMetaTableIntroWikiResponse.HttpResponse = context.HttpResponse;
-			getMetaTableIntroWikiResponse.RequestId = context.StringValue("GetMetaTableIntroWiki.RequestId");
-			getMetaTableIntroWikiResponse.ErrorCode = context.StringValue("GetMetaTableIntroWiki.ErrorCode");
-			getMetaTableIntroWikiResponse.ErrorMessage = context.StringValue("GetMetaTableIntroWiki.ErrorMessage");
-			getMetaTableIntroWikiResponse.HttpStatusCode = context.IntegerValue("GetMetaTableIntroWiki.HttpStatusCode");
-			getMetaTableIntroWikiResponse.Success = context.BooleanValue("GetMetaTableIntroWiki.Success");
+			getMetaTableIntroWikiResponse.HttpResponse = _ctx.HttpResponse;
+			getMetaTableIntroWikiResponse.RequestId = _ctx.StringValue("GetMetaTableIntroWiki.RequestId");
+			getMetaTableIntroWikiResponse.ErrorCode = _ctx.StringValue("GetMetaTableIntroWiki.ErrorCode");
+			getMetaTableIntroWikiResponse.ErrorMessage = _ctx.StringValue("GetMetaTableIntroWiki.ErrorMessage");
+			getMetaTableIntroWikiResponse.HttpStatusCode = _ctx.IntegerValue("GetMetaTableIntroWiki.HttpStatusCode");
+			getMetaTableIntroWikiResponse.Success = _ctx.BooleanValue("GetMetaTableIntroWiki.Success");
 
 			GetMetaTableIntroWikiResponse.GetMetaTableIntroWiki_Data data = new GetMetaTableIntroWikiResponse.GetMetaTableIntroWiki_Data();
-			data.CreateTime = context.LongValue("GetMetaTableIntroWiki.Data.CreateTime");
-			data.ModifiedTime = context.LongValue("GetMetaTableIntroWiki.Data.ModifiedTime");
-			data.Creator = context.StringValue("GetMetaTableIntroWiki.Data.Creator");
-			data.Version = context.LongValue("GetMetaTableIntroWiki.Data.Version");
-			data.CreatorName = context.StringValue("GetMetaTableIntroWiki.Data.CreatorName");
-			data.Content = context.StringValue("GetMetaTableIntroWiki.Data.Content");
+			data.CreateTime = _ctx.LongValue("GetMetaTableIntroWiki.Data.CreateTime");
+			data.ModifiedTime = _ctx.LongValue("GetMetaTableIntroWiki.Data.ModifiedTime");
+			data.Creator = _ctx.StringValue("GetMetaTableIntroWiki.Data.Creator");
+			data.Version = _ctx.LongValue("GetMetaTableIntroWiki.Data.Version");
+			data.CreatorName = _ctx.StringValue("GetMetaTableIntroWiki.Data.CreatorName");
+			data.Content = _ctx.StringValue("GetMetaTableIntroWiki.Data.Content");
 			getMetaTableIntroWikiResponse.Data = data;
         
 			return getMetaTableIntroWikiResponse;

@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class UpdateQualityFollowerResponseUnmarshaller
     {
-        public static UpdateQualityFollowerResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateQualityFollowerResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateQualityFollowerResponse updateQualityFollowerResponse = new UpdateQualityFollowerResponse();
 
-			updateQualityFollowerResponse.HttpResponse = context.HttpResponse;
-			updateQualityFollowerResponse.ErrorCode = context.StringValue("UpdateQualityFollower.ErrorCode");
-			updateQualityFollowerResponse.Data = context.BooleanValue("UpdateQualityFollower.Data");
-			updateQualityFollowerResponse.Success = context.BooleanValue("UpdateQualityFollower.Success");
-			updateQualityFollowerResponse.ErrorMessage = context.StringValue("UpdateQualityFollower.ErrorMessage");
-			updateQualityFollowerResponse.HttpStatusCode = context.IntegerValue("UpdateQualityFollower.HttpStatusCode");
-			updateQualityFollowerResponse.RequestId = context.StringValue("UpdateQualityFollower.RequestId");
+			updateQualityFollowerResponse.HttpResponse = _ctx.HttpResponse;
+			updateQualityFollowerResponse.ErrorCode = _ctx.StringValue("UpdateQualityFollower.ErrorCode");
+			updateQualityFollowerResponse.Data = _ctx.BooleanValue("UpdateQualityFollower.Data");
+			updateQualityFollowerResponse.Success = _ctx.BooleanValue("UpdateQualityFollower.Success");
+			updateQualityFollowerResponse.ErrorMessage = _ctx.StringValue("UpdateQualityFollower.ErrorMessage");
+			updateQualityFollowerResponse.HttpStatusCode = _ctx.IntegerValue("UpdateQualityFollower.HttpStatusCode");
+			updateQualityFollowerResponse.RequestId = _ctx.StringValue("UpdateQualityFollower.RequestId");
         
 			return updateQualityFollowerResponse;
         }

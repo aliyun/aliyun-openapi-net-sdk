@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetNodeCodeResponseUnmarshaller
     {
-        public static GetNodeCodeResponse Unmarshall(UnmarshallerContext context)
+        public static GetNodeCodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetNodeCodeResponse getNodeCodeResponse = new GetNodeCodeResponse();
 
-			getNodeCodeResponse.HttpResponse = context.HttpResponse;
-			getNodeCodeResponse.Success = context.BooleanValue("GetNodeCode.Success");
-			getNodeCodeResponse.ErrorCode = context.StringValue("GetNodeCode.ErrorCode");
-			getNodeCodeResponse.ErrorMessage = context.StringValue("GetNodeCode.ErrorMessage");
-			getNodeCodeResponse.HttpStatusCode = context.IntegerValue("GetNodeCode.HttpStatusCode");
-			getNodeCodeResponse.RequestId = context.StringValue("GetNodeCode.RequestId");
-			getNodeCodeResponse.Data = context.StringValue("GetNodeCode.Data");
+			getNodeCodeResponse.HttpResponse = _ctx.HttpResponse;
+			getNodeCodeResponse.Success = _ctx.BooleanValue("GetNodeCode.Success");
+			getNodeCodeResponse.ErrorCode = _ctx.StringValue("GetNodeCode.ErrorCode");
+			getNodeCodeResponse.ErrorMessage = _ctx.StringValue("GetNodeCode.ErrorMessage");
+			getNodeCodeResponse.HttpStatusCode = _ctx.IntegerValue("GetNodeCode.HttpStatusCode");
+			getNodeCodeResponse.RequestId = _ctx.StringValue("GetNodeCode.RequestId");
+			getNodeCodeResponse.Data = _ctx.StringValue("GetNodeCode.Data");
         
 			return getNodeCodeResponse;
         }

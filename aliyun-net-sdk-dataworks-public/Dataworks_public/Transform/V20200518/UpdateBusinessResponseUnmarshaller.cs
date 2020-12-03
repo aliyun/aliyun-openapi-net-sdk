@@ -26,16 +26,16 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class UpdateBusinessResponseUnmarshaller
     {
-        public static UpdateBusinessResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateBusinessResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateBusinessResponse updateBusinessResponse = new UpdateBusinessResponse();
 
-			updateBusinessResponse.HttpResponse = context.HttpResponse;
-			updateBusinessResponse.RequestId = context.StringValue("UpdateBusiness.RequestId");
-			updateBusinessResponse.Success = context.BooleanValue("UpdateBusiness.Success");
-			updateBusinessResponse.ErrorCode = context.StringValue("UpdateBusiness.ErrorCode");
-			updateBusinessResponse.ErrorMessage = context.StringValue("UpdateBusiness.ErrorMessage");
-			updateBusinessResponse.HttpStatusCode = context.IntegerValue("UpdateBusiness.HttpStatusCode");
+			updateBusinessResponse.HttpResponse = _ctx.HttpResponse;
+			updateBusinessResponse.RequestId = _ctx.StringValue("UpdateBusiness.RequestId");
+			updateBusinessResponse.Success = _ctx.BooleanValue("UpdateBusiness.Success");
+			updateBusinessResponse.ErrorCode = _ctx.StringValue("UpdateBusiness.ErrorCode");
+			updateBusinessResponse.ErrorMessage = _ctx.StringValue("UpdateBusiness.ErrorMessage");
+			updateBusinessResponse.HttpStatusCode = _ctx.IntegerValue("UpdateBusiness.HttpStatusCode");
         
 			return updateBusinessResponse;
         }

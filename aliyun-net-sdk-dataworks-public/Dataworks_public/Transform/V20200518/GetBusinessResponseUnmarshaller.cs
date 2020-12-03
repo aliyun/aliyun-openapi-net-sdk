@@ -26,24 +26,24 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class GetBusinessResponseUnmarshaller
     {
-        public static GetBusinessResponse Unmarshall(UnmarshallerContext context)
+        public static GetBusinessResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetBusinessResponse getBusinessResponse = new GetBusinessResponse();
 
-			getBusinessResponse.HttpResponse = context.HttpResponse;
-			getBusinessResponse.RequestId = context.StringValue("GetBusiness.RequestId");
-			getBusinessResponse.Success = context.BooleanValue("GetBusiness.Success");
-			getBusinessResponse.ErrorCode = context.StringValue("GetBusiness.ErrorCode");
-			getBusinessResponse.ErrorMessage = context.StringValue("GetBusiness.ErrorMessage");
-			getBusinessResponse.HttpStatusCode = context.IntegerValue("GetBusiness.HttpStatusCode");
+			getBusinessResponse.HttpResponse = _ctx.HttpResponse;
+			getBusinessResponse.RequestId = _ctx.StringValue("GetBusiness.RequestId");
+			getBusinessResponse.Success = _ctx.BooleanValue("GetBusiness.Success");
+			getBusinessResponse.ErrorCode = _ctx.StringValue("GetBusiness.ErrorCode");
+			getBusinessResponse.ErrorMessage = _ctx.StringValue("GetBusiness.ErrorMessage");
+			getBusinessResponse.HttpStatusCode = _ctx.IntegerValue("GetBusiness.HttpStatusCode");
 
 			GetBusinessResponse.GetBusiness_Data data = new GetBusinessResponse.GetBusiness_Data();
-			data.BusinessId = context.LongValue("GetBusiness.Data.BusinessId");
-			data.BusinessName = context.StringValue("GetBusiness.Data.BusinessName");
-			data.ProjectId = context.StringValue("GetBusiness.Data.ProjectId");
-			data.Owner = context.StringValue("GetBusiness.Data.Owner");
-			data.Description = context.StringValue("GetBusiness.Data.Description");
-			data.UseType = context.StringValue("GetBusiness.Data.UseType");
+			data.BusinessId = _ctx.LongValue("GetBusiness.Data.BusinessId");
+			data.BusinessName = _ctx.StringValue("GetBusiness.Data.BusinessName");
+			data.ProjectId = _ctx.StringValue("GetBusiness.Data.ProjectId");
+			data.Owner = _ctx.StringValue("GetBusiness.Data.Owner");
+			data.Description = _ctx.StringValue("GetBusiness.Data.Description");
+			data.UseType = _ctx.StringValue("GetBusiness.Data.UseType");
 			getBusinessResponse.Data = data;
         
 			return getBusinessResponse;

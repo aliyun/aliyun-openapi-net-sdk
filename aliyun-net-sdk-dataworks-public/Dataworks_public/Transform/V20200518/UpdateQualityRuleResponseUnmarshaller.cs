@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class UpdateQualityRuleResponseUnmarshaller
     {
-        public static UpdateQualityRuleResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateQualityRuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateQualityRuleResponse updateQualityRuleResponse = new UpdateQualityRuleResponse();
 
-			updateQualityRuleResponse.HttpResponse = context.HttpResponse;
-			updateQualityRuleResponse.ErrorCode = context.StringValue("UpdateQualityRule.ErrorCode");
-			updateQualityRuleResponse.Data = context.BooleanValue("UpdateQualityRule.Data");
-			updateQualityRuleResponse.Success = context.BooleanValue("UpdateQualityRule.Success");
-			updateQualityRuleResponse.ErrorMessage = context.StringValue("UpdateQualityRule.ErrorMessage");
-			updateQualityRuleResponse.HttpStatusCode = context.IntegerValue("UpdateQualityRule.HttpStatusCode");
-			updateQualityRuleResponse.RequestId = context.StringValue("UpdateQualityRule.RequestId");
+			updateQualityRuleResponse.HttpResponse = _ctx.HttpResponse;
+			updateQualityRuleResponse.ErrorCode = _ctx.StringValue("UpdateQualityRule.ErrorCode");
+			updateQualityRuleResponse.Data = _ctx.BooleanValue("UpdateQualityRule.Data");
+			updateQualityRuleResponse.Success = _ctx.BooleanValue("UpdateQualityRule.Success");
+			updateQualityRuleResponse.ErrorMessage = _ctx.StringValue("UpdateQualityRule.ErrorMessage");
+			updateQualityRuleResponse.HttpStatusCode = _ctx.IntegerValue("UpdateQualityRule.HttpStatusCode");
+			updateQualityRuleResponse.RequestId = _ctx.StringValue("UpdateQualityRule.RequestId");
         
 			return updateQualityRuleResponse;
         }

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dataworks_public;
 using Aliyun.Acs.dataworks_public.Transform;
 using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
@@ -30,15 +31,21 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
     public class SearchMetaTablesRequest : RpcAcsRequest<SearchMetaTablesResponse>
     {
         public SearchMetaTablesRequest()
-            : base("dataworks-public", "2020-05-18", "SearchMetaTables", "dide", "openAPI")
+            : base("dataworks-public", "2020-05-18", "SearchMetaTables")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dataworks_public.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dataworks_public.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
+
+		private string dataSourceType;
+
+		private string clusterId;
+
+		private int? pageNumber;
 
 		private int? entityType;
 
@@ -48,7 +55,44 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string keyword;
 
-		private int? pageNumber;
+		public string DataSourceType
+		{
+			get
+			{
+				return dataSourceType;
+			}
+			set	
+			{
+				dataSourceType = value;
+				DictionaryUtil.Add(QueryParameters, "DataSourceType", value);
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
 
 		public int? EntityType
 		{
@@ -99,19 +143,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				keyword = value;
 				DictionaryUtil.Add(QueryParameters, "Keyword", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

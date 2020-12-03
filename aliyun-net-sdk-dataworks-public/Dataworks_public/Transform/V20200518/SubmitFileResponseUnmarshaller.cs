@@ -26,17 +26,17 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
     public class SubmitFileResponseUnmarshaller
     {
-        public static SubmitFileResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitFileResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitFileResponse submitFileResponse = new SubmitFileResponse();
 
-			submitFileResponse.HttpResponse = context.HttpResponse;
-			submitFileResponse.RequestId = context.StringValue("SubmitFile.RequestId");
-			submitFileResponse.Success = context.BooleanValue("SubmitFile.Success");
-			submitFileResponse.ErrorCode = context.StringValue("SubmitFile.ErrorCode");
-			submitFileResponse.ErrorMessage = context.StringValue("SubmitFile.ErrorMessage");
-			submitFileResponse.Data = context.LongValue("SubmitFile.Data");
-			submitFileResponse.HttpStatusCode = context.IntegerValue("SubmitFile.HttpStatusCode");
+			submitFileResponse.HttpResponse = _ctx.HttpResponse;
+			submitFileResponse.RequestId = _ctx.StringValue("SubmitFile.RequestId");
+			submitFileResponse.Success = _ctx.BooleanValue("SubmitFile.Success");
+			submitFileResponse.ErrorCode = _ctx.StringValue("SubmitFile.ErrorCode");
+			submitFileResponse.ErrorMessage = _ctx.StringValue("SubmitFile.ErrorMessage");
+			submitFileResponse.Data = _ctx.LongValue("SubmitFile.Data");
+			submitFileResponse.HttpStatusCode = _ctx.IntegerValue("SubmitFile.HttpStatusCode");
         
 			return submitFileResponse;
         }
