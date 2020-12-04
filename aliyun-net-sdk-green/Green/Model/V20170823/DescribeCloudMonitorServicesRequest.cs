@@ -27,10 +27,10 @@ using Aliyun.Acs.Green.Transform.V20170823;
 
 namespace Aliyun.Acs.Green.Model.V20170823
 {
-    public class DescribeOssStockStatusRequest : RpcAcsRequest<DescribeOssStockStatusResponse>
+    public class DescribeCloudMonitorServicesRequest : RpcAcsRequest<DescribeCloudMonitorServicesResponse>
     {
-        public DescribeOssStockStatusRequest()
-            : base("Green", "2017-08-23", "DescribeOssStockStatus", "green", "openAPI")
+        public DescribeCloudMonitorServicesRequest()
+            : base("Green", "2017-08-23", "DescribeCloudMonitorServices", "green", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,24 +40,11 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			Method = MethodType.POST;
         }
 
-		private long? stockTaskId;
-
 		private string sourceIp;
 
-		private string lang;
+		private string pageSize;
 
-		public long? StockTaskId
-		{
-			get
-			{
-				return stockTaskId;
-			}
-			set	
-			{
-				stockTaskId = value;
-				DictionaryUtil.Add(QueryParameters, "StockTaskId", value.ToString());
-			}
-		}
+		private string page;
 
 		public string SourceIp
 		{
@@ -72,16 +59,29 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
-		public string Lang
+		public string PageSize
 		{
 			get
 			{
-				return lang;
+				return pageSize;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value);
+			}
+		}
+
+		public string Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
+				DictionaryUtil.Add(QueryParameters, "Page", value);
 			}
 		}
 
@@ -90,9 +90,9 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			return false;
 		}
 
-        public override DescribeOssStockStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeCloudMonitorServicesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeOssStockStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCloudMonitorServicesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

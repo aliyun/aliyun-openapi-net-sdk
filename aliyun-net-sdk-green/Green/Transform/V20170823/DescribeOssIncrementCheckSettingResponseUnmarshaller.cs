@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 			describeOssIncrementCheckSettingResponse.AutoFreezeType = _ctx.StringValue("DescribeOssIncrementCheckSetting.AutoFreezeType");
 			describeOssIncrementCheckSettingResponse.CallbackId = _ctx.StringValue("DescribeOssIncrementCheckSetting.CallbackId");
 			describeOssIncrementCheckSettingResponse.CallbackName = _ctx.StringValue("DescribeOssIncrementCheckSetting.CallbackName");
+			describeOssIncrementCheckSettingResponse.AudioMaxSize = _ctx.IntegerValue("DescribeOssIncrementCheckSetting.AudioMaxSize");
+			describeOssIncrementCheckSettingResponse.AudioAutoFreezeOpened = _ctx.BooleanValue("DescribeOssIncrementCheckSetting.AudioAutoFreezeOpened");
 
 			List<string> describeOssIncrementCheckSettingResponse_imageSceneList = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeOssIncrementCheckSetting.ImageSceneList.Length"); i++) {
@@ -59,6 +61,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 			}
 			describeOssIncrementCheckSettingResponse.VideoAutoFreezeSceneList = describeOssIncrementCheckSettingResponse_videoAutoFreezeSceneList;
 
+			List<string> describeOssIncrementCheckSettingResponse_audioSceneList = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeOssIncrementCheckSetting.AudioSceneList.Length"); i++) {
+				describeOssIncrementCheckSettingResponse_audioSceneList.Add(_ctx.StringValue("DescribeOssIncrementCheckSetting.AudioSceneList["+ i +"]"));
+			}
+			describeOssIncrementCheckSettingResponse.AudioSceneList = describeOssIncrementCheckSettingResponse_audioSceneList;
+
 			DescribeOssIncrementCheckSettingResponse.DescribeOssIncrementCheckSetting_ImageAutoFreeze imageAutoFreeze = new DescribeOssIncrementCheckSettingResponse.DescribeOssIncrementCheckSetting_ImageAutoFreeze();
 			imageAutoFreeze.Enabled = _ctx.BooleanValue("DescribeOssIncrementCheckSetting.ImageAutoFreeze.Enabled");
 			imageAutoFreeze.Porn = _ctx.StringValue("DescribeOssIncrementCheckSetting.ImageAutoFreeze.Porn");
@@ -66,6 +74,11 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 			imageAutoFreeze.Ad = _ctx.StringValue("DescribeOssIncrementCheckSetting.ImageAutoFreeze.Ad");
 			imageAutoFreeze.Live = _ctx.StringValue("DescribeOssIncrementCheckSetting.ImageAutoFreeze.Live");
 			describeOssIncrementCheckSettingResponse.ImageAutoFreeze = imageAutoFreeze;
+
+			DescribeOssIncrementCheckSettingResponse.DescribeOssIncrementCheckSetting_AudioAntispamFreezeConfig audioAntispamFreezeConfig = new DescribeOssIncrementCheckSettingResponse.DescribeOssIncrementCheckSetting_AudioAntispamFreezeConfig();
+			audioAntispamFreezeConfig.Type = _ctx.StringValue("DescribeOssIncrementCheckSetting.AudioAntispamFreezeConfig.Type");
+			audioAntispamFreezeConfig._Value = _ctx.StringValue("DescribeOssIncrementCheckSetting.AudioAntispamFreezeConfig.Value");
+			describeOssIncrementCheckSettingResponse.AudioAntispamFreezeConfig = audioAntispamFreezeConfig;
 
 			List<DescribeOssIncrementCheckSettingResponse.DescribeOssIncrementCheckSetting_BucketConfig> describeOssIncrementCheckSettingResponse_bucketConfigList = new List<DescribeOssIncrementCheckSettingResponse.DescribeOssIncrementCheckSetting_BucketConfig>();
 			for (int i = 0; i < _ctx.Length("DescribeOssIncrementCheckSetting.BucketConfigList.Length"); i++) {

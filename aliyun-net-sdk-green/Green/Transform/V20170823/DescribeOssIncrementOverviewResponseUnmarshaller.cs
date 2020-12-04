@@ -40,6 +40,7 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 			describeOssIncrementOverviewResponse.AdUnhandleCount = _ctx.IntegerValue("DescribeOssIncrementOverview.AdUnhandleCount");
 			describeOssIncrementOverviewResponse.LiveUnhandleCount = _ctx.IntegerValue("DescribeOssIncrementOverview.LiveUnhandleCount");
 			describeOssIncrementOverviewResponse.VoiceAntispamUnhandleCount = _ctx.IntegerValue("DescribeOssIncrementOverview.VoiceAntispamUnhandleCount");
+			describeOssIncrementOverviewResponse.AudioCount = _ctx.IntegerValue("DescribeOssIncrementOverview.AudioCount");
         
 			return describeOssIncrementOverviewResponse;
         }

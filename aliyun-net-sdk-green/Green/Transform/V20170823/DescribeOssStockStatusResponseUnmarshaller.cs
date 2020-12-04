@@ -37,9 +37,16 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 			describeOssStockStatusResponse.ImageTotalCount = _ctx.IntegerValue("DescribeOssStockStatus.ImageTotalCount");
 			describeOssStockStatusResponse.ImagePornCount = _ctx.IntegerValue("DescribeOssStockStatus.ImagePornCount");
 			describeOssStockStatusResponse.ImageTerrorismCount = _ctx.IntegerValue("DescribeOssStockStatus.ImageTerrorismCount");
+			describeOssStockStatusResponse.ImageAdCount = _ctx.IntegerValue("DescribeOssStockStatus.ImageAdCount");
+			describeOssStockStatusResponse.ImageLiveCount = _ctx.IntegerValue("DescribeOssStockStatus.ImageLiveCount");
 			describeOssStockStatusResponse.VideoTotalCount = _ctx.IntegerValue("DescribeOssStockStatus.VideoTotalCount");
 			describeOssStockStatusResponse.VideoPornCount = _ctx.IntegerValue("DescribeOssStockStatus.VideoPornCount");
 			describeOssStockStatusResponse.VideoTerrorismCount = _ctx.IntegerValue("DescribeOssStockStatus.VideoTerrorismCount");
+			describeOssStockStatusResponse.VideoAdCount = _ctx.IntegerValue("DescribeOssStockStatus.VideoAdCount");
+			describeOssStockStatusResponse.VideoLiveCount = _ctx.IntegerValue("DescribeOssStockStatus.VideoLiveCount");
+			describeOssStockStatusResponse.VideoVoiceAntispamCount = _ctx.IntegerValue("DescribeOssStockStatus.VideoVoiceAntispamCount");
+			describeOssStockStatusResponse.AudioTotalCount = _ctx.IntegerValue("DescribeOssStockStatus.AudioTotalCount");
+			describeOssStockStatusResponse.AudioAntispamCount = _ctx.IntegerValue("DescribeOssStockStatus.AudioAntispamCount");
 
 			List<string> describeOssStockStatusResponse_sceneList = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeOssStockStatus.SceneList.Length"); i++) {

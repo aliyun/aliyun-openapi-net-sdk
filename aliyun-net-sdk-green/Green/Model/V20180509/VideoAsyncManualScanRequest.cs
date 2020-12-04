@@ -23,76 +23,42 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Green.Transform;
-using Aliyun.Acs.Green.Transform.V20170823;
+using Aliyun.Acs.Green.Transform.V20180509;
 
-namespace Aliyun.Acs.Green.Model.V20170823
+namespace Aliyun.Acs.Green.Model.V20180509
 {
-    public class DescribeOssStockStatusRequest : RpcAcsRequest<DescribeOssStockStatusResponse>
+    public class VideoAsyncManualScanRequest : RoaAcsRequest<VideoAsyncManualScanResponse>
     {
-        public DescribeOssStockStatusRequest()
-            : base("Green", "2017-08-23", "DescribeOssStockStatus", "green", "openAPI")
+        public VideoAsyncManualScanRequest()
+            : base("Green", "2018-05-09", "VideoAsyncManualScan", "green", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Green.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Green.Endpoint.endpointRegionalType, null);
             }
+			UriPattern = "/green/video/manual/asyncScan";
 			Method = MethodType.POST;
         }
 
-		private long? stockTaskId;
+		private string clientInfo;
 
-		private string sourceIp;
-
-		private string lang;
-
-		public long? StockTaskId
+		public string ClientInfo
 		{
 			get
 			{
-				return stockTaskId;
+				return clientInfo;
 			}
 			set	
 			{
-				stockTaskId = value;
-				DictionaryUtil.Add(QueryParameters, "StockTaskId", value.ToString());
+				clientInfo = value;
+				DictionaryUtil.Add(QueryParameters, "ClientInfo", value);
 			}
 		}
 
-		public string SourceIp
-		{
-			get
-			{
-				return sourceIp;
-			}
-			set	
-			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
-			}
-		}
-
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override DescribeOssStockStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override VideoAsyncManualScanResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeOssStockStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return VideoAsyncManualScanResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

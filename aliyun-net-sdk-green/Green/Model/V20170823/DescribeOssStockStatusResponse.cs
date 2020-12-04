@@ -37,11 +37,25 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 		private int? imageTerrorismCount;
 
+		private int? imageAdCount;
+
+		private int? imageLiveCount;
+
 		private int? videoTotalCount;
 
 		private int? videoPornCount;
 
 		private int? videoTerrorismCount;
+
+		private int? videoAdCount;
+
+		private int? videoLiveCount;
+
+		private int? videoVoiceAntispamCount;
+
+		private int? audioTotalCount;
+
+		private int? audioAntispamCount;
 
 		private List<DescribeOssStockStatus_Bucket> bucketList;
 
@@ -121,6 +135,30 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
+		public int? ImageAdCount
+		{
+			get
+			{
+				return imageAdCount;
+			}
+			set	
+			{
+				imageAdCount = value;
+			}
+		}
+
+		public int? ImageLiveCount
+		{
+			get
+			{
+				return imageLiveCount;
+			}
+			set	
+			{
+				imageLiveCount = value;
+			}
+		}
+
 		public int? VideoTotalCount
 		{
 			get
@@ -154,6 +192,66 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			set	
 			{
 				videoTerrorismCount = value;
+			}
+		}
+
+		public int? VideoAdCount
+		{
+			get
+			{
+				return videoAdCount;
+			}
+			set	
+			{
+				videoAdCount = value;
+			}
+		}
+
+		public int? VideoLiveCount
+		{
+			get
+			{
+				return videoLiveCount;
+			}
+			set	
+			{
+				videoLiveCount = value;
+			}
+		}
+
+		public int? VideoVoiceAntispamCount
+		{
+			get
+			{
+				return videoVoiceAntispamCount;
+			}
+			set	
+			{
+				videoVoiceAntispamCount = value;
+			}
+		}
+
+		public int? AudioTotalCount
+		{
+			get
+			{
+				return audioTotalCount;
+			}
+			set	
+			{
+				audioTotalCount = value;
+			}
+		}
+
+		public int? AudioAntispamCount
+		{
+			get
+			{
+				return audioAntispamCount;
+			}
+			set	
+			{
+				audioAntispamCount = value;
 			}
 		}
 

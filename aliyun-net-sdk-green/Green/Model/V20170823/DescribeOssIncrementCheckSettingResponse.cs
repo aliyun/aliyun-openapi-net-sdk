@@ -43,6 +43,10 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 		private string callbackName;
 
+		private int? audioMaxSize;
+
+		private bool? audioAutoFreezeOpened;
+
 		private List<DescribeOssIncrementCheckSetting_BucketConfig> bucketConfigList;
 
 		private List<string> imageSceneList;
@@ -51,7 +55,11 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 		private List<string> videoAutoFreezeSceneList;
 
+		private List<string> audioSceneList;
+
 		private DescribeOssIncrementCheckSetting_ImageAutoFreeze imageAutoFreeze;
+
+		private DescribeOssIncrementCheckSetting_AudioAntispamFreezeConfig audioAntispamFreezeConfig;
 
 		public string RequestId
 		{
@@ -161,6 +169,30 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
+		public int? AudioMaxSize
+		{
+			get
+			{
+				return audioMaxSize;
+			}
+			set	
+			{
+				audioMaxSize = value;
+			}
+		}
+
+		public bool? AudioAutoFreezeOpened
+		{
+			get
+			{
+				return audioAutoFreezeOpened;
+			}
+			set	
+			{
+				audioAutoFreezeOpened = value;
+			}
+		}
+
 		public List<DescribeOssIncrementCheckSetting_BucketConfig> BucketConfigList
 		{
 			get
@@ -209,6 +241,18 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
+		public List<string> AudioSceneList
+		{
+			get
+			{
+				return audioSceneList;
+			}
+			set	
+			{
+				audioSceneList = value;
+			}
+		}
+
 		public DescribeOssIncrementCheckSetting_ImageAutoFreeze ImageAutoFreeze
 		{
 			get
@@ -218,6 +262,18 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			set	
 			{
 				imageAutoFreeze = value;
+			}
+		}
+
+		public DescribeOssIncrementCheckSetting_AudioAntispamFreezeConfig AudioAntispamFreezeConfig
+		{
+			get
+			{
+				return audioAntispamFreezeConfig;
+			}
+			set	
+			{
+				audioAntispamFreezeConfig = value;
 			}
 		}
 
@@ -337,6 +393,38 @@ namespace Aliyun.Acs.Green.Model.V20170823
 				set	
 				{
 					live = value;
+				}
+			}
+		}
+
+		public class DescribeOssIncrementCheckSetting_AudioAntispamFreezeConfig
+		{
+
+			private string type;
+
+			private string _value;
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+
+			public string _Value
+			{
+				get
+				{
+					return _value;
+				}
+				set	
+				{
+					_value = value;
 				}
 			}
 		}
