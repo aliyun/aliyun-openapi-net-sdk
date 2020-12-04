@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class QueryDomainRealNameVerificationInfoResponseUnmarshaller
     {
-        public static QueryDomainRealNameVerificationInfoResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDomainRealNameVerificationInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDomainRealNameVerificationInfoResponse queryDomainRealNameVerificationInfoResponse = new QueryDomainRealNameVerificationInfoResponse();
 
-			queryDomainRealNameVerificationInfoResponse.HttpResponse = context.HttpResponse;
-			queryDomainRealNameVerificationInfoResponse.RequestId = context.StringValue("QueryDomainRealNameVerificationInfo.RequestId");
-			queryDomainRealNameVerificationInfoResponse.SubmissionDate = context.StringValue("QueryDomainRealNameVerificationInfo.SubmissionDate");
-			queryDomainRealNameVerificationInfoResponse.IdentityCredential = context.StringValue("QueryDomainRealNameVerificationInfo.IdentityCredential");
-			queryDomainRealNameVerificationInfoResponse.IdentityCredentialNo = context.StringValue("QueryDomainRealNameVerificationInfo.IdentityCredentialNo");
-			queryDomainRealNameVerificationInfoResponse.IdentityCredentialType = context.StringValue("QueryDomainRealNameVerificationInfo.IdentityCredentialType");
-			queryDomainRealNameVerificationInfoResponse.DomainName = context.StringValue("QueryDomainRealNameVerificationInfo.DomainName");
-			queryDomainRealNameVerificationInfoResponse.InstanceId = context.StringValue("QueryDomainRealNameVerificationInfo.InstanceId");
-			queryDomainRealNameVerificationInfoResponse.IdentityCredentialUrl = context.StringValue("QueryDomainRealNameVerificationInfo.IdentityCredentialUrl");
+			queryDomainRealNameVerificationInfoResponse.HttpResponse = _ctx.HttpResponse;
+			queryDomainRealNameVerificationInfoResponse.RequestId = _ctx.StringValue("QueryDomainRealNameVerificationInfo.RequestId");
+			queryDomainRealNameVerificationInfoResponse.SubmissionDate = _ctx.StringValue("QueryDomainRealNameVerificationInfo.SubmissionDate");
+			queryDomainRealNameVerificationInfoResponse.IdentityCredential = _ctx.StringValue("QueryDomainRealNameVerificationInfo.IdentityCredential");
+			queryDomainRealNameVerificationInfoResponse.IdentityCredentialNo = _ctx.StringValue("QueryDomainRealNameVerificationInfo.IdentityCredentialNo");
+			queryDomainRealNameVerificationInfoResponse.IdentityCredentialType = _ctx.StringValue("QueryDomainRealNameVerificationInfo.IdentityCredentialType");
+			queryDomainRealNameVerificationInfoResponse.DomainName = _ctx.StringValue("QueryDomainRealNameVerificationInfo.DomainName");
+			queryDomainRealNameVerificationInfoResponse.InstanceId = _ctx.StringValue("QueryDomainRealNameVerificationInfo.InstanceId");
+			queryDomainRealNameVerificationInfoResponse.IdentityCredentialUrl = _ctx.StringValue("QueryDomainRealNameVerificationInfo.IdentityCredentialUrl");
         
 			return queryDomainRealNameVerificationInfoResponse;
         }

@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class QueryEmailVerificationResponseUnmarshaller
     {
-        public static QueryEmailVerificationResponse Unmarshall(UnmarshallerContext context)
+        public static QueryEmailVerificationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryEmailVerificationResponse queryEmailVerificationResponse = new QueryEmailVerificationResponse();
 
-			queryEmailVerificationResponse.HttpResponse = context.HttpResponse;
-			queryEmailVerificationResponse.RequestId = context.StringValue("QueryEmailVerification.RequestId");
-			queryEmailVerificationResponse.GmtCreate = context.StringValue("QueryEmailVerification.GmtCreate");
-			queryEmailVerificationResponse.GmtModified = context.StringValue("QueryEmailVerification.GmtModified");
-			queryEmailVerificationResponse.Email = context.StringValue("QueryEmailVerification.Email");
-			queryEmailVerificationResponse.UserId = context.StringValue("QueryEmailVerification.UserId");
-			queryEmailVerificationResponse.EmailVerificationNo = context.StringValue("QueryEmailVerification.EmailVerificationNo");
-			queryEmailVerificationResponse.TokenSendTime = context.StringValue("QueryEmailVerification.TokenSendTime");
-			queryEmailVerificationResponse.VerificationStatus = context.IntegerValue("QueryEmailVerification.VerificationStatus");
-			queryEmailVerificationResponse.VerificationTime = context.StringValue("QueryEmailVerification.VerificationTime");
-			queryEmailVerificationResponse.SendIp = context.StringValue("QueryEmailVerification.SendIp");
-			queryEmailVerificationResponse.ConfirmIp = context.StringValue("QueryEmailVerification.ConfirmIp");
+			queryEmailVerificationResponse.HttpResponse = _ctx.HttpResponse;
+			queryEmailVerificationResponse.RequestId = _ctx.StringValue("QueryEmailVerification.RequestId");
+			queryEmailVerificationResponse.GmtCreate = _ctx.StringValue("QueryEmailVerification.GmtCreate");
+			queryEmailVerificationResponse.GmtModified = _ctx.StringValue("QueryEmailVerification.GmtModified");
+			queryEmailVerificationResponse.Email = _ctx.StringValue("QueryEmailVerification.Email");
+			queryEmailVerificationResponse.UserId = _ctx.StringValue("QueryEmailVerification.UserId");
+			queryEmailVerificationResponse.EmailVerificationNo = _ctx.StringValue("QueryEmailVerification.EmailVerificationNo");
+			queryEmailVerificationResponse.TokenSendTime = _ctx.StringValue("QueryEmailVerification.TokenSendTime");
+			queryEmailVerificationResponse.VerificationStatus = _ctx.IntegerValue("QueryEmailVerification.VerificationStatus");
+			queryEmailVerificationResponse.VerificationTime = _ctx.StringValue("QueryEmailVerification.VerificationTime");
+			queryEmailVerificationResponse.SendIp = _ctx.StringValue("QueryEmailVerification.SendIp");
+			queryEmailVerificationResponse.ConfirmIp = _ctx.StringValue("QueryEmailVerification.ConfirmIp");
         
 			return queryEmailVerificationResponse;
         }

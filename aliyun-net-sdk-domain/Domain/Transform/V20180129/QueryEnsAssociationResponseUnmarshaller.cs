@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class QueryEnsAssociationResponseUnmarshaller
     {
-        public static QueryEnsAssociationResponse Unmarshall(UnmarshallerContext context)
+        public static QueryEnsAssociationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryEnsAssociationResponse queryEnsAssociationResponse = new QueryEnsAssociationResponse();
 
-			queryEnsAssociationResponse.HttpResponse = context.HttpResponse;
-			queryEnsAssociationResponse.RequestId = context.StringValue("QueryEnsAssociation.RequestId");
-			queryEnsAssociationResponse.Address = context.StringValue("QueryEnsAssociation.Address");
+			queryEnsAssociationResponse.HttpResponse = _ctx.HttpResponse;
+			queryEnsAssociationResponse.RequestId = _ctx.StringValue("QueryEnsAssociation.RequestId");
+			queryEnsAssociationResponse.Address = _ctx.StringValue("QueryEnsAssociation.Address");
         
 			return queryEnsAssociationResponse;
         }

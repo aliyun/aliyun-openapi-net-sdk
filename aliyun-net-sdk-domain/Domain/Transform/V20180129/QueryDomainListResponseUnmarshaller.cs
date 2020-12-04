@@ -26,39 +26,39 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class QueryDomainListResponseUnmarshaller
     {
-        public static QueryDomainListResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDomainListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDomainListResponse queryDomainListResponse = new QueryDomainListResponse();
 
-			queryDomainListResponse.HttpResponse = context.HttpResponse;
-			queryDomainListResponse.RequestId = context.StringValue("QueryDomainList.RequestId");
-			queryDomainListResponse.TotalItemNum = context.IntegerValue("QueryDomainList.TotalItemNum");
-			queryDomainListResponse.CurrentPageNum = context.IntegerValue("QueryDomainList.CurrentPageNum");
-			queryDomainListResponse.TotalPageNum = context.IntegerValue("QueryDomainList.TotalPageNum");
-			queryDomainListResponse.PageSize = context.IntegerValue("QueryDomainList.PageSize");
-			queryDomainListResponse.PrePage = context.BooleanValue("QueryDomainList.PrePage");
-			queryDomainListResponse.NextPage = context.BooleanValue("QueryDomainList.NextPage");
+			queryDomainListResponse.HttpResponse = _ctx.HttpResponse;
+			queryDomainListResponse.RequestId = _ctx.StringValue("QueryDomainList.RequestId");
+			queryDomainListResponse.TotalItemNum = _ctx.IntegerValue("QueryDomainList.TotalItemNum");
+			queryDomainListResponse.CurrentPageNum = _ctx.IntegerValue("QueryDomainList.CurrentPageNum");
+			queryDomainListResponse.TotalPageNum = _ctx.IntegerValue("QueryDomainList.TotalPageNum");
+			queryDomainListResponse.PageSize = _ctx.IntegerValue("QueryDomainList.PageSize");
+			queryDomainListResponse.PrePage = _ctx.BooleanValue("QueryDomainList.PrePage");
+			queryDomainListResponse.NextPage = _ctx.BooleanValue("QueryDomainList.NextPage");
 
 			List<QueryDomainListResponse.QueryDomainList_Domain> queryDomainListResponse_data = new List<QueryDomainListResponse.QueryDomainList_Domain>();
-			for (int i = 0; i < context.Length("QueryDomainList.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryDomainList.Data.Length"); i++) {
 				QueryDomainListResponse.QueryDomainList_Domain domain = new QueryDomainListResponse.QueryDomainList_Domain();
-				domain.DomainName = context.StringValue("QueryDomainList.Data["+ i +"].DomainName");
-				domain.InstanceId = context.StringValue("QueryDomainList.Data["+ i +"].InstanceId");
-				domain.ExpirationDate = context.StringValue("QueryDomainList.Data["+ i +"].ExpirationDate");
-				domain.RegistrationDate = context.StringValue("QueryDomainList.Data["+ i +"].RegistrationDate");
-				domain.DomainType = context.StringValue("QueryDomainList.Data["+ i +"].DomainType");
-				domain.DomainStatus = context.StringValue("QueryDomainList.Data["+ i +"].DomainStatus");
-				domain.ProductId = context.StringValue("QueryDomainList.Data["+ i +"].ProductId");
-				domain.ExpirationDateLong = context.LongValue("QueryDomainList.Data["+ i +"].ExpirationDateLong");
-				domain.RegistrationDateLong = context.LongValue("QueryDomainList.Data["+ i +"].RegistrationDateLong");
-				domain.Premium = context.BooleanValue("QueryDomainList.Data["+ i +"].Premium");
-				domain.DomainAuditStatus = context.StringValue("QueryDomainList.Data["+ i +"].DomainAuditStatus");
-				domain.ExpirationDateStatus = context.StringValue("QueryDomainList.Data["+ i +"].ExpirationDateStatus");
-				domain.RegistrantType = context.StringValue("QueryDomainList.Data["+ i +"].RegistrantType");
-				domain.DomainGroupId = context.StringValue("QueryDomainList.Data["+ i +"].DomainGroupId");
-				domain.Remark = context.StringValue("QueryDomainList.Data["+ i +"].Remark");
-				domain.DomainGroupName = context.StringValue("QueryDomainList.Data["+ i +"].DomainGroupName");
-				domain.ExpirationCurrDateDiff = context.IntegerValue("QueryDomainList.Data["+ i +"].ExpirationCurrDateDiff");
+				domain.DomainName = _ctx.StringValue("QueryDomainList.Data["+ i +"].DomainName");
+				domain.InstanceId = _ctx.StringValue("QueryDomainList.Data["+ i +"].InstanceId");
+				domain.ExpirationDate = _ctx.StringValue("QueryDomainList.Data["+ i +"].ExpirationDate");
+				domain.RegistrationDate = _ctx.StringValue("QueryDomainList.Data["+ i +"].RegistrationDate");
+				domain.DomainType = _ctx.StringValue("QueryDomainList.Data["+ i +"].DomainType");
+				domain.DomainStatus = _ctx.StringValue("QueryDomainList.Data["+ i +"].DomainStatus");
+				domain.ProductId = _ctx.StringValue("QueryDomainList.Data["+ i +"].ProductId");
+				domain.ExpirationDateLong = _ctx.LongValue("QueryDomainList.Data["+ i +"].ExpirationDateLong");
+				domain.RegistrationDateLong = _ctx.LongValue("QueryDomainList.Data["+ i +"].RegistrationDateLong");
+				domain.Premium = _ctx.BooleanValue("QueryDomainList.Data["+ i +"].Premium");
+				domain.DomainAuditStatus = _ctx.StringValue("QueryDomainList.Data["+ i +"].DomainAuditStatus");
+				domain.ExpirationDateStatus = _ctx.StringValue("QueryDomainList.Data["+ i +"].ExpirationDateStatus");
+				domain.RegistrantType = _ctx.StringValue("QueryDomainList.Data["+ i +"].RegistrantType");
+				domain.DomainGroupId = _ctx.StringValue("QueryDomainList.Data["+ i +"].DomainGroupId");
+				domain.Remark = _ctx.StringValue("QueryDomainList.Data["+ i +"].Remark");
+				domain.DomainGroupName = _ctx.StringValue("QueryDomainList.Data["+ i +"].DomainGroupName");
+				domain.ExpirationCurrDateDiff = _ctx.IntegerValue("QueryDomainList.Data["+ i +"].ExpirationCurrDateDiff");
 
 				queryDomainListResponse_data.Add(domain);
 			}

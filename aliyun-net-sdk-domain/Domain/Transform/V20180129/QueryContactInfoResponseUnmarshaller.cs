@@ -26,29 +26,29 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class QueryContactInfoResponseUnmarshaller
     {
-        public static QueryContactInfoResponse Unmarshall(UnmarshallerContext context)
+        public static QueryContactInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryContactInfoResponse queryContactInfoResponse = new QueryContactInfoResponse();
 
-			queryContactInfoResponse.HttpResponse = context.HttpResponse;
-			queryContactInfoResponse.RequestId = context.StringValue("QueryContactInfo.RequestId");
-			queryContactInfoResponse.CreateDate = context.StringValue("QueryContactInfo.CreateDate");
-			queryContactInfoResponse.RegistrantName = context.StringValue("QueryContactInfo.RegistrantName");
-			queryContactInfoResponse.RegistrantOrganization = context.StringValue("QueryContactInfo.RegistrantOrganization");
-			queryContactInfoResponse.Country = context.StringValue("QueryContactInfo.Country");
-			queryContactInfoResponse.Province = context.StringValue("QueryContactInfo.Province");
-			queryContactInfoResponse.City = context.StringValue("QueryContactInfo.City");
-			queryContactInfoResponse.Address = context.StringValue("QueryContactInfo.Address");
-			queryContactInfoResponse.Email = context.StringValue("QueryContactInfo.Email");
-			queryContactInfoResponse.PostalCode = context.StringValue("QueryContactInfo.PostalCode");
-			queryContactInfoResponse.TelArea = context.StringValue("QueryContactInfo.TelArea");
-			queryContactInfoResponse.Telephone = context.StringValue("QueryContactInfo.Telephone");
-			queryContactInfoResponse.TelExt = context.StringValue("QueryContactInfo.TelExt");
-			queryContactInfoResponse.ZhRegistrantName = context.StringValue("QueryContactInfo.ZhRegistrantName");
-			queryContactInfoResponse.ZhRegistrantOrganization = context.StringValue("QueryContactInfo.ZhRegistrantOrganization");
-			queryContactInfoResponse.ZhProvince = context.StringValue("QueryContactInfo.ZhProvince");
-			queryContactInfoResponse.ZhCity = context.StringValue("QueryContactInfo.ZhCity");
-			queryContactInfoResponse.ZhAddress = context.StringValue("QueryContactInfo.ZhAddress");
+			queryContactInfoResponse.HttpResponse = _ctx.HttpResponse;
+			queryContactInfoResponse.RequestId = _ctx.StringValue("QueryContactInfo.RequestId");
+			queryContactInfoResponse.CreateDate = _ctx.StringValue("QueryContactInfo.CreateDate");
+			queryContactInfoResponse.RegistrantName = _ctx.StringValue("QueryContactInfo.RegistrantName");
+			queryContactInfoResponse.RegistrantOrganization = _ctx.StringValue("QueryContactInfo.RegistrantOrganization");
+			queryContactInfoResponse.Country = _ctx.StringValue("QueryContactInfo.Country");
+			queryContactInfoResponse.Province = _ctx.StringValue("QueryContactInfo.Province");
+			queryContactInfoResponse.City = _ctx.StringValue("QueryContactInfo.City");
+			queryContactInfoResponse.Address = _ctx.StringValue("QueryContactInfo.Address");
+			queryContactInfoResponse.Email = _ctx.StringValue("QueryContactInfo.Email");
+			queryContactInfoResponse.PostalCode = _ctx.StringValue("QueryContactInfo.PostalCode");
+			queryContactInfoResponse.TelArea = _ctx.StringValue("QueryContactInfo.TelArea");
+			queryContactInfoResponse.Telephone = _ctx.StringValue("QueryContactInfo.Telephone");
+			queryContactInfoResponse.TelExt = _ctx.StringValue("QueryContactInfo.TelExt");
+			queryContactInfoResponse.ZhRegistrantName = _ctx.StringValue("QueryContactInfo.ZhRegistrantName");
+			queryContactInfoResponse.ZhRegistrantOrganization = _ctx.StringValue("QueryContactInfo.ZhRegistrantOrganization");
+			queryContactInfoResponse.ZhProvince = _ctx.StringValue("QueryContactInfo.ZhProvince");
+			queryContactInfoResponse.ZhCity = _ctx.StringValue("QueryContactInfo.ZhCity");
+			queryContactInfoResponse.ZhAddress = _ctx.StringValue("QueryContactInfo.ZhAddress");
         
 			return queryContactInfoResponse;
         }

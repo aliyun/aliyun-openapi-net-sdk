@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class QueryDomainGroupListResponseUnmarshaller
     {
-        public static QueryDomainGroupListResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDomainGroupListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDomainGroupListResponse queryDomainGroupListResponse = new QueryDomainGroupListResponse();
 
-			queryDomainGroupListResponse.HttpResponse = context.HttpResponse;
-			queryDomainGroupListResponse.RequestId = context.StringValue("QueryDomainGroupList.RequestId");
+			queryDomainGroupListResponse.HttpResponse = _ctx.HttpResponse;
+			queryDomainGroupListResponse.RequestId = _ctx.StringValue("QueryDomainGroupList.RequestId");
 
 			List<QueryDomainGroupListResponse.QueryDomainGroupList_DomainGroup> queryDomainGroupListResponse_data = new List<QueryDomainGroupListResponse.QueryDomainGroupList_DomainGroup>();
-			for (int i = 0; i < context.Length("QueryDomainGroupList.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryDomainGroupList.Data.Length"); i++) {
 				QueryDomainGroupListResponse.QueryDomainGroupList_DomainGroup domainGroup = new QueryDomainGroupListResponse.QueryDomainGroupList_DomainGroup();
-				domainGroup.DomainGroupId = context.StringValue("QueryDomainGroupList.Data["+ i +"].DomainGroupId");
-				domainGroup.DomainGroupName = context.StringValue("QueryDomainGroupList.Data["+ i +"].DomainGroupName");
-				domainGroup.TotalNumber = context.IntegerValue("QueryDomainGroupList.Data["+ i +"].TotalNumber");
-				domainGroup.CreationDate = context.StringValue("QueryDomainGroupList.Data["+ i +"].CreationDate");
-				domainGroup.ModificationDate = context.StringValue("QueryDomainGroupList.Data["+ i +"].ModificationDate");
-				domainGroup.DomainGroupStatus = context.StringValue("QueryDomainGroupList.Data["+ i +"].DomainGroupStatus");
-				domainGroup.BeingDeleted = context.BooleanValue("QueryDomainGroupList.Data["+ i +"].BeingDeleted");
+				domainGroup.DomainGroupId = _ctx.StringValue("QueryDomainGroupList.Data["+ i +"].DomainGroupId");
+				domainGroup.DomainGroupName = _ctx.StringValue("QueryDomainGroupList.Data["+ i +"].DomainGroupName");
+				domainGroup.TotalNumber = _ctx.IntegerValue("QueryDomainGroupList.Data["+ i +"].TotalNumber");
+				domainGroup.CreationDate = _ctx.StringValue("QueryDomainGroupList.Data["+ i +"].CreationDate");
+				domainGroup.ModificationDate = _ctx.StringValue("QueryDomainGroupList.Data["+ i +"].ModificationDate");
+				domainGroup.DomainGroupStatus = _ctx.StringValue("QueryDomainGroupList.Data["+ i +"].DomainGroupStatus");
+				domainGroup.BeingDeleted = _ctx.BooleanValue("QueryDomainGroupList.Data["+ i +"].BeingDeleted");
 
 				queryDomainGroupListResponse_data.Add(domainGroup);
 			}

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Domain.Transform.V20180208
 {
     public class RefuseDemandResponseUnmarshaller
     {
-        public static RefuseDemandResponse Unmarshall(UnmarshallerContext context)
+        public static RefuseDemandResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RefuseDemandResponse refuseDemandResponse = new RefuseDemandResponse();
 
-			refuseDemandResponse.HttpResponse = context.HttpResponse;
-			refuseDemandResponse.RequestId = context.StringValue("RefuseDemand.RequestId");
+			refuseDemandResponse.HttpResponse = _ctx.HttpResponse;
+			refuseDemandResponse.RequestId = _ctx.StringValue("RefuseDemand.RequestId");
         
 			return refuseDemandResponse;
         }

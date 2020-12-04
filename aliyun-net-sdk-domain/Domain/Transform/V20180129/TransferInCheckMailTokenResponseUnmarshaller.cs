@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class TransferInCheckMailTokenResponseUnmarshaller
     {
-        public static TransferInCheckMailTokenResponse Unmarshall(UnmarshallerContext context)
+        public static TransferInCheckMailTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TransferInCheckMailTokenResponse transferInCheckMailTokenResponse = new TransferInCheckMailTokenResponse();
 
-			transferInCheckMailTokenResponse.HttpResponse = context.HttpResponse;
-			transferInCheckMailTokenResponse.RequestId = context.StringValue("TransferInCheckMailToken.RequestId");
+			transferInCheckMailTokenResponse.HttpResponse = _ctx.HttpResponse;
+			transferInCheckMailTokenResponse.RequestId = _ctx.StringValue("TransferInCheckMailToken.RequestId");
 
 			List<string> transferInCheckMailTokenResponse_successList = new List<string>();
-			for (int i = 0; i < context.Length("TransferInCheckMailToken.SuccessList.Length"); i++) {
-				transferInCheckMailTokenResponse_successList.Add(context.StringValue("TransferInCheckMailToken.SuccessList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("TransferInCheckMailToken.SuccessList.Length"); i++) {
+				transferInCheckMailTokenResponse_successList.Add(_ctx.StringValue("TransferInCheckMailToken.SuccessList["+ i +"]"));
 			}
 			transferInCheckMailTokenResponse.SuccessList = transferInCheckMailTokenResponse_successList;
 
 			List<string> transferInCheckMailTokenResponse_failList = new List<string>();
-			for (int i = 0; i < context.Length("TransferInCheckMailToken.FailList.Length"); i++) {
-				transferInCheckMailTokenResponse_failList.Add(context.StringValue("TransferInCheckMailToken.FailList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("TransferInCheckMailToken.FailList.Length"); i++) {
+				transferInCheckMailTokenResponse_failList.Add(_ctx.StringValue("TransferInCheckMailToken.FailList["+ i +"]"));
 			}
 			transferInCheckMailTokenResponse.FailList = transferInCheckMailTokenResponse_failList;
         

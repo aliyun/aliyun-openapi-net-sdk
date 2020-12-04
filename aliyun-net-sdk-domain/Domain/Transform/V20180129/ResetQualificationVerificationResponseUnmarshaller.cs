@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class ResetQualificationVerificationResponseUnmarshaller
     {
-        public static ResetQualificationVerificationResponse Unmarshall(UnmarshallerContext context)
+        public static ResetQualificationVerificationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResetQualificationVerificationResponse resetQualificationVerificationResponse = new ResetQualificationVerificationResponse();
 
-			resetQualificationVerificationResponse.HttpResponse = context.HttpResponse;
-			resetQualificationVerificationResponse.RequestId = context.StringValue("ResetQualificationVerification.RequestId");
+			resetQualificationVerificationResponse.HttpResponse = _ctx.HttpResponse;
+			resetQualificationVerificationResponse.RequestId = _ctx.StringValue("ResetQualificationVerification.RequestId");
         
 			return resetQualificationVerificationResponse;
         }

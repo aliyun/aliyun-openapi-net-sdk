@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class TransferInRefetchWhoisEmailResponseUnmarshaller
     {
-        public static TransferInRefetchWhoisEmailResponse Unmarshall(UnmarshallerContext context)
+        public static TransferInRefetchWhoisEmailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TransferInRefetchWhoisEmailResponse transferInRefetchWhoisEmailResponse = new TransferInRefetchWhoisEmailResponse();
 
-			transferInRefetchWhoisEmailResponse.HttpResponse = context.HttpResponse;
-			transferInRefetchWhoisEmailResponse.RequestId = context.StringValue("TransferInRefetchWhoisEmail.RequestId");
+			transferInRefetchWhoisEmailResponse.HttpResponse = _ctx.HttpResponse;
+			transferInRefetchWhoisEmailResponse.RequestId = _ctx.StringValue("TransferInRefetchWhoisEmail.RequestId");
         
 			return transferInRefetchWhoisEmailResponse;
         }

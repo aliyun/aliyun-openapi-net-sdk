@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class SaveBatchTaskForUpdatingContactInfoByNewContactResponseUnmarshaller
     {
-        public static SaveBatchTaskForUpdatingContactInfoByNewContactResponse Unmarshall(UnmarshallerContext context)
+        public static SaveBatchTaskForUpdatingContactInfoByNewContactResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SaveBatchTaskForUpdatingContactInfoByNewContactResponse saveBatchTaskForUpdatingContactInfoByNewContactResponse = new SaveBatchTaskForUpdatingContactInfoByNewContactResponse();
 
-			saveBatchTaskForUpdatingContactInfoByNewContactResponse.HttpResponse = context.HttpResponse;
-			saveBatchTaskForUpdatingContactInfoByNewContactResponse.RequestId = context.StringValue("SaveBatchTaskForUpdatingContactInfoByNewContact.RequestId");
-			saveBatchTaskForUpdatingContactInfoByNewContactResponse.TaskNo = context.StringValue("SaveBatchTaskForUpdatingContactInfoByNewContact.TaskNo");
+			saveBatchTaskForUpdatingContactInfoByNewContactResponse.HttpResponse = _ctx.HttpResponse;
+			saveBatchTaskForUpdatingContactInfoByNewContactResponse.RequestId = _ctx.StringValue("SaveBatchTaskForUpdatingContactInfoByNewContact.RequestId");
+			saveBatchTaskForUpdatingContactInfoByNewContactResponse.TaskNo = _ctx.StringValue("SaveBatchTaskForUpdatingContactInfoByNewContact.TaskNo");
         
 			return saveBatchTaskForUpdatingContactInfoByNewContactResponse;
         }

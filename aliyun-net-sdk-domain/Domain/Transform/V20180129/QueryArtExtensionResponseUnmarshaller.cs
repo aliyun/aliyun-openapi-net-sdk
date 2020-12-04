@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class QueryArtExtensionResponseUnmarshaller
     {
-        public static QueryArtExtensionResponse Unmarshall(UnmarshallerContext context)
+        public static QueryArtExtensionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryArtExtensionResponse queryArtExtensionResponse = new QueryArtExtensionResponse();
 
-			queryArtExtensionResponse.HttpResponse = context.HttpResponse;
-			queryArtExtensionResponse.RequestId = context.StringValue("QueryArtExtension.RequestId");
-			queryArtExtensionResponse.ObjectType = context.StringValue("QueryArtExtension.ObjectType");
-			queryArtExtensionResponse.MaterialsAndTechniques = context.StringValue("QueryArtExtension.MaterialsAndTechniques");
-			queryArtExtensionResponse.Dimensions = context.StringValue("QueryArtExtension.Dimensions");
-			queryArtExtensionResponse.Title = context.StringValue("QueryArtExtension.Title");
-			queryArtExtensionResponse.DateOrPeriod = context.StringValue("QueryArtExtension.DateOrPeriod");
-			queryArtExtensionResponse.Maker = context.StringValue("QueryArtExtension.Maker");
-			queryArtExtensionResponse.InscriptionsAndMarkings = context.StringValue("QueryArtExtension.InscriptionsAndMarkings");
-			queryArtExtensionResponse.Subject = context.StringValue("QueryArtExtension.Subject");
-			queryArtExtensionResponse.Features = context.StringValue("QueryArtExtension.Features");
-			queryArtExtensionResponse.Reference = context.StringValue("QueryArtExtension.Reference");
+			queryArtExtensionResponse.HttpResponse = _ctx.HttpResponse;
+			queryArtExtensionResponse.RequestId = _ctx.StringValue("QueryArtExtension.RequestId");
+			queryArtExtensionResponse.ObjectType = _ctx.StringValue("QueryArtExtension.ObjectType");
+			queryArtExtensionResponse.MaterialsAndTechniques = _ctx.StringValue("QueryArtExtension.MaterialsAndTechniques");
+			queryArtExtensionResponse.Dimensions = _ctx.StringValue("QueryArtExtension.Dimensions");
+			queryArtExtensionResponse.Title = _ctx.StringValue("QueryArtExtension.Title");
+			queryArtExtensionResponse.DateOrPeriod = _ctx.StringValue("QueryArtExtension.DateOrPeriod");
+			queryArtExtensionResponse.Maker = _ctx.StringValue("QueryArtExtension.Maker");
+			queryArtExtensionResponse.InscriptionsAndMarkings = _ctx.StringValue("QueryArtExtension.InscriptionsAndMarkings");
+			queryArtExtensionResponse.Subject = _ctx.StringValue("QueryArtExtension.Subject");
+			queryArtExtensionResponse.Features = _ctx.StringValue("QueryArtExtension.Features");
+			queryArtExtensionResponse.Reference = _ctx.StringValue("QueryArtExtension.Reference");
         
 			return queryArtExtensionResponse;
         }

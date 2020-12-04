@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Domain.Transform.V20180208
 {
     public class ReserveDomainResponseUnmarshaller
     {
-        public static ReserveDomainResponse Unmarshall(UnmarshallerContext context)
+        public static ReserveDomainResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ReserveDomainResponse reserveDomainResponse = new ReserveDomainResponse();
 
-			reserveDomainResponse.HttpResponse = context.HttpResponse;
-			reserveDomainResponse.RequestId = context.StringValue("ReserveDomain.RequestId");
-			reserveDomainResponse.AuctionId = context.StringValue("ReserveDomain.AuctionId");
+			reserveDomainResponse.HttpResponse = _ctx.HttpResponse;
+			reserveDomainResponse.RequestId = _ctx.StringValue("ReserveDomain.RequestId");
+			reserveDomainResponse.AuctionId = _ctx.StringValue("ReserveDomain.AuctionId");
         
 			return reserveDomainResponse;
         }

@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Domain.Transform.V20180208
 {
     public class QueryBrokerDemandRecordResponseUnmarshaller
     {
-        public static QueryBrokerDemandRecordResponse Unmarshall(UnmarshallerContext context)
+        public static QueryBrokerDemandRecordResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryBrokerDemandRecordResponse queryBrokerDemandRecordResponse = new QueryBrokerDemandRecordResponse();
 
-			queryBrokerDemandRecordResponse.HttpResponse = context.HttpResponse;
-			queryBrokerDemandRecordResponse.RequestId = context.StringValue("QueryBrokerDemandRecord.RequestId");
-			queryBrokerDemandRecordResponse.TotalItemNum = context.IntegerValue("QueryBrokerDemandRecord.TotalItemNum");
-			queryBrokerDemandRecordResponse.CurrentPageNum = context.IntegerValue("QueryBrokerDemandRecord.CurrentPageNum");
-			queryBrokerDemandRecordResponse.PageSize = context.IntegerValue("QueryBrokerDemandRecord.PageSize");
-			queryBrokerDemandRecordResponse.TotalPageNum = context.IntegerValue("QueryBrokerDemandRecord.TotalPageNum");
+			queryBrokerDemandRecordResponse.HttpResponse = _ctx.HttpResponse;
+			queryBrokerDemandRecordResponse.RequestId = _ctx.StringValue("QueryBrokerDemandRecord.RequestId");
+			queryBrokerDemandRecordResponse.TotalItemNum = _ctx.IntegerValue("QueryBrokerDemandRecord.TotalItemNum");
+			queryBrokerDemandRecordResponse.CurrentPageNum = _ctx.IntegerValue("QueryBrokerDemandRecord.CurrentPageNum");
+			queryBrokerDemandRecordResponse.PageSize = _ctx.IntegerValue("QueryBrokerDemandRecord.PageSize");
+			queryBrokerDemandRecordResponse.TotalPageNum = _ctx.IntegerValue("QueryBrokerDemandRecord.TotalPageNum");
 
 			List<QueryBrokerDemandRecordResponse.QueryBrokerDemandRecord_BrokerDemandRecord> queryBrokerDemandRecordResponse_data = new List<QueryBrokerDemandRecordResponse.QueryBrokerDemandRecord_BrokerDemandRecord>();
-			for (int i = 0; i < context.Length("QueryBrokerDemandRecord.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryBrokerDemandRecord.Data.Length"); i++) {
 				QueryBrokerDemandRecordResponse.QueryBrokerDemandRecord_BrokerDemandRecord brokerDemandRecord = new QueryBrokerDemandRecordResponse.QueryBrokerDemandRecord_BrokerDemandRecord();
-				brokerDemandRecord.BizId = context.StringValue("QueryBrokerDemandRecord.Data["+ i +"].BizId");
-				brokerDemandRecord.Description = context.StringValue("QueryBrokerDemandRecord.Data["+ i +"].Description");
-				brokerDemandRecord.CreateTime = context.LongValue("QueryBrokerDemandRecord.Data["+ i +"].CreateTime");
+				brokerDemandRecord.BizId = _ctx.StringValue("QueryBrokerDemandRecord.Data["+ i +"].BizId");
+				brokerDemandRecord.Description = _ctx.StringValue("QueryBrokerDemandRecord.Data["+ i +"].Description");
+				brokerDemandRecord.CreateTime = _ctx.LongValue("QueryBrokerDemandRecord.Data["+ i +"].CreateTime");
 
 				queryBrokerDemandRecordResponse_data.Add(brokerDemandRecord);
 			}

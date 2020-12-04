@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class SaveDomainGroupResponseUnmarshaller
     {
-        public static SaveDomainGroupResponse Unmarshall(UnmarshallerContext context)
+        public static SaveDomainGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SaveDomainGroupResponse saveDomainGroupResponse = new SaveDomainGroupResponse();
 
-			saveDomainGroupResponse.HttpResponse = context.HttpResponse;
-			saveDomainGroupResponse.RequestId = context.StringValue("SaveDomainGroup.RequestId");
-			saveDomainGroupResponse.DomainGroupId = context.LongValue("SaveDomainGroup.DomainGroupId");
-			saveDomainGroupResponse.DomainGroupName = context.StringValue("SaveDomainGroup.DomainGroupName");
-			saveDomainGroupResponse.TotalNumber = context.IntegerValue("SaveDomainGroup.TotalNumber");
-			saveDomainGroupResponse.CreationDate = context.StringValue("SaveDomainGroup.CreationDate");
-			saveDomainGroupResponse.ModificationDate = context.StringValue("SaveDomainGroup.ModificationDate");
-			saveDomainGroupResponse.DomainGroupStatus = context.StringValue("SaveDomainGroup.DomainGroupStatus");
-			saveDomainGroupResponse.BeingDeleted = context.BooleanValue("SaveDomainGroup.BeingDeleted");
+			saveDomainGroupResponse.HttpResponse = _ctx.HttpResponse;
+			saveDomainGroupResponse.RequestId = _ctx.StringValue("SaveDomainGroup.RequestId");
+			saveDomainGroupResponse.DomainGroupId = _ctx.LongValue("SaveDomainGroup.DomainGroupId");
+			saveDomainGroupResponse.DomainGroupName = _ctx.StringValue("SaveDomainGroup.DomainGroupName");
+			saveDomainGroupResponse.TotalNumber = _ctx.IntegerValue("SaveDomainGroup.TotalNumber");
+			saveDomainGroupResponse.CreationDate = _ctx.StringValue("SaveDomainGroup.CreationDate");
+			saveDomainGroupResponse.ModificationDate = _ctx.StringValue("SaveDomainGroup.ModificationDate");
+			saveDomainGroupResponse.DomainGroupStatus = _ctx.StringValue("SaveDomainGroup.DomainGroupStatus");
+			saveDomainGroupResponse.BeingDeleted = _ctx.BooleanValue("SaveDomainGroup.BeingDeleted");
         
 			return saveDomainGroupResponse;
         }

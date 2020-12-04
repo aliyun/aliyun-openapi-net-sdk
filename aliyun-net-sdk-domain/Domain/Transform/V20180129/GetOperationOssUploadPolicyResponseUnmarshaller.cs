@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class GetOperationOssUploadPolicyResponseUnmarshaller
     {
-        public static GetOperationOssUploadPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static GetOperationOssUploadPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetOperationOssUploadPolicyResponse getOperationOssUploadPolicyResponse = new GetOperationOssUploadPolicyResponse();
 
-			getOperationOssUploadPolicyResponse.HttpResponse = context.HttpResponse;
-			getOperationOssUploadPolicyResponse.RequestId = context.StringValue("GetOperationOssUploadPolicy.RequestId");
-			getOperationOssUploadPolicyResponse.Accessid = context.StringValue("GetOperationOssUploadPolicy.Accessid");
-			getOperationOssUploadPolicyResponse.EncodedPolicy = context.StringValue("GetOperationOssUploadPolicy.EncodedPolicy");
-			getOperationOssUploadPolicyResponse.Signature = context.StringValue("GetOperationOssUploadPolicy.Signature");
-			getOperationOssUploadPolicyResponse.FileDir = context.StringValue("GetOperationOssUploadPolicy.FileDir");
-			getOperationOssUploadPolicyResponse.Host = context.StringValue("GetOperationOssUploadPolicy.Host");
-			getOperationOssUploadPolicyResponse.ExpireTime = context.StringValue("GetOperationOssUploadPolicy.ExpireTime");
+			getOperationOssUploadPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			getOperationOssUploadPolicyResponse.RequestId = _ctx.StringValue("GetOperationOssUploadPolicy.RequestId");
+			getOperationOssUploadPolicyResponse.Accessid = _ctx.StringValue("GetOperationOssUploadPolicy.Accessid");
+			getOperationOssUploadPolicyResponse.EncodedPolicy = _ctx.StringValue("GetOperationOssUploadPolicy.EncodedPolicy");
+			getOperationOssUploadPolicyResponse.Signature = _ctx.StringValue("GetOperationOssUploadPolicy.Signature");
+			getOperationOssUploadPolicyResponse.FileDir = _ctx.StringValue("GetOperationOssUploadPolicy.FileDir");
+			getOperationOssUploadPolicyResponse.Host = _ctx.StringValue("GetOperationOssUploadPolicy.Host");
+			getOperationOssUploadPolicyResponse.ExpireTime = _ctx.StringValue("GetOperationOssUploadPolicy.ExpireTime");
         
 			return getOperationOssUploadPolicyResponse;
         }

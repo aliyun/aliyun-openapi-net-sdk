@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class CheckDomainResponseUnmarshaller
     {
-        public static CheckDomainResponse Unmarshall(UnmarshallerContext context)
+        public static CheckDomainResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckDomainResponse checkDomainResponse = new CheckDomainResponse();
 
-			checkDomainResponse.HttpResponse = context.HttpResponse;
-			checkDomainResponse.RequestId = context.StringValue("CheckDomain.RequestId");
-			checkDomainResponse.DomainName = context.StringValue("CheckDomain.DomainName");
-			checkDomainResponse.Avail = context.StringValue("CheckDomain.Avail");
-			checkDomainResponse.Premium = context.StringValue("CheckDomain.Premium");
-			checkDomainResponse.Reason = context.StringValue("CheckDomain.Reason");
-			checkDomainResponse.Price = context.LongValue("CheckDomain.Price");
-			checkDomainResponse.DynamicCheck = context.BooleanValue("CheckDomain.DynamicCheck");
+			checkDomainResponse.HttpResponse = _ctx.HttpResponse;
+			checkDomainResponse.RequestId = _ctx.StringValue("CheckDomain.RequestId");
+			checkDomainResponse.DomainName = _ctx.StringValue("CheckDomain.DomainName");
+			checkDomainResponse.Avail = _ctx.StringValue("CheckDomain.Avail");
+			checkDomainResponse.Premium = _ctx.StringValue("CheckDomain.Premium");
+			checkDomainResponse.Reason = _ctx.StringValue("CheckDomain.Reason");
+			checkDomainResponse.Price = _ctx.LongValue("CheckDomain.Price");
+			checkDomainResponse.DynamicCheck = _ctx.BooleanValue("CheckDomain.DynamicCheck");
         
 			return checkDomainResponse;
         }

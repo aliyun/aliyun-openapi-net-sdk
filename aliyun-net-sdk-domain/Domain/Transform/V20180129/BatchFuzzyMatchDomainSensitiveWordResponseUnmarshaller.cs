@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class BatchFuzzyMatchDomainSensitiveWordResponseUnmarshaller
     {
-        public static BatchFuzzyMatchDomainSensitiveWordResponse Unmarshall(UnmarshallerContext context)
+        public static BatchFuzzyMatchDomainSensitiveWordResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchFuzzyMatchDomainSensitiveWordResponse batchFuzzyMatchDomainSensitiveWordResponse = new BatchFuzzyMatchDomainSensitiveWordResponse();
 
-			batchFuzzyMatchDomainSensitiveWordResponse.HttpResponse = context.HttpResponse;
-			batchFuzzyMatchDomainSensitiveWordResponse.RequestId = context.StringValue("BatchFuzzyMatchDomainSensitiveWord.RequestId");
+			batchFuzzyMatchDomainSensitiveWordResponse.HttpResponse = _ctx.HttpResponse;
+			batchFuzzyMatchDomainSensitiveWordResponse.RequestId = _ctx.StringValue("BatchFuzzyMatchDomainSensitiveWord.RequestId");
 
 			List<BatchFuzzyMatchDomainSensitiveWordResponse.BatchFuzzyMatchDomainSensitiveWord_SensitiveWordMatchResult> batchFuzzyMatchDomainSensitiveWordResponse_sensitiveWordMatchResultList = new List<BatchFuzzyMatchDomainSensitiveWordResponse.BatchFuzzyMatchDomainSensitiveWord_SensitiveWordMatchResult>();
-			for (int i = 0; i < context.Length("BatchFuzzyMatchDomainSensitiveWord.SensitiveWordMatchResultList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("BatchFuzzyMatchDomainSensitiveWord.SensitiveWordMatchResultList.Length"); i++) {
 				BatchFuzzyMatchDomainSensitiveWordResponse.BatchFuzzyMatchDomainSensitiveWord_SensitiveWordMatchResult sensitiveWordMatchResult = new BatchFuzzyMatchDomainSensitiveWordResponse.BatchFuzzyMatchDomainSensitiveWord_SensitiveWordMatchResult();
-				sensitiveWordMatchResult.Keyword = context.StringValue("BatchFuzzyMatchDomainSensitiveWord.SensitiveWordMatchResultList["+ i +"].Keyword");
-				sensitiveWordMatchResult.Exist = context.BooleanValue("BatchFuzzyMatchDomainSensitiveWord.SensitiveWordMatchResultList["+ i +"].Exist");
+				sensitiveWordMatchResult.Keyword = _ctx.StringValue("BatchFuzzyMatchDomainSensitiveWord.SensitiveWordMatchResultList["+ i +"].Keyword");
+				sensitiveWordMatchResult.Exist = _ctx.BooleanValue("BatchFuzzyMatchDomainSensitiveWord.SensitiveWordMatchResultList["+ i +"].Exist");
 
 				List<BatchFuzzyMatchDomainSensitiveWordResponse.BatchFuzzyMatchDomainSensitiveWord_SensitiveWordMatchResult.BatchFuzzyMatchDomainSensitiveWord_MatchedSensitiveWord> sensitiveWordMatchResult_matchedSentiveWords = new List<BatchFuzzyMatchDomainSensitiveWordResponse.BatchFuzzyMatchDomainSensitiveWord_SensitiveWordMatchResult.BatchFuzzyMatchDomainSensitiveWord_MatchedSensitiveWord>();
-				for (int j = 0; j < context.Length("BatchFuzzyMatchDomainSensitiveWord.SensitiveWordMatchResultList["+ i +"].MatchedSentiveWords.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("BatchFuzzyMatchDomainSensitiveWord.SensitiveWordMatchResultList["+ i +"].MatchedSentiveWords.Length"); j++) {
 					BatchFuzzyMatchDomainSensitiveWordResponse.BatchFuzzyMatchDomainSensitiveWord_SensitiveWordMatchResult.BatchFuzzyMatchDomainSensitiveWord_MatchedSensitiveWord matchedSensitiveWord = new BatchFuzzyMatchDomainSensitiveWordResponse.BatchFuzzyMatchDomainSensitiveWord_SensitiveWordMatchResult.BatchFuzzyMatchDomainSensitiveWord_MatchedSensitiveWord();
-					matchedSensitiveWord.Word = context.StringValue("BatchFuzzyMatchDomainSensitiveWord.SensitiveWordMatchResultList["+ i +"].MatchedSentiveWords["+ j +"].Word");
+					matchedSensitiveWord.Word = _ctx.StringValue("BatchFuzzyMatchDomainSensitiveWord.SensitiveWordMatchResultList["+ i +"].MatchedSentiveWords["+ j +"].Word");
 
 					sensitiveWordMatchResult_matchedSentiveWords.Add(matchedSensitiveWord);
 				}

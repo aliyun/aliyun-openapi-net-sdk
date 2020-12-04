@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class QueryTransferOutInfoResponseUnmarshaller
     {
-        public static QueryTransferOutInfoResponse Unmarshall(UnmarshallerContext context)
+        public static QueryTransferOutInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryTransferOutInfoResponse queryTransferOutInfoResponse = new QueryTransferOutInfoResponse();
 
-			queryTransferOutInfoResponse.HttpResponse = context.HttpResponse;
-			queryTransferOutInfoResponse.RequestId = context.StringValue("QueryTransferOutInfo.RequestId");
-			queryTransferOutInfoResponse.Status = context.IntegerValue("QueryTransferOutInfo.Status");
-			queryTransferOutInfoResponse.Email = context.StringValue("QueryTransferOutInfo.Email");
-			queryTransferOutInfoResponse.TransferAuthorizationCodeSendDate = context.StringValue("QueryTransferOutInfo.TransferAuthorizationCodeSendDate");
-			queryTransferOutInfoResponse.ExpirationDate = context.StringValue("QueryTransferOutInfo.ExpirationDate");
-			queryTransferOutInfoResponse.PendingRequestDate = context.StringValue("QueryTransferOutInfo.PendingRequestDate");
-			queryTransferOutInfoResponse.ResultCode = context.StringValue("QueryTransferOutInfo.ResultCode");
-			queryTransferOutInfoResponse.ResultMsg = context.StringValue("QueryTransferOutInfo.ResultMsg");
+			queryTransferOutInfoResponse.HttpResponse = _ctx.HttpResponse;
+			queryTransferOutInfoResponse.RequestId = _ctx.StringValue("QueryTransferOutInfo.RequestId");
+			queryTransferOutInfoResponse.Status = _ctx.IntegerValue("QueryTransferOutInfo.Status");
+			queryTransferOutInfoResponse.Email = _ctx.StringValue("QueryTransferOutInfo.Email");
+			queryTransferOutInfoResponse.TransferAuthorizationCodeSendDate = _ctx.StringValue("QueryTransferOutInfo.TransferAuthorizationCodeSendDate");
+			queryTransferOutInfoResponse.ExpirationDate = _ctx.StringValue("QueryTransferOutInfo.ExpirationDate");
+			queryTransferOutInfoResponse.PendingRequestDate = _ctx.StringValue("QueryTransferOutInfo.PendingRequestDate");
+			queryTransferOutInfoResponse.ResultCode = _ctx.StringValue("QueryTransferOutInfo.ResultCode");
+			queryTransferOutInfoResponse.ResultMsg = _ctx.StringValue("QueryTransferOutInfo.ResultMsg");
         
 			return queryTransferOutInfoResponse;
         }

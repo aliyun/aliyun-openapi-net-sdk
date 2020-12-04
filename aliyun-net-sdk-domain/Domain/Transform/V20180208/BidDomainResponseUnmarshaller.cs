@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Domain.Transform.V20180208
 {
     public class BidDomainResponseUnmarshaller
     {
-        public static BidDomainResponse Unmarshall(UnmarshallerContext context)
+        public static BidDomainResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BidDomainResponse bidDomainResponse = new BidDomainResponse();
 
-			bidDomainResponse.HttpResponse = context.HttpResponse;
-			bidDomainResponse.RequestId = context.StringValue("BidDomain.RequestId");
-			bidDomainResponse.AuctionId = context.StringValue("BidDomain.AuctionId");
+			bidDomainResponse.HttpResponse = _ctx.HttpResponse;
+			bidDomainResponse.RequestId = _ctx.StringValue("BidDomain.RequestId");
+			bidDomainResponse.AuctionId = _ctx.StringValue("BidDomain.AuctionId");
         
 			return bidDomainResponse;
         }

@@ -26,43 +26,43 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class QueryTransferInListResponseUnmarshaller
     {
-        public static QueryTransferInListResponse Unmarshall(UnmarshallerContext context)
+        public static QueryTransferInListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryTransferInListResponse queryTransferInListResponse = new QueryTransferInListResponse();
 
-			queryTransferInListResponse.HttpResponse = context.HttpResponse;
-			queryTransferInListResponse.RequestId = context.StringValue("QueryTransferInList.RequestId");
-			queryTransferInListResponse.TotalItemNum = context.IntegerValue("QueryTransferInList.TotalItemNum");
-			queryTransferInListResponse.CurrentPageNum = context.IntegerValue("QueryTransferInList.CurrentPageNum");
-			queryTransferInListResponse.TotalPageNum = context.IntegerValue("QueryTransferInList.TotalPageNum");
-			queryTransferInListResponse.PageSize = context.IntegerValue("QueryTransferInList.PageSize");
-			queryTransferInListResponse.PrePage = context.BooleanValue("QueryTransferInList.PrePage");
-			queryTransferInListResponse.NextPage = context.BooleanValue("QueryTransferInList.NextPage");
+			queryTransferInListResponse.HttpResponse = _ctx.HttpResponse;
+			queryTransferInListResponse.RequestId = _ctx.StringValue("QueryTransferInList.RequestId");
+			queryTransferInListResponse.TotalItemNum = _ctx.IntegerValue("QueryTransferInList.TotalItemNum");
+			queryTransferInListResponse.CurrentPageNum = _ctx.IntegerValue("QueryTransferInList.CurrentPageNum");
+			queryTransferInListResponse.TotalPageNum = _ctx.IntegerValue("QueryTransferInList.TotalPageNum");
+			queryTransferInListResponse.PageSize = _ctx.IntegerValue("QueryTransferInList.PageSize");
+			queryTransferInListResponse.PrePage = _ctx.BooleanValue("QueryTransferInList.PrePage");
+			queryTransferInListResponse.NextPage = _ctx.BooleanValue("QueryTransferInList.NextPage");
 
 			List<QueryTransferInListResponse.QueryTransferInList_TransferInInfo> queryTransferInListResponse_data = new List<QueryTransferInListResponse.QueryTransferInList_TransferInInfo>();
-			for (int i = 0; i < context.Length("QueryTransferInList.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryTransferInList.Data.Length"); i++) {
 				QueryTransferInListResponse.QueryTransferInList_TransferInInfo transferInInfo = new QueryTransferInListResponse.QueryTransferInList_TransferInInfo();
-				transferInInfo.SubmissionDate = context.StringValue("QueryTransferInList.Data["+ i +"].SubmissionDate");
-				transferInInfo.ModificationDate = context.StringValue("QueryTransferInList.Data["+ i +"].ModificationDate");
-				transferInInfo.UserId = context.StringValue("QueryTransferInList.Data["+ i +"].UserId");
-				transferInInfo.InstanceId = context.StringValue("QueryTransferInList.Data["+ i +"].InstanceId");
-				transferInInfo.DomainName = context.StringValue("QueryTransferInList.Data["+ i +"].DomainName");
-				transferInInfo.Status = context.IntegerValue("QueryTransferInList.Data["+ i +"].Status");
-				transferInInfo.SimpleTransferInStatus = context.StringValue("QueryTransferInList.Data["+ i +"].SimpleTransferInStatus");
-				transferInInfo.ResultCode = context.StringValue("QueryTransferInList.Data["+ i +"].ResultCode");
-				transferInInfo.ResultDate = context.StringValue("QueryTransferInList.Data["+ i +"].ResultDate");
-				transferInInfo.ResultMsg = context.StringValue("QueryTransferInList.Data["+ i +"].ResultMsg");
-				transferInInfo.TransferAuthorizationCodeSubmissionDate = context.StringValue("QueryTransferInList.Data["+ i +"].TransferAuthorizationCodeSubmissionDate");
-				transferInInfo.NeedMailCheck = context.BooleanValue("QueryTransferInList.Data["+ i +"].NeedMailCheck");
-				transferInInfo.Email = context.StringValue("QueryTransferInList.Data["+ i +"].Email");
-				transferInInfo.WhoisMailStatus = context.BooleanValue("QueryTransferInList.Data["+ i +"].WhoisMailStatus");
-				transferInInfo.ExpirationDate = context.StringValue("QueryTransferInList.Data["+ i +"].ExpirationDate");
-				transferInInfo.ProgressBarType = context.IntegerValue("QueryTransferInList.Data["+ i +"].ProgressBarType");
-				transferInInfo.SubmissionDateLong = context.LongValue("QueryTransferInList.Data["+ i +"].SubmissionDateLong");
-				transferInInfo.ModificationDateLong = context.LongValue("QueryTransferInList.Data["+ i +"].ModificationDateLong");
-				transferInInfo.ResultDateLong = context.LongValue("QueryTransferInList.Data["+ i +"].ResultDateLong");
-				transferInInfo.ExpirationDateLong = context.LongValue("QueryTransferInList.Data["+ i +"].ExpirationDateLong");
-				transferInInfo.TransferAuthorizationCodeSubmissionDateLong = context.LongValue("QueryTransferInList.Data["+ i +"].TransferAuthorizationCodeSubmissionDateLong");
+				transferInInfo.SubmissionDate = _ctx.StringValue("QueryTransferInList.Data["+ i +"].SubmissionDate");
+				transferInInfo.ModificationDate = _ctx.StringValue("QueryTransferInList.Data["+ i +"].ModificationDate");
+				transferInInfo.UserId = _ctx.StringValue("QueryTransferInList.Data["+ i +"].UserId");
+				transferInInfo.InstanceId = _ctx.StringValue("QueryTransferInList.Data["+ i +"].InstanceId");
+				transferInInfo.DomainName = _ctx.StringValue("QueryTransferInList.Data["+ i +"].DomainName");
+				transferInInfo.Status = _ctx.IntegerValue("QueryTransferInList.Data["+ i +"].Status");
+				transferInInfo.SimpleTransferInStatus = _ctx.StringValue("QueryTransferInList.Data["+ i +"].SimpleTransferInStatus");
+				transferInInfo.ResultCode = _ctx.StringValue("QueryTransferInList.Data["+ i +"].ResultCode");
+				transferInInfo.ResultDate = _ctx.StringValue("QueryTransferInList.Data["+ i +"].ResultDate");
+				transferInInfo.ResultMsg = _ctx.StringValue("QueryTransferInList.Data["+ i +"].ResultMsg");
+				transferInInfo.TransferAuthorizationCodeSubmissionDate = _ctx.StringValue("QueryTransferInList.Data["+ i +"].TransferAuthorizationCodeSubmissionDate");
+				transferInInfo.NeedMailCheck = _ctx.BooleanValue("QueryTransferInList.Data["+ i +"].NeedMailCheck");
+				transferInInfo.Email = _ctx.StringValue("QueryTransferInList.Data["+ i +"].Email");
+				transferInInfo.WhoisMailStatus = _ctx.BooleanValue("QueryTransferInList.Data["+ i +"].WhoisMailStatus");
+				transferInInfo.ExpirationDate = _ctx.StringValue("QueryTransferInList.Data["+ i +"].ExpirationDate");
+				transferInInfo.ProgressBarType = _ctx.IntegerValue("QueryTransferInList.Data["+ i +"].ProgressBarType");
+				transferInInfo.SubmissionDateLong = _ctx.LongValue("QueryTransferInList.Data["+ i +"].SubmissionDateLong");
+				transferInInfo.ModificationDateLong = _ctx.LongValue("QueryTransferInList.Data["+ i +"].ModificationDateLong");
+				transferInInfo.ResultDateLong = _ctx.LongValue("QueryTransferInList.Data["+ i +"].ResultDateLong");
+				transferInInfo.ExpirationDateLong = _ctx.LongValue("QueryTransferInList.Data["+ i +"].ExpirationDateLong");
+				transferInInfo.TransferAuthorizationCodeSubmissionDateLong = _ctx.LongValue("QueryTransferInList.Data["+ i +"].TransferAuthorizationCodeSubmissionDateLong");
 
 				queryTransferInListResponse_data.Add(transferInInfo);
 			}

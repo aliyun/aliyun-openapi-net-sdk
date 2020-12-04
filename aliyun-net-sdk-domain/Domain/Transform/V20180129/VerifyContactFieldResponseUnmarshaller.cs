@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class VerifyContactFieldResponseUnmarshaller
     {
-        public static VerifyContactFieldResponse Unmarshall(UnmarshallerContext context)
+        public static VerifyContactFieldResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			VerifyContactFieldResponse verifyContactFieldResponse = new VerifyContactFieldResponse();
 
-			verifyContactFieldResponse.HttpResponse = context.HttpResponse;
-			verifyContactFieldResponse.RequestId = context.StringValue("VerifyContactField.RequestId");
+			verifyContactFieldResponse.HttpResponse = _ctx.HttpResponse;
+			verifyContactFieldResponse.RequestId = _ctx.StringValue("VerifyContactField.RequestId");
         
 			return verifyContactFieldResponse;
         }

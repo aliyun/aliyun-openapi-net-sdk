@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class QueryServerLockResponseUnmarshaller
     {
-        public static QueryServerLockResponse Unmarshall(UnmarshallerContext context)
+        public static QueryServerLockResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryServerLockResponse queryServerLockResponse = new QueryServerLockResponse();
 
-			queryServerLockResponse.HttpResponse = context.HttpResponse;
-			queryServerLockResponse.RequestId = context.StringValue("QueryServerLock.RequestId");
-			queryServerLockResponse.GmtCreate = context.StringValue("QueryServerLock.GmtCreate");
-			queryServerLockResponse.GmtModified = context.StringValue("QueryServerLock.GmtModified");
-			queryServerLockResponse.UserId = context.StringValue("QueryServerLock.UserId");
-			queryServerLockResponse.DomainName = context.StringValue("QueryServerLock.DomainName");
-			queryServerLockResponse.DomainInstanceId = context.StringValue("QueryServerLock.DomainInstanceId");
-			queryServerLockResponse.LockProductId = context.StringValue("QueryServerLock.LockProductId");
-			queryServerLockResponse.StartDate = context.StringValue("QueryServerLock.StartDate");
-			queryServerLockResponse.ExpireDate = context.StringValue("QueryServerLock.ExpireDate");
-			queryServerLockResponse.LockInstanceId = context.StringValue("QueryServerLock.LockInstanceId");
-			queryServerLockResponse.ServerLockStatus = context.IntegerValue("QueryServerLock.ServerLockStatus");
+			queryServerLockResponse.HttpResponse = _ctx.HttpResponse;
+			queryServerLockResponse.RequestId = _ctx.StringValue("QueryServerLock.RequestId");
+			queryServerLockResponse.GmtCreate = _ctx.StringValue("QueryServerLock.GmtCreate");
+			queryServerLockResponse.GmtModified = _ctx.StringValue("QueryServerLock.GmtModified");
+			queryServerLockResponse.UserId = _ctx.StringValue("QueryServerLock.UserId");
+			queryServerLockResponse.DomainName = _ctx.StringValue("QueryServerLock.DomainName");
+			queryServerLockResponse.DomainInstanceId = _ctx.StringValue("QueryServerLock.DomainInstanceId");
+			queryServerLockResponse.LockProductId = _ctx.StringValue("QueryServerLock.LockProductId");
+			queryServerLockResponse.StartDate = _ctx.StringValue("QueryServerLock.StartDate");
+			queryServerLockResponse.ExpireDate = _ctx.StringValue("QueryServerLock.ExpireDate");
+			queryServerLockResponse.LockInstanceId = _ctx.StringValue("QueryServerLock.LockInstanceId");
+			queryServerLockResponse.ServerLockStatus = _ctx.IntegerValue("QueryServerLock.ServerLockStatus");
         
 			return queryServerLockResponse;
         }

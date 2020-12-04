@@ -26,33 +26,33 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class QueryTransferInByInstanceIdResponseUnmarshaller
     {
-        public static QueryTransferInByInstanceIdResponse Unmarshall(UnmarshallerContext context)
+        public static QueryTransferInByInstanceIdResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryTransferInByInstanceIdResponse queryTransferInByInstanceIdResponse = new QueryTransferInByInstanceIdResponse();
 
-			queryTransferInByInstanceIdResponse.HttpResponse = context.HttpResponse;
-			queryTransferInByInstanceIdResponse.RequestId = context.StringValue("QueryTransferInByInstanceId.RequestId");
-			queryTransferInByInstanceIdResponse.SubmissionDate = context.StringValue("QueryTransferInByInstanceId.SubmissionDate");
-			queryTransferInByInstanceIdResponse.ModificationDate = context.StringValue("QueryTransferInByInstanceId.ModificationDate");
-			queryTransferInByInstanceIdResponse.UserId = context.StringValue("QueryTransferInByInstanceId.UserId");
-			queryTransferInByInstanceIdResponse.InstanceId = context.StringValue("QueryTransferInByInstanceId.InstanceId");
-			queryTransferInByInstanceIdResponse.DomainName = context.StringValue("QueryTransferInByInstanceId.DomainName");
-			queryTransferInByInstanceIdResponse.Status = context.IntegerValue("QueryTransferInByInstanceId.Status");
-			queryTransferInByInstanceIdResponse.SimpleTransferInStatus = context.StringValue("QueryTransferInByInstanceId.SimpleTransferInStatus");
-			queryTransferInByInstanceIdResponse.ResultCode = context.StringValue("QueryTransferInByInstanceId.ResultCode");
-			queryTransferInByInstanceIdResponse.ResultDate = context.StringValue("QueryTransferInByInstanceId.ResultDate");
-			queryTransferInByInstanceIdResponse.ResultMsg = context.StringValue("QueryTransferInByInstanceId.ResultMsg");
-			queryTransferInByInstanceIdResponse.TransferAuthorizationCodeSubmissionDate = context.StringValue("QueryTransferInByInstanceId.TransferAuthorizationCodeSubmissionDate");
-			queryTransferInByInstanceIdResponse.NeedMailCheck = context.BooleanValue("QueryTransferInByInstanceId.NeedMailCheck");
-			queryTransferInByInstanceIdResponse.Email = context.StringValue("QueryTransferInByInstanceId.Email");
-			queryTransferInByInstanceIdResponse.WhoisMailStatus = context.BooleanValue("QueryTransferInByInstanceId.WhoisMailStatus");
-			queryTransferInByInstanceIdResponse.ExpirationDate = context.StringValue("QueryTransferInByInstanceId.ExpirationDate");
-			queryTransferInByInstanceIdResponse.ProgressBarType = context.IntegerValue("QueryTransferInByInstanceId.ProgressBarType");
-			queryTransferInByInstanceIdResponse.SubmissionDateLong = context.LongValue("QueryTransferInByInstanceId.SubmissionDateLong");
-			queryTransferInByInstanceIdResponse.ModificationDateLong = context.LongValue("QueryTransferInByInstanceId.ModificationDateLong");
-			queryTransferInByInstanceIdResponse.ResultDateLong = context.LongValue("QueryTransferInByInstanceId.ResultDateLong");
-			queryTransferInByInstanceIdResponse.ExpirationDateLong = context.LongValue("QueryTransferInByInstanceId.ExpirationDateLong");
-			queryTransferInByInstanceIdResponse.TransferAuthorizationCodeSubmissionDateLong = context.LongValue("QueryTransferInByInstanceId.TransferAuthorizationCodeSubmissionDateLong");
+			queryTransferInByInstanceIdResponse.HttpResponse = _ctx.HttpResponse;
+			queryTransferInByInstanceIdResponse.RequestId = _ctx.StringValue("QueryTransferInByInstanceId.RequestId");
+			queryTransferInByInstanceIdResponse.SubmissionDate = _ctx.StringValue("QueryTransferInByInstanceId.SubmissionDate");
+			queryTransferInByInstanceIdResponse.ModificationDate = _ctx.StringValue("QueryTransferInByInstanceId.ModificationDate");
+			queryTransferInByInstanceIdResponse.UserId = _ctx.StringValue("QueryTransferInByInstanceId.UserId");
+			queryTransferInByInstanceIdResponse.InstanceId = _ctx.StringValue("QueryTransferInByInstanceId.InstanceId");
+			queryTransferInByInstanceIdResponse.DomainName = _ctx.StringValue("QueryTransferInByInstanceId.DomainName");
+			queryTransferInByInstanceIdResponse.Status = _ctx.IntegerValue("QueryTransferInByInstanceId.Status");
+			queryTransferInByInstanceIdResponse.SimpleTransferInStatus = _ctx.StringValue("QueryTransferInByInstanceId.SimpleTransferInStatus");
+			queryTransferInByInstanceIdResponse.ResultCode = _ctx.StringValue("QueryTransferInByInstanceId.ResultCode");
+			queryTransferInByInstanceIdResponse.ResultDate = _ctx.StringValue("QueryTransferInByInstanceId.ResultDate");
+			queryTransferInByInstanceIdResponse.ResultMsg = _ctx.StringValue("QueryTransferInByInstanceId.ResultMsg");
+			queryTransferInByInstanceIdResponse.TransferAuthorizationCodeSubmissionDate = _ctx.StringValue("QueryTransferInByInstanceId.TransferAuthorizationCodeSubmissionDate");
+			queryTransferInByInstanceIdResponse.NeedMailCheck = _ctx.BooleanValue("QueryTransferInByInstanceId.NeedMailCheck");
+			queryTransferInByInstanceIdResponse.Email = _ctx.StringValue("QueryTransferInByInstanceId.Email");
+			queryTransferInByInstanceIdResponse.WhoisMailStatus = _ctx.BooleanValue("QueryTransferInByInstanceId.WhoisMailStatus");
+			queryTransferInByInstanceIdResponse.ExpirationDate = _ctx.StringValue("QueryTransferInByInstanceId.ExpirationDate");
+			queryTransferInByInstanceIdResponse.ProgressBarType = _ctx.IntegerValue("QueryTransferInByInstanceId.ProgressBarType");
+			queryTransferInByInstanceIdResponse.SubmissionDateLong = _ctx.LongValue("QueryTransferInByInstanceId.SubmissionDateLong");
+			queryTransferInByInstanceIdResponse.ModificationDateLong = _ctx.LongValue("QueryTransferInByInstanceId.ModificationDateLong");
+			queryTransferInByInstanceIdResponse.ResultDateLong = _ctx.LongValue("QueryTransferInByInstanceId.ResultDateLong");
+			queryTransferInByInstanceIdResponse.ExpirationDateLong = _ctx.LongValue("QueryTransferInByInstanceId.ExpirationDateLong");
+			queryTransferInByInstanceIdResponse.TransferAuthorizationCodeSubmissionDateLong = _ctx.LongValue("QueryTransferInByInstanceId.TransferAuthorizationCodeSubmissionDateLong");
         
 			return queryTransferInByInstanceIdResponse;
         }

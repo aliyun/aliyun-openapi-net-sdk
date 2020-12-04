@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class CheckTransferInFeasibilityResponseUnmarshaller
     {
-        public static CheckTransferInFeasibilityResponse Unmarshall(UnmarshallerContext context)
+        public static CheckTransferInFeasibilityResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckTransferInFeasibilityResponse checkTransferInFeasibilityResponse = new CheckTransferInFeasibilityResponse();
 
-			checkTransferInFeasibilityResponse.HttpResponse = context.HttpResponse;
-			checkTransferInFeasibilityResponse.RequestId = context.StringValue("CheckTransferInFeasibility.RequestId");
-			checkTransferInFeasibilityResponse.CanTransfer = context.BooleanValue("CheckTransferInFeasibility.CanTransfer");
-			checkTransferInFeasibilityResponse.Code = context.StringValue("CheckTransferInFeasibility.Code");
-			checkTransferInFeasibilityResponse.Message = context.StringValue("CheckTransferInFeasibility.Message");
-			checkTransferInFeasibilityResponse.ProductId = context.StringValue("CheckTransferInFeasibility.ProductId");
+			checkTransferInFeasibilityResponse.HttpResponse = _ctx.HttpResponse;
+			checkTransferInFeasibilityResponse.RequestId = _ctx.StringValue("CheckTransferInFeasibility.RequestId");
+			checkTransferInFeasibilityResponse.CanTransfer = _ctx.BooleanValue("CheckTransferInFeasibility.CanTransfer");
+			checkTransferInFeasibilityResponse.Code = _ctx.StringValue("CheckTransferInFeasibility.Code");
+			checkTransferInFeasibilityResponse.Message = _ctx.StringValue("CheckTransferInFeasibility.Message");
+			checkTransferInFeasibilityResponse.ProductId = _ctx.StringValue("CheckTransferInFeasibility.ProductId");
         
 			return checkTransferInFeasibilityResponse;
         }

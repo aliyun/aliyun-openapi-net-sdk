@@ -26,32 +26,32 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 {
     public class QueryTaskListResponseUnmarshaller
     {
-        public static QueryTaskListResponse Unmarshall(UnmarshallerContext context)
+        public static QueryTaskListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryTaskListResponse queryTaskListResponse = new QueryTaskListResponse();
 
-			queryTaskListResponse.HttpResponse = context.HttpResponse;
-			queryTaskListResponse.RequestId = context.StringValue("QueryTaskList.RequestId");
-			queryTaskListResponse.TotalItemNum = context.IntegerValue("QueryTaskList.TotalItemNum");
-			queryTaskListResponse.CurrentPageNum = context.IntegerValue("QueryTaskList.CurrentPageNum");
-			queryTaskListResponse.TotalPageNum = context.IntegerValue("QueryTaskList.TotalPageNum");
-			queryTaskListResponse.PageSize = context.IntegerValue("QueryTaskList.PageSize");
-			queryTaskListResponse.PrePage = context.BooleanValue("QueryTaskList.PrePage");
-			queryTaskListResponse.NextPage = context.BooleanValue("QueryTaskList.NextPage");
+			queryTaskListResponse.HttpResponse = _ctx.HttpResponse;
+			queryTaskListResponse.RequestId = _ctx.StringValue("QueryTaskList.RequestId");
+			queryTaskListResponse.TotalItemNum = _ctx.IntegerValue("QueryTaskList.TotalItemNum");
+			queryTaskListResponse.CurrentPageNum = _ctx.IntegerValue("QueryTaskList.CurrentPageNum");
+			queryTaskListResponse.TotalPageNum = _ctx.IntegerValue("QueryTaskList.TotalPageNum");
+			queryTaskListResponse.PageSize = _ctx.IntegerValue("QueryTaskList.PageSize");
+			queryTaskListResponse.PrePage = _ctx.BooleanValue("QueryTaskList.PrePage");
+			queryTaskListResponse.NextPage = _ctx.BooleanValue("QueryTaskList.NextPage");
 
 			List<QueryTaskListResponse.QueryTaskList_TaskInfo> queryTaskListResponse_data = new List<QueryTaskListResponse.QueryTaskList_TaskInfo>();
-			for (int i = 0; i < context.Length("QueryTaskList.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryTaskList.Data.Length"); i++) {
 				QueryTaskListResponse.QueryTaskList_TaskInfo taskInfo = new QueryTaskListResponse.QueryTaskList_TaskInfo();
-				taskInfo.TaskType = context.StringValue("QueryTaskList.Data["+ i +"].TaskType");
-				taskInfo.TaskNum = context.IntegerValue("QueryTaskList.Data["+ i +"].TaskNum");
-				taskInfo.TaskStatus = context.StringValue("QueryTaskList.Data["+ i +"].TaskStatus");
-				taskInfo.CreateTime = context.StringValue("QueryTaskList.Data["+ i +"].CreateTime");
-				taskInfo.Clientip = context.StringValue("QueryTaskList.Data["+ i +"].Clientip");
-				taskInfo.TaskNo = context.StringValue("QueryTaskList.Data["+ i +"].TaskNo");
-				taskInfo.TaskStatusCode = context.IntegerValue("QueryTaskList.Data["+ i +"].TaskStatusCode");
-				taskInfo.TaskTypeDescription = context.StringValue("QueryTaskList.Data["+ i +"].TaskTypeDescription");
-				taskInfo.TaskCancelStatus = context.StringValue("QueryTaskList.Data["+ i +"].TaskCancelStatus");
-				taskInfo.TaskCancelStatusCode = context.IntegerValue("QueryTaskList.Data["+ i +"].TaskCancelStatusCode");
+				taskInfo.TaskType = _ctx.StringValue("QueryTaskList.Data["+ i +"].TaskType");
+				taskInfo.TaskNum = _ctx.IntegerValue("QueryTaskList.Data["+ i +"].TaskNum");
+				taskInfo.TaskStatus = _ctx.StringValue("QueryTaskList.Data["+ i +"].TaskStatus");
+				taskInfo.CreateTime = _ctx.StringValue("QueryTaskList.Data["+ i +"].CreateTime");
+				taskInfo.Clientip = _ctx.StringValue("QueryTaskList.Data["+ i +"].Clientip");
+				taskInfo.TaskNo = _ctx.StringValue("QueryTaskList.Data["+ i +"].TaskNo");
+				taskInfo.TaskStatusCode = _ctx.IntegerValue("QueryTaskList.Data["+ i +"].TaskStatusCode");
+				taskInfo.TaskTypeDescription = _ctx.StringValue("QueryTaskList.Data["+ i +"].TaskTypeDescription");
+				taskInfo.TaskCancelStatus = _ctx.StringValue("QueryTaskList.Data["+ i +"].TaskCancelStatus");
+				taskInfo.TaskCancelStatusCode = _ctx.IntegerValue("QueryTaskList.Data["+ i +"].TaskCancelStatusCode");
 
 				queryTaskListResponse_data.Add(taskInfo);
 			}
