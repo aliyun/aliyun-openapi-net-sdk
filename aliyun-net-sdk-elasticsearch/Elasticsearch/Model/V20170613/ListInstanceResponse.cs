@@ -94,6 +94,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private List<ListInstance_Tag> tags;
 
+			private List<Dictionary<string, string>> extendConfigs;
+
 			private ListInstance_NodeSpec nodeSpec;
 
 			private ListInstance_NetworkConfig networkConfig;
@@ -250,6 +252,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public List<Dictionary<string, string>> ExtendConfigs
+			{
+				get
+				{
+					return extendConfigs;
+				}
+				set	
+				{
+					extendConfigs = value;
+				}
+			}
+
 			public ListInstance_NodeSpec NodeSpec
 			{
 				get
@@ -363,6 +377,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 				private string diskType;
 
+				private bool? diskEncryption;
+
 				public string Spec
 				{
 					get
@@ -396,6 +412,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						diskType = value;
+					}
+				}
+
+				public bool? DiskEncryption
+				{
+					get
+					{
+						return diskEncryption;
+					}
+					set	
+					{
+						diskEncryption = value;
 					}
 				}
 			}

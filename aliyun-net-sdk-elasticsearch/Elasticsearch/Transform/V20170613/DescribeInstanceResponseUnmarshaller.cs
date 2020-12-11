@@ -98,6 +98,21 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			}
 			result.KibanaPrivateIPWhitelist = result_kibanaPrivateIPWhitelist;
 
+			List<Dictionary<string, string>> result_extendConfigs = new List<Dictionary<string, string>>();
+			for (int i = 0; i < _ctx.Length("DescribeInstance.Result.ExtendConfigs.Length"); i++) {
+				Dictionary<string, string> tmp = new Dictionary<string, string>() { };
+				foreach (var _item in _ctx.ResponseDictionary){
+					string prefix = "DescribeInstance.Result.ExtendConfigs["+ i +"].";
+					if (_item.Key.IndexOf(prefix) == 0){
+						tmp.Add(_item.Key.Substring(prefix.Length), _item.Value);
+					}
+				}
+				if (tmp.Count > 0){
+					result_extendConfigs.Add(tmp);
+				}
+			}
+			result.ExtendConfigs = result_extendConfigs;
+
 			DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_NodeSpec nodeSpec = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_NodeSpec();
 			nodeSpec.Spec = _ctx.StringValue("DescribeInstance.Result.NodeSpec.spec");
 			nodeSpec.Disk = _ctx.IntegerValue("DescribeInstance.Result.NodeSpec.disk");

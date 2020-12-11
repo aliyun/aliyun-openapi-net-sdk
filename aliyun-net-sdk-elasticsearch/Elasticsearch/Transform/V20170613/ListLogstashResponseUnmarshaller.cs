@@ -33,6 +33,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			listLogstashResponse.HttpResponse = _ctx.HttpResponse;
 			listLogstashResponse.RequestId = _ctx.StringValue("ListLogstash.RequestId");
 
+			ListLogstashResponse.ListLogstash_Headers headers = new ListLogstashResponse.ListLogstash_Headers();
+			headers.XTotalCount = _ctx.IntegerValue("ListLogstash.Headers.X-Total-Count");
+			listLogstashResponse.Headers = headers;
+
 			List<ListLogstashResponse.ListLogstash_Instance> listLogstashResponse_result = new List<ListLogstashResponse.ListLogstash_Instance>();
 			for (int i = 0; i < _ctx.Length("ListLogstash.Result.Length"); i++) {
 				ListLogstashResponse.ListLogstash_Instance instance = new ListLogstashResponse.ListLogstash_Instance();
@@ -49,6 +53,7 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				nodeSpec.Spec = _ctx.StringValue("ListLogstash.Result["+ i +"].NodeSpec.spec");
 				nodeSpec.Disk = _ctx.IntegerValue("ListLogstash.Result["+ i +"].NodeSpec.disk");
 				nodeSpec.DiskType = _ctx.StringValue("ListLogstash.Result["+ i +"].NodeSpec.diskType");
+				nodeSpec.DiskEncryption = _ctx.BooleanValue("ListLogstash.Result["+ i +"].NodeSpec.diskEncryption");
 				instance.NodeSpec = nodeSpec;
 
 				ListLogstashResponse.ListLogstash_Instance.ListLogstash_NetworkConfig networkConfig = new ListLogstashResponse.ListLogstash_Instance.ListLogstash_NetworkConfig();
@@ -57,6 +62,16 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				networkConfig.VswitchId = _ctx.StringValue("ListLogstash.Result["+ i +"].NetworkConfig.vswitchId");
 				networkConfig.VsArea = _ctx.StringValue("ListLogstash.Result["+ i +"].NetworkConfig.vsArea");
 				instance.NetworkConfig = networkConfig;
+
+				List<ListLogstashResponse.ListLogstash_Instance.ListLogstash_TagsItem> instance_tags = new List<ListLogstashResponse.ListLogstash_Instance.ListLogstash_TagsItem>();
+				for (int j = 0; j < _ctx.Length("ListLogstash.Result["+ i +"].Tags.Length"); j++) {
+					ListLogstashResponse.ListLogstash_Instance.ListLogstash_TagsItem tagsItem = new ListLogstashResponse.ListLogstash_Instance.ListLogstash_TagsItem();
+					tagsItem.TagKey = _ctx.StringValue("ListLogstash.Result["+ i +"].Tags["+ j +"].TagKey");
+					tagsItem.TagValue = _ctx.StringValue("ListLogstash.Result["+ i +"].Tags["+ j +"].TagValue");
+
+					instance_tags.Add(tagsItem);
+				}
+				instance.Tags = instance_tags;
 
 				listLogstashResponse_result.Add(instance);
 			}

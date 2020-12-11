@@ -27,62 +27,32 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class UpdateDescriptionRequest : RoaAcsRequest<UpdateDescriptionResponse>
+    public class GetEmonMonitorDataRequest : RoaAcsRequest<GetEmonMonitorDataResponse>
     {
-        public UpdateDescriptionRequest()
-            : base("elasticsearch", "2017-06-13", "UpdateDescription", "elasticsearch", "openAPI")
+        public GetEmonMonitorDataRequest()
+            : base("elasticsearch", "2017-06-13", "GetEmonMonitorData", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/instances/[InstanceId]/description";
+			UriPattern = "/openapi/emon/projects/[ProjectId]/metrics/query";
 			Method = MethodType.POST;
         }
 
-		private string instanceId;
+		private string projectId;
 
-		private string clientToken;
-
-		private string description;
-
-		public string InstanceId
+		public string ProjectId
 		{
 			get
 			{
-				return instanceId;
+				return projectId;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(PathParameters, "InstanceId", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "clientToken", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(BodyParameters, "description", value);
+				projectId = value;
+				DictionaryUtil.Add(PathParameters, "ProjectId", value);
 			}
 		}
 
@@ -91,9 +61,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			return false;
 		}
 
-        public override UpdateDescriptionResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetEmonMonitorDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateDescriptionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetEmonMonitorDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

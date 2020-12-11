@@ -132,6 +132,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private List<string> kibanaPrivateIPWhitelist;
 
+			private List<Dictionary<string, string>> extendConfigs;
+
 			private DescribeInstance_NodeSpec nodeSpec;
 
 			private DescribeInstance_NetworkConfig networkConfig;
@@ -601,6 +603,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					kibanaPrivateIPWhitelist = value;
+				}
+			}
+
+			public List<Dictionary<string, string>> ExtendConfigs
+			{
+				get
+				{
+					return extendConfigs;
+				}
+				set	
+				{
+					extendConfigs = value;
 				}
 			}
 

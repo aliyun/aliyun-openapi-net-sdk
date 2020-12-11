@@ -52,10 +52,26 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				instance.DedicateMaster = _ctx.BooleanValue("ListInstance.Result["+ i +"].dedicateMaster");
 				instance.ResourceGroupId = _ctx.StringValue("ListInstance.Result["+ i +"].resourceGroupId");
 
+				List<Dictionary<string, string>> instance_extendConfigs = new List<Dictionary<string, string>>();
+				for (int j = 0; j < _ctx.Length("ListInstance.Result["+ i +"].ExtendConfigs.Length"); j++) {
+					Dictionary<string, string> tmp = new Dictionary<string, string>() { };
+					foreach (var _item in _ctx.ResponseDictionary){
+						string prefix = "ListInstance.Result["+ i +"].ExtendConfigs["+ j +"].";
+						if (_item.Key.IndexOf(prefix) == 0){
+							tmp.Add(_item.Key.Substring(prefix.Length), _item.Value);
+						}
+					}
+					if (tmp.Count > 0){
+						instance_extendConfigs.Add(tmp);
+					}
+				}
+				instance.ExtendConfigs = instance_extendConfigs;
+
 				ListInstanceResponse.ListInstance_Instance.ListInstance_NodeSpec nodeSpec = new ListInstanceResponse.ListInstance_Instance.ListInstance_NodeSpec();
 				nodeSpec.Spec = _ctx.StringValue("ListInstance.Result["+ i +"].NodeSpec.spec");
 				nodeSpec.Disk = _ctx.IntegerValue("ListInstance.Result["+ i +"].NodeSpec.disk");
 				nodeSpec.DiskType = _ctx.StringValue("ListInstance.Result["+ i +"].NodeSpec.diskType");
+				nodeSpec.DiskEncryption = _ctx.BooleanValue("ListInstance.Result["+ i +"].NodeSpec.diskEncryption");
 				instance.NodeSpec = nodeSpec;
 
 				ListInstanceResponse.ListInstance_Instance.ListInstance_NetworkConfig networkConfig = new ListInstanceResponse.ListInstance_Instance.ListInstance_NetworkConfig();
