@@ -85,6 +85,7 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 				task.TaskId = _ctx.StringValue("GetTaskListFilter.Object.Result["+ i +"].TaskId");
 				task.Sprint = _ctx.StringValue("GetTaskListFilter.Object.Result["+ i +"].Sprint");
 				task.Parent = _ctx.StringValue("GetTaskListFilter.Object.Result["+ i +"].Parent");
+				task.TaskUniqueId = _ctx.StringValue("GetTaskListFilter.Object.Result["+ i +"].TaskUniqueId");
 
 				List<string> task_ancestorIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("GetTaskListFilter.Object.Result["+ i +"].AncestorIds.Length"); j++) {

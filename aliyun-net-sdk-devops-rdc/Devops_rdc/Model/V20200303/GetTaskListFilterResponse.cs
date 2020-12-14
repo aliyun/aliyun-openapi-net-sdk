@@ -227,6 +227,8 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 
 				private string parent;
 
+				private string taskUniqueId;
+
 				private List<GetTaskListFilter_Customfield> customfields;
 
 				private List<string> ancestorIds;
@@ -756,6 +758,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					set	
 					{
 						parent = value;
+					}
+				}
+
+				public string TaskUniqueId
+				{
+					get
+					{
+						return taskUniqueId;
+					}
+					set	
+					{
+						taskUniqueId = value;
 					}
 				}
 
