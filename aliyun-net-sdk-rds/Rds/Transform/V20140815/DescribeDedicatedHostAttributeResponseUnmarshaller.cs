@@ -26,44 +26,44 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeDedicatedHostAttributeResponseUnmarshaller
     {
-        public static DescribeDedicatedHostAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDedicatedHostAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDedicatedHostAttributeResponse describeDedicatedHostAttributeResponse = new DescribeDedicatedHostAttributeResponse();
 
-			describeDedicatedHostAttributeResponse.HttpResponse = context.HttpResponse;
-			describeDedicatedHostAttributeResponse.RequestId = context.StringValue("DescribeDedicatedHostAttribute.RequestId");
-			describeDedicatedHostAttributeResponse.DedicatedHostGroupId = context.StringValue("DescribeDedicatedHostAttribute.DedicatedHostGroupId");
-			describeDedicatedHostAttributeResponse.DedicatedHostId = context.StringValue("DescribeDedicatedHostAttribute.DedicatedHostId");
-			describeDedicatedHostAttributeResponse.RegionId = context.StringValue("DescribeDedicatedHostAttribute.RegionId");
-			describeDedicatedHostAttributeResponse.ZoneId = context.StringValue("DescribeDedicatedHostAttribute.ZoneId");
-			describeDedicatedHostAttributeResponse.VPCId = context.StringValue("DescribeDedicatedHostAttribute.VPCId");
-			describeDedicatedHostAttributeResponse.VSwitchId = context.StringValue("DescribeDedicatedHostAttribute.VSwitchId");
-			describeDedicatedHostAttributeResponse.IPAddress = context.StringValue("DescribeDedicatedHostAttribute.IPAddress");
-			describeDedicatedHostAttributeResponse.HostName = context.StringValue("DescribeDedicatedHostAttribute.HostName");
-			describeDedicatedHostAttributeResponse.HostStatus = context.StringValue("DescribeDedicatedHostAttribute.HostStatus");
-			describeDedicatedHostAttributeResponse.HostClass = context.StringValue("DescribeDedicatedHostAttribute.HostClass");
-			describeDedicatedHostAttributeResponse.HostCPU = context.IntegerValue("DescribeDedicatedHostAttribute.HostCPU");
-			describeDedicatedHostAttributeResponse.HostMem = context.IntegerValue("DescribeDedicatedHostAttribute.HostMem");
-			describeDedicatedHostAttributeResponse.HostStorage = context.IntegerValue("DescribeDedicatedHostAttribute.HostStorage");
-			describeDedicatedHostAttributeResponse.CPUAllocationRatio = context.StringValue("DescribeDedicatedHostAttribute.CPUAllocationRatio");
-			describeDedicatedHostAttributeResponse.MemAllocationRatio = context.StringValue("DescribeDedicatedHostAttribute.MemAllocationRatio");
-			describeDedicatedHostAttributeResponse.DiskAllocationRatio = context.StringValue("DescribeDedicatedHostAttribute.DiskAllocationRatio");
-			describeDedicatedHostAttributeResponse.InstanceNumber = context.IntegerValue("DescribeDedicatedHostAttribute.InstanceNumber");
-			describeDedicatedHostAttributeResponse.InstanceNumberMaster = context.IntegerValue("DescribeDedicatedHostAttribute.InstanceNumberMaster");
-			describeDedicatedHostAttributeResponse.InstanceNumberSlave = context.IntegerValue("DescribeDedicatedHostAttribute.InstanceNumberSlave");
-			describeDedicatedHostAttributeResponse.InstanceNumberROMaster = context.IntegerValue("DescribeDedicatedHostAttribute.InstanceNumberROMaster");
-			describeDedicatedHostAttributeResponse.InstanceNumberROSlave = context.IntegerValue("DescribeDedicatedHostAttribute.InstanceNumberROSlave");
-			describeDedicatedHostAttributeResponse.CreatedTime = context.StringValue("DescribeDedicatedHostAttribute.CreatedTime");
-			describeDedicatedHostAttributeResponse.ExpiredTime = context.StringValue("DescribeDedicatedHostAttribute.ExpiredTime");
-			describeDedicatedHostAttributeResponse.AutoRenew = context.StringValue("DescribeDedicatedHostAttribute.AutoRenew");
-			describeDedicatedHostAttributeResponse.AllocationStatus = context.StringValue("DescribeDedicatedHostAttribute.AllocationStatus");
-			describeDedicatedHostAttributeResponse.CpuUsed = context.StringValue("DescribeDedicatedHostAttribute.CpuUsed");
-			describeDedicatedHostAttributeResponse.MemoryUsed = context.StringValue("DescribeDedicatedHostAttribute.MemoryUsed");
-			describeDedicatedHostAttributeResponse.StorageUsed = context.StringValue("DescribeDedicatedHostAttribute.StorageUsed");
-			describeDedicatedHostAttributeResponse.HostType = context.StringValue("DescribeDedicatedHostAttribute.HostType");
-			describeDedicatedHostAttributeResponse.AccountName = context.StringValue("DescribeDedicatedHostAttribute.AccountName");
-			describeDedicatedHostAttributeResponse.OpenPermission = context.StringValue("DescribeDedicatedHostAttribute.OpenPermission");
-			describeDedicatedHostAttributeResponse.ImageCategory = context.StringValue("DescribeDedicatedHostAttribute.ImageCategory");
+			describeDedicatedHostAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			describeDedicatedHostAttributeResponse.RequestId = _ctx.StringValue("DescribeDedicatedHostAttribute.RequestId");
+			describeDedicatedHostAttributeResponse.DedicatedHostGroupId = _ctx.StringValue("DescribeDedicatedHostAttribute.DedicatedHostGroupId");
+			describeDedicatedHostAttributeResponse.DedicatedHostId = _ctx.StringValue("DescribeDedicatedHostAttribute.DedicatedHostId");
+			describeDedicatedHostAttributeResponse.RegionId = _ctx.StringValue("DescribeDedicatedHostAttribute.RegionId");
+			describeDedicatedHostAttributeResponse.ZoneId = _ctx.StringValue("DescribeDedicatedHostAttribute.ZoneId");
+			describeDedicatedHostAttributeResponse.VPCId = _ctx.StringValue("DescribeDedicatedHostAttribute.VPCId");
+			describeDedicatedHostAttributeResponse.VSwitchId = _ctx.StringValue("DescribeDedicatedHostAttribute.VSwitchId");
+			describeDedicatedHostAttributeResponse.IPAddress = _ctx.StringValue("DescribeDedicatedHostAttribute.IPAddress");
+			describeDedicatedHostAttributeResponse.HostName = _ctx.StringValue("DescribeDedicatedHostAttribute.HostName");
+			describeDedicatedHostAttributeResponse.HostStatus = _ctx.StringValue("DescribeDedicatedHostAttribute.HostStatus");
+			describeDedicatedHostAttributeResponse.HostClass = _ctx.StringValue("DescribeDedicatedHostAttribute.HostClass");
+			describeDedicatedHostAttributeResponse.HostCPU = _ctx.IntegerValue("DescribeDedicatedHostAttribute.HostCPU");
+			describeDedicatedHostAttributeResponse.HostMem = _ctx.IntegerValue("DescribeDedicatedHostAttribute.HostMem");
+			describeDedicatedHostAttributeResponse.HostStorage = _ctx.IntegerValue("DescribeDedicatedHostAttribute.HostStorage");
+			describeDedicatedHostAttributeResponse.CPUAllocationRatio = _ctx.StringValue("DescribeDedicatedHostAttribute.CPUAllocationRatio");
+			describeDedicatedHostAttributeResponse.MemAllocationRatio = _ctx.StringValue("DescribeDedicatedHostAttribute.MemAllocationRatio");
+			describeDedicatedHostAttributeResponse.DiskAllocationRatio = _ctx.StringValue("DescribeDedicatedHostAttribute.DiskAllocationRatio");
+			describeDedicatedHostAttributeResponse.InstanceNumber = _ctx.IntegerValue("DescribeDedicatedHostAttribute.InstanceNumber");
+			describeDedicatedHostAttributeResponse.InstanceNumberMaster = _ctx.IntegerValue("DescribeDedicatedHostAttribute.InstanceNumberMaster");
+			describeDedicatedHostAttributeResponse.InstanceNumberSlave = _ctx.IntegerValue("DescribeDedicatedHostAttribute.InstanceNumberSlave");
+			describeDedicatedHostAttributeResponse.InstanceNumberROMaster = _ctx.IntegerValue("DescribeDedicatedHostAttribute.InstanceNumberROMaster");
+			describeDedicatedHostAttributeResponse.InstanceNumberROSlave = _ctx.IntegerValue("DescribeDedicatedHostAttribute.InstanceNumberROSlave");
+			describeDedicatedHostAttributeResponse.CreatedTime = _ctx.StringValue("DescribeDedicatedHostAttribute.CreatedTime");
+			describeDedicatedHostAttributeResponse.ExpiredTime = _ctx.StringValue("DescribeDedicatedHostAttribute.ExpiredTime");
+			describeDedicatedHostAttributeResponse.AutoRenew = _ctx.StringValue("DescribeDedicatedHostAttribute.AutoRenew");
+			describeDedicatedHostAttributeResponse.AllocationStatus = _ctx.StringValue("DescribeDedicatedHostAttribute.AllocationStatus");
+			describeDedicatedHostAttributeResponse.CpuUsed = _ctx.StringValue("DescribeDedicatedHostAttribute.CpuUsed");
+			describeDedicatedHostAttributeResponse.MemoryUsed = _ctx.StringValue("DescribeDedicatedHostAttribute.MemoryUsed");
+			describeDedicatedHostAttributeResponse.StorageUsed = _ctx.StringValue("DescribeDedicatedHostAttribute.StorageUsed");
+			describeDedicatedHostAttributeResponse.HostType = _ctx.StringValue("DescribeDedicatedHostAttribute.HostType");
+			describeDedicatedHostAttributeResponse.AccountName = _ctx.StringValue("DescribeDedicatedHostAttribute.AccountName");
+			describeDedicatedHostAttributeResponse.OpenPermission = _ctx.StringValue("DescribeDedicatedHostAttribute.OpenPermission");
+			describeDedicatedHostAttributeResponse.ImageCategory = _ctx.StringValue("DescribeDedicatedHostAttribute.ImageCategory");
         
 			return describeDedicatedHostAttributeResponse;
         }

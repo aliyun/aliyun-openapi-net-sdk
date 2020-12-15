@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class RemoveTagsFromResourceResponseUnmarshaller
     {
-        public static RemoveTagsFromResourceResponse Unmarshall(UnmarshallerContext context)
+        public static RemoveTagsFromResourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RemoveTagsFromResourceResponse removeTagsFromResourceResponse = new RemoveTagsFromResourceResponse();
 
-			removeTagsFromResourceResponse.HttpResponse = context.HttpResponse;
-			removeTagsFromResourceResponse.RequestId = context.StringValue("RemoveTagsFromResource.RequestId");
+			removeTagsFromResourceResponse.HttpResponse = _ctx.HttpResponse;
+			removeTagsFromResourceResponse.RequestId = _ctx.StringValue("RemoveTagsFromResource.RequestId");
         
 			return removeTagsFromResourceResponse;
         }

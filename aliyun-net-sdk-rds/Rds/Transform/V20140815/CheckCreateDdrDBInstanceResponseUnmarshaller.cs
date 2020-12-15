@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class CheckCreateDdrDBInstanceResponseUnmarshaller
     {
-        public static CheckCreateDdrDBInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static CheckCreateDdrDBInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckCreateDdrDBInstanceResponse checkCreateDdrDBInstanceResponse = new CheckCreateDdrDBInstanceResponse();
 
-			checkCreateDdrDBInstanceResponse.HttpResponse = context.HttpResponse;
-			checkCreateDdrDBInstanceResponse.RequestId = context.StringValue("CheckCreateDdrDBInstance.RequestId");
-			checkCreateDdrDBInstanceResponse.IsValid = context.StringValue("CheckCreateDdrDBInstance.IsValid");
+			checkCreateDdrDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			checkCreateDdrDBInstanceResponse.RequestId = _ctx.StringValue("CheckCreateDdrDBInstance.RequestId");
+			checkCreateDdrDBInstanceResponse.IsValid = _ctx.StringValue("CheckCreateDdrDBInstance.IsValid");
         
 			return checkCreateDdrDBInstanceResponse;
         }

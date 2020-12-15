@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class ModifyBackupPolicyResponseUnmarshaller
     {
-        public static ModifyBackupPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyBackupPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyBackupPolicyResponse modifyBackupPolicyResponse = new ModifyBackupPolicyResponse();
 
-			modifyBackupPolicyResponse.HttpResponse = context.HttpResponse;
-			modifyBackupPolicyResponse.RequestId = context.StringValue("ModifyBackupPolicy.RequestId");
-			modifyBackupPolicyResponse.DBInstanceID = context.StringValue("ModifyBackupPolicy.DBInstanceID");
-			modifyBackupPolicyResponse.EnableBackupLog = context.StringValue("ModifyBackupPolicy.EnableBackupLog");
-			modifyBackupPolicyResponse.LocalLogRetentionHours = context.IntegerValue("ModifyBackupPolicy.LocalLogRetentionHours");
-			modifyBackupPolicyResponse.LocalLogRetentionSpace = context.StringValue("ModifyBackupPolicy.LocalLogRetentionSpace");
-			modifyBackupPolicyResponse.HighSpaceUsageProtection = context.StringValue("ModifyBackupPolicy.HighSpaceUsageProtection");
-			modifyBackupPolicyResponse.CompressType = context.StringValue("ModifyBackupPolicy.CompressType");
-			modifyBackupPolicyResponse.LogBackupLocalRetentionNumber = context.IntegerValue("ModifyBackupPolicy.LogBackupLocalRetentionNumber");
+			modifyBackupPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			modifyBackupPolicyResponse.RequestId = _ctx.StringValue("ModifyBackupPolicy.RequestId");
+			modifyBackupPolicyResponse.DBInstanceID = _ctx.StringValue("ModifyBackupPolicy.DBInstanceID");
+			modifyBackupPolicyResponse.EnableBackupLog = _ctx.StringValue("ModifyBackupPolicy.EnableBackupLog");
+			modifyBackupPolicyResponse.LocalLogRetentionHours = _ctx.IntegerValue("ModifyBackupPolicy.LocalLogRetentionHours");
+			modifyBackupPolicyResponse.LocalLogRetentionSpace = _ctx.StringValue("ModifyBackupPolicy.LocalLogRetentionSpace");
+			modifyBackupPolicyResponse.HighSpaceUsageProtection = _ctx.StringValue("ModifyBackupPolicy.HighSpaceUsageProtection");
+			modifyBackupPolicyResponse.CompressType = _ctx.StringValue("ModifyBackupPolicy.CompressType");
+			modifyBackupPolicyResponse.LogBackupLocalRetentionNumber = _ctx.IntegerValue("ModifyBackupPolicy.LogBackupLocalRetentionNumber");
         
 			return modifyBackupPolicyResponse;
         }

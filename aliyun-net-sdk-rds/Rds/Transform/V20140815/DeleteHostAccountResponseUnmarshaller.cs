@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DeleteHostAccountResponseUnmarshaller
     {
-        public static DeleteHostAccountResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteHostAccountResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteHostAccountResponse deleteHostAccountResponse = new DeleteHostAccountResponse();
 
-			deleteHostAccountResponse.HttpResponse = context.HttpResponse;
-			deleteHostAccountResponse.RequestId = context.StringValue("DeleteHostAccount.RequestId");
+			deleteHostAccountResponse.HttpResponse = _ctx.HttpResponse;
+			deleteHostAccountResponse.RequestId = _ctx.StringValue("DeleteHostAccount.RequestId");
         
 			return deleteHostAccountResponse;
         }

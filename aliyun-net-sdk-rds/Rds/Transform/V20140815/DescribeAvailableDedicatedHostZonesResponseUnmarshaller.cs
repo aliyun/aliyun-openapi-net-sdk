@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeAvailableDedicatedHostZonesResponseUnmarshaller
     {
-        public static DescribeAvailableDedicatedHostZonesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAvailableDedicatedHostZonesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAvailableDedicatedHostZonesResponse describeAvailableDedicatedHostZonesResponse = new DescribeAvailableDedicatedHostZonesResponse();
 
-			describeAvailableDedicatedHostZonesResponse.HttpResponse = context.HttpResponse;
-			describeAvailableDedicatedHostZonesResponse.RequestId = context.StringValue("DescribeAvailableDedicatedHostZones.RequestId");
+			describeAvailableDedicatedHostZonesResponse.HttpResponse = _ctx.HttpResponse;
+			describeAvailableDedicatedHostZonesResponse.RequestId = _ctx.StringValue("DescribeAvailableDedicatedHostZones.RequestId");
 
 			List<DescribeAvailableDedicatedHostZonesResponse.DescribeAvailableDedicatedHostZones_DedicatedHostZones> describeAvailableDedicatedHostZonesResponse_zones = new List<DescribeAvailableDedicatedHostZonesResponse.DescribeAvailableDedicatedHostZones_DedicatedHostZones>();
-			for (int i = 0; i < context.Length("DescribeAvailableDedicatedHostZones.Zones.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeAvailableDedicatedHostZones.Zones.Length"); i++) {
 				DescribeAvailableDedicatedHostZonesResponse.DescribeAvailableDedicatedHostZones_DedicatedHostZones dedicatedHostZones = new DescribeAvailableDedicatedHostZonesResponse.DescribeAvailableDedicatedHostZones_DedicatedHostZones();
-				dedicatedHostZones.ZoneId = context.StringValue("DescribeAvailableDedicatedHostZones.Zones["+ i +"].ZoneId");
-				dedicatedHostZones.Description = context.StringValue("DescribeAvailableDedicatedHostZones.Zones["+ i +"].Description");
+				dedicatedHostZones.ZoneId = _ctx.StringValue("DescribeAvailableDedicatedHostZones.Zones["+ i +"].ZoneId");
+				dedicatedHostZones.Description = _ctx.StringValue("DescribeAvailableDedicatedHostZones.Zones["+ i +"].Description");
 
 				describeAvailableDedicatedHostZonesResponse_zones.Add(dedicatedHostZones);
 			}

@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeDedicatedHostImageCategoriesResponseUnmarshaller
     {
-        public static DescribeDedicatedHostImageCategoriesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDedicatedHostImageCategoriesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDedicatedHostImageCategoriesResponse describeDedicatedHostImageCategoriesResponse = new DescribeDedicatedHostImageCategoriesResponse();
 
-			describeDedicatedHostImageCategoriesResponse.HttpResponse = context.HttpResponse;
-			describeDedicatedHostImageCategoriesResponse.RequestId = context.StringValue("DescribeDedicatedHostImageCategories.RequestId");
+			describeDedicatedHostImageCategoriesResponse.HttpResponse = _ctx.HttpResponse;
+			describeDedicatedHostImageCategoriesResponse.RequestId = _ctx.StringValue("DescribeDedicatedHostImageCategories.RequestId");
 
 			List<DescribeDedicatedHostImageCategoriesResponse.DescribeDedicatedHostImageCategories_ImagesItem> describeDedicatedHostImageCategoriesResponse_images = new List<DescribeDedicatedHostImageCategoriesResponse.DescribeDedicatedHostImageCategories_ImagesItem>();
-			for (int i = 0; i < context.Length("DescribeDedicatedHostImageCategories.Images.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDedicatedHostImageCategories.Images.Length"); i++) {
 				DescribeDedicatedHostImageCategoriesResponse.DescribeDedicatedHostImageCategories_ImagesItem imagesItem = new DescribeDedicatedHostImageCategoriesResponse.DescribeDedicatedHostImageCategories_ImagesItem();
-				imagesItem.ImageName = context.StringValue("DescribeDedicatedHostImageCategories.Images["+ i +"].ImageName");
-				imagesItem.ImageCode = context.StringValue("DescribeDedicatedHostImageCategories.Images["+ i +"].ImageCode");
+				imagesItem.ImageName = _ctx.StringValue("DescribeDedicatedHostImageCategories.Images["+ i +"].ImageName");
+				imagesItem.ImageCode = _ctx.StringValue("DescribeDedicatedHostImageCategories.Images["+ i +"].ImageCode");
 
 				describeDedicatedHostImageCategoriesResponse_images.Add(imagesItem);
 			}

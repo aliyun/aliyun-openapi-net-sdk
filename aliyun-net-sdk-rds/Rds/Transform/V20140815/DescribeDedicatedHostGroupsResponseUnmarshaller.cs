@@ -26,46 +26,46 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeDedicatedHostGroupsResponseUnmarshaller
     {
-        public static DescribeDedicatedHostGroupsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDedicatedHostGroupsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDedicatedHostGroupsResponse describeDedicatedHostGroupsResponse = new DescribeDedicatedHostGroupsResponse();
 
-			describeDedicatedHostGroupsResponse.HttpResponse = context.HttpResponse;
-			describeDedicatedHostGroupsResponse.RequestId = context.StringValue("DescribeDedicatedHostGroups.RequestId");
+			describeDedicatedHostGroupsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDedicatedHostGroupsResponse.RequestId = _ctx.StringValue("DescribeDedicatedHostGroups.RequestId");
 
 			List<DescribeDedicatedHostGroupsResponse.DescribeDedicatedHostGroups_DedicatedHostGroupsItem> describeDedicatedHostGroupsResponse_dedicatedHostGroups = new List<DescribeDedicatedHostGroupsResponse.DescribeDedicatedHostGroups_DedicatedHostGroupsItem>();
-			for (int i = 0; i < context.Length("DescribeDedicatedHostGroups.DedicatedHostGroups.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDedicatedHostGroups.DedicatedHostGroups.Length"); i++) {
 				DescribeDedicatedHostGroupsResponse.DescribeDedicatedHostGroups_DedicatedHostGroupsItem dedicatedHostGroupsItem = new DescribeDedicatedHostGroupsResponse.DescribeDedicatedHostGroups_DedicatedHostGroupsItem();
-				dedicatedHostGroupsItem.DedicatedHostGroupId = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DedicatedHostGroupId");
-				dedicatedHostGroupsItem.DedicatedHostGroupDesc = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DedicatedHostGroupDesc");
-				dedicatedHostGroupsItem.CpuAllocationRatio = context.IntegerValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].CpuAllocationRatio");
-				dedicatedHostGroupsItem.MemAllocationRatio = context.IntegerValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].MemAllocationRatio");
-				dedicatedHostGroupsItem.DiskAllocationRatio = context.IntegerValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DiskAllocationRatio");
-				dedicatedHostGroupsItem.AllocationPolicy = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].AllocationPolicy");
-				dedicatedHostGroupsItem.HostReplacePolicy = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].HostReplacePolicy");
-				dedicatedHostGroupsItem.CreateTime = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].CreateTime");
-				dedicatedHostGroupsItem.VPCId = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].VPCId");
-				dedicatedHostGroupsItem.HostNumber = context.IntegerValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].HostNumber");
-				dedicatedHostGroupsItem.InstanceNumber = context.IntegerValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].InstanceNumber");
-				dedicatedHostGroupsItem.Engine = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].Engine");
-				dedicatedHostGroupsItem.Text = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].Text");
-				dedicatedHostGroupsItem.DedicatedHostCountGroupByHostType = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DedicatedHostCountGroupByHostType");
-				dedicatedHostGroupsItem.BastionInstanceId = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].BastionInstanceId");
-				dedicatedHostGroupsItem.OpenPermission = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].OpenPermission");
-				dedicatedHostGroupsItem.MemUtility = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].MemUtility");
-				dedicatedHostGroupsItem.MemUsedAmount = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].MemUsedAmount");
-				dedicatedHostGroupsItem.DiskUtility = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DiskUtility");
-				dedicatedHostGroupsItem.DiskUsedAmount = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DiskUsedAmount");
-				dedicatedHostGroupsItem.CpuAllocateRation = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].CpuAllocateRation");
-				dedicatedHostGroupsItem.CpuAllocatedAmount = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].CpuAllocatedAmount");
-				dedicatedHostGroupsItem.MemAllocateRation = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].MemAllocateRation");
-				dedicatedHostGroupsItem.MemAllocatedAmount = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].MemAllocatedAmount");
-				dedicatedHostGroupsItem.DiskAllocateRation = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DiskAllocateRation");
-				dedicatedHostGroupsItem.DiskAllocatedAmount = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DiskAllocatedAmount");
+				dedicatedHostGroupsItem.DedicatedHostGroupId = _ctx.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DedicatedHostGroupId");
+				dedicatedHostGroupsItem.DedicatedHostGroupDesc = _ctx.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DedicatedHostGroupDesc");
+				dedicatedHostGroupsItem.CpuAllocationRatio = _ctx.IntegerValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].CpuAllocationRatio");
+				dedicatedHostGroupsItem.MemAllocationRatio = _ctx.IntegerValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].MemAllocationRatio");
+				dedicatedHostGroupsItem.DiskAllocationRatio = _ctx.IntegerValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DiskAllocationRatio");
+				dedicatedHostGroupsItem.AllocationPolicy = _ctx.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].AllocationPolicy");
+				dedicatedHostGroupsItem.HostReplacePolicy = _ctx.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].HostReplacePolicy");
+				dedicatedHostGroupsItem.CreateTime = _ctx.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].CreateTime");
+				dedicatedHostGroupsItem.VPCId = _ctx.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].VPCId");
+				dedicatedHostGroupsItem.HostNumber = _ctx.IntegerValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].HostNumber");
+				dedicatedHostGroupsItem.InstanceNumber = _ctx.IntegerValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].InstanceNumber");
+				dedicatedHostGroupsItem.Engine = _ctx.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].Engine");
+				dedicatedHostGroupsItem.Text = _ctx.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].Text");
+				dedicatedHostGroupsItem.DedicatedHostCountGroupByHostType = _ctx.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DedicatedHostCountGroupByHostType");
+				dedicatedHostGroupsItem.BastionInstanceId = _ctx.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].BastionInstanceId");
+				dedicatedHostGroupsItem.OpenPermission = _ctx.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].OpenPermission");
+				dedicatedHostGroupsItem.MemUtility = _ctx.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].MemUtility");
+				dedicatedHostGroupsItem.MemUsedAmount = _ctx.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].MemUsedAmount");
+				dedicatedHostGroupsItem.DiskUtility = _ctx.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DiskUtility");
+				dedicatedHostGroupsItem.DiskUsedAmount = _ctx.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DiskUsedAmount");
+				dedicatedHostGroupsItem.CpuAllocateRation = _ctx.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].CpuAllocateRation");
+				dedicatedHostGroupsItem.CpuAllocatedAmount = _ctx.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].CpuAllocatedAmount");
+				dedicatedHostGroupsItem.MemAllocateRation = _ctx.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].MemAllocateRation");
+				dedicatedHostGroupsItem.MemAllocatedAmount = _ctx.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].MemAllocatedAmount");
+				dedicatedHostGroupsItem.DiskAllocateRation = _ctx.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DiskAllocateRation");
+				dedicatedHostGroupsItem.DiskAllocatedAmount = _ctx.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DiskAllocatedAmount");
 
 				List<string> dedicatedHostGroupsItem_zoneIDList = new List<string>();
-				for (int j = 0; j < context.Length("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].ZoneIDList.Length"); j++) {
-					dedicatedHostGroupsItem_zoneIDList.Add(context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].ZoneIDList["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].ZoneIDList.Length"); j++) {
+					dedicatedHostGroupsItem_zoneIDList.Add(_ctx.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].ZoneIDList["+ j +"]"));
 				}
 				dedicatedHostGroupsItem.ZoneIDList = dedicatedHostGroupsItem_zoneIDList;
 

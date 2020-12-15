@@ -26,31 +26,31 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeMigrateTasksForSQLServerResponseUnmarshaller
     {
-        public static DescribeMigrateTasksForSQLServerResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeMigrateTasksForSQLServerResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeMigrateTasksForSQLServerResponse describeMigrateTasksForSQLServerResponse = new DescribeMigrateTasksForSQLServerResponse();
 
-			describeMigrateTasksForSQLServerResponse.HttpResponse = context.HttpResponse;
-			describeMigrateTasksForSQLServerResponse.RequestId = context.StringValue("DescribeMigrateTasksForSQLServer.RequestId");
-			describeMigrateTasksForSQLServerResponse.DBInstanceID = context.StringValue("DescribeMigrateTasksForSQLServer.DBInstanceID");
-			describeMigrateTasksForSQLServerResponse.DBInstanceName = context.StringValue("DescribeMigrateTasksForSQLServer.DBInstanceName");
-			describeMigrateTasksForSQLServerResponse.StartTime = context.StringValue("DescribeMigrateTasksForSQLServer.StartTime");
-			describeMigrateTasksForSQLServerResponse.EndTime = context.StringValue("DescribeMigrateTasksForSQLServer.EndTime");
-			describeMigrateTasksForSQLServerResponse.TotalRecordCount = context.IntegerValue("DescribeMigrateTasksForSQLServer.TotalRecordCount");
-			describeMigrateTasksForSQLServerResponse.PageNumber = context.IntegerValue("DescribeMigrateTasksForSQLServer.PageNumber");
-			describeMigrateTasksForSQLServerResponse.PageRecordCount = context.IntegerValue("DescribeMigrateTasksForSQLServer.PageRecordCount");
+			describeMigrateTasksForSQLServerResponse.HttpResponse = _ctx.HttpResponse;
+			describeMigrateTasksForSQLServerResponse.RequestId = _ctx.StringValue("DescribeMigrateTasksForSQLServer.RequestId");
+			describeMigrateTasksForSQLServerResponse.DBInstanceID = _ctx.StringValue("DescribeMigrateTasksForSQLServer.DBInstanceID");
+			describeMigrateTasksForSQLServerResponse.DBInstanceName = _ctx.StringValue("DescribeMigrateTasksForSQLServer.DBInstanceName");
+			describeMigrateTasksForSQLServerResponse.StartTime = _ctx.StringValue("DescribeMigrateTasksForSQLServer.StartTime");
+			describeMigrateTasksForSQLServerResponse.EndTime = _ctx.StringValue("DescribeMigrateTasksForSQLServer.EndTime");
+			describeMigrateTasksForSQLServerResponse.TotalRecordCount = _ctx.IntegerValue("DescribeMigrateTasksForSQLServer.TotalRecordCount");
+			describeMigrateTasksForSQLServerResponse.PageNumber = _ctx.IntegerValue("DescribeMigrateTasksForSQLServer.PageNumber");
+			describeMigrateTasksForSQLServerResponse.PageRecordCount = _ctx.IntegerValue("DescribeMigrateTasksForSQLServer.PageRecordCount");
 
 			List<DescribeMigrateTasksForSQLServerResponse.DescribeMigrateTasksForSQLServer_MigrateTask> describeMigrateTasksForSQLServerResponse_items = new List<DescribeMigrateTasksForSQLServerResponse.DescribeMigrateTasksForSQLServer_MigrateTask>();
-			for (int i = 0; i < context.Length("DescribeMigrateTasksForSQLServer.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeMigrateTasksForSQLServer.Items.Length"); i++) {
 				DescribeMigrateTasksForSQLServerResponse.DescribeMigrateTasksForSQLServer_MigrateTask migrateTask = new DescribeMigrateTasksForSQLServerResponse.DescribeMigrateTasksForSQLServer_MigrateTask();
-				migrateTask.DBName = context.StringValue("DescribeMigrateTasksForSQLServer.Items["+ i +"].DBName");
-				migrateTask.MigrateIaskId = context.StringValue("DescribeMigrateTasksForSQLServer.Items["+ i +"].MigrateIaskId");
-				migrateTask.CreateTime = context.StringValue("DescribeMigrateTasksForSQLServer.Items["+ i +"].CreateTime");
-				migrateTask.EndTime = context.StringValue("DescribeMigrateTasksForSQLServer.Items["+ i +"].EndTime");
-				migrateTask.TaskType = context.StringValue("DescribeMigrateTasksForSQLServer.Items["+ i +"].TaskType");
-				migrateTask.Status = context.StringValue("DescribeMigrateTasksForSQLServer.Items["+ i +"].Status");
-				migrateTask.IsDBReplaced = context.StringValue("DescribeMigrateTasksForSQLServer.Items["+ i +"].IsDBReplaced");
-				migrateTask.Desc = context.StringValue("DescribeMigrateTasksForSQLServer.Items["+ i +"].Desc");
+				migrateTask.DBName = _ctx.StringValue("DescribeMigrateTasksForSQLServer.Items["+ i +"].DBName");
+				migrateTask.MigrateIaskId = _ctx.StringValue("DescribeMigrateTasksForSQLServer.Items["+ i +"].MigrateIaskId");
+				migrateTask.CreateTime = _ctx.StringValue("DescribeMigrateTasksForSQLServer.Items["+ i +"].CreateTime");
+				migrateTask.EndTime = _ctx.StringValue("DescribeMigrateTasksForSQLServer.Items["+ i +"].EndTime");
+				migrateTask.TaskType = _ctx.StringValue("DescribeMigrateTasksForSQLServer.Items["+ i +"].TaskType");
+				migrateTask.Status = _ctx.StringValue("DescribeMigrateTasksForSQLServer.Items["+ i +"].Status");
+				migrateTask.IsDBReplaced = _ctx.StringValue("DescribeMigrateTasksForSQLServer.Items["+ i +"].IsDBReplaced");
+				migrateTask.Desc = _ctx.StringValue("DescribeMigrateTasksForSQLServer.Items["+ i +"].Desc");
 
 				describeMigrateTasksForSQLServerResponse_items.Add(migrateTask);
 			}

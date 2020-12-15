@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class RevokeOperatorPermissionResponseUnmarshaller
     {
-        public static RevokeOperatorPermissionResponse Unmarshall(UnmarshallerContext context)
+        public static RevokeOperatorPermissionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RevokeOperatorPermissionResponse revokeOperatorPermissionResponse = new RevokeOperatorPermissionResponse();
 
-			revokeOperatorPermissionResponse.HttpResponse = context.HttpResponse;
-			revokeOperatorPermissionResponse.RequestId = context.StringValue("RevokeOperatorPermission.RequestId");
+			revokeOperatorPermissionResponse.HttpResponse = _ctx.HttpResponse;
+			revokeOperatorPermissionResponse.RequestId = _ctx.StringValue("RevokeOperatorPermission.RequestId");
         
 			return revokeOperatorPermissionResponse;
         }

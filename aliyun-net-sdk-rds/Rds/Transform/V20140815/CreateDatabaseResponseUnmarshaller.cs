@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class CreateDatabaseResponseUnmarshaller
     {
-        public static CreateDatabaseResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDatabaseResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDatabaseResponse createDatabaseResponse = new CreateDatabaseResponse();
 
-			createDatabaseResponse.HttpResponse = context.HttpResponse;
-			createDatabaseResponse.RequestId = context.StringValue("CreateDatabase.RequestId");
+			createDatabaseResponse.HttpResponse = _ctx.HttpResponse;
+			createDatabaseResponse.RequestId = _ctx.StringValue("CreateDatabase.RequestId");
         
 			return createDatabaseResponse;
         }

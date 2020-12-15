@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class UpgradeDBProxyInstanceKernelVersionResponseUnmarshaller
     {
-        public static UpgradeDBProxyInstanceKernelVersionResponse Unmarshall(UnmarshallerContext context)
+        public static UpgradeDBProxyInstanceKernelVersionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpgradeDBProxyInstanceKernelVersionResponse upgradeDBProxyInstanceKernelVersionResponse = new UpgradeDBProxyInstanceKernelVersionResponse();
 
-			upgradeDBProxyInstanceKernelVersionResponse.HttpResponse = context.HttpResponse;
-			upgradeDBProxyInstanceKernelVersionResponse.RequestId = context.StringValue("UpgradeDBProxyInstanceKernelVersion.RequestId");
-			upgradeDBProxyInstanceKernelVersionResponse.DBInstanceName = context.StringValue("UpgradeDBProxyInstanceKernelVersion.DBInstanceName");
-			upgradeDBProxyInstanceKernelVersionResponse.TaskId = context.StringValue("UpgradeDBProxyInstanceKernelVersion.TaskId");
-			upgradeDBProxyInstanceKernelVersionResponse.TargetMinorVersion = context.StringValue("UpgradeDBProxyInstanceKernelVersion.TargetMinorVersion");
+			upgradeDBProxyInstanceKernelVersionResponse.HttpResponse = _ctx.HttpResponse;
+			upgradeDBProxyInstanceKernelVersionResponse.RequestId = _ctx.StringValue("UpgradeDBProxyInstanceKernelVersion.RequestId");
+			upgradeDBProxyInstanceKernelVersionResponse.DBInstanceName = _ctx.StringValue("UpgradeDBProxyInstanceKernelVersion.DBInstanceName");
+			upgradeDBProxyInstanceKernelVersionResponse.TaskId = _ctx.StringValue("UpgradeDBProxyInstanceKernelVersion.TaskId");
+			upgradeDBProxyInstanceKernelVersionResponse.TargetMinorVersion = _ctx.StringValue("UpgradeDBProxyInstanceKernelVersion.TargetMinorVersion");
         
 			return upgradeDBProxyInstanceKernelVersionResponse;
         }

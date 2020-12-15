@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class CreateDedicatedHostAccountResponseUnmarshaller
     {
-        public static CreateDedicatedHostAccountResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDedicatedHostAccountResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDedicatedHostAccountResponse createDedicatedHostAccountResponse = new CreateDedicatedHostAccountResponse();
 
-			createDedicatedHostAccountResponse.HttpResponse = context.HttpResponse;
-			createDedicatedHostAccountResponse.RequestId = context.StringValue("CreateDedicatedHostAccount.RequestId");
+			createDedicatedHostAccountResponse.HttpResponse = _ctx.HttpResponse;
+			createDedicatedHostAccountResponse.RequestId = _ctx.StringValue("CreateDedicatedHostAccount.RequestId");
         
 			return createDedicatedHostAccountResponse;
         }

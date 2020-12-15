@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class MigrateDBInstanceResponseUnmarshaller
     {
-        public static MigrateDBInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static MigrateDBInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			MigrateDBInstanceResponse migrateDBInstanceResponse = new MigrateDBInstanceResponse();
 
-			migrateDBInstanceResponse.HttpResponse = context.HttpResponse;
-			migrateDBInstanceResponse.RequestId = context.StringValue("MigrateDBInstance.RequestId");
-			migrateDBInstanceResponse.TaskId = context.IntegerValue("MigrateDBInstance.TaskId");
-			migrateDBInstanceResponse.MigrationId = context.IntegerValue("MigrateDBInstance.MigrationId");
+			migrateDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			migrateDBInstanceResponse.RequestId = _ctx.StringValue("MigrateDBInstance.RequestId");
+			migrateDBInstanceResponse.TaskId = _ctx.IntegerValue("MigrateDBInstance.TaskId");
+			migrateDBInstanceResponse.MigrationId = _ctx.IntegerValue("MigrateDBInstance.MigrationId");
         
 			return migrateDBInstanceResponse;
         }

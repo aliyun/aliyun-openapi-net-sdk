@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class RebuildDBInstanceResponseUnmarshaller
     {
-        public static RebuildDBInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static RebuildDBInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RebuildDBInstanceResponse rebuildDBInstanceResponse = new RebuildDBInstanceResponse();
 
-			rebuildDBInstanceResponse.HttpResponse = context.HttpResponse;
-			rebuildDBInstanceResponse.RequestId = context.StringValue("RebuildDBInstance.RequestId");
-			rebuildDBInstanceResponse.TaskId = context.IntegerValue("RebuildDBInstance.TaskId");
-			rebuildDBInstanceResponse.MigrationId = context.IntegerValue("RebuildDBInstance.MigrationId");
+			rebuildDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			rebuildDBInstanceResponse.RequestId = _ctx.StringValue("RebuildDBInstance.RequestId");
+			rebuildDBInstanceResponse.TaskId = _ctx.IntegerValue("RebuildDBInstance.TaskId");
+			rebuildDBInstanceResponse.MigrationId = _ctx.IntegerValue("RebuildDBInstance.MigrationId");
         
 			return rebuildDBInstanceResponse;
         }

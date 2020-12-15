@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class LockAccountResponseUnmarshaller
     {
-        public static LockAccountResponse Unmarshall(UnmarshallerContext context)
+        public static LockAccountResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			LockAccountResponse lockAccountResponse = new LockAccountResponse();
 
-			lockAccountResponse.HttpResponse = context.HttpResponse;
-			lockAccountResponse.RequestId = context.StringValue("LockAccount.RequestId");
+			lockAccountResponse.HttpResponse = _ctx.HttpResponse;
+			lockAccountResponse.RequestId = _ctx.StringValue("LockAccount.RequestId");
         
 			return lockAccountResponse;
         }

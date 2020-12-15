@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class ResetAccountForPGResponseUnmarshaller
     {
-        public static ResetAccountForPGResponse Unmarshall(UnmarshallerContext context)
+        public static ResetAccountForPGResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResetAccountForPGResponse resetAccountForPGResponse = new ResetAccountForPGResponse();
 
-			resetAccountForPGResponse.HttpResponse = context.HttpResponse;
-			resetAccountForPGResponse.RequestId = context.StringValue("ResetAccountForPG.RequestId");
+			resetAccountForPGResponse.HttpResponse = _ctx.HttpResponse;
+			resetAccountForPGResponse.RequestId = _ctx.StringValue("ResetAccountForPG.RequestId");
         
 			return resetAccountForPGResponse;
         }

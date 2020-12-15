@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeDTCSecurityIpHostsForSQLServerResponseUnmarshaller
     {
-        public static DescribeDTCSecurityIpHostsForSQLServerResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDTCSecurityIpHostsForSQLServerResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDTCSecurityIpHostsForSQLServerResponse describeDTCSecurityIpHostsForSQLServerResponse = new DescribeDTCSecurityIpHostsForSQLServerResponse();
 
-			describeDTCSecurityIpHostsForSQLServerResponse.HttpResponse = context.HttpResponse;
-			describeDTCSecurityIpHostsForSQLServerResponse.RequestId = context.StringValue("DescribeDTCSecurityIpHostsForSQLServer.RequestId");
-			describeDTCSecurityIpHostsForSQLServerResponse.DBInstanceId = context.StringValue("DescribeDTCSecurityIpHostsForSQLServer.DBInstanceId");
-			describeDTCSecurityIpHostsForSQLServerResponse.IpHostPairNum = context.StringValue("DescribeDTCSecurityIpHostsForSQLServer.IpHostPairNum");
+			describeDTCSecurityIpHostsForSQLServerResponse.HttpResponse = _ctx.HttpResponse;
+			describeDTCSecurityIpHostsForSQLServerResponse.RequestId = _ctx.StringValue("DescribeDTCSecurityIpHostsForSQLServer.RequestId");
+			describeDTCSecurityIpHostsForSQLServerResponse.DBInstanceId = _ctx.StringValue("DescribeDTCSecurityIpHostsForSQLServer.DBInstanceId");
+			describeDTCSecurityIpHostsForSQLServerResponse.IpHostPairNum = _ctx.StringValue("DescribeDTCSecurityIpHostsForSQLServer.IpHostPairNum");
 
 			List<DescribeDTCSecurityIpHostsForSQLServerResponse.DescribeDTCSecurityIpHostsForSQLServer_WhiteListGroups> describeDTCSecurityIpHostsForSQLServerResponse_items = new List<DescribeDTCSecurityIpHostsForSQLServerResponse.DescribeDTCSecurityIpHostsForSQLServer_WhiteListGroups>();
-			for (int i = 0; i < context.Length("DescribeDTCSecurityIpHostsForSQLServer.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDTCSecurityIpHostsForSQLServer.Items.Length"); i++) {
 				DescribeDTCSecurityIpHostsForSQLServerResponse.DescribeDTCSecurityIpHostsForSQLServer_WhiteListGroups whiteListGroups = new DescribeDTCSecurityIpHostsForSQLServerResponse.DescribeDTCSecurityIpHostsForSQLServer_WhiteListGroups();
-				whiteListGroups.SecurityIpHosts = context.StringValue("DescribeDTCSecurityIpHostsForSQLServer.Items["+ i +"].SecurityIpHosts");
-				whiteListGroups.WhitelistGroupName = context.StringValue("DescribeDTCSecurityIpHostsForSQLServer.Items["+ i +"].WhitelistGroupName");
+				whiteListGroups.SecurityIpHosts = _ctx.StringValue("DescribeDTCSecurityIpHostsForSQLServer.Items["+ i +"].SecurityIpHosts");
+				whiteListGroups.WhitelistGroupName = _ctx.StringValue("DescribeDTCSecurityIpHostsForSQLServer.Items["+ i +"].WhitelistGroupName");
 
 				describeDTCSecurityIpHostsForSQLServerResponse_items.Add(whiteListGroups);
 			}

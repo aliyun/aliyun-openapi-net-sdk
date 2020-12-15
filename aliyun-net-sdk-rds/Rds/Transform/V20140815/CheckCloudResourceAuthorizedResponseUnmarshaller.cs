@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class CheckCloudResourceAuthorizedResponseUnmarshaller
     {
-        public static CheckCloudResourceAuthorizedResponse Unmarshall(UnmarshallerContext context)
+        public static CheckCloudResourceAuthorizedResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckCloudResourceAuthorizedResponse checkCloudResourceAuthorizedResponse = new CheckCloudResourceAuthorizedResponse();
 
-			checkCloudResourceAuthorizedResponse.HttpResponse = context.HttpResponse;
-			checkCloudResourceAuthorizedResponse.RequestId = context.StringValue("CheckCloudResourceAuthorized.RequestId");
-			checkCloudResourceAuthorizedResponse.AuthorizationState = context.IntegerValue("CheckCloudResourceAuthorized.AuthorizationState");
-			checkCloudResourceAuthorizedResponse.RoleArn = context.StringValue("CheckCloudResourceAuthorized.RoleArn");
+			checkCloudResourceAuthorizedResponse.HttpResponse = _ctx.HttpResponse;
+			checkCloudResourceAuthorizedResponse.RequestId = _ctx.StringValue("CheckCloudResourceAuthorized.RequestId");
+			checkCloudResourceAuthorizedResponse.AuthorizationState = _ctx.IntegerValue("CheckCloudResourceAuthorized.AuthorizationState");
+			checkCloudResourceAuthorizedResponse.RoleArn = _ctx.StringValue("CheckCloudResourceAuthorized.RoleArn");
         
 			return checkCloudResourceAuthorizedResponse;
         }

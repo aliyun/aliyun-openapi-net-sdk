@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class ModifySecurityIpsResponseUnmarshaller
     {
-        public static ModifySecurityIpsResponse Unmarshall(UnmarshallerContext context)
+        public static ModifySecurityIpsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifySecurityIpsResponse modifySecurityIpsResponse = new ModifySecurityIpsResponse();
 
-			modifySecurityIpsResponse.HttpResponse = context.HttpResponse;
-			modifySecurityIpsResponse.RequestId = context.StringValue("ModifySecurityIps.RequestId");
-			modifySecurityIpsResponse.TaskId = context.StringValue("ModifySecurityIps.TaskId");
+			modifySecurityIpsResponse.HttpResponse = _ctx.HttpResponse;
+			modifySecurityIpsResponse.RequestId = _ctx.StringValue("ModifySecurityIps.RequestId");
+			modifySecurityIpsResponse.TaskId = _ctx.StringValue("ModifySecurityIps.TaskId");
         
 			return modifySecurityIpsResponse;
         }

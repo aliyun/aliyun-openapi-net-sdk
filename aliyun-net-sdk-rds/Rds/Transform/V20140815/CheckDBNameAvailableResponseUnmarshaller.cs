@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class CheckDBNameAvailableResponseUnmarshaller
     {
-        public static CheckDBNameAvailableResponse Unmarshall(UnmarshallerContext context)
+        public static CheckDBNameAvailableResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckDBNameAvailableResponse checkDBNameAvailableResponse = new CheckDBNameAvailableResponse();
 
-			checkDBNameAvailableResponse.HttpResponse = context.HttpResponse;
-			checkDBNameAvailableResponse.RequestId = context.StringValue("CheckDBNameAvailable.RequestId");
+			checkDBNameAvailableResponse.HttpResponse = _ctx.HttpResponse;
+			checkDBNameAvailableResponse.RequestId = _ctx.StringValue("CheckDBNameAvailable.RequestId");
         
 			return checkDBNameAvailableResponse;
         }

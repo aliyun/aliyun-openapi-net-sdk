@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeErrorLogsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? totalRecordCount;
-
 		private int? pageNumber;
 
 		private int? pageRecordCount;
 
+		private string requestId;
+
+		private int? totalRecordCount;
+
 		private List<DescribeErrorLogs_ErrorLog> items;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
 
 		public int? PageNumber
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
+			}
+		}
+
 		public List<DescribeErrorLogs_ErrorLog> Items
 		{
 			get
@@ -98,21 +98,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeErrorLogs_ErrorLog
 		{
 
-			private string errorInfo;
-
 			private string createTime;
 
-			public string ErrorInfo
-			{
-				get
-				{
-					return errorInfo;
-				}
-				set	
-				{
-					errorInfo = value;
-				}
-			}
+			private string errorInfo;
 
 			public string CreateTime
 			{
@@ -123,6 +111,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			public string ErrorInfo
+			{
+				get
+				{
+					return errorInfo;
+				}
+				set	
+				{
+					errorInfo = value;
 				}
 			}
 		}

@@ -26,30 +26,47 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeSlowLogRecordsResponseUnmarshaller
     {
-        public static DescribeSlowLogRecordsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSlowLogRecordsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSlowLogRecordsResponse describeSlowLogRecordsResponse = new DescribeSlowLogRecordsResponse();
 
-			describeSlowLogRecordsResponse.HttpResponse = context.HttpResponse;
-			describeSlowLogRecordsResponse.RequestId = context.StringValue("DescribeSlowLogRecords.RequestId");
-			describeSlowLogRecordsResponse.DBInstanceId = context.StringValue("DescribeSlowLogRecords.DBInstanceId");
-			describeSlowLogRecordsResponse.Engine = context.StringValue("DescribeSlowLogRecords.Engine");
-			describeSlowLogRecordsResponse.TotalRecordCount = context.IntegerValue("DescribeSlowLogRecords.TotalRecordCount");
-			describeSlowLogRecordsResponse.PageNumber = context.IntegerValue("DescribeSlowLogRecords.PageNumber");
-			describeSlowLogRecordsResponse.PageRecordCount = context.IntegerValue("DescribeSlowLogRecords.PageRecordCount");
+			describeSlowLogRecordsResponse.HttpResponse = _ctx.HttpResponse;
+			describeSlowLogRecordsResponse.RequestId = _ctx.StringValue("DescribeSlowLogRecords.RequestId");
+			describeSlowLogRecordsResponse.DBInstanceId = _ctx.StringValue("DescribeSlowLogRecords.DBInstanceId");
+			describeSlowLogRecordsResponse.Engine = _ctx.StringValue("DescribeSlowLogRecords.Engine");
+			describeSlowLogRecordsResponse.TotalRecordCount = _ctx.IntegerValue("DescribeSlowLogRecords.TotalRecordCount");
+			describeSlowLogRecordsResponse.PageNumber = _ctx.IntegerValue("DescribeSlowLogRecords.PageNumber");
+			describeSlowLogRecordsResponse.PageRecordCount = _ctx.IntegerValue("DescribeSlowLogRecords.PageRecordCount");
+			describeSlowLogRecordsResponse.SQLHash = _ctx.StringValue("DescribeSlowLogRecords.SQLHash");
+			describeSlowLogRecordsResponse.CPUTime = _ctx.LongValue("DescribeSlowLogRecords.CPUTime");
+			describeSlowLogRecordsResponse.LogicalIORead = _ctx.LongValue("DescribeSlowLogRecords.LogicalIORead");
+			describeSlowLogRecordsResponse.PhysicalIORead = _ctx.LongValue("DescribeSlowLogRecords.PhysicalIORead");
+			describeSlowLogRecordsResponse.WritesIOCount = _ctx.LongValue("DescribeSlowLogRecords.WritesIOCount");
+			describeSlowLogRecordsResponse.RowsAffectedCount = _ctx.LongValue("DescribeSlowLogRecords.RowsAffectedCount");
+			describeSlowLogRecordsResponse.LastRowsAffectedCount = _ctx.LongValue("DescribeSlowLogRecords.LastRowsAffectedCount");
+			describeSlowLogRecordsResponse.UserName = _ctx.StringValue("DescribeSlowLogRecords.UserName");
 
 			List<DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_SQLSlowRecord> describeSlowLogRecordsResponse_items = new List<DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_SQLSlowRecord>();
-			for (int i = 0; i < context.Length("DescribeSlowLogRecords.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeSlowLogRecords.Items.Length"); i++) {
 				DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_SQLSlowRecord sQLSlowRecord = new DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_SQLSlowRecord();
-				sQLSlowRecord.HostAddress = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].HostAddress");
-				sQLSlowRecord.DBName = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].DBName");
-				sQLSlowRecord.SQLText = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].SQLText");
-				sQLSlowRecord.QueryTimes = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].QueryTimes");
-				sQLSlowRecord.LockTimes = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].LockTimes");
-				sQLSlowRecord.ParseRowCounts = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].ParseRowCounts");
-				sQLSlowRecord.ReturnRowCounts = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].ReturnRowCounts");
-				sQLSlowRecord.ExecutionStartTime = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].ExecutionStartTime");
-				sQLSlowRecord.QueryTimeMS = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].QueryTimeMS");
+				sQLSlowRecord.HostAddress = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].HostAddress");
+				sQLSlowRecord.DBName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].DBName");
+				sQLSlowRecord.SQLText = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].SQLText");
+				sQLSlowRecord.QueryTimes = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].QueryTimes");
+				sQLSlowRecord.LockTimes = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].LockTimes");
+				sQLSlowRecord.ParseRowCounts = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].ParseRowCounts");
+				sQLSlowRecord.ReturnRowCounts = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].ReturnRowCounts");
+				sQLSlowRecord.ExecutionStartTime = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].ExecutionStartTime");
+				sQLSlowRecord.QueryTimeMS = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].QueryTimeMS");
+				sQLSlowRecord.CpuTime = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].CpuTime");
+				sQLSlowRecord.LogicalIORead = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].LogicalIORead");
+				sQLSlowRecord.PhysicalIORead = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].PhysicalIORead");
+				sQLSlowRecord.WriteIOCount = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].WriteIOCount");
+				sQLSlowRecord.RowsAffectedCount = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].RowsAffectedCount");
+				sQLSlowRecord.LastRowsAffectedCount = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].LastRowsAffectedCount");
+				sQLSlowRecord.UserName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].UserName");
+				sQLSlowRecord.ApplicationName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].ApplicationName");
+				sQLSlowRecord.ClientHostName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].ClientHostName");
 
 				describeSlowLogRecordsResponse_items.Add(sQLSlowRecord);
 			}

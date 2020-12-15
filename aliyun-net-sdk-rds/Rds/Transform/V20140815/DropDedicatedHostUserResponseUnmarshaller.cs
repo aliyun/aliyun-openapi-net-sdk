@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DropDedicatedHostUserResponseUnmarshaller
     {
-        public static DropDedicatedHostUserResponse Unmarshall(UnmarshallerContext context)
+        public static DropDedicatedHostUserResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DropDedicatedHostUserResponse dropDedicatedHostUserResponse = new DropDedicatedHostUserResponse();
 
-			dropDedicatedHostUserResponse.HttpResponse = context.HttpResponse;
-			dropDedicatedHostUserResponse.RequestId = context.StringValue("DropDedicatedHostUser.RequestId");
+			dropDedicatedHostUserResponse.HttpResponse = _ctx.HttpResponse;
+			dropDedicatedHostUserResponse.RequestId = _ctx.StringValue("DropDedicatedHostUser.RequestId");
         
 			return dropDedicatedHostUserResponse;
         }

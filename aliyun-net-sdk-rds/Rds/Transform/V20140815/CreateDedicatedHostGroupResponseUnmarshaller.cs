@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class CreateDedicatedHostGroupResponseUnmarshaller
     {
-        public static CreateDedicatedHostGroupResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDedicatedHostGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDedicatedHostGroupResponse createDedicatedHostGroupResponse = new CreateDedicatedHostGroupResponse();
 
-			createDedicatedHostGroupResponse.HttpResponse = context.HttpResponse;
-			createDedicatedHostGroupResponse.RequestId = context.StringValue("CreateDedicatedHostGroup.RequestId");
-			createDedicatedHostGroupResponse.DedicatedHostGroupId = context.StringValue("CreateDedicatedHostGroup.DedicatedHostGroupId");
+			createDedicatedHostGroupResponse.HttpResponse = _ctx.HttpResponse;
+			createDedicatedHostGroupResponse.RequestId = _ctx.StringValue("CreateDedicatedHostGroup.RequestId");
+			createDedicatedHostGroupResponse.DedicatedHostGroupId = _ctx.StringValue("CreateDedicatedHostGroup.DedicatedHostGroupId");
         
 			return createDedicatedHostGroupResponse;
         }

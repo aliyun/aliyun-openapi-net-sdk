@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class ModifyDTCSecurityIpHostsForSQLServerResponseUnmarshaller
     {
-        public static ModifyDTCSecurityIpHostsForSQLServerResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDTCSecurityIpHostsForSQLServerResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDTCSecurityIpHostsForSQLServerResponse modifyDTCSecurityIpHostsForSQLServerResponse = new ModifyDTCSecurityIpHostsForSQLServerResponse();
 
-			modifyDTCSecurityIpHostsForSQLServerResponse.HttpResponse = context.HttpResponse;
-			modifyDTCSecurityIpHostsForSQLServerResponse.RequestId = context.StringValue("ModifyDTCSecurityIpHostsForSQLServer.RequestId");
-			modifyDTCSecurityIpHostsForSQLServerResponse.DBInstanceId = context.StringValue("ModifyDTCSecurityIpHostsForSQLServer.DBInstanceId");
-			modifyDTCSecurityIpHostsForSQLServerResponse.DTCSetResult = context.StringValue("ModifyDTCSecurityIpHostsForSQLServer.DTCSetResult");
-			modifyDTCSecurityIpHostsForSQLServerResponse.TaskId = context.StringValue("ModifyDTCSecurityIpHostsForSQLServer.TaskId");
+			modifyDTCSecurityIpHostsForSQLServerResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDTCSecurityIpHostsForSQLServerResponse.RequestId = _ctx.StringValue("ModifyDTCSecurityIpHostsForSQLServer.RequestId");
+			modifyDTCSecurityIpHostsForSQLServerResponse.DBInstanceId = _ctx.StringValue("ModifyDTCSecurityIpHostsForSQLServer.DBInstanceId");
+			modifyDTCSecurityIpHostsForSQLServerResponse.DTCSetResult = _ctx.StringValue("ModifyDTCSecurityIpHostsForSQLServer.DTCSetResult");
+			modifyDTCSecurityIpHostsForSQLServerResponse.TaskId = _ctx.StringValue("ModifyDTCSecurityIpHostsForSQLServer.TaskId");
         
 			return modifyDTCSecurityIpHostsForSQLServerResponse;
         }

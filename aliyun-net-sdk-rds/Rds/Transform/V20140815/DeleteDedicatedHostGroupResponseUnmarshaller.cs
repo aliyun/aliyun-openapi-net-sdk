@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DeleteDedicatedHostGroupResponseUnmarshaller
     {
-        public static DeleteDedicatedHostGroupResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDedicatedHostGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDedicatedHostGroupResponse deleteDedicatedHostGroupResponse = new DeleteDedicatedHostGroupResponse();
 
-			deleteDedicatedHostGroupResponse.HttpResponse = context.HttpResponse;
-			deleteDedicatedHostGroupResponse.RequestId = context.StringValue("DeleteDedicatedHostGroup.RequestId");
+			deleteDedicatedHostGroupResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDedicatedHostGroupResponse.RequestId = _ctx.StringValue("DeleteDedicatedHostGroup.RequestId");
         
 			return deleteDedicatedHostGroupResponse;
         }

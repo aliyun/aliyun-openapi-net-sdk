@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class CreateDedicatedHostResponseUnmarshaller
     {
-        public static CreateDedicatedHostResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDedicatedHostResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDedicatedHostResponse createDedicatedHostResponse = new CreateDedicatedHostResponse();
 
-			createDedicatedHostResponse.HttpResponse = context.HttpResponse;
-			createDedicatedHostResponse.RequestId = context.StringValue("CreateDedicatedHost.RequestId");
-			createDedicatedHostResponse.OrderId = context.LongValue("CreateDedicatedHost.OrderId");
+			createDedicatedHostResponse.HttpResponse = _ctx.HttpResponse;
+			createDedicatedHostResponse.RequestId = _ctx.StringValue("CreateDedicatedHost.RequestId");
+			createDedicatedHostResponse.OrderId = _ctx.LongValue("CreateDedicatedHost.OrderId");
 
 			List<CreateDedicatedHostResponse.CreateDedicatedHost_DedicateHostListItem> createDedicatedHostResponse_dedicateHostList = new List<CreateDedicatedHostResponse.CreateDedicatedHost_DedicateHostListItem>();
-			for (int i = 0; i < context.Length("CreateDedicatedHost.DedicateHostList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("CreateDedicatedHost.DedicateHostList.Length"); i++) {
 				CreateDedicatedHostResponse.CreateDedicatedHost_DedicateHostListItem dedicateHostListItem = new CreateDedicatedHostResponse.CreateDedicatedHost_DedicateHostListItem();
-				dedicateHostListItem.DedicatedHostId = context.StringValue("CreateDedicatedHost.DedicateHostList["+ i +"].DedicatedHostId");
+				dedicateHostListItem.DedicatedHostId = _ctx.StringValue("CreateDedicatedHost.DedicateHostList["+ i +"].DedicatedHostId");
 
 				createDedicatedHostResponse_dedicateHostList.Add(dedicateHostListItem);
 			}

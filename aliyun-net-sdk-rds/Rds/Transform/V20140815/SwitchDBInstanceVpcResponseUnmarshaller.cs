@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class SwitchDBInstanceVpcResponseUnmarshaller
     {
-        public static SwitchDBInstanceVpcResponse Unmarshall(UnmarshallerContext context)
+        public static SwitchDBInstanceVpcResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SwitchDBInstanceVpcResponse switchDBInstanceVpcResponse = new SwitchDBInstanceVpcResponse();
 
-			switchDBInstanceVpcResponse.HttpResponse = context.HttpResponse;
-			switchDBInstanceVpcResponse.RequestId = context.StringValue("SwitchDBInstanceVpc.RequestId");
+			switchDBInstanceVpcResponse.HttpResponse = _ctx.HttpResponse;
+			switchDBInstanceVpcResponse.RequestId = _ctx.StringValue("SwitchDBInstanceVpc.RequestId");
         
 			return switchDBInstanceVpcResponse;
         }

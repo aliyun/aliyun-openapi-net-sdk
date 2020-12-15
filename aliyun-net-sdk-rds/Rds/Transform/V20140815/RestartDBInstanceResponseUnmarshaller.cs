@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class RestartDBInstanceResponseUnmarshaller
     {
-        public static RestartDBInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static RestartDBInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RestartDBInstanceResponse restartDBInstanceResponse = new RestartDBInstanceResponse();
 
-			restartDBInstanceResponse.HttpResponse = context.HttpResponse;
-			restartDBInstanceResponse.RequestId = context.StringValue("RestartDBInstance.RequestId");
+			restartDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			restartDBInstanceResponse.RequestId = _ctx.StringValue("RestartDBInstance.RequestId");
         
 			return restartDBInstanceResponse;
         }

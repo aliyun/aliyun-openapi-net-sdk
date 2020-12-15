@@ -180,6 +180,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string dedicatedHostZoneIdForLog;
 
+			private string vpcName;
+
+			private string dedicatedHostGroupName;
+
 			private List<DescribeDBInstances_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
 			public int? InsId
@@ -671,6 +675,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					dedicatedHostZoneIdForLog = value;
+				}
+			}
+
+			public string VpcName
+			{
+				get
+				{
+					return vpcName;
+				}
+				set	
+				{
+					vpcName = value;
+				}
+			}
+
+			public string DedicatedHostGroupName
+			{
+				get
+				{
+					return dedicatedHostGroupName;
+				}
+				set	
+				{
+					dedicatedHostGroupName = value;
 				}
 			}
 

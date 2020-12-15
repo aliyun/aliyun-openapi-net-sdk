@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeHASwitchConfigResponseUnmarshaller
     {
-        public static DescribeHASwitchConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeHASwitchConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeHASwitchConfigResponse describeHASwitchConfigResponse = new DescribeHASwitchConfigResponse();
 
-			describeHASwitchConfigResponse.HttpResponse = context.HttpResponse;
-			describeHASwitchConfigResponse.RequestId = context.StringValue("DescribeHASwitchConfig.RequestId");
-			describeHASwitchConfigResponse.HAConfig = context.StringValue("DescribeHASwitchConfig.HAConfig");
-			describeHASwitchConfigResponse.ManualHATime = context.StringValue("DescribeHASwitchConfig.ManualHATime");
+			describeHASwitchConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeHASwitchConfigResponse.RequestId = _ctx.StringValue("DescribeHASwitchConfig.RequestId");
+			describeHASwitchConfigResponse.HAConfig = _ctx.StringValue("DescribeHASwitchConfig.HAConfig");
+			describeHASwitchConfigResponse.ManualHATime = _ctx.StringValue("DescribeHASwitchConfig.ManualHATime");
         
 			return describeHASwitchConfigResponse;
         }

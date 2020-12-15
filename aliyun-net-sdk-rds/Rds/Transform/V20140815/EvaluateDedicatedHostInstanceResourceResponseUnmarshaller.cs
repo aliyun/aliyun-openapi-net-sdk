@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class EvaluateDedicatedHostInstanceResourceResponseUnmarshaller
     {
-        public static EvaluateDedicatedHostInstanceResourceResponse Unmarshall(UnmarshallerContext context)
+        public static EvaluateDedicatedHostInstanceResourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			EvaluateDedicatedHostInstanceResourceResponse evaluateDedicatedHostInstanceResourceResponse = new EvaluateDedicatedHostInstanceResourceResponse();
 
-			evaluateDedicatedHostInstanceResourceResponse.HttpResponse = context.HttpResponse;
-			evaluateDedicatedHostInstanceResourceResponse.RequestId = context.StringValue("EvaluateDedicatedHostInstanceResource.RequestId");
-			evaluateDedicatedHostInstanceResourceResponse.DBInstanceClass = context.StringValue("EvaluateDedicatedHostInstanceResource.DBInstanceClass");
-			evaluateDedicatedHostInstanceResourceResponse.Available = context.IntegerValue("EvaluateDedicatedHostInstanceResource.Available");
+			evaluateDedicatedHostInstanceResourceResponse.HttpResponse = _ctx.HttpResponse;
+			evaluateDedicatedHostInstanceResourceResponse.RequestId = _ctx.StringValue("EvaluateDedicatedHostInstanceResource.RequestId");
+			evaluateDedicatedHostInstanceResourceResponse.DBInstanceClass = _ctx.StringValue("EvaluateDedicatedHostInstanceResource.DBInstanceClass");
+			evaluateDedicatedHostInstanceResourceResponse.Available = _ctx.IntegerValue("EvaluateDedicatedHostInstanceResource.Available");
         
 			return evaluateDedicatedHostInstanceResourceResponse;
         }

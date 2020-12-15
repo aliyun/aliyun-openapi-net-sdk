@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeDBInstanceIpHostnameResponseUnmarshaller
     {
-        public static DescribeDBInstanceIpHostnameResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDBInstanceIpHostnameResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDBInstanceIpHostnameResponse describeDBInstanceIpHostnameResponse = new DescribeDBInstanceIpHostnameResponse();
 
-			describeDBInstanceIpHostnameResponse.HttpResponse = context.HttpResponse;
-			describeDBInstanceIpHostnameResponse.RequestId = context.StringValue("DescribeDBInstanceIpHostname.RequestId");
-			describeDBInstanceIpHostnameResponse.DBInstanceId = context.StringValue("DescribeDBInstanceIpHostname.DBInstanceId");
-			describeDBInstanceIpHostnameResponse.IpHostnameInfos = context.StringValue("DescribeDBInstanceIpHostname.IpHostnameInfos");
+			describeDBInstanceIpHostnameResponse.HttpResponse = _ctx.HttpResponse;
+			describeDBInstanceIpHostnameResponse.RequestId = _ctx.StringValue("DescribeDBInstanceIpHostname.RequestId");
+			describeDBInstanceIpHostnameResponse.DBInstanceId = _ctx.StringValue("DescribeDBInstanceIpHostname.DBInstanceId");
+			describeDBInstanceIpHostnameResponse.IpHostnameInfos = _ctx.StringValue("DescribeDBInstanceIpHostname.IpHostnameInfos");
         
 			return describeDBInstanceIpHostnameResponse;
         }

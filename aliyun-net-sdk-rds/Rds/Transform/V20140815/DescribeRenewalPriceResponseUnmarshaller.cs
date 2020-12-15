@@ -26,38 +26,38 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeRenewalPriceResponseUnmarshaller
     {
-        public static DescribeRenewalPriceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRenewalPriceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRenewalPriceResponse describeRenewalPriceResponse = new DescribeRenewalPriceResponse();
 
-			describeRenewalPriceResponse.HttpResponse = context.HttpResponse;
-			describeRenewalPriceResponse.RequestId = context.StringValue("DescribeRenewalPrice.RequestId");
+			describeRenewalPriceResponse.HttpResponse = _ctx.HttpResponse;
+			describeRenewalPriceResponse.RequestId = _ctx.StringValue("DescribeRenewalPrice.RequestId");
 
 			DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo priceInfo = new DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo();
-			priceInfo.Currency = context.StringValue("DescribeRenewalPrice.PriceInfo.Currency");
-			priceInfo.OriginalPrice = context.FloatValue("DescribeRenewalPrice.PriceInfo.OriginalPrice");
-			priceInfo.TradePrice = context.FloatValue("DescribeRenewalPrice.PriceInfo.TradePrice");
-			priceInfo.DiscountPrice = context.FloatValue("DescribeRenewalPrice.PriceInfo.DiscountPrice");
+			priceInfo.Currency = _ctx.StringValue("DescribeRenewalPrice.PriceInfo.Currency");
+			priceInfo.OriginalPrice = _ctx.FloatValue("DescribeRenewalPrice.PriceInfo.OriginalPrice");
+			priceInfo.TradePrice = _ctx.FloatValue("DescribeRenewalPrice.PriceInfo.TradePrice");
+			priceInfo.DiscountPrice = _ctx.FloatValue("DescribeRenewalPrice.PriceInfo.DiscountPrice");
 
 			List<string> priceInfo_ruleIds = new List<string>();
-			for (int i = 0; i < context.Length("DescribeRenewalPrice.PriceInfo.RuleIds.Length"); i++) {
-				priceInfo_ruleIds.Add(context.StringValue("DescribeRenewalPrice.PriceInfo.RuleIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeRenewalPrice.PriceInfo.RuleIds.Length"); i++) {
+				priceInfo_ruleIds.Add(_ctx.StringValue("DescribeRenewalPrice.PriceInfo.RuleIds["+ i +"]"));
 			}
 			priceInfo.RuleIds = priceInfo_ruleIds;
 
 			DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_ActivityInfo activityInfo = new DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_ActivityInfo();
-			activityInfo.CheckErrMsg = context.StringValue("DescribeRenewalPrice.PriceInfo.ActivityInfo.CheckErrMsg");
-			activityInfo.ErrorCode = context.StringValue("DescribeRenewalPrice.PriceInfo.ActivityInfo.ErrorCode");
-			activityInfo.Success = context.StringValue("DescribeRenewalPrice.PriceInfo.ActivityInfo.Success");
+			activityInfo.CheckErrMsg = _ctx.StringValue("DescribeRenewalPrice.PriceInfo.ActivityInfo.CheckErrMsg");
+			activityInfo.ErrorCode = _ctx.StringValue("DescribeRenewalPrice.PriceInfo.ActivityInfo.ErrorCode");
+			activityInfo.Success = _ctx.StringValue("DescribeRenewalPrice.PriceInfo.ActivityInfo.Success");
 			priceInfo.ActivityInfo = activityInfo;
 
 			List<DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Coupon> priceInfo_coupons = new List<DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Coupon>();
-			for (int i = 0; i < context.Length("DescribeRenewalPrice.PriceInfo.Coupons.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRenewalPrice.PriceInfo.Coupons.Length"); i++) {
 				DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Coupon coupon = new DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Coupon();
-				coupon.CouponNo = context.StringValue("DescribeRenewalPrice.PriceInfo.Coupons["+ i +"].CouponNo");
-				coupon.Name = context.StringValue("DescribeRenewalPrice.PriceInfo.Coupons["+ i +"].Name");
-				coupon.Description = context.StringValue("DescribeRenewalPrice.PriceInfo.Coupons["+ i +"].Description");
-				coupon.IsSelected = context.StringValue("DescribeRenewalPrice.PriceInfo.Coupons["+ i +"].IsSelected");
+				coupon.CouponNo = _ctx.StringValue("DescribeRenewalPrice.PriceInfo.Coupons["+ i +"].CouponNo");
+				coupon.Name = _ctx.StringValue("DescribeRenewalPrice.PriceInfo.Coupons["+ i +"].Name");
+				coupon.Description = _ctx.StringValue("DescribeRenewalPrice.PriceInfo.Coupons["+ i +"].Description");
+				coupon.IsSelected = _ctx.StringValue("DescribeRenewalPrice.PriceInfo.Coupons["+ i +"].IsSelected");
 
 				priceInfo_coupons.Add(coupon);
 			}
@@ -65,11 +65,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeRenewalPriceResponse.PriceInfo = priceInfo;
 
 			List<DescribeRenewalPriceResponse.DescribeRenewalPrice_Rule> describeRenewalPriceResponse_rules = new List<DescribeRenewalPriceResponse.DescribeRenewalPrice_Rule>();
-			for (int i = 0; i < context.Length("DescribeRenewalPrice.Rules.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRenewalPrice.Rules.Length"); i++) {
 				DescribeRenewalPriceResponse.DescribeRenewalPrice_Rule rule = new DescribeRenewalPriceResponse.DescribeRenewalPrice_Rule();
-				rule.RuleId = context.LongValue("DescribeRenewalPrice.Rules["+ i +"].RuleId");
-				rule.Name = context.StringValue("DescribeRenewalPrice.Rules["+ i +"].Name");
-				rule.Description = context.StringValue("DescribeRenewalPrice.Rules["+ i +"].Description");
+				rule.RuleId = _ctx.LongValue("DescribeRenewalPrice.Rules["+ i +"].RuleId");
+				rule.Name = _ctx.StringValue("DescribeRenewalPrice.Rules["+ i +"].Name");
+				rule.Description = _ctx.StringValue("DescribeRenewalPrice.Rules["+ i +"].Description");
 
 				describeRenewalPriceResponse_rules.Add(rule);
 			}

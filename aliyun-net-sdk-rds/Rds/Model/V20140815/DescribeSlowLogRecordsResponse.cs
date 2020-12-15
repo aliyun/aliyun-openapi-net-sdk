@@ -37,6 +37,22 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageRecordCount;
 
+		private string sQLHash;
+
+		private long? cPUTime;
+
+		private long? logicalIORead;
+
+		private long? physicalIORead;
+
+		private long? writesIOCount;
+
+		private long? rowsAffectedCount;
+
+		private long? lastRowsAffectedCount;
+
+		private string userName;
+
 		private List<DescribeSlowLogRecords_SQLSlowRecord> items;
 
 		public string RequestId
@@ -111,6 +127,102 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string SQLHash
+		{
+			get
+			{
+				return sQLHash;
+			}
+			set	
+			{
+				sQLHash = value;
+			}
+		}
+
+		public long? CPUTime
+		{
+			get
+			{
+				return cPUTime;
+			}
+			set	
+			{
+				cPUTime = value;
+			}
+		}
+
+		public long? LogicalIORead
+		{
+			get
+			{
+				return logicalIORead;
+			}
+			set	
+			{
+				logicalIORead = value;
+			}
+		}
+
+		public long? PhysicalIORead
+		{
+			get
+			{
+				return physicalIORead;
+			}
+			set	
+			{
+				physicalIORead = value;
+			}
+		}
+
+		public long? WritesIOCount
+		{
+			get
+			{
+				return writesIOCount;
+			}
+			set	
+			{
+				writesIOCount = value;
+			}
+		}
+
+		public long? RowsAffectedCount
+		{
+			get
+			{
+				return rowsAffectedCount;
+			}
+			set	
+			{
+				rowsAffectedCount = value;
+			}
+		}
+
+		public long? LastRowsAffectedCount
+		{
+			get
+			{
+				return lastRowsAffectedCount;
+			}
+			set	
+			{
+				lastRowsAffectedCount = value;
+			}
+		}
+
+		public string UserName
+		{
+			get
+			{
+				return userName;
+			}
+			set	
+			{
+				userName = value;
+			}
+		}
+
 		public List<DescribeSlowLogRecords_SQLSlowRecord> Items
 		{
 			get
@@ -143,6 +255,24 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			private string executionStartTime;
 
 			private long? queryTimeMS;
+
+			private long? cpuTime;
+
+			private long? logicalIORead;
+
+			private long? physicalIORead;
+
+			private long? writeIOCount;
+
+			private long? rowsAffectedCount;
+
+			private long? lastRowsAffectedCount;
+
+			private string userName;
+
+			private string applicationName;
+
+			private string clientHostName;
 
 			public string HostAddress
 			{
@@ -249,6 +379,114 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					queryTimeMS = value;
+				}
+			}
+
+			public long? CpuTime
+			{
+				get
+				{
+					return cpuTime;
+				}
+				set	
+				{
+					cpuTime = value;
+				}
+			}
+
+			public long? LogicalIORead
+			{
+				get
+				{
+					return logicalIORead;
+				}
+				set	
+				{
+					logicalIORead = value;
+				}
+			}
+
+			public long? PhysicalIORead
+			{
+				get
+				{
+					return physicalIORead;
+				}
+				set	
+				{
+					physicalIORead = value;
+				}
+			}
+
+			public long? WriteIOCount
+			{
+				get
+				{
+					return writeIOCount;
+				}
+				set	
+				{
+					writeIOCount = value;
+				}
+			}
+
+			public long? RowsAffectedCount
+			{
+				get
+				{
+					return rowsAffectedCount;
+				}
+				set	
+				{
+					rowsAffectedCount = value;
+				}
+			}
+
+			public long? LastRowsAffectedCount
+			{
+				get
+				{
+					return lastRowsAffectedCount;
+				}
+				set	
+				{
+					lastRowsAffectedCount = value;
+				}
+			}
+
+			public string UserName
+			{
+				get
+				{
+					return userName;
+				}
+				set	
+				{
+					userName = value;
+				}
+			}
+
+			public string ApplicationName
+			{
+				get
+				{
+					return applicationName;
+				}
+				set	
+				{
+					applicationName = value;
+				}
+			}
+
+			public string ClientHostName
+			{
+				get
+				{
+					return clientHostName;
+				}
+				set	
+				{
+					clientHostName = value;
 				}
 			}
 		}

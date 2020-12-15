@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class SwitchDBInstanceNetTypeResponseUnmarshaller
     {
-        public static SwitchDBInstanceNetTypeResponse Unmarshall(UnmarshallerContext context)
+        public static SwitchDBInstanceNetTypeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SwitchDBInstanceNetTypeResponse switchDBInstanceNetTypeResponse = new SwitchDBInstanceNetTypeResponse();
 
-			switchDBInstanceNetTypeResponse.HttpResponse = context.HttpResponse;
-			switchDBInstanceNetTypeResponse.RequestId = context.StringValue("SwitchDBInstanceNetType.RequestId");
+			switchDBInstanceNetTypeResponse.HttpResponse = _ctx.HttpResponse;
+			switchDBInstanceNetTypeResponse.RequestId = _ctx.StringValue("SwitchDBInstanceNetType.RequestId");
         
 			return switchDBInstanceNetTypeResponse;
         }

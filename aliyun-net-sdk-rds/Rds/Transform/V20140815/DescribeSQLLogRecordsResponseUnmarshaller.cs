@@ -26,27 +26,27 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeSQLLogRecordsResponseUnmarshaller
     {
-        public static DescribeSQLLogRecordsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSQLLogRecordsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSQLLogRecordsResponse describeSQLLogRecordsResponse = new DescribeSQLLogRecordsResponse();
 
-			describeSQLLogRecordsResponse.HttpResponse = context.HttpResponse;
-			describeSQLLogRecordsResponse.RequestId = context.StringValue("DescribeSQLLogRecords.RequestId");
-			describeSQLLogRecordsResponse.TotalRecordCount = context.LongValue("DescribeSQLLogRecords.TotalRecordCount");
-			describeSQLLogRecordsResponse.PageNumber = context.IntegerValue("DescribeSQLLogRecords.PageNumber");
-			describeSQLLogRecordsResponse.PageRecordCount = context.IntegerValue("DescribeSQLLogRecords.PageRecordCount");
+			describeSQLLogRecordsResponse.HttpResponse = _ctx.HttpResponse;
+			describeSQLLogRecordsResponse.RequestId = _ctx.StringValue("DescribeSQLLogRecords.RequestId");
+			describeSQLLogRecordsResponse.TotalRecordCount = _ctx.LongValue("DescribeSQLLogRecords.TotalRecordCount");
+			describeSQLLogRecordsResponse.PageNumber = _ctx.IntegerValue("DescribeSQLLogRecords.PageNumber");
+			describeSQLLogRecordsResponse.PageRecordCount = _ctx.IntegerValue("DescribeSQLLogRecords.PageRecordCount");
 
 			List<DescribeSQLLogRecordsResponse.DescribeSQLLogRecords_SQLRecord> describeSQLLogRecordsResponse_items = new List<DescribeSQLLogRecordsResponse.DescribeSQLLogRecords_SQLRecord>();
-			for (int i = 0; i < context.Length("DescribeSQLLogRecords.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeSQLLogRecords.Items.Length"); i++) {
 				DescribeSQLLogRecordsResponse.DescribeSQLLogRecords_SQLRecord sQLRecord = new DescribeSQLLogRecordsResponse.DescribeSQLLogRecords_SQLRecord();
-				sQLRecord.DBName = context.StringValue("DescribeSQLLogRecords.Items["+ i +"].DBName");
-				sQLRecord.AccountName = context.StringValue("DescribeSQLLogRecords.Items["+ i +"].AccountName");
-				sQLRecord.HostAddress = context.StringValue("DescribeSQLLogRecords.Items["+ i +"].HostAddress");
-				sQLRecord.SQLText = context.StringValue("DescribeSQLLogRecords.Items["+ i +"].SQLText");
-				sQLRecord.TotalExecutionTimes = context.LongValue("DescribeSQLLogRecords.Items["+ i +"].TotalExecutionTimes");
-				sQLRecord.ReturnRowCounts = context.LongValue("DescribeSQLLogRecords.Items["+ i +"].ReturnRowCounts");
-				sQLRecord.ExecuteTime = context.StringValue("DescribeSQLLogRecords.Items["+ i +"].ExecuteTime");
-				sQLRecord.ThreadID = context.StringValue("DescribeSQLLogRecords.Items["+ i +"].ThreadID");
+				sQLRecord.DBName = _ctx.StringValue("DescribeSQLLogRecords.Items["+ i +"].DBName");
+				sQLRecord.AccountName = _ctx.StringValue("DescribeSQLLogRecords.Items["+ i +"].AccountName");
+				sQLRecord.HostAddress = _ctx.StringValue("DescribeSQLLogRecords.Items["+ i +"].HostAddress");
+				sQLRecord.SQLText = _ctx.StringValue("DescribeSQLLogRecords.Items["+ i +"].SQLText");
+				sQLRecord.TotalExecutionTimes = _ctx.LongValue("DescribeSQLLogRecords.Items["+ i +"].TotalExecutionTimes");
+				sQLRecord.ReturnRowCounts = _ctx.LongValue("DescribeSQLLogRecords.Items["+ i +"].ReturnRowCounts");
+				sQLRecord.ExecuteTime = _ctx.StringValue("DescribeSQLLogRecords.Items["+ i +"].ExecuteTime");
+				sQLRecord.ThreadID = _ctx.StringValue("DescribeSQLLogRecords.Items["+ i +"].ThreadID");
 
 				describeSQLLogRecordsResponse_items.Add(sQLRecord);
 			}

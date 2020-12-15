@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeMigrateTaskByIdResponseUnmarshaller
     {
-        public static DescribeMigrateTaskByIdResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeMigrateTaskByIdResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeMigrateTaskByIdResponse describeMigrateTaskByIdResponse = new DescribeMigrateTaskByIdResponse();
 
-			describeMigrateTaskByIdResponse.HttpResponse = context.HttpResponse;
-			describeMigrateTaskByIdResponse.RequestId = context.StringValue("DescribeMigrateTaskById.RequestId");
-			describeMigrateTaskByIdResponse.DBInstanceName = context.StringValue("DescribeMigrateTaskById.DBInstanceName");
-			describeMigrateTaskByIdResponse.DBName = context.StringValue("DescribeMigrateTaskById.DBName");
-			describeMigrateTaskByIdResponse.MigrateTaskId = context.StringValue("DescribeMigrateTaskById.MigrateTaskId");
-			describeMigrateTaskByIdResponse.CreateTime = context.StringValue("DescribeMigrateTaskById.CreateTime");
-			describeMigrateTaskByIdResponse.EndTime = context.StringValue("DescribeMigrateTaskById.EndTime");
-			describeMigrateTaskByIdResponse.BackupMode = context.StringValue("DescribeMigrateTaskById.BackupMode");
-			describeMigrateTaskByIdResponse.Status = context.StringValue("DescribeMigrateTaskById.Status");
-			describeMigrateTaskByIdResponse.IsDBReplaced = context.StringValue("DescribeMigrateTaskById.IsDBReplaced");
-			describeMigrateTaskByIdResponse.Description = context.StringValue("DescribeMigrateTaskById.Description");
+			describeMigrateTaskByIdResponse.HttpResponse = _ctx.HttpResponse;
+			describeMigrateTaskByIdResponse.RequestId = _ctx.StringValue("DescribeMigrateTaskById.RequestId");
+			describeMigrateTaskByIdResponse.DBInstanceName = _ctx.StringValue("DescribeMigrateTaskById.DBInstanceName");
+			describeMigrateTaskByIdResponse.DBName = _ctx.StringValue("DescribeMigrateTaskById.DBName");
+			describeMigrateTaskByIdResponse.MigrateTaskId = _ctx.StringValue("DescribeMigrateTaskById.MigrateTaskId");
+			describeMigrateTaskByIdResponse.CreateTime = _ctx.StringValue("DescribeMigrateTaskById.CreateTime");
+			describeMigrateTaskByIdResponse.EndTime = _ctx.StringValue("DescribeMigrateTaskById.EndTime");
+			describeMigrateTaskByIdResponse.BackupMode = _ctx.StringValue("DescribeMigrateTaskById.BackupMode");
+			describeMigrateTaskByIdResponse.Status = _ctx.StringValue("DescribeMigrateTaskById.Status");
+			describeMigrateTaskByIdResponse.IsDBReplaced = _ctx.StringValue("DescribeMigrateTaskById.IsDBReplaced");
+			describeMigrateTaskByIdResponse.Description = _ctx.StringValue("DescribeMigrateTaskById.Description");
         
 			return describeMigrateTaskByIdResponse;
         }

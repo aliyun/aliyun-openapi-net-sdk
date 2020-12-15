@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Rds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Rds.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -47,6 +47,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string engine;
 
 		private string instanceChargeType;
+
+		private string dispenseMode;
+
+		private string commodityCode;
 
 		private string zoneId;
 
@@ -99,6 +103,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				instanceChargeType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+			}
+		}
+
+		public string DispenseMode
+		{
+			get
+			{
+				return dispenseMode;
+			}
+			set	
+			{
+				dispenseMode = value;
+				DictionaryUtil.Add(QueryParameters, "DispenseMode", value);
+			}
+		}
+
+		public string CommodityCode
+		{
+			get
+			{
+				return commodityCode;
+			}
+			set	
+			{
+				commodityCode = value;
+				DictionaryUtil.Add(QueryParameters, "CommodityCode", value);
 			}
 		}
 

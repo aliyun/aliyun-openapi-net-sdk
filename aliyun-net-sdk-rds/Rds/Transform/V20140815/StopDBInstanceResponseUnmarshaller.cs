@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class StopDBInstanceResponseUnmarshaller
     {
-        public static StopDBInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static StopDBInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopDBInstanceResponse stopDBInstanceResponse = new StopDBInstanceResponse();
 
-			stopDBInstanceResponse.HttpResponse = context.HttpResponse;
-			stopDBInstanceResponse.RequestId = context.StringValue("StopDBInstance.RequestId");
+			stopDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			stopDBInstanceResponse.RequestId = _ctx.StringValue("StopDBInstance.RequestId");
         
 			return stopDBInstanceResponse;
         }

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class DescribeDBInstanceSSLResponseUnmarshaller
     {
-        public static DescribeDBInstanceSSLResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDBInstanceSSLResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDBInstanceSSLResponse describeDBInstanceSSLResponse = new DescribeDBInstanceSSLResponse();
 
-			describeDBInstanceSSLResponse.HttpResponse = context.HttpResponse;
-			describeDBInstanceSSLResponse.RequestId = context.StringValue("DescribeDBInstanceSSL.RequestId");
-			describeDBInstanceSSLResponse.ConnectionString = context.StringValue("DescribeDBInstanceSSL.ConnectionString");
-			describeDBInstanceSSLResponse.SSLExpireTime = context.StringValue("DescribeDBInstanceSSL.SSLExpireTime");
-			describeDBInstanceSSLResponse.RequireUpdate = context.StringValue("DescribeDBInstanceSSL.RequireUpdate");
-			describeDBInstanceSSLResponse.RequireUpdateReason = context.StringValue("DescribeDBInstanceSSL.RequireUpdateReason");
+			describeDBInstanceSSLResponse.HttpResponse = _ctx.HttpResponse;
+			describeDBInstanceSSLResponse.RequestId = _ctx.StringValue("DescribeDBInstanceSSL.RequestId");
+			describeDBInstanceSSLResponse.ConnectionString = _ctx.StringValue("DescribeDBInstanceSSL.ConnectionString");
+			describeDBInstanceSSLResponse.SSLExpireTime = _ctx.StringValue("DescribeDBInstanceSSL.SSLExpireTime");
+			describeDBInstanceSSLResponse.RequireUpdate = _ctx.StringValue("DescribeDBInstanceSSL.RequireUpdate");
+			describeDBInstanceSSLResponse.RequireUpdateReason = _ctx.StringValue("DescribeDBInstanceSSL.RequireUpdateReason");
         
 			return describeDBInstanceSSLResponse;
         }

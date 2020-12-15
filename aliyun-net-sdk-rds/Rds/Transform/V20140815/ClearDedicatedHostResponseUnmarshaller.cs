@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class ClearDedicatedHostResponseUnmarshaller
     {
-        public static ClearDedicatedHostResponse Unmarshall(UnmarshallerContext context)
+        public static ClearDedicatedHostResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ClearDedicatedHostResponse clearDedicatedHostResponse = new ClearDedicatedHostResponse();
 
-			clearDedicatedHostResponse.HttpResponse = context.HttpResponse;
-			clearDedicatedHostResponse.RequestId = context.StringValue("ClearDedicatedHost.RequestId");
-			clearDedicatedHostResponse.TaskId = context.StringValue("ClearDedicatedHost.TaskId");
-			clearDedicatedHostResponse.DedicatedHostId = context.StringValue("ClearDedicatedHost.DedicatedHostId");
+			clearDedicatedHostResponse.HttpResponse = _ctx.HttpResponse;
+			clearDedicatedHostResponse.RequestId = _ctx.StringValue("ClearDedicatedHost.RequestId");
+			clearDedicatedHostResponse.TaskId = _ctx.StringValue("ClearDedicatedHost.TaskId");
+			clearDedicatedHostResponse.DedicatedHostId = _ctx.StringValue("ClearDedicatedHost.DedicatedHostId");
         
 			return clearDedicatedHostResponse;
         }

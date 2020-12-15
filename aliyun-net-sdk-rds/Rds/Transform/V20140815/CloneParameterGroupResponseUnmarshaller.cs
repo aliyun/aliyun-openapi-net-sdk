@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class CloneParameterGroupResponseUnmarshaller
     {
-        public static CloneParameterGroupResponse Unmarshall(UnmarshallerContext context)
+        public static CloneParameterGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CloneParameterGroupResponse cloneParameterGroupResponse = new CloneParameterGroupResponse();
 
-			cloneParameterGroupResponse.HttpResponse = context.HttpResponse;
-			cloneParameterGroupResponse.RequestId = context.StringValue("CloneParameterGroup.RequestId");
+			cloneParameterGroupResponse.HttpResponse = _ctx.HttpResponse;
+			cloneParameterGroupResponse.RequestId = _ctx.StringValue("CloneParameterGroup.RequestId");
         
 			return cloneParameterGroupResponse;
         }

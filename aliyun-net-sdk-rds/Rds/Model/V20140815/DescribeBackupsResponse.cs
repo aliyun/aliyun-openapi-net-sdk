@@ -176,6 +176,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private int? isAvail;
 
+			private string encryption;
+
 			public string BackupId
 			{
 				get
@@ -473,6 +475,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					isAvail = value;
+				}
+			}
+
+			public string Encryption
+			{
+				get
+				{
+					return encryption;
+				}
+				set	
+				{
+					encryption = value;
 				}
 			}
 		}

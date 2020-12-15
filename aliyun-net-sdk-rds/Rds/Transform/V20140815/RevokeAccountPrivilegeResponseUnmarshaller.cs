@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class RevokeAccountPrivilegeResponseUnmarshaller
     {
-        public static RevokeAccountPrivilegeResponse Unmarshall(UnmarshallerContext context)
+        public static RevokeAccountPrivilegeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RevokeAccountPrivilegeResponse revokeAccountPrivilegeResponse = new RevokeAccountPrivilegeResponse();
 
-			revokeAccountPrivilegeResponse.HttpResponse = context.HttpResponse;
-			revokeAccountPrivilegeResponse.RequestId = context.StringValue("RevokeAccountPrivilege.RequestId");
+			revokeAccountPrivilegeResponse.HttpResponse = _ctx.HttpResponse;
+			revokeAccountPrivilegeResponse.RequestId = _ctx.StringValue("RevokeAccountPrivilege.RequestId");
         
 			return revokeAccountPrivilegeResponse;
         }

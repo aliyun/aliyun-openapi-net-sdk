@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class CreateMigrateTaskForSQLServerResponseUnmarshaller
     {
-        public static CreateMigrateTaskForSQLServerResponse Unmarshall(UnmarshallerContext context)
+        public static CreateMigrateTaskForSQLServerResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateMigrateTaskForSQLServerResponse createMigrateTaskForSQLServerResponse = new CreateMigrateTaskForSQLServerResponse();
 
-			createMigrateTaskForSQLServerResponse.HttpResponse = context.HttpResponse;
-			createMigrateTaskForSQLServerResponse.RequestId = context.StringValue("CreateMigrateTaskForSQLServer.RequestId");
-			createMigrateTaskForSQLServerResponse.DBInstanceId = context.StringValue("CreateMigrateTaskForSQLServer.DBInstanceId");
-			createMigrateTaskForSQLServerResponse.DBInstanceName = context.StringValue("CreateMigrateTaskForSQLServer.DBInstanceName");
-			createMigrateTaskForSQLServerResponse.TaskId = context.StringValue("CreateMigrateTaskForSQLServer.TaskId");
-			createMigrateTaskForSQLServerResponse.DBName = context.StringValue("CreateMigrateTaskForSQLServer.DBName");
-			createMigrateTaskForSQLServerResponse.MigrateIaskId = context.StringValue("CreateMigrateTaskForSQLServer.MigrateIaskId");
-			createMigrateTaskForSQLServerResponse.TaskType = context.StringValue("CreateMigrateTaskForSQLServer.TaskType");
+			createMigrateTaskForSQLServerResponse.HttpResponse = _ctx.HttpResponse;
+			createMigrateTaskForSQLServerResponse.RequestId = _ctx.StringValue("CreateMigrateTaskForSQLServer.RequestId");
+			createMigrateTaskForSQLServerResponse.DBInstanceId = _ctx.StringValue("CreateMigrateTaskForSQLServer.DBInstanceId");
+			createMigrateTaskForSQLServerResponse.DBInstanceName = _ctx.StringValue("CreateMigrateTaskForSQLServer.DBInstanceName");
+			createMigrateTaskForSQLServerResponse.TaskId = _ctx.StringValue("CreateMigrateTaskForSQLServer.TaskId");
+			createMigrateTaskForSQLServerResponse.DBName = _ctx.StringValue("CreateMigrateTaskForSQLServer.DBName");
+			createMigrateTaskForSQLServerResponse.MigrateIaskId = _ctx.StringValue("CreateMigrateTaskForSQLServer.MigrateIaskId");
+			createMigrateTaskForSQLServerResponse.TaskType = _ctx.StringValue("CreateMigrateTaskForSQLServer.TaskType");
         
 			return createMigrateTaskForSQLServerResponse;
         }

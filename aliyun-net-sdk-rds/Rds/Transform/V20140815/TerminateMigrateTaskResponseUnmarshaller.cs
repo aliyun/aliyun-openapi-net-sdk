@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 {
     public class TerminateMigrateTaskResponseUnmarshaller
     {
-        public static TerminateMigrateTaskResponse Unmarshall(UnmarshallerContext context)
+        public static TerminateMigrateTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TerminateMigrateTaskResponse terminateMigrateTaskResponse = new TerminateMigrateTaskResponse();
 
-			terminateMigrateTaskResponse.HttpResponse = context.HttpResponse;
-			terminateMigrateTaskResponse.RequestId = context.StringValue("TerminateMigrateTask.RequestId");
+			terminateMigrateTaskResponse.HttpResponse = _ctx.HttpResponse;
+			terminateMigrateTaskResponse.RequestId = _ctx.StringValue("TerminateMigrateTask.RequestId");
         
 			return terminateMigrateTaskResponse;
         }
