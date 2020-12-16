@@ -244,6 +244,12 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 					private string ethnicity;
 
+					private float? facequal;
+
+					private int? integrity;
+
+					private string respirator;
+
 					private DetectFaceAttributes_Gender gender;
 
 					private DetectFaceAttributes_Smiling smiling;
@@ -307,6 +313,42 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 						set	
 						{
 							ethnicity = value;
+						}
+					}
+
+					public float? Facequal
+					{
+						get
+						{
+							return facequal;
+						}
+						set	
+						{
+							facequal = value;
+						}
+					}
+
+					public int? Integrity
+					{
+						get
+						{
+							return integrity;
+						}
+						set	
+						{
+							integrity = value;
+						}
+					}
+
+					public string Respirator
+					{
+						get
+						{
+							return respirator;
+						}
+						set	
+						{
+							respirator = value;
 						}
 					}
 

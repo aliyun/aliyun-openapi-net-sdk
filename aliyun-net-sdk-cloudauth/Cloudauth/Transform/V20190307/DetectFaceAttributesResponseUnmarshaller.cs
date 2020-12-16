@@ -57,6 +57,9 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 				faceAttributes.Facetype = _ctx.StringValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Facetype");
 				faceAttributes.Blur = _ctx.FloatValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Blur");
 				faceAttributes.Ethnicity = _ctx.StringValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Ethnicity");
+				faceAttributes.Facequal = _ctx.FloatValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Facequal");
+				faceAttributes.Integrity = _ctx.IntegerValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Integrity");
+				faceAttributes.Respirator = _ctx.StringValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Respirator");
 
 				DetectFaceAttributesResponse.DetectFaceAttributes_Data.DetectFaceAttributes_FaceAttributesDetectInfo.DetectFaceAttributes_FaceAttributes.DetectFaceAttributes_Gender gender = new DetectFaceAttributesResponse.DetectFaceAttributes_Data.DetectFaceAttributes_FaceAttributesDetectInfo.DetectFaceAttributes_FaceAttributes.DetectFaceAttributes_Gender();
 				gender.Score = _ctx.FloatValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Gender.Score");
