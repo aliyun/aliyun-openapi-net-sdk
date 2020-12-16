@@ -24,16 +24,18 @@ using Aliyun.Acs.waf_openapi.Model.V20190910;
 
 namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 {
-    public class ModifyDomainClusterTypeResponseUnmarshaller
+    public class DescribeWafSourceIpSegmentResponseUnmarshaller
     {
-        public static ModifyDomainClusterTypeResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DescribeWafSourceIpSegmentResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			ModifyDomainClusterTypeResponse modifyDomainClusterTypeResponse = new ModifyDomainClusterTypeResponse();
+			DescribeWafSourceIpSegmentResponse describeWafSourceIpSegmentResponse = new DescribeWafSourceIpSegmentResponse();
 
-			modifyDomainClusterTypeResponse.HttpResponse = _ctx.HttpResponse;
-			modifyDomainClusterTypeResponse.RequestId = _ctx.StringValue("ModifyDomainClusterType.RequestId");
+			describeWafSourceIpSegmentResponse.HttpResponse = _ctx.HttpResponse;
+			describeWafSourceIpSegmentResponse.RequestId = _ctx.StringValue("DescribeWafSourceIpSegment.RequestId");
+			describeWafSourceIpSegmentResponse.Ips = _ctx.StringValue("DescribeWafSourceIpSegment.Ips");
+			describeWafSourceIpSegmentResponse.IpV6s = _ctx.StringValue("DescribeWafSourceIpSegment.IpV6s");
         
-			return modifyDomainClusterTypeResponse;
+			return describeWafSourceIpSegmentResponse;
         }
     }
 }

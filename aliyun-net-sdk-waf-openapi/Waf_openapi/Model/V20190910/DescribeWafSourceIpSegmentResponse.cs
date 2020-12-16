@@ -16,24 +16,55 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.waf_openapi.Model.V20190910;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.waf_openapi.Transform.V20190910
+namespace Aliyun.Acs.waf_openapi.Model.V20190910
 {
-    public class ModifyDomainClusterTypeResponseUnmarshaller
-    {
-        public static ModifyDomainClusterTypeResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			ModifyDomainClusterTypeResponse modifyDomainClusterTypeResponse = new ModifyDomainClusterTypeResponse();
+	public class DescribeWafSourceIpSegmentResponse : AcsResponse
+	{
 
-			modifyDomainClusterTypeResponse.HttpResponse = _ctx.HttpResponse;
-			modifyDomainClusterTypeResponse.RequestId = _ctx.StringValue("ModifyDomainClusterType.RequestId");
-        
-			return modifyDomainClusterTypeResponse;
-        }
-    }
+		private string requestId;
+
+		private string ips;
+
+		private string ipV6s;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string Ips
+		{
+			get
+			{
+				return ips;
+			}
+			set	
+			{
+				ips = value;
+			}
+		}
+
+		public string IpV6s
+		{
+			get
+			{
+				return ipV6s;
+			}
+			set	
+			{
+				ipV6s = value;
+			}
+		}
+	}
 }

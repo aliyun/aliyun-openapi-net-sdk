@@ -27,10 +27,10 @@ using Aliyun.Acs.waf_openapi.Transform.V20190910;
 
 namespace Aliyun.Acs.waf_openapi.Model.V20190910
 {
-    public class ModifyDomainClusterTypeRequest : RpcAcsRequest<ModifyDomainClusterTypeResponse>
+    public class DescribeWafSourceIpSegmentRequest : RpcAcsRequest<DescribeWafSourceIpSegmentResponse>
     {
-        public ModifyDomainClusterTypeRequest()
-            : base("waf-openapi", "2019-09-10", "ModifyDomainClusterType", "waf", "openAPI")
+        public DescribeWafSourceIpSegmentRequest()
+            : base("waf-openapi", "2019-09-10", "DescribeWafSourceIpSegment", "waf", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,22 +40,22 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			Method = MethodType.POST;
         }
 
-		private int? clusterType;
+		private string resourceGroupId;
 
 		private string instanceId;
 
-		private string domain;
+		private string region;
 
-		public int? ClusterType
+		public string ResourceGroupId
 		{
 			get
 			{
-				return clusterType;
+				return resourceGroupId;
 			}
 			set	
 			{
-				clusterType = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterType", value.ToString());
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -72,22 +72,27 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			}
 		}
 
-		public string Domain
+		public string Region
 		{
 			get
 			{
-				return domain;
+				return region;
 			}
 			set	
 			{
-				domain = value;
-				DictionaryUtil.Add(QueryParameters, "Domain", value);
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 
-        public override ModifyDomainClusterTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeWafSourceIpSegmentResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDomainClusterTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeWafSourceIpSegmentResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
