@@ -28,10 +28,10 @@ using Aliyun.Acs.dcdn.Transform.V20180115;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class DescribeDcdnDomainTopReferVisitRequest : RpcAcsRequest<DescribeDcdnDomainTopReferVisitResponse>
+    public class DescribeDcdnOfflineLogDeliveryFieldRequest : RpcAcsRequest<DescribeDcdnOfflineLogDeliveryFieldResponse>
     {
-        public DescribeDcdnDomainTopReferVisitRequest()
-            : base("dcdn", "2018-01-15", "DescribeDcdnDomainTopReferVisit")
+        public DescribeDcdnOfflineLogDeliveryFieldRequest()
+            : base("dcdn", "2018-01-15", "DescribeDcdnOfflineLogDeliveryField")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,39 +41,7 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			Method = MethodType.POST;
         }
 
-		private string startTime;
-
-		private string domainName;
-
 		private long? ownerId;
-
-		private string sortBy;
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
 
 		public long? OwnerId
 		{
@@ -88,22 +56,14 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string SortBy
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return sortBy;
-			}
-			set	
-			{
-				sortBy = value;
-				DictionaryUtil.Add(QueryParameters, "SortBy", value);
-			}
+			return false;
 		}
 
-        public override DescribeDcdnDomainTopReferVisitResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDcdnOfflineLogDeliveryFieldResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDcdnDomainTopReferVisitResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDcdnOfflineLogDeliveryFieldResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

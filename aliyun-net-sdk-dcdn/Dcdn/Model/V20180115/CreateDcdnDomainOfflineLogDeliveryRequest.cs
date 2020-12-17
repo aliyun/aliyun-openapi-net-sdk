@@ -28,10 +28,10 @@ using Aliyun.Acs.dcdn.Transform.V20180115;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class DescribeDcdnDomainTopReferVisitRequest : RpcAcsRequest<DescribeDcdnDomainTopReferVisitResponse>
+    public class CreateDcdnDomainOfflineLogDeliveryRequest : RpcAcsRequest<CreateDcdnDomainOfflineLogDeliveryResponse>
     {
-        public DescribeDcdnDomainTopReferVisitRequest()
-            : base("dcdn", "2018-01-15", "DescribeDcdnDomainTopReferVisit")
+        public CreateDcdnDomainOfflineLogDeliveryRequest()
+            : base("dcdn", "2018-01-15", "CreateDcdnDomainOfflineLogDelivery")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,26 +41,11 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			Method = MethodType.POST;
         }
 
-		private string startTime;
-
 		private string domainName;
 
 		private long? ownerId;
 
-		private string sortBy;
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
+		private string fieldId;
 
 		public string DomainName
 		{
@@ -71,7 +56,7 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			set	
 			{
 				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				DictionaryUtil.Add(BodyParameters, "DomainName", value);
 			}
 		}
 
@@ -88,22 +73,27 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string SortBy
+		public string FieldId
 		{
 			get
 			{
-				return sortBy;
+				return fieldId;
 			}
 			set	
 			{
-				sortBy = value;
-				DictionaryUtil.Add(QueryParameters, "SortBy", value);
+				fieldId = value;
+				DictionaryUtil.Add(BodyParameters, "FieldId", value);
 			}
 		}
 
-        public override DescribeDcdnDomainTopReferVisitResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override CreateDcdnDomainOfflineLogDeliveryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDcdnDomainTopReferVisitResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDcdnDomainOfflineLogDeliveryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

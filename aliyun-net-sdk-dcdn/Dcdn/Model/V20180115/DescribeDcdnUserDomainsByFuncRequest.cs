@@ -28,10 +28,10 @@ using Aliyun.Acs.dcdn.Transform.V20180115;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class DescribeDcdnDomainTopReferVisitRequest : RpcAcsRequest<DescribeDcdnDomainTopReferVisitResponse>
+    public class DescribeDcdnUserDomainsByFuncRequest : RpcAcsRequest<DescribeDcdnUserDomainsByFuncResponse>
     {
-        public DescribeDcdnDomainTopReferVisitRequest()
-            : base("dcdn", "2018-01-15", "DescribeDcdnDomainTopReferVisit")
+        public DescribeDcdnUserDomainsByFuncRequest()
+            : base("dcdn", "2018-01-15", "DescribeDcdnUserDomainsByFunc")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,37 +41,52 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			Method = MethodType.POST;
         }
 
-		private string startTime;
+		private int? pageNumber;
 
-		private string domainName;
+		private string resourceGroupId;
+
+		private int? pageSize;
 
 		private long? ownerId;
 
-		private string sortBy;
+		private int? funcId;
 
-		public string StartTime
+		public int? PageNumber
 		{
 			get
 			{
-				return startTime;
+				return pageNumber;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string DomainName
+		public string ResourceGroupId
 		{
 			get
 			{
-				return domainName;
+				return resourceGroupId;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -88,22 +103,22 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string SortBy
+		public int? FuncId
 		{
 			get
 			{
-				return sortBy;
+				return funcId;
 			}
 			set	
 			{
-				sortBy = value;
-				DictionaryUtil.Add(QueryParameters, "SortBy", value);
+				funcId = value;
+				DictionaryUtil.Add(QueryParameters, "FuncId", value.ToString());
 			}
 		}
 
-        public override DescribeDcdnDomainTopReferVisitResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDcdnUserDomainsByFuncResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDcdnDomainTopReferVisitResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDcdnUserDomainsByFuncResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
