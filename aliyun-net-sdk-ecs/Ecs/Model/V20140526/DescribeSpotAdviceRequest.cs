@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeCapacityReservationsRequest : RpcAcsRequest<DescribeCapacityReservationsResponse>
+    public class DescribeSpotAdviceRequest : RpcAcsRequest<DescribeSpotAdviceResponse>
     {
-        public DescribeCapacityReservationsRequest()
-            : base("Ecs", "2014-05-26", "DescribeCapacityReservations", "ecs", "openAPI")
+        public DescribeSpotAdviceRequest()
+            : base("Ecs", "2014-05-26", "DescribeSpotAdvice", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,29 +40,46 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			Method = MethodType.POST;
         }
 
+		private string gpuSpec;
+
 		private long? resourceOwnerId;
 
-		private string platform;
+		private float? memory;
 
-		private string nextToken;
+		private List<string> instanceTypess = new List<string>(){ };
 
-		private string instanceType;
+		private int? minCores;
 
-		private string instanceChargeType;
+		private int? cores;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
+		private string instanceTypeFamily;
+
 		private long? ownerId;
 
-		private string privatePoolOptionsIds;
-
-		private int? maxResults;
+		private string instanceFamilyLevel;
 
 		private string zoneId;
 
-		private string status;
+		private int? gpuAmount;
+
+		private float? minMemory;
+
+		public string GpuSpec
+		{
+			get
+			{
+				return gpuSpec;
+			}
+			set	
+			{
+				gpuSpec = value;
+				DictionaryUtil.Add(QueryParameters, "GpuSpec", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -77,55 +94,59 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Platform
+		public float? Memory
 		{
 			get
 			{
-				return platform;
+				return memory;
 			}
 			set	
 			{
-				platform = value;
-				DictionaryUtil.Add(QueryParameters, "Platform", value);
+				memory = value;
+				DictionaryUtil.Add(QueryParameters, "Memory", value.ToString());
 			}
 		}
 
-		public string NextToken
+		public List<string> InstanceTypess
 		{
 			get
 			{
-				return nextToken;
+				return instanceTypess;
 			}
-			set	
+
+			set
 			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+				instanceTypess = value;
+				for (int i = 0; i < instanceTypess.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"InstanceTypes." + (i + 1) , instanceTypess[i]);
+				}
 			}
 		}
 
-		public string InstanceType
+		public int? MinCores
 		{
 			get
 			{
-				return instanceType;
+				return minCores;
 			}
 			set	
 			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+				minCores = value;
+				DictionaryUtil.Add(QueryParameters, "MinCores", value.ToString());
 			}
 		}
 
-		public string InstanceChargeType
+		public int? Cores
 		{
 			get
 			{
-				return instanceChargeType;
+				return cores;
 			}
 			set	
 			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+				cores = value;
+				DictionaryUtil.Add(QueryParameters, "Cores", value.ToString());
 			}
 		}
 
@@ -155,6 +176,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string InstanceTypeFamily
+		{
+			get
+			{
+				return instanceTypeFamily;
+			}
+			set	
+			{
+				instanceTypeFamily = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceTypeFamily", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -168,29 +202,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string PrivatePoolOptionsIds
+		public string InstanceFamilyLevel
 		{
 			get
 			{
-				return privatePoolOptionsIds;
+				return instanceFamilyLevel;
 			}
 			set	
 			{
-				privatePoolOptionsIds = value;
-				DictionaryUtil.Add(QueryParameters, "PrivatePoolOptions.Ids", value);
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+				instanceFamilyLevel = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceFamilyLevel", value);
 			}
 		}
 
@@ -207,22 +228,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Status
+		public int? GpuAmount
 		{
 			get
 			{
-				return status;
+				return gpuAmount;
 			}
 			set	
 			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
+				gpuAmount = value;
+				DictionaryUtil.Add(QueryParameters, "GpuAmount", value.ToString());
 			}
 		}
 
-        public override DescribeCapacityReservationsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public float? MinMemory
+		{
+			get
+			{
+				return minMemory;
+			}
+			set	
+			{
+				minMemory = value;
+				DictionaryUtil.Add(QueryParameters, "MinMemory", value.ToString());
+			}
+		}
+
+        public override DescribeSpotAdviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCapacityReservationsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeSpotAdviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

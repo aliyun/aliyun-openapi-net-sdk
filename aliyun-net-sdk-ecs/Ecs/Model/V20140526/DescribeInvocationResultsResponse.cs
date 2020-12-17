@@ -143,6 +143,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string errorInfo;
 
+				private string username;
+
 				public string CommandId
 				{
 					get
@@ -308,6 +310,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						errorInfo = value;
+					}
+				}
+
+				public string Username
+				{
+					get
+					{
+						return username;
+					}
+					set	
+					{
+						username = value;
 					}
 				}
 			}

@@ -59,6 +59,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private Dictionary<object,object> parameters;
 
+		private string username;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -177,6 +179,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				parameters = value;
 				DictionaryUtil.Add(QueryParameters, "Parameters", JsonConvert.SerializeObject(value));
+			}
+		}
+
+		public string Username
+		{
+			get
+			{
+				return username;
+			}
+			set	
+			{
+				username = value;
+				DictionaryUtil.Add(QueryParameters, "Username", value);
 			}
 		}
 

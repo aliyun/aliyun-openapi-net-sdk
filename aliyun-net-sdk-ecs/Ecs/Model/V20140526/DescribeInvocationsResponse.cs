@@ -120,6 +120,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string parameters;
 
+			private string username;
+
 			private List<DescribeInvocations_InvokeInstance> invokeInstances;
 
 			public string InvokeId
@@ -251,6 +253,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					parameters = value;
+				}
+			}
+
+			public string Username
+			{
+				get
+				{
+					return username;
+				}
+				set	
+				{
+					username = value;
 				}
 			}
 

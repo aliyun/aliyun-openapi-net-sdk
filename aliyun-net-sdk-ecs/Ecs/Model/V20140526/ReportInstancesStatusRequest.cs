@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string startTime;
 
+		private string issueCategory;
+
 		private List<string> diskIds = new List<string>(){ };
 
 		private string resourceOwnerAccount;
@@ -112,6 +114,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string IssueCategory
+		{
+			get
+			{
+				return issueCategory;
+			}
+			set	
+			{
+				issueCategory = value;
+				DictionaryUtil.Add(QueryParameters, "IssueCategory", value);
 			}
 		}
 

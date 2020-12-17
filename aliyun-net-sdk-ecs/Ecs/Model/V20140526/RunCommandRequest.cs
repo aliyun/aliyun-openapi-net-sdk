@@ -75,6 +75,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? enableParameter;
 
+		private string username;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -297,6 +299,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				enableParameter = value;
 				DictionaryUtil.Add(QueryParameters, "EnableParameter", value.ToString());
+			}
+		}
+
+		public string Username
+		{
+			get
+			{
+				return username;
+			}
+			set	
+			{
+				username = value;
+				DictionaryUtil.Add(QueryParameters, "Username", value);
 			}
 		}
 

@@ -55,6 +55,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				invocationResult.ExitCode = _ctx.LongValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].ExitCode");
 				invocationResult.ErrorCode = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].ErrorCode");
 				invocationResult.ErrorInfo = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].ErrorInfo");
+				invocationResult.Username = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].Username");
 
 				invocation_invocationResults.Add(invocationResult);
 			}

@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				invocation.InvokeStatus = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].InvokeStatus");
 				invocation.InvocationStatus = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].InvocationStatus");
 				invocation.Parameters = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].Parameters");
+				invocation.Username = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].Username");
 
 				List<DescribeInvocationsResponse.DescribeInvocations_Invocation.DescribeInvocations_InvokeInstance> invocation_invokeInstances = new List<DescribeInvocationsResponse.DescribeInvocations_Invocation.DescribeInvocations_InvokeInstance>();
 				for (int j = 0; j < _ctx.Length("DescribeInvocations.Invocations["+ i +"].InvokeInstances.Length"); j++) {

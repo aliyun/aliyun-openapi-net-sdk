@@ -62,6 +62,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string zoneId;
 
+		private string status;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -202,6 +204,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 
