@@ -26,49 +26,49 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class GetStackGroupOperationResponseUnmarshaller
     {
-        public static GetStackGroupOperationResponse Unmarshall(UnmarshallerContext context)
+        public static GetStackGroupOperationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetStackGroupOperationResponse getStackGroupOperationResponse = new GetStackGroupOperationResponse();
 
-			getStackGroupOperationResponse.HttpResponse = context.HttpResponse;
-			getStackGroupOperationResponse.RequestId = context.StringValue("GetStackGroupOperation.RequestId");
+			getStackGroupOperationResponse.HttpResponse = _ctx.HttpResponse;
+			getStackGroupOperationResponse.RequestId = _ctx.StringValue("GetStackGroupOperation.RequestId");
 
 			GetStackGroupOperationResponse.GetStackGroupOperation_StackGroupOperation stackGroupOperation = new GetStackGroupOperationResponse.GetStackGroupOperation_StackGroupOperation();
-			stackGroupOperation.StackGroupName = context.StringValue("GetStackGroupOperation.StackGroupOperation.StackGroupName");
-			stackGroupOperation.StackGroupId = context.StringValue("GetStackGroupOperation.StackGroupOperation.StackGroupId");
-			stackGroupOperation.OperationId = context.StringValue("GetStackGroupOperation.StackGroupOperation.OperationId");
-			stackGroupOperation.OperationDescription = context.StringValue("GetStackGroupOperation.StackGroupOperation.OperationDescription");
-			stackGroupOperation.CreateTime = context.StringValue("GetStackGroupOperation.StackGroupOperation.CreateTime");
-			stackGroupOperation.EndTime = context.StringValue("GetStackGroupOperation.StackGroupOperation.EndTime");
-			stackGroupOperation.Action = context.StringValue("GetStackGroupOperation.StackGroupOperation.Action");
-			stackGroupOperation.Status = context.StringValue("GetStackGroupOperation.StackGroupOperation.Status");
-			stackGroupOperation.RetainStacks = context.BooleanValue("GetStackGroupOperation.StackGroupOperation.RetainStacks");
-			stackGroupOperation.AdministratorRoleName = context.StringValue("GetStackGroupOperation.StackGroupOperation.AdministratorRoleName");
-			stackGroupOperation.ExecutionRoleName = context.StringValue("GetStackGroupOperation.StackGroupOperation.ExecutionRoleName");
+			stackGroupOperation.StackGroupName = _ctx.StringValue("GetStackGroupOperation.StackGroupOperation.StackGroupName");
+			stackGroupOperation.StackGroupId = _ctx.StringValue("GetStackGroupOperation.StackGroupOperation.StackGroupId");
+			stackGroupOperation.OperationId = _ctx.StringValue("GetStackGroupOperation.StackGroupOperation.OperationId");
+			stackGroupOperation.OperationDescription = _ctx.StringValue("GetStackGroupOperation.StackGroupOperation.OperationDescription");
+			stackGroupOperation.CreateTime = _ctx.StringValue("GetStackGroupOperation.StackGroupOperation.CreateTime");
+			stackGroupOperation.EndTime = _ctx.StringValue("GetStackGroupOperation.StackGroupOperation.EndTime");
+			stackGroupOperation.Action = _ctx.StringValue("GetStackGroupOperation.StackGroupOperation.Action");
+			stackGroupOperation.Status = _ctx.StringValue("GetStackGroupOperation.StackGroupOperation.Status");
+			stackGroupOperation.RetainStacks = _ctx.BooleanValue("GetStackGroupOperation.StackGroupOperation.RetainStacks");
+			stackGroupOperation.AdministratorRoleName = _ctx.StringValue("GetStackGroupOperation.StackGroupOperation.AdministratorRoleName");
+			stackGroupOperation.ExecutionRoleName = _ctx.StringValue("GetStackGroupOperation.StackGroupOperation.ExecutionRoleName");
 
 			GetStackGroupOperationResponse.GetStackGroupOperation_StackGroupOperation.GetStackGroupOperation_OperationPreferences operationPreferences = new GetStackGroupOperationResponse.GetStackGroupOperation_StackGroupOperation.GetStackGroupOperation_OperationPreferences();
-			operationPreferences.FailureToleranceCount = context.IntegerValue("GetStackGroupOperation.StackGroupOperation.OperationPreferences.FailureToleranceCount");
-			operationPreferences.FailureTolerancePercentage = context.IntegerValue("GetStackGroupOperation.StackGroupOperation.OperationPreferences.FailureTolerancePercentage");
-			operationPreferences.MaxConcurrentCount = context.IntegerValue("GetStackGroupOperation.StackGroupOperation.OperationPreferences.MaxConcurrentCount");
-			operationPreferences.MaxConcurrentPercentage = context.IntegerValue("GetStackGroupOperation.StackGroupOperation.OperationPreferences.MaxConcurrentPercentage");
+			operationPreferences.FailureToleranceCount = _ctx.IntegerValue("GetStackGroupOperation.StackGroupOperation.OperationPreferences.FailureToleranceCount");
+			operationPreferences.FailureTolerancePercentage = _ctx.IntegerValue("GetStackGroupOperation.StackGroupOperation.OperationPreferences.FailureTolerancePercentage");
+			operationPreferences.MaxConcurrentCount = _ctx.IntegerValue("GetStackGroupOperation.StackGroupOperation.OperationPreferences.MaxConcurrentCount");
+			operationPreferences.MaxConcurrentPercentage = _ctx.IntegerValue("GetStackGroupOperation.StackGroupOperation.OperationPreferences.MaxConcurrentPercentage");
 
 			List<string> operationPreferences_regionIdsOrder = new List<string>();
-			for (int i = 0; i < context.Length("GetStackGroupOperation.StackGroupOperation.OperationPreferences.RegionIdsOrder.Length"); i++) {
-				operationPreferences_regionIdsOrder.Add(context.StringValue("GetStackGroupOperation.StackGroupOperation.OperationPreferences.RegionIdsOrder["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetStackGroupOperation.StackGroupOperation.OperationPreferences.RegionIdsOrder.Length"); i++) {
+				operationPreferences_regionIdsOrder.Add(_ctx.StringValue("GetStackGroupOperation.StackGroupOperation.OperationPreferences.RegionIdsOrder["+ i +"]"));
 			}
 			operationPreferences.RegionIdsOrder = operationPreferences_regionIdsOrder;
 			stackGroupOperation.OperationPreferences = operationPreferences;
 
 			GetStackGroupOperationResponse.GetStackGroupOperation_StackGroupOperation.GetStackGroupOperation_StackGroupDriftDetectionDetail stackGroupDriftDetectionDetail = new GetStackGroupOperationResponse.GetStackGroupOperation_StackGroupOperation.GetStackGroupOperation_StackGroupDriftDetectionDetail();
-			stackGroupDriftDetectionDetail.DriftDetectionTime = context.StringValue("GetStackGroupOperation.StackGroupOperation.StackGroupDriftDetectionDetail.DriftDetectionTime");
-			stackGroupDriftDetectionDetail.StackGroupDriftStatus = context.StringValue("GetStackGroupOperation.StackGroupOperation.StackGroupDriftDetectionDetail.StackGroupDriftStatus");
-			stackGroupDriftDetectionDetail.DriftDetectionStatus = context.StringValue("GetStackGroupOperation.StackGroupOperation.StackGroupDriftDetectionDetail.DriftDetectionStatus");
-			stackGroupDriftDetectionDetail.DriftedStackInstancesCount = context.IntegerValue("GetStackGroupOperation.StackGroupOperation.StackGroupDriftDetectionDetail.DriftedStackInstancesCount");
-			stackGroupDriftDetectionDetail.FailedStackInstancesCount = context.IntegerValue("GetStackGroupOperation.StackGroupOperation.StackGroupDriftDetectionDetail.FailedStackInstancesCount");
-			stackGroupDriftDetectionDetail.CancelledStackInstancesCount = context.IntegerValue("GetStackGroupOperation.StackGroupOperation.StackGroupDriftDetectionDetail.CancelledStackInstancesCount");
-			stackGroupDriftDetectionDetail.InProgressStackInstancesCount = context.IntegerValue("GetStackGroupOperation.StackGroupOperation.StackGroupDriftDetectionDetail.InProgressStackInstancesCount");
-			stackGroupDriftDetectionDetail.InSyncStackInstancesCount = context.IntegerValue("GetStackGroupOperation.StackGroupOperation.StackGroupDriftDetectionDetail.InSyncStackInstancesCount");
-			stackGroupDriftDetectionDetail.TotalStackInstancesCount = context.IntegerValue("GetStackGroupOperation.StackGroupOperation.StackGroupDriftDetectionDetail.TotalStackInstancesCount");
+			stackGroupDriftDetectionDetail.DriftDetectionTime = _ctx.StringValue("GetStackGroupOperation.StackGroupOperation.StackGroupDriftDetectionDetail.DriftDetectionTime");
+			stackGroupDriftDetectionDetail.StackGroupDriftStatus = _ctx.StringValue("GetStackGroupOperation.StackGroupOperation.StackGroupDriftDetectionDetail.StackGroupDriftStatus");
+			stackGroupDriftDetectionDetail.DriftDetectionStatus = _ctx.StringValue("GetStackGroupOperation.StackGroupOperation.StackGroupDriftDetectionDetail.DriftDetectionStatus");
+			stackGroupDriftDetectionDetail.DriftedStackInstancesCount = _ctx.IntegerValue("GetStackGroupOperation.StackGroupOperation.StackGroupDriftDetectionDetail.DriftedStackInstancesCount");
+			stackGroupDriftDetectionDetail.FailedStackInstancesCount = _ctx.IntegerValue("GetStackGroupOperation.StackGroupOperation.StackGroupDriftDetectionDetail.FailedStackInstancesCount");
+			stackGroupDriftDetectionDetail.CancelledStackInstancesCount = _ctx.IntegerValue("GetStackGroupOperation.StackGroupOperation.StackGroupDriftDetectionDetail.CancelledStackInstancesCount");
+			stackGroupDriftDetectionDetail.InProgressStackInstancesCount = _ctx.IntegerValue("GetStackGroupOperation.StackGroupOperation.StackGroupDriftDetectionDetail.InProgressStackInstancesCount");
+			stackGroupDriftDetectionDetail.InSyncStackInstancesCount = _ctx.IntegerValue("GetStackGroupOperation.StackGroupOperation.StackGroupDriftDetectionDetail.InSyncStackInstancesCount");
+			stackGroupDriftDetectionDetail.TotalStackInstancesCount = _ctx.IntegerValue("GetStackGroupOperation.StackGroupOperation.StackGroupDriftDetectionDetail.TotalStackInstancesCount");
 			stackGroupOperation.StackGroupDriftDetectionDetail = stackGroupDriftDetectionDetail;
 			getStackGroupOperationResponse.StackGroupOperation = stackGroupOperation;
         

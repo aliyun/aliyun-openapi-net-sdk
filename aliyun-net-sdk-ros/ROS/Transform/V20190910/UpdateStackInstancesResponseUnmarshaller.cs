@@ -26,13 +26,13 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class UpdateStackInstancesResponseUnmarshaller
     {
-        public static UpdateStackInstancesResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateStackInstancesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateStackInstancesResponse updateStackInstancesResponse = new UpdateStackInstancesResponse();
 
-			updateStackInstancesResponse.HttpResponse = context.HttpResponse;
-			updateStackInstancesResponse.RequestId = context.StringValue("UpdateStackInstances.RequestId");
-			updateStackInstancesResponse.OperationId = context.StringValue("UpdateStackInstances.OperationId");
+			updateStackInstancesResponse.HttpResponse = _ctx.HttpResponse;
+			updateStackInstancesResponse.RequestId = _ctx.StringValue("UpdateStackInstances.RequestId");
+			updateStackInstancesResponse.OperationId = _ctx.StringValue("UpdateStackInstances.OperationId");
         
 			return updateStackInstancesResponse;
         }

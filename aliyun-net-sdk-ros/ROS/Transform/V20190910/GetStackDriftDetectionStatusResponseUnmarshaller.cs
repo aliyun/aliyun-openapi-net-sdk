@@ -26,19 +26,19 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class GetStackDriftDetectionStatusResponseUnmarshaller
     {
-        public static GetStackDriftDetectionStatusResponse Unmarshall(UnmarshallerContext context)
+        public static GetStackDriftDetectionStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetStackDriftDetectionStatusResponse getStackDriftDetectionStatusResponse = new GetStackDriftDetectionStatusResponse();
 
-			getStackDriftDetectionStatusResponse.HttpResponse = context.HttpResponse;
-			getStackDriftDetectionStatusResponse.RequestId = context.StringValue("GetStackDriftDetectionStatus.RequestId");
-			getStackDriftDetectionStatusResponse.DriftDetectionId = context.StringValue("GetStackDriftDetectionStatus.DriftDetectionId");
-			getStackDriftDetectionStatusResponse.DriftDetectionTime = context.StringValue("GetStackDriftDetectionStatus.DriftDetectionTime");
-			getStackDriftDetectionStatusResponse.DriftDetectionStatus = context.StringValue("GetStackDriftDetectionStatus.DriftDetectionStatus");
-			getStackDriftDetectionStatusResponse.DriftDetectionStatusReason = context.StringValue("GetStackDriftDetectionStatus.DriftDetectionStatusReason");
-			getStackDriftDetectionStatusResponse.StackDriftStatus = context.StringValue("GetStackDriftDetectionStatus.StackDriftStatus");
-			getStackDriftDetectionStatusResponse.StackId = context.StringValue("GetStackDriftDetectionStatus.StackId");
-			getStackDriftDetectionStatusResponse.DriftedStackResourceCount = context.IntegerValue("GetStackDriftDetectionStatus.DriftedStackResourceCount");
+			getStackDriftDetectionStatusResponse.HttpResponse = _ctx.HttpResponse;
+			getStackDriftDetectionStatusResponse.RequestId = _ctx.StringValue("GetStackDriftDetectionStatus.RequestId");
+			getStackDriftDetectionStatusResponse.DriftDetectionId = _ctx.StringValue("GetStackDriftDetectionStatus.DriftDetectionId");
+			getStackDriftDetectionStatusResponse.DriftDetectionTime = _ctx.StringValue("GetStackDriftDetectionStatus.DriftDetectionTime");
+			getStackDriftDetectionStatusResponse.DriftDetectionStatus = _ctx.StringValue("GetStackDriftDetectionStatus.DriftDetectionStatus");
+			getStackDriftDetectionStatusResponse.DriftDetectionStatusReason = _ctx.StringValue("GetStackDriftDetectionStatus.DriftDetectionStatusReason");
+			getStackDriftDetectionStatusResponse.StackDriftStatus = _ctx.StringValue("GetStackDriftDetectionStatus.StackDriftStatus");
+			getStackDriftDetectionStatusResponse.StackId = _ctx.StringValue("GetStackDriftDetectionStatus.StackId");
+			getStackDriftDetectionStatusResponse.DriftedStackResourceCount = _ctx.IntegerValue("GetStackDriftDetectionStatus.DriftedStackResourceCount");
         
 			return getStackDriftDetectionStatusResponse;
         }

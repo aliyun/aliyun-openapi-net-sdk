@@ -26,24 +26,28 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class ListTemplatesResponseUnmarshaller
     {
-        public static ListTemplatesResponse Unmarshall(UnmarshallerContext context)
+        public static ListTemplatesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListTemplatesResponse listTemplatesResponse = new ListTemplatesResponse();
 
-			listTemplatesResponse.HttpResponse = context.HttpResponse;
-			listTemplatesResponse.PageNumber = context.IntegerValue("ListTemplates.PageNumber");
-			listTemplatesResponse.PageSize = context.IntegerValue("ListTemplates.PageSize");
-			listTemplatesResponse.RequestId = context.StringValue("ListTemplates.RequestId");
-			listTemplatesResponse.TotalCount = context.IntegerValue("ListTemplates.TotalCount");
+			listTemplatesResponse.HttpResponse = _ctx.HttpResponse;
+			listTemplatesResponse.PageNumber = _ctx.IntegerValue("ListTemplates.PageNumber");
+			listTemplatesResponse.PageSize = _ctx.IntegerValue("ListTemplates.PageSize");
+			listTemplatesResponse.RequestId = _ctx.StringValue("ListTemplates.RequestId");
+			listTemplatesResponse.TotalCount = _ctx.IntegerValue("ListTemplates.TotalCount");
 
 			List<ListTemplatesResponse.ListTemplates_Template> listTemplatesResponse_templates = new List<ListTemplatesResponse.ListTemplates_Template>();
-			for (int i = 0; i < context.Length("ListTemplates.Templates.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListTemplates.Templates.Length"); i++) {
 				ListTemplatesResponse.ListTemplates_Template template = new ListTemplatesResponse.ListTemplates_Template();
-				template.CreateTime = context.StringValue("ListTemplates.Templates["+ i +"].CreateTime");
-				template.Description = context.StringValue("ListTemplates.Templates["+ i +"].Description");
-				template.TemplateId = context.StringValue("ListTemplates.Templates["+ i +"].TemplateId");
-				template.TemplateName = context.StringValue("ListTemplates.Templates["+ i +"].TemplateName");
-				template.UpdateTime = context.StringValue("ListTemplates.Templates["+ i +"].UpdateTime");
+				template.CreateTime = _ctx.StringValue("ListTemplates.Templates["+ i +"].CreateTime");
+				template.Description = _ctx.StringValue("ListTemplates.Templates["+ i +"].Description");
+				template.TemplateId = _ctx.StringValue("ListTemplates.Templates["+ i +"].TemplateId");
+				template.TemplateName = _ctx.StringValue("ListTemplates.Templates["+ i +"].TemplateName");
+				template.UpdateTime = _ctx.StringValue("ListTemplates.Templates["+ i +"].UpdateTime");
+				template.TemplateVersion = _ctx.StringValue("ListTemplates.Templates["+ i +"].TemplateVersion");
+				template.ShareType = _ctx.StringValue("ListTemplates.Templates["+ i +"].ShareType");
+				template.OwnerId = _ctx.StringValue("ListTemplates.Templates["+ i +"].OwnerId");
+				template.TemplateARN = _ctx.StringValue("ListTemplates.Templates["+ i +"].TemplateARN");
 
 				listTemplatesResponse_templates.Add(template);
 			}

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class ListResourceTypesResponseUnmarshaller
     {
-        public static ListResourceTypesResponse Unmarshall(UnmarshallerContext context)
+        public static ListResourceTypesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListResourceTypesResponse listResourceTypesResponse = new ListResourceTypesResponse();
 
-			listResourceTypesResponse.HttpResponse = context.HttpResponse;
-			listResourceTypesResponse.RequestId = context.StringValue("ListResourceTypes.RequestId");
+			listResourceTypesResponse.HttpResponse = _ctx.HttpResponse;
+			listResourceTypesResponse.RequestId = _ctx.StringValue("ListResourceTypes.RequestId");
 
 			List<string> listResourceTypesResponse_resourceTypes = new List<string>();
-			for (int i = 0; i < context.Length("ListResourceTypes.ResourceTypes.Length"); i++) {
-				listResourceTypesResponse_resourceTypes.Add(context.StringValue("ListResourceTypes.ResourceTypes["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("ListResourceTypes.ResourceTypes.Length"); i++) {
+				listResourceTypesResponse_resourceTypes.Add(_ctx.StringValue("ListResourceTypes.ResourceTypes["+ i +"]"));
 			}
 			listResourceTypesResponse.ResourceTypes = listResourceTypesResponse_resourceTypes;
         

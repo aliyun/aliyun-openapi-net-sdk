@@ -26,27 +26,27 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class ListStackResourcesResponseUnmarshaller
     {
-        public static ListStackResourcesResponse Unmarshall(UnmarshallerContext context)
+        public static ListStackResourcesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListStackResourcesResponse listStackResourcesResponse = new ListStackResourcesResponse();
 
-			listStackResourcesResponse.HttpResponse = context.HttpResponse;
-			listStackResourcesResponse.RequestId = context.StringValue("ListStackResources.RequestId");
+			listStackResourcesResponse.HttpResponse = _ctx.HttpResponse;
+			listStackResourcesResponse.RequestId = _ctx.StringValue("ListStackResources.RequestId");
 
 			List<ListStackResourcesResponse.ListStackResources_Resource> listStackResourcesResponse_resources = new List<ListStackResourcesResponse.ListStackResources_Resource>();
-			for (int i = 0; i < context.Length("ListStackResources.Resources.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListStackResources.Resources.Length"); i++) {
 				ListStackResourcesResponse.ListStackResources_Resource resource = new ListStackResourcesResponse.ListStackResources_Resource();
-				resource.CreateTime = context.StringValue("ListStackResources.Resources["+ i +"].CreateTime");
-				resource.LogicalResourceId = context.StringValue("ListStackResources.Resources["+ i +"].LogicalResourceId");
-				resource.PhysicalResourceId = context.StringValue("ListStackResources.Resources["+ i +"].PhysicalResourceId");
-				resource.ResourceType = context.StringValue("ListStackResources.Resources["+ i +"].ResourceType");
-				resource.StackId = context.StringValue("ListStackResources.Resources["+ i +"].StackId");
-				resource.StackName = context.StringValue("ListStackResources.Resources["+ i +"].StackName");
-				resource.Status = context.StringValue("ListStackResources.Resources["+ i +"].Status");
-				resource.StatusReason = context.StringValue("ListStackResources.Resources["+ i +"].StatusReason");
-				resource.UpdateTime = context.StringValue("ListStackResources.Resources["+ i +"].UpdateTime");
-				resource.ResourceDriftStatus = context.StringValue("ListStackResources.Resources["+ i +"].ResourceDriftStatus");
-				resource.DriftDetectionTime = context.StringValue("ListStackResources.Resources["+ i +"].DriftDetectionTime");
+				resource.CreateTime = _ctx.StringValue("ListStackResources.Resources["+ i +"].CreateTime");
+				resource.LogicalResourceId = _ctx.StringValue("ListStackResources.Resources["+ i +"].LogicalResourceId");
+				resource.PhysicalResourceId = _ctx.StringValue("ListStackResources.Resources["+ i +"].PhysicalResourceId");
+				resource.ResourceType = _ctx.StringValue("ListStackResources.Resources["+ i +"].ResourceType");
+				resource.StackId = _ctx.StringValue("ListStackResources.Resources["+ i +"].StackId");
+				resource.StackName = _ctx.StringValue("ListStackResources.Resources["+ i +"].StackName");
+				resource.Status = _ctx.StringValue("ListStackResources.Resources["+ i +"].Status");
+				resource.StatusReason = _ctx.StringValue("ListStackResources.Resources["+ i +"].StatusReason");
+				resource.UpdateTime = _ctx.StringValue("ListStackResources.Resources["+ i +"].UpdateTime");
+				resource.ResourceDriftStatus = _ctx.StringValue("ListStackResources.Resources["+ i +"].ResourceDriftStatus");
+				resource.DriftDetectionTime = _ctx.StringValue("ListStackResources.Resources["+ i +"].DriftDetectionTime");
 
 				listStackResourcesResponse_resources.Add(resource);
 			}

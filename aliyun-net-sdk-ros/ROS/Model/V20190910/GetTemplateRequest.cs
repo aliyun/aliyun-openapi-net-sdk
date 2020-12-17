@@ -35,13 +35,21 @@ namespace Aliyun.Acs.ROS.Model.V20190910
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.ROS.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.ROS.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private string stackId;
+
+		private string templateVersion;
+
+		private string stackGroupName;
+
+		private string templateStage;
+
+		private string includePermission;
 
 		private string templateId;
 
@@ -57,6 +65,58 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				stackId = value;
 				DictionaryUtil.Add(QueryParameters, "StackId", value);
+			}
+		}
+
+		public string TemplateVersion
+		{
+			get
+			{
+				return templateVersion;
+			}
+			set	
+			{
+				templateVersion = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateVersion", value);
+			}
+		}
+
+		public string StackGroupName
+		{
+			get
+			{
+				return stackGroupName;
+			}
+			set	
+			{
+				stackGroupName = value;
+				DictionaryUtil.Add(QueryParameters, "StackGroupName", value);
+			}
+		}
+
+		public string TemplateStage
+		{
+			get
+			{
+				return templateStage;
+			}
+			set	
+			{
+				templateStage = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateStage", value);
+			}
+		}
+
+		public string IncludePermission
+		{
+			get
+			{
+				return includePermission;
+			}
+			set	
+			{
+				includePermission = value;
+				DictionaryUtil.Add(QueryParameters, "IncludePermission", value);
 			}
 		}
 

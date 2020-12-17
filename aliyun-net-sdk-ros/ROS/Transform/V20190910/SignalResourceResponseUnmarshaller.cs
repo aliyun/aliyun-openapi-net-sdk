@@ -26,12 +26,12 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class SignalResourceResponseUnmarshaller
     {
-        public static SignalResourceResponse Unmarshall(UnmarshallerContext context)
+        public static SignalResourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SignalResourceResponse signalResourceResponse = new SignalResourceResponse();
 
-			signalResourceResponse.HttpResponse = context.HttpResponse;
-			signalResourceResponse.RequestId = context.StringValue("SignalResource.RequestId");
+			signalResourceResponse.HttpResponse = _ctx.HttpResponse;
+			signalResourceResponse.RequestId = _ctx.StringValue("SignalResource.RequestId");
         
 			return signalResourceResponse;
         }

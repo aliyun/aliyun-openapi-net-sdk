@@ -26,13 +26,13 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class GetTemplateEstimateCostResponseUnmarshaller
     {
-        public static GetTemplateEstimateCostResponse Unmarshall(UnmarshallerContext context)
+        public static GetTemplateEstimateCostResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetTemplateEstimateCostResponse getTemplateEstimateCostResponse = new GetTemplateEstimateCostResponse();
 
-			getTemplateEstimateCostResponse.HttpResponse = context.HttpResponse;
-			getTemplateEstimateCostResponse.RequestId = context.StringValue("GetTemplateEstimateCost.RequestId");
-			getTemplateEstimateCostResponse.Resources = context.StringValue("GetTemplateEstimateCost.Resources");
+			getTemplateEstimateCostResponse.HttpResponse = _ctx.HttpResponse;
+			getTemplateEstimateCostResponse.RequestId = _ctx.StringValue("GetTemplateEstimateCost.RequestId");
+			getTemplateEstimateCostResponse.Resources = _ctx.StringValue("GetTemplateEstimateCost.Resources");
         
 			return getTemplateEstimateCostResponse;
         }

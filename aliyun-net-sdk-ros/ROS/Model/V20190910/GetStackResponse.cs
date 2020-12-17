@@ -61,6 +61,8 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 		private string rootStackId;
 
+		private string stackType;
+
 		private List<GetStack_Parameter> parameters;
 
 		private List<Dictionary<string, string>> outputs;
@@ -280,6 +282,18 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			set	
 			{
 				rootStackId = value;
+			}
+		}
+
+		public string StackType
+		{
+			get
+			{
+				return stackType;
+			}
+			set	
+			{
+				stackType = value;
 			}
 		}
 

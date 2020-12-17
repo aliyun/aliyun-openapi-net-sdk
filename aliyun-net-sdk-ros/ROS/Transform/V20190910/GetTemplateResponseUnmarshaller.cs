@@ -26,13 +26,38 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class GetTemplateResponseUnmarshaller
     {
-        public static GetTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static GetTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetTemplateResponse getTemplateResponse = new GetTemplateResponse();
 
-			getTemplateResponse.HttpResponse = context.HttpResponse;
-			getTemplateResponse.RequestId = context.StringValue("GetTemplate.RequestId");
-			getTemplateResponse.TemplateBody = context.StringValue("GetTemplate.TemplateBody");
+			getTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			getTemplateResponse.RequestId = _ctx.StringValue("GetTemplate.RequestId");
+			getTemplateResponse.TemplateBody = _ctx.StringValue("GetTemplate.TemplateBody");
+			getTemplateResponse.StackId = _ctx.StringValue("GetTemplate.StackId");
+			getTemplateResponse.TemplateId = _ctx.StringValue("GetTemplate.TemplateId");
+			getTemplateResponse.StackGroupName = _ctx.StringValue("GetTemplate.StackGroupName");
+			getTemplateResponse.ChangeSetId = _ctx.StringValue("GetTemplate.ChangeSetId");
+			getTemplateResponse.RegionId = _ctx.StringValue("GetTemplate.RegionId");
+			getTemplateResponse.CreateTime = _ctx.StringValue("GetTemplate.CreateTime");
+			getTemplateResponse.Description = _ctx.StringValue("GetTemplate.Description");
+			getTemplateResponse.TemplateName = _ctx.StringValue("GetTemplate.TemplateName");
+			getTemplateResponse.UpdateTime = _ctx.StringValue("GetTemplate.UpdateTime");
+			getTemplateResponse.TemplateVersion = _ctx.StringValue("GetTemplate.TemplateVersion");
+			getTemplateResponse.ShareType = _ctx.StringValue("GetTemplate.ShareType");
+			getTemplateResponse.OwnerId = _ctx.StringValue("GetTemplate.OwnerId");
+			getTemplateResponse.TemplateARN = _ctx.StringValue("GetTemplate.TemplateARN");
+
+			List<GetTemplateResponse.GetTemplate_Permission> getTemplateResponse_permissions = new List<GetTemplateResponse.GetTemplate_Permission>();
+			for (int i = 0; i < _ctx.Length("GetTemplate.Permissions.Length"); i++) {
+				GetTemplateResponse.GetTemplate_Permission permission = new GetTemplateResponse.GetTemplate_Permission();
+				permission.ShareOption = _ctx.StringValue("GetTemplate.Permissions["+ i +"].ShareOption");
+				permission.VersionOption = _ctx.StringValue("GetTemplate.Permissions["+ i +"].VersionOption");
+				permission.TemplateVersion = _ctx.StringValue("GetTemplate.Permissions["+ i +"].TemplateVersion");
+				permission.AccountId = _ctx.StringValue("GetTemplate.Permissions["+ i +"].AccountId");
+
+				getTemplateResponse_permissions.Add(permission);
+			}
+			getTemplateResponse.Permissions = getTemplateResponse_permissions;
         
 			return getTemplateResponse;
         }

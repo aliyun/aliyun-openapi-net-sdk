@@ -26,13 +26,13 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class DetectStackGroupDriftResponseUnmarshaller
     {
-        public static DetectStackGroupDriftResponse Unmarshall(UnmarshallerContext context)
+        public static DetectStackGroupDriftResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetectStackGroupDriftResponse detectStackGroupDriftResponse = new DetectStackGroupDriftResponse();
 
-			detectStackGroupDriftResponse.HttpResponse = context.HttpResponse;
-			detectStackGroupDriftResponse.RequestId = context.StringValue("DetectStackGroupDrift.RequestId");
-			detectStackGroupDriftResponse.OperationId = context.StringValue("DetectStackGroupDrift.OperationId");
+			detectStackGroupDriftResponse.HttpResponse = _ctx.HttpResponse;
+			detectStackGroupDriftResponse.RequestId = _ctx.StringValue("DetectStackGroupDrift.RequestId");
+			detectStackGroupDriftResponse.OperationId = _ctx.StringValue("DetectStackGroupDrift.OperationId");
         
 			return detectStackGroupDriftResponse;
         }

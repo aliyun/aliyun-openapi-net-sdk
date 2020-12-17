@@ -122,6 +122,8 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 			private string driftDetectionTime;
 
+			private string stackType;
+
 			public string CreateTime
 			{
 				get
@@ -263,6 +265,18 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 				set	
 				{
 					driftDetectionTime = value;
+				}
+			}
+
+			public string StackType
+			{
+				get
+				{
+					return stackType;
+				}
+				set	
+				{
+					stackType = value;
 				}
 			}
 		}

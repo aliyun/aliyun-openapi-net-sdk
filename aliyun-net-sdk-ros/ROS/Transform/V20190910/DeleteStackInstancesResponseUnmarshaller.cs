@@ -26,13 +26,13 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class DeleteStackInstancesResponseUnmarshaller
     {
-        public static DeleteStackInstancesResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteStackInstancesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteStackInstancesResponse deleteStackInstancesResponse = new DeleteStackInstancesResponse();
 
-			deleteStackInstancesResponse.HttpResponse = context.HttpResponse;
-			deleteStackInstancesResponse.RequestId = context.StringValue("DeleteStackInstances.RequestId");
-			deleteStackInstancesResponse.OperationId = context.StringValue("DeleteStackInstances.OperationId");
+			deleteStackInstancesResponse.HttpResponse = _ctx.HttpResponse;
+			deleteStackInstancesResponse.RequestId = _ctx.StringValue("DeleteStackInstances.RequestId");
+			deleteStackInstancesResponse.OperationId = _ctx.StringValue("DeleteStackInstances.OperationId");
         
 			return deleteStackInstancesResponse;
         }

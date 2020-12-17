@@ -26,11 +26,11 @@ namespace Aliyun.Acs.ROS.Transform.V20150901
 {
     public class WaitConditionsResponseUnmarshaller
     {
-        public static WaitConditionsResponse Unmarshall(UnmarshallerContext context)
+        public static WaitConditionsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			WaitConditionsResponse waitConditionsResponse = new WaitConditionsResponse();
 
-			waitConditionsResponse.HttpResponse = context.HttpResponse;
+			waitConditionsResponse.HttpResponse = _ctx.HttpResponse;
         
 			return waitConditionsResponse;
         }

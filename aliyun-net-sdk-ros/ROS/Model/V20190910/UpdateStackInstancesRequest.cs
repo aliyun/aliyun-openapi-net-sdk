@@ -35,13 +35,15 @@ namespace Aliyun.Acs.ROS.Model.V20190910
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.ROS.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.ROS.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private string clientToken;
+
+		private long? timeoutInMinutes;
 
 		private string stackGroupName;
 
@@ -65,6 +67,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public long? TimeoutInMinutes
+		{
+			get
+			{
+				return timeoutInMinutes;
+			}
+			set	
+			{
+				timeoutInMinutes = value;
+				DictionaryUtil.Add(QueryParameters, "TimeoutInMinutes", value.ToString());
 			}
 		}
 

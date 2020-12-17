@@ -26,11 +26,11 @@ namespace Aliyun.Acs.ROS.Transform.V20150901
 {
     public class DescribeStacksResponseUnmarshaller
     {
-        public static DescribeStacksResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeStacksResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeStacksResponse describeStacksResponse = new DescribeStacksResponse();
 
-			describeStacksResponse.HttpResponse = context.HttpResponse;
+			describeStacksResponse.HttpResponse = _ctx.HttpResponse;
         
 			return describeStacksResponse;
         }

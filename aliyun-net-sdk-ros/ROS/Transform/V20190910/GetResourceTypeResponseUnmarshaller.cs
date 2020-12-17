@@ -26,16 +26,16 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class GetResourceTypeResponseUnmarshaller
     {
-        public static GetResourceTypeResponse Unmarshall(UnmarshallerContext context)
+        public static GetResourceTypeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetResourceTypeResponse getResourceTypeResponse = new GetResourceTypeResponse();
 
-			getResourceTypeResponse.HttpResponse = context.HttpResponse;
-			getResourceTypeResponse.Attributes = context.StringValue("GetResourceType.Attributes");
-			getResourceTypeResponse.Properties = context.StringValue("GetResourceType.Properties");
-			getResourceTypeResponse.RequestId = context.StringValue("GetResourceType.RequestId");
-			getResourceTypeResponse.ResourceType = context.StringValue("GetResourceType.ResourceType");
-			getResourceTypeResponse.SupportDriftDetection = context.BooleanValue("GetResourceType.SupportDriftDetection");
+			getResourceTypeResponse.HttpResponse = _ctx.HttpResponse;
+			getResourceTypeResponse.Attributes = _ctx.StringValue("GetResourceType.Attributes");
+			getResourceTypeResponse.Properties = _ctx.StringValue("GetResourceType.Properties");
+			getResourceTypeResponse.RequestId = _ctx.StringValue("GetResourceType.RequestId");
+			getResourceTypeResponse.ResourceType = _ctx.StringValue("GetResourceType.ResourceType");
+			getResourceTypeResponse.SupportDriftDetection = _ctx.BooleanValue("GetResourceType.SupportDriftDetection");
         
 			return getResourceTypeResponse;
         }

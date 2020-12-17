@@ -26,25 +26,25 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class ListStackGroupsResponseUnmarshaller
     {
-        public static ListStackGroupsResponse Unmarshall(UnmarshallerContext context)
+        public static ListStackGroupsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListStackGroupsResponse listStackGroupsResponse = new ListStackGroupsResponse();
 
-			listStackGroupsResponse.HttpResponse = context.HttpResponse;
-			listStackGroupsResponse.RequestId = context.StringValue("ListStackGroups.RequestId");
-			listStackGroupsResponse.PageNumber = context.IntegerValue("ListStackGroups.PageNumber");
-			listStackGroupsResponse.PageSize = context.IntegerValue("ListStackGroups.PageSize");
-			listStackGroupsResponse.TotalCount = context.IntegerValue("ListStackGroups.TotalCount");
+			listStackGroupsResponse.HttpResponse = _ctx.HttpResponse;
+			listStackGroupsResponse.RequestId = _ctx.StringValue("ListStackGroups.RequestId");
+			listStackGroupsResponse.PageNumber = _ctx.IntegerValue("ListStackGroups.PageNumber");
+			listStackGroupsResponse.PageSize = _ctx.IntegerValue("ListStackGroups.PageSize");
+			listStackGroupsResponse.TotalCount = _ctx.IntegerValue("ListStackGroups.TotalCount");
 
 			List<ListStackGroupsResponse.ListStackGroups_StackGroup> listStackGroupsResponse_stackGroups = new List<ListStackGroupsResponse.ListStackGroups_StackGroup>();
-			for (int i = 0; i < context.Length("ListStackGroups.StackGroups.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListStackGroups.StackGroups.Length"); i++) {
 				ListStackGroupsResponse.ListStackGroups_StackGroup stackGroup = new ListStackGroupsResponse.ListStackGroups_StackGroup();
-				stackGroup.StackGroupName = context.StringValue("ListStackGroups.StackGroups["+ i +"].StackGroupName");
-				stackGroup.StackGroupId = context.StringValue("ListStackGroups.StackGroups["+ i +"].StackGroupId");
-				stackGroup.Status = context.StringValue("ListStackGroups.StackGroups["+ i +"].Status");
-				stackGroup.Description = context.StringValue("ListStackGroups.StackGroups["+ i +"].Description");
-				stackGroup.DriftDetectionTime = context.StringValue("ListStackGroups.StackGroups["+ i +"].DriftDetectionTime");
-				stackGroup.StackGroupDriftStatus = context.StringValue("ListStackGroups.StackGroups["+ i +"].StackGroupDriftStatus");
+				stackGroup.StackGroupName = _ctx.StringValue("ListStackGroups.StackGroups["+ i +"].StackGroupName");
+				stackGroup.StackGroupId = _ctx.StringValue("ListStackGroups.StackGroups["+ i +"].StackGroupId");
+				stackGroup.Status = _ctx.StringValue("ListStackGroups.StackGroups["+ i +"].Status");
+				stackGroup.Description = _ctx.StringValue("ListStackGroups.StackGroups["+ i +"].Description");
+				stackGroup.DriftDetectionTime = _ctx.StringValue("ListStackGroups.StackGroups["+ i +"].DriftDetectionTime");
+				stackGroup.StackGroupDriftStatus = _ctx.StringValue("ListStackGroups.StackGroups["+ i +"].StackGroupDriftStatus");
 
 				listStackGroupsResponse_stackGroups.Add(stackGroup);
 			}

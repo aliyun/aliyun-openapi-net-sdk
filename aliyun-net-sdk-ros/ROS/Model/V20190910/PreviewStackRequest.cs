@@ -35,29 +35,116 @@ namespace Aliyun.Acs.ROS.Model.V20190910
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.ROS.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.ROS.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
+
+		private long? timeoutInMinutes;
+
+		private string templateVersion;
+
+		private string stackName;
+
+		private bool? disableRollback;
+
+		private string templateId;
+
+		private List<Parameters> parameterss = new List<Parameters>(){ };
 
 		private string clientToken;
 
 		private string templateBody;
 
-		private long? timeoutInMinutes;
-
 		private string templateURL;
-
-		private string stackName;
 
 		private string stackPolicyBody;
 
-		private bool? disableRollback;
-
 		private string stackPolicyURL;
 
-		private List<Parameters> parameterss = new List<Parameters>(){ };
+		public long? TimeoutInMinutes
+		{
+			get
+			{
+				return timeoutInMinutes;
+			}
+			set	
+			{
+				timeoutInMinutes = value;
+				DictionaryUtil.Add(QueryParameters, "TimeoutInMinutes", value.ToString());
+			}
+		}
+
+		public string TemplateVersion
+		{
+			get
+			{
+				return templateVersion;
+			}
+			set	
+			{
+				templateVersion = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateVersion", value);
+			}
+		}
+
+		public string StackName
+		{
+			get
+			{
+				return stackName;
+			}
+			set	
+			{
+				stackName = value;
+				DictionaryUtil.Add(QueryParameters, "StackName", value);
+			}
+		}
+
+		public bool? DisableRollback
+		{
+			get
+			{
+				return disableRollback;
+			}
+			set	
+			{
+				disableRollback = value;
+				DictionaryUtil.Add(QueryParameters, "DisableRollback", value.ToString());
+			}
+		}
+
+		public string TemplateId
+		{
+			get
+			{
+				return templateId;
+			}
+			set	
+			{
+				templateId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value);
+			}
+		}
+
+		public List<Parameters> Parameterss
+		{
+			get
+			{
+				return parameterss;
+			}
+
+			set
+			{
+				parameterss = value;
+				for (int i = 0; i < parameterss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Parameters." + (i + 1) + ".ParameterValue", parameterss[i].ParameterValue);
+					DictionaryUtil.Add(QueryParameters,"Parameters." + (i + 1) + ".ParameterKey", parameterss[i].ParameterKey);
+				}
+			}
+		}
 
 		public string ClientToken
 		{
@@ -85,19 +172,6 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			}
 		}
 
-		public long? TimeoutInMinutes
-		{
-			get
-			{
-				return timeoutInMinutes;
-			}
-			set	
-			{
-				timeoutInMinutes = value;
-				DictionaryUtil.Add(QueryParameters, "TimeoutInMinutes", value.ToString());
-			}
-		}
-
 		public string TemplateURL
 		{
 			get
@@ -108,19 +182,6 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				templateURL = value;
 				DictionaryUtil.Add(QueryParameters, "TemplateURL", value);
-			}
-		}
-
-		public string StackName
-		{
-			get
-			{
-				return stackName;
-			}
-			set	
-			{
-				stackName = value;
-				DictionaryUtil.Add(QueryParameters, "StackName", value);
 			}
 		}
 
@@ -137,19 +198,6 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			}
 		}
 
-		public bool? DisableRollback
-		{
-			get
-			{
-				return disableRollback;
-			}
-			set	
-			{
-				disableRollback = value;
-				DictionaryUtil.Add(QueryParameters, "DisableRollback", value.ToString());
-			}
-		}
-
 		public string StackPolicyURL
 		{
 			get
@@ -160,24 +208,6 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				stackPolicyURL = value;
 				DictionaryUtil.Add(QueryParameters, "StackPolicyURL", value);
-			}
-		}
-
-		public List<Parameters> Parameterss
-		{
-			get
-			{
-				return parameterss;
-			}
-
-			set
-			{
-				parameterss = value;
-				for (int i = 0; i < parameterss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Parameters." + (i + 1) + ".ParameterValue", parameterss[i].ParameterValue);
-					DictionaryUtil.Add(QueryParameters,"Parameters." + (i + 1) + ".ParameterKey", parameterss[i].ParameterKey);
-				}
 			}
 		}
 

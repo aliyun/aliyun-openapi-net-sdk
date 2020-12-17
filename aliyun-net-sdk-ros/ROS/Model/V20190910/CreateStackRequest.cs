@@ -34,8 +34,8 @@ namespace Aliyun.Acs.ROS.Model.V20190910
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.ROS.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.ROS.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -44,9 +44,13 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 		private string deletionProtection;
 
+		private string templateVersion;
+
 		private string stackName;
 
 		private bool? disableRollback;
+
+		private string templateId;
 
 		private List<Parameters> parameterss = new List<Parameters>(){ };
 
@@ -61,6 +65,8 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 		private string stackPolicyBody;
 
 		private string ramRoleName;
+
+		private string createOption;
 
 		private string stackPolicyURL;
 
@@ -90,6 +96,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			}
 		}
 
+		public string TemplateVersion
+		{
+			get
+			{
+				return templateVersion;
+			}
+			set	
+			{
+				templateVersion = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateVersion", value);
+			}
+		}
+
 		public string StackName
 		{
 			get
@@ -113,6 +132,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				disableRollback = value;
 				DictionaryUtil.Add(QueryParameters, "DisableRollback", value.ToString());
+			}
+		}
+
+		public string TemplateId
+		{
+			get
+			{
+				return templateId;
+			}
+			set	
+			{
+				templateId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value);
 			}
 		}
 
@@ -213,6 +245,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				ramRoleName = value;
 				DictionaryUtil.Add(QueryParameters, "RamRoleName", value);
+			}
+		}
+
+		public string CreateOption
+		{
+			get
+			{
+				return createOption;
+			}
+			set	
+			{
+				createOption = value;
+				DictionaryUtil.Add(QueryParameters, "CreateOption", value);
 			}
 		}
 

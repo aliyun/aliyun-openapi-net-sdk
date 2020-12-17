@@ -26,24 +26,24 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class ListStackOperationRisksResponseUnmarshaller
     {
-        public static ListStackOperationRisksResponse Unmarshall(UnmarshallerContext context)
+        public static ListStackOperationRisksResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListStackOperationRisksResponse listStackOperationRisksResponse = new ListStackOperationRisksResponse();
 
-			listStackOperationRisksResponse.HttpResponse = context.HttpResponse;
-			listStackOperationRisksResponse.RequestId = context.StringValue("ListStackOperationRisks.RequestId");
+			listStackOperationRisksResponse.HttpResponse = _ctx.HttpResponse;
+			listStackOperationRisksResponse.RequestId = _ctx.StringValue("ListStackOperationRisks.RequestId");
 
 			List<ListStackOperationRisksResponse.ListStackOperationRisks_Resource> listStackOperationRisksResponse_riskResources = new List<ListStackOperationRisksResponse.ListStackOperationRisks_Resource>();
-			for (int i = 0; i < context.Length("ListStackOperationRisks.RiskResources.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListStackOperationRisks.RiskResources.Length"); i++) {
 				ListStackOperationRisksResponse.ListStackOperationRisks_Resource resource = new ListStackOperationRisksResponse.ListStackOperationRisks_Resource();
-				resource.LogicalResourceId = context.StringValue("ListStackOperationRisks.RiskResources["+ i +"].LogicalResourceId");
-				resource.PhysicalResourceId = context.StringValue("ListStackOperationRisks.RiskResources["+ i +"].PhysicalResourceId");
-				resource.ResourceType = context.StringValue("ListStackOperationRisks.RiskResources["+ i +"].ResourceType");
-				resource.Reason = context.StringValue("ListStackOperationRisks.RiskResources["+ i +"].Reason");
-				resource.RiskType = context.StringValue("ListStackOperationRisks.RiskResources["+ i +"].RiskType");
-				resource.Code = context.StringValue("ListStackOperationRisks.RiskResources["+ i +"].Code");
-				resource.Message = context.StringValue("ListStackOperationRisks.RiskResources["+ i +"].Message");
-				resource.RequestId = context.StringValue("ListStackOperationRisks.RiskResources["+ i +"].RequestId");
+				resource.LogicalResourceId = _ctx.StringValue("ListStackOperationRisks.RiskResources["+ i +"].LogicalResourceId");
+				resource.PhysicalResourceId = _ctx.StringValue("ListStackOperationRisks.RiskResources["+ i +"].PhysicalResourceId");
+				resource.ResourceType = _ctx.StringValue("ListStackOperationRisks.RiskResources["+ i +"].ResourceType");
+				resource.Reason = _ctx.StringValue("ListStackOperationRisks.RiskResources["+ i +"].Reason");
+				resource.RiskType = _ctx.StringValue("ListStackOperationRisks.RiskResources["+ i +"].RiskType");
+				resource.Code = _ctx.StringValue("ListStackOperationRisks.RiskResources["+ i +"].Code");
+				resource.Message = _ctx.StringValue("ListStackOperationRisks.RiskResources["+ i +"].Message");
+				resource.RequestId = _ctx.StringValue("ListStackOperationRisks.RiskResources["+ i +"].RequestId");
 
 				listStackOperationRisksResponse_riskResources.Add(resource);
 			}

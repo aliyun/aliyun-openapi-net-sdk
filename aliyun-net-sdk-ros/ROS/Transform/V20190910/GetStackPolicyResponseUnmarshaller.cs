@@ -26,13 +26,13 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 {
     public class GetStackPolicyResponseUnmarshaller
     {
-        public static GetStackPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static GetStackPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetStackPolicyResponse getStackPolicyResponse = new GetStackPolicyResponse();
 
-			getStackPolicyResponse.HttpResponse = context.HttpResponse;
-			getStackPolicyResponse.RequestId = context.StringValue("GetStackPolicy.RequestId");
-			getStackPolicyResponse.StackPolicyBody = context.StringValue("GetStackPolicy.StackPolicyBody");
+			getStackPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			getStackPolicyResponse.RequestId = _ctx.StringValue("GetStackPolicy.RequestId");
+			getStackPolicyResponse.StackPolicyBody = _ctx.StringValue("GetStackPolicy.StackPolicyBody");
         
 			return getStackPolicyResponse;
         }
