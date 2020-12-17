@@ -47,8 +47,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private long? ownerId;
 
-		private string resourceGroupId;
-
 		private string securityToken;
 
 		public string OwnerAccount
@@ -87,19 +85,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
