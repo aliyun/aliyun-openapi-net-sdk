@@ -26,21 +26,21 @@ namespace Aliyun.Acs.imagerecog.Transform.V20190930
 {
     public class RecognizeVehicleTypeResponseUnmarshaller
     {
-        public static RecognizeVehicleTypeResponse Unmarshall(UnmarshallerContext context)
+        public static RecognizeVehicleTypeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RecognizeVehicleTypeResponse recognizeVehicleTypeResponse = new RecognizeVehicleTypeResponse();
 
-			recognizeVehicleTypeResponse.HttpResponse = context.HttpResponse;
-			recognizeVehicleTypeResponse.RequestId = context.StringValue("RecognizeVehicleType.RequestId");
+			recognizeVehicleTypeResponse.HttpResponse = _ctx.HttpResponse;
+			recognizeVehicleTypeResponse.RequestId = _ctx.StringValue("RecognizeVehicleType.RequestId");
 
 			RecognizeVehicleTypeResponse.RecognizeVehicleType_Data data = new RecognizeVehicleTypeResponse.RecognizeVehicleType_Data();
-			data.Threshold = context.FloatValue("RecognizeVehicleType.Data.Threshold");
+			data.Threshold = _ctx.FloatValue("RecognizeVehicleType.Data.Threshold");
 
 			List<RecognizeVehicleTypeResponse.RecognizeVehicleType_Data.RecognizeVehicleType_Element> data_elements = new List<RecognizeVehicleTypeResponse.RecognizeVehicleType_Data.RecognizeVehicleType_Element>();
-			for (int i = 0; i < context.Length("RecognizeVehicleType.Data.Elements.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("RecognizeVehicleType.Data.Elements.Length"); i++) {
 				RecognizeVehicleTypeResponse.RecognizeVehicleType_Data.RecognizeVehicleType_Element element = new RecognizeVehicleTypeResponse.RecognizeVehicleType_Data.RecognizeVehicleType_Element();
-				element.Name = context.StringValue("RecognizeVehicleType.Data.Elements["+ i +"].Name");
-				element.Score = context.FloatValue("RecognizeVehicleType.Data.Elements["+ i +"].Score");
+				element.Name = _ctx.StringValue("RecognizeVehicleType.Data.Elements["+ i +"].Name");
+				element.Score = _ctx.FloatValue("RecognizeVehicleType.Data.Elements["+ i +"].Score");
 
 				data_elements.Add(element);
 			}

@@ -26,20 +26,20 @@ namespace Aliyun.Acs.imagerecog.Transform.V20190930
 {
     public class RecognizeSceneResponseUnmarshaller
     {
-        public static RecognizeSceneResponse Unmarshall(UnmarshallerContext context)
+        public static RecognizeSceneResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RecognizeSceneResponse recognizeSceneResponse = new RecognizeSceneResponse();
 
-			recognizeSceneResponse.HttpResponse = context.HttpResponse;
-			recognizeSceneResponse.RequestId = context.StringValue("RecognizeScene.RequestId");
+			recognizeSceneResponse.HttpResponse = _ctx.HttpResponse;
+			recognizeSceneResponse.RequestId = _ctx.StringValue("RecognizeScene.RequestId");
 
 			RecognizeSceneResponse.RecognizeScene_Data data = new RecognizeSceneResponse.RecognizeScene_Data();
 
 			List<RecognizeSceneResponse.RecognizeScene_Data.RecognizeScene_Tag> data_tags = new List<RecognizeSceneResponse.RecognizeScene_Data.RecognizeScene_Tag>();
-			for (int i = 0; i < context.Length("RecognizeScene.Data.Tags.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("RecognizeScene.Data.Tags.Length"); i++) {
 				RecognizeSceneResponse.RecognizeScene_Data.RecognizeScene_Tag tag = new RecognizeSceneResponse.RecognizeScene_Data.RecognizeScene_Tag();
-				tag.Confidence = context.FloatValue("RecognizeScene.Data.Tags["+ i +"].Confidence");
-				tag._Value = context.StringValue("RecognizeScene.Data.Tags["+ i +"].Value");
+				tag.Confidence = _ctx.FloatValue("RecognizeScene.Data.Tags["+ i +"].Confidence");
+				tag._Value = _ctx.StringValue("RecognizeScene.Data.Tags["+ i +"].Value");
 
 				data_tags.Add(tag);
 			}

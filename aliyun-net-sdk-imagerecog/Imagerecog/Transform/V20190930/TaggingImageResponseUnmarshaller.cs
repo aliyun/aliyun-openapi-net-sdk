@@ -26,20 +26,20 @@ namespace Aliyun.Acs.imagerecog.Transform.V20190930
 {
     public class TaggingImageResponseUnmarshaller
     {
-        public static TaggingImageResponse Unmarshall(UnmarshallerContext context)
+        public static TaggingImageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TaggingImageResponse taggingImageResponse = new TaggingImageResponse();
 
-			taggingImageResponse.HttpResponse = context.HttpResponse;
-			taggingImageResponse.RequestId = context.StringValue("TaggingImage.RequestId");
+			taggingImageResponse.HttpResponse = _ctx.HttpResponse;
+			taggingImageResponse.RequestId = _ctx.StringValue("TaggingImage.RequestId");
 
 			TaggingImageResponse.TaggingImage_Data data = new TaggingImageResponse.TaggingImage_Data();
 
 			List<TaggingImageResponse.TaggingImage_Data.TaggingImage_Tag> data_tags = new List<TaggingImageResponse.TaggingImage_Data.TaggingImage_Tag>();
-			for (int i = 0; i < context.Length("TaggingImage.Data.Tags.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("TaggingImage.Data.Tags.Length"); i++) {
 				TaggingImageResponse.TaggingImage_Data.TaggingImage_Tag tag = new TaggingImageResponse.TaggingImage_Data.TaggingImage_Tag();
-				tag.Confidence = context.FloatValue("TaggingImage.Data.Tags["+ i +"].Confidence");
-				tag._Value = context.StringValue("TaggingImage.Data.Tags["+ i +"].Value");
+				tag.Confidence = _ctx.FloatValue("TaggingImage.Data.Tags["+ i +"].Confidence");
+				tag._Value = _ctx.StringValue("TaggingImage.Data.Tags["+ i +"].Value");
 
 				data_tags.Add(tag);
 			}

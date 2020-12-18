@@ -26,21 +26,21 @@ namespace Aliyun.Acs.imagerecog.Transform.V20190930
 {
     public class RecognizeImageColorResponseUnmarshaller
     {
-        public static RecognizeImageColorResponse Unmarshall(UnmarshallerContext context)
+        public static RecognizeImageColorResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RecognizeImageColorResponse recognizeImageColorResponse = new RecognizeImageColorResponse();
 
-			recognizeImageColorResponse.HttpResponse = context.HttpResponse;
-			recognizeImageColorResponse.RequestId = context.StringValue("RecognizeImageColor.RequestId");
+			recognizeImageColorResponse.HttpResponse = _ctx.HttpResponse;
+			recognizeImageColorResponse.RequestId = _ctx.StringValue("RecognizeImageColor.RequestId");
 
 			RecognizeImageColorResponse.RecognizeImageColor_Data data = new RecognizeImageColorResponse.RecognizeImageColor_Data();
 
 			List<RecognizeImageColorResponse.RecognizeImageColor_Data.RecognizeImageColor_ColorTemplate> data_colorTemplateList = new List<RecognizeImageColorResponse.RecognizeImageColor_Data.RecognizeImageColor_ColorTemplate>();
-			for (int i = 0; i < context.Length("RecognizeImageColor.Data.ColorTemplateList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("RecognizeImageColor.Data.ColorTemplateList.Length"); i++) {
 				RecognizeImageColorResponse.RecognizeImageColor_Data.RecognizeImageColor_ColorTemplate colorTemplate = new RecognizeImageColorResponse.RecognizeImageColor_Data.RecognizeImageColor_ColorTemplate();
-				colorTemplate.Color = context.StringValue("RecognizeImageColor.Data.ColorTemplateList["+ i +"].Color");
-				colorTemplate.Label = context.StringValue("RecognizeImageColor.Data.ColorTemplateList["+ i +"].Label");
-				colorTemplate.Percentage = context.FloatValue("RecognizeImageColor.Data.ColorTemplateList["+ i +"].Percentage");
+				colorTemplate.Color = _ctx.StringValue("RecognizeImageColor.Data.ColorTemplateList["+ i +"].Color");
+				colorTemplate.Label = _ctx.StringValue("RecognizeImageColor.Data.ColorTemplateList["+ i +"].Label");
+				colorTemplate.Percentage = _ctx.FloatValue("RecognizeImageColor.Data.ColorTemplateList["+ i +"].Percentage");
 
 				data_colorTemplateList.Add(colorTemplate);
 			}

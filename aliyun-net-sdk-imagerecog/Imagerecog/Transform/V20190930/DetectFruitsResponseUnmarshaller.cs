@@ -26,24 +26,24 @@ namespace Aliyun.Acs.imagerecog.Transform.V20190930
 {
     public class DetectFruitsResponseUnmarshaller
     {
-        public static DetectFruitsResponse Unmarshall(UnmarshallerContext context)
+        public static DetectFruitsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetectFruitsResponse detectFruitsResponse = new DetectFruitsResponse();
 
-			detectFruitsResponse.HttpResponse = context.HttpResponse;
-			detectFruitsResponse.RequestId = context.StringValue("DetectFruits.RequestId");
+			detectFruitsResponse.HttpResponse = _ctx.HttpResponse;
+			detectFruitsResponse.RequestId = _ctx.StringValue("DetectFruits.RequestId");
 
 			DetectFruitsResponse.DetectFruits_Data data = new DetectFruitsResponse.DetectFruits_Data();
 
 			List<DetectFruitsResponse.DetectFruits_Data.DetectFruits_Element> data_elements = new List<DetectFruitsResponse.DetectFruits_Data.DetectFruits_Element>();
-			for (int i = 0; i < context.Length("DetectFruits.Data.Elements.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DetectFruits.Data.Elements.Length"); i++) {
 				DetectFruitsResponse.DetectFruits_Data.DetectFruits_Element element = new DetectFruitsResponse.DetectFruits_Data.DetectFruits_Element();
-				element.Name = context.StringValue("DetectFruits.Data.Elements["+ i +"].Name");
-				element.Score = context.FloatValue("DetectFruits.Data.Elements["+ i +"].Score");
+				element.Name = _ctx.StringValue("DetectFruits.Data.Elements["+ i +"].Name");
+				element.Score = _ctx.FloatValue("DetectFruits.Data.Elements["+ i +"].Score");
 
 				List<string> element_box = new List<string>();
-				for (int j = 0; j < context.Length("DetectFruits.Data.Elements["+ i +"].Box.Length"); j++) {
-					element_box.Add(context.StringValue("DetectFruits.Data.Elements["+ i +"].Box["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DetectFruits.Data.Elements["+ i +"].Box.Length"); j++) {
+					element_box.Add(_ctx.StringValue("DetectFruits.Data.Elements["+ i +"].Box["+ j +"]"));
 				}
 				element.Box = element_box;
 
