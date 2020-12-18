@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.codeup.Model.V20200414
 {
-	public class AddWebhookResponse : AcsResponse
+	public class ListRepositoryWebhookResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,9 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 
 		private string errorMessage;
 
-		private AddWebhook_Result result;
+		private long? total;
+
+		private List<ListRepositoryWebhook_ResultItem> result;
 
 		public string RequestId
 		{
@@ -83,7 +85,19 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
-		public AddWebhook_Result Result
+		public long? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
+			}
+		}
+
+		public List<ListRepositoryWebhook_ResultItem> Result
 		{
 			get
 			{
@@ -95,7 +109,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
-		public class AddWebhook_Result
+		public class ListRepositoryWebhook_ResultItem
 		{
 
 			private long? id;
@@ -108,13 +122,9 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 
 			private bool? pushEvents;
 
-			private bool? issuesEvents;
-
 			private bool? mergeRequestsEvents;
 
 			private bool? tagPushEvents;
-
-			private bool? buildEvents;
 
 			private bool? noteEvents;
 
@@ -186,18 +196,6 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 				}
 			}
 
-			public bool? IssuesEvents
-			{
-				get
-				{
-					return issuesEvents;
-				}
-				set	
-				{
-					issuesEvents = value;
-				}
-			}
-
 			public bool? MergeRequestsEvents
 			{
 				get
@@ -219,18 +217,6 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 				set	
 				{
 					tagPushEvents = value;
-				}
-			}
-
-			public bool? BuildEvents
-			{
-				get
-				{
-					return buildEvents;
-				}
-				set	
-				{
-					buildEvents = value;
 				}
 			}
 

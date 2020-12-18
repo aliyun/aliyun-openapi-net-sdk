@@ -50,6 +50,7 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 			result.EnableSslVerification = _ctx.BooleanValue("AddWebhook.Result.EnableSslVerification");
 			result.LastTestResult = _ctx.StringValue("AddWebhook.Result.LastTestResult");
 			result.Description = _ctx.StringValue("AddWebhook.Result.Description");
+			result.SecretToken = _ctx.StringValue("AddWebhook.Result.SecretToken");
 			addWebhookResponse.Result = result;
         
 			return addWebhookResponse;
