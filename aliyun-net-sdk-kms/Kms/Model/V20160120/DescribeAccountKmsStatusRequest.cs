@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class DescribeAccountKmsStatusRequest : RpcAcsRequest<DescribeAccountKmsStatusResponse>
     {
         public DescribeAccountKmsStatusRequest()
-            : base("Kms", "2016-01-20", "DescribeAccountKmsStatus", "kms-service", "openAPI")
+            : base("Kms", "2016-01-20", "DescribeAccountKmsStatus", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

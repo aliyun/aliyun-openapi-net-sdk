@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class UpdateRotationPolicyRequest : RpcAcsRequest<UpdateRotationPolicyResponse>
     {
         public UpdateRotationPolicyRequest()
-            : base("Kms", "2016-01-20", "UpdateRotationPolicy", "kms-service", "openAPI")
+            : base("Kms", "2016-01-20", "UpdateRotationPolicy", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

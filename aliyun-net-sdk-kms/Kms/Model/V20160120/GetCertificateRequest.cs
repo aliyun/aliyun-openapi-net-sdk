@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class GetCertificateRequest : RpcAcsRequest<GetCertificateResponse>
     {
         public GetCertificateRequest()
-            : base("Kms", "2016-01-20", "GetCertificate", "kms-service", "openAPI")
+            : base("Kms", "2016-01-20", "GetCertificate", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class CreateKeyVersionRequest : RpcAcsRequest<CreateKeyVersionResponse>
     {
         public CreateKeyVersionRequest()
-            : base("Kms", "2016-01-20", "CreateKeyVersion", "kms-service", "openAPI")
+            : base("Kms", "2016-01-20", "CreateKeyVersion", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

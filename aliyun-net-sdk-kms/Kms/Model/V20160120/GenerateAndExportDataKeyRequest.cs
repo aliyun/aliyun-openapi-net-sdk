@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class GenerateAndExportDataKeyRequest : RpcAcsRequest<GenerateAndExportDataKeyResponse>
     {
         public GenerateAndExportDataKeyRequest()
-            : base("Kms", "2016-01-20", "GenerateAndExportDataKey", "kms-service", "openAPI")
+            : base("Kms", "2016-01-20", "GenerateAndExportDataKey", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

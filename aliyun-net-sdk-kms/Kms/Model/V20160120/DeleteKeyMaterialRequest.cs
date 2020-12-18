@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class DeleteKeyMaterialRequest : RpcAcsRequest<DeleteKeyMaterialResponse>
     {
         public DeleteKeyMaterialRequest()
-            : base("Kms", "2016-01-20", "DeleteKeyMaterial", "kms-service", "openAPI")
+            : base("Kms", "2016-01-20", "DeleteKeyMaterial", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

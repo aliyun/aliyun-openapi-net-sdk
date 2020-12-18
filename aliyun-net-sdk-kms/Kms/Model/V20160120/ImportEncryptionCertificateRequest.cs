@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class ImportEncryptionCertificateRequest : RpcAcsRequest<ImportEncryptionCertificateResponse>
     {
         public ImportEncryptionCertificateRequest()
-            : base("Kms", "2016-01-20", "ImportEncryptionCertificate", "kms-service", "openAPI")
+            : base("Kms", "2016-01-20", "ImportEncryptionCertificate", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

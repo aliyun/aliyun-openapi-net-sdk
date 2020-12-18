@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class DescribeSecretRequest : RpcAcsRequest<DescribeSecretResponse>
     {
         public DescribeSecretRequest()
-            : base("Kms", "2016-01-20", "DescribeSecret", "kms-service", "openAPI")
+            : base("Kms", "2016-01-20", "DescribeSecret", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

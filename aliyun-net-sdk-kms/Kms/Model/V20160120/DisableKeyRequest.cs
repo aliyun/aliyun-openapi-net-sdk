@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class DisableKeyRequest : RpcAcsRequest<DisableKeyResponse>
     {
         public DisableKeyRequest()
-            : base("Kms", "2016-01-20", "DisableKey", "kms-service", "openAPI")
+            : base("Kms", "2016-01-20", "DisableKey", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

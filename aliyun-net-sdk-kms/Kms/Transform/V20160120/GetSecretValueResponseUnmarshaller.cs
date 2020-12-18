@@ -37,6 +37,12 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			getSecretValueResponse.CreateTime = _ctx.StringValue("GetSecretValue.CreateTime");
 			getSecretValueResponse.SecretData = _ctx.StringValue("GetSecretValue.SecretData");
 			getSecretValueResponse.SecretDataType = _ctx.StringValue("GetSecretValue.SecretDataType");
+			getSecretValueResponse.AutomaticRotation = _ctx.StringValue("GetSecretValue.AutomaticRotation");
+			getSecretValueResponse.RotationInterval = _ctx.StringValue("GetSecretValue.RotationInterval");
+			getSecretValueResponse.NextRotationDate = _ctx.StringValue("GetSecretValue.NextRotationDate");
+			getSecretValueResponse.ExtendedConfig = _ctx.StringValue("GetSecretValue.ExtendedConfig");
+			getSecretValueResponse.LastRotationDate = _ctx.StringValue("GetSecretValue.LastRotationDate");
+			getSecretValueResponse.SecretType = _ctx.StringValue("GetSecretValue.SecretType");
 
 			List<string> getSecretValueResponse_versionStages = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetSecretValue.VersionStages.Length"); i++) {

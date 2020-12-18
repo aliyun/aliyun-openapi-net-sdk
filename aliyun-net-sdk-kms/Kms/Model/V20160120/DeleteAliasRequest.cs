@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class DeleteAliasRequest : RpcAcsRequest<DeleteAliasResponse>
     {
         public DeleteAliasRequest()
-            : base("Kms", "2016-01-20", "DeleteAlias", "kms-service", "openAPI")
+            : base("Kms", "2016-01-20", "DeleteAlias", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

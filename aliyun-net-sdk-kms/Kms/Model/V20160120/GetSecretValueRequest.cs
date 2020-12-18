@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class GetSecretValueRequest : RpcAcsRequest<GetSecretValueResponse>
     {
         public GetSecretValueRequest()
-            : base("Kms", "2016-01-20", "GetSecretValue", "kms-service", "openAPI")
+            : base("Kms", "2016-01-20", "GetSecretValue", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 		private string versionStage;
 
 		private string secretName;
+
+		private bool? fetchExtendedConfig;
 
 		public string VersionId
 		{
@@ -84,6 +86,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				secretName = value;
 				DictionaryUtil.Add(QueryParameters, "SecretName", value);
+			}
+		}
+
+		public bool? FetchExtendedConfig
+		{
+			get
+			{
+				return fetchExtendedConfig;
+			}
+			set	
+			{
+				fetchExtendedConfig = value;
+				DictionaryUtil.Add(QueryParameters, "FetchExtendedConfig", value.ToString());
 			}
 		}
 

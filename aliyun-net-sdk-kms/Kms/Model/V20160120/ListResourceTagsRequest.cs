@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class ListResourceTagsRequest : RpcAcsRequest<ListResourceTagsResponse>
     {
         public ListResourceTagsRequest()
-            : base("Kms", "2016-01-20", "ListResourceTags", "kms-service", "openAPI")
+            : base("Kms", "2016-01-20", "ListResourceTags", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

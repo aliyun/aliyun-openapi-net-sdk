@@ -39,6 +39,12 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			describeSecretResponse.CreateTime = _ctx.StringValue("DescribeSecret.CreateTime");
 			describeSecretResponse.UpdateTime = _ctx.StringValue("DescribeSecret.UpdateTime");
 			describeSecretResponse.PlannedDeleteTime = _ctx.StringValue("DescribeSecret.PlannedDeleteTime");
+			describeSecretResponse.AutomaticRotation = _ctx.StringValue("DescribeSecret.AutomaticRotation");
+			describeSecretResponse.LastRotationDate = _ctx.StringValue("DescribeSecret.LastRotationDate");
+			describeSecretResponse.RotationInterval = _ctx.StringValue("DescribeSecret.RotationInterval");
+			describeSecretResponse.NextRotationDate = _ctx.StringValue("DescribeSecret.NextRotationDate");
+			describeSecretResponse.ExtendedConfig = _ctx.StringValue("DescribeSecret.ExtendedConfig");
+			describeSecretResponse.SecretType = _ctx.StringValue("DescribeSecret.SecretType");
 
 			List<DescribeSecretResponse.DescribeSecret_Tag> describeSecretResponse_tags = new List<DescribeSecretResponse.DescribeSecret_Tag>();
 			for (int i = 0; i < _ctx.Length("DescribeSecret.Tags.Length"); i++) {

@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class ListAliasesRequest : RpcAcsRequest<ListAliasesResponse>
     {
         public ListAliasesRequest()
-            : base("Kms", "2016-01-20", "ListAliases", "kms-service", "openAPI")
+            : base("Kms", "2016-01-20", "ListAliases", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class CreateSecretRequest : RpcAcsRequest<CreateSecretResponse>
     {
         public CreateSecretRequest()
-            : base("Kms", "2016-01-20", "CreateSecret", "kms-service", "openAPI")
+            : base("Kms", "2016-01-20", "CreateSecret", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,19 +42,40 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
+		private string secretType;
+
 		private string versionId;
 
 		private string secretData;
 
 		private string description;
 
+		private string rotationInterval;
+
 		private string secretName;
+
+		private bool? enableAutomaticRotation;
 
 		private string encryptionKeyId;
 
 		private string secretDataType;
 
 		private string tags;
+
+		private string extendedConfig;
+
+		public string SecretType
+		{
+			get
+			{
+				return secretType;
+			}
+			set	
+			{
+				secretType = value;
+				DictionaryUtil.Add(QueryParameters, "SecretType", value);
+			}
+		}
 
 		public string VersionId
 		{
@@ -95,6 +116,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		public string RotationInterval
+		{
+			get
+			{
+				return rotationInterval;
+			}
+			set	
+			{
+				rotationInterval = value;
+				DictionaryUtil.Add(QueryParameters, "RotationInterval", value);
+			}
+		}
+
 		public string SecretName
 		{
 			get
@@ -105,6 +139,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				secretName = value;
 				DictionaryUtil.Add(QueryParameters, "SecretName", value);
+			}
+		}
+
+		public bool? EnableAutomaticRotation
+		{
+			get
+			{
+				return enableAutomaticRotation;
+			}
+			set	
+			{
+				enableAutomaticRotation = value;
+				DictionaryUtil.Add(QueryParameters, "EnableAutomaticRotation", value.ToString());
 			}
 		}
 
@@ -144,6 +191,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				tags = value;
 				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public string ExtendedConfig
+		{
+			get
+			{
+				return extendedConfig;
+			}
+			set	
+			{
+				extendedConfig = value;
+				DictionaryUtil.Add(QueryParameters, "ExtendedConfig", value);
 			}
 		}
 

@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
     {
         public DescribeRegionsRequest()
-            : base("Kms", "2016-01-20", "DescribeRegions", "kms-service", "openAPI")
+            : base("Kms", "2016-01-20", "DescribeRegions", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

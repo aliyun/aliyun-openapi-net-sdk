@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class PutSecretValueRequest : RpcAcsRequest<PutSecretValueResponse>
     {
         public PutSecretValueRequest()
-            : base("Kms", "2016-01-20", "PutSecretValue", "kms-service", "openAPI")
+            : base("Kms", "2016-01-20", "PutSecretValue", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

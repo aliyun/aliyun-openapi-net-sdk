@@ -43,6 +43,7 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 				secret.PlannedDeleteTime = _ctx.StringValue("ListSecrets.SecretList["+ i +"].PlannedDeleteTime");
 				secret.SecretName = _ctx.StringValue("ListSecrets.SecretList["+ i +"].SecretName");
 				secret.UpdateTime = _ctx.StringValue("ListSecrets.SecretList["+ i +"].UpdateTime");
+				secret.SecretType = _ctx.StringValue("ListSecrets.SecretList["+ i +"].SecretType");
 
 				List<ListSecretsResponse.ListSecrets_Secret.ListSecrets_Tag> secret_tags = new List<ListSecretsResponse.ListSecrets_Secret.ListSecrets_Tag>();
 				for (int j = 0; j < _ctx.Length("ListSecrets.SecretList["+ i +"].Tags.Length"); j++) {

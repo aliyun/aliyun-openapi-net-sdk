@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class RestoreSecretRequest : RpcAcsRequest<RestoreSecretResponse>
     {
         public RestoreSecretRequest()
-            : base("Kms", "2016-01-20", "RestoreSecret", "kms-service", "openAPI")
+            : base("Kms", "2016-01-20", "RestoreSecret", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

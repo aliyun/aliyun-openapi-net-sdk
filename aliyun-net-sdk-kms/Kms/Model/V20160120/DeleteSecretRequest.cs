@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class DeleteSecretRequest : RpcAcsRequest<DeleteSecretResponse>
     {
         public DeleteSecretRequest()
-            : base("Kms", "2016-01-20", "DeleteSecret", "kms-service", "openAPI")
+            : base("Kms", "2016-01-20", "DeleteSecret", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

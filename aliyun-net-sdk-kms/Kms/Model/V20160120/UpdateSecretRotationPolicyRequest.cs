@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.Kms.Transform.V20160120;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class AsymmetricSignRequest : RpcAcsRequest<AsymmetricSignResponse>
+    public class UpdateSecretRotationPolicyRequest : RpcAcsRequest<UpdateSecretRotationPolicyResponse>
     {
-        public AsymmetricSignRequest()
-            : base("Kms", "2016-01-20", "AsymmetricSign", "kms", "openAPI")
+        public UpdateSecretRotationPolicyRequest()
+            : base("Kms", "2016-01-20", "UpdateSecretRotationPolicy", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,69 +42,54 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
-		private string keyVersionId;
+		private string rotationInterval;
 
-		private string digest;
+		private string secretName;
 
-		private string keyId;
+		private bool? enableAutomaticRotation;
 
-		private string algorithm;
-
-		public string KeyVersionId
+		public string RotationInterval
 		{
 			get
 			{
-				return keyVersionId;
+				return rotationInterval;
 			}
 			set	
 			{
-				keyVersionId = value;
-				DictionaryUtil.Add(QueryParameters, "KeyVersionId", value);
+				rotationInterval = value;
+				DictionaryUtil.Add(QueryParameters, "RotationInterval", value);
 			}
 		}
 
-		public string Digest
+		public string SecretName
 		{
 			get
 			{
-				return digest;
+				return secretName;
 			}
 			set	
 			{
-				digest = value;
-				DictionaryUtil.Add(QueryParameters, "Digest", value);
+				secretName = value;
+				DictionaryUtil.Add(QueryParameters, "SecretName", value);
 			}
 		}
 
-		public string KeyId
+		public bool? EnableAutomaticRotation
 		{
 			get
 			{
-				return keyId;
+				return enableAutomaticRotation;
 			}
 			set	
 			{
-				keyId = value;
-				DictionaryUtil.Add(QueryParameters, "KeyId", value);
+				enableAutomaticRotation = value;
+				DictionaryUtil.Add(QueryParameters, "EnableAutomaticRotation", value.ToString());
 			}
 		}
 
-		public string Algorithm
-		{
-			get
-			{
-				return algorithm;
-			}
-			set	
-			{
-				algorithm = value;
-				DictionaryUtil.Add(QueryParameters, "Algorithm", value);
-			}
-		}
-
-        public override AsymmetricSignResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateSecretRotationPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AsymmetricSignResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateSecretRotationPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

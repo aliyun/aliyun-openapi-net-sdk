@@ -22,10 +22,8 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-	public class CreateSecretResponse : AcsResponse
+	public class RotateSecretResponse : AcsResponse
 	{
-
-		private string requestId;
 
 		private string arn;
 
@@ -33,27 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string secretName;
 
-		private string secretType;
-
-		private string automaticRotation;
-
-		private string rotationInterval;
-
-		private string nextRotationDate;
-
-		private string extendedConfig;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string Arn
 		{
@@ -91,63 +69,15 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public string SecretType
+		public string RequestId
 		{
 			get
 			{
-				return secretType;
+				return requestId;
 			}
 			set	
 			{
-				secretType = value;
-			}
-		}
-
-		public string AutomaticRotation
-		{
-			get
-			{
-				return automaticRotation;
-			}
-			set	
-			{
-				automaticRotation = value;
-			}
-		}
-
-		public string RotationInterval
-		{
-			get
-			{
-				return rotationInterval;
-			}
-			set	
-			{
-				rotationInterval = value;
-			}
-		}
-
-		public string NextRotationDate
-		{
-			get
-			{
-				return nextRotationDate;
-			}
-			set	
-			{
-				nextRotationDate = value;
-			}
-		}
-
-		public string ExtendedConfig
-		{
-			get
-			{
-				return extendedConfig;
-			}
-			set	
-			{
-				extendedConfig = value;
+				requestId = value;
 			}
 		}
 	}

@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class UpdateKeyDescriptionRequest : RpcAcsRequest<UpdateKeyDescriptionResponse>
     {
         public UpdateKeyDescriptionRequest()
-            : base("Kms", "2016-01-20", "UpdateKeyDescription", "kms-service", "openAPI")
+            : base("Kms", "2016-01-20", "UpdateKeyDescription", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
