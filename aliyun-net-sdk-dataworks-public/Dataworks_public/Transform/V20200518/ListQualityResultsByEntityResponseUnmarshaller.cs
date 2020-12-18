@@ -84,7 +84,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 				List<ListQualityResultsByEntityResponse.ListQualityResultsByEntity_QualityResults.ListQualityResultsByEntity_RuleChecksItem.ListQualityResultsByEntity_ReferenceValueItem> ruleChecksItem_referenceValue = new List<ListQualityResultsByEntityResponse.ListQualityResultsByEntity_QualityResults.ListQualityResultsByEntity_RuleChecksItem.ListQualityResultsByEntity_ReferenceValueItem>();
 				for (int j = 0; j < _ctx.Length("ListQualityResultsByEntity.QualityResults.RuleChecks["+ i +"].ReferenceValue.Length"); j++) {
 					ListQualityResultsByEntityResponse.ListQualityResultsByEntity_QualityResults.ListQualityResultsByEntity_RuleChecksItem.ListQualityResultsByEntity_ReferenceValueItem referenceValueItem = new ListQualityResultsByEntityResponse.ListQualityResultsByEntity_QualityResults.ListQualityResultsByEntity_RuleChecksItem.ListQualityResultsByEntity_ReferenceValueItem();
-					referenceValueItem.BizDate = _ctx.LongValue("ListQualityResultsByEntity.QualityResults.RuleChecks["+ i +"].ReferenceValue["+ j +"].BizDate");
+					referenceValueItem.BizDate = _ctx.StringValue("ListQualityResultsByEntity.QualityResults.RuleChecks["+ i +"].ReferenceValue["+ j +"].BizDate");
 					referenceValueItem.DiscreteProperty = _ctx.StringValue("ListQualityResultsByEntity.QualityResults.RuleChecks["+ i +"].ReferenceValue["+ j +"].DiscreteProperty");
 					referenceValueItem._Value = _ctx.FloatValue("ListQualityResultsByEntity.QualityResults.RuleChecks["+ i +"].ReferenceValue["+ j +"].Value");
 					referenceValueItem.Threshold = _ctx.FloatValue("ListQualityResultsByEntity.QualityResults.RuleChecks["+ i +"].ReferenceValue["+ j +"].Threshold");
@@ -97,7 +97,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 				List<ListQualityResultsByEntityResponse.ListQualityResultsByEntity_QualityResults.ListQualityResultsByEntity_RuleChecksItem.ListQualityResultsByEntity_SampleValueItem> ruleChecksItem_sampleValue = new List<ListQualityResultsByEntityResponse.ListQualityResultsByEntity_QualityResults.ListQualityResultsByEntity_RuleChecksItem.ListQualityResultsByEntity_SampleValueItem>();
 				for (int j = 0; j < _ctx.Length("ListQualityResultsByEntity.QualityResults.RuleChecks["+ i +"].SampleValue.Length"); j++) {
 					ListQualityResultsByEntityResponse.ListQualityResultsByEntity_QualityResults.ListQualityResultsByEntity_RuleChecksItem.ListQualityResultsByEntity_SampleValueItem sampleValueItem = new ListQualityResultsByEntityResponse.ListQualityResultsByEntity_QualityResults.ListQualityResultsByEntity_RuleChecksItem.ListQualityResultsByEntity_SampleValueItem();
-					sampleValueItem.BizDate = _ctx.LongValue("ListQualityResultsByEntity.QualityResults.RuleChecks["+ i +"].SampleValue["+ j +"].BizDate");
+					sampleValueItem.BizDate = _ctx.StringValue("ListQualityResultsByEntity.QualityResults.RuleChecks["+ i +"].SampleValue["+ j +"].BizDate");
 					sampleValueItem.DiscreteProperty = _ctx.StringValue("ListQualityResultsByEntity.QualityResults.RuleChecks["+ i +"].SampleValue["+ j +"].DiscreteProperty");
 					sampleValueItem._Value = _ctx.FloatValue("ListQualityResultsByEntity.QualityResults.RuleChecks["+ i +"].SampleValue["+ j +"].Value");
 

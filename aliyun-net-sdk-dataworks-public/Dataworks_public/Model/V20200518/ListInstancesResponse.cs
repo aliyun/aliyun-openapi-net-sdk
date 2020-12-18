@@ -171,11 +171,11 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class ListInstances_Instance
 			{
 
-				private int? nodeId;
+				private long? nodeId;
 
 				private long? instanceId;
 
-				private int? dagId;
+				private long? dagId;
 
 				private string dagType;
 
@@ -219,7 +219,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private long? relatedFlowId;
 
-				public int? NodeId
+				public long? NodeId
 				{
 					get
 					{
@@ -243,7 +243,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public int? DagId
+				public long? DagId
 				{
 					get
 					{

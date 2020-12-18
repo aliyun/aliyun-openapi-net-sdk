@@ -45,9 +45,9 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<ListInstancesResponse.ListInstances_Data.ListInstances_Instance> data_instances = new List<ListInstancesResponse.ListInstances_Data.ListInstances_Instance>();
 			for (int i = 0; i < _ctx.Length("ListInstances.Data.Instances.Length"); i++) {
 				ListInstancesResponse.ListInstances_Data.ListInstances_Instance instance = new ListInstancesResponse.ListInstances_Data.ListInstances_Instance();
-				instance.NodeId = _ctx.IntegerValue("ListInstances.Data.Instances["+ i +"].NodeId");
+				instance.NodeId = _ctx.LongValue("ListInstances.Data.Instances["+ i +"].NodeId");
 				instance.InstanceId = _ctx.LongValue("ListInstances.Data.Instances["+ i +"].InstanceId");
-				instance.DagId = _ctx.IntegerValue("ListInstances.Data.Instances["+ i +"].DagId");
+				instance.DagId = _ctx.LongValue("ListInstances.Data.Instances["+ i +"].DagId");
 				instance.DagType = _ctx.StringValue("ListInstances.Data.Instances["+ i +"].DagType");
 				instance.Status = _ctx.StringValue("ListInstances.Data.Instances["+ i +"].Status");
 				instance.Bizdate = _ctx.LongValue("ListInstances.Data.Instances["+ i +"].Bizdate");
