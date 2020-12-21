@@ -155,6 +155,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Size", launchConfigurationDataDisks[i].Size);
 					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Category", launchConfigurationDataDisks[i].Category);
 					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".PerformanceLevel", launchConfigurationDataDisks[i].PerformanceLevel);
+					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Device", launchConfigurationDataDisks[i].Device);
+					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".SnapshotId", launchConfigurationDataDisks[i].SnapshotId);
+					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".DeleteWithInstance", launchConfigurationDataDisks[i].DeleteWithInstance);
+					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Encrypted", launchConfigurationDataDisks[i].Encrypted);
+					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".KmsKeyId", launchConfigurationDataDisks[i].KmsKeyId);
+					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".DiskName", launchConfigurationDataDisks[i].DiskName);
+					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Description", launchConfigurationDataDisks[i].Description);
 				}
 			}
 		}
@@ -826,6 +833,20 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string performanceLevel;
 
+			private string device;
+
+			private string snapshotId;
+
+			private bool? deleteWithInstance;
+
+			private bool? encrypted;
+
+			private string kmsKeyId;
+
+			private string diskName;
+
+			private string description;
+
 			public int? Size
 			{
 				get
@@ -859,6 +880,90 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					performanceLevel = value;
+				}
+			}
+
+			public string Device
+			{
+				get
+				{
+					return device;
+				}
+				set	
+				{
+					device = value;
+				}
+			}
+
+			public string SnapshotId
+			{
+				get
+				{
+					return snapshotId;
+				}
+				set	
+				{
+					snapshotId = value;
+				}
+			}
+
+			public bool? DeleteWithInstance
+			{
+				get
+				{
+					return deleteWithInstance;
+				}
+				set	
+				{
+					deleteWithInstance = value;
+				}
+			}
+
+			public bool? Encrypted
+			{
+				get
+				{
+					return encrypted;
+				}
+				set	
+				{
+					encrypted = value;
+				}
+			}
+
+			public string KmsKeyId
+			{
+				get
+				{
+					return kmsKeyId;
+				}
+				set	
+				{
+					kmsKeyId = value;
+				}
+			}
+
+			public string DiskName
+			{
+				get
+				{
+					return diskName;
+				}
+				set	
+				{
+					diskName = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 		}
