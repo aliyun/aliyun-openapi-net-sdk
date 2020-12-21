@@ -46,7 +46,11 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string targetDBName;
 
+		private string targetIp;
+
 		private string dBLinkName;
+
+		private string targetPort;
 
 		private string resourceOwnerAccount;
 
@@ -61,6 +65,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private long? ownerId;
 
 		private string targetDBAccount;
+
+		private string vpcId;
 
 		public long? ResourceOwnerId
 		{
@@ -101,6 +107,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string TargetIp
+		{
+			get
+			{
+				return targetIp;
+			}
+			set	
+			{
+				targetIp = value;
+				DictionaryUtil.Add(QueryParameters, "TargetIp", value);
+			}
+		}
+
 		public string DBLinkName
 		{
 			get
@@ -111,6 +130,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				dBLinkName = value;
 				DictionaryUtil.Add(QueryParameters, "DBLinkName", value);
+			}
+		}
+
+		public string TargetPort
+		{
+			get
+			{
+				return targetPort;
+			}
+			set	
+			{
+				targetPort = value;
+				DictionaryUtil.Add(QueryParameters, "TargetPort", value);
 			}
 		}
 
@@ -202,6 +234,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				targetDBAccount = value;
 				DictionaryUtil.Add(QueryParameters, "TargetDBAccount", value);
+			}
+		}
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
 			}
 		}
 

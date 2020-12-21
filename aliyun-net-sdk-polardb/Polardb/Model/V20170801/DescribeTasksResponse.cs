@@ -37,9 +37,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private int? pageRecordCount;
 
-		private string dBInstanceName;
-
-		private string dBInstanceId;
+		private string dBClusterId;
 
 		private List<DescribeTasks_Task> tasks;
 
@@ -115,27 +113,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DBInstanceName
+		public string DBClusterId
 		{
 			get
 			{
-				return dBInstanceName;
+				return dBClusterId;
 			}
 			set	
 			{
-				dBInstanceName = value;
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
+				dBClusterId = value;
 			}
 		}
 

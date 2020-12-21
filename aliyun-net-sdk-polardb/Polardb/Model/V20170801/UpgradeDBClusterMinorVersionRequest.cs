@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class DescribeDatabasesRequest : RpcAcsRequest<DescribeDatabasesResponse>
+    public class UpgradeDBClusterMinorVersionRequest : RpcAcsRequest<UpgradeDBClusterMinorVersionResponse>
     {
-        public DescribeDatabasesRequest()
-            : base("polardb", "2017-08-01", "DescribeDatabases", "polardb", "openAPI")
+        public UpgradeDBClusterMinorVersionRequest()
+            : base("polardb", "2017-08-01", "UpgradeDBClusterMinorVersion", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,9 +42,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private int? pageNumber;
-
-		private int? pageSize;
+		private string switchTimeMode;
 
 		private string resourceOwnerAccount;
 
@@ -53,8 +51,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string dBName;
 
 		public long? ResourceOwnerId
 		{
@@ -69,29 +65,16 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public int? PageNumber
+		public string SwitchTimeMode
 		{
 			get
 			{
-				return pageNumber;
+				return switchTimeMode;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				switchTimeMode = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchTimeMode", value);
 			}
 		}
 
@@ -147,22 +130,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DBName
-		{
-			get
-			{
-				return dBName;
-			}
-			set	
-			{
-				dBName = value;
-				DictionaryUtil.Add(QueryParameters, "DBName", value);
-			}
-		}
-
-        public override DescribeDatabasesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpgradeDBClusterMinorVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDatabasesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpgradeDBClusterMinorVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

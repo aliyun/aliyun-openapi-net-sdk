@@ -44,6 +44,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string clientToken;
 
+		private string endpointBindList;
+
 		private string resourceOwnerAccount;
 
 		private string dBClusterId;
@@ -77,6 +79,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string EndpointBindList
+		{
+			get
+			{
+				return endpointBindList;
+			}
+			set	
+			{
+				endpointBindList = value;
+				DictionaryUtil.Add(QueryParameters, "EndpointBindList", value);
 			}
 		}
 

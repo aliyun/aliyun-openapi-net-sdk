@@ -37,8 +37,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeTasksResponse.TotalRecordCount = _ctx.IntegerValue("DescribeTasks.TotalRecordCount");
 			describeTasksResponse.PageNumber = _ctx.IntegerValue("DescribeTasks.PageNumber");
 			describeTasksResponse.PageRecordCount = _ctx.IntegerValue("DescribeTasks.PageRecordCount");
-			describeTasksResponse.DBInstanceName = _ctx.StringValue("DescribeTasks.DBInstanceName");
-			describeTasksResponse.DBInstanceId = _ctx.StringValue("DescribeTasks.DBInstanceId");
+			describeTasksResponse.DBClusterId = _ctx.StringValue("DescribeTasks.DBClusterId");
 
 			List<DescribeTasksResponse.DescribeTasks_Task> describeTasksResponse_tasks = new List<DescribeTasksResponse.DescribeTasks_Task>();
 			for (int i = 0; i < _ctx.Length("DescribeTasks.Tasks.Length"); i++) {

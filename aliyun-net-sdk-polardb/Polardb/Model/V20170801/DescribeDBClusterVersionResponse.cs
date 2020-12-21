@@ -33,13 +33,11 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dBMinorVersion;
 
-		private string dBRevisionVersion;
-
 		private string dBVersionStatus;
 
 		private string isLatestVersion;
 
-		private string latestRevisionVersion;
+		private string dBRevisionVersion;
 
 		public string RequestId
 		{
@@ -89,18 +87,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DBRevisionVersion
-		{
-			get
-			{
-				return dBRevisionVersion;
-			}
-			set	
-			{
-				dBRevisionVersion = value;
-			}
-		}
-
 		public string DBVersionStatus
 		{
 			get
@@ -125,15 +111,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string LatestRevisionVersion
+		public string DBRevisionVersion
 		{
 			get
 			{
-				return latestRevisionVersion;
+				return dBRevisionVersion;
 			}
 			set	
 			{
-				latestRevisionVersion = value;
+				dBRevisionVersion = value;
 			}
 		}
 	}
