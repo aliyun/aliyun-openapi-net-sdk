@@ -27,7 +27,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string requestId;
 
-		private ListQualityResultsByEntity_QualityResults qualityResults;
+		private int? httpStatusCode;
+
+		private string errorMessage;
+
+		private string errorCode;
+
+		private bool? success;
+
+		private ListQualityResultsByEntity_Data data;
 
 		public string RequestId
 		{
@@ -41,19 +49,67 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public ListQualityResultsByEntity_QualityResults QualityResults
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return qualityResults;
+				return httpStatusCode;
 			}
 			set	
 			{
-				qualityResults = value;
+				httpStatusCode = value;
 			}
 		}
 
-		public class ListQualityResultsByEntity_QualityResults
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public ListQualityResultsByEntity_Data Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class ListQualityResultsByEntity_Data
 		{
 
 			private long? totalCount;
