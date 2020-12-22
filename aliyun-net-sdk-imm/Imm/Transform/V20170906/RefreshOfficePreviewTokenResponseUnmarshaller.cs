@@ -26,16 +26,16 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class RefreshOfficePreviewTokenResponseUnmarshaller
     {
-        public static RefreshOfficePreviewTokenResponse Unmarshall(UnmarshallerContext context)
+        public static RefreshOfficePreviewTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RefreshOfficePreviewTokenResponse refreshOfficePreviewTokenResponse = new RefreshOfficePreviewTokenResponse();
 
-			refreshOfficePreviewTokenResponse.HttpResponse = context.HttpResponse;
-			refreshOfficePreviewTokenResponse.AccessToken = context.StringValue("RefreshOfficePreviewToken.AccessToken");
-			refreshOfficePreviewTokenResponse.AccessTokenExpiredTime = context.StringValue("RefreshOfficePreviewToken.AccessTokenExpiredTime");
-			refreshOfficePreviewTokenResponse.RefreshToken = context.StringValue("RefreshOfficePreviewToken.RefreshToken");
-			refreshOfficePreviewTokenResponse.RefreshTokenExpiredTime = context.StringValue("RefreshOfficePreviewToken.RefreshTokenExpiredTime");
-			refreshOfficePreviewTokenResponse.RequestId = context.StringValue("RefreshOfficePreviewToken.RequestId");
+			refreshOfficePreviewTokenResponse.HttpResponse = _ctx.HttpResponse;
+			refreshOfficePreviewTokenResponse.AccessToken = _ctx.StringValue("RefreshOfficePreviewToken.AccessToken");
+			refreshOfficePreviewTokenResponse.AccessTokenExpiredTime = _ctx.StringValue("RefreshOfficePreviewToken.AccessTokenExpiredTime");
+			refreshOfficePreviewTokenResponse.RefreshToken = _ctx.StringValue("RefreshOfficePreviewToken.RefreshToken");
+			refreshOfficePreviewTokenResponse.RefreshTokenExpiredTime = _ctx.StringValue("RefreshOfficePreviewToken.RefreshTokenExpiredTime");
+			refreshOfficePreviewTokenResponse.RequestId = _ctx.StringValue("RefreshOfficePreviewToken.RequestId");
         
 			return refreshOfficePreviewTokenResponse;
         }

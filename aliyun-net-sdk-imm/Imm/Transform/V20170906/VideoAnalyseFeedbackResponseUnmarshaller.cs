@@ -26,12 +26,12 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class VideoAnalyseFeedbackResponseUnmarshaller
     {
-        public static VideoAnalyseFeedbackResponse Unmarshall(UnmarshallerContext context)
+        public static VideoAnalyseFeedbackResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			VideoAnalyseFeedbackResponse videoAnalyseFeedbackResponse = new VideoAnalyseFeedbackResponse();
 
-			videoAnalyseFeedbackResponse.HttpResponse = context.HttpResponse;
-			videoAnalyseFeedbackResponse.RequestId = context.StringValue("VideoAnalyseFeedback.RequestId");
+			videoAnalyseFeedbackResponse.HttpResponse = _ctx.HttpResponse;
+			videoAnalyseFeedbackResponse.RequestId = _ctx.StringValue("VideoAnalyseFeedback.RequestId");
         
 			return videoAnalyseFeedbackResponse;
         }

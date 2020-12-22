@@ -26,13 +26,13 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class ConvertOfficeFormatResponseUnmarshaller
     {
-        public static ConvertOfficeFormatResponse Unmarshall(UnmarshallerContext context)
+        public static ConvertOfficeFormatResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ConvertOfficeFormatResponse convertOfficeFormatResponse = new ConvertOfficeFormatResponse();
 
-			convertOfficeFormatResponse.HttpResponse = context.HttpResponse;
-			convertOfficeFormatResponse.RequestId = context.StringValue("ConvertOfficeFormat.RequestId");
-			convertOfficeFormatResponse.PageCount = context.IntegerValue("ConvertOfficeFormat.PageCount");
+			convertOfficeFormatResponse.HttpResponse = _ctx.HttpResponse;
+			convertOfficeFormatResponse.RequestId = _ctx.StringValue("ConvertOfficeFormat.RequestId");
+			convertOfficeFormatResponse.PageCount = _ctx.IntegerValue("ConvertOfficeFormat.PageCount");
         
 			return convertOfficeFormatResponse;
         }

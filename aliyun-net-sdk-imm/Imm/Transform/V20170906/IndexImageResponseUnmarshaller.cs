@@ -26,23 +26,23 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class IndexImageResponseUnmarshaller
     {
-        public static IndexImageResponse Unmarshall(UnmarshallerContext context)
+        public static IndexImageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			IndexImageResponse indexImageResponse = new IndexImageResponse();
 
-			indexImageResponse.HttpResponse = context.HttpResponse;
-			indexImageResponse.RequestId = context.StringValue("IndexImage.RequestId");
-			indexImageResponse.SetId = context.StringValue("IndexImage.SetId");
-			indexImageResponse.ImageUri = context.StringValue("IndexImage.ImageUri");
-			indexImageResponse.RemarksA = context.StringValue("IndexImage.RemarksA");
-			indexImageResponse.RemarksB = context.StringValue("IndexImage.RemarksB");
-			indexImageResponse.CreateTime = context.StringValue("IndexImage.CreateTime");
-			indexImageResponse.ModifyTime = context.StringValue("IndexImage.ModifyTime");
-			indexImageResponse.RemarksC = context.StringValue("IndexImage.RemarksC");
-			indexImageResponse.RemarksD = context.StringValue("IndexImage.RemarksD");
-			indexImageResponse.ExternalId = context.StringValue("IndexImage.ExternalId");
-			indexImageResponse.RemarksArrayA = context.StringValue("IndexImage.RemarksArrayA");
-			indexImageResponse.RemarksArrayB = context.StringValue("IndexImage.RemarksArrayB");
+			indexImageResponse.HttpResponse = _ctx.HttpResponse;
+			indexImageResponse.RequestId = _ctx.StringValue("IndexImage.RequestId");
+			indexImageResponse.SetId = _ctx.StringValue("IndexImage.SetId");
+			indexImageResponse.ImageUri = _ctx.StringValue("IndexImage.ImageUri");
+			indexImageResponse.RemarksA = _ctx.StringValue("IndexImage.RemarksA");
+			indexImageResponse.RemarksB = _ctx.StringValue("IndexImage.RemarksB");
+			indexImageResponse.CreateTime = _ctx.StringValue("IndexImage.CreateTime");
+			indexImageResponse.ModifyTime = _ctx.StringValue("IndexImage.ModifyTime");
+			indexImageResponse.RemarksC = _ctx.StringValue("IndexImage.RemarksC");
+			indexImageResponse.RemarksD = _ctx.StringValue("IndexImage.RemarksD");
+			indexImageResponse.ExternalId = _ctx.StringValue("IndexImage.ExternalId");
+			indexImageResponse.RemarksArrayA = _ctx.StringValue("IndexImage.RemarksArrayA");
+			indexImageResponse.RemarksArrayB = _ctx.StringValue("IndexImage.RemarksArrayB");
         
 			return indexImageResponse;
         }

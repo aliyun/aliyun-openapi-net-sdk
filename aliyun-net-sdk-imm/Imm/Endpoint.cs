@@ -16,26 +16,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
+
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.imm.Model.V20170906;
-
-namespace Aliyun.Acs.imm.Transform.V20170906
+namespace Aliyun.Acs.imm
 {
-    public class UpdateFaceGroupResponseUnmarshaller
+    public class Endpoint
     {
-        public static UpdateFaceGroupResponse Unmarshall(UnmarshallerContext _ctx)
+        public static Dictionary<string, string> endpointMap = new Dictionary<string, string>() 
         {
-			UpdateFaceGroupResponse updateFaceGroupResponse = new UpdateFaceGroupResponse();
+            { "cn-beijing-gov-1", "imm-vpc.cn-beijing-gov-1.aliyuncs.com" },
+        };
 
-			updateFaceGroupResponse.HttpResponse = _ctx.HttpResponse;
-			updateFaceGroupResponse.RequestId = _ctx.StringValue("UpdateFaceGroup.RequestId");
-			updateFaceGroupResponse.SetId = _ctx.StringValue("UpdateFaceGroup.SetId");
-			updateFaceGroupResponse.GroupId = _ctx.StringValue("UpdateFaceGroup.GroupId");
-        
-			return updateFaceGroupResponse;
-        }
+        public static string endpointRegionalType = "regional";
     }
 }

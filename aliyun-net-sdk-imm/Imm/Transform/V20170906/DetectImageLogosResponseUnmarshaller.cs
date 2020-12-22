@@ -26,25 +26,25 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class DetectImageLogosResponseUnmarshaller
     {
-        public static DetectImageLogosResponse Unmarshall(UnmarshallerContext context)
+        public static DetectImageLogosResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetectImageLogosResponse detectImageLogosResponse = new DetectImageLogosResponse();
 
-			detectImageLogosResponse.HttpResponse = context.HttpResponse;
-			detectImageLogosResponse.RequestId = context.StringValue("DetectImageLogos.RequestId");
-			detectImageLogosResponse.ImageUri = context.StringValue("DetectImageLogos.ImageUri");
+			detectImageLogosResponse.HttpResponse = _ctx.HttpResponse;
+			detectImageLogosResponse.RequestId = _ctx.StringValue("DetectImageLogos.RequestId");
+			detectImageLogosResponse.ImageUri = _ctx.StringValue("DetectImageLogos.ImageUri");
 
 			List<DetectImageLogosResponse.DetectImageLogos_LogosItem> detectImageLogosResponse_logos = new List<DetectImageLogosResponse.DetectImageLogos_LogosItem>();
-			for (int i = 0; i < context.Length("DetectImageLogos.Logos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DetectImageLogos.Logos.Length"); i++) {
 				DetectImageLogosResponse.DetectImageLogos_LogosItem logosItem = new DetectImageLogosResponse.DetectImageLogos_LogosItem();
-				logosItem.LogoName = context.StringValue("DetectImageLogos.Logos["+ i +"].LogoName");
-				logosItem.LogoConfidence = context.FloatValue("DetectImageLogos.Logos["+ i +"].LogoConfidence");
+				logosItem.LogoName = _ctx.StringValue("DetectImageLogos.Logos["+ i +"].LogoName");
+				logosItem.LogoConfidence = _ctx.FloatValue("DetectImageLogos.Logos["+ i +"].LogoConfidence");
 
 				DetectImageLogosResponse.DetectImageLogos_LogosItem.DetectImageLogos_LogoBoundary logoBoundary = new DetectImageLogosResponse.DetectImageLogos_LogosItem.DetectImageLogos_LogoBoundary();
-				logoBoundary.Width = context.IntegerValue("DetectImageLogos.Logos["+ i +"].LogoBoundary.Width");
-				logoBoundary.Height = context.IntegerValue("DetectImageLogos.Logos["+ i +"].LogoBoundary.Height");
-				logoBoundary.Top = context.IntegerValue("DetectImageLogos.Logos["+ i +"].LogoBoundary.Top");
-				logoBoundary.Left = context.IntegerValue("DetectImageLogos.Logos["+ i +"].LogoBoundary.Left");
+				logoBoundary.Width = _ctx.IntegerValue("DetectImageLogos.Logos["+ i +"].LogoBoundary.Width");
+				logoBoundary.Height = _ctx.IntegerValue("DetectImageLogos.Logos["+ i +"].LogoBoundary.Height");
+				logoBoundary.Top = _ctx.IntegerValue("DetectImageLogos.Logos["+ i +"].LogoBoundary.Top");
+				logoBoundary.Left = _ctx.IntegerValue("DetectImageLogos.Logos["+ i +"].LogoBoundary.Left");
 				logosItem.LogoBoundary = logoBoundary;
 
 				detectImageLogosResponse_logos.Add(logosItem);

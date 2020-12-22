@@ -26,25 +26,25 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class DetectImageTextsResponseUnmarshaller
     {
-        public static DetectImageTextsResponse Unmarshall(UnmarshallerContext context)
+        public static DetectImageTextsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetectImageTextsResponse detectImageTextsResponse = new DetectImageTextsResponse();
 
-			detectImageTextsResponse.HttpResponse = context.HttpResponse;
-			detectImageTextsResponse.RequestId = context.StringValue("DetectImageTexts.RequestId");
-			detectImageTextsResponse.ImageUri = context.StringValue("DetectImageTexts.ImageUri");
+			detectImageTextsResponse.HttpResponse = _ctx.HttpResponse;
+			detectImageTextsResponse.RequestId = _ctx.StringValue("DetectImageTexts.RequestId");
+			detectImageTextsResponse.ImageUri = _ctx.StringValue("DetectImageTexts.ImageUri");
 
 			List<DetectImageTextsResponse.DetectImageTexts_OCRItem> detectImageTextsResponse_oCR = new List<DetectImageTextsResponse.DetectImageTexts_OCRItem>();
-			for (int i = 0; i < context.Length("DetectImageTexts.OCR.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DetectImageTexts.OCR.Length"); i++) {
 				DetectImageTextsResponse.DetectImageTexts_OCRItem oCRItem = new DetectImageTextsResponse.DetectImageTexts_OCRItem();
-				oCRItem.OCRContents = context.StringValue("DetectImageTexts.OCR["+ i +"].OCRContents");
-				oCRItem.OCRConfidence = context.FloatValue("DetectImageTexts.OCR["+ i +"].OCRConfidence");
+				oCRItem.OCRContents = _ctx.StringValue("DetectImageTexts.OCR["+ i +"].OCRContents");
+				oCRItem.OCRConfidence = _ctx.FloatValue("DetectImageTexts.OCR["+ i +"].OCRConfidence");
 
 				DetectImageTextsResponse.DetectImageTexts_OCRItem.DetectImageTexts_OCRBoundary oCRBoundary = new DetectImageTextsResponse.DetectImageTexts_OCRItem.DetectImageTexts_OCRBoundary();
-				oCRBoundary.Left = context.IntegerValue("DetectImageTexts.OCR["+ i +"].OCRBoundary.Left");
-				oCRBoundary.Top = context.IntegerValue("DetectImageTexts.OCR["+ i +"].OCRBoundary.Top");
-				oCRBoundary.Width = context.IntegerValue("DetectImageTexts.OCR["+ i +"].OCRBoundary.Width");
-				oCRBoundary.Height = context.IntegerValue("DetectImageTexts.OCR["+ i +"].OCRBoundary.Height");
+				oCRBoundary.Left = _ctx.IntegerValue("DetectImageTexts.OCR["+ i +"].OCRBoundary.Left");
+				oCRBoundary.Top = _ctx.IntegerValue("DetectImageTexts.OCR["+ i +"].OCRBoundary.Top");
+				oCRBoundary.Width = _ctx.IntegerValue("DetectImageTexts.OCR["+ i +"].OCRBoundary.Width");
+				oCRBoundary.Height = _ctx.IntegerValue("DetectImageTexts.OCR["+ i +"].OCRBoundary.Height");
 				oCRItem.OCRBoundary = oCRBoundary;
 
 				detectImageTextsResponse_oCR.Add(oCRItem);

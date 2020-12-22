@@ -26,13 +26,13 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class DeleteSetResponseUnmarshaller
     {
-        public static DeleteSetResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteSetResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteSetResponse deleteSetResponse = new DeleteSetResponse();
 
-			deleteSetResponse.HttpResponse = context.HttpResponse;
-			deleteSetResponse.RequestId = context.StringValue("DeleteSet.RequestId");
-			deleteSetResponse.SetId = context.StringValue("DeleteSet.SetId");
+			deleteSetResponse.HttpResponse = _ctx.HttpResponse;
+			deleteSetResponse.RequestId = _ctx.StringValue("DeleteSet.RequestId");
+			deleteSetResponse.SetId = _ctx.StringValue("DeleteSet.SetId");
         
 			return deleteSetResponse;
         }

@@ -26,14 +26,14 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class UpdateDocIndexMetaResponseUnmarshaller
     {
-        public static UpdateDocIndexMetaResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateDocIndexMetaResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateDocIndexMetaResponse updateDocIndexMetaResponse = new UpdateDocIndexMetaResponse();
 
-			updateDocIndexMetaResponse.HttpResponse = context.HttpResponse;
-			updateDocIndexMetaResponse.RequestId = context.StringValue("UpdateDocIndexMeta.RequestId");
-			updateDocIndexMetaResponse.IndexCreatedTime = context.StringValue("UpdateDocIndexMeta.IndexCreatedTime");
-			updateDocIndexMetaResponse.IndexModifiedTime = context.StringValue("UpdateDocIndexMeta.IndexModifiedTime");
+			updateDocIndexMetaResponse.HttpResponse = _ctx.HttpResponse;
+			updateDocIndexMetaResponse.RequestId = _ctx.StringValue("UpdateDocIndexMeta.RequestId");
+			updateDocIndexMetaResponse.IndexCreatedTime = _ctx.StringValue("UpdateDocIndexMeta.IndexCreatedTime");
+			updateDocIndexMetaResponse.IndexModifiedTime = _ctx.StringValue("UpdateDocIndexMeta.IndexModifiedTime");
         
 			return updateDocIndexMetaResponse;
         }

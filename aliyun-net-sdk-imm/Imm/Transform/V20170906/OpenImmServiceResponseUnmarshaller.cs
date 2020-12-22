@@ -26,13 +26,13 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class OpenImmServiceResponseUnmarshaller
     {
-        public static OpenImmServiceResponse Unmarshall(UnmarshallerContext context)
+        public static OpenImmServiceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			OpenImmServiceResponse openImmServiceResponse = new OpenImmServiceResponse();
 
-			openImmServiceResponse.HttpResponse = context.HttpResponse;
-			openImmServiceResponse.RequestId = context.StringValue("OpenImmService.RequestId");
-			openImmServiceResponse.OrderId = context.StringValue("OpenImmService.OrderId");
+			openImmServiceResponse.HttpResponse = _ctx.HttpResponse;
+			openImmServiceResponse.RequestId = _ctx.StringValue("OpenImmService.RequestId");
+			openImmServiceResponse.OrderId = _ctx.StringValue("OpenImmService.OrderId");
         
 			return openImmServiceResponse;
         }

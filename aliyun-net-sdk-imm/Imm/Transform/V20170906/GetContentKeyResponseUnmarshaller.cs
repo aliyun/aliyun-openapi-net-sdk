@@ -26,14 +26,14 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class GetContentKeyResponseUnmarshaller
     {
-        public static GetContentKeyResponse Unmarshall(UnmarshallerContext context)
+        public static GetContentKeyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetContentKeyResponse getContentKeyResponse = new GetContentKeyResponse();
 
-			getContentKeyResponse.HttpResponse = context.HttpResponse;
-			getContentKeyResponse.RequestId = context.StringValue("GetContentKey.RequestId");
-			getContentKeyResponse.VersionId = context.StringValue("GetContentKey.VersionId");
-			getContentKeyResponse.KeyInfos = context.StringValue("GetContentKey.KeyInfos");
+			getContentKeyResponse.HttpResponse = _ctx.HttpResponse;
+			getContentKeyResponse.RequestId = _ctx.StringValue("GetContentKey.RequestId");
+			getContentKeyResponse.VersionId = _ctx.StringValue("GetContentKey.VersionId");
+			getContentKeyResponse.KeyInfos = _ctx.StringValue("GetContentKey.KeyInfos");
         
 			return getContentKeyResponse;
         }

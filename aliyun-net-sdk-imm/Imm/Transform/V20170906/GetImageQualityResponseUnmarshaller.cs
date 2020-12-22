@@ -26,25 +26,25 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class GetImageQualityResponseUnmarshaller
     {
-        public static GetImageQualityResponse Unmarshall(UnmarshallerContext context)
+        public static GetImageQualityResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetImageQualityResponse getImageQualityResponse = new GetImageQualityResponse();
 
-			getImageQualityResponse.HttpResponse = context.HttpResponse;
-			getImageQualityResponse.RequestId = context.StringValue("GetImageQuality.RequestId");
-			getImageQualityResponse.ImageUri = context.StringValue("GetImageQuality.ImageUri");
+			getImageQualityResponse.HttpResponse = _ctx.HttpResponse;
+			getImageQualityResponse.RequestId = _ctx.StringValue("GetImageQuality.RequestId");
+			getImageQualityResponse.ImageUri = _ctx.StringValue("GetImageQuality.ImageUri");
 
 			GetImageQualityResponse.GetImageQuality_ImageQuality imageQuality = new GetImageQualityResponse.GetImageQuality_ImageQuality();
-			imageQuality.OverallScore = context.FloatValue("GetImageQuality.ImageQuality.OverallScore");
-			imageQuality.ClarityScore = context.FloatValue("GetImageQuality.ImageQuality.ClarityScore");
-			imageQuality.Clarity = context.FloatValue("GetImageQuality.ImageQuality.Clarity");
-			imageQuality.ExposureScore = context.FloatValue("GetImageQuality.ImageQuality.ExposureScore");
-			imageQuality.Exposure = context.FloatValue("GetImageQuality.ImageQuality.Exposure");
-			imageQuality.ContrastScore = context.FloatValue("GetImageQuality.ImageQuality.ContrastScore");
-			imageQuality.Contrast = context.FloatValue("GetImageQuality.ImageQuality.Contrast");
-			imageQuality.ColorScore = context.FloatValue("GetImageQuality.ImageQuality.ColorScore");
-			imageQuality.Color = context.FloatValue("GetImageQuality.ImageQuality.Color");
-			imageQuality.CompositionScore = context.FloatValue("GetImageQuality.ImageQuality.CompositionScore");
+			imageQuality.OverallScore = _ctx.FloatValue("GetImageQuality.ImageQuality.OverallScore");
+			imageQuality.ClarityScore = _ctx.FloatValue("GetImageQuality.ImageQuality.ClarityScore");
+			imageQuality.Clarity = _ctx.FloatValue("GetImageQuality.ImageQuality.Clarity");
+			imageQuality.ExposureScore = _ctx.FloatValue("GetImageQuality.ImageQuality.ExposureScore");
+			imageQuality.Exposure = _ctx.FloatValue("GetImageQuality.ImageQuality.Exposure");
+			imageQuality.ContrastScore = _ctx.FloatValue("GetImageQuality.ImageQuality.ContrastScore");
+			imageQuality.Contrast = _ctx.FloatValue("GetImageQuality.ImageQuality.Contrast");
+			imageQuality.ColorScore = _ctx.FloatValue("GetImageQuality.ImageQuality.ColorScore");
+			imageQuality.Color = _ctx.FloatValue("GetImageQuality.ImageQuality.Color");
+			imageQuality.CompositionScore = _ctx.FloatValue("GetImageQuality.ImageQuality.CompositionScore");
 			getImageQualityResponse.ImageQuality = imageQuality;
         
 			return getImageQualityResponse;

@@ -26,17 +26,17 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class CreateCADConversionTaskResponseUnmarshaller
     {
-        public static CreateCADConversionTaskResponse Unmarshall(UnmarshallerContext context)
+        public static CreateCADConversionTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateCADConversionTaskResponse createCADConversionTaskResponse = new CreateCADConversionTaskResponse();
 
-			createCADConversionTaskResponse.HttpResponse = context.HttpResponse;
-			createCADConversionTaskResponse.RequestId = context.StringValue("CreateCADConversionTask.RequestId");
-			createCADConversionTaskResponse.TaskId = context.StringValue("CreateCADConversionTask.TaskId");
-			createCADConversionTaskResponse.TgtLoc = context.StringValue("CreateCADConversionTask.TgtLoc");
-			createCADConversionTaskResponse.Status = context.StringValue("CreateCADConversionTask.Status");
-			createCADConversionTaskResponse.CreateTime = context.StringValue("CreateCADConversionTask.CreateTime");
-			createCADConversionTaskResponse.Percent = context.IntegerValue("CreateCADConversionTask.Percent");
+			createCADConversionTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createCADConversionTaskResponse.RequestId = _ctx.StringValue("CreateCADConversionTask.RequestId");
+			createCADConversionTaskResponse.TaskId = _ctx.StringValue("CreateCADConversionTask.TaskId");
+			createCADConversionTaskResponse.TgtLoc = _ctx.StringValue("CreateCADConversionTask.TgtLoc");
+			createCADConversionTaskResponse.Status = _ctx.StringValue("CreateCADConversionTask.Status");
+			createCADConversionTaskResponse.CreateTime = _ctx.StringValue("CreateCADConversionTask.CreateTime");
+			createCADConversionTaskResponse.Percent = _ctx.IntegerValue("CreateCADConversionTask.Percent");
         
 			return createCADConversionTaskResponse;
         }

@@ -1023,15 +1023,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 				private string beard;
 
-				private string race;
-
 				private string mask;
 
 				private float? glassesConfidence;
 
 				private float? beardConfidence;
-
-				private float? raceConfidence;
 
 				private float? maskConfidence;
 
@@ -1060,18 +1056,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					set	
 					{
 						beard = value;
-					}
-				}
-
-				public string Race
-				{
-					get
-					{
-						return race;
-					}
-					set	
-					{
-						race = value;
 					}
 				}
 
@@ -1108,18 +1092,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					set	
 					{
 						beardConfidence = value;
-					}
-				}
-
-				public float? RaceConfidence
-				{
-					get
-					{
-						return raceConfidence;
-					}
-					set	
-					{
-						raceConfidence = value;
 					}
 				}
 

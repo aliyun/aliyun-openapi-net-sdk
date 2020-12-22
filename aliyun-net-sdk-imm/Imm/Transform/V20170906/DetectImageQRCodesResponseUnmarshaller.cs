@@ -26,24 +26,24 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class DetectImageQRCodesResponseUnmarshaller
     {
-        public static DetectImageQRCodesResponse Unmarshall(UnmarshallerContext context)
+        public static DetectImageQRCodesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetectImageQRCodesResponse detectImageQRCodesResponse = new DetectImageQRCodesResponse();
 
-			detectImageQRCodesResponse.HttpResponse = context.HttpResponse;
-			detectImageQRCodesResponse.RequestId = context.StringValue("DetectImageQRCodes.RequestId");
-			detectImageQRCodesResponse.ImageUri = context.StringValue("DetectImageQRCodes.ImageUri");
+			detectImageQRCodesResponse.HttpResponse = _ctx.HttpResponse;
+			detectImageQRCodesResponse.RequestId = _ctx.StringValue("DetectImageQRCodes.RequestId");
+			detectImageQRCodesResponse.ImageUri = _ctx.StringValue("DetectImageQRCodes.ImageUri");
 
 			List<DetectImageQRCodesResponse.DetectImageQRCodes_QRCodesItem> detectImageQRCodesResponse_qRCodes = new List<DetectImageQRCodesResponse.DetectImageQRCodes_QRCodesItem>();
-			for (int i = 0; i < context.Length("DetectImageQRCodes.QRCodes.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DetectImageQRCodes.QRCodes.Length"); i++) {
 				DetectImageQRCodesResponse.DetectImageQRCodes_QRCodesItem qRCodesItem = new DetectImageQRCodesResponse.DetectImageQRCodes_QRCodesItem();
-				qRCodesItem.Content = context.StringValue("DetectImageQRCodes.QRCodes["+ i +"].Content");
+				qRCodesItem.Content = _ctx.StringValue("DetectImageQRCodes.QRCodes["+ i +"].Content");
 
 				DetectImageQRCodesResponse.DetectImageQRCodes_QRCodesItem.DetectImageQRCodes_QRCodeBoundary qRCodeBoundary = new DetectImageQRCodesResponse.DetectImageQRCodes_QRCodesItem.DetectImageQRCodes_QRCodeBoundary();
-				qRCodeBoundary.Top = context.IntegerValue("DetectImageQRCodes.QRCodes["+ i +"].QRCodeBoundary.Top");
-				qRCodeBoundary.Left = context.IntegerValue("DetectImageQRCodes.QRCodes["+ i +"].QRCodeBoundary.Left");
-				qRCodeBoundary.Width = context.IntegerValue("DetectImageQRCodes.QRCodes["+ i +"].QRCodeBoundary.Width");
-				qRCodeBoundary.Height = context.IntegerValue("DetectImageQRCodes.QRCodes["+ i +"].QRCodeBoundary.Height");
+				qRCodeBoundary.Top = _ctx.IntegerValue("DetectImageQRCodes.QRCodes["+ i +"].QRCodeBoundary.Top");
+				qRCodeBoundary.Left = _ctx.IntegerValue("DetectImageQRCodes.QRCodes["+ i +"].QRCodeBoundary.Left");
+				qRCodeBoundary.Width = _ctx.IntegerValue("DetectImageQRCodes.QRCodes["+ i +"].QRCodeBoundary.Width");
+				qRCodeBoundary.Height = _ctx.IntegerValue("DetectImageQRCodes.QRCodes["+ i +"].QRCodeBoundary.Height");
 				qRCodesItem.QRCodeBoundary = qRCodeBoundary;
 
 				detectImageQRCodesResponse_qRCodes.Add(qRCodesItem);

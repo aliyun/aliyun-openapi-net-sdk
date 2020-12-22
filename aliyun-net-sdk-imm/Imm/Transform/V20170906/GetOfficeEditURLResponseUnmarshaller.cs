@@ -26,17 +26,17 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class GetOfficeEditURLResponseUnmarshaller
     {
-        public static GetOfficeEditURLResponse Unmarshall(UnmarshallerContext context)
+        public static GetOfficeEditURLResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetOfficeEditURLResponse getOfficeEditURLResponse = new GetOfficeEditURLResponse();
 
-			getOfficeEditURLResponse.HttpResponse = context.HttpResponse;
-			getOfficeEditURLResponse.RequestId = context.StringValue("GetOfficeEditURL.RequestId");
-			getOfficeEditURLResponse.EditURL = context.StringValue("GetOfficeEditURL.EditURL");
-			getOfficeEditURLResponse.AccessToken = context.StringValue("GetOfficeEditURL.AccessToken");
-			getOfficeEditURLResponse.RefreshToken = context.StringValue("GetOfficeEditURL.RefreshToken");
-			getOfficeEditURLResponse.AccessTokenExpiredTime = context.StringValue("GetOfficeEditURL.AccessTokenExpiredTime");
-			getOfficeEditURLResponse.RefreshTokenExpiredTime = context.StringValue("GetOfficeEditURL.RefreshTokenExpiredTime");
+			getOfficeEditURLResponse.HttpResponse = _ctx.HttpResponse;
+			getOfficeEditURLResponse.RequestId = _ctx.StringValue("GetOfficeEditURL.RequestId");
+			getOfficeEditURLResponse.EditURL = _ctx.StringValue("GetOfficeEditURL.EditURL");
+			getOfficeEditURLResponse.AccessToken = _ctx.StringValue("GetOfficeEditURL.AccessToken");
+			getOfficeEditURLResponse.RefreshToken = _ctx.StringValue("GetOfficeEditURL.RefreshToken");
+			getOfficeEditURLResponse.AccessTokenExpiredTime = _ctx.StringValue("GetOfficeEditURL.AccessTokenExpiredTime");
+			getOfficeEditURLResponse.RefreshTokenExpiredTime = _ctx.StringValue("GetOfficeEditURL.RefreshTokenExpiredTime");
         
 			return getOfficeEditURLResponse;
         }

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class CreateDocIndexTaskResponseUnmarshaller
     {
-        public static CreateDocIndexTaskResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDocIndexTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDocIndexTaskResponse createDocIndexTaskResponse = new CreateDocIndexTaskResponse();
 
-			createDocIndexTaskResponse.HttpResponse = context.HttpResponse;
-			createDocIndexTaskResponse.RequestId = context.StringValue("CreateDocIndexTask.RequestId");
-			createDocIndexTaskResponse.TaskId = context.StringValue("CreateDocIndexTask.TaskId");
-			createDocIndexTaskResponse.Status = context.StringValue("CreateDocIndexTask.Status");
-			createDocIndexTaskResponse.CreateTime = context.StringValue("CreateDocIndexTask.CreateTime");
+			createDocIndexTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createDocIndexTaskResponse.RequestId = _ctx.StringValue("CreateDocIndexTask.RequestId");
+			createDocIndexTaskResponse.TaskId = _ctx.StringValue("CreateDocIndexTask.TaskId");
+			createDocIndexTaskResponse.Status = _ctx.StringValue("CreateDocIndexTask.Status");
+			createDocIndexTaskResponse.CreateTime = _ctx.StringValue("CreateDocIndexTask.CreateTime");
         
 			return createDocIndexTaskResponse;
         }

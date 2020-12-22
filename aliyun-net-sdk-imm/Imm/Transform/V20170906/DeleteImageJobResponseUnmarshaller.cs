@@ -26,12 +26,12 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class DeleteImageJobResponseUnmarshaller
     {
-        public static DeleteImageJobResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteImageJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteImageJobResponse deleteImageJobResponse = new DeleteImageJobResponse();
 
-			deleteImageJobResponse.HttpResponse = context.HttpResponse;
-			deleteImageJobResponse.RequestId = context.StringValue("DeleteImageJob.RequestId");
+			deleteImageJobResponse.HttpResponse = _ctx.HttpResponse;
+			deleteImageJobResponse.RequestId = _ctx.StringValue("DeleteImageJob.RequestId");
         
 			return deleteImageJobResponse;
         }

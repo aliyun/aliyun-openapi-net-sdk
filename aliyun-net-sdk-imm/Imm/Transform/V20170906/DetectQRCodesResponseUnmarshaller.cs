@@ -26,28 +26,28 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class DetectQRCodesResponseUnmarshaller
     {
-        public static DetectQRCodesResponse Unmarshall(UnmarshallerContext context)
+        public static DetectQRCodesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetectQRCodesResponse detectQRCodesResponse = new DetectQRCodesResponse();
 
-			detectQRCodesResponse.HttpResponse = context.HttpResponse;
-			detectQRCodesResponse.RequestId = context.StringValue("DetectQRCodes.RequestId");
+			detectQRCodesResponse.HttpResponse = _ctx.HttpResponse;
+			detectQRCodesResponse.RequestId = _ctx.StringValue("DetectQRCodes.RequestId");
 
 			List<DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem> detectQRCodesResponse_successDetails = new List<DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem>();
-			for (int i = 0; i < context.Length("DetectQRCodes.SuccessDetails.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DetectQRCodes.SuccessDetails.Length"); i++) {
 				DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem successDetailsItem = new DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem();
-				successDetailsItem.SrcUri = context.StringValue("DetectQRCodes.SuccessDetails["+ i +"].SrcUri");
+				successDetailsItem.SrcUri = _ctx.StringValue("DetectQRCodes.SuccessDetails["+ i +"].SrcUri");
 
 				List<DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem.DetectQRCodes_QRCodesItem> successDetailsItem_qRCodes = new List<DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem.DetectQRCodes_QRCodesItem>();
-				for (int j = 0; j < context.Length("DetectQRCodes.SuccessDetails["+ i +"].QRCodes.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DetectQRCodes.SuccessDetails["+ i +"].QRCodes.Length"); j++) {
 					DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem.DetectQRCodes_QRCodesItem qRCodesItem = new DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem.DetectQRCodes_QRCodesItem();
-					qRCodesItem.Content = context.StringValue("DetectQRCodes.SuccessDetails["+ i +"].QRCodes["+ j +"].Content");
+					qRCodesItem.Content = _ctx.StringValue("DetectQRCodes.SuccessDetails["+ i +"].QRCodes["+ j +"].Content");
 
 					DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem.DetectQRCodes_QRCodesItem.DetectQRCodes_QRCodesRectangle qRCodesRectangle = new DetectQRCodesResponse.DetectQRCodes_SuccessDetailsItem.DetectQRCodes_QRCodesItem.DetectQRCodes_QRCodesRectangle();
-					qRCodesRectangle.Left = context.StringValue("DetectQRCodes.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Left");
-					qRCodesRectangle.Top = context.StringValue("DetectQRCodes.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Top");
-					qRCodesRectangle.Width = context.StringValue("DetectQRCodes.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Width");
-					qRCodesRectangle.Height = context.StringValue("DetectQRCodes.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Height");
+					qRCodesRectangle.Left = _ctx.StringValue("DetectQRCodes.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Left");
+					qRCodesRectangle.Top = _ctx.StringValue("DetectQRCodes.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Top");
+					qRCodesRectangle.Width = _ctx.StringValue("DetectQRCodes.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Width");
+					qRCodesRectangle.Height = _ctx.StringValue("DetectQRCodes.SuccessDetails["+ i +"].QRCodes["+ j +"].QRCodesRectangle.Height");
 					qRCodesItem.QRCodesRectangle = qRCodesRectangle;
 
 					successDetailsItem_qRCodes.Add(qRCodesItem);
@@ -59,11 +59,11 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			detectQRCodesResponse.SuccessDetails = detectQRCodesResponse_successDetails;
 
 			List<DetectQRCodesResponse.DetectQRCodes_FailDetailsItem> detectQRCodesResponse_failDetails = new List<DetectQRCodesResponse.DetectQRCodes_FailDetailsItem>();
-			for (int i = 0; i < context.Length("DetectQRCodes.FailDetails.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DetectQRCodes.FailDetails.Length"); i++) {
 				DetectQRCodesResponse.DetectQRCodes_FailDetailsItem failDetailsItem = new DetectQRCodesResponse.DetectQRCodes_FailDetailsItem();
-				failDetailsItem.SrcUri = context.StringValue("DetectQRCodes.FailDetails["+ i +"].SrcUri");
-				failDetailsItem.ErrorCode = context.StringValue("DetectQRCodes.FailDetails["+ i +"].ErrorCode");
-				failDetailsItem.ErrorMessage = context.StringValue("DetectQRCodes.FailDetails["+ i +"].ErrorMessage");
+				failDetailsItem.SrcUri = _ctx.StringValue("DetectQRCodes.FailDetails["+ i +"].SrcUri");
+				failDetailsItem.ErrorCode = _ctx.StringValue("DetectQRCodes.FailDetails["+ i +"].ErrorCode");
+				failDetailsItem.ErrorMessage = _ctx.StringValue("DetectQRCodes.FailDetails["+ i +"].ErrorMessage");
 
 				detectQRCodesResponse_failDetails.Add(failDetailsItem);
 			}

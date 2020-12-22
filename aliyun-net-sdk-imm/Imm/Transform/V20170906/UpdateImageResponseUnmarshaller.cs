@@ -26,23 +26,23 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class UpdateImageResponseUnmarshaller
     {
-        public static UpdateImageResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateImageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateImageResponse updateImageResponse = new UpdateImageResponse();
 
-			updateImageResponse.HttpResponse = context.HttpResponse;
-			updateImageResponse.RequestId = context.StringValue("UpdateImage.RequestId");
-			updateImageResponse.SetId = context.StringValue("UpdateImage.SetId");
-			updateImageResponse.ImageUri = context.StringValue("UpdateImage.ImageUri");
-			updateImageResponse.RemarksA = context.StringValue("UpdateImage.RemarksA");
-			updateImageResponse.RemarksB = context.StringValue("UpdateImage.RemarksB");
-			updateImageResponse.CreateTime = context.StringValue("UpdateImage.CreateTime");
-			updateImageResponse.ModifyTime = context.StringValue("UpdateImage.ModifyTime");
-			updateImageResponse.RemarksC = context.StringValue("UpdateImage.RemarksC");
-			updateImageResponse.RemarksD = context.StringValue("UpdateImage.RemarksD");
-			updateImageResponse.ExternalId = context.StringValue("UpdateImage.ExternalId");
-			updateImageResponse.RemarksArrayA = context.StringValue("UpdateImage.RemarksArrayA");
-			updateImageResponse.RemarksArrayB = context.StringValue("UpdateImage.RemarksArrayB");
+			updateImageResponse.HttpResponse = _ctx.HttpResponse;
+			updateImageResponse.RequestId = _ctx.StringValue("UpdateImage.RequestId");
+			updateImageResponse.SetId = _ctx.StringValue("UpdateImage.SetId");
+			updateImageResponse.ImageUri = _ctx.StringValue("UpdateImage.ImageUri");
+			updateImageResponse.RemarksA = _ctx.StringValue("UpdateImage.RemarksA");
+			updateImageResponse.RemarksB = _ctx.StringValue("UpdateImage.RemarksB");
+			updateImageResponse.CreateTime = _ctx.StringValue("UpdateImage.CreateTime");
+			updateImageResponse.ModifyTime = _ctx.StringValue("UpdateImage.ModifyTime");
+			updateImageResponse.RemarksC = _ctx.StringValue("UpdateImage.RemarksC");
+			updateImageResponse.RemarksD = _ctx.StringValue("UpdateImage.RemarksD");
+			updateImageResponse.ExternalId = _ctx.StringValue("UpdateImage.ExternalId");
+			updateImageResponse.RemarksArrayA = _ctx.StringValue("UpdateImage.RemarksArrayA");
+			updateImageResponse.RemarksArrayB = _ctx.StringValue("UpdateImage.RemarksArrayB");
         
 			return updateImageResponse;
         }

@@ -26,19 +26,19 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class GetDocIndexTaskResponseUnmarshaller
     {
-        public static GetDocIndexTaskResponse Unmarshall(UnmarshallerContext context)
+        public static GetDocIndexTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetDocIndexTaskResponse getDocIndexTaskResponse = new GetDocIndexTaskResponse();
 
-			getDocIndexTaskResponse.HttpResponse = context.HttpResponse;
-			getDocIndexTaskResponse.RequestId = context.StringValue("GetDocIndexTask.RequestId");
-			getDocIndexTaskResponse.Status = context.StringValue("GetDocIndexTask.Status");
-			getDocIndexTaskResponse.TaskId = context.StringValue("GetDocIndexTask.TaskId");
-			getDocIndexTaskResponse.CreateTime = context.StringValue("GetDocIndexTask.CreateTime");
-			getDocIndexTaskResponse.FinishTime = context.StringValue("GetDocIndexTask.FinishTime");
+			getDocIndexTaskResponse.HttpResponse = _ctx.HttpResponse;
+			getDocIndexTaskResponse.RequestId = _ctx.StringValue("GetDocIndexTask.RequestId");
+			getDocIndexTaskResponse.Status = _ctx.StringValue("GetDocIndexTask.Status");
+			getDocIndexTaskResponse.TaskId = _ctx.StringValue("GetDocIndexTask.TaskId");
+			getDocIndexTaskResponse.CreateTime = _ctx.StringValue("GetDocIndexTask.CreateTime");
+			getDocIndexTaskResponse.FinishTime = _ctx.StringValue("GetDocIndexTask.FinishTime");
 
 			GetDocIndexTaskResponse.GetDocIndexTask_FailDetail failDetail = new GetDocIndexTaskResponse.GetDocIndexTask_FailDetail();
-			failDetail.Code = context.StringValue("GetDocIndexTask.FailDetail.Code");
+			failDetail.Code = _ctx.StringValue("GetDocIndexTask.FailDetail.Code");
 			getDocIndexTaskResponse.FailDetail = failDetail;
         
 			return getDocIndexTaskResponse;

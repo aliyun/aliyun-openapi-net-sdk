@@ -26,23 +26,23 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 {
     public class GetVideoTaskResponseUnmarshaller
     {
-        public static GetVideoTaskResponse Unmarshall(UnmarshallerContext context)
+        public static GetVideoTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetVideoTaskResponse getVideoTaskResponse = new GetVideoTaskResponse();
 
-			getVideoTaskResponse.HttpResponse = context.HttpResponse;
-			getVideoTaskResponse.RequestId = context.StringValue("GetVideoTask.RequestId");
-			getVideoTaskResponse.TaskId = context.StringValue("GetVideoTask.TaskId");
-			getVideoTaskResponse.TaskType = context.StringValue("GetVideoTask.TaskType");
-			getVideoTaskResponse.Parameters = context.StringValue("GetVideoTask.Parameters");
-			getVideoTaskResponse.Result = context.StringValue("GetVideoTask.Result");
-			getVideoTaskResponse.Status = context.StringValue("GetVideoTask.Status");
-			getVideoTaskResponse.StartTime = context.StringValue("GetVideoTask.StartTime");
-			getVideoTaskResponse.EndTime = context.StringValue("GetVideoTask.EndTime");
-			getVideoTaskResponse.ErrorMessage = context.StringValue("GetVideoTask.ErrorMessage");
-			getVideoTaskResponse.NotifyEndpoint = context.StringValue("GetVideoTask.NotifyEndpoint");
-			getVideoTaskResponse.NotifyTopicName = context.StringValue("GetVideoTask.NotifyTopicName");
-			getVideoTaskResponse.Progress = context.IntegerValue("GetVideoTask.Progress");
+			getVideoTaskResponse.HttpResponse = _ctx.HttpResponse;
+			getVideoTaskResponse.RequestId = _ctx.StringValue("GetVideoTask.RequestId");
+			getVideoTaskResponse.TaskId = _ctx.StringValue("GetVideoTask.TaskId");
+			getVideoTaskResponse.TaskType = _ctx.StringValue("GetVideoTask.TaskType");
+			getVideoTaskResponse.Parameters = _ctx.StringValue("GetVideoTask.Parameters");
+			getVideoTaskResponse.Result = _ctx.StringValue("GetVideoTask.Result");
+			getVideoTaskResponse.Status = _ctx.StringValue("GetVideoTask.Status");
+			getVideoTaskResponse.StartTime = _ctx.StringValue("GetVideoTask.StartTime");
+			getVideoTaskResponse.EndTime = _ctx.StringValue("GetVideoTask.EndTime");
+			getVideoTaskResponse.ErrorMessage = _ctx.StringValue("GetVideoTask.ErrorMessage");
+			getVideoTaskResponse.NotifyEndpoint = _ctx.StringValue("GetVideoTask.NotifyEndpoint");
+			getVideoTaskResponse.NotifyTopicName = _ctx.StringValue("GetVideoTask.NotifyTopicName");
+			getVideoTaskResponse.Progress = _ctx.IntegerValue("GetVideoTask.Progress");
         
 			return getVideoTaskResponse;
         }
