@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 {
     public class DeleteServerCertificateResponseUnmarshaller
     {
-        public static DeleteServerCertificateResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteServerCertificateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteServerCertificateResponse deleteServerCertificateResponse = new DeleteServerCertificateResponse();
 
-			deleteServerCertificateResponse.HttpResponse = context.HttpResponse;
-			deleteServerCertificateResponse.RequestId = context.StringValue("DeleteServerCertificate.RequestId");
+			deleteServerCertificateResponse.HttpResponse = _ctx.HttpResponse;
+			deleteServerCertificateResponse.RequestId = _ctx.StringValue("DeleteServerCertificate.RequestId");
         
 			return deleteServerCertificateResponse;
         }

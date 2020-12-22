@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 {
     public class UploadCACertificateResponseUnmarshaller
     {
-        public static UploadCACertificateResponse Unmarshall(UnmarshallerContext context)
+        public static UploadCACertificateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UploadCACertificateResponse uploadCACertificateResponse = new UploadCACertificateResponse();
 
-			uploadCACertificateResponse.HttpResponse = context.HttpResponse;
-			uploadCACertificateResponse.RequestId = context.StringValue("UploadCACertificate.RequestId");
-			uploadCACertificateResponse.CACertificateId = context.StringValue("UploadCACertificate.CACertificateId");
-			uploadCACertificateResponse.CACertificateName = context.StringValue("UploadCACertificate.CACertificateName");
-			uploadCACertificateResponse.Fingerprint = context.StringValue("UploadCACertificate.Fingerprint");
-			uploadCACertificateResponse.ResourceGroupId = context.StringValue("UploadCACertificate.ResourceGroupId");
-			uploadCACertificateResponse.CreateTime = context.StringValue("UploadCACertificate.CreateTime");
-			uploadCACertificateResponse.CreateTimeStamp = context.LongValue("UploadCACertificate.CreateTimeStamp");
-			uploadCACertificateResponse.ExpireTime = context.StringValue("UploadCACertificate.ExpireTime");
-			uploadCACertificateResponse.ExpireTimeStamp = context.LongValue("UploadCACertificate.ExpireTimeStamp");
-			uploadCACertificateResponse.CommonName = context.StringValue("UploadCACertificate.CommonName");
+			uploadCACertificateResponse.HttpResponse = _ctx.HttpResponse;
+			uploadCACertificateResponse.RequestId = _ctx.StringValue("UploadCACertificate.RequestId");
+			uploadCACertificateResponse.CACertificateId = _ctx.StringValue("UploadCACertificate.CACertificateId");
+			uploadCACertificateResponse.CACertificateName = _ctx.StringValue("UploadCACertificate.CACertificateName");
+			uploadCACertificateResponse.Fingerprint = _ctx.StringValue("UploadCACertificate.Fingerprint");
+			uploadCACertificateResponse.ResourceGroupId = _ctx.StringValue("UploadCACertificate.ResourceGroupId");
+			uploadCACertificateResponse.CreateTime = _ctx.StringValue("UploadCACertificate.CreateTime");
+			uploadCACertificateResponse.CreateTimeStamp = _ctx.LongValue("UploadCACertificate.CreateTimeStamp");
+			uploadCACertificateResponse.ExpireTime = _ctx.StringValue("UploadCACertificate.ExpireTime");
+			uploadCACertificateResponse.ExpireTimeStamp = _ctx.LongValue("UploadCACertificate.ExpireTimeStamp");
+			uploadCACertificateResponse.CommonName = _ctx.StringValue("UploadCACertificate.CommonName");
         
 			return uploadCACertificateResponse;
         }

@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Slb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Slb.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -47,29 +48,15 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string masterZoneId;
 
-		private int? pageNumber;
-
 		private string resourceGroupId;
 
 		private string loadBalancerName;
 
-		private int? pageSize;
-
-		private string addressType;
-
 		private string slaveZoneId;
-
-		private string address;
-
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
 
 		private long? ownerId;
 
 		private string serverId;
-
-		private string loadBalancerStatus;
 
 		private string tags;
 
@@ -80,6 +67,20 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string loadBalancerId;
 
 		private string internetChargeType;
+
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		private string addressType;
+
+		private string address;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private string loadBalancerStatus;
 
 		private string vpcId;
 
@@ -137,19 +138,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string ResourceGroupId
 		{
 			get
@@ -176,32 +164,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string AddressType
-		{
-			get
-			{
-				return addressType;
-			}
-			set	
-			{
-				addressType = value;
-				DictionaryUtil.Add(QueryParameters, "AddressType", value);
-			}
-		}
-
 		public string SlaveZoneId
 		{
 			get
@@ -212,45 +174,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				slaveZoneId = value;
 				DictionaryUtil.Add(QueryParameters, "SlaveZoneId", value);
-			}
-		}
-
-		public string Address
-		{
-			get
-			{
-				return address;
-			}
-			set	
-			{
-				address = value;
-				DictionaryUtil.Add(QueryParameters, "Address", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -277,19 +200,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				serverId = value;
 				DictionaryUtil.Add(QueryParameters, "ServerId", value);
-			}
-		}
-
-		public string LoadBalancerStatus
-		{
-			get
-			{
-				return loadBalancerStatus;
-			}
-			set	
-			{
-				loadBalancerStatus = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalancerStatus", value);
 			}
 		}
 
@@ -355,6 +265,97 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				internetChargeType = value;
 				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string AddressType
+		{
+			get
+			{
+				return addressType;
+			}
+			set	
+			{
+				addressType = value;
+				DictionaryUtil.Add(QueryParameters, "AddressType", value);
+			}
+		}
+
+		public string Address
+		{
+			get
+			{
+				return address;
+			}
+			set	
+			{
+				address = value;
+				DictionaryUtil.Add(QueryParameters, "Address", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string LoadBalancerStatus
+		{
+			get
+			{
+				return loadBalancerStatus;
+			}
+			set	
+			{
+				loadBalancerStatus = value;
+				DictionaryUtil.Add(QueryParameters, "LoadBalancerStatus", value);
 			}
 		}
 

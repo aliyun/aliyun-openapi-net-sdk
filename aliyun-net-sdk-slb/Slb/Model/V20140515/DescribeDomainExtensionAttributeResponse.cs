@@ -37,6 +37,10 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private int? listenerPort;
 
+		private List<DescribeDomainExtensionAttribute_Certificate> certificates;
+
+		private List<DescribeDomainExtensionAttribute_ServerCertificate> serverCertificates;
+
 		public string RequestId
 		{
 			get
@@ -106,6 +110,122 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				listenerPort = value;
+			}
+		}
+
+		public List<DescribeDomainExtensionAttribute_Certificate> Certificates
+		{
+			get
+			{
+				return certificates;
+			}
+			set	
+			{
+				certificates = value;
+			}
+		}
+
+		public List<DescribeDomainExtensionAttribute_ServerCertificate> ServerCertificates
+		{
+			get
+			{
+				return serverCertificates;
+			}
+			set	
+			{
+				serverCertificates = value;
+			}
+		}
+
+		public class DescribeDomainExtensionAttribute_Certificate
+		{
+
+			private string certificateId;
+
+			private string encryptionAlgorithm;
+
+			public string CertificateId
+			{
+				get
+				{
+					return certificateId;
+				}
+				set	
+				{
+					certificateId = value;
+				}
+			}
+
+			public string EncryptionAlgorithm
+			{
+				get
+				{
+					return encryptionAlgorithm;
+				}
+				set	
+				{
+					encryptionAlgorithm = value;
+				}
+			}
+		}
+
+		public class DescribeDomainExtensionAttribute_ServerCertificate
+		{
+
+			private string certificateId;
+
+			private string encryptionAlgorithm;
+
+			private string standardType;
+
+			private string bindingType;
+
+			public string CertificateId
+			{
+				get
+				{
+					return certificateId;
+				}
+				set	
+				{
+					certificateId = value;
+				}
+			}
+
+			public string EncryptionAlgorithm
+			{
+				get
+				{
+					return encryptionAlgorithm;
+				}
+				set	
+				{
+					encryptionAlgorithm = value;
+				}
+			}
+
+			public string StandardType
+			{
+				get
+				{
+					return standardType;
+				}
+				set	
+				{
+					standardType = value;
+				}
+			}
+
+			public string BindingType
+			{
+				get
+				{
+					return bindingType;
+				}
+				set	
+				{
+					bindingType = value;
+				}
 			}
 		}
 	}

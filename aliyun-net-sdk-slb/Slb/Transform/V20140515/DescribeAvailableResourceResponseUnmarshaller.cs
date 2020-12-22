@@ -26,24 +26,24 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 {
     public class DescribeAvailableResourceResponseUnmarshaller
     {
-        public static DescribeAvailableResourceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAvailableResourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAvailableResourceResponse describeAvailableResourceResponse = new DescribeAvailableResourceResponse();
 
-			describeAvailableResourceResponse.HttpResponse = context.HttpResponse;
-			describeAvailableResourceResponse.RequestId = context.StringValue("DescribeAvailableResource.RequestId");
+			describeAvailableResourceResponse.HttpResponse = _ctx.HttpResponse;
+			describeAvailableResourceResponse.RequestId = _ctx.StringValue("DescribeAvailableResource.RequestId");
 
 			List<DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableResource> describeAvailableResourceResponse_availableResources = new List<DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableResource>();
-			for (int i = 0; i < context.Length("DescribeAvailableResource.AvailableResources.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeAvailableResource.AvailableResources.Length"); i++) {
 				DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableResource availableResource = new DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableResource();
-				availableResource.MasterZoneId = context.StringValue("DescribeAvailableResource.AvailableResources["+ i +"].MasterZoneId");
-				availableResource.SlaveZoneId = context.StringValue("DescribeAvailableResource.AvailableResources["+ i +"].SlaveZoneId");
+				availableResource.MasterZoneId = _ctx.StringValue("DescribeAvailableResource.AvailableResources["+ i +"].MasterZoneId");
+				availableResource.SlaveZoneId = _ctx.StringValue("DescribeAvailableResource.AvailableResources["+ i +"].SlaveZoneId");
 
 				List<DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableResource.DescribeAvailableResource_SupportResource> availableResource_supportResources = new List<DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableResource.DescribeAvailableResource_SupportResource>();
-				for (int j = 0; j < context.Length("DescribeAvailableResource.AvailableResources["+ i +"].SupportResources.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeAvailableResource.AvailableResources["+ i +"].SupportResources.Length"); j++) {
 					DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableResource.DescribeAvailableResource_SupportResource supportResource = new DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableResource.DescribeAvailableResource_SupportResource();
-					supportResource.AddressType = context.StringValue("DescribeAvailableResource.AvailableResources["+ i +"].SupportResources["+ j +"].AddressType");
-					supportResource.AddressIPVersion = context.StringValue("DescribeAvailableResource.AvailableResources["+ i +"].SupportResources["+ j +"].AddressIPVersion");
+					supportResource.AddressType = _ctx.StringValue("DescribeAvailableResource.AvailableResources["+ i +"].SupportResources["+ j +"].AddressType");
+					supportResource.AddressIPVersion = _ctx.StringValue("DescribeAvailableResource.AvailableResources["+ i +"].SupportResources["+ j +"].AddressIPVersion");
 
 					availableResource_supportResources.Add(supportResource);
 				}

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 {
     public class CreateLoadBalancerUDPListenerResponseUnmarshaller
     {
-        public static CreateLoadBalancerUDPListenerResponse Unmarshall(UnmarshallerContext context)
+        public static CreateLoadBalancerUDPListenerResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateLoadBalancerUDPListenerResponse createLoadBalancerUDPListenerResponse = new CreateLoadBalancerUDPListenerResponse();
 
-			createLoadBalancerUDPListenerResponse.HttpResponse = context.HttpResponse;
-			createLoadBalancerUDPListenerResponse.RequestId = context.StringValue("CreateLoadBalancerUDPListener.RequestId");
+			createLoadBalancerUDPListenerResponse.HttpResponse = _ctx.HttpResponse;
+			createLoadBalancerUDPListenerResponse.RequestId = _ctx.StringValue("CreateLoadBalancerUDPListener.RequestId");
         
 			return createLoadBalancerUDPListenerResponse;
         }

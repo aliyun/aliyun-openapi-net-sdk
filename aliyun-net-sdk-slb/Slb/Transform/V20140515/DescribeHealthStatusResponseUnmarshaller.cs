@@ -26,24 +26,24 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 {
     public class DescribeHealthStatusResponseUnmarshaller
     {
-        public static DescribeHealthStatusResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeHealthStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeHealthStatusResponse describeHealthStatusResponse = new DescribeHealthStatusResponse();
 
-			describeHealthStatusResponse.HttpResponse = context.HttpResponse;
-			describeHealthStatusResponse.RequestId = context.StringValue("DescribeHealthStatus.RequestId");
+			describeHealthStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeHealthStatusResponse.RequestId = _ctx.StringValue("DescribeHealthStatus.RequestId");
 
 			List<DescribeHealthStatusResponse.DescribeHealthStatus_BackendServer> describeHealthStatusResponse_backendServers = new List<DescribeHealthStatusResponse.DescribeHealthStatus_BackendServer>();
-			for (int i = 0; i < context.Length("DescribeHealthStatus.BackendServers.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeHealthStatus.BackendServers.Length"); i++) {
 				DescribeHealthStatusResponse.DescribeHealthStatus_BackendServer backendServer = new DescribeHealthStatusResponse.DescribeHealthStatus_BackendServer();
-				backendServer.ListenerPort = context.IntegerValue("DescribeHealthStatus.BackendServers["+ i +"].ListenerPort");
-				backendServer.ServerId = context.StringValue("DescribeHealthStatus.BackendServers["+ i +"].ServerId");
-				backendServer.Port = context.IntegerValue("DescribeHealthStatus.BackendServers["+ i +"].Port");
-				backendServer.ServerHealthStatus = context.StringValue("DescribeHealthStatus.BackendServers["+ i +"].ServerHealthStatus");
-				backendServer.ServerIp = context.StringValue("DescribeHealthStatus.BackendServers["+ i +"].ServerIp");
-				backendServer.EniHost = context.StringValue("DescribeHealthStatus.BackendServers["+ i +"].EniHost");
-				backendServer.Protocol = context.StringValue("DescribeHealthStatus.BackendServers["+ i +"].Protocol");
-				backendServer.Type = context.StringValue("DescribeHealthStatus.BackendServers["+ i +"].Type");
+				backendServer.ListenerPort = _ctx.IntegerValue("DescribeHealthStatus.BackendServers["+ i +"].ListenerPort");
+				backendServer.ServerId = _ctx.StringValue("DescribeHealthStatus.BackendServers["+ i +"].ServerId");
+				backendServer.Port = _ctx.IntegerValue("DescribeHealthStatus.BackendServers["+ i +"].Port");
+				backendServer.ServerHealthStatus = _ctx.StringValue("DescribeHealthStatus.BackendServers["+ i +"].ServerHealthStatus");
+				backendServer.ServerIp = _ctx.StringValue("DescribeHealthStatus.BackendServers["+ i +"].ServerIp");
+				backendServer.EniHost = _ctx.StringValue("DescribeHealthStatus.BackendServers["+ i +"].EniHost");
+				backendServer.Protocol = _ctx.StringValue("DescribeHealthStatus.BackendServers["+ i +"].Protocol");
+				backendServer.Type = _ctx.StringValue("DescribeHealthStatus.BackendServers["+ i +"].Type");
 
 				describeHealthStatusResponse_backendServers.Add(backendServer);
 			}

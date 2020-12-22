@@ -134,6 +134,12 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 			private string addressIPVersion;
 
+			private string businessStatus;
+
+			private string modificationProtectionStatus;
+
+			private string modificationProtectionReason;
+
 			private List<DescribeLoadBalancers_Tag> tags;
 
 			public string LoadBalancerId
@@ -349,6 +355,42 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					addressIPVersion = value;
+				}
+			}
+
+			public string BusinessStatus
+			{
+				get
+				{
+					return businessStatus;
+				}
+				set	
+				{
+					businessStatus = value;
+				}
+			}
+
+			public string ModificationProtectionStatus
+			{
+				get
+				{
+					return modificationProtectionStatus;
+				}
+				set	
+				{
+					modificationProtectionStatus = value;
+				}
+			}
+
+			public string ModificationProtectionReason
+			{
+				get
+				{
+					return modificationProtectionReason;
+				}
+				set	
+				{
+					modificationProtectionReason = value;
 				}
 			}
 

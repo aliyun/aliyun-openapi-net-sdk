@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 {
     public class SetDomainExtensionAttributeResponseUnmarshaller
     {
-        public static SetDomainExtensionAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static SetDomainExtensionAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetDomainExtensionAttributeResponse setDomainExtensionAttributeResponse = new SetDomainExtensionAttributeResponse();
 
-			setDomainExtensionAttributeResponse.HttpResponse = context.HttpResponse;
-			setDomainExtensionAttributeResponse.RequestId = context.StringValue("SetDomainExtensionAttribute.RequestId");
+			setDomainExtensionAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			setDomainExtensionAttributeResponse.RequestId = _ctx.StringValue("SetDomainExtensionAttribute.RequestId");
         
 			return setDomainExtensionAttributeResponse;
         }

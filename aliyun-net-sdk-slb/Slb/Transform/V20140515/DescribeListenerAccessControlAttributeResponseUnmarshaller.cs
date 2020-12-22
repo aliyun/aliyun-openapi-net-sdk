@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 {
     public class DescribeListenerAccessControlAttributeResponseUnmarshaller
     {
-        public static DescribeListenerAccessControlAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeListenerAccessControlAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeListenerAccessControlAttributeResponse describeListenerAccessControlAttributeResponse = new DescribeListenerAccessControlAttributeResponse();
 
-			describeListenerAccessControlAttributeResponse.HttpResponse = context.HttpResponse;
-			describeListenerAccessControlAttributeResponse.RequestId = context.StringValue("DescribeListenerAccessControlAttribute.RequestId");
-			describeListenerAccessControlAttributeResponse.AccessControlStatus = context.StringValue("DescribeListenerAccessControlAttribute.AccessControlStatus");
-			describeListenerAccessControlAttributeResponse.SourceItems = context.StringValue("DescribeListenerAccessControlAttribute.SourceItems");
+			describeListenerAccessControlAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			describeListenerAccessControlAttributeResponse.RequestId = _ctx.StringValue("DescribeListenerAccessControlAttribute.RequestId");
+			describeListenerAccessControlAttributeResponse.AccessControlStatus = _ctx.StringValue("DescribeListenerAccessControlAttribute.AccessControlStatus");
+			describeListenerAccessControlAttributeResponse.SourceItems = _ctx.StringValue("DescribeListenerAccessControlAttribute.SourceItems");
         
 			return describeListenerAccessControlAttributeResponse;
         }

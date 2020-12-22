@@ -107,6 +107,12 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private bool? supportPrivateLink;
 
+		private string businessStatus;
+
+		private string modificationProtectionStatus;
+
+		private string modificationProtectionReason;
+
 		private List<DescribeLoadBalancerAttribute_ListenerPortAndProtocal> listenerPortsAndProtocal;
 
 		private List<DescribeLoadBalancerAttribute_ListenerPortAndProtocol> listenerPortsAndProtocol;
@@ -114,6 +120,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private List<DescribeLoadBalancerAttribute_BackendServer> backendServers;
 
 		private List<string> listenerPorts;
+
+		private List<string> labels;
 
 		public string RequestId
 		{
@@ -607,6 +615,42 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string BusinessStatus
+		{
+			get
+			{
+				return businessStatus;
+			}
+			set	
+			{
+				businessStatus = value;
+			}
+		}
+
+		public string ModificationProtectionStatus
+		{
+			get
+			{
+				return modificationProtectionStatus;
+			}
+			set	
+			{
+				modificationProtectionStatus = value;
+			}
+		}
+
+		public string ModificationProtectionReason
+		{
+			get
+			{
+				return modificationProtectionReason;
+			}
+			set	
+			{
+				modificationProtectionReason = value;
+			}
+		}
+
 		public List<DescribeLoadBalancerAttribute_ListenerPortAndProtocal> ListenerPortsAndProtocal
 		{
 			get
@@ -652,6 +696,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				listenerPorts = value;
+			}
+		}
+
+		public List<string> Labels
+		{
+			get
+			{
+				return labels;
+			}
+			set	
+			{
+				labels = value;
 			}
 		}
 

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 {
     public class StopLoadBalancerListenerResponseUnmarshaller
     {
-        public static StopLoadBalancerListenerResponse Unmarshall(UnmarshallerContext context)
+        public static StopLoadBalancerListenerResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopLoadBalancerListenerResponse stopLoadBalancerListenerResponse = new StopLoadBalancerListenerResponse();
 
-			stopLoadBalancerListenerResponse.HttpResponse = context.HttpResponse;
-			stopLoadBalancerListenerResponse.RequestId = context.StringValue("StopLoadBalancerListener.RequestId");
+			stopLoadBalancerListenerResponse.HttpResponse = _ctx.HttpResponse;
+			stopLoadBalancerListenerResponse.RequestId = _ctx.StringValue("StopLoadBalancerListener.RequestId");
         
 			return stopLoadBalancerListenerResponse;
         }

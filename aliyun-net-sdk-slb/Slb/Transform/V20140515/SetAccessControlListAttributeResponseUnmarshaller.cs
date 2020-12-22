@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 {
     public class SetAccessControlListAttributeResponseUnmarshaller
     {
-        public static SetAccessControlListAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static SetAccessControlListAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetAccessControlListAttributeResponse setAccessControlListAttributeResponse = new SetAccessControlListAttributeResponse();
 
-			setAccessControlListAttributeResponse.HttpResponse = context.HttpResponse;
-			setAccessControlListAttributeResponse.RequestId = context.StringValue("SetAccessControlListAttribute.RequestId");
-			setAccessControlListAttributeResponse.AclId = context.StringValue("SetAccessControlListAttribute.AclId");
+			setAccessControlListAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			setAccessControlListAttributeResponse.RequestId = _ctx.StringValue("SetAccessControlListAttribute.RequestId");
+			setAccessControlListAttributeResponse.AclId = _ctx.StringValue("SetAccessControlListAttribute.AclId");
         
 			return setAccessControlListAttributeResponse;
         }

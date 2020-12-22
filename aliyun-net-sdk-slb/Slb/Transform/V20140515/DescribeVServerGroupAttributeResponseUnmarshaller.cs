@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 {
     public class DescribeVServerGroupAttributeResponseUnmarshaller
     {
-        public static DescribeVServerGroupAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVServerGroupAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVServerGroupAttributeResponse describeVServerGroupAttributeResponse = new DescribeVServerGroupAttributeResponse();
 
-			describeVServerGroupAttributeResponse.HttpResponse = context.HttpResponse;
-			describeVServerGroupAttributeResponse.RequestId = context.StringValue("DescribeVServerGroupAttribute.RequestId");
-			describeVServerGroupAttributeResponse.VServerGroupId = context.StringValue("DescribeVServerGroupAttribute.VServerGroupId");
-			describeVServerGroupAttributeResponse.VServerGroupName = context.StringValue("DescribeVServerGroupAttribute.VServerGroupName");
-			describeVServerGroupAttributeResponse.LoadBalancerId = context.StringValue("DescribeVServerGroupAttribute.LoadBalancerId");
+			describeVServerGroupAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			describeVServerGroupAttributeResponse.RequestId = _ctx.StringValue("DescribeVServerGroupAttribute.RequestId");
+			describeVServerGroupAttributeResponse.VServerGroupId = _ctx.StringValue("DescribeVServerGroupAttribute.VServerGroupId");
+			describeVServerGroupAttributeResponse.VServerGroupName = _ctx.StringValue("DescribeVServerGroupAttribute.VServerGroupName");
+			describeVServerGroupAttributeResponse.LoadBalancerId = _ctx.StringValue("DescribeVServerGroupAttribute.LoadBalancerId");
 
 			List<DescribeVServerGroupAttributeResponse.DescribeVServerGroupAttribute_BackendServer> describeVServerGroupAttributeResponse_backendServers = new List<DescribeVServerGroupAttributeResponse.DescribeVServerGroupAttribute_BackendServer>();
-			for (int i = 0; i < context.Length("DescribeVServerGroupAttribute.BackendServers.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVServerGroupAttribute.BackendServers.Length"); i++) {
 				DescribeVServerGroupAttributeResponse.DescribeVServerGroupAttribute_BackendServer backendServer = new DescribeVServerGroupAttributeResponse.DescribeVServerGroupAttribute_BackendServer();
-				backendServer.ServerId = context.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].ServerId");
-				backendServer.Port = context.IntegerValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].Port");
-				backendServer.Weight = context.IntegerValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].Weight");
-				backendServer.Type = context.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].Type");
-				backendServer.ServerIp = context.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].ServerIp");
-				backendServer.VpcId = context.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].VpcId");
-				backendServer.VbrId = context.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].VbrId");
-				backendServer.ServerRegionId = context.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].ServerRegionId");
-				backendServer.Description = context.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].Description");
+				backendServer.ServerId = _ctx.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].ServerId");
+				backendServer.Port = _ctx.IntegerValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].Port");
+				backendServer.Weight = _ctx.IntegerValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].Weight");
+				backendServer.Type = _ctx.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].Type");
+				backendServer.ServerIp = _ctx.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].ServerIp");
+				backendServer.VpcId = _ctx.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].VpcId");
+				backendServer.VbrId = _ctx.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].VbrId");
+				backendServer.ServerRegionId = _ctx.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].ServerRegionId");
+				backendServer.Description = _ctx.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].Description");
 
 				describeVServerGroupAttributeResponse_backendServers.Add(backendServer);
 			}

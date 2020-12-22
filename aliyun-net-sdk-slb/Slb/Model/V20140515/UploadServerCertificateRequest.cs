@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Slb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Slb.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -56,6 +57,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string aliCloudCertificateRegionId;
 
 		private string serverCertificateName;
 
@@ -173,6 +176,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AliCloudCertificateRegionId
+		{
+			get
+			{
+				return aliCloudCertificateRegionId;
+			}
+			set	
+			{
+				aliCloudCertificateRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "AliCloudCertificateRegionId", value);
 			}
 		}
 

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 {
     public class SetRuleResponseUnmarshaller
     {
-        public static SetRuleResponse Unmarshall(UnmarshallerContext context)
+        public static SetRuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetRuleResponse setRuleResponse = new SetRuleResponse();
 
-			setRuleResponse.HttpResponse = context.HttpResponse;
-			setRuleResponse.RequestId = context.StringValue("SetRule.RequestId");
+			setRuleResponse.HttpResponse = _ctx.HttpResponse;
+			setRuleResponse.RequestId = _ctx.StringValue("SetRule.RequestId");
         
 			return setRuleResponse;
         }

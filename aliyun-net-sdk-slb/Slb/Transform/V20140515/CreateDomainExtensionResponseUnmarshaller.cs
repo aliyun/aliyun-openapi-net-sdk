@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 {
     public class CreateDomainExtensionResponseUnmarshaller
     {
-        public static CreateDomainExtensionResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDomainExtensionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDomainExtensionResponse createDomainExtensionResponse = new CreateDomainExtensionResponse();
 
-			createDomainExtensionResponse.HttpResponse = context.HttpResponse;
-			createDomainExtensionResponse.RequestId = context.StringValue("CreateDomainExtension.RequestId");
-			createDomainExtensionResponse.ListenerPort = context.IntegerValue("CreateDomainExtension.ListenerPort");
-			createDomainExtensionResponse.DomainExtensionId = context.StringValue("CreateDomainExtension.DomainExtensionId");
+			createDomainExtensionResponse.HttpResponse = _ctx.HttpResponse;
+			createDomainExtensionResponse.RequestId = _ctx.StringValue("CreateDomainExtension.RequestId");
+			createDomainExtensionResponse.ListenerPort = _ctx.IntegerValue("CreateDomainExtension.ListenerPort");
+			createDomainExtensionResponse.DomainExtensionId = _ctx.StringValue("CreateDomainExtension.DomainExtensionId");
         
 			return createDomainExtensionResponse;
         }
