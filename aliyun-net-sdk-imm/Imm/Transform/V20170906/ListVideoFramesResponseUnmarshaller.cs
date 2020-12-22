@@ -63,9 +63,6 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				framesItem.FacesFailReason = _ctx.StringValue("ListVideoFrames.Frames["+ i +"].FacesFailReason");
 				framesItem.TagsFailReason = _ctx.StringValue("ListVideoFrames.Frames["+ i +"].TagsFailReason");
 				framesItem.TagsModifyTime = _ctx.StringValue("ListVideoFrames.Frames["+ i +"].TagsModifyTime");
-				framesItem.CelebrityStatus = _ctx.StringValue("ListVideoFrames.Frames["+ i +"].CelebrityStatus");
-				framesItem.CelebrityModifyTime = _ctx.StringValue("ListVideoFrames.Frames["+ i +"].CelebrityModifyTime");
-				framesItem.CelebrityFailReason = _ctx.StringValue("ListVideoFrames.Frames["+ i +"].CelebrityFailReason");
 				framesItem.TagsStatus = _ctx.StringValue("ListVideoFrames.Frames["+ i +"].TagsStatus");
 				framesItem.RemarksC = _ctx.StringValue("ListVideoFrames.Frames["+ i +"].RemarksC");
 				framesItem.RemarksD = _ctx.StringValue("ListVideoFrames.Frames["+ i +"].RemarksD");
@@ -141,7 +138,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 
 					ListVideoFramesResponse.ListVideoFrames_FramesItem.ListVideoFrames_OCRItem.ListVideoFrames_OCRBoundary oCRBoundary = new ListVideoFramesResponse.ListVideoFrames_FramesItem.ListVideoFrames_OCRItem.ListVideoFrames_OCRBoundary();
 					oCRBoundary.Left = _ctx.IntegerValue("ListVideoFrames.Frames["+ i +"].OCR["+ j +"].OCRBoundary.Left");
-					oCRBoundary.Left1 = _ctx.IntegerValue("ListVideoFrames.Frames["+ i +"].OCR["+ j +"].OCRBoundary.Left");
+					oCRBoundary.Top = _ctx.IntegerValue("ListVideoFrames.Frames["+ i +"].OCR["+ j +"].OCRBoundary.Top");
 					oCRBoundary.Width = _ctx.IntegerValue("ListVideoFrames.Frames["+ i +"].OCR["+ j +"].OCRBoundary.Width");
 					oCRBoundary.Height = _ctx.IntegerValue("ListVideoFrames.Frames["+ i +"].OCR["+ j +"].OCRBoundary.Height");
 					oCRItem.OCRBoundary = oCRBoundary;
@@ -149,25 +146,6 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 					framesItem_oCR.Add(oCRItem);
 				}
 				framesItem.OCR = framesItem_oCR;
-
-				List<ListVideoFramesResponse.ListVideoFrames_FramesItem.ListVideoFrames_CelebrityItem> framesItem_celebrity = new List<ListVideoFramesResponse.ListVideoFrames_FramesItem.ListVideoFrames_CelebrityItem>();
-				for (int j = 0; j < _ctx.Length("ListVideoFrames.Frames["+ i +"].Celebrity.Length"); j++) {
-					ListVideoFramesResponse.ListVideoFrames_FramesItem.ListVideoFrames_CelebrityItem celebrityItem = new ListVideoFramesResponse.ListVideoFrames_FramesItem.ListVideoFrames_CelebrityItem();
-					celebrityItem.CelebrityName = _ctx.StringValue("ListVideoFrames.Frames["+ i +"].Celebrity["+ j +"].CelebrityName");
-					celebrityItem.CelebrityGender = _ctx.StringValue("ListVideoFrames.Frames["+ i +"].Celebrity["+ j +"].CelebrityGender");
-					celebrityItem.CelebrityConfidence = _ctx.FloatValue("ListVideoFrames.Frames["+ i +"].Celebrity["+ j +"].CelebrityConfidence");
-					celebrityItem.CelebrityLibraryName = _ctx.StringValue("ListVideoFrames.Frames["+ i +"].Celebrity["+ j +"].CelebrityLibraryName");
-
-					ListVideoFramesResponse.ListVideoFrames_FramesItem.ListVideoFrames_CelebrityItem.ListVideoFrames_CelebrityBoundary celebrityBoundary = new ListVideoFramesResponse.ListVideoFrames_FramesItem.ListVideoFrames_CelebrityItem.ListVideoFrames_CelebrityBoundary();
-					celebrityBoundary.Left = _ctx.IntegerValue("ListVideoFrames.Frames["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Left");
-					celebrityBoundary.Top = _ctx.IntegerValue("ListVideoFrames.Frames["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Top");
-					celebrityBoundary.Width = _ctx.IntegerValue("ListVideoFrames.Frames["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Width");
-					celebrityBoundary.Height = _ctx.IntegerValue("ListVideoFrames.Frames["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Height");
-					celebrityItem.CelebrityBoundary = celebrityBoundary;
-
-					framesItem_celebrity.Add(celebrityItem);
-				}
-				framesItem.Celebrity = framesItem_celebrity;
 
 				listVideoFramesResponse_frames.Add(framesItem);
 			}

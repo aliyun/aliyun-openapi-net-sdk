@@ -57,9 +57,6 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			getImageResponse.FacesFailReason = _ctx.StringValue("GetImage.FacesFailReason");
 			getImageResponse.TagsFailReason = _ctx.StringValue("GetImage.TagsFailReason");
 			getImageResponse.TagsModifyTime = _ctx.StringValue("GetImage.TagsModifyTime");
-			getImageResponse.CelebrityStatus = _ctx.StringValue("GetImage.CelebrityStatus");
-			getImageResponse.CelebrityModifyTime = _ctx.StringValue("GetImage.CelebrityModifyTime");
-			getImageResponse.CelebrityFailReason = _ctx.StringValue("GetImage.CelebrityFailReason");
 			getImageResponse.TagsStatus = _ctx.StringValue("GetImage.TagsStatus");
 			getImageResponse.RemarksC = _ctx.StringValue("GetImage.RemarksC");
 			getImageResponse.RemarksD = _ctx.StringValue("GetImage.RemarksD");
@@ -193,25 +190,6 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				getImageResponse_tags.Add(tagsItem);
 			}
 			getImageResponse.Tags = getImageResponse_tags;
-
-			List<GetImageResponse.GetImage_CelebrityItem> getImageResponse_celebrity = new List<GetImageResponse.GetImage_CelebrityItem>();
-			for (int i = 0; i < _ctx.Length("GetImage.Celebrity.Length"); i++) {
-				GetImageResponse.GetImage_CelebrityItem celebrityItem = new GetImageResponse.GetImage_CelebrityItem();
-				celebrityItem.CelebrityName = _ctx.StringValue("GetImage.Celebrity["+ i +"].CelebrityName");
-				celebrityItem.CelebrityGender = _ctx.StringValue("GetImage.Celebrity["+ i +"].CelebrityGender");
-				celebrityItem.CelebrityConfidence = _ctx.FloatValue("GetImage.Celebrity["+ i +"].CelebrityConfidence");
-				celebrityItem.CelebrityLibraryName = _ctx.StringValue("GetImage.Celebrity["+ i +"].CelebrityLibraryName");
-
-				GetImageResponse.GetImage_CelebrityItem.GetImage_CelebrityBoundary celebrityBoundary = new GetImageResponse.GetImage_CelebrityItem.GetImage_CelebrityBoundary();
-				celebrityBoundary.Left = _ctx.IntegerValue("GetImage.Celebrity["+ i +"].CelebrityBoundary.Left");
-				celebrityBoundary.Top = _ctx.IntegerValue("GetImage.Celebrity["+ i +"].CelebrityBoundary.Top");
-				celebrityBoundary.Width = _ctx.IntegerValue("GetImage.Celebrity["+ i +"].CelebrityBoundary.Width");
-				celebrityBoundary.Height = _ctx.IntegerValue("GetImage.Celebrity["+ i +"].CelebrityBoundary.Height");
-				celebrityItem.CelebrityBoundary = celebrityBoundary;
-
-				getImageResponse_celebrity.Add(celebrityItem);
-			}
-			getImageResponse.Celebrity = getImageResponse_celebrity;
         
 			return getImageResponse;
         }

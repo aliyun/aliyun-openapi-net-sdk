@@ -62,9 +62,6 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				imagesItem.FacesFailReason = _ctx.StringValue("ListImages.Images["+ i +"].FacesFailReason");
 				imagesItem.TagsFailReason = _ctx.StringValue("ListImages.Images["+ i +"].TagsFailReason");
 				imagesItem.TagsModifyTime = _ctx.StringValue("ListImages.Images["+ i +"].TagsModifyTime");
-				imagesItem.CelebrityStatus = _ctx.StringValue("ListImages.Images["+ i +"].CelebrityStatus");
-				imagesItem.CelebrityModifyTime = _ctx.StringValue("ListImages.Images["+ i +"].CelebrityModifyTime");
-				imagesItem.CelebrityFailReason = _ctx.StringValue("ListImages.Images["+ i +"].CelebrityFailReason");
 				imagesItem.TagsStatus = _ctx.StringValue("ListImages.Images["+ i +"].TagsStatus");
 				imagesItem.RemarksC = _ctx.StringValue("ListImages.Images["+ i +"].RemarksC");
 				imagesItem.RemarksD = _ctx.StringValue("ListImages.Images["+ i +"].RemarksD");
@@ -198,25 +195,6 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 					imagesItem_oCR.Add(oCRItem);
 				}
 				imagesItem.OCR = imagesItem_oCR;
-
-				List<ListImagesResponse.ListImages_ImagesItem.ListImages_CelebrityItem> imagesItem_celebrity = new List<ListImagesResponse.ListImages_ImagesItem.ListImages_CelebrityItem>();
-				for (int j = 0; j < _ctx.Length("ListImages.Images["+ i +"].Celebrity.Length"); j++) {
-					ListImagesResponse.ListImages_ImagesItem.ListImages_CelebrityItem celebrityItem = new ListImagesResponse.ListImages_ImagesItem.ListImages_CelebrityItem();
-					celebrityItem.CelebrityName = _ctx.StringValue("ListImages.Images["+ i +"].Celebrity["+ j +"].CelebrityName");
-					celebrityItem.CelebrityGender = _ctx.StringValue("ListImages.Images["+ i +"].Celebrity["+ j +"].CelebrityGender");
-					celebrityItem.CelebrityConfidence = _ctx.FloatValue("ListImages.Images["+ i +"].Celebrity["+ j +"].CelebrityConfidence");
-					celebrityItem.CelebrityLibraryName = _ctx.StringValue("ListImages.Images["+ i +"].Celebrity["+ j +"].CelebrityLibraryName");
-
-					ListImagesResponse.ListImages_ImagesItem.ListImages_CelebrityItem.ListImages_CelebrityBoundary celebrityBoundary = new ListImagesResponse.ListImages_ImagesItem.ListImages_CelebrityItem.ListImages_CelebrityBoundary();
-					celebrityBoundary.Left = _ctx.IntegerValue("ListImages.Images["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Left");
-					celebrityBoundary.Top = _ctx.IntegerValue("ListImages.Images["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Top");
-					celebrityBoundary.Width = _ctx.IntegerValue("ListImages.Images["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Width");
-					celebrityBoundary.Height = _ctx.IntegerValue("ListImages.Images["+ i +"].Celebrity["+ j +"].CelebrityBoundary.Height");
-					celebrityItem.CelebrityBoundary = celebrityBoundary;
-
-					imagesItem_celebrity.Add(celebrityItem);
-				}
-				imagesItem.Celebrity = imagesItem_celebrity;
 
 				listImagesResponse_images.Add(imagesItem);
 			}

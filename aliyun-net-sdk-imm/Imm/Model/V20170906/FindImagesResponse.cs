@@ -132,12 +132,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private string tagsModifyTime;
 
-			private string celebrityStatus;
-
-			private string celebrityModifyTime;
-
-			private string celebrityFailReason;
-
 			private string tagsStatus;
 
 			private string remarksC;
@@ -175,8 +169,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			private List<FindImages_TagsItem> tags;
 
 			private List<FindImages_OCRItem> oCR;
-
-			private List<FindImages_CelebrityItem> celebrity;
 
 			private FindImages_ImageQuality imageQuality;
 
@@ -470,42 +462,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
-			public string CelebrityStatus
-			{
-				get
-				{
-					return celebrityStatus;
-				}
-				set	
-				{
-					celebrityStatus = value;
-				}
-			}
-
-			public string CelebrityModifyTime
-			{
-				get
-				{
-					return celebrityModifyTime;
-				}
-				set	
-				{
-					celebrityModifyTime = value;
-				}
-			}
-
-			public string CelebrityFailReason
-			{
-				get
-				{
-					return celebrityFailReason;
-				}
-				set	
-				{
-					celebrityFailReason = value;
-				}
-			}
-
 			public string TagsStatus
 			{
 				get
@@ -731,18 +687,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				set	
 				{
 					oCR = value;
-				}
-			}
-
-			public List<FindImages_CelebrityItem> Celebrity
-			{
-				get
-				{
-					return celebrity;
-				}
-				set	
-				{
-					celebrity = value;
 				}
 			}
 
@@ -1478,140 +1422,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 
 				public class FindImages_OCRBoundary
-				{
-
-					private int? left;
-
-					private int? top;
-
-					private int? width;
-
-					private int? height;
-
-					public int? Left
-					{
-						get
-						{
-							return left;
-						}
-						set	
-						{
-							left = value;
-						}
-					}
-
-					public int? Top
-					{
-						get
-						{
-							return top;
-						}
-						set	
-						{
-							top = value;
-						}
-					}
-
-					public int? Width
-					{
-						get
-						{
-							return width;
-						}
-						set	
-						{
-							width = value;
-						}
-					}
-
-					public int? Height
-					{
-						get
-						{
-							return height;
-						}
-						set	
-						{
-							height = value;
-						}
-					}
-				}
-			}
-
-			public class FindImages_CelebrityItem
-			{
-
-				private string celebrityName;
-
-				private string celebrityGender;
-
-				private float? celebrityConfidence;
-
-				private string celebrityLibraryName;
-
-				private FindImages_CelebrityBoundary celebrityBoundary;
-
-				public string CelebrityName
-				{
-					get
-					{
-						return celebrityName;
-					}
-					set	
-					{
-						celebrityName = value;
-					}
-				}
-
-				public string CelebrityGender
-				{
-					get
-					{
-						return celebrityGender;
-					}
-					set	
-					{
-						celebrityGender = value;
-					}
-				}
-
-				public float? CelebrityConfidence
-				{
-					get
-					{
-						return celebrityConfidence;
-					}
-					set	
-					{
-						celebrityConfidence = value;
-					}
-				}
-
-				public string CelebrityLibraryName
-				{
-					get
-					{
-						return celebrityLibraryName;
-					}
-					set	
-					{
-						celebrityLibraryName = value;
-					}
-				}
-
-				public FindImages_CelebrityBoundary CelebrityBoundary
-				{
-					get
-					{
-						return celebrityBoundary;
-					}
-					set	
-					{
-						celebrityBoundary = value;
-					}
-				}
-
-				public class FindImages_CelebrityBoundary
 				{
 
 					private int? left;
