@@ -59,6 +59,10 @@ namespace Aliyun.Acs.hitsdb.Transform.V20170601
 			describeHiTSDBInstanceResponse.Series = _ctx.IntegerValue("DescribeHiTSDBInstance.Series");
 			describeHiTSDBInstanceResponse.RDSStatus = _ctx.StringValue("DescribeHiTSDBInstance.RDSStatus");
 			describeHiTSDBInstanceResponse.DiskCategory = _ctx.StringValue("DescribeHiTSDBInstance.DiskCategory");
+			describeHiTSDBInstanceResponse.Status = _ctx.StringValue("DescribeHiTSDBInstance.Status");
+			describeHiTSDBInstanceResponse.PaymentType = _ctx.StringValue("DescribeHiTSDBInstance.PaymentType");
+			describeHiTSDBInstanceResponse.CreateTime = _ctx.LongValue("DescribeHiTSDBInstance.CreateTime");
+			describeHiTSDBInstanceResponse.ExpiredTime = _ctx.LongValue("DescribeHiTSDBInstance.ExpiredTime");
 
 			List<DescribeHiTSDBInstanceResponse.DescribeHiTSDBInstance_SecurityIp> describeHiTSDBInstanceResponse_securityIpList = new List<DescribeHiTSDBInstanceResponse.DescribeHiTSDBInstance_SecurityIp>();
 			for (int i = 0; i < _ctx.Length("DescribeHiTSDBInstance.SecurityIpList.Length"); i++) {

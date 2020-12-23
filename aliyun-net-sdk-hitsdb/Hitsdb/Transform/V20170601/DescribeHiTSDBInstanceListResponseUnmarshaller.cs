@@ -60,6 +60,10 @@ namespace Aliyun.Acs.hitsdb.Transform.V20170601
 				instance.MaxSeriesPerDatabase = _ctx.StringValue("DescribeHiTSDBInstanceList.InstanceList["+ i +"].MaxSeriesPerDatabase");
 				instance.VpcId = _ctx.StringValue("DescribeHiTSDBInstanceList.InstanceList["+ i +"].VpcId");
 				instance.VswitchId = _ctx.StringValue("DescribeHiTSDBInstanceList.InstanceList["+ i +"].VswitchId");
+				instance.Status = _ctx.StringValue("DescribeHiTSDBInstanceList.InstanceList["+ i +"].Status");
+				instance.PaymentType = _ctx.StringValue("DescribeHiTSDBInstanceList.InstanceList["+ i +"].PaymentType");
+				instance.CreateTime = _ctx.LongValue("DescribeHiTSDBInstanceList.InstanceList["+ i +"].CreateTime");
+				instance.ExpiredTime = _ctx.LongValue("DescribeHiTSDBInstanceList.InstanceList["+ i +"].ExpiredTime");
 
 				describeHiTSDBInstanceListResponse_instanceList.Add(instance);
 			}

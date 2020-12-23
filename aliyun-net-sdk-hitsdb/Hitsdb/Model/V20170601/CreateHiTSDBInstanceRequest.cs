@@ -42,10 +42,6 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
 
 		private long? resourceOwnerId;
 
-		private string connectionString;
-
-		private string clientToken;
-
 		private string instanceClass;
 
 		private string duration;
@@ -84,32 +80,6 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ConnectionString
-		{
-			get
-			{
-				return connectionString;
-			}
-			set	
-			{
-				connectionString = value;
-				DictionaryUtil.Add(QueryParameters, "ConnectionString", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 

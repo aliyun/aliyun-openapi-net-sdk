@@ -81,6 +81,14 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
 
 		private string diskCategory;
 
+		private string status;
+
+		private string paymentType;
+
+		private long? createTime;
+
+		private long? expiredTime;
+
 		private List<DescribeHiTSDBInstance_SecurityIp> securityIpList;
 
 		public string RequestId
@@ -416,6 +424,54 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
 			set	
 			{
 				diskCategory = value;
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+			}
+		}
+
+		public string PaymentType
+		{
+			get
+			{
+				return paymentType;
+			}
+			set	
+			{
+				paymentType = value;
+			}
+		}
+
+		public long? CreateTime
+		{
+			get
+			{
+				return createTime;
+			}
+			set	
+			{
+				createTime = value;
+			}
+		}
+
+		public long? ExpiredTime
+		{
+			get
+			{
+				return expiredTime;
+			}
+			set	
+			{
+				expiredTime = value;
 			}
 		}
 

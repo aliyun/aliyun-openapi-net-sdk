@@ -140,6 +140,14 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
 
 			private string vswitchId;
 
+			private string status;
+
+			private string paymentType;
+
+			private long? createTime;
+
+			private long? expiredTime;
+
 			public string InstanceId
 			{
 				get
@@ -389,6 +397,54 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
 				set	
 				{
 					vswitchId = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string PaymentType
+			{
+				get
+				{
+					return paymentType;
+				}
+				set	
+				{
+					paymentType = value;
+				}
+			}
+
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public long? ExpiredTime
+			{
+				get
+				{
+					return expiredTime;
+				}
+				set	
+				{
+					expiredTime = value;
 				}
 			}
 		}
