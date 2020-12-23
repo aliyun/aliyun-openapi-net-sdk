@@ -74,6 +74,7 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 			describeInstanceResponse.AutoRenewal = _ctx.BooleanValue("DescribeInstance.AutoRenewal");
 			describeInstanceResponse.Duration = _ctx.IntegerValue("DescribeInstance.Duration");
 			describeInstanceResponse.ColdStorageSize = _ctx.IntegerValue("DescribeInstance.ColdStorageSize");
+			describeInstanceResponse.ResourceGroupId = _ctx.StringValue("DescribeInstance.ResourceGroupId");
 
 			List<DescribeInstanceResponse.DescribeInstance_Tag> describeInstanceResponse_tags = new List<DescribeInstanceResponse.DescribeInstance_Tag>();
 			for (int i = 0; i < _ctx.Length("DescribeInstance.Tags.Length"); i++) {

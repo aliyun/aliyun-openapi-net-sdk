@@ -111,6 +111,8 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private int? coldStorageSize;
 
+		private string resourceGroupId;
+
 		private List<DescribeInstance_Tag> tags;
 
 		public string RequestId
@@ -626,6 +628,18 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			set	
 			{
 				coldStorageSize = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 

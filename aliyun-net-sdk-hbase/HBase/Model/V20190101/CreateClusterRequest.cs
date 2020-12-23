@@ -46,6 +46,8 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private string engineVersion;
 
+		private string resourceGroupId;
+
 		private string engine;
 
 		private int? autoRenewPeriod;
@@ -112,6 +114,19 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			{
 				engineVersion = value;
 				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

@@ -170,6 +170,8 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 			private int? duration;
 
+			private string resourceGroupId;
+
 			private List<DescribeInstances_Tag> tags;
 
 			public string InstanceId
@@ -601,6 +603,18 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 				set	
 				{
 					duration = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 

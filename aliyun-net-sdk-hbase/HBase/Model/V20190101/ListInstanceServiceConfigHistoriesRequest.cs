@@ -27,10 +27,10 @@ using Aliyun.Acs.HBase.Transform.V20190101;
 
 namespace Aliyun.Acs.HBase.Model.V20190101
 {
-    public class DescribeInstancesRequest : RpcAcsRequest<DescribeInstancesResponse>
+    public class ListInstanceServiceConfigHistoriesRequest : RpcAcsRequest<ListInstanceServiceConfigHistoriesResponse>
     {
-        public DescribeInstancesRequest()
-            : base("HBase", "2019-01-01", "DescribeInstances", "hbase", "openAPI")
+        public ListInstanceServiceConfigHistoriesRequest()
+            : base("HBase", "2019-01-01", "ListInstanceServiceConfigHistories", "hbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,28 +40,22 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			Method = MethodType.POST;
         }
 
-		private string clusterName;
+		private string clusterId;
 
 		private int? pageNumber;
 
-		private string resourceGroupId;
-
 		private int? pageSize;
 
-		private List<Tag> tags = new List<Tag>(){ };
-
-		private string dbType;
-
-		public string ClusterName
+		public string ClusterId
 		{
 			get
 			{
-				return clusterName;
+				return clusterId;
 			}
 			set	
 			{
-				clusterName = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterName", value);
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
 			}
 		}
 
@@ -78,19 +72,6 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -104,72 +85,9 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
-		public List<Tag> Tags
-		{
-			get
-			{
-				return tags;
-			}
-
-			set
-			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
-			}
-		}
-
-		public string DbType
-		{
-			get
-			{
-				return dbType;
-			}
-			set	
-			{
-				dbType = value;
-				DictionaryUtil.Add(QueryParameters, "DbType", value);
-			}
-		}
-
-		public class Tag
-		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
-
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
-		}
-
-        public override DescribeInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListInstanceServiceConfigHistoriesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListInstanceServiceConfigHistoriesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

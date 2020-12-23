@@ -27,10 +27,10 @@ using Aliyun.Acs.HBase.Transform.V20190101;
 
 namespace Aliyun.Acs.HBase.Model.V20190101
 {
-    public class DescribeInstancesRequest : RpcAcsRequest<DescribeInstancesResponse>
+    public class DescribeBackupsRequest : RpcAcsRequest<DescribeBackupsResponse>
     {
-        public DescribeInstancesRequest()
-            : base("HBase", "2019-01-01", "DescribeInstances", "hbase", "openAPI")
+        public DescribeBackupsRequest()
+            : base("HBase", "2019-01-01", "DescribeBackups", "hbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,32 +40,36 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			Method = MethodType.POST;
         }
 
-		private string clusterName;
+		private string startTime;
 
-		private int? pageNumber;
+		private string pageNumber;
 
-		private string resourceGroupId;
+		private string pageSize;
 
-		private int? pageSize;
+		private string startTimeUTC;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private string backupId;
 
-		private string dbType;
+		private string endTime;
 
-		public string ClusterName
+		private string clusterId;
+
+		private string endTimeUTC;
+
+		public string StartTime
 		{
 			get
 			{
-				return clusterName;
+				return startTime;
 			}
 			set	
 			{
-				clusterName = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterName", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		public int? PageNumber
+		public string PageNumber
 		{
 			get
 			{
@@ -74,24 +78,11 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			set	
 			{
 				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value);
 			}
 		}
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public int? PageSize
+		public string PageSize
 		{
 			get
 			{
@@ -100,76 +91,78 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			set	
 			{
 				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "PageSize", value);
 			}
 		}
 
-		public List<Tag> Tags
+		public string StartTimeUTC
 		{
 			get
 			{
-				return tags;
-			}
-
-			set
-			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
-			}
-		}
-
-		public string DbType
-		{
-			get
-			{
-				return dbType;
+				return startTimeUTC;
 			}
 			set	
 			{
-				dbType = value;
-				DictionaryUtil.Add(QueryParameters, "DbType", value);
+				startTimeUTC = value;
+				DictionaryUtil.Add(QueryParameters, "StartTimeUTC", value);
 			}
 		}
 
-		public class Tag
+		public string BackupId
 		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value
+			get
 			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
+				return backupId;
 			}
-
-			public string Key
+			set	
 			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
+				backupId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupId", value);
 			}
 		}
 
-        public override DescribeInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public string EndTimeUTC
+		{
+			get
+			{
+				return endTimeUTC;
+			}
+			set	
+			{
+				endTimeUTC = value;
+				DictionaryUtil.Add(QueryParameters, "EndTimeUTC", value);
+			}
+		}
+
+        public override DescribeBackupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeBackupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

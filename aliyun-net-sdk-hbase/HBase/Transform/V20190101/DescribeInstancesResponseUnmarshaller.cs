@@ -75,6 +75,7 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 				instance.CoreDiskCount = _ctx.StringValue("DescribeInstances.Instances["+ i +"].CoreDiskCount");
 				instance.AutoRenewal = _ctx.BooleanValue("DescribeInstances.Instances["+ i +"].AutoRenewal");
 				instance.Duration = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].Duration");
+				instance.ResourceGroupId = _ctx.StringValue("DescribeInstances.Instances["+ i +"].ResourceGroupId");
 
 				List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_Tag> instance_tags = new List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeInstances.Instances["+ i +"].Tags.Length"); j++) {

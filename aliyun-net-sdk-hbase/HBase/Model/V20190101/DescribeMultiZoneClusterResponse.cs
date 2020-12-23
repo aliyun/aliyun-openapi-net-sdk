@@ -115,6 +115,8 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private string vpcId;
 
+		private string resourceGroupId;
+
 		private List<DescribeMultiZoneCluster_MultiZoneInstanceModel> multiZoneInstanceModels;
 
 		private List<DescribeMultiZoneCluster_Tag> tags;
@@ -656,6 +658,18 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			set	
 			{
 				vpcId = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 
