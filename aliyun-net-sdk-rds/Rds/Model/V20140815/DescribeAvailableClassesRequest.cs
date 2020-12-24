@@ -52,8 +52,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string instanceChargeType;
 
-		private string dispenseMode;
-
 		private string commodityCode;
 
 		private string zoneId;
@@ -137,19 +135,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				instanceChargeType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
-			}
-		}
-
-		public string DispenseMode
-		{
-			get
-			{
-				return dispenseMode;
-			}
-			set	
-			{
-				dispenseMode = value;
-				DictionaryUtil.Add(QueryParameters, "DispenseMode", value);
 			}
 		}
 
