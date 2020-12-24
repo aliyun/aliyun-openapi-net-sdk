@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 {
     public class DescribeRegionsResponseUnmarshaller
     {
-        public static DescribeRegionsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRegionsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRegionsResponse describeRegionsResponse = new DescribeRegionsResponse();
 
-			describeRegionsResponse.HttpResponse = context.HttpResponse;
-			describeRegionsResponse.Success = context.BooleanValue("DescribeRegions.Success");
-			describeRegionsResponse.ErrCode = context.StringValue("DescribeRegions.ErrCode");
-			describeRegionsResponse.ErrMessage = context.StringValue("DescribeRegions.ErrMessage");
-			describeRegionsResponse.HttpStatusCode = context.IntegerValue("DescribeRegions.HttpStatusCode");
-			describeRegionsResponse.RequestId = context.StringValue("DescribeRegions.RequestId");
+			describeRegionsResponse.HttpResponse = _ctx.HttpResponse;
+			describeRegionsResponse.Success = _ctx.BooleanValue("DescribeRegions.Success");
+			describeRegionsResponse.ErrCode = _ctx.StringValue("DescribeRegions.ErrCode");
+			describeRegionsResponse.ErrMessage = _ctx.StringValue("DescribeRegions.ErrMessage");
+			describeRegionsResponse.HttpStatusCode = _ctx.IntegerValue("DescribeRegions.HttpStatusCode");
+			describeRegionsResponse.RequestId = _ctx.StringValue("DescribeRegions.RequestId");
 
 			List<string> describeRegionsResponse_regions = new List<string>();
-			for (int i = 0; i < context.Length("DescribeRegions.Regions.Length"); i++) {
-				describeRegionsResponse_regions.Add(context.StringValue("DescribeRegions.Regions["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeRegions.Regions.Length"); i++) {
+				describeRegionsResponse_regions.Add(_ctx.StringValue("DescribeRegions.Regions["+ i +"]"));
 			}
 			describeRegionsResponse.Regions = describeRegionsResponse_regions;
         

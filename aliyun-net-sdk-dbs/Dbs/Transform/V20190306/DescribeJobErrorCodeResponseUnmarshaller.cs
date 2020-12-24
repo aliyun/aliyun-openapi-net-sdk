@@ -26,24 +26,24 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 {
     public class DescribeJobErrorCodeResponseUnmarshaller
     {
-        public static DescribeJobErrorCodeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeJobErrorCodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeJobErrorCodeResponse describeJobErrorCodeResponse = new DescribeJobErrorCodeResponse();
 
-			describeJobErrorCodeResponse.HttpResponse = context.HttpResponse;
-			describeJobErrorCodeResponse.Success = context.BooleanValue("DescribeJobErrorCode.Success");
-			describeJobErrorCodeResponse.ErrCode = context.StringValue("DescribeJobErrorCode.ErrCode");
-			describeJobErrorCodeResponse.ErrMessage = context.StringValue("DescribeJobErrorCode.ErrMessage");
-			describeJobErrorCodeResponse.HttpStatusCode = context.IntegerValue("DescribeJobErrorCode.HttpStatusCode");
-			describeJobErrorCodeResponse.RequestId = context.StringValue("DescribeJobErrorCode.RequestId");
+			describeJobErrorCodeResponse.HttpResponse = _ctx.HttpResponse;
+			describeJobErrorCodeResponse.Success = _ctx.BooleanValue("DescribeJobErrorCode.Success");
+			describeJobErrorCodeResponse.ErrCode = _ctx.StringValue("DescribeJobErrorCode.ErrCode");
+			describeJobErrorCodeResponse.ErrMessage = _ctx.StringValue("DescribeJobErrorCode.ErrMessage");
+			describeJobErrorCodeResponse.HttpStatusCode = _ctx.IntegerValue("DescribeJobErrorCode.HttpStatusCode");
+			describeJobErrorCodeResponse.RequestId = _ctx.StringValue("DescribeJobErrorCode.RequestId");
 
 			DescribeJobErrorCodeResponse.DescribeJobErrorCode_Item item = new DescribeJobErrorCodeResponse.DescribeJobErrorCode_Item();
-			item.JobId = context.StringValue("DescribeJobErrorCode.Item.JobId");
-			item.Language = context.StringValue("DescribeJobErrorCode.Item.Language");
-			item.ErrorCode = context.StringValue("DescribeJobErrorCode.Item.ErrorCode");
-			item.ErrorMessage = context.StringValue("DescribeJobErrorCode.Item.ErrorMessage");
-			item.JobType = context.StringValue("DescribeJobErrorCode.Item.JobType");
-			item.JobState = context.StringValue("DescribeJobErrorCode.Item.JobState");
+			item.JobId = _ctx.StringValue("DescribeJobErrorCode.Item.JobId");
+			item.Language = _ctx.StringValue("DescribeJobErrorCode.Item.Language");
+			item.ErrorCode = _ctx.StringValue("DescribeJobErrorCode.Item.ErrorCode");
+			item.ErrorMessage = _ctx.StringValue("DescribeJobErrorCode.Item.ErrorMessage");
+			item.JobType = _ctx.StringValue("DescribeJobErrorCode.Item.JobType");
+			item.JobState = _ctx.StringValue("DescribeJobErrorCode.Item.JobState");
 			describeJobErrorCodeResponse.Item = item;
         
 			return describeJobErrorCodeResponse;

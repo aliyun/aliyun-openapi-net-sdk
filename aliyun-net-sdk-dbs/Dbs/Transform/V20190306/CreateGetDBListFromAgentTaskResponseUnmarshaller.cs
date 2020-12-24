@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 {
     public class CreateGetDBListFromAgentTaskResponseUnmarshaller
     {
-        public static CreateGetDBListFromAgentTaskResponse Unmarshall(UnmarshallerContext context)
+        public static CreateGetDBListFromAgentTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateGetDBListFromAgentTaskResponse createGetDBListFromAgentTaskResponse = new CreateGetDBListFromAgentTaskResponse();
 
-			createGetDBListFromAgentTaskResponse.HttpResponse = context.HttpResponse;
-			createGetDBListFromAgentTaskResponse.Success = context.BooleanValue("CreateGetDBListFromAgentTask.Success");
-			createGetDBListFromAgentTaskResponse.ErrCode = context.StringValue("CreateGetDBListFromAgentTask.ErrCode");
-			createGetDBListFromAgentTaskResponse.ErrMessage = context.StringValue("CreateGetDBListFromAgentTask.ErrMessage");
-			createGetDBListFromAgentTaskResponse.HttpStatusCode = context.IntegerValue("CreateGetDBListFromAgentTask.HttpStatusCode");
-			createGetDBListFromAgentTaskResponse.RequestId = context.StringValue("CreateGetDBListFromAgentTask.RequestId");
-			createGetDBListFromAgentTaskResponse.TaskId = context.LongValue("CreateGetDBListFromAgentTask.TaskId");
+			createGetDBListFromAgentTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createGetDBListFromAgentTaskResponse.Success = _ctx.BooleanValue("CreateGetDBListFromAgentTask.Success");
+			createGetDBListFromAgentTaskResponse.ErrCode = _ctx.StringValue("CreateGetDBListFromAgentTask.ErrCode");
+			createGetDBListFromAgentTaskResponse.ErrMessage = _ctx.StringValue("CreateGetDBListFromAgentTask.ErrMessage");
+			createGetDBListFromAgentTaskResponse.HttpStatusCode = _ctx.IntegerValue("CreateGetDBListFromAgentTask.HttpStatusCode");
+			createGetDBListFromAgentTaskResponse.RequestId = _ctx.StringValue("CreateGetDBListFromAgentTask.RequestId");
+			createGetDBListFromAgentTaskResponse.TaskId = _ctx.LongValue("CreateGetDBListFromAgentTask.TaskId");
         
 			return createGetDBListFromAgentTaskResponse;
         }
