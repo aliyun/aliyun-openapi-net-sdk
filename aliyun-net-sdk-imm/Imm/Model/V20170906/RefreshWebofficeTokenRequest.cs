@@ -28,10 +28,10 @@ using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class DetectImageTextsRequest : RpcAcsRequest<DetectImageTextsResponse>
+    public class RefreshWebofficeTokenRequest : RpcAcsRequest<RefreshWebofficeTokenResponse>
     {
-        public DetectImageTextsRequest()
-            : base("imm", "2017-09-06", "DetectImageTexts")
+        public RefreshWebofficeTokenRequest()
+            : base("imm", "2017-09-06", "RefreshWebofficeToken")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,7 +43,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string project;
 
-		private string imageUri;
+		private string accessToken;
+
+		private string refreshToken;
 
 		public string Project
 		{
@@ -58,16 +60,29 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string ImageUri
+		public string AccessToken
 		{
 			get
 			{
-				return imageUri;
+				return accessToken;
 			}
 			set	
 			{
-				imageUri = value;
-				DictionaryUtil.Add(QueryParameters, "ImageUri", value);
+				accessToken = value;
+				DictionaryUtil.Add(QueryParameters, "AccessToken", value);
+			}
+		}
+
+		public string RefreshToken
+		{
+			get
+			{
+				return refreshToken;
+			}
+			set	
+			{
+				refreshToken = value;
+				DictionaryUtil.Add(QueryParameters, "RefreshToken", value);
 			}
 		}
 
@@ -76,9 +91,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override DetectImageTextsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RefreshWebofficeTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DetectImageTextsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RefreshWebofficeTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

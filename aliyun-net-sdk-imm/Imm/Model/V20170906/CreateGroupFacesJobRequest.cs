@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.imm;
 using Aliyun.Acs.imm.Transform;
 using Aliyun.Acs.imm.Transform.V20170906;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class CreateGroupFacesJobRequest : RpcAcsRequest<CreateGroupFacesJobResponse>
     {
         public CreateGroupFacesJobRequest()
-            : base("imm", "2017-09-06", "CreateGroupFacesJob", "imm", "openAPI")
+            : base("imm", "2017-09-06", "CreateGroupFacesJob")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

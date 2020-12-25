@@ -28,10 +28,10 @@ using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class DetectImageTextsRequest : RpcAcsRequest<DetectImageTextsResponse>
+    public class GetWebofficeURLRequest : RpcAcsRequest<GetWebofficeURLResponse>
     {
-        public DetectImageTextsRequest()
-            : base("imm", "2017-09-06", "DetectImageTexts")
+        public GetWebofficeURLRequest()
+            : base("imm", "2017-09-06", "GetWebofficeURL")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,9 +41,34 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			Method = MethodType.POST;
         }
 
+		private string srcType;
+
 		private string project;
 
-		private string imageUri;
+		private string file;
+
+		private string notifyEndpoint;
+
+		private string fileID;
+
+		private string notifyTopicName;
+
+		private string permission;
+
+		private string user;
+
+		public string SrcType
+		{
+			get
+			{
+				return srcType;
+			}
+			set	
+			{
+				srcType = value;
+				DictionaryUtil.Add(QueryParameters, "SrcType", value);
+			}
+		}
 
 		public string Project
 		{
@@ -58,16 +83,81 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string ImageUri
+		public string File
 		{
 			get
 			{
-				return imageUri;
+				return file;
 			}
 			set	
 			{
-				imageUri = value;
-				DictionaryUtil.Add(QueryParameters, "ImageUri", value);
+				file = value;
+				DictionaryUtil.Add(QueryParameters, "File", value);
+			}
+		}
+
+		public string NotifyEndpoint
+		{
+			get
+			{
+				return notifyEndpoint;
+			}
+			set	
+			{
+				notifyEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyEndpoint", value);
+			}
+		}
+
+		public string FileID
+		{
+			get
+			{
+				return fileID;
+			}
+			set	
+			{
+				fileID = value;
+				DictionaryUtil.Add(QueryParameters, "FileID", value);
+			}
+		}
+
+		public string NotifyTopicName
+		{
+			get
+			{
+				return notifyTopicName;
+			}
+			set	
+			{
+				notifyTopicName = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyTopicName", value);
+			}
+		}
+
+		public string Permission
+		{
+			get
+			{
+				return permission;
+			}
+			set	
+			{
+				permission = value;
+				DictionaryUtil.Add(QueryParameters, "Permission", value);
+			}
+		}
+
+		public string User
+		{
+			get
+			{
+				return user;
+			}
+			set	
+			{
+				user = value;
+				DictionaryUtil.Add(QueryParameters, "User", value);
 			}
 		}
 
@@ -76,9 +166,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override DetectImageTextsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetWebofficeURLResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DetectImageTextsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetWebofficeURLResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
