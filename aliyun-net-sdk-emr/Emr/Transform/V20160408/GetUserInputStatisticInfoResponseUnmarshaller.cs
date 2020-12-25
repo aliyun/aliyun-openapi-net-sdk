@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class GetUserInputStatisticInfoResponseUnmarshaller
     {
-        public static GetUserInputStatisticInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetUserInputStatisticInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetUserInputStatisticInfoResponse getUserInputStatisticInfoResponse = new GetUserInputStatisticInfoResponse();
 
-			getUserInputStatisticInfoResponse.HttpResponse = context.HttpResponse;
-			getUserInputStatisticInfoResponse.RequestId = context.StringValue("GetUserInputStatisticInfo.RequestId");
+			getUserInputStatisticInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getUserInputStatisticInfoResponse.RequestId = _ctx.StringValue("GetUserInputStatisticInfo.RequestId");
 
 			List<GetUserInputStatisticInfoResponse.GetUserInputStatisticInfo_ClusterStatUserInput> getUserInputStatisticInfoResponse_userInputList = new List<GetUserInputStatisticInfoResponse.GetUserInputStatisticInfo_ClusterStatUserInput>();
-			for (int i = 0; i < context.Length("GetUserInputStatisticInfo.UserInputList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetUserInputStatisticInfo.UserInputList.Length"); i++) {
 				GetUserInputStatisticInfoResponse.GetUserInputStatisticInfo_ClusterStatUserInput clusterStatUserInput = new GetUserInputStatisticInfoResponse.GetUserInputStatisticInfo_ClusterStatUserInput();
-				clusterStatUserInput.User = context.StringValue("GetUserInputStatisticInfo.UserInputList["+ i +"].User");
-				clusterStatUserInput.BytesInput = context.LongValue("GetUserInputStatisticInfo.UserInputList["+ i +"].BytesInput");
+				clusterStatUserInput.User = _ctx.StringValue("GetUserInputStatisticInfo.UserInputList["+ i +"].User");
+				clusterStatUserInput.BytesInput = _ctx.LongValue("GetUserInputStatisticInfo.UserInputList["+ i +"].BytesInput");
 
 				getUserInputStatisticInfoResponse_userInputList.Add(clusterStatUserInput);
 			}

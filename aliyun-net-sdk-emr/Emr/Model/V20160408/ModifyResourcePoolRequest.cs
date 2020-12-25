@@ -32,25 +32,27 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ModifyResourcePoolRequest()
             : base("Emr", "2016-04-08", "ModifyResourcePool", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string regionId;
-
-		private string name;
-
 		private bool? active;
-
-		private string id;
 
 		private string clusterId;
 
 		private string yarnsiteconfig;
 
-		private List<Config> configs;
+		private string name;
 
-		private string accessKeyId;
+		private string id;
+
+		private List<Config> configs = new List<Config>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -65,32 +67,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
 		public bool? Active
 		{
 			get
@@ -101,19 +77,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				active = value;
 				DictionaryUtil.Add(QueryParameters, "Active", value.ToString());
-			}
-		}
-
-		public string Id
-		{
-			get
-			{
-				return id;
-			}
-			set	
-			{
-				id = value;
-				DictionaryUtil.Add(QueryParameters, "Id", value);
 			}
 		}
 
@@ -143,6 +106,32 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string Id
+		{
+			get
+			{
+				return id;
+			}
+			set	
+			{
+				id = value;
+				DictionaryUtil.Add(QueryParameters, "Id", value);
+			}
+		}
+
 		public List<Config> Configs
 		{
 			get
@@ -161,19 +150,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 					DictionaryUtil.Add(QueryParameters,"Config." + (i + 1) + ".Id", configs[i].Id);
 					DictionaryUtil.Add(QueryParameters,"Config." + (i + 1) + ".Category", configs[i].Category);
 				}
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListClusterServiceQuickLinkResponseUnmarshaller
     {
-        public static ListClusterServiceQuickLinkResponse Unmarshall(UnmarshallerContext context)
+        public static ListClusterServiceQuickLinkResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListClusterServiceQuickLinkResponse listClusterServiceQuickLinkResponse = new ListClusterServiceQuickLinkResponse();
 
-			listClusterServiceQuickLinkResponse.HttpResponse = context.HttpResponse;
-			listClusterServiceQuickLinkResponse.RequestId = context.StringValue("ListClusterServiceQuickLink.RequestId");
+			listClusterServiceQuickLinkResponse.HttpResponse = _ctx.HttpResponse;
+			listClusterServiceQuickLinkResponse.RequestId = _ctx.StringValue("ListClusterServiceQuickLink.RequestId");
 
 			List<ListClusterServiceQuickLinkResponse.ListClusterServiceQuickLink_QuickLink> listClusterServiceQuickLinkResponse_quickLinkList = new List<ListClusterServiceQuickLinkResponse.ListClusterServiceQuickLink_QuickLink>();
-			for (int i = 0; i < context.Length("ListClusterServiceQuickLink.QuickLinkList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListClusterServiceQuickLink.QuickLinkList.Length"); i++) {
 				ListClusterServiceQuickLinkResponse.ListClusterServiceQuickLink_QuickLink quickLink = new ListClusterServiceQuickLinkResponse.ListClusterServiceQuickLink_QuickLink();
-				quickLink.ServiceName = context.StringValue("ListClusterServiceQuickLink.QuickLinkList["+ i +"].ServiceName");
-				quickLink.ServiceDisplayName = context.StringValue("ListClusterServiceQuickLink.QuickLinkList["+ i +"].ServiceDisplayName");
-				quickLink.QuickLinkAddress = context.StringValue("ListClusterServiceQuickLink.QuickLinkList["+ i +"].QuickLinkAddress");
-				quickLink.Protocol = context.StringValue("ListClusterServiceQuickLink.QuickLinkList["+ i +"].Protocol");
-				quickLink.Port = context.StringValue("ListClusterServiceQuickLink.QuickLinkList["+ i +"].Port");
-				quickLink.Type = context.StringValue("ListClusterServiceQuickLink.QuickLinkList["+ i +"].Type");
+				quickLink.ServiceName = _ctx.StringValue("ListClusterServiceQuickLink.QuickLinkList["+ i +"].ServiceName");
+				quickLink.ServiceDisplayName = _ctx.StringValue("ListClusterServiceQuickLink.QuickLinkList["+ i +"].ServiceDisplayName");
+				quickLink.QuickLinkAddress = _ctx.StringValue("ListClusterServiceQuickLink.QuickLinkList["+ i +"].QuickLinkAddress");
+				quickLink.Protocol = _ctx.StringValue("ListClusterServiceQuickLink.QuickLinkList["+ i +"].Protocol");
+				quickLink.Port = _ctx.StringValue("ListClusterServiceQuickLink.QuickLinkList["+ i +"].Port");
+				quickLink.Type = _ctx.StringValue("ListClusterServiceQuickLink.QuickLinkList["+ i +"].Type");
 
 				listClusterServiceQuickLinkResponse_quickLinkList.Add(quickLink);
 			}

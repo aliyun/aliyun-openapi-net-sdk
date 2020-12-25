@@ -26,39 +26,41 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class DescribeScalingRuleResponseUnmarshaller
     {
-        public static DescribeScalingRuleResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeScalingRuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeScalingRuleResponse describeScalingRuleResponse = new DescribeScalingRuleResponse();
 
-			describeScalingRuleResponse.HttpResponse = context.HttpResponse;
-			describeScalingRuleResponse.RequestId = context.StringValue("DescribeScalingRule.RequestId");
-			describeScalingRuleResponse.Id = context.StringValue("DescribeScalingRule.Id");
-			describeScalingRuleResponse.GmtCreate = context.StringValue("DescribeScalingRule.GmtCreate");
-			describeScalingRuleResponse.GmtModified = context.StringValue("DescribeScalingRule.GmtModified");
-			describeScalingRuleResponse.RuleName = context.StringValue("DescribeScalingRule.RuleName");
-			describeScalingRuleResponse.RuleCategory = context.StringValue("DescribeScalingRule.RuleCategory");
-			describeScalingRuleResponse.AdjustmentType = context.StringValue("DescribeScalingRule.AdjustmentType");
-			describeScalingRuleResponse.AdjustmentValue = context.IntegerValue("DescribeScalingRule.AdjustmentValue");
-			describeScalingRuleResponse.Cooldown = context.IntegerValue("DescribeScalingRule.Cooldown");
-			describeScalingRuleResponse.Status = context.StringValue("DescribeScalingRule.Status");
+			describeScalingRuleResponse.HttpResponse = _ctx.HttpResponse;
+			describeScalingRuleResponse.RequestId = _ctx.StringValue("DescribeScalingRule.RequestId");
+			describeScalingRuleResponse.Id = _ctx.StringValue("DescribeScalingRule.Id");
+			describeScalingRuleResponse.GmtCreate = _ctx.StringValue("DescribeScalingRule.GmtCreate");
+			describeScalingRuleResponse.GmtModified = _ctx.StringValue("DescribeScalingRule.GmtModified");
+			describeScalingRuleResponse.RuleName = _ctx.StringValue("DescribeScalingRule.RuleName");
+			describeScalingRuleResponse.RuleCategory = _ctx.StringValue("DescribeScalingRule.RuleCategory");
+			describeScalingRuleResponse.AdjustmentType = _ctx.StringValue("DescribeScalingRule.AdjustmentType");
+			describeScalingRuleResponse.AdjustmentValue = _ctx.IntegerValue("DescribeScalingRule.AdjustmentValue");
+			describeScalingRuleResponse.Cooldown = _ctx.IntegerValue("DescribeScalingRule.Cooldown");
+			describeScalingRuleResponse.Status = _ctx.StringValue("DescribeScalingRule.Status");
+			describeScalingRuleResponse.WithGrace = _ctx.BooleanValue("DescribeScalingRule.WithGrace");
+			describeScalingRuleResponse.TimeoutWithGrace = _ctx.LongValue("DescribeScalingRule.TimeoutWithGrace");
 
 			DescribeScalingRuleResponse.DescribeScalingRule_SchedulerTrigger schedulerTrigger = new DescribeScalingRuleResponse.DescribeScalingRule_SchedulerTrigger();
-			schedulerTrigger.LaunchTime = context.LongValue("DescribeScalingRule.SchedulerTrigger.LaunchTime");
-			schedulerTrigger.LaunchExpirationTime = context.IntegerValue("DescribeScalingRule.SchedulerTrigger.LaunchExpirationTime");
-			schedulerTrigger.RecurrenceType = context.StringValue("DescribeScalingRule.SchedulerTrigger.RecurrenceType");
-			schedulerTrigger.RecurrenceValue = context.StringValue("DescribeScalingRule.SchedulerTrigger.RecurrenceValue");
-			schedulerTrigger.RecurrenceEndTime = context.LongValue("DescribeScalingRule.SchedulerTrigger.RecurrenceEndTime");
+			schedulerTrigger.LaunchTime = _ctx.LongValue("DescribeScalingRule.SchedulerTrigger.LaunchTime");
+			schedulerTrigger.LaunchExpirationTime = _ctx.IntegerValue("DescribeScalingRule.SchedulerTrigger.LaunchExpirationTime");
+			schedulerTrigger.RecurrenceType = _ctx.StringValue("DescribeScalingRule.SchedulerTrigger.RecurrenceType");
+			schedulerTrigger.RecurrenceValue = _ctx.StringValue("DescribeScalingRule.SchedulerTrigger.RecurrenceValue");
+			schedulerTrigger.RecurrenceEndTime = _ctx.LongValue("DescribeScalingRule.SchedulerTrigger.RecurrenceEndTime");
 			describeScalingRuleResponse.SchedulerTrigger = schedulerTrigger;
 
 			DescribeScalingRuleResponse.DescribeScalingRule_CloudWatchTrigger cloudWatchTrigger = new DescribeScalingRuleResponse.DescribeScalingRule_CloudWatchTrigger();
-			cloudWatchTrigger.MetricName = context.StringValue("DescribeScalingRule.CloudWatchTrigger.MetricName");
-			cloudWatchTrigger.Period = context.IntegerValue("DescribeScalingRule.CloudWatchTrigger.Period");
-			cloudWatchTrigger.Statistics = context.StringValue("DescribeScalingRule.CloudWatchTrigger.Statistics");
-			cloudWatchTrigger.ComparisonOperator = context.StringValue("DescribeScalingRule.CloudWatchTrigger.ComparisonOperator");
-			cloudWatchTrigger.Threshold = context.StringValue("DescribeScalingRule.CloudWatchTrigger.Threshold");
-			cloudWatchTrigger.EvaluationCount = context.StringValue("DescribeScalingRule.CloudWatchTrigger.EvaluationCount");
-			cloudWatchTrigger.Unit = context.StringValue("DescribeScalingRule.CloudWatchTrigger.Unit");
-			cloudWatchTrigger.MetricDisplayName = context.StringValue("DescribeScalingRule.CloudWatchTrigger.MetricDisplayName");
+			cloudWatchTrigger.MetricName = _ctx.StringValue("DescribeScalingRule.CloudWatchTrigger.MetricName");
+			cloudWatchTrigger.Period = _ctx.IntegerValue("DescribeScalingRule.CloudWatchTrigger.Period");
+			cloudWatchTrigger.Statistics = _ctx.StringValue("DescribeScalingRule.CloudWatchTrigger.Statistics");
+			cloudWatchTrigger.ComparisonOperator = _ctx.StringValue("DescribeScalingRule.CloudWatchTrigger.ComparisonOperator");
+			cloudWatchTrigger.Threshold = _ctx.StringValue("DescribeScalingRule.CloudWatchTrigger.Threshold");
+			cloudWatchTrigger.EvaluationCount = _ctx.StringValue("DescribeScalingRule.CloudWatchTrigger.EvaluationCount");
+			cloudWatchTrigger.Unit = _ctx.StringValue("DescribeScalingRule.CloudWatchTrigger.Unit");
+			cloudWatchTrigger.MetricDisplayName = _ctx.StringValue("DescribeScalingRule.CloudWatchTrigger.MetricDisplayName");
 			describeScalingRuleResponse.CloudWatchTrigger = cloudWatchTrigger;
         
 			return describeScalingRuleResponse;

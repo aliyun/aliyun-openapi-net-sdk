@@ -32,11 +32,15 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ListFlowNodeSqlResultRequest()
             : base("Emr", "2016-04-08", "ListFlowNodeSqlResult", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private int? offset;
-
-		private string regionId;
 
 		private int? length;
 
@@ -56,19 +60,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				offset = value;
 				DictionaryUtil.Add(QueryParameters, "Offset", value.ToString());
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 

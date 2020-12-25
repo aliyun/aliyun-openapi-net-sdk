@@ -68,6 +68,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string kerberosStatus;
 
+			private string k8sStatus;
+
 			public string UserName
 			{
 				get
@@ -137,6 +139,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					kerberosStatus = value;
+				}
+			}
+
+			public string K8sStatus
+			{
+				get
+				{
+					return k8sStatus;
+				}
+				set	
+				{
+					k8sStatus = value;
 				}
 			}
 		}

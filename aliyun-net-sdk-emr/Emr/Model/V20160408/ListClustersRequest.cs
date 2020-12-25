@@ -32,29 +32,41 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ListClustersRequest()
             : base("Emr", "2016-04-08", "ListClusters", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private List<string> statusLists;
-
-		private string regionId;
-
-		private int? pageSize;
-
-		private List<string> clusterTypeLists;
+		private List<string> statusLists = new List<string>(){ };
 
 		private bool? isDesc;
 
-		private string createType;
-
 		private string depositType;
-
-		private bool? defaultStatus;
 
 		private int? pageNumber;
 
-		private string accessKeyId;
+		private string machineType;
+
+		private string resourceGroupId;
+
+		private int? pageSize;
+
+		private List<Tag> tags = new List<Tag>(){ };
+
+		private string createType;
+
+		private List<string> expiredTagLists = new List<string>(){ };
+
+		private bool? defaultStatus;
+
+		private string name;
+
+		private List<string> clusterTypeLists = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -86,16 +98,68 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
+		public bool? IsDesc
 		{
 			get
 			{
-				return regionId;
+				return isDesc;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				isDesc = value;
+				DictionaryUtil.Add(QueryParameters, "IsDesc", value.ToString());
+			}
+		}
+
+		public string DepositType
+		{
+			get
+			{
+				return depositType;
+			}
+			set	
+			{
+				depositType = value;
+				DictionaryUtil.Add(QueryParameters, "DepositType", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string MachineType
+		{
+			get
+			{
+				return machineType;
+			}
+			set	
+			{
+				machineType = value;
+				DictionaryUtil.Add(QueryParameters, "MachineType", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -109,6 +173,80 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
+		public string CreateType
+		{
+			get
+			{
+				return createType;
+			}
+			set	
+			{
+				createType = value;
+				DictionaryUtil.Add(QueryParameters, "CreateType", value);
+			}
+		}
+
+		public List<string> ExpiredTagLists
+		{
+			get
+			{
+				return expiredTagLists;
+			}
+
+			set
+			{
+				expiredTagLists = value;
+				for (int i = 0; i < expiredTagLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ExpiredTagList." + (i + 1) , expiredTagLists[i]);
+				}
+			}
+		}
+
+		public bool? DefaultStatus
+		{
+			get
+			{
+				return defaultStatus;
+			}
+			set	
+			{
+				defaultStatus = value;
+				DictionaryUtil.Add(QueryParameters, "DefaultStatus", value.ToString());
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
@@ -129,81 +267,35 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public bool? IsDesc
+		public class Tag
 		{
-			get
-			{
-				return isDesc;
-			}
-			set	
-			{
-				isDesc = value;
-				DictionaryUtil.Add(QueryParameters, "IsDesc", value.ToString());
-			}
-		}
 
-		public string CreateType
-		{
-			get
-			{
-				return createType;
-			}
-			set	
-			{
-				createType = value;
-				DictionaryUtil.Add(QueryParameters, "CreateType", value);
-			}
-		}
+			private string value_;
 
-		public string DepositType
-		{
-			get
-			{
-				return depositType;
-			}
-			set	
-			{
-				depositType = value;
-				DictionaryUtil.Add(QueryParameters, "DepositType", value);
-			}
-		}
+			private string key;
 
-		public bool? DefaultStatus
-		{
-			get
+			public string Value
 			{
-				return defaultStatus;
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
-			set	
-			{
-				defaultStatus = value;
-				DictionaryUtil.Add(QueryParameters, "DefaultStatus", value.ToString());
-			}
-		}
 
-		public int? PageNumber
-		{
-			get
+			public string Key
 			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

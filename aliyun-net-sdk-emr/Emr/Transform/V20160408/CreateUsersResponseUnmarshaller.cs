@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class CreateUsersResponseUnmarshaller
     {
-        public static CreateUsersResponse Unmarshall(UnmarshallerContext context)
+        public static CreateUsersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateUsersResponse createUsersResponse = new CreateUsersResponse();
 
-			createUsersResponse.HttpResponse = context.HttpResponse;
-			createUsersResponse.RequestId = context.StringValue("CreateUsers.RequestId");
+			createUsersResponse.HttpResponse = _ctx.HttpResponse;
+			createUsersResponse.RequestId = _ctx.StringValue("CreateUsers.RequestId");
         
 			return createUsersResponse;
         }

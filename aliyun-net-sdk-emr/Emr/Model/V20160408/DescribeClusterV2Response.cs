@@ -62,9 +62,13 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string depositType;
 
+			private string machineType;
+
 			private string zoneId;
 
 			private string name;
+
+			private string extraInfo;
 
 			private string relateClusterId;
 
@@ -136,6 +140,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private bool? easEnable;
 
+			private string autoScalingVersion;
+
 			private bool? autoScalingEnable;
 
 			private bool? autoScalingAllowed;
@@ -144,7 +150,13 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private bool? autoScalingByLoadAllowed;
 
+			private bool? autoScalingWithGraceAllowed;
+
 			private bool? resizeDiskEnable;
+
+			private string metaStoreType;
+
+			private string k8sClusterId;
 
 			private List<DescribeClusterV2_GatewayClusterInfo> gatewayClusterInfoList;
 
@@ -153,6 +165,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			private List<DescribeClusterV2_BootstrapAction> bootstrapActionList;
 
 			private DescribeClusterV2_RelateClusterInfo relateClusterInfo;
+
+			private DescribeClusterV2_HostPoolInfo hostPoolInfo;
 
 			private DescribeClusterV2_FailReason failReason;
 
@@ -196,6 +210,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				}
 			}
 
+			public string MachineType
+			{
+				get
+				{
+					return machineType;
+				}
+				set	
+				{
+					machineType = value;
+				}
+			}
+
 			public string ZoneId
 			{
 				get
@@ -217,6 +243,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					name = value;
+				}
+			}
+
+			public string ExtraInfo
+			{
+				get
+				{
+					return extraInfo;
+				}
+				set	
+				{
+					extraInfo = value;
 				}
 			}
 
@@ -640,6 +678,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				}
 			}
 
+			public string AutoScalingVersion
+			{
+				get
+				{
+					return autoScalingVersion;
+				}
+				set	
+				{
+					autoScalingVersion = value;
+				}
+			}
+
 			public bool? AutoScalingEnable
 			{
 				get
@@ -688,6 +738,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				}
 			}
 
+			public bool? AutoScalingWithGraceAllowed
+			{
+				get
+				{
+					return autoScalingWithGraceAllowed;
+				}
+				set	
+				{
+					autoScalingWithGraceAllowed = value;
+				}
+			}
+
 			public bool? ResizeDiskEnable
 			{
 				get
@@ -697,6 +759,30 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					resizeDiskEnable = value;
+				}
+			}
+
+			public string MetaStoreType
+			{
+				get
+				{
+					return metaStoreType;
+				}
+				set	
+				{
+					metaStoreType = value;
+				}
+			}
+
+			public string K8sClusterId
+			{
+				get
+				{
+					return k8sClusterId;
+				}
+				set	
+				{
+					k8sClusterId = value;
 				}
 			}
 
@@ -745,6 +831,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					relateClusterInfo = value;
+				}
+			}
+
+			public DescribeClusterV2_HostPoolInfo HostPoolInfo
+			{
+				get
+				{
+					return hostPoolInfo;
+				}
+				set	
+				{
+					hostPoolInfo = value;
 				}
 			}
 
@@ -1438,6 +1536,38 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 					set	
 					{
 						status = value;
+					}
+				}
+			}
+
+			public class DescribeClusterV2_HostPoolInfo
+			{
+
+				private string hpBizId;
+
+				private string hpName;
+
+				public string HpBizId
+				{
+					get
+					{
+						return hpBizId;
+					}
+					set	
+					{
+						hpBizId = value;
+					}
+				}
+
+				public string HpName
+				{
+					get
+					{
+						return hpName;
+					}
+					set	
+					{
+						hpName = value;
 					}
 				}
 			}

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class KillExecutionJobInstanceResponseUnmarshaller
     {
-        public static KillExecutionJobInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static KillExecutionJobInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			KillExecutionJobInstanceResponse killExecutionJobInstanceResponse = new KillExecutionJobInstanceResponse();
 
-			killExecutionJobInstanceResponse.HttpResponse = context.HttpResponse;
-			killExecutionJobInstanceResponse.RequestId = context.StringValue("KillExecutionJobInstance.RequestId");
+			killExecutionJobInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			killExecutionJobInstanceResponse.RequestId = _ctx.StringValue("KillExecutionJobInstance.RequestId");
         
 			return killExecutionJobInstanceResponse;
         }

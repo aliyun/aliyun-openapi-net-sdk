@@ -32,21 +32,27 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ListFlowNodeInstanceRequest()
             : base("Emr", "2016-04-08", "ListFlowNodeInstance", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private List<string> statusLists;
-
-		private string regionId;
-
-		private int? pageSize;
+		private List<string> statusLists = new List<string>(){ };
 
 		private string orderBy;
 
 		private long? startTime;
 
-		private string projectId;
-
 		private int? pageNumber;
+
+		private string resourceGroupId;
+
+		private int? pageSize;
+
+		private string projectId;
 
 		private string orderType;
 
@@ -64,32 +70,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				{
 					DictionaryUtil.Add(QueryParameters,"StatusList." + (i + 1) , statusLists[i]);
 				}
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -119,19 +99,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string ProjectId
-		{
-			get
-			{
-				return projectId;
-			}
-			set	
-			{
-				projectId = value;
-				DictionaryUtil.Add(QueryParameters, "ProjectId", value);
-			}
-		}
-
 		public int? PageNumber
 		{
 			get
@@ -142,6 +109,45 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(QueryParameters, "ProjectId", value);
 			}
 		}
 

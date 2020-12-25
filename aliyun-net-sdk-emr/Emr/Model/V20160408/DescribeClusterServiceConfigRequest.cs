@@ -32,6 +32,12 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public DescribeClusterServiceConfigRequest()
             : base("Emr", "2016-04-08", "DescribeClusterServiceConfig", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -40,17 +46,13 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private string tagValue;
 
-		private string regionId;
-
 		private string groupId;
-
-		private string serviceName;
 
 		private string clusterId;
 
-		private string accessKeyId;
-
 		private string configVersion;
+
+		private string serviceName;
 
 		public long? ResourceOwnerId
 		{
@@ -91,19 +93,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string GroupId
 		{
 			get
@@ -114,19 +103,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				groupId = value;
 				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
-		public string ServiceName
-		{
-			get
-			{
-				return serviceName;
-			}
-			set	
-			{
-				serviceName = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
 			}
 		}
 
@@ -143,19 +119,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string ConfigVersion
 		{
 			get
@@ -166,6 +129,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				configVersion = value;
 				DictionaryUtil.Add(QueryParameters, "ConfigVersion", value);
+			}
+		}
+
+		public string ServiceName
+		{
+			get
+			{
+				return serviceName;
+			}
+			set	
+			{
+				serviceName = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
 			}
 		}
 

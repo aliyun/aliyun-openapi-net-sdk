@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListJobInstanceWorkersResponseUnmarshaller
     {
-        public static ListJobInstanceWorkersResponse Unmarshall(UnmarshallerContext context)
+        public static ListJobInstanceWorkersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListJobInstanceWorkersResponse listJobInstanceWorkersResponse = new ListJobInstanceWorkersResponse();
 
-			listJobInstanceWorkersResponse.HttpResponse = context.HttpResponse;
-			listJobInstanceWorkersResponse.RequestId = context.StringValue("ListJobInstanceWorkers.RequestId");
+			listJobInstanceWorkersResponse.HttpResponse = _ctx.HttpResponse;
+			listJobInstanceWorkersResponse.RequestId = _ctx.StringValue("ListJobInstanceWorkers.RequestId");
 
 			List<ListJobInstanceWorkersResponse.ListJobInstanceWorkers_JobInstanceWorkerInfo> listJobInstanceWorkersResponse_jobInstanceWorkers = new List<ListJobInstanceWorkersResponse.ListJobInstanceWorkers_JobInstanceWorkerInfo>();
-			for (int i = 0; i < context.Length("ListJobInstanceWorkers.JobInstanceWorkers.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListJobInstanceWorkers.JobInstanceWorkers.Length"); i++) {
 				ListJobInstanceWorkersResponse.ListJobInstanceWorkers_JobInstanceWorkerInfo jobInstanceWorkerInfo = new ListJobInstanceWorkersResponse.ListJobInstanceWorkers_JobInstanceWorkerInfo();
-				jobInstanceWorkerInfo.ApplicationId = context.StringValue("ListJobInstanceWorkers.JobInstanceWorkers["+ i +"].ApplicationId");
-				jobInstanceWorkerInfo.InstanceInfo = context.StringValue("ListJobInstanceWorkers.JobInstanceWorkers["+ i +"].InstanceInfo");
-				jobInstanceWorkerInfo.ContainerInfo = context.StringValue("ListJobInstanceWorkers.JobInstanceWorkers["+ i +"].ContainerInfo");
+				jobInstanceWorkerInfo.ApplicationId = _ctx.StringValue("ListJobInstanceWorkers.JobInstanceWorkers["+ i +"].ApplicationId");
+				jobInstanceWorkerInfo.InstanceInfo = _ctx.StringValue("ListJobInstanceWorkers.JobInstanceWorkers["+ i +"].InstanceInfo");
+				jobInstanceWorkerInfo.ContainerInfo = _ctx.StringValue("ListJobInstanceWorkers.JobInstanceWorkers["+ i +"].ContainerInfo");
 
 				listJobInstanceWorkersResponse_jobInstanceWorkers.Add(jobInstanceWorkerInfo);
 			}

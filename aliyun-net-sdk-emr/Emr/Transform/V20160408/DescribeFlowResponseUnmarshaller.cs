@@ -26,40 +26,44 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class DescribeFlowResponseUnmarshaller
     {
-        public static DescribeFlowResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeFlowResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeFlowResponse describeFlowResponse = new DescribeFlowResponse();
 
-			describeFlowResponse.HttpResponse = context.HttpResponse;
-			describeFlowResponse.RequestId = context.StringValue("DescribeFlow.RequestId");
-			describeFlowResponse.Id = context.StringValue("DescribeFlow.Id");
-			describeFlowResponse.GmtCreate = context.LongValue("DescribeFlow.GmtCreate");
-			describeFlowResponse.GmtModified = context.LongValue("DescribeFlow.GmtModified");
-			describeFlowResponse.Name = context.StringValue("DescribeFlow.Name");
-			describeFlowResponse.Description = context.StringValue("DescribeFlow.Description");
-			describeFlowResponse.Type = context.StringValue("DescribeFlow.Type");
-			describeFlowResponse.Status = context.StringValue("DescribeFlow.Status");
-			describeFlowResponse.Periodic = context.BooleanValue("DescribeFlow.Periodic");
-			describeFlowResponse.StartSchedule = context.LongValue("DescribeFlow.StartSchedule");
-			describeFlowResponse.EndSchedule = context.LongValue("DescribeFlow.EndSchedule");
-			describeFlowResponse.CronExpr = context.StringValue("DescribeFlow.CronExpr");
-			describeFlowResponse.CreateCluster = context.BooleanValue("DescribeFlow.CreateCluster");
-			describeFlowResponse.ClusterId = context.StringValue("DescribeFlow.ClusterId");
-			describeFlowResponse.HostName = context.StringValue("DescribeFlow.HostName");
-			describeFlowResponse.Graph = context.StringValue("DescribeFlow.Graph");
-			describeFlowResponse.CategoryId = context.StringValue("DescribeFlow.CategoryId");
-			describeFlowResponse.AlertConf = context.StringValue("DescribeFlow.AlertConf");
-			describeFlowResponse.AlertUserGroupBizId = context.StringValue("DescribeFlow.AlertUserGroupBizId");
-			describeFlowResponse.AlertDingDingGroupBizId = context.StringValue("DescribeFlow.AlertDingDingGroupBizId");
-			describeFlowResponse.Application = context.StringValue("DescribeFlow.Application");
+			describeFlowResponse.HttpResponse = _ctx.HttpResponse;
+			describeFlowResponse.RequestId = _ctx.StringValue("DescribeFlow.RequestId");
+			describeFlowResponse.Id = _ctx.StringValue("DescribeFlow.Id");
+			describeFlowResponse.GmtCreate = _ctx.LongValue("DescribeFlow.GmtCreate");
+			describeFlowResponse.GmtModified = _ctx.LongValue("DescribeFlow.GmtModified");
+			describeFlowResponse.Name = _ctx.StringValue("DescribeFlow.Name");
+			describeFlowResponse.Description = _ctx.StringValue("DescribeFlow.Description");
+			describeFlowResponse.Type = _ctx.StringValue("DescribeFlow.Type");
+			describeFlowResponse.Status = _ctx.StringValue("DescribeFlow.Status");
+			describeFlowResponse.Periodic = _ctx.BooleanValue("DescribeFlow.Periodic");
+			describeFlowResponse.StartSchedule = _ctx.LongValue("DescribeFlow.StartSchedule");
+			describeFlowResponse.EndSchedule = _ctx.LongValue("DescribeFlow.EndSchedule");
+			describeFlowResponse.CronExpr = _ctx.StringValue("DescribeFlow.CronExpr");
+			describeFlowResponse.CreateCluster = _ctx.BooleanValue("DescribeFlow.CreateCluster");
+			describeFlowResponse.ClusterId = _ctx.StringValue("DescribeFlow.ClusterId");
+			describeFlowResponse.HostName = _ctx.StringValue("DescribeFlow.HostName");
+			describeFlowResponse._Namespace = _ctx.StringValue("DescribeFlow.Namespace");
+			describeFlowResponse.LogArchiveLocation = _ctx.StringValue("DescribeFlow.LogArchiveLocation");
+			describeFlowResponse.Lifecycle = _ctx.StringValue("DescribeFlow.Lifecycle");
+			describeFlowResponse.Graph = _ctx.StringValue("DescribeFlow.Graph");
+			describeFlowResponse.CategoryId = _ctx.StringValue("DescribeFlow.CategoryId");
+			describeFlowResponse.AlertConf = _ctx.StringValue("DescribeFlow.AlertConf");
+			describeFlowResponse.AlertUserGroupBizId = _ctx.StringValue("DescribeFlow.AlertUserGroupBizId");
+			describeFlowResponse.AlertDingDingGroupBizId = _ctx.StringValue("DescribeFlow.AlertDingDingGroupBizId");
+			describeFlowResponse.Application = _ctx.StringValue("DescribeFlow.Application");
+			describeFlowResponse.EditLockDetail = _ctx.StringValue("DescribeFlow.EditLockDetail");
 
 			List<DescribeFlowResponse.DescribeFlow_ParentFlow> describeFlowResponse_parentFlowList = new List<DescribeFlowResponse.DescribeFlow_ParentFlow>();
-			for (int i = 0; i < context.Length("DescribeFlow.ParentFlowList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeFlow.ParentFlowList.Length"); i++) {
 				DescribeFlowResponse.DescribeFlow_ParentFlow parentFlow = new DescribeFlowResponse.DescribeFlow_ParentFlow();
-				parentFlow.ParentFlowId = context.StringValue("DescribeFlow.ParentFlowList["+ i +"].ParentFlowId");
-				parentFlow.ParentFlowName = context.StringValue("DescribeFlow.ParentFlowList["+ i +"].ParentFlowName");
-				parentFlow.ProjectId = context.StringValue("DescribeFlow.ParentFlowList["+ i +"].ProjectId");
-				parentFlow.ProjectName = context.StringValue("DescribeFlow.ParentFlowList["+ i +"].ProjectName");
+				parentFlow.ParentFlowId = _ctx.StringValue("DescribeFlow.ParentFlowList["+ i +"].ParentFlowId");
+				parentFlow.ParentFlowName = _ctx.StringValue("DescribeFlow.ParentFlowList["+ i +"].ParentFlowName");
+				parentFlow.ProjectId = _ctx.StringValue("DescribeFlow.ParentFlowList["+ i +"].ProjectId");
+				parentFlow.ProjectName = _ctx.StringValue("DescribeFlow.ParentFlowList["+ i +"].ProjectName");
 
 				describeFlowResponse_parentFlowList.Add(parentFlow);
 			}

@@ -122,6 +122,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string createResource;
 
+			private string k8sClusterId;
+
 			private ListFlowClusterAll_OrderTaskInfo orderTaskInfo;
 
 			private ListFlowClusterAll_FailReason failReason;
@@ -267,6 +269,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					createResource = value;
+				}
+			}
+
+			public string K8sClusterId
+			{
+				get
+				{
+					return k8sClusterId;
+				}
+				set	
+				{
+					k8sClusterId = value;
 				}
 			}
 

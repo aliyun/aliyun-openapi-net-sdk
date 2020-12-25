@@ -32,19 +32,21 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public GetQueueInputStatisticInfoRequest()
             : base("Emr", "2016-04-08", "GetQueueInputStatisticInfo", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string fromDatetime;
 
 		private long? resourceOwnerId;
 
-		private string regionId;
-
 		private string clusterId;
 
 		private string toDatetime;
-
-		private string accessKeyId;
 
 		public string FromDatetime
 		{
@@ -72,19 +74,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string ClusterId
 		{
 			get
@@ -108,19 +97,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				toDatetime = value;
 				DictionaryUtil.Add(QueryParameters, "ToDatetime", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

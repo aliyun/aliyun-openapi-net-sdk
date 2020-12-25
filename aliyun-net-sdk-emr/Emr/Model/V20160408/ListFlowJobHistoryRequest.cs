@@ -32,9 +32,23 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ListFlowJobHistoryRequest()
             : base("Emr", "2016-04-08", "ListFlowJobHistory", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private string regionId;
+		private string timeRange;
+
+		private List<string> statusLists = new List<string>(){ };
+
+		private string jobType;
+
+		private int? pageNumber;
+
+		private string instanceId;
 
 		private int? pageSize;
 
@@ -42,18 +56,72 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private string projectId;
 
-		private int? pageNumber;
-
-		public string RegionId
+		public string TimeRange
 		{
 			get
 			{
-				return regionId;
+				return timeRange;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				timeRange = value;
+				DictionaryUtil.Add(QueryParameters, "TimeRange", value);
+			}
+		}
+
+		public List<string> StatusLists
+		{
+			get
+			{
+				return statusLists;
+			}
+
+			set
+			{
+				statusLists = value;
+				for (int i = 0; i < statusLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"StatusList." + (i + 1) , statusLists[i]);
+				}
+			}
+		}
+
+		public string JobType
+		{
+			get
+			{
+				return jobType;
+			}
+			set	
+			{
+				jobType = value;
+				DictionaryUtil.Add(QueryParameters, "JobType", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -93,19 +161,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				projectId = value;
 				DictionaryUtil.Add(QueryParameters, "ProjectId", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

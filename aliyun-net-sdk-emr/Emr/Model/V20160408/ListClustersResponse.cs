@@ -102,6 +102,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string name;
 
+			private string machineType;
+
 			private string type;
 
 			private long? createTime;
@@ -123,6 +125,14 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			private string createResource;
 
 			private string depositType;
+
+			private string metaStoreType;
+
+			private string k8sClusterId;
+
+			private long? operationId;
+
+			private List<ListClusters_Tag> tags;
 
 			private ListClusters_OrderTaskInfo orderTaskInfo;
 
@@ -149,6 +159,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					name = value;
+				}
+			}
+
+			public string MachineType
+			{
+				get
+				{
+					return machineType;
+				}
+				set	
+				{
+					machineType = value;
 				}
 			}
 
@@ -284,6 +306,54 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				}
 			}
 
+			public string MetaStoreType
+			{
+				get
+				{
+					return metaStoreType;
+				}
+				set	
+				{
+					metaStoreType = value;
+				}
+			}
+
+			public string K8sClusterId
+			{
+				get
+				{
+					return k8sClusterId;
+				}
+				set	
+				{
+					k8sClusterId = value;
+				}
+			}
+
+			public long? OperationId
+			{
+				get
+				{
+					return operationId;
+				}
+				set	
+				{
+					operationId = value;
+				}
+			}
+
+			public List<ListClusters_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public ListClusters_OrderTaskInfo OrderTaskInfo
 			{
 				get
@@ -305,6 +375,38 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					failReason = value;
+				}
+			}
+
+			public class ListClusters_Tag
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
+					}
 				}
 			}
 

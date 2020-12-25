@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class GetJobRunningTimeStatisticInfoResponseUnmarshaller
     {
-        public static GetJobRunningTimeStatisticInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetJobRunningTimeStatisticInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetJobRunningTimeStatisticInfoResponse getJobRunningTimeStatisticInfoResponse = new GetJobRunningTimeStatisticInfoResponse();
 
-			getJobRunningTimeStatisticInfoResponse.HttpResponse = context.HttpResponse;
-			getJobRunningTimeStatisticInfoResponse.RequestId = context.StringValue("GetJobRunningTimeStatisticInfo.RequestId");
-			getJobRunningTimeStatisticInfoResponse.Total = context.IntegerValue("GetJobRunningTimeStatisticInfo.Total");
-			getJobRunningTimeStatisticInfoResponse.PageNumber = context.IntegerValue("GetJobRunningTimeStatisticInfo.PageNumber");
-			getJobRunningTimeStatisticInfoResponse.PageSize = context.IntegerValue("GetJobRunningTimeStatisticInfo.PageSize");
+			getJobRunningTimeStatisticInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getJobRunningTimeStatisticInfoResponse.RequestId = _ctx.StringValue("GetJobRunningTimeStatisticInfo.RequestId");
+			getJobRunningTimeStatisticInfoResponse.Total = _ctx.IntegerValue("GetJobRunningTimeStatisticInfo.Total");
+			getJobRunningTimeStatisticInfoResponse.PageNumber = _ctx.IntegerValue("GetJobRunningTimeStatisticInfo.PageNumber");
+			getJobRunningTimeStatisticInfoResponse.PageSize = _ctx.IntegerValue("GetJobRunningTimeStatisticInfo.PageSize");
 
 			List<GetJobRunningTimeStatisticInfoResponse.GetJobRunningTimeStatisticInfo_ClusterStatJobRunningTime> getJobRunningTimeStatisticInfoResponse_runningTimeList = new List<GetJobRunningTimeStatisticInfoResponse.GetJobRunningTimeStatisticInfo_ClusterStatJobRunningTime>();
-			for (int i = 0; i < context.Length("GetJobRunningTimeStatisticInfo.RunningTimeList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetJobRunningTimeStatisticInfo.RunningTimeList.Length"); i++) {
 				GetJobRunningTimeStatisticInfoResponse.GetJobRunningTimeStatisticInfo_ClusterStatJobRunningTime clusterStatJobRunningTime = new GetJobRunningTimeStatisticInfoResponse.GetJobRunningTimeStatisticInfo_ClusterStatJobRunningTime();
-				clusterStatJobRunningTime.ApplicationId = context.StringValue("GetJobRunningTimeStatisticInfo.RunningTimeList["+ i +"].ApplicationId");
-				clusterStatJobRunningTime.JobId = context.StringValue("GetJobRunningTimeStatisticInfo.RunningTimeList["+ i +"].JobId");
-				clusterStatJobRunningTime.StartTime = context.LongValue("GetJobRunningTimeStatisticInfo.RunningTimeList["+ i +"].StartTime");
-				clusterStatJobRunningTime.FinishTime = context.LongValue("GetJobRunningTimeStatisticInfo.RunningTimeList["+ i +"].FinishTime");
-				clusterStatJobRunningTime.Name = context.StringValue("GetJobRunningTimeStatisticInfo.RunningTimeList["+ i +"].Name");
-				clusterStatJobRunningTime.Queue = context.StringValue("GetJobRunningTimeStatisticInfo.RunningTimeList["+ i +"].Queue");
-				clusterStatJobRunningTime.User = context.StringValue("GetJobRunningTimeStatisticInfo.RunningTimeList["+ i +"].User");
-				clusterStatJobRunningTime.State = context.StringValue("GetJobRunningTimeStatisticInfo.RunningTimeList["+ i +"].State");
-				clusterStatJobRunningTime.RunningTime = context.LongValue("GetJobRunningTimeStatisticInfo.RunningTimeList["+ i +"].RunningTime");
+				clusterStatJobRunningTime.ApplicationId = _ctx.StringValue("GetJobRunningTimeStatisticInfo.RunningTimeList["+ i +"].ApplicationId");
+				clusterStatJobRunningTime.JobId = _ctx.StringValue("GetJobRunningTimeStatisticInfo.RunningTimeList["+ i +"].JobId");
+				clusterStatJobRunningTime.StartTime = _ctx.LongValue("GetJobRunningTimeStatisticInfo.RunningTimeList["+ i +"].StartTime");
+				clusterStatJobRunningTime.FinishTime = _ctx.LongValue("GetJobRunningTimeStatisticInfo.RunningTimeList["+ i +"].FinishTime");
+				clusterStatJobRunningTime.Name = _ctx.StringValue("GetJobRunningTimeStatisticInfo.RunningTimeList["+ i +"].Name");
+				clusterStatJobRunningTime.Queue = _ctx.StringValue("GetJobRunningTimeStatisticInfo.RunningTimeList["+ i +"].Queue");
+				clusterStatJobRunningTime.User = _ctx.StringValue("GetJobRunningTimeStatisticInfo.RunningTimeList["+ i +"].User");
+				clusterStatJobRunningTime.State = _ctx.StringValue("GetJobRunningTimeStatisticInfo.RunningTimeList["+ i +"].State");
+				clusterStatJobRunningTime.RunningTime = _ctx.LongValue("GetJobRunningTimeStatisticInfo.RunningTimeList["+ i +"].RunningTime");
 
 				getJobRunningTimeStatisticInfoResponse_runningTimeList.Add(clusterStatJobRunningTime);
 			}

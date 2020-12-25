@@ -32,11 +32,15 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public DescribeFlowNodeInstanceLauncherLogRequest()
             : base("Emr", "2016-04-08", "DescribeFlowNodeInstanceLauncherLog", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private int? offset;
-
-		private string regionId;
 
 		private int? start;
 
@@ -46,11 +50,11 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private long? startTime;
 
-		private int? lines;
-
 		private bool? reverse;
 
 		private string nodeInstanceId;
+
+		private int? lines;
 
 		private string projectId;
 
@@ -64,19 +68,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				offset = value;
 				DictionaryUtil.Add(QueryParameters, "Offset", value.ToString());
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -132,19 +123,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public int? Lines
-		{
-			get
-			{
-				return lines;
-			}
-			set	
-			{
-				lines = value;
-				DictionaryUtil.Add(QueryParameters, "Lines", value.ToString());
-			}
-		}
-
 		public bool? Reverse
 		{
 			get
@@ -168,6 +146,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				nodeInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "NodeInstanceId", value);
+			}
+		}
+
+		public int? Lines
+		{
+			get
+			{
+				return lines;
+			}
+			set	
+			{
+				lines = value;
+				DictionaryUtil.Add(QueryParameters, "Lines", value.ToString());
 			}
 		}
 

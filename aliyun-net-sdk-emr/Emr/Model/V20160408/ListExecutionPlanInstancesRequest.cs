@@ -32,25 +32,27 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ListExecutionPlanInstancesRequest()
             : base("Emr", "2016-04-08", "ListExecutionPlanInstances", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private bool? onlyLastInstance;
 
 		private long? resourceOwnerId;
 
-		private List<string> executionPlanIdLists;
+		private List<string> executionPlanIdLists = new List<string>(){ };
 
-		private List<string> statusLists;
-
-		private string regionId;
-
-		private int? pageSize;
+		private List<string> statusLists = new List<string>(){ };
 
 		private bool? isDesc;
 
 		private int? pageNumber;
 
-		private string accessKeyId;
+		private int? pageSize;
 
 		public bool? OnlyLastInstance
 		{
@@ -112,32 +114,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
 		public bool? IsDesc
 		{
 			get
@@ -164,16 +140,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string AccessKeyId
+		public int? PageSize
 		{
 			get
 			{
-				return accessKeyId;
+				return pageSize;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

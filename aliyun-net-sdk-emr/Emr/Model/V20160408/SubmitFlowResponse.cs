@@ -27,7 +27,11 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private string requestId;
 
+		private string instanceId;
+
 		private string id;
+
+		private string data;
 
 		public string RequestId
 		{
@@ -41,6 +45,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+			}
+		}
+
 		public string Id
 		{
 			get
@@ -50,6 +66,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			set	
 			{
 				id = value;
+			}
+		}
+
+		public string Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
 			}
 		}
 	}

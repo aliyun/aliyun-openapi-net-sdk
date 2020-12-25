@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class DescribeFlowNodeInstanceContainerLogResponseUnmarshaller
     {
-        public static DescribeFlowNodeInstanceContainerLogResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeFlowNodeInstanceContainerLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeFlowNodeInstanceContainerLogResponse describeFlowNodeInstanceContainerLogResponse = new DescribeFlowNodeInstanceContainerLogResponse();
 
-			describeFlowNodeInstanceContainerLogResponse.HttpResponse = context.HttpResponse;
-			describeFlowNodeInstanceContainerLogResponse.RequestId = context.StringValue("DescribeFlowNodeInstanceContainerLog.RequestId");
-			describeFlowNodeInstanceContainerLogResponse.LogEnd = context.BooleanValue("DescribeFlowNodeInstanceContainerLog.LogEnd");
+			describeFlowNodeInstanceContainerLogResponse.HttpResponse = _ctx.HttpResponse;
+			describeFlowNodeInstanceContainerLogResponse.RequestId = _ctx.StringValue("DescribeFlowNodeInstanceContainerLog.RequestId");
+			describeFlowNodeInstanceContainerLogResponse.LogEnd = _ctx.BooleanValue("DescribeFlowNodeInstanceContainerLog.LogEnd");
 
 			List<DescribeFlowNodeInstanceContainerLogResponse.DescribeFlowNodeInstanceContainerLog_LogEntry> describeFlowNodeInstanceContainerLogResponse_logEntrys = new List<DescribeFlowNodeInstanceContainerLogResponse.DescribeFlowNodeInstanceContainerLog_LogEntry>();
-			for (int i = 0; i < context.Length("DescribeFlowNodeInstanceContainerLog.LogEntrys.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeFlowNodeInstanceContainerLog.LogEntrys.Length"); i++) {
 				DescribeFlowNodeInstanceContainerLogResponse.DescribeFlowNodeInstanceContainerLog_LogEntry logEntry = new DescribeFlowNodeInstanceContainerLogResponse.DescribeFlowNodeInstanceContainerLog_LogEntry();
-				logEntry.Content = context.StringValue("DescribeFlowNodeInstanceContainerLog.LogEntrys["+ i +"].Content");
+				logEntry.Content = _ctx.StringValue("DescribeFlowNodeInstanceContainerLog.LogEntrys["+ i +"].Content");
 
 				describeFlowNodeInstanceContainerLogResponse_logEntrys.Add(logEntry);
 			}

@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class GetQueueOutputStatisticInfoResponseUnmarshaller
     {
-        public static GetQueueOutputStatisticInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetQueueOutputStatisticInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetQueueOutputStatisticInfoResponse getQueueOutputStatisticInfoResponse = new GetQueueOutputStatisticInfoResponse();
 
-			getQueueOutputStatisticInfoResponse.HttpResponse = context.HttpResponse;
-			getQueueOutputStatisticInfoResponse.RequestId = context.StringValue("GetQueueOutputStatisticInfo.RequestId");
+			getQueueOutputStatisticInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getQueueOutputStatisticInfoResponse.RequestId = _ctx.StringValue("GetQueueOutputStatisticInfo.RequestId");
 
 			List<GetQueueOutputStatisticInfoResponse.GetQueueOutputStatisticInfo_ClusterStatQueueOutput> getQueueOutputStatisticInfoResponse_queueOutputList = new List<GetQueueOutputStatisticInfoResponse.GetQueueOutputStatisticInfo_ClusterStatQueueOutput>();
-			for (int i = 0; i < context.Length("GetQueueOutputStatisticInfo.QueueOutputList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetQueueOutputStatisticInfo.QueueOutputList.Length"); i++) {
 				GetQueueOutputStatisticInfoResponse.GetQueueOutputStatisticInfo_ClusterStatQueueOutput clusterStatQueueOutput = new GetQueueOutputStatisticInfoResponse.GetQueueOutputStatisticInfo_ClusterStatQueueOutput();
-				clusterStatQueueOutput.Queue = context.StringValue("GetQueueOutputStatisticInfo.QueueOutputList["+ i +"].Queue");
-				clusterStatQueueOutput.BytesOutput = context.LongValue("GetQueueOutputStatisticInfo.QueueOutputList["+ i +"].BytesOutput");
+				clusterStatQueueOutput.Queue = _ctx.StringValue("GetQueueOutputStatisticInfo.QueueOutputList["+ i +"].Queue");
+				clusterStatQueueOutput.BytesOutput = _ctx.LongValue("GetQueueOutputStatisticInfo.QueueOutputList["+ i +"].BytesOutput");
 
 				getQueueOutputStatisticInfoResponse_queueOutputList.Add(clusterStatQueueOutput);
 			}

@@ -118,11 +118,21 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private bool? initCustomHiveMetaDb;
 
+			private string keyPairName;
+
+			private string masterPwd;
+
+			private string metaStoreType;
+
+			private string metaStoreConf;
+
 			private List<DescribeClusterTemplate_BootstrapAction> bootstrapActionList;
 
 			private List<DescribeClusterTemplate_HostGroup> hostGroupList;
 
 			private List<DescribeClusterTemplate_Config> configList;
+
+			private List<DescribeClusterTemplate_Tag> tags;
 
 			private List<string> softwareInfoList;
 
@@ -498,6 +508,54 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				}
 			}
 
+			public string KeyPairName
+			{
+				get
+				{
+					return keyPairName;
+				}
+				set	
+				{
+					keyPairName = value;
+				}
+			}
+
+			public string MasterPwd
+			{
+				get
+				{
+					return masterPwd;
+				}
+				set	
+				{
+					masterPwd = value;
+				}
+			}
+
+			public string MetaStoreType
+			{
+				get
+				{
+					return metaStoreType;
+				}
+				set	
+				{
+					metaStoreType = value;
+				}
+			}
+
+			public string MetaStoreConf
+			{
+				get
+				{
+					return metaStoreConf;
+				}
+				set	
+				{
+					metaStoreConf = value;
+				}
+			}
+
 			public List<DescribeClusterTemplate_BootstrapAction> BootstrapActionList
 			{
 				get
@@ -531,6 +589,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					configList = value;
+				}
+			}
+
+			public List<DescribeClusterTemplate_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 
@@ -862,6 +932,38 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 					set	
 					{
 						replace = value;
+					}
+				}
+			}
+
+			public class DescribeClusterTemplate_Tag
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
 					}
 				}
 			}

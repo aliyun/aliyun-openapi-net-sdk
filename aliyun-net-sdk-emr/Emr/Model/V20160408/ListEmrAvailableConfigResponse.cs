@@ -104,6 +104,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private bool? ecmVersion;
 
+			private string stackName;
+
+			private string stackVersion;
+
+			private string extraInfo;
+
+			private bool? onCloudNative;
+
+			private string publishType;
+
 			private List<ListEmrAvailableConfig_ClusterTypeInfo> clusterTypeInfoList;
 
 			public string RegionId
@@ -139,6 +149,66 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					ecmVersion = value;
+				}
+			}
+
+			public string StackName
+			{
+				get
+				{
+					return stackName;
+				}
+				set	
+				{
+					stackName = value;
+				}
+			}
+
+			public string StackVersion
+			{
+				get
+				{
+					return stackVersion;
+				}
+				set	
+				{
+					stackVersion = value;
+				}
+			}
+
+			public string ExtraInfo
+			{
+				get
+				{
+					return extraInfo;
+				}
+				set	
+				{
+					extraInfo = value;
+				}
+			}
+
+			public bool? OnCloudNative
+			{
+				get
+				{
+					return onCloudNative;
+				}
+				set	
+				{
+					onCloudNative = value;
+				}
+			}
+
+			public string PublishType
+			{
+				get
+				{
+					return publishType;
+				}
+				set	
+				{
+					publishType = value;
 				}
 			}
 
@@ -260,6 +330,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string creationTime;
 
+			private string securityGroupType;
+
 			private int? availableInstanceAmount;
 
 			private int? ecsCount;
@@ -321,6 +393,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string SecurityGroupType
+			{
+				get
+				{
+					return securityGroupType;
+				}
+				set	
+				{
+					securityGroupType = value;
 				}
 			}
 

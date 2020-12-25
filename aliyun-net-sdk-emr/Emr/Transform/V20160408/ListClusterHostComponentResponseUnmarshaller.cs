@@ -26,36 +26,37 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListClusterHostComponentResponseUnmarshaller
     {
-        public static ListClusterHostComponentResponse Unmarshall(UnmarshallerContext context)
+        public static ListClusterHostComponentResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListClusterHostComponentResponse listClusterHostComponentResponse = new ListClusterHostComponentResponse();
 
-			listClusterHostComponentResponse.HttpResponse = context.HttpResponse;
-			listClusterHostComponentResponse.RequestId = context.StringValue("ListClusterHostComponent.RequestId");
-			listClusterHostComponentResponse.PageNumber = context.IntegerValue("ListClusterHostComponent.PageNumber");
-			listClusterHostComponentResponse.PageSize = context.IntegerValue("ListClusterHostComponent.PageSize");
-			listClusterHostComponentResponse.Total = context.IntegerValue("ListClusterHostComponent.Total");
+			listClusterHostComponentResponse.HttpResponse = _ctx.HttpResponse;
+			listClusterHostComponentResponse.RequestId = _ctx.StringValue("ListClusterHostComponent.RequestId");
+			listClusterHostComponentResponse.PageNumber = _ctx.IntegerValue("ListClusterHostComponent.PageNumber");
+			listClusterHostComponentResponse.PageSize = _ctx.IntegerValue("ListClusterHostComponent.PageSize");
+			listClusterHostComponentResponse.Total = _ctx.IntegerValue("ListClusterHostComponent.Total");
 
 			List<ListClusterHostComponentResponse.ListClusterHostComponent_Component> listClusterHostComponentResponse_componentList = new List<ListClusterHostComponentResponse.ListClusterHostComponent_Component>();
-			for (int i = 0; i < context.Length("ListClusterHostComponent.ComponentList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListClusterHostComponent.ComponentList.Length"); i++) {
 				ListClusterHostComponentResponse.ListClusterHostComponent_Component component = new ListClusterHostComponentResponse.ListClusterHostComponent_Component();
-				component.ServiceName = context.StringValue("ListClusterHostComponent.ComponentList["+ i +"].ServiceName");
-				component.ServiceDisplayName = context.StringValue("ListClusterHostComponent.ComponentList["+ i +"].ServiceDisplayName");
-				component.ComponentName = context.StringValue("ListClusterHostComponent.ComponentList["+ i +"].ComponentName");
-				component.ComponentDisplayName = context.StringValue("ListClusterHostComponent.ComponentList["+ i +"].ComponentDisplayName");
-				component.Status = context.StringValue("ListClusterHostComponent.ComponentList["+ i +"].Status");
-				component.NeedRestart = context.BooleanValue("ListClusterHostComponent.ComponentList["+ i +"].NeedRestart");
-				component.HostId = context.StringValue("ListClusterHostComponent.ComponentList["+ i +"].HostId");
-				component.ServerStatus = context.StringValue("ListClusterHostComponent.ComponentList["+ i +"].ServerStatus");
-				component.HostName = context.StringValue("ListClusterHostComponent.ComponentList["+ i +"].HostName");
-				component.PublicIp = context.StringValue("ListClusterHostComponent.ComponentList["+ i +"].PublicIp");
-				component.PrivateIp = context.StringValue("ListClusterHostComponent.ComponentList["+ i +"].PrivateIp");
-				component.Role = context.StringValue("ListClusterHostComponent.ComponentList["+ i +"].Role");
-				component.InstanceType = context.StringValue("ListClusterHostComponent.ComponentList["+ i +"].InstanceType");
-				component.Cpu = context.IntegerValue("ListClusterHostComponent.ComponentList["+ i +"].Cpu");
-				component.Memory = context.IntegerValue("ListClusterHostComponent.ComponentList["+ i +"].Memory");
-				component.HostInstanceId = context.StringValue("ListClusterHostComponent.ComponentList["+ i +"].HostInstanceId");
-				component.SerialNumber = context.StringValue("ListClusterHostComponent.ComponentList["+ i +"].SerialNumber");
+				component.ServiceName = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].ServiceName");
+				component.ServiceDisplayName = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].ServiceDisplayName");
+				component.ComponentName = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].ComponentName");
+				component.ComponentDisplayName = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].ComponentDisplayName");
+				component.Status = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].Status");
+				component.NeedRestart = _ctx.BooleanValue("ListClusterHostComponent.ComponentList["+ i +"].NeedRestart");
+				component.HostId = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].HostId");
+				component.ServerStatus = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].ServerStatus");
+				component.HostName = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].HostName");
+				component.PublicIp = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].PublicIp");
+				component.PrivateIp = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].PrivateIp");
+				component.Role = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].Role");
+				component.InstanceType = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].InstanceType");
+				component.Cpu = _ctx.IntegerValue("ListClusterHostComponent.ComponentList["+ i +"].Cpu");
+				component.Memory = _ctx.IntegerValue("ListClusterHostComponent.ComponentList["+ i +"].Memory");
+				component.HostInstanceId = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].HostInstanceId");
+				component.SerialNumber = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].SerialNumber");
+				component.CommissionStatus = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].CommissionStatus");
 
 				listClusterHostComponentResponse_componentList.Add(component);
 			}

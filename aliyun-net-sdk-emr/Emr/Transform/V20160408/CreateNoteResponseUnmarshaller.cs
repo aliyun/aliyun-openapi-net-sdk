@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class CreateNoteResponseUnmarshaller
     {
-        public static CreateNoteResponse Unmarshall(UnmarshallerContext context)
+        public static CreateNoteResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateNoteResponse createNoteResponse = new CreateNoteResponse();
 
-			createNoteResponse.HttpResponse = context.HttpResponse;
-			createNoteResponse.RequestId = context.StringValue("CreateNote.RequestId");
-			createNoteResponse.Id = context.StringValue("CreateNote.Id");
-			createNoteResponse.Paragraph = context.StringValue("CreateNote.Paragraph");
+			createNoteResponse.HttpResponse = _ctx.HttpResponse;
+			createNoteResponse.RequestId = _ctx.StringValue("CreateNote.RequestId");
+			createNoteResponse.Id = _ctx.StringValue("CreateNote.Id");
+			createNoteResponse.Paragraph = _ctx.StringValue("CreateNote.Paragraph");
         
 			return createNoteResponse;
         }

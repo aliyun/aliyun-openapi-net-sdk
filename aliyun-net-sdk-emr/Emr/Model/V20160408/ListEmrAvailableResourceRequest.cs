@@ -32,15 +32,27 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ListEmrAvailableResourceRequest()
             : base("Emr", "2016-04-08", "ListEmrAvailableResource", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string clusterId;
-
 		private string depositType;
 
-		private string accessKeyId;
+		private string systemDiskType;
+
+		private string resourceGroupId;
+
+		private string instanceType;
+
+		private string instanceChargeType;
+
+		private string clusterId;
 
 		private string destinationResource;
 
@@ -48,19 +60,11 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private string spotStrategy;
 
-		private string systemDiskType;
-
-		private string regionId;
-
 		private string netType;
 
 		private string zoneId;
 
-		private string instanceType;
-
 		private string dataDiskType;
-
-		private string instanceChargeType;
 
 		public long? ResourceOwnerId
 		{
@@ -72,19 +76,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
 			}
 		}
 
@@ -101,16 +92,68 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string AccessKeyId
+		public string SystemDiskType
 		{
 			get
 			{
-				return accessKeyId;
+				return systemDiskType;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				systemDiskType = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDiskType", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
+
+		public string InstanceChargeType
+		{
+			get
+			{
+				return instanceChargeType;
+			}
+			set	
+			{
+				instanceChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
 			}
 		}
 
@@ -153,32 +196,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string SystemDiskType
-		{
-			get
-			{
-				return systemDiskType;
-			}
-			set	
-			{
-				systemDiskType = value;
-				DictionaryUtil.Add(QueryParameters, "SystemDiskType", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string NetType
 		{
 			get
@@ -205,19 +222,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
-			}
-		}
-
 		public string DataDiskType
 		{
 			get
@@ -228,19 +232,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				dataDiskType = value;
 				DictionaryUtil.Add(QueryParameters, "DataDiskType", value);
-			}
-		}
-
-		public string InstanceChargeType
-		{
-			get
-			{
-				return instanceChargeType;
-			}
-			set	
-			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
 			}
 		}
 

@@ -32,19 +32,21 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public DescribeScalingRuleRequest()
             : base("Emr", "2016-04-08", "DescribeScalingRule", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
-
-		private string regionId;
-
-		private string hostGroupId;
 
 		private string clusterId;
 
 		private string scalingRuleId;
 
-		private string accessKeyId;
+		private string hostGroupId;
 
 		public long? ResourceOwnerId
 		{
@@ -56,32 +58,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string HostGroupId
-		{
-			get
-			{
-				return hostGroupId;
-			}
-			set	
-			{
-				hostGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "HostGroupId", value);
 			}
 		}
 
@@ -111,16 +87,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string AccessKeyId
+		public string HostGroupId
 		{
 			get
 			{
-				return accessKeyId;
+				return hostGroupId;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				hostGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "HostGroupId", value);
 			}
 		}
 

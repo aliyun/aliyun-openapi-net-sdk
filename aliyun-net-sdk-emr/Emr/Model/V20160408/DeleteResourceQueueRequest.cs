@@ -32,17 +32,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public DeleteResourceQueueRequest()
             : base("Emr", "2016-04-08", "DeleteResourceQueue", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceQueueId;
-
-		private string regionId;
-
 		private string clusterId;
 
-		private string accessKeyId;
+		private string resourceQueueId;
 
 		public long? ResourceOwnerId
 		{
@@ -54,32 +56,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceQueueId
-		{
-			get
-			{
-				return resourceQueueId;
-			}
-			set	
-			{
-				resourceQueueId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceQueueId", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -96,16 +72,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string AccessKeyId
+		public string ResourceQueueId
 		{
 			get
 			{
-				return accessKeyId;
+				return resourceQueueId;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				resourceQueueId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceQueueId", value);
 			}
 		}
 

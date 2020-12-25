@@ -55,6 +55,12 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private string hostName;
 
+		private string _namespace;
+
+		private string logArchiveLocation;
+
+		private string lifecycle;
+
 		private string graph;
 
 		private string categoryId;
@@ -66,6 +72,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 		private string alertDingDingGroupBizId;
 
 		private string application;
+
+		private string editLockDetail;
 
 		private List<DescribeFlow_ParentFlow> parentFlowList;
 
@@ -249,6 +257,42 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
+		public string _Namespace
+		{
+			get
+			{
+				return _namespace;
+			}
+			set	
+			{
+				_namespace = value;
+			}
+		}
+
+		public string LogArchiveLocation
+		{
+			get
+			{
+				return logArchiveLocation;
+			}
+			set	
+			{
+				logArchiveLocation = value;
+			}
+		}
+
+		public string Lifecycle
+		{
+			get
+			{
+				return lifecycle;
+			}
+			set	
+			{
+				lifecycle = value;
+			}
+		}
+
 		public string Graph
 		{
 			get
@@ -318,6 +362,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			set	
 			{
 				application = value;
+			}
+		}
+
+		public string EditLockDetail
+		{
+			get
+			{
+				return editLockDetail;
+			}
+			set	
+			{
+				editLockDetail = value;
 			}
 		}
 

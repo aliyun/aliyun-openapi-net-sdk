@@ -32,15 +32,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public DeleteJobRequest()
             : base("Emr", "2016-04-08", "DeleteJob", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string regionId;
+		private string resourceGroupId;
 
 		private string id;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -55,16 +59,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
+		public string ResourceGroupId
 		{
 			get
 			{
-				return regionId;
+				return resourceGroupId;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -78,19 +82,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				id = value;
 				DictionaryUtil.Add(QueryParameters, "Id", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

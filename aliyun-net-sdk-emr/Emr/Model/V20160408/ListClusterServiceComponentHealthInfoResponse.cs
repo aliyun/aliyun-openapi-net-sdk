@@ -86,6 +86,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private int? agentHeartBeatLostNum;
 
+			private long? createdTime;
+
 			private List<ListClusterServiceComponentHealthInfo_HealthDetail> healthDetailList;
 
 			public string ServiceName
@@ -181,6 +183,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					agentHeartBeatLostNum = value;
+				}
+			}
+
+			public long? CreatedTime
+			{
+				get
+				{
+					return createdTime;
+				}
+				set	
+				{
+					createdTime = value;
 				}
 			}
 

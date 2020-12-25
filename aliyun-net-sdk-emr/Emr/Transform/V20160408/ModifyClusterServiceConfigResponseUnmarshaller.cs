@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ModifyClusterServiceConfigResponseUnmarshaller
     {
-        public static ModifyClusterServiceConfigResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyClusterServiceConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyClusterServiceConfigResponse modifyClusterServiceConfigResponse = new ModifyClusterServiceConfigResponse();
 
-			modifyClusterServiceConfigResponse.HttpResponse = context.HttpResponse;
-			modifyClusterServiceConfigResponse.RequestId = context.StringValue("ModifyClusterServiceConfig.RequestId");
+			modifyClusterServiceConfigResponse.HttpResponse = _ctx.HttpResponse;
+			modifyClusterServiceConfigResponse.RequestId = _ctx.StringValue("ModifyClusterServiceConfig.RequestId");
         
 			return modifyClusterServiceConfigResponse;
         }

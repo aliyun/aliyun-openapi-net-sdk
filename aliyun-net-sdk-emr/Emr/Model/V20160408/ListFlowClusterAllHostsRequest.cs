@@ -32,26 +32,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ListFlowClusterAllHostsRequest()
             : base("Emr", "2016-04-08", "ListFlowClusterAllHosts", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string regionId;
 
 		private string clusterId;
 
-		private string projectId;
+		private string resourceGroupId;
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
+		private string projectId;
 
 		public string ClusterId
 		{
@@ -63,6 +56,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				clusterId = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

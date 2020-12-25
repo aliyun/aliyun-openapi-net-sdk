@@ -132,6 +132,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string serialNumber;
 
+			private string commissionStatus;
+
 			public string ServiceName
 			{
 				get
@@ -333,6 +335,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					serialNumber = value;
+				}
+			}
+
+			public string CommissionStatus
+			{
+				get
+				{
+					return commissionStatus;
+				}
+				set	
+				{
+					commissionStatus = value;
 				}
 			}
 		}

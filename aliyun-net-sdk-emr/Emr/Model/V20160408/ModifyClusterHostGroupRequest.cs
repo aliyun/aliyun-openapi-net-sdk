@@ -32,38 +32,27 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ModifyClusterHostGroupRequest()
             : base("Emr", "2016-04-08", "ModifyClusterHostGroup", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string vswitchId;
 
 		private long? resourceOwnerId;
 
-		private string regionId;
-
-		private string hostGroupId;
-
 		private string securityGroupId;
-
-		private string comment;
 
 		private string clusterId;
 
 		private string hostGroupName;
 
-		private string accessKeyId;
+		private string vswitchId;
 
-		public string VswitchId
-		{
-			get
-			{
-				return vswitchId;
-			}
-			set	
-			{
-				vswitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VswitchId", value);
-			}
-		}
+		private string hostGroupId;
+
+		private string comment;
 
 		public long? ResourceOwnerId
 		{
@@ -78,32 +67,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string HostGroupId
-		{
-			get
-			{
-				return hostGroupId;
-			}
-			set	
-			{
-				hostGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "HostGroupId", value);
-			}
-		}
-
 		public string SecurityGroupId
 		{
 			get
@@ -114,19 +77,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				securityGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
-			}
-		}
-
-		public string Comment
-		{
-			get
-			{
-				return comment;
-			}
-			set	
-			{
-				comment = value;
-				DictionaryUtil.Add(QueryParameters, "Comment", value);
 			}
 		}
 
@@ -156,16 +106,42 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string AccessKeyId
+		public string VswitchId
 		{
 			get
 			{
-				return accessKeyId;
+				return vswitchId;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				vswitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VswitchId", value);
+			}
+		}
+
+		public string HostGroupId
+		{
+			get
+			{
+				return hostGroupId;
+			}
+			set	
+			{
+				hostGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "HostGroupId", value);
+			}
+		}
+
+		public string Comment
+		{
+			get
+			{
+				return comment;
+			}
+			set	
+			{
+				comment = value;
+				DictionaryUtil.Add(QueryParameters, "Comment", value);
 			}
 		}
 

@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class DescribeClusterOperationHostTaskLogResponseUnmarshaller
     {
-        public static DescribeClusterOperationHostTaskLogResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeClusterOperationHostTaskLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeClusterOperationHostTaskLogResponse describeClusterOperationHostTaskLogResponse = new DescribeClusterOperationHostTaskLogResponse();
 
-			describeClusterOperationHostTaskLogResponse.HttpResponse = context.HttpResponse;
-			describeClusterOperationHostTaskLogResponse.RequestId = context.StringValue("DescribeClusterOperationHostTaskLog.RequestId");
-			describeClusterOperationHostTaskLogResponse.Stdout = context.StringValue("DescribeClusterOperationHostTaskLog.Stdout");
-			describeClusterOperationHostTaskLogResponse.Stderr = context.StringValue("DescribeClusterOperationHostTaskLog.Stderr");
+			describeClusterOperationHostTaskLogResponse.HttpResponse = _ctx.HttpResponse;
+			describeClusterOperationHostTaskLogResponse.RequestId = _ctx.StringValue("DescribeClusterOperationHostTaskLog.RequestId");
+			describeClusterOperationHostTaskLogResponse.Stdout = _ctx.StringValue("DescribeClusterOperationHostTaskLog.Stdout");
+			describeClusterOperationHostTaskLogResponse.Stderr = _ctx.StringValue("DescribeClusterOperationHostTaskLog.Stderr");
         
 			return describeClusterOperationHostTaskLogResponse;
         }

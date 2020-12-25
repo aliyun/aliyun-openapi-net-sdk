@@ -32,32 +32,21 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public AuthorizeSecurityGroupRequest()
             : base("Emr", "2016-04-08", "AuthorizeSecurityGroup", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string bizType;
 
 		private long? resourceOwnerId;
 
-		private string bizContent;
-
-		private string regionId;
-
 		private string clusterId;
 
-		private string accessKeyId;
+		private string bizType;
 
-		public string BizType
-		{
-			get
-			{
-				return bizType;
-			}
-			set	
-			{
-				bizType = value;
-				DictionaryUtil.Add(QueryParameters, "BizType", value);
-			}
-		}
+		private string bizContent;
 
 		public long? ResourceOwnerId
 		{
@@ -69,32 +58,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string BizContent
-		{
-			get
-			{
-				return bizContent;
-			}
-			set	
-			{
-				bizContent = value;
-				DictionaryUtil.Add(QueryParameters, "BizContent", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -111,16 +74,29 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string AccessKeyId
+		public string BizType
 		{
 			get
 			{
-				return accessKeyId;
+				return bizType;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				bizType = value;
+				DictionaryUtil.Add(QueryParameters, "BizType", value);
+			}
+		}
+
+		public string BizContent
+		{
+			get
+			{
+				return bizContent;
+			}
+			set	
+			{
+				bizContent = value;
+				DictionaryUtil.Add(QueryParameters, "BizContent", value);
 			}
 		}
 

@@ -32,23 +32,27 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public CreateFlowProjectClusterSettingRequest()
             : base("Emr", "2016-04-08", "CreateFlowProjectClusterSetting", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private List<string> userLists;
+		private List<string> userLists = new List<string>(){ };
 
-		private List<string> queueLists;
-
-		private string regionId;
-
-		private List<string> hostLists;
+		private List<string> hostLists = new List<string>(){ };
 
 		private string clusterId;
 
 		private string defaultQueue;
 
-		private string projectId;
-
 		private string defaultUser;
+
+		private List<string> queueLists = new List<string>(){ };
+
+		private string projectId;
 
 		public List<string> UserLists
 		{
@@ -64,36 +68,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				{
 					DictionaryUtil.Add(QueryParameters,"UserList." + (i + 1) , userLists[i]);
 				}
-			}
-		}
-
-		public List<string> QueueLists
-		{
-			get
-			{
-				return queueLists;
-			}
-
-			set
-			{
-				queueLists = value;
-				for (int i = 0; i < queueLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"QueueList." + (i + 1) , queueLists[i]);
-				}
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -140,19 +114,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string ProjectId
-		{
-			get
-			{
-				return projectId;
-			}
-			set	
-			{
-				projectId = value;
-				DictionaryUtil.Add(QueryParameters, "ProjectId", value);
-			}
-		}
-
 		public string DefaultUser
 		{
 			get
@@ -163,6 +124,36 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				defaultUser = value;
 				DictionaryUtil.Add(QueryParameters, "DefaultUser", value);
+			}
+		}
+
+		public List<string> QueueLists
+		{
+			get
+			{
+				return queueLists;
+			}
+
+			set
+			{
+				queueLists = value;
+				for (int i = 0; i < queueLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"QueueList." + (i + 1) , queueLists[i]);
+				}
+			}
+		}
+
+		public string ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(QueryParameters, "ProjectId", value);
 			}
 		}
 

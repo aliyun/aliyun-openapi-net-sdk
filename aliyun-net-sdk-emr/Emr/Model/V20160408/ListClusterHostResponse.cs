@@ -106,6 +106,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string role;
 
+			private string zoneId;
+
 			private string instanceType;
 
 			private int? cpu;
@@ -181,6 +183,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					role = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
 				}
 			}
 
@@ -371,9 +385,17 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 				private string type;
 
+				private string device;
+
 				private string diskType;
 
 				private int? diskSize;
+
+				private string blockMountPoint;
+
+				private string diskMountPoint;
+
+				private string _event;
 
 				public string DiskId
 				{
@@ -399,6 +421,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 					}
 				}
 
+				public string Device
+				{
+					get
+					{
+						return device;
+					}
+					set	
+					{
+						device = value;
+					}
+				}
+
 				public string DiskType
 				{
 					get
@@ -420,6 +454,42 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 					set	
 					{
 						diskSize = value;
+					}
+				}
+
+				public string BlockMountPoint
+				{
+					get
+					{
+						return blockMountPoint;
+					}
+					set	
+					{
+						blockMountPoint = value;
+					}
+				}
+
+				public string DiskMountPoint
+				{
+					get
+					{
+						return diskMountPoint;
+					}
+					set	
+					{
+						diskMountPoint = value;
+					}
+				}
+
+				public string _Event
+				{
+					get
+					{
+						return _event;
+					}
+					set	
+					{
+						_event = value;
 					}
 				}
 			}

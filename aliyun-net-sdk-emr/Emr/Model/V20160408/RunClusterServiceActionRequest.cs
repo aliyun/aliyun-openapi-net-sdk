@@ -32,13 +32,27 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public RunClusterServiceActionRequest()
             : base("Emr", "2016-04-08", "RunClusterServiceAction", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private string executeStrategy;
-
-		private List<string> hostGroupIdLists;
+		private List<string> hostGroupIdLists = new List<string>(){ };
 
 		private long? resourceOwnerId;
+
+		private string serviceActionName;
+
+		private bool? isRolling;
+
+		private int? totlerateFailCount;
+
+		private string serviceName;
+
+		private string executeStrategy;
 
 		private bool? onlyRestartStaleConfigNodes;
 
@@ -48,19 +62,7 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private string customCommand;
 
-		private string accessKeyId;
-
 		private string componentNameList;
-
-		private string regionId;
-
-		private string serviceActionName;
-
-		private bool? isRolling;
-
-		private int? totlerateFailCount;
-
-		private string serviceName;
 
 		private string comment;
 
@@ -71,19 +73,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 		private string hostIdList;
 
 		private bool? turnOnMaintenanceMode;
-
-		public string ExecuteStrategy
-		{
-			get
-			{
-				return executeStrategy;
-			}
-			set	
-			{
-				executeStrategy = value;
-				DictionaryUtil.Add(QueryParameters, "ExecuteStrategy", value);
-			}
-		}
 
 		public List<string> HostGroupIdLists
 		{
@@ -112,6 +101,71 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ServiceActionName
+		{
+			get
+			{
+				return serviceActionName;
+			}
+			set	
+			{
+				serviceActionName = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceActionName", value);
+			}
+		}
+
+		public bool? IsRolling
+		{
+			get
+			{
+				return isRolling;
+			}
+			set	
+			{
+				isRolling = value;
+				DictionaryUtil.Add(QueryParameters, "IsRolling", value.ToString());
+			}
+		}
+
+		public int? TotlerateFailCount
+		{
+			get
+			{
+				return totlerateFailCount;
+			}
+			set	
+			{
+				totlerateFailCount = value;
+				DictionaryUtil.Add(QueryParameters, "TotlerateFailCount", value.ToString());
+			}
+		}
+
+		public string ServiceName
+		{
+			get
+			{
+				return serviceName;
+			}
+			set	
+			{
+				serviceName = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
+			}
+		}
+
+		public string ExecuteStrategy
+		{
+			get
+			{
+				return executeStrategy;
+			}
+			set	
+			{
+				executeStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "ExecuteStrategy", value);
 			}
 		}
 
@@ -167,19 +221,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string ComponentNameList
 		{
 			get
@@ -190,71 +231,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				componentNameList = value;
 				DictionaryUtil.Add(QueryParameters, "ComponentNameList", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string ServiceActionName
-		{
-			get
-			{
-				return serviceActionName;
-			}
-			set	
-			{
-				serviceActionName = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceActionName", value);
-			}
-		}
-
-		public bool? IsRolling
-		{
-			get
-			{
-				return isRolling;
-			}
-			set	
-			{
-				isRolling = value;
-				DictionaryUtil.Add(QueryParameters, "IsRolling", value.ToString());
-			}
-		}
-
-		public int? TotlerateFailCount
-		{
-			get
-			{
-				return totlerateFailCount;
-			}
-			set	
-			{
-				totlerateFailCount = value;
-				DictionaryUtil.Add(QueryParameters, "TotlerateFailCount", value.ToString());
-			}
-		}
-
-		public string ServiceName
-		{
-			get
-			{
-				return serviceName;
-			}
-			set	
-			{
-				serviceName = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
 			}
 		}
 

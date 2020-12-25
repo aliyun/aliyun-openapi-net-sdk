@@ -32,11 +32,29 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public CreateScalingRuleRequest()
             : base("Emr", "2016-04-08", "CreateScalingRule", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
+
+		private long? resourceOwnerId;
+
+		private string ruleName;
+
+		private string recurrenceEndTime;
+
+		private List<CloudWatchTrigger> cloudWatchTriggers = new List<CloudWatchTrigger>(){ };
+
+		private long? timeoutWithGrace;
+
+		private int? cooldown;
 
 		private string launchTime;
 
-		private long? resourceOwnerId;
+		private bool? withGrace;
 
 		private string ruleCategory;
 
@@ -44,29 +62,104 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private string adjustmentType;
 
-		private string ruleName;
-
 		private string clusterId;
 
 		private int? launchExpirationTime;
 
 		private string recurrenceValue;
 
-		private string recurrenceEndTime;
-
-		private List<CloudWatchTrigger> cloudWatchTriggers;
-
-		private string accessKeyId;
-
-		private string regionId;
-
 		private string hostGroupId;
 
-		private List<SchedulerTrigger> schedulerTriggers;
-
-		private int? cooldown;
+		private List<SchedulerTrigger> schedulerTriggers = new List<SchedulerTrigger>(){ };
 
 		private string recurrenceType;
+
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string RuleName
+		{
+			get
+			{
+				return ruleName;
+			}
+			set	
+			{
+				ruleName = value;
+				DictionaryUtil.Add(QueryParameters, "RuleName", value);
+			}
+		}
+
+		public string RecurrenceEndTime
+		{
+			get
+			{
+				return recurrenceEndTime;
+			}
+			set	
+			{
+				recurrenceEndTime = value;
+				DictionaryUtil.Add(QueryParameters, "RecurrenceEndTime", value);
+			}
+		}
+
+		public List<CloudWatchTrigger> CloudWatchTriggers
+		{
+			get
+			{
+				return cloudWatchTriggers;
+			}
+
+			set
+			{
+				cloudWatchTriggers = value;
+				for (int i = 0; i < cloudWatchTriggers.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"CloudWatchTrigger." + (i + 1) + ".Period", cloudWatchTriggers[i].Period);
+					DictionaryUtil.Add(QueryParameters,"CloudWatchTrigger." + (i + 1) + ".EvaluationCount", cloudWatchTriggers[i].EvaluationCount);
+					DictionaryUtil.Add(QueryParameters,"CloudWatchTrigger." + (i + 1) + ".Threshold", cloudWatchTriggers[i].Threshold);
+					DictionaryUtil.Add(QueryParameters,"CloudWatchTrigger." + (i + 1) + ".MetricName", cloudWatchTriggers[i].MetricName);
+					DictionaryUtil.Add(QueryParameters,"CloudWatchTrigger." + (i + 1) + ".ComparisonOperator", cloudWatchTriggers[i].ComparisonOperator);
+					DictionaryUtil.Add(QueryParameters,"CloudWatchTrigger." + (i + 1) + ".Statistics", cloudWatchTriggers[i].Statistics);
+				}
+			}
+		}
+
+		public long? TimeoutWithGrace
+		{
+			get
+			{
+				return timeoutWithGrace;
+			}
+			set	
+			{
+				timeoutWithGrace = value;
+				DictionaryUtil.Add(QueryParameters, "TimeoutWithGrace", value.ToString());
+			}
+		}
+
+		public int? Cooldown
+		{
+			get
+			{
+				return cooldown;
+			}
+			set	
+			{
+				cooldown = value;
+				DictionaryUtil.Add(QueryParameters, "Cooldown", value.ToString());
+			}
+		}
 
 		public string LaunchTime
 		{
@@ -81,16 +174,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public long? ResourceOwnerId
+		public bool? WithGrace
 		{
 			get
 			{
-				return resourceOwnerId;
+				return withGrace;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				withGrace = value;
+				DictionaryUtil.Add(QueryParameters, "WithGrace", value.ToString());
 			}
 		}
 
@@ -133,19 +226,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RuleName
-		{
-			get
-			{
-				return ruleName;
-			}
-			set	
-			{
-				ruleName = value;
-				DictionaryUtil.Add(QueryParameters, "RuleName", value);
-			}
-		}
-
 		public string ClusterId
 		{
 			get
@@ -185,67 +265,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RecurrenceEndTime
-		{
-			get
-			{
-				return recurrenceEndTime;
-			}
-			set	
-			{
-				recurrenceEndTime = value;
-				DictionaryUtil.Add(QueryParameters, "RecurrenceEndTime", value);
-			}
-		}
-
-		public List<CloudWatchTrigger> CloudWatchTriggers
-		{
-			get
-			{
-				return cloudWatchTriggers;
-			}
-
-			set
-			{
-				cloudWatchTriggers = value;
-				for (int i = 0; i < cloudWatchTriggers.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"CloudWatchTrigger." + (i + 1) + ".Period", cloudWatchTriggers[i].Period);
-					DictionaryUtil.Add(QueryParameters,"CloudWatchTrigger." + (i + 1) + ".EvaluationCount", cloudWatchTriggers[i].EvaluationCount);
-					DictionaryUtil.Add(QueryParameters,"CloudWatchTrigger." + (i + 1) + ".Threshold", cloudWatchTriggers[i].Threshold);
-					DictionaryUtil.Add(QueryParameters,"CloudWatchTrigger." + (i + 1) + ".MetricName", cloudWatchTriggers[i].MetricName);
-					DictionaryUtil.Add(QueryParameters,"CloudWatchTrigger." + (i + 1) + ".ComparisonOperator", cloudWatchTriggers[i].ComparisonOperator);
-					DictionaryUtil.Add(QueryParameters,"CloudWatchTrigger." + (i + 1) + ".Statistics", cloudWatchTriggers[i].Statistics);
-				}
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string HostGroupId
 		{
 			get
@@ -277,19 +296,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 					DictionaryUtil.Add(QueryParameters,"SchedulerTrigger." + (i + 1) + ".RecurrenceEndTime", schedulerTriggers[i].RecurrenceEndTime);
 					DictionaryUtil.Add(QueryParameters,"SchedulerTrigger." + (i + 1) + ".RecurrenceType", schedulerTriggers[i].RecurrenceType);
 				}
-			}
-		}
-
-		public int? Cooldown
-		{
-			get
-			{
-				return cooldown;
-			}
-			set	
-			{
-				cooldown = value;
-				DictionaryUtil.Add(QueryParameters, "Cooldown", value.ToString());
 			}
 		}
 

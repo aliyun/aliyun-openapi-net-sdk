@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ModifyClusterHostGroupResponseUnmarshaller
     {
-        public static ModifyClusterHostGroupResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyClusterHostGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyClusterHostGroupResponse modifyClusterHostGroupResponse = new ModifyClusterHostGroupResponse();
 
-			modifyClusterHostGroupResponse.HttpResponse = context.HttpResponse;
-			modifyClusterHostGroupResponse.RequestId = context.StringValue("ModifyClusterHostGroup.RequestId");
+			modifyClusterHostGroupResponse.HttpResponse = _ctx.HttpResponse;
+			modifyClusterHostGroupResponse.RequestId = _ctx.StringValue("ModifyClusterHostGroup.RequestId");
         
 			return modifyClusterHostGroupResponse;
         }

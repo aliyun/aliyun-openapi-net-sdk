@@ -26,44 +26,58 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListClustersResponseUnmarshaller
     {
-        public static ListClustersResponse Unmarshall(UnmarshallerContext context)
+        public static ListClustersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListClustersResponse listClustersResponse = new ListClustersResponse();
 
-			listClustersResponse.HttpResponse = context.HttpResponse;
-			listClustersResponse.RequestId = context.StringValue("ListClusters.RequestId");
-			listClustersResponse.TotalCount = context.IntegerValue("ListClusters.TotalCount");
-			listClustersResponse.PageNumber = context.IntegerValue("ListClusters.PageNumber");
-			listClustersResponse.PageSize = context.IntegerValue("ListClusters.PageSize");
+			listClustersResponse.HttpResponse = _ctx.HttpResponse;
+			listClustersResponse.RequestId = _ctx.StringValue("ListClusters.RequestId");
+			listClustersResponse.TotalCount = _ctx.IntegerValue("ListClusters.TotalCount");
+			listClustersResponse.PageNumber = _ctx.IntegerValue("ListClusters.PageNumber");
+			listClustersResponse.PageSize = _ctx.IntegerValue("ListClusters.PageSize");
 
 			List<ListClustersResponse.ListClusters_ClusterInfo> listClustersResponse_clusters = new List<ListClustersResponse.ListClusters_ClusterInfo>();
-			for (int i = 0; i < context.Length("ListClusters.Clusters.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListClusters.Clusters.Length"); i++) {
 				ListClustersResponse.ListClusters_ClusterInfo clusterInfo = new ListClustersResponse.ListClusters_ClusterInfo();
-				clusterInfo.Id = context.StringValue("ListClusters.Clusters["+ i +"].Id");
-				clusterInfo.Name = context.StringValue("ListClusters.Clusters["+ i +"].Name");
-				clusterInfo.Type = context.StringValue("ListClusters.Clusters["+ i +"].Type");
-				clusterInfo.CreateTime = context.LongValue("ListClusters.Clusters["+ i +"].CreateTime");
-				clusterInfo.RunningTime = context.IntegerValue("ListClusters.Clusters["+ i +"].RunningTime");
-				clusterInfo.Status = context.StringValue("ListClusters.Clusters["+ i +"].Status");
-				clusterInfo.ChargeType = context.StringValue("ListClusters.Clusters["+ i +"].ChargeType");
-				clusterInfo.ExpiredTime = context.LongValue("ListClusters.Clusters["+ i +"].ExpiredTime");
-				clusterInfo.Period = context.IntegerValue("ListClusters.Clusters["+ i +"].Period");
-				clusterInfo.HasUncompletedOrder = context.BooleanValue("ListClusters.Clusters["+ i +"].HasUncompletedOrder");
-				clusterInfo.OrderList = context.StringValue("ListClusters.Clusters["+ i +"].OrderList");
-				clusterInfo.CreateResource = context.StringValue("ListClusters.Clusters["+ i +"].CreateResource");
-				clusterInfo.DepositType = context.StringValue("ListClusters.Clusters["+ i +"].DepositType");
+				clusterInfo.Id = _ctx.StringValue("ListClusters.Clusters["+ i +"].Id");
+				clusterInfo.Name = _ctx.StringValue("ListClusters.Clusters["+ i +"].Name");
+				clusterInfo.MachineType = _ctx.StringValue("ListClusters.Clusters["+ i +"].MachineType");
+				clusterInfo.Type = _ctx.StringValue("ListClusters.Clusters["+ i +"].Type");
+				clusterInfo.CreateTime = _ctx.LongValue("ListClusters.Clusters["+ i +"].CreateTime");
+				clusterInfo.RunningTime = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].RunningTime");
+				clusterInfo.Status = _ctx.StringValue("ListClusters.Clusters["+ i +"].Status");
+				clusterInfo.ChargeType = _ctx.StringValue("ListClusters.Clusters["+ i +"].ChargeType");
+				clusterInfo.ExpiredTime = _ctx.LongValue("ListClusters.Clusters["+ i +"].ExpiredTime");
+				clusterInfo.Period = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].Period");
+				clusterInfo.HasUncompletedOrder = _ctx.BooleanValue("ListClusters.Clusters["+ i +"].HasUncompletedOrder");
+				clusterInfo.OrderList = _ctx.StringValue("ListClusters.Clusters["+ i +"].OrderList");
+				clusterInfo.CreateResource = _ctx.StringValue("ListClusters.Clusters["+ i +"].CreateResource");
+				clusterInfo.DepositType = _ctx.StringValue("ListClusters.Clusters["+ i +"].DepositType");
+				clusterInfo.MetaStoreType = _ctx.StringValue("ListClusters.Clusters["+ i +"].MetaStoreType");
+				clusterInfo.K8sClusterId = _ctx.StringValue("ListClusters.Clusters["+ i +"].K8sClusterId");
+				clusterInfo.OperationId = _ctx.LongValue("ListClusters.Clusters["+ i +"].OperationId");
 
 				ListClustersResponse.ListClusters_ClusterInfo.ListClusters_OrderTaskInfo orderTaskInfo = new ListClustersResponse.ListClusters_ClusterInfo.ListClusters_OrderTaskInfo();
-				orderTaskInfo.TargetCount = context.IntegerValue("ListClusters.Clusters["+ i +"].OrderTaskInfo.TargetCount");
-				orderTaskInfo.CurrentCount = context.IntegerValue("ListClusters.Clusters["+ i +"].OrderTaskInfo.CurrentCount");
-				orderTaskInfo.OrderIdList = context.StringValue("ListClusters.Clusters["+ i +"].OrderTaskInfo.OrderIdList");
+				orderTaskInfo.TargetCount = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].OrderTaskInfo.TargetCount");
+				orderTaskInfo.CurrentCount = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].OrderTaskInfo.CurrentCount");
+				orderTaskInfo.OrderIdList = _ctx.StringValue("ListClusters.Clusters["+ i +"].OrderTaskInfo.OrderIdList");
 				clusterInfo.OrderTaskInfo = orderTaskInfo;
 
 				ListClustersResponse.ListClusters_ClusterInfo.ListClusters_FailReason failReason = new ListClustersResponse.ListClusters_ClusterInfo.ListClusters_FailReason();
-				failReason.ErrorCode = context.StringValue("ListClusters.Clusters["+ i +"].FailReason.ErrorCode");
-				failReason.ErrorMsg = context.StringValue("ListClusters.Clusters["+ i +"].FailReason.ErrorMsg");
-				failReason.RequestId = context.StringValue("ListClusters.Clusters["+ i +"].FailReason.RequestId");
+				failReason.ErrorCode = _ctx.StringValue("ListClusters.Clusters["+ i +"].FailReason.ErrorCode");
+				failReason.ErrorMsg = _ctx.StringValue("ListClusters.Clusters["+ i +"].FailReason.ErrorMsg");
+				failReason.RequestId = _ctx.StringValue("ListClusters.Clusters["+ i +"].FailReason.RequestId");
 				clusterInfo.FailReason = failReason;
+
+				List<ListClustersResponse.ListClusters_ClusterInfo.ListClusters_Tag> clusterInfo_tags = new List<ListClustersResponse.ListClusters_ClusterInfo.ListClusters_Tag>();
+				for (int j = 0; j < _ctx.Length("ListClusters.Clusters["+ i +"].Tags.Length"); j++) {
+					ListClustersResponse.ListClusters_ClusterInfo.ListClusters_Tag tag = new ListClustersResponse.ListClusters_ClusterInfo.ListClusters_Tag();
+					tag.TagKey = _ctx.StringValue("ListClusters.Clusters["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = _ctx.StringValue("ListClusters.Clusters["+ i +"].Tags["+ j +"].TagValue");
+
+					clusterInfo_tags.Add(tag);
+				}
+				clusterInfo.Tags = clusterInfo_tags;
 
 				listClustersResponse_clusters.Add(clusterInfo);
 			}

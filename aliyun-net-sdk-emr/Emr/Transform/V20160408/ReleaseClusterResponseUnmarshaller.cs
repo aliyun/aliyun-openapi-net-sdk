@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ReleaseClusterResponseUnmarshaller
     {
-        public static ReleaseClusterResponse Unmarshall(UnmarshallerContext context)
+        public static ReleaseClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ReleaseClusterResponse releaseClusterResponse = new ReleaseClusterResponse();
 
-			releaseClusterResponse.HttpResponse = context.HttpResponse;
-			releaseClusterResponse.RequestId = context.StringValue("ReleaseCluster.RequestId");
+			releaseClusterResponse.HttpResponse = _ctx.HttpResponse;
+			releaseClusterResponse.RequestId = _ctx.StringValue("ReleaseCluster.RequestId");
         
 			return releaseClusterResponse;
         }

@@ -26,26 +26,26 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListJobsResponseUnmarshaller
     {
-        public static ListJobsResponse Unmarshall(UnmarshallerContext context)
+        public static ListJobsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListJobsResponse listJobsResponse = new ListJobsResponse();
 
-			listJobsResponse.HttpResponse = context.HttpResponse;
-			listJobsResponse.RequestId = context.StringValue("ListJobs.RequestId");
-			listJobsResponse.TotalCount = context.IntegerValue("ListJobs.TotalCount");
-			listJobsResponse.PageNumber = context.IntegerValue("ListJobs.PageNumber");
-			listJobsResponse.PageSize = context.IntegerValue("ListJobs.PageSize");
+			listJobsResponse.HttpResponse = _ctx.HttpResponse;
+			listJobsResponse.RequestId = _ctx.StringValue("ListJobs.RequestId");
+			listJobsResponse.TotalCount = _ctx.IntegerValue("ListJobs.TotalCount");
+			listJobsResponse.PageNumber = _ctx.IntegerValue("ListJobs.PageNumber");
+			listJobsResponse.PageSize = _ctx.IntegerValue("ListJobs.PageSize");
 
 			List<ListJobsResponse.ListJobs_JobInfo> listJobsResponse_jobs = new List<ListJobsResponse.ListJobs_JobInfo>();
-			for (int i = 0; i < context.Length("ListJobs.Jobs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListJobs.Jobs.Length"); i++) {
 				ListJobsResponse.ListJobs_JobInfo jobInfo = new ListJobsResponse.ListJobs_JobInfo();
-				jobInfo.Id = context.StringValue("ListJobs.Jobs["+ i +"].Id");
-				jobInfo.Name = context.StringValue("ListJobs.Jobs["+ i +"].Name");
-				jobInfo.Type = context.StringValue("ListJobs.Jobs["+ i +"].Type");
-				jobInfo.RunParameter = context.StringValue("ListJobs.Jobs["+ i +"].RunParameter");
-				jobInfo.FailAct = context.StringValue("ListJobs.Jobs["+ i +"].FailAct");
-				jobInfo.MaxRetry = context.IntegerValue("ListJobs.Jobs["+ i +"].MaxRetry");
-				jobInfo.RetryInterval = context.IntegerValue("ListJobs.Jobs["+ i +"].RetryInterval");
+				jobInfo.Id = _ctx.StringValue("ListJobs.Jobs["+ i +"].Id");
+				jobInfo.Name = _ctx.StringValue("ListJobs.Jobs["+ i +"].Name");
+				jobInfo.Type = _ctx.StringValue("ListJobs.Jobs["+ i +"].Type");
+				jobInfo.RunParameter = _ctx.StringValue("ListJobs.Jobs["+ i +"].RunParameter");
+				jobInfo.FailAct = _ctx.StringValue("ListJobs.Jobs["+ i +"].FailAct");
+				jobInfo.MaxRetry = _ctx.IntegerValue("ListJobs.Jobs["+ i +"].MaxRetry");
+				jobInfo.RetryInterval = _ctx.IntegerValue("ListJobs.Jobs["+ i +"].RetryInterval");
 
 				listJobsResponse_jobs.Add(jobInfo);
 			}

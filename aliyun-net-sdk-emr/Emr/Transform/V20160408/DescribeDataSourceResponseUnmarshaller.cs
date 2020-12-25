@@ -26,25 +26,25 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class DescribeDataSourceResponseUnmarshaller
     {
-        public static DescribeDataSourceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDataSourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDataSourceResponse describeDataSourceResponse = new DescribeDataSourceResponse();
 
-			describeDataSourceResponse.HttpResponse = context.HttpResponse;
-			describeDataSourceResponse.RequestId = context.StringValue("DescribeDataSource.RequestId");
-			describeDataSourceResponse.Id = context.StringValue("DescribeDataSource.Id");
-			describeDataSourceResponse.Name = context.StringValue("DescribeDataSource.Name");
-			describeDataSourceResponse.Description = context.StringValue("DescribeDataSource.Description");
-			describeDataSourceResponse.CategoryId = context.StringValue("DescribeDataSource.CategoryId");
-			describeDataSourceResponse.Status = context.StringValue("DescribeDataSource.Status");
-			describeDataSourceResponse.SourceType = context.StringValue("DescribeDataSource.SourceType");
-			describeDataSourceResponse.CreateFrom = context.StringValue("DescribeDataSource.CreateFrom");
-			describeDataSourceResponse.Conf = context.StringValue("DescribeDataSource.Conf");
-			describeDataSourceResponse.ClusterId = context.StringValue("DescribeDataSource.ClusterId");
-			describeDataSourceResponse.Creator = context.StringValue("DescribeDataSource.Creator");
-			describeDataSourceResponse.Modifier = context.StringValue("DescribeDataSource.Modifier");
-			describeDataSourceResponse.GmtCreate = context.LongValue("DescribeDataSource.GmtCreate");
-			describeDataSourceResponse.GmtModified = context.LongValue("DescribeDataSource.GmtModified");
+			describeDataSourceResponse.HttpResponse = _ctx.HttpResponse;
+			describeDataSourceResponse.RequestId = _ctx.StringValue("DescribeDataSource.RequestId");
+			describeDataSourceResponse.Id = _ctx.StringValue("DescribeDataSource.Id");
+			describeDataSourceResponse.Name = _ctx.StringValue("DescribeDataSource.Name");
+			describeDataSourceResponse.Description = _ctx.StringValue("DescribeDataSource.Description");
+			describeDataSourceResponse.CategoryId = _ctx.StringValue("DescribeDataSource.CategoryId");
+			describeDataSourceResponse.Status = _ctx.StringValue("DescribeDataSource.Status");
+			describeDataSourceResponse.SourceType = _ctx.StringValue("DescribeDataSource.SourceType");
+			describeDataSourceResponse.CreateFrom = _ctx.StringValue("DescribeDataSource.CreateFrom");
+			describeDataSourceResponse.Conf = _ctx.StringValue("DescribeDataSource.Conf");
+			describeDataSourceResponse.ClusterId = _ctx.StringValue("DescribeDataSource.ClusterId");
+			describeDataSourceResponse.Creator = _ctx.StringValue("DescribeDataSource.Creator");
+			describeDataSourceResponse.Modifier = _ctx.StringValue("DescribeDataSource.Modifier");
+			describeDataSourceResponse.GmtCreate = _ctx.LongValue("DescribeDataSource.GmtCreate");
+			describeDataSourceResponse.GmtModified = _ctx.LongValue("DescribeDataSource.GmtModified");
         
 			return describeDataSourceResponse;
         }

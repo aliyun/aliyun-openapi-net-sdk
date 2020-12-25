@@ -32,21 +32,23 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ListJobExecutionInstancesRequest()
             : base("Emr", "2016-04-08", "ListJobExecutionInstances", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
-
-		private string executionPlanInstanceId;
-
-		private string regionId;
-
-		private int? pageSize;
 
 		private bool? isDesc;
 
 		private int? pageNumber;
 
-		private string accessKeyId;
+		private string executionPlanInstanceId;
+
+		private int? pageSize;
 
 		public long? ResourceOwnerId
 		{
@@ -58,45 +60,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ExecutionPlanInstanceId
-		{
-			get
-			{
-				return executionPlanInstanceId;
-			}
-			set	
-			{
-				executionPlanInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "ExecutionPlanInstanceId", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -126,16 +89,29 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string AccessKeyId
+		public string ExecutionPlanInstanceId
 		{
 			get
 			{
-				return accessKeyId;
+				return executionPlanInstanceId;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				executionPlanInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "ExecutionPlanInstanceId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

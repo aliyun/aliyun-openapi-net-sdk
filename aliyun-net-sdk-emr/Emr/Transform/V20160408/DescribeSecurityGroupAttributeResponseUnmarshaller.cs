@@ -26,33 +26,33 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class DescribeSecurityGroupAttributeResponseUnmarshaller
     {
-        public static DescribeSecurityGroupAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSecurityGroupAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSecurityGroupAttributeResponse describeSecurityGroupAttributeResponse = new DescribeSecurityGroupAttributeResponse();
 
-			describeSecurityGroupAttributeResponse.HttpResponse = context.HttpResponse;
-			describeSecurityGroupAttributeResponse.RequestId = context.StringValue("DescribeSecurityGroupAttribute.RequestId");
+			describeSecurityGroupAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			describeSecurityGroupAttributeResponse.RequestId = _ctx.StringValue("DescribeSecurityGroupAttribute.RequestId");
 
 			List<DescribeSecurityGroupAttributeResponse.DescribeSecurityGroupAttribute_SecurityGroup> describeSecurityGroupAttributeResponse_availableGroupList = new List<DescribeSecurityGroupAttributeResponse.DescribeSecurityGroupAttribute_SecurityGroup>();
-			for (int i = 0; i < context.Length("DescribeSecurityGroupAttribute.AvailableGroupList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeSecurityGroupAttribute.AvailableGroupList.Length"); i++) {
 				DescribeSecurityGroupAttributeResponse.DescribeSecurityGroupAttribute_SecurityGroup securityGroup = new DescribeSecurityGroupAttributeResponse.DescribeSecurityGroupAttribute_SecurityGroup();
-				securityGroup.SecurityGroupId = context.StringValue("DescribeSecurityGroupAttribute.AvailableGroupList["+ i +"].SecurityGroupId");
-				securityGroup.Description = context.StringValue("DescribeSecurityGroupAttribute.AvailableGroupList["+ i +"].Description");
-				securityGroup.SecurityGroupName = context.StringValue("DescribeSecurityGroupAttribute.AvailableGroupList["+ i +"].SecurityGroupName");
-				securityGroup.VpcId = context.StringValue("DescribeSecurityGroupAttribute.AvailableGroupList["+ i +"].VpcId");
-				securityGroup.CreationTime = context.StringValue("DescribeSecurityGroupAttribute.AvailableGroupList["+ i +"].CreationTime");
-				securityGroup.AvailableInstanceAmount = context.IntegerValue("DescribeSecurityGroupAttribute.AvailableGroupList["+ i +"].AvailableInstanceAmount");
-				securityGroup.EcsCount = context.IntegerValue("DescribeSecurityGroupAttribute.AvailableGroupList["+ i +"].EcsCount");
+				securityGroup.SecurityGroupId = _ctx.StringValue("DescribeSecurityGroupAttribute.AvailableGroupList["+ i +"].SecurityGroupId");
+				securityGroup.Description = _ctx.StringValue("DescribeSecurityGroupAttribute.AvailableGroupList["+ i +"].Description");
+				securityGroup.SecurityGroupName = _ctx.StringValue("DescribeSecurityGroupAttribute.AvailableGroupList["+ i +"].SecurityGroupName");
+				securityGroup.VpcId = _ctx.StringValue("DescribeSecurityGroupAttribute.AvailableGroupList["+ i +"].VpcId");
+				securityGroup.CreationTime = _ctx.StringValue("DescribeSecurityGroupAttribute.AvailableGroupList["+ i +"].CreationTime");
+				securityGroup.AvailableInstanceAmount = _ctx.IntegerValue("DescribeSecurityGroupAttribute.AvailableGroupList["+ i +"].AvailableInstanceAmount");
+				securityGroup.EcsCount = _ctx.IntegerValue("DescribeSecurityGroupAttribute.AvailableGroupList["+ i +"].EcsCount");
 
 				describeSecurityGroupAttributeResponse_availableGroupList.Add(securityGroup);
 			}
 			describeSecurityGroupAttributeResponse.AvailableGroupList = describeSecurityGroupAttributeResponse_availableGroupList;
 
 			List<DescribeSecurityGroupAttributeResponse.DescribeSecurityGroupAttribute_SecurityGroupAttribute> describeSecurityGroupAttributeResponse_securityGroupAttributeList = new List<DescribeSecurityGroupAttributeResponse.DescribeSecurityGroupAttribute_SecurityGroupAttribute>();
-			for (int i = 0; i < context.Length("DescribeSecurityGroupAttribute.SecurityGroupAttributeList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeSecurityGroupAttribute.SecurityGroupAttributeList.Length"); i++) {
 				DescribeSecurityGroupAttributeResponse.DescribeSecurityGroupAttribute_SecurityGroupAttribute securityGroupAttribute = new DescribeSecurityGroupAttributeResponse.DescribeSecurityGroupAttribute_SecurityGroupAttribute();
-				securityGroupAttribute.BizType = context.StringValue("DescribeSecurityGroupAttribute.SecurityGroupAttributeList["+ i +"].BizType");
-				securityGroupAttribute.BizContent = context.StringValue("DescribeSecurityGroupAttribute.SecurityGroupAttributeList["+ i +"].BizContent");
+				securityGroupAttribute.BizType = _ctx.StringValue("DescribeSecurityGroupAttribute.SecurityGroupAttributeList["+ i +"].BizType");
+				securityGroupAttribute.BizContent = _ctx.StringValue("DescribeSecurityGroupAttribute.SecurityGroupAttributeList["+ i +"].BizContent");
 
 				describeSecurityGroupAttributeResponse_securityGroupAttributeList.Add(securityGroupAttribute);
 			}

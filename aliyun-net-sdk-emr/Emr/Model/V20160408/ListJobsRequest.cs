@@ -32,13 +32,15 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ListJobsRequest()
             : base("Emr", "2016-04-08", "ListJobs", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
-
-		private string regionId;
-
-		private int? pageSize;
 
 		private string queryString;
 
@@ -46,9 +48,11 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private int? pageNumber;
 
-		private string queryType;
+		private string resourceGroupId;
 
-		private string accessKeyId;
+		private int? pageSize;
+
+		private string queryType;
 
 		public long? ResourceOwnerId
 		{
@@ -60,32 +64,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -128,6 +106,32 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public string QueryType
 		{
 			get
@@ -138,19 +142,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				queryType = value;
 				DictionaryUtil.Add(QueryParameters, "QueryType", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

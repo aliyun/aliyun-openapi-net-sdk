@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ModifyExecutionPlanResponseUnmarshaller
     {
-        public static ModifyExecutionPlanResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyExecutionPlanResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyExecutionPlanResponse modifyExecutionPlanResponse = new ModifyExecutionPlanResponse();
 
-			modifyExecutionPlanResponse.HttpResponse = context.HttpResponse;
-			modifyExecutionPlanResponse.RequestId = context.StringValue("ModifyExecutionPlan.RequestId");
+			modifyExecutionPlanResponse.HttpResponse = _ctx.HttpResponse;
+			modifyExecutionPlanResponse.RequestId = _ctx.StringValue("ModifyExecutionPlan.RequestId");
         
 			return modifyExecutionPlanResponse;
         }

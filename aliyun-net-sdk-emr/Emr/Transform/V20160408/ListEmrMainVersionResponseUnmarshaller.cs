@@ -26,47 +26,48 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListEmrMainVersionResponseUnmarshaller
     {
-        public static ListEmrMainVersionResponse Unmarshall(UnmarshallerContext context)
+        public static ListEmrMainVersionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListEmrMainVersionResponse listEmrMainVersionResponse = new ListEmrMainVersionResponse();
 
-			listEmrMainVersionResponse.HttpResponse = context.HttpResponse;
-			listEmrMainVersionResponse.RequestId = context.StringValue("ListEmrMainVersion.RequestId");
-			listEmrMainVersionResponse.TotalCount = context.IntegerValue("ListEmrMainVersion.TotalCount");
-			listEmrMainVersionResponse.PageNumber = context.IntegerValue("ListEmrMainVersion.PageNumber");
-			listEmrMainVersionResponse.PageSize = context.IntegerValue("ListEmrMainVersion.PageSize");
+			listEmrMainVersionResponse.HttpResponse = _ctx.HttpResponse;
+			listEmrMainVersionResponse.RequestId = _ctx.StringValue("ListEmrMainVersion.RequestId");
+			listEmrMainVersionResponse.TotalCount = _ctx.IntegerValue("ListEmrMainVersion.TotalCount");
+			listEmrMainVersionResponse.PageNumber = _ctx.IntegerValue("ListEmrMainVersion.PageNumber");
+			listEmrMainVersionResponse.PageSize = _ctx.IntegerValue("ListEmrMainVersion.PageSize");
 
 			List<ListEmrMainVersionResponse.ListEmrMainVersion_EmrMainVersion> listEmrMainVersionResponse_emrMainVersionList = new List<ListEmrMainVersionResponse.ListEmrMainVersion_EmrMainVersion>();
-			for (int i = 0; i < context.Length("ListEmrMainVersion.EmrMainVersionList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListEmrMainVersion.EmrMainVersionList.Length"); i++) {
 				ListEmrMainVersionResponse.ListEmrMainVersion_EmrMainVersion emrMainVersion = new ListEmrMainVersionResponse.ListEmrMainVersion_EmrMainVersion();
-				emrMainVersion.RegionId = context.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].RegionId");
-				emrMainVersion.EmrVersion = context.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].EmrVersion");
-				emrMainVersion.EcmVersion = context.BooleanValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].EcmVersion");
-				emrMainVersion.ImageId = context.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].ImageId");
-				emrMainVersion.Display = context.BooleanValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].Display");
-				emrMainVersion.StackName = context.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].StackName");
-				emrMainVersion.StackVersion = context.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].StackVersion");
+				emrMainVersion.RegionId = _ctx.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].RegionId");
+				emrMainVersion.EmrVersion = _ctx.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].EmrVersion");
+				emrMainVersion.EcmVersion = _ctx.BooleanValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].EcmVersion");
+				emrMainVersion.ImageId = _ctx.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].ImageId");
+				emrMainVersion.Display = _ctx.BooleanValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].Display");
+				emrMainVersion.StackName = _ctx.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].StackName");
+				emrMainVersion.StackVersion = _ctx.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].StackVersion");
+				emrMainVersion.PublishType = _ctx.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].PublishType");
 
 				List<string> emrMainVersion_whiteUserList = new List<string>();
-				for (int j = 0; j < context.Length("ListEmrMainVersion.EmrMainVersionList["+ i +"].WhiteUserList.Length"); j++) {
-					emrMainVersion_whiteUserList.Add(context.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].WhiteUserList["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("ListEmrMainVersion.EmrMainVersionList["+ i +"].WhiteUserList.Length"); j++) {
+					emrMainVersion_whiteUserList.Add(_ctx.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].WhiteUserList["+ j +"]"));
 				}
 				emrMainVersion.WhiteUserList = emrMainVersion_whiteUserList;
 
 				List<ListEmrMainVersionResponse.ListEmrMainVersion_EmrMainVersion.ListEmrMainVersion_ClusterTypeInfo> emrMainVersion_clusterTypeInfoList = new List<ListEmrMainVersionResponse.ListEmrMainVersion_EmrMainVersion.ListEmrMainVersion_ClusterTypeInfo>();
-				for (int j = 0; j < context.Length("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeInfoList.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeInfoList.Length"); j++) {
 					ListEmrMainVersionResponse.ListEmrMainVersion_EmrMainVersion.ListEmrMainVersion_ClusterTypeInfo clusterTypeInfo = new ListEmrMainVersionResponse.ListEmrMainVersion_EmrMainVersion.ListEmrMainVersion_ClusterTypeInfo();
-					clusterTypeInfo.ClusterType = context.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ClusterType");
+					clusterTypeInfo.ClusterType = _ctx.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ClusterType");
 
 					List<ListEmrMainVersionResponse.ListEmrMainVersion_EmrMainVersion.ListEmrMainVersion_ClusterTypeInfo.ListEmrMainVersion_ServiceInfo> clusterTypeInfo_serviceInfoList = new List<ListEmrMainVersionResponse.ListEmrMainVersion_EmrMainVersion.ListEmrMainVersion_ClusterTypeInfo.ListEmrMainVersion_ServiceInfo>();
-					for (int k = 0; k < context.Length("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ServiceInfoList.Length"); k++) {
+					for (int k = 0; k < _ctx.Length("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ServiceInfoList.Length"); k++) {
 						ListEmrMainVersionResponse.ListEmrMainVersion_EmrMainVersion.ListEmrMainVersion_ClusterTypeInfo.ListEmrMainVersion_ServiceInfo serviceInfo = new ListEmrMainVersionResponse.ListEmrMainVersion_EmrMainVersion.ListEmrMainVersion_ClusterTypeInfo.ListEmrMainVersion_ServiceInfo();
-						serviceInfo.ServiceName = context.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ServiceInfoList["+ k +"].ServiceName");
-						serviceInfo.ServiceDisplayName = context.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ServiceInfoList["+ k +"].ServiceDisplayName");
-						serviceInfo.ServiceVersion = context.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ServiceInfoList["+ k +"].ServiceVersion");
-						serviceInfo.ServiceDisplayVersion = context.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ServiceInfoList["+ k +"].ServiceDisplayVersion");
-						serviceInfo.Mandatory = context.BooleanValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ServiceInfoList["+ k +"].Mandatory");
-						serviceInfo.Display = context.BooleanValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ServiceInfoList["+ k +"].Display");
+						serviceInfo.ServiceName = _ctx.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ServiceInfoList["+ k +"].ServiceName");
+						serviceInfo.ServiceDisplayName = _ctx.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ServiceInfoList["+ k +"].ServiceDisplayName");
+						serviceInfo.ServiceVersion = _ctx.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ServiceInfoList["+ k +"].ServiceVersion");
+						serviceInfo.ServiceDisplayVersion = _ctx.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ServiceInfoList["+ k +"].ServiceDisplayVersion");
+						serviceInfo.Mandatory = _ctx.BooleanValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ServiceInfoList["+ k +"].Mandatory");
+						serviceInfo.Display = _ctx.BooleanValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeInfoList["+ j +"].ServiceInfoList["+ k +"].Display");
 
 						clusterTypeInfo_serviceInfoList.Add(serviceInfo);
 					}
@@ -75,6 +76,16 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 					emrMainVersion_clusterTypeInfoList.Add(clusterTypeInfo);
 				}
 				emrMainVersion.ClusterTypeInfoList = emrMainVersion_clusterTypeInfoList;
+
+				List<ListEmrMainVersionResponse.ListEmrMainVersion_EmrMainVersion.ListEmrMainVersion_ClusterTypeWhiteUser> emrMainVersion_clusterTypeWhiteUserList = new List<ListEmrMainVersionResponse.ListEmrMainVersion_EmrMainVersion.ListEmrMainVersion_ClusterTypeWhiteUser>();
+				for (int j = 0; j < _ctx.Length("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeWhiteUserList.Length"); j++) {
+					ListEmrMainVersionResponse.ListEmrMainVersion_EmrMainVersion.ListEmrMainVersion_ClusterTypeWhiteUser clusterTypeWhiteUser = new ListEmrMainVersionResponse.ListEmrMainVersion_EmrMainVersion.ListEmrMainVersion_ClusterTypeWhiteUser();
+					clusterTypeWhiteUser.ClusterType = _ctx.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeWhiteUserList["+ j +"].ClusterType");
+					clusterTypeWhiteUser.UserId = _ctx.StringValue("ListEmrMainVersion.EmrMainVersionList["+ i +"].ClusterTypeWhiteUserList["+ j +"].UserId");
+
+					emrMainVersion_clusterTypeWhiteUserList.Add(clusterTypeWhiteUser);
+				}
+				emrMainVersion.ClusterTypeWhiteUserList = emrMainVersion_clusterTypeWhiteUserList;
 
 				listEmrMainVersionResponse_emrMainVersionList.Add(emrMainVersion);
 			}

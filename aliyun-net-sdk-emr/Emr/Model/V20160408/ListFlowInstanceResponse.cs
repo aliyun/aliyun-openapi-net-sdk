@@ -116,6 +116,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string owner;
 
+			private long? scheduleTime;
+
 			private long? startTime;
 
 			private long? endTime;
@@ -229,6 +231,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					owner = value;
+				}
+			}
+
+			public long? ScheduleTime
+			{
+				get
+				{
+					return scheduleTime;
+				}
+				set	
+				{
+					scheduleTime = value;
 				}
 			}
 

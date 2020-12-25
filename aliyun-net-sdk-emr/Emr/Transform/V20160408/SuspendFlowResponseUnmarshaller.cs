@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class SuspendFlowResponseUnmarshaller
     {
-        public static SuspendFlowResponse Unmarshall(UnmarshallerContext context)
+        public static SuspendFlowResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SuspendFlowResponse suspendFlowResponse = new SuspendFlowResponse();
 
-			suspendFlowResponse.HttpResponse = context.HttpResponse;
-			suspendFlowResponse.RequestId = context.StringValue("SuspendFlow.RequestId");
-			suspendFlowResponse.Data = context.BooleanValue("SuspendFlow.Data");
+			suspendFlowResponse.HttpResponse = _ctx.HttpResponse;
+			suspendFlowResponse.RequestId = _ctx.StringValue("SuspendFlow.RequestId");
+			suspendFlowResponse.Data = _ctx.BooleanValue("SuspendFlow.Data");
         
 			return suspendFlowResponse;
         }

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class DeleteScalingRuleResponseUnmarshaller
     {
-        public static DeleteScalingRuleResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteScalingRuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteScalingRuleResponse deleteScalingRuleResponse = new DeleteScalingRuleResponse();
 
-			deleteScalingRuleResponse.HttpResponse = context.HttpResponse;
-			deleteScalingRuleResponse.RequestId = context.StringValue("DeleteScalingRule.RequestId");
-			deleteScalingRuleResponse.Data = context.BooleanValue("DeleteScalingRule.Data");
+			deleteScalingRuleResponse.HttpResponse = _ctx.HttpResponse;
+			deleteScalingRuleResponse.RequestId = _ctx.StringValue("DeleteScalingRule.RequestId");
+			deleteScalingRuleResponse.Data = _ctx.BooleanValue("DeleteScalingRule.Data");
         
 			return deleteScalingRuleResponse;
         }

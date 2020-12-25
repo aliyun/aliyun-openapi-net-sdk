@@ -32,9 +32,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public SearchLogRequest()
             : base("Emr", "2016-04-08", "SearchLog", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
+
+		private int? line;
+
+		private string hostName;
 
 		private string logstoreName;
 
@@ -42,19 +52,11 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private int? offset;
 
-		private int? line;
-
 		private string clusterId;
 
 		private bool? reverse;
 
-		private string accessKeyId;
-
 		private string hostInnerIp;
-
-		private string hostName;
-
-		private string regionId;
 
 		private int? toTimestamp;
 
@@ -70,6 +72,32 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public int? Line
+		{
+			get
+			{
+				return line;
+			}
+			set	
+			{
+				line = value;
+				DictionaryUtil.Add(QueryParameters, "Line", value.ToString());
+			}
+		}
+
+		public string HostName
+		{
+			get
+			{
+				return hostName;
+			}
+			set	
+			{
+				hostName = value;
+				DictionaryUtil.Add(QueryParameters, "HostName", value);
 			}
 		}
 
@@ -112,19 +140,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public int? Line
-		{
-			get
-			{
-				return line;
-			}
-			set	
-			{
-				line = value;
-				DictionaryUtil.Add(QueryParameters, "Line", value.ToString());
-			}
-		}
-
 		public string ClusterId
 		{
 			get
@@ -151,19 +166,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string HostInnerIp
 		{
 			get
@@ -174,32 +176,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				hostInnerIp = value;
 				DictionaryUtil.Add(QueryParameters, "HostInnerIp", value);
-			}
-		}
-
-		public string HostName
-		{
-			get
-			{
-				return hostName;
-			}
-			set	
-			{
-				hostName = value;
-				DictionaryUtil.Add(QueryParameters, "HostName", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ModifyScalingTaskGroupResponseUnmarshaller
     {
-        public static ModifyScalingTaskGroupResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyScalingTaskGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyScalingTaskGroupResponse modifyScalingTaskGroupResponse = new ModifyScalingTaskGroupResponse();
 
-			modifyScalingTaskGroupResponse.HttpResponse = context.HttpResponse;
-			modifyScalingTaskGroupResponse.HostGroupId = context.StringValue("ModifyScalingTaskGroup.HostGroupId");
+			modifyScalingTaskGroupResponse.HttpResponse = _ctx.HttpResponse;
+			modifyScalingTaskGroupResponse.HostGroupId = _ctx.StringValue("ModifyScalingTaskGroup.HostGroupId");
         
 			return modifyScalingTaskGroupResponse;
         }

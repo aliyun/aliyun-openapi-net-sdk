@@ -32,45 +32,68 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public CreateFlowJobRequest()
             : base("Emr", "2016-04-08", "CreateFlowJob", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
+
+		private string retryPolicy;
 
 		private string runConf;
 
-		private string envConf;
-
 		private string description;
-
-		private string clusterId;
 
 		private string type;
 
-		private string _params;
-
 		private string paramConf;
 
-		private List<ResourceList> resourceLists;
+		private List<ResourceList> resourceLists = new List<ResourceList>(){ };
 
 		private string failAct;
 
 		private string mode;
 
-		private long? retryInterval;
-
 		private string monitorConf;
 
-		private string regionId;
-
-		private string name;
-
 		private int? maxRetry;
-
-		private bool? adhoc;
 
 		private string alertConf;
 
 		private string projectId;
 
+		private string envConf;
+
+		private long? maxRunningTimeSec;
+
+		private string clusterId;
+
+		private string _params;
+
+		private string customVariables;
+
+		private long? retryInterval;
+
+		private string name;
+
+		private bool? adhoc;
+
 		private string parentCategory;
+
+		public string RetryPolicy
+		{
+			get
+			{
+				return retryPolicy;
+			}
+			set	
+			{
+				retryPolicy = value;
+				DictionaryUtil.Add(QueryParameters, "RetryPolicy", value);
+			}
+		}
 
 		public string RunConf
 		{
@@ -82,19 +105,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				runConf = value;
 				DictionaryUtil.Add(QueryParameters, "RunConf", value);
-			}
-		}
-
-		public string EnvConf
-		{
-			get
-			{
-				return envConf;
-			}
-			set	
-			{
-				envConf = value;
-				DictionaryUtil.Add(QueryParameters, "EnvConf", value);
 			}
 		}
 
@@ -111,19 +121,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
 		public string Type
 		{
 			get
@@ -134,19 +131,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				type = value;
 				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
-		public string _Params
-		{
-			get
-			{
-				return _params;
-			}
-			set	
-			{
-				_params = value;
-				DictionaryUtil.Add(QueryParameters, "Params", value);
 			}
 		}
 
@@ -207,19 +191,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public long? RetryInterval
-		{
-			get
-			{
-				return retryInterval;
-			}
-			set	
-			{
-				retryInterval = value;
-				DictionaryUtil.Add(QueryParameters, "RetryInterval", value.ToString());
-			}
-		}
-
 		public string MonitorConf
 		{
 			get
@@ -233,32 +204,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
 		public int? MaxRetry
 		{
 			get
@@ -269,19 +214,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				maxRetry = value;
 				DictionaryUtil.Add(QueryParameters, "MaxRetry", value.ToString());
-			}
-		}
-
-		public bool? Adhoc
-		{
-			get
-			{
-				return adhoc;
-			}
-			set	
-			{
-				adhoc = value;
-				DictionaryUtil.Add(QueryParameters, "Adhoc", value.ToString());
 			}
 		}
 
@@ -308,6 +240,110 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				projectId = value;
 				DictionaryUtil.Add(QueryParameters, "ProjectId", value);
+			}
+		}
+
+		public string EnvConf
+		{
+			get
+			{
+				return envConf;
+			}
+			set	
+			{
+				envConf = value;
+				DictionaryUtil.Add(QueryParameters, "EnvConf", value);
+			}
+		}
+
+		public long? MaxRunningTimeSec
+		{
+			get
+			{
+				return maxRunningTimeSec;
+			}
+			set	
+			{
+				maxRunningTimeSec = value;
+				DictionaryUtil.Add(QueryParameters, "MaxRunningTimeSec", value.ToString());
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public string _Params
+		{
+			get
+			{
+				return _params;
+			}
+			set	
+			{
+				_params = value;
+				DictionaryUtil.Add(QueryParameters, "Params", value);
+			}
+		}
+
+		public string CustomVariables
+		{
+			get
+			{
+				return customVariables;
+			}
+			set	
+			{
+				customVariables = value;
+				DictionaryUtil.Add(QueryParameters, "CustomVariables", value);
+			}
+		}
+
+		public long? RetryInterval
+		{
+			get
+			{
+				return retryInterval;
+			}
+			set	
+			{
+				retryInterval = value;
+				DictionaryUtil.Add(QueryParameters, "RetryInterval", value.ToString());
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public bool? Adhoc
+		{
+			get
+			{
+				return adhoc;
+			}
+			set	
+			{
+				adhoc = value;
+				DictionaryUtil.Add(QueryParameters, "Adhoc", value.ToString());
 			}
 		}
 

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class CreateResourceQueueResponseUnmarshaller
     {
-        public static CreateResourceQueueResponse Unmarshall(UnmarshallerContext context)
+        public static CreateResourceQueueResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateResourceQueueResponse createResourceQueueResponse = new CreateResourceQueueResponse();
 
-			createResourceQueueResponse.HttpResponse = context.HttpResponse;
-			createResourceQueueResponse.RequestId = context.StringValue("CreateResourceQueue.RequestId");
+			createResourceQueueResponse.HttpResponse = _ctx.HttpResponse;
+			createResourceQueueResponse.RequestId = _ctx.StringValue("CreateResourceQueue.RequestId");
         
 			return createResourceQueueResponse;
         }

@@ -26,42 +26,43 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListFlowClusterAllResponseUnmarshaller
     {
-        public static ListFlowClusterAllResponse Unmarshall(UnmarshallerContext context)
+        public static ListFlowClusterAllResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListFlowClusterAllResponse listFlowClusterAllResponse = new ListFlowClusterAllResponse();
 
-			listFlowClusterAllResponse.HttpResponse = context.HttpResponse;
-			listFlowClusterAllResponse.RequestId = context.StringValue("ListFlowClusterAll.RequestId");
-			listFlowClusterAllResponse.TotalCount = context.IntegerValue("ListFlowClusterAll.TotalCount");
-			listFlowClusterAllResponse.PageNumber = context.IntegerValue("ListFlowClusterAll.PageNumber");
-			listFlowClusterAllResponse.PageSize = context.IntegerValue("ListFlowClusterAll.PageSize");
+			listFlowClusterAllResponse.HttpResponse = _ctx.HttpResponse;
+			listFlowClusterAllResponse.RequestId = _ctx.StringValue("ListFlowClusterAll.RequestId");
+			listFlowClusterAllResponse.TotalCount = _ctx.IntegerValue("ListFlowClusterAll.TotalCount");
+			listFlowClusterAllResponse.PageNumber = _ctx.IntegerValue("ListFlowClusterAll.PageNumber");
+			listFlowClusterAllResponse.PageSize = _ctx.IntegerValue("ListFlowClusterAll.PageSize");
 
 			List<ListFlowClusterAllResponse.ListFlowClusterAll_ClusterInfo> listFlowClusterAllResponse_clusters = new List<ListFlowClusterAllResponse.ListFlowClusterAll_ClusterInfo>();
-			for (int i = 0; i < context.Length("ListFlowClusterAll.Clusters.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListFlowClusterAll.Clusters.Length"); i++) {
 				ListFlowClusterAllResponse.ListFlowClusterAll_ClusterInfo clusterInfo = new ListFlowClusterAllResponse.ListFlowClusterAll_ClusterInfo();
-				clusterInfo.Id = context.StringValue("ListFlowClusterAll.Clusters["+ i +"].Id");
-				clusterInfo.Name = context.StringValue("ListFlowClusterAll.Clusters["+ i +"].Name");
-				clusterInfo.Type = context.StringValue("ListFlowClusterAll.Clusters["+ i +"].Type");
-				clusterInfo.CreateTime = context.LongValue("ListFlowClusterAll.Clusters["+ i +"].CreateTime");
-				clusterInfo.RunningTime = context.IntegerValue("ListFlowClusterAll.Clusters["+ i +"].RunningTime");
-				clusterInfo.Status = context.StringValue("ListFlowClusterAll.Clusters["+ i +"].Status");
-				clusterInfo.ChargeType = context.StringValue("ListFlowClusterAll.Clusters["+ i +"].ChargeType");
-				clusterInfo.ExpiredTime = context.LongValue("ListFlowClusterAll.Clusters["+ i +"].ExpiredTime");
-				clusterInfo.Period = context.IntegerValue("ListFlowClusterAll.Clusters["+ i +"].Period");
-				clusterInfo.HasUncompletedOrder = context.BooleanValue("ListFlowClusterAll.Clusters["+ i +"].HasUncompletedOrder");
-				clusterInfo.OrderList = context.StringValue("ListFlowClusterAll.Clusters["+ i +"].OrderList");
-				clusterInfo.CreateResource = context.StringValue("ListFlowClusterAll.Clusters["+ i +"].CreateResource");
+				clusterInfo.Id = _ctx.StringValue("ListFlowClusterAll.Clusters["+ i +"].Id");
+				clusterInfo.Name = _ctx.StringValue("ListFlowClusterAll.Clusters["+ i +"].Name");
+				clusterInfo.Type = _ctx.StringValue("ListFlowClusterAll.Clusters["+ i +"].Type");
+				clusterInfo.CreateTime = _ctx.LongValue("ListFlowClusterAll.Clusters["+ i +"].CreateTime");
+				clusterInfo.RunningTime = _ctx.IntegerValue("ListFlowClusterAll.Clusters["+ i +"].RunningTime");
+				clusterInfo.Status = _ctx.StringValue("ListFlowClusterAll.Clusters["+ i +"].Status");
+				clusterInfo.ChargeType = _ctx.StringValue("ListFlowClusterAll.Clusters["+ i +"].ChargeType");
+				clusterInfo.ExpiredTime = _ctx.LongValue("ListFlowClusterAll.Clusters["+ i +"].ExpiredTime");
+				clusterInfo.Period = _ctx.IntegerValue("ListFlowClusterAll.Clusters["+ i +"].Period");
+				clusterInfo.HasUncompletedOrder = _ctx.BooleanValue("ListFlowClusterAll.Clusters["+ i +"].HasUncompletedOrder");
+				clusterInfo.OrderList = _ctx.StringValue("ListFlowClusterAll.Clusters["+ i +"].OrderList");
+				clusterInfo.CreateResource = _ctx.StringValue("ListFlowClusterAll.Clusters["+ i +"].CreateResource");
+				clusterInfo.K8sClusterId = _ctx.StringValue("ListFlowClusterAll.Clusters["+ i +"].K8sClusterId");
 
 				ListFlowClusterAllResponse.ListFlowClusterAll_ClusterInfo.ListFlowClusterAll_OrderTaskInfo orderTaskInfo = new ListFlowClusterAllResponse.ListFlowClusterAll_ClusterInfo.ListFlowClusterAll_OrderTaskInfo();
-				orderTaskInfo.TargetCount = context.IntegerValue("ListFlowClusterAll.Clusters["+ i +"].OrderTaskInfo.TargetCount");
-				orderTaskInfo.CurrentCount = context.IntegerValue("ListFlowClusterAll.Clusters["+ i +"].OrderTaskInfo.CurrentCount");
-				orderTaskInfo.OrderIdList = context.StringValue("ListFlowClusterAll.Clusters["+ i +"].OrderTaskInfo.OrderIdList");
+				orderTaskInfo.TargetCount = _ctx.IntegerValue("ListFlowClusterAll.Clusters["+ i +"].OrderTaskInfo.TargetCount");
+				orderTaskInfo.CurrentCount = _ctx.IntegerValue("ListFlowClusterAll.Clusters["+ i +"].OrderTaskInfo.CurrentCount");
+				orderTaskInfo.OrderIdList = _ctx.StringValue("ListFlowClusterAll.Clusters["+ i +"].OrderTaskInfo.OrderIdList");
 				clusterInfo.OrderTaskInfo = orderTaskInfo;
 
 				ListFlowClusterAllResponse.ListFlowClusterAll_ClusterInfo.ListFlowClusterAll_FailReason failReason = new ListFlowClusterAllResponse.ListFlowClusterAll_ClusterInfo.ListFlowClusterAll_FailReason();
-				failReason.ErrorCode = context.StringValue("ListFlowClusterAll.Clusters["+ i +"].FailReason.ErrorCode");
-				failReason.ErrorMsg = context.StringValue("ListFlowClusterAll.Clusters["+ i +"].FailReason.ErrorMsg");
-				failReason.RequestId = context.StringValue("ListFlowClusterAll.Clusters["+ i +"].FailReason.RequestId");
+				failReason.ErrorCode = _ctx.StringValue("ListFlowClusterAll.Clusters["+ i +"].FailReason.ErrorCode");
+				failReason.ErrorMsg = _ctx.StringValue("ListFlowClusterAll.Clusters["+ i +"].FailReason.ErrorMsg");
+				failReason.RequestId = _ctx.StringValue("ListFlowClusterAll.Clusters["+ i +"].FailReason.RequestId");
 				clusterInfo.FailReason = failReason;
 
 				listFlowClusterAllResponse_clusters.Add(clusterInfo);

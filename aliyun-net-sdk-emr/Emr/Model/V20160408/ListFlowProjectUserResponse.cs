@@ -108,6 +108,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string userName;
 
+			private string accountUserId;
+
 			public long? GmtCreate
 			{
 				get
@@ -165,6 +167,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					userName = value;
+				}
+			}
+
+			public string AccountUserId
+			{
+				get
+				{
+					return accountUserId;
+				}
+				set	
+				{
+					accountUserId = value;
 				}
 			}
 		}

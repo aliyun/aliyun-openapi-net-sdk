@@ -26,31 +26,31 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListDataSourceResponseUnmarshaller
     {
-        public static ListDataSourceResponse Unmarshall(UnmarshallerContext context)
+        public static ListDataSourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListDataSourceResponse listDataSourceResponse = new ListDataSourceResponse();
 
-			listDataSourceResponse.HttpResponse = context.HttpResponse;
-			listDataSourceResponse.RequestId = context.StringValue("ListDataSource.RequestId");
-			listDataSourceResponse.Total = context.IntegerValue("ListDataSource.Total");
-			listDataSourceResponse.PageSize = context.IntegerValue("ListDataSource.PageSize");
-			listDataSourceResponse.PageNumber = context.IntegerValue("ListDataSource.PageNumber");
+			listDataSourceResponse.HttpResponse = _ctx.HttpResponse;
+			listDataSourceResponse.RequestId = _ctx.StringValue("ListDataSource.RequestId");
+			listDataSourceResponse.Total = _ctx.IntegerValue("ListDataSource.Total");
+			listDataSourceResponse.PageSize = _ctx.IntegerValue("ListDataSource.PageSize");
+			listDataSourceResponse.PageNumber = _ctx.IntegerValue("ListDataSource.PageNumber");
 
 			List<ListDataSourceResponse.ListDataSource_DataSource> listDataSourceResponse_dataSourceList = new List<ListDataSourceResponse.ListDataSource_DataSource>();
-			for (int i = 0; i < context.Length("ListDataSource.DataSourceList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListDataSource.DataSourceList.Length"); i++) {
 				ListDataSourceResponse.ListDataSource_DataSource dataSource = new ListDataSourceResponse.ListDataSource_DataSource();
-				dataSource.Id = context.StringValue("ListDataSource.DataSourceList["+ i +"].Id");
-				dataSource.Name = context.StringValue("ListDataSource.DataSourceList["+ i +"].Name");
-				dataSource.Description = context.StringValue("ListDataSource.DataSourceList["+ i +"].Description");
-				dataSource.Status = context.StringValue("ListDataSource.DataSourceList["+ i +"].Status");
-				dataSource.SourceType = context.StringValue("ListDataSource.DataSourceList["+ i +"].SourceType");
-				dataSource.CreateFrom = context.StringValue("ListDataSource.DataSourceList["+ i +"].CreateFrom");
-				dataSource.Conf = context.StringValue("ListDataSource.DataSourceList["+ i +"].Conf");
-				dataSource.ClusterId = context.StringValue("ListDataSource.DataSourceList["+ i +"].ClusterId");
-				dataSource.Creator = context.StringValue("ListDataSource.DataSourceList["+ i +"].Creator");
-				dataSource.Modifier = context.StringValue("ListDataSource.DataSourceList["+ i +"].Modifier");
-				dataSource.GmtCreate = context.LongValue("ListDataSource.DataSourceList["+ i +"].GmtCreate");
-				dataSource.GmtModified = context.LongValue("ListDataSource.DataSourceList["+ i +"].GmtModified");
+				dataSource.Id = _ctx.StringValue("ListDataSource.DataSourceList["+ i +"].Id");
+				dataSource.Name = _ctx.StringValue("ListDataSource.DataSourceList["+ i +"].Name");
+				dataSource.Description = _ctx.StringValue("ListDataSource.DataSourceList["+ i +"].Description");
+				dataSource.Status = _ctx.StringValue("ListDataSource.DataSourceList["+ i +"].Status");
+				dataSource.SourceType = _ctx.StringValue("ListDataSource.DataSourceList["+ i +"].SourceType");
+				dataSource.CreateFrom = _ctx.StringValue("ListDataSource.DataSourceList["+ i +"].CreateFrom");
+				dataSource.Conf = _ctx.StringValue("ListDataSource.DataSourceList["+ i +"].Conf");
+				dataSource.ClusterId = _ctx.StringValue("ListDataSource.DataSourceList["+ i +"].ClusterId");
+				dataSource.Creator = _ctx.StringValue("ListDataSource.DataSourceList["+ i +"].Creator");
+				dataSource.Modifier = _ctx.StringValue("ListDataSource.DataSourceList["+ i +"].Modifier");
+				dataSource.GmtCreate = _ctx.LongValue("ListDataSource.DataSourceList["+ i +"].GmtCreate");
+				dataSource.GmtModified = _ctx.LongValue("ListDataSource.DataSourceList["+ i +"].GmtModified");
 
 				listDataSourceResponse_dataSourceList.Add(dataSource);
 			}

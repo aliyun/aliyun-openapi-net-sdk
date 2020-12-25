@@ -26,26 +26,26 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListClusterOperationResponseUnmarshaller
     {
-        public static ListClusterOperationResponse Unmarshall(UnmarshallerContext context)
+        public static ListClusterOperationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListClusterOperationResponse listClusterOperationResponse = new ListClusterOperationResponse();
 
-			listClusterOperationResponse.HttpResponse = context.HttpResponse;
-			listClusterOperationResponse.RequestId = context.StringValue("ListClusterOperation.RequestId");
-			listClusterOperationResponse.TotalCount = context.IntegerValue("ListClusterOperation.TotalCount");
-			listClusterOperationResponse.PageNumber = context.IntegerValue("ListClusterOperation.PageNumber");
-			listClusterOperationResponse.PageSize = context.IntegerValue("ListClusterOperation.PageSize");
+			listClusterOperationResponse.HttpResponse = _ctx.HttpResponse;
+			listClusterOperationResponse.RequestId = _ctx.StringValue("ListClusterOperation.RequestId");
+			listClusterOperationResponse.TotalCount = _ctx.IntegerValue("ListClusterOperation.TotalCount");
+			listClusterOperationResponse.PageNumber = _ctx.IntegerValue("ListClusterOperation.PageNumber");
+			listClusterOperationResponse.PageSize = _ctx.IntegerValue("ListClusterOperation.PageSize");
 
 			List<ListClusterOperationResponse.ListClusterOperation_ClusterOperation> listClusterOperationResponse_clusterOperationList = new List<ListClusterOperationResponse.ListClusterOperation_ClusterOperation>();
-			for (int i = 0; i < context.Length("ListClusterOperation.ClusterOperationList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListClusterOperation.ClusterOperationList.Length"); i++) {
 				ListClusterOperationResponse.ListClusterOperation_ClusterOperation clusterOperation = new ListClusterOperationResponse.ListClusterOperation_ClusterOperation();
-				clusterOperation.OperationId = context.StringValue("ListClusterOperation.ClusterOperationList["+ i +"].OperationId");
-				clusterOperation.OperationName = context.StringValue("ListClusterOperation.ClusterOperationList["+ i +"].OperationName");
-				clusterOperation.StartTime = context.StringValue("ListClusterOperation.ClusterOperationList["+ i +"].StartTime");
-				clusterOperation.Duration = context.StringValue("ListClusterOperation.ClusterOperationList["+ i +"].Duration");
-				clusterOperation.Status = context.StringValue("ListClusterOperation.ClusterOperationList["+ i +"].Status");
-				clusterOperation.Percentage = context.StringValue("ListClusterOperation.ClusterOperationList["+ i +"].Percentage");
-				clusterOperation.Comment = context.StringValue("ListClusterOperation.ClusterOperationList["+ i +"].Comment");
+				clusterOperation.OperationId = _ctx.StringValue("ListClusterOperation.ClusterOperationList["+ i +"].OperationId");
+				clusterOperation.OperationName = _ctx.StringValue("ListClusterOperation.ClusterOperationList["+ i +"].OperationName");
+				clusterOperation.StartTime = _ctx.StringValue("ListClusterOperation.ClusterOperationList["+ i +"].StartTime");
+				clusterOperation.Duration = _ctx.StringValue("ListClusterOperation.ClusterOperationList["+ i +"].Duration");
+				clusterOperation.Status = _ctx.StringValue("ListClusterOperation.ClusterOperationList["+ i +"].Status");
+				clusterOperation.Percentage = _ctx.StringValue("ListClusterOperation.ClusterOperationList["+ i +"].Percentage");
+				clusterOperation.Comment = _ctx.StringValue("ListClusterOperation.ClusterOperationList["+ i +"].Comment");
 
 				listClusterOperationResponse_clusterOperationList.Add(clusterOperation);
 			}

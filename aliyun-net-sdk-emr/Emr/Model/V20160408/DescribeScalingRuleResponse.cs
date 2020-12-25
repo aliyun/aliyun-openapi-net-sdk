@@ -45,6 +45,10 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private string status;
 
+		private bool? withGrace;
+
+		private long? timeoutWithGrace;
+
 		private DescribeScalingRule_SchedulerTrigger schedulerTrigger;
 
 		private DescribeScalingRule_CloudWatchTrigger cloudWatchTrigger;
@@ -166,6 +170,30 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			set	
 			{
 				status = value;
+			}
+		}
+
+		public bool? WithGrace
+		{
+			get
+			{
+				return withGrace;
+			}
+			set	
+			{
+				withGrace = value;
+			}
+		}
+
+		public long? TimeoutWithGrace
+		{
+			get
+			{
+				return timeoutWithGrace;
+			}
+			set	
+			{
+				timeoutWithGrace = value;
 			}
 		}
 

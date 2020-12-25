@@ -43,6 +43,12 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private string clusterId;
 
+		private string _namespace;
+
+		private string logArchiveLocation;
+
+		private string lifecycle;
+
 		private long? startTime;
 
 		private long? endTime;
@@ -166,6 +172,42 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			set	
 			{
 				clusterId = value;
+			}
+		}
+
+		public string _Namespace
+		{
+			get
+			{
+				return _namespace;
+			}
+			set	
+			{
+				_namespace = value;
+			}
+		}
+
+		public string LogArchiveLocation
+		{
+			get
+			{
+				return logArchiveLocation;
+			}
+			set	
+			{
+				logArchiveLocation = value;
+			}
+		}
+
+		public string Lifecycle
+		{
+			get
+			{
+				return lifecycle;
+			}
+			set	
+			{
+				lifecycle = value;
 			}
 		}
 
@@ -294,6 +336,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private long? bizDate;
 
+			private bool? meet;
+
 			public string ProjectId
 			{
 				get
@@ -375,6 +419,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					bizDate = value;
+				}
+			}
+
+			public bool? Meet
+			{
+				get
+				{
+					return meet;
+				}
+				set	
+				{
+					meet = value;
 				}
 			}
 		}

@@ -106,6 +106,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string clusterId;
 
+			private string k8sClusterId;
+
 			private string clusterName;
 
 			private string defaultUser;
@@ -163,6 +165,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					clusterId = value;
+				}
+			}
+
+			public string K8sClusterId
+			{
+				get
+				{
+					return k8sClusterId;
+				}
+				set	
+				{
+					k8sClusterId = value;
 				}
 			}
 

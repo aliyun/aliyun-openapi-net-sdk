@@ -26,22 +26,23 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListUsersResponseUnmarshaller
     {
-        public static ListUsersResponse Unmarshall(UnmarshallerContext context)
+        public static ListUsersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListUsersResponse listUsersResponse = new ListUsersResponse();
 
-			listUsersResponse.HttpResponse = context.HttpResponse;
-			listUsersResponse.RequestId = context.StringValue("ListUsers.RequestId");
+			listUsersResponse.HttpResponse = _ctx.HttpResponse;
+			listUsersResponse.RequestId = _ctx.StringValue("ListUsers.RequestId");
 
 			List<ListUsersResponse.ListUsers_User> listUsersResponse_userList = new List<ListUsersResponse.ListUsers_User>();
-			for (int i = 0; i < context.Length("ListUsers.UserList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListUsers.UserList.Length"); i++) {
 				ListUsersResponse.ListUsers_User user = new ListUsersResponse.ListUsers_User();
-				user.UserName = context.StringValue("ListUsers.UserList["+ i +"].UserName");
-				user.GroupName = context.StringValue("ListUsers.UserList["+ i +"].GroupName");
-				user.UserId = context.StringValue("ListUsers.UserList["+ i +"].UserId");
-				user.KnoxStatus = context.StringValue("ListUsers.UserList["+ i +"].KnoxStatus");
-				user.LinuxStatus = context.StringValue("ListUsers.UserList["+ i +"].LinuxStatus");
-				user.KerberosStatus = context.StringValue("ListUsers.UserList["+ i +"].KerberosStatus");
+				user.UserName = _ctx.StringValue("ListUsers.UserList["+ i +"].UserName");
+				user.GroupName = _ctx.StringValue("ListUsers.UserList["+ i +"].GroupName");
+				user.UserId = _ctx.StringValue("ListUsers.UserList["+ i +"].UserId");
+				user.KnoxStatus = _ctx.StringValue("ListUsers.UserList["+ i +"].KnoxStatus");
+				user.LinuxStatus = _ctx.StringValue("ListUsers.UserList["+ i +"].LinuxStatus");
+				user.KerberosStatus = _ctx.StringValue("ListUsers.UserList["+ i +"].KerberosStatus");
+				user.K8sStatus = _ctx.StringValue("ListUsers.UserList["+ i +"].K8sStatus");
 
 				listUsersResponse_userList.Add(user);
 			}

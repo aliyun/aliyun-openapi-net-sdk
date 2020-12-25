@@ -26,47 +26,48 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class DescribeFlowNodeInstanceResponseUnmarshaller
     {
-        public static DescribeFlowNodeInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeFlowNodeInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeFlowNodeInstanceResponse describeFlowNodeInstanceResponse = new DescribeFlowNodeInstanceResponse();
 
-			describeFlowNodeInstanceResponse.HttpResponse = context.HttpResponse;
-			describeFlowNodeInstanceResponse.RequestId = context.StringValue("DescribeFlowNodeInstance.RequestId");
-			describeFlowNodeInstanceResponse.Id = context.StringValue("DescribeFlowNodeInstance.Id");
-			describeFlowNodeInstanceResponse.GmtCreate = context.LongValue("DescribeFlowNodeInstance.GmtCreate");
-			describeFlowNodeInstanceResponse.GmtModified = context.LongValue("DescribeFlowNodeInstance.GmtModified");
-			describeFlowNodeInstanceResponse.Type = context.StringValue("DescribeFlowNodeInstance.Type");
-			describeFlowNodeInstanceResponse.Status = context.StringValue("DescribeFlowNodeInstance.Status");
-			describeFlowNodeInstanceResponse.JobId = context.StringValue("DescribeFlowNodeInstance.JobId");
-			describeFlowNodeInstanceResponse.JobName = context.StringValue("DescribeFlowNodeInstance.JobName");
-			describeFlowNodeInstanceResponse.JobType = context.StringValue("DescribeFlowNodeInstance.JobType");
-			describeFlowNodeInstanceResponse.JobParams = context.StringValue("DescribeFlowNodeInstance.JobParams");
-			describeFlowNodeInstanceResponse.FailAct = context.StringValue("DescribeFlowNodeInstance.FailAct");
-			describeFlowNodeInstanceResponse.MaxRetry = context.StringValue("DescribeFlowNodeInstance.MaxRetry");
-			describeFlowNodeInstanceResponse.RetryInterval = context.StringValue("DescribeFlowNodeInstance.RetryInterval");
-			describeFlowNodeInstanceResponse.NodeName = context.StringValue("DescribeFlowNodeInstance.NodeName");
-			describeFlowNodeInstanceResponse.FlowId = context.StringValue("DescribeFlowNodeInstance.FlowId");
-			describeFlowNodeInstanceResponse.FlowInstanceId = context.StringValue("DescribeFlowNodeInstance.FlowInstanceId");
-			describeFlowNodeInstanceResponse.ClusterId = context.StringValue("DescribeFlowNodeInstance.ClusterId");
-			describeFlowNodeInstanceResponse.HostName = context.StringValue("DescribeFlowNodeInstance.HostName");
-			describeFlowNodeInstanceResponse.ProjectId = context.StringValue("DescribeFlowNodeInstance.ProjectId");
-			describeFlowNodeInstanceResponse.Pending = context.BooleanValue("DescribeFlowNodeInstance.Pending");
-			describeFlowNodeInstanceResponse.StartTime = context.LongValue("DescribeFlowNodeInstance.StartTime");
-			describeFlowNodeInstanceResponse.EndTime = context.LongValue("DescribeFlowNodeInstance.EndTime");
-			describeFlowNodeInstanceResponse.Duration = context.LongValue("DescribeFlowNodeInstance.Duration");
-			describeFlowNodeInstanceResponse.Retries = context.IntegerValue("DescribeFlowNodeInstance.Retries");
-			describeFlowNodeInstanceResponse.ExternalId = context.StringValue("DescribeFlowNodeInstance.ExternalId");
-			describeFlowNodeInstanceResponse.ExternalSubId = context.StringValue("DescribeFlowNodeInstance.ExternalSubId");
-			describeFlowNodeInstanceResponse.ExternalChildIds = context.StringValue("DescribeFlowNodeInstance.ExternalChildIds");
-			describeFlowNodeInstanceResponse.ExternalStatus = context.StringValue("DescribeFlowNodeInstance.ExternalStatus");
-			describeFlowNodeInstanceResponse.ExternalInfo = context.StringValue("DescribeFlowNodeInstance.ExternalInfo");
-			describeFlowNodeInstanceResponse.ParamConf = context.StringValue("DescribeFlowNodeInstance.ParamConf");
-			describeFlowNodeInstanceResponse.EnvConf = context.StringValue("DescribeFlowNodeInstance.EnvConf");
-			describeFlowNodeInstanceResponse.RunConf = context.StringValue("DescribeFlowNodeInstance.RunConf");
-			describeFlowNodeInstanceResponse.Adhoc = context.BooleanValue("DescribeFlowNodeInstance.Adhoc");
-			describeFlowNodeInstanceResponse.MonitorConf = context.StringValue("DescribeFlowNodeInstance.MonitorConf");
-			describeFlowNodeInstanceResponse.Mode = context.StringValue("DescribeFlowNodeInstance.Mode");
-			describeFlowNodeInstanceResponse.ClusterName = context.StringValue("DescribeFlowNodeInstance.ClusterName");
+			describeFlowNodeInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			describeFlowNodeInstanceResponse.RequestId = _ctx.StringValue("DescribeFlowNodeInstance.RequestId");
+			describeFlowNodeInstanceResponse.Id = _ctx.StringValue("DescribeFlowNodeInstance.Id");
+			describeFlowNodeInstanceResponse.GmtCreate = _ctx.LongValue("DescribeFlowNodeInstance.GmtCreate");
+			describeFlowNodeInstanceResponse.GmtModified = _ctx.LongValue("DescribeFlowNodeInstance.GmtModified");
+			describeFlowNodeInstanceResponse.Type = _ctx.StringValue("DescribeFlowNodeInstance.Type");
+			describeFlowNodeInstanceResponse.Status = _ctx.StringValue("DescribeFlowNodeInstance.Status");
+			describeFlowNodeInstanceResponse.JobId = _ctx.StringValue("DescribeFlowNodeInstance.JobId");
+			describeFlowNodeInstanceResponse.JobName = _ctx.StringValue("DescribeFlowNodeInstance.JobName");
+			describeFlowNodeInstanceResponse.JobType = _ctx.StringValue("DescribeFlowNodeInstance.JobType");
+			describeFlowNodeInstanceResponse.JobParams = _ctx.StringValue("DescribeFlowNodeInstance.JobParams");
+			describeFlowNodeInstanceResponse.FailAct = _ctx.StringValue("DescribeFlowNodeInstance.FailAct");
+			describeFlowNodeInstanceResponse.MaxRetry = _ctx.StringValue("DescribeFlowNodeInstance.MaxRetry");
+			describeFlowNodeInstanceResponse.RetryInterval = _ctx.StringValue("DescribeFlowNodeInstance.RetryInterval");
+			describeFlowNodeInstanceResponse.RetryPolicy = _ctx.StringValue("DescribeFlowNodeInstance.RetryPolicy");
+			describeFlowNodeInstanceResponse.NodeName = _ctx.StringValue("DescribeFlowNodeInstance.NodeName");
+			describeFlowNodeInstanceResponse.FlowId = _ctx.StringValue("DescribeFlowNodeInstance.FlowId");
+			describeFlowNodeInstanceResponse.FlowInstanceId = _ctx.StringValue("DescribeFlowNodeInstance.FlowInstanceId");
+			describeFlowNodeInstanceResponse.ClusterId = _ctx.StringValue("DescribeFlowNodeInstance.ClusterId");
+			describeFlowNodeInstanceResponse.HostName = _ctx.StringValue("DescribeFlowNodeInstance.HostName");
+			describeFlowNodeInstanceResponse.ProjectId = _ctx.StringValue("DescribeFlowNodeInstance.ProjectId");
+			describeFlowNodeInstanceResponse.Pending = _ctx.BooleanValue("DescribeFlowNodeInstance.Pending");
+			describeFlowNodeInstanceResponse.StartTime = _ctx.LongValue("DescribeFlowNodeInstance.StartTime");
+			describeFlowNodeInstanceResponse.EndTime = _ctx.LongValue("DescribeFlowNodeInstance.EndTime");
+			describeFlowNodeInstanceResponse.Duration = _ctx.LongValue("DescribeFlowNodeInstance.Duration");
+			describeFlowNodeInstanceResponse.Retries = _ctx.IntegerValue("DescribeFlowNodeInstance.Retries");
+			describeFlowNodeInstanceResponse.ExternalId = _ctx.StringValue("DescribeFlowNodeInstance.ExternalId");
+			describeFlowNodeInstanceResponse.ExternalSubId = _ctx.StringValue("DescribeFlowNodeInstance.ExternalSubId");
+			describeFlowNodeInstanceResponse.ExternalChildIds = _ctx.StringValue("DescribeFlowNodeInstance.ExternalChildIds");
+			describeFlowNodeInstanceResponse.ExternalStatus = _ctx.StringValue("DescribeFlowNodeInstance.ExternalStatus");
+			describeFlowNodeInstanceResponse.ExternalInfo = _ctx.StringValue("DescribeFlowNodeInstance.ExternalInfo");
+			describeFlowNodeInstanceResponse.ParamConf = _ctx.StringValue("DescribeFlowNodeInstance.ParamConf");
+			describeFlowNodeInstanceResponse.EnvConf = _ctx.StringValue("DescribeFlowNodeInstance.EnvConf");
+			describeFlowNodeInstanceResponse.RunConf = _ctx.StringValue("DescribeFlowNodeInstance.RunConf");
+			describeFlowNodeInstanceResponse.Adhoc = _ctx.BooleanValue("DescribeFlowNodeInstance.Adhoc");
+			describeFlowNodeInstanceResponse.MonitorConf = _ctx.StringValue("DescribeFlowNodeInstance.MonitorConf");
+			describeFlowNodeInstanceResponse.Mode = _ctx.StringValue("DescribeFlowNodeInstance.Mode");
+			describeFlowNodeInstanceResponse.ClusterName = _ctx.StringValue("DescribeFlowNodeInstance.ClusterName");
         
 			return describeFlowNodeInstanceResponse;
         }

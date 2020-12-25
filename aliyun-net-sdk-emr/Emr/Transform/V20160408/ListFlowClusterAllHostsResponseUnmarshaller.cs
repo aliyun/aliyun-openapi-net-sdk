@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListFlowClusterAllHostsResponseUnmarshaller
     {
-        public static ListFlowClusterAllHostsResponse Unmarshall(UnmarshallerContext context)
+        public static ListFlowClusterAllHostsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListFlowClusterAllHostsResponse listFlowClusterAllHostsResponse = new ListFlowClusterAllHostsResponse();
 
-			listFlowClusterAllHostsResponse.HttpResponse = context.HttpResponse;
-			listFlowClusterAllHostsResponse.RequestId = context.StringValue("ListFlowClusterAllHosts.RequestId");
+			listFlowClusterAllHostsResponse.HttpResponse = _ctx.HttpResponse;
+			listFlowClusterAllHostsResponse.RequestId = _ctx.StringValue("ListFlowClusterAllHosts.RequestId");
 
 			List<ListFlowClusterAllHostsResponse.ListFlowClusterAllHosts_Host> listFlowClusterAllHostsResponse_hostList = new List<ListFlowClusterAllHostsResponse.ListFlowClusterAllHosts_Host>();
-			for (int i = 0; i < context.Length("ListFlowClusterAllHosts.HostList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListFlowClusterAllHosts.HostList.Length"); i++) {
 				ListFlowClusterAllHostsResponse.ListFlowClusterAllHosts_Host host = new ListFlowClusterAllHostsResponse.ListFlowClusterAllHosts_Host();
-				host.HostId = context.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].HostId");
-				host.HostName = context.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].HostName");
-				host.PublicIp = context.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].PublicIp");
-				host.PrivateIp = context.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].PrivateIp");
-				host.Role = context.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].Role");
-				host.InstanceType = context.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].InstanceType");
-				host.Cpu = context.IntegerValue("ListFlowClusterAllHosts.HostList["+ i +"].Cpu");
-				host.Memory = context.IntegerValue("ListFlowClusterAllHosts.HostList["+ i +"].Memory");
-				host.Status = context.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].Status");
-				host.Type = context.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].Type");
-				host.HostInstanceId = context.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].HostInstanceId");
-				host.SerialNumber = context.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].SerialNumber");
+				host.HostId = _ctx.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].HostId");
+				host.HostName = _ctx.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].HostName");
+				host.PublicIp = _ctx.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].PublicIp");
+				host.PrivateIp = _ctx.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].PrivateIp");
+				host.Role = _ctx.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].Role");
+				host.InstanceType = _ctx.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].InstanceType");
+				host.Cpu = _ctx.IntegerValue("ListFlowClusterAllHosts.HostList["+ i +"].Cpu");
+				host.Memory = _ctx.IntegerValue("ListFlowClusterAllHosts.HostList["+ i +"].Memory");
+				host.Status = _ctx.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].Status");
+				host.Type = _ctx.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].Type");
+				host.HostInstanceId = _ctx.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].HostInstanceId");
+				host.SerialNumber = _ctx.StringValue("ListFlowClusterAllHosts.HostList["+ i +"].SerialNumber");
 
 				listFlowClusterAllHostsResponse_hostList.Add(host);
 			}

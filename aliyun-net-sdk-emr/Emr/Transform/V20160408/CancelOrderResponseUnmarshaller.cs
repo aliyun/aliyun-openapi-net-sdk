@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class CancelOrderResponseUnmarshaller
     {
-        public static CancelOrderResponse Unmarshall(UnmarshallerContext context)
+        public static CancelOrderResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CancelOrderResponse cancelOrderResponse = new CancelOrderResponse();
 
-			cancelOrderResponse.HttpResponse = context.HttpResponse;
-			cancelOrderResponse.RequestId = context.StringValue("CancelOrder.RequestId");
-			cancelOrderResponse.ClusterId = context.StringValue("CancelOrder.ClusterId");
+			cancelOrderResponse.HttpResponse = _ctx.HttpResponse;
+			cancelOrderResponse.RequestId = _ctx.StringValue("CancelOrder.RequestId");
+			cancelOrderResponse.ClusterId = _ctx.StringValue("CancelOrder.clusterId");
         
 			return cancelOrderResponse;
         }

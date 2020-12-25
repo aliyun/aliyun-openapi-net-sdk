@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListNotesResponseUnmarshaller
     {
-        public static ListNotesResponse Unmarshall(UnmarshallerContext context)
+        public static ListNotesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListNotesResponse listNotesResponse = new ListNotesResponse();
 
-			listNotesResponse.HttpResponse = context.HttpResponse;
-			listNotesResponse.RequestId = context.StringValue("ListNotes.RequestId");
+			listNotesResponse.HttpResponse = _ctx.HttpResponse;
+			listNotesResponse.RequestId = _ctx.StringValue("ListNotes.RequestId");
 
 			List<ListNotesResponse.ListNotes_NoteInfo> listNotesResponse_notes = new List<ListNotesResponse.ListNotes_NoteInfo>();
-			for (int i = 0; i < context.Length("ListNotes.Notes.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListNotes.Notes.Length"); i++) {
 				ListNotesResponse.ListNotes_NoteInfo noteInfo = new ListNotesResponse.ListNotes_NoteInfo();
-				noteInfo.Id = context.StringValue("ListNotes.Notes["+ i +"].Id");
-				noteInfo.Name = context.StringValue("ListNotes.Notes["+ i +"].Name");
-				noteInfo.Type = context.StringValue("ListNotes.Notes["+ i +"].Type");
+				noteInfo.Id = _ctx.StringValue("ListNotes.Notes["+ i +"].Id");
+				noteInfo.Name = _ctx.StringValue("ListNotes.Notes["+ i +"].Name");
+				noteInfo.Type = _ctx.StringValue("ListNotes.Notes["+ i +"].Type");
 
 				listNotesResponse_notes.Add(noteInfo);
 			}

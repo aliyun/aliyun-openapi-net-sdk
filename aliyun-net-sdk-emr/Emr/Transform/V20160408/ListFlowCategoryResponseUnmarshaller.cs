@@ -26,29 +26,29 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListFlowCategoryResponseUnmarshaller
     {
-        public static ListFlowCategoryResponse Unmarshall(UnmarshallerContext context)
+        public static ListFlowCategoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListFlowCategoryResponse listFlowCategoryResponse = new ListFlowCategoryResponse();
 
-			listFlowCategoryResponse.HttpResponse = context.HttpResponse;
-			listFlowCategoryResponse.RequestId = context.StringValue("ListFlowCategory.RequestId");
-			listFlowCategoryResponse.PageNumber = context.IntegerValue("ListFlowCategory.PageNumber");
-			listFlowCategoryResponse.PageSize = context.IntegerValue("ListFlowCategory.PageSize");
-			listFlowCategoryResponse.Total = context.IntegerValue("ListFlowCategory.Total");
+			listFlowCategoryResponse.HttpResponse = _ctx.HttpResponse;
+			listFlowCategoryResponse.RequestId = _ctx.StringValue("ListFlowCategory.RequestId");
+			listFlowCategoryResponse.PageNumber = _ctx.IntegerValue("ListFlowCategory.PageNumber");
+			listFlowCategoryResponse.PageSize = _ctx.IntegerValue("ListFlowCategory.PageSize");
+			listFlowCategoryResponse.Total = _ctx.IntegerValue("ListFlowCategory.Total");
 
 			List<ListFlowCategoryResponse.ListFlowCategory_Category> listFlowCategoryResponse_categories = new List<ListFlowCategoryResponse.ListFlowCategory_Category>();
-			for (int i = 0; i < context.Length("ListFlowCategory.Categories.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListFlowCategory.Categories.Length"); i++) {
 				ListFlowCategoryResponse.ListFlowCategory_Category category = new ListFlowCategoryResponse.ListFlowCategory_Category();
-				category.Id = context.StringValue("ListFlowCategory.Categories["+ i +"].Id");
-				category.GmtCreate = context.LongValue("ListFlowCategory.Categories["+ i +"].GmtCreate");
-				category.GmtModified = context.LongValue("ListFlowCategory.Categories["+ i +"].GmtModified");
-				category.Name = context.StringValue("ListFlowCategory.Categories["+ i +"].Name");
-				category.ParentId = context.StringValue("ListFlowCategory.Categories["+ i +"].ParentId");
-				category.Type = context.StringValue("ListFlowCategory.Categories["+ i +"].Type");
-				category.CategoryType = context.StringValue("ListFlowCategory.Categories["+ i +"].CategoryType");
-				category.ObjectType = context.StringValue("ListFlowCategory.Categories["+ i +"].ObjectType");
-				category.ObjectId = context.StringValue("ListFlowCategory.Categories["+ i +"].ObjectId");
-				category.ProjectId = context.StringValue("ListFlowCategory.Categories["+ i +"].ProjectId");
+				category.Id = _ctx.StringValue("ListFlowCategory.Categories["+ i +"].Id");
+				category.GmtCreate = _ctx.LongValue("ListFlowCategory.Categories["+ i +"].GmtCreate");
+				category.GmtModified = _ctx.LongValue("ListFlowCategory.Categories["+ i +"].GmtModified");
+				category.Name = _ctx.StringValue("ListFlowCategory.Categories["+ i +"].Name");
+				category.ParentId = _ctx.StringValue("ListFlowCategory.Categories["+ i +"].ParentId");
+				category.Type = _ctx.StringValue("ListFlowCategory.Categories["+ i +"].Type");
+				category.CategoryType = _ctx.StringValue("ListFlowCategory.Categories["+ i +"].CategoryType");
+				category.ObjectType = _ctx.StringValue("ListFlowCategory.Categories["+ i +"].ObjectType");
+				category.ObjectId = _ctx.StringValue("ListFlowCategory.Categories["+ i +"].ObjectId");
+				category.ProjectId = _ctx.StringValue("ListFlowCategory.Categories["+ i +"].ProjectId");
 
 				listFlowCategoryResponse_categories.Add(category);
 			}

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class DeleteNoteResponseUnmarshaller
     {
-        public static DeleteNoteResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteNoteResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteNoteResponse deleteNoteResponse = new DeleteNoteResponse();
 
-			deleteNoteResponse.HttpResponse = context.HttpResponse;
-			deleteNoteResponse.RequestId = context.StringValue("DeleteNote.RequestId");
+			deleteNoteResponse.HttpResponse = _ctx.HttpResponse;
+			deleteNoteResponse.RequestId = _ctx.StringValue("DeleteNote.RequestId");
         
 			return deleteNoteResponse;
         }

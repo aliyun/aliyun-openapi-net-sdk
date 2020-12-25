@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class GetJobOutputStatisticInfoResponseUnmarshaller
     {
-        public static GetJobOutputStatisticInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetJobOutputStatisticInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetJobOutputStatisticInfoResponse getJobOutputStatisticInfoResponse = new GetJobOutputStatisticInfoResponse();
 
-			getJobOutputStatisticInfoResponse.HttpResponse = context.HttpResponse;
-			getJobOutputStatisticInfoResponse.RequestId = context.StringValue("GetJobOutputStatisticInfo.RequestId");
-			getJobOutputStatisticInfoResponse.Total = context.IntegerValue("GetJobOutputStatisticInfo.Total");
-			getJobOutputStatisticInfoResponse.PageNumber = context.IntegerValue("GetJobOutputStatisticInfo.PageNumber");
-			getJobOutputStatisticInfoResponse.PageSize = context.IntegerValue("GetJobOutputStatisticInfo.PageSize");
+			getJobOutputStatisticInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getJobOutputStatisticInfoResponse.RequestId = _ctx.StringValue("GetJobOutputStatisticInfo.RequestId");
+			getJobOutputStatisticInfoResponse.Total = _ctx.IntegerValue("GetJobOutputStatisticInfo.Total");
+			getJobOutputStatisticInfoResponse.PageNumber = _ctx.IntegerValue("GetJobOutputStatisticInfo.PageNumber");
+			getJobOutputStatisticInfoResponse.PageSize = _ctx.IntegerValue("GetJobOutputStatisticInfo.PageSize");
 
 			List<GetJobOutputStatisticInfoResponse.GetJobOutputStatisticInfo_ClusterStatJobOutput> getJobOutputStatisticInfoResponse_jobOutputList = new List<GetJobOutputStatisticInfoResponse.GetJobOutputStatisticInfo_ClusterStatJobOutput>();
-			for (int i = 0; i < context.Length("GetJobOutputStatisticInfo.JobOutputList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetJobOutputStatisticInfo.JobOutputList.Length"); i++) {
 				GetJobOutputStatisticInfoResponse.GetJobOutputStatisticInfo_ClusterStatJobOutput clusterStatJobOutput = new GetJobOutputStatisticInfoResponse.GetJobOutputStatisticInfo_ClusterStatJobOutput();
-				clusterStatJobOutput.ApplicationId = context.StringValue("GetJobOutputStatisticInfo.JobOutputList["+ i +"].ApplicationId");
-				clusterStatJobOutput.JobId = context.StringValue("GetJobOutputStatisticInfo.JobOutputList["+ i +"].JobId");
-				clusterStatJobOutput.StartTime = context.LongValue("GetJobOutputStatisticInfo.JobOutputList["+ i +"].StartTime");
-				clusterStatJobOutput.FinishTime = context.LongValue("GetJobOutputStatisticInfo.JobOutputList["+ i +"].FinishTime");
-				clusterStatJobOutput.Name = context.StringValue("GetJobOutputStatisticInfo.JobOutputList["+ i +"].Name");
-				clusterStatJobOutput.Queue = context.StringValue("GetJobOutputStatisticInfo.JobOutputList["+ i +"].Queue");
-				clusterStatJobOutput.User = context.StringValue("GetJobOutputStatisticInfo.JobOutputList["+ i +"].User");
-				clusterStatJobOutput.State = context.StringValue("GetJobOutputStatisticInfo.JobOutputList["+ i +"].State");
-				clusterStatJobOutput.BytesOutput = context.LongValue("GetJobOutputStatisticInfo.JobOutputList["+ i +"].BytesOutput");
+				clusterStatJobOutput.ApplicationId = _ctx.StringValue("GetJobOutputStatisticInfo.JobOutputList["+ i +"].ApplicationId");
+				clusterStatJobOutput.JobId = _ctx.StringValue("GetJobOutputStatisticInfo.JobOutputList["+ i +"].JobId");
+				clusterStatJobOutput.StartTime = _ctx.LongValue("GetJobOutputStatisticInfo.JobOutputList["+ i +"].StartTime");
+				clusterStatJobOutput.FinishTime = _ctx.LongValue("GetJobOutputStatisticInfo.JobOutputList["+ i +"].FinishTime");
+				clusterStatJobOutput.Name = _ctx.StringValue("GetJobOutputStatisticInfo.JobOutputList["+ i +"].Name");
+				clusterStatJobOutput.Queue = _ctx.StringValue("GetJobOutputStatisticInfo.JobOutputList["+ i +"].Queue");
+				clusterStatJobOutput.User = _ctx.StringValue("GetJobOutputStatisticInfo.JobOutputList["+ i +"].User");
+				clusterStatJobOutput.State = _ctx.StringValue("GetJobOutputStatisticInfo.JobOutputList["+ i +"].State");
+				clusterStatJobOutput.BytesOutput = _ctx.LongValue("GetJobOutputStatisticInfo.JobOutputList["+ i +"].BytesOutput");
 
 				getJobOutputStatisticInfoResponse_jobOutputList.Add(clusterStatJobOutput);
 			}

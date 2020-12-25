@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ModifyFlowForWebResponseUnmarshaller
     {
-        public static ModifyFlowForWebResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyFlowForWebResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyFlowForWebResponse modifyFlowForWebResponse = new ModifyFlowForWebResponse();
 
-			modifyFlowForWebResponse.HttpResponse = context.HttpResponse;
-			modifyFlowForWebResponse.RequestId = context.StringValue("ModifyFlowForWeb.RequestId");
-			modifyFlowForWebResponse.Data = context.BooleanValue("ModifyFlowForWeb.Data");
+			modifyFlowForWebResponse.HttpResponse = _ctx.HttpResponse;
+			modifyFlowForWebResponse.RequestId = _ctx.StringValue("ModifyFlowForWeb.RequestId");
+			modifyFlowForWebResponse.Data = _ctx.BooleanValue("ModifyFlowForWeb.Data");
         
 			return modifyFlowForWebResponse;
         }

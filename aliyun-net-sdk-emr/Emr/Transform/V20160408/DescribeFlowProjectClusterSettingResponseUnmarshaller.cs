@@ -26,34 +26,35 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class DescribeFlowProjectClusterSettingResponseUnmarshaller
     {
-        public static DescribeFlowProjectClusterSettingResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeFlowProjectClusterSettingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeFlowProjectClusterSettingResponse describeFlowProjectClusterSettingResponse = new DescribeFlowProjectClusterSettingResponse();
 
-			describeFlowProjectClusterSettingResponse.HttpResponse = context.HttpResponse;
-			describeFlowProjectClusterSettingResponse.RequestId = context.StringValue("DescribeFlowProjectClusterSetting.RequestId");
-			describeFlowProjectClusterSettingResponse.GmtCreate = context.LongValue("DescribeFlowProjectClusterSetting.GmtCreate");
-			describeFlowProjectClusterSettingResponse.GmtModified = context.LongValue("DescribeFlowProjectClusterSetting.GmtModified");
-			describeFlowProjectClusterSettingResponse.ProjectId = context.StringValue("DescribeFlowProjectClusterSetting.ProjectId");
-			describeFlowProjectClusterSettingResponse.ClusterId = context.StringValue("DescribeFlowProjectClusterSetting.ClusterId");
-			describeFlowProjectClusterSettingResponse.DefaultUser = context.StringValue("DescribeFlowProjectClusterSetting.DefaultUser");
-			describeFlowProjectClusterSettingResponse.DefaultQueue = context.StringValue("DescribeFlowProjectClusterSetting.DefaultQueue");
+			describeFlowProjectClusterSettingResponse.HttpResponse = _ctx.HttpResponse;
+			describeFlowProjectClusterSettingResponse.RequestId = _ctx.StringValue("DescribeFlowProjectClusterSetting.RequestId");
+			describeFlowProjectClusterSettingResponse.GmtCreate = _ctx.LongValue("DescribeFlowProjectClusterSetting.GmtCreate");
+			describeFlowProjectClusterSettingResponse.GmtModified = _ctx.LongValue("DescribeFlowProjectClusterSetting.GmtModified");
+			describeFlowProjectClusterSettingResponse.ProjectId = _ctx.StringValue("DescribeFlowProjectClusterSetting.ProjectId");
+			describeFlowProjectClusterSettingResponse.ClusterId = _ctx.StringValue("DescribeFlowProjectClusterSetting.ClusterId");
+			describeFlowProjectClusterSettingResponse.K8sClusterId = _ctx.StringValue("DescribeFlowProjectClusterSetting.K8sClusterId");
+			describeFlowProjectClusterSettingResponse.DefaultUser = _ctx.StringValue("DescribeFlowProjectClusterSetting.DefaultUser");
+			describeFlowProjectClusterSettingResponse.DefaultQueue = _ctx.StringValue("DescribeFlowProjectClusterSetting.DefaultQueue");
 
 			List<string> describeFlowProjectClusterSettingResponse_userList = new List<string>();
-			for (int i = 0; i < context.Length("DescribeFlowProjectClusterSetting.UserList.Length"); i++) {
-				describeFlowProjectClusterSettingResponse_userList.Add(context.StringValue("DescribeFlowProjectClusterSetting.UserList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeFlowProjectClusterSetting.UserList.Length"); i++) {
+				describeFlowProjectClusterSettingResponse_userList.Add(_ctx.StringValue("DescribeFlowProjectClusterSetting.UserList["+ i +"]"));
 			}
 			describeFlowProjectClusterSettingResponse.UserList = describeFlowProjectClusterSettingResponse_userList;
 
 			List<string> describeFlowProjectClusterSettingResponse_queueList = new List<string>();
-			for (int i = 0; i < context.Length("DescribeFlowProjectClusterSetting.QueueList.Length"); i++) {
-				describeFlowProjectClusterSettingResponse_queueList.Add(context.StringValue("DescribeFlowProjectClusterSetting.QueueList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeFlowProjectClusterSetting.QueueList.Length"); i++) {
+				describeFlowProjectClusterSettingResponse_queueList.Add(_ctx.StringValue("DescribeFlowProjectClusterSetting.QueueList["+ i +"]"));
 			}
 			describeFlowProjectClusterSettingResponse.QueueList = describeFlowProjectClusterSettingResponse_queueList;
 
 			List<string> describeFlowProjectClusterSettingResponse_hostList = new List<string>();
-			for (int i = 0; i < context.Length("DescribeFlowProjectClusterSetting.HostList.Length"); i++) {
-				describeFlowProjectClusterSettingResponse_hostList.Add(context.StringValue("DescribeFlowProjectClusterSetting.HostList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeFlowProjectClusterSetting.HostList.Length"); i++) {
+				describeFlowProjectClusterSettingResponse_hostList.Add(_ctx.StringValue("DescribeFlowProjectClusterSetting.HostList["+ i +"]"));
 			}
 			describeFlowProjectClusterSettingResponse.HostList = describeFlowProjectClusterSettingResponse_hostList;
         

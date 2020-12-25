@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class GetQueueInputStatisticInfoResponseUnmarshaller
     {
-        public static GetQueueInputStatisticInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetQueueInputStatisticInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetQueueInputStatisticInfoResponse getQueueInputStatisticInfoResponse = new GetQueueInputStatisticInfoResponse();
 
-			getQueueInputStatisticInfoResponse.HttpResponse = context.HttpResponse;
-			getQueueInputStatisticInfoResponse.RequestId = context.StringValue("GetQueueInputStatisticInfo.RequestId");
+			getQueueInputStatisticInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getQueueInputStatisticInfoResponse.RequestId = _ctx.StringValue("GetQueueInputStatisticInfo.RequestId");
 
 			List<GetQueueInputStatisticInfoResponse.GetQueueInputStatisticInfo_ClusterStatQueueInput> getQueueInputStatisticInfoResponse_queueInputList = new List<GetQueueInputStatisticInfoResponse.GetQueueInputStatisticInfo_ClusterStatQueueInput>();
-			for (int i = 0; i < context.Length("GetQueueInputStatisticInfo.QueueInputList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetQueueInputStatisticInfo.QueueInputList.Length"); i++) {
 				GetQueueInputStatisticInfoResponse.GetQueueInputStatisticInfo_ClusterStatQueueInput clusterStatQueueInput = new GetQueueInputStatisticInfoResponse.GetQueueInputStatisticInfo_ClusterStatQueueInput();
-				clusterStatQueueInput.Queue = context.StringValue("GetQueueInputStatisticInfo.QueueInputList["+ i +"].Queue");
-				clusterStatQueueInput.BytesInput = context.LongValue("GetQueueInputStatisticInfo.QueueInputList["+ i +"].BytesInput");
+				clusterStatQueueInput.Queue = _ctx.StringValue("GetQueueInputStatisticInfo.QueueInputList["+ i +"].Queue");
+				clusterStatQueueInput.BytesInput = _ctx.LongValue("GetQueueInputStatisticInfo.QueueInputList["+ i +"].BytesInput");
 
 				getQueueInputStatisticInfoResponse_queueInputList.Add(clusterStatQueueInput);
 			}

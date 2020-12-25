@@ -32,6 +32,12 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ModifyClusterTemplateRequest()
             : base("Emr", "2016-04-08", "ModifyClusterTemplate", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -42,33 +48,25 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private string configurations;
 
-		private bool? ioOptimized;
-
-		private string securityGroupId;
-
 		private bool? sshEnable;
 
-		private bool? easEnable;
+		private string keyPairName;
+
+		private string metaStoreType;
 
 		private string securityGroupName;
 
-		private string depositType;
-
-		private string accessKeyId;
-
 		private string machineType;
 
-		private List<BootstrapAction> bootstrapActions;
+		private string resourceGroupId;
 
-		private string regionId;
+		private List<BootstrapAction> bootstrapActions = new List<BootstrapAction>(){ };
 
-		private bool? useLocalMetaDb;
+		private string metaStoreConf;
 
 		private string emrVer;
 
-		private string templateName;
-
-		private string userDefinedEmrEcsRole;
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private bool? isOpenPublicIp;
 
@@ -82,27 +80,41 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private bool? autoRenew;
 
-		private List<string> optionSoftWareLists;
-
-		private string vpcId;
+		private List<string> optionSoftWareLists = new List<string>(){ };
 
 		private string netType;
 
-		private string bizId;
-
-		private List<HostGroup> hostGroups;
-
 		private string zoneId;
-
-		private string chargeType;
 
 		private bool? useCustomHiveMetaDb;
 
-		private List<Config> configs;
+		private bool? initCustomHiveMetaDb;
+
+		private bool? ioOptimized;
+
+		private string securityGroupId;
+
+		private bool? easEnable;
+
+		private string depositType;
+
+		private bool? useLocalMetaDb;
+
+		private string templateName;
+
+		private string userDefinedEmrEcsRole;
+
+		private string vpcId;
+
+		private string bizId;
+
+		private List<HostGroup> hostGroups = new List<HostGroup>(){ };
+
+		private string chargeType;
+
+		private List<Config> configs = new List<Config>(){ };
 
 		private bool? highAvailabilityEnable;
-
-		private bool? initCustomHiveMetaDb;
 
 		public long? ResourceOwnerId
 		{
@@ -156,32 +168,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public bool? IoOptimized
-		{
-			get
-			{
-				return ioOptimized;
-			}
-			set	
-			{
-				ioOptimized = value;
-				DictionaryUtil.Add(QueryParameters, "IoOptimized", value.ToString());
-			}
-		}
-
-		public string SecurityGroupId
-		{
-			get
-			{
-				return securityGroupId;
-			}
-			set	
-			{
-				securityGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
-			}
-		}
-
 		public bool? SshEnable
 		{
 			get
@@ -195,16 +181,29 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public bool? EasEnable
+		public string KeyPairName
 		{
 			get
 			{
-				return easEnable;
+				return keyPairName;
 			}
 			set	
 			{
-				easEnable = value;
-				DictionaryUtil.Add(QueryParameters, "EasEnable", value.ToString());
+				keyPairName = value;
+				DictionaryUtil.Add(QueryParameters, "KeyPairName", value);
+			}
+		}
+
+		public string MetaStoreType
+		{
+			get
+			{
+				return metaStoreType;
+			}
+			set	
+			{
+				metaStoreType = value;
+				DictionaryUtil.Add(QueryParameters, "MetaStoreType", value);
 			}
 		}
 
@@ -221,32 +220,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string DepositType
-		{
-			get
-			{
-				return depositType;
-			}
-			set	
-			{
-				depositType = value;
-				DictionaryUtil.Add(QueryParameters, "DepositType", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string MachineType
 		{
 			get
@@ -257,6 +230,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				machineType = value;
 				DictionaryUtil.Add(QueryParameters, "MachineType", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -273,35 +259,25 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				for (int i = 0; i < bootstrapActions.Count; i++)
 				{
 					DictionaryUtil.Add(QueryParameters,"BootstrapAction." + (i + 1) + ".Path", bootstrapActions[i].Path);
+					DictionaryUtil.Add(QueryParameters,"BootstrapAction." + (i + 1) + ".ExecutionTarget", bootstrapActions[i].ExecutionTarget);
+					DictionaryUtil.Add(QueryParameters,"BootstrapAction." + (i + 1) + ".ExecutionMoment", bootstrapActions[i].ExecutionMoment);
 					DictionaryUtil.Add(QueryParameters,"BootstrapAction." + (i + 1) + ".Arg", bootstrapActions[i].Arg);
 					DictionaryUtil.Add(QueryParameters,"BootstrapAction." + (i + 1) + ".Name", bootstrapActions[i].Name);
+					DictionaryUtil.Add(QueryParameters,"BootstrapAction." + (i + 1) + ".ExecutionFailStrategy", bootstrapActions[i].ExecutionFailStrategy);
 				}
 			}
 		}
 
-		public string RegionId
+		public string MetaStoreConf
 		{
 			get
 			{
-				return regionId;
+				return metaStoreConf;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public bool? UseLocalMetaDb
-		{
-			get
-			{
-				return useLocalMetaDb;
-			}
-			set	
-			{
-				useLocalMetaDb = value;
-				DictionaryUtil.Add(QueryParameters, "UseLocalMetaDb", value.ToString());
+				metaStoreConf = value;
+				DictionaryUtil.Add(QueryParameters, "MetaStoreConf", value);
 			}
 		}
 
@@ -318,29 +294,21 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string TemplateName
+		public List<Tag> Tags
 		{
 			get
 			{
-				return templateName;
+				return tags;
 			}
-			set	
-			{
-				templateName = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateName", value);
-			}
-		}
 
-		public string UserDefinedEmrEcsRole
-		{
-			get
+			set
 			{
-				return userDefinedEmrEcsRole;
-			}
-			set	
-			{
-				userDefinedEmrEcsRole = value;
-				DictionaryUtil.Add(QueryParameters, "UserDefinedEmrEcsRole", value);
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
 			}
 		}
 
@@ -439,19 +407,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
-
 		public string NetType
 		{
 			get
@@ -462,6 +417,149 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				netType = value;
 				DictionaryUtil.Add(QueryParameters, "NetType", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public bool? UseCustomHiveMetaDb
+		{
+			get
+			{
+				return useCustomHiveMetaDb;
+			}
+			set	
+			{
+				useCustomHiveMetaDb = value;
+				DictionaryUtil.Add(QueryParameters, "UseCustomHiveMetaDb", value.ToString());
+			}
+		}
+
+		public bool? InitCustomHiveMetaDb
+		{
+			get
+			{
+				return initCustomHiveMetaDb;
+			}
+			set	
+			{
+				initCustomHiveMetaDb = value;
+				DictionaryUtil.Add(QueryParameters, "InitCustomHiveMetaDb", value.ToString());
+			}
+		}
+
+		public bool? IoOptimized
+		{
+			get
+			{
+				return ioOptimized;
+			}
+			set	
+			{
+				ioOptimized = value;
+				DictionaryUtil.Add(QueryParameters, "IoOptimized", value.ToString());
+			}
+		}
+
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
+			}
+		}
+
+		public bool? EasEnable
+		{
+			get
+			{
+				return easEnable;
+			}
+			set	
+			{
+				easEnable = value;
+				DictionaryUtil.Add(QueryParameters, "EasEnable", value.ToString());
+			}
+		}
+
+		public string DepositType
+		{
+			get
+			{
+				return depositType;
+			}
+			set	
+			{
+				depositType = value;
+				DictionaryUtil.Add(QueryParameters, "DepositType", value);
+			}
+		}
+
+		public bool? UseLocalMetaDb
+		{
+			get
+			{
+				return useLocalMetaDb;
+			}
+			set	
+			{
+				useLocalMetaDb = value;
+				DictionaryUtil.Add(QueryParameters, "UseLocalMetaDb", value.ToString());
+			}
+		}
+
+		public string TemplateName
+		{
+			get
+			{
+				return templateName;
+			}
+			set	
+			{
+				templateName = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateName", value);
+			}
+		}
+
+		public string UserDefinedEmrEcsRole
+		{
+			get
+			{
+				return userDefinedEmrEcsRole;
+			}
+			set	
+			{
+				userDefinedEmrEcsRole = value;
+				DictionaryUtil.Add(QueryParameters, "UserDefinedEmrEcsRole", value);
+			}
+		}
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
 			}
 		}
 
@@ -512,19 +610,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
 		public string ChargeType
 		{
 			get
@@ -535,19 +620,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				chargeType = value;
 				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
-			}
-		}
-
-		public bool? UseCustomHiveMetaDb
-		{
-			get
-			{
-				return useCustomHiveMetaDb;
-			}
-			set	
-			{
-				useCustomHiveMetaDb = value;
-				DictionaryUtil.Add(QueryParameters, "UseCustomHiveMetaDb", value.ToString());
 			}
 		}
 
@@ -586,27 +658,20 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public bool? InitCustomHiveMetaDb
-		{
-			get
-			{
-				return initCustomHiveMetaDb;
-			}
-			set	
-			{
-				initCustomHiveMetaDb = value;
-				DictionaryUtil.Add(QueryParameters, "InitCustomHiveMetaDb", value.ToString());
-			}
-		}
-
 		public class BootstrapAction
 		{
 
 			private string path;
 
+			private string executionTarget;
+
+			private string executionMoment;
+
 			private string arg;
 
 			private string name;
+
+			private string executionFailStrategy;
 
 			public string Path
 			{
@@ -617,6 +682,30 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					path = value;
+				}
+			}
+
+			public string ExecutionTarget
+			{
+				get
+				{
+					return executionTarget;
+				}
+				set	
+				{
+					executionTarget = value;
+				}
+			}
+
+			public string ExecutionMoment
+			{
+				get
+				{
+					return executionMoment;
+				}
+				set	
+				{
+					executionMoment = value;
 				}
 			}
 
@@ -641,6 +730,50 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					name = value;
+				}
+			}
+
+			public string ExecutionFailStrategy
+			{
+				get
+				{
+					return executionFailStrategy;
+				}
+				set	
+				{
+					executionFailStrategy = value;
+				}
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
 				}
 			}
 		}

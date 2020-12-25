@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListJobExecutionInstancesResponseUnmarshaller
     {
-        public static ListJobExecutionInstancesResponse Unmarshall(UnmarshallerContext context)
+        public static ListJobExecutionInstancesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListJobExecutionInstancesResponse listJobExecutionInstancesResponse = new ListJobExecutionInstancesResponse();
 
-			listJobExecutionInstancesResponse.HttpResponse = context.HttpResponse;
-			listJobExecutionInstancesResponse.RequestId = context.StringValue("ListJobExecutionInstances.RequestId");
-			listJobExecutionInstancesResponse.TotalCount = context.IntegerValue("ListJobExecutionInstances.TotalCount");
-			listJobExecutionInstancesResponse.PageNumber = context.IntegerValue("ListJobExecutionInstances.PageNumber");
-			listJobExecutionInstancesResponse.PageSize = context.IntegerValue("ListJobExecutionInstances.PageSize");
+			listJobExecutionInstancesResponse.HttpResponse = _ctx.HttpResponse;
+			listJobExecutionInstancesResponse.RequestId = _ctx.StringValue("ListJobExecutionInstances.RequestId");
+			listJobExecutionInstancesResponse.TotalCount = _ctx.IntegerValue("ListJobExecutionInstances.TotalCount");
+			listJobExecutionInstancesResponse.PageNumber = _ctx.IntegerValue("ListJobExecutionInstances.PageNumber");
+			listJobExecutionInstancesResponse.PageSize = _ctx.IntegerValue("ListJobExecutionInstances.PageSize");
 
 			List<ListJobExecutionInstancesResponse.ListJobExecutionInstances_JobInstance> listJobExecutionInstancesResponse_jobInstances = new List<ListJobExecutionInstancesResponse.ListJobExecutionInstances_JobInstance>();
-			for (int i = 0; i < context.Length("ListJobExecutionInstances.JobInstances.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListJobExecutionInstances.JobInstances.Length"); i++) {
 				ListJobExecutionInstancesResponse.ListJobExecutionInstances_JobInstance jobInstance = new ListJobExecutionInstancesResponse.ListJobExecutionInstances_JobInstance();
-				jobInstance.Id = context.StringValue("ListJobExecutionInstances.JobInstances["+ i +"].Id");
-				jobInstance.JobName = context.StringValue("ListJobExecutionInstances.JobInstances["+ i +"].JobName");
-				jobInstance.StartTime = context.LongValue("ListJobExecutionInstances.JobInstances["+ i +"].StartTime");
-				jobInstance.RunTime = context.IntegerValue("ListJobExecutionInstances.JobInstances["+ i +"].RunTime");
-				jobInstance.JobType = context.StringValue("ListJobExecutionInstances.JobInstances["+ i +"].JobType");
-				jobInstance.JobId = context.StringValue("ListJobExecutionInstances.JobInstances["+ i +"].JobId");
-				jobInstance.ClusterId = context.StringValue("ListJobExecutionInstances.JobInstances["+ i +"].ClusterId");
-				jobInstance.Status = context.StringValue("ListJobExecutionInstances.JobInstances["+ i +"].Status");
-				jobInstance.RetryInfo = context.StringValue("ListJobExecutionInstances.JobInstances["+ i +"].RetryInfo");
+				jobInstance.Id = _ctx.StringValue("ListJobExecutionInstances.JobInstances["+ i +"].Id");
+				jobInstance.JobName = _ctx.StringValue("ListJobExecutionInstances.JobInstances["+ i +"].JobName");
+				jobInstance.StartTime = _ctx.LongValue("ListJobExecutionInstances.JobInstances["+ i +"].StartTime");
+				jobInstance.RunTime = _ctx.IntegerValue("ListJobExecutionInstances.JobInstances["+ i +"].RunTime");
+				jobInstance.JobType = _ctx.StringValue("ListJobExecutionInstances.JobInstances["+ i +"].JobType");
+				jobInstance.JobId = _ctx.StringValue("ListJobExecutionInstances.JobInstances["+ i +"].JobId");
+				jobInstance.ClusterId = _ctx.StringValue("ListJobExecutionInstances.JobInstances["+ i +"].ClusterId");
+				jobInstance.Status = _ctx.StringValue("ListJobExecutionInstances.JobInstances["+ i +"].Status");
+				jobInstance.RetryInfo = _ctx.StringValue("ListJobExecutionInstances.JobInstances["+ i +"].RetryInfo");
 
 				listJobExecutionInstancesResponse_jobInstances.Add(jobInstance);
 			}

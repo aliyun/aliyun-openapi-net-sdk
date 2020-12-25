@@ -32,11 +32,17 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ListEmrMainVersionRequest()
             : base("Emr", "2016-04-08", "ListEmrMainVersion", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string regionId;
+		private int? pageNumber;
 
 		private int? pageSize;
 
@@ -45,10 +51,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 		private string stackName;
 
 		private string stackVersion;
-
-		private int? pageNumber;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -63,16 +65,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
+		public int? PageNumber
 		{
 			get
 			{
-				return regionId;
+				return pageNumber;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -125,32 +127,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				stackVersion = value;
 				DictionaryUtil.Add(QueryParameters, "StackVersion", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

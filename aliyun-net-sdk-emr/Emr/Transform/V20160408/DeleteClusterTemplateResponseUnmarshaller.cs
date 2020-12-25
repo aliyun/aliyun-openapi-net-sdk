@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class DeleteClusterTemplateResponseUnmarshaller
     {
-        public static DeleteClusterTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteClusterTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteClusterTemplateResponse deleteClusterTemplateResponse = new DeleteClusterTemplateResponse();
 
-			deleteClusterTemplateResponse.HttpResponse = context.HttpResponse;
-			deleteClusterTemplateResponse.RequestId = context.StringValue("DeleteClusterTemplate.RequestId");
+			deleteClusterTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			deleteClusterTemplateResponse.RequestId = _ctx.StringValue("DeleteClusterTemplate.RequestId");
         
 			return deleteClusterTemplateResponse;
         }

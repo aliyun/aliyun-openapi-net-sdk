@@ -32,15 +32,17 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public CancelOrderRequest()
             : base("Emr", "2016-04-08", "CancelOrder", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string regionId;
-
 		private string clusterId;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -55,19 +57,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string ClusterId
 		{
 			get
@@ -78,19 +67,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				clusterId = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

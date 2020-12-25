@@ -26,24 +26,24 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class SearchLogResponseUnmarshaller
     {
-        public static SearchLogResponse Unmarshall(UnmarshallerContext context)
+        public static SearchLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SearchLogResponse searchLogResponse = new SearchLogResponse();
 
-			searchLogResponse.HttpResponse = context.HttpResponse;
-			searchLogResponse.RequestId = context.StringValue("SearchLog.RequestId");
-			searchLogResponse.Completed = context.BooleanValue("SearchLog.Completed");
+			searchLogResponse.HttpResponse = _ctx.HttpResponse;
+			searchLogResponse.RequestId = _ctx.StringValue("SearchLog.RequestId");
+			searchLogResponse.Completed = _ctx.BooleanValue("SearchLog.Completed");
 
 			List<SearchLogResponse.SearchLog_SlsLogItem> searchLogResponse_slsLogItemList = new List<SearchLogResponse.SearchLog_SlsLogItem>();
-			for (int i = 0; i < context.Length("SearchLog.SlsLogItemList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("SearchLog.SlsLogItemList.Length"); i++) {
 				SearchLogResponse.SearchLog_SlsLogItem slsLogItem = new SearchLogResponse.SearchLog_SlsLogItem();
-				slsLogItem.Timestamp = context.IntegerValue("SearchLog.SlsLogItemList["+ i +"].Timestamp");
-				slsLogItem.SourceIp = context.StringValue("SearchLog.SlsLogItemList["+ i +"].SourceIp");
-				slsLogItem.HostName = context.StringValue("SearchLog.SlsLogItemList["+ i +"].HostName");
-				slsLogItem.Path = context.StringValue("SearchLog.SlsLogItemList["+ i +"].Path");
-				slsLogItem.Content = context.StringValue("SearchLog.SlsLogItemList["+ i +"].Content");
-				slsLogItem.PackMeta = context.StringValue("SearchLog.SlsLogItemList["+ i +"].PackMeta");
-				slsLogItem.PackId = context.StringValue("SearchLog.SlsLogItemList["+ i +"].PackId");
+				slsLogItem.Timestamp = _ctx.IntegerValue("SearchLog.SlsLogItemList["+ i +"].Timestamp");
+				slsLogItem.SourceIp = _ctx.StringValue("SearchLog.SlsLogItemList["+ i +"].SourceIp");
+				slsLogItem.HostName = _ctx.StringValue("SearchLog.SlsLogItemList["+ i +"].HostName");
+				slsLogItem.Path = _ctx.StringValue("SearchLog.SlsLogItemList["+ i +"].Path");
+				slsLogItem.Content = _ctx.StringValue("SearchLog.SlsLogItemList["+ i +"].Content");
+				slsLogItem.PackMeta = _ctx.StringValue("SearchLog.SlsLogItemList["+ i +"].PackMeta");
+				slsLogItem.PackId = _ctx.StringValue("SearchLog.SlsLogItemList["+ i +"].PackId");
 
 				searchLogResponse_slsLogItemList.Add(slsLogItem);
 			}

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class DeleteExecutionPlanResponseUnmarshaller
     {
-        public static DeleteExecutionPlanResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteExecutionPlanResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteExecutionPlanResponse deleteExecutionPlanResponse = new DeleteExecutionPlanResponse();
 
-			deleteExecutionPlanResponse.HttpResponse = context.HttpResponse;
-			deleteExecutionPlanResponse.RequestId = context.StringValue("DeleteExecutionPlan.RequestId");
+			deleteExecutionPlanResponse.HttpResponse = _ctx.HttpResponse;
+			deleteExecutionPlanResponse.RequestId = _ctx.StringValue("DeleteExecutionPlan.RequestId");
         
 			return deleteExecutionPlanResponse;
         }

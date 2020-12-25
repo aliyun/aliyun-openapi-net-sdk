@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class DescribeJobResponseUnmarshaller
     {
-        public static DescribeJobResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeJobResponse describeJobResponse = new DescribeJobResponse();
 
-			describeJobResponse.HttpResponse = context.HttpResponse;
-			describeJobResponse.RequestId = context.StringValue("DescribeJob.RequestId");
-			describeJobResponse.Id = context.StringValue("DescribeJob.Id");
-			describeJobResponse.Name = context.StringValue("DescribeJob.Name");
-			describeJobResponse.FailAct = context.StringValue("DescribeJob.FailAct");
-			describeJobResponse.Type = context.StringValue("DescribeJob.Type");
-			describeJobResponse.MaxRetry = context.IntegerValue("DescribeJob.MaxRetry");
-			describeJobResponse.RetryInterval = context.IntegerValue("DescribeJob.RetryInterval");
-			describeJobResponse.RunParameter = context.StringValue("DescribeJob.RunParameter");
+			describeJobResponse.HttpResponse = _ctx.HttpResponse;
+			describeJobResponse.RequestId = _ctx.StringValue("DescribeJob.RequestId");
+			describeJobResponse.Id = _ctx.StringValue("DescribeJob.Id");
+			describeJobResponse.Name = _ctx.StringValue("DescribeJob.Name");
+			describeJobResponse.FailAct = _ctx.StringValue("DescribeJob.FailAct");
+			describeJobResponse.Type = _ctx.StringValue("DescribeJob.Type");
+			describeJobResponse.MaxRetry = _ctx.IntegerValue("DescribeJob.MaxRetry");
+			describeJobResponse.RetryInterval = _ctx.IntegerValue("DescribeJob.RetryInterval");
+			describeJobResponse.RunParameter = _ctx.StringValue("DescribeJob.RunParameter");
         
 			return describeJobResponse;
         }

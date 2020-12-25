@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class DeleteFlowResponseUnmarshaller
     {
-        public static DeleteFlowResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteFlowResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteFlowResponse deleteFlowResponse = new DeleteFlowResponse();
 
-			deleteFlowResponse.HttpResponse = context.HttpResponse;
-			deleteFlowResponse.RequestId = context.StringValue("DeleteFlow.RequestId");
-			deleteFlowResponse.Data = context.BooleanValue("DeleteFlow.Data");
+			deleteFlowResponse.HttpResponse = _ctx.HttpResponse;
+			deleteFlowResponse.RequestId = _ctx.StringValue("DeleteFlow.RequestId");
+			deleteFlowResponse.Data = _ctx.BooleanValue("DeleteFlow.Data");
         
 			return deleteFlowResponse;
         }

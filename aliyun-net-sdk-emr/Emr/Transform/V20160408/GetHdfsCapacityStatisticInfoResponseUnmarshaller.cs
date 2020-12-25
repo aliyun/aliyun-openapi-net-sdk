@@ -26,25 +26,25 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class GetHdfsCapacityStatisticInfoResponseUnmarshaller
     {
-        public static GetHdfsCapacityStatisticInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetHdfsCapacityStatisticInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetHdfsCapacityStatisticInfoResponse getHdfsCapacityStatisticInfoResponse = new GetHdfsCapacityStatisticInfoResponse();
 
-			getHdfsCapacityStatisticInfoResponse.HttpResponse = context.HttpResponse;
-			getHdfsCapacityStatisticInfoResponse.RequestId = context.StringValue("GetHdfsCapacityStatisticInfo.RequestId");
+			getHdfsCapacityStatisticInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getHdfsCapacityStatisticInfoResponse.RequestId = _ctx.StringValue("GetHdfsCapacityStatisticInfo.RequestId");
 
 			List<GetHdfsCapacityStatisticInfoResponse.GetHdfsCapacityStatisticInfo_ClusterStatHdfsCapacity> getHdfsCapacityStatisticInfoResponse_hdfsCapacityList = new List<GetHdfsCapacityStatisticInfoResponse.GetHdfsCapacityStatisticInfo_ClusterStatHdfsCapacity>();
-			for (int i = 0; i < context.Length("GetHdfsCapacityStatisticInfo.HdfsCapacityList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetHdfsCapacityStatisticInfo.HdfsCapacityList.Length"); i++) {
 				GetHdfsCapacityStatisticInfoResponse.GetHdfsCapacityStatisticInfo_ClusterStatHdfsCapacity clusterStatHdfsCapacity = new GetHdfsCapacityStatisticInfoResponse.GetHdfsCapacityStatisticInfo_ClusterStatHdfsCapacity();
-				clusterStatHdfsCapacity.CapacityTotal = context.LongValue("GetHdfsCapacityStatisticInfo.HdfsCapacityList["+ i +"].CapacityTotal");
-				clusterStatHdfsCapacity.CapacityTotalGB = context.LongValue("GetHdfsCapacityStatisticInfo.HdfsCapacityList["+ i +"].CapacityTotalGB");
-				clusterStatHdfsCapacity.CapacityUsed = context.LongValue("GetHdfsCapacityStatisticInfo.HdfsCapacityList["+ i +"].CapacityUsed");
-				clusterStatHdfsCapacity.CapacityUsedGB = context.LongValue("GetHdfsCapacityStatisticInfo.HdfsCapacityList["+ i +"].CapacityUsedGB");
-				clusterStatHdfsCapacity.CapacityRemaining = context.LongValue("GetHdfsCapacityStatisticInfo.HdfsCapacityList["+ i +"].CapacityRemaining");
-				clusterStatHdfsCapacity.CapacityRemainingGB = context.LongValue("GetHdfsCapacityStatisticInfo.HdfsCapacityList["+ i +"].CapacityRemainingGB");
-				clusterStatHdfsCapacity.CapacityUsedNonDfs = context.LongValue("GetHdfsCapacityStatisticInfo.HdfsCapacityList["+ i +"].CapacityUsedNonDfs");
-				clusterStatHdfsCapacity.ClusterBizId = context.StringValue("GetHdfsCapacityStatisticInfo.HdfsCapacityList["+ i +"].ClusterBizId");
-				clusterStatHdfsCapacity.DateTime = context.StringValue("GetHdfsCapacityStatisticInfo.HdfsCapacityList["+ i +"].DateTime");
+				clusterStatHdfsCapacity.CapacityTotal = _ctx.LongValue("GetHdfsCapacityStatisticInfo.HdfsCapacityList["+ i +"].CapacityTotal");
+				clusterStatHdfsCapacity.CapacityTotalGB = _ctx.LongValue("GetHdfsCapacityStatisticInfo.HdfsCapacityList["+ i +"].CapacityTotalGB");
+				clusterStatHdfsCapacity.CapacityUsed = _ctx.LongValue("GetHdfsCapacityStatisticInfo.HdfsCapacityList["+ i +"].CapacityUsed");
+				clusterStatHdfsCapacity.CapacityUsedGB = _ctx.LongValue("GetHdfsCapacityStatisticInfo.HdfsCapacityList["+ i +"].CapacityUsedGB");
+				clusterStatHdfsCapacity.CapacityRemaining = _ctx.LongValue("GetHdfsCapacityStatisticInfo.HdfsCapacityList["+ i +"].CapacityRemaining");
+				clusterStatHdfsCapacity.CapacityRemainingGB = _ctx.LongValue("GetHdfsCapacityStatisticInfo.HdfsCapacityList["+ i +"].CapacityRemainingGB");
+				clusterStatHdfsCapacity.CapacityUsedNonDfs = _ctx.LongValue("GetHdfsCapacityStatisticInfo.HdfsCapacityList["+ i +"].CapacityUsedNonDfs");
+				clusterStatHdfsCapacity.ClusterBizId = _ctx.StringValue("GetHdfsCapacityStatisticInfo.HdfsCapacityList["+ i +"].ClusterBizId");
+				clusterStatHdfsCapacity.DateTime = _ctx.StringValue("GetHdfsCapacityStatisticInfo.HdfsCapacityList["+ i +"].DateTime");
 
 				getHdfsCapacityStatisticInfoResponse_hdfsCapacityList.Add(clusterStatHdfsCapacity);
 			}

@@ -32,25 +32,29 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public CreateDataSourceRequest()
             : base("Emr", "2016-04-08", "CreateDataSource", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string regionId;
-
 		private string navParentId;
 
-		private string name;
-
 		private string description;
-
-		private string sourceType;
 
 		private string conf;
 
 		private string clusterId;
 
-		private string accessKeyId;
+		private string resourceGroupId;
+
+		private string name;
+
+		private string sourceType;
 
 		public long? ResourceOwnerId
 		{
@@ -62,19 +66,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -91,19 +82,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
 		public string Description
 		{
 			get
@@ -114,19 +92,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string SourceType
-		{
-			get
-			{
-				return sourceType;
-			}
-			set	
-			{
-				sourceType = value;
-				DictionaryUtil.Add(QueryParameters, "SourceType", value);
 			}
 		}
 
@@ -156,16 +121,42 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string AccessKeyId
+		public string ResourceGroupId
 		{
 			get
 			{
-				return accessKeyId;
+				return resourceGroupId;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string SourceType
+		{
+			get
+			{
+				return sourceType;
+			}
+			set	
+			{
+				sourceType = value;
+				DictionaryUtil.Add(QueryParameters, "SourceType", value);
 			}
 		}
 

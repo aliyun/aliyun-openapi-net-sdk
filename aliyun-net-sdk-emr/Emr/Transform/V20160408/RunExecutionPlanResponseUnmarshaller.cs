@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class RunExecutionPlanResponseUnmarshaller
     {
-        public static RunExecutionPlanResponse Unmarshall(UnmarshallerContext context)
+        public static RunExecutionPlanResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RunExecutionPlanResponse runExecutionPlanResponse = new RunExecutionPlanResponse();
 
-			runExecutionPlanResponse.HttpResponse = context.HttpResponse;
-			runExecutionPlanResponse.RequestId = context.StringValue("RunExecutionPlan.RequestId");
-			runExecutionPlanResponse.ExecutionPlanInstanceId = context.StringValue("RunExecutionPlan.ExecutionPlanInstanceId");
+			runExecutionPlanResponse.HttpResponse = _ctx.HttpResponse;
+			runExecutionPlanResponse.RequestId = _ctx.StringValue("RunExecutionPlan.RequestId");
+			runExecutionPlanResponse.ExecutionPlanInstanceId = _ctx.StringValue("RunExecutionPlan.ExecutionPlanInstanceId");
         
 			return runExecutionPlanResponse;
         }

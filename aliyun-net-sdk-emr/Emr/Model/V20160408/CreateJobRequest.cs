@@ -32,25 +32,68 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public CreateJobRequest()
             : base("Emr", "2016-04-08", "CreateJob", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
+
+		private long? resourceOwnerId;
+
+		private string type;
+
+		private string failAct;
 
 		private string runParameter;
 
 		private int? retryInterval;
 
-		private long? resourceOwnerId;
-
-		private string regionId;
+		private string resourceGroupId;
 
 		private string name;
 
-		private string type;
-
 		private int? maxRetry;
 
-		private string accessKeyId;
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
 
-		private string failAct;
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		public string FailAct
+		{
+			get
+			{
+				return failAct;
+			}
+			set	
+			{
+				failAct = value;
+				DictionaryUtil.Add(QueryParameters, "FailAct", value);
+			}
+		}
 
 		public string RunParameter
 		{
@@ -78,29 +121,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string ResourceGroupId
 		{
 			get
 			{
-				return resourceOwnerId;
+				return resourceGroupId;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -117,19 +147,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
 		public int? MaxRetry
 		{
 			get
@@ -140,32 +157,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				maxRetry = value;
 				DictionaryUtil.Add(QueryParameters, "MaxRetry", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string FailAct
-		{
-			get
-			{
-				return failAct;
-			}
-			set	
-			{
-				failAct = value;
-				DictionaryUtil.Add(QueryParameters, "FailAct", value);
 			}
 		}
 

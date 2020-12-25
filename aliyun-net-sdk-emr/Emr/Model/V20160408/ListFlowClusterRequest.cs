@@ -32,26 +32,45 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ListFlowClusterRequest()
             : base("Emr", "2016-04-08", "ListFlowCluster", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private string regionId;
+		private int? pageNumber;
+
+		private string resourceGroupId;
 
 		private int? pageSize;
 
 		private string projectId;
 
-		private int? pageNumber;
-
-		public string RegionId
+		public int? PageNumber
 		{
 			get
 			{
-				return regionId;
+				return pageNumber;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -78,19 +97,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				projectId = value;
 				DictionaryUtil.Add(QueryParameters, "ProjectId", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

@@ -32,17 +32,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ModifyResourcePoolSchedulerTypeRequest()
             : base("Emr", "2016-04-08", "ModifyResourcePoolSchedulerType", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string regionId;
-
-		private string schedulerType;
-
 		private string clusterId;
 
-		private string accessKeyId;
+		private string schedulerType;
 
 		public long? ResourceOwnerId
 		{
@@ -54,32 +56,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string SchedulerType
-		{
-			get
-			{
-				return schedulerType;
-			}
-			set	
-			{
-				schedulerType = value;
-				DictionaryUtil.Add(QueryParameters, "SchedulerType", value);
 			}
 		}
 
@@ -96,16 +72,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string AccessKeyId
+		public string SchedulerType
 		{
 			get
 			{
-				return accessKeyId;
+				return schedulerType;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				schedulerType = value;
+				DictionaryUtil.Add(QueryParameters, "SchedulerType", value);
 			}
 		}
 

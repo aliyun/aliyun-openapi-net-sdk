@@ -32,23 +32,25 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public QueryAlarmHistoryRequest()
             : base("Emr", "2016-04-08", "QueryAlarmHistory", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string cursor;
 
 		private long? resourceOwnerId;
 
-		private int? size;
-
-		private string regionId;
-
 		private string clusterId;
 
 		private long? startTimeStamp;
 
-		private string accessKeyId;
-
 		private long? endTimeStamp;
+
+		private int? size;
 
 		public string Cursor
 		{
@@ -73,32 +75,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public int? Size
-		{
-			get
-			{
-				return size;
-			}
-			set	
-			{
-				size = value;
-				DictionaryUtil.Add(QueryParameters, "Size", value.ToString());
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -128,19 +104,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public long? EndTimeStamp
 		{
 			get
@@ -151,6 +114,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				endTimeStamp = value;
 				DictionaryUtil.Add(QueryParameters, "EndTimeStamp", value.ToString());
+			}
+		}
+
+		public int? Size
+		{
+			get
+			{
+				return size;
+			}
+			set	
+			{
+				size = value;
+				DictionaryUtil.Add(QueryParameters, "Size", value.ToString());
 			}
 		}
 

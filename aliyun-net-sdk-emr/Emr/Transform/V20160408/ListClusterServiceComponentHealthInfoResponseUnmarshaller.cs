@@ -26,39 +26,40 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ListClusterServiceComponentHealthInfoResponseUnmarshaller
     {
-        public static ListClusterServiceComponentHealthInfoResponse Unmarshall(UnmarshallerContext context)
+        public static ListClusterServiceComponentHealthInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListClusterServiceComponentHealthInfoResponse listClusterServiceComponentHealthInfoResponse = new ListClusterServiceComponentHealthInfoResponse();
 
-			listClusterServiceComponentHealthInfoResponse.HttpResponse = context.HttpResponse;
-			listClusterServiceComponentHealthInfoResponse.RequestId = context.StringValue("ListClusterServiceComponentHealthInfo.RequestId");
-			listClusterServiceComponentHealthInfoResponse.ClusterId = context.StringValue("ListClusterServiceComponentHealthInfo.ClusterId");
+			listClusterServiceComponentHealthInfoResponse.HttpResponse = _ctx.HttpResponse;
+			listClusterServiceComponentHealthInfoResponse.RequestId = _ctx.StringValue("ListClusterServiceComponentHealthInfo.RequestId");
+			listClusterServiceComponentHealthInfoResponse.ClusterId = _ctx.StringValue("ListClusterServiceComponentHealthInfo.ClusterId");
 
 			List<ListClusterServiceComponentHealthInfoResponse.ListClusterServiceComponentHealthInfo_HealthInfo> listClusterServiceComponentHealthInfoResponse_healthInfoList = new List<ListClusterServiceComponentHealthInfoResponse.ListClusterServiceComponentHealthInfo_HealthInfo>();
-			for (int i = 0; i < context.Length("ListClusterServiceComponentHealthInfo.HealthInfoList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListClusterServiceComponentHealthInfo.HealthInfoList.Length"); i++) {
 				ListClusterServiceComponentHealthInfoResponse.ListClusterServiceComponentHealthInfo_HealthInfo healthInfo = new ListClusterServiceComponentHealthInfoResponse.ListClusterServiceComponentHealthInfo_HealthInfo();
-				healthInfo.ServiceName = context.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].ServiceName");
-				healthInfo.ComponentName = context.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].ComponentName");
-				healthInfo.HealthLevel = context.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthLevel");
-				healthInfo.StoppedNum = context.IntegerValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].StoppedNum");
-				healthInfo.ManualStoppedNum = context.IntegerValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].ManualStoppedNum");
-				healthInfo.NormalNum = context.IntegerValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].NormalNum");
-				healthInfo.TotalNum = context.IntegerValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].TotalNum");
-				healthInfo.AgentHeartBeatLostNum = context.IntegerValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].AgentHeartBeatLostNum");
+				healthInfo.ServiceName = _ctx.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].ServiceName");
+				healthInfo.ComponentName = _ctx.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].ComponentName");
+				healthInfo.HealthLevel = _ctx.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthLevel");
+				healthInfo.StoppedNum = _ctx.IntegerValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].StoppedNum");
+				healthInfo.ManualStoppedNum = _ctx.IntegerValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].ManualStoppedNum");
+				healthInfo.NormalNum = _ctx.IntegerValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].NormalNum");
+				healthInfo.TotalNum = _ctx.IntegerValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].TotalNum");
+				healthInfo.AgentHeartBeatLostNum = _ctx.IntegerValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].AgentHeartBeatLostNum");
+				healthInfo.CreatedTime = _ctx.LongValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].CreatedTime");
 
 				List<ListClusterServiceComponentHealthInfoResponse.ListClusterServiceComponentHealthInfo_HealthInfo.ListClusterServiceComponentHealthInfo_HealthDetail> healthInfo_healthDetailList = new List<ListClusterServiceComponentHealthInfoResponse.ListClusterServiceComponentHealthInfo_HealthInfo.ListClusterServiceComponentHealthInfo_HealthDetail>();
-				for (int j = 0; j < context.Length("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthDetailList.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthDetailList.Length"); j++) {
 					ListClusterServiceComponentHealthInfoResponse.ListClusterServiceComponentHealthInfo_HealthInfo.ListClusterServiceComponentHealthInfo_HealthDetail healthDetail = new ListClusterServiceComponentHealthInfoResponse.ListClusterServiceComponentHealthInfo_HealthInfo.ListClusterServiceComponentHealthInfo_HealthDetail();
-					healthDetail.Code = context.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthDetailList["+ j +"].Code");
+					healthDetail.Code = _ctx.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthDetailList["+ j +"].code");
 
 					ListClusterServiceComponentHealthInfoResponse.ListClusterServiceComponentHealthInfo_HealthInfo.ListClusterServiceComponentHealthInfo_HealthDetail.ListClusterServiceComponentHealthInfo_HealthRuleParam healthRuleParam = new ListClusterServiceComponentHealthInfoResponse.ListClusterServiceComponentHealthInfo_HealthInfo.ListClusterServiceComponentHealthInfo_HealthDetail.ListClusterServiceComponentHealthInfo_HealthRuleParam();
-					healthRuleParam.Service = context.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.Service");
-					healthRuleParam.Component = context.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.Component");
-					healthRuleParam.RuleTitle = context.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.RuleTitle");
-					healthRuleParam.Pass = context.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.Pass");
-					healthRuleParam.RuleId = context.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.RuleId");
-					healthRuleParam.RuleDescription = context.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.RuleDescription");
-					healthRuleParam.HostNames = context.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.HostNames");
+					healthRuleParam.Service = _ctx.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.Service");
+					healthRuleParam.Component = _ctx.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.Component");
+					healthRuleParam.RuleTitle = _ctx.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.RuleTitle");
+					healthRuleParam.Pass = _ctx.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.Pass");
+					healthRuleParam.RuleId = _ctx.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.RuleId");
+					healthRuleParam.RuleDescription = _ctx.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.RuleDescription");
+					healthRuleParam.HostNames = _ctx.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthDetailList["+ j +"].HealthRuleParam.HostNames");
 					healthDetail.HealthRuleParam = healthRuleParam;
 
 					healthInfo_healthDetailList.Add(healthDetail);

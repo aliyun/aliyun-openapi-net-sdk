@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class GetQueueSubmissionStatisticInfoResponseUnmarshaller
     {
-        public static GetQueueSubmissionStatisticInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetQueueSubmissionStatisticInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetQueueSubmissionStatisticInfoResponse getQueueSubmissionStatisticInfoResponse = new GetQueueSubmissionStatisticInfoResponse();
 
-			getQueueSubmissionStatisticInfoResponse.HttpResponse = context.HttpResponse;
-			getQueueSubmissionStatisticInfoResponse.RequestId = context.StringValue("GetQueueSubmissionStatisticInfo.RequestId");
+			getQueueSubmissionStatisticInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getQueueSubmissionStatisticInfoResponse.RequestId = _ctx.StringValue("GetQueueSubmissionStatisticInfo.RequestId");
 
 			List<GetQueueSubmissionStatisticInfoResponse.GetQueueSubmissionStatisticInfo_ClusterStatQueueSubmission> getQueueSubmissionStatisticInfoResponse_queueSubmissionList = new List<GetQueueSubmissionStatisticInfoResponse.GetQueueSubmissionStatisticInfo_ClusterStatQueueSubmission>();
-			for (int i = 0; i < context.Length("GetQueueSubmissionStatisticInfo.QueueSubmissionList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetQueueSubmissionStatisticInfo.QueueSubmissionList.Length"); i++) {
 				GetQueueSubmissionStatisticInfoResponse.GetQueueSubmissionStatisticInfo_ClusterStatQueueSubmission clusterStatQueueSubmission = new GetQueueSubmissionStatisticInfoResponse.GetQueueSubmissionStatisticInfo_ClusterStatQueueSubmission();
-				clusterStatQueueSubmission.Queue = context.StringValue("GetQueueSubmissionStatisticInfo.QueueSubmissionList["+ i +"].Queue");
-				clusterStatQueueSubmission.Submission = context.LongValue("GetQueueSubmissionStatisticInfo.QueueSubmissionList["+ i +"].Submission");
+				clusterStatQueueSubmission.Queue = _ctx.StringValue("GetQueueSubmissionStatisticInfo.QueueSubmissionList["+ i +"].Queue");
+				clusterStatQueueSubmission.Submission = _ctx.LongValue("GetQueueSubmissionStatisticInfo.QueueSubmissionList["+ i +"].Submission");
 
 				getQueueSubmissionStatisticInfoResponse_queueSubmissionList.Add(clusterStatQueueSubmission);
 			}

@@ -140,8 +140,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 					private string unit;
 
-					private string _value1;
-
 					private List<string> supportNodeTypeList;
 
 					private ListEmrAvailableResource_EmrInstanceType emrInstanceType;
@@ -191,18 +189,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 						set	
 						{
 							unit = value;
-						}
-					}
-
-					public string _Value1
-					{
-						get
-						{
-							return _value1;
-						}
-						set	
-						{
-							_value1 = value;
 						}
 					}
 

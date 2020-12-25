@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private string retryInterval;
 
+		private string retryPolicy;
+
 		private string nodeName;
 
 		private string flowId;
@@ -250,6 +252,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			set	
 			{
 				retryInterval = value;
+			}
+		}
+
+		public string RetryPolicy
+		{
+			get
+			{
+				return retryPolicy;
+			}
+			set	
+			{
+				retryPolicy = value;
 			}
 		}
 

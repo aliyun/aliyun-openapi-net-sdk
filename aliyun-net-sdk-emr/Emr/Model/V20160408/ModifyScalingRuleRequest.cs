@@ -32,54 +32,47 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ModifyScalingRuleRequest()
             : base("Emr", "2016-04-08", "ModifyScalingRule", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
+
+		private long? resourceOwnerId;
+
+		private string ruleName;
+
+		private string scalingRuleId;
+
+		private string recurrenceEndTime;
+
+		private List<CloudWatchTrigger> cloudWatchTriggers = new List<CloudWatchTrigger>(){ };
+
+		private long? timeoutWithGrace;
+
+		private int? cooldown;
 
 		private string launchTime;
 
-		private long? resourceOwnerId;
+		private bool? withGrace;
 
 		private int? adjustmentValue;
 
 		private string adjustmentType;
 
-		private string ruleName;
-
 		private string clusterId;
-
-		private string scalingRuleId;
 
 		private int? launchExpirationTime;
 
 		private string recurrenceValue;
 
-		private string recurrenceEndTime;
-
-		private List<CloudWatchTrigger> cloudWatchTriggers;
-
-		private string accessKeyId;
-
-		private string regionId;
-
 		private string hostGroupId;
 
-		private List<SchedulerTrigger> schedulerTriggers;
-
-		private int? cooldown;
+		private List<SchedulerTrigger> schedulerTriggers = new List<SchedulerTrigger>(){ };
 
 		private string recurrenceType;
-
-		public string LaunchTime
-		{
-			get
-			{
-				return launchTime;
-			}
-			set	
-			{
-				launchTime = value;
-				DictionaryUtil.Add(QueryParameters, "LaunchTime", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -91,32 +84,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public int? AdjustmentValue
-		{
-			get
-			{
-				return adjustmentValue;
-			}
-			set	
-			{
-				adjustmentValue = value;
-				DictionaryUtil.Add(QueryParameters, "AdjustmentValue", value.ToString());
-			}
-		}
-
-		public string AdjustmentType
-		{
-			get
-			{
-				return adjustmentType;
-			}
-			set	
-			{
-				adjustmentType = value;
-				DictionaryUtil.Add(QueryParameters, "AdjustmentType", value);
 			}
 		}
 
@@ -133,19 +100,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
 		public string ScalingRuleId
 		{
 			get
@@ -156,32 +110,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				scalingRuleId = value;
 				DictionaryUtil.Add(QueryParameters, "ScalingRuleId", value);
-			}
-		}
-
-		public int? LaunchExpirationTime
-		{
-			get
-			{
-				return launchExpirationTime;
-			}
-			set	
-			{
-				launchExpirationTime = value;
-				DictionaryUtil.Add(QueryParameters, "LaunchExpirationTime", value.ToString());
-			}
-		}
-
-		public string RecurrenceValue
-		{
-			get
-			{
-				return recurrenceValue;
-			}
-			set	
-			{
-				recurrenceValue = value;
-				DictionaryUtil.Add(QueryParameters, "RecurrenceValue", value);
 			}
 		}
 
@@ -220,29 +148,120 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string AccessKeyId
+		public long? TimeoutWithGrace
 		{
 			get
 			{
-				return accessKeyId;
+				return timeoutWithGrace;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				timeoutWithGrace = value;
+				DictionaryUtil.Add(QueryParameters, "TimeoutWithGrace", value.ToString());
 			}
 		}
 
-		public string RegionId
+		public int? Cooldown
 		{
 			get
 			{
-				return regionId;
+				return cooldown;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				cooldown = value;
+				DictionaryUtil.Add(QueryParameters, "Cooldown", value.ToString());
+			}
+		}
+
+		public string LaunchTime
+		{
+			get
+			{
+				return launchTime;
+			}
+			set	
+			{
+				launchTime = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchTime", value);
+			}
+		}
+
+		public bool? WithGrace
+		{
+			get
+			{
+				return withGrace;
+			}
+			set	
+			{
+				withGrace = value;
+				DictionaryUtil.Add(QueryParameters, "WithGrace", value.ToString());
+			}
+		}
+
+		public int? AdjustmentValue
+		{
+			get
+			{
+				return adjustmentValue;
+			}
+			set	
+			{
+				adjustmentValue = value;
+				DictionaryUtil.Add(QueryParameters, "AdjustmentValue", value.ToString());
+			}
+		}
+
+		public string AdjustmentType
+		{
+			get
+			{
+				return adjustmentType;
+			}
+			set	
+			{
+				adjustmentType = value;
+				DictionaryUtil.Add(QueryParameters, "AdjustmentType", value);
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public int? LaunchExpirationTime
+		{
+			get
+			{
+				return launchExpirationTime;
+			}
+			set	
+			{
+				launchExpirationTime = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchExpirationTime", value.ToString());
+			}
+		}
+
+		public string RecurrenceValue
+		{
+			get
+			{
+				return recurrenceValue;
+			}
+			set	
+			{
+				recurrenceValue = value;
+				DictionaryUtil.Add(QueryParameters, "RecurrenceValue", value);
 			}
 		}
 
@@ -277,19 +296,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 					DictionaryUtil.Add(QueryParameters,"SchedulerTrigger." + (i + 1) + ".RecurrenceEndTime", schedulerTriggers[i].RecurrenceEndTime);
 					DictionaryUtil.Add(QueryParameters,"SchedulerTrigger." + (i + 1) + ".RecurrenceType", schedulerTriggers[i].RecurrenceType);
 				}
-			}
-		}
-
-		public int? Cooldown
-		{
-			get
-			{
-				return cooldown;
-			}
-			set	
-			{
-				cooldown = value;
-				DictionaryUtil.Add(QueryParameters, "Cooldown", value.ToString());
 			}
 		}
 

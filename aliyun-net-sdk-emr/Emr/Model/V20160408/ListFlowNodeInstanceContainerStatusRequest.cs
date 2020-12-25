@@ -32,28 +32,45 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ListFlowNodeInstanceContainerStatusRequest()
             : base("Emr", "2016-04-08", "ListFlowNodeInstanceContainerStatus", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string regionId;
-
-		private int? pageSize;
 
 		private string nodeInstanceId;
 
-		private string projectId;
-
 		private int? pageNumber;
 
-		public string RegionId
+		private int? pageSize;
+
+		private string projectId;
+
+		public string NodeInstanceId
 		{
 			get
 			{
-				return regionId;
+				return nodeInstanceId;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				nodeInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "NodeInstanceId", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -70,19 +87,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string NodeInstanceId
-		{
-			get
-			{
-				return nodeInstanceId;
-			}
-			set	
-			{
-				nodeInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeInstanceId", value);
-			}
-		}
-
 		public string ProjectId
 		{
 			get
@@ -93,19 +97,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				projectId = value;
 				DictionaryUtil.Add(QueryParameters, "ProjectId", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

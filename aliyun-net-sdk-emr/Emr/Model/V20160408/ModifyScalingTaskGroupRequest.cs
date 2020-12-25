@@ -32,25 +32,31 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ModifyScalingTaskGroupRequest()
             : base("Emr", "2016-04-08", "ModifyScalingTaskGroup", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string regionId;
-
-		private string hostGroupId;
-
-		private string activeRuleCategory;
+		private bool? withGrace;
 
 		private string clusterId;
 
 		private int? minSize;
 
+		private long? timeoutWithGrace;
+
+		private string hostGroupId;
+
+		private string activeRuleCategory;
+
 		private int? maxSize;
 
 		private int? defaultCooldown;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -65,42 +71,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
+		public bool? WithGrace
 		{
 			get
 			{
-				return regionId;
+				return withGrace;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string HostGroupId
-		{
-			get
-			{
-				return hostGroupId;
-			}
-			set	
-			{
-				hostGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "HostGroupId", value);
-			}
-		}
-
-		public string ActiveRuleCategory
-		{
-			get
-			{
-				return activeRuleCategory;
-			}
-			set	
-			{
-				activeRuleCategory = value;
-				DictionaryUtil.Add(QueryParameters, "ActiveRuleCategory", value);
+				withGrace = value;
+				DictionaryUtil.Add(QueryParameters, "WithGrace", value.ToString());
 			}
 		}
 
@@ -130,6 +110,45 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
+		public long? TimeoutWithGrace
+		{
+			get
+			{
+				return timeoutWithGrace;
+			}
+			set	
+			{
+				timeoutWithGrace = value;
+				DictionaryUtil.Add(QueryParameters, "TimeoutWithGrace", value.ToString());
+			}
+		}
+
+		public string HostGroupId
+		{
+			get
+			{
+				return hostGroupId;
+			}
+			set	
+			{
+				hostGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "HostGroupId", value);
+			}
+		}
+
+		public string ActiveRuleCategory
+		{
+			get
+			{
+				return activeRuleCategory;
+			}
+			set	
+			{
+				activeRuleCategory = value;
+				DictionaryUtil.Add(QueryParameters, "ActiveRuleCategory", value);
+			}
+		}
+
 		public int? MaxSize
 		{
 			get
@@ -153,19 +172,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				defaultCooldown = value;
 				DictionaryUtil.Add(QueryParameters, "DefaultCooldown", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

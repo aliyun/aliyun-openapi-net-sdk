@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ModifyScalingRuleResponseUnmarshaller
     {
-        public static ModifyScalingRuleResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyScalingRuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyScalingRuleResponse modifyScalingRuleResponse = new ModifyScalingRuleResponse();
 
-			modifyScalingRuleResponse.HttpResponse = context.HttpResponse;
-			modifyScalingRuleResponse.RequestId = context.StringValue("ModifyScalingRule.RequestId");
-			modifyScalingRuleResponse.ScalingRuleId = context.StringValue("ModifyScalingRule.ScalingRuleId");
+			modifyScalingRuleResponse.HttpResponse = _ctx.HttpResponse;
+			modifyScalingRuleResponse.RequestId = _ctx.StringValue("ModifyScalingRule.RequestId");
+			modifyScalingRuleResponse.ScalingRuleId = _ctx.StringValue("ModifyScalingRule.ScalingRuleId");
         
 			return modifyScalingRuleResponse;
         }

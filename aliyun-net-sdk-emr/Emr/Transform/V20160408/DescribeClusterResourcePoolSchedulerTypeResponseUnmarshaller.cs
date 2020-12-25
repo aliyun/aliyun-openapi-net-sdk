@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class DescribeClusterResourcePoolSchedulerTypeResponseUnmarshaller
     {
-        public static DescribeClusterResourcePoolSchedulerTypeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeClusterResourcePoolSchedulerTypeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeClusterResourcePoolSchedulerTypeResponse describeClusterResourcePoolSchedulerTypeResponse = new DescribeClusterResourcePoolSchedulerTypeResponse();
 
-			describeClusterResourcePoolSchedulerTypeResponse.HttpResponse = context.HttpResponse;
-			describeClusterResourcePoolSchedulerTypeResponse.RequestId = context.StringValue("DescribeClusterResourcePoolSchedulerType.RequestId");
-			describeClusterResourcePoolSchedulerTypeResponse.CurrentSchedulerType = context.StringValue("DescribeClusterResourcePoolSchedulerType.CurrentSchedulerType");
-			describeClusterResourcePoolSchedulerTypeResponse.SupportSchedulerType = context.StringValue("DescribeClusterResourcePoolSchedulerType.SupportSchedulerType");
-			describeClusterResourcePoolSchedulerTypeResponse.DefaultSchedulerType = context.StringValue("DescribeClusterResourcePoolSchedulerType.DefaultSchedulerType");
+			describeClusterResourcePoolSchedulerTypeResponse.HttpResponse = _ctx.HttpResponse;
+			describeClusterResourcePoolSchedulerTypeResponse.RequestId = _ctx.StringValue("DescribeClusterResourcePoolSchedulerType.RequestId");
+			describeClusterResourcePoolSchedulerTypeResponse.CurrentSchedulerType = _ctx.StringValue("DescribeClusterResourcePoolSchedulerType.CurrentSchedulerType");
+			describeClusterResourcePoolSchedulerTypeResponse.SupportSchedulerType = _ctx.StringValue("DescribeClusterResourcePoolSchedulerType.SupportSchedulerType");
+			describeClusterResourcePoolSchedulerTypeResponse.DefaultSchedulerType = _ctx.StringValue("DescribeClusterResourcePoolSchedulerType.DefaultSchedulerType");
         
 			return describeClusterResourcePoolSchedulerTypeResponse;
         }

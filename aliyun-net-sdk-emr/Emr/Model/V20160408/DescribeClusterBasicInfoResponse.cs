@@ -56,19 +56,29 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 		public class DescribeClusterBasicInfo_ClusterInfo
 		{
 
-			private string id;
-
-			private string bizId;
+			private string clusterId;
 
 			private string regionId;
+
+			private string machineType;
+
+			private string depositType;
 
 			private string zoneId;
 
 			private string name;
 
+			private string extraInfo;
+
+			private string relateClusterId;
+
+			private string gatewayClusterIds;
+
 			private string createType;
 
 			private long? startTime;
+
+			private long? expiredTime;
 
 			private long? stopTime;
 
@@ -76,13 +86,15 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string logPath;
 
+			private string userId;
+
 			private string status;
 
 			private bool? highAvailabilityEnable;
 
-			private string chargeType;
+			private bool? localMetaDb;
 
-			private long? expiredTime;
+			private string chargeType;
 
 			private int? period;
 
@@ -102,6 +114,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private bool? showSoftwareInterface;
 
+			private string createResource;
+
 			private string vpcId;
 
 			private string vSwitchId;
@@ -114,47 +128,61 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string instanceGeneration;
 
-			private bool? bootstrapFailed;
-
-			private string configurations;
-
 			private string imageId;
 
 			private string securityGroupId;
 
 			private string securityGroupName;
 
+			private bool? bootstrapFailed;
+
+			private string configurations;
+
 			private bool? easEnable;
 
-			private string clusterType;
+			private string autoScalingVersion;
+
+			private bool? autoScalingEnable;
+
+			private bool? autoScalingAllowed;
+
+			private bool? autoScalingSpotWithLimitAllowed;
+
+			private bool? autoScalingByLoadAllowed;
+
+			private bool? autoScalingWithGraceAllowed;
+
+			private bool? resizeDiskEnable;
+
+			private string metaStoreType;
+
+			private string k8sClusterId;
+
+			private string operationId;
+
+			private List<DescribeClusterBasicInfo_GatewayClusterInfo> gatewayClusterInfoList;
 
 			private List<DescribeClusterBasicInfo_BootstrapAction> bootstrapActionList;
 
-			private DescribeClusterBasicInfo_SoftwareInfo softwareInfo;
+			private DescribeClusterBasicInfo_RelateClusterInfo relateClusterInfo;
+
+			private DescribeClusterBasicInfo_HostPoolInfo hostPoolInfo;
 
 			private DescribeClusterBasicInfo_FailReason failReason;
 
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private DescribeClusterBasicInfo_SoftwareInfo softwareInfo;
 
-			public string BizId
+			private DescribeClusterBasicInfo_AccessInfo accessInfo;
+
+			public string ClusterId
 			{
 				get
 				{
-					return bizId;
+					return clusterId;
 				}
 				set	
 				{
-					bizId = value;
+					clusterId = value;
 				}
 			}
 
@@ -167,6 +195,30 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string MachineType
+			{
+				get
+				{
+					return machineType;
+				}
+				set	
+				{
+					machineType = value;
+				}
+			}
+
+			public string DepositType
+			{
+				get
+				{
+					return depositType;
+				}
+				set	
+				{
+					depositType = value;
 				}
 			}
 
@@ -194,6 +246,42 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				}
 			}
 
+			public string ExtraInfo
+			{
+				get
+				{
+					return extraInfo;
+				}
+				set	
+				{
+					extraInfo = value;
+				}
+			}
+
+			public string RelateClusterId
+			{
+				get
+				{
+					return relateClusterId;
+				}
+				set	
+				{
+					relateClusterId = value;
+				}
+			}
+
+			public string GatewayClusterIds
+			{
+				get
+				{
+					return gatewayClusterIds;
+				}
+				set	
+				{
+					gatewayClusterIds = value;
+				}
+			}
+
 			public string CreateType
 			{
 				get
@@ -215,6 +303,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					startTime = value;
+				}
+			}
+
+			public long? ExpiredTime
+			{
+				get
+				{
+					return expiredTime;
+				}
+				set	
+				{
+					expiredTime = value;
 				}
 			}
 
@@ -254,6 +354,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				}
 			}
 
+			public string UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
+				}
+			}
+
 			public string Status
 			{
 				get
@@ -278,6 +390,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				}
 			}
 
+			public bool? LocalMetaDb
+			{
+				get
+				{
+					return localMetaDb;
+				}
+				set	
+				{
+					localMetaDb = value;
+				}
+			}
+
 			public string ChargeType
 			{
 				get
@@ -287,18 +411,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					chargeType = value;
-				}
-			}
-
-			public long? ExpiredTime
-			{
-				get
-				{
-					return expiredTime;
-				}
-				set	
-				{
-					expiredTime = value;
 				}
 			}
 
@@ -410,6 +522,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				}
 			}
 
+			public string CreateResource
+			{
+				get
+				{
+					return createResource;
+				}
+				set	
+				{
+					createResource = value;
+				}
+			}
+
 			public string VpcId
 			{
 				get
@@ -482,30 +606,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				}
 			}
 
-			public bool? BootstrapFailed
-			{
-				get
-				{
-					return bootstrapFailed;
-				}
-				set	
-				{
-					bootstrapFailed = value;
-				}
-			}
-
-			public string Configurations
-			{
-				get
-				{
-					return configurations;
-				}
-				set	
-				{
-					configurations = value;
-				}
-			}
-
 			public string ImageId
 			{
 				get
@@ -542,6 +642,30 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				}
 			}
 
+			public bool? BootstrapFailed
+			{
+				get
+				{
+					return bootstrapFailed;
+				}
+				set	
+				{
+					bootstrapFailed = value;
+				}
+			}
+
+			public string Configurations
+			{
+				get
+				{
+					return configurations;
+				}
+				set	
+				{
+					configurations = value;
+				}
+			}
+
 			public bool? EasEnable
 			{
 				get
@@ -554,15 +678,135 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				}
 			}
 
-			public string ClusterType
+			public string AutoScalingVersion
 			{
 				get
 				{
-					return clusterType;
+					return autoScalingVersion;
 				}
 				set	
 				{
-					clusterType = value;
+					autoScalingVersion = value;
+				}
+			}
+
+			public bool? AutoScalingEnable
+			{
+				get
+				{
+					return autoScalingEnable;
+				}
+				set	
+				{
+					autoScalingEnable = value;
+				}
+			}
+
+			public bool? AutoScalingAllowed
+			{
+				get
+				{
+					return autoScalingAllowed;
+				}
+				set	
+				{
+					autoScalingAllowed = value;
+				}
+			}
+
+			public bool? AutoScalingSpotWithLimitAllowed
+			{
+				get
+				{
+					return autoScalingSpotWithLimitAllowed;
+				}
+				set	
+				{
+					autoScalingSpotWithLimitAllowed = value;
+				}
+			}
+
+			public bool? AutoScalingByLoadAllowed
+			{
+				get
+				{
+					return autoScalingByLoadAllowed;
+				}
+				set	
+				{
+					autoScalingByLoadAllowed = value;
+				}
+			}
+
+			public bool? AutoScalingWithGraceAllowed
+			{
+				get
+				{
+					return autoScalingWithGraceAllowed;
+				}
+				set	
+				{
+					autoScalingWithGraceAllowed = value;
+				}
+			}
+
+			public bool? ResizeDiskEnable
+			{
+				get
+				{
+					return resizeDiskEnable;
+				}
+				set	
+				{
+					resizeDiskEnable = value;
+				}
+			}
+
+			public string MetaStoreType
+			{
+				get
+				{
+					return metaStoreType;
+				}
+				set	
+				{
+					metaStoreType = value;
+				}
+			}
+
+			public string K8sClusterId
+			{
+				get
+				{
+					return k8sClusterId;
+				}
+				set	
+				{
+					k8sClusterId = value;
+				}
+			}
+
+			public string OperationId
+			{
+				get
+				{
+					return operationId;
+				}
+				set	
+				{
+					operationId = value;
+				}
+			}
+
+			public List<DescribeClusterBasicInfo_GatewayClusterInfo> GatewayClusterInfoList
+			{
+				get
+				{
+					return gatewayClusterInfoList;
+				}
+				set	
+				{
+					gatewayClusterInfoList = value;
 				}
 			}
 
@@ -578,15 +822,27 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				}
 			}
 
-			public DescribeClusterBasicInfo_SoftwareInfo SoftwareInfo
+			public DescribeClusterBasicInfo_RelateClusterInfo RelateClusterInfo
 			{
 				get
 				{
-					return softwareInfo;
+					return relateClusterInfo;
 				}
 				set	
 				{
-					softwareInfo = value;
+					relateClusterInfo = value;
+				}
+			}
+
+			public DescribeClusterBasicInfo_HostPoolInfo HostPoolInfo
+			{
+				get
+				{
+					return hostPoolInfo;
+				}
+				set	
+				{
+					hostPoolInfo = value;
 				}
 			}
 
@@ -599,6 +855,76 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					failReason = value;
+				}
+			}
+
+			public DescribeClusterBasicInfo_SoftwareInfo SoftwareInfo
+			{
+				get
+				{
+					return softwareInfo;
+				}
+				set	
+				{
+					softwareInfo = value;
+				}
+			}
+
+			public DescribeClusterBasicInfo_AccessInfo AccessInfo
+			{
+				get
+				{
+					return accessInfo;
+				}
+				set	
+				{
+					accessInfo = value;
+				}
+			}
+
+			public class DescribeClusterBasicInfo_GatewayClusterInfo
+			{
+
+				private string clusterId;
+
+				private string clusterName;
+
+				private string status;
+
+				public string ClusterId
+				{
+					get
+					{
+						return clusterId;
+					}
+					set	
+					{
+						clusterId = value;
+					}
+				}
+
+				public string ClusterName
+				{
+					get
+					{
+						return clusterName;
+					}
+					set	
+					{
+						clusterName = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
 				}
 			}
 
@@ -644,6 +970,130 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 					set	
 					{
 						arg = value;
+					}
+				}
+			}
+
+			public class DescribeClusterBasicInfo_RelateClusterInfo
+			{
+
+				private string clusterId;
+
+				private string clusterName;
+
+				private string status;
+
+				public string ClusterId
+				{
+					get
+					{
+						return clusterId;
+					}
+					set	
+					{
+						clusterId = value;
+					}
+				}
+
+				public string ClusterName
+				{
+					get
+					{
+						return clusterName;
+					}
+					set	
+					{
+						clusterName = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeClusterBasicInfo_HostPoolInfo
+			{
+
+				private string hpBizId;
+
+				private string hpName;
+
+				public string HpBizId
+				{
+					get
+					{
+						return hpBizId;
+					}
+					set	
+					{
+						hpBizId = value;
+					}
+				}
+
+				public string HpName
+				{
+					get
+					{
+						return hpName;
+					}
+					set	
+					{
+						hpName = value;
+					}
+				}
+			}
+
+			public class DescribeClusterBasicInfo_FailReason
+			{
+
+				private string errorCode;
+
+				private string errorMsg;
+
+				private string requestId;
+
+				public string ErrorCode
+				{
+					get
+					{
+						return errorCode;
+					}
+					set	
+					{
+						errorCode = value;
+					}
+				}
+
+				public string ErrorMsg
+				{
+					get
+					{
+						return errorMsg;
+					}
+					set	
+					{
+						errorMsg = value;
+					}
+				}
+
+				public string RequestId
+				{
+					get
+					{
+						return requestId;
+					}
+					set	
+					{
+						requestId = value;
 					}
 				}
 			}
@@ -768,48 +1218,52 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				}
 			}
 
-			public class DescribeClusterBasicInfo_FailReason
+			public class DescribeClusterBasicInfo_AccessInfo
 			{
 
-				private string errorCode;
+				private List<DescribeClusterBasicInfo_ZKLink> zKLinks;
 
-				private string errorMsg;
-
-				private string requestId;
-
-				public string ErrorCode
+				public List<DescribeClusterBasicInfo_ZKLink> ZKLinks
 				{
 					get
 					{
-						return errorCode;
+						return zKLinks;
 					}
 					set	
 					{
-						errorCode = value;
+						zKLinks = value;
 					}
 				}
 
-				public string ErrorMsg
+				public class DescribeClusterBasicInfo_ZKLink
 				{
-					get
-					{
-						return errorMsg;
-					}
-					set	
-					{
-						errorMsg = value;
-					}
-				}
 
-				public string RequestId
-				{
-					get
+					private string link;
+
+					private string port;
+
+					public string Link
 					{
-						return requestId;
+						get
+						{
+							return link;
+						}
+						set	
+						{
+							link = value;
+						}
 					}
-					set	
+
+					public string Port
 					{
-						requestId = value;
+						get
+						{
+							return port;
+						}
+						set	
+						{
+							port = value;
+						}
 					}
 				}
 			}

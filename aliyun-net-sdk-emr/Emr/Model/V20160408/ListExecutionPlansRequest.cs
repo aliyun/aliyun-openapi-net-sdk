@@ -32,44 +32,33 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public ListExecutionPlansRequest()
             : base("Emr", "2016-04-08", "ListExecutionPlans", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string jobId;
 
 		private long? resourceOwnerId;
 
-		private List<string> statusLists;
+		private List<string> statusLists = new List<string>(){ };
 
-		private string regionId;
+		private bool? isDesc;
+
+		private int? pageNumber;
+
+		private string jobId;
 
 		private int? pageSize;
+
+		private string queryType;
 
 		private string queryString;
 
 		private string clusterId;
 
-		private bool? isDesc;
-
 		private string strategy;
-
-		private int? pageNumber;
-
-		private string queryType;
-
-		private string accessKeyId;
-
-		public string JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -101,16 +90,42 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
+		public bool? IsDesc
 		{
 			get
 			{
-				return regionId;
+				return isDesc;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				isDesc = value;
+				DictionaryUtil.Add(QueryParameters, "IsDesc", value.ToString());
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string JobId
+		{
+			get
+			{
+				return jobId;
+			}
+			set	
+			{
+				jobId = value;
+				DictionaryUtil.Add(QueryParameters, "JobId", value);
 			}
 		}
 
@@ -124,6 +139,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string QueryType
+		{
+			get
+			{
+				return queryType;
+			}
+			set	
+			{
+				queryType = value;
+				DictionaryUtil.Add(QueryParameters, "QueryType", value);
 			}
 		}
 
@@ -153,19 +181,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public bool? IsDesc
-		{
-			get
-			{
-				return isDesc;
-			}
-			set	
-			{
-				isDesc = value;
-				DictionaryUtil.Add(QueryParameters, "IsDesc", value.ToString());
-			}
-		}
-
 		public string Strategy
 		{
 			get
@@ -176,45 +191,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				strategy = value;
 				DictionaryUtil.Add(QueryParameters, "Strategy", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string QueryType
-		{
-			get
-			{
-				return queryType;
-			}
-			set	
-			{
-				queryType = value;
-				DictionaryUtil.Add(QueryParameters, "QueryType", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

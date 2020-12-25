@@ -32,23 +32,25 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public GetUserSubmissionStatisticInfoRequest()
             : base("Emr", "2016-04-08", "GetUserSubmissionStatisticInfo", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string fromDatetime;
 
 		private long? resourceOwnerId;
 
-		private string regionId;
-
 		private string clusterId;
 
 		private string toDatetime;
 
-		private string applicationType;
-
-		private string accessKeyId;
-
 		private string finalStatus;
+
+		private string applicationType;
 
 		public string FromDatetime
 		{
@@ -73,19 +75,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -115,32 +104,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string ApplicationType
-		{
-			get
-			{
-				return applicationType;
-			}
-			set	
-			{
-				applicationType = value;
-				DictionaryUtil.Add(QueryParameters, "ApplicationType", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string FinalStatus
 		{
 			get
@@ -151,6 +114,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				finalStatus = value;
 				DictionaryUtil.Add(QueryParameters, "FinalStatus", value);
+			}
+		}
+
+		public string ApplicationType
+		{
+			get
+			{
+				return applicationType;
+			}
+			set	
+			{
+				applicationType = value;
+				DictionaryUtil.Add(QueryParameters, "ApplicationType", value);
 			}
 		}
 

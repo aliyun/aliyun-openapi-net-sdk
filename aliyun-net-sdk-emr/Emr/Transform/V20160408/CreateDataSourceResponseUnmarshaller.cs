@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class CreateDataSourceResponseUnmarshaller
     {
-        public static CreateDataSourceResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDataSourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDataSourceResponse createDataSourceResponse = new CreateDataSourceResponse();
 
-			createDataSourceResponse.HttpResponse = context.HttpResponse;
-			createDataSourceResponse.RequestId = context.StringValue("CreateDataSource.RequestId");
-			createDataSourceResponse.Id = context.StringValue("CreateDataSource.Id");
+			createDataSourceResponse.HttpResponse = _ctx.HttpResponse;
+			createDataSourceResponse.RequestId = _ctx.StringValue("CreateDataSource.RequestId");
+			createDataSourceResponse.Id = _ctx.StringValue("CreateDataSource.Id");
         
 			return createDataSourceResponse;
         }

@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class GetUserSubmissionStatisticInfoResponseUnmarshaller
     {
-        public static GetUserSubmissionStatisticInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetUserSubmissionStatisticInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetUserSubmissionStatisticInfoResponse getUserSubmissionStatisticInfoResponse = new GetUserSubmissionStatisticInfoResponse();
 
-			getUserSubmissionStatisticInfoResponse.HttpResponse = context.HttpResponse;
-			getUserSubmissionStatisticInfoResponse.RequestId = context.StringValue("GetUserSubmissionStatisticInfo.RequestId");
+			getUserSubmissionStatisticInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getUserSubmissionStatisticInfoResponse.RequestId = _ctx.StringValue("GetUserSubmissionStatisticInfo.RequestId");
 
 			List<GetUserSubmissionStatisticInfoResponse.GetUserSubmissionStatisticInfo_ClusterStatUserSubmission> getUserSubmissionStatisticInfoResponse_userSubmissionList = new List<GetUserSubmissionStatisticInfoResponse.GetUserSubmissionStatisticInfo_ClusterStatUserSubmission>();
-			for (int i = 0; i < context.Length("GetUserSubmissionStatisticInfo.UserSubmissionList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetUserSubmissionStatisticInfo.UserSubmissionList.Length"); i++) {
 				GetUserSubmissionStatisticInfoResponse.GetUserSubmissionStatisticInfo_ClusterStatUserSubmission clusterStatUserSubmission = new GetUserSubmissionStatisticInfoResponse.GetUserSubmissionStatisticInfo_ClusterStatUserSubmission();
-				clusterStatUserSubmission.User = context.StringValue("GetUserSubmissionStatisticInfo.UserSubmissionList["+ i +"].User");
-				clusterStatUserSubmission.Submission = context.LongValue("GetUserSubmissionStatisticInfo.UserSubmissionList["+ i +"].Submission");
+				clusterStatUserSubmission.User = _ctx.StringValue("GetUserSubmissionStatisticInfo.UserSubmissionList["+ i +"].User");
+				clusterStatUserSubmission.Submission = _ctx.LongValue("GetUserSubmissionStatisticInfo.UserSubmissionList["+ i +"].Submission");
 
 				getUserSubmissionStatisticInfoResponse_userSubmissionList.Add(clusterStatUserSubmission);
 			}

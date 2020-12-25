@@ -32,37 +32,47 @@ namespace Aliyun.Acs.Emr.Model.V20160408
         public CreateFlowForWebRequest()
             : base("Emr", "2016-04-08", "CreateFlowForWeb", "emr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Emr.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string cronExpr;
 
-		private string parentFlowList;
-
-		private string alertDingDingGroupBizId;
-
-		private long? startSchedule;
-
 		private string description;
-
-		private string clusterId;
 
 		private string alertUserGroupBizId;
 
-		private string graph;
+		private string lifecycle;
 
 		private string hostName;
 
-		private string regionId;
-
 		private bool? createCluster;
-
-		private string name;
 
 		private long? endSchedule;
 
 		private string alertConf;
 
 		private string projectId;
+
+		private string parentFlowList;
+
+		private string logArchiveLocation;
+
+		private string alertDingDingGroupBizId;
+
+		private long? startSchedule;
+
+		private string clusterId;
+
+		private string graph;
+
+		private string name;
+
+		private string _namespace;
 
 		private string parentCategory;
 
@@ -79,45 +89,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string ParentFlowList
-		{
-			get
-			{
-				return parentFlowList;
-			}
-			set	
-			{
-				parentFlowList = value;
-				DictionaryUtil.Add(QueryParameters, "ParentFlowList", value);
-			}
-		}
-
-		public string AlertDingDingGroupBizId
-		{
-			get
-			{
-				return alertDingDingGroupBizId;
-			}
-			set	
-			{
-				alertDingDingGroupBizId = value;
-				DictionaryUtil.Add(QueryParameters, "AlertDingDingGroupBizId", value);
-			}
-		}
-
-		public long? StartSchedule
-		{
-			get
-			{
-				return startSchedule;
-			}
-			set	
-			{
-				startSchedule = value;
-				DictionaryUtil.Add(QueryParameters, "StartSchedule", value.ToString());
-			}
-		}
-
 		public string Description
 		{
 			get
@@ -128,19 +99,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
 			}
 		}
 
@@ -157,16 +115,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string Graph
+		public string Lifecycle
 		{
 			get
 			{
-				return graph;
+				return lifecycle;
 			}
 			set	
 			{
-				graph = value;
-				DictionaryUtil.Add(QueryParameters, "Graph", value);
+				lifecycle = value;
+				DictionaryUtil.Add(QueryParameters, "Lifecycle", value);
 			}
 		}
 
@@ -183,19 +141,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public bool? CreateCluster
 		{
 			get
@@ -206,19 +151,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				createCluster = value;
 				DictionaryUtil.Add(QueryParameters, "CreateCluster", value.ToString());
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
@@ -258,6 +190,110 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				projectId = value;
 				DictionaryUtil.Add(QueryParameters, "ProjectId", value);
+			}
+		}
+
+		public string ParentFlowList
+		{
+			get
+			{
+				return parentFlowList;
+			}
+			set	
+			{
+				parentFlowList = value;
+				DictionaryUtil.Add(QueryParameters, "ParentFlowList", value);
+			}
+		}
+
+		public string LogArchiveLocation
+		{
+			get
+			{
+				return logArchiveLocation;
+			}
+			set	
+			{
+				logArchiveLocation = value;
+				DictionaryUtil.Add(QueryParameters, "LogArchiveLocation", value);
+			}
+		}
+
+		public string AlertDingDingGroupBizId
+		{
+			get
+			{
+				return alertDingDingGroupBizId;
+			}
+			set	
+			{
+				alertDingDingGroupBizId = value;
+				DictionaryUtil.Add(QueryParameters, "AlertDingDingGroupBizId", value);
+			}
+		}
+
+		public long? StartSchedule
+		{
+			get
+			{
+				return startSchedule;
+			}
+			set	
+			{
+				startSchedule = value;
+				DictionaryUtil.Add(QueryParameters, "StartSchedule", value.ToString());
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public string Graph
+		{
+			get
+			{
+				return graph;
+			}
+			set	
+			{
+				graph = value;
+				DictionaryUtil.Add(QueryParameters, "Graph", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string _Namespace
+		{
+			get
+			{
+				return _namespace;
+			}
+			set	
+			{
+				_namespace = value;
+				DictionaryUtil.Add(QueryParameters, "Namespace", value);
 			}
 		}
 

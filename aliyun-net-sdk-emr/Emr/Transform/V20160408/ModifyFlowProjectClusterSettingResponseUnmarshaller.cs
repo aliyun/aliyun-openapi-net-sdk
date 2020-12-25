@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class ModifyFlowProjectClusterSettingResponseUnmarshaller
     {
-        public static ModifyFlowProjectClusterSettingResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyFlowProjectClusterSettingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyFlowProjectClusterSettingResponse modifyFlowProjectClusterSettingResponse = new ModifyFlowProjectClusterSettingResponse();
 
-			modifyFlowProjectClusterSettingResponse.HttpResponse = context.HttpResponse;
-			modifyFlowProjectClusterSettingResponse.RequestId = context.StringValue("ModifyFlowProjectClusterSetting.RequestId");
-			modifyFlowProjectClusterSettingResponse.Data = context.BooleanValue("ModifyFlowProjectClusterSetting.Data");
+			modifyFlowProjectClusterSettingResponse.HttpResponse = _ctx.HttpResponse;
+			modifyFlowProjectClusterSettingResponse.RequestId = _ctx.StringValue("ModifyFlowProjectClusterSetting.RequestId");
+			modifyFlowProjectClusterSettingResponse.Data = _ctx.BooleanValue("ModifyFlowProjectClusterSetting.Data");
         
 			return modifyFlowProjectClusterSettingResponse;
         }

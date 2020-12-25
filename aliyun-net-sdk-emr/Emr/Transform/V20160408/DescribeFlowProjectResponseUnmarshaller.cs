@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 {
     public class DescribeFlowProjectResponseUnmarshaller
     {
-        public static DescribeFlowProjectResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeFlowProjectResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeFlowProjectResponse describeFlowProjectResponse = new DescribeFlowProjectResponse();
 
-			describeFlowProjectResponse.HttpResponse = context.HttpResponse;
-			describeFlowProjectResponse.RequestId = context.StringValue("DescribeFlowProject.RequestId");
-			describeFlowProjectResponse.Id = context.StringValue("DescribeFlowProject.Id");
-			describeFlowProjectResponse.GmtCreate = context.LongValue("DescribeFlowProject.GmtCreate");
-			describeFlowProjectResponse.GmtModified = context.LongValue("DescribeFlowProject.GmtModified");
-			describeFlowProjectResponse.UserId = context.StringValue("DescribeFlowProject.UserId");
-			describeFlowProjectResponse.Name = context.StringValue("DescribeFlowProject.Name");
-			describeFlowProjectResponse.Description = context.StringValue("DescribeFlowProject.Description");
+			describeFlowProjectResponse.HttpResponse = _ctx.HttpResponse;
+			describeFlowProjectResponse.RequestId = _ctx.StringValue("DescribeFlowProject.RequestId");
+			describeFlowProjectResponse.Id = _ctx.StringValue("DescribeFlowProject.Id");
+			describeFlowProjectResponse.GmtCreate = _ctx.LongValue("DescribeFlowProject.GmtCreate");
+			describeFlowProjectResponse.GmtModified = _ctx.LongValue("DescribeFlowProject.GmtModified");
+			describeFlowProjectResponse.UserId = _ctx.StringValue("DescribeFlowProject.UserId");
+			describeFlowProjectResponse.Name = _ctx.StringValue("DescribeFlowProject.Name");
+			describeFlowProjectResponse.Description = _ctx.StringValue("DescribeFlowProject.Description");
         
 			return describeFlowProjectResponse;
         }
