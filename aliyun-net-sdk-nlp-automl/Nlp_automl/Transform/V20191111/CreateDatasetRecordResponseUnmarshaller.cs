@@ -24,17 +24,20 @@ using Aliyun.Acs.nlp_automl.Model.V20191111;
 
 namespace Aliyun.Acs.nlp_automl.Transform.V20191111
 {
-    public class GetPredictResultResponseUnmarshaller
+    public class CreateDatasetRecordResponseUnmarshaller
     {
-        public static GetPredictResultResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateDatasetRecordResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetPredictResultResponse getPredictResultResponse = new GetPredictResultResponse();
+			CreateDatasetRecordResponse createDatasetRecordResponse = new CreateDatasetRecordResponse();
 
-			getPredictResultResponse.HttpResponse = _ctx.HttpResponse;
-			getPredictResultResponse.RequestId = _ctx.StringValue("GetPredictResult.RequestId");
-			getPredictResultResponse.Content = _ctx.StringValue("GetPredictResult.Content");
+			createDatasetRecordResponse.HttpResponse = _ctx.HttpResponse;
+			createDatasetRecordResponse.RequestId = _ctx.StringValue("CreateDatasetRecord.RequestId");
+			createDatasetRecordResponse.DatasetRecordId = _ctx.StringValue("CreateDatasetRecord.DatasetRecordId");
+			createDatasetRecordResponse.Code = _ctx.IntegerValue("CreateDatasetRecord.Code");
+			createDatasetRecordResponse.Message = _ctx.StringValue("CreateDatasetRecord.Message");
+			createDatasetRecordResponse.Success = _ctx.BooleanValue("CreateDatasetRecord.Success");
         
-			return getPredictResultResponse;
+			return createDatasetRecordResponse;
         }
     }
 }

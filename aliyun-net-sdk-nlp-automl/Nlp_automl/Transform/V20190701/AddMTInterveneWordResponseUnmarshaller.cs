@@ -20,21 +20,23 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.nlp_automl.Model.V20191111;
+using Aliyun.Acs.nlp_automl.Model.V20190701;
 
-namespace Aliyun.Acs.nlp_automl.Transform.V20191111
+namespace Aliyun.Acs.nlp_automl.Transform.V20190701
 {
-    public class GetPredictResultResponseUnmarshaller
+    public class AddMTInterveneWordResponseUnmarshaller
     {
-        public static GetPredictResultResponse Unmarshall(UnmarshallerContext _ctx)
+        public static AddMTInterveneWordResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetPredictResultResponse getPredictResultResponse = new GetPredictResultResponse();
+			AddMTInterveneWordResponse addMTInterveneWordResponse = new AddMTInterveneWordResponse();
 
-			getPredictResultResponse.HttpResponse = _ctx.HttpResponse;
-			getPredictResultResponse.RequestId = _ctx.StringValue("GetPredictResult.RequestId");
-			getPredictResultResponse.Content = _ctx.StringValue("GetPredictResult.Content");
+			addMTInterveneWordResponse.HttpResponse = _ctx.HttpResponse;
+			addMTInterveneWordResponse.Code = _ctx.IntegerValue("AddMTInterveneWord.Code");
+			addMTInterveneWordResponse.Message = _ctx.IntegerValue("AddMTInterveneWord.Message");
+			addMTInterveneWordResponse.WordId = _ctx.StringValue("AddMTInterveneWord.WordId");
+			addMTInterveneWordResponse.RequestId = _ctx.StringValue("AddMTInterveneWord.RequestId");
         
-			return getPredictResultResponse;
+			return addMTInterveneWordResponse;
         }
     }
 }

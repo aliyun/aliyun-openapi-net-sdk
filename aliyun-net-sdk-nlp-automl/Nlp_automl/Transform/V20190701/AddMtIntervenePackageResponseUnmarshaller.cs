@@ -20,21 +20,23 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.nlp_automl.Model.V20191111;
+using Aliyun.Acs.nlp_automl.Model.V20190701;
 
-namespace Aliyun.Acs.nlp_automl.Transform.V20191111
+namespace Aliyun.Acs.nlp_automl.Transform.V20190701
 {
-    public class GetPredictResultResponseUnmarshaller
+    public class AddMtIntervenePackageResponseUnmarshaller
     {
-        public static GetPredictResultResponse Unmarshall(UnmarshallerContext _ctx)
+        public static AddMtIntervenePackageResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetPredictResultResponse getPredictResultResponse = new GetPredictResultResponse();
+			AddMtIntervenePackageResponse addMtIntervenePackageResponse = new AddMtIntervenePackageResponse();
 
-			getPredictResultResponse.HttpResponse = _ctx.HttpResponse;
-			getPredictResultResponse.RequestId = _ctx.StringValue("GetPredictResult.RequestId");
-			getPredictResultResponse.Content = _ctx.StringValue("GetPredictResult.Content");
+			addMtIntervenePackageResponse.HttpResponse = _ctx.HttpResponse;
+			addMtIntervenePackageResponse.Code = _ctx.IntegerValue("AddMtIntervenePackage.Code");
+			addMtIntervenePackageResponse.Message = _ctx.IntegerValue("AddMtIntervenePackage.Message");
+			addMtIntervenePackageResponse.PackageId = _ctx.StringValue("AddMtIntervenePackage.PackageId");
+			addMtIntervenePackageResponse.RequestId = _ctx.StringValue("AddMtIntervenePackage.RequestId");
         
-			return getPredictResultResponse;
+			return addMtIntervenePackageResponse;
         }
     }
 }

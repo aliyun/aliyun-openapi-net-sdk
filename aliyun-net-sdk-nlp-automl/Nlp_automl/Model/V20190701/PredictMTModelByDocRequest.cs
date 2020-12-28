@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.nlp_automl.Transform;
-using Aliyun.Acs.nlp_automl.Transform.V20191111;
+using Aliyun.Acs.nlp_automl.Transform.V20190701;
 
-namespace Aliyun.Acs.nlp_automl.Model.V20191111
+namespace Aliyun.Acs.nlp_automl.Model.V20190701
 {
-    public class RunContactReviewRequest : RpcAcsRequest<RunContactReviewResponse>
+    public class PredictMTModelByDocRequest : RpcAcsRequest<PredictMTModelByDocResponse>
     {
-        public RunContactReviewRequest()
-            : base("nlp-automl", "2019-11-11", "RunContactReview", "nlpautoml", "openAPI")
+        public PredictMTModelByDocRequest()
+            : base("nlp-automl", "2019-07-01", "PredictMTModelByDoc", "nlpautoml", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,44 +41,84 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			Method = MethodType.POST;
         }
 
-		private string contactScene;
+		private string fileType;
 
-		private string contactPath;
+		private int? modelId;
 
-		public string ContactScene
+		private string fileContent;
+
+		private bool? needXLIFF;
+
+		private string modelVersion;
+
+		public string FileType
 		{
 			get
 			{
-				return contactScene;
+				return fileType;
 			}
 			set	
 			{
-				contactScene = value;
-				DictionaryUtil.Add(BodyParameters, "ContactScene", value);
+				fileType = value;
+				DictionaryUtil.Add(QueryParameters, "FileType", value);
 			}
 		}
 
-		public string ContactPath
+		public int? ModelId
 		{
 			get
 			{
-				return contactPath;
+				return modelId;
 			}
 			set	
 			{
-				contactPath = value;
-				DictionaryUtil.Add(BodyParameters, "ContactPath", value);
+				modelId = value;
+				DictionaryUtil.Add(QueryParameters, "ModelId", value.ToString());
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string FileContent
 		{
-			return false;
+			get
+			{
+				return fileContent;
+			}
+			set	
+			{
+				fileContent = value;
+				DictionaryUtil.Add(BodyParameters, "FileContent", value);
+			}
 		}
 
-        public override RunContactReviewResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public bool? NeedXLIFF
+		{
+			get
+			{
+				return needXLIFF;
+			}
+			set	
+			{
+				needXLIFF = value;
+				DictionaryUtil.Add(QueryParameters, "NeedXLIFF", value.ToString());
+			}
+		}
+
+		public string ModelVersion
+		{
+			get
+			{
+				return modelVersion;
+			}
+			set	
+			{
+				modelVersion = value;
+				DictionaryUtil.Add(QueryParameters, "ModelVersion", value);
+			}
+		}
+
+        public override PredictMTModelByDocResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RunContactReviewResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return PredictMTModelByDocResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

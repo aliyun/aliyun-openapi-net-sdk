@@ -24,17 +24,20 @@ using Aliyun.Acs.nlp_automl.Model.V20191111;
 
 namespace Aliyun.Acs.nlp_automl.Transform.V20191111
 {
-    public class GetPredictResultResponseUnmarshaller
+    public class DeleteModelResponseUnmarshaller
     {
-        public static GetPredictResultResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DeleteModelResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetPredictResultResponse getPredictResultResponse = new GetPredictResultResponse();
+			DeleteModelResponse deleteModelResponse = new DeleteModelResponse();
 
-			getPredictResultResponse.HttpResponse = _ctx.HttpResponse;
-			getPredictResultResponse.RequestId = _ctx.StringValue("GetPredictResult.RequestId");
-			getPredictResultResponse.Content = _ctx.StringValue("GetPredictResult.Content");
+			deleteModelResponse.HttpResponse = _ctx.HttpResponse;
+			deleteModelResponse.RequestId = _ctx.StringValue("DeleteModel.RequestId");
+			deleteModelResponse.Data = _ctx.StringValue("DeleteModel.Data");
+			deleteModelResponse.Code = _ctx.IntegerValue("DeleteModel.Code");
+			deleteModelResponse.Message = _ctx.StringValue("DeleteModel.Message");
+			deleteModelResponse.Success = _ctx.BooleanValue("DeleteModel.Success");
         
-			return getPredictResultResponse;
+			return deleteModelResponse;
         }
     }
 }

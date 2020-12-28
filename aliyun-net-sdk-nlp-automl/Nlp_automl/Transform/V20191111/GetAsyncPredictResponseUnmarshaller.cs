@@ -26,15 +26,15 @@ namespace Aliyun.Acs.nlp_automl.Transform.V20191111
 {
     public class GetAsyncPredictResponseUnmarshaller
     {
-        public static GetAsyncPredictResponse Unmarshall(UnmarshallerContext context)
+        public static GetAsyncPredictResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetAsyncPredictResponse getAsyncPredictResponse = new GetAsyncPredictResponse();
 
-			getAsyncPredictResponse.HttpResponse = context.HttpResponse;
-			getAsyncPredictResponse.RequestId = context.StringValue("GetAsyncPredict.RequestId");
-			getAsyncPredictResponse.AsyncPredictId = context.IntegerValue("GetAsyncPredict.AsyncPredictId");
-			getAsyncPredictResponse.Status = context.IntegerValue("GetAsyncPredict.Status");
-			getAsyncPredictResponse.Content = context.StringValue("GetAsyncPredict.Content");
+			getAsyncPredictResponse.HttpResponse = _ctx.HttpResponse;
+			getAsyncPredictResponse.RequestId = _ctx.StringValue("GetAsyncPredict.RequestId");
+			getAsyncPredictResponse.AsyncPredictId = _ctx.IntegerValue("GetAsyncPredict.AsyncPredictId");
+			getAsyncPredictResponse.Status = _ctx.IntegerValue("GetAsyncPredict.Status");
+			getAsyncPredictResponse.Content = _ctx.StringValue("GetAsyncPredict.Content");
         
 			return getAsyncPredictResponse;
         }

@@ -20,21 +20,21 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.nlp_automl.Model.V20191111;
+using Aliyun.Acs.nlp_automl.Model.V20190701;
 
-namespace Aliyun.Acs.nlp_automl.Transform.V20191111
+namespace Aliyun.Acs.nlp_automl.Transform.V20190701
 {
-    public class GetPredictResultResponseUnmarshaller
+    public class PredictMTModelByDocResponseUnmarshaller
     {
-        public static GetPredictResultResponse Unmarshall(UnmarshallerContext _ctx)
+        public static PredictMTModelByDocResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetPredictResultResponse getPredictResultResponse = new GetPredictResultResponse();
+			PredictMTModelByDocResponse predictMTModelByDocResponse = new PredictMTModelByDocResponse();
 
-			getPredictResultResponse.HttpResponse = _ctx.HttpResponse;
-			getPredictResultResponse.RequestId = _ctx.StringValue("GetPredictResult.RequestId");
-			getPredictResultResponse.Content = _ctx.StringValue("GetPredictResult.Content");
+			predictMTModelByDocResponse.HttpResponse = _ctx.HttpResponse;
+			predictMTModelByDocResponse.RequestId = _ctx.StringValue("PredictMTModelByDoc.RequestId");
+			predictMTModelByDocResponse.DocId = _ctx.StringValue("PredictMTModelByDoc.DocId");
         
-			return getPredictResultResponse;
+			return predictMTModelByDocResponse;
         }
     }
 }

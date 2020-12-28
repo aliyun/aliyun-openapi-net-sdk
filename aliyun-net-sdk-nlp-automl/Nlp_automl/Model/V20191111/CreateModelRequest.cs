@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.nlp_automl.Transform.V20191111;
 
 namespace Aliyun.Acs.nlp_automl.Model.V20191111
 {
-    public class CreateAsyncPredictRequest : RpcAcsRequest<CreateAsyncPredictResponse>
+    public class CreateModelRequest : RpcAcsRequest<CreateModelResponse>
     {
-        public CreateAsyncPredictRequest()
-            : base("nlp-automl", "2019-11-11", "CreateAsyncPredict", "nlpautoml", "openAPI")
+        public CreateModelRequest()
+            : base("nlp-automl", "2019-11-11", "CreateModel", "nlpautoml", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,103 +41,99 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			Method = MethodType.POST;
         }
 
-		private int? topK;
+		private string isIncrementalTrain;
 
-		private string fileType;
+		private string modelName;
 
-		private string detailTag;
+		private List<object> datasetIdList;
 
-		private string fetchContent;
+		private List<object> testDatasetIdList;
 
-		private string content;
+		private string modelType;
 
-		private string fileContent;
+		private long? projectId;
 
-		private int? modelId;
+		private long? modelId;
 
-		private string fileUrl;
-
-		private string modelVersion;
-
-		public int? TopK
+		public string IsIncrementalTrain
 		{
 			get
 			{
-				return topK;
+				return isIncrementalTrain;
 			}
 			set	
 			{
-				topK = value;
-				DictionaryUtil.Add(BodyParameters, "TopK", value.ToString());
+				isIncrementalTrain = value;
+				DictionaryUtil.Add(BodyParameters, "IsIncrementalTrain", value);
 			}
 		}
 
-		public string FileType
+		public string ModelName
 		{
 			get
 			{
-				return fileType;
+				return modelName;
 			}
 			set	
 			{
-				fileType = value;
-				DictionaryUtil.Add(BodyParameters, "FileType", value);
+				modelName = value;
+				DictionaryUtil.Add(BodyParameters, "ModelName", value);
 			}
 		}
 
-		public string DetailTag
+		public List<object> DatasetIdList
 		{
 			get
 			{
-				return detailTag;
+				return datasetIdList;
 			}
 			set	
 			{
-				detailTag = value;
-				DictionaryUtil.Add(BodyParameters, "DetailTag", value);
+				datasetIdList = value;
+				DictionaryUtil.Add(BodyParameters, "DatasetIdList", JsonConvert.SerializeObject(value));
 			}
 		}
 
-		public string FetchContent
+		public List<object> TestDatasetIdList
 		{
 			get
 			{
-				return fetchContent;
+				return testDatasetIdList;
 			}
 			set	
 			{
-				fetchContent = value;
-				DictionaryUtil.Add(BodyParameters, "FetchContent", value);
+				testDatasetIdList = value;
+				DictionaryUtil.Add(BodyParameters, "TestDatasetIdList", JsonConvert.SerializeObject(value));
 			}
 		}
 
-		public string Content
+		public string ModelType
 		{
 			get
 			{
-				return content;
+				return modelType;
 			}
 			set	
 			{
-				content = value;
-				DictionaryUtil.Add(BodyParameters, "Content", value);
+				modelType = value;
+				DictionaryUtil.Add(BodyParameters, "ModelType", value);
 			}
 		}
 
-		public string FileContent
+		public long? ProjectId
 		{
 			get
 			{
-				return fileContent;
+				return projectId;
 			}
 			set	
 			{
-				fileContent = value;
-				DictionaryUtil.Add(BodyParameters, "FileContent", value);
+				projectId = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectId", value.ToString());
 			}
 		}
 
-		public int? ModelId
+		public long? ModelId
 		{
 			get
 			{
@@ -149,40 +146,14 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			}
 		}
 
-		public string FileUrl
-		{
-			get
-			{
-				return fileUrl;
-			}
-			set	
-			{
-				fileUrl = value;
-				DictionaryUtil.Add(BodyParameters, "FileUrl", value);
-			}
-		}
-
-		public string ModelVersion
-		{
-			get
-			{
-				return modelVersion;
-			}
-			set	
-			{
-				modelVersion = value;
-				DictionaryUtil.Add(BodyParameters, "ModelVersion", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override CreateAsyncPredictResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateModelResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateAsyncPredictResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateModelResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

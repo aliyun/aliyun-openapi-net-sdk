@@ -20,21 +20,23 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.nlp_automl.Model.V20191111;
+using Aliyun.Acs.nlp_automl.Model.V20190701;
 
-namespace Aliyun.Acs.nlp_automl.Transform.V20191111
+namespace Aliyun.Acs.nlp_automl.Transform.V20190701
 {
-    public class GetPredictResultResponseUnmarshaller
+    public class PredictMTModelResponseUnmarshaller
     {
-        public static GetPredictResultResponse Unmarshall(UnmarshallerContext _ctx)
+        public static PredictMTModelResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetPredictResultResponse getPredictResultResponse = new GetPredictResultResponse();
+			PredictMTModelResponse predictMTModelResponse = new PredictMTModelResponse();
 
-			getPredictResultResponse.HttpResponse = _ctx.HttpResponse;
-			getPredictResultResponse.RequestId = _ctx.StringValue("GetPredictResult.RequestId");
-			getPredictResultResponse.Content = _ctx.StringValue("GetPredictResult.Content");
+			predictMTModelResponse.HttpResponse = _ctx.HttpResponse;
+			predictMTModelResponse.Code = _ctx.IntegerValue("PredictMTModel.Code");
+			predictMTModelResponse.Message = _ctx.IntegerValue("PredictMTModel.Message");
+			predictMTModelResponse.Data = _ctx.StringValue("PredictMTModel.Data");
+			predictMTModelResponse.RequestId = _ctx.StringValue("PredictMTModel.RequestId");
         
-			return getPredictResultResponse;
+			return predictMTModelResponse;
         }
     }
 }

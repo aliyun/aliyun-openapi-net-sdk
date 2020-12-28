@@ -24,17 +24,20 @@ using Aliyun.Acs.nlp_automl.Model.V20191111;
 
 namespace Aliyun.Acs.nlp_automl.Transform.V20191111
 {
-    public class GetPredictResultResponseUnmarshaller
+    public class CreateProjectResponseUnmarshaller
     {
-        public static GetPredictResultResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateProjectResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetPredictResultResponse getPredictResultResponse = new GetPredictResultResponse();
+			CreateProjectResponse createProjectResponse = new CreateProjectResponse();
 
-			getPredictResultResponse.HttpResponse = _ctx.HttpResponse;
-			getPredictResultResponse.RequestId = _ctx.StringValue("GetPredictResult.RequestId");
-			getPredictResultResponse.Content = _ctx.StringValue("GetPredictResult.Content");
+			createProjectResponse.HttpResponse = _ctx.HttpResponse;
+			createProjectResponse.RequestId = _ctx.StringValue("CreateProject.RequestId");
+			createProjectResponse.ProjectId = _ctx.StringValue("CreateProject.ProjectId");
+			createProjectResponse.Code = _ctx.IntegerValue("CreateProject.Code");
+			createProjectResponse.Message = _ctx.StringValue("CreateProject.Message");
+			createProjectResponse.Success = _ctx.BooleanValue("CreateProject.Success");
         
-			return getPredictResultResponse;
+			return createProjectResponse;
         }
     }
 }

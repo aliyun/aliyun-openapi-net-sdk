@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.nlp_automl.Transform;
-using Aliyun.Acs.nlp_automl.Transform.V20191111;
+using Aliyun.Acs.nlp_automl.Transform.V20190701;
 
-namespace Aliyun.Acs.nlp_automl.Model.V20191111
+namespace Aliyun.Acs.nlp_automl.Model.V20190701
 {
-    public class RunContactReviewRequest : RpcAcsRequest<RunContactReviewResponse>
+    public class AddMtIntervenePackageRequest : RpcAcsRequest<AddMtIntervenePackageResponse>
     {
-        public RunContactReviewRequest()
-            : base("nlp-automl", "2019-11-11", "RunContactReview", "nlpautoml", "openAPI")
+        public AddMtIntervenePackageRequest()
+            : base("nlp-automl", "2019-07-01", "AddMtIntervenePackage", "nlpautoml", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,44 +41,84 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			Method = MethodType.POST;
         }
 
-		private string contactScene;
+		private string sourceLanguage;
 
-		private string contactPath;
+		private string packageName;
 
-		public string ContactScene
+		private string sourceType;
+
+		private string targetLanguage;
+
+		private int? projectId;
+
+		public string SourceLanguage
 		{
 			get
 			{
-				return contactScene;
+				return sourceLanguage;
 			}
 			set	
 			{
-				contactScene = value;
-				DictionaryUtil.Add(BodyParameters, "ContactScene", value);
+				sourceLanguage = value;
+				DictionaryUtil.Add(QueryParameters, "SourceLanguage", value);
 			}
 		}
 
-		public string ContactPath
+		public string PackageName
 		{
 			get
 			{
-				return contactPath;
+				return packageName;
 			}
 			set	
 			{
-				contactPath = value;
-				DictionaryUtil.Add(BodyParameters, "ContactPath", value);
+				packageName = value;
+				DictionaryUtil.Add(QueryParameters, "PackageName", value);
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string SourceType
 		{
-			return false;
+			get
+			{
+				return sourceType;
+			}
+			set	
+			{
+				sourceType = value;
+				DictionaryUtil.Add(QueryParameters, "SourceType", value);
+			}
 		}
 
-        public override RunContactReviewResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string TargetLanguage
+		{
+			get
+			{
+				return targetLanguage;
+			}
+			set	
+			{
+				targetLanguage = value;
+				DictionaryUtil.Add(QueryParameters, "TargetLanguage", value);
+			}
+		}
+
+		public int? ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(QueryParameters, "ProjectId", value.ToString());
+			}
+		}
+
+        public override AddMtIntervenePackageResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RunContactReviewResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AddMtIntervenePackageResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

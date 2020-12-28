@@ -28,10 +28,10 @@ using Aliyun.Acs.nlp_automl.Transform.V20191111;
 
 namespace Aliyun.Acs.nlp_automl.Model.V20191111
 {
-    public class RunContactReviewRequest : RpcAcsRequest<RunContactReviewResponse>
+    public class GetModelRequest : RpcAcsRequest<GetModelResponse>
     {
-        public RunContactReviewRequest()
-            : base("nlp-automl", "2019-11-11", "RunContactReview", "nlpautoml", "openAPI")
+        public GetModelRequest()
+            : base("nlp-automl", "2019-11-11", "GetModel", "nlpautoml", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,33 +41,48 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			Method = MethodType.POST;
         }
 
-		private string contactScene;
+		private long? modelId;
 
-		private string contactPath;
+		private long? projectId;
 
-		public string ContactScene
+		private string modelVersion;
+
+		public long? ModelId
 		{
 			get
 			{
-				return contactScene;
+				return modelId;
 			}
 			set	
 			{
-				contactScene = value;
-				DictionaryUtil.Add(BodyParameters, "ContactScene", value);
+				modelId = value;
+				DictionaryUtil.Add(BodyParameters, "ModelId", value.ToString());
 			}
 		}
 
-		public string ContactPath
+		public long? ProjectId
 		{
 			get
 			{
-				return contactPath;
+				return projectId;
 			}
 			set	
 			{
-				contactPath = value;
-				DictionaryUtil.Add(BodyParameters, "ContactPath", value);
+				projectId = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectId", value.ToString());
+			}
+		}
+
+		public string ModelVersion
+		{
+			get
+			{
+				return modelVersion;
+			}
+			set	
+			{
+				modelVersion = value;
+				DictionaryUtil.Add(BodyParameters, "ModelVersion", value);
 			}
 		}
 
@@ -76,9 +91,9 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			return false;
 		}
 
-        public override RunContactReviewResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetModelResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RunContactReviewResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetModelResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

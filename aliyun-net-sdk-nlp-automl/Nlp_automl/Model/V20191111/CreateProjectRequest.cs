@@ -28,10 +28,10 @@ using Aliyun.Acs.nlp_automl.Transform.V20191111;
 
 namespace Aliyun.Acs.nlp_automl.Model.V20191111
 {
-    public class RunContactReviewRequest : RpcAcsRequest<RunContactReviewResponse>
+    public class CreateProjectRequest : RpcAcsRequest<CreateProjectResponse>
     {
-        public RunContactReviewRequest()
-            : base("nlp-automl", "2019-11-11", "RunContactReview", "nlpautoml", "openAPI")
+        public CreateProjectRequest()
+            : base("nlp-automl", "2019-11-11", "CreateProject", "nlpautoml", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,33 +41,48 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			Method = MethodType.POST;
         }
 
-		private string contactScene;
+		private string projectName;
 
-		private string contactPath;
+		private string projectDescription;
 
-		public string ContactScene
+		private string projectType;
+
+		public string ProjectName
 		{
 			get
 			{
-				return contactScene;
+				return projectName;
 			}
 			set	
 			{
-				contactScene = value;
-				DictionaryUtil.Add(BodyParameters, "ContactScene", value);
+				projectName = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectName", value);
 			}
 		}
 
-		public string ContactPath
+		public string ProjectDescription
 		{
 			get
 			{
-				return contactPath;
+				return projectDescription;
 			}
 			set	
 			{
-				contactPath = value;
-				DictionaryUtil.Add(BodyParameters, "ContactPath", value);
+				projectDescription = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectDescription", value);
+			}
+		}
+
+		public string ProjectType
+		{
+			get
+			{
+				return projectType;
+			}
+			set	
+			{
+				projectType = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectType", value);
 			}
 		}
 
@@ -76,9 +91,9 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			return false;
 		}
 
-        public override RunContactReviewResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateProjectResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RunContactReviewResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateProjectResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

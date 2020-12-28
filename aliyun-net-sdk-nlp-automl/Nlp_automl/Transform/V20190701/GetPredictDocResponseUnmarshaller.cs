@@ -20,21 +20,23 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.nlp_automl.Model.V20191111;
+using Aliyun.Acs.nlp_automl.Model.V20190701;
 
-namespace Aliyun.Acs.nlp_automl.Transform.V20191111
+namespace Aliyun.Acs.nlp_automl.Transform.V20190701
 {
-    public class GetPredictResultResponseUnmarshaller
+    public class GetPredictDocResponseUnmarshaller
     {
-        public static GetPredictResultResponse Unmarshall(UnmarshallerContext _ctx)
+        public static GetPredictDocResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetPredictResultResponse getPredictResultResponse = new GetPredictResultResponse();
+			GetPredictDocResponse getPredictDocResponse = new GetPredictDocResponse();
 
-			getPredictResultResponse.HttpResponse = _ctx.HttpResponse;
-			getPredictResultResponse.RequestId = _ctx.StringValue("GetPredictResult.RequestId");
-			getPredictResultResponse.Content = _ctx.StringValue("GetPredictResult.Content");
+			getPredictDocResponse.HttpResponse = _ctx.HttpResponse;
+			getPredictDocResponse.RequestId = _ctx.StringValue("GetPredictDoc.RequestId");
+			getPredictDocResponse.ResultContent = _ctx.StringValue("GetPredictDoc.ResultContent");
+			getPredictDocResponse.Status = _ctx.IntegerValue("GetPredictDoc.Status");
+			getPredictDocResponse.XLIFFInfo = _ctx.StringValue("GetPredictDoc.XLIFFInfo");
         
-			return getPredictResultResponse;
+			return getPredictDocResponse;
         }
     }
 }

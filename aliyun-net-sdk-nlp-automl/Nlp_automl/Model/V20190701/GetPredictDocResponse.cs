@@ -16,25 +16,69 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.nlp_automl.Model.V20191111;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.nlp_automl.Transform.V20191111
+namespace Aliyun.Acs.nlp_automl.Model.V20190701
 {
-    public class GetPredictResultResponseUnmarshaller
-    {
-        public static GetPredictResultResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			GetPredictResultResponse getPredictResultResponse = new GetPredictResultResponse();
+	public class GetPredictDocResponse : AcsResponse
+	{
 
-			getPredictResultResponse.HttpResponse = _ctx.HttpResponse;
-			getPredictResultResponse.RequestId = _ctx.StringValue("GetPredictResult.RequestId");
-			getPredictResultResponse.Content = _ctx.StringValue("GetPredictResult.Content");
-        
-			return getPredictResultResponse;
-        }
-    }
+		private string requestId;
+
+		private string resultContent;
+
+		private int? status;
+
+		private string xLIFFInfo;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string ResultContent
+		{
+			get
+			{
+				return resultContent;
+			}
+			set	
+			{
+				resultContent = value;
+			}
+		}
+
+		public int? Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+			}
+		}
+
+		public string XLIFFInfo
+		{
+			get
+			{
+				return xLIFFInfo;
+			}
+			set	
+			{
+				xLIFFInfo = value;
+			}
+		}
+	}
 }

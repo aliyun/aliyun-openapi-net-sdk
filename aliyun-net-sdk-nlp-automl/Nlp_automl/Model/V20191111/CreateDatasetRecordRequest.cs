@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,10 +27,10 @@ using Aliyun.Acs.nlp_automl.Transform.V20191111;
 
 namespace Aliyun.Acs.nlp_automl.Model.V20191111
 {
-    public class RunContactReviewRequest : RpcAcsRequest<RunContactReviewResponse>
+    public class CreateDatasetRecordRequest : RpcAcsRequest<CreateDatasetRecordResponse>
     {
-        public RunContactReviewRequest()
-            : base("nlp-automl", "2019-11-11", "RunContactReview", "nlpautoml", "openAPI")
+        public CreateDatasetRecordRequest()
+            : base("nlp-automl", "2019-11-11", "CreateDatasetRecord", "nlpautoml", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,33 +40,48 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			Method = MethodType.POST;
         }
 
-		private string contactScene;
+		private string datasetRecord;
 
-		private string contactPath;
+		private long? datasetId;
 
-		public string ContactScene
+		private long? projectId;
+
+		public string DatasetRecord
 		{
 			get
 			{
-				return contactScene;
+				return datasetRecord;
 			}
 			set	
 			{
-				contactScene = value;
-				DictionaryUtil.Add(BodyParameters, "ContactScene", value);
+				datasetRecord = value;
+				DictionaryUtil.Add(BodyParameters, "DatasetRecord", value);
 			}
 		}
 
-		public string ContactPath
+		public long? DatasetId
 		{
 			get
 			{
-				return contactPath;
+				return datasetId;
 			}
 			set	
 			{
-				contactPath = value;
-				DictionaryUtil.Add(BodyParameters, "ContactPath", value);
+				datasetId = value;
+				DictionaryUtil.Add(BodyParameters, "DatasetId", value.ToString());
+			}
+		}
+
+		public long? ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectId", value.ToString());
 			}
 		}
 
@@ -76,9 +90,9 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			return false;
 		}
 
-        public override RunContactReviewResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateDatasetRecordResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RunContactReviewResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDatasetRecordResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

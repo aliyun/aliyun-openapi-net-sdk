@@ -26,13 +26,13 @@ namespace Aliyun.Acs.nlp_automl.Transform.V20191111
 {
     public class RunPreTrainServiceResponseUnmarshaller
     {
-        public static RunPreTrainServiceResponse Unmarshall(UnmarshallerContext context)
+        public static RunPreTrainServiceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RunPreTrainServiceResponse runPreTrainServiceResponse = new RunPreTrainServiceResponse();
 
-			runPreTrainServiceResponse.HttpResponse = context.HttpResponse;
-			runPreTrainServiceResponse.RequestId = context.StringValue("RunPreTrainService.RequestId");
-			runPreTrainServiceResponse.PredictResult = context.StringValue("RunPreTrainService.PredictResult");
+			runPreTrainServiceResponse.HttpResponse = _ctx.HttpResponse;
+			runPreTrainServiceResponse.RequestId = _ctx.StringValue("RunPreTrainService.RequestId");
+			runPreTrainServiceResponse.PredictResult = _ctx.StringValue("RunPreTrainService.PredictResult");
         
 			return runPreTrainServiceResponse;
         }

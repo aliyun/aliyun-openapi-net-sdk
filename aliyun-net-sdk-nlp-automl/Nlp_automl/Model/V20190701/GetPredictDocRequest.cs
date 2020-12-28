@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.nlp_automl.Transform;
-using Aliyun.Acs.nlp_automl.Transform.V20191111;
+using Aliyun.Acs.nlp_automl.Transform.V20190701;
 
-namespace Aliyun.Acs.nlp_automl.Model.V20191111
+namespace Aliyun.Acs.nlp_automl.Model.V20190701
 {
-    public class RunContactReviewRequest : RpcAcsRequest<RunContactReviewResponse>
+    public class GetPredictDocRequest : RpcAcsRequest<GetPredictDocResponse>
     {
-        public RunContactReviewRequest()
-            : base("nlp-automl", "2019-11-11", "RunContactReview", "nlpautoml", "openAPI")
+        public GetPredictDocRequest()
+            : base("nlp-automl", "2019-07-01", "GetPredictDoc", "nlpautoml", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,44 +41,39 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			Method = MethodType.POST;
         }
 
-		private string contactScene;
+		private string product;
 
-		private string contactPath;
+		private long? docId;
 
-		public string ContactScene
+		public string Product
 		{
 			get
 			{
-				return contactScene;
+				return product;
 			}
 			set	
 			{
-				contactScene = value;
-				DictionaryUtil.Add(BodyParameters, "ContactScene", value);
+				product = value;
+				DictionaryUtil.Add(QueryParameters, "Product", value);
 			}
 		}
 
-		public string ContactPath
+		public long? DocId
 		{
 			get
 			{
-				return contactPath;
+				return docId;
 			}
 			set	
 			{
-				contactPath = value;
-				DictionaryUtil.Add(BodyParameters, "ContactPath", value);
+				docId = value;
+				DictionaryUtil.Add(QueryParameters, "DocId", value.ToString());
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override RunContactReviewResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetPredictDocResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RunContactReviewResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetPredictDocResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

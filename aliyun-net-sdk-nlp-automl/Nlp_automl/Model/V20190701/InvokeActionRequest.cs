@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.nlp_automl.Transform;
-using Aliyun.Acs.nlp_automl.Transform.V20191111;
+using Aliyun.Acs.nlp_automl.Transform.V20190701;
 
-namespace Aliyun.Acs.nlp_automl.Model.V20191111
+namespace Aliyun.Acs.nlp_automl.Model.V20190701
 {
-    public class RunContactReviewRequest : RpcAcsRequest<RunContactReviewResponse>
+    public class InvokeActionRequest : RpcAcsRequest<InvokeActionResponse>
     {
-        public RunContactReviewRequest()
-            : base("nlp-automl", "2019-11-11", "RunContactReview", "nlpautoml", "openAPI")
+        public InvokeActionRequest()
+            : base("nlp-automl", "2019-07-01", "InvokeAction", "nlpautoml", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,33 +41,63 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			Method = MethodType.POST;
         }
 
-		private string contactScene;
+		private string invokeProduct;
 
-		private string contactPath;
+		private string invokeAction;
 
-		public string ContactScene
+		private string invokeParams;
+
+		private string invokeRegion;
+
+		public string InvokeProduct
 		{
 			get
 			{
-				return contactScene;
+				return invokeProduct;
 			}
 			set	
 			{
-				contactScene = value;
-				DictionaryUtil.Add(BodyParameters, "ContactScene", value);
+				invokeProduct = value;
+				DictionaryUtil.Add(QueryParameters, "InvokeProduct", value);
 			}
 		}
 
-		public string ContactPath
+		public string InvokeAction
 		{
 			get
 			{
-				return contactPath;
+				return invokeAction;
 			}
 			set	
 			{
-				contactPath = value;
-				DictionaryUtil.Add(BodyParameters, "ContactPath", value);
+				invokeAction = value;
+				DictionaryUtil.Add(BodyParameters, "InvokeAction", value);
+			}
+		}
+
+		public string InvokeParams
+		{
+			get
+			{
+				return invokeParams;
+			}
+			set	
+			{
+				invokeParams = value;
+				DictionaryUtil.Add(BodyParameters, "InvokeParams", value);
+			}
+		}
+
+		public string InvokeRegion
+		{
+			get
+			{
+				return invokeRegion;
+			}
+			set	
+			{
+				invokeRegion = value;
+				DictionaryUtil.Add(QueryParameters, "InvokeRegion", value);
 			}
 		}
 
@@ -76,9 +106,9 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			return false;
 		}
 
-        public override RunContactReviewResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override InvokeActionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RunContactReviewResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return InvokeActionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

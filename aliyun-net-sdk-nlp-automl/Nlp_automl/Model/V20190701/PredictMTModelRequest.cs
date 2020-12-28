@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.nlp_automl.Transform;
-using Aliyun.Acs.nlp_automl.Transform.V20191111;
+using Aliyun.Acs.nlp_automl.Transform.V20190701;
 
-namespace Aliyun.Acs.nlp_automl.Model.V20191111
+namespace Aliyun.Acs.nlp_automl.Model.V20190701
 {
-    public class RunContactReviewRequest : RpcAcsRequest<RunContactReviewResponse>
+    public class PredictMTModelRequest : RpcAcsRequest<PredictMTModelResponse>
     {
-        public RunContactReviewRequest()
-            : base("nlp-automl", "2019-11-11", "RunContactReview", "nlpautoml", "openAPI")
+        public PredictMTModelRequest()
+            : base("nlp-automl", "2019-07-01", "PredictMTModel", "nlpautoml", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,33 +41,63 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			Method = MethodType.POST;
         }
 
-		private string contactScene;
+		private string product;
 
-		private string contactPath;
+		private string modelId;
 
-		public string ContactScene
+		private string content;
+
+		private string modelVersion;
+
+		public string Product
 		{
 			get
 			{
-				return contactScene;
+				return product;
 			}
 			set	
 			{
-				contactScene = value;
-				DictionaryUtil.Add(BodyParameters, "ContactScene", value);
+				product = value;
+				DictionaryUtil.Add(QueryParameters, "Product", value);
 			}
 		}
 
-		public string ContactPath
+		public string ModelId
 		{
 			get
 			{
-				return contactPath;
+				return modelId;
 			}
 			set	
 			{
-				contactPath = value;
-				DictionaryUtil.Add(BodyParameters, "ContactPath", value);
+				modelId = value;
+				DictionaryUtil.Add(QueryParameters, "ModelId", value);
+			}
+		}
+
+		public string Content
+		{
+			get
+			{
+				return content;
+			}
+			set	
+			{
+				content = value;
+				DictionaryUtil.Add(BodyParameters, "Content", value);
+			}
+		}
+
+		public string ModelVersion
+		{
+			get
+			{
+				return modelVersion;
+			}
+			set	
+			{
+				modelVersion = value;
+				DictionaryUtil.Add(QueryParameters, "ModelVersion", value);
 			}
 		}
 
@@ -76,9 +106,9 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			return false;
 		}
 
-        public override RunContactReviewResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override PredictMTModelResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RunContactReviewResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return PredictMTModelResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

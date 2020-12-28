@@ -28,10 +28,10 @@ using Aliyun.Acs.nlp_automl.Transform.V20191111;
 
 namespace Aliyun.Acs.nlp_automl.Model.V20191111
 {
-    public class RunContactReviewRequest : RpcAcsRequest<RunContactReviewResponse>
+    public class ListDatasetRequest : RpcAcsRequest<ListDatasetResponse>
     {
-        public RunContactReviewRequest()
-            : base("nlp-automl", "2019-11-11", "RunContactReview", "nlpautoml", "openAPI")
+        public ListDatasetRequest()
+            : base("nlp-automl", "2019-11-11", "ListDataset", "nlpautoml", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,33 +41,48 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			Method = MethodType.POST;
         }
 
-		private string contactScene;
+		private int? pageNumber;
 
-		private string contactPath;
+		private int? pageSize;
 
-		public string ContactScene
+		private long? projectId;
+
+		public int? PageNumber
 		{
 			get
 			{
-				return contactScene;
+				return pageNumber;
 			}
 			set	
 			{
-				contactScene = value;
-				DictionaryUtil.Add(BodyParameters, "ContactScene", value);
+				pageNumber = value;
+				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string ContactPath
+		public int? PageSize
 		{
 			get
 			{
-				return contactPath;
+				return pageSize;
 			}
 			set	
 			{
-				contactPath = value;
-				DictionaryUtil.Add(BodyParameters, "ContactPath", value);
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public long? ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectId", value.ToString());
 			}
 		}
 
@@ -76,9 +91,9 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			return false;
 		}
 
-        public override RunContactReviewResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListDatasetResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RunContactReviewResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListDatasetResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.nlp_automl.Transform.V20191111
 {
     public class CreateAsyncPredictResponseUnmarshaller
     {
-        public static CreateAsyncPredictResponse Unmarshall(UnmarshallerContext context)
+        public static CreateAsyncPredictResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateAsyncPredictResponse createAsyncPredictResponse = new CreateAsyncPredictResponse();
 
-			createAsyncPredictResponse.HttpResponse = context.HttpResponse;
-			createAsyncPredictResponse.RequestId = context.StringValue("CreateAsyncPredict.RequestId");
-			createAsyncPredictResponse.AsyncPredictId = context.LongValue("CreateAsyncPredict.AsyncPredictId");
+			createAsyncPredictResponse.HttpResponse = _ctx.HttpResponse;
+			createAsyncPredictResponse.RequestId = _ctx.StringValue("CreateAsyncPredict.RequestId");
+			createAsyncPredictResponse.AsyncPredictId = _ctx.LongValue("CreateAsyncPredict.AsyncPredictId");
         
 			return createAsyncPredictResponse;
         }

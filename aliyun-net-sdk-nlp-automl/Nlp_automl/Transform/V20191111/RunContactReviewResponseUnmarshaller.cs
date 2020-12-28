@@ -26,39 +26,39 @@ namespace Aliyun.Acs.nlp_automl.Transform.V20191111
 {
     public class RunContactReviewResponseUnmarshaller
     {
-        public static RunContactReviewResponse Unmarshall(UnmarshallerContext context)
+        public static RunContactReviewResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RunContactReviewResponse runContactReviewResponse = new RunContactReviewResponse();
 
-			runContactReviewResponse.HttpResponse = context.HttpResponse;
-			runContactReviewResponse.RequestId = context.StringValue("RunContactReview.RequestId");
-			runContactReviewResponse.RawContractContent = context.StringValue("RunContactReview.RawContractContent");
+			runContactReviewResponse.HttpResponse = _ctx.HttpResponse;
+			runContactReviewResponse.RequestId = _ctx.StringValue("RunContactReview.RequestId");
+			runContactReviewResponse.RawContractContent = _ctx.StringValue("RunContactReview.RawContractContent");
 
 			RunContactReviewResponse.RunContactReview_ContactContent contactContent = new RunContactReviewResponse.RunContactReview_ContactContent();
 
 			List<RunContactReviewResponse.RunContactReview_ContactContent.RunContactReview_ReviewResult> contactContent_reviewResults = new List<RunContactReviewResponse.RunContactReview_ContactContent.RunContactReview_ReviewResult>();
-			for (int i = 0; i < context.Length("RunContactReview.ContactContent.ReviewResults.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("RunContactReview.ContactContent.ReviewResults.Length"); i++) {
 				RunContactReviewResponse.RunContactReview_ContactContent.RunContactReview_ReviewResult reviewResult = new RunContactReviewResponse.RunContactReview_ContactContent.RunContactReview_ReviewResult();
-				reviewResult.RiskLevel = context.StringValue("RunContactReview.ContactContent.ReviewResults["+ i +"].RiskLevel");
-				reviewResult.Reason = context.StringValue("RunContactReview.ContactContent.ReviewResults["+ i +"].Reason");
-				reviewResult.Type = context.StringValue("RunContactReview.ContactContent.ReviewResults["+ i +"].Type");
-				reviewResult.ModificationSuggestion = context.StringValue("RunContactReview.ContactContent.ReviewResults["+ i +"].ModificationSuggestion");
+				reviewResult.RiskLevel = _ctx.StringValue("RunContactReview.ContactContent.ReviewResults["+ i +"].RiskLevel");
+				reviewResult.Reason = _ctx.StringValue("RunContactReview.ContactContent.ReviewResults["+ i +"].Reason");
+				reviewResult.Type = _ctx.StringValue("RunContactReview.ContactContent.ReviewResults["+ i +"].Type");
+				reviewResult.ModificationSuggestion = _ctx.StringValue("RunContactReview.ContactContent.ReviewResults["+ i +"].ModificationSuggestion");
 
 				List<string> reviewResult_value = new List<string>();
-				for (int j = 0; j < context.Length("RunContactReview.ContactContent.ReviewResults["+ i +"].Value.Length"); j++) {
-					reviewResult_value.Add(context.StringValue("RunContactReview.ContactContent.ReviewResults["+ i +"].Value["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("RunContactReview.ContactContent.ReviewResults["+ i +"].Value.Length"); j++) {
+					reviewResult_value.Add(_ctx.StringValue("RunContactReview.ContactContent.ReviewResults["+ i +"].Value["+ j +"]"));
 				}
 				reviewResult._Value = reviewResult_value;
 
 				List<string> reviewResult_endPosition = new List<string>();
-				for (int j = 0; j < context.Length("RunContactReview.ContactContent.ReviewResults["+ i +"].EndPosition.Length"); j++) {
-					reviewResult_endPosition.Add(context.StringValue("RunContactReview.ContactContent.ReviewResults["+ i +"].EndPosition["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("RunContactReview.ContactContent.ReviewResults["+ i +"].EndPosition.Length"); j++) {
+					reviewResult_endPosition.Add(_ctx.StringValue("RunContactReview.ContactContent.ReviewResults["+ i +"].EndPosition["+ j +"]"));
 				}
 				reviewResult.EndPosition = reviewResult_endPosition;
 
 				List<string> reviewResult_startPosition = new List<string>();
-				for (int j = 0; j < context.Length("RunContactReview.ContactContent.ReviewResults["+ i +"].StartPosition.Length"); j++) {
-					reviewResult_startPosition.Add(context.StringValue("RunContactReview.ContactContent.ReviewResults["+ i +"].StartPosition["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("RunContactReview.ContactContent.ReviewResults["+ i +"].StartPosition.Length"); j++) {
+					reviewResult_startPosition.Add(_ctx.StringValue("RunContactReview.ContactContent.ReviewResults["+ i +"].StartPosition["+ j +"]"));
 				}
 				reviewResult.StartPosition = reviewResult_startPosition;
 
@@ -67,26 +67,26 @@ namespace Aliyun.Acs.nlp_automl.Transform.V20191111
 			contactContent.ReviewResults = contactContent_reviewResults;
 
 			List<RunContactReviewResponse.RunContactReview_ContactContent.RunContactReview_StructureResult> contactContent_structureResults = new List<RunContactReviewResponse.RunContactReview_ContactContent.RunContactReview_StructureResult>();
-			for (int i = 0; i < context.Length("RunContactReview.ContactContent.StructureResults.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("RunContactReview.ContactContent.StructureResults.Length"); i++) {
 				RunContactReviewResponse.RunContactReview_ContactContent.RunContactReview_StructureResult structureResult = new RunContactReviewResponse.RunContactReview_ContactContent.RunContactReview_StructureResult();
-				structureResult.Name = context.StringValue("RunContactReview.ContactContent.StructureResults["+ i +"].Name");
-				structureResult.Type = context.StringValue("RunContactReview.ContactContent.StructureResults["+ i +"].Type");
+				structureResult.Name = _ctx.StringValue("RunContactReview.ContactContent.StructureResults["+ i +"].Name");
+				structureResult.Type = _ctx.StringValue("RunContactReview.ContactContent.StructureResults["+ i +"].Type");
 
 				List<string> structureResult_value1 = new List<string>();
-				for (int j = 0; j < context.Length("RunContactReview.ContactContent.StructureResults["+ i +"].Value.Length"); j++) {
-					structureResult_value1.Add(context.StringValue("RunContactReview.ContactContent.StructureResults["+ i +"].Value["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("RunContactReview.ContactContent.StructureResults["+ i +"].Value.Length"); j++) {
+					structureResult_value1.Add(_ctx.StringValue("RunContactReview.ContactContent.StructureResults["+ i +"].Value["+ j +"]"));
 				}
 				structureResult._Value1 = structureResult_value1;
 
 				List<string> structureResult_endPosition2 = new List<string>();
-				for (int j = 0; j < context.Length("RunContactReview.ContactContent.StructureResults["+ i +"].EndPosition.Length"); j++) {
-					structureResult_endPosition2.Add(context.StringValue("RunContactReview.ContactContent.StructureResults["+ i +"].EndPosition["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("RunContactReview.ContactContent.StructureResults["+ i +"].EndPosition.Length"); j++) {
+					structureResult_endPosition2.Add(_ctx.StringValue("RunContactReview.ContactContent.StructureResults["+ i +"].EndPosition["+ j +"]"));
 				}
 				structureResult.EndPosition2 = structureResult_endPosition2;
 
 				List<string> structureResult_startPosition3 = new List<string>();
-				for (int j = 0; j < context.Length("RunContactReview.ContactContent.StructureResults["+ i +"].StartPosition.Length"); j++) {
-					structureResult_startPosition3.Add(context.StringValue("RunContactReview.ContactContent.StructureResults["+ i +"].StartPosition["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("RunContactReview.ContactContent.StructureResults["+ i +"].StartPosition.Length"); j++) {
+					structureResult_startPosition3.Add(_ctx.StringValue("RunContactReview.ContactContent.StructureResults["+ i +"].StartPosition["+ j +"]"));
 				}
 				structureResult.StartPosition3 = structureResult_startPosition3;
 

@@ -20,21 +20,23 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.nlp_automl.Model.V20191111;
+using Aliyun.Acs.nlp_automl.Model.V20190701;
 
-namespace Aliyun.Acs.nlp_automl.Transform.V20191111
+namespace Aliyun.Acs.nlp_automl.Transform.V20190701
 {
-    public class GetPredictResultResponseUnmarshaller
+    public class InvokeActionResponseUnmarshaller
     {
-        public static GetPredictResultResponse Unmarshall(UnmarshallerContext _ctx)
+        public static InvokeActionResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetPredictResultResponse getPredictResultResponse = new GetPredictResultResponse();
+			InvokeActionResponse invokeActionResponse = new InvokeActionResponse();
 
-			getPredictResultResponse.HttpResponse = _ctx.HttpResponse;
-			getPredictResultResponse.RequestId = _ctx.StringValue("GetPredictResult.RequestId");
-			getPredictResultResponse.Content = _ctx.StringValue("GetPredictResult.Content");
+			invokeActionResponse.HttpResponse = _ctx.HttpResponse;
+			invokeActionResponse.Code = _ctx.IntegerValue("InvokeAction.Code");
+			invokeActionResponse.Message = _ctx.IntegerValue("InvokeAction.Message");
+			invokeActionResponse.Data = _ctx.StringValue("InvokeAction.Data");
+			invokeActionResponse.RequestId = _ctx.StringValue("InvokeAction.RequestId");
         
-			return getPredictResultResponse;
+			return invokeActionResponse;
         }
     }
 }
