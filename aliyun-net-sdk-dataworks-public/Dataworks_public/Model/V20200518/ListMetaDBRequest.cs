@@ -42,6 +42,10 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string dataSourceType;
 
+		private int? pageSize;
+
+		private int? pageNum;
+
 		private long? projectId;
 
 		public string DataSourceType
@@ -54,6 +58,32 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				dataSourceType = value;
 				DictionaryUtil.Add(QueryParameters, "DataSourceType", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 

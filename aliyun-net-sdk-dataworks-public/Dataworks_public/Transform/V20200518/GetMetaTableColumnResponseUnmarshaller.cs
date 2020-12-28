@@ -53,6 +53,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 				columnListItem.IsPartitionColumn = _ctx.BooleanValue("GetMetaTableColumn.Data.ColumnList["+ i +"].IsPartitionColumn");
 				columnListItem.IsForeignKey = _ctx.BooleanValue("GetMetaTableColumn.Data.ColumnList["+ i +"].IsForeignKey");
 				columnListItem.Caption = _ctx.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].Caption");
+				columnListItem.Position = _ctx.IntegerValue("GetMetaTableColumn.Data.ColumnList["+ i +"].Position");
 
 				data_columnList.Add(columnListItem);
 			}

@@ -70,6 +70,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 				columnListItem.IsPartitionColumn = _ctx.BooleanValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].IsPartitionColumn");
 				columnListItem.IsForeignKey = _ctx.BooleanValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].IsForeignKey");
 				columnListItem.Caption = _ctx.StringValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].Caption");
+				columnListItem.Position = _ctx.IntegerValue("GetMetaTableFullInfo.Data.ColumnList["+ i +"].Position");
 
 				data_columnList.Add(columnListItem);
 			}

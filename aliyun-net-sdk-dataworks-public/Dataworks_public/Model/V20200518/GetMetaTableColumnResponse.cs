@@ -187,6 +187,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private string caption;
 
+				private int? position;
+
 				public string ColumnName
 				{
 					get
@@ -280,6 +282,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						caption = value;
+					}
+				}
+
+				public int? Position
+				{
+					get
+					{
+						return position;
+					}
+					set	
+					{
+						position = value;
 					}
 				}
 			}
