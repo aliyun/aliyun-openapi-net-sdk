@@ -26,28 +26,28 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class QueryProductListResponseUnmarshaller
     {
-        public static QueryProductListResponse Unmarshall(UnmarshallerContext context)
+        public static QueryProductListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryProductListResponse queryProductListResponse = new QueryProductListResponse();
 
-			queryProductListResponse.HttpResponse = context.HttpResponse;
-			queryProductListResponse.RequestId = context.StringValue("QueryProductList.RequestId");
-			queryProductListResponse.Success = context.BooleanValue("QueryProductList.Success");
-			queryProductListResponse.Code = context.StringValue("QueryProductList.Code");
-			queryProductListResponse.Message = context.StringValue("QueryProductList.Message");
+			queryProductListResponse.HttpResponse = _ctx.HttpResponse;
+			queryProductListResponse.RequestId = _ctx.StringValue("QueryProductList.RequestId");
+			queryProductListResponse.Success = _ctx.BooleanValue("QueryProductList.Success");
+			queryProductListResponse.Code = _ctx.StringValue("QueryProductList.Code");
+			queryProductListResponse.Message = _ctx.StringValue("QueryProductList.Message");
 
 			QueryProductListResponse.QueryProductList_Data data = new QueryProductListResponse.QueryProductList_Data();
-			data.TotalCount = context.IntegerValue("QueryProductList.Data.TotalCount");
-			data.PageNum = context.IntegerValue("QueryProductList.Data.PageNum");
-			data.PageSize = context.IntegerValue("QueryProductList.Data.PageSize");
+			data.TotalCount = _ctx.IntegerValue("QueryProductList.Data.TotalCount");
+			data.PageNum = _ctx.IntegerValue("QueryProductList.Data.PageNum");
+			data.PageSize = _ctx.IntegerValue("QueryProductList.Data.PageSize");
 
 			List<QueryProductListResponse.QueryProductList_Data.QueryProductList_Product> data_productList = new List<QueryProductListResponse.QueryProductList_Data.QueryProductList_Product>();
-			for (int i = 0; i < context.Length("QueryProductList.Data.ProductList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryProductList.Data.ProductList.Length"); i++) {
 				QueryProductListResponse.QueryProductList_Data.QueryProductList_Product product = new QueryProductListResponse.QueryProductList_Data.QueryProductList_Product();
-				product.ProductCode = context.StringValue("QueryProductList.Data.ProductList["+ i +"].ProductCode");
-				product.ProductName = context.StringValue("QueryProductList.Data.ProductList["+ i +"].ProductName");
-				product.ProductType = context.StringValue("QueryProductList.Data.ProductList["+ i +"].ProductType");
-				product.SubscriptionType = context.StringValue("QueryProductList.Data.ProductList["+ i +"].SubscriptionType");
+				product.ProductCode = _ctx.StringValue("QueryProductList.Data.ProductList["+ i +"].ProductCode");
+				product.ProductName = _ctx.StringValue("QueryProductList.Data.ProductList["+ i +"].ProductName");
+				product.ProductType = _ctx.StringValue("QueryProductList.Data.ProductList["+ i +"].ProductType");
+				product.SubscriptionType = _ctx.StringValue("QueryProductList.Data.ProductList["+ i +"].SubscriptionType");
 
 				data_productList.Add(product);
 			}

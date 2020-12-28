@@ -27,11 +27,11 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string requestId;
 
-		private bool? success;
+		private string message;
 
 		private string code;
 
-		private string message;
+		private bool? success;
 
 		private AllocateCostUnitResource_Data data;
 
@@ -47,15 +47,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public bool? Success
+		public string Message
 		{
 			get
 			{
-				return success;
+				return message;
 			}
 			set	
 			{
-				success = value;
+				message = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string Message
+		public bool? Success
 		{
 			get
 			{
-				return message;
+				return success;
 			}
 			set	
 			{
-				message = value;
+				success = value;
 			}
 		}
 
@@ -98,11 +98,23 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class AllocateCostUnitResource_Data
 		{
 
+			private bool? isSuccess;
+
 			private long? toUnitUserId;
 
 			private long? toUnitId;
 
-			private bool? isSuccess;
+			public bool? IsSuccess
+			{
+				get
+				{
+					return isSuccess;
+				}
+				set	
+				{
+					isSuccess = value;
+				}
+			}
 
 			public long? ToUnitUserId
 			{
@@ -125,18 +137,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				set	
 				{
 					toUnitId = value;
-				}
-			}
-
-			public bool? IsSuccess
-			{
-				get
-				{
-					return isSuccess;
-				}
-				set	
-				{
-					isSuccess = value;
 				}
 			}
 		}

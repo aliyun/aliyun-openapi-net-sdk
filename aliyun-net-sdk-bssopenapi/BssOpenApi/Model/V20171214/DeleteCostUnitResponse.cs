@@ -27,11 +27,11 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string requestId;
 
-		private bool? success;
+		private string message;
 
 		private string code;
 
-		private string message;
+		private bool? success;
 
 		private DeleteCostUnit_Data data;
 
@@ -47,15 +47,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public bool? Success
+		public string Message
 		{
 			get
 			{
-				return success;
+				return message;
 			}
 			set	
 			{
-				success = value;
+				message = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string Message
+		public bool? Success
 		{
 			get
 			{
-				return message;
+				return success;
 			}
 			set	
 			{
-				message = value;
+				success = value;
 			}
 		}
 
@@ -98,21 +98,21 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		public class DeleteCostUnit_Data
 		{
 
-			private long? ownerUid;
+			private bool? isSuccess;
 
 			private long? unitId;
 
-			private bool? isSuccess;
+			private long? ownerUid;
 
-			public long? OwnerUid
+			public bool? IsSuccess
 			{
 				get
 				{
-					return ownerUid;
+					return isSuccess;
 				}
 				set	
 				{
-					ownerUid = value;
+					isSuccess = value;
 				}
 			}
 
@@ -128,15 +128,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public bool? IsSuccess
+			public long? OwnerUid
 			{
 				get
 				{
-					return isSuccess;
+					return ownerUid;
 				}
 				set	
 				{
-					isSuccess = value;
+					ownerUid = value;
 				}
 			}
 		}

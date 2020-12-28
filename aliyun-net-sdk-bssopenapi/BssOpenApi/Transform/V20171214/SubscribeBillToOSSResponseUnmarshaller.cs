@@ -26,15 +26,15 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class SubscribeBillToOSSResponseUnmarshaller
     {
-        public static SubscribeBillToOSSResponse Unmarshall(UnmarshallerContext context)
+        public static SubscribeBillToOSSResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubscribeBillToOSSResponse subscribeBillToOSSResponse = new SubscribeBillToOSSResponse();
 
-			subscribeBillToOSSResponse.HttpResponse = context.HttpResponse;
-			subscribeBillToOSSResponse.RequestId = context.StringValue("SubscribeBillToOSS.RequestId");
-			subscribeBillToOSSResponse.Success = context.BooleanValue("SubscribeBillToOSS.Success");
-			subscribeBillToOSSResponse.Code = context.StringValue("SubscribeBillToOSS.Code");
-			subscribeBillToOSSResponse.Message = context.StringValue("SubscribeBillToOSS.Message");
+			subscribeBillToOSSResponse.HttpResponse = _ctx.HttpResponse;
+			subscribeBillToOSSResponse.RequestId = _ctx.StringValue("SubscribeBillToOSS.RequestId");
+			subscribeBillToOSSResponse.Success = _ctx.BooleanValue("SubscribeBillToOSS.Success");
+			subscribeBillToOSSResponse.Code = _ctx.StringValue("SubscribeBillToOSS.Code");
+			subscribeBillToOSSResponse.Message = _ctx.StringValue("SubscribeBillToOSS.Message");
         
 			return subscribeBillToOSSResponse;
         }

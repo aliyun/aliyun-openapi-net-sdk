@@ -26,18 +26,18 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class RenewInstanceResponseUnmarshaller
     {
-        public static RenewInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static RenewInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RenewInstanceResponse renewInstanceResponse = new RenewInstanceResponse();
 
-			renewInstanceResponse.HttpResponse = context.HttpResponse;
-			renewInstanceResponse.RequestId = context.StringValue("RenewInstance.RequestId");
-			renewInstanceResponse.Success = context.BooleanValue("RenewInstance.Success");
-			renewInstanceResponse.Code = context.StringValue("RenewInstance.Code");
-			renewInstanceResponse.Message = context.StringValue("RenewInstance.Message");
+			renewInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			renewInstanceResponse.RequestId = _ctx.StringValue("RenewInstance.RequestId");
+			renewInstanceResponse.Success = _ctx.BooleanValue("RenewInstance.Success");
+			renewInstanceResponse.Code = _ctx.StringValue("RenewInstance.Code");
+			renewInstanceResponse.Message = _ctx.StringValue("RenewInstance.Message");
 
 			RenewInstanceResponse.RenewInstance_Data data = new RenewInstanceResponse.RenewInstance_Data();
-			data.OrderId = context.StringValue("RenewInstance.Data.OrderId");
+			data.OrderId = _ctx.StringValue("RenewInstance.Data.OrderId");
 			renewInstanceResponse.Data = data;
         
 			return renewInstanceResponse;

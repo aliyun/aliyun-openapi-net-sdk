@@ -26,20 +26,20 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class CreateResourcePackageResponseUnmarshaller
     {
-        public static CreateResourcePackageResponse Unmarshall(UnmarshallerContext context)
+        public static CreateResourcePackageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateResourcePackageResponse createResourcePackageResponse = new CreateResourcePackageResponse();
 
-			createResourcePackageResponse.HttpResponse = context.HttpResponse;
-			createResourcePackageResponse.RequestId = context.StringValue("CreateResourcePackage.RequestId");
-			createResourcePackageResponse.OrderId = context.LongValue("CreateResourcePackage.OrderId");
-			createResourcePackageResponse.Success = context.BooleanValue("CreateResourcePackage.Success");
-			createResourcePackageResponse.Code = context.StringValue("CreateResourcePackage.Code");
-			createResourcePackageResponse.Message = context.StringValue("CreateResourcePackage.Message");
+			createResourcePackageResponse.HttpResponse = _ctx.HttpResponse;
+			createResourcePackageResponse.RequestId = _ctx.StringValue("CreateResourcePackage.RequestId");
+			createResourcePackageResponse.OrderId = _ctx.LongValue("CreateResourcePackage.OrderId");
+			createResourcePackageResponse.Success = _ctx.BooleanValue("CreateResourcePackage.Success");
+			createResourcePackageResponse.Code = _ctx.StringValue("CreateResourcePackage.Code");
+			createResourcePackageResponse.Message = _ctx.StringValue("CreateResourcePackage.Message");
 
 			CreateResourcePackageResponse.CreateResourcePackage_Data data = new CreateResourcePackageResponse.CreateResourcePackage_Data();
-			data.OrderId = context.LongValue("CreateResourcePackage.Data.OrderId");
-			data.InstanceId = context.StringValue("CreateResourcePackage.Data.InstanceId");
+			data.OrderId = _ctx.LongValue("CreateResourcePackage.Data.OrderId");
+			data.InstanceId = _ctx.StringValue("CreateResourcePackage.Data.InstanceId");
 			createResourcePackageResponse.Data = data;
         
 			return createResourcePackageResponse;

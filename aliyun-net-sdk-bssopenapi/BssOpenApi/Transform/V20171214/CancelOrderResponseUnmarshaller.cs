@@ -26,18 +26,18 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class CancelOrderResponseUnmarshaller
     {
-        public static CancelOrderResponse Unmarshall(UnmarshallerContext context)
+        public static CancelOrderResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CancelOrderResponse cancelOrderResponse = new CancelOrderResponse();
 
-			cancelOrderResponse.HttpResponse = context.HttpResponse;
-			cancelOrderResponse.RequestId = context.StringValue("CancelOrder.RequestId");
-			cancelOrderResponse.Success = context.BooleanValue("CancelOrder.Success");
-			cancelOrderResponse.Code = context.StringValue("CancelOrder.Code");
-			cancelOrderResponse.Message = context.StringValue("CancelOrder.Message");
+			cancelOrderResponse.HttpResponse = _ctx.HttpResponse;
+			cancelOrderResponse.RequestId = _ctx.StringValue("CancelOrder.RequestId");
+			cancelOrderResponse.Success = _ctx.BooleanValue("CancelOrder.Success");
+			cancelOrderResponse.Code = _ctx.StringValue("CancelOrder.Code");
+			cancelOrderResponse.Message = _ctx.StringValue("CancelOrder.Message");
 
 			CancelOrderResponse.CancelOrder_Data data = new CancelOrderResponse.CancelOrder_Data();
-			data.HostId = context.StringValue("CancelOrder.Data.HostId");
+			data.HostId = _ctx.StringValue("CancelOrder.Data.HostId");
 			cancelOrderResponse.Data = data;
         
 			return cancelOrderResponse;

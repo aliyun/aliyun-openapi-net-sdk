@@ -26,41 +26,42 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class QueryOrdersResponseUnmarshaller
     {
-        public static QueryOrdersResponse Unmarshall(UnmarshallerContext context)
+        public static QueryOrdersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryOrdersResponse queryOrdersResponse = new QueryOrdersResponse();
 
-			queryOrdersResponse.HttpResponse = context.HttpResponse;
-			queryOrdersResponse.RequestId = context.StringValue("QueryOrders.RequestId");
-			queryOrdersResponse.Success = context.BooleanValue("QueryOrders.Success");
-			queryOrdersResponse.Code = context.StringValue("QueryOrders.Code");
-			queryOrdersResponse.Message = context.StringValue("QueryOrders.Message");
+			queryOrdersResponse.HttpResponse = _ctx.HttpResponse;
+			queryOrdersResponse.RequestId = _ctx.StringValue("QueryOrders.RequestId");
+			queryOrdersResponse.Success = _ctx.BooleanValue("QueryOrders.Success");
+			queryOrdersResponse.Code = _ctx.StringValue("QueryOrders.Code");
+			queryOrdersResponse.Message = _ctx.StringValue("QueryOrders.Message");
 
 			QueryOrdersResponse.QueryOrders_Data data = new QueryOrdersResponse.QueryOrders_Data();
-			data.HostName = context.StringValue("QueryOrders.Data.HostName");
-			data.PageNum = context.IntegerValue("QueryOrders.Data.PageNum");
-			data.PageSize = context.IntegerValue("QueryOrders.Data.PageSize");
-			data.TotalCount = context.IntegerValue("QueryOrders.Data.TotalCount");
+			data.HostName = _ctx.StringValue("QueryOrders.Data.HostName");
+			data.PageNum = _ctx.IntegerValue("QueryOrders.Data.PageNum");
+			data.PageSize = _ctx.IntegerValue("QueryOrders.Data.PageSize");
+			data.TotalCount = _ctx.IntegerValue("QueryOrders.Data.TotalCount");
 
 			List<QueryOrdersResponse.QueryOrders_Data.QueryOrders_Order> data_orderList = new List<QueryOrdersResponse.QueryOrders_Data.QueryOrders_Order>();
-			for (int i = 0; i < context.Length("QueryOrders.Data.OrderList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryOrders.Data.OrderList.Length"); i++) {
 				QueryOrdersResponse.QueryOrders_Data.QueryOrders_Order order = new QueryOrdersResponse.QueryOrders_Data.QueryOrders_Order();
-				order.OrderId = context.StringValue("QueryOrders.Data.OrderList["+ i +"].OrderId");
-				order.ProductCode = context.StringValue("QueryOrders.Data.OrderList["+ i +"].ProductCode");
-				order.ProductType = context.StringValue("QueryOrders.Data.OrderList["+ i +"].ProductType");
-				order.SubscriptionType = context.StringValue("QueryOrders.Data.OrderList["+ i +"].SubscriptionType");
-				order.OrderType = context.StringValue("QueryOrders.Data.OrderList["+ i +"].OrderType");
-				order.CreateTime = context.StringValue("QueryOrders.Data.OrderList["+ i +"].CreateTime");
-				order.PaymentTime = context.StringValue("QueryOrders.Data.OrderList["+ i +"].PaymentTime");
-				order.PaymentStatus = context.StringValue("QueryOrders.Data.OrderList["+ i +"].PaymentStatus");
-				order.PretaxGrossAmount = context.StringValue("QueryOrders.Data.OrderList["+ i +"].PretaxGrossAmount");
-				order.PretaxAmount = context.StringValue("QueryOrders.Data.OrderList["+ i +"].PretaxAmount");
-				order.Currency = context.StringValue("QueryOrders.Data.OrderList["+ i +"].Currency");
-				order.PretaxAmountLocal = context.StringValue("QueryOrders.Data.OrderList["+ i +"].PretaxAmountLocal");
-				order.Tax = context.StringValue("QueryOrders.Data.OrderList["+ i +"].Tax");
-				order.AfterTaxAmount = context.StringValue("QueryOrders.Data.OrderList["+ i +"].AfterTaxAmount");
-				order.PaymentCurrency = context.StringValue("QueryOrders.Data.OrderList["+ i +"].PaymentCurrency");
-				order.RelatedOrderId = context.StringValue("QueryOrders.Data.OrderList["+ i +"].RelatedOrderId");
+				order.OrderId = _ctx.StringValue("QueryOrders.Data.OrderList["+ i +"].OrderId");
+				order.ProductCode = _ctx.StringValue("QueryOrders.Data.OrderList["+ i +"].ProductCode");
+				order.ProductType = _ctx.StringValue("QueryOrders.Data.OrderList["+ i +"].ProductType");
+				order.SubscriptionType = _ctx.StringValue("QueryOrders.Data.OrderList["+ i +"].SubscriptionType");
+				order.OrderType = _ctx.StringValue("QueryOrders.Data.OrderList["+ i +"].OrderType");
+				order.CreateTime = _ctx.StringValue("QueryOrders.Data.OrderList["+ i +"].CreateTime");
+				order.PaymentTime = _ctx.StringValue("QueryOrders.Data.OrderList["+ i +"].PaymentTime");
+				order.PaymentStatus = _ctx.StringValue("QueryOrders.Data.OrderList["+ i +"].PaymentStatus");
+				order.PretaxGrossAmount = _ctx.StringValue("QueryOrders.Data.OrderList["+ i +"].PretaxGrossAmount");
+				order.PretaxAmount = _ctx.StringValue("QueryOrders.Data.OrderList["+ i +"].PretaxAmount");
+				order.Currency = _ctx.StringValue("QueryOrders.Data.OrderList["+ i +"].Currency");
+				order.PretaxAmountLocal = _ctx.StringValue("QueryOrders.Data.OrderList["+ i +"].PretaxAmountLocal");
+				order.Tax = _ctx.StringValue("QueryOrders.Data.OrderList["+ i +"].Tax");
+				order.AfterTaxAmount = _ctx.StringValue("QueryOrders.Data.OrderList["+ i +"].AfterTaxAmount");
+				order.PaymentCurrency = _ctx.StringValue("QueryOrders.Data.OrderList["+ i +"].PaymentCurrency");
+				order.RelatedOrderId = _ctx.StringValue("QueryOrders.Data.OrderList["+ i +"].RelatedOrderId");
+				order.CommodityCode = _ctx.StringValue("QueryOrders.Data.OrderList["+ i +"].CommodityCode");
 
 				data_orderList.Add(order);
 			}

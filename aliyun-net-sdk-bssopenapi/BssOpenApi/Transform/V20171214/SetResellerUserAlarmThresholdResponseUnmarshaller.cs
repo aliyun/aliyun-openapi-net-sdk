@@ -26,16 +26,16 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class SetResellerUserAlarmThresholdResponseUnmarshaller
     {
-        public static SetResellerUserAlarmThresholdResponse Unmarshall(UnmarshallerContext context)
+        public static SetResellerUserAlarmThresholdResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetResellerUserAlarmThresholdResponse setResellerUserAlarmThresholdResponse = new SetResellerUserAlarmThresholdResponse();
 
-			setResellerUserAlarmThresholdResponse.HttpResponse = context.HttpResponse;
-			setResellerUserAlarmThresholdResponse.RequestId = context.StringValue("SetResellerUserAlarmThreshold.RequestId");
-			setResellerUserAlarmThresholdResponse.Code = context.StringValue("SetResellerUserAlarmThreshold.Code");
-			setResellerUserAlarmThresholdResponse.Message = context.StringValue("SetResellerUserAlarmThreshold.Message");
-			setResellerUserAlarmThresholdResponse.Success = context.BooleanValue("SetResellerUserAlarmThreshold.Success");
-			setResellerUserAlarmThresholdResponse.Data = context.BooleanValue("SetResellerUserAlarmThreshold.Data");
+			setResellerUserAlarmThresholdResponse.HttpResponse = _ctx.HttpResponse;
+			setResellerUserAlarmThresholdResponse.RequestId = _ctx.StringValue("SetResellerUserAlarmThreshold.RequestId");
+			setResellerUserAlarmThresholdResponse.Code = _ctx.StringValue("SetResellerUserAlarmThreshold.Code");
+			setResellerUserAlarmThresholdResponse.Message = _ctx.StringValue("SetResellerUserAlarmThreshold.Message");
+			setResellerUserAlarmThresholdResponse.Success = _ctx.BooleanValue("SetResellerUserAlarmThreshold.Success");
+			setResellerUserAlarmThresholdResponse.Data = _ctx.BooleanValue("SetResellerUserAlarmThreshold.Data");
         
 			return setResellerUserAlarmThresholdResponse;
         }

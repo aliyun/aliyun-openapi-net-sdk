@@ -26,22 +26,22 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class QueryAccountBalanceResponseUnmarshaller
     {
-        public static QueryAccountBalanceResponse Unmarshall(UnmarshallerContext context)
+        public static QueryAccountBalanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryAccountBalanceResponse queryAccountBalanceResponse = new QueryAccountBalanceResponse();
 
-			queryAccountBalanceResponse.HttpResponse = context.HttpResponse;
-			queryAccountBalanceResponse.RequestId = context.StringValue("QueryAccountBalance.RequestId");
-			queryAccountBalanceResponse.Success = context.BooleanValue("QueryAccountBalance.Success");
-			queryAccountBalanceResponse.Code = context.StringValue("QueryAccountBalance.Code");
-			queryAccountBalanceResponse.Message = context.StringValue("QueryAccountBalance.Message");
+			queryAccountBalanceResponse.HttpResponse = _ctx.HttpResponse;
+			queryAccountBalanceResponse.RequestId = _ctx.StringValue("QueryAccountBalance.RequestId");
+			queryAccountBalanceResponse.Success = _ctx.BooleanValue("QueryAccountBalance.Success");
+			queryAccountBalanceResponse.Code = _ctx.StringValue("QueryAccountBalance.Code");
+			queryAccountBalanceResponse.Message = _ctx.StringValue("QueryAccountBalance.Message");
 
 			QueryAccountBalanceResponse.QueryAccountBalance_Data data = new QueryAccountBalanceResponse.QueryAccountBalance_Data();
-			data.AvailableAmount = context.StringValue("QueryAccountBalance.Data.AvailableAmount");
-			data.AvailableCashAmount = context.StringValue("QueryAccountBalance.Data.AvailableCashAmount");
-			data.CreditAmount = context.StringValue("QueryAccountBalance.Data.CreditAmount");
-			data.MybankCreditAmount = context.StringValue("QueryAccountBalance.Data.MybankCreditAmount");
-			data.Currency = context.StringValue("QueryAccountBalance.Data.Currency");
+			data.AvailableAmount = _ctx.StringValue("QueryAccountBalance.Data.AvailableAmount");
+			data.AvailableCashAmount = _ctx.StringValue("QueryAccountBalance.Data.AvailableCashAmount");
+			data.CreditAmount = _ctx.StringValue("QueryAccountBalance.Data.CreditAmount");
+			data.MybankCreditAmount = _ctx.StringValue("QueryAccountBalance.Data.MybankCreditAmount");
+			data.Currency = _ctx.StringValue("QueryAccountBalance.Data.Currency");
 			queryAccountBalanceResponse.Data = data;
         
 			return queryAccountBalanceResponse;

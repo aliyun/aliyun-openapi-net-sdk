@@ -26,21 +26,21 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class CreateAgAccountResponseUnmarshaller
     {
-        public static CreateAgAccountResponse Unmarshall(UnmarshallerContext context)
+        public static CreateAgAccountResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateAgAccountResponse createAgAccountResponse = new CreateAgAccountResponse();
 
-			createAgAccountResponse.HttpResponse = context.HttpResponse;
-			createAgAccountResponse.RequestId = context.StringValue("CreateAgAccount.RequestId");
-			createAgAccountResponse.Code = context.StringValue("CreateAgAccount.Code");
-			createAgAccountResponse.Message = context.StringValue("CreateAgAccount.Message");
-			createAgAccountResponse.Success = context.BooleanValue("CreateAgAccount.Success");
+			createAgAccountResponse.HttpResponse = _ctx.HttpResponse;
+			createAgAccountResponse.RequestId = _ctx.StringValue("CreateAgAccount.RequestId");
+			createAgAccountResponse.Code = _ctx.StringValue("CreateAgAccount.Code");
+			createAgAccountResponse.Message = _ctx.StringValue("CreateAgAccount.Message");
+			createAgAccountResponse.Success = _ctx.BooleanValue("CreateAgAccount.Success");
 
 			CreateAgAccountResponse.CreateAgAccount_AgRelationDto agRelationDto = new CreateAgAccountResponse.CreateAgAccount_AgRelationDto();
-			agRelationDto.Pk = context.StringValue("CreateAgAccount.AgRelationDto.Pk");
-			agRelationDto.Type = context.StringValue("CreateAgAccount.AgRelationDto.Type");
-			agRelationDto.Mpk = context.StringValue("CreateAgAccount.AgRelationDto.Mpk");
-			agRelationDto.RamAdminRoleName = context.StringValue("CreateAgAccount.AgRelationDto.RamAdminRoleName");
+			agRelationDto.Pk = _ctx.StringValue("CreateAgAccount.AgRelationDto.Pk");
+			agRelationDto.Type = _ctx.StringValue("CreateAgAccount.AgRelationDto.Type");
+			agRelationDto.Mpk = _ctx.StringValue("CreateAgAccount.AgRelationDto.Mpk");
+			agRelationDto.RamAdminRoleName = _ctx.StringValue("CreateAgAccount.AgRelationDto.RamAdminRoleName");
 			createAgAccountResponse.AgRelationDto = agRelationDto;
         
 			return createAgAccountResponse;

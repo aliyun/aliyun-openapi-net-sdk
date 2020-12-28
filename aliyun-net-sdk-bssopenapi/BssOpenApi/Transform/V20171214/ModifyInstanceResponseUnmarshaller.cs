@@ -26,19 +26,19 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class ModifyInstanceResponseUnmarshaller
     {
-        public static ModifyInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyInstanceResponse modifyInstanceResponse = new ModifyInstanceResponse();
 
-			modifyInstanceResponse.HttpResponse = context.HttpResponse;
-			modifyInstanceResponse.RequestId = context.StringValue("ModifyInstance.RequestId");
-			modifyInstanceResponse.Success = context.BooleanValue("ModifyInstance.Success");
-			modifyInstanceResponse.Code = context.StringValue("ModifyInstance.Code");
-			modifyInstanceResponse.Message = context.StringValue("ModifyInstance.Message");
+			modifyInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			modifyInstanceResponse.RequestId = _ctx.StringValue("ModifyInstance.RequestId");
+			modifyInstanceResponse.Success = _ctx.BooleanValue("ModifyInstance.Success");
+			modifyInstanceResponse.Code = _ctx.StringValue("ModifyInstance.Code");
+			modifyInstanceResponse.Message = _ctx.StringValue("ModifyInstance.Message");
 
 			ModifyInstanceResponse.ModifyInstance_Data data = new ModifyInstanceResponse.ModifyInstance_Data();
-			data.HostId = context.StringValue("ModifyInstance.Data.HostId");
-			data.OrderId = context.StringValue("ModifyInstance.Data.OrderId");
+			data.HostId = _ctx.StringValue("ModifyInstance.Data.HostId");
+			data.OrderId = _ctx.StringValue("ModifyInstance.Data.OrderId");
 			modifyInstanceResponse.Data = data;
         
 			return modifyInstanceResponse;

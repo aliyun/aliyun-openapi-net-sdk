@@ -26,20 +26,20 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class RenewResourcePackageResponseUnmarshaller
     {
-        public static RenewResourcePackageResponse Unmarshall(UnmarshallerContext context)
+        public static RenewResourcePackageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RenewResourcePackageResponse renewResourcePackageResponse = new RenewResourcePackageResponse();
 
-			renewResourcePackageResponse.HttpResponse = context.HttpResponse;
-			renewResourcePackageResponse.RequestId = context.StringValue("RenewResourcePackage.RequestId");
-			renewResourcePackageResponse.OrderId = context.LongValue("RenewResourcePackage.OrderId");
-			renewResourcePackageResponse.Success = context.BooleanValue("RenewResourcePackage.Success");
-			renewResourcePackageResponse.Code = context.StringValue("RenewResourcePackage.Code");
-			renewResourcePackageResponse.Message = context.StringValue("RenewResourcePackage.Message");
+			renewResourcePackageResponse.HttpResponse = _ctx.HttpResponse;
+			renewResourcePackageResponse.RequestId = _ctx.StringValue("RenewResourcePackage.RequestId");
+			renewResourcePackageResponse.OrderId = _ctx.LongValue("RenewResourcePackage.OrderId");
+			renewResourcePackageResponse.Success = _ctx.BooleanValue("RenewResourcePackage.Success");
+			renewResourcePackageResponse.Code = _ctx.StringValue("RenewResourcePackage.Code");
+			renewResourcePackageResponse.Message = _ctx.StringValue("RenewResourcePackage.Message");
 
 			RenewResourcePackageResponse.RenewResourcePackage_Data data = new RenewResourcePackageResponse.RenewResourcePackage_Data();
-			data.OrderId = context.LongValue("RenewResourcePackage.Data.OrderId");
-			data.InstanceId = context.StringValue("RenewResourcePackage.Data.InstanceId");
+			data.OrderId = _ctx.LongValue("RenewResourcePackage.Data.OrderId");
+			data.InstanceId = _ctx.StringValue("RenewResourcePackage.Data.InstanceId");
 			renewResourcePackageResponse.Data = data;
         
 			return renewResourcePackageResponse;

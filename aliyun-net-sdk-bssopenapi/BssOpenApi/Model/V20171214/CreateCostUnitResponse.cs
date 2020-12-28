@@ -27,11 +27,11 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string requestId;
 
-		private bool? success;
+		private string message;
 
 		private string code;
 
-		private string message;
+		private bool? success;
 
 		private CreateCostUnit_Data data;
 
@@ -47,15 +47,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public bool? Success
+		public string Message
 		{
 			get
 			{
-				return success;
+				return message;
 			}
 			set	
 			{
-				success = value;
+				message = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string Message
+		public bool? Success
 		{
 			get
 			{
-				return message;
+				return success;
 			}
 			set	
 			{
-				message = value;
+				success = value;
 			}
 		}
 
@@ -115,23 +115,23 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			public class CreateCostUnit_CostUnitDtoListItem
 			{
 
-				private long? ownerUid;
+				private long? unitId;
 
 				private long? parentUnitId;
 
-				private long? unitId;
+				private long? ownerUid;
 
 				private string unitName;
 
-				public long? OwnerUid
+				public long? UnitId
 				{
 					get
 					{
-						return ownerUid;
+						return unitId;
 					}
 					set	
 					{
-						ownerUid = value;
+						unitId = value;
 					}
 				}
 
@@ -147,15 +147,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public long? UnitId
+				public long? OwnerUid
 				{
 					get
 					{
-						return unitId;
+						return ownerUid;
 					}
 					set	
 					{
-						unitId = value;
+						ownerUid = value;
 					}
 				}
 

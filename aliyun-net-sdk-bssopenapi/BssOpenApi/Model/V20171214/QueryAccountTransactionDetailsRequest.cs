@@ -28,10 +28,10 @@ using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class QueryOrdersRequest : RpcAcsRequest<QueryOrdersResponse>
+    public class QueryAccountTransactionDetailsRequest : RpcAcsRequest<QueryAccountTransactionDetailsResponse>
     {
-        public QueryOrdersRequest()
-            : base("BssOpenApi", "2017-12-14", "QueryOrders")
+        public QueryAccountTransactionDetailsRequest()
+            : base("BssOpenApi", "2017-12-14", "QueryAccountTransactionDetails")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,75 +41,34 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			Method = MethodType.POST;
         }
 
-		private string productCode;
-
-		private string subscriptionType;
-
-		private int? pageNum;
-
-		private long? ownerId;
+		private string transactionType;
 
 		private string createTimeEnd;
 
-		private string productType;
+		private string recordID;
 
-		private int? pageSize;
+		private string nextToken;
 
-		private string paymentStatus;
+		private int? maxResults;
+
+		private string transactionChannel;
+
+		private string transactionChannelSN;
 
 		private string createTimeStart;
 
-		private string orderType;
+		private string transactionNumber;
 
-		public string ProductCode
+		public string TransactionType
 		{
 			get
 			{
-				return productCode;
+				return transactionType;
 			}
 			set	
 			{
-				productCode = value;
-				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
-			}
-		}
-
-		public string SubscriptionType
-		{
-			get
-			{
-				return subscriptionType;
-			}
-			set	
-			{
-				subscriptionType = value;
-				DictionaryUtil.Add(QueryParameters, "SubscriptionType", value);
-			}
-		}
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				transactionType = value;
+				DictionaryUtil.Add(QueryParameters, "TransactionType", value);
 			}
 		}
 
@@ -126,42 +85,68 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string ProductType
+		public string RecordID
 		{
 			get
 			{
-				return productType;
+				return recordID;
 			}
 			set	
 			{
-				productType = value;
-				DictionaryUtil.Add(QueryParameters, "ProductType", value);
+				recordID = value;
+				DictionaryUtil.Add(QueryParameters, "RecordID", value);
 			}
 		}
 
-		public int? PageSize
+		public string NextToken
 		{
 			get
 			{
-				return pageSize;
+				return nextToken;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
-		public string PaymentStatus
+		public int? MaxResults
 		{
 			get
 			{
-				return paymentStatus;
+				return maxResults;
 			}
 			set	
 			{
-				paymentStatus = value;
-				DictionaryUtil.Add(QueryParameters, "PaymentStatus", value);
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
+		public string TransactionChannel
+		{
+			get
+			{
+				return transactionChannel;
+			}
+			set	
+			{
+				transactionChannel = value;
+				DictionaryUtil.Add(QueryParameters, "TransactionChannel", value);
+			}
+		}
+
+		public string TransactionChannelSN
+		{
+			get
+			{
+				return transactionChannelSN;
+			}
+			set	
+			{
+				transactionChannelSN = value;
+				DictionaryUtil.Add(QueryParameters, "TransactionChannelSN", value);
 			}
 		}
 
@@ -178,22 +163,22 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string OrderType
+		public string TransactionNumber
 		{
 			get
 			{
-				return orderType;
+				return transactionNumber;
 			}
 			set	
 			{
-				orderType = value;
-				DictionaryUtil.Add(QueryParameters, "OrderType", value);
+				transactionNumber = value;
+				DictionaryUtil.Add(QueryParameters, "TransactionNumber", value);
 			}
 		}
 
-        public override QueryOrdersResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryAccountTransactionDetailsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryOrdersResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryAccountTransactionDetailsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

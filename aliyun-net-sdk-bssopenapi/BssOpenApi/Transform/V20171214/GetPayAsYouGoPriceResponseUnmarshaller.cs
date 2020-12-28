@@ -26,38 +26,38 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class GetPayAsYouGoPriceResponseUnmarshaller
     {
-        public static GetPayAsYouGoPriceResponse Unmarshall(UnmarshallerContext context)
+        public static GetPayAsYouGoPriceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetPayAsYouGoPriceResponse getPayAsYouGoPriceResponse = new GetPayAsYouGoPriceResponse();
 
-			getPayAsYouGoPriceResponse.HttpResponse = context.HttpResponse;
-			getPayAsYouGoPriceResponse.RequestId = context.StringValue("GetPayAsYouGoPrice.RequestId");
-			getPayAsYouGoPriceResponse.Success = context.BooleanValue("GetPayAsYouGoPrice.Success");
-			getPayAsYouGoPriceResponse.Code = context.StringValue("GetPayAsYouGoPrice.Code");
-			getPayAsYouGoPriceResponse.Message = context.StringValue("GetPayAsYouGoPrice.Message");
+			getPayAsYouGoPriceResponse.HttpResponse = _ctx.HttpResponse;
+			getPayAsYouGoPriceResponse.RequestId = _ctx.StringValue("GetPayAsYouGoPrice.RequestId");
+			getPayAsYouGoPriceResponse.Success = _ctx.BooleanValue("GetPayAsYouGoPrice.Success");
+			getPayAsYouGoPriceResponse.Code = _ctx.StringValue("GetPayAsYouGoPrice.Code");
+			getPayAsYouGoPriceResponse.Message = _ctx.StringValue("GetPayAsYouGoPrice.Message");
 
 			GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data data = new GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data();
-			data.Currency = context.StringValue("GetPayAsYouGoPrice.Data.Currency");
+			data.Currency = _ctx.StringValue("GetPayAsYouGoPrice.Data.Currency");
 
 			List<GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data.GetPayAsYouGoPrice_ModuleDetail> data_moduleDetails = new List<GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data.GetPayAsYouGoPrice_ModuleDetail>();
-			for (int i = 0; i < context.Length("GetPayAsYouGoPrice.Data.ModuleDetails.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetPayAsYouGoPrice.Data.ModuleDetails.Length"); i++) {
 				GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data.GetPayAsYouGoPrice_ModuleDetail moduleDetail = new GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data.GetPayAsYouGoPrice_ModuleDetail();
-				moduleDetail.ModuleCode = context.StringValue("GetPayAsYouGoPrice.Data.ModuleDetails["+ i +"].ModuleCode");
-				moduleDetail.OriginalCost = context.FloatValue("GetPayAsYouGoPrice.Data.ModuleDetails["+ i +"].OriginalCost");
-				moduleDetail.InvoiceDiscount = context.FloatValue("GetPayAsYouGoPrice.Data.ModuleDetails["+ i +"].InvoiceDiscount");
-				moduleDetail.CostAfterDiscount = context.FloatValue("GetPayAsYouGoPrice.Data.ModuleDetails["+ i +"].CostAfterDiscount");
-				moduleDetail.UnitPrice = context.FloatValue("GetPayAsYouGoPrice.Data.ModuleDetails["+ i +"].UnitPrice");
+				moduleDetail.ModuleCode = _ctx.StringValue("GetPayAsYouGoPrice.Data.ModuleDetails["+ i +"].ModuleCode");
+				moduleDetail.OriginalCost = _ctx.FloatValue("GetPayAsYouGoPrice.Data.ModuleDetails["+ i +"].OriginalCost");
+				moduleDetail.InvoiceDiscount = _ctx.FloatValue("GetPayAsYouGoPrice.Data.ModuleDetails["+ i +"].InvoiceDiscount");
+				moduleDetail.CostAfterDiscount = _ctx.FloatValue("GetPayAsYouGoPrice.Data.ModuleDetails["+ i +"].CostAfterDiscount");
+				moduleDetail.UnitPrice = _ctx.FloatValue("GetPayAsYouGoPrice.Data.ModuleDetails["+ i +"].UnitPrice");
 
 				data_moduleDetails.Add(moduleDetail);
 			}
 			data.ModuleDetails = data_moduleDetails;
 
 			List<GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data.GetPayAsYouGoPrice_PromotionDetail> data_promotionDetails = new List<GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data.GetPayAsYouGoPrice_PromotionDetail>();
-			for (int i = 0; i < context.Length("GetPayAsYouGoPrice.Data.PromotionDetails.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetPayAsYouGoPrice.Data.PromotionDetails.Length"); i++) {
 				GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data.GetPayAsYouGoPrice_PromotionDetail promotionDetail = new GetPayAsYouGoPriceResponse.GetPayAsYouGoPrice_Data.GetPayAsYouGoPrice_PromotionDetail();
-				promotionDetail.PromotionName = context.StringValue("GetPayAsYouGoPrice.Data.PromotionDetails["+ i +"].PromotionName");
-				promotionDetail.PromotionDesc = context.StringValue("GetPayAsYouGoPrice.Data.PromotionDetails["+ i +"].PromotionDesc");
-				promotionDetail.PromotionId = context.LongValue("GetPayAsYouGoPrice.Data.PromotionDetails["+ i +"].PromotionId");
+				promotionDetail.PromotionName = _ctx.StringValue("GetPayAsYouGoPrice.Data.PromotionDetails["+ i +"].PromotionName");
+				promotionDetail.PromotionDesc = _ctx.StringValue("GetPayAsYouGoPrice.Data.PromotionDetails["+ i +"].PromotionDesc");
+				promotionDetail.PromotionId = _ctx.LongValue("GetPayAsYouGoPrice.Data.PromotionDetails["+ i +"].PromotionId");
 
 				data_promotionDetails.Add(promotionDetail);
 			}

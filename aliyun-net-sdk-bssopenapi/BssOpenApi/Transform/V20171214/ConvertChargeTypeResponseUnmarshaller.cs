@@ -26,18 +26,18 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class ConvertChargeTypeResponseUnmarshaller
     {
-        public static ConvertChargeTypeResponse Unmarshall(UnmarshallerContext context)
+        public static ConvertChargeTypeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ConvertChargeTypeResponse convertChargeTypeResponse = new ConvertChargeTypeResponse();
 
-			convertChargeTypeResponse.HttpResponse = context.HttpResponse;
-			convertChargeTypeResponse.RequestId = context.StringValue("ConvertChargeType.RequestId");
-			convertChargeTypeResponse.Success = context.BooleanValue("ConvertChargeType.Success");
-			convertChargeTypeResponse.Code = context.StringValue("ConvertChargeType.Code");
-			convertChargeTypeResponse.Message = context.StringValue("ConvertChargeType.Message");
+			convertChargeTypeResponse.HttpResponse = _ctx.HttpResponse;
+			convertChargeTypeResponse.RequestId = _ctx.StringValue("ConvertChargeType.RequestId");
+			convertChargeTypeResponse.Success = _ctx.BooleanValue("ConvertChargeType.Success");
+			convertChargeTypeResponse.Code = _ctx.StringValue("ConvertChargeType.Code");
+			convertChargeTypeResponse.Message = _ctx.StringValue("ConvertChargeType.Message");
 
 			ConvertChargeTypeResponse.ConvertChargeType_Data data = new ConvertChargeTypeResponse.ConvertChargeType_Data();
-			data.OrderId = context.StringValue("ConvertChargeType.Data.OrderId");
+			data.OrderId = _ctx.StringValue("ConvertChargeType.Data.OrderId");
 			convertChargeTypeResponse.Data = data;
         
 			return convertChargeTypeResponse;

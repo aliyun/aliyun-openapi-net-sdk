@@ -26,68 +26,68 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class QuerySettlementBillResponseUnmarshaller
     {
-        public static QuerySettlementBillResponse Unmarshall(UnmarshallerContext context)
+        public static QuerySettlementBillResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QuerySettlementBillResponse querySettlementBillResponse = new QuerySettlementBillResponse();
 
-			querySettlementBillResponse.HttpResponse = context.HttpResponse;
-			querySettlementBillResponse.RequestId = context.StringValue("QuerySettlementBill.RequestId");
-			querySettlementBillResponse.Success = context.BooleanValue("QuerySettlementBill.Success");
-			querySettlementBillResponse.Code = context.StringValue("QuerySettlementBill.Code");
-			querySettlementBillResponse.Message = context.StringValue("QuerySettlementBill.Message");
+			querySettlementBillResponse.HttpResponse = _ctx.HttpResponse;
+			querySettlementBillResponse.RequestId = _ctx.StringValue("QuerySettlementBill.RequestId");
+			querySettlementBillResponse.Success = _ctx.BooleanValue("QuerySettlementBill.Success");
+			querySettlementBillResponse.Code = _ctx.StringValue("QuerySettlementBill.Code");
+			querySettlementBillResponse.Message = _ctx.StringValue("QuerySettlementBill.Message");
 
 			QuerySettlementBillResponse.QuerySettlementBill_Data data = new QuerySettlementBillResponse.QuerySettlementBill_Data();
-			data.PageNum = context.IntegerValue("QuerySettlementBill.Data.PageNum");
-			data.PageSize = context.IntegerValue("QuerySettlementBill.Data.PageSize");
-			data.TotalCount = context.IntegerValue("QuerySettlementBill.Data.TotalCount");
-			data.BillingCycle = context.StringValue("QuerySettlementBill.Data.BillingCycle");
+			data.PageNum = _ctx.IntegerValue("QuerySettlementBill.Data.PageNum");
+			data.PageSize = _ctx.IntegerValue("QuerySettlementBill.Data.PageSize");
+			data.TotalCount = _ctx.IntegerValue("QuerySettlementBill.Data.TotalCount");
+			data.BillingCycle = _ctx.StringValue("QuerySettlementBill.Data.BillingCycle");
 
 			List<QuerySettlementBillResponse.QuerySettlementBill_Data.QuerySettlementBill_Item> data_items = new List<QuerySettlementBillResponse.QuerySettlementBill_Data.QuerySettlementBill_Item>();
-			for (int i = 0; i < context.Length("QuerySettlementBill.Data.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QuerySettlementBill.Data.Items.Length"); i++) {
 				QuerySettlementBillResponse.QuerySettlementBill_Data.QuerySettlementBill_Item item = new QuerySettlementBillResponse.QuerySettlementBill_Data.QuerySettlementBill_Item();
-				item.RecordID = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].RecordID");
-				item.Item = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].Item");
-				item.PayerAccount = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].PayerAccount");
-				item.OwnerID = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].OwnerID");
-				item.CreateTime = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].CreateTime");
-				item.UsageStartTime = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].UsageStartTime");
-				item.UsageEndTime = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].UsageEndTime");
-				item.SuborderID = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].SuborderID");
-				item.OrderID = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].OrderID");
-				item.OrderType = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].OrderType");
-				item.LinkedCustomerOrderID = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].LinkedCustomerOrderID");
-				item.OriginalOrderID = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].OriginalOrderID");
-				item.PaymentTime = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].PaymentTime");
-				item.SolutionID = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].SolutionID");
-				item.SolutionName = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].SolutionName");
-				item.BillID = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].BillID");
-				item.ProductCode = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].ProductCode");
-				item.ProductType = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].ProductType");
-				item.SubscriptionType = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].SubscriptionType");
-				item.Region = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].Region");
-				item.Config = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].Config");
-				item.Quantity = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].Quantity");
-				item.PretaxGrossAmount = context.FloatValue("QuerySettlementBill.Data.Items["+ i +"].PretaxGrossAmount");
-				item.ChargeDiscount = context.FloatValue("QuerySettlementBill.Data.Items["+ i +"].ChargeDiscount");
-				item.DeductedByCoupons = context.FloatValue("QuerySettlementBill.Data.Items["+ i +"].DeductedByCoupons");
-				item.AccountDiscount = context.FloatValue("QuerySettlementBill.Data.Items["+ i +"].AccountDiscount");
-				item.Promotion = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].Promotion");
-				item.PretaxAmount = context.FloatValue("QuerySettlementBill.Data.Items["+ i +"].PretaxAmount");
-				item.Currency = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].Currency");
-				item.PretaxAmountLocal = context.FloatValue("QuerySettlementBill.Data.Items["+ i +"].PretaxAmountLocal");
-				item.PreviousBillingCycleBalance = context.FloatValue("QuerySettlementBill.Data.Items["+ i +"].PreviousBillingCycleBalance");
-				item.Tax = context.FloatValue("QuerySettlementBill.Data.Items["+ i +"].Tax");
-				item.AfterTaxAmount = context.FloatValue("QuerySettlementBill.Data.Items["+ i +"].AfterTaxAmount");
-				item.Status = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].Status");
-				item.ClearedTime = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].ClearedTime");
-				item.OutstandingAmount = context.FloatValue("QuerySettlementBill.Data.Items["+ i +"].OutstandingAmount");
-				item.DeductedByCashCoupons = context.FloatValue("QuerySettlementBill.Data.Items["+ i +"].DeductedByCashCoupons");
-				item.DeductedByPrepaidCard = context.FloatValue("QuerySettlementBill.Data.Items["+ i +"].DeductedByPrepaidCard");
-				item.MybankPaymentAmount = context.FloatValue("QuerySettlementBill.Data.Items["+ i +"].MybankPaymentAmount");
-				item.PaymentAmount = context.FloatValue("QuerySettlementBill.Data.Items["+ i +"].PaymentAmount");
-				item.PaymentCurrency = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].PaymentCurrency");
-				item.Seller = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].Seller");
-				item.InvoiceNo = context.StringValue("QuerySettlementBill.Data.Items["+ i +"].InvoiceNo");
+				item.RecordID = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].RecordID");
+				item.Item = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].Item");
+				item.PayerAccount = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].PayerAccount");
+				item.OwnerID = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].OwnerID");
+				item.CreateTime = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].CreateTime");
+				item.UsageStartTime = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].UsageStartTime");
+				item.UsageEndTime = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].UsageEndTime");
+				item.SuborderID = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].SuborderID");
+				item.OrderID = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].OrderID");
+				item.OrderType = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].OrderType");
+				item.LinkedCustomerOrderID = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].LinkedCustomerOrderID");
+				item.OriginalOrderID = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].OriginalOrderID");
+				item.PaymentTime = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].PaymentTime");
+				item.SolutionID = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].SolutionID");
+				item.SolutionName = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].SolutionName");
+				item.BillID = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].BillID");
+				item.ProductCode = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].ProductCode");
+				item.ProductType = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].ProductType");
+				item.SubscriptionType = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].SubscriptionType");
+				item.Region = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].Region");
+				item.Config = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].Config");
+				item.Quantity = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].Quantity");
+				item.PretaxGrossAmount = _ctx.FloatValue("QuerySettlementBill.Data.Items["+ i +"].PretaxGrossAmount");
+				item.ChargeDiscount = _ctx.FloatValue("QuerySettlementBill.Data.Items["+ i +"].ChargeDiscount");
+				item.DeductedByCoupons = _ctx.FloatValue("QuerySettlementBill.Data.Items["+ i +"].DeductedByCoupons");
+				item.AccountDiscount = _ctx.FloatValue("QuerySettlementBill.Data.Items["+ i +"].AccountDiscount");
+				item.Promotion = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].Promotion");
+				item.PretaxAmount = _ctx.FloatValue("QuerySettlementBill.Data.Items["+ i +"].PretaxAmount");
+				item.Currency = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].Currency");
+				item.PretaxAmountLocal = _ctx.FloatValue("QuerySettlementBill.Data.Items["+ i +"].PretaxAmountLocal");
+				item.PreviousBillingCycleBalance = _ctx.FloatValue("QuerySettlementBill.Data.Items["+ i +"].PreviousBillingCycleBalance");
+				item.Tax = _ctx.FloatValue("QuerySettlementBill.Data.Items["+ i +"].Tax");
+				item.AfterTaxAmount = _ctx.FloatValue("QuerySettlementBill.Data.Items["+ i +"].AfterTaxAmount");
+				item.Status = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].Status");
+				item.ClearedTime = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].ClearedTime");
+				item.OutstandingAmount = _ctx.FloatValue("QuerySettlementBill.Data.Items["+ i +"].OutstandingAmount");
+				item.DeductedByCashCoupons = _ctx.FloatValue("QuerySettlementBill.Data.Items["+ i +"].DeductedByCashCoupons");
+				item.DeductedByPrepaidCard = _ctx.FloatValue("QuerySettlementBill.Data.Items["+ i +"].DeductedByPrepaidCard");
+				item.MybankPaymentAmount = _ctx.FloatValue("QuerySettlementBill.Data.Items["+ i +"].MybankPaymentAmount");
+				item.PaymentAmount = _ctx.FloatValue("QuerySettlementBill.Data.Items["+ i +"].PaymentAmount");
+				item.PaymentCurrency = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].PaymentCurrency");
+				item.Seller = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].Seller");
+				item.InvoiceNo = _ctx.StringValue("QuerySettlementBill.Data.Items["+ i +"].InvoiceNo");
 
 				data_items.Add(item);
 			}

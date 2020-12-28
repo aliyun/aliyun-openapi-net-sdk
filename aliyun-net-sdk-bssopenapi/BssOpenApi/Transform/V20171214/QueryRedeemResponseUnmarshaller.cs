@@ -26,34 +26,34 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class QueryRedeemResponseUnmarshaller
     {
-        public static QueryRedeemResponse Unmarshall(UnmarshallerContext context)
+        public static QueryRedeemResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryRedeemResponse queryRedeemResponse = new QueryRedeemResponse();
 
-			queryRedeemResponse.HttpResponse = context.HttpResponse;
-			queryRedeemResponse.RequestId = context.StringValue("QueryRedeem.RequestId");
-			queryRedeemResponse.Success = context.BooleanValue("QueryRedeem.Success");
-			queryRedeemResponse.Code = context.StringValue("QueryRedeem.Code");
-			queryRedeemResponse.Message = context.StringValue("QueryRedeem.Message");
+			queryRedeemResponse.HttpResponse = _ctx.HttpResponse;
+			queryRedeemResponse.RequestId = _ctx.StringValue("QueryRedeem.RequestId");
+			queryRedeemResponse.Success = _ctx.BooleanValue("QueryRedeem.Success");
+			queryRedeemResponse.Code = _ctx.StringValue("QueryRedeem.Code");
+			queryRedeemResponse.Message = _ctx.StringValue("QueryRedeem.Message");
 
 			QueryRedeemResponse.QueryRedeem_Data data = new QueryRedeemResponse.QueryRedeem_Data();
-			data.PageNum = context.LongValue("QueryRedeem.Data.PageNum");
-			data.PageSize = context.LongValue("QueryRedeem.Data.PageSize");
-			data.TotalCount = context.LongValue("QueryRedeem.Data.TotalCount");
+			data.PageNum = _ctx.LongValue("QueryRedeem.Data.PageNum");
+			data.PageSize = _ctx.LongValue("QueryRedeem.Data.PageSize");
+			data.TotalCount = _ctx.LongValue("QueryRedeem.Data.TotalCount");
 
 			List<QueryRedeemResponse.QueryRedeem_Data.QueryRedeem_RedeemItem> data_redeem = new List<QueryRedeemResponse.QueryRedeem_Data.QueryRedeem_RedeemItem>();
-			for (int i = 0; i < context.Length("QueryRedeem.Data.Redeem.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryRedeem.Data.Redeem.Length"); i++) {
 				QueryRedeemResponse.QueryRedeem_Data.QueryRedeem_RedeemItem redeemItem = new QueryRedeemResponse.QueryRedeem_Data.QueryRedeem_RedeemItem();
-				redeemItem.RedeemId = context.StringValue("QueryRedeem.Data.Redeem["+ i +"].RedeemId");
-				redeemItem.RedeemNo = context.StringValue("QueryRedeem.Data.Redeem["+ i +"].RedeemNo");
-				redeemItem.Status = context.StringValue("QueryRedeem.Data.Redeem["+ i +"].Status");
-				redeemItem.GrantedTime = context.StringValue("QueryRedeem.Data.Redeem["+ i +"].GrantedTime");
-				redeemItem.EffectiveTime = context.StringValue("QueryRedeem.Data.Redeem["+ i +"].EffectiveTime");
-				redeemItem.ExpiryTime = context.StringValue("QueryRedeem.Data.Redeem["+ i +"].ExpiryTime");
-				redeemItem.NominalValue = context.StringValue("QueryRedeem.Data.Redeem["+ i +"].NominalValue");
-				redeemItem.Balance = context.StringValue("QueryRedeem.Data.Redeem["+ i +"].Balance");
-				redeemItem.ApplicableProducts = context.StringValue("QueryRedeem.Data.Redeem["+ i +"].ApplicableProducts");
-				redeemItem.Specification = context.StringValue("QueryRedeem.Data.Redeem["+ i +"].Specification");
+				redeemItem.RedeemId = _ctx.StringValue("QueryRedeem.Data.Redeem["+ i +"].RedeemId");
+				redeemItem.RedeemNo = _ctx.StringValue("QueryRedeem.Data.Redeem["+ i +"].RedeemNo");
+				redeemItem.Status = _ctx.StringValue("QueryRedeem.Data.Redeem["+ i +"].Status");
+				redeemItem.GrantedTime = _ctx.StringValue("QueryRedeem.Data.Redeem["+ i +"].GrantedTime");
+				redeemItem.EffectiveTime = _ctx.StringValue("QueryRedeem.Data.Redeem["+ i +"].EffectiveTime");
+				redeemItem.ExpiryTime = _ctx.StringValue("QueryRedeem.Data.Redeem["+ i +"].ExpiryTime");
+				redeemItem.NominalValue = _ctx.StringValue("QueryRedeem.Data.Redeem["+ i +"].NominalValue");
+				redeemItem.Balance = _ctx.StringValue("QueryRedeem.Data.Redeem["+ i +"].Balance");
+				redeemItem.ApplicableProducts = _ctx.StringValue("QueryRedeem.Data.Redeem["+ i +"].ApplicableProducts");
+				redeemItem.Specification = _ctx.StringValue("QueryRedeem.Data.Redeem["+ i +"].Specification");
 
 				data_redeem.Add(redeemItem);
 			}

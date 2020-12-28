@@ -26,23 +26,23 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class GetCustomerAccountInfoResponseUnmarshaller
     {
-        public static GetCustomerAccountInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetCustomerAccountInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetCustomerAccountInfoResponse getCustomerAccountInfoResponse = new GetCustomerAccountInfoResponse();
 
-			getCustomerAccountInfoResponse.HttpResponse = context.HttpResponse;
-			getCustomerAccountInfoResponse.RequestId = context.StringValue("GetCustomerAccountInfo.RequestId");
-			getCustomerAccountInfoResponse.Success = context.BooleanValue("GetCustomerAccountInfo.Success");
-			getCustomerAccountInfoResponse.Code = context.StringValue("GetCustomerAccountInfo.Code");
-			getCustomerAccountInfoResponse.Message = context.StringValue("GetCustomerAccountInfo.Message");
+			getCustomerAccountInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getCustomerAccountInfoResponse.RequestId = _ctx.StringValue("GetCustomerAccountInfo.RequestId");
+			getCustomerAccountInfoResponse.Success = _ctx.BooleanValue("GetCustomerAccountInfo.Success");
+			getCustomerAccountInfoResponse.Code = _ctx.StringValue("GetCustomerAccountInfo.Code");
+			getCustomerAccountInfoResponse.Message = _ctx.StringValue("GetCustomerAccountInfo.Message");
 
 			GetCustomerAccountInfoResponse.GetCustomerAccountInfo_Data data = new GetCustomerAccountInfoResponse.GetCustomerAccountInfo_Data();
-			data.LoginEmail = context.StringValue("GetCustomerAccountInfo.Data.LoginEmail");
-			data.AccountType = context.StringValue("GetCustomerAccountInfo.Data.AccountType");
-			data.Mpk = context.LongValue("GetCustomerAccountInfo.Data.Mpk");
-			data.HostingStatus = context.StringValue("GetCustomerAccountInfo.Data.HostingStatus");
-			data.CreditLimitStatus = context.StringValue("GetCustomerAccountInfo.Data.CreditLimitStatus");
-			data.IsCertified = context.BooleanValue("GetCustomerAccountInfo.Data.IsCertified");
+			data.LoginEmail = _ctx.StringValue("GetCustomerAccountInfo.Data.LoginEmail");
+			data.AccountType = _ctx.StringValue("GetCustomerAccountInfo.Data.AccountType");
+			data.Mpk = _ctx.LongValue("GetCustomerAccountInfo.Data.Mpk");
+			data.HostingStatus = _ctx.StringValue("GetCustomerAccountInfo.Data.HostingStatus");
+			data.CreditLimitStatus = _ctx.StringValue("GetCustomerAccountInfo.Data.CreditLimitStatus");
+			data.IsCertified = _ctx.BooleanValue("GetCustomerAccountInfo.Data.IsCertified");
 			getCustomerAccountInfoResponse.Data = data;
         
 			return getCustomerAccountInfoResponse;

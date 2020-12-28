@@ -26,16 +26,16 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class SetResellerUserStatusResponseUnmarshaller
     {
-        public static SetResellerUserStatusResponse Unmarshall(UnmarshallerContext context)
+        public static SetResellerUserStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetResellerUserStatusResponse setResellerUserStatusResponse = new SetResellerUserStatusResponse();
 
-			setResellerUserStatusResponse.HttpResponse = context.HttpResponse;
-			setResellerUserStatusResponse.RequestId = context.StringValue("SetResellerUserStatus.RequestId");
-			setResellerUserStatusResponse.Code = context.StringValue("SetResellerUserStatus.Code");
-			setResellerUserStatusResponse.Message = context.StringValue("SetResellerUserStatus.Message");
-			setResellerUserStatusResponse.Success = context.BooleanValue("SetResellerUserStatus.Success");
-			setResellerUserStatusResponse.Data = context.BooleanValue("SetResellerUserStatus.Data");
+			setResellerUserStatusResponse.HttpResponse = _ctx.HttpResponse;
+			setResellerUserStatusResponse.RequestId = _ctx.StringValue("SetResellerUserStatus.RequestId");
+			setResellerUserStatusResponse.Code = _ctx.StringValue("SetResellerUserStatus.Code");
+			setResellerUserStatusResponse.Message = _ctx.StringValue("SetResellerUserStatus.Message");
+			setResellerUserStatusResponse.Success = _ctx.BooleanValue("SetResellerUserStatus.Success");
+			setResellerUserStatusResponse.Data = _ctx.BooleanValue("SetResellerUserStatus.Data");
         
 			return setResellerUserStatusResponse;
         }

@@ -26,18 +26,18 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class EnableBillGenerationResponseUnmarshaller
     {
-        public static EnableBillGenerationResponse Unmarshall(UnmarshallerContext context)
+        public static EnableBillGenerationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			EnableBillGenerationResponse enableBillGenerationResponse = new EnableBillGenerationResponse();
 
-			enableBillGenerationResponse.HttpResponse = context.HttpResponse;
-			enableBillGenerationResponse.RequestId = context.StringValue("EnableBillGeneration.RequestId");
-			enableBillGenerationResponse.Success = context.BooleanValue("EnableBillGeneration.Success");
-			enableBillGenerationResponse.Code = context.StringValue("EnableBillGeneration.Code");
-			enableBillGenerationResponse.Message = context.StringValue("EnableBillGeneration.Message");
+			enableBillGenerationResponse.HttpResponse = _ctx.HttpResponse;
+			enableBillGenerationResponse.RequestId = _ctx.StringValue("EnableBillGeneration.RequestId");
+			enableBillGenerationResponse.Success = _ctx.BooleanValue("EnableBillGeneration.Success");
+			enableBillGenerationResponse.Code = _ctx.StringValue("EnableBillGeneration.Code");
+			enableBillGenerationResponse.Message = _ctx.StringValue("EnableBillGeneration.Message");
 
 			EnableBillGenerationResponse.EnableBillGeneration_Data data = new EnableBillGenerationResponse.EnableBillGeneration_Data();
-			data.Boolean = context.BooleanValue("EnableBillGeneration.Data.Boolean");
+			data.Boolean = _ctx.BooleanValue("EnableBillGeneration.Data.Boolean");
 			enableBillGenerationResponse.Data = data;
         
 			return enableBillGenerationResponse;

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
     public class CreateResellerUserQuotaResponseUnmarshaller
     {
-        public static CreateResellerUserQuotaResponse Unmarshall(UnmarshallerContext context)
+        public static CreateResellerUserQuotaResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateResellerUserQuotaResponse createResellerUserQuotaResponse = new CreateResellerUserQuotaResponse();
 
-			createResellerUserQuotaResponse.HttpResponse = context.HttpResponse;
-			createResellerUserQuotaResponse.RequestId = context.StringValue("CreateResellerUserQuota.RequestId");
-			createResellerUserQuotaResponse.Code = context.StringValue("CreateResellerUserQuota.Code");
-			createResellerUserQuotaResponse.Message = context.StringValue("CreateResellerUserQuota.Message");
-			createResellerUserQuotaResponse.Success = context.BooleanValue("CreateResellerUserQuota.Success");
-			createResellerUserQuotaResponse.Data = context.BooleanValue("CreateResellerUserQuota.Data");
+			createResellerUserQuotaResponse.HttpResponse = _ctx.HttpResponse;
+			createResellerUserQuotaResponse.RequestId = _ctx.StringValue("CreateResellerUserQuota.RequestId");
+			createResellerUserQuotaResponse.Code = _ctx.StringValue("CreateResellerUserQuota.Code");
+			createResellerUserQuotaResponse.Message = _ctx.StringValue("CreateResellerUserQuota.Message");
+			createResellerUserQuotaResponse.Success = _ctx.BooleanValue("CreateResellerUserQuota.Success");
+			createResellerUserQuotaResponse.Data = _ctx.BooleanValue("CreateResellerUserQuota.Data");
         
 			return createResellerUserQuotaResponse;
         }
