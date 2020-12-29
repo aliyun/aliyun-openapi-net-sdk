@@ -26,12 +26,12 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class SetJobUserResponseUnmarshaller
     {
-        public static SetJobUserResponse Unmarshall(UnmarshallerContext context)
+        public static SetJobUserResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetJobUserResponse setJobUserResponse = new SetJobUserResponse();
 
-			setJobUserResponse.HttpResponse = context.HttpResponse;
-			setJobUserResponse.RequestId = context.StringValue("SetJobUser.RequestId");
+			setJobUserResponse.HttpResponse = _ctx.HttpResponse;
+			setJobUserResponse.RequestId = _ctx.StringValue("SetJobUser.RequestId");
         
 			return setJobUserResponse;
         }

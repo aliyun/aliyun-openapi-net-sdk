@@ -26,34 +26,34 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class ListAvailableEcsTypesResponseUnmarshaller
     {
-        public static ListAvailableEcsTypesResponse Unmarshall(UnmarshallerContext context)
+        public static ListAvailableEcsTypesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListAvailableEcsTypesResponse listAvailableEcsTypesResponse = new ListAvailableEcsTypesResponse();
 
-			listAvailableEcsTypesResponse.HttpResponse = context.HttpResponse;
-			listAvailableEcsTypesResponse.RequestId = context.StringValue("ListAvailableEcsTypes.RequestId");
-			listAvailableEcsTypesResponse.SupportSpotInstance = context.BooleanValue("ListAvailableEcsTypes.SupportSpotInstance");
+			listAvailableEcsTypesResponse.HttpResponse = _ctx.HttpResponse;
+			listAvailableEcsTypesResponse.RequestId = _ctx.StringValue("ListAvailableEcsTypes.RequestId");
+			listAvailableEcsTypesResponse.SupportSpotInstance = _ctx.BooleanValue("ListAvailableEcsTypes.SupportSpotInstance");
 
 			List<ListAvailableEcsTypesResponse.ListAvailableEcsTypes_InstanceTypeFamilyInfo> listAvailableEcsTypesResponse_instanceTypeFamilies = new List<ListAvailableEcsTypesResponse.ListAvailableEcsTypes_InstanceTypeFamilyInfo>();
-			for (int i = 0; i < context.Length("ListAvailableEcsTypes.InstanceTypeFamilies.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListAvailableEcsTypes.InstanceTypeFamilies.Length"); i++) {
 				ListAvailableEcsTypesResponse.ListAvailableEcsTypes_InstanceTypeFamilyInfo instanceTypeFamilyInfo = new ListAvailableEcsTypesResponse.ListAvailableEcsTypes_InstanceTypeFamilyInfo();
-				instanceTypeFamilyInfo.InstanceTypeFamilyId = context.StringValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].InstanceTypeFamilyId");
-				instanceTypeFamilyInfo.Generation = context.StringValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Generation");
+				instanceTypeFamilyInfo.InstanceTypeFamilyId = _ctx.StringValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].InstanceTypeFamilyId");
+				instanceTypeFamilyInfo.Generation = _ctx.StringValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Generation");
 
 				List<ListAvailableEcsTypesResponse.ListAvailableEcsTypes_InstanceTypeFamilyInfo.ListAvailableEcsTypes_TypesInfo> instanceTypeFamilyInfo_types = new List<ListAvailableEcsTypesResponse.ListAvailableEcsTypes_InstanceTypeFamilyInfo.ListAvailableEcsTypes_TypesInfo>();
-				for (int j = 0; j < context.Length("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types.Length"); j++) {
 					ListAvailableEcsTypesResponse.ListAvailableEcsTypes_InstanceTypeFamilyInfo.ListAvailableEcsTypes_TypesInfo typesInfo = new ListAvailableEcsTypesResponse.ListAvailableEcsTypes_InstanceTypeFamilyInfo.ListAvailableEcsTypes_TypesInfo();
-					typesInfo.CpuCoreCount = context.IntegerValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].CpuCoreCount");
-					typesInfo.MemorySize = context.IntegerValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].MemorySize");
-					typesInfo.GPUAmount = context.IntegerValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].GPUAmount");
-					typesInfo.InstanceBandwidthRx = context.IntegerValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].InstanceBandwidthRx");
-					typesInfo.InstancePpsRx = context.IntegerValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].InstancePpsRx");
-					typesInfo.InstancePpsTx = context.IntegerValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].InstancePpsTx");
-					typesInfo.EniQuantity = context.IntegerValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].EniQuantity");
-					typesInfo.InstanceBandwidthTx = context.IntegerValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].InstanceBandwidthTx");
-					typesInfo.InstanceTypeId = context.StringValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].InstanceTypeId");
-					typesInfo.GPUSpec = context.StringValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].GPUSpec");
-					typesInfo.Status = context.StringValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].Status");
+					typesInfo.CpuCoreCount = _ctx.IntegerValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].CpuCoreCount");
+					typesInfo.MemorySize = _ctx.IntegerValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].MemorySize");
+					typesInfo.GPUAmount = _ctx.IntegerValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].GPUAmount");
+					typesInfo.InstanceBandwidthRx = _ctx.IntegerValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].InstanceBandwidthRx");
+					typesInfo.InstancePpsRx = _ctx.IntegerValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].InstancePpsRx");
+					typesInfo.InstancePpsTx = _ctx.IntegerValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].InstancePpsTx");
+					typesInfo.EniQuantity = _ctx.IntegerValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].EniQuantity");
+					typesInfo.InstanceBandwidthTx = _ctx.IntegerValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].InstanceBandwidthTx");
+					typesInfo.InstanceTypeId = _ctx.StringValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].InstanceTypeId");
+					typesInfo.GPUSpec = _ctx.StringValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].GPUSpec");
+					typesInfo.Status = _ctx.StringValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].Status");
 
 					instanceTypeFamilyInfo_types.Add(typesInfo);
 				}

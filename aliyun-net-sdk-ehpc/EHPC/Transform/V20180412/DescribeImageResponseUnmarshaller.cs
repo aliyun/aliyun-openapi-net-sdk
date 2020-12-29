@@ -26,21 +26,21 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class DescribeImageResponseUnmarshaller
     {
-        public static DescribeImageResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeImageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeImageResponse describeImageResponse = new DescribeImageResponse();
 
-			describeImageResponse.HttpResponse = context.HttpResponse;
-			describeImageResponse.RequestId = context.StringValue("DescribeImage.RequestId");
+			describeImageResponse.HttpResponse = _ctx.HttpResponse;
+			describeImageResponse.RequestId = _ctx.StringValue("DescribeImage.RequestId");
 
 			DescribeImageResponse.DescribeImage_ImageInfo imageInfo = new DescribeImageResponse.DescribeImage_ImageInfo();
-			imageInfo.System = context.StringValue("DescribeImage.ImageInfo.System");
-			imageInfo.Type = context.StringValue("DescribeImage.ImageInfo.Type");
-			imageInfo.Status = context.StringValue("DescribeImage.ImageInfo.Status");
-			imageInfo.ImageId = context.StringValue("DescribeImage.ImageInfo.ImageId");
-			imageInfo.UpdateDateTime = context.StringValue("DescribeImage.ImageInfo.UpdateDateTime");
-			imageInfo.Repository = context.StringValue("DescribeImage.ImageInfo.Repository");
-			imageInfo.Tag = context.StringValue("DescribeImage.ImageInfo.Tag");
+			imageInfo.System = _ctx.StringValue("DescribeImage.ImageInfo.System");
+			imageInfo.Type = _ctx.StringValue("DescribeImage.ImageInfo.Type");
+			imageInfo.Status = _ctx.StringValue("DescribeImage.ImageInfo.Status");
+			imageInfo.ImageId = _ctx.StringValue("DescribeImage.ImageInfo.ImageId");
+			imageInfo.UpdateDateTime = _ctx.StringValue("DescribeImage.ImageInfo.UpdateDateTime");
+			imageInfo.Repository = _ctx.StringValue("DescribeImage.ImageInfo.Repository");
+			imageInfo.Tag = _ctx.StringValue("DescribeImage.ImageInfo.Tag");
 			describeImageResponse.ImageInfo = imageInfo;
         
 			return describeImageResponse;

@@ -26,57 +26,58 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class ListNodesResponseUnmarshaller
     {
-        public static ListNodesResponse Unmarshall(UnmarshallerContext context)
+        public static ListNodesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListNodesResponse listNodesResponse = new ListNodesResponse();
 
-			listNodesResponse.HttpResponse = context.HttpResponse;
-			listNodesResponse.RequestId = context.StringValue("ListNodes.RequestId");
-			listNodesResponse.TotalCount = context.IntegerValue("ListNodes.TotalCount");
-			listNodesResponse.PageNumber = context.IntegerValue("ListNodes.PageNumber");
-			listNodesResponse.PageSize = context.IntegerValue("ListNodes.PageSize");
+			listNodesResponse.HttpResponse = _ctx.HttpResponse;
+			listNodesResponse.RequestId = _ctx.StringValue("ListNodes.RequestId");
+			listNodesResponse.TotalCount = _ctx.IntegerValue("ListNodes.TotalCount");
+			listNodesResponse.PageNumber = _ctx.IntegerValue("ListNodes.PageNumber");
+			listNodesResponse.PageSize = _ctx.IntegerValue("ListNodes.PageSize");
 
 			List<ListNodesResponse.ListNodes_NodeInfo> listNodesResponse_nodes = new List<ListNodesResponse.ListNodes_NodeInfo>();
-			for (int i = 0; i < context.Length("ListNodes.Nodes.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListNodes.Nodes.Length"); i++) {
 				ListNodesResponse.ListNodes_NodeInfo nodeInfo = new ListNodesResponse.ListNodes_NodeInfo();
-				nodeInfo.Id = context.StringValue("ListNodes.Nodes["+ i +"].Id");
-				nodeInfo.RegionId = context.StringValue("ListNodes.Nodes["+ i +"].RegionId");
-				nodeInfo.HostName = context.StringValue("ListNodes.Nodes["+ i +"].HostName");
-				nodeInfo.IpAddress = context.StringValue("ListNodes.Nodes["+ i +"].IpAddress");
-				nodeInfo.Status = context.StringValue("ListNodes.Nodes["+ i +"].Status");
-				nodeInfo.Version = context.StringValue("ListNodes.Nodes["+ i +"].Version");
-				nodeInfo.CreatedByEhpc = context.BooleanValue("ListNodes.Nodes["+ i +"].CreatedByEhpc");
-				nodeInfo.AddTime = context.StringValue("ListNodes.Nodes["+ i +"].AddTime");
-				nodeInfo.Expired = context.BooleanValue("ListNodes.Nodes["+ i +"].Expired");
-				nodeInfo.ExpiredTime = context.StringValue("ListNodes.Nodes["+ i +"].ExpiredTime");
-				nodeInfo.SpotStrategy = context.StringValue("ListNodes.Nodes["+ i +"].SpotStrategy");
-				nodeInfo.LockReason = context.StringValue("ListNodes.Nodes["+ i +"].LockReason");
-				nodeInfo.ImageOwnerAlias = context.StringValue("ListNodes.Nodes["+ i +"].ImageOwnerAlias");
-				nodeInfo.ImageId = context.StringValue("ListNodes.Nodes["+ i +"].ImageId");
-				nodeInfo.Location = context.StringValue("ListNodes.Nodes["+ i +"].Location");
-				nodeInfo.CreateMode = context.StringValue("ListNodes.Nodes["+ i +"].CreateMode");
-				nodeInfo.VpcId = context.StringValue("ListNodes.Nodes["+ i +"].VpcId");
-				nodeInfo.ZoneId = context.StringValue("ListNodes.Nodes["+ i +"].ZoneId");
-				nodeInfo.VSwitchId = context.StringValue("ListNodes.Nodes["+ i +"].VSwitchId");
-				nodeInfo.HtEnabled = context.BooleanValue("ListNodes.Nodes["+ i +"].HtEnabled");
-				nodeInfo.PublicIpAddress = context.StringValue("ListNodes.Nodes["+ i +"].PublicIpAddress");
+				nodeInfo.Id = _ctx.StringValue("ListNodes.Nodes["+ i +"].Id");
+				nodeInfo.RegionId = _ctx.StringValue("ListNodes.Nodes["+ i +"].RegionId");
+				nodeInfo.HostName = _ctx.StringValue("ListNodes.Nodes["+ i +"].HostName");
+				nodeInfo.IpAddress = _ctx.StringValue("ListNodes.Nodes["+ i +"].IpAddress");
+				nodeInfo.Status = _ctx.StringValue("ListNodes.Nodes["+ i +"].Status");
+				nodeInfo.Version = _ctx.StringValue("ListNodes.Nodes["+ i +"].Version");
+				nodeInfo.CreatedByEhpc = _ctx.BooleanValue("ListNodes.Nodes["+ i +"].CreatedByEhpc");
+				nodeInfo.AddTime = _ctx.StringValue("ListNodes.Nodes["+ i +"].AddTime");
+				nodeInfo.Expired = _ctx.BooleanValue("ListNodes.Nodes["+ i +"].Expired");
+				nodeInfo.ExpiredTime = _ctx.StringValue("ListNodes.Nodes["+ i +"].ExpiredTime");
+				nodeInfo.SpotStrategy = _ctx.StringValue("ListNodes.Nodes["+ i +"].SpotStrategy");
+				nodeInfo.LockReason = _ctx.StringValue("ListNodes.Nodes["+ i +"].LockReason");
+				nodeInfo.ImageOwnerAlias = _ctx.StringValue("ListNodes.Nodes["+ i +"].ImageOwnerAlias");
+				nodeInfo.ImageId = _ctx.StringValue("ListNodes.Nodes["+ i +"].ImageId");
+				nodeInfo.Location = _ctx.StringValue("ListNodes.Nodes["+ i +"].Location");
+				nodeInfo.CreateMode = _ctx.StringValue("ListNodes.Nodes["+ i +"].CreateMode");
+				nodeInfo.VpcId = _ctx.StringValue("ListNodes.Nodes["+ i +"].VpcId");
+				nodeInfo.ZoneId = _ctx.StringValue("ListNodes.Nodes["+ i +"].ZoneId");
+				nodeInfo.VSwitchId = _ctx.StringValue("ListNodes.Nodes["+ i +"].VSwitchId");
+				nodeInfo.HtEnabled = _ctx.BooleanValue("ListNodes.Nodes["+ i +"].HtEnabled");
+				nodeInfo.PublicIpAddress = _ctx.StringValue("ListNodes.Nodes["+ i +"].PublicIpAddress");
+				nodeInfo.InstanceType = _ctx.StringValue("ListNodes.Nodes["+ i +"].InstanceType");
 
 				List<string> nodeInfo_roles = new List<string>();
-				for (int j = 0; j < context.Length("ListNodes.Nodes["+ i +"].Roles.Length"); j++) {
-					nodeInfo_roles.Add(context.StringValue("ListNodes.Nodes["+ i +"].Roles["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("ListNodes.Nodes["+ i +"].Roles.Length"); j++) {
+					nodeInfo_roles.Add(_ctx.StringValue("ListNodes.Nodes["+ i +"].Roles["+ j +"]"));
 				}
 				nodeInfo.Roles = nodeInfo_roles;
 
 				ListNodesResponse.ListNodes_NodeInfo.ListNodes_TotalResources totalResources = new ListNodesResponse.ListNodes_NodeInfo.ListNodes_TotalResources();
-				totalResources.Cpu = context.IntegerValue("ListNodes.Nodes["+ i +"].TotalResources.Cpu");
-				totalResources.Memory = context.IntegerValue("ListNodes.Nodes["+ i +"].TotalResources.Memory");
-				totalResources.Gpu = context.IntegerValue("ListNodes.Nodes["+ i +"].TotalResources.Gpu");
+				totalResources.Cpu = _ctx.IntegerValue("ListNodes.Nodes["+ i +"].TotalResources.Cpu");
+				totalResources.Memory = _ctx.IntegerValue("ListNodes.Nodes["+ i +"].TotalResources.Memory");
+				totalResources.Gpu = _ctx.IntegerValue("ListNodes.Nodes["+ i +"].TotalResources.Gpu");
 				nodeInfo.TotalResources = totalResources;
 
 				ListNodesResponse.ListNodes_NodeInfo.ListNodes_UsedResources usedResources = new ListNodesResponse.ListNodes_NodeInfo.ListNodes_UsedResources();
-				usedResources.Cpu = context.IntegerValue("ListNodes.Nodes["+ i +"].UsedResources.Cpu");
-				usedResources.Memory = context.IntegerValue("ListNodes.Nodes["+ i +"].UsedResources.Memory");
-				usedResources.Gpu = context.IntegerValue("ListNodes.Nodes["+ i +"].UsedResources.Gpu");
+				usedResources.Cpu = _ctx.IntegerValue("ListNodes.Nodes["+ i +"].UsedResources.Cpu");
+				usedResources.Memory = _ctx.IntegerValue("ListNodes.Nodes["+ i +"].UsedResources.Memory");
+				usedResources.Gpu = _ctx.IntegerValue("ListNodes.Nodes["+ i +"].UsedResources.Gpu");
 				nodeInfo.UsedResources = usedResources;
 
 				listNodesResponse_nodes.Add(nodeInfo);

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class ModifyImageGatewayConfigResponseUnmarshaller
     {
-        public static ModifyImageGatewayConfigResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyImageGatewayConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyImageGatewayConfigResponse modifyImageGatewayConfigResponse = new ModifyImageGatewayConfigResponse();
 
-			modifyImageGatewayConfigResponse.HttpResponse = context.HttpResponse;
-			modifyImageGatewayConfigResponse.RequestId = context.StringValue("ModifyImageGatewayConfig.RequestId");
+			modifyImageGatewayConfigResponse.HttpResponse = _ctx.HttpResponse;
+			modifyImageGatewayConfigResponse.RequestId = _ctx.StringValue("ModifyImageGatewayConfig.RequestId");
         
 			return modifyImageGatewayConfigResponse;
         }

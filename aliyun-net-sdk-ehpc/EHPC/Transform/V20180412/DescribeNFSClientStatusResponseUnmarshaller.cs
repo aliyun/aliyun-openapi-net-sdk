@@ -26,18 +26,18 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class DescribeNFSClientStatusResponseUnmarshaller
     {
-        public static DescribeNFSClientStatusResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeNFSClientStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeNFSClientStatusResponse describeNFSClientStatusResponse = new DescribeNFSClientStatusResponse();
 
-			describeNFSClientStatusResponse.HttpResponse = context.HttpResponse;
-			describeNFSClientStatusResponse.Status = context.StringValue("DescribeNFSClientStatus.Status");
-			describeNFSClientStatusResponse.RequestId = context.StringValue("DescribeNFSClientStatus.RequestId");
+			describeNFSClientStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeNFSClientStatusResponse.Status = _ctx.StringValue("DescribeNFSClientStatus.Status");
+			describeNFSClientStatusResponse.RequestId = _ctx.StringValue("DescribeNFSClientStatus.RequestId");
 
 			DescribeNFSClientStatusResponse.DescribeNFSClientStatus_Result result = new DescribeNFSClientStatusResponse.DescribeNFSClientStatus_Result();
-			result.InvokeRecordStatus = context.StringValue("DescribeNFSClientStatus.Result.InvokeRecordStatus");
-			result.ExitCode = context.IntegerValue("DescribeNFSClientStatus.Result.ExitCode");
-			result.Output = context.StringValue("DescribeNFSClientStatus.Result.Output");
+			result.InvokeRecordStatus = _ctx.StringValue("DescribeNFSClientStatus.Result.InvokeRecordStatus");
+			result.ExitCode = _ctx.IntegerValue("DescribeNFSClientStatus.Result.ExitCode");
+			result.Output = _ctx.StringValue("DescribeNFSClientStatus.Result.Output");
 			describeNFSClientStatusResponse.Result = result;
         
 			return describeNFSClientStatusResponse;

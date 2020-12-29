@@ -140,6 +140,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string publicIpAddress;
 
+			private string instanceType;
+
 			private List<string> roles;
 
 			private ListNodes_TotalResources totalResources;
@@ -395,6 +397,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					publicIpAddress = value;
+				}
+			}
+
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
 				}
 			}
 

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class StopNodesResponseUnmarshaller
     {
-        public static StopNodesResponse Unmarshall(UnmarshallerContext context)
+        public static StopNodesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopNodesResponse stopNodesResponse = new StopNodesResponse();
 
-			stopNodesResponse.HttpResponse = context.HttpResponse;
-			stopNodesResponse.RequestId = context.StringValue("StopNodes.RequestId");
-			stopNodesResponse.TaskId = context.StringValue("StopNodes.TaskId");
+			stopNodesResponse.HttpResponse = _ctx.HttpResponse;
+			stopNodesResponse.RequestId = _ctx.StringValue("StopNodes.RequestId");
+			stopNodesResponse.TaskId = _ctx.StringValue("StopNodes.TaskId");
         
 			return stopNodesResponse;
         }

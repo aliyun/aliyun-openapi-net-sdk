@@ -26,13 +26,13 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class StartVisualServiceResponseUnmarshaller
     {
-        public static StartVisualServiceResponse Unmarshall(UnmarshallerContext context)
+        public static StartVisualServiceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StartVisualServiceResponse startVisualServiceResponse = new StartVisualServiceResponse();
 
-			startVisualServiceResponse.HttpResponse = context.HttpResponse;
-			startVisualServiceResponse.RequestId = context.StringValue("StartVisualService.RequestId");
-			startVisualServiceResponse.Message = context.StringValue("StartVisualService.Message");
+			startVisualServiceResponse.HttpResponse = _ctx.HttpResponse;
+			startVisualServiceResponse.RequestId = _ctx.StringValue("StartVisualService.RequestId");
+			startVisualServiceResponse.Message = _ctx.StringValue("StartVisualService.Message");
         
 			return startVisualServiceResponse;
         }

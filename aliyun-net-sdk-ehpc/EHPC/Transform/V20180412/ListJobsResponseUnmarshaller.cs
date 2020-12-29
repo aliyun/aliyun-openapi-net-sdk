@@ -26,37 +26,37 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class ListJobsResponseUnmarshaller
     {
-        public static ListJobsResponse Unmarshall(UnmarshallerContext context)
+        public static ListJobsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListJobsResponse listJobsResponse = new ListJobsResponse();
 
-			listJobsResponse.HttpResponse = context.HttpResponse;
-			listJobsResponse.RequestId = context.StringValue("ListJobs.RequestId");
-			listJobsResponse.TotalCount = context.IntegerValue("ListJobs.TotalCount");
-			listJobsResponse.PageNumber = context.IntegerValue("ListJobs.PageNumber");
-			listJobsResponse.PageSize = context.IntegerValue("ListJobs.PageSize");
+			listJobsResponse.HttpResponse = _ctx.HttpResponse;
+			listJobsResponse.RequestId = _ctx.StringValue("ListJobs.RequestId");
+			listJobsResponse.TotalCount = _ctx.IntegerValue("ListJobs.TotalCount");
+			listJobsResponse.PageNumber = _ctx.IntegerValue("ListJobs.PageNumber");
+			listJobsResponse.PageSize = _ctx.IntegerValue("ListJobs.PageSize");
 
 			List<ListJobsResponse.ListJobs_JobInfo> listJobsResponse_jobs = new List<ListJobsResponse.ListJobs_JobInfo>();
-			for (int i = 0; i < context.Length("ListJobs.Jobs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListJobs.Jobs.Length"); i++) {
 				ListJobsResponse.ListJobs_JobInfo jobInfo = new ListJobsResponse.ListJobs_JobInfo();
-				jobInfo.Id = context.StringValue("ListJobs.Jobs["+ i +"].Id");
-				jobInfo.Name = context.StringValue("ListJobs.Jobs["+ i +"].Name");
-				jobInfo.Owner = context.StringValue("ListJobs.Jobs["+ i +"].Owner");
-				jobInfo.NodeList = context.StringValue("ListJobs.Jobs["+ i +"].NodeList");
-				jobInfo.Priority = context.StringValue("ListJobs.Jobs["+ i +"].Priority");
-				jobInfo.State = context.StringValue("ListJobs.Jobs["+ i +"].State");
-				jobInfo.SubmitTime = context.StringValue("ListJobs.Jobs["+ i +"].SubmitTime");
-				jobInfo.StartTime = context.StringValue("ListJobs.Jobs["+ i +"].StartTime");
-				jobInfo.LastModifyTime = context.StringValue("ListJobs.Jobs["+ i +"].LastModifyTime");
-				jobInfo.Stdout = context.StringValue("ListJobs.Jobs["+ i +"].Stdout");
-				jobInfo.Stderr = context.StringValue("ListJobs.Jobs["+ i +"].Stderr");
-				jobInfo.ShellPath = context.StringValue("ListJobs.Jobs["+ i +"].ShellPath");
-				jobInfo.Comment = context.StringValue("ListJobs.Jobs["+ i +"].Comment");
-				jobInfo.ArrayRequest = context.StringValue("ListJobs.Jobs["+ i +"].ArrayRequest");
+				jobInfo.Id = _ctx.StringValue("ListJobs.Jobs["+ i +"].Id");
+				jobInfo.Name = _ctx.StringValue("ListJobs.Jobs["+ i +"].Name");
+				jobInfo.Owner = _ctx.StringValue("ListJobs.Jobs["+ i +"].Owner");
+				jobInfo.NodeList = _ctx.StringValue("ListJobs.Jobs["+ i +"].NodeList");
+				jobInfo.Priority = _ctx.StringValue("ListJobs.Jobs["+ i +"].Priority");
+				jobInfo.State = _ctx.StringValue("ListJobs.Jobs["+ i +"].State");
+				jobInfo.SubmitTime = _ctx.StringValue("ListJobs.Jobs["+ i +"].SubmitTime");
+				jobInfo.StartTime = _ctx.StringValue("ListJobs.Jobs["+ i +"].StartTime");
+				jobInfo.LastModifyTime = _ctx.StringValue("ListJobs.Jobs["+ i +"].LastModifyTime");
+				jobInfo.Stdout = _ctx.StringValue("ListJobs.Jobs["+ i +"].Stdout");
+				jobInfo.Stderr = _ctx.StringValue("ListJobs.Jobs["+ i +"].Stderr");
+				jobInfo.ShellPath = _ctx.StringValue("ListJobs.Jobs["+ i +"].ShellPath");
+				jobInfo.Comment = _ctx.StringValue("ListJobs.Jobs["+ i +"].Comment");
+				jobInfo.ArrayRequest = _ctx.StringValue("ListJobs.Jobs["+ i +"].ArrayRequest");
 
 				ListJobsResponse.ListJobs_JobInfo.ListJobs_Resources resources = new ListJobsResponse.ListJobs_JobInfo.ListJobs_Resources();
-				resources.Nodes = context.IntegerValue("ListJobs.Jobs["+ i +"].Resources.Nodes");
-				resources.Cores = context.IntegerValue("ListJobs.Jobs["+ i +"].Resources.Cores");
+				resources.Nodes = _ctx.IntegerValue("ListJobs.Jobs["+ i +"].Resources.Nodes");
+				resources.Cores = _ctx.IntegerValue("ListJobs.Jobs["+ i +"].Resources.Cores");
 				jobInfo.Resources = resources;
 
 				listJobsResponse_jobs.Add(jobInfo);

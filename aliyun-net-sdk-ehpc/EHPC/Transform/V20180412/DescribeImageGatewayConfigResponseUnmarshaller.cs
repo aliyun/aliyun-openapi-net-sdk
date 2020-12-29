@@ -26,27 +26,27 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class DescribeImageGatewayConfigResponseUnmarshaller
     {
-        public static DescribeImageGatewayConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeImageGatewayConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeImageGatewayConfigResponse describeImageGatewayConfigResponse = new DescribeImageGatewayConfigResponse();
 
-			describeImageGatewayConfigResponse.HttpResponse = context.HttpResponse;
-			describeImageGatewayConfigResponse.RequestId = context.StringValue("DescribeImageGatewayConfig.RequestId");
+			describeImageGatewayConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeImageGatewayConfigResponse.RequestId = _ctx.StringValue("DescribeImageGatewayConfig.RequestId");
 
 			DescribeImageGatewayConfigResponse.DescribeImageGatewayConfig_Imagegw imagegw = new DescribeImageGatewayConfigResponse.DescribeImageGatewayConfig_Imagegw();
-			imagegw.DefaultImageLocation = context.StringValue("DescribeImageGatewayConfig.Imagegw.DefaultImageLocation");
-			imagegw.PullUpdateTimeout = context.LongValue("DescribeImageGatewayConfig.Imagegw.PullUpdateTimeout");
-			imagegw.MongoDBURI = context.StringValue("DescribeImageGatewayConfig.Imagegw.MongoDBURI");
-			imagegw.ImageExpirationTimeout = context.StringValue("DescribeImageGatewayConfig.Imagegw.ImageExpirationTimeout");
-			imagegw.UpdateDateTime = context.StringValue("DescribeImageGatewayConfig.Imagegw.UpdateDateTime");
+			imagegw.DefaultImageLocation = _ctx.StringValue("DescribeImageGatewayConfig.Imagegw.DefaultImageLocation");
+			imagegw.PullUpdateTimeout = _ctx.LongValue("DescribeImageGatewayConfig.Imagegw.PullUpdateTimeout");
+			imagegw.MongoDBURI = _ctx.StringValue("DescribeImageGatewayConfig.Imagegw.MongoDBURI");
+			imagegw.ImageExpirationTimeout = _ctx.StringValue("DescribeImageGatewayConfig.Imagegw.ImageExpirationTimeout");
+			imagegw.UpdateDateTime = _ctx.StringValue("DescribeImageGatewayConfig.Imagegw.UpdateDateTime");
 
 			List<DescribeImageGatewayConfigResponse.DescribeImageGatewayConfig_Imagegw.DescribeImageGatewayConfig_LocationInfo> imagegw_locations = new List<DescribeImageGatewayConfigResponse.DescribeImageGatewayConfig_Imagegw.DescribeImageGatewayConfig_LocationInfo>();
-			for (int i = 0; i < context.Length("DescribeImageGatewayConfig.Imagegw.Locations.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeImageGatewayConfig.Imagegw.Locations.Length"); i++) {
 				DescribeImageGatewayConfigResponse.DescribeImageGatewayConfig_Imagegw.DescribeImageGatewayConfig_LocationInfo locationInfo = new DescribeImageGatewayConfigResponse.DescribeImageGatewayConfig_Imagegw.DescribeImageGatewayConfig_LocationInfo();
-				locationInfo.Location = context.StringValue("DescribeImageGatewayConfig.Imagegw.Locations["+ i +"].Location");
-				locationInfo.RemoteType = context.StringValue("DescribeImageGatewayConfig.Imagegw.Locations["+ i +"].RemoteType");
-				locationInfo.Authentication = context.StringValue("DescribeImageGatewayConfig.Imagegw.Locations["+ i +"].Authentication");
-				locationInfo.URL = context.StringValue("DescribeImageGatewayConfig.Imagegw.Locations["+ i +"].URL");
+				locationInfo.Location = _ctx.StringValue("DescribeImageGatewayConfig.Imagegw.Locations["+ i +"].Location");
+				locationInfo.RemoteType = _ctx.StringValue("DescribeImageGatewayConfig.Imagegw.Locations["+ i +"].RemoteType");
+				locationInfo.Authentication = _ctx.StringValue("DescribeImageGatewayConfig.Imagegw.Locations["+ i +"].Authentication");
+				locationInfo.URL = _ctx.StringValue("DescribeImageGatewayConfig.Imagegw.Locations["+ i +"].URL");
 
 				imagegw_locations.Add(locationInfo);
 			}

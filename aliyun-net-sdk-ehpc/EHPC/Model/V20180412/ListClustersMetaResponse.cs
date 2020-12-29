@@ -108,6 +108,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string location;
 
+			private string osTag;
+
+			private string clientVersion;
+
+			private string accountType;
+
+			private string schedulerType;
+
+			private string vpcId;
+
+			private string deployMode;
+
 			public string Id
 			{
 				get
@@ -165,6 +177,78 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					location = value;
+				}
+			}
+
+			public string OsTag
+			{
+				get
+				{
+					return osTag;
+				}
+				set	
+				{
+					osTag = value;
+				}
+			}
+
+			public string ClientVersion
+			{
+				get
+				{
+					return clientVersion;
+				}
+				set	
+				{
+					clientVersion = value;
+				}
+			}
+
+			public string AccountType
+			{
+				get
+				{
+					return accountType;
+				}
+				set	
+				{
+					accountType = value;
+				}
+			}
+
+			public string SchedulerType
+			{
+				get
+				{
+					return schedulerType;
+				}
+				set	
+				{
+					schedulerType = value;
+				}
+			}
+
+			public string VpcId
+			{
+				get
+				{
+					return vpcId;
+				}
+				set	
+				{
+					vpcId = value;
+				}
+			}
+
+			public string DeployMode
+			{
+				get
+				{
+					return deployMode;
+				}
+				set	
+				{
+					deployMode = value;
 				}
 			}
 		}

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class EditJobTemplateResponseUnmarshaller
     {
-        public static EditJobTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static EditJobTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			EditJobTemplateResponse editJobTemplateResponse = new EditJobTemplateResponse();
 
-			editJobTemplateResponse.HttpResponse = context.HttpResponse;
-			editJobTemplateResponse.RequestId = context.StringValue("EditJobTemplate.RequestId");
-			editJobTemplateResponse.TemplateId = context.StringValue("EditJobTemplate.TemplateId");
+			editJobTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			editJobTemplateResponse.RequestId = _ctx.StringValue("EditJobTemplate.RequestId");
+			editJobTemplateResponse.TemplateId = _ctx.StringValue("EditJobTemplate.TemplateId");
         
 			return editJobTemplateResponse;
         }

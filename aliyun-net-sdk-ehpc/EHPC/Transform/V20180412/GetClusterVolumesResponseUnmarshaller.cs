@@ -26,31 +26,31 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class GetClusterVolumesResponseUnmarshaller
     {
-        public static GetClusterVolumesResponse Unmarshall(UnmarshallerContext context)
+        public static GetClusterVolumesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetClusterVolumesResponse getClusterVolumesResponse = new GetClusterVolumesResponse();
 
-			getClusterVolumesResponse.HttpResponse = context.HttpResponse;
-			getClusterVolumesResponse.RequestId = context.StringValue("GetClusterVolumes.RequestId");
-			getClusterVolumesResponse.RegionId = context.StringValue("GetClusterVolumes.RegionId");
+			getClusterVolumesResponse.HttpResponse = _ctx.HttpResponse;
+			getClusterVolumesResponse.RequestId = _ctx.StringValue("GetClusterVolumes.RequestId");
+			getClusterVolumesResponse.RegionId = _ctx.StringValue("GetClusterVolumes.RegionId");
 
 			List<GetClusterVolumesResponse.GetClusterVolumes_VolumeInfo> getClusterVolumesResponse_volumes = new List<GetClusterVolumesResponse.GetClusterVolumes_VolumeInfo>();
-			for (int i = 0; i < context.Length("GetClusterVolumes.Volumes.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetClusterVolumes.Volumes.Length"); i++) {
 				GetClusterVolumesResponse.GetClusterVolumes_VolumeInfo volumeInfo = new GetClusterVolumesResponse.GetClusterVolumes_VolumeInfo();
-				volumeInfo.VolumeId = context.StringValue("GetClusterVolumes.Volumes["+ i +"].VolumeId");
-				volumeInfo.VolumeType = context.StringValue("GetClusterVolumes.Volumes["+ i +"].VolumeType");
-				volumeInfo.VolumeProtocol = context.StringValue("GetClusterVolumes.Volumes["+ i +"].VolumeProtocol");
-				volumeInfo.VolumeMountpoint = context.StringValue("GetClusterVolumes.Volumes["+ i +"].VolumeMountpoint");
-				volumeInfo.RemoteDirectory = context.StringValue("GetClusterVolumes.Volumes["+ i +"].RemoteDirectory");
-				volumeInfo.LocalDirectory = context.StringValue("GetClusterVolumes.Volumes["+ i +"].LocalDirectory");
-				volumeInfo.Location = context.StringValue("GetClusterVolumes.Volumes["+ i +"].Location");
-				volumeInfo.JobQueue = context.StringValue("GetClusterVolumes.Volumes["+ i +"].JobQueue");
-				volumeInfo.MustKeep = context.BooleanValue("GetClusterVolumes.Volumes["+ i +"].MustKeep");
+				volumeInfo.VolumeId = _ctx.StringValue("GetClusterVolumes.Volumes["+ i +"].VolumeId");
+				volumeInfo.VolumeType = _ctx.StringValue("GetClusterVolumes.Volumes["+ i +"].VolumeType");
+				volumeInfo.VolumeProtocol = _ctx.StringValue("GetClusterVolumes.Volumes["+ i +"].VolumeProtocol");
+				volumeInfo.VolumeMountpoint = _ctx.StringValue("GetClusterVolumes.Volumes["+ i +"].VolumeMountpoint");
+				volumeInfo.RemoteDirectory = _ctx.StringValue("GetClusterVolumes.Volumes["+ i +"].RemoteDirectory");
+				volumeInfo.LocalDirectory = _ctx.StringValue("GetClusterVolumes.Volumes["+ i +"].LocalDirectory");
+				volumeInfo.Location = _ctx.StringValue("GetClusterVolumes.Volumes["+ i +"].Location");
+				volumeInfo.JobQueue = _ctx.StringValue("GetClusterVolumes.Volumes["+ i +"].JobQueue");
+				volumeInfo.MustKeep = _ctx.BooleanValue("GetClusterVolumes.Volumes["+ i +"].MustKeep");
 
 				List<GetClusterVolumesResponse.GetClusterVolumes_VolumeInfo.GetClusterVolumes_RoleInfo> volumeInfo_roles = new List<GetClusterVolumesResponse.GetClusterVolumes_VolumeInfo.GetClusterVolumes_RoleInfo>();
-				for (int j = 0; j < context.Length("GetClusterVolumes.Volumes["+ i +"].Roles.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("GetClusterVolumes.Volumes["+ i +"].Roles.Length"); j++) {
 					GetClusterVolumesResponse.GetClusterVolumes_VolumeInfo.GetClusterVolumes_RoleInfo roleInfo = new GetClusterVolumesResponse.GetClusterVolumes_VolumeInfo.GetClusterVolumes_RoleInfo();
-					roleInfo.Name = context.StringValue("GetClusterVolumes.Volumes["+ i +"].Roles["+ j +"].Name");
+					roleInfo.Name = _ctx.StringValue("GetClusterVolumes.Volumes["+ i +"].Roles["+ j +"].Name");
 
 					volumeInfo_roles.Add(roleInfo);
 				}

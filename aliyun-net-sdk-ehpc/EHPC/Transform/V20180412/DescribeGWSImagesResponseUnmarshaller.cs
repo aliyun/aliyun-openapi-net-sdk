@@ -26,26 +26,26 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class DescribeGWSImagesResponseUnmarshaller
     {
-        public static DescribeGWSImagesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGWSImagesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGWSImagesResponse describeGWSImagesResponse = new DescribeGWSImagesResponse();
 
-			describeGWSImagesResponse.HttpResponse = context.HttpResponse;
-			describeGWSImagesResponse.RequestId = context.StringValue("DescribeGWSImages.RequestId");
-			describeGWSImagesResponse.TotalCount = context.IntegerValue("DescribeGWSImages.TotalCount");
-			describeGWSImagesResponse.PageNumber = context.IntegerValue("DescribeGWSImages.PageNumber");
-			describeGWSImagesResponse.PageSize = context.IntegerValue("DescribeGWSImages.PageSize");
+			describeGWSImagesResponse.HttpResponse = _ctx.HttpResponse;
+			describeGWSImagesResponse.RequestId = _ctx.StringValue("DescribeGWSImages.RequestId");
+			describeGWSImagesResponse.TotalCount = _ctx.IntegerValue("DescribeGWSImages.TotalCount");
+			describeGWSImagesResponse.PageNumber = _ctx.IntegerValue("DescribeGWSImages.PageNumber");
+			describeGWSImagesResponse.PageSize = _ctx.IntegerValue("DescribeGWSImages.PageSize");
 
 			List<DescribeGWSImagesResponse.DescribeGWSImages_ImageInfo> describeGWSImagesResponse_images = new List<DescribeGWSImagesResponse.DescribeGWSImages_ImageInfo>();
-			for (int i = 0; i < context.Length("DescribeGWSImages.Images.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeGWSImages.Images.Length"); i++) {
 				DescribeGWSImagesResponse.DescribeGWSImages_ImageInfo imageInfo = new DescribeGWSImagesResponse.DescribeGWSImages_ImageInfo();
-				imageInfo.ImageId = context.StringValue("DescribeGWSImages.Images["+ i +"].ImageId");
-				imageInfo.Status = context.StringValue("DescribeGWSImages.Images["+ i +"].Status");
-				imageInfo.CreateTime = context.StringValue("DescribeGWSImages.Images["+ i +"].CreateTime");
-				imageInfo.Name = context.StringValue("DescribeGWSImages.Images["+ i +"].Name");
-				imageInfo.ImageType = context.StringValue("DescribeGWSImages.Images["+ i +"].ImageType");
-				imageInfo.Progress = context.StringValue("DescribeGWSImages.Images["+ i +"].Progress");
-				imageInfo.Size = context.IntegerValue("DescribeGWSImages.Images["+ i +"].Size");
+				imageInfo.ImageId = _ctx.StringValue("DescribeGWSImages.Images["+ i +"].ImageId");
+				imageInfo.Status = _ctx.StringValue("DescribeGWSImages.Images["+ i +"].Status");
+				imageInfo.CreateTime = _ctx.StringValue("DescribeGWSImages.Images["+ i +"].CreateTime");
+				imageInfo.Name = _ctx.StringValue("DescribeGWSImages.Images["+ i +"].Name");
+				imageInfo.ImageType = _ctx.StringValue("DescribeGWSImages.Images["+ i +"].ImageType");
+				imageInfo.Progress = _ctx.StringValue("DescribeGWSImages.Images["+ i +"].Progress");
+				imageInfo.Size = _ctx.IntegerValue("DescribeGWSImages.Images["+ i +"].Size");
 
 				describeGWSImagesResponse_images.Add(imageInfo);
 			}

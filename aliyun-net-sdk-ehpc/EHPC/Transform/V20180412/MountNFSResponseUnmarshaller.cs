@@ -26,13 +26,13 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class MountNFSResponseUnmarshaller
     {
-        public static MountNFSResponse Unmarshall(UnmarshallerContext context)
+        public static MountNFSResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			MountNFSResponse mountNFSResponse = new MountNFSResponse();
 
-			mountNFSResponse.HttpResponse = context.HttpResponse;
-			mountNFSResponse.RequestId = context.StringValue("MountNFS.RequestId");
-			mountNFSResponse.InvokeId = context.StringValue("MountNFS.InvokeId");
+			mountNFSResponse.HttpResponse = _ctx.HttpResponse;
+			mountNFSResponse.RequestId = _ctx.StringValue("MountNFS.RequestId");
+			mountNFSResponse.InvokeId = _ctx.StringValue("MountNFS.InvokeId");
         
 			return mountNFSResponse;
         }

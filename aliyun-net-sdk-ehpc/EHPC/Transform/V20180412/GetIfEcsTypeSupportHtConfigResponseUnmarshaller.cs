@@ -26,15 +26,15 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class GetIfEcsTypeSupportHtConfigResponseUnmarshaller
     {
-        public static GetIfEcsTypeSupportHtConfigResponse Unmarshall(UnmarshallerContext context)
+        public static GetIfEcsTypeSupportHtConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetIfEcsTypeSupportHtConfigResponse getIfEcsTypeSupportHtConfigResponse = new GetIfEcsTypeSupportHtConfigResponse();
 
-			getIfEcsTypeSupportHtConfigResponse.HttpResponse = context.HttpResponse;
-			getIfEcsTypeSupportHtConfigResponse.RequestId = context.StringValue("GetIfEcsTypeSupportHtConfig.RequestId");
-			getIfEcsTypeSupportHtConfigResponse.InstanceType = context.StringValue("GetIfEcsTypeSupportHtConfig.InstanceType");
-			getIfEcsTypeSupportHtConfigResponse.SupportHtConfig = context.BooleanValue("GetIfEcsTypeSupportHtConfig.SupportHtConfig");
-			getIfEcsTypeSupportHtConfigResponse.DefaultHtEnabled = context.BooleanValue("GetIfEcsTypeSupportHtConfig.DefaultHtEnabled");
+			getIfEcsTypeSupportHtConfigResponse.HttpResponse = _ctx.HttpResponse;
+			getIfEcsTypeSupportHtConfigResponse.RequestId = _ctx.StringValue("GetIfEcsTypeSupportHtConfig.RequestId");
+			getIfEcsTypeSupportHtConfigResponse.InstanceType = _ctx.StringValue("GetIfEcsTypeSupportHtConfig.InstanceType");
+			getIfEcsTypeSupportHtConfigResponse.SupportHtConfig = _ctx.BooleanValue("GetIfEcsTypeSupportHtConfig.SupportHtConfig");
+			getIfEcsTypeSupportHtConfigResponse.DefaultHtEnabled = _ctx.BooleanValue("GetIfEcsTypeSupportHtConfig.DefaultHtEnabled");
         
 			return getIfEcsTypeSupportHtConfigResponse;
         }

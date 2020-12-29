@@ -26,12 +26,12 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class DeleteJobTemplatesResponseUnmarshaller
     {
-        public static DeleteJobTemplatesResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteJobTemplatesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteJobTemplatesResponse deleteJobTemplatesResponse = new DeleteJobTemplatesResponse();
 
-			deleteJobTemplatesResponse.HttpResponse = context.HttpResponse;
-			deleteJobTemplatesResponse.RequestId = context.StringValue("DeleteJobTemplates.RequestId");
+			deleteJobTemplatesResponse.HttpResponse = _ctx.HttpResponse;
+			deleteJobTemplatesResponse.RequestId = _ctx.StringValue("DeleteJobTemplates.RequestId");
         
 			return deleteJobTemplatesResponse;
         }

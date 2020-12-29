@@ -26,17 +26,17 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class InvokeShellCommandResponseUnmarshaller
     {
-        public static InvokeShellCommandResponse Unmarshall(UnmarshallerContext context)
+        public static InvokeShellCommandResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			InvokeShellCommandResponse invokeShellCommandResponse = new InvokeShellCommandResponse();
 
-			invokeShellCommandResponse.HttpResponse = context.HttpResponse;
-			invokeShellCommandResponse.RequestId = context.StringValue("InvokeShellCommand.RequestId");
-			invokeShellCommandResponse.CommandId = context.StringValue("InvokeShellCommand.CommandId");
+			invokeShellCommandResponse.HttpResponse = _ctx.HttpResponse;
+			invokeShellCommandResponse.RequestId = _ctx.StringValue("InvokeShellCommand.RequestId");
+			invokeShellCommandResponse.CommandId = _ctx.StringValue("InvokeShellCommand.CommandId");
 
 			List<string> invokeShellCommandResponse_instanceIds = new List<string>();
-			for (int i = 0; i < context.Length("InvokeShellCommand.InstanceIds.Length"); i++) {
-				invokeShellCommandResponse_instanceIds.Add(context.StringValue("InvokeShellCommand.InstanceIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("InvokeShellCommand.InstanceIds.Length"); i++) {
+				invokeShellCommandResponse_instanceIds.Add(_ctx.StringValue("InvokeShellCommand.InstanceIds["+ i +"]"));
 			}
 			invokeShellCommandResponse.InstanceIds = invokeShellCommandResponse_instanceIds;
         

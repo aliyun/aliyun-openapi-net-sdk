@@ -26,21 +26,21 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class DescribeContainerAppResponseUnmarshaller
     {
-        public static DescribeContainerAppResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeContainerAppResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeContainerAppResponse describeContainerAppResponse = new DescribeContainerAppResponse();
 
-			describeContainerAppResponse.HttpResponse = context.HttpResponse;
-			describeContainerAppResponse.RequestId = context.StringValue("DescribeContainerApp.RequestId");
+			describeContainerAppResponse.HttpResponse = _ctx.HttpResponse;
+			describeContainerAppResponse.RequestId = _ctx.StringValue("DescribeContainerApp.RequestId");
 
 			DescribeContainerAppResponse.DescribeContainerApp_ContainerAppInfo containerAppInfo = new DescribeContainerAppResponse.DescribeContainerApp_ContainerAppInfo();
-			containerAppInfo.Id = context.StringValue("DescribeContainerApp.ContainerAppInfo.Id");
-			containerAppInfo.Name = context.StringValue("DescribeContainerApp.ContainerAppInfo.Name");
-			containerAppInfo.Description = context.StringValue("DescribeContainerApp.ContainerAppInfo.Description");
-			containerAppInfo.Repository = context.StringValue("DescribeContainerApp.ContainerAppInfo.Repository");
-			containerAppInfo.ImageTag = context.StringValue("DescribeContainerApp.ContainerAppInfo.ImageTag");
-			containerAppInfo.CreateTime = context.StringValue("DescribeContainerApp.ContainerAppInfo.CreateTime");
-			containerAppInfo.Type = context.StringValue("DescribeContainerApp.ContainerAppInfo.Type");
+			containerAppInfo.Id = _ctx.StringValue("DescribeContainerApp.ContainerAppInfo.Id");
+			containerAppInfo.Name = _ctx.StringValue("DescribeContainerApp.ContainerAppInfo.Name");
+			containerAppInfo.Description = _ctx.StringValue("DescribeContainerApp.ContainerAppInfo.Description");
+			containerAppInfo.Repository = _ctx.StringValue("DescribeContainerApp.ContainerAppInfo.Repository");
+			containerAppInfo.ImageTag = _ctx.StringValue("DescribeContainerApp.ContainerAppInfo.ImageTag");
+			containerAppInfo.CreateTime = _ctx.StringValue("DescribeContainerApp.ContainerAppInfo.CreateTime");
+			containerAppInfo.Type = _ctx.StringValue("DescribeContainerApp.ContainerAppInfo.Type");
 			describeContainerAppResponse.ContainerAppInfo = containerAppInfo;
         
 			return describeContainerAppResponse;

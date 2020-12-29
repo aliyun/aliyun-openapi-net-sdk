@@ -126,6 +126,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private bool? htEnabled;
 
+			private string instanceType;
+
 			private List<string> roles;
 
 			private ListNodesNoPaging_TotalResources totalResources;
@@ -297,6 +299,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					htEnabled = value;
+				}
+			}
+
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
 				}
 			}
 

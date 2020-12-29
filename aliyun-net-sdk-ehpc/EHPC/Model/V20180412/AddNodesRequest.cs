@@ -35,12 +35,14 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.EHPC.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.EHPC.Endpoint.endpointRegionalType, null);
             }
         }
 
 		private string imageId;
+
+		private string systemDiskLevel;
 
 		private string clientToken;
 
@@ -102,6 +104,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				imageId = value;
 				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
+
+		public string SystemDiskLevel
+		{
+			get
+			{
+				return systemDiskLevel;
+			}
+			set	
+			{
+				systemDiskLevel = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDiskLevel", value);
 			}
 		}
 

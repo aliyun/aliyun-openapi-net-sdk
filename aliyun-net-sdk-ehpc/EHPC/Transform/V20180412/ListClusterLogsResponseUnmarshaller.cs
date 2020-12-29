@@ -26,24 +26,24 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class ListClusterLogsResponseUnmarshaller
     {
-        public static ListClusterLogsResponse Unmarshall(UnmarshallerContext context)
+        public static ListClusterLogsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListClusterLogsResponse listClusterLogsResponse = new ListClusterLogsResponse();
 
-			listClusterLogsResponse.HttpResponse = context.HttpResponse;
-			listClusterLogsResponse.RequestId = context.StringValue("ListClusterLogs.RequestId");
-			listClusterLogsResponse.TotalCount = context.IntegerValue("ListClusterLogs.TotalCount");
-			listClusterLogsResponse.PageNumber = context.IntegerValue("ListClusterLogs.PageNumber");
-			listClusterLogsResponse.PageSize = context.IntegerValue("ListClusterLogs.PageSize");
-			listClusterLogsResponse.ClusterId = context.StringValue("ListClusterLogs.ClusterId");
+			listClusterLogsResponse.HttpResponse = _ctx.HttpResponse;
+			listClusterLogsResponse.RequestId = _ctx.StringValue("ListClusterLogs.RequestId");
+			listClusterLogsResponse.TotalCount = _ctx.IntegerValue("ListClusterLogs.TotalCount");
+			listClusterLogsResponse.PageNumber = _ctx.IntegerValue("ListClusterLogs.PageNumber");
+			listClusterLogsResponse.PageSize = _ctx.IntegerValue("ListClusterLogs.PageSize");
+			listClusterLogsResponse.ClusterId = _ctx.StringValue("ListClusterLogs.ClusterId");
 
 			List<ListClusterLogsResponse.ListClusterLogs_LogInfo> listClusterLogsResponse_logs = new List<ListClusterLogsResponse.ListClusterLogs_LogInfo>();
-			for (int i = 0; i < context.Length("ListClusterLogs.Logs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListClusterLogs.Logs.Length"); i++) {
 				ListClusterLogsResponse.ListClusterLogs_LogInfo logInfo = new ListClusterLogsResponse.ListClusterLogs_LogInfo();
-				logInfo.Operation = context.StringValue("ListClusterLogs.Logs["+ i +"].Operation");
-				logInfo.Level = context.StringValue("ListClusterLogs.Logs["+ i +"].Level");
-				logInfo.Message = context.StringValue("ListClusterLogs.Logs["+ i +"].Message");
-				logInfo.CreateTime = context.StringValue("ListClusterLogs.Logs["+ i +"].CreateTime");
+				logInfo.Operation = _ctx.StringValue("ListClusterLogs.Logs["+ i +"].Operation");
+				logInfo.Level = _ctx.StringValue("ListClusterLogs.Logs["+ i +"].Level");
+				logInfo.Message = _ctx.StringValue("ListClusterLogs.Logs["+ i +"].Message");
+				logInfo.CreateTime = _ctx.StringValue("ListClusterLogs.Logs["+ i +"].CreateTime");
 
 				listClusterLogsResponse_logs.Add(logInfo);
 			}

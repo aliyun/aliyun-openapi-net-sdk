@@ -26,20 +26,20 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class ListQueuesResponseUnmarshaller
     {
-        public static ListQueuesResponse Unmarshall(UnmarshallerContext context)
+        public static ListQueuesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListQueuesResponse listQueuesResponse = new ListQueuesResponse();
 
-			listQueuesResponse.HttpResponse = context.HttpResponse;
-			listQueuesResponse.RequestId = context.StringValue("ListQueues.RequestId");
+			listQueuesResponse.HttpResponse = _ctx.HttpResponse;
+			listQueuesResponse.RequestId = _ctx.StringValue("ListQueues.RequestId");
 
 			List<ListQueuesResponse.ListQueues_QueueInfo> listQueuesResponse_queues = new List<ListQueuesResponse.ListQueues_QueueInfo>();
-			for (int i = 0; i < context.Length("ListQueues.Queues.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListQueues.Queues.Length"); i++) {
 				ListQueuesResponse.ListQueues_QueueInfo queueInfo = new ListQueuesResponse.ListQueues_QueueInfo();
-				queueInfo.QueueName = context.StringValue("ListQueues.Queues["+ i +"].QueueName");
-				queueInfo.Type = context.StringValue("ListQueues.Queues["+ i +"].Type");
-				queueInfo.ResourceGroupId = context.StringValue("ListQueues.Queues["+ i +"].ResourceGroupId");
-				queueInfo.ComputeInstanceType = context.StringValue("ListQueues.Queues["+ i +"].ComputeInstanceType");
+				queueInfo.QueueName = _ctx.StringValue("ListQueues.Queues["+ i +"].QueueName");
+				queueInfo.Type = _ctx.StringValue("ListQueues.Queues["+ i +"].Type");
+				queueInfo.ResourceGroupId = _ctx.StringValue("ListQueues.Queues["+ i +"].ResourceGroupId");
+				queueInfo.ComputeInstanceType = _ctx.StringValue("ListQueues.Queues["+ i +"].ComputeInstanceType");
 
 				listQueuesResponse_queues.Add(queueInfo);
 			}

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class PullImageResponseUnmarshaller
     {
-        public static PullImageResponse Unmarshall(UnmarshallerContext context)
+        public static PullImageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PullImageResponse pullImageResponse = new PullImageResponse();
 
-			pullImageResponse.HttpResponse = context.HttpResponse;
-			pullImageResponse.RequestId = context.StringValue("PullImage.RequestId");
+			pullImageResponse.HttpResponse = _ctx.HttpResponse;
+			pullImageResponse.RequestId = _ctx.StringValue("PullImage.RequestId");
         
 			return pullImageResponse;
         }

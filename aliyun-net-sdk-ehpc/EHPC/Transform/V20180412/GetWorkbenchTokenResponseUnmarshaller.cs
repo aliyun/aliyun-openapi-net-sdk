@@ -26,22 +26,22 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class GetWorkbenchTokenResponseUnmarshaller
     {
-        public static GetWorkbenchTokenResponse Unmarshall(UnmarshallerContext context)
+        public static GetWorkbenchTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetWorkbenchTokenResponse getWorkbenchTokenResponse = new GetWorkbenchTokenResponse();
 
-			getWorkbenchTokenResponse.HttpResponse = context.HttpResponse;
-			getWorkbenchTokenResponse.RequestId = context.StringValue("GetWorkbenchToken.RequestId");
+			getWorkbenchTokenResponse.HttpResponse = _ctx.HttpResponse;
+			getWorkbenchTokenResponse.RequestId = _ctx.StringValue("GetWorkbenchToken.RequestId");
 
 			GetWorkbenchTokenResponse.GetWorkbenchToken_Root root = new GetWorkbenchTokenResponse.GetWorkbenchToken_Root();
 
 			GetWorkbenchTokenResponse.GetWorkbenchToken_Root.GetWorkbenchToken_InstanceLoginView instanceLoginView = new GetWorkbenchTokenResponse.GetWorkbenchToken_Root.GetWorkbenchToken_InstanceLoginView();
-			instanceLoginView.ViewName = context.StringValue("GetWorkbenchToken.Root.InstanceLoginView.viewName");
-			instanceLoginView.DefaultViewUrl = context.StringValue("GetWorkbenchToken.Root.InstanceLoginView.defaultViewUrl");
-			instanceLoginView.BaseViewUrl = context.StringValue("GetWorkbenchToken.Root.InstanceLoginView.baseViewUrl");
-			instanceLoginView.TerminalViewUrl = context.StringValue("GetWorkbenchToken.Root.InstanceLoginView.terminalViewUrl");
-			instanceLoginView.FileTreeViewUrl = context.StringValue("GetWorkbenchToken.Root.InstanceLoginView.fileTreeViewUrl");
-			instanceLoginView.RdpViewUrl = context.StringValue("GetWorkbenchToken.Root.InstanceLoginView.rdpViewUrl");
+			instanceLoginView.ViewName = _ctx.StringValue("GetWorkbenchToken.Root.InstanceLoginView.viewName");
+			instanceLoginView.DefaultViewUrl = _ctx.StringValue("GetWorkbenchToken.Root.InstanceLoginView.defaultViewUrl");
+			instanceLoginView.BaseViewUrl = _ctx.StringValue("GetWorkbenchToken.Root.InstanceLoginView.baseViewUrl");
+			instanceLoginView.TerminalViewUrl = _ctx.StringValue("GetWorkbenchToken.Root.InstanceLoginView.terminalViewUrl");
+			instanceLoginView.FileTreeViewUrl = _ctx.StringValue("GetWorkbenchToken.Root.InstanceLoginView.fileTreeViewUrl");
+			instanceLoginView.RdpViewUrl = _ctx.StringValue("GetWorkbenchToken.Root.InstanceLoginView.rdpViewUrl");
 			root.InstanceLoginView = instanceLoginView;
 			getWorkbenchTokenResponse.Root = root;
         

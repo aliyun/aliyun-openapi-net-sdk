@@ -26,12 +26,12 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class BindAccountToClusterUserResponseUnmarshaller
     {
-        public static BindAccountToClusterUserResponse Unmarshall(UnmarshallerContext context)
+        public static BindAccountToClusterUserResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BindAccountToClusterUserResponse bindAccountToClusterUserResponse = new BindAccountToClusterUserResponse();
 
-			bindAccountToClusterUserResponse.HttpResponse = context.HttpResponse;
-			bindAccountToClusterUserResponse.RequestId = context.StringValue("BindAccountToClusterUser.RequestId");
+			bindAccountToClusterUserResponse.HttpResponse = _ctx.HttpResponse;
+			bindAccountToClusterUserResponse.RequestId = _ctx.StringValue("BindAccountToClusterUser.RequestId");
         
 			return bindAccountToClusterUserResponse;
         }

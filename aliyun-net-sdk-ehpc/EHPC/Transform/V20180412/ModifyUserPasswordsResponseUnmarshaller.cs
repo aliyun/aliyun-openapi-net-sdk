@@ -26,12 +26,12 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class ModifyUserPasswordsResponseUnmarshaller
     {
-        public static ModifyUserPasswordsResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyUserPasswordsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyUserPasswordsResponse modifyUserPasswordsResponse = new ModifyUserPasswordsResponse();
 
-			modifyUserPasswordsResponse.HttpResponse = context.HttpResponse;
-			modifyUserPasswordsResponse.RequestId = context.StringValue("ModifyUserPasswords.RequestId");
+			modifyUserPasswordsResponse.HttpResponse = _ctx.HttpResponse;
+			modifyUserPasswordsResponse.RequestId = _ctx.StringValue("ModifyUserPasswords.RequestId");
         
 			return modifyUserPasswordsResponse;
         }

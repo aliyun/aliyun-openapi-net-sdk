@@ -26,16 +26,16 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class DescribeGWSClusterPolicyResponseUnmarshaller
     {
-        public static DescribeGWSClusterPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGWSClusterPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGWSClusterPolicyResponse describeGWSClusterPolicyResponse = new DescribeGWSClusterPolicyResponse();
 
-			describeGWSClusterPolicyResponse.HttpResponse = context.HttpResponse;
-			describeGWSClusterPolicyResponse.RequestId = context.StringValue("DescribeGWSClusterPolicy.RequestId");
-			describeGWSClusterPolicyResponse.Clipboard = context.StringValue("DescribeGWSClusterPolicy.Clipboard");
-			describeGWSClusterPolicyResponse.UsbRedirect = context.StringValue("DescribeGWSClusterPolicy.UsbRedirect");
-			describeGWSClusterPolicyResponse.Watermark = context.StringValue("DescribeGWSClusterPolicy.Watermark");
-			describeGWSClusterPolicyResponse.LocalDrive = context.StringValue("DescribeGWSClusterPolicy.LocalDrive");
+			describeGWSClusterPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			describeGWSClusterPolicyResponse.RequestId = _ctx.StringValue("DescribeGWSClusterPolicy.RequestId");
+			describeGWSClusterPolicyResponse.Clipboard = _ctx.StringValue("DescribeGWSClusterPolicy.Clipboard");
+			describeGWSClusterPolicyResponse.UsbRedirect = _ctx.StringValue("DescribeGWSClusterPolicy.UsbRedirect");
+			describeGWSClusterPolicyResponse.Watermark = _ctx.StringValue("DescribeGWSClusterPolicy.Watermark");
+			describeGWSClusterPolicyResponse.LocalDrive = _ctx.StringValue("DescribeGWSClusterPolicy.LocalDrive");
         
 			return describeGWSClusterPolicyResponse;
         }

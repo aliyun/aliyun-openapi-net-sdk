@@ -26,13 +26,13 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class DeleteNodesResponseUnmarshaller
     {
-        public static DeleteNodesResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteNodesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteNodesResponse deleteNodesResponse = new DeleteNodesResponse();
 
-			deleteNodesResponse.HttpResponse = context.HttpResponse;
-			deleteNodesResponse.RequestId = context.StringValue("DeleteNodes.RequestId");
-			deleteNodesResponse.TaskId = context.StringValue("DeleteNodes.TaskId");
+			deleteNodesResponse.HttpResponse = _ctx.HttpResponse;
+			deleteNodesResponse.RequestId = _ctx.StringValue("DeleteNodes.RequestId");
+			deleteNodesResponse.TaskId = _ctx.StringValue("DeleteNodes.TaskId");
         
 			return deleteNodesResponse;
         }

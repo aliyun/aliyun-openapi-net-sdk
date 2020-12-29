@@ -26,12 +26,12 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class DeleteGWSClusterResponseUnmarshaller
     {
-        public static DeleteGWSClusterResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteGWSClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteGWSClusterResponse deleteGWSClusterResponse = new DeleteGWSClusterResponse();
 
-			deleteGWSClusterResponse.HttpResponse = context.HttpResponse;
-			deleteGWSClusterResponse.RequestId = context.StringValue("DeleteGWSCluster.RequestId");
+			deleteGWSClusterResponse.HttpResponse = _ctx.HttpResponse;
+			deleteGWSClusterResponse.RequestId = _ctx.StringValue("DeleteGWSCluster.RequestId");
         
 			return deleteGWSClusterResponse;
         }

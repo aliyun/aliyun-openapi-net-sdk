@@ -26,13 +26,13 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class GetGWSConnectTicketResponseUnmarshaller
     {
-        public static GetGWSConnectTicketResponse Unmarshall(UnmarshallerContext context)
+        public static GetGWSConnectTicketResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetGWSConnectTicketResponse getGWSConnectTicketResponse = new GetGWSConnectTicketResponse();
 
-			getGWSConnectTicketResponse.HttpResponse = context.HttpResponse;
-			getGWSConnectTicketResponse.Ticket = context.StringValue("GetGWSConnectTicket.Ticket");
-			getGWSConnectTicketResponse.RequestId = context.StringValue("GetGWSConnectTicket.RequestId");
+			getGWSConnectTicketResponse.HttpResponse = _ctx.HttpResponse;
+			getGWSConnectTicketResponse.Ticket = _ctx.StringValue("GetGWSConnectTicket.Ticket");
+			getGWSConnectTicketResponse.RequestId = _ctx.StringValue("GetGWSConnectTicket.RequestId");
         
 			return getGWSConnectTicketResponse;
         }

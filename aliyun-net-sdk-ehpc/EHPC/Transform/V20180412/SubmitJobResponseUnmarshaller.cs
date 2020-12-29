@@ -26,13 +26,13 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class SubmitJobResponseUnmarshaller
     {
-        public static SubmitJobResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitJobResponse submitJobResponse = new SubmitJobResponse();
 
-			submitJobResponse.HttpResponse = context.HttpResponse;
-			submitJobResponse.RequestId = context.StringValue("SubmitJob.RequestId");
-			submitJobResponse.JobId = context.StringValue("SubmitJob.JobId");
+			submitJobResponse.HttpResponse = _ctx.HttpResponse;
+			submitJobResponse.RequestId = _ctx.StringValue("SubmitJob.RequestId");
+			submitJobResponse.JobId = _ctx.StringValue("SubmitJob.JobId");
         
 			return submitJobResponse;
         }

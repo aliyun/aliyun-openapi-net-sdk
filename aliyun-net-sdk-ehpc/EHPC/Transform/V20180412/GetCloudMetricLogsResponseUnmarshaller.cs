@@ -26,22 +26,22 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class GetCloudMetricLogsResponseUnmarshaller
     {
-        public static GetCloudMetricLogsResponse Unmarshall(UnmarshallerContext context)
+        public static GetCloudMetricLogsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetCloudMetricLogsResponse getCloudMetricLogsResponse = new GetCloudMetricLogsResponse();
 
-			getCloudMetricLogsResponse.HttpResponse = context.HttpResponse;
-			getCloudMetricLogsResponse.RequestId = context.StringValue("GetCloudMetricLogs.RequestId");
+			getCloudMetricLogsResponse.HttpResponse = _ctx.HttpResponse;
+			getCloudMetricLogsResponse.RequestId = _ctx.StringValue("GetCloudMetricLogs.RequestId");
 
 			List<GetCloudMetricLogsResponse.GetCloudMetricLogs_MetricLog> getCloudMetricLogsResponse_metricLogs = new List<GetCloudMetricLogsResponse.GetCloudMetricLogs_MetricLog>();
-			for (int i = 0; i < context.Length("GetCloudMetricLogs.MetricLogs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetCloudMetricLogs.MetricLogs.Length"); i++) {
 				GetCloudMetricLogsResponse.GetCloudMetricLogs_MetricLog metricLog = new GetCloudMetricLogsResponse.GetCloudMetricLogs_MetricLog();
-				metricLog.Time = context.IntegerValue("GetCloudMetricLogs.MetricLogs["+ i +"].Time");
-				metricLog.InstanceId = context.StringValue("GetCloudMetricLogs.MetricLogs["+ i +"].InstanceId");
-				metricLog.Hostname = context.StringValue("GetCloudMetricLogs.MetricLogs["+ i +"].Hostname");
-				metricLog.NetworkInterface = context.StringValue("GetCloudMetricLogs.MetricLogs["+ i +"].NetworkInterface");
-				metricLog.DiskDevice = context.StringValue("GetCloudMetricLogs.MetricLogs["+ i +"].DiskDevice");
-				metricLog.MetricData = context.StringValue("GetCloudMetricLogs.MetricLogs["+ i +"].MetricData");
+				metricLog.Time = _ctx.IntegerValue("GetCloudMetricLogs.MetricLogs["+ i +"].Time");
+				metricLog.InstanceId = _ctx.StringValue("GetCloudMetricLogs.MetricLogs["+ i +"].InstanceId");
+				metricLog.Hostname = _ctx.StringValue("GetCloudMetricLogs.MetricLogs["+ i +"].Hostname");
+				metricLog.NetworkInterface = _ctx.StringValue("GetCloudMetricLogs.MetricLogs["+ i +"].NetworkInterface");
+				metricLog.DiskDevice = _ctx.StringValue("GetCloudMetricLogs.MetricLogs["+ i +"].DiskDevice");
+				metricLog.MetricData = _ctx.StringValue("GetCloudMetricLogs.MetricLogs["+ i +"].MetricData");
 
 				getCloudMetricLogsResponse_metricLogs.Add(metricLog);
 			}

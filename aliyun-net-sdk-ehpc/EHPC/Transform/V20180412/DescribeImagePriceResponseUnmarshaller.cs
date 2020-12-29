@@ -26,17 +26,17 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
     public class DescribeImagePriceResponseUnmarshaller
     {
-        public static DescribeImagePriceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeImagePriceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeImagePriceResponse describeImagePriceResponse = new DescribeImagePriceResponse();
 
-			describeImagePriceResponse.HttpResponse = context.HttpResponse;
-			describeImagePriceResponse.RequestId = context.StringValue("DescribeImagePrice.RequestId");
-			describeImagePriceResponse.ImageId = context.StringValue("DescribeImagePrice.ImageId");
-			describeImagePriceResponse.DiscountPrice = context.FloatValue("DescribeImagePrice.DiscountPrice");
-			describeImagePriceResponse.OriginalPrice = context.FloatValue("DescribeImagePrice.OriginalPrice");
-			describeImagePriceResponse.TradePrice = context.FloatValue("DescribeImagePrice.TradePrice");
-			describeImagePriceResponse.Amount = context.IntegerValue("DescribeImagePrice.Amount");
+			describeImagePriceResponse.HttpResponse = _ctx.HttpResponse;
+			describeImagePriceResponse.RequestId = _ctx.StringValue("DescribeImagePrice.RequestId");
+			describeImagePriceResponse.ImageId = _ctx.StringValue("DescribeImagePrice.ImageId");
+			describeImagePriceResponse.DiscountPrice = _ctx.FloatValue("DescribeImagePrice.DiscountPrice");
+			describeImagePriceResponse.OriginalPrice = _ctx.FloatValue("DescribeImagePrice.OriginalPrice");
+			describeImagePriceResponse.TradePrice = _ctx.FloatValue("DescribeImagePrice.TradePrice");
+			describeImagePriceResponse.Amount = _ctx.IntegerValue("DescribeImagePrice.Amount");
         
 			return describeImagePriceResponse;
         }
