@@ -74,6 +74,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string spotStrategy;
 
+		private string privateIpAddress;
+
 		private string instanceName;
 
 		private string internetChargeType;
@@ -83,6 +85,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private int? internetMaxBandwidthIn;
 
 		private string versionDescription;
+
+		private bool? systemDiskDeleteWithInstance;
 
 		private string imageId;
 
@@ -95,6 +99,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string description;
 
 		private string systemDiskCategory;
+
+		private string systemDiskPerformanceLevel;
 
 		private string userData;
 
@@ -119,6 +125,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string autoReleaseTime;
 
 		private int? spotDuration;
+
+		private List<string> securityGroupIdss = new List<string>(){ };
 
 		private List<DataDisk> dataDisks = new List<DataDisk>(){ };
 
@@ -359,6 +367,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string PrivateIpAddress
+		{
+			get
+			{
+				return privateIpAddress;
+			}
+			set	
+			{
+				privateIpAddress = value;
+				DictionaryUtil.Add(QueryParameters, "PrivateIpAddress", value);
+			}
+		}
+
 		public string InstanceName
 		{
 			get
@@ -421,6 +442,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				versionDescription = value;
 				DictionaryUtil.Add(QueryParameters, "VersionDescription", value);
+			}
+		}
+
+		public bool? SystemDiskDeleteWithInstance
+		{
+			get
+			{
+				return systemDiskDeleteWithInstance;
+			}
+			set	
+			{
+				systemDiskDeleteWithInstance = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDisk.DeleteWithInstance", value.ToString());
 			}
 		}
 
@@ -499,6 +533,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				systemDiskCategory = value;
 				DictionaryUtil.Add(QueryParameters, "SystemDisk.Category", value);
+			}
+		}
+
+		public string SystemDiskPerformanceLevel
+		{
+			get
+			{
+				return systemDiskPerformanceLevel;
+			}
+			set	
+			{
+				systemDiskPerformanceLevel = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDisk.PerformanceLevel", value);
 			}
 		}
 
@@ -584,6 +631,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".SecurityGroupId", networkInterfaces[i].SecurityGroupId);
 					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".NetworkInterfaceName", networkInterfaces[i].NetworkInterfaceName);
 					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".Description", networkInterfaces[i].Description);
+					for (int j = 0; j < networkInterfaces[i].SecurityGroupIdss.Count; j++)
+					{
+						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".SecurityGroupIds." +(j + 1), networkInterfaces[i].SecurityGroupIdss[j]);
+					}
 				}
 			}
 		}
@@ -666,6 +717,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public List<string> SecurityGroupIdss
+		{
+			get
+			{
+				return securityGroupIdss;
+			}
+
+			set
+			{
+				securityGroupIdss = value;
+				for (int i = 0; i < securityGroupIdss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SecurityGroupIds." + (i + 1) , securityGroupIdss[i]);
+				}
+			}
+		}
+
 		public List<DataDisk> DataDisks
 		{
 			get
@@ -686,6 +754,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Description", dataDisks[i].Description);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DeleteWithInstance", dataDisks[i].DeleteWithInstance);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Device", dataDisks[i].Device);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".PerformanceLevel", dataDisks[i].PerformanceLevel);
 				}
 			}
 		}
@@ -806,6 +875,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string description;
 
+			private List<string> securityGroupIdss = new List<string>(){ };
+
 			public string PrimaryIpAddress
 			{
 				get
@@ -865,6 +936,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					description = value;
 				}
 			}
+
+			public List<string> SecurityGroupIdss
+			{
+				get
+				{
+					return securityGroupIdss;
+				}
+				set	
+				{
+					securityGroupIdss = value;
+				}
+			}
 		}
 
 		public class DataDisk
@@ -885,6 +968,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			private bool? deleteWithInstance;
 
 			private string device;
+
+			private string performanceLevel;
 
 			public int? Size
 			{
@@ -979,6 +1064,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					device = value;
+				}
+			}
+
+			public string PerformanceLevel
+			{
+				get
+				{
+					return performanceLevel;
+				}
+				set	
+				{
+					performanceLevel = value;
 				}
 			}
 		}

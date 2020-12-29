@@ -34,6 +34,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			createInstanceResponse.RequestId = _ctx.StringValue("CreateInstance.RequestId");
 			createInstanceResponse.InstanceId = _ctx.StringValue("CreateInstance.InstanceId");
 			createInstanceResponse.TradePrice = _ctx.FloatValue("CreateInstance.TradePrice");
+			createInstanceResponse.OrderId = _ctx.StringValue("CreateInstance.OrderId");
         
 			return createInstanceResponse;
         }

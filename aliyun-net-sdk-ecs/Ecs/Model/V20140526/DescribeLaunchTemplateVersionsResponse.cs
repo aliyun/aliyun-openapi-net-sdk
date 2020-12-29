@@ -263,6 +263,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private int? systemDiskIops;
 
+				private string systemDiskPerformanceLevel;
+
+				private bool? systemDiskDeleteWithInstance;
+
 				private string ioOptimized;
 
 				private string instanceChargeType;
@@ -293,11 +297,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string securityEnhancementStrategy;
 
+				private string privateIpAddress;
+
 				private List<DescribeLaunchTemplateVersions_DataDisk> dataDisks;
 
 				private List<DescribeLaunchTemplateVersions_NetworkInterface> networkInterfaces;
 
 				private List<DescribeLaunchTemplateVersions_InstanceTag> tags;
+
+				private List<string> securityGroupIds;
 
 				public string ImageId
 				{
@@ -515,6 +523,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
+				public string SystemDiskPerformanceLevel
+				{
+					get
+					{
+						return systemDiskPerformanceLevel;
+					}
+					set	
+					{
+						systemDiskPerformanceLevel = value;
+					}
+				}
+
+				public bool? SystemDiskDeleteWithInstance
+				{
+					get
+					{
+						return systemDiskDeleteWithInstance;
+					}
+					set	
+					{
+						systemDiskDeleteWithInstance = value;
+					}
+				}
+
 				public string IoOptimized
 				{
 					get
@@ -695,6 +727,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
+				public string PrivateIpAddress
+				{
+					get
+					{
+						return privateIpAddress;
+					}
+					set	
+					{
+						privateIpAddress = value;
+					}
+				}
+
 				public List<DescribeLaunchTemplateVersions_DataDisk> DataDisks
 				{
 					get
@@ -731,6 +775,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
+				public List<string> SecurityGroupIds
+				{
+					get
+					{
+						return securityGroupIds;
+					}
+					set	
+					{
+						securityGroupIds = value;
+					}
+				}
+
 				public class DescribeLaunchTemplateVersions_DataDisk
 				{
 
@@ -749,6 +805,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					private bool? deleteWithInstance;
 
 					private string device;
+
+					private string performanceLevel;
 
 					public int? Size
 					{
@@ -845,6 +903,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 							device = value;
 						}
 					}
+
+					public string PerformanceLevel
+					{
+						get
+						{
+							return performanceLevel;
+						}
+						set	
+						{
+							performanceLevel = value;
+						}
+					}
 				}
 
 				public class DescribeLaunchTemplateVersions_NetworkInterface
@@ -859,6 +929,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					private string networkInterfaceName;
 
 					private string description;
+
+					private List<string> securityGroupIds1;
 
 					public string PrimaryIpAddress
 					{
@@ -917,6 +989,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						set	
 						{
 							description = value;
+						}
+					}
+
+					public List<string> SecurityGroupIds1
+					{
+						get
+						{
+							return securityGroupIds1;
+						}
+						set	
+						{
+							securityGroupIds1 = value;
 						}
 					}
 				}

@@ -67,6 +67,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				launchTemplateData.SystemDiskDiskName = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.DiskName");
 				launchTemplateData.SystemDiskDescription = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.Description");
 				launchTemplateData.SystemDiskIops = _ctx.IntegerValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.Iops");
+				launchTemplateData.SystemDiskPerformanceLevel = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.PerformanceLevel");
+				launchTemplateData.SystemDiskDeleteWithInstance = _ctx.BooleanValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.DeleteWithInstance");
 				launchTemplateData.IoOptimized = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.IoOptimized");
 				launchTemplateData.InstanceChargeType = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InstanceChargeType");
 				launchTemplateData.Period = _ctx.IntegerValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Period");
@@ -82,6 +84,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				launchTemplateData.SpotDuration = _ctx.IntegerValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SpotDuration");
 				launchTemplateData.ResourceGroupId = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ResourceGroupId");
 				launchTemplateData.SecurityEnhancementStrategy = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SecurityEnhancementStrategy");
+				launchTemplateData.PrivateIpAddress = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.PrivateIpAddress");
+
+				List<string> launchTemplateData_securityGroupIds = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SecurityGroupIds.Length"); j++) {
+					launchTemplateData_securityGroupIds.Add(_ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SecurityGroupIds["+ j +"]"));
+				}
+				launchTemplateData.SecurityGroupIds = launchTemplateData_securityGroupIds;
 
 				List<DescribeLaunchTemplateVersionsResponse.DescribeLaunchTemplateVersions_LaunchTemplateVersionSet.DescribeLaunchTemplateVersions_LaunchTemplateData.DescribeLaunchTemplateVersions_DataDisk> launchTemplateData_dataDisks = new List<DescribeLaunchTemplateVersionsResponse.DescribeLaunchTemplateVersions_LaunchTemplateVersionSet.DescribeLaunchTemplateVersions_LaunchTemplateData.DescribeLaunchTemplateVersions_DataDisk>();
 				for (int j = 0; j < _ctx.Length("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks.Length"); j++) {
@@ -94,6 +103,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					dataDisk.Description = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].Description");
 					dataDisk.DeleteWithInstance = _ctx.BooleanValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].DeleteWithInstance");
 					dataDisk.Device = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].Device");
+					dataDisk.PerformanceLevel = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DataDisks["+ j +"].PerformanceLevel");
 
 					launchTemplateData_dataDisks.Add(dataDisk);
 				}
@@ -107,6 +117,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					networkInterface.SecurityGroupId = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].SecurityGroupId");
 					networkInterface.NetworkInterfaceName = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].NetworkInterfaceName");
 					networkInterface.Description = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].Description");
+
+					List<string> networkInterface_securityGroupIds1 = new List<string>();
+					for (int k = 0; k < _ctx.Length("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].SecurityGroupIds.Length"); k++) {
+						networkInterface_securityGroupIds1.Add(_ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.NetworkInterfaces["+ j +"].SecurityGroupIds["+ k +"]"));
+					}
+					networkInterface.SecurityGroupIds1 = networkInterface_securityGroupIds1;
 
 					launchTemplateData_networkInterfaces.Add(networkInterface);
 				}
