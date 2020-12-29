@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.imm;
 using Aliyun.Acs.imm.Transform;
 using Aliyun.Acs.imm.Transform.V20170906;
 
@@ -31,13 +30,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class CreateStreamAnalyseTaskRequest : RpcAcsRequest<CreateStreamAnalyseTaskResponse>
     {
         public CreateStreamAnalyseTaskRequest()
-            : base("imm", "2017-09-06", "CreateStreamAnalyseTask")
+            : base("imm", "2017-09-06", "CreateStreamAnalyseTask", "imm", "openAPI")
         {
-            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
-            {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.imm.Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.imm.Endpoint.endpointRegionalType, null);
-            }
 			Method = MethodType.POST;
         }
 
