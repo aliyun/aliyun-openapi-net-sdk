@@ -16,24 +16,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.R_kvstore.Model.V20150101;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.R_kvstore.Transform.V20150101
+namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyInstanceAttributeResponseUnmarshaller
-    {
-        public static ModifyInstanceAttributeResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			ModifyInstanceAttributeResponse modifyInstanceAttributeResponse = new ModifyInstanceAttributeResponse();
+	public class ModifyActiveOperationTaskResponse : AcsResponse
+	{
 
-			modifyInstanceAttributeResponse.HttpResponse = _ctx.HttpResponse;
-			modifyInstanceAttributeResponse.RequestId = _ctx.StringValue("ModifyInstanceAttribute.RequestId");
-        
-			return modifyInstanceAttributeResponse;
-        }
-    }
+		private string requestId;
+
+		private string ids;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string Ids
+		{
+			get
+			{
+				return ids;
+			}
+			set	
+			{
+				ids = value;
+			}
+		}
+	}
 }

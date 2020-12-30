@@ -26,14 +26,14 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class RestartInstanceResponseUnmarshaller
     {
-        public static RestartInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static RestartInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RestartInstanceResponse restartInstanceResponse = new RestartInstanceResponse();
 
-			restartInstanceResponse.HttpResponse = context.HttpResponse;
-			restartInstanceResponse.RequestId = context.StringValue("RestartInstance.RequestId");
-			restartInstanceResponse.InstanceId = context.StringValue("RestartInstance.InstanceId");
-			restartInstanceResponse.TaskId = context.StringValue("RestartInstance.TaskId");
+			restartInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			restartInstanceResponse.RequestId = _ctx.StringValue("RestartInstance.RequestId");
+			restartInstanceResponse.InstanceId = _ctx.StringValue("RestartInstance.InstanceId");
+			restartInstanceResponse.TaskId = _ctx.StringValue("RestartInstance.TaskId");
         
 			return restartInstanceResponse;
         }

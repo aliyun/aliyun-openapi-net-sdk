@@ -24,16 +24,17 @@ using Aliyun.Acs.R_kvstore.Model.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
-    public class ModifyInstanceAttributeResponseUnmarshaller
+    public class ModifyActiveOperationTaskResponseUnmarshaller
     {
-        public static ModifyInstanceAttributeResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ModifyActiveOperationTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			ModifyInstanceAttributeResponse modifyInstanceAttributeResponse = new ModifyInstanceAttributeResponse();
+			ModifyActiveOperationTaskResponse modifyActiveOperationTaskResponse = new ModifyActiveOperationTaskResponse();
 
-			modifyInstanceAttributeResponse.HttpResponse = _ctx.HttpResponse;
-			modifyInstanceAttributeResponse.RequestId = _ctx.StringValue("ModifyInstanceAttribute.RequestId");
+			modifyActiveOperationTaskResponse.HttpResponse = _ctx.HttpResponse;
+			modifyActiveOperationTaskResponse.RequestId = _ctx.StringValue("ModifyActiveOperationTask.RequestId");
+			modifyActiveOperationTaskResponse.Ids = _ctx.StringValue("ModifyActiveOperationTask.Ids");
         
-			return modifyInstanceAttributeResponse;
+			return modifyActiveOperationTaskResponse;
         }
     }
 }

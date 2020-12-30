@@ -26,30 +26,30 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class DescribeDedicatedUserClusterResponseUnmarshaller
     {
-        public static DescribeDedicatedUserClusterResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDedicatedUserClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDedicatedUserClusterResponse describeDedicatedUserClusterResponse = new DescribeDedicatedUserClusterResponse();
 
-			describeDedicatedUserClusterResponse.HttpResponse = context.HttpResponse;
-			describeDedicatedUserClusterResponse.RequestId = context.StringValue("DescribeDedicatedUserCluster.RequestId");
-			describeDedicatedUserClusterResponse.MaxRecordsPerPage = context.IntegerValue("DescribeDedicatedUserCluster.MaxRecordsPerPage");
-			describeDedicatedUserClusterResponse.PageNumber = context.IntegerValue("DescribeDedicatedUserCluster.PageNumber");
-			describeDedicatedUserClusterResponse.TotalRecords = context.IntegerValue("DescribeDedicatedUserCluster.TotalRecords");
-			describeDedicatedUserClusterResponse.ItemsNumbers = context.IntegerValue("DescribeDedicatedUserCluster.ItemsNumbers");
+			describeDedicatedUserClusterResponse.HttpResponse = _ctx.HttpResponse;
+			describeDedicatedUserClusterResponse.RequestId = _ctx.StringValue("DescribeDedicatedUserCluster.RequestId");
+			describeDedicatedUserClusterResponse.MaxRecordsPerPage = _ctx.IntegerValue("DescribeDedicatedUserCluster.MaxRecordsPerPage");
+			describeDedicatedUserClusterResponse.PageNumber = _ctx.IntegerValue("DescribeDedicatedUserCluster.PageNumber");
+			describeDedicatedUserClusterResponse.TotalRecords = _ctx.IntegerValue("DescribeDedicatedUserCluster.TotalRecords");
+			describeDedicatedUserClusterResponse.ItemsNumbers = _ctx.IntegerValue("DescribeDedicatedUserCluster.ItemsNumbers");
 
 			List<DescribeDedicatedUserClusterResponse.DescribeDedicatedUserCluster_ClusterInfo> describeDedicatedUserClusterResponse_clusterItems = new List<DescribeDedicatedUserClusterResponse.DescribeDedicatedUserCluster_ClusterInfo>();
-			for (int i = 0; i < context.Length("DescribeDedicatedUserCluster.ClusterItems.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDedicatedUserCluster.ClusterItems.Length"); i++) {
 				DescribeDedicatedUserClusterResponse.DescribeDedicatedUserCluster_ClusterInfo clusterInfo = new DescribeDedicatedUserClusterResponse.DescribeDedicatedUserCluster_ClusterInfo();
-				clusterInfo.ClusterId = context.StringValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].ClusterId");
-				clusterInfo.ClusterName = context.StringValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].ClusterName");
-				clusterInfo.HostNumbers = context.IntegerValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].HostNumbers");
-				clusterInfo.InstanceNumbers = context.IntegerValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].InstanceNumbers");
-				clusterInfo.CpuOverAllocationRatio = context.IntegerValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].CpuOverAllocationRatio");
-				clusterInfo.MemoryOverAllocationRatio = context.IntegerValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].MemoryOverAllocationRatio");
-				clusterInfo.DiskOverAllocationRatio = context.IntegerValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].DiskOverAllocationRatio");
-				clusterInfo.AllocationPolicy = context.StringValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].AllocationPolicy");
-				clusterInfo.HostReplacePolicy = context.StringValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].HostReplacePolicy");
-				clusterInfo.CreateTime = context.StringValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].CreateTime");
+				clusterInfo.ClusterId = _ctx.StringValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].ClusterId");
+				clusterInfo.ClusterName = _ctx.StringValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].ClusterName");
+				clusterInfo.HostNumbers = _ctx.IntegerValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].HostNumbers");
+				clusterInfo.InstanceNumbers = _ctx.IntegerValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].InstanceNumbers");
+				clusterInfo.CpuOverAllocationRatio = _ctx.IntegerValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].CpuOverAllocationRatio");
+				clusterInfo.MemoryOverAllocationRatio = _ctx.IntegerValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].MemoryOverAllocationRatio");
+				clusterInfo.DiskOverAllocationRatio = _ctx.IntegerValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].DiskOverAllocationRatio");
+				clusterInfo.AllocationPolicy = _ctx.StringValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].AllocationPolicy");
+				clusterInfo.HostReplacePolicy = _ctx.StringValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].HostReplacePolicy");
+				clusterInfo.CreateTime = _ctx.StringValue("DescribeDedicatedUserCluster.ClusterItems["+ i +"].CreateTime");
 
 				describeDedicatedUserClusterResponse_clusterItems.Add(clusterInfo);
 			}

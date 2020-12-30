@@ -26,30 +26,31 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class DescribeGlobalDistributeCacheResponseUnmarshaller
     {
-        public static DescribeGlobalDistributeCacheResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGlobalDistributeCacheResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGlobalDistributeCacheResponse describeGlobalDistributeCacheResponse = new DescribeGlobalDistributeCacheResponse();
 
-			describeGlobalDistributeCacheResponse.HttpResponse = context.HttpResponse;
-			describeGlobalDistributeCacheResponse.RequestId = context.StringValue("DescribeGlobalDistributeCache.RequestId");
-			describeGlobalDistributeCacheResponse.TotalRecordCount = context.IntegerValue("DescribeGlobalDistributeCache.TotalRecordCount");
-			describeGlobalDistributeCacheResponse.PageNumber = context.IntegerValue("DescribeGlobalDistributeCache.PageNumber");
-			describeGlobalDistributeCacheResponse.PageSize = context.IntegerValue("DescribeGlobalDistributeCache.PageSize");
+			describeGlobalDistributeCacheResponse.HttpResponse = _ctx.HttpResponse;
+			describeGlobalDistributeCacheResponse.RequestId = _ctx.StringValue("DescribeGlobalDistributeCache.RequestId");
+			describeGlobalDistributeCacheResponse.TotalRecordCount = _ctx.IntegerValue("DescribeGlobalDistributeCache.TotalRecordCount");
+			describeGlobalDistributeCacheResponse.PageNumber = _ctx.IntegerValue("DescribeGlobalDistributeCache.PageNumber");
+			describeGlobalDistributeCacheResponse.PageSize = _ctx.IntegerValue("DescribeGlobalDistributeCache.PageSize");
 
 			List<DescribeGlobalDistributeCacheResponse.DescribeGlobalDistributeCache_GlobalDistributeCache> describeGlobalDistributeCacheResponse_globalDistributeCaches = new List<DescribeGlobalDistributeCacheResponse.DescribeGlobalDistributeCache_GlobalDistributeCache>();
-			for (int i = 0; i < context.Length("DescribeGlobalDistributeCache.GlobalDistributeCaches.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeGlobalDistributeCache.GlobalDistributeCaches.Length"); i++) {
 				DescribeGlobalDistributeCacheResponse.DescribeGlobalDistributeCache_GlobalDistributeCache globalDistributeCache = new DescribeGlobalDistributeCacheResponse.DescribeGlobalDistributeCache_GlobalDistributeCache();
-				globalDistributeCache.GlobalInstanceId = context.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].GlobalInstanceId");
-				globalDistributeCache.GlobalInstanceName = context.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].GlobalInstanceName");
-				globalDistributeCache.Status = context.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].Status");
+				globalDistributeCache.GlobalInstanceId = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].GlobalInstanceId");
+				globalDistributeCache.GlobalInstanceName = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].GlobalInstanceName");
+				globalDistributeCache.Status = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].Status");
 
 				List<DescribeGlobalDistributeCacheResponse.DescribeGlobalDistributeCache_GlobalDistributeCache.DescribeGlobalDistributeCache_SubInstance> globalDistributeCache_subInstances = new List<DescribeGlobalDistributeCacheResponse.DescribeGlobalDistributeCache_GlobalDistributeCache.DescribeGlobalDistributeCache_SubInstance>();
-				for (int j = 0; j < context.Length("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances.Length"); j++) {
 					DescribeGlobalDistributeCacheResponse.DescribeGlobalDistributeCache_GlobalDistributeCache.DescribeGlobalDistributeCache_SubInstance subInstance = new DescribeGlobalDistributeCacheResponse.DescribeGlobalDistributeCache_GlobalDistributeCache.DescribeGlobalDistributeCache_SubInstance();
-					subInstance.GlobalInstanceId = context.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].GlobalInstanceId");
-					subInstance.InstanceID = context.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].InstanceID");
-					subInstance.RegionId = context.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].RegionId");
-					subInstance.InstanceStatus = context.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].InstanceStatus");
+					subInstance.GlobalInstanceId = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].GlobalInstanceId");
+					subInstance.InstanceID = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].InstanceID");
+					subInstance.RegionId = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].RegionId");
+					subInstance.InstanceStatus = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].InstanceStatus");
+					subInstance.InstanceClass = _ctx.StringValue("DescribeGlobalDistributeCache.GlobalDistributeCaches["+ i +"].SubInstances["+ j +"].InstanceClass");
 
 					globalDistributeCache_subInstances.Add(subInstance);
 				}

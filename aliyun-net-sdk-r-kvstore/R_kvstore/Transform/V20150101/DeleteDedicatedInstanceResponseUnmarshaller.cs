@@ -26,12 +26,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class DeleteDedicatedInstanceResponseUnmarshaller
     {
-        public static DeleteDedicatedInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDedicatedInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDedicatedInstanceResponse deleteDedicatedInstanceResponse = new DeleteDedicatedInstanceResponse();
 
-			deleteDedicatedInstanceResponse.HttpResponse = context.HttpResponse;
-			deleteDedicatedInstanceResponse.RequestId = context.StringValue("DeleteDedicatedInstance.RequestId");
+			deleteDedicatedInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDedicatedInstanceResponse.RequestId = _ctx.StringValue("DeleteDedicatedInstance.RequestId");
         
 			return deleteDedicatedInstanceResponse;
         }

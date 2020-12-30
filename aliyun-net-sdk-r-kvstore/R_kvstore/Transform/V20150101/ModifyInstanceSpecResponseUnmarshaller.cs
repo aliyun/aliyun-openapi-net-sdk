@@ -26,13 +26,13 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class ModifyInstanceSpecResponseUnmarshaller
     {
-        public static ModifyInstanceSpecResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyInstanceSpecResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyInstanceSpecResponse modifyInstanceSpecResponse = new ModifyInstanceSpecResponse();
 
-			modifyInstanceSpecResponse.HttpResponse = context.HttpResponse;
-			modifyInstanceSpecResponse.RequestId = context.StringValue("ModifyInstanceSpec.RequestId");
-			modifyInstanceSpecResponse.OrderId = context.StringValue("ModifyInstanceSpec.OrderId");
+			modifyInstanceSpecResponse.HttpResponse = _ctx.HttpResponse;
+			modifyInstanceSpecResponse.RequestId = _ctx.StringValue("ModifyInstanceSpec.RequestId");
+			modifyInstanceSpecResponse.OrderId = _ctx.StringValue("ModifyInstanceSpec.OrderId");
         
 			return modifyInstanceSpecResponse;
         }

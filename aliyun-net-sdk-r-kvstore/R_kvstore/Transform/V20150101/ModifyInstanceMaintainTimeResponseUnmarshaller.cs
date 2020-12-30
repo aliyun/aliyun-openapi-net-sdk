@@ -26,12 +26,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class ModifyInstanceMaintainTimeResponseUnmarshaller
     {
-        public static ModifyInstanceMaintainTimeResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyInstanceMaintainTimeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyInstanceMaintainTimeResponse modifyInstanceMaintainTimeResponse = new ModifyInstanceMaintainTimeResponse();
 
-			modifyInstanceMaintainTimeResponse.HttpResponse = context.HttpResponse;
-			modifyInstanceMaintainTimeResponse.RequestId = context.StringValue("ModifyInstanceMaintainTime.RequestId");
+			modifyInstanceMaintainTimeResponse.HttpResponse = _ctx.HttpResponse;
+			modifyInstanceMaintainTimeResponse.RequestId = _ctx.StringValue("ModifyInstanceMaintainTime.RequestId");
         
 			return modifyInstanceMaintainTimeResponse;
         }

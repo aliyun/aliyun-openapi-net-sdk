@@ -26,13 +26,13 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class SwitchNetworkResponseUnmarshaller
     {
-        public static SwitchNetworkResponse Unmarshall(UnmarshallerContext context)
+        public static SwitchNetworkResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SwitchNetworkResponse switchNetworkResponse = new SwitchNetworkResponse();
 
-			switchNetworkResponse.HttpResponse = context.HttpResponse;
-			switchNetworkResponse.RequestId = context.StringValue("SwitchNetwork.RequestId");
-			switchNetworkResponse.TaskId = context.StringValue("SwitchNetwork.TaskId");
+			switchNetworkResponse.HttpResponse = _ctx.HttpResponse;
+			switchNetworkResponse.RequestId = _ctx.StringValue("SwitchNetwork.RequestId");
+			switchNetworkResponse.TaskId = _ctx.StringValue("SwitchNetwork.TaskId");
         
 			return switchNetworkResponse;
         }

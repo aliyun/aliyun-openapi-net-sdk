@@ -26,12 +26,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class DeleteUserClusterHostResponseUnmarshaller
     {
-        public static DeleteUserClusterHostResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteUserClusterHostResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteUserClusterHostResponse deleteUserClusterHostResponse = new DeleteUserClusterHostResponse();
 
-			deleteUserClusterHostResponse.HttpResponse = context.HttpResponse;
-			deleteUserClusterHostResponse.RequestId = context.StringValue("DeleteUserClusterHost.RequestId");
+			deleteUserClusterHostResponse.HttpResponse = _ctx.HttpResponse;
+			deleteUserClusterHostResponse.RequestId = _ctx.StringValue("DeleteUserClusterHost.RequestId");
         
 			return deleteUserClusterHostResponse;
         }

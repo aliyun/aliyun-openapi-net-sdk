@@ -26,12 +26,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class FlushInstanceResponseUnmarshaller
     {
-        public static FlushInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static FlushInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			FlushInstanceResponse flushInstanceResponse = new FlushInstanceResponse();
 
-			flushInstanceResponse.HttpResponse = context.HttpResponse;
-			flushInstanceResponse.RequestId = context.StringValue("FlushInstance.RequestId");
+			flushInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			flushInstanceResponse.RequestId = _ctx.StringValue("FlushInstance.RequestId");
         
 			return flushInstanceResponse;
         }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class ModifySecurityIpsResponseUnmarshaller
     {
-        public static ModifySecurityIpsResponse Unmarshall(UnmarshallerContext context)
+        public static ModifySecurityIpsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifySecurityIpsResponse modifySecurityIpsResponse = new ModifySecurityIpsResponse();
 
-			modifySecurityIpsResponse.HttpResponse = context.HttpResponse;
-			modifySecurityIpsResponse.RequestId = context.StringValue("ModifySecurityIps.RequestId");
+			modifySecurityIpsResponse.HttpResponse = _ctx.HttpResponse;
+			modifySecurityIpsResponse.RequestId = _ctx.StringValue("ModifySecurityIps.RequestId");
         
 			return modifySecurityIpsResponse;
         }

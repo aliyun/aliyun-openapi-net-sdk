@@ -26,30 +26,30 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class CreateDedicatedInstanceResponseUnmarshaller
     {
-        public static CreateDedicatedInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDedicatedInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDedicatedInstanceResponse createDedicatedInstanceResponse = new CreateDedicatedInstanceResponse();
 
-			createDedicatedInstanceResponse.HttpResponse = context.HttpResponse;
-			createDedicatedInstanceResponse.RequestId = context.StringValue("CreateDedicatedInstance.RequestId");
-			createDedicatedInstanceResponse.InstanceId = context.StringValue("CreateDedicatedInstance.InstanceId");
-			createDedicatedInstanceResponse.InstanceName = context.StringValue("CreateDedicatedInstance.InstanceName");
-			createDedicatedInstanceResponse.ConnectionDomain = context.StringValue("CreateDedicatedInstance.ConnectionDomain");
-			createDedicatedInstanceResponse.Port = context.IntegerValue("CreateDedicatedInstance.Port");
-			createDedicatedInstanceResponse.UserName = context.StringValue("CreateDedicatedInstance.UserName");
-			createDedicatedInstanceResponse.InstanceStatus = context.StringValue("CreateDedicatedInstance.InstanceStatus");
-			createDedicatedInstanceResponse.RegionId = context.StringValue("CreateDedicatedInstance.RegionId");
-			createDedicatedInstanceResponse.Capacity = context.LongValue("CreateDedicatedInstance.Capacity");
-			createDedicatedInstanceResponse.QPS = context.StringValue("CreateDedicatedInstance.QPS");
-			createDedicatedInstanceResponse.Bandwidth = context.IntegerValue("CreateDedicatedInstance.Bandwidth");
-			createDedicatedInstanceResponse.Connections = context.IntegerValue("CreateDedicatedInstance.Connections");
-			createDedicatedInstanceResponse.ZoneId = context.StringValue("CreateDedicatedInstance.ZoneId");
-			createDedicatedInstanceResponse.Config = context.StringValue("CreateDedicatedInstance.Config");
-			createDedicatedInstanceResponse.NodeType = context.StringValue("CreateDedicatedInstance.NodeType");
-			createDedicatedInstanceResponse.NetworkType = context.StringValue("CreateDedicatedInstance.NetworkType");
-			createDedicatedInstanceResponse.VpcId = context.StringValue("CreateDedicatedInstance.VpcId");
-			createDedicatedInstanceResponse.VSwitchId = context.StringValue("CreateDedicatedInstance.VSwitchId");
-			createDedicatedInstanceResponse.PrivateIpAddr = context.StringValue("CreateDedicatedInstance.PrivateIpAddr");
+			createDedicatedInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			createDedicatedInstanceResponse.RequestId = _ctx.StringValue("CreateDedicatedInstance.RequestId");
+			createDedicatedInstanceResponse.InstanceId = _ctx.StringValue("CreateDedicatedInstance.InstanceId");
+			createDedicatedInstanceResponse.InstanceName = _ctx.StringValue("CreateDedicatedInstance.InstanceName");
+			createDedicatedInstanceResponse.ConnectionDomain = _ctx.StringValue("CreateDedicatedInstance.ConnectionDomain");
+			createDedicatedInstanceResponse.Port = _ctx.IntegerValue("CreateDedicatedInstance.Port");
+			createDedicatedInstanceResponse.UserName = _ctx.StringValue("CreateDedicatedInstance.UserName");
+			createDedicatedInstanceResponse.InstanceStatus = _ctx.StringValue("CreateDedicatedInstance.InstanceStatus");
+			createDedicatedInstanceResponse.RegionId = _ctx.StringValue("CreateDedicatedInstance.RegionId");
+			createDedicatedInstanceResponse.Capacity = _ctx.LongValue("CreateDedicatedInstance.Capacity");
+			createDedicatedInstanceResponse.QPS = _ctx.StringValue("CreateDedicatedInstance.QPS");
+			createDedicatedInstanceResponse.Bandwidth = _ctx.IntegerValue("CreateDedicatedInstance.Bandwidth");
+			createDedicatedInstanceResponse.Connections = _ctx.IntegerValue("CreateDedicatedInstance.Connections");
+			createDedicatedInstanceResponse.ZoneId = _ctx.StringValue("CreateDedicatedInstance.ZoneId");
+			createDedicatedInstanceResponse.Config = _ctx.StringValue("CreateDedicatedInstance.Config");
+			createDedicatedInstanceResponse.NodeType = _ctx.StringValue("CreateDedicatedInstance.NodeType");
+			createDedicatedInstanceResponse.NetworkType = _ctx.StringValue("CreateDedicatedInstance.NetworkType");
+			createDedicatedInstanceResponse.VpcId = _ctx.StringValue("CreateDedicatedInstance.VpcId");
+			createDedicatedInstanceResponse.VSwitchId = _ctx.StringValue("CreateDedicatedInstance.VSwitchId");
+			createDedicatedInstanceResponse.PrivateIpAddr = _ctx.StringValue("CreateDedicatedInstance.PrivateIpAddr");
         
 			return createDedicatedInstanceResponse;
         }

@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DescribeGlobalDistributeCacheRequest : RpcAcsRequest<DescribeGlobalDistributeCacheResponse>
+    public class ModifyNodeSpecRequest : RpcAcsRequest<ModifyNodeSpecResponse>
     {
-        public DescribeGlobalDistributeCacheRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeGlobalDistributeCache", "redisa", "openAPI")
+        public ModifyNodeSpecRequest()
+            : base("R-kvstore", "2015-01-01", "ModifyNodeSpec", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private string pageNumber;
+		private string couponNo;
+
+		private string instanceClass;
+
+		private string switchTimeMode;
 
 		private string securityToken;
 
-		private string pageSize;
+		private string nodeId;
+
+		private string businessInfo;
+
+		private bool? autoPay;
 
 		private string resourceOwnerAccount;
 
@@ -54,9 +62,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
-		private string subInstanceId;
+		private string instanceId;
 
-		private string globalInstanceId;
+		private string orderType;
 
 		public long? ResourceOwnerId
 		{
@@ -71,16 +79,42 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string PageNumber
+		public string CouponNo
 		{
 			get
 			{
-				return pageNumber;
+				return couponNo;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value);
+				couponNo = value;
+				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
+			}
+		}
+
+		public string InstanceClass
+		{
+			get
+			{
+				return instanceClass;
+			}
+			set	
+			{
+				instanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceClass", value);
+			}
+		}
+
+		public string SwitchTimeMode
+		{
+			get
+			{
+				return switchTimeMode;
+			}
+			set	
+			{
+				switchTimeMode = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchTimeMode", value);
 			}
 		}
 
@@ -97,16 +131,42 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string PageSize
+		public string NodeId
 		{
 			get
 			{
-				return pageSize;
+				return nodeId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value);
+				nodeId = value;
+				DictionaryUtil.Add(QueryParameters, "NodeId", value);
+			}
+		}
+
+		public string BusinessInfo
+		{
+			get
+			{
+				return businessInfo;
+			}
+			set	
+			{
+				businessInfo = value;
+				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
+			}
+		}
+
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
 			}
 		}
 
@@ -149,40 +209,35 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string SubInstanceId
+		public string InstanceId
 		{
 			get
 			{
-				return subInstanceId;
+				return instanceId;
 			}
 			set	
 			{
-				subInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "SubInstanceId", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-		public string GlobalInstanceId
+		public string OrderType
 		{
 			get
 			{
-				return globalInstanceId;
+				return orderType;
 			}
 			set	
 			{
-				globalInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "GlobalInstanceId", value);
+				orderType = value;
+				DictionaryUtil.Add(QueryParameters, "OrderType", value);
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override DescribeGlobalDistributeCacheResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyNodeSpecResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeGlobalDistributeCacheResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyNodeSpecResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

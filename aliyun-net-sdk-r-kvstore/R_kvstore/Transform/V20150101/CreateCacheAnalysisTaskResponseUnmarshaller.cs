@@ -26,12 +26,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class CreateCacheAnalysisTaskResponseUnmarshaller
     {
-        public static CreateCacheAnalysisTaskResponse Unmarshall(UnmarshallerContext context)
+        public static CreateCacheAnalysisTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateCacheAnalysisTaskResponse createCacheAnalysisTaskResponse = new CreateCacheAnalysisTaskResponse();
 
-			createCacheAnalysisTaskResponse.HttpResponse = context.HttpResponse;
-			createCacheAnalysisTaskResponse.RequestId = context.StringValue("CreateCacheAnalysisTask.RequestId");
+			createCacheAnalysisTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createCacheAnalysisTaskResponse.RequestId = _ctx.StringValue("CreateCacheAnalysisTask.RequestId");
         
 			return createCacheAnalysisTaskResponse;
         }

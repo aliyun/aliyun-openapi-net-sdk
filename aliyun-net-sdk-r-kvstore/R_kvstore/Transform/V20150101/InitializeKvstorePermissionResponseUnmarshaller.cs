@@ -26,12 +26,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class InitializeKvstorePermissionResponseUnmarshaller
     {
-        public static InitializeKvstorePermissionResponse Unmarshall(UnmarshallerContext context)
+        public static InitializeKvstorePermissionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			InitializeKvstorePermissionResponse initializeKvstorePermissionResponse = new InitializeKvstorePermissionResponse();
 
-			initializeKvstorePermissionResponse.HttpResponse = context.HttpResponse;
-			initializeKvstorePermissionResponse.RequestId = context.StringValue("InitializeKvstorePermission.RequestId");
+			initializeKvstorePermissionResponse.HttpResponse = _ctx.HttpResponse;
+			initializeKvstorePermissionResponse.RequestId = _ctx.StringValue("InitializeKvstorePermission.RequestId");
         
 			return initializeKvstorePermissionResponse;
         }

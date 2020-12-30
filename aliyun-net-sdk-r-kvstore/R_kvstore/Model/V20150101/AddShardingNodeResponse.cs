@@ -27,9 +27,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string requestId;
 
+		private long? orderId;
+
 		private string nodeId;
 
-		private long? orderId;
+		private List<string> nodeIds;
 
 		public string RequestId
 		{
@@ -40,6 +42,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public long? OrderId
+		{
+			get
+			{
+				return orderId;
+			}
+			set	
+			{
+				orderId = value;
 			}
 		}
 
@@ -55,15 +69,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public long? OrderId
+		public List<string> NodeIds
 		{
 			get
 			{
-				return orderId;
+				return nodeIds;
 			}
 			set	
 			{
-				orderId = value;
+				nodeIds = value;
 			}
 		}
 	}

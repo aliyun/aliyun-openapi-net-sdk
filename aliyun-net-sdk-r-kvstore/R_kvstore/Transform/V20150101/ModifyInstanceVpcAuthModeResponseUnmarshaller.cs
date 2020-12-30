@@ -26,12 +26,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class ModifyInstanceVpcAuthModeResponseUnmarshaller
     {
-        public static ModifyInstanceVpcAuthModeResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyInstanceVpcAuthModeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyInstanceVpcAuthModeResponse modifyInstanceVpcAuthModeResponse = new ModifyInstanceVpcAuthModeResponse();
 
-			modifyInstanceVpcAuthModeResponse.HttpResponse = context.HttpResponse;
-			modifyInstanceVpcAuthModeResponse.RequestId = context.StringValue("ModifyInstanceVpcAuthMode.RequestId");
+			modifyInstanceVpcAuthModeResponse.HttpResponse = _ctx.HttpResponse;
+			modifyInstanceVpcAuthModeResponse.RequestId = _ctx.StringValue("ModifyInstanceVpcAuthMode.RequestId");
         
 			return modifyInstanceVpcAuthModeResponse;
         }

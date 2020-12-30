@@ -26,38 +26,38 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class DescribeUserClusterHostResponseUnmarshaller
     {
-        public static DescribeUserClusterHostResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUserClusterHostResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUserClusterHostResponse describeUserClusterHostResponse = new DescribeUserClusterHostResponse();
 
-			describeUserClusterHostResponse.HttpResponse = context.HttpResponse;
-			describeUserClusterHostResponse.RequestId = context.StringValue("DescribeUserClusterHost.RequestId");
-			describeUserClusterHostResponse.MaxRecordsPerPage = context.StringValue("DescribeUserClusterHost.MaxRecordsPerPage");
-			describeUserClusterHostResponse.PageNumber = context.IntegerValue("DescribeUserClusterHost.PageNumber");
-			describeUserClusterHostResponse.TotalRecords = context.IntegerValue("DescribeUserClusterHost.TotalRecords");
-			describeUserClusterHostResponse.ItemNumbers = context.IntegerValue("DescribeUserClusterHost.ItemNumbers");
+			describeUserClusterHostResponse.HttpResponse = _ctx.HttpResponse;
+			describeUserClusterHostResponse.RequestId = _ctx.StringValue("DescribeUserClusterHost.RequestId");
+			describeUserClusterHostResponse.MaxRecordsPerPage = _ctx.StringValue("DescribeUserClusterHost.MaxRecordsPerPage");
+			describeUserClusterHostResponse.PageNumber = _ctx.IntegerValue("DescribeUserClusterHost.PageNumber");
+			describeUserClusterHostResponse.TotalRecords = _ctx.IntegerValue("DescribeUserClusterHost.TotalRecords");
+			describeUserClusterHostResponse.ItemNumbers = _ctx.IntegerValue("DescribeUserClusterHost.ItemNumbers");
 
 			List<DescribeUserClusterHostResponse.DescribeUserClusterHost_HostInfo> describeUserClusterHostResponse_hostItems = new List<DescribeUserClusterHostResponse.DescribeUserClusterHost_HostInfo>();
-			for (int i = 0; i < context.Length("DescribeUserClusterHost.HostItems.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeUserClusterHost.HostItems.Length"); i++) {
 				DescribeUserClusterHostResponse.DescribeUserClusterHost_HostInfo hostInfo = new DescribeUserClusterHostResponse.DescribeUserClusterHost_HostInfo();
-				hostInfo.ClusterId = context.StringValue("DescribeUserClusterHost.HostItems["+ i +"].ClusterId");
-				hostInfo.HostId = context.StringValue("DescribeUserClusterHost.HostItems["+ i +"].HostId");
-				hostInfo.Engine = context.StringValue("DescribeUserClusterHost.HostItems["+ i +"].Engine");
-				hostInfo.HostIP = context.StringValue("DescribeUserClusterHost.HostItems["+ i +"].HostIP");
-				hostInfo.HostStatus = context.StringValue("DescribeUserClusterHost.HostItems["+ i +"].HostStatus");
-				hostInfo.AllocationStatus = context.StringValue("DescribeUserClusterHost.HostItems["+ i +"].AllocationStatus");
-				hostInfo.HostCpu = context.StringValue("DescribeUserClusterHost.HostItems["+ i +"].HostCpu");
-				hostInfo.HostMem = context.StringValue("DescribeUserClusterHost.HostItems["+ i +"].HostMem");
-				hostInfo.HostStorage = context.StringValue("DescribeUserClusterHost.HostItems["+ i +"].HostStorage");
-				hostInfo.HostName = context.StringValue("DescribeUserClusterHost.HostItems["+ i +"].HostName");
-				hostInfo.Id = context.IntegerValue("DescribeUserClusterHost.HostItems["+ i +"].Id");
-				hostInfo.CreateTime = context.StringValue("DescribeUserClusterHost.HostItems["+ i +"].CreateTime");
-				hostInfo.InstanceNumber = context.StringValue("DescribeUserClusterHost.HostItems["+ i +"].InstanceNumber");
-				hostInfo.RegionId = context.StringValue("DescribeUserClusterHost.HostItems["+ i +"].RegionId");
-				hostInfo.ZoneId = context.StringValue("DescribeUserClusterHost.HostItems["+ i +"].ZoneId");
-				hostInfo.HostClass = context.StringValue("DescribeUserClusterHost.HostItems["+ i +"].HostClass");
-				hostInfo.ExpireTime = context.StringValue("DescribeUserClusterHost.HostItems["+ i +"].ExpireTime");
-				hostInfo.ChargeType = context.StringValue("DescribeUserClusterHost.HostItems["+ i +"].ChargeType");
+				hostInfo.ClusterId = _ctx.StringValue("DescribeUserClusterHost.HostItems["+ i +"].ClusterId");
+				hostInfo.HostId = _ctx.StringValue("DescribeUserClusterHost.HostItems["+ i +"].HostId");
+				hostInfo.Engine = _ctx.StringValue("DescribeUserClusterHost.HostItems["+ i +"].Engine");
+				hostInfo.HostIP = _ctx.StringValue("DescribeUserClusterHost.HostItems["+ i +"].HostIP");
+				hostInfo.HostStatus = _ctx.StringValue("DescribeUserClusterHost.HostItems["+ i +"].HostStatus");
+				hostInfo.AllocationStatus = _ctx.StringValue("DescribeUserClusterHost.HostItems["+ i +"].AllocationStatus");
+				hostInfo.HostCpu = _ctx.StringValue("DescribeUserClusterHost.HostItems["+ i +"].HostCpu");
+				hostInfo.HostMem = _ctx.StringValue("DescribeUserClusterHost.HostItems["+ i +"].HostMem");
+				hostInfo.HostStorage = _ctx.StringValue("DescribeUserClusterHost.HostItems["+ i +"].HostStorage");
+				hostInfo.HostName = _ctx.StringValue("DescribeUserClusterHost.HostItems["+ i +"].HostName");
+				hostInfo.Id = _ctx.IntegerValue("DescribeUserClusterHost.HostItems["+ i +"].Id");
+				hostInfo.CreateTime = _ctx.StringValue("DescribeUserClusterHost.HostItems["+ i +"].CreateTime");
+				hostInfo.InstanceNumber = _ctx.StringValue("DescribeUserClusterHost.HostItems["+ i +"].InstanceNumber");
+				hostInfo.RegionId = _ctx.StringValue("DescribeUserClusterHost.HostItems["+ i +"].RegionId");
+				hostInfo.ZoneId = _ctx.StringValue("DescribeUserClusterHost.HostItems["+ i +"].ZoneId");
+				hostInfo.HostClass = _ctx.StringValue("DescribeUserClusterHost.HostItems["+ i +"].HostClass");
+				hostInfo.ExpireTime = _ctx.StringValue("DescribeUserClusterHost.HostItems["+ i +"].ExpireTime");
+				hostInfo.ChargeType = _ctx.StringValue("DescribeUserClusterHost.HostItems["+ i +"].ChargeType");
 
 				describeUserClusterHostResponse_hostItems.Add(hostInfo);
 			}

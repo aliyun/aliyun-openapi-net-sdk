@@ -26,13 +26,13 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class ReplaceUserClusterHostResponseUnmarshaller
     {
-        public static ReplaceUserClusterHostResponse Unmarshall(UnmarshallerContext context)
+        public static ReplaceUserClusterHostResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ReplaceUserClusterHostResponse replaceUserClusterHostResponse = new ReplaceUserClusterHostResponse();
 
-			replaceUserClusterHostResponse.HttpResponse = context.HttpResponse;
-			replaceUserClusterHostResponse.RequestId = context.StringValue("ReplaceUserClusterHost.RequestId");
-			replaceUserClusterHostResponse.NewHostId = context.StringValue("ReplaceUserClusterHost.NewHostId");
+			replaceUserClusterHostResponse.HttpResponse = _ctx.HttpResponse;
+			replaceUserClusterHostResponse.RequestId = _ctx.StringValue("ReplaceUserClusterHost.RequestId");
+			replaceUserClusterHostResponse.NewHostId = _ctx.StringValue("ReplaceUserClusterHost.NewHostId");
         
 			return replaceUserClusterHostResponse;
         }

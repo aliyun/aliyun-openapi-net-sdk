@@ -26,12 +26,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class TagResourcesResponseUnmarshaller
     {
-        public static TagResourcesResponse Unmarshall(UnmarshallerContext context)
+        public static TagResourcesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TagResourcesResponse tagResourcesResponse = new TagResourcesResponse();
 
-			tagResourcesResponse.HttpResponse = context.HttpResponse;
-			tagResourcesResponse.RequestId = context.StringValue("TagResources.RequestId");
+			tagResourcesResponse.HttpResponse = _ctx.HttpResponse;
+			tagResourcesResponse.RequestId = _ctx.StringValue("TagResources.RequestId");
         
 			return tagResourcesResponse;
         }

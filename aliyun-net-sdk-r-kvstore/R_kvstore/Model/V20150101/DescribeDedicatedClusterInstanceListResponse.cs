@@ -136,6 +136,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string createTime;
 
+			private int? shardCount;
+
 			private List<DescribeDedicatedClusterInstanceList_InstanceNodes> instanceNodeList;
 
 			public int? CharacterType
@@ -363,6 +365,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			public int? ShardCount
+			{
+				get
+				{
+					return shardCount;
+				}
+				set	
+				{
+					shardCount = value;
 				}
 			}
 

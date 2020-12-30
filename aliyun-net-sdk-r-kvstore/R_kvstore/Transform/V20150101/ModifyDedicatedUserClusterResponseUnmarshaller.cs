@@ -26,12 +26,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class ModifyDedicatedUserClusterResponseUnmarshaller
     {
-        public static ModifyDedicatedUserClusterResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDedicatedUserClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDedicatedUserClusterResponse modifyDedicatedUserClusterResponse = new ModifyDedicatedUserClusterResponse();
 
-			modifyDedicatedUserClusterResponse.HttpResponse = context.HttpResponse;
-			modifyDedicatedUserClusterResponse.RequestId = context.StringValue("ModifyDedicatedUserCluster.RequestId");
+			modifyDedicatedUserClusterResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDedicatedUserClusterResponse.RequestId = _ctx.StringValue("ModifyDedicatedUserCluster.RequestId");
         
 			return modifyDedicatedUserClusterResponse;
         }

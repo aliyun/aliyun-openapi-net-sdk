@@ -26,13 +26,13 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class CreateGlobalDistributeCacheResponseUnmarshaller
     {
-        public static CreateGlobalDistributeCacheResponse Unmarshall(UnmarshallerContext context)
+        public static CreateGlobalDistributeCacheResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateGlobalDistributeCacheResponse createGlobalDistributeCacheResponse = new CreateGlobalDistributeCacheResponse();
 
-			createGlobalDistributeCacheResponse.HttpResponse = context.HttpResponse;
-			createGlobalDistributeCacheResponse.RequestId = context.StringValue("CreateGlobalDistributeCache.RequestId");
-			createGlobalDistributeCacheResponse.GlobalInstanceId = context.StringValue("CreateGlobalDistributeCache.GlobalInstanceId");
+			createGlobalDistributeCacheResponse.HttpResponse = _ctx.HttpResponse;
+			createGlobalDistributeCacheResponse.RequestId = _ctx.StringValue("CreateGlobalDistributeCache.RequestId");
+			createGlobalDistributeCacheResponse.GlobalInstanceId = _ctx.StringValue("CreateGlobalDistributeCache.GlobalInstanceId");
         
 			return createGlobalDistributeCacheResponse;
         }

@@ -26,14 +26,14 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class CreateUserClusterHostResponseUnmarshaller
     {
-        public static CreateUserClusterHostResponse Unmarshall(UnmarshallerContext context)
+        public static CreateUserClusterHostResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateUserClusterHostResponse createUserClusterHostResponse = new CreateUserClusterHostResponse();
 
-			createUserClusterHostResponse.HttpResponse = context.HttpResponse;
-			createUserClusterHostResponse.RequestId = context.StringValue("CreateUserClusterHost.RequestId");
-			createUserClusterHostResponse.ClusterId = context.StringValue("CreateUserClusterHost.ClusterId");
-			createUserClusterHostResponse.HostId = context.StringValue("CreateUserClusterHost.HostId");
+			createUserClusterHostResponse.HttpResponse = _ctx.HttpResponse;
+			createUserClusterHostResponse.RequestId = _ctx.StringValue("CreateUserClusterHost.RequestId");
+			createUserClusterHostResponse.ClusterId = _ctx.StringValue("CreateUserClusterHost.ClusterId");
+			createUserClusterHostResponse.HostId = _ctx.StringValue("CreateUserClusterHost.HostId");
         
 			return createUserClusterHostResponse;
         }

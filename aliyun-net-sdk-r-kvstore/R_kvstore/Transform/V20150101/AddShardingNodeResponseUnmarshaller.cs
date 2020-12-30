@@ -26,14 +26,20 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class AddShardingNodeResponseUnmarshaller
     {
-        public static AddShardingNodeResponse Unmarshall(UnmarshallerContext context)
+        public static AddShardingNodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddShardingNodeResponse addShardingNodeResponse = new AddShardingNodeResponse();
 
-			addShardingNodeResponse.HttpResponse = context.HttpResponse;
-			addShardingNodeResponse.RequestId = context.StringValue("AddShardingNode.RequestId");
-			addShardingNodeResponse.NodeId = context.StringValue("AddShardingNode.NodeId");
-			addShardingNodeResponse.OrderId = context.LongValue("AddShardingNode.OrderId");
+			addShardingNodeResponse.HttpResponse = _ctx.HttpResponse;
+			addShardingNodeResponse.RequestId = _ctx.StringValue("AddShardingNode.RequestId");
+			addShardingNodeResponse.OrderId = _ctx.LongValue("AddShardingNode.OrderId");
+			addShardingNodeResponse.NodeId = _ctx.StringValue("AddShardingNode.NodeId");
+
+			List<string> addShardingNodeResponse_nodeIds = new List<string>();
+			for (int i = 0; i < _ctx.Length("AddShardingNode.NodeIds.Length"); i++) {
+				addShardingNodeResponse_nodeIds.Add(_ctx.StringValue("AddShardingNode.NodeIds["+ i +"]"));
+			}
+			addShardingNodeResponse.NodeIds = addShardingNodeResponse_nodeIds;
         
 			return addShardingNodeResponse;
         }

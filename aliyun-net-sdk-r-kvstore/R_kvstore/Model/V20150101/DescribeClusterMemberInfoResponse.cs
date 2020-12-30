@@ -27,6 +27,12 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string requestId;
 
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		private int? totalCount;
+
 		private List<DescribeClusterMemberInfo_Children> clusterChildren;
 
 		public string RequestId
@@ -38,6 +44,42 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
 			}
 		}
 
@@ -68,11 +110,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string serviceVersion;
 
-			private string connType;
-
 			private int? diskSizeMB;
-
-			private string insType;
 
 			private string nickname;
 
@@ -83,8 +121,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			private int? creator;
 
 			private string resourceGroupName;
-
-			private string lockMode;
 
 			private string health;
 
@@ -101,6 +137,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			private long? bandWidth;
 
 			private long? connections;
+
+			private List<DescribeClusterMemberInfo_Item> items;
 
 			public long? Id
 			{
@@ -174,18 +212,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string ConnType
-			{
-				get
-				{
-					return connType;
-				}
-				set	
-				{
-					connType = value;
-				}
-			}
-
 			public int? DiskSizeMB
 			{
 				get
@@ -195,18 +221,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					diskSizeMB = value;
-				}
-			}
-
-			public string InsType
-			{
-				get
-				{
-					return insType;
-				}
-				set	
-				{
-					insType = value;
 				}
 			}
 
@@ -267,18 +281,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					resourceGroupName = value;
-				}
-			}
-
-			public string LockMode
-			{
-				get
-				{
-					return lockMode;
-				}
-				set	
-				{
-					lockMode = value;
 				}
 			}
 
@@ -375,6 +377,120 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					connections = value;
+				}
+			}
+
+			public List<DescribeClusterMemberInfo_Item> Items
+			{
+				get
+				{
+					return items;
+				}
+				set	
+				{
+					items = value;
+				}
+			}
+
+			public class DescribeClusterMemberInfo_Item
+			{
+
+				private int? id;
+
+				private string hostName;
+
+				private string role;
+
+				private string status;
+
+				private string zoneId;
+
+				private string ip;
+
+				private List<string> ports;
+
+				public int? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
+
+				public string HostName
+				{
+					get
+					{
+						return hostName;
+					}
+					set	
+					{
+						hostName = value;
+					}
+				}
+
+				public string Role
+				{
+					get
+					{
+						return role;
+					}
+					set	
+					{
+						role = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string ZoneId
+				{
+					get
+					{
+						return zoneId;
+					}
+					set	
+					{
+						zoneId = value;
+					}
+				}
+
+				public string Ip
+				{
+					get
+					{
+						return ip;
+					}
+					set	
+					{
+						ip = value;
+					}
+				}
+
+				public List<string> Ports
+				{
+					get
+					{
+						return ports;
+					}
+					set	
+					{
+						ports = value;
+					}
 				}
 			}
 		}

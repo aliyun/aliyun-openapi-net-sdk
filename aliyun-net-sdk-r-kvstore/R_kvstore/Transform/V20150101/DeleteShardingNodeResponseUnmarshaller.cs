@@ -26,12 +26,12 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class DeleteShardingNodeResponseUnmarshaller
     {
-        public static DeleteShardingNodeResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteShardingNodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteShardingNodeResponse deleteShardingNodeResponse = new DeleteShardingNodeResponse();
 
-			deleteShardingNodeResponse.HttpResponse = context.HttpResponse;
-			deleteShardingNodeResponse.RequestId = context.StringValue("DeleteShardingNode.RequestId");
+			deleteShardingNodeResponse.HttpResponse = _ctx.HttpResponse;
+			deleteShardingNodeResponse.RequestId = _ctx.StringValue("DeleteShardingNode.RequestId");
         
 			return deleteShardingNodeResponse;
         }

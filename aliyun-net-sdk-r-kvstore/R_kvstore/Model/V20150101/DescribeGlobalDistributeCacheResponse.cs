@@ -165,6 +165,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 				private string instanceStatus;
 
+				private string instanceClass;
+
 				public string GlobalInstanceId
 				{
 					get
@@ -210,6 +212,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 					set	
 					{
 						instanceStatus = value;
+					}
+				}
+
+				public string InstanceClass
+				{
+					get
+					{
+						return instanceClass;
+					}
+					set	
+					{
+						instanceClass = value;
 					}
 				}
 			}

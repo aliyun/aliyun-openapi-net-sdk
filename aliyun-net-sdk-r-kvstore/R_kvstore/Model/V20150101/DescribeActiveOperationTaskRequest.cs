@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DescribeGlobalDistributeCacheRequest : RpcAcsRequest<DescribeGlobalDistributeCacheResponse>
+    public class DescribeActiveOperationTaskRequest : RpcAcsRequest<DescribeActiveOperationTaskResponse>
     {
-        public DescribeGlobalDistributeCacheRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeGlobalDistributeCache", "redisa", "openAPI")
+        public DescribeActiveOperationTaskRequest()
+            : base("R-kvstore", "2015-01-01", "DescribeActiveOperationTask", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private string pageNumber;
+		private int? pageNumber;
+
+		private int? isHistory;
 
 		private string securityToken;
 
-		private string pageSize;
+		private int? pageSize;
+
+		private string taskType;
 
 		private string resourceOwnerAccount;
 
@@ -54,9 +58,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
-		private string subInstanceId;
-
-		private string globalInstanceId;
+		private string region;
 
 		public long? ResourceOwnerId
 		{
@@ -71,7 +73,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string PageNumber
+		public int? PageNumber
 		{
 			get
 			{
@@ -80,7 +82,20 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value);
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? IsHistory
+		{
+			get
+			{
+				return isHistory;
+			}
+			set	
+			{
+				isHistory = value;
+				DictionaryUtil.Add(QueryParameters, "IsHistory", value.ToString());
 			}
 		}
 
@@ -97,7 +112,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string PageSize
+		public int? PageSize
 		{
 			get
 			{
@@ -106,7 +121,20 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value);
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string TaskType
+		{
+			get
+			{
+				return taskType;
+			}
+			set	
+			{
+				taskType = value;
+				DictionaryUtil.Add(QueryParameters, "TaskType", value);
 			}
 		}
 
@@ -149,29 +177,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string SubInstanceId
+		public string Region
 		{
 			get
 			{
-				return subInstanceId;
+				return region;
 			}
 			set	
 			{
-				subInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "SubInstanceId", value);
-			}
-		}
-
-		public string GlobalInstanceId
-		{
-			get
-			{
-				return globalInstanceId;
-			}
-			set	
-			{
-				globalInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "GlobalInstanceId", value);
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 
@@ -180,9 +195,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			return false;
 		}
 
-        public override DescribeGlobalDistributeCacheResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeActiveOperationTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeGlobalDistributeCacheResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeActiveOperationTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

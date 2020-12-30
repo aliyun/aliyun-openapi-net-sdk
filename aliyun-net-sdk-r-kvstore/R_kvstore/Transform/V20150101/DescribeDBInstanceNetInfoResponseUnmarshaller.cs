@@ -26,28 +26,28 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class DescribeDBInstanceNetInfoResponseUnmarshaller
     {
-        public static DescribeDBInstanceNetInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDBInstanceNetInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDBInstanceNetInfoResponse describeDBInstanceNetInfoResponse = new DescribeDBInstanceNetInfoResponse();
 
-			describeDBInstanceNetInfoResponse.HttpResponse = context.HttpResponse;
-			describeDBInstanceNetInfoResponse.RequestId = context.StringValue("DescribeDBInstanceNetInfo.RequestId");
-			describeDBInstanceNetInfoResponse.InstanceNetworkType = context.StringValue("DescribeDBInstanceNetInfo.InstanceNetworkType");
+			describeDBInstanceNetInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeDBInstanceNetInfoResponse.RequestId = _ctx.StringValue("DescribeDBInstanceNetInfo.RequestId");
+			describeDBInstanceNetInfoResponse.InstanceNetworkType = _ctx.StringValue("DescribeDBInstanceNetInfo.InstanceNetworkType");
 
 			List<DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_InstanceNetInfo> describeDBInstanceNetInfoResponse_netInfoItems = new List<DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_InstanceNetInfo>();
-			for (int i = 0; i < context.Length("DescribeDBInstanceNetInfo.NetInfoItems.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDBInstanceNetInfo.NetInfoItems.Length"); i++) {
 				DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_InstanceNetInfo instanceNetInfo = new DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_InstanceNetInfo();
-				instanceNetInfo.ConnectionString = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].ConnectionString");
-				instanceNetInfo.IPAddress = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].IPAddress");
-				instanceNetInfo.Port = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].Port");
-				instanceNetInfo.VPCId = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].VPCId");
-				instanceNetInfo.VSwitchId = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].VSwitchId");
-				instanceNetInfo.DBInstanceNetType = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].DBInstanceNetType");
-				instanceNetInfo.VPCInstanceId = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].VPCInstanceId");
-				instanceNetInfo.IPType = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].IPType");
-				instanceNetInfo.ExpiredTime = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].ExpiredTime");
-				instanceNetInfo.Upgradeable = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].Upgradeable");
-				instanceNetInfo.DirectConnection = context.IntegerValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].DirectConnection");
+				instanceNetInfo.ConnectionString = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].ConnectionString");
+				instanceNetInfo.IPAddress = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].IPAddress");
+				instanceNetInfo.Port = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].Port");
+				instanceNetInfo.VPCId = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].VPCId");
+				instanceNetInfo.VSwitchId = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].VSwitchId");
+				instanceNetInfo.DBInstanceNetType = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].DBInstanceNetType");
+				instanceNetInfo.VPCInstanceId = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].VPCInstanceId");
+				instanceNetInfo.IPType = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].IPType");
+				instanceNetInfo.ExpiredTime = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].ExpiredTime");
+				instanceNetInfo.Upgradeable = _ctx.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].Upgradeable");
+				instanceNetInfo.DirectConnection = _ctx.IntegerValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].DirectConnection");
 
 				describeDBInstanceNetInfoResponse_netInfoItems.Add(instanceNetInfo);
 			}

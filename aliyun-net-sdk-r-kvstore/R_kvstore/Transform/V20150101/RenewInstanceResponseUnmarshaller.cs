@@ -26,14 +26,14 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class RenewInstanceResponseUnmarshaller
     {
-        public static RenewInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static RenewInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RenewInstanceResponse renewInstanceResponse = new RenewInstanceResponse();
 
-			renewInstanceResponse.HttpResponse = context.HttpResponse;
-			renewInstanceResponse.RequestId = context.StringValue("RenewInstance.RequestId");
-			renewInstanceResponse.OrderId = context.StringValue("RenewInstance.OrderId");
-			renewInstanceResponse.EndTime = context.StringValue("RenewInstance.EndTime");
+			renewInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			renewInstanceResponse.RequestId = _ctx.StringValue("RenewInstance.RequestId");
+			renewInstanceResponse.OrderId = _ctx.StringValue("RenewInstance.OrderId");
+			renewInstanceResponse.EndTime = _ctx.StringValue("RenewInstance.EndTime");
         
 			return renewInstanceResponse;
         }

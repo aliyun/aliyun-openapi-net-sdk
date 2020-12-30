@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DescribeGlobalDistributeCacheRequest : RpcAcsRequest<DescribeGlobalDistributeCacheResponse>
+    public class ModifyActiveOperationTaskRequest : RpcAcsRequest<ModifyActiveOperationTaskResponse>
     {
-        public DescribeGlobalDistributeCacheRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeGlobalDistributeCache", "redisa", "openAPI")
+        public ModifyActiveOperationTaskRequest()
+            : base("R-kvstore", "2015-01-01", "ModifyActiveOperationTask", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private string pageNumber;
-
 		private string securityToken;
 
-		private string pageSize;
+		private string switchTime;
 
 		private string resourceOwnerAccount;
 
@@ -54,9 +52,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
-		private string subInstanceId;
-
-		private string globalInstanceId;
+		private string ids;
 
 		public long? ResourceOwnerId
 		{
@@ -68,19 +64,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value);
 			}
 		}
 
@@ -97,16 +80,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string PageSize
+		public string SwitchTime
 		{
 			get
 			{
-				return pageSize;
+				return switchTime;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value);
+				switchTime = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchTime", value);
 			}
 		}
 
@@ -149,40 +132,22 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string SubInstanceId
+		public string Ids
 		{
 			get
 			{
-				return subInstanceId;
+				return ids;
 			}
 			set	
 			{
-				subInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "SubInstanceId", value);
+				ids = value;
+				DictionaryUtil.Add(QueryParameters, "Ids", value);
 			}
 		}
 
-		public string GlobalInstanceId
-		{
-			get
-			{
-				return globalInstanceId;
-			}
-			set	
-			{
-				globalInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "GlobalInstanceId", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override DescribeGlobalDistributeCacheResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyActiveOperationTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeGlobalDistributeCacheResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyActiveOperationTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -26,14 +26,14 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
     public class DescribeIntranetAttributeResponseUnmarshaller
     {
-        public static DescribeIntranetAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeIntranetAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeIntranetAttributeResponse describeIntranetAttributeResponse = new DescribeIntranetAttributeResponse();
 
-			describeIntranetAttributeResponse.HttpResponse = context.HttpResponse;
-			describeIntranetAttributeResponse.RequestId = context.StringValue("DescribeIntranetAttribute.RequestId");
-			describeIntranetAttributeResponse.IntranetBandwidth = context.IntegerValue("DescribeIntranetAttribute.IntranetBandwidth");
-			describeIntranetAttributeResponse.ExpireTime = context.StringValue("DescribeIntranetAttribute.ExpireTime");
+			describeIntranetAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			describeIntranetAttributeResponse.RequestId = _ctx.StringValue("DescribeIntranetAttribute.RequestId");
+			describeIntranetAttributeResponse.IntranetBandwidth = _ctx.IntegerValue("DescribeIntranetAttribute.IntranetBandwidth");
+			describeIntranetAttributeResponse.ExpireTime = _ctx.StringValue("DescribeIntranetAttribute.ExpireTime");
         
 			return describeIntranetAttributeResponse;
         }
