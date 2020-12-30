@@ -26,17 +26,17 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class CreateAppResponseUnmarshaller
     {
-        public static CreateAppResponse Unmarshall(UnmarshallerContext context)
+        public static CreateAppResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateAppResponse createAppResponse = new CreateAppResponse();
 
-			createAppResponse.HttpResponse = context.HttpResponse;
-			createAppResponse.RequestId = context.StringValue("CreateApp.RequestId");
-			createAppResponse.Code = context.IntegerValue("CreateApp.Code");
-			createAppResponse.ErrMsg = context.StringValue("CreateApp.ErrMsg");
+			createAppResponse.HttpResponse = _ctx.HttpResponse;
+			createAppResponse.RequestId = _ctx.StringValue("CreateApp.RequestId");
+			createAppResponse.Code = _ctx.IntegerValue("CreateApp.Code");
+			createAppResponse.ErrMsg = _ctx.StringValue("CreateApp.ErrMsg");
 
 			CreateAppResponse.CreateApp_Result result = new CreateAppResponse.CreateApp_Result();
-			result.AppId = context.LongValue("CreateApp.Result.AppId");
+			result.AppId = _ctx.LongValue("CreateApp.Result.AppId");
 			createAppResponse.Result = result;
         
 			return createAppResponse;

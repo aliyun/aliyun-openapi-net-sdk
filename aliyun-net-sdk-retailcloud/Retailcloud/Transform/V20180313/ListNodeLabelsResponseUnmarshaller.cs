@@ -26,25 +26,25 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class ListNodeLabelsResponseUnmarshaller
     {
-        public static ListNodeLabelsResponse Unmarshall(UnmarshallerContext context)
+        public static ListNodeLabelsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListNodeLabelsResponse listNodeLabelsResponse = new ListNodeLabelsResponse();
 
-			listNodeLabelsResponse.HttpResponse = context.HttpResponse;
-			listNodeLabelsResponse.Code = context.IntegerValue("ListNodeLabels.Code");
-			listNodeLabelsResponse.ErrorMsg = context.StringValue("ListNodeLabels.ErrorMsg");
-			listNodeLabelsResponse.PageNumber = context.IntegerValue("ListNodeLabels.PageNumber");
-			listNodeLabelsResponse.PageSize = context.IntegerValue("ListNodeLabels.PageSize");
-			listNodeLabelsResponse.RequestId = context.StringValue("ListNodeLabels.RequestId");
-			listNodeLabelsResponse.TotalCount = context.LongValue("ListNodeLabels.TotalCount");
+			listNodeLabelsResponse.HttpResponse = _ctx.HttpResponse;
+			listNodeLabelsResponse.Code = _ctx.IntegerValue("ListNodeLabels.Code");
+			listNodeLabelsResponse.ErrorMsg = _ctx.StringValue("ListNodeLabels.ErrorMsg");
+			listNodeLabelsResponse.PageNumber = _ctx.IntegerValue("ListNodeLabels.PageNumber");
+			listNodeLabelsResponse.PageSize = _ctx.IntegerValue("ListNodeLabels.PageSize");
+			listNodeLabelsResponse.RequestId = _ctx.StringValue("ListNodeLabels.RequestId");
+			listNodeLabelsResponse.TotalCount = _ctx.LongValue("ListNodeLabels.TotalCount");
 
 			List<ListNodeLabelsResponse.ListNodeLabels_ListNodeLabelResponse> listNodeLabelsResponse_data = new List<ListNodeLabelsResponse.ListNodeLabels_ListNodeLabelResponse>();
-			for (int i = 0; i < context.Length("ListNodeLabels.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListNodeLabels.Data.Length"); i++) {
 				ListNodeLabelsResponse.ListNodeLabels_ListNodeLabelResponse listNodeLabelResponse = new ListNodeLabelsResponse.ListNodeLabels_ListNodeLabelResponse();
-				listNodeLabelResponse.ClusterId = context.StringValue("ListNodeLabels.Data["+ i +"].ClusterId");
-				listNodeLabelResponse.Id = context.LongValue("ListNodeLabels.Data["+ i +"].Id");
-				listNodeLabelResponse.LabelKey = context.StringValue("ListNodeLabels.Data["+ i +"].LabelKey");
-				listNodeLabelResponse.LabelValue = context.StringValue("ListNodeLabels.Data["+ i +"].LabelValue");
+				listNodeLabelResponse.ClusterId = _ctx.StringValue("ListNodeLabels.Data["+ i +"].ClusterId");
+				listNodeLabelResponse.Id = _ctx.LongValue("ListNodeLabels.Data["+ i +"].Id");
+				listNodeLabelResponse.LabelKey = _ctx.StringValue("ListNodeLabels.Data["+ i +"].LabelKey");
+				listNodeLabelResponse.LabelValue = _ctx.StringValue("ListNodeLabels.Data["+ i +"].LabelValue");
 
 				listNodeLabelsResponse_data.Add(listNodeLabelResponse);
 			}

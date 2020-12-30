@@ -26,36 +26,36 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class ListAppResponseUnmarshaller
     {
-        public static ListAppResponse Unmarshall(UnmarshallerContext context)
+        public static ListAppResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListAppResponse listAppResponse = new ListAppResponse();
 
-			listAppResponse.HttpResponse = context.HttpResponse;
-			listAppResponse.RequestId = context.StringValue("ListApp.RequestId");
-			listAppResponse.Code = context.IntegerValue("ListApp.Code");
-			listAppResponse.ErrorMsg = context.StringValue("ListApp.ErrorMsg");
-			listAppResponse.TotalCount = context.IntegerValue("ListApp.TotalCount");
+			listAppResponse.HttpResponse = _ctx.HttpResponse;
+			listAppResponse.RequestId = _ctx.StringValue("ListApp.RequestId");
+			listAppResponse.Code = _ctx.IntegerValue("ListApp.Code");
+			listAppResponse.ErrorMsg = _ctx.StringValue("ListApp.ErrorMsg");
+			listAppResponse.TotalCount = _ctx.IntegerValue("ListApp.TotalCount");
 
 			List<ListAppResponse.ListApp_AppDetail> listAppResponse_data = new List<ListAppResponse.ListApp_AppDetail>();
-			for (int i = 0; i < context.Length("ListApp.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListApp.Data.Length"); i++) {
 				ListAppResponse.ListApp_AppDetail appDetail = new ListAppResponse.ListApp_AppDetail();
-				appDetail.AppId = context.LongValue("ListApp.Data["+ i +"].AppId");
-				appDetail.Title = context.StringValue("ListApp.Data["+ i +"].Title");
-				appDetail.Description = context.StringValue("ListApp.Data["+ i +"].Description");
-				appDetail.Language = context.StringValue("ListApp.Data["+ i +"].Language");
-				appDetail.OperatingSystem = context.StringValue("ListApp.Data["+ i +"].OperatingSystem");
-				appDetail.BizName = context.StringValue("ListApp.Data["+ i +"].BizName");
-				appDetail.ServiceType = context.StringValue("ListApp.Data["+ i +"].ServiceType");
-				appDetail.DeployType = context.StringValue("ListApp.Data["+ i +"].DeployType");
-				appDetail.BizTitle = context.StringValue("ListApp.Data["+ i +"].BizTitle");
-				appDetail.AppStateType = context.StringValue("ListApp.Data["+ i +"].AppStateType");
+				appDetail.AppId = _ctx.LongValue("ListApp.Data["+ i +"].AppId");
+				appDetail.Title = _ctx.StringValue("ListApp.Data["+ i +"].Title");
+				appDetail.Description = _ctx.StringValue("ListApp.Data["+ i +"].Description");
+				appDetail.Language = _ctx.StringValue("ListApp.Data["+ i +"].Language");
+				appDetail.OperatingSystem = _ctx.StringValue("ListApp.Data["+ i +"].OperatingSystem");
+				appDetail.BizName = _ctx.StringValue("ListApp.Data["+ i +"].BizName");
+				appDetail.ServiceType = _ctx.StringValue("ListApp.Data["+ i +"].ServiceType");
+				appDetail.DeployType = _ctx.StringValue("ListApp.Data["+ i +"].DeployType");
+				appDetail.BizTitle = _ctx.StringValue("ListApp.Data["+ i +"].BizTitle");
+				appDetail.AppStateType = _ctx.StringValue("ListApp.Data["+ i +"].AppStateType");
 
 				List<ListAppResponse.ListApp_AppDetail.ListApp_MiddleWareInfo> appDetail_middleWareList = new List<ListAppResponse.ListApp_AppDetail.ListApp_MiddleWareInfo>();
-				for (int j = 0; j < context.Length("ListApp.Data["+ i +"].MiddleWareList.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("ListApp.Data["+ i +"].MiddleWareList.Length"); j++) {
 					ListAppResponse.ListApp_AppDetail.ListApp_MiddleWareInfo middleWareInfo = new ListAppResponse.ListApp_AppDetail.ListApp_MiddleWareInfo();
-					middleWareInfo.AppId = context.LongValue("ListApp.Data["+ i +"].MiddleWareList["+ j +"].AppId");
-					middleWareInfo.Code = context.IntegerValue("ListApp.Data["+ i +"].MiddleWareList["+ j +"].Code");
-					middleWareInfo.Name = context.StringValue("ListApp.Data["+ i +"].MiddleWareList["+ j +"].Name");
+					middleWareInfo.AppId = _ctx.LongValue("ListApp.Data["+ i +"].MiddleWareList["+ j +"].AppId");
+					middleWareInfo.Code = _ctx.IntegerValue("ListApp.Data["+ i +"].MiddleWareList["+ j +"].Code");
+					middleWareInfo.Name = _ctx.StringValue("ListApp.Data["+ i +"].MiddleWareList["+ j +"].Name");
 
 					appDetail_middleWareList.Add(middleWareInfo);
 				}

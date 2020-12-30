@@ -26,15 +26,15 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class ModifyServiceResponseUnmarshaller
     {
-        public static ModifyServiceResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyServiceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyServiceResponse modifyServiceResponse = new ModifyServiceResponse();
 
-			modifyServiceResponse.HttpResponse = context.HttpResponse;
-			modifyServiceResponse.Code = context.IntegerValue("ModifyService.Code");
-			modifyServiceResponse.ErrMsg = context.StringValue("ModifyService.ErrMsg");
-			modifyServiceResponse.RequestId = context.StringValue("ModifyService.RequestId");
-			modifyServiceResponse.Success = context.BooleanValue("ModifyService.Success");
+			modifyServiceResponse.HttpResponse = _ctx.HttpResponse;
+			modifyServiceResponse.Code = _ctx.IntegerValue("ModifyService.Code");
+			modifyServiceResponse.ErrMsg = _ctx.StringValue("ModifyService.ErrMsg");
+			modifyServiceResponse.RequestId = _ctx.StringValue("ModifyService.RequestId");
+			modifyServiceResponse.Success = _ctx.BooleanValue("ModifyService.Success");
         
 			return modifyServiceResponse;
         }

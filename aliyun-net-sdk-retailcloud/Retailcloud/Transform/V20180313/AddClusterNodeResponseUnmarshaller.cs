@@ -26,18 +26,18 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class AddClusterNodeResponseUnmarshaller
     {
-        public static AddClusterNodeResponse Unmarshall(UnmarshallerContext context)
+        public static AddClusterNodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddClusterNodeResponse addClusterNodeResponse = new AddClusterNodeResponse();
 
-			addClusterNodeResponse.HttpResponse = context.HttpResponse;
-			addClusterNodeResponse.Code = context.IntegerValue("AddClusterNode.Code");
-			addClusterNodeResponse.ErrMsg = context.StringValue("AddClusterNode.ErrMsg");
-			addClusterNodeResponse.RequestId = context.StringValue("AddClusterNode.RequestId");
-			addClusterNodeResponse.Success = context.BooleanValue("AddClusterNode.Success");
+			addClusterNodeResponse.HttpResponse = _ctx.HttpResponse;
+			addClusterNodeResponse.Code = _ctx.IntegerValue("AddClusterNode.Code");
+			addClusterNodeResponse.ErrMsg = _ctx.StringValue("AddClusterNode.ErrMsg");
+			addClusterNodeResponse.RequestId = _ctx.StringValue("AddClusterNode.RequestId");
+			addClusterNodeResponse.Success = _ctx.BooleanValue("AddClusterNode.Success");
 
 			AddClusterNodeResponse.AddClusterNode_Result result = new AddClusterNodeResponse.AddClusterNode_Result();
-			result.Nonsense = context.IntegerValue("AddClusterNode.Result.Nonsense");
+			result.Nonsense = _ctx.IntegerValue("AddClusterNode.Result.Nonsense");
 			addClusterNodeResponse.Result = result;
         
 			return addClusterNodeResponse;

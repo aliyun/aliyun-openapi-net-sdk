@@ -26,17 +26,17 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class DeleteAppDetailResponseUnmarshaller
     {
-        public static DeleteAppDetailResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteAppDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteAppDetailResponse deleteAppDetailResponse = new DeleteAppDetailResponse();
 
-			deleteAppDetailResponse.HttpResponse = context.HttpResponse;
-			deleteAppDetailResponse.RequestId = context.StringValue("DeleteAppDetail.RequestId");
-			deleteAppDetailResponse.Code = context.IntegerValue("DeleteAppDetail.Code");
-			deleteAppDetailResponse.ErrMsg = context.StringValue("DeleteAppDetail.ErrMsg");
+			deleteAppDetailResponse.HttpResponse = _ctx.HttpResponse;
+			deleteAppDetailResponse.RequestId = _ctx.StringValue("DeleteAppDetail.RequestId");
+			deleteAppDetailResponse.Code = _ctx.IntegerValue("DeleteAppDetail.Code");
+			deleteAppDetailResponse.ErrMsg = _ctx.StringValue("DeleteAppDetail.ErrMsg");
 
 			DeleteAppDetailResponse.DeleteAppDetail_Result result = new DeleteAppDetailResponse.DeleteAppDetail_Result();
-			result.Success = context.BooleanValue("DeleteAppDetail.Result.Success");
+			result.Success = _ctx.BooleanValue("DeleteAppDetail.Result.Success");
 			deleteAppDetailResponse.Result = result;
         
 			return deleteAppDetailResponse;

@@ -26,14 +26,14 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class GrantDbToAccountResponseUnmarshaller
     {
-        public static GrantDbToAccountResponse Unmarshall(UnmarshallerContext context)
+        public static GrantDbToAccountResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GrantDbToAccountResponse grantDbToAccountResponse = new GrantDbToAccountResponse();
 
-			grantDbToAccountResponse.HttpResponse = context.HttpResponse;
-			grantDbToAccountResponse.Code = context.IntegerValue("GrantDbToAccount.Code");
-			grantDbToAccountResponse.RequestId = context.StringValue("GrantDbToAccount.RequestId");
-			grantDbToAccountResponse.ErrMsg = context.StringValue("GrantDbToAccount.ErrMsg");
+			grantDbToAccountResponse.HttpResponse = _ctx.HttpResponse;
+			grantDbToAccountResponse.Code = _ctx.IntegerValue("GrantDbToAccount.Code");
+			grantDbToAccountResponse.RequestId = _ctx.StringValue("GrantDbToAccount.RequestId");
+			grantDbToAccountResponse.ErrMsg = _ctx.StringValue("GrantDbToAccount.ErrMsg");
         
 			return grantDbToAccountResponse;
         }

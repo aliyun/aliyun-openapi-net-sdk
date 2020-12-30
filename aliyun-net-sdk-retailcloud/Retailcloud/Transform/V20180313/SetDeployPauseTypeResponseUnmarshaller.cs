@@ -26,15 +26,15 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class SetDeployPauseTypeResponseUnmarshaller
     {
-        public static SetDeployPauseTypeResponse Unmarshall(UnmarshallerContext context)
+        public static SetDeployPauseTypeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetDeployPauseTypeResponse setDeployPauseTypeResponse = new SetDeployPauseTypeResponse();
 
-			setDeployPauseTypeResponse.HttpResponse = context.HttpResponse;
-			setDeployPauseTypeResponse.Code = context.IntegerValue("SetDeployPauseType.Code");
-			setDeployPauseTypeResponse.ErrMsg = context.StringValue("SetDeployPauseType.ErrMsg");
-			setDeployPauseTypeResponse.RequestId = context.StringValue("SetDeployPauseType.RequestId");
-			setDeployPauseTypeResponse.Success = context.BooleanValue("SetDeployPauseType.Success");
+			setDeployPauseTypeResponse.HttpResponse = _ctx.HttpResponse;
+			setDeployPauseTypeResponse.Code = _ctx.IntegerValue("SetDeployPauseType.Code");
+			setDeployPauseTypeResponse.ErrMsg = _ctx.StringValue("SetDeployPauseType.ErrMsg");
+			setDeployPauseTypeResponse.RequestId = _ctx.StringValue("SetDeployPauseType.RequestId");
+			setDeployPauseTypeResponse.Success = _ctx.BooleanValue("SetDeployPauseType.Success");
         
 			return setDeployPauseTypeResponse;
         }

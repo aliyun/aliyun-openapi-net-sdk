@@ -26,17 +26,17 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class CreatePersistentVolumeResponseUnmarshaller
     {
-        public static CreatePersistentVolumeResponse Unmarshall(UnmarshallerContext context)
+        public static CreatePersistentVolumeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreatePersistentVolumeResponse createPersistentVolumeResponse = new CreatePersistentVolumeResponse();
 
-			createPersistentVolumeResponse.HttpResponse = context.HttpResponse;
-			createPersistentVolumeResponse.RequestId = context.StringValue("CreatePersistentVolume.RequestId");
-			createPersistentVolumeResponse.Code = context.IntegerValue("CreatePersistentVolume.Code");
-			createPersistentVolumeResponse.ErrMsg = context.StringValue("CreatePersistentVolume.ErrMsg");
+			createPersistentVolumeResponse.HttpResponse = _ctx.HttpResponse;
+			createPersistentVolumeResponse.RequestId = _ctx.StringValue("CreatePersistentVolume.RequestId");
+			createPersistentVolumeResponse.Code = _ctx.IntegerValue("CreatePersistentVolume.Code");
+			createPersistentVolumeResponse.ErrMsg = _ctx.StringValue("CreatePersistentVolume.ErrMsg");
 
 			CreatePersistentVolumeResponse.CreatePersistentVolume_Result result = new CreatePersistentVolumeResponse.CreatePersistentVolume_Result();
-			result.PersistentVolumeId = context.LongValue("CreatePersistentVolume.Result.PersistentVolumeId");
+			result.PersistentVolumeId = _ctx.LongValue("CreatePersistentVolume.Result.PersistentVolumeId");
 			createPersistentVolumeResponse.Result = result;
         
 			return createPersistentVolumeResponse;

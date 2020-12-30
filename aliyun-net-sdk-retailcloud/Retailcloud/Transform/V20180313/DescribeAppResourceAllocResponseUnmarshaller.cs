@@ -26,22 +26,22 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class DescribeAppResourceAllocResponseUnmarshaller
     {
-        public static DescribeAppResourceAllocResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAppResourceAllocResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAppResourceAllocResponse describeAppResourceAllocResponse = new DescribeAppResourceAllocResponse();
 
-			describeAppResourceAllocResponse.HttpResponse = context.HttpResponse;
-			describeAppResourceAllocResponse.Code = context.IntegerValue("DescribeAppResourceAlloc.Code");
-			describeAppResourceAllocResponse.ErrMsg = context.StringValue("DescribeAppResourceAlloc.ErrMsg");
-			describeAppResourceAllocResponse.RequestId = context.StringValue("DescribeAppResourceAlloc.RequestId");
-			describeAppResourceAllocResponse.Success = context.BooleanValue("DescribeAppResourceAlloc.Success");
+			describeAppResourceAllocResponse.HttpResponse = _ctx.HttpResponse;
+			describeAppResourceAllocResponse.Code = _ctx.IntegerValue("DescribeAppResourceAlloc.Code");
+			describeAppResourceAllocResponse.ErrMsg = _ctx.StringValue("DescribeAppResourceAlloc.ErrMsg");
+			describeAppResourceAllocResponse.RequestId = _ctx.StringValue("DescribeAppResourceAlloc.RequestId");
+			describeAppResourceAllocResponse.Success = _ctx.BooleanValue("DescribeAppResourceAlloc.Success");
 
 			DescribeAppResourceAllocResponse.DescribeAppResourceAlloc_Result result = new DescribeAppResourceAllocResponse.DescribeAppResourceAlloc_Result();
-			result.AppEnvId = context.LongValue("DescribeAppResourceAlloc.Result.AppEnvId");
-			result.AppId = context.LongValue("DescribeAppResourceAlloc.Result.AppId");
-			result.ClusterId = context.StringValue("DescribeAppResourceAlloc.Result.ClusterId");
-			result.Id = context.LongValue("DescribeAppResourceAlloc.Result.Id");
-			result.ResourceDef = context.StringValue("DescribeAppResourceAlloc.Result.ResourceDef");
+			result.AppEnvId = _ctx.LongValue("DescribeAppResourceAlloc.Result.AppEnvId");
+			result.AppId = _ctx.LongValue("DescribeAppResourceAlloc.Result.AppId");
+			result.ClusterId = _ctx.StringValue("DescribeAppResourceAlloc.Result.ClusterId");
+			result.Id = _ctx.LongValue("DescribeAppResourceAlloc.Result.Id");
+			result.ResourceDef = _ctx.StringValue("DescribeAppResourceAlloc.Result.ResourceDef");
 			describeAppResourceAllocResponse.Result = result;
         
 			return describeAppResourceAllocResponse;

@@ -26,17 +26,17 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class DeletePersistentVolumeClaimResponseUnmarshaller
     {
-        public static DeletePersistentVolumeClaimResponse Unmarshall(UnmarshallerContext context)
+        public static DeletePersistentVolumeClaimResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeletePersistentVolumeClaimResponse deletePersistentVolumeClaimResponse = new DeletePersistentVolumeClaimResponse();
 
-			deletePersistentVolumeClaimResponse.HttpResponse = context.HttpResponse;
-			deletePersistentVolumeClaimResponse.Code = context.IntegerValue("DeletePersistentVolumeClaim.Code");
-			deletePersistentVolumeClaimResponse.RequestId = context.StringValue("DeletePersistentVolumeClaim.RequestId");
-			deletePersistentVolumeClaimResponse.ErrMsg = context.StringValue("DeletePersistentVolumeClaim.ErrMsg");
+			deletePersistentVolumeClaimResponse.HttpResponse = _ctx.HttpResponse;
+			deletePersistentVolumeClaimResponse.Code = _ctx.IntegerValue("DeletePersistentVolumeClaim.Code");
+			deletePersistentVolumeClaimResponse.RequestId = _ctx.StringValue("DeletePersistentVolumeClaim.RequestId");
+			deletePersistentVolumeClaimResponse.ErrMsg = _ctx.StringValue("DeletePersistentVolumeClaim.ErrMsg");
 
 			DeletePersistentVolumeClaimResponse.DeletePersistentVolumeClaim_Result result = new DeletePersistentVolumeClaimResponse.DeletePersistentVolumeClaim_Result();
-			result.Success = context.BooleanValue("DeletePersistentVolumeClaim.Result.Success");
+			result.Success = _ctx.BooleanValue("DeletePersistentVolumeClaim.Result.Success");
 			deletePersistentVolumeClaimResponse.Result = result;
         
 			return deletePersistentVolumeClaimResponse;

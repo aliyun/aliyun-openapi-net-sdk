@@ -26,15 +26,15 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class CloseDeployOrderResponseUnmarshaller
     {
-        public static CloseDeployOrderResponse Unmarshall(UnmarshallerContext context)
+        public static CloseDeployOrderResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CloseDeployOrderResponse closeDeployOrderResponse = new CloseDeployOrderResponse();
 
-			closeDeployOrderResponse.HttpResponse = context.HttpResponse;
-			closeDeployOrderResponse.Code = context.IntegerValue("CloseDeployOrder.Code");
-			closeDeployOrderResponse.ErrMsg = context.StringValue("CloseDeployOrder.ErrMsg");
-			closeDeployOrderResponse.RequestId = context.StringValue("CloseDeployOrder.RequestId");
-			closeDeployOrderResponse.Success = context.BooleanValue("CloseDeployOrder.Success");
+			closeDeployOrderResponse.HttpResponse = _ctx.HttpResponse;
+			closeDeployOrderResponse.Code = _ctx.IntegerValue("CloseDeployOrder.Code");
+			closeDeployOrderResponse.ErrMsg = _ctx.StringValue("CloseDeployOrder.ErrMsg");
+			closeDeployOrderResponse.RequestId = _ctx.StringValue("CloseDeployOrder.RequestId");
+			closeDeployOrderResponse.Success = _ctx.BooleanValue("CloseDeployOrder.Success");
         
 			return closeDeployOrderResponse;
         }

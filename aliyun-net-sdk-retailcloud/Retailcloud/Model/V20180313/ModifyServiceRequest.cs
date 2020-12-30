@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.retailcloud;
 using Aliyun.Acs.retailcloud.Transform;
 using Aliyun.Acs.retailcloud.Transform.V20180313;
 
@@ -30,12 +31,12 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
     public class ModifyServiceRequest : RpcAcsRequest<ModifyServiceResponse>
     {
         public ModifyServiceRequest()
-            : base("retailcloud", "2018-03-13", "ModifyService", "retailcloud", "openAPI")
+            : base("retailcloud", "2018-03-13", "ModifyService")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.retailcloud.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.retailcloud.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }

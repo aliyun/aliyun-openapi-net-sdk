@@ -26,15 +26,15 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class UnbindNodeLabelResponseUnmarshaller
     {
-        public static UnbindNodeLabelResponse Unmarshall(UnmarshallerContext context)
+        public static UnbindNodeLabelResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UnbindNodeLabelResponse unbindNodeLabelResponse = new UnbindNodeLabelResponse();
 
-			unbindNodeLabelResponse.HttpResponse = context.HttpResponse;
-			unbindNodeLabelResponse.Code = context.IntegerValue("UnbindNodeLabel.Code");
-			unbindNodeLabelResponse.ErrMsg = context.StringValue("UnbindNodeLabel.ErrMsg");
-			unbindNodeLabelResponse.RequestId = context.StringValue("UnbindNodeLabel.RequestId");
-			unbindNodeLabelResponse.Success = context.BooleanValue("UnbindNodeLabel.Success");
+			unbindNodeLabelResponse.HttpResponse = _ctx.HttpResponse;
+			unbindNodeLabelResponse.Code = _ctx.IntegerValue("UnbindNodeLabel.Code");
+			unbindNodeLabelResponse.ErrMsg = _ctx.StringValue("UnbindNodeLabel.ErrMsg");
+			unbindNodeLabelResponse.RequestId = _ctx.StringValue("UnbindNodeLabel.RequestId");
+			unbindNodeLabelResponse.Success = _ctx.BooleanValue("UnbindNodeLabel.Success");
         
 			return unbindNodeLabelResponse;
         }

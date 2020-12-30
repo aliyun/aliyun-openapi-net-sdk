@@ -26,17 +26,17 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class DeleteDeployConfigResponseUnmarshaller
     {
-        public static DeleteDeployConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDeployConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDeployConfigResponse deleteDeployConfigResponse = new DeleteDeployConfigResponse();
 
-			deleteDeployConfigResponse.HttpResponse = context.HttpResponse;
-			deleteDeployConfigResponse.Code = context.IntegerValue("DeleteDeployConfig.Code");
-			deleteDeployConfigResponse.ErrMsg = context.StringValue("DeleteDeployConfig.ErrMsg");
-			deleteDeployConfigResponse.RequestId = context.StringValue("DeleteDeployConfig.RequestId");
+			deleteDeployConfigResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDeployConfigResponse.Code = _ctx.IntegerValue("DeleteDeployConfig.Code");
+			deleteDeployConfigResponse.ErrMsg = _ctx.StringValue("DeleteDeployConfig.ErrMsg");
+			deleteDeployConfigResponse.RequestId = _ctx.StringValue("DeleteDeployConfig.RequestId");
 
 			DeleteDeployConfigResponse.DeleteDeployConfig_Result result = new DeleteDeployConfigResponse.DeleteDeployConfig_Result();
-			result.Success = context.BooleanValue("DeleteDeployConfig.Result.Success");
+			result.Success = _ctx.BooleanValue("DeleteDeployConfig.Result.Success");
 			deleteDeployConfigResponse.Result = result;
         
 			return deleteDeployConfigResponse;

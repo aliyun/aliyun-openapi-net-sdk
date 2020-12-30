@@ -26,32 +26,32 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class DescribeJobLogResponseUnmarshaller
     {
-        public static DescribeJobLogResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeJobLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeJobLogResponse describeJobLogResponse = new DescribeJobLogResponse();
 
-			describeJobLogResponse.HttpResponse = context.HttpResponse;
-			describeJobLogResponse.Code = context.IntegerValue("DescribeJobLog.Code");
-			describeJobLogResponse.RequestId = context.StringValue("DescribeJobLog.RequestId");
-			describeJobLogResponse.ErrMsg = context.StringValue("DescribeJobLog.ErrMsg");
+			describeJobLogResponse.HttpResponse = _ctx.HttpResponse;
+			describeJobLogResponse.Code = _ctx.IntegerValue("DescribeJobLog.Code");
+			describeJobLogResponse.RequestId = _ctx.StringValue("DescribeJobLog.RequestId");
+			describeJobLogResponse.ErrMsg = _ctx.StringValue("DescribeJobLog.ErrMsg");
 
 			DescribeJobLogResponse.DescribeJobLog_Result result = new DescribeJobLogResponse.DescribeJobLog_Result();
-			result.AppId = context.LongValue("DescribeJobLog.Result.AppId");
-			result.EnvId = context.LongValue("DescribeJobLog.Result.EnvId");
-			result.PodName = context.StringValue("DescribeJobLog.Result.PodName");
-			result.JobLog = context.StringValue("DescribeJobLog.Result.JobLog");
+			result.AppId = _ctx.LongValue("DescribeJobLog.Result.AppId");
+			result.EnvId = _ctx.LongValue("DescribeJobLog.Result.EnvId");
+			result.PodName = _ctx.StringValue("DescribeJobLog.Result.PodName");
+			result.JobLog = _ctx.StringValue("DescribeJobLog.Result.JobLog");
 
 			List<DescribeJobLogResponse.DescribeJobLog_Result.DescribeJobLog__Event> result_events = new List<DescribeJobLogResponse.DescribeJobLog_Result.DescribeJobLog__Event>();
-			for (int i = 0; i < context.Length("DescribeJobLog.Result.Events.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeJobLog.Result.Events.Length"); i++) {
 				DescribeJobLogResponse.DescribeJobLog_Result.DescribeJobLog__Event _event = new DescribeJobLogResponse.DescribeJobLog_Result.DescribeJobLog__Event();
-				_event.Action = context.StringValue("DescribeJobLog.Result.Events["+ i +"].Action");
-				_event.Count = context.IntegerValue("DescribeJobLog.Result.Events["+ i +"].Count");
-				_event.EventTime = context.StringValue("DescribeJobLog.Result.Events["+ i +"].EventTime");
-				_event.FirstTimestamp = context.StringValue("DescribeJobLog.Result.Events["+ i +"].FirstTimestamp");
-				_event.LastTimestamp = context.StringValue("DescribeJobLog.Result.Events["+ i +"].LastTimestamp");
-				_event.Mesage = context.StringValue("DescribeJobLog.Result.Events["+ i +"].Mesage");
-				_event.Reason = context.StringValue("DescribeJobLog.Result.Events["+ i +"].Reason");
-				_event.Type = context.StringValue("DescribeJobLog.Result.Events["+ i +"].Type");
+				_event.Action = _ctx.StringValue("DescribeJobLog.Result.Events["+ i +"].Action");
+				_event.Count = _ctx.IntegerValue("DescribeJobLog.Result.Events["+ i +"].Count");
+				_event.EventTime = _ctx.StringValue("DescribeJobLog.Result.Events["+ i +"].EventTime");
+				_event.FirstTimestamp = _ctx.StringValue("DescribeJobLog.Result.Events["+ i +"].FirstTimestamp");
+				_event.LastTimestamp = _ctx.StringValue("DescribeJobLog.Result.Events["+ i +"].LastTimestamp");
+				_event.Mesage = _ctx.StringValue("DescribeJobLog.Result.Events["+ i +"].Mesage");
+				_event.Reason = _ctx.StringValue("DescribeJobLog.Result.Events["+ i +"].Reason");
+				_event.Type = _ctx.StringValue("DescribeJobLog.Result.Events["+ i +"].Type");
 
 				result_events.Add(_event);
 			}

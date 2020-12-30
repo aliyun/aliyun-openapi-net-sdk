@@ -26,41 +26,41 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class ListAvailableClusterNodeResponseUnmarshaller
     {
-        public static ListAvailableClusterNodeResponse Unmarshall(UnmarshallerContext context)
+        public static ListAvailableClusterNodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListAvailableClusterNodeResponse listAvailableClusterNodeResponse = new ListAvailableClusterNodeResponse();
 
-			listAvailableClusterNodeResponse.HttpResponse = context.HttpResponse;
-			listAvailableClusterNodeResponse.Code = context.IntegerValue("ListAvailableClusterNode.Code");
-			listAvailableClusterNodeResponse.ErrorMsg = context.StringValue("ListAvailableClusterNode.ErrorMsg");
-			listAvailableClusterNodeResponse.PageNumber = context.IntegerValue("ListAvailableClusterNode.PageNumber");
-			listAvailableClusterNodeResponse.PageSize = context.IntegerValue("ListAvailableClusterNode.PageSize");
-			listAvailableClusterNodeResponse.RequestId = context.StringValue("ListAvailableClusterNode.RequestId");
-			listAvailableClusterNodeResponse.TotalCount = context.LongValue("ListAvailableClusterNode.TotalCount");
+			listAvailableClusterNodeResponse.HttpResponse = _ctx.HttpResponse;
+			listAvailableClusterNodeResponse.Code = _ctx.IntegerValue("ListAvailableClusterNode.Code");
+			listAvailableClusterNodeResponse.ErrorMsg = _ctx.StringValue("ListAvailableClusterNode.ErrorMsg");
+			listAvailableClusterNodeResponse.PageNumber = _ctx.IntegerValue("ListAvailableClusterNode.PageNumber");
+			listAvailableClusterNodeResponse.PageSize = _ctx.IntegerValue("ListAvailableClusterNode.PageSize");
+			listAvailableClusterNodeResponse.RequestId = _ctx.StringValue("ListAvailableClusterNode.RequestId");
+			listAvailableClusterNodeResponse.TotalCount = _ctx.LongValue("ListAvailableClusterNode.TotalCount");
 
 			List<ListAvailableClusterNodeResponse.ListAvailableClusterNode_ClusterNodeInfo> listAvailableClusterNodeResponse_data = new List<ListAvailableClusterNodeResponse.ListAvailableClusterNode_ClusterNodeInfo>();
-			for (int i = 0; i < context.Length("ListAvailableClusterNode.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListAvailableClusterNode.Data.Length"); i++) {
 				ListAvailableClusterNodeResponse.ListAvailableClusterNode_ClusterNodeInfo clusterNodeInfo = new ListAvailableClusterNodeResponse.ListAvailableClusterNode_ClusterNodeInfo();
-				clusterNodeInfo.OSName = context.StringValue("ListAvailableClusterNode.Data["+ i +"].OSName");
-				clusterNodeInfo.BusinessCode = context.StringValue("ListAvailableClusterNode.Data["+ i +"].BusinessCode");
-				clusterNodeInfo.EcsConfiguration = context.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsConfiguration");
-				clusterNodeInfo.EcsCpu = context.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsCpu");
-				clusterNodeInfo.EcsEip = context.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsEip");
-				clusterNodeInfo.EcsExpiredTime = context.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsExpiredTime");
-				clusterNodeInfo.EcsLocalStorageCapacity = context.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsLocalStorageCapacity");
-				clusterNodeInfo.EcsMemory = context.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsMemory");
-				clusterNodeInfo.EcsOsType = context.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsOsType");
-				clusterNodeInfo.EcsPrivateIp = context.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsPrivateIp");
-				clusterNodeInfo.EcsPublicIp = context.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsPublicIp");
-				clusterNodeInfo.EcsZone = context.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsZone");
-				clusterNodeInfo.InstanceId = context.StringValue("ListAvailableClusterNode.Data["+ i +"].InstanceId");
-				clusterNodeInfo.InstanceName = context.StringValue("ListAvailableClusterNode.Data["+ i +"].InstanceName");
-				clusterNodeInfo.InstanceNetworkType = context.StringValue("ListAvailableClusterNode.Data["+ i +"].InstanceNetworkType");
-				clusterNodeInfo.InstanceType = context.StringValue("ListAvailableClusterNode.Data["+ i +"].InstanceType");
-				clusterNodeInfo.InternetMaxBandwidthIn = context.StringValue("ListAvailableClusterNode.Data["+ i +"].InternetMaxBandwidthIn");
-				clusterNodeInfo.InternetMaxBandwidthOut = context.StringValue("ListAvailableClusterNode.Data["+ i +"].InternetMaxBandwidthOut");
-				clusterNodeInfo.RegionId = context.StringValue("ListAvailableClusterNode.Data["+ i +"].RegionId");
-				clusterNodeInfo.VpcId = context.StringValue("ListAvailableClusterNode.Data["+ i +"].VpcId");
+				clusterNodeInfo.OSName = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].OSName");
+				clusterNodeInfo.BusinessCode = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].BusinessCode");
+				clusterNodeInfo.EcsConfiguration = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsConfiguration");
+				clusterNodeInfo.EcsCpu = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsCpu");
+				clusterNodeInfo.EcsEip = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsEip");
+				clusterNodeInfo.EcsExpiredTime = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsExpiredTime");
+				clusterNodeInfo.EcsLocalStorageCapacity = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsLocalStorageCapacity");
+				clusterNodeInfo.EcsMemory = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsMemory");
+				clusterNodeInfo.EcsOsType = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsOsType");
+				clusterNodeInfo.EcsPrivateIp = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsPrivateIp");
+				clusterNodeInfo.EcsPublicIp = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsPublicIp");
+				clusterNodeInfo.EcsZone = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].EcsZone");
+				clusterNodeInfo.InstanceId = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].InstanceId");
+				clusterNodeInfo.InstanceName = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].InstanceName");
+				clusterNodeInfo.InstanceNetworkType = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].InstanceNetworkType");
+				clusterNodeInfo.InstanceType = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].InstanceType");
+				clusterNodeInfo.InternetMaxBandwidthIn = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].InternetMaxBandwidthIn");
+				clusterNodeInfo.InternetMaxBandwidthOut = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].InternetMaxBandwidthOut");
+				clusterNodeInfo.RegionId = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].RegionId");
+				clusterNodeInfo.VpcId = _ctx.StringValue("ListAvailableClusterNode.Data["+ i +"].VpcId");
 
 				listAvailableClusterNodeResponse_data.Add(clusterNodeInfo);
 			}

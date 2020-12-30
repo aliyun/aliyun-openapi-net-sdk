@@ -26,17 +26,17 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class GetInstTransInfoResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			getInstTransInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getInstTransInfoResponse.InstanceId = _ctx.StringValue("GetInstTransInfo.instanceId");
+			getInstTransInfoResponse.IsAutoRenew = _ctx.BooleanValue("GetInstTransInfo.isAutoRenew");
+			getInstTransInfoResponse.RenewCycle = _ctx.IntegerValue("GetInstTransInfo.renewCycle");
+			getInstTransInfoResponse.ChargeType = _ctx.StringValue("GetInstTransInfo.chargeType");
+			getInstTransInfoResponse.EndTime = _ctx.LongValue("GetInstTransInfo.endTime");
+			getInstTransInfoResponse.StartTime = _ctx.LongValue("GetInstTransInfo.startTime");
         
 			return getInstTransInfoResponse;
         }

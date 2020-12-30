@@ -26,20 +26,20 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class ScaleAppResponseUnmarshaller
     {
-        public static ScaleAppResponse Unmarshall(UnmarshallerContext context)
+        public static ScaleAppResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ScaleAppResponse scaleAppResponse = new ScaleAppResponse();
 
-			scaleAppResponse.HttpResponse = context.HttpResponse;
-			scaleAppResponse.Code = context.IntegerValue("ScaleApp.Code");
-			scaleAppResponse.ErrMsg = context.StringValue("ScaleApp.ErrMsg");
-			scaleAppResponse.RequestId = context.StringValue("ScaleApp.RequestId");
-			scaleAppResponse.Success = context.BooleanValue("ScaleApp.Success");
+			scaleAppResponse.HttpResponse = _ctx.HttpResponse;
+			scaleAppResponse.Code = _ctx.IntegerValue("ScaleApp.Code");
+			scaleAppResponse.ErrMsg = _ctx.StringValue("ScaleApp.ErrMsg");
+			scaleAppResponse.RequestId = _ctx.StringValue("ScaleApp.RequestId");
+			scaleAppResponse.Success = _ctx.BooleanValue("ScaleApp.Success");
 
 			ScaleAppResponse.ScaleApp_Result result = new ScaleAppResponse.ScaleApp_Result();
-			result.Admitted = context.BooleanValue("ScaleApp.Result.Admitted");
-			result.BusinessCode = context.StringValue("ScaleApp.Result.BusinessCode");
-			result.DeployOrderId = context.LongValue("ScaleApp.Result.DeployOrderId");
+			result.Admitted = _ctx.BooleanValue("ScaleApp.Result.Admitted");
+			result.BusinessCode = _ctx.StringValue("ScaleApp.Result.BusinessCode");
+			result.DeployOrderId = _ctx.LongValue("ScaleApp.Result.DeployOrderId");
 			scaleAppResponse.Result = result;
         
 			return scaleAppResponse;

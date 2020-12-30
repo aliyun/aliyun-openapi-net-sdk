@@ -26,15 +26,15 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class DeleteServiceResponseUnmarshaller
     {
-        public static DeleteServiceResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteServiceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteServiceResponse deleteServiceResponse = new DeleteServiceResponse();
 
-			deleteServiceResponse.HttpResponse = context.HttpResponse;
-			deleteServiceResponse.Code = context.IntegerValue("DeleteService.Code");
-			deleteServiceResponse.ErrMsg = context.StringValue("DeleteService.ErrMsg");
-			deleteServiceResponse.RequestId = context.StringValue("DeleteService.RequestId");
-			deleteServiceResponse.Success = context.BooleanValue("DeleteService.Success");
+			deleteServiceResponse.HttpResponse = _ctx.HttpResponse;
+			deleteServiceResponse.Code = _ctx.IntegerValue("DeleteService.Code");
+			deleteServiceResponse.ErrMsg = _ctx.StringValue("DeleteService.ErrMsg");
+			deleteServiceResponse.RequestId = _ctx.StringValue("DeleteService.RequestId");
+			deleteServiceResponse.Success = _ctx.BooleanValue("DeleteService.Success");
         
 			return deleteServiceResponse;
         }

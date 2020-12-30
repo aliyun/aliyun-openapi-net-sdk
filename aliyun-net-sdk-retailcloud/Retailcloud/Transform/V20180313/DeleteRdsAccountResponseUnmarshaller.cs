@@ -26,17 +26,17 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class DeleteRdsAccountResponseUnmarshaller
     {
-        public static DeleteRdsAccountResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteRdsAccountResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteRdsAccountResponse deleteRdsAccountResponse = new DeleteRdsAccountResponse();
 
-			deleteRdsAccountResponse.HttpResponse = context.HttpResponse;
-			deleteRdsAccountResponse.RequestId = context.StringValue("DeleteRdsAccount.RequestId");
-			deleteRdsAccountResponse.ErrMsg = context.StringValue("DeleteRdsAccount.ErrMsg");
-			deleteRdsAccountResponse.Code = context.IntegerValue("DeleteRdsAccount.Code");
+			deleteRdsAccountResponse.HttpResponse = _ctx.HttpResponse;
+			deleteRdsAccountResponse.RequestId = _ctx.StringValue("DeleteRdsAccount.RequestId");
+			deleteRdsAccountResponse.ErrMsg = _ctx.StringValue("DeleteRdsAccount.ErrMsg");
+			deleteRdsAccountResponse.Code = _ctx.IntegerValue("DeleteRdsAccount.Code");
 
 			DeleteRdsAccountResponse.DeleteRdsAccount_Result result = new DeleteRdsAccountResponse.DeleteRdsAccount_Result();
-			result.RequestId = context.StringValue("DeleteRdsAccount.Result.RequestId");
+			result.RequestId = _ctx.StringValue("DeleteRdsAccount.Result.RequestId");
 			deleteRdsAccountResponse.Result = result;
         
 			return deleteRdsAccountResponse;

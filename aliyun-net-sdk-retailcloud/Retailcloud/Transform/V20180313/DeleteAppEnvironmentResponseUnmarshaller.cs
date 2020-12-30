@@ -26,17 +26,17 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class DeleteAppEnvironmentResponseUnmarshaller
     {
-        public static DeleteAppEnvironmentResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteAppEnvironmentResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteAppEnvironmentResponse deleteAppEnvironmentResponse = new DeleteAppEnvironmentResponse();
 
-			deleteAppEnvironmentResponse.HttpResponse = context.HttpResponse;
-			deleteAppEnvironmentResponse.Code = context.IntegerValue("DeleteAppEnvironment.Code");
-			deleteAppEnvironmentResponse.RequestId = context.StringValue("DeleteAppEnvironment.RequestId");
-			deleteAppEnvironmentResponse.ErrMsg = context.StringValue("DeleteAppEnvironment.ErrMsg");
+			deleteAppEnvironmentResponse.HttpResponse = _ctx.HttpResponse;
+			deleteAppEnvironmentResponse.Code = _ctx.IntegerValue("DeleteAppEnvironment.Code");
+			deleteAppEnvironmentResponse.RequestId = _ctx.StringValue("DeleteAppEnvironment.RequestId");
+			deleteAppEnvironmentResponse.ErrMsg = _ctx.StringValue("DeleteAppEnvironment.ErrMsg");
 
 			DeleteAppEnvironmentResponse.DeleteAppEnvironment_Result result = new DeleteAppEnvironmentResponse.DeleteAppEnvironment_Result();
-			result.Success = context.BooleanValue("DeleteAppEnvironment.Result.Success");
+			result.Success = _ctx.BooleanValue("DeleteAppEnvironment.Result.Success");
 			deleteAppEnvironmentResponse.Result = result;
         
 			return deleteAppEnvironmentResponse;

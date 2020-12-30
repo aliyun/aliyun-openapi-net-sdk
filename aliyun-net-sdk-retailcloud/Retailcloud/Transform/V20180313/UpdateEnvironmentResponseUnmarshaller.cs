@@ -26,17 +26,17 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class UpdateEnvironmentResponseUnmarshaller
     {
-        public static UpdateEnvironmentResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateEnvironmentResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateEnvironmentResponse updateEnvironmentResponse = new UpdateEnvironmentResponse();
 
-			updateEnvironmentResponse.HttpResponse = context.HttpResponse;
-			updateEnvironmentResponse.Code = context.IntegerValue("UpdateEnvironment.Code");
-			updateEnvironmentResponse.RequestId = context.StringValue("UpdateEnvironment.RequestId");
-			updateEnvironmentResponse.ErrMsg = context.StringValue("UpdateEnvironment.ErrMsg");
+			updateEnvironmentResponse.HttpResponse = _ctx.HttpResponse;
+			updateEnvironmentResponse.Code = _ctx.IntegerValue("UpdateEnvironment.Code");
+			updateEnvironmentResponse.RequestId = _ctx.StringValue("UpdateEnvironment.RequestId");
+			updateEnvironmentResponse.ErrMsg = _ctx.StringValue("UpdateEnvironment.ErrMsg");
 
 			UpdateEnvironmentResponse.UpdateEnvironment_Result result = new UpdateEnvironmentResponse.UpdateEnvironment_Result();
-			result.Success = context.BooleanValue("UpdateEnvironment.Result.Success");
+			result.Success = _ctx.BooleanValue("UpdateEnvironment.Result.Success");
 			updateEnvironmentResponse.Result = result;
         
 			return updateEnvironmentResponse;

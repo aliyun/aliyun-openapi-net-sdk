@@ -26,14 +26,14 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class CreateDbResponseUnmarshaller
     {
-        public static CreateDbResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDbResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDbResponse createDbResponse = new CreateDbResponse();
 
-			createDbResponse.HttpResponse = context.HttpResponse;
-			createDbResponse.Code = context.IntegerValue("CreateDb.Code");
-			createDbResponse.RequestId = context.StringValue("CreateDb.RequestId");
-			createDbResponse.ErrMsg = context.StringValue("CreateDb.ErrMsg");
+			createDbResponse.HttpResponse = _ctx.HttpResponse;
+			createDbResponse.Code = _ctx.IntegerValue("CreateDb.Code");
+			createDbResponse.RequestId = _ctx.StringValue("CreateDb.RequestId");
+			createDbResponse.ErrMsg = _ctx.StringValue("CreateDb.ErrMsg");
         
 			return createDbResponse;
         }

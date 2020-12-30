@@ -26,11 +26,11 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
     public class ResourceStatusNotifyResponseUnmarshaller
     {
-        public static ResourceStatusNotifyResponse Unmarshall(UnmarshallerContext context)
+        public static ResourceStatusNotifyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResourceStatusNotifyResponse resourceStatusNotifyResponse = new ResourceStatusNotifyResponse();
 
-			resourceStatusNotifyResponse.HttpResponse = context.HttpResponse;
+			resourceStatusNotifyResponse.HttpResponse = _ctx.HttpResponse;
         
 			return resourceStatusNotifyResponse;
         }
