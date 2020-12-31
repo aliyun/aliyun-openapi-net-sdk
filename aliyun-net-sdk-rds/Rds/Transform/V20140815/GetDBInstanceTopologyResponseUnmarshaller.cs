@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			GetDBInstanceTopologyResponse getDBInstanceTopologyResponse = new GetDBInstanceTopologyResponse();
 
 			getDBInstanceTopologyResponse.HttpResponse = _ctx.HttpResponse;
-			getDBInstanceTopologyResponse.RequestId = _ctx.StringValue("GetDBInstanceTopology.RequestId");
 			getDBInstanceTopologyResponse.Code = _ctx.StringValue("GetDBInstanceTopology.Code");
 			getDBInstanceTopologyResponse.Message = _ctx.StringValue("GetDBInstanceTopology.Message");
+			getDBInstanceTopologyResponse.RequestId = _ctx.StringValue("GetDBInstanceTopology.RequestId");
 
 			GetDBInstanceTopologyResponse.GetDBInstanceTopology_Data data = new GetDBInstanceTopologyResponse.GetDBInstanceTopology_Data();
 			data.DBInstanceName = _ctx.StringValue("GetDBInstanceTopology.Data.DBInstanceName");
@@ -41,8 +41,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			List<GetDBInstanceTopologyResponse.GetDBInstanceTopology_Data.GetDBInstanceTopology_Connection> data_connections = new List<GetDBInstanceTopologyResponse.GetDBInstanceTopology_Data.GetDBInstanceTopology_Connection>();
 			for (int i = 0; i < _ctx.Length("GetDBInstanceTopology.Data.Connections.Length"); i++) {
 				GetDBInstanceTopologyResponse.GetDBInstanceTopology_Data.GetDBInstanceTopology_Connection connection = new GetDBInstanceTopologyResponse.GetDBInstanceTopology_Data.GetDBInstanceTopology_Connection();
-				connection.NetType = _ctx.StringValue("GetDBInstanceTopology.Data.Connections["+ i +"].NetType");
 				connection.ConnectionString = _ctx.StringValue("GetDBInstanceTopology.Data.Connections["+ i +"].ConnectionString");
+				connection.NetType = _ctx.StringValue("GetDBInstanceTopology.Data.Connections["+ i +"].NetType");
 				connection.ZoneId = _ctx.StringValue("GetDBInstanceTopology.Data.Connections["+ i +"].ZoneId");
 
 				data_connections.Add(connection);
@@ -52,10 +52,10 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			List<GetDBInstanceTopologyResponse.GetDBInstanceTopology_Data.GetDBInstanceTopology_Node> data_nodes = new List<GetDBInstanceTopologyResponse.GetDBInstanceTopology_Data.GetDBInstanceTopology_Node>();
 			for (int i = 0; i < _ctx.Length("GetDBInstanceTopology.Data.Nodes.Length"); i++) {
 				GetDBInstanceTopologyResponse.GetDBInstanceTopology_Data.GetDBInstanceTopology_Node node = new GetDBInstanceTopologyResponse.GetDBInstanceTopology_Data.GetDBInstanceTopology_Node();
-				node.Role = _ctx.StringValue("GetDBInstanceTopology.Data.Nodes["+ i +"].Role");
-				node.DedicatedHostId = _ctx.StringValue("GetDBInstanceTopology.Data.Nodes["+ i +"].DedicatedHostId");
-				node.ZoneId = _ctx.StringValue("GetDBInstanceTopology.Data.Nodes["+ i +"].ZoneId");
 				node.DedicatedHostGroupId = _ctx.StringValue("GetDBInstanceTopology.Data.Nodes["+ i +"].DedicatedHostGroupId");
+				node.DedicatedHostId = _ctx.StringValue("GetDBInstanceTopology.Data.Nodes["+ i +"].DedicatedHostId");
+				node.Role = _ctx.StringValue("GetDBInstanceTopology.Data.Nodes["+ i +"].Role");
+				node.ZoneId = _ctx.StringValue("GetDBInstanceTopology.Data.Nodes["+ i +"].ZoneId");
 
 				data_nodes.Add(node);
 			}

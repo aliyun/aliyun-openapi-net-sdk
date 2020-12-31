@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class GetDBInstanceTopologyResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string code;
 
 		private string message;
 
-		private GetDBInstanceTopology_Data data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private GetDBInstanceTopology_Data data;
 
 		public string Code
 		{
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -129,23 +129,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			public class GetDBInstanceTopology_Connection
 			{
 
-				private string netType;
-
 				private string connectionString;
 
-				private string zoneId;
+				private string netType;
 
-				public string NetType
-				{
-					get
-					{
-						return netType;
-					}
-					set	
-					{
-						netType = value;
-					}
-				}
+				private string zoneId;
 
 				public string ConnectionString
 				{
@@ -156,6 +144,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						connectionString = value;
+					}
+				}
+
+				public string NetType
+				{
+					get
+					{
+						return netType;
+					}
+					set	
+					{
+						netType = value;
 					}
 				}
 
@@ -175,23 +175,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			public class GetDBInstanceTopology_Node
 			{
 
-				private string role;
+				private string dedicatedHostGroupId;
 
 				private string dedicatedHostId;
 
+				private string role;
+
 				private string zoneId;
 
-				private string dedicatedHostGroupId;
-
-				public string Role
+				public string DedicatedHostGroupId
 				{
 					get
 					{
-						return role;
+						return dedicatedHostGroupId;
 					}
 					set	
 					{
-						role = value;
+						dedicatedHostGroupId = value;
 					}
 				}
 
@@ -207,6 +207,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
+				public string Role
+				{
+					get
+					{
+						return role;
+					}
+					set	
+					{
+						role = value;
+					}
+				}
+
 				public string ZoneId
 				{
 					get
@@ -216,18 +228,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						zoneId = value;
-					}
-				}
-
-				public string DedicatedHostGroupId
-				{
-					get
-					{
-						return dedicatedHostGroupId;
-					}
-					set	
-					{
-						dedicatedHostGroupId = value;
 					}
 				}
 			}
