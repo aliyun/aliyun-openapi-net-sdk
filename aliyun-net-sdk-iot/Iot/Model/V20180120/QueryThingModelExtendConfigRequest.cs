@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string modelVersion;
 
+		private string functionBlockId;
+
 		public string ResourceGroupId
 		{
 			get
@@ -97,6 +99,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				modelVersion = value;
 				DictionaryUtil.Add(QueryParameters, "ModelVersion", value);
+			}
+		}
+
+		public string FunctionBlockId
+		{
+			get
+			{
+				return functionBlockId;
+			}
+			set	
+			{
+				functionBlockId = value;
+				DictionaryUtil.Add(QueryParameters, "FunctionBlockId", value);
 			}
 		}
 

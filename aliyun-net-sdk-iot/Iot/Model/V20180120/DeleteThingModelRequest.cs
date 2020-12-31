@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private List<string> eventIdentifiers = new List<string>(){ };
 
+		private string functionBlockId;
+
 		public string ResourceGroupId
 		{
 			get
@@ -139,6 +141,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				{
 					DictionaryUtil.Add(QueryParameters,"EventIdentifier." + (i + 1) , eventIdentifiers[i]);
 				}
+			}
+		}
+
+		public string FunctionBlockId
+		{
+			get
+			{
+				return functionBlockId;
+			}
+			set	
+			{
+				functionBlockId = value;
+				DictionaryUtil.Add(QueryParameters, "FunctionBlockId", value);
 			}
 		}
 

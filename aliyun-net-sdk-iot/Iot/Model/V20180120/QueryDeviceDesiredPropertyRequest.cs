@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string deviceName;
 
+		private string functionBlockId;
+
 		public string IotId
 		{
 			get
@@ -116,6 +118,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				deviceName = value;
 				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
+			}
+		}
+
+		public string FunctionBlockId
+		{
+			get
+			{
+				return functionBlockId;
+			}
+			set	
+			{
+				functionBlockId = value;
+				DictionaryUtil.Add(QueryParameters, "FunctionBlockId", value);
 			}
 		}
 

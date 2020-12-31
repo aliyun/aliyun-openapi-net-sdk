@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string resourceGroupId;
 
+		private int? validateType;
+
 		private string iotInstanceId;
 
 		private string productName;
@@ -145,6 +147,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				resourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public int? ValidateType
+		{
+			get
+			{
+				return validateType;
+			}
+			set	
+			{
+				validateType = value;
+				DictionaryUtil.Add(QueryParameters, "ValidateType", value.ToString());
 			}
 		}
 
