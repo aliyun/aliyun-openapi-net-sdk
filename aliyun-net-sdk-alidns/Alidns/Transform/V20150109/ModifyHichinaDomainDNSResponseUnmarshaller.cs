@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class ModifyHichinaDomainDNSResponseUnmarshaller
     {
-        public static ModifyHichinaDomainDNSResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyHichinaDomainDNSResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyHichinaDomainDNSResponse modifyHichinaDomainDNSResponse = new ModifyHichinaDomainDNSResponse();
 
-			modifyHichinaDomainDNSResponse.HttpResponse = context.HttpResponse;
-			modifyHichinaDomainDNSResponse.RequestId = context.StringValue("ModifyHichinaDomainDNS.RequestId");
+			modifyHichinaDomainDNSResponse.HttpResponse = _ctx.HttpResponse;
+			modifyHichinaDomainDNSResponse.RequestId = _ctx.StringValue("ModifyHichinaDomainDNS.RequestId");
 
 			List<string> modifyHichinaDomainDNSResponse_originalDnsServers = new List<string>();
-			for (int i = 0; i < context.Length("ModifyHichinaDomainDNS.OriginalDnsServers.Length"); i++) {
-				modifyHichinaDomainDNSResponse_originalDnsServers.Add(context.StringValue("ModifyHichinaDomainDNS.OriginalDnsServers["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("ModifyHichinaDomainDNS.OriginalDnsServers.Length"); i++) {
+				modifyHichinaDomainDNSResponse_originalDnsServers.Add(_ctx.StringValue("ModifyHichinaDomainDNS.OriginalDnsServers["+ i +"]"));
 			}
 			modifyHichinaDomainDNSResponse.OriginalDnsServers = modifyHichinaDomainDNSResponse_originalDnsServers;
 
 			List<string> modifyHichinaDomainDNSResponse_newDnsServers = new List<string>();
-			for (int i = 0; i < context.Length("ModifyHichinaDomainDNS.NewDnsServers.Length"); i++) {
-				modifyHichinaDomainDNSResponse_newDnsServers.Add(context.StringValue("ModifyHichinaDomainDNS.NewDnsServers["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("ModifyHichinaDomainDNS.NewDnsServers.Length"); i++) {
+				modifyHichinaDomainDNSResponse_newDnsServers.Add(_ctx.StringValue("ModifyHichinaDomainDNS.NewDnsServers["+ i +"]"));
 			}
 			modifyHichinaDomainDNSResponse.NewDnsServers = modifyHichinaDomainDNSResponse_newDnsServers;
         

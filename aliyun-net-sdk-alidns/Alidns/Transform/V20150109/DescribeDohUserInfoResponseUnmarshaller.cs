@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeDohUserInfoResponseUnmarshaller
     {
-        public static DescribeDohUserInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDohUserInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDohUserInfoResponse describeDohUserInfoResponse = new DescribeDohUserInfoResponse();
 
-			describeDohUserInfoResponse.HttpResponse = context.HttpResponse;
-			describeDohUserInfoResponse.RequestId = context.StringValue("DescribeDohUserInfo.RequestId");
-			describeDohUserInfoResponse.PdnsId = context.LongValue("DescribeDohUserInfo.PdnsId");
-			describeDohUserInfoResponse.DomainCount = context.IntegerValue("DescribeDohUserInfo.DomainCount");
-			describeDohUserInfoResponse.SubDomainCount = context.IntegerValue("DescribeDohUserInfo.SubDomainCount");
+			describeDohUserInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeDohUserInfoResponse.RequestId = _ctx.StringValue("DescribeDohUserInfo.RequestId");
+			describeDohUserInfoResponse.PdnsId = _ctx.LongValue("DescribeDohUserInfo.PdnsId");
+			describeDohUserInfoResponse.DomainCount = _ctx.IntegerValue("DescribeDohUserInfo.DomainCount");
+			describeDohUserInfoResponse.SubDomainCount = _ctx.IntegerValue("DescribeDohUserInfo.SubDomainCount");
         
 			return describeDohUserInfoResponse;
         }

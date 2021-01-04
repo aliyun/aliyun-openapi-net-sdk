@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class RetrieveDomainResponseUnmarshaller
     {
-        public static RetrieveDomainResponse Unmarshall(UnmarshallerContext context)
+        public static RetrieveDomainResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RetrieveDomainResponse retrieveDomainResponse = new RetrieveDomainResponse();
 
-			retrieveDomainResponse.HttpResponse = context.HttpResponse;
-			retrieveDomainResponse.RequestId = context.StringValue("RetrieveDomain.RequestId");
+			retrieveDomainResponse.HttpResponse = _ctx.HttpResponse;
+			retrieveDomainResponse.RequestId = _ctx.StringValue("RetrieveDomain.RequestId");
         
 			return retrieveDomainResponse;
         }

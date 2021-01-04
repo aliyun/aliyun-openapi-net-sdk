@@ -26,29 +26,29 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeGtmLogsResponseUnmarshaller
     {
-        public static DescribeGtmLogsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGtmLogsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGtmLogsResponse describeGtmLogsResponse = new DescribeGtmLogsResponse();
 
-			describeGtmLogsResponse.HttpResponse = context.HttpResponse;
-			describeGtmLogsResponse.RequestId = context.StringValue("DescribeGtmLogs.RequestId");
-			describeGtmLogsResponse.TotalItems = context.IntegerValue("DescribeGtmLogs.TotalItems");
-			describeGtmLogsResponse.TotalPages = context.IntegerValue("DescribeGtmLogs.TotalPages");
-			describeGtmLogsResponse.PageSize = context.IntegerValue("DescribeGtmLogs.PageSize");
-			describeGtmLogsResponse.PageNumber = context.IntegerValue("DescribeGtmLogs.PageNumber");
+			describeGtmLogsResponse.HttpResponse = _ctx.HttpResponse;
+			describeGtmLogsResponse.RequestId = _ctx.StringValue("DescribeGtmLogs.RequestId");
+			describeGtmLogsResponse.TotalItems = _ctx.IntegerValue("DescribeGtmLogs.TotalItems");
+			describeGtmLogsResponse.TotalPages = _ctx.IntegerValue("DescribeGtmLogs.TotalPages");
+			describeGtmLogsResponse.PageSize = _ctx.IntegerValue("DescribeGtmLogs.PageSize");
+			describeGtmLogsResponse.PageNumber = _ctx.IntegerValue("DescribeGtmLogs.PageNumber");
 
 			List<DescribeGtmLogsResponse.DescribeGtmLogs_Log> describeGtmLogsResponse_logs = new List<DescribeGtmLogsResponse.DescribeGtmLogs_Log>();
-			for (int i = 0; i < context.Length("DescribeGtmLogs.Logs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeGtmLogs.Logs.Length"); i++) {
 				DescribeGtmLogsResponse.DescribeGtmLogs_Log log = new DescribeGtmLogsResponse.DescribeGtmLogs_Log();
-				log.OperTime = context.StringValue("DescribeGtmLogs.Logs["+ i +"].OperTime");
-				log.OperAction = context.StringValue("DescribeGtmLogs.Logs["+ i +"].OperAction");
-				log.EntityType = context.StringValue("DescribeGtmLogs.Logs["+ i +"].EntityType");
-				log.EntityId = context.StringValue("DescribeGtmLogs.Logs["+ i +"].EntityId");
-				log.EntityName = context.StringValue("DescribeGtmLogs.Logs["+ i +"].EntityName");
-				log.OperIp = context.StringValue("DescribeGtmLogs.Logs["+ i +"].OperIp");
-				log.OperTimestamp = context.LongValue("DescribeGtmLogs.Logs["+ i +"].OperTimestamp");
-				log.Id = context.LongValue("DescribeGtmLogs.Logs["+ i +"].Id");
-				log.Content = context.StringValue("DescribeGtmLogs.Logs["+ i +"].Content");
+				log.OperTime = _ctx.StringValue("DescribeGtmLogs.Logs["+ i +"].OperTime");
+				log.OperAction = _ctx.StringValue("DescribeGtmLogs.Logs["+ i +"].OperAction");
+				log.EntityType = _ctx.StringValue("DescribeGtmLogs.Logs["+ i +"].EntityType");
+				log.EntityId = _ctx.StringValue("DescribeGtmLogs.Logs["+ i +"].EntityId");
+				log.EntityName = _ctx.StringValue("DescribeGtmLogs.Logs["+ i +"].EntityName");
+				log.OperIp = _ctx.StringValue("DescribeGtmLogs.Logs["+ i +"].OperIp");
+				log.OperTimestamp = _ctx.LongValue("DescribeGtmLogs.Logs["+ i +"].OperTimestamp");
+				log.Id = _ctx.LongValue("DescribeGtmLogs.Logs["+ i +"].Id");
+				log.Content = _ctx.StringValue("DescribeGtmLogs.Logs["+ i +"].Content");
 
 				describeGtmLogsResponse_logs.Add(log);
 			}

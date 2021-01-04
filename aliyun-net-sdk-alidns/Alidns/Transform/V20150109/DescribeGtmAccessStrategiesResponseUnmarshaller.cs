@@ -26,44 +26,44 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeGtmAccessStrategiesResponseUnmarshaller
     {
-        public static DescribeGtmAccessStrategiesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGtmAccessStrategiesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGtmAccessStrategiesResponse describeGtmAccessStrategiesResponse = new DescribeGtmAccessStrategiesResponse();
 
-			describeGtmAccessStrategiesResponse.HttpResponse = context.HttpResponse;
-			describeGtmAccessStrategiesResponse.RequestId = context.StringValue("DescribeGtmAccessStrategies.RequestId");
-			describeGtmAccessStrategiesResponse.TotalItems = context.IntegerValue("DescribeGtmAccessStrategies.TotalItems");
-			describeGtmAccessStrategiesResponse.TotalPages = context.IntegerValue("DescribeGtmAccessStrategies.TotalPages");
-			describeGtmAccessStrategiesResponse.PageNumber = context.IntegerValue("DescribeGtmAccessStrategies.PageNumber");
-			describeGtmAccessStrategiesResponse.PageSize = context.IntegerValue("DescribeGtmAccessStrategies.PageSize");
+			describeGtmAccessStrategiesResponse.HttpResponse = _ctx.HttpResponse;
+			describeGtmAccessStrategiesResponse.RequestId = _ctx.StringValue("DescribeGtmAccessStrategies.RequestId");
+			describeGtmAccessStrategiesResponse.TotalItems = _ctx.IntegerValue("DescribeGtmAccessStrategies.TotalItems");
+			describeGtmAccessStrategiesResponse.TotalPages = _ctx.IntegerValue("DescribeGtmAccessStrategies.TotalPages");
+			describeGtmAccessStrategiesResponse.PageNumber = _ctx.IntegerValue("DescribeGtmAccessStrategies.PageNumber");
+			describeGtmAccessStrategiesResponse.PageSize = _ctx.IntegerValue("DescribeGtmAccessStrategies.PageSize");
 
 			List<DescribeGtmAccessStrategiesResponse.DescribeGtmAccessStrategies_Strategy> describeGtmAccessStrategiesResponse_strategies = new List<DescribeGtmAccessStrategiesResponse.DescribeGtmAccessStrategies_Strategy>();
-			for (int i = 0; i < context.Length("DescribeGtmAccessStrategies.Strategies.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeGtmAccessStrategies.Strategies.Length"); i++) {
 				DescribeGtmAccessStrategiesResponse.DescribeGtmAccessStrategies_Strategy strategy = new DescribeGtmAccessStrategiesResponse.DescribeGtmAccessStrategies_Strategy();
-				strategy.StrategyId = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].StrategyId");
-				strategy.StrategyName = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].StrategyName");
-				strategy.CreateTime = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].CreateTime");
-				strategy.CreateTimestamp = context.LongValue("DescribeGtmAccessStrategies.Strategies["+ i +"].CreateTimestamp");
-				strategy.DefaultAddrPoolId = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].DefaultAddrPoolId");
-				strategy.DefaultAddrPoolName = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].DefaultAddrPoolName");
-				strategy.FailoverAddrPoolId = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].FailoverAddrPoolId");
-				strategy.FailoverAddrPoolName = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].FailoverAddrPoolName");
-				strategy.AccessMode = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].AccessMode");
-				strategy.AccessStatus = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].AccessStatus");
-				strategy.StrategyMode = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].StrategyMode");
-				strategy.InstanceId = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].InstanceId");
-				strategy.DefaultAddrPoolStatus = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].DefaultAddrPoolStatus");
-				strategy.FailoverAddrPoolStatus = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].FailoverAddrPoolStatus");
-				strategy.DefaultAddrPoolMonitorStatus = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].DefaultAddrPoolMonitorStatus");
-				strategy.FailoverAddrPoolMonitorStatus = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].FailoverAddrPoolMonitorStatus");
+				strategy.StrategyId = _ctx.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].StrategyId");
+				strategy.StrategyName = _ctx.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].StrategyName");
+				strategy.CreateTime = _ctx.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].CreateTime");
+				strategy.CreateTimestamp = _ctx.LongValue("DescribeGtmAccessStrategies.Strategies["+ i +"].CreateTimestamp");
+				strategy.DefaultAddrPoolId = _ctx.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].DefaultAddrPoolId");
+				strategy.DefaultAddrPoolName = _ctx.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].DefaultAddrPoolName");
+				strategy.FailoverAddrPoolId = _ctx.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].FailoverAddrPoolId");
+				strategy.FailoverAddrPoolName = _ctx.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].FailoverAddrPoolName");
+				strategy.AccessMode = _ctx.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].AccessMode");
+				strategy.AccessStatus = _ctx.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].AccessStatus");
+				strategy.StrategyMode = _ctx.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].StrategyMode");
+				strategy.InstanceId = _ctx.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].InstanceId");
+				strategy.DefaultAddrPoolStatus = _ctx.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].DefaultAddrPoolStatus");
+				strategy.FailoverAddrPoolStatus = _ctx.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].FailoverAddrPoolStatus");
+				strategy.DefaultAddrPoolMonitorStatus = _ctx.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].DefaultAddrPoolMonitorStatus");
+				strategy.FailoverAddrPoolMonitorStatus = _ctx.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].FailoverAddrPoolMonitorStatus");
 
 				List<DescribeGtmAccessStrategiesResponse.DescribeGtmAccessStrategies_Strategy.DescribeGtmAccessStrategies_Line> strategy_lines = new List<DescribeGtmAccessStrategiesResponse.DescribeGtmAccessStrategies_Strategy.DescribeGtmAccessStrategies_Line>();
-				for (int j = 0; j < context.Length("DescribeGtmAccessStrategies.Strategies["+ i +"].Lines.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeGtmAccessStrategies.Strategies["+ i +"].Lines.Length"); j++) {
 					DescribeGtmAccessStrategiesResponse.DescribeGtmAccessStrategies_Strategy.DescribeGtmAccessStrategies_Line line = new DescribeGtmAccessStrategiesResponse.DescribeGtmAccessStrategies_Strategy.DescribeGtmAccessStrategies_Line();
-					line.LineCode = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].Lines["+ j +"].LineCode");
-					line.LineName = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].Lines["+ j +"].LineName");
-					line.GroupCode = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].Lines["+ j +"].GroupCode");
-					line.GroupName = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].Lines["+ j +"].GroupName");
+					line.LineCode = _ctx.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].Lines["+ j +"].LineCode");
+					line.LineName = _ctx.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].Lines["+ j +"].LineName");
+					line.GroupCode = _ctx.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].Lines["+ j +"].GroupCode");
+					line.GroupName = _ctx.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].Lines["+ j +"].GroupName");
 
 					strategy_lines.Add(line);
 				}

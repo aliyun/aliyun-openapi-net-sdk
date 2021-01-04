@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeGtmAvailableAlertGroupResponseUnmarshaller
     {
-        public static DescribeGtmAvailableAlertGroupResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGtmAvailableAlertGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGtmAvailableAlertGroupResponse describeGtmAvailableAlertGroupResponse = new DescribeGtmAvailableAlertGroupResponse();
 
-			describeGtmAvailableAlertGroupResponse.HttpResponse = context.HttpResponse;
-			describeGtmAvailableAlertGroupResponse.RequestId = context.StringValue("DescribeGtmAvailableAlertGroup.RequestId");
-			describeGtmAvailableAlertGroupResponse.AvailableAlertGroup = context.StringValue("DescribeGtmAvailableAlertGroup.AvailableAlertGroup");
+			describeGtmAvailableAlertGroupResponse.HttpResponse = _ctx.HttpResponse;
+			describeGtmAvailableAlertGroupResponse.RequestId = _ctx.StringValue("DescribeGtmAvailableAlertGroup.RequestId");
+			describeGtmAvailableAlertGroupResponse.AvailableAlertGroup = _ctx.StringValue("DescribeGtmAvailableAlertGroup.AvailableAlertGroup");
         
 			return describeGtmAvailableAlertGroupResponse;
         }

@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeDomainGroupsResponseUnmarshaller
     {
-        public static DescribeDomainGroupsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainGroupsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainGroupsResponse describeDomainGroupsResponse = new DescribeDomainGroupsResponse();
 
-			describeDomainGroupsResponse.HttpResponse = context.HttpResponse;
-			describeDomainGroupsResponse.RequestId = context.StringValue("DescribeDomainGroups.RequestId");
-			describeDomainGroupsResponse.TotalCount = context.LongValue("DescribeDomainGroups.TotalCount");
-			describeDomainGroupsResponse.PageNumber = context.LongValue("DescribeDomainGroups.PageNumber");
-			describeDomainGroupsResponse.PageSize = context.LongValue("DescribeDomainGroups.PageSize");
+			describeDomainGroupsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainGroupsResponse.RequestId = _ctx.StringValue("DescribeDomainGroups.RequestId");
+			describeDomainGroupsResponse.TotalCount = _ctx.LongValue("DescribeDomainGroups.TotalCount");
+			describeDomainGroupsResponse.PageNumber = _ctx.LongValue("DescribeDomainGroups.PageNumber");
+			describeDomainGroupsResponse.PageSize = _ctx.LongValue("DescribeDomainGroups.PageSize");
 
 			List<DescribeDomainGroupsResponse.DescribeDomainGroups_DomainGroup> describeDomainGroupsResponse_domainGroups = new List<DescribeDomainGroupsResponse.DescribeDomainGroups_DomainGroup>();
-			for (int i = 0; i < context.Length("DescribeDomainGroups.DomainGroups.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainGroups.DomainGroups.Length"); i++) {
 				DescribeDomainGroupsResponse.DescribeDomainGroups_DomainGroup domainGroup = new DescribeDomainGroupsResponse.DescribeDomainGroups_DomainGroup();
-				domainGroup.GroupId = context.StringValue("DescribeDomainGroups.DomainGroups["+ i +"].GroupId");
-				domainGroup.GroupName = context.StringValue("DescribeDomainGroups.DomainGroups["+ i +"].GroupName");
-				domainGroup.DomainCount = context.LongValue("DescribeDomainGroups.DomainGroups["+ i +"].DomainCount");
+				domainGroup.GroupId = _ctx.StringValue("DescribeDomainGroups.DomainGroups["+ i +"].GroupId");
+				domainGroup.GroupName = _ctx.StringValue("DescribeDomainGroups.DomainGroups["+ i +"].GroupName");
+				domainGroup.DomainCount = _ctx.LongValue("DescribeDomainGroups.DomainGroups["+ i +"].DomainCount");
 
 				describeDomainGroupsResponse_domainGroups.Add(domainGroup);
 			}

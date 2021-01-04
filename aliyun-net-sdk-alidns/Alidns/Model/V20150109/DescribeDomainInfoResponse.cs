@@ -63,6 +63,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private string resourceGroupId;
 
+		private string createTime;
+
 		private List<DescribeDomainInfo_RecordLine> recordLines;
 
 		private List<string> dnsServers;
@@ -294,6 +296,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			set	
 			{
 				resourceGroupId = value;
+			}
+		}
+
+		public string CreateTime
+		{
+			get
+			{
+				return createTime;
+			}
+			set	
+			{
+				createTime = value;
 			}
 		}
 

@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class AddDomainBackupResponseUnmarshaller
     {
-        public static AddDomainBackupResponse Unmarshall(UnmarshallerContext context)
+        public static AddDomainBackupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddDomainBackupResponse addDomainBackupResponse = new AddDomainBackupResponse();
 
-			addDomainBackupResponse.HttpResponse = context.HttpResponse;
-			addDomainBackupResponse.RequestId = context.StringValue("AddDomainBackup.RequestId");
-			addDomainBackupResponse.DomainName = context.StringValue("AddDomainBackup.DomainName");
-			addDomainBackupResponse.PeriodType = context.StringValue("AddDomainBackup.PeriodType");
+			addDomainBackupResponse.HttpResponse = _ctx.HttpResponse;
+			addDomainBackupResponse.RequestId = _ctx.StringValue("AddDomainBackup.RequestId");
+			addDomainBackupResponse.DomainName = _ctx.StringValue("AddDomainBackup.DomainName");
+			addDomainBackupResponse.PeriodType = _ctx.StringValue("AddDomainBackup.PeriodType");
         
 			return addDomainBackupResponse;
         }

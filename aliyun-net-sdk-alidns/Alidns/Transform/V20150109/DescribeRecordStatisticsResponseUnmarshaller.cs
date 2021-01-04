@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeRecordStatisticsResponseUnmarshaller
     {
-        public static DescribeRecordStatisticsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRecordStatisticsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRecordStatisticsResponse describeRecordStatisticsResponse = new DescribeRecordStatisticsResponse();
 
-			describeRecordStatisticsResponse.HttpResponse = context.HttpResponse;
-			describeRecordStatisticsResponse.RequestId = context.StringValue("DescribeRecordStatistics.RequestId");
+			describeRecordStatisticsResponse.HttpResponse = _ctx.HttpResponse;
+			describeRecordStatisticsResponse.RequestId = _ctx.StringValue("DescribeRecordStatistics.RequestId");
 
 			List<DescribeRecordStatisticsResponse.DescribeRecordStatistics_Statistic> describeRecordStatisticsResponse_statistics = new List<DescribeRecordStatisticsResponse.DescribeRecordStatistics_Statistic>();
-			for (int i = 0; i < context.Length("DescribeRecordStatistics.Statistics.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRecordStatistics.Statistics.Length"); i++) {
 				DescribeRecordStatisticsResponse.DescribeRecordStatistics_Statistic statistic = new DescribeRecordStatisticsResponse.DescribeRecordStatistics_Statistic();
-				statistic.Timestamp = context.LongValue("DescribeRecordStatistics.Statistics["+ i +"].Timestamp");
-				statistic.Count = context.LongValue("DescribeRecordStatistics.Statistics["+ i +"].Count");
+				statistic.Timestamp = _ctx.LongValue("DescribeRecordStatistics.Statistics["+ i +"].Timestamp");
+				statistic.Count = _ctx.LongValue("DescribeRecordStatistics.Statistics["+ i +"].Count");
 
 				describeRecordStatisticsResponse_statistics.Add(statistic);
 			}

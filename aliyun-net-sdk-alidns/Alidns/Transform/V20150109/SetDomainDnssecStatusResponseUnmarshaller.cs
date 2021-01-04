@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class SetDomainDnssecStatusResponseUnmarshaller
     {
-        public static SetDomainDnssecStatusResponse Unmarshall(UnmarshallerContext context)
+        public static SetDomainDnssecStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetDomainDnssecStatusResponse setDomainDnssecStatusResponse = new SetDomainDnssecStatusResponse();
 
-			setDomainDnssecStatusResponse.HttpResponse = context.HttpResponse;
-			setDomainDnssecStatusResponse.RequestId = context.StringValue("SetDomainDnssecStatus.RequestId");
+			setDomainDnssecStatusResponse.HttpResponse = _ctx.HttpResponse;
+			setDomainDnssecStatusResponse.RequestId = _ctx.StringValue("SetDomainDnssecStatus.RequestId");
         
 			return setDomainDnssecStatusResponse;
         }

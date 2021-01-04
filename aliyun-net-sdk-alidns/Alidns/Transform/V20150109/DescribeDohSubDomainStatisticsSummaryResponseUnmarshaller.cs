@@ -26,29 +26,29 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeDohSubDomainStatisticsSummaryResponseUnmarshaller
     {
-        public static DescribeDohSubDomainStatisticsSummaryResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDohSubDomainStatisticsSummaryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDohSubDomainStatisticsSummaryResponse describeDohSubDomainStatisticsSummaryResponse = new DescribeDohSubDomainStatisticsSummaryResponse();
 
-			describeDohSubDomainStatisticsSummaryResponse.HttpResponse = context.HttpResponse;
-			describeDohSubDomainStatisticsSummaryResponse.RequestId = context.StringValue("DescribeDohSubDomainStatisticsSummary.RequestId");
-			describeDohSubDomainStatisticsSummaryResponse.TotalItems = context.IntegerValue("DescribeDohSubDomainStatisticsSummary.TotalItems");
-			describeDohSubDomainStatisticsSummaryResponse.TotalPages = context.IntegerValue("DescribeDohSubDomainStatisticsSummary.TotalPages");
-			describeDohSubDomainStatisticsSummaryResponse.PageSize = context.IntegerValue("DescribeDohSubDomainStatisticsSummary.PageSize");
-			describeDohSubDomainStatisticsSummaryResponse.PageNumber = context.IntegerValue("DescribeDohSubDomainStatisticsSummary.PageNumber");
+			describeDohSubDomainStatisticsSummaryResponse.HttpResponse = _ctx.HttpResponse;
+			describeDohSubDomainStatisticsSummaryResponse.RequestId = _ctx.StringValue("DescribeDohSubDomainStatisticsSummary.RequestId");
+			describeDohSubDomainStatisticsSummaryResponse.TotalItems = _ctx.IntegerValue("DescribeDohSubDomainStatisticsSummary.TotalItems");
+			describeDohSubDomainStatisticsSummaryResponse.TotalPages = _ctx.IntegerValue("DescribeDohSubDomainStatisticsSummary.TotalPages");
+			describeDohSubDomainStatisticsSummaryResponse.PageSize = _ctx.IntegerValue("DescribeDohSubDomainStatisticsSummary.PageSize");
+			describeDohSubDomainStatisticsSummaryResponse.PageNumber = _ctx.IntegerValue("DescribeDohSubDomainStatisticsSummary.PageNumber");
 
 			List<DescribeDohSubDomainStatisticsSummaryResponse.DescribeDohSubDomainStatisticsSummary_Statistic> describeDohSubDomainStatisticsSummaryResponse_statistics = new List<DescribeDohSubDomainStatisticsSummaryResponse.DescribeDohSubDomainStatisticsSummary_Statistic>();
-			for (int i = 0; i < context.Length("DescribeDohSubDomainStatisticsSummary.Statistics.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDohSubDomainStatisticsSummary.Statistics.Length"); i++) {
 				DescribeDohSubDomainStatisticsSummaryResponse.DescribeDohSubDomainStatisticsSummary_Statistic statistic = new DescribeDohSubDomainStatisticsSummaryResponse.DescribeDohSubDomainStatisticsSummary_Statistic();
-				statistic.SubDomain = context.StringValue("DescribeDohSubDomainStatisticsSummary.Statistics["+ i +"].SubDomain");
-				statistic.V4HttpCount = context.LongValue("DescribeDohSubDomainStatisticsSummary.Statistics["+ i +"].V4HttpCount");
-				statistic.V6HttpCount = context.LongValue("DescribeDohSubDomainStatisticsSummary.Statistics["+ i +"].V6HttpCount");
-				statistic.V4HttpsCount = context.LongValue("DescribeDohSubDomainStatisticsSummary.Statistics["+ i +"].V4HttpsCount");
-				statistic.V6HttpsCount = context.LongValue("DescribeDohSubDomainStatisticsSummary.Statistics["+ i +"].V6HttpsCount");
-				statistic.TotalCount = context.LongValue("DescribeDohSubDomainStatisticsSummary.Statistics["+ i +"].TotalCount");
-				statistic.IpCount = context.LongValue("DescribeDohSubDomainStatisticsSummary.Statistics["+ i +"].IpCount");
-				statistic.HttpCount = context.LongValue("DescribeDohSubDomainStatisticsSummary.Statistics["+ i +"].HttpCount");
-				statistic.HttpsCount = context.LongValue("DescribeDohSubDomainStatisticsSummary.Statistics["+ i +"].HttpsCount");
+				statistic.SubDomain = _ctx.StringValue("DescribeDohSubDomainStatisticsSummary.Statistics["+ i +"].SubDomain");
+				statistic.V4HttpCount = _ctx.LongValue("DescribeDohSubDomainStatisticsSummary.Statistics["+ i +"].V4HttpCount");
+				statistic.V6HttpCount = _ctx.LongValue("DescribeDohSubDomainStatisticsSummary.Statistics["+ i +"].V6HttpCount");
+				statistic.V4HttpsCount = _ctx.LongValue("DescribeDohSubDomainStatisticsSummary.Statistics["+ i +"].V4HttpsCount");
+				statistic.V6HttpsCount = _ctx.LongValue("DescribeDohSubDomainStatisticsSummary.Statistics["+ i +"].V6HttpsCount");
+				statistic.TotalCount = _ctx.LongValue("DescribeDohSubDomainStatisticsSummary.Statistics["+ i +"].TotalCount");
+				statistic.IpCount = _ctx.LongValue("DescribeDohSubDomainStatisticsSummary.Statistics["+ i +"].IpCount");
+				statistic.HttpCount = _ctx.LongValue("DescribeDohSubDomainStatisticsSummary.Statistics["+ i +"].HttpCount");
+				statistic.HttpsCount = _ctx.LongValue("DescribeDohSubDomainStatisticsSummary.Statistics["+ i +"].HttpsCount");
 
 				describeDohSubDomainStatisticsSummaryResponse_statistics.Add(statistic);
 			}

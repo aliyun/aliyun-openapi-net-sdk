@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeGtmInstanceSystemCnameResponseUnmarshaller
     {
-        public static DescribeGtmInstanceSystemCnameResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGtmInstanceSystemCnameResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGtmInstanceSystemCnameResponse describeGtmInstanceSystemCnameResponse = new DescribeGtmInstanceSystemCnameResponse();
 
-			describeGtmInstanceSystemCnameResponse.HttpResponse = context.HttpResponse;
-			describeGtmInstanceSystemCnameResponse.RequestId = context.StringValue("DescribeGtmInstanceSystemCname.RequestId");
-			describeGtmInstanceSystemCnameResponse.SystemCname = context.StringValue("DescribeGtmInstanceSystemCname.SystemCname");
+			describeGtmInstanceSystemCnameResponse.HttpResponse = _ctx.HttpResponse;
+			describeGtmInstanceSystemCnameResponse.RequestId = _ctx.StringValue("DescribeGtmInstanceSystemCname.RequestId");
+			describeGtmInstanceSystemCnameResponse.SystemCname = _ctx.StringValue("DescribeGtmInstanceSystemCname.SystemCname");
         
 			return describeGtmInstanceSystemCnameResponse;
         }

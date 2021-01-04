@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class SetDNSSLBStatusResponseUnmarshaller
     {
-        public static SetDNSSLBStatusResponse Unmarshall(UnmarshallerContext context)
+        public static SetDNSSLBStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetDNSSLBStatusResponse setDNSSLBStatusResponse = new SetDNSSLBStatusResponse();
 
-			setDNSSLBStatusResponse.HttpResponse = context.HttpResponse;
-			setDNSSLBStatusResponse.RequestId = context.StringValue("SetDNSSLBStatus.RequestId");
-			setDNSSLBStatusResponse.RecordCount = context.LongValue("SetDNSSLBStatus.RecordCount");
-			setDNSSLBStatusResponse.Open = context.BooleanValue("SetDNSSLBStatus.Open");
+			setDNSSLBStatusResponse.HttpResponse = _ctx.HttpResponse;
+			setDNSSLBStatusResponse.RequestId = _ctx.StringValue("SetDNSSLBStatus.RequestId");
+			setDNSSLBStatusResponse.RecordCount = _ctx.LongValue("SetDNSSLBStatus.RecordCount");
+			setDNSSLBStatusResponse.Open = _ctx.BooleanValue("SetDNSSLBStatus.Open");
         
 			return setDNSSLBStatusResponse;
         }

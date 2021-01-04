@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class UpdateDNSSLBWeightResponseUnmarshaller
     {
-        public static UpdateDNSSLBWeightResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateDNSSLBWeightResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateDNSSLBWeightResponse updateDNSSLBWeightResponse = new UpdateDNSSLBWeightResponse();
 
-			updateDNSSLBWeightResponse.HttpResponse = context.HttpResponse;
-			updateDNSSLBWeightResponse.RequestId = context.StringValue("UpdateDNSSLBWeight.RequestId");
-			updateDNSSLBWeightResponse.RecordId = context.StringValue("UpdateDNSSLBWeight.RecordId");
-			updateDNSSLBWeightResponse.Weight = context.IntegerValue("UpdateDNSSLBWeight.Weight");
+			updateDNSSLBWeightResponse.HttpResponse = _ctx.HttpResponse;
+			updateDNSSLBWeightResponse.RequestId = _ctx.StringValue("UpdateDNSSLBWeight.RequestId");
+			updateDNSSLBWeightResponse.RecordId = _ctx.StringValue("UpdateDNSSLBWeight.RecordId");
+			updateDNSSLBWeightResponse.Weight = _ctx.IntegerValue("UpdateDNSSLBWeight.Weight");
         
 			return updateDNSSLBWeightResponse;
         }

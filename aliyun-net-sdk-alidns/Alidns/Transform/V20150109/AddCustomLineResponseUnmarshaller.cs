@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class AddCustomLineResponseUnmarshaller
     {
-        public static AddCustomLineResponse Unmarshall(UnmarshallerContext context)
+        public static AddCustomLineResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddCustomLineResponse addCustomLineResponse = new AddCustomLineResponse();
 
-			addCustomLineResponse.HttpResponse = context.HttpResponse;
-			addCustomLineResponse.RequestId = context.StringValue("AddCustomLine.RequestId");
-			addCustomLineResponse.LineId = context.LongValue("AddCustomLine.LineId");
-			addCustomLineResponse.LineCode = context.StringValue("AddCustomLine.LineCode");
+			addCustomLineResponse.HttpResponse = _ctx.HttpResponse;
+			addCustomLineResponse.RequestId = _ctx.StringValue("AddCustomLine.RequestId");
+			addCustomLineResponse.LineId = _ctx.LongValue("AddCustomLine.LineId");
+			addCustomLineResponse.LineCode = _ctx.StringValue("AddCustomLine.LineCode");
         
 			return addCustomLineResponse;
         }

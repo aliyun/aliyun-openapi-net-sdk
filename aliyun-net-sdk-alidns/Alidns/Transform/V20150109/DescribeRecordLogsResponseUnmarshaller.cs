@@ -26,24 +26,24 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeRecordLogsResponseUnmarshaller
     {
-        public static DescribeRecordLogsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRecordLogsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRecordLogsResponse describeRecordLogsResponse = new DescribeRecordLogsResponse();
 
-			describeRecordLogsResponse.HttpResponse = context.HttpResponse;
-			describeRecordLogsResponse.RequestId = context.StringValue("DescribeRecordLogs.RequestId");
-			describeRecordLogsResponse.TotalCount = context.LongValue("DescribeRecordLogs.TotalCount");
-			describeRecordLogsResponse.PageNumber = context.LongValue("DescribeRecordLogs.PageNumber");
-			describeRecordLogsResponse.PageSize = context.LongValue("DescribeRecordLogs.PageSize");
+			describeRecordLogsResponse.HttpResponse = _ctx.HttpResponse;
+			describeRecordLogsResponse.RequestId = _ctx.StringValue("DescribeRecordLogs.RequestId");
+			describeRecordLogsResponse.TotalCount = _ctx.LongValue("DescribeRecordLogs.TotalCount");
+			describeRecordLogsResponse.PageNumber = _ctx.LongValue("DescribeRecordLogs.PageNumber");
+			describeRecordLogsResponse.PageSize = _ctx.LongValue("DescribeRecordLogs.PageSize");
 
 			List<DescribeRecordLogsResponse.DescribeRecordLogs_RecordLog> describeRecordLogsResponse_recordLogs = new List<DescribeRecordLogsResponse.DescribeRecordLogs_RecordLog>();
-			for (int i = 0; i < context.Length("DescribeRecordLogs.RecordLogs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRecordLogs.RecordLogs.Length"); i++) {
 				DescribeRecordLogsResponse.DescribeRecordLogs_RecordLog recordLog = new DescribeRecordLogsResponse.DescribeRecordLogs_RecordLog();
-				recordLog.ActionTime = context.StringValue("DescribeRecordLogs.RecordLogs["+ i +"].ActionTime");
-				recordLog.ActionTimestamp = context.LongValue("DescribeRecordLogs.RecordLogs["+ i +"].ActionTimestamp");
-				recordLog.Action = context.StringValue("DescribeRecordLogs.RecordLogs["+ i +"].Action");
-				recordLog.Message = context.StringValue("DescribeRecordLogs.RecordLogs["+ i +"].Message");
-				recordLog.ClientIp = context.StringValue("DescribeRecordLogs.RecordLogs["+ i +"].ClientIp");
+				recordLog.ActionTime = _ctx.StringValue("DescribeRecordLogs.RecordLogs["+ i +"].ActionTime");
+				recordLog.ActionTimestamp = _ctx.LongValue("DescribeRecordLogs.RecordLogs["+ i +"].ActionTimestamp");
+				recordLog.Action = _ctx.StringValue("DescribeRecordLogs.RecordLogs["+ i +"].Action");
+				recordLog.Message = _ctx.StringValue("DescribeRecordLogs.RecordLogs["+ i +"].Message");
+				recordLog.ClientIp = _ctx.StringValue("DescribeRecordLogs.RecordLogs["+ i +"].ClientIp");
 
 				describeRecordLogsResponse_recordLogs.Add(recordLog);
 			}

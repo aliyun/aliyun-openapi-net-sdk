@@ -26,24 +26,24 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeDomainNsResponseUnmarshaller
     {
-        public static DescribeDomainNsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainNsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainNsResponse describeDomainNsResponse = new DescribeDomainNsResponse();
 
-			describeDomainNsResponse.HttpResponse = context.HttpResponse;
-			describeDomainNsResponse.RequestId = context.StringValue("DescribeDomainNs.RequestId");
-			describeDomainNsResponse.AllAliDns = context.BooleanValue("DescribeDomainNs.AllAliDns");
-			describeDomainNsResponse.IncludeAliDns = context.BooleanValue("DescribeDomainNs.IncludeAliDns");
+			describeDomainNsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainNsResponse.RequestId = _ctx.StringValue("DescribeDomainNs.RequestId");
+			describeDomainNsResponse.AllAliDns = _ctx.BooleanValue("DescribeDomainNs.AllAliDns");
+			describeDomainNsResponse.IncludeAliDns = _ctx.BooleanValue("DescribeDomainNs.IncludeAliDns");
 
 			List<string> describeDomainNsResponse_dnsServers = new List<string>();
-			for (int i = 0; i < context.Length("DescribeDomainNs.DnsServers.Length"); i++) {
-				describeDomainNsResponse_dnsServers.Add(context.StringValue("DescribeDomainNs.DnsServers["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeDomainNs.DnsServers.Length"); i++) {
+				describeDomainNsResponse_dnsServers.Add(_ctx.StringValue("DescribeDomainNs.DnsServers["+ i +"]"));
 			}
 			describeDomainNsResponse.DnsServers = describeDomainNsResponse_dnsServers;
 
 			List<string> describeDomainNsResponse_expectDnsServers = new List<string>();
-			for (int i = 0; i < context.Length("DescribeDomainNs.ExpectDnsServers.Length"); i++) {
-				describeDomainNsResponse_expectDnsServers.Add(context.StringValue("DescribeDomainNs.ExpectDnsServers["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeDomainNs.ExpectDnsServers.Length"); i++) {
+				describeDomainNsResponse_expectDnsServers.Add(_ctx.StringValue("DescribeDomainNs.ExpectDnsServers["+ i +"]"));
 			}
 			describeDomainNsResponse.ExpectDnsServers = describeDomainNsResponse_expectDnsServers;
         

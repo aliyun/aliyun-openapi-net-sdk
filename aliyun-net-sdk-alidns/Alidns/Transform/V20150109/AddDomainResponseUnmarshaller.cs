@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class AddDomainResponseUnmarshaller
     {
-        public static AddDomainResponse Unmarshall(UnmarshallerContext context)
+        public static AddDomainResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddDomainResponse addDomainResponse = new AddDomainResponse();
 
-			addDomainResponse.HttpResponse = context.HttpResponse;
-			addDomainResponse.RequestId = context.StringValue("AddDomain.RequestId");
-			addDomainResponse.DomainId = context.StringValue("AddDomain.DomainId");
-			addDomainResponse.DomainName = context.StringValue("AddDomain.DomainName");
-			addDomainResponse.PunyCode = context.StringValue("AddDomain.PunyCode");
-			addDomainResponse.GroupId = context.StringValue("AddDomain.GroupId");
-			addDomainResponse.GroupName = context.StringValue("AddDomain.GroupName");
+			addDomainResponse.HttpResponse = _ctx.HttpResponse;
+			addDomainResponse.RequestId = _ctx.StringValue("AddDomain.RequestId");
+			addDomainResponse.DomainId = _ctx.StringValue("AddDomain.DomainId");
+			addDomainResponse.DomainName = _ctx.StringValue("AddDomain.DomainName");
+			addDomainResponse.PunyCode = _ctx.StringValue("AddDomain.PunyCode");
+			addDomainResponse.GroupId = _ctx.StringValue("AddDomain.GroupId");
+			addDomainResponse.GroupName = _ctx.StringValue("AddDomain.GroupName");
 
 			List<string> addDomainResponse_dnsServers = new List<string>();
-			for (int i = 0; i < context.Length("AddDomain.DnsServers.Length"); i++) {
-				addDomainResponse_dnsServers.Add(context.StringValue("AddDomain.DnsServers["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("AddDomain.DnsServers.Length"); i++) {
+				addDomainResponse_dnsServers.Add(_ctx.StringValue("AddDomain.DnsServers["+ i +"]"));
 			}
 			addDomainResponse.DnsServers = addDomainResponse_dnsServers;
         

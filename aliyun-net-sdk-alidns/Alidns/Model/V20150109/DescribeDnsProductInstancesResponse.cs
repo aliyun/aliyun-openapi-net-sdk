@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private long? pageSize;
 
+		private string domainType;
+
 		private List<DescribeDnsProductInstances_DnsProduct> dnsProducts;
 
 		public string RequestId
@@ -80,6 +82,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string DomainType
+		{
+			get
+			{
+				return domainType;
+			}
+			set	
+			{
+				domainType = value;
 			}
 		}
 

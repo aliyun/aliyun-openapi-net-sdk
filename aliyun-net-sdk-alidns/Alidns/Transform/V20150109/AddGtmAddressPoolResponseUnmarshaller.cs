@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class AddGtmAddressPoolResponseUnmarshaller
     {
-        public static AddGtmAddressPoolResponse Unmarshall(UnmarshallerContext context)
+        public static AddGtmAddressPoolResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddGtmAddressPoolResponse addGtmAddressPoolResponse = new AddGtmAddressPoolResponse();
 
-			addGtmAddressPoolResponse.HttpResponse = context.HttpResponse;
-			addGtmAddressPoolResponse.RequestId = context.StringValue("AddGtmAddressPool.RequestId");
-			addGtmAddressPoolResponse.AddrPoolId = context.StringValue("AddGtmAddressPool.AddrPoolId");
-			addGtmAddressPoolResponse.MonitorConfigId = context.StringValue("AddGtmAddressPool.MonitorConfigId");
+			addGtmAddressPoolResponse.HttpResponse = _ctx.HttpResponse;
+			addGtmAddressPoolResponse.RequestId = _ctx.StringValue("AddGtmAddressPool.RequestId");
+			addGtmAddressPoolResponse.AddrPoolId = _ctx.StringValue("AddGtmAddressPool.AddrPoolId");
+			addGtmAddressPoolResponse.MonitorConfigId = _ctx.StringValue("AddGtmAddressPool.MonitorConfigId");
         
 			return addGtmAddressPoolResponse;
         }

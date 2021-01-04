@@ -26,51 +26,52 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeDnsProductInstancesResponseUnmarshaller
     {
-        public static DescribeDnsProductInstancesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDnsProductInstancesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDnsProductInstancesResponse describeDnsProductInstancesResponse = new DescribeDnsProductInstancesResponse();
 
-			describeDnsProductInstancesResponse.HttpResponse = context.HttpResponse;
-			describeDnsProductInstancesResponse.RequestId = context.StringValue("DescribeDnsProductInstances.RequestId");
-			describeDnsProductInstancesResponse.TotalCount = context.LongValue("DescribeDnsProductInstances.TotalCount");
-			describeDnsProductInstancesResponse.PageNumber = context.LongValue("DescribeDnsProductInstances.PageNumber");
-			describeDnsProductInstancesResponse.PageSize = context.LongValue("DescribeDnsProductInstances.PageSize");
+			describeDnsProductInstancesResponse.HttpResponse = _ctx.HttpResponse;
+			describeDnsProductInstancesResponse.RequestId = _ctx.StringValue("DescribeDnsProductInstances.RequestId");
+			describeDnsProductInstancesResponse.TotalCount = _ctx.LongValue("DescribeDnsProductInstances.TotalCount");
+			describeDnsProductInstancesResponse.PageNumber = _ctx.LongValue("DescribeDnsProductInstances.PageNumber");
+			describeDnsProductInstancesResponse.PageSize = _ctx.LongValue("DescribeDnsProductInstances.PageSize");
+			describeDnsProductInstancesResponse.DomainType = _ctx.StringValue("DescribeDnsProductInstances.DomainType");
 
 			List<DescribeDnsProductInstancesResponse.DescribeDnsProductInstances_DnsProduct> describeDnsProductInstancesResponse_dnsProducts = new List<DescribeDnsProductInstancesResponse.DescribeDnsProductInstances_DnsProduct>();
-			for (int i = 0; i < context.Length("DescribeDnsProductInstances.DnsProducts.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDnsProductInstances.DnsProducts.Length"); i++) {
 				DescribeDnsProductInstancesResponse.DescribeDnsProductInstances_DnsProduct dnsProduct = new DescribeDnsProductInstancesResponse.DescribeDnsProductInstances_DnsProduct();
-				dnsProduct.InstanceId = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].InstanceId");
-				dnsProduct.VersionCode = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].VersionCode");
-				dnsProduct.VersionName = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].VersionName");
-				dnsProduct.StartTime = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].StartTime");
-				dnsProduct.EndTime = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].EndTime");
-				dnsProduct.StartTimestamp = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].StartTimestamp");
-				dnsProduct.EndTimestamp = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].EndTimestamp");
-				dnsProduct.Domain = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].Domain");
-				dnsProduct.BindCount = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].BindCount");
-				dnsProduct.BindUsedCount = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].BindUsedCount");
-				dnsProduct.TTLMinValue = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].TTLMinValue");
-				dnsProduct.SubDomainLevel = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].SubDomainLevel");
-				dnsProduct.DnsSLBCount = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].DnsSLBCount");
-				dnsProduct.URLForwardCount = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].URLForwardCount");
-				dnsProduct.DDosDefendFlow = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].DDosDefendFlow");
-				dnsProduct.DDosDefendQuery = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].DDosDefendQuery");
-				dnsProduct.OverseaDDosDefendFlow = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].OverseaDDosDefendFlow");
-				dnsProduct.SearchEngineLines = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].SearchEngineLines");
-				dnsProduct.ISPLines = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].ISPLines");
-				dnsProduct.ISPRegionLines = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].ISPRegionLines");
-				dnsProduct.OverseaLine = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].OverseaLine");
-				dnsProduct.MonitorNodeCount = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].MonitorNodeCount");
-				dnsProduct.MonitorFrequency = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].MonitorFrequency");
-				dnsProduct.MonitorTaskCount = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].MonitorTaskCount");
-				dnsProduct.RegionLines = context.BooleanValue("DescribeDnsProductInstances.DnsProducts["+ i +"].RegionLines");
-				dnsProduct.Gslb = context.BooleanValue("DescribeDnsProductInstances.DnsProducts["+ i +"].Gslb");
-				dnsProduct.InClean = context.BooleanValue("DescribeDnsProductInstances.DnsProducts["+ i +"].InClean");
-				dnsProduct.InBlackHole = context.BooleanValue("DescribeDnsProductInstances.DnsProducts["+ i +"].InBlackHole");
-				dnsProduct.BindDomainCount = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].BindDomainCount");
-				dnsProduct.BindDomainUsedCount = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].BindDomainUsedCount");
-				dnsProduct.DnsSecurity = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].DnsSecurity");
-				dnsProduct.PaymentType = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].PaymentType");
+				dnsProduct.InstanceId = _ctx.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].InstanceId");
+				dnsProduct.VersionCode = _ctx.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].VersionCode");
+				dnsProduct.VersionName = _ctx.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].VersionName");
+				dnsProduct.StartTime = _ctx.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].StartTime");
+				dnsProduct.EndTime = _ctx.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].EndTime");
+				dnsProduct.StartTimestamp = _ctx.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].StartTimestamp");
+				dnsProduct.EndTimestamp = _ctx.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].EndTimestamp");
+				dnsProduct.Domain = _ctx.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].Domain");
+				dnsProduct.BindCount = _ctx.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].BindCount");
+				dnsProduct.BindUsedCount = _ctx.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].BindUsedCount");
+				dnsProduct.TTLMinValue = _ctx.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].TTLMinValue");
+				dnsProduct.SubDomainLevel = _ctx.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].SubDomainLevel");
+				dnsProduct.DnsSLBCount = _ctx.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].DnsSLBCount");
+				dnsProduct.URLForwardCount = _ctx.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].URLForwardCount");
+				dnsProduct.DDosDefendFlow = _ctx.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].DDosDefendFlow");
+				dnsProduct.DDosDefendQuery = _ctx.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].DDosDefendQuery");
+				dnsProduct.OverseaDDosDefendFlow = _ctx.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].OverseaDDosDefendFlow");
+				dnsProduct.SearchEngineLines = _ctx.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].SearchEngineLines");
+				dnsProduct.ISPLines = _ctx.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].ISPLines");
+				dnsProduct.ISPRegionLines = _ctx.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].ISPRegionLines");
+				dnsProduct.OverseaLine = _ctx.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].OverseaLine");
+				dnsProduct.MonitorNodeCount = _ctx.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].MonitorNodeCount");
+				dnsProduct.MonitorFrequency = _ctx.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].MonitorFrequency");
+				dnsProduct.MonitorTaskCount = _ctx.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].MonitorTaskCount");
+				dnsProduct.RegionLines = _ctx.BooleanValue("DescribeDnsProductInstances.DnsProducts["+ i +"].RegionLines");
+				dnsProduct.Gslb = _ctx.BooleanValue("DescribeDnsProductInstances.DnsProducts["+ i +"].Gslb");
+				dnsProduct.InClean = _ctx.BooleanValue("DescribeDnsProductInstances.DnsProducts["+ i +"].InClean");
+				dnsProduct.InBlackHole = _ctx.BooleanValue("DescribeDnsProductInstances.DnsProducts["+ i +"].InBlackHole");
+				dnsProduct.BindDomainCount = _ctx.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].BindDomainCount");
+				dnsProduct.BindDomainUsedCount = _ctx.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].BindDomainUsedCount");
+				dnsProduct.DnsSecurity = _ctx.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].DnsSecurity");
+				dnsProduct.PaymentType = _ctx.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].PaymentType");
 
 				describeDnsProductInstancesResponse_dnsProducts.Add(dnsProduct);
 			}

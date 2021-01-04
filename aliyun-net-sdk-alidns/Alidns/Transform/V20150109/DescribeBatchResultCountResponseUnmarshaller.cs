@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeBatchResultCountResponseUnmarshaller
     {
-        public static DescribeBatchResultCountResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeBatchResultCountResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeBatchResultCountResponse describeBatchResultCountResponse = new DescribeBatchResultCountResponse();
 
-			describeBatchResultCountResponse.HttpResponse = context.HttpResponse;
-			describeBatchResultCountResponse.RequestId = context.StringValue("DescribeBatchResultCount.RequestId");
-			describeBatchResultCountResponse.Status = context.IntegerValue("DescribeBatchResultCount.Status");
-			describeBatchResultCountResponse.TotalCount = context.IntegerValue("DescribeBatchResultCount.TotalCount");
-			describeBatchResultCountResponse.SuccessCount = context.IntegerValue("DescribeBatchResultCount.SuccessCount");
-			describeBatchResultCountResponse.FailedCount = context.IntegerValue("DescribeBatchResultCount.FailedCount");
-			describeBatchResultCountResponse.Reason = context.StringValue("DescribeBatchResultCount.Reason");
-			describeBatchResultCountResponse.BatchType = context.StringValue("DescribeBatchResultCount.BatchType");
-			describeBatchResultCountResponse.TaskId = context.LongValue("DescribeBatchResultCount.TaskId");
+			describeBatchResultCountResponse.HttpResponse = _ctx.HttpResponse;
+			describeBatchResultCountResponse.RequestId = _ctx.StringValue("DescribeBatchResultCount.RequestId");
+			describeBatchResultCountResponse.Status = _ctx.IntegerValue("DescribeBatchResultCount.Status");
+			describeBatchResultCountResponse.TotalCount = _ctx.IntegerValue("DescribeBatchResultCount.TotalCount");
+			describeBatchResultCountResponse.SuccessCount = _ctx.IntegerValue("DescribeBatchResultCount.SuccessCount");
+			describeBatchResultCountResponse.FailedCount = _ctx.IntegerValue("DescribeBatchResultCount.FailedCount");
+			describeBatchResultCountResponse.Reason = _ctx.StringValue("DescribeBatchResultCount.Reason");
+			describeBatchResultCountResponse.BatchType = _ctx.StringValue("DescribeBatchResultCount.BatchType");
+			describeBatchResultCountResponse.TaskId = _ctx.LongValue("DescribeBatchResultCount.TaskId");
         
 			return describeBatchResultCountResponse;
         }

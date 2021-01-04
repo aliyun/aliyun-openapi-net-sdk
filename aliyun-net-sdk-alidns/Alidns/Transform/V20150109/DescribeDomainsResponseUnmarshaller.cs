@@ -26,49 +26,49 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeDomainsResponseUnmarshaller
     {
-        public static DescribeDomainsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainsResponse describeDomainsResponse = new DescribeDomainsResponse();
 
-			describeDomainsResponse.HttpResponse = context.HttpResponse;
-			describeDomainsResponse.RequestId = context.StringValue("DescribeDomains.RequestId");
-			describeDomainsResponse.TotalCount = context.LongValue("DescribeDomains.TotalCount");
-			describeDomainsResponse.PageNumber = context.LongValue("DescribeDomains.PageNumber");
-			describeDomainsResponse.PageSize = context.LongValue("DescribeDomains.PageSize");
+			describeDomainsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainsResponse.RequestId = _ctx.StringValue("DescribeDomains.RequestId");
+			describeDomainsResponse.TotalCount = _ctx.LongValue("DescribeDomains.TotalCount");
+			describeDomainsResponse.PageNumber = _ctx.LongValue("DescribeDomains.PageNumber");
+			describeDomainsResponse.PageSize = _ctx.LongValue("DescribeDomains.PageSize");
 
 			List<DescribeDomainsResponse.DescribeDomains_Domain> describeDomainsResponse_domains = new List<DescribeDomainsResponse.DescribeDomains_Domain>();
-			for (int i = 0; i < context.Length("DescribeDomains.Domains.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomains.Domains.Length"); i++) {
 				DescribeDomainsResponse.DescribeDomains_Domain domain = new DescribeDomainsResponse.DescribeDomains_Domain();
-				domain.DomainId = context.StringValue("DescribeDomains.Domains["+ i +"].DomainId");
-				domain.DomainName = context.StringValue("DescribeDomains.Domains["+ i +"].DomainName");
-				domain.PunyCode = context.StringValue("DescribeDomains.Domains["+ i +"].PunyCode");
-				domain.AliDomain = context.BooleanValue("DescribeDomains.Domains["+ i +"].AliDomain");
-				domain.RecordCount = context.LongValue("DescribeDomains.Domains["+ i +"].RecordCount");
-				domain.RegistrantEmail = context.StringValue("DescribeDomains.Domains["+ i +"].RegistrantEmail");
-				domain.Remark = context.StringValue("DescribeDomains.Domains["+ i +"].Remark");
-				domain.GroupId = context.StringValue("DescribeDomains.Domains["+ i +"].GroupId");
-				domain.GroupName = context.StringValue("DescribeDomains.Domains["+ i +"].GroupName");
-				domain.InstanceId = context.StringValue("DescribeDomains.Domains["+ i +"].InstanceId");
-				domain.VersionCode = context.StringValue("DescribeDomains.Domains["+ i +"].VersionCode");
-				domain.VersionName = context.StringValue("DescribeDomains.Domains["+ i +"].VersionName");
-				domain.InstanceEndTime = context.StringValue("DescribeDomains.Domains["+ i +"].InstanceEndTime");
-				domain.InstanceExpired = context.BooleanValue("DescribeDomains.Domains["+ i +"].InstanceExpired");
-				domain.Starmark = context.BooleanValue("DescribeDomains.Domains["+ i +"].Starmark");
-				domain.CreateTime = context.StringValue("DescribeDomains.Domains["+ i +"].CreateTime");
-				domain.CreateTimestamp = context.LongValue("DescribeDomains.Domains["+ i +"].CreateTimestamp");
-				domain.ResourceGroupId = context.StringValue("DescribeDomains.Domains["+ i +"].ResourceGroupId");
+				domain.DomainId = _ctx.StringValue("DescribeDomains.Domains["+ i +"].DomainId");
+				domain.DomainName = _ctx.StringValue("DescribeDomains.Domains["+ i +"].DomainName");
+				domain.PunyCode = _ctx.StringValue("DescribeDomains.Domains["+ i +"].PunyCode");
+				domain.AliDomain = _ctx.BooleanValue("DescribeDomains.Domains["+ i +"].AliDomain");
+				domain.RecordCount = _ctx.LongValue("DescribeDomains.Domains["+ i +"].RecordCount");
+				domain.RegistrantEmail = _ctx.StringValue("DescribeDomains.Domains["+ i +"].RegistrantEmail");
+				domain.Remark = _ctx.StringValue("DescribeDomains.Domains["+ i +"].Remark");
+				domain.GroupId = _ctx.StringValue("DescribeDomains.Domains["+ i +"].GroupId");
+				domain.GroupName = _ctx.StringValue("DescribeDomains.Domains["+ i +"].GroupName");
+				domain.InstanceId = _ctx.StringValue("DescribeDomains.Domains["+ i +"].InstanceId");
+				domain.VersionCode = _ctx.StringValue("DescribeDomains.Domains["+ i +"].VersionCode");
+				domain.VersionName = _ctx.StringValue("DescribeDomains.Domains["+ i +"].VersionName");
+				domain.InstanceEndTime = _ctx.StringValue("DescribeDomains.Domains["+ i +"].InstanceEndTime");
+				domain.InstanceExpired = _ctx.BooleanValue("DescribeDomains.Domains["+ i +"].InstanceExpired");
+				domain.Starmark = _ctx.BooleanValue("DescribeDomains.Domains["+ i +"].Starmark");
+				domain.CreateTime = _ctx.StringValue("DescribeDomains.Domains["+ i +"].CreateTime");
+				domain.CreateTimestamp = _ctx.LongValue("DescribeDomains.Domains["+ i +"].CreateTimestamp");
+				domain.ResourceGroupId = _ctx.StringValue("DescribeDomains.Domains["+ i +"].ResourceGroupId");
 
 				List<string> domain_dnsServers = new List<string>();
-				for (int j = 0; j < context.Length("DescribeDomains.Domains["+ i +"].DnsServers.Length"); j++) {
-					domain_dnsServers.Add(context.StringValue("DescribeDomains.Domains["+ i +"].DnsServers["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeDomains.Domains["+ i +"].DnsServers.Length"); j++) {
+					domain_dnsServers.Add(_ctx.StringValue("DescribeDomains.Domains["+ i +"].DnsServers["+ j +"]"));
 				}
 				domain.DnsServers = domain_dnsServers;
 
 				List<DescribeDomainsResponse.DescribeDomains_Domain.DescribeDomains_Tag> domain_tags = new List<DescribeDomainsResponse.DescribeDomains_Domain.DescribeDomains_Tag>();
-				for (int j = 0; j < context.Length("DescribeDomains.Domains["+ i +"].Tags.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeDomains.Domains["+ i +"].Tags.Length"); j++) {
 					DescribeDomainsResponse.DescribeDomains_Domain.DescribeDomains_Tag tag = new DescribeDomainsResponse.DescribeDomains_Domain.DescribeDomains_Tag();
-					tag.Key = context.StringValue("DescribeDomains.Domains["+ i +"].Tags["+ j +"].Key");
-					tag._Value = context.StringValue("DescribeDomains.Domains["+ i +"].Tags["+ j +"].Value");
+					tag.Key = _ctx.StringValue("DescribeDomains.Domains["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("DescribeDomains.Domains["+ i +"].Tags["+ j +"].Value");
 
 					domain_tags.Add(tag);
 				}

@@ -26,37 +26,37 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
     public class DescribeGtmInstanceAddressPoolResponseUnmarshaller
     {
-        public static DescribeGtmInstanceAddressPoolResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGtmInstanceAddressPoolResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGtmInstanceAddressPoolResponse describeGtmInstanceAddressPoolResponse = new DescribeGtmInstanceAddressPoolResponse();
 
-			describeGtmInstanceAddressPoolResponse.HttpResponse = context.HttpResponse;
-			describeGtmInstanceAddressPoolResponse.RequestId = context.StringValue("DescribeGtmInstanceAddressPool.RequestId");
-			describeGtmInstanceAddressPoolResponse.AddrPoolId = context.StringValue("DescribeGtmInstanceAddressPool.AddrPoolId");
-			describeGtmInstanceAddressPoolResponse.CreateTime = context.StringValue("DescribeGtmInstanceAddressPool.CreateTime");
-			describeGtmInstanceAddressPoolResponse.CreateTimestamp = context.LongValue("DescribeGtmInstanceAddressPool.CreateTimestamp");
-			describeGtmInstanceAddressPoolResponse.UpdateTime = context.StringValue("DescribeGtmInstanceAddressPool.UpdateTime");
-			describeGtmInstanceAddressPoolResponse.UpdateTimestamp = context.LongValue("DescribeGtmInstanceAddressPool.UpdateTimestamp");
-			describeGtmInstanceAddressPoolResponse.AddrCount = context.IntegerValue("DescribeGtmInstanceAddressPool.AddrCount");
-			describeGtmInstanceAddressPoolResponse.MinAvailableAddrNum = context.IntegerValue("DescribeGtmInstanceAddressPool.MinAvailableAddrNum");
-			describeGtmInstanceAddressPoolResponse.MonitorConfigId = context.StringValue("DescribeGtmInstanceAddressPool.MonitorConfigId");
-			describeGtmInstanceAddressPoolResponse.MonitorStatus = context.StringValue("DescribeGtmInstanceAddressPool.MonitorStatus");
-			describeGtmInstanceAddressPoolResponse.Name = context.StringValue("DescribeGtmInstanceAddressPool.Name");
-			describeGtmInstanceAddressPoolResponse.Status = context.StringValue("DescribeGtmInstanceAddressPool.Status");
-			describeGtmInstanceAddressPoolResponse.Type = context.StringValue("DescribeGtmInstanceAddressPool.Type");
+			describeGtmInstanceAddressPoolResponse.HttpResponse = _ctx.HttpResponse;
+			describeGtmInstanceAddressPoolResponse.RequestId = _ctx.StringValue("DescribeGtmInstanceAddressPool.RequestId");
+			describeGtmInstanceAddressPoolResponse.AddrPoolId = _ctx.StringValue("DescribeGtmInstanceAddressPool.AddrPoolId");
+			describeGtmInstanceAddressPoolResponse.CreateTime = _ctx.StringValue("DescribeGtmInstanceAddressPool.CreateTime");
+			describeGtmInstanceAddressPoolResponse.CreateTimestamp = _ctx.LongValue("DescribeGtmInstanceAddressPool.CreateTimestamp");
+			describeGtmInstanceAddressPoolResponse.UpdateTime = _ctx.StringValue("DescribeGtmInstanceAddressPool.UpdateTime");
+			describeGtmInstanceAddressPoolResponse.UpdateTimestamp = _ctx.LongValue("DescribeGtmInstanceAddressPool.UpdateTimestamp");
+			describeGtmInstanceAddressPoolResponse.AddrCount = _ctx.IntegerValue("DescribeGtmInstanceAddressPool.AddrCount");
+			describeGtmInstanceAddressPoolResponse.MinAvailableAddrNum = _ctx.IntegerValue("DescribeGtmInstanceAddressPool.MinAvailableAddrNum");
+			describeGtmInstanceAddressPoolResponse.MonitorConfigId = _ctx.StringValue("DescribeGtmInstanceAddressPool.MonitorConfigId");
+			describeGtmInstanceAddressPoolResponse.MonitorStatus = _ctx.StringValue("DescribeGtmInstanceAddressPool.MonitorStatus");
+			describeGtmInstanceAddressPoolResponse.Name = _ctx.StringValue("DescribeGtmInstanceAddressPool.Name");
+			describeGtmInstanceAddressPoolResponse.Status = _ctx.StringValue("DescribeGtmInstanceAddressPool.Status");
+			describeGtmInstanceAddressPoolResponse.Type = _ctx.StringValue("DescribeGtmInstanceAddressPool.Type");
 
 			List<DescribeGtmInstanceAddressPoolResponse.DescribeGtmInstanceAddressPool_Addr> describeGtmInstanceAddressPoolResponse_addrs = new List<DescribeGtmInstanceAddressPoolResponse.DescribeGtmInstanceAddressPool_Addr>();
-			for (int i = 0; i < context.Length("DescribeGtmInstanceAddressPool.Addrs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeGtmInstanceAddressPool.Addrs.Length"); i++) {
 				DescribeGtmInstanceAddressPoolResponse.DescribeGtmInstanceAddressPool_Addr addr = new DescribeGtmInstanceAddressPoolResponse.DescribeGtmInstanceAddressPool_Addr();
-				addr.AddrId = context.LongValue("DescribeGtmInstanceAddressPool.Addrs["+ i +"].AddrId");
-				addr.CreateTime = context.StringValue("DescribeGtmInstanceAddressPool.Addrs["+ i +"].CreateTime");
-				addr.CreateTimestamp = context.LongValue("DescribeGtmInstanceAddressPool.Addrs["+ i +"].CreateTimestamp");
-				addr.UpdateTime = context.StringValue("DescribeGtmInstanceAddressPool.Addrs["+ i +"].UpdateTime");
-				addr.UpdateTimestamp = context.LongValue("DescribeGtmInstanceAddressPool.Addrs["+ i +"].UpdateTimestamp");
-				addr._Value = context.StringValue("DescribeGtmInstanceAddressPool.Addrs["+ i +"].Value");
-				addr.LbaWeight = context.IntegerValue("DescribeGtmInstanceAddressPool.Addrs["+ i +"].LbaWeight");
-				addr.Mode = context.StringValue("DescribeGtmInstanceAddressPool.Addrs["+ i +"].Mode");
-				addr.AlertStatus = context.StringValue("DescribeGtmInstanceAddressPool.Addrs["+ i +"].AlertStatus");
+				addr.AddrId = _ctx.LongValue("DescribeGtmInstanceAddressPool.Addrs["+ i +"].AddrId");
+				addr.CreateTime = _ctx.StringValue("DescribeGtmInstanceAddressPool.Addrs["+ i +"].CreateTime");
+				addr.CreateTimestamp = _ctx.LongValue("DescribeGtmInstanceAddressPool.Addrs["+ i +"].CreateTimestamp");
+				addr.UpdateTime = _ctx.StringValue("DescribeGtmInstanceAddressPool.Addrs["+ i +"].UpdateTime");
+				addr.UpdateTimestamp = _ctx.LongValue("DescribeGtmInstanceAddressPool.Addrs["+ i +"].UpdateTimestamp");
+				addr._Value = _ctx.StringValue("DescribeGtmInstanceAddressPool.Addrs["+ i +"].Value");
+				addr.LbaWeight = _ctx.IntegerValue("DescribeGtmInstanceAddressPool.Addrs["+ i +"].LbaWeight");
+				addr.Mode = _ctx.StringValue("DescribeGtmInstanceAddressPool.Addrs["+ i +"].Mode");
+				addr.AlertStatus = _ctx.StringValue("DescribeGtmInstanceAddressPool.Addrs["+ i +"].AlertStatus");
 
 				describeGtmInstanceAddressPoolResponse_addrs.Add(addr);
 			}
