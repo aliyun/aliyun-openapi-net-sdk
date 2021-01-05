@@ -1,3 +1,6 @@
+2021-01-05 Version: 1.23.0
+- Remove legacy APIs.
+
 2021-01-05 Version: 2.11.0
 - Add DescribeBackupTasks API.
 
