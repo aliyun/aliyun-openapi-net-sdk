@@ -27,7 +27,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string requestId;
 
-		private string orderId;
+		private long? orderId;
 
 		public string RequestId
 		{
@@ -41,7 +41,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string OrderId
+		public long? OrderId
 		{
 			get
 			{

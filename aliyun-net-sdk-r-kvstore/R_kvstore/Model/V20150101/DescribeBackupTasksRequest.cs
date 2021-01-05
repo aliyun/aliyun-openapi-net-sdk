@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class CreateDedicatedUserClusterRequest : RpcAcsRequest<CreateDedicatedUserClusterResponse>
+    public class DescribeBackupTasksRequest : RpcAcsRequest<DescribeBackupTasksResponse>
     {
-        public CreateDedicatedUserClusterRequest()
-            : base("R-kvstore", "2015-01-01", "CreateDedicatedUserCluster", "redisa", "openAPI")
+        public DescribeBackupTasksRequest()
+            : base("R-kvstore", "2015-01-01", "DescribeBackupTasks", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,31 +40,34 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			Method = MethodType.POST;
         }
 
+		private string backupJobId;
+
 		private long? resourceOwnerId;
 
-		private string clusterName;
-
 		private string securityToken;
-
-		private int? diskOverAllocationRatio;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string clusterId;
-
-		private int? memoryOverAllocationRatio;
-
 		private long? ownerId;
 
-		private string hostReplacePolicy;
+		private string instanceId;
 
-		private string allocationPolicy;
+		private string jobMode;
 
-		private string zoneId;
-
-		private int? cpuOverAllocationRatio;
+		public string BackupJobId
+		{
+			get
+			{
+				return backupJobId;
+			}
+			set	
+			{
+				backupJobId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupJobId", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -79,19 +82,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string ClusterName
-		{
-			get
-			{
-				return clusterName;
-			}
-			set	
-			{
-				clusterName = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterName", value);
-			}
-		}
-
 		public string SecurityToken
 		{
 			get
@@ -102,19 +92,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public int? DiskOverAllocationRatio
-		{
-			get
-			{
-				return diskOverAllocationRatio;
-			}
-			set	
-			{
-				diskOverAllocationRatio = value;
-				DictionaryUtil.Add(QueryParameters, "DiskOverAllocationRatio", value.ToString());
 			}
 		}
 
@@ -144,32 +121,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
-		public int? MemoryOverAllocationRatio
-		{
-			get
-			{
-				return memoryOverAllocationRatio;
-			}
-			set	
-			{
-				memoryOverAllocationRatio = value;
-				DictionaryUtil.Add(QueryParameters, "MemoryOverAllocationRatio", value.ToString());
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -183,55 +134,29 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string HostReplacePolicy
+		public string InstanceId
 		{
 			get
 			{
-				return hostReplacePolicy;
+				return instanceId;
 			}
 			set	
 			{
-				hostReplacePolicy = value;
-				DictionaryUtil.Add(QueryParameters, "HostReplacePolicy", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-		public string AllocationPolicy
+		public string JobMode
 		{
 			get
 			{
-				return allocationPolicy;
+				return jobMode;
 			}
 			set	
 			{
-				allocationPolicy = value;
-				DictionaryUtil.Add(QueryParameters, "AllocationPolicy", value);
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public int? CpuOverAllocationRatio
-		{
-			get
-			{
-				return cpuOverAllocationRatio;
-			}
-			set	
-			{
-				cpuOverAllocationRatio = value;
-				DictionaryUtil.Add(QueryParameters, "CpuOverAllocationRatio", value.ToString());
+				jobMode = value;
+				DictionaryUtil.Add(QueryParameters, "JobMode", value);
 			}
 		}
 
@@ -240,9 +165,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			return false;
 		}
 
-        public override CreateDedicatedUserClusterResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeBackupTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateDedicatedUserClusterResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeBackupTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
