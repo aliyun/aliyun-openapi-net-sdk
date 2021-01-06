@@ -29,6 +29,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string autoProvisioningGroupId;
 
+		private List<CreateAutoProvisioningGroup_LaunchResult> launchResults;
+
 		public string RequestId
 		{
 			get
@@ -50,6 +52,106 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				autoProvisioningGroupId = value;
+			}
+		}
+
+		public List<CreateAutoProvisioningGroup_LaunchResult> LaunchResults
+		{
+			get
+			{
+				return launchResults;
+			}
+			set	
+			{
+				launchResults = value;
+			}
+		}
+
+		public class CreateAutoProvisioningGroup_LaunchResult
+		{
+
+			private string spotStrategy;
+
+			private string instanceType;
+
+			private string zoneId;
+
+			private string errorCode;
+
+			private string errorMsg;
+
+			private List<string> instanceIds;
+
+			public string SpotStrategy
+			{
+				get
+				{
+					return spotStrategy;
+				}
+				set	
+				{
+					spotStrategy = value;
+				}
+			}
+
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string ErrorCode
+			{
+				get
+				{
+					return errorCode;
+				}
+				set	
+				{
+					errorCode = value;
+				}
+			}
+
+			public string ErrorMsg
+			{
+				get
+				{
+					return errorMsg;
+				}
+				set	
+				{
+					errorMsg = value;
+				}
+			}
+
+			public List<string> InstanceIds
+			{
+				get
+				{
+					return instanceIds;
+				}
+				set	
+				{
+					instanceIds = value;
+				}
 			}
 		}
 	}

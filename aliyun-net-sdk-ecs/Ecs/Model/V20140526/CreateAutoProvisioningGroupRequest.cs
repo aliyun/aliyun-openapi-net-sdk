@@ -82,6 +82,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? launchConfigurationPasswordInherit;
 
+		private string clientToken;
+
 		private string launchConfigurationSecurityGroupId;
 
 		private string description;
@@ -431,6 +433,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				launchConfigurationPasswordInherit = value;
 				DictionaryUtil.Add(QueryParameters, "LaunchConfiguration.PasswordInherit", value.ToString());
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
