@@ -42,6 +42,8 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 
 		private string dataFormat;
 
+		private float? threshold;
+
 		private List<URLList> uRLLists = new List<URLList>(){ };
 
 		private string orgId;
@@ -58,6 +60,19 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			{
 				dataFormat = value;
 				DictionaryUtil.Add(BodyParameters, "DataFormat", value);
+			}
+		}
+
+		public float? Threshold
+		{
+			get
+			{
+				return threshold;
+			}
+			set	
+			{
+				threshold = value;
+				DictionaryUtil.Add(BodyParameters, "Threshold", value.ToString());
 			}
 		}
 

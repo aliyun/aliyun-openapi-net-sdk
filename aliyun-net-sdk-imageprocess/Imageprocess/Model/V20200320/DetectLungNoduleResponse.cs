@@ -73,27 +73,15 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			public class DetectLungNodule_Serie
 			{
 
-				private string seriesInstanceUid;
-
 				private string report;
+
+				private string seriesInstanceUid;
 
 				private List<DetectLungNodule_Element> elements;
 
 				private List<string> origin;
 
 				private List<string> spacing;
-
-				public string SeriesInstanceUid
-				{
-					get
-					{
-						return seriesInstanceUid;
-					}
-					set	
-					{
-						seriesInstanceUid = value;
-					}
-				}
 
 				public string Report
 				{
@@ -104,6 +92,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 					set	
 					{
 						report = value;
+					}
+				}
+
+				public string SeriesInstanceUid
+				{
+					get
+					{
+						return seriesInstanceUid;
+					}
+					set	
+					{
+						seriesInstanceUid = value;
 					}
 				}
 
@@ -146,139 +146,43 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 				public class DetectLungNodule_Element
 				{
 
-					private string category;
-
-					private float? confidence;
-
-					private float? diameter;
-
-					private string lobe;
-
-					private string lung;
-
-					private float? x;
-
-					private float? z;
-
-					private float? y;
-
-					private float? imageX;
+					private float? imageZ;
 
 					private float? imageY;
 
-					private float? imageZ;
+					private float? imageX;
 
-					private string sOPInstanceUID;
+					private string lobe;
 
-					private float? volume;
+					private string category;
+
+					private string lung;
 
 					private float? meanValue;
 
-					public string Category
-					{
-						get
-						{
-							return category;
-						}
-						set	
-						{
-							category = value;
-						}
-					}
+					private float? volume;
 
-					public float? Confidence
-					{
-						get
-						{
-							return confidence;
-						}
-						set	
-						{
-							confidence = value;
-						}
-					}
+					private float? confidence;
 
-					public float? Diameter
-					{
-						get
-						{
-							return diameter;
-						}
-						set	
-						{
-							diameter = value;
-						}
-					}
+					private float? x;
 
-					public string Lobe
-					{
-						get
-						{
-							return lobe;
-						}
-						set	
-						{
-							lobe = value;
-						}
-					}
+					private float? y;
 
-					public string Lung
-					{
-						get
-						{
-							return lung;
-						}
-						set	
-						{
-							lung = value;
-						}
-					}
+					private float? z;
 
-					public float? X
-					{
-						get
-						{
-							return x;
-						}
-						set	
-						{
-							x = value;
-						}
-					}
+					private string sOPInstanceUID;
 
-					public float? Z
-					{
-						get
-						{
-							return z;
-						}
-						set	
-						{
-							z = value;
-						}
-					}
+					private float? diameter;
 
-					public float? Y
+					public float? ImageZ
 					{
 						get
 						{
-							return y;
+							return imageZ;
 						}
 						set	
 						{
-							y = value;
-						}
-					}
-
-					public float? ImageX
-					{
-						get
-						{
-							return imageX;
-						}
-						set	
-						{
-							imageX = value;
+							imageZ = value;
 						}
 					}
 
@@ -294,27 +198,63 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 						}
 					}
 
-					public float? ImageZ
+					public float? ImageX
 					{
 						get
 						{
-							return imageZ;
+							return imageX;
 						}
 						set	
 						{
-							imageZ = value;
+							imageX = value;
 						}
 					}
 
-					public string SOPInstanceUID
+					public string Lobe
 					{
 						get
 						{
-							return sOPInstanceUID;
+							return lobe;
 						}
 						set	
 						{
-							sOPInstanceUID = value;
+							lobe = value;
+						}
+					}
+
+					public string Category
+					{
+						get
+						{
+							return category;
+						}
+						set	
+						{
+							category = value;
+						}
+					}
+
+					public string Lung
+					{
+						get
+						{
+							return lung;
+						}
+						set	
+						{
+							lung = value;
+						}
+					}
+
+					public float? MeanValue
+					{
+						get
+						{
+							return meanValue;
+						}
+						set	
+						{
+							meanValue = value;
 						}
 					}
 
@@ -330,15 +270,75 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 						}
 					}
 
-					public float? MeanValue
+					public float? Confidence
 					{
 						get
 						{
-							return meanValue;
+							return confidence;
 						}
 						set	
 						{
-							meanValue = value;
+							confidence = value;
+						}
+					}
+
+					public float? X
+					{
+						get
+						{
+							return x;
+						}
+						set	
+						{
+							x = value;
+						}
+					}
+
+					public float? Y
+					{
+						get
+						{
+							return y;
+						}
+						set	
+						{
+							y = value;
+						}
+					}
+
+					public float? Z
+					{
+						get
+						{
+							return z;
+						}
+						set	
+						{
+							z = value;
+						}
+					}
+
+					public string SOPInstanceUID
+					{
+						get
+						{
+							return sOPInstanceUID;
+						}
+						set	
+						{
+							sOPInstanceUID = value;
+						}
+					}
+
+					public float? Diameter
+					{
+						get
+						{
+							return diameter;
+						}
+						set	
+						{
+							diameter = value;
 						}
 					}
 				}
