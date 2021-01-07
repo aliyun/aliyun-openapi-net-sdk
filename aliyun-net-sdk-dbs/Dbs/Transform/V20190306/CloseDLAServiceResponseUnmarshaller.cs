@@ -24,22 +24,20 @@ using Aliyun.Acs.Dbs.Model.V20190306;
 
 namespace Aliyun.Acs.Dbs.Transform.V20190306
 {
-    public class StartTaskResponseUnmarshaller
+    public class CloseDLAServiceResponseUnmarshaller
     {
-        public static StartTaskResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CloseDLAServiceResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			StartTaskResponse startTaskResponse = new StartTaskResponse();
+			CloseDLAServiceResponse closeDLAServiceResponse = new CloseDLAServiceResponse();
 
-			startTaskResponse.HttpResponse = _ctx.HttpResponse;
-			startTaskResponse.Success = _ctx.BooleanValue("StartTask.Success");
-			startTaskResponse.ErrCode = _ctx.StringValue("StartTask.ErrCode");
-			startTaskResponse.ErrMessage = _ctx.StringValue("StartTask.ErrMessage");
-			startTaskResponse.HttpStatusCode = _ctx.IntegerValue("StartTask.HttpStatusCode");
-			startTaskResponse.RequestId = _ctx.StringValue("StartTask.RequestId");
-			startTaskResponse.TaskId = _ctx.StringValue("StartTask.TaskId");
-			startTaskResponse.JobTypeName = _ctx.StringValue("StartTask.JobTypeName");
+			closeDLAServiceResponse.HttpResponse = _ctx.HttpResponse;
+			closeDLAServiceResponse.Success = _ctx.BooleanValue("CloseDLAService.Success");
+			closeDLAServiceResponse.ErrCode = _ctx.StringValue("CloseDLAService.ErrCode");
+			closeDLAServiceResponse.ErrMessage = _ctx.StringValue("CloseDLAService.ErrMessage");
+			closeDLAServiceResponse.HttpStatusCode = _ctx.IntegerValue("CloseDLAService.HttpStatusCode");
+			closeDLAServiceResponse.RequestId = _ctx.StringValue("CloseDLAService.RequestId");
         
-			return startTaskResponse;
+			return closeDLAServiceResponse;
         }
     }
 }

@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
 {
-	public class StartTaskResponse : AcsResponse
+	public class CreateAndStartBackupPlanResponse : AcsResponse
 	{
 
 		private bool? success;
@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string requestId;
 
-		private string taskId;
+		private string backupPlanId;
 
-		private string jobTypeName;
+		private string orderId;
 
 		public bool? Success
 		{
@@ -99,27 +99,27 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string TaskId
+		public string BackupPlanId
 		{
 			get
 			{
-				return taskId;
+				return backupPlanId;
 			}
 			set	
 			{
-				taskId = value;
+				backupPlanId = value;
 			}
 		}
 
-		public string JobTypeName
+		public string OrderId
 		{
 			get
 			{
-				return jobTypeName;
+				return orderId;
 			}
 			set	
 			{
-				jobTypeName = value;
+				orderId = value;
 			}
 		}
 	}

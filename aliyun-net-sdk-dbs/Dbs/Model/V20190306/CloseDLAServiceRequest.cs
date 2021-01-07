@@ -27,10 +27,10 @@ using Aliyun.Acs.Dbs.Transform.V20190306;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
 {
-    public class StartTaskRequest : RpcAcsRequest<StartTaskResponse>
+    public class CloseDLAServiceRequest : RpcAcsRequest<CloseDLAServiceResponse>
     {
-        public StartTaskRequest()
-            : base("Dbs", "2019-03-06", "StartTask", "cbs", "openAPI")
+        public CloseDLAServiceRequest()
+            : base("Dbs", "2019-03-06", "CloseDLAService", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,9 +42,9 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string clientToken;
 
-		private string ownerId;
+		private string backupPlanId;
 
-		private string taskId;
+		private string ownerId;
 
 		public string ClientToken
 		{
@@ -56,6 +56,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string BackupPlanId
+		{
+			get
+			{
+				return backupPlanId;
+			}
+			set	
+			{
+				backupPlanId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupPlanId", value);
 			}
 		}
 
@@ -72,22 +85,9 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value);
-			}
-		}
-
-        public override StartTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CloseDLAServiceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StartTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CloseDLAServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
