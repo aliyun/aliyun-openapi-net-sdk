@@ -44,8 +44,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 		private string instanceId;
 
-		private string region;
-
 		public string ResourceGroupId
 		{
 			get
@@ -69,19 +67,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string Region
-		{
-			get
-			{
-				return region;
-			}
-			set	
-			{
-				region = value;
-				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 
