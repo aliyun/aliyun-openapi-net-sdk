@@ -25,21 +25,45 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 	public class DescribeSubscriptionInstancesResponse : AcsResponse
 	{
 
+		private string errCode;
+
+		private string errMessage;
+
 		private int? pageNumber;
 
 		private int? pageRecordCount;
 
 		private string requestId;
 
-		private long? totalRecordCount;
-
-		private string errCode;
-
-		private string errMessage;
-
 		private string success;
 
+		private long? totalRecordCount;
+
 		private List<DescribeSubscriptionInstances_SubscriptionInstance> subscriptionInstances;
+
+		public string ErrCode
+		{
+			get
+			{
+				return errCode;
+			}
+			set	
+			{
+				errCode = value;
+			}
+		}
+
+		public string ErrMessage
+		{
+			get
+			{
+				return errMessage;
+			}
+			set	
+			{
+				errMessage = value;
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -77,42 +101,6 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
-		public long? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
-		public string ErrCode
-		{
-			get
-			{
-				return errCode;
-			}
-			set	
-			{
-				errCode = value;
-			}
-		}
-
-		public string ErrMessage
-		{
-			get
-			{
-				return errMessage;
-			}
-			set	
-			{
-				errMessage = value;
-			}
-		}
-
 		public string Success
 		{
 			get
@@ -122,6 +110,18 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public long? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
 			}
 		}
 
@@ -161,6 +161,8 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			private string subscriptionInstanceName;
 
 			private List<DescribeSubscriptionInstances_SynchronousObject> subscriptionObject;
+
+			private List<DescribeSubscriptionInstances_Tag> tags;
 
 			private DescribeSubscriptionInstances_SourceEndpoint sourceEndpoint;
 
@@ -300,6 +302,18 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				}
 			}
 
+			public List<DescribeSubscriptionInstances_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public DescribeSubscriptionInstances_SourceEndpoint SourceEndpoint
 			{
 				get
@@ -378,6 +392,38 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 					set	
 					{
 						tableList = value;
+					}
+				}
+			}
+
+			public class DescribeSubscriptionInstances_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

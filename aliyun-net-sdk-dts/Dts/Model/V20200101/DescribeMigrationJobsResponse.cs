@@ -25,21 +25,45 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 	public class DescribeMigrationJobsResponse : AcsResponse
 	{
 
+		private string errCode;
+
+		private string errMessage;
+
 		private int? pageNumber;
 
 		private int? pageRecordCount;
 
 		private string requestId;
 
-		private long? totalRecordCount;
-
-		private string errCode;
-
-		private string errMessage;
-
 		private string success;
 
+		private long? totalRecordCount;
+
 		private List<DescribeMigrationJobs_MigrationJob> migrationJobs;
+
+		public string ErrCode
+		{
+			get
+			{
+				return errCode;
+			}
+			set	
+			{
+				errCode = value;
+			}
+		}
+
+		public string ErrMessage
+		{
+			get
+			{
+				return errMessage;
+			}
+			set	
+			{
+				errMessage = value;
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -77,42 +101,6 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
-		public long? TotalRecordCount
-		{
-			get
-			{
-				return totalRecordCount;
-			}
-			set	
-			{
-				totalRecordCount = value;
-			}
-		}
-
-		public string ErrCode
-		{
-			get
-			{
-				return errCode;
-			}
-			set	
-			{
-				errCode = value;
-			}
-		}
-
-		public string ErrMessage
-		{
-			get
-			{
-				return errMessage;
-			}
-			set	
-			{
-				errMessage = value;
-			}
-		}
-
 		public string Success
 		{
 			get
@@ -122,6 +110,18 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public long? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
 			}
 		}
 
@@ -151,6 +151,8 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			private string payType;
 
 			private List<DescribeMigrationJobs_SynchronousObject> migrationObject;
+
+			private List<DescribeMigrationJobs_Tag> tags;
 
 			private DescribeMigrationJobs_DataInitialization dataInitialization;
 
@@ -235,6 +237,18 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				set	
 				{
 					migrationObject = value;
+				}
+			}
+
+			public List<DescribeMigrationJobs_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 
@@ -364,6 +378,38 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 					set	
 					{
 						tableList = value;
+					}
+				}
+			}
+
+			public class DescribeMigrationJobs_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

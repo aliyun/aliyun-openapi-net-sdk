@@ -113,6 +113,16 @@ namespace Aliyun.Acs.Dts.Transform.V20200101
 				structureInitializationStatus.Status = _ctx.StringValue("DescribeSynchronizationJobs.SynchronizationInstances["+ i +"].StructureInitializationStatus.Status");
 				synchronizationInstance.StructureInitializationStatus = structureInitializationStatus;
 
+				List<DescribeSynchronizationJobsResponse.DescribeSynchronizationJobs_SynchronizationInstance.DescribeSynchronizationJobs_Tag> synchronizationInstance_tags = new List<DescribeSynchronizationJobsResponse.DescribeSynchronizationJobs_SynchronizationInstance.DescribeSynchronizationJobs_Tag>();
+				for (int j = 0; j < _ctx.Length("DescribeSynchronizationJobs.SynchronizationInstances["+ i +"].Tags.Length"); j++) {
+					DescribeSynchronizationJobsResponse.DescribeSynchronizationJobs_SynchronizationInstance.DescribeSynchronizationJobs_Tag tag = new DescribeSynchronizationJobsResponse.DescribeSynchronizationJobs_SynchronizationInstance.DescribeSynchronizationJobs_Tag();
+					tag.Key = _ctx.StringValue("DescribeSynchronizationJobs.SynchronizationInstances["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("DescribeSynchronizationJobs.SynchronizationInstances["+ i +"].Tags["+ j +"].Value");
+
+					synchronizationInstance_tags.Add(tag);
+				}
+				synchronizationInstance.Tags = synchronizationInstance_tags;
+
 				List<DescribeSynchronizationJobsResponse.DescribeSynchronizationJobs_SynchronizationInstance.DescribeSynchronizationJobs_SynchronizationObject> synchronizationInstance_synchronizationObjects = new List<DescribeSynchronizationJobsResponse.DescribeSynchronizationJobs_SynchronizationInstance.DescribeSynchronizationJobs_SynchronizationObject>();
 				for (int j = 0; j < _ctx.Length("DescribeSynchronizationJobs.SynchronizationInstances["+ i +"].SynchronizationObjects.Length"); j++) {
 					DescribeSynchronizationJobsResponse.DescribeSynchronizationJobs_SynchronizationInstance.DescribeSynchronizationJobs_SynchronizationObject synchronizationObject = new DescribeSynchronizationJobsResponse.DescribeSynchronizationJobs_SynchronizationInstance.DescribeSynchronizationJobs_SynchronizationObject();

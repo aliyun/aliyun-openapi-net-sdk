@@ -122,6 +122,8 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 			private string synchronizationJobName;
 
+			private List<DescribeSynchronizationJobs_Tag> tags;
+
 			private List<DescribeSynchronizationJobs_SynchronizationObject> synchronizationObjects;
 
 			private DescribeSynchronizationJobs_DataInitializationStatus dataInitializationStatus;
@@ -282,6 +284,18 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				}
 			}
 
+			public List<DescribeSynchronizationJobs_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public List<DescribeSynchronizationJobs_SynchronizationObject> SynchronizationObjects
 			{
 				get
@@ -375,6 +389,38 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				set	
 				{
 					structureInitializationStatus = value;
+				}
+			}
+
+			public class DescribeSynchronizationJobs_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 

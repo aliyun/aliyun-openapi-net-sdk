@@ -31,13 +31,13 @@ namespace Aliyun.Acs.Dts.Transform.V20200101
 			DescribeMigrationJobsResponse describeMigrationJobsResponse = new DescribeMigrationJobsResponse();
 
 			describeMigrationJobsResponse.HttpResponse = _ctx.HttpResponse;
+			describeMigrationJobsResponse.ErrCode = _ctx.StringValue("DescribeMigrationJobs.ErrCode");
+			describeMigrationJobsResponse.ErrMessage = _ctx.StringValue("DescribeMigrationJobs.ErrMessage");
 			describeMigrationJobsResponse.PageNumber = _ctx.IntegerValue("DescribeMigrationJobs.PageNumber");
 			describeMigrationJobsResponse.PageRecordCount = _ctx.IntegerValue("DescribeMigrationJobs.PageRecordCount");
 			describeMigrationJobsResponse.RequestId = _ctx.StringValue("DescribeMigrationJobs.RequestId");
-			describeMigrationJobsResponse.TotalRecordCount = _ctx.LongValue("DescribeMigrationJobs.TotalRecordCount");
-			describeMigrationJobsResponse.ErrCode = _ctx.StringValue("DescribeMigrationJobs.ErrCode");
-			describeMigrationJobsResponse.ErrMessage = _ctx.StringValue("DescribeMigrationJobs.ErrMessage");
 			describeMigrationJobsResponse.Success = _ctx.StringValue("DescribeMigrationJobs.Success");
+			describeMigrationJobsResponse.TotalRecordCount = _ctx.LongValue("DescribeMigrationJobs.TotalRecordCount");
 
 			List<DescribeMigrationJobsResponse.DescribeMigrationJobs_MigrationJob> describeMigrationJobsResponse_migrationJobs = new List<DescribeMigrationJobsResponse.DescribeMigrationJobs_MigrationJob>();
 			for (int i = 0; i < _ctx.Length("DescribeMigrationJobs.MigrationJobs.Length"); i++) {
@@ -117,6 +117,16 @@ namespace Aliyun.Acs.Dts.Transform.V20200101
 					migrationJob_migrationObject.Add(synchronousObject);
 				}
 				migrationJob.MigrationObject = migrationJob_migrationObject;
+
+				List<DescribeMigrationJobsResponse.DescribeMigrationJobs_MigrationJob.DescribeMigrationJobs_Tag> migrationJob_tags = new List<DescribeMigrationJobsResponse.DescribeMigrationJobs_MigrationJob.DescribeMigrationJobs_Tag>();
+				for (int j = 0; j < _ctx.Length("DescribeMigrationJobs.MigrationJobs["+ i +"].Tags.Length"); j++) {
+					DescribeMigrationJobsResponse.DescribeMigrationJobs_MigrationJob.DescribeMigrationJobs_Tag tag = new DescribeMigrationJobsResponse.DescribeMigrationJobs_MigrationJob.DescribeMigrationJobs_Tag();
+					tag.Key = _ctx.StringValue("DescribeMigrationJobs.MigrationJobs["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("DescribeMigrationJobs.MigrationJobs["+ i +"].Tags["+ j +"].Value");
+
+					migrationJob_tags.Add(tag);
+				}
+				migrationJob.Tags = migrationJob_tags;
 
 				describeMigrationJobsResponse_migrationJobs.Add(migrationJob);
 			}

@@ -31,13 +31,13 @@ namespace Aliyun.Acs.Dts.Transform.V20200101
 			DescribeSubscriptionInstancesResponse describeSubscriptionInstancesResponse = new DescribeSubscriptionInstancesResponse();
 
 			describeSubscriptionInstancesResponse.HttpResponse = _ctx.HttpResponse;
+			describeSubscriptionInstancesResponse.ErrCode = _ctx.StringValue("DescribeSubscriptionInstances.ErrCode");
+			describeSubscriptionInstancesResponse.ErrMessage = _ctx.StringValue("DescribeSubscriptionInstances.ErrMessage");
 			describeSubscriptionInstancesResponse.PageNumber = _ctx.IntegerValue("DescribeSubscriptionInstances.PageNumber");
 			describeSubscriptionInstancesResponse.PageRecordCount = _ctx.IntegerValue("DescribeSubscriptionInstances.PageRecordCount");
 			describeSubscriptionInstancesResponse.RequestId = _ctx.StringValue("DescribeSubscriptionInstances.RequestId");
-			describeSubscriptionInstancesResponse.TotalRecordCount = _ctx.LongValue("DescribeSubscriptionInstances.TotalRecordCount");
-			describeSubscriptionInstancesResponse.ErrCode = _ctx.StringValue("DescribeSubscriptionInstances.ErrCode");
-			describeSubscriptionInstancesResponse.ErrMessage = _ctx.StringValue("DescribeSubscriptionInstances.ErrMessage");
 			describeSubscriptionInstancesResponse.Success = _ctx.StringValue("DescribeSubscriptionInstances.Success");
+			describeSubscriptionInstancesResponse.TotalRecordCount = _ctx.LongValue("DescribeSubscriptionInstances.TotalRecordCount");
 
 			List<DescribeSubscriptionInstancesResponse.DescribeSubscriptionInstances_SubscriptionInstance> describeSubscriptionInstancesResponse_subscriptionInstances = new List<DescribeSubscriptionInstancesResponse.DescribeSubscriptionInstances_SubscriptionInstance>();
 			for (int i = 0; i < _ctx.Length("DescribeSubscriptionInstances.SubscriptionInstances.Length"); i++) {
@@ -84,6 +84,16 @@ namespace Aliyun.Acs.Dts.Transform.V20200101
 					subscriptionInstance_subscriptionObject.Add(synchronousObject);
 				}
 				subscriptionInstance.SubscriptionObject = subscriptionInstance_subscriptionObject;
+
+				List<DescribeSubscriptionInstancesResponse.DescribeSubscriptionInstances_SubscriptionInstance.DescribeSubscriptionInstances_Tag> subscriptionInstance_tags = new List<DescribeSubscriptionInstancesResponse.DescribeSubscriptionInstances_SubscriptionInstance.DescribeSubscriptionInstances_Tag>();
+				for (int j = 0; j < _ctx.Length("DescribeSubscriptionInstances.SubscriptionInstances["+ i +"].Tags.Length"); j++) {
+					DescribeSubscriptionInstancesResponse.DescribeSubscriptionInstances_SubscriptionInstance.DescribeSubscriptionInstances_Tag tag = new DescribeSubscriptionInstancesResponse.DescribeSubscriptionInstances_SubscriptionInstance.DescribeSubscriptionInstances_Tag();
+					tag.Key = _ctx.StringValue("DescribeSubscriptionInstances.SubscriptionInstances["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("DescribeSubscriptionInstances.SubscriptionInstances["+ i +"].Tags["+ j +"].Value");
+
+					subscriptionInstance_tags.Add(tag);
+				}
+				subscriptionInstance.Tags = subscriptionInstance_tags;
 
 				describeSubscriptionInstancesResponse_subscriptionInstances.Add(subscriptionInstance);
 			}
