@@ -26,27 +26,27 @@ namespace Aliyun.Acs.xtrace.Transform.V20190808
 {
     public class SearchTracesResponseUnmarshaller
     {
-        public static SearchTracesResponse Unmarshall(UnmarshallerContext context)
+        public static SearchTracesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SearchTracesResponse searchTracesResponse = new SearchTracesResponse();
 
-			searchTracesResponse.HttpResponse = context.HttpResponse;
-			searchTracesResponse.RequestId = context.StringValue("SearchTraces.RequestId");
+			searchTracesResponse.HttpResponse = _ctx.HttpResponse;
+			searchTracesResponse.RequestId = _ctx.StringValue("SearchTraces.RequestId");
 
 			SearchTracesResponse.SearchTraces_PageBean pageBean = new SearchTracesResponse.SearchTraces_PageBean();
-			pageBean.TotalCount = context.LongValue("SearchTraces.PageBean.TotalCount");
-			pageBean.PageSize = context.IntegerValue("SearchTraces.PageBean.PageSize");
-			pageBean.PageNumber = context.IntegerValue("SearchTraces.PageBean.PageNumber");
+			pageBean.TotalCount = _ctx.LongValue("SearchTraces.PageBean.TotalCount");
+			pageBean.PageSize = _ctx.IntegerValue("SearchTraces.PageBean.PageSize");
+			pageBean.PageNumber = _ctx.IntegerValue("SearchTraces.PageBean.PageNumber");
 
 			List<SearchTracesResponse.SearchTraces_PageBean.SearchTraces_TraceInfo> pageBean_traceInfos = new List<SearchTracesResponse.SearchTraces_PageBean.SearchTraces_TraceInfo>();
-			for (int i = 0; i < context.Length("SearchTraces.PageBean.TraceInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("SearchTraces.PageBean.TraceInfos.Length"); i++) {
 				SearchTracesResponse.SearchTraces_PageBean.SearchTraces_TraceInfo traceInfo = new SearchTracesResponse.SearchTraces_PageBean.SearchTraces_TraceInfo();
-				traceInfo.TraceID = context.StringValue("SearchTraces.PageBean.TraceInfos["+ i +"].TraceID");
-				traceInfo.OperationName = context.StringValue("SearchTraces.PageBean.TraceInfos["+ i +"].OperationName");
-				traceInfo.ServiceName = context.StringValue("SearchTraces.PageBean.TraceInfos["+ i +"].ServiceName");
-				traceInfo.ServiceIp = context.StringValue("SearchTraces.PageBean.TraceInfos["+ i +"].ServiceIp");
-				traceInfo.Duration = context.LongValue("SearchTraces.PageBean.TraceInfos["+ i +"].Duration");
-				traceInfo.Timestamp = context.LongValue("SearchTraces.PageBean.TraceInfos["+ i +"].Timestamp");
+				traceInfo.TraceID = _ctx.StringValue("SearchTraces.PageBean.TraceInfos["+ i +"].TraceID");
+				traceInfo.OperationName = _ctx.StringValue("SearchTraces.PageBean.TraceInfos["+ i +"].OperationName");
+				traceInfo.ServiceName = _ctx.StringValue("SearchTraces.PageBean.TraceInfos["+ i +"].ServiceName");
+				traceInfo.ServiceIp = _ctx.StringValue("SearchTraces.PageBean.TraceInfos["+ i +"].ServiceIp");
+				traceInfo.Duration = _ctx.LongValue("SearchTraces.PageBean.TraceInfos["+ i +"].Duration");
+				traceInfo.Timestamp = _ctx.LongValue("SearchTraces.PageBean.TraceInfos["+ i +"].Timestamp");
 
 				pageBean_traceInfos.Add(traceInfo);
 			}

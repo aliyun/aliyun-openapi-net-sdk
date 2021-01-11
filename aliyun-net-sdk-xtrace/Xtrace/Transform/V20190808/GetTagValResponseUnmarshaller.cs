@@ -26,16 +26,16 @@ namespace Aliyun.Acs.xtrace.Transform.V20190808
 {
     public class GetTagValResponseUnmarshaller
     {
-        public static GetTagValResponse Unmarshall(UnmarshallerContext context)
+        public static GetTagValResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetTagValResponse getTagValResponse = new GetTagValResponse();
 
-			getTagValResponse.HttpResponse = context.HttpResponse;
-			getTagValResponse.RequestId = context.StringValue("GetTagVal.RequestId");
+			getTagValResponse.HttpResponse = _ctx.HttpResponse;
+			getTagValResponse.RequestId = _ctx.StringValue("GetTagVal.RequestId");
 
 			List<string> getTagValResponse_tagValues = new List<string>();
-			for (int i = 0; i < context.Length("GetTagVal.TagValues.Length"); i++) {
-				getTagValResponse_tagValues.Add(context.StringValue("GetTagVal.TagValues["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetTagVal.TagValues.Length"); i++) {
+				getTagValResponse_tagValues.Add(_ctx.StringValue("GetTagVal.TagValues["+ i +"]"));
 			}
 			getTagValResponse.TagValues = getTagValResponse_tagValues;
         

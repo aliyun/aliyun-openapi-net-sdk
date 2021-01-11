@@ -26,18 +26,18 @@ namespace Aliyun.Acs.xtrace.Transform.V20190808
 {
     public class GetTokenResponseUnmarshaller
     {
-        public static GetTokenResponse Unmarshall(UnmarshallerContext context)
+        public static GetTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetTokenResponse getTokenResponse = new GetTokenResponse();
 
-			getTokenResponse.HttpResponse = context.HttpResponse;
-			getTokenResponse.RequestId = context.StringValue("GetToken.RequestId");
+			getTokenResponse.HttpResponse = _ctx.HttpResponse;
+			getTokenResponse.RequestId = _ctx.StringValue("GetToken.RequestId");
 
 			GetTokenResponse.GetToken_Token token = new GetTokenResponse.GetToken_Token();
-			token.Domain = context.StringValue("GetToken.Token.Domain");
-			token.LicenseKey = context.StringValue("GetToken.Token.LicenseKey");
-			token.Pid = context.StringValue("GetToken.Token.Pid");
-			token.InternalDomain = context.StringValue("GetToken.Token.InternalDomain");
+			token.Domain = _ctx.StringValue("GetToken.Token.Domain");
+			token.LicenseKey = _ctx.StringValue("GetToken.Token.LicenseKey");
+			token.Pid = _ctx.StringValue("GetToken.Token.Pid");
+			token.InternalDomain = _ctx.StringValue("GetToken.Token.InternalDomain");
 			getTokenResponse.Token = token;
         
 			return getTokenResponse;

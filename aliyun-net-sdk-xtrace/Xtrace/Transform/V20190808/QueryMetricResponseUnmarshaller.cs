@@ -26,13 +26,13 @@ namespace Aliyun.Acs.xtrace.Transform.V20190808
 {
     public class QueryMetricResponseUnmarshaller
     {
-        public static QueryMetricResponse Unmarshall(UnmarshallerContext context)
+        public static QueryMetricResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryMetricResponse queryMetricResponse = new QueryMetricResponse();
 
-			queryMetricResponse.HttpResponse = context.HttpResponse;
-			queryMetricResponse.RequestId = context.StringValue("QueryMetric.RequestId");
-			queryMetricResponse.Data = context.StringValue("QueryMetric.Data");
+			queryMetricResponse.HttpResponse = _ctx.HttpResponse;
+			queryMetricResponse.RequestId = _ctx.StringValue("QueryMetric.RequestId");
+			queryMetricResponse.Data = _ctx.StringValue("QueryMetric.Data");
         
 			return queryMetricResponse;
         }

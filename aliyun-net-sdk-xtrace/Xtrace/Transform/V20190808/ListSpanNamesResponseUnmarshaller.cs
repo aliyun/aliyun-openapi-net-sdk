@@ -26,16 +26,16 @@ namespace Aliyun.Acs.xtrace.Transform.V20190808
 {
     public class ListSpanNamesResponseUnmarshaller
     {
-        public static ListSpanNamesResponse Unmarshall(UnmarshallerContext context)
+        public static ListSpanNamesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListSpanNamesResponse listSpanNamesResponse = new ListSpanNamesResponse();
 
-			listSpanNamesResponse.HttpResponse = context.HttpResponse;
-			listSpanNamesResponse.RequestId = context.StringValue("ListSpanNames.RequestId");
+			listSpanNamesResponse.HttpResponse = _ctx.HttpResponse;
+			listSpanNamesResponse.RequestId = _ctx.StringValue("ListSpanNames.RequestId");
 
 			List<string> listSpanNamesResponse_spanNames = new List<string>();
-			for (int i = 0; i < context.Length("ListSpanNames.SpanNames.Length"); i++) {
-				listSpanNamesResponse_spanNames.Add(context.StringValue("ListSpanNames.SpanNames["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("ListSpanNames.SpanNames.Length"); i++) {
+				listSpanNamesResponse_spanNames.Add(_ctx.StringValue("ListSpanNames.SpanNames["+ i +"]"));
 			}
 			listSpanNamesResponse.SpanNames = listSpanNamesResponse_spanNames;
         
