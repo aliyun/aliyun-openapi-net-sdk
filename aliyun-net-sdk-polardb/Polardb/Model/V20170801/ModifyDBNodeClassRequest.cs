@@ -44,6 +44,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string clientToken;
 
+		private string plannedEndTime;
+
 		private string dBNodeTargetClass;
 
 		private string resourceOwnerAccount;
@@ -53,6 +55,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string plannedStartTime;
 
 		private string modifyType;
 
@@ -79,6 +83,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string PlannedEndTime
+		{
+			get
+			{
+				return plannedEndTime;
+			}
+			set	
+			{
+				plannedEndTime = value;
+				DictionaryUtil.Add(QueryParameters, "PlannedEndTime", value);
 			}
 		}
 
@@ -144,6 +161,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string PlannedStartTime
+		{
+			get
+			{
+				return plannedStartTime;
+			}
+			set	
+			{
+				plannedStartTime = value;
+				DictionaryUtil.Add(QueryParameters, "PlannedStartTime", value);
 			}
 		}
 

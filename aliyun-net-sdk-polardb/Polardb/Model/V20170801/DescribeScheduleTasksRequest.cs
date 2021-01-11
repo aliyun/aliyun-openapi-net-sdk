@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class CreateDBLinkRequest : RpcAcsRequest<CreateDBLinkResponse>
+    public class DescribeScheduleTasksRequest : RpcAcsRequest<DescribeScheduleTasksResponse>
     {
-        public CreateDBLinkRequest()
-            : base("polardb", "2017-08-01", "CreateDBLink", "polardb", "openAPI")
+        public DescribeScheduleTasksRequest()
+            : base("polardb", "2017-08-01", "DescribeScheduleTasks", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,33 +42,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string sourceDBName;
-
-		private string clientToken;
-
-		private string targetDBName;
-
-		private string targetIp;
-
-		private string dBLinkName;
-
-		private string targetPort;
-
 		private string resourceOwnerAccount;
-
-		private string targetDBInstanceName;
 
 		private string dBClusterId;
 
 		private string ownerAccount;
 
-		private string targetDBPasswd;
-
 		private long? ownerId;
 
-		private string targetDBAccount;
-
-		private string vpcId;
+		private string status;
 
 		public long? ResourceOwnerId
 		{
@@ -83,84 +65,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string SourceDBName
-		{
-			get
-			{
-				return sourceDBName;
-			}
-			set	
-			{
-				sourceDBName = value;
-				DictionaryUtil.Add(QueryParameters, "SourceDBName", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string TargetDBName
-		{
-			get
-			{
-				return targetDBName;
-			}
-			set	
-			{
-				targetDBName = value;
-				DictionaryUtil.Add(QueryParameters, "TargetDBName", value);
-			}
-		}
-
-		public string TargetIp
-		{
-			get
-			{
-				return targetIp;
-			}
-			set	
-			{
-				targetIp = value;
-				DictionaryUtil.Add(QueryParameters, "TargetIp", value);
-			}
-		}
-
-		public string DBLinkName
-		{
-			get
-			{
-				return dBLinkName;
-			}
-			set	
-			{
-				dBLinkName = value;
-				DictionaryUtil.Add(QueryParameters, "DBLinkName", value);
-			}
-		}
-
-		public string TargetPort
-		{
-			get
-			{
-				return targetPort;
-			}
-			set	
-			{
-				targetPort = value;
-				DictionaryUtil.Add(QueryParameters, "TargetPort", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -171,19 +75,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string TargetDBInstanceName
-		{
-			get
-			{
-				return targetDBInstanceName;
-			}
-			set	
-			{
-				targetDBInstanceName = value;
-				DictionaryUtil.Add(QueryParameters, "TargetDBInstanceName", value);
 			}
 		}
 
@@ -213,19 +104,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string TargetDBPasswd
-		{
-			get
-			{
-				return targetDBPasswd;
-			}
-			set	
-			{
-				targetDBPasswd = value;
-				DictionaryUtil.Add(QueryParameters, "TargetDBPasswd", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -239,29 +117,16 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string TargetDBAccount
+		public string Status
 		{
 			get
 			{
-				return targetDBAccount;
+				return status;
 			}
 			set	
 			{
-				targetDBAccount = value;
-				DictionaryUtil.Add(QueryParameters, "TargetDBAccount", value);
-			}
-		}
-
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 
@@ -270,9 +135,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			return false;
 		}
 
-        public override CreateDBLinkResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeScheduleTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateDBLinkResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeScheduleTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

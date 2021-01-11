@@ -46,6 +46,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string endpointBindList;
 
+		private string plannedEndTime;
+
 		private string resourceOwnerAccount;
 
 		private string dBClusterId;
@@ -53,6 +55,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string plannedStartTime;
 
 		private List<DBNode> dBNodes = new List<DBNode>(){ };
 
@@ -92,6 +96,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				endpointBindList = value;
 				DictionaryUtil.Add(QueryParameters, "EndpointBindList", value);
+			}
+		}
+
+		public string PlannedEndTime
+		{
+			get
+			{
+				return plannedEndTime;
+			}
+			set	
+			{
+				plannedEndTime = value;
+				DictionaryUtil.Add(QueryParameters, "PlannedEndTime", value);
 			}
 		}
 
@@ -144,6 +161,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string PlannedStartTime
+		{
+			get
+			{
+				return plannedStartTime;
+			}
+			set	
+			{
+				plannedStartTime = value;
+				DictionaryUtil.Add(QueryParameters, "PlannedStartTime", value);
 			}
 		}
 
