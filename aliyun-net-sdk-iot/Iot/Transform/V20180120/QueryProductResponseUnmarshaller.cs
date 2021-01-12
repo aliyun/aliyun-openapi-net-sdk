@@ -54,6 +54,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.Owner = _ctx.BooleanValue("QueryProduct.Data.Owner");
 			data.NetType = _ctx.IntegerValue("QueryProduct.Data.NetType");
 			data.AuthType = _ctx.StringValue("QueryProduct.Data.AuthType");
+			data.ValidateType = _ctx.IntegerValue("QueryProduct.Data.ValidateType");
 			queryProductResponse.Data = data;
         
 			return queryProductResponse;

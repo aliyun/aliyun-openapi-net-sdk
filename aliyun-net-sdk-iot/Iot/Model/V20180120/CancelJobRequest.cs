@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QueryDeviceStatisticsRequest : RpcAcsRequest<QueryDeviceStatisticsResponse>
+    public class CancelJobRequest : RpcAcsRequest<CancelJobResponse>
     {
-        public QueryDeviceStatisticsRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceStatistics", "iot", "openAPI")
+        public CancelJobRequest()
+            : base("Iot", "2018-01-20", "CancelJob", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,11 +40,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private string jobId;
+
 		private string iotInstanceId;
 
-		private string groupId;
-
-		private string productKey;
+		public string JobId
+		{
+			get
+			{
+				return jobId;
+			}
+			set	
+			{
+				jobId = value;
+				DictionaryUtil.Add(QueryParameters, "JobId", value);
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -59,35 +70,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
-
-        public override QueryDeviceStatisticsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CancelJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryDeviceStatisticsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CancelJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

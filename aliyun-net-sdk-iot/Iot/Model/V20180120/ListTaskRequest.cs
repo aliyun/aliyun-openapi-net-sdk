@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QueryDeviceStatisticsRequest : RpcAcsRequest<QueryDeviceStatisticsResponse>
+    public class ListTaskRequest : RpcAcsRequest<ListTaskResponse>
     {
-        public QueryDeviceStatisticsRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceStatistics", "iot", "openAPI")
+        public ListTaskRequest()
+            : base("Iot", "2018-01-20", "ListTask", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,11 +40,43 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private string jobId;
+
+		private string nextToken;
+
 		private string iotInstanceId;
 
-		private string groupId;
+		private int? limit;
 
-		private string productKey;
+		private string device;
+
+		private string status;
+
+		public string JobId
+		{
+			get
+			{
+				return jobId;
+			}
+			set	
+			{
+				jobId = value;
+				DictionaryUtil.Add(QueryParameters, "JobId", value);
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -59,35 +91,48 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string GroupId
+		public int? Limit
 		{
 			get
 			{
-				return groupId;
+				return limit;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+				limit = value;
+				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
 			}
 		}
 
-		public string ProductKey
+		public string Device
 		{
 			get
 			{
-				return productKey;
+				return device;
 			}
 			set	
 			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+				device = value;
+				DictionaryUtil.Add(QueryParameters, "Device", value);
 			}
 		}
 
-        public override QueryDeviceStatisticsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+        public override ListTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryDeviceStatisticsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

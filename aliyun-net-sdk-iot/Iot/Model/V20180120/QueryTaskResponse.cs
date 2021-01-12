@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QueryProductResponse : AcsResponse
+	public class QueryTaskResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private QueryProduct_Data data;
+		private QueryTask_Data data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public QueryProduct_Data Data
+		public QueryTask_Data Data
 		{
 			get
 			{
@@ -95,102 +95,66 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class QueryProduct_Data
+		public class QueryTask_Data
 		{
 
-			private long? gmtCreate;
+			private string jobId;
 
-			private int? dataFormat;
+			private string jobName;
 
-			private string description;
-
-			private int? deviceCount;
-
-			private int? nodeType;
+			private string taskId;
 
 			private string productKey;
 
-			private string productName;
+			private string deviceName;
 
-			private string productSecret;
+			private string iotId;
 
-			private string categoryName;
+			private string progress;
 
-			private string categoryKey;
+			private string utcQueueTime;
 
-			private string aliyunCommodityCode;
+			private string utcModified;
 
-			private bool? id2;
+			private string statusDetail;
 
-			private string protocolType;
+			private string status;
 
-			private string productStatus;
+			private string message;
 
-			private bool? owner;
-
-			private int? netType;
-
-			private string authType;
-
-			private int? validateType;
-
-			public long? GmtCreate
+			public string JobId
 			{
 				get
 				{
-					return gmtCreate;
+					return jobId;
 				}
 				set	
 				{
-					gmtCreate = value;
+					jobId = value;
 				}
 			}
 
-			public int? DataFormat
+			public string JobName
 			{
 				get
 				{
-					return dataFormat;
+					return jobName;
 				}
 				set	
 				{
-					dataFormat = value;
+					jobName = value;
 				}
 			}
 
-			public string Description
+			public string TaskId
 			{
 				get
 				{
-					return description;
+					return taskId;
 				}
 				set	
 				{
-					description = value;
-				}
-			}
-
-			public int? DeviceCount
-			{
-				get
-				{
-					return deviceCount;
-				}
-				set	
-				{
-					deviceCount = value;
-				}
-			}
-
-			public int? NodeType
-			{
-				get
-				{
-					return nodeType;
-				}
-				set	
-				{
-					nodeType = value;
+					taskId = value;
 				}
 			}
 
@@ -206,147 +170,99 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public string ProductName
+			public string DeviceName
 			{
 				get
 				{
-					return productName;
+					return deviceName;
 				}
 				set	
 				{
-					productName = value;
+					deviceName = value;
 				}
 			}
 
-			public string ProductSecret
+			public string IotId
 			{
 				get
 				{
-					return productSecret;
+					return iotId;
 				}
 				set	
 				{
-					productSecret = value;
+					iotId = value;
 				}
 			}
 
-			public string CategoryName
+			public string Progress
 			{
 				get
 				{
-					return categoryName;
+					return progress;
 				}
 				set	
 				{
-					categoryName = value;
+					progress = value;
 				}
 			}
 
-			public string CategoryKey
+			public string UtcQueueTime
 			{
 				get
 				{
-					return categoryKey;
+					return utcQueueTime;
 				}
 				set	
 				{
-					categoryKey = value;
+					utcQueueTime = value;
 				}
 			}
 
-			public string AliyunCommodityCode
+			public string UtcModified
 			{
 				get
 				{
-					return aliyunCommodityCode;
+					return utcModified;
 				}
 				set	
 				{
-					aliyunCommodityCode = value;
+					utcModified = value;
 				}
 			}
 
-			public bool? Id2
+			public string StatusDetail
 			{
 				get
 				{
-					return id2;
+					return statusDetail;
 				}
 				set	
 				{
-					id2 = value;
+					statusDetail = value;
 				}
 			}
 
-			public string ProtocolType
+			public string Status
 			{
 				get
 				{
-					return protocolType;
+					return status;
 				}
 				set	
 				{
-					protocolType = value;
+					status = value;
 				}
 			}
 
-			public string ProductStatus
+			public string Message
 			{
 				get
 				{
-					return productStatus;
+					return message;
 				}
 				set	
 				{
-					productStatus = value;
-				}
-			}
-
-			public bool? Owner
-			{
-				get
-				{
-					return owner;
-				}
-				set	
-				{
-					owner = value;
-				}
-			}
-
-			public int? NetType
-			{
-				get
-				{
-					return netType;
-				}
-				set	
-				{
-					netType = value;
-				}
-			}
-
-			public string AuthType
-			{
-				get
-				{
-					return authType;
-				}
-				set	
-				{
-					authType = value;
-				}
-			}
-
-			public int? ValidateType
-			{
-				get
-				{
-					return validateType;
-				}
-				set	
-				{
-					validateType = value;
+					message = value;
 				}
 			}
 		}

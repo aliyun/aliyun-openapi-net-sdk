@@ -56,6 +56,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string name;
 
+		private string topic;
+
 		private long? ruleId;
 
 		public string Select
@@ -159,6 +161,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string Topic
+		{
+			get
+			{
+				return topic;
+			}
+			set	
+			{
+				topic = value;
+				DictionaryUtil.Add(QueryParameters, "Topic", value);
 			}
 		}
 

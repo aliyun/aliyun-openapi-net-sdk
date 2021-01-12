@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QueryDeviceStatisticsRequest : RpcAcsRequest<QueryDeviceStatisticsResponse>
+    public class GenerateFileUploadURLRequest : RpcAcsRequest<GenerateFileUploadURLResponse>
     {
-        public QueryDeviceStatisticsRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceStatistics", "iot", "openAPI")
+        public GenerateFileUploadURLRequest()
+            : base("Iot", "2018-01-20", "GenerateFileUploadURL", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,11 +40,24 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private string fileSuffix;
+
 		private string iotInstanceId;
 
-		private string groupId;
+		private string bizCode;
 
-		private string productKey;
+		public string FileSuffix
+		{
+			get
+			{
+				return fileSuffix;
+			}
+			set	
+			{
+				fileSuffix = value;
+				DictionaryUtil.Add(QueryParameters, "FileSuffix", value);
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -59,35 +72,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string GroupId
+		public string BizCode
 		{
 			get
 			{
-				return groupId;
+				return bizCode;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+				bizCode = value;
+				DictionaryUtil.Add(QueryParameters, "BizCode", value);
 			}
 		}
 
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
-
-        public override QueryDeviceStatisticsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GenerateFileUploadURLResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryDeviceStatisticsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GenerateFileUploadURLResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

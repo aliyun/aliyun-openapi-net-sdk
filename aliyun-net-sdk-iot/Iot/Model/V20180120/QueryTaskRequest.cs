@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QueryDeviceStatisticsRequest : RpcAcsRequest<QueryDeviceStatisticsResponse>
+    public class QueryTaskRequest : RpcAcsRequest<QueryTaskResponse>
     {
-        public QueryDeviceStatisticsRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceStatistics", "iot", "openAPI")
+        public QueryTaskRequest()
+            : base("Iot", "2018-01-20", "QueryTask", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,9 +42,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string iotInstanceId;
 
-		private string groupId;
-
-		private string productKey;
+		private string taskId;
 
 		public string IotInstanceId
 		{
@@ -59,35 +57,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string GroupId
+		public string TaskId
 		{
 			get
 			{
-				return groupId;
+				return taskId;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value);
 			}
 		}
 
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
-
-        public override QueryDeviceStatisticsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryDeviceStatisticsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

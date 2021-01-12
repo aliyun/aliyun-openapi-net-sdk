@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QueryDeviceStatisticsRequest : RpcAcsRequest<QueryDeviceStatisticsResponse>
+    public class ListTaskByPageRequest : RpcAcsRequest<ListTaskByPageResponse>
     {
-        public QueryDeviceStatisticsRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceStatistics", "iot", "openAPI")
+        public ListTaskByPageRequest()
+            : base("Iot", "2018-01-20", "ListTaskByPage", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,11 +40,34 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private string jobId;
+
 		private string iotInstanceId;
 
-		private string groupId;
+		private string pageSize;
 
-		private string productKey;
+		private string jobName;
+
+		private string pageNo;
+
+		private string deviceName;
+
+		private string device;
+
+		private string status;
+
+		public string JobId
+		{
+			get
+			{
+				return jobId;
+			}
+			set	
+			{
+				jobId = value;
+				DictionaryUtil.Add(QueryParameters, "JobId", value);
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -59,35 +82,87 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string GroupId
+		public string PageSize
 		{
 			get
 			{
-				return groupId;
+				return pageSize;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value);
 			}
 		}
 
-		public string ProductKey
+		public string JobName
 		{
 			get
 			{
-				return productKey;
+				return jobName;
 			}
 			set	
 			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+				jobName = value;
+				DictionaryUtil.Add(QueryParameters, "JobName", value);
 			}
 		}
 
-        public override QueryDeviceStatisticsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string PageNo
+		{
+			get
+			{
+				return pageNo;
+			}
+			set	
+			{
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value);
+			}
+		}
+
+		public string DeviceName
+		{
+			get
+			{
+				return deviceName;
+			}
+			set	
+			{
+				deviceName = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
+			}
+		}
+
+		public string Device
+		{
+			get
+			{
+				return device;
+			}
+			set	
+			{
+				device = value;
+				DictionaryUtil.Add(QueryParameters, "Device", value);
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+        public override ListTaskByPageResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryDeviceStatisticsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListTaskByPageResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

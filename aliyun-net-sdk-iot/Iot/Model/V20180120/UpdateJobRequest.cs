@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QueryDeviceStatisticsRequest : RpcAcsRequest<QueryDeviceStatisticsResponse>
+    public class UpdateJobRequest : RpcAcsRequest<UpdateJobResponse>
     {
-        public QueryDeviceStatisticsRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceStatistics", "iot", "openAPI")
+        public UpdateJobRequest()
+            : base("Iot", "2018-01-20", "UpdateJob", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,11 +40,54 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private string description;
+
+		private string rolloutConfig;
+
+		private string jobId;
+
 		private string iotInstanceId;
 
-		private string groupId;
+		private string timeoutConfig;
 
-		private string productKey;
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string RolloutConfig
+		{
+			get
+			{
+				return rolloutConfig;
+			}
+			set	
+			{
+				rolloutConfig = value;
+				DictionaryUtil.Add(QueryParameters, "RolloutConfig", value);
+			}
+		}
+
+		public string JobId
+		{
+			get
+			{
+				return jobId;
+			}
+			set	
+			{
+				jobId = value;
+				DictionaryUtil.Add(QueryParameters, "JobId", value);
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -59,35 +102,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string GroupId
+		public string TimeoutConfig
 		{
 			get
 			{
-				return groupId;
+				return timeoutConfig;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+				timeoutConfig = value;
+				DictionaryUtil.Add(QueryParameters, "TimeoutConfig", value);
 			}
 		}
 
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
-
-        public override QueryDeviceStatisticsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryDeviceStatisticsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

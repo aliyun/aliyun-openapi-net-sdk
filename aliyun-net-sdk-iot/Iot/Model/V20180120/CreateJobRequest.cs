@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CreateRuleRequest : RpcAcsRequest<CreateRuleResponse>
+    public class CreateJobRequest : RpcAcsRequest<CreateJobResponse>
     {
-        public CreateRuleRequest()
-            : base("Iot", "2018-01-20", "CreateRule", "iot", "openAPI")
+        public CreateJobRequest()
+            : base("Iot", "2018-01-20", "CreateJob", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,90 +40,73 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string select;
+		private string jobDocument;
 
-		private string ruleDesc;
+		private string description;
 
-		private string shortTopic;
+		private string type;
 
-		private string resourceGroupId;
-
-		private string dataType;
+		private string rolloutConfig;
 
 		private string iotInstanceId;
 
-		private string _where;
+		private string jobName;
 
-		private int? topicType;
+		private string timeoutConfig;
 
-		private string productKey;
+		private string targetConfig;
 
-		private string name;
+		private string jobFile;
 
-		private string topic;
-
-		public string Select
+		public string JobDocument
 		{
 			get
 			{
-				return select;
+				return jobDocument;
 			}
 			set	
 			{
-				select = value;
-				DictionaryUtil.Add(QueryParameters, "Select", value);
+				jobDocument = value;
+				DictionaryUtil.Add(QueryParameters, "JobDocument", value);
 			}
 		}
 
-		public string RuleDesc
+		public string Description
 		{
 			get
 			{
-				return ruleDesc;
+				return description;
 			}
 			set	
 			{
-				ruleDesc = value;
-				DictionaryUtil.Add(QueryParameters, "RuleDesc", value);
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
-		public string ShortTopic
+		public string Type
 		{
 			get
 			{
-				return shortTopic;
+				return type;
 			}
 			set	
 			{
-				shortTopic = value;
-				DictionaryUtil.Add(QueryParameters, "ShortTopic", value);
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 
-		public string ResourceGroupId
+		public string RolloutConfig
 		{
 			get
 			{
-				return resourceGroupId;
+				return rolloutConfig;
 			}
 			set	
 			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string DataType
-		{
-			get
-			{
-				return dataType;
-			}
-			set	
-			{
-				dataType = value;
-				DictionaryUtil.Add(QueryParameters, "DataType", value);
+				rolloutConfig = value;
+				DictionaryUtil.Add(QueryParameters, "RolloutConfig", value);
 			}
 		}
 
@@ -140,74 +123,61 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string _Where
+		public string JobName
 		{
 			get
 			{
-				return _where;
+				return jobName;
 			}
 			set	
 			{
-				_where = value;
-				DictionaryUtil.Add(QueryParameters, "Where", value);
+				jobName = value;
+				DictionaryUtil.Add(QueryParameters, "JobName", value);
 			}
 		}
 
-		public int? TopicType
+		public string TimeoutConfig
 		{
 			get
 			{
-				return topicType;
+				return timeoutConfig;
 			}
 			set	
 			{
-				topicType = value;
-				DictionaryUtil.Add(QueryParameters, "TopicType", value.ToString());
+				timeoutConfig = value;
+				DictionaryUtil.Add(QueryParameters, "TimeoutConfig", value);
 			}
 		}
 
-		public string ProductKey
+		public string TargetConfig
 		{
 			get
 			{
-				return productKey;
+				return targetConfig;
 			}
 			set	
 			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+				targetConfig = value;
+				DictionaryUtil.Add(QueryParameters, "TargetConfig", value);
 			}
 		}
 
-		public string Name
+		public string JobFile
 		{
 			get
 			{
-				return name;
+				return jobFile;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				jobFile = value;
+				DictionaryUtil.Add(QueryParameters, "JobFile", value);
 			}
 		}
 
-		public string Topic
-		{
-			get
-			{
-				return topic;
-			}
-			set	
-			{
-				topic = value;
-				DictionaryUtil.Add(QueryParameters, "Topic", value);
-			}
-		}
-
-        public override CreateRuleResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
