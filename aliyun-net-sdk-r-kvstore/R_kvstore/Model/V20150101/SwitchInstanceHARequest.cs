@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyInstanceSpecRequest : RpcAcsRequest<ModifyInstanceSpecResponse>
+    public class SwitchInstanceHARequest : RpcAcsRequest<SwitchInstanceHAResponse>
     {
-        public ModifyInstanceSpecRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyInstanceSpec", "redisa", "openAPI")
+        public SwitchInstanceHARequest()
+            : base("R-kvstore", "2015-01-01", "SwitchInstanceHA", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,23 +42,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private string clientToken;
-
-		private string couponNo;
-
-		private string instanceClass;
+		private int? switchMode;
 
 		private string securityToken;
 
-		private string effectiveTime;
-
-		private string sourceBiz;
-
-		private string businessInfo;
-
-		private bool? autoPay;
-
-		private string majorVersion;
+		private string nodeId;
 
 		private string resourceOwnerAccount;
 
@@ -68,9 +56,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string instanceId;
 
-		private bool? forceUpgrade;
-
-		private string orderType;
+		private string switchType;
 
 		public long? ResourceOwnerId
 		{
@@ -85,42 +71,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string ClientToken
+		public int? SwitchMode
 		{
 			get
 			{
-				return clientToken;
+				return switchMode;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string CouponNo
-		{
-			get
-			{
-				return couponNo;
-			}
-			set	
-			{
-				couponNo = value;
-				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
-			}
-		}
-
-		public string InstanceClass
-		{
-			get
-			{
-				return instanceClass;
-			}
-			set	
-			{
-				instanceClass = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceClass", value);
+				switchMode = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchMode", value.ToString());
 			}
 		}
 
@@ -137,68 +97,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string EffectiveTime
+		public string NodeId
 		{
 			get
 			{
-				return effectiveTime;
+				return nodeId;
 			}
 			set	
 			{
-				effectiveTime = value;
-				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
-			}
-		}
-
-		public string SourceBiz
-		{
-			get
-			{
-				return sourceBiz;
-			}
-			set	
-			{
-				sourceBiz = value;
-				DictionaryUtil.Add(QueryParameters, "SourceBiz", value);
-			}
-		}
-
-		public string BusinessInfo
-		{
-			get
-			{
-				return businessInfo;
-			}
-			set	
-			{
-				businessInfo = value;
-				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
-			}
-		}
-
-		public bool? AutoPay
-		{
-			get
-			{
-				return autoPay;
-			}
-			set	
-			{
-				autoPay = value;
-				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
-			}
-		}
-
-		public string MajorVersion
-		{
-			get
-			{
-				return majorVersion;
-			}
-			set	
-			{
-				majorVersion = value;
-				DictionaryUtil.Add(QueryParameters, "MajorVersion", value);
+				nodeId = value;
+				DictionaryUtil.Add(QueryParameters, "NodeId", value);
 			}
 		}
 
@@ -254,35 +162,22 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public bool? ForceUpgrade
+		public string SwitchType
 		{
 			get
 			{
-				return forceUpgrade;
+				return switchType;
 			}
 			set	
 			{
-				forceUpgrade = value;
-				DictionaryUtil.Add(QueryParameters, "ForceUpgrade", value.ToString());
+				switchType = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchType", value);
 			}
 		}
 
-		public string OrderType
-		{
-			get
-			{
-				return orderType;
-			}
-			set	
-			{
-				orderType = value;
-				DictionaryUtil.Add(QueryParameters, "OrderType", value);
-			}
-		}
-
-        public override ModifyInstanceSpecResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SwitchInstanceHAResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceSpecResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SwitchInstanceHAResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
