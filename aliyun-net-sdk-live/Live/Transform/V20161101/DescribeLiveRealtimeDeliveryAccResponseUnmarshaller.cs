@@ -26,19 +26,19 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveRealtimeDeliveryAccResponseUnmarshaller
     {
-        public static DescribeLiveRealtimeDeliveryAccResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveRealtimeDeliveryAccResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveRealtimeDeliveryAccResponse describeLiveRealtimeDeliveryAccResponse = new DescribeLiveRealtimeDeliveryAccResponse();
 
-			describeLiveRealtimeDeliveryAccResponse.HttpResponse = context.HttpResponse;
-			describeLiveRealtimeDeliveryAccResponse.RequestId = context.StringValue("DescribeLiveRealtimeDeliveryAcc.RequestId");
+			describeLiveRealtimeDeliveryAccResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveRealtimeDeliveryAccResponse.RequestId = _ctx.StringValue("DescribeLiveRealtimeDeliveryAcc.RequestId");
 
 			List<DescribeLiveRealtimeDeliveryAccResponse.DescribeLiveRealtimeDeliveryAcc_AccData> describeLiveRealtimeDeliveryAccResponse_realTimeDeliveryAccData = new List<DescribeLiveRealtimeDeliveryAccResponse.DescribeLiveRealtimeDeliveryAcc_AccData>();
-			for (int i = 0; i < context.Length("DescribeLiveRealtimeDeliveryAcc.RealTimeDeliveryAccData.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveRealtimeDeliveryAcc.RealTimeDeliveryAccData.Length"); i++) {
 				DescribeLiveRealtimeDeliveryAccResponse.DescribeLiveRealtimeDeliveryAcc_AccData accData = new DescribeLiveRealtimeDeliveryAccResponse.DescribeLiveRealtimeDeliveryAcc_AccData();
-				accData.TimeStamp = context.StringValue("DescribeLiveRealtimeDeliveryAcc.RealTimeDeliveryAccData["+ i +"].TimeStamp");
-				accData.SuccessNum = context.IntegerValue("DescribeLiveRealtimeDeliveryAcc.RealTimeDeliveryAccData["+ i +"].SuccessNum");
-				accData.FailedNum = context.IntegerValue("DescribeLiveRealtimeDeliveryAcc.RealTimeDeliveryAccData["+ i +"].FailedNum");
+				accData.TimeStamp = _ctx.StringValue("DescribeLiveRealtimeDeliveryAcc.RealTimeDeliveryAccData["+ i +"].TimeStamp");
+				accData.SuccessNum = _ctx.IntegerValue("DescribeLiveRealtimeDeliveryAcc.RealTimeDeliveryAccData["+ i +"].SuccessNum");
+				accData.FailedNum = _ctx.IntegerValue("DescribeLiveRealtimeDeliveryAcc.RealTimeDeliveryAccData["+ i +"].FailedNum");
 
 				describeLiveRealtimeDeliveryAccResponse_realTimeDeliveryAccData.Add(accData);
 			}

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DeleteLiveRealTimeLogLogstoreResponseUnmarshaller
     {
-        public static DeleteLiveRealTimeLogLogstoreResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteLiveRealTimeLogLogstoreResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteLiveRealTimeLogLogstoreResponse deleteLiveRealTimeLogLogstoreResponse = new DeleteLiveRealTimeLogLogstoreResponse();
 
-			deleteLiveRealTimeLogLogstoreResponse.HttpResponse = context.HttpResponse;
-			deleteLiveRealTimeLogLogstoreResponse.RequestId = context.StringValue("DeleteLiveRealTimeLogLogstore.RequestId");
+			deleteLiveRealTimeLogLogstoreResponse.HttpResponse = _ctx.HttpResponse;
+			deleteLiveRealTimeLogLogstoreResponse.RequestId = _ctx.StringValue("DeleteLiveRealTimeLogLogstore.RequestId");
         
 			return deleteLiveRealTimeLogLogstoreResponse;
         }

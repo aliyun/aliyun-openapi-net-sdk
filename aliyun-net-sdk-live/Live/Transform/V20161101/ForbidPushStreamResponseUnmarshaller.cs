@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class ForbidPushStreamResponseUnmarshaller
     {
-        public static ForbidPushStreamResponse Unmarshall(UnmarshallerContext context)
+        public static ForbidPushStreamResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ForbidPushStreamResponse forbidPushStreamResponse = new ForbidPushStreamResponse();
 
-			forbidPushStreamResponse.HttpResponse = context.HttpResponse;
-			forbidPushStreamResponse.RequestId = context.StringValue("ForbidPushStream.RequestId");
+			forbidPushStreamResponse.HttpResponse = _ctx.HttpResponse;
+			forbidPushStreamResponse.RequestId = _ctx.StringValue("ForbidPushStream.RequestId");
         
 			return forbidPushStreamResponse;
         }

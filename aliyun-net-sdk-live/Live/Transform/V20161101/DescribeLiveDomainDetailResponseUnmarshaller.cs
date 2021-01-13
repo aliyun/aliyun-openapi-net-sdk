@@ -26,26 +26,26 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveDomainDetailResponseUnmarshaller
     {
-        public static DescribeLiveDomainDetailResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveDomainDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveDomainDetailResponse describeLiveDomainDetailResponse = new DescribeLiveDomainDetailResponse();
 
-			describeLiveDomainDetailResponse.HttpResponse = context.HttpResponse;
-			describeLiveDomainDetailResponse.RequestId = context.StringValue("DescribeLiveDomainDetail.RequestId");
+			describeLiveDomainDetailResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveDomainDetailResponse.RequestId = _ctx.StringValue("DescribeLiveDomainDetail.RequestId");
 
 			DescribeLiveDomainDetailResponse.DescribeLiveDomainDetail_DomainDetail domainDetail = new DescribeLiveDomainDetailResponse.DescribeLiveDomainDetail_DomainDetail();
-			domainDetail.GmtCreated = context.StringValue("DescribeLiveDomainDetail.DomainDetail.GmtCreated");
-			domainDetail.GmtModified = context.StringValue("DescribeLiveDomainDetail.DomainDetail.GmtModified");
-			domainDetail.DomainStatus = context.StringValue("DescribeLiveDomainDetail.DomainDetail.DomainStatus");
-			domainDetail.Cname = context.StringValue("DescribeLiveDomainDetail.DomainDetail.Cname");
-			domainDetail.DomainName = context.StringValue("DescribeLiveDomainDetail.DomainDetail.DomainName");
-			domainDetail.LiveDomainType = context.StringValue("DescribeLiveDomainDetail.DomainDetail.LiveDomainType");
-			domainDetail.Region = context.StringValue("DescribeLiveDomainDetail.DomainDetail.Region");
-			domainDetail.Description = context.StringValue("DescribeLiveDomainDetail.DomainDetail.Description");
-			domainDetail.SSLProtocol = context.StringValue("DescribeLiveDomainDetail.DomainDetail.SSLProtocol");
-			domainDetail.SSLPub = context.StringValue("DescribeLiveDomainDetail.DomainDetail.SSLPub");
-			domainDetail.Scope = context.StringValue("DescribeLiveDomainDetail.DomainDetail.Scope");
-			domainDetail.CertName = context.StringValue("DescribeLiveDomainDetail.DomainDetail.CertName");
+			domainDetail.GmtCreated = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.GmtCreated");
+			domainDetail.GmtModified = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.GmtModified");
+			domainDetail.DomainStatus = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.DomainStatus");
+			domainDetail.Cname = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.Cname");
+			domainDetail.DomainName = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.DomainName");
+			domainDetail.LiveDomainType = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.LiveDomainType");
+			domainDetail.Region = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.Region");
+			domainDetail.Description = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.Description");
+			domainDetail.SSLProtocol = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.SSLProtocol");
+			domainDetail.SSLPub = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.SSLPub");
+			domainDetail.Scope = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.Scope");
+			domainDetail.CertName = _ctx.StringValue("DescribeLiveDomainDetail.DomainDetail.CertName");
 			describeLiveDomainDetailResponse.DomainDetail = domainDetail;
         
 			return describeLiveDomainDetailResponse;

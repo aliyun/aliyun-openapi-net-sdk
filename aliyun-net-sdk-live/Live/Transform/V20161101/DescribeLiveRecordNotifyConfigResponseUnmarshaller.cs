@@ -26,18 +26,18 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveRecordNotifyConfigResponseUnmarshaller
     {
-        public static DescribeLiveRecordNotifyConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveRecordNotifyConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveRecordNotifyConfigResponse describeLiveRecordNotifyConfigResponse = new DescribeLiveRecordNotifyConfigResponse();
 
-			describeLiveRecordNotifyConfigResponse.HttpResponse = context.HttpResponse;
-			describeLiveRecordNotifyConfigResponse.RequestId = context.StringValue("DescribeLiveRecordNotifyConfig.RequestId");
+			describeLiveRecordNotifyConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveRecordNotifyConfigResponse.RequestId = _ctx.StringValue("DescribeLiveRecordNotifyConfig.RequestId");
 
 			DescribeLiveRecordNotifyConfigResponse.DescribeLiveRecordNotifyConfig_LiveRecordNotifyConfig liveRecordNotifyConfig = new DescribeLiveRecordNotifyConfigResponse.DescribeLiveRecordNotifyConfig_LiveRecordNotifyConfig();
-			liveRecordNotifyConfig.DomainName = context.StringValue("DescribeLiveRecordNotifyConfig.LiveRecordNotifyConfig.DomainName");
-			liveRecordNotifyConfig.NotifyUrl = context.StringValue("DescribeLiveRecordNotifyConfig.LiveRecordNotifyConfig.NotifyUrl");
-			liveRecordNotifyConfig.OnDemandUrl = context.StringValue("DescribeLiveRecordNotifyConfig.LiveRecordNotifyConfig.OnDemandUrl");
-			liveRecordNotifyConfig.NeedStatusNotify = context.BooleanValue("DescribeLiveRecordNotifyConfig.LiveRecordNotifyConfig.NeedStatusNotify");
+			liveRecordNotifyConfig.DomainName = _ctx.StringValue("DescribeLiveRecordNotifyConfig.LiveRecordNotifyConfig.DomainName");
+			liveRecordNotifyConfig.NotifyUrl = _ctx.StringValue("DescribeLiveRecordNotifyConfig.LiveRecordNotifyConfig.NotifyUrl");
+			liveRecordNotifyConfig.OnDemandUrl = _ctx.StringValue("DescribeLiveRecordNotifyConfig.LiveRecordNotifyConfig.OnDemandUrl");
+			liveRecordNotifyConfig.NeedStatusNotify = _ctx.BooleanValue("DescribeLiveRecordNotifyConfig.LiveRecordNotifyConfig.NeedStatusNotify");
 			describeLiveRecordNotifyConfigResponse.LiveRecordNotifyConfig = liveRecordNotifyConfig;
         
 			return describeLiveRecordNotifyConfigResponse;

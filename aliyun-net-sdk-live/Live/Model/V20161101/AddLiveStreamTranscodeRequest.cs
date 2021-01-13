@@ -34,8 +34,8 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.live.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.live.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -44,19 +44,13 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string lazy;
 
-		private string mix;
-
 		private string app;
 
-		private string watermark;
+		private string encryptParameters;
 
 		private long? ownerId;
 
 		private string domain;
-
-		private string waterPattern;
-
-		private string onlyAudio;
 
 		public string Template
 		{
@@ -84,19 +78,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Mix
-		{
-			get
-			{
-				return mix;
-			}
-			set	
-			{
-				mix = value;
-				DictionaryUtil.Add(QueryParameters, "Mix", value);
-			}
-		}
-
 		public string App
 		{
 			get
@@ -110,16 +91,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Watermark
+		public string EncryptParameters
 		{
 			get
 			{
-				return watermark;
+				return encryptParameters;
 			}
 			set	
 			{
-				watermark = value;
-				DictionaryUtil.Add(QueryParameters, "Watermark", value);
+				encryptParameters = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptParameters", value);
 			}
 		}
 
@@ -146,32 +127,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				domain = value;
 				DictionaryUtil.Add(QueryParameters, "Domain", value);
-			}
-		}
-
-		public string WaterPattern
-		{
-			get
-			{
-				return waterPattern;
-			}
-			set	
-			{
-				waterPattern = value;
-				DictionaryUtil.Add(QueryParameters, "WaterPattern", value);
-			}
-		}
-
-		public string OnlyAudio
-		{
-			get
-			{
-				return onlyAudio;
-			}
-			set	
-			{
-				onlyAudio = value;
-				DictionaryUtil.Add(QueryParameters, "OnlyAudio", value);
 			}
 		}
 

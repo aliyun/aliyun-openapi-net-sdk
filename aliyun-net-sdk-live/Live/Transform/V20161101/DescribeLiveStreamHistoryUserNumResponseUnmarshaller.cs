@@ -26,18 +26,18 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveStreamHistoryUserNumResponseUnmarshaller
     {
-        public static DescribeLiveStreamHistoryUserNumResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveStreamHistoryUserNumResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveStreamHistoryUserNumResponse describeLiveStreamHistoryUserNumResponse = new DescribeLiveStreamHistoryUserNumResponse();
 
-			describeLiveStreamHistoryUserNumResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamHistoryUserNumResponse.RequestId = context.StringValue("DescribeLiveStreamHistoryUserNum.RequestId");
+			describeLiveStreamHistoryUserNumResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveStreamHistoryUserNumResponse.RequestId = _ctx.StringValue("DescribeLiveStreamHistoryUserNum.RequestId");
 
 			List<DescribeLiveStreamHistoryUserNumResponse.DescribeLiveStreamHistoryUserNum_LiveStreamUserNumInfo> describeLiveStreamHistoryUserNumResponse_liveStreamUserNumInfos = new List<DescribeLiveStreamHistoryUserNumResponse.DescribeLiveStreamHistoryUserNum_LiveStreamUserNumInfo>();
-			for (int i = 0; i < context.Length("DescribeLiveStreamHistoryUserNum.LiveStreamUserNumInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveStreamHistoryUserNum.LiveStreamUserNumInfos.Length"); i++) {
 				DescribeLiveStreamHistoryUserNumResponse.DescribeLiveStreamHistoryUserNum_LiveStreamUserNumInfo liveStreamUserNumInfo = new DescribeLiveStreamHistoryUserNumResponse.DescribeLiveStreamHistoryUserNum_LiveStreamUserNumInfo();
-				liveStreamUserNumInfo.StreamTime = context.StringValue("DescribeLiveStreamHistoryUserNum.LiveStreamUserNumInfos["+ i +"].StreamTime");
-				liveStreamUserNumInfo.UserNum = context.StringValue("DescribeLiveStreamHistoryUserNum.LiveStreamUserNumInfos["+ i +"].UserNum");
+				liveStreamUserNumInfo.StreamTime = _ctx.StringValue("DescribeLiveStreamHistoryUserNum.LiveStreamUserNumInfos["+ i +"].StreamTime");
+				liveStreamUserNumInfo.UserNum = _ctx.StringValue("DescribeLiveStreamHistoryUserNum.LiveStreamUserNumInfos["+ i +"].UserNum");
 
 				describeLiveStreamHistoryUserNumResponse_liveStreamUserNumInfos.Add(liveStreamUserNumInfo);
 			}

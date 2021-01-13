@@ -26,20 +26,20 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeUpBpsPeakOfLineResponseUnmarshaller
     {
-        public static DescribeUpBpsPeakOfLineResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUpBpsPeakOfLineResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUpBpsPeakOfLineResponse describeUpBpsPeakOfLineResponse = new DescribeUpBpsPeakOfLineResponse();
 
-			describeUpBpsPeakOfLineResponse.HttpResponse = context.HttpResponse;
-			describeUpBpsPeakOfLineResponse.RequestId = context.StringValue("DescribeUpBpsPeakOfLine.RequestId");
+			describeUpBpsPeakOfLineResponse.HttpResponse = _ctx.HttpResponse;
+			describeUpBpsPeakOfLineResponse.RequestId = _ctx.StringValue("DescribeUpBpsPeakOfLine.RequestId");
 
 			List<DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLine_DescribeUpBpsPeakOfLine> describeUpBpsPeakOfLineResponse_describeUpBpsPeakOfLines = new List<DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLine_DescribeUpBpsPeakOfLine>();
-			for (int i = 0; i < context.Length("DescribeUpBpsPeakOfLine.DescribeUpBpsPeakOfLines.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeUpBpsPeakOfLine.DescribeUpBpsPeakOfLines.Length"); i++) {
 				DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLine_DescribeUpBpsPeakOfLine describeUpBpsPeakOfLine = new DescribeUpBpsPeakOfLineResponse.DescribeUpBpsPeakOfLine_DescribeUpBpsPeakOfLine();
-				describeUpBpsPeakOfLine.BandWidth = context.FloatValue("DescribeUpBpsPeakOfLine.DescribeUpBpsPeakOfLines["+ i +"].BandWidth");
-				describeUpBpsPeakOfLine.PeakTime = context.StringValue("DescribeUpBpsPeakOfLine.DescribeUpBpsPeakOfLines["+ i +"].PeakTime");
-				describeUpBpsPeakOfLine.QueryTime = context.StringValue("DescribeUpBpsPeakOfLine.DescribeUpBpsPeakOfLines["+ i +"].QueryTime");
-				describeUpBpsPeakOfLine.StatName = context.StringValue("DescribeUpBpsPeakOfLine.DescribeUpBpsPeakOfLines["+ i +"].StatName");
+				describeUpBpsPeakOfLine.BandWidth = _ctx.FloatValue("DescribeUpBpsPeakOfLine.DescribeUpBpsPeakOfLines["+ i +"].BandWidth");
+				describeUpBpsPeakOfLine.PeakTime = _ctx.StringValue("DescribeUpBpsPeakOfLine.DescribeUpBpsPeakOfLines["+ i +"].PeakTime");
+				describeUpBpsPeakOfLine.QueryTime = _ctx.StringValue("DescribeUpBpsPeakOfLine.DescribeUpBpsPeakOfLines["+ i +"].QueryTime");
+				describeUpBpsPeakOfLine.StatName = _ctx.StringValue("DescribeUpBpsPeakOfLine.DescribeUpBpsPeakOfLines["+ i +"].StatName");
 
 				describeUpBpsPeakOfLineResponse_describeUpBpsPeakOfLines.Add(describeUpBpsPeakOfLine);
 			}

@@ -26,14 +26,14 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DeleteCasterComponentResponseUnmarshaller
     {
-        public static DeleteCasterComponentResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteCasterComponentResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteCasterComponentResponse deleteCasterComponentResponse = new DeleteCasterComponentResponse();
 
-			deleteCasterComponentResponse.HttpResponse = context.HttpResponse;
-			deleteCasterComponentResponse.RequestId = context.StringValue("DeleteCasterComponent.RequestId");
-			deleteCasterComponentResponse.CasterId = context.StringValue("DeleteCasterComponent.CasterId");
-			deleteCasterComponentResponse.ComponentId = context.StringValue("DeleteCasterComponent.ComponentId");
+			deleteCasterComponentResponse.HttpResponse = _ctx.HttpResponse;
+			deleteCasterComponentResponse.RequestId = _ctx.StringValue("DeleteCasterComponent.RequestId");
+			deleteCasterComponentResponse.CasterId = _ctx.StringValue("DeleteCasterComponent.CasterId");
+			deleteCasterComponentResponse.ComponentId = _ctx.StringValue("DeleteCasterComponent.ComponentId");
         
 			return deleteCasterComponentResponse;
         }

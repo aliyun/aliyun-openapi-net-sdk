@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class StopLiveDomainResponseUnmarshaller
     {
-        public static StopLiveDomainResponse Unmarshall(UnmarshallerContext context)
+        public static StopLiveDomainResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopLiveDomainResponse stopLiveDomainResponse = new StopLiveDomainResponse();
 
-			stopLiveDomainResponse.HttpResponse = context.HttpResponse;
-			stopLiveDomainResponse.RequestId = context.StringValue("StopLiveDomain.RequestId");
+			stopLiveDomainResponse.HttpResponse = _ctx.HttpResponse;
+			stopLiveDomainResponse.RequestId = _ctx.StringValue("StopLiveDomain.RequestId");
         
 			return stopLiveDomainResponse;
         }

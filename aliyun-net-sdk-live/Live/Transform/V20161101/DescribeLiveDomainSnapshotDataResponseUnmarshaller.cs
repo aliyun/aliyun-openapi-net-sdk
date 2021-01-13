@@ -26,18 +26,18 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveDomainSnapshotDataResponseUnmarshaller
     {
-        public static DescribeLiveDomainSnapshotDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveDomainSnapshotDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveDomainSnapshotDataResponse describeLiveDomainSnapshotDataResponse = new DescribeLiveDomainSnapshotDataResponse();
 
-			describeLiveDomainSnapshotDataResponse.HttpResponse = context.HttpResponse;
-			describeLiveDomainSnapshotDataResponse.RequestId = context.StringValue("DescribeLiveDomainSnapshotData.RequestId");
+			describeLiveDomainSnapshotDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveDomainSnapshotDataResponse.RequestId = _ctx.StringValue("DescribeLiveDomainSnapshotData.RequestId");
 
 			List<DescribeLiveDomainSnapshotDataResponse.DescribeLiveDomainSnapshotData_SnapshotDataInfo> describeLiveDomainSnapshotDataResponse_snapshotDataInfos = new List<DescribeLiveDomainSnapshotDataResponse.DescribeLiveDomainSnapshotData_SnapshotDataInfo>();
-			for (int i = 0; i < context.Length("DescribeLiveDomainSnapshotData.SnapshotDataInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveDomainSnapshotData.SnapshotDataInfos.Length"); i++) {
 				DescribeLiveDomainSnapshotDataResponse.DescribeLiveDomainSnapshotData_SnapshotDataInfo snapshotDataInfo = new DescribeLiveDomainSnapshotDataResponse.DescribeLiveDomainSnapshotData_SnapshotDataInfo();
-				snapshotDataInfo.Date = context.StringValue("DescribeLiveDomainSnapshotData.SnapshotDataInfos["+ i +"].Date");
-				snapshotDataInfo.Total = context.IntegerValue("DescribeLiveDomainSnapshotData.SnapshotDataInfos["+ i +"].Total");
+				snapshotDataInfo.Date = _ctx.StringValue("DescribeLiveDomainSnapshotData.SnapshotDataInfos["+ i +"].Date");
+				snapshotDataInfo.Total = _ctx.IntegerValue("DescribeLiveDomainSnapshotData.SnapshotDataInfos["+ i +"].Total");
 
 				describeLiveDomainSnapshotDataResponse_snapshotDataInfos.Add(snapshotDataInfo);
 			}

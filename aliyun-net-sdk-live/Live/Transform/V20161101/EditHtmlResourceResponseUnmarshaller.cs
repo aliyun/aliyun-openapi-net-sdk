@@ -26,13 +26,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class EditHtmlResourceResponseUnmarshaller
     {
-        public static EditHtmlResourceResponse Unmarshall(UnmarshallerContext context)
+        public static EditHtmlResourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			EditHtmlResourceResponse editHtmlResourceResponse = new EditHtmlResourceResponse();
 
-			editHtmlResourceResponse.HttpResponse = context.HttpResponse;
-			editHtmlResourceResponse.RequestId = context.StringValue("EditHtmlResource.RequestId");
-			editHtmlResourceResponse.HtmlResourceId = context.StringValue("EditHtmlResource.HtmlResourceId");
+			editHtmlResourceResponse.HttpResponse = _ctx.HttpResponse;
+			editHtmlResourceResponse.RequestId = _ctx.StringValue("EditHtmlResource.RequestId");
+			editHtmlResourceResponse.HtmlResourceId = _ctx.StringValue("EditHtmlResource.HtmlResourceId");
         
 			return editHtmlResourceResponse;
         }

@@ -26,27 +26,27 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeCasterVideoResourcesResponseUnmarshaller
     {
-        public static DescribeCasterVideoResourcesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCasterVideoResourcesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCasterVideoResourcesResponse describeCasterVideoResourcesResponse = new DescribeCasterVideoResourcesResponse();
 
-			describeCasterVideoResourcesResponse.HttpResponse = context.HttpResponse;
-			describeCasterVideoResourcesResponse.RequestId = context.StringValue("DescribeCasterVideoResources.RequestId");
-			describeCasterVideoResourcesResponse.Total = context.IntegerValue("DescribeCasterVideoResources.Total");
+			describeCasterVideoResourcesResponse.HttpResponse = _ctx.HttpResponse;
+			describeCasterVideoResourcesResponse.RequestId = _ctx.StringValue("DescribeCasterVideoResources.RequestId");
+			describeCasterVideoResourcesResponse.Total = _ctx.IntegerValue("DescribeCasterVideoResources.Total");
 
 			List<DescribeCasterVideoResourcesResponse.DescribeCasterVideoResources_VideoResource> describeCasterVideoResourcesResponse_videoResources = new List<DescribeCasterVideoResourcesResponse.DescribeCasterVideoResources_VideoResource>();
-			for (int i = 0; i < context.Length("DescribeCasterVideoResources.VideoResources.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCasterVideoResources.VideoResources.Length"); i++) {
 				DescribeCasterVideoResourcesResponse.DescribeCasterVideoResources_VideoResource videoResource = new DescribeCasterVideoResourcesResponse.DescribeCasterVideoResources_VideoResource();
-				videoResource.MaterialId = context.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].MaterialId");
-				videoResource.ResourceId = context.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].ResourceId");
-				videoResource.ResourceName = context.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].ResourceName");
-				videoResource.LocationId = context.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].LocationId");
-				videoResource.LiveStreamUrl = context.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].LiveStreamUrl");
-				videoResource.RepeatNum = context.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].RepeatNum");
-				videoResource.VodUrl = context.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].VodUrl");
-				videoResource.BeginOffset = context.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].BeginOffset");
-				videoResource.EndOffset = context.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].EndOffset");
-				videoResource.PtsCallbackInterval = context.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].PtsCallbackInterval");
+				videoResource.MaterialId = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].MaterialId");
+				videoResource.ResourceId = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].ResourceId");
+				videoResource.ResourceName = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].ResourceName");
+				videoResource.LocationId = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].LocationId");
+				videoResource.LiveStreamUrl = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].LiveStreamUrl");
+				videoResource.RepeatNum = _ctx.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].RepeatNum");
+				videoResource.VodUrl = _ctx.StringValue("DescribeCasterVideoResources.VideoResources["+ i +"].VodUrl");
+				videoResource.BeginOffset = _ctx.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].BeginOffset");
+				videoResource.EndOffset = _ctx.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].EndOffset");
+				videoResource.PtsCallbackInterval = _ctx.IntegerValue("DescribeCasterVideoResources.VideoResources["+ i +"].PtsCallbackInterval");
 
 				describeCasterVideoResourcesResponse_videoResources.Add(videoResource);
 			}

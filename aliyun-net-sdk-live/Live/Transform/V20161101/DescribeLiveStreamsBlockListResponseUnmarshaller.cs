@@ -26,21 +26,21 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveStreamsBlockListResponseUnmarshaller
     {
-        public static DescribeLiveStreamsBlockListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveStreamsBlockListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveStreamsBlockListResponse describeLiveStreamsBlockListResponse = new DescribeLiveStreamsBlockListResponse();
 
-			describeLiveStreamsBlockListResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamsBlockListResponse.RequestId = context.StringValue("DescribeLiveStreamsBlockList.RequestId");
-			describeLiveStreamsBlockListResponse.DomainName = context.StringValue("DescribeLiveStreamsBlockList.DomainName");
-			describeLiveStreamsBlockListResponse.PageNum = context.IntegerValue("DescribeLiveStreamsBlockList.PageNum");
-			describeLiveStreamsBlockListResponse.PageSize = context.IntegerValue("DescribeLiveStreamsBlockList.PageSize");
-			describeLiveStreamsBlockListResponse.TotalNum = context.IntegerValue("DescribeLiveStreamsBlockList.TotalNum");
-			describeLiveStreamsBlockListResponse.TotalPage = context.IntegerValue("DescribeLiveStreamsBlockList.TotalPage");
+			describeLiveStreamsBlockListResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveStreamsBlockListResponse.RequestId = _ctx.StringValue("DescribeLiveStreamsBlockList.RequestId");
+			describeLiveStreamsBlockListResponse.DomainName = _ctx.StringValue("DescribeLiveStreamsBlockList.DomainName");
+			describeLiveStreamsBlockListResponse.PageNum = _ctx.IntegerValue("DescribeLiveStreamsBlockList.PageNum");
+			describeLiveStreamsBlockListResponse.PageSize = _ctx.IntegerValue("DescribeLiveStreamsBlockList.PageSize");
+			describeLiveStreamsBlockListResponse.TotalNum = _ctx.IntegerValue("DescribeLiveStreamsBlockList.TotalNum");
+			describeLiveStreamsBlockListResponse.TotalPage = _ctx.IntegerValue("DescribeLiveStreamsBlockList.TotalPage");
 
 			List<string> describeLiveStreamsBlockListResponse_streamUrls = new List<string>();
-			for (int i = 0; i < context.Length("DescribeLiveStreamsBlockList.StreamUrls.Length"); i++) {
-				describeLiveStreamsBlockListResponse_streamUrls.Add(context.StringValue("DescribeLiveStreamsBlockList.StreamUrls["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeLiveStreamsBlockList.StreamUrls.Length"); i++) {
+				describeLiveStreamsBlockListResponse_streamUrls.Add(_ctx.StringValue("DescribeLiveStreamsBlockList.StreamUrls["+ i +"]"));
 			}
 			describeLiveStreamsBlockListResponse.StreamUrls = describeLiveStreamsBlockListResponse_streamUrls;
         

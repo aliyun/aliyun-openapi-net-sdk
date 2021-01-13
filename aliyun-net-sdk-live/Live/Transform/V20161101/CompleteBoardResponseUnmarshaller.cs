@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class CompleteBoardResponseUnmarshaller
     {
-        public static CompleteBoardResponse Unmarshall(UnmarshallerContext context)
+        public static CompleteBoardResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CompleteBoardResponse completeBoardResponse = new CompleteBoardResponse();
 
-			completeBoardResponse.HttpResponse = context.HttpResponse;
-			completeBoardResponse.RequestId = context.StringValue("CompleteBoard.RequestId");
+			completeBoardResponse.HttpResponse = _ctx.HttpResponse;
+			completeBoardResponse.RequestId = _ctx.StringValue("CompleteBoard.RequestId");
         
 			return completeBoardResponse;
         }

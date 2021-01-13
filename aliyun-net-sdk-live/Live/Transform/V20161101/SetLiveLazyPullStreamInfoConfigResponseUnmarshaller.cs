@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class SetLiveLazyPullStreamInfoConfigResponseUnmarshaller
     {
-        public static SetLiveLazyPullStreamInfoConfigResponse Unmarshall(UnmarshallerContext context)
+        public static SetLiveLazyPullStreamInfoConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetLiveLazyPullStreamInfoConfigResponse setLiveLazyPullStreamInfoConfigResponse = new SetLiveLazyPullStreamInfoConfigResponse();
 
-			setLiveLazyPullStreamInfoConfigResponse.HttpResponse = context.HttpResponse;
-			setLiveLazyPullStreamInfoConfigResponse.RequestId = context.StringValue("SetLiveLazyPullStreamInfoConfig.RequestId");
+			setLiveLazyPullStreamInfoConfigResponse.HttpResponse = _ctx.HttpResponse;
+			setLiveLazyPullStreamInfoConfigResponse.RequestId = _ctx.StringValue("SetLiveLazyPullStreamInfoConfig.RequestId");
         
 			return setLiveLazyPullStreamInfoConfigResponse;
         }

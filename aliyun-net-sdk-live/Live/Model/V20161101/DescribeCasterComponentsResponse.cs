@@ -389,6 +389,12 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string fontName;
 
+				private string sourceLan;
+
+				private string targetLan;
+
+				private bool? showSourceLan;
+
 				private float? sizeNormalized;
 
 				private float? borderWidthNormalized;
@@ -458,6 +464,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						fontName = value;
+					}
+				}
+
+				public string SourceLan
+				{
+					get
+					{
+						return sourceLan;
+					}
+					set	
+					{
+						sourceLan = value;
+					}
+				}
+
+				public string TargetLan
+				{
+					get
+					{
+						return targetLan;
+					}
+					set	
+					{
+						targetLan = value;
+					}
+				}
+
+				public bool? ShowSourceLan
+				{
+					get
+					{
+						return showSourceLan;
+					}
+					set	
+					{
+						showSourceLan = value;
 					}
 				}
 

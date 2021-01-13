@@ -26,19 +26,19 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveDomainTimeShiftDataResponseUnmarshaller
     {
-        public static DescribeLiveDomainTimeShiftDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveDomainTimeShiftDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveDomainTimeShiftDataResponse describeLiveDomainTimeShiftDataResponse = new DescribeLiveDomainTimeShiftDataResponse();
 
-			describeLiveDomainTimeShiftDataResponse.HttpResponse = context.HttpResponse;
-			describeLiveDomainTimeShiftDataResponse.RequestId = context.StringValue("DescribeLiveDomainTimeShiftData.RequestId");
+			describeLiveDomainTimeShiftDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveDomainTimeShiftDataResponse.RequestId = _ctx.StringValue("DescribeLiveDomainTimeShiftData.RequestId");
 
 			List<DescribeLiveDomainTimeShiftDataResponse.DescribeLiveDomainTimeShiftData_DataModule> describeLiveDomainTimeShiftDataResponse_timeShiftData = new List<DescribeLiveDomainTimeShiftDataResponse.DescribeLiveDomainTimeShiftData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeLiveDomainTimeShiftData.TimeShiftData.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveDomainTimeShiftData.TimeShiftData.Length"); i++) {
 				DescribeLiveDomainTimeShiftDataResponse.DescribeLiveDomainTimeShiftData_DataModule dataModule = new DescribeLiveDomainTimeShiftDataResponse.DescribeLiveDomainTimeShiftData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeLiveDomainTimeShiftData.TimeShiftData["+ i +"].TimeStamp");
-				dataModule.Size = context.StringValue("DescribeLiveDomainTimeShiftData.TimeShiftData["+ i +"].Size");
-				dataModule.Type = context.StringValue("DescribeLiveDomainTimeShiftData.TimeShiftData["+ i +"].Type");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeLiveDomainTimeShiftData.TimeShiftData["+ i +"].TimeStamp");
+				dataModule.Size = _ctx.StringValue("DescribeLiveDomainTimeShiftData.TimeShiftData["+ i +"].Size");
+				dataModule.Type = _ctx.StringValue("DescribeLiveDomainTimeShiftData.TimeShiftData["+ i +"].Type");
 
 				describeLiveDomainTimeShiftDataResponse_timeShiftData.Add(dataModule);
 			}

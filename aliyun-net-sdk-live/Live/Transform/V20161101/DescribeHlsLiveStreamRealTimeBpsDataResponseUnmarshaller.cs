@@ -26,30 +26,30 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeHlsLiveStreamRealTimeBpsDataResponseUnmarshaller
     {
-        public static DescribeHlsLiveStreamRealTimeBpsDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeHlsLiveStreamRealTimeBpsDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeHlsLiveStreamRealTimeBpsDataResponse describeHlsLiveStreamRealTimeBpsDataResponse = new DescribeHlsLiveStreamRealTimeBpsDataResponse();
 
-			describeHlsLiveStreamRealTimeBpsDataResponse.HttpResponse = context.HttpResponse;
-			describeHlsLiveStreamRealTimeBpsDataResponse.Time = context.StringValue("DescribeHlsLiveStreamRealTimeBpsData.Time");
-			describeHlsLiveStreamRealTimeBpsDataResponse.RequestId = context.StringValue("DescribeHlsLiveStreamRealTimeBpsData.RequestId");
+			describeHlsLiveStreamRealTimeBpsDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeHlsLiveStreamRealTimeBpsDataResponse.Time = _ctx.StringValue("DescribeHlsLiveStreamRealTimeBpsData.Time");
+			describeHlsLiveStreamRealTimeBpsDataResponse.RequestId = _ctx.StringValue("DescribeHlsLiveStreamRealTimeBpsData.RequestId");
 
 			List<DescribeHlsLiveStreamRealTimeBpsDataResponse.DescribeHlsLiveStreamRealTimeBpsData_UsageDataPerDomain> describeHlsLiveStreamRealTimeBpsDataResponse_usageData = new List<DescribeHlsLiveStreamRealTimeBpsDataResponse.DescribeHlsLiveStreamRealTimeBpsData_UsageDataPerDomain>();
-			for (int i = 0; i < context.Length("DescribeHlsLiveStreamRealTimeBpsData.UsageData.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeHlsLiveStreamRealTimeBpsData.UsageData.Length"); i++) {
 				DescribeHlsLiveStreamRealTimeBpsDataResponse.DescribeHlsLiveStreamRealTimeBpsData_UsageDataPerDomain usageDataPerDomain = new DescribeHlsLiveStreamRealTimeBpsDataResponse.DescribeHlsLiveStreamRealTimeBpsData_UsageDataPerDomain();
-				usageDataPerDomain.DomainName = context.StringValue("DescribeHlsLiveStreamRealTimeBpsData.UsageData["+ i +"].DomainName");
+				usageDataPerDomain.DomainName = _ctx.StringValue("DescribeHlsLiveStreamRealTimeBpsData.UsageData["+ i +"].DomainName");
 
 				List<DescribeHlsLiveStreamRealTimeBpsDataResponse.DescribeHlsLiveStreamRealTimeBpsData_UsageDataPerDomain.DescribeHlsLiveStreamRealTimeBpsData_StreamInfo> usageDataPerDomain_streamInfos = new List<DescribeHlsLiveStreamRealTimeBpsDataResponse.DescribeHlsLiveStreamRealTimeBpsData_UsageDataPerDomain.DescribeHlsLiveStreamRealTimeBpsData_StreamInfo>();
-				for (int j = 0; j < context.Length("DescribeHlsLiveStreamRealTimeBpsData.UsageData["+ i +"].StreamInfos.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeHlsLiveStreamRealTimeBpsData.UsageData["+ i +"].StreamInfos.Length"); j++) {
 					DescribeHlsLiveStreamRealTimeBpsDataResponse.DescribeHlsLiveStreamRealTimeBpsData_UsageDataPerDomain.DescribeHlsLiveStreamRealTimeBpsData_StreamInfo streamInfo = new DescribeHlsLiveStreamRealTimeBpsDataResponse.DescribeHlsLiveStreamRealTimeBpsData_UsageDataPerDomain.DescribeHlsLiveStreamRealTimeBpsData_StreamInfo();
-					streamInfo.StreamName = context.StringValue("DescribeHlsLiveStreamRealTimeBpsData.UsageData["+ i +"].StreamInfos["+ j +"].StreamName");
+					streamInfo.StreamName = _ctx.StringValue("DescribeHlsLiveStreamRealTimeBpsData.UsageData["+ i +"].StreamInfos["+ j +"].StreamName");
 
 					List<DescribeHlsLiveStreamRealTimeBpsDataResponse.DescribeHlsLiveStreamRealTimeBpsData_UsageDataPerDomain.DescribeHlsLiveStreamRealTimeBpsData_StreamInfo.DescribeHlsLiveStreamRealTimeBpsData_Info> streamInfo_infos = new List<DescribeHlsLiveStreamRealTimeBpsDataResponse.DescribeHlsLiveStreamRealTimeBpsData_UsageDataPerDomain.DescribeHlsLiveStreamRealTimeBpsData_StreamInfo.DescribeHlsLiveStreamRealTimeBpsData_Info>();
-					for (int k = 0; k < context.Length("DescribeHlsLiveStreamRealTimeBpsData.UsageData["+ i +"].StreamInfos["+ j +"].Infos.Length"); k++) {
+					for (int k = 0; k < _ctx.Length("DescribeHlsLiveStreamRealTimeBpsData.UsageData["+ i +"].StreamInfos["+ j +"].Infos.Length"); k++) {
 						DescribeHlsLiveStreamRealTimeBpsDataResponse.DescribeHlsLiveStreamRealTimeBpsData_UsageDataPerDomain.DescribeHlsLiveStreamRealTimeBpsData_StreamInfo.DescribeHlsLiveStreamRealTimeBpsData_Info info = new DescribeHlsLiveStreamRealTimeBpsDataResponse.DescribeHlsLiveStreamRealTimeBpsData_UsageDataPerDomain.DescribeHlsLiveStreamRealTimeBpsData_StreamInfo.DescribeHlsLiveStreamRealTimeBpsData_Info();
-						info.DownFlow = context.FloatValue("DescribeHlsLiveStreamRealTimeBpsData.UsageData["+ i +"].StreamInfos["+ j +"].Infos["+ k +"].DownFlow");
-						info.Rate = context.StringValue("DescribeHlsLiveStreamRealTimeBpsData.UsageData["+ i +"].StreamInfos["+ j +"].Infos["+ k +"].Rate");
-						info.Online = context.FloatValue("DescribeHlsLiveStreamRealTimeBpsData.UsageData["+ i +"].StreamInfos["+ j +"].Infos["+ k +"].Online");
+						info.DownFlow = _ctx.FloatValue("DescribeHlsLiveStreamRealTimeBpsData.UsageData["+ i +"].StreamInfos["+ j +"].Infos["+ k +"].DownFlow");
+						info.Rate = _ctx.StringValue("DescribeHlsLiveStreamRealTimeBpsData.UsageData["+ i +"].StreamInfos["+ j +"].Infos["+ k +"].Rate");
+						info.Online = _ctx.FloatValue("DescribeHlsLiveStreamRealTimeBpsData.UsageData["+ i +"].StreamInfos["+ j +"].Infos["+ k +"].Online");
 
 						streamInfo_infos.Add(info);
 					}

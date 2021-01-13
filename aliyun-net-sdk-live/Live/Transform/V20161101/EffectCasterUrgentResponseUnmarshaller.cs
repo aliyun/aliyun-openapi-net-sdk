@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class EffectCasterUrgentResponseUnmarshaller
     {
-        public static EffectCasterUrgentResponse Unmarshall(UnmarshallerContext context)
+        public static EffectCasterUrgentResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			EffectCasterUrgentResponse effectCasterUrgentResponse = new EffectCasterUrgentResponse();
 
-			effectCasterUrgentResponse.HttpResponse = context.HttpResponse;
-			effectCasterUrgentResponse.RequestId = context.StringValue("EffectCasterUrgent.RequestId");
+			effectCasterUrgentResponse.HttpResponse = _ctx.HttpResponse;
+			effectCasterUrgentResponse.RequestId = _ctx.StringValue("EffectCasterUrgent.RequestId");
         
 			return effectCasterUrgentResponse;
         }

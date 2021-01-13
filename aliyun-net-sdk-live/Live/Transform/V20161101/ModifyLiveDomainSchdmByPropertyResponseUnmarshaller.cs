@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class ModifyLiveDomainSchdmByPropertyResponseUnmarshaller
     {
-        public static ModifyLiveDomainSchdmByPropertyResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyLiveDomainSchdmByPropertyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyLiveDomainSchdmByPropertyResponse modifyLiveDomainSchdmByPropertyResponse = new ModifyLiveDomainSchdmByPropertyResponse();
 
-			modifyLiveDomainSchdmByPropertyResponse.HttpResponse = context.HttpResponse;
-			modifyLiveDomainSchdmByPropertyResponse.RequestId = context.StringValue("ModifyLiveDomainSchdmByProperty.RequestId");
+			modifyLiveDomainSchdmByPropertyResponse.HttpResponse = _ctx.HttpResponse;
+			modifyLiveDomainSchdmByPropertyResponse.RequestId = _ctx.StringValue("ModifyLiveDomainSchdmByProperty.RequestId");
         
 			return modifyLiveDomainSchdmByPropertyResponse;
         }

@@ -29,8 +29,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string cert;
 
-		private string key;
-
 		private long? certId;
 
 		private string certName;
@@ -56,18 +54,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			set	
 			{
 				cert = value;
-			}
-		}
-
-		public string Key
-		{
-			get
-			{
-				return key;
-			}
-			set	
-			{
-				key = value;
 			}
 		}
 

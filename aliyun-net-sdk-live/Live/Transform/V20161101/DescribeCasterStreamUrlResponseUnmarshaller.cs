@@ -26,29 +26,29 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeCasterStreamUrlResponseUnmarshaller
     {
-        public static DescribeCasterStreamUrlResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCasterStreamUrlResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCasterStreamUrlResponse describeCasterStreamUrlResponse = new DescribeCasterStreamUrlResponse();
 
-			describeCasterStreamUrlResponse.HttpResponse = context.HttpResponse;
-			describeCasterStreamUrlResponse.RequestId = context.StringValue("DescribeCasterStreamUrl.RequestId");
-			describeCasterStreamUrlResponse.CasterId = context.StringValue("DescribeCasterStreamUrl.CasterId");
-			describeCasterStreamUrlResponse.Total = context.IntegerValue("DescribeCasterStreamUrl.Total");
+			describeCasterStreamUrlResponse.HttpResponse = _ctx.HttpResponse;
+			describeCasterStreamUrlResponse.RequestId = _ctx.StringValue("DescribeCasterStreamUrl.RequestId");
+			describeCasterStreamUrlResponse.CasterId = _ctx.StringValue("DescribeCasterStreamUrl.CasterId");
+			describeCasterStreamUrlResponse.Total = _ctx.IntegerValue("DescribeCasterStreamUrl.Total");
 
 			List<DescribeCasterStreamUrlResponse.DescribeCasterStreamUrl_CasterStream> describeCasterStreamUrlResponse_casterStreams = new List<DescribeCasterStreamUrlResponse.DescribeCasterStreamUrl_CasterStream>();
-			for (int i = 0; i < context.Length("DescribeCasterStreamUrl.CasterStreams.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCasterStreamUrl.CasterStreams.Length"); i++) {
 				DescribeCasterStreamUrlResponse.DescribeCasterStreamUrl_CasterStream casterStream = new DescribeCasterStreamUrlResponse.DescribeCasterStreamUrl_CasterStream();
-				casterStream.SceneId = context.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].SceneId");
-				casterStream.StreamUrl = context.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].StreamUrl");
-				casterStream.RtmpUrl = context.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].RtmpUrl");
-				casterStream.OutputType = context.IntegerValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].OutputType");
+				casterStream.SceneId = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].SceneId");
+				casterStream.StreamUrl = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].StreamUrl");
+				casterStream.RtmpUrl = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].RtmpUrl");
+				casterStream.OutputType = _ctx.IntegerValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].OutputType");
 
 				List<DescribeCasterStreamUrlResponse.DescribeCasterStreamUrl_CasterStream.DescribeCasterStreamUrl_StreamInfo> casterStream_streamInfos = new List<DescribeCasterStreamUrlResponse.DescribeCasterStreamUrl_CasterStream.DescribeCasterStreamUrl_StreamInfo>();
-				for (int j = 0; j < context.Length("DescribeCasterStreamUrl.CasterStreams["+ i +"].StreamInfos.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeCasterStreamUrl.CasterStreams["+ i +"].StreamInfos.Length"); j++) {
 					DescribeCasterStreamUrlResponse.DescribeCasterStreamUrl_CasterStream.DescribeCasterStreamUrl_StreamInfo streamInfo = new DescribeCasterStreamUrlResponse.DescribeCasterStreamUrl_CasterStream.DescribeCasterStreamUrl_StreamInfo();
-					streamInfo.TranscodeConfig = context.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].StreamInfos["+ j +"].TranscodeConfig");
-					streamInfo.VideoFormat = context.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].StreamInfos["+ j +"].VideoFormat");
-					streamInfo.OutputStreamUrl = context.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].StreamInfos["+ j +"].OutputStreamUrl");
+					streamInfo.TranscodeConfig = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].StreamInfos["+ j +"].TranscodeConfig");
+					streamInfo.VideoFormat = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].StreamInfos["+ j +"].VideoFormat");
+					streamInfo.OutputStreamUrl = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].StreamInfos["+ j +"].OutputStreamUrl");
 
 					casterStream_streamInfos.Add(streamInfo);
 				}

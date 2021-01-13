@@ -26,27 +26,27 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveTopDomainsByFlowResponseUnmarshaller
     {
-        public static DescribeLiveTopDomainsByFlowResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveTopDomainsByFlowResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveTopDomainsByFlowResponse describeLiveTopDomainsByFlowResponse = new DescribeLiveTopDomainsByFlowResponse();
 
-			describeLiveTopDomainsByFlowResponse.HttpResponse = context.HttpResponse;
-			describeLiveTopDomainsByFlowResponse.RequestId = context.StringValue("DescribeLiveTopDomainsByFlow.RequestId");
-			describeLiveTopDomainsByFlowResponse.StartTime = context.StringValue("DescribeLiveTopDomainsByFlow.StartTime");
-			describeLiveTopDomainsByFlowResponse.EndTime = context.StringValue("DescribeLiveTopDomainsByFlow.EndTime");
-			describeLiveTopDomainsByFlowResponse.DomainCount = context.LongValue("DescribeLiveTopDomainsByFlow.DomainCount");
-			describeLiveTopDomainsByFlowResponse.DomainOnlineCount = context.LongValue("DescribeLiveTopDomainsByFlow.DomainOnlineCount");
+			describeLiveTopDomainsByFlowResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveTopDomainsByFlowResponse.RequestId = _ctx.StringValue("DescribeLiveTopDomainsByFlow.RequestId");
+			describeLiveTopDomainsByFlowResponse.StartTime = _ctx.StringValue("DescribeLiveTopDomainsByFlow.StartTime");
+			describeLiveTopDomainsByFlowResponse.EndTime = _ctx.StringValue("DescribeLiveTopDomainsByFlow.EndTime");
+			describeLiveTopDomainsByFlowResponse.DomainCount = _ctx.LongValue("DescribeLiveTopDomainsByFlow.DomainCount");
+			describeLiveTopDomainsByFlowResponse.DomainOnlineCount = _ctx.LongValue("DescribeLiveTopDomainsByFlow.DomainOnlineCount");
 
 			List<DescribeLiveTopDomainsByFlowResponse.DescribeLiveTopDomainsByFlow_TopDomain> describeLiveTopDomainsByFlowResponse_topDomains = new List<DescribeLiveTopDomainsByFlowResponse.DescribeLiveTopDomainsByFlow_TopDomain>();
-			for (int i = 0; i < context.Length("DescribeLiveTopDomainsByFlow.TopDomains.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveTopDomainsByFlow.TopDomains.Length"); i++) {
 				DescribeLiveTopDomainsByFlowResponse.DescribeLiveTopDomainsByFlow_TopDomain topDomain = new DescribeLiveTopDomainsByFlowResponse.DescribeLiveTopDomainsByFlow_TopDomain();
-				topDomain.DomainName = context.StringValue("DescribeLiveTopDomainsByFlow.TopDomains["+ i +"].DomainName");
-				topDomain.Rank = context.LongValue("DescribeLiveTopDomainsByFlow.TopDomains["+ i +"].Rank");
-				topDomain.TotalTraffic = context.StringValue("DescribeLiveTopDomainsByFlow.TopDomains["+ i +"].TotalTraffic");
-				topDomain.TrafficPercent = context.StringValue("DescribeLiveTopDomainsByFlow.TopDomains["+ i +"].TrafficPercent");
-				topDomain.MaxBps = context.LongValue("DescribeLiveTopDomainsByFlow.TopDomains["+ i +"].MaxBps");
-				topDomain.MaxBpsTime = context.StringValue("DescribeLiveTopDomainsByFlow.TopDomains["+ i +"].MaxBpsTime");
-				topDomain.TotalAccess = context.LongValue("DescribeLiveTopDomainsByFlow.TopDomains["+ i +"].TotalAccess");
+				topDomain.DomainName = _ctx.StringValue("DescribeLiveTopDomainsByFlow.TopDomains["+ i +"].DomainName");
+				topDomain.Rank = _ctx.LongValue("DescribeLiveTopDomainsByFlow.TopDomains["+ i +"].Rank");
+				topDomain.TotalTraffic = _ctx.StringValue("DescribeLiveTopDomainsByFlow.TopDomains["+ i +"].TotalTraffic");
+				topDomain.TrafficPercent = _ctx.StringValue("DescribeLiveTopDomainsByFlow.TopDomains["+ i +"].TrafficPercent");
+				topDomain.MaxBps = _ctx.LongValue("DescribeLiveTopDomainsByFlow.TopDomains["+ i +"].MaxBps");
+				topDomain.MaxBpsTime = _ctx.StringValue("DescribeLiveTopDomainsByFlow.TopDomains["+ i +"].MaxBpsTime");
+				topDomain.TotalAccess = _ctx.LongValue("DescribeLiveTopDomainsByFlow.TopDomains["+ i +"].TotalAccess");
 
 				describeLiveTopDomainsByFlowResponse_topDomains.Add(topDomain);
 			}

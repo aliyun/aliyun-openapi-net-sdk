@@ -26,18 +26,18 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveStreamsNotifyUrlConfigResponseUnmarshaller
     {
-        public static DescribeLiveStreamsNotifyUrlConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveStreamsNotifyUrlConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveStreamsNotifyUrlConfigResponse describeLiveStreamsNotifyUrlConfigResponse = new DescribeLiveStreamsNotifyUrlConfigResponse();
 
-			describeLiveStreamsNotifyUrlConfigResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamsNotifyUrlConfigResponse.RequestId = context.StringValue("DescribeLiveStreamsNotifyUrlConfig.RequestId");
+			describeLiveStreamsNotifyUrlConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveStreamsNotifyUrlConfigResponse.RequestId = _ctx.StringValue("DescribeLiveStreamsNotifyUrlConfig.RequestId");
 
 			DescribeLiveStreamsNotifyUrlConfigResponse.DescribeLiveStreamsNotifyUrlConfig_LiveStreamsNotifyConfig liveStreamsNotifyConfig = new DescribeLiveStreamsNotifyUrlConfigResponse.DescribeLiveStreamsNotifyUrlConfig_LiveStreamsNotifyConfig();
-			liveStreamsNotifyConfig.DomainName = context.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.DomainName");
-			liveStreamsNotifyConfig.NotifyUrl = context.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.NotifyUrl");
-			liveStreamsNotifyConfig.AuthType = context.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.AuthType");
-			liveStreamsNotifyConfig.AuthKey = context.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.AuthKey");
+			liveStreamsNotifyConfig.DomainName = _ctx.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.DomainName");
+			liveStreamsNotifyConfig.NotifyUrl = _ctx.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.NotifyUrl");
+			liveStreamsNotifyConfig.AuthType = _ctx.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.AuthType");
+			liveStreamsNotifyConfig.AuthKey = _ctx.StringValue("DescribeLiveStreamsNotifyUrlConfig.LiveStreamsNotifyConfig.AuthKey");
 			describeLiveStreamsNotifyUrlConfigResponse.LiveStreamsNotifyConfig = liveStreamsNotifyConfig;
         
 			return describeLiveStreamsNotifyUrlConfigResponse;

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class RealTimeSnapshotCommandResponseUnmarshaller
     {
-        public static RealTimeSnapshotCommandResponse Unmarshall(UnmarshallerContext context)
+        public static RealTimeSnapshotCommandResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RealTimeSnapshotCommandResponse realTimeSnapshotCommandResponse = new RealTimeSnapshotCommandResponse();
 
-			realTimeSnapshotCommandResponse.HttpResponse = context.HttpResponse;
-			realTimeSnapshotCommandResponse.RequestId = context.StringValue("RealTimeSnapshotCommand.RequestId");
+			realTimeSnapshotCommandResponse.HttpResponse = _ctx.HttpResponse;
+			realTimeSnapshotCommandResponse.RequestId = _ctx.StringValue("RealTimeSnapshotCommand.RequestId");
         
 			return realTimeSnapshotCommandResponse;
         }

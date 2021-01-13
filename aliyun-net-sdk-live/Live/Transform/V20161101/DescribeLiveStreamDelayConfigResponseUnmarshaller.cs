@@ -26,26 +26,26 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveStreamDelayConfigResponseUnmarshaller
     {
-        public static DescribeLiveStreamDelayConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveStreamDelayConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveStreamDelayConfigResponse describeLiveStreamDelayConfigResponse = new DescribeLiveStreamDelayConfigResponse();
 
-			describeLiveStreamDelayConfigResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamDelayConfigResponse.RequestId = context.StringValue("DescribeLiveStreamDelayConfig.RequestId");
+			describeLiveStreamDelayConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveStreamDelayConfigResponse.RequestId = _ctx.StringValue("DescribeLiveStreamDelayConfig.RequestId");
 
 			DescribeLiveStreamDelayConfigResponse.DescribeLiveStreamDelayConfig_LiveStreamHlsDelayConfig liveStreamHlsDelayConfig = new DescribeLiveStreamDelayConfigResponse.DescribeLiveStreamDelayConfig_LiveStreamHlsDelayConfig();
-			liveStreamHlsDelayConfig.Level = context.StringValue("DescribeLiveStreamDelayConfig.LiveStreamHlsDelayConfig.Level");
-			liveStreamHlsDelayConfig.Delay = context.IntegerValue("DescribeLiveStreamDelayConfig.LiveStreamHlsDelayConfig.Delay");
+			liveStreamHlsDelayConfig.Level = _ctx.StringValue("DescribeLiveStreamDelayConfig.LiveStreamHlsDelayConfig.Level");
+			liveStreamHlsDelayConfig.Delay = _ctx.IntegerValue("DescribeLiveStreamDelayConfig.LiveStreamHlsDelayConfig.Delay");
 			describeLiveStreamDelayConfigResponse.LiveStreamHlsDelayConfig = liveStreamHlsDelayConfig;
 
 			DescribeLiveStreamDelayConfigResponse.DescribeLiveStreamDelayConfig_LiveStreamFlvDelayConfig liveStreamFlvDelayConfig = new DescribeLiveStreamDelayConfigResponse.DescribeLiveStreamDelayConfig_LiveStreamFlvDelayConfig();
-			liveStreamFlvDelayConfig.Level = context.StringValue("DescribeLiveStreamDelayConfig.LiveStreamFlvDelayConfig.Level");
-			liveStreamFlvDelayConfig.Delay = context.IntegerValue("DescribeLiveStreamDelayConfig.LiveStreamFlvDelayConfig.Delay");
+			liveStreamFlvDelayConfig.Level = _ctx.StringValue("DescribeLiveStreamDelayConfig.LiveStreamFlvDelayConfig.Level");
+			liveStreamFlvDelayConfig.Delay = _ctx.IntegerValue("DescribeLiveStreamDelayConfig.LiveStreamFlvDelayConfig.Delay");
 			describeLiveStreamDelayConfigResponse.LiveStreamFlvDelayConfig = liveStreamFlvDelayConfig;
 
 			DescribeLiveStreamDelayConfigResponse.DescribeLiveStreamDelayConfig_LiveStreamRtmpDelayConfig liveStreamRtmpDelayConfig = new DescribeLiveStreamDelayConfigResponse.DescribeLiveStreamDelayConfig_LiveStreamRtmpDelayConfig();
-			liveStreamRtmpDelayConfig.Level = context.StringValue("DescribeLiveStreamDelayConfig.LiveStreamRtmpDelayConfig.Level");
-			liveStreamRtmpDelayConfig.Delay = context.IntegerValue("DescribeLiveStreamDelayConfig.LiveStreamRtmpDelayConfig.Delay");
+			liveStreamRtmpDelayConfig.Level = _ctx.StringValue("DescribeLiveStreamDelayConfig.LiveStreamRtmpDelayConfig.Level");
+			liveStreamRtmpDelayConfig.Delay = _ctx.IntegerValue("DescribeLiveStreamDelayConfig.LiveStreamRtmpDelayConfig.Delay");
 			describeLiveStreamDelayConfigResponse.LiveStreamRtmpDelayConfig = liveStreamRtmpDelayConfig;
         
 			return describeLiveStreamDelayConfigResponse;

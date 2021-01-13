@@ -26,13 +26,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class ControlHtmlResourceResponseUnmarshaller
     {
-        public static ControlHtmlResourceResponse Unmarshall(UnmarshallerContext context)
+        public static ControlHtmlResourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ControlHtmlResourceResponse controlHtmlResourceResponse = new ControlHtmlResourceResponse();
 
-			controlHtmlResourceResponse.HttpResponse = context.HttpResponse;
-			controlHtmlResourceResponse.RequestId = context.StringValue("ControlHtmlResource.RequestId");
-			controlHtmlResourceResponse.StreamId = context.StringValue("ControlHtmlResource.StreamId");
+			controlHtmlResourceResponse.HttpResponse = _ctx.HttpResponse;
+			controlHtmlResourceResponse.RequestId = _ctx.StringValue("ControlHtmlResource.RequestId");
+			controlHtmlResourceResponse.StreamId = _ctx.StringValue("ControlHtmlResource.StreamId");
         
 			return controlHtmlResourceResponse;
         }

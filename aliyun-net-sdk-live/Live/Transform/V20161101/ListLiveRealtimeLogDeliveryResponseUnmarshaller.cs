@@ -26,22 +26,22 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class ListLiveRealtimeLogDeliveryResponseUnmarshaller
     {
-        public static ListLiveRealtimeLogDeliveryResponse Unmarshall(UnmarshallerContext context)
+        public static ListLiveRealtimeLogDeliveryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListLiveRealtimeLogDeliveryResponse listLiveRealtimeLogDeliveryResponse = new ListLiveRealtimeLogDeliveryResponse();
 
-			listLiveRealtimeLogDeliveryResponse.HttpResponse = context.HttpResponse;
-			listLiveRealtimeLogDeliveryResponse.RequestId = context.StringValue("ListLiveRealtimeLogDelivery.RequestId");
+			listLiveRealtimeLogDeliveryResponse.HttpResponse = _ctx.HttpResponse;
+			listLiveRealtimeLogDeliveryResponse.RequestId = _ctx.StringValue("ListLiveRealtimeLogDelivery.RequestId");
 
 			List<ListLiveRealtimeLogDeliveryResponse.ListLiveRealtimeLogDelivery_RealtimeLogDeliveryInfo> listLiveRealtimeLogDeliveryResponse_content = new List<ListLiveRealtimeLogDeliveryResponse.ListLiveRealtimeLogDelivery_RealtimeLogDeliveryInfo>();
-			for (int i = 0; i < context.Length("ListLiveRealtimeLogDelivery.Content.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListLiveRealtimeLogDelivery.Content.Length"); i++) {
 				ListLiveRealtimeLogDeliveryResponse.ListLiveRealtimeLogDelivery_RealtimeLogDeliveryInfo realtimeLogDeliveryInfo = new ListLiveRealtimeLogDeliveryResponse.ListLiveRealtimeLogDelivery_RealtimeLogDeliveryInfo();
-				realtimeLogDeliveryInfo.Project = context.StringValue("ListLiveRealtimeLogDelivery.Content["+ i +"].Project");
-				realtimeLogDeliveryInfo.Logstore = context.StringValue("ListLiveRealtimeLogDelivery.Content["+ i +"].Logstore");
-				realtimeLogDeliveryInfo.Region = context.StringValue("ListLiveRealtimeLogDelivery.Content["+ i +"].Region");
-				realtimeLogDeliveryInfo.DomainName = context.StringValue("ListLiveRealtimeLogDelivery.Content["+ i +"].DomainName");
-				realtimeLogDeliveryInfo.DmId = context.IntegerValue("ListLiveRealtimeLogDelivery.Content["+ i +"].DmId");
-				realtimeLogDeliveryInfo.Status = context.StringValue("ListLiveRealtimeLogDelivery.Content["+ i +"].Status");
+				realtimeLogDeliveryInfo.Project = _ctx.StringValue("ListLiveRealtimeLogDelivery.Content["+ i +"].Project");
+				realtimeLogDeliveryInfo.Logstore = _ctx.StringValue("ListLiveRealtimeLogDelivery.Content["+ i +"].Logstore");
+				realtimeLogDeliveryInfo.Region = _ctx.StringValue("ListLiveRealtimeLogDelivery.Content["+ i +"].Region");
+				realtimeLogDeliveryInfo.DomainName = _ctx.StringValue("ListLiveRealtimeLogDelivery.Content["+ i +"].DomainName");
+				realtimeLogDeliveryInfo.DmId = _ctx.IntegerValue("ListLiveRealtimeLogDelivery.Content["+ i +"].DmId");
+				realtimeLogDeliveryInfo.Status = _ctx.StringValue("ListLiveRealtimeLogDelivery.Content["+ i +"].Status");
 
 				listLiveRealtimeLogDeliveryResponse_content.Add(realtimeLogDeliveryInfo);
 			}

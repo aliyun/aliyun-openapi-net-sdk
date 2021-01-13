@@ -26,21 +26,21 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeCasterChannelsResponseUnmarshaller
     {
-        public static DescribeCasterChannelsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCasterChannelsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCasterChannelsResponse describeCasterChannelsResponse = new DescribeCasterChannelsResponse();
 
-			describeCasterChannelsResponse.HttpResponse = context.HttpResponse;
-			describeCasterChannelsResponse.RequestId = context.StringValue("DescribeCasterChannels.RequestId");
-			describeCasterChannelsResponse.Total = context.IntegerValue("DescribeCasterChannels.Total");
+			describeCasterChannelsResponse.HttpResponse = _ctx.HttpResponse;
+			describeCasterChannelsResponse.RequestId = _ctx.StringValue("DescribeCasterChannels.RequestId");
+			describeCasterChannelsResponse.Total = _ctx.IntegerValue("DescribeCasterChannels.Total");
 
 			List<DescribeCasterChannelsResponse.DescribeCasterChannels_Channel> describeCasterChannelsResponse_channels = new List<DescribeCasterChannelsResponse.DescribeCasterChannels_Channel>();
-			for (int i = 0; i < context.Length("DescribeCasterChannels.Channels.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCasterChannels.Channels.Length"); i++) {
 				DescribeCasterChannelsResponse.DescribeCasterChannels_Channel channel = new DescribeCasterChannelsResponse.DescribeCasterChannels_Channel();
-				channel.ChannelId = context.StringValue("DescribeCasterChannels.Channels["+ i +"].ChannelId");
-				channel.ResourceId = context.StringValue("DescribeCasterChannels.Channels["+ i +"].ResourceId");
-				channel.StreamUrl = context.StringValue("DescribeCasterChannels.Channels["+ i +"].StreamUrl");
-				channel.RtmpUrl = context.StringValue("DescribeCasterChannels.Channels["+ i +"].RtmpUrl");
+				channel.ChannelId = _ctx.StringValue("DescribeCasterChannels.Channels["+ i +"].ChannelId");
+				channel.ResourceId = _ctx.StringValue("DescribeCasterChannels.Channels["+ i +"].ResourceId");
+				channel.StreamUrl = _ctx.StringValue("DescribeCasterChannels.Channels["+ i +"].StreamUrl");
+				channel.RtmpUrl = _ctx.StringValue("DescribeCasterChannels.Channels["+ i +"].RtmpUrl");
 
 				describeCasterChannelsResponse_channels.Add(channel);
 			}

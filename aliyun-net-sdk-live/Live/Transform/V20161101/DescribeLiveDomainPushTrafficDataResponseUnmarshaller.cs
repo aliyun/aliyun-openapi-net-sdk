@@ -26,22 +26,22 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveDomainPushTrafficDataResponseUnmarshaller
     {
-        public static DescribeLiveDomainPushTrafficDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveDomainPushTrafficDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveDomainPushTrafficDataResponse describeLiveDomainPushTrafficDataResponse = new DescribeLiveDomainPushTrafficDataResponse();
 
-			describeLiveDomainPushTrafficDataResponse.HttpResponse = context.HttpResponse;
-			describeLiveDomainPushTrafficDataResponse.RequestId = context.StringValue("DescribeLiveDomainPushTrafficData.RequestId");
-			describeLiveDomainPushTrafficDataResponse.DomainName = context.StringValue("DescribeLiveDomainPushTrafficData.DomainName");
-			describeLiveDomainPushTrafficDataResponse.StartTime = context.StringValue("DescribeLiveDomainPushTrafficData.StartTime");
-			describeLiveDomainPushTrafficDataResponse.EndTime = context.StringValue("DescribeLiveDomainPushTrafficData.EndTime");
-			describeLiveDomainPushTrafficDataResponse.DataInterval = context.StringValue("DescribeLiveDomainPushTrafficData.DataInterval");
+			describeLiveDomainPushTrafficDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveDomainPushTrafficDataResponse.RequestId = _ctx.StringValue("DescribeLiveDomainPushTrafficData.RequestId");
+			describeLiveDomainPushTrafficDataResponse.DomainName = _ctx.StringValue("DescribeLiveDomainPushTrafficData.DomainName");
+			describeLiveDomainPushTrafficDataResponse.StartTime = _ctx.StringValue("DescribeLiveDomainPushTrafficData.StartTime");
+			describeLiveDomainPushTrafficDataResponse.EndTime = _ctx.StringValue("DescribeLiveDomainPushTrafficData.EndTime");
+			describeLiveDomainPushTrafficDataResponse.DataInterval = _ctx.StringValue("DescribeLiveDomainPushTrafficData.DataInterval");
 
 			List<DescribeLiveDomainPushTrafficDataResponse.DescribeLiveDomainPushTrafficData_DataModule> describeLiveDomainPushTrafficDataResponse_trafficDataPerInterval = new List<DescribeLiveDomainPushTrafficDataResponse.DescribeLiveDomainPushTrafficData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeLiveDomainPushTrafficData.TrafficDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveDomainPushTrafficData.TrafficDataPerInterval.Length"); i++) {
 				DescribeLiveDomainPushTrafficDataResponse.DescribeLiveDomainPushTrafficData_DataModule dataModule = new DescribeLiveDomainPushTrafficDataResponse.DescribeLiveDomainPushTrafficData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeLiveDomainPushTrafficData.TrafficDataPerInterval["+ i +"].TimeStamp");
-				dataModule.TrafficValue = context.StringValue("DescribeLiveDomainPushTrafficData.TrafficDataPerInterval["+ i +"].TrafficValue");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeLiveDomainPushTrafficData.TrafficDataPerInterval["+ i +"].TimeStamp");
+				dataModule.TrafficValue = _ctx.StringValue("DescribeLiveDomainPushTrafficData.TrafficDataPerInterval["+ i +"].TrafficValue");
 
 				describeLiveDomainPushTrafficDataResponse_trafficDataPerInterval.Add(dataModule);
 			}

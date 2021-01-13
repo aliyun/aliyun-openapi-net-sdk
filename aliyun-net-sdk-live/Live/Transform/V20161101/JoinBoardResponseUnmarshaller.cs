@@ -26,17 +26,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class JoinBoardResponseUnmarshaller
     {
-        public static JoinBoardResponse Unmarshall(UnmarshallerContext context)
+        public static JoinBoardResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			JoinBoardResponse joinBoardResponse = new JoinBoardResponse();
 
-			joinBoardResponse.HttpResponse = context.HttpResponse;
-			joinBoardResponse.RequestId = context.StringValue("JoinBoard.RequestId");
-			joinBoardResponse.Token = context.StringValue("JoinBoard.Token");
-			joinBoardResponse.BoardId = context.StringValue("JoinBoard.BoardId");
-			joinBoardResponse.TopicId = context.StringValue("JoinBoard.TopicId");
-			joinBoardResponse.KeepaliveTopic = context.StringValue("JoinBoard.KeepaliveTopic");
-			joinBoardResponse.KeepaliveInterval = context.IntegerValue("JoinBoard.KeepaliveInterval");
+			joinBoardResponse.HttpResponse = _ctx.HttpResponse;
+			joinBoardResponse.RequestId = _ctx.StringValue("JoinBoard.RequestId");
+			joinBoardResponse.Token = _ctx.StringValue("JoinBoard.Token");
+			joinBoardResponse.BoardId = _ctx.StringValue("JoinBoard.BoardId");
+			joinBoardResponse.TopicId = _ctx.StringValue("JoinBoard.TopicId");
+			joinBoardResponse.KeepaliveTopic = _ctx.StringValue("JoinBoard.KeepaliveTopic");
+			joinBoardResponse.KeepaliveInterval = _ctx.IntegerValue("JoinBoard.KeepaliveInterval");
         
 			return joinBoardResponse;
         }

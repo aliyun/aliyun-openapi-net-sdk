@@ -26,13 +26,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class CopyCasterResponseUnmarshaller
     {
-        public static CopyCasterResponse Unmarshall(UnmarshallerContext context)
+        public static CopyCasterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CopyCasterResponse copyCasterResponse = new CopyCasterResponse();
 
-			copyCasterResponse.HttpResponse = context.HttpResponse;
-			copyCasterResponse.RequestId = context.StringValue("CopyCaster.RequestId");
-			copyCasterResponse.CasterId = context.StringValue("CopyCaster.CasterId");
+			copyCasterResponse.HttpResponse = _ctx.HttpResponse;
+			copyCasterResponse.RequestId = _ctx.StringValue("CopyCaster.RequestId");
+			copyCasterResponse.CasterId = _ctx.StringValue("CopyCaster.CasterId");
         
 			return copyCasterResponse;
         }

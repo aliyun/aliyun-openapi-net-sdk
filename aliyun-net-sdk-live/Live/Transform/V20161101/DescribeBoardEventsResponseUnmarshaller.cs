@@ -26,21 +26,21 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeBoardEventsResponseUnmarshaller
     {
-        public static DescribeBoardEventsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeBoardEventsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeBoardEventsResponse describeBoardEventsResponse = new DescribeBoardEventsResponse();
 
-			describeBoardEventsResponse.HttpResponse = context.HttpResponse;
-			describeBoardEventsResponse.RequestId = context.StringValue("DescribeBoardEvents.RequestId");
+			describeBoardEventsResponse.HttpResponse = _ctx.HttpResponse;
+			describeBoardEventsResponse.RequestId = _ctx.StringValue("DescribeBoardEvents.RequestId");
 
 			List<DescribeBoardEventsResponse.DescribeBoardEvents__Event> describeBoardEventsResponse_events = new List<DescribeBoardEventsResponse.DescribeBoardEvents__Event>();
-			for (int i = 0; i < context.Length("DescribeBoardEvents.Events.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeBoardEvents.Events.Length"); i++) {
 				DescribeBoardEventsResponse.DescribeBoardEvents__Event _event = new DescribeBoardEventsResponse.DescribeBoardEvents__Event();
-				_event.EventId = context.LongValue("DescribeBoardEvents.Events["+ i +"].EventId");
-				_event.EventType = context.IntegerValue("DescribeBoardEvents.Events["+ i +"].EventType");
-				_event.UserId = context.IntegerValue("DescribeBoardEvents.Events["+ i +"].UserId");
-				_event.Data = context.StringValue("DescribeBoardEvents.Events["+ i +"].Data");
-				_event.Timestamp = context.LongValue("DescribeBoardEvents.Events["+ i +"].Timestamp");
+				_event.EventId = _ctx.LongValue("DescribeBoardEvents.Events["+ i +"].EventId");
+				_event.EventType = _ctx.IntegerValue("DescribeBoardEvents.Events["+ i +"].EventType");
+				_event.UserId = _ctx.IntegerValue("DescribeBoardEvents.Events["+ i +"].UserId");
+				_event.Data = _ctx.StringValue("DescribeBoardEvents.Events["+ i +"].Data");
+				_event.Timestamp = _ctx.LongValue("DescribeBoardEvents.Events["+ i +"].Timestamp");
 
 				describeBoardEventsResponse_events.Add(_event);
 			}

@@ -26,14 +26,14 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class ApplyBoardTokenResponseUnmarshaller
     {
-        public static ApplyBoardTokenResponse Unmarshall(UnmarshallerContext context)
+        public static ApplyBoardTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ApplyBoardTokenResponse applyBoardTokenResponse = new ApplyBoardTokenResponse();
 
-			applyBoardTokenResponse.HttpResponse = context.HttpResponse;
-			applyBoardTokenResponse.RequestId = context.StringValue("ApplyBoardToken.RequestId");
-			applyBoardTokenResponse.Token = context.StringValue("ApplyBoardToken.Token");
-			applyBoardTokenResponse.Expired = context.StringValue("ApplyBoardToken.Expired");
+			applyBoardTokenResponse.HttpResponse = _ctx.HttpResponse;
+			applyBoardTokenResponse.RequestId = _ctx.StringValue("ApplyBoardToken.RequestId");
+			applyBoardTokenResponse.Token = _ctx.StringValue("ApplyBoardToken.Token");
+			applyBoardTokenResponse.Expired = _ctx.StringValue("ApplyBoardToken.Expired");
         
 			return applyBoardTokenResponse;
         }

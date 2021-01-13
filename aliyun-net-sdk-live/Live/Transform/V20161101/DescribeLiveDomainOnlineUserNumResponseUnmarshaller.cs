@@ -26,25 +26,25 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveDomainOnlineUserNumResponseUnmarshaller
     {
-        public static DescribeLiveDomainOnlineUserNumResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveDomainOnlineUserNumResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveDomainOnlineUserNumResponse describeLiveDomainOnlineUserNumResponse = new DescribeLiveDomainOnlineUserNumResponse();
 
-			describeLiveDomainOnlineUserNumResponse.HttpResponse = context.HttpResponse;
-			describeLiveDomainOnlineUserNumResponse.RequestId = context.StringValue("DescribeLiveDomainOnlineUserNum.RequestId");
-			describeLiveDomainOnlineUserNumResponse.StreamCount = context.IntegerValue("DescribeLiveDomainOnlineUserNum.StreamCount");
-			describeLiveDomainOnlineUserNumResponse.UserCount = context.IntegerValue("DescribeLiveDomainOnlineUserNum.UserCount");
+			describeLiveDomainOnlineUserNumResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveDomainOnlineUserNumResponse.RequestId = _ctx.StringValue("DescribeLiveDomainOnlineUserNum.RequestId");
+			describeLiveDomainOnlineUserNumResponse.StreamCount = _ctx.IntegerValue("DescribeLiveDomainOnlineUserNum.StreamCount");
+			describeLiveDomainOnlineUserNumResponse.UserCount = _ctx.IntegerValue("DescribeLiveDomainOnlineUserNum.UserCount");
 
 			List<DescribeLiveDomainOnlineUserNumResponse.DescribeLiveDomainOnlineUserNum_LiveStreamOnlineUserNumInfo> describeLiveDomainOnlineUserNumResponse_onlineUserInfo = new List<DescribeLiveDomainOnlineUserNumResponse.DescribeLiveDomainOnlineUserNum_LiveStreamOnlineUserNumInfo>();
-			for (int i = 0; i < context.Length("DescribeLiveDomainOnlineUserNum.OnlineUserInfo.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveDomainOnlineUserNum.OnlineUserInfo.Length"); i++) {
 				DescribeLiveDomainOnlineUserNumResponse.DescribeLiveDomainOnlineUserNum_LiveStreamOnlineUserNumInfo liveStreamOnlineUserNumInfo = new DescribeLiveDomainOnlineUserNumResponse.DescribeLiveDomainOnlineUserNum_LiveStreamOnlineUserNumInfo();
-				liveStreamOnlineUserNumInfo.StreamName = context.StringValue("DescribeLiveDomainOnlineUserNum.OnlineUserInfo["+ i +"].StreamName");
+				liveStreamOnlineUserNumInfo.StreamName = _ctx.StringValue("DescribeLiveDomainOnlineUserNum.OnlineUserInfo["+ i +"].StreamName");
 
 				List<DescribeLiveDomainOnlineUserNumResponse.DescribeLiveDomainOnlineUserNum_LiveStreamOnlineUserNumInfo.DescribeLiveDomainOnlineUserNum_Info> liveStreamOnlineUserNumInfo_infos = new List<DescribeLiveDomainOnlineUserNumResponse.DescribeLiveDomainOnlineUserNum_LiveStreamOnlineUserNumInfo.DescribeLiveDomainOnlineUserNum_Info>();
-				for (int j = 0; j < context.Length("DescribeLiveDomainOnlineUserNum.OnlineUserInfo["+ i +"].Infos.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeLiveDomainOnlineUserNum.OnlineUserInfo["+ i +"].Infos.Length"); j++) {
 					DescribeLiveDomainOnlineUserNumResponse.DescribeLiveDomainOnlineUserNum_LiveStreamOnlineUserNumInfo.DescribeLiveDomainOnlineUserNum_Info info = new DescribeLiveDomainOnlineUserNumResponse.DescribeLiveDomainOnlineUserNum_LiveStreamOnlineUserNumInfo.DescribeLiveDomainOnlineUserNum_Info();
-					info.TranscodeTemplate = context.StringValue("DescribeLiveDomainOnlineUserNum.OnlineUserInfo["+ i +"].Infos["+ j +"].TranscodeTemplate");
-					info.UserNumber = context.LongValue("DescribeLiveDomainOnlineUserNum.OnlineUserInfo["+ i +"].Infos["+ j +"].UserNumber");
+					info.TranscodeTemplate = _ctx.StringValue("DescribeLiveDomainOnlineUserNum.OnlineUserInfo["+ i +"].Infos["+ j +"].TranscodeTemplate");
+					info.UserNumber = _ctx.LongValue("DescribeLiveDomainOnlineUserNum.OnlineUserInfo["+ i +"].Infos["+ j +"].UserNumber");
 
 					liveStreamOnlineUserNumInfo_infos.Add(info);
 				}

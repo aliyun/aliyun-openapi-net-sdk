@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class StopCasterSceneResponseUnmarshaller
     {
-        public static StopCasterSceneResponse Unmarshall(UnmarshallerContext context)
+        public static StopCasterSceneResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopCasterSceneResponse stopCasterSceneResponse = new StopCasterSceneResponse();
 
-			stopCasterSceneResponse.HttpResponse = context.HttpResponse;
-			stopCasterSceneResponse.RequestId = context.StringValue("StopCasterScene.RequestId");
+			stopCasterSceneResponse.HttpResponse = _ctx.HttpResponse;
+			stopCasterSceneResponse.RequestId = _ctx.StringValue("StopCasterScene.RequestId");
         
 			return stopCasterSceneResponse;
         }

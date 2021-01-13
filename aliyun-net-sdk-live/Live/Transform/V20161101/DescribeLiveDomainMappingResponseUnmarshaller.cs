@@ -26,18 +26,18 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveDomainMappingResponseUnmarshaller
     {
-        public static DescribeLiveDomainMappingResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveDomainMappingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveDomainMappingResponse describeLiveDomainMappingResponse = new DescribeLiveDomainMappingResponse();
 
-			describeLiveDomainMappingResponse.HttpResponse = context.HttpResponse;
-			describeLiveDomainMappingResponse.RequestId = context.StringValue("DescribeLiveDomainMapping.RequestId");
+			describeLiveDomainMappingResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveDomainMappingResponse.RequestId = _ctx.StringValue("DescribeLiveDomainMapping.RequestId");
 
 			List<DescribeLiveDomainMappingResponse.DescribeLiveDomainMapping_LiveDomainModel> describeLiveDomainMappingResponse_liveDomainModels = new List<DescribeLiveDomainMappingResponse.DescribeLiveDomainMapping_LiveDomainModel>();
-			for (int i = 0; i < context.Length("DescribeLiveDomainMapping.LiveDomainModels.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveDomainMapping.LiveDomainModels.Length"); i++) {
 				DescribeLiveDomainMappingResponse.DescribeLiveDomainMapping_LiveDomainModel liveDomainModel = new DescribeLiveDomainMappingResponse.DescribeLiveDomainMapping_LiveDomainModel();
-				liveDomainModel.DomainName = context.StringValue("DescribeLiveDomainMapping.LiveDomainModels["+ i +"].DomainName");
-				liveDomainModel.Type = context.StringValue("DescribeLiveDomainMapping.LiveDomainModels["+ i +"].Type");
+				liveDomainModel.DomainName = _ctx.StringValue("DescribeLiveDomainMapping.LiveDomainModels["+ i +"].DomainName");
+				liveDomainModel.Type = _ctx.StringValue("DescribeLiveDomainMapping.LiveDomainModels["+ i +"].Type");
 
 				describeLiveDomainMappingResponse_liveDomainModels.Add(liveDomainModel);
 			}

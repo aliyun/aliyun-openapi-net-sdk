@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class SetLiveStreamOptimizedFeatureConfigResponseUnmarshaller
     {
-        public static SetLiveStreamOptimizedFeatureConfigResponse Unmarshall(UnmarshallerContext context)
+        public static SetLiveStreamOptimizedFeatureConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetLiveStreamOptimizedFeatureConfigResponse setLiveStreamOptimizedFeatureConfigResponse = new SetLiveStreamOptimizedFeatureConfigResponse();
 
-			setLiveStreamOptimizedFeatureConfigResponse.HttpResponse = context.HttpResponse;
-			setLiveStreamOptimizedFeatureConfigResponse.RequestId = context.StringValue("SetLiveStreamOptimizedFeatureConfig.RequestId");
+			setLiveStreamOptimizedFeatureConfigResponse.HttpResponse = _ctx.HttpResponse;
+			setLiveStreamOptimizedFeatureConfigResponse.RequestId = _ctx.StringValue("SetLiveStreamOptimizedFeatureConfig.RequestId");
         
 			return setLiveStreamOptimizedFeatureConfigResponse;
         }

@@ -26,22 +26,22 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveDomainBpsDataByTimeStampResponseUnmarshaller
     {
-        public static DescribeLiveDomainBpsDataByTimeStampResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveDomainBpsDataByTimeStampResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveDomainBpsDataByTimeStampResponse describeLiveDomainBpsDataByTimeStampResponse = new DescribeLiveDomainBpsDataByTimeStampResponse();
 
-			describeLiveDomainBpsDataByTimeStampResponse.HttpResponse = context.HttpResponse;
-			describeLiveDomainBpsDataByTimeStampResponse.RequestId = context.StringValue("DescribeLiveDomainBpsDataByTimeStamp.RequestId");
-			describeLiveDomainBpsDataByTimeStampResponse.DomainName = context.StringValue("DescribeLiveDomainBpsDataByTimeStamp.DomainName");
-			describeLiveDomainBpsDataByTimeStampResponse.TimeStamp = context.StringValue("DescribeLiveDomainBpsDataByTimeStamp.TimeStamp");
+			describeLiveDomainBpsDataByTimeStampResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveDomainBpsDataByTimeStampResponse.RequestId = _ctx.StringValue("DescribeLiveDomainBpsDataByTimeStamp.RequestId");
+			describeLiveDomainBpsDataByTimeStampResponse.DomainName = _ctx.StringValue("DescribeLiveDomainBpsDataByTimeStamp.DomainName");
+			describeLiveDomainBpsDataByTimeStampResponse.TimeStamp = _ctx.StringValue("DescribeLiveDomainBpsDataByTimeStamp.TimeStamp");
 
 			List<DescribeLiveDomainBpsDataByTimeStampResponse.DescribeLiveDomainBpsDataByTimeStamp_BpsDataModel> describeLiveDomainBpsDataByTimeStampResponse_bpsDataList = new List<DescribeLiveDomainBpsDataByTimeStampResponse.DescribeLiveDomainBpsDataByTimeStamp_BpsDataModel>();
-			for (int i = 0; i < context.Length("DescribeLiveDomainBpsDataByTimeStamp.BpsDataList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveDomainBpsDataByTimeStamp.BpsDataList.Length"); i++) {
 				DescribeLiveDomainBpsDataByTimeStampResponse.DescribeLiveDomainBpsDataByTimeStamp_BpsDataModel bpsDataModel = new DescribeLiveDomainBpsDataByTimeStampResponse.DescribeLiveDomainBpsDataByTimeStamp_BpsDataModel();
-				bpsDataModel.TimeStamp = context.StringValue("DescribeLiveDomainBpsDataByTimeStamp.BpsDataList["+ i +"].TimeStamp");
-				bpsDataModel.LocationName = context.StringValue("DescribeLiveDomainBpsDataByTimeStamp.BpsDataList["+ i +"].LocationName");
-				bpsDataModel.IspName = context.StringValue("DescribeLiveDomainBpsDataByTimeStamp.BpsDataList["+ i +"].IspName");
-				bpsDataModel.Bps = context.LongValue("DescribeLiveDomainBpsDataByTimeStamp.BpsDataList["+ i +"].Bps");
+				bpsDataModel.TimeStamp = _ctx.StringValue("DescribeLiveDomainBpsDataByTimeStamp.BpsDataList["+ i +"].TimeStamp");
+				bpsDataModel.LocationName = _ctx.StringValue("DescribeLiveDomainBpsDataByTimeStamp.BpsDataList["+ i +"].LocationName");
+				bpsDataModel.IspName = _ctx.StringValue("DescribeLiveDomainBpsDataByTimeStamp.BpsDataList["+ i +"].IspName");
+				bpsDataModel.Bps = _ctx.LongValue("DescribeLiveDomainBpsDataByTimeStamp.BpsDataList["+ i +"].Bps");
 
 				describeLiveDomainBpsDataByTimeStampResponse_bpsDataList.Add(bpsDataModel);
 			}

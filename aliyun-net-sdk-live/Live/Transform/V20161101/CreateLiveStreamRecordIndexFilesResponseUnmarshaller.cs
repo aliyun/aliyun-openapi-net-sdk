@@ -26,28 +26,28 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class CreateLiveStreamRecordIndexFilesResponseUnmarshaller
     {
-        public static CreateLiveStreamRecordIndexFilesResponse Unmarshall(UnmarshallerContext context)
+        public static CreateLiveStreamRecordIndexFilesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateLiveStreamRecordIndexFilesResponse createLiveStreamRecordIndexFilesResponse = new CreateLiveStreamRecordIndexFilesResponse();
 
-			createLiveStreamRecordIndexFilesResponse.HttpResponse = context.HttpResponse;
-			createLiveStreamRecordIndexFilesResponse.RequestId = context.StringValue("CreateLiveStreamRecordIndexFiles.RequestId");
+			createLiveStreamRecordIndexFilesResponse.HttpResponse = _ctx.HttpResponse;
+			createLiveStreamRecordIndexFilesResponse.RequestId = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RequestId");
 
 			CreateLiveStreamRecordIndexFilesResponse.CreateLiveStreamRecordIndexFiles_RecordInfo recordInfo = new CreateLiveStreamRecordIndexFilesResponse.CreateLiveStreamRecordIndexFiles_RecordInfo();
-			recordInfo.RecordId = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.RecordId");
-			recordInfo.RecordUrl = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.RecordUrl");
-			recordInfo.DomainName = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.DomainName");
-			recordInfo.AppName = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.AppName");
-			recordInfo.StreamName = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.StreamName");
-			recordInfo.OssBucket = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.OssBucket");
-			recordInfo.OssEndpoint = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.OssEndpoint");
-			recordInfo.OssObject = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.OssObject");
-			recordInfo.StartTime = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.StartTime");
-			recordInfo.EndTime = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.EndTime");
-			recordInfo.Duration = context.FloatValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Duration");
-			recordInfo.Height = context.IntegerValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Height");
-			recordInfo.Width = context.IntegerValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Width");
-			recordInfo.CreateTime = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.CreateTime");
+			recordInfo.RecordId = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.RecordId");
+			recordInfo.RecordUrl = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.RecordUrl");
+			recordInfo.DomainName = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.DomainName");
+			recordInfo.AppName = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.AppName");
+			recordInfo.StreamName = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.StreamName");
+			recordInfo.OssBucket = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.OssBucket");
+			recordInfo.OssEndpoint = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.OssEndpoint");
+			recordInfo.OssObject = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.OssObject");
+			recordInfo.StartTime = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.StartTime");
+			recordInfo.EndTime = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.EndTime");
+			recordInfo.Duration = _ctx.FloatValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Duration");
+			recordInfo.Height = _ctx.IntegerValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Height");
+			recordInfo.Width = _ctx.IntegerValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Width");
+			recordInfo.CreateTime = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.CreateTime");
 			createLiveStreamRecordIndexFilesResponse.RecordInfo = recordInfo;
         
 			return createLiveStreamRecordIndexFilesResponse;

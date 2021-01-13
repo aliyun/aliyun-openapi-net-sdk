@@ -26,19 +26,19 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveDomainTranscodeDataResponseUnmarshaller
     {
-        public static DescribeLiveDomainTranscodeDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveDomainTranscodeDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveDomainTranscodeDataResponse describeLiveDomainTranscodeDataResponse = new DescribeLiveDomainTranscodeDataResponse();
 
-			describeLiveDomainTranscodeDataResponse.HttpResponse = context.HttpResponse;
-			describeLiveDomainTranscodeDataResponse.RequestId = context.StringValue("DescribeLiveDomainTranscodeData.RequestId");
+			describeLiveDomainTranscodeDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveDomainTranscodeDataResponse.RequestId = _ctx.StringValue("DescribeLiveDomainTranscodeData.RequestId");
 
 			List<DescribeLiveDomainTranscodeDataResponse.DescribeLiveDomainTranscodeData_TranscodeDataInfo> describeLiveDomainTranscodeDataResponse_transcodeDataInfos = new List<DescribeLiveDomainTranscodeDataResponse.DescribeLiveDomainTranscodeData_TranscodeDataInfo>();
-			for (int i = 0; i < context.Length("DescribeLiveDomainTranscodeData.TranscodeDataInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveDomainTranscodeData.TranscodeDataInfos.Length"); i++) {
 				DescribeLiveDomainTranscodeDataResponse.DescribeLiveDomainTranscodeData_TranscodeDataInfo transcodeDataInfo = new DescribeLiveDomainTranscodeDataResponse.DescribeLiveDomainTranscodeData_TranscodeDataInfo();
-				transcodeDataInfo.Date = context.StringValue("DescribeLiveDomainTranscodeData.TranscodeDataInfos["+ i +"].Date");
-				transcodeDataInfo.Total = context.IntegerValue("DescribeLiveDomainTranscodeData.TranscodeDataInfos["+ i +"].Total");
-				transcodeDataInfo.Detail = context.StringValue("DescribeLiveDomainTranscodeData.TranscodeDataInfos["+ i +"].Detail");
+				transcodeDataInfo.Date = _ctx.StringValue("DescribeLiveDomainTranscodeData.TranscodeDataInfos["+ i +"].Date");
+				transcodeDataInfo.Total = _ctx.IntegerValue("DescribeLiveDomainTranscodeData.TranscodeDataInfos["+ i +"].Total");
+				transcodeDataInfo.Detail = _ctx.StringValue("DescribeLiveDomainTranscodeData.TranscodeDataInfos["+ i +"].Detail");
 
 				describeLiveDomainTranscodeDataResponse_transcodeDataInfos.Add(transcodeDataInfo);
 			}

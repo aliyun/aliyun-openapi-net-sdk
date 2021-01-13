@@ -26,25 +26,25 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveCertificateListResponseUnmarshaller
     {
-        public static DescribeLiveCertificateListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveCertificateListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveCertificateListResponse describeLiveCertificateListResponse = new DescribeLiveCertificateListResponse();
 
-			describeLiveCertificateListResponse.HttpResponse = context.HttpResponse;
-			describeLiveCertificateListResponse.RequestId = context.StringValue("DescribeLiveCertificateList.RequestId");
+			describeLiveCertificateListResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveCertificateListResponse.RequestId = _ctx.StringValue("DescribeLiveCertificateList.RequestId");
 
 			DescribeLiveCertificateListResponse.DescribeLiveCertificateList_CertificateListModel certificateListModel = new DescribeLiveCertificateListResponse.DescribeLiveCertificateList_CertificateListModel();
-			certificateListModel.Count = context.IntegerValue("DescribeLiveCertificateList.CertificateListModel.Count");
+			certificateListModel.Count = _ctx.IntegerValue("DescribeLiveCertificateList.CertificateListModel.Count");
 
 			List<DescribeLiveCertificateListResponse.DescribeLiveCertificateList_CertificateListModel.DescribeLiveCertificateList_Cert> certificateListModel_certList = new List<DescribeLiveCertificateListResponse.DescribeLiveCertificateList_CertificateListModel.DescribeLiveCertificateList_Cert>();
-			for (int i = 0; i < context.Length("DescribeLiveCertificateList.CertificateListModel.CertList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveCertificateList.CertificateListModel.CertList.Length"); i++) {
 				DescribeLiveCertificateListResponse.DescribeLiveCertificateList_CertificateListModel.DescribeLiveCertificateList_Cert cert = new DescribeLiveCertificateListResponse.DescribeLiveCertificateList_CertificateListModel.DescribeLiveCertificateList_Cert();
-				cert.CertName = context.StringValue("DescribeLiveCertificateList.CertificateListModel.CertList["+ i +"].CertName");
-				cert.CertId = context.LongValue("DescribeLiveCertificateList.CertificateListModel.CertList["+ i +"].CertId");
-				cert.Fingerprint = context.StringValue("DescribeLiveCertificateList.CertificateListModel.CertList["+ i +"].Fingerprint");
-				cert.Common = context.StringValue("DescribeLiveCertificateList.CertificateListModel.CertList["+ i +"].Common");
-				cert.Issuer = context.StringValue("DescribeLiveCertificateList.CertificateListModel.CertList["+ i +"].Issuer");
-				cert.LastTime = context.LongValue("DescribeLiveCertificateList.CertificateListModel.CertList["+ i +"].LastTime");
+				cert.CertName = _ctx.StringValue("DescribeLiveCertificateList.CertificateListModel.CertList["+ i +"].CertName");
+				cert.CertId = _ctx.LongValue("DescribeLiveCertificateList.CertificateListModel.CertList["+ i +"].CertId");
+				cert.Fingerprint = _ctx.StringValue("DescribeLiveCertificateList.CertificateListModel.CertList["+ i +"].Fingerprint");
+				cert.Common = _ctx.StringValue("DescribeLiveCertificateList.CertificateListModel.CertList["+ i +"].Common");
+				cert.Issuer = _ctx.StringValue("DescribeLiveCertificateList.CertificateListModel.CertList["+ i +"].Issuer");
+				cert.LastTime = _ctx.LongValue("DescribeLiveCertificateList.CertificateListModel.CertList["+ i +"].LastTime");
 
 				certificateListModel_certList.Add(cert);
 			}

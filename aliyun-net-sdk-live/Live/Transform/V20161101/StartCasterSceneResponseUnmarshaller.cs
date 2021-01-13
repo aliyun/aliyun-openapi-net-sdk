@@ -26,13 +26,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class StartCasterSceneResponseUnmarshaller
     {
-        public static StartCasterSceneResponse Unmarshall(UnmarshallerContext context)
+        public static StartCasterSceneResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StartCasterSceneResponse startCasterSceneResponse = new StartCasterSceneResponse();
 
-			startCasterSceneResponse.HttpResponse = context.HttpResponse;
-			startCasterSceneResponse.RequestId = context.StringValue("StartCasterScene.RequestId");
-			startCasterSceneResponse.StreamUrl = context.StringValue("StartCasterScene.StreamUrl");
+			startCasterSceneResponse.HttpResponse = _ctx.HttpResponse;
+			startCasterSceneResponse.RequestId = _ctx.StringValue("StartCasterScene.RequestId");
+			startCasterSceneResponse.StreamUrl = _ctx.StringValue("StartCasterScene.StreamUrl");
         
 			return startCasterSceneResponse;
         }

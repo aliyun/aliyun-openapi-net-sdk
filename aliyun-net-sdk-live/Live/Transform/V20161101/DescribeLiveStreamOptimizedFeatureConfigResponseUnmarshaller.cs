@@ -26,20 +26,20 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveStreamOptimizedFeatureConfigResponseUnmarshaller
     {
-        public static DescribeLiveStreamOptimizedFeatureConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveStreamOptimizedFeatureConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveStreamOptimizedFeatureConfigResponse describeLiveStreamOptimizedFeatureConfigResponse = new DescribeLiveStreamOptimizedFeatureConfigResponse();
 
-			describeLiveStreamOptimizedFeatureConfigResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamOptimizedFeatureConfigResponse.RequestId = context.StringValue("DescribeLiveStreamOptimizedFeatureConfig.RequestId");
+			describeLiveStreamOptimizedFeatureConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveStreamOptimizedFeatureConfigResponse.RequestId = _ctx.StringValue("DescribeLiveStreamOptimizedFeatureConfig.RequestId");
 
 			List<DescribeLiveStreamOptimizedFeatureConfigResponse.DescribeLiveStreamOptimizedFeatureConfig_LiveStreamOptimizedFeatureConfig> describeLiveStreamOptimizedFeatureConfigResponse_liveStreamOptimizedFeatureConfigList = new List<DescribeLiveStreamOptimizedFeatureConfigResponse.DescribeLiveStreamOptimizedFeatureConfig_LiveStreamOptimizedFeatureConfig>();
-			for (int i = 0; i < context.Length("DescribeLiveStreamOptimizedFeatureConfig.LiveStreamOptimizedFeatureConfigList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveStreamOptimizedFeatureConfig.LiveStreamOptimizedFeatureConfigList.Length"); i++) {
 				DescribeLiveStreamOptimizedFeatureConfigResponse.DescribeLiveStreamOptimizedFeatureConfig_LiveStreamOptimizedFeatureConfig liveStreamOptimizedFeatureConfig = new DescribeLiveStreamOptimizedFeatureConfigResponse.DescribeLiveStreamOptimizedFeatureConfig_LiveStreamOptimizedFeatureConfig();
-				liveStreamOptimizedFeatureConfig.DomainName = context.StringValue("DescribeLiveStreamOptimizedFeatureConfig.LiveStreamOptimizedFeatureConfigList["+ i +"].DomainName");
-				liveStreamOptimizedFeatureConfig.ConfigName = context.StringValue("DescribeLiveStreamOptimizedFeatureConfig.LiveStreamOptimizedFeatureConfigList["+ i +"].ConfigName");
-				liveStreamOptimizedFeatureConfig.ConfigStatus = context.StringValue("DescribeLiveStreamOptimizedFeatureConfig.LiveStreamOptimizedFeatureConfigList["+ i +"].ConfigStatus");
-				liveStreamOptimizedFeatureConfig.ConfigValue = context.StringValue("DescribeLiveStreamOptimizedFeatureConfig.LiveStreamOptimizedFeatureConfigList["+ i +"].ConfigValue");
+				liveStreamOptimizedFeatureConfig.DomainName = _ctx.StringValue("DescribeLiveStreamOptimizedFeatureConfig.LiveStreamOptimizedFeatureConfigList["+ i +"].DomainName");
+				liveStreamOptimizedFeatureConfig.ConfigName = _ctx.StringValue("DescribeLiveStreamOptimizedFeatureConfig.LiveStreamOptimizedFeatureConfigList["+ i +"].ConfigName");
+				liveStreamOptimizedFeatureConfig.ConfigStatus = _ctx.StringValue("DescribeLiveStreamOptimizedFeatureConfig.LiveStreamOptimizedFeatureConfigList["+ i +"].ConfigStatus");
+				liveStreamOptimizedFeatureConfig.ConfigValue = _ctx.StringValue("DescribeLiveStreamOptimizedFeatureConfig.LiveStreamOptimizedFeatureConfigList["+ i +"].ConfigValue");
 
 				describeLiveStreamOptimizedFeatureConfigResponse_liveStreamOptimizedFeatureConfigList.Add(liveStreamOptimizedFeatureConfig);
 			}

@@ -64,6 +64,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private DescribeLiveStreamTranscodeInfo_CustomTranscodeParameters customTranscodeParameters;
 
+			private DescribeLiveStreamTranscodeInfo_EncryptParameters encryptParameters;
+
 			public string TranscodeApp
 			{
 				get
@@ -109,6 +111,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					customTranscodeParameters = value;
+				}
+			}
+
+			public DescribeLiveStreamTranscodeInfo_EncryptParameters EncryptParameters
+			{
+				get
+				{
+					return encryptParameters;
+				}
+				set	
+				{
+					encryptParameters = value;
 				}
 			}
 
@@ -308,6 +322,52 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						audioChannelNum = value;
+					}
+				}
+			}
+
+			public class DescribeLiveStreamTranscodeInfo_EncryptParameters
+			{
+
+				private string encryptType;
+
+				private string kmsKeyExpireInterval;
+
+				private string kmsKeyID;
+
+				public string EncryptType
+				{
+					get
+					{
+						return encryptType;
+					}
+					set	
+					{
+						encryptType = value;
+					}
+				}
+
+				public string KmsKeyExpireInterval
+				{
+					get
+					{
+						return kmsKeyExpireInterval;
+					}
+					set	
+					{
+						kmsKeyExpireInterval = value;
+					}
+				}
+
+				public string KmsKeyID
+				{
+					get
+					{
+						return kmsKeyID;
+					}
+					set	
+					{
+						kmsKeyID = value;
 					}
 				}
 			}

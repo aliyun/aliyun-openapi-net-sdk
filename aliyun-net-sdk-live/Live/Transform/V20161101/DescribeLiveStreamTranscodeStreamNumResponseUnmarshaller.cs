@@ -26,16 +26,16 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveStreamTranscodeStreamNumResponseUnmarshaller
     {
-        public static DescribeLiveStreamTranscodeStreamNumResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveStreamTranscodeStreamNumResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveStreamTranscodeStreamNumResponse describeLiveStreamTranscodeStreamNumResponse = new DescribeLiveStreamTranscodeStreamNumResponse();
 
-			describeLiveStreamTranscodeStreamNumResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamTranscodeStreamNumResponse.RequestId = context.StringValue("DescribeLiveStreamTranscodeStreamNum.RequestId");
-			describeLiveStreamTranscodeStreamNumResponse.Total = context.LongValue("DescribeLiveStreamTranscodeStreamNum.Total");
-			describeLiveStreamTranscodeStreamNumResponse.TranscodedNumber = context.LongValue("DescribeLiveStreamTranscodeStreamNum.TranscodedNumber");
-			describeLiveStreamTranscodeStreamNumResponse.UntranscodeNumber = context.LongValue("DescribeLiveStreamTranscodeStreamNum.UntranscodeNumber");
-			describeLiveStreamTranscodeStreamNumResponse.LazyTranscodedNumber = context.LongValue("DescribeLiveStreamTranscodeStreamNum.LazyTranscodedNumber");
+			describeLiveStreamTranscodeStreamNumResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveStreamTranscodeStreamNumResponse.RequestId = _ctx.StringValue("DescribeLiveStreamTranscodeStreamNum.RequestId");
+			describeLiveStreamTranscodeStreamNumResponse.Total = _ctx.LongValue("DescribeLiveStreamTranscodeStreamNum.Total");
+			describeLiveStreamTranscodeStreamNumResponse.TranscodedNumber = _ctx.LongValue("DescribeLiveStreamTranscodeStreamNum.TranscodedNumber");
+			describeLiveStreamTranscodeStreamNumResponse.UntranscodeNumber = _ctx.LongValue("DescribeLiveStreamTranscodeStreamNum.UntranscodeNumber");
+			describeLiveStreamTranscodeStreamNumResponse.LazyTranscodedNumber = _ctx.LongValue("DescribeLiveStreamTranscodeStreamNum.LazyTranscodedNumber");
         
 			return describeLiveStreamTranscodeStreamNumResponse;
         }

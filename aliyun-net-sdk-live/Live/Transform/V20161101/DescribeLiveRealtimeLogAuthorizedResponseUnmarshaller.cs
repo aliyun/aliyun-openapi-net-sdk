@@ -26,13 +26,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveRealtimeLogAuthorizedResponseUnmarshaller
     {
-        public static DescribeLiveRealtimeLogAuthorizedResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveRealtimeLogAuthorizedResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveRealtimeLogAuthorizedResponse describeLiveRealtimeLogAuthorizedResponse = new DescribeLiveRealtimeLogAuthorizedResponse();
 
-			describeLiveRealtimeLogAuthorizedResponse.HttpResponse = context.HttpResponse;
-			describeLiveRealtimeLogAuthorizedResponse.RequestId = context.StringValue("DescribeLiveRealtimeLogAuthorized.RequestId");
-			describeLiveRealtimeLogAuthorizedResponse.AuthorizedStatus = context.StringValue("DescribeLiveRealtimeLogAuthorized.AuthorizedStatus");
+			describeLiveRealtimeLogAuthorizedResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveRealtimeLogAuthorizedResponse.RequestId = _ctx.StringValue("DescribeLiveRealtimeLogAuthorized.RequestId");
+			describeLiveRealtimeLogAuthorizedResponse.AuthorizedStatus = _ctx.StringValue("DescribeLiveRealtimeLogAuthorized.AuthorizedStatus");
         
 			return describeLiveRealtimeLogAuthorizedResponse;
         }

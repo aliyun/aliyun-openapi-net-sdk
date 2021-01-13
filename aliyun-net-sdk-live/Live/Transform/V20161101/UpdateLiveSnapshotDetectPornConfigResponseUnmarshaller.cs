@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class UpdateLiveSnapshotDetectPornConfigResponseUnmarshaller
     {
-        public static UpdateLiveSnapshotDetectPornConfigResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateLiveSnapshotDetectPornConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateLiveSnapshotDetectPornConfigResponse updateLiveSnapshotDetectPornConfigResponse = new UpdateLiveSnapshotDetectPornConfigResponse();
 
-			updateLiveSnapshotDetectPornConfigResponse.HttpResponse = context.HttpResponse;
-			updateLiveSnapshotDetectPornConfigResponse.RequestId = context.StringValue("UpdateLiveSnapshotDetectPornConfig.RequestId");
+			updateLiveSnapshotDetectPornConfigResponse.HttpResponse = _ctx.HttpResponse;
+			updateLiveSnapshotDetectPornConfigResponse.RequestId = _ctx.StringValue("UpdateLiveSnapshotDetectPornConfig.RequestId");
         
 			return updateLiveSnapshotDetectPornConfigResponse;
         }

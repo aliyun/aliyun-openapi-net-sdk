@@ -26,20 +26,20 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeHtmlResourceResponseUnmarshaller
     {
-        public static DescribeHtmlResourceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeHtmlResourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeHtmlResourceResponse describeHtmlResourceResponse = new DescribeHtmlResourceResponse();
 
-			describeHtmlResourceResponse.HttpResponse = context.HttpResponse;
-			describeHtmlResourceResponse.RequestId = context.StringValue("DescribeHtmlResource.RequestId");
+			describeHtmlResourceResponse.HttpResponse = _ctx.HttpResponse;
+			describeHtmlResourceResponse.RequestId = _ctx.StringValue("DescribeHtmlResource.RequestId");
 
 			DescribeHtmlResourceResponse.DescribeHtmlResource_HtmlResource htmlResource = new DescribeHtmlResourceResponse.DescribeHtmlResource_HtmlResource();
-			htmlResource.HtmlResourceId = context.StringValue("DescribeHtmlResource.HtmlResource.HtmlResourceId");
-			htmlResource.HtmlUrl = context.StringValue("DescribeHtmlResource.HtmlResource.HtmlUrl");
-			htmlResource.HtmlContent = context.StringValue("DescribeHtmlResource.HtmlResource.HtmlContent");
-			htmlResource.CasterId = context.StringValue("DescribeHtmlResource.HtmlResource.CasterId");
-			htmlResource.Config = context.StringValue("DescribeHtmlResource.HtmlResource.Config");
-			htmlResource.StreamId = context.StringValue("DescribeHtmlResource.HtmlResource.StreamId");
+			htmlResource.HtmlResourceId = _ctx.StringValue("DescribeHtmlResource.HtmlResource.HtmlResourceId");
+			htmlResource.HtmlUrl = _ctx.StringValue("DescribeHtmlResource.HtmlResource.HtmlUrl");
+			htmlResource.HtmlContent = _ctx.StringValue("DescribeHtmlResource.HtmlResource.HtmlContent");
+			htmlResource.CasterId = _ctx.StringValue("DescribeHtmlResource.HtmlResource.CasterId");
+			htmlResource.Config = _ctx.StringValue("DescribeHtmlResource.HtmlResource.Config");
+			htmlResource.StreamId = _ctx.StringValue("DescribeHtmlResource.HtmlResource.StreamId");
 			describeHtmlResourceResponse.HtmlResource = htmlResource;
         
 			return describeHtmlResourceResponse;

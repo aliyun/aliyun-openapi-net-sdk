@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class SetBoardCallbackResponseUnmarshaller
     {
-        public static SetBoardCallbackResponse Unmarshall(UnmarshallerContext context)
+        public static SetBoardCallbackResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetBoardCallbackResponse setBoardCallbackResponse = new SetBoardCallbackResponse();
 
-			setBoardCallbackResponse.HttpResponse = context.HttpResponse;
-			setBoardCallbackResponse.RequestId = context.StringValue("SetBoardCallback.RequestId");
+			setBoardCallbackResponse.HttpResponse = _ctx.HttpResponse;
+			setBoardCallbackResponse.RequestId = _ctx.StringValue("SetBoardCallback.RequestId");
         
 			return setBoardCallbackResponse;
         }

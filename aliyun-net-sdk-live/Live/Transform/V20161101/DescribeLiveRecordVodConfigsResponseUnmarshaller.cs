@@ -26,27 +26,27 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveRecordVodConfigsResponseUnmarshaller
     {
-        public static DescribeLiveRecordVodConfigsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveRecordVodConfigsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveRecordVodConfigsResponse describeLiveRecordVodConfigsResponse = new DescribeLiveRecordVodConfigsResponse();
 
-			describeLiveRecordVodConfigsResponse.HttpResponse = context.HttpResponse;
-			describeLiveRecordVodConfigsResponse.RequestId = context.StringValue("DescribeLiveRecordVodConfigs.RequestId");
-			describeLiveRecordVodConfigsResponse.PageNum = context.IntegerValue("DescribeLiveRecordVodConfigs.PageNum");
-			describeLiveRecordVodConfigsResponse.PageSize = context.IntegerValue("DescribeLiveRecordVodConfigs.PageSize");
-			describeLiveRecordVodConfigsResponse.Total = context.StringValue("DescribeLiveRecordVodConfigs.Total");
+			describeLiveRecordVodConfigsResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveRecordVodConfigsResponse.RequestId = _ctx.StringValue("DescribeLiveRecordVodConfigs.RequestId");
+			describeLiveRecordVodConfigsResponse.PageNum = _ctx.IntegerValue("DescribeLiveRecordVodConfigs.PageNum");
+			describeLiveRecordVodConfigsResponse.PageSize = _ctx.IntegerValue("DescribeLiveRecordVodConfigs.PageSize");
+			describeLiveRecordVodConfigsResponse.Total = _ctx.StringValue("DescribeLiveRecordVodConfigs.Total");
 
 			List<DescribeLiveRecordVodConfigsResponse.DescribeLiveRecordVodConfigs_LiveRecordVodConfig> describeLiveRecordVodConfigsResponse_liveRecordVodConfigs = new List<DescribeLiveRecordVodConfigsResponse.DescribeLiveRecordVodConfigs_LiveRecordVodConfig>();
-			for (int i = 0; i < context.Length("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs.Length"); i++) {
 				DescribeLiveRecordVodConfigsResponse.DescribeLiveRecordVodConfigs_LiveRecordVodConfig liveRecordVodConfig = new DescribeLiveRecordVodConfigsResponse.DescribeLiveRecordVodConfigs_LiveRecordVodConfig();
-				liveRecordVodConfig.CreateTime = context.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].CreateTime");
-				liveRecordVodConfig.DomainName = context.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].DomainName");
-				liveRecordVodConfig.AppName = context.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].AppName");
-				liveRecordVodConfig.StreamName = context.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].StreamName");
-				liveRecordVodConfig.VodTranscodeGroupId = context.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].VodTranscodeGroupId");
-				liveRecordVodConfig.CycleDuration = context.IntegerValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].CycleDuration");
-				liveRecordVodConfig.AutoCompose = context.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].AutoCompose");
-				liveRecordVodConfig.ComposeVodTranscodeGroupId = context.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].ComposeVodTranscodeGroupId");
+				liveRecordVodConfig.CreateTime = _ctx.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].CreateTime");
+				liveRecordVodConfig.DomainName = _ctx.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].DomainName");
+				liveRecordVodConfig.AppName = _ctx.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].AppName");
+				liveRecordVodConfig.StreamName = _ctx.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].StreamName");
+				liveRecordVodConfig.VodTranscodeGroupId = _ctx.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].VodTranscodeGroupId");
+				liveRecordVodConfig.CycleDuration = _ctx.IntegerValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].CycleDuration");
+				liveRecordVodConfig.AutoCompose = _ctx.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].AutoCompose");
+				liveRecordVodConfig.ComposeVodTranscodeGroupId = _ctx.StringValue("DescribeLiveRecordVodConfigs.LiveRecordVodConfigs["+ i +"].ComposeVodTranscodeGroupId");
 
 				describeLiveRecordVodConfigsResponse_liveRecordVodConfigs.Add(liveRecordVodConfig);
 			}

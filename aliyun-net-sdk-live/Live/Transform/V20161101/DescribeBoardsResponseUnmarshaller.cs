@@ -26,20 +26,20 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeBoardsResponseUnmarshaller
     {
-        public static DescribeBoardsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeBoardsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeBoardsResponse describeBoardsResponse = new DescribeBoardsResponse();
 
-			describeBoardsResponse.HttpResponse = context.HttpResponse;
-			describeBoardsResponse.RequestId = context.StringValue("DescribeBoards.RequestId");
+			describeBoardsResponse.HttpResponse = _ctx.HttpResponse;
+			describeBoardsResponse.RequestId = _ctx.StringValue("DescribeBoards.RequestId");
 
 			List<DescribeBoardsResponse.DescribeBoards__Event> describeBoardsResponse_boards = new List<DescribeBoardsResponse.DescribeBoards__Event>();
-			for (int i = 0; i < context.Length("DescribeBoards.Boards.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeBoards.Boards.Length"); i++) {
 				DescribeBoardsResponse.DescribeBoards__Event _event = new DescribeBoardsResponse.DescribeBoards__Event();
-				_event.BoardId = context.StringValue("DescribeBoards.Boards["+ i +"].BoardId");
-				_event.Topic = context.StringValue("DescribeBoards.Boards["+ i +"].Topic");
-				_event.State = context.IntegerValue("DescribeBoards.Boards["+ i +"].State");
-				_event.UserId = context.StringValue("DescribeBoards.Boards["+ i +"].UserId");
+				_event.BoardId = _ctx.StringValue("DescribeBoards.Boards["+ i +"].BoardId");
+				_event.Topic = _ctx.StringValue("DescribeBoards.Boards["+ i +"].Topic");
+				_event.State = _ctx.IntegerValue("DescribeBoards.Boards["+ i +"].State");
+				_event.UserId = _ctx.StringValue("DescribeBoards.Boards["+ i +"].UserId");
 
 				describeBoardsResponse_boards.Add(_event);
 			}

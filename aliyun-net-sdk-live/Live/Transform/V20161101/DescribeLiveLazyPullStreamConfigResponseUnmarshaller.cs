@@ -26,24 +26,24 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class DescribeLiveLazyPullStreamConfigResponseUnmarshaller
     {
-        public static DescribeLiveLazyPullStreamConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveLazyPullStreamConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveLazyPullStreamConfigResponse describeLiveLazyPullStreamConfigResponse = new DescribeLiveLazyPullStreamConfigResponse();
 
-			describeLiveLazyPullStreamConfigResponse.HttpResponse = context.HttpResponse;
-			describeLiveLazyPullStreamConfigResponse.RequestId = context.StringValue("DescribeLiveLazyPullStreamConfig.RequestId");
+			describeLiveLazyPullStreamConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveLazyPullStreamConfigResponse.RequestId = _ctx.StringValue("DescribeLiveLazyPullStreamConfig.RequestId");
 
 			List<DescribeLiveLazyPullStreamConfigResponse.DescribeLiveLazyPullStreamConfig_LiveLazyPullConfig> describeLiveLazyPullStreamConfigResponse_liveLazyPullConfigList = new List<DescribeLiveLazyPullStreamConfigResponse.DescribeLiveLazyPullStreamConfig_LiveLazyPullConfig>();
-			for (int i = 0; i < context.Length("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList.Length"); i++) {
 				DescribeLiveLazyPullStreamConfigResponse.DescribeLiveLazyPullStreamConfig_LiveLazyPullConfig liveLazyPullConfig = new DescribeLiveLazyPullStreamConfigResponse.DescribeLiveLazyPullStreamConfig_LiveLazyPullConfig();
-				liveLazyPullConfig.DomainName = context.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].DomainName");
-				liveLazyPullConfig.AppName = context.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].AppName");
-				liveLazyPullConfig.PullDomainName = context.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].PullDomainName");
-				liveLazyPullConfig.PullAppName = context.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].PullAppName");
-				liveLazyPullConfig.PullProtocol = context.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].PullProtocol");
-				liveLazyPullConfig.PullAuthType = context.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].PullAuthType");
-				liveLazyPullConfig.PullAuthKey = context.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].PullAuthKey");
-				liveLazyPullConfig.PullArgs = context.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].PullArgs");
+				liveLazyPullConfig.DomainName = _ctx.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].DomainName");
+				liveLazyPullConfig.AppName = _ctx.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].AppName");
+				liveLazyPullConfig.PullDomainName = _ctx.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].PullDomainName");
+				liveLazyPullConfig.PullAppName = _ctx.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].PullAppName");
+				liveLazyPullConfig.PullProtocol = _ctx.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].PullProtocol");
+				liveLazyPullConfig.PullAuthType = _ctx.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].PullAuthType");
+				liveLazyPullConfig.PullAuthKey = _ctx.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].PullAuthKey");
+				liveLazyPullConfig.PullArgs = _ctx.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].PullArgs");
 
 				describeLiveLazyPullStreamConfigResponse_liveLazyPullConfigList.Add(liveLazyPullConfig);
 			}

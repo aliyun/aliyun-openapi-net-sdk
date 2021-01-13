@@ -26,12 +26,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class AddLiveDomainResponseUnmarshaller
     {
-        public static AddLiveDomainResponse Unmarshall(UnmarshallerContext context)
+        public static AddLiveDomainResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddLiveDomainResponse addLiveDomainResponse = new AddLiveDomainResponse();
 
-			addLiveDomainResponse.HttpResponse = context.HttpResponse;
-			addLiveDomainResponse.RequestId = context.StringValue("AddLiveDomain.RequestId");
+			addLiveDomainResponse.HttpResponse = _ctx.HttpResponse;
+			addLiveDomainResponse.RequestId = _ctx.StringValue("AddLiveDomain.RequestId");
         
 			return addLiveDomainResponse;
         }

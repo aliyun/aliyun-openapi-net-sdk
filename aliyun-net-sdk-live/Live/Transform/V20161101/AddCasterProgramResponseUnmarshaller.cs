@@ -26,17 +26,17 @@ namespace Aliyun.Acs.live.Transform.V20161101
 {
     public class AddCasterProgramResponseUnmarshaller
     {
-        public static AddCasterProgramResponse Unmarshall(UnmarshallerContext context)
+        public static AddCasterProgramResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddCasterProgramResponse addCasterProgramResponse = new AddCasterProgramResponse();
 
-			addCasterProgramResponse.HttpResponse = context.HttpResponse;
-			addCasterProgramResponse.RequestId = context.StringValue("AddCasterProgram.RequestId");
+			addCasterProgramResponse.HttpResponse = _ctx.HttpResponse;
+			addCasterProgramResponse.RequestId = _ctx.StringValue("AddCasterProgram.RequestId");
 
 			List<AddCasterProgramResponse.AddCasterProgram_EpisodeId> addCasterProgramResponse_episodeIds = new List<AddCasterProgramResponse.AddCasterProgram_EpisodeId>();
-			for (int i = 0; i < context.Length("AddCasterProgram.EpisodeIds.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("AddCasterProgram.EpisodeIds.Length"); i++) {
 				AddCasterProgramResponse.AddCasterProgram_EpisodeId episodeId = new AddCasterProgramResponse.AddCasterProgram_EpisodeId();
-				episodeId.EpisodeId = context.StringValue("AddCasterProgram.EpisodeIds["+ i +"].EpisodeId");
+				episodeId.EpisodeId = _ctx.StringValue("AddCasterProgram.EpisodeIds["+ i +"].EpisodeId");
 
 				addCasterProgramResponse_episodeIds.Add(episodeId);
 			}
