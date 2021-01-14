@@ -32,6 +32,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			modifyDBInstanceSpecResponse.HttpResponse = _ctx.HttpResponse;
 			modifyDBInstanceSpecResponse.RequestId = _ctx.StringValue("ModifyDBInstanceSpec.RequestId");
+			modifyDBInstanceSpecResponse.DBInstanceId = _ctx.StringValue("ModifyDBInstanceSpec.DBInstanceId");
+			modifyDBInstanceSpecResponse.OrderId = _ctx.LongValue("ModifyDBInstanceSpec.OrderId");
         
 			return modifyDBInstanceSpecResponse;
         }

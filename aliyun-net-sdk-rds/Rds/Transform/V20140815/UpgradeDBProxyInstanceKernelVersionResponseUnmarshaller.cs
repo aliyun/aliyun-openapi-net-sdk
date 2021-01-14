@@ -34,7 +34,6 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			upgradeDBProxyInstanceKernelVersionResponse.RequestId = _ctx.StringValue("UpgradeDBProxyInstanceKernelVersion.RequestId");
 			upgradeDBProxyInstanceKernelVersionResponse.DBInstanceName = _ctx.StringValue("UpgradeDBProxyInstanceKernelVersion.DBInstanceName");
 			upgradeDBProxyInstanceKernelVersionResponse.TaskId = _ctx.StringValue("UpgradeDBProxyInstanceKernelVersion.TaskId");
-			upgradeDBProxyInstanceKernelVersionResponse.TargetMinorVersion = _ctx.StringValue("UpgradeDBProxyInstanceKernelVersion.TargetMinorVersion");
         
 			return upgradeDBProxyInstanceKernelVersionResponse;
         }

@@ -31,8 +31,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string taskId;
 
-		private string targetMinorVersion;
-
 		public string RequestId
 		{
 			get
@@ -66,18 +64,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				taskId = value;
-			}
-		}
-
-		public string TargetMinorVersion
-		{
-			get
-			{
-				return targetMinorVersion;
-			}
-			set	
-			{
-				targetMinorVersion = value;
 			}
 		}
 	}
