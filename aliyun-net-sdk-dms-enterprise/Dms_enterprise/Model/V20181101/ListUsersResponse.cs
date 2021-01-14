@@ -114,13 +114,13 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string userId;
 
-			private long? uid;
+			private string uid;
 
 			private string nickName;
 
 			private string mobile;
 
-			private long? parentUid;
+			private string parentUid;
 
 			private string state;
 
@@ -150,7 +150,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public long? Uid
+			public string Uid
 			{
 				get
 				{
@@ -186,7 +186,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public long? ParentUid
+			public string ParentUid
 			{
 				get
 				{

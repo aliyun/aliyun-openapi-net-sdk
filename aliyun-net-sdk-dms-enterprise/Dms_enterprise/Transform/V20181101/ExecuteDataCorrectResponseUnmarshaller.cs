@@ -26,15 +26,15 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 {
     public class ExecuteDataCorrectResponseUnmarshaller
     {
-        public static ExecuteDataCorrectResponse Unmarshall(UnmarshallerContext context)
+        public static ExecuteDataCorrectResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ExecuteDataCorrectResponse executeDataCorrectResponse = new ExecuteDataCorrectResponse();
 
-			executeDataCorrectResponse.HttpResponse = context.HttpResponse;
-			executeDataCorrectResponse.RequestId = context.StringValue("ExecuteDataCorrect.RequestId");
-			executeDataCorrectResponse.Success = context.BooleanValue("ExecuteDataCorrect.Success");
-			executeDataCorrectResponse.ErrorMessage = context.StringValue("ExecuteDataCorrect.ErrorMessage");
-			executeDataCorrectResponse.ErrorCode = context.StringValue("ExecuteDataCorrect.ErrorCode");
+			executeDataCorrectResponse.HttpResponse = _ctx.HttpResponse;
+			executeDataCorrectResponse.RequestId = _ctx.StringValue("ExecuteDataCorrect.RequestId");
+			executeDataCorrectResponse.Success = _ctx.BooleanValue("ExecuteDataCorrect.Success");
+			executeDataCorrectResponse.ErrorMessage = _ctx.StringValue("ExecuteDataCorrect.ErrorMessage");
+			executeDataCorrectResponse.ErrorCode = _ctx.StringValue("ExecuteDataCorrect.ErrorCode");
         
 			return executeDataCorrectResponse;
         }

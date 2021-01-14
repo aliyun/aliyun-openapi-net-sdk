@@ -26,15 +26,15 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 {
     public class ExecuteDataExportResponseUnmarshaller
     {
-        public static ExecuteDataExportResponse Unmarshall(UnmarshallerContext context)
+        public static ExecuteDataExportResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ExecuteDataExportResponse executeDataExportResponse = new ExecuteDataExportResponse();
 
-			executeDataExportResponse.HttpResponse = context.HttpResponse;
-			executeDataExportResponse.RequestId = context.StringValue("ExecuteDataExport.RequestId");
-			executeDataExportResponse.Success = context.BooleanValue("ExecuteDataExport.Success");
-			executeDataExportResponse.ErrorMessage = context.StringValue("ExecuteDataExport.ErrorMessage");
-			executeDataExportResponse.ErrorCode = context.StringValue("ExecuteDataExport.ErrorCode");
+			executeDataExportResponse.HttpResponse = _ctx.HttpResponse;
+			executeDataExportResponse.RequestId = _ctx.StringValue("ExecuteDataExport.RequestId");
+			executeDataExportResponse.Success = _ctx.BooleanValue("ExecuteDataExport.Success");
+			executeDataExportResponse.ErrorMessage = _ctx.StringValue("ExecuteDataExport.ErrorMessage");
+			executeDataExportResponse.ErrorCode = _ctx.StringValue("ExecuteDataExport.ErrorCode");
         
 			return executeDataExportResponse;
         }

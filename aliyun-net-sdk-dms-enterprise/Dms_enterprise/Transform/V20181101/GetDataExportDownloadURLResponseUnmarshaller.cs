@@ -26,20 +26,20 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 {
     public class GetDataExportDownloadURLResponseUnmarshaller
     {
-        public static GetDataExportDownloadURLResponse Unmarshall(UnmarshallerContext context)
+        public static GetDataExportDownloadURLResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetDataExportDownloadURLResponse getDataExportDownloadURLResponse = new GetDataExportDownloadURLResponse();
 
-			getDataExportDownloadURLResponse.HttpResponse = context.HttpResponse;
-			getDataExportDownloadURLResponse.RequestId = context.StringValue("GetDataExportDownloadURL.RequestId");
-			getDataExportDownloadURLResponse.Success = context.BooleanValue("GetDataExportDownloadURL.Success");
-			getDataExportDownloadURLResponse.ErrorMessage = context.StringValue("GetDataExportDownloadURL.ErrorMessage");
-			getDataExportDownloadURLResponse.ErrorCode = context.StringValue("GetDataExportDownloadURL.ErrorCode");
+			getDataExportDownloadURLResponse.HttpResponse = _ctx.HttpResponse;
+			getDataExportDownloadURLResponse.RequestId = _ctx.StringValue("GetDataExportDownloadURL.RequestId");
+			getDataExportDownloadURLResponse.Success = _ctx.BooleanValue("GetDataExportDownloadURL.Success");
+			getDataExportDownloadURLResponse.ErrorMessage = _ctx.StringValue("GetDataExportDownloadURL.ErrorMessage");
+			getDataExportDownloadURLResponse.ErrorCode = _ctx.StringValue("GetDataExportDownloadURL.ErrorCode");
 
 			GetDataExportDownloadURLResponse.GetDataExportDownloadURL_DownloadURLResult downloadURLResult = new GetDataExportDownloadURLResponse.GetDataExportDownloadURL_DownloadURLResult();
-			downloadURLResult.HasResult = context.BooleanValue("GetDataExportDownloadURL.DownloadURLResult.HasResult");
-			downloadURLResult.URL = context.StringValue("GetDataExportDownloadURL.DownloadURLResult.URL");
-			downloadURLResult.TipMessage = context.StringValue("GetDataExportDownloadURL.DownloadURLResult.TipMessage");
+			downloadURLResult.HasResult = _ctx.BooleanValue("GetDataExportDownloadURL.DownloadURLResult.HasResult");
+			downloadURLResult.URL = _ctx.StringValue("GetDataExportDownloadURL.DownloadURLResult.URL");
+			downloadURLResult.TipMessage = _ctx.StringValue("GetDataExportDownloadURL.DownloadURLResult.TipMessage");
 			getDataExportDownloadURLResponse.DownloadURLResult = downloadURLResult;
         
 			return getDataExportDownloadURLResponse;

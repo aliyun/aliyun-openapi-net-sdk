@@ -100,7 +100,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string userId;
 
-			private long? uid;
+			private string uid;
 
 			private string nickName;
 
@@ -136,7 +136,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public long? Uid
+			public string Uid
 			{
 				get
 				{

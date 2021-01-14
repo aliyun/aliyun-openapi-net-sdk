@@ -26,27 +26,27 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 {
     public class GetOpLogResponseUnmarshaller
     {
-        public static GetOpLogResponse Unmarshall(UnmarshallerContext context)
+        public static GetOpLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetOpLogResponse getOpLogResponse = new GetOpLogResponse();
 
-			getOpLogResponse.HttpResponse = context.HttpResponse;
-			getOpLogResponse.RequestId = context.StringValue("GetOpLog.RequestId");
-			getOpLogResponse.Success = context.BooleanValue("GetOpLog.Success");
-			getOpLogResponse.ErrorMessage = context.StringValue("GetOpLog.ErrorMessage");
-			getOpLogResponse.ErrorCode = context.StringValue("GetOpLog.ErrorCode");
-			getOpLogResponse.TotalCount = context.LongValue("GetOpLog.TotalCount");
+			getOpLogResponse.HttpResponse = _ctx.HttpResponse;
+			getOpLogResponse.RequestId = _ctx.StringValue("GetOpLog.RequestId");
+			getOpLogResponse.Success = _ctx.BooleanValue("GetOpLog.Success");
+			getOpLogResponse.ErrorMessage = _ctx.StringValue("GetOpLog.ErrorMessage");
+			getOpLogResponse.ErrorCode = _ctx.StringValue("GetOpLog.ErrorCode");
+			getOpLogResponse.TotalCount = _ctx.LongValue("GetOpLog.TotalCount");
 
 			List<GetOpLogResponse.GetOpLog_OpLogDetail> getOpLogResponse_opLogDetails = new List<GetOpLogResponse.GetOpLog_OpLogDetail>();
-			for (int i = 0; i < context.Length("GetOpLog.OpLogDetails.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetOpLog.OpLogDetails.Length"); i++) {
 				GetOpLogResponse.GetOpLog_OpLogDetail opLogDetail = new GetOpLogResponse.GetOpLog_OpLogDetail();
-				opLogDetail.UserId = context.LongValue("GetOpLog.OpLogDetails["+ i +"].UserId");
-				opLogDetail.UserNick = context.StringValue("GetOpLog.OpLogDetails["+ i +"].UserNick");
-				opLogDetail.Module = context.StringValue("GetOpLog.OpLogDetails["+ i +"].Module");
-				opLogDetail.OpContent = context.StringValue("GetOpLog.OpLogDetails["+ i +"].OpContent");
-				opLogDetail.OpTime = context.StringValue("GetOpLog.OpLogDetails["+ i +"].OpTime");
-				opLogDetail.Database = context.StringValue("GetOpLog.OpLogDetails["+ i +"].Database");
-				opLogDetail.OrderId = context.LongValue("GetOpLog.OpLogDetails["+ i +"].OrderId");
+				opLogDetail.UserId = _ctx.LongValue("GetOpLog.OpLogDetails["+ i +"].UserId");
+				opLogDetail.UserNick = _ctx.StringValue("GetOpLog.OpLogDetails["+ i +"].UserNick");
+				opLogDetail.Module = _ctx.StringValue("GetOpLog.OpLogDetails["+ i +"].Module");
+				opLogDetail.OpContent = _ctx.StringValue("GetOpLog.OpLogDetails["+ i +"].OpContent");
+				opLogDetail.OpTime = _ctx.StringValue("GetOpLog.OpLogDetails["+ i +"].OpTime");
+				opLogDetail.Database = _ctx.StringValue("GetOpLog.OpLogDetails["+ i +"].Database");
+				opLogDetail.OrderId = _ctx.LongValue("GetOpLog.OpLogDetails["+ i +"].OrderId");
 
 				getOpLogResponse_opLogDetails.Add(opLogDetail);
 			}

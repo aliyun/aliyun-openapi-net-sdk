@@ -26,42 +26,42 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 {
     public class GetApprovalDetailResponseUnmarshaller
     {
-        public static GetApprovalDetailResponse Unmarshall(UnmarshallerContext context)
+        public static GetApprovalDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetApprovalDetailResponse getApprovalDetailResponse = new GetApprovalDetailResponse();
 
-			getApprovalDetailResponse.HttpResponse = context.HttpResponse;
-			getApprovalDetailResponse.RequestId = context.StringValue("GetApprovalDetail.RequestId");
-			getApprovalDetailResponse.Success = context.BooleanValue("GetApprovalDetail.Success");
-			getApprovalDetailResponse.ErrorMessage = context.StringValue("GetApprovalDetail.ErrorMessage");
-			getApprovalDetailResponse.ErrorCode = context.StringValue("GetApprovalDetail.ErrorCode");
+			getApprovalDetailResponse.HttpResponse = _ctx.HttpResponse;
+			getApprovalDetailResponse.RequestId = _ctx.StringValue("GetApprovalDetail.RequestId");
+			getApprovalDetailResponse.Success = _ctx.BooleanValue("GetApprovalDetail.Success");
+			getApprovalDetailResponse.ErrorMessage = _ctx.StringValue("GetApprovalDetail.ErrorMessage");
+			getApprovalDetailResponse.ErrorCode = _ctx.StringValue("GetApprovalDetail.ErrorCode");
 
 			GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail approvalDetail = new GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail();
-			approvalDetail.AuditId = context.LongValue("GetApprovalDetail.ApprovalDetail.AuditId");
-			approvalDetail.OrderId = context.LongValue("GetApprovalDetail.ApprovalDetail.OrderId");
-			approvalDetail.OrderType = context.StringValue("GetApprovalDetail.ApprovalDetail.OrderType");
-			approvalDetail.Title = context.StringValue("GetApprovalDetail.ApprovalDetail.Title");
-			approvalDetail.WorkflowInsCode = context.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowInsCode");
-			approvalDetail.Description = context.StringValue("GetApprovalDetail.ApprovalDetail.Description");
+			approvalDetail.AuditId = _ctx.LongValue("GetApprovalDetail.ApprovalDetail.AuditId");
+			approvalDetail.OrderId = _ctx.LongValue("GetApprovalDetail.ApprovalDetail.OrderId");
+			approvalDetail.OrderType = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.OrderType");
+			approvalDetail.Title = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.Title");
+			approvalDetail.WorkflowInsCode = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowInsCode");
+			approvalDetail.Description = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.Description");
 
 			List<string> approvalDetail_reasonList = new List<string>();
-			for (int i = 0; i < context.Length("GetApprovalDetail.ApprovalDetail.ReasonList.Length"); i++) {
-				approvalDetail_reasonList.Add(context.StringValue("GetApprovalDetail.ApprovalDetail.ReasonList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetApprovalDetail.ApprovalDetail.ReasonList.Length"); i++) {
+				approvalDetail_reasonList.Add(_ctx.StringValue("GetApprovalDetail.ApprovalDetail.ReasonList["+ i +"]"));
 			}
 			approvalDetail.ReasonList = approvalDetail_reasonList;
 
 			List<GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail.GetApprovalDetail_WorkflowNode> approvalDetail_workflowNodes = new List<GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail.GetApprovalDetail_WorkflowNode>();
-			for (int i = 0; i < context.Length("GetApprovalDetail.ApprovalDetail.WorkflowNodes.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetApprovalDetail.ApprovalDetail.WorkflowNodes.Length"); i++) {
 				GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail.GetApprovalDetail_WorkflowNode workflowNode = new GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail.GetApprovalDetail_WorkflowNode();
-				workflowNode.NodeName = context.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].NodeName");
-				workflowNode.OperateComment = context.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].OperateComment");
-				workflowNode.OperateTime = context.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].OperateTime");
-				workflowNode.OperatorId = context.LongValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].OperatorId");
-				workflowNode.WorkflowInsCode = context.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].WorkflowInsCode");
+				workflowNode.NodeName = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].NodeName");
+				workflowNode.OperateComment = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].OperateComment");
+				workflowNode.OperateTime = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].OperateTime");
+				workflowNode.OperatorId = _ctx.LongValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].OperatorId");
+				workflowNode.WorkflowInsCode = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].WorkflowInsCode");
 
 				List<string> workflowNode_auditUserIdList = new List<string>();
-				for (int j = 0; j < context.Length("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].AuditUserIdList.Length"); j++) {
-					workflowNode_auditUserIdList.Add(context.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].AuditUserIdList["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].AuditUserIdList.Length"); j++) {
+					workflowNode_auditUserIdList.Add(_ctx.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].AuditUserIdList["+ j +"]"));
 				}
 				workflowNode.AuditUserIdList = workflowNode_auditUserIdList;
 
@@ -70,10 +70,10 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			approvalDetail.WorkflowNodes = approvalDetail_workflowNodes;
 
 			List<GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail.GetApprovalDetail_CurrentHandler> approvalDetail_currentHandlers = new List<GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail.GetApprovalDetail_CurrentHandler>();
-			for (int i = 0; i < context.Length("GetApprovalDetail.ApprovalDetail.CurrentHandlers.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetApprovalDetail.ApprovalDetail.CurrentHandlers.Length"); i++) {
 				GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail.GetApprovalDetail_CurrentHandler currentHandler = new GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail.GetApprovalDetail_CurrentHandler();
-				currentHandler.Id = context.LongValue("GetApprovalDetail.ApprovalDetail.CurrentHandlers["+ i +"].Id");
-				currentHandler.NickName = context.StringValue("GetApprovalDetail.ApprovalDetail.CurrentHandlers["+ i +"].NickName");
+				currentHandler.Id = _ctx.LongValue("GetApprovalDetail.ApprovalDetail.CurrentHandlers["+ i +"].Id");
+				currentHandler.NickName = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.CurrentHandlers["+ i +"].NickName");
 
 				approvalDetail_currentHandlers.Add(currentHandler);
 			}

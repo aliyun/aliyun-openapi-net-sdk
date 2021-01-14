@@ -26,15 +26,15 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 {
     public class SyncInstanceMetaResponseUnmarshaller
     {
-        public static SyncInstanceMetaResponse Unmarshall(UnmarshallerContext context)
+        public static SyncInstanceMetaResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SyncInstanceMetaResponse syncInstanceMetaResponse = new SyncInstanceMetaResponse();
 
-			syncInstanceMetaResponse.HttpResponse = context.HttpResponse;
-			syncInstanceMetaResponse.RequestId = context.StringValue("SyncInstanceMeta.RequestId");
-			syncInstanceMetaResponse.Success = context.BooleanValue("SyncInstanceMeta.Success");
-			syncInstanceMetaResponse.ErrorMessage = context.StringValue("SyncInstanceMeta.ErrorMessage");
-			syncInstanceMetaResponse.ErrorCode = context.StringValue("SyncInstanceMeta.ErrorCode");
+			syncInstanceMetaResponse.HttpResponse = _ctx.HttpResponse;
+			syncInstanceMetaResponse.RequestId = _ctx.StringValue("SyncInstanceMeta.RequestId");
+			syncInstanceMetaResponse.Success = _ctx.BooleanValue("SyncInstanceMeta.Success");
+			syncInstanceMetaResponse.ErrorMessage = _ctx.StringValue("SyncInstanceMeta.ErrorMessage");
+			syncInstanceMetaResponse.ErrorCode = _ctx.StringValue("SyncInstanceMeta.ErrorCode");
         
 			return syncInstanceMetaResponse;
         }

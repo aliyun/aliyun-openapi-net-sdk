@@ -35,17 +35,17 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
-		private long? uid;
+		private string uid;
 
 		private long? tid;
 
-		public long? Uid
+		public string Uid
 		{
 			get
 			{
@@ -54,7 +54,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			set	
 			{
 				uid = value;
-				DictionaryUtil.Add(QueryParameters, "Uid", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "Uid", value);
 			}
 		}
 

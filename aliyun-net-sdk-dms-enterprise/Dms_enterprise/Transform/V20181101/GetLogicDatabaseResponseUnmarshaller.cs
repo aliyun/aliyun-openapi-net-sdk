@@ -26,33 +26,33 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 {
     public class GetLogicDatabaseResponseUnmarshaller
     {
-        public static GetLogicDatabaseResponse Unmarshall(UnmarshallerContext context)
+        public static GetLogicDatabaseResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetLogicDatabaseResponse getLogicDatabaseResponse = new GetLogicDatabaseResponse();
 
-			getLogicDatabaseResponse.HttpResponse = context.HttpResponse;
-			getLogicDatabaseResponse.RequestId = context.StringValue("GetLogicDatabase.RequestId");
-			getLogicDatabaseResponse.Success = context.BooleanValue("GetLogicDatabase.Success");
-			getLogicDatabaseResponse.ErrorMessage = context.StringValue("GetLogicDatabase.ErrorMessage");
-			getLogicDatabaseResponse.ErrorCode = context.StringValue("GetLogicDatabase.ErrorCode");
+			getLogicDatabaseResponse.HttpResponse = _ctx.HttpResponse;
+			getLogicDatabaseResponse.RequestId = _ctx.StringValue("GetLogicDatabase.RequestId");
+			getLogicDatabaseResponse.Success = _ctx.BooleanValue("GetLogicDatabase.Success");
+			getLogicDatabaseResponse.ErrorMessage = _ctx.StringValue("GetLogicDatabase.ErrorMessage");
+			getLogicDatabaseResponse.ErrorCode = _ctx.StringValue("GetLogicDatabase.ErrorCode");
 
 			GetLogicDatabaseResponse.GetLogicDatabase_LogicDatabase logicDatabase = new GetLogicDatabaseResponse.GetLogicDatabase_LogicDatabase();
-			logicDatabase.Logic = context.BooleanValue("GetLogicDatabase.LogicDatabase.Logic");
-			logicDatabase.EnvType = context.StringValue("GetLogicDatabase.LogicDatabase.EnvType");
-			logicDatabase.SchemaName = context.StringValue("GetLogicDatabase.LogicDatabase.SchemaName");
-			logicDatabase.SearchName = context.StringValue("GetLogicDatabase.LogicDatabase.SearchName");
-			logicDatabase.DbType = context.StringValue("GetLogicDatabase.LogicDatabase.DbType");
-			logicDatabase.DatabaseId = context.StringValue("GetLogicDatabase.LogicDatabase.DatabaseId");
+			logicDatabase.Logic = _ctx.BooleanValue("GetLogicDatabase.LogicDatabase.Logic");
+			logicDatabase.EnvType = _ctx.StringValue("GetLogicDatabase.LogicDatabase.EnvType");
+			logicDatabase.SchemaName = _ctx.StringValue("GetLogicDatabase.LogicDatabase.SchemaName");
+			logicDatabase.SearchName = _ctx.StringValue("GetLogicDatabase.LogicDatabase.SearchName");
+			logicDatabase.DbType = _ctx.StringValue("GetLogicDatabase.LogicDatabase.DbType");
+			logicDatabase.DatabaseId = _ctx.StringValue("GetLogicDatabase.LogicDatabase.DatabaseId");
 
 			List<string> logicDatabase_ownerIdList = new List<string>();
-			for (int i = 0; i < context.Length("GetLogicDatabase.LogicDatabase.OwnerIdList.Length"); i++) {
-				logicDatabase_ownerIdList.Add(context.StringValue("GetLogicDatabase.LogicDatabase.OwnerIdList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetLogicDatabase.LogicDatabase.OwnerIdList.Length"); i++) {
+				logicDatabase_ownerIdList.Add(_ctx.StringValue("GetLogicDatabase.LogicDatabase.OwnerIdList["+ i +"]"));
 			}
 			logicDatabase.OwnerIdList = logicDatabase_ownerIdList;
 
 			List<string> logicDatabase_ownerNameList = new List<string>();
-			for (int i = 0; i < context.Length("GetLogicDatabase.LogicDatabase.OwnerNameList.Length"); i++) {
-				logicDatabase_ownerNameList.Add(context.StringValue("GetLogicDatabase.LogicDatabase.OwnerNameList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetLogicDatabase.LogicDatabase.OwnerNameList.Length"); i++) {
+				logicDatabase_ownerNameList.Add(_ctx.StringValue("GetLogicDatabase.LogicDatabase.OwnerNameList["+ i +"]"));
 			}
 			logicDatabase.OwnerNameList = logicDatabase_ownerNameList;
 			getLogicDatabaseResponse.LogicDatabase = logicDatabase;

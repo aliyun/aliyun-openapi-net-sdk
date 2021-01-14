@@ -156,6 +156,10 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string instanceSource;
 
+			private List<string> ownerIdList;
+
+			private List<string> ownerNameList;
+
 			public string InstanceId
 			{
 				get
@@ -417,6 +421,30 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					instanceSource = value;
+				}
+			}
+
+			public List<string> OwnerIdList
+			{
+				get
+				{
+					return ownerIdList;
+				}
+				set	
+				{
+					ownerIdList = value;
+				}
+			}
+
+			public List<string> OwnerNameList
+			{
+				get
+				{
+					return ownerNameList;
+				}
+				set	
+				{
+					ownerNameList = value;
 				}
 			}
 		}

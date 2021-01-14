@@ -35,17 +35,13 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
-		private string userState;
-
 		private string role;
-
-		private int? pageSize;
 
 		private string searchKey;
 
@@ -53,18 +49,9 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private int? pageNumber;
 
-		public string UserState
-		{
-			get
-			{
-				return userState;
-			}
-			set	
-			{
-				userState = value;
-				DictionaryUtil.Add(QueryParameters, "UserState", value);
-			}
-		}
+		private string userState;
+
+		private int? pageSize;
 
 		public string Role
 		{
@@ -76,19 +63,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				role = value;
 				DictionaryUtil.Add(QueryParameters, "Role", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -128,6 +102,32 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string UserState
+		{
+			get
+			{
+				return userState;
+			}
+			set	
+			{
+				userState = value;
+				DictionaryUtil.Add(QueryParameters, "UserState", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

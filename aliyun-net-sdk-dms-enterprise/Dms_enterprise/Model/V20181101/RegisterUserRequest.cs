@@ -35,21 +35,21 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private string roleNames;
 
-		private long? uid;
-
 		private string userNick;
 
 		private string mobile;
 
 		private long? tid;
+
+		private string uid;
 
 		public string RoleNames
 		{
@@ -61,19 +61,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				roleNames = value;
 				DictionaryUtil.Add(QueryParameters, "RoleNames", value);
-			}
-		}
-
-		public long? Uid
-		{
-			get
-			{
-				return uid;
-			}
-			set	
-			{
-				uid = value;
-				DictionaryUtil.Add(QueryParameters, "Uid", value.ToString());
 			}
 		}
 
@@ -113,6 +100,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				tid = value;
 				DictionaryUtil.Add(QueryParameters, "Tid", value.ToString());
+			}
+		}
+
+		public string Uid
+		{
+			get
+			{
+				return uid;
+			}
+			set	
+			{
+				uid = value;
+				DictionaryUtil.Add(QueryParameters, "Uid", value);
 			}
 		}
 

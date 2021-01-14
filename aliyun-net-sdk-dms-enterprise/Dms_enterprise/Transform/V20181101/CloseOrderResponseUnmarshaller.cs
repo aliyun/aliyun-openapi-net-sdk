@@ -26,15 +26,15 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 {
     public class CloseOrderResponseUnmarshaller
     {
-        public static CloseOrderResponse Unmarshall(UnmarshallerContext context)
+        public static CloseOrderResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CloseOrderResponse closeOrderResponse = new CloseOrderResponse();
 
-			closeOrderResponse.HttpResponse = context.HttpResponse;
-			closeOrderResponse.RequestId = context.StringValue("CloseOrder.RequestId");
-			closeOrderResponse.Success = context.BooleanValue("CloseOrder.Success");
-			closeOrderResponse.ErrorMessage = context.StringValue("CloseOrder.ErrorMessage");
-			closeOrderResponse.ErrorCode = context.StringValue("CloseOrder.ErrorCode");
+			closeOrderResponse.HttpResponse = _ctx.HttpResponse;
+			closeOrderResponse.RequestId = _ctx.StringValue("CloseOrder.RequestId");
+			closeOrderResponse.Success = _ctx.BooleanValue("CloseOrder.Success");
+			closeOrderResponse.ErrorMessage = _ctx.StringValue("CloseOrder.ErrorMessage");
+			closeOrderResponse.ErrorCode = _ctx.StringValue("CloseOrder.ErrorCode");
         
 			return closeOrderResponse;
         }

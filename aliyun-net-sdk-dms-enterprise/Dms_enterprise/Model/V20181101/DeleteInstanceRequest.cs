@@ -35,45 +35,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dms_enterprise.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
-
-		private int? port;
-
-		private string host;
 
 		private long? tid;
 
 		private string sid;
 
-		public int? Port
-		{
-			get
-			{
-				return port;
-			}
-			set	
-			{
-				port = value;
-				DictionaryUtil.Add(QueryParameters, "Port", value.ToString());
-			}
-		}
+		private int? port;
 
-		public string Host
-		{
-			get
-			{
-				return host;
-			}
-			set	
-			{
-				host = value;
-				DictionaryUtil.Add(QueryParameters, "Host", value);
-			}
-		}
+		private string host;
 
 		public long? Tid
 		{
@@ -98,6 +72,32 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				sid = value;
 				DictionaryUtil.Add(QueryParameters, "Sid", value);
+			}
+		}
+
+		public int? Port
+		{
+			get
+			{
+				return port;
+			}
+			set	
+			{
+				port = value;
+				DictionaryUtil.Add(QueryParameters, "Port", value.ToString());
+			}
+		}
+
+		public string Host
+		{
+			get
+			{
+				return host;
+			}
+			set	
+			{
+				host = value;
+				DictionaryUtil.Add(QueryParameters, "Host", value);
 			}
 		}
 

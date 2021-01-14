@@ -26,32 +26,32 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 {
     public class ListColumnsResponseUnmarshaller
     {
-        public static ListColumnsResponse Unmarshall(UnmarshallerContext context)
+        public static ListColumnsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListColumnsResponse listColumnsResponse = new ListColumnsResponse();
 
-			listColumnsResponse.HttpResponse = context.HttpResponse;
-			listColumnsResponse.RequestId = context.StringValue("ListColumns.RequestId");
-			listColumnsResponse.Success = context.BooleanValue("ListColumns.Success");
-			listColumnsResponse.ErrorMessage = context.StringValue("ListColumns.ErrorMessage");
-			listColumnsResponse.ErrorCode = context.StringValue("ListColumns.ErrorCode");
+			listColumnsResponse.HttpResponse = _ctx.HttpResponse;
+			listColumnsResponse.RequestId = _ctx.StringValue("ListColumns.RequestId");
+			listColumnsResponse.Success = _ctx.BooleanValue("ListColumns.Success");
+			listColumnsResponse.ErrorMessage = _ctx.StringValue("ListColumns.ErrorMessage");
+			listColumnsResponse.ErrorCode = _ctx.StringValue("ListColumns.ErrorCode");
 
 			List<ListColumnsResponse.ListColumns_Column> listColumnsResponse_columnList = new List<ListColumnsResponse.ListColumns_Column>();
-			for (int i = 0; i < context.Length("ListColumns.ColumnList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListColumns.ColumnList.Length"); i++) {
 				ListColumnsResponse.ListColumns_Column column = new ListColumnsResponse.ListColumns_Column();
-				column.ColumnId = context.StringValue("ListColumns.ColumnList["+ i +"].ColumnId");
-				column.ColumnName = context.StringValue("ListColumns.ColumnList["+ i +"].ColumnName");
-				column.ColumnType = context.StringValue("ListColumns.ColumnList["+ i +"].ColumnType");
-				column.Nullable = context.BooleanValue("ListColumns.ColumnList["+ i +"].Nullable");
-				column.DefaultValue = context.StringValue("ListColumns.ColumnList["+ i +"].DefaultValue");
-				column.AutoIncrement = context.BooleanValue("ListColumns.ColumnList["+ i +"].AutoIncrement");
-				column.Description = context.StringValue("ListColumns.ColumnList["+ i +"].Description");
-				column.SecurityLevel = context.StringValue("ListColumns.ColumnList["+ i +"].SecurityLevel");
-				column.FunctionType = context.StringValue("ListColumns.ColumnList["+ i +"].FunctionType");
-				column.DataLength = context.LongValue("ListColumns.ColumnList["+ i +"].DataLength");
-				column.Sensitive = context.BooleanValue("ListColumns.ColumnList["+ i +"].Sensitive");
-				column.DataPrecision = context.IntegerValue("ListColumns.ColumnList["+ i +"].DataPrecision");
-				column.DataScale = context.IntegerValue("ListColumns.ColumnList["+ i +"].DataScale");
+				column.ColumnId = _ctx.StringValue("ListColumns.ColumnList["+ i +"].ColumnId");
+				column.ColumnName = _ctx.StringValue("ListColumns.ColumnList["+ i +"].ColumnName");
+				column.ColumnType = _ctx.StringValue("ListColumns.ColumnList["+ i +"].ColumnType");
+				column.Nullable = _ctx.BooleanValue("ListColumns.ColumnList["+ i +"].Nullable");
+				column.DefaultValue = _ctx.StringValue("ListColumns.ColumnList["+ i +"].DefaultValue");
+				column.AutoIncrement = _ctx.BooleanValue("ListColumns.ColumnList["+ i +"].AutoIncrement");
+				column.Description = _ctx.StringValue("ListColumns.ColumnList["+ i +"].Description");
+				column.SecurityLevel = _ctx.StringValue("ListColumns.ColumnList["+ i +"].SecurityLevel");
+				column.FunctionType = _ctx.StringValue("ListColumns.ColumnList["+ i +"].FunctionType");
+				column.DataLength = _ctx.LongValue("ListColumns.ColumnList["+ i +"].DataLength");
+				column.Sensitive = _ctx.BooleanValue("ListColumns.ColumnList["+ i +"].Sensitive");
+				column.DataPrecision = _ctx.IntegerValue("ListColumns.ColumnList["+ i +"].DataPrecision");
+				column.DataScale = _ctx.IntegerValue("ListColumns.ColumnList["+ i +"].DataScale");
 
 				listColumnsResponse_columnList.Add(column);
 			}

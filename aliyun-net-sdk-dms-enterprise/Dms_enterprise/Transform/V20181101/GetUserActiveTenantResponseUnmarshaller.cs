@@ -26,20 +26,20 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 {
     public class GetUserActiveTenantResponseUnmarshaller
     {
-        public static GetUserActiveTenantResponse Unmarshall(UnmarshallerContext context)
+        public static GetUserActiveTenantResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetUserActiveTenantResponse getUserActiveTenantResponse = new GetUserActiveTenantResponse();
 
-			getUserActiveTenantResponse.HttpResponse = context.HttpResponse;
-			getUserActiveTenantResponse.RequestId = context.StringValue("GetUserActiveTenant.RequestId");
-			getUserActiveTenantResponse.Success = context.BooleanValue("GetUserActiveTenant.Success");
-			getUserActiveTenantResponse.ErrorMessage = context.StringValue("GetUserActiveTenant.ErrorMessage");
-			getUserActiveTenantResponse.ErrorCode = context.StringValue("GetUserActiveTenant.ErrorCode");
+			getUserActiveTenantResponse.HttpResponse = _ctx.HttpResponse;
+			getUserActiveTenantResponse.RequestId = _ctx.StringValue("GetUserActiveTenant.RequestId");
+			getUserActiveTenantResponse.Success = _ctx.BooleanValue("GetUserActiveTenant.Success");
+			getUserActiveTenantResponse.ErrorMessage = _ctx.StringValue("GetUserActiveTenant.ErrorMessage");
+			getUserActiveTenantResponse.ErrorCode = _ctx.StringValue("GetUserActiveTenant.ErrorCode");
 
 			GetUserActiveTenantResponse.GetUserActiveTenant_Tenant tenant = new GetUserActiveTenantResponse.GetUserActiveTenant_Tenant();
-			tenant.Tid = context.LongValue("GetUserActiveTenant.Tenant.Tid");
-			tenant.TenantName = context.StringValue("GetUserActiveTenant.Tenant.TenantName");
-			tenant.Status = context.StringValue("GetUserActiveTenant.Tenant.Status");
+			tenant.Tid = _ctx.LongValue("GetUserActiveTenant.Tenant.Tid");
+			tenant.TenantName = _ctx.StringValue("GetUserActiveTenant.Tenant.TenantName");
+			tenant.Status = _ctx.StringValue("GetUserActiveTenant.Tenant.Status");
 			getUserActiveTenantResponse.Tenant = tenant;
         
 			return getUserActiveTenantResponse;

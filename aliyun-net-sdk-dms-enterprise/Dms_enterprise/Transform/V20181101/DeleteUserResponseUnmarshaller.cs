@@ -26,15 +26,15 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 {
     public class DeleteUserResponseUnmarshaller
     {
-        public static DeleteUserResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteUserResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteUserResponse deleteUserResponse = new DeleteUserResponse();
 
-			deleteUserResponse.HttpResponse = context.HttpResponse;
-			deleteUserResponse.RequestId = context.StringValue("DeleteUser.RequestId");
-			deleteUserResponse.Success = context.BooleanValue("DeleteUser.Success");
-			deleteUserResponse.ErrorMessage = context.StringValue("DeleteUser.ErrorMessage");
-			deleteUserResponse.ErrorCode = context.StringValue("DeleteUser.ErrorCode");
+			deleteUserResponse.HttpResponse = _ctx.HttpResponse;
+			deleteUserResponse.RequestId = _ctx.StringValue("DeleteUser.RequestId");
+			deleteUserResponse.Success = _ctx.BooleanValue("DeleteUser.Success");
+			deleteUserResponse.ErrorMessage = _ctx.StringValue("DeleteUser.ErrorMessage");
+			deleteUserResponse.ErrorCode = _ctx.StringValue("DeleteUser.ErrorCode");
         
 			return deleteUserResponse;
         }
