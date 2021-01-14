@@ -279,6 +279,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string commodityCode;
 
+				private string servicePeriodUnit;
+
+				private string splitCommodityCode;
+
+				private string splitProductDetail;
+
+				private string splitAccountID;
+
+				private string splitAccountName;
+
+				private string splitBillingCycle;
+
 				public string InstanceID
 				{
 					get
@@ -756,6 +768,78 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						commodityCode = value;
+					}
+				}
+
+				public string ServicePeriodUnit
+				{
+					get
+					{
+						return servicePeriodUnit;
+					}
+					set	
+					{
+						servicePeriodUnit = value;
+					}
+				}
+
+				public string SplitCommodityCode
+				{
+					get
+					{
+						return splitCommodityCode;
+					}
+					set	
+					{
+						splitCommodityCode = value;
+					}
+				}
+
+				public string SplitProductDetail
+				{
+					get
+					{
+						return splitProductDetail;
+					}
+					set	
+					{
+						splitProductDetail = value;
+					}
+				}
+
+				public string SplitAccountID
+				{
+					get
+					{
+						return splitAccountID;
+					}
+					set	
+					{
+						splitAccountID = value;
+					}
+				}
+
+				public string SplitAccountName
+				{
+					get
+					{
+						return splitAccountName;
+					}
+					set	
+					{
+						splitAccountName = value;
+					}
+				}
+
+				public string SplitBillingCycle
+				{
+					get
+					{
+						return splitBillingCycle;
+					}
+					set	
+					{
+						splitBillingCycle = value;
 					}
 				}
 			}

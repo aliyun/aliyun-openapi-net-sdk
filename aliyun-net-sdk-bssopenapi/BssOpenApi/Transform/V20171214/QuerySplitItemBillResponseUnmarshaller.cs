@@ -87,6 +87,12 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				item.SplitItemName = _ctx.StringValue("QuerySplitItemBill.Data.Items["+ i +"].SplitItemName");
 				item.PipCode = _ctx.StringValue("QuerySplitItemBill.Data.Items["+ i +"].PipCode");
 				item.CommodityCode = _ctx.StringValue("QuerySplitItemBill.Data.Items["+ i +"].CommodityCode");
+				item.ServicePeriodUnit = _ctx.StringValue("QuerySplitItemBill.Data.Items["+ i +"].ServicePeriodUnit");
+				item.SplitCommodityCode = _ctx.StringValue("QuerySplitItemBill.Data.Items["+ i +"].SplitCommodityCode");
+				item.SplitProductDetail = _ctx.StringValue("QuerySplitItemBill.Data.Items["+ i +"].SplitProductDetail");
+				item.SplitAccountID = _ctx.StringValue("QuerySplitItemBill.Data.Items["+ i +"].SplitAccountID");
+				item.SplitAccountName = _ctx.StringValue("QuerySplitItemBill.Data.Items["+ i +"].SplitAccountName");
+				item.SplitBillingCycle = _ctx.StringValue("QuerySplitItemBill.Data.Items["+ i +"].SplitBillingCycle");
 
 				data_items.Add(item);
 			}

@@ -231,6 +231,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string pipCode;
 
+				private string billingDate;
+
 				public string CostUnit
 				{
 					get
@@ -420,6 +422,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						pipCode = value;
+					}
+				}
+
+				public string BillingDate
+				{
+					get
+					{
+						return billingDate;
+					}
+					set	
+					{
+						billingDate = value;
 					}
 				}
 			}

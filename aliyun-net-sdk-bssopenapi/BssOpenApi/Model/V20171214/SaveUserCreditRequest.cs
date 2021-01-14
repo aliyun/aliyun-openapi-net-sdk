@@ -28,157 +28,148 @@ using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class QueryAccountBillRequest : RpcAcsRequest<QueryAccountBillResponse>
+    public class SaveUserCreditRequest : RpcAcsRequest<SaveUserCreditResponse>
     {
-        public QueryAccountBillRequest()
-            : base("BssOpenApi", "2017-12-14", "QueryAccountBill")
+        public SaveUserCreditRequest()
+            : base("BssOpenApi", "2017-12-14", "SaveUserCredit")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.BssOpenApi.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.BssOpenApi.Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string productCode;
+		private bool? avoidExpiration;
 
-		private string billingCycle;
+		private string description;
 
-		private int? pageNum;
+		private bool? avoidPrepaidNotification;
 
-		private long? ownerID;
+		private bool? avoidPrepaidExpiration;
 
-		private long? billOwnerId;
+		private bool? avoidNotification;
 
-		private string billingDate;
+		private string _operator;
 
-		private bool? isGroupByProduct;
+		private string creditValue;
 
-		private string granularity;
+		private string creditType;
 
-		private int? pageSize;
-
-		public string ProductCode
+		public bool? AvoidExpiration
 		{
 			get
 			{
-				return productCode;
+				return avoidExpiration;
 			}
 			set	
 			{
-				productCode = value;
-				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+				avoidExpiration = value;
+				DictionaryUtil.Add(QueryParameters, "AvoidExpiration", value.ToString());
 			}
 		}
 
-		public string BillingCycle
+		public string Description
 		{
 			get
 			{
-				return billingCycle;
+				return description;
 			}
 			set	
 			{
-				billingCycle = value;
-				DictionaryUtil.Add(QueryParameters, "BillingCycle", value);
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
-		public int? PageNum
+		public bool? AvoidPrepaidNotification
 		{
 			get
 			{
-				return pageNum;
+				return avoidPrepaidNotification;
 			}
 			set	
 			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+				avoidPrepaidNotification = value;
+				DictionaryUtil.Add(QueryParameters, "AvoidPrepaidNotification", value.ToString());
 			}
 		}
 
-		public long? OwnerID
+		public bool? AvoidPrepaidExpiration
 		{
 			get
 			{
-				return ownerID;
+				return avoidPrepaidExpiration;
 			}
 			set	
 			{
-				ownerID = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerID", value.ToString());
+				avoidPrepaidExpiration = value;
+				DictionaryUtil.Add(QueryParameters, "AvoidPrepaidExpiration", value.ToString());
 			}
 		}
 
-		public long? BillOwnerId
+		public bool? AvoidNotification
 		{
 			get
 			{
-				return billOwnerId;
+				return avoidNotification;
 			}
 			set	
 			{
-				billOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "BillOwnerId", value.ToString());
+				avoidNotification = value;
+				DictionaryUtil.Add(QueryParameters, "AvoidNotification", value.ToString());
 			}
 		}
 
-		public string BillingDate
+		public string _Operator
 		{
 			get
 			{
-				return billingDate;
+				return _operator;
 			}
 			set	
 			{
-				billingDate = value;
-				DictionaryUtil.Add(QueryParameters, "BillingDate", value);
+				_operator = value;
+				DictionaryUtil.Add(QueryParameters, "Operator", value);
 			}
 		}
 
-		public bool? IsGroupByProduct
+		public string CreditValue
 		{
 			get
 			{
-				return isGroupByProduct;
+				return creditValue;
 			}
 			set	
 			{
-				isGroupByProduct = value;
-				DictionaryUtil.Add(QueryParameters, "IsGroupByProduct", value.ToString());
+				creditValue = value;
+				DictionaryUtil.Add(QueryParameters, "CreditValue", value);
 			}
 		}
 
-		public string Granularity
+		public string CreditType
 		{
 			get
 			{
-				return granularity;
+				return creditType;
 			}
 			set	
 			{
-				granularity = value;
-				DictionaryUtil.Add(QueryParameters, "Granularity", value);
+				creditType = value;
+				DictionaryUtil.Add(QueryParameters, "CreditType", value);
 			}
 		}
 
-		public int? PageSize
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
+			return false;
 		}
 
-        public override QueryAccountBillResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SaveUserCreditResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryAccountBillResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SaveUserCreditResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
