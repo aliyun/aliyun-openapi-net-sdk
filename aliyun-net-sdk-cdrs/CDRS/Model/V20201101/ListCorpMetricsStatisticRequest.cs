@@ -29,21 +29,17 @@ using Aliyun.Acs.CDRS.Transform.V20201101;
 
 namespace Aliyun.Acs.CDRS.Model.V20201101
 {
-    public class ListPersonResultRequest : RpcAcsRequest<ListPersonResultResponse>
+    public class ListCorpMetricsStatisticRequest : RpcAcsRequest<ListCorpMetricsStatisticResponse>
     {
-        public ListPersonResultRequest()
-            : base("CDRS", "2020-11-01", "ListPersonResult")
+        public ListCorpMetricsStatisticRequest()
+            : base("CDRS", "2020-11-01", "ListCorpMetricsStatistic")
         {
 			Method = MethodType.POST;
         }
 
-		private string profession;
-
 		private string schema;
 
 		private string corpId;
-
-		private string gender;
 
 		private string endTime;
 
@@ -51,22 +47,15 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 
 		private long? pageNumber;
 
+		private string deviceGroupList;
+
+		private string tagCode;
+
+		private string userGroupList;
+
 		private long? pageSize;
 
-		private string age;
-
-		public string Profession
-		{
-			get
-			{
-				return profession;
-			}
-			set	
-			{
-				profession = value;
-				DictionaryUtil.Add(BodyParameters, "Profession", value);
-			}
-		}
+		private string deviceIdList;
 
 		public string Schema
 		{
@@ -91,19 +80,6 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			{
 				corpId = value;
 				DictionaryUtil.Add(BodyParameters, "CorpId", value);
-			}
-		}
-
-		public string Gender
-		{
-			get
-			{
-				return gender;
-			}
-			set	
-			{
-				gender = value;
-				DictionaryUtil.Add(BodyParameters, "Gender", value);
 			}
 		}
 
@@ -146,6 +122,45 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			}
 		}
 
+		public string DeviceGroupList
+		{
+			get
+			{
+				return deviceGroupList;
+			}
+			set	
+			{
+				deviceGroupList = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceGroupList", value);
+			}
+		}
+
+		public string TagCode
+		{
+			get
+			{
+				return tagCode;
+			}
+			set	
+			{
+				tagCode = value;
+				DictionaryUtil.Add(BodyParameters, "TagCode", value);
+			}
+		}
+
+		public string UserGroupList
+		{
+			get
+			{
+				return userGroupList;
+			}
+			set	
+			{
+				userGroupList = value;
+				DictionaryUtil.Add(BodyParameters, "UserGroupList", value);
+			}
+		}
+
 		public long? PageSize
 		{
 			get
@@ -159,16 +174,16 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			}
 		}
 
-		public string Age
+		public string DeviceIdList
 		{
 			get
 			{
-				return age;
+				return deviceIdList;
 			}
 			set	
 			{
-				age = value;
-				DictionaryUtil.Add(BodyParameters, "Age", value);
+				deviceIdList = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceIdList", value);
 			}
 		}
 
@@ -177,9 +192,9 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			return false;
 		}
 
-        public override ListPersonResultResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListCorpMetricsStatisticResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListPersonResultResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListCorpMetricsStatisticResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,71 +29,26 @@ using Aliyun.Acs.CDRS.Transform.V20201101;
 
 namespace Aliyun.Acs.CDRS.Model.V20201101
 {
-    public class CreateProjectRequest : RpcAcsRequest<CreateProjectResponse>
+    public class ListDeviceRelationRequest : RpcAcsRequest<ListDeviceRelationResponse>
     {
-        public CreateProjectRequest()
-            : base("CDRS", "2020-11-01", "CreateProject")
+        public ListDeviceRelationRequest()
+            : base("CDRS", "2020-11-01", "ListDeviceRelation")
         {
 			Method = MethodType.POST;
         }
 
-		private string icon;
+		private string deviceId;
 
-		private string description;
-
-		private string name;
-
-		private string aggregateSceneCode;
-
-		public string Icon
+		public string DeviceId
 		{
 			get
 			{
-				return icon;
+				return deviceId;
 			}
 			set	
 			{
-				icon = value;
-				DictionaryUtil.Add(BodyParameters, "Icon", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(BodyParameters, "Description", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(BodyParameters, "Name", value);
-			}
-		}
-
-		public string AggregateSceneCode
-		{
-			get
-			{
-				return aggregateSceneCode;
-			}
-			set	
-			{
-				aggregateSceneCode = value;
-				DictionaryUtil.Add(BodyParameters, "AggregateSceneCode", value);
+				deviceId = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceId", value);
 			}
 		}
 
@@ -101,9 +57,9 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			return false;
 		}
 
-        public override CreateProjectResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListDeviceRelationResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateProjectResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListDeviceRelationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

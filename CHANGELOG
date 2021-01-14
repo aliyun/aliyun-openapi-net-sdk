@@ -1,3 +1,6 @@
+2021-01-14 Version: 1.0.4
+- Update function.
+
 2021-01-14 Version: 1.12.0
 - Fixed ListUsers, GetUser, EnableUser, RegisterUser, DisableUser, DeleteUser API parameter of uid data type error, from number into string.
 - Supported ListInstances, GetInstance API to return Owner information.

@@ -44,7 +44,8 @@ namespace Aliyun.Acs.CDRS.Transform.V20201101
 				dataItem.DateTime = _ctx.StringValue("ListMetrics.Data["+ i +"].DateTime");
 				dataItem.TagCode = _ctx.StringValue("ListMetrics.Data["+ i +"].TagCode");
 				dataItem.TagValue = _ctx.StringValue("ListMetrics.Data["+ i +"].TagValue");
-				dataItem.DateTime1 = _ctx.StringValue("ListMetrics.Data["+ i +"].DateTime");
+				dataItem.TagMetric = _ctx.StringValue("ListMetrics.Data["+ i +"].TagMetric");
+				dataItem.CorpId = _ctx.StringValue("ListMetrics.Data["+ i +"].CorpId");
 
 				listMetricsResponse_data.Add(dataItem);
 			}

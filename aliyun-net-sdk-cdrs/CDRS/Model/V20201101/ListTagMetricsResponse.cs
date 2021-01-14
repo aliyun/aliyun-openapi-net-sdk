@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CDRS.Model.V20201101
 {
-	public class ListMetricsResponse : AcsResponse
+	public class ListTagMetricsResponse : AcsResponse
 	{
 
 		private string code;
@@ -37,7 +37,7 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 
 		private string totalCount;
 
-		private List<ListMetrics_DataItem> data;
+		private List<ListTagMetrics_DataItem> data;
 
 		public string Code
 		{
@@ -111,7 +111,7 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			}
 		}
 
-		public List<ListMetrics_DataItem> Data
+		public List<ListTagMetrics_DataItem> Data
 		{
 			get
 			{
@@ -123,7 +123,7 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			}
 		}
 
-		public class ListMetrics_DataItem
+		public class ListTagMetrics_DataItem
 		{
 
 			private string dateTime;

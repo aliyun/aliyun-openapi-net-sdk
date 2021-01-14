@@ -29,86 +29,86 @@ using Aliyun.Acs.CDRS.Transform.V20201101;
 
 namespace Aliyun.Acs.CDRS.Model.V20201101
 {
-    public class UpdateProjectRequest : RpcAcsRequest<UpdateProjectResponse>
+    public class PaginateProjectRequest : RpcAcsRequest<PaginateProjectResponse>
     {
-        public UpdateProjectRequest()
-            : base("CDRS", "2020-11-01", "UpdateProject")
+        public PaginateProjectRequest()
+            : base("CDRS", "2020-11-01", "PaginateProject")
         {
 			Method = MethodType.POST;
         }
 
-		private string corpId;
+		private string type;
 
-		private string icon;
+		private long? pageNumber;
 
-		private string description;
+		private bool? countTotalNum;
 
-		private string name;
+		private long? pageSize;
 
-		private string aggregateSceneCode;
+		private string nameLike;
 
-		public string CorpId
+		public string Type
 		{
 			get
 			{
-				return corpId;
+				return type;
 			}
 			set	
 			{
-				corpId = value;
-				DictionaryUtil.Add(BodyParameters, "CorpId", value);
+				type = value;
+				DictionaryUtil.Add(BodyParameters, "Type", value);
 			}
 		}
 
-		public string Icon
+		public long? PageNumber
 		{
 			get
 			{
-				return icon;
+				return pageNumber;
 			}
 			set	
 			{
-				icon = value;
-				DictionaryUtil.Add(BodyParameters, "Icon", value);
+				pageNumber = value;
+				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string Description
+		public bool? CountTotalNum
 		{
 			get
 			{
-				return description;
+				return countTotalNum;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(BodyParameters, "Description", value);
+				countTotalNum = value;
+				DictionaryUtil.Add(BodyParameters, "CountTotalNum", value.ToString());
 			}
 		}
 
-		public string Name
+		public long? PageSize
 		{
 			get
 			{
-				return name;
+				return pageSize;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(BodyParameters, "Name", value);
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string AggregateSceneCode
+		public string NameLike
 		{
 			get
 			{
-				return aggregateSceneCode;
+				return nameLike;
 			}
 			set	
 			{
-				aggregateSceneCode = value;
-				DictionaryUtil.Add(BodyParameters, "AggregateSceneCode", value);
+				nameLike = value;
+				DictionaryUtil.Add(BodyParameters, "NameLike", value);
 			}
 		}
 
@@ -117,9 +117,9 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			return false;
 		}
 
-        public override UpdateProjectResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override PaginateProjectResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateProjectResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return PaginateProjectResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

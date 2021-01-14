@@ -29,57 +29,21 @@ using Aliyun.Acs.CDRS.Transform.V20201101;
 
 namespace Aliyun.Acs.CDRS.Model.V20201101
 {
-    public class ListPersonResultRequest : RpcAcsRequest<ListPersonResultResponse>
+    public class PaginateDeviceRequest : RpcAcsRequest<PaginateDeviceResponse>
     {
-        public ListPersonResultRequest()
-            : base("CDRS", "2020-11-01", "ListPersonResult")
+        public PaginateDeviceRequest()
+            : base("CDRS", "2020-11-01", "PaginateDevice")
         {
 			Method = MethodType.POST;
         }
 
-		private string profession;
-
-		private string schema;
-
 		private string corpId;
-
-		private string gender;
-
-		private string endTime;
-
-		private string startTime;
 
 		private long? pageNumber;
 
+		private bool? countTotalNum;
+
 		private long? pageSize;
-
-		private string age;
-
-		public string Profession
-		{
-			get
-			{
-				return profession;
-			}
-			set	
-			{
-				profession = value;
-				DictionaryUtil.Add(BodyParameters, "Profession", value);
-			}
-		}
-
-		public string Schema
-		{
-			get
-			{
-				return schema;
-			}
-			set	
-			{
-				schema = value;
-				DictionaryUtil.Add(BodyParameters, "Schema", value);
-			}
-		}
 
 		public string CorpId
 		{
@@ -91,45 +55,6 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			{
 				corpId = value;
 				DictionaryUtil.Add(BodyParameters, "CorpId", value);
-			}
-		}
-
-		public string Gender
-		{
-			get
-			{
-				return gender;
-			}
-			set	
-			{
-				gender = value;
-				DictionaryUtil.Add(BodyParameters, "Gender", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(BodyParameters, "EndTime", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(BodyParameters, "StartTime", value);
 			}
 		}
 
@@ -146,6 +71,19 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			}
 		}
 
+		public bool? CountTotalNum
+		{
+			get
+			{
+				return countTotalNum;
+			}
+			set	
+			{
+				countTotalNum = value;
+				DictionaryUtil.Add(BodyParameters, "CountTotalNum", value.ToString());
+			}
+		}
+
 		public long? PageSize
 		{
 			get
@@ -159,27 +97,14 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			}
 		}
 
-		public string Age
-		{
-			get
-			{
-				return age;
-			}
-			set	
-			{
-				age = value;
-				DictionaryUtil.Add(BodyParameters, "Age", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ListPersonResultResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override PaginateDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListPersonResultResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return PaginateDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -51,6 +51,11 @@ namespace Aliyun.Acs.CDRS.Transform.V20201101
 				recordsItem.ShotTime = _ctx.StringValue("GetCdrsMonitorResult.Data.Records["+ i +"].ShotTime");
 				recordsItem.MonitorPicUrl = _ctx.StringValue("GetCdrsMonitorResult.Data.Records["+ i +"].MonitorPicUrl");
 				recordsItem.TargetPicUrl = _ctx.StringValue("GetCdrsMonitorResult.Data.Records["+ i +"].TargetPicUrl");
+				recordsItem.TaskId = _ctx.StringValue("GetCdrsMonitorResult.Data.Records["+ i +"].TaskId");
+
+				GetCdrsMonitorResultResponse.GetCdrsMonitorResult_Data.GetCdrsMonitorResult_RecordsItem.GetCdrsMonitorResult_ExtendInfo extendInfo = new GetCdrsMonitorResultResponse.GetCdrsMonitorResult_Data.GetCdrsMonitorResult_RecordsItem.GetCdrsMonitorResult_ExtendInfo();
+				extendInfo.PlateNo = _ctx.StringValue("GetCdrsMonitorResult.Data.Records["+ i +"].ExtendInfo.PlateNo");
+				recordsItem.ExtendInfo = extendInfo;
 
 				data_records.Add(recordsItem);
 			}

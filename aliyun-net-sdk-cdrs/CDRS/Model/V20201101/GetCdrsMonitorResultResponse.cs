@@ -135,6 +135,10 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 
 				private string targetPicUrl;
 
+				private string taskId;
+
+				private GetCdrsMonitorResult_ExtendInfo extendInfo;
+
 				public string RightBottomY
 				{
 					get
@@ -252,6 +256,48 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 					set	
 					{
 						targetPicUrl = value;
+					}
+				}
+
+				public string TaskId
+				{
+					get
+					{
+						return taskId;
+					}
+					set	
+					{
+						taskId = value;
+					}
+				}
+
+				public GetCdrsMonitorResult_ExtendInfo ExtendInfo
+				{
+					get
+					{
+						return extendInfo;
+					}
+					set	
+					{
+						extendInfo = value;
+					}
+				}
+
+				public class GetCdrsMonitorResult_ExtendInfo
+				{
+
+					private string plateNo;
+
+					public string PlateNo
+					{
+						get
+						{
+							return plateNo;
+						}
+						set	
+						{
+							plateNo = value;
+						}
 					}
 				}
 			}

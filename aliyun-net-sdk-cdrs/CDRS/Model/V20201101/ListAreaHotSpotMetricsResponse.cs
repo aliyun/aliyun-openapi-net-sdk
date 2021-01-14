@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CDRS.Model.V20201101
 {
-	public class ListMetricsResponse : AcsResponse
+	public class ListAreaHotSpotMetricsResponse : AcsResponse
 	{
 
 		private string code;
@@ -37,7 +37,7 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 
 		private string totalCount;
 
-		private List<ListMetrics_DataItem> data;
+		private List<ListAreaHotSpotMetrics_DataItem> data;
 
 		public string Code
 		{
@@ -111,7 +111,7 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			}
 		}
 
-		public List<ListMetrics_DataItem> Data
+		public List<ListAreaHotSpotMetrics_DataItem> Data
 		{
 			get
 			{
@@ -123,76 +123,76 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			}
 		}
 
-		public class ListMetrics_DataItem
+		public class ListAreaHotSpotMetrics_DataItem
 		{
 
-			private string dateTime;
+			private string times;
 
-			private string tagCode;
+			private string coordinates;
 
-			private string tagValue;
+			private string deviceId;
 
-			private string tagMetric;
+			private string personId;
 
-			private string corpId;
+			private string intervalTime;
 
-			public string DateTime
+			public string Times
 			{
 				get
 				{
-					return dateTime;
+					return times;
 				}
 				set	
 				{
-					dateTime = value;
+					times = value;
 				}
 			}
 
-			public string TagCode
+			public string Coordinates
 			{
 				get
 				{
-					return tagCode;
+					return coordinates;
 				}
 				set	
 				{
-					tagCode = value;
+					coordinates = value;
 				}
 			}
 
-			public string TagValue
+			public string DeviceId
 			{
 				get
 				{
-					return tagValue;
+					return deviceId;
 				}
 				set	
 				{
-					tagValue = value;
+					deviceId = value;
 				}
 			}
 
-			public string TagMetric
+			public string PersonId
 			{
 				get
 				{
-					return tagMetric;
+					return personId;
 				}
 				set	
 				{
-					tagMetric = value;
+					personId = value;
 				}
 			}
 
-			public string CorpId
+			public string IntervalTime
 			{
 				get
 				{
-					return corpId;
+					return intervalTime;
 				}
 				set	
 				{
-					corpId = value;
+					intervalTime = value;
 				}
 			}
 		}

@@ -29,44 +29,29 @@ using Aliyun.Acs.CDRS.Transform.V20201101;
 
 namespace Aliyun.Acs.CDRS.Model.V20201101
 {
-    public class ListPersonResultRequest : RpcAcsRequest<ListPersonResultResponse>
+    public class ListCorpTrackDetailRequest : RpcAcsRequest<ListCorpTrackDetailResponse>
     {
-        public ListPersonResultRequest()
-            : base("CDRS", "2020-11-01", "ListPersonResult")
+        public ListCorpTrackDetailRequest()
+            : base("CDRS", "2020-11-01", "ListCorpTrackDetail")
         {
 			Method = MethodType.POST;
         }
-
-		private string profession;
 
 		private string schema;
 
 		private string corpId;
 
-		private string gender;
-
 		private string endTime;
 
 		private string startTime;
 
-		private long? pageNumber;
+		private string pageNumber;
 
-		private long? pageSize;
+		private string pageSize;
 
-		private string age;
+		private string dataSourceId;
 
-		public string Profession
-		{
-			get
-			{
-				return profession;
-			}
-			set	
-			{
-				profession = value;
-				DictionaryUtil.Add(BodyParameters, "Profession", value);
-			}
-		}
+		private string personId;
 
 		public string Schema
 		{
@@ -91,19 +76,6 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			{
 				corpId = value;
 				DictionaryUtil.Add(BodyParameters, "CorpId", value);
-			}
-		}
-
-		public string Gender
-		{
-			get
-			{
-				return gender;
-			}
-			set	
-			{
-				gender = value;
-				DictionaryUtil.Add(BodyParameters, "Gender", value);
 			}
 		}
 
@@ -133,7 +105,7 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			}
 		}
 
-		public long? PageNumber
+		public string PageNumber
 		{
 			get
 			{
@@ -142,11 +114,11 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			set	
 			{
 				pageNumber = value;
-				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
+				DictionaryUtil.Add(BodyParameters, "PageNumber", value);
 			}
 		}
 
-		public long? PageSize
+		public string PageSize
 		{
 			get
 			{
@@ -155,20 +127,33 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			set	
 			{
 				pageSize = value;
-				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+				DictionaryUtil.Add(BodyParameters, "PageSize", value);
 			}
 		}
 
-		public string Age
+		public string DataSourceId
 		{
 			get
 			{
-				return age;
+				return dataSourceId;
 			}
 			set	
 			{
-				age = value;
-				DictionaryUtil.Add(BodyParameters, "Age", value);
+				dataSourceId = value;
+				DictionaryUtil.Add(BodyParameters, "DataSourceId", value);
+			}
+		}
+
+		public string PersonId
+		{
+			get
+			{
+				return personId;
+			}
+			set	
+			{
+				personId = value;
+				DictionaryUtil.Add(BodyParameters, "PersonId", value);
 			}
 		}
 
@@ -177,9 +162,9 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			return false;
 		}
 
-        public override ListPersonResultResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListCorpTrackDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListPersonResultResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListCorpTrackDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

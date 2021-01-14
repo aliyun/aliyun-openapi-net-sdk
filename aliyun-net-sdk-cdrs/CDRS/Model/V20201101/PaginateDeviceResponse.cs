@@ -22,32 +22,26 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CDRS.Model.V20201101
 {
-	public class ListMetricsResponse : AcsResponse
+	public class PaginateDeviceResponse : AcsResponse
 	{
-
-		private string code;
-
-		private string message;
 
 		private string requestId;
 
-		private string pageNumber;
+		private string message;
 
-		private string pageSize;
+		private string code;
 
-		private string totalCount;
+		private PaginateDevice_Data data;
 
-		private List<ListMetrics_DataItem> data;
-
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 
@@ -63,55 +57,19 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			}
 		}
 
-		public string RequestId
+		public string Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
-		public string PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public string PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public string TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
-
-		public List<ListMetrics_DataItem> Data
+		public PaginateDevice_Data Data
 		{
 			get
 			{
@@ -123,76 +81,80 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			}
 		}
 
-		public class ListMetrics_DataItem
+		public class PaginateDevice_Data
 		{
 
-			private string dateTime;
+			private int? pageNumber;
 
-			private string tagCode;
+			private int? pageSize;
 
-			private string tagValue;
+			private int? totalCount;
 
-			private string tagMetric;
+			private List<PaginateDevice_RecordsItem> records;
 
-			private string corpId;
-
-			public string DateTime
+			public int? PageNumber
 			{
 				get
 				{
-					return dateTime;
+					return pageNumber;
 				}
 				set	
 				{
-					dateTime = value;
+					pageNumber = value;
 				}
 			}
 
-			public string TagCode
+			public int? PageSize
 			{
 				get
 				{
-					return tagCode;
+					return pageSize;
 				}
 				set	
 				{
-					tagCode = value;
+					pageSize = value;
 				}
 			}
 
-			public string TagValue
+			public int? TotalCount
 			{
 				get
 				{
-					return tagValue;
+					return totalCount;
 				}
 				set	
 				{
-					tagValue = value;
+					totalCount = value;
 				}
 			}
 
-			public string TagMetric
+			public List<PaginateDevice_RecordsItem> Records
 			{
 				get
 				{
-					return tagMetric;
+					return records;
 				}
 				set	
 				{
-					tagMetric = value;
+					records = value;
 				}
 			}
 
-			public string CorpId
+			public class PaginateDevice_RecordsItem
 			{
-				get
+
+				private string deviceId;
+
+				public string DeviceId
 				{
-					return corpId;
-				}
-				set	
-				{
-					corpId = value;
+					get
+					{
+						return deviceId;
+					}
+					set	
+					{
+						deviceId = value;
+					}
 				}
 			}
 		}

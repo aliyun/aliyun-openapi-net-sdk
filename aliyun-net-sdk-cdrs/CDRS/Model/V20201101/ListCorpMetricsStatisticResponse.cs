@@ -22,32 +22,46 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CDRS.Model.V20201101
 {
-	public class ListMetricsResponse : AcsResponse
+	public class ListCorpMetricsStatisticResponse : AcsResponse
 	{
 
-		private string code;
+		private int? totalCount;
+
+		private int? pageSize;
 
 		private string message;
 
 		private string requestId;
 
-		private string pageNumber;
+		private int? pageNumber;
 
-		private string pageSize;
+		private string code;
 
-		private string totalCount;
+		private string success;
 
-		private List<ListMetrics_DataItem> data;
+		private List<ListCorpMetricsStatistic_DataItem> data;
 
-		public string Code
+		public int? TotalCount
 		{
 			get
 			{
-				return code;
+				return totalCount;
 			}
 			set	
 			{
-				code = value;
+				totalCount = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
 			}
 		}
 
@@ -75,7 +89,7 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			}
 		}
 
-		public string PageNumber
+		public int? PageNumber
 		{
 			get
 			{
@@ -87,31 +101,31 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			}
 		}
 
-		public string PageSize
+		public string Code
 		{
 			get
 			{
-				return pageSize;
+				return code;
 			}
 			set	
 			{
-				pageSize = value;
+				code = value;
 			}
 		}
 
-		public string TotalCount
+		public string Success
 		{
 			get
 			{
-				return totalCount;
+				return success;
 			}
 			set	
 			{
-				totalCount = value;
+				success = value;
 			}
 		}
 
-		public List<ListMetrics_DataItem> Data
+		public List<ListCorpMetricsStatistic_DataItem> Data
 		{
 			get
 			{
@@ -123,28 +137,96 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			}
 		}
 
-		public class ListMetrics_DataItem
+		public class ListCorpMetricsStatistic_DataItem
 		{
 
-			private string dateTime;
+			private string corpId;
+
+			private string personId;
+
+			private string deviceGroupId;
+
+			private string deviceId;
+
+			private string userGroupId;
+
+			private string tagMetrics;
 
 			private string tagCode;
 
 			private string tagValue;
 
-			private string tagMetric;
+			private string dateId;
 
-			private string corpId;
-
-			public string DateTime
+			public string CorpId
 			{
 				get
 				{
-					return dateTime;
+					return corpId;
 				}
 				set	
 				{
-					dateTime = value;
+					corpId = value;
+				}
+			}
+
+			public string PersonId
+			{
+				get
+				{
+					return personId;
+				}
+				set	
+				{
+					personId = value;
+				}
+			}
+
+			public string DeviceGroupId
+			{
+				get
+				{
+					return deviceGroupId;
+				}
+				set	
+				{
+					deviceGroupId = value;
+				}
+			}
+
+			public string DeviceId
+			{
+				get
+				{
+					return deviceId;
+				}
+				set	
+				{
+					deviceId = value;
+				}
+			}
+
+			public string UserGroupId
+			{
+				get
+				{
+					return userGroupId;
+				}
+				set	
+				{
+					userGroupId = value;
+				}
+			}
+
+			public string TagMetrics
+			{
+				get
+				{
+					return tagMetrics;
+				}
+				set	
+				{
+					tagMetrics = value;
 				}
 			}
 
@@ -172,27 +254,15 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 				}
 			}
 
-			public string TagMetric
+			public string DateId
 			{
 				get
 				{
-					return tagMetric;
+					return dateId;
 				}
 				set	
 				{
-					tagMetric = value;
-				}
-			}
-
-			public string CorpId
-			{
-				get
-				{
-					return corpId;
-				}
-				set	
-				{
-					corpId = value;
+					dateId = value;
 				}
 			}
 		}
