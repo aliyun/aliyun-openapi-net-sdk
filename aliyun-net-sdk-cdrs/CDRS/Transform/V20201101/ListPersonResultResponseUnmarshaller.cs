@@ -50,6 +50,8 @@ namespace Aliyun.Acs.CDRS.Transform.V20201101
 				datas.PersonType = _ctx.StringValue("ListPersonResult.Data["+ i +"].PersonType");
 				datas.HotSpotAddress = _ctx.StringValue("ListPersonResult.Data["+ i +"].HotSpotAddress");
 				datas.UpdateTime = _ctx.StringValue("ListPersonResult.Data["+ i +"].UpdateTime");
+				datas.TargetUrl = _ctx.StringValue("ListPersonResult.Data["+ i +"].TargetUrl");
+				datas.SourceUrl = _ctx.StringValue("ListPersonResult.Data["+ i +"].SourceUrl");
 
 				listPersonResultResponse_data.Add(datas);
 			}

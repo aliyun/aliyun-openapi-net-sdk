@@ -144,6 +144,10 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 
 			private string updateTime;
 
+			private string targetUrl;
+
+			private string sourceUrl;
+
 			public string PersonId
 			{
 				get
@@ -249,6 +253,30 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 				set	
 				{
 					updateTime = value;
+				}
+			}
+
+			public string TargetUrl
+			{
+				get
+				{
+					return targetUrl;
+				}
+				set	
+				{
+					targetUrl = value;
+				}
+			}
+
+			public string SourceUrl
+			{
+				get
+				{
+					return sourceUrl;
+				}
+				set	
+				{
+					sourceUrl = value;
 				}
 			}
 		}

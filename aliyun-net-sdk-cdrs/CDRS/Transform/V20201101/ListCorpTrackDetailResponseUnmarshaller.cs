@@ -53,6 +53,8 @@ namespace Aliyun.Acs.CDRS.Transform.V20201101
 				dataItem.StartSourceImage = _ctx.StringValue("ListCorpTrackDetail.Data["+ i +"].StartSourceImage");
 				dataItem.CorpId = _ctx.StringValue("ListCorpTrackDetail.Data["+ i +"].CorpId");
 				dataItem.EndTargetImage = _ctx.StringValue("ListCorpTrackDetail.Data["+ i +"].EndTargetImage");
+				dataItem.SourceUrl = _ctx.StringValue("ListCorpTrackDetail.Data["+ i +"].SourceUrl");
+				dataItem.TargetUrl = _ctx.StringValue("ListCorpTrackDetail.Data["+ i +"].TargetUrl");
 
 				listCorpTrackDetailResponse_data.Add(dataItem);
 			}
