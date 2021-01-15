@@ -38,17 +38,17 @@ namespace Aliyun.Acs.CDRS.Transform.V20201101
 			listPersonTopResponse.PageSize = _ctx.LongValue("ListPersonTop.PageSize");
 			listPersonTopResponse.TotalCount = _ctx.LongValue("ListPersonTop.TotalCount");
 
-			List<ListPersonTopResponse.ListPersonTop_Datas> listPersonTopResponse_data = new List<ListPersonTopResponse.ListPersonTop_Datas>();
+			List<ListPersonTopResponse.ListPersonTop_DataItem> listPersonTopResponse_data = new List<ListPersonTopResponse.ListPersonTop_DataItem>();
 			for (int i = 0; i < _ctx.Length("ListPersonTop.Data.Length"); i++) {
-				ListPersonTopResponse.ListPersonTop_Datas datas = new ListPersonTopResponse.ListPersonTop_Datas();
-				datas.CorpId = _ctx.StringValue("ListPersonTop.Data["+ i +"].CorpId");
-				datas.PersonId = _ctx.StringValue("ListPersonTop.Data["+ i +"].PersonId");
-				datas.PoiId = _ctx.StringValue("ListPersonTop.Data["+ i +"].PoiId");
-				datas.PoiName = _ctx.StringValue("ListPersonTop.Data["+ i +"].PoiName");
-				datas.PassHour = _ctx.StringValue("ListPersonTop.Data["+ i +"].PassHour");
-				datas.Frequency = _ctx.StringValue("ListPersonTop.Data["+ i +"].Frequency");
+				ListPersonTopResponse.ListPersonTop_DataItem dataItem = new ListPersonTopResponse.ListPersonTop_DataItem();
+				dataItem.CorpId = _ctx.StringValue("ListPersonTop.Data["+ i +"].CorpId");
+				dataItem.PersonId = _ctx.StringValue("ListPersonTop.Data["+ i +"].PersonId");
+				dataItem.PoiId = _ctx.StringValue("ListPersonTop.Data["+ i +"].PoiId");
+				dataItem.PoiName = _ctx.StringValue("ListPersonTop.Data["+ i +"].PoiName");
+				dataItem.PassHour = _ctx.StringValue("ListPersonTop.Data["+ i +"].PassHour");
+				dataItem.Frequency = _ctx.StringValue("ListPersonTop.Data["+ i +"].Frequency");
 
-				listPersonTopResponse_data.Add(datas);
+				listPersonTopResponse_data.Add(dataItem);
 			}
 			listPersonTopResponse.Data = listPersonTopResponse_data;
         

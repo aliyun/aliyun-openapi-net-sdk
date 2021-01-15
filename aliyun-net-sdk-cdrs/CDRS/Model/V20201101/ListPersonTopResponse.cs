@@ -37,7 +37,7 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 
 		private long? totalCount;
 
-		private List<ListPersonTop_Datas> data;
+		private List<ListPersonTop_DataItem> data;
 
 		public string Code
 		{
@@ -111,7 +111,7 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			}
 		}
 
-		public List<ListPersonTop_Datas> Data
+		public List<ListPersonTop_DataItem> Data
 		{
 			get
 			{
@@ -123,7 +123,7 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			}
 		}
 
-		public class ListPersonTop_Datas
+		public class ListPersonTop_DataItem
 		{
 
 			private string corpId;

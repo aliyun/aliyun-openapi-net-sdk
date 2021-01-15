@@ -39,8 +39,6 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 
 		private string profession;
 
-		private string schema;
-
 		private string corpId;
 
 		private string gender;
@@ -65,19 +63,6 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			{
 				profession = value;
 				DictionaryUtil.Add(BodyParameters, "Profession", value);
-			}
-		}
-
-		public string Schema
-		{
-			get
-			{
-				return schema;
-			}
-			set	
-			{
-				schema = value;
-				DictionaryUtil.Add(BodyParameters, "Schema", value);
 			}
 		}
 

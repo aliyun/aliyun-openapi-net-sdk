@@ -37,6 +37,8 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			Method = MethodType.POST;
         }
 
+		private string schema;
+
 		private string corpId;
 
 		private string endTime;
@@ -48,6 +50,19 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 		private long? pageSize;
 
 		private string personId;
+
+		public string Schema
+		{
+			get
+			{
+				return schema;
+			}
+			set	
+			{
+				schema = value;
+				DictionaryUtil.Add(BodyParameters, "Schema", value);
+			}
+		}
 
 		public string CorpId
 		{

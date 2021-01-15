@@ -55,6 +55,8 @@ namespace Aliyun.Acs.CDRS.Transform.V20201101
 				datas.Order = _ctx.StringValue("ListPersonTrack.Data["+ i +"].Order");
 				datas.Longitude = _ctx.StringValue("ListPersonTrack.Data["+ i +"].Longitude");
 				datas.Latitude = _ctx.StringValue("ListPersonTrack.Data["+ i +"].Latitude");
+				datas.SourceUrl = _ctx.StringValue("ListPersonTrack.Data["+ i +"].SourceUrl");
+				datas.TargetUrl = _ctx.StringValue("ListPersonTrack.Data["+ i +"].TargetUrl");
 
 				listPersonTrackResponse_data.Add(datas);
 			}

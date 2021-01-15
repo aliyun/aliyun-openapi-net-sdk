@@ -154,6 +154,10 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 
 			private string latitude;
 
+			private string sourceUrl;
+
+			private string targetUrl;
+
 			public string PersonId
 			{
 				get
@@ -319,6 +323,30 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 				set	
 				{
 					latitude = value;
+				}
+			}
+
+			public string SourceUrl
+			{
+				get
+				{
+					return sourceUrl;
+				}
+				set	
+				{
+					sourceUrl = value;
+				}
+			}
+
+			public string TargetUrl
+			{
+				get
+				{
+					return targetUrl;
+				}
+				set	
+				{
+					targetUrl = value;
 				}
 			}
 		}
