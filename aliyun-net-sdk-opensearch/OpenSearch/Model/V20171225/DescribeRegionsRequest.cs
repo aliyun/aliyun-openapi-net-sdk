@@ -34,26 +34,16 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.OpenSearch.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.OpenSearch.Endpoint.endpointRegionalType, null);
             }
 			UriPattern = "/v4/openapi/regions";
 			Method = MethodType.GET;
         }
 
-		private string accept_language;
-
-		public string Accept_language
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return accept_language;
-			}
-			set	
-			{
-				accept_language = value;
-				DictionaryUtil.Add(QueryParameters, "accept_language", value);
-			}
+			return false;
 		}
 
         public override DescribeRegionsResponse GetResponse(UnmarshallerContext unmarshallerContext)

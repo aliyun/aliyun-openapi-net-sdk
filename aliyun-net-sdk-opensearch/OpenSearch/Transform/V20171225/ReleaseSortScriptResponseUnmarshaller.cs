@@ -26,12 +26,12 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 {
     public class ReleaseSortScriptResponseUnmarshaller
     {
-        public static ReleaseSortScriptResponse Unmarshall(UnmarshallerContext context)
+        public static ReleaseSortScriptResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ReleaseSortScriptResponse releaseSortScriptResponse = new ReleaseSortScriptResponse();
 
-			releaseSortScriptResponse.HttpResponse = context.HttpResponse;
-			releaseSortScriptResponse.RequestId = context.StringValue("ReleaseSortScript.requestId");
+			releaseSortScriptResponse.HttpResponse = _ctx.HttpResponse;
+			releaseSortScriptResponse.RequestId = _ctx.StringValue("ReleaseSortScript.requestId");
         
 			return releaseSortScriptResponse;
         }

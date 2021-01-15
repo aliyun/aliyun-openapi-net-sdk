@@ -1,3 +1,7 @@
+2021-01-15 Version: 0.9.0
+- Add API CreateSortScriptValidation.
+- Add parameter resourceGroupId to API ListAppGroups.
+
 2021-01-15 Version: 5.1.8
 - Remove drcGuidRouteApi, ModifyDtsJobPassword API.
 

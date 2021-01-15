@@ -26,11 +26,11 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 {
     public class ListAppsResponseUnmarshaller
     {
-        public static ListAppsResponse Unmarshall(UnmarshallerContext context)
+        public static ListAppsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListAppsResponse listAppsResponse = new ListAppsResponse();
 
-			listAppsResponse.HttpResponse = context.HttpResponse;
+			listAppsResponse.HttpResponse = _ctx.HttpResponse;
         
 			return listAppsResponse;
         }

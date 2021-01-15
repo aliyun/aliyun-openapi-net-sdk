@@ -26,23 +26,24 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 {
     public class DescribeRegionsResponseUnmarshaller
     {
-        public static DescribeRegionsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRegionsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRegionsResponse describeRegionsResponse = new DescribeRegionsResponse();
 
-			describeRegionsResponse.HttpResponse = context.HttpResponse;
-			describeRegionsResponse.Request_id = context.StringValue("DescribeRegions.request_id");
-			describeRegionsResponse.Status = context.StringValue("DescribeRegions.status");
+			describeRegionsResponse.HttpResponse = _ctx.HttpResponse;
+			describeRegionsResponse.RequestId = _ctx.StringValue("DescribeRegions.requestId");
 
-			List<DescribeRegionsResponse.DescribeRegions_Error> describeRegionsResponse_errors = new List<DescribeRegionsResponse.DescribeRegions_Error>();
-			for (int i = 0; i < context.Length("DescribeRegions.Errors.Length"); i++) {
-				DescribeRegionsResponse.DescribeRegions_Error error = new DescribeRegionsResponse.DescribeRegions_Error();
-				error.Code = context.IntegerValue("DescribeRegions.Errors["+ i +"].code");
-				error.Message = context.StringValue("DescribeRegions.Errors["+ i +"].message");
+			List<DescribeRegionsResponse.DescribeRegions_ResultItem> describeRegionsResponse_result = new List<DescribeRegionsResponse.DescribeRegions_ResultItem>();
+			for (int i = 0; i < _ctx.Length("DescribeRegions.Result.Length"); i++) {
+				DescribeRegionsResponse.DescribeRegions_ResultItem resultItem = new DescribeRegionsResponse.DescribeRegions_ResultItem();
+				resultItem.RegionId = _ctx.StringValue("DescribeRegions.Result["+ i +"].regionId");
+				resultItem.LocalName = _ctx.StringValue("DescribeRegions.Result["+ i +"].localName");
+				resultItem.Endpoint = _ctx.StringValue("DescribeRegions.Result["+ i +"].endpoint");
+				resultItem.ConsoleUrl = _ctx.StringValue("DescribeRegions.Result["+ i +"].consoleUrl");
 
-				describeRegionsResponse_errors.Add(error);
+				describeRegionsResponse_result.Add(resultItem);
 			}
-			describeRegionsResponse.Errors = describeRegionsResponse_errors;
+			describeRegionsResponse.Result = describeRegionsResponse_result;
         
 			return describeRegionsResponse;
         }
