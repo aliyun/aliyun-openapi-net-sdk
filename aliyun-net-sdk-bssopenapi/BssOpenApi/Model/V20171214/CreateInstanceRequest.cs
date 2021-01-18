@@ -49,6 +49,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string subscriptionType;
 
+		private string logistics;
+
 		private long? ownerId;
 
 		private string productType;
@@ -108,6 +110,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				subscriptionType = value;
 				DictionaryUtil.Add(QueryParameters, "SubscriptionType", value);
+			}
+		}
+
+		public string Logistics
+		{
+			get
+			{
+				return logistics;
+			}
+			set	
+			{
+				logistics = value;
+				DictionaryUtil.Add(QueryParameters, "Logistics", value);
 			}
 		}
 
