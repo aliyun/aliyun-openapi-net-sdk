@@ -28,18 +28,22 @@ using Aliyun.Acs.codeup.Transform.V20200414;
 
 namespace Aliyun.Acs.codeup.Model.V20200414
 {
-    public class GetUserInfoRequest : RoaAcsRequest<GetUserInfoResponse>
+    public class DeleteRepositoryProtectedBranchRequest : RoaAcsRequest<DeleteRepositoryProtectedBranchResponse>
     {
-        public GetUserInfoRequest()
-            : base("codeup", "2020-04-14", "GetUserInfo")
+        public DeleteRepositoryProtectedBranchRequest()
+            : base("codeup", "2020-04-14", "DeleteRepositoryProtectedBranch")
         {
-			UriPattern = "/api/v3/user/current";
-			Method = MethodType.GET;
+			UriPattern = "/api/v4/projects/[ProjectId]/repository/protect_branches/[ProtectedBranchId]";
+			Method = MethodType.DELETE;
         }
 
 		private string organizationId;
 
+		private long? protectedBranchId;
+
 		private string accessToken;
+
+		private long? projectId;
 
 		public string OrganizationId
 		{
@@ -51,6 +55,19 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			{
 				organizationId = value;
 				DictionaryUtil.Add(QueryParameters, "OrganizationId", value);
+			}
+		}
+
+		public long? ProtectedBranchId
+		{
+			get
+			{
+				return protectedBranchId;
+			}
+			set	
+			{
+				protectedBranchId = value;
+				DictionaryUtil.Add(PathParameters, "ProtectedBranchId", value.ToString());
 			}
 		}
 
@@ -67,14 +84,27 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
+		public long? ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(PathParameters, "ProjectId", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GetUserInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteRepositoryProtectedBranchResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetUserInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteRepositoryProtectedBranchResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

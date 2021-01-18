@@ -1,3 +1,11 @@
+2021-01-18 Version: 0.0.7
+- Add ListMergeRequests api.
+- Add protected branch api, CreateRepositoryProtectedBranch and DeleteRepositoryProtectedBranch.
+- Add repository deploy key api, EnableRepositoryDeployKey and CreateRepositoryDeployKey.
+- Add UpdateRepository api.
+- Update GetUserInfo, support use OrganizationId param to get user organization name.
+
+
 2021-01-18 Version: 1.6.5
 - Add logistics for createinstance.
 

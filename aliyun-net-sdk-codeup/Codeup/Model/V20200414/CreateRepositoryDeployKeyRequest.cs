@@ -28,18 +28,22 @@ using Aliyun.Acs.codeup.Transform.V20200414;
 
 namespace Aliyun.Acs.codeup.Model.V20200414
 {
-    public class GetUserInfoRequest : RoaAcsRequest<GetUserInfoResponse>
+    public class CreateRepositoryDeployKeyRequest : RoaAcsRequest<CreateRepositoryDeployKeyResponse>
     {
-        public GetUserInfoRequest()
-            : base("codeup", "2020-04-14", "GetUserInfo")
+        public CreateRepositoryDeployKeyRequest()
+            : base("codeup", "2020-04-14", "CreateRepositoryDeployKey")
         {
-			UriPattern = "/api/v3/user/current";
-			Method = MethodType.GET;
+			UriPattern = "/api/v3/projects/[ProjectId]/keys";
+			Method = MethodType.POST;
         }
 
 		private string organizationId;
 
+		private string subUserId;
+
 		private string accessToken;
+
+		private long? projectId;
 
 		public string OrganizationId
 		{
@@ -51,6 +55,19 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			{
 				organizationId = value;
 				DictionaryUtil.Add(QueryParameters, "OrganizationId", value);
+			}
+		}
+
+		public string SubUserId
+		{
+			get
+			{
+				return subUserId;
+			}
+			set	
+			{
+				subUserId = value;
+				DictionaryUtil.Add(QueryParameters, "SubUserId", value);
 			}
 		}
 
@@ -67,14 +84,27 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
+		public long? ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(PathParameters, "ProjectId", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GetUserInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateRepositoryDeployKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetUserInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateRepositoryDeployKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -28,18 +28,24 @@ using Aliyun.Acs.codeup.Transform.V20200414;
 
 namespace Aliyun.Acs.codeup.Model.V20200414
 {
-    public class GetUserInfoRequest : RoaAcsRequest<GetUserInfoResponse>
+    public class EnableRepositoryDeployKeyRequest : RoaAcsRequest<EnableRepositoryDeployKeyResponse>
     {
-        public GetUserInfoRequest()
-            : base("codeup", "2020-04-14", "GetUserInfo")
+        public EnableRepositoryDeployKeyRequest()
+            : base("codeup", "2020-04-14", "EnableRepositoryDeployKey")
         {
-			UriPattern = "/api/v3/user/current";
-			Method = MethodType.GET;
+			UriPattern = "/api/v3/projects/[ProjectId]/keys/[KeyId]/enable";
+			Method = MethodType.POST;
         }
 
 		private string organizationId;
 
+		private string subUserId;
+
 		private string accessToken;
+
+		private long? keyId;
+
+		private long? projectId;
 
 		public string OrganizationId
 		{
@@ -51,6 +57,19 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			{
 				organizationId = value;
 				DictionaryUtil.Add(QueryParameters, "OrganizationId", value);
+			}
+		}
+
+		public string SubUserId
+		{
+			get
+			{
+				return subUserId;
+			}
+			set	
+			{
+				subUserId = value;
+				DictionaryUtil.Add(QueryParameters, "SubUserId", value);
 			}
 		}
 
@@ -67,14 +86,40 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
+		public long? KeyId
+		{
+			get
+			{
+				return keyId;
+			}
+			set	
+			{
+				keyId = value;
+				DictionaryUtil.Add(PathParameters, "KeyId", value.ToString());
+			}
+		}
+
+		public long? ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(PathParameters, "ProjectId", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GetUserInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override EnableRepositoryDeployKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetUserInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return EnableRepositoryDeployKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

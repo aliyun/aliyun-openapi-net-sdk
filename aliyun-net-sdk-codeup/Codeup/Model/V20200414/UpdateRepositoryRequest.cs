@@ -28,18 +28,20 @@ using Aliyun.Acs.codeup.Transform.V20200414;
 
 namespace Aliyun.Acs.codeup.Model.V20200414
 {
-    public class GetUserInfoRequest : RoaAcsRequest<GetUserInfoResponse>
+    public class UpdateRepositoryRequest : RoaAcsRequest<UpdateRepositoryResponse>
     {
-        public GetUserInfoRequest()
-            : base("codeup", "2020-04-14", "GetUserInfo")
+        public UpdateRepositoryRequest()
+            : base("codeup", "2020-04-14", "UpdateRepository")
         {
-			UriPattern = "/api/v3/user/current";
-			Method = MethodType.GET;
+			UriPattern = "/api/v3/projects/[ProjectId]";
+			Method = MethodType.PUT;
         }
 
 		private string organizationId;
 
 		private string accessToken;
+
+		private long? projectId;
 
 		public string OrganizationId
 		{
@@ -67,14 +69,27 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
+		public long? ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(PathParameters, "ProjectId", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GetUserInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateRepositoryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetUserInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateRepositoryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
