@@ -39,6 +39,10 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 
 		private string corpId;
 
+		private string aggregateDimension;
+
+		private string imageSourceType;
+
 		private string endTime;
 
 		private string startTime;
@@ -59,6 +63,32 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			{
 				corpId = value;
 				DictionaryUtil.Add(BodyParameters, "CorpId", value);
+			}
+		}
+
+		public string AggregateDimension
+		{
+			get
+			{
+				return aggregateDimension;
+			}
+			set	
+			{
+				aggregateDimension = value;
+				DictionaryUtil.Add(BodyParameters, "AggregateDimension", value);
+			}
+		}
+
+		public string ImageSourceType
+		{
+			get
+			{
+				return imageSourceType;
+			}
+			set	
+			{
+				imageSourceType = value;
+				DictionaryUtil.Add(BodyParameters, "ImageSourceType", value);
 			}
 		}
 
