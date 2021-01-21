@@ -22,18 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
 {
-	public class ListUserOrganizationResponse : AcsResponse
+	public class GetLastWorkspaceResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private bool? success;
 
 		private string errorCode;
 
 		private string errorMessage;
 
-		private List<ListUserOrganization_Organization> _object;
+		private bool? success;
+
+		private string _object;
 
 		public string RequestId
 		{
@@ -44,18 +44,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
 			}
 		}
 
@@ -83,7 +71,19 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
-		public List<ListUserOrganization_Organization> _Object
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string _Object
 		{
 			get
 			{
@@ -92,38 +92,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			set	
 			{
 				_object = value;
-			}
-		}
-
-		public class ListUserOrganization_Organization
-		{
-
-			private string name;
-
-			private string id;
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
 			}
 		}
 	}

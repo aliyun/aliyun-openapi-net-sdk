@@ -32,10 +32,19 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 
 			listUserOrganizationResponse.HttpResponse = _ctx.HttpResponse;
 			listUserOrganizationResponse.RequestId = _ctx.StringValue("ListUserOrganization.RequestId");
+			listUserOrganizationResponse.Success = _ctx.BooleanValue("ListUserOrganization.Success");
 			listUserOrganizationResponse.ErrorCode = _ctx.StringValue("ListUserOrganization.ErrorCode");
 			listUserOrganizationResponse.ErrorMessage = _ctx.StringValue("ListUserOrganization.ErrorMessage");
-			listUserOrganizationResponse.Success = _ctx.BooleanValue("ListUserOrganization.Success");
-			listUserOrganizationResponse._Object = _ctx.StringValue("ListUserOrganization.Object");
+
+			List<ListUserOrganizationResponse.ListUserOrganization_Organization> listUserOrganizationResponse_object = new List<ListUserOrganizationResponse.ListUserOrganization_Organization>();
+			for (int i = 0; i < _ctx.Length("ListUserOrganization.Object.Length"); i++) {
+				ListUserOrganizationResponse.ListUserOrganization_Organization organization = new ListUserOrganizationResponse.ListUserOrganization_Organization();
+				organization.Name = _ctx.StringValue("ListUserOrganization.Object["+ i +"].Name");
+				organization.Id = _ctx.StringValue("ListUserOrganization.Object["+ i +"].Id");
+
+				listUserOrganizationResponse_object.Add(organization);
+			}
+			listUserOrganizationResponse._Object = listUserOrganizationResponse_object;
         
 			return listUserOrganizationResponse;
         }
