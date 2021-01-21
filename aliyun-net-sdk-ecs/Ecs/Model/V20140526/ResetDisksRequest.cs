@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeCommandsRequest : RpcAcsRequest<DescribeCommandsResponse>
+    public class ResetDisksRequest : RpcAcsRequest<ResetDisksResponse>
     {
-        public DescribeCommandsRequest()
-            : base("Ecs", "2014-05-26", "DescribeCommands", "ecs", "openAPI")
+        public ResetDisksRequest()
+            : base("Ecs", "2014-05-26", "ResetDisks", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,27 +43,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string description;
-
-		private string type;
-
-		private string commandId;
-
-		private long? pageNumber;
-
-		private string provider;
-
-		private string contentEncoding;
-
-		private long? pageSize;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string name;
+		private List<Disk> disks = new List<Disk>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -74,97 +61,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
-		public string CommandId
-		{
-			get
-			{
-				return commandId;
-			}
-			set	
-			{
-				commandId = value;
-				DictionaryUtil.Add(QueryParameters, "CommandId", value);
-			}
-		}
-
-		public long? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string Provider
-		{
-			get
-			{
-				return provider;
-			}
-			set	
-			{
-				provider = value;
-				DictionaryUtil.Add(QueryParameters, "Provider", value);
-			}
-		}
-
-		public string ContentEncoding
-		{
-			get
-			{
-				return contentEncoding;
-			}
-			set	
-			{
-				contentEncoding = value;
-				DictionaryUtil.Add(QueryParameters, "ContentEncoding", value);
-			}
-		}
-
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -207,22 +103,59 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Name
+		public List<Disk> Disks
 		{
 			get
 			{
-				return name;
+				return disks;
 			}
-			set	
+
+			set
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				disks = value;
+				for (int i = 0; i < disks.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Disk." + (i + 1) + ".DiskId", disks[i].DiskId);
+					DictionaryUtil.Add(QueryParameters,"Disk." + (i + 1) + ".SnapshotId", disks[i].SnapshotId);
+				}
 			}
 		}
 
-        public override DescribeCommandsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public class Disk
+		{
+
+			private string diskId;
+
+			private string snapshotId;
+
+			public string DiskId
+			{
+				get
+				{
+					return diskId;
+				}
+				set	
+				{
+					diskId = value;
+				}
+			}
+
+			public string SnapshotId
+			{
+				get
+				{
+					return snapshotId;
+				}
+				set	
+				{
+					snapshotId = value;
+				}
+			}
+		}
+
+        public override ResetDisksResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCommandsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ResetDisksResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeCommandsResponse : AcsResponse
+	public class DescribeManagedInstancesResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? pageSize;
 
-		private List<DescribeCommands_Command> commands;
+		private List<DescribeManagedInstances_Instance> instances;
 
 		public string RequestId
 		{
@@ -83,228 +83,214 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<DescribeCommands_Command> Commands
+		public List<DescribeManagedInstances_Instance> Instances
 		{
 			get
 			{
-				return commands;
+				return instances;
 			}
 			set	
 			{
-				commands = value;
+				instances = value;
 			}
 		}
 
-		public class DescribeCommands_Command
+		public class DescribeManagedInstances_Instance
 		{
 
-			private string commandId;
+			private string instanceId;
 
-			private string name;
+			private string instanceName;
 
-			private string type;
+			private string activationId;
 
-			private int? version;
+			private string hostname;
 
-			private bool? latest;
+			private string machineId;
 
-			private string provider;
+			private string osType;
 
-			private string category;
+			private string osVersion;
 
-			private string description;
+			private string intranetIp;
 
-			private string commandContent;
+			private string internetIp;
 
-			private string workingDir;
+			private string agentVersion;
 
-			private long? timeout;
+			private string registrationTime;
 
-			private int? invokeTimes;
+			private long? invocationCount;
 
-			private string creationTime;
+			private string lastInvokedTime;
 
-			private bool? enableParameter;
+			private bool? connected;
 
-			private List<string> parameterNames;
-
-			public string CommandId
+			public string InstanceId
 			{
 				get
 				{
-					return commandId;
+					return instanceId;
 				}
 				set	
 				{
-					commandId = value;
+					instanceId = value;
 				}
 			}
 
-			public string Name
+			public string InstanceName
 			{
 				get
 				{
-					return name;
+					return instanceName;
 				}
 				set	
 				{
-					name = value;
+					instanceName = value;
 				}
 			}
 
-			public string Type
+			public string ActivationId
 			{
 				get
 				{
-					return type;
+					return activationId;
 				}
 				set	
 				{
-					type = value;
+					activationId = value;
 				}
 			}
 
-			public int? Version
+			public string Hostname
 			{
 				get
 				{
-					return version;
+					return hostname;
 				}
 				set	
 				{
-					version = value;
+					hostname = value;
 				}
 			}
 
-			public bool? Latest
+			public string MachineId
 			{
 				get
 				{
-					return latest;
+					return machineId;
 				}
 				set	
 				{
-					latest = value;
+					machineId = value;
 				}
 			}
 
-			public string Provider
+			public string OsType
 			{
 				get
 				{
-					return provider;
+					return osType;
 				}
 				set	
 				{
-					provider = value;
+					osType = value;
 				}
 			}
 
-			public string Category
+			public string OsVersion
 			{
 				get
 				{
-					return category;
+					return osVersion;
 				}
 				set	
 				{
-					category = value;
+					osVersion = value;
 				}
 			}
 
-			public string Description
+			public string IntranetIp
 			{
 				get
 				{
-					return description;
+					return intranetIp;
 				}
 				set	
 				{
-					description = value;
+					intranetIp = value;
 				}
 			}
 
-			public string CommandContent
+			public string InternetIp
 			{
 				get
 				{
-					return commandContent;
+					return internetIp;
 				}
 				set	
 				{
-					commandContent = value;
+					internetIp = value;
 				}
 			}
 
-			public string WorkingDir
+			public string AgentVersion
 			{
 				get
 				{
-					return workingDir;
+					return agentVersion;
 				}
 				set	
 				{
-					workingDir = value;
+					agentVersion = value;
 				}
 			}
 
-			public long? Timeout
+			public string RegistrationTime
 			{
 				get
 				{
-					return timeout;
+					return registrationTime;
 				}
 				set	
 				{
-					timeout = value;
+					registrationTime = value;
 				}
 			}
 
-			public int? InvokeTimes
+			public long? InvocationCount
 			{
 				get
 				{
-					return invokeTimes;
+					return invocationCount;
 				}
 				set	
 				{
-					invokeTimes = value;
+					invocationCount = value;
 				}
 			}
 
-			public string CreationTime
+			public string LastInvokedTime
 			{
 				get
 				{
-					return creationTime;
+					return lastInvokedTime;
 				}
 				set	
 				{
-					creationTime = value;
+					lastInvokedTime = value;
 				}
 			}
 
-			public bool? EnableParameter
+			public bool? Connected
 			{
 				get
 				{
-					return enableParameter;
+					return connected;
 				}
 				set	
 				{
-					enableParameter = value;
-				}
-			}
-
-			public List<string> ParameterNames
-			{
-				get
-				{
-					return parameterNames;
-				}
-				set	
-				{
-					parameterNames = value;
+					connected = value;
 				}
 			}
 		}

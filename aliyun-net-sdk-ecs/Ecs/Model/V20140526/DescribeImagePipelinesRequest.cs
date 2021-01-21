@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeCommandsRequest : RpcAcsRequest<DescribeCommandsResponse>
+    public class DescribeImagePipelinesRequest : RpcAcsRequest<DescribeImagePipelinesResponse>
     {
-        public DescribeCommandsRequest()
-            : base("Ecs", "2014-05-26", "DescribeCommands", "ecs", "openAPI")
+        public DescribeImagePipelinesRequest()
+            : base("Ecs", "2014-05-26", "DescribeImagePipelines", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,21 +40,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			Method = MethodType.POST;
         }
 
+		private List<string> imagePipelineIds = new List<string>(){ };
+
 		private long? resourceOwnerId;
 
-		private string description;
+		private string resourceGroupId;
 
-		private string type;
+		private string nextToken;
 
-		private string commandId;
-
-		private long? pageNumber;
-
-		private string provider;
-
-		private string contentEncoding;
-
-		private long? pageSize;
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -63,6 +57,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private long? ownerId;
 
 		private string name;
+
+		private int? maxResults;
+
+		public List<string> ImagePipelineIds
+		{
+			get
+			{
+				return imagePipelineIds;
+			}
+
+			set
+			{
+				imagePipelineIds = value;
+				for (int i = 0; i < imagePipelineIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ImagePipelineId." + (i + 1) , imagePipelineIds[i]);
+				}
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -77,94 +90,47 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Description
+		public string ResourceGroupId
 		{
 			get
 			{
-				return description;
+				return resourceGroupId;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
-		public string Type
+		public string NextToken
 		{
 			get
 			{
-				return type;
+				return nextToken;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
-		public string CommandId
+		public List<Tag> Tags
 		{
 			get
 			{
-				return commandId;
+				return tags;
 			}
-			set	
-			{
-				commandId = value;
-				DictionaryUtil.Add(QueryParameters, "CommandId", value);
-			}
-		}
 
-		public long? PageNumber
-		{
-			get
+			set
 			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string Provider
-		{
-			get
-			{
-				return provider;
-			}
-			set	
-			{
-				provider = value;
-				DictionaryUtil.Add(QueryParameters, "Provider", value);
-			}
-		}
-
-		public string ContentEncoding
-		{
-			get
-			{
-				return contentEncoding;
-			}
-			set	
-			{
-				contentEncoding = value;
-				DictionaryUtil.Add(QueryParameters, "ContentEncoding", value);
-			}
-		}
-
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+				}
 			}
 		}
 
@@ -220,9 +186,54 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override DescribeCommandsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
+		public class Tag
+		{
+
+			private string key;
+
+			private string value_;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+		}
+
+        public override DescribeImagePipelinesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCommandsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeImagePipelinesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

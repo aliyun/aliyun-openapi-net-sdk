@@ -29,6 +29,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string taskId;
 
+		private string orderId;
+
 		public string RequestId
 		{
 			get
@@ -50,6 +52,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				taskId = value;
+			}
+		}
+
+		public string OrderId
+		{
+			get
+			{
+				return orderId;
+			}
+			set	
+			{
+				orderId = value;
 			}
 		}
 	}

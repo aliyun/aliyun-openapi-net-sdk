@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeCommandsRequest : RpcAcsRequest<DescribeCommandsResponse>
+    public class DeleteImageComponentRequest : RpcAcsRequest<DeleteImageComponentResponse>
     {
-        public DescribeCommandsRequest()
-            : base("Ecs", "2014-05-26", "DescribeCommands", "ecs", "openAPI")
+        public DeleteImageComponentRequest()
+            : base("Ecs", "2014-05-26", "DeleteImageComponent", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,27 +42,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string description;
+		private string imageComponentId;
 
-		private string type;
-
-		private string commandId;
-
-		private long? pageNumber;
-
-		private string provider;
-
-		private string contentEncoding;
-
-		private long? pageSize;
+		private List<TemplateTag> templateTags = new List<TemplateTag>(){ };
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string name;
 
 		public long? ResourceOwnerId
 		{
@@ -77,94 +65,34 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Description
+		public string ImageComponentId
 		{
 			get
 			{
-				return description;
+				return imageComponentId;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				imageComponentId = value;
+				DictionaryUtil.Add(QueryParameters, "ImageComponentId", value);
 			}
 		}
 
-		public string Type
+		public List<TemplateTag> TemplateTags
 		{
 			get
 			{
-				return type;
+				return templateTags;
 			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
 
-		public string CommandId
-		{
-			get
+			set
 			{
-				return commandId;
-			}
-			set	
-			{
-				commandId = value;
-				DictionaryUtil.Add(QueryParameters, "CommandId", value);
-			}
-		}
-
-		public long? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string Provider
-		{
-			get
-			{
-				return provider;
-			}
-			set	
-			{
-				provider = value;
-				DictionaryUtil.Add(QueryParameters, "Provider", value);
-			}
-		}
-
-		public string ContentEncoding
-		{
-			get
-			{
-				return contentEncoding;
-			}
-			set	
-			{
-				contentEncoding = value;
-				DictionaryUtil.Add(QueryParameters, "ContentEncoding", value);
-			}
-		}
-
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				templateTags = value;
+				for (int i = 0; i < templateTags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"TemplateTag." + (i + 1) + ".Key", templateTags[i].Key);
+					DictionaryUtil.Add(QueryParameters,"TemplateTag." + (i + 1) + ".Value", templateTags[i].Value);
+				}
 			}
 		}
 
@@ -207,22 +135,41 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Name
+		public class TemplateTag
 		{
-			get
+
+			private string key;
+
+			private string value_;
+
+			public string Key
 			{
-				return name;
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
-			set	
+
+			public string Value
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
 		}
 
-        public override DescribeCommandsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteImageComponentResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCommandsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteImageComponentResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

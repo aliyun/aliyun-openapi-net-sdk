@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeCommandsRequest : RpcAcsRequest<DescribeCommandsResponse>
+    public class CreateImageComponentRequest : RpcAcsRequest<CreateImageComponentResponse>
     {
-        public DescribeCommandsRequest()
-            : base("Ecs", "2014-05-26", "DescribeCommands", "ecs", "openAPI")
+        public CreateImageComponentRequest()
+            : base("Ecs", "2014-05-26", "CreateImageComponent", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,25 +42,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private string clientToken;
+
 		private string description;
 
-		private string type;
+		private string systemType;
 
-		private string commandId;
+		private string content;
 
-		private long? pageNumber;
+		private string resourceGroupId;
 
-		private string provider;
-
-		private string contentEncoding;
-
-		private long? pageSize;
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string componentType;
 
 		private string name;
 
@@ -77,6 +77,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
 		public string Description
 		{
 			get
@@ -90,81 +103,60 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Type
+		public string SystemType
 		{
 			get
 			{
-				return type;
+				return systemType;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				systemType = value;
+				DictionaryUtil.Add(QueryParameters, "SystemType", value);
 			}
 		}
 
-		public string CommandId
+		public string Content
 		{
 			get
 			{
-				return commandId;
+				return content;
 			}
 			set	
 			{
-				commandId = value;
-				DictionaryUtil.Add(QueryParameters, "CommandId", value);
+				content = value;
+				DictionaryUtil.Add(QueryParameters, "Content", value);
 			}
 		}
 
-		public long? PageNumber
+		public string ResourceGroupId
 		{
 			get
 			{
-				return pageNumber;
+				return resourceGroupId;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
-		public string Provider
+		public List<Tag> Tags
 		{
 			get
 			{
-				return provider;
+				return tags;
 			}
-			set	
-			{
-				provider = value;
-				DictionaryUtil.Add(QueryParameters, "Provider", value);
-			}
-		}
 
-		public string ContentEncoding
-		{
-			get
+			set
 			{
-				return contentEncoding;
-			}
-			set	
-			{
-				contentEncoding = value;
-				DictionaryUtil.Add(QueryParameters, "ContentEncoding", value);
-			}
-		}
-
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+				}
 			}
 		}
 
@@ -207,6 +199,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ComponentType
+		{
+			get
+			{
+				return componentType;
+			}
+			set	
+			{
+				componentType = value;
+				DictionaryUtil.Add(QueryParameters, "ComponentType", value);
+			}
+		}
+
 		public string Name
 		{
 			get
@@ -220,9 +225,41 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override DescribeCommandsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public class Tag
+		{
+
+			private string key;
+
+			private string value_;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+		}
+
+        public override CreateImageComponentResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCommandsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateImageComponentResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

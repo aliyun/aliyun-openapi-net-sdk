@@ -42,6 +42,10 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				command.CommandId = _ctx.StringValue("DescribeCommands.Commands["+ i +"].CommandId");
 				command.Name = _ctx.StringValue("DescribeCommands.Commands["+ i +"].Name");
 				command.Type = _ctx.StringValue("DescribeCommands.Commands["+ i +"].Type");
+				command.Version = _ctx.IntegerValue("DescribeCommands.Commands["+ i +"].Version");
+				command.Latest = _ctx.BooleanValue("DescribeCommands.Commands["+ i +"].Latest");
+				command.Provider = _ctx.StringValue("DescribeCommands.Commands["+ i +"].Provider");
+				command.Category = _ctx.StringValue("DescribeCommands.Commands["+ i +"].Category");
 				command.Description = _ctx.StringValue("DescribeCommands.Commands["+ i +"].Description");
 				command.CommandContent = _ctx.StringValue("DescribeCommands.Commands["+ i +"].CommandContent");
 				command.WorkingDir = _ctx.StringValue("DescribeCommands.Commands["+ i +"].WorkingDir");

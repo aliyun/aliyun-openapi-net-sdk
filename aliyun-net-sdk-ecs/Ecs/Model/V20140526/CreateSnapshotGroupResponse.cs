@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class ResizeDiskResponse : AcsResponse
+	public class CreateSnapshotGroupResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string orderId;
+		private string snapshotGroupId;
 
 		public string RequestId
 		{
@@ -41,15 +41,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string OrderId
+		public string SnapshotGroupId
 		{
 			get
 			{
-				return orderId;
+				return snapshotGroupId;
 			}
 			set	
 			{
-				orderId = value;
+				snapshotGroupId = value;
 			}
 		}
 	}

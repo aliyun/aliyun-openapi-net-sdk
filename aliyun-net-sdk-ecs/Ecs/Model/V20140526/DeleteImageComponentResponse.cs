@@ -22,12 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class ResizeDiskResponse : AcsResponse
+	public class DeleteImageComponentResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private string orderId;
 
 		public string RequestId
 		{
@@ -38,18 +36,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
 			}
 		}
 	}

@@ -22,12 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class ResizeDiskResponse : AcsResponse
+	public class CreateActivationResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string orderId;
+		private string activationId;
+
+		private string activationCode;
 
 		public string RequestId
 		{
@@ -41,15 +43,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string OrderId
+		public string ActivationId
 		{
 			get
 			{
-				return orderId;
+				return activationId;
 			}
 			set	
 			{
-				orderId = value;
+				activationId = value;
+			}
+		}
+
+		public string ActivationCode
+		{
+			get
+			{
+				return activationCode;
+			}
+			set	
+			{
+				activationCode = value;
 			}
 		}
 	}

@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class ResizeDiskResponse : AcsResponse
+	public class CreateImagePipelineResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string orderId;
+		private string imagePipelineId;
 
 		public string RequestId
 		{
@@ -41,15 +41,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string OrderId
+		public string ImagePipelineId
 		{
 			get
 			{
-				return orderId;
+				return imagePipelineId;
 			}
 			set	
 			{
-				orderId = value;
+				imagePipelineId = value;
 			}
 		}
 	}

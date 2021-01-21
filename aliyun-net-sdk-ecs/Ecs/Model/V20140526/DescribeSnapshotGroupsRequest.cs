@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeCommandsRequest : RpcAcsRequest<DescribeCommandsResponse>
+    public class DescribeSnapshotGroupsRequest : RpcAcsRequest<DescribeSnapshotGroupsResponse>
     {
-        public DescribeCommandsRequest()
-            : base("Ecs", "2014-05-26", "DescribeCommands", "ecs", "openAPI")
+        public DescribeSnapshotGroupsRequest()
+            : base("Ecs", "2014-05-26", "DescribeSnapshotGroups", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,27 +42,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string description;
-
-		private string type;
-
-		private string commandId;
-
-		private long? pageNumber;
-
-		private string provider;
-
-		private string contentEncoding;
-
-		private long? pageSize;
+		private string nextToken;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
+		private List<string> snapshotGroupIds = new List<string>(){ };
+
 		private long? ownerId;
 
+		private string instanceId;
+
 		private string name;
+
+		private int? maxResults;
+
+		private List<string> statuss = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -77,94 +73,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Description
+		public string NextToken
 		{
 			get
 			{
-				return description;
+				return nextToken;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
-		public string CommandId
-		{
-			get
-			{
-				return commandId;
-			}
-			set	
-			{
-				commandId = value;
-				DictionaryUtil.Add(QueryParameters, "CommandId", value);
-			}
-		}
-
-		public long? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string Provider
-		{
-			get
-			{
-				return provider;
-			}
-			set	
-			{
-				provider = value;
-				DictionaryUtil.Add(QueryParameters, "Provider", value);
-			}
-		}
-
-		public string ContentEncoding
-		{
-			get
-			{
-				return contentEncoding;
-			}
-			set	
-			{
-				contentEncoding = value;
-				DictionaryUtil.Add(QueryParameters, "ContentEncoding", value);
-			}
-		}
-
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
@@ -194,6 +112,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public List<string> SnapshotGroupIds
+		{
+			get
+			{
+				return snapshotGroupIds;
+			}
+
+			set
+			{
+				snapshotGroupIds = value;
+				for (int i = 0; i < snapshotGroupIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SnapshotGroupId." + (i + 1) , snapshotGroupIds[i]);
+				}
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -204,6 +139,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -220,9 +168,39 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override DescribeCommandsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
+		public List<string> Statuss
+		{
+			get
+			{
+				return statuss;
+			}
+
+			set
+			{
+				statuss = value;
+				for (int i = 0; i < statuss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Status." + (i + 1) , statuss[i]);
+				}
+			}
+		}
+
+        public override DescribeSnapshotGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCommandsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeSnapshotGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -105,6 +105,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceOwnerAccount;
 
+		private string schedulerOptionsDedicatedHostClusterId;
+
 		private string systemDiskDiskName;
 
 		private string dedicatedHostId;
@@ -612,6 +614,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string SchedulerOptionsDedicatedHostClusterId
+		{
+			get
+			{
+				return schedulerOptionsDedicatedHostClusterId;
+			}
+			set	
+			{
+				schedulerOptionsDedicatedHostClusterId = value;
+				DictionaryUtil.Add(QueryParameters, "SchedulerOptions.DedicatedHostClusterId", value);
 			}
 		}
 

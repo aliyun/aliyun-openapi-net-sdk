@@ -16,41 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Ecs.Model.V20140526;
 
-namespace Aliyun.Acs.Ecs.Model.V20140526
+namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
-	public class ResizeDiskResponse : AcsResponse
-	{
+    public class CreateActivationResponseUnmarshaller
+    {
+        public static CreateActivationResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			CreateActivationResponse createActivationResponse = new CreateActivationResponse();
 
-		private string requestId;
-
-		private string orderId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
-	}
+			createActivationResponse.HttpResponse = _ctx.HttpResponse;
+			createActivationResponse.RequestId = _ctx.StringValue("CreateActivation.RequestId");
+			createActivationResponse.ActivationId = _ctx.StringValue("CreateActivation.ActivationId");
+			createActivationResponse.ActivationCode = _ctx.StringValue("CreateActivation.ActivationCode");
+        
+			return createActivationResponse;
+        }
+    }
 }

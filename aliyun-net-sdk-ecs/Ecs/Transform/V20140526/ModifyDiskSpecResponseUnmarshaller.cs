@@ -33,6 +33,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			modifyDiskSpecResponse.HttpResponse = _ctx.HttpResponse;
 			modifyDiskSpecResponse.RequestId = _ctx.StringValue("ModifyDiskSpec.RequestId");
 			modifyDiskSpecResponse.TaskId = _ctx.StringValue("ModifyDiskSpec.TaskId");
+			modifyDiskSpecResponse.OrderId = _ctx.StringValue("ModifyDiskSpec.OrderId");
         
 			return modifyDiskSpecResponse;
         }

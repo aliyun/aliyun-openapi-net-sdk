@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeInstancesResponse.TotalCount = _ctx.IntegerValue("DescribeInstances.TotalCount");
 			describeInstancesResponse.PageNumber = _ctx.IntegerValue("DescribeInstances.PageNumber");
 			describeInstancesResponse.PageSize = _ctx.IntegerValue("DescribeInstances.PageSize");
+			describeInstancesResponse.NextToken = _ctx.StringValue("DescribeInstances.NextToken");
 
 			List<DescribeInstancesResponse.DescribeInstances_Instance> describeInstancesResponse_instances = new List<DescribeInstancesResponse.DescribeInstances_Instance>();
 			for (int i = 0; i < _ctx.Length("DescribeInstances.Instances.Length"); i++) {

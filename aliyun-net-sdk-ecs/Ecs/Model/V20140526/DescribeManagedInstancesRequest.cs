@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeCommandsRequest : RpcAcsRequest<DescribeCommandsResponse>
+    public class DescribeManagedInstancesRequest : RpcAcsRequest<DescribeManagedInstancesResponse>
     {
-        public DescribeCommandsRequest()
-            : base("Ecs", "2014-05-26", "DescribeCommands", "ecs", "openAPI")
+        public DescribeManagedInstancesRequest()
+            : base("Ecs", "2014-05-26", "DescribeManagedInstances", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,17 +42,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string description;
-
-		private string type;
-
-		private string commandId;
-
 		private long? pageNumber;
-
-		private string provider;
-
-		private string contentEncoding;
 
 		private long? pageSize;
 
@@ -60,9 +50,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string ownerAccount;
 
+		private string osType;
+
 		private long? ownerId;
 
-		private string name;
+		private string instanceName;
+
+		private List<string> instanceIds = new List<string>(){ };
+
+		private string instanceIp;
+
+		private string activationId;
 
 		public long? ResourceOwnerId
 		{
@@ -77,45 +75,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
-		public string CommandId
-		{
-			get
-			{
-				return commandId;
-			}
-			set	
-			{
-				commandId = value;
-				DictionaryUtil.Add(QueryParameters, "CommandId", value);
-			}
-		}
-
 		public long? PageNumber
 		{
 			get
@@ -126,32 +85,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string Provider
-		{
-			get
-			{
-				return provider;
-			}
-			set	
-			{
-				provider = value;
-				DictionaryUtil.Add(QueryParameters, "Provider", value);
-			}
-		}
-
-		public string ContentEncoding
-		{
-			get
-			{
-				return contentEncoding;
-			}
-			set	
-			{
-				contentEncoding = value;
-				DictionaryUtil.Add(QueryParameters, "ContentEncoding", value);
 			}
 		}
 
@@ -194,6 +127,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string OsType
+		{
+			get
+			{
+				return osType;
+			}
+			set	
+			{
+				osType = value;
+				DictionaryUtil.Add(QueryParameters, "OsType", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -207,22 +153,70 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Name
+		public string InstanceName
 		{
 			get
 			{
-				return name;
+				return instanceName;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				instanceName = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceName", value);
 			}
 		}
 
-        public override DescribeCommandsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public List<string> InstanceIds
+		{
+			get
+			{
+				return instanceIds;
+			}
+
+			set
+			{
+				instanceIds = value;
+				for (int i = 0; i < instanceIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
+				}
+			}
+		}
+
+		public string InstanceIp
+		{
+			get
+			{
+				return instanceIp;
+			}
+			set	
+			{
+				instanceIp = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceIp", value);
+			}
+		}
+
+		public string ActivationId
+		{
+			get
+			{
+				return activationId;
+			}
+			set	
+			{
+				activationId = value;
+				DictionaryUtil.Add(QueryParameters, "ActivationId", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeManagedInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCommandsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeManagedInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

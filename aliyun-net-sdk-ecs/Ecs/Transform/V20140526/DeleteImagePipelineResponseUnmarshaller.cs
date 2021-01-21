@@ -16,41 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Ecs.Model.V20140526;
 
-namespace Aliyun.Acs.Ecs.Model.V20140526
+namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
-	public class ResizeDiskResponse : AcsResponse
-	{
+    public class DeleteImagePipelineResponseUnmarshaller
+    {
+        public static DeleteImagePipelineResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			DeleteImagePipelineResponse deleteImagePipelineResponse = new DeleteImagePipelineResponse();
 
-		private string requestId;
-
-		private string orderId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
-	}
+			deleteImagePipelineResponse.HttpResponse = _ctx.HttpResponse;
+			deleteImagePipelineResponse.RequestId = _ctx.StringValue("DeleteImagePipeline.RequestId");
+        
+			return deleteImagePipelineResponse;
+        }
+    }
 }

@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class ResizeDiskResponse : AcsResponse
+	public class ModifyManagedInstanceResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string orderId;
+		private ModifyManagedInstance_Instance instance;
 
 		public string RequestId
 		{
@@ -41,15 +41,47 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string OrderId
+		public ModifyManagedInstance_Instance Instance
 		{
 			get
 			{
-				return orderId;
+				return instance;
 			}
 			set	
 			{
-				orderId = value;
+				instance = value;
+			}
+		}
+
+		public class ModifyManagedInstance_Instance
+		{
+
+			private string instanceId;
+
+			private string instanceName;
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
 			}
 		}
 	}

@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeCommandsRequest : RpcAcsRequest<DescribeCommandsResponse>
+    public class CreateSnapshotGroupRequest : RpcAcsRequest<CreateSnapshotGroupResponse>
     {
-        public DescribeCommandsRequest()
-            : base("Ecs", "2014-05-26", "DescribeCommands", "ecs", "openAPI")
+        public CreateSnapshotGroupRequest()
+            : base("Ecs", "2014-05-26", "CreateSnapshotGroup", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,25 +42,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private List<string> excludeDiskIds = new List<string>(){ };
+
+		private bool? instantAccess;
+
 		private string description;
 
-		private string type;
-
-		private string commandId;
-
-		private long? pageNumber;
-
-		private string provider;
-
-		private string contentEncoding;
-
-		private long? pageSize;
+		private int? instantAccessRetentionDays;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string instanceId;
 
 		private string name;
 
@@ -77,6 +73,36 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public List<string> ExcludeDiskIds
+		{
+			get
+			{
+				return excludeDiskIds;
+			}
+
+			set
+			{
+				excludeDiskIds = value;
+				for (int i = 0; i < excludeDiskIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ExcludeDiskId." + (i + 1) , excludeDiskIds[i]);
+				}
+			}
+		}
+
+		public bool? InstantAccess
+		{
+			get
+			{
+				return instantAccess;
+			}
+			set	
+			{
+				instantAccess = value;
+				DictionaryUtil.Add(QueryParameters, "InstantAccess", value.ToString());
+			}
+		}
+
 		public string Description
 		{
 			get
@@ -90,81 +116,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Type
+		public int? InstantAccessRetentionDays
 		{
 			get
 			{
-				return type;
+				return instantAccessRetentionDays;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
-		public string CommandId
-		{
-			get
-			{
-				return commandId;
-			}
-			set	
-			{
-				commandId = value;
-				DictionaryUtil.Add(QueryParameters, "CommandId", value);
-			}
-		}
-
-		public long? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string Provider
-		{
-			get
-			{
-				return provider;
-			}
-			set	
-			{
-				provider = value;
-				DictionaryUtil.Add(QueryParameters, "Provider", value);
-			}
-		}
-
-		public string ContentEncoding
-		{
-			get
-			{
-				return contentEncoding;
-			}
-			set	
-			{
-				contentEncoding = value;
-				DictionaryUtil.Add(QueryParameters, "ContentEncoding", value);
-			}
-		}
-
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				instantAccessRetentionDays = value;
+				DictionaryUtil.Add(QueryParameters, "InstantAccessRetentionDays", value.ToString());
 			}
 		}
 
@@ -207,6 +168,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
 		public string Name
 		{
 			get
@@ -220,9 +194,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override DescribeCommandsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateSnapshotGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCommandsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateSnapshotGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

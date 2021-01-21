@@ -24,17 +24,21 @@ using Aliyun.Acs.Ecs.Model.V20140526;
 
 namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
-    public class ResizeDiskResponseUnmarshaller
+    public class ModifyManagedInstanceResponseUnmarshaller
     {
-        public static ResizeDiskResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ModifyManagedInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			ResizeDiskResponse resizeDiskResponse = new ResizeDiskResponse();
+			ModifyManagedInstanceResponse modifyManagedInstanceResponse = new ModifyManagedInstanceResponse();
 
-			resizeDiskResponse.HttpResponse = _ctx.HttpResponse;
-			resizeDiskResponse.RequestId = _ctx.StringValue("ResizeDisk.RequestId");
-			resizeDiskResponse.OrderId = _ctx.StringValue("ResizeDisk.OrderId");
+			modifyManagedInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			modifyManagedInstanceResponse.RequestId = _ctx.StringValue("ModifyManagedInstance.RequestId");
+
+			ModifyManagedInstanceResponse.ModifyManagedInstance_Instance instance = new ModifyManagedInstanceResponse.ModifyManagedInstance_Instance();
+			instance.InstanceId = _ctx.StringValue("ModifyManagedInstance.Instance.InstanceId");
+			instance.InstanceName = _ctx.StringValue("ModifyManagedInstance.Instance.InstanceName");
+			modifyManagedInstanceResponse.Instance = instance;
         
-			return resizeDiskResponse;
+			return modifyManagedInstanceResponse;
         }
     }
 }

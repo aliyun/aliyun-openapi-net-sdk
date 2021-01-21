@@ -1,3 +1,6 @@
+2021-01-21 Version: 4.23.6
+- Supported RunInstances specifiy Dedicated Host Cluster Id.
+
 2021-01-19 Version: 1.0.8
 - Update Function.
 

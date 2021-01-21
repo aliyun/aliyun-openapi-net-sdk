@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeCommandsResponse : AcsResponse
+	public class DescribeActivationsResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? pageSize;
 
-		private List<DescribeCommands_Command> commands;
+		private List<DescribeActivations_Activation> activationList;
 
 		public string RequestId
 		{
@@ -83,132 +83,62 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<DescribeCommands_Command> Commands
+		public List<DescribeActivations_Activation> ActivationList
 		{
 			get
 			{
-				return commands;
+				return activationList;
 			}
 			set	
 			{
-				commands = value;
+				activationList = value;
 			}
 		}
 
-		public class DescribeCommands_Command
+		public class DescribeActivations_Activation
 		{
 
-			private string commandId;
+			private string activationId;
 
-			private string name;
-
-			private string type;
-
-			private int? version;
-
-			private bool? latest;
-
-			private string provider;
-
-			private string category;
+			private string instanceName;
 
 			private string description;
 
-			private string commandContent;
+			private int? instanceCount;
 
-			private string workingDir;
+			private long? timeToLiveInHours;
 
-			private long? timeout;
+			private string ipAddressRange;
 
-			private int? invokeTimes;
+			private int? registeredCount;
+
+			private int? deregisteredCount;
+
+			private bool? disabled;
 
 			private string creationTime;
 
-			private bool? enableParameter;
-
-			private List<string> parameterNames;
-
-			public string CommandId
+			public string ActivationId
 			{
 				get
 				{
-					return commandId;
+					return activationId;
 				}
 				set	
 				{
-					commandId = value;
+					activationId = value;
 				}
 			}
 
-			public string Name
+			public string InstanceName
 			{
 				get
 				{
-					return name;
+					return instanceName;
 				}
 				set	
 				{
-					name = value;
-				}
-			}
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-
-			public int? Version
-			{
-				get
-				{
-					return version;
-				}
-				set	
-				{
-					version = value;
-				}
-			}
-
-			public bool? Latest
-			{
-				get
-				{
-					return latest;
-				}
-				set	
-				{
-					latest = value;
-				}
-			}
-
-			public string Provider
-			{
-				get
-				{
-					return provider;
-				}
-				set	
-				{
-					provider = value;
-				}
-			}
-
-			public string Category
-			{
-				get
-				{
-					return category;
-				}
-				set	
-				{
-					category = value;
+					instanceName = value;
 				}
 			}
 
@@ -224,51 +154,75 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string CommandContent
+			public int? InstanceCount
 			{
 				get
 				{
-					return commandContent;
+					return instanceCount;
 				}
 				set	
 				{
-					commandContent = value;
+					instanceCount = value;
 				}
 			}
 
-			public string WorkingDir
+			public long? TimeToLiveInHours
 			{
 				get
 				{
-					return workingDir;
+					return timeToLiveInHours;
 				}
 				set	
 				{
-					workingDir = value;
+					timeToLiveInHours = value;
 				}
 			}
 
-			public long? Timeout
+			public string IpAddressRange
 			{
 				get
 				{
-					return timeout;
+					return ipAddressRange;
 				}
 				set	
 				{
-					timeout = value;
+					ipAddressRange = value;
 				}
 			}
 
-			public int? InvokeTimes
+			public int? RegisteredCount
 			{
 				get
 				{
-					return invokeTimes;
+					return registeredCount;
 				}
 				set	
 				{
-					invokeTimes = value;
+					registeredCount = value;
+				}
+			}
+
+			public int? DeregisteredCount
+			{
+				get
+				{
+					return deregisteredCount;
+				}
+				set	
+				{
+					deregisteredCount = value;
+				}
+			}
+
+			public bool? Disabled
+			{
+				get
+				{
+					return disabled;
+				}
+				set	
+				{
+					disabled = value;
 				}
 			}
 
@@ -281,30 +235,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					creationTime = value;
-				}
-			}
-
-			public bool? EnableParameter
-			{
-				get
-				{
-					return enableParameter;
-				}
-				set	
-				{
-					enableParameter = value;
-				}
-			}
-
-			public List<string> ParameterNames
-			{
-				get
-				{
-					return parameterNames;
-				}
-				set	
-				{
-					parameterNames = value;
 				}
 			}
 		}
