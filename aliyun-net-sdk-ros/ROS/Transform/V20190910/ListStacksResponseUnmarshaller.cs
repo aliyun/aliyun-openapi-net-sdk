@@ -53,6 +53,16 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 				stack.DriftDetectionTime = _ctx.StringValue("ListStacks.Stacks["+ i +"].DriftDetectionTime");
 				stack.StackType = _ctx.StringValue("ListStacks.Stacks["+ i +"].StackType");
 
+				List<ListStacksResponse.ListStacks_Stack.ListStacks_Tag> stack_tags = new List<ListStacksResponse.ListStacks_Stack.ListStacks_Tag>();
+				for (int j = 0; j < _ctx.Length("ListStacks.Stacks["+ i +"].Tags.Length"); j++) {
+					ListStacksResponse.ListStacks_Stack.ListStacks_Tag tag = new ListStacksResponse.ListStacks_Stack.ListStacks_Tag();
+					tag.Key = _ctx.StringValue("ListStacks.Stacks["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("ListStacks.Stacks["+ i +"].Tags["+ j +"].Value");
+
+					stack_tags.Add(tag);
+				}
+				stack.Tags = stack_tags;
+
 				listStacksResponse_stacks.Add(stack);
 			}
 			listStacksResponse.Stacks = listStacksResponse_stacks;

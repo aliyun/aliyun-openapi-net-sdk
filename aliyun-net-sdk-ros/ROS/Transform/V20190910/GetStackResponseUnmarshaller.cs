@@ -81,6 +81,16 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 				getStackResponse_parameters.Add(parameter);
 			}
 			getStackResponse.Parameters = getStackResponse_parameters;
+
+			List<GetStackResponse.GetStack_Tag> getStackResponse_tags = new List<GetStackResponse.GetStack_Tag>();
+			for (int i = 0; i < _ctx.Length("GetStack.Tags.Length"); i++) {
+				GetStackResponse.GetStack_Tag tag = new GetStackResponse.GetStack_Tag();
+				tag.Key = _ctx.StringValue("GetStack.Tags["+ i +"].Key");
+				tag._Value = _ctx.StringValue("GetStack.Tags["+ i +"].Value");
+
+				getStackResponse_tags.Add(tag);
+			}
+			getStackResponse.Tags = getStackResponse_tags;
         
 			return getStackResponse;
         }

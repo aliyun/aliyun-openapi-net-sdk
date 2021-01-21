@@ -52,6 +52,8 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 		private string templateId;
 
+		private List<Tags> tagss = new List<Tags>(){ };
+
 		private List<Parameters> parameterss = new List<Parameters>(){ };
 
 		private string clientToken;
@@ -145,6 +147,24 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				templateId = value;
 				DictionaryUtil.Add(QueryParameters, "TemplateId", value);
+			}
+		}
+
+		public List<Tags> Tagss
+		{
+			get
+			{
+				return tagss;
+			}
+
+			set
+			{
+				tagss = value;
+				for (int i = 0; i < tagss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".Value", tagss[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tags." + (i + 1) + ".Key", tagss[i].Key);
+				}
 			}
 		}
 
@@ -271,6 +291,38 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				stackPolicyURL = value;
 				DictionaryUtil.Add(QueryParameters, "StackPolicyURL", value);
+			}
+		}
+
+		public class Tags
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

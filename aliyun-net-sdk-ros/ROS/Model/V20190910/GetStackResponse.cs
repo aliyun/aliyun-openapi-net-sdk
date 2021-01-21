@@ -65,6 +65,8 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 		private List<GetStack_Parameter> parameters;
 
+		private List<GetStack_Tag> tags;
+
 		private List<Dictionary<string, string>> outputs;
 
 		private List<string> notificationURLs;
@@ -309,6 +311,18 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			}
 		}
 
+		public List<GetStack_Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+			}
+		}
+
 		public List<Dictionary<string, string>> Outputs
 		{
 			get
@@ -361,6 +375,38 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 				set	
 				{
 					parameterValue = value;
+				}
+			}
+		}
+
+		public class GetStack_Tag
+		{
+
+			private string key;
+
+			private string _value;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string _Value
+			{
+				get
+				{
+					return _value;
+				}
+				set	
+				{
+					_value = value;
 				}
 			}
 		}
