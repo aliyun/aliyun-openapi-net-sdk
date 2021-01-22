@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CDRS.Model.V20201101
 {
-	public class SearchObjectResponse : AcsResponse
+	public class SearchAggregateObjectResponse : AcsResponse
 	{
 
 		private string code;
@@ -37,7 +37,7 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 
 		private bool? success;
 
-		private SearchObject_Data data;
+		private SearchAggregateObject_Data data;
 
 		public string Code
 		{
@@ -111,7 +111,7 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			}
 		}
 
-		public SearchObject_Data Data
+		public SearchAggregateObject_Data Data
 		{
 			get
 			{
@@ -123,18 +123,18 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			}
 		}
 
-		public class SearchObject_Data
+		public class SearchAggregateObject_Data
 		{
 
-			private List<SearchObject_BodyListItem> bodyList;
+			private List<SearchAggregateObject_BodyListItem> bodyList;
 
-			private List<SearchObject_FaceListItem> faceList;
+			private List<SearchAggregateObject_FaceListItem> faceList;
 
-			private List<SearchObject_MotorListItem> motorList;
+			private List<SearchAggregateObject_MotorListItem> motorList;
 
-			private List<SearchObject_NonMotorListItem> nonMotorList;
+			private List<SearchAggregateObject_NonMotorListItem> nonMotorList;
 
-			public List<SearchObject_BodyListItem> BodyList
+			public List<SearchAggregateObject_BodyListItem> BodyList
 			{
 				get
 				{
@@ -146,7 +146,7 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 				}
 			}
 
-			public List<SearchObject_FaceListItem> FaceList
+			public List<SearchAggregateObject_FaceListItem> FaceList
 			{
 				get
 				{
@@ -158,7 +158,7 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 				}
 			}
 
-			public List<SearchObject_MotorListItem> MotorList
+			public List<SearchAggregateObject_MotorListItem> MotorList
 			{
 				get
 				{
@@ -170,7 +170,7 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 				}
 			}
 
-			public List<SearchObject_NonMotorListItem> NonMotorList
+			public List<SearchAggregateObject_NonMotorListItem> NonMotorList
 			{
 				get
 				{
@@ -182,7 +182,7 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 				}
 			}
 
-			public class SearchObject_BodyListItem
+			public class SearchAggregateObject_BodyListItem
 			{
 
 				private string deviceID;
@@ -204,6 +204,14 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 				private string sourceImageUrl;
 
 				private string targetImageUrl;
+
+				private string deviceName;
+
+				private float? deviceLatitude;
+
+				private float? deviceLongitude;
+
+				private string personId;
 
 				public string DeviceID
 				{
@@ -322,11 +330,59 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 					set	
 					{
 						targetImageUrl = value;
+					}
+				}
+
+				public string DeviceName
+				{
+					get
+					{
+						return deviceName;
+					}
+					set	
+					{
+						deviceName = value;
+					}
+				}
+
+				public float? DeviceLatitude
+				{
+					get
+					{
+						return deviceLatitude;
+					}
+					set	
+					{
+						deviceLatitude = value;
+					}
+				}
+
+				public float? DeviceLongitude
+				{
+					get
+					{
+						return deviceLongitude;
+					}
+					set	
+					{
+						deviceLongitude = value;
+					}
+				}
+
+				public string PersonId
+				{
+					get
+					{
+						return personId;
+					}
+					set	
+					{
+						personId = value;
 					}
 				}
 			}
 
-			public class SearchObject_FaceListItem
+			public class SearchAggregateObject_FaceListItem
 			{
 
 				private string deviceID;
@@ -348,6 +404,14 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 				private string sourceImageUrl;
 
 				private string targetImageUrl;
+
+				private string deviceName;
+
+				private float? deviceLatitude;
+
+				private float? deviceLongitude;
+
+				private string personId;
 
 				public string DeviceID
 				{
@@ -466,11 +530,59 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 					set	
 					{
 						targetImageUrl = value;
+					}
+				}
+
+				public string DeviceName
+				{
+					get
+					{
+						return deviceName;
+					}
+					set	
+					{
+						deviceName = value;
+					}
+				}
+
+				public float? DeviceLatitude
+				{
+					get
+					{
+						return deviceLatitude;
+					}
+					set	
+					{
+						deviceLatitude = value;
+					}
+				}
+
+				public float? DeviceLongitude
+				{
+					get
+					{
+						return deviceLongitude;
+					}
+					set	
+					{
+						deviceLongitude = value;
+					}
+				}
+
+				public string PersonId
+				{
+					get
+					{
+						return personId;
+					}
+					set	
+					{
+						personId = value;
 					}
 				}
 			}
 
-			public class SearchObject_MotorListItem
+			public class SearchAggregateObject_MotorListItem
 			{
 
 				private string deviceID;
@@ -492,6 +604,14 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 				private string sourceImageUrl;
 
 				private string targetImageUrl;
+
+				private string deviceName;
+
+				private float? deviceLatitude;
+
+				private float? deviceLongitude;
+
+				private string personId;
 
 				public string DeviceID
 				{
@@ -610,11 +730,59 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 					set	
 					{
 						targetImageUrl = value;
+					}
+				}
+
+				public string DeviceName
+				{
+					get
+					{
+						return deviceName;
+					}
+					set	
+					{
+						deviceName = value;
+					}
+				}
+
+				public float? DeviceLatitude
+				{
+					get
+					{
+						return deviceLatitude;
+					}
+					set	
+					{
+						deviceLatitude = value;
+					}
+				}
+
+				public float? DeviceLongitude
+				{
+					get
+					{
+						return deviceLongitude;
+					}
+					set	
+					{
+						deviceLongitude = value;
+					}
+				}
+
+				public string PersonId
+				{
+					get
+					{
+						return personId;
+					}
+					set	
+					{
+						personId = value;
 					}
 				}
 			}
 
-			public class SearchObject_NonMotorListItem
+			public class SearchAggregateObject_NonMotorListItem
 			{
 
 				private string deviceID;
@@ -636,6 +804,14 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 				private string sourceImageUrl;
 
 				private string targetImageUrl;
+
+				private string deviceName;
+
+				private float? deviceLatitude;
+
+				private float? deviceLongitude;
+
+				private string personId;
 
 				public string DeviceID
 				{
@@ -754,6 +930,54 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 					set	
 					{
 						targetImageUrl = value;
+					}
+				}
+
+				public string DeviceName
+				{
+					get
+					{
+						return deviceName;
+					}
+					set	
+					{
+						deviceName = value;
+					}
+				}
+
+				public float? DeviceLatitude
+				{
+					get
+					{
+						return deviceLatitude;
+					}
+					set	
+					{
+						deviceLatitude = value;
+					}
+				}
+
+				public float? DeviceLongitude
+				{
+					get
+					{
+						return deviceLongitude;
+					}
+					set	
+					{
+						deviceLongitude = value;
+					}
+				}
+
+				public string PersonId
+				{
+					get
+					{
+						return personId;
+					}
+					set	
+					{
+						personId = value;
 					}
 				}
 			}

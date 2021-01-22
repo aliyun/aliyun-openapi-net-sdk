@@ -139,6 +139,10 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 
 				private string feature;
 
+				private string targetImageContent;
+
+				private string cropAlgorithmCode;
+
 				public int? LeftTopX
 				{
 					get
@@ -198,6 +202,30 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 						feature = value;
 					}
 				}
+
+				public string TargetImageContent
+				{
+					get
+					{
+						return targetImageContent;
+					}
+					set	
+					{
+						targetImageContent = value;
+					}
+				}
+
+				public string CropAlgorithmCode
+				{
+					get
+					{
+						return cropAlgorithmCode;
+					}
+					set	
+					{
+						cropAlgorithmCode = value;
+					}
+				}
 			}
 
 			public class RecognizeImage_FaceListItem
@@ -216,6 +244,10 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 				private float? faceKeyPointQuality;
 
 				private string feature;
+
+				private string targetImageContent;
+
+				private string cropAlgorithmCode;
 
 				public int? LeftTopX
 				{
@@ -298,6 +330,30 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 					set	
 					{
 						feature = value;
+					}
+				}
+
+				public string TargetImageContent
+				{
+					get
+					{
+						return targetImageContent;
+					}
+					set	
+					{
+						targetImageContent = value;
+					}
+				}
+
+				public string CropAlgorithmCode
+				{
+					get
+					{
+						return cropAlgorithmCode;
+					}
+					set	
+					{
+						cropAlgorithmCode = value;
 					}
 				}
 			}

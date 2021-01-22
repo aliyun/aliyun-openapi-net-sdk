@@ -154,6 +154,10 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 
 			private string longitude;
 
+			private string sourceUrl;
+
+			private string targetUrl;
+
 			public string PlateId
 			{
 				get
@@ -319,6 +323,30 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 				set	
 				{
 					longitude = value;
+				}
+			}
+
+			public string SourceUrl
+			{
+				get
+				{
+					return sourceUrl;
+				}
+				set	
+				{
+					sourceUrl = value;
+				}
+			}
+
+			public string TargetUrl
+			{
+				get
+				{
+					return targetUrl;
+				}
+				set	
+				{
+					targetUrl = value;
 				}
 			}
 		}

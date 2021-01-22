@@ -45,6 +45,10 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 
 		private string startTime;
 
+		private long? pageNumber;
+
+		private long? pageSize;
+
 		public string PlateId
 		{
 			get
@@ -94,6 +98,32 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			{
 				startTime = value;
 				DictionaryUtil.Add(BodyParameters, "StartTime", value);
+			}
+		}
+
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
 			}
 		}
 

@@ -37,13 +37,30 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			Method = MethodType.POST;
         }
 
+		private bool? requireCropImage;
+
 		private string corpId;
+
+		private string recognizeType;
 
 		private string vendor;
 
 		private string imageUrl;
 
 		private string imageContent;
+
+		public bool? RequireCropImage
+		{
+			get
+			{
+				return requireCropImage;
+			}
+			set	
+			{
+				requireCropImage = value;
+				DictionaryUtil.Add(BodyParameters, "RequireCropImage", value.ToString());
+			}
+		}
 
 		public string CorpId
 		{
@@ -55,6 +72,19 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			{
 				corpId = value;
 				DictionaryUtil.Add(BodyParameters, "CorpId", value);
+			}
+		}
+
+		public string RecognizeType
+		{
+			get
+			{
+				return recognizeType;
+			}
+			set	
+			{
+				recognizeType = value;
+				DictionaryUtil.Add(BodyParameters, "RecognizeType", value);
 			}
 		}
 

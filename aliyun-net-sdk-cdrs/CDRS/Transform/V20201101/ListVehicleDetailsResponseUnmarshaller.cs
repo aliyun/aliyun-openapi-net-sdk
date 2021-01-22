@@ -54,6 +54,8 @@ namespace Aliyun.Acs.CDRS.Transform.V20201101
 				datas.VehicleApplication = _ctx.StringValue("ListVehicleDetails.Data["+ i +"].VehicleApplication");
 				datas.PersonId = _ctx.StringValue("ListVehicleDetails.Data["+ i +"].PersonId");
 				datas.PlateId = _ctx.StringValue("ListVehicleDetails.Data["+ i +"].PlateId");
+				datas.SourceUrl = _ctx.StringValue("ListVehicleDetails.Data["+ i +"].SourceUrl");
+				datas.TargetUrl = _ctx.StringValue("ListVehicleDetails.Data["+ i +"].TargetUrl");
 
 				listVehicleDetailsResponse_data.Add(datas);
 			}

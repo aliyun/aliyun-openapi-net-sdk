@@ -55,6 +55,8 @@ namespace Aliyun.Acs.CDRS.Transform.V20201101
 				datas.Order = _ctx.StringValue("ListVehicleTrack.Data["+ i +"].Order");
 				datas.Latitude = _ctx.StringValue("ListVehicleTrack.Data["+ i +"].Latitude");
 				datas.Longitude = _ctx.StringValue("ListVehicleTrack.Data["+ i +"].Longitude");
+				datas.SourceUrl = _ctx.StringValue("ListVehicleTrack.Data["+ i +"].SourceUrl");
+				datas.TargetUrl = _ctx.StringValue("ListVehicleTrack.Data["+ i +"].TargetUrl");
 
 				listVehicleTrackResponse_data.Add(datas);
 			}

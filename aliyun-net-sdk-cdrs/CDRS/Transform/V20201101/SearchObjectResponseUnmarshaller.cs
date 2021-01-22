@@ -103,7 +103,7 @@ namespace Aliyun.Acs.CDRS.Transform.V20201101
 				nonMotorListItem.LeftTopY = _ctx.IntegerValue("SearchObject.Data.NonMotorList["+ i +"].LeftTopY");
 				nonMotorListItem.RightBottomX = _ctx.IntegerValue("SearchObject.Data.NonMotorList["+ i +"].RightBottomX");
 				nonMotorListItem.RightBottomY = _ctx.IntegerValue("SearchObject.Data.NonMotorList["+ i +"].RightBottomY");
-				nonMotorListItem.Score = _ctx.IntegerValue("SearchObject.Data.NonMotorList["+ i +"].Score");
+				nonMotorListItem.Score = _ctx.FloatValue("SearchObject.Data.NonMotorList["+ i +"].Score");
 				nonMotorListItem.ShotTime = _ctx.StringValue("SearchObject.Data.NonMotorList["+ i +"].ShotTime");
 				nonMotorListItem.SourceImageUrl = _ctx.StringValue("SearchObject.Data.NonMotorList["+ i +"].SourceImageUrl");
 				nonMotorListItem.TargetImageUrl = _ctx.StringValue("SearchObject.Data.NonMotorList["+ i +"].TargetImageUrl");

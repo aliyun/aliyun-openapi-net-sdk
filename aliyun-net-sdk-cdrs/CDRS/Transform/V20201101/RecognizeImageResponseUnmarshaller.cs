@@ -46,6 +46,8 @@ namespace Aliyun.Acs.CDRS.Transform.V20201101
 				bodyListItem.RightBottomX = _ctx.IntegerValue("RecognizeImage.Data.BodyList["+ i +"].RightBottomX");
 				bodyListItem.RightBottomY = _ctx.IntegerValue("RecognizeImage.Data.BodyList["+ i +"].RightBottomY");
 				bodyListItem.Feature = _ctx.StringValue("RecognizeImage.Data.BodyList["+ i +"].Feature");
+				bodyListItem.TargetImageContent = _ctx.StringValue("RecognizeImage.Data.BodyList["+ i +"].TargetImageContent");
+				bodyListItem.CropAlgorithmCode = _ctx.StringValue("RecognizeImage.Data.BodyList["+ i +"].CropAlgorithmCode");
 
 				data_bodyList.Add(bodyListItem);
 			}
@@ -61,6 +63,8 @@ namespace Aliyun.Acs.CDRS.Transform.V20201101
 				faceListItem.FaceQuality = _ctx.FloatValue("RecognizeImage.Data.FaceList["+ i +"].FaceQuality");
 				faceListItem.FaceKeyPointQuality = _ctx.FloatValue("RecognizeImage.Data.FaceList["+ i +"].FaceKeyPointQuality");
 				faceListItem.Feature = _ctx.StringValue("RecognizeImage.Data.FaceList["+ i +"].Feature");
+				faceListItem.TargetImageContent = _ctx.StringValue("RecognizeImage.Data.FaceList["+ i +"].TargetImageContent");
+				faceListItem.CropAlgorithmCode = _ctx.StringValue("RecognizeImage.Data.FaceList["+ i +"].CropAlgorithmCode");
 
 				data_faceList.Add(faceListItem);
 			}
