@@ -68,6 +68,16 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					dedicatedHostClusterCapacity_localStorageCapacities.Add(localStorageCapacity);
 				}
 				dedicatedHostClusterCapacity.LocalStorageCapacities = dedicatedHostClusterCapacity_localStorageCapacities;
+
+				List<DescribeDedicatedHostClustersResponse.DescribeDedicatedHostClusters_DedicatedHostCluster.DescribeDedicatedHostClusters_DedicatedHostClusterCapacity.DescribeDedicatedHostClusters_AvailableInstanceType> dedicatedHostClusterCapacity_availableInstanceTypes = new List<DescribeDedicatedHostClustersResponse.DescribeDedicatedHostClusters_DedicatedHostCluster.DescribeDedicatedHostClusters_DedicatedHostClusterCapacity.DescribeDedicatedHostClusters_AvailableInstanceType>();
+				for (int j = 0; j < _ctx.Length("DescribeDedicatedHostClusters.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.AvailableInstanceTypes.Length"); j++) {
+					DescribeDedicatedHostClustersResponse.DescribeDedicatedHostClusters_DedicatedHostCluster.DescribeDedicatedHostClusters_DedicatedHostClusterCapacity.DescribeDedicatedHostClusters_AvailableInstanceType availableInstanceType = new DescribeDedicatedHostClustersResponse.DescribeDedicatedHostClusters_DedicatedHostCluster.DescribeDedicatedHostClusters_DedicatedHostClusterCapacity.DescribeDedicatedHostClusters_AvailableInstanceType();
+					availableInstanceType.InstanceType = _ctx.StringValue("DescribeDedicatedHostClusters.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.AvailableInstanceTypes["+ j +"].InstanceType");
+					availableInstanceType.AvailableInstanceCapacity = _ctx.IntegerValue("DescribeDedicatedHostClusters.DedicatedHostClusters["+ i +"].DedicatedHostClusterCapacity.AvailableInstanceTypes["+ j +"].AvailableInstanceCapacity");
+
+					dedicatedHostClusterCapacity_availableInstanceTypes.Add(availableInstanceType);
+				}
+				dedicatedHostClusterCapacity.AvailableInstanceTypes = dedicatedHostClusterCapacity_availableInstanceTypes;
 				dedicatedHostCluster.DedicatedHostClusterCapacity = dedicatedHostClusterCapacity;
 
 				List<DescribeDedicatedHostClustersResponse.DescribeDedicatedHostClusters_DedicatedHostCluster.DescribeDedicatedHostClusters_Tag> dedicatedHostCluster_tags = new List<DescribeDedicatedHostClustersResponse.DescribeDedicatedHostClusters_DedicatedHostCluster.DescribeDedicatedHostClusters_Tag>();

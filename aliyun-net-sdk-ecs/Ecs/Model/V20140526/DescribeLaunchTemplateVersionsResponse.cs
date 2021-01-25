@@ -299,6 +299,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string privateIpAddress;
 
+				private string deploymentSetId;
+
 				private List<DescribeLaunchTemplateVersions_DataDisk> dataDisks;
 
 				private List<DescribeLaunchTemplateVersions_NetworkInterface> networkInterfaces;
@@ -736,6 +738,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						privateIpAddress = value;
+					}
+				}
+
+				public string DeploymentSetId
+				{
+					get
+					{
+						return deploymentSetId;
+					}
+					set	
+					{
+						deploymentSetId = value;
 					}
 				}
 

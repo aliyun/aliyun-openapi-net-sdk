@@ -85,6 +85,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				launchTemplateData.ResourceGroupId = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ResourceGroupId");
 				launchTemplateData.SecurityEnhancementStrategy = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SecurityEnhancementStrategy");
 				launchTemplateData.PrivateIpAddress = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.PrivateIpAddress");
+				launchTemplateData.DeploymentSetId = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.DeploymentSetId");
 
 				List<string> launchTemplateData_securityGroupIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SecurityGroupIds.Length"); j++) {

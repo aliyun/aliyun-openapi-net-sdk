@@ -269,6 +269,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private List<DescribeDedicatedHostClusters_LocalStorageCapacity> localStorageCapacities;
 
+				private List<DescribeDedicatedHostClusters_AvailableInstanceType> availableInstanceTypes;
+
 				public int? TotalVcpus
 				{
 					get
@@ -329,6 +331,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
+				public List<DescribeDedicatedHostClusters_AvailableInstanceType> AvailableInstanceTypes
+				{
+					get
+					{
+						return availableInstanceTypes;
+					}
+					set	
+					{
+						availableInstanceTypes = value;
+					}
+				}
+
 				public class DescribeDedicatedHostClusters_LocalStorageCapacity
 				{
 
@@ -371,6 +385,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						set	
 						{
 							dataDiskCategory = value;
+						}
+					}
+				}
+
+				public class DescribeDedicatedHostClusters_AvailableInstanceType
+				{
+
+					private string instanceType;
+
+					private int? availableInstanceCapacity;
+
+					public string InstanceType
+					{
+						get
+						{
+							return instanceType;
+						}
+						set	
+						{
+							instanceType = value;
+						}
+					}
+
+					public int? AvailableInstanceCapacity
+					{
+						get
+						{
+							return availableInstanceCapacity;
+						}
+						set	
+						{
+							availableInstanceCapacity = value;
 						}
 					}
 				}

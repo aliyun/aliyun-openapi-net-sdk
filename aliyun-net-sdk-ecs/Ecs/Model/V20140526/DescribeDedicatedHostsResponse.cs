@@ -158,6 +158,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private DescribeDedicatedHosts_NetworkAttributes networkAttributes;
 
+			private DescribeDedicatedHosts_HostDetailInfo hostDetailInfo;
+
 			public string DedicatedHostId
 			{
 				get
@@ -518,6 +520,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public DescribeDedicatedHosts_HostDetailInfo HostDetailInfo
+			{
+				get
+				{
+					return hostDetailInfo;
+				}
+				set	
+				{
+					hostDetailInfo = value;
+				}
+			}
+
 			public class DescribeDedicatedHosts_Instance
 			{
 
@@ -758,6 +772,24 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						udpTimeout = value;
+					}
+				}
+			}
+
+			public class DescribeDedicatedHosts_HostDetailInfo
+			{
+
+				private string serialNumber;
+
+				public string SerialNumber
+				{
+					get
+					{
+						return serialNumber;
+					}
+					set	
+					{
+						serialNumber = value;
 					}
 				}
 			}

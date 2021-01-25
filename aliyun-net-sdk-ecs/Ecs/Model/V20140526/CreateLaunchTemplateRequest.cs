@@ -114,6 +114,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<NetworkInterface> networkInterfaces = new List<NetworkInterface>(){ };
 
+		private string deploymentSetId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -636,6 +638,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".SecurityGroupIds." +(j + 1), networkInterfaces[i].SecurityGroupIdss[j]);
 					}
 				}
+			}
+		}
+
+		public string DeploymentSetId
+		{
+			get
+			{
+				return deploymentSetId;
+			}
+			set	
+			{
+				deploymentSetId = value;
+				DictionaryUtil.Add(QueryParameters, "DeploymentSetId", value);
 			}
 		}
 

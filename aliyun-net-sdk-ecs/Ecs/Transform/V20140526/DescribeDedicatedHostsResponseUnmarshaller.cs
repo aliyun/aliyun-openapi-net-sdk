@@ -97,6 +97,10 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				networkAttributes.UdpTimeout = _ctx.IntegerValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].NetworkAttributes.UdpTimeout");
 				dedicatedHost.NetworkAttributes = networkAttributes;
 
+				DescribeDedicatedHostsResponse.DescribeDedicatedHosts_DedicatedHost.DescribeDedicatedHosts_HostDetailInfo hostDetailInfo = new DescribeDedicatedHostsResponse.DescribeDedicatedHosts_DedicatedHost.DescribeDedicatedHosts_HostDetailInfo();
+				hostDetailInfo.SerialNumber = _ctx.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].HostDetailInfo.SerialNumber");
+				dedicatedHost.HostDetailInfo = hostDetailInfo;
+
 				List<DescribeDedicatedHostsResponse.DescribeDedicatedHosts_DedicatedHost.DescribeDedicatedHosts_Instance> dedicatedHost_instances = new List<DescribeDedicatedHostsResponse.DescribeDedicatedHosts_DedicatedHost.DescribeDedicatedHosts_Instance>();
 				for (int j = 0; j < _ctx.Length("DescribeDedicatedHosts.DedicatedHosts["+ i +"].Instances.Length"); j++) {
 					DescribeDedicatedHostsResponse.DescribeDedicatedHosts_DedicatedHost.DescribeDedicatedHosts_Instance instance = new DescribeDedicatedHostsResponse.DescribeDedicatedHosts_DedicatedHost.DescribeDedicatedHosts_Instance();
