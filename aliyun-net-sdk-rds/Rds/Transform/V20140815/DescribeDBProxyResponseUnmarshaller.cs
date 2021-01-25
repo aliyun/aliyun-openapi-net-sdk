@@ -54,6 +54,18 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				describeDBProxyResponse_dBProxyConnectStringItems.Add(dBProxyConnectStringItemsItem);
 			}
 			describeDBProxyResponse.DBProxyConnectStringItems = describeDBProxyResponse_dBProxyConnectStringItems;
+
+			List<DescribeDBProxyResponse.DescribeDBProxy_DbProxyEndpointItemsItem> describeDBProxyResponse_dbProxyEndpointItems = new List<DescribeDBProxyResponse.DescribeDBProxy_DbProxyEndpointItemsItem>();
+			for (int i = 0; i < _ctx.Length("DescribeDBProxy.DbProxyEndpointItems.Length"); i++) {
+				DescribeDBProxyResponse.DescribeDBProxy_DbProxyEndpointItemsItem dbProxyEndpointItemsItem = new DescribeDBProxyResponse.DescribeDBProxy_DbProxyEndpointItemsItem();
+				dbProxyEndpointItemsItem.DbProxyEndpointName = _ctx.StringValue("DescribeDBProxy.DbProxyEndpointItems["+ i +"].DbProxyEndpointName");
+				dbProxyEndpointItemsItem.DbProxyEndpointType = _ctx.StringValue("DescribeDBProxy.DbProxyEndpointItems["+ i +"].DbProxyEndpointType");
+				dbProxyEndpointItemsItem.DbProxyReadWriteMode = _ctx.StringValue("DescribeDBProxy.DbProxyEndpointItems["+ i +"].DbProxyReadWriteMode");
+				dbProxyEndpointItemsItem.DbProxyEndpointAliases = _ctx.StringValue("DescribeDBProxy.DbProxyEndpointItems["+ i +"].DbProxyEndpointAliases");
+
+				describeDBProxyResponse_dbProxyEndpointItems.Add(dbProxyEndpointItemsItem);
+			}
+			describeDBProxyResponse.DbProxyEndpointItems = describeDBProxyResponse_dbProxyEndpointItems;
         
 			return describeDBProxyResponse;
         }

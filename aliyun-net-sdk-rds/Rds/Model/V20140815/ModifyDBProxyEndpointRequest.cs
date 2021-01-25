@@ -52,7 +52,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string resourceOwnerAccount;
 
+		private string dbEndpointAliases;
+
+		private string dbEndpointOperator;
+
+		private string dbEndpointType;
+
 		private long? ownerId;
+
+		private string dbEndpointReadWriteMode;
 
 		private string dBProxyEndpointId;
 
@@ -136,6 +144,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string DbEndpointAliases
+		{
+			get
+			{
+				return dbEndpointAliases;
+			}
+			set	
+			{
+				dbEndpointAliases = value;
+				DictionaryUtil.Add(QueryParameters, "DbEndpointAliases", value);
+			}
+		}
+
+		public string DbEndpointOperator
+		{
+			get
+			{
+				return dbEndpointOperator;
+			}
+			set	
+			{
+				dbEndpointOperator = value;
+				DictionaryUtil.Add(QueryParameters, "DbEndpointOperator", value);
+			}
+		}
+
+		public string DbEndpointType
+		{
+			get
+			{
+				return dbEndpointType;
+			}
+			set	
+			{
+				dbEndpointType = value;
+				DictionaryUtil.Add(QueryParameters, "DbEndpointType", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -146,6 +193,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string DbEndpointReadWriteMode
+		{
+			get
+			{
+				return dbEndpointReadWriteMode;
+			}
+			set	
+			{
+				dbEndpointReadWriteMode = value;
+				DictionaryUtil.Add(QueryParameters, "DbEndpointReadWriteMode", value);
 			}
 		}
 

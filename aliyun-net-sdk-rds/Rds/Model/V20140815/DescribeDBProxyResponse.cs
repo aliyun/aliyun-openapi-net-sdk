@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private List<DescribeDBProxy_DBProxyConnectStringItemsItem> dBProxyConnectStringItems;
 
+		private List<DescribeDBProxy_DbProxyEndpointItemsItem> dbProxyEndpointItems;
+
 		public string RequestId
 		{
 			get
@@ -151,6 +153,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public List<DescribeDBProxy_DbProxyEndpointItemsItem> DbProxyEndpointItems
+		{
+			get
+			{
+				return dbProxyEndpointItems;
+			}
+			set	
+			{
+				dbProxyEndpointItems = value;
+			}
+		}
+
 		public class DescribeDBProxy_DBProxyConnectStringItemsItem
 		{
 
@@ -249,6 +263,66 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					dBProxyConnectStringNetWorkType = value;
+				}
+			}
+		}
+
+		public class DescribeDBProxy_DbProxyEndpointItemsItem
+		{
+
+			private string dbProxyEndpointName;
+
+			private string dbProxyEndpointType;
+
+			private string dbProxyReadWriteMode;
+
+			private string dbProxyEndpointAliases;
+
+			public string DbProxyEndpointName
+			{
+				get
+				{
+					return dbProxyEndpointName;
+				}
+				set	
+				{
+					dbProxyEndpointName = value;
+				}
+			}
+
+			public string DbProxyEndpointType
+			{
+				get
+				{
+					return dbProxyEndpointType;
+				}
+				set	
+				{
+					dbProxyEndpointType = value;
+				}
+			}
+
+			public string DbProxyReadWriteMode
+			{
+				get
+				{
+					return dbProxyReadWriteMode;
+				}
+				set	
+				{
+					dbProxyReadWriteMode = value;
+				}
+			}
+
+			public string DbProxyEndpointAliases
+			{
+				get
+				{
+					return dbProxyEndpointAliases;
+				}
+				set	
+				{
+					dbProxyEndpointAliases = value;
 				}
 			}
 		}
