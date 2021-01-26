@@ -42,6 +42,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
+		private string plannedEndTime;
+
 		private string resourceOwnerAccount;
 
 		private string dBClusterId;
@@ -52,7 +54,11 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string vSwitchId;
 
+		private string plannedStartTime;
+
 		private string zoneId;
+
+		private bool? fromTimeService;
 
 		public long? ResourceOwnerId
 		{
@@ -64,6 +70,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string PlannedEndTime
+		{
+			get
+			{
+				return plannedEndTime;
+			}
+			set	
+			{
+				plannedEndTime = value;
+				DictionaryUtil.Add(QueryParameters, "PlannedEndTime", value);
 			}
 		}
 
@@ -132,6 +151,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string PlannedStartTime
+		{
+			get
+			{
+				return plannedStartTime;
+			}
+			set	
+			{
+				plannedStartTime = value;
+				DictionaryUtil.Add(QueryParameters, "PlannedStartTime", value);
+			}
+		}
+
 		public string ZoneId
 		{
 			get
@@ -142,6 +174,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public bool? FromTimeService
+		{
+			get
+			{
+				return fromTimeService;
+			}
+			set	
+			{
+				fromTimeService = value;
+				DictionaryUtil.Add(QueryParameters, "FromTimeService", value.ToString());
 			}
 		}
 

@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class DescribeGlobalDatabaseNetworksRequest : RpcAcsRequest<DescribeGlobalDatabaseNetworksResponse>
+    public class DescribeSQLExplorerPolicyRequest : RpcAcsRequest<DescribeSQLExplorerPolicyResponse>
     {
-        public DescribeGlobalDatabaseNetworksRequest()
-            : base("polardb", "2017-08-01", "DescribeGlobalDatabaseNetworks", "polardb", "openAPI")
+        public DescribeSQLExplorerPolicyRequest()
+            : base("polardb", "2017-08-01", "DescribeSQLExplorerPolicy", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string securityToken;
+		private string dBInstanceId;
 
 		private string resourceOwnerAccount;
-
-		private string dBClusterId;
 
 		private string ownerAccount;
 
@@ -65,16 +63,16 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string SecurityToken
+		public string DBInstanceId
 		{
 			get
 			{
-				return securityToken;
+				return dBInstanceId;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
@@ -88,19 +86,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string DBClusterId
-		{
-			get
-			{
-				return dBClusterId;
-			}
-			set	
-			{
-				dBClusterId = value;
-				DictionaryUtil.Add(QueryParameters, "DBClusterId", value);
 			}
 		}
 
@@ -130,14 +115,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override DescribeGlobalDatabaseNetworksResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeSQLExplorerPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeGlobalDatabaseNetworksResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeSQLExplorerPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

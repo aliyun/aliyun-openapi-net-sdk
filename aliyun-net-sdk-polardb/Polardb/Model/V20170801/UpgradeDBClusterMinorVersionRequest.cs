@@ -44,8 +44,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string plannedEndTime;
 
-		private string switchTimeMode;
-
 		private string resourceOwnerAccount;
 
 		private string dBClusterId;
@@ -81,19 +79,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				plannedEndTime = value;
 				DictionaryUtil.Add(QueryParameters, "PlannedEndTime", value);
-			}
-		}
-
-		public string SwitchTimeMode
-		{
-			get
-			{
-				return switchTimeMode;
-			}
-			set	
-			{
-				switchTimeMode = value;
-				DictionaryUtil.Add(QueryParameters, "SwitchTimeMode", value);
 			}
 		}
 

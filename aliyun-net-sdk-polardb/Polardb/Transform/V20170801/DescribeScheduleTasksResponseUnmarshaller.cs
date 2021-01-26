@@ -31,37 +31,35 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			DescribeScheduleTasksResponse describeScheduleTasksResponse = new DescribeScheduleTasksResponse();
 
 			describeScheduleTasksResponse.HttpResponse = _ctx.HttpResponse;
-			describeScheduleTasksResponse.Code = _ctx.StringValue("DescribeScheduleTasks.Code");
-			describeScheduleTasksResponse.HttpStatusCode = _ctx.IntegerValue("DescribeScheduleTasks.HttpStatusCode");
 			describeScheduleTasksResponse.Message = _ctx.StringValue("DescribeScheduleTasks.Message");
-			describeScheduleTasksResponse.RequestId = _ctx.StringValue("DescribeScheduleTasks.RequestId");
+			describeScheduleTasksResponse.Code = _ctx.StringValue("DescribeScheduleTasks.Code");
 			describeScheduleTasksResponse.Success = _ctx.BooleanValue("DescribeScheduleTasks.Success");
 
-			List<DescribeScheduleTasksResponse.DescribeScheduleTasks_Items> describeScheduleTasksResponse_data = new List<DescribeScheduleTasksResponse.DescribeScheduleTasks_Items>();
-			for (int i = 0; i < _ctx.Length("DescribeScheduleTasks.Data.Length"); i++) {
-				DescribeScheduleTasksResponse.DescribeScheduleTasks_Items items = new DescribeScheduleTasksResponse.DescribeScheduleTasks_Items();
-				items.Action = _ctx.StringValue("DescribeScheduleTasks.Data["+ i +"].Action");
-				items.Args = _ctx.StringValue("DescribeScheduleTasks.Data["+ i +"].Args");
-				items.GmtCreate = _ctx.LongValue("DescribeScheduleTasks.Data["+ i +"].GmtCreate");
-				items.GmtModified = _ctx.LongValue("DescribeScheduleTasks.Data["+ i +"].GmtModified");
-				items.DBClusterId = _ctx.StringValue("DescribeScheduleTasks.Data["+ i +"].DBClusterId");
-				items.MaxRetryTime = _ctx.IntegerValue("DescribeScheduleTasks.Data["+ i +"].MaxRetryTime");
-				items.Mutex = _ctx.StringValue("DescribeScheduleTasks.Data["+ i +"].Mutex");
-				items.OrderId = _ctx.StringValue("DescribeScheduleTasks.Data["+ i +"].OrderId");
-				items.PlannedEndTime = _ctx.LongValue("DescribeScheduleTasks.Data["+ i +"].PlannedEndTime");
-				items.PlannedStartTime = _ctx.LongValue("DescribeScheduleTasks.Data["+ i +"].PlannedStartTime");
-				items.PlannedTime = _ctx.LongValue("DescribeScheduleTasks.Data["+ i +"].PlannedTime");
-				items.ProductCode = _ctx.StringValue("DescribeScheduleTasks.Data["+ i +"].ProductCode");
-				items.Region = _ctx.StringValue("DescribeScheduleTasks.Data["+ i +"].Region");
-				items.Response = _ctx.StringValue("DescribeScheduleTasks.Data["+ i +"].Response");
-				items.RetryTime = _ctx.IntegerValue("DescribeScheduleTasks.Data["+ i +"].RetryTime");
-				items.Status = _ctx.StringValue("DescribeScheduleTasks.Data["+ i +"].Status");
-				items.TaskId = _ctx.StringValue("DescribeScheduleTasks.Data["+ i +"].TaskId");
-				items.Type = _ctx.IntegerValue("DescribeScheduleTasks.Data["+ i +"].Type");
+			DescribeScheduleTasksResponse.DescribeScheduleTasks_Data data = new DescribeScheduleTasksResponse.DescribeScheduleTasks_Data();
+			data.TotalRecordCount = _ctx.IntegerValue("DescribeScheduleTasks.Data.TotalRecordCount");
+			data.PageSize = _ctx.IntegerValue("DescribeScheduleTasks.Data.PageSize");
+			data.PageNumber = _ctx.IntegerValue("DescribeScheduleTasks.Data.PageNumber");
 
-				describeScheduleTasksResponse_data.Add(items);
+			List<DescribeScheduleTasksResponse.DescribeScheduleTasks_Data.DescribeScheduleTasks_TimerInfosItem> data_timerInfos = new List<DescribeScheduleTasksResponse.DescribeScheduleTasks_Data.DescribeScheduleTasks_TimerInfosItem>();
+			for (int i = 0; i < _ctx.Length("DescribeScheduleTasks.Data.TimerInfos.Length"); i++) {
+				DescribeScheduleTasksResponse.DescribeScheduleTasks_Data.DescribeScheduleTasks_TimerInfosItem timerInfosItem = new DescribeScheduleTasksResponse.DescribeScheduleTasks_Data.DescribeScheduleTasks_TimerInfosItem();
+				timerInfosItem.Status = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].Status");
+				timerInfosItem.GmtCreate = _ctx.LongValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].GmtCreate");
+				timerInfosItem.Action = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].Action");
+				timerInfosItem.TaskId = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].TaskId");
+				timerInfosItem.PlannedTime = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].PlannedTime");
+				timerInfosItem.PlannedStartTime = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].PlannedStartTime");
+				timerInfosItem.DBClusterId = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].DBClusterId");
+				timerInfosItem.GmtModified = _ctx.LongValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].GmtModified");
+				timerInfosItem.Region = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].Region");
+				timerInfosItem.OrderId = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].OrderId");
+				timerInfosItem.PlannedEndTime = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].PlannedEndTime");
+				timerInfosItem.AliUid = _ctx.IntegerValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].AliUid");
+
+				data_timerInfos.Add(timerInfosItem);
 			}
-			describeScheduleTasksResponse.Data = describeScheduleTasksResponse_data;
+			data.TimerInfos = data_timerInfos;
+			describeScheduleTasksResponse.Data = data;
         
 			return describeScheduleTasksResponse;
         }

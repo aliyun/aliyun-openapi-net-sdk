@@ -77,6 +77,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string category;
 
+		private string dBVersionStatus;
+
 		private List<DescribeDBClusterAttribute_Tag> tags;
 
 		private List<DescribeDBClusterAttribute_DBNode> dBNodes;
@@ -390,6 +392,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				category = value;
+			}
+		}
+
+		public string DBVersionStatus
+		{
+			get
+			{
+				return dBVersionStatus;
+			}
+			set	
+			{
+				dBVersionStatus = value;
 			}
 		}
 

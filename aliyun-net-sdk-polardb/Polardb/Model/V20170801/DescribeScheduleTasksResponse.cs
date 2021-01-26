@@ -25,41 +25,13 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeScheduleTasksResponse : AcsResponse
 	{
 
-		private string code;
-
-		private int? httpStatusCode;
-
 		private string message;
 
-		private string requestId;
+		private string code;
 
 		private bool? success;
 
-		private List<DescribeScheduleTasks_Items> data;
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
+		private DescribeScheduleTasks_Data data;
 
 		public string Message
 		{
@@ -73,15 +45,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string RequestId
+		public string Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
@@ -97,7 +69,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public List<DescribeScheduleTasks_Items> Data
+		public DescribeScheduleTasks_Data Data
 		{
 			get
 			{
@@ -109,258 +81,234 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public class DescribeScheduleTasks_Items
+		public class DescribeScheduleTasks_Data
 		{
 
-			private string action;
+			private int? totalRecordCount;
 
-			private string args;
+			private int? pageSize;
 
-			private long? gmtCreate;
+			private int? pageNumber;
 
-			private long? gmtModified;
+			private List<DescribeScheduleTasks_TimerInfosItem> timerInfos;
 
-			private string dBClusterId;
-
-			private int? maxRetryTime;
-
-			private string mutex;
-
-			private string orderId;
-
-			private long? plannedEndTime;
-
-			private long? plannedStartTime;
-
-			private long? plannedTime;
-
-			private string productCode;
-
-			private string region;
-
-			private string response;
-
-			private int? retryTime;
-
-			private string status;
-
-			private string taskId;
-
-			private int? type;
-
-			public string Action
+			public int? TotalRecordCount
 			{
 				get
 				{
-					return action;
+					return totalRecordCount;
 				}
 				set	
 				{
-					action = value;
+					totalRecordCount = value;
 				}
 			}
 
-			public string Args
+			public int? PageSize
 			{
 				get
 				{
-					return args;
+					return pageSize;
 				}
 				set	
 				{
-					args = value;
+					pageSize = value;
 				}
 			}
 
-			public long? GmtCreate
+			public int? PageNumber
 			{
 				get
 				{
-					return gmtCreate;
+					return pageNumber;
 				}
 				set	
 				{
-					gmtCreate = value;
+					pageNumber = value;
 				}
 			}
 
-			public long? GmtModified
+			public List<DescribeScheduleTasks_TimerInfosItem> TimerInfos
 			{
 				get
 				{
-					return gmtModified;
+					return timerInfos;
 				}
 				set	
 				{
-					gmtModified = value;
+					timerInfos = value;
 				}
 			}
 
-			public string DBClusterId
+			public class DescribeScheduleTasks_TimerInfosItem
 			{
-				get
-				{
-					return dBClusterId;
-				}
-				set	
-				{
-					dBClusterId = value;
-				}
-			}
 
-			public int? MaxRetryTime
-			{
-				get
-				{
-					return maxRetryTime;
-				}
-				set	
-				{
-					maxRetryTime = value;
-				}
-			}
+				private string status;
 
-			public string Mutex
-			{
-				get
-				{
-					return mutex;
-				}
-				set	
-				{
-					mutex = value;
-				}
-			}
+				private long? gmtCreate;
 
-			public string OrderId
-			{
-				get
-				{
-					return orderId;
-				}
-				set	
-				{
-					orderId = value;
-				}
-			}
+				private string action;
 
-			public long? PlannedEndTime
-			{
-				get
-				{
-					return plannedEndTime;
-				}
-				set	
-				{
-					plannedEndTime = value;
-				}
-			}
+				private string taskId;
 
-			public long? PlannedStartTime
-			{
-				get
-				{
-					return plannedStartTime;
-				}
-				set	
-				{
-					plannedStartTime = value;
-				}
-			}
+				private string plannedTime;
 
-			public long? PlannedTime
-			{
-				get
-				{
-					return plannedTime;
-				}
-				set	
-				{
-					plannedTime = value;
-				}
-			}
+				private string plannedStartTime;
 
-			public string ProductCode
-			{
-				get
-				{
-					return productCode;
-				}
-				set	
-				{
-					productCode = value;
-				}
-			}
+				private string dBClusterId;
 
-			public string Region
-			{
-				get
-				{
-					return region;
-				}
-				set	
-				{
-					region = value;
-				}
-			}
+				private long? gmtModified;
 
-			public string Response
-			{
-				get
-				{
-					return response;
-				}
-				set	
-				{
-					response = value;
-				}
-			}
+				private string region;
 
-			public int? RetryTime
-			{
-				get
-				{
-					return retryTime;
-				}
-				set	
-				{
-					retryTime = value;
-				}
-			}
+				private string orderId;
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+				private string plannedEndTime;
 
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
+				private int? aliUid;
 
-			public int? Type
-			{
-				get
+				public string Status
 				{
-					return type;
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
 				}
-				set	
+
+				public long? GmtCreate
 				{
-					type = value;
+					get
+					{
+						return gmtCreate;
+					}
+					set	
+					{
+						gmtCreate = value;
+					}
+				}
+
+				public string Action
+				{
+					get
+					{
+						return action;
+					}
+					set	
+					{
+						action = value;
+					}
+				}
+
+				public string TaskId
+				{
+					get
+					{
+						return taskId;
+					}
+					set	
+					{
+						taskId = value;
+					}
+				}
+
+				public string PlannedTime
+				{
+					get
+					{
+						return plannedTime;
+					}
+					set	
+					{
+						plannedTime = value;
+					}
+				}
+
+				public string PlannedStartTime
+				{
+					get
+					{
+						return plannedStartTime;
+					}
+					set	
+					{
+						plannedStartTime = value;
+					}
+				}
+
+				public string DBClusterId
+				{
+					get
+					{
+						return dBClusterId;
+					}
+					set	
+					{
+						dBClusterId = value;
+					}
+				}
+
+				public long? GmtModified
+				{
+					get
+					{
+						return gmtModified;
+					}
+					set	
+					{
+						gmtModified = value;
+					}
+				}
+
+				public string Region
+				{
+					get
+					{
+						return region;
+					}
+					set	
+					{
+						region = value;
+					}
+				}
+
+				public string OrderId
+				{
+					get
+					{
+						return orderId;
+					}
+					set	
+					{
+						orderId = value;
+					}
+				}
+
+				public string PlannedEndTime
+				{
+					get
+					{
+						return plannedEndTime;
+					}
+					set	
+					{
+						plannedEndTime = value;
+					}
+				}
+
+				public int? AliUid
+				{
+					get
+					{
+						return aliUid;
+					}
+					set	
+					{
+						aliUid = value;
+					}
 				}
 			}
 		}

@@ -64,6 +64,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string securityIPList;
 
+		private string dBMinorVersion;
+
 		private bool? autoRenew;
 
 		private string zoneId;
@@ -249,6 +251,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				securityIPList = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityIPList", value);
+			}
+		}
+
+		public string DBMinorVersion
+		{
+			get
+			{
+				return dBMinorVersion;
+			}
+			set	
+			{
+				dBMinorVersion = value;
+				DictionaryUtil.Add(QueryParameters, "DBMinorVersion", value);
 			}
 		}
 

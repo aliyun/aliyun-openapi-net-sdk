@@ -25,39 +25,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeGlobalDatabaseNetworksResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? pageNumber;
-
 		private int? totalRecordCount;
 
 		private int? pageRecordCount;
 
+		private string requestId;
+
+		private int? pageNumber;
+
 		private List<DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork> items;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
 
 		public int? TotalRecordCount
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
 		public List<DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork> Items
 		{
 			get
@@ -98,19 +98,43 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeGlobalDatabaseNetworks_GlobalDatabaseNetwork
 		{
 
+			private string gDNStatus;
+
+			private string dBVersion;
+
 			private string gDNId;
 
-			private string gDNStatus;
+			private string createTime;
 
 			private string gDNDescription;
 
 			private string dBType;
 
-			private string dBVersion;
-
-			private string createTime;
-
 			private List<DescribeGlobalDatabaseNetworks_DBCluster> dBClusters;
+
+			public string GDNStatus
+			{
+				get
+				{
+					return gDNStatus;
+				}
+				set	
+				{
+					gDNStatus = value;
+				}
+			}
+
+			public string DBVersion
+			{
+				get
+				{
+					return dBVersion;
+				}
+				set	
+				{
+					dBVersion = value;
+				}
+			}
 
 			public string GDNId
 			{
@@ -124,15 +148,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string GDNStatus
+			public string CreateTime
 			{
 				get
 				{
-					return gDNStatus;
+					return createTime;
 				}
 				set	
 				{
-					gDNStatus = value;
+					createTime = value;
 				}
 			}
 
@@ -160,30 +184,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string DBVersion
-			{
-				get
-				{
-					return dBVersion;
-				}
-				set	
-				{
-					dBVersion = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
 			public List<DescribeGlobalDatabaseNetworks_DBCluster> DBClusters
 			{
 				get
@@ -199,11 +199,23 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			public class DescribeGlobalDatabaseNetworks_DBCluster
 			{
 
+				private string role;
+
 				private string dBClusterId;
 
 				private string regionId;
 
-				private string role;
+				public string Role
+				{
+					get
+					{
+						return role;
+					}
+					set	
+					{
+						role = value;
+					}
+				}
 
 				public string DBClusterId
 				{
@@ -226,18 +238,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						regionId = value;
-					}
-				}
-
-				public string Role
-				{
-					get
-					{
-						return role;
-					}
-					set	
-					{
-						role = value;
 					}
 				}
 			}

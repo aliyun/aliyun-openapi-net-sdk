@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class DescribeGlobalDatabaseNetworksRequest : RpcAcsRequest<DescribeGlobalDatabaseNetworksResponse>
+    public class UpgradeDBClusterVersionRequest : RpcAcsRequest<UpgradeDBClusterVersionResponse>
     {
-        public DescribeGlobalDatabaseNetworksRequest()
-            : base("polardb", "2017-08-01", "DescribeGlobalDatabaseNetworks", "polardb", "openAPI")
+        public UpgradeDBClusterVersionRequest()
+            : base("polardb", "2017-08-01", "UpgradeDBClusterVersion", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,7 +42,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string securityToken;
+		private string plannedEndTime;
 
 		private string resourceOwnerAccount;
 
@@ -51,6 +51,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string plannedStartTime;
+
+		private bool? fromTimeService;
 
 		public long? ResourceOwnerId
 		{
@@ -65,16 +69,16 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string SecurityToken
+		public string PlannedEndTime
 		{
 			get
 			{
-				return securityToken;
+				return plannedEndTime;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				plannedEndTime = value;
+				DictionaryUtil.Add(QueryParameters, "PlannedEndTime", value);
 			}
 		}
 
@@ -130,14 +134,40 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string PlannedStartTime
+		{
+			get
+			{
+				return plannedStartTime;
+			}
+			set	
+			{
+				plannedStartTime = value;
+				DictionaryUtil.Add(QueryParameters, "PlannedStartTime", value);
+			}
+		}
+
+		public bool? FromTimeService
+		{
+			get
+			{
+				return fromTimeService;
+			}
+			set	
+			{
+				fromTimeService = value;
+				DictionaryUtil.Add(QueryParameters, "FromTimeService", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DescribeGlobalDatabaseNetworksResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpgradeDBClusterVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeGlobalDatabaseNetworksResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpgradeDBClusterVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
