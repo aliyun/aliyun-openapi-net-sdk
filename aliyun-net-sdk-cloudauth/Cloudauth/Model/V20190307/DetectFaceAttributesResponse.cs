@@ -242,13 +242,13 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 					private float? blur;
 
-					private string ethnicity;
-
 					private float? facequal;
 
 					private int? integrity;
 
 					private string respirator;
+
+					private float? appearanceScore;
 
 					private DetectFaceAttributes_Gender gender;
 
@@ -304,18 +304,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 						}
 					}
 
-					public string Ethnicity
-					{
-						get
-						{
-							return ethnicity;
-						}
-						set	
-						{
-							ethnicity = value;
-						}
-					}
-
 					public float? Facequal
 					{
 						get
@@ -349,6 +337,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 						set	
 						{
 							respirator = value;
+						}
+					}
+
+					public float? AppearanceScore
+					{
+						get
+						{
+							return appearanceScore;
+						}
+						set	
+						{
+							appearanceScore = value;
 						}
 					}
 

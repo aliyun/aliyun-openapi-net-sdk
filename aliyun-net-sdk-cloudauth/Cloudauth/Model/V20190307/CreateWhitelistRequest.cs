@@ -23,14 +23,14 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cloudauth.Transform;
-using Aliyun.Acs.Cloudauth.Transform.V20200618;
+using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20200618
+namespace Aliyun.Acs.Cloudauth.Model.V20190307
 {
-    public class DescribeSmartVerifyRequest : RpcAcsRequest<DescribeSmartVerifyResponse>
+    public class CreateWhitelistRequest : RpcAcsRequest<CreateWhitelistResponse>
     {
-        public DescribeSmartVerifyRequest()
-            : base("Cloudauth", "2020-06-18", "DescribeSmartVerify", "cloudauth", "openAPI")
+        public CreateWhitelistRequest()
+            : base("Cloudauth", "2019-03-07", "CreateWhitelist", "cloudauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,48 +40,93 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 			Method = MethodType.POST;
         }
 
-		private string certifyId;
+		private string validDay;
 
-		private string pictureReturnType;
+		private string bizType;
 
-		private long? sceneId;
+		private string idCardNum;
 
-		public string CertifyId
+		private string sourceIp;
+
+		private string bizId;
+
+		private string lang;
+
+		public string ValidDay
 		{
 			get
 			{
-				return certifyId;
+				return validDay;
 			}
 			set	
 			{
-				certifyId = value;
-				DictionaryUtil.Add(BodyParameters, "CertifyId", value);
+				validDay = value;
+				DictionaryUtil.Add(QueryParameters, "ValidDay", value);
 			}
 		}
 
-		public string PictureReturnType
+		public string BizType
 		{
 			get
 			{
-				return pictureReturnType;
+				return bizType;
 			}
 			set	
 			{
-				pictureReturnType = value;
-				DictionaryUtil.Add(BodyParameters, "PictureReturnType", value);
+				bizType = value;
+				DictionaryUtil.Add(QueryParameters, "BizType", value);
 			}
 		}
 
-		public long? SceneId
+		public string IdCardNum
 		{
 			get
 			{
-				return sceneId;
+				return idCardNum;
 			}
 			set	
 			{
-				sceneId = value;
-				DictionaryUtil.Add(BodyParameters, "SceneId", value.ToString());
+				idCardNum = value;
+				DictionaryUtil.Add(QueryParameters, "IdCardNum", value);
+			}
+		}
+
+		public string SourceIp
+		{
+			get
+			{
+				return sourceIp;
+			}
+			set	
+			{
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
+			}
+		}
+
+		public string BizId
+		{
+			get
+			{
+				return bizId;
+			}
+			set	
+			{
+				bizId = value;
+				DictionaryUtil.Add(QueryParameters, "BizId", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -90,9 +135,9 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 			return false;
 		}
 
-        public override DescribeSmartVerifyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateWhitelistResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSmartVerifyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateWhitelistResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

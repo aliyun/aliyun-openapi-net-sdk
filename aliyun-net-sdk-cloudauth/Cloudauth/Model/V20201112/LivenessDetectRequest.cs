@@ -23,14 +23,14 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cloudauth.Transform;
-using Aliyun.Acs.Cloudauth.Transform.V20200618;
+using Aliyun.Acs.Cloudauth.Transform.V20201112;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20200618
+namespace Aliyun.Acs.Cloudauth.Model.V20201112
 {
-    public class DescribeSmartVerifyRequest : RpcAcsRequest<DescribeSmartVerifyResponse>
+    public class LivenessDetectRequest : RpcAcsRequest<LivenessDetectResponse>
     {
-        public DescribeSmartVerifyRequest()
-            : base("Cloudauth", "2020-06-18", "DescribeSmartVerify", "cloudauth", "openAPI")
+        public LivenessDetectRequest()
+            : base("Cloudauth", "2020-11-12", "LivenessDetect", "cloudauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,48 +40,78 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 			Method = MethodType.POST;
         }
 
-		private string certifyId;
+		private string mediaCategory;
 
-		private string pictureReturnType;
+		private string mediaUrl;
 
-		private long? sceneId;
+		private string bizType;
 
-		public string CertifyId
+		private string bizId;
+
+		private string mediaFile;
+
+		public string MediaCategory
 		{
 			get
 			{
-				return certifyId;
+				return mediaCategory;
 			}
 			set	
 			{
-				certifyId = value;
-				DictionaryUtil.Add(BodyParameters, "CertifyId", value);
+				mediaCategory = value;
+				DictionaryUtil.Add(BodyParameters, "MediaCategory", value);
 			}
 		}
 
-		public string PictureReturnType
+		public string MediaUrl
 		{
 			get
 			{
-				return pictureReturnType;
+				return mediaUrl;
 			}
 			set	
 			{
-				pictureReturnType = value;
-				DictionaryUtil.Add(BodyParameters, "PictureReturnType", value);
+				mediaUrl = value;
+				DictionaryUtil.Add(BodyParameters, "MediaUrl", value);
 			}
 		}
 
-		public long? SceneId
+		public string BizType
 		{
 			get
 			{
-				return sceneId;
+				return bizType;
 			}
 			set	
 			{
-				sceneId = value;
-				DictionaryUtil.Add(BodyParameters, "SceneId", value.ToString());
+				bizType = value;
+				DictionaryUtil.Add(BodyParameters, "BizType", value);
+			}
+		}
+
+		public string BizId
+		{
+			get
+			{
+				return bizId;
+			}
+			set	
+			{
+				bizId = value;
+				DictionaryUtil.Add(BodyParameters, "BizId", value);
+			}
+		}
+
+		public string MediaFile
+		{
+			get
+			{
+				return mediaFile;
+			}
+			set	
+			{
+				mediaFile = value;
+				DictionaryUtil.Add(BodyParameters, "MediaFile", value);
 			}
 		}
 
@@ -90,9 +120,9 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 			return false;
 		}
 
-        public override DescribeSmartVerifyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override LivenessDetectResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSmartVerifyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return LivenessDetectResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

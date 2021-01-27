@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private string appVersion;
 
+		private string deviceToken;
+
 		private string certifyId;
 
 		public string ExtInfo
@@ -84,6 +86,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				appVersion = value;
 				DictionaryUtil.Add(QueryParameters, "AppVersion", value);
+			}
+		}
+
+		public string DeviceToken
+		{
+			get
+			{
+				return deviceToken;
+			}
+			set	
+			{
+				deviceToken = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceToken", value);
 			}
 		}
 
