@@ -27,10 +27,10 @@ using Aliyun.Acs.retailcloud.Transform.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Model.V20180313
 {
-    public class CreateAppResourceAllocRequest : RpcAcsRequest<CreateAppResourceAllocResponse>
+    public class DescribeClusterDetailRequest : RpcAcsRequest<DescribeClusterDetailResponse>
     {
-        public CreateAppResourceAllocRequest()
-            : base("retailcloud", "2018-03-13", "CreateAppResourceAlloc", "retailcloud", "openAPI")
+        public DescribeClusterDetailRequest()
+            : base("retailcloud", "2018-03-13", "DescribeClusterDetail", "retailcloud", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,48 +40,18 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			Method = MethodType.POST;
         }
 
-		private long? appId;
+		private string clusterInstanceId;
 
-		private long? appEnvId;
-
-		private string clusterId;
-
-		public long? AppId
+		public string ClusterInstanceId
 		{
 			get
 			{
-				return appId;
+				return clusterInstanceId;
 			}
 			set	
 			{
-				appId = value;
-				DictionaryUtil.Add(QueryParameters, "AppId", value.ToString());
-			}
-		}
-
-		public long? AppEnvId
-		{
-			get
-			{
-				return appEnvId;
-			}
-			set	
-			{
-				appEnvId = value;
-				DictionaryUtil.Add(QueryParameters, "AppEnvId", value.ToString());
-			}
-		}
-
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+				clusterInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterInstanceId", value);
 			}
 		}
 
@@ -90,9 +60,9 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			return false;
 		}
 
-        public override CreateAppResourceAllocResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeClusterDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateAppResourceAllocResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeClusterDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
