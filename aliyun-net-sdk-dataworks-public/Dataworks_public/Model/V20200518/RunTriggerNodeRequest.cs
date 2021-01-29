@@ -38,6 +38,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dataworks_public.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dataworks_public.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
 			Method = MethodType.PUT;
         }
 
