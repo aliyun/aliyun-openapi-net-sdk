@@ -47,6 +47,8 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 
 		private string vendor;
 
+		private bool? requireTotalCount;
+
 		private int? pageSize;
 
 		private string imageContent;
@@ -123,6 +125,19 @@ namespace Aliyun.Acs.CDRS.Model.V20201101
 			{
 				vendor = value;
 				DictionaryUtil.Add(BodyParameters, "Vendor", value);
+			}
+		}
+
+		public bool? RequireTotalCount
+		{
+			get
+			{
+				return requireTotalCount;
+			}
+			set	
+			{
+				requireTotalCount = value;
+				DictionaryUtil.Add(BodyParameters, "RequireTotalCount", value.ToString());
 			}
 		}
 
