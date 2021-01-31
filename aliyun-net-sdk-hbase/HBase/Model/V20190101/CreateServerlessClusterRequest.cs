@@ -56,6 +56,8 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private int? period;
 
+		private string diskType;
+
 		private string vSwitchId;
 
 		private string periodUnit;
@@ -173,6 +175,19 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			{
 				period = value;
 				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+			}
+		}
+
+		public string DiskType
+		{
+			get
+			{
+				return diskType;
+			}
+			set	
+			{
+				diskType = value;
+				DictionaryUtil.Add(QueryParameters, "DiskType", value);
 			}
 		}
 

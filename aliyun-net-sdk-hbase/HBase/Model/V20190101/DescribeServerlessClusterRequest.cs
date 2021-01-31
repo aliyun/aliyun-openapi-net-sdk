@@ -27,10 +27,10 @@ using Aliyun.Acs.HBase.Transform.V20190101;
 
 namespace Aliyun.Acs.HBase.Model.V20190101
 {
-    public class ConvertInstanceRequest : RpcAcsRequest<ConvertInstanceResponse>
+    public class DescribeServerlessClusterRequest : RpcAcsRequest<DescribeServerlessClusterResponse>
     {
-        public ConvertInstanceRequest()
-            : base("HBase", "2019-01-01", "ConvertInstance", "hbase", "openAPI")
+        public DescribeServerlessClusterRequest()
+            : base("HBase", "2019-01-01", "DescribeServerlessCluster", "hbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,26 +40,9 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			Method = MethodType.POST;
         }
 
-		private int? duration;
-
 		private string clusterId;
 
-		private string pricingCycle;
-
-		private string payType;
-
-		public int? Duration
-		{
-			get
-			{
-				return duration;
-			}
-			set	
-			{
-				duration = value;
-				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
-			}
-		}
+		private string zoneId;
 
 		public string ClusterId
 		{
@@ -74,35 +57,27 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
-		public string PricingCycle
+		public string ZoneId
 		{
 			get
 			{
-				return pricingCycle;
+				return zoneId;
 			}
 			set	
 			{
-				pricingCycle = value;
-				DictionaryUtil.Add(QueryParameters, "PricingCycle", value);
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
-		public string PayType
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return payType;
-			}
-			set	
-			{
-				payType = value;
-				DictionaryUtil.Add(QueryParameters, "PayType", value);
-			}
+			return false;
 		}
 
-        public override ConvertInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeServerlessClusterResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ConvertInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeServerlessClusterResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
