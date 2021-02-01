@@ -24,20 +24,22 @@ using Aliyun.Acs.videoseg.Model.V20200320;
 
 namespace Aliyun.Acs.videoseg.Transform.V20200320
 {
-    public class SegmentVideoBodyResponseUnmarshaller
+    public class SegmentGreenScreenVideoResponseUnmarshaller
     {
-        public static SegmentVideoBodyResponse Unmarshall(UnmarshallerContext _ctx)
+        public static SegmentGreenScreenVideoResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			SegmentVideoBodyResponse segmentVideoBodyResponse = new SegmentVideoBodyResponse();
+			SegmentGreenScreenVideoResponse segmentGreenScreenVideoResponse = new SegmentGreenScreenVideoResponse();
 
-			segmentVideoBodyResponse.HttpResponse = _ctx.HttpResponse;
-			segmentVideoBodyResponse.RequestId = _ctx.StringValue("SegmentVideoBody.RequestId");
+			segmentGreenScreenVideoResponse.HttpResponse = _ctx.HttpResponse;
+			segmentGreenScreenVideoResponse.Message = _ctx.StringValue("SegmentGreenScreenVideo.Message");
+			segmentGreenScreenVideoResponse.RequestId = _ctx.StringValue("SegmentGreenScreenVideo.RequestId");
+			segmentGreenScreenVideoResponse.Code = _ctx.StringValue("SegmentGreenScreenVideo.Code");
 
-			SegmentVideoBodyResponse.SegmentVideoBody_Data data = new SegmentVideoBodyResponse.SegmentVideoBody_Data();
-			data.VideoUrl = _ctx.StringValue("SegmentVideoBody.Data.VideoUrl");
-			segmentVideoBodyResponse.Data = data;
+			SegmentGreenScreenVideoResponse.SegmentGreenScreenVideo_Data data = new SegmentGreenScreenVideoResponse.SegmentGreenScreenVideo_Data();
+			data.VideoURL = _ctx.StringValue("SegmentGreenScreenVideo.Data.VideoURL");
+			segmentGreenScreenVideoResponse.Data = data;
         
-			return segmentVideoBodyResponse;
+			return segmentGreenScreenVideoResponse;
         }
     }
 }
