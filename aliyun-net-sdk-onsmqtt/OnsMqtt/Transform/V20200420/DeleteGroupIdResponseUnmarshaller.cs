@@ -26,13 +26,13 @@ namespace Aliyun.Acs.OnsMqtt.Transform.V20200420
 {
     public class DeleteGroupIdResponseUnmarshaller
     {
-        public static DeleteGroupIdResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteGroupIdResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteGroupIdResponse deleteGroupIdResponse = new DeleteGroupIdResponse();
 
-			deleteGroupIdResponse.HttpResponse = context.HttpResponse;
-			deleteGroupIdResponse.HelpUrl = context.StringValue("DeleteGroupId.HelpUrl");
-			deleteGroupIdResponse.RequestId = context.StringValue("DeleteGroupId.RequestId");
+			deleteGroupIdResponse.HttpResponse = _ctx.HttpResponse;
+			deleteGroupIdResponse.HelpUrl = _ctx.StringValue("DeleteGroupId.HelpUrl");
+			deleteGroupIdResponse.RequestId = _ctx.StringValue("DeleteGroupId.RequestId");
         
 			return deleteGroupIdResponse;
         }

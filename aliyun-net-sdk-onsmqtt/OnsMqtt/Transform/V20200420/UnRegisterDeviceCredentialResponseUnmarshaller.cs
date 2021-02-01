@@ -24,17 +24,16 @@ using Aliyun.Acs.OnsMqtt.Model.V20200420;
 
 namespace Aliyun.Acs.OnsMqtt.Transform.V20200420
 {
-    public class QuerySessionByClientIdResponseUnmarshaller
+    public class UnRegisterDeviceCredentialResponseUnmarshaller
     {
-        public static QuerySessionByClientIdResponse Unmarshall(UnmarshallerContext _ctx)
+        public static UnRegisterDeviceCredentialResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			QuerySessionByClientIdResponse querySessionByClientIdResponse = new QuerySessionByClientIdResponse();
+			UnRegisterDeviceCredentialResponse unRegisterDeviceCredentialResponse = new UnRegisterDeviceCredentialResponse();
 
-			querySessionByClientIdResponse.HttpResponse = _ctx.HttpResponse;
-			querySessionByClientIdResponse.RequestId = _ctx.StringValue("QuerySessionByClientId.RequestId");
-			querySessionByClientIdResponse.OnlineStatus = _ctx.BooleanValue("QuerySessionByClientId.OnlineStatus");
+			unRegisterDeviceCredentialResponse.HttpResponse = _ctx.HttpResponse;
+			unRegisterDeviceCredentialResponse.RequestId = _ctx.StringValue("UnRegisterDeviceCredential.RequestId");
         
-			return querySessionByClientIdResponse;
+			return unRegisterDeviceCredentialResponse;
         }
     }
 }

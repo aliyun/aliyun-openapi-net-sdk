@@ -27,10 +27,10 @@ using Aliyun.Acs.OnsMqtt.Transform.V20200420;
 
 namespace Aliyun.Acs.OnsMqtt.Model.V20200420
 {
-    public class QueryTokenRequest : RpcAcsRequest<QueryTokenResponse>
+    public class RegisterDeviceCredentialRequest : RpcAcsRequest<RegisterDeviceCredentialResponse>
     {
-        public QueryTokenRequest()
-            : base("OnsMqtt", "2020-04-20", "QueryToken", "onsmqtt", "openAPI")
+        public RegisterDeviceCredentialRequest()
+            : base("OnsMqtt", "2020-04-20", "RegisterDeviceCredential", "onsmqtt", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,20 +40,20 @@ namespace Aliyun.Acs.OnsMqtt.Model.V20200420
 			Method = MethodType.POST;
         }
 
-		private string token;
+		private string clientId;
 
 		private string instanceId;
 
-		public string Token
+		public string ClientId
 		{
 			get
 			{
-				return token;
+				return clientId;
 			}
 			set	
 			{
-				token = value;
-				DictionaryUtil.Add(QueryParameters, "Token", value);
+				clientId = value;
+				DictionaryUtil.Add(QueryParameters, "ClientId", value);
 			}
 		}
 
@@ -75,9 +75,9 @@ namespace Aliyun.Acs.OnsMqtt.Model.V20200420
 			return false;
 		}
 
-        public override QueryTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RegisterDeviceCredentialResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RegisterDeviceCredentialResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
