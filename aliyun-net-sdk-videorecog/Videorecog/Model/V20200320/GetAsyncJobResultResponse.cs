@@ -56,27 +56,15 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 		public class GetAsyncJobResult_Data
 		{
 
-			private string jobId;
-
 			private string status;
-
-			private string result;
 
 			private string errorCode;
 
 			private string errorMessage;
 
-			public string JobId
-			{
-				get
-				{
-					return jobId;
-				}
-				set	
-				{
-					jobId = value;
-				}
-			}
+			private string jobId;
+
+			private string result;
 
 			public string Status
 			{
@@ -87,18 +75,6 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public string Result
-			{
-				get
-				{
-					return result;
-				}
-				set	
-				{
-					result = value;
 				}
 			}
 
@@ -123,6 +99,30 @@ namespace Aliyun.Acs.videorecog.Model.V20200320
 				set	
 				{
 					errorMessage = value;
+				}
+			}
+
+			public string JobId
+			{
+				get
+				{
+					return jobId;
+				}
+				set	
+				{
+					jobId = value;
+				}
+			}
+
+			public string Result
+			{
+				get
+				{
+					return result;
+				}
+				set	
+				{
+					result = value;
 				}
 			}
 		}
