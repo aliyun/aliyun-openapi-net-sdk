@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string clientToken;
 
+		private int? readonlyReplicas;
+
 		private string nodeClass;
 
 		private string securityToken;
@@ -91,6 +93,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public int? ReadonlyReplicas
+		{
+			get
+			{
+				return readonlyReplicas;
+			}
+			set	
+			{
+				readonlyReplicas = value;
+				DictionaryUtil.Add(QueryParameters, "ReadonlyReplicas", value.ToString());
 			}
 		}
 

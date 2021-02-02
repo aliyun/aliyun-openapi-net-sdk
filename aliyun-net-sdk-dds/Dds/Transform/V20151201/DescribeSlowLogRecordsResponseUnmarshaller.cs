@@ -31,25 +31,25 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			DescribeSlowLogRecordsResponse describeSlowLogRecordsResponse = new DescribeSlowLogRecordsResponse();
 
 			describeSlowLogRecordsResponse.HttpResponse = _ctx.HttpResponse;
-			describeSlowLogRecordsResponse.RequestId = _ctx.StringValue("DescribeSlowLogRecords.RequestId");
-			describeSlowLogRecordsResponse.Engine = _ctx.StringValue("DescribeSlowLogRecords.Engine");
 			describeSlowLogRecordsResponse.TotalRecordCount = _ctx.IntegerValue("DescribeSlowLogRecords.TotalRecordCount");
-			describeSlowLogRecordsResponse.PageNumber = _ctx.IntegerValue("DescribeSlowLogRecords.PageNumber");
 			describeSlowLogRecordsResponse.PageRecordCount = _ctx.IntegerValue("DescribeSlowLogRecords.PageRecordCount");
+			describeSlowLogRecordsResponse.RequestId = _ctx.StringValue("DescribeSlowLogRecords.RequestId");
+			describeSlowLogRecordsResponse.PageNumber = _ctx.IntegerValue("DescribeSlowLogRecords.PageNumber");
+			describeSlowLogRecordsResponse.Engine = _ctx.StringValue("DescribeSlowLogRecords.Engine");
 
 			List<DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_LogRecords> describeSlowLogRecordsResponse_items = new List<DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_LogRecords>();
 			for (int i = 0; i < _ctx.Length("DescribeSlowLogRecords.Items.Length"); i++) {
 				DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_LogRecords logRecords = new DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_LogRecords();
-				logRecords.HostAddress = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].HostAddress");
-				logRecords.DBName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].DBName");
-				logRecords.SQLText = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].SQLText");
-				logRecords.QueryTimes = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].QueryTimes");
-				logRecords.DocsExamined = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].DocsExamined");
-				logRecords.KeysExamined = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].KeysExamined");
-				logRecords.ReturnRowCounts = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].ReturnRowCounts");
-				logRecords.ExecutionStartTime = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].ExecutionStartTime");
-				logRecords.AccountName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].AccountName");
 				logRecords.TableName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].TableName");
+				logRecords.QueryTimes = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].QueryTimes");
+				logRecords.ExecutionStartTime = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].ExecutionStartTime");
+				logRecords.ReturnRowCounts = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].ReturnRowCounts");
+				logRecords.DBName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].DBName");
+				logRecords.KeysExamined = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].KeysExamined");
+				logRecords.DocsExamined = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].DocsExamined");
+				logRecords.HostAddress = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].HostAddress");
+				logRecords.AccountName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].AccountName");
+				logRecords.SQLText = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].SQLText");
 
 				describeSlowLogRecordsResponse_items.Add(logRecords);
 			}

@@ -42,11 +42,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
-		private string pageNumber;
+		private long? pageNumber;
 
 		private string securityToken;
 
-		private string pageSize;
+		private long? pageSize;
 
 		private string dBInstanceId;
 
@@ -71,7 +71,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string PageNumber
+		public long? PageNumber
 		{
 			get
 			{
@@ -80,7 +80,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value);
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -97,7 +97,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string PageSize
+		public long? PageSize
 		{
 			get
 			{
@@ -106,7 +106,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value);
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

@@ -31,20 +31,20 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			DescribeErrorLogRecordsResponse describeErrorLogRecordsResponse = new DescribeErrorLogRecordsResponse();
 
 			describeErrorLogRecordsResponse.HttpResponse = _ctx.HttpResponse;
-			describeErrorLogRecordsResponse.RequestId = _ctx.StringValue("DescribeErrorLogRecords.RequestId");
-			describeErrorLogRecordsResponse.Engine = _ctx.StringValue("DescribeErrorLogRecords.Engine");
 			describeErrorLogRecordsResponse.TotalRecordCount = _ctx.IntegerValue("DescribeErrorLogRecords.TotalRecordCount");
-			describeErrorLogRecordsResponse.PageNumber = _ctx.IntegerValue("DescribeErrorLogRecords.PageNumber");
 			describeErrorLogRecordsResponse.PageRecordCount = _ctx.IntegerValue("DescribeErrorLogRecords.PageRecordCount");
+			describeErrorLogRecordsResponse.RequestId = _ctx.StringValue("DescribeErrorLogRecords.RequestId");
+			describeErrorLogRecordsResponse.PageNumber = _ctx.IntegerValue("DescribeErrorLogRecords.PageNumber");
+			describeErrorLogRecordsResponse.Engine = _ctx.StringValue("DescribeErrorLogRecords.Engine");
 
 			List<DescribeErrorLogRecordsResponse.DescribeErrorLogRecords_LogRecords> describeErrorLogRecordsResponse_items = new List<DescribeErrorLogRecordsResponse.DescribeErrorLogRecords_LogRecords>();
 			for (int i = 0; i < _ctx.Length("DescribeErrorLogRecords.Items.Length"); i++) {
 				DescribeErrorLogRecordsResponse.DescribeErrorLogRecords_LogRecords logRecords = new DescribeErrorLogRecordsResponse.DescribeErrorLogRecords_LogRecords();
-				logRecords.Id = _ctx.IntegerValue("DescribeErrorLogRecords.Items["+ i +"].Id");
-				logRecords.CreateTime = _ctx.StringValue("DescribeErrorLogRecords.Items["+ i +"].CreateTime");
-				logRecords.Category = _ctx.StringValue("DescribeErrorLogRecords.Items["+ i +"].Category");
 				logRecords.ConnInfo = _ctx.StringValue("DescribeErrorLogRecords.Items["+ i +"].ConnInfo");
+				logRecords.Category = _ctx.StringValue("DescribeErrorLogRecords.Items["+ i +"].Category");
 				logRecords.Content = _ctx.StringValue("DescribeErrorLogRecords.Items["+ i +"].Content");
+				logRecords.CreateTime = _ctx.StringValue("DescribeErrorLogRecords.Items["+ i +"].CreateTime");
+				logRecords.Id = _ctx.IntegerValue("DescribeErrorLogRecords.Items["+ i +"].Id");
 
 				describeErrorLogRecordsResponse_items.Add(logRecords);
 			}

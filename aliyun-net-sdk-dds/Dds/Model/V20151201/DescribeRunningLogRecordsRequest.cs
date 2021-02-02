@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
+		private string roleId;
+
 		private string startTime;
 
 		private int? pageNumber;
@@ -80,6 +82,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string RoleId
+		{
+			get
+			{
+				return roleId;
+			}
+			set	
+			{
+				roleId = value;
+				DictionaryUtil.Add(QueryParameters, "RoleId", value);
 			}
 		}
 

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string orderParams;
 
-		private List<DescribePrice_Rule> rules;
-
 		private List<DescribePrice_SubOrder> subOrders;
+
+		private List<DescribePrice_Rule> rules;
 
 		private DescribePrice_Order order;
 
@@ -73,18 +73,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public List<DescribePrice_Rule> Rules
-		{
-			get
-			{
-				return rules;
-			}
-			set	
-			{
-				rules = value;
-			}
-		}
-
 		public List<DescribePrice_SubOrder> SubOrders
 		{
 			get
@@ -94,6 +82,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				subOrders = value;
+			}
+		}
+
+		public List<DescribePrice_Rule> Rules
+		{
+			get
+			{
+				return rules;
+			}
+			set	
+			{
+				rules = value;
 			}
 		}
 
@@ -109,74 +109,28 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public class DescribePrice_Rule
-		{
-
-			private long? ruleDescId;
-
-			private string name;
-
-			private string title;
-
-			public long? RuleDescId
-			{
-				get
-				{
-					return ruleDescId;
-				}
-				set	
-				{
-					ruleDescId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Title
-			{
-				get
-				{
-					return title;
-				}
-				set	
-				{
-					title = value;
-				}
-			}
-		}
-
 		public class DescribePrice_SubOrder
 		{
 
-			private string originalAmount;
+			private string instanceId;
 
 			private string tradeAmount;
 
-			private string discountAmount;
+			private string originalAmount;
 
-			private string instanceId;
+			private string discountAmount;
 
 			private List<string> ruleIds;
 
-			public string OriginalAmount
+			public string InstanceId
 			{
 				get
 				{
-					return originalAmount;
+					return instanceId;
 				}
 				set	
 				{
-					originalAmount = value;
+					instanceId = value;
 				}
 			}
 
@@ -192,6 +146,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
+			public string OriginalAmount
+			{
+				get
+				{
+					return originalAmount;
+				}
+				set	
+				{
+					originalAmount = value;
+				}
+			}
+
 			public string DiscountAmount
 			{
 				get
@@ -201,18 +167,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					discountAmount = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
 				}
 			}
 
@@ -229,30 +183,76 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public class DescribePrice_Rule
+		{
+
+			private long? ruleDescId;
+
+			private string title;
+
+			private string name;
+
+			public long? RuleDescId
+			{
+				get
+				{
+					return ruleDescId;
+				}
+				set	
+				{
+					ruleDescId = value;
+				}
+			}
+
+			public string Title
+			{
+				get
+				{
+					return title;
+				}
+				set	
+				{
+					title = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+		}
+
 		public class DescribePrice_Order
 		{
 
-			private string originalAmount;
+			private string currency;
 
 			private string tradeAmount;
 
-			private string discountAmount;
+			private string originalAmount;
 
-			private string currency;
+			private string discountAmount;
 
 			private List<DescribePrice_Coupon> coupons;
 
 			private List<string> ruleIds1;
 
-			public string OriginalAmount
+			public string Currency
 			{
 				get
 				{
-					return originalAmount;
+					return currency;
 				}
 				set	
 				{
-					originalAmount = value;
+					currency = value;
 				}
 			}
 
@@ -268,6 +268,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
+			public string OriginalAmount
+			{
+				get
+				{
+					return originalAmount;
+				}
+				set	
+				{
+					originalAmount = value;
+				}
+			}
+
 			public string DiscountAmount
 			{
 				get
@@ -277,18 +289,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					discountAmount = value;
-				}
-			}
-
-			public string Currency
-			{
-				get
-				{
-					return currency;
-				}
-				set	
-				{
-					currency = value;
 				}
 			}
 
@@ -321,11 +321,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private string couponNo;
 
-				private string name;
-
 				private string description;
 
 				private string isSelected;
+
+				private string name;
 
 				public string CouponNo
 				{
@@ -336,18 +336,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						couponNo = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
 					}
 				}
 
@@ -372,6 +360,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						isSelected = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 			}

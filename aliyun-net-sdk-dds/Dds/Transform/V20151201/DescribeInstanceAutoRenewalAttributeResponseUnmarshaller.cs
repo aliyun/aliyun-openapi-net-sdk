@@ -31,19 +31,19 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			DescribeInstanceAutoRenewalAttributeResponse describeInstanceAutoRenewalAttributeResponse = new DescribeInstanceAutoRenewalAttributeResponse();
 
 			describeInstanceAutoRenewalAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			describeInstanceAutoRenewalAttributeResponse.ItemsNumbers = _ctx.IntegerValue("DescribeInstanceAutoRenewalAttribute.ItemsNumbers");
+			describeInstanceAutoRenewalAttributeResponse.PageRecordCount = _ctx.IntegerValue("DescribeInstanceAutoRenewalAttribute.PageRecordCount");
 			describeInstanceAutoRenewalAttributeResponse.RequestId = _ctx.StringValue("DescribeInstanceAutoRenewalAttribute.RequestId");
 			describeInstanceAutoRenewalAttributeResponse.PageNumber = _ctx.IntegerValue("DescribeInstanceAutoRenewalAttribute.PageNumber");
-			describeInstanceAutoRenewalAttributeResponse.PageRecordCount = _ctx.IntegerValue("DescribeInstanceAutoRenewalAttribute.PageRecordCount");
-			describeInstanceAutoRenewalAttributeResponse.ItemsNumbers = _ctx.IntegerValue("DescribeInstanceAutoRenewalAttribute.ItemsNumbers");
 
 			List<DescribeInstanceAutoRenewalAttributeResponse.DescribeInstanceAutoRenewalAttribute_Item> describeInstanceAutoRenewalAttributeResponse_items = new List<DescribeInstanceAutoRenewalAttributeResponse.DescribeInstanceAutoRenewalAttribute_Item>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceAutoRenewalAttribute.Items.Length"); i++) {
 				DescribeInstanceAutoRenewalAttributeResponse.DescribeInstanceAutoRenewalAttribute_Item item = new DescribeInstanceAutoRenewalAttributeResponse.DescribeInstanceAutoRenewalAttribute_Item();
-				item.DbInstanceId = _ctx.StringValue("DescribeInstanceAutoRenewalAttribute.Items["+ i +"].DbInstanceId");
-				item.RegionId = _ctx.StringValue("DescribeInstanceAutoRenewalAttribute.Items["+ i +"].RegionId");
-				item.Duration = _ctx.StringValue("DescribeInstanceAutoRenewalAttribute.Items["+ i +"].Duration");
 				item.AutoRenew = _ctx.StringValue("DescribeInstanceAutoRenewalAttribute.Items["+ i +"].AutoRenew");
 				item.DBInstanceType = _ctx.StringValue("DescribeInstanceAutoRenewalAttribute.Items["+ i +"].DBInstanceType");
+				item.Duration = _ctx.StringValue("DescribeInstanceAutoRenewalAttribute.Items["+ i +"].Duration");
+				item.RegionId = _ctx.StringValue("DescribeInstanceAutoRenewalAttribute.Items["+ i +"].RegionId");
+				item.DbInstanceId = _ctx.StringValue("DescribeInstanceAutoRenewalAttribute.Items["+ i +"].DbInstanceId");
 
 				describeInstanceAutoRenewalAttributeResponse_items.Add(item);
 			}

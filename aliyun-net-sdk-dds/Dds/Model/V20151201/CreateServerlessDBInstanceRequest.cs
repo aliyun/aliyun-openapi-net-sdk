@@ -50,8 +50,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string engineVersion;
 
-		private string networkType;
-
 		private string storageEngine;
 
 		private string resourceGroupId;
@@ -81,8 +79,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string vpcId;
 
 		private string zoneId;
-
-		private string chargeType;
 
 		public long? ResourceOwnerId
 		{
@@ -146,19 +142,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				engineVersion = value;
 				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
-			}
-		}
-
-		public string NetworkType
-		{
-			get
-			{
-				return networkType;
-			}
-			set	
-			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
 			}
 		}
 
@@ -354,19 +337,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public string ChargeType
-		{
-			get
-			{
-				return chargeType;
-			}
-			set	
-			{
-				chargeType = value;
-				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
 			}
 		}
 

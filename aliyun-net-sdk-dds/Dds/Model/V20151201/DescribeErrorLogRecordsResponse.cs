@@ -25,41 +25,17 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 	public class DescribeErrorLogRecordsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string engine;
-
 		private int? totalRecordCount;
-
-		private int? pageNumber;
 
 		private int? pageRecordCount;
 
+		private string requestId;
+
+		private int? pageNumber;
+
+		private string engine;
+
 		private List<DescribeErrorLogRecords_LogRecords> items;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-			}
-		}
 
 		public int? TotalRecordCount
 		{
@@ -70,6 +46,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				totalRecordCount = value;
+			}
+		}
+
+		public int? PageRecordCount
+		{
+			get
+			{
+				return pageRecordCount;
+			}
+			set	
+			{
+				pageRecordCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -85,15 +85,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public int? PageRecordCount
+		public string Engine
 		{
 			get
 			{
-				return pageRecordCount;
+				return engine;
 			}
 			set	
 			{
-				pageRecordCount = value;
+				engine = value;
 			}
 		}
 
@@ -112,37 +112,25 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class DescribeErrorLogRecords_LogRecords
 		{
 
-			private int? id;
-
-			private string createTime;
+			private string connInfo;
 
 			private string category;
 
-			private string connInfo;
-
 			private string content;
 
-			public int? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private string createTime;
 
-			public string CreateTime
+			private int? id;
+
+			public string ConnInfo
 			{
 				get
 				{
-					return createTime;
+					return connInfo;
 				}
 				set	
 				{
-					createTime = value;
+					connInfo = value;
 				}
 			}
 
@@ -158,18 +146,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public string ConnInfo
-			{
-				get
-				{
-					return connInfo;
-				}
-				set	
-				{
-					connInfo = value;
-				}
-			}
-
 			public string Content
 			{
 				get
@@ -179,6 +155,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					content = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public int? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 		}
