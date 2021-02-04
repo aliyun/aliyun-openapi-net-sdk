@@ -30,7 +30,7 @@ namespace Aliyun.Acs.safconsole.Model.V20210112
     public class RevokeFeedbackRequest : RpcAcsRequest<RevokeFeedbackResponse>
     {
         public RevokeFeedbackRequest()
-            : base("safconsole", "2021-01-12", "RevokeFeedback", "safconsole", "openAPI")
+            : base("safconsole", "2021-01-12", "RevokeFeedback", "saf", "openAPI")
         {
 			Method = MethodType.POST;
         }

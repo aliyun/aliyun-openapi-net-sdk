@@ -30,7 +30,7 @@ namespace Aliyun.Acs.safconsole.Model.V20210112
     public class SendFeedbackRequest : RpcAcsRequest<SendFeedbackResponse>
     {
         public SendFeedbackRequest()
-            : base("safconsole", "2021-01-12", "SendFeedback", "safconsole", "openAPI")
+            : base("safconsole", "2021-01-12", "SendFeedback", "saf", "openAPI")
         {
 			Method = MethodType.POST;
         }
