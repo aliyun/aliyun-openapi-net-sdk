@@ -27,46 +27,30 @@ using Aliyun.Acs.imagerecog.Transform.V20190930;
 
 namespace Aliyun.Acs.imagerecog.Model.V20190930
 {
-    public class TaggingImageRequest : RpcAcsRequest<TaggingImageResponse>
+    public class GetAsyncJobResultRequest : RpcAcsRequest<GetAsyncJobResultResponse>
     {
-        public TaggingImageRequest()
-            : base("imagerecog", "2019-09-30", "TaggingImage", "imagerecog", "openAPI")
+        public GetAsyncJobResultRequest()
+            : base("imagerecog", "2019-09-30", "GetAsyncJobResult", "imagerecog", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.imagerecog.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.imagerecog.Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
-		private bool? async;
+		private string jobId;
 
-		private string imageURL;
-
-		public bool? Async
+		public string JobId
 		{
 			get
 			{
-				return async;
+				return jobId;
 			}
 			set	
 			{
-				async = value;
-				DictionaryUtil.Add(BodyParameters, "Async", value.ToString());
-			}
-		}
-
-		public string ImageURL
-		{
-			get
-			{
-				return imageURL;
-			}
-			set	
-			{
-				imageURL = value;
-				DictionaryUtil.Add(BodyParameters, "ImageURL", value);
+				jobId = value;
+				DictionaryUtil.Add(QueryParameters, "JobId", value);
 			}
 		}
 
@@ -75,9 +59,9 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 			return false;
 		}
 
-        public override TaggingImageResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetAsyncJobResultResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TaggingImageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetAsyncJobResultResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
