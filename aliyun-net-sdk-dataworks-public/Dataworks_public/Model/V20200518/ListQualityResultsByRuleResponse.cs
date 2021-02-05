@@ -748,7 +748,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				public class ListQualityResultsByRule_ReferenceValueItem
 				{
 
-					private long? bizDate;
+					private string bizDate;
 
 					private string discreteProperty;
 
@@ -758,7 +758,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 					private int? singleCheckResult;
 
-					public long? BizDate
+					public string BizDate
 					{
 						get
 						{
@@ -822,13 +822,13 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				public class ListQualityResultsByRule_SampleValueItem
 				{
 
-					private long? bizDate;
+					private string bizDate;
 
 					private string discreteProperty;
 
 					private float? _value;
 
-					public long? BizDate
+					public string BizDate
 					{
 						get
 						{
