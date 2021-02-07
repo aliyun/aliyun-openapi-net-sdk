@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QueryClientIdsResponse : AcsResponse
+	public class BatchUnbindProjectProductsResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private QueryClientIds_Data data;
+		private string data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public QueryClientIds_Data Data
+		public string Data
 		{
 			get
 			{
@@ -92,70 +92,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				data = value;
-			}
-		}
-
-		public class QueryClientIds_Data
-		{
-
-			private string iotId;
-
-			private List<QueryClientIds_DynamicRegClientId> dynamicRegClientIds;
-
-			public string IotId
-			{
-				get
-				{
-					return iotId;
-				}
-				set	
-				{
-					iotId = value;
-				}
-			}
-
-			public List<QueryClientIds_DynamicRegClientId> DynamicRegClientIds
-			{
-				get
-				{
-					return dynamicRegClientIds;
-				}
-				set	
-				{
-					dynamicRegClientIds = value;
-				}
-			}
-
-			public class QueryClientIds_DynamicRegClientId
-			{
-
-				private string clientId;
-
-				private long? createTime;
-
-				public string ClientId
-				{
-					get
-					{
-						return clientId;
-					}
-					set	
-					{
-						clientId = value;
-					}
-				}
-
-				public long? CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
-					}
-				}
 			}
 		}
 	}

@@ -24,19 +24,20 @@ using Aliyun.Acs.Iot.Model.V20180120;
 
 namespace Aliyun.Acs.Iot.Transform.V20180120
 {
-    public class TransformClientIdResponseUnmarshaller
+    public class BatchUnbindProjectProductsResponseUnmarshaller
     {
-        public static TransformClientIdResponse Unmarshall(UnmarshallerContext _ctx)
+        public static BatchUnbindProjectProductsResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			TransformClientIdResponse transformClientIdResponse = new TransformClientIdResponse();
+			BatchUnbindProjectProductsResponse batchUnbindProjectProductsResponse = new BatchUnbindProjectProductsResponse();
 
-			transformClientIdResponse.HttpResponse = _ctx.HttpResponse;
-			transformClientIdResponse.RequestId = _ctx.StringValue("TransformClientId.RequestId");
-			transformClientIdResponse.Success = _ctx.BooleanValue("TransformClientId.Success");
-			transformClientIdResponse.Code = _ctx.StringValue("TransformClientId.Code");
-			transformClientIdResponse.ErrorMessage = _ctx.StringValue("TransformClientId.ErrorMessage");
+			batchUnbindProjectProductsResponse.HttpResponse = _ctx.HttpResponse;
+			batchUnbindProjectProductsResponse.RequestId = _ctx.StringValue("BatchUnbindProjectProducts.RequestId");
+			batchUnbindProjectProductsResponse.Success = _ctx.BooleanValue("BatchUnbindProjectProducts.Success");
+			batchUnbindProjectProductsResponse.Code = _ctx.StringValue("BatchUnbindProjectProducts.Code");
+			batchUnbindProjectProductsResponse.ErrorMessage = _ctx.StringValue("BatchUnbindProjectProducts.ErrorMessage");
+			batchUnbindProjectProductsResponse.Data = _ctx.StringValue("BatchUnbindProjectProducts.Data");
         
-			return transformClientIdResponse;
+			return batchUnbindProjectProductsResponse;
         }
     }
 }

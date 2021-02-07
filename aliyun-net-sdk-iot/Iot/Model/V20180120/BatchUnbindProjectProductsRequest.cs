@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QueryClientIdsRequest : RpcAcsRequest<QueryClientIdsResponse>
+    public class BatchUnbindProjectProductsRequest : RpcAcsRequest<BatchUnbindProjectProductsResponse>
     {
-        public QueryClientIdsRequest()
-            : base("Iot", "2018-01-20", "QueryClientIds", "iot", "openAPI")
+        public BatchUnbindProjectProductsRequest()
+            : base("Iot", "2018-01-20", "BatchUnbindProjectProducts", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,20 +40,26 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string iotId;
+		private List<string> productKeyss = new List<string>(){ };
 
 		private string iotInstanceId;
 
-		public string IotId
+		private string projectId;
+
+		public List<string> ProductKeyss
 		{
 			get
 			{
-				return iotId;
+				return productKeyss;
 			}
-			set	
+
+			set
 			{
-				iotId = value;
-				DictionaryUtil.Add(QueryParameters, "IotId", value);
+				productKeyss = value;
+				for (int i = 0; i < productKeyss.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"ProductKeys." + (i + 1) , productKeyss[i]);
+				}
 			}
 		}
 
@@ -66,18 +72,26 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string ProjectId
 		{
-			return false;
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectId", value);
+			}
 		}
 
-        public override QueryClientIdsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override BatchUnbindProjectProductsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryClientIdsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchUnbindProjectProductsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

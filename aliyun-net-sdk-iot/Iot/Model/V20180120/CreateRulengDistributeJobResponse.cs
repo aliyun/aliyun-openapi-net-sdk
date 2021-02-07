@@ -16,27 +16,69 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Iot.Model.V20180120;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Iot.Transform.V20180120
+namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class DeleteClientIdsResponseUnmarshaller
-    {
-        public static DeleteClientIdsResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			DeleteClientIdsResponse deleteClientIdsResponse = new DeleteClientIdsResponse();
+	public class CreateRulengDistributeJobResponse : AcsResponse
+	{
 
-			deleteClientIdsResponse.HttpResponse = _ctx.HttpResponse;
-			deleteClientIdsResponse.RequestId = _ctx.StringValue("DeleteClientIds.RequestId");
-			deleteClientIdsResponse.Success = _ctx.BooleanValue("DeleteClientIds.Success");
-			deleteClientIdsResponse.Code = _ctx.StringValue("DeleteClientIds.Code");
-			deleteClientIdsResponse.ErrorMessage = _ctx.StringValue("DeleteClientIds.ErrorMessage");
-        
-			return deleteClientIdsResponse;
-        }
-    }
+		private string requestId;
+
+		private bool? success;
+
+		private string code;
+
+		private string errorMessage;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+	}
 }

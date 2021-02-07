@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class TransformClientIdRequest : RpcAcsRequest<TransformClientIdResponse>
+    public class BatchBindDevicesIntoProjectRequest : RpcAcsRequest<BatchBindDevicesIntoProjectResponse>
     {
-        public TransformClientIdRequest()
-            : base("Iot", "2018-01-20", "TransformClientId", "iot", "openAPI")
+        public BatchBindDevicesIntoProjectRequest()
+            : base("Iot", "2018-01-20", "BatchBindDevicesIntoProject", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,37 +40,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string clientId;
-
-		private string iotId;
-
 		private string iotInstanceId;
 
-		public string ClientId
-		{
-			get
-			{
-				return clientId;
-			}
-			set	
-			{
-				clientId = value;
-				DictionaryUtil.Add(QueryParameters, "ClientId", value);
-			}
-		}
+		private string projectId;
 
-		public string IotId
-		{
-			get
-			{
-				return iotId;
-			}
-			set	
-			{
-				iotId = value;
-				DictionaryUtil.Add(QueryParameters, "IotId", value);
-			}
-		}
+		private List<Devices> devicess = new List<Devices>(){ };
 
 		public string IotInstanceId
 		{
@@ -81,13 +55,76 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
 			}
 		}
 
-        public override TransformClientIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectId", value);
+			}
+		}
+
+		public List<Devices> Devicess
+		{
+			get
+			{
+				return devicess;
+			}
+
+			set
+			{
+				devicess = value;
+				for (int i = 0; i < devicess.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"Devices." + (i + 1) + ".DeviceName", devicess[i].DeviceName);
+					DictionaryUtil.Add(BodyParameters,"Devices." + (i + 1) + ".ProductKey", devicess[i].ProductKey);
+				}
+			}
+		}
+
+		public class Devices
+		{
+
+			private string deviceName;
+
+			private string productKey;
+
+			public string DeviceName
+			{
+				get
+				{
+					return deviceName;
+				}
+				set	
+				{
+					deviceName = value;
+				}
+			}
+
+			public string ProductKey
+			{
+				get
+				{
+					return productKey;
+				}
+				set	
+				{
+					productKey = value;
+				}
+			}
+		}
+
+        public override BatchBindDevicesIntoProjectResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TransformClientIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchBindDevicesIntoProjectResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

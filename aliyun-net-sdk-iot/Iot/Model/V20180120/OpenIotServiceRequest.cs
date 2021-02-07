@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class SpeechByCombinationRequest : RpcAcsRequest<SpeechByCombinationResponse>
+    public class OpenIotServiceRequest : RpcAcsRequest<OpenIotServiceResponse>
     {
-        public SpeechByCombinationRequest()
-            : base("Iot", "2018-01-20", "SpeechByCombination", "iot", "openAPI")
+        public OpenIotServiceRequest()
+            : base("Iot", "2018-01-20", "OpenIotService", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,88 +40,29 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string iotId;
+		private long? ownerId;
 
-		private List<string> combinationLists = new List<string>(){ };
-
-		private string iotInstanceId;
-
-		private string productKey;
-
-		private string deviceName;
-
-		public string IotId
+		public long? OwnerId
 		{
 			get
 			{
-				return iotId;
+				return ownerId;
 			}
 			set	
 			{
-				iotId = value;
-				DictionaryUtil.Add(BodyParameters, "IotId", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		public List<string> CombinationLists
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return combinationLists;
-			}
-
-			set
-			{
-				combinationLists = value;
-				for (int i = 0; i < combinationLists.Count; i++)
-				{
-					DictionaryUtil.Add(BodyParameters,"CombinationList." + (i + 1) , combinationLists[i]);
-				}
-			}
+			return false;
 		}
 
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
-			}
-		}
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(BodyParameters, "ProductKey", value);
-			}
-		}
-
-		public string DeviceName
-		{
-			get
-			{
-				return deviceName;
-			}
-			set	
-			{
-				deviceName = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceName", value);
-			}
-		}
-
-        public override SpeechByCombinationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override OpenIotServiceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SpeechByCombinationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return OpenIotServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
