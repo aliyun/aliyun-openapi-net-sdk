@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.codeup.Model.V20200414
 {
-	public class ListMergeRequestsResponse : AcsResponse
+	public class AcceptMergeRequestResponse : AcsResponse
 	{
 
 		private string errorCode;
@@ -33,9 +33,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 
 		private bool? success;
 
-		private long? total;
-
-		private List<ListMergeRequests_ResultItem> result;
+		private AcceptMergeRequest_Result result;
 
 		public string ErrorCode
 		{
@@ -85,19 +83,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
-		public long? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
-
-		public List<ListMergeRequests_ResultItem> Result
+		public AcceptMergeRequest_Result Result
 		{
 			get
 			{
@@ -109,7 +95,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
-		public class ListMergeRequests_ResultItem
+		public class AcceptMergeRequest_Result
 		{
 
 			private string acceptedRevision;
@@ -148,13 +134,11 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 
 			private string webUrl;
 
-			private bool? isSupportMerge;
+			private List<AcceptMergeRequest_AssigneeListItem> assigneeList;
 
-			private List<ListMergeRequests_AssigneeListItem> assigneeList;
+			private AcceptMergeRequest_ApproveCheckResult approveCheckResult;
 
-			private ListMergeRequests_ApproveCheckResult approveCheckResult;
-
-			private ListMergeRequests_Author author;
+			private AcceptMergeRequest_Author author;
 
 			public string AcceptedRevision
 			{
@@ -372,19 +356,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 				}
 			}
 
-			public bool? IsSupportMerge
-			{
-				get
-				{
-					return isSupportMerge;
-				}
-				set	
-				{
-					isSupportMerge = value;
-				}
-			}
-
-			public List<ListMergeRequests_AssigneeListItem> AssigneeList
+			public List<AcceptMergeRequest_AssigneeListItem> AssigneeList
 			{
 				get
 				{
@@ -396,7 +368,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 				}
 			}
 
-			public ListMergeRequests_ApproveCheckResult ApproveCheckResult
+			public AcceptMergeRequest_ApproveCheckResult ApproveCheckResult
 			{
 				get
 				{
@@ -408,7 +380,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 				}
 			}
 
-			public ListMergeRequests_Author Author
+			public AcceptMergeRequest_Author Author
 			{
 				get
 				{
@@ -420,7 +392,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 				}
 			}
 
-			public class ListMergeRequests_AssigneeListItem
+			public class AcceptMergeRequest_AssigneeListItem
 			{
 
 				private string avatarUrl;
@@ -430,10 +402,6 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 				private string id;
 
 				private string name;
-
-				private string status;
-
-				private string email;
 
 				public string AvatarUrl
 				{
@@ -482,40 +450,16 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 						name = value;
 					}
 				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public string Email
-				{
-					get
-					{
-						return email;
-					}
-					set	
-					{
-						email = value;
-					}
-				}
 			}
 
-			public class ListMergeRequests_ApproveCheckResult
+			public class AcceptMergeRequest_ApproveCheckResult
 			{
 
 				private string totalCheckResult;
 
-				private List<ListMergeRequests_SatisfiedCheckResultsItem> satisfiedCheckResults;
+				private List<AcceptMergeRequest_SatisfiedCheckResultsItem> satisfiedCheckResults;
 
-				private List<ListMergeRequests_UnsatisfiedCheckResultsItem> unsatisfiedCheckResults;
+				private List<AcceptMergeRequest_UnsatisfiedCheckResultsItem> unsatisfiedCheckResults;
 
 				public string TotalCheckResult
 				{
@@ -529,7 +473,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 					}
 				}
 
-				public List<ListMergeRequests_SatisfiedCheckResultsItem> SatisfiedCheckResults
+				public List<AcceptMergeRequest_SatisfiedCheckResultsItem> SatisfiedCheckResults
 				{
 					get
 					{
@@ -541,7 +485,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 					}
 				}
 
-				public List<ListMergeRequests_UnsatisfiedCheckResultsItem> UnsatisfiedCheckResults
+				public List<AcceptMergeRequest_UnsatisfiedCheckResultsItem> UnsatisfiedCheckResults
 				{
 					get
 					{
@@ -553,7 +497,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 					}
 				}
 
-				public class ListMergeRequests_SatisfiedCheckResultsItem
+				public class AcceptMergeRequest_SatisfiedCheckResultsItem
 				{
 
 					private string checkName;
@@ -562,7 +506,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 
 					private string checkType;
 
-					private List<ListMergeRequests_ExtraUsersItem> extraUsers;
+					private List<AcceptMergeRequest_ExtraUsersItem> extraUsers;
 
 					private List<string> satisfiedItems;
 
@@ -604,7 +548,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 						}
 					}
 
-					public List<ListMergeRequests_ExtraUsersItem> ExtraUsers
+					public List<AcceptMergeRequest_ExtraUsersItem> ExtraUsers
 					{
 						get
 						{
@@ -640,7 +584,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 						}
 					}
 
-					public class ListMergeRequests_ExtraUsersItem
+					public class AcceptMergeRequest_ExtraUsersItem
 					{
 
 						private string avatarUrl;
@@ -701,7 +645,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 					}
 				}
 
-				public class ListMergeRequests_UnsatisfiedCheckResultsItem
+				public class AcceptMergeRequest_UnsatisfiedCheckResultsItem
 				{
 
 					private string checkName;
@@ -710,7 +654,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 
 					private string checkType;
 
-					private List<ListMergeRequests_ExtraUsersItem4> extraUsers3;
+					private List<AcceptMergeRequest_ExtraUsersItem4> extraUsers3;
 
 					private List<string> satisfiedItems1;
 
@@ -752,7 +696,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 						}
 					}
 
-					public List<ListMergeRequests_ExtraUsersItem4> ExtraUsers3
+					public List<AcceptMergeRequest_ExtraUsersItem4> ExtraUsers3
 					{
 						get
 						{
@@ -788,7 +732,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 						}
 					}
 
-					public class ListMergeRequests_ExtraUsersItem4
+					public class AcceptMergeRequest_ExtraUsersItem4
 					{
 
 						private string avatarUrl;
@@ -850,7 +794,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 				}
 			}
 
-			public class ListMergeRequests_Author
+			public class AcceptMergeRequest_Author
 			{
 
 				private string avatarUrl;

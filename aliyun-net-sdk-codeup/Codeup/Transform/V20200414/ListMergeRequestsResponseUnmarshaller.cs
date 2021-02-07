@@ -58,6 +58,7 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 				resultItem.Title = _ctx.StringValue("ListMergeRequests.Result["+ i +"].Title");
 				resultItem.UpdatedAt = _ctx.StringValue("ListMergeRequests.Result["+ i +"].UpdatedAt");
 				resultItem.WebUrl = _ctx.StringValue("ListMergeRequests.Result["+ i +"].WebUrl");
+				resultItem.IsSupportMerge = _ctx.BooleanValue("ListMergeRequests.Result["+ i +"].IsSupportMerge");
 
 				ListMergeRequestsResponse.ListMergeRequests_ResultItem.ListMergeRequests_ApproveCheckResult approveCheckResult = new ListMergeRequestsResponse.ListMergeRequests_ResultItem.ListMergeRequests_ApproveCheckResult();
 				approveCheckResult.TotalCheckResult = _ctx.StringValue("ListMergeRequests.Result["+ i +"].ApproveCheckResult.TotalCheckResult");
@@ -147,6 +148,8 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 					assigneeListItem.ExternUserId = _ctx.StringValue("ListMergeRequests.Result["+ i +"].AssigneeList["+ j +"].ExternUserId");
 					assigneeListItem.Id = _ctx.StringValue("ListMergeRequests.Result["+ i +"].AssigneeList["+ j +"].Id");
 					assigneeListItem.Name = _ctx.StringValue("ListMergeRequests.Result["+ i +"].AssigneeList["+ j +"].Name");
+					assigneeListItem.Status = _ctx.StringValue("ListMergeRequests.Result["+ i +"].AssigneeList["+ j +"].Status");
+					assigneeListItem.Email = _ctx.StringValue("ListMergeRequests.Result["+ i +"].AssigneeList["+ j +"].Email");
 
 					resultItem_assigneeList.Add(assigneeListItem);
 				}

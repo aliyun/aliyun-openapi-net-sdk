@@ -46,6 +46,8 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 				resultItem.State = _ctx.StringValue("ListRepositoryMember.Result["+ i +"].State");
 				resultItem.AvatarUrl = _ctx.StringValue("ListRepositoryMember.Result["+ i +"].AvatarUrl");
 				resultItem.Email = _ctx.StringValue("ListRepositoryMember.Result["+ i +"].Email");
+				resultItem.Name = _ctx.StringValue("ListRepositoryMember.Result["+ i +"].Name");
+				resultItem.Username = _ctx.StringValue("ListRepositoryMember.Result["+ i +"].Username");
 
 				listRepositoryMemberResponse_result.Add(resultItem);
 			}
