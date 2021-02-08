@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			batchBindProductsIntoProjectResponse.Success = _ctx.BooleanValue("BatchBindProductsIntoProject.Success");
 			batchBindProductsIntoProjectResponse.Code = _ctx.StringValue("BatchBindProductsIntoProject.Code");
 			batchBindProductsIntoProjectResponse.ErrorMessage = _ctx.StringValue("BatchBindProductsIntoProject.ErrorMessage");
-			batchBindProductsIntoProjectResponse.Data = _ctx.StringValue("BatchBindProductsIntoProject.Data");
+			batchBindProductsIntoProjectResponse.Data = _ctx.BooleanValue("BatchBindProductsIntoProject.Data");
         
 			return batchBindProductsIntoProjectResponse;
         }
