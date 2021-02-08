@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string frequency;
 
+		private string windowsPasswordName;
+
 		private bool? timed;
 
 		private string resourceOwnerAccount;
@@ -97,6 +99,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				frequency = value;
 				DictionaryUtil.Add(QueryParameters, "Frequency", value);
+			}
+		}
+
+		public string WindowsPasswordName
+		{
+			get
+			{
+				return windowsPasswordName;
+			}
+			set	
+			{
+				windowsPasswordName = value;
+				DictionaryUtil.Add(QueryParameters, "WindowsPasswordName", value);
 			}
 		}
 

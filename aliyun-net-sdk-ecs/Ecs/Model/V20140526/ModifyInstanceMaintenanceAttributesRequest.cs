@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<string> instanceIds = new List<string>(){ };
 
+		private bool? notifyOnMaintenance;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -152,6 +154,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				{
 					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
 				}
+			}
+		}
+
+		public bool? NotifyOnMaintenance
+		{
+			get
+			{
+				return notifyOnMaintenance;
+			}
+			set	
+			{
+				notifyOnMaintenance = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyOnMaintenance", value.ToString());
 			}
 		}
 

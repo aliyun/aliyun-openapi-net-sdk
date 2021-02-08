@@ -57,6 +57,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string contentEncoding;
 
+		private string windowsPasswordName;
+
 		private bool? keepCommand;
 
 		private bool? timed;
@@ -178,6 +180,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				contentEncoding = value;
 				DictionaryUtil.Add(QueryParameters, "ContentEncoding", value);
+			}
+		}
+
+		public string WindowsPasswordName
+		{
+			get
+			{
+				return windowsPasswordName;
+			}
+			set	
+			{
+				windowsPasswordName = value;
+				DictionaryUtil.Add(QueryParameters, "WindowsPasswordName", value);
 			}
 		}
 

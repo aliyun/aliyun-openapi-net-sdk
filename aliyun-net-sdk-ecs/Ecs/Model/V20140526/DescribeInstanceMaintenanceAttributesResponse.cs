@@ -100,6 +100,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string instanceId;
 
+			private bool? notifyOnMaintenance;
+
 			private List<DescribeInstanceMaintenanceAttributes_MaintenanceWindow> maintenanceWindows;
 
 			private DescribeInstanceMaintenanceAttributes_ActionOnMaintenance actionOnMaintenance;
@@ -113,6 +115,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					instanceId = value;
+				}
+			}
+
+			public bool? NotifyOnMaintenance
+			{
+				get
+				{
+					return notifyOnMaintenance;
+				}
+				set	
+				{
+					notifyOnMaintenance = value;
 				}
 			}
 

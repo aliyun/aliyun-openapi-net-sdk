@@ -52,6 +52,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					snapshot.SourceDiskId = _ctx.StringValue("DescribeSnapshotGroups.SnapshotGroups["+ i +"].Snapshots["+ j +"].SourceDiskId");
 					snapshot.SourceDiskType = _ctx.StringValue("DescribeSnapshotGroups.SnapshotGroups["+ i +"].Snapshots["+ j +"].SourceDiskType");
 					snapshot.InstantAccess = _ctx.BooleanValue("DescribeSnapshotGroups.SnapshotGroups["+ i +"].Snapshots["+ j +"].InstantAccess");
+					snapshot.InstantAccessRetentionDays = _ctx.IntegerValue("DescribeSnapshotGroups.SnapshotGroups["+ i +"].Snapshots["+ j +"].InstantAccessRetentionDays");
 
 					snapshotGroup_snapshots.Add(snapshot);
 				}

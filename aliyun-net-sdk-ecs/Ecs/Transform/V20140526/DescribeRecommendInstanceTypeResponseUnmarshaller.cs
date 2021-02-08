@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				recommendInstanceType.InstanceChargeType = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceChargeType");
 				recommendInstanceType.SpotStrategy = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].SpotStrategy");
 				recommendInstanceType.Priority = _ctx.IntegerValue("DescribeRecommendInstanceType.Data["+ i +"].Priority");
+				recommendInstanceType.ZoneId = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].ZoneId");
+				recommendInstanceType.NetworkType = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].NetworkType");
 
 				DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_InstanceType instanceType = new DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_InstanceType();
 				instanceType.Generation = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceType.Generation");

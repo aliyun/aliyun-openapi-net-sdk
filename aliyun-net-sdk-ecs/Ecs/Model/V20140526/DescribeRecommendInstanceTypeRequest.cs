@@ -62,6 +62,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceOwnerAccount;
 
+		private string zoneMatchMode;
+
 		private string ownerAccount;
 
 		private List<string> instanceTypeFamilys = new List<string>(){ };
@@ -216,6 +218,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string ZoneMatchMode
+		{
+			get
+			{
+				return zoneMatchMode;
+			}
+			set	
+			{
+				zoneMatchMode = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneMatchMode", value);
 			}
 		}
 

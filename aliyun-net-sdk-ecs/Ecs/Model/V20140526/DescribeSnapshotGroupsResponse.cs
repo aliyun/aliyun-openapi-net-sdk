@@ -181,6 +181,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private bool? instantAccess;
 
+				private int? instantAccessRetentionDays;
+
 				public string SnapshotId
 				{
 					get
@@ -238,6 +240,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						instantAccess = value;
+					}
+				}
+
+				public int? InstantAccessRetentionDays
+				{
+					get
+					{
+						return instantAccessRetentionDays;
+					}
+					set	
+					{
+						instantAccessRetentionDays = value;
 					}
 				}
 			}

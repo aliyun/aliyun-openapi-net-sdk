@@ -68,6 +68,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? priority;
 
+			private string zoneId;
+
+			private string networkType;
+
 			private List<DescribeRecommendInstanceType_Zone> zones;
 
 			private DescribeRecommendInstanceType_InstanceType instanceType;
@@ -141,6 +145,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					priority = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string NetworkType
+			{
+				get
+				{
+					return networkType;
+				}
+				set	
+				{
+					networkType = value;
 				}
 			}
 

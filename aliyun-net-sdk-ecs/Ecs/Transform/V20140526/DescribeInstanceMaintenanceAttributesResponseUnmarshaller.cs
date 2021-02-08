@@ -40,6 +40,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			for (int i = 0; i < _ctx.Length("DescribeInstanceMaintenanceAttributes.MaintenanceAttributes.Length"); i++) {
 				DescribeInstanceMaintenanceAttributesResponse.DescribeInstanceMaintenanceAttributes_MaintenanceAttribute maintenanceAttribute = new DescribeInstanceMaintenanceAttributesResponse.DescribeInstanceMaintenanceAttributes_MaintenanceAttribute();
 				maintenanceAttribute.InstanceId = _ctx.StringValue("DescribeInstanceMaintenanceAttributes.MaintenanceAttributes["+ i +"].InstanceId");
+				maintenanceAttribute.NotifyOnMaintenance = _ctx.BooleanValue("DescribeInstanceMaintenanceAttributes.MaintenanceAttributes["+ i +"].NotifyOnMaintenance");
 
 				DescribeInstanceMaintenanceAttributesResponse.DescribeInstanceMaintenanceAttributes_MaintenanceAttribute.DescribeInstanceMaintenanceAttributes_ActionOnMaintenance actionOnMaintenance = new DescribeInstanceMaintenanceAttributesResponse.DescribeInstanceMaintenanceAttributes_MaintenanceAttribute.DescribeInstanceMaintenanceAttributes_ActionOnMaintenance();
 				actionOnMaintenance._Value = _ctx.StringValue("DescribeInstanceMaintenanceAttributes.MaintenanceAttributes["+ i +"].ActionOnMaintenance.Value");
