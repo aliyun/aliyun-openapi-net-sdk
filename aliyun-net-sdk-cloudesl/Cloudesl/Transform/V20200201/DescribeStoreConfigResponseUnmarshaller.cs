@@ -26,25 +26,25 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class DescribeStoreConfigResponseUnmarshaller
     {
-        public static DescribeStoreConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeStoreConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeStoreConfigResponse describeStoreConfigResponse = new DescribeStoreConfigResponse();
 
-			describeStoreConfigResponse.HttpResponse = context.HttpResponse;
-			describeStoreConfigResponse.ErrorMessage = context.StringValue("DescribeStoreConfig.ErrorMessage");
-			describeStoreConfigResponse.ErrorCode = context.StringValue("DescribeStoreConfig.ErrorCode");
-			describeStoreConfigResponse.Message = context.StringValue("DescribeStoreConfig.Message");
-			describeStoreConfigResponse.DynamicCode = context.StringValue("DescribeStoreConfig.DynamicCode");
-			describeStoreConfigResponse.Code = context.StringValue("DescribeStoreConfig.Code");
-			describeStoreConfigResponse.DynamicMessage = context.StringValue("DescribeStoreConfig.DynamicMessage");
-			describeStoreConfigResponse.RequestId = context.StringValue("DescribeStoreConfig.RequestId");
-			describeStoreConfigResponse.Success = context.BooleanValue("DescribeStoreConfig.Success");
+			describeStoreConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeStoreConfigResponse.ErrorMessage = _ctx.StringValue("DescribeStoreConfig.ErrorMessage");
+			describeStoreConfigResponse.ErrorCode = _ctx.StringValue("DescribeStoreConfig.ErrorCode");
+			describeStoreConfigResponse.Message = _ctx.StringValue("DescribeStoreConfig.Message");
+			describeStoreConfigResponse.DynamicCode = _ctx.StringValue("DescribeStoreConfig.DynamicCode");
+			describeStoreConfigResponse.Code = _ctx.StringValue("DescribeStoreConfig.Code");
+			describeStoreConfigResponse.DynamicMessage = _ctx.StringValue("DescribeStoreConfig.DynamicMessage");
+			describeStoreConfigResponse.RequestId = _ctx.StringValue("DescribeStoreConfig.RequestId");
+			describeStoreConfigResponse.Success = _ctx.BooleanValue("DescribeStoreConfig.Success");
 
 			DescribeStoreConfigResponse.DescribeStoreConfig_StoreConfigInfo storeConfigInfo = new DescribeStoreConfigResponse.DescribeStoreConfig_StoreConfigInfo();
-			storeConfigInfo.EnableNotification = context.BooleanValue("DescribeStoreConfig.StoreConfigInfo.EnableNotification");
-			storeConfigInfo.NotificationWebHook = context.StringValue("DescribeStoreConfig.StoreConfigInfo.NotificationWebHook");
-			storeConfigInfo.NotificationSilentTimes = context.StringValue("DescribeStoreConfig.StoreConfigInfo.NotificationSilentTimes");
-			storeConfigInfo.StoreId = context.StringValue("DescribeStoreConfig.StoreConfigInfo.StoreId");
+			storeConfigInfo.EnableNotification = _ctx.BooleanValue("DescribeStoreConfig.StoreConfigInfo.EnableNotification");
+			storeConfigInfo.NotificationWebHook = _ctx.StringValue("DescribeStoreConfig.StoreConfigInfo.NotificationWebHook");
+			storeConfigInfo.NotificationSilentTimes = _ctx.StringValue("DescribeStoreConfig.StoreConfigInfo.NotificationSilentTimes");
+			storeConfigInfo.StoreId = _ctx.StringValue("DescribeStoreConfig.StoreConfigInfo.StoreId");
 			describeStoreConfigResponse.StoreConfigInfo = storeConfigInfo;
         
 			return describeStoreConfigResponse;

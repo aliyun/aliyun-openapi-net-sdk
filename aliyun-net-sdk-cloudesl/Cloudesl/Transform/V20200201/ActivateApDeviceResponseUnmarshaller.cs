@@ -26,19 +26,19 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class ActivateApDeviceResponseUnmarshaller
     {
-        public static ActivateApDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static ActivateApDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ActivateApDeviceResponse activateApDeviceResponse = new ActivateApDeviceResponse();
 
-			activateApDeviceResponse.HttpResponse = context.HttpResponse;
-			activateApDeviceResponse.ErrorMessage = context.StringValue("ActivateApDevice.ErrorMessage");
-			activateApDeviceResponse.ErrorCode = context.StringValue("ActivateApDevice.ErrorCode");
-			activateApDeviceResponse.Message = context.StringValue("ActivateApDevice.Message");
-			activateApDeviceResponse.DynamicCode = context.StringValue("ActivateApDevice.DynamicCode");
-			activateApDeviceResponse.Code = context.StringValue("ActivateApDevice.Code");
-			activateApDeviceResponse.DynamicMessage = context.StringValue("ActivateApDevice.DynamicMessage");
-			activateApDeviceResponse.RequestId = context.StringValue("ActivateApDevice.RequestId");
-			activateApDeviceResponse.Success = context.BooleanValue("ActivateApDevice.Success");
+			activateApDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			activateApDeviceResponse.ErrorMessage = _ctx.StringValue("ActivateApDevice.ErrorMessage");
+			activateApDeviceResponse.ErrorCode = _ctx.StringValue("ActivateApDevice.ErrorCode");
+			activateApDeviceResponse.Message = _ctx.StringValue("ActivateApDevice.Message");
+			activateApDeviceResponse.DynamicCode = _ctx.StringValue("ActivateApDevice.DynamicCode");
+			activateApDeviceResponse.Code = _ctx.StringValue("ActivateApDevice.Code");
+			activateApDeviceResponse.DynamicMessage = _ctx.StringValue("ActivateApDevice.DynamicMessage");
+			activateApDeviceResponse.RequestId = _ctx.StringValue("ActivateApDevice.RequestId");
+			activateApDeviceResponse.Success = _ctx.BooleanValue("ActivateApDevice.Success");
         
 			return activateApDeviceResponse;
         }

@@ -26,44 +26,44 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class DescribeUserLogResponseUnmarshaller
     {
-        public static DescribeUserLogResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUserLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUserLogResponse describeUserLogResponse = new DescribeUserLogResponse();
 
-			describeUserLogResponse.HttpResponse = context.HttpResponse;
-			describeUserLogResponse.ErrorMessage = context.StringValue("DescribeUserLog.ErrorMessage");
-			describeUserLogResponse.ErrorCode = context.StringValue("DescribeUserLog.ErrorCode");
-			describeUserLogResponse.PageNumber = context.IntegerValue("DescribeUserLog.PageNumber");
-			describeUserLogResponse.Message = context.StringValue("DescribeUserLog.Message");
-			describeUserLogResponse.DynamicCode = context.StringValue("DescribeUserLog.DynamicCode");
-			describeUserLogResponse.Code = context.StringValue("DescribeUserLog.Code");
-			describeUserLogResponse.PageSize = context.IntegerValue("DescribeUserLog.PageSize");
-			describeUserLogResponse.DynamicMessage = context.StringValue("DescribeUserLog.DynamicMessage");
-			describeUserLogResponse.RequestId = context.StringValue("DescribeUserLog.RequestId");
-			describeUserLogResponse.Success = context.BooleanValue("DescribeUserLog.Success");
-			describeUserLogResponse.TotalCount = context.IntegerValue("DescribeUserLog.TotalCount");
+			describeUserLogResponse.HttpResponse = _ctx.HttpResponse;
+			describeUserLogResponse.ErrorMessage = _ctx.StringValue("DescribeUserLog.ErrorMessage");
+			describeUserLogResponse.ErrorCode = _ctx.StringValue("DescribeUserLog.ErrorCode");
+			describeUserLogResponse.PageNumber = _ctx.IntegerValue("DescribeUserLog.PageNumber");
+			describeUserLogResponse.Message = _ctx.StringValue("DescribeUserLog.Message");
+			describeUserLogResponse.DynamicCode = _ctx.StringValue("DescribeUserLog.DynamicCode");
+			describeUserLogResponse.Code = _ctx.StringValue("DescribeUserLog.Code");
+			describeUserLogResponse.PageSize = _ctx.IntegerValue("DescribeUserLog.PageSize");
+			describeUserLogResponse.DynamicMessage = _ctx.StringValue("DescribeUserLog.DynamicMessage");
+			describeUserLogResponse.RequestId = _ctx.StringValue("DescribeUserLog.RequestId");
+			describeUserLogResponse.Success = _ctx.BooleanValue("DescribeUserLog.Success");
+			describeUserLogResponse.TotalCount = _ctx.IntegerValue("DescribeUserLog.TotalCount");
 
 			List<DescribeUserLogResponse.DescribeUserLog_UserLogInfo> describeUserLogResponse_userLogs = new List<DescribeUserLogResponse.DescribeUserLog_UserLogInfo>();
-			for (int i = 0; i < context.Length("DescribeUserLog.UserLogs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeUserLog.UserLogs.Length"); i++) {
 				DescribeUserLogResponse.DescribeUserLog_UserLogInfo userLogInfo = new DescribeUserLogResponse.DescribeUserLog_UserLogInfo();
-				userLogInfo.ResultCode = context.StringValue("DescribeUserLog.UserLogs["+ i +"].ResultCode");
-				userLogInfo.OperationSendTime = context.StringValue("DescribeUserLog.UserLogs["+ i +"].OperationSendTime");
-				userLogInfo.GmtCreate = context.StringValue("DescribeUserLog.UserLogs["+ i +"].GmtCreate");
-				userLogInfo.StoreId = context.StringValue("DescribeUserLog.UserLogs["+ i +"].StoreId");
-				userLogInfo.GmtModified = context.StringValue("DescribeUserLog.UserLogs["+ i +"].GmtModified");
-				userLogInfo.ActionPrice = context.StringValue("DescribeUserLog.UserLogs["+ i +"].ActionPrice");
-				userLogInfo.OperationStatus = context.StringValue("DescribeUserLog.UserLogs["+ i +"].OperationStatus");
-				userLogInfo.PriceUnit = context.StringValue("DescribeUserLog.UserLogs["+ i +"].PriceUnit");
-				userLogInfo.LogId = context.StringValue("DescribeUserLog.UserLogs["+ i +"].LogId");
-				userLogInfo.ItemShortTitle = context.StringValue("DescribeUserLog.UserLogs["+ i +"].ItemShortTitle");
-				userLogInfo.OperationType = context.StringValue("DescribeUserLog.UserLogs["+ i +"].OperationType");
-				userLogInfo.OperationResponseTime = context.StringValue("DescribeUserLog.UserLogs["+ i +"].OperationResponseTime");
-				userLogInfo.SpendTime = context.StringValue("DescribeUserLog.UserLogs["+ i +"].SpendTime");
-				userLogInfo.EslBarCode = context.StringValue("DescribeUserLog.UserLogs["+ i +"].EslBarCode");
-				userLogInfo.ItemId = context.StringValue("DescribeUserLog.UserLogs["+ i +"].ItemId");
-				userLogInfo.ItemBarCode = context.StringValue("DescribeUserLog.UserLogs["+ i +"].ItemBarCode");
-				userLogInfo.BePromotion = context.BooleanValue("DescribeUserLog.UserLogs["+ i +"].BePromotion");
-				userLogInfo.UserId = context.StringValue("DescribeUserLog.UserLogs["+ i +"].UserId");
+				userLogInfo.ResultCode = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].ResultCode");
+				userLogInfo.OperationSendTime = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].OperationSendTime");
+				userLogInfo.GmtCreate = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].GmtCreate");
+				userLogInfo.StoreId = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].StoreId");
+				userLogInfo.GmtModified = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].GmtModified");
+				userLogInfo.ActionPrice = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].ActionPrice");
+				userLogInfo.OperationStatus = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].OperationStatus");
+				userLogInfo.PriceUnit = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].PriceUnit");
+				userLogInfo.LogId = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].LogId");
+				userLogInfo.ItemShortTitle = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].ItemShortTitle");
+				userLogInfo.OperationType = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].OperationType");
+				userLogInfo.OperationResponseTime = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].OperationResponseTime");
+				userLogInfo.SpendTime = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].SpendTime");
+				userLogInfo.EslBarCode = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].EslBarCode");
+				userLogInfo.ItemId = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].ItemId");
+				userLogInfo.ItemBarCode = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].ItemBarCode");
+				userLogInfo.BePromotion = _ctx.BooleanValue("DescribeUserLog.UserLogs["+ i +"].BePromotion");
+				userLogInfo.UserId = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].UserId");
 
 				describeUserLogResponse_userLogs.Add(userLogInfo);
 			}

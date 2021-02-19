@@ -26,32 +26,32 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class DescribeApDevicesResponseUnmarshaller
     {
-        public static DescribeApDevicesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeApDevicesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeApDevicesResponse describeApDevicesResponse = new DescribeApDevicesResponse();
 
-			describeApDevicesResponse.HttpResponse = context.HttpResponse;
-			describeApDevicesResponse.ErrorMessage = context.StringValue("DescribeApDevices.ErrorMessage");
-			describeApDevicesResponse.ErrorCode = context.StringValue("DescribeApDevices.ErrorCode");
-			describeApDevicesResponse.TotalCount = context.IntegerValue("DescribeApDevices.TotalCount");
-			describeApDevicesResponse.Message = context.StringValue("DescribeApDevices.Message");
-			describeApDevicesResponse.PageSize = context.IntegerValue("DescribeApDevices.PageSize");
-			describeApDevicesResponse.DynamicCode = context.StringValue("DescribeApDevices.DynamicCode");
-			describeApDevicesResponse.Code = context.StringValue("DescribeApDevices.Code");
-			describeApDevicesResponse.DynamicMessage = context.StringValue("DescribeApDevices.DynamicMessage");
-			describeApDevicesResponse.RequestId = context.StringValue("DescribeApDevices.RequestId");
-			describeApDevicesResponse.Success = context.BooleanValue("DescribeApDevices.Success");
-			describeApDevicesResponse.PageNumber = context.IntegerValue("DescribeApDevices.PageNumber");
+			describeApDevicesResponse.HttpResponse = _ctx.HttpResponse;
+			describeApDevicesResponse.ErrorMessage = _ctx.StringValue("DescribeApDevices.ErrorMessage");
+			describeApDevicesResponse.ErrorCode = _ctx.StringValue("DescribeApDevices.ErrorCode");
+			describeApDevicesResponse.TotalCount = _ctx.IntegerValue("DescribeApDevices.TotalCount");
+			describeApDevicesResponse.Message = _ctx.StringValue("DescribeApDevices.Message");
+			describeApDevicesResponse.PageSize = _ctx.IntegerValue("DescribeApDevices.PageSize");
+			describeApDevicesResponse.DynamicCode = _ctx.StringValue("DescribeApDevices.DynamicCode");
+			describeApDevicesResponse.Code = _ctx.StringValue("DescribeApDevices.Code");
+			describeApDevicesResponse.DynamicMessage = _ctx.StringValue("DescribeApDevices.DynamicMessage");
+			describeApDevicesResponse.RequestId = _ctx.StringValue("DescribeApDevices.RequestId");
+			describeApDevicesResponse.Success = _ctx.BooleanValue("DescribeApDevices.Success");
+			describeApDevicesResponse.PageNumber = _ctx.IntegerValue("DescribeApDevices.PageNumber");
 
 			List<DescribeApDevicesResponse.DescribeApDevices_ApInfo> describeApDevicesResponse_apDevices = new List<DescribeApDevicesResponse.DescribeApDevices_ApInfo>();
-			for (int i = 0; i < context.Length("DescribeApDevices.ApDevices.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeApDevices.ApDevices.Length"); i++) {
 				DescribeApDevicesResponse.DescribeApDevices_ApInfo apInfo = new DescribeApDevicesResponse.DescribeApDevices_ApInfo();
-				apInfo.Mac = context.StringValue("DescribeApDevices.ApDevices["+ i +"].Mac");
-				apInfo.Status = context.BooleanValue("DescribeApDevices.ApDevices["+ i +"].Status");
-				apInfo.Model = context.StringValue("DescribeApDevices.ApDevices["+ i +"].Model");
-				apInfo.Remark = context.StringValue("DescribeApDevices.ApDevices["+ i +"].Remark");
-				apInfo.StoreId = context.StringValue("DescribeApDevices.ApDevices["+ i +"].StoreId");
-				apInfo.BeActivate = context.BooleanValue("DescribeApDevices.ApDevices["+ i +"].BeActivate");
+				apInfo.Mac = _ctx.StringValue("DescribeApDevices.ApDevices["+ i +"].Mac");
+				apInfo.Status = _ctx.BooleanValue("DescribeApDevices.ApDevices["+ i +"].Status");
+				apInfo.Model = _ctx.StringValue("DescribeApDevices.ApDevices["+ i +"].Model");
+				apInfo.Remark = _ctx.StringValue("DescribeApDevices.ApDevices["+ i +"].Remark");
+				apInfo.StoreId = _ctx.StringValue("DescribeApDevices.ApDevices["+ i +"].StoreId");
+				apInfo.BeActivate = _ctx.BooleanValue("DescribeApDevices.ApDevices["+ i +"].BeActivate");
 
 				describeApDevicesResponse_apDevices.Add(apInfo);
 			}

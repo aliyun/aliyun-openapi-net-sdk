@@ -26,19 +26,19 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class UnassignUserResponseUnmarshaller
     {
-        public static UnassignUserResponse Unmarshall(UnmarshallerContext context)
+        public static UnassignUserResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UnassignUserResponse unassignUserResponse = new UnassignUserResponse();
 
-			unassignUserResponse.HttpResponse = context.HttpResponse;
-			unassignUserResponse.ErrorMessage = context.StringValue("UnassignUser.ErrorMessage");
-			unassignUserResponse.ErrorCode = context.StringValue("UnassignUser.ErrorCode");
-			unassignUserResponse.Message = context.StringValue("UnassignUser.Message");
-			unassignUserResponse.DynamicCode = context.StringValue("UnassignUser.DynamicCode");
-			unassignUserResponse.Code = context.StringValue("UnassignUser.Code");
-			unassignUserResponse.DynamicMessage = context.StringValue("UnassignUser.DynamicMessage");
-			unassignUserResponse.RequestId = context.StringValue("UnassignUser.RequestId");
-			unassignUserResponse.Success = context.BooleanValue("UnassignUser.Success");
+			unassignUserResponse.HttpResponse = _ctx.HttpResponse;
+			unassignUserResponse.ErrorMessage = _ctx.StringValue("UnassignUser.ErrorMessage");
+			unassignUserResponse.ErrorCode = _ctx.StringValue("UnassignUser.ErrorCode");
+			unassignUserResponse.Message = _ctx.StringValue("UnassignUser.Message");
+			unassignUserResponse.DynamicCode = _ctx.StringValue("UnassignUser.DynamicCode");
+			unassignUserResponse.Code = _ctx.StringValue("UnassignUser.Code");
+			unassignUserResponse.DynamicMessage = _ctx.StringValue("UnassignUser.DynamicMessage");
+			unassignUserResponse.RequestId = _ctx.StringValue("UnassignUser.RequestId");
+			unassignUserResponse.Success = _ctx.BooleanValue("UnassignUser.Success");
         
 			return unassignUserResponse;
         }

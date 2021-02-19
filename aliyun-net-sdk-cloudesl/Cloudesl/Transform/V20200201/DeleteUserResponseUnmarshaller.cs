@@ -26,19 +26,19 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class DeleteUserResponseUnmarshaller
     {
-        public static DeleteUserResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteUserResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteUserResponse deleteUserResponse = new DeleteUserResponse();
 
-			deleteUserResponse.HttpResponse = context.HttpResponse;
-			deleteUserResponse.ErrorMessage = context.StringValue("DeleteUser.ErrorMessage");
-			deleteUserResponse.ErrorCode = context.StringValue("DeleteUser.ErrorCode");
-			deleteUserResponse.Message = context.StringValue("DeleteUser.Message");
-			deleteUserResponse.DynamicCode = context.StringValue("DeleteUser.DynamicCode");
-			deleteUserResponse.Code = context.StringValue("DeleteUser.Code");
-			deleteUserResponse.DynamicMessage = context.StringValue("DeleteUser.DynamicMessage");
-			deleteUserResponse.RequestId = context.StringValue("DeleteUser.RequestId");
-			deleteUserResponse.Success = context.BooleanValue("DeleteUser.Success");
+			deleteUserResponse.HttpResponse = _ctx.HttpResponse;
+			deleteUserResponse.ErrorMessage = _ctx.StringValue("DeleteUser.ErrorMessage");
+			deleteUserResponse.ErrorCode = _ctx.StringValue("DeleteUser.ErrorCode");
+			deleteUserResponse.Message = _ctx.StringValue("DeleteUser.Message");
+			deleteUserResponse.DynamicCode = _ctx.StringValue("DeleteUser.DynamicCode");
+			deleteUserResponse.Code = _ctx.StringValue("DeleteUser.Code");
+			deleteUserResponse.DynamicMessage = _ctx.StringValue("DeleteUser.DynamicMessage");
+			deleteUserResponse.RequestId = _ctx.StringValue("DeleteUser.RequestId");
+			deleteUserResponse.Success = _ctx.BooleanValue("DeleteUser.Success");
         
 			return deleteUserResponse;
         }

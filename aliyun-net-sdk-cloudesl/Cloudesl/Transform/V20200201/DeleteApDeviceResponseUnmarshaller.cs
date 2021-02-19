@@ -26,19 +26,19 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 {
     public class DeleteApDeviceResponseUnmarshaller
     {
-        public static DeleteApDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteApDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteApDeviceResponse deleteApDeviceResponse = new DeleteApDeviceResponse();
 
-			deleteApDeviceResponse.HttpResponse = context.HttpResponse;
-			deleteApDeviceResponse.ErrorMessage = context.StringValue("DeleteApDevice.ErrorMessage");
-			deleteApDeviceResponse.ErrorCode = context.StringValue("DeleteApDevice.ErrorCode");
-			deleteApDeviceResponse.Message = context.StringValue("DeleteApDevice.Message");
-			deleteApDeviceResponse.DynamicCode = context.StringValue("DeleteApDevice.DynamicCode");
-			deleteApDeviceResponse.Code = context.StringValue("DeleteApDevice.Code");
-			deleteApDeviceResponse.DynamicMessage = context.StringValue("DeleteApDevice.DynamicMessage");
-			deleteApDeviceResponse.RequestId = context.StringValue("DeleteApDevice.RequestId");
-			deleteApDeviceResponse.Success = context.BooleanValue("DeleteApDevice.Success");
+			deleteApDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			deleteApDeviceResponse.ErrorMessage = _ctx.StringValue("DeleteApDevice.ErrorMessage");
+			deleteApDeviceResponse.ErrorCode = _ctx.StringValue("DeleteApDevice.ErrorCode");
+			deleteApDeviceResponse.Message = _ctx.StringValue("DeleteApDevice.Message");
+			deleteApDeviceResponse.DynamicCode = _ctx.StringValue("DeleteApDevice.DynamicCode");
+			deleteApDeviceResponse.Code = _ctx.StringValue("DeleteApDevice.Code");
+			deleteApDeviceResponse.DynamicMessage = _ctx.StringValue("DeleteApDevice.DynamicMessage");
+			deleteApDeviceResponse.RequestId = _ctx.StringValue("DeleteApDevice.RequestId");
+			deleteApDeviceResponse.Success = _ctx.BooleanValue("DeleteApDevice.Success");
         
 			return deleteApDeviceResponse;
         }
