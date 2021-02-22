@@ -120,6 +120,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<LaunchConfigurationTag> launchConfigurationTags = new List<LaunchConfigurationTag>(){ };
 
+		private string launchConfigurationDeploymentSetId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -693,6 +695,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.Tag." + (i + 1) + ".Key", launchConfigurationTags[i].Key);
 					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.Tag." + (i + 1) + ".Value", launchConfigurationTags[i].Value);
 				}
+			}
+		}
+
+		public string LaunchConfigurationDeploymentSetId
+		{
+			get
+			{
+				return launchConfigurationDeploymentSetId;
+			}
+			set	
+			{
+				launchConfigurationDeploymentSetId = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchConfiguration.DeploymentSetId", value);
 			}
 		}
 

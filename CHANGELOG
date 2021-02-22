@@ -1,6 +1,9 @@
 2021-02-22 Version: 4.23.10
 - Support input parameter DeploymentSetId for CreateAutoProvisioningGroup.
 
+2021-02-22 Version: 4.23.10
+- Support input parameter DeploymentSetId for CreateAutoProvisioningGroup.
+
 2021-02-19 Version: 2.0.3
 - Add dingTalk applets function.
 

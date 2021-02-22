@@ -32,6 +32,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 
 			describeCloudAssistantStatusResponse.HttpResponse = _ctx.HttpResponse;
 			describeCloudAssistantStatusResponse.RequestId = _ctx.StringValue("DescribeCloudAssistantStatus.RequestId");
+			describeCloudAssistantStatusResponse.TotalCount = _ctx.LongValue("DescribeCloudAssistantStatus.TotalCount");
+			describeCloudAssistantStatusResponse.PageNumber = _ctx.LongValue("DescribeCloudAssistantStatus.PageNumber");
+			describeCloudAssistantStatusResponse.PageSize = _ctx.LongValue("DescribeCloudAssistantStatus.PageSize");
 
 			List<DescribeCloudAssistantStatusResponse.DescribeCloudAssistantStatus_InstanceCloudAssistantStatus> describeCloudAssistantStatusResponse_instanceCloudAssistantStatusSet = new List<DescribeCloudAssistantStatusResponse.DescribeCloudAssistantStatus_InstanceCloudAssistantStatus>();
 			for (int i = 0; i < _ctx.Length("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet.Length"); i++) {
