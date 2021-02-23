@@ -26,15 +26,15 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 {
     public class EnableWorkflowResponseUnmarshaller
     {
-        public static EnableWorkflowResponse Unmarshall(UnmarshallerContext context)
+        public static EnableWorkflowResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			EnableWorkflowResponse enableWorkflowResponse = new EnableWorkflowResponse();
 
-			enableWorkflowResponse.HttpResponse = context.HttpResponse;
-			enableWorkflowResponse.RequestId = context.StringValue("EnableWorkflow.RequestId");
-			enableWorkflowResponse.Code = context.IntegerValue("EnableWorkflow.Code");
-			enableWorkflowResponse.Success = context.BooleanValue("EnableWorkflow.Success");
-			enableWorkflowResponse.Message = context.StringValue("EnableWorkflow.Message");
+			enableWorkflowResponse.HttpResponse = _ctx.HttpResponse;
+			enableWorkflowResponse.RequestId = _ctx.StringValue("EnableWorkflow.RequestId");
+			enableWorkflowResponse.Code = _ctx.IntegerValue("EnableWorkflow.Code");
+			enableWorkflowResponse.Success = _ctx.BooleanValue("EnableWorkflow.Success");
+			enableWorkflowResponse.Message = _ctx.StringValue("EnableWorkflow.Message");
         
 			return enableWorkflowResponse;
         }

@@ -24,23 +24,19 @@ using Aliyun.Acs.schedulerx2.Model.V20190430;
 
 namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 {
-    public class ExecuteWorkflowResponseUnmarshaller
+    public class BatchEnableJobsResponseUnmarshaller
     {
-        public static ExecuteWorkflowResponse Unmarshall(UnmarshallerContext _ctx)
+        public static BatchEnableJobsResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			ExecuteWorkflowResponse executeWorkflowResponse = new ExecuteWorkflowResponse();
+			BatchEnableJobsResponse batchEnableJobsResponse = new BatchEnableJobsResponse();
 
-			executeWorkflowResponse.HttpResponse = _ctx.HttpResponse;
-			executeWorkflowResponse.RequestId = _ctx.StringValue("ExecuteWorkflow.RequestId");
-			executeWorkflowResponse.Code = _ctx.IntegerValue("ExecuteWorkflow.Code");
-			executeWorkflowResponse.Message = _ctx.StringValue("ExecuteWorkflow.Message");
-			executeWorkflowResponse.Success = _ctx.BooleanValue("ExecuteWorkflow.Success");
-
-			ExecuteWorkflowResponse.ExecuteWorkflow_Data data = new ExecuteWorkflowResponse.ExecuteWorkflow_Data();
-			data.WfInstanceId = _ctx.LongValue("ExecuteWorkflow.Data.WfInstanceId");
-			executeWorkflowResponse.Data = data;
+			batchEnableJobsResponse.HttpResponse = _ctx.HttpResponse;
+			batchEnableJobsResponse.RequestId = _ctx.StringValue("BatchEnableJobs.RequestId");
+			batchEnableJobsResponse.Code = _ctx.IntegerValue("BatchEnableJobs.Code");
+			batchEnableJobsResponse.Success = _ctx.BooleanValue("BatchEnableJobs.Success");
+			batchEnableJobsResponse.Message = _ctx.StringValue("BatchEnableJobs.Message");
         
-			return executeWorkflowResponse;
+			return batchEnableJobsResponse;
         }
     }
 }

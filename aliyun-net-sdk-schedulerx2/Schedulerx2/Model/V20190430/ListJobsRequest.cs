@@ -28,17 +28,16 @@ using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
 {
-    public class DeleteWorkflowRequest : RpcAcsRequest<DeleteWorkflowResponse>
+    public class ListJobsRequest : RpcAcsRequest<ListJobsResponse>
     {
-        public DeleteWorkflowRequest()
-            : base("schedulerx2", "2019-04-30", "DeleteWorkflow")
+        public ListJobsRequest()
+            : base("schedulerx2", "2019-04-30", "ListJobs")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointRegionalType, null);
             }
-			Protocol = ProtocolType.HTTPS;
         }
 
 		private string namespaceSource;
@@ -47,7 +46,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string _namespace;
 
-		private long? workflowId;
+		private string jobName;
+
+		private string status;
 
 		public string NamespaceSource
 		{
@@ -88,16 +89,29 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public long? WorkflowId
+		public string JobName
 		{
 			get
 			{
-				return workflowId;
+				return jobName;
 			}
 			set	
 			{
-				workflowId = value;
-				DictionaryUtil.Add(QueryParameters, "WorkflowId", value.ToString());
+				jobName = value;
+				DictionaryUtil.Add(QueryParameters, "JobName", value);
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 
@@ -106,9 +120,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			return false;
 		}
 
-        public override DeleteWorkflowResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListJobsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteWorkflowResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListJobsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

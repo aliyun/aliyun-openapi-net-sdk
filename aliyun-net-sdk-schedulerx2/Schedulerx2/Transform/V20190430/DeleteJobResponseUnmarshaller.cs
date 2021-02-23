@@ -26,15 +26,15 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 {
     public class DeleteJobResponseUnmarshaller
     {
-        public static DeleteJobResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteJobResponse deleteJobResponse = new DeleteJobResponse();
 
-			deleteJobResponse.HttpResponse = context.HttpResponse;
-			deleteJobResponse.RequestId = context.StringValue("DeleteJob.RequestId");
-			deleteJobResponse.Code = context.IntegerValue("DeleteJob.Code");
-			deleteJobResponse.Message = context.StringValue("DeleteJob.Message");
-			deleteJobResponse.Success = context.BooleanValue("DeleteJob.Success");
+			deleteJobResponse.HttpResponse = _ctx.HttpResponse;
+			deleteJobResponse.RequestId = _ctx.StringValue("DeleteJob.RequestId");
+			deleteJobResponse.Code = _ctx.IntegerValue("DeleteJob.Code");
+			deleteJobResponse.Message = _ctx.StringValue("DeleteJob.Message");
+			deleteJobResponse.Success = _ctx.BooleanValue("DeleteJob.Success");
         
 			return deleteJobResponse;
         }

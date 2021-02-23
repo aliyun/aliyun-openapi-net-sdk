@@ -26,18 +26,18 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 {
     public class ExecuteJobResponseUnmarshaller
     {
-        public static ExecuteJobResponse Unmarshall(UnmarshallerContext context)
+        public static ExecuteJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ExecuteJobResponse executeJobResponse = new ExecuteJobResponse();
 
-			executeJobResponse.HttpResponse = context.HttpResponse;
-			executeJobResponse.RequestId = context.StringValue("ExecuteJob.RequestId");
-			executeJobResponse.Code = context.IntegerValue("ExecuteJob.Code");
-			executeJobResponse.Message = context.StringValue("ExecuteJob.Message");
-			executeJobResponse.Success = context.BooleanValue("ExecuteJob.Success");
+			executeJobResponse.HttpResponse = _ctx.HttpResponse;
+			executeJobResponse.RequestId = _ctx.StringValue("ExecuteJob.RequestId");
+			executeJobResponse.Code = _ctx.IntegerValue("ExecuteJob.Code");
+			executeJobResponse.Message = _ctx.StringValue("ExecuteJob.Message");
+			executeJobResponse.Success = _ctx.BooleanValue("ExecuteJob.Success");
 
 			ExecuteJobResponse.ExecuteJob_Data data = new ExecuteJobResponse.ExecuteJob_Data();
-			data.JobInstanceId = context.LongValue("ExecuteJob.Data.JobInstanceId");
+			data.JobInstanceId = _ctx.LongValue("ExecuteJob.Data.JobInstanceId");
 			executeJobResponse.Data = data;
         
 			return executeJobResponse;

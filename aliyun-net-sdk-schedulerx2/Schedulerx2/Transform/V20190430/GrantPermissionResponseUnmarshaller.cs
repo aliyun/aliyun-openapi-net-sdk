@@ -26,15 +26,15 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 {
     public class GrantPermissionResponseUnmarshaller
     {
-        public static GrantPermissionResponse Unmarshall(UnmarshallerContext context)
+        public static GrantPermissionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GrantPermissionResponse grantPermissionResponse = new GrantPermissionResponse();
 
-			grantPermissionResponse.HttpResponse = context.HttpResponse;
-			grantPermissionResponse.RequestId = context.StringValue("GrantPermission.RequestId");
-			grantPermissionResponse.Code = context.IntegerValue("GrantPermission.Code");
-			grantPermissionResponse.Success = context.BooleanValue("GrantPermission.Success");
-			grantPermissionResponse.Message = context.StringValue("GrantPermission.Message");
+			grantPermissionResponse.HttpResponse = _ctx.HttpResponse;
+			grantPermissionResponse.RequestId = _ctx.StringValue("GrantPermission.RequestId");
+			grantPermissionResponse.Code = _ctx.IntegerValue("GrantPermission.Code");
+			grantPermissionResponse.Success = _ctx.BooleanValue("GrantPermission.Success");
+			grantPermissionResponse.Message = _ctx.StringValue("GrantPermission.Message");
         
 			return grantPermissionResponse;
         }

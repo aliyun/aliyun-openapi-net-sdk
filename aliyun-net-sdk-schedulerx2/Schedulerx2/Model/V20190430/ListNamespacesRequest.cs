@@ -28,87 +28,26 @@ using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
 {
-    public class DeleteWorkflowRequest : RpcAcsRequest<DeleteWorkflowResponse>
+    public class ListNamespacesRequest : RpcAcsRequest<ListNamespacesResponse>
     {
-        public DeleteWorkflowRequest()
-            : base("schedulerx2", "2019-04-30", "DeleteWorkflow")
+        public ListNamespacesRequest()
+            : base("schedulerx2", "2019-04-30", "ListNamespaces")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointRegionalType, null);
             }
-			Protocol = ProtocolType.HTTPS;
         }
-
-		private string namespaceSource;
-
-		private string groupId;
-
-		private string _namespace;
-
-		private long? workflowId;
-
-		public string NamespaceSource
-		{
-			get
-			{
-				return namespaceSource;
-			}
-			set	
-			{
-				namespaceSource = value;
-				DictionaryUtil.Add(QueryParameters, "NamespaceSource", value);
-			}
-		}
-
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
-		public string _Namespace
-		{
-			get
-			{
-				return _namespace;
-			}
-			set	
-			{
-				_namespace = value;
-				DictionaryUtil.Add(QueryParameters, "Namespace", value);
-			}
-		}
-
-		public long? WorkflowId
-		{
-			get
-			{
-				return workflowId;
-			}
-			set	
-			{
-				workflowId = value;
-				DictionaryUtil.Add(QueryParameters, "WorkflowId", value.ToString());
-			}
-		}
 
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DeleteWorkflowResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListNamespacesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteWorkflowResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListNamespacesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

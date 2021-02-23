@@ -26,62 +26,62 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 {
     public class GetJobInfoResponseUnmarshaller
     {
-        public static GetJobInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetJobInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetJobInfoResponse getJobInfoResponse = new GetJobInfoResponse();
 
-			getJobInfoResponse.HttpResponse = context.HttpResponse;
-			getJobInfoResponse.RequestId = context.StringValue("GetJobInfo.RequestId");
-			getJobInfoResponse.Code = context.IntegerValue("GetJobInfo.Code");
-			getJobInfoResponse.Message = context.StringValue("GetJobInfo.Message");
-			getJobInfoResponse.Success = context.BooleanValue("GetJobInfo.Success");
+			getJobInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getJobInfoResponse.RequestId = _ctx.StringValue("GetJobInfo.RequestId");
+			getJobInfoResponse.Code = _ctx.IntegerValue("GetJobInfo.Code");
+			getJobInfoResponse.Message = _ctx.StringValue("GetJobInfo.Message");
+			getJobInfoResponse.Success = _ctx.BooleanValue("GetJobInfo.Success");
 
 			GetJobInfoResponse.GetJobInfo_Data data = new GetJobInfoResponse.GetJobInfo_Data();
 
 			GetJobInfoResponse.GetJobInfo_Data.GetJobInfo_JobConfigInfo jobConfigInfo = new GetJobInfoResponse.GetJobInfo_Data.GetJobInfo_JobConfigInfo();
-			jobConfigInfo.ClassName = context.StringValue("GetJobInfo.Data.JobConfigInfo.ClassName");
-			jobConfigInfo.JarUrl = context.StringValue("GetJobInfo.Data.JobConfigInfo.JarUrl");
-			jobConfigInfo.Content = context.StringValue("GetJobInfo.Data.JobConfigInfo.Content");
-			jobConfigInfo.Name = context.StringValue("GetJobInfo.Data.JobConfigInfo.Name");
-			jobConfigInfo.Description = context.StringValue("GetJobInfo.Data.JobConfigInfo.Description");
-			jobConfigInfo.Status = context.IntegerValue("GetJobInfo.Data.JobConfigInfo.Status");
-			jobConfigInfo.ExecuteMode = context.StringValue("GetJobInfo.Data.JobConfigInfo.ExecuteMode");
-			jobConfigInfo.Parameters = context.StringValue("GetJobInfo.Data.JobConfigInfo.Parameters");
-			jobConfigInfo.MaxConcurrency = context.StringValue("GetJobInfo.Data.JobConfigInfo.MaxConcurrency");
-			jobConfigInfo.MaxAttempt = context.IntegerValue("GetJobInfo.Data.JobConfigInfo.MaxAttempt");
-			jobConfigInfo.AttemptInterval = context.IntegerValue("GetJobInfo.Data.JobConfigInfo.AttemptInterval");
+			jobConfigInfo.ClassName = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.ClassName");
+			jobConfigInfo.JarUrl = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.JarUrl");
+			jobConfigInfo.Content = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.Content");
+			jobConfigInfo.Name = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.Name");
+			jobConfigInfo.Description = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.Description");
+			jobConfigInfo.Status = _ctx.IntegerValue("GetJobInfo.Data.JobConfigInfo.Status");
+			jobConfigInfo.ExecuteMode = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.ExecuteMode");
+			jobConfigInfo.Parameters = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.Parameters");
+			jobConfigInfo.MaxConcurrency = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.MaxConcurrency");
+			jobConfigInfo.MaxAttempt = _ctx.IntegerValue("GetJobInfo.Data.JobConfigInfo.MaxAttempt");
+			jobConfigInfo.AttemptInterval = _ctx.IntegerValue("GetJobInfo.Data.JobConfigInfo.AttemptInterval");
 
 			GetJobInfoResponse.GetJobInfo_Data.GetJobInfo_JobConfigInfo.GetJobInfo_MapTaskXAttrs mapTaskXAttrs = new GetJobInfoResponse.GetJobInfo_Data.GetJobInfo_JobConfigInfo.GetJobInfo_MapTaskXAttrs();
-			mapTaskXAttrs.PageSize = context.IntegerValue("GetJobInfo.Data.JobConfigInfo.MapTaskXAttrs.PageSize");
-			mapTaskXAttrs.ConsumerSize = context.IntegerValue("GetJobInfo.Data.JobConfigInfo.MapTaskXAttrs.ConsumerSize");
-			mapTaskXAttrs.QueueSize = context.IntegerValue("GetJobInfo.Data.JobConfigInfo.MapTaskXAttrs.QueueSize");
-			mapTaskXAttrs.DispatcherSize = context.IntegerValue("GetJobInfo.Data.JobConfigInfo.MapTaskXAttrs.DispatcherSize");
-			mapTaskXAttrs.TaskMaxAttempt = context.IntegerValue("GetJobInfo.Data.JobConfigInfo.MapTaskXAttrs.TaskMaxAttempt");
-			mapTaskXAttrs.TaskAttemptInterval = context.IntegerValue("GetJobInfo.Data.JobConfigInfo.MapTaskXAttrs.TaskAttemptInterval");
+			mapTaskXAttrs.PageSize = _ctx.IntegerValue("GetJobInfo.Data.JobConfigInfo.MapTaskXAttrs.PageSize");
+			mapTaskXAttrs.ConsumerSize = _ctx.IntegerValue("GetJobInfo.Data.JobConfigInfo.MapTaskXAttrs.ConsumerSize");
+			mapTaskXAttrs.QueueSize = _ctx.IntegerValue("GetJobInfo.Data.JobConfigInfo.MapTaskXAttrs.QueueSize");
+			mapTaskXAttrs.DispatcherSize = _ctx.IntegerValue("GetJobInfo.Data.JobConfigInfo.MapTaskXAttrs.DispatcherSize");
+			mapTaskXAttrs.TaskMaxAttempt = _ctx.IntegerValue("GetJobInfo.Data.JobConfigInfo.MapTaskXAttrs.TaskMaxAttempt");
+			mapTaskXAttrs.TaskAttemptInterval = _ctx.IntegerValue("GetJobInfo.Data.JobConfigInfo.MapTaskXAttrs.TaskAttemptInterval");
 			jobConfigInfo.MapTaskXAttrs = mapTaskXAttrs;
 
 			GetJobInfoResponse.GetJobInfo_Data.GetJobInfo_JobConfigInfo.GetJobInfo_TimeConfig timeConfig = new GetJobInfoResponse.GetJobInfo_Data.GetJobInfo_JobConfigInfo.GetJobInfo_TimeConfig();
-			timeConfig.TimeType = context.IntegerValue("GetJobInfo.Data.JobConfigInfo.TimeConfig.TimeType");
-			timeConfig.TimeExpression = context.StringValue("GetJobInfo.Data.JobConfigInfo.TimeConfig.TimeExpression");
-			timeConfig.Calendar = context.StringValue("GetJobInfo.Data.JobConfigInfo.TimeConfig.Calendar");
-			timeConfig.DataOffset = context.IntegerValue("GetJobInfo.Data.JobConfigInfo.TimeConfig.DataOffset");
+			timeConfig.TimeType = _ctx.IntegerValue("GetJobInfo.Data.JobConfigInfo.TimeConfig.TimeType");
+			timeConfig.TimeExpression = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.TimeConfig.TimeExpression");
+			timeConfig.Calendar = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.TimeConfig.Calendar");
+			timeConfig.DataOffset = _ctx.IntegerValue("GetJobInfo.Data.JobConfigInfo.TimeConfig.DataOffset");
 			jobConfigInfo.TimeConfig = timeConfig;
 
 			GetJobInfoResponse.GetJobInfo_Data.GetJobInfo_JobConfigInfo.GetJobInfo_JobMonitorInfo jobMonitorInfo = new GetJobInfoResponse.GetJobInfo_Data.GetJobInfo_JobConfigInfo.GetJobInfo_JobMonitorInfo();
 
 			GetJobInfoResponse.GetJobInfo_Data.GetJobInfo_JobConfigInfo.GetJobInfo_JobMonitorInfo.GetJobInfo_MonitorConfig monitorConfig = new GetJobInfoResponse.GetJobInfo_Data.GetJobInfo_JobConfigInfo.GetJobInfo_JobMonitorInfo.GetJobInfo_MonitorConfig();
-			monitorConfig.TimeoutEnable = context.BooleanValue("GetJobInfo.Data.JobConfigInfo.JobMonitorInfo.MonitorConfig.TimeoutEnable");
-			monitorConfig.Timeout = context.LongValue("GetJobInfo.Data.JobConfigInfo.JobMonitorInfo.MonitorConfig.Timeout");
-			monitorConfig.TimeoutKillEnable = context.BooleanValue("GetJobInfo.Data.JobConfigInfo.JobMonitorInfo.MonitorConfig.TimeoutKillEnable");
-			monitorConfig.FailEnable = context.BooleanValue("GetJobInfo.Data.JobConfigInfo.JobMonitorInfo.MonitorConfig.FailEnable");
-			monitorConfig.SendChannel = context.StringValue("GetJobInfo.Data.JobConfigInfo.JobMonitorInfo.MonitorConfig.SendChannel");
+			monitorConfig.TimeoutEnable = _ctx.BooleanValue("GetJobInfo.Data.JobConfigInfo.JobMonitorInfo.MonitorConfig.TimeoutEnable");
+			monitorConfig.Timeout = _ctx.LongValue("GetJobInfo.Data.JobConfigInfo.JobMonitorInfo.MonitorConfig.Timeout");
+			monitorConfig.TimeoutKillEnable = _ctx.BooleanValue("GetJobInfo.Data.JobConfigInfo.JobMonitorInfo.MonitorConfig.TimeoutKillEnable");
+			monitorConfig.FailEnable = _ctx.BooleanValue("GetJobInfo.Data.JobConfigInfo.JobMonitorInfo.MonitorConfig.FailEnable");
+			monitorConfig.SendChannel = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.JobMonitorInfo.MonitorConfig.SendChannel");
 			jobMonitorInfo.MonitorConfig = monitorConfig;
 
 			List<GetJobInfoResponse.GetJobInfo_Data.GetJobInfo_JobConfigInfo.GetJobInfo_JobMonitorInfo.GetJobInfo_ContactInfoItem> jobMonitorInfo_contactInfo = new List<GetJobInfoResponse.GetJobInfo_Data.GetJobInfo_JobConfigInfo.GetJobInfo_JobMonitorInfo.GetJobInfo_ContactInfoItem>();
-			for (int i = 0; i < context.Length("GetJobInfo.Data.JobConfigInfo.JobMonitorInfo.ContactInfo.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetJobInfo.Data.JobConfigInfo.JobMonitorInfo.ContactInfo.Length"); i++) {
 				GetJobInfoResponse.GetJobInfo_Data.GetJobInfo_JobConfigInfo.GetJobInfo_JobMonitorInfo.GetJobInfo_ContactInfoItem contactInfoItem = new GetJobInfoResponse.GetJobInfo_Data.GetJobInfo_JobConfigInfo.GetJobInfo_JobMonitorInfo.GetJobInfo_ContactInfoItem();
-				contactInfoItem.UserName = context.StringValue("GetJobInfo.Data.JobConfigInfo.JobMonitorInfo.ContactInfo["+ i +"].UserName");
-				contactInfoItem.UserPhone = context.StringValue("GetJobInfo.Data.JobConfigInfo.JobMonitorInfo.ContactInfo["+ i +"].UserPhone");
+				contactInfoItem.UserName = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.JobMonitorInfo.ContactInfo["+ i +"].UserName");
+				contactInfoItem.UserPhone = _ctx.StringValue("GetJobInfo.Data.JobConfigInfo.JobMonitorInfo.ContactInfo["+ i +"].UserPhone");
 
 				jobMonitorInfo_contactInfo.Add(contactInfoItem);
 			}

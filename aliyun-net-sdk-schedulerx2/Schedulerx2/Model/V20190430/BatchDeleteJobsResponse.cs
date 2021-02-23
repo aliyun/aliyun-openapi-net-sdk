@@ -16,27 +16,69 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.schedulerx2.Model.V20190430;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.schedulerx2.Transform.V20190430
+namespace Aliyun.Acs.schedulerx2.Model.V20190430
 {
-    public class DisableJobResponseUnmarshaller
-    {
-        public static DisableJobResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			DisableJobResponse disableJobResponse = new DisableJobResponse();
+	public class BatchDeleteJobsResponse : AcsResponse
+	{
 
-			disableJobResponse.HttpResponse = _ctx.HttpResponse;
-			disableJobResponse.RequestId = _ctx.StringValue("DisableJob.RequestId");
-			disableJobResponse.Code = _ctx.IntegerValue("DisableJob.Code");
-			disableJobResponse.Success = _ctx.BooleanValue("DisableJob.Success");
-			disableJobResponse.Message = _ctx.StringValue("DisableJob.Message");
-        
-			return disableJobResponse;
-        }
-    }
+		private string requestId;
+
+		private int? code;
+
+		private string message;
+
+		private bool? success;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+	}
 }

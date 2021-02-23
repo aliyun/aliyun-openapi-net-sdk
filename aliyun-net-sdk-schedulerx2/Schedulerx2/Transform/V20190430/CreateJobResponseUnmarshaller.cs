@@ -26,18 +26,18 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 {
     public class CreateJobResponseUnmarshaller
     {
-        public static CreateJobResponse Unmarshall(UnmarshallerContext context)
+        public static CreateJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateJobResponse createJobResponse = new CreateJobResponse();
 
-			createJobResponse.HttpResponse = context.HttpResponse;
-			createJobResponse.RequestId = context.StringValue("CreateJob.RequestId");
-			createJobResponse.Code = context.IntegerValue("CreateJob.Code");
-			createJobResponse.Success = context.BooleanValue("CreateJob.Success");
-			createJobResponse.Message = context.StringValue("CreateJob.Message");
+			createJobResponse.HttpResponse = _ctx.HttpResponse;
+			createJobResponse.RequestId = _ctx.StringValue("CreateJob.RequestId");
+			createJobResponse.Code = _ctx.IntegerValue("CreateJob.Code");
+			createJobResponse.Success = _ctx.BooleanValue("CreateJob.Success");
+			createJobResponse.Message = _ctx.StringValue("CreateJob.Message");
 
 			CreateJobResponse.CreateJob_Data data = new CreateJobResponse.CreateJob_Data();
-			data.JobId = context.LongValue("CreateJob.Data.JobId");
+			data.JobId = _ctx.LongValue("CreateJob.Data.JobId");
 			createJobResponse.Data = data;
         
 			return createJobResponse;

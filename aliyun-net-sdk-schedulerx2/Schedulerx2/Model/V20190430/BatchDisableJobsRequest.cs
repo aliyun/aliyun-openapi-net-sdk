@@ -28,17 +28,17 @@ using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
 {
-    public class DeleteWorkflowRequest : RpcAcsRequest<DeleteWorkflowResponse>
+    public class BatchDisableJobsRequest : RpcAcsRequest<BatchDisableJobsResponse>
     {
-        public DeleteWorkflowRequest()
-            : base("schedulerx2", "2019-04-30", "DeleteWorkflow")
+        public BatchDisableJobsRequest()
+            : base("schedulerx2", "2019-04-30", "BatchDisableJobs")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointRegionalType, null);
             }
-			Protocol = ProtocolType.HTTPS;
+			Method = MethodType.POST;
         }
 
 		private string namespaceSource;
@@ -47,7 +47,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string _namespace;
 
-		private long? workflowId;
+		private List<long?> jobIdLists = new List<long?>(){ };
 
 		public string NamespaceSource
 		{
@@ -88,16 +88,20 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public long? WorkflowId
+		public List<long?> JobIdLists
 		{
 			get
 			{
-				return workflowId;
+				return jobIdLists;
 			}
-			set	
+
+			set
 			{
-				workflowId = value;
-				DictionaryUtil.Add(QueryParameters, "WorkflowId", value.ToString());
+				jobIdLists = value;
+				for (int i = 0; i < jobIdLists.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"JobIdList." + (i + 1) , jobIdLists[i]);
+				}
 			}
 		}
 
@@ -106,9 +110,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			return false;
 		}
 
-        public override DeleteWorkflowResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override BatchDisableJobsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteWorkflowResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchDisableJobsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

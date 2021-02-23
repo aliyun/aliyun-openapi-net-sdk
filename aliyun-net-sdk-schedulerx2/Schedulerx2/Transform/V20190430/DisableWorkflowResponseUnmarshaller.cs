@@ -26,15 +26,15 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 {
     public class DisableWorkflowResponseUnmarshaller
     {
-        public static DisableWorkflowResponse Unmarshall(UnmarshallerContext context)
+        public static DisableWorkflowResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DisableWorkflowResponse disableWorkflowResponse = new DisableWorkflowResponse();
 
-			disableWorkflowResponse.HttpResponse = context.HttpResponse;
-			disableWorkflowResponse.RequestId = context.StringValue("DisableWorkflow.RequestId");
-			disableWorkflowResponse.Code = context.IntegerValue("DisableWorkflow.Code");
-			disableWorkflowResponse.Success = context.BooleanValue("DisableWorkflow.Success");
-			disableWorkflowResponse.Message = context.StringValue("DisableWorkflow.Message");
+			disableWorkflowResponse.HttpResponse = _ctx.HttpResponse;
+			disableWorkflowResponse.RequestId = _ctx.StringValue("DisableWorkflow.RequestId");
+			disableWorkflowResponse.Code = _ctx.IntegerValue("DisableWorkflow.Code");
+			disableWorkflowResponse.Success = _ctx.BooleanValue("DisableWorkflow.Success");
+			disableWorkflowResponse.Message = _ctx.StringValue("DisableWorkflow.Message");
         
 			return disableWorkflowResponse;
         }
