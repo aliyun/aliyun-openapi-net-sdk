@@ -47,6 +47,10 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string bizName;
 
+		private string beginBizdate;
+
+		private string endBizdate;
+
 		private long? dagId;
 
 		private int? pageNumber;
@@ -54,6 +58,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		private string nodeName;
 
 		private string programType;
+
+		private string bizdate;
 
 		private int? pageSize;
 
@@ -97,6 +103,32 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				bizName = value;
 				DictionaryUtil.Add(BodyParameters, "BizName", value);
+			}
+		}
+
+		public string BeginBizdate
+		{
+			get
+			{
+				return beginBizdate;
+			}
+			set	
+			{
+				beginBizdate = value;
+				DictionaryUtil.Add(BodyParameters, "BeginBizdate", value);
+			}
+		}
+
+		public string EndBizdate
+		{
+			get
+			{
+				return endBizdate;
+			}
+			set	
+			{
+				endBizdate = value;
+				DictionaryUtil.Add(BodyParameters, "EndBizdate", value);
 			}
 		}
 
@@ -149,6 +181,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				programType = value;
 				DictionaryUtil.Add(BodyParameters, "ProgramType", value);
+			}
+		}
+
+		public string Bizdate
+		{
+			get
+			{
+				return bizdate;
+			}
+			set	
+			{
+				bizdate = value;
+				DictionaryUtil.Add(BodyParameters, "Bizdate", value);
 			}
 		}
 
