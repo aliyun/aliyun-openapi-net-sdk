@@ -50,6 +50,10 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string ownerId;
 
+		private long? startTimestamp;
+
+		private long? endTimestamp;
+
 		private bool? showStorageType;
 
 		private int? pageSize;
@@ -116,6 +120,32 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public long? StartTimestamp
+		{
+			get
+			{
+				return startTimestamp;
+			}
+			set	
+			{
+				startTimestamp = value;
+				DictionaryUtil.Add(QueryParameters, "StartTimestamp", value.ToString());
+			}
+		}
+
+		public long? EndTimestamp
+		{
+			get
+			{
+				return endTimestamp;
+			}
+			set	
+			{
+				endTimestamp = value;
+				DictionaryUtil.Add(QueryParameters, "EndTimestamp", value.ToString());
 			}
 		}
 

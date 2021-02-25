@@ -27,10 +27,10 @@ using Aliyun.Acs.Dbs.Transform.V20190306;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
 {
-    public class DescribeIncrementBackupListRequest : RpcAcsRequest<DescribeIncrementBackupListResponse>
+    public class DescribeSandboxFromRDSRequest : RpcAcsRequest<DescribeSandboxFromRDSResponse>
     {
-        public DescribeIncrementBackupListRequest()
-            : base("Dbs", "2019-03-06", "DescribeIncrementBackupList", "cbs", "openAPI")
+        public DescribeSandboxFromRDSRequest()
+            : base("Dbs", "2019-03-06", "DescribeSandboxFromRDS", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,19 +42,9 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string clientToken;
 
-		private string backupPlanId;
-
-		private int? pageNum;
+		private string rdsInstanceID;
 
 		private string ownerId;
-
-		private long? startTimestamp;
-
-		private long? endTimestamp;
-
-		private bool? showStorageType;
-
-		private int? pageSize;
 
 		public string ClientToken
 		{
@@ -69,29 +59,16 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string BackupPlanId
+		public string RdsInstanceID
 		{
 			get
 			{
-				return backupPlanId;
+				return rdsInstanceID;
 			}
 			set	
 			{
-				backupPlanId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupPlanId", value);
-			}
-		}
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+				rdsInstanceID = value;
+				DictionaryUtil.Add(QueryParameters, "RdsInstanceID", value);
 			}
 		}
 
@@ -108,61 +85,9 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public long? StartTimestamp
-		{
-			get
-			{
-				return startTimestamp;
-			}
-			set	
-			{
-				startTimestamp = value;
-				DictionaryUtil.Add(QueryParameters, "StartTimestamp", value.ToString());
-			}
-		}
-
-		public long? EndTimestamp
-		{
-			get
-			{
-				return endTimestamp;
-			}
-			set	
-			{
-				endTimestamp = value;
-				DictionaryUtil.Add(QueryParameters, "EndTimestamp", value.ToString());
-			}
-		}
-
-		public bool? ShowStorageType
-		{
-			get
-			{
-				return showStorageType;
-			}
-			set	
-			{
-				showStorageType = value;
-				DictionaryUtil.Add(QueryParameters, "ShowStorageType", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-        public override DescribeIncrementBackupListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeSandboxFromRDSResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeIncrementBackupListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeSandboxFromRDSResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
