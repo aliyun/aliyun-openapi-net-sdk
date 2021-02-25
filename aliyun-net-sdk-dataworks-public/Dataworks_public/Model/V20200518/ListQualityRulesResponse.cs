@@ -219,6 +219,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private string expectValue;
 
+				private string onDutyAccountName;
+
 				public string ProjectName
 				{
 					get
@@ -504,6 +506,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						expectValue = value;
+					}
+				}
+
+				public string OnDutyAccountName
+				{
+					get
+					{
+						return onDutyAccountName;
+					}
+					set	
+					{
+						onDutyAccountName = value;
 					}
 				}
 			}

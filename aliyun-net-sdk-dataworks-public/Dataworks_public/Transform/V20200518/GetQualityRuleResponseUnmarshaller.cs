@@ -60,6 +60,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			data.CheckerName = _ctx.StringValue("GetQualityRule.Data.CheckerName");
 			data.Checker = _ctx.IntegerValue("GetQualityRule.Data.Checker");
 			data.FixCheck = _ctx.BooleanValue("GetQualityRule.Data.FixCheck");
+			data.OnDutyAccountName = _ctx.StringValue("GetQualityRule.Data.OnDutyAccountName");
 			getQualityRuleResponse.Data = data;
         
 			return getQualityRuleResponse;

@@ -142,6 +142,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private string relativeNode;
 
+			private string onDutyAccountName;
+
 			public long? Id
 			{
 				get
@@ -319,6 +321,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					relativeNode = value;
+				}
+			}
+
+			public string OnDutyAccountName
+			{
+				get
+				{
+					return onDutyAccountName;
+				}
+				set	
+				{
+					onDutyAccountName = value;
 				}
 			}
 		}

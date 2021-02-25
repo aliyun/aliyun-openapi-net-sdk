@@ -46,6 +46,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 				follower.EntityId = _ctx.StringValue("GetQualityFollower.Data["+ i +"].EntityId");
 				follower.Follower = _ctx.StringValue("GetQualityFollower.Data["+ i +"].Follower");
 				follower.AlarmMode = _ctx.IntegerValue("GetQualityFollower.Data["+ i +"].AlarmMode");
+				follower.FollowerAccountName = _ctx.StringValue("GetQualityFollower.Data["+ i +"].FollowerAccountName");
 
 				getQualityFollowerResponse_data.Add(follower);
 			}

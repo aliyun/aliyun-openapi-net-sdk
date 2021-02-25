@@ -124,6 +124,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private int? alarmMode;
 
+			private string followerAccountName;
+
 			public string ProjectName
 			{
 				get
@@ -193,6 +195,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					alarmMode = value;
+				}
+			}
+
+			public string FollowerAccountName
+			{
+				get
+				{
+					return followerAccountName;
+				}
+				set	
+				{
+					followerAccountName = value;
 				}
 			}
 		}

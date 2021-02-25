@@ -55,6 +55,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 				entityDto.Followers = _ctx.StringValue("GetQualityEntity.Data["+ i +"].Followers");
 				entityDto.HasRelativeNode = _ctx.BooleanValue("GetQualityEntity.Data["+ i +"].HasRelativeNode");
 				entityDto.RelativeNode = _ctx.StringValue("GetQualityEntity.Data["+ i +"].RelativeNode");
+				entityDto.OnDutyAccountName = _ctx.StringValue("GetQualityEntity.Data["+ i +"].OnDutyAccountName");
 
 				getQualityEntityResponse_data.Add(entityDto);
 			}

@@ -156,6 +156,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private bool? fixCheck;
 
+			private string onDutyAccountName;
+
 			public long? Id
 			{
 				get
@@ -417,6 +419,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					fixCheck = value;
+				}
+			}
+
+			public string OnDutyAccountName
+			{
+				get
+				{
+					return onDutyAccountName;
+				}
+				set	
+				{
+					onDutyAccountName = value;
 				}
 			}
 		}

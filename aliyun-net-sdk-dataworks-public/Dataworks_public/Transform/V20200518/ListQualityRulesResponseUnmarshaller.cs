@@ -69,6 +69,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 				rulesItem.MatchExpression = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].MatchExpression");
 				rulesItem.Comment = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].Comment");
 				rulesItem.ExpectValue = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].ExpectValue");
+				rulesItem.OnDutyAccountName = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].OnDutyAccountName");
 
 				data_rules.Add(rulesItem);
 			}
