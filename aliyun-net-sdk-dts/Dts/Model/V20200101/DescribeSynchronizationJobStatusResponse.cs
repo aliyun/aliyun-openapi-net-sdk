@@ -59,6 +59,8 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 		private string synchronizationJobName;
 
+		private string taskId;
+
 		private List<DescribeSynchronizationJobStatus_SynchronizationObject> synchronizationObjects;
 
 		private DescribeSynchronizationJobStatus_DataInitializationStatus dataInitializationStatus;
@@ -276,6 +278,18 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			set	
 			{
 				synchronizationJobName = value;
+			}
+		}
+
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
 			}
 		}
 

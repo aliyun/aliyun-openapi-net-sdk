@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Dts.Transform.V20200101
 			describeSubscriptionInstanceStatusResponse.Success = _ctx.StringValue("DescribeSubscriptionInstanceStatus.Success");
 			describeSubscriptionInstanceStatusResponse.ErrorMessage = _ctx.StringValue("DescribeSubscriptionInstanceStatus.ErrorMessage");
 			describeSubscriptionInstanceStatusResponse.ErrorMessage1 = _ctx.StringValue("DescribeSubscriptionInstanceStatus.ErrorMessage");
+			describeSubscriptionInstanceStatusResponse.TaskId = _ctx.StringValue("DescribeSubscriptionInstanceStatus.TaskId");
 
 			DescribeSubscriptionInstanceStatusResponse.DescribeSubscriptionInstanceStatus_SourceEndpoint sourceEndpoint = new DescribeSubscriptionInstanceStatusResponse.DescribeSubscriptionInstanceStatus_SourceEndpoint();
 			sourceEndpoint.InstanceID = _ctx.StringValue("DescribeSubscriptionInstanceStatus.SourceEndpoint.InstanceID");

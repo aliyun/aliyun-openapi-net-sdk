@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 		private string errorMessage1;
 
+		private string taskId;
+
 		private List<DescribeSubscriptionInstanceStatus_SynchronousObject> subscriptionObject;
 
 		private DescribeSubscriptionInstanceStatus_SourceEndpoint sourceEndpoint;
@@ -240,6 +242,18 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			set	
 			{
 				errorMessage1 = value;
+			}
+		}
+
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
 			}
 		}
 

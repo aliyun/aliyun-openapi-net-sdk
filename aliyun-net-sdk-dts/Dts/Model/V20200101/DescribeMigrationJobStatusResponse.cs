@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 		private string success;
 
+		private string taskId;
+
 		private DescribeMigrationJobStatus_DataInitializationStatus dataInitializationStatus;
 
 		private DescribeMigrationJobStatus_DataSynchronizationStatus dataSynchronizationStatus;
@@ -176,6 +178,18 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
 			}
 		}
 

@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Dts.Transform.V20200101
 			describeMigrationJobStatusResponse.PayType = _ctx.StringValue("DescribeMigrationJobStatus.PayType");
 			describeMigrationJobStatusResponse.RequestId = _ctx.StringValue("DescribeMigrationJobStatus.RequestId");
 			describeMigrationJobStatusResponse.Success = _ctx.StringValue("DescribeMigrationJobStatus.Success");
+			describeMigrationJobStatusResponse.TaskId = _ctx.StringValue("DescribeMigrationJobStatus.TaskId");
 
 			DescribeMigrationJobStatusResponse.DescribeMigrationJobStatus_DataInitializationStatus dataInitializationStatus = new DescribeMigrationJobStatusResponse.DescribeMigrationJobStatus_DataInitializationStatus();
 			dataInitializationStatus.ErrorMessage = _ctx.StringValue("DescribeMigrationJobStatus.DataInitializationStatus.ErrorMessage");
