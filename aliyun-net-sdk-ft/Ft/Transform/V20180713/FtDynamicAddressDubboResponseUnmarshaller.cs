@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 {
     public class FtDynamicAddressDubboResponseUnmarshaller
     {
-        public static FtDynamicAddressDubboResponse Unmarshall(UnmarshallerContext context)
+        public static FtDynamicAddressDubboResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			FtDynamicAddressDubboResponse ftDynamicAddressDubboResponse = new FtDynamicAddressDubboResponse();
 
-			ftDynamicAddressDubboResponse.HttpResponse = context.HttpResponse;
-			ftDynamicAddressDubboResponse.RequestId = context.StringValue("FtDynamicAddressDubbo.RequestId");
-			ftDynamicAddressDubboResponse.StringValue = context.StringValue("FtDynamicAddressDubbo.StringValue");
-			ftDynamicAddressDubboResponse.IntValue = context.IntegerValue("FtDynamicAddressDubbo.IntValue");
+			ftDynamicAddressDubboResponse.HttpResponse = _ctx.HttpResponse;
+			ftDynamicAddressDubboResponse.RequestId = _ctx.StringValue("FtDynamicAddressDubbo.RequestId");
+			ftDynamicAddressDubboResponse.StringValue = _ctx.StringValue("FtDynamicAddressDubbo.StringValue");
+			ftDynamicAddressDubboResponse.IntValue = _ctx.IntegerValue("FtDynamicAddressDubbo.IntValue");
         
 			return ftDynamicAddressDubboResponse;
         }

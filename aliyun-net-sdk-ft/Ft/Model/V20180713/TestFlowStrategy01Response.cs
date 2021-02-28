@@ -16,25 +16,55 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Ft.Model.V20180713;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Ft.Transform.V20180713
+namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class FTApiAliasApiResponseUnmarshaller
-    {
-        public static FTApiAliasApiResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			FTApiAliasApiResponse fTApiAliasApiResponse = new FTApiAliasApiResponse();
+	public class TestFlowStrategy01Response : AcsResponse
+	{
 
-			fTApiAliasApiResponse.HttpResponse = _ctx.HttpResponse;
-			fTApiAliasApiResponse.RequestId = _ctx.StringValue("FTApiAliasApi.RequestId");
-			fTApiAliasApiResponse.Name = _ctx.StringValue("FTApiAliasApi.Name");
-        
-			return fTApiAliasApiResponse;
-        }
-    }
+		private string requestId;
+
+		private List<string> list;
+
+		private List<string> names;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<string> List
+		{
+			get
+			{
+				return list;
+			}
+			set	
+			{
+				list = value;
+			}
+		}
+
+		public List<string> Names
+		{
+			get
+			{
+				return names;
+			}
+			set	
+			{
+				names = value;
+			}
+		}
+	}
 }

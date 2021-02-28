@@ -24,17 +24,17 @@ using Aliyun.Acs.Ft.Model.V20180713;
 
 namespace Aliyun.Acs.Ft.Transform.V20180713
 {
-    public class FTApiAliasApiResponseUnmarshaller
+    public class FtDynamicAddressHttpVpcResponseUnmarshaller
     {
-        public static FTApiAliasApiResponse Unmarshall(UnmarshallerContext _ctx)
+        public static FtDynamicAddressHttpVpcResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			FTApiAliasApiResponse fTApiAliasApiResponse = new FTApiAliasApiResponse();
+			FtDynamicAddressHttpVpcResponse ftDynamicAddressHttpVpcResponse = new FtDynamicAddressHttpVpcResponse();
 
-			fTApiAliasApiResponse.HttpResponse = _ctx.HttpResponse;
-			fTApiAliasApiResponse.RequestId = _ctx.StringValue("FTApiAliasApi.RequestId");
-			fTApiAliasApiResponse.Name = _ctx.StringValue("FTApiAliasApi.Name");
+			ftDynamicAddressHttpVpcResponse.HttpResponse = _ctx.HttpResponse;
+			ftDynamicAddressHttpVpcResponse._Params = _ctx.StringValue("FtDynamicAddressHttpVpc.Params");
+			ftDynamicAddressHttpVpcResponse.ServiceRpcSign = _ctx.StringValue("FtDynamicAddressHttpVpc.ServiceRpcSign");
         
-			return fTApiAliasApiResponse;
+			return ftDynamicAddressHttpVpcResponse;
         }
     }
 }

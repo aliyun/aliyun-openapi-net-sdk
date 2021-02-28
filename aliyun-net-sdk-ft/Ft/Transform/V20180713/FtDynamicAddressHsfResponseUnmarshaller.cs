@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ft.Transform.V20180713
 {
     public class FtDynamicAddressHsfResponseUnmarshaller
     {
-        public static FtDynamicAddressHsfResponse Unmarshall(UnmarshallerContext context)
+        public static FtDynamicAddressHsfResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			FtDynamicAddressHsfResponse ftDynamicAddressHsfResponse = new FtDynamicAddressHsfResponse();
 
-			ftDynamicAddressHsfResponse.HttpResponse = context.HttpResponse;
-			ftDynamicAddressHsfResponse.RequestId = context.StringValue("FtDynamicAddressHsf.RequestId");
+			ftDynamicAddressHsfResponse.HttpResponse = _ctx.HttpResponse;
+			ftDynamicAddressHsfResponse.RequestId = _ctx.StringValue("FtDynamicAddressHsf.RequestId");
         
 			return ftDynamicAddressHsfResponse;
         }

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,37 +29,42 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class FtIpFlowControlRequest : RpcAcsRequest<FtIpFlowControlResponse>
+    public class TestFlowStrategy01Request : RpcAcsRequest<TestFlowStrategy01Response>
     {
-        public FtIpFlowControlRequest()
-            : base("Ft", "2018-07-13", "FtIpFlowControl")
+        public TestFlowStrategy01Request()
+            : base("Ft", "2018-07-13", "TestFlowStrategy01")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ft.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ft.Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
+			Method = MethodType.PUT;
         }
 
-		private string name;
+		private List<object> names;
 
-		public string Name
+		public List<object> Names
 		{
 			get
 			{
-				return name;
+				return names;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				names = value;
+				DictionaryUtil.Add(BodyParameters, "Names", JsonConvert.SerializeObject(value));
 			}
 		}
 
-        public override FtIpFlowControlResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override TestFlowStrategy01Response GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FtIpFlowControlResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TestFlowStrategy01ResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

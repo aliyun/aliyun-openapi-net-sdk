@@ -28,10 +28,10 @@ using Aliyun.Acs.Ft.Transform.V20180713;
 
 namespace Aliyun.Acs.Ft.Model.V20180713
 {
-    public class FtIpFlowControlRequest : RpcAcsRequest<FtIpFlowControlResponse>
+    public class FtDynamicAddressHttpVpcRequest : RpcAcsRequest<FtDynamicAddressHttpVpcResponse>
     {
-        public FtIpFlowControlRequest()
-            : base("Ft", "2018-07-13", "FtIpFlowControl")
+        public FtDynamicAddressHttpVpcRequest()
+            : base("Ft", "2018-07-13", "FtDynamicAddressHttpVpc")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,24 +41,89 @@ namespace Aliyun.Acs.Ft.Model.V20180713
 			Method = MethodType.POST;
         }
 
-		private string name;
+		private string p1;
 
-		public string Name
+		private string stringValue;
+
+		private string otherParam;
+
+		private bool? booleanParam;
+
+		private string defaultValue;
+
+		public string P1
 		{
 			get
 			{
-				return name;
+				return p1;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				p1 = value;
+				DictionaryUtil.Add(QueryParameters, "P1", value);
 			}
 		}
 
-        public override FtIpFlowControlResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string StringValue
+		{
+			get
+			{
+				return stringValue;
+			}
+			set	
+			{
+				stringValue = value;
+				DictionaryUtil.Add(QueryParameters, "StringValue", value);
+			}
+		}
+
+		public string OtherParam
+		{
+			get
+			{
+				return otherParam;
+			}
+			set	
+			{
+				otherParam = value;
+				DictionaryUtil.Add(QueryParameters, "OtherParam", value);
+			}
+		}
+
+		public bool? BooleanParam
+		{
+			get
+			{
+				return booleanParam;
+			}
+			set	
+			{
+				booleanParam = value;
+				DictionaryUtil.Add(QueryParameters, "BooleanParam", value.ToString());
+			}
+		}
+
+		public string DefaultValue
+		{
+			get
+			{
+				return defaultValue;
+			}
+			set	
+			{
+				defaultValue = value;
+				DictionaryUtil.Add(QueryParameters, "DefaultValue", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override FtDynamicAddressHttpVpcResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FtIpFlowControlResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return FtDynamicAddressHttpVpcResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
