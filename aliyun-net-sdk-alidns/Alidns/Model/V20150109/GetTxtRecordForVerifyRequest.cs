@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
         public GetTxtRecordForVerifyRequest()
             : base("Alidns", "2015-01-09", "GetTxtRecordForVerify", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Alidns.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Alidns.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 

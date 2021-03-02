@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
         public DescribeDomainDnssecInfoRequest()
             : base("Alidns", "2015-01-09", "DescribeDomainDnssecInfo", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Alidns.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Alidns.Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
