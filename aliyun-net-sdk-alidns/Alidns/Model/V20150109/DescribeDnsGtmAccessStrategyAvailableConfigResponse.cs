@@ -37,6 +37,12 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private List<DescribeDnsGtmAccessStrategyAvailableConfig_DomainAddrPool> domainAddrPools;
 
+		private List<string> selectedIpv4Lines;
+
+		private List<string> selectedIpv6Lines;
+
+		private List<string> selectedDomainLines;
+
 		public string RequestId
 		{
 			get
@@ -106,6 +112,42 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			set	
 			{
 				domainAddrPools = value;
+			}
+		}
+
+		public List<string> SelectedIpv4Lines
+		{
+			get
+			{
+				return selectedIpv4Lines;
+			}
+			set	
+			{
+				selectedIpv4Lines = value;
+			}
+		}
+
+		public List<string> SelectedIpv6Lines
+		{
+			get
+			{
+				return selectedIpv6Lines;
+			}
+			set	
+			{
+				selectedIpv6Lines = value;
+			}
+		}
+
+		public List<string> SelectedDomainLines
+		{
+			get
+			{
+				return selectedDomainLines;
+			}
+			set	
+			{
+				selectedDomainLines = value;
 			}
 		}
 

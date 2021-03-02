@@ -29,11 +29,11 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private List<DescribeDnsGtmMonitorAvailableConfig_Ipv4IspCityNode> ipv4IspCityNodes;
 
-		private List<DescribeDnsGtmMonitorAvailableConfig_Ipv6IspCityNode> ipv6IspCityNodes;
-
 		private List<DescribeDnsGtmMonitorAvailableConfig_DomainIpv4IspCityNode> domainIpv4IspCityNodes;
 
 		private List<DescribeDnsGtmMonitorAvailableConfig_DomainIpv6IspCityNode> domainIpv6IspCityNodes;
+
+		private List<DescribeDnsGtmMonitorAvailableConfig_Ipv6IspCityNode> ipv6IspCityNodes;
 
 		public string RequestId
 		{
@@ -56,18 +56,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			set	
 			{
 				ipv4IspCityNodes = value;
-			}
-		}
-
-		public List<DescribeDnsGtmMonitorAvailableConfig_Ipv6IspCityNode> Ipv6IspCityNodes
-		{
-			get
-			{
-				return ipv6IspCityNodes;
-			}
-			set	
-			{
-				ipv6IspCityNodes = value;
 			}
 		}
 
@@ -95,158 +83,46 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public class DescribeDnsGtmMonitorAvailableConfig_Ipv4IspCityNode
+		public List<DescribeDnsGtmMonitorAvailableConfig_Ipv6IspCityNode> Ipv6IspCityNodes
 		{
-
-			private string ispName;
-
-			private string ispCode;
-
-			private string cityName;
-
-			private string cityCode;
-
-			private bool? defaultSelected;
-
-			private string groupType;
-
-			private string groupName;
-
-			public string IspName
+			get
 			{
-				get
-				{
-					return ispName;
-				}
-				set	
-				{
-					ispName = value;
-				}
+				return ipv6IspCityNodes;
 			}
-
-			public string IspCode
+			set	
 			{
-				get
-				{
-					return ispCode;
-				}
-				set	
-				{
-					ispCode = value;
-				}
-			}
-
-			public string CityName
-			{
-				get
-				{
-					return cityName;
-				}
-				set	
-				{
-					cityName = value;
-				}
-			}
-
-			public string CityCode
-			{
-				get
-				{
-					return cityCode;
-				}
-				set	
-				{
-					cityCode = value;
-				}
-			}
-
-			public bool? DefaultSelected
-			{
-				get
-				{
-					return defaultSelected;
-				}
-				set	
-				{
-					defaultSelected = value;
-				}
-			}
-
-			public string GroupType
-			{
-				get
-				{
-					return groupType;
-				}
-				set	
-				{
-					groupType = value;
-				}
-			}
-
-			public string GroupName
-			{
-				get
-				{
-					return groupName;
-				}
-				set	
-				{
-					groupName = value;
-				}
+				ipv6IspCityNodes = value;
 			}
 		}
 
-		public class DescribeDnsGtmMonitorAvailableConfig_Ipv6IspCityNode
+		public class DescribeDnsGtmMonitorAvailableConfig_Ipv4IspCityNode
 		{
-
-			private string ispName;
-
-			private string ispCode;
-
-			private string cityName;
-
-			private string cityCode;
-
-			private bool? defaultSelected;
-
-			private string groupType;
 
 			private string groupName;
 
-			public string IspName
-			{
-				get
-				{
-					return ispName;
-				}
-				set	
-				{
-					ispName = value;
-				}
-			}
+			private string cityCode;
 
-			public string IspCode
-			{
-				get
-				{
-					return ispCode;
-				}
-				set	
-				{
-					ispCode = value;
-				}
-			}
+			private string ispName;
 
-			public string CityName
+			private string groupType;
+
+			private string cityName;
+
+			private bool? defaultSelected;
+
+			private string ispCode;
+
+			private List<string> ips;
+
+			public string GroupName
 			{
 				get
 				{
-					return cityName;
+					return groupName;
 				}
 				set	
 				{
-					cityName = value;
+					groupName = value;
 				}
 			}
 
@@ -262,15 +138,15 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				}
 			}
 
-			public bool? DefaultSelected
+			public string IspName
 			{
 				get
 				{
-					return defaultSelected;
+					return ispName;
 				}
 				set	
 				{
-					defaultSelected = value;
+					ispName = value;
 				}
 			}
 
@@ -286,15 +162,51 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				}
 			}
 
-			public string GroupName
+			public string CityName
 			{
 				get
 				{
-					return groupName;
+					return cityName;
 				}
 				set	
 				{
-					groupName = value;
+					cityName = value;
+				}
+			}
+
+			public bool? DefaultSelected
+			{
+				get
+				{
+					return defaultSelected;
+				}
+				set	
+				{
+					defaultSelected = value;
+				}
+			}
+
+			public string IspCode
+			{
+				get
+				{
+					return ispCode;
+				}
+				set	
+				{
+					ispCode = value;
+				}
+			}
+
+			public List<string> Ips
+			{
+				get
+				{
+					return ips;
+				}
+				set	
+				{
+					ips = value;
 				}
 			}
 		}
@@ -302,53 +214,31 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		public class DescribeDnsGtmMonitorAvailableConfig_DomainIpv4IspCityNode
 		{
 
-			private string ispName;
-
-			private string ispCode;
-
-			private string cityName;
+			private string groupName;
 
 			private string cityCode;
 
-			private bool? defaultSelected;
+			private string ispName;
 
 			private string groupType;
 
-			private string groupName;
+			private string cityName;
 
-			public string IspName
+			private bool? defaultSelected;
+
+			private string ispCode;
+
+			private List<string> ips1;
+
+			public string GroupName
 			{
 				get
 				{
-					return ispName;
+					return groupName;
 				}
 				set	
 				{
-					ispName = value;
-				}
-			}
-
-			public string IspCode
-			{
-				get
-				{
-					return ispCode;
-				}
-				set	
-				{
-					ispCode = value;
-				}
-			}
-
-			public string CityName
-			{
-				get
-				{
-					return cityName;
-				}
-				set	
-				{
-					cityName = value;
+					groupName = value;
 				}
 			}
 
@@ -364,15 +254,15 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				}
 			}
 
-			public bool? DefaultSelected
+			public string IspName
 			{
 				get
 				{
-					return defaultSelected;
+					return ispName;
 				}
 				set	
 				{
-					defaultSelected = value;
+					ispName = value;
 				}
 			}
 
@@ -388,15 +278,51 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				}
 			}
 
-			public string GroupName
+			public string CityName
 			{
 				get
 				{
-					return groupName;
+					return cityName;
 				}
 				set	
 				{
-					groupName = value;
+					cityName = value;
+				}
+			}
+
+			public bool? DefaultSelected
+			{
+				get
+				{
+					return defaultSelected;
+				}
+				set	
+				{
+					defaultSelected = value;
+				}
+			}
+
+			public string IspCode
+			{
+				get
+				{
+					return ispCode;
+				}
+				set	
+				{
+					ispCode = value;
+				}
+			}
+
+			public List<string> Ips1
+			{
+				get
+				{
+					return ips1;
+				}
+				set	
+				{
+					ips1 = value;
 				}
 			}
 		}
@@ -404,53 +330,31 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		public class DescribeDnsGtmMonitorAvailableConfig_DomainIpv6IspCityNode
 		{
 
-			private string ispName;
-
-			private string ispCode;
-
-			private string cityName;
+			private string groupName;
 
 			private string cityCode;
 
-			private bool? defaultSelected;
+			private string ispName;
 
 			private string groupType;
 
-			private string groupName;
+			private string cityName;
 
-			public string IspName
+			private bool? defaultSelected;
+
+			private string ispCode;
+
+			private List<string> ips2;
+
+			public string GroupName
 			{
 				get
 				{
-					return ispName;
+					return groupName;
 				}
 				set	
 				{
-					ispName = value;
-				}
-			}
-
-			public string IspCode
-			{
-				get
-				{
-					return ispCode;
-				}
-				set	
-				{
-					ispCode = value;
-				}
-			}
-
-			public string CityName
-			{
-				get
-				{
-					return cityName;
-				}
-				set	
-				{
-					cityName = value;
+					groupName = value;
 				}
 			}
 
@@ -466,15 +370,15 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				}
 			}
 
-			public bool? DefaultSelected
+			public string IspName
 			{
 				get
 				{
-					return defaultSelected;
+					return ispName;
 				}
 				set	
 				{
-					defaultSelected = value;
+					ispName = value;
 				}
 			}
 
@@ -490,6 +394,74 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				}
 			}
 
+			public string CityName
+			{
+				get
+				{
+					return cityName;
+				}
+				set	
+				{
+					cityName = value;
+				}
+			}
+
+			public bool? DefaultSelected
+			{
+				get
+				{
+					return defaultSelected;
+				}
+				set	
+				{
+					defaultSelected = value;
+				}
+			}
+
+			public string IspCode
+			{
+				get
+				{
+					return ispCode;
+				}
+				set	
+				{
+					ispCode = value;
+				}
+			}
+
+			public List<string> Ips2
+			{
+				get
+				{
+					return ips2;
+				}
+				set	
+				{
+					ips2 = value;
+				}
+			}
+		}
+
+		public class DescribeDnsGtmMonitorAvailableConfig_Ipv6IspCityNode
+		{
+
+			private string groupName;
+
+			private string cityCode;
+
+			private string ispName;
+
+			private string groupType;
+
+			private string cityName;
+
+			private bool? defaultSelected;
+
+			private string ispCode;
+
+			private List<string> ips3;
+
 			public string GroupName
 			{
 				get
@@ -499,6 +471,90 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					groupName = value;
+				}
+			}
+
+			public string CityCode
+			{
+				get
+				{
+					return cityCode;
+				}
+				set	
+				{
+					cityCode = value;
+				}
+			}
+
+			public string IspName
+			{
+				get
+				{
+					return ispName;
+				}
+				set	
+				{
+					ispName = value;
+				}
+			}
+
+			public string GroupType
+			{
+				get
+				{
+					return groupType;
+				}
+				set	
+				{
+					groupType = value;
+				}
+			}
+
+			public string CityName
+			{
+				get
+				{
+					return cityName;
+				}
+				set	
+				{
+					cityName = value;
+				}
+			}
+
+			public bool? DefaultSelected
+			{
+				get
+				{
+					return defaultSelected;
+				}
+				set	
+				{
+					defaultSelected = value;
+				}
+			}
+
+			public string IspCode
+			{
+				get
+				{
+					return ispCode;
+				}
+				set	
+				{
+					ispCode = value;
+				}
+			}
+
+			public List<string> Ips3
+			{
+				get
+				{
+					return ips3;
+				}
+				set	
+				{
+					ips3 = value;
 				}
 			}
 		}

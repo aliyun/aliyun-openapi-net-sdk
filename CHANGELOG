@@ -1,3 +1,7 @@
+2021-03-02 Version: 2.6.28
+- Supported API for dnsCache.
+- Supported API for GTM.
+
 2021-03-02 Version: 1.23.1
 - Support GroupCoverFace ExternalId for ListFaceGroups.
 - Support ResetItems for UpdateFaceGroup.

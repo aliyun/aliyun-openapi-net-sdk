@@ -16,16 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Alidns
-{
-    public class Endpoint
-    {
-        public static Dictionary<string, string> endpointMap = new Dictionary<string, string>() 
-        {};
+using Aliyun.Acs.Core;
 
-        public static string endpointRegionalType = "central";
-    }
+namespace Aliyun.Acs.Alidns.Model.V20150109
+{
+	public class UpdateDnsCacheDomainRemarkResponse : AcsResponse
+	{
+
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

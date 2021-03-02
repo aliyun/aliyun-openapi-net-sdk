@@ -34,6 +34,24 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			describeDnsGtmAccessStrategyAvailableConfigResponse.RequestId = _ctx.StringValue("DescribeDnsGtmAccessStrategyAvailableConfig.RequestId");
 			describeDnsGtmAccessStrategyAvailableConfigResponse.SuggestSetDefaultLine = _ctx.BooleanValue("DescribeDnsGtmAccessStrategyAvailableConfig.SuggestSetDefaultLine");
 
+			List<string> describeDnsGtmAccessStrategyAvailableConfigResponse_selectedIpv4Lines = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeDnsGtmAccessStrategyAvailableConfig.SelectedIpv4Lines.Length"); i++) {
+				describeDnsGtmAccessStrategyAvailableConfigResponse_selectedIpv4Lines.Add(_ctx.StringValue("DescribeDnsGtmAccessStrategyAvailableConfig.SelectedIpv4Lines["+ i +"]"));
+			}
+			describeDnsGtmAccessStrategyAvailableConfigResponse.SelectedIpv4Lines = describeDnsGtmAccessStrategyAvailableConfigResponse_selectedIpv4Lines;
+
+			List<string> describeDnsGtmAccessStrategyAvailableConfigResponse_selectedIpv6Lines = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeDnsGtmAccessStrategyAvailableConfig.SelectedIpv6Lines.Length"); i++) {
+				describeDnsGtmAccessStrategyAvailableConfigResponse_selectedIpv6Lines.Add(_ctx.StringValue("DescribeDnsGtmAccessStrategyAvailableConfig.SelectedIpv6Lines["+ i +"]"));
+			}
+			describeDnsGtmAccessStrategyAvailableConfigResponse.SelectedIpv6Lines = describeDnsGtmAccessStrategyAvailableConfigResponse_selectedIpv6Lines;
+
+			List<string> describeDnsGtmAccessStrategyAvailableConfigResponse_selectedDomainLines = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeDnsGtmAccessStrategyAvailableConfig.SelectedDomainLines.Length"); i++) {
+				describeDnsGtmAccessStrategyAvailableConfigResponse_selectedDomainLines.Add(_ctx.StringValue("DescribeDnsGtmAccessStrategyAvailableConfig.SelectedDomainLines["+ i +"]"));
+			}
+			describeDnsGtmAccessStrategyAvailableConfigResponse.SelectedDomainLines = describeDnsGtmAccessStrategyAvailableConfigResponse_selectedDomainLines;
+
 			List<DescribeDnsGtmAccessStrategyAvailableConfigResponse.DescribeDnsGtmAccessStrategyAvailableConfig_Ipv4AddrPool> describeDnsGtmAccessStrategyAvailableConfigResponse_ipv4AddrPools = new List<DescribeDnsGtmAccessStrategyAvailableConfigResponse.DescribeDnsGtmAccessStrategyAvailableConfig_Ipv4AddrPool>();
 			for (int i = 0; i < _ctx.Length("DescribeDnsGtmAccessStrategyAvailableConfig.Ipv4AddrPools.Length"); i++) {
 				DescribeDnsGtmAccessStrategyAvailableConfigResponse.DescribeDnsGtmAccessStrategyAvailableConfig_Ipv4AddrPool ipv4AddrPool = new DescribeDnsGtmAccessStrategyAvailableConfigResponse.DescribeDnsGtmAccessStrategyAvailableConfig_Ipv4AddrPool();

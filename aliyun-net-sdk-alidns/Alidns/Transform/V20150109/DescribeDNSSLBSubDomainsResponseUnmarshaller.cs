@@ -44,6 +44,16 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 				slbSubDomain.Open = _ctx.BooleanValue("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].Open");
 				slbSubDomain.Type = _ctx.StringValue("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].Type");
 
+				List<DescribeDNSSLBSubDomainsResponse.DescribeDNSSLBSubDomains_SlbSubDomain.DescribeDNSSLBSubDomains_LineAlgorithm> slbSubDomain_lineAlgorithms = new List<DescribeDNSSLBSubDomainsResponse.DescribeDNSSLBSubDomains_SlbSubDomain.DescribeDNSSLBSubDomains_LineAlgorithm>();
+				for (int j = 0; j < _ctx.Length("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].LineAlgorithms.Length"); j++) {
+					DescribeDNSSLBSubDomainsResponse.DescribeDNSSLBSubDomains_SlbSubDomain.DescribeDNSSLBSubDomains_LineAlgorithm lineAlgorithm = new DescribeDNSSLBSubDomainsResponse.DescribeDNSSLBSubDomains_SlbSubDomain.DescribeDNSSLBSubDomains_LineAlgorithm();
+					lineAlgorithm.Line = _ctx.StringValue("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].LineAlgorithms["+ j +"].Line");
+					lineAlgorithm.Open = _ctx.BooleanValue("DescribeDNSSLBSubDomains.SlbSubDomains["+ i +"].LineAlgorithms["+ j +"].Open");
+
+					slbSubDomain_lineAlgorithms.Add(lineAlgorithm);
+				}
+				slbSubDomain.LineAlgorithms = slbSubDomain_lineAlgorithms;
+
 				describeDNSSLBSubDomainsResponse_slbSubDomains.Add(slbSubDomain);
 			}
 			describeDNSSLBSubDomainsResponse.SlbSubDomains = describeDNSSLBSubDomainsResponse_slbSubDomains;
