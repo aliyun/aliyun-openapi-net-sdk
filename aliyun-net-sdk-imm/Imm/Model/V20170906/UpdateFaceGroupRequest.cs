@@ -52,6 +52,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string groupName;
 
+		private string resetItems;
+
 		private string remarksArrayA;
 
 		private string remarksArrayB;
@@ -139,6 +141,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				groupName = value;
 				DictionaryUtil.Add(QueryParameters, "GroupName", value);
+			}
+		}
+
+		public string ResetItems
+		{
+			get
+			{
+				return resetItems;
+			}
+			set	
+			{
+				resetItems = value;
+				DictionaryUtil.Add(QueryParameters, "ResetItems", value);
 			}
 		}
 

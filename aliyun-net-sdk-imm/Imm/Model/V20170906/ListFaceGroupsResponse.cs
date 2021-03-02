@@ -329,6 +329,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 				private string imageUri;
 
+				private string externalId;
+
 				private ListFaceGroups_FaceBoundary faceBoundary;
 
 				public string FaceId
@@ -352,6 +354,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					set	
 					{
 						imageUri = value;
+					}
+				}
+
+				public string ExternalId
+				{
+					get
+					{
+						return externalId;
+					}
+					set	
+					{
+						externalId = value;
 					}
 				}
 

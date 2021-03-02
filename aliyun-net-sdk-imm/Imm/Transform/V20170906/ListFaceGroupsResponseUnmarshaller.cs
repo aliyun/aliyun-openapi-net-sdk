@@ -58,6 +58,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				ListFaceGroupsResponse.ListFaceGroups_FaceGroupsItem.ListFaceGroups_GroupCoverFace groupCoverFace = new ListFaceGroupsResponse.ListFaceGroups_FaceGroupsItem.ListFaceGroups_GroupCoverFace();
 				groupCoverFace.FaceId = _ctx.StringValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.FaceId");
 				groupCoverFace.ImageUri = _ctx.StringValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.ImageUri");
+				groupCoverFace.ExternalId = _ctx.StringValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.ExternalId");
 
 				ListFaceGroupsResponse.ListFaceGroups_FaceGroupsItem.ListFaceGroups_GroupCoverFace.ListFaceGroups_FaceBoundary faceBoundary = new ListFaceGroupsResponse.ListFaceGroups_FaceGroupsItem.ListFaceGroups_GroupCoverFace.ListFaceGroups_FaceBoundary();
 				faceBoundary.Left = _ctx.IntegerValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.FaceBoundary.Left");
