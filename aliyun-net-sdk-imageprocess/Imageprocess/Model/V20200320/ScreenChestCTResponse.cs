@@ -25,9 +25,25 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 	public class ScreenChestCTResponse : AcsResponse
 	{
 
+		private string message;
+
 		private string requestId;
 
+		private string code;
+
 		private ScreenChestCT_Data data;
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -38,6 +54,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -56,21 +84,23 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 		public class ScreenChestCT_Data
 		{
 
-			private ScreenChestCT_LungNodule lungNodule;
+			private ScreenChestCT_Covid covid;
 
 			private ScreenChestCT_CACS cACS;
 
-			private ScreenChestCT_Covid covid;
+			private ScreenChestCT_LungNodule lungNodule;
 
-			public ScreenChestCT_LungNodule LungNodule
+			private ScreenChestCT_DetectRibFracture detectRibFracture;
+
+			public ScreenChestCT_Covid Covid
 			{
 				get
 				{
-					return lungNodule;
+					return covid;
 				}
 				set	
 				{
-					lungNodule = value;
+					covid = value;
 				}
 			}
 
@@ -86,15 +116,133 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 				}
 			}
 
-			public ScreenChestCT_Covid Covid
+			public ScreenChestCT_LungNodule LungNodule
 			{
 				get
 				{
-					return covid;
+					return lungNodule;
 				}
 				set	
 				{
-					covid = value;
+					lungNodule = value;
+				}
+			}
+
+			public ScreenChestCT_DetectRibFracture DetectRibFracture
+			{
+				get
+				{
+					return detectRibFracture;
+				}
+				set	
+				{
+					detectRibFracture = value;
+				}
+			}
+
+			public class ScreenChestCT_Covid
+			{
+
+				private string newProbability;
+
+				private string otherProbability;
+
+				private string normalProbability;
+
+				private string mask;
+
+				private string lesionRatio;
+
+				public string NewProbability
+				{
+					get
+					{
+						return newProbability;
+					}
+					set	
+					{
+						newProbability = value;
+					}
+				}
+
+				public string OtherProbability
+				{
+					get
+					{
+						return otherProbability;
+					}
+					set	
+					{
+						otherProbability = value;
+					}
+				}
+
+				public string NormalProbability
+				{
+					get
+					{
+						return normalProbability;
+					}
+					set	
+					{
+						normalProbability = value;
+					}
+				}
+
+				public string Mask
+				{
+					get
+					{
+						return mask;
+					}
+					set	
+					{
+						mask = value;
+					}
+				}
+
+				public string LesionRatio
+				{
+					get
+					{
+						return lesionRatio;
+					}
+					set	
+					{
+						lesionRatio = value;
+					}
+				}
+			}
+
+			public class ScreenChestCT_CACS
+			{
+
+				private string score;
+
+				private string resultUrl;
+
+				public string Score
+				{
+					get
+					{
+						return score;
+					}
+					set	
+					{
+						score = value;
+					}
+				}
+
+				public string ResultUrl
+				{
+					get
+					{
+						return resultUrl;
+					}
+					set	
+					{
+						resultUrl = value;
+					}
 				}
 			}
 
@@ -118,27 +266,15 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 				public class ScreenChestCT_Serie
 				{
 
-					private string seriesInstanceUid;
-
 					private string report;
+
+					private string seriesInstanceUid;
 
 					private List<ScreenChestCT_Element> elements;
 
 					private List<string> origin;
 
 					private List<string> spacing;
-
-					public string SeriesInstanceUid
-					{
-						get
-						{
-							return seriesInstanceUid;
-						}
-						set	
-						{
-							seriesInstanceUid = value;
-						}
-					}
 
 					public string Report
 					{
@@ -149,6 +285,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 						set	
 						{
 							report = value;
+						}
+					}
+
+					public string SeriesInstanceUid
+					{
+						get
+						{
+							return seriesInstanceUid;
+						}
+						set	
+						{
+							seriesInstanceUid = value;
 						}
 					}
 
@@ -191,139 +339,43 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 					public class ScreenChestCT_Element
 					{
 
-						private string category;
-
-						private float? confidence;
-
-						private float? diameter;
-
-						private string lobe;
-
-						private string lung;
-
-						private float? x;
-
-						private float? z;
-
-						private float? y;
-
-						private float? imageX;
+						private float? imageZ;
 
 						private float? imageY;
 
-						private float? imageZ;
+						private float? imageX;
 
-						private string sOPInstanceUID;
+						private string lobe;
 
-						private float? volume;
+						private string category;
+
+						private string lung;
 
 						private float? meanValue;
 
-						public string Category
-						{
-							get
-							{
-								return category;
-							}
-							set	
-							{
-								category = value;
-							}
-						}
+						private float? volume;
 
-						public float? Confidence
-						{
-							get
-							{
-								return confidence;
-							}
-							set	
-							{
-								confidence = value;
-							}
-						}
+						private float? confidence;
 
-						public float? Diameter
-						{
-							get
-							{
-								return diameter;
-							}
-							set	
-							{
-								diameter = value;
-							}
-						}
+						private float? x;
 
-						public string Lobe
-						{
-							get
-							{
-								return lobe;
-							}
-							set	
-							{
-								lobe = value;
-							}
-						}
+						private float? y;
 
-						public string Lung
-						{
-							get
-							{
-								return lung;
-							}
-							set	
-							{
-								lung = value;
-							}
-						}
+						private float? z;
 
-						public float? X
-						{
-							get
-							{
-								return x;
-							}
-							set	
-							{
-								x = value;
-							}
-						}
+						private string sOPInstanceUID;
 
-						public float? Z
-						{
-							get
-							{
-								return z;
-							}
-							set	
-							{
-								z = value;
-							}
-						}
+						private float? diameter;
 
-						public float? Y
+						public float? ImageZ
 						{
 							get
 							{
-								return y;
+								return imageZ;
 							}
 							set	
 							{
-								y = value;
-							}
-						}
-
-						public float? ImageX
-						{
-							get
-							{
-								return imageX;
-							}
-							set	
-							{
-								imageX = value;
+								imageZ = value;
 							}
 						}
 
@@ -339,27 +391,63 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 							}
 						}
 
-						public float? ImageZ
+						public float? ImageX
 						{
 							get
 							{
-								return imageZ;
+								return imageX;
 							}
 							set	
 							{
-								imageZ = value;
+								imageX = value;
 							}
 						}
 
-						public string SOPInstanceUID
+						public string Lobe
 						{
 							get
 							{
-								return sOPInstanceUID;
+								return lobe;
 							}
 							set	
 							{
-								sOPInstanceUID = value;
+								lobe = value;
+							}
+						}
+
+						public string Category
+						{
+							get
+							{
+								return category;
+							}
+							set	
+							{
+								category = value;
+							}
+						}
+
+						public string Lung
+						{
+							get
+							{
+								return lung;
+							}
+							set	
+							{
+								lung = value;
+							}
+						}
+
+						public float? MeanValue
+						{
+							get
+							{
+								return meanValue;
+							}
+							set	
+							{
+								meanValue = value;
 							}
 						}
 
@@ -375,123 +463,211 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 							}
 						}
 
-						public float? MeanValue
+						public float? Confidence
 						{
 							get
 							{
-								return meanValue;
+								return confidence;
 							}
 							set	
 							{
-								meanValue = value;
+								confidence = value;
+							}
+						}
+
+						public float? X
+						{
+							get
+							{
+								return x;
+							}
+							set	
+							{
+								x = value;
+							}
+						}
+
+						public float? Y
+						{
+							get
+							{
+								return y;
+							}
+							set	
+							{
+								y = value;
+							}
+						}
+
+						public float? Z
+						{
+							get
+							{
+								return z;
+							}
+							set	
+							{
+								z = value;
+							}
+						}
+
+						public string SOPInstanceUID
+						{
+							get
+							{
+								return sOPInstanceUID;
+							}
+							set	
+							{
+								sOPInstanceUID = value;
+							}
+						}
+
+						public float? Diameter
+						{
+							get
+							{
+								return diameter;
+							}
+							set	
+							{
+								diameter = value;
 							}
 						}
 					}
 				}
 			}
 
-			public class ScreenChestCT_CACS
+			public class ScreenChestCT_DetectRibFracture
 			{
 
-				private string score;
+				private string resultURL;
 
-				private string resultUrl;
+				private List<ScreenChestCT_DetectionsItem> detections;
 
-				public string Score
+				private List<string> origin1;
+
+				private List<string> spacing2;
+
+				public string ResultURL
 				{
 					get
 					{
-						return score;
+						return resultURL;
 					}
 					set	
 					{
-						score = value;
+						resultURL = value;
 					}
 				}
 
-				public string ResultUrl
+				public List<ScreenChestCT_DetectionsItem> Detections
 				{
 					get
 					{
-						return resultUrl;
+						return detections;
 					}
 					set	
 					{
-						resultUrl = value;
-					}
-				}
-			}
-
-			public class ScreenChestCT_Covid
-			{
-
-				private string newProbability;
-
-				private string normalProbability;
-
-				private string otherProbability;
-
-				private string lesionRatio;
-
-				private string mask;
-
-				public string NewProbability
-				{
-					get
-					{
-						return newProbability;
-					}
-					set	
-					{
-						newProbability = value;
+						detections = value;
 					}
 				}
 
-				public string NormalProbability
+				public List<string> Origin1
 				{
 					get
 					{
-						return normalProbability;
+						return origin1;
 					}
 					set	
 					{
-						normalProbability = value;
+						origin1 = value;
 					}
 				}
 
-				public string OtherProbability
+				public List<string> Spacing2
 				{
 					get
 					{
-						return otherProbability;
+						return spacing2;
 					}
 					set	
 					{
-						otherProbability = value;
+						spacing2 = value;
 					}
 				}
 
-				public string LesionRatio
+				public class ScreenChestCT_DetectionsItem
 				{
-					get
-					{
-						return lesionRatio;
-					}
-					set	
-					{
-						lesionRatio = value;
-					}
-				}
 
-				public string Mask
-				{
-					get
+					private long? fractureCategory;
+
+					private float? fractureConfidence;
+
+					private long? fractureId;
+
+					private List<string> coordinateImage;
+
+					private List<string> coordinates;
+
+					public long? FractureCategory
 					{
-						return mask;
+						get
+						{
+							return fractureCategory;
+						}
+						set	
+						{
+							fractureCategory = value;
+						}
 					}
-					set	
+
+					public float? FractureConfidence
 					{
-						mask = value;
+						get
+						{
+							return fractureConfidence;
+						}
+						set	
+						{
+							fractureConfidence = value;
+						}
+					}
+
+					public long? FractureId
+					{
+						get
+						{
+							return fractureId;
+						}
+						set	
+						{
+							fractureId = value;
+						}
+					}
+
+					public List<string> CoordinateImage
+					{
+						get
+						{
+							return coordinateImage;
+						}
+						set	
+						{
+							coordinateImage = value;
+						}
+					}
+
+					public List<string> Coordinates
+					{
+						get
+						{
+							return coordinates;
+						}
+						set	
+						{
+							coordinates = value;
+						}
 					}
 				}
 			}
