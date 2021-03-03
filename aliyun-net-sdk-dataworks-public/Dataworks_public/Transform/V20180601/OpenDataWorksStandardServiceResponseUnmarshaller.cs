@@ -24,18 +24,17 @@ using Aliyun.Acs.dataworks_public.Model.V20180601;
 
 namespace Aliyun.Acs.dataworks_public.Transform.V20180601
 {
-    public class CheckCallbackResponseUnmarshaller
+    public class OpenDataWorksStandardServiceResponseUnmarshaller
     {
-        public static CheckCallbackResponse Unmarshall(UnmarshallerContext _ctx)
+        public static OpenDataWorksStandardServiceResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CheckCallbackResponse checkCallbackResponse = new CheckCallbackResponse();
+			OpenDataWorksStandardServiceResponse openDataWorksStandardServiceResponse = new OpenDataWorksStandardServiceResponse();
 
-			checkCallbackResponse.HttpResponse = _ctx.HttpResponse;
-			checkCallbackResponse.ReturnCode = _ctx.StringValue("CheckCallback.ReturnCode");
-			checkCallbackResponse.ReturnValue = _ctx.BooleanValue("CheckCallback.ReturnValue");
-			checkCallbackResponse.RequestId = _ctx.StringValue("CheckCallback.RequestId");
+			openDataWorksStandardServiceResponse.HttpResponse = _ctx.HttpResponse;
+			openDataWorksStandardServiceResponse.RequestId = _ctx.StringValue("OpenDataWorksStandardService.RequestId");
+			openDataWorksStandardServiceResponse.OrderId = _ctx.StringValue("OpenDataWorksStandardService.OrderId");
         
-			return checkCallbackResponse;
+			return openDataWorksStandardServiceResponse;
         }
     }
 }

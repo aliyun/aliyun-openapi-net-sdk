@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20180601;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20180601
 {
-    public class ListHiveColumnLineagesRequest : RpcAcsRequest<ListHiveColumnLineagesResponse>
+    public class CreateRealTimeProcessRequest : RpcAcsRequest<CreateRealTimeProcessResponse>
     {
-        public ListHiveColumnLineagesRequest()
-            : base("dataworks-public", "2018-06-01", "ListHiveColumnLineages")
+        public CreateRealTimeProcessRequest()
+            : base("dataworks-public", "2018-06-01", "CreateRealTimeProcess")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,63 +41,108 @@ namespace Aliyun.Acs.dataworks_public.Model.V20180601
 			Method = MethodType.POST;
         }
 
-		private string databaseName;
+		private string jobConfig;
 
-		private string clusterId;
+		private bool? createResGroup;
 
-		private string tableName;
+		private string dataworksVersion;
 
-		private string columnName;
+		private string resourceSpec;
 
-		public string DatabaseName
+		private string tableRule;
+
+		private string tables;
+
+		private string dataSource;
+
+		public string JobConfig
 		{
 			get
 			{
-				return databaseName;
+				return jobConfig;
 			}
 			set	
 			{
-				databaseName = value;
-				DictionaryUtil.Add(QueryParameters, "DatabaseName", value);
+				jobConfig = value;
+				DictionaryUtil.Add(QueryParameters, "JobConfig", value);
 			}
 		}
 
-		public string ClusterId
+		public bool? CreateResGroup
 		{
 			get
 			{
-				return clusterId;
+				return createResGroup;
 			}
 			set	
 			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+				createResGroup = value;
+				DictionaryUtil.Add(QueryParameters, "CreateResGroup", value.ToString());
 			}
 		}
 
-		public string TableName
+		public string DataworksVersion
 		{
 			get
 			{
-				return tableName;
+				return dataworksVersion;
 			}
 			set	
 			{
-				tableName = value;
-				DictionaryUtil.Add(QueryParameters, "TableName", value);
+				dataworksVersion = value;
+				DictionaryUtil.Add(QueryParameters, "DataworksVersion", value);
 			}
 		}
 
-		public string ColumnName
+		public string ResourceSpec
 		{
 			get
 			{
-				return columnName;
+				return resourceSpec;
 			}
 			set	
 			{
-				columnName = value;
-				DictionaryUtil.Add(QueryParameters, "ColumnName", value);
+				resourceSpec = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceSpec", value);
+			}
+		}
+
+		public string TableRule
+		{
+			get
+			{
+				return tableRule;
+			}
+			set	
+			{
+				tableRule = value;
+				DictionaryUtil.Add(QueryParameters, "TableRule", value);
+			}
+		}
+
+		public string Tables
+		{
+			get
+			{
+				return tables;
+			}
+			set	
+			{
+				tables = value;
+				DictionaryUtil.Add(QueryParameters, "Tables", value);
+			}
+		}
+
+		public string DataSource
+		{
+			get
+			{
+				return dataSource;
+			}
+			set	
+			{
+				dataSource = value;
+				DictionaryUtil.Add(QueryParameters, "DataSource", value);
 			}
 		}
 
@@ -106,9 +151,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20180601
 			return false;
 		}
 
-        public override ListHiveColumnLineagesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateRealTimeProcessResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListHiveColumnLineagesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateRealTimeProcessResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

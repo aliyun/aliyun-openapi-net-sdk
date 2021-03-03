@@ -26,16 +26,16 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20180601
 {
     public class DeleteFileResponseUnmarshaller
     {
-        public static DeleteFileResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteFileResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteFileResponse deleteFileResponse = new DeleteFileResponse();
 
-			deleteFileResponse.HttpResponse = context.HttpResponse;
-			deleteFileResponse.RequestId = context.StringValue("DeleteFile.RequestId");
-			deleteFileResponse.Success = context.BooleanValue("DeleteFile.Success");
-			deleteFileResponse.ErrorCode = context.StringValue("DeleteFile.ErrorCode");
-			deleteFileResponse.ErrorMessage = context.StringValue("DeleteFile.ErrorMessage");
-			deleteFileResponse.HttpStatusCode = context.IntegerValue("DeleteFile.HttpStatusCode");
+			deleteFileResponse.HttpResponse = _ctx.HttpResponse;
+			deleteFileResponse.RequestId = _ctx.StringValue("DeleteFile.RequestId");
+			deleteFileResponse.Success = _ctx.BooleanValue("DeleteFile.Success");
+			deleteFileResponse.ErrorCode = _ctx.StringValue("DeleteFile.ErrorCode");
+			deleteFileResponse.ErrorMessage = _ctx.StringValue("DeleteFile.ErrorMessage");
+			deleteFileResponse.HttpStatusCode = _ctx.IntegerValue("DeleteFile.HttpStatusCode");
         
 			return deleteFileResponse;
         }

@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20180601;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20180601
 {
-    public class ListHiveColumnLineagesRequest : RpcAcsRequest<ListHiveColumnLineagesResponse>
+    public class QueryRealTimeProcessStatusRequest : RpcAcsRequest<QueryRealTimeProcessStatusResponse>
     {
-        public ListHiveColumnLineagesRequest()
-            : base("dataworks-public", "2018-06-01", "ListHiveColumnLineages")
+        public QueryRealTimeProcessStatusRequest()
+            : base("dataworks-public", "2018-06-01", "QueryRealTimeProcessStatus")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,63 +41,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20180601
 			Method = MethodType.POST;
         }
 
-		private string databaseName;
+		private string taskId;
 
-		private string clusterId;
-
-		private string tableName;
-
-		private string columnName;
-
-		public string DatabaseName
+		public string TaskId
 		{
 			get
 			{
-				return databaseName;
+				return taskId;
 			}
 			set	
 			{
-				databaseName = value;
-				DictionaryUtil.Add(QueryParameters, "DatabaseName", value);
-			}
-		}
-
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
-		public string TableName
-		{
-			get
-			{
-				return tableName;
-			}
-			set	
-			{
-				tableName = value;
-				DictionaryUtil.Add(QueryParameters, "TableName", value);
-			}
-		}
-
-		public string ColumnName
-		{
-			get
-			{
-				return columnName;
-			}
-			set	
-			{
-				columnName = value;
-				DictionaryUtil.Add(QueryParameters, "ColumnName", value);
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value);
 			}
 		}
 
@@ -106,9 +61,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20180601
 			return false;
 		}
 
-        public override ListHiveColumnLineagesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryRealTimeProcessStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListHiveColumnLineagesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryRealTimeProcessStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

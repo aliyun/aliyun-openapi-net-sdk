@@ -26,30 +26,30 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20180601
 {
     public class ListEmrHiveDatabasesResponseUnmarshaller
     {
-        public static ListEmrHiveDatabasesResponse Unmarshall(UnmarshallerContext context)
+        public static ListEmrHiveDatabasesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListEmrHiveDatabasesResponse listEmrHiveDatabasesResponse = new ListEmrHiveDatabasesResponse();
 
-			listEmrHiveDatabasesResponse.HttpResponse = context.HttpResponse;
-			listEmrHiveDatabasesResponse.ErrorCode = context.StringValue("ListEmrHiveDatabases.ErrorCode");
-			listEmrHiveDatabasesResponse.ErrorMessage = context.StringValue("ListEmrHiveDatabases.ErrorMessage");
-			listEmrHiveDatabasesResponse.RequestId = context.StringValue("ListEmrHiveDatabases.RequestId");
+			listEmrHiveDatabasesResponse.HttpResponse = _ctx.HttpResponse;
+			listEmrHiveDatabasesResponse.ErrorCode = _ctx.StringValue("ListEmrHiveDatabases.ErrorCode");
+			listEmrHiveDatabasesResponse.ErrorMessage = _ctx.StringValue("ListEmrHiveDatabases.ErrorMessage");
+			listEmrHiveDatabasesResponse.RequestId = _ctx.StringValue("ListEmrHiveDatabases.RequestId");
 
 			List<ListEmrHiveDatabasesResponse.ListEmrHiveDatabases_HiveDatabase> listEmrHiveDatabasesResponse_data = new List<ListEmrHiveDatabasesResponse.ListEmrHiveDatabases_HiveDatabase>();
-			for (int i = 0; i < context.Length("ListEmrHiveDatabases.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListEmrHiveDatabases.Data.Length"); i++) {
 				ListEmrHiveDatabasesResponse.ListEmrHiveDatabases_HiveDatabase hiveDatabase = new ListEmrHiveDatabasesResponse.ListEmrHiveDatabases_HiveDatabase();
-				hiveDatabase.Name = context.StringValue("ListEmrHiveDatabases.Data["+ i +"].Name");
-				hiveDatabase.Type = context.StringValue("ListEmrHiveDatabases.Data["+ i +"].Type");
-				hiveDatabase.Owner = context.StringValue("ListEmrHiveDatabases.Data["+ i +"].Owner");
-				hiveDatabase.OwnerId = context.StringValue("ListEmrHiveDatabases.Data["+ i +"].OwnerId");
-				hiveDatabase.Comment = context.StringValue("ListEmrHiveDatabases.Data["+ i +"].Comment");
-				hiveDatabase.Location = context.StringValue("ListEmrHiveDatabases.Data["+ i +"].Location");
-				hiveDatabase.Status = context.StringValue("ListEmrHiveDatabases.Data["+ i +"].Status");
-				hiveDatabase.Parameters = context.StringValue("ListEmrHiveDatabases.Data["+ i +"].Parameters");
-				hiveDatabase.GmtCreate = context.LongValue("ListEmrHiveDatabases.Data["+ i +"].GmtCreate");
-				hiveDatabase.GmtModified = context.LongValue("ListEmrHiveDatabases.Data["+ i +"].GmtModified");
-				hiveDatabase.OwnerType = context.StringValue("ListEmrHiveDatabases.Data["+ i +"].OwnerType");
-				hiveDatabase.Region = context.StringValue("ListEmrHiveDatabases.Data["+ i +"].Region");
+				hiveDatabase.Name = _ctx.StringValue("ListEmrHiveDatabases.Data["+ i +"].Name");
+				hiveDatabase.Type = _ctx.StringValue("ListEmrHiveDatabases.Data["+ i +"].Type");
+				hiveDatabase.Owner = _ctx.StringValue("ListEmrHiveDatabases.Data["+ i +"].Owner");
+				hiveDatabase.OwnerId = _ctx.StringValue("ListEmrHiveDatabases.Data["+ i +"].OwnerId");
+				hiveDatabase.Comment = _ctx.StringValue("ListEmrHiveDatabases.Data["+ i +"].Comment");
+				hiveDatabase.Location = _ctx.StringValue("ListEmrHiveDatabases.Data["+ i +"].Location");
+				hiveDatabase.Status = _ctx.StringValue("ListEmrHiveDatabases.Data["+ i +"].Status");
+				hiveDatabase.Parameters = _ctx.StringValue("ListEmrHiveDatabases.Data["+ i +"].Parameters");
+				hiveDatabase.GmtCreate = _ctx.LongValue("ListEmrHiveDatabases.Data["+ i +"].GmtCreate");
+				hiveDatabase.GmtModified = _ctx.LongValue("ListEmrHiveDatabases.Data["+ i +"].GmtModified");
+				hiveDatabase.OwnerType = _ctx.StringValue("ListEmrHiveDatabases.Data["+ i +"].OwnerType");
+				hiveDatabase.Region = _ctx.StringValue("ListEmrHiveDatabases.Data["+ i +"].Region");
 
 				listEmrHiveDatabasesResponse_data.Add(hiveDatabase);
 			}

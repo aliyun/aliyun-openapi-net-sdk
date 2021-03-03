@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20180601;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20180601
 {
-    public class ListHiveColumnLineagesRequest : RpcAcsRequest<ListHiveColumnLineagesResponse>
+    public class OpenDataWorksStandardServiceRequest : RpcAcsRequest<OpenDataWorksStandardServiceResponse>
     {
-        public ListHiveColumnLineagesRequest()
-            : base("dataworks-public", "2018-06-01", "ListHiveColumnLineages")
+        public OpenDataWorksStandardServiceRequest()
+            : base("dataworks-public", "2018-06-01", "OpenDataWorksStandardService")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,63 +41,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20180601
 			Method = MethodType.POST;
         }
 
-		private string databaseName;
+		private string region;
 
-		private string clusterId;
-
-		private string tableName;
-
-		private string columnName;
-
-		public string DatabaseName
+		public string Region
 		{
 			get
 			{
-				return databaseName;
+				return region;
 			}
 			set	
 			{
-				databaseName = value;
-				DictionaryUtil.Add(QueryParameters, "DatabaseName", value);
-			}
-		}
-
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
-		public string TableName
-		{
-			get
-			{
-				return tableName;
-			}
-			set	
-			{
-				tableName = value;
-				DictionaryUtil.Add(QueryParameters, "TableName", value);
-			}
-		}
-
-		public string ColumnName
-		{
-			get
-			{
-				return columnName;
-			}
-			set	
-			{
-				columnName = value;
-				DictionaryUtil.Add(QueryParameters, "ColumnName", value);
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 
@@ -106,9 +61,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20180601
 			return false;
 		}
 
-        public override ListHiveColumnLineagesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override OpenDataWorksStandardServiceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListHiveColumnLineagesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return OpenDataWorksStandardServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

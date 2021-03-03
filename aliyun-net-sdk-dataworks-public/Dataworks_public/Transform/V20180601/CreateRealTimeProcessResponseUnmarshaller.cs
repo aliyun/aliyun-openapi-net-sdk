@@ -24,18 +24,22 @@ using Aliyun.Acs.dataworks_public.Model.V20180601;
 
 namespace Aliyun.Acs.dataworks_public.Transform.V20180601
 {
-    public class CheckCallbackResponseUnmarshaller
+    public class CreateRealTimeProcessResponseUnmarshaller
     {
-        public static CheckCallbackResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateRealTimeProcessResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CheckCallbackResponse checkCallbackResponse = new CheckCallbackResponse();
+			CreateRealTimeProcessResponse createRealTimeProcessResponse = new CreateRealTimeProcessResponse();
 
-			checkCallbackResponse.HttpResponse = _ctx.HttpResponse;
-			checkCallbackResponse.ReturnCode = _ctx.StringValue("CheckCallback.ReturnCode");
-			checkCallbackResponse.ReturnValue = _ctx.BooleanValue("CheckCallback.ReturnValue");
-			checkCallbackResponse.RequestId = _ctx.StringValue("CheckCallback.RequestId");
+			createRealTimeProcessResponse.HttpResponse = _ctx.HttpResponse;
+			createRealTimeProcessResponse.RequestId = _ctx.StringValue("CreateRealTimeProcess.RequestId");
+			createRealTimeProcessResponse.Message = _ctx.StringValue("CreateRealTimeProcess.Message");
+			createRealTimeProcessResponse.Code = _ctx.IntegerValue("CreateRealTimeProcess.Code");
+
+			CreateRealTimeProcessResponse.CreateRealTimeProcess_Data data = new CreateRealTimeProcessResponse.CreateRealTimeProcess_Data();
+			data.TaskId = _ctx.StringValue("CreateRealTimeProcess.Data.TaskId");
+			createRealTimeProcessResponse.Data = data;
         
-			return checkCallbackResponse;
+			return createRealTimeProcessResponse;
         }
     }
 }

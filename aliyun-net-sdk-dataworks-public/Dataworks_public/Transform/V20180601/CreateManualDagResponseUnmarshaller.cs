@@ -26,16 +26,16 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20180601
 {
     public class CreateManualDagResponseUnmarshaller
     {
-        public static CreateManualDagResponse Unmarshall(UnmarshallerContext context)
+        public static CreateManualDagResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateManualDagResponse createManualDagResponse = new CreateManualDagResponse();
 
-			createManualDagResponse.HttpResponse = context.HttpResponse;
-			createManualDagResponse.RequestId = context.StringValue("CreateManualDag.RequestId");
-			createManualDagResponse.ReturnCode = context.StringValue("CreateManualDag.ReturnCode");
-			createManualDagResponse.ReturnErrorSolution = context.StringValue("CreateManualDag.ReturnErrorSolution");
-			createManualDagResponse.ReturnMessage = context.StringValue("CreateManualDag.ReturnMessage");
-			createManualDagResponse.ReturnValue = context.LongValue("CreateManualDag.ReturnValue");
+			createManualDagResponse.HttpResponse = _ctx.HttpResponse;
+			createManualDagResponse.RequestId = _ctx.StringValue("CreateManualDag.RequestId");
+			createManualDagResponse.ReturnCode = _ctx.StringValue("CreateManualDag.ReturnCode");
+			createManualDagResponse.ReturnErrorSolution = _ctx.StringValue("CreateManualDag.ReturnErrorSolution");
+			createManualDagResponse.ReturnMessage = _ctx.StringValue("CreateManualDag.ReturnMessage");
+			createManualDagResponse.ReturnValue = _ctx.LongValue("CreateManualDag.ReturnValue");
         
 			return createManualDagResponse;
         }

@@ -26,48 +26,48 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20180601
 {
     public class ListHiveTableLineagesResponseUnmarshaller
     {
-        public static ListHiveTableLineagesResponse Unmarshall(UnmarshallerContext context)
+        public static ListHiveTableLineagesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListHiveTableLineagesResponse listHiveTableLineagesResponse = new ListHiveTableLineagesResponse();
 
-			listHiveTableLineagesResponse.HttpResponse = context.HttpResponse;
-			listHiveTableLineagesResponse.ErrorCode = context.StringValue("ListHiveTableLineages.ErrorCode");
-			listHiveTableLineagesResponse.ErrorMessage = context.StringValue("ListHiveTableLineages.ErrorMessage");
-			listHiveTableLineagesResponse.RequestId = context.StringValue("ListHiveTableLineages.RequestId");
+			listHiveTableLineagesResponse.HttpResponse = _ctx.HttpResponse;
+			listHiveTableLineagesResponse.ErrorCode = _ctx.StringValue("ListHiveTableLineages.ErrorCode");
+			listHiveTableLineagesResponse.ErrorMessage = _ctx.StringValue("ListHiveTableLineages.ErrorMessage");
+			listHiveTableLineagesResponse.RequestId = _ctx.StringValue("ListHiveTableLineages.RequestId");
 
 			ListHiveTableLineagesResponse.ListHiveTableLineages_Data data = new ListHiveTableLineagesResponse.ListHiveTableLineages_Data();
-			data.UpstreamNumber = context.IntegerValue("ListHiveTableLineages.Data.UpstreamNumber");
-			data.DownstreamNumber = context.IntegerValue("ListHiveTableLineages.Data.DownstreamNumber");
+			data.UpstreamNumber = _ctx.IntegerValue("ListHiveTableLineages.Data.UpstreamNumber");
+			data.DownstreamNumber = _ctx.IntegerValue("ListHiveTableLineages.Data.DownstreamNumber");
 
 			List<ListHiveTableLineagesResponse.ListHiveTableLineages_Data.ListHiveTableLineages_TableLineage> data_upstreamLineages = new List<ListHiveTableLineagesResponse.ListHiveTableLineages_Data.ListHiveTableLineages_TableLineage>();
-			for (int i = 0; i < context.Length("ListHiveTableLineages.Data.UpstreamLineages.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListHiveTableLineages.Data.UpstreamLineages.Length"); i++) {
 				ListHiveTableLineagesResponse.ListHiveTableLineages_Data.ListHiveTableLineages_TableLineage tableLineage = new ListHiveTableLineagesResponse.ListHiveTableLineages_Data.ListHiveTableLineages_TableLineage();
-				tableLineage.ModifiedTime = context.StringValue("ListHiveTableLineages.Data.UpstreamLineages["+ i +"].ModifiedTime");
-				tableLineage.DatabaseName = context.StringValue("ListHiveTableLineages.Data.UpstreamLineages["+ i +"].DatabaseName");
-				tableLineage.Engine = context.StringValue("ListHiveTableLineages.Data.UpstreamLineages["+ i +"].Engine");
-				tableLineage.CreateTime = context.StringValue("ListHiveTableLineages.Data.UpstreamLineages["+ i +"].CreateTime");
-				tableLineage.ClusterId = context.StringValue("ListHiveTableLineages.Data.UpstreamLineages["+ i +"].ClusterId");
-				tableLineage.Source = context.StringValue("ListHiveTableLineages.Data.UpstreamLineages["+ i +"].Source");
-				tableLineage.TableName = context.StringValue("ListHiveTableLineages.Data.UpstreamLineages["+ i +"].TableName");
-				tableLineage.JobId = context.StringValue("ListHiveTableLineages.Data.UpstreamLineages["+ i +"].JobId");
-				tableLineage.QueryText = context.StringValue("ListHiveTableLineages.Data.UpstreamLineages["+ i +"].QueryText");
+				tableLineage.ModifiedTime = _ctx.StringValue("ListHiveTableLineages.Data.UpstreamLineages["+ i +"].ModifiedTime");
+				tableLineage.DatabaseName = _ctx.StringValue("ListHiveTableLineages.Data.UpstreamLineages["+ i +"].DatabaseName");
+				tableLineage.Engine = _ctx.StringValue("ListHiveTableLineages.Data.UpstreamLineages["+ i +"].Engine");
+				tableLineage.CreateTime = _ctx.StringValue("ListHiveTableLineages.Data.UpstreamLineages["+ i +"].CreateTime");
+				tableLineage.ClusterId = _ctx.StringValue("ListHiveTableLineages.Data.UpstreamLineages["+ i +"].ClusterId");
+				tableLineage.Source = _ctx.StringValue("ListHiveTableLineages.Data.UpstreamLineages["+ i +"].Source");
+				tableLineage.TableName = _ctx.StringValue("ListHiveTableLineages.Data.UpstreamLineages["+ i +"].TableName");
+				tableLineage.JobId = _ctx.StringValue("ListHiveTableLineages.Data.UpstreamLineages["+ i +"].JobId");
+				tableLineage.QueryText = _ctx.StringValue("ListHiveTableLineages.Data.UpstreamLineages["+ i +"].QueryText");
 
 				data_upstreamLineages.Add(tableLineage);
 			}
 			data.UpstreamLineages = data_upstreamLineages;
 
 			List<ListHiveTableLineagesResponse.ListHiveTableLineages_Data.ListHiveTableLineages_TableLineage> data_downstreamLineages = new List<ListHiveTableLineagesResponse.ListHiveTableLineages_Data.ListHiveTableLineages_TableLineage>();
-			for (int i = 0; i < context.Length("ListHiveTableLineages.Data.DownstreamLineages.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListHiveTableLineages.Data.DownstreamLineages.Length"); i++) {
 				ListHiveTableLineagesResponse.ListHiveTableLineages_Data.ListHiveTableLineages_TableLineage tableLineage = new ListHiveTableLineagesResponse.ListHiveTableLineages_Data.ListHiveTableLineages_TableLineage();
-				tableLineage.ModifiedTime = context.StringValue("ListHiveTableLineages.Data.DownstreamLineages["+ i +"].ModifiedTime");
-				tableLineage.DatabaseName = context.StringValue("ListHiveTableLineages.Data.DownstreamLineages["+ i +"].DatabaseName");
-				tableLineage.Engine = context.StringValue("ListHiveTableLineages.Data.DownstreamLineages["+ i +"].Engine");
-				tableLineage.CreateTime = context.StringValue("ListHiveTableLineages.Data.DownstreamLineages["+ i +"].CreateTime");
-				tableLineage.ClusterId = context.StringValue("ListHiveTableLineages.Data.DownstreamLineages["+ i +"].ClusterId");
-				tableLineage.Source = context.StringValue("ListHiveTableLineages.Data.DownstreamLineages["+ i +"].Source");
-				tableLineage.TableName = context.StringValue("ListHiveTableLineages.Data.DownstreamLineages["+ i +"].TableName");
-				tableLineage.JobId = context.StringValue("ListHiveTableLineages.Data.DownstreamLineages["+ i +"].JobId");
-				tableLineage.QueryText = context.StringValue("ListHiveTableLineages.Data.DownstreamLineages["+ i +"].QueryText");
+				tableLineage.ModifiedTime = _ctx.StringValue("ListHiveTableLineages.Data.DownstreamLineages["+ i +"].ModifiedTime");
+				tableLineage.DatabaseName = _ctx.StringValue("ListHiveTableLineages.Data.DownstreamLineages["+ i +"].DatabaseName");
+				tableLineage.Engine = _ctx.StringValue("ListHiveTableLineages.Data.DownstreamLineages["+ i +"].Engine");
+				tableLineage.CreateTime = _ctx.StringValue("ListHiveTableLineages.Data.DownstreamLineages["+ i +"].CreateTime");
+				tableLineage.ClusterId = _ctx.StringValue("ListHiveTableLineages.Data.DownstreamLineages["+ i +"].ClusterId");
+				tableLineage.Source = _ctx.StringValue("ListHiveTableLineages.Data.DownstreamLineages["+ i +"].Source");
+				tableLineage.TableName = _ctx.StringValue("ListHiveTableLineages.Data.DownstreamLineages["+ i +"].TableName");
+				tableLineage.JobId = _ctx.StringValue("ListHiveTableLineages.Data.DownstreamLineages["+ i +"].JobId");
+				tableLineage.QueryText = _ctx.StringValue("ListHiveTableLineages.Data.DownstreamLineages["+ i +"].QueryText");
 
 				data_downstreamLineages.Add(tableLineage);
 			}
