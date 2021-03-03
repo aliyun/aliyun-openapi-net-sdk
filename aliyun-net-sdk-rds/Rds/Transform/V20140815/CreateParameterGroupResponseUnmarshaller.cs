@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			createParameterGroupResponse.HttpResponse = _ctx.HttpResponse;
 			createParameterGroupResponse.RequestId = _ctx.StringValue("CreateParameterGroup.RequestId");
+			createParameterGroupResponse.ParameterGroupId = _ctx.StringValue("CreateParameterGroup.ParameterGroupId");
         
 			return createParameterGroupResponse;
         }

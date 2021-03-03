@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			List<DescribeAvailableZonesResponse.DescribeAvailableZones_AvailableZone> describeAvailableZonesResponse_availableZones = new List<DescribeAvailableZonesResponse.DescribeAvailableZones_AvailableZone>();
 			for (int i = 0; i < _ctx.Length("DescribeAvailableZones.AvailableZones.Length"); i++) {
 				DescribeAvailableZonesResponse.DescribeAvailableZones_AvailableZone availableZone = new DescribeAvailableZonesResponse.DescribeAvailableZones_AvailableZone();
+				availableZone.NetworkTypes = _ctx.StringValue("DescribeAvailableZones.AvailableZones["+ i +"].NetworkTypes");
 				availableZone.RegionId = _ctx.StringValue("DescribeAvailableZones.AvailableZones["+ i +"].RegionId");
 				availableZone.ZoneId = _ctx.StringValue("DescribeAvailableZones.AvailableZones["+ i +"].ZoneId");
-				availableZone.NetworkTypes = _ctx.StringValue("DescribeAvailableZones.AvailableZones["+ i +"].NetworkTypes");
 
 				List<DescribeAvailableZonesResponse.DescribeAvailableZones_AvailableZone.DescribeAvailableZones_SupportedEngine> availableZone_supportedEngines = new List<DescribeAvailableZonesResponse.DescribeAvailableZones_AvailableZone.DescribeAvailableZones_SupportedEngine>();
 				for (int j = 0; j < _ctx.Length("DescribeAvailableZones.AvailableZones["+ i +"].SupportedEngines.Length"); j++) {

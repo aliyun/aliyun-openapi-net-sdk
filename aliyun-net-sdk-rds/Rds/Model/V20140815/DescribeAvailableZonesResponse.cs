@@ -56,13 +56,25 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeAvailableZones_AvailableZone
 		{
 
+			private string networkTypes;
+
 			private string regionId;
 
 			private string zoneId;
 
-			private string networkTypes;
-
 			private List<DescribeAvailableZones_SupportedEngine> supportedEngines;
+
+			public string NetworkTypes
+			{
+				get
+				{
+					return networkTypes;
+				}
+				set	
+				{
+					networkTypes = value;
+				}
+			}
 
 			public string RegionId
 			{
@@ -85,18 +97,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					zoneId = value;
-				}
-			}
-
-			public string NetworkTypes
-			{
-				get
-				{
-					return networkTypes;
-				}
-				set	
-				{
-					networkTypes = value;
 				}
 			}
 

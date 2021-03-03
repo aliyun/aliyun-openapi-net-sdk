@@ -16,25 +16,69 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Rds.Model.V20140815;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Rds.Transform.V20140815
+namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class ModifyParameterGroupResponseUnmarshaller
-    {
-        public static ModifyParameterGroupResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			ModifyParameterGroupResponse modifyParameterGroupResponse = new ModifyParameterGroupResponse();
+	public class UpgradeDBInstanceMajorVersionPrecheckResponse : AcsResponse
+	{
 
-			modifyParameterGroupResponse.HttpResponse = _ctx.HttpResponse;
-			modifyParameterGroupResponse.RequestId = _ctx.StringValue("ModifyParameterGroup.RequestId");
-			modifyParameterGroupResponse.ParameterGroupId = _ctx.StringValue("ModifyParameterGroup.ParameterGroupId");
-        
-			return modifyParameterGroupResponse;
-        }
-    }
+		private string requestId;
+
+		private string taskId;
+
+		private string targetMajorVersion;
+
+		private string dBInstanceName;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+			}
+		}
+
+		public string TargetMajorVersion
+		{
+			get
+			{
+				return targetMajorVersion;
+			}
+			set	
+			{
+				targetMajorVersion = value;
+			}
+		}
+
+		public string DBInstanceName
+		{
+			get
+			{
+				return dBInstanceName;
+			}
+			set	
+			{
+				dBInstanceName = value;
+			}
+		}
+	}
 }

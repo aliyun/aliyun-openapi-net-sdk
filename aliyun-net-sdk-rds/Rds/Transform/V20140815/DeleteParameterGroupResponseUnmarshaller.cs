@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			deleteParameterGroupResponse.HttpResponse = _ctx.HttpResponse;
 			deleteParameterGroupResponse.RequestId = _ctx.StringValue("DeleteParameterGroup.RequestId");
+			deleteParameterGroupResponse.ParameterGroupId = _ctx.StringValue("DeleteParameterGroup.ParameterGroupId");
         
 			return deleteParameterGroupResponse;
         }

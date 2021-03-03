@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DeleteHostAccountRequest : RpcAcsRequest<DeleteHostAccountResponse>
+    public class DescribeUpgradeMajorVersionTasksRequest : RpcAcsRequest<DescribeUpgradeMajorVersionTasksResponse>
     {
-        public DeleteHostAccountRequest()
-            : base("Rds", "2014-08-15", "DeleteHostAccount", "rds", "openAPI")
+        public DescribeUpgradeMajorVersionTasksRequest()
+            : base("Rds", "2014-08-15", "DescribeUpgradeMajorVersionTasks", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,15 +42,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		private string dBInstanceId;
+
+		private int? taskId;
+
 		private string resourceOwnerAccount;
 
-		private string clientToken;
+		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string accountName;
-
-		private string dBInstanceId;
+		private string targetMajorVersion;
 
 		public long? ResourceOwnerId
 		{
@@ -65,55 +71,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public int? PageNumber
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return pageNumber;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string ClientToken
+		public int? PageSize
 		{
 			get
 			{
-				return clientToken;
+				return pageSize;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccountName
-		{
-			get
-			{
-				return accountName;
-			}
-			set	
-			{
-				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -130,9 +110,79 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override DeleteHostAccountResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string TargetMajorVersion
+		{
+			get
+			{
+				return targetMajorVersion;
+			}
+			set	
+			{
+				targetMajorVersion = value;
+				DictionaryUtil.Add(QueryParameters, "TargetMajorVersion", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeUpgradeMajorVersionTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteHostAccountResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeUpgradeMajorVersionTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

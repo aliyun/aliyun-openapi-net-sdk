@@ -24,16 +24,20 @@ using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class DeleteHostAccountResponseUnmarshaller
+    public class UpgradeDBInstanceMajorVersionResponseUnmarshaller
     {
-        public static DeleteHostAccountResponse Unmarshall(UnmarshallerContext _ctx)
+        public static UpgradeDBInstanceMajorVersionResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DeleteHostAccountResponse deleteHostAccountResponse = new DeleteHostAccountResponse();
+			UpgradeDBInstanceMajorVersionResponse upgradeDBInstanceMajorVersionResponse = new UpgradeDBInstanceMajorVersionResponse();
 
-			deleteHostAccountResponse.HttpResponse = _ctx.HttpResponse;
-			deleteHostAccountResponse.RequestId = _ctx.StringValue("DeleteHostAccount.RequestId");
+			upgradeDBInstanceMajorVersionResponse.HttpResponse = _ctx.HttpResponse;
+			upgradeDBInstanceMajorVersionResponse.RequestId = _ctx.StringValue("UpgradeDBInstanceMajorVersion.RequestId");
+			upgradeDBInstanceMajorVersionResponse.DBInstanceId = _ctx.StringValue("UpgradeDBInstanceMajorVersion.DBInstanceId");
+			upgradeDBInstanceMajorVersionResponse.OrderId = _ctx.StringValue("UpgradeDBInstanceMajorVersion.OrderId");
+			upgradeDBInstanceMajorVersionResponse.ConnectionString = _ctx.StringValue("UpgradeDBInstanceMajorVersion.ConnectionString");
+			upgradeDBInstanceMajorVersionResponse.Port = _ctx.StringValue("UpgradeDBInstanceMajorVersion.Port");
         
-			return deleteHostAccountResponse;
+			return upgradeDBInstanceMajorVersionResponse;
         }
     }
 }

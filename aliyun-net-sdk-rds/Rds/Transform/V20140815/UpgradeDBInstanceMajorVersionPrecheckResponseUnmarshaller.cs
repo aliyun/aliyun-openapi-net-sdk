@@ -24,17 +24,19 @@ using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class ModifyParameterGroupResponseUnmarshaller
+    public class UpgradeDBInstanceMajorVersionPrecheckResponseUnmarshaller
     {
-        public static ModifyParameterGroupResponse Unmarshall(UnmarshallerContext _ctx)
+        public static UpgradeDBInstanceMajorVersionPrecheckResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			ModifyParameterGroupResponse modifyParameterGroupResponse = new ModifyParameterGroupResponse();
+			UpgradeDBInstanceMajorVersionPrecheckResponse upgradeDBInstanceMajorVersionPrecheckResponse = new UpgradeDBInstanceMajorVersionPrecheckResponse();
 
-			modifyParameterGroupResponse.HttpResponse = _ctx.HttpResponse;
-			modifyParameterGroupResponse.RequestId = _ctx.StringValue("ModifyParameterGroup.RequestId");
-			modifyParameterGroupResponse.ParameterGroupId = _ctx.StringValue("ModifyParameterGroup.ParameterGroupId");
+			upgradeDBInstanceMajorVersionPrecheckResponse.HttpResponse = _ctx.HttpResponse;
+			upgradeDBInstanceMajorVersionPrecheckResponse.RequestId = _ctx.StringValue("UpgradeDBInstanceMajorVersionPrecheck.RequestId");
+			upgradeDBInstanceMajorVersionPrecheckResponse.TaskId = _ctx.StringValue("UpgradeDBInstanceMajorVersionPrecheck.TaskId");
+			upgradeDBInstanceMajorVersionPrecheckResponse.TargetMajorVersion = _ctx.StringValue("UpgradeDBInstanceMajorVersionPrecheck.TargetMajorVersion");
+			upgradeDBInstanceMajorVersionPrecheckResponse.DBInstanceName = _ctx.StringValue("UpgradeDBInstanceMajorVersionPrecheck.DBInstanceName");
         
-			return modifyParameterGroupResponse;
+			return upgradeDBInstanceMajorVersionPrecheckResponse;
         }
     }
 }

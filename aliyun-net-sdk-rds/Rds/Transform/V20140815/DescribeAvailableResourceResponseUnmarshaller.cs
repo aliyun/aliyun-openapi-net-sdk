@@ -36,10 +36,10 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			List<DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone> describeAvailableResourceResponse_availableZones = new List<DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone>();
 			for (int i = 0; i < _ctx.Length("DescribeAvailableResource.AvailableZones.Length"); i++) {
 				DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone availableZone = new DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone();
-				availableZone.RegionId = _ctx.StringValue("DescribeAvailableResource.AvailableZones["+ i +"].RegionId");
-				availableZone.ZoneId = _ctx.StringValue("DescribeAvailableResource.AvailableZones["+ i +"].ZoneId");
-				availableZone.Status = _ctx.StringValue("DescribeAvailableResource.AvailableZones["+ i +"].Status");
 				availableZone.NetworkTypes = _ctx.StringValue("DescribeAvailableResource.AvailableZones["+ i +"].NetworkTypes");
+				availableZone.RegionId = _ctx.StringValue("DescribeAvailableResource.AvailableZones["+ i +"].RegionId");
+				availableZone.Status = _ctx.StringValue("DescribeAvailableResource.AvailableZones["+ i +"].Status");
+				availableZone.ZoneId = _ctx.StringValue("DescribeAvailableResource.AvailableZones["+ i +"].ZoneId");
 
 				List<DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedEngine> availableZone_supportedEngines = new List<DescribeAvailableResourceResponse.DescribeAvailableResource_AvailableZone.DescribeAvailableResource_SupportedEngine>();
 				for (int j = 0; j < _ctx.Length("DescribeAvailableResource.AvailableZones["+ i +"].SupportedEngines.Length"); j++) {
