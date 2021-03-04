@@ -26,26 +26,26 @@ namespace Aliyun.Acs.ocr.Transform.V20191230
 {
     public class RecognizePassportMRZResponseUnmarshaller
     {
-        public static RecognizePassportMRZResponse Unmarshall(UnmarshallerContext context)
+        public static RecognizePassportMRZResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RecognizePassportMRZResponse recognizePassportMRZResponse = new RecognizePassportMRZResponse();
 
-			recognizePassportMRZResponse.HttpResponse = context.HttpResponse;
-			recognizePassportMRZResponse.RequestId = context.StringValue("RecognizePassportMRZ.RequestId");
+			recognizePassportMRZResponse.HttpResponse = _ctx.HttpResponse;
+			recognizePassportMRZResponse.RequestId = _ctx.StringValue("RecognizePassportMRZ.RequestId");
 
 			RecognizePassportMRZResponse.RecognizePassportMRZ_Data data = new RecognizePassportMRZResponse.RecognizePassportMRZ_Data();
 
 			List<RecognizePassportMRZResponse.RecognizePassportMRZ_Data.RecognizePassportMRZ_Region> data_regions = new List<RecognizePassportMRZResponse.RecognizePassportMRZ_Data.RecognizePassportMRZ_Region>();
-			for (int i = 0; i < context.Length("RecognizePassportMRZ.Data.Regions.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("RecognizePassportMRZ.Data.Regions.Length"); i++) {
 				RecognizePassportMRZResponse.RecognizePassportMRZ_Data.RecognizePassportMRZ_Region region = new RecognizePassportMRZResponse.RecognizePassportMRZ_Data.RecognizePassportMRZ_Region();
-				region.Name = context.StringValue("RecognizePassportMRZ.Data.Regions["+ i +"].Name");
-				region.RecognitionScore = context.FloatValue("RecognizePassportMRZ.Data.Regions["+ i +"].RecognitionScore");
-				region.Content = context.StringValue("RecognizePassportMRZ.Data.Regions["+ i +"].Content");
-				region.DetectionScore = context.FloatValue("RecognizePassportMRZ.Data.Regions["+ i +"].DetectionScore");
+				region.Name = _ctx.StringValue("RecognizePassportMRZ.Data.Regions["+ i +"].Name");
+				region.RecognitionScore = _ctx.FloatValue("RecognizePassportMRZ.Data.Regions["+ i +"].RecognitionScore");
+				region.Content = _ctx.StringValue("RecognizePassportMRZ.Data.Regions["+ i +"].Content");
+				region.DetectionScore = _ctx.FloatValue("RecognizePassportMRZ.Data.Regions["+ i +"].DetectionScore");
 
 				List<string> region_bandBoxes = new List<string>();
-				for (int j = 0; j < context.Length("RecognizePassportMRZ.Data.Regions["+ i +"].BandBoxes.Length"); j++) {
-					region_bandBoxes.Add(context.StringValue("RecognizePassportMRZ.Data.Regions["+ i +"].BandBoxes["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("RecognizePassportMRZ.Data.Regions["+ i +"].BandBoxes.Length"); j++) {
+					region_bandBoxes.Add(_ctx.StringValue("RecognizePassportMRZ.Data.Regions["+ i +"].BandBoxes["+ j +"]"));
 				}
 				region.BandBoxes = region_bandBoxes;
 

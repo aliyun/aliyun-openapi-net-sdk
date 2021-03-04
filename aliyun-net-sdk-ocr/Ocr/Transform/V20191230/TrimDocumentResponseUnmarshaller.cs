@@ -26,15 +26,15 @@ namespace Aliyun.Acs.ocr.Transform.V20191230
 {
     public class TrimDocumentResponseUnmarshaller
     {
-        public static TrimDocumentResponse Unmarshall(UnmarshallerContext context)
+        public static TrimDocumentResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TrimDocumentResponse trimDocumentResponse = new TrimDocumentResponse();
 
-			trimDocumentResponse.HttpResponse = context.HttpResponse;
-			trimDocumentResponse.RequestId = context.StringValue("TrimDocument.RequestId");
+			trimDocumentResponse.HttpResponse = _ctx.HttpResponse;
+			trimDocumentResponse.RequestId = _ctx.StringValue("TrimDocument.RequestId");
 
 			TrimDocumentResponse.TrimDocument_Data data = new TrimDocumentResponse.TrimDocument_Data();
-			data.Content = context.StringValue("TrimDocument.Data.Content");
+			data.Content = _ctx.StringValue("TrimDocument.Data.Content");
 			trimDocumentResponse.Data = data;
         
 			return trimDocumentResponse;

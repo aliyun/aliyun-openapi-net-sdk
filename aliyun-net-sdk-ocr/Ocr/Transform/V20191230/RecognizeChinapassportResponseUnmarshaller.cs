@@ -26,36 +26,36 @@ namespace Aliyun.Acs.ocr.Transform.V20191230
 {
     public class RecognizeChinapassportResponseUnmarshaller
     {
-        public static RecognizeChinapassportResponse Unmarshall(UnmarshallerContext context)
+        public static RecognizeChinapassportResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RecognizeChinapassportResponse recognizeChinapassportResponse = new RecognizeChinapassportResponse();
 
-			recognizeChinapassportResponse.HttpResponse = context.HttpResponse;
-			recognizeChinapassportResponse.RequestId = context.StringValue("RecognizeChinapassport.RequestId");
+			recognizeChinapassportResponse.HttpResponse = _ctx.HttpResponse;
+			recognizeChinapassportResponse.RequestId = _ctx.StringValue("RecognizeChinapassport.RequestId");
 
 			RecognizeChinapassportResponse.RecognizeChinapassport_Data data = new RecognizeChinapassportResponse.RecognizeChinapassport_Data();
-			data.Authority = context.StringValue("RecognizeChinapassport.Data.Authority");
-			data.BirthDate = context.StringValue("RecognizeChinapassport.Data.BirthDate");
-			data.BirthDay = context.StringValue("RecognizeChinapassport.Data.BirthDay");
-			data.BirthPlace = context.StringValue("RecognizeChinapassport.Data.BirthPlace");
-			data.BirthPlaceRaw = context.StringValue("RecognizeChinapassport.Data.BirthPlaceRaw");
-			data.Country = context.StringValue("RecognizeChinapassport.Data.Country");
-			data.ExpiryDate = context.StringValue("RecognizeChinapassport.Data.ExpiryDate");
-			data.ExpiryDay = context.StringValue("RecognizeChinapassport.Data.ExpiryDay");
-			data.IssueDate = context.StringValue("RecognizeChinapassport.Data.IssueDate");
-			data.IssuePlace = context.StringValue("RecognizeChinapassport.Data.IssuePlace");
-			data.IssuePlaceRaw = context.StringValue("RecognizeChinapassport.Data.IssuePlaceRaw");
-			data.LineZero = context.StringValue("RecognizeChinapassport.Data.LineZero");
-			data.LineOne = context.StringValue("RecognizeChinapassport.Data.LineOne");
-			data.Name = context.StringValue("RecognizeChinapassport.Data.Name");
-			data.NameChinese = context.StringValue("RecognizeChinapassport.Data.NameChinese");
-			data.NameChineseRaw = context.StringValue("RecognizeChinapassport.Data.NameChineseRaw");
-			data.PassportNo = context.StringValue("RecognizeChinapassport.Data.PassportNo");
-			data.PersonId = context.StringValue("RecognizeChinapassport.Data.PersonId");
-			data.Sex = context.StringValue("RecognizeChinapassport.Data.Sex");
-			data.SourceCountry = context.StringValue("RecognizeChinapassport.Data.SourceCountry");
-			data.Success = context.BooleanValue("RecognizeChinapassport.Data.Success");
-			data.Type = context.StringValue("RecognizeChinapassport.Data.Type");
+			data.Authority = _ctx.StringValue("RecognizeChinapassport.Data.Authority");
+			data.BirthDate = _ctx.StringValue("RecognizeChinapassport.Data.BirthDate");
+			data.BirthDay = _ctx.StringValue("RecognizeChinapassport.Data.BirthDay");
+			data.BirthPlace = _ctx.StringValue("RecognizeChinapassport.Data.BirthPlace");
+			data.BirthPlaceRaw = _ctx.StringValue("RecognizeChinapassport.Data.BirthPlaceRaw");
+			data.Country = _ctx.StringValue("RecognizeChinapassport.Data.Country");
+			data.ExpiryDate = _ctx.StringValue("RecognizeChinapassport.Data.ExpiryDate");
+			data.ExpiryDay = _ctx.StringValue("RecognizeChinapassport.Data.ExpiryDay");
+			data.IssueDate = _ctx.StringValue("RecognizeChinapassport.Data.IssueDate");
+			data.IssuePlace = _ctx.StringValue("RecognizeChinapassport.Data.IssuePlace");
+			data.IssuePlaceRaw = _ctx.StringValue("RecognizeChinapassport.Data.IssuePlaceRaw");
+			data.LineZero = _ctx.StringValue("RecognizeChinapassport.Data.LineZero");
+			data.LineOne = _ctx.StringValue("RecognizeChinapassport.Data.LineOne");
+			data.Name = _ctx.StringValue("RecognizeChinapassport.Data.Name");
+			data.NameChinese = _ctx.StringValue("RecognizeChinapassport.Data.NameChinese");
+			data.NameChineseRaw = _ctx.StringValue("RecognizeChinapassport.Data.NameChineseRaw");
+			data.PassportNo = _ctx.StringValue("RecognizeChinapassport.Data.PassportNo");
+			data.PersonId = _ctx.StringValue("RecognizeChinapassport.Data.PersonId");
+			data.Sex = _ctx.StringValue("RecognizeChinapassport.Data.Sex");
+			data.SourceCountry = _ctx.StringValue("RecognizeChinapassport.Data.SourceCountry");
+			data.Success = _ctx.BooleanValue("RecognizeChinapassport.Data.Success");
+			data.Type = _ctx.StringValue("RecognizeChinapassport.Data.Type");
 			recognizeChinapassportResponse.Data = data;
         
 			return recognizeChinapassportResponse;

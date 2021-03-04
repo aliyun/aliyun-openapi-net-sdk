@@ -26,15 +26,15 @@ namespace Aliyun.Acs.ocr.Transform.V20191230
 {
     public class RecognizeVerificationcodeResponseUnmarshaller
     {
-        public static RecognizeVerificationcodeResponse Unmarshall(UnmarshallerContext context)
+        public static RecognizeVerificationcodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RecognizeVerificationcodeResponse recognizeVerificationcodeResponse = new RecognizeVerificationcodeResponse();
 
-			recognizeVerificationcodeResponse.HttpResponse = context.HttpResponse;
-			recognizeVerificationcodeResponse.RequestId = context.StringValue("RecognizeVerificationcode.RequestId");
+			recognizeVerificationcodeResponse.HttpResponse = _ctx.HttpResponse;
+			recognizeVerificationcodeResponse.RequestId = _ctx.StringValue("RecognizeVerificationcode.RequestId");
 
 			RecognizeVerificationcodeResponse.RecognizeVerificationcode_Data data = new RecognizeVerificationcodeResponse.RecognizeVerificationcode_Data();
-			data.Content = context.StringValue("RecognizeVerificationcode.Data.Content");
+			data.Content = _ctx.StringValue("RecognizeVerificationcode.Data.Content");
 			recognizeVerificationcodeResponse.Data = data;
         
 			return recognizeVerificationcodeResponse;

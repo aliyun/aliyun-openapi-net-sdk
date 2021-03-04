@@ -26,17 +26,17 @@ namespace Aliyun.Acs.ocr.Transform.V20191230
 {
     public class RecognizeBankCardResponseUnmarshaller
     {
-        public static RecognizeBankCardResponse Unmarshall(UnmarshallerContext context)
+        public static RecognizeBankCardResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RecognizeBankCardResponse recognizeBankCardResponse = new RecognizeBankCardResponse();
 
-			recognizeBankCardResponse.HttpResponse = context.HttpResponse;
-			recognizeBankCardResponse.RequestId = context.StringValue("RecognizeBankCard.RequestId");
+			recognizeBankCardResponse.HttpResponse = _ctx.HttpResponse;
+			recognizeBankCardResponse.RequestId = _ctx.StringValue("RecognizeBankCard.RequestId");
 
 			RecognizeBankCardResponse.RecognizeBankCard_Data data = new RecognizeBankCardResponse.RecognizeBankCard_Data();
-			data.BankName = context.StringValue("RecognizeBankCard.Data.BankName");
-			data.CardNumber = context.StringValue("RecognizeBankCard.Data.CardNumber");
-			data.ValidDate = context.StringValue("RecognizeBankCard.Data.ValidDate");
+			data.BankName = _ctx.StringValue("RecognizeBankCard.Data.BankName");
+			data.CardNumber = _ctx.StringValue("RecognizeBankCard.Data.CardNumber");
+			data.ValidDate = _ctx.StringValue("RecognizeBankCard.Data.ValidDate");
 			recognizeBankCardResponse.Data = data;
         
 			return recognizeBankCardResponse;

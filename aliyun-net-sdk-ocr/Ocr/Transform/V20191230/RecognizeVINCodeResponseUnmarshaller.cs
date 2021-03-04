@@ -26,15 +26,15 @@ namespace Aliyun.Acs.ocr.Transform.V20191230
 {
     public class RecognizeVINCodeResponseUnmarshaller
     {
-        public static RecognizeVINCodeResponse Unmarshall(UnmarshallerContext context)
+        public static RecognizeVINCodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RecognizeVINCodeResponse recognizeVINCodeResponse = new RecognizeVINCodeResponse();
 
-			recognizeVINCodeResponse.HttpResponse = context.HttpResponse;
-			recognizeVINCodeResponse.RequestId = context.StringValue("RecognizeVINCode.RequestId");
+			recognizeVINCodeResponse.HttpResponse = _ctx.HttpResponse;
+			recognizeVINCodeResponse.RequestId = _ctx.StringValue("RecognizeVINCode.RequestId");
 
 			RecognizeVINCodeResponse.RecognizeVINCode_Data data = new RecognizeVINCodeResponse.RecognizeVINCode_Data();
-			data.VinCode = context.StringValue("RecognizeVINCode.Data.VinCode");
+			data.VinCode = _ctx.StringValue("RecognizeVINCode.Data.VinCode");
 			recognizeVINCodeResponse.Data = data;
         
 			return recognizeVINCodeResponse;
