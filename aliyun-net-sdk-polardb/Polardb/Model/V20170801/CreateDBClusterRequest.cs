@@ -80,6 +80,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string clusterNetworkType;
 
+		private string parameterGroupId;
+
 		private string gDNId;
 
 		private string resourceOwnerAccount;
@@ -355,6 +357,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				clusterNetworkType = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterNetworkType", value);
+			}
+		}
+
+		public string ParameterGroupId
+		{
+			get
+			{
+				return parameterGroupId;
+			}
+			set	
+			{
+				parameterGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ParameterGroupId", value);
 			}
 		}
 

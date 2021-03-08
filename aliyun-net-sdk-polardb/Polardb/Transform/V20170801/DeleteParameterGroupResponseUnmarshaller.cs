@@ -16,69 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.polardb.Model.V20170801;
 
-namespace Aliyun.Acs.polardb.Model.V20170801
+namespace Aliyun.Acs.polardb.Transform.V20170801
 {
-	public class CreateDBClusterResponse : AcsResponse
-	{
+    public class DeleteParameterGroupResponseUnmarshaller
+    {
+        public static DeleteParameterGroupResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			DeleteParameterGroupResponse deleteParameterGroupResponse = new DeleteParameterGroupResponse();
 
-		private string resourceGroupId;
-
-		private string requestId;
-
-		private string dBClusterId;
-
-		private string orderId;
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string DBClusterId
-		{
-			get
-			{
-				return dBClusterId;
-			}
-			set	
-			{
-				dBClusterId = value;
-			}
-		}
-
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
-	}
+			deleteParameterGroupResponse.HttpResponse = _ctx.HttpResponse;
+			deleteParameterGroupResponse.RequestId = _ctx.StringValue("DeleteParameterGroup.RequestId");
+        
+			return deleteParameterGroupResponse;
+        }
+    }
 }

@@ -31,14 +31,15 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			DescribeBackupPolicyResponse describeBackupPolicyResponse = new DescribeBackupPolicyResponse();
 
 			describeBackupPolicyResponse.HttpResponse = _ctx.HttpResponse;
-			describeBackupPolicyResponse.RequestId = _ctx.StringValue("DescribeBackupPolicy.RequestId");
-			describeBackupPolicyResponse.BackupRetentionPeriod = _ctx.IntegerValue("DescribeBackupPolicy.BackupRetentionPeriod");
-			describeBackupPolicyResponse.PreferredNextBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredNextBackupTime");
-			describeBackupPolicyResponse.PreferredBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredBackupTime");
 			describeBackupPolicyResponse.PreferredBackupPeriod = _ctx.StringValue("DescribeBackupPolicy.PreferredBackupPeriod");
 			describeBackupPolicyResponse.DataLevel1BackupRetentionPeriod = _ctx.StringValue("DescribeBackupPolicy.DataLevel1BackupRetentionPeriod");
-			describeBackupPolicyResponse.DataLevel2BackupRetentionPeriod = _ctx.StringValue("DescribeBackupPolicy.DataLevel2BackupRetentionPeriod");
+			describeBackupPolicyResponse.RequestId = _ctx.StringValue("DescribeBackupPolicy.RequestId");
 			describeBackupPolicyResponse.BackupRetentionPolicyOnClusterDeletion = _ctx.StringValue("DescribeBackupPolicy.BackupRetentionPolicyOnClusterDeletion");
+			describeBackupPolicyResponse.PreferredBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredBackupTime");
+			describeBackupPolicyResponse.BackupFrequency = _ctx.StringValue("DescribeBackupPolicy.BackupFrequency");
+			describeBackupPolicyResponse.PreferredNextBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredNextBackupTime");
+			describeBackupPolicyResponse.BackupRetentionPeriod = _ctx.IntegerValue("DescribeBackupPolicy.BackupRetentionPeriod");
+			describeBackupPolicyResponse.DataLevel2BackupRetentionPeriod = _ctx.StringValue("DescribeBackupPolicy.DataLevel2BackupRetentionPeriod");
         
 			return describeBackupPolicyResponse;
         }

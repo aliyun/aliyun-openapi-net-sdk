@@ -25,69 +25,23 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeBackupPolicyResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? backupRetentionPeriod;
-
-		private string preferredNextBackupTime;
-
-		private string preferredBackupTime;
-
 		private string preferredBackupPeriod;
 
 		private string dataLevel1BackupRetentionPeriod;
 
-		private string dataLevel2BackupRetentionPeriod;
+		private string requestId;
 
 		private string backupRetentionPolicyOnClusterDeletion;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string preferredBackupTime;
 
-		public int? BackupRetentionPeriod
-		{
-			get
-			{
-				return backupRetentionPeriod;
-			}
-			set	
-			{
-				backupRetentionPeriod = value;
-			}
-		}
+		private string backupFrequency;
 
-		public string PreferredNextBackupTime
-		{
-			get
-			{
-				return preferredNextBackupTime;
-			}
-			set	
-			{
-				preferredNextBackupTime = value;
-			}
-		}
+		private string preferredNextBackupTime;
 
-		public string PreferredBackupTime
-		{
-			get
-			{
-				return preferredBackupTime;
-			}
-			set	
-			{
-				preferredBackupTime = value;
-			}
-		}
+		private int? backupRetentionPeriod;
+
+		private string dataLevel2BackupRetentionPeriod;
 
 		public string PreferredBackupPeriod
 		{
@@ -113,15 +67,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DataLevel2BackupRetentionPeriod
+		public string RequestId
 		{
 			get
 			{
-				return dataLevel2BackupRetentionPeriod;
+				return requestId;
 			}
 			set	
 			{
-				dataLevel2BackupRetentionPeriod = value;
+				requestId = value;
 			}
 		}
 
@@ -134,6 +88,66 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				backupRetentionPolicyOnClusterDeletion = value;
+			}
+		}
+
+		public string PreferredBackupTime
+		{
+			get
+			{
+				return preferredBackupTime;
+			}
+			set	
+			{
+				preferredBackupTime = value;
+			}
+		}
+
+		public string BackupFrequency
+		{
+			get
+			{
+				return backupFrequency;
+			}
+			set	
+			{
+				backupFrequency = value;
+			}
+		}
+
+		public string PreferredNextBackupTime
+		{
+			get
+			{
+				return preferredNextBackupTime;
+			}
+			set	
+			{
+				preferredNextBackupTime = value;
+			}
+		}
+
+		public int? BackupRetentionPeriod
+		{
+			get
+			{
+				return backupRetentionPeriod;
+			}
+			set	
+			{
+				backupRetentionPeriod = value;
+			}
+		}
+
+		public string DataLevel2BackupRetentionPeriod
+		{
+			get
+			{
+				return dataLevel2BackupRetentionPeriod;
+			}
+			set	
+			{
+				dataLevel2BackupRetentionPeriod = value;
 			}
 		}
 	}

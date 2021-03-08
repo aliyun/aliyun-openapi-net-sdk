@@ -22,28 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-	public class CreateDBClusterResponse : AcsResponse
+	public class CreateParameterGroupResponse : AcsResponse
 	{
 
-		private string resourceGroupId;
-
 		private string requestId;
-
-		private string dBClusterId;
-
-		private string orderId;
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-			}
-		}
 
 		public string RequestId
 		{
@@ -54,30 +36,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string DBClusterId
-		{
-			get
-			{
-				return dBClusterId;
-			}
-			set	
-			{
-				dBClusterId = value;
-			}
-		}
-
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
 			}
 		}
 	}

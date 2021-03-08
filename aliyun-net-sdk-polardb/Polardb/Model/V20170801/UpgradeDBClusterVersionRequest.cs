@@ -42,6 +42,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
+		private string upgradeType;
+
 		private string plannedEndTime;
 
 		private string resourceOwnerAccount;
@@ -66,6 +68,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string UpgradeType
+		{
+			get
+			{
+				return upgradeType;
+			}
+			set	
+			{
+				upgradeType = value;
+				DictionaryUtil.Add(QueryParameters, "UpgradeType", value);
 			}
 		}
 

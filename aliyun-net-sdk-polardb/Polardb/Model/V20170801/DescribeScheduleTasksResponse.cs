@@ -145,19 +145,17 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 				private string status;
 
-				private long? gmtCreate;
-
 				private string action;
 
 				private string taskId;
 
 				private string plannedTime;
 
+				private string dbClusterDescription;
+
 				private string plannedStartTime;
 
 				private string dBClusterId;
-
-				private long? gmtModified;
 
 				private string region;
 
@@ -165,7 +163,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 				private string plannedEndTime;
 
-				private int? aliUid;
+				private string dbClusterStatus;
 
 				public string Status
 				{
@@ -176,18 +174,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						status = value;
-					}
-				}
-
-				public long? GmtCreate
-				{
-					get
-					{
-						return gmtCreate;
-					}
-					set	
-					{
-						gmtCreate = value;
 					}
 				}
 
@@ -227,6 +213,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					}
 				}
 
+				public string DbClusterDescription
+				{
+					get
+					{
+						return dbClusterDescription;
+					}
+					set	
+					{
+						dbClusterDescription = value;
+					}
+				}
+
 				public string PlannedStartTime
 				{
 					get
@@ -248,18 +246,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						dBClusterId = value;
-					}
-				}
-
-				public long? GmtModified
-				{
-					get
-					{
-						return gmtModified;
-					}
-					set	
-					{
-						gmtModified = value;
 					}
 				}
 
@@ -299,15 +285,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					}
 				}
 
-				public int? AliUid
+				public string DbClusterStatus
 				{
 					get
 					{
-						return aliUid;
+						return dbClusterStatus;
 					}
 					set	
 					{
-						aliUid = value;
+						dbClusterStatus = value;
 					}
 				}
 			}

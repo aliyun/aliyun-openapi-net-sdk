@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class ModifyDBClusterParametersRequest : RpcAcsRequest<ModifyDBClusterParametersResponse>
+    public class DeleteParameterGroupRequest : RpcAcsRequest<DeleteParameterGroupResponse>
     {
-        public ModifyDBClusterParametersRequest()
-            : base("polardb", "2017-08-01", "ModifyDBClusterParameters", "polardb", "openAPI")
+        public DeleteParameterGroupRequest()
+            : base("polardb", "2017-08-01", "DeleteParameterGroup", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,17 +44,11 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string parameterGroupId;
 
-		private string effectiveTime;
-
 		private string resourceOwnerAccount;
-
-		private string dBClusterId;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string parameters;
 
 		public long? ResourceOwnerId
 		{
@@ -82,19 +76,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string EffectiveTime
-		{
-			get
-			{
-				return effectiveTime;
-			}
-			set	
-			{
-				effectiveTime = value;
-				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -105,19 +86,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string DBClusterId
-		{
-			get
-			{
-				return dBClusterId;
-			}
-			set	
-			{
-				dBClusterId = value;
-				DictionaryUtil.Add(QueryParameters, "DBClusterId", value);
 			}
 		}
 
@@ -147,22 +115,14 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string Parameters
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return parameters;
-			}
-			set	
-			{
-				parameters = value;
-				DictionaryUtil.Add(QueryParameters, "Parameters", value);
-			}
+			return false;
 		}
 
-        public override ModifyDBClusterParametersResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteParameterGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDBClusterParametersResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteParameterGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -60,6 +60,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string preferredBackupTime;
 
+		private string backupFrequency;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -187,6 +189,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				preferredBackupTime = value;
 				DictionaryUtil.Add(QueryParameters, "PreferredBackupTime", value);
+			}
+		}
+
+		public string BackupFrequency
+		{
+			get
+			{
+				return backupFrequency;
+			}
+			set	
+			{
+				backupFrequency = value;
+				DictionaryUtil.Add(QueryParameters, "BackupFrequency", value);
 			}
 		}
 

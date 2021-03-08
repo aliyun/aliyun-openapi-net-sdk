@@ -44,17 +44,16 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			for (int i = 0; i < _ctx.Length("DescribeScheduleTasks.Data.TimerInfos.Length"); i++) {
 				DescribeScheduleTasksResponse.DescribeScheduleTasks_Data.DescribeScheduleTasks_TimerInfosItem timerInfosItem = new DescribeScheduleTasksResponse.DescribeScheduleTasks_Data.DescribeScheduleTasks_TimerInfosItem();
 				timerInfosItem.Status = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].Status");
-				timerInfosItem.GmtCreate = _ctx.LongValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].GmtCreate");
 				timerInfosItem.Action = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].Action");
 				timerInfosItem.TaskId = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].TaskId");
 				timerInfosItem.PlannedTime = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].PlannedTime");
+				timerInfosItem.DbClusterDescription = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].DbClusterDescription");
 				timerInfosItem.PlannedStartTime = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].PlannedStartTime");
 				timerInfosItem.DBClusterId = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].DBClusterId");
-				timerInfosItem.GmtModified = _ctx.LongValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].GmtModified");
 				timerInfosItem.Region = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].Region");
 				timerInfosItem.OrderId = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].OrderId");
 				timerInfosItem.PlannedEndTime = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].PlannedEndTime");
-				timerInfosItem.AliUid = _ctx.IntegerValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].AliUid");
+				timerInfosItem.DbClusterStatus = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].DbClusterStatus");
 
 				data_timerInfos.Add(timerInfosItem);
 			}

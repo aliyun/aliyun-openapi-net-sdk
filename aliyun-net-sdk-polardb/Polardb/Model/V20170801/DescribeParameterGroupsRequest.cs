@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class ModifyDBClusterParametersRequest : RpcAcsRequest<ModifyDBClusterParametersResponse>
+    public class DescribeParameterGroupsRequest : RpcAcsRequest<DescribeParameterGroupsResponse>
     {
-        public ModifyDBClusterParametersRequest()
-            : base("polardb", "2017-08-01", "ModifyDBClusterParameters", "polardb", "openAPI")
+        public DescribeParameterGroupsRequest()
+            : base("polardb", "2017-08-01", "DescribeParameterGroups", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,19 +42,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string parameterGroupId;
-
-		private string effectiveTime;
-
 		private string resourceOwnerAccount;
-
-		private string dBClusterId;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string parameters;
+		private string dBType;
+
+		private string dBVersion;
 
 		public long? ResourceOwnerId
 		{
@@ -69,32 +65,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string ParameterGroupId
-		{
-			get
-			{
-				return parameterGroupId;
-			}
-			set	
-			{
-				parameterGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ParameterGroupId", value);
-			}
-		}
-
-		public string EffectiveTime
-		{
-			get
-			{
-				return effectiveTime;
-			}
-			set	
-			{
-				effectiveTime = value;
-				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -105,19 +75,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string DBClusterId
-		{
-			get
-			{
-				return dBClusterId;
-			}
-			set	
-			{
-				dBClusterId = value;
-				DictionaryUtil.Add(QueryParameters, "DBClusterId", value);
 			}
 		}
 
@@ -147,22 +104,40 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string Parameters
+		public string DBType
 		{
 			get
 			{
-				return parameters;
+				return dBType;
 			}
 			set	
 			{
-				parameters = value;
-				DictionaryUtil.Add(QueryParameters, "Parameters", value);
+				dBType = value;
+				DictionaryUtil.Add(QueryParameters, "DBType", value);
 			}
 		}
 
-        public override ModifyDBClusterParametersResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string DBVersion
+		{
+			get
+			{
+				return dBVersion;
+			}
+			set	
+			{
+				dBVersion = value;
+				DictionaryUtil.Add(QueryParameters, "DBVersion", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeParameterGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDBClusterParametersResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeParameterGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
