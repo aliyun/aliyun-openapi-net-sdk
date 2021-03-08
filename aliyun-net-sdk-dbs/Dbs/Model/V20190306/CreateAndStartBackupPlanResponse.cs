@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string backupPlanId;
 
+		private bool? createBackupSet;
+
 		private string orderId;
 
 		public bool? Success
@@ -108,6 +110,18 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				backupPlanId = value;
+			}
+		}
+
+		public bool? CreateBackupSet
+		{
+			get
+			{
+				return createBackupSet;
+			}
+			set	
+			{
+				createBackupSet = value;
 			}
 		}
 

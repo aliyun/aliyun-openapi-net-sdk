@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			createAndStartBackupPlanResponse.HttpStatusCode = _ctx.IntegerValue("CreateAndStartBackupPlan.HttpStatusCode");
 			createAndStartBackupPlanResponse.RequestId = _ctx.StringValue("CreateAndStartBackupPlan.RequestId");
 			createAndStartBackupPlanResponse.BackupPlanId = _ctx.StringValue("CreateAndStartBackupPlan.BackupPlanId");
+			createAndStartBackupPlanResponse.CreateBackupSet = _ctx.BooleanValue("CreateAndStartBackupPlan.CreateBackupSet");
 			createAndStartBackupPlanResponse.OrderId = _ctx.StringValue("CreateAndStartBackupPlan.OrderId");
         
 			return createAndStartBackupPlanResponse;
