@@ -160,6 +160,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private long? relatedFlowId;
 
+			private string taskType;
+
 			public long? NodeId
 			{
 				get
@@ -445,6 +447,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					relatedFlowId = value;
+				}
+			}
+
+			public string TaskType
+			{
+				get
+				{
+					return taskType;
+				}
+				set	
+				{
+					taskType = value;
 				}
 			}
 		}

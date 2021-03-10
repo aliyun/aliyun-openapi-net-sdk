@@ -51,6 +51,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 				instancesItem.BeginRunningTime = _ctx.LongValue("GetManualDagInstances.Instances["+ i +"].BeginRunningTime");
 				instancesItem.ParamValues = _ctx.StringValue("GetManualDagInstances.Instances["+ i +"].ParamValues");
 				instancesItem.FinishTime = _ctx.LongValue("GetManualDagInstances.Instances["+ i +"].FinishTime");
+				instancesItem.TaskType = _ctx.StringValue("GetManualDagInstances.Instances["+ i +"].TaskType");
 
 				getManualDagInstancesResponse_instances.Add(instancesItem);
 			}

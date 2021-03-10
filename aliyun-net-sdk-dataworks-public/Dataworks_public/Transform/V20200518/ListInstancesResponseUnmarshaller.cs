@@ -69,6 +69,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 				instance.DqcDescription = _ctx.StringValue("ListInstances.Data.Instances["+ i +"].DqcDescription");
 				instance.ErrorMessage = _ctx.StringValue("ListInstances.Data.Instances["+ i +"].ErrorMessage");
 				instance.RelatedFlowId = _ctx.LongValue("ListInstances.Data.Instances["+ i +"].RelatedFlowId");
+				instance.TaskType = _ctx.StringValue("ListInstances.Data.Instances["+ i +"].TaskType");
 
 				data_instances.Add(instance);
 			}

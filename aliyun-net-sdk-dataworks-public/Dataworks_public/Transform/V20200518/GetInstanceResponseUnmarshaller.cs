@@ -62,6 +62,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			data.DqcDescription = _ctx.StringValue("GetInstance.Data.DqcDescription");
 			data.ErrorMessage = _ctx.StringValue("GetInstance.Data.ErrorMessage");
 			data.RelatedFlowId = _ctx.LongValue("GetInstance.Data.RelatedFlowId");
+			data.TaskType = _ctx.StringValue("GetInstance.Data.TaskType");
 			getInstanceResponse.Data = data;
         
 			return getInstanceResponse;
