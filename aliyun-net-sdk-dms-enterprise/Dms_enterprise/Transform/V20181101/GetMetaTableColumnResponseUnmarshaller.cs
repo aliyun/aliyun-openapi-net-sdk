@@ -32,25 +32,25 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getMetaTableColumnResponse.HttpResponse = _ctx.HttpResponse;
 			getMetaTableColumnResponse.RequestId = _ctx.StringValue("GetMetaTableColumn.RequestId");
-			getMetaTableColumnResponse.Success = _ctx.BooleanValue("GetMetaTableColumn.Success");
-			getMetaTableColumnResponse.ErrorMessage = _ctx.StringValue("GetMetaTableColumn.ErrorMessage");
 			getMetaTableColumnResponse.ErrorCode = _ctx.StringValue("GetMetaTableColumn.ErrorCode");
+			getMetaTableColumnResponse.ErrorMessage = _ctx.StringValue("GetMetaTableColumn.ErrorMessage");
+			getMetaTableColumnResponse.Success = _ctx.BooleanValue("GetMetaTableColumn.Success");
 
 			List<GetMetaTableColumnResponse.GetMetaTableColumn_Column> getMetaTableColumnResponse_columnList = new List<GetMetaTableColumnResponse.GetMetaTableColumn_Column>();
 			for (int i = 0; i < _ctx.Length("GetMetaTableColumn.ColumnList.Length"); i++) {
 				GetMetaTableColumnResponse.GetMetaTableColumn_Column column = new GetMetaTableColumnResponse.GetMetaTableColumn_Column();
 				column.ColumnId = _ctx.StringValue("GetMetaTableColumn.ColumnList["+ i +"].ColumnId");
 				column.ColumnName = _ctx.StringValue("GetMetaTableColumn.ColumnList["+ i +"].ColumnName");
-				column.ColumnType = _ctx.StringValue("GetMetaTableColumn.ColumnList["+ i +"].ColumnType");
-				column.DataLength = _ctx.IntegerValue("GetMetaTableColumn.ColumnList["+ i +"].DataLength");
 				column.Description = _ctx.StringValue("GetMetaTableColumn.ColumnList["+ i +"].Description");
+				column.ColumnType = _ctx.StringValue("GetMetaTableColumn.ColumnList["+ i +"].ColumnType");
 				column.Position = _ctx.IntegerValue("GetMetaTableColumn.ColumnList["+ i +"].Position");
 				column.AutoIncrement = _ctx.BooleanValue("GetMetaTableColumn.ColumnList["+ i +"].AutoIncrement");
-				column.Nullable = _ctx.BooleanValue("GetMetaTableColumn.ColumnList["+ i +"].Nullable");
 				column.SecurityLevel = _ctx.StringValue("GetMetaTableColumn.ColumnList["+ i +"].SecurityLevel");
-				column.PrimaryKey = _ctx.StringValue("GetMetaTableColumn.ColumnList["+ i +"].PrimaryKey");
+				column.DataLength = _ctx.IntegerValue("GetMetaTableColumn.ColumnList["+ i +"].DataLength");
 				column.DataScale = _ctx.IntegerValue("GetMetaTableColumn.ColumnList["+ i +"].DataScale");
 				column.DataPrecision = _ctx.IntegerValue("GetMetaTableColumn.ColumnList["+ i +"].DataPrecision");
+				column.PrimaryKey = _ctx.StringValue("GetMetaTableColumn.ColumnList["+ i +"].PrimaryKey");
+				column.Nullable = _ctx.BooleanValue("GetMetaTableColumn.ColumnList["+ i +"].Nullable");
 
 				getMetaTableColumnResponse_columnList.Add(column);
 			}

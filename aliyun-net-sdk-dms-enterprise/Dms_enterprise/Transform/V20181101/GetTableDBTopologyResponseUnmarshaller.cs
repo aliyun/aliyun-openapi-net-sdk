@@ -32,9 +32,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getTableDBTopologyResponse.HttpResponse = _ctx.HttpResponse;
 			getTableDBTopologyResponse.RequestId = _ctx.StringValue("GetTableDBTopology.RequestId");
-			getTableDBTopologyResponse.Success = _ctx.BooleanValue("GetTableDBTopology.Success");
-			getTableDBTopologyResponse.ErrorMessage = _ctx.StringValue("GetTableDBTopology.ErrorMessage");
 			getTableDBTopologyResponse.ErrorCode = _ctx.StringValue("GetTableDBTopology.ErrorCode");
+			getTableDBTopologyResponse.ErrorMessage = _ctx.StringValue("GetTableDBTopology.ErrorMessage");
+			getTableDBTopologyResponse.Success = _ctx.BooleanValue("GetTableDBTopology.Success");
 
 			GetTableDBTopologyResponse.GetTableDBTopology_DBTopology dBTopology = new GetTableDBTopologyResponse.GetTableDBTopology_DBTopology();
 			dBTopology.TableName = _ctx.StringValue("GetTableDBTopology.DBTopology.TableName");
@@ -43,24 +43,24 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			List<GetTableDBTopologyResponse.GetTableDBTopology_DBTopology.GetTableDBTopology_DataSource> dBTopology_dataSourceList = new List<GetTableDBTopologyResponse.GetTableDBTopology_DBTopology.GetTableDBTopology_DataSource>();
 			for (int i = 0; i < _ctx.Length("GetTableDBTopology.DBTopology.DataSourceList.Length"); i++) {
 				GetTableDBTopologyResponse.GetTableDBTopology_DBTopology.GetTableDBTopology_DataSource dataSource = new GetTableDBTopologyResponse.GetTableDBTopology_DBTopology.GetTableDBTopology_DataSource();
-				dataSource.Host = _ctx.StringValue("GetTableDBTopology.DBTopology.DataSourceList["+ i +"].Host");
 				dataSource.Port = _ctx.IntegerValue("GetTableDBTopology.DBTopology.DataSourceList["+ i +"].Port");
+				dataSource.Host = _ctx.StringValue("GetTableDBTopology.DBTopology.DataSourceList["+ i +"].Host");
 				dataSource.DbType = _ctx.StringValue("GetTableDBTopology.DBTopology.DataSourceList["+ i +"].DbType");
 				dataSource.Sid = _ctx.StringValue("GetTableDBTopology.DBTopology.DataSourceList["+ i +"].Sid");
 
 				List<GetTableDBTopologyResponse.GetTableDBTopology_DBTopology.GetTableDBTopology_DataSource.GetTableDBTopology_Database> dataSource_databaseList = new List<GetTableDBTopologyResponse.GetTableDBTopology_DBTopology.GetTableDBTopology_DataSource.GetTableDBTopology_Database>();
 				for (int j = 0; j < _ctx.Length("GetTableDBTopology.DBTopology.DataSourceList["+ i +"].DatabaseList.Length"); j++) {
 					GetTableDBTopologyResponse.GetTableDBTopology_DBTopology.GetTableDBTopology_DataSource.GetTableDBTopology_Database database = new GetTableDBTopologyResponse.GetTableDBTopology_DBTopology.GetTableDBTopology_DataSource.GetTableDBTopology_Database();
-					database.DbName = _ctx.StringValue("GetTableDBTopology.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].DbName");
 					database.DbId = _ctx.StringValue("GetTableDBTopology.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].DbId");
+					database.DbName = _ctx.StringValue("GetTableDBTopology.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].DbName");
 					database.EnvType = _ctx.StringValue("GetTableDBTopology.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].EnvType");
 					database.DbType = _ctx.StringValue("GetTableDBTopology.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].DbType");
 
 					List<GetTableDBTopologyResponse.GetTableDBTopology_DBTopology.GetTableDBTopology_DataSource.GetTableDBTopology_Database.GetTableDBTopology_Table> database_tableList = new List<GetTableDBTopologyResponse.GetTableDBTopology_DBTopology.GetTableDBTopology_DataSource.GetTableDBTopology_Database.GetTableDBTopology_Table>();
 					for (int k = 0; k < _ctx.Length("GetTableDBTopology.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].TableList.Length"); k++) {
 						GetTableDBTopologyResponse.GetTableDBTopology_DBTopology.GetTableDBTopology_DataSource.GetTableDBTopology_Database.GetTableDBTopology_Table table = new GetTableDBTopologyResponse.GetTableDBTopology_DBTopology.GetTableDBTopology_DataSource.GetTableDBTopology_Database.GetTableDBTopology_Table();
-						table.TableName = _ctx.StringValue("GetTableDBTopology.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].TableList["+ k +"].TableName");
 						table.TableId = _ctx.StringValue("GetTableDBTopology.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].TableList["+ k +"].TableId");
+						table.TableName = _ctx.StringValue("GetTableDBTopology.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].TableList["+ k +"].TableName");
 						table.TableType = _ctx.StringValue("GetTableDBTopology.DBTopology.DataSourceList["+ i +"].DatabaseList["+ j +"].TableList["+ k +"].TableType");
 
 						database_tableList.Add(table);

@@ -32,45 +32,45 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getInstanceResponse.HttpResponse = _ctx.HttpResponse;
 			getInstanceResponse.RequestId = _ctx.StringValue("GetInstance.RequestId");
-			getInstanceResponse.Success = _ctx.BooleanValue("GetInstance.Success");
-			getInstanceResponse.ErrorMessage = _ctx.StringValue("GetInstance.ErrorMessage");
 			getInstanceResponse.ErrorCode = _ctx.StringValue("GetInstance.ErrorCode");
+			getInstanceResponse.ErrorMessage = _ctx.StringValue("GetInstance.ErrorMessage");
+			getInstanceResponse.Success = _ctx.BooleanValue("GetInstance.Success");
 
 			GetInstanceResponse.GetInstance_Instance instance = new GetInstanceResponse.GetInstance_Instance();
+			instance.InstanceSource = _ctx.StringValue("GetInstance.Instance.InstanceSource");
 			instance.InstanceId = _ctx.StringValue("GetInstance.Instance.InstanceId");
-			instance.InstanceType = _ctx.StringValue("GetInstance.Instance.InstanceType");
-			instance.EnvType = _ctx.StringValue("GetInstance.Instance.EnvType");
-			instance.Host = _ctx.StringValue("GetInstance.Instance.Host");
+			instance.DatabasePassword = _ctx.StringValue("GetInstance.Instance.DatabasePassword");
 			instance.Port = _ctx.IntegerValue("GetInstance.Instance.Port");
-			instance.Sid = _ctx.StringValue("GetInstance.Instance.Sid");
-			instance.InstanceAlias = _ctx.StringValue("GetInstance.Instance.InstanceAlias");
-			instance.DataLinkName = _ctx.StringValue("GetInstance.Instance.DataLinkName");
-			instance.DbaNickName = _ctx.StringValue("GetInstance.Instance.DbaNickName");
-			instance.SafeRuleId = _ctx.StringValue("GetInstance.Instance.SafeRuleId");
-			instance.QueryTimeout = _ctx.IntegerValue("GetInstance.Instance.QueryTimeout");
+			instance.Host = _ctx.StringValue("GetInstance.Instance.Host");
 			instance.ExportTimeout = _ctx.IntegerValue("GetInstance.Instance.ExportTimeout");
-			instance.State = _ctx.StringValue("GetInstance.Instance.State");
-			instance.DbaId = _ctx.StringValue("GetInstance.Instance.DbaId");
 			instance.DdlOnline = _ctx.IntegerValue("GetInstance.Instance.DdlOnline");
+			instance.EnvType = _ctx.StringValue("GetInstance.Instance.EnvType");
+			instance.Sid = _ctx.StringValue("GetInstance.Instance.Sid");
 			instance.UseDsql = _ctx.IntegerValue("GetInstance.Instance.UseDsql");
 			instance.EcsInstanceId = _ctx.StringValue("GetInstance.Instance.EcsInstanceId");
+			instance.DbaId = _ctx.StringValue("GetInstance.Instance.DbaId");
 			instance.VpcId = _ctx.StringValue("GetInstance.Instance.VpcId");
 			instance.EcsRegion = _ctx.StringValue("GetInstance.Instance.EcsRegion");
+			instance.InstanceAlias = _ctx.StringValue("GetInstance.Instance.InstanceAlias");
+			instance.State = _ctx.StringValue("GetInstance.Instance.State");
 			instance.DatabaseUser = _ctx.StringValue("GetInstance.Instance.DatabaseUser");
-			instance.DatabasePassword = _ctx.StringValue("GetInstance.Instance.DatabasePassword");
-			instance.InstanceSource = _ctx.StringValue("GetInstance.Instance.InstanceSource");
-
-			List<string> instance_ownerIdList = new List<string>();
-			for (int i = 0; i < _ctx.Length("GetInstance.Instance.OwnerIdList.Length"); i++) {
-				instance_ownerIdList.Add(_ctx.StringValue("GetInstance.Instance.OwnerIdList["+ i +"]"));
-			}
-			instance.OwnerIdList = instance_ownerIdList;
+			instance.InstanceType = _ctx.StringValue("GetInstance.Instance.InstanceType");
+			instance.DbaNickName = _ctx.StringValue("GetInstance.Instance.DbaNickName");
+			instance.DataLinkName = _ctx.StringValue("GetInstance.Instance.DataLinkName");
+			instance.QueryTimeout = _ctx.IntegerValue("GetInstance.Instance.QueryTimeout");
+			instance.SafeRuleId = _ctx.StringValue("GetInstance.Instance.SafeRuleId");
 
 			List<string> instance_ownerNameList = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetInstance.Instance.OwnerNameList.Length"); i++) {
 				instance_ownerNameList.Add(_ctx.StringValue("GetInstance.Instance.OwnerNameList["+ i +"]"));
 			}
 			instance.OwnerNameList = instance_ownerNameList;
+
+			List<string> instance_ownerIdList = new List<string>();
+			for (int i = 0; i < _ctx.Length("GetInstance.Instance.OwnerIdList.Length"); i++) {
+				instance_ownerIdList.Add(_ctx.StringValue("GetInstance.Instance.OwnerIdList["+ i +"]"));
+			}
+			instance.OwnerIdList = instance_ownerIdList;
 			getInstanceResponse.Instance = instance;
         
 			return getInstanceResponse;

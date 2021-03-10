@@ -32,25 +32,25 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getMetaTableDetailInfoResponse.HttpResponse = _ctx.HttpResponse;
 			getMetaTableDetailInfoResponse.RequestId = _ctx.StringValue("GetMetaTableDetailInfo.RequestId");
-			getMetaTableDetailInfoResponse.Success = _ctx.BooleanValue("GetMetaTableDetailInfo.Success");
-			getMetaTableDetailInfoResponse.ErrorMessage = _ctx.StringValue("GetMetaTableDetailInfo.ErrorMessage");
 			getMetaTableDetailInfoResponse.ErrorCode = _ctx.StringValue("GetMetaTableDetailInfo.ErrorCode");
+			getMetaTableDetailInfoResponse.ErrorMessage = _ctx.StringValue("GetMetaTableDetailInfo.ErrorMessage");
+			getMetaTableDetailInfoResponse.Success = _ctx.BooleanValue("GetMetaTableDetailInfo.Success");
 
 			GetMetaTableDetailInfoResponse.GetMetaTableDetailInfo_DetailInfo detailInfo = new GetMetaTableDetailInfoResponse.GetMetaTableDetailInfo_DetailInfo();
 
 			List<GetMetaTableDetailInfoResponse.GetMetaTableDetailInfo_DetailInfo.GetMetaTableDetailInfo_Column> detailInfo_columnList = new List<GetMetaTableDetailInfoResponse.GetMetaTableDetailInfo_DetailInfo.GetMetaTableDetailInfo_Column>();
 			for (int i = 0; i < _ctx.Length("GetMetaTableDetailInfo.DetailInfo.ColumnList.Length"); i++) {
 				GetMetaTableDetailInfoResponse.GetMetaTableDetailInfo_DetailInfo.GetMetaTableDetailInfo_Column column = new GetMetaTableDetailInfoResponse.GetMetaTableDetailInfo_DetailInfo.GetMetaTableDetailInfo_Column();
-				column.Description = _ctx.StringValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].Description");
-				column.ColumnType = _ctx.StringValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].ColumnType");
-				column.Position = _ctx.StringValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].Position");
-				column.DataLength = _ctx.IntegerValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].DataLength");
-				column.Nullable = _ctx.BooleanValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].Nullable");
-				column.ColumnName = _ctx.StringValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].ColumnName");
-				column.AutoIncrement = _ctx.BooleanValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].AutoIncrement");
-				column.DataPrecision = _ctx.IntegerValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].DataPrecision");
-				column.DataScale = _ctx.IntegerValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].DataScale");
 				column.ColumnId = _ctx.StringValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].ColumnId");
+				column.ColumnName = _ctx.StringValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].ColumnName");
+				column.ColumnType = _ctx.StringValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].ColumnType");
+				column.Description = _ctx.StringValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].Description");
+				column.Position = _ctx.StringValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].Position");
+				column.AutoIncrement = _ctx.BooleanValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].AutoIncrement");
+				column.DataLength = _ctx.IntegerValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].DataLength");
+				column.DataScale = _ctx.IntegerValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].DataScale");
+				column.DataPrecision = _ctx.IntegerValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].DataPrecision");
+				column.Nullable = _ctx.BooleanValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].Nullable");
 
 				detailInfo_columnList.Add(column);
 			}
@@ -60,9 +60,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			for (int i = 0; i < _ctx.Length("GetMetaTableDetailInfo.DetailInfo.IndexList.Length"); i++) {
 				GetMetaTableDetailInfoResponse.GetMetaTableDetailInfo_DetailInfo.GetMetaTableDetailInfo_Index index = new GetMetaTableDetailInfoResponse.GetMetaTableDetailInfo_DetailInfo.GetMetaTableDetailInfo_Index();
 				index.IndexName = _ctx.StringValue("GetMetaTableDetailInfo.DetailInfo.IndexList["+ i +"].IndexName");
-				index.IndexType = _ctx.StringValue("GetMetaTableDetailInfo.DetailInfo.IndexList["+ i +"].IndexType");
-				index.Unique = _ctx.BooleanValue("GetMetaTableDetailInfo.DetailInfo.IndexList["+ i +"].Unique");
 				index.IndexId = _ctx.StringValue("GetMetaTableDetailInfo.DetailInfo.IndexList["+ i +"].IndexId");
+				index.Unique = _ctx.BooleanValue("GetMetaTableDetailInfo.DetailInfo.IndexList["+ i +"].Unique");
+				index.IndexType = _ctx.StringValue("GetMetaTableDetailInfo.DetailInfo.IndexList["+ i +"].IndexType");
 
 				List<string> index_indexColumns = new List<string>();
 				for (int j = 0; j < _ctx.Length("GetMetaTableDetailInfo.DetailInfo.IndexList["+ i +"].IndexColumns.Length"); j++) {

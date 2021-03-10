@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dms_enterprise;
 using Aliyun.Acs.dms_enterprise.Transform;
 using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class ExecuteScriptRequest : RpcAcsRequest<ExecuteScriptResponse>
     {
         public ExecuteScriptRequest()
-            : base("dms-enterprise", "2018-11-01", "ExecuteScript", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "ExecuteScript")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,40 +42,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			Method = MethodType.POST;
         }
 
-		private int? dbId;
-
-		private bool? logic;
-
 		private string script;
 
 		private long? tid;
 
-		public int? DbId
-		{
-			get
-			{
-				return dbId;
-			}
-			set	
-			{
-				dbId = value;
-				DictionaryUtil.Add(QueryParameters, "DbId", value.ToString());
-			}
-		}
+		private int? dbId;
 
-		public bool? Logic
-		{
-			get
-			{
-				return logic;
-			}
-			set	
-			{
-				logic = value;
-				DictionaryUtil.Add(QueryParameters, "Logic", value.ToString());
-			}
-		}
+		private bool? logic;
 
+		[JsonProperty(PropertyName = "Script")]
 		public string Script
 		{
 			get
@@ -88,6 +64,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -98,6 +75,34 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				tid = value;
 				DictionaryUtil.Add(QueryParameters, "Tid", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "DbId")]
+		public int? DbId
+		{
+			get
+			{
+				return dbId;
+			}
+			set	
+			{
+				dbId = value;
+				DictionaryUtil.Add(QueryParameters, "DbId", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "Logic")]
+		public bool? Logic
+		{
+			get
+			{
+				return logic;
+			}
+			set	
+			{
+				logic = value;
+				DictionaryUtil.Add(QueryParameters, "Logic", value.ToString());
 			}
 		}
 

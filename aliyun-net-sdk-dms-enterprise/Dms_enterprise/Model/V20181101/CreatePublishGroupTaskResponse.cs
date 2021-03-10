@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -25,16 +25,30 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 	public class CreatePublishGroupTaskResponse : AcsResponse
 	{
 
+		private long? taskId;
+
 		private string requestId;
-
-		private bool? success;
-
-		private string errorMessage;
 
 		private string errorCode;
 
-		private long? taskId;
+		private string errorMessage;
 
+		private bool? success;
+
+		[JsonProperty(PropertyName = "TaskId")]
+		public long? TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,30 +61,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ErrorCode")]
 		public string ErrorCode
 		{
 			get
@@ -83,15 +74,29 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public long? TaskId
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
 		{
 			get
 			{
-				return taskId;
+				return errorMessage;
 			}
 			set	
 			{
-				taskId = value;
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

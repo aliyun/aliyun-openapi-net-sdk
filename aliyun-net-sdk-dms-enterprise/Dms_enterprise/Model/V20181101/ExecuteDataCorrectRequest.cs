@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dms_enterprise;
 using Aliyun.Acs.dms_enterprise.Transform;
 using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class ExecuteDataCorrectRequest : RpcAcsRequest<ExecuteDataCorrectResponse>
     {
         public ExecuteDataCorrectRequest()
-            : base("dms-enterprise", "2018-11-01", "ExecuteDataCorrect", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "ExecuteDataCorrect")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,25 +42,13 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			Method = MethodType.POST;
         }
 
-		private Dictionary<object,object> actionDetail;
-
 		private long? orderId;
 
 		private string tid;
 
-		public Dictionary<object,object> ActionDetail
-		{
-			get
-			{
-				return actionDetail;
-			}
-			set	
-			{
-				actionDetail = value;
-				DictionaryUtil.Add(QueryParameters, "ActionDetail", JsonConvert.SerializeObject(value));
-			}
-		}
+		private Dictionary<object,object> actionDetail;
 
+		[JsonProperty(PropertyName = "OrderId")]
 		public long? OrderId
 		{
 			get
@@ -73,6 +62,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tid")]
 		public string Tid
 		{
 			get
@@ -83,6 +73,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				tid = value;
 				DictionaryUtil.Add(QueryParameters, "Tid", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "ActionDetail")]
+		public Dictionary<object,object> ActionDetail
+		{
+			get
+			{
+				return actionDetail;
+			}
+			set	
+			{
+				actionDetail = value;
+				DictionaryUtil.Add(QueryParameters, "ActionDetail", JsonConvert.SerializeObject(value));
 			}
 		}
 

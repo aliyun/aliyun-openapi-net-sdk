@@ -32,42 +32,23 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getApprovalDetailResponse.HttpResponse = _ctx.HttpResponse;
 			getApprovalDetailResponse.RequestId = _ctx.StringValue("GetApprovalDetail.RequestId");
-			getApprovalDetailResponse.Success = _ctx.BooleanValue("GetApprovalDetail.Success");
-			getApprovalDetailResponse.ErrorMessage = _ctx.StringValue("GetApprovalDetail.ErrorMessage");
 			getApprovalDetailResponse.ErrorCode = _ctx.StringValue("GetApprovalDetail.ErrorCode");
+			getApprovalDetailResponse.ErrorMessage = _ctx.StringValue("GetApprovalDetail.ErrorMessage");
+			getApprovalDetailResponse.Success = _ctx.BooleanValue("GetApprovalDetail.Success");
 
 			GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail approvalDetail = new GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail();
-			approvalDetail.AuditId = _ctx.LongValue("GetApprovalDetail.ApprovalDetail.AuditId");
-			approvalDetail.OrderId = _ctx.LongValue("GetApprovalDetail.ApprovalDetail.OrderId");
 			approvalDetail.OrderType = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.OrderType");
-			approvalDetail.Title = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.Title");
-			approvalDetail.WorkflowInsCode = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowInsCode");
 			approvalDetail.Description = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.Description");
+			approvalDetail.WorkflowInsCode = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowInsCode");
+			approvalDetail.AuditId = _ctx.LongValue("GetApprovalDetail.ApprovalDetail.AuditId");
+			approvalDetail.Title = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.Title");
+			approvalDetail.OrderId = _ctx.LongValue("GetApprovalDetail.ApprovalDetail.OrderId");
 
 			List<string> approvalDetail_reasonList = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetApprovalDetail.ApprovalDetail.ReasonList.Length"); i++) {
 				approvalDetail_reasonList.Add(_ctx.StringValue("GetApprovalDetail.ApprovalDetail.ReasonList["+ i +"]"));
 			}
 			approvalDetail.ReasonList = approvalDetail_reasonList;
-
-			List<GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail.GetApprovalDetail_WorkflowNode> approvalDetail_workflowNodes = new List<GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail.GetApprovalDetail_WorkflowNode>();
-			for (int i = 0; i < _ctx.Length("GetApprovalDetail.ApprovalDetail.WorkflowNodes.Length"); i++) {
-				GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail.GetApprovalDetail_WorkflowNode workflowNode = new GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail.GetApprovalDetail_WorkflowNode();
-				workflowNode.NodeName = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].NodeName");
-				workflowNode.OperateComment = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].OperateComment");
-				workflowNode.OperateTime = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].OperateTime");
-				workflowNode.OperatorId = _ctx.LongValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].OperatorId");
-				workflowNode.WorkflowInsCode = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].WorkflowInsCode");
-
-				List<string> workflowNode_auditUserIdList = new List<string>();
-				for (int j = 0; j < _ctx.Length("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].AuditUserIdList.Length"); j++) {
-					workflowNode_auditUserIdList.Add(_ctx.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].AuditUserIdList["+ j +"]"));
-				}
-				workflowNode.AuditUserIdList = workflowNode_auditUserIdList;
-
-				approvalDetail_workflowNodes.Add(workflowNode);
-			}
-			approvalDetail.WorkflowNodes = approvalDetail_workflowNodes;
 
 			List<GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail.GetApprovalDetail_CurrentHandler> approvalDetail_currentHandlers = new List<GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail.GetApprovalDetail_CurrentHandler>();
 			for (int i = 0; i < _ctx.Length("GetApprovalDetail.ApprovalDetail.CurrentHandlers.Length"); i++) {
@@ -78,6 +59,25 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 				approvalDetail_currentHandlers.Add(currentHandler);
 			}
 			approvalDetail.CurrentHandlers = approvalDetail_currentHandlers;
+
+			List<GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail.GetApprovalDetail_WorkflowNode> approvalDetail_workflowNodes = new List<GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail.GetApprovalDetail_WorkflowNode>();
+			for (int i = 0; i < _ctx.Length("GetApprovalDetail.ApprovalDetail.WorkflowNodes.Length"); i++) {
+				GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail.GetApprovalDetail_WorkflowNode workflowNode = new GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail.GetApprovalDetail_WorkflowNode();
+				workflowNode.OperateTime = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].OperateTime");
+				workflowNode.WorkflowInsCode = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].WorkflowInsCode");
+				workflowNode.NodeName = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].NodeName");
+				workflowNode.OperateComment = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].OperateComment");
+				workflowNode.OperatorId = _ctx.LongValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].OperatorId");
+
+				List<string> workflowNode_auditUserIdList = new List<string>();
+				for (int j = 0; j < _ctx.Length("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].AuditUserIdList.Length"); j++) {
+					workflowNode_auditUserIdList.Add(_ctx.StringValue("GetApprovalDetail.ApprovalDetail.WorkflowNodes["+ i +"].AuditUserIdList["+ j +"]"));
+				}
+				workflowNode.AuditUserIdList = workflowNode_auditUserIdList;
+
+				approvalDetail_workflowNodes.Add(workflowNode);
+			}
+			approvalDetail.WorkflowNodes = approvalDetail_workflowNodes;
 			getApprovalDetailResponse.ApprovalDetail = approvalDetail;
         
 			return getApprovalDetailResponse;

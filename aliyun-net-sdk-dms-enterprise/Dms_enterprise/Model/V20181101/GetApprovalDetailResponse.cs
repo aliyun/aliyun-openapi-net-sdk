@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private bool? success;
+		private string errorCode;
 
 		private string errorMessage;
 
-		private string errorCode;
+		private bool? success;
 
 		private GetApprovalDetail_ApprovalDetail approvalDetail;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,30 +48,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ErrorCode")]
 		public string ErrorCode
 		{
 			get
@@ -83,6 +61,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ApprovalDetail")]
 		public GetApprovalDetail_ApprovalDetail ApprovalDetail
 		{
 			get
@@ -98,48 +103,25 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class GetApprovalDetail_ApprovalDetail
 		{
 
-			private long? auditId;
-
-			private long? orderId;
-
 			private string orderType;
-
-			private string title;
-
-			private string workflowInsCode;
 
 			private string description;
 
-			private List<GetApprovalDetail_WorkflowNode> workflowNodes;
+			private string workflowInsCode;
+
+			private long? auditId;
+
+			private string title;
+
+			private long? orderId;
 
 			private List<GetApprovalDetail_CurrentHandler> currentHandlers;
 
+			private List<GetApprovalDetail_WorkflowNode> workflowNodes;
+
 			private List<string> reasonList;
 
-			public long? AuditId
-			{
-				get
-				{
-					return auditId;
-				}
-				set	
-				{
-					auditId = value;
-				}
-			}
-
-			public long? OrderId
-			{
-				get
-				{
-					return orderId;
-				}
-				set	
-				{
-					orderId = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "OrderType")]
 			public string OrderType
 			{
 				get
@@ -152,30 +134,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public string Title
-			{
-				get
-				{
-					return title;
-				}
-				set	
-				{
-					title = value;
-				}
-			}
-
-			public string WorkflowInsCode
-			{
-				get
-				{
-					return workflowInsCode;
-				}
-				set	
-				{
-					workflowInsCode = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -188,18 +147,59 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public List<GetApprovalDetail_WorkflowNode> WorkflowNodes
+			[JsonProperty(PropertyName = "WorkflowInsCode")]
+			public string WorkflowInsCode
 			{
 				get
 				{
-					return workflowNodes;
+					return workflowInsCode;
 				}
 				set	
 				{
-					workflowNodes = value;
+					workflowInsCode = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "AuditId")]
+			public long? AuditId
+			{
+				get
+				{
+					return auditId;
+				}
+				set	
+				{
+					auditId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Title")]
+			public string Title
+			{
+				get
+				{
+					return title;
+				}
+				set	
+				{
+					title = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OrderId")]
+			public long? OrderId
+			{
+				get
+				{
+					return orderId;
+				}
+				set	
+				{
+					orderId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CurrentHandlers")]
 			public List<GetApprovalDetail_CurrentHandler> CurrentHandlers
 			{
 				get
@@ -212,6 +212,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "WorkflowNodes")]
+			public List<GetApprovalDetail_WorkflowNode> WorkflowNodes
+			{
+				get
+				{
+					return workflowNodes;
+				}
+				set	
+				{
+					workflowNodes = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ReasonList")]
 			public List<string> ReasonList
 			{
 				get
@@ -224,94 +238,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public class GetApprovalDetail_WorkflowNode
-			{
-
-				private string nodeName;
-
-				private string operateComment;
-
-				private string operateTime;
-
-				private long? operatorId;
-
-				private string workflowInsCode;
-
-				private List<string> auditUserIdList;
-
-				public string NodeName
-				{
-					get
-					{
-						return nodeName;
-					}
-					set	
-					{
-						nodeName = value;
-					}
-				}
-
-				public string OperateComment
-				{
-					get
-					{
-						return operateComment;
-					}
-					set	
-					{
-						operateComment = value;
-					}
-				}
-
-				public string OperateTime
-				{
-					get
-					{
-						return operateTime;
-					}
-					set	
-					{
-						operateTime = value;
-					}
-				}
-
-				public long? OperatorId
-				{
-					get
-					{
-						return operatorId;
-					}
-					set	
-					{
-						operatorId = value;
-					}
-				}
-
-				public string WorkflowInsCode
-				{
-					get
-					{
-						return workflowInsCode;
-					}
-					set	
-					{
-						workflowInsCode = value;
-					}
-				}
-
-				public List<string> AuditUserIdList
-				{
-					get
-					{
-						return auditUserIdList;
-					}
-					set	
-					{
-						auditUserIdList = value;
-					}
-				}
-			}
-
 			public class GetApprovalDetail_CurrentHandler
 			{
 
@@ -319,6 +245,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 				private string nickName;
 
+				[JsonProperty(PropertyName = "Id")]
 				public long? Id
 				{
 					get
@@ -331,6 +258,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
+				[JsonProperty(PropertyName = "NickName")]
 				public string NickName
 				{
 					get
@@ -340,6 +268,100 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					set	
 					{
 						nickName = value;
+					}
+				}
+			}
+
+			public class GetApprovalDetail_WorkflowNode
+			{
+
+				private string operateTime;
+
+				private string workflowInsCode;
+
+				private string nodeName;
+
+				private string operateComment;
+
+				private long? operatorId;
+
+				private List<string> auditUserIdList;
+
+				[JsonProperty(PropertyName = "OperateTime")]
+				public string OperateTime
+				{
+					get
+					{
+						return operateTime;
+					}
+					set	
+					{
+						operateTime = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "WorkflowInsCode")]
+				public string WorkflowInsCode
+				{
+					get
+					{
+						return workflowInsCode;
+					}
+					set	
+					{
+						workflowInsCode = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "NodeName")]
+				public string NodeName
+				{
+					get
+					{
+						return nodeName;
+					}
+					set	
+					{
+						nodeName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "OperateComment")]
+				public string OperateComment
+				{
+					get
+					{
+						return operateComment;
+					}
+					set	
+					{
+						operateComment = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "OperatorId")]
+				public long? OperatorId
+				{
+					get
+					{
+						return operatorId;
+					}
+					set	
+					{
+						operatorId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "AuditUserIdList")]
+				public List<string> AuditUserIdList
+				{
+					get
+					{
+						return auditUserIdList;
+					}
+					set	
+					{
+						auditUserIdList = value;
 					}
 				}
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -25,66 +25,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 	public class ListLogicTablesResponse : AcsResponse
 	{
 
+		private long? totalCount;
+
 		private string requestId;
-
-		private bool? success;
-
-		private string errorMessage;
 
 		private string errorCode;
 
-		private long? totalCount;
+		private string errorMessage;
+
+		private bool? success;
 
 		private List<ListLogicTables_LogicTable> logicTableList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TotalCount")]
 		public long? TotalCount
 		{
 			get
@@ -97,6 +50,59 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "LogicTableList")]
 		public List<ListLogicTables_LogicTable> LogicTableList
 		{
 			get
@@ -114,24 +120,25 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string tableId;
 
-			private string databaseId;
-
 			private string tableName;
 
-			private bool? logic;
+			private string tableGuid;
 
 			private string tableExpr;
 
 			private string tableCount;
 
-			private string tableGuid;
+			private string databaseId;
+
+			private bool? logic;
 
 			private string schemaName;
 
-			private List<string> ownerIdList;
-
 			private List<string> ownerNameList;
 
+			private List<string> ownerIdList;
+
+			[JsonProperty(PropertyName = "TableId")]
 			public string TableId
 			{
 				get
@@ -144,18 +151,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public string DatabaseId
-			{
-				get
-				{
-					return databaseId;
-				}
-				set	
-				{
-					databaseId = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "TableName")]
 			public string TableName
 			{
 				get
@@ -168,42 +164,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public bool? Logic
-			{
-				get
-				{
-					return logic;
-				}
-				set	
-				{
-					logic = value;
-				}
-			}
-
-			public string TableExpr
-			{
-				get
-				{
-					return tableExpr;
-				}
-				set	
-				{
-					tableExpr = value;
-				}
-			}
-
-			public string TableCount
-			{
-				get
-				{
-					return tableCount;
-				}
-				set	
-				{
-					tableCount = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "TableGuid")]
 			public string TableGuid
 			{
 				get
@@ -216,6 +177,59 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "TableExpr")]
+			public string TableExpr
+			{
+				get
+				{
+					return tableExpr;
+				}
+				set	
+				{
+					tableExpr = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TableCount")]
+			public string TableCount
+			{
+				get
+				{
+					return tableCount;
+				}
+				set	
+				{
+					tableCount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DatabaseId")]
+			public string DatabaseId
+			{
+				get
+				{
+					return databaseId;
+				}
+				set	
+				{
+					databaseId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Logic")]
+			public bool? Logic
+			{
+				get
+				{
+					return logic;
+				}
+				set	
+				{
+					logic = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SchemaName")]
 			public string SchemaName
 			{
 				get
@@ -228,18 +242,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public List<string> OwnerIdList
-			{
-				get
-				{
-					return ownerIdList;
-				}
-				set	
-				{
-					ownerIdList = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "OwnerNameList")]
 			public List<string> OwnerNameList
 			{
 				get
@@ -249,6 +252,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					ownerNameList = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OwnerIdList")]
+			public List<string> OwnerIdList
+			{
+				get
+				{
+					return ownerIdList;
+				}
+				set	
+				{
+					ownerIdList = value;
 				}
 			}
 		}

@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dms_enterprise;
 using Aliyun.Acs.dms_enterprise.Transform;
 using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class CreatePublishGroupTaskRequest : RpcAcsRequest<CreatePublishGroupTaskResponse>
     {
         public CreatePublishGroupTaskRequest()
-            : base("dms-enterprise", "2018-11-01", "CreatePublishGroupTask", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "CreatePublishGroupTask")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,16 +44,17 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private long? orderId;
 
+		private long? tid;
+
 		private int? dbId;
 
 		private string planTime;
 
 		private bool? logic;
 
-		private long? tid;
-
 		private string publishStrategy;
 
+		[JsonProperty(PropertyName = "OrderId")]
 		public long? OrderId
 		{
 			get
@@ -66,45 +68,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public int? DbId
-		{
-			get
-			{
-				return dbId;
-			}
-			set	
-			{
-				dbId = value;
-				DictionaryUtil.Add(QueryParameters, "DbId", value.ToString());
-			}
-		}
-
-		public string PlanTime
-		{
-			get
-			{
-				return planTime;
-			}
-			set	
-			{
-				planTime = value;
-				DictionaryUtil.Add(QueryParameters, "PlanTime", value);
-			}
-		}
-
-		public bool? Logic
-		{
-			get
-			{
-				return logic;
-			}
-			set	
-			{
-				logic = value;
-				DictionaryUtil.Add(QueryParameters, "Logic", value.ToString());
-			}
-		}
-
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -118,6 +82,49 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DbId")]
+		public int? DbId
+		{
+			get
+			{
+				return dbId;
+			}
+			set	
+			{
+				dbId = value;
+				DictionaryUtil.Add(QueryParameters, "DbId", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "PlanTime")]
+		public string PlanTime
+		{
+			get
+			{
+				return planTime;
+			}
+			set	
+			{
+				planTime = value;
+				DictionaryUtil.Add(QueryParameters, "PlanTime", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "Logic")]
+		public bool? Logic
+		{
+			get
+			{
+				return logic;
+			}
+			set	
+			{
+				logic = value;
+				DictionaryUtil.Add(QueryParameters, "Logic", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "PublishStrategy")]
 		public string PublishStrategy
 		{
 			get

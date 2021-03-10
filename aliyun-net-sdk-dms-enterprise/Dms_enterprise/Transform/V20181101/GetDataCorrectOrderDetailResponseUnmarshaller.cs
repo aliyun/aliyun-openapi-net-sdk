@@ -32,49 +32,50 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getDataCorrectOrderDetailResponse.HttpResponse = _ctx.HttpResponse;
 			getDataCorrectOrderDetailResponse.RequestId = _ctx.StringValue("GetDataCorrectOrderDetail.RequestId");
-			getDataCorrectOrderDetailResponse.Success = _ctx.BooleanValue("GetDataCorrectOrderDetail.Success");
-			getDataCorrectOrderDetailResponse.ErrorMessage = _ctx.StringValue("GetDataCorrectOrderDetail.ErrorMessage");
 			getDataCorrectOrderDetailResponse.ErrorCode = _ctx.StringValue("GetDataCorrectOrderDetail.ErrorCode");
+			getDataCorrectOrderDetailResponse.ErrorMessage = _ctx.StringValue("GetDataCorrectOrderDetail.ErrorMessage");
+			getDataCorrectOrderDetailResponse.Success = _ctx.BooleanValue("GetDataCorrectOrderDetail.Success");
 
 			GetDataCorrectOrderDetailResponse.GetDataCorrectOrderDetail_DataCorrectOrderDetail dataCorrectOrderDetail = new GetDataCorrectOrderDetailResponse.GetDataCorrectOrderDetail_DataCorrectOrderDetail();
+			dataCorrectOrderDetail.Status = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.Status");
 
 			GetDataCorrectOrderDetailResponse.GetDataCorrectOrderDetail_DataCorrectOrderDetail.GetDataCorrectOrderDetail_OrderDetail orderDetail = new GetDataCorrectOrderDetailResponse.GetDataCorrectOrderDetail_DataCorrectOrderDetail.GetDataCorrectOrderDetail_OrderDetail();
-			orderDetail.Classify = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.OrderDetail.Classify");
 			orderDetail.EstimateAffectRows = _ctx.LongValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.OrderDetail.EstimateAffectRows");
-			orderDetail.ActualAffectRows = _ctx.LongValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.OrderDetail.ActualAffectRows");
 			orderDetail.IgnoreAffectRows = _ctx.BooleanValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.OrderDetail.IgnoreAffectRows");
-			orderDetail.IgnoreAffectRowsReason = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.OrderDetail.IgnoreAffectRowsReason");
-			orderDetail.SqlType = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.OrderDetail.SqlType");
 			orderDetail.ExeSQL = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.OrderDetail.ExeSQL");
+			orderDetail.Classify = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.OrderDetail.Classify");
+			orderDetail.IgnoreAffectRowsReason = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.OrderDetail.IgnoreAffectRowsReason");
 			orderDetail.AttachmentName = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.OrderDetail.AttachmentName");
+			orderDetail.SqlType = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.OrderDetail.SqlType");
 			orderDetail.RbSQLType = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.OrderDetail.RbSQLType");
-			orderDetail.RbSQL = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.OrderDetail.RbSQL");
+			orderDetail.ActualAffectRows = _ctx.LongValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.OrderDetail.ActualAffectRows");
 			orderDetail.RbAttachmentName = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.OrderDetail.RbAttachmentName");
+			orderDetail.RbSQL = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.OrderDetail.RbSQL");
 			dataCorrectOrderDetail.OrderDetail = orderDetail;
-
-			List<GetDataCorrectOrderDetailResponse.GetDataCorrectOrderDetail_DataCorrectOrderDetail.GetDataCorrectOrderDetail_TaskCheckDO> dataCorrectOrderDetail_preCheckDetail = new List<GetDataCorrectOrderDetailResponse.GetDataCorrectOrderDetail_DataCorrectOrderDetail.GetDataCorrectOrderDetail_TaskCheckDO>();
-			for (int i = 0; i < _ctx.Length("GetDataCorrectOrderDetail.DataCorrectOrderDetail.PreCheckDetail.Length"); i++) {
-				GetDataCorrectOrderDetailResponse.GetDataCorrectOrderDetail_DataCorrectOrderDetail.GetDataCorrectOrderDetail_TaskCheckDO taskCheckDO = new GetDataCorrectOrderDetailResponse.GetDataCorrectOrderDetail_DataCorrectOrderDetail.GetDataCorrectOrderDetail_TaskCheckDO();
-				taskCheckDO.CheckStatus = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.PreCheckDetail["+ i +"].CheckStatus");
-				taskCheckDO.CheckStep = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.PreCheckDetail["+ i +"].CheckStep");
-				taskCheckDO.UserTip = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.PreCheckDetail["+ i +"].UserTip");
-
-				dataCorrectOrderDetail_preCheckDetail.Add(taskCheckDO);
-			}
-			dataCorrectOrderDetail.PreCheckDetail = dataCorrectOrderDetail_preCheckDetail;
 
 			List<GetDataCorrectOrderDetailResponse.GetDataCorrectOrderDetail_DataCorrectOrderDetail.GetDataCorrectOrderDetail_Database> dataCorrectOrderDetail_databaseList = new List<GetDataCorrectOrderDetailResponse.GetDataCorrectOrderDetail_DataCorrectOrderDetail.GetDataCorrectOrderDetail_Database>();
 			for (int i = 0; i < _ctx.Length("GetDataCorrectOrderDetail.DataCorrectOrderDetail.DatabaseList.Length"); i++) {
 				GetDataCorrectOrderDetailResponse.GetDataCorrectOrderDetail_DataCorrectOrderDetail.GetDataCorrectOrderDetail_Database database = new GetDataCorrectOrderDetailResponse.GetDataCorrectOrderDetail_DataCorrectOrderDetail.GetDataCorrectOrderDetail_Database();
 				database.SearchName = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.DatabaseList["+ i +"].SearchName");
-				database.EnvType = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.DatabaseList["+ i +"].EnvType");
-				database.DbType = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.DatabaseList["+ i +"].DbType");
 				database.DbId = _ctx.IntegerValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.DatabaseList["+ i +"].DbId");
 				database.Logic = _ctx.BooleanValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.DatabaseList["+ i +"].Logic");
+				database.EnvType = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.DatabaseList["+ i +"].EnvType");
+				database.DbType = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.DatabaseList["+ i +"].DbType");
 
 				dataCorrectOrderDetail_databaseList.Add(database);
 			}
 			dataCorrectOrderDetail.DatabaseList = dataCorrectOrderDetail_databaseList;
+
+			List<GetDataCorrectOrderDetailResponse.GetDataCorrectOrderDetail_DataCorrectOrderDetail.GetDataCorrectOrderDetail_TaskCheckDO> dataCorrectOrderDetail_preCheckDetail = new List<GetDataCorrectOrderDetailResponse.GetDataCorrectOrderDetail_DataCorrectOrderDetail.GetDataCorrectOrderDetail_TaskCheckDO>();
+			for (int i = 0; i < _ctx.Length("GetDataCorrectOrderDetail.DataCorrectOrderDetail.PreCheckDetail.Length"); i++) {
+				GetDataCorrectOrderDetailResponse.GetDataCorrectOrderDetail_DataCorrectOrderDetail.GetDataCorrectOrderDetail_TaskCheckDO taskCheckDO = new GetDataCorrectOrderDetailResponse.GetDataCorrectOrderDetail_DataCorrectOrderDetail.GetDataCorrectOrderDetail_TaskCheckDO();
+				taskCheckDO.UserTip = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.PreCheckDetail["+ i +"].UserTip");
+				taskCheckDO.CheckStep = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.PreCheckDetail["+ i +"].CheckStep");
+				taskCheckDO.CheckStatus = _ctx.StringValue("GetDataCorrectOrderDetail.DataCorrectOrderDetail.PreCheckDetail["+ i +"].CheckStatus");
+
+				dataCorrectOrderDetail_preCheckDetail.Add(taskCheckDO);
+			}
+			dataCorrectOrderDetail.PreCheckDetail = dataCorrectOrderDetail_preCheckDetail;
 			getDataCorrectOrderDetailResponse.DataCorrectOrderDetail = dataCorrectOrderDetail;
         
 			return getDataCorrectOrderDetailResponse;

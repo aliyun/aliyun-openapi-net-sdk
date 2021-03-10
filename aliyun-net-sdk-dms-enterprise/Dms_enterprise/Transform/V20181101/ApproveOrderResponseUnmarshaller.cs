@@ -32,9 +32,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			approveOrderResponse.HttpResponse = _ctx.HttpResponse;
 			approveOrderResponse.RequestId = _ctx.StringValue("ApproveOrder.RequestId");
-			approveOrderResponse.Success = _ctx.BooleanValue("ApproveOrder.Success");
-			approveOrderResponse.ErrorMessage = _ctx.StringValue("ApproveOrder.ErrorMessage");
 			approveOrderResponse.ErrorCode = _ctx.StringValue("ApproveOrder.ErrorCode");
+			approveOrderResponse.ErrorMessage = _ctx.StringValue("ApproveOrder.ErrorMessage");
+			approveOrderResponse.Success = _ctx.BooleanValue("ApproveOrder.Success");
         
 			return approveOrderResponse;
         }

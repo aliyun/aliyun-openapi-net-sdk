@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dms_enterprise;
 using Aliyun.Acs.dms_enterprise.Transform;
 using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class GetDataExportDownloadURLRequest : RpcAcsRequest<GetDataExportDownloadURLResponse>
     {
         public GetDataExportDownloadURLRequest()
-            : base("dms-enterprise", "2018-11-01", "GetDataExportDownloadURL", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "GetDataExportDownloadURL")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private long? tid;
 
+		[JsonProperty(PropertyName = "OrderId")]
 		public long? OrderId
 		{
 			get
@@ -58,6 +60,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get

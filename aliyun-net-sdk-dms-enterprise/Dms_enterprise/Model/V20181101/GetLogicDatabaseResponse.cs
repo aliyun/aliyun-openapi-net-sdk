@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private bool? success;
+		private string errorCode;
 
 		private string errorMessage;
 
-		private string errorCode;
+		private bool? success;
 
 		private GetLogicDatabase_LogicDatabase logicDatabase;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,30 +48,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ErrorCode")]
 		public string ErrorCode
 		{
 			get
@@ -83,6 +61,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "LogicDatabase")]
 		public GetLogicDatabase_LogicDatabase LogicDatabase
 		{
 			get
@@ -98,58 +103,23 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class GetLogicDatabase_LogicDatabase
 		{
 
+			private string searchName;
+
+			private string databaseId;
+
 			private bool? logic;
 
 			private string envType;
 
 			private string schemaName;
 
-			private string searchName;
-
 			private string dbType;
-
-			private string databaseId;
-
-			private List<string> ownerIdList;
 
 			private List<string> ownerNameList;
 
-			public bool? Logic
-			{
-				get
-				{
-					return logic;
-				}
-				set	
-				{
-					logic = value;
-				}
-			}
+			private List<string> ownerIdList;
 
-			public string EnvType
-			{
-				get
-				{
-					return envType;
-				}
-				set	
-				{
-					envType = value;
-				}
-			}
-
-			public string SchemaName
-			{
-				get
-				{
-					return schemaName;
-				}
-				set	
-				{
-					schemaName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "SearchName")]
 			public string SearchName
 			{
 				get
@@ -162,18 +132,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public string DbType
-			{
-				get
-				{
-					return dbType;
-				}
-				set	
-				{
-					dbType = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "DatabaseId")]
 			public string DatabaseId
 			{
 				get
@@ -186,18 +145,59 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public List<string> OwnerIdList
+			[JsonProperty(PropertyName = "Logic")]
+			public bool? Logic
 			{
 				get
 				{
-					return ownerIdList;
+					return logic;
 				}
 				set	
 				{
-					ownerIdList = value;
+					logic = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "EnvType")]
+			public string EnvType
+			{
+				get
+				{
+					return envType;
+				}
+				set	
+				{
+					envType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SchemaName")]
+			public string SchemaName
+			{
+				get
+				{
+					return schemaName;
+				}
+				set	
+				{
+					schemaName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DbType")]
+			public string DbType
+			{
+				get
+				{
+					return dbType;
+				}
+				set	
+				{
+					dbType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OwnerNameList")]
 			public List<string> OwnerNameList
 			{
 				get
@@ -207,6 +207,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					ownerNameList = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OwnerIdList")]
+			public List<string> OwnerIdList
+			{
+				get
+				{
+					return ownerIdList;
+				}
+				set	
+				{
+					ownerIdList = value;
 				}
 			}
 		}

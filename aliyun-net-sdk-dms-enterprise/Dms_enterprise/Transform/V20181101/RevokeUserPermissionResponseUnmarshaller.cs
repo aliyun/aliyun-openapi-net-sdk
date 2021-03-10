@@ -32,9 +32,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			revokeUserPermissionResponse.HttpResponse = _ctx.HttpResponse;
 			revokeUserPermissionResponse.RequestId = _ctx.StringValue("RevokeUserPermission.RequestId");
-			revokeUserPermissionResponse.Success = _ctx.BooleanValue("RevokeUserPermission.Success");
-			revokeUserPermissionResponse.ErrorMessage = _ctx.StringValue("RevokeUserPermission.ErrorMessage");
 			revokeUserPermissionResponse.ErrorCode = _ctx.StringValue("RevokeUserPermission.ErrorCode");
+			revokeUserPermissionResponse.ErrorMessage = _ctx.StringValue("RevokeUserPermission.ErrorMessage");
+			revokeUserPermissionResponse.Success = _ctx.BooleanValue("RevokeUserPermission.Success");
         
 			return revokeUserPermissionResponse;
         }

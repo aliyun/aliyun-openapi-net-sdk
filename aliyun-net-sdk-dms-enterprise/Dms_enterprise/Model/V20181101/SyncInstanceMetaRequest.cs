@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dms_enterprise;
 using Aliyun.Acs.dms_enterprise.Transform;
 using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class SyncInstanceMetaRequest : RpcAcsRequest<SyncInstanceMetaResponse>
     {
         public SyncInstanceMetaRequest()
-            : base("dms-enterprise", "2018-11-01", "SyncInstanceMeta", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "SyncInstanceMeta")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,25 +42,13 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			Method = MethodType.POST;
         }
 
-		private string instanceId;
-
 		private bool? ignoreTable;
 
 		private long? tid;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+		private string instanceId;
 
+		[JsonProperty(PropertyName = "IgnoreTable")]
 		public bool? IgnoreTable
 		{
 			get
@@ -73,6 +62,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -83,6 +73,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				tid = value;
 				DictionaryUtil.Add(QueryParameters, "Tid", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "InstanceId")]
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dms_enterprise;
 using Aliyun.Acs.dms_enterprise.Transform;
 using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class ListSensitiveColumnsDetailRequest : RpcAcsRequest<ListSensitiveColumnsDetailResponse>
     {
         public ListSensitiveColumnsDetailRequest()
-            : base("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,12 +44,13 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string schemaName;
 
-		private string tableName;
-
 		private string columnName;
 
 		private long? tid;
 
+		private string tableName;
+
+		[JsonProperty(PropertyName = "SchemaName")]
 		public string SchemaName
 		{
 			get
@@ -62,19 +64,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public string TableName
-		{
-			get
-			{
-				return tableName;
-			}
-			set	
-			{
-				tableName = value;
-				DictionaryUtil.Add(QueryParameters, "TableName", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "ColumnName")]
 		public string ColumnName
 		{
 			get
@@ -88,6 +78,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -98,6 +89,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				tid = value;
 				DictionaryUtil.Add(QueryParameters, "Tid", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "TableName")]
+		public string TableName
+		{
+			get
+			{
+				return tableName;
+			}
+			set	
+			{
+				tableName = value;
+				DictionaryUtil.Add(QueryParameters, "TableName", value);
 			}
 		}
 

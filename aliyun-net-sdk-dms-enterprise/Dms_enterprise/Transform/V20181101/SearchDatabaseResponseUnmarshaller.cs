@@ -31,40 +31,40 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			SearchDatabaseResponse searchDatabaseResponse = new SearchDatabaseResponse();
 
 			searchDatabaseResponse.HttpResponse = _ctx.HttpResponse;
-			searchDatabaseResponse.RequestId = _ctx.StringValue("SearchDatabase.RequestId");
-			searchDatabaseResponse.Success = _ctx.BooleanValue("SearchDatabase.Success");
-			searchDatabaseResponse.ErrorMessage = _ctx.StringValue("SearchDatabase.ErrorMessage");
-			searchDatabaseResponse.ErrorCode = _ctx.StringValue("SearchDatabase.ErrorCode");
 			searchDatabaseResponse.TotalCount = _ctx.LongValue("SearchDatabase.TotalCount");
+			searchDatabaseResponse.RequestId = _ctx.StringValue("SearchDatabase.RequestId");
+			searchDatabaseResponse.ErrorCode = _ctx.StringValue("SearchDatabase.ErrorCode");
+			searchDatabaseResponse.ErrorMessage = _ctx.StringValue("SearchDatabase.ErrorMessage");
+			searchDatabaseResponse.Success = _ctx.BooleanValue("SearchDatabase.Success");
 
 			List<SearchDatabaseResponse.SearchDatabase_SearchDatabase> searchDatabaseResponse_searchDatabaseList = new List<SearchDatabaseResponse.SearchDatabase_SearchDatabase>();
 			for (int i = 0; i < _ctx.Length("SearchDatabase.SearchDatabaseList.Length"); i++) {
 				SearchDatabaseResponse.SearchDatabase_SearchDatabase searchDatabase = new SearchDatabaseResponse.SearchDatabase_SearchDatabase();
+				searchDatabase.DbaId = _ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].DbaId");
+				searchDatabase.SearchName = _ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].SearchName");
+				searchDatabase.Alias = _ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].Alias");
+				searchDatabase.Port = _ctx.IntegerValue("SearchDatabase.SearchDatabaseList["+ i +"].Port");
+				searchDatabase.DatalinkName = _ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].DatalinkName");
+				searchDatabase.Encoding = _ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].Encoding");
+				searchDatabase.Host = _ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].Host");
 				searchDatabase.DatabaseId = _ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].DatabaseId");
 				searchDatabase.Logic = _ctx.BooleanValue("SearchDatabase.SearchDatabaseList["+ i +"].Logic");
+				searchDatabase.DbType = _ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].DbType");
 				searchDatabase.EnvType = _ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].EnvType");
 				searchDatabase.SchemaName = _ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].SchemaName");
-				searchDatabase.SearchName = _ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].SearchName");
-				searchDatabase.DbType = _ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].DbType");
-				searchDatabase.Host = _ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].Host");
-				searchDatabase.Port = _ctx.IntegerValue("SearchDatabase.SearchDatabaseList["+ i +"].Port");
 				searchDatabase.Sid = _ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].Sid");
-				searchDatabase.DbaId = _ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].DbaId");
-				searchDatabase.Encoding = _ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].Encoding");
-				searchDatabase.Alias = _ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].Alias");
-				searchDatabase.DatalinkName = _ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].DatalinkName");
-
-				List<string> searchDatabase_ownerIdList = new List<string>();
-				for (int j = 0; j < _ctx.Length("SearchDatabase.SearchDatabaseList["+ i +"].OwnerIdList.Length"); j++) {
-					searchDatabase_ownerIdList.Add(_ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].OwnerIdList["+ j +"]"));
-				}
-				searchDatabase.OwnerIdList = searchDatabase_ownerIdList;
 
 				List<string> searchDatabase_ownerNameList = new List<string>();
 				for (int j = 0; j < _ctx.Length("SearchDatabase.SearchDatabaseList["+ i +"].OwnerNameList.Length"); j++) {
 					searchDatabase_ownerNameList.Add(_ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].OwnerNameList["+ j +"]"));
 				}
 				searchDatabase.OwnerNameList = searchDatabase_ownerNameList;
+
+				List<string> searchDatabase_ownerIdList = new List<string>();
+				for (int j = 0; j < _ctx.Length("SearchDatabase.SearchDatabaseList["+ i +"].OwnerIdList.Length"); j++) {
+					searchDatabase_ownerIdList.Add(_ctx.StringValue("SearchDatabase.SearchDatabaseList["+ i +"].OwnerIdList["+ j +"]"));
+				}
+				searchDatabase.OwnerIdList = searchDatabase_ownerIdList;
 
 				searchDatabaseResponse_searchDatabaseList.Add(searchDatabase);
 			}

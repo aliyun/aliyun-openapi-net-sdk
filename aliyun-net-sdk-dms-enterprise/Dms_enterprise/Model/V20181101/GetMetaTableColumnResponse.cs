@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private bool? success;
+		private string errorCode;
 
 		private string errorMessage;
 
-		private string errorCode;
+		private bool? success;
 
 		private List<GetMetaTableColumn_Column> columnList;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,30 +48,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ErrorCode")]
 		public string ErrorCode
 		{
 			get
@@ -83,6 +61,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ColumnList")]
 		public List<GetMetaTableColumn_Column> ColumnList
 		{
 			get
@@ -102,26 +107,27 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string columnName;
 
-			private string columnType;
-
-			private int? dataLength;
-
 			private string description;
+
+			private string columnType;
 
 			private int? position;
 
 			private bool? autoIncrement;
 
-			private bool? nullable;
-
 			private string securityLevel;
 
-			private string primaryKey;
+			private int? dataLength;
 
 			private int? dataScale;
 
 			private int? dataPrecision;
 
+			private string primaryKey;
+
+			private bool? nullable;
+
+			[JsonProperty(PropertyName = "ColumnId")]
 			public string ColumnId
 			{
 				get
@@ -134,6 +140,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "ColumnName")]
 			public string ColumnName
 			{
 				get
@@ -146,30 +153,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public string ColumnType
-			{
-				get
-				{
-					return columnType;
-				}
-				set	
-				{
-					columnType = value;
-				}
-			}
-
-			public int? DataLength
-			{
-				get
-				{
-					return dataLength;
-				}
-				set	
-				{
-					dataLength = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -182,6 +166,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "ColumnType")]
+			public string ColumnType
+			{
+				get
+				{
+					return columnType;
+				}
+				set	
+				{
+					columnType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Position")]
 			public int? Position
 			{
 				get
@@ -194,6 +192,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "AutoIncrement")]
 			public bool? AutoIncrement
 			{
 				get
@@ -206,18 +205,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public bool? Nullable
-			{
-				get
-				{
-					return nullable;
-				}
-				set	
-				{
-					nullable = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "SecurityLevel")]
 			public string SecurityLevel
 			{
 				get
@@ -230,18 +218,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public string PrimaryKey
+			[JsonProperty(PropertyName = "DataLength")]
+			public int? DataLength
 			{
 				get
 				{
-					return primaryKey;
+					return dataLength;
 				}
 				set	
 				{
-					primaryKey = value;
+					dataLength = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "DataScale")]
 			public int? DataScale
 			{
 				get
@@ -254,6 +244,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "DataPrecision")]
 			public int? DataPrecision
 			{
 				get
@@ -263,6 +254,32 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					dataPrecision = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PrimaryKey")]
+			public string PrimaryKey
+			{
+				get
+				{
+					return primaryKey;
+				}
+				set	
+				{
+					primaryKey = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Nullable")]
+			public bool? Nullable
+			{
+				get
+				{
+					return nullable;
+				}
+				set	
+				{
+					nullable = value;
 				}
 			}
 		}

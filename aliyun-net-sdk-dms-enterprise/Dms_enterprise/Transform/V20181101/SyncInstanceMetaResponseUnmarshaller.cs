@@ -32,9 +32,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			syncInstanceMetaResponse.HttpResponse = _ctx.HttpResponse;
 			syncInstanceMetaResponse.RequestId = _ctx.StringValue("SyncInstanceMeta.RequestId");
-			syncInstanceMetaResponse.Success = _ctx.BooleanValue("SyncInstanceMeta.Success");
-			syncInstanceMetaResponse.ErrorMessage = _ctx.StringValue("SyncInstanceMeta.ErrorMessage");
 			syncInstanceMetaResponse.ErrorCode = _ctx.StringValue("SyncInstanceMeta.ErrorCode");
+			syncInstanceMetaResponse.ErrorMessage = _ctx.StringValue("SyncInstanceMeta.ErrorMessage");
+			syncInstanceMetaResponse.Success = _ctx.BooleanValue("SyncInstanceMeta.Success");
         
 			return syncInstanceMetaResponse;
         }

@@ -32,9 +32,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			grantUserPermissionResponse.HttpResponse = _ctx.HttpResponse;
 			grantUserPermissionResponse.RequestId = _ctx.StringValue("GrantUserPermission.RequestId");
-			grantUserPermissionResponse.Success = _ctx.BooleanValue("GrantUserPermission.Success");
-			grantUserPermissionResponse.ErrorMessage = _ctx.StringValue("GrantUserPermission.ErrorMessage");
 			grantUserPermissionResponse.ErrorCode = _ctx.StringValue("GrantUserPermission.ErrorCode");
+			grantUserPermissionResponse.ErrorMessage = _ctx.StringValue("GrantUserPermission.ErrorMessage");
+			grantUserPermissionResponse.Success = _ctx.BooleanValue("GrantUserPermission.Success");
         
 			return grantUserPermissionResponse;
         }

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dms_enterprise;
 using Aliyun.Acs.dms_enterprise.Transform;
 using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class ApproveOrderRequest : RpcAcsRequest<ApproveOrderResponse>
     {
         public ApproveOrderRequest()
-            : base("dms-enterprise", "2018-11-01", "ApproveOrder", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "ApproveOrder")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,39 +41,13 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			Method = MethodType.POST;
         }
 
-		private string approvalType;
-
-		private string comment;
-
 		private long? tid;
 
 		private long? workflowInstanceId;
 
-		public string ApprovalType
-		{
-			get
-			{
-				return approvalType;
-			}
-			set	
-			{
-				approvalType = value;
-				DictionaryUtil.Add(QueryParameters, "ApprovalType", value);
-			}
-		}
+		private string approvalType;
 
-		public string Comment
-		{
-			get
-			{
-				return comment;
-			}
-			set	
-			{
-				comment = value;
-				DictionaryUtil.Add(QueryParameters, "Comment", value);
-			}
-		}
+		private string comment;
 
 		public long? Tid
 		{
@@ -97,6 +72,32 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				workflowInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "WorkflowInstanceId", value.ToString());
+			}
+		}
+
+		public string ApprovalType
+		{
+			get
+			{
+				return approvalType;
+			}
+			set	
+			{
+				approvalType = value;
+				DictionaryUtil.Add(QueryParameters, "ApprovalType", value);
+			}
+		}
+
+		public string Comment
+		{
+			get
+			{
+				return comment;
+			}
+			set	
+			{
+				comment = value;
+				DictionaryUtil.Add(QueryParameters, "Comment", value);
 			}
 		}
 

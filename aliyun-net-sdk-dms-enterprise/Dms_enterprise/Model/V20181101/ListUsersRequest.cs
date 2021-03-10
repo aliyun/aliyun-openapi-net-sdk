@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dms_enterprise;
 using Aliyun.Acs.dms_enterprise.Transform;
 using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class ListUsersRequest : RpcAcsRequest<ListUsersResponse>
     {
         public ListUsersRequest()
-            : base("dms-enterprise", "2018-11-01", "ListUsers", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "ListUsers")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -53,6 +54,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private int? pageSize;
 
+		[JsonProperty(PropertyName = "Role")]
 		public string Role
 		{
 			get
@@ -66,6 +68,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "SearchKey")]
 		public string SearchKey
 		{
 			get
@@ -79,6 +82,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -92,6 +96,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -105,6 +110,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserState")]
 		public string UserState
 		{
 			get
@@ -118,6 +124,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get

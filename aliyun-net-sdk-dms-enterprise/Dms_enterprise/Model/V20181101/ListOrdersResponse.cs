@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -25,66 +25,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 	public class ListOrdersResponse : AcsResponse
 	{
 
+		private long? totalCount;
+
 		private string requestId;
-
-		private bool? success;
-
-		private string errorMessage;
 
 		private string errorCode;
 
-		private long? totalCount;
+		private string errorMessage;
+
+		private bool? success;
 
 		private List<ListOrders_Order> orders;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TotalCount")]
 		public long? TotalCount
 		{
 			get
@@ -97,6 +50,59 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Orders")]
 		public List<ListOrders_Order> Orders
 		{
 			get
@@ -112,36 +118,38 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ListOrders_Order
 		{
 
-			private long? orderId;
+			private string statusDesc;
 
 			private string comment;
 
+			private string createTime;
+
 			private string committer;
 
-			private long? committerId;
-
-			private string createTime;
+			private long? orderId;
 
 			private string lastModifyTime;
 
 			private string pluginType;
 
+			private long? committerId;
+
 			private string statusCode;
 
-			private string statusDesc;
-
-			public long? OrderId
+			[JsonProperty(PropertyName = "StatusDesc")]
+			public string StatusDesc
 			{
 				get
 				{
-					return orderId;
+					return statusDesc;
 				}
 				set	
 				{
-					orderId = value;
+					statusDesc = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "Comment")]
 			public string Comment
 			{
 				get
@@ -154,30 +162,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public string Committer
-			{
-				get
-				{
-					return committer;
-				}
-				set	
-				{
-					committer = value;
-				}
-			}
-
-			public long? CommitterId
-			{
-				get
-				{
-					return committerId;
-				}
-				set	
-				{
-					committerId = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "CreateTime")]
 			public string CreateTime
 			{
 				get
@@ -190,6 +175,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "Committer")]
+			public string Committer
+			{
+				get
+				{
+					return committer;
+				}
+				set	
+				{
+					committer = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OrderId")]
+			public long? OrderId
+			{
+				get
+				{
+					return orderId;
+				}
+				set	
+				{
+					orderId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LastModifyTime")]
 			public string LastModifyTime
 			{
 				get
@@ -202,6 +214,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "PluginType")]
 			public string PluginType
 			{
 				get
@@ -214,6 +227,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "CommitterId")]
+			public long? CommitterId
+			{
+				get
+				{
+					return committerId;
+				}
+				set	
+				{
+					committerId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StatusCode")]
 			public string StatusCode
 			{
 				get
@@ -223,18 +250,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					statusCode = value;
-				}
-			}
-
-			public string StatusDesc
-			{
-				get
-				{
-					return statusDesc;
-				}
-				set	
-				{
-					statusDesc = value;
 				}
 			}
 		}

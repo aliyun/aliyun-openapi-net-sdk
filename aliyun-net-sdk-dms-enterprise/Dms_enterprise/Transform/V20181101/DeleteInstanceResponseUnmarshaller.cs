@@ -32,9 +32,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			deleteInstanceResponse.HttpResponse = _ctx.HttpResponse;
 			deleteInstanceResponse.RequestId = _ctx.StringValue("DeleteInstance.RequestId");
-			deleteInstanceResponse.Success = _ctx.BooleanValue("DeleteInstance.Success");
-			deleteInstanceResponse.ErrorMessage = _ctx.StringValue("DeleteInstance.ErrorMessage");
 			deleteInstanceResponse.ErrorCode = _ctx.StringValue("DeleteInstance.ErrorCode");
+			deleteInstanceResponse.ErrorMessage = _ctx.StringValue("DeleteInstance.ErrorMessage");
+			deleteInstanceResponse.Success = _ctx.BooleanValue("DeleteInstance.Success");
         
 			return deleteInstanceResponse;
         }

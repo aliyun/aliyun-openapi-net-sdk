@@ -31,26 +31,26 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			ListUsersResponse listUsersResponse = new ListUsersResponse();
 
 			listUsersResponse.HttpResponse = _ctx.HttpResponse;
-			listUsersResponse.RequestId = _ctx.StringValue("ListUsers.RequestId");
-			listUsersResponse.Success = _ctx.BooleanValue("ListUsers.Success");
-			listUsersResponse.ErrorMessage = _ctx.StringValue("ListUsers.ErrorMessage");
-			listUsersResponse.ErrorCode = _ctx.StringValue("ListUsers.ErrorCode");
 			listUsersResponse.TotalCount = _ctx.LongValue("ListUsers.TotalCount");
+			listUsersResponse.RequestId = _ctx.StringValue("ListUsers.RequestId");
+			listUsersResponse.ErrorCode = _ctx.StringValue("ListUsers.ErrorCode");
+			listUsersResponse.ErrorMessage = _ctx.StringValue("ListUsers.ErrorMessage");
+			listUsersResponse.Success = _ctx.BooleanValue("ListUsers.Success");
 
 			List<ListUsersResponse.ListUsers_User> listUsersResponse_userList = new List<ListUsersResponse.ListUsers_User>();
 			for (int i = 0; i < _ctx.Length("ListUsers.UserList.Length"); i++) {
 				ListUsersResponse.ListUsers_User user = new ListUsersResponse.ListUsers_User();
-				user.UserId = _ctx.StringValue("ListUsers.UserList["+ i +"].UserId");
 				user.Uid = _ctx.StringValue("ListUsers.UserList["+ i +"].Uid");
+				user.LastLoginTime = _ctx.StringValue("ListUsers.UserList["+ i +"].LastLoginTime");
+				user.CurResultCount = _ctx.LongValue("ListUsers.UserList["+ i +"].CurResultCount");
+				user.MaxResultCount = _ctx.LongValue("ListUsers.UserList["+ i +"].MaxResultCount");
+				user.UserId = _ctx.StringValue("ListUsers.UserList["+ i +"].UserId");
+				user.State = _ctx.StringValue("ListUsers.UserList["+ i +"].State");
+				user.CurExecuteCount = _ctx.LongValue("ListUsers.UserList["+ i +"].CurExecuteCount");
 				user.NickName = _ctx.StringValue("ListUsers.UserList["+ i +"].NickName");
 				user.Mobile = _ctx.StringValue("ListUsers.UserList["+ i +"].Mobile");
-				user.ParentUid = _ctx.StringValue("ListUsers.UserList["+ i +"].ParentUid");
-				user.State = _ctx.StringValue("ListUsers.UserList["+ i +"].State");
-				user.LastLoginTime = _ctx.StringValue("ListUsers.UserList["+ i +"].LastLoginTime");
-				user.CurExecuteCount = _ctx.LongValue("ListUsers.UserList["+ i +"].CurExecuteCount");
-				user.CurResultCount = _ctx.LongValue("ListUsers.UserList["+ i +"].CurResultCount");
 				user.MaxExecuteCount = _ctx.LongValue("ListUsers.UserList["+ i +"].MaxExecuteCount");
-				user.MaxResultCount = _ctx.LongValue("ListUsers.UserList["+ i +"].MaxResultCount");
+				user.ParentUid = _ctx.StringValue("ListUsers.UserList["+ i +"].ParentUid");
 
 				List<string> user_roleIdList = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListUsers.UserList["+ i +"].RoleIdList.Length"); j++) {

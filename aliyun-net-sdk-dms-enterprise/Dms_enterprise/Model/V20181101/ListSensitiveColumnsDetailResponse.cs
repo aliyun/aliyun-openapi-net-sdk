@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private bool? success;
+		private string errorCode;
 
 		private string errorMessage;
 
-		private string errorCode;
+		private bool? success;
 
 		private List<ListSensitiveColumnsDetail_SensitiveColumnsDetail> sensitiveColumnsDetailList;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,30 +48,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ErrorCode")]
 		public string ErrorCode
 		{
 			get
@@ -83,6 +61,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SensitiveColumnsDetailList")]
 		public List<ListSensitiveColumnsDetail_SensitiveColumnsDetail> SensitiveColumnsDetailList
 		{
 			get
@@ -98,38 +103,27 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ListSensitiveColumnsDetail_SensitiveColumnsDetail
 		{
 
-			private string schemaName;
-
 			private string tableName;
 
 			private string columnName;
 
-			private string searchName;
-
-			private long? dbId;
-
-			private string envType;
-
-			private string dbType;
-
-			private bool? logic;
-
 			private string columnType;
+
+			private string searchName;
 
 			private string columnDescription;
 
-			public string SchemaName
-			{
-				get
-				{
-					return schemaName;
-				}
-				set	
-				{
-					schemaName = value;
-				}
-			}
+			private long? dbId;
 
+			private bool? logic;
+
+			private string envType;
+
+			private string schemaName;
+
+			private string dbType;
+
+			[JsonProperty(PropertyName = "TableName")]
 			public string TableName
 			{
 				get
@@ -142,6 +136,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "ColumnName")]
 			public string ColumnName
 			{
 				get
@@ -154,66 +149,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public string SearchName
-			{
-				get
-				{
-					return searchName;
-				}
-				set	
-				{
-					searchName = value;
-				}
-			}
-
-			public long? DbId
-			{
-				get
-				{
-					return dbId;
-				}
-				set	
-				{
-					dbId = value;
-				}
-			}
-
-			public string EnvType
-			{
-				get
-				{
-					return envType;
-				}
-				set	
-				{
-					envType = value;
-				}
-			}
-
-			public string DbType
-			{
-				get
-				{
-					return dbType;
-				}
-				set	
-				{
-					dbType = value;
-				}
-			}
-
-			public bool? Logic
-			{
-				get
-				{
-					return logic;
-				}
-				set	
-				{
-					logic = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "ColumnType")]
 			public string ColumnType
 			{
 				get
@@ -226,6 +162,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "SearchName")]
+			public string SearchName
+			{
+				get
+				{
+					return searchName;
+				}
+				set	
+				{
+					searchName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ColumnDescription")]
 			public string ColumnDescription
 			{
 				get
@@ -235,6 +185,71 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					columnDescription = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DbId")]
+			public long? DbId
+			{
+				get
+				{
+					return dbId;
+				}
+				set	
+				{
+					dbId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Logic")]
+			public bool? Logic
+			{
+				get
+				{
+					return logic;
+				}
+				set	
+				{
+					logic = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EnvType")]
+			public string EnvType
+			{
+				get
+				{
+					return envType;
+				}
+				set	
+				{
+					envType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SchemaName")]
+			public string SchemaName
+			{
+				get
+				{
+					return schemaName;
+				}
+				set	
+				{
+					schemaName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DbType")]
+			public string DbType
+			{
+				get
+				{
+					return dbType;
+				}
+				set	
+				{
+					dbType = value;
 				}
 			}
 		}

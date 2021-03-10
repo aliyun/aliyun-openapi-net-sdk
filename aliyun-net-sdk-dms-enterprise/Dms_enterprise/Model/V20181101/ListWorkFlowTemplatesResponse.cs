@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private bool? success;
+		private string errorCode;
 
 		private string errorMessage;
 
-		private string errorCode;
+		private bool? success;
 
 		private List<ListWorkFlowTemplates_WorkFlowTemplate> workFlowTemplates;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,30 +48,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ErrorCode")]
 		public string ErrorCode
 		{
 			get
@@ -83,6 +61,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "WorkFlowTemplates")]
 		public List<ListWorkFlowTemplates_WorkFlowTemplate> WorkFlowTemplates
 		{
 			get
@@ -98,32 +103,21 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ListWorkFlowTemplates_WorkFlowTemplate
 		{
 
-			private string templateName;
-
 			private string comment;
-
-			private long? templateId;
-
-			private int? isSystem;
-
-			private string enabled;
 
 			private long? createUserId;
 
+			private string templateName;
+
+			private string enabled;
+
+			private int? isSystem;
+
+			private long? templateId;
+
 			private List<ListWorkFlowTemplates_WorkflowNode> workflowNodes;
 
-			public string TemplateName
-			{
-				get
-				{
-					return templateName;
-				}
-				set	
-				{
-					templateName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Comment")]
 			public string Comment
 			{
 				get
@@ -136,42 +130,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public long? TemplateId
-			{
-				get
-				{
-					return templateId;
-				}
-				set	
-				{
-					templateId = value;
-				}
-			}
-
-			public int? IsSystem
-			{
-				get
-				{
-					return isSystem;
-				}
-				set	
-				{
-					isSystem = value;
-				}
-			}
-
-			public string Enabled
-			{
-				get
-				{
-					return enabled;
-				}
-				set	
-				{
-					enabled = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "CreateUserId")]
 			public long? CreateUserId
 			{
 				get
@@ -184,6 +143,59 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "TemplateName")]
+			public string TemplateName
+			{
+				get
+				{
+					return templateName;
+				}
+				set	
+				{
+					templateName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Enabled")]
+			public string Enabled
+			{
+				get
+				{
+					return enabled;
+				}
+				set	
+				{
+					enabled = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IsSystem")]
+			public int? IsSystem
+			{
+				get
+				{
+					return isSystem;
+				}
+				set	
+				{
+					isSystem = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TemplateId")]
+			public long? TemplateId
+			{
+				get
+				{
+					return templateId;
+				}
+				set	
+				{
+					templateId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "WorkflowNodes")]
 			public List<ListWorkFlowTemplates_WorkflowNode> WorkflowNodes
 			{
 				get
@@ -199,68 +211,21 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			public class ListWorkFlowTemplates_WorkflowNode
 			{
 
-				private long? nodeId;
+				private string comment;
 
-				private long? templateId;
+				private int? position;
 
 				private string nodeName;
 
 				private string nodeType;
 
-				private string comment;
-
-				private int? position;
+				private long? nodeId;
 
 				private long? createUserId;
 
-				public long? NodeId
-				{
-					get
-					{
-						return nodeId;
-					}
-					set	
-					{
-						nodeId = value;
-					}
-				}
+				private long? templateId;
 
-				public long? TemplateId
-				{
-					get
-					{
-						return templateId;
-					}
-					set	
-					{
-						templateId = value;
-					}
-				}
-
-				public string NodeName
-				{
-					get
-					{
-						return nodeName;
-					}
-					set	
-					{
-						nodeName = value;
-					}
-				}
-
-				public string NodeType
-				{
-					get
-					{
-						return nodeType;
-					}
-					set	
-					{
-						nodeType = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "Comment")]
 				public string Comment
 				{
 					get
@@ -273,6 +238,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
+				[JsonProperty(PropertyName = "Position")]
 				public int? Position
 				{
 					get
@@ -285,6 +251,46 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
+				[JsonProperty(PropertyName = "NodeName")]
+				public string NodeName
+				{
+					get
+					{
+						return nodeName;
+					}
+					set	
+					{
+						nodeName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "NodeType")]
+				public string NodeType
+				{
+					get
+					{
+						return nodeType;
+					}
+					set	
+					{
+						nodeType = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "NodeId")]
+				public long? NodeId
+				{
+					get
+					{
+						return nodeId;
+					}
+					set	
+					{
+						nodeId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "CreateUserId")]
 				public long? CreateUserId
 				{
 					get
@@ -294,6 +300,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					set	
 					{
 						createUserId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "TemplateId")]
+				public long? TemplateId
+				{
+					get
+					{
+						return templateId;
+					}
+					set	
+					{
+						templateId = value;
 					}
 				}
 			}

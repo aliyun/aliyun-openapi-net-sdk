@@ -32,26 +32,26 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			listWorkFlowNodesResponse.HttpResponse = _ctx.HttpResponse;
 			listWorkFlowNodesResponse.RequestId = _ctx.StringValue("ListWorkFlowNodes.RequestId");
-			listWorkFlowNodesResponse.Success = _ctx.BooleanValue("ListWorkFlowNodes.Success");
-			listWorkFlowNodesResponse.ErrorMessage = _ctx.StringValue("ListWorkFlowNodes.ErrorMessage");
 			listWorkFlowNodesResponse.ErrorCode = _ctx.StringValue("ListWorkFlowNodes.ErrorCode");
+			listWorkFlowNodesResponse.ErrorMessage = _ctx.StringValue("ListWorkFlowNodes.ErrorMessage");
+			listWorkFlowNodesResponse.Success = _ctx.BooleanValue("ListWorkFlowNodes.Success");
 
 			List<ListWorkFlowNodesResponse.ListWorkFlowNodes_WorkflowNode> listWorkFlowNodesResponse_workflowNodes = new List<ListWorkFlowNodesResponse.ListWorkFlowNodes_WorkflowNode>();
 			for (int i = 0; i < _ctx.Length("ListWorkFlowNodes.WorkflowNodes.Length"); i++) {
 				ListWorkFlowNodesResponse.ListWorkFlowNodes_WorkflowNode workflowNode = new ListWorkFlowNodesResponse.ListWorkFlowNodes_WorkflowNode();
-				workflowNode.NodeName = _ctx.StringValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].NodeName");
 				workflowNode.Comment = _ctx.StringValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].Comment");
-				workflowNode.NodeId = _ctx.LongValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].NodeId");
-				workflowNode.NodeType = _ctx.StringValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].NodeType");
-				workflowNode.CreateUserId = _ctx.LongValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].CreateUserId");
 				workflowNode.CreateUserNickName = _ctx.StringValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].CreateUserNickName");
+				workflowNode.NodeName = _ctx.StringValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].NodeName");
+				workflowNode.NodeType = _ctx.StringValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].NodeType");
+				workflowNode.NodeId = _ctx.LongValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].NodeId");
+				workflowNode.CreateUserId = _ctx.LongValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].CreateUserId");
 
 				List<ListWorkFlowNodesResponse.ListWorkFlowNodes_WorkflowNode.ListWorkFlowNodes_AuditUser> workflowNode_auditUsers = new List<ListWorkFlowNodesResponse.ListWorkFlowNodes_WorkflowNode.ListWorkFlowNodes_AuditUser>();
 				for (int j = 0; j < _ctx.Length("ListWorkFlowNodes.WorkflowNodes["+ i +"].AuditUsers.Length"); j++) {
 					ListWorkFlowNodesResponse.ListWorkFlowNodes_WorkflowNode.ListWorkFlowNodes_AuditUser auditUser = new ListWorkFlowNodesResponse.ListWorkFlowNodes_WorkflowNode.ListWorkFlowNodes_AuditUser();
 					auditUser.UserId = _ctx.LongValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].AuditUsers["+ j +"].UserId");
-					auditUser.NickName = _ctx.StringValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].AuditUsers["+ j +"].NickName");
 					auditUser.RealName = _ctx.StringValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].AuditUsers["+ j +"].RealName");
+					auditUser.NickName = _ctx.StringValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].AuditUsers["+ j +"].NickName");
 
 					workflowNode_auditUsers.Add(auditUser);
 				}

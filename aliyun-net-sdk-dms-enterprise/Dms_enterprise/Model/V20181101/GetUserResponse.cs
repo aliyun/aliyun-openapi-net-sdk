@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private bool? success;
+		private string errorCode;
 
 		private string errorMessage;
 
-		private string errorCode;
+		private bool? success;
 
 		private GetUser_User user;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,30 +48,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ErrorCode")]
 		public string ErrorCode
 		{
 			get
@@ -83,6 +61,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "User")]
 		public GetUser_User User
 		{
 			get
@@ -98,44 +103,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class GetUser_User
 		{
 
+			private string uid;
+
+			private string lastLoginTime;
+
+			private long? curResultCount;
+
+			private long? maxResultCount;
+
 			private string userId;
 
-			private string uid;
+			private string state;
+
+			private long? curExecuteCount;
 
 			private string nickName;
 
 			private string mobile;
 
-			private long? parentUid;
-
-			private string state;
-
-			private string lastLoginTime;
-
-			private long? curExecuteCount;
-
-			private long? curResultCount;
-
 			private long? maxExecuteCount;
 
-			private long? maxResultCount;
+			private long? parentUid;
 
 			private List<string> roleIdList;
 
 			private List<string> roleNameList;
 
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Uid")]
 			public string Uid
 			{
 				get
@@ -148,54 +142,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public string NickName
-			{
-				get
-				{
-					return nickName;
-				}
-				set	
-				{
-					nickName = value;
-				}
-			}
-
-			public string Mobile
-			{
-				get
-				{
-					return mobile;
-				}
-				set	
-				{
-					mobile = value;
-				}
-			}
-
-			public long? ParentUid
-			{
-				get
-				{
-					return parentUid;
-				}
-				set	
-				{
-					parentUid = value;
-				}
-			}
-
-			public string State
-			{
-				get
-				{
-					return state;
-				}
-				set	
-				{
-					state = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "LastLoginTime")]
 			public string LastLoginTime
 			{
 				get
@@ -208,18 +155,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public long? CurExecuteCount
-			{
-				get
-				{
-					return curExecuteCount;
-				}
-				set	
-				{
-					curExecuteCount = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "CurResultCount")]
 			public long? CurResultCount
 			{
 				get
@@ -232,18 +168,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public long? MaxExecuteCount
-			{
-				get
-				{
-					return maxExecuteCount;
-				}
-				set	
-				{
-					maxExecuteCount = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "MaxResultCount")]
 			public long? MaxResultCount
 			{
 				get
@@ -256,6 +181,98 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "UserId")]
+			public string UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "State")]
+			public string State
+			{
+				get
+				{
+					return state;
+				}
+				set	
+				{
+					state = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CurExecuteCount")]
+			public long? CurExecuteCount
+			{
+				get
+				{
+					return curExecuteCount;
+				}
+				set	
+				{
+					curExecuteCount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "NickName")]
+			public string NickName
+			{
+				get
+				{
+					return nickName;
+				}
+				set	
+				{
+					nickName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Mobile")]
+			public string Mobile
+			{
+				get
+				{
+					return mobile;
+				}
+				set	
+				{
+					mobile = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MaxExecuteCount")]
+			public long? MaxExecuteCount
+			{
+				get
+				{
+					return maxExecuteCount;
+				}
+				set	
+				{
+					maxExecuteCount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParentUid")]
+			public long? ParentUid
+			{
+				get
+				{
+					return parentUid;
+				}
+				set	
+				{
+					parentUid = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RoleIdList")]
 			public List<string> RoleIdList
 			{
 				get
@@ -268,6 +285,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "RoleNameList")]
 			public List<string> RoleNameList
 			{
 				get

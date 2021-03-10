@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -27,14 +27,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private bool? success;
+		private string errorCode;
 
 		private string errorMessage;
 
-		private string errorCode;
+		private bool? success;
 
 		private List<ListWorkFlowNodes_WorkflowNode> workflowNodes;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -47,30 +48,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "ErrorCode")]
 		public string ErrorCode
 		{
 			get
@@ -83,6 +61,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "WorkflowNodes")]
 		public List<ListWorkFlowNodes_WorkflowNode> WorkflowNodes
 		{
 			get
@@ -98,32 +103,21 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ListWorkFlowNodes_WorkflowNode
 		{
 
-			private string nodeName;
-
 			private string comment;
-
-			private long? nodeId;
-
-			private string nodeType;
-
-			private long? createUserId;
 
 			private string createUserNickName;
 
+			private string nodeName;
+
+			private string nodeType;
+
+			private long? nodeId;
+
+			private long? createUserId;
+
 			private List<ListWorkFlowNodes_AuditUser> auditUsers;
 
-			public string NodeName
-			{
-				get
-				{
-					return nodeName;
-				}
-				set	
-				{
-					nodeName = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Comment")]
 			public string Comment
 			{
 				get
@@ -136,42 +130,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public long? NodeId
-			{
-				get
-				{
-					return nodeId;
-				}
-				set	
-				{
-					nodeId = value;
-				}
-			}
-
-			public string NodeType
-			{
-				get
-				{
-					return nodeType;
-				}
-				set	
-				{
-					nodeType = value;
-				}
-			}
-
-			public long? CreateUserId
-			{
-				get
-				{
-					return createUserId;
-				}
-				set	
-				{
-					createUserId = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "CreateUserNickName")]
 			public string CreateUserNickName
 			{
 				get
@@ -184,6 +143,59 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "NodeName")]
+			public string NodeName
+			{
+				get
+				{
+					return nodeName;
+				}
+				set	
+				{
+					nodeName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "NodeType")]
+			public string NodeType
+			{
+				get
+				{
+					return nodeType;
+				}
+				set	
+				{
+					nodeType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "NodeId")]
+			public long? NodeId
+			{
+				get
+				{
+					return nodeId;
+				}
+				set	
+				{
+					nodeId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateUserId")]
+			public long? CreateUserId
+			{
+				get
+				{
+					return createUserId;
+				}
+				set	
+				{
+					createUserId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AuditUsers")]
 			public List<ListWorkFlowNodes_AuditUser> AuditUsers
 			{
 				get
@@ -201,10 +213,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 				private long? userId;
 
-				private string nickName;
-
 				private string realName;
 
+				private string nickName;
+
+				[JsonProperty(PropertyName = "UserId")]
 				public long? UserId
 				{
 					get
@@ -217,18 +230,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
-				public string NickName
-				{
-					get
-					{
-						return nickName;
-					}
-					set	
-					{
-						nickName = value;
-					}
-				}
-
+				[JsonProperty(PropertyName = "RealName")]
 				public string RealName
 				{
 					get
@@ -238,6 +240,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					set	
 					{
 						realName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "NickName")]
+				public string NickName
+				{
+					get
+					{
+						return nickName;
+					}
+					set	
+					{
+						nickName = value;
 					}
 				}
 			}

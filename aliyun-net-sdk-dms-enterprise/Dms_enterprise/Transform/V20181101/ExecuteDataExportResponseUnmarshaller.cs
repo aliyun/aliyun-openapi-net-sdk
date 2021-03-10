@@ -32,9 +32,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			executeDataExportResponse.HttpResponse = _ctx.HttpResponse;
 			executeDataExportResponse.RequestId = _ctx.StringValue("ExecuteDataExport.RequestId");
-			executeDataExportResponse.Success = _ctx.BooleanValue("ExecuteDataExport.Success");
-			executeDataExportResponse.ErrorMessage = _ctx.StringValue("ExecuteDataExport.ErrorMessage");
 			executeDataExportResponse.ErrorCode = _ctx.StringValue("ExecuteDataExport.ErrorCode");
+			executeDataExportResponse.ErrorMessage = _ctx.StringValue("ExecuteDataExport.ErrorMessage");
+			executeDataExportResponse.Success = _ctx.BooleanValue("ExecuteDataExport.Success");
         
 			return executeDataExportResponse;
         }

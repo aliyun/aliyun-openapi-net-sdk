@@ -31,40 +31,40 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			SearchTableResponse searchTableResponse = new SearchTableResponse();
 
 			searchTableResponse.HttpResponse = _ctx.HttpResponse;
-			searchTableResponse.RequestId = _ctx.StringValue("SearchTable.RequestId");
-			searchTableResponse.Success = _ctx.BooleanValue("SearchTable.Success");
-			searchTableResponse.ErrorMessage = _ctx.StringValue("SearchTable.ErrorMessage");
-			searchTableResponse.ErrorCode = _ctx.StringValue("SearchTable.ErrorCode");
 			searchTableResponse.TotalCount = _ctx.LongValue("SearchTable.TotalCount");
+			searchTableResponse.RequestId = _ctx.StringValue("SearchTable.RequestId");
+			searchTableResponse.ErrorCode = _ctx.StringValue("SearchTable.ErrorCode");
+			searchTableResponse.ErrorMessage = _ctx.StringValue("SearchTable.ErrorMessage");
+			searchTableResponse.Success = _ctx.BooleanValue("SearchTable.Success");
 
 			List<SearchTableResponse.SearchTable_SearchTable> searchTableResponse_searchTableList = new List<SearchTableResponse.SearchTable_SearchTable>();
 			for (int i = 0; i < _ctx.Length("SearchTable.SearchTableList.Length"); i++) {
 				SearchTableResponse.SearchTable_SearchTable searchTable = new SearchTableResponse.SearchTable_SearchTable();
 				searchTable.TableId = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].TableId");
-				searchTable.DatabaseId = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].DatabaseId");
 				searchTable.TableName = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].TableName");
-				searchTable.TableSchemaName = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].TableSchemaName");
-				searchTable.Engine = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].Engine");
-				searchTable.Encoding = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].Encoding");
-				searchTable.Logic = _ctx.BooleanValue("SearchTable.SearchTableList["+ i +"].Logic");
-				searchTable.EnvType = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].EnvType");
-				searchTable.DBSearchName = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].DBSearchName");
-				searchTable.DbType = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].DbType");
-				searchTable.Description = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].Description");
-				searchTable.DbName = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].DbName");
 				searchTable.TableGuid = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].TableGuid");
-
-				List<string> searchTable_ownerIdList = new List<string>();
-				for (int j = 0; j < _ctx.Length("SearchTable.SearchTableList["+ i +"].OwnerIdList.Length"); j++) {
-					searchTable_ownerIdList.Add(_ctx.StringValue("SearchTable.SearchTableList["+ i +"].OwnerIdList["+ j +"]"));
-				}
-				searchTable.OwnerIdList = searchTable_ownerIdList;
+				searchTable.Description = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].Description");
+				searchTable.TableSchemaName = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].TableSchemaName");
+				searchTable.Encoding = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].Encoding");
+				searchTable.DbName = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].DbName");
+				searchTable.DatabaseId = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].DatabaseId");
+				searchTable.Logic = _ctx.BooleanValue("SearchTable.SearchTableList["+ i +"].Logic");
+				searchTable.DBSearchName = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].DBSearchName");
+				searchTable.Engine = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].Engine");
+				searchTable.DbType = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].DbType");
+				searchTable.EnvType = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].EnvType");
 
 				List<string> searchTable_ownerNameList = new List<string>();
 				for (int j = 0; j < _ctx.Length("SearchTable.SearchTableList["+ i +"].OwnerNameList.Length"); j++) {
 					searchTable_ownerNameList.Add(_ctx.StringValue("SearchTable.SearchTableList["+ i +"].OwnerNameList["+ j +"]"));
 				}
 				searchTable.OwnerNameList = searchTable_ownerNameList;
+
+				List<string> searchTable_ownerIdList = new List<string>();
+				for (int j = 0; j < _ctx.Length("SearchTable.SearchTableList["+ i +"].OwnerIdList.Length"); j++) {
+					searchTable_ownerIdList.Add(_ctx.StringValue("SearchTable.SearchTableList["+ i +"].OwnerIdList["+ j +"]"));
+				}
+				searchTable.OwnerIdList = searchTable_ownerIdList;
 
 				searchTableResponse_searchTableList.Add(searchTable);
 			}

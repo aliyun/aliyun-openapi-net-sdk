@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
@@ -25,66 +25,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 	public class ListSensitiveColumnsResponse : AcsResponse
 	{
 
+		private long? totalCount;
+
 		private string requestId;
-
-		private bool? success;
-
-		private string errorMessage;
 
 		private string errorCode;
 
-		private long? totalCount;
+		private string errorMessage;
+
+		private bool? success;
 
 		private List<ListSensitiveColumns_SensitiveColumn> sensitiveColumnList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TotalCount")]
 		public long? TotalCount
 		{
 			get
@@ -97,6 +50,59 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ErrorMessage")]
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SensitiveColumnList")]
 		public List<ListSensitiveColumns_SensitiveColumn> SensitiveColumnList
 		{
 			get
@@ -112,30 +118,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ListSensitiveColumns_SensitiveColumn
 		{
 
-			private string schemaName;
-
 			private string tableName;
 
 			private string columnName;
-
-			private string securityLevel;
 
 			private long? columnCount;
 
 			private string functionType;
 
-			public string SchemaName
-			{
-				get
-				{
-					return schemaName;
-				}
-				set	
-				{
-					schemaName = value;
-				}
-			}
+			private string securityLevel;
 
+			private string schemaName;
+
+			[JsonProperty(PropertyName = "TableName")]
 			public string TableName
 			{
 				get
@@ -148,6 +143,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "ColumnName")]
 			public string ColumnName
 			{
 				get
@@ -160,18 +156,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public string SecurityLevel
-			{
-				get
-				{
-					return securityLevel;
-				}
-				set	
-				{
-					securityLevel = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "ColumnCount")]
 			public long? ColumnCount
 			{
 				get
@@ -184,6 +169,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "FunctionType")]
 			public string FunctionType
 			{
 				get
@@ -193,6 +179,32 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					functionType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SecurityLevel")]
+			public string SecurityLevel
+			{
+				get
+				{
+					return securityLevel;
+				}
+				set	
+				{
+					securityLevel = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SchemaName")]
+			public string SchemaName
+			{
+				get
+				{
+					return schemaName;
+				}
+				set	
+				{
+					schemaName = value;
 				}
 			}
 		}

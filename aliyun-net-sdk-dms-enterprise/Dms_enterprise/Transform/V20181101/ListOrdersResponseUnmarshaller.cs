@@ -31,24 +31,24 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			ListOrdersResponse listOrdersResponse = new ListOrdersResponse();
 
 			listOrdersResponse.HttpResponse = _ctx.HttpResponse;
-			listOrdersResponse.RequestId = _ctx.StringValue("ListOrders.RequestId");
-			listOrdersResponse.Success = _ctx.BooleanValue("ListOrders.Success");
-			listOrdersResponse.ErrorMessage = _ctx.StringValue("ListOrders.ErrorMessage");
-			listOrdersResponse.ErrorCode = _ctx.StringValue("ListOrders.ErrorCode");
 			listOrdersResponse.TotalCount = _ctx.LongValue("ListOrders.TotalCount");
+			listOrdersResponse.RequestId = _ctx.StringValue("ListOrders.RequestId");
+			listOrdersResponse.ErrorCode = _ctx.StringValue("ListOrders.ErrorCode");
+			listOrdersResponse.ErrorMessage = _ctx.StringValue("ListOrders.ErrorMessage");
+			listOrdersResponse.Success = _ctx.BooleanValue("ListOrders.Success");
 
 			List<ListOrdersResponse.ListOrders_Order> listOrdersResponse_orders = new List<ListOrdersResponse.ListOrders_Order>();
 			for (int i = 0; i < _ctx.Length("ListOrders.Orders.Length"); i++) {
 				ListOrdersResponse.ListOrders_Order order = new ListOrdersResponse.ListOrders_Order();
-				order.OrderId = _ctx.LongValue("ListOrders.Orders["+ i +"].OrderId");
+				order.StatusDesc = _ctx.StringValue("ListOrders.Orders["+ i +"].StatusDesc");
 				order.Comment = _ctx.StringValue("ListOrders.Orders["+ i +"].Comment");
-				order.Committer = _ctx.StringValue("ListOrders.Orders["+ i +"].Committer");
-				order.CommitterId = _ctx.LongValue("ListOrders.Orders["+ i +"].CommitterId");
 				order.CreateTime = _ctx.StringValue("ListOrders.Orders["+ i +"].CreateTime");
+				order.Committer = _ctx.StringValue("ListOrders.Orders["+ i +"].Committer");
+				order.OrderId = _ctx.LongValue("ListOrders.Orders["+ i +"].OrderId");
 				order.LastModifyTime = _ctx.StringValue("ListOrders.Orders["+ i +"].LastModifyTime");
 				order.PluginType = _ctx.StringValue("ListOrders.Orders["+ i +"].PluginType");
+				order.CommitterId = _ctx.LongValue("ListOrders.Orders["+ i +"].CommitterId");
 				order.StatusCode = _ctx.StringValue("ListOrders.Orders["+ i +"].StatusCode");
-				order.StatusDesc = _ctx.StringValue("ListOrders.Orders["+ i +"].StatusDesc");
 
 				listOrdersResponse_orders.Add(order);
 			}

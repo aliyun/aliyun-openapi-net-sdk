@@ -32,14 +32,14 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getUserActiveTenantResponse.HttpResponse = _ctx.HttpResponse;
 			getUserActiveTenantResponse.RequestId = _ctx.StringValue("GetUserActiveTenant.RequestId");
-			getUserActiveTenantResponse.Success = _ctx.BooleanValue("GetUserActiveTenant.Success");
-			getUserActiveTenantResponse.ErrorMessage = _ctx.StringValue("GetUserActiveTenant.ErrorMessage");
 			getUserActiveTenantResponse.ErrorCode = _ctx.StringValue("GetUserActiveTenant.ErrorCode");
+			getUserActiveTenantResponse.ErrorMessage = _ctx.StringValue("GetUserActiveTenant.ErrorMessage");
+			getUserActiveTenantResponse.Success = _ctx.BooleanValue("GetUserActiveTenant.Success");
 
 			GetUserActiveTenantResponse.GetUserActiveTenant_Tenant tenant = new GetUserActiveTenantResponse.GetUserActiveTenant_Tenant();
-			tenant.Tid = _ctx.LongValue("GetUserActiveTenant.Tenant.Tid");
-			tenant.TenantName = _ctx.StringValue("GetUserActiveTenant.Tenant.TenantName");
 			tenant.Status = _ctx.StringValue("GetUserActiveTenant.Tenant.Status");
+			tenant.TenantName = _ctx.StringValue("GetUserActiveTenant.Tenant.TenantName");
+			tenant.Tid = _ctx.LongValue("GetUserActiveTenant.Tenant.Tid");
 			getUserActiveTenantResponse.Tenant = tenant;
         
 			return getUserActiveTenantResponse;

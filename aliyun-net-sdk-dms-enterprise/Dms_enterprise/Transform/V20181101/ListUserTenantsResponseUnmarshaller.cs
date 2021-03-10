@@ -32,16 +32,16 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			listUserTenantsResponse.HttpResponse = _ctx.HttpResponse;
 			listUserTenantsResponse.RequestId = _ctx.StringValue("ListUserTenants.RequestId");
-			listUserTenantsResponse.Success = _ctx.BooleanValue("ListUserTenants.Success");
-			listUserTenantsResponse.ErrorMessage = _ctx.StringValue("ListUserTenants.ErrorMessage");
 			listUserTenantsResponse.ErrorCode = _ctx.StringValue("ListUserTenants.ErrorCode");
+			listUserTenantsResponse.ErrorMessage = _ctx.StringValue("ListUserTenants.ErrorMessage");
+			listUserTenantsResponse.Success = _ctx.BooleanValue("ListUserTenants.Success");
 
 			List<ListUserTenantsResponse.ListUserTenants_Tenant> listUserTenantsResponse_tenantList = new List<ListUserTenantsResponse.ListUserTenants_Tenant>();
 			for (int i = 0; i < _ctx.Length("ListUserTenants.TenantList.Length"); i++) {
 				ListUserTenantsResponse.ListUserTenants_Tenant tenant = new ListUserTenantsResponse.ListUserTenants_Tenant();
-				tenant.Tid = _ctx.LongValue("ListUserTenants.TenantList["+ i +"].Tid");
-				tenant.TenantName = _ctx.StringValue("ListUserTenants.TenantList["+ i +"].TenantName");
 				tenant.Status = _ctx.StringValue("ListUserTenants.TenantList["+ i +"].Status");
+				tenant.TenantName = _ctx.StringValue("ListUserTenants.TenantList["+ i +"].TenantName");
+				tenant.Tid = _ctx.LongValue("ListUserTenants.TenantList["+ i +"].Tid");
 
 				listUserTenantsResponse_tenantList.Add(tenant);
 			}

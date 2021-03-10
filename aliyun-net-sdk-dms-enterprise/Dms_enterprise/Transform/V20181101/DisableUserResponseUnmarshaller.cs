@@ -32,9 +32,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			disableUserResponse.HttpResponse = _ctx.HttpResponse;
 			disableUserResponse.RequestId = _ctx.StringValue("DisableUser.RequestId");
-			disableUserResponse.Success = _ctx.BooleanValue("DisableUser.Success");
-			disableUserResponse.ErrorMessage = _ctx.StringValue("DisableUser.ErrorMessage");
 			disableUserResponse.ErrorCode = _ctx.StringValue("DisableUser.ErrorCode");
+			disableUserResponse.ErrorMessage = _ctx.StringValue("DisableUser.ErrorMessage");
+			disableUserResponse.Success = _ctx.BooleanValue("DisableUser.Success");
         
 			return disableUserResponse;
         }

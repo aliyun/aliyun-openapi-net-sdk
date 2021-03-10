@@ -32,9 +32,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			registerInstanceResponse.HttpResponse = _ctx.HttpResponse;
 			registerInstanceResponse.RequestId = _ctx.StringValue("RegisterInstance.RequestId");
-			registerInstanceResponse.Success = _ctx.BooleanValue("RegisterInstance.Success");
-			registerInstanceResponse.ErrorMessage = _ctx.StringValue("RegisterInstance.ErrorMessage");
 			registerInstanceResponse.ErrorCode = _ctx.StringValue("RegisterInstance.ErrorCode");
+			registerInstanceResponse.ErrorMessage = _ctx.StringValue("RegisterInstance.ErrorMessage");
+			registerInstanceResponse.Success = _ctx.BooleanValue("RegisterInstance.Success");
         
 			return registerInstanceResponse;
         }

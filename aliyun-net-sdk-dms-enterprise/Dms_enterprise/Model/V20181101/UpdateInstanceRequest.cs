@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dms_enterprise;
 using Aliyun.Acs.dms_enterprise.Transform;
 using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class UpdateInstanceRequest : RpcAcsRequest<UpdateInstanceResponse>
     {
         public UpdateInstanceRequest()
-            : base("dms-enterprise", "2018-11-01", "UpdateInstance", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "UpdateInstance")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -85,6 +86,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private bool? skipTest;
 
+		[JsonProperty(PropertyName = "SafeRuleId")]
 		public string SafeRuleId
 		{
 			get
@@ -98,6 +100,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "EcsRegion")]
 		public string EcsRegion
 		{
 			get
@@ -111,6 +114,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DdlOnline")]
 		public int? DdlOnline
 		{
 			get
@@ -124,6 +128,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "UseDsql")]
 		public int? UseDsql
 		{
 			get
@@ -137,6 +142,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -150,6 +156,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Sid")]
 		public string Sid
 		{
 			get
@@ -163,6 +170,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DbaId")]
 		public string DbaId
 		{
 			get
@@ -176,6 +184,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DataLinkName")]
 		public string DataLinkName
 		{
 			get
@@ -189,6 +198,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceSource")]
 		public string InstanceSource
 		{
 			get
@@ -202,6 +212,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "EnvType")]
 		public string EnvType
 		{
 			get
@@ -215,6 +226,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Host")]
 		public string Host
 		{
 			get
@@ -228,6 +240,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceType")]
 		public string InstanceType
 		{
 			get
@@ -241,6 +254,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "QueryTimeout")]
 		public int? QueryTimeout
 		{
 			get
@@ -254,6 +268,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "EcsInstanceId")]
 		public string EcsInstanceId
 		{
 			get
@@ -267,6 +282,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExportTimeout")]
 		public int? ExportTimeout
 		{
 			get
@@ -280,6 +296,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DatabasePassword")]
 		public string DatabasePassword
 		{
 			get
@@ -293,6 +310,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceAlias")]
 		public string InstanceAlias
 		{
 			get
@@ -306,6 +324,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DatabaseUser")]
 		public string DatabaseUser
 		{
 			get
@@ -319,6 +338,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceId")]
 		public string InstanceId
 		{
 			get
@@ -332,6 +352,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Port")]
 		public int? Port
 		{
 			get
@@ -345,6 +366,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "VpcId")]
 		public string VpcId
 		{
 			get
@@ -358,6 +380,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "SkipTest")]
 		public bool? SkipTest
 		{
 			get

@@ -32,26 +32,26 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			listColumnsResponse.HttpResponse = _ctx.HttpResponse;
 			listColumnsResponse.RequestId = _ctx.StringValue("ListColumns.RequestId");
-			listColumnsResponse.Success = _ctx.BooleanValue("ListColumns.Success");
-			listColumnsResponse.ErrorMessage = _ctx.StringValue("ListColumns.ErrorMessage");
 			listColumnsResponse.ErrorCode = _ctx.StringValue("ListColumns.ErrorCode");
+			listColumnsResponse.ErrorMessage = _ctx.StringValue("ListColumns.ErrorMessage");
+			listColumnsResponse.Success = _ctx.BooleanValue("ListColumns.Success");
 
 			List<ListColumnsResponse.ListColumns_Column> listColumnsResponse_columnList = new List<ListColumnsResponse.ListColumns_Column>();
 			for (int i = 0; i < _ctx.Length("ListColumns.ColumnList.Length"); i++) {
 				ListColumnsResponse.ListColumns_Column column = new ListColumnsResponse.ListColumns_Column();
 				column.ColumnId = _ctx.StringValue("ListColumns.ColumnList["+ i +"].ColumnId");
 				column.ColumnName = _ctx.StringValue("ListColumns.ColumnList["+ i +"].ColumnName");
-				column.ColumnType = _ctx.StringValue("ListColumns.ColumnList["+ i +"].ColumnType");
-				column.Nullable = _ctx.BooleanValue("ListColumns.ColumnList["+ i +"].Nullable");
 				column.DefaultValue = _ctx.StringValue("ListColumns.ColumnList["+ i +"].DefaultValue");
-				column.AutoIncrement = _ctx.BooleanValue("ListColumns.ColumnList["+ i +"].AutoIncrement");
 				column.Description = _ctx.StringValue("ListColumns.ColumnList["+ i +"].Description");
-				column.SecurityLevel = _ctx.StringValue("ListColumns.ColumnList["+ i +"].SecurityLevel");
+				column.ColumnType = _ctx.StringValue("ListColumns.ColumnList["+ i +"].ColumnType");
+				column.AutoIncrement = _ctx.BooleanValue("ListColumns.ColumnList["+ i +"].AutoIncrement");
 				column.FunctionType = _ctx.StringValue("ListColumns.ColumnList["+ i +"].FunctionType");
+				column.SecurityLevel = _ctx.StringValue("ListColumns.ColumnList["+ i +"].SecurityLevel");
 				column.DataLength = _ctx.LongValue("ListColumns.ColumnList["+ i +"].DataLength");
-				column.Sensitive = _ctx.BooleanValue("ListColumns.ColumnList["+ i +"].Sensitive");
-				column.DataPrecision = _ctx.IntegerValue("ListColumns.ColumnList["+ i +"].DataPrecision");
 				column.DataScale = _ctx.IntegerValue("ListColumns.ColumnList["+ i +"].DataScale");
+				column.DataPrecision = _ctx.IntegerValue("ListColumns.ColumnList["+ i +"].DataPrecision");
+				column.Sensitive = _ctx.BooleanValue("ListColumns.ColumnList["+ i +"].Sensitive");
+				column.Nullable = _ctx.BooleanValue("ListColumns.ColumnList["+ i +"].Nullable");
 
 				listColumnsResponse_columnList.Add(column);
 			}

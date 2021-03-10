@@ -32,9 +32,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getDataCorrectBackupFilesResponse.HttpResponse = _ctx.HttpResponse;
 			getDataCorrectBackupFilesResponse.RequestId = _ctx.StringValue("GetDataCorrectBackupFiles.RequestId");
-			getDataCorrectBackupFilesResponse.Success = _ctx.BooleanValue("GetDataCorrectBackupFiles.Success");
-			getDataCorrectBackupFilesResponse.ErrorMessage = _ctx.StringValue("GetDataCorrectBackupFiles.ErrorMessage");
 			getDataCorrectBackupFilesResponse.ErrorCode = _ctx.StringValue("GetDataCorrectBackupFiles.ErrorCode");
+			getDataCorrectBackupFilesResponse.ErrorMessage = _ctx.StringValue("GetDataCorrectBackupFiles.ErrorMessage");
+			getDataCorrectBackupFilesResponse.Success = _ctx.BooleanValue("GetDataCorrectBackupFiles.Success");
 
 			List<string> getDataCorrectBackupFilesResponse_dataCorrectBackupFiles = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetDataCorrectBackupFiles.DataCorrectBackupFiles.Length"); i++) {

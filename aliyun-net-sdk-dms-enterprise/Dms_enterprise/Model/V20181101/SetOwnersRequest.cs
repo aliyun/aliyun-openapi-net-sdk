@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dms_enterprise;
 using Aliyun.Acs.dms_enterprise.Transform;
 using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class SetOwnersRequest : RpcAcsRequest<SetOwnersResponse>
     {
         public SetOwnersRequest()
-            : base("dms-enterprise", "2018-11-01", "SetOwners", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "SetOwners")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,10 +46,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string ownerIds;
 
-		private string ownerType;
-
 		private long? tid;
 
+		private string ownerType;
+
+		[JsonProperty(PropertyName = "ResourceId")]
 		public string ResourceId
 		{
 			get
@@ -62,6 +64,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerIds")]
 		public string OwnerIds
 		{
 			get
@@ -75,19 +78,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public string OwnerType
-		{
-			get
-			{
-				return ownerType;
-			}
-			set	
-			{
-				ownerType = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerType", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -98,6 +89,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				tid = value;
 				DictionaryUtil.Add(QueryParameters, "Tid", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "OwnerType")]
+		public string OwnerType
+		{
+			get
+			{
+				return ownerType;
+			}
+			set	
+			{
+				ownerType = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerType", value);
 			}
 		}
 

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			CreatePublishGroupTaskResponse createPublishGroupTaskResponse = new CreatePublishGroupTaskResponse();
 
 			createPublishGroupTaskResponse.HttpResponse = _ctx.HttpResponse;
-			createPublishGroupTaskResponse.RequestId = _ctx.StringValue("CreatePublishGroupTask.RequestId");
-			createPublishGroupTaskResponse.Success = _ctx.BooleanValue("CreatePublishGroupTask.Success");
-			createPublishGroupTaskResponse.ErrorMessage = _ctx.StringValue("CreatePublishGroupTask.ErrorMessage");
-			createPublishGroupTaskResponse.ErrorCode = _ctx.StringValue("CreatePublishGroupTask.ErrorCode");
 			createPublishGroupTaskResponse.TaskId = _ctx.LongValue("CreatePublishGroupTask.TaskId");
+			createPublishGroupTaskResponse.RequestId = _ctx.StringValue("CreatePublishGroupTask.RequestId");
+			createPublishGroupTaskResponse.ErrorCode = _ctx.StringValue("CreatePublishGroupTask.ErrorCode");
+			createPublishGroupTaskResponse.ErrorMessage = _ctx.StringValue("CreatePublishGroupTask.ErrorMessage");
+			createPublishGroupTaskResponse.Success = _ctx.BooleanValue("CreatePublishGroupTask.Success");
         
 			return createPublishGroupTaskResponse;
         }

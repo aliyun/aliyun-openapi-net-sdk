@@ -31,21 +31,21 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			ListSensitiveColumnsResponse listSensitiveColumnsResponse = new ListSensitiveColumnsResponse();
 
 			listSensitiveColumnsResponse.HttpResponse = _ctx.HttpResponse;
-			listSensitiveColumnsResponse.RequestId = _ctx.StringValue("ListSensitiveColumns.RequestId");
-			listSensitiveColumnsResponse.Success = _ctx.BooleanValue("ListSensitiveColumns.Success");
-			listSensitiveColumnsResponse.ErrorMessage = _ctx.StringValue("ListSensitiveColumns.ErrorMessage");
-			listSensitiveColumnsResponse.ErrorCode = _ctx.StringValue("ListSensitiveColumns.ErrorCode");
 			listSensitiveColumnsResponse.TotalCount = _ctx.LongValue("ListSensitiveColumns.TotalCount");
+			listSensitiveColumnsResponse.RequestId = _ctx.StringValue("ListSensitiveColumns.RequestId");
+			listSensitiveColumnsResponse.ErrorCode = _ctx.StringValue("ListSensitiveColumns.ErrorCode");
+			listSensitiveColumnsResponse.ErrorMessage = _ctx.StringValue("ListSensitiveColumns.ErrorMessage");
+			listSensitiveColumnsResponse.Success = _ctx.BooleanValue("ListSensitiveColumns.Success");
 
 			List<ListSensitiveColumnsResponse.ListSensitiveColumns_SensitiveColumn> listSensitiveColumnsResponse_sensitiveColumnList = new List<ListSensitiveColumnsResponse.ListSensitiveColumns_SensitiveColumn>();
 			for (int i = 0; i < _ctx.Length("ListSensitiveColumns.SensitiveColumnList.Length"); i++) {
 				ListSensitiveColumnsResponse.ListSensitiveColumns_SensitiveColumn sensitiveColumn = new ListSensitiveColumnsResponse.ListSensitiveColumns_SensitiveColumn();
-				sensitiveColumn.SchemaName = _ctx.StringValue("ListSensitiveColumns.SensitiveColumnList["+ i +"].SchemaName");
 				sensitiveColumn.TableName = _ctx.StringValue("ListSensitiveColumns.SensitiveColumnList["+ i +"].TableName");
 				sensitiveColumn.ColumnName = _ctx.StringValue("ListSensitiveColumns.SensitiveColumnList["+ i +"].ColumnName");
-				sensitiveColumn.SecurityLevel = _ctx.StringValue("ListSensitiveColumns.SensitiveColumnList["+ i +"].SecurityLevel");
 				sensitiveColumn.ColumnCount = _ctx.LongValue("ListSensitiveColumns.SensitiveColumnList["+ i +"].ColumnCount");
 				sensitiveColumn.FunctionType = _ctx.StringValue("ListSensitiveColumns.SensitiveColumnList["+ i +"].FunctionType");
+				sensitiveColumn.SecurityLevel = _ctx.StringValue("ListSensitiveColumns.SensitiveColumnList["+ i +"].SecurityLevel");
+				sensitiveColumn.SchemaName = _ctx.StringValue("ListSensitiveColumns.SensitiveColumnList["+ i +"].SchemaName");
 
 				listSensitiveColumnsResponse_sensitiveColumnList.Add(sensitiveColumn);
 			}

@@ -31,35 +31,35 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			ListLogicTablesResponse listLogicTablesResponse = new ListLogicTablesResponse();
 
 			listLogicTablesResponse.HttpResponse = _ctx.HttpResponse;
-			listLogicTablesResponse.RequestId = _ctx.StringValue("ListLogicTables.RequestId");
-			listLogicTablesResponse.Success = _ctx.BooleanValue("ListLogicTables.Success");
-			listLogicTablesResponse.ErrorMessage = _ctx.StringValue("ListLogicTables.ErrorMessage");
-			listLogicTablesResponse.ErrorCode = _ctx.StringValue("ListLogicTables.ErrorCode");
 			listLogicTablesResponse.TotalCount = _ctx.LongValue("ListLogicTables.TotalCount");
+			listLogicTablesResponse.RequestId = _ctx.StringValue("ListLogicTables.RequestId");
+			listLogicTablesResponse.ErrorCode = _ctx.StringValue("ListLogicTables.ErrorCode");
+			listLogicTablesResponse.ErrorMessage = _ctx.StringValue("ListLogicTables.ErrorMessage");
+			listLogicTablesResponse.Success = _ctx.BooleanValue("ListLogicTables.Success");
 
 			List<ListLogicTablesResponse.ListLogicTables_LogicTable> listLogicTablesResponse_logicTableList = new List<ListLogicTablesResponse.ListLogicTables_LogicTable>();
 			for (int i = 0; i < _ctx.Length("ListLogicTables.LogicTableList.Length"); i++) {
 				ListLogicTablesResponse.ListLogicTables_LogicTable logicTable = new ListLogicTablesResponse.ListLogicTables_LogicTable();
 				logicTable.TableId = _ctx.StringValue("ListLogicTables.LogicTableList["+ i +"].TableId");
-				logicTable.DatabaseId = _ctx.StringValue("ListLogicTables.LogicTableList["+ i +"].DatabaseId");
 				logicTable.TableName = _ctx.StringValue("ListLogicTables.LogicTableList["+ i +"].TableName");
-				logicTable.Logic = _ctx.BooleanValue("ListLogicTables.LogicTableList["+ i +"].Logic");
+				logicTable.TableGuid = _ctx.StringValue("ListLogicTables.LogicTableList["+ i +"].TableGuid");
 				logicTable.TableExpr = _ctx.StringValue("ListLogicTables.LogicTableList["+ i +"].TableExpr");
 				logicTable.TableCount = _ctx.StringValue("ListLogicTables.LogicTableList["+ i +"].TableCount");
-				logicTable.TableGuid = _ctx.StringValue("ListLogicTables.LogicTableList["+ i +"].TableGuid");
+				logicTable.DatabaseId = _ctx.StringValue("ListLogicTables.LogicTableList["+ i +"].DatabaseId");
+				logicTable.Logic = _ctx.BooleanValue("ListLogicTables.LogicTableList["+ i +"].Logic");
 				logicTable.SchemaName = _ctx.StringValue("ListLogicTables.LogicTableList["+ i +"].SchemaName");
-
-				List<string> logicTable_ownerIdList = new List<string>();
-				for (int j = 0; j < _ctx.Length("ListLogicTables.LogicTableList["+ i +"].OwnerIdList.Length"); j++) {
-					logicTable_ownerIdList.Add(_ctx.StringValue("ListLogicTables.LogicTableList["+ i +"].OwnerIdList["+ j +"]"));
-				}
-				logicTable.OwnerIdList = logicTable_ownerIdList;
 
 				List<string> logicTable_ownerNameList = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListLogicTables.LogicTableList["+ i +"].OwnerNameList.Length"); j++) {
 					logicTable_ownerNameList.Add(_ctx.StringValue("ListLogicTables.LogicTableList["+ i +"].OwnerNameList["+ j +"]"));
 				}
 				logicTable.OwnerNameList = logicTable_ownerNameList;
+
+				List<string> logicTable_ownerIdList = new List<string>();
+				for (int j = 0; j < _ctx.Length("ListLogicTables.LogicTableList["+ i +"].OwnerIdList.Length"); j++) {
+					logicTable_ownerIdList.Add(_ctx.StringValue("ListLogicTables.LogicTableList["+ i +"].OwnerIdList["+ j +"]"));
+				}
+				logicTable.OwnerIdList = logicTable_ownerIdList;
 
 				listLogicTablesResponse_logicTableList.Add(logicTable);
 			}

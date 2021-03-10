@@ -32,29 +32,29 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getLogicDatabaseResponse.HttpResponse = _ctx.HttpResponse;
 			getLogicDatabaseResponse.RequestId = _ctx.StringValue("GetLogicDatabase.RequestId");
-			getLogicDatabaseResponse.Success = _ctx.BooleanValue("GetLogicDatabase.Success");
-			getLogicDatabaseResponse.ErrorMessage = _ctx.StringValue("GetLogicDatabase.ErrorMessage");
 			getLogicDatabaseResponse.ErrorCode = _ctx.StringValue("GetLogicDatabase.ErrorCode");
+			getLogicDatabaseResponse.ErrorMessage = _ctx.StringValue("GetLogicDatabase.ErrorMessage");
+			getLogicDatabaseResponse.Success = _ctx.BooleanValue("GetLogicDatabase.Success");
 
 			GetLogicDatabaseResponse.GetLogicDatabase_LogicDatabase logicDatabase = new GetLogicDatabaseResponse.GetLogicDatabase_LogicDatabase();
+			logicDatabase.SearchName = _ctx.StringValue("GetLogicDatabase.LogicDatabase.SearchName");
+			logicDatabase.DatabaseId = _ctx.StringValue("GetLogicDatabase.LogicDatabase.DatabaseId");
 			logicDatabase.Logic = _ctx.BooleanValue("GetLogicDatabase.LogicDatabase.Logic");
 			logicDatabase.EnvType = _ctx.StringValue("GetLogicDatabase.LogicDatabase.EnvType");
 			logicDatabase.SchemaName = _ctx.StringValue("GetLogicDatabase.LogicDatabase.SchemaName");
-			logicDatabase.SearchName = _ctx.StringValue("GetLogicDatabase.LogicDatabase.SearchName");
 			logicDatabase.DbType = _ctx.StringValue("GetLogicDatabase.LogicDatabase.DbType");
-			logicDatabase.DatabaseId = _ctx.StringValue("GetLogicDatabase.LogicDatabase.DatabaseId");
-
-			List<string> logicDatabase_ownerIdList = new List<string>();
-			for (int i = 0; i < _ctx.Length("GetLogicDatabase.LogicDatabase.OwnerIdList.Length"); i++) {
-				logicDatabase_ownerIdList.Add(_ctx.StringValue("GetLogicDatabase.LogicDatabase.OwnerIdList["+ i +"]"));
-			}
-			logicDatabase.OwnerIdList = logicDatabase_ownerIdList;
 
 			List<string> logicDatabase_ownerNameList = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetLogicDatabase.LogicDatabase.OwnerNameList.Length"); i++) {
 				logicDatabase_ownerNameList.Add(_ctx.StringValue("GetLogicDatabase.LogicDatabase.OwnerNameList["+ i +"]"));
 			}
 			logicDatabase.OwnerNameList = logicDatabase_ownerNameList;
+
+			List<string> logicDatabase_ownerIdList = new List<string>();
+			for (int i = 0; i < _ctx.Length("GetLogicDatabase.LogicDatabase.OwnerIdList.Length"); i++) {
+				logicDatabase_ownerIdList.Add(_ctx.StringValue("GetLogicDatabase.LogicDatabase.OwnerIdList["+ i +"]"));
+			}
+			logicDatabase.OwnerIdList = logicDatabase_ownerIdList;
 			getLogicDatabaseResponse.LogicDatabase = logicDatabase;
         
 			return getLogicDatabaseResponse;

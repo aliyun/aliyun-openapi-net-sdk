@@ -32,22 +32,22 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getOrderBaseInfoResponse.HttpResponse = _ctx.HttpResponse;
 			getOrderBaseInfoResponse.RequestId = _ctx.StringValue("GetOrderBaseInfo.RequestId");
-			getOrderBaseInfoResponse.Success = _ctx.BooleanValue("GetOrderBaseInfo.Success");
-			getOrderBaseInfoResponse.ErrorMessage = _ctx.StringValue("GetOrderBaseInfo.ErrorMessage");
 			getOrderBaseInfoResponse.ErrorCode = _ctx.StringValue("GetOrderBaseInfo.ErrorCode");
+			getOrderBaseInfoResponse.ErrorMessage = _ctx.StringValue("GetOrderBaseInfo.ErrorMessage");
+			getOrderBaseInfoResponse.Success = _ctx.BooleanValue("GetOrderBaseInfo.Success");
 
 			GetOrderBaseInfoResponse.GetOrderBaseInfo_OrderBaseInfo orderBaseInfo = new GetOrderBaseInfoResponse.GetOrderBaseInfo_OrderBaseInfo();
+			orderBaseInfo.StatusDesc = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.StatusDesc");
+			orderBaseInfo.WorkflowStatusDesc = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.WorkflowStatusDesc");
 			orderBaseInfo.Comment = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.Comment");
-			orderBaseInfo.Committer = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.Committer");
-			orderBaseInfo.CommitterId = _ctx.LongValue("GetOrderBaseInfo.OrderBaseInfo.CommitterId");
 			orderBaseInfo.CreateTime = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.CreateTime");
-			orderBaseInfo.LastModifyTime = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.LastModifyTime");
+			orderBaseInfo.WorkflowInstanceId = _ctx.LongValue("GetOrderBaseInfo.OrderBaseInfo.WorkflowInstanceId");
+			orderBaseInfo.Committer = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.Committer");
 			orderBaseInfo.OrderId = _ctx.LongValue("GetOrderBaseInfo.OrderBaseInfo.OrderId");
+			orderBaseInfo.LastModifyTime = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.LastModifyTime");
 			orderBaseInfo.PluginType = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.PluginType");
 			orderBaseInfo.StatusCode = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.StatusCode");
-			orderBaseInfo.StatusDesc = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.StatusDesc");
-			orderBaseInfo.WorkflowInstanceId = _ctx.LongValue("GetOrderBaseInfo.OrderBaseInfo.WorkflowInstanceId");
-			orderBaseInfo.WorkflowStatusDesc = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.WorkflowStatusDesc");
+			orderBaseInfo.CommitterId = _ctx.LongValue("GetOrderBaseInfo.OrderBaseInfo.CommitterId");
 
 			List<string> orderBaseInfo_relatedUserList = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetOrderBaseInfo.OrderBaseInfo.RelatedUserList.Length"); i++) {

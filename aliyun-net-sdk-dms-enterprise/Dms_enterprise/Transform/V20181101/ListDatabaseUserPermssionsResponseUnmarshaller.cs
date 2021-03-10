@@ -31,39 +31,39 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			ListDatabaseUserPermssionsResponse listDatabaseUserPermssionsResponse = new ListDatabaseUserPermssionsResponse();
 
 			listDatabaseUserPermssionsResponse.HttpResponse = _ctx.HttpResponse;
-			listDatabaseUserPermssionsResponse.RequestId = _ctx.StringValue("ListDatabaseUserPermssions.RequestId");
-			listDatabaseUserPermssionsResponse.Success = _ctx.BooleanValue("ListDatabaseUserPermssions.Success");
-			listDatabaseUserPermssionsResponse.ErrorMessage = _ctx.StringValue("ListDatabaseUserPermssions.ErrorMessage");
-			listDatabaseUserPermssionsResponse.ErrorCode = _ctx.StringValue("ListDatabaseUserPermssions.ErrorCode");
 			listDatabaseUserPermssionsResponse.TotalCount = _ctx.LongValue("ListDatabaseUserPermssions.TotalCount");
+			listDatabaseUserPermssionsResponse.RequestId = _ctx.StringValue("ListDatabaseUserPermssions.RequestId");
+			listDatabaseUserPermssionsResponse.ErrorCode = _ctx.StringValue("ListDatabaseUserPermssions.ErrorCode");
+			listDatabaseUserPermssionsResponse.ErrorMessage = _ctx.StringValue("ListDatabaseUserPermssions.ErrorMessage");
+			listDatabaseUserPermssionsResponse.Success = _ctx.BooleanValue("ListDatabaseUserPermssions.Success");
 
 			List<ListDatabaseUserPermssionsResponse.ListDatabaseUserPermssions_UserPermission> listDatabaseUserPermssionsResponse_userPermissions = new List<ListDatabaseUserPermssionsResponse.ListDatabaseUserPermssions_UserPermission>();
 			for (int i = 0; i < _ctx.Length("ListDatabaseUserPermssions.UserPermissions.Length"); i++) {
 				ListDatabaseUserPermssionsResponse.ListDatabaseUserPermssions_UserPermission userPermission = new ListDatabaseUserPermssionsResponse.ListDatabaseUserPermssions_UserPermission();
-				userPermission.UserId = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].UserId");
-				userPermission.UserNickName = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].UserNickName");
+				userPermission.TableId = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].TableId");
+				userPermission.SearchName = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].SearchName");
+				userPermission.InstanceId = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].InstanceId");
+				userPermission.DbType = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].DbType");
+				userPermission.EnvType = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].EnvType");
 				userPermission.DsType = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].DsType");
+				userPermission.ColumnName = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].ColumnName");
+				userPermission.TableName = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].TableName");
+				userPermission.UserNickName = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].UserNickName");
+				userPermission.Alias = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].Alias");
+				userPermission.UserId = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].UserId");
 				userPermission.DbId = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].DbId");
 				userPermission.Logic = _ctx.BooleanValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].Logic");
 				userPermission.SchemaName = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].SchemaName");
-				userPermission.SearchName = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].SearchName");
-				userPermission.InstanceId = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].InstanceId");
-				userPermission.EnvType = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].EnvType");
-				userPermission.Alias = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].Alias");
-				userPermission.DbType = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].DbType");
-				userPermission.TableName = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].TableName");
-				userPermission.TableId = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].TableId");
-				userPermission.ColumnName = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].ColumnName");
 
 				List<ListDatabaseUserPermssionsResponse.ListDatabaseUserPermssions_UserPermission.ListDatabaseUserPermssions_PermDetail> userPermission_permDetails = new List<ListDatabaseUserPermssionsResponse.ListDatabaseUserPermssions_UserPermission.ListDatabaseUserPermssions_PermDetail>();
 				for (int j = 0; j < _ctx.Length("ListDatabaseUserPermssions.UserPermissions["+ i +"].PermDetails.Length"); j++) {
 					ListDatabaseUserPermssionsResponse.ListDatabaseUserPermssions_UserPermission.ListDatabaseUserPermssions_PermDetail permDetail = new ListDatabaseUserPermssionsResponse.ListDatabaseUserPermssions_UserPermission.ListDatabaseUserPermssions_PermDetail();
-					permDetail.PermType = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].PermDetails["+ j +"].PermType");
 					permDetail.ExpireDate = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].PermDetails["+ j +"].ExpireDate");
+					permDetail.PermType = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].PermDetails["+ j +"].PermType");
+					permDetail.ExtraData = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].PermDetails["+ j +"].ExtraData");
 					permDetail.CreateDate = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].PermDetails["+ j +"].CreateDate");
 					permDetail.OriginFrom = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].PermDetails["+ j +"].OriginFrom");
 					permDetail.UserAccessId = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].PermDetails["+ j +"].UserAccessId");
-					permDetail.ExtraData = _ctx.StringValue("ListDatabaseUserPermssions.UserPermissions["+ i +"].PermDetails["+ j +"].ExtraData");
 
 					userPermission_permDetails.Add(permDetail);
 				}

@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dms_enterprise;
 using Aliyun.Acs.dms_enterprise.Transform;
 using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class ListTablesRequest : RpcAcsRequest<ListTablesResponse>
     {
         public ListTablesRequest()
-            : base("dms-enterprise", "2018-11-01", "ListTables", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "ListTables")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,14 +46,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private bool? returnGuid;
 
-		private int? pageSize;
-
-		private string databaseId;
-
 		private long? tid;
 
 		private int? pageNumber;
 
+		private int? pageSize;
+
+		private string databaseId;
+
+		[JsonProperty(PropertyName = "SearchName")]
 		public string SearchName
 		{
 			get
@@ -66,6 +68,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "ReturnGuid")]
 		public bool? ReturnGuid
 		{
 			get
@@ -79,32 +82,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string DatabaseId
-		{
-			get
-			{
-				return databaseId;
-			}
-			set	
-			{
-				databaseId = value;
-				DictionaryUtil.Add(QueryParameters, "DatabaseId", value);
-			}
-		}
-
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -118,6 +96,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -128,6 +107,34 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "DatabaseId")]
+		public string DatabaseId
+		{
+			get
+			{
+				return databaseId;
+			}
+			set	
+			{
+				databaseId = value;
+				DictionaryUtil.Add(QueryParameters, "DatabaseId", value);
 			}
 		}
 

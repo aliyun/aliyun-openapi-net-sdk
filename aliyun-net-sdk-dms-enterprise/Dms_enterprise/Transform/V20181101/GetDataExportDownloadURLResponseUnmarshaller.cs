@@ -32,14 +32,14 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getDataExportDownloadURLResponse.HttpResponse = _ctx.HttpResponse;
 			getDataExportDownloadURLResponse.RequestId = _ctx.StringValue("GetDataExportDownloadURL.RequestId");
-			getDataExportDownloadURLResponse.Success = _ctx.BooleanValue("GetDataExportDownloadURL.Success");
-			getDataExportDownloadURLResponse.ErrorMessage = _ctx.StringValue("GetDataExportDownloadURL.ErrorMessage");
 			getDataExportDownloadURLResponse.ErrorCode = _ctx.StringValue("GetDataExportDownloadURL.ErrorCode");
+			getDataExportDownloadURLResponse.ErrorMessage = _ctx.StringValue("GetDataExportDownloadURL.ErrorMessage");
+			getDataExportDownloadURLResponse.Success = _ctx.BooleanValue("GetDataExportDownloadURL.Success");
 
 			GetDataExportDownloadURLResponse.GetDataExportDownloadURL_DownloadURLResult downloadURLResult = new GetDataExportDownloadURLResponse.GetDataExportDownloadURL_DownloadURLResult();
 			downloadURLResult.HasResult = _ctx.BooleanValue("GetDataExportDownloadURL.DownloadURLResult.HasResult");
-			downloadURLResult.URL = _ctx.StringValue("GetDataExportDownloadURL.DownloadURLResult.URL");
 			downloadURLResult.TipMessage = _ctx.StringValue("GetDataExportDownloadURL.DownloadURLResult.TipMessage");
+			downloadURLResult.URL = _ctx.StringValue("GetDataExportDownloadURL.DownloadURLResult.URL");
 			getDataExportDownloadURLResponse.DownloadURLResult = downloadURLResult;
         
 			return getDataExportDownloadURLResponse;

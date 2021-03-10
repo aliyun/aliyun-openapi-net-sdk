@@ -32,22 +32,22 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getDataExportOrderDetailResponse.HttpResponse = _ctx.HttpResponse;
 			getDataExportOrderDetailResponse.RequestId = _ctx.StringValue("GetDataExportOrderDetail.RequestId");
-			getDataExportOrderDetailResponse.Success = _ctx.BooleanValue("GetDataExportOrderDetail.Success");
-			getDataExportOrderDetailResponse.ErrorMessage = _ctx.StringValue("GetDataExportOrderDetail.ErrorMessage");
 			getDataExportOrderDetailResponse.ErrorCode = _ctx.StringValue("GetDataExportOrderDetail.ErrorCode");
+			getDataExportOrderDetailResponse.ErrorMessage = _ctx.StringValue("GetDataExportOrderDetail.ErrorMessage");
+			getDataExportOrderDetailResponse.Success = _ctx.BooleanValue("GetDataExportOrderDetail.Success");
 
 			GetDataExportOrderDetailResponse.GetDataExportOrderDetail_DataExportOrderDetail dataExportOrderDetail = new GetDataExportOrderDetailResponse.GetDataExportOrderDetail_DataExportOrderDetail();
 
 			GetDataExportOrderDetailResponse.GetDataExportOrderDetail_DataExportOrderDetail.GetDataExportOrderDetail_OrderDetail orderDetail = new GetDataExportOrderDetailResponse.GetDataExportOrderDetail_DataExportOrderDetail.GetDataExportOrderDetail_OrderDetail();
-			orderDetail.ActualAffectRows = _ctx.LongValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.ActualAffectRows");
+			orderDetail.IgnoreAffectRows = _ctx.BooleanValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.IgnoreAffectRows");
+			orderDetail.ExeSQL = _ctx.StringValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.ExeSQL");
 			orderDetail.Classify = _ctx.StringValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.Classify");
+			orderDetail.IgnoreAffectRowsReason = _ctx.StringValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.IgnoreAffectRowsReason");
 			orderDetail.Database = _ctx.StringValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.Database");
 			orderDetail.DbId = _ctx.IntegerValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.DbId");
-			orderDetail.EnvType = _ctx.StringValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.EnvType");
-			orderDetail.ExeSQL = _ctx.StringValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.ExeSQL");
-			orderDetail.IgnoreAffectRows = _ctx.BooleanValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.IgnoreAffectRows");
-			orderDetail.IgnoreAffectRowsReason = _ctx.StringValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.IgnoreAffectRowsReason");
+			orderDetail.ActualAffectRows = _ctx.LongValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.ActualAffectRows");
 			orderDetail.Logic = _ctx.BooleanValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.Logic");
+			orderDetail.EnvType = _ctx.StringValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.EnvType");
 			dataExportOrderDetail.OrderDetail = orderDetail;
 
 			GetDataExportOrderDetailResponse.GetDataExportOrderDetail_DataExportOrderDetail.GetDataExportOrderDetail_KeyInfo keyInfo = new GetDataExportOrderDetailResponse.GetDataExportOrderDetail_DataExportOrderDetail.GetDataExportOrderDetail_KeyInfo();

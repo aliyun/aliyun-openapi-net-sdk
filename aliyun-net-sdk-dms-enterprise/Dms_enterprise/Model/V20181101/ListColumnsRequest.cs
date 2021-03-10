@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dms_enterprise;
 using Aliyun.Acs.dms_enterprise.Transform;
 using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class ListColumnsRequest : RpcAcsRequest<ListColumnsResponse>
     {
         public ListColumnsRequest()
-            : base("dms-enterprise", "2018-11-01", "ListColumns", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "ListColumns")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,12 +42,27 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			Method = MethodType.POST;
         }
 
+		private long? tid;
+
 		private string tableId;
 
 		private bool? logic;
 
-		private long? tid;
+		[JsonProperty(PropertyName = "Tid")]
+		public long? Tid
+		{
+			get
+			{
+				return tid;
+			}
+			set	
+			{
+				tid = value;
+				DictionaryUtil.Add(QueryParameters, "Tid", value.ToString());
+			}
+		}
 
+		[JsonProperty(PropertyName = "TableId")]
 		public string TableId
 		{
 			get
@@ -60,6 +76,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Logic")]
 		public bool? Logic
 		{
 			get
@@ -70,19 +87,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				logic = value;
 				DictionaryUtil.Add(QueryParameters, "Logic", value.ToString());
-			}
-		}
-
-		public long? Tid
-		{
-			get
-			{
-				return tid;
-			}
-			set	
-			{
-				tid = value;
-				DictionaryUtil.Add(QueryParameters, "Tid", value.ToString());
 			}
 		}
 

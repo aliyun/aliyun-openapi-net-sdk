@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dms_enterprise;
 using Aliyun.Acs.dms_enterprise.Transform;
 using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class ListUserPermissionsRequest : RpcAcsRequest<ListUserPermissionsResponse>
     {
         public ListUserPermissionsRequest()
-            : base("dms-enterprise", "2018-11-01", "ListUserPermissions", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "ListUserPermissions")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -59,6 +60,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private bool? logic;
 
+		[JsonProperty(PropertyName = "UserId")]
 		public string UserId
 		{
 			get
@@ -72,6 +74,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -85,6 +88,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -98,6 +102,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PermType")]
 		public string PermType
 		{
 			get
@@ -111,6 +116,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DatabaseName")]
 		public string DatabaseName
 		{
 			get
@@ -124,6 +130,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "EnvType")]
 		public string EnvType
 		{
 			get
@@ -137,6 +144,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DbType")]
 		public string DbType
 		{
 			get
@@ -150,6 +158,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -163,6 +172,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Logic")]
 		public bool? Logic
 		{
 			get

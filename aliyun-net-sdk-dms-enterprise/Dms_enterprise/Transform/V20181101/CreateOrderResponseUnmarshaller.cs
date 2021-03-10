@@ -32,9 +32,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			createOrderResponse.HttpResponse = _ctx.HttpResponse;
 			createOrderResponse.RequestId = _ctx.StringValue("CreateOrder.RequestId");
-			createOrderResponse.Success = _ctx.BooleanValue("CreateOrder.Success");
-			createOrderResponse.ErrorMessage = _ctx.StringValue("CreateOrder.ErrorMessage");
 			createOrderResponse.ErrorCode = _ctx.StringValue("CreateOrder.ErrorCode");
+			createOrderResponse.ErrorMessage = _ctx.StringValue("CreateOrder.ErrorMessage");
+			createOrderResponse.Success = _ctx.BooleanValue("CreateOrder.Success");
 
 			List<string> createOrderResponse_createOrderResult = new List<string>();
 			for (int i = 0; i < _ctx.Length("CreateOrder.CreateOrderResult.Length"); i++) {

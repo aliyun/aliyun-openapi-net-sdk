@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dms_enterprise;
 using Aliyun.Acs.dms_enterprise.Transform;
 using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class GetOpLogRequest : RpcAcsRequest<GetOpLogResponse>
     {
         public GetOpLogRequest()
-            : base("dms-enterprise", "2018-11-01", "GetOpLog", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "GetOpLog")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,8 +44,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string module;
 
-		private int? pageSize;
-
 		private string endTime;
 
 		private string startTime;
@@ -53,6 +52,9 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private int? pageNumber;
 
+		private int? pageSize;
+
+		[JsonProperty(PropertyName = "Module")]
 		public string Module
 		{
 			get
@@ -66,19 +68,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
+		[JsonProperty(PropertyName = "EndTime")]
 		public string EndTime
 		{
 			get
@@ -92,6 +82,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "StartTime")]
 		public string StartTime
 		{
 			get
@@ -105,6 +96,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -118,6 +110,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
 		public int? PageNumber
 		{
 			get
@@ -128,6 +121,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

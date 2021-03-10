@@ -31,41 +31,41 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			ListDatabasesResponse listDatabasesResponse = new ListDatabasesResponse();
 
 			listDatabasesResponse.HttpResponse = _ctx.HttpResponse;
-			listDatabasesResponse.RequestId = _ctx.StringValue("ListDatabases.RequestId");
-			listDatabasesResponse.Success = _ctx.BooleanValue("ListDatabases.Success");
-			listDatabasesResponse.ErrorMessage = _ctx.StringValue("ListDatabases.ErrorMessage");
-			listDatabasesResponse.ErrorCode = _ctx.StringValue("ListDatabases.ErrorCode");
 			listDatabasesResponse.TotalCount = _ctx.LongValue("ListDatabases.TotalCount");
+			listDatabasesResponse.RequestId = _ctx.StringValue("ListDatabases.RequestId");
+			listDatabasesResponse.ErrorCode = _ctx.StringValue("ListDatabases.ErrorCode");
+			listDatabasesResponse.ErrorMessage = _ctx.StringValue("ListDatabases.ErrorMessage");
+			listDatabasesResponse.Success = _ctx.BooleanValue("ListDatabases.Success");
 
 			List<ListDatabasesResponse.ListDatabases_Database> listDatabasesResponse_databaseList = new List<ListDatabasesResponse.ListDatabases_Database>();
 			for (int i = 0; i < _ctx.Length("ListDatabases.DatabaseList.Length"); i++) {
 				ListDatabasesResponse.ListDatabases_Database database = new ListDatabasesResponse.ListDatabases_Database();
-				database.InstanceId = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].InstanceId");
-				database.DatabaseId = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].DatabaseId");
-				database.EnvType = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].EnvType");
-				database.SchemaName = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].SchemaName");
-				database.CatalogName = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].CatalogName");
-				database.Encoding = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].Encoding");
 				database.SearchName = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].SearchName");
-				database.State = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].State");
-				database.DbType = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].DbType");
-				database.Host = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].Host");
+				database.InstanceId = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].InstanceId");
 				database.Port = _ctx.IntegerValue("ListDatabases.DatabaseList["+ i +"].Port");
+				database.Encoding = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].Encoding");
+				database.Host = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].Host");
+				database.DatabaseId = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].DatabaseId");
+				database.DbType = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].DbType");
+				database.EnvType = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].EnvType");
 				database.Sid = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].Sid");
 				database.DbaName = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].DbaName");
 				database.DbaId = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].DbaId");
-
-				List<string> database_ownerIdList = new List<string>();
-				for (int j = 0; j < _ctx.Length("ListDatabases.DatabaseList["+ i +"].OwnerIdList.Length"); j++) {
-					database_ownerIdList.Add(_ctx.StringValue("ListDatabases.DatabaseList["+ i +"].OwnerIdList["+ j +"]"));
-				}
-				database.OwnerIdList = database_ownerIdList;
+				database.State = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].State");
+				database.CatalogName = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].CatalogName");
+				database.SchemaName = _ctx.StringValue("ListDatabases.DatabaseList["+ i +"].SchemaName");
 
 				List<string> database_ownerNameList = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListDatabases.DatabaseList["+ i +"].OwnerNameList.Length"); j++) {
 					database_ownerNameList.Add(_ctx.StringValue("ListDatabases.DatabaseList["+ i +"].OwnerNameList["+ j +"]"));
 				}
 				database.OwnerNameList = database_ownerNameList;
+
+				List<string> database_ownerIdList = new List<string>();
+				for (int j = 0; j < _ctx.Length("ListDatabases.DatabaseList["+ i +"].OwnerIdList.Length"); j++) {
+					database_ownerIdList.Add(_ctx.StringValue("ListDatabases.DatabaseList["+ i +"].OwnerIdList["+ j +"]"));
+				}
+				database.OwnerIdList = database_ownerIdList;
 
 				listDatabasesResponse_databaseList.Add(database);
 			}

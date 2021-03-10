@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dms_enterprise;
 using Aliyun.Acs.dms_enterprise.Transform;
 using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class GetInstanceRequest : RpcAcsRequest<GetInstanceResponse>
     {
         public GetInstanceRequest()
-            : base("dms-enterprise", "2018-11-01", "GetInstance", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "GetInstance")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,6 +50,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string host;
 
+		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -62,6 +64,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Sid")]
 		public string Sid
 		{
 			get
@@ -75,6 +78,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Port")]
 		public int? Port
 		{
 			get
@@ -88,6 +92,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "Host")]
 		public string Host
 		{
 			get

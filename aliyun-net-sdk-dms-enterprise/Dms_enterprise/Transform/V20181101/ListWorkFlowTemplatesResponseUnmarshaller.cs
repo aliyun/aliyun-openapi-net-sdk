@@ -32,30 +32,30 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			listWorkFlowTemplatesResponse.HttpResponse = _ctx.HttpResponse;
 			listWorkFlowTemplatesResponse.RequestId = _ctx.StringValue("ListWorkFlowTemplates.RequestId");
-			listWorkFlowTemplatesResponse.Success = _ctx.BooleanValue("ListWorkFlowTemplates.Success");
-			listWorkFlowTemplatesResponse.ErrorMessage = _ctx.StringValue("ListWorkFlowTemplates.ErrorMessage");
 			listWorkFlowTemplatesResponse.ErrorCode = _ctx.StringValue("ListWorkFlowTemplates.ErrorCode");
+			listWorkFlowTemplatesResponse.ErrorMessage = _ctx.StringValue("ListWorkFlowTemplates.ErrorMessage");
+			listWorkFlowTemplatesResponse.Success = _ctx.BooleanValue("ListWorkFlowTemplates.Success");
 
 			List<ListWorkFlowTemplatesResponse.ListWorkFlowTemplates_WorkFlowTemplate> listWorkFlowTemplatesResponse_workFlowTemplates = new List<ListWorkFlowTemplatesResponse.ListWorkFlowTemplates_WorkFlowTemplate>();
 			for (int i = 0; i < _ctx.Length("ListWorkFlowTemplates.WorkFlowTemplates.Length"); i++) {
 				ListWorkFlowTemplatesResponse.ListWorkFlowTemplates_WorkFlowTemplate workFlowTemplate = new ListWorkFlowTemplatesResponse.ListWorkFlowTemplates_WorkFlowTemplate();
-				workFlowTemplate.TemplateName = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].TemplateName");
 				workFlowTemplate.Comment = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].Comment");
-				workFlowTemplate.TemplateId = _ctx.LongValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].TemplateId");
-				workFlowTemplate.IsSystem = _ctx.IntegerValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].IsSystem");
-				workFlowTemplate.Enabled = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].Enabled");
 				workFlowTemplate.CreateUserId = _ctx.LongValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].CreateUserId");
+				workFlowTemplate.TemplateName = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].TemplateName");
+				workFlowTemplate.Enabled = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].Enabled");
+				workFlowTemplate.IsSystem = _ctx.IntegerValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].IsSystem");
+				workFlowTemplate.TemplateId = _ctx.LongValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].TemplateId");
 
 				List<ListWorkFlowTemplatesResponse.ListWorkFlowTemplates_WorkFlowTemplate.ListWorkFlowTemplates_WorkflowNode> workFlowTemplate_workflowNodes = new List<ListWorkFlowTemplatesResponse.ListWorkFlowTemplates_WorkFlowTemplate.ListWorkFlowTemplates_WorkflowNode>();
 				for (int j = 0; j < _ctx.Length("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes.Length"); j++) {
 					ListWorkFlowTemplatesResponse.ListWorkFlowTemplates_WorkFlowTemplate.ListWorkFlowTemplates_WorkflowNode workflowNode = new ListWorkFlowTemplatesResponse.ListWorkFlowTemplates_WorkFlowTemplate.ListWorkFlowTemplates_WorkflowNode();
-					workflowNode.NodeId = _ctx.LongValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeId");
-					workflowNode.TemplateId = _ctx.LongValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].TemplateId");
-					workflowNode.NodeName = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeName");
-					workflowNode.NodeType = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeType");
 					workflowNode.Comment = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].Comment");
 					workflowNode.Position = _ctx.IntegerValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].Position");
+					workflowNode.NodeName = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeName");
+					workflowNode.NodeType = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeType");
+					workflowNode.NodeId = _ctx.LongValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeId");
 					workflowNode.CreateUserId = _ctx.LongValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].CreateUserId");
+					workflowNode.TemplateId = _ctx.LongValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].TemplateId");
 
 					workFlowTemplate_workflowNodes.Add(workflowNode);
 				}
