@@ -22,16 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-	public class DescribeIntranetAttributeResponse : AcsResponse
+	public class EnableAdditionalBandwidthResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? intranetBandwidth;
-
-		private string expireTime;
-
-		private string bandwidthExpireTime;
+		private string orderId;
 
 		public string RequestId
 		{
@@ -45,39 +41,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? IntranetBandwidth
+		public string OrderId
 		{
 			get
 			{
-				return intranetBandwidth;
+				return orderId;
 			}
 			set	
 			{
-				intranetBandwidth = value;
-			}
-		}
-
-		public string ExpireTime
-		{
-			get
-			{
-				return expireTime;
-			}
-			set	
-			{
-				expireTime = value;
-			}
-		}
-
-		public string BandwidthExpireTime
-		{
-			get
-			{
-				return bandwidthExpireTime;
-			}
-			set	
-			{
-				bandwidthExpireTime = value;
+				orderId = value;
 			}
 		}
 	}

@@ -126,6 +126,12 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string currentMinorVersion;
 
+			private long? currentBandWidth;
+
+			private long? defaultBandWidth;
+
+			private bool? isOpenBandWidthService;
+
 			public string NodeId
 			{
 				get
@@ -291,6 +297,42 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					currentMinorVersion = value;
+				}
+			}
+
+			public long? CurrentBandWidth
+			{
+				get
+				{
+					return currentBandWidth;
+				}
+				set	
+				{
+					currentBandWidth = value;
+				}
+			}
+
+			public long? DefaultBandWidth
+			{
+				get
+				{
+					return defaultBandWidth;
+				}
+				set	
+				{
+					defaultBandWidth = value;
+				}
+			}
+
+			public bool? IsOpenBandWidthService
+			{
+				get
+				{
+					return isOpenBandWidthService;
+				}
+				set	
+				{
+					isOpenBandWidthService = value;
 				}
 			}
 		}

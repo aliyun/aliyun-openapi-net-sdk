@@ -59,6 +59,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				children.Capacity = _ctx.LongValue("DescribeClusterMemberInfo.ClusterChildren["+ i +"].Capacity");
 				children.BandWidth = _ctx.LongValue("DescribeClusterMemberInfo.ClusterChildren["+ i +"].BandWidth");
 				children.Connections = _ctx.LongValue("DescribeClusterMemberInfo.ClusterChildren["+ i +"].Connections");
+				children.CurrentBandWidth = _ctx.LongValue("DescribeClusterMemberInfo.ClusterChildren["+ i +"].CurrentBandWidth");
 
 				List<DescribeClusterMemberInfoResponse.DescribeClusterMemberInfo_Children.DescribeClusterMemberInfo_Item> children_items = new List<DescribeClusterMemberInfoResponse.DescribeClusterMemberInfo_Children.DescribeClusterMemberInfo_Item>();
 				for (int j = 0; j < _ctx.Length("DescribeClusterMemberInfo.ClusterChildren["+ i +"].Items.Length"); j++) {

@@ -53,6 +53,9 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				nodeInfo.InsName = _ctx.StringValue("DescribeRoleZoneInfo.Node["+ i +"].InsName");
 				nodeInfo.IsLatestVersion = _ctx.IntegerValue("DescribeRoleZoneInfo.Node["+ i +"].IsLatestVersion");
 				nodeInfo.CurrentMinorVersion = _ctx.StringValue("DescribeRoleZoneInfo.Node["+ i +"].CurrentMinorVersion");
+				nodeInfo.CurrentBandWidth = _ctx.LongValue("DescribeRoleZoneInfo.Node["+ i +"].CurrentBandWidth");
+				nodeInfo.DefaultBandWidth = _ctx.LongValue("DescribeRoleZoneInfo.Node["+ i +"].DefaultBandWidth");
+				nodeInfo.IsOpenBandWidthService = _ctx.BooleanValue("DescribeRoleZoneInfo.Node["+ i +"].IsOpenBandWidthService");
 
 				describeRoleZoneInfoResponse_node.Add(nodeInfo);
 			}

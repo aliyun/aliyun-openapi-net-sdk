@@ -138,6 +138,10 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private int? shardCount;
 
+			private long? currentBandWidth;
+
+			private long? bandWidth;
+
 			private List<DescribeDedicatedClusterInstanceList_InstanceNodes> instanceNodeList;
 
 			public int? CharacterType
@@ -377,6 +381,30 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					shardCount = value;
+				}
+			}
+
+			public long? CurrentBandWidth
+			{
+				get
+				{
+					return currentBandWidth;
+				}
+				set	
+				{
+					currentBandWidth = value;
+				}
+			}
+
+			public long? BandWidth
+			{
+				get
+				{
+					return bandWidth;
+				}
+				set	
+				{
+					bandWidth = value;
 				}
 			}
 

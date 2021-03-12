@@ -24,19 +24,17 @@ using Aliyun.Acs.R_kvstore.Model.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
-    public class DescribeIntranetAttributeResponseUnmarshaller
+    public class EnableAdditionalBandwidthResponseUnmarshaller
     {
-        public static DescribeIntranetAttributeResponse Unmarshall(UnmarshallerContext _ctx)
+        public static EnableAdditionalBandwidthResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DescribeIntranetAttributeResponse describeIntranetAttributeResponse = new DescribeIntranetAttributeResponse();
+			EnableAdditionalBandwidthResponse enableAdditionalBandwidthResponse = new EnableAdditionalBandwidthResponse();
 
-			describeIntranetAttributeResponse.HttpResponse = _ctx.HttpResponse;
-			describeIntranetAttributeResponse.RequestId = _ctx.StringValue("DescribeIntranetAttribute.RequestId");
-			describeIntranetAttributeResponse.IntranetBandwidth = _ctx.IntegerValue("DescribeIntranetAttribute.IntranetBandwidth");
-			describeIntranetAttributeResponse.ExpireTime = _ctx.StringValue("DescribeIntranetAttribute.ExpireTime");
-			describeIntranetAttributeResponse.BandwidthExpireTime = _ctx.StringValue("DescribeIntranetAttribute.BandwidthExpireTime");
+			enableAdditionalBandwidthResponse.HttpResponse = _ctx.HttpResponse;
+			enableAdditionalBandwidthResponse.RequestId = _ctx.StringValue("EnableAdditionalBandwidth.RequestId");
+			enableAdditionalBandwidthResponse.OrderId = _ctx.StringValue("EnableAdditionalBandwidth.OrderId");
         
-			return describeIntranetAttributeResponse;
+			return enableAdditionalBandwidthResponse;
         }
     }
 }

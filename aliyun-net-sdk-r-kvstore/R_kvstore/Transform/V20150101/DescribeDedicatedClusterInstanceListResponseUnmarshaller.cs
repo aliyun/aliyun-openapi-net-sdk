@@ -59,6 +59,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				instancesItem.ConnectionDomain = _ctx.StringValue("DescribeDedicatedClusterInstanceList.Instances["+ i +"].ConnectionDomain");
 				instancesItem.CreateTime = _ctx.StringValue("DescribeDedicatedClusterInstanceList.Instances["+ i +"].CreateTime");
 				instancesItem.ShardCount = _ctx.IntegerValue("DescribeDedicatedClusterInstanceList.Instances["+ i +"].ShardCount");
+				instancesItem.CurrentBandWidth = _ctx.LongValue("DescribeDedicatedClusterInstanceList.Instances["+ i +"].CurrentBandWidth");
+				instancesItem.BandWidth = _ctx.LongValue("DescribeDedicatedClusterInstanceList.Instances["+ i +"].BandWidth");
 
 				List<DescribeDedicatedClusterInstanceListResponse.DescribeDedicatedClusterInstanceList_InstancesItem.DescribeDedicatedClusterInstanceList_InstanceNodes> instancesItem_instanceNodeList = new List<DescribeDedicatedClusterInstanceListResponse.DescribeDedicatedClusterInstanceList_InstancesItem.DescribeDedicatedClusterInstanceList_InstanceNodes>();
 				for (int j = 0; j < _ctx.Length("DescribeDedicatedClusterInstanceList.Instances["+ i +"].InstanceNodeList.Length"); j++) {

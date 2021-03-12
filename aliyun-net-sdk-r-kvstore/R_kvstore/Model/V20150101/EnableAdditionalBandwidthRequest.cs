@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyIntranetAttributeRequest : RpcAcsRequest<ModifyIntranetAttributeResponse>
+    public class EnableAdditionalBandwidthRequest : RpcAcsRequest<EnableAdditionalBandwidthResponse>
     {
-        public ModifyIntranetAttributeRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyIntranetAttribute", "redisa", "openAPI")
+        public EnableAdditionalBandwidthRequest()
+            : base("R-kvstore", "2015-01-01", "EnableAdditionalBandwidth", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,13 +42,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
+		private string couponNo;
+
 		private string securityToken;
 
 		private string nodeId;
 
+		private string orderTimeLength;
+
+		private bool? autoPay;
+
 		private string resourceOwnerAccount;
 
-		private long? bandWidth;
+		private string bandwidth;
 
 		private string ownerAccount;
 
@@ -66,6 +72,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string CouponNo
+		{
+			get
+			{
+				return couponNo;
+			}
+			set	
+			{
+				couponNo = value;
+				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
 			}
 		}
 
@@ -95,6 +114,32 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string OrderTimeLength
+		{
+			get
+			{
+				return orderTimeLength;
+			}
+			set	
+			{
+				orderTimeLength = value;
+				DictionaryUtil.Add(QueryParameters, "OrderTimeLength", value);
+			}
+		}
+
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -108,16 +153,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public long? BandWidth
+		public string Bandwidth
 		{
 			get
 			{
-				return bandWidth;
+				return bandwidth;
 			}
 			set	
 			{
-				bandWidth = value;
-				DictionaryUtil.Add(QueryParameters, "BandWidth", value.ToString());
+				bandwidth = value;
+				DictionaryUtil.Add(QueryParameters, "Bandwidth", value);
 			}
 		}
 
@@ -160,9 +205,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override ModifyIntranetAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override EnableAdditionalBandwidthResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyIntranetAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return EnableAdditionalBandwidthResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

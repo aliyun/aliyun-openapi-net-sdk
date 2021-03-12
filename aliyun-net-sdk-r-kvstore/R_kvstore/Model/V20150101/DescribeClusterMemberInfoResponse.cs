@@ -138,6 +138,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private long? connections;
 
+			private long? currentBandWidth;
+
 			private List<DescribeClusterMemberInfo_Item> items;
 
 			public long? Id
@@ -377,6 +379,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					connections = value;
+				}
+			}
+
+			public long? CurrentBandWidth
+			{
+				get
+				{
+					return currentBandWidth;
+				}
+				set	
+				{
+					currentBandWidth = value;
 				}
 			}
 
