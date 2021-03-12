@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Domain;
 using Aliyun.Acs.Domain.Transform;
 using Aliyun.Acs.Domain.Transform.V20180208;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Domain.Model.V20180208
     public class QueryBidRecordsRequest : RpcAcsRequest<QueryBidRecordsResponse>
     {
         public QueryBidRecordsRequest()
-            : base("Domain", "2018-02-08", "QueryBidRecords")
+            : base("Domain", "2018-02-08", "QueryBidRecords", "domain", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
