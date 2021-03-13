@@ -26,14 +26,14 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 {
     public class DescribeAuditLogConfigResponseUnmarshaller
     {
-        public static DescribeAuditLogConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAuditLogConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAuditLogConfigResponse describeAuditLogConfigResponse = new DescribeAuditLogConfigResponse();
 
-			describeAuditLogConfigResponse.HttpResponse = context.HttpResponse;
-			describeAuditLogConfigResponse.RequestId = context.StringValue("DescribeAuditLogConfig.RequestId");
-			describeAuditLogConfigResponse.AuditLogStatus = context.StringValue("DescribeAuditLogConfig.AuditLogStatus");
-			describeAuditLogConfigResponse.DBClusterId = context.StringValue("DescribeAuditLogConfig.DBClusterId");
+			describeAuditLogConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeAuditLogConfigResponse.RequestId = _ctx.StringValue("DescribeAuditLogConfig.RequestId");
+			describeAuditLogConfigResponse.AuditLogStatus = _ctx.StringValue("DescribeAuditLogConfig.AuditLogStatus");
+			describeAuditLogConfigResponse.DBClusterId = _ctx.StringValue("DescribeAuditLogConfig.DBClusterId");
         
 			return describeAuditLogConfigResponse;
         }

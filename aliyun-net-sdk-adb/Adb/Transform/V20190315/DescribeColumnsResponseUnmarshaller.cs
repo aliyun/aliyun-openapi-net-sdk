@@ -26,23 +26,23 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 {
     public class DescribeColumnsResponseUnmarshaller
     {
-        public static DescribeColumnsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeColumnsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeColumnsResponse describeColumnsResponse = new DescribeColumnsResponse();
 
-			describeColumnsResponse.HttpResponse = context.HttpResponse;
-			describeColumnsResponse.RequestId = context.StringValue("DescribeColumns.RequestId");
+			describeColumnsResponse.HttpResponse = _ctx.HttpResponse;
+			describeColumnsResponse.RequestId = _ctx.StringValue("DescribeColumns.RequestId");
 
 			List<DescribeColumnsResponse.DescribeColumns_Column> describeColumnsResponse_items = new List<DescribeColumnsResponse.DescribeColumns_Column>();
-			for (int i = 0; i < context.Length("DescribeColumns.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeColumns.Items.Length"); i++) {
 				DescribeColumnsResponse.DescribeColumns_Column column = new DescribeColumnsResponse.DescribeColumns_Column();
-				column.DBClusterId = context.StringValue("DescribeColumns.Items["+ i +"].DBClusterId");
-				column.SchemaName = context.StringValue("DescribeColumns.Items["+ i +"].SchemaName");
-				column.TableName = context.StringValue("DescribeColumns.Items["+ i +"].TableName");
-				column.ColumnName = context.StringValue("DescribeColumns.Items["+ i +"].ColumnName");
-				column.Type = context.StringValue("DescribeColumns.Items["+ i +"].Type");
-				column.PrimaryKey = context.BooleanValue("DescribeColumns.Items["+ i +"].PrimaryKey");
-				column.AutoIncrementColumn = context.BooleanValue("DescribeColumns.Items["+ i +"].AutoIncrementColumn");
+				column.DBClusterId = _ctx.StringValue("DescribeColumns.Items["+ i +"].DBClusterId");
+				column.SchemaName = _ctx.StringValue("DescribeColumns.Items["+ i +"].SchemaName");
+				column.TableName = _ctx.StringValue("DescribeColumns.Items["+ i +"].TableName");
+				column.ColumnName = _ctx.StringValue("DescribeColumns.Items["+ i +"].ColumnName");
+				column.Type = _ctx.StringValue("DescribeColumns.Items["+ i +"].Type");
+				column.PrimaryKey = _ctx.BooleanValue("DescribeColumns.Items["+ i +"].PrimaryKey");
+				column.AutoIncrementColumn = _ctx.BooleanValue("DescribeColumns.Items["+ i +"].AutoIncrementColumn");
 
 				describeColumnsResponse_items.Add(column);
 			}

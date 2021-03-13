@@ -34,8 +34,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.adb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.adb.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -44,13 +44,29 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string dBClusterDescription;
 
-		private string clientToken;
-
 		private string storageType;
 
 		private string mode;
 
 		private string resourceGroupId;
+
+		private string period;
+
+		private string backupSetID;
+
+		private long? ownerId;
+
+		private string dBNodeGroupCount;
+
+		private string vSwitchId;
+
+		private string zoneId;
+
+		private string computeResource;
+
+		private string sourceDBInstanceName;
+
+		private string clientToken;
 
 		private string storageResource;
 
@@ -58,7 +74,7 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string dBClusterNetworkType;
 
-		private string period;
+		private string restoreTime;
 
 		private string resourceOwnerAccount;
 
@@ -68,23 +84,15 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string dBClusterClass;
 
-		private long? ownerId;
-
-		private string dBNodeGroupCount;
-
 		private string usedTime;
 
-		private string vSwitchId;
+		private string restoreType;
 
 		private string dBNodeStorage;
 
 		private string executorCount;
 
 		private string vPCId;
-
-		private string zoneId;
-
-		private string computeResource;
 
 		private string payType;
 
@@ -111,19 +119,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				dBClusterDescription = value;
 				DictionaryUtil.Add(QueryParameters, "DBClusterDescription", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -166,6 +161,123 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
+		public string Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value);
+			}
+		}
+
+		public string BackupSetID
+		{
+			get
+			{
+				return backupSetID;
+			}
+			set	
+			{
+				backupSetID = value;
+				DictionaryUtil.Add(QueryParameters, "BackupSetID", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string DBNodeGroupCount
+		{
+			get
+			{
+				return dBNodeGroupCount;
+			}
+			set	
+			{
+				dBNodeGroupCount = value;
+				DictionaryUtil.Add(QueryParameters, "DBNodeGroupCount", value);
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string ComputeResource
+		{
+			get
+			{
+				return computeResource;
+			}
+			set	
+			{
+				computeResource = value;
+				DictionaryUtil.Add(QueryParameters, "ComputeResource", value);
+			}
+		}
+
+		public string SourceDBInstanceName
+		{
+			get
+			{
+				return sourceDBInstanceName;
+			}
+			set	
+			{
+				sourceDBInstanceName = value;
+				DictionaryUtil.Add(QueryParameters, "SourceDBInstanceName", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
 		public string StorageResource
 		{
 			get
@@ -205,16 +317,16 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string Period
+		public string RestoreTime
 		{
 			get
 			{
-				return period;
+				return restoreTime;
 			}
 			set	
 			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value);
+				restoreTime = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreTime", value);
 			}
 		}
 
@@ -270,32 +382,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string DBNodeGroupCount
-		{
-			get
-			{
-				return dBNodeGroupCount;
-			}
-			set	
-			{
-				dBNodeGroupCount = value;
-				DictionaryUtil.Add(QueryParameters, "DBNodeGroupCount", value);
-			}
-		}
-
 		public string UsedTime
 		{
 			get
@@ -309,16 +395,16 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string VSwitchId
+		public string RestoreType
 		{
 			get
 			{
-				return vSwitchId;
+				return restoreType;
 			}
 			set	
 			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+				restoreType = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreType", value);
 			}
 		}
 
@@ -358,32 +444,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				vPCId = value;
 				DictionaryUtil.Add(QueryParameters, "VPCId", value);
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public string ComputeResource
-		{
-			get
-			{
-				return computeResource;
-			}
-			set	
-			{
-				computeResource = value;
-				DictionaryUtil.Add(QueryParameters, "ComputeResource", value);
 			}
 		}
 

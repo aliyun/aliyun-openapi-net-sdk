@@ -25,45 +25,21 @@ namespace Aliyun.Acs.adb.Model.V20190315
 	public class DescribeTablePartitionDiagnoseResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? pageNumber;
-
 		private int? totalCount;
 
 		private int? pageSize;
 
-		private int? dBClusterId;
+		private string requestId;
 
-		private long? suggestMinRecordsPerPartition;
+		private int? pageNumber;
+
+		private string dBClusterId;
 
 		private long? suggestMaxRecordsPerPartition;
 
+		private long? suggestMinRecordsPerPartition;
+
 		private List<DescribeTablePartitionDiagnose_TablePartitionDiagnose> items;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
 
 		public int? TotalCount
 		{
@@ -89,7 +65,31 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public int? DBClusterId
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public string DBClusterId
 		{
 			get
 			{
@@ -98,18 +98,6 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				dBClusterId = value;
-			}
-		}
-
-		public long? SuggestMinRecordsPerPartition
-		{
-			get
-			{
-				return suggestMinRecordsPerPartition;
-			}
-			set	
-			{
-				suggestMinRecordsPerPartition = value;
 			}
 		}
 
@@ -122,6 +110,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				suggestMaxRecordsPerPartition = value;
+			}
+		}
+
+		public long? SuggestMinRecordsPerPartition
+		{
+			get
+			{
+				return suggestMinRecordsPerPartition;
+			}
+			set	
+			{
+				suggestMinRecordsPerPartition = value;
 			}
 		}
 
@@ -140,25 +140,13 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		public class DescribeTablePartitionDiagnose_TablePartitionDiagnose
 		{
 
-			private string schemaName;
-
 			private string tableName;
 
 			private int? partitionNumber;
 
 			private string partitionDetail;
 
-			public string SchemaName
-			{
-				get
-				{
-					return schemaName;
-				}
-				set	
-				{
-					schemaName = value;
-				}
-			}
+			private string schemaName;
 
 			public string TableName
 			{
@@ -193,6 +181,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					partitionDetail = value;
+				}
+			}
+
+			public string SchemaName
+			{
+				get
+				{
+					return schemaName;
+				}
+				set	
+				{
+					schemaName = value;
 				}
 			}
 		}

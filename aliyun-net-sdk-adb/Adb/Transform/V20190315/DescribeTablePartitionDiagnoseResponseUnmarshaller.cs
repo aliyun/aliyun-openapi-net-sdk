@@ -26,26 +26,26 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 {
     public class DescribeTablePartitionDiagnoseResponseUnmarshaller
     {
-        public static DescribeTablePartitionDiagnoseResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeTablePartitionDiagnoseResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeTablePartitionDiagnoseResponse describeTablePartitionDiagnoseResponse = new DescribeTablePartitionDiagnoseResponse();
 
-			describeTablePartitionDiagnoseResponse.HttpResponse = context.HttpResponse;
-			describeTablePartitionDiagnoseResponse.RequestId = context.StringValue("DescribeTablePartitionDiagnose.RequestId");
-			describeTablePartitionDiagnoseResponse.PageNumber = context.IntegerValue("DescribeTablePartitionDiagnose.PageNumber");
-			describeTablePartitionDiagnoseResponse.TotalCount = context.IntegerValue("DescribeTablePartitionDiagnose.TotalCount");
-			describeTablePartitionDiagnoseResponse.PageSize = context.IntegerValue("DescribeTablePartitionDiagnose.PageSize");
-			describeTablePartitionDiagnoseResponse.DBClusterId = context.IntegerValue("DescribeTablePartitionDiagnose.DBClusterId");
-			describeTablePartitionDiagnoseResponse.SuggestMinRecordsPerPartition = context.LongValue("DescribeTablePartitionDiagnose.SuggestMinRecordsPerPartition");
-			describeTablePartitionDiagnoseResponse.SuggestMaxRecordsPerPartition = context.LongValue("DescribeTablePartitionDiagnose.SuggestMaxRecordsPerPartition");
+			describeTablePartitionDiagnoseResponse.HttpResponse = _ctx.HttpResponse;
+			describeTablePartitionDiagnoseResponse.TotalCount = _ctx.IntegerValue("DescribeTablePartitionDiagnose.TotalCount");
+			describeTablePartitionDiagnoseResponse.PageSize = _ctx.IntegerValue("DescribeTablePartitionDiagnose.PageSize");
+			describeTablePartitionDiagnoseResponse.RequestId = _ctx.StringValue("DescribeTablePartitionDiagnose.RequestId");
+			describeTablePartitionDiagnoseResponse.PageNumber = _ctx.IntegerValue("DescribeTablePartitionDiagnose.PageNumber");
+			describeTablePartitionDiagnoseResponse.DBClusterId = _ctx.StringValue("DescribeTablePartitionDiagnose.DBClusterId");
+			describeTablePartitionDiagnoseResponse.SuggestMaxRecordsPerPartition = _ctx.LongValue("DescribeTablePartitionDiagnose.SuggestMaxRecordsPerPartition");
+			describeTablePartitionDiagnoseResponse.SuggestMinRecordsPerPartition = _ctx.LongValue("DescribeTablePartitionDiagnose.SuggestMinRecordsPerPartition");
 
 			List<DescribeTablePartitionDiagnoseResponse.DescribeTablePartitionDiagnose_TablePartitionDiagnose> describeTablePartitionDiagnoseResponse_items = new List<DescribeTablePartitionDiagnoseResponse.DescribeTablePartitionDiagnose_TablePartitionDiagnose>();
-			for (int i = 0; i < context.Length("DescribeTablePartitionDiagnose.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeTablePartitionDiagnose.Items.Length"); i++) {
 				DescribeTablePartitionDiagnoseResponse.DescribeTablePartitionDiagnose_TablePartitionDiagnose tablePartitionDiagnose = new DescribeTablePartitionDiagnoseResponse.DescribeTablePartitionDiagnose_TablePartitionDiagnose();
-				tablePartitionDiagnose.SchemaName = context.StringValue("DescribeTablePartitionDiagnose.Items["+ i +"].SchemaName");
-				tablePartitionDiagnose.TableName = context.StringValue("DescribeTablePartitionDiagnose.Items["+ i +"].TableName");
-				tablePartitionDiagnose.PartitionNumber = context.IntegerValue("DescribeTablePartitionDiagnose.Items["+ i +"].PartitionNumber");
-				tablePartitionDiagnose.PartitionDetail = context.StringValue("DescribeTablePartitionDiagnose.Items["+ i +"].PartitionDetail");
+				tablePartitionDiagnose.TableName = _ctx.StringValue("DescribeTablePartitionDiagnose.Items["+ i +"].TableName");
+				tablePartitionDiagnose.PartitionNumber = _ctx.IntegerValue("DescribeTablePartitionDiagnose.Items["+ i +"].PartitionNumber");
+				tablePartitionDiagnose.PartitionDetail = _ctx.StringValue("DescribeTablePartitionDiagnose.Items["+ i +"].PartitionDetail");
+				tablePartitionDiagnose.SchemaName = _ctx.StringValue("DescribeTablePartitionDiagnose.Items["+ i +"].SchemaName");
 
 				describeTablePartitionDiagnoseResponse_items.Add(tablePartitionDiagnose);
 			}

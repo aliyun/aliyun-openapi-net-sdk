@@ -26,12 +26,12 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 {
     public class KillProcessResponseUnmarshaller
     {
-        public static KillProcessResponse Unmarshall(UnmarshallerContext context)
+        public static KillProcessResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			KillProcessResponse killProcessResponse = new KillProcessResponse();
 
-			killProcessResponse.HttpResponse = context.HttpResponse;
-			killProcessResponse.RequestId = context.StringValue("KillProcess.RequestId");
+			killProcessResponse.HttpResponse = _ctx.HttpResponse;
+			killProcessResponse.RequestId = _ctx.StringValue("KillProcess.RequestId");
         
 			return killProcessResponse;
         }

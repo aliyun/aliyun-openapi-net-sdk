@@ -26,33 +26,38 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 {
     public class DescribeSlowLogRecordsResponseUnmarshaller
     {
-        public static DescribeSlowLogRecordsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSlowLogRecordsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSlowLogRecordsResponse describeSlowLogRecordsResponse = new DescribeSlowLogRecordsResponse();
 
-			describeSlowLogRecordsResponse.HttpResponse = context.HttpResponse;
-			describeSlowLogRecordsResponse.RequestId = context.StringValue("DescribeSlowLogRecords.RequestId");
-			describeSlowLogRecordsResponse.TotalCount = context.StringValue("DescribeSlowLogRecords.TotalCount");
-			describeSlowLogRecordsResponse.PageNumber = context.StringValue("DescribeSlowLogRecords.PageNumber");
-			describeSlowLogRecordsResponse.PageSize = context.StringValue("DescribeSlowLogRecords.PageSize");
-			describeSlowLogRecordsResponse.DBClusterId = context.StringValue("DescribeSlowLogRecords.DBClusterId");
+			describeSlowLogRecordsResponse.HttpResponse = _ctx.HttpResponse;
+			describeSlowLogRecordsResponse.TotalCount = _ctx.StringValue("DescribeSlowLogRecords.TotalCount");
+			describeSlowLogRecordsResponse.RequestId = _ctx.StringValue("DescribeSlowLogRecords.RequestId");
+			describeSlowLogRecordsResponse.PageSize = _ctx.StringValue("DescribeSlowLogRecords.PageSize");
+			describeSlowLogRecordsResponse.PageNumber = _ctx.StringValue("DescribeSlowLogRecords.PageNumber");
+			describeSlowLogRecordsResponse.DBClusterId = _ctx.StringValue("DescribeSlowLogRecords.DBClusterId");
 
 			List<DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_SlowLogRecord> describeSlowLogRecordsResponse_items = new List<DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_SlowLogRecord>();
-			for (int i = 0; i < context.Length("DescribeSlowLogRecords.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeSlowLogRecords.Items.Length"); i++) {
 				DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_SlowLogRecord slowLogRecord = new DescribeSlowLogRecordsResponse.DescribeSlowLogRecords_SlowLogRecord();
-				slowLogRecord.HostAddress = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].HostAddress");
-				slowLogRecord.DBName = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].DBName");
-				slowLogRecord.SQLText = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].SQLText");
-				slowLogRecord.QueryTime = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].QueryTime");
-				slowLogRecord.ReturnRowCounts = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].ReturnRowCounts");
-				slowLogRecord.ExecutionStartTime = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].ExecutionStartTime");
-				slowLogRecord.ParseRowCounts = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].ParseRowCounts");
-				slowLogRecord.ProcessID = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].ProcessID");
-				slowLogRecord.UserName = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].UserName");
-				slowLogRecord.ScanSize = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].ScanSize");
-				slowLogRecord.PeakMemoryUsage = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].PeakMemoryUsage");
-				slowLogRecord.QueueTime = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].QueueTime");
-				slowLogRecord.State = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].State");
+				slowLogRecord.OutputSize = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].OutputSize");
+				slowLogRecord.UserName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].UserName");
+				slowLogRecord.PeakMemoryUsage = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].PeakMemoryUsage");
+				slowLogRecord.ExecutionStartTime = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].ExecutionStartTime");
+				slowLogRecord.ParseRowCounts = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].ParseRowCounts");
+				slowLogRecord.QueryTime = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].QueryTime");
+				slowLogRecord.ScanTime = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].ScanTime");
+				slowLogRecord.HostAddress = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].HostAddress");
+				slowLogRecord.SQLText = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].SQLText");
+				slowLogRecord.WallTime = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].WallTime");
+				slowLogRecord.ScanRows = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].ScanRows");
+				slowLogRecord.State = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].State");
+				slowLogRecord.ReturnRowCounts = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].ReturnRowCounts");
+				slowLogRecord.PlanningTime = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].PlanningTime");
+				slowLogRecord.DBName = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].DBName");
+				slowLogRecord.QueueTime = _ctx.LongValue("DescribeSlowLogRecords.Items["+ i +"].QueueTime");
+				slowLogRecord.ProcessID = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].ProcessID");
+				slowLogRecord.ScanSize = _ctx.StringValue("DescribeSlowLogRecords.Items["+ i +"].ScanSize");
 
 				describeSlowLogRecordsResponse_items.Add(slowLogRecord);
 			}

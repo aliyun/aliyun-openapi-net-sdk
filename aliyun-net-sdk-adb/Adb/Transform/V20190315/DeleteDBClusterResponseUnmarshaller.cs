@@ -26,12 +26,14 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 {
     public class DeleteDBClusterResponseUnmarshaller
     {
-        public static DeleteDBClusterResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDBClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDBClusterResponse deleteDBClusterResponse = new DeleteDBClusterResponse();
 
-			deleteDBClusterResponse.HttpResponse = context.HttpResponse;
-			deleteDBClusterResponse.RequestId = context.StringValue("DeleteDBCluster.RequestId");
+			deleteDBClusterResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDBClusterResponse.RequestId = _ctx.StringValue("DeleteDBCluster.RequestId");
+			deleteDBClusterResponse.TaskId = _ctx.IntegerValue("DeleteDBCluster.TaskId");
+			deleteDBClusterResponse.DBClusterId = _ctx.StringValue("DeleteDBCluster.DBClusterId");
         
 			return deleteDBClusterResponse;
         }

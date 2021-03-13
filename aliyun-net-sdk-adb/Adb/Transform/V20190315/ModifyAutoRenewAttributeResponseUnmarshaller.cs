@@ -26,12 +26,12 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 {
     public class ModifyAutoRenewAttributeResponseUnmarshaller
     {
-        public static ModifyAutoRenewAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyAutoRenewAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyAutoRenewAttributeResponse modifyAutoRenewAttributeResponse = new ModifyAutoRenewAttributeResponse();
 
-			modifyAutoRenewAttributeResponse.HttpResponse = context.HttpResponse;
-			modifyAutoRenewAttributeResponse.RequestId = context.StringValue("ModifyAutoRenewAttribute.RequestId");
+			modifyAutoRenewAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			modifyAutoRenewAttributeResponse.RequestId = _ctx.StringValue("ModifyAutoRenewAttribute.RequestId");
         
 			return modifyAutoRenewAttributeResponse;
         }

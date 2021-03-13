@@ -26,12 +26,12 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 {
     public class ReleaseClusterPublicConnectionResponseUnmarshaller
     {
-        public static ReleaseClusterPublicConnectionResponse Unmarshall(UnmarshallerContext context)
+        public static ReleaseClusterPublicConnectionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ReleaseClusterPublicConnectionResponse releaseClusterPublicConnectionResponse = new ReleaseClusterPublicConnectionResponse();
 
-			releaseClusterPublicConnectionResponse.HttpResponse = context.HttpResponse;
-			releaseClusterPublicConnectionResponse.RequestId = context.StringValue("ReleaseClusterPublicConnection.RequestId");
+			releaseClusterPublicConnectionResponse.HttpResponse = _ctx.HttpResponse;
+			releaseClusterPublicConnectionResponse.RequestId = _ctx.StringValue("ReleaseClusterPublicConnection.RequestId");
         
 			return releaseClusterPublicConnectionResponse;
         }

@@ -183,6 +183,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 						private List<string> supportedComputeResource;
 
+						private DescribeAvailableResource_SupportedElasticIOResource supportedElasticIOResource;
+
 						public string StorageType
 						{
 							get
@@ -216,6 +218,64 @@ namespace Aliyun.Acs.adb.Model.V20190315
 							set	
 							{
 								supportedComputeResource = value;
+							}
+						}
+
+						public DescribeAvailableResource_SupportedElasticIOResource SupportedElasticIOResource
+						{
+							get
+							{
+								return supportedElasticIOResource;
+							}
+							set	
+							{
+								supportedElasticIOResource = value;
+							}
+						}
+
+						public class DescribeAvailableResource_SupportedElasticIOResource
+						{
+
+							private string minCount;
+
+							private string maxCount;
+
+							private string step;
+
+							public string MinCount
+							{
+								get
+								{
+									return minCount;
+								}
+								set	
+								{
+									minCount = value;
+								}
+							}
+
+							public string MaxCount
+							{
+								get
+								{
+									return maxCount;
+								}
+								set	
+								{
+									maxCount = value;
+								}
+							}
+
+							public string Step
+							{
+								get
+								{
+									return step;
+								}
+								set	
+								{
+									step = value;
+								}
 							}
 						}
 					}

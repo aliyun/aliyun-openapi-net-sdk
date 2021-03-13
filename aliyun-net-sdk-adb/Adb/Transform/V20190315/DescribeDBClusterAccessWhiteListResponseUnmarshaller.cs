@@ -26,19 +26,19 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 {
     public class DescribeDBClusterAccessWhiteListResponseUnmarshaller
     {
-        public static DescribeDBClusterAccessWhiteListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDBClusterAccessWhiteListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDBClusterAccessWhiteListResponse describeDBClusterAccessWhiteListResponse = new DescribeDBClusterAccessWhiteListResponse();
 
-			describeDBClusterAccessWhiteListResponse.HttpResponse = context.HttpResponse;
-			describeDBClusterAccessWhiteListResponse.RequestId = context.StringValue("DescribeDBClusterAccessWhiteList.RequestId");
+			describeDBClusterAccessWhiteListResponse.HttpResponse = _ctx.HttpResponse;
+			describeDBClusterAccessWhiteListResponse.RequestId = _ctx.StringValue("DescribeDBClusterAccessWhiteList.RequestId");
 
 			List<DescribeDBClusterAccessWhiteListResponse.DescribeDBClusterAccessWhiteList_IPArray> describeDBClusterAccessWhiteListResponse_items = new List<DescribeDBClusterAccessWhiteListResponse.DescribeDBClusterAccessWhiteList_IPArray>();
-			for (int i = 0; i < context.Length("DescribeDBClusterAccessWhiteList.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDBClusterAccessWhiteList.Items.Length"); i++) {
 				DescribeDBClusterAccessWhiteListResponse.DescribeDBClusterAccessWhiteList_IPArray iPArray = new DescribeDBClusterAccessWhiteListResponse.DescribeDBClusterAccessWhiteList_IPArray();
-				iPArray.DBClusterIPArrayName = context.StringValue("DescribeDBClusterAccessWhiteList.Items["+ i +"].DBClusterIPArrayName");
-				iPArray.SecurityIPList = context.StringValue("DescribeDBClusterAccessWhiteList.Items["+ i +"].SecurityIPList");
-				iPArray.DBClusterIPArrayAttribute = context.StringValue("DescribeDBClusterAccessWhiteList.Items["+ i +"].DBClusterIPArrayAttribute");
+				iPArray.DBClusterIPArrayName = _ctx.StringValue("DescribeDBClusterAccessWhiteList.Items["+ i +"].DBClusterIPArrayName");
+				iPArray.SecurityIPList = _ctx.StringValue("DescribeDBClusterAccessWhiteList.Items["+ i +"].SecurityIPList");
+				iPArray.DBClusterIPArrayAttribute = _ctx.StringValue("DescribeDBClusterAccessWhiteList.Items["+ i +"].DBClusterIPArrayAttribute");
 
 				describeDBClusterAccessWhiteListResponse_items.Add(iPArray);
 			}

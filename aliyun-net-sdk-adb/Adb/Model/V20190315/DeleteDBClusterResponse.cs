@@ -27,6 +27,10 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string requestId;
 
+		private int? taskId;
+
+		private string dBClusterId;
+
 		public string RequestId
 		{
 			get
@@ -36,6 +40,30 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+			}
+		}
+
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
 			}
 		}
 	}

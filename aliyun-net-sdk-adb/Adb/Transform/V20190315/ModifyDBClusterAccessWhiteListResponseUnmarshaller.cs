@@ -26,14 +26,14 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 {
     public class ModifyDBClusterAccessWhiteListResponseUnmarshaller
     {
-        public static ModifyDBClusterAccessWhiteListResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDBClusterAccessWhiteListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDBClusterAccessWhiteListResponse modifyDBClusterAccessWhiteListResponse = new ModifyDBClusterAccessWhiteListResponse();
 
-			modifyDBClusterAccessWhiteListResponse.HttpResponse = context.HttpResponse;
-			modifyDBClusterAccessWhiteListResponse.RequestId = context.StringValue("ModifyDBClusterAccessWhiteList.RequestId");
-			modifyDBClusterAccessWhiteListResponse.DBClusterId = context.StringValue("ModifyDBClusterAccessWhiteList.DBClusterId");
-			modifyDBClusterAccessWhiteListResponse.TaskId = context.IntegerValue("ModifyDBClusterAccessWhiteList.TaskId");
+			modifyDBClusterAccessWhiteListResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDBClusterAccessWhiteListResponse.RequestId = _ctx.StringValue("ModifyDBClusterAccessWhiteList.RequestId");
+			modifyDBClusterAccessWhiteListResponse.DBClusterId = _ctx.StringValue("ModifyDBClusterAccessWhiteList.DBClusterId");
+			modifyDBClusterAccessWhiteListResponse.TaskId = _ctx.IntegerValue("ModifyDBClusterAccessWhiteList.TaskId");
         
 			return modifyDBClusterAccessWhiteListResponse;
         }
