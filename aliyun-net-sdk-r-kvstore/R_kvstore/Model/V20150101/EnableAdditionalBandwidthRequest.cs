@@ -46,6 +46,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string securityToken;
 
+		private string sourceBiz;
+
 		private string nodeId;
 
 		private string orderTimeLength;
@@ -98,6 +100,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string SourceBiz
+		{
+			get
+			{
+				return sourceBiz;
+			}
+			set	
+			{
+				sourceBiz = value;
+				DictionaryUtil.Add(QueryParameters, "SourceBiz", value);
 			}
 		}
 
