@@ -40,7 +40,37 @@ namespace Aliyun.Acs.imageenhan.Model.V20190930
 			Method = MethodType.POST;
         }
 
+		private long? upscaleFactor;
+
+		private string mode;
+
 		private string url;
+
+		public long? UpscaleFactor
+		{
+			get
+			{
+				return upscaleFactor;
+			}
+			set	
+			{
+				upscaleFactor = value;
+				DictionaryUtil.Add(BodyParameters, "UpscaleFactor", value.ToString());
+			}
+		}
+
+		public string Mode
+		{
+			get
+			{
+				return mode;
+			}
+			set	
+			{
+				mode = value;
+				DictionaryUtil.Add(BodyParameters, "Mode", value);
+			}
+		}
 
 		public string Url
 		{
