@@ -152,6 +152,14 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private string caption;
 
+			private bool? isPartitionTable;
+
+			private long? readCount;
+
+			private long? viewCount;
+
+			private long? favoriteCount;
+
 			public string TableName
 			{
 				get
@@ -389,6 +397,54 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					caption = value;
+				}
+			}
+
+			public bool? IsPartitionTable
+			{
+				get
+				{
+					return isPartitionTable;
+				}
+				set	
+				{
+					isPartitionTable = value;
+				}
+			}
+
+			public long? ReadCount
+			{
+				get
+				{
+					return readCount;
+				}
+				set	
+				{
+					readCount = value;
+				}
+			}
+
+			public long? ViewCount
+			{
+				get
+				{
+					return viewCount;
+				}
+				set	
+				{
+					viewCount = value;
+				}
+			}
+
+			public long? FavoriteCount
+			{
+				get
+				{
+					return favoriteCount;
+				}
+				set	
+				{
+					favoriteCount = value;
 				}
 			}
 		}

@@ -63,9 +63,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private int? envType;
 
-		private int? hasPart;
-
 		private string location;
+
+		private int? hasPart;
 
 		private string tableName;
 
@@ -119,9 +119,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					DictionaryUtil.Add(BodyParameters,"Columns." + (i + 1) + ".IsPartitionCol", columnss[i].IsPartitionCol);
 					DictionaryUtil.Add(BodyParameters,"Columns." + (i + 1) + ".ColumnNameCn", columnss[i].ColumnNameCn);
 					DictionaryUtil.Add(BodyParameters,"Columns." + (i + 1) + ".Length", columnss[i].Length);
-					DictionaryUtil.Add(BodyParameters,"Columns." + (i + 1) + ".IsNullable", columnss[i].IsNullable);
 					DictionaryUtil.Add(BodyParameters,"Columns." + (i + 1) + ".Comment", columnss[i].Comment);
-					DictionaryUtil.Add(BodyParameters,"Columns." + (i + 1) + ".IsPrimaryKey", columnss[i].IsPrimaryKey);
 					DictionaryUtil.Add(BodyParameters,"Columns." + (i + 1) + ".ColumnName", columnss[i].ColumnName);
 					DictionaryUtil.Add(BodyParameters,"Columns." + (i + 1) + ".ColumnType", columnss[i].ColumnType);
 				}
@@ -237,19 +235,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? HasPart
-		{
-			get
-			{
-				return hasPart;
-			}
-			set	
-			{
-				hasPart = value;
-				DictionaryUtil.Add(QueryParameters, "HasPart", value.ToString());
-			}
-		}
-
 		public string Location
 		{
 			get
@@ -260,6 +245,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				location = value;
 				DictionaryUtil.Add(QueryParameters, "Location", value);
+			}
+		}
+
+		public int? HasPart
+		{
+			get
+			{
+				return hasPart;
+			}
+			set	
+			{
+				hasPart = value;
+				DictionaryUtil.Add(QueryParameters, "HasPart", value.ToString());
 			}
 		}
 
@@ -333,17 +331,13 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private int? seqNumber;
 
-			private int? isPartitionCol;
+			private bool? isPartitionCol;
 
 			private string columnNameCn;
 
 			private int? length;
 
-			private int? isNullable;
-
 			private string comment;
-
-			private int? isPrimaryKey;
 
 			private string columnName;
 
@@ -361,7 +355,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public int? IsPartitionCol
+			public bool? IsPartitionCol
 			{
 				get
 				{
@@ -397,18 +391,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public int? IsNullable
-			{
-				get
-				{
-					return isNullable;
-				}
-				set	
-				{
-					isNullable = value;
-				}
-			}
-
 			public string Comment
 			{
 				get
@@ -418,18 +400,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					comment = value;
-				}
-			}
-
-			public int? IsPrimaryKey
-			{
-				get
-				{
-					return isPrimaryKey;
-				}
-				set	
-				{
-					isPrimaryKey = value;
 				}
 			}
 

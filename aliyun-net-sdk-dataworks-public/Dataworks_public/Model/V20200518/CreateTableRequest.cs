@@ -41,13 +41,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private int? visibility;
-
-		private long? physicsLevelId;
+		private string clientToken;
 
 		private List<Columns> columnss = new List<Columns>(){ };
-
-		private string ownerId;
 
 		private int? lifeCycle;
 
@@ -57,17 +53,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string endpoint;
 
-		private int? isView;
-
-		private string externalTableType;
-
 		private int? envType;
 
 		private int? hasPart;
-
-		private string location;
-
-		private string comment;
 
 		private string tableName;
 
@@ -77,29 +65,30 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private long? categoryId;
 
-		public int? Visibility
-		{
-			get
-			{
-				return visibility;
-			}
-			set	
-			{
-				visibility = value;
-				DictionaryUtil.Add(QueryParameters, "Visibility", value.ToString());
-			}
-		}
+		private int? visibility;
 
-		public long? PhysicsLevelId
+		private long? physicsLevelId;
+
+		private string ownerId;
+
+		private int? isView;
+
+		private string externalTableType;
+
+		private string location;
+
+		private string comment;
+
+		public string ClientToken
 		{
 			get
 			{
-				return physicsLevelId;
+				return clientToken;
 			}
 			set	
 			{
-				physicsLevelId = value;
-				DictionaryUtil.Add(QueryParameters, "PhysicsLevelId", value.ToString());
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -119,25 +108,10 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					DictionaryUtil.Add(BodyParameters,"Columns." + (i + 1) + ".IsPartitionCol", columnss[i].IsPartitionCol);
 					DictionaryUtil.Add(BodyParameters,"Columns." + (i + 1) + ".ColumnNameCn", columnss[i].ColumnNameCn);
 					DictionaryUtil.Add(BodyParameters,"Columns." + (i + 1) + ".Length", columnss[i].Length);
-					DictionaryUtil.Add(BodyParameters,"Columns." + (i + 1) + ".IsNullable", columnss[i].IsNullable);
 					DictionaryUtil.Add(BodyParameters,"Columns." + (i + 1) + ".Comment", columnss[i].Comment);
-					DictionaryUtil.Add(BodyParameters,"Columns." + (i + 1) + ".IsPrimaryKey", columnss[i].IsPrimaryKey);
 					DictionaryUtil.Add(BodyParameters,"Columns." + (i + 1) + ".ColumnName", columnss[i].ColumnName);
 					DictionaryUtil.Add(BodyParameters,"Columns." + (i + 1) + ".ColumnType", columnss[i].ColumnType);
 				}
-			}
-		}
-
-		public string OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 
@@ -198,32 +172,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? IsView
-		{
-			get
-			{
-				return isView;
-			}
-			set	
-			{
-				isView = value;
-				DictionaryUtil.Add(QueryParameters, "IsView", value.ToString());
-			}
-		}
-
-		public string ExternalTableType
-		{
-			get
-			{
-				return externalTableType;
-			}
-			set	
-			{
-				externalTableType = value;
-				DictionaryUtil.Add(QueryParameters, "ExternalTableType", value);
-			}
-		}
-
 		public int? EnvType
 		{
 			get
@@ -247,32 +195,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				hasPart = value;
 				DictionaryUtil.Add(QueryParameters, "HasPart", value.ToString());
-			}
-		}
-
-		public string Location
-		{
-			get
-			{
-				return location;
-			}
-			set	
-			{
-				location = value;
-				DictionaryUtil.Add(QueryParameters, "Location", value);
-			}
-		}
-
-		public string Comment
-		{
-			get
-			{
-				return comment;
-			}
-			set	
-			{
-				comment = value;
-				DictionaryUtil.Add(QueryParameters, "Comment", value);
 			}
 		}
 
@@ -328,22 +250,109 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public int? Visibility
+		{
+			get
+			{
+				return visibility;
+			}
+			set	
+			{
+				visibility = value;
+				DictionaryUtil.Add(QueryParameters, "Visibility", value.ToString());
+			}
+		}
+
+		public long? PhysicsLevelId
+		{
+			get
+			{
+				return physicsLevelId;
+			}
+			set	
+			{
+				physicsLevelId = value;
+				DictionaryUtil.Add(QueryParameters, "PhysicsLevelId", value.ToString());
+			}
+		}
+
+		public string OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public int? IsView
+		{
+			get
+			{
+				return isView;
+			}
+			set	
+			{
+				isView = value;
+				DictionaryUtil.Add(QueryParameters, "IsView", value.ToString());
+			}
+		}
+
+		public string ExternalTableType
+		{
+			get
+			{
+				return externalTableType;
+			}
+			set	
+			{
+				externalTableType = value;
+				DictionaryUtil.Add(QueryParameters, "ExternalTableType", value);
+			}
+		}
+
+		public string Location
+		{
+			get
+			{
+				return location;
+			}
+			set	
+			{
+				location = value;
+				DictionaryUtil.Add(QueryParameters, "Location", value);
+			}
+		}
+
+		public string Comment
+		{
+			get
+			{
+				return comment;
+			}
+			set	
+			{
+				comment = value;
+				DictionaryUtil.Add(QueryParameters, "Comment", value);
+			}
+		}
+
 		public class Columns
 		{
 
 			private int? seqNumber;
 
-			private int? isPartitionCol;
+			private bool? isPartitionCol;
 
 			private string columnNameCn;
 
 			private int? length;
 
-			private int? isNullable;
-
 			private string comment;
-
-			private int? isPrimaryKey;
 
 			private string columnName;
 
@@ -361,7 +370,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public int? IsPartitionCol
+			public bool? IsPartitionCol
 			{
 				get
 				{
@@ -397,18 +406,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public int? IsNullable
-			{
-				get
-				{
-					return isNullable;
-				}
-				set	
-				{
-					isNullable = value;
-				}
-			}
-
 			public string Comment
 			{
 				get
@@ -418,18 +415,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					comment = value;
-				}
-			}
-
-			public int? IsPrimaryKey
-			{
-				get
-				{
-					return isPrimaryKey;
-				}
-				set	
-				{
-					isPrimaryKey = value;
 				}
 			}
 

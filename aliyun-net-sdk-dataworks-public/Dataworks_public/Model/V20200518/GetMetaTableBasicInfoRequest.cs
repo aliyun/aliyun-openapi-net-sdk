@@ -42,6 +42,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string dataSourceType;
 
+		private bool? extension;
+
 		private string tableGuid;
 
 		private string databaseName;
@@ -60,6 +62,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				dataSourceType = value;
 				DictionaryUtil.Add(QueryParameters, "DataSourceType", value);
+			}
+		}
+
+		public bool? Extension
+		{
+			get
+			{
+				return extension;
+			}
+			set	
+			{
+				extension = value;
+				DictionaryUtil.Add(QueryParameters, "Extension", value.ToString());
 			}
 		}
 

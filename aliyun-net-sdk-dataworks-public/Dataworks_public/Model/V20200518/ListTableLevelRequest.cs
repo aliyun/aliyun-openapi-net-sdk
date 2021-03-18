@@ -42,6 +42,10 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private int? levelType;
 
+		private int? pageSize;
+
+		private int? pageNum;
+
 		private long? projectId;
 
 		public int? LevelType
@@ -54,6 +58,32 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				levelType = value;
 				DictionaryUtil.Add(QueryParameters, "LevelType", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 

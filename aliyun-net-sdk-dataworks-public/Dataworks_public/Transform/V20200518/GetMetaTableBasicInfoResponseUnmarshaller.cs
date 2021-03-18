@@ -58,6 +58,10 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			data.Location = _ctx.StringValue("GetMetaTableBasicInfo.Data.Location");
 			data.ClusterId = _ctx.StringValue("GetMetaTableBasicInfo.Data.ClusterId");
 			data.Caption = _ctx.StringValue("GetMetaTableBasicInfo.Data.Caption");
+			data.IsPartitionTable = _ctx.BooleanValue("GetMetaTableBasicInfo.Data.IsPartitionTable");
+			data.ReadCount = _ctx.LongValue("GetMetaTableBasicInfo.Data.ReadCount");
+			data.ViewCount = _ctx.LongValue("GetMetaTableBasicInfo.Data.ViewCount");
+			data.FavoriteCount = _ctx.LongValue("GetMetaTableBasicInfo.Data.FavoriteCount");
 			getMetaTableBasicInfoResponse.Data = data;
         
 			return getMetaTableBasicInfoResponse;
