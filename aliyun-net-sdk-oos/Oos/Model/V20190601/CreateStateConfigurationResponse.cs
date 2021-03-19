@@ -27,7 +27,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string requestId;
 
-		private List<CreateStateConfiguration_StateConfigurationItem> stateConfiguration;
+		private CreateStateConfiguration_StateConfiguration stateConfiguration;
 
 		public string RequestId
 		{
@@ -41,7 +41,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public List<CreateStateConfiguration_StateConfigurationItem> StateConfiguration
+		public CreateStateConfiguration_StateConfiguration StateConfiguration
 		{
 			get
 			{
@@ -53,7 +53,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public class CreateStateConfiguration_StateConfigurationItem
+		public class CreateStateConfiguration_StateConfiguration
 		{
 
 			private string createTime;

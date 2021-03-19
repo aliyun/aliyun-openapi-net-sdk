@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class ListInventoryEntriesRequest : RpcAcsRequest<ListInventoryEntriesResponse>
     {
         public ListInventoryEntriesRequest()
-            : base("oos", "2019-06-01", "ListInventoryEntries", "oos", "openAPI")
+            : base("oos", "2019-06-01", "ListInventoryEntries")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

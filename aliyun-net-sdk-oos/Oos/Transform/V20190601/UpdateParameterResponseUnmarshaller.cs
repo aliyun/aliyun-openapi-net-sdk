@@ -45,6 +45,7 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			parameter.ParameterVersion = _ctx.IntegerValue("UpdateParameter.Parameter.ParameterVersion");
 			parameter.Type = _ctx.StringValue("UpdateParameter.Parameter.Type");
 			parameter.Constraints = _ctx.StringValue("UpdateParameter.Parameter.Constraints");
+			parameter.Tags = _ctx.StringValue("UpdateParameter.Parameter.Tags");
 			updateParameterResponse.Parameter = parameter;
         
 			return updateParameterResponse;

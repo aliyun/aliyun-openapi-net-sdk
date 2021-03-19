@@ -54,6 +54,7 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 				parameter.Type = _ctx.StringValue("GetParameters.Parameters["+ i +"].Type");
 				parameter._Value = _ctx.StringValue("GetParameters.Parameters["+ i +"].Value");
 				parameter.Constraints = _ctx.StringValue("GetParameters.Parameters["+ i +"].Constraints");
+				parameter.Tags = _ctx.StringValue("GetParameters.Parameters["+ i +"].Tags");
 
 				getParametersResponse_parameters.Add(parameter);
 			}

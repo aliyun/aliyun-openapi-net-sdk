@@ -49,6 +49,7 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 				parameter.ParameterVersion = _ctx.StringValue("ListSecretParameters.Parameters["+ i +"].ParameterVersion");
 				parameter.Type = _ctx.StringValue("ListSecretParameters.Parameters["+ i +"].Type");
 				parameter.KeyId = _ctx.StringValue("ListSecretParameters.Parameters["+ i +"].KeyId");
+				parameter.Tags = _ctx.StringValue("ListSecretParameters.Parameters["+ i +"].Tags");
 
 				listSecretParametersResponse_parameters.Add(parameter);
 			}

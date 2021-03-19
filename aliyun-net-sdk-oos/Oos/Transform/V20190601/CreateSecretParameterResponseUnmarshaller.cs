@@ -46,6 +46,7 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			parameter.Type = _ctx.StringValue("CreateSecretParameter.Parameter.Type");
 			parameter.Constraints = _ctx.StringValue("CreateSecretParameter.Parameter.Constraints");
 			parameter.KeyId = _ctx.StringValue("CreateSecretParameter.Parameter.KeyId");
+			parameter.Tags = _ctx.StringValue("CreateSecretParameter.Parameter.Tags");
 			createSecretParameterResponse.Parameter = parameter;
         
 			return createSecretParameterResponse;

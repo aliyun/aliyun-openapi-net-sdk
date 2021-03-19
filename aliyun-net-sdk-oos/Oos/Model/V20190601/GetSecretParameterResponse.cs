@@ -82,6 +82,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string keyId;
 
+			private string tags;
+
 			public string Id
 			{
 				get
@@ -235,6 +237,18 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					keyId = value;
+				}
+			}
+
+			public string Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 		}

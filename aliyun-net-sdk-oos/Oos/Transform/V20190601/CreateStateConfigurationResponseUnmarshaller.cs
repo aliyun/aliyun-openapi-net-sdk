@@ -33,25 +33,20 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			createStateConfigurationResponse.HttpResponse = _ctx.HttpResponse;
 			createStateConfigurationResponse.RequestId = _ctx.StringValue("CreateStateConfiguration.RequestId");
 
-			List<CreateStateConfigurationResponse.CreateStateConfiguration_StateConfigurationItem> createStateConfigurationResponse_stateConfiguration = new List<CreateStateConfigurationResponse.CreateStateConfiguration_StateConfigurationItem>();
-			for (int i = 0; i < _ctx.Length("CreateStateConfiguration.StateConfiguration.Length"); i++) {
-				CreateStateConfigurationResponse.CreateStateConfiguration_StateConfigurationItem stateConfigurationItem = new CreateStateConfigurationResponse.CreateStateConfiguration_StateConfigurationItem();
-				stateConfigurationItem.CreateTime = _ctx.StringValue("CreateStateConfiguration.StateConfiguration["+ i +"].CreateTime");
-				stateConfigurationItem.Description = _ctx.StringValue("CreateStateConfiguration.StateConfiguration["+ i +"].Description");
-				stateConfigurationItem.StateConfigurationId = _ctx.StringValue("CreateStateConfiguration.StateConfiguration["+ i +"].StateConfigurationId");
-				stateConfigurationItem.TemplateId = _ctx.StringValue("CreateStateConfiguration.StateConfiguration["+ i +"].TemplateId");
-				stateConfigurationItem.TemplateName = _ctx.StringValue("CreateStateConfiguration.StateConfiguration["+ i +"].TemplateName");
-				stateConfigurationItem.TemplateVersion = _ctx.StringValue("CreateStateConfiguration.StateConfiguration["+ i +"].TemplateVersion");
-				stateConfigurationItem.Parameters = _ctx.StringValue("CreateStateConfiguration.StateConfiguration["+ i +"].Parameters");
-				stateConfigurationItem.ConfigureMode = _ctx.StringValue("CreateStateConfiguration.StateConfiguration["+ i +"].ConfigureMode");
-				stateConfigurationItem.ScheduleType = _ctx.StringValue("CreateStateConfiguration.StateConfiguration["+ i +"].ScheduleType");
-				stateConfigurationItem.ScheduleExpression = _ctx.StringValue("CreateStateConfiguration.StateConfiguration["+ i +"].ScheduleExpression");
-				stateConfigurationItem.Targets = _ctx.StringValue("CreateStateConfiguration.StateConfiguration["+ i +"].Targets");
-				stateConfigurationItem.Tags = _ctx.StringValue("CreateStateConfiguration.StateConfiguration["+ i +"].Tags");
-
-				createStateConfigurationResponse_stateConfiguration.Add(stateConfigurationItem);
-			}
-			createStateConfigurationResponse.StateConfiguration = createStateConfigurationResponse_stateConfiguration;
+			CreateStateConfigurationResponse.CreateStateConfiguration_StateConfiguration stateConfiguration = new CreateStateConfigurationResponse.CreateStateConfiguration_StateConfiguration();
+			stateConfiguration.CreateTime = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.CreateTime");
+			stateConfiguration.Description = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.Description");
+			stateConfiguration.StateConfigurationId = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.StateConfigurationId");
+			stateConfiguration.TemplateId = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.TemplateId");
+			stateConfiguration.TemplateName = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.TemplateName");
+			stateConfiguration.TemplateVersion = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.TemplateVersion");
+			stateConfiguration.Parameters = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.Parameters");
+			stateConfiguration.ConfigureMode = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.ConfigureMode");
+			stateConfiguration.ScheduleType = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.ScheduleType");
+			stateConfiguration.ScheduleExpression = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.ScheduleExpression");
+			stateConfiguration.Targets = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.Targets");
+			stateConfiguration.Tags = _ctx.StringValue("CreateStateConfiguration.StateConfiguration.Tags");
+			createStateConfigurationResponse.StateConfiguration = stateConfiguration;
         
 			return createStateConfigurationResponse;
         }

@@ -49,6 +49,7 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 				parameter.ShareType = _ctx.StringValue("ListParameters.Parameters["+ i +"].ShareType");
 				parameter.ParameterVersion = _ctx.StringValue("ListParameters.Parameters["+ i +"].ParameterVersion");
 				parameter.Type = _ctx.StringValue("ListParameters.Parameters["+ i +"].Type");
+				parameter.Tags = _ctx.StringValue("ListParameters.Parameters["+ i +"].Tags");
 
 				listParametersResponse_parameters.Add(parameter);
 			}
