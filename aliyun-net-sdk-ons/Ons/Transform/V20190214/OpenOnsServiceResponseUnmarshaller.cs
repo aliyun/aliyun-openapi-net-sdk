@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 {
     public class OpenOnsServiceResponseUnmarshaller
     {
-        public static OpenOnsServiceResponse Unmarshall(UnmarshallerContext context)
+        public static OpenOnsServiceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			OpenOnsServiceResponse openOnsServiceResponse = new OpenOnsServiceResponse();
 
-			openOnsServiceResponse.HttpResponse = context.HttpResponse;
-			openOnsServiceResponse.RequestId = context.StringValue("OpenOnsService.RequestId");
-			openOnsServiceResponse.OrderId = context.StringValue("OpenOnsService.OrderId");
+			openOnsServiceResponse.HttpResponse = _ctx.HttpResponse;
+			openOnsServiceResponse.RequestId = _ctx.StringValue("OpenOnsService.RequestId");
+			openOnsServiceResponse.OrderId = _ctx.StringValue("OpenOnsService.OrderId");
         
 			return openOnsServiceResponse;
         }

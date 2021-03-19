@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 {
     public class OnsConsumerGetConnectionResponseUnmarshaller
     {
-        public static OnsConsumerGetConnectionResponse Unmarshall(UnmarshallerContext context)
+        public static OnsConsumerGetConnectionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			OnsConsumerGetConnectionResponse onsConsumerGetConnectionResponse = new OnsConsumerGetConnectionResponse();
 
-			onsConsumerGetConnectionResponse.HttpResponse = context.HttpResponse;
-			onsConsumerGetConnectionResponse.RequestId = context.StringValue("OnsConsumerGetConnection.RequestId");
-			onsConsumerGetConnectionResponse.HelpUrl = context.StringValue("OnsConsumerGetConnection.HelpUrl");
+			onsConsumerGetConnectionResponse.HttpResponse = _ctx.HttpResponse;
+			onsConsumerGetConnectionResponse.RequestId = _ctx.StringValue("OnsConsumerGetConnection.RequestId");
+			onsConsumerGetConnectionResponse.HelpUrl = _ctx.StringValue("OnsConsumerGetConnection.HelpUrl");
 
 			OnsConsumerGetConnectionResponse.OnsConsumerGetConnection_Data data = new OnsConsumerGetConnectionResponse.OnsConsumerGetConnection_Data();
 
 			List<OnsConsumerGetConnectionResponse.OnsConsumerGetConnection_Data.OnsConsumerGetConnection_ConnectionDo> data_connectionList = new List<OnsConsumerGetConnectionResponse.OnsConsumerGetConnection_Data.OnsConsumerGetConnection_ConnectionDo>();
-			for (int i = 0; i < context.Length("OnsConsumerGetConnection.Data.ConnectionList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("OnsConsumerGetConnection.Data.ConnectionList.Length"); i++) {
 				OnsConsumerGetConnectionResponse.OnsConsumerGetConnection_Data.OnsConsumerGetConnection_ConnectionDo connectionDo = new OnsConsumerGetConnectionResponse.OnsConsumerGetConnection_Data.OnsConsumerGetConnection_ConnectionDo();
-				connectionDo.ClientId = context.StringValue("OnsConsumerGetConnection.Data.ConnectionList["+ i +"].ClientId");
-				connectionDo.ClientAddr = context.StringValue("OnsConsumerGetConnection.Data.ConnectionList["+ i +"].ClientAddr");
-				connectionDo.Language = context.StringValue("OnsConsumerGetConnection.Data.ConnectionList["+ i +"].Language");
-				connectionDo.Version = context.StringValue("OnsConsumerGetConnection.Data.ConnectionList["+ i +"].Version");
+				connectionDo.ClientId = _ctx.StringValue("OnsConsumerGetConnection.Data.ConnectionList["+ i +"].ClientId");
+				connectionDo.ClientAddr = _ctx.StringValue("OnsConsumerGetConnection.Data.ConnectionList["+ i +"].ClientAddr");
+				connectionDo.Language = _ctx.StringValue("OnsConsumerGetConnection.Data.ConnectionList["+ i +"].Language");
+				connectionDo.Version = _ctx.StringValue("OnsConsumerGetConnection.Data.ConnectionList["+ i +"].Version");
 
 				data_connectionList.Add(connectionDo);
 			}

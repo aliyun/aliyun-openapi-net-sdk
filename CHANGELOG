@@ -1,3 +1,6 @@
+2021-03-19 Version: 3.1.7
+- Modify the helpUrl parameter of OnsTopicList and OnsGroupList API to be invisible.
+
 2021-03-19 Version: 2.0.5
 - Export new API.
 

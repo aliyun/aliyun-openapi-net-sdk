@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 {
     public class OnsTraceQueryByMsgKeyResponseUnmarshaller
     {
-        public static OnsTraceQueryByMsgKeyResponse Unmarshall(UnmarshallerContext context)
+        public static OnsTraceQueryByMsgKeyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			OnsTraceQueryByMsgKeyResponse onsTraceQueryByMsgKeyResponse = new OnsTraceQueryByMsgKeyResponse();
 
-			onsTraceQueryByMsgKeyResponse.HttpResponse = context.HttpResponse;
-			onsTraceQueryByMsgKeyResponse.RequestId = context.StringValue("OnsTraceQueryByMsgKey.RequestId");
-			onsTraceQueryByMsgKeyResponse.HelpUrl = context.StringValue("OnsTraceQueryByMsgKey.HelpUrl");
-			onsTraceQueryByMsgKeyResponse.QueryId = context.StringValue("OnsTraceQueryByMsgKey.QueryId");
+			onsTraceQueryByMsgKeyResponse.HttpResponse = _ctx.HttpResponse;
+			onsTraceQueryByMsgKeyResponse.RequestId = _ctx.StringValue("OnsTraceQueryByMsgKey.RequestId");
+			onsTraceQueryByMsgKeyResponse.HelpUrl = _ctx.StringValue("OnsTraceQueryByMsgKey.HelpUrl");
+			onsTraceQueryByMsgKeyResponse.QueryId = _ctx.StringValue("OnsTraceQueryByMsgKey.QueryId");
         
 			return onsTraceQueryByMsgKeyResponse;
         }

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 {
     public class OnsConsumerResetOffsetResponseUnmarshaller
     {
-        public static OnsConsumerResetOffsetResponse Unmarshall(UnmarshallerContext context)
+        public static OnsConsumerResetOffsetResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			OnsConsumerResetOffsetResponse onsConsumerResetOffsetResponse = new OnsConsumerResetOffsetResponse();
 
-			onsConsumerResetOffsetResponse.HttpResponse = context.HttpResponse;
-			onsConsumerResetOffsetResponse.RequestId = context.StringValue("OnsConsumerResetOffset.RequestId");
-			onsConsumerResetOffsetResponse.HelpUrl = context.StringValue("OnsConsumerResetOffset.HelpUrl");
+			onsConsumerResetOffsetResponse.HttpResponse = _ctx.HttpResponse;
+			onsConsumerResetOffsetResponse.RequestId = _ctx.StringValue("OnsConsumerResetOffset.RequestId");
+			onsConsumerResetOffsetResponse.HelpUrl = _ctx.StringValue("OnsConsumerResetOffset.HelpUrl");
         
 			return onsConsumerResetOffsetResponse;
         }

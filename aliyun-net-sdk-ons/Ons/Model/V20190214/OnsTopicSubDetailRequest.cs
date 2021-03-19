@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Ons;
 using Aliyun.Acs.Ons.Transform;
 using Aliyun.Acs.Ons.Transform.V20190214;
 
@@ -31,12 +30,12 @@ namespace Aliyun.Acs.Ons.Model.V20190214
     public class OnsTopicSubDetailRequest : RpcAcsRequest<OnsTopicSubDetailResponse>
     {
         public OnsTopicSubDetailRequest()
-            : base("Ons", "2019-02-14", "OnsTopicSubDetail")
+            : base("Ons", "2019-02-14", "OnsTopicSubDetail", "ons", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Ons.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Ons.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }

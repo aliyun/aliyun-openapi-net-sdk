@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 {
     public class OnsMessageSendResponseUnmarshaller
     {
-        public static OnsMessageSendResponse Unmarshall(UnmarshallerContext context)
+        public static OnsMessageSendResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			OnsMessageSendResponse onsMessageSendResponse = new OnsMessageSendResponse();
 
-			onsMessageSendResponse.HttpResponse = context.HttpResponse;
-			onsMessageSendResponse.RequestId = context.StringValue("OnsMessageSend.RequestId");
-			onsMessageSendResponse.HelpUrl = context.StringValue("OnsMessageSend.HelpUrl");
-			onsMessageSendResponse.Data = context.StringValue("OnsMessageSend.Data");
+			onsMessageSendResponse.HttpResponse = _ctx.HttpResponse;
+			onsMessageSendResponse.RequestId = _ctx.StringValue("OnsMessageSend.RequestId");
+			onsMessageSendResponse.HelpUrl = _ctx.StringValue("OnsMessageSend.HelpUrl");
+			onsMessageSendResponse.Data = _ctx.StringValue("OnsMessageSend.Data");
         
 			return onsMessageSendResponse;
         }

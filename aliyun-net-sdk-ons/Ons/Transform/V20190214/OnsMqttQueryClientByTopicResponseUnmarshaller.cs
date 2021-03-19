@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 {
     public class OnsMqttQueryClientByTopicResponseUnmarshaller
     {
-        public static OnsMqttQueryClientByTopicResponse Unmarshall(UnmarshallerContext context)
+        public static OnsMqttQueryClientByTopicResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			OnsMqttQueryClientByTopicResponse onsMqttQueryClientByTopicResponse = new OnsMqttQueryClientByTopicResponse();
 
-			onsMqttQueryClientByTopicResponse.HttpResponse = context.HttpResponse;
-			onsMqttQueryClientByTopicResponse.RequestId = context.StringValue("OnsMqttQueryClientByTopic.RequestId");
-			onsMqttQueryClientByTopicResponse.HelpUrl = context.StringValue("OnsMqttQueryClientByTopic.HelpUrl");
+			onsMqttQueryClientByTopicResponse.HttpResponse = _ctx.HttpResponse;
+			onsMqttQueryClientByTopicResponse.RequestId = _ctx.StringValue("OnsMqttQueryClientByTopic.RequestId");
+			onsMqttQueryClientByTopicResponse.HelpUrl = _ctx.StringValue("OnsMqttQueryClientByTopic.HelpUrl");
 
 			OnsMqttQueryClientByTopicResponse.OnsMqttQueryClientByTopic_MqttClientSetDo mqttClientSetDo = new OnsMqttQueryClientByTopicResponse.OnsMqttQueryClientByTopic_MqttClientSetDo();
-			mqttClientSetDo.OnlineCount = context.LongValue("OnsMqttQueryClientByTopic.MqttClientSetDo.OnlineCount");
-			mqttClientSetDo.PersistCount = context.LongValue("OnsMqttQueryClientByTopic.MqttClientSetDo.PersistCount");
+			mqttClientSetDo.OnlineCount = _ctx.LongValue("OnsMqttQueryClientByTopic.MqttClientSetDo.OnlineCount");
+			mqttClientSetDo.PersistCount = _ctx.LongValue("OnsMqttQueryClientByTopic.MqttClientSetDo.PersistCount");
 			onsMqttQueryClientByTopicResponse.MqttClientSetDo = mqttClientSetDo;
         
 			return onsMqttQueryClientByTopicResponse;

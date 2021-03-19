@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 {
     public class OnsTopicStatusResponseUnmarshaller
     {
-        public static OnsTopicStatusResponse Unmarshall(UnmarshallerContext context)
+        public static OnsTopicStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			OnsTopicStatusResponse onsTopicStatusResponse = new OnsTopicStatusResponse();
 
-			onsTopicStatusResponse.HttpResponse = context.HttpResponse;
-			onsTopicStatusResponse.RequestId = context.StringValue("OnsTopicStatus.RequestId");
-			onsTopicStatusResponse.HelpUrl = context.StringValue("OnsTopicStatus.HelpUrl");
+			onsTopicStatusResponse.HttpResponse = _ctx.HttpResponse;
+			onsTopicStatusResponse.RequestId = _ctx.StringValue("OnsTopicStatus.RequestId");
+			onsTopicStatusResponse.HelpUrl = _ctx.StringValue("OnsTopicStatus.HelpUrl");
 
 			OnsTopicStatusResponse.OnsTopicStatus_Data data = new OnsTopicStatusResponse.OnsTopicStatus_Data();
-			data.TotalCount = context.LongValue("OnsTopicStatus.Data.TotalCount");
-			data.LastTimeStamp = context.LongValue("OnsTopicStatus.Data.LastTimeStamp");
-			data.Perm = context.IntegerValue("OnsTopicStatus.Data.Perm");
+			data.TotalCount = _ctx.LongValue("OnsTopicStatus.Data.TotalCount");
+			data.LastTimeStamp = _ctx.LongValue("OnsTopicStatus.Data.LastTimeStamp");
+			data.Perm = _ctx.IntegerValue("OnsTopicStatus.Data.Perm");
 			onsTopicStatusResponse.Data = data;
         
 			return onsTopicStatusResponse;

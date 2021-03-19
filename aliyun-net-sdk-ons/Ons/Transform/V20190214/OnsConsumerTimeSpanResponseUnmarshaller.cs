@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 {
     public class OnsConsumerTimeSpanResponseUnmarshaller
     {
-        public static OnsConsumerTimeSpanResponse Unmarshall(UnmarshallerContext context)
+        public static OnsConsumerTimeSpanResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			OnsConsumerTimeSpanResponse onsConsumerTimeSpanResponse = new OnsConsumerTimeSpanResponse();
 
-			onsConsumerTimeSpanResponse.HttpResponse = context.HttpResponse;
-			onsConsumerTimeSpanResponse.RequestId = context.StringValue("OnsConsumerTimeSpan.RequestId");
-			onsConsumerTimeSpanResponse.HelpUrl = context.StringValue("OnsConsumerTimeSpan.HelpUrl");
+			onsConsumerTimeSpanResponse.HttpResponse = _ctx.HttpResponse;
+			onsConsumerTimeSpanResponse.RequestId = _ctx.StringValue("OnsConsumerTimeSpan.RequestId");
+			onsConsumerTimeSpanResponse.HelpUrl = _ctx.StringValue("OnsConsumerTimeSpan.HelpUrl");
 
 			OnsConsumerTimeSpanResponse.OnsConsumerTimeSpan_Data data = new OnsConsumerTimeSpanResponse.OnsConsumerTimeSpan_Data();
-			data.Topic = context.StringValue("OnsConsumerTimeSpan.Data.Topic");
-			data.MinTimeStamp = context.LongValue("OnsConsumerTimeSpan.Data.MinTimeStamp");
-			data.MaxTimeStamp = context.LongValue("OnsConsumerTimeSpan.Data.MaxTimeStamp");
-			data.ConsumeTimeStamp = context.LongValue("OnsConsumerTimeSpan.Data.ConsumeTimeStamp");
-			data.InstanceId = context.StringValue("OnsConsumerTimeSpan.Data.InstanceId");
+			data.Topic = _ctx.StringValue("OnsConsumerTimeSpan.Data.Topic");
+			data.MinTimeStamp = _ctx.LongValue("OnsConsumerTimeSpan.Data.MinTimeStamp");
+			data.MaxTimeStamp = _ctx.LongValue("OnsConsumerTimeSpan.Data.MaxTimeStamp");
+			data.ConsumeTimeStamp = _ctx.LongValue("OnsConsumerTimeSpan.Data.ConsumeTimeStamp");
+			data.InstanceId = _ctx.StringValue("OnsConsumerTimeSpan.Data.InstanceId");
 			onsConsumerTimeSpanResponse.Data = data;
         
 			return onsConsumerTimeSpanResponse;
