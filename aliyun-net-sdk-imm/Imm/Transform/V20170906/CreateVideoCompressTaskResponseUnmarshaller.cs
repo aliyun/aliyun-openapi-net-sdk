@@ -31,8 +31,8 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			CreateVideoCompressTaskResponse createVideoCompressTaskResponse = new CreateVideoCompressTaskResponse();
 
 			createVideoCompressTaskResponse.HttpResponse = _ctx.HttpResponse;
-			createVideoCompressTaskResponse.RequestId = _ctx.StringValue("CreateVideoCompressTask.RequestId");
 			createVideoCompressTaskResponse.TaskId = _ctx.StringValue("CreateVideoCompressTask.TaskId");
+			createVideoCompressTaskResponse.RequestId = _ctx.StringValue("CreateVideoCompressTask.RequestId");
 			createVideoCompressTaskResponse.TaskType = _ctx.StringValue("CreateVideoCompressTask.TaskType");
         
 			return createVideoCompressTaskResponse;

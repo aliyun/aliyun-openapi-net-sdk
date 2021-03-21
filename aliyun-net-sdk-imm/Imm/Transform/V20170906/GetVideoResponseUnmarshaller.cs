@@ -31,47 +31,72 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			GetVideoResponse getVideoResponse = new GetVideoResponse();
 
 			getVideoResponse.HttpResponse = _ctx.HttpResponse;
-			getVideoResponse.RequestId = _ctx.StringValue("GetVideo.RequestId");
-			getVideoResponse.SetId = _ctx.StringValue("GetVideo.SetId");
-			getVideoResponse.VideoUri = _ctx.StringValue("GetVideo.VideoUri");
-			getVideoResponse.RemarksA = _ctx.StringValue("GetVideo.RemarksA");
-			getVideoResponse.RemarksB = _ctx.StringValue("GetVideo.RemarksB");
-			getVideoResponse.CreateTime = _ctx.StringValue("GetVideo.CreateTime");
 			getVideoResponse.ModifyTime = _ctx.StringValue("GetVideo.ModifyTime");
-			getVideoResponse.VideoWidth = _ctx.IntegerValue("GetVideo.VideoWidth");
-			getVideoResponse.VideoHeight = _ctx.IntegerValue("GetVideo.VideoHeight");
-			getVideoResponse.VideoFormat = _ctx.StringValue("GetVideo.VideoFormat");
-			getVideoResponse.VideoDuration = _ctx.FloatValue("GetVideo.VideoDuration");
-			getVideoResponse.FileSize = _ctx.IntegerValue("GetVideo.FileSize");
-			getVideoResponse.VideoFrames = _ctx.IntegerValue("GetVideo.VideoFrames");
-			getVideoResponse.SourceType = _ctx.StringValue("GetVideo.SourceType");
-			getVideoResponse.SourceUri = _ctx.StringValue("GetVideo.SourceUri");
-			getVideoResponse.SourcePosition = _ctx.StringValue("GetVideo.SourcePosition");
 			getVideoResponse.ProcessStatus = _ctx.StringValue("GetVideo.ProcessStatus");
-			getVideoResponse.ProcessModifyTime = _ctx.StringValue("GetVideo.ProcessModifyTime");
-			getVideoResponse.VideoTagsStatus = _ctx.StringValue("GetVideo.VideoTagsStatus");
-			getVideoResponse.VideoTagsModifyTime = _ctx.StringValue("GetVideo.VideoTagsModifyTime");
-			getVideoResponse.CelebrityStatus = _ctx.StringValue("GetVideo.CelebrityStatus");
-			getVideoResponse.CelebrityModifyTime = _ctx.StringValue("GetVideo.CelebrityModifyTime");
-			getVideoResponse.ProcessFailReason = _ctx.StringValue("GetVideo.ProcessFailReason");
-			getVideoResponse.VideoTagsFailReason = _ctx.StringValue("GetVideo.VideoTagsFailReason");
-			getVideoResponse.CelebrityFailReason = _ctx.StringValue("GetVideo.CelebrityFailReason");
+			getVideoResponse.VideoWidth = _ctx.IntegerValue("GetVideo.VideoWidth");
+			getVideoResponse.SourceUri = _ctx.StringValue("GetVideo.SourceUri");
+			getVideoResponse.SourceType = _ctx.StringValue("GetVideo.SourceType");
+			getVideoResponse.VideoInfo = _ctx.StringValue("GetVideo.VideoInfo");
+			getVideoResponse.RemarksA = _ctx.StringValue("GetVideo.RemarksA");
+			getVideoResponse.VideoFrameTagsModifyTime = _ctx.StringValue("GetVideo.VideoFrameTagsModifyTime");
+			getVideoResponse.RemarksB = _ctx.StringValue("GetVideo.RemarksB");
+			getVideoResponse.VideoFacesFailReason = _ctx.StringValue("GetVideo.VideoFacesFailReason");
+			getVideoResponse.VideoFacesStatus = _ctx.StringValue("GetVideo.VideoFacesStatus");
+			getVideoResponse.VideoOCRModifyTime = _ctx.StringValue("GetVideo.VideoOCRModifyTime");
 			getVideoResponse.RemarksC = _ctx.StringValue("GetVideo.RemarksC");
 			getVideoResponse.RemarksD = _ctx.StringValue("GetVideo.RemarksD");
-			getVideoResponse.ExternalId = _ctx.StringValue("GetVideo.ExternalId");
-			getVideoResponse.VideoFacesStatus = _ctx.StringValue("GetVideo.VideoFacesStatus");
-			getVideoResponse.VideoFacesFailReason = _ctx.StringValue("GetVideo.VideoFacesFailReason");
-			getVideoResponse.VideoFacesModifyTime = _ctx.StringValue("GetVideo.VideoFacesModifyTime");
-			getVideoResponse.VideoFrameTagsStatus = _ctx.StringValue("GetVideo.VideoFrameTagsStatus");
-			getVideoResponse.VideoFrameTagsFailReason = _ctx.StringValue("GetVideo.VideoFrameTagsFailReason");
-			getVideoResponse.VideoFrameTagsModifyTime = _ctx.StringValue("GetVideo.VideoFrameTagsModifyTime");
-			getVideoResponse.VideoSTTStatus = _ctx.StringValue("GetVideo.VideoSTTStatus");
-			getVideoResponse.VideoSTTFailReason = _ctx.StringValue("GetVideo.VideoSTTFailReason");
-			getVideoResponse.VideoSTTModifyTime = _ctx.StringValue("GetVideo.VideoSTTModifyTime");
-			getVideoResponse.VideoOCRStatus = _ctx.StringValue("GetVideo.VideoOCRStatus");
+			getVideoResponse.VideoHeight = _ctx.IntegerValue("GetVideo.VideoHeight");
+			getVideoResponse.SourcePosition = _ctx.StringValue("GetVideo.SourcePosition");
 			getVideoResponse.VideoOCRFailReason = _ctx.StringValue("GetVideo.VideoOCRFailReason");
-			getVideoResponse.VideoOCRModifyTime = _ctx.StringValue("GetVideo.VideoOCRModifyTime");
-			getVideoResponse.VideoInfo = _ctx.StringValue("GetVideo.VideoInfo");
+			getVideoResponse.VideoFrameTagsStatus = _ctx.StringValue("GetVideo.VideoFrameTagsStatus");
+			getVideoResponse.VideoTagsFailReason = _ctx.StringValue("GetVideo.VideoTagsFailReason");
+			getVideoResponse.VideoTagsModifyTime = _ctx.StringValue("GetVideo.VideoTagsModifyTime");
+			getVideoResponse.VideoOCRStatus = _ctx.StringValue("GetVideo.VideoOCRStatus");
+			getVideoResponse.VideoFrames = _ctx.IntegerValue("GetVideo.VideoFrames");
+			getVideoResponse.RequestId = _ctx.StringValue("GetVideo.RequestId");
+			getVideoResponse.VideoSTTModifyTime = _ctx.StringValue("GetVideo.VideoSTTModifyTime");
+			getVideoResponse.ProcessModifyTime = _ctx.StringValue("GetVideo.ProcessModifyTime");
+			getVideoResponse.ProcessFailReason = _ctx.StringValue("GetVideo.ProcessFailReason");
+			getVideoResponse.VideoSTTFailReason = _ctx.StringValue("GetVideo.VideoSTTFailReason");
+			getVideoResponse.ExternalId = _ctx.StringValue("GetVideo.ExternalId");
+			getVideoResponse.CreateTime = _ctx.StringValue("GetVideo.CreateTime");
+			getVideoResponse.VideoUri = _ctx.StringValue("GetVideo.VideoUri");
+			getVideoResponse.VideoFormat = _ctx.StringValue("GetVideo.VideoFormat");
+			getVideoResponse.VideoFrameTagsFailReason = _ctx.StringValue("GetVideo.VideoFrameTagsFailReason");
+			getVideoResponse.VideoSTTStatus = _ctx.StringValue("GetVideo.VideoSTTStatus");
+			getVideoResponse.VideoFacesModifyTime = _ctx.StringValue("GetVideo.VideoFacesModifyTime");
+			getVideoResponse.CelebrityModifyTime = _ctx.StringValue("GetVideo.CelebrityModifyTime");
+			getVideoResponse.VideoDuration = _ctx.FloatValue("GetVideo.VideoDuration");
+			getVideoResponse.CelebrityFailReason = _ctx.StringValue("GetVideo.CelebrityFailReason");
+			getVideoResponse.CelebrityStatus = _ctx.StringValue("GetVideo.CelebrityStatus");
+			getVideoResponse.SetId = _ctx.StringValue("GetVideo.SetId");
+			getVideoResponse.VideoTagsStatus = _ctx.StringValue("GetVideo.VideoTagsStatus");
+			getVideoResponse.FileSize = _ctx.IntegerValue("GetVideo.FileSize");
+
+			List<GetVideoResponse.GetVideo_VideoTagsItem> getVideoResponse_videoTags = new List<GetVideoResponse.GetVideo_VideoTagsItem>();
+			for (int i = 0; i < _ctx.Length("GetVideo.VideoTags.Length"); i++) {
+				GetVideoResponse.GetVideo_VideoTagsItem videoTagsItem = new GetVideoResponse.GetVideo_VideoTagsItem();
+				videoTagsItem.TagConfidence = _ctx.FloatValue("GetVideo.VideoTags["+ i +"].TagConfidence");
+				videoTagsItem.TagName = _ctx.StringValue("GetVideo.VideoTags["+ i +"].TagName");
+				videoTagsItem.TagLevel = _ctx.IntegerValue("GetVideo.VideoTags["+ i +"].TagLevel");
+				videoTagsItem.ParentTagName = _ctx.StringValue("GetVideo.VideoTags["+ i +"].ParentTagName");
+
+				getVideoResponse_videoTags.Add(videoTagsItem);
+			}
+			getVideoResponse.VideoTags = getVideoResponse_videoTags;
+
+			List<GetVideoResponse.GetVideo_PersonsItem> getVideoResponse_persons = new List<GetVideoResponse.GetVideo_PersonsItem>();
+			for (int i = 0; i < _ctx.Length("GetVideo.Persons.Length"); i++) {
+				GetVideoResponse.GetVideo_PersonsItem personsItem = new GetVideoResponse.GetVideo_PersonsItem();
+				personsItem.PersonId = _ctx.StringValue("GetVideo.Persons["+ i +"].PersonId");
+				personsItem.GenderConfidence = _ctx.FloatValue("GetVideo.Persons["+ i +"].GenderConfidence");
+				personsItem.Gender = _ctx.StringValue("GetVideo.Persons["+ i +"].Gender");
+				personsItem.Age = _ctx.IntegerValue("GetVideo.Persons["+ i +"].Age");
+				personsItem.AgeConfidence = _ctx.FloatValue("GetVideo.Persons["+ i +"].AgeConfidence");
+
+				getVideoResponse_persons.Add(personsItem);
+			}
+			getVideoResponse.Persons = getVideoResponse_persons;
 
 			List<GetVideoResponse.GetVideo_CelebrityItem> getVideoResponse_celebrity = new List<GetVideoResponse.GetVideo_CelebrityItem>();
 			for (int i = 0; i < _ctx.Length("GetVideo.Celebrity.Length"); i++) {
@@ -83,31 +108,6 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				getVideoResponse_celebrity.Add(celebrityItem);
 			}
 			getVideoResponse.Celebrity = getVideoResponse_celebrity;
-
-			List<GetVideoResponse.GetVideo_VideoTagsItem> getVideoResponse_videoTags = new List<GetVideoResponse.GetVideo_VideoTagsItem>();
-			for (int i = 0; i < _ctx.Length("GetVideo.VideoTags.Length"); i++) {
-				GetVideoResponse.GetVideo_VideoTagsItem videoTagsItem = new GetVideoResponse.GetVideo_VideoTagsItem();
-				videoTagsItem.TagName = _ctx.StringValue("GetVideo.VideoTags["+ i +"].TagName");
-				videoTagsItem.ParentTagName = _ctx.StringValue("GetVideo.VideoTags["+ i +"].ParentTagName");
-				videoTagsItem.TagConfidence = _ctx.FloatValue("GetVideo.VideoTags["+ i +"].TagConfidence");
-				videoTagsItem.TagLevel = _ctx.IntegerValue("GetVideo.VideoTags["+ i +"].TagLevel");
-
-				getVideoResponse_videoTags.Add(videoTagsItem);
-			}
-			getVideoResponse.VideoTags = getVideoResponse_videoTags;
-
-			List<GetVideoResponse.GetVideo_PersonsItem> getVideoResponse_persons = new List<GetVideoResponse.GetVideo_PersonsItem>();
-			for (int i = 0; i < _ctx.Length("GetVideo.Persons.Length"); i++) {
-				GetVideoResponse.GetVideo_PersonsItem personsItem = new GetVideoResponse.GetVideo_PersonsItem();
-				personsItem.PersonId = _ctx.StringValue("GetVideo.Persons["+ i +"].PersonId");
-				personsItem.Age = _ctx.IntegerValue("GetVideo.Persons["+ i +"].Age");
-				personsItem.AgeConfidence = _ctx.FloatValue("GetVideo.Persons["+ i +"].AgeConfidence");
-				personsItem.Gender = _ctx.StringValue("GetVideo.Persons["+ i +"].Gender");
-				personsItem.GenderConfidence = _ctx.FloatValue("GetVideo.Persons["+ i +"].GenderConfidence");
-
-				getVideoResponse_persons.Add(personsItem);
-			}
-			getVideoResponse.Persons = getVideoResponse_persons;
         
 			return getVideoResponse;
         }

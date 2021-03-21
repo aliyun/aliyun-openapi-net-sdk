@@ -31,10 +31,10 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			CreateGroupFacesJobResponse createGroupFacesJobResponse = new CreateGroupFacesJobResponse();
 
 			createGroupFacesJobResponse.HttpResponse = _ctx.HttpResponse;
-			createGroupFacesJobResponse.RequestId = _ctx.StringValue("CreateGroupFacesJob.RequestId");
-			createGroupFacesJobResponse.JobId = _ctx.StringValue("CreateGroupFacesJob.JobId");
-			createGroupFacesJobResponse.SetId = _ctx.StringValue("CreateGroupFacesJob.SetId");
 			createGroupFacesJobResponse.JobType = _ctx.StringValue("CreateGroupFacesJob.JobType");
+			createGroupFacesJobResponse.RequestId = _ctx.StringValue("CreateGroupFacesJob.RequestId");
+			createGroupFacesJobResponse.SetId = _ctx.StringValue("CreateGroupFacesJob.SetId");
+			createGroupFacesJobResponse.JobId = _ctx.StringValue("CreateGroupFacesJob.JobId");
         
 			return createGroupFacesJobResponse;
         }

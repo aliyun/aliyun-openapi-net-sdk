@@ -46,9 +46,13 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string file;
 
+		private bool? hidecmb;
+
 		private string notifyEndpoint;
 
 		private string fileID;
+
+		private string watermark;
 
 		private string notifyTopicName;
 
@@ -95,6 +99,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public bool? Hidecmb
+		{
+			get
+			{
+				return hidecmb;
+			}
+			set	
+			{
+				hidecmb = value;
+				DictionaryUtil.Add(QueryParameters, "Hidecmb", value.ToString());
+			}
+		}
+
 		public string NotifyEndpoint
 		{
 			get
@@ -118,6 +135,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				fileID = value;
 				DictionaryUtil.Add(QueryParameters, "FileID", value);
+			}
+		}
+
+		public string Watermark
+		{
+			get
+			{
+				return watermark;
+			}
+			set	
+			{
+				watermark = value;
+				DictionaryUtil.Add(QueryParameters, "Watermark", value);
 			}
 		}
 

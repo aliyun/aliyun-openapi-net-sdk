@@ -31,22 +31,22 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			IndexVideoResponse indexVideoResponse = new IndexVideoResponse();
 
 			indexVideoResponse.HttpResponse = _ctx.HttpResponse;
-			indexVideoResponse.RequestId = _ctx.StringValue("IndexVideo.RequestId");
-			indexVideoResponse.SetId = _ctx.StringValue("IndexVideo.SetId");
-			indexVideoResponse.VideoUri = _ctx.StringValue("IndexVideo.VideoUri");
-			indexVideoResponse.RemarksA = _ctx.StringValue("IndexVideo.RemarksA");
-			indexVideoResponse.RemarksB = _ctx.StringValue("IndexVideo.RemarksB");
-			indexVideoResponse.CreateTime = _ctx.StringValue("IndexVideo.CreateTime");
 			indexVideoResponse.ModifyTime = _ctx.StringValue("IndexVideo.ModifyTime");
-			indexVideoResponse.Interval = _ctx.FloatValue("IndexVideo.Interval");
-			indexVideoResponse.GrabType = _ctx.StringValue("IndexVideo.GrabType");
-			indexVideoResponse.StartTime = _ctx.StringValue("IndexVideo.StartTime");
+			indexVideoResponse.RequestId = _ctx.StringValue("IndexVideo.RequestId");
 			indexVideoResponse.EndTime = _ctx.StringValue("IndexVideo.EndTime");
 			indexVideoResponse.SaveType = _ctx.BooleanValue("IndexVideo.SaveType");
-			indexVideoResponse.TgtUri = _ctx.StringValue("IndexVideo.TgtUri");
-			indexVideoResponse.RemarksC = _ctx.StringValue("IndexVideo.RemarksC");
-			indexVideoResponse.RemarksD = _ctx.StringValue("IndexVideo.RemarksD");
 			indexVideoResponse.ExternalId = _ctx.StringValue("IndexVideo.ExternalId");
+			indexVideoResponse.CreateTime = _ctx.StringValue("IndexVideo.CreateTime");
+			indexVideoResponse.StartTime = _ctx.StringValue("IndexVideo.StartTime");
+			indexVideoResponse.VideoUri = _ctx.StringValue("IndexVideo.VideoUri");
+			indexVideoResponse.GrabType = _ctx.StringValue("IndexVideo.GrabType");
+			indexVideoResponse.RemarksA = _ctx.StringValue("IndexVideo.RemarksA");
+			indexVideoResponse.RemarksB = _ctx.StringValue("IndexVideo.RemarksB");
+			indexVideoResponse.RemarksC = _ctx.StringValue("IndexVideo.RemarksC");
+			indexVideoResponse.TgtUri = _ctx.StringValue("IndexVideo.TgtUri");
+			indexVideoResponse.RemarksD = _ctx.StringValue("IndexVideo.RemarksD");
+			indexVideoResponse.SetId = _ctx.StringValue("IndexVideo.SetId");
+			indexVideoResponse.Interval = _ctx.FloatValue("IndexVideo.Interval");
         
 			return indexVideoResponse;
         }

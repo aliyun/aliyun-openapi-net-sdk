@@ -25,109 +25,37 @@ namespace Aliyun.Acs.imm.Model.V20170906
 	public class IndexVideoResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string setId;
-
-		private string videoUri;
-
-		private string remarksA;
-
-		private string remarksB;
-
-		private string createTime;
-
 		private string modifyTime;
 
-		private float? interval;
-
-		private string grabType;
-
-		private string startTime;
+		private string requestId;
 
 		private string endTime;
 
 		private bool? saveType;
 
-		private string tgtUri;
+		private string externalId;
+
+		private string createTime;
+
+		private string startTime;
+
+		private string videoUri;
+
+		private string grabType;
+
+		private string remarksA;
+
+		private string remarksB;
 
 		private string remarksC;
 
+		private string tgtUri;
+
 		private string remarksD;
 
-		private string externalId;
+		private string setId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string SetId
-		{
-			get
-			{
-				return setId;
-			}
-			set	
-			{
-				setId = value;
-			}
-		}
-
-		public string VideoUri
-		{
-			get
-			{
-				return videoUri;
-			}
-			set	
-			{
-				videoUri = value;
-			}
-		}
-
-		public string RemarksA
-		{
-			get
-			{
-				return remarksA;
-			}
-			set	
-			{
-				remarksA = value;
-			}
-		}
-
-		public string RemarksB
-		{
-			get
-			{
-				return remarksB;
-			}
-			set	
-			{
-				remarksB = value;
-			}
-		}
-
-		public string CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
+		private float? interval;
 
 		public string ModifyTime
 		{
@@ -141,39 +69,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public float? Interval
+		public string RequestId
 		{
 			get
 			{
-				return interval;
+				return requestId;
 			}
 			set	
 			{
-				interval = value;
-			}
-		}
-
-		public string GrabType
-		{
-			get
-			{
-				return grabType;
-			}
-			set	
-			{
-				grabType = value;
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
+				requestId = value;
 			}
 		}
 
@@ -201,15 +105,87 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string TgtUri
+		public string ExternalId
 		{
 			get
 			{
-				return tgtUri;
+				return externalId;
 			}
 			set	
 			{
-				tgtUri = value;
+				externalId = value;
+			}
+		}
+
+		public string CreateTime
+		{
+			get
+			{
+				return createTime;
+			}
+			set	
+			{
+				createTime = value;
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
+		public string VideoUri
+		{
+			get
+			{
+				return videoUri;
+			}
+			set	
+			{
+				videoUri = value;
+			}
+		}
+
+		public string GrabType
+		{
+			get
+			{
+				return grabType;
+			}
+			set	
+			{
+				grabType = value;
+			}
+		}
+
+		public string RemarksA
+		{
+			get
+			{
+				return remarksA;
+			}
+			set	
+			{
+				remarksA = value;
+			}
+		}
+
+		public string RemarksB
+		{
+			get
+			{
+				return remarksB;
+			}
+			set	
+			{
+				remarksB = value;
 			}
 		}
 
@@ -225,6 +201,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string TgtUri
+		{
+			get
+			{
+				return tgtUri;
+			}
+			set	
+			{
+				tgtUri = value;
+			}
+		}
+
 		public string RemarksD
 		{
 			get
@@ -237,15 +225,27 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string ExternalId
+		public string SetId
 		{
 			get
 			{
-				return externalId;
+				return setId;
 			}
 			set	
 			{
-				externalId = value;
+				setId = value;
+			}
+		}
+
+		public float? Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
 			}
 		}
 	}

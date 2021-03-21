@@ -31,18 +31,18 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			IndexImageResponse indexImageResponse = new IndexImageResponse();
 
 			indexImageResponse.HttpResponse = _ctx.HttpResponse;
+			indexImageResponse.RemarksArrayB = _ctx.StringValue("IndexImage.RemarksArrayB");
+			indexImageResponse.ModifyTime = _ctx.StringValue("IndexImage.ModifyTime");
+			indexImageResponse.RemarksC = _ctx.StringValue("IndexImage.RemarksC");
+			indexImageResponse.RemarksD = _ctx.StringValue("IndexImage.RemarksD");
 			indexImageResponse.RequestId = _ctx.StringValue("IndexImage.RequestId");
+			indexImageResponse.RemarksArrayA = _ctx.StringValue("IndexImage.RemarksArrayA");
+			indexImageResponse.ExternalId = _ctx.StringValue("IndexImage.ExternalId");
+			indexImageResponse.CreateTime = _ctx.StringValue("IndexImage.CreateTime");
 			indexImageResponse.SetId = _ctx.StringValue("IndexImage.SetId");
 			indexImageResponse.ImageUri = _ctx.StringValue("IndexImage.ImageUri");
 			indexImageResponse.RemarksA = _ctx.StringValue("IndexImage.RemarksA");
 			indexImageResponse.RemarksB = _ctx.StringValue("IndexImage.RemarksB");
-			indexImageResponse.CreateTime = _ctx.StringValue("IndexImage.CreateTime");
-			indexImageResponse.ModifyTime = _ctx.StringValue("IndexImage.ModifyTime");
-			indexImageResponse.RemarksC = _ctx.StringValue("IndexImage.RemarksC");
-			indexImageResponse.RemarksD = _ctx.StringValue("IndexImage.RemarksD");
-			indexImageResponse.ExternalId = _ctx.StringValue("IndexImage.ExternalId");
-			indexImageResponse.RemarksArrayA = _ctx.StringValue("IndexImage.RemarksArrayA");
-			indexImageResponse.RemarksArrayB = _ctx.StringValue("IndexImage.RemarksArrayB");
         
 			return indexImageResponse;
         }

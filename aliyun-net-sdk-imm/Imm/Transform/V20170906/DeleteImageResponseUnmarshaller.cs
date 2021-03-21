@@ -32,8 +32,8 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 
 			deleteImageResponse.HttpResponse = _ctx.HttpResponse;
 			deleteImageResponse.RequestId = _ctx.StringValue("DeleteImage.RequestId");
-			deleteImageResponse.SetId = _ctx.StringValue("DeleteImage.SetId");
 			deleteImageResponse.ImageUri = _ctx.StringValue("DeleteImage.ImageUri");
+			deleteImageResponse.SetId = _ctx.StringValue("DeleteImage.SetId");
         
 			return deleteImageResponse;
         }

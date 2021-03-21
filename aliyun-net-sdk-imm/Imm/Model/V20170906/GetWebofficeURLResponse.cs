@@ -25,17 +25,29 @@ namespace Aliyun.Acs.imm.Model.V20170906
 	public class GetWebofficeURLResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string refreshToken;
 
-		private string webofficeURL;
+		private string requestId;
 
 		private string accessToken;
 
-		private string refreshToken;
+		private string refreshTokenExpiredTime;
+
+		private string webofficeURL;
 
 		private string accessTokenExpiredTime;
 
-		private string refreshTokenExpiredTime;
+		public string RefreshToken
+		{
+			get
+			{
+				return refreshToken;
+			}
+			set	
+			{
+				refreshToken = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -46,18 +58,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string WebofficeURL
-		{
-			get
-			{
-				return webofficeURL;
-			}
-			set	
-			{
-				webofficeURL = value;
 			}
 		}
 
@@ -73,15 +73,27 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string RefreshToken
+		public string RefreshTokenExpiredTime
 		{
 			get
 			{
-				return refreshToken;
+				return refreshTokenExpiredTime;
 			}
 			set	
 			{
-				refreshToken = value;
+				refreshTokenExpiredTime = value;
+			}
+		}
+
+		public string WebofficeURL
+		{
+			get
+			{
+				return webofficeURL;
+			}
+			set	
+			{
+				webofficeURL = value;
 			}
 		}
 
@@ -94,18 +106,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				accessTokenExpiredTime = value;
-			}
-		}
-
-		public string RefreshTokenExpiredTime
-		{
-			get
-			{
-				return refreshTokenExpiredTime;
-			}
-			set	
-			{
-				refreshTokenExpiredTime = value;
 			}
 		}
 	}

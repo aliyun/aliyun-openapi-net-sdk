@@ -31,12 +31,12 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			GetWebofficeURLResponse getWebofficeURLResponse = new GetWebofficeURLResponse();
 
 			getWebofficeURLResponse.HttpResponse = _ctx.HttpResponse;
-			getWebofficeURLResponse.RequestId = _ctx.StringValue("GetWebofficeURL.RequestId");
-			getWebofficeURLResponse.WebofficeURL = _ctx.StringValue("GetWebofficeURL.WebofficeURL");
-			getWebofficeURLResponse.AccessToken = _ctx.StringValue("GetWebofficeURL.AccessToken");
 			getWebofficeURLResponse.RefreshToken = _ctx.StringValue("GetWebofficeURL.RefreshToken");
-			getWebofficeURLResponse.AccessTokenExpiredTime = _ctx.StringValue("GetWebofficeURL.AccessTokenExpiredTime");
+			getWebofficeURLResponse.RequestId = _ctx.StringValue("GetWebofficeURL.RequestId");
+			getWebofficeURLResponse.AccessToken = _ctx.StringValue("GetWebofficeURL.AccessToken");
 			getWebofficeURLResponse.RefreshTokenExpiredTime = _ctx.StringValue("GetWebofficeURL.RefreshTokenExpiredTime");
+			getWebofficeURLResponse.WebofficeURL = _ctx.StringValue("GetWebofficeURL.WebofficeURL");
+			getWebofficeURLResponse.AccessTokenExpiredTime = _ctx.StringValue("GetWebofficeURL.AccessTokenExpiredTime");
         
 			return getWebofficeURLResponse;
         }
