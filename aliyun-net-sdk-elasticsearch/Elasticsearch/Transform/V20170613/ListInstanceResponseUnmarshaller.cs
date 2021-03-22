@@ -40,17 +40,17 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<ListInstanceResponse.ListInstance_Instance> listInstanceResponse_result = new List<ListInstanceResponse.ListInstance_Instance>();
 			for (int i = 0; i < _ctx.Length("ListInstance.Result.Length"); i++) {
 				ListInstanceResponse.ListInstance_Instance instance = new ListInstanceResponse.ListInstance_Instance();
-				instance.InstanceId = _ctx.StringValue("ListInstance.Result["+ i +"].instanceId");
+				instance.AdvancedDedicateMaster = _ctx.BooleanValue("ListInstance.Result["+ i +"].advancedDedicateMaster");
+				instance.CreatedAt = _ctx.StringValue("ListInstance.Result["+ i +"].createdAt");
+				instance.DedicateMaster = _ctx.BooleanValue("ListInstance.Result["+ i +"].dedicateMaster");
 				instance.Description = _ctx.StringValue("ListInstance.Result["+ i +"].description");
+				instance.EsVersion = _ctx.StringValue("ListInstance.Result["+ i +"].esVersion");
+				instance.InstanceId = _ctx.StringValue("ListInstance.Result["+ i +"].instanceId");
 				instance.NodeAmount = _ctx.IntegerValue("ListInstance.Result["+ i +"].nodeAmount");
 				instance.PaymentType = _ctx.StringValue("ListInstance.Result["+ i +"].paymentType");
-				instance.Status = _ctx.StringValue("ListInstance.Result["+ i +"].status");
-				instance.EsVersion = _ctx.StringValue("ListInstance.Result["+ i +"].esVersion");
-				instance.CreatedAt = _ctx.StringValue("ListInstance.Result["+ i +"].createdAt");
-				instance.UpdatedAt = _ctx.StringValue("ListInstance.Result["+ i +"].updatedAt");
-				instance.AdvancedDedicateMaster = _ctx.BooleanValue("ListInstance.Result["+ i +"].advancedDedicateMaster");
-				instance.DedicateMaster = _ctx.BooleanValue("ListInstance.Result["+ i +"].dedicateMaster");
 				instance.ResourceGroupId = _ctx.StringValue("ListInstance.Result["+ i +"].resourceGroupId");
+				instance.Status = _ctx.StringValue("ListInstance.Result["+ i +"].status");
+				instance.UpdatedAt = _ctx.StringValue("ListInstance.Result["+ i +"].updatedAt");
 
 				List<Dictionary<string, string>> instance_extendConfigs = new List<Dictionary<string, string>>();
 				for (int j = 0; j < _ctx.Length("ListInstance.Result["+ i +"].ExtendConfigs.Length"); j++) {
@@ -67,48 +67,48 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				}
 				instance.ExtendConfigs = instance_extendConfigs;
 
-				ListInstanceResponse.ListInstance_Instance.ListInstance_NodeSpec nodeSpec = new ListInstanceResponse.ListInstance_Instance.ListInstance_NodeSpec();
-				nodeSpec.Spec = _ctx.StringValue("ListInstance.Result["+ i +"].NodeSpec.spec");
-				nodeSpec.Disk = _ctx.IntegerValue("ListInstance.Result["+ i +"].NodeSpec.disk");
-				nodeSpec.DiskType = _ctx.StringValue("ListInstance.Result["+ i +"].NodeSpec.diskType");
-				nodeSpec.DiskEncryption = _ctx.BooleanValue("ListInstance.Result["+ i +"].NodeSpec.diskEncryption");
-				instance.NodeSpec = nodeSpec;
+				ListInstanceResponse.ListInstance_Instance.ListInstance_ClientNodeConfiguration clientNodeConfiguration = new ListInstanceResponse.ListInstance_Instance.ListInstance_ClientNodeConfiguration();
+				clientNodeConfiguration.Amount = _ctx.IntegerValue("ListInstance.Result["+ i +"].ClientNodeConfiguration.amount");
+				clientNodeConfiguration.Disk = _ctx.IntegerValue("ListInstance.Result["+ i +"].ClientNodeConfiguration.disk");
+				clientNodeConfiguration.DiskType = _ctx.StringValue("ListInstance.Result["+ i +"].ClientNodeConfiguration.diskType");
+				clientNodeConfiguration.Spec = _ctx.StringValue("ListInstance.Result["+ i +"].ClientNodeConfiguration.spec");
+				instance.ClientNodeConfiguration = clientNodeConfiguration;
+
+				ListInstanceResponse.ListInstance_Instance.ListInstance_ElasticDataNodeConfiguration elasticDataNodeConfiguration = new ListInstanceResponse.ListInstance_Instance.ListInstance_ElasticDataNodeConfiguration();
+				elasticDataNodeConfiguration.Amount = _ctx.IntegerValue("ListInstance.Result["+ i +"].ElasticDataNodeConfiguration.amount");
+				elasticDataNodeConfiguration.Disk = _ctx.IntegerValue("ListInstance.Result["+ i +"].ElasticDataNodeConfiguration.disk");
+				elasticDataNodeConfiguration.DiskEncryption = _ctx.BooleanValue("ListInstance.Result["+ i +"].ElasticDataNodeConfiguration.diskEncryption");
+				elasticDataNodeConfiguration.DiskType = _ctx.StringValue("ListInstance.Result["+ i +"].ElasticDataNodeConfiguration.diskType");
+				elasticDataNodeConfiguration.Spec = _ctx.StringValue("ListInstance.Result["+ i +"].ElasticDataNodeConfiguration.spec");
+				instance.ElasticDataNodeConfiguration = elasticDataNodeConfiguration;
+
+				ListInstanceResponse.ListInstance_Instance.ListInstance_KibanaConfiguration kibanaConfiguration = new ListInstanceResponse.ListInstance_Instance.ListInstance_KibanaConfiguration();
+				kibanaConfiguration.Amount = _ctx.IntegerValue("ListInstance.Result["+ i +"].KibanaConfiguration.amount");
+				kibanaConfiguration.Disk = _ctx.IntegerValue("ListInstance.Result["+ i +"].KibanaConfiguration.disk");
+				kibanaConfiguration.DiskType = _ctx.StringValue("ListInstance.Result["+ i +"].KibanaConfiguration.diskType");
+				kibanaConfiguration.Spec = _ctx.StringValue("ListInstance.Result["+ i +"].KibanaConfiguration.spec");
+				instance.KibanaConfiguration = kibanaConfiguration;
+
+				ListInstanceResponse.ListInstance_Instance.ListInstance_MasterConfiguration masterConfiguration = new ListInstanceResponse.ListInstance_Instance.ListInstance_MasterConfiguration();
+				masterConfiguration.Amount = _ctx.IntegerValue("ListInstance.Result["+ i +"].MasterConfiguration.amount");
+				masterConfiguration.Disk = _ctx.IntegerValue("ListInstance.Result["+ i +"].MasterConfiguration.disk");
+				masterConfiguration.DiskType = _ctx.StringValue("ListInstance.Result["+ i +"].MasterConfiguration.diskType");
+				masterConfiguration.Spec = _ctx.StringValue("ListInstance.Result["+ i +"].MasterConfiguration.spec");
+				instance.MasterConfiguration = masterConfiguration;
 
 				ListInstanceResponse.ListInstance_Instance.ListInstance_NetworkConfig networkConfig = new ListInstanceResponse.ListInstance_Instance.ListInstance_NetworkConfig();
 				networkConfig.Type = _ctx.StringValue("ListInstance.Result["+ i +"].NetworkConfig.type");
 				networkConfig.VpcId = _ctx.StringValue("ListInstance.Result["+ i +"].NetworkConfig.vpcId");
-				networkConfig.VswitchId = _ctx.StringValue("ListInstance.Result["+ i +"].NetworkConfig.vswitchId");
 				networkConfig.VsArea = _ctx.StringValue("ListInstance.Result["+ i +"].NetworkConfig.vsArea");
+				networkConfig.VswitchId = _ctx.StringValue("ListInstance.Result["+ i +"].NetworkConfig.vswitchId");
 				instance.NetworkConfig = networkConfig;
 
-				ListInstanceResponse.ListInstance_Instance.ListInstance_MasterConfiguration masterConfiguration = new ListInstanceResponse.ListInstance_Instance.ListInstance_MasterConfiguration();
-				masterConfiguration.Spec = _ctx.StringValue("ListInstance.Result["+ i +"].MasterConfiguration.spec");
-				masterConfiguration.Amount = _ctx.IntegerValue("ListInstance.Result["+ i +"].MasterConfiguration.amount");
-				masterConfiguration.DiskType = _ctx.StringValue("ListInstance.Result["+ i +"].MasterConfiguration.diskType");
-				masterConfiguration.Disk = _ctx.IntegerValue("ListInstance.Result["+ i +"].MasterConfiguration.disk");
-				instance.MasterConfiguration = masterConfiguration;
-
-				ListInstanceResponse.ListInstance_Instance.ListInstance_KibanaConfiguration kibanaConfiguration = new ListInstanceResponse.ListInstance_Instance.ListInstance_KibanaConfiguration();
-				kibanaConfiguration.Spec = _ctx.StringValue("ListInstance.Result["+ i +"].KibanaConfiguration.spec");
-				kibanaConfiguration.Disk = _ctx.IntegerValue("ListInstance.Result["+ i +"].KibanaConfiguration.disk");
-				kibanaConfiguration.Amount = _ctx.IntegerValue("ListInstance.Result["+ i +"].KibanaConfiguration.amount");
-				kibanaConfiguration.DiskType = _ctx.StringValue("ListInstance.Result["+ i +"].KibanaConfiguration.diskType");
-				instance.KibanaConfiguration = kibanaConfiguration;
-
-				ListInstanceResponse.ListInstance_Instance.ListInstance_ElasticDataNodeConfiguration elasticDataNodeConfiguration = new ListInstanceResponse.ListInstance_Instance.ListInstance_ElasticDataNodeConfiguration();
-				elasticDataNodeConfiguration.Spec = _ctx.StringValue("ListInstance.Result["+ i +"].ElasticDataNodeConfiguration.spec");
-				elasticDataNodeConfiguration.Amount = _ctx.IntegerValue("ListInstance.Result["+ i +"].ElasticDataNodeConfiguration.amount");
-				elasticDataNodeConfiguration.DiskType = _ctx.StringValue("ListInstance.Result["+ i +"].ElasticDataNodeConfiguration.diskType");
-				elasticDataNodeConfiguration.Disk = _ctx.IntegerValue("ListInstance.Result["+ i +"].ElasticDataNodeConfiguration.disk");
-				elasticDataNodeConfiguration.DiskEncryption = _ctx.BooleanValue("ListInstance.Result["+ i +"].ElasticDataNodeConfiguration.diskEncryption");
-				instance.ElasticDataNodeConfiguration = elasticDataNodeConfiguration;
-
-				ListInstanceResponse.ListInstance_Instance.ListInstance_ClientNodeConfiguration clientNodeConfiguration = new ListInstanceResponse.ListInstance_Instance.ListInstance_ClientNodeConfiguration();
-				clientNodeConfiguration.Spec = _ctx.StringValue("ListInstance.Result["+ i +"].ClientNodeConfiguration.spec");
-				clientNodeConfiguration.Amount = _ctx.IntegerValue("ListInstance.Result["+ i +"].ClientNodeConfiguration.amount");
-				clientNodeConfiguration.DiskType = _ctx.StringValue("ListInstance.Result["+ i +"].ClientNodeConfiguration.diskType");
-				clientNodeConfiguration.Disk = _ctx.IntegerValue("ListInstance.Result["+ i +"].ClientNodeConfiguration.disk");
-				instance.ClientNodeConfiguration = clientNodeConfiguration;
+				ListInstanceResponse.ListInstance_Instance.ListInstance_NodeSpec nodeSpec = new ListInstanceResponse.ListInstance_Instance.ListInstance_NodeSpec();
+				nodeSpec.Disk = _ctx.IntegerValue("ListInstance.Result["+ i +"].NodeSpec.disk");
+				nodeSpec.DiskEncryption = _ctx.BooleanValue("ListInstance.Result["+ i +"].NodeSpec.diskEncryption");
+				nodeSpec.DiskType = _ctx.StringValue("ListInstance.Result["+ i +"].NodeSpec.diskType");
+				nodeSpec.Spec = _ctx.StringValue("ListInstance.Result["+ i +"].NodeSpec.spec");
+				instance.NodeSpec = nodeSpec;
 
 				List<ListInstanceResponse.ListInstance_Instance.ListInstance_Tag> instance_tags = new List<ListInstanceResponse.ListInstance_Instance.ListInstance_Tag>();
 				for (int j = 0; j < _ctx.Length("ListInstance.Result["+ i +"].Tags.Length"); j++) {

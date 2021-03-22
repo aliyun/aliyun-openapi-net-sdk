@@ -22,14 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-	public class ListSearchLogResponse : AcsResponse
+	public class ListAckClustersResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<ListSearchLog_ResultItem> result;
-
-		private ListSearchLog_Headers headers;
+		private List<ListAckClusters_ResultItem> result;
 
 		public string RequestId
 		{
@@ -43,7 +41,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public List<ListSearchLog_ResultItem> Result
+		public List<ListAckClusters_ResultItem> Result
 		{
 			get
 			{
@@ -55,120 +53,62 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public ListSearchLog_Headers Headers
-		{
-			get
-			{
-				return headers;
-			}
-			set	
-			{
-				headers = value;
-			}
-		}
-
-		public class ListSearchLog_ResultItem
+		public class ListAckClusters_ResultItem
 		{
 
-			private long? timestamp;
+			private string clusterId;
 
-			private string host;
+			private string name;
 
-			private string instanceId;
+			private string clusterType;
 
-			private string contentCollection;
+			private string vpcId;
 
-			private string level;
-
-			private string content;
-
-			public long? Timestamp
+			public string ClusterId
 			{
 				get
 				{
-					return timestamp;
+					return clusterId;
 				}
 				set	
 				{
-					timestamp = value;
+					clusterId = value;
 				}
 			}
 
-			public string Host
+			public string Name
 			{
 				get
 				{
-					return host;
+					return name;
 				}
 				set	
 				{
-					host = value;
+					name = value;
 				}
 			}
 
-			public string InstanceId
+			public string ClusterType
 			{
 				get
 				{
-					return instanceId;
+					return clusterType;
 				}
 				set	
 				{
-					instanceId = value;
+					clusterType = value;
 				}
 			}
 
-			public string ContentCollection
+			public string VpcId
 			{
 				get
 				{
-					return contentCollection;
+					return vpcId;
 				}
 				set	
 				{
-					contentCollection = value;
-				}
-			}
-
-			public string Level
-			{
-				get
-				{
-					return level;
-				}
-				set	
-				{
-					level = value;
-				}
-			}
-
-			public string Content
-			{
-				get
-				{
-					return content;
-				}
-				set	
-				{
-					content = value;
-				}
-			}
-		}
-
-		public class ListSearchLog_Headers
-		{
-
-			private int? xTotalCount;
-
-			public int? XTotalCount
-			{
-				get
-				{
-					return xTotalCount;
-				}
-				set	
-				{
-					xTotalCount = value;
+					vpcId = value;
 				}
 			}
 		}

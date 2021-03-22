@@ -27,31 +27,23 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class ListCollectorsRequest : RoaAcsRequest<ListCollectorsResponse>
+    public class CancelDeletionRequest : RoaAcsRequest<CancelDeletionResponse>
     {
-        public ListCollectorsRequest()
-            : base("elasticsearch", "2017-06-13", "ListCollectors", "elasticsearch", "openAPI")
+        public CancelDeletionRequest()
+            : base("elasticsearch", "2017-06-13", "CancelDeletion", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/collectors";
-			Method = MethodType.GET;
+			UriPattern = "/openapi/instances/[InstanceId]/actions/cancel-deletion";
+			Method = MethodType.POST;
         }
 
 		private string instanceId;
 
-		private int? size;
-
-		private string name;
-
-		private string sourceType;
-
-		private int? page;
-
-		private string resId;
+		private string clientToken;
 
 		public string InstanceId
 		{
@@ -62,72 +54,20 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			set	
 			{
 				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "instanceId", value);
+				DictionaryUtil.Add(PathParameters, "InstanceId", value);
 			}
 		}
 
-		public int? Size
+		public string ClientToken
 		{
 			get
 			{
-				return size;
+				return clientToken;
 			}
 			set	
 			{
-				size = value;
-				DictionaryUtil.Add(QueryParameters, "size", value.ToString());
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "name", value);
-			}
-		}
-
-		public string SourceType
-		{
-			get
-			{
-				return sourceType;
-			}
-			set	
-			{
-				sourceType = value;
-				DictionaryUtil.Add(QueryParameters, "sourceType", value);
-			}
-		}
-
-		public int? Page
-		{
-			get
-			{
-				return page;
-			}
-			set	
-			{
-				page = value;
-				DictionaryUtil.Add(QueryParameters, "page", value.ToString());
-			}
-		}
-
-		public string ResId
-		{
-			get
-			{
-				return resId;
-			}
-			set	
-			{
-				resId = value;
-				DictionaryUtil.Add(QueryParameters, "resId", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "clientToken", value);
 			}
 		}
 
@@ -136,9 +76,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			return false;
 		}
 
-        public override ListCollectorsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CancelDeletionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListCollectorsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CancelDeletionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

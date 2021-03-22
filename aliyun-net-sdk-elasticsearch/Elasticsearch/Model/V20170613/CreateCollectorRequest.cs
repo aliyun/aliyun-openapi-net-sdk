@@ -27,38 +27,21 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class DeleteInstanceRequest : RoaAcsRequest<DeleteInstanceResponse>
+    public class CreateCollectorRequest : RoaAcsRequest<CreateCollectorResponse>
     {
-        public DeleteInstanceRequest()
-            : base("elasticsearch", "2017-06-13", "DeleteInstance", "elasticsearch", "openAPI")
+        public CreateCollectorRequest()
+            : base("elasticsearch", "2017-06-13", "CreateCollector", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/instances/[InstanceId]";
-			Method = MethodType.DELETE;
+			UriPattern = "/openapi/collectors";
+			Method = MethodType.POST;
         }
 
-		private string instanceId;
-
 		private string clientToken;
-
-		private string deleteType;
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(PathParameters, "InstanceId", value);
-			}
-		}
 
 		public string ClientToken
 		{
@@ -73,22 +56,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public string DeleteType
-		{
-			get
-			{
-				return deleteType;
-			}
-			set	
-			{
-				deleteType = value;
-				DictionaryUtil.Add(QueryParameters, "deleteType", value);
-			}
-		}
-
-        public override DeleteInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateCollectorResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateCollectorResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

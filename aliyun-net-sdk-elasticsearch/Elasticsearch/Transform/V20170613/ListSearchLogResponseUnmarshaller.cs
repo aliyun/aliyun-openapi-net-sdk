@@ -42,9 +42,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				ListSearchLogResponse.ListSearchLog_ResultItem resultItem = new ListSearchLogResponse.ListSearchLog_ResultItem();
 				resultItem.Timestamp = _ctx.LongValue("ListSearchLog.Result["+ i +"].timestamp");
 				resultItem.Host = _ctx.StringValue("ListSearchLog.Result["+ i +"].host");
+				resultItem.InstanceId = _ctx.StringValue("ListSearchLog.Result["+ i +"].instanceId");
+				resultItem.ContentCollection = _ctx.StringValue("ListSearchLog.Result["+ i +"].contentCollection");
 				resultItem.Level = _ctx.StringValue("ListSearchLog.Result["+ i +"].level");
 				resultItem.Content = _ctx.StringValue("ListSearchLog.Result["+ i +"].content");
-				resultItem.InstanceId = _ctx.StringValue("ListSearchLog.Result["+ i +"].instanceId");
 
 				listSearchLogResponse_result.Add(resultItem);
 			}

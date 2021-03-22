@@ -37,7 +37,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/diagnosis/instances/[InstanceId]/indices";
+			UriPattern = "/openapi/instances/[InstanceId]/indices";
 			Method = MethodType.GET;
         }
 

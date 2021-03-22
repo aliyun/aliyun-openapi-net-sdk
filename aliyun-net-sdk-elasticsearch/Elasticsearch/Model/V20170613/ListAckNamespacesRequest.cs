@@ -27,44 +27,25 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class ListCollectorsRequest : RoaAcsRequest<ListCollectorsResponse>
+    public class ListAckNamespacesRequest : RoaAcsRequest<ListAckNamespacesResponse>
     {
-        public ListCollectorsRequest()
-            : base("elasticsearch", "2017-06-13", "ListCollectors", "elasticsearch", "openAPI")
+        public ListAckNamespacesRequest()
+            : base("elasticsearch", "2017-06-13", "ListAckNamespaces", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/collectors";
+			UriPattern = "/openapi/ack-clusters/[ClusterId]/namespaces";
 			Method = MethodType.GET;
         }
 
-		private string instanceId;
-
 		private int? size;
-
-		private string name;
-
-		private string sourceType;
 
 		private int? page;
 
-		private string resId;
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "instanceId", value);
-			}
-		}
+		private string clusterId;
 
 		public int? Size
 		{
@@ -76,32 +57,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				size = value;
 				DictionaryUtil.Add(QueryParameters, "size", value.ToString());
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "name", value);
-			}
-		}
-
-		public string SourceType
-		{
-			get
-			{
-				return sourceType;
-			}
-			set	
-			{
-				sourceType = value;
-				DictionaryUtil.Add(QueryParameters, "sourceType", value);
 			}
 		}
 
@@ -118,16 +73,16 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public string ResId
+		public string ClusterId
 		{
 			get
 			{
-				return resId;
+				return clusterId;
 			}
 			set	
 			{
-				resId = value;
-				DictionaryUtil.Add(QueryParameters, "resId", value);
+				clusterId = value;
+				DictionaryUtil.Add(PathParameters, "ClusterId", value);
 			}
 		}
 
@@ -136,9 +91,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			return false;
 		}
 
-        public override ListCollectorsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListAckNamespacesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListCollectorsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListAckNamespacesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

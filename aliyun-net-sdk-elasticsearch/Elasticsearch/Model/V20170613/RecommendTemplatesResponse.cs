@@ -22,14 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-	public class ListSearchLogResponse : AcsResponse
+	public class RecommendTemplatesResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<ListSearchLog_ResultItem> result;
-
-		private ListSearchLog_Headers headers;
+		private List<RecommendTemplates_TemplateConfig> result;
 
 		public string RequestId
 		{
@@ -43,7 +41,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public List<ListSearchLog_ResultItem> Result
+		public List<RecommendTemplates_TemplateConfig> Result
 		{
 			get
 			{
@@ -55,90 +53,22 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public ListSearchLog_Headers Headers
-		{
-			get
-			{
-				return headers;
-			}
-			set	
-			{
-				headers = value;
-			}
-		}
-
-		public class ListSearchLog_ResultItem
+		public class RecommendTemplates_TemplateConfig
 		{
 
-			private long? timestamp;
-
-			private string host;
-
-			private string instanceId;
-
-			private string contentCollection;
-
-			private string level;
+			private string templateName;
 
 			private string content;
 
-			public long? Timestamp
+			public string TemplateName
 			{
 				get
 				{
-					return timestamp;
+					return templateName;
 				}
 				set	
 				{
-					timestamp = value;
-				}
-			}
-
-			public string Host
-			{
-				get
-				{
-					return host;
-				}
-				set	
-				{
-					host = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string ContentCollection
-			{
-				get
-				{
-					return contentCollection;
-				}
-				set	
-				{
-					contentCollection = value;
-				}
-			}
-
-			public string Level
-			{
-				get
-				{
-					return level;
-				}
-				set	
-				{
-					level = value;
+					templateName = value;
 				}
 			}
 
@@ -151,24 +81,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					content = value;
-				}
-			}
-		}
-
-		public class ListSearchLog_Headers
-		{
-
-			private int? xTotalCount;
-
-			public int? XTotalCount
-			{
-				get
-				{
-					return xTotalCount;
-				}
-				set	
-				{
-					xTotalCount = value;
 				}
 			}
 		}

@@ -27,44 +27,25 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class ListCollectorsRequest : RoaAcsRequest<ListCollectorsResponse>
+    public class ListAckClustersRequest : RoaAcsRequest<ListAckClustersResponse>
     {
-        public ListCollectorsRequest()
-            : base("elasticsearch", "2017-06-13", "ListCollectors", "elasticsearch", "openAPI")
+        public ListAckClustersRequest()
+            : base("elasticsearch", "2017-06-13", "ListAckClusters", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/collectors";
+			UriPattern = "/openapi/ack-clusters";
 			Method = MethodType.GET;
         }
 
-		private string instanceId;
-
 		private int? size;
 
-		private string name;
-
-		private string sourceType;
+		private string vpcId;
 
 		private int? page;
-
-		private string resId;
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "instanceId", value);
-			}
-		}
 
 		public int? Size
 		{
@@ -79,29 +60,16 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public string Name
+		public string VpcId
 		{
 			get
 			{
-				return name;
+				return vpcId;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "name", value);
-			}
-		}
-
-		public string SourceType
-		{
-			get
-			{
-				return sourceType;
-			}
-			set	
-			{
-				sourceType = value;
-				DictionaryUtil.Add(QueryParameters, "sourceType", value);
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "vpcId", value);
 			}
 		}
 
@@ -118,27 +86,14 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public string ResId
-		{
-			get
-			{
-				return resId;
-			}
-			set	
-			{
-				resId = value;
-				DictionaryUtil.Add(QueryParameters, "resId", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ListCollectorsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListAckClustersResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListCollectorsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListAckClustersResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
