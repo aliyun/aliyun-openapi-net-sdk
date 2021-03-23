@@ -31,6 +31,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string systemAdminAccountFirstActivationTime;
 
+		private int? pageNumber;
+
+		private int? totalRecordCount;
+
 		private List<DescribeAccounts_DBInstanceAccount> accounts;
 
 		public string RequestId
@@ -66,6 +70,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				systemAdminAccountFirstActivationTime = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public int? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
 			}
 		}
 

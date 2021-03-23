@@ -24,19 +24,16 @@ using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class UpgradeDBInstanceMajorVersionPrecheckResponseUnmarshaller
+    public class ModifyHADiagnoseConfigResponseUnmarshaller
     {
-        public static UpgradeDBInstanceMajorVersionPrecheckResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ModifyHADiagnoseConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			UpgradeDBInstanceMajorVersionPrecheckResponse upgradeDBInstanceMajorVersionPrecheckResponse = new UpgradeDBInstanceMajorVersionPrecheckResponse();
+			ModifyHADiagnoseConfigResponse modifyHADiagnoseConfigResponse = new ModifyHADiagnoseConfigResponse();
 
-			upgradeDBInstanceMajorVersionPrecheckResponse.HttpResponse = _ctx.HttpResponse;
-			upgradeDBInstanceMajorVersionPrecheckResponse.RequestId = _ctx.StringValue("UpgradeDBInstanceMajorVersionPrecheck.RequestId");
-			upgradeDBInstanceMajorVersionPrecheckResponse.TaskId = _ctx.StringValue("UpgradeDBInstanceMajorVersionPrecheck.TaskId");
-			upgradeDBInstanceMajorVersionPrecheckResponse.TargetMajorVersion = _ctx.StringValue("UpgradeDBInstanceMajorVersionPrecheck.TargetMajorVersion");
-			upgradeDBInstanceMajorVersionPrecheckResponse.DBInstanceName = _ctx.StringValue("UpgradeDBInstanceMajorVersionPrecheck.DBInstanceName");
+			modifyHADiagnoseConfigResponse.HttpResponse = _ctx.HttpResponse;
+			modifyHADiagnoseConfigResponse.RequestId = _ctx.StringValue("ModifyHADiagnoseConfig.RequestId");
         
-			return upgradeDBInstanceMajorVersionPrecheckResponse;
+			return modifyHADiagnoseConfigResponse;
         }
     }
 }

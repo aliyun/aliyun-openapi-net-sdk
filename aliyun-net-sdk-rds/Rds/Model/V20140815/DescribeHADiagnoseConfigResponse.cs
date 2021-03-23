@@ -22,18 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class UpgradeDBInstanceMajorVersionResponse : AcsResponse
+	public class DescribeHADiagnoseConfigResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string dBInstanceId;
-
-		private string orderId;
-
-		private string connectionString;
-
-		private string port;
+		private string tcpConnectionType;
 
 		public string RequestId
 		{
@@ -47,51 +41,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
+		public string TcpConnectionType
 		{
 			get
 			{
-				return dBInstanceId;
+				return tcpConnectionType;
 			}
 			set	
 			{
-				dBInstanceId = value;
-			}
-		}
-
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
-
-		public string ConnectionString
-		{
-			get
-			{
-				return connectionString;
-			}
-			set	
-			{
-				connectionString = value;
-			}
-		}
-
-		public string Port
-		{
-			get
-			{
-				return port;
-			}
-			set	
-			{
-				port = value;
+				tcpConnectionType = value;
 			}
 		}
 	}

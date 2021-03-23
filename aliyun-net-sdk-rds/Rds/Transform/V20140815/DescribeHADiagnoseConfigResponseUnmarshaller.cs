@@ -24,20 +24,17 @@ using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class UpgradeDBInstanceMajorVersionResponseUnmarshaller
+    public class DescribeHADiagnoseConfigResponseUnmarshaller
     {
-        public static UpgradeDBInstanceMajorVersionResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DescribeHADiagnoseConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			UpgradeDBInstanceMajorVersionResponse upgradeDBInstanceMajorVersionResponse = new UpgradeDBInstanceMajorVersionResponse();
+			DescribeHADiagnoseConfigResponse describeHADiagnoseConfigResponse = new DescribeHADiagnoseConfigResponse();
 
-			upgradeDBInstanceMajorVersionResponse.HttpResponse = _ctx.HttpResponse;
-			upgradeDBInstanceMajorVersionResponse.RequestId = _ctx.StringValue("UpgradeDBInstanceMajorVersion.RequestId");
-			upgradeDBInstanceMajorVersionResponse.DBInstanceId = _ctx.StringValue("UpgradeDBInstanceMajorVersion.DBInstanceId");
-			upgradeDBInstanceMajorVersionResponse.OrderId = _ctx.StringValue("UpgradeDBInstanceMajorVersion.OrderId");
-			upgradeDBInstanceMajorVersionResponse.ConnectionString = _ctx.StringValue("UpgradeDBInstanceMajorVersion.ConnectionString");
-			upgradeDBInstanceMajorVersionResponse.Port = _ctx.StringValue("UpgradeDBInstanceMajorVersion.Port");
+			describeHADiagnoseConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeHADiagnoseConfigResponse.RequestId = _ctx.StringValue("DescribeHADiagnoseConfig.RequestId");
+			describeHADiagnoseConfigResponse.TcpConnectionType = _ctx.StringValue("DescribeHADiagnoseConfig.TcpConnectionType");
         
-			return upgradeDBInstanceMajorVersionResponse;
+			return describeHADiagnoseConfigResponse;
         }
     }
 }

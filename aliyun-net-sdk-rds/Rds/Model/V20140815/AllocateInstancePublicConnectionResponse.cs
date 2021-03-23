@@ -27,6 +27,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
+		private string connectionString;
+
+		private string dbInstanceName;
+
 		public string RequestId
 		{
 			get
@@ -36,6 +40,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ConnectionString
+		{
+			get
+			{
+				return connectionString;
+			}
+			set	
+			{
+				connectionString = value;
+			}
+		}
+
+		public string DbInstanceName
+		{
+			get
+			{
+				return dbInstanceName;
+			}
+			set	
+			{
+				dbInstanceName = value;
 			}
 		}
 	}

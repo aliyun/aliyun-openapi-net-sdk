@@ -46,7 +46,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string logBackupFrequency;
 
-		private string archiveBackupKeepCount;
+		private int? archiveBackupKeepCount;
 
 		private string backupLog;
 
@@ -81,6 +81,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string preferredBackupTime;
 
 		private string backupRetentionPeriod;
+
+		private string backupMethod;
 
 		private string archiveBackupRetentionPeriod;
 
@@ -127,7 +129,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ArchiveBackupKeepCount
+		public int? ArchiveBackupKeepCount
 		{
 			get
 			{
@@ -136,7 +138,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				archiveBackupKeepCount = value;
-				DictionaryUtil.Add(QueryParameters, "ArchiveBackupKeepCount", value);
+				DictionaryUtil.Add(QueryParameters, "ArchiveBackupKeepCount", value.ToString());
 			}
 		}
 
@@ -358,6 +360,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				backupRetentionPeriod = value;
 				DictionaryUtil.Add(QueryParameters, "BackupRetentionPeriod", value);
+			}
+		}
+
+		public string BackupMethod
+		{
+			get
+			{
+				return backupMethod;
+			}
+			set	
+			{
+				backupMethod = value;
+				DictionaryUtil.Add(QueryParameters, "BackupMethod", value);
 			}
 		}
 

@@ -22,16 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class UpgradeDBInstanceMajorVersionPrecheckResponse : AcsResponse
+	public class ModifyHADiagnoseConfigResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private string taskId;
-
-		private string targetMajorVersion;
-
-		private string dBInstanceName;
 
 		public string RequestId
 		{
@@ -42,42 +36,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-			}
-		}
-
-		public string TargetMajorVersion
-		{
-			get
-			{
-				return targetMajorVersion;
-			}
-			set	
-			{
-				targetMajorVersion = value;
-			}
-		}
-
-		public string DBInstanceName
-		{
-			get
-			{
-				return dBInstanceName;
-			}
-			set	
-			{
-				dBInstanceName = value;
 			}
 		}
 	}

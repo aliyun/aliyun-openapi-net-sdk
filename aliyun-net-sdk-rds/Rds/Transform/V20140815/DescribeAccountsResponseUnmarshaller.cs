@@ -34,6 +34,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeAccountsResponse.RequestId = _ctx.StringValue("DescribeAccounts.RequestId");
 			describeAccountsResponse.SystemAdminAccountStatus = _ctx.StringValue("DescribeAccounts.SystemAdminAccountStatus");
 			describeAccountsResponse.SystemAdminAccountFirstActivationTime = _ctx.StringValue("DescribeAccounts.SystemAdminAccountFirstActivationTime");
+			describeAccountsResponse.PageNumber = _ctx.IntegerValue("DescribeAccounts.PageNumber");
+			describeAccountsResponse.TotalRecordCount = _ctx.IntegerValue("DescribeAccounts.TotalRecordCount");
 
 			List<DescribeAccountsResponse.DescribeAccounts_DBInstanceAccount> describeAccountsResponse_accounts = new List<DescribeAccountsResponse.DescribeAccounts_DBInstanceAccount>();
 			for (int i = 0; i < _ctx.Length("DescribeAccounts.Accounts.Length"); i++) {

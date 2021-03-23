@@ -32,6 +32,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			switchDBInstanceNetTypeResponse.HttpResponse = _ctx.HttpResponse;
 			switchDBInstanceNetTypeResponse.RequestId = _ctx.StringValue("SwitchDBInstanceNetType.RequestId");
+			switchDBInstanceNetTypeResponse.OldConnectionString = _ctx.StringValue("SwitchDBInstanceNetType.OldConnectionString");
+			switchDBInstanceNetTypeResponse.NewConnectionString = _ctx.StringValue("SwitchDBInstanceNetType.NewConnectionString");
         
 			return switchDBInstanceNetTypeResponse;
         }

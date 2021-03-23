@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeUpgradeMajorVersionTasksRequest : RpcAcsRequest<DescribeUpgradeMajorVersionTasksResponse>
+    public class ModifyHADiagnoseConfigRequest : RpcAcsRequest<ModifyHADiagnoseConfigResponse>
     {
-        public DescribeUpgradeMajorVersionTasksRequest()
-            : base("Rds", "2014-08-15", "DescribeUpgradeMajorVersionTasks", "rds", "openAPI")
+        public ModifyHADiagnoseConfigRequest()
+            : base("Rds", "2014-08-15", "ModifyHADiagnoseConfig", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,21 +42,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private int? pageNumber;
-
-		private int? pageSize;
-
-		private string dBInstanceId;
-
-		private int? taskId;
-
 		private string resourceOwnerAccount;
-
-		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string targetMajorVersion;
+		private string dBInstanceId;
+
+		private string tcpConnectionType;
 
 		public long? ResourceOwnerId
 		{
@@ -68,58 +60,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public int? TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value.ToString());
 			}
 		}
 
@@ -136,19 +76,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -162,27 +89,35 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string TargetMajorVersion
+		public string DBInstanceId
 		{
 			get
 			{
-				return targetMajorVersion;
+				return dBInstanceId;
 			}
 			set	
 			{
-				targetMajorVersion = value;
-				DictionaryUtil.Add(QueryParameters, "TargetMajorVersion", value);
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string TcpConnectionType
 		{
-			return false;
+			get
+			{
+				return tcpConnectionType;
+			}
+			set	
+			{
+				tcpConnectionType = value;
+				DictionaryUtil.Add(QueryParameters, "TcpConnectionType", value);
+			}
 		}
 
-        public override DescribeUpgradeMajorVersionTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyHADiagnoseConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeUpgradeMajorVersionTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyHADiagnoseConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

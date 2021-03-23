@@ -33,6 +33,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			modifyDBInstanceNetworkTypeResponse.HttpResponse = _ctx.HttpResponse;
 			modifyDBInstanceNetworkTypeResponse.RequestId = _ctx.StringValue("ModifyDBInstanceNetworkType.RequestId");
 			modifyDBInstanceNetworkTypeResponse.TaskId = _ctx.StringValue("ModifyDBInstanceNetworkType.TaskId");
+			modifyDBInstanceNetworkTypeResponse.ConnectionString = _ctx.StringValue("ModifyDBInstanceNetworkType.ConnectionString");
         
 			return modifyDBInstanceNetworkTypeResponse;
         }
