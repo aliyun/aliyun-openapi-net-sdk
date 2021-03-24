@@ -260,7 +260,7 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 					private long? satisfactionSurveysResponded;
 
-					private long? serviceLevel20;
+					private float? serviceLevel20;
 
 					private long? totalHoldTime;
 
@@ -450,7 +450,7 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 						}
 					}
 
-					public long? ServiceLevel20
+					public float? ServiceLevel20
 					{
 						get
 						{

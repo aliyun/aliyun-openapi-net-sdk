@@ -40,6 +40,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			Method = MethodType.POST;
         }
 
+		private string criteria;
+
 		private long? endTime;
 
 		private long? startTime;
@@ -49,6 +51,19 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 		private string instanceId;
 
 		private int? pageSize;
+
+		public string Criteria
+		{
+			get
+			{
+				return criteria;
+			}
+			set	
+			{
+				criteria = value;
+				DictionaryUtil.Add(QueryParameters, "Criteria", value);
+			}
+		}
 
 		public long? EndTime
 		{

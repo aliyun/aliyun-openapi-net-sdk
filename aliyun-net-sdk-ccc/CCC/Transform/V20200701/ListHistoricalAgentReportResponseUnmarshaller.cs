@@ -63,7 +63,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 				inbound.SatisfactionIndex = _ctx.FloatValue("ListHistoricalAgentReport.Data.List["+ i +"].Inbound.SatisfactionIndex");
 				inbound.SatisfactionSurveysOffered = _ctx.LongValue("ListHistoricalAgentReport.Data.List["+ i +"].Inbound.SatisfactionSurveysOffered");
 				inbound.SatisfactionSurveysResponded = _ctx.LongValue("ListHistoricalAgentReport.Data.List["+ i +"].Inbound.SatisfactionSurveysResponded");
-				inbound.ServiceLevel20 = _ctx.LongValue("ListHistoricalAgentReport.Data.List["+ i +"].Inbound.ServiceLevel20");
+				inbound.ServiceLevel20 = _ctx.FloatValue("ListHistoricalAgentReport.Data.List["+ i +"].Inbound.ServiceLevel20");
 				inbound.TotalHoldTime = _ctx.LongValue("ListHistoricalAgentReport.Data.List["+ i +"].Inbound.TotalHoldTime");
 				inbound.TotalRingTime = _ctx.LongValue("ListHistoricalAgentReport.Data.List["+ i +"].Inbound.TotalRingTime");
 				inbound.TotalTalkTime = _ctx.LongValue("ListHistoricalAgentReport.Data.List["+ i +"].Inbound.TotalTalkTime");
