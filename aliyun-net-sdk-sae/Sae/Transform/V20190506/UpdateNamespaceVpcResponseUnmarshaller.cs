@@ -26,17 +26,17 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class UpdateNamespaceVpcResponseUnmarshaller
     {
-        public static UpdateNamespaceVpcResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateNamespaceVpcResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateNamespaceVpcResponse updateNamespaceVpcResponse = new UpdateNamespaceVpcResponse();
 
-			updateNamespaceVpcResponse.HttpResponse = context.HttpResponse;
-			updateNamespaceVpcResponse.RequestId = context.StringValue("UpdateNamespaceVpc.RequestId");
-			updateNamespaceVpcResponse.Code = context.StringValue("UpdateNamespaceVpc.Code");
-			updateNamespaceVpcResponse.Message = context.StringValue("UpdateNamespaceVpc.Message");
-			updateNamespaceVpcResponse.ErrorCode = context.StringValue("UpdateNamespaceVpc.ErrorCode");
-			updateNamespaceVpcResponse.TraceId = context.StringValue("UpdateNamespaceVpc.TraceId");
-			updateNamespaceVpcResponse.Success = context.BooleanValue("UpdateNamespaceVpc.Success");
+			updateNamespaceVpcResponse.HttpResponse = _ctx.HttpResponse;
+			updateNamespaceVpcResponse.RequestId = _ctx.StringValue("UpdateNamespaceVpc.RequestId");
+			updateNamespaceVpcResponse.Code = _ctx.StringValue("UpdateNamespaceVpc.Code");
+			updateNamespaceVpcResponse.Message = _ctx.StringValue("UpdateNamespaceVpc.Message");
+			updateNamespaceVpcResponse.ErrorCode = _ctx.StringValue("UpdateNamespaceVpc.ErrorCode");
+			updateNamespaceVpcResponse.TraceId = _ctx.StringValue("UpdateNamespaceVpc.TraceId");
+			updateNamespaceVpcResponse.Success = _ctx.BooleanValue("UpdateNamespaceVpc.Success");
         
 			return updateNamespaceVpcResponse;
         }

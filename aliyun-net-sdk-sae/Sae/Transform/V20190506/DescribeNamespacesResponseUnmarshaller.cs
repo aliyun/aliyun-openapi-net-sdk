@@ -26,34 +26,34 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class DescribeNamespacesResponseUnmarshaller
     {
-        public static DescribeNamespacesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeNamespacesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeNamespacesResponse describeNamespacesResponse = new DescribeNamespacesResponse();
 
-			describeNamespacesResponse.HttpResponse = context.HttpResponse;
-			describeNamespacesResponse.RequestId = context.StringValue("DescribeNamespaces.RequestId");
-			describeNamespacesResponse.Code = context.StringValue("DescribeNamespaces.Code");
-			describeNamespacesResponse.ErrorCode = context.StringValue("DescribeNamespaces.ErrorCode");
-			describeNamespacesResponse.Message = context.StringValue("DescribeNamespaces.Message");
-			describeNamespacesResponse.Success = context.BooleanValue("DescribeNamespaces.Success");
-			describeNamespacesResponse.TraceId = context.StringValue("DescribeNamespaces.TraceId");
+			describeNamespacesResponse.HttpResponse = _ctx.HttpResponse;
+			describeNamespacesResponse.RequestId = _ctx.StringValue("DescribeNamespaces.RequestId");
+			describeNamespacesResponse.Code = _ctx.StringValue("DescribeNamespaces.Code");
+			describeNamespacesResponse.ErrorCode = _ctx.StringValue("DescribeNamespaces.ErrorCode");
+			describeNamespacesResponse.Message = _ctx.StringValue("DescribeNamespaces.Message");
+			describeNamespacesResponse.Success = _ctx.BooleanValue("DescribeNamespaces.Success");
+			describeNamespacesResponse.TraceId = _ctx.StringValue("DescribeNamespaces.TraceId");
 
 			DescribeNamespacesResponse.DescribeNamespaces_Data data = new DescribeNamespacesResponse.DescribeNamespaces_Data();
-			data.CurrentPage = context.IntegerValue("DescribeNamespaces.Data.CurrentPage");
-			data.PageSize = context.IntegerValue("DescribeNamespaces.Data.PageSize");
-			data.TotalSize = context.IntegerValue("DescribeNamespaces.Data.TotalSize");
+			data.CurrentPage = _ctx.IntegerValue("DescribeNamespaces.Data.CurrentPage");
+			data.PageSize = _ctx.IntegerValue("DescribeNamespaces.Data.PageSize");
+			data.TotalSize = _ctx.IntegerValue("DescribeNamespaces.Data.TotalSize");
 
 			List<DescribeNamespacesResponse.DescribeNamespaces_Data.DescribeNamespaces__Namespace> data_namespaces = new List<DescribeNamespacesResponse.DescribeNamespaces_Data.DescribeNamespaces__Namespace>();
-			for (int i = 0; i < context.Length("DescribeNamespaces.Data.Namespaces.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeNamespaces.Data.Namespaces.Length"); i++) {
 				DescribeNamespacesResponse.DescribeNamespaces_Data.DescribeNamespaces__Namespace _namespace = new DescribeNamespacesResponse.DescribeNamespaces_Data.DescribeNamespaces__Namespace();
-				_namespace.AccessKey = context.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].AccessKey");
-				_namespace.AddressServerHost = context.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].AddressServerHost");
-				_namespace.SecretKey = context.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].SecretKey");
-				_namespace.TenantId = context.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].TenantId");
-				_namespace.RegionId = context.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].RegionId");
-				_namespace.NamespaceId = context.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].NamespaceId");
-				_namespace.NamespaceName = context.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].NamespaceName");
-				_namespace.NamespaceDescription = context.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].NamespaceDescription");
+				_namespace.AccessKey = _ctx.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].AccessKey");
+				_namespace.AddressServerHost = _ctx.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].AddressServerHost");
+				_namespace.SecretKey = _ctx.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].SecretKey");
+				_namespace.TenantId = _ctx.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].TenantId");
+				_namespace.RegionId = _ctx.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].RegionId");
+				_namespace.NamespaceId = _ctx.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].NamespaceId");
+				_namespace.NamespaceName = _ctx.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].NamespaceName");
+				_namespace.NamespaceDescription = _ctx.StringValue("DescribeNamespaces.Data.Namespaces["+ i +"].NamespaceDescription");
 
 				data_namespaces.Add(_namespace);
 			}

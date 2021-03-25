@@ -26,20 +26,20 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class DeleteApplicationResponseUnmarshaller
     {
-        public static DeleteApplicationResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteApplicationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteApplicationResponse deleteApplicationResponse = new DeleteApplicationResponse();
 
-			deleteApplicationResponse.HttpResponse = context.HttpResponse;
-			deleteApplicationResponse.Code = context.StringValue("DeleteApplication.Code");
-			deleteApplicationResponse.Message = context.StringValue("DeleteApplication.Message");
-			deleteApplicationResponse.RequestId = context.StringValue("DeleteApplication.RequestId");
-			deleteApplicationResponse.Success = context.BooleanValue("DeleteApplication.Success");
-			deleteApplicationResponse.ErrorCode = context.StringValue("DeleteApplication.ErrorCode");
-			deleteApplicationResponse.TraceId = context.StringValue("DeleteApplication.TraceId");
+			deleteApplicationResponse.HttpResponse = _ctx.HttpResponse;
+			deleteApplicationResponse.Code = _ctx.StringValue("DeleteApplication.Code");
+			deleteApplicationResponse.Message = _ctx.StringValue("DeleteApplication.Message");
+			deleteApplicationResponse.RequestId = _ctx.StringValue("DeleteApplication.RequestId");
+			deleteApplicationResponse.Success = _ctx.BooleanValue("DeleteApplication.Success");
+			deleteApplicationResponse.ErrorCode = _ctx.StringValue("DeleteApplication.ErrorCode");
+			deleteApplicationResponse.TraceId = _ctx.StringValue("DeleteApplication.TraceId");
 
 			DeleteApplicationResponse.DeleteApplication_Data data = new DeleteApplicationResponse.DeleteApplication_Data();
-			data.ChangeOrderId = context.StringValue("DeleteApplication.Data.ChangeOrderId");
+			data.ChangeOrderId = _ctx.StringValue("DeleteApplication.Data.ChangeOrderId");
 			deleteApplicationResponse.Data = data;
         
 			return deleteApplicationResponse;

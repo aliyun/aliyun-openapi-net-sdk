@@ -26,20 +26,20 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class ConfirmPipelineBatchResponseUnmarshaller
     {
-        public static ConfirmPipelineBatchResponse Unmarshall(UnmarshallerContext context)
+        public static ConfirmPipelineBatchResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ConfirmPipelineBatchResponse confirmPipelineBatchResponse = new ConfirmPipelineBatchResponse();
 
-			confirmPipelineBatchResponse.HttpResponse = context.HttpResponse;
-			confirmPipelineBatchResponse.Code = context.StringValue("ConfirmPipelineBatch.Code");
-			confirmPipelineBatchResponse.ErrorCode = context.StringValue("ConfirmPipelineBatch.ErrorCode");
-			confirmPipelineBatchResponse.Message = context.StringValue("ConfirmPipelineBatch.Message");
-			confirmPipelineBatchResponse.Success = context.BooleanValue("ConfirmPipelineBatch.Success");
-			confirmPipelineBatchResponse.TraceId = context.StringValue("ConfirmPipelineBatch.TraceId");
-			confirmPipelineBatchResponse.RequestId = context.StringValue("ConfirmPipelineBatch.RequestId");
+			confirmPipelineBatchResponse.HttpResponse = _ctx.HttpResponse;
+			confirmPipelineBatchResponse.Code = _ctx.StringValue("ConfirmPipelineBatch.Code");
+			confirmPipelineBatchResponse.ErrorCode = _ctx.StringValue("ConfirmPipelineBatch.ErrorCode");
+			confirmPipelineBatchResponse.Message = _ctx.StringValue("ConfirmPipelineBatch.Message");
+			confirmPipelineBatchResponse.Success = _ctx.BooleanValue("ConfirmPipelineBatch.Success");
+			confirmPipelineBatchResponse.TraceId = _ctx.StringValue("ConfirmPipelineBatch.TraceId");
+			confirmPipelineBatchResponse.RequestId = _ctx.StringValue("ConfirmPipelineBatch.RequestId");
 
 			ConfirmPipelineBatchResponse.ConfirmPipelineBatch_Data data = new ConfirmPipelineBatchResponse.ConfirmPipelineBatch_Data();
-			data.PipelineId = context.StringValue("ConfirmPipelineBatch.Data.PipelineId");
+			data.PipelineId = _ctx.StringValue("ConfirmPipelineBatch.Data.PipelineId");
 			confirmPipelineBatchResponse.Data = data;
         
 			return confirmPipelineBatchResponse;

@@ -34,8 +34,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointRegionalType, null);
             }
 			UriPattern = "/pop/v1/sam/app/createApplication";
 			Method = MethodType.POST;
@@ -52,6 +52,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		private string slsConfigs;
 
 		private string commandArgs;
+
+		private string acrAssumeRoleArn;
 
 		private string readiness;
 
@@ -196,6 +198,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				commandArgs = value;
 				DictionaryUtil.Add(QueryParameters, "CommandArgs", value);
+			}
+		}
+
+		public string AcrAssumeRoleArn
+		{
+			get
+			{
+				return acrAssumeRoleArn;
+			}
+			set	
+			{
+				acrAssumeRoleArn = value;
+				DictionaryUtil.Add(QueryParameters, "AcrAssumeRoleArn", value);
 			}
 		}
 

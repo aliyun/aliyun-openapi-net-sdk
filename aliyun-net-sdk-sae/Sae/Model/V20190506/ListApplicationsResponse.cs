@@ -27,13 +27,13 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string requestId;
 
-		private string code;
-
 		private string message;
 
-		private bool? success;
-
 		private string errorCode;
+
+		private string code;
+
+		private bool? success;
 
 		private ListApplications_Data data;
 
@@ -49,18 +49,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public string Message
 		{
 			get
@@ -73,18 +61,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
 		public string ErrorCode
 		{
 			get
@@ -94,6 +70,30 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				errorCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -112,25 +112,13 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class ListApplications_Data
 		{
 
-			private int? currentPage;
-
 			private int? pageSize;
+
+			private int? currentPage;
 
 			private int? totalSize;
 
 			private List<ListApplications_Application> applications;
-
-			public int? CurrentPage
-			{
-				get
-				{
-					return currentPage;
-				}
-				set	
-				{
-					currentPage = value;
-				}
-			}
 
 			public int? PageSize
 			{
@@ -141,6 +129,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					pageSize = value;
+				}
+			}
+
+			public int? CurrentPage
+			{
+				get
+				{
+					return currentPage;
+				}
+				set	
+				{
+					currentPage = value;
 				}
 			}
 
@@ -171,35 +171,61 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			public class ListApplications_Application
 			{
 
-				private bool? appDeletingStatus;
+				private int? instances;
+
+				private bool? scaleRuleEnabled;
+
+				private string appDescription;
 
 				private string appId;
 
-				private string appName;
-
-				private string regionId;
-
 				private int? runningInstances;
 
-				private int? instances;
+				private string regionId;
 
 				private string namespaceId;
 
 				private string scaleRuleType;
 
-				private bool? scaleRuleEnabled;
+				private bool? appDeletingStatus;
+
+				private string appName;
 
 				private List<ListApplications_TagsItem> tags;
 
-				public bool? AppDeletingStatus
+				public int? Instances
 				{
 					get
 					{
-						return appDeletingStatus;
+						return instances;
 					}
 					set	
 					{
-						appDeletingStatus = value;
+						instances = value;
+					}
+				}
+
+				public bool? ScaleRuleEnabled
+				{
+					get
+					{
+						return scaleRuleEnabled;
+					}
+					set	
+					{
+						scaleRuleEnabled = value;
+					}
+				}
+
+				public string AppDescription
+				{
+					get
+					{
+						return appDescription;
+					}
+					set	
+					{
+						appDescription = value;
 					}
 				}
 
@@ -215,30 +241,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string AppName
-				{
-					get
-					{
-						return appName;
-					}
-					set	
-					{
-						appName = value;
-					}
-				}
-
-				public string RegionId
-				{
-					get
-					{
-						return regionId;
-					}
-					set	
-					{
-						regionId = value;
-					}
-				}
-
 				public int? RunningInstances
 				{
 					get
@@ -251,15 +253,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public int? Instances
+				public string RegionId
 				{
 					get
 					{
-						return instances;
+						return regionId;
 					}
 					set	
 					{
-						instances = value;
+						regionId = value;
 					}
 				}
 
@@ -287,15 +289,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public bool? ScaleRuleEnabled
+				public bool? AppDeletingStatus
 				{
 					get
 					{
-						return scaleRuleEnabled;
+						return appDeletingStatus;
 					}
 					set	
 					{
-						scaleRuleEnabled = value;
+						appDeletingStatus = value;
+					}
+				}
+
+				public string AppName
+				{
+					get
+					{
+						return appName;
+					}
+					set	
+					{
+						appName = value;
 					}
 				}
 
@@ -314,21 +328,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				public class ListApplications_TagsItem
 				{
 
-					private string key;
-
 					private string _value;
 
-					public string Key
-					{
-						get
-						{
-							return key;
-						}
-						set	
-						{
-							key = value;
-						}
-					}
+					private string key;
 
 					public string _Value
 					{
@@ -339,6 +341,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 						set	
 						{
 							_value = value;
+						}
+					}
+
+					public string Key
+					{
+						get
+						{
+							return key;
+						}
+						set	
+						{
+							key = value;
 						}
 					}
 				}

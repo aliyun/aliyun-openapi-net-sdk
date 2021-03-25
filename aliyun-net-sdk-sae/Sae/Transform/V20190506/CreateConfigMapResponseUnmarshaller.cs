@@ -26,20 +26,20 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class CreateConfigMapResponseUnmarshaller
     {
-        public static CreateConfigMapResponse Unmarshall(UnmarshallerContext context)
+        public static CreateConfigMapResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateConfigMapResponse createConfigMapResponse = new CreateConfigMapResponse();
 
-			createConfigMapResponse.HttpResponse = context.HttpResponse;
-			createConfigMapResponse.RequestId = context.StringValue("CreateConfigMap.RequestId");
-			createConfigMapResponse.Code = context.StringValue("CreateConfigMap.Code");
-			createConfigMapResponse.Message = context.StringValue("CreateConfigMap.Message");
-			createConfigMapResponse.ErrorCode = context.StringValue("CreateConfigMap.ErrorCode");
-			createConfigMapResponse.TraceId = context.StringValue("CreateConfigMap.TraceId");
-			createConfigMapResponse.Success = context.BooleanValue("CreateConfigMap.Success");
+			createConfigMapResponse.HttpResponse = _ctx.HttpResponse;
+			createConfigMapResponse.RequestId = _ctx.StringValue("CreateConfigMap.RequestId");
+			createConfigMapResponse.Code = _ctx.StringValue("CreateConfigMap.Code");
+			createConfigMapResponse.Message = _ctx.StringValue("CreateConfigMap.Message");
+			createConfigMapResponse.ErrorCode = _ctx.StringValue("CreateConfigMap.ErrorCode");
+			createConfigMapResponse.TraceId = _ctx.StringValue("CreateConfigMap.TraceId");
+			createConfigMapResponse.Success = _ctx.BooleanValue("CreateConfigMap.Success");
 
 			CreateConfigMapResponse.CreateConfigMap_Data data = new CreateConfigMapResponse.CreateConfigMap_Data();
-			data.ConfigMapId = context.LongValue("CreateConfigMap.Data.ConfigMapId");
+			data.ConfigMapId = _ctx.LongValue("CreateConfigMap.Data.ConfigMapId");
 			createConfigMapResponse.Data = data;
         
 			return createConfigMapResponse;

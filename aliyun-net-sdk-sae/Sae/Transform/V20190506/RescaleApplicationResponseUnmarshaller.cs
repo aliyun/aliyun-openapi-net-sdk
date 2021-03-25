@@ -26,19 +26,19 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class RescaleApplicationResponseUnmarshaller
     {
-        public static RescaleApplicationResponse Unmarshall(UnmarshallerContext context)
+        public static RescaleApplicationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RescaleApplicationResponse rescaleApplicationResponse = new RescaleApplicationResponse();
 
-			rescaleApplicationResponse.HttpResponse = context.HttpResponse;
-			rescaleApplicationResponse.Code = context.StringValue("RescaleApplication.Code");
-			rescaleApplicationResponse.Message = context.StringValue("RescaleApplication.Message");
-			rescaleApplicationResponse.RequestId = context.StringValue("RescaleApplication.RequestId");
-			rescaleApplicationResponse.Success = context.BooleanValue("RescaleApplication.Success");
-			rescaleApplicationResponse.ErrorCode = context.StringValue("RescaleApplication.ErrorCode");
+			rescaleApplicationResponse.HttpResponse = _ctx.HttpResponse;
+			rescaleApplicationResponse.Code = _ctx.StringValue("RescaleApplication.Code");
+			rescaleApplicationResponse.Message = _ctx.StringValue("RescaleApplication.Message");
+			rescaleApplicationResponse.RequestId = _ctx.StringValue("RescaleApplication.RequestId");
+			rescaleApplicationResponse.Success = _ctx.BooleanValue("RescaleApplication.Success");
+			rescaleApplicationResponse.ErrorCode = _ctx.StringValue("RescaleApplication.ErrorCode");
 
 			RescaleApplicationResponse.RescaleApplication_Data data = new RescaleApplicationResponse.RescaleApplication_Data();
-			data.ChangeOrderId = context.StringValue("RescaleApplication.Data.ChangeOrderId");
+			data.ChangeOrderId = _ctx.StringValue("RescaleApplication.Data.ChangeOrderId");
 			rescaleApplicationResponse.Data = data;
         
 			return rescaleApplicationResponse;

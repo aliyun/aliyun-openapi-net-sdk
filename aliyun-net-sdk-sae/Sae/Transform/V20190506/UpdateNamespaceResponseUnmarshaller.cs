@@ -26,23 +26,23 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class UpdateNamespaceResponseUnmarshaller
     {
-        public static UpdateNamespaceResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateNamespaceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateNamespaceResponse updateNamespaceResponse = new UpdateNamespaceResponse();
 
-			updateNamespaceResponse.HttpResponse = context.HttpResponse;
-			updateNamespaceResponse.RequestId = context.StringValue("UpdateNamespace.RequestId");
-			updateNamespaceResponse.Code = context.StringValue("UpdateNamespace.Code");
-			updateNamespaceResponse.ErrorCode = context.StringValue("UpdateNamespace.ErrorCode");
-			updateNamespaceResponse.Message = context.StringValue("UpdateNamespace.Message");
-			updateNamespaceResponse.Success = context.BooleanValue("UpdateNamespace.Success");
-			updateNamespaceResponse.TraceId = context.StringValue("UpdateNamespace.TraceId");
+			updateNamespaceResponse.HttpResponse = _ctx.HttpResponse;
+			updateNamespaceResponse.RequestId = _ctx.StringValue("UpdateNamespace.RequestId");
+			updateNamespaceResponse.Code = _ctx.StringValue("UpdateNamespace.Code");
+			updateNamespaceResponse.ErrorCode = _ctx.StringValue("UpdateNamespace.ErrorCode");
+			updateNamespaceResponse.Message = _ctx.StringValue("UpdateNamespace.Message");
+			updateNamespaceResponse.Success = _ctx.BooleanValue("UpdateNamespace.Success");
+			updateNamespaceResponse.TraceId = _ctx.StringValue("UpdateNamespace.TraceId");
 
 			UpdateNamespaceResponse.UpdateNamespace_Data data = new UpdateNamespaceResponse.UpdateNamespace_Data();
-			data.RegionId = context.StringValue("UpdateNamespace.Data.RegionId");
-			data.NamespaceId = context.StringValue("UpdateNamespace.Data.NamespaceId");
-			data.NamespaceName = context.StringValue("UpdateNamespace.Data.NamespaceName");
-			data.NamespaceDescription = context.StringValue("UpdateNamespace.Data.NamespaceDescription");
+			data.RegionId = _ctx.StringValue("UpdateNamespace.Data.RegionId");
+			data.NamespaceId = _ctx.StringValue("UpdateNamespace.Data.NamespaceId");
+			data.NamespaceName = _ctx.StringValue("UpdateNamespace.Data.NamespaceName");
+			data.NamespaceDescription = _ctx.StringValue("UpdateNamespace.Data.NamespaceDescription");
 			updateNamespaceResponse.Data = data;
         
 			return updateNamespaceResponse;

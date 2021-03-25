@@ -34,8 +34,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointRegionalType, null);
             }
 			UriPattern = "/pop/v1/sam/app/deployApplication";
 			Method = MethodType.POST;
@@ -52,6 +52,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		private string slsConfigs;
 
 		private string commandArgs;
+
+		private string acrAssumeRoleArn;
 
 		private string readiness;
 
@@ -105,6 +107,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string imageUrl;
 
+		private bool? autoEnableApplicationScalingRule;
+
 		private string phpConfigLocation;
 
 		private string postStart;
@@ -118,7 +122,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				nasId = value;
-				DictionaryUtil.Add(PathParameters, "NasId", value);
+				DictionaryUtil.Add(QueryParameters, "NasId", value);
 			}
 		}
 
@@ -187,6 +191,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public string AcrAssumeRoleArn
+		{
+			get
+			{
+				return acrAssumeRoleArn;
+			}
+			set	
+			{
+				acrAssumeRoleArn = value;
+				DictionaryUtil.Add(QueryParameters, "AcrAssumeRoleArn", value);
+			}
+		}
+
 		public string Readiness
 		{
 			get
@@ -222,7 +239,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				mountHost = value;
-				DictionaryUtil.Add(PathParameters, "MountHost", value);
+				DictionaryUtil.Add(QueryParameters, "MountHost", value);
 			}
 		}
 
@@ -456,7 +473,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				mountDesc = value;
-				DictionaryUtil.Add(PathParameters, "MountDesc", value);
+				DictionaryUtil.Add(QueryParameters, "MountDesc", value);
 			}
 		}
 
@@ -522,6 +539,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				imageUrl = value;
 				DictionaryUtil.Add(QueryParameters, "ImageUrl", value);
+			}
+		}
+
+		public bool? AutoEnableApplicationScalingRule
+		{
+			get
+			{
+				return autoEnableApplicationScalingRule;
+			}
+			set	
+			{
+				autoEnableApplicationScalingRule = value;
+				DictionaryUtil.Add(QueryParameters, "AutoEnableApplicationScalingRule", value.ToString());
 			}
 		}
 

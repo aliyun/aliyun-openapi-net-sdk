@@ -26,35 +26,35 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class DescribeNamespaceResourcesResponseUnmarshaller
     {
-        public static DescribeNamespaceResourcesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeNamespaceResourcesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeNamespaceResourcesResponse describeNamespaceResourcesResponse = new DescribeNamespaceResourcesResponse();
 
-			describeNamespaceResourcesResponse.HttpResponse = context.HttpResponse;
-			describeNamespaceResourcesResponse.RequestId = context.StringValue("DescribeNamespaceResources.RequestId");
-			describeNamespaceResourcesResponse.Code = context.StringValue("DescribeNamespaceResources.Code");
-			describeNamespaceResourcesResponse.Message = context.StringValue("DescribeNamespaceResources.Message");
-			describeNamespaceResourcesResponse.ErrorCode = context.StringValue("DescribeNamespaceResources.ErrorCode");
-			describeNamespaceResourcesResponse.TraceId = context.StringValue("DescribeNamespaceResources.TraceId");
-			describeNamespaceResourcesResponse.Success = context.BooleanValue("DescribeNamespaceResources.Success");
+			describeNamespaceResourcesResponse.HttpResponse = _ctx.HttpResponse;
+			describeNamespaceResourcesResponse.RequestId = _ctx.StringValue("DescribeNamespaceResources.RequestId");
+			describeNamespaceResourcesResponse.Code = _ctx.StringValue("DescribeNamespaceResources.Code");
+			describeNamespaceResourcesResponse.Message = _ctx.StringValue("DescribeNamespaceResources.Message");
+			describeNamespaceResourcesResponse.ErrorCode = _ctx.StringValue("DescribeNamespaceResources.ErrorCode");
+			describeNamespaceResourcesResponse.TraceId = _ctx.StringValue("DescribeNamespaceResources.TraceId");
+			describeNamespaceResourcesResponse.Success = _ctx.BooleanValue("DescribeNamespaceResources.Success");
 
 			DescribeNamespaceResourcesResponse.DescribeNamespaceResources_Data data = new DescribeNamespaceResourcesResponse.DescribeNamespaceResources_Data();
-			data.NamespaceId = context.StringValue("DescribeNamespaceResources.Data.NamespaceId");
-			data.NamespaceName = context.StringValue("DescribeNamespaceResources.Data.NamespaceName");
-			data.Description = context.StringValue("DescribeNamespaceResources.Data.Description");
-			data.UserId = context.StringValue("DescribeNamespaceResources.Data.UserId");
-			data.BelongRegion = context.StringValue("DescribeNamespaceResources.Data.BelongRegion");
-			data.TenantId = context.StringValue("DescribeNamespaceResources.Data.TenantId");
-			data.VpcId = context.StringValue("DescribeNamespaceResources.Data.VpcId");
-			data.VSwitchId = context.StringValue("DescribeNamespaceResources.Data.VSwitchId");
-			data.SecurityGroupId = context.StringValue("DescribeNamespaceResources.Data.SecurityGroupId");
-			data.AppCount = context.LongValue("DescribeNamespaceResources.Data.AppCount");
-			data.LastChangeOrderId = context.StringValue("DescribeNamespaceResources.Data.LastChangeOrderId");
-			data.LastChangeOrderStatus = context.StringValue("DescribeNamespaceResources.Data.LastChangeOrderStatus");
-			data.LastChangeOrderRunning = context.BooleanValue("DescribeNamespaceResources.Data.LastChangeOrderRunning");
-			data.VpcName = context.StringValue("DescribeNamespaceResources.Data.VpcName");
-			data.VSwitchName = context.StringValue("DescribeNamespaceResources.Data.VSwitchName");
-			data.NotificationExpired = context.BooleanValue("DescribeNamespaceResources.Data.NotificationExpired");
+			data.NamespaceId = _ctx.StringValue("DescribeNamespaceResources.Data.NamespaceId");
+			data.NamespaceName = _ctx.StringValue("DescribeNamespaceResources.Data.NamespaceName");
+			data.Description = _ctx.StringValue("DescribeNamespaceResources.Data.Description");
+			data.UserId = _ctx.StringValue("DescribeNamespaceResources.Data.UserId");
+			data.BelongRegion = _ctx.StringValue("DescribeNamespaceResources.Data.BelongRegion");
+			data.TenantId = _ctx.StringValue("DescribeNamespaceResources.Data.TenantId");
+			data.VpcId = _ctx.StringValue("DescribeNamespaceResources.Data.VpcId");
+			data.VSwitchId = _ctx.StringValue("DescribeNamespaceResources.Data.VSwitchId");
+			data.SecurityGroupId = _ctx.StringValue("DescribeNamespaceResources.Data.SecurityGroupId");
+			data.AppCount = _ctx.LongValue("DescribeNamespaceResources.Data.AppCount");
+			data.LastChangeOrderId = _ctx.StringValue("DescribeNamespaceResources.Data.LastChangeOrderId");
+			data.LastChangeOrderStatus = _ctx.StringValue("DescribeNamespaceResources.Data.LastChangeOrderStatus");
+			data.LastChangeOrderRunning = _ctx.BooleanValue("DescribeNamespaceResources.Data.LastChangeOrderRunning");
+			data.VpcName = _ctx.StringValue("DescribeNamespaceResources.Data.VpcName");
+			data.VSwitchName = _ctx.StringValue("DescribeNamespaceResources.Data.VSwitchName");
+			data.NotificationExpired = _ctx.BooleanValue("DescribeNamespaceResources.Data.NotificationExpired");
 			describeNamespaceResourcesResponse.Data = data;
         
 			return describeNamespaceResourcesResponse;

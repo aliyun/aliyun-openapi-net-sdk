@@ -25,19 +25,31 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class RollbackApplicationResponse : AcsResponse
 	{
 
+		private string message;
+
 		private string requestId;
+
+		private string traceId;
+
+		private string errorCode;
 
 		private string code;
 
 		private bool? success;
 
-		private string errorCode;
-
-		private string message;
-
-		private string traceId;
-
 		private RollbackApplication_Data data;
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -48,6 +60,30 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string TraceId
+		{
+			get
+			{
+				return traceId;
+			}
+			set	
+			{
+				traceId = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 
@@ -72,42 +108,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public string TraceId
-		{
-			get
-			{
-				return traceId;
-			}
-			set	
-			{
-				traceId = value;
 			}
 		}
 

@@ -26,20 +26,20 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class UpdateConfigMapResponseUnmarshaller
     {
-        public static UpdateConfigMapResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateConfigMapResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateConfigMapResponse updateConfigMapResponse = new UpdateConfigMapResponse();
 
-			updateConfigMapResponse.HttpResponse = context.HttpResponse;
-			updateConfigMapResponse.RequestId = context.StringValue("UpdateConfigMap.RequestId");
-			updateConfigMapResponse.Code = context.StringValue("UpdateConfigMap.Code");
-			updateConfigMapResponse.Message = context.StringValue("UpdateConfigMap.Message");
-			updateConfigMapResponse.ErrorCode = context.StringValue("UpdateConfigMap.ErrorCode");
-			updateConfigMapResponse.TraceId = context.StringValue("UpdateConfigMap.TraceId");
-			updateConfigMapResponse.Success = context.BooleanValue("UpdateConfigMap.Success");
+			updateConfigMapResponse.HttpResponse = _ctx.HttpResponse;
+			updateConfigMapResponse.RequestId = _ctx.StringValue("UpdateConfigMap.RequestId");
+			updateConfigMapResponse.Code = _ctx.StringValue("UpdateConfigMap.Code");
+			updateConfigMapResponse.Message = _ctx.StringValue("UpdateConfigMap.Message");
+			updateConfigMapResponse.ErrorCode = _ctx.StringValue("UpdateConfigMap.ErrorCode");
+			updateConfigMapResponse.TraceId = _ctx.StringValue("UpdateConfigMap.TraceId");
+			updateConfigMapResponse.Success = _ctx.BooleanValue("UpdateConfigMap.Success");
 
 			UpdateConfigMapResponse.UpdateConfigMap_Data data = new UpdateConfigMapResponse.UpdateConfigMap_Data();
-			data.ConfigMapId = context.StringValue("UpdateConfigMap.Data.ConfigMapId");
+			data.ConfigMapId = _ctx.StringValue("UpdateConfigMap.Data.ConfigMapId");
 			updateConfigMapResponse.Data = data;
         
 			return updateConfigMapResponse;

@@ -25,43 +25,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class CreateIngressResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string code;
-
 		private string message;
 
-		private bool? success;
-
-		private string errorCode;
+		private string requestId;
 
 		private string traceId;
 
+		private string errorCode;
+
+		private string code;
+
+		private bool? success;
+
 		private CreateIngress_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public string Message
 		{
@@ -75,15 +51,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public bool? Success
+		public string RequestId
 		{
 			get
 			{
-				return success;
+				return requestId;
 			}
 			set	
 			{
-				success = value;
+				requestId = value;
+			}
+		}
+
+		public string TraceId
+		{
+			get
+			{
+				return traceId;
+			}
+			set	
+			{
+				traceId = value;
 			}
 		}
 
@@ -99,15 +87,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string TraceId
+		public string Code
 		{
 			get
 			{
-				return traceId;
+				return code;
 			}
 			set	
 			{
-				traceId = value;
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 

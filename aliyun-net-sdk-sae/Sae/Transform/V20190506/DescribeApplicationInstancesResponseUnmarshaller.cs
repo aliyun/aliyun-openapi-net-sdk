@@ -26,34 +26,36 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class DescribeApplicationInstancesResponseUnmarshaller
     {
-        public static DescribeApplicationInstancesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeApplicationInstancesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeApplicationInstancesResponse describeApplicationInstancesResponse = new DescribeApplicationInstancesResponse();
 
-			describeApplicationInstancesResponse.HttpResponse = context.HttpResponse;
-			describeApplicationInstancesResponse.Code = context.StringValue("DescribeApplicationInstances.Code");
-			describeApplicationInstancesResponse.Message = context.StringValue("DescribeApplicationInstances.Message");
-			describeApplicationInstancesResponse.TraceId = context.StringValue("DescribeApplicationInstances.TraceId");
-			describeApplicationInstancesResponse.RequestId = context.StringValue("DescribeApplicationInstances.RequestId");
-			describeApplicationInstancesResponse.Success = context.BooleanValue("DescribeApplicationInstances.Success");
-			describeApplicationInstancesResponse.ErrorCode = context.StringValue("DescribeApplicationInstances.ErrorCode");
+			describeApplicationInstancesResponse.HttpResponse = _ctx.HttpResponse;
+			describeApplicationInstancesResponse.Message = _ctx.StringValue("DescribeApplicationInstances.Message");
+			describeApplicationInstancesResponse.RequestId = _ctx.StringValue("DescribeApplicationInstances.RequestId");
+			describeApplicationInstancesResponse.TraceId = _ctx.StringValue("DescribeApplicationInstances.TraceId");
+			describeApplicationInstancesResponse.ErrorCode = _ctx.StringValue("DescribeApplicationInstances.ErrorCode");
+			describeApplicationInstancesResponse.Code = _ctx.StringValue("DescribeApplicationInstances.Code");
+			describeApplicationInstancesResponse.Success = _ctx.BooleanValue("DescribeApplicationInstances.Success");
 
 			DescribeApplicationInstancesResponse.DescribeApplicationInstances_Data data = new DescribeApplicationInstancesResponse.DescribeApplicationInstances_Data();
-			data.CurrentPage = context.IntegerValue("DescribeApplicationInstances.Data.CurrentPage");
-			data.PageSize = context.IntegerValue("DescribeApplicationInstances.Data.PageSize");
-			data.TotalSize = context.IntegerValue("DescribeApplicationInstances.Data.TotalSize");
+			data.PageSize = _ctx.IntegerValue("DescribeApplicationInstances.Data.PageSize");
+			data.CurrentPage = _ctx.IntegerValue("DescribeApplicationInstances.Data.CurrentPage");
+			data.TotalSize = _ctx.IntegerValue("DescribeApplicationInstances.Data.TotalSize");
 
 			List<DescribeApplicationInstancesResponse.DescribeApplicationInstances_Data.DescribeApplicationInstances_Instance> data_instances = new List<DescribeApplicationInstancesResponse.DescribeApplicationInstances_Data.DescribeApplicationInstances_Instance>();
-			for (int i = 0; i < context.Length("DescribeApplicationInstances.Data.Instances.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeApplicationInstances.Data.Instances.Length"); i++) {
 				DescribeApplicationInstancesResponse.DescribeApplicationInstances_Data.DescribeApplicationInstances_Instance instance = new DescribeApplicationInstancesResponse.DescribeApplicationInstances_Data.DescribeApplicationInstances_Instance();
-				instance.GroupId = context.StringValue("DescribeApplicationInstances.Data.Instances["+ i +"].GroupId");
-				instance.InstanceId = context.StringValue("DescribeApplicationInstances.Data.Instances["+ i +"].InstanceId");
-				instance.InstanceContainerStatus = context.StringValue("DescribeApplicationInstances.Data.Instances["+ i +"].InstanceContainerStatus");
-				instance.InstanceContainerIp = context.StringValue("DescribeApplicationInstances.Data.Instances["+ i +"].InstanceContainerIp");
-				instance.CreateTimeStamp = context.LongValue("DescribeApplicationInstances.Data.Instances["+ i +"].CreateTimeStamp");
-				instance.GroupId1 = context.StringValue("DescribeApplicationInstances.Data.Instances["+ i +"].GroupId");
-				instance.VSwitchId = context.StringValue("DescribeApplicationInstances.Data.Instances["+ i +"].VSwitchId");
-				instance.InstanceContainerRestarts = context.LongValue("DescribeApplicationInstances.Data.Instances["+ i +"].InstanceContainerRestarts");
+				instance.InstanceContainerIp = _ctx.StringValue("DescribeApplicationInstances.Data.Instances["+ i +"].InstanceContainerIp");
+				instance.InstanceHealthStatus = _ctx.StringValue("DescribeApplicationInstances.Data.Instances["+ i +"].InstanceHealthStatus");
+				instance.InstanceId = _ctx.StringValue("DescribeApplicationInstances.Data.Instances["+ i +"].InstanceId");
+				instance.VSwitchId = _ctx.StringValue("DescribeApplicationInstances.Data.Instances["+ i +"].VSwitchId");
+				instance.ImageUrl = _ctx.StringValue("DescribeApplicationInstances.Data.Instances["+ i +"].ImageUrl");
+				instance.InstanceContainerRestarts = _ctx.LongValue("DescribeApplicationInstances.Data.Instances["+ i +"].InstanceContainerRestarts");
+				instance.PackageVersion = _ctx.StringValue("DescribeApplicationInstances.Data.Instances["+ i +"].PackageVersion");
+				instance.InstanceContainerStatus = _ctx.StringValue("DescribeApplicationInstances.Data.Instances["+ i +"].InstanceContainerStatus");
+				instance.CreateTimeStamp = _ctx.LongValue("DescribeApplicationInstances.Data.Instances["+ i +"].CreateTimeStamp");
+				instance.GroupId = _ctx.StringValue("DescribeApplicationInstances.Data.Instances["+ i +"].GroupId");
 
 				data_instances.Add(instance);
 			}

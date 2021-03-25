@@ -26,34 +26,34 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class ListLogConfigsResponseUnmarshaller
     {
-        public static ListLogConfigsResponse Unmarshall(UnmarshallerContext context)
+        public static ListLogConfigsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListLogConfigsResponse listLogConfigsResponse = new ListLogConfigsResponse();
 
-			listLogConfigsResponse.HttpResponse = context.HttpResponse;
-			listLogConfigsResponse.RequestId = context.StringValue("ListLogConfigs.RequestId");
-			listLogConfigsResponse.Code = context.StringValue("ListLogConfigs.Code");
-			listLogConfigsResponse.Message = context.StringValue("ListLogConfigs.Message");
-			listLogConfigsResponse.Success = context.BooleanValue("ListLogConfigs.Success");
-			listLogConfigsResponse.ErrorCode = context.StringValue("ListLogConfigs.ErrorCode");
-			listLogConfigsResponse.TraceId = context.StringValue("ListLogConfigs.TraceId");
+			listLogConfigsResponse.HttpResponse = _ctx.HttpResponse;
+			listLogConfigsResponse.RequestId = _ctx.StringValue("ListLogConfigs.RequestId");
+			listLogConfigsResponse.Code = _ctx.StringValue("ListLogConfigs.Code");
+			listLogConfigsResponse.Message = _ctx.StringValue("ListLogConfigs.Message");
+			listLogConfigsResponse.Success = _ctx.BooleanValue("ListLogConfigs.Success");
+			listLogConfigsResponse.ErrorCode = _ctx.StringValue("ListLogConfigs.ErrorCode");
+			listLogConfigsResponse.TraceId = _ctx.StringValue("ListLogConfigs.TraceId");
 
 			ListLogConfigsResponse.ListLogConfigs_Data data = new ListLogConfigsResponse.ListLogConfigs_Data();
-			data.CurrentPage = context.IntegerValue("ListLogConfigs.Data.CurrentPage");
-			data.PageSize = context.IntegerValue("ListLogConfigs.Data.PageSize");
-			data.TotalSize = context.IntegerValue("ListLogConfigs.Data.TotalSize");
+			data.CurrentPage = _ctx.IntegerValue("ListLogConfigs.Data.CurrentPage");
+			data.PageSize = _ctx.IntegerValue("ListLogConfigs.Data.PageSize");
+			data.TotalSize = _ctx.IntegerValue("ListLogConfigs.Data.TotalSize");
 
 			List<ListLogConfigsResponse.ListLogConfigs_Data.ListLogConfigs_LogConfig> data_logConfigs = new List<ListLogConfigsResponse.ListLogConfigs_Data.ListLogConfigs_LogConfig>();
-			for (int i = 0; i < context.Length("ListLogConfigs.Data.LogConfigs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListLogConfigs.Data.LogConfigs.Length"); i++) {
 				ListLogConfigsResponse.ListLogConfigs_Data.ListLogConfigs_LogConfig logConfig = new ListLogConfigsResponse.ListLogConfigs_Data.ListLogConfigs_LogConfig();
-				logConfig.ConfigName = context.StringValue("ListLogConfigs.Data.LogConfigs["+ i +"].ConfigName");
-				logConfig.LogDir = context.StringValue("ListLogConfigs.Data.LogConfigs["+ i +"].LogDir");
-				logConfig.SlsProject = context.StringValue("ListLogConfigs.Data.LogConfigs["+ i +"].SlsProject");
-				logConfig.SlsLogStore = context.StringValue("ListLogConfigs.Data.LogConfigs["+ i +"].SlsLogStore");
-				logConfig.StoreType = context.StringValue("ListLogConfigs.Data.LogConfigs["+ i +"].StoreType");
-				logConfig.LogType = context.StringValue("ListLogConfigs.Data.LogConfigs["+ i +"].LogType");
-				logConfig.RegionId = context.StringValue("ListLogConfigs.Data.LogConfigs["+ i +"].RegionId");
-				logConfig.CreateTime = context.StringValue("ListLogConfigs.Data.LogConfigs["+ i +"].CreateTime");
+				logConfig.ConfigName = _ctx.StringValue("ListLogConfigs.Data.LogConfigs["+ i +"].ConfigName");
+				logConfig.LogDir = _ctx.StringValue("ListLogConfigs.Data.LogConfigs["+ i +"].LogDir");
+				logConfig.SlsProject = _ctx.StringValue("ListLogConfigs.Data.LogConfigs["+ i +"].SlsProject");
+				logConfig.SlsLogStore = _ctx.StringValue("ListLogConfigs.Data.LogConfigs["+ i +"].SlsLogStore");
+				logConfig.StoreType = _ctx.StringValue("ListLogConfigs.Data.LogConfigs["+ i +"].StoreType");
+				logConfig.LogType = _ctx.StringValue("ListLogConfigs.Data.LogConfigs["+ i +"].LogType");
+				logConfig.RegionId = _ctx.StringValue("ListLogConfigs.Data.LogConfigs["+ i +"].RegionId");
+				logConfig.CreateTime = _ctx.StringValue("ListLogConfigs.Data.LogConfigs["+ i +"].CreateTime");
 
 				data_logConfigs.Add(logConfig);
 			}

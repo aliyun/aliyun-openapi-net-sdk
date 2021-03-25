@@ -25,31 +25,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class DescribeApplicationInstancesResponse : AcsResponse
 	{
 
-		private string code;
-
 		private string message;
-
-		private string traceId;
 
 		private string requestId;
 
-		private bool? success;
+		private string traceId;
 
 		private string errorCode;
 
-		private DescribeApplicationInstances_Data data;
+		private string code;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private bool? success;
+
+		private DescribeApplicationInstances_Data data;
 
 		public string Message
 		{
@@ -60,18 +48,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				message = value;
-			}
-		}
-
-		public string TraceId
-		{
-			get
-			{
-				return traceId;
-			}
-			set	
-			{
-				traceId = value;
 			}
 		}
 
@@ -87,15 +63,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public bool? Success
+		public string TraceId
 		{
 			get
 			{
-				return success;
+				return traceId;
 			}
 			set	
 			{
-				success = value;
+				traceId = value;
 			}
 		}
 
@@ -108,6 +84,30 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				errorCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -126,25 +126,13 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class DescribeApplicationInstances_Data
 		{
 
-			private int? currentPage;
-
 			private int? pageSize;
+
+			private int? currentPage;
 
 			private int? totalSize;
 
 			private List<DescribeApplicationInstances_Instance> instances;
-
-			public int? CurrentPage
-			{
-				get
-				{
-					return currentPage;
-				}
-				set	
-				{
-					currentPage = value;
-				}
-			}
 
 			public int? PageSize
 			{
@@ -155,6 +143,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					pageSize = value;
+				}
+			}
+
+			public int? CurrentPage
+			{
+				get
+				{
+					return currentPage;
+				}
+				set	
+				{
+					currentPage = value;
 				}
 			}
 
@@ -185,31 +185,47 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			public class DescribeApplicationInstances_Instance
 			{
 
-				private string groupId;
+				private string instanceContainerIp;
+
+				private string instanceHealthStatus;
 
 				private string instanceId;
 
-				private string instanceContainerStatus;
-
-				private string instanceContainerIp;
-
-				private long? createTimeStamp;
-
-				private string groupId1;
-
 				private string vSwitchId;
+
+				private string imageUrl;
 
 				private long? instanceContainerRestarts;
 
-				public string GroupId
+				private string packageVersion;
+
+				private string instanceContainerStatus;
+
+				private long? createTimeStamp;
+
+				private string groupId;
+
+				public string InstanceContainerIp
 				{
 					get
 					{
-						return groupId;
+						return instanceContainerIp;
 					}
 					set	
 					{
-						groupId = value;
+						instanceContainerIp = value;
+					}
+				}
+
+				public string InstanceHealthStatus
+				{
+					get
+					{
+						return instanceHealthStatus;
+					}
+					set	
+					{
+						instanceHealthStatus = value;
 					}
 				}
 
@@ -225,6 +241,54 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
+				public string VSwitchId
+				{
+					get
+					{
+						return vSwitchId;
+					}
+					set	
+					{
+						vSwitchId = value;
+					}
+				}
+
+				public string ImageUrl
+				{
+					get
+					{
+						return imageUrl;
+					}
+					set	
+					{
+						imageUrl = value;
+					}
+				}
+
+				public long? InstanceContainerRestarts
+				{
+					get
+					{
+						return instanceContainerRestarts;
+					}
+					set	
+					{
+						instanceContainerRestarts = value;
+					}
+				}
+
+				public string PackageVersion
+				{
+					get
+					{
+						return packageVersion;
+					}
+					set	
+					{
+						packageVersion = value;
+					}
+				}
+
 				public string InstanceContainerStatus
 				{
 					get
@@ -234,18 +298,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						instanceContainerStatus = value;
-					}
-				}
-
-				public string InstanceContainerIp
-				{
-					get
-					{
-						return instanceContainerIp;
-					}
-					set	
-					{
-						instanceContainerIp = value;
 					}
 				}
 
@@ -261,39 +313,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string GroupId1
+				public string GroupId
 				{
 					get
 					{
-						return groupId1;
+						return groupId;
 					}
 					set	
 					{
-						groupId1 = value;
-					}
-				}
-
-				public string VSwitchId
-				{
-					get
-					{
-						return vSwitchId;
-					}
-					set	
-					{
-						vSwitchId = value;
-					}
-				}
-
-				public long? InstanceContainerRestarts
-				{
-					get
-					{
-						return instanceContainerRestarts;
-					}
-					set	
-					{
-						instanceContainerRestarts = value;
+						groupId = value;
 					}
 				}
 			}

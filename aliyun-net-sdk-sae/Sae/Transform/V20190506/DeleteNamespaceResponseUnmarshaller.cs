@@ -26,17 +26,17 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class DeleteNamespaceResponseUnmarshaller
     {
-        public static DeleteNamespaceResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteNamespaceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteNamespaceResponse deleteNamespaceResponse = new DeleteNamespaceResponse();
 
-			deleteNamespaceResponse.HttpResponse = context.HttpResponse;
-			deleteNamespaceResponse.RequestId = context.StringValue("DeleteNamespace.RequestId");
-			deleteNamespaceResponse.Code = context.StringValue("DeleteNamespace.Code");
-			deleteNamespaceResponse.ErrorCode = context.StringValue("DeleteNamespace.ErrorCode");
-			deleteNamespaceResponse.Message = context.StringValue("DeleteNamespace.Message");
-			deleteNamespaceResponse.Success = context.BooleanValue("DeleteNamespace.Success");
-			deleteNamespaceResponse.TraceId = context.StringValue("DeleteNamespace.TraceId");
+			deleteNamespaceResponse.HttpResponse = _ctx.HttpResponse;
+			deleteNamespaceResponse.RequestId = _ctx.StringValue("DeleteNamespace.RequestId");
+			deleteNamespaceResponse.Code = _ctx.StringValue("DeleteNamespace.Code");
+			deleteNamespaceResponse.ErrorCode = _ctx.StringValue("DeleteNamespace.ErrorCode");
+			deleteNamespaceResponse.Message = _ctx.StringValue("DeleteNamespace.Message");
+			deleteNamespaceResponse.Success = _ctx.BooleanValue("DeleteNamespace.Success");
+			deleteNamespaceResponse.TraceId = _ctx.StringValue("DeleteNamespace.TraceId");
         
 			return deleteNamespaceResponse;
         }

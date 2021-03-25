@@ -26,32 +26,32 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class DescribeConfigMapResponseUnmarshaller
     {
-        public static DescribeConfigMapResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeConfigMapResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeConfigMapResponse describeConfigMapResponse = new DescribeConfigMapResponse();
 
-			describeConfigMapResponse.HttpResponse = context.HttpResponse;
-			describeConfigMapResponse.RequestId = context.StringValue("DescribeConfigMap.RequestId");
-			describeConfigMapResponse.Code = context.StringValue("DescribeConfigMap.Code");
-			describeConfigMapResponse.Message = context.StringValue("DescribeConfigMap.Message");
-			describeConfigMapResponse.ErrorCode = context.StringValue("DescribeConfigMap.ErrorCode");
-			describeConfigMapResponse.TraceId = context.StringValue("DescribeConfigMap.TraceId");
-			describeConfigMapResponse.Success = context.BooleanValue("DescribeConfigMap.Success");
+			describeConfigMapResponse.HttpResponse = _ctx.HttpResponse;
+			describeConfigMapResponse.RequestId = _ctx.StringValue("DescribeConfigMap.RequestId");
+			describeConfigMapResponse.Code = _ctx.StringValue("DescribeConfigMap.Code");
+			describeConfigMapResponse.Message = _ctx.StringValue("DescribeConfigMap.Message");
+			describeConfigMapResponse.ErrorCode = _ctx.StringValue("DescribeConfigMap.ErrorCode");
+			describeConfigMapResponse.TraceId = _ctx.StringValue("DescribeConfigMap.TraceId");
+			describeConfigMapResponse.Success = _ctx.BooleanValue("DescribeConfigMap.Success");
 
 			DescribeConfigMapResponse.DescribeConfigMap_Data data = new DescribeConfigMapResponse.DescribeConfigMap_Data();
-			data.ConfigMapId = context.LongValue("DescribeConfigMap.Data.ConfigMapId");
-			data.Name = context.StringValue("DescribeConfigMap.Data.Name");
-			data.NamespaceId = context.StringValue("DescribeConfigMap.Data.NamespaceId");
-			data.Description = context.StringValue("DescribeConfigMap.Data.Description");
-			data.Data = context.StringValue("DescribeConfigMap.Data.Data");
-			data.CreateTime = context.LongValue("DescribeConfigMap.Data.CreateTime");
-			data.UpdateTime = context.LongValue("DescribeConfigMap.Data.UpdateTime");
+			data.ConfigMapId = _ctx.LongValue("DescribeConfigMap.Data.ConfigMapId");
+			data.Name = _ctx.StringValue("DescribeConfigMap.Data.Name");
+			data.NamespaceId = _ctx.StringValue("DescribeConfigMap.Data.NamespaceId");
+			data.Description = _ctx.StringValue("DescribeConfigMap.Data.Description");
+			data.Data = _ctx.StringValue("DescribeConfigMap.Data.Data");
+			data.CreateTime = _ctx.LongValue("DescribeConfigMap.Data.CreateTime");
+			data.UpdateTime = _ctx.LongValue("DescribeConfigMap.Data.UpdateTime");
 
 			List<DescribeConfigMapResponse.DescribeConfigMap_Data.DescribeConfigMap_RelateApp> data_relateApps = new List<DescribeConfigMapResponse.DescribeConfigMap_Data.DescribeConfigMap_RelateApp>();
-			for (int i = 0; i < context.Length("DescribeConfigMap.Data.RelateApps.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeConfigMap.Data.RelateApps.Length"); i++) {
 				DescribeConfigMapResponse.DescribeConfigMap_Data.DescribeConfigMap_RelateApp relateApp = new DescribeConfigMapResponse.DescribeConfigMap_Data.DescribeConfigMap_RelateApp();
-				relateApp.AppId = context.StringValue("DescribeConfigMap.Data.RelateApps["+ i +"].AppId");
-				relateApp.AppName = context.StringValue("DescribeConfigMap.Data.RelateApps["+ i +"].AppName");
+				relateApp.AppId = _ctx.StringValue("DescribeConfigMap.Data.RelateApps["+ i +"].AppId");
+				relateApp.AppName = _ctx.StringValue("DescribeConfigMap.Data.RelateApps["+ i +"].AppName");
 
 				data_relateApps.Add(relateApp);
 			}

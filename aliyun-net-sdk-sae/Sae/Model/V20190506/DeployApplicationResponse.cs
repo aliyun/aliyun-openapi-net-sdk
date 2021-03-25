@@ -25,31 +25,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class DeployApplicationResponse : AcsResponse
 	{
 
-		private string code;
-
 		private string message;
 
-		private string errorCode;
+		private string requestId;
 
 		private string traceId;
 
-		private string requestId;
+		private string errorCode;
+
+		private string code;
 
 		private bool? success;
 
 		private DeployApplication_Data data;
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public string Message
 		{
@@ -63,15 +51,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string ErrorCode
+		public string RequestId
 		{
 			get
 			{
-				return errorCode;
+				return requestId;
 			}
 			set	
 			{
-				errorCode = value;
+				requestId = value;
 			}
 		}
 
@@ -87,15 +75,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string RequestId
+		public string ErrorCode
 		{
 			get
 			{
-				return requestId;
+				return errorCode;
 			}
 			set	
 			{
-				requestId = value;
+				errorCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 

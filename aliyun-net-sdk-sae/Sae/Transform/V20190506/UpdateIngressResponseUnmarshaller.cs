@@ -26,20 +26,20 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class UpdateIngressResponseUnmarshaller
     {
-        public static UpdateIngressResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateIngressResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateIngressResponse updateIngressResponse = new UpdateIngressResponse();
 
-			updateIngressResponse.HttpResponse = context.HttpResponse;
-			updateIngressResponse.RequestId = context.StringValue("UpdateIngress.RequestId");
-			updateIngressResponse.Code = context.StringValue("UpdateIngress.Code");
-			updateIngressResponse.Message = context.StringValue("UpdateIngress.Message");
-			updateIngressResponse.Success = context.BooleanValue("UpdateIngress.Success");
-			updateIngressResponse.ErrorCode = context.StringValue("UpdateIngress.ErrorCode");
-			updateIngressResponse.TraceId = context.StringValue("UpdateIngress.TraceId");
+			updateIngressResponse.HttpResponse = _ctx.HttpResponse;
+			updateIngressResponse.Message = _ctx.StringValue("UpdateIngress.Message");
+			updateIngressResponse.RequestId = _ctx.StringValue("UpdateIngress.RequestId");
+			updateIngressResponse.TraceId = _ctx.StringValue("UpdateIngress.TraceId");
+			updateIngressResponse.ErrorCode = _ctx.StringValue("UpdateIngress.ErrorCode");
+			updateIngressResponse.Code = _ctx.StringValue("UpdateIngress.Code");
+			updateIngressResponse.Success = _ctx.BooleanValue("UpdateIngress.Success");
 
 			UpdateIngressResponse.UpdateIngress_Data data = new UpdateIngressResponse.UpdateIngress_Data();
-			data.IngressId = context.LongValue("UpdateIngress.Data.IngressId");
+			data.IngressId = _ctx.LongValue("UpdateIngress.Data.IngressId");
 			updateIngressResponse.Data = data;
         
 			return updateIngressResponse;

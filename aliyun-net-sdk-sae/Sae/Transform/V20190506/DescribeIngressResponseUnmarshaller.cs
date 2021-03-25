@@ -26,42 +26,42 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class DescribeIngressResponseUnmarshaller
     {
-        public static DescribeIngressResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeIngressResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeIngressResponse describeIngressResponse = new DescribeIngressResponse();
 
-			describeIngressResponse.HttpResponse = context.HttpResponse;
-			describeIngressResponse.RequestId = context.StringValue("DescribeIngress.RequestId");
-			describeIngressResponse.Code = context.StringValue("DescribeIngress.Code");
-			describeIngressResponse.Message = context.StringValue("DescribeIngress.Message");
-			describeIngressResponse.Success = context.BooleanValue("DescribeIngress.Success");
-			describeIngressResponse.ErrorCode = context.StringValue("DescribeIngress.ErrorCode");
-			describeIngressResponse.TraceId = context.StringValue("DescribeIngress.TraceId");
+			describeIngressResponse.HttpResponse = _ctx.HttpResponse;
+			describeIngressResponse.RequestId = _ctx.StringValue("DescribeIngress.RequestId");
+			describeIngressResponse.Code = _ctx.StringValue("DescribeIngress.Code");
+			describeIngressResponse.Message = _ctx.StringValue("DescribeIngress.Message");
+			describeIngressResponse.Success = _ctx.BooleanValue("DescribeIngress.Success");
+			describeIngressResponse.ErrorCode = _ctx.StringValue("DescribeIngress.ErrorCode");
+			describeIngressResponse.TraceId = _ctx.StringValue("DescribeIngress.TraceId");
 
 			DescribeIngressResponse.DescribeIngress_Data data = new DescribeIngressResponse.DescribeIngress_Data();
-			data.Id = context.LongValue("DescribeIngress.Data.Id");
-			data.Name = context.StringValue("DescribeIngress.Data.Name");
-			data.NamespaceId = context.StringValue("DescribeIngress.Data.NamespaceId");
-			data.Description = context.StringValue("DescribeIngress.Data.Description");
-			data.SlbId = context.StringValue("DescribeIngress.Data.SlbId");
-			data.ListenerPort = context.IntegerValue("DescribeIngress.Data.ListenerPort");
-			data.CertId = context.StringValue("DescribeIngress.Data.CertId");
-			data.SlbType = context.StringValue("DescribeIngress.Data.SlbType");
+			data.Id = _ctx.LongValue("DescribeIngress.Data.Id");
+			data.Name = _ctx.StringValue("DescribeIngress.Data.Name");
+			data.NamespaceId = _ctx.StringValue("DescribeIngress.Data.NamespaceId");
+			data.Description = _ctx.StringValue("DescribeIngress.Data.Description");
+			data.SlbId = _ctx.StringValue("DescribeIngress.Data.SlbId");
+			data.ListenerPort = _ctx.IntegerValue("DescribeIngress.Data.ListenerPort");
+			data.CertId = _ctx.StringValue("DescribeIngress.Data.CertId");
+			data.SlbType = _ctx.StringValue("DescribeIngress.Data.SlbType");
 
 			DescribeIngressResponse.DescribeIngress_Data.DescribeIngress_DefaultRule defaultRule = new DescribeIngressResponse.DescribeIngress_Data.DescribeIngress_DefaultRule();
-			defaultRule.AppId = context.StringValue("DescribeIngress.Data.DefaultRule.AppId");
-			defaultRule.ContainerPort = context.IntegerValue("DescribeIngress.Data.DefaultRule.ContainerPort");
-			defaultRule.AppName = context.StringValue("DescribeIngress.Data.DefaultRule.AppName");
+			defaultRule.AppId = _ctx.StringValue("DescribeIngress.Data.DefaultRule.AppId");
+			defaultRule.ContainerPort = _ctx.IntegerValue("DescribeIngress.Data.DefaultRule.ContainerPort");
+			defaultRule.AppName = _ctx.StringValue("DescribeIngress.Data.DefaultRule.AppName");
 			data.DefaultRule = defaultRule;
 
 			List<DescribeIngressResponse.DescribeIngress_Data.DescribeIngress_Rule> data_rules = new List<DescribeIngressResponse.DescribeIngress_Data.DescribeIngress_Rule>();
-			for (int i = 0; i < context.Length("DescribeIngress.Data.Rules.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeIngress.Data.Rules.Length"); i++) {
 				DescribeIngressResponse.DescribeIngress_Data.DescribeIngress_Rule rule = new DescribeIngressResponse.DescribeIngress_Data.DescribeIngress_Rule();
-				rule.AppId = context.StringValue("DescribeIngress.Data.Rules["+ i +"].AppId");
-				rule.ContainerPort = context.IntegerValue("DescribeIngress.Data.Rules["+ i +"].ContainerPort");
-				rule.Domain = context.StringValue("DescribeIngress.Data.Rules["+ i +"].Domain");
-				rule.Path = context.StringValue("DescribeIngress.Data.Rules["+ i +"].Path");
-				rule.AppName = context.StringValue("DescribeIngress.Data.Rules["+ i +"].AppName");
+				rule.AppId = _ctx.StringValue("DescribeIngress.Data.Rules["+ i +"].AppId");
+				rule.ContainerPort = _ctx.IntegerValue("DescribeIngress.Data.Rules["+ i +"].ContainerPort");
+				rule.Domain = _ctx.StringValue("DescribeIngress.Data.Rules["+ i +"].Domain");
+				rule.Path = _ctx.StringValue("DescribeIngress.Data.Rules["+ i +"].Path");
+				rule.AppName = _ctx.StringValue("DescribeIngress.Data.Rules["+ i +"].AppName");
 
 				data_rules.Add(rule);
 			}

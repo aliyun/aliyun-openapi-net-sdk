@@ -25,31 +25,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class CreateApplicationResponse : AcsResponse
 	{
 
-		private string code;
-
 		private string message;
 
 		private string requestId;
 
+		private string traceId;
+
 		private string errorCode;
 
-		private string traceId;
+		private string code;
 
 		private bool? success;
 
 		private CreateApplication_Data data;
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public string Message
 		{
@@ -75,6 +63,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public string TraceId
+		{
+			get
+			{
+				return traceId;
+			}
+			set	
+			{
+				traceId = value;
+			}
+		}
+
 		public string ErrorCode
 		{
 			get
@@ -87,15 +87,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string TraceId
+		public string Code
 		{
 			get
 			{
-				return traceId;
+				return code;
 			}
 			set	
 			{
-				traceId = value;
+				code = value;
 			}
 		}
 

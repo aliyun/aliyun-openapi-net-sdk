@@ -26,20 +26,20 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 {
     public class RollbackApplicationResponseUnmarshaller
     {
-        public static RollbackApplicationResponse Unmarshall(UnmarshallerContext context)
+        public static RollbackApplicationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RollbackApplicationResponse rollbackApplicationResponse = new RollbackApplicationResponse();
 
-			rollbackApplicationResponse.HttpResponse = context.HttpResponse;
-			rollbackApplicationResponse.RequestId = context.StringValue("RollbackApplication.RequestId");
-			rollbackApplicationResponse.Code = context.StringValue("RollbackApplication.Code");
-			rollbackApplicationResponse.Success = context.BooleanValue("RollbackApplication.Success");
-			rollbackApplicationResponse.ErrorCode = context.StringValue("RollbackApplication.ErrorCode");
-			rollbackApplicationResponse.Message = context.StringValue("RollbackApplication.Message");
-			rollbackApplicationResponse.TraceId = context.StringValue("RollbackApplication.TraceId");
+			rollbackApplicationResponse.HttpResponse = _ctx.HttpResponse;
+			rollbackApplicationResponse.Message = _ctx.StringValue("RollbackApplication.Message");
+			rollbackApplicationResponse.RequestId = _ctx.StringValue("RollbackApplication.RequestId");
+			rollbackApplicationResponse.TraceId = _ctx.StringValue("RollbackApplication.TraceId");
+			rollbackApplicationResponse.ErrorCode = _ctx.StringValue("RollbackApplication.ErrorCode");
+			rollbackApplicationResponse.Code = _ctx.StringValue("RollbackApplication.Code");
+			rollbackApplicationResponse.Success = _ctx.BooleanValue("RollbackApplication.Success");
 
 			RollbackApplicationResponse.RollbackApplication_Data data = new RollbackApplicationResponse.RollbackApplication_Data();
-			data.ChangeOrderId = context.StringValue("RollbackApplication.Data.ChangeOrderId");
+			data.ChangeOrderId = _ctx.StringValue("RollbackApplication.Data.ChangeOrderId");
 			rollbackApplicationResponse.Data = data;
         
 			return rollbackApplicationResponse;
