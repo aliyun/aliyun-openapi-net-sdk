@@ -28,10 +28,10 @@ using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class QuerySavingsPlansInstanceRequest : RpcAcsRequest<QuerySavingsPlansInstanceResponse>
+    public class UntagResourcesRequest : RpcAcsRequest<UntagResourcesResponse>
     {
-        public QuerySavingsPlansInstanceRequest()
-            : base("BssOpenApi", "2017-12-14", "QuerySavingsPlansInstance")
+        public UntagResourcesRequest()
+            : base("BssOpenApi", "2017-12-14", "UntagResources")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,93 +41,71 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			Method = MethodType.POST;
         }
 
-		private string endTime;
+		private bool? all;
 
-		private string startTime;
+		private List<string> resourceIds = new List<string>(){ };
 
-		private string locale;
+		private List<string> tagKeys = new List<string>(){ };
 
-		private int? pageNum;
+		private string resourceType;
 
-		private string instanceId;
-
-		private int? pageSize;
-
-		public string EndTime
+		public bool? All
 		{
 			get
 			{
-				return endTime;
+				return all;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				all = value;
+				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
 			}
 		}
 
-		public string StartTime
+		public List<string> ResourceIds
 		{
 			get
 			{
-				return startTime;
+				return resourceIds;
 			}
-			set	
+
+			set
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				resourceIds = value;
+				for (int i = 0; i < resourceIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
+				}
 			}
 		}
 
-		public string Locale
+		public List<string> TagKeys
 		{
 			get
 			{
-				return locale;
+				return tagKeys;
 			}
-			set	
+
+			set
 			{
-				locale = value;
-				DictionaryUtil.Add(QueryParameters, "Locale", value);
+				tagKeys = value;
+				for (int i = 0; i < tagKeys.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"TagKey." + (i + 1) , tagKeys[i]);
+				}
 			}
 		}
 
-		public int? PageNum
+		public string ResourceType
 		{
 			get
 			{
-				return pageNum;
+				return resourceType;
 			}
 			set	
 			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
@@ -136,9 +114,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			return false;
 		}
 
-        public override QuerySavingsPlansInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UntagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QuerySavingsPlansInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UntagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

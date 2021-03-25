@@ -51,8 +51,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string instanceId;
 
-		private string requestId;
-
 		private int? pageSize;
 
 		private string instanceType;
@@ -119,19 +117,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-				DictionaryUtil.Add(QueryParameters, "RequestId", value);
 			}
 		}
 

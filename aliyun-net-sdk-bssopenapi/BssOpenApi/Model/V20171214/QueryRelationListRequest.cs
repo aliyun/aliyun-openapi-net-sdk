@@ -28,10 +28,10 @@ using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class QuerySavingsPlansInstanceRequest : RpcAcsRequest<QuerySavingsPlansInstanceResponse>
+    public class QueryRelationListRequest : RpcAcsRequest<QueryRelationListResponse>
     {
-        public QuerySavingsPlansInstanceRequest()
-            : base("BssOpenApi", "2017-12-14", "QuerySavingsPlansInstance")
+        public QueryRelationListRequest()
+            : base("BssOpenApi", "2017-12-14", "QueryRelationList")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,54 +41,28 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			Method = MethodType.POST;
         }
 
-		private string endTime;
-
-		private string startTime;
-
-		private string locale;
+		private List<string> statusLists = new List<string>(){ };
 
 		private int? pageNum;
 
-		private string instanceId;
+		private long? userId;
 
 		private int? pageSize;
 
-		public string EndTime
+		public List<string> StatusLists
 		{
 			get
 			{
-				return endTime;
+				return statusLists;
 			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
 
-		public string StartTime
-		{
-			get
+			set
 			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string Locale
-		{
-			get
-			{
-				return locale;
-			}
-			set	
-			{
-				locale = value;
-				DictionaryUtil.Add(QueryParameters, "Locale", value);
+				statusLists = value;
+				for (int i = 0; i < statusLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"StatusList." + (i + 1) , statusLists[i]);
+				}
 			}
 		}
 
@@ -105,16 +79,16 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string InstanceId
+		public long? UserId
 		{
 			get
 			{
-				return instanceId;
+				return userId;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				userId = value;
+				DictionaryUtil.Add(QueryParameters, "UserId", value.ToString());
 			}
 		}
 
@@ -136,9 +110,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			return false;
 		}
 
-        public override QuerySavingsPlansInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryRelationListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QuerySavingsPlansInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryRelationListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

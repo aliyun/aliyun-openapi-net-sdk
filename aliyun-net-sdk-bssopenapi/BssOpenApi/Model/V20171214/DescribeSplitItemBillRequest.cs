@@ -28,10 +28,10 @@ using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class QuerySettleBillRequest : RpcAcsRequest<QuerySettleBillResponse>
+    public class DescribeSplitItemBillRequest : RpcAcsRequest<DescribeSplitItemBillResponse>
     {
-        public QuerySettleBillRequest()
-            : base("BssOpenApi", "2017-12-14", "QuerySettleBill")
+        public DescribeSplitItemBillRequest()
+            : base("BssOpenApi", "2017-12-14", "DescribeSplitItemBill")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,29 +41,40 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			Method = MethodType.POST;
         }
 
+		private string splitItemID;
+
 		private string productCode;
-
-		private bool? isHideZeroCharge;
-
-		private bool? isDisplayLocalCurrency;
 
 		private string subscriptionType;
 
 		private string billingCycle;
 
-		private string type;
-
 		private long? ownerId;
 
 		private long? billOwnerId;
 
+		private List<TagFilter> tagFilters = new List<TagFilter>(){ };
+
 		private string productType;
 
-		private string recordID;
+		private string instanceID;
 
 		private string nextToken;
 
 		private int? maxResults;
+
+		public string SplitItemID
+		{
+			get
+			{
+				return splitItemID;
+			}
+			set	
+			{
+				splitItemID = value;
+				DictionaryUtil.Add(QueryParameters, "SplitItemID", value);
+			}
+		}
 
 		public string ProductCode
 		{
@@ -75,32 +86,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				productCode = value;
 				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
-			}
-		}
-
-		public bool? IsHideZeroCharge
-		{
-			get
-			{
-				return isHideZeroCharge;
-			}
-			set	
-			{
-				isHideZeroCharge = value;
-				DictionaryUtil.Add(QueryParameters, "IsHideZeroCharge", value.ToString());
-			}
-		}
-
-		public bool? IsDisplayLocalCurrency
-		{
-			get
-			{
-				return isDisplayLocalCurrency;
-			}
-			set	
-			{
-				isDisplayLocalCurrency = value;
-				DictionaryUtil.Add(QueryParameters, "IsDisplayLocalCurrency", value.ToString());
 			}
 		}
 
@@ -130,19 +115,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -169,6 +141,27 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public List<TagFilter> TagFilters
+		{
+			get
+			{
+				return tagFilters;
+			}
+
+			set
+			{
+				tagFilters = value;
+				for (int i = 0; i < tagFilters.Count; i++)
+				{
+					for (int j = 0; j < tagFilters[i].TagValuess.Count; j++)
+					{
+						DictionaryUtil.Add(QueryParameters,"TagFilter." + (i + 1) + ".TagValues." +(j + 1), tagFilters[i].TagValuess[j]);
+					}
+					DictionaryUtil.Add(QueryParameters,"TagFilter." + (i + 1) + ".TagKey", tagFilters[i].TagKey);
+				}
+			}
+		}
+
 		public string ProductType
 		{
 			get
@@ -182,16 +175,16 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string RecordID
+		public string InstanceID
 		{
 			get
 			{
-				return recordID;
+				return instanceID;
 			}
 			set	
 			{
-				recordID = value;
-				DictionaryUtil.Add(QueryParameters, "RecordID", value);
+				instanceID = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceID", value);
 			}
 		}
 
@@ -221,9 +214,46 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-        public override QuerySettleBillResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public class TagFilter
+		{
+
+			private List<string> tagValuess = new List<string>(){ };
+
+			private string tagKey;
+
+			public List<string> TagValuess
+			{
+				get
+				{
+					return tagValuess;
+				}
+				set	
+				{
+					tagValuess = value;
+				}
+			}
+
+			public string TagKey
+			{
+				get
+				{
+					return tagKey;
+				}
+				set	
+				{
+					tagKey = value;
+				}
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeSplitItemBillResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QuerySettleBillResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeSplitItemBillResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

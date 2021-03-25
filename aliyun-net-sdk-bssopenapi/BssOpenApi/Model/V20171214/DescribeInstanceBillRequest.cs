@@ -28,10 +28,10 @@ using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class QuerySettleBillRequest : RpcAcsRequest<QuerySettleBillResponse>
+    public class DescribeInstanceBillRequest : RpcAcsRequest<DescribeInstanceBillResponse>
     {
-        public QuerySettleBillRequest()
-            : base("BssOpenApi", "2017-12-14", "QuerySettleBill")
+        public DescribeInstanceBillRequest()
+            : base("BssOpenApi", "2017-12-14", "DescribeInstanceBill")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,23 +45,25 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private bool? isHideZeroCharge;
 
-		private bool? isDisplayLocalCurrency;
-
 		private string subscriptionType;
-
-		private string billingCycle;
-
-		private string type;
-
-		private long? ownerId;
 
 		private long? billOwnerId;
 
 		private string productType;
 
-		private string recordID;
-
 		private string nextToken;
+
+		private string billingCycle;
+
+		private long? ownerId;
+
+		private string billingDate;
+
+		private bool? isBillingItem;
+
+		private string instanceID;
+
+		private string granularity;
 
 		private int? maxResults;
 
@@ -91,19 +93,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public bool? IsDisplayLocalCurrency
-		{
-			get
-			{
-				return isDisplayLocalCurrency;
-			}
-			set	
-			{
-				isDisplayLocalCurrency = value;
-				DictionaryUtil.Add(QueryParameters, "IsDisplayLocalCurrency", value.ToString());
-			}
-		}
-
 		public string SubscriptionType
 		{
 			get
@@ -114,45 +103,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				subscriptionType = value;
 				DictionaryUtil.Add(QueryParameters, "SubscriptionType", value);
-			}
-		}
-
-		public string BillingCycle
-		{
-			get
-			{
-				return billingCycle;
-			}
-			set	
-			{
-				billingCycle = value;
-				DictionaryUtil.Add(QueryParameters, "BillingCycle", value);
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -182,19 +132,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string RecordID
-		{
-			get
-			{
-				return recordID;
-			}
-			set	
-			{
-				recordID = value;
-				DictionaryUtil.Add(QueryParameters, "RecordID", value);
-			}
-		}
-
 		public string NextToken
 		{
 			get
@@ -205,6 +142,84 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				nextToken = value;
 				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+			}
+		}
+
+		public string BillingCycle
+		{
+			get
+			{
+				return billingCycle;
+			}
+			set	
+			{
+				billingCycle = value;
+				DictionaryUtil.Add(QueryParameters, "BillingCycle", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string BillingDate
+		{
+			get
+			{
+				return billingDate;
+			}
+			set	
+			{
+				billingDate = value;
+				DictionaryUtil.Add(QueryParameters, "BillingDate", value);
+			}
+		}
+
+		public bool? IsBillingItem
+		{
+			get
+			{
+				return isBillingItem;
+			}
+			set	
+			{
+				isBillingItem = value;
+				DictionaryUtil.Add(QueryParameters, "IsBillingItem", value.ToString());
+			}
+		}
+
+		public string InstanceID
+		{
+			get
+			{
+				return instanceID;
+			}
+			set	
+			{
+				instanceID = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceID", value);
+			}
+		}
+
+		public string Granularity
+		{
+			get
+			{
+				return granularity;
+			}
+			set	
+			{
+				granularity = value;
+				DictionaryUtil.Add(QueryParameters, "Granularity", value);
 			}
 		}
 
@@ -221,9 +236,14 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-        public override QuerySettleBillResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeInstanceBillResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QuerySettleBillResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeInstanceBillResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
