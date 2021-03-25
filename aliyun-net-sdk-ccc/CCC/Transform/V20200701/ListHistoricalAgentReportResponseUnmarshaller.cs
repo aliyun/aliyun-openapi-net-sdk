@@ -74,7 +74,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 				outbound.AnswerRate = _ctx.FloatValue("ListHistoricalAgentReport.Data.List["+ i +"].Outbound.AnswerRate");
 				outbound.AverageDialingTime = _ctx.FloatValue("ListHistoricalAgentReport.Data.List["+ i +"].Outbound.AverageDialingTime");
 				outbound.AverageTalkTime = _ctx.FloatValue("ListHistoricalAgentReport.Data.List["+ i +"].Outbound.AverageTalkTime");
-				outbound.AverageWorkTime = _ctx.LongValue("ListHistoricalAgentReport.Data.List["+ i +"].Outbound.AverageWorkTime");
+				outbound.AverageWorkTime = _ctx.FloatValue("ListHistoricalAgentReport.Data.List["+ i +"].Outbound.AverageWorkTime");
 				outbound.CallsAnswered = _ctx.LongValue("ListHistoricalAgentReport.Data.List["+ i +"].Outbound.CallsAnswered");
 				outbound.CallsDialed = _ctx.LongValue("ListHistoricalAgentReport.Data.List["+ i +"].Outbound.CallsDialed");
 				outbound.MaxDialingTime = _ctx.LongValue("ListHistoricalAgentReport.Data.List["+ i +"].Outbound.MaxDialingTime");

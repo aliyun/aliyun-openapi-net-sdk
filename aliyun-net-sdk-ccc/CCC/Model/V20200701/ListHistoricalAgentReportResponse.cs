@@ -520,7 +520,7 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 					private float? averageTalkTime;
 
-					private long? averageWorkTime;
+					private float? averageWorkTime;
 
 					private long? callsAnswered;
 
@@ -582,7 +582,7 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 						}
 					}
 
-					public long? AverageWorkTime
+					public float? AverageWorkTime
 					{
 						get
 						{
