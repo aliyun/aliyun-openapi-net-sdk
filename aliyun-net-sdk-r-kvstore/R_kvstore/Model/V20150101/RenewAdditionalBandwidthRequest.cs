@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class AddShardingNodeRequest : RpcAcsRequest<AddShardingNodeResponse>
+    public class RenewAdditionalBandwidthRequest : RpcAcsRequest<RenewAdditionalBandwidthResponse>
     {
-        public AddShardingNodeRequest()
-            : base("R-kvstore", "2015-01-01", "AddShardingNode", "redisa", "openAPI")
+        public RenewAdditionalBandwidthRequest()
+            : base("R-kvstore", "2015-01-01", "RenewAdditionalBandwidth", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -48,9 +48,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string sourceBiz;
 
-		private int? shardCount;
-
-		private string businessInfo;
+		private string orderTimeLength;
 
 		private bool? autoPay;
 
@@ -61,8 +59,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private long? ownerId;
 
 		private string instanceId;
-
-		private string shardClass;
 
 		public long? ResourceOwnerId
 		{
@@ -116,29 +112,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? ShardCount
+		public string OrderTimeLength
 		{
 			get
 			{
-				return shardCount;
+				return orderTimeLength;
 			}
 			set	
 			{
-				shardCount = value;
-				DictionaryUtil.Add(QueryParameters, "ShardCount", value.ToString());
-			}
-		}
-
-		public string BusinessInfo
-		{
-			get
-			{
-				return businessInfo;
-			}
-			set	
-			{
-				businessInfo = value;
-				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
+				orderTimeLength = value;
+				DictionaryUtil.Add(QueryParameters, "OrderTimeLength", value);
 			}
 		}
 
@@ -207,27 +190,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string ShardClass
-		{
-			get
-			{
-				return shardClass;
-			}
-			set	
-			{
-				shardClass = value;
-				DictionaryUtil.Add(QueryParameters, "ShardClass", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override AddShardingNodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RenewAdditionalBandwidthResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AddShardingNodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RenewAdditionalBandwidthResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
