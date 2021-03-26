@@ -134,9 +134,13 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 			private int? skillGroupFrom;
 
+			private bool? screenSwitch;
+
 			private List<ListSkillGroupConfig_RuleNameInfo> ruleList;
 
 			private List<ListSkillGroupConfig_RuleNameInfo> allRuleList;
+
+			private List<ListSkillGroupConfig_SkillGroupScreen> skillGroupScreens;
 
 			public long? Id
 			{
@@ -354,6 +358,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
+			public bool? ScreenSwitch
+			{
+				get
+				{
+					return screenSwitch;
+				}
+				set	
+				{
+					screenSwitch = value;
+				}
+			}
+
 			public List<ListSkillGroupConfig_RuleNameInfo> RuleList
 			{
 				get
@@ -375,6 +391,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				set	
 				{
 					allRuleList = value;
+				}
+			}
+
+			public List<ListSkillGroupConfig_SkillGroupScreen> SkillGroupScreens
+			{
+				get
+				{
+					return skillGroupScreens;
+				}
+				set	
+				{
+					skillGroupScreens = value;
 				}
 			}
 
@@ -406,6 +434,66 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					set	
 					{
 						ruleName = value;
+					}
+				}
+			}
+
+			public class ListSkillGroupConfig_SkillGroupScreen
+			{
+
+				private string name;
+
+				private int? dataType;
+
+				private int? symbol;
+
+				private string _value;
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public int? DataType
+				{
+					get
+					{
+						return dataType;
+					}
+					set	
+					{
+						dataType = value;
+					}
+				}
+
+				public int? Symbol
+				{
+					get
+					{
+						return symbol;
+					}
+					set	
+					{
+						symbol = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

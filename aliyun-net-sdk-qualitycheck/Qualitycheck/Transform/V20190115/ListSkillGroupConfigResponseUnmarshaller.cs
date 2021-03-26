@@ -57,6 +57,7 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 				skillGroupConfig.AllContentQualityCheck = _ctx.IntegerValue("ListSkillGroupConfig.Data["+ i +"].AllContentQualityCheck");
 				skillGroupConfig.AllRids = _ctx.StringValue("ListSkillGroupConfig.Data["+ i +"].AllRids");
 				skillGroupConfig.SkillGroupFrom = _ctx.IntegerValue("ListSkillGroupConfig.Data["+ i +"].SkillGroupFrom");
+				skillGroupConfig.ScreenSwitch = _ctx.BooleanValue("ListSkillGroupConfig.Data["+ i +"].ScreenSwitch");
 
 				List<ListSkillGroupConfigResponse.ListSkillGroupConfig_SkillGroupConfig.ListSkillGroupConfig_RuleNameInfo> skillGroupConfig_ruleList = new List<ListSkillGroupConfigResponse.ListSkillGroupConfig_SkillGroupConfig.ListSkillGroupConfig_RuleNameInfo>();
 				for (int j = 0; j < _ctx.Length("ListSkillGroupConfig.Data["+ i +"].RuleList.Length"); j++) {
@@ -77,6 +78,18 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 					skillGroupConfig_allRuleList.Add(ruleNameInfo);
 				}
 				skillGroupConfig.AllRuleList = skillGroupConfig_allRuleList;
+
+				List<ListSkillGroupConfigResponse.ListSkillGroupConfig_SkillGroupConfig.ListSkillGroupConfig_SkillGroupScreen> skillGroupConfig_skillGroupScreens = new List<ListSkillGroupConfigResponse.ListSkillGroupConfig_SkillGroupConfig.ListSkillGroupConfig_SkillGroupScreen>();
+				for (int j = 0; j < _ctx.Length("ListSkillGroupConfig.Data["+ i +"].SkillGroupScreens.Length"); j++) {
+					ListSkillGroupConfigResponse.ListSkillGroupConfig_SkillGroupConfig.ListSkillGroupConfig_SkillGroupScreen skillGroupScreen = new ListSkillGroupConfigResponse.ListSkillGroupConfig_SkillGroupConfig.ListSkillGroupConfig_SkillGroupScreen();
+					skillGroupScreen.Name = _ctx.StringValue("ListSkillGroupConfig.Data["+ i +"].SkillGroupScreens["+ j +"].Name");
+					skillGroupScreen.DataType = _ctx.IntegerValue("ListSkillGroupConfig.Data["+ i +"].SkillGroupScreens["+ j +"].DataType");
+					skillGroupScreen.Symbol = _ctx.IntegerValue("ListSkillGroupConfig.Data["+ i +"].SkillGroupScreens["+ j +"].Symbol");
+					skillGroupScreen._Value = _ctx.StringValue("ListSkillGroupConfig.Data["+ i +"].SkillGroupScreens["+ j +"].Value");
+
+					skillGroupConfig_skillGroupScreens.Add(skillGroupScreen);
+				}
+				skillGroupConfig.SkillGroupScreens = skillGroupConfig_skillGroupScreens;
 
 				listSkillGroupConfigResponse_data.Add(skillGroupConfig);
 			}

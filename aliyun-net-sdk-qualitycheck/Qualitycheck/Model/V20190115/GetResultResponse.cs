@@ -182,6 +182,12 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 			private string reviewTimeLong;
 
+			private int? reviewType;
+
+			private string assignmentTime;
+
+			private string lastDataId;
+
 			private List<GetResult_AsrResultItem> asrResult;
 
 			private List<GetResult_HitResultItem> hitResult;
@@ -357,6 +363,42 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				set	
 				{
 					reviewTimeLong = value;
+				}
+			}
+
+			public int? ReviewType
+			{
+				get
+				{
+					return reviewType;
+				}
+				set	
+				{
+					reviewType = value;
+				}
+			}
+
+			public string AssignmentTime
+			{
+				get
+				{
+					return assignmentTime;
+				}
+				set	
+				{
+					assignmentTime = value;
+				}
+			}
+
+			public string LastDataId
+			{
+				get
+				{
+					return lastDataId;
+				}
+				set	
+				{
+					lastDataId = value;
 				}
 			}
 
@@ -875,6 +917,8 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 				private string remark13;
 
+				private int? dialogueSize;
+
 				public string Id
 				{
 					get
@@ -1172,6 +1216,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					set	
 					{
 						remark13 = value;
+					}
+				}
+
+				public int? DialogueSize
+				{
+					get
+					{
+						return dialogueSize;
+					}
+					set	
+					{
+						dialogueSize = value;
 					}
 				}
 			}

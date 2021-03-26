@@ -57,6 +57,9 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 				resultInfo.ReviewTime = _ctx.StringValue("GetResult.Data["+ i +"].ReviewTime");
 				resultInfo.CreateTimeLong = _ctx.StringValue("GetResult.Data["+ i +"].CreateTimeLong");
 				resultInfo.ReviewTimeLong = _ctx.StringValue("GetResult.Data["+ i +"].ReviewTimeLong");
+				resultInfo.ReviewType = _ctx.IntegerValue("GetResult.Data["+ i +"].ReviewType");
+				resultInfo.AssignmentTime = _ctx.StringValue("GetResult.Data["+ i +"].AssignmentTime");
+				resultInfo.LastDataId = _ctx.StringValue("GetResult.Data["+ i +"].LastDataId");
 
 				GetResultResponse.GetResult_ResultInfo.GetResult_Recording recording = new GetResultResponse.GetResult_ResultInfo.GetResult_Recording();
 				recording.Id = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Id");
@@ -84,6 +87,7 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 				recording.Remark11 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark11");
 				recording.Remark12 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark12");
 				recording.Remark13 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark13");
+				recording.DialogueSize = _ctx.IntegerValue("GetResult.Data["+ i +"].Recording.DialogueSize");
 				resultInfo.Recording = recording;
 
 				GetResultResponse.GetResult_ResultInfo.GetResult_Agent agent = new GetResultResponse.GetResult_ResultInfo.GetResult_Agent();
