@@ -46,7 +46,7 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 				column.Position = _ctx.IntegerValue("GetMetaTableColumn.ColumnList["+ i +"].Position");
 				column.AutoIncrement = _ctx.BooleanValue("GetMetaTableColumn.ColumnList["+ i +"].AutoIncrement");
 				column.SecurityLevel = _ctx.StringValue("GetMetaTableColumn.ColumnList["+ i +"].SecurityLevel");
-				column.DataLength = _ctx.IntegerValue("GetMetaTableColumn.ColumnList["+ i +"].DataLength");
+				column.DataLength = _ctx.LongValue("GetMetaTableColumn.ColumnList["+ i +"].DataLength");
 				column.DataScale = _ctx.IntegerValue("GetMetaTableColumn.ColumnList["+ i +"].DataScale");
 				column.DataPrecision = _ctx.IntegerValue("GetMetaTableColumn.ColumnList["+ i +"].DataPrecision");
 				column.PrimaryKey = _ctx.StringValue("GetMetaTableColumn.ColumnList["+ i +"].PrimaryKey");

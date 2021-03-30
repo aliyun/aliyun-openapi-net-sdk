@@ -47,7 +47,7 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 				column.Description = _ctx.StringValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].Description");
 				column.Position = _ctx.StringValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].Position");
 				column.AutoIncrement = _ctx.BooleanValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].AutoIncrement");
-				column.DataLength = _ctx.IntegerValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].DataLength");
+				column.DataLength = _ctx.LongValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].DataLength");
 				column.DataScale = _ctx.IntegerValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].DataScale");
 				column.DataPrecision = _ctx.IntegerValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].DataPrecision");
 				column.Nullable = _ctx.BooleanValue("GetMetaTableDetailInfo.DetailInfo.ColumnList["+ i +"].Nullable");

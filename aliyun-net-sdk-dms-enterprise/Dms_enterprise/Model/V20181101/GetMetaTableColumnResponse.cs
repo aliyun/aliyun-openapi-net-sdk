@@ -117,7 +117,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string securityLevel;
 
-			private int? dataLength;
+			private long? dataLength;
 
 			private int? dataScale;
 
@@ -219,7 +219,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 
 			[JsonProperty(PropertyName = "DataLength")]
-			public int? DataLength
+			public long? DataLength
 			{
 				get
 				{
