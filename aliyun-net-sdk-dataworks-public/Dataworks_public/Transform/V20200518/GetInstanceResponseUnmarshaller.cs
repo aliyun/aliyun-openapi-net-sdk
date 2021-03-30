@@ -63,6 +63,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			data.ErrorMessage = _ctx.StringValue("GetInstance.Data.ErrorMessage");
 			data.RelatedFlowId = _ctx.LongValue("GetInstance.Data.RelatedFlowId");
 			data.TaskType = _ctx.StringValue("GetInstance.Data.TaskType");
+			data.TaskRerunTime = _ctx.IntegerValue("GetInstance.Data.TaskRerunTime");
 			getInstanceResponse.Data = data;
         
 			return getInstanceResponse;

@@ -162,6 +162,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private string taskType;
 
+			private int? taskRerunTime;
+
 			public long? NodeId
 			{
 				get
@@ -459,6 +461,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					taskType = value;
+				}
+			}
+
+			public int? TaskRerunTime
+			{
+				get
+				{
+					return taskRerunTime;
+				}
+				set	
+				{
+					taskRerunTime = value;
 				}
 			}
 		}
