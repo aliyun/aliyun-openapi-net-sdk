@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 		private DescribeBizTypeSetting_Ad ad;
 
+		private DescribeBizTypeSetting_Live live;
+
 		public string RequestId
 		{
 			get
@@ -92,6 +94,18 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			set	
 			{
 				ad = value;
+			}
+		}
+
+		public DescribeBizTypeSetting_Live Live
+		{
+			get
+			{
+				return live;
+			}
+			set	
+			{
+				live = value;
 			}
 		}
 
@@ -163,6 +177,24 @@ namespace Aliyun.Acs.Green.Model.V20170823
 				set	
 				{
 					categories3 = value;
+				}
+			}
+		}
+
+		public class DescribeBizTypeSetting_Live
+		{
+
+			private List<string> categories4;
+
+			public List<string> Categories4
+			{
+				get
+				{
+					return categories4;
+				}
+				set	
+				{
+					categories4 = value;
 				}
 			}
 		}

@@ -34,6 +34,7 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 			describeOssIncrementCheckSettingResponse.RequestId = _ctx.StringValue("DescribeOssIncrementCheckSetting.RequestId");
 			describeOssIncrementCheckSettingResponse.ImageEnableLimit = _ctx.BooleanValue("DescribeOssIncrementCheckSetting.ImageEnableLimit");
 			describeOssIncrementCheckSettingResponse.ImageScanLimit = _ctx.LongValue("DescribeOssIncrementCheckSetting.ImageScanLimit");
+			describeOssIncrementCheckSettingResponse.ScanImageNoFileType = _ctx.BooleanValue("DescribeOssIncrementCheckSetting.ScanImageNoFileType");
 			describeOssIncrementCheckSettingResponse.VideoFrameInterval = _ctx.IntegerValue("DescribeOssIncrementCheckSetting.VideoFrameInterval");
 			describeOssIncrementCheckSettingResponse.VideoMaxFrames = _ctx.IntegerValue("DescribeOssIncrementCheckSetting.VideoMaxFrames");
 			describeOssIncrementCheckSettingResponse.VideoMaxSize = _ctx.IntegerValue("DescribeOssIncrementCheckSetting.VideoMaxSize");

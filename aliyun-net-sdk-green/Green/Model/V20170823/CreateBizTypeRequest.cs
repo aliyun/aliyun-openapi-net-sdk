@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			Method = MethodType.POST;
         }
 
+		private string description;
+
 		private string bizTypeImport;
 
 		private bool? citeTemplate;
@@ -47,6 +49,19 @@ namespace Aliyun.Acs.Green.Model.V20170823
 		private string industryInfo;
 
 		private string bizTypeName;
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
 
 		public string BizTypeImport
 		{

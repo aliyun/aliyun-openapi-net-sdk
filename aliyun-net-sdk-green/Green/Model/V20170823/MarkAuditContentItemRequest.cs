@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			Method = MethodType.POST;
         }
 
+		private string bizTypes;
+
 		private string auditIllegalReasons;
 
 		private string sourceIp;
@@ -49,6 +51,19 @@ namespace Aliyun.Acs.Green.Model.V20170823
 		private string ids;
 
 		private string lang;
+
+		public string BizTypes
+		{
+			get
+			{
+				return bizTypes;
+			}
+			set	
+			{
+				bizTypes = value;
+				DictionaryUtil.Add(QueryParameters, "BizTypes", value);
+			}
+		}
 
 		public string AuditIllegalReasons
 		{

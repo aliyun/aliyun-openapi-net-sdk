@@ -68,6 +68,15 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 			}
 			ad.Categories3 = ad_categories3;
 			describeBizTypeSettingResponse.Ad = ad;
+
+			DescribeBizTypeSettingResponse.DescribeBizTypeSetting_Live live = new DescribeBizTypeSettingResponse.DescribeBizTypeSetting_Live();
+
+			List<string> live_categories4 = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeBizTypeSetting.Live.Categories.Length"); i++) {
+				live_categories4.Add(_ctx.StringValue("DescribeBizTypeSetting.Live.Categories["+ i +"]"));
+			}
+			live.Categories4 = live_categories4;
+			describeBizTypeSettingResponse.Live = live;
         
 			return describeBizTypeSettingResponse;
         }

@@ -34,6 +34,7 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 			describeAuditCallbackResponse.RequestId = _ctx.StringValue("DescribeAuditCallback.RequestId");
 			describeAuditCallbackResponse.Seed = _ctx.StringValue("DescribeAuditCallback.Seed");
 			describeAuditCallbackResponse.Callback = _ctx.StringValue("DescribeAuditCallback.Callback");
+			describeAuditCallbackResponse.CryptType = _ctx.IntegerValue("DescribeAuditCallback.CryptType");
         
 			return describeAuditCallbackResponse;
         }

@@ -20,65 +20,9 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Green.Model.V20170823
+namespace Aliyun.Acs.Green.Model.V20180509
 {
-	public class DescribeAuditCallbackResponse : AcsResponse
+	public class PostAsyncScanResultsResponse : AcsResponse
 	{
-
-		private string requestId;
-
-		private string seed;
-
-		private string callback;
-
-		private int? cryptType;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string Seed
-		{
-			get
-			{
-				return seed;
-			}
-			set	
-			{
-				seed = value;
-			}
-		}
-
-		public string Callback
-		{
-			get
-			{
-				return callback;
-			}
-			set	
-			{
-				callback = value;
-			}
-		}
-
-		public int? CryptType
-		{
-			get
-			{
-				return cryptType;
-			}
-			set	
-			{
-				cryptType = value;
-			}
-		}
 	}
 }

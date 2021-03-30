@@ -27,10 +27,10 @@ using Aliyun.Acs.Green.Transform.V20170823;
 
 namespace Aliyun.Acs.Green.Model.V20170823
 {
-    public class MarkAuditContentRequest : RpcAcsRequest<MarkAuditContentResponse>
+    public class DescribeBizTypeTextLibRequest : RpcAcsRequest<DescribeBizTypeTextLibResponse>
     {
-        public MarkAuditContentRequest()
-            : base("Green", "2017-08-23", "MarkAuditContent", "green", "openAPI")
+        public DescribeBizTypeTextLibRequest()
+            : base("Green", "2017-08-23", "DescribeBizTypeTextLib", "green", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,78 +40,48 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			Method = MethodType.POST;
         }
 
-		private string bizTypes;
+		private string resourceType;
 
-		private string auditIllegalReasons;
+		private string scene;
 
-		private string sourceIp;
+		private string bizTypeName;
 
-		private string auditResult;
-
-		private string ids;
-
-		public string BizTypes
+		public string ResourceType
 		{
 			get
 			{
-				return bizTypes;
+				return resourceType;
 			}
 			set	
 			{
-				bizTypes = value;
-				DictionaryUtil.Add(QueryParameters, "BizTypes", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
-		public string AuditIllegalReasons
+		public string Scene
 		{
 			get
 			{
-				return auditIllegalReasons;
+				return scene;
 			}
 			set	
 			{
-				auditIllegalReasons = value;
-				DictionaryUtil.Add(QueryParameters, "AuditIllegalReasons", value);
+				scene = value;
+				DictionaryUtil.Add(QueryParameters, "Scene", value);
 			}
 		}
 
-		public string SourceIp
+		public string BizTypeName
 		{
 			get
 			{
-				return sourceIp;
+				return bizTypeName;
 			}
 			set	
 			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
-			}
-		}
-
-		public string AuditResult
-		{
-			get
-			{
-				return auditResult;
-			}
-			set	
-			{
-				auditResult = value;
-				DictionaryUtil.Add(QueryParameters, "AuditResult", value);
-			}
-		}
-
-		public string Ids
-		{
-			get
-			{
-				return ids;
-			}
-			set	
-			{
-				ids = value;
-				DictionaryUtil.Add(QueryParameters, "Ids", value);
+				bizTypeName = value;
+				DictionaryUtil.Add(QueryParameters, "BizTypeName", value);
 			}
 		}
 
@@ -120,9 +90,9 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			return false;
 		}
 
-        public override MarkAuditContentResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeBizTypeTextLibResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return MarkAuditContentResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeBizTypeTextLibResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

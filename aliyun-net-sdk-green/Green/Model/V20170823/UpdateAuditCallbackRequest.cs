@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 		private string seed;
 
+		private int? cryptType;
+
 		private string callback;
 
 		public string Seed
@@ -54,6 +56,19 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				seed = value;
 				DictionaryUtil.Add(QueryParameters, "Seed", value);
+			}
+		}
+
+		public int? CryptType
+		{
+			get
+			{
+				return cryptType;
+			}
+			set	
+			{
+				cryptType = value;
+				DictionaryUtil.Add(QueryParameters, "CryptType", value.ToString());
 			}
 		}
 

@@ -68,10 +68,84 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 					DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FrameResult frameResult = new DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FrameResult();
 					frameResult.Url = _ctx.StringValue("DescribeViewContent.ViewContentList["+ i +"].FrameResults["+ j +"].Url");
 					frameResult.Offset = _ctx.IntegerValue("DescribeViewContent.ViewContentList["+ i +"].FrameResults["+ j +"].Offset");
+					frameResult.Label = _ctx.StringValue("DescribeViewContent.ViewContentList["+ i +"].FrameResults["+ j +"].Label");
 
 					viewContent_frameResults.Add(frameResult);
 				}
 				viewContent.FrameResults = viewContent_frameResults;
+
+				List<DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult> viewContent_faceResults = new List<DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult>();
+				for (int j = 0; j < _ctx.Length("DescribeViewContent.ViewContentList["+ i +"].FaceResults.Length"); j++) {
+					DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult faceResult = new DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult();
+					faceResult.Bualified = _ctx.BooleanValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Bualified");
+
+					DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Location location = new DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Location();
+					location.X = _ctx.IntegerValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Location.X");
+					location.Y = _ctx.IntegerValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Location.Y");
+					location.W = _ctx.IntegerValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Location.W");
+					location.H = _ctx.IntegerValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Location.H");
+					faceResult.Location = location;
+
+					DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Gender gender = new DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Gender();
+					gender.Rate = _ctx.FloatValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Gender.Rate");
+					gender._Value = _ctx.StringValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Gender.Value");
+					faceResult.Gender = gender;
+
+					DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Glasses glasses = new DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Glasses();
+					glasses.Rate = _ctx.FloatValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Glasses.Rate");
+					glasses._Value = _ctx.StringValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Glasses.Value");
+					faceResult.Glasses = glasses;
+
+					DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Age age = new DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Age();
+					age.Rate = _ctx.FloatValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Age.Rate");
+					age._Value = _ctx.IntegerValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Age.Value");
+					faceResult.Age = age;
+
+					DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Smile smile = new DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Smile();
+					smile.Rate = _ctx.FloatValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Smile.Rate");
+					smile._Value = _ctx.FloatValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Smile.Value");
+					faceResult.Smile = smile;
+
+					DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Quality quality = new DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Quality();
+					quality.Blur = _ctx.FloatValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Quality.Blur");
+					quality.Pitch = _ctx.FloatValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Quality.Pitch");
+					quality.Yaw = _ctx.FloatValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Quality.Yaw");
+					quality.Roll = _ctx.FloatValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Quality.Roll");
+					faceResult.Quality = quality;
+
+					DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Respirator respirator = new DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Respirator();
+					respirator.Rate = _ctx.FloatValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Respirator.Rate");
+					respirator._Value = _ctx.StringValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Respirator.Value");
+					faceResult.Respirator = respirator;
+
+					DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Hat hat = new DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Hat();
+					hat.Rate = _ctx.FloatValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Hat.Rate");
+					hat._Value = _ctx.StringValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Hat.Value");
+					faceResult.Hat = hat;
+
+					DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Mustache mustache = new DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Mustache();
+					mustache.Rate = _ctx.FloatValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Mustache.Rate");
+					mustache._Value = _ctx.StringValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Mustache.Value");
+					faceResult.Mustache = mustache;
+
+					DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Bang bang = new DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Bang();
+					bang.Rate = _ctx.FloatValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Bang.Rate");
+					bang._Value = _ctx.StringValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Bang.Value");
+					faceResult.Bang = bang;
+
+					DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Hairstyle hairstyle = new DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Hairstyle();
+					hairstyle.Rate = _ctx.FloatValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Hairstyle.Rate");
+					hairstyle._Value = _ctx.StringValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Hairstyle.Value");
+					faceResult.Hairstyle = hairstyle;
+
+					DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Image image = new DescribeViewContentResponse.DescribeViewContent_ViewContent.DescribeViewContent_FaceResult.DescribeViewContent_Image();
+					image.Width = _ctx.IntegerValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Image.Width");
+					image.Height = _ctx.IntegerValue("DescribeViewContent.ViewContentList["+ i +"].FaceResults["+ j +"].Image.Height");
+					faceResult.Image = image;
+
+					viewContent_faceResults.Add(faceResult);
+				}
+				viewContent.FaceResults = viewContent_faceResults;
 
 				describeViewContentResponse_viewContentList.Add(viewContent);
 			}

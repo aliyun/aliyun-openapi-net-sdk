@@ -22,16 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Green.Model.V20170823
 {
-	public class DescribeAuditCallbackResponse : AcsResponse
+	public class UpdateBizTypeResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private string seed;
-
-		private string callback;
-
-		private int? cryptType;
 
 		public string RequestId
 		{
@@ -42,42 +36,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string Seed
-		{
-			get
-			{
-				return seed;
-			}
-			set	
-			{
-				seed = value;
-			}
-		}
-
-		public string Callback
-		{
-			get
-			{
-				return callback;
-			}
-			set	
-			{
-				callback = value;
-			}
-		}
-
-		public int? CryptType
-		{
-			get
-			{
-				return cryptType;
-			}
-			set	
-			{
-				cryptType = value;
 			}
 		}
 	}

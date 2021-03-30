@@ -42,22 +42,24 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 				item.Source = _ctx.StringValue("DescribeUserBizTypes.BizTypeList["+ i +"].Source");
 				item.CiteTemplate = _ctx.BooleanValue("DescribeUserBizTypes.BizTypeList["+ i +"].CiteTemplate");
 				item.IndustryInfo = _ctx.StringValue("DescribeUserBizTypes.BizTypeList["+ i +"].IndustryInfo");
+				item.Description = _ctx.StringValue("DescribeUserBizTypes.BizTypeList["+ i +"].Description");
 
 				describeUserBizTypesResponse_bizTypeList.Add(item);
 			}
 			describeUserBizTypesResponse.BizTypeList = describeUserBizTypesResponse_bizTypeList;
 
-			List<DescribeUserBizTypesResponse.DescribeUserBizTypes_Item> describeUserBizTypesResponse_bizTypeListImport = new List<DescribeUserBizTypesResponse.DescribeUserBizTypes_Item>();
+			List<DescribeUserBizTypesResponse.DescribeUserBizTypes_ImportItem> describeUserBizTypesResponse_bizTypeListImport = new List<DescribeUserBizTypesResponse.DescribeUserBizTypes_ImportItem>();
 			for (int i = 0; i < _ctx.Length("DescribeUserBizTypes.BizTypeListImport.Length"); i++) {
-				DescribeUserBizTypesResponse.DescribeUserBizTypes_Item item = new DescribeUserBizTypesResponse.DescribeUserBizTypes_Item();
-				item.BizType = _ctx.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].BizType");
-				item.SourceBizType = _ctx.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].SourceBizType");
-				item.Gray = _ctx.BooleanValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].Gray");
-				item.Source = _ctx.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].Source");
-				item.CiteTemplate = _ctx.BooleanValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].CiteTemplate");
-				item.IndustryInfo = _ctx.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].IndustryInfo");
+				DescribeUserBizTypesResponse.DescribeUserBizTypes_ImportItem importItem = new DescribeUserBizTypesResponse.DescribeUserBizTypes_ImportItem();
+				importItem.BizType = _ctx.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].BizType");
+				importItem.SourceBizType = _ctx.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].SourceBizType");
+				importItem.Gray = _ctx.BooleanValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].Gray");
+				importItem.Source = _ctx.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].Source");
+				importItem.CiteTemplate = _ctx.BooleanValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].CiteTemplate");
+				importItem.IndustryInfo = _ctx.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].IndustryInfo");
+				importItem.Description = _ctx.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].Description");
 
-				describeUserBizTypesResponse_bizTypeListImport.Add(item);
+				describeUserBizTypesResponse_bizTypeListImport.Add(importItem);
 			}
 			describeUserBizTypesResponse.BizTypeListImport = describeUserBizTypesResponse_bizTypeListImport;
         

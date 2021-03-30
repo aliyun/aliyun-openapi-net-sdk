@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 		private string videoSceneList;
 
+		private bool? scanImageNoFileType;
+
 		private string imageSceneList;
 
 		private string audioSceneList;
@@ -84,6 +86,19 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				videoSceneList = value;
 				DictionaryUtil.Add(QueryParameters, "VideoSceneList", value);
+			}
+		}
+
+		public bool? ScanImageNoFileType
+		{
+			get
+			{
+				return scanImageNoFileType;
+			}
+			set	
+			{
+				scanImageNoFileType = value;
+				DictionaryUtil.Add(QueryParameters, "ScanImageNoFileType", value.ToString());
 			}
 		}
 

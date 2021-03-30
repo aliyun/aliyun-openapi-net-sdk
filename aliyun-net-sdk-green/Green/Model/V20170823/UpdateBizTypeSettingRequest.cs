@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 		private string bizTypeName;
 
+		private string live;
+
 		private string ad;
 
 		private string resourceType;
@@ -101,6 +103,19 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				bizTypeName = value;
 				DictionaryUtil.Add(QueryParameters, "BizTypeName", value);
+			}
+		}
+
+		public string Live
+		{
+			get
+			{
+				return live;
+			}
+			set	
+			{
+				live = value;
+				DictionaryUtil.Add(QueryParameters, "Live", value);
 			}
 		}
 

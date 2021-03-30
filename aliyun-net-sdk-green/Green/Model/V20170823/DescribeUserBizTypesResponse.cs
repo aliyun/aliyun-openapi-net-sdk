@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 		private List<DescribeUserBizTypes_Item> bizTypeList;
 
-		private List<DescribeUserBizTypes_Item> bizTypeListImport;
+		private List<DescribeUserBizTypes_ImportItem> bizTypeListImport;
 
 		public string RequestId
 		{
@@ -55,7 +55,7 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
-		public List<DescribeUserBizTypes_Item> BizTypeListImport
+		public List<DescribeUserBizTypes_ImportItem> BizTypeListImport
 		{
 			get
 			{
@@ -81,6 +81,8 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			private bool? citeTemplate;
 
 			private string industryInfo;
+
+			private string description;
 
 			public string BizType
 			{
@@ -151,6 +153,120 @@ namespace Aliyun.Acs.Green.Model.V20170823
 				set	
 				{
 					industryInfo = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+		}
+
+		public class DescribeUserBizTypes_ImportItem
+		{
+
+			private string bizType;
+
+			private string sourceBizType;
+
+			private bool? gray;
+
+			private string source;
+
+			private bool? citeTemplate;
+
+			private string industryInfo;
+
+			private string description;
+
+			public string BizType
+			{
+				get
+				{
+					return bizType;
+				}
+				set	
+				{
+					bizType = value;
+				}
+			}
+
+			public string SourceBizType
+			{
+				get
+				{
+					return sourceBizType;
+				}
+				set	
+				{
+					sourceBizType = value;
+				}
+			}
+
+			public bool? Gray
+			{
+				get
+				{
+					return gray;
+				}
+				set	
+				{
+					gray = value;
+				}
+			}
+
+			public string Source
+			{
+				get
+				{
+					return source;
+				}
+				set	
+				{
+					source = value;
+				}
+			}
+
+			public bool? CiteTemplate
+			{
+				get
+				{
+					return citeTemplate;
+				}
+				set	
+				{
+					citeTemplate = value;
+				}
+			}
+
+			public string IndustryInfo
+			{
+				get
+				{
+					return industryInfo;
+				}
+				set	
+				{
+					industryInfo = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 		}

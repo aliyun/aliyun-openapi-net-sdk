@@ -16,69 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Green.Model.V20170823;
 
-namespace Aliyun.Acs.Green.Model.V20170823
+namespace Aliyun.Acs.Green.Transform.V20170823
 {
-	public class DescribeAuditCallbackResponse : AcsResponse
-	{
+    public class UpdateBizTypeResponseUnmarshaller
+    {
+        public static UpdateBizTypeResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			UpdateBizTypeResponse updateBizTypeResponse = new UpdateBizTypeResponse();
 
-		private string requestId;
-
-		private string seed;
-
-		private string callback;
-
-		private int? cryptType;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string Seed
-		{
-			get
-			{
-				return seed;
-			}
-			set	
-			{
-				seed = value;
-			}
-		}
-
-		public string Callback
-		{
-			get
-			{
-				return callback;
-			}
-			set	
-			{
-				callback = value;
-			}
-		}
-
-		public int? CryptType
-		{
-			get
-			{
-				return cryptType;
-			}
-			set	
-			{
-				cryptType = value;
-			}
-		}
-	}
+			updateBizTypeResponse.HttpResponse = _ctx.HttpResponse;
+			updateBizTypeResponse.RequestId = _ctx.StringValue("UpdateBizType.RequestId");
+        
+			return updateBizTypeResponse;
+        }
+    }
 }

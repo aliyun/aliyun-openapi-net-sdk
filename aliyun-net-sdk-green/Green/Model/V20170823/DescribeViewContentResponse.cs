@@ -126,6 +126,8 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 			private List<DescribeViewContent_FrameResult> frameResults;
 
+			private List<DescribeViewContent_FaceResult> faceResults;
+
 			public string TaskId
 			{
 				get
@@ -294,6 +296,18 @@ namespace Aliyun.Acs.Green.Model.V20170823
 				}
 			}
 
+			public List<DescribeViewContent_FaceResult> FaceResults
+			{
+				get
+				{
+					return faceResults;
+				}
+				set	
+				{
+					faceResults = value;
+				}
+			}
+
 			public class DescribeViewContent_Result
 			{
 
@@ -347,6 +361,8 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 				private int? offset;
 
+				private string label;
+
 				public string Url
 				{
 					get
@@ -368,6 +384,644 @@ namespace Aliyun.Acs.Green.Model.V20170823
 					set	
 					{
 						offset = value;
+					}
+				}
+
+				public string Label
+				{
+					get
+					{
+						return label;
+					}
+					set	
+					{
+						label = value;
+					}
+				}
+			}
+
+			public class DescribeViewContent_FaceResult
+			{
+
+				private bool? bualified;
+
+				private DescribeViewContent_Location location;
+
+				private DescribeViewContent_Gender gender;
+
+				private DescribeViewContent_Glasses glasses;
+
+				private DescribeViewContent_Age age;
+
+				private DescribeViewContent_Smile smile;
+
+				private DescribeViewContent_Quality quality;
+
+				private DescribeViewContent_Respirator respirator;
+
+				private DescribeViewContent_Hat hat;
+
+				private DescribeViewContent_Mustache mustache;
+
+				private DescribeViewContent_Bang bang;
+
+				private DescribeViewContent_Hairstyle hairstyle;
+
+				private DescribeViewContent_Image image;
+
+				public bool? Bualified
+				{
+					get
+					{
+						return bualified;
+					}
+					set	
+					{
+						bualified = value;
+					}
+				}
+
+				public DescribeViewContent_Location Location
+				{
+					get
+					{
+						return location;
+					}
+					set	
+					{
+						location = value;
+					}
+				}
+
+				public DescribeViewContent_Gender Gender
+				{
+					get
+					{
+						return gender;
+					}
+					set	
+					{
+						gender = value;
+					}
+				}
+
+				public DescribeViewContent_Glasses Glasses
+				{
+					get
+					{
+						return glasses;
+					}
+					set	
+					{
+						glasses = value;
+					}
+				}
+
+				public DescribeViewContent_Age Age
+				{
+					get
+					{
+						return age;
+					}
+					set	
+					{
+						age = value;
+					}
+				}
+
+				public DescribeViewContent_Smile Smile
+				{
+					get
+					{
+						return smile;
+					}
+					set	
+					{
+						smile = value;
+					}
+				}
+
+				public DescribeViewContent_Quality Quality
+				{
+					get
+					{
+						return quality;
+					}
+					set	
+					{
+						quality = value;
+					}
+				}
+
+				public DescribeViewContent_Respirator Respirator
+				{
+					get
+					{
+						return respirator;
+					}
+					set	
+					{
+						respirator = value;
+					}
+				}
+
+				public DescribeViewContent_Hat Hat
+				{
+					get
+					{
+						return hat;
+					}
+					set	
+					{
+						hat = value;
+					}
+				}
+
+				public DescribeViewContent_Mustache Mustache
+				{
+					get
+					{
+						return mustache;
+					}
+					set	
+					{
+						mustache = value;
+					}
+				}
+
+				public DescribeViewContent_Bang Bang
+				{
+					get
+					{
+						return bang;
+					}
+					set	
+					{
+						bang = value;
+					}
+				}
+
+				public DescribeViewContent_Hairstyle Hairstyle
+				{
+					get
+					{
+						return hairstyle;
+					}
+					set	
+					{
+						hairstyle = value;
+					}
+				}
+
+				public DescribeViewContent_Image Image
+				{
+					get
+					{
+						return image;
+					}
+					set	
+					{
+						image = value;
+					}
+				}
+
+				public class DescribeViewContent_Location
+				{
+
+					private int? x;
+
+					private int? y;
+
+					private int? w;
+
+					private int? h;
+
+					public int? X
+					{
+						get
+						{
+							return x;
+						}
+						set	
+						{
+							x = value;
+						}
+					}
+
+					public int? Y
+					{
+						get
+						{
+							return y;
+						}
+						set	
+						{
+							y = value;
+						}
+					}
+
+					public int? W
+					{
+						get
+						{
+							return w;
+						}
+						set	
+						{
+							w = value;
+						}
+					}
+
+					public int? H
+					{
+						get
+						{
+							return h;
+						}
+						set	
+						{
+							h = value;
+						}
+					}
+				}
+
+				public class DescribeViewContent_Gender
+				{
+
+					private float? rate;
+
+					private string _value;
+
+					public float? Rate
+					{
+						get
+						{
+							return rate;
+						}
+						set	
+						{
+							rate = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
+						}
+					}
+				}
+
+				public class DescribeViewContent_Glasses
+				{
+
+					private float? rate;
+
+					private string _value;
+
+					public float? Rate
+					{
+						get
+						{
+							return rate;
+						}
+						set	
+						{
+							rate = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
+						}
+					}
+				}
+
+				public class DescribeViewContent_Age
+				{
+
+					private float? rate;
+
+					private int? _value;
+
+					public float? Rate
+					{
+						get
+						{
+							return rate;
+						}
+						set	
+						{
+							rate = value;
+						}
+					}
+
+					public int? _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
+						}
+					}
+				}
+
+				public class DescribeViewContent_Smile
+				{
+
+					private float? rate;
+
+					private float? _value;
+
+					public float? Rate
+					{
+						get
+						{
+							return rate;
+						}
+						set	
+						{
+							rate = value;
+						}
+					}
+
+					public float? _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
+						}
+					}
+				}
+
+				public class DescribeViewContent_Quality
+				{
+
+					private float? blur;
+
+					private float? pitch;
+
+					private float? yaw;
+
+					private float? roll;
+
+					public float? Blur
+					{
+						get
+						{
+							return blur;
+						}
+						set	
+						{
+							blur = value;
+						}
+					}
+
+					public float? Pitch
+					{
+						get
+						{
+							return pitch;
+						}
+						set	
+						{
+							pitch = value;
+						}
+					}
+
+					public float? Yaw
+					{
+						get
+						{
+							return yaw;
+						}
+						set	
+						{
+							yaw = value;
+						}
+					}
+
+					public float? Roll
+					{
+						get
+						{
+							return roll;
+						}
+						set	
+						{
+							roll = value;
+						}
+					}
+				}
+
+				public class DescribeViewContent_Respirator
+				{
+
+					private float? rate;
+
+					private string _value;
+
+					public float? Rate
+					{
+						get
+						{
+							return rate;
+						}
+						set	
+						{
+							rate = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
+						}
+					}
+				}
+
+				public class DescribeViewContent_Hat
+				{
+
+					private float? rate;
+
+					private string _value;
+
+					public float? Rate
+					{
+						get
+						{
+							return rate;
+						}
+						set	
+						{
+							rate = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
+						}
+					}
+				}
+
+				public class DescribeViewContent_Mustache
+				{
+
+					private float? rate;
+
+					private string _value;
+
+					public float? Rate
+					{
+						get
+						{
+							return rate;
+						}
+						set	
+						{
+							rate = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
+						}
+					}
+				}
+
+				public class DescribeViewContent_Bang
+				{
+
+					private float? rate;
+
+					private string _value;
+
+					public float? Rate
+					{
+						get
+						{
+							return rate;
+						}
+						set	
+						{
+							rate = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
+						}
+					}
+				}
+
+				public class DescribeViewContent_Hairstyle
+				{
+
+					private float? rate;
+
+					private string _value;
+
+					public float? Rate
+					{
+						get
+						{
+							return rate;
+						}
+						set	
+						{
+							rate = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
+						}
+					}
+				}
+
+				public class DescribeViewContent_Image
+				{
+
+					private int? width;
+
+					private int? height;
+
+					public int? Width
+					{
+						get
+						{
+							return width;
+						}
+						set	
+						{
+							width = value;
+						}
+					}
+
+					public int? Height
+					{
+						get
+						{
+							return height;
+						}
+						set	
+						{
+							height = value;
+						}
 					}
 				}
 			}

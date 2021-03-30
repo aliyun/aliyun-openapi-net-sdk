@@ -31,6 +31,8 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 		private long? imageScanLimit;
 
+		private bool? scanImageNoFileType;
+
 		private int? videoFrameInterval;
 
 		private int? videoMaxFrames;
@@ -94,6 +96,18 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			set	
 			{
 				imageScanLimit = value;
+			}
+		}
+
+		public bool? ScanImageNoFileType
+		{
+			get
+			{
+				return scanImageNoFileType;
+			}
+			set	
+			{
+				scanImageNoFileType = value;
 			}
 		}
 
