@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
 {
-	public class CloseDLAServiceResponse : AcsResponse
+	public class DescribeLogicalBackupSetResponse : AcsResponse
 	{
 
 		private bool? success;
@@ -34,6 +34,10 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		private int? httpStatusCode;
 
 		private string requestId;
+
+		private long? rowNum;
+
+		private string status;
 
 		public bool? Success
 		{
@@ -92,6 +96,30 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public long? RowNum
+		{
+			get
+			{
+				return rowNum;
+			}
+			set	
+			{
+				rowNum = value;
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
 			}
 		}
 	}

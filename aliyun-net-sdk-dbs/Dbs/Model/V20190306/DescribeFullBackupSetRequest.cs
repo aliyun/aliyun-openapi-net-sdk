@@ -27,10 +27,10 @@ using Aliyun.Acs.Dbs.Transform.V20190306;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
 {
-    public class CreateDLAServiceRequest : RpcAcsRequest<CreateDLAServiceResponse>
+    public class DescribeFullBackupSetRequest : RpcAcsRequest<DescribeFullBackupSetResponse>
     {
-        public CreateDLAServiceRequest()
-            : base("Dbs", "2019-03-06", "CreateDLAService", "cbs", "openAPI")
+        public DescribeFullBackupSetRequest()
+            : base("Dbs", "2019-03-06", "DescribeFullBackupSet", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,9 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string clientToken;
 
-		private bool? autoAdd;
-
-		private string backupSetIds;
-
 		private string backupPlanId;
+
+		private string backupsetId;
 
 		private string ownerId;
 
@@ -63,32 +61,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public bool? AutoAdd
-		{
-			get
-			{
-				return autoAdd;
-			}
-			set	
-			{
-				autoAdd = value;
-				DictionaryUtil.Add(QueryParameters, "AutoAdd", value.ToString());
-			}
-		}
-
-		public string BackupSetIds
-		{
-			get
-			{
-				return backupSetIds;
-			}
-			set	
-			{
-				backupSetIds = value;
-				DictionaryUtil.Add(QueryParameters, "BackupSetIds", value);
-			}
-		}
-
 		public string BackupPlanId
 		{
 			get
@@ -99,6 +71,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				backupPlanId = value;
 				DictionaryUtil.Add(QueryParameters, "BackupPlanId", value);
+			}
+		}
+
+		public string BackupsetId
+		{
+			get
+			{
+				return backupsetId;
+			}
+			set	
+			{
+				backupsetId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupsetId", value);
 			}
 		}
 
@@ -115,9 +100,9 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-        public override CreateDLAServiceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeFullBackupSetResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateDLAServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeFullBackupSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

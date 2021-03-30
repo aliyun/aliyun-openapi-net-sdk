@@ -27,10 +27,10 @@ using Aliyun.Acs.Dbs.Transform.V20190306;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
 {
-    public class CloseDLAServiceRequest : RpcAcsRequest<CloseDLAServiceResponse>
+    public class DescribeLogicalBackupSetRequest : RpcAcsRequest<DescribeLogicalBackupSetResponse>
     {
-        public CloseDLAServiceRequest()
-            : base("Dbs", "2019-03-06", "CloseDLAService", "cbs", "openAPI")
+        public DescribeLogicalBackupSetRequest()
+            : base("Dbs", "2019-03-06", "DescribeLogicalBackupSet", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		private string clientToken;
 
 		private string backupPlanId;
+
+		private string backupsetId;
 
 		private string ownerId;
 
@@ -72,6 +74,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
+		public string BackupsetId
+		{
+			get
+			{
+				return backupsetId;
+			}
+			set	
+			{
+				backupsetId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupsetId", value);
+			}
+		}
+
 		public string OwnerId
 		{
 			get
@@ -85,9 +100,9 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-        public override CloseDLAServiceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeLogicalBackupSetResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CloseDLAServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLogicalBackupSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
