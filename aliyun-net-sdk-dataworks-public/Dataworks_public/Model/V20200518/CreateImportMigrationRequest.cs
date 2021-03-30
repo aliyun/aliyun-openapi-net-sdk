@@ -49,13 +49,13 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string calculateEngineMap;
 
+		private string packageFile;
+
 		private string name;
 
 		private string packageType;
 
 		private long? projectId;
-
-		private string packageOssDownloadLink;
 
 		public string Description
 		{
@@ -109,6 +109,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string PackageFile
+		{
+			get
+			{
+				return packageFile;
+			}
+			set	
+			{
+				packageFile = value;
+				DictionaryUtil.Add(BodyParameters, "PackageFile", value);
+			}
+		}
+
 		public string Name
 		{
 			get
@@ -145,19 +158,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				projectId = value;
 				DictionaryUtil.Add(BodyParameters, "ProjectId", value.ToString());
-			}
-		}
-
-		public string PackageOssDownloadLink
-		{
-			get
-			{
-				return packageOssDownloadLink;
-			}
-			set	
-			{
-				packageOssDownloadLink = value;
-				DictionaryUtil.Add(BodyParameters, "PackageOssDownloadLink", value);
 			}
 		}
 

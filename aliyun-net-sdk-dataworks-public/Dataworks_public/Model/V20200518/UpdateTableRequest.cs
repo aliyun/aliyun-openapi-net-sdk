@@ -41,13 +41,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private int? visibility;
-
-		private long? physicsLevelId;
-
 		private List<Columns> columnss = new List<Columns>(){ };
-
-		private string ownerId;
 
 		private int? lifeCycle;
 
@@ -57,13 +51,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string endpoint;
 
-		private int? isView;
-
-		private string externalTableType;
-
 		private int? envType;
-
-		private string location;
 
 		private int? hasPart;
 
@@ -75,33 +63,21 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private long? categoryId;
 
+		private int? visibility;
+
+		private long? physicsLevelId;
+
+		private string ownerId;
+
+		private int? isView;
+
+		private string externalTableType;
+
+		private string location;
+
+		private string comment;
+
 		private bool? createIfNotExists;
-
-		public int? Visibility
-		{
-			get
-			{
-				return visibility;
-			}
-			set	
-			{
-				visibility = value;
-				DictionaryUtil.Add(QueryParameters, "Visibility", value.ToString());
-			}
-		}
-
-		public long? PhysicsLevelId
-		{
-			get
-			{
-				return physicsLevelId;
-			}
-			set	
-			{
-				physicsLevelId = value;
-				DictionaryUtil.Add(QueryParameters, "PhysicsLevelId", value.ToString());
-			}
-		}
 
 		public List<Columns> Columnss
 		{
@@ -123,19 +99,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					DictionaryUtil.Add(BodyParameters,"Columns." + (i + 1) + ".ColumnName", columnss[i].ColumnName);
 					DictionaryUtil.Add(BodyParameters,"Columns." + (i + 1) + ".ColumnType", columnss[i].ColumnType);
 				}
-			}
-		}
-
-		public string OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 
@@ -196,32 +159,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? IsView
-		{
-			get
-			{
-				return isView;
-			}
-			set	
-			{
-				isView = value;
-				DictionaryUtil.Add(QueryParameters, "IsView", value.ToString());
-			}
-		}
-
-		public string ExternalTableType
-		{
-			get
-			{
-				return externalTableType;
-			}
-			set	
-			{
-				externalTableType = value;
-				DictionaryUtil.Add(QueryParameters, "ExternalTableType", value);
-			}
-		}
-
 		public int? EnvType
 		{
 			get
@@ -232,19 +169,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				envType = value;
 				DictionaryUtil.Add(BodyParameters, "EnvType", value.ToString());
-			}
-		}
-
-		public string Location
-		{
-			get
-			{
-				return location;
-			}
-			set	
-			{
-				location = value;
-				DictionaryUtil.Add(QueryParameters, "Location", value);
 			}
 		}
 
@@ -310,6 +234,97 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				categoryId = value;
 				DictionaryUtil.Add(QueryParameters, "CategoryId", value.ToString());
+			}
+		}
+
+		public int? Visibility
+		{
+			get
+			{
+				return visibility;
+			}
+			set	
+			{
+				visibility = value;
+				DictionaryUtil.Add(QueryParameters, "Visibility", value.ToString());
+			}
+		}
+
+		public long? PhysicsLevelId
+		{
+			get
+			{
+				return physicsLevelId;
+			}
+			set	
+			{
+				physicsLevelId = value;
+				DictionaryUtil.Add(QueryParameters, "PhysicsLevelId", value.ToString());
+			}
+		}
+
+		public string OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public int? IsView
+		{
+			get
+			{
+				return isView;
+			}
+			set	
+			{
+				isView = value;
+				DictionaryUtil.Add(QueryParameters, "IsView", value.ToString());
+			}
+		}
+
+		public string ExternalTableType
+		{
+			get
+			{
+				return externalTableType;
+			}
+			set	
+			{
+				externalTableType = value;
+				DictionaryUtil.Add(QueryParameters, "ExternalTableType", value);
+			}
+		}
+
+		public string Location
+		{
+			get
+			{
+				return location;
+			}
+			set	
+			{
+				location = value;
+				DictionaryUtil.Add(QueryParameters, "Location", value);
+			}
+		}
+
+		public string Comment
+		{
+			get
+			{
+				return comment;
+			}
+			set	
+			{
+				comment = value;
+				DictionaryUtil.Add(QueryParameters, "Comment", value);
 			}
 		}
 
