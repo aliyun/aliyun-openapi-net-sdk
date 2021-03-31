@@ -61,6 +61,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instanceType.MaximumQueueNumberPerEni = _ctx.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].MaximumQueueNumberPerEni");
 				instanceType.PrimaryEniQueueNumber = _ctx.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].PrimaryEniQueueNumber");
 				instanceType.SecondaryEniQueueNumber = _ctx.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].SecondaryEniQueueNumber");
+				instanceType.DiskQuantity = _ctx.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].DiskQuantity");
 
 				describeInstanceTypesResponse_instanceTypes.Add(instanceType);
 			}

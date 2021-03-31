@@ -100,9 +100,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string instanceId;
 
+			private string oSType;
+
 			private string cloudAssistantStatus;
 
 			private string cloudAssistantVersion;
+
+			private long? invocationCount;
+
+			private long? activeTaskCount;
+
+			private string lastInvokedTime;
 
 			public string InstanceId
 			{
@@ -113,6 +121,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					instanceId = value;
+				}
+			}
+
+			public string OSType
+			{
+				get
+				{
+					return oSType;
+				}
+				set	
+				{
+					oSType = value;
 				}
 			}
 
@@ -137,6 +157,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					cloudAssistantVersion = value;
+				}
+			}
+
+			public long? InvocationCount
+			{
+				get
+				{
+					return invocationCount;
+				}
+				set	
+				{
+					invocationCount = value;
+				}
+			}
+
+			public long? ActiveTaskCount
+			{
+				get
+				{
+					return activeTaskCount;
+				}
+				set	
+				{
+					activeTaskCount = value;
+				}
+			}
+
+			public string LastInvokedTime
+			{
+				get
+				{
+					return lastInvokedTime;
+				}
+				set	
+				{
+					lastInvokedTime = value;
 				}
 			}
 		}

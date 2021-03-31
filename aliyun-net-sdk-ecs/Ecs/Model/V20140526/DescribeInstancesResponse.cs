@@ -224,6 +224,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private DescribeInstances_EipAddress eipAddress;
 
+			private DescribeInstances_HibernationOptions hibernationOptions;
+
 			private DescribeInstances_DedicatedHostAttribute dedicatedHostAttribute;
 
 			private DescribeInstances_EcsCapacityReservationAttr ecsCapacityReservationAttr;
@@ -906,6 +908,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public DescribeInstances_HibernationOptions HibernationOptions
+			{
+				get
+				{
+					return hibernationOptions;
+				}
+				set	
+				{
+					hibernationOptions = value;
+				}
+			}
+
 			public DescribeInstances_DedicatedHostAttribute DedicatedHostAttribute
 			{
 				get
@@ -1298,6 +1312,24 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						isSupportUnassociate = value;
+					}
+				}
+			}
+
+			public class DescribeInstances_HibernationOptions
+			{
+
+				private bool? configured;
+
+				public bool? Configured
+				{
+					get
+					{
+						return configured;
+					}
+					set	
+					{
+						configured = value;
 					}
 				}
 			}

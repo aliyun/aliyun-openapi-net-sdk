@@ -51,6 +51,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				capacityReservationItem.InstanceChargeType = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].InstanceChargeType");
 				capacityReservationItem.Platform = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Platform");
 				capacityReservationItem.TimeSlot = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].TimeSlot");
+				capacityReservationItem.ResourceGroupId = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].ResourceGroupId");
 
 				List<DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_AllocatedResource> capacityReservationItem_allocatedResources = new List<DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_AllocatedResource>();
 				for (int j = 0; j < _ctx.Length("DescribeCapacityReservations.CapacityReservationSet["+ i +"].AllocatedResources.Length"); j++) {
@@ -63,6 +64,16 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					capacityReservationItem_allocatedResources.Add(allocatedResource);
 				}
 				capacityReservationItem.AllocatedResources = capacityReservationItem_allocatedResources;
+
+				List<DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_Tag> capacityReservationItem_tags = new List<DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_Tag>();
+				for (int j = 0; j < _ctx.Length("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Tags.Length"); j++) {
+					DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_Tag tag = new DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_Tag();
+					tag.TagKey = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Tags["+ j +"].TagValue");
+
+					capacityReservationItem_tags.Add(tag);
+				}
+				capacityReservationItem.Tags = capacityReservationItem_tags;
 
 				describeCapacityReservationsResponse_capacityReservationSet.Add(capacityReservationItem);
 			}

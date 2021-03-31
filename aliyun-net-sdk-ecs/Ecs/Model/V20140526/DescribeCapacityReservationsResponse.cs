@@ -122,7 +122,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string timeSlot;
 
+			private string resourceGroupId;
+
 			private List<DescribeCapacityReservations_AllocatedResource> allocatedResources;
+
+			private List<DescribeCapacityReservations_Tag> tags;
 
 			public string PrivatePoolOptionsId
 			{
@@ -268,6 +272,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
 			public List<DescribeCapacityReservations_AllocatedResource> AllocatedResources
 			{
 				get
@@ -277,6 +293,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					allocatedResources = value;
+				}
+			}
+
+			public List<DescribeCapacityReservations_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 
@@ -336,6 +364,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						usedAmount = value;
+					}
+				}
+			}
+
+			public class DescribeCapacityReservations_Tag
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
 					}
 				}
 			}

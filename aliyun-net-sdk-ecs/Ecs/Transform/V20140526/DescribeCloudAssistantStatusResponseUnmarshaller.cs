@@ -40,8 +40,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			for (int i = 0; i < _ctx.Length("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet.Length"); i++) {
 				DescribeCloudAssistantStatusResponse.DescribeCloudAssistantStatus_InstanceCloudAssistantStatus instanceCloudAssistantStatus = new DescribeCloudAssistantStatusResponse.DescribeCloudAssistantStatus_InstanceCloudAssistantStatus();
 				instanceCloudAssistantStatus.InstanceId = _ctx.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].InstanceId");
+				instanceCloudAssistantStatus.OSType = _ctx.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].OSType");
 				instanceCloudAssistantStatus.CloudAssistantStatus = _ctx.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].CloudAssistantStatus");
 				instanceCloudAssistantStatus.CloudAssistantVersion = _ctx.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].CloudAssistantVersion");
+				instanceCloudAssistantStatus.InvocationCount = _ctx.LongValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].InvocationCount");
+				instanceCloudAssistantStatus.ActiveTaskCount = _ctx.LongValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].ActiveTaskCount");
+				instanceCloudAssistantStatus.LastInvokedTime = _ctx.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].LastInvokedTime");
 
 				describeCloudAssistantStatusResponse_instanceCloudAssistantStatusSet.Add(instanceCloudAssistantStatus);
 			}

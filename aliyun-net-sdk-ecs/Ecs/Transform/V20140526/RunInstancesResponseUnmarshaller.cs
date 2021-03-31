@@ -33,6 +33,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			runInstancesResponse.HttpResponse = _ctx.HttpResponse;
 			runInstancesResponse.RequestId = _ctx.StringValue("RunInstances.RequestId");
 			runInstancesResponse.TradePrice = _ctx.FloatValue("RunInstances.TradePrice");
+			runInstancesResponse.OrderId = _ctx.StringValue("RunInstances.OrderId");
 
 			List<string> runInstancesResponse_instanceIdSets = new List<string>();
 			for (int i = 0; i < _ctx.Length("RunInstances.InstanceIdSets.Length"); i++) {

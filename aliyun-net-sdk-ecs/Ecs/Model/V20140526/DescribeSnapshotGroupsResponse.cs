@@ -82,6 +82,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string creationTime;
 
+			private string progressStatus;
+
 			private List<DescribeSnapshotGroups_Snapshot> snapshots;
 
 			public string InstanceId
@@ -153,6 +155,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string ProgressStatus
+			{
+				get
+				{
+					return progressStatus;
+				}
+				set	
+				{
+					progressStatus = value;
 				}
 			}
 

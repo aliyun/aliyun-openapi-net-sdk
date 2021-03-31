@@ -106,6 +106,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? secondaryEniQueueNumber;
 
+			private int? diskQuantity;
+
 			public string InstanceTypeId
 			{
 				get
@@ -403,6 +405,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					secondaryEniQueueNumber = value;
+				}
+			}
+
+			public int? DiskQuantity
+			{
+				get
+				{
+					return diskQuantity;
+				}
+				set	
+				{
+					diskQuantity = value;
 				}
 			}
 		}

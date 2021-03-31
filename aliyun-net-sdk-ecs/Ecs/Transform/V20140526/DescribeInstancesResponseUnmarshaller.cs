@@ -132,6 +132,10 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				eipAddress.IsSupportUnassociate = _ctx.BooleanValue("DescribeInstances.Instances["+ i +"].EipAddress.IsSupportUnassociate");
 				instance.EipAddress = eipAddress;
 
+				DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_HibernationOptions hibernationOptions = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_HibernationOptions();
+				hibernationOptions.Configured = _ctx.BooleanValue("DescribeInstances.Instances["+ i +"].HibernationOptions.Configured");
+				instance.HibernationOptions = hibernationOptions;
+
 				DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_DedicatedHostAttribute dedicatedHostAttribute = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_DedicatedHostAttribute();
 				dedicatedHostAttribute.DedicatedHostId = _ctx.StringValue("DescribeInstances.Instances["+ i +"].DedicatedHostAttribute.DedicatedHostId");
 				dedicatedHostAttribute.DedicatedHostName = _ctx.StringValue("DescribeInstances.Instances["+ i +"].DedicatedHostAttribute.DedicatedHostName");

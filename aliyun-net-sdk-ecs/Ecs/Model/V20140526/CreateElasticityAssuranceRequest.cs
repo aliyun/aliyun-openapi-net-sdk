@@ -48,9 +48,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string startTime;
 
+		private string resourceGroupId;
+
 		private string privatePoolOptionsMatchCriteria;
 
 		private List<string> instanceTypes = new List<string>(){ };
+
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private int? period;
 
@@ -124,6 +128,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
 		public string PrivatePoolOptionsMatchCriteria
 		{
 			get
@@ -150,6 +167,24 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				for (int i = 0; i < instanceTypes.Count; i++)
 				{
 					DictionaryUtil.Add(QueryParameters,"InstanceType." + (i + 1) , instanceTypes[i]);
+				}
+			}
+		}
+
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 				}
 			}
 		}
@@ -285,6 +320,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				instanceAmount = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceAmount", value.ToString());
+			}
+		}
+
+		public class Tag
+		{
+
+			private string key;
+
+			private string value_;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
 		}
 

@@ -43,6 +43,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				snapshotGroup.Name = _ctx.StringValue("DescribeSnapshotGroups.SnapshotGroups["+ i +"].Name");
 				snapshotGroup.Description = _ctx.StringValue("DescribeSnapshotGroups.SnapshotGroups["+ i +"].Description");
 				snapshotGroup.CreationTime = _ctx.StringValue("DescribeSnapshotGroups.SnapshotGroups["+ i +"].CreationTime");
+				snapshotGroup.ProgressStatus = _ctx.StringValue("DescribeSnapshotGroups.SnapshotGroups["+ i +"].ProgressStatus");
 
 				List<DescribeSnapshotGroupsResponse.DescribeSnapshotGroups_SnapshotGroup.DescribeSnapshotGroups_Snapshot> snapshotGroup_snapshots = new List<DescribeSnapshotGroupsResponse.DescribeSnapshotGroups_SnapshotGroup.DescribeSnapshotGroups_Snapshot>();
 				for (int j = 0; j < _ctx.Length("DescribeSnapshotGroups.SnapshotGroups["+ i +"].Snapshots.Length"); j++) {

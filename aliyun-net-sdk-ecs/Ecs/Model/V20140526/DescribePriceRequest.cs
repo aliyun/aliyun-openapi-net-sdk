@@ -94,6 +94,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceType;
 
+		private string dedicatedHostType;
+
 		private string dataDisk2Category;
 
 		private int? dataDisk1Size;
@@ -468,6 +470,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				instanceType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
+
+		public string DedicatedHostType
+		{
+			get
+			{
+				return dedicatedHostType;
+			}
+			set	
+			{
+				dedicatedHostType = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostType", value);
 			}
 		}
 

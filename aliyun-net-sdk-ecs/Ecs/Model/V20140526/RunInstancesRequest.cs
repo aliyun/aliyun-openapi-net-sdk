@@ -95,6 +95,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string securityGroupId;
 
+		private bool? hibernationOptionsConfigured;
+
 		private string systemDiskPerformanceLevel;
 
 		private bool? passwordInherit;
@@ -145,6 +147,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? ipv6AddressCount;
 
+		private List<string> hostNamess = new List<string>(){ };
+
 		private string vSwitchId;
 
 		private string instanceName;
@@ -162,6 +166,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private int? cpuOptionsThreadsPerCore;
 
 		private string systemDiskCategory;
+
+		private string securityOptionsTrustedSystemMode;
 
 		private string userData;
 
@@ -546,6 +552,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public bool? HibernationOptionsConfigured
+		{
+			get
+			{
+				return hibernationOptionsConfigured;
+			}
+			set	
+			{
+				hibernationOptionsConfigured = value;
+				DictionaryUtil.Add(QueryParameters, "HibernationOptions.Configured", value.ToString());
+			}
+		}
+
 		public string SystemDiskPerformanceLevel
 		{
 			get
@@ -886,6 +905,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public List<string> HostNamess
+		{
+			get
+			{
+				return hostNamess;
+			}
+
+			set
+			{
+				hostNamess = value;
+				for (int i = 0; i < hostNamess.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"HostNames." + (i + 1) , hostNamess[i]);
+				}
+			}
+		}
+
 		public string VSwitchId
 		{
 			get
@@ -1004,6 +1040,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				systemDiskCategory = value;
 				DictionaryUtil.Add(QueryParameters, "SystemDisk.Category", value);
+			}
+		}
+
+		public string SecurityOptionsTrustedSystemMode
+		{
+			get
+			{
+				return securityOptionsTrustedSystemMode;
+			}
+			set	
+			{
+				securityOptionsTrustedSystemMode = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityOptions.TrustedSystemMode", value);
 			}
 		}
 

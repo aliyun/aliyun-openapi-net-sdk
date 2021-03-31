@@ -116,6 +116,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? internetMaxBandwidthOut;
 
+		private bool? hibernationOptionsConfigured;
+
 		private string description;
 
 		private string systemDiskCategory;
@@ -664,6 +666,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				internetMaxBandwidthOut = value;
 				DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthOut", value.ToString());
+			}
+		}
+
+		public bool? HibernationOptionsConfigured
+		{
+			get
+			{
+				return hibernationOptionsConfigured;
+			}
+			set	
+			{
+				hibernationOptionsConfigured = value;
+				DictionaryUtil.Add(QueryParameters, "HibernationOptions.Configured", value.ToString());
 			}
 		}
 

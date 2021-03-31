@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string ownerAccount;
 
+		private int? expectedRenewDay;
+
 		private long? ownerId;
 
 		private string resourceType;
@@ -131,6 +133,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public int? ExpectedRenewDay
+		{
+			get
+			{
+				return expectedRenewDay;
+			}
+			set	
+			{
+				expectedRenewDay = value;
+				DictionaryUtil.Add(QueryParameters, "ExpectedRenewDay", value.ToString());
 			}
 		}
 

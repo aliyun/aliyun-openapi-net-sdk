@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class RenewInstanceRequest : RpcAcsRequest<RenewInstanceResponse>
+    public class DescribeInstanceModificationPriceRequest : RpcAcsRequest<DescribeInstanceModificationPriceResponse>
     {
-        public RenewInstanceRequest()
-            : base("Ecs", "2014-05-26", "RenewInstance", "ecs", "openAPI")
+        public DescribeInstanceModificationPriceRequest()
+            : base("Ecs", "2014-05-26", "DescribeInstanceModificationPrice", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,19 +42,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string clientToken;
+		private string systemDiskCategory;
 
-		private int? period;
+		private string instanceType;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private int? expectedRenewDay;
-
 		private long? ownerId;
 
-		private string periodUnit;
+		private List<DataDisk> dataDisks = new List<DataDisk>(){ };
 
 		private string instanceId;
 
@@ -72,29 +69,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ClientToken
+		public string SystemDiskCategory
 		{
 			get
 			{
-				return clientToken;
+				return systemDiskCategory;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+				systemDiskCategory = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDisk.Category", value);
 			}
 		}
 
-		public int? Period
+		public string InstanceType
 		{
 			get
 			{
-				return period;
+				return instanceType;
 			}
 			set	
 			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
 			}
 		}
 
@@ -124,19 +121,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? ExpectedRenewDay
-		{
-			get
-			{
-				return expectedRenewDay;
-			}
-			set	
-			{
-				expectedRenewDay = value;
-				DictionaryUtil.Add(QueryParameters, "ExpectedRenewDay", value.ToString());
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -150,16 +134,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string PeriodUnit
+		public List<DataDisk> DataDisks
 		{
 			get
 			{
-				return periodUnit;
+				return dataDisks;
 			}
-			set	
+
+			set
 			{
-				periodUnit = value;
-				DictionaryUtil.Add(QueryParameters, "PeriodUnit", value);
+				dataDisks = value;
+				for (int i = 0; i < dataDisks.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Size", dataDisks[i].Size);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Category", dataDisks[i].Category);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".PerformanceLevel", dataDisks[i].PerformanceLevel);
+				}
 			}
 		}
 
@@ -176,9 +166,55 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override RenewInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public class DataDisk
+		{
+
+			private int? size;
+
+			private string category;
+
+			private string performanceLevel;
+
+			public int? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			public string PerformanceLevel
+			{
+				get
+				{
+					return performanceLevel;
+				}
+				set	
+				{
+					performanceLevel = value;
+				}
+			}
+		}
+
+        public override DescribeInstanceModificationPriceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RenewInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeInstanceModificationPriceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

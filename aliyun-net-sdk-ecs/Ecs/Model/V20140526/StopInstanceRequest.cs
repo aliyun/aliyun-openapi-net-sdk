@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string stoppedMode;
 
+		private bool? hibernate;
+
 		private bool? forceStop;
 
 		private bool? confirmStop;
@@ -82,6 +84,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				stoppedMode = value;
 				DictionaryUtil.Add(QueryParameters, "StoppedMode", value);
+			}
+		}
+
+		public bool? Hibernate
+		{
+			get
+			{
+				return hibernate;
+			}
+			set	
+			{
+				hibernate = value;
+				DictionaryUtil.Add(QueryParameters, "Hibernate", value.ToString());
 			}
 		}
 

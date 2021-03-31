@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				elasticityAssuranceItem.StartTime = _ctx.StringValue("DescribeElasticityAssurances.ElasticityAssuranceSet["+ i +"].StartTime");
 				elasticityAssuranceItem.EndTime = _ctx.StringValue("DescribeElasticityAssurances.ElasticityAssuranceSet["+ i +"].EndTime");
 				elasticityAssuranceItem.LatestStartTime = _ctx.StringValue("DescribeElasticityAssurances.ElasticityAssuranceSet["+ i +"].LatestStartTime");
+				elasticityAssuranceItem.ResourceGroupId = _ctx.StringValue("DescribeElasticityAssurances.ElasticityAssuranceSet["+ i +"].ResourceGroupId");
 
 				List<DescribeElasticityAssurancesResponse.DescribeElasticityAssurances_ElasticityAssuranceItem.DescribeElasticityAssurances_AllocatedResource> elasticityAssuranceItem_allocatedResources = new List<DescribeElasticityAssurancesResponse.DescribeElasticityAssurances_ElasticityAssuranceItem.DescribeElasticityAssurances_AllocatedResource>();
 				for (int j = 0; j < _ctx.Length("DescribeElasticityAssurances.ElasticityAssuranceSet["+ i +"].AllocatedResources.Length"); j++) {
@@ -62,6 +63,16 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					elasticityAssuranceItem_allocatedResources.Add(allocatedResource);
 				}
 				elasticityAssuranceItem.AllocatedResources = elasticityAssuranceItem_allocatedResources;
+
+				List<DescribeElasticityAssurancesResponse.DescribeElasticityAssurances_ElasticityAssuranceItem.DescribeElasticityAssurances_Tag> elasticityAssuranceItem_tags = new List<DescribeElasticityAssurancesResponse.DescribeElasticityAssurances_ElasticityAssuranceItem.DescribeElasticityAssurances_Tag>();
+				for (int j = 0; j < _ctx.Length("DescribeElasticityAssurances.ElasticityAssuranceSet["+ i +"].Tags.Length"); j++) {
+					DescribeElasticityAssurancesResponse.DescribeElasticityAssurances_ElasticityAssuranceItem.DescribeElasticityAssurances_Tag tag = new DescribeElasticityAssurancesResponse.DescribeElasticityAssurances_ElasticityAssuranceItem.DescribeElasticityAssurances_Tag();
+					tag.TagKey = _ctx.StringValue("DescribeElasticityAssurances.ElasticityAssuranceSet["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = _ctx.StringValue("DescribeElasticityAssurances.ElasticityAssuranceSet["+ i +"].Tags["+ j +"].TagValue");
+
+					elasticityAssuranceItem_tags.Add(tag);
+				}
+				elasticityAssuranceItem.Tags = elasticityAssuranceItem_tags;
 
 				describeElasticityAssurancesResponse_elasticityAssuranceSet.Add(elasticityAssuranceItem);
 			}

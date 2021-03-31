@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceGroupId;
 
+		private int? minQuantity;
+
 		private string actionOnMaintenance;
 
 		private string dedicatedHostClusterId;
@@ -150,6 +152,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public int? MinQuantity
+		{
+			get
+			{
+				return minQuantity;
+			}
+			set	
+			{
+				minQuantity = value;
+				DictionaryUtil.Add(QueryParameters, "MinQuantity", value.ToString());
 			}
 		}
 
