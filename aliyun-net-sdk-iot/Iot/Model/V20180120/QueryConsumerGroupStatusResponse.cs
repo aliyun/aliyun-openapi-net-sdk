@@ -39,6 +39,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string code;
 
+		private int? accumulatedConsumeCountPerMinute;
+
+		private int? realTimeConsumeCountPerMinute;
+
 		private List<QueryConsumerGroupStatus_ConsumerGroupClientConnectionInfo> clientConnectionStatusList;
 
 		public string RequestId
@@ -125,6 +129,30 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public int? AccumulatedConsumeCountPerMinute
+		{
+			get
+			{
+				return accumulatedConsumeCountPerMinute;
+			}
+			set	
+			{
+				accumulatedConsumeCountPerMinute = value;
+			}
+		}
+
+		public int? RealTimeConsumeCountPerMinute
+		{
+			get
+			{
+				return realTimeConsumeCountPerMinute;
+			}
+			set	
+			{
+				realTimeConsumeCountPerMinute = value;
+			}
+		}
+
 		public List<QueryConsumerGroupStatus_ConsumerGroupClientConnectionInfo> ClientConnectionStatusList
 		{
 			get
@@ -145,6 +173,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			private string clientIpPort;
 
 			private long? onlineTime;
+
+			private int? realTimeConsumeCountPerMinute;
+
+			private int? accumulatedConsumeCountPerMinute;
 
 			public string ClientId
 			{
@@ -179,6 +211,30 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					onlineTime = value;
+				}
+			}
+
+			public int? RealTimeConsumeCountPerMinute
+			{
+				get
+				{
+					return realTimeConsumeCountPerMinute;
+				}
+				set	
+				{
+					realTimeConsumeCountPerMinute = value;
+				}
+			}
+
+			public int? AccumulatedConsumeCountPerMinute
+			{
+				get
+				{
+					return accumulatedConsumeCountPerMinute;
+				}
+				set	
+				{
+					accumulatedConsumeCountPerMinute = value;
 				}
 			}
 		}

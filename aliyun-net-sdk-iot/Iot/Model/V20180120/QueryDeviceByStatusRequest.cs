@@ -50,8 +50,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string productKey;
 
-		private string bizTenantId;
-
 		private int? status;
 
 		public string ResourceGroupId
@@ -116,19 +114,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
-
-		public string BizTenantId
-		{
-			get
-			{
-				return bizTenantId;
-			}
-			set	
-			{
-				bizTenantId = value;
-				DictionaryUtil.Add(QueryParameters, "BizTenantId", value);
 			}
 		}
 

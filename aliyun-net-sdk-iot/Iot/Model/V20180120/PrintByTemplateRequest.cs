@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class GenerateFileUploadURLRequest : RpcAcsRequest<GenerateFileUploadURLResponse>
+    public class PrintByTemplateRequest : RpcAcsRequest<PrintByTemplateResponse>
     {
-        public GenerateFileUploadURLRequest()
-            : base("Iot", "2018-01-20", "GenerateFileUploadURL", "iot", "openAPI")
+        public PrintByTemplateRequest()
+            : base("Iot", "2018-01-20", "PrintByTemplate", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,24 +40,56 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string fileSuffix;
+		private string projectCode;
+
+		private string templateBizCode;
+
+		private string iotId;
 
 		private string iotInstanceId;
 
-		private string fileName;
+		private string productKey;
 
-		private string bizCode;
+		private string paramsJsonString;
 
-		public string FileSuffix
+		private string deviceName;
+
+		public string ProjectCode
 		{
 			get
 			{
-				return fileSuffix;
+				return projectCode;
 			}
 			set	
 			{
-				fileSuffix = value;
-				DictionaryUtil.Add(QueryParameters, "FileSuffix", value);
+				projectCode = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectCode", value);
+			}
+		}
+
+		public string TemplateBizCode
+		{
+			get
+			{
+				return templateBizCode;
+			}
+			set	
+			{
+				templateBizCode = value;
+				DictionaryUtil.Add(BodyParameters, "TemplateBizCode", value);
+			}
+		}
+
+		public string IotId
+		{
+			get
+			{
+				return iotId;
+			}
+			set	
+			{
+				iotId = value;
+				DictionaryUtil.Add(BodyParameters, "IotId", value);
 			}
 		}
 
@@ -70,39 +102,52 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
 			}
 		}
 
-		public string FileName
+		public string ProductKey
 		{
 			get
 			{
-				return fileName;
+				return productKey;
 			}
 			set	
 			{
-				fileName = value;
-				DictionaryUtil.Add(QueryParameters, "FileName", value);
+				productKey = value;
+				DictionaryUtil.Add(BodyParameters, "ProductKey", value);
 			}
 		}
 
-		public string BizCode
+		public string ParamsJsonString
 		{
 			get
 			{
-				return bizCode;
+				return paramsJsonString;
 			}
 			set	
 			{
-				bizCode = value;
-				DictionaryUtil.Add(QueryParameters, "BizCode", value);
+				paramsJsonString = value;
+				DictionaryUtil.Add(BodyParameters, "ParamsJsonString", value);
 			}
 		}
 
-        public override GenerateFileUploadURLResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string DeviceName
+		{
+			get
+			{
+				return deviceName;
+			}
+			set	
+			{
+				deviceName = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceName", value);
+			}
+		}
+
+        public override PrintByTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GenerateFileUploadURLResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return PrintByTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

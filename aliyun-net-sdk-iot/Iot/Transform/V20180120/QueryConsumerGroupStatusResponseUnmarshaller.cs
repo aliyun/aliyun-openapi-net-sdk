@@ -38,6 +38,8 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			queryConsumerGroupStatusResponse.ConsumerSpeed = _ctx.IntegerValue("QueryConsumerGroupStatus.ConsumerSpeed");
 			queryConsumerGroupStatusResponse.LastConsumerTime = _ctx.StringValue("QueryConsumerGroupStatus.LastConsumerTime");
 			queryConsumerGroupStatusResponse.Code = _ctx.StringValue("QueryConsumerGroupStatus.Code");
+			queryConsumerGroupStatusResponse.AccumulatedConsumeCountPerMinute = _ctx.IntegerValue("QueryConsumerGroupStatus.AccumulatedConsumeCountPerMinute");
+			queryConsumerGroupStatusResponse.RealTimeConsumeCountPerMinute = _ctx.IntegerValue("QueryConsumerGroupStatus.RealTimeConsumeCountPerMinute");
 
 			List<QueryConsumerGroupStatusResponse.QueryConsumerGroupStatus_ConsumerGroupClientConnectionInfo> queryConsumerGroupStatusResponse_clientConnectionStatusList = new List<QueryConsumerGroupStatusResponse.QueryConsumerGroupStatus_ConsumerGroupClientConnectionInfo>();
 			for (int i = 0; i < _ctx.Length("QueryConsumerGroupStatus.ClientConnectionStatusList.Length"); i++) {
@@ -45,6 +47,8 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				consumerGroupClientConnectionInfo.ClientId = _ctx.StringValue("QueryConsumerGroupStatus.ClientConnectionStatusList["+ i +"].ClientId");
 				consumerGroupClientConnectionInfo.ClientIpPort = _ctx.StringValue("QueryConsumerGroupStatus.ClientConnectionStatusList["+ i +"].ClientIpPort");
 				consumerGroupClientConnectionInfo.OnlineTime = _ctx.LongValue("QueryConsumerGroupStatus.ClientConnectionStatusList["+ i +"].OnlineTime");
+				consumerGroupClientConnectionInfo.RealTimeConsumeCountPerMinute = _ctx.IntegerValue("QueryConsumerGroupStatus.ClientConnectionStatusList["+ i +"].RealTimeConsumeCountPerMinute");
+				consumerGroupClientConnectionInfo.AccumulatedConsumeCountPerMinute = _ctx.IntegerValue("QueryConsumerGroupStatus.ClientConnectionStatusList["+ i +"].AccumulatedConsumeCountPerMinute");
 
 				queryConsumerGroupStatusResponse_clientConnectionStatusList.Add(consumerGroupClientConnectionInfo);
 			}
