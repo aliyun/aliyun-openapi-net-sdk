@@ -34,8 +34,8 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 			detectHipKeypointXRayResponse.RequestId = _ctx.StringValue("DetectHipKeypointXRay.RequestId");
 
 			DetectHipKeypointXRayResponse.DetectHipKeypointXRay_Data data = new DetectHipKeypointXRayResponse.DetectHipKeypointXRay_Data();
-			data.ImageUrl = _ctx.StringValue("DetectHipKeypointXRay.Data.ImageUrl");
 			data.OrgId = _ctx.StringValue("DetectHipKeypointXRay.Data.OrgId");
+			data.ImageUrl = _ctx.StringValue("DetectHipKeypointXRay.Data.ImageUrl");
 			data.OrgName = _ctx.StringValue("DetectHipKeypointXRay.Data.OrgName");
 
 			List<DetectHipKeypointXRayResponse.DetectHipKeypointXRay_Data.DetectHipKeypointXRay_KeyPointsItem> data_keyPoints = new List<DetectHipKeypointXRayResponse.DetectHipKeypointXRay_Data.DetectHipKeypointXRay_KeyPointsItem>();
@@ -50,8 +50,8 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 				keyPointsItem.Coordinates = keyPointsItem_coordinates;
 
 				DetectHipKeypointXRayResponse.DetectHipKeypointXRay_Data.DetectHipKeypointXRay_KeyPointsItem.DetectHipKeypointXRay_Tag tag = new DetectHipKeypointXRayResponse.DetectHipKeypointXRay_Data.DetectHipKeypointXRay_KeyPointsItem.DetectHipKeypointXRay_Tag();
-				tag.Direction = _ctx.StringValue("DetectHipKeypointXRay.Data.KeyPoints["+ i +"].Tag.Direction");
 				tag.Label = _ctx.StringValue("DetectHipKeypointXRay.Data.KeyPoints["+ i +"].Tag.Label");
+				tag.Direction = _ctx.StringValue("DetectHipKeypointXRay.Data.KeyPoints["+ i +"].Tag.Direction");
 				keyPointsItem.Tag = tag;
 
 				data_keyPoints.Add(keyPointsItem);

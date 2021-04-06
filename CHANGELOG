@@ -1,3 +1,6 @@
+2021-04-06 Version: 0.0.6
+- Update ScreenChestCT DetectRibFracture.
+
 2021-04-01 Version: 7.22.0
 - Add data service api, including ListAnalyticsData.
 - Update file uploading api, including GenerateFileUploadURL.

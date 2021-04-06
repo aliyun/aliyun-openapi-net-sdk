@@ -40,15 +40,41 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			Method = MethodType.POST;
         }
 
+		private string orgName;
+
+		private string sourceType;
+
 		private string dataFormat;
 
 		private List<URLList> uRLLists = new List<URLList>(){ };
 
 		private string orgId;
 
-		private string orgName;
+		public string OrgName
+		{
+			get
+			{
+				return orgName;
+			}
+			set	
+			{
+				orgName = value;
+				DictionaryUtil.Add(BodyParameters, "OrgName", value);
+			}
+		}
 
-		private string sourceType;
+		public string SourceType
+		{
+			get
+			{
+				return sourceType;
+			}
+			set	
+			{
+				sourceType = value;
+				DictionaryUtil.Add(BodyParameters, "SourceType", value);
+			}
+		}
 
 		public string DataFormat
 		{
@@ -90,32 +116,6 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			{
 				orgId = value;
 				DictionaryUtil.Add(BodyParameters, "OrgId", value);
-			}
-		}
-
-		public string OrgName
-		{
-			get
-			{
-				return orgName;
-			}
-			set	
-			{
-				orgName = value;
-				DictionaryUtil.Add(BodyParameters, "OrgName", value);
-			}
-		}
-
-		public string SourceType
-		{
-			get
-			{
-				return sourceType;
-			}
-			set	
-			{
-				sourceType = value;
-				DictionaryUtil.Add(BodyParameters, "SourceType", value);
 			}
 		}
 

@@ -60,9 +60,9 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 
 			private List<DetectRibFracture_DetectionsItem> detections;
 
-			private List<string> spacing;
-
 			private List<string> origin;
+
+			private List<string> spacing;
 
 			public string ResultURL
 			{
@@ -88,18 +88,6 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 				}
 			}
 
-			public List<string> Spacing
-			{
-				get
-				{
-					return spacing;
-				}
-				set	
-				{
-					spacing = value;
-				}
-			}
-
 			public List<string> Origin
 			{
 				get
@@ -112,28 +100,44 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 				}
 			}
 
+			public List<string> Spacing
+			{
+				get
+				{
+					return spacing;
+				}
+				set	
+				{
+					spacing = value;
+				}
+			}
+
 			public class DetectRibFracture_DetectionsItem
 			{
 
-				private int? fractureId;
+				private string fractureCategory;
 
 				private float? fractureConfidence;
 
-				private string fractureCategory;
+				private string fractureLocation;
 
-				private List<string> coordinates;
+				private long? fractureSegment;
+
+				private int? fractureId;
 
 				private List<string> coordinateImage;
 
-				public int? FractureId
+				private List<string> coordinates;
+
+				public string FractureCategory
 				{
 					get
 					{
-						return fractureId;
+						return fractureCategory;
 					}
 					set	
 					{
-						fractureId = value;
+						fractureCategory = value;
 					}
 				}
 
@@ -149,27 +153,39 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 					}
 				}
 
-				public string FractureCategory
+				public string FractureLocation
 				{
 					get
 					{
-						return fractureCategory;
+						return fractureLocation;
 					}
 					set	
 					{
-						fractureCategory = value;
+						fractureLocation = value;
 					}
 				}
 
-				public List<string> Coordinates
+				public long? FractureSegment
 				{
 					get
 					{
-						return coordinates;
+						return fractureSegment;
 					}
 					set	
 					{
-						coordinates = value;
+						fractureSegment = value;
+					}
+				}
+
+				public int? FractureId
+				{
+					get
+					{
+						return fractureId;
+					}
+					set	
+					{
+						fractureId = value;
 					}
 				}
 
@@ -182,6 +198,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 					set	
 					{
 						coordinateImage = value;
+					}
+				}
+
+				public List<string> Coordinates
+				{
+					get
+					{
+						return coordinates;
+					}
+					set	
+					{
+						coordinates = value;
 					}
 				}
 			}

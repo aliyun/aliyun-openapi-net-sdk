@@ -117,6 +117,8 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 				ScreenChestCTResponse.ScreenChestCT_Data.ScreenChestCT_DetectRibFracture.ScreenChestCT_DetectionsItem detectionsItem = new ScreenChestCTResponse.ScreenChestCT_Data.ScreenChestCT_DetectRibFracture.ScreenChestCT_DetectionsItem();
 				detectionsItem.FractureCategory = _ctx.LongValue("ScreenChestCT.Data.DetectRibFracture.Detections["+ i +"].FractureCategory");
 				detectionsItem.FractureConfidence = _ctx.FloatValue("ScreenChestCT.Data.DetectRibFracture.Detections["+ i +"].FractureConfidence");
+				detectionsItem.FractureLocation = _ctx.StringValue("ScreenChestCT.Data.DetectRibFracture.Detections["+ i +"].FractureLocation");
+				detectionsItem.FractureSegment = _ctx.LongValue("ScreenChestCT.Data.DetectRibFracture.Detections["+ i +"].FractureSegment");
 				detectionsItem.FractureId = _ctx.LongValue("ScreenChestCT.Data.DetectRibFracture.Detections["+ i +"].FractureId");
 
 				List<string> detectionsItem_coordinateImage = new List<string>();

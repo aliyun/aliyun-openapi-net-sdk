@@ -604,6 +604,10 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 
 					private float? fractureConfidence;
 
+					private string fractureLocation;
+
+					private long? fractureSegment;
+
 					private long? fractureId;
 
 					private List<string> coordinateImage;
@@ -631,6 +635,30 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 						set	
 						{
 							fractureConfidence = value;
+						}
+					}
+
+					public string FractureLocation
+					{
+						get
+						{
+							return fractureLocation;
+						}
+						set	
+						{
+							fractureLocation = value;
+						}
+					}
+
+					public long? FractureSegment
+					{
+						get
+						{
+							return fractureSegment;
+						}
+						set	
+						{
+							fractureSegment = value;
 						}
 					}
 
