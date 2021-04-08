@@ -58,9 +58,9 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 		private string destinationEndpointUserName;
 
-		private bool? destinationEndpointArchitecture;
+		private string destinationEndpointArchitecture;
 
-		private bool? destinationEndpointOracleSID;
+		private string destinationEndpointOracleSID;
 
 		private string destinationEndpointEngineName;
 
@@ -201,7 +201,7 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
-		public bool? DestinationEndpointArchitecture
+		public string DestinationEndpointArchitecture
 		{
 			get
 			{
@@ -210,11 +210,11 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			set	
 			{
 				destinationEndpointArchitecture = value;
-				DictionaryUtil.Add(QueryParameters, "DestinationEndpointArchitecture", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "DestinationEndpointArchitecture", value);
 			}
 		}
 
-		public bool? DestinationEndpointOracleSID
+		public string DestinationEndpointOracleSID
 		{
 			get
 			{
@@ -223,7 +223,7 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			set	
 			{
 				destinationEndpointOracleSID = value;
-				DictionaryUtil.Add(QueryParameters, "DestinationEndpointOracleSID", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "DestinationEndpointOracleSID", value);
 			}
 		}
 

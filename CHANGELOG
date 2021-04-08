@@ -1,3 +1,6 @@
+2021-04-08 Version: 5.1.11
+- Supported ModifyDtsJob and DeleteDtsJob.
+
 2021-04-06 Version: 0.0.6
 - Update ScreenChestCT DetectRibFracture.
 
