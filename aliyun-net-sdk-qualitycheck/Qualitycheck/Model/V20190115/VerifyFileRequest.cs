@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Qualitycheck;
 using Aliyun.Acs.Qualitycheck.Transform;
 using Aliyun.Acs.Qualitycheck.Transform.V20190115;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
     public class VerifyFileRequest : RpcAcsRequest<VerifyFileResponse>
     {
         public VerifyFileRequest()
-            : base("Qualitycheck", "2019-01-15", "VerifyFile", "Qualitycheck", "openAPI")
+            : base("Qualitycheck", "2019-01-15", "VerifyFile")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
