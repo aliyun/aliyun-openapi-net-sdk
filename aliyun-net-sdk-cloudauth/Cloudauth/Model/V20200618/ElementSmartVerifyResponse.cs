@@ -90,6 +90,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 
 			private string materialInfo;
 
+			private string certifyId;
+
 			public string Passed
 			{
 				get
@@ -123,6 +125,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 				set	
 				{
 					materialInfo = value;
+				}
+			}
+
+			public string CertifyId
+			{
+				get
+				{
+					return certifyId;
+				}
+				set	
+				{
+					certifyId = value;
 				}
 			}
 		}

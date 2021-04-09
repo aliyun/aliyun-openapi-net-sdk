@@ -27,10 +27,10 @@ using Aliyun.Acs.Cloudauth.Transform.V20200618;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20200618
 {
-    public class ElementSmartVerifyRequest : RpcAcsRequest<ElementSmartVerifyResponse>
+    public class VerifyBankElementRequest : RpcAcsRequest<VerifyBankElementResponse>
     {
-        public ElementSmartVerifyRequest()
-            : base("Cloudauth", "2020-06-18", "ElementSmartVerify", "cloudauth", "openAPI")
+        public VerifyBankElementRequest()
+            : base("Cloudauth", "2020-06-18", "VerifyBankElement", "cloudauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,60 +40,86 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 			Method = MethodType.POST;
         }
 
-		private string certFile;
+		private string idName;
 
-		private string certNationalEmblemUrl;
+		private string mobile;
 
-		private string certName;
+		private string bankCardUrl;
+
+		private string idNo;
+
+		private string bankCardNo;
 
 		private string mode;
 
-		private string certNo;
-
 		private string outerOrderNo;
 
-		private string certUrl;
-
-		private string certType;
+		private string bankCardFile;
 
 		private long? sceneId;
 
-		public string CertFile
+		public string IdName
 		{
 			get
 			{
-				return certFile;
+				return idName;
 			}
 			set	
 			{
-				certFile = value;
-				DictionaryUtil.Add(BodyParameters, "CertFile", value);
+				idName = value;
+				DictionaryUtil.Add(BodyParameters, "IdName", value);
 			}
 		}
 
-		public string CertNationalEmblemUrl
+		public string Mobile
 		{
 			get
 			{
-				return certNationalEmblemUrl;
+				return mobile;
 			}
 			set	
 			{
-				certNationalEmblemUrl = value;
-				DictionaryUtil.Add(BodyParameters, "CertNationalEmblemUrl", value);
+				mobile = value;
+				DictionaryUtil.Add(BodyParameters, "Mobile", value);
 			}
 		}
 
-		public string CertName
+		public string BankCardUrl
 		{
 			get
 			{
-				return certName;
+				return bankCardUrl;
 			}
 			set	
 			{
-				certName = value;
-				DictionaryUtil.Add(BodyParameters, "CertName", value);
+				bankCardUrl = value;
+				DictionaryUtil.Add(BodyParameters, "BankCardUrl", value);
+			}
+		}
+
+		public string IdNo
+		{
+			get
+			{
+				return idNo;
+			}
+			set	
+			{
+				idNo = value;
+				DictionaryUtil.Add(BodyParameters, "IdNo", value);
+			}
+		}
+
+		public string BankCardNo
+		{
+			get
+			{
+				return bankCardNo;
+			}
+			set	
+			{
+				bankCardNo = value;
+				DictionaryUtil.Add(BodyParameters, "BankCardNo", value);
 			}
 		}
 
@@ -110,19 +136,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 			}
 		}
 
-		public string CertNo
-		{
-			get
-			{
-				return certNo;
-			}
-			set	
-			{
-				certNo = value;
-				DictionaryUtil.Add(BodyParameters, "CertNo", value);
-			}
-		}
-
 		public string OuterOrderNo
 		{
 			get
@@ -136,29 +149,16 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 			}
 		}
 
-		public string CertUrl
+		public string BankCardFile
 		{
 			get
 			{
-				return certUrl;
+				return bankCardFile;
 			}
 			set	
 			{
-				certUrl = value;
-				DictionaryUtil.Add(BodyParameters, "CertUrl", value);
-			}
-		}
-
-		public string CertType
-		{
-			get
-			{
-				return certType;
-			}
-			set	
-			{
-				certType = value;
-				DictionaryUtil.Add(BodyParameters, "CertType", value);
+				bankCardFile = value;
+				DictionaryUtil.Add(BodyParameters, "BankCardFile", value);
 			}
 		}
 
@@ -180,9 +180,9 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 			return false;
 		}
 
-        public override ElementSmartVerifyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override VerifyBankElementResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ElementSmartVerifyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return VerifyBankElementResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

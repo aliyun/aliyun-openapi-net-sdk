@@ -39,6 +39,7 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20200618
 			resultObject.Passed = _ctx.StringValue("ElementSmartVerify.ResultObject.Passed");
 			resultObject.SubCode = _ctx.StringValue("ElementSmartVerify.ResultObject.SubCode");
 			resultObject.MaterialInfo = _ctx.StringValue("ElementSmartVerify.ResultObject.MaterialInfo");
+			resultObject.CertifyId = _ctx.StringValue("ElementSmartVerify.ResultObject.CertifyId");
 			elementSmartVerifyResponse.ResultObject = resultObject;
         
 			return elementSmartVerifyResponse;

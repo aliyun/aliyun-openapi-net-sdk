@@ -20,18 +20,18 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20201112
+namespace Aliyun.Acs.Cloudauth.Model.V20200618
 {
-	public class LivenessDetectResponse : AcsResponse
+	public class VerifyBankElementResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string code;
-
 		private string message;
 
-		private LivenessDetect_ResultObject resultObject;
+		private string code;
+
+		private VerifyBankElement_ResultObject resultObject;
 
 		public string RequestId
 		{
@@ -42,18 +42,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20201112
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
 			}
 		}
 
@@ -69,7 +57,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20201112
 			}
 		}
 
-		public LivenessDetect_ResultObject ResultObject
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public VerifyBankElement_ResultObject ResultObject
 		{
 			get
 			{
@@ -81,14 +81,16 @@ namespace Aliyun.Acs.Cloudauth.Model.V20201112
 			}
 		}
 
-		public class LivenessDetect_ResultObject
+		public class VerifyBankElement_ResultObject
 		{
 
 			private string passed;
 
-			private float? score;
+			private string subCode;
 
-			private string frameUrl;
+			private string materialInfo;
+
+			private string certifyId;
 
 			public string Passed
 			{
@@ -102,27 +104,39 @@ namespace Aliyun.Acs.Cloudauth.Model.V20201112
 				}
 			}
 
-			public float? Score
+			public string SubCode
 			{
 				get
 				{
-					return score;
+					return subCode;
 				}
 				set	
 				{
-					score = value;
+					subCode = value;
 				}
 			}
 
-			public string FrameUrl
+			public string MaterialInfo
 			{
 				get
 				{
-					return frameUrl;
+					return materialInfo;
 				}
 				set	
 				{
-					frameUrl = value;
+					materialInfo = value;
+				}
+			}
+
+			public string CertifyId
+			{
+				get
+				{
+					return certifyId;
+				}
+				set	
+				{
+					certifyId = value;
 				}
 			}
 		}
