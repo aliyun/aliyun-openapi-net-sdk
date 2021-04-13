@@ -53,6 +53,7 @@ namespace Aliyun.Acs.Dts.Transform.V20200101
 			describeDtsJobDetailResponse.Reserved = _ctx.StringValue("DescribeDtsJobDetail.Reserved");
 			describeDtsJobDetailResponse.ErrorMessage = _ctx.StringValue("DescribeDtsJobDetail.ErrorMessage");
 			describeDtsJobDetailResponse.DbObject = _ctx.StringValue("DescribeDtsJobDetail.DbObject");
+			describeDtsJobDetailResponse.SynchronizationDirection = _ctx.StringValue("DescribeDtsJobDetail.SynchronizationDirection");
 
 			DescribeDtsJobDetailResponse.DescribeDtsJobDetail_SourceEndpoint sourceEndpoint = new DescribeDtsJobDetailResponse.DescribeDtsJobDetail_SourceEndpoint();
 			sourceEndpoint.InstanceID = _ctx.StringValue("DescribeDtsJobDetail.SourceEndpoint.InstanceID");

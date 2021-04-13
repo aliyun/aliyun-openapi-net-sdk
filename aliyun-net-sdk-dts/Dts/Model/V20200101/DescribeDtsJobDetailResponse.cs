@@ -69,6 +69,8 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 		private string dbObject;
 
+		private string synchronizationDirection;
+
 		private DescribeDtsJobDetail_SourceEndpoint sourceEndpoint;
 
 		private DescribeDtsJobDetail_DestinationEndpoint destinationEndpoint;
@@ -336,6 +338,18 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			set	
 			{
 				dbObject = value;
+			}
+		}
+
+		public string SynchronizationDirection
+		{
+			get
+			{
+				return synchronizationDirection;
+			}
+			set	
+			{
+				synchronizationDirection = value;
 			}
 		}
 

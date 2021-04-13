@@ -42,6 +42,10 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 		private string dtsJobId;
 
+		private string dtsInstanceID;
+
+		private string synchronizationDirection;
+
 		public string DtsJobId
 		{
 			get
@@ -52,6 +56,32 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			{
 				dtsJobId = value;
 				DictionaryUtil.Add(QueryParameters, "DtsJobId", value);
+			}
+		}
+
+		public string DtsInstanceID
+		{
+			get
+			{
+				return dtsInstanceID;
+			}
+			set	
+			{
+				dtsInstanceID = value;
+				DictionaryUtil.Add(QueryParameters, "DtsInstanceID", value);
+			}
+		}
+
+		public string SynchronizationDirection
+		{
+			get
+			{
+				return synchronizationDirection;
+			}
+			set	
+			{
+				synchronizationDirection = value;
+				DictionaryUtil.Add(QueryParameters, "SynchronizationDirection", value);
 			}
 		}
 

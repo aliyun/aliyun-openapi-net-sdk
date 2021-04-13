@@ -76,6 +76,8 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 		private string dtsInstanceId;
 
+		private string synchronizationDirection;
+
 		private string sourceEndpointRegion;
 
 		private bool? delayNotice;
@@ -347,6 +349,19 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			{
 				dtsInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DtsInstanceId", value);
+			}
+		}
+
+		public string SynchronizationDirection
+		{
+			get
+			{
+				return synchronizationDirection;
+			}
+			set	
+			{
+				synchronizationDirection = value;
+				DictionaryUtil.Add(QueryParameters, "SynchronizationDirection", value);
 			}
 		}
 

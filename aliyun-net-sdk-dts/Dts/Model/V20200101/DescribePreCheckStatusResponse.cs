@@ -154,13 +154,13 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 		public class DescribePreCheckStatus_ProgressInfo
 		{
 
-			private long? bootTime;
+			private string bootTime;
 
 			private bool? canSkip;
 
 			private int? delaySeconds;
 
-			private long? finishTime;
+			private string finishTime;
 
 			private string ignoreFlag;
 
@@ -200,7 +200,7 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 			private List<DescribePreCheckStatus_JobLog> logs;
 
-			public long? BootTime
+			public string BootTime
 			{
 				get
 				{
@@ -236,7 +236,7 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				}
 			}
 
-			public long? FinishTime
+			public string FinishTime
 			{
 				get
 				{

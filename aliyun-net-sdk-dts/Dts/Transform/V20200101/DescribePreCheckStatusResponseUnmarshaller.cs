@@ -43,10 +43,10 @@ namespace Aliyun.Acs.Dts.Transform.V20200101
 			List<DescribePreCheckStatusResponse.DescribePreCheckStatus_ProgressInfo> describePreCheckStatusResponse_jobProgress = new List<DescribePreCheckStatusResponse.DescribePreCheckStatus_ProgressInfo>();
 			for (int i = 0; i < _ctx.Length("DescribePreCheckStatus.JobProgress.Length"); i++) {
 				DescribePreCheckStatusResponse.DescribePreCheckStatus_ProgressInfo progressInfo = new DescribePreCheckStatusResponse.DescribePreCheckStatus_ProgressInfo();
-				progressInfo.BootTime = _ctx.LongValue("DescribePreCheckStatus.JobProgress["+ i +"].BootTime");
+				progressInfo.BootTime = _ctx.StringValue("DescribePreCheckStatus.JobProgress["+ i +"].BootTime");
 				progressInfo.CanSkip = _ctx.BooleanValue("DescribePreCheckStatus.JobProgress["+ i +"].CanSkip");
 				progressInfo.DelaySeconds = _ctx.IntegerValue("DescribePreCheckStatus.JobProgress["+ i +"].DelaySeconds");
-				progressInfo.FinishTime = _ctx.LongValue("DescribePreCheckStatus.JobProgress["+ i +"].FinishTime");
+				progressInfo.FinishTime = _ctx.StringValue("DescribePreCheckStatus.JobProgress["+ i +"].FinishTime");
 				progressInfo.IgnoreFlag = _ctx.StringValue("DescribePreCheckStatus.JobProgress["+ i +"].IgnoreFlag");
 				progressInfo.Item = _ctx.StringValue("DescribePreCheckStatus.JobProgress["+ i +"].Item");
 				progressInfo.JobId = _ctx.StringValue("DescribePreCheckStatus.JobProgress["+ i +"].JobId");
