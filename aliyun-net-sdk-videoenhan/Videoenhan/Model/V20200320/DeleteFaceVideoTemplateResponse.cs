@@ -22,12 +22,26 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.videoenhan.Model.V20200320
 {
-	public class GetAsyncJobResultResponse : AcsResponse
+	public class DeleteFaceVideoTemplateResponse : AcsResponse
 	{
+
+		private string message;
 
 		private string requestId;
 
-		private GetAsyncJobResult_Data data;
+		private string code;
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -41,89 +55,15 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			}
 		}
 
-		public GetAsyncJobResult_Data Data
+		public string Code
 		{
 			get
 			{
-				return data;
+				return code;
 			}
 			set	
 			{
-				data = value;
-			}
-		}
-
-		public class GetAsyncJobResult_Data
-		{
-
-			private string status;
-
-			private string errorCode;
-
-			private string errorMessage;
-
-			private string jobId;
-
-			private string result;
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string ErrorCode
-			{
-				get
-				{
-					return errorCode;
-				}
-				set	
-				{
-					errorCode = value;
-				}
-			}
-
-			public string ErrorMessage
-			{
-				get
-				{
-					return errorMessage;
-				}
-				set	
-				{
-					errorMessage = value;
-				}
-			}
-
-			public string JobId
-			{
-				get
-				{
-					return jobId;
-				}
-				set	
-				{
-					jobId = value;
-				}
-			}
-
-			public string Result
-			{
-				get
-				{
-					return result;
-				}
-				set	
-				{
-					result = value;
-				}
+				code = value;
 			}
 		}
 	}

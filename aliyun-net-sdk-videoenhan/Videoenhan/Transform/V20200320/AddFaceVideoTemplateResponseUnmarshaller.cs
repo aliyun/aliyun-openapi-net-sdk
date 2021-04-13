@@ -24,24 +24,22 @@ using Aliyun.Acs.videoenhan.Model.V20200320;
 
 namespace Aliyun.Acs.videoenhan.Transform.V20200320
 {
-    public class GetAsyncJobResultResponseUnmarshaller
+    public class AddFaceVideoTemplateResponseUnmarshaller
     {
-        public static GetAsyncJobResultResponse Unmarshall(UnmarshallerContext _ctx)
+        public static AddFaceVideoTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetAsyncJobResultResponse getAsyncJobResultResponse = new GetAsyncJobResultResponse();
+			AddFaceVideoTemplateResponse addFaceVideoTemplateResponse = new AddFaceVideoTemplateResponse();
 
-			getAsyncJobResultResponse.HttpResponse = _ctx.HttpResponse;
-			getAsyncJobResultResponse.RequestId = _ctx.StringValue("GetAsyncJobResult.RequestId");
+			addFaceVideoTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			addFaceVideoTemplateResponse.Message = _ctx.StringValue("AddFaceVideoTemplate.Message");
+			addFaceVideoTemplateResponse.RequestId = _ctx.StringValue("AddFaceVideoTemplate.RequestId");
+			addFaceVideoTemplateResponse.Code = _ctx.StringValue("AddFaceVideoTemplate.Code");
 
-			GetAsyncJobResultResponse.GetAsyncJobResult_Data data = new GetAsyncJobResultResponse.GetAsyncJobResult_Data();
-			data.Status = _ctx.StringValue("GetAsyncJobResult.Data.Status");
-			data.ErrorCode = _ctx.StringValue("GetAsyncJobResult.Data.ErrorCode");
-			data.ErrorMessage = _ctx.StringValue("GetAsyncJobResult.Data.ErrorMessage");
-			data.JobId = _ctx.StringValue("GetAsyncJobResult.Data.JobId");
-			data.Result = _ctx.StringValue("GetAsyncJobResult.Data.Result");
-			getAsyncJobResultResponse.Data = data;
+			AddFaceVideoTemplateResponse.AddFaceVideoTemplate_Date date = new AddFaceVideoTemplateResponse.AddFaceVideoTemplate_Date();
+			date.TemplateId = _ctx.StringValue("AddFaceVideoTemplate.Date.TemplateId");
+			addFaceVideoTemplateResponse.Date = date;
         
-			return getAsyncJobResultResponse;
+			return addFaceVideoTemplateResponse;
         }
     }
 }

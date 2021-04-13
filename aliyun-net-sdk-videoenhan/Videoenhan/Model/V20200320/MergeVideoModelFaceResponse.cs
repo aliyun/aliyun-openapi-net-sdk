@@ -22,12 +22,28 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.videoenhan.Model.V20200320
 {
-	public class GetAsyncJobResultResponse : AcsResponse
+	public class MergeVideoModelFaceResponse : AcsResponse
 	{
+
+		private string message;
 
 		private string requestId;
 
-		private GetAsyncJobResult_Data data;
+		private string code;
+
+		private MergeVideoModelFace_Data data;
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -41,7 +57,19 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			}
 		}
 
-		public GetAsyncJobResult_Data Data
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public MergeVideoModelFace_Data Data
 		{
 			get
 			{
@@ -53,76 +81,20 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			}
 		}
 
-		public class GetAsyncJobResult_Data
+		public class MergeVideoModelFace_Data
 		{
 
-			private string status;
+			private string videoURL;
 
-			private string errorCode;
-
-			private string errorMessage;
-
-			private string jobId;
-
-			private string result;
-
-			public string Status
+			public string VideoURL
 			{
 				get
 				{
-					return status;
+					return videoURL;
 				}
 				set	
 				{
-					status = value;
-				}
-			}
-
-			public string ErrorCode
-			{
-				get
-				{
-					return errorCode;
-				}
-				set	
-				{
-					errorCode = value;
-				}
-			}
-
-			public string ErrorMessage
-			{
-				get
-				{
-					return errorMessage;
-				}
-				set	
-				{
-					errorMessage = value;
-				}
-			}
-
-			public string JobId
-			{
-				get
-				{
-					return jobId;
-				}
-				set	
-				{
-					jobId = value;
-				}
-			}
-
-			public string Result
-			{
-				get
-				{
-					return result;
-				}
-				set	
-				{
-					result = value;
+					videoURL = value;
 				}
 			}
 		}

@@ -27,10 +27,10 @@ using Aliyun.Acs.videoenhan.Transform.V20200320;
 
 namespace Aliyun.Acs.videoenhan.Model.V20200320
 {
-    public class AdjustVideoColorRequest : RpcAcsRequest<AdjustVideoColorResponse>
+    public class MergeVideoModelFaceRequest : RpcAcsRequest<MergeVideoModelFaceResponse>
     {
-        public AdjustVideoColorRequest()
-            : base("videoenhan", "2020-03-20", "AdjustVideoColor", "videoenhan", "openAPI")
+        public MergeVideoModelFaceRequest()
+            : base("videoenhan", "2020-03-20", "MergeVideoModelFace", "videoenhan", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,78 +40,48 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			Method = MethodType.POST;
         }
 
-		private string mode;
+		private string faceImageURL;
 
-		private string videoUrl;
+		private string userId;
 
-		private long? videoBitrate;
+		private string templateId;
 
-		private string videoCodec;
-
-		private string videoFormat;
-
-		public string Mode
+		public string FaceImageURL
 		{
 			get
 			{
-				return mode;
+				return faceImageURL;
 			}
 			set	
 			{
-				mode = value;
-				DictionaryUtil.Add(BodyParameters, "Mode", value);
+				faceImageURL = value;
+				DictionaryUtil.Add(BodyParameters, "FaceImageURL", value);
 			}
 		}
 
-		public string VideoUrl
+		public string UserId
 		{
 			get
 			{
-				return videoUrl;
+				return userId;
 			}
 			set	
 			{
-				videoUrl = value;
-				DictionaryUtil.Add(BodyParameters, "VideoUrl", value);
+				userId = value;
+				DictionaryUtil.Add(BodyParameters, "UserId", value);
 			}
 		}
 
-		public long? VideoBitrate
+		public string TemplateId
 		{
 			get
 			{
-				return videoBitrate;
+				return templateId;
 			}
 			set	
 			{
-				videoBitrate = value;
-				DictionaryUtil.Add(BodyParameters, "VideoBitrate", value.ToString());
-			}
-		}
-
-		public string VideoCodec
-		{
-			get
-			{
-				return videoCodec;
-			}
-			set	
-			{
-				videoCodec = value;
-				DictionaryUtil.Add(BodyParameters, "VideoCodec", value);
-			}
-		}
-
-		public string VideoFormat
-		{
-			get
-			{
-				return videoFormat;
-			}
-			set	
-			{
-				videoFormat = value;
-				DictionaryUtil.Add(BodyParameters, "VideoFormat", value);
+				templateId = value;
+				DictionaryUtil.Add(BodyParameters, "TemplateId", value);
 			}
 		}
 
@@ -120,9 +90,9 @@ namespace Aliyun.Acs.videoenhan.Model.V20200320
 			return false;
 		}
 
-        public override AdjustVideoColorResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override MergeVideoModelFaceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AdjustVideoColorResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return MergeVideoModelFaceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
