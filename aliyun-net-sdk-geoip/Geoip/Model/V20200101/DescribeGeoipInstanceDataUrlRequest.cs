@@ -32,6 +32,7 @@ namespace Aliyun.Acs.geoip.Model.V20200101
         public DescribeGeoipInstanceDataUrlRequest()
             : base("geoip", "2020-01-01", "DescribeGeoipInstanceDataUrl", "geoip", "openAPI")
         {
+			Method = MethodType.POST;
         }
 
 		private string instanceId;

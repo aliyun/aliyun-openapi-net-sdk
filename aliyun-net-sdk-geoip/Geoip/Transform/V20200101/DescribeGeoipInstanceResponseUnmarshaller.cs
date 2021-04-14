@@ -26,22 +26,22 @@ namespace Aliyun.Acs.geoip.Transform.V20200101
 {
     public class DescribeGeoipInstanceResponseUnmarshaller
     {
-        public static DescribeGeoipInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGeoipInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGeoipInstanceResponse describeGeoipInstanceResponse = new DescribeGeoipInstanceResponse();
 
-			describeGeoipInstanceResponse.HttpResponse = context.HttpResponse;
-			describeGeoipInstanceResponse.RequestId = context.StringValue("DescribeGeoipInstance.RequestId");
-			describeGeoipInstanceResponse.ProductCode = context.StringValue("DescribeGeoipInstance.ProductCode");
-			describeGeoipInstanceResponse.InstanceId = context.StringValue("DescribeGeoipInstance.InstanceId");
-			describeGeoipInstanceResponse.VersionCode = context.StringValue("DescribeGeoipInstance.VersionCode");
-			describeGeoipInstanceResponse.MaxQps = context.LongValue("DescribeGeoipInstance.MaxQps");
-			describeGeoipInstanceResponse.MaxQpd = context.LongValue("DescribeGeoipInstance.MaxQpd");
-			describeGeoipInstanceResponse.QueryCount = context.LongValue("DescribeGeoipInstance.QueryCount");
-			describeGeoipInstanceResponse.CreateTime = context.StringValue("DescribeGeoipInstance.CreateTime");
-			describeGeoipInstanceResponse.CreateTimestamp = context.LongValue("DescribeGeoipInstance.CreateTimestamp");
-			describeGeoipInstanceResponse.ExpireTime = context.StringValue("DescribeGeoipInstance.ExpireTime");
-			describeGeoipInstanceResponse.ExpireTimestamp = context.LongValue("DescribeGeoipInstance.ExpireTimestamp");
+			describeGeoipInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			describeGeoipInstanceResponse.RequestId = _ctx.StringValue("DescribeGeoipInstance.RequestId");
+			describeGeoipInstanceResponse.ProductCode = _ctx.StringValue("DescribeGeoipInstance.ProductCode");
+			describeGeoipInstanceResponse.InstanceId = _ctx.StringValue("DescribeGeoipInstance.InstanceId");
+			describeGeoipInstanceResponse.VersionCode = _ctx.StringValue("DescribeGeoipInstance.VersionCode");
+			describeGeoipInstanceResponse.MaxQps = _ctx.LongValue("DescribeGeoipInstance.MaxQps");
+			describeGeoipInstanceResponse.MaxQpd = _ctx.LongValue("DescribeGeoipInstance.MaxQpd");
+			describeGeoipInstanceResponse.QueryCount = _ctx.LongValue("DescribeGeoipInstance.QueryCount");
+			describeGeoipInstanceResponse.CreateTime = _ctx.StringValue("DescribeGeoipInstance.CreateTime");
+			describeGeoipInstanceResponse.CreateTimestamp = _ctx.LongValue("DescribeGeoipInstance.CreateTimestamp");
+			describeGeoipInstanceResponse.ExpireTime = _ctx.StringValue("DescribeGeoipInstance.ExpireTime");
+			describeGeoipInstanceResponse.ExpireTimestamp = _ctx.LongValue("DescribeGeoipInstance.ExpireTimestamp");
         
 			return describeGeoipInstanceResponse;
         }

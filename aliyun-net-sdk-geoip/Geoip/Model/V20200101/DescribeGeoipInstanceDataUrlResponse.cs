@@ -25,9 +25,23 @@ namespace Aliyun.Acs.geoip.Model.V20200101
 	public class DescribeGeoipInstanceDataUrlResponse : AcsResponse
 	{
 
+		private string fixedDomainDownloadUrl;
+
 		private string requestId;
 
 		private string downloadUrl;
+
+		public string FixedDomainDownloadUrl
+		{
+			get
+			{
+				return fixedDomainDownloadUrl;
+			}
+			set	
+			{
+				fixedDomainDownloadUrl = value;
+			}
+		}
 
 		public string RequestId
 		{

@@ -26,21 +26,21 @@ namespace Aliyun.Acs.geoip.Transform.V20200101
 {
     public class DescribeGeoipInstanceDataInfosResponseUnmarshaller
     {
-        public static DescribeGeoipInstanceDataInfosResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGeoipInstanceDataInfosResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGeoipInstanceDataInfosResponse describeGeoipInstanceDataInfosResponse = new DescribeGeoipInstanceDataInfosResponse();
 
-			describeGeoipInstanceDataInfosResponse.HttpResponse = context.HttpResponse;
-			describeGeoipInstanceDataInfosResponse.RequestId = context.StringValue("DescribeGeoipInstanceDataInfos.RequestId");
+			describeGeoipInstanceDataInfosResponse.HttpResponse = _ctx.HttpResponse;
+			describeGeoipInstanceDataInfosResponse.RequestId = _ctx.StringValue("DescribeGeoipInstanceDataInfos.RequestId");
 
 			List<DescribeGeoipInstanceDataInfosResponse.DescribeGeoipInstanceDataInfos_DataInfo> describeGeoipInstanceDataInfosResponse_dataInfos = new List<DescribeGeoipInstanceDataInfosResponse.DescribeGeoipInstanceDataInfos_DataInfo>();
-			for (int i = 0; i < context.Length("DescribeGeoipInstanceDataInfos.DataInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeGeoipInstanceDataInfos.DataInfos.Length"); i++) {
 				DescribeGeoipInstanceDataInfosResponse.DescribeGeoipInstanceDataInfos_DataInfo dataInfo = new DescribeGeoipInstanceDataInfosResponse.DescribeGeoipInstanceDataInfos_DataInfo();
-				dataInfo.Type = context.StringValue("DescribeGeoipInstanceDataInfos.DataInfos["+ i +"].Type");
-				dataInfo.Version = context.StringValue("DescribeGeoipInstanceDataInfos.DataInfos["+ i +"].Version");
-				dataInfo.UpdateTime = context.StringValue("DescribeGeoipInstanceDataInfos.DataInfos["+ i +"].UpdateTime");
-				dataInfo.UpdateTimestamp = context.LongValue("DescribeGeoipInstanceDataInfos.DataInfos["+ i +"].UpdateTimestamp");
-				dataInfo.DownloadCount = context.LongValue("DescribeGeoipInstanceDataInfos.DataInfos["+ i +"].DownloadCount");
+				dataInfo.Type = _ctx.StringValue("DescribeGeoipInstanceDataInfos.DataInfos["+ i +"].Type");
+				dataInfo.Version = _ctx.StringValue("DescribeGeoipInstanceDataInfos.DataInfos["+ i +"].Version");
+				dataInfo.UpdateTime = _ctx.StringValue("DescribeGeoipInstanceDataInfos.DataInfos["+ i +"].UpdateTime");
+				dataInfo.UpdateTimestamp = _ctx.LongValue("DescribeGeoipInstanceDataInfos.DataInfos["+ i +"].UpdateTimestamp");
+				dataInfo.DownloadCount = _ctx.LongValue("DescribeGeoipInstanceDataInfos.DataInfos["+ i +"].DownloadCount");
 
 				describeGeoipInstanceDataInfosResponse_dataInfos.Add(dataInfo);
 			}

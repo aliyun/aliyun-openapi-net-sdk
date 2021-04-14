@@ -26,18 +26,18 @@ namespace Aliyun.Acs.geoip.Transform.V20200101
 {
     public class DescribeGeoipInstanceStatisticsResponseUnmarshaller
     {
-        public static DescribeGeoipInstanceStatisticsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGeoipInstanceStatisticsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGeoipInstanceStatisticsResponse describeGeoipInstanceStatisticsResponse = new DescribeGeoipInstanceStatisticsResponse();
 
-			describeGeoipInstanceStatisticsResponse.HttpResponse = context.HttpResponse;
-			describeGeoipInstanceStatisticsResponse.RequestId = context.StringValue("DescribeGeoipInstanceStatistics.RequestId");
+			describeGeoipInstanceStatisticsResponse.HttpResponse = _ctx.HttpResponse;
+			describeGeoipInstanceStatisticsResponse.RequestId = _ctx.StringValue("DescribeGeoipInstanceStatistics.RequestId");
 
 			List<DescribeGeoipInstanceStatisticsResponse.DescribeGeoipInstanceStatistics_Statistic> describeGeoipInstanceStatisticsResponse_statistics = new List<DescribeGeoipInstanceStatisticsResponse.DescribeGeoipInstanceStatistics_Statistic>();
-			for (int i = 0; i < context.Length("DescribeGeoipInstanceStatistics.Statistics.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeGeoipInstanceStatistics.Statistics.Length"); i++) {
 				DescribeGeoipInstanceStatisticsResponse.DescribeGeoipInstanceStatistics_Statistic statistic = new DescribeGeoipInstanceStatisticsResponse.DescribeGeoipInstanceStatistics_Statistic();
-				statistic.Timestamp = context.LongValue("DescribeGeoipInstanceStatistics.Statistics["+ i +"].Timestamp");
-				statistic.Count = context.LongValue("DescribeGeoipInstanceStatistics.Statistics["+ i +"].Count");
+				statistic.Timestamp = _ctx.LongValue("DescribeGeoipInstanceStatistics.Statistics["+ i +"].Timestamp");
+				statistic.Count = _ctx.LongValue("DescribeGeoipInstanceStatistics.Statistics["+ i +"].Count");
 
 				describeGeoipInstanceStatisticsResponse_statistics.Add(statistic);
 			}

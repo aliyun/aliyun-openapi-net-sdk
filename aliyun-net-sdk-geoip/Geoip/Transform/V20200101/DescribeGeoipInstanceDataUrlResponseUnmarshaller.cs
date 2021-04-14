@@ -26,13 +26,14 @@ namespace Aliyun.Acs.geoip.Transform.V20200101
 {
     public class DescribeGeoipInstanceDataUrlResponseUnmarshaller
     {
-        public static DescribeGeoipInstanceDataUrlResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGeoipInstanceDataUrlResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGeoipInstanceDataUrlResponse describeGeoipInstanceDataUrlResponse = new DescribeGeoipInstanceDataUrlResponse();
 
-			describeGeoipInstanceDataUrlResponse.HttpResponse = context.HttpResponse;
-			describeGeoipInstanceDataUrlResponse.RequestId = context.StringValue("DescribeGeoipInstanceDataUrl.RequestId");
-			describeGeoipInstanceDataUrlResponse.DownloadUrl = context.StringValue("DescribeGeoipInstanceDataUrl.DownloadUrl");
+			describeGeoipInstanceDataUrlResponse.HttpResponse = _ctx.HttpResponse;
+			describeGeoipInstanceDataUrlResponse.FixedDomainDownloadUrl = _ctx.StringValue("DescribeGeoipInstanceDataUrl.FixedDomainDownloadUrl");
+			describeGeoipInstanceDataUrlResponse.RequestId = _ctx.StringValue("DescribeGeoipInstanceDataUrl.RequestId");
+			describeGeoipInstanceDataUrlResponse.DownloadUrl = _ctx.StringValue("DescribeGeoipInstanceDataUrl.DownloadUrl");
         
 			return describeGeoipInstanceDataUrlResponse;
         }

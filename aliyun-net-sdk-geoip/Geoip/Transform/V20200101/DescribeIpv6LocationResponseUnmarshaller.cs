@@ -26,24 +26,24 @@ namespace Aliyun.Acs.geoip.Transform.V20200101
 {
     public class DescribeIpv6LocationResponseUnmarshaller
     {
-        public static DescribeIpv6LocationResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeIpv6LocationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeIpv6LocationResponse describeIpv6LocationResponse = new DescribeIpv6LocationResponse();
 
-			describeIpv6LocationResponse.HttpResponse = context.HttpResponse;
-			describeIpv6LocationResponse.RequestId = context.StringValue("DescribeIpv6Location.RequestId");
-			describeIpv6LocationResponse.Ip = context.StringValue("DescribeIpv6Location.Ip");
-			describeIpv6LocationResponse.Country = context.StringValue("DescribeIpv6Location.Country");
-			describeIpv6LocationResponse.Province = context.StringValue("DescribeIpv6Location.Province");
-			describeIpv6LocationResponse.City = context.StringValue("DescribeIpv6Location.City");
-			describeIpv6LocationResponse.County = context.StringValue("DescribeIpv6Location.County");
-			describeIpv6LocationResponse.Isp = context.StringValue("DescribeIpv6Location.Isp");
-			describeIpv6LocationResponse.CountryCode = context.StringValue("DescribeIpv6Location.CountryCode");
-			describeIpv6LocationResponse.CountryEn = context.StringValue("DescribeIpv6Location.CountryEn");
-			describeIpv6LocationResponse.ProvinceEn = context.StringValue("DescribeIpv6Location.ProvinceEn");
-			describeIpv6LocationResponse.CityEn = context.StringValue("DescribeIpv6Location.CityEn");
-			describeIpv6LocationResponse.Longitude = context.StringValue("DescribeIpv6Location.Longitude");
-			describeIpv6LocationResponse.Latitude = context.StringValue("DescribeIpv6Location.Latitude");
+			describeIpv6LocationResponse.HttpResponse = _ctx.HttpResponse;
+			describeIpv6LocationResponse.RequestId = _ctx.StringValue("DescribeIpv6Location.RequestId");
+			describeIpv6LocationResponse.Ip = _ctx.StringValue("DescribeIpv6Location.Ip");
+			describeIpv6LocationResponse.Country = _ctx.StringValue("DescribeIpv6Location.Country");
+			describeIpv6LocationResponse.Province = _ctx.StringValue("DescribeIpv6Location.Province");
+			describeIpv6LocationResponse.City = _ctx.StringValue("DescribeIpv6Location.City");
+			describeIpv6LocationResponse.County = _ctx.StringValue("DescribeIpv6Location.County");
+			describeIpv6LocationResponse.Isp = _ctx.StringValue("DescribeIpv6Location.Isp");
+			describeIpv6LocationResponse.CountryCode = _ctx.StringValue("DescribeIpv6Location.CountryCode");
+			describeIpv6LocationResponse.CountryEn = _ctx.StringValue("DescribeIpv6Location.CountryEn");
+			describeIpv6LocationResponse.ProvinceEn = _ctx.StringValue("DescribeIpv6Location.ProvinceEn");
+			describeIpv6LocationResponse.CityEn = _ctx.StringValue("DescribeIpv6Location.CityEn");
+			describeIpv6LocationResponse.Longitude = _ctx.StringValue("DescribeIpv6Location.Longitude");
+			describeIpv6LocationResponse.Latitude = _ctx.StringValue("DescribeIpv6Location.Latitude");
         
 			return describeIpv6LocationResponse;
         }
