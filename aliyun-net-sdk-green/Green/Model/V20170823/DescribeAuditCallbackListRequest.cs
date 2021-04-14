@@ -23,47 +23,31 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Green.Transform;
-using Aliyun.Acs.Green.Transform.V20180509;
+using Aliyun.Acs.Green.Transform.V20170823;
 
-namespace Aliyun.Acs.Green.Model.V20180509
+namespace Aliyun.Acs.Green.Model.V20170823
 {
-    public class PostAsyncScanRequest : RoaAcsRequest<PostAsyncScanResponse>
+    public class DescribeAuditCallbackListRequest : RpcAcsRequest<DescribeAuditCallbackListResponse>
     {
-        public PostAsyncScanRequest()
-            : base("Green", "2018-05-09", "PostAsyncScan", "green", "openAPI")
+        public DescribeAuditCallbackListRequest()
+            : base("Green", "2017-08-23", "DescribeAuditCallbackList", "green", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Green.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Green.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/green/post/asyncscan";
 			Method = MethodType.POST;
         }
-
-		private string clientInfo;
-
-		public string ClientInfo
-		{
-			get
-			{
-				return clientInfo;
-			}
-			set	
-			{
-				clientInfo = value;
-				DictionaryUtil.Add(QueryParameters, "ClientInfo", value);
-			}
-		}
 
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override PostAsyncScanResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeAuditCallbackListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return PostAsyncScanResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeAuditCallbackListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

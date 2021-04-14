@@ -23,36 +23,95 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Green.Transform;
-using Aliyun.Acs.Green.Transform.V20180509;
+using Aliyun.Acs.Green.Transform.V20170823;
 
-namespace Aliyun.Acs.Green.Model.V20180509
+namespace Aliyun.Acs.Green.Model.V20170823
 {
-    public class PostAsyncScanResultsRequest : RoaAcsRequest<PostAsyncScanResultsResponse>
+    public class CreateAuditCallbackRequest : RpcAcsRequest<CreateAuditCallbackResponse>
     {
-        public PostAsyncScanResultsRequest()
-            : base("Green", "2018-05-09", "PostAsyncScanResults", "green", "openAPI")
+        public CreateAuditCallbackRequest()
+            : base("Green", "2017-08-23", "CreateAuditCallback", "green", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Green.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Green.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/green/post/results";
 			Method = MethodType.POST;
         }
 
-		private string clientInfo;
+		private string callbackTypes;
 
-		public string ClientInfo
+		private string callbackSuggestions;
+
+		private string url;
+
+		private string cryptType;
+
+		private string name;
+
+		public string CallbackTypes
 		{
 			get
 			{
-				return clientInfo;
+				return callbackTypes;
 			}
 			set	
 			{
-				clientInfo = value;
-				DictionaryUtil.Add(QueryParameters, "ClientInfo", value);
+				callbackTypes = value;
+				DictionaryUtil.Add(QueryParameters, "CallbackTypes", value);
+			}
+		}
+
+		public string CallbackSuggestions
+		{
+			get
+			{
+				return callbackSuggestions;
+			}
+			set	
+			{
+				callbackSuggestions = value;
+				DictionaryUtil.Add(QueryParameters, "CallbackSuggestions", value);
+			}
+		}
+
+		public string Url
+		{
+			get
+			{
+				return url;
+			}
+			set	
+			{
+				url = value;
+				DictionaryUtil.Add(QueryParameters, "Url", value);
+			}
+		}
+
+		public string CryptType
+		{
+			get
+			{
+				return cryptType;
+			}
+			set	
+			{
+				cryptType = value;
+				DictionaryUtil.Add(QueryParameters, "CryptType", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
@@ -61,9 +120,9 @@ namespace Aliyun.Acs.Green.Model.V20180509
 			return false;
 		}
 
-        public override PostAsyncScanResultsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateAuditCallbackResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return PostAsyncScanResultsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateAuditCallbackResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
