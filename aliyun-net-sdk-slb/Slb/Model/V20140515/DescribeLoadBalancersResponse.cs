@@ -140,6 +140,12 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 			private string modificationProtectionReason;
 
+			private int? bandwidth;
+
+			private string internetChargeTypeAlias;
+
+			private string loadBalancerSpec;
+
 			private List<DescribeLoadBalancers_Tag> tags;
 
 			public string LoadBalancerId
@@ -391,6 +397,42 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					modificationProtectionReason = value;
+				}
+			}
+
+			public int? Bandwidth
+			{
+				get
+				{
+					return bandwidth;
+				}
+				set	
+				{
+					bandwidth = value;
+				}
+			}
+
+			public string InternetChargeTypeAlias
+			{
+				get
+				{
+					return internetChargeTypeAlias;
+				}
+				set	
+				{
+					internetChargeTypeAlias = value;
+				}
+			}
+
+			public string LoadBalancerSpec
+			{
+				get
+				{
+					return loadBalancerSpec;
+				}
+				set	
+				{
+					loadBalancerSpec = value;
 				}
 			}
 

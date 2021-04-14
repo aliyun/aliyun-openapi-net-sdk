@@ -31,31 +31,46 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			DescribeLoadBalancerUDPListenerAttributeResponse describeLoadBalancerUDPListenerAttributeResponse = new DescribeLoadBalancerUDPListenerAttributeResponse();
 
 			describeLoadBalancerUDPListenerAttributeResponse.HttpResponse = _ctx.HttpResponse;
-			describeLoadBalancerUDPListenerAttributeResponse.RequestId = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.RequestId");
-			describeLoadBalancerUDPListenerAttributeResponse.ListenerPort = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.ListenerPort");
-			describeLoadBalancerUDPListenerAttributeResponse.BackendServerPort = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.BackendServerPort");
-			describeLoadBalancerUDPListenerAttributeResponse.Status = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.Status");
-			describeLoadBalancerUDPListenerAttributeResponse.Bandwidth = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.Bandwidth");
-			describeLoadBalancerUDPListenerAttributeResponse.Scheduler = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.Scheduler");
-			describeLoadBalancerUDPListenerAttributeResponse.PersistenceTimeout = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.PersistenceTimeout");
-			describeLoadBalancerUDPListenerAttributeResponse.HealthCheck = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.HealthCheck");
-			describeLoadBalancerUDPListenerAttributeResponse.HealthyThreshold = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.HealthyThreshold");
-			describeLoadBalancerUDPListenerAttributeResponse.UnhealthyThreshold = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.UnhealthyThreshold");
-			describeLoadBalancerUDPListenerAttributeResponse.HealthCheckConnectTimeout = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.HealthCheckConnectTimeout");
-			describeLoadBalancerUDPListenerAttributeResponse.HealthCheckConnectPort = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.HealthCheckConnectPort");
-			describeLoadBalancerUDPListenerAttributeResponse.HealthCheckInterval = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.HealthCheckInterval");
-			describeLoadBalancerUDPListenerAttributeResponse.HealthCheckReq = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.HealthCheckReq");
-			describeLoadBalancerUDPListenerAttributeResponse.HealthCheckExp = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.HealthCheckExp");
-			describeLoadBalancerUDPListenerAttributeResponse.MaxConnection = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.MaxConnection");
-			describeLoadBalancerUDPListenerAttributeResponse.VServerGroupId = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.VServerGroupId");
-			describeLoadBalancerUDPListenerAttributeResponse.MasterSlaveServerGroupId = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.MasterSlaveServerGroupId");
 			describeLoadBalancerUDPListenerAttributeResponse.AclId = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.AclId");
-			describeLoadBalancerUDPListenerAttributeResponse.AclType = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.AclType");
 			describeLoadBalancerUDPListenerAttributeResponse.AclStatus = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.AclStatus");
-			describeLoadBalancerUDPListenerAttributeResponse.VpcIds = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.VpcIds");
-			describeLoadBalancerUDPListenerAttributeResponse.Description = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.Description");
+			describeLoadBalancerUDPListenerAttributeResponse.AclType = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.AclType");
+			describeLoadBalancerUDPListenerAttributeResponse.BackendServerPort = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.BackendServerPort");
+			describeLoadBalancerUDPListenerAttributeResponse.Bandwidth = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.Bandwidth");
 			describeLoadBalancerUDPListenerAttributeResponse.ConnectionDrain = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.ConnectionDrain");
 			describeLoadBalancerUDPListenerAttributeResponse.ConnectionDrainTimeout = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.ConnectionDrainTimeout");
+			describeLoadBalancerUDPListenerAttributeResponse.Description = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.Description");
+			describeLoadBalancerUDPListenerAttributeResponse.FailoverStrategy = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.FailoverStrategy");
+			describeLoadBalancerUDPListenerAttributeResponse.FailoverThreshold = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.FailoverThreshold");
+			describeLoadBalancerUDPListenerAttributeResponse.HealthCheck = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.HealthCheck");
+			describeLoadBalancerUDPListenerAttributeResponse.HealthCheckConnectPort = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.HealthCheckConnectPort");
+			describeLoadBalancerUDPListenerAttributeResponse.HealthCheckConnectTimeout = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.HealthCheckConnectTimeout");
+			describeLoadBalancerUDPListenerAttributeResponse.HealthCheckDomain = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.HealthCheckDomain");
+			describeLoadBalancerUDPListenerAttributeResponse.HealthCheckExp = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.HealthCheckExp");
+			describeLoadBalancerUDPListenerAttributeResponse.HealthCheckHttpCode = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.HealthCheckHttpCode");
+			describeLoadBalancerUDPListenerAttributeResponse.HealthCheckInterval = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.HealthCheckInterval");
+			describeLoadBalancerUDPListenerAttributeResponse.HealthCheckMethod = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.HealthCheckMethod");
+			describeLoadBalancerUDPListenerAttributeResponse.HealthCheckReq = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.HealthCheckReq");
+			describeLoadBalancerUDPListenerAttributeResponse.HealthCheckType = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.HealthCheckType");
+			describeLoadBalancerUDPListenerAttributeResponse.HealthCheckURI = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.HealthCheckURI");
+			describeLoadBalancerUDPListenerAttributeResponse.HealthyThreshold = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.HealthyThreshold");
+			describeLoadBalancerUDPListenerAttributeResponse.ListenerPort = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.ListenerPort");
+			describeLoadBalancerUDPListenerAttributeResponse.MasterServerGroupId = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.MasterServerGroupId");
+			describeLoadBalancerUDPListenerAttributeResponse.MasterSlaveModeEnabled = _ctx.BooleanValue("DescribeLoadBalancerUDPListenerAttribute.MasterSlaveModeEnabled");
+			describeLoadBalancerUDPListenerAttributeResponse.MasterSlaveServerGroupId = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.MasterSlaveServerGroupId");
+			describeLoadBalancerUDPListenerAttributeResponse.MaxConnection = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.MaxConnection");
+			describeLoadBalancerUDPListenerAttributeResponse.PersistenceTimeout = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.PersistenceTimeout");
+			describeLoadBalancerUDPListenerAttributeResponse.ProxyProtocolV2Enabled = _ctx.BooleanValue("DescribeLoadBalancerUDPListenerAttribute.ProxyProtocolV2Enabled");
+			describeLoadBalancerUDPListenerAttributeResponse.ProxyProtocolVpcIdEnabled = _ctx.BooleanValue("DescribeLoadBalancerUDPListenerAttribute.ProxyProtocolVpcIdEnabled");
+			describeLoadBalancerUDPListenerAttributeResponse.QuicVersion = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.QuicVersion");
+			describeLoadBalancerUDPListenerAttributeResponse.RequestId = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.RequestId");
+			describeLoadBalancerUDPListenerAttributeResponse.Scheduler = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.Scheduler");
+			describeLoadBalancerUDPListenerAttributeResponse.SlaveServerGroupId = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.SlaveServerGroupId");
+			describeLoadBalancerUDPListenerAttributeResponse.Status = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.Status");
+			describeLoadBalancerUDPListenerAttributeResponse.UnhealthyThreshold = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.UnhealthyThreshold");
+			describeLoadBalancerUDPListenerAttributeResponse.VServerGroupId = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.VServerGroupId");
+			describeLoadBalancerUDPListenerAttributeResponse.VpcIds = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.VpcIds");
+			describeLoadBalancerUDPListenerAttributeResponse.WorkingServerGroupId = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.WorkingServerGroupId");
+			describeLoadBalancerUDPListenerAttributeResponse.HealthCheckSwitch = _ctx.StringValue("DescribeLoadBalancerUDPListenerAttribute.HealthCheckSwitch");
 
 			List<string> describeLoadBalancerUDPListenerAttributeResponse_aclIds = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeLoadBalancerUDPListenerAttribute.AclIds.Length"); i++) {
@@ -66,8 +81,8 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			List<DescribeLoadBalancerUDPListenerAttributeResponse.DescribeLoadBalancerUDPListenerAttribute_PortRange> describeLoadBalancerUDPListenerAttributeResponse_portRanges = new List<DescribeLoadBalancerUDPListenerAttributeResponse.DescribeLoadBalancerUDPListenerAttribute_PortRange>();
 			for (int i = 0; i < _ctx.Length("DescribeLoadBalancerUDPListenerAttribute.PortRanges.Length"); i++) {
 				DescribeLoadBalancerUDPListenerAttributeResponse.DescribeLoadBalancerUDPListenerAttribute_PortRange portRange = new DescribeLoadBalancerUDPListenerAttributeResponse.DescribeLoadBalancerUDPListenerAttribute_PortRange();
-				portRange.StartPort = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.PortRanges["+ i +"].StartPort");
 				portRange.EndPort = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.PortRanges["+ i +"].EndPort");
+				portRange.StartPort = _ctx.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.PortRanges["+ i +"].StartPort");
 
 				describeLoadBalancerUDPListenerAttributeResponse_portRanges.Add(portRange);
 			}

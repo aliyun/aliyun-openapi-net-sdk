@@ -48,6 +48,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				backendServer.VbrId = _ctx.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].VbrId");
 				backendServer.ServerRegionId = _ctx.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].ServerRegionId");
 				backendServer.Description = _ctx.StringValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].Description");
+				backendServer.ProxyProtocolV2Enabled = _ctx.BooleanValue("DescribeVServerGroupAttribute.BackendServers["+ i +"].ProxyProtocolV2Enabled");
 
 				describeVServerGroupAttributeResponse_backendServers.Add(backendServer);
 			}

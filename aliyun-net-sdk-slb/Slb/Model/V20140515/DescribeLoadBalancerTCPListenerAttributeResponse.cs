@@ -25,345 +25,87 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class DescribeLoadBalancerTCPListenerAttributeResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? listenerPort;
-
-		private int? backendServerPort;
-
-		private string status;
-
-		private int? bandwidth;
-
-		private string scheduler;
-
-		private string synProxy;
-
-		private int? persistenceTimeout;
-
-		private int? establishedTimeout;
-
-		private string healthCheck;
-
-		private int? healthyThreshold;
-
-		private int? unhealthyThreshold;
-
-		private int? healthCheckConnectTimeout;
-
-		private int? healthCheckConnectPort;
-
-		private int? healthCheckInterval;
-
-		private string healthCheckHttpCode;
-
-		private string healthCheckDomain;
-
-		private string healthCheckURI;
-
-		private string healthCheckType;
-
-		private string healthCheckMethod;
-
-		private int? maxConnection;
-
-		private string vServerGroupId;
-
-		private string masterSlaveServerGroupId;
-
 		private string aclId;
-
-		private string aclType;
 
 		private string aclStatus;
 
-		private string vpcIds;
+		private string aclType;
 
-		private string description;
+		private int? backendServerPort;
+
+		private int? bandwidth;
 
 		private string connectionDrain;
 
 		private int? connectionDrainTimeout;
 
+		private string description;
+
+		private int? establishedTimeout;
+
+		private string failoverStrategy;
+
+		private int? failoverThreshold;
+
+		private string healthCheck;
+
+		private int? healthCheckConnectPort;
+
+		private int? healthCheckConnectTimeout;
+
+		private string healthCheckDomain;
+
+		private string healthCheckHttpCode;
+
+		private int? healthCheckInterval;
+
+		private string healthCheckMethod;
+
+		private bool? healthCheckTcpFastCloseEnabled;
+
+		private string healthCheckType;
+
+		private string healthCheckURI;
+
+		private int? healthyThreshold;
+
+		private int? listenerPort;
+
+		private string masterServerGroupId;
+
+		private bool? masterSlaveModeEnabled;
+
+		private string masterSlaveServerGroupId;
+
+		private int? maxConnection;
+
+		private int? persistenceTimeout;
+
+		private bool? proxyProtocolV2Enabled;
+
+		private bool? proxyProtocolVpcIdEnabled;
+
+		private string requestId;
+
+		private string scheduler;
+
+		private string slaveServerGroupId;
+
+		private string status;
+
+		private string synProxy;
+
+		private int? unhealthyThreshold;
+
+		private string vServerGroupId;
+
+		private string vpcIds;
+
+		private string workingServerGroupId;
+
 		private List<DescribeLoadBalancerTCPListenerAttribute_PortRange> portRanges;
 
 		private List<string> aclIds;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? ListenerPort
-		{
-			get
-			{
-				return listenerPort;
-			}
-			set	
-			{
-				listenerPort = value;
-			}
-		}
-
-		public int? BackendServerPort
-		{
-			get
-			{
-				return backendServerPort;
-			}
-			set	
-			{
-				backendServerPort = value;
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
-
-		public int? Bandwidth
-		{
-			get
-			{
-				return bandwidth;
-			}
-			set	
-			{
-				bandwidth = value;
-			}
-		}
-
-		public string Scheduler
-		{
-			get
-			{
-				return scheduler;
-			}
-			set	
-			{
-				scheduler = value;
-			}
-		}
-
-		public string SynProxy
-		{
-			get
-			{
-				return synProxy;
-			}
-			set	
-			{
-				synProxy = value;
-			}
-		}
-
-		public int? PersistenceTimeout
-		{
-			get
-			{
-				return persistenceTimeout;
-			}
-			set	
-			{
-				persistenceTimeout = value;
-			}
-		}
-
-		public int? EstablishedTimeout
-		{
-			get
-			{
-				return establishedTimeout;
-			}
-			set	
-			{
-				establishedTimeout = value;
-			}
-		}
-
-		public string HealthCheck
-		{
-			get
-			{
-				return healthCheck;
-			}
-			set	
-			{
-				healthCheck = value;
-			}
-		}
-
-		public int? HealthyThreshold
-		{
-			get
-			{
-				return healthyThreshold;
-			}
-			set	
-			{
-				healthyThreshold = value;
-			}
-		}
-
-		public int? UnhealthyThreshold
-		{
-			get
-			{
-				return unhealthyThreshold;
-			}
-			set	
-			{
-				unhealthyThreshold = value;
-			}
-		}
-
-		public int? HealthCheckConnectTimeout
-		{
-			get
-			{
-				return healthCheckConnectTimeout;
-			}
-			set	
-			{
-				healthCheckConnectTimeout = value;
-			}
-		}
-
-		public int? HealthCheckConnectPort
-		{
-			get
-			{
-				return healthCheckConnectPort;
-			}
-			set	
-			{
-				healthCheckConnectPort = value;
-			}
-		}
-
-		public int? HealthCheckInterval
-		{
-			get
-			{
-				return healthCheckInterval;
-			}
-			set	
-			{
-				healthCheckInterval = value;
-			}
-		}
-
-		public string HealthCheckHttpCode
-		{
-			get
-			{
-				return healthCheckHttpCode;
-			}
-			set	
-			{
-				healthCheckHttpCode = value;
-			}
-		}
-
-		public string HealthCheckDomain
-		{
-			get
-			{
-				return healthCheckDomain;
-			}
-			set	
-			{
-				healthCheckDomain = value;
-			}
-		}
-
-		public string HealthCheckURI
-		{
-			get
-			{
-				return healthCheckURI;
-			}
-			set	
-			{
-				healthCheckURI = value;
-			}
-		}
-
-		public string HealthCheckType
-		{
-			get
-			{
-				return healthCheckType;
-			}
-			set	
-			{
-				healthCheckType = value;
-			}
-		}
-
-		public string HealthCheckMethod
-		{
-			get
-			{
-				return healthCheckMethod;
-			}
-			set	
-			{
-				healthCheckMethod = value;
-			}
-		}
-
-		public int? MaxConnection
-		{
-			get
-			{
-				return maxConnection;
-			}
-			set	
-			{
-				maxConnection = value;
-			}
-		}
-
-		public string VServerGroupId
-		{
-			get
-			{
-				return vServerGroupId;
-			}
-			set	
-			{
-				vServerGroupId = value;
-			}
-		}
-
-		public string MasterSlaveServerGroupId
-		{
-			get
-			{
-				return masterSlaveServerGroupId;
-			}
-			set	
-			{
-				masterSlaveServerGroupId = value;
-			}
-		}
 
 		public string AclId
 		{
@@ -374,18 +116,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				aclId = value;
-			}
-		}
-
-		public string AclType
-		{
-			get
-			{
-				return aclType;
-			}
-			set	
-			{
-				aclType = value;
 			}
 		}
 
@@ -401,27 +131,39 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string VpcIds
+		public string AclType
 		{
 			get
 			{
-				return vpcIds;
+				return aclType;
 			}
 			set	
 			{
-				vpcIds = value;
+				aclType = value;
 			}
 		}
 
-		public string Description
+		public int? BackendServerPort
 		{
 			get
 			{
-				return description;
+				return backendServerPort;
 			}
 			set	
 			{
-				description = value;
+				backendServerPort = value;
+			}
+		}
+
+		public int? Bandwidth
+		{
+			get
+			{
+				return bandwidth;
+			}
+			set	
+			{
+				bandwidth = value;
 			}
 		}
 
@@ -446,6 +188,390 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				connectionDrainTimeout = value;
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+			}
+		}
+
+		public int? EstablishedTimeout
+		{
+			get
+			{
+				return establishedTimeout;
+			}
+			set	
+			{
+				establishedTimeout = value;
+			}
+		}
+
+		public string FailoverStrategy
+		{
+			get
+			{
+				return failoverStrategy;
+			}
+			set	
+			{
+				failoverStrategy = value;
+			}
+		}
+
+		public int? FailoverThreshold
+		{
+			get
+			{
+				return failoverThreshold;
+			}
+			set	
+			{
+				failoverThreshold = value;
+			}
+		}
+
+		public string HealthCheck
+		{
+			get
+			{
+				return healthCheck;
+			}
+			set	
+			{
+				healthCheck = value;
+			}
+		}
+
+		public int? HealthCheckConnectPort
+		{
+			get
+			{
+				return healthCheckConnectPort;
+			}
+			set	
+			{
+				healthCheckConnectPort = value;
+			}
+		}
+
+		public int? HealthCheckConnectTimeout
+		{
+			get
+			{
+				return healthCheckConnectTimeout;
+			}
+			set	
+			{
+				healthCheckConnectTimeout = value;
+			}
+		}
+
+		public string HealthCheckDomain
+		{
+			get
+			{
+				return healthCheckDomain;
+			}
+			set	
+			{
+				healthCheckDomain = value;
+			}
+		}
+
+		public string HealthCheckHttpCode
+		{
+			get
+			{
+				return healthCheckHttpCode;
+			}
+			set	
+			{
+				healthCheckHttpCode = value;
+			}
+		}
+
+		public int? HealthCheckInterval
+		{
+			get
+			{
+				return healthCheckInterval;
+			}
+			set	
+			{
+				healthCheckInterval = value;
+			}
+		}
+
+		public string HealthCheckMethod
+		{
+			get
+			{
+				return healthCheckMethod;
+			}
+			set	
+			{
+				healthCheckMethod = value;
+			}
+		}
+
+		public bool? HealthCheckTcpFastCloseEnabled
+		{
+			get
+			{
+				return healthCheckTcpFastCloseEnabled;
+			}
+			set	
+			{
+				healthCheckTcpFastCloseEnabled = value;
+			}
+		}
+
+		public string HealthCheckType
+		{
+			get
+			{
+				return healthCheckType;
+			}
+			set	
+			{
+				healthCheckType = value;
+			}
+		}
+
+		public string HealthCheckURI
+		{
+			get
+			{
+				return healthCheckURI;
+			}
+			set	
+			{
+				healthCheckURI = value;
+			}
+		}
+
+		public int? HealthyThreshold
+		{
+			get
+			{
+				return healthyThreshold;
+			}
+			set	
+			{
+				healthyThreshold = value;
+			}
+		}
+
+		public int? ListenerPort
+		{
+			get
+			{
+				return listenerPort;
+			}
+			set	
+			{
+				listenerPort = value;
+			}
+		}
+
+		public string MasterServerGroupId
+		{
+			get
+			{
+				return masterServerGroupId;
+			}
+			set	
+			{
+				masterServerGroupId = value;
+			}
+		}
+
+		public bool? MasterSlaveModeEnabled
+		{
+			get
+			{
+				return masterSlaveModeEnabled;
+			}
+			set	
+			{
+				masterSlaveModeEnabled = value;
+			}
+		}
+
+		public string MasterSlaveServerGroupId
+		{
+			get
+			{
+				return masterSlaveServerGroupId;
+			}
+			set	
+			{
+				masterSlaveServerGroupId = value;
+			}
+		}
+
+		public int? MaxConnection
+		{
+			get
+			{
+				return maxConnection;
+			}
+			set	
+			{
+				maxConnection = value;
+			}
+		}
+
+		public int? PersistenceTimeout
+		{
+			get
+			{
+				return persistenceTimeout;
+			}
+			set	
+			{
+				persistenceTimeout = value;
+			}
+		}
+
+		public bool? ProxyProtocolV2Enabled
+		{
+			get
+			{
+				return proxyProtocolV2Enabled;
+			}
+			set	
+			{
+				proxyProtocolV2Enabled = value;
+			}
+		}
+
+		public bool? ProxyProtocolVpcIdEnabled
+		{
+			get
+			{
+				return proxyProtocolVpcIdEnabled;
+			}
+			set	
+			{
+				proxyProtocolVpcIdEnabled = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string Scheduler
+		{
+			get
+			{
+				return scheduler;
+			}
+			set	
+			{
+				scheduler = value;
+			}
+		}
+
+		public string SlaveServerGroupId
+		{
+			get
+			{
+				return slaveServerGroupId;
+			}
+			set	
+			{
+				slaveServerGroupId = value;
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+			}
+		}
+
+		public string SynProxy
+		{
+			get
+			{
+				return synProxy;
+			}
+			set	
+			{
+				synProxy = value;
+			}
+		}
+
+		public int? UnhealthyThreshold
+		{
+			get
+			{
+				return unhealthyThreshold;
+			}
+			set	
+			{
+				unhealthyThreshold = value;
+			}
+		}
+
+		public string VServerGroupId
+		{
+			get
+			{
+				return vServerGroupId;
+			}
+			set	
+			{
+				vServerGroupId = value;
+			}
+		}
+
+		public string VpcIds
+		{
+			get
+			{
+				return vpcIds;
+			}
+			set	
+			{
+				vpcIds = value;
+			}
+		}
+
+		public string WorkingServerGroupId
+		{
+			get
+			{
+				return workingServerGroupId;
+			}
+			set	
+			{
+				workingServerGroupId = value;
 			}
 		}
 
@@ -476,21 +602,9 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		public class DescribeLoadBalancerTCPListenerAttribute_PortRange
 		{
 
-			private int? startPort;
-
 			private int? endPort;
 
-			public int? StartPort
-			{
-				get
-				{
-					return startPort;
-				}
-				set	
-				{
-					startPort = value;
-				}
-			}
+			private int? startPort;
 
 			public int? EndPort
 			{
@@ -501,6 +615,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					endPort = value;
+				}
+			}
+
+			public int? StartPort
+			{
+				get
+				{
+					return startPort;
+				}
+				set	
+				{
+					startPort = value;
 				}
 			}
 		}
