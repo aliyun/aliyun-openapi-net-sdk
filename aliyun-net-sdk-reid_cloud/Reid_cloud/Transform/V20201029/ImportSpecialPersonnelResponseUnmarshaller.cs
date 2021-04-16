@@ -31,20 +31,20 @@ namespace Aliyun.Acs.reid_cloud.Transform.V20201029
 			ImportSpecialPersonnelResponse importSpecialPersonnelResponse = new ImportSpecialPersonnelResponse();
 
 			importSpecialPersonnelResponse.HttpResponse = _ctx.HttpResponse;
+			importSpecialPersonnelResponse.Message = _ctx.StringValue("ImportSpecialPersonnel.Message");
+			importSpecialPersonnelResponse.RequestId = _ctx.StringValue("ImportSpecialPersonnel.RequestId");
+			importSpecialPersonnelResponse.DynamicCode = _ctx.StringValue("ImportSpecialPersonnel.DynamicCode");
+			importSpecialPersonnelResponse.DynamicMessage = _ctx.StringValue("ImportSpecialPersonnel.DynamicMessage");
 			importSpecialPersonnelResponse.ErrorCode = _ctx.StringValue("ImportSpecialPersonnel.ErrorCode");
 			importSpecialPersonnelResponse.ErrorMessage = _ctx.StringValue("ImportSpecialPersonnel.ErrorMessage");
-			importSpecialPersonnelResponse.Message = _ctx.StringValue("ImportSpecialPersonnel.Message");
 			importSpecialPersonnelResponse.Code = _ctx.StringValue("ImportSpecialPersonnel.Code");
-			importSpecialPersonnelResponse.DynamicCode = _ctx.StringValue("ImportSpecialPersonnel.DynamicCode");
-			importSpecialPersonnelResponse.RequestId = _ctx.StringValue("ImportSpecialPersonnel.RequestId");
 			importSpecialPersonnelResponse.Success = _ctx.BooleanValue("ImportSpecialPersonnel.Success");
-			importSpecialPersonnelResponse.DynamicMessage = _ctx.StringValue("ImportSpecialPersonnel.DynamicMessage");
 
 			List<ImportSpecialPersonnelResponse.ImportSpecialPersonnel_SpecialPersonnelMap> importSpecialPersonnelResponse_specialPersonnelMaps = new List<ImportSpecialPersonnelResponse.ImportSpecialPersonnel_SpecialPersonnelMap>();
 			for (int i = 0; i < _ctx.Length("ImportSpecialPersonnel.SpecialPersonnelMaps.Length"); i++) {
 				ImportSpecialPersonnelResponse.ImportSpecialPersonnel_SpecialPersonnelMap specialPersonnelMap = new ImportSpecialPersonnelResponse.ImportSpecialPersonnel_SpecialPersonnelMap();
-				specialPersonnelMap.UkId = _ctx.LongValue("ImportSpecialPersonnel.SpecialPersonnelMaps["+ i +"].UkId");
 				specialPersonnelMap.StoreId = _ctx.LongValue("ImportSpecialPersonnel.SpecialPersonnelMaps["+ i +"].StoreId");
+				specialPersonnelMap.UkId = _ctx.LongValue("ImportSpecialPersonnel.SpecialPersonnelMaps["+ i +"].UkId");
 
 				importSpecialPersonnelResponse_specialPersonnelMaps.Add(specialPersonnelMap);
 			}

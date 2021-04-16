@@ -30,7 +30,7 @@ namespace Aliyun.Acs.reid_cloud.Model.V20201029
     public class ImportSpecialPersonnelRequest : RpcAcsRequest<ImportSpecialPersonnelResponse>
     {
         public ImportSpecialPersonnelRequest()
-            : base("reid_cloud", "2020-10-29", "ImportSpecialPersonnel", "1.1.9", "openAPI")
+            : base("reid_cloud", "2020-10-29", "ImportSpecialPersonnel", "1.2.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,6 +45,8 @@ namespace Aliyun.Acs.reid_cloud.Model.V20201029
 		private string description;
 
 		private string externalId;
+
+		private long? source;
 
 		private string personType;
 
@@ -92,6 +94,19 @@ namespace Aliyun.Acs.reid_cloud.Model.V20201029
 			{
 				externalId = value;
 				DictionaryUtil.Add(BodyParameters, "ExternalId", value);
+			}
+		}
+
+		public long? Source
+		{
+			get
+			{
+				return source;
+			}
+			set	
+			{
+				source = value;
+				DictionaryUtil.Add(BodyParameters, "Source", value.ToString());
 			}
 		}
 

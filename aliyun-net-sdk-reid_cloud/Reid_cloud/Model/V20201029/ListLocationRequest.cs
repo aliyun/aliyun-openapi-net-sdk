@@ -30,7 +30,7 @@ namespace Aliyun.Acs.reid_cloud.Model.V20201029
     public class ListLocationRequest : RpcAcsRequest<ListLocationResponse>
     {
         public ListLocationRequest()
-            : base("reid_cloud", "2020-10-29", "ListLocation", "1.1.9", "openAPI")
+            : base("reid_cloud", "2020-10-29", "ListLocation", "1.2.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

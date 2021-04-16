@@ -27,10 +27,10 @@ using Aliyun.Acs.reid_cloud.Transform.V20201029;
 
 namespace Aliyun.Acs.reid_cloud.Model.V20201029
 {
-    public class DescribeIpcLiveAddressRequest : RpcAcsRequest<DescribeIpcLiveAddressResponse>
+    public class ListSpecialPersonnelByImageRequest : RpcAcsRequest<ListSpecialPersonnelByImageResponse>
     {
-        public DescribeIpcLiveAddressRequest()
-            : base("reid_cloud", "2020-10-29", "DescribeIpcLiveAddress", "1.2.0", "openAPI")
+        public ListSpecialPersonnelByImageRequest()
+            : base("reid_cloud", "2020-10-29", "ListSpecialPersonnelByImage", "1.2.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,22 +40,24 @@ namespace Aliyun.Acs.reid_cloud.Model.V20201029
 			Method = MethodType.POST;
         }
 
-		private long? ipcId;
+		private long? source;
 
 		private long? storeId;
 
-		private string protocolType;
+		private string personType;
 
-		public long? IpcId
+		private string imageUrl;
+
+		public long? Source
 		{
 			get
 			{
-				return ipcId;
+				return source;
 			}
 			set	
 			{
-				ipcId = value;
-				DictionaryUtil.Add(BodyParameters, "IpcId", value.ToString());
+				source = value;
+				DictionaryUtil.Add(BodyParameters, "Source", value.ToString());
 			}
 		}
 
@@ -72,16 +74,29 @@ namespace Aliyun.Acs.reid_cloud.Model.V20201029
 			}
 		}
 
-		public string ProtocolType
+		public string PersonType
 		{
 			get
 			{
-				return protocolType;
+				return personType;
 			}
 			set	
 			{
-				protocolType = value;
-				DictionaryUtil.Add(BodyParameters, "ProtocolType", value);
+				personType = value;
+				DictionaryUtil.Add(BodyParameters, "PersonType", value);
+			}
+		}
+
+		public string ImageUrl
+		{
+			get
+			{
+				return imageUrl;
+			}
+			set	
+			{
+				imageUrl = value;
+				DictionaryUtil.Add(BodyParameters, "ImageUrl", value);
 			}
 		}
 
@@ -90,9 +105,9 @@ namespace Aliyun.Acs.reid_cloud.Model.V20201029
 			return false;
 		}
 
-        public override DescribeIpcLiveAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListSpecialPersonnelByImageResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeIpcLiveAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListSpecialPersonnelByImageResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

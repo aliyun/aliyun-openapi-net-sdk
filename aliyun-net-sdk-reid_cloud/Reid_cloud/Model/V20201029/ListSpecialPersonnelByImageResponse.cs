@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.reid_cloud.Model.V20201029
 {
-	public class ImportSpecialPersonnelResponse : AcsResponse
+	public class ListSpecialPersonnelByImageResponse : AcsResponse
 	{
 
 		private string message;
@@ -41,7 +41,7 @@ namespace Aliyun.Acs.reid_cloud.Model.V20201029
 
 		private bool? success;
 
-		private List<ImportSpecialPersonnel_SpecialPersonnelMap> specialPersonnelMaps;
+		private List<ListSpecialPersonnelByImage_ListPersonResultItem> listPersonResultItems;
 
 		public string Message
 		{
@@ -139,34 +139,34 @@ namespace Aliyun.Acs.reid_cloud.Model.V20201029
 			}
 		}
 
-		public List<ImportSpecialPersonnel_SpecialPersonnelMap> SpecialPersonnelMaps
+		public List<ListSpecialPersonnelByImage_ListPersonResultItem> ListPersonResultItems
 		{
 			get
 			{
-				return specialPersonnelMaps;
+				return listPersonResultItems;
 			}
 			set	
 			{
-				specialPersonnelMaps = value;
+				listPersonResultItems = value;
 			}
 		}
 
-		public class ImportSpecialPersonnel_SpecialPersonnelMap
+		public class ListSpecialPersonnelByImage_ListPersonResultItem
 		{
 
-			private long? storeId;
+			private float? score;
 
 			private long? ukId;
 
-			public long? StoreId
+			public float? Score
 			{
 				get
 				{
-					return storeId;
+					return score;
 				}
 				set	
 				{
-					storeId = value;
+					score = value;
 				}
 			}
 
