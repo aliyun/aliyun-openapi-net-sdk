@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private string nextToken;
 
+		private bool? zoneAffinityEnabled;
+
 		private string serviceName;
 
 		private int? maxResults;
@@ -104,6 +106,19 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			{
 				nextToken = value;
 				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+			}
+		}
+
+		public bool? ZoneAffinityEnabled
+		{
+			get
+			{
+				return zoneAffinityEnabled;
+			}
+			set	
+			{
+				zoneAffinityEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneAffinityEnabled", value.ToString());
 			}
 		}
 

@@ -31,15 +31,16 @@ namespace Aliyun.Acs.Privatelink.Transform.V20200415
 			CreateVpcEndpointServiceResponse createVpcEndpointServiceResponse = new CreateVpcEndpointServiceResponse();
 
 			createVpcEndpointServiceResponse.HttpResponse = _ctx.HttpResponse;
-			createVpcEndpointServiceResponse.AutoAcceptEnabled = _ctx.BooleanValue("CreateVpcEndpointService.AutoAcceptEnabled");
-			createVpcEndpointServiceResponse.CreateTime = _ctx.StringValue("CreateVpcEndpointService.CreateTime");
-			createVpcEndpointServiceResponse.RequestId = _ctx.StringValue("CreateVpcEndpointService.RequestId");
 			createVpcEndpointServiceResponse.ServiceBusinessStatus = _ctx.StringValue("CreateVpcEndpointService.ServiceBusinessStatus");
+			createVpcEndpointServiceResponse.RequestId = _ctx.StringValue("CreateVpcEndpointService.RequestId");
+			createVpcEndpointServiceResponse.ServiceName = _ctx.StringValue("CreateVpcEndpointService.ServiceName");
 			createVpcEndpointServiceResponse.ServiceDescription = _ctx.StringValue("CreateVpcEndpointService.ServiceDescription");
+			createVpcEndpointServiceResponse.ServiceStatus = _ctx.StringValue("CreateVpcEndpointService.ServiceStatus");
+			createVpcEndpointServiceResponse.CreateTime = _ctx.StringValue("CreateVpcEndpointService.CreateTime");
+			createVpcEndpointServiceResponse.ZoneAffinityEnabled = _ctx.BooleanValue("CreateVpcEndpointService.ZoneAffinityEnabled");
 			createVpcEndpointServiceResponse.ServiceDomain = _ctx.StringValue("CreateVpcEndpointService.ServiceDomain");
 			createVpcEndpointServiceResponse.ServiceId = _ctx.StringValue("CreateVpcEndpointService.ServiceId");
-			createVpcEndpointServiceResponse.ServiceName = _ctx.StringValue("CreateVpcEndpointService.ServiceName");
-			createVpcEndpointServiceResponse.ServiceStatus = _ctx.StringValue("CreateVpcEndpointService.ServiceStatus");
+			createVpcEndpointServiceResponse.AutoAcceptEnabled = _ctx.BooleanValue("CreateVpcEndpointService.AutoAcceptEnabled");
         
 			return createVpcEndpointServiceResponse;
         }

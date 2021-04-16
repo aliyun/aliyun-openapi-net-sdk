@@ -27,88 +27,27 @@ using Aliyun.Acs.Privatelink.Transform.V20200415;
 
 namespace Aliyun.Acs.Privatelink.Model.V20200415
 {
-    public class AddUserToVpcEndpointServiceRequest : RpcAcsRequest<AddUserToVpcEndpointServiceResponse>
+    public class CheckProductOpenRequest : RpcAcsRequest<CheckProductOpenResponse>
     {
-        public AddUserToVpcEndpointServiceRequest()
-            : base("Privatelink", "2020-04-15", "AddUserToVpcEndpointService", "privatelink", "openAPI")
+        public CheckProductOpenRequest()
+            : base("Privatelink", "2020-04-15", "CheckProductOpen", "privatelink", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Privatelink.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Privatelink.Endpoint.endpointRegionalType, null);
             }
-			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
-
-		private string clientToken;
-
-		private long? userId;
-
-		private bool? dryRun;
-
-		private string serviceId;
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public long? UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value.ToString());
-			}
-		}
-
-		public bool? DryRun
-		{
-			get
-			{
-				return dryRun;
-			}
-			set	
-			{
-				dryRun = value;
-				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
-			}
-		}
-
-		public string ServiceId
-		{
-			get
-			{
-				return serviceId;
-			}
-			set	
-			{
-				serviceId = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceId", value);
-			}
-		}
 
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override AddUserToVpcEndpointServiceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CheckProductOpenResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AddUserToVpcEndpointServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CheckProductOpenResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

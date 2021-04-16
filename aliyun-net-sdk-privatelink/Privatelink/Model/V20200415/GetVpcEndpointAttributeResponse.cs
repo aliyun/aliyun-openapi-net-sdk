@@ -25,9 +25,13 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 	public class GetVpcEndpointAttributeResponse : AcsResponse
 	{
 
-		private int? bandwidth;
+		private string payer;
 
-		private string connectionStatus;
+		private string requestId;
+
+		private string endpointDomain;
+
+		private bool? resourceOwner;
 
 		private string createTime;
 
@@ -35,49 +39,71 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private string endpointDescription;
 
-		private string endpointDomain;
-
-		private string endpointId;
-
-		private string endpointName;
+		private string serviceId;
 
 		private string endpointStatus;
 
-		private string requestId;
-
-		private string serviceId;
-
-		private string serviceName;
+		private string endpointName;
 
 		private string vpcId;
 
+		private string serviceName;
+
+		private string endpointId;
+
+		private int? bandwidth;
+
 		private string regionId;
 
-		private string payer;
+		private string connectionStatus;
 
-		private bool? resourceOwner;
+		private bool? zoneAffinityEnabled;
 
-		public int? Bandwidth
+		public string Payer
 		{
 			get
 			{
-				return bandwidth;
+				return payer;
 			}
 			set	
 			{
-				bandwidth = value;
+				payer = value;
 			}
 		}
 
-		public string ConnectionStatus
+		public string RequestId
 		{
 			get
 			{
-				return connectionStatus;
+				return requestId;
 			}
 			set	
 			{
-				connectionStatus = value;
+				requestId = value;
+			}
+		}
+
+		public string EndpointDomain
+		{
+			get
+			{
+				return endpointDomain;
+			}
+			set	
+			{
+				endpointDomain = value;
+			}
+		}
+
+		public bool? ResourceOwner
+		{
+			get
+			{
+				return resourceOwner;
+			}
+			set	
+			{
+				resourceOwner = value;
 			}
 		}
 
@@ -117,39 +143,15 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string EndpointDomain
+		public string ServiceId
 		{
 			get
 			{
-				return endpointDomain;
+				return serviceId;
 			}
 			set	
 			{
-				endpointDomain = value;
-			}
-		}
-
-		public string EndpointId
-		{
-			get
-			{
-				return endpointId;
-			}
-			set	
-			{
-				endpointId = value;
-			}
-		}
-
-		public string EndpointName
-		{
-			get
-			{
-				return endpointName;
-			}
-			set	
-			{
-				endpointName = value;
+				serviceId = value;
 			}
 		}
 
@@ -165,39 +167,15 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string RequestId
+		public string EndpointName
 		{
 			get
 			{
-				return requestId;
+				return endpointName;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string ServiceId
-		{
-			get
-			{
-				return serviceId;
-			}
-			set	
-			{
-				serviceId = value;
-			}
-		}
-
-		public string ServiceName
-		{
-			get
-			{
-				return serviceName;
-			}
-			set	
-			{
-				serviceName = value;
+				endpointName = value;
 			}
 		}
 
@@ -213,6 +191,42 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
+		public string ServiceName
+		{
+			get
+			{
+				return serviceName;
+			}
+			set	
+			{
+				serviceName = value;
+			}
+		}
+
+		public string EndpointId
+		{
+			get
+			{
+				return endpointId;
+			}
+			set	
+			{
+				endpointId = value;
+			}
+		}
+
+		public int? Bandwidth
+		{
+			get
+			{
+				return bandwidth;
+			}
+			set	
+			{
+				bandwidth = value;
+			}
+		}
+
 		public string RegionId
 		{
 			get
@@ -225,27 +239,27 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string Payer
+		public string ConnectionStatus
 		{
 			get
 			{
-				return payer;
+				return connectionStatus;
 			}
 			set	
 			{
-				payer = value;
+				connectionStatus = value;
 			}
 		}
 
-		public bool? ResourceOwner
+		public bool? ZoneAffinityEnabled
 		{
 			get
 			{
-				return resourceOwner;
+				return zoneAffinityEnabled;
 			}
 			set	
 			{
-				resourceOwner = value;
+				zoneAffinityEnabled = value;
 			}
 		}
 	}

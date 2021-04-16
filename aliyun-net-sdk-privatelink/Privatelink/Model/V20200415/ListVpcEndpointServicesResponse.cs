@@ -25,23 +25,23 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 	public class ListVpcEndpointServicesResponse : AcsResponse
 	{
 
-		private string maxResults;
+		private string requestId;
 
 		private string nextToken;
 
-		private string requestId;
+		private string maxResults;
 
 		private List<ListVpcEndpointServices_Service> services;
 
-		public string MaxResults
+		public string RequestId
 		{
 			get
 			{
-				return maxResults;
+				return requestId;
 			}
 			set	
 			{
-				maxResults = value;
+				requestId = value;
 			}
 		}
 
@@ -57,15 +57,15 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string RequestId
+		public string MaxResults
 		{
 			get
 			{
-				return requestId;
+				return maxResults;
 			}
 			set	
 			{
-				requestId = value;
+				maxResults = value;
 			}
 		}
 
@@ -84,113 +84,43 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 		public class ListVpcEndpointServices_Service
 		{
 
-			private bool? autoAcceptEnabled;
-
-			private int? connectBandwidth;
-
-			private string createTime;
-
-			private int? maxBandwidth;
-
-			private int? minBandwidth;
-
-			private string regionId;
-
-			private string serviceBusinessStatus;
+			private string payer;
 
 			private string serviceDescription;
 
+			private int? maxBandwidth;
+
+			private string createTime;
+
 			private string serviceDomain;
 
+			private int? minBandwidth;
+
 			private string serviceId;
+
+			private bool? autoAcceptEnabled;
+
+			private string serviceBusinessStatus;
 
 			private string serviceName;
 
 			private string serviceStatus;
 
-			private string payer;
+			private int? connectBandwidth;
 
-			public bool? AutoAcceptEnabled
+			private string regionId;
+
+			private bool? zoneAffinityEnabled;
+
+			public string Payer
 			{
 				get
 				{
-					return autoAcceptEnabled;
+					return payer;
 				}
 				set	
 				{
-					autoAcceptEnabled = value;
-				}
-			}
-
-			public int? ConnectBandwidth
-			{
-				get
-				{
-					return connectBandwidth;
-				}
-				set	
-				{
-					connectBandwidth = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public int? MaxBandwidth
-			{
-				get
-				{
-					return maxBandwidth;
-				}
-				set	
-				{
-					maxBandwidth = value;
-				}
-			}
-
-			public int? MinBandwidth
-			{
-				get
-				{
-					return minBandwidth;
-				}
-				set	
-				{
-					minBandwidth = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string ServiceBusinessStatus
-			{
-				get
-				{
-					return serviceBusinessStatus;
-				}
-				set	
-				{
-					serviceBusinessStatus = value;
+					payer = value;
 				}
 			}
 
@@ -206,6 +136,30 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				}
 			}
 
+			public int? MaxBandwidth
+			{
+				get
+				{
+					return maxBandwidth;
+				}
+				set	
+				{
+					maxBandwidth = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
 			public string ServiceDomain
 			{
 				get
@@ -218,6 +172,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				}
 			}
 
+			public int? MinBandwidth
+			{
+				get
+				{
+					return minBandwidth;
+				}
+				set	
+				{
+					minBandwidth = value;
+				}
+			}
+
 			public string ServiceId
 			{
 				get
@@ -227,6 +193,30 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				set	
 				{
 					serviceId = value;
+				}
+			}
+
+			public bool? AutoAcceptEnabled
+			{
+				get
+				{
+					return autoAcceptEnabled;
+				}
+				set	
+				{
+					autoAcceptEnabled = value;
+				}
+			}
+
+			public string ServiceBusinessStatus
+			{
+				get
+				{
+					return serviceBusinessStatus;
+				}
+				set	
+				{
+					serviceBusinessStatus = value;
 				}
 			}
 
@@ -254,15 +244,39 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				}
 			}
 
-			public string Payer
+			public int? ConnectBandwidth
 			{
 				get
 				{
-					return payer;
+					return connectBandwidth;
 				}
 				set	
 				{
-					payer = value;
+					connectBandwidth = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public bool? ZoneAffinityEnabled
+			{
+				get
+				{
+					return zoneAffinityEnabled;
+				}
+				set	
+				{
+					zoneAffinityEnabled = value;
 				}
 			}
 		}

@@ -31,26 +31,27 @@ namespace Aliyun.Acs.Privatelink.Transform.V20200415
 			ListVpcEndpointServicesResponse listVpcEndpointServicesResponse = new ListVpcEndpointServicesResponse();
 
 			listVpcEndpointServicesResponse.HttpResponse = _ctx.HttpResponse;
-			listVpcEndpointServicesResponse.MaxResults = _ctx.StringValue("ListVpcEndpointServices.MaxResults");
-			listVpcEndpointServicesResponse.NextToken = _ctx.StringValue("ListVpcEndpointServices.NextToken");
 			listVpcEndpointServicesResponse.RequestId = _ctx.StringValue("ListVpcEndpointServices.RequestId");
+			listVpcEndpointServicesResponse.NextToken = _ctx.StringValue("ListVpcEndpointServices.NextToken");
+			listVpcEndpointServicesResponse.MaxResults = _ctx.StringValue("ListVpcEndpointServices.MaxResults");
 
 			List<ListVpcEndpointServicesResponse.ListVpcEndpointServices_Service> listVpcEndpointServicesResponse_services = new List<ListVpcEndpointServicesResponse.ListVpcEndpointServices_Service>();
 			for (int i = 0; i < _ctx.Length("ListVpcEndpointServices.Services.Length"); i++) {
 				ListVpcEndpointServicesResponse.ListVpcEndpointServices_Service service = new ListVpcEndpointServicesResponse.ListVpcEndpointServices_Service();
-				service.AutoAcceptEnabled = _ctx.BooleanValue("ListVpcEndpointServices.Services["+ i +"].AutoAcceptEnabled");
-				service.ConnectBandwidth = _ctx.IntegerValue("ListVpcEndpointServices.Services["+ i +"].ConnectBandwidth");
-				service.CreateTime = _ctx.StringValue("ListVpcEndpointServices.Services["+ i +"].CreateTime");
-				service.MaxBandwidth = _ctx.IntegerValue("ListVpcEndpointServices.Services["+ i +"].MaxBandwidth");
-				service.MinBandwidth = _ctx.IntegerValue("ListVpcEndpointServices.Services["+ i +"].MinBandwidth");
-				service.RegionId = _ctx.StringValue("ListVpcEndpointServices.Services["+ i +"].RegionId");
-				service.ServiceBusinessStatus = _ctx.StringValue("ListVpcEndpointServices.Services["+ i +"].ServiceBusinessStatus");
+				service.Payer = _ctx.StringValue("ListVpcEndpointServices.Services["+ i +"].Payer");
 				service.ServiceDescription = _ctx.StringValue("ListVpcEndpointServices.Services["+ i +"].ServiceDescription");
+				service.MaxBandwidth = _ctx.IntegerValue("ListVpcEndpointServices.Services["+ i +"].MaxBandwidth");
+				service.CreateTime = _ctx.StringValue("ListVpcEndpointServices.Services["+ i +"].CreateTime");
 				service.ServiceDomain = _ctx.StringValue("ListVpcEndpointServices.Services["+ i +"].ServiceDomain");
+				service.MinBandwidth = _ctx.IntegerValue("ListVpcEndpointServices.Services["+ i +"].MinBandwidth");
 				service.ServiceId = _ctx.StringValue("ListVpcEndpointServices.Services["+ i +"].ServiceId");
+				service.AutoAcceptEnabled = _ctx.BooleanValue("ListVpcEndpointServices.Services["+ i +"].AutoAcceptEnabled");
+				service.ServiceBusinessStatus = _ctx.StringValue("ListVpcEndpointServices.Services["+ i +"].ServiceBusinessStatus");
 				service.ServiceName = _ctx.StringValue("ListVpcEndpointServices.Services["+ i +"].ServiceName");
 				service.ServiceStatus = _ctx.StringValue("ListVpcEndpointServices.Services["+ i +"].ServiceStatus");
-				service.Payer = _ctx.StringValue("ListVpcEndpointServices.Services["+ i +"].Payer");
+				service.ConnectBandwidth = _ctx.IntegerValue("ListVpcEndpointServices.Services["+ i +"].ConnectBandwidth");
+				service.RegionId = _ctx.StringValue("ListVpcEndpointServices.Services["+ i +"].RegionId");
+				service.ZoneAffinityEnabled = _ctx.BooleanValue("ListVpcEndpointServices.Services["+ i +"].ZoneAffinityEnabled");
 
 				listVpcEndpointServicesResponse_services.Add(service);
 			}

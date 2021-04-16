@@ -31,22 +31,23 @@ namespace Aliyun.Acs.Privatelink.Transform.V20200415
 			GetVpcEndpointAttributeResponse getVpcEndpointAttributeResponse = new GetVpcEndpointAttributeResponse();
 
 			getVpcEndpointAttributeResponse.HttpResponse = _ctx.HttpResponse;
-			getVpcEndpointAttributeResponse.Bandwidth = _ctx.IntegerValue("GetVpcEndpointAttribute.Bandwidth");
-			getVpcEndpointAttributeResponse.ConnectionStatus = _ctx.StringValue("GetVpcEndpointAttribute.ConnectionStatus");
+			getVpcEndpointAttributeResponse.Payer = _ctx.StringValue("GetVpcEndpointAttribute.Payer");
+			getVpcEndpointAttributeResponse.RequestId = _ctx.StringValue("GetVpcEndpointAttribute.RequestId");
+			getVpcEndpointAttributeResponse.EndpointDomain = _ctx.StringValue("GetVpcEndpointAttribute.EndpointDomain");
+			getVpcEndpointAttributeResponse.ResourceOwner = _ctx.BooleanValue("GetVpcEndpointAttribute.ResourceOwner");
 			getVpcEndpointAttributeResponse.CreateTime = _ctx.StringValue("GetVpcEndpointAttribute.CreateTime");
 			getVpcEndpointAttributeResponse.EndpointBusinessStatus = _ctx.StringValue("GetVpcEndpointAttribute.EndpointBusinessStatus");
 			getVpcEndpointAttributeResponse.EndpointDescription = _ctx.StringValue("GetVpcEndpointAttribute.EndpointDescription");
-			getVpcEndpointAttributeResponse.EndpointDomain = _ctx.StringValue("GetVpcEndpointAttribute.EndpointDomain");
-			getVpcEndpointAttributeResponse.EndpointId = _ctx.StringValue("GetVpcEndpointAttribute.EndpointId");
-			getVpcEndpointAttributeResponse.EndpointName = _ctx.StringValue("GetVpcEndpointAttribute.EndpointName");
-			getVpcEndpointAttributeResponse.EndpointStatus = _ctx.StringValue("GetVpcEndpointAttribute.EndpointStatus");
-			getVpcEndpointAttributeResponse.RequestId = _ctx.StringValue("GetVpcEndpointAttribute.RequestId");
 			getVpcEndpointAttributeResponse.ServiceId = _ctx.StringValue("GetVpcEndpointAttribute.ServiceId");
-			getVpcEndpointAttributeResponse.ServiceName = _ctx.StringValue("GetVpcEndpointAttribute.ServiceName");
+			getVpcEndpointAttributeResponse.EndpointStatus = _ctx.StringValue("GetVpcEndpointAttribute.EndpointStatus");
+			getVpcEndpointAttributeResponse.EndpointName = _ctx.StringValue("GetVpcEndpointAttribute.EndpointName");
 			getVpcEndpointAttributeResponse.VpcId = _ctx.StringValue("GetVpcEndpointAttribute.VpcId");
+			getVpcEndpointAttributeResponse.ServiceName = _ctx.StringValue("GetVpcEndpointAttribute.ServiceName");
+			getVpcEndpointAttributeResponse.EndpointId = _ctx.StringValue("GetVpcEndpointAttribute.EndpointId");
+			getVpcEndpointAttributeResponse.Bandwidth = _ctx.IntegerValue("GetVpcEndpointAttribute.Bandwidth");
 			getVpcEndpointAttributeResponse.RegionId = _ctx.StringValue("GetVpcEndpointAttribute.RegionId");
-			getVpcEndpointAttributeResponse.Payer = _ctx.StringValue("GetVpcEndpointAttribute.Payer");
-			getVpcEndpointAttributeResponse.ResourceOwner = _ctx.BooleanValue("GetVpcEndpointAttribute.ResourceOwner");
+			getVpcEndpointAttributeResponse.ConnectionStatus = _ctx.StringValue("GetVpcEndpointAttribute.ConnectionStatus");
+			getVpcEndpointAttributeResponse.ZoneAffinityEnabled = _ctx.BooleanValue("GetVpcEndpointAttribute.ZoneAffinityEnabled");
         
 			return getVpcEndpointAttributeResponse;
         }

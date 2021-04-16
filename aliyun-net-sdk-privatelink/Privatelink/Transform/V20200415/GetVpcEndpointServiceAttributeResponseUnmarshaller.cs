@@ -31,20 +31,21 @@ namespace Aliyun.Acs.Privatelink.Transform.V20200415
 			GetVpcEndpointServiceAttributeResponse getVpcEndpointServiceAttributeResponse = new GetVpcEndpointServiceAttributeResponse();
 
 			getVpcEndpointServiceAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			getVpcEndpointServiceAttributeResponse.Payer = _ctx.StringValue("GetVpcEndpointServiceAttribute.Payer");
 			getVpcEndpointServiceAttributeResponse.RequestId = _ctx.StringValue("GetVpcEndpointServiceAttribute.RequestId");
-			getVpcEndpointServiceAttributeResponse.ServiceId = _ctx.StringValue("GetVpcEndpointServiceAttribute.ServiceId");
-			getVpcEndpointServiceAttributeResponse.ServiceName = _ctx.StringValue("GetVpcEndpointServiceAttribute.ServiceName");
-			getVpcEndpointServiceAttributeResponse.ServiceDomain = _ctx.StringValue("GetVpcEndpointServiceAttribute.ServiceDomain");
 			getVpcEndpointServiceAttributeResponse.ServiceDescription = _ctx.StringValue("GetVpcEndpointServiceAttribute.ServiceDescription");
-			getVpcEndpointServiceAttributeResponse.ServiceBusinessStatus = _ctx.StringValue("GetVpcEndpointServiceAttribute.ServiceBusinessStatus");
-			getVpcEndpointServiceAttributeResponse.ServiceStatus = _ctx.StringValue("GetVpcEndpointServiceAttribute.ServiceStatus");
-			getVpcEndpointServiceAttributeResponse.AutoAcceptEnabled = _ctx.BooleanValue("GetVpcEndpointServiceAttribute.AutoAcceptEnabled");
-			getVpcEndpointServiceAttributeResponse.CreateTime = _ctx.StringValue("GetVpcEndpointServiceAttribute.CreateTime");
 			getVpcEndpointServiceAttributeResponse.MaxBandwidth = _ctx.IntegerValue("GetVpcEndpointServiceAttribute.MaxBandwidth");
+			getVpcEndpointServiceAttributeResponse.CreateTime = _ctx.StringValue("GetVpcEndpointServiceAttribute.CreateTime");
+			getVpcEndpointServiceAttributeResponse.ServiceDomain = _ctx.StringValue("GetVpcEndpointServiceAttribute.ServiceDomain");
 			getVpcEndpointServiceAttributeResponse.MinBandwidth = _ctx.IntegerValue("GetVpcEndpointServiceAttribute.MinBandwidth");
+			getVpcEndpointServiceAttributeResponse.ServiceId = _ctx.StringValue("GetVpcEndpointServiceAttribute.ServiceId");
+			getVpcEndpointServiceAttributeResponse.AutoAcceptEnabled = _ctx.BooleanValue("GetVpcEndpointServiceAttribute.AutoAcceptEnabled");
+			getVpcEndpointServiceAttributeResponse.ServiceBusinessStatus = _ctx.StringValue("GetVpcEndpointServiceAttribute.ServiceBusinessStatus");
+			getVpcEndpointServiceAttributeResponse.ServiceName = _ctx.StringValue("GetVpcEndpointServiceAttribute.ServiceName");
+			getVpcEndpointServiceAttributeResponse.ServiceStatus = _ctx.StringValue("GetVpcEndpointServiceAttribute.ServiceStatus");
 			getVpcEndpointServiceAttributeResponse.ConnectBandwidth = _ctx.IntegerValue("GetVpcEndpointServiceAttribute.ConnectBandwidth");
 			getVpcEndpointServiceAttributeResponse.RegionId = _ctx.StringValue("GetVpcEndpointServiceAttribute.RegionId");
-			getVpcEndpointServiceAttributeResponse.Payer = _ctx.StringValue("GetVpcEndpointServiceAttribute.Payer");
+			getVpcEndpointServiceAttributeResponse.ZoneAffinityEnabled = _ctx.BooleanValue("GetVpcEndpointServiceAttribute.ZoneAffinityEnabled");
 
 			List<string> getVpcEndpointServiceAttributeResponse_zones = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetVpcEndpointServiceAttribute.Zones.Length"); i++) {

@@ -25,23 +25,23 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 	public class ListVpcEndpointsResponse : AcsResponse
 	{
 
-		private string maxResults;
+		private string requestId;
 
 		private string nextToken;
 
-		private string requestId;
+		private string maxResults;
 
 		private List<ListVpcEndpoints_Endpoint> endpoints;
 
-		public string MaxResults
+		public string RequestId
 		{
 			get
 			{
-				return maxResults;
+				return requestId;
 			}
 			set	
 			{
-				maxResults = value;
+				requestId = value;
 			}
 		}
 
@@ -57,15 +57,15 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string RequestId
+		public string MaxResults
 		{
 			get
 			{
-				return requestId;
+				return maxResults;
 			}
 			set	
 			{
-				requestId = value;
+				maxResults = value;
 			}
 		}
 
@@ -84,93 +84,35 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 		public class ListVpcEndpoints_Endpoint
 		{
 
-			private string endpointId;
-
-			private string endpointName;
-
-			private string endpointDescription;
-
-			private string endpointStatus;
-
-			private string endpointBusinessStatus;
-
 			private string endpointDomain;
-
-			private long? bandwidth;
-
-			private string connectionStatus;
-
-			private string serviceId;
-
-			private string serviceName;
-
-			private string vpcId;
-
-			private string createTime;
-
-			private string regionId;
 
 			private bool? resourceOwner;
 
-			public string EndpointId
-			{
-				get
-				{
-					return endpointId;
-				}
-				set	
-				{
-					endpointId = value;
-				}
-			}
+			private string createTime;
 
-			public string EndpointName
-			{
-				get
-				{
-					return endpointName;
-				}
-				set	
-				{
-					endpointName = value;
-				}
-			}
+			private string endpointBusinessStatus;
 
-			public string EndpointDescription
-			{
-				get
-				{
-					return endpointDescription;
-				}
-				set	
-				{
-					endpointDescription = value;
-				}
-			}
+			private string endpointDescription;
 
-			public string EndpointStatus
-			{
-				get
-				{
-					return endpointStatus;
-				}
-				set	
-				{
-					endpointStatus = value;
-				}
-			}
+			private string serviceId;
 
-			public string EndpointBusinessStatus
-			{
-				get
-				{
-					return endpointBusinessStatus;
-				}
-				set	
-				{
-					endpointBusinessStatus = value;
-				}
-			}
+			private string endpointStatus;
+
+			private string endpointName;
+
+			private string vpcId;
+
+			private string serviceName;
+
+			private string endpointId;
+
+			private long? bandwidth;
+
+			private string regionId;
+
+			private string connectionStatus;
+
+			private bool? zoneAffinityEnabled;
 
 			public string EndpointDomain
 			{
@@ -184,63 +126,15 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				}
 			}
 
-			public long? Bandwidth
+			public bool? ResourceOwner
 			{
 				get
 				{
-					return bandwidth;
+					return resourceOwner;
 				}
 				set	
 				{
-					bandwidth = value;
-				}
-			}
-
-			public string ConnectionStatus
-			{
-				get
-				{
-					return connectionStatus;
-				}
-				set	
-				{
-					connectionStatus = value;
-				}
-			}
-
-			public string ServiceId
-			{
-				get
-				{
-					return serviceId;
-				}
-				set	
-				{
-					serviceId = value;
-				}
-			}
-
-			public string ServiceName
-			{
-				get
-				{
-					return serviceName;
-				}
-				set	
-				{
-					serviceName = value;
-				}
-			}
-
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
+					resourceOwner = value;
 				}
 			}
 
@@ -256,6 +150,114 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				}
 			}
 
+			public string EndpointBusinessStatus
+			{
+				get
+				{
+					return endpointBusinessStatus;
+				}
+				set	
+				{
+					endpointBusinessStatus = value;
+				}
+			}
+
+			public string EndpointDescription
+			{
+				get
+				{
+					return endpointDescription;
+				}
+				set	
+				{
+					endpointDescription = value;
+				}
+			}
+
+			public string ServiceId
+			{
+				get
+				{
+					return serviceId;
+				}
+				set	
+				{
+					serviceId = value;
+				}
+			}
+
+			public string EndpointStatus
+			{
+				get
+				{
+					return endpointStatus;
+				}
+				set	
+				{
+					endpointStatus = value;
+				}
+			}
+
+			public string EndpointName
+			{
+				get
+				{
+					return endpointName;
+				}
+				set	
+				{
+					endpointName = value;
+				}
+			}
+
+			public string VpcId
+			{
+				get
+				{
+					return vpcId;
+				}
+				set	
+				{
+					vpcId = value;
+				}
+			}
+
+			public string ServiceName
+			{
+				get
+				{
+					return serviceName;
+				}
+				set	
+				{
+					serviceName = value;
+				}
+			}
+
+			public string EndpointId
+			{
+				get
+				{
+					return endpointId;
+				}
+				set	
+				{
+					endpointId = value;
+				}
+			}
+
+			public long? Bandwidth
+			{
+				get
+				{
+					return bandwidth;
+				}
+				set	
+				{
+					bandwidth = value;
+				}
+			}
+
 			public string RegionId
 			{
 				get
@@ -268,15 +270,27 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				}
 			}
 
-			public bool? ResourceOwner
+			public string ConnectionStatus
 			{
 				get
 				{
-					return resourceOwner;
+					return connectionStatus;
 				}
 				set	
 				{
-					resourceOwner = value;
+					connectionStatus = value;
+				}
+			}
+
+			public bool? ZoneAffinityEnabled
+			{
+				get
+				{
+					return zoneAffinityEnabled;
+				}
+				set	
+				{
+					zoneAffinityEnabled = value;
 				}
 			}
 		}

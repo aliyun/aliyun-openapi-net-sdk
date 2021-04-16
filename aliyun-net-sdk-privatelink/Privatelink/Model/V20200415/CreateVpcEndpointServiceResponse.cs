@@ -25,45 +25,35 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 	public class CreateVpcEndpointServiceResponse : AcsResponse
 	{
 
-		private bool? autoAcceptEnabled;
-
-		private string createTime;
+		private string serviceBusinessStatus;
 
 		private string requestId;
 
-		private string serviceBusinessStatus;
+		private string serviceName;
 
 		private string serviceDescription;
+
+		private string serviceStatus;
+
+		private string createTime;
+
+		private bool? zoneAffinityEnabled;
 
 		private string serviceDomain;
 
 		private string serviceId;
 
-		private string serviceName;
+		private bool? autoAcceptEnabled;
 
-		private string serviceStatus;
-
-		public bool? AutoAcceptEnabled
+		public string ServiceBusinessStatus
 		{
 			get
 			{
-				return autoAcceptEnabled;
+				return serviceBusinessStatus;
 			}
 			set	
 			{
-				autoAcceptEnabled = value;
-			}
-		}
-
-		public string CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
+				serviceBusinessStatus = value;
 			}
 		}
 
@@ -79,15 +69,15 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string ServiceBusinessStatus
+		public string ServiceName
 		{
 			get
 			{
-				return serviceBusinessStatus;
+				return serviceName;
 			}
 			set	
 			{
-				serviceBusinessStatus = value;
+				serviceName = value;
 			}
 		}
 
@@ -100,6 +90,42 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			set	
 			{
 				serviceDescription = value;
+			}
+		}
+
+		public string ServiceStatus
+		{
+			get
+			{
+				return serviceStatus;
+			}
+			set	
+			{
+				serviceStatus = value;
+			}
+		}
+
+		public string CreateTime
+		{
+			get
+			{
+				return createTime;
+			}
+			set	
+			{
+				createTime = value;
+			}
+		}
+
+		public bool? ZoneAffinityEnabled
+		{
+			get
+			{
+				return zoneAffinityEnabled;
+			}
+			set	
+			{
+				zoneAffinityEnabled = value;
 			}
 		}
 
@@ -127,27 +153,15 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string ServiceName
+		public bool? AutoAcceptEnabled
 		{
 			get
 			{
-				return serviceName;
+				return autoAcceptEnabled;
 			}
 			set	
 			{
-				serviceName = value;
-			}
-		}
-
-		public string ServiceStatus
-		{
-			get
-			{
-				return serviceStatus;
-			}
-			set	
-			{
-				serviceStatus = value;
+				autoAcceptEnabled = value;
 			}
 		}
 	}

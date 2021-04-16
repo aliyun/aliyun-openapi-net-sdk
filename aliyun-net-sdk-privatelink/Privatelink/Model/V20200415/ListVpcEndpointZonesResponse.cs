@@ -25,23 +25,23 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 	public class ListVpcEndpointZonesResponse : AcsResponse
 	{
 
-		private string maxResults;
+		private string requestId;
 
 		private string nextToken;
 
-		private string requestId;
+		private string maxResults;
 
 		private List<ListVpcEndpointZones_Zone> zones;
 
-		public string MaxResults
+		public string RequestId
 		{
 			get
 			{
-				return maxResults;
+				return requestId;
 			}
 			set	
 			{
-				maxResults = value;
+				requestId = value;
 			}
 		}
 
@@ -57,15 +57,15 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string RequestId
+		public string MaxResults
 		{
 			get
 			{
-				return requestId;
+				return maxResults;
 			}
 			set	
 			{
-				requestId = value;
+				maxResults = value;
 			}
 		}
 
@@ -84,43 +84,21 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 		public class ListVpcEndpointZones_Zone
 		{
 
-			private string zoneDomain;
-
-			private string zoneStatus;
-
 			private string eniId;
-
-			private string eniIp;
-
-			private string vSwitchId;
 
 			private string zoneId;
 
+			private string serviceStatus;
+
+			private string vSwitchId;
+
+			private string eniIp;
+
+			private string zoneStatus;
+
 			private string regionId;
 
-			public string ZoneDomain
-			{
-				get
-				{
-					return zoneDomain;
-				}
-				set	
-				{
-					zoneDomain = value;
-				}
-			}
-
-			public string ZoneStatus
-			{
-				get
-				{
-					return zoneStatus;
-				}
-				set	
-				{
-					zoneStatus = value;
-				}
-			}
+			private string zoneDomain;
 
 			public string EniId
 			{
@@ -131,30 +109,6 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				set	
 				{
 					eniId = value;
-				}
-			}
-
-			public string EniIp
-			{
-				get
-				{
-					return eniIp;
-				}
-				set	
-				{
-					eniIp = value;
-				}
-			}
-
-			public string VSwitchId
-			{
-				get
-				{
-					return vSwitchId;
-				}
-				set	
-				{
-					vSwitchId = value;
 				}
 			}
 
@@ -170,6 +124,54 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				}
 			}
 
+			public string ServiceStatus
+			{
+				get
+				{
+					return serviceStatus;
+				}
+				set	
+				{
+					serviceStatus = value;
+				}
+			}
+
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
+			public string EniIp
+			{
+				get
+				{
+					return eniIp;
+				}
+				set	
+				{
+					eniIp = value;
+				}
+			}
+
+			public string ZoneStatus
+			{
+				get
+				{
+					return zoneStatus;
+				}
+				set	
+				{
+					zoneStatus = value;
+				}
+			}
+
 			public string RegionId
 			{
 				get
@@ -179,6 +181,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string ZoneDomain
+			{
+				get
+				{
+					return zoneDomain;
+				}
+				set	
+				{
+					zoneDomain = value;
 				}
 			}
 		}

@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private string payer;
 
+		private bool? zoneAffinityEnabled;
+
 		private bool? dryRun;
 
 		private List<Resource> resources = new List<Resource>(){ };
@@ -92,6 +94,19 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
+		public bool? ZoneAffinityEnabled
+		{
+			get
+			{
+				return zoneAffinityEnabled;
+			}
+			set	
+			{
+				zoneAffinityEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneAffinityEnabled", value.ToString());
+			}
+		}
+
 		public bool? DryRun
 		{
 			get
@@ -117,8 +132,8 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				resources = value;
 				for (int i = 0; i < resources.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Resource." + (i + 1) + ".ResourceId", resources[i].ResourceId);
 					DictionaryUtil.Add(QueryParameters,"Resource." + (i + 1) + ".ResourceType", resources[i].ResourceType);
+					DictionaryUtil.Add(QueryParameters,"Resource." + (i + 1) + ".ResourceId", resources[i].ResourceId);
 				}
 			}
 		}
@@ -139,21 +154,9 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 		public class Resource
 		{
 
-			private string resourceId;
-
 			private string resourceType;
 
-			public string ResourceId
-			{
-				get
-				{
-					return resourceId;
-				}
-				set	
-				{
-					resourceId = value;
-				}
-			}
+			private string resourceId;
 
 			public string ResourceType
 			{
@@ -164,6 +167,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				set	
 				{
 					resourceType = value;
+				}
+			}
+
+			public string ResourceId
+			{
+				get
+				{
+					return resourceId;
+				}
+				set	
+				{
+					resourceId = value;
 				}
 			}
 		}

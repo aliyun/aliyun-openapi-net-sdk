@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private int? connectBandwidth;
 
+		private bool? zoneAffinityEnabled;
+
 		private bool? dryRun;
 
 		private string serviceDescription;
@@ -89,6 +91,19 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			{
 				connectBandwidth = value;
 				DictionaryUtil.Add(QueryParameters, "ConnectBandwidth", value.ToString());
+			}
+		}
+
+		public bool? ZoneAffinityEnabled
+		{
+			get
+			{
+				return zoneAffinityEnabled;
+			}
+			set	
+			{
+				zoneAffinityEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneAffinityEnabled", value.ToString());
 			}
 		}
 

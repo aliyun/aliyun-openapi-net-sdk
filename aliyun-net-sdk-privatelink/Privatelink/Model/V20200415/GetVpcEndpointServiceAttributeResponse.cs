@@ -25,35 +25,49 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 	public class GetVpcEndpointServiceAttributeResponse : AcsResponse
 	{
 
+		private string payer;
+
 		private string requestId;
-
-		private string serviceId;
-
-		private string serviceName;
-
-		private string serviceDomain;
 
 		private string serviceDescription;
 
-		private string serviceBusinessStatus;
-
-		private string serviceStatus;
-
-		private bool? autoAcceptEnabled;
+		private int? maxBandwidth;
 
 		private string createTime;
 
-		private int? maxBandwidth;
+		private string serviceDomain;
 
 		private int? minBandwidth;
+
+		private string serviceId;
+
+		private bool? autoAcceptEnabled;
+
+		private string serviceBusinessStatus;
+
+		private string serviceName;
+
+		private string serviceStatus;
 
 		private int? connectBandwidth;
 
 		private string regionId;
 
-		private string payer;
+		private bool? zoneAffinityEnabled;
 
 		private List<string> zones;
+
+		public string Payer
+		{
+			get
+			{
+				return payer;
+			}
+			set	
+			{
+				payer = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -64,42 +78,6 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string ServiceId
-		{
-			get
-			{
-				return serviceId;
-			}
-			set	
-			{
-				serviceId = value;
-			}
-		}
-
-		public string ServiceName
-		{
-			get
-			{
-				return serviceName;
-			}
-			set	
-			{
-				serviceName = value;
-			}
-		}
-
-		public string ServiceDomain
-		{
-			get
-			{
-				return serviceDomain;
-			}
-			set	
-			{
-				serviceDomain = value;
 			}
 		}
 
@@ -115,39 +93,15 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string ServiceBusinessStatus
+		public int? MaxBandwidth
 		{
 			get
 			{
-				return serviceBusinessStatus;
+				return maxBandwidth;
 			}
 			set	
 			{
-				serviceBusinessStatus = value;
-			}
-		}
-
-		public string ServiceStatus
-		{
-			get
-			{
-				return serviceStatus;
-			}
-			set	
-			{
-				serviceStatus = value;
-			}
-		}
-
-		public bool? AutoAcceptEnabled
-		{
-			get
-			{
-				return autoAcceptEnabled;
-			}
-			set	
-			{
-				autoAcceptEnabled = value;
+				maxBandwidth = value;
 			}
 		}
 
@@ -163,15 +117,15 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public int? MaxBandwidth
+		public string ServiceDomain
 		{
 			get
 			{
-				return maxBandwidth;
+				return serviceDomain;
 			}
 			set	
 			{
-				maxBandwidth = value;
+				serviceDomain = value;
 			}
 		}
 
@@ -184,6 +138,66 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			set	
 			{
 				minBandwidth = value;
+			}
+		}
+
+		public string ServiceId
+		{
+			get
+			{
+				return serviceId;
+			}
+			set	
+			{
+				serviceId = value;
+			}
+		}
+
+		public bool? AutoAcceptEnabled
+		{
+			get
+			{
+				return autoAcceptEnabled;
+			}
+			set	
+			{
+				autoAcceptEnabled = value;
+			}
+		}
+
+		public string ServiceBusinessStatus
+		{
+			get
+			{
+				return serviceBusinessStatus;
+			}
+			set	
+			{
+				serviceBusinessStatus = value;
+			}
+		}
+
+		public string ServiceName
+		{
+			get
+			{
+				return serviceName;
+			}
+			set	
+			{
+				serviceName = value;
+			}
+		}
+
+		public string ServiceStatus
+		{
+			get
+			{
+				return serviceStatus;
+			}
+			set	
+			{
+				serviceStatus = value;
 			}
 		}
 
@@ -211,15 +225,15 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string Payer
+		public bool? ZoneAffinityEnabled
 		{
 			get
 			{
-				return payer;
+				return zoneAffinityEnabled;
 			}
 			set	
 			{
-				payer = value;
+				zoneAffinityEnabled = value;
 			}
 		}
 

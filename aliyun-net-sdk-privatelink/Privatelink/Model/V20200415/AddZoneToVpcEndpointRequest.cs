@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private bool? dryRun;
 
+		private string ip;
+
 		private string vSwitchId;
 
 		private string zoneId;
@@ -87,6 +89,19 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			{
 				dryRun = value;
 				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
+			}
+		}
+
+		public string Ip
+		{
+			get
+			{
+				return ip;
+			}
+			set	
+			{
+				ip = value;
+				DictionaryUtil.Add(QueryParameters, "ip", value);
 			}
 		}
 

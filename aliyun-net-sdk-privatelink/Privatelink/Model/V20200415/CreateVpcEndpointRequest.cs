@@ -103,6 +103,7 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				{
 					DictionaryUtil.Add(QueryParameters,"Zone." + (i + 1) + ".VSwitchId", zones[i].VSwitchId);
 					DictionaryUtil.Add(QueryParameters,"Zone." + (i + 1) + ".ZoneId", zones[i].ZoneId);
+					DictionaryUtil.Add(QueryParameters,"Zone." + (i + 1) + ".ip", zones[i].Ip);
 				}
 			}
 		}
@@ -192,6 +193,8 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 			private string zoneId;
 
+			private string ip;
+
 			public string VSwitchId
 			{
 				get
@@ -213,6 +216,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				set	
 				{
 					zoneId = value;
+				}
+			}
+
+			public string Ip
+			{
+				get
+				{
+					return ip;
+				}
+				set	
+				{
+					ip = value;
 				}
 			}
 		}
