@@ -60,6 +60,7 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 				resultItem.Updated = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].updated");
 				resultItem.Status = _ctx.StringValue("ListAppGroups.Result["+ i +"].status");
 				resultItem.LockMode = _ctx.StringValue("ListAppGroups.Result["+ i +"].lockMode");
+				resultItem.Domain = _ctx.StringValue("ListAppGroups.Result["+ i +"].domain");
 
 				ListAppGroupsResponse.ListAppGroups_ResultItem.ListAppGroups_Quota quota = new ListAppGroupsResponse.ListAppGroups_ResultItem.ListAppGroups_Quota();
 				quota.DocSize = _ctx.IntegerValue("ListAppGroups.Result["+ i +"].Quota.docSize");

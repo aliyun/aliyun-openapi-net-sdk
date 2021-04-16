@@ -80,6 +80,8 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 
 			private DescribeApp_Quota quota;
 
+			private DescribeApp_Domain domain;
+
 			public string Id
 			{
 				get
@@ -224,6 +226,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				}
 			}
 
+			public DescribeApp_Domain Domain
+			{
+				get
+				{
+					return domain;
+				}
+				set	
+				{
+					domain = value;
+				}
+			}
+
 			public class DescribeApp_Quota
 			{
 
@@ -280,6 +294,98 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 					set	
 					{
 						spec = value;
+					}
+				}
+			}
+
+			public class DescribeApp_Domain
+			{
+
+				private string name;
+
+				private string category;
+
+				private DescribeApp_Functions functions;
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string Category
+				{
+					get
+					{
+						return category;
+					}
+					set	
+					{
+						category = value;
+					}
+				}
+
+				public DescribeApp_Functions Functions
+				{
+					get
+					{
+						return functions;
+					}
+					set	
+					{
+						functions = value;
+					}
+				}
+
+				public class DescribeApp_Functions
+				{
+
+					private List<string> qp;
+
+					private List<string> algo;
+
+					private List<string> service;
+
+					public List<string> Qp
+					{
+						get
+						{
+							return qp;
+						}
+						set	
+						{
+							qp = value;
+						}
+					}
+
+					public List<string> Algo
+					{
+						get
+						{
+							return algo;
+						}
+						set	
+						{
+							algo = value;
+						}
+					}
+
+					public List<string> Service
+					{
+						get
+						{
+							return service;
+						}
+						set	
+						{
+							service = value;
+						}
 					}
 				}
 			}

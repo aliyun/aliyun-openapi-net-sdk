@@ -57,6 +57,7 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			result.Updated = _ctx.IntegerValue("DescribeAppGroup.Result.updated");
 			result.Status = _ctx.StringValue("DescribeAppGroup.Result.status");
 			result.LockMode = _ctx.StringValue("DescribeAppGroup.Result.lockMode");
+			result.Domain = _ctx.StringValue("DescribeAppGroup.Result.domain");
 
 			DescribeAppGroupResponse.DescribeAppGroup_Result.DescribeAppGroup_Quota quota = new DescribeAppGroupResponse.DescribeAppGroup_Result.DescribeAppGroup_Quota();
 			quota.DocSize = _ctx.IntegerValue("DescribeAppGroup.Result.Quota.docSize");

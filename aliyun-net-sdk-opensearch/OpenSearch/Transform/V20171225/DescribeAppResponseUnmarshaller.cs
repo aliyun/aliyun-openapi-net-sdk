@@ -57,6 +57,32 @@ namespace Aliyun.Acs.OpenSearch.Transform.V20171225
 			quota.Qps = _ctx.IntegerValue("DescribeApp.Result.Quota.qps");
 			quota.Spec = _ctx.StringValue("DescribeApp.Result.Quota.spec");
 			result.Quota = quota;
+
+			DescribeAppResponse.DescribeApp_Result.DescribeApp_Domain domain = new DescribeAppResponse.DescribeApp_Result.DescribeApp_Domain();
+			domain.Name = _ctx.StringValue("DescribeApp.Result.Domain.name");
+			domain.Category = _ctx.StringValue("DescribeApp.Result.Domain.category");
+
+			DescribeAppResponse.DescribeApp_Result.DescribeApp_Domain.DescribeApp_Functions functions = new DescribeAppResponse.DescribeApp_Result.DescribeApp_Domain.DescribeApp_Functions();
+
+			List<string> functions_qp = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeApp.Result.Domain.Functions.Qp.Length"); i++) {
+				functions_qp.Add(_ctx.StringValue("DescribeApp.Result.Domain.Functions.Qp["+ i +"]"));
+			}
+			functions.Qp = functions_qp;
+
+			List<string> functions_algo = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeApp.Result.Domain.Functions.Algo.Length"); i++) {
+				functions_algo.Add(_ctx.StringValue("DescribeApp.Result.Domain.Functions.Algo["+ i +"]"));
+			}
+			functions.Algo = functions_algo;
+
+			List<string> functions_service = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeApp.Result.Domain.Functions.Service.Length"); i++) {
+				functions_service.Add(_ctx.StringValue("DescribeApp.Result.Domain.Functions.Service["+ i +"]"));
+			}
+			functions.Service = functions_service;
+			domain.Functions = functions;
+			result.Domain = domain;
 			describeAppResponse.Result = result;
         
 			return describeAppResponse;

@@ -116,6 +116,8 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 
 			private string lockMode;
 
+			private string domain;
+
 			private ListAppGroups_Quota quota;
 
 			public string Id
@@ -391,6 +393,18 @@ namespace Aliyun.Acs.OpenSearch.Model.V20171225
 				set	
 				{
 					lockMode = value;
+				}
+			}
+
+			public string Domain
+			{
+				get
+				{
+					return domain;
+				}
+				set	
+				{
+					domain = value;
 				}
 			}
 
