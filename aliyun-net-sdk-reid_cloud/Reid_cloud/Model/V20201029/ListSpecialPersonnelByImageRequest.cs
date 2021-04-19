@@ -30,7 +30,7 @@ namespace Aliyun.Acs.reid_cloud.Model.V20201029
     public class ListSpecialPersonnelByImageRequest : RpcAcsRequest<ListSpecialPersonnelByImageResponse>
     {
         public ListSpecialPersonnelByImageRequest()
-            : base("reid_cloud", "2020-10-29", "ListSpecialPersonnelByImage", "1.2.0", "openAPI")
+            : base("reid_cloud", "2020-10-29", "ListSpecialPersonnelByImage", "1.2.1", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
