@@ -46,6 +46,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 		private string userId;
 
+		private string deviceId;
+
 		private string additionalBroker;
 
 		private string tags;
@@ -92,6 +94,19 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			{
 				userId = value;
 				DictionaryUtil.Add(QueryParameters, "UserId", value);
+			}
+		}
+
+		public string DeviceId
+		{
+			get
+			{
+				return deviceId;
+			}
+			set	
+			{
+				deviceId = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceId", value);
 			}
 		}
 
