@@ -31,12 +31,12 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			CreateOfficeConversionTaskResponse createOfficeConversionTaskResponse = new CreateOfficeConversionTaskResponse();
 
 			createOfficeConversionTaskResponse.HttpResponse = _ctx.HttpResponse;
-			createOfficeConversionTaskResponse.RequestId = _ctx.StringValue("CreateOfficeConversionTask.RequestId");
-			createOfficeConversionTaskResponse.TaskId = _ctx.StringValue("CreateOfficeConversionTask.TaskId");
-			createOfficeConversionTaskResponse.TgtLoc = _ctx.StringValue("CreateOfficeConversionTask.TgtLoc");
 			createOfficeConversionTaskResponse.Status = _ctx.StringValue("CreateOfficeConversionTask.Status");
-			createOfficeConversionTaskResponse.CreateTime = _ctx.StringValue("CreateOfficeConversionTask.CreateTime");
+			createOfficeConversionTaskResponse.TaskId = _ctx.StringValue("CreateOfficeConversionTask.TaskId");
+			createOfficeConversionTaskResponse.RequestId = _ctx.StringValue("CreateOfficeConversionTask.RequestId");
 			createOfficeConversionTaskResponse.Percent = _ctx.IntegerValue("CreateOfficeConversionTask.Percent");
+			createOfficeConversionTaskResponse.TgtLoc = _ctx.StringValue("CreateOfficeConversionTask.TgtLoc");
+			createOfficeConversionTaskResponse.CreateTime = _ctx.StringValue("CreateOfficeConversionTask.CreateTime");
         
 			return createOfficeConversionTaskResponse;
         }

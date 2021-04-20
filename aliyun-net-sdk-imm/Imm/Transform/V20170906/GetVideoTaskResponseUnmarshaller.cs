@@ -31,18 +31,18 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			GetVideoTaskResponse getVideoTaskResponse = new GetVideoTaskResponse();
 
 			getVideoTaskResponse.HttpResponse = _ctx.HttpResponse;
-			getVideoTaskResponse.RequestId = _ctx.StringValue("GetVideoTask.RequestId");
-			getVideoTaskResponse.TaskId = _ctx.StringValue("GetVideoTask.TaskId");
-			getVideoTaskResponse.TaskType = _ctx.StringValue("GetVideoTask.TaskType");
-			getVideoTaskResponse.Parameters = _ctx.StringValue("GetVideoTask.Parameters");
-			getVideoTaskResponse.Result = _ctx.StringValue("GetVideoTask.Result");
 			getVideoTaskResponse.Status = _ctx.StringValue("GetVideoTask.Status");
-			getVideoTaskResponse.StartTime = _ctx.StringValue("GetVideoTask.StartTime");
-			getVideoTaskResponse.EndTime = _ctx.StringValue("GetVideoTask.EndTime");
-			getVideoTaskResponse.ErrorMessage = _ctx.StringValue("GetVideoTask.ErrorMessage");
 			getVideoTaskResponse.NotifyEndpoint = _ctx.StringValue("GetVideoTask.NotifyEndpoint");
-			getVideoTaskResponse.NotifyTopicName = _ctx.StringValue("GetVideoTask.NotifyTopicName");
 			getVideoTaskResponse.Progress = _ctx.IntegerValue("GetVideoTask.Progress");
+			getVideoTaskResponse.TaskId = _ctx.StringValue("GetVideoTask.TaskId");
+			getVideoTaskResponse.Parameters = _ctx.StringValue("GetVideoTask.Parameters");
+			getVideoTaskResponse.RequestId = _ctx.StringValue("GetVideoTask.RequestId");
+			getVideoTaskResponse.EndTime = _ctx.StringValue("GetVideoTask.EndTime");
+			getVideoTaskResponse.TaskType = _ctx.StringValue("GetVideoTask.TaskType");
+			getVideoTaskResponse.StartTime = _ctx.StringValue("GetVideoTask.StartTime");
+			getVideoTaskResponse.NotifyTopicName = _ctx.StringValue("GetVideoTask.NotifyTopicName");
+			getVideoTaskResponse.ErrorMessage = _ctx.StringValue("GetVideoTask.ErrorMessage");
+			getVideoTaskResponse.Result = _ctx.StringValue("GetVideoTask.Result");
         
 			return getVideoTaskResponse;
         }

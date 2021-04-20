@@ -48,6 +48,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private bool? pdfVector;
 
+		private string userData;
+
 		private string password;
 
 		private long? startPage;
@@ -137,6 +139,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				pdfVector = value;
 				DictionaryUtil.Add(QueryParameters, "PdfVector", value.ToString());
+			}
+		}
+
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
 			}
 		}
 

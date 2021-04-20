@@ -54,6 +54,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string videoUri;
 
+		private string targetSegment;
+
 		public string Project
 		{
 			get
@@ -142,6 +144,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				videoUri = value;
 				DictionaryUtil.Add(QueryParameters, "VideoUri", value);
+			}
+		}
+
+		public string TargetSegment
+		{
+			get
+			{
+				return targetSegment;
+			}
+			set	
+			{
+				targetSegment = value;
+				DictionaryUtil.Add(QueryParameters, "TargetSegment", value);
 			}
 		}
 
