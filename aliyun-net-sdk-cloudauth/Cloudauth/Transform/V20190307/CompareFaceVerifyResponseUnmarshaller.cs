@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			CompareFaceVerifyResponse.CompareFaceVerify_ResultObject resultObject = new CompareFaceVerifyResponse.CompareFaceVerify_ResultObject();
 			resultObject.Passed = _ctx.StringValue("CompareFaceVerify.ResultObject.Passed");
 			resultObject.VerifyScore = _ctx.FloatValue("CompareFaceVerify.ResultObject.VerifyScore");
+			resultObject.CertifyId = _ctx.StringValue("CompareFaceVerify.ResultObject.CertifyId");
 			compareFaceVerifyResponse.ResultObject = resultObject;
         
 			return compareFaceVerifyResponse;

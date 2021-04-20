@@ -23,87 +23,106 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cloudauth.Transform;
-using Aliyun.Acs.Cloudauth.Transform.V20190307;
+using Aliyun.Acs.Cloudauth.Transform.V20201112;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20190307
+namespace Aliyun.Acs.Cloudauth.Model.V20201112
 {
-    public class CompareFacesRequest : RpcAcsRequest<CompareFacesResponse>
+    public class LivenessDetectRequest : RpcAcsRequest<LivenessDetectResponse>
     {
-        public CompareFacesRequest()
-            : base("Cloudauth", "2019-03-07", "CompareFaces", "cloudauth", "openAPI")
+        public LivenessDetectRequest()
+            : base("Cloudauth", "2020-11-12", "LivenessDetect", "cloudauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cloudauth.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cloudauth.Endpoint.endpointRegionalType, null);
             }
-			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string sourceImageType;
+		private string mediaCategory;
 
-		private string targetImageType;
+		private string mediaUrl;
 
-		private string targetImageValue;
+		private string bizType;
 
-		private string sourceImageValue;
+		private string bizId;
 
-		public string SourceImageType
+		private string mediaFile;
+
+		public string MediaCategory
 		{
 			get
 			{
-				return sourceImageType;
+				return mediaCategory;
 			}
 			set	
 			{
-				sourceImageType = value;
-				DictionaryUtil.Add(BodyParameters, "SourceImageType", value);
+				mediaCategory = value;
+				DictionaryUtil.Add(BodyParameters, "MediaCategory", value);
 			}
 		}
 
-		public string TargetImageType
+		public string MediaUrl
 		{
 			get
 			{
-				return targetImageType;
+				return mediaUrl;
 			}
 			set	
 			{
-				targetImageType = value;
-				DictionaryUtil.Add(BodyParameters, "TargetImageType", value);
+				mediaUrl = value;
+				DictionaryUtil.Add(BodyParameters, "MediaUrl", value);
 			}
 		}
 
-		public string TargetImageValue
+		public string BizType
 		{
 			get
 			{
-				return targetImageValue;
+				return bizType;
 			}
 			set	
 			{
-				targetImageValue = value;
-				DictionaryUtil.Add(BodyParameters, "TargetImageValue", value);
+				bizType = value;
+				DictionaryUtil.Add(BodyParameters, "BizType", value);
 			}
 		}
 
-		public string SourceImageValue
+		public string BizId
 		{
 			get
 			{
-				return sourceImageValue;
+				return bizId;
 			}
 			set	
 			{
-				sourceImageValue = value;
-				DictionaryUtil.Add(BodyParameters, "SourceImageValue", value);
+				bizId = value;
+				DictionaryUtil.Add(BodyParameters, "BizId", value);
 			}
 		}
 
-        public override CompareFacesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string MediaFile
+		{
+			get
+			{
+				return mediaFile;
+			}
+			set	
+			{
+				mediaFile = value;
+				DictionaryUtil.Add(BodyParameters, "MediaFile", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override LivenessDetectResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CompareFacesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return LivenessDetectResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -20,18 +20,18 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20190307
+namespace Aliyun.Acs.Cloudauth.Model.V20201112
 {
-	public class ContrastFaceVerifyResponse : AcsResponse
+	public class LivenessDetectResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string message;
-
 		private string code;
 
-		private ContrastFaceVerify_ResultObject resultObject;
+		private string message;
+
+		private LivenessDetect_ResultObject resultObject;
 
 		public string RequestId
 		{
@@ -42,18 +42,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -69,7 +57,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public ContrastFaceVerify_ResultObject ResultObject
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public LivenessDetect_ResultObject ResultObject
 		{
 			get
 			{
@@ -81,18 +81,14 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public class ContrastFaceVerify_ResultObject
+		public class LivenessDetect_ResultObject
 		{
 
 			private string passed;
 
-			private string identityInfo;
+			private float? score;
 
-			private string materialInfo;
-
-			private string subCode;
-
-			private string certifyId;
+			private string frameUrl;
 
 			public string Passed
 			{
@@ -106,51 +102,27 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				}
 			}
 
-			public string IdentityInfo
+			public float? Score
 			{
 				get
 				{
-					return identityInfo;
+					return score;
 				}
 				set	
 				{
-					identityInfo = value;
+					score = value;
 				}
 			}
 
-			public string MaterialInfo
+			public string FrameUrl
 			{
 				get
 				{
-					return materialInfo;
+					return frameUrl;
 				}
 				set	
 				{
-					materialInfo = value;
-				}
-			}
-
-			public string SubCode
-			{
-				get
-				{
-					return subCode;
-				}
-				set	
-				{
-					subCode = value;
-				}
-			}
-
-			public string CertifyId
-			{
-				get
-				{
-					return certifyId;
-				}
-				set	
-				{
-					certifyId = value;
+					frameUrl = value;
 				}
 			}
 		}

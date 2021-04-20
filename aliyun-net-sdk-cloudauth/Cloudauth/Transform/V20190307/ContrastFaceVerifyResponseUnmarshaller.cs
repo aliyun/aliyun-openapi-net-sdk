@@ -40,6 +40,7 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			resultObject.IdentityInfo = _ctx.StringValue("ContrastFaceVerify.ResultObject.IdentityInfo");
 			resultObject.MaterialInfo = _ctx.StringValue("ContrastFaceVerify.ResultObject.MaterialInfo");
 			resultObject.SubCode = _ctx.StringValue("ContrastFaceVerify.ResultObject.SubCode");
+			resultObject.CertifyId = _ctx.StringValue("ContrastFaceVerify.ResultObject.CertifyId");
 			contrastFaceVerifyResponse.ResultObject = resultObject;
         
 			return contrastFaceVerifyResponse;

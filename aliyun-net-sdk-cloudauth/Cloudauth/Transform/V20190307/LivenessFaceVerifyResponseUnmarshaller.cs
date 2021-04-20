@@ -39,6 +39,7 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			resultObject.Passed = _ctx.StringValue("LivenessFaceVerify.ResultObject.Passed");
 			resultObject.MaterialInfo = _ctx.StringValue("LivenessFaceVerify.ResultObject.MaterialInfo");
 			resultObject.SubCode = _ctx.StringValue("LivenessFaceVerify.ResultObject.SubCode");
+			resultObject.CertifyId = _ctx.StringValue("LivenessFaceVerify.ResultObject.CertifyId");
 			livenessFaceVerifyResponse.ResultObject = resultObject;
         
 			return livenessFaceVerifyResponse;

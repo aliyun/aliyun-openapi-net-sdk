@@ -90,6 +90,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 			private string subCode;
 
+			private string certifyId;
+
 			public string Passed
 			{
 				get
@@ -123,6 +125,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				set	
 				{
 					subCode = value;
+				}
+			}
+
+			public string CertifyId
+			{
+				get
+				{
+					return certifyId;
+				}
+				set	
+				{
+					certifyId = value;
 				}
 			}
 		}

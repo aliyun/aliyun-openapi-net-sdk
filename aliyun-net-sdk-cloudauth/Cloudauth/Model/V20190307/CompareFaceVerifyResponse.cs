@@ -88,6 +88,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 			private float? verifyScore;
 
+			private string certifyId;
+
 			public string Passed
 			{
 				get
@@ -109,6 +111,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				set	
 				{
 					verifyScore = value;
+				}
+			}
+
+			public string CertifyId
+			{
+				get
+				{
+					return certifyId;
+				}
+				set	
+				{
+					certifyId = value;
 				}
 			}
 		}
