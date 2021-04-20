@@ -54,9 +54,7 @@ namespace Aliyun.Acs.hitsdb.Transform.V20170601
 				instance.InstanceStorage = _ctx.StringValue("DescribeHiTSDBInstanceList.InstanceList["+ i +"].InstanceStorage");
 				instance.InstanceTps = _ctx.StringValue("DescribeHiTSDBInstanceList.InstanceList["+ i +"].InstanceTps");
 				instance.LockMode = _ctx.StringValue("DescribeHiTSDBInstanceList.InstanceList["+ i +"].LockMode");
-				instance.InstanceIdInVpc = _ctx.StringValue("DescribeHiTSDBInstanceList.InstanceList["+ i +"].InstanceIdInVpc");
 				instance.EngineType = _ctx.StringValue("DescribeHiTSDBInstanceList.InstanceList["+ i +"].EngineType");
-				instance.MaxDatabaseLimit = _ctx.StringValue("DescribeHiTSDBInstanceList.InstanceList["+ i +"].MaxDatabaseLimit");
 				instance.MaxSeriesPerDatabase = _ctx.StringValue("DescribeHiTSDBInstanceList.InstanceList["+ i +"].MaxSeriesPerDatabase");
 				instance.VpcId = _ctx.StringValue("DescribeHiTSDBInstanceList.InstanceList["+ i +"].VpcId");
 				instance.VswitchId = _ctx.StringValue("DescribeHiTSDBInstanceList.InstanceList["+ i +"].VswitchId");

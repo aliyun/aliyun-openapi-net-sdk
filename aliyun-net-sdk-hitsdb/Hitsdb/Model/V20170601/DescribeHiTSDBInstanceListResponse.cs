@@ -128,11 +128,7 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
 
 			private string lockMode;
 
-			private string instanceIdInVpc;
-
 			private string engineType;
-
-			private string maxDatabaseLimit;
 
 			private string maxSeriesPerDatabase;
 
@@ -328,18 +324,6 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
 				}
 			}
 
-			public string InstanceIdInVpc
-			{
-				get
-				{
-					return instanceIdInVpc;
-				}
-				set	
-				{
-					instanceIdInVpc = value;
-				}
-			}
-
 			public string EngineType
 			{
 				get
@@ -349,18 +333,6 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
 				set	
 				{
 					engineType = value;
-				}
-			}
-
-			public string MaxDatabaseLimit
-			{
-				get
-				{
-					return maxDatabaseLimit;
-				}
-				set	
-				{
-					maxDatabaseLimit = value;
 				}
 			}
 

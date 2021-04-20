@@ -52,7 +52,7 @@ namespace Aliyun.Acs.hitsdb.Transform.V20170601
 			describeHiTSDBInstanceResponse.VswitchId = _ctx.StringValue("DescribeHiTSDBInstance.VswitchId");
 			describeHiTSDBInstanceResponse.ConnectionString = _ctx.StringValue("DescribeHiTSDBInstance.ConnectionString");
 			describeHiTSDBInstanceResponse.PublicConnectionString = _ctx.StringValue("DescribeHiTSDBInstance.PublicConnectionString");
-			describeHiTSDBInstanceResponse.AutoRenew = _ctx.BooleanValue("DescribeHiTSDBInstance.AutoRenew");
+			describeHiTSDBInstanceResponse.AutoRenew = _ctx.StringValue("DescribeHiTSDBInstance.AutoRenew");
 			describeHiTSDBInstanceResponse.EngineType = _ctx.StringValue("DescribeHiTSDBInstance.EngineType");
 			describeHiTSDBInstanceResponse.CpuNumber = _ctx.StringValue("DescribeHiTSDBInstance.CpuNumber");
 			describeHiTSDBInstanceResponse.MemSize = _ctx.StringValue("DescribeHiTSDBInstance.MemSize");

@@ -66,6 +66,8 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
 
 		private string zoneId;
 
+		private string appKey;
+
 		private string payType;
 
 		private string pricingCycle;
@@ -236,6 +238,19 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string AppKey
+		{
+			get
+			{
+				return appKey;
+			}
+			set	
+			{
+				appKey = value;
+				DictionaryUtil.Add(QueryParameters, "AppKey", value);
 			}
 		}
 

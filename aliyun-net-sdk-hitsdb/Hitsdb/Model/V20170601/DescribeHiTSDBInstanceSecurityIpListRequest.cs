@@ -50,6 +50,8 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
 
 		private long? ownerId;
 
+		private string groupName;
+
 		private string instanceId;
 
 		public long? ResourceOwnerId
@@ -114,6 +116,19 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string GroupName
+		{
+			get
+			{
+				return groupName;
+			}
+			set	
+			{
+				groupName = value;
+				DictionaryUtil.Add(QueryParameters, "GroupName", value);
 			}
 		}
 

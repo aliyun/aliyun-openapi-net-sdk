@@ -60,6 +60,8 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
 
 		private long? ownerId;
 
+		private string appKey;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -187,6 +189,19 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AppKey
+		{
+			get
+			{
+				return appKey;
+			}
+			set	
+			{
+				appKey = value;
+				DictionaryUtil.Add(QueryParameters, "AppKey", value);
 			}
 		}
 

@@ -67,7 +67,7 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
 
 		private string publicConnectionString;
 
-		private bool? autoRenew;
+		private string autoRenew;
 
 		private string engineType;
 
@@ -343,7 +343,7 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
 			}
 		}
 
-		public bool? AutoRenew
+		public string AutoRenew
 		{
 			get
 			{
