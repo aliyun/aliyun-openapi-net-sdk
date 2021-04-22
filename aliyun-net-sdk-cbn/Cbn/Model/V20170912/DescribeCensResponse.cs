@@ -110,6 +110,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string creationTime;
 
+			private string ipv6Level;
+
 			private List<DescribeCens_Tag> tags;
 
 			private List<string> cenBandwidthPackageIds;
@@ -183,6 +185,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string Ipv6Level
+			{
+				get
+				{
+					return ipv6Level;
+				}
+				set	
+				{
+					ipv6Level = value;
 				}
 			}
 

@@ -32,21 +32,25 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
         public DetachCenChildInstanceRequest()
             : base("Cbn", "2017-09-12", "DetachCenChildInstance", "cbn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string childInstanceId;
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string cenId;
 
-		private string ownerAccount;
-
-		private string action;
-
 		private long? cenOwnerId;
+
+		private string childInstanceRegionId;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
 
 		private long? ownerId;
 
@@ -54,20 +58,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private long? childInstanceOwnerId;
 
-		private string childInstanceRegionId;
-
-		public string ChildInstanceId
-		{
-			get
-			{
-				return childInstanceId;
-			}
-			set	
-			{
-				childInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "ChildInstanceId", value);
-			}
-		}
+		private string childInstanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -79,19 +70,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -108,32 +86,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? CenOwnerId
 		{
 			get
@@ -144,6 +96,45 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				cenOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "CenOwnerId", value.ToString());
+			}
+		}
+
+		public string ChildInstanceRegionId
+		{
+			get
+			{
+				return childInstanceRegionId;
+			}
+			set	
+			{
+				childInstanceRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "ChildInstanceRegionId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -186,16 +177,16 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string ChildInstanceRegionId
+		public string ChildInstanceId
 		{
 			get
 			{
-				return childInstanceRegionId;
+				return childInstanceId;
 			}
 			set	
 			{
-				childInstanceRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "ChildInstanceRegionId", value);
+				childInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "ChildInstanceId", value);
 			}
 		}
 

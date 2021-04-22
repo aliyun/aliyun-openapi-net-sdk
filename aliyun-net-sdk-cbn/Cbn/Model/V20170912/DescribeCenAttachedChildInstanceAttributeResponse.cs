@@ -43,6 +43,10 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string childInstanceAttachTime;
 
+		private string ipv6StatusInCen;
+
+		private List<DescribeCenAttachedChildInstanceAttribute_ChildInstanceRouteTable> childInstanceRouteTables;
+
 		public string RequestId
 		{
 			get
@@ -148,6 +152,62 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set	
 			{
 				childInstanceAttachTime = value;
+			}
+		}
+
+		public string Ipv6StatusInCen
+		{
+			get
+			{
+				return ipv6StatusInCen;
+			}
+			set	
+			{
+				ipv6StatusInCen = value;
+			}
+		}
+
+		public List<DescribeCenAttachedChildInstanceAttribute_ChildInstanceRouteTable> ChildInstanceRouteTables
+		{
+			get
+			{
+				return childInstanceRouteTables;
+			}
+			set	
+			{
+				childInstanceRouteTables = value;
+			}
+		}
+
+		public class DescribeCenAttachedChildInstanceAttribute_ChildInstanceRouteTable
+		{
+
+			private string routeTableId;
+
+			private string routeTableType;
+
+			public string RouteTableId
+			{
+				get
+				{
+					return routeTableId;
+				}
+				set	
+				{
+					routeTableId = value;
+				}
+			}
+
+			public string RouteTableType
+			{
+				get
+				{
+					return routeTableType;
+				}
+				set	
+				{
+					routeTableType = value;
+				}
 			}
 		}
 	}

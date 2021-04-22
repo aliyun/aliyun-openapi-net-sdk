@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 {
     public class DescribeCenGeographicSpanRemainingBandwidthResponseUnmarshaller
     {
-        public static DescribeCenGeographicSpanRemainingBandwidthResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCenGeographicSpanRemainingBandwidthResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCenGeographicSpanRemainingBandwidthResponse describeCenGeographicSpanRemainingBandwidthResponse = new DescribeCenGeographicSpanRemainingBandwidthResponse();
 
-			describeCenGeographicSpanRemainingBandwidthResponse.HttpResponse = context.HttpResponse;
-			describeCenGeographicSpanRemainingBandwidthResponse.RequestId = context.StringValue("DescribeCenGeographicSpanRemainingBandwidth.RequestId");
-			describeCenGeographicSpanRemainingBandwidthResponse.RemainingBandwidth = context.LongValue("DescribeCenGeographicSpanRemainingBandwidth.RemainingBandwidth");
+			describeCenGeographicSpanRemainingBandwidthResponse.HttpResponse = _ctx.HttpResponse;
+			describeCenGeographicSpanRemainingBandwidthResponse.RequestId = _ctx.StringValue("DescribeCenGeographicSpanRemainingBandwidth.RequestId");
+			describeCenGeographicSpanRemainingBandwidthResponse.RemainingBandwidth = _ctx.LongValue("DescribeCenGeographicSpanRemainingBandwidth.RemainingBandwidth");
         
 			return describeCenGeographicSpanRemainingBandwidthResponse;
         }

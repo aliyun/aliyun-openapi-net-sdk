@@ -32,23 +32,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
         public DescribeCenGeographicSpansRequest()
             : base("Cbn", "2017-09-12", "DescribeCenGeographicSpans", "cbn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
+		private int? pageNumber;
+
 		private string geographicSpanId;
+
+		private int? pageSize;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private int? pageSize;
-
-		private string action;
-
 		private long? ownerId;
-
-		private int? pageNumber;
 
 		public long? ResourceOwnerId
 		{
@@ -63,6 +67,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
 		public string GeographicSpanId
 		{
 			get
@@ -73,6 +90,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				geographicSpanId = value;
 				DictionaryUtil.Add(QueryParameters, "GeographicSpanId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -102,32 +132,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -138,19 +142,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

@@ -32,6 +32,12 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
         public DeleteCenRequest()
             : base("Cbn", "2017-09-12", "DeleteCen", "cbn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -41,8 +47,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		private string cenId;
 
 		private string ownerAccount;
-
-		private string action;
 
 		private long? ownerId;
 
@@ -95,19 +99,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

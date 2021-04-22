@@ -32,29 +32,37 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
         public EnableCenVbrHealthCheckRequest()
             : base("Cbn", "2017-09-12", "EnableCenVbrHealthCheck", "cbn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string cenId;
-
-		private string healthCheckSourceIp;
-
-		private long? vbrInstanceOwnerId;
-
-		private string ownerAccount;
-
-		private string vbrInstanceId;
-
-		private string action;
 
 		private string healthCheckTargetIp;
 
-		private long? ownerId;
+		private int? healthyThreshold;
+
+		private long? vbrInstanceOwnerId;
 
 		private string vbrInstanceRegionId;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private long? ownerId;
+
+		private string healthCheckSourceIp;
+
+		private int? healthCheckInterval;
+
+		private string vbrInstanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -66,19 +74,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -95,16 +90,29 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string HealthCheckSourceIp
+		public string HealthCheckTargetIp
 		{
 			get
 			{
-				return healthCheckSourceIp;
+				return healthCheckTargetIp;
 			}
 			set	
 			{
-				healthCheckSourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "HealthCheckSourceIp", value);
+				healthCheckTargetIp = value;
+				DictionaryUtil.Add(QueryParameters, "HealthCheckTargetIp", value);
+			}
+		}
+
+		public int? HealthyThreshold
+		{
+			get
+			{
+				return healthyThreshold;
+			}
+			set	
+			{
+				healthyThreshold = value;
+				DictionaryUtil.Add(QueryParameters, "HealthyThreshold", value.ToString());
 			}
 		}
 
@@ -121,6 +129,32 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
+		public string VbrInstanceRegionId
+		{
+			get
+			{
+				return vbrInstanceRegionId;
+			}
+			set	
+			{
+				vbrInstanceRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "VbrInstanceRegionId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -131,45 +165,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string VbrInstanceId
-		{
-			get
-			{
-				return vbrInstanceId;
-			}
-			set	
-			{
-				vbrInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "VbrInstanceId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string HealthCheckTargetIp
-		{
-			get
-			{
-				return healthCheckTargetIp;
-			}
-			set	
-			{
-				healthCheckTargetIp = value;
-				DictionaryUtil.Add(QueryParameters, "HealthCheckTargetIp", value);
 			}
 		}
 
@@ -186,16 +181,42 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string VbrInstanceRegionId
+		public string HealthCheckSourceIp
 		{
 			get
 			{
-				return vbrInstanceRegionId;
+				return healthCheckSourceIp;
 			}
 			set	
 			{
-				vbrInstanceRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "VbrInstanceRegionId", value);
+				healthCheckSourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "HealthCheckSourceIp", value);
+			}
+		}
+
+		public int? HealthCheckInterval
+		{
+			get
+			{
+				return healthCheckInterval;
+			}
+			set	
+			{
+				healthCheckInterval = value;
+				DictionaryUtil.Add(QueryParameters, "HealthCheckInterval", value.ToString());
+			}
+		}
+
+		public string VbrInstanceId
+		{
+			get
+			{
+				return vbrInstanceId;
+			}
+			set	
+			{
+				vbrInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "VbrInstanceId", value);
 			}
 		}
 

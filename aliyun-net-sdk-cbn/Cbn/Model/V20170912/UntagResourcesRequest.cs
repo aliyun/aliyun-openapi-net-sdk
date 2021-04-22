@@ -32,27 +32,29 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
         public UntagResourcesRequest()
             : base("Cbn", "2017-09-12", "UntagResources", "cbn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private List<string> resourceIds;
+		private bool? all;
+
+		private List<string> resourceIds = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private long? tagOwnerUid;
-
-		private string action;
-
-		private string tagOwnerBid;
-
 		private long? ownerId;
 
-		private List<string> tagKeys;
-
 		private string resourceType;
+
+		private List<string> tagKeys = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -64,6 +66,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? All
+		{
+			get
+			{
+				return all;
+			}
+			set	
+			{
+				all = value;
+				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
 			}
 		}
 
@@ -110,45 +125,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public long? TagOwnerUid
-		{
-			get
-			{
-				return tagOwnerUid;
-			}
-			set	
-			{
-				tagOwnerUid = value;
-				DictionaryUtil.Add(QueryParameters, "TagOwnerUid", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string TagOwnerBid
-		{
-			get
-			{
-				return tagOwnerBid;
-			}
-			set	
-			{
-				tagOwnerBid = value;
-				DictionaryUtil.Add(QueryParameters, "TagOwnerBid", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -159,6 +135,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
@@ -176,19 +165,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				{
 					DictionaryUtil.Add(QueryParameters,"TagKey." + (i + 1) , tagKeys[i]);
 				}
-			}
-		}
-
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 

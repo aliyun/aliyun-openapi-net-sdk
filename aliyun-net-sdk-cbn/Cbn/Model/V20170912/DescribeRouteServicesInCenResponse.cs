@@ -110,6 +110,10 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string status;
 
+			private string hostVpcId;
+
+			private string description;
+
 			private List<string> cidrs;
 
 			public string CenId
@@ -181,6 +185,30 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string HostVpcId
+			{
+				get
+				{
+					return hostVpcId;
+				}
+				set	
+				{
+					hostVpcId = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 

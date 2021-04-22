@@ -32,38 +32,29 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
         public SetCenInterRegionBandwidthLimitRequest()
             : base("Cbn", "2017-09-12", "SetCenInterRegionBandwidthLimit", "cbn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string localRegionId;
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string cenId;
+
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private string oppositeRegionId;
 
-		private string action;
-
-		private long? bandwidthLimit;
-
 		private long? ownerId;
 
-		public string LocalRegionId
-		{
-			get
-			{
-				return localRegionId;
-			}
-			set	
-			{
-				localRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "LocalRegionId", value);
-			}
-		}
+		private string localRegionId;
+
+		private long? bandwidthLimit;
 
 		public long? ResourceOwnerId
 		{
@@ -78,19 +69,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string CenId
 		{
 			get
@@ -101,6 +79,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				cenId = value;
 				DictionaryUtil.Add(QueryParameters, "CenId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -130,16 +121,29 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string Action
+		public long? OwnerId
 		{
 			get
 			{
-				return action;
+				return ownerId;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string LocalRegionId
+		{
+			get
+			{
+				return localRegionId;
+			}
+			set	
+			{
+				localRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "LocalRegionId", value);
 			}
 		}
 
@@ -153,19 +157,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				bandwidthLimit = value;
 				DictionaryUtil.Add(QueryParameters, "BandwidthLimit", value.ToString());
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

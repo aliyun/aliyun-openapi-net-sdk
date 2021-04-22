@@ -32,11 +32,25 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
         public CreateCenBandwidthPackageRequest()
             : base("Cbn", "2017-09-12", "CreateCenBandwidthPackage", "cbn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private string geographicRegionBId;
-
 		private long? resourceOwnerId;
+
+		private string clientToken;
+
+		private string description;
+
+		private int? autoRenewDuration;
+
+		private string bandwidthPackageChargeType;
+
+		private string geographicRegionBId;
 
 		private int? period;
 
@@ -46,36 +60,17 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string resourceOwnerAccount;
 
-		private string clientToken;
-
 		private int? bandwidth;
 
 		private string ownerAccount;
 
-		private string description;
-
 		private long? ownerId;
 
-		private string bandwidthPackageChargeType;
+		private bool? autoRenew;
 
 		private string name;
 
-		private string action;
-
 		private string pricingCycle;
-
-		public string GeographicRegionBId
-		{
-			get
-			{
-				return geographicRegionBId;
-			}
-			set	
-			{
-				geographicRegionBId = value;
-				DictionaryUtil.Add(QueryParameters, "GeographicRegionBId", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -87,6 +82,71 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public int? AutoRenewDuration
+		{
+			get
+			{
+				return autoRenewDuration;
+			}
+			set	
+			{
+				autoRenewDuration = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenewDuration", value.ToString());
+			}
+		}
+
+		public string BandwidthPackageChargeType
+		{
+			get
+			{
+				return bandwidthPackageChargeType;
+			}
+			set	
+			{
+				bandwidthPackageChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "BandwidthPackageChargeType", value);
+			}
+		}
+
+		public string GeographicRegionBId
+		{
+			get
+			{
+				return geographicRegionBId;
+			}
+			set	
+			{
+				geographicRegionBId = value;
+				DictionaryUtil.Add(QueryParameters, "GeographicRegionBId", value);
 			}
 		}
 
@@ -142,19 +202,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
 		public int? Bandwidth
 		{
 			get
@@ -181,19 +228,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -207,16 +241,16 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string BandwidthPackageChargeType
+		public bool? AutoRenew
 		{
 			get
 			{
-				return bandwidthPackageChargeType;
+				return autoRenew;
 			}
 			set	
 			{
-				bandwidthPackageChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "BandwidthPackageChargeType", value);
+				autoRenew = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenew", value.ToString());
 			}
 		}
 
@@ -230,19 +264,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

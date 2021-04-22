@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 {
     public class ResolveAndRouteServiceInCenResponseUnmarshaller
     {
-        public static ResolveAndRouteServiceInCenResponse Unmarshall(UnmarshallerContext context)
+        public static ResolveAndRouteServiceInCenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResolveAndRouteServiceInCenResponse resolveAndRouteServiceInCenResponse = new ResolveAndRouteServiceInCenResponse();
 
-			resolveAndRouteServiceInCenResponse.HttpResponse = context.HttpResponse;
-			resolveAndRouteServiceInCenResponse.RequestId = context.StringValue("ResolveAndRouteServiceInCen.RequestId");
+			resolveAndRouteServiceInCenResponse.HttpResponse = _ctx.HttpResponse;
+			resolveAndRouteServiceInCenResponse.RequestId = _ctx.StringValue("ResolveAndRouteServiceInCen.RequestId");
         
 			return resolveAndRouteServiceInCenResponse;
         }

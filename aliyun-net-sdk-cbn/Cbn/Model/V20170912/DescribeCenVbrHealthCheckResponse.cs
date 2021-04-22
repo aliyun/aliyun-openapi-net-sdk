@@ -112,6 +112,12 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private long? delay;
 
+			private int? healthCheckInterval;
+
+			private int? healthyThreshold;
+
+			private string vbrInstanceRegionId;
+
 			public string CenId
 			{
 				get
@@ -193,6 +199,42 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					delay = value;
+				}
+			}
+
+			public int? HealthCheckInterval
+			{
+				get
+				{
+					return healthCheckInterval;
+				}
+				set	
+				{
+					healthCheckInterval = value;
+				}
+			}
+
+			public int? HealthyThreshold
+			{
+				get
+				{
+					return healthyThreshold;
+				}
+				set	
+				{
+					healthyThreshold = value;
+				}
+			}
+
+			public string VbrInstanceRegionId
+			{
+				get
+				{
+					return vbrInstanceRegionId;
+				}
+				set	
+				{
+					vbrInstanceRegionId = value;
 				}
 			}
 		}

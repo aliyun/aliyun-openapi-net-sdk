@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 {
     public class SetCenInterRegionBandwidthLimitResponseUnmarshaller
     {
-        public static SetCenInterRegionBandwidthLimitResponse Unmarshall(UnmarshallerContext context)
+        public static SetCenInterRegionBandwidthLimitResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetCenInterRegionBandwidthLimitResponse setCenInterRegionBandwidthLimitResponse = new SetCenInterRegionBandwidthLimitResponse();
 
-			setCenInterRegionBandwidthLimitResponse.HttpResponse = context.HttpResponse;
-			setCenInterRegionBandwidthLimitResponse.RequestId = context.StringValue("SetCenInterRegionBandwidthLimit.RequestId");
+			setCenInterRegionBandwidthLimitResponse.HttpResponse = _ctx.HttpResponse;
+			setCenInterRegionBandwidthLimitResponse.RequestId = _ctx.StringValue("SetCenInterRegionBandwidthLimit.RequestId");
         
 			return setCenInterRegionBandwidthLimitResponse;
         }

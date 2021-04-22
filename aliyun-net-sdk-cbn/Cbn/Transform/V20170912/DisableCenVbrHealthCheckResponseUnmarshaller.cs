@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 {
     public class DisableCenVbrHealthCheckResponseUnmarshaller
     {
-        public static DisableCenVbrHealthCheckResponse Unmarshall(UnmarshallerContext context)
+        public static DisableCenVbrHealthCheckResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DisableCenVbrHealthCheckResponse disableCenVbrHealthCheckResponse = new DisableCenVbrHealthCheckResponse();
 
-			disableCenVbrHealthCheckResponse.HttpResponse = context.HttpResponse;
-			disableCenVbrHealthCheckResponse.RequestId = context.StringValue("DisableCenVbrHealthCheck.RequestId");
+			disableCenVbrHealthCheckResponse.HttpResponse = _ctx.HttpResponse;
+			disableCenVbrHealthCheckResponse.RequestId = _ctx.StringValue("DisableCenVbrHealthCheck.RequestId");
         
 			return disableCenVbrHealthCheckResponse;
         }

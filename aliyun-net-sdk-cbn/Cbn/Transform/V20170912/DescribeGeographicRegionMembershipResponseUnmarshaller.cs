@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 {
     public class DescribeGeographicRegionMembershipResponseUnmarshaller
     {
-        public static DescribeGeographicRegionMembershipResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGeographicRegionMembershipResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGeographicRegionMembershipResponse describeGeographicRegionMembershipResponse = new DescribeGeographicRegionMembershipResponse();
 
-			describeGeographicRegionMembershipResponse.HttpResponse = context.HttpResponse;
-			describeGeographicRegionMembershipResponse.RequestId = context.StringValue("DescribeGeographicRegionMembership.RequestId");
-			describeGeographicRegionMembershipResponse.TotalCount = context.IntegerValue("DescribeGeographicRegionMembership.TotalCount");
-			describeGeographicRegionMembershipResponse.PageNumber = context.IntegerValue("DescribeGeographicRegionMembership.PageNumber");
-			describeGeographicRegionMembershipResponse.PageSize = context.IntegerValue("DescribeGeographicRegionMembership.PageSize");
+			describeGeographicRegionMembershipResponse.HttpResponse = _ctx.HttpResponse;
+			describeGeographicRegionMembershipResponse.RequestId = _ctx.StringValue("DescribeGeographicRegionMembership.RequestId");
+			describeGeographicRegionMembershipResponse.TotalCount = _ctx.IntegerValue("DescribeGeographicRegionMembership.TotalCount");
+			describeGeographicRegionMembershipResponse.PageNumber = _ctx.IntegerValue("DescribeGeographicRegionMembership.PageNumber");
+			describeGeographicRegionMembershipResponse.PageSize = _ctx.IntegerValue("DescribeGeographicRegionMembership.PageSize");
 
 			List<DescribeGeographicRegionMembershipResponse.DescribeGeographicRegionMembership_RegionId> describeGeographicRegionMembershipResponse_regionIds = new List<DescribeGeographicRegionMembershipResponse.DescribeGeographicRegionMembership_RegionId>();
-			for (int i = 0; i < context.Length("DescribeGeographicRegionMembership.RegionIds.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeGeographicRegionMembership.RegionIds.Length"); i++) {
 				DescribeGeographicRegionMembershipResponse.DescribeGeographicRegionMembership_RegionId regionId = new DescribeGeographicRegionMembershipResponse.DescribeGeographicRegionMembership_RegionId();
-				regionId.RegionId = context.StringValue("DescribeGeographicRegionMembership.RegionIds["+ i +"].RegionId");
+				regionId.RegionId = _ctx.StringValue("DescribeGeographicRegionMembership.RegionIds["+ i +"].RegionId");
 
 				describeGeographicRegionMembershipResponse_regionIds.Add(regionId);
 			}

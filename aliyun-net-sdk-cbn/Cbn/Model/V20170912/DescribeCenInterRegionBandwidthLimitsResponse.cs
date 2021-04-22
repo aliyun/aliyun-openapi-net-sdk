@@ -110,6 +110,10 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string status;
 
+			private string transitRouterAttachmentId;
+
+			private string bandwidthPackageId;
+
 			public string CenId
 			{
 				get
@@ -179,6 +183,30 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string TransitRouterAttachmentId
+			{
+				get
+				{
+					return transitRouterAttachmentId;
+				}
+				set	
+				{
+					transitRouterAttachmentId = value;
+				}
+			}
+
+			public string BandwidthPackageId
+			{
+				get
+				{
+					return bandwidthPackageId;
+				}
+				set	
+				{
+					bandwidthPackageId = value;
 				}
 			}
 		}

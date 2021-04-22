@@ -124,6 +124,24 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private bool? isCrossBorder;
 
+			private string typeFor95;
+
+			private string ratio;
+
+			private string hasReservationData;
+
+			private string reservationBandwidth;
+
+			private string reservationInternetChargeType;
+
+			private string reservationActiveTime;
+
+			private string reservationOrderType;
+
+			private List<DescribeCenBandwidthPackages_OrginInterRegionBandwidthLimit> orginInterRegionBandwidthLimits;
+
+			private List<DescribeCenBandwidthPackages_Tag> tags;
+
 			private List<string> cenIds;
 
 			public string CenBandwidthPackageId
@@ -282,6 +300,114 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
+			public string TypeFor95
+			{
+				get
+				{
+					return typeFor95;
+				}
+				set	
+				{
+					typeFor95 = value;
+				}
+			}
+
+			public string Ratio
+			{
+				get
+				{
+					return ratio;
+				}
+				set	
+				{
+					ratio = value;
+				}
+			}
+
+			public string HasReservationData
+			{
+				get
+				{
+					return hasReservationData;
+				}
+				set	
+				{
+					hasReservationData = value;
+				}
+			}
+
+			public string ReservationBandwidth
+			{
+				get
+				{
+					return reservationBandwidth;
+				}
+				set	
+				{
+					reservationBandwidth = value;
+				}
+			}
+
+			public string ReservationInternetChargeType
+			{
+				get
+				{
+					return reservationInternetChargeType;
+				}
+				set	
+				{
+					reservationInternetChargeType = value;
+				}
+			}
+
+			public string ReservationActiveTime
+			{
+				get
+				{
+					return reservationActiveTime;
+				}
+				set	
+				{
+					reservationActiveTime = value;
+				}
+			}
+
+			public string ReservationOrderType
+			{
+				get
+				{
+					return reservationOrderType;
+				}
+				set	
+				{
+					reservationOrderType = value;
+				}
+			}
+
+			public List<DescribeCenBandwidthPackages_OrginInterRegionBandwidthLimit> OrginInterRegionBandwidthLimits
+			{
+				get
+				{
+					return orginInterRegionBandwidthLimits;
+				}
+				set	
+				{
+					orginInterRegionBandwidthLimits = value;
+				}
+			}
+
+			public List<DescribeCenBandwidthPackages_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public List<string> CenIds
 			{
 				get
@@ -291,6 +417,98 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					cenIds = value;
+				}
+			}
+
+			public class DescribeCenBandwidthPackages_OrginInterRegionBandwidthLimit
+			{
+
+				private string localRegionId;
+
+				private string oppositeRegionId;
+
+				private string geographicSpanId;
+
+				private string bandwidthLimit;
+
+				public string LocalRegionId
+				{
+					get
+					{
+						return localRegionId;
+					}
+					set	
+					{
+						localRegionId = value;
+					}
+				}
+
+				public string OppositeRegionId
+				{
+					get
+					{
+						return oppositeRegionId;
+					}
+					set	
+					{
+						oppositeRegionId = value;
+					}
+				}
+
+				public string GeographicSpanId
+				{
+					get
+					{
+						return geographicSpanId;
+					}
+					set	
+					{
+						geographicSpanId = value;
+					}
+				}
+
+				public string BandwidthLimit
+				{
+					get
+					{
+						return bandwidthLimit;
+					}
+					set	
+					{
+						bandwidthLimit = value;
+					}
+				}
+			}
+
+			public class DescribeCenBandwidthPackages_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

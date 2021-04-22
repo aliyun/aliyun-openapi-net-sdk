@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 {
     public class CreateCenResponseUnmarshaller
     {
-        public static CreateCenResponse Unmarshall(UnmarshallerContext context)
+        public static CreateCenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateCenResponse createCenResponse = new CreateCenResponse();
 
-			createCenResponse.HttpResponse = context.HttpResponse;
-			createCenResponse.RequestId = context.StringValue("CreateCen.RequestId");
-			createCenResponse.CenId = context.StringValue("CreateCen.CenId");
+			createCenResponse.HttpResponse = _ctx.HttpResponse;
+			createCenResponse.RequestId = _ctx.StringValue("CreateCen.RequestId");
+			createCenResponse.CenId = _ctx.StringValue("CreateCen.CenId");
         
 			return createCenResponse;
         }

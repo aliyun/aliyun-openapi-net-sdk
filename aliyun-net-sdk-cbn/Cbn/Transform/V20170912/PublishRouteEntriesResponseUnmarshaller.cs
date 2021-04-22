@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 {
     public class PublishRouteEntriesResponseUnmarshaller
     {
-        public static PublishRouteEntriesResponse Unmarshall(UnmarshallerContext context)
+        public static PublishRouteEntriesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PublishRouteEntriesResponse publishRouteEntriesResponse = new PublishRouteEntriesResponse();
 
-			publishRouteEntriesResponse.HttpResponse = context.HttpResponse;
-			publishRouteEntriesResponse.RequestId = context.StringValue("PublishRouteEntries.RequestId");
+			publishRouteEntriesResponse.HttpResponse = _ctx.HttpResponse;
+			publishRouteEntriesResponse.RequestId = _ctx.StringValue("PublishRouteEntries.RequestId");
         
 			return publishRouteEntriesResponse;
         }

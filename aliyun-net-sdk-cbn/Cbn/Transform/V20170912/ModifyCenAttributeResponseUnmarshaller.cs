@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 {
     public class ModifyCenAttributeResponseUnmarshaller
     {
-        public static ModifyCenAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyCenAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyCenAttributeResponse modifyCenAttributeResponse = new ModifyCenAttributeResponse();
 
-			modifyCenAttributeResponse.HttpResponse = context.HttpResponse;
-			modifyCenAttributeResponse.RequestId = context.StringValue("ModifyCenAttribute.RequestId");
+			modifyCenAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			modifyCenAttributeResponse.RequestId = _ctx.StringValue("ModifyCenAttribute.RequestId");
         
 			return modifyCenAttributeResponse;
         }

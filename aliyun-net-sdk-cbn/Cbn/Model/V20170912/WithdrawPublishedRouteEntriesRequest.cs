@@ -32,38 +32,29 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
         public WithdrawPublishedRouteEntriesRequest()
             : base("Cbn", "2017-09-12", "WithdrawPublishedRouteEntries", "cbn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string childInstanceId;
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string cenId;
-
-		private string destinationCidrBlock;
-
-		private string action;
-
-		private string childInstanceType;
-
-		private string childInstanceRouteTableId;
 
 		private string childInstanceRegionId;
 
-		public string ChildInstanceId
-		{
-			get
-			{
-				return childInstanceId;
-			}
-			set	
-			{
-				childInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "ChildInstanceId", value);
-			}
-		}
+		private string resourceOwnerAccount;
+
+		private string destinationCidrBlock;
+
+		private string childInstanceType;
+
+		private string childInstanceId;
+
+		private string childInstanceRouteTableId;
 
 		public long? ResourceOwnerId
 		{
@@ -75,19 +66,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -104,6 +82,32 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
+		public string ChildInstanceRegionId
+		{
+			get
+			{
+				return childInstanceRegionId;
+			}
+			set	
+			{
+				childInstanceRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "ChildInstanceRegionId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
 		public string DestinationCidrBlock
 		{
 			get
@@ -114,19 +118,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				destinationCidrBlock = value;
 				DictionaryUtil.Add(QueryParameters, "DestinationCidrBlock", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -143,6 +134,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
+		public string ChildInstanceId
+		{
+			get
+			{
+				return childInstanceId;
+			}
+			set	
+			{
+				childInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "ChildInstanceId", value);
+			}
+		}
+
 		public string ChildInstanceRouteTableId
 		{
 			get
@@ -153,19 +157,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				childInstanceRouteTableId = value;
 				DictionaryUtil.Add(QueryParameters, "ChildInstanceRouteTableId", value);
-			}
-		}
-
-		public string ChildInstanceRegionId
-		{
-			get
-			{
-				return childInstanceRegionId;
-			}
-			set	
-			{
-				childInstanceRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "ChildInstanceRegionId", value);
 			}
 		}
 

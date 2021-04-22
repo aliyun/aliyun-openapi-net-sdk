@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 {
     public class AttachCenChildInstanceResponseUnmarshaller
     {
-        public static AttachCenChildInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static AttachCenChildInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AttachCenChildInstanceResponse attachCenChildInstanceResponse = new AttachCenChildInstanceResponse();
 
-			attachCenChildInstanceResponse.HttpResponse = context.HttpResponse;
-			attachCenChildInstanceResponse.RequestId = context.StringValue("AttachCenChildInstance.RequestId");
+			attachCenChildInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			attachCenChildInstanceResponse.RequestId = _ctx.StringValue("AttachCenChildInstance.RequestId");
         
 			return attachCenChildInstanceResponse;
         }

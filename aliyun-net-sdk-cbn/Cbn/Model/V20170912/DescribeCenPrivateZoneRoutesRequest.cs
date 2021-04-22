@@ -32,23 +32,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
         public DescribeCenPrivateZoneRoutesRequest()
             : base("Cbn", "2017-09-12", "DescribeCenPrivateZoneRoutes", "cbn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string cenId;
+
+		private string accessRegionId;
+
+		private int? pageNumber;
 
 		private int? pageSize;
 
 		private string hostRegionId;
 
-		private string action;
-
-		private string accessRegionId;
-
-		private int? pageNumber;
+		private string resourceOwnerAccount;
 
 		public long? ResourceOwnerId
 		{
@@ -63,19 +67,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string CenId
 		{
 			get
@@ -86,6 +77,32 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				cenId = value;
 				DictionaryUtil.Add(QueryParameters, "CenId", value);
+			}
+		}
+
+		public string AccessRegionId
+		{
+			get
+			{
+				return accessRegionId;
+			}
+			set	
+			{
+				accessRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessRegionId", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -115,42 +132,16 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string Action
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return action;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string AccessRegionId
-		{
-			get
-			{
-				return accessRegionId;
-			}
-			set	
-			{
-				accessRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessRegionId", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 

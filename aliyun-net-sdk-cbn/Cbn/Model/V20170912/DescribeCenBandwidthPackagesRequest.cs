@@ -32,46 +32,31 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
         public DescribeCenBandwidthPackagesRequest()
             : base("Cbn", "2017-09-12", "DescribeCenBandwidthPackages", "cbn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cbn.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private List<Filter> filters;
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
-		private int? pageSize;
-
-		private string action;
-
-		private long? ownerId;
+		private bool? includeReservationData;
 
 		private int? pageNumber;
 
 		private bool? isOrKey;
 
-		public List<Filter> Filters
-		{
-			get
-			{
-				return filters;
-			}
+		private int? pageSize;
 
-			set
-			{
-				filters = value;
-				for (int i = 0; i < filters.Count; i++)
-				{
-					for (int j = 0; j < filters[i].Values.Count; j++)
-					{
-						DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Value." +(j + 1), filters[i].Values[j]);
-					}
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
-				}
-			}
-		}
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private long? ownerId;
+
+		private List<Filter> filters = new List<Filter>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -86,68 +71,16 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public bool? IncludeReservationData
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return includeReservationData;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				includeReservationData = value;
+				DictionaryUtil.Add(QueryParameters, "IncludeReservationData", value.ToString());
 			}
 		}
 
@@ -177,10 +110,83 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public List<Filter> Filters
+		{
+			get
+			{
+				return filters;
+			}
+
+			set
+			{
+				filters = value;
+				for (int i = 0; i < filters.Count; i++)
+				{
+					for (int j = 0; j < filters[i].Values.Count; j++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Value." +(j + 1), filters[i].Values[j]);
+					}
+					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
+				}
+			}
+		}
+
 		public class Filter
 		{
 
-			private List<string> values;
+			private List<string> values = new List<string>(){ };
 
 			private string key;
 

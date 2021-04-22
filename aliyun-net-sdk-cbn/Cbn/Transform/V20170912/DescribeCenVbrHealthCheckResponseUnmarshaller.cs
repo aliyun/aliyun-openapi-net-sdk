@@ -26,26 +26,29 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 {
     public class DescribeCenVbrHealthCheckResponseUnmarshaller
     {
-        public static DescribeCenVbrHealthCheckResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCenVbrHealthCheckResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCenVbrHealthCheckResponse describeCenVbrHealthCheckResponse = new DescribeCenVbrHealthCheckResponse();
 
-			describeCenVbrHealthCheckResponse.HttpResponse = context.HttpResponse;
-			describeCenVbrHealthCheckResponse.RequestId = context.StringValue("DescribeCenVbrHealthCheck.RequestId");
-			describeCenVbrHealthCheckResponse.TotalCount = context.IntegerValue("DescribeCenVbrHealthCheck.TotalCount");
-			describeCenVbrHealthCheckResponse.PageNumber = context.IntegerValue("DescribeCenVbrHealthCheck.PageNumber");
-			describeCenVbrHealthCheckResponse.PageSize = context.IntegerValue("DescribeCenVbrHealthCheck.PageSize");
+			describeCenVbrHealthCheckResponse.HttpResponse = _ctx.HttpResponse;
+			describeCenVbrHealthCheckResponse.RequestId = _ctx.StringValue("DescribeCenVbrHealthCheck.RequestId");
+			describeCenVbrHealthCheckResponse.TotalCount = _ctx.IntegerValue("DescribeCenVbrHealthCheck.TotalCount");
+			describeCenVbrHealthCheckResponse.PageNumber = _ctx.IntegerValue("DescribeCenVbrHealthCheck.PageNumber");
+			describeCenVbrHealthCheckResponse.PageSize = _ctx.IntegerValue("DescribeCenVbrHealthCheck.PageSize");
 
 			List<DescribeCenVbrHealthCheckResponse.DescribeCenVbrHealthCheck_VbrHealthCheck> describeCenVbrHealthCheckResponse_vbrHealthChecks = new List<DescribeCenVbrHealthCheckResponse.DescribeCenVbrHealthCheck_VbrHealthCheck>();
-			for (int i = 0; i < context.Length("DescribeCenVbrHealthCheck.VbrHealthChecks.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCenVbrHealthCheck.VbrHealthChecks.Length"); i++) {
 				DescribeCenVbrHealthCheckResponse.DescribeCenVbrHealthCheck_VbrHealthCheck vbrHealthCheck = new DescribeCenVbrHealthCheckResponse.DescribeCenVbrHealthCheck_VbrHealthCheck();
-				vbrHealthCheck.CenId = context.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].CenId");
-				vbrHealthCheck.VbrInstanceId = context.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].VbrInstanceId");
-				vbrHealthCheck.LinkStatus = context.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].LinkStatus");
-				vbrHealthCheck.PacketLoss = context.LongValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].PacketLoss");
-				vbrHealthCheck.HealthCheckSourceIp = context.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].HealthCheckSourceIp");
-				vbrHealthCheck.HealthCheckTargetIp = context.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].HealthCheckTargetIp");
-				vbrHealthCheck.Delay = context.LongValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].Delay");
+				vbrHealthCheck.CenId = _ctx.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].CenId");
+				vbrHealthCheck.VbrInstanceId = _ctx.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].VbrInstanceId");
+				vbrHealthCheck.LinkStatus = _ctx.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].LinkStatus");
+				vbrHealthCheck.PacketLoss = _ctx.LongValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].PacketLoss");
+				vbrHealthCheck.HealthCheckSourceIp = _ctx.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].HealthCheckSourceIp");
+				vbrHealthCheck.HealthCheckTargetIp = _ctx.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].HealthCheckTargetIp");
+				vbrHealthCheck.Delay = _ctx.LongValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].Delay");
+				vbrHealthCheck.HealthCheckInterval = _ctx.IntegerValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].HealthCheckInterval");
+				vbrHealthCheck.HealthyThreshold = _ctx.IntegerValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].HealthyThreshold");
+				vbrHealthCheck.VbrInstanceRegionId = _ctx.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].VbrInstanceRegionId");
 
 				describeCenVbrHealthCheckResponse_vbrHealthChecks.Add(vbrHealthCheck);
 			}

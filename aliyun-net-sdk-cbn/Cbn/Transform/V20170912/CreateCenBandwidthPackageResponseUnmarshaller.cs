@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 {
     public class CreateCenBandwidthPackageResponseUnmarshaller
     {
-        public static CreateCenBandwidthPackageResponse Unmarshall(UnmarshallerContext context)
+        public static CreateCenBandwidthPackageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateCenBandwidthPackageResponse createCenBandwidthPackageResponse = new CreateCenBandwidthPackageResponse();
 
-			createCenBandwidthPackageResponse.HttpResponse = context.HttpResponse;
-			createCenBandwidthPackageResponse.RequestId = context.StringValue("CreateCenBandwidthPackage.RequestId");
-			createCenBandwidthPackageResponse.CenBandwidthPackageId = context.StringValue("CreateCenBandwidthPackage.CenBandwidthPackageId");
-			createCenBandwidthPackageResponse.CenBandwidthPackageOrderId = context.StringValue("CreateCenBandwidthPackage.CenBandwidthPackageOrderId");
+			createCenBandwidthPackageResponse.HttpResponse = _ctx.HttpResponse;
+			createCenBandwidthPackageResponse.RequestId = _ctx.StringValue("CreateCenBandwidthPackage.RequestId");
+			createCenBandwidthPackageResponse.CenBandwidthPackageId = _ctx.StringValue("CreateCenBandwidthPackage.CenBandwidthPackageId");
+			createCenBandwidthPackageResponse.CenBandwidthPackageOrderId = _ctx.StringValue("CreateCenBandwidthPackage.CenBandwidthPackageOrderId");
         
 			return createCenBandwidthPackageResponse;
         }
