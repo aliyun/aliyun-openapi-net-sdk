@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.dms_enterprise;
 using Aliyun.Acs.dms_enterprise.Transform;
 using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class GetPermApplyOrderDetailRequest : RpcAcsRequest<GetPermApplyOrderDetailResponse>
     {
         public GetPermApplyOrderDetailRequest()
-            : base("dms-enterprise", "2018-11-01", "GetPermApplyOrderDetail")
+            : base("dms-enterprise", "2018-11-01", "GetPermApplyOrderDetail", "dms-enterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

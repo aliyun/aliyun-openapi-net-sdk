@@ -28,10 +28,10 @@ using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 {
-    public class ListUsersRequest : RpcAcsRequest<ListUsersResponse>
+    public class GetPhysicalDatabaseRequest : RpcAcsRequest<GetPhysicalDatabaseResponse>
     {
-        public ListUsersRequest()
-            : base("dms-enterprise", "2018-11-01", "ListUsers", "dms-enterprise", "openAPI")
+        public GetPhysicalDatabaseRequest()
+            : base("dms-enterprise", "2018-11-01", "GetPhysicalDatabase", "dms-enterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,43 +41,21 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			Method = MethodType.POST;
         }
 
-		private string role;
-
-		private string searchKey;
+		private long? dbId;
 
 		private long? tid;
 
-		private int? pageNumber;
-
-		private string userState;
-
-		private int? pageSize;
-
-		[JsonProperty(PropertyName = "Role")]
-		public string Role
+		[JsonProperty(PropertyName = "DbId")]
+		public long? DbId
 		{
 			get
 			{
-				return role;
+				return dbId;
 			}
 			set	
 			{
-				role = value;
-				DictionaryUtil.Add(QueryParameters, "Role", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "SearchKey")]
-		public string SearchKey
-		{
-			get
-			{
-				return searchKey;
-			}
-			set	
-			{
-				searchKey = value;
-				DictionaryUtil.Add(QueryParameters, "SearchKey", value);
+				dbId = value;
+				DictionaryUtil.Add(QueryParameters, "DbId", value.ToString());
 			}
 		}
 
@@ -95,51 +73,9 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "PageNumber")]
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "UserState")]
-		public string UserState
-		{
-			get
-			{
-				return userState;
-			}
-			set	
-			{
-				userState = value;
-				DictionaryUtil.Add(QueryParameters, "UserState", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "PageSize")]
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-        public override ListUsersResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetPhysicalDatabaseResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListUsersResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetPhysicalDatabaseResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
