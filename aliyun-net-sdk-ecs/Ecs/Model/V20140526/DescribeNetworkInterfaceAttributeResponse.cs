@@ -61,6 +61,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string ownerId;
 
+		private string networkInterfaceTrafficMode;
+
+		private int? queuePairNumber;
+
 		private List<DescribeNetworkInterfaceAttribute_PrivateIpSet> privateIpSets;
 
 		private List<DescribeNetworkInterfaceAttribute_Ipv6Set> ipv6Sets;
@@ -286,6 +290,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				ownerId = value;
+			}
+		}
+
+		public string NetworkInterfaceTrafficMode
+		{
+			get
+			{
+				return networkInterfaceTrafficMode;
+			}
+			set	
+			{
+				networkInterfaceTrafficMode = value;
+			}
+		}
+
+		public int? QueuePairNumber
+		{
+			get
+			{
+				return queuePairNumber;
+			}
+			set	
+			{
+				queuePairNumber = value;
 			}
 		}
 

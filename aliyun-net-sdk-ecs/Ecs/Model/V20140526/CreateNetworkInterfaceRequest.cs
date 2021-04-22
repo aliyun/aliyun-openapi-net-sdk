@@ -68,9 +68,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string ownerAccount;
 
+		private int? queuePairNumber;
+
 		private long? ownerId;
 
 		private List<string> securityGroupIdss = new List<string>(){ };
+
+		private string networkInterfaceTrafficMode;
 
 		private string vSwitchId;
 
@@ -265,6 +269,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public int? QueuePairNumber
+		{
+			get
+			{
+				return queuePairNumber;
+			}
+			set	
+			{
+				queuePairNumber = value;
+				DictionaryUtil.Add(QueryParameters, "QueuePairNumber", value.ToString());
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -292,6 +309,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				{
 					DictionaryUtil.Add(QueryParameters,"SecurityGroupIds." + (i + 1) , securityGroupIdss[i]);
 				}
+			}
+		}
+
+		public string NetworkInterfaceTrafficMode
+		{
+			get
+			{
+				return networkInterfaceTrafficMode;
+			}
+			set	
+			{
+				networkInterfaceTrafficMode = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkInterfaceTrafficMode", value);
 			}
 		}
 

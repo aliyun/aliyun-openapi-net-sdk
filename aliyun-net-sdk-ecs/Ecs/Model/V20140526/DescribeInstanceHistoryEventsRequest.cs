@@ -56,6 +56,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string eventPublishTimeEnd;
 
+		private List<string> resourceIds = new List<string>(){ };
+
 		private List<string> instanceEventTypes = new List<string>(){ };
 
 		private string resourceOwnerAccount;
@@ -65,6 +67,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string notBeforeStart;
 
 		private long? ownerId;
+
+		private string resourceType;
 
 		private string eventPublishTimeStart;
 
@@ -186,6 +190,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public List<string> ResourceIds
+		{
+			get
+			{
+				return resourceIds;
+			}
+
+			set
+			{
+				resourceIds = value;
+				for (int i = 0; i < resourceIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
+				}
+			}
+		}
+
 		public List<string> InstanceEventTypes
 		{
 			get
@@ -252,6 +273,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 

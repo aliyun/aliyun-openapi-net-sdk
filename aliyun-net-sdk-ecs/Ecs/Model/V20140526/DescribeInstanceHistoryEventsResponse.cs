@@ -112,6 +112,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string impactLevel;
 
+			private string resourceType;
+
 			private DescribeInstanceHistoryEvents_EventType eventType;
 
 			private DescribeInstanceHistoryEvents_EventCycleStatus eventCycleStatus;
@@ -199,6 +201,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					impactLevel = value;
+				}
+			}
+
+			public string ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
 				}
 			}
 

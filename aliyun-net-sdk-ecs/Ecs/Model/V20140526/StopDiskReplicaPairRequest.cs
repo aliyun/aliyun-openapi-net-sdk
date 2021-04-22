@@ -28,10 +28,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class InvokeCommandRequest : RpcAcsRequest<InvokeCommandResponse>
+    public class StopDiskReplicaPairRequest : RpcAcsRequest<StopDiskReplicaPairResponse>
     {
-        public InvokeCommandRequest()
-            : base("Ecs", "2014-05-26", "InvokeCommand", "ecs", "openAPI")
+        public StopDiskReplicaPairRequest()
+            : base("Ecs", "2014-05-26", "StopDiskReplicaPair", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,27 +43,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string commandId;
-
-		private string frequency;
-
-		private string repeatMode;
-
-		private string windowsPasswordName;
-
-		private bool? timed;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private List<string> instanceIds = new List<string>(){ };
-
-		private Dictionary<object,object> parameters;
-
-		private string username;
+		private string replicaPairId;
 
 		public long? ResourceOwnerId
 		{
@@ -75,71 +61,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string CommandId
-		{
-			get
-			{
-				return commandId;
-			}
-			set	
-			{
-				commandId = value;
-				DictionaryUtil.Add(QueryParameters, "CommandId", value);
-			}
-		}
-
-		public string Frequency
-		{
-			get
-			{
-				return frequency;
-			}
-			set	
-			{
-				frequency = value;
-				DictionaryUtil.Add(QueryParameters, "Frequency", value);
-			}
-		}
-
-		public string RepeatMode
-		{
-			get
-			{
-				return repeatMode;
-			}
-			set	
-			{
-				repeatMode = value;
-				DictionaryUtil.Add(QueryParameters, "RepeatMode", value);
-			}
-		}
-
-		public string WindowsPasswordName
-		{
-			get
-			{
-				return windowsPasswordName;
-			}
-			set	
-			{
-				windowsPasswordName = value;
-				DictionaryUtil.Add(QueryParameters, "WindowsPasswordName", value);
-			}
-		}
-
-		public bool? Timed
-		{
-			get
-			{
-				return timed;
-			}
-			set	
-			{
-				timed = value;
-				DictionaryUtil.Add(QueryParameters, "Timed", value.ToString());
 			}
 		}
 
@@ -182,52 +103,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<string> InstanceIds
+		public string ReplicaPairId
 		{
 			get
 			{
-				return instanceIds;
-			}
-
-			set
-			{
-				instanceIds = value;
-				for (int i = 0; i < instanceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
-				}
-			}
-		}
-
-		public Dictionary<object,object> Parameters
-		{
-			get
-			{
-				return parameters;
+				return replicaPairId;
 			}
 			set	
 			{
-				parameters = value;
-				DictionaryUtil.Add(QueryParameters, "Parameters", JsonConvert.SerializeObject(value));
+				replicaPairId = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicaPairId", value);
 			}
 		}
 
-		public string Username
-		{
-			get
-			{
-				return username;
-			}
-			set	
-			{
-				username = value;
-				DictionaryUtil.Add(QueryParameters, "Username", value);
-			}
-		}
-
-        public override InvokeCommandResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override StopDiskReplicaPairResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return InvokeCommandResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return StopDiskReplicaPairResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instanceCloudAssistantStatus.InvocationCount = _ctx.LongValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].InvocationCount");
 				instanceCloudAssistantStatus.ActiveTaskCount = _ctx.LongValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].ActiveTaskCount");
 				instanceCloudAssistantStatus.LastInvokedTime = _ctx.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].LastInvokedTime");
+				instanceCloudAssistantStatus.LastHeartbeatTime = _ctx.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].LastHeartbeatTime");
 
 				describeCloudAssistantStatusResponse_instanceCloudAssistantStatusSet.Add(instanceCloudAssistantStatus);
 			}

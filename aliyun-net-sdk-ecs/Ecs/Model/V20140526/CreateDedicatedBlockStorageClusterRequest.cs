@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class InvokeCommandRequest : RpcAcsRequest<InvokeCommandResponse>
+    public class CreateDedicatedBlockStorageClusterRequest : RpcAcsRequest<CreateDedicatedBlockStorageClusterResponse>
     {
-        public InvokeCommandRequest()
-            : base("Ecs", "2014-05-26", "InvokeCommand", "ecs", "openAPI")
+        public CreateDedicatedBlockStorageClusterRequest()
+            : base("Ecs", "2014-05-26", "CreateDedicatedBlockStorageCluster", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,27 +42,31 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string commandId;
+		private string dedicatedBlockStorageClusterName;
 
-		private string frequency;
+		private string clientToken;
 
-		private string repeatMode;
+		private string description;
 
-		private string windowsPasswordName;
+		private int? capacity;
 
-		private bool? timed;
+		private int? period;
+
+		private string fromApp;
 
 		private string resourceOwnerAccount;
+
+		private string performanceLevel;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private List<string> instanceIds = new List<string>(){ };
+		private string periodUnit;
 
-		private Dictionary<object,object> parameters;
+		private string zoneId;
 
-		private string username;
+		private string category;
 
 		public long? ResourceOwnerId
 		{
@@ -78,68 +81,81 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string CommandId
+		public string DedicatedBlockStorageClusterName
 		{
 			get
 			{
-				return commandId;
+				return dedicatedBlockStorageClusterName;
 			}
 			set	
 			{
-				commandId = value;
-				DictionaryUtil.Add(QueryParameters, "CommandId", value);
+				dedicatedBlockStorageClusterName = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedBlockStorageClusterName", value);
 			}
 		}
 
-		public string Frequency
+		public string ClientToken
 		{
 			get
 			{
-				return frequency;
+				return clientToken;
 			}
 			set	
 			{
-				frequency = value;
-				DictionaryUtil.Add(QueryParameters, "Frequency", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		public string RepeatMode
+		public string Description
 		{
 			get
 			{
-				return repeatMode;
+				return description;
 			}
 			set	
 			{
-				repeatMode = value;
-				DictionaryUtil.Add(QueryParameters, "RepeatMode", value);
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
-		public string WindowsPasswordName
+		public int? Capacity
 		{
 			get
 			{
-				return windowsPasswordName;
+				return capacity;
 			}
 			set	
 			{
-				windowsPasswordName = value;
-				DictionaryUtil.Add(QueryParameters, "WindowsPasswordName", value);
+				capacity = value;
+				DictionaryUtil.Add(QueryParameters, "Capacity", value.ToString());
 			}
 		}
 
-		public bool? Timed
+		public int? Period
 		{
 			get
 			{
-				return timed;
+				return period;
 			}
 			set	
 			{
-				timed = value;
-				DictionaryUtil.Add(QueryParameters, "Timed", value.ToString());
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+			}
+		}
+
+		public string FromApp
+		{
+			get
+			{
+				return fromApp;
+			}
+			set	
+			{
+				fromApp = value;
+				DictionaryUtil.Add(QueryParameters, "FromApp", value);
 			}
 		}
 
@@ -153,6 +169,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string PerformanceLevel
+		{
+			get
+			{
+				return performanceLevel;
+			}
+			set	
+			{
+				performanceLevel = value;
+				DictionaryUtil.Add(QueryParameters, "PerformanceLevel", value);
 			}
 		}
 
@@ -182,52 +211,48 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<string> InstanceIds
+		public string PeriodUnit
 		{
 			get
 			{
-				return instanceIds;
-			}
-
-			set
-			{
-				instanceIds = value;
-				for (int i = 0; i < instanceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
-				}
-			}
-		}
-
-		public Dictionary<object,object> Parameters
-		{
-			get
-			{
-				return parameters;
+				return periodUnit;
 			}
 			set	
 			{
-				parameters = value;
-				DictionaryUtil.Add(QueryParameters, "Parameters", JsonConvert.SerializeObject(value));
+				periodUnit = value;
+				DictionaryUtil.Add(QueryParameters, "PeriodUnit", value);
 			}
 		}
 
-		public string Username
+		public string ZoneId
 		{
 			get
 			{
-				return username;
+				return zoneId;
 			}
 			set	
 			{
-				username = value;
-				DictionaryUtil.Add(QueryParameters, "Username", value);
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
-        public override InvokeCommandResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Category
+		{
+			get
+			{
+				return category;
+			}
+			set	
+			{
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
+			}
+		}
+
+        public override CreateDedicatedBlockStorageClusterResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return InvokeCommandResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDedicatedBlockStorageClusterResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

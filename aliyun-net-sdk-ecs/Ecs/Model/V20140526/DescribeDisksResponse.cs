@@ -186,6 +186,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string serialNumber;
 
+			private string dedicatedBlockStorageClusterId;
+
 			private List<DescribeDisks_OperationLock> operationLocks;
 
 			private List<DescribeDisks_MountInstance> mountInstances;
@@ -633,6 +635,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					serialNumber = value;
+				}
+			}
+
+			public string DedicatedBlockStorageClusterId
+			{
+				get
+				{
+					return dedicatedBlockStorageClusterId;
+				}
+				set	
+				{
+					dedicatedBlockStorageClusterId = value;
 				}
 			}
 

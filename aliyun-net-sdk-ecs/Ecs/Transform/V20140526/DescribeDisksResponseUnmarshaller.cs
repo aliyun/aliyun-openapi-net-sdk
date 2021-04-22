@@ -77,6 +77,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				disk.PerformanceLevel = _ctx.StringValue("DescribeDisks.Disks["+ i +"].PerformanceLevel");
 				disk.BdfId = _ctx.StringValue("DescribeDisks.Disks["+ i +"].BdfId");
 				disk.SerialNumber = _ctx.StringValue("DescribeDisks.Disks["+ i +"].SerialNumber");
+				disk.DedicatedBlockStorageClusterId = _ctx.StringValue("DescribeDisks.Disks["+ i +"].DedicatedBlockStorageClusterId");
 
 				List<DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_OperationLock> disk_operationLocks = new List<DescribeDisksResponse.DescribeDisks_Disk.DescribeDisks_OperationLock>();
 				for (int j = 0; j < _ctx.Length("DescribeDisks.Disks["+ i +"].OperationLocks.Length"); j++) {

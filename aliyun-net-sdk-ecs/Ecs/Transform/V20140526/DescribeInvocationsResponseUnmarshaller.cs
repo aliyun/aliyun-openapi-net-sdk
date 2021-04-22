@@ -47,6 +47,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				invocation.CommandContent = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].CommandContent");
 				invocation.Frequency = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].Frequency");
 				invocation.Timed = _ctx.BooleanValue("DescribeInvocations.Invocations["+ i +"].Timed");
+				invocation.RepeatMode = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].RepeatMode");
 				invocation.InvokeStatus = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].InvokeStatus");
 				invocation.InvocationStatus = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].InvocationStatus");
 				invocation.Parameters = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].Parameters");
@@ -57,6 +58,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					DescribeInvocationsResponse.DescribeInvocations_Invocation.DescribeInvocations_InvokeInstance invokeInstance = new DescribeInvocationsResponse.DescribeInvocations_Invocation.DescribeInvocations_InvokeInstance();
 					invokeInstance.InstanceId = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].InvokeInstances["+ j +"].InstanceId");
 					invokeInstance.Repeats = _ctx.IntegerValue("DescribeInvocations.Invocations["+ i +"].InvokeInstances["+ j +"].Repeats");
+					invokeInstance.Timed = _ctx.BooleanValue("DescribeInvocations.Invocations["+ i +"].InvokeInstances["+ j +"].Timed");
 					invokeInstance.InstanceInvokeStatus = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].InvokeInstances["+ j +"].InstanceInvokeStatus");
 					invokeInstance.InvocationStatus = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].InvokeInstances["+ j +"].InvocationStatus");
 					invokeInstance.Output = _ctx.StringValue("DescribeInvocations.Invocations["+ i +"].InvokeInstances["+ j +"].Output");

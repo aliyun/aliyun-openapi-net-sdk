@@ -57,6 +57,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				networkInterfaceSet.ServiceManaged = _ctx.BooleanValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].ServiceManaged");
 				networkInterfaceSet.QueueNumber = _ctx.IntegerValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].QueueNumber");
 				networkInterfaceSet.OwnerId = _ctx.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].OwnerId");
+				networkInterfaceSet.NetworkInterfaceTrafficMode = _ctx.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].NetworkInterfaceTrafficMode");
+				networkInterfaceSet.QueuePairNumber = _ctx.IntegerValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].QueuePairNumber");
 
 				List<string> networkInterfaceSet_securityGroupIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].SecurityGroupIds.Length"); j++) {

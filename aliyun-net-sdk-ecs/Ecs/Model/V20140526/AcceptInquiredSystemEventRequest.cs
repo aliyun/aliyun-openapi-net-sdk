@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
+		private string choice;
+
 		public string EventId
 		{
 			get
@@ -112,6 +114,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Choice
+		{
+			get
+			{
+				return choice;
+			}
+			set	
+			{
+				choice = value;
+				DictionaryUtil.Add(QueryParameters, "Choice", value);
 			}
 		}
 

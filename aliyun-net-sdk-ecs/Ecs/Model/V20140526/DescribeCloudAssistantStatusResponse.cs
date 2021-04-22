@@ -112,6 +112,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string lastInvokedTime;
 
+			private string lastHeartbeatTime;
+
 			public string InstanceId
 			{
 				get
@@ -193,6 +195,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					lastInvokedTime = value;
+				}
+			}
+
+			public string LastHeartbeatTime
+			{
+				get
+				{
+					return lastHeartbeatTime;
+				}
+				set	
+				{
+					lastHeartbeatTime = value;
 				}
 			}
 		}

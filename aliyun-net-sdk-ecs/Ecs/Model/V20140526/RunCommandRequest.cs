@@ -57,6 +57,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string contentEncoding;
 
+		private string repeatMode;
+
 		private string windowsPasswordName;
 
 		private bool? keepCommand;
@@ -180,6 +182,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				contentEncoding = value;
 				DictionaryUtil.Add(QueryParameters, "ContentEncoding", value);
+			}
+		}
+
+		public string RepeatMode
+		{
+			get
+			{
+				return repeatMode;
+			}
+			set	
+			{
+				repeatMode = value;
+				DictionaryUtil.Add(QueryParameters, "RepeatMode", value);
 			}
 		}
 

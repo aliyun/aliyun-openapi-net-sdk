@@ -64,6 +64,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string advancedFeatures;
 
+		private string dedicatedBlockStorageClusterId;
+
 		private string resourceOwnerAccount;
 
 		private string performanceLevel;
@@ -248,6 +250,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				advancedFeatures = value;
 				DictionaryUtil.Add(QueryParameters, "AdvancedFeatures", value);
+			}
+		}
+
+		public string DedicatedBlockStorageClusterId
+		{
+			get
+			{
+				return dedicatedBlockStorageClusterId;
+			}
+			set	
+			{
+				dedicatedBlockStorageClusterId = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedBlockStorageClusterId", value);
 			}
 		}
 

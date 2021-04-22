@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class InvokeCommandRequest : RpcAcsRequest<InvokeCommandResponse>
+    public class CreateDiskReplicaPairRequest : RpcAcsRequest<CreateDiskReplicaPairResponse>
     {
-        public InvokeCommandRequest()
-            : base("Ecs", "2014-05-26", "InvokeCommand", "ecs", "openAPI")
+        public CreateDiskReplicaPairRequest()
+            : base("Ecs", "2014-05-26", "CreateDiskReplicaPair", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,15 +42,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string commandId;
+		private string pairName;
 
-		private string frequency;
+		private string destinationRegionId;
 
-		private string repeatMode;
+		private string description;
 
-		private string windowsPasswordName;
+		private string diskId;
 
-		private bool? timed;
+		private int? asyncCycle;
 
 		private string resourceOwnerAccount;
 
@@ -59,11 +58,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private List<string> instanceIds = new List<string>(){ };
-
-		private Dictionary<object,object> parameters;
-
-		private string username;
+		private string destinationDiskId;
 
 		public long? ResourceOwnerId
 		{
@@ -78,68 +73,68 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string CommandId
+		public string PairName
 		{
 			get
 			{
-				return commandId;
+				return pairName;
 			}
 			set	
 			{
-				commandId = value;
-				DictionaryUtil.Add(QueryParameters, "CommandId", value);
+				pairName = value;
+				DictionaryUtil.Add(QueryParameters, "PairName", value);
 			}
 		}
 
-		public string Frequency
+		public string DestinationRegionId
 		{
 			get
 			{
-				return frequency;
+				return destinationRegionId;
 			}
 			set	
 			{
-				frequency = value;
-				DictionaryUtil.Add(QueryParameters, "Frequency", value);
+				destinationRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "DestinationRegionId", value);
 			}
 		}
 
-		public string RepeatMode
+		public string Description
 		{
 			get
 			{
-				return repeatMode;
+				return description;
 			}
 			set	
 			{
-				repeatMode = value;
-				DictionaryUtil.Add(QueryParameters, "RepeatMode", value);
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
-		public string WindowsPasswordName
+		public string DiskId
 		{
 			get
 			{
-				return windowsPasswordName;
+				return diskId;
 			}
 			set	
 			{
-				windowsPasswordName = value;
-				DictionaryUtil.Add(QueryParameters, "WindowsPasswordName", value);
+				diskId = value;
+				DictionaryUtil.Add(QueryParameters, "DiskId", value);
 			}
 		}
 
-		public bool? Timed
+		public int? AsyncCycle
 		{
 			get
 			{
-				return timed;
+				return asyncCycle;
 			}
 			set	
 			{
-				timed = value;
-				DictionaryUtil.Add(QueryParameters, "Timed", value.ToString());
+				asyncCycle = value;
+				DictionaryUtil.Add(QueryParameters, "AsyncCycle", value.ToString());
 			}
 		}
 
@@ -182,52 +177,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<string> InstanceIds
+		public string DestinationDiskId
 		{
 			get
 			{
-				return instanceIds;
-			}
-
-			set
-			{
-				instanceIds = value;
-				for (int i = 0; i < instanceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
-				}
-			}
-		}
-
-		public Dictionary<object,object> Parameters
-		{
-			get
-			{
-				return parameters;
+				return destinationDiskId;
 			}
 			set	
 			{
-				parameters = value;
-				DictionaryUtil.Add(QueryParameters, "Parameters", JsonConvert.SerializeObject(value));
+				destinationDiskId = value;
+				DictionaryUtil.Add(QueryParameters, "DestinationDiskId", value);
 			}
 		}
 
-		public string Username
-		{
-			get
-			{
-				return username;
-			}
-			set	
-			{
-				username = value;
-				DictionaryUtil.Add(QueryParameters, "Username", value);
-			}
-		}
-
-        public override InvokeCommandResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateDiskReplicaPairResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return InvokeCommandResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDiskReplicaPairResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

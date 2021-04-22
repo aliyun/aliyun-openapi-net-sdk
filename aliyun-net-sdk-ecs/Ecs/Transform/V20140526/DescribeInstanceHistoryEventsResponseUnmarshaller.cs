@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instanceSystemEventType.EventFinishTime = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventFinishTime");
 				instanceSystemEventType.Reason = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].Reason");
 				instanceSystemEventType.ImpactLevel = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ImpactLevel");
+				instanceSystemEventType.ResourceType = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ResourceType");
 
 				DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_EventType eventType = new DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_EventType();
 				eventType.Code = _ctx.IntegerValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventType.Code");

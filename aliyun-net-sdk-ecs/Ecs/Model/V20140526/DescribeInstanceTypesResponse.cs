@@ -108,6 +108,12 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? diskQuantity;
 
+			private int? eriQuantity;
+
+			private int? queuePairNumber;
+
+			private string nvmeSupport;
+
 			public string InstanceTypeId
 			{
 				get
@@ -417,6 +423,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					diskQuantity = value;
+				}
+			}
+
+			public int? EriQuantity
+			{
+				get
+				{
+					return eriQuantity;
+				}
+				set	
+				{
+					eriQuantity = value;
+				}
+			}
+
+			public int? QueuePairNumber
+			{
+				get
+				{
+					return queuePairNumber;
+				}
+				set	
+				{
+					queuePairNumber = value;
+				}
+			}
+
+			public string NvmeSupport
+			{
+				get
+				{
+					return nvmeSupport;
+				}
+				set	
+				{
+					nvmeSupport = value;
 				}
 			}
 		}

@@ -114,6 +114,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private bool? timed;
 
+			private string repeatMode;
+
 			private string invokeStatus;
 
 			private string invocationStatus;
@@ -220,6 +222,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string RepeatMode
+			{
+				get
+				{
+					return repeatMode;
+				}
+				set	
+				{
+					repeatMode = value;
+				}
+			}
+
 			public string InvokeStatus
 			{
 				get
@@ -287,6 +301,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private int? repeats;
 
+				private bool? timed;
+
 				private string instanceInvokeStatus;
 
 				private string invocationStatus;
@@ -332,6 +348,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						repeats = value;
+					}
+				}
+
+				public bool? Timed
+				{
+					get
+					{
+						return timed;
+					}
+					set	
+					{
+						timed = value;
 					}
 				}
 
