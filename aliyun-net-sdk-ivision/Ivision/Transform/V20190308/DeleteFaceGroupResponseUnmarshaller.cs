@@ -26,13 +26,13 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 {
     public class DeleteFaceGroupResponseUnmarshaller
     {
-        public static DeleteFaceGroupResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteFaceGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteFaceGroupResponse deleteFaceGroupResponse = new DeleteFaceGroupResponse();
 
-			deleteFaceGroupResponse.HttpResponse = context.HttpResponse;
-			deleteFaceGroupResponse.RequestId = context.StringValue("DeleteFaceGroup.RequestId");
-			deleteFaceGroupResponse.GroupId = context.StringValue("DeleteFaceGroup.GroupId");
+			deleteFaceGroupResponse.HttpResponse = _ctx.HttpResponse;
+			deleteFaceGroupResponse.RequestId = _ctx.StringValue("DeleteFaceGroup.RequestId");
+			deleteFaceGroupResponse.GroupId = _ctx.StringValue("DeleteFaceGroup.GroupId");
         
 			return deleteFaceGroupResponse;
         }

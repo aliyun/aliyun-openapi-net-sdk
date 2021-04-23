@@ -22,32 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ivision.Model.V20190308
 {
-	public class DescribeFaceGroupsResponse : AcsResponse
+	public class GetAlgorithmHistogramsResponse : AcsResponse
 	{
-
-		private long? totalNum;
 
 		private string requestId;
 
-		private long? pageSize;
+		private string message;
 
-		private long? currentPage;
+		private string code;
 
-		private string nextPageToken;
+		private bool? success;
 
-		private List<DescribeFaceGroups_Group> groups;
-
-		public long? TotalNum
-		{
-			get
-			{
-				return totalNum;
-			}
-			set	
-			{
-				totalNum = value;
-			}
-		}
+		private GetAlgorithmHistograms_Data data;
 
 		public string RequestId
 		{
@@ -61,96 +47,142 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			}
 		}
 
-		public long? PageSize
+		public string Message
 		{
 			get
 			{
-				return pageSize;
+				return message;
 			}
 			set	
 			{
-				pageSize = value;
+				message = value;
 			}
 		}
 
-		public long? CurrentPage
+		public string Code
 		{
 			get
 			{
-				return currentPage;
+				return code;
 			}
 			set	
 			{
-				currentPage = value;
+				code = value;
 			}
 		}
 
-		public string NextPageToken
+		public bool? Success
 		{
 			get
 			{
-				return nextPageToken;
+				return success;
 			}
 			set	
 			{
-				nextPageToken = value;
+				success = value;
 			}
 		}
 
-		public List<DescribeFaceGroups_Group> Groups
+		public GetAlgorithmHistograms_Data Data
 		{
 			get
 			{
-				return groups;
+				return data;
 			}
 			set	
 			{
-				groups = value;
+				data = value;
 			}
 		}
 
-		public class DescribeFaceGroups_Group
+		public class GetAlgorithmHistograms_Data
 		{
 
-			private string creationTime;
+			private int? failureCount;
 
-			private string name;
+			private int? successCount;
 
-			private string groupId;
+			private List<GetAlgorithmHistograms_HistogramsItem> histograms;
 
-			public string CreationTime
+			public int? FailureCount
 			{
 				get
 				{
-					return creationTime;
+					return failureCount;
 				}
 				set	
 				{
-					creationTime = value;
+					failureCount = value;
 				}
 			}
 
-			public string Name
+			public int? SuccessCount
 			{
 				get
 				{
-					return name;
+					return successCount;
 				}
 				set	
 				{
-					name = value;
+					successCount = value;
 				}
 			}
 
-			public string GroupId
+			public List<GetAlgorithmHistograms_HistogramsItem> Histograms
 			{
 				get
 				{
-					return groupId;
+					return histograms;
 				}
 				set	
 				{
-					groupId = value;
+					histograms = value;
+				}
+			}
+
+			public class GetAlgorithmHistograms_HistogramsItem
+			{
+
+				private int? failureCount;
+
+				private string time;
+
+				private int? successCount;
+
+				public int? FailureCount
+				{
+					get
+					{
+						return failureCount;
+					}
+					set	
+					{
+						failureCount = value;
+					}
+				}
+
+				public string Time
+				{
+					get
+					{
+						return time;
+					}
+					set	
+					{
+						time = value;
+					}
+				}
+
+				public int? SuccessCount
+				{
+					get
+					{
+						return successCount;
+					}
+					set	
+					{
+						successCount = value;
+					}
 				}
 			}
 		}

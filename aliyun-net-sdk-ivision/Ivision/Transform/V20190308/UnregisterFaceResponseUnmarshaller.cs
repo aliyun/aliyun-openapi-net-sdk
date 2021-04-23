@@ -26,14 +26,14 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 {
     public class UnregisterFaceResponseUnmarshaller
     {
-        public static UnregisterFaceResponse Unmarshall(UnmarshallerContext context)
+        public static UnregisterFaceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UnregisterFaceResponse unregisterFaceResponse = new UnregisterFaceResponse();
 
-			unregisterFaceResponse.HttpResponse = context.HttpResponse;
-			unregisterFaceResponse.RequestId = context.StringValue("UnregisterFace.RequestId");
-			unregisterFaceResponse.GroupId = context.StringValue("UnregisterFace.GroupId");
-			unregisterFaceResponse.FaceToken = context.StringValue("UnregisterFace.FaceToken");
+			unregisterFaceResponse.HttpResponse = _ctx.HttpResponse;
+			unregisterFaceResponse.FaceToken = _ctx.StringValue("UnregisterFace.FaceToken");
+			unregisterFaceResponse.RequestId = _ctx.StringValue("UnregisterFace.RequestId");
+			unregisterFaceResponse.GroupId = _ctx.StringValue("UnregisterFace.GroupId");
         
 			return unregisterFaceResponse;
         }

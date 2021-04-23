@@ -24,17 +24,22 @@ using Aliyun.Acs.ivision.Model.V20190308;
 
 namespace Aliyun.Acs.ivision.Transform.V20190308
 {
-    public class CreateStreamPredictResponseUnmarshaller
+    public class PredictPictureResponseUnmarshaller
     {
-        public static CreateStreamPredictResponse Unmarshall(UnmarshallerContext _ctx)
+        public static PredictPictureResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CreateStreamPredictResponse createStreamPredictResponse = new CreateStreamPredictResponse();
+			PredictPictureResponse predictPictureResponse = new PredictPictureResponse();
 
-			createStreamPredictResponse.HttpResponse = _ctx.HttpResponse;
-			createStreamPredictResponse.RequestId = _ctx.StringValue("CreateStreamPredict.RequestId");
-			createStreamPredictResponse.PredictId = _ctx.StringValue("CreateStreamPredict.PredictId");
+			predictPictureResponse.HttpResponse = _ctx.HttpResponse;
+			predictPictureResponse.RequestId = _ctx.StringValue("PredictPicture.RequestId");
+			predictPictureResponse.Message = _ctx.StringValue("PredictPicture.Message");
+			predictPictureResponse.Code = _ctx.StringValue("PredictPicture.Code");
+
+			PredictPictureResponse.PredictPicture_Data data = new PredictPictureResponse.PredictPicture_Data();
+			data.PredictResult = _ctx.StringValue("PredictPicture.Data.PredictResult");
+			predictPictureResponse.Data = data;
         
-			return createStreamPredictResponse;
+			return predictPictureResponse;
         }
     }
 }

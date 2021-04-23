@@ -22,32 +22,16 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ivision.Model.V20190308
 {
-	public class DescribeFaceGroupsResponse : AcsResponse
+	public class CreateFilePredictResponse : AcsResponse
 	{
-
-		private long? totalNum;
 
 		private string requestId;
 
-		private long? pageSize;
+		private string message;
 
-		private long? currentPage;
+		private string code;
 
-		private string nextPageToken;
-
-		private List<DescribeFaceGroups_Group> groups;
-
-		public long? TotalNum
-		{
-			get
-			{
-				return totalNum;
-			}
-			set	
-			{
-				totalNum = value;
-			}
-		}
+		private CreateFilePredict_Data data;
 
 		public string RequestId
 		{
@@ -61,96 +45,56 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			}
 		}
 
-		public long? PageSize
+		public string Message
 		{
 			get
 			{
-				return pageSize;
+				return message;
 			}
 			set	
 			{
-				pageSize = value;
+				message = value;
 			}
 		}
 
-		public long? CurrentPage
+		public string Code
 		{
 			get
 			{
-				return currentPage;
+				return code;
 			}
 			set	
 			{
-				currentPage = value;
+				code = value;
 			}
 		}
 
-		public string NextPageToken
+		public CreateFilePredict_Data Data
 		{
 			get
 			{
-				return nextPageToken;
+				return data;
 			}
 			set	
 			{
-				nextPageToken = value;
+				data = value;
 			}
 		}
 
-		public List<DescribeFaceGroups_Group> Groups
-		{
-			get
-			{
-				return groups;
-			}
-			set	
-			{
-				groups = value;
-			}
-		}
-
-		public class DescribeFaceGroups_Group
+		public class CreateFilePredict_Data
 		{
 
-			private string creationTime;
+			private string taskId;
 
-			private string name;
-
-			private string groupId;
-
-			public string CreationTime
+			public string TaskId
 			{
 				get
 				{
-					return creationTime;
+					return taskId;
 				}
 				set	
 				{
-					creationTime = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string GroupId
-			{
-				get
-				{
-					return groupId;
-				}
-				set	
-				{
-					groupId = value;
+					taskId = value;
 				}
 			}
 		}

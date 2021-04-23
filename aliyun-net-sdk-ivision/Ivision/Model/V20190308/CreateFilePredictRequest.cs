@@ -28,105 +28,121 @@ using Aliyun.Acs.ivision.Transform.V20190308;
 
 namespace Aliyun.Acs.ivision.Model.V20190308
 {
-    public class SearchFaceRequest : RpcAcsRequest<SearchFaceResponse>
+    public class CreateFilePredictRequest : RpcAcsRequest<CreateFilePredictResponse>
     {
-        public SearchFaceRequest()
-            : base("ivision", "2019-03-08", "SearchFace")
+        public CreateFilePredictRequest()
+            : base("ivision", "2019-03-08", "CreateFilePredict")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.ivision.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.ivision.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string content;
+		private string outputOss;
 
-		private string dataType;
+		private string clientToken;
 
-		private float? probabilityThreshold;
+		private string pushConfig;
 
-		private string groupId;
+		private string resourceUrl;
 
-		private int? count;
+		private string decryptConfig;
 
-		private long? ownerId;
+		private string algorithmCode;
 
-		public string Content
+		private string outputRegion;
+
+		public string OutputOss
 		{
 			get
 			{
-				return content;
+				return outputOss;
 			}
 			set	
 			{
-				content = value;
-				DictionaryUtil.Add(QueryParameters, "Content", value);
+				outputOss = value;
+				DictionaryUtil.Add(BodyParameters, "OutputOss", value);
 			}
 		}
 
-		public string DataType
+		public string ClientToken
 		{
 			get
 			{
-				return dataType;
+				return clientToken;
 			}
 			set	
 			{
-				dataType = value;
-				DictionaryUtil.Add(QueryParameters, "DataType", value);
+				clientToken = value;
+				DictionaryUtil.Add(BodyParameters, "ClientToken", value);
 			}
 		}
 
-		public float? ProbabilityThreshold
+		public string PushConfig
 		{
 			get
 			{
-				return probabilityThreshold;
+				return pushConfig;
 			}
 			set	
 			{
-				probabilityThreshold = value;
-				DictionaryUtil.Add(QueryParameters, "ProbabilityThreshold", value.ToString());
+				pushConfig = value;
+				DictionaryUtil.Add(BodyParameters, "PushConfig", value);
 			}
 		}
 
-		public string GroupId
+		public string ResourceUrl
 		{
 			get
 			{
-				return groupId;
+				return resourceUrl;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+				resourceUrl = value;
+				DictionaryUtil.Add(BodyParameters, "ResourceUrl", value);
 			}
 		}
 
-		public int? Count
+		public string DecryptConfig
 		{
 			get
 			{
-				return count;
+				return decryptConfig;
 			}
 			set	
 			{
-				count = value;
-				DictionaryUtil.Add(QueryParameters, "Count", value.ToString());
+				decryptConfig = value;
+				DictionaryUtil.Add(BodyParameters, "DecryptConfig", value);
 			}
 		}
 
-		public long? OwnerId
+		public string AlgorithmCode
 		{
 			get
 			{
-				return ownerId;
+				return algorithmCode;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				algorithmCode = value;
+				DictionaryUtil.Add(BodyParameters, "AlgorithmCode", value);
+			}
+		}
+
+		public string OutputRegion
+		{
+			get
+			{
+				return outputRegion;
+			}
+			set	
+			{
+				outputRegion = value;
+				DictionaryUtil.Add(BodyParameters, "OutputRegion", value);
 			}
 		}
 
@@ -135,9 +151,9 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			return false;
 		}
 
-        public override SearchFaceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateFilePredictResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SearchFaceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateFilePredictResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

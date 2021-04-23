@@ -24,17 +24,22 @@ using Aliyun.Acs.ivision.Model.V20190308;
 
 namespace Aliyun.Acs.ivision.Transform.V20190308
 {
-    public class CreateStreamPredictResponseUnmarshaller
+    public class CreateFilePredictResponseUnmarshaller
     {
-        public static CreateStreamPredictResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateFilePredictResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CreateStreamPredictResponse createStreamPredictResponse = new CreateStreamPredictResponse();
+			CreateFilePredictResponse createFilePredictResponse = new CreateFilePredictResponse();
 
-			createStreamPredictResponse.HttpResponse = _ctx.HttpResponse;
-			createStreamPredictResponse.RequestId = _ctx.StringValue("CreateStreamPredict.RequestId");
-			createStreamPredictResponse.PredictId = _ctx.StringValue("CreateStreamPredict.PredictId");
+			createFilePredictResponse.HttpResponse = _ctx.HttpResponse;
+			createFilePredictResponse.RequestId = _ctx.StringValue("CreateFilePredict.RequestId");
+			createFilePredictResponse.Message = _ctx.StringValue("CreateFilePredict.Message");
+			createFilePredictResponse.Code = _ctx.StringValue("CreateFilePredict.Code");
+
+			CreateFilePredictResponse.CreateFilePredict_Data data = new CreateFilePredictResponse.CreateFilePredict_Data();
+			data.TaskId = _ctx.StringValue("CreateFilePredict.Data.TaskId");
+			createFilePredictResponse.Data = data;
         
-			return createStreamPredictResponse;
+			return createFilePredictResponse;
         }
     }
 }

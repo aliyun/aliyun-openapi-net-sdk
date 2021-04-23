@@ -26,13 +26,13 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 {
     public class StartStreamPredictResponseUnmarshaller
     {
-        public static StartStreamPredictResponse Unmarshall(UnmarshallerContext context)
+        public static StartStreamPredictResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StartStreamPredictResponse startStreamPredictResponse = new StartStreamPredictResponse();
 
-			startStreamPredictResponse.HttpResponse = context.HttpResponse;
-			startStreamPredictResponse.RequestId = context.StringValue("StartStreamPredict.RequestId");
-			startStreamPredictResponse.PredictId = context.StringValue("StartStreamPredict.PredictId");
+			startStreamPredictResponse.HttpResponse = _ctx.HttpResponse;
+			startStreamPredictResponse.RequestId = _ctx.StringValue("StartStreamPredict.RequestId");
+			startStreamPredictResponse.PredictId = _ctx.StringValue("StartStreamPredict.PredictId");
         
 			return startStreamPredictResponse;
         }

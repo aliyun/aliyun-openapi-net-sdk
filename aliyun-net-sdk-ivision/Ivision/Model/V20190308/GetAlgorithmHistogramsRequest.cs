@@ -28,105 +28,76 @@ using Aliyun.Acs.ivision.Transform.V20190308;
 
 namespace Aliyun.Acs.ivision.Model.V20190308
 {
-    public class SearchFaceRequest : RpcAcsRequest<SearchFaceResponse>
+    public class GetAlgorithmHistogramsRequest : RpcAcsRequest<GetAlgorithmHistogramsResponse>
     {
-        public SearchFaceRequest()
-            : base("ivision", "2019-03-08", "SearchFace")
+        public GetAlgorithmHistogramsRequest()
+            : base("ivision", "2019-03-08", "GetAlgorithmHistograms")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.ivision.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.ivision.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string content;
+		private string endDate;
 
-		private string dataType;
+		private string startDate;
 
-		private float? probabilityThreshold;
+		private string algorithmCode;
 
-		private string groupId;
+		private string aggregateType;
 
-		private int? count;
-
-		private long? ownerId;
-
-		public string Content
+		public string EndDate
 		{
 			get
 			{
-				return content;
+				return endDate;
 			}
 			set	
 			{
-				content = value;
-				DictionaryUtil.Add(QueryParameters, "Content", value);
+				endDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndDate", value);
 			}
 		}
 
-		public string DataType
+		public string StartDate
 		{
 			get
 			{
-				return dataType;
+				return startDate;
 			}
 			set	
 			{
-				dataType = value;
-				DictionaryUtil.Add(QueryParameters, "DataType", value);
+				startDate = value;
+				DictionaryUtil.Add(QueryParameters, "StartDate", value);
 			}
 		}
 
-		public float? ProbabilityThreshold
+		public string AlgorithmCode
 		{
 			get
 			{
-				return probabilityThreshold;
+				return algorithmCode;
 			}
 			set	
 			{
-				probabilityThreshold = value;
-				DictionaryUtil.Add(QueryParameters, "ProbabilityThreshold", value.ToString());
+				algorithmCode = value;
+				DictionaryUtil.Add(QueryParameters, "AlgorithmCode", value);
 			}
 		}
 
-		public string GroupId
+		public string AggregateType
 		{
 			get
 			{
-				return groupId;
+				return aggregateType;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
-		public int? Count
-		{
-			get
-			{
-				return count;
-			}
-			set	
-			{
-				count = value;
-				DictionaryUtil.Add(QueryParameters, "Count", value.ToString());
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				aggregateType = value;
+				DictionaryUtil.Add(QueryParameters, "AggregateType", value);
 			}
 		}
 
@@ -135,9 +106,9 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			return false;
 		}
 
-        public override SearchFaceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetAlgorithmHistogramsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SearchFaceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetAlgorithmHistogramsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

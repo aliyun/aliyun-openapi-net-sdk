@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ivision.Model.V20190308
@@ -105,9 +105,9 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 
 				private int? top;
 
-				private int? width;
-
 				private int? height;
+
+				private int? width;
 
 				public int? Left
 				{
@@ -133,18 +133,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 					}
 				}
 
-				public int? Width
-				{
-					get
-					{
-						return width;
-					}
-					set	
-					{
-						width = value;
-					}
-				}
-
 				public int? Height
 				{
 					get
@@ -154,6 +142,18 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 					set	
 					{
 						height = value;
+					}
+				}
+
+				public int? Width
+				{
+					get
+					{
+						return width;
+					}
+					set	
+					{
+						width = value;
 					}
 				}
 			}

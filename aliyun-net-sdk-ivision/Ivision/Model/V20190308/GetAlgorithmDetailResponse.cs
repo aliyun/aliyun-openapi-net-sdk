@@ -22,32 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ivision.Model.V20190308
 {
-	public class DescribeFaceGroupsResponse : AcsResponse
+	public class GetAlgorithmDetailResponse : AcsResponse
 	{
-
-		private long? totalNum;
 
 		private string requestId;
 
-		private long? pageSize;
+		private string message;
 
-		private long? currentPage;
+		private string code;
 
-		private string nextPageToken;
+		private bool? success;
 
-		private List<DescribeFaceGroups_Group> groups;
-
-		public long? TotalNum
-		{
-			get
-			{
-				return totalNum;
-			}
-			set	
-			{
-				totalNum = value;
-			}
-		}
+		private GetAlgorithmDetail_Data data;
 
 		public string RequestId
 		{
@@ -61,96 +47,138 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			}
 		}
 
-		public long? PageSize
+		public string Message
 		{
 			get
 			{
-				return pageSize;
+				return message;
 			}
 			set	
 			{
-				pageSize = value;
+				message = value;
 			}
 		}
 
-		public long? CurrentPage
+		public string Code
 		{
 			get
 			{
-				return currentPage;
+				return code;
 			}
 			set	
 			{
-				currentPage = value;
+				code = value;
 			}
 		}
 
-		public string NextPageToken
+		public bool? Success
 		{
 			get
 			{
-				return nextPageToken;
+				return success;
 			}
 			set	
 			{
-				nextPageToken = value;
+				success = value;
 			}
 		}
 
-		public List<DescribeFaceGroups_Group> Groups
+		public GetAlgorithmDetail_Data Data
 		{
 			get
 			{
-				return groups;
+				return data;
 			}
 			set	
 			{
-				groups = value;
+				data = value;
 			}
 		}
 
-		public class DescribeFaceGroups_Group
+		public class GetAlgorithmDetail_Data
 		{
 
-			private string creationTime;
+			private int? currentMonthSuccessCount;
 
-			private string name;
+			private string apiDocUrl;
 
-			private string groupId;
+			private string deployRegion;
 
-			public string CreationTime
+			private int? currentMonthCount;
+
+			private string algorithmName;
+
+			private string algorithmCode;
+
+			public int? CurrentMonthSuccessCount
 			{
 				get
 				{
-					return creationTime;
+					return currentMonthSuccessCount;
 				}
 				set	
 				{
-					creationTime = value;
+					currentMonthSuccessCount = value;
 				}
 			}
 
-			public string Name
+			public string ApiDocUrl
 			{
 				get
 				{
-					return name;
+					return apiDocUrl;
 				}
 				set	
 				{
-					name = value;
+					apiDocUrl = value;
 				}
 			}
 
-			public string GroupId
+			public string DeployRegion
 			{
 				get
 				{
-					return groupId;
+					return deployRegion;
 				}
 				set	
 				{
-					groupId = value;
+					deployRegion = value;
+				}
+			}
+
+			public int? CurrentMonthCount
+			{
+				get
+				{
+					return currentMonthCount;
+				}
+				set	
+				{
+					currentMonthCount = value;
+				}
+			}
+
+			public string AlgorithmName
+			{
+				get
+				{
+					return algorithmName;
+				}
+				set	
+				{
+					algorithmName = value;
+				}
+			}
+
+			public string AlgorithmCode
+			{
+				get
+				{
+					return algorithmCode;
+				}
+				set	
+				{
+					algorithmCode = value;
 				}
 			}
 		}

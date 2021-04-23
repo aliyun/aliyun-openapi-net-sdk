@@ -26,13 +26,13 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 {
     public class DeleteStreamPredictResponseUnmarshaller
     {
-        public static DeleteStreamPredictResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteStreamPredictResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteStreamPredictResponse deleteStreamPredictResponse = new DeleteStreamPredictResponse();
 
-			deleteStreamPredictResponse.HttpResponse = context.HttpResponse;
-			deleteStreamPredictResponse.RequestId = context.StringValue("DeleteStreamPredict.RequestId");
-			deleteStreamPredictResponse.PredictId = context.StringValue("DeleteStreamPredict.PredictId");
+			deleteStreamPredictResponse.HttpResponse = _ctx.HttpResponse;
+			deleteStreamPredictResponse.RequestId = _ctx.StringValue("DeleteStreamPredict.RequestId");
+			deleteStreamPredictResponse.PredictId = _ctx.StringValue("DeleteStreamPredict.PredictId");
         
 			return deleteStreamPredictResponse;
         }

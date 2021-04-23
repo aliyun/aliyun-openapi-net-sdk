@@ -28,105 +28,31 @@ using Aliyun.Acs.ivision.Transform.V20190308;
 
 namespace Aliyun.Acs.ivision.Model.V20190308
 {
-    public class SearchFaceRequest : RpcAcsRequest<SearchFaceResponse>
+    public class DeleteFilePredictRequest : RpcAcsRequest<DeleteFilePredictResponse>
     {
-        public SearchFaceRequest()
-            : base("ivision", "2019-03-08", "SearchFace")
+        public DeleteFilePredictRequest()
+            : base("ivision", "2019-03-08", "DeleteFilePredict")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.ivision.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.ivision.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string content;
+		private string taskId;
 
-		private string dataType;
-
-		private float? probabilityThreshold;
-
-		private string groupId;
-
-		private int? count;
-
-		private long? ownerId;
-
-		public string Content
+		public string TaskId
 		{
 			get
 			{
-				return content;
+				return taskId;
 			}
 			set	
 			{
-				content = value;
-				DictionaryUtil.Add(QueryParameters, "Content", value);
-			}
-		}
-
-		public string DataType
-		{
-			get
-			{
-				return dataType;
-			}
-			set	
-			{
-				dataType = value;
-				DictionaryUtil.Add(QueryParameters, "DataType", value);
-			}
-		}
-
-		public float? ProbabilityThreshold
-		{
-			get
-			{
-				return probabilityThreshold;
-			}
-			set	
-			{
-				probabilityThreshold = value;
-				DictionaryUtil.Add(QueryParameters, "ProbabilityThreshold", value.ToString());
-			}
-		}
-
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
-		public int? Count
-		{
-			get
-			{
-				return count;
-			}
-			set	
-			{
-				count = value;
-				DictionaryUtil.Add(QueryParameters, "Count", value.ToString());
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				taskId = value;
+				DictionaryUtil.Add(BodyParameters, "TaskId", value);
 			}
 		}
 
@@ -135,9 +61,9 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			return false;
 		}
 
-        public override SearchFaceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteFilePredictResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SearchFaceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteFilePredictResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

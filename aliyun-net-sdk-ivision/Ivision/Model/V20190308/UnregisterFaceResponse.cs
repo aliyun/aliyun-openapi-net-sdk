@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ivision.Model.V20190308
@@ -25,11 +25,23 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 	public class UnregisterFaceResponse : AcsResponse
 	{
 
+		private string faceToken;
+
 		private string requestId;
 
 		private string groupId;
 
-		private string faceToken;
+		public string FaceToken
+		{
+			get
+			{
+				return faceToken;
+			}
+			set	
+			{
+				faceToken = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -52,18 +64,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			set	
 			{
 				groupId = value;
-			}
-		}
-
-		public string FaceToken
-		{
-			get
-			{
-				return faceToken;
-			}
-			set	
-			{
-				faceToken = value;
 			}
 		}
 	}

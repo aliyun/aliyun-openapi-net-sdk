@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ivision.Model.V20190308
@@ -25,29 +25,17 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 	public class DescribeStreamPredictsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? totalNum;
 
-		private long? currentPage;
+		private string requestId;
 
 		private long? pageSize;
+
+		private long? currentPage;
 
 		private string nextPageToken;
 
 		private List<DescribeStreamPredicts_StreamPredict> streamPredicts;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public long? TotalNum
 		{
@@ -61,15 +49,15 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			}
 		}
 
-		public long? CurrentPage
+		public string RequestId
 		{
 			get
 			{
-				return currentPage;
+				return requestId;
 			}
 			set	
 			{
-				currentPage = value;
+				requestId = value;
 			}
 		}
 
@@ -82,6 +70,18 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public long? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
 			}
 		}
 
@@ -112,57 +112,45 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 		public class DescribeStreamPredicts_StreamPredict
 		{
 
-			private string predictId;
-
-			private string predictTemplateId;
+			private string status;
 
 			private string streamType;
 
-			private string streamId;
-
-			private string modelIds;
-
 			private string probabilityThresholds;
 
-			private string detectIntervals;
-
-			private string output;
-
-			private string notify;
+			private string streamId;
 
 			private string userData;
 
-			private string faceGroupId;
+			private string notify;
+
+			private string predictId;
+
+			private string detectIntervals;
 
 			private string modelUserData;
 
+			private string predictTemplateId;
+
+			private string output;
+
 			private string creationTime;
+
+			private string modelIds;
+
+			private string faceGroupId;
 
 			private string autoStart;
 
-			private string status;
-
-			public string PredictId
+			public string Status
 			{
 				get
 				{
-					return predictId;
+					return status;
 				}
 				set	
 				{
-					predictId = value;
-				}
-			}
-
-			public string PredictTemplateId
-			{
-				get
-				{
-					return predictTemplateId;
-				}
-				set	
-				{
-					predictTemplateId = value;
+					status = value;
 				}
 			}
 
@@ -178,30 +166,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
-			public string StreamId
-			{
-				get
-				{
-					return streamId;
-				}
-				set	
-				{
-					streamId = value;
-				}
-			}
-
-			public string ModelIds
-			{
-				get
-				{
-					return modelIds;
-				}
-				set	
-				{
-					modelIds = value;
-				}
-			}
-
 			public string ProbabilityThresholds
 			{
 				get
@@ -214,39 +178,15 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
-			public string DetectIntervals
+			public string StreamId
 			{
 				get
 				{
-					return detectIntervals;
+					return streamId;
 				}
 				set	
 				{
-					detectIntervals = value;
-				}
-			}
-
-			public string Output
-			{
-				get
-				{
-					return output;
-				}
-				set	
-				{
-					output = value;
-				}
-			}
-
-			public string Notify
-			{
-				get
-				{
-					return notify;
-				}
-				set	
-				{
-					notify = value;
+					streamId = value;
 				}
 			}
 
@@ -262,15 +202,39 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
-			public string FaceGroupId
+			public string Notify
 			{
 				get
 				{
-					return faceGroupId;
+					return notify;
 				}
 				set	
 				{
-					faceGroupId = value;
+					notify = value;
+				}
+			}
+
+			public string PredictId
+			{
+				get
+				{
+					return predictId;
+				}
+				set	
+				{
+					predictId = value;
+				}
+			}
+
+			public string DetectIntervals
+			{
+				get
+				{
+					return detectIntervals;
+				}
+				set	
+				{
+					detectIntervals = value;
 				}
 			}
 
@@ -286,6 +250,30 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
+			public string PredictTemplateId
+			{
+				get
+				{
+					return predictTemplateId;
+				}
+				set	
+				{
+					predictTemplateId = value;
+				}
+			}
+
+			public string Output
+			{
+				get
+				{
+					return output;
+				}
+				set	
+				{
+					output = value;
+				}
+			}
+
 			public string CreationTime
 			{
 				get
@@ -298,6 +286,30 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
+			public string ModelIds
+			{
+				get
+				{
+					return modelIds;
+				}
+				set	
+				{
+					modelIds = value;
+				}
+			}
+
+			public string FaceGroupId
+			{
+				get
+				{
+					return faceGroupId;
+				}
+				set	
+				{
+					faceGroupId = value;
+				}
+			}
+
 			public string AutoStart
 			{
 				get
@@ -307,18 +319,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				set	
 				{
 					autoStart = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
 				}
 			}
 		}
