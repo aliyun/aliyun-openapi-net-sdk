@@ -24,17 +24,16 @@ using Aliyun.Acs.smc.Model.V20190601;
 
 namespace Aliyun.Acs.smc.Transform.V20190601
 {
-    public class CreateReplicationJobResponseUnmarshaller
+    public class CutOverReplicationJobResponseUnmarshaller
     {
-        public static CreateReplicationJobResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CutOverReplicationJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CreateReplicationJobResponse createReplicationJobResponse = new CreateReplicationJobResponse();
+			CutOverReplicationJobResponse cutOverReplicationJobResponse = new CutOverReplicationJobResponse();
 
-			createReplicationJobResponse.HttpResponse = _ctx.HttpResponse;
-			createReplicationJobResponse.RequestId = _ctx.StringValue("CreateReplicationJob.RequestId");
-			createReplicationJobResponse.JobId = _ctx.StringValue("CreateReplicationJob.JobId");
+			cutOverReplicationJobResponse.HttpResponse = _ctx.HttpResponse;
+			cutOverReplicationJobResponse.RequestId = _ctx.StringValue("CutOverReplicationJob.RequestId");
         
-			return createReplicationJobResponse;
+			return cutOverReplicationJobResponse;
         }
     }
 }

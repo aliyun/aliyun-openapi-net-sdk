@@ -26,51 +26,51 @@ namespace Aliyun.Acs.smc.Transform.V20190601
 {
     public class DescribeSourceServersResponseUnmarshaller
     {
-        public static DescribeSourceServersResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSourceServersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSourceServersResponse describeSourceServersResponse = new DescribeSourceServersResponse();
 
-			describeSourceServersResponse.HttpResponse = context.HttpResponse;
-			describeSourceServersResponse.RequestId = context.StringValue("DescribeSourceServers.RequestId");
-			describeSourceServersResponse.TotalCount = context.IntegerValue("DescribeSourceServers.TotalCount");
-			describeSourceServersResponse.PageNumber = context.IntegerValue("DescribeSourceServers.PageNumber");
-			describeSourceServersResponse.PageSize = context.IntegerValue("DescribeSourceServers.PageSize");
+			describeSourceServersResponse.HttpResponse = _ctx.HttpResponse;
+			describeSourceServersResponse.RequestId = _ctx.StringValue("DescribeSourceServers.RequestId");
+			describeSourceServersResponse.TotalCount = _ctx.IntegerValue("DescribeSourceServers.TotalCount");
+			describeSourceServersResponse.PageNumber = _ctx.IntegerValue("DescribeSourceServers.PageNumber");
+			describeSourceServersResponse.PageSize = _ctx.IntegerValue("DescribeSourceServers.PageSize");
 
 			List<DescribeSourceServersResponse.DescribeSourceServers_SourceServer> describeSourceServersResponse_sourceServers = new List<DescribeSourceServersResponse.DescribeSourceServers_SourceServer>();
-			for (int i = 0; i < context.Length("DescribeSourceServers.SourceServers.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeSourceServers.SourceServers.Length"); i++) {
 				DescribeSourceServersResponse.DescribeSourceServers_SourceServer sourceServer = new DescribeSourceServersResponse.DescribeSourceServers_SourceServer();
-				sourceServer.SourceId = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].SourceId");
-				sourceServer.JobId = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].JobId");
-				sourceServer.AgentVersion = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].AgentVersion");
-				sourceServer.Name = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].Name");
-				sourceServer.Description = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].Description");
-				sourceServer.KernelLevel = context.IntegerValue("DescribeSourceServers.SourceServers["+ i +"].KernelLevel");
-				sourceServer.Platform = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].Platform");
-				sourceServer.Architecture = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].Architecture");
-				sourceServer.SystemDiskSize = context.IntegerValue("DescribeSourceServers.SourceServers["+ i +"].SystemDiskSize");
-				sourceServer.ReplicationDriver = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].ReplicationDriver");
-				sourceServer.SystemInfo = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].SystemInfo");
-				sourceServer.CreationTime = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].CreationTime");
-				sourceServer.State = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].State");
-				sourceServer.ErrorCode = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].ErrorCode");
-				sourceServer.StatusInfo = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].StatusInfo");
-				sourceServer.HeartbeatRate = context.IntegerValue("DescribeSourceServers.SourceServers["+ i +"].HeartbeatRate");
+				sourceServer.SourceId = _ctx.StringValue("DescribeSourceServers.SourceServers["+ i +"].SourceId");
+				sourceServer.JobId = _ctx.StringValue("DescribeSourceServers.SourceServers["+ i +"].JobId");
+				sourceServer.AgentVersion = _ctx.StringValue("DescribeSourceServers.SourceServers["+ i +"].AgentVersion");
+				sourceServer.Name = _ctx.StringValue("DescribeSourceServers.SourceServers["+ i +"].Name");
+				sourceServer.Description = _ctx.StringValue("DescribeSourceServers.SourceServers["+ i +"].Description");
+				sourceServer.KernelLevel = _ctx.IntegerValue("DescribeSourceServers.SourceServers["+ i +"].KernelLevel");
+				sourceServer.Platform = _ctx.StringValue("DescribeSourceServers.SourceServers["+ i +"].Platform");
+				sourceServer.Architecture = _ctx.StringValue("DescribeSourceServers.SourceServers["+ i +"].Architecture");
+				sourceServer.SystemDiskSize = _ctx.IntegerValue("DescribeSourceServers.SourceServers["+ i +"].SystemDiskSize");
+				sourceServer.ReplicationDriver = _ctx.StringValue("DescribeSourceServers.SourceServers["+ i +"].ReplicationDriver");
+				sourceServer.SystemInfo = _ctx.StringValue("DescribeSourceServers.SourceServers["+ i +"].SystemInfo");
+				sourceServer.CreationTime = _ctx.StringValue("DescribeSourceServers.SourceServers["+ i +"].CreationTime");
+				sourceServer.State = _ctx.StringValue("DescribeSourceServers.SourceServers["+ i +"].State");
+				sourceServer.ErrorCode = _ctx.StringValue("DescribeSourceServers.SourceServers["+ i +"].ErrorCode");
+				sourceServer.StatusInfo = _ctx.StringValue("DescribeSourceServers.SourceServers["+ i +"].StatusInfo");
+				sourceServer.HeartbeatRate = _ctx.IntegerValue("DescribeSourceServers.SourceServers["+ i +"].HeartbeatRate");
 
 				List<DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_DataDisk> sourceServer_dataDisks = new List<DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_DataDisk>();
-				for (int j = 0; j < context.Length("DescribeSourceServers.SourceServers["+ i +"].DataDisks.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeSourceServers.SourceServers["+ i +"].DataDisks.Length"); j++) {
 					DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_DataDisk dataDisk = new DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_DataDisk();
-					dataDisk.Index = context.IntegerValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Index");
-					dataDisk.Size = context.IntegerValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Size");
-					dataDisk.Path = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Path");
+					dataDisk.Index = _ctx.IntegerValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Index");
+					dataDisk.Size = _ctx.IntegerValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Size");
+					dataDisk.Path = _ctx.StringValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Path");
 
 					List<DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_DataDisk.DescribeSourceServers_Part> dataDisk_parts = new List<DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_DataDisk.DescribeSourceServers_Part>();
-					for (int k = 0; k < context.Length("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Parts.Length"); k++) {
+					for (int k = 0; k < _ctx.Length("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Parts.Length"); k++) {
 						DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_DataDisk.DescribeSourceServers_Part part = new DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_DataDisk.DescribeSourceServers_Part();
-						part.Path = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Path");
-						part.Device = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Device");
-						part.SizeBytes = context.LongValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].SizeBytes");
-						part.Need = context.BooleanValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Need");
-						part.CanBlock = context.BooleanValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].CanBlock");
+						part.Path = _ctx.StringValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Path");
+						part.Device = _ctx.StringValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Device");
+						part.SizeBytes = _ctx.LongValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].SizeBytes");
+						part.Need = _ctx.BooleanValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Need");
+						part.CanBlock = _ctx.BooleanValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].CanBlock");
 
 						dataDisk_parts.Add(part);
 					}
@@ -81,13 +81,13 @@ namespace Aliyun.Acs.smc.Transform.V20190601
 				sourceServer.DataDisks = sourceServer_dataDisks;
 
 				List<DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_SystemDiskPart> sourceServer_systemDiskParts = new List<DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_SystemDiskPart>();
-				for (int j = 0; j < context.Length("DescribeSourceServers.SourceServers["+ i +"].SystemDiskParts.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeSourceServers.SourceServers["+ i +"].SystemDiskParts.Length"); j++) {
 					DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_SystemDiskPart systemDiskPart = new DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_SystemDiskPart();
-					systemDiskPart.Path = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].SystemDiskParts["+ j +"].Path");
-					systemDiskPart.Device = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].SystemDiskParts["+ j +"].Device");
-					systemDiskPart.SizeBytes = context.LongValue("DescribeSourceServers.SourceServers["+ i +"].SystemDiskParts["+ j +"].SizeBytes");
-					systemDiskPart.Need = context.BooleanValue("DescribeSourceServers.SourceServers["+ i +"].SystemDiskParts["+ j +"].Need");
-					systemDiskPart.CanBlock = context.BooleanValue("DescribeSourceServers.SourceServers["+ i +"].SystemDiskParts["+ j +"].CanBlock");
+					systemDiskPart.Path = _ctx.StringValue("DescribeSourceServers.SourceServers["+ i +"].SystemDiskParts["+ j +"].Path");
+					systemDiskPart.Device = _ctx.StringValue("DescribeSourceServers.SourceServers["+ i +"].SystemDiskParts["+ j +"].Device");
+					systemDiskPart.SizeBytes = _ctx.LongValue("DescribeSourceServers.SourceServers["+ i +"].SystemDiskParts["+ j +"].SizeBytes");
+					systemDiskPart.Need = _ctx.BooleanValue("DescribeSourceServers.SourceServers["+ i +"].SystemDiskParts["+ j +"].Need");
+					systemDiskPart.CanBlock = _ctx.BooleanValue("DescribeSourceServers.SourceServers["+ i +"].SystemDiskParts["+ j +"].CanBlock");
 
 					sourceServer_systemDiskParts.Add(systemDiskPart);
 				}

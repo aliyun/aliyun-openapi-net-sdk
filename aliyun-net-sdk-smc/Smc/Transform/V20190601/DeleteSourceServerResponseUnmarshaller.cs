@@ -26,12 +26,12 @@ namespace Aliyun.Acs.smc.Transform.V20190601
 {
     public class DeleteSourceServerResponseUnmarshaller
     {
-        public static DeleteSourceServerResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteSourceServerResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteSourceServerResponse deleteSourceServerResponse = new DeleteSourceServerResponse();
 
-			deleteSourceServerResponse.HttpResponse = context.HttpResponse;
-			deleteSourceServerResponse.RequestId = context.StringValue("DeleteSourceServer.RequestId");
+			deleteSourceServerResponse.HttpResponse = _ctx.HttpResponse;
+			deleteSourceServerResponse.RequestId = _ctx.StringValue("DeleteSourceServer.RequestId");
         
 			return deleteSourceServerResponse;
         }

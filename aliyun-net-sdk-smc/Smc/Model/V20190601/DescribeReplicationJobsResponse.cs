@@ -168,6 +168,8 @@ namespace Aliyun.Acs.smc.Model.V20190601
 
 			private string containerTag;
 
+			private string licenseType;
+
 			private List<DescribeReplicationJobs_SystemDiskPart> systemDiskParts;
 
 			private List<DescribeReplicationJobs_DataDisk> dataDisks;
@@ -591,6 +593,18 @@ namespace Aliyun.Acs.smc.Model.V20190601
 				set	
 				{
 					containerTag = value;
+				}
+			}
+
+			public string LicenseType
+			{
+				get
+				{
+					return licenseType;
+				}
+				set	
+				{
+					licenseType = value;
 				}
 			}
 

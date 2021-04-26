@@ -16,25 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.smc.Model.V20190601;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.smc.Transform.V20190601
+namespace Aliyun.Acs.smc.Model.V20190601
 {
-    public class CreateReplicationJobResponseUnmarshaller
-    {
-        public static CreateReplicationJobResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			CreateReplicationJobResponse createReplicationJobResponse = new CreateReplicationJobResponse();
+	public class CutOverReplicationJobResponse : AcsResponse
+	{
 
-			createReplicationJobResponse.HttpResponse = _ctx.HttpResponse;
-			createReplicationJobResponse.RequestId = _ctx.StringValue("CreateReplicationJob.RequestId");
-			createReplicationJobResponse.JobId = _ctx.StringValue("CreateReplicationJob.JobId");
-        
-			return createReplicationJobResponse;
-        }
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }
