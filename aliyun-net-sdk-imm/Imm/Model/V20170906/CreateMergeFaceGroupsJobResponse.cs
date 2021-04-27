@@ -25,51 +25,27 @@ namespace Aliyun.Acs.imm.Model.V20170906
 	public class CreateMergeFaceGroupsJobResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string jobId;
-
-		private string setId;
+		private string groupIdFrom;
 
 		private string jobType;
 
+		private string requestId;
+
+		private string setId;
+
 		private string groupIdTo;
 
-		private string groupIdFrom;
+		private string jobId;
 
-		public string RequestId
+		public string GroupIdFrom
 		{
 			get
 			{
-				return requestId;
+				return groupIdFrom;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
-			}
-		}
-
-		public string SetId
-		{
-			get
-			{
-				return setId;
-			}
-			set	
-			{
-				setId = value;
+				groupIdFrom = value;
 			}
 		}
 
@@ -85,6 +61,30 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string SetId
+		{
+			get
+			{
+				return setId;
+			}
+			set	
+			{
+				setId = value;
+			}
+		}
+
 		public string GroupIdTo
 		{
 			get
@@ -97,15 +97,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string GroupIdFrom
+		public string JobId
 		{
 			get
 			{
-				return groupIdFrom;
+				return jobId;
 			}
 			set	
 			{
-				groupIdFrom = value;
+				jobId = value;
 			}
 		}
 	}

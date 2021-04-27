@@ -44,6 +44,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string notifyEndpoint;
 
+		private string customMessage;
+
 		private string groupIdFrom;
 
 		private string notifyTopicName;
@@ -75,6 +77,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				notifyEndpoint = value;
 				DictionaryUtil.Add(QueryParameters, "NotifyEndpoint", value);
+			}
+		}
+
+		public string CustomMessage
+		{
+			get
+			{
+				return customMessage;
+			}
+			set	
+			{
+				customMessage = value;
+				DictionaryUtil.Add(QueryParameters, "CustomMessage", value);
 			}
 		}
 

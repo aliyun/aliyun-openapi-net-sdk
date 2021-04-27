@@ -31,12 +31,12 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			CreateMergeFaceGroupsJobResponse createMergeFaceGroupsJobResponse = new CreateMergeFaceGroupsJobResponse();
 
 			createMergeFaceGroupsJobResponse.HttpResponse = _ctx.HttpResponse;
-			createMergeFaceGroupsJobResponse.RequestId = _ctx.StringValue("CreateMergeFaceGroupsJob.RequestId");
-			createMergeFaceGroupsJobResponse.JobId = _ctx.StringValue("CreateMergeFaceGroupsJob.JobId");
-			createMergeFaceGroupsJobResponse.SetId = _ctx.StringValue("CreateMergeFaceGroupsJob.SetId");
-			createMergeFaceGroupsJobResponse.JobType = _ctx.StringValue("CreateMergeFaceGroupsJob.JobType");
-			createMergeFaceGroupsJobResponse.GroupIdTo = _ctx.StringValue("CreateMergeFaceGroupsJob.GroupIdTo");
 			createMergeFaceGroupsJobResponse.GroupIdFrom = _ctx.StringValue("CreateMergeFaceGroupsJob.GroupIdFrom");
+			createMergeFaceGroupsJobResponse.JobType = _ctx.StringValue("CreateMergeFaceGroupsJob.JobType");
+			createMergeFaceGroupsJobResponse.RequestId = _ctx.StringValue("CreateMergeFaceGroupsJob.RequestId");
+			createMergeFaceGroupsJobResponse.SetId = _ctx.StringValue("CreateMergeFaceGroupsJob.SetId");
+			createMergeFaceGroupsJobResponse.GroupIdTo = _ctx.StringValue("CreateMergeFaceGroupsJob.GroupIdTo");
+			createMergeFaceGroupsJobResponse.JobId = _ctx.StringValue("CreateMergeFaceGroupsJob.JobId");
         
 			return createMergeFaceGroupsJobResponse;
         }
