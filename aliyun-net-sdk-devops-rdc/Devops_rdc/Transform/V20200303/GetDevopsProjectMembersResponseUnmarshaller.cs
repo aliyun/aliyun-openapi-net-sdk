@@ -35,6 +35,8 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			getDevopsProjectMembersResponse.ErrorCode = _ctx.StringValue("GetDevopsProjectMembers.ErrorCode");
 			getDevopsProjectMembersResponse.ErrorMsg = _ctx.StringValue("GetDevopsProjectMembers.ErrorMsg");
 			getDevopsProjectMembersResponse.RequestId = _ctx.StringValue("GetDevopsProjectMembers.RequestId");
+			getDevopsProjectMembersResponse.Total = _ctx.IntegerValue("GetDevopsProjectMembers.Total");
+			getDevopsProjectMembersResponse.NextPageToken = _ctx.StringValue("GetDevopsProjectMembers.NextPageToken");
 
 			List<GetDevopsProjectMembersResponse.GetDevopsProjectMembers_Member> getDevopsProjectMembersResponse_object = new List<GetDevopsProjectMembersResponse.GetDevopsProjectMembers_Member>();
 			for (int i = 0; i < _ctx.Length("GetDevopsProjectMembers.Object.Length"); i++) {

@@ -36,9 +36,26 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			Method = MethodType.POST;
         }
 
+		private int? pageSize;
+
 		private string projectId;
 
 		private string orgId;
+
+		private string pageToken;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
 
 		public string ProjectId
 		{
@@ -63,6 +80,19 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			{
 				orgId = value;
 				DictionaryUtil.Add(BodyParameters, "OrgId", value);
+			}
+		}
+
+		public string PageToken
+		{
+			get
+			{
+				return pageToken;
+			}
+			set	
+			{
+				pageToken = value;
+				DictionaryUtil.Add(BodyParameters, "PageToken", value);
 			}
 		}
 

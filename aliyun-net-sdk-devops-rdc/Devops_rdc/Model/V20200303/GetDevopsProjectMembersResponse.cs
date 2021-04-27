@@ -33,6 +33,10 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 
 		private string requestId;
 
+		private int? total;
+
+		private string nextPageToken;
+
 		private List<GetDevopsProjectMembers_Member> _object;
 
 		public bool? Successful
@@ -80,6 +84,30 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
+			}
+		}
+
+		public string NextPageToken
+		{
+			get
+			{
+				return nextPageToken;
+			}
+			set	
+			{
+				nextPageToken = value;
 			}
 		}
 
