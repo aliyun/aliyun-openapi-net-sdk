@@ -124,6 +124,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string publishDomain;
 
+			private string streamUrlArgs;
+
 			private string publishType;
 
 			private string transcoded;
@@ -217,6 +219,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					publishDomain = value;
+				}
+			}
+
+			public string StreamUrlArgs
+			{
+				get
+				{
+					return streamUrlArgs;
+				}
+				set	
+				{
+					streamUrlArgs = value;
 				}
 			}
 

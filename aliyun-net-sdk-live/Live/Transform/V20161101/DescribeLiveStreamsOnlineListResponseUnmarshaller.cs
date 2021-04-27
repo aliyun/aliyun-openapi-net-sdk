@@ -46,6 +46,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				liveStreamOnlineInfo.PublishTime = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishTime");
 				liveStreamOnlineInfo.PublishUrl = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishUrl");
 				liveStreamOnlineInfo.PublishDomain = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishDomain");
+				liveStreamOnlineInfo.StreamUrlArgs = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].StreamUrlArgs");
 				liveStreamOnlineInfo.PublishType = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishType");
 				liveStreamOnlineInfo.Transcoded = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].Transcoded");
 				liveStreamOnlineInfo.TranscodeId = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].TranscodeId");

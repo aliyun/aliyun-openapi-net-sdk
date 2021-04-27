@@ -42,8 +42,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string appName;
 
-		private string liveapiRequestFrom;
-
 		private string domainName;
 
 		private long? ownerId;
@@ -58,19 +56,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				appName = value;
 				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
-		public string LiveapiRequestFrom
-		{
-			get
-			{
-				return liveapiRequestFrom;
-			}
-			set	
-			{
-				liveapiRequestFrom = value;
-				DictionaryUtil.Add(QueryParameters, "LiveapiRequestFrom", value);
 			}
 		}
 
