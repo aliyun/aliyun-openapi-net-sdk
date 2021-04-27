@@ -34,10 +34,13 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Sas.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Sas.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private string markMissParam;
 
 		private long? resourceOwnerId;
 
@@ -48,6 +51,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		private long? taskId;
 
 		private string operationParams;
+
+		public string MarkMissParam
+		{
+			get
+			{
+				return markMissParam;
+			}
+			set	
+			{
+				markMissParam = value;
+				DictionaryUtil.Add(QueryParameters, "MarkMissParam", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{

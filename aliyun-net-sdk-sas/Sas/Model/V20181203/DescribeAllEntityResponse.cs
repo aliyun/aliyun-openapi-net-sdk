@@ -64,6 +64,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string uuid;
 
+			private string os;
+
 			private string internetIp;
 
 			private string intranetIp;
@@ -113,6 +115,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					uuid = value;
+				}
+			}
+
+			public string Os
+			{
+				get
+				{
+					return os;
+				}
+				set	
+				{
+					os = value;
 				}
 			}
 

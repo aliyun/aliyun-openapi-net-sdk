@@ -134,6 +134,24 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string groupId;
 
+			private int? importance;
+
+			private string clientVersion;
+
+			private string riskCount;
+
+			private string clusterId;
+
+			private string clusterName;
+
+			private long? createdTime;
+
+			private int? podCount;
+
+			private int? exposedStatus;
+
+			private int? autoSnapshotsLevel;
+
 			public string InternetIp
 			{
 				get
@@ -431,6 +449,114 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					groupId = value;
+				}
+			}
+
+			public int? Importance
+			{
+				get
+				{
+					return importance;
+				}
+				set	
+				{
+					importance = value;
+				}
+			}
+
+			public string ClientVersion
+			{
+				get
+				{
+					return clientVersion;
+				}
+				set	
+				{
+					clientVersion = value;
+				}
+			}
+
+			public string RiskCount
+			{
+				get
+				{
+					return riskCount;
+				}
+				set	
+				{
+					riskCount = value;
+				}
+			}
+
+			public string ClusterId
+			{
+				get
+				{
+					return clusterId;
+				}
+				set	
+				{
+					clusterId = value;
+				}
+			}
+
+			public string ClusterName
+			{
+				get
+				{
+					return clusterName;
+				}
+				set	
+				{
+					clusterName = value;
+				}
+			}
+
+			public long? CreatedTime
+			{
+				get
+				{
+					return createdTime;
+				}
+				set	
+				{
+					createdTime = value;
+				}
+			}
+
+			public int? PodCount
+			{
+				get
+				{
+					return podCount;
+				}
+				set	
+				{
+					podCount = value;
+				}
+			}
+
+			public int? ExposedStatus
+			{
+				get
+				{
+					return exposedStatus;
+				}
+				set	
+				{
+					exposedStatus = value;
+				}
+			}
+
+			public int? AutoSnapshotsLevel
+			{
+				get
+				{
+					return autoSnapshotsLevel;
+				}
+				set	
+				{
+					autoSnapshotsLevel = value;
 				}
 			}
 		}

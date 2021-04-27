@@ -27,6 +27,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string requestId;
 
+		private long? groupId;
+
 		public string RequestId
 		{
 			get
@@ -36,6 +38,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public long? GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
 			}
 		}
 	}

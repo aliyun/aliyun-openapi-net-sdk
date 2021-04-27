@@ -26,27 +26,27 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeStrategyExecDetailResponseUnmarshaller
     {
-        public static DescribeStrategyExecDetailResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeStrategyExecDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeStrategyExecDetailResponse describeStrategyExecDetailResponse = new DescribeStrategyExecDetailResponse();
 
-			describeStrategyExecDetailResponse.HttpResponse = context.HttpResponse;
-			describeStrategyExecDetailResponse.RequestId = context.StringValue("DescribeStrategyExecDetail.RequestId");
-			describeStrategyExecDetailResponse.StartTime = context.StringValue("DescribeStrategyExecDetail.StartTime");
-			describeStrategyExecDetailResponse.EndTime = context.StringValue("DescribeStrategyExecDetail.EndTime");
-			describeStrategyExecDetailResponse.Source = context.StringValue("DescribeStrategyExecDetail.Source");
-			describeStrategyExecDetailResponse.Percent = context.StringValue("DescribeStrategyExecDetail.Percent");
-			describeStrategyExecDetailResponse.SuccessCount = context.IntegerValue("DescribeStrategyExecDetail.SuccessCount");
-			describeStrategyExecDetailResponse.FailCount = context.IntegerValue("DescribeStrategyExecDetail.FailCount");
-			describeStrategyExecDetailResponse.InProcessCount = context.IntegerValue("DescribeStrategyExecDetail.InProcessCount");
+			describeStrategyExecDetailResponse.HttpResponse = _ctx.HttpResponse;
+			describeStrategyExecDetailResponse.RequestId = _ctx.StringValue("DescribeStrategyExecDetail.RequestId");
+			describeStrategyExecDetailResponse.StartTime = _ctx.StringValue("DescribeStrategyExecDetail.StartTime");
+			describeStrategyExecDetailResponse.EndTime = _ctx.StringValue("DescribeStrategyExecDetail.EndTime");
+			describeStrategyExecDetailResponse.Source = _ctx.StringValue("DescribeStrategyExecDetail.Source");
+			describeStrategyExecDetailResponse.Percent = _ctx.StringValue("DescribeStrategyExecDetail.Percent");
+			describeStrategyExecDetailResponse.SuccessCount = _ctx.IntegerValue("DescribeStrategyExecDetail.SuccessCount");
+			describeStrategyExecDetailResponse.FailCount = _ctx.IntegerValue("DescribeStrategyExecDetail.FailCount");
+			describeStrategyExecDetailResponse.InProcessCount = _ctx.IntegerValue("DescribeStrategyExecDetail.InProcessCount");
 
 			List<DescribeStrategyExecDetailResponse.DescribeStrategyExecDetail_FailedEcs> describeStrategyExecDetailResponse_failedEcsList = new List<DescribeStrategyExecDetailResponse.DescribeStrategyExecDetail_FailedEcs>();
-			for (int i = 0; i < context.Length("DescribeStrategyExecDetail.FailedEcsList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeStrategyExecDetail.FailedEcsList.Length"); i++) {
 				DescribeStrategyExecDetailResponse.DescribeStrategyExecDetail_FailedEcs failedEcs = new DescribeStrategyExecDetailResponse.DescribeStrategyExecDetail_FailedEcs();
-				failedEcs.Reason = context.StringValue("DescribeStrategyExecDetail.FailedEcsList["+ i +"].Reason");
-				failedEcs.InstanceName = context.StringValue("DescribeStrategyExecDetail.FailedEcsList["+ i +"].InstanceName");
-				failedEcs.IP = context.StringValue("DescribeStrategyExecDetail.FailedEcsList["+ i +"].IP");
-				failedEcs.IntranetIp = context.StringValue("DescribeStrategyExecDetail.FailedEcsList["+ i +"].IntranetIp");
+				failedEcs.Reason = _ctx.StringValue("DescribeStrategyExecDetail.FailedEcsList["+ i +"].Reason");
+				failedEcs.InstanceName = _ctx.StringValue("DescribeStrategyExecDetail.FailedEcsList["+ i +"].InstanceName");
+				failedEcs.IP = _ctx.StringValue("DescribeStrategyExecDetail.FailedEcsList["+ i +"].IP");
+				failedEcs.IntranetIp = _ctx.StringValue("DescribeStrategyExecDetail.FailedEcsList["+ i +"].IntranetIp");
 
 				describeStrategyExecDetailResponse_failedEcsList.Add(failedEcs);
 			}

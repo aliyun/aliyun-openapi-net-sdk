@@ -37,6 +37,10 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private int? cron;
 
+		private int? sca;
+
+		private int? autoRun;
+
 		public string RequestId
 		{
 			get
@@ -106,6 +110,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				cron = value;
+			}
+		}
+
+		public int? Sca
+		{
+			get
+			{
+				return sca;
+			}
+			set	
+			{
+				sca = value;
+			}
+		}
+
+		public int? AutoRun
+		{
+			get
+			{
+				return autoRun;
+			}
+			set	
+			{
+				autoRun = value;
 			}
 		}
 	}

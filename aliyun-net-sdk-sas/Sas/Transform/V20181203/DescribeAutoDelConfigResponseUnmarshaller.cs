@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeAutoDelConfigResponseUnmarshaller
     {
-        public static DescribeAutoDelConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAutoDelConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAutoDelConfigResponse describeAutoDelConfigResponse = new DescribeAutoDelConfigResponse();
 
-			describeAutoDelConfigResponse.HttpResponse = context.HttpResponse;
-			describeAutoDelConfigResponse.RequestId = context.StringValue("DescribeAutoDelConfig.RequestId");
-			describeAutoDelConfigResponse.Days = context.IntegerValue("DescribeAutoDelConfig.Days");
+			describeAutoDelConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeAutoDelConfigResponse.RequestId = _ctx.StringValue("DescribeAutoDelConfig.RequestId");
+			describeAutoDelConfigResponse.Days = _ctx.IntegerValue("DescribeAutoDelConfig.Days");
         
 			return describeAutoDelConfigResponse;
         }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class ModifyLoginSwitchConfigResponseUnmarshaller
     {
-        public static ModifyLoginSwitchConfigResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyLoginSwitchConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyLoginSwitchConfigResponse modifyLoginSwitchConfigResponse = new ModifyLoginSwitchConfigResponse();
 
-			modifyLoginSwitchConfigResponse.HttpResponse = context.HttpResponse;
-			modifyLoginSwitchConfigResponse.RequestId = context.StringValue("ModifyLoginSwitchConfig.RequestId");
+			modifyLoginSwitchConfigResponse.HttpResponse = _ctx.HttpResponse;
+			modifyLoginSwitchConfigResponse.RequestId = _ctx.StringValue("ModifyLoginSwitchConfig.RequestId");
         
 			return modifyLoginSwitchConfigResponse;
         }

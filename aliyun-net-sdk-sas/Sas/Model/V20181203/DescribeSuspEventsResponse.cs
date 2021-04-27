@@ -114,13 +114,21 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string lastTime;
 
+			private long? lastTimeStamp;
+
 			private string occurrenceTime;
 
+			private long? occurrenceTimeStamp;
+
 			private long? id;
+
+			private string securityEventIds;
 
 			private string uniqueInfo;
 
 			private string instanceName;
+
+			private string instanceId;
 
 			private string internetIp;
 
@@ -140,6 +148,10 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string operateMsg;
 
+			private string operateErrorCode;
+
+			private long? operateTime;
+
 			private string dataSource;
 
 			private bool? canBeDealOnLine;
@@ -154,6 +166,46 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private bool? advanced;
 
+			private string markMisRules;
+
+			private string stages;
+
+			private string alarmEventTypeDisplay;
+
+			private string alarmEventNameDisplay;
+
+			private bool? canCancelFault;
+
+			private bool? hasTraceInfo;
+
+			private bool? autoBreaking;
+
+			private bool? containHwMode;
+
+			private string containerImageId;
+
+			private string containerImageName;
+
+			private string containerId;
+
+			private string k8sNamespace;
+
+			private string k8sClusterId;
+
+			private string k8sClusterName;
+
+			private string k8sNodeId;
+
+			private string k8sPodName;
+
+			private string k8sNodeName;
+
+			private string appName;
+
+			private List<DescribeSuspEvents_QuaraFile> details;
+
+			private List<DescribeSuspEvents_EventNote> eventNotes;
+
 			public string LastTime
 			{
 				get
@@ -163,6 +215,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					lastTime = value;
+				}
+			}
+
+			public long? LastTimeStamp
+			{
+				get
+				{
+					return lastTimeStamp;
+				}
+				set	
+				{
+					lastTimeStamp = value;
 				}
 			}
 
@@ -178,6 +242,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public long? OccurrenceTimeStamp
+			{
+				get
+				{
+					return occurrenceTimeStamp;
+				}
+				set	
+				{
+					occurrenceTimeStamp = value;
+				}
+			}
+
 			public long? Id
 			{
 				get
@@ -187,6 +263,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					id = value;
+				}
+			}
+
+			public string SecurityEventIds
+			{
+				get
+				{
+					return securityEventIds;
+				}
+				set	
+				{
+					securityEventIds = value;
 				}
 			}
 
@@ -211,6 +299,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					instanceName = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 
@@ -322,6 +422,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string OperateErrorCode
+			{
+				get
+				{
+					return operateErrorCode;
+				}
+				set	
+				{
+					operateErrorCode = value;
+				}
+			}
+
+			public long? OperateTime
+			{
+				get
+				{
+					return operateTime;
+				}
+				set	
+				{
+					operateTime = value;
+				}
+			}
+
 			public string DataSource
 			{
 				get
@@ -403,6 +527,380 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					advanced = value;
+				}
+			}
+
+			public string MarkMisRules
+			{
+				get
+				{
+					return markMisRules;
+				}
+				set	
+				{
+					markMisRules = value;
+				}
+			}
+
+			public string Stages
+			{
+				get
+				{
+					return stages;
+				}
+				set	
+				{
+					stages = value;
+				}
+			}
+
+			public string AlarmEventTypeDisplay
+			{
+				get
+				{
+					return alarmEventTypeDisplay;
+				}
+				set	
+				{
+					alarmEventTypeDisplay = value;
+				}
+			}
+
+			public string AlarmEventNameDisplay
+			{
+				get
+				{
+					return alarmEventNameDisplay;
+				}
+				set	
+				{
+					alarmEventNameDisplay = value;
+				}
+			}
+
+			public bool? CanCancelFault
+			{
+				get
+				{
+					return canCancelFault;
+				}
+				set	
+				{
+					canCancelFault = value;
+				}
+			}
+
+			public bool? HasTraceInfo
+			{
+				get
+				{
+					return hasTraceInfo;
+				}
+				set	
+				{
+					hasTraceInfo = value;
+				}
+			}
+
+			public bool? AutoBreaking
+			{
+				get
+				{
+					return autoBreaking;
+				}
+				set	
+				{
+					autoBreaking = value;
+				}
+			}
+
+			public bool? ContainHwMode
+			{
+				get
+				{
+					return containHwMode;
+				}
+				set	
+				{
+					containHwMode = value;
+				}
+			}
+
+			public string ContainerImageId
+			{
+				get
+				{
+					return containerImageId;
+				}
+				set	
+				{
+					containerImageId = value;
+				}
+			}
+
+			public string ContainerImageName
+			{
+				get
+				{
+					return containerImageName;
+				}
+				set	
+				{
+					containerImageName = value;
+				}
+			}
+
+			public string ContainerId
+			{
+				get
+				{
+					return containerId;
+				}
+				set	
+				{
+					containerId = value;
+				}
+			}
+
+			public string K8sNamespace
+			{
+				get
+				{
+					return k8sNamespace;
+				}
+				set	
+				{
+					k8sNamespace = value;
+				}
+			}
+
+			public string K8sClusterId
+			{
+				get
+				{
+					return k8sClusterId;
+				}
+				set	
+				{
+					k8sClusterId = value;
+				}
+			}
+
+			public string K8sClusterName
+			{
+				get
+				{
+					return k8sClusterName;
+				}
+				set	
+				{
+					k8sClusterName = value;
+				}
+			}
+
+			public string K8sNodeId
+			{
+				get
+				{
+					return k8sNodeId;
+				}
+				set	
+				{
+					k8sNodeId = value;
+				}
+			}
+
+			public string K8sPodName
+			{
+				get
+				{
+					return k8sPodName;
+				}
+				set	
+				{
+					k8sPodName = value;
+				}
+			}
+
+			public string K8sNodeName
+			{
+				get
+				{
+					return k8sNodeName;
+				}
+				set	
+				{
+					k8sNodeName = value;
+				}
+			}
+
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
+				}
+			}
+
+			public List<DescribeSuspEvents_QuaraFile> Details
+			{
+				get
+				{
+					return details;
+				}
+				set	
+				{
+					details = value;
+				}
+			}
+
+			public List<DescribeSuspEvents_EventNote> EventNotes
+			{
+				get
+				{
+					return eventNotes;
+				}
+				set	
+				{
+					eventNotes = value;
+				}
+			}
+
+			public class DescribeSuspEvents_QuaraFile
+			{
+
+				private string name;
+
+				private string nameDisplay;
+
+				private string type;
+
+				private string infoType;
+
+				private string _value;
+
+				private string valueDisplay;
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string NameDisplay
+				{
+					get
+					{
+						return nameDisplay;
+					}
+					set	
+					{
+						nameDisplay = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public string InfoType
+				{
+					get
+					{
+						return infoType;
+					}
+					set	
+					{
+						infoType = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
+				}
+
+				public string ValueDisplay
+				{
+					get
+					{
+						return valueDisplay;
+					}
+					set	
+					{
+						valueDisplay = value;
+					}
+				}
+			}
+
+			public class DescribeSuspEvents_EventNote
+			{
+
+				private string noteTime;
+
+				private string note;
+
+				private long? noteId;
+
+				public string NoteTime
+				{
+					get
+					{
+						return noteTime;
+					}
+					set	
+					{
+						noteTime = value;
+					}
+				}
+
+				public string Note
+				{
+					get
+					{
+						return note;
+					}
+					set	
+					{
+						note = value;
+					}
+				}
+
+				public long? NoteId
+				{
+					get
+					{
+						return noteId;
+					}
+					set	
+					{
+						noteId = value;
+					}
 				}
 			}
 		}

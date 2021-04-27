@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeSummaryInfoResponseUnmarshaller
     {
-        public static DescribeSummaryInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSummaryInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSummaryInfoResponse describeSummaryInfoResponse = new DescribeSummaryInfoResponse();
 
-			describeSummaryInfoResponse.HttpResponse = context.HttpResponse;
-			describeSummaryInfoResponse.RequestId = context.StringValue("DescribeSummaryInfo.RequestId");
-			describeSummaryInfoResponse.AegisClientOfflineCount = context.IntegerValue("DescribeSummaryInfo.AegisClientOfflineCount");
-			describeSummaryInfoResponse.SecurityScore = context.IntegerValue("DescribeSummaryInfo.SecurityScore");
-			describeSummaryInfoResponse.AegisClientOnlineCount = context.IntegerValue("DescribeSummaryInfo.AegisClientOnlineCount");
-			describeSummaryInfoResponse.Success = context.BooleanValue("DescribeSummaryInfo.Success");
+			describeSummaryInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeSummaryInfoResponse.RequestId = _ctx.StringValue("DescribeSummaryInfo.RequestId");
+			describeSummaryInfoResponse.AegisClientOfflineCount = _ctx.IntegerValue("DescribeSummaryInfo.AegisClientOfflineCount");
+			describeSummaryInfoResponse.SecurityScore = _ctx.IntegerValue("DescribeSummaryInfo.SecurityScore");
+			describeSummaryInfoResponse.AegisClientOnlineCount = _ctx.IntegerValue("DescribeSummaryInfo.AegisClientOnlineCount");
+			describeSummaryInfoResponse.Success = _ctx.BooleanValue("DescribeSummaryInfo.Success");
         
 			return describeSummaryInfoResponse;
         }

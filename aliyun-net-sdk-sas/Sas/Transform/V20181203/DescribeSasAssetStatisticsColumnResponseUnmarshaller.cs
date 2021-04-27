@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeSasAssetStatisticsColumnResponseUnmarshaller
     {
-        public static DescribeSasAssetStatisticsColumnResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSasAssetStatisticsColumnResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSasAssetStatisticsColumnResponse describeSasAssetStatisticsColumnResponse = new DescribeSasAssetStatisticsColumnResponse();
 
-			describeSasAssetStatisticsColumnResponse.HttpResponse = context.HttpResponse;
-			describeSasAssetStatisticsColumnResponse.RequestId = context.StringValue("DescribeSasAssetStatisticsColumn.RequestId");
-			describeSasAssetStatisticsColumnResponse.StatisticsColumn = context.StringValue("DescribeSasAssetStatisticsColumn.StatisticsColumn");
+			describeSasAssetStatisticsColumnResponse.HttpResponse = _ctx.HttpResponse;
+			describeSasAssetStatisticsColumnResponse.RequestId = _ctx.StringValue("DescribeSasAssetStatisticsColumn.RequestId");
+			describeSasAssetStatisticsColumnResponse.StatisticsColumn = _ctx.StringValue("DescribeSasAssetStatisticsColumn.StatisticsColumn");
         
 			return describeSasAssetStatisticsColumnResponse;
         }

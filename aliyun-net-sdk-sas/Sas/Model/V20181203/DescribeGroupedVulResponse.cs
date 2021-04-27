@@ -116,6 +116,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string tags;
 
+			private long? totalFixCount;
+
 			public string Name
 			{
 				get
@@ -221,6 +223,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					tags = value;
+				}
+			}
+
+			public long? TotalFixCount
+			{
+				get
+				{
+					return totalFixCount;
+				}
+				set	
+				{
+					totalFixCount = value;
 				}
 			}
 		}

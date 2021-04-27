@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class HandleSimilarSecurityEventsResponseUnmarshaller
     {
-        public static HandleSimilarSecurityEventsResponse Unmarshall(UnmarshallerContext context)
+        public static HandleSimilarSecurityEventsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			HandleSimilarSecurityEventsResponse handleSimilarSecurityEventsResponse = new HandleSimilarSecurityEventsResponse();
 
-			handleSimilarSecurityEventsResponse.HttpResponse = context.HttpResponse;
-			handleSimilarSecurityEventsResponse.RequestId = context.StringValue("HandleSimilarSecurityEvents.RequestId");
+			handleSimilarSecurityEventsResponse.HttpResponse = _ctx.HttpResponse;
+			handleSimilarSecurityEventsResponse.RequestId = _ctx.StringValue("HandleSimilarSecurityEvents.RequestId");
         
 			return handleSimilarSecurityEventsResponse;
         }

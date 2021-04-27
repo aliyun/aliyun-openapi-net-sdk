@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeVulWhitelistResponseUnmarshaller
     {
-        public static DescribeVulWhitelistResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVulWhitelistResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVulWhitelistResponse describeVulWhitelistResponse = new DescribeVulWhitelistResponse();
 
-			describeVulWhitelistResponse.HttpResponse = context.HttpResponse;
-			describeVulWhitelistResponse.RequestId = context.StringValue("DescribeVulWhitelist.RequestId");
-			describeVulWhitelistResponse.PageSize = context.IntegerValue("DescribeVulWhitelist.PageSize");
-			describeVulWhitelistResponse.CurrentPage = context.IntegerValue("DescribeVulWhitelist.CurrentPage");
-			describeVulWhitelistResponse.TotalCount = context.IntegerValue("DescribeVulWhitelist.TotalCount");
+			describeVulWhitelistResponse.HttpResponse = _ctx.HttpResponse;
+			describeVulWhitelistResponse.RequestId = _ctx.StringValue("DescribeVulWhitelist.RequestId");
+			describeVulWhitelistResponse.PageSize = _ctx.IntegerValue("DescribeVulWhitelist.PageSize");
+			describeVulWhitelistResponse.CurrentPage = _ctx.IntegerValue("DescribeVulWhitelist.CurrentPage");
+			describeVulWhitelistResponse.TotalCount = _ctx.IntegerValue("DescribeVulWhitelist.TotalCount");
 
 			List<DescribeVulWhitelistResponse.DescribeVulWhitelist_VulWhitelist> describeVulWhitelistResponse_vulWhitelists = new List<DescribeVulWhitelistResponse.DescribeVulWhitelist_VulWhitelist>();
-			for (int i = 0; i < context.Length("DescribeVulWhitelist.VulWhitelists.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVulWhitelist.VulWhitelists.Length"); i++) {
 				DescribeVulWhitelistResponse.DescribeVulWhitelist_VulWhitelist vulWhitelist = new DescribeVulWhitelistResponse.DescribeVulWhitelist_VulWhitelist();
-				vulWhitelist.Name = context.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].Name");
-				vulWhitelist.Type = context.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].Type");
-				vulWhitelist.AliasName = context.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].AliasName");
-				vulWhitelist.Reason = context.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].Reason");
+				vulWhitelist.Name = _ctx.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].Name");
+				vulWhitelist.Type = _ctx.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].Type");
+				vulWhitelist.AliasName = _ctx.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].AliasName");
+				vulWhitelist.Reason = _ctx.StringValue("DescribeVulWhitelist.VulWhitelists["+ i +"].Reason");
 
 				describeVulWhitelistResponse_vulWhitelists.Add(vulWhitelist);
 			}

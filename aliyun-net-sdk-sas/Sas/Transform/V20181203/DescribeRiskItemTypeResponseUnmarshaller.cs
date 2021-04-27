@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeRiskItemTypeResponseUnmarshaller
     {
-        public static DescribeRiskItemTypeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRiskItemTypeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRiskItemTypeResponse describeRiskItemTypeResponse = new DescribeRiskItemTypeResponse();
 
-			describeRiskItemTypeResponse.HttpResponse = context.HttpResponse;
-			describeRiskItemTypeResponse.RequestId = context.StringValue("DescribeRiskItemType.RequestId");
+			describeRiskItemTypeResponse.HttpResponse = _ctx.HttpResponse;
+			describeRiskItemTypeResponse.RequestId = _ctx.StringValue("DescribeRiskItemType.RequestId");
 
 			List<DescribeRiskItemTypeResponse.DescribeRiskItemType_ItemType> describeRiskItemTypeResponse_list = new List<DescribeRiskItemTypeResponse.DescribeRiskItemType_ItemType>();
-			for (int i = 0; i < context.Length("DescribeRiskItemType.List.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRiskItemType.List.Length"); i++) {
 				DescribeRiskItemTypeResponse.DescribeRiskItemType_ItemType itemType = new DescribeRiskItemTypeResponse.DescribeRiskItemType_ItemType();
-				itemType.Id = context.LongValue("DescribeRiskItemType.List["+ i +"].Id");
-				itemType.Title = context.StringValue("DescribeRiskItemType.List["+ i +"].Title");
+				itemType.Id = _ctx.LongValue("DescribeRiskItemType.List["+ i +"].Id");
+				itemType.Title = _ctx.StringValue("DescribeRiskItemType.List["+ i +"].Title");
 
 				describeRiskItemTypeResponse_list.Add(itemType);
 			}

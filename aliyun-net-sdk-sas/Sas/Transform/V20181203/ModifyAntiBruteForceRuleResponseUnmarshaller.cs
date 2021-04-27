@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class ModifyAntiBruteForceRuleResponseUnmarshaller
     {
-        public static ModifyAntiBruteForceRuleResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyAntiBruteForceRuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyAntiBruteForceRuleResponse modifyAntiBruteForceRuleResponse = new ModifyAntiBruteForceRuleResponse();
 
-			modifyAntiBruteForceRuleResponse.HttpResponse = context.HttpResponse;
-			modifyAntiBruteForceRuleResponse.RequestId = context.StringValue("ModifyAntiBruteForceRule.RequestId");
+			modifyAntiBruteForceRuleResponse.HttpResponse = _ctx.HttpResponse;
+			modifyAntiBruteForceRuleResponse.RequestId = _ctx.StringValue("ModifyAntiBruteForceRule.RequestId");
         
 			return modifyAntiBruteForceRuleResponse;
         }

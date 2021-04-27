@@ -60,9 +60,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string intranetIp;
 
-			private int? instanceName;
+			private string instanceName;
 
-			private int? instanceId;
+			private string instanceId;
 
 			private string ip;
 
@@ -73,6 +73,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			private string os;
 
 			private string clientStatus;
+
+			private string regionId;
 
 			private string region;
 
@@ -106,7 +108,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? InstanceName
+			public string InstanceName
 			{
 				get
 				{
@@ -118,7 +120,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
-			public int? InstanceId
+			public string InstanceId
 			{
 				get
 				{
@@ -187,6 +189,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					clientStatus = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 

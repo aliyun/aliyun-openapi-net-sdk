@@ -34,12 +34,21 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Sas.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Sas.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
+		private string targetType;
+
+		private int? minScore;
+
 		private string type;
+
+		private string containerFieldName;
+
+		private string containerFieldValue;
 
 		private int? pageSize;
 
@@ -51,11 +60,39 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private int? currentPage;
 
+		private string clusterId;
+
 		private string aliasName;
 
 		private string necessity;
 
 		private string uuids;
+
+		public string TargetType
+		{
+			get
+			{
+				return targetType;
+			}
+			set	
+			{
+				targetType = value;
+				DictionaryUtil.Add(QueryParameters, "TargetType", value);
+			}
+		}
+
+		public int? MinScore
+		{
+			get
+			{
+				return minScore;
+			}
+			set	
+			{
+				minScore = value;
+				DictionaryUtil.Add(QueryParameters, "MinScore", value.ToString());
+			}
+		}
 
 		public string Type
 		{
@@ -67,6 +104,32 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				type = value;
 				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		public string ContainerFieldName
+		{
+			get
+			{
+				return containerFieldName;
+			}
+			set	
+			{
+				containerFieldName = value;
+				DictionaryUtil.Add(QueryParameters, "ContainerFieldName", value);
+			}
+		}
+
+		public string ContainerFieldValue
+		{
+			get
+			{
+				return containerFieldValue;
+			}
+			set	
+			{
+				containerFieldValue = value;
+				DictionaryUtil.Add(QueryParameters, "ContainerFieldValue", value);
 			}
 		}
 
@@ -132,6 +195,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				currentPage = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
 			}
 		}
 

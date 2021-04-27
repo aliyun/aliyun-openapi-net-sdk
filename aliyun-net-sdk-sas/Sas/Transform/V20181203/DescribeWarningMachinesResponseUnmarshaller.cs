@@ -26,29 +26,31 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeWarningMachinesResponseUnmarshaller
     {
-        public static DescribeWarningMachinesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeWarningMachinesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeWarningMachinesResponse describeWarningMachinesResponse = new DescribeWarningMachinesResponse();
 
-			describeWarningMachinesResponse.HttpResponse = context.HttpResponse;
-			describeWarningMachinesResponse.RequestId = context.StringValue("DescribeWarningMachines.RequestId");
-			describeWarningMachinesResponse.Count = context.IntegerValue("DescribeWarningMachines.Count");
-			describeWarningMachinesResponse.PageSize = context.IntegerValue("DescribeWarningMachines.PageSize");
-			describeWarningMachinesResponse.TotalCount = context.IntegerValue("DescribeWarningMachines.TotalCount");
-			describeWarningMachinesResponse.CurrentPage = context.IntegerValue("DescribeWarningMachines.CurrentPage");
+			describeWarningMachinesResponse.HttpResponse = _ctx.HttpResponse;
+			describeWarningMachinesResponse.RequestId = _ctx.StringValue("DescribeWarningMachines.RequestId");
+			describeWarningMachinesResponse.Count = _ctx.IntegerValue("DescribeWarningMachines.Count");
+			describeWarningMachinesResponse.PageSize = _ctx.IntegerValue("DescribeWarningMachines.PageSize");
+			describeWarningMachinesResponse.TotalCount = _ctx.IntegerValue("DescribeWarningMachines.TotalCount");
+			describeWarningMachinesResponse.CurrentPage = _ctx.IntegerValue("DescribeWarningMachines.CurrentPage");
 
 			List<DescribeWarningMachinesResponse.DescribeWarningMachines_WarningMachine> describeWarningMachinesResponse_warningMachines = new List<DescribeWarningMachinesResponse.DescribeWarningMachines_WarningMachine>();
-			for (int i = 0; i < context.Length("DescribeWarningMachines.WarningMachines.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeWarningMachines.WarningMachines.Length"); i++) {
 				DescribeWarningMachinesResponse.DescribeWarningMachines_WarningMachine warningMachine = new DescribeWarningMachinesResponse.DescribeWarningMachines_WarningMachine();
-				warningMachine.Uuid = context.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].Uuid");
-				warningMachine.MachineName = context.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].MachineName");
-				warningMachine.InternetIp = context.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].InternetIp");
-				warningMachine.IntranetIp = context.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].IntranetIp");
-				warningMachine.PassCount = context.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].PassCount");
-				warningMachine.HighWarningCount = context.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].HighWarningCount");
-				warningMachine.MediumWarningCount = context.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].MediumWarningCount");
-				warningMachine.LowWarningCount = context.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].LowWarningCount");
-				warningMachine.Status = context.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].Status");
+				warningMachine.Uuid = _ctx.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].Uuid");
+				warningMachine.InstanceName = _ctx.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].InstanceName");
+				warningMachine.InstanceId = _ctx.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].InstanceId");
+				warningMachine.RegionId = _ctx.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].RegionId");
+				warningMachine.InternetIp = _ctx.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].InternetIp");
+				warningMachine.IntranetIp = _ctx.StringValue("DescribeWarningMachines.WarningMachines["+ i +"].IntranetIp");
+				warningMachine.PassCount = _ctx.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].PassCount");
+				warningMachine.HighWarningCount = _ctx.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].HighWarningCount");
+				warningMachine.MediumWarningCount = _ctx.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].MediumWarningCount");
+				warningMachine.LowWarningCount = _ctx.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].LowWarningCount");
+				warningMachine.Status = _ctx.IntegerValue("DescribeWarningMachines.WarningMachines["+ i +"].Status");
 
 				describeWarningMachinesResponse_warningMachines.Add(warningMachine);
 			}

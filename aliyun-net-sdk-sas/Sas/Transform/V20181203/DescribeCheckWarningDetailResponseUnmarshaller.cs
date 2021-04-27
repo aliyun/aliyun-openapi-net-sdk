@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeCheckWarningDetailResponseUnmarshaller
     {
-        public static DescribeCheckWarningDetailResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCheckWarningDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCheckWarningDetailResponse describeCheckWarningDetailResponse = new DescribeCheckWarningDetailResponse();
 
-			describeCheckWarningDetailResponse.HttpResponse = context.HttpResponse;
-			describeCheckWarningDetailResponse.RequestId = context.StringValue("DescribeCheckWarningDetail.RequestId");
-			describeCheckWarningDetailResponse.CheckId = context.LongValue("DescribeCheckWarningDetail.CheckId");
-			describeCheckWarningDetailResponse.Level = context.StringValue("DescribeCheckWarningDetail.Level");
-			describeCheckWarningDetailResponse.Item = context.StringValue("DescribeCheckWarningDetail.Item");
-			describeCheckWarningDetailResponse.Prompt = context.StringValue("DescribeCheckWarningDetail.Prompt");
-			describeCheckWarningDetailResponse.Type = context.StringValue("DescribeCheckWarningDetail.Type");
-			describeCheckWarningDetailResponse.Advice = context.StringValue("DescribeCheckWarningDetail.Advice");
-			describeCheckWarningDetailResponse.Description = context.StringValue("DescribeCheckWarningDetail.Description");
+			describeCheckWarningDetailResponse.HttpResponse = _ctx.HttpResponse;
+			describeCheckWarningDetailResponse.RequestId = _ctx.StringValue("DescribeCheckWarningDetail.RequestId");
+			describeCheckWarningDetailResponse.CheckId = _ctx.LongValue("DescribeCheckWarningDetail.CheckId");
+			describeCheckWarningDetailResponse.Level = _ctx.StringValue("DescribeCheckWarningDetail.Level");
+			describeCheckWarningDetailResponse.Item = _ctx.StringValue("DescribeCheckWarningDetail.Item");
+			describeCheckWarningDetailResponse.Prompt = _ctx.StringValue("DescribeCheckWarningDetail.Prompt");
+			describeCheckWarningDetailResponse.Type = _ctx.StringValue("DescribeCheckWarningDetail.Type");
+			describeCheckWarningDetailResponse.Advice = _ctx.StringValue("DescribeCheckWarningDetail.Advice");
+			describeCheckWarningDetailResponse.Description = _ctx.StringValue("DescribeCheckWarningDetail.Description");
         
 			return describeCheckWarningDetailResponse;
         }

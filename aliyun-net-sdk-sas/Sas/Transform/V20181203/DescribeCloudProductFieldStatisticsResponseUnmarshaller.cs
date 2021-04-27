@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeCloudProductFieldStatisticsResponseUnmarshaller
     {
-        public static DescribeCloudProductFieldStatisticsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCloudProductFieldStatisticsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCloudProductFieldStatisticsResponse describeCloudProductFieldStatisticsResponse = new DescribeCloudProductFieldStatisticsResponse();
 
-			describeCloudProductFieldStatisticsResponse.HttpResponse = context.HttpResponse;
-			describeCloudProductFieldStatisticsResponse.RequestId = context.StringValue("DescribeCloudProductFieldStatistics.RequestId");
+			describeCloudProductFieldStatisticsResponse.HttpResponse = _ctx.HttpResponse;
+			describeCloudProductFieldStatisticsResponse.RequestId = _ctx.StringValue("DescribeCloudProductFieldStatistics.RequestId");
 
 			DescribeCloudProductFieldStatisticsResponse.DescribeCloudProductFieldStatistics_GroupedFields groupedFields = new DescribeCloudProductFieldStatisticsResponse.DescribeCloudProductFieldStatistics_GroupedFields();
-			groupedFields.RiskInstanceCount = context.IntegerValue("DescribeCloudProductFieldStatistics.GroupedFields.RiskInstanceCount");
-			groupedFields.InstanceCount = context.IntegerValue("DescribeCloudProductFieldStatistics.GroupedFields.InstanceCount");
-			groupedFields.CategoryCount = context.StringValue("DescribeCloudProductFieldStatistics.GroupedFields.CategoryCount");
+			groupedFields.RiskInstanceCount = _ctx.IntegerValue("DescribeCloudProductFieldStatistics.GroupedFields.RiskInstanceCount");
+			groupedFields.InstanceCount = _ctx.IntegerValue("DescribeCloudProductFieldStatistics.GroupedFields.InstanceCount");
+			groupedFields.CategoryCount = _ctx.StringValue("DescribeCloudProductFieldStatistics.GroupedFields.CategoryCount");
 			describeCloudProductFieldStatisticsResponse.GroupedFields = groupedFields;
         
 			return describeCloudProductFieldStatisticsResponse;

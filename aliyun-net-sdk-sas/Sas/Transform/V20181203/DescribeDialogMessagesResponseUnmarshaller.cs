@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeDialogMessagesResponseUnmarshaller
     {
-        public static DescribeDialogMessagesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDialogMessagesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDialogMessagesResponse describeDialogMessagesResponse = new DescribeDialogMessagesResponse();
 
-			describeDialogMessagesResponse.HttpResponse = context.HttpResponse;
-			describeDialogMessagesResponse.RequestId = context.StringValue("DescribeDialogMessages.RequestId");
-			describeDialogMessagesResponse.TotalCount = context.IntegerValue("DescribeDialogMessages.TotalCount");
+			describeDialogMessagesResponse.HttpResponse = _ctx.HttpResponse;
+			describeDialogMessagesResponse.RequestId = _ctx.StringValue("DescribeDialogMessages.RequestId");
+			describeDialogMessagesResponse.TotalCount = _ctx.IntegerValue("DescribeDialogMessages.TotalCount");
 
 			List<DescribeDialogMessagesResponse.DescribeDialogMessages_AegisDynamicDialogDTO> describeDialogMessagesResponse_dialogList = new List<DescribeDialogMessagesResponse.DescribeDialogMessages_AegisDynamicDialogDTO>();
-			for (int i = 0; i < context.Length("DescribeDialogMessages.DialogList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDialogMessages.DialogList.Length"); i++) {
 				DescribeDialogMessagesResponse.DescribeDialogMessages_AegisDynamicDialogDTO aegisDynamicDialogDTO = new DescribeDialogMessagesResponse.DescribeDialogMessages_AegisDynamicDialogDTO();
-				aegisDynamicDialogDTO.ID = context.LongValue("DescribeDialogMessages.DialogList["+ i +"].ID");
-				aegisDynamicDialogDTO.DialogKey = context.StringValue("DescribeDialogMessages.DialogList["+ i +"].DialogKey");
-				aegisDynamicDialogDTO._Params = context.StringValue("DescribeDialogMessages.DialogList["+ i +"].Params");
+				aegisDynamicDialogDTO.ID = _ctx.LongValue("DescribeDialogMessages.DialogList["+ i +"].ID");
+				aegisDynamicDialogDTO.DialogKey = _ctx.StringValue("DescribeDialogMessages.DialogList["+ i +"].DialogKey");
+				aegisDynamicDialogDTO._Params = _ctx.StringValue("DescribeDialogMessages.DialogList["+ i +"].Params");
 
 				describeDialogMessagesResponse_dialogList.Add(aegisDynamicDialogDTO);
 			}

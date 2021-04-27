@@ -26,25 +26,25 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeDomainListResponseUnmarshaller
     {
-        public static DescribeDomainListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainListResponse describeDomainListResponse = new DescribeDomainListResponse();
 
-			describeDomainListResponse.HttpResponse = context.HttpResponse;
-			describeDomainListResponse.RequestId = context.StringValue("DescribeDomainList.RequestId");
+			describeDomainListResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainListResponse.RequestId = _ctx.StringValue("DescribeDomainList.RequestId");
 
 			DescribeDomainListResponse.DescribeDomainList_PageInfo pageInfo = new DescribeDomainListResponse.DescribeDomainList_PageInfo();
-			pageInfo.Count = context.IntegerValue("DescribeDomainList.PageInfo.Count");
-			pageInfo.PageSize = context.IntegerValue("DescribeDomainList.PageInfo.PageSize");
-			pageInfo.TotalCount = context.IntegerValue("DescribeDomainList.PageInfo.TotalCount");
-			pageInfo.CurrentPage = context.IntegerValue("DescribeDomainList.PageInfo.CurrentPage");
+			pageInfo.Count = _ctx.IntegerValue("DescribeDomainList.PageInfo.Count");
+			pageInfo.PageSize = _ctx.IntegerValue("DescribeDomainList.PageInfo.PageSize");
+			pageInfo.TotalCount = _ctx.IntegerValue("DescribeDomainList.PageInfo.TotalCount");
+			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeDomainList.PageInfo.CurrentPage");
 			describeDomainListResponse.PageInfo = pageInfo;
 
 			List<DescribeDomainListResponse.DescribeDomainList_DomainResponse> describeDomainListResponse_domainListResponseList = new List<DescribeDomainListResponse.DescribeDomainList_DomainResponse>();
-			for (int i = 0; i < context.Length("DescribeDomainList.DomainListResponseList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainList.DomainListResponseList.Length"); i++) {
 				DescribeDomainListResponse.DescribeDomainList_DomainResponse domainResponse = new DescribeDomainListResponse.DescribeDomainList_DomainResponse();
-				domainResponse.Domain = context.StringValue("DescribeDomainList.DomainListResponseList["+ i +"].Domain");
-				domainResponse.IpList = context.StringValue("DescribeDomainList.DomainListResponseList["+ i +"].IpList");
+				domainResponse.Domain = _ctx.StringValue("DescribeDomainList.DomainListResponseList["+ i +"].Domain");
+				domainResponse.IpList = _ctx.StringValue("DescribeDomainList.DomainListResponseList["+ i +"].IpList");
 
 				describeDomainListResponse_domainListResponseList.Add(domainResponse);
 			}

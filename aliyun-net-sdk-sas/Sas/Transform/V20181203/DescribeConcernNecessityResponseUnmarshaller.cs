@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeConcernNecessityResponseUnmarshaller
     {
-        public static DescribeConcernNecessityResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeConcernNecessityResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeConcernNecessityResponse describeConcernNecessityResponse = new DescribeConcernNecessityResponse();
 
-			describeConcernNecessityResponse.HttpResponse = context.HttpResponse;
-			describeConcernNecessityResponse.RequestId = context.StringValue("DescribeConcernNecessity.RequestId");
+			describeConcernNecessityResponse.HttpResponse = _ctx.HttpResponse;
+			describeConcernNecessityResponse.RequestId = _ctx.StringValue("DescribeConcernNecessity.RequestId");
 
 			List<string> describeConcernNecessityResponse_concernNecessity = new List<string>();
-			for (int i = 0; i < context.Length("DescribeConcernNecessity.ConcernNecessity.Length"); i++) {
-				describeConcernNecessityResponse_concernNecessity.Add(context.StringValue("DescribeConcernNecessity.ConcernNecessity["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeConcernNecessity.ConcernNecessity.Length"); i++) {
+				describeConcernNecessityResponse_concernNecessity.Add(_ctx.StringValue("DescribeConcernNecessity.ConcernNecessity["+ i +"]"));
 			}
 			describeConcernNecessityResponse.ConcernNecessity = describeConcernNecessityResponse_concernNecessity;
         

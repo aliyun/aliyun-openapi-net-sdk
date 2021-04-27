@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class ModifySecurityCheckScheduleConfigResponseUnmarshaller
     {
-        public static ModifySecurityCheckScheduleConfigResponse Unmarshall(UnmarshallerContext context)
+        public static ModifySecurityCheckScheduleConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifySecurityCheckScheduleConfigResponse modifySecurityCheckScheduleConfigResponse = new ModifySecurityCheckScheduleConfigResponse();
 
-			modifySecurityCheckScheduleConfigResponse.HttpResponse = context.HttpResponse;
-			modifySecurityCheckScheduleConfigResponse.RequestId = context.StringValue("ModifySecurityCheckScheduleConfig.RequestId");
+			modifySecurityCheckScheduleConfigResponse.HttpResponse = _ctx.HttpResponse;
+			modifySecurityCheckScheduleConfigResponse.RequestId = _ctx.StringValue("ModifySecurityCheckScheduleConfig.RequestId");
         
 			return modifySecurityCheckScheduleConfigResponse;
         }

@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class ExportRecordResponseUnmarshaller
     {
-        public static ExportRecordResponse Unmarshall(UnmarshallerContext context)
+        public static ExportRecordResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ExportRecordResponse exportRecordResponse = new ExportRecordResponse();
 
-			exportRecordResponse.HttpResponse = context.HttpResponse;
-			exportRecordResponse.RequestId = context.StringValue("ExportRecord.RequestId");
-			exportRecordResponse.Id = context.LongValue("ExportRecord.Id");
-			exportRecordResponse.FileName = context.StringValue("ExportRecord.FileName");
+			exportRecordResponse.HttpResponse = _ctx.HttpResponse;
+			exportRecordResponse.RequestId = _ctx.StringValue("ExportRecord.RequestId");
+			exportRecordResponse.Id = _ctx.LongValue("ExportRecord.Id");
+			exportRecordResponse.FileName = _ctx.StringValue("ExportRecord.FileName");
         
 			return exportRecordResponse;
         }

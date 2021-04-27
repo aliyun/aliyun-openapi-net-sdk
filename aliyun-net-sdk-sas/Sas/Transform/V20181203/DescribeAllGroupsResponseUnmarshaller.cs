@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeAllGroupsResponseUnmarshaller
     {
-        public static DescribeAllGroupsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAllGroupsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAllGroupsResponse describeAllGroupsResponse = new DescribeAllGroupsResponse();
 
-			describeAllGroupsResponse.HttpResponse = context.HttpResponse;
-			describeAllGroupsResponse.RequestId = context.StringValue("DescribeAllGroups.RequestId");
-			describeAllGroupsResponse.Count = context.IntegerValue("DescribeAllGroups.Count");
+			describeAllGroupsResponse.HttpResponse = _ctx.HttpResponse;
+			describeAllGroupsResponse.RequestId = _ctx.StringValue("DescribeAllGroups.RequestId");
+			describeAllGroupsResponse.Count = _ctx.IntegerValue("DescribeAllGroups.Count");
 
 			List<DescribeAllGroupsResponse.DescribeAllGroups_Group> describeAllGroupsResponse_groups = new List<DescribeAllGroupsResponse.DescribeAllGroups_Group>();
-			for (int i = 0; i < context.Length("DescribeAllGroups.Groups.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeAllGroups.Groups.Length"); i++) {
 				DescribeAllGroupsResponse.DescribeAllGroups_Group group = new DescribeAllGroupsResponse.DescribeAllGroups_Group();
-				group.GroupName = context.StringValue("DescribeAllGroups.Groups["+ i +"].GroupName");
-				group.GroupId = context.IntegerValue("DescribeAllGroups.Groups["+ i +"].GroupId");
-				group.GroupFlag = context.IntegerValue("DescribeAllGroups.Groups["+ i +"].GroupFlag");
+				group.GroupName = _ctx.StringValue("DescribeAllGroups.Groups["+ i +"].GroupName");
+				group.GroupId = _ctx.IntegerValue("DescribeAllGroups.Groups["+ i +"].GroupId");
+				group.GroupFlag = _ctx.IntegerValue("DescribeAllGroups.Groups["+ i +"].GroupFlag");
 
 				describeAllGroupsResponse_groups.Add(group);
 			}

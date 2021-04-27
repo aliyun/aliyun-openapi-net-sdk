@@ -26,49 +26,58 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeCloudCenterInstancesResponseUnmarshaller
     {
-        public static DescribeCloudCenterInstancesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCloudCenterInstancesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCloudCenterInstancesResponse describeCloudCenterInstancesResponse = new DescribeCloudCenterInstancesResponse();
 
-			describeCloudCenterInstancesResponse.HttpResponse = context.HttpResponse;
-			describeCloudCenterInstancesResponse.RequestId = context.StringValue("DescribeCloudCenterInstances.RequestId");
-			describeCloudCenterInstancesResponse.Success = context.BooleanValue("DescribeCloudCenterInstances.Success");
+			describeCloudCenterInstancesResponse.HttpResponse = _ctx.HttpResponse;
+			describeCloudCenterInstancesResponse.RequestId = _ctx.StringValue("DescribeCloudCenterInstances.RequestId");
+			describeCloudCenterInstancesResponse.Success = _ctx.BooleanValue("DescribeCloudCenterInstances.Success");
 
 			DescribeCloudCenterInstancesResponse.DescribeCloudCenterInstances_PageInfo pageInfo = new DescribeCloudCenterInstancesResponse.DescribeCloudCenterInstances_PageInfo();
-			pageInfo.Count = context.IntegerValue("DescribeCloudCenterInstances.PageInfo.Count");
-			pageInfo.PageSize = context.IntegerValue("DescribeCloudCenterInstances.PageInfo.PageSize");
-			pageInfo.TotalCount = context.IntegerValue("DescribeCloudCenterInstances.PageInfo.TotalCount");
-			pageInfo.CurrentPage = context.IntegerValue("DescribeCloudCenterInstances.PageInfo.CurrentPage");
+			pageInfo.Count = _ctx.IntegerValue("DescribeCloudCenterInstances.PageInfo.Count");
+			pageInfo.PageSize = _ctx.IntegerValue("DescribeCloudCenterInstances.PageInfo.PageSize");
+			pageInfo.TotalCount = _ctx.IntegerValue("DescribeCloudCenterInstances.PageInfo.TotalCount");
+			pageInfo.CurrentPage = _ctx.IntegerValue("DescribeCloudCenterInstances.PageInfo.CurrentPage");
 			describeCloudCenterInstancesResponse.PageInfo = pageInfo;
 
 			List<DescribeCloudCenterInstancesResponse.DescribeCloudCenterInstances_Instance> describeCloudCenterInstancesResponse_instances = new List<DescribeCloudCenterInstancesResponse.DescribeCloudCenterInstances_Instance>();
-			for (int i = 0; i < context.Length("DescribeCloudCenterInstances.Instances.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCloudCenterInstances.Instances.Length"); i++) {
 				DescribeCloudCenterInstancesResponse.DescribeCloudCenterInstances_Instance instance = new DescribeCloudCenterInstancesResponse.DescribeCloudCenterInstances_Instance();
-				instance.InternetIp = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].InternetIp");
-				instance.Os = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].Os");
-				instance.InstanceId = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].InstanceId");
-				instance.InstanceName = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].InstanceName");
-				instance.RegionName = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].RegionName");
-				instance.Ip = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].Ip");
-				instance.ClientStatus = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].ClientStatus");
-				instance.Region = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].Region");
-				instance.Uuid = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].Uuid");
-				instance.IntranetIp = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].IntranetIp");
-				instance.AssetType = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].AssetType");
-				instance.Status = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].Status");
-				instance.Tag = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].Tag");
-				instance.VpcInstanceId = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].VpcInstanceId");
-				instance.OsName = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].OsName");
-				instance.Flag = context.IntegerValue("DescribeCloudCenterInstances.Instances["+ i +"].Flag");
-				instance.HcStatus = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].HcStatus");
-				instance.VulStatus = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].VulStatus");
-				instance.AlarmStatus = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].AlarmStatus");
-				instance.RiskStatus = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].RiskStatus");
-				instance.HealthCheckCount = context.IntegerValue("DescribeCloudCenterInstances.Instances["+ i +"].HealthCheckCount");
-				instance.VulCount = context.IntegerValue("DescribeCloudCenterInstances.Instances["+ i +"].VulCount");
-				instance.SafeEventCount = context.IntegerValue("DescribeCloudCenterInstances.Instances["+ i +"].SafeEventCount");
-				instance.RegionId = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].RegionId");
-				instance.GroupId = context.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].GroupId");
+				instance.InternetIp = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].InternetIp");
+				instance.Os = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].Os");
+				instance.InstanceId = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].InstanceId");
+				instance.InstanceName = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].InstanceName");
+				instance.RegionName = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].RegionName");
+				instance.Ip = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].Ip");
+				instance.ClientStatus = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].ClientStatus");
+				instance.Region = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].Region");
+				instance.Uuid = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].Uuid");
+				instance.IntranetIp = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].IntranetIp");
+				instance.AssetType = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].AssetType");
+				instance.Status = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].Status");
+				instance.Tag = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].Tag");
+				instance.VpcInstanceId = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].VpcInstanceId");
+				instance.OsName = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].OsName");
+				instance.Flag = _ctx.IntegerValue("DescribeCloudCenterInstances.Instances["+ i +"].Flag");
+				instance.HcStatus = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].HcStatus");
+				instance.VulStatus = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].VulStatus");
+				instance.AlarmStatus = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].AlarmStatus");
+				instance.RiskStatus = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].RiskStatus");
+				instance.HealthCheckCount = _ctx.IntegerValue("DescribeCloudCenterInstances.Instances["+ i +"].HealthCheckCount");
+				instance.VulCount = _ctx.IntegerValue("DescribeCloudCenterInstances.Instances["+ i +"].VulCount");
+				instance.SafeEventCount = _ctx.IntegerValue("DescribeCloudCenterInstances.Instances["+ i +"].SafeEventCount");
+				instance.RegionId = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].RegionId");
+				instance.GroupId = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].GroupId");
+				instance.Importance = _ctx.IntegerValue("DescribeCloudCenterInstances.Instances["+ i +"].Importance");
+				instance.ClientVersion = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].ClientVersion");
+				instance.RiskCount = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].RiskCount");
+				instance.ClusterId = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].ClusterId");
+				instance.ClusterName = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].ClusterName");
+				instance.CreatedTime = _ctx.LongValue("DescribeCloudCenterInstances.Instances["+ i +"].CreatedTime");
+				instance.PodCount = _ctx.IntegerValue("DescribeCloudCenterInstances.Instances["+ i +"].PodCount");
+				instance.ExposedStatus = _ctx.IntegerValue("DescribeCloudCenterInstances.Instances["+ i +"].ExposedStatus");
+				instance.AutoSnapshotsLevel = _ctx.IntegerValue("DescribeCloudCenterInstances.Instances["+ i +"].AutoSnapshotsLevel");
 
 				describeCloudCenterInstancesResponse_instances.Add(instance);
 			}

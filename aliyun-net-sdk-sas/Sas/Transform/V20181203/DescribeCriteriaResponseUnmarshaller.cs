@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class DescribeCriteriaResponseUnmarshaller
     {
-        public static DescribeCriteriaResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCriteriaResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCriteriaResponse describeCriteriaResponse = new DescribeCriteriaResponse();
 
-			describeCriteriaResponse.HttpResponse = context.HttpResponse;
-			describeCriteriaResponse.RequestId = context.StringValue("DescribeCriteria.RequestId");
+			describeCriteriaResponse.HttpResponse = _ctx.HttpResponse;
+			describeCriteriaResponse.RequestId = _ctx.StringValue("DescribeCriteria.RequestId");
 
 			List<DescribeCriteriaResponse.DescribeCriteria_Criteria> describeCriteriaResponse_criteriaList = new List<DescribeCriteriaResponse.DescribeCriteria_Criteria>();
-			for (int i = 0; i < context.Length("DescribeCriteria.CriteriaList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCriteria.CriteriaList.Length"); i++) {
 				DescribeCriteriaResponse.DescribeCriteria_Criteria criteria = new DescribeCriteriaResponse.DescribeCriteria_Criteria();
-				criteria.Values = context.StringValue("DescribeCriteria.CriteriaList["+ i +"].Values");
-				criteria.Name = context.StringValue("DescribeCriteria.CriteriaList["+ i +"].Name");
-				criteria.Type = context.StringValue("DescribeCriteria.CriteriaList["+ i +"].Type");
+				criteria.Values = _ctx.StringValue("DescribeCriteria.CriteriaList["+ i +"].Values");
+				criteria.Name = _ctx.StringValue("DescribeCriteria.CriteriaList["+ i +"].Name");
+				criteria.Type = _ctx.StringValue("DescribeCriteria.CriteriaList["+ i +"].Type");
 
 				describeCriteriaResponse_criteriaList.Add(criteria);
 			}

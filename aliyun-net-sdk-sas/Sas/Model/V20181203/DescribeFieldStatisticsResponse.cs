@@ -74,6 +74,14 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private int? offlineInstanceCount;
 
+			private int? importantAssetCount;
+
+			private int? generalAssetCount;
+
+			private int? testAssetCount;
+
+			private int? exposedInstanceCount;
+
 			public int? RiskInstanceCount
 			{
 				get
@@ -179,6 +187,54 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					offlineInstanceCount = value;
+				}
+			}
+
+			public int? ImportantAssetCount
+			{
+				get
+				{
+					return importantAssetCount;
+				}
+				set	
+				{
+					importantAssetCount = value;
+				}
+			}
+
+			public int? GeneralAssetCount
+			{
+				get
+				{
+					return generalAssetCount;
+				}
+				set	
+				{
+					generalAssetCount = value;
+				}
+			}
+
+			public int? TestAssetCount
+			{
+				get
+				{
+					return testAssetCount;
+				}
+				set	
+				{
+					testAssetCount = value;
+				}
+			}
+
+			public int? ExposedInstanceCount
+			{
+				get
+				{
+					return exposedInstanceCount;
+				}
+				set	
+				{
+					exposedInstanceCount = value;
 				}
 			}
 		}

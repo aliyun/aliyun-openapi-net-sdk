@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 {
     public class PauseClientResponseUnmarshaller
     {
-        public static PauseClientResponse Unmarshall(UnmarshallerContext context)
+        public static PauseClientResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PauseClientResponse pauseClientResponse = new PauseClientResponse();
 
-			pauseClientResponse.HttpResponse = context.HttpResponse;
-			pauseClientResponse.RequestId = context.StringValue("PauseClient.RequestId");
+			pauseClientResponse.HttpResponse = _ctx.HttpResponse;
+			pauseClientResponse.RequestId = _ctx.StringValue("PauseClient.RequestId");
         
 			return pauseClientResponse;
         }
