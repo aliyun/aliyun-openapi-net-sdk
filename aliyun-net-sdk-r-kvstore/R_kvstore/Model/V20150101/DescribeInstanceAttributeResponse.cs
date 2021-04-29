@@ -142,6 +142,10 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string globalInstanceId;
 
+			private string secondaryZoneId;
+
+			private string zoneType;
+
 			private List<DescribeInstanceAttribute_Tag> tags;
 
 			public string InstanceId
@@ -657,6 +661,30 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					globalInstanceId = value;
+				}
+			}
+
+			public string SecondaryZoneId
+			{
+				get
+				{
+					return secondaryZoneId;
+				}
+				set	
+				{
+					secondaryZoneId = value;
+				}
+			}
+
+			public string ZoneType
+			{
+				get
+				{
+					return zoneType;
+				}
+				set	
+				{
+					zoneType = value;
 				}
 			}
 

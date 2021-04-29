@@ -39,6 +39,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			order.TradeAmount = _ctx.StringValue("DescribePrice.Order.TradeAmount");
 			order.DiscountAmount = _ctx.StringValue("DescribePrice.Order.DiscountAmount");
 			order.Currency = _ctx.StringValue("DescribePrice.Order.Currency");
+			order.HandlingFeeAmount = _ctx.StringValue("DescribePrice.Order.HandlingFeeAmount");
 
 			List<string> order_ruleIds1 = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribePrice.Order.RuleIds.Length"); i++) {

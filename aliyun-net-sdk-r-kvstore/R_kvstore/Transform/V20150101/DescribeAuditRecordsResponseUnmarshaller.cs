@@ -50,6 +50,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				sQL.TotalExecutionTimes = _ctx.StringValue("DescribeAuditRecords.Items["+ i +"].TotalExecutionTimes");
 				sQL.ExecuteTime = _ctx.StringValue("DescribeAuditRecords.Items["+ i +"].ExecuteTime");
 				sQL.AccountName = _ctx.StringValue("DescribeAuditRecords.Items["+ i +"].AccountName");
+				sQL.NodeId = _ctx.StringValue("DescribeAuditRecords.Items["+ i +"].NodeId");
 
 				describeAuditRecordsResponse_items.Add(sQL);
 			}

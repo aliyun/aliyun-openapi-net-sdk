@@ -226,6 +226,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string currency;
 
+			private string handlingFeeAmount;
+
 			private List<DescribePrice_Coupon> coupons;
 
 			private List<string> ruleIds1;
@@ -275,6 +277,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					currency = value;
+				}
+			}
+
+			public string HandlingFeeAmount
+			{
+				get
+				{
+					return handlingFeeAmount;
+				}
+				set	
+				{
+					handlingFeeAmount = value;
 				}
 			}
 

@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class MigrateToOtherZoneRequest : RpcAcsRequest<MigrateToOtherZoneResponse>
+    public class CreateInstancesRequest : RpcAcsRequest<CreateInstancesResponse>
     {
-        public MigrateToOtherZoneRequest()
-            : base("R-kvstore", "2015-01-01", "MigrateToOtherZone", "redisa", "openAPI")
+        public CreateInstancesRequest()
+            : base("R-kvstore", "2015-01-01", "CreateInstances", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,13 +42,23 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private string secondaryZoneId;
+		private string instances;
+
+		private string couponNo;
+
+		private string engineVersion;
 
 		private string securityToken;
 
-		private string effectiveTime;
+		private bool? rebuildInstance;
 
-		private string dBInstanceId;
+		private string businessInfo;
+
+		private string agentId;
+
+		private string restoreTime;
+
+		private bool? autoPay;
 
 		private string resourceOwnerAccount;
 
@@ -56,9 +66,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
-		private string vSwitchId;
+		private string token;
 
-		private string zoneId;
+		private string privateIpAddress;
+
+		private string autoRenew;
 
 		public long? ResourceOwnerId
 		{
@@ -73,16 +85,42 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string SecondaryZoneId
+		public string Instances
 		{
 			get
 			{
-				return secondaryZoneId;
+				return instances;
 			}
 			set	
 			{
-				secondaryZoneId = value;
-				DictionaryUtil.Add(QueryParameters, "SecondaryZoneId", value);
+				instances = value;
+				DictionaryUtil.Add(QueryParameters, "Instances", value);
+			}
+		}
+
+		public string CouponNo
+		{
+			get
+			{
+				return couponNo;
+			}
+			set	
+			{
+				couponNo = value;
+				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
+			}
+		}
+
+		public string EngineVersion
+		{
+			get
+			{
+				return engineVersion;
+			}
+			set	
+			{
+				engineVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
 			}
 		}
 
@@ -99,29 +137,68 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string EffectiveTime
+		public bool? RebuildInstance
 		{
 			get
 			{
-				return effectiveTime;
+				return rebuildInstance;
 			}
 			set	
 			{
-				effectiveTime = value;
-				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
+				rebuildInstance = value;
+				DictionaryUtil.Add(QueryParameters, "RebuildInstance", value.ToString());
 			}
 		}
 
-		public string DBInstanceId
+		public string BusinessInfo
 		{
 			get
 			{
-				return dBInstanceId;
+				return businessInfo;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				businessInfo = value;
+				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
+			}
+		}
+
+		public string AgentId
+		{
+			get
+			{
+				return agentId;
+			}
+			set	
+			{
+				agentId = value;
+				DictionaryUtil.Add(QueryParameters, "AgentId", value);
+			}
+		}
+
+		public string RestoreTime
+		{
+			get
+			{
+				return restoreTime;
+			}
+			set	
+			{
+				restoreTime = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreTime", value);
+			}
+		}
+
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
 			}
 		}
 
@@ -164,35 +241,48 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string VSwitchId
+		public string Token
 		{
 			get
 			{
-				return vSwitchId;
+				return token;
 			}
 			set	
 			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+				token = value;
+				DictionaryUtil.Add(QueryParameters, "Token", value);
 			}
 		}
 
-		public string ZoneId
+		public string PrivateIpAddress
 		{
 			get
 			{
-				return zoneId;
+				return privateIpAddress;
 			}
 			set	
 			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+				privateIpAddress = value;
+				DictionaryUtil.Add(QueryParameters, "PrivateIpAddress", value);
 			}
 		}
 
-        public override MigrateToOtherZoneResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string AutoRenew
+		{
+			get
+			{
+				return autoRenew;
+			}
+			set	
+			{
+				autoRenew = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenew", value);
+			}
+		}
+
+        public override CreateInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return MigrateToOtherZoneResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

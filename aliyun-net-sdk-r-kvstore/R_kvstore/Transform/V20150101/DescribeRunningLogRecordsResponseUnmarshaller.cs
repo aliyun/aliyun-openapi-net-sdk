@@ -50,6 +50,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				logRecords.ConnInfo = _ctx.StringValue("DescribeRunningLogRecords.Items["+ i +"].ConnInfo");
 				logRecords.Content = _ctx.StringValue("DescribeRunningLogRecords.Items["+ i +"].Content");
 				logRecords.InstanceId = _ctx.StringValue("DescribeRunningLogRecords.Items["+ i +"].InstanceId");
+				logRecords.NodeId = _ctx.StringValue("DescribeRunningLogRecords.Items["+ i +"].NodeId");
 
 				describeRunningLogRecordsResponse_items.Add(logRecords);
 			}

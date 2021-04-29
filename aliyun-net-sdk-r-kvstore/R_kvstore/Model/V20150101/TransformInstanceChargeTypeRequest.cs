@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class MigrateToOtherZoneRequest : RpcAcsRequest<MigrateToOtherZoneResponse>
+    public class TransformInstanceChargeTypeRequest : RpcAcsRequest<TransformInstanceChargeTypeResponse>
     {
-        public MigrateToOtherZoneRequest()
-            : base("R-kvstore", "2015-01-01", "MigrateToOtherZone", "redisa", "openAPI")
+        public TransformInstanceChargeTypeRequest()
+            : base("R-kvstore", "2015-01-01", "TransformInstanceChargeType", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,13 +42,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private string secondaryZoneId;
-
 		private string securityToken;
 
-		private string effectiveTime;
+		private long? period;
 
-		private string dBInstanceId;
+		private bool? autoPay;
 
 		private string resourceOwnerAccount;
 
@@ -56,9 +54,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
-		private string vSwitchId;
+		private string instanceId;
 
-		private string zoneId;
+		private string chargeType;
 
 		public long? ResourceOwnerId
 		{
@@ -70,19 +68,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string SecondaryZoneId
-		{
-			get
-			{
-				return secondaryZoneId;
-			}
-			set	
-			{
-				secondaryZoneId = value;
-				DictionaryUtil.Add(QueryParameters, "SecondaryZoneId", value);
 			}
 		}
 
@@ -99,29 +84,29 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string EffectiveTime
+		public long? Period
 		{
 			get
 			{
-				return effectiveTime;
+				return period;
 			}
 			set	
 			{
-				effectiveTime = value;
-				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
 			}
 		}
 
-		public string DBInstanceId
+		public bool? AutoPay
 		{
 			get
 			{
-				return dBInstanceId;
+				return autoPay;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
 			}
 		}
 
@@ -164,35 +149,40 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string VSwitchId
+		public string InstanceId
 		{
 			get
 			{
-				return vSwitchId;
+				return instanceId;
 			}
 			set	
 			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-		public string ZoneId
+		public string ChargeType
 		{
 			get
 			{
-				return zoneId;
+				return chargeType;
 			}
 			set	
 			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+				chargeType = value;
+				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
 			}
 		}
 
-        public override MigrateToOtherZoneResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override TransformInstanceChargeTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return MigrateToOtherZoneResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TransformInstanceChargeTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -42,6 +42,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
+		private string secondaryZoneId;
+
 		private string couponNo;
 
 		private string networkType;
@@ -104,8 +106,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string chargeType;
 
-		private string config;
-
 		public long? ResourceOwnerId
 		{
 			get
@@ -116,6 +116,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string SecondaryZoneId
+		{
+			get
+			{
+				return secondaryZoneId;
+			}
+			set	
+			{
+				secondaryZoneId = value;
+				DictionaryUtil.Add(QueryParameters, "SecondaryZoneId", value);
 			}
 		}
 
@@ -519,19 +532,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				chargeType = value;
 				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
-			}
-		}
-
-		public string Config
-		{
-			get
-			{
-				return config;
-			}
-			set	
-			{
-				config = value;
-				DictionaryUtil.Add(QueryParameters, "Config", value);
 			}
 		}
 
