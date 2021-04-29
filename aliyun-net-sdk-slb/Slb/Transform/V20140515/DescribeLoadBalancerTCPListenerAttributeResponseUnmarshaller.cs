@@ -60,7 +60,6 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerTCPListenerAttributeResponse.MaxConnection = _ctx.IntegerValue("DescribeLoadBalancerTCPListenerAttribute.MaxConnection");
 			describeLoadBalancerTCPListenerAttributeResponse.PersistenceTimeout = _ctx.IntegerValue("DescribeLoadBalancerTCPListenerAttribute.PersistenceTimeout");
 			describeLoadBalancerTCPListenerAttributeResponse.ProxyProtocolV2Enabled = _ctx.BooleanValue("DescribeLoadBalancerTCPListenerAttribute.ProxyProtocolV2Enabled");
-			describeLoadBalancerTCPListenerAttributeResponse.ProxyProtocolVpcIdEnabled = _ctx.BooleanValue("DescribeLoadBalancerTCPListenerAttribute.ProxyProtocolVpcIdEnabled");
 			describeLoadBalancerTCPListenerAttributeResponse.RequestId = _ctx.StringValue("DescribeLoadBalancerTCPListenerAttribute.RequestId");
 			describeLoadBalancerTCPListenerAttributeResponse.Scheduler = _ctx.StringValue("DescribeLoadBalancerTCPListenerAttribute.Scheduler");
 			describeLoadBalancerTCPListenerAttributeResponse.SlaveServerGroupId = _ctx.StringValue("DescribeLoadBalancerTCPListenerAttribute.SlaveServerGroupId");

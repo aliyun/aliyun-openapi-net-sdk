@@ -83,8 +83,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private bool? proxyProtocolV2Enabled;
 
-		private bool? proxyProtocolVpcIdEnabled;
-
 		private string requestId;
 
 		private string scheduler;
@@ -452,18 +450,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				proxyProtocolV2Enabled = value;
-			}
-		}
-
-		public bool? ProxyProtocolVpcIdEnabled
-		{
-			get
-			{
-				return proxyProtocolVpcIdEnabled;
-			}
-			set	
-			{
-				proxyProtocolVpcIdEnabled = value;
 			}
 		}
 
