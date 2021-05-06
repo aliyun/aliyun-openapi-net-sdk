@@ -25,6 +25,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeScheduleTasksResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string message;
 
 		private string code;
@@ -32,6 +34,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private bool? success;
 
 		private DescribeScheduleTasks_Data data;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string Message
 		{

@@ -38,7 +38,6 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				DescribeParameterGroupsResponse.DescribeParameterGroups_ParameterGroupsItem parameterGroupsItem = new DescribeParameterGroupsResponse.DescribeParameterGroups_ParameterGroupsItem();
 				parameterGroupsItem.DBVersion = _ctx.StringValue("DescribeParameterGroups.ParameterGroups["+ i +"].DBVersion");
 				parameterGroupsItem.ParameterGroupId = _ctx.StringValue("DescribeParameterGroups.ParameterGroups["+ i +"].ParameterGroupId");
-				parameterGroupsItem.DigitalId = _ctx.StringValue("DescribeParameterGroups.ParameterGroups["+ i +"].DigitalId");
 				parameterGroupsItem.ForceRestart = _ctx.StringValue("DescribeParameterGroups.ParameterGroups["+ i +"].ForceRestart");
 				parameterGroupsItem.ParameterGroupName = _ctx.StringValue("DescribeParameterGroups.ParameterGroups["+ i +"].ParameterGroupName");
 				parameterGroupsItem.CreateTime = _ctx.StringValue("DescribeParameterGroups.ParameterGroups["+ i +"].CreateTime");

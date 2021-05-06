@@ -31,6 +31,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			DescribeScheduleTasksResponse describeScheduleTasksResponse = new DescribeScheduleTasksResponse();
 
 			describeScheduleTasksResponse.HttpResponse = _ctx.HttpResponse;
+			describeScheduleTasksResponse.RequestId = _ctx.StringValue("DescribeScheduleTasks.RequestId");
 			describeScheduleTasksResponse.Message = _ctx.StringValue("DescribeScheduleTasks.Message");
 			describeScheduleTasksResponse.Code = _ctx.StringValue("DescribeScheduleTasks.Code");
 			describeScheduleTasksResponse.Success = _ctx.BooleanValue("DescribeScheduleTasks.Success");

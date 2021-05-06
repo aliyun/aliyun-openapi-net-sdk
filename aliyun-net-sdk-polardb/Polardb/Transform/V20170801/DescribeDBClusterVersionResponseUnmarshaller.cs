@@ -31,13 +31,17 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			DescribeDBClusterVersionResponse describeDBClusterVersionResponse = new DescribeDBClusterVersionResponse();
 
 			describeDBClusterVersionResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBClusterVersionResponse.RequestId = _ctx.StringValue("DescribeDBClusterVersion.RequestId");
-			describeDBClusterVersionResponse.DBClusterId = _ctx.StringValue("DescribeDBClusterVersion.DBClusterId");
-			describeDBClusterVersionResponse.DBVersion = _ctx.StringValue("DescribeDBClusterVersion.DBVersion");
-			describeDBClusterVersionResponse.DBMinorVersion = _ctx.StringValue("DescribeDBClusterVersion.DBMinorVersion");
-			describeDBClusterVersionResponse.DBVersionStatus = _ctx.StringValue("DescribeDBClusterVersion.DBVersionStatus");
+			describeDBClusterVersionResponse.ProxyVersionStatus = _ctx.StringValue("DescribeDBClusterVersion.ProxyVersionStatus");
 			describeDBClusterVersionResponse.IsLatestVersion = _ctx.StringValue("DescribeDBClusterVersion.IsLatestVersion");
+			describeDBClusterVersionResponse.DBVersion = _ctx.StringValue("DescribeDBClusterVersion.DBVersion");
+			describeDBClusterVersionResponse.RequestId = _ctx.StringValue("DescribeDBClusterVersion.RequestId");
 			describeDBClusterVersionResponse.DBRevisionVersion = _ctx.StringValue("DescribeDBClusterVersion.DBRevisionVersion");
+			describeDBClusterVersionResponse.DBVersionStatus = _ctx.StringValue("DescribeDBClusterVersion.DBVersionStatus");
+			describeDBClusterVersionResponse.DBClusterId = _ctx.StringValue("DescribeDBClusterVersion.DBClusterId");
+			describeDBClusterVersionResponse.DBLatestVersion = _ctx.StringValue("DescribeDBClusterVersion.DBLatestVersion");
+			describeDBClusterVersionResponse.ProxyRevisionVersion = _ctx.StringValue("DescribeDBClusterVersion.ProxyRevisionVersion");
+			describeDBClusterVersionResponse.DBMinorVersion = _ctx.StringValue("DescribeDBClusterVersion.DBMinorVersion");
+			describeDBClusterVersionResponse.ProxyLatestVersion = _ctx.StringValue("DescribeDBClusterVersion.ProxyLatestVersion");
         
 			return describeDBClusterVersionResponse;
         }

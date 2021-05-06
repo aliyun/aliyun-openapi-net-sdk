@@ -60,8 +60,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string parameterGroupId;
 
-			private string digitalId;
-
 			private string forceRestart;
 
 			private string parameterGroupName;
@@ -97,18 +95,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					parameterGroupId = value;
-				}
-			}
-
-			public string DigitalId
-			{
-				get
-				{
-					return digitalId;
-				}
-				set	
-				{
-					digitalId = value;
 				}
 			}
 

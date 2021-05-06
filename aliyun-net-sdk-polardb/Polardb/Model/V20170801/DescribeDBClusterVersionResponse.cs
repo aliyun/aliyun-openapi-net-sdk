@@ -25,77 +25,37 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeDBClusterVersionResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string dBClusterId;
-
-		private string dBVersion;
-
-		private string dBMinorVersion;
-
-		private string dBVersionStatus;
+		private string proxyVersionStatus;
 
 		private string isLatestVersion;
 
+		private string dBVersion;
+
+		private string requestId;
+
 		private string dBRevisionVersion;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string dBVersionStatus;
 
-		public string DBClusterId
-		{
-			get
-			{
-				return dBClusterId;
-			}
-			set	
-			{
-				dBClusterId = value;
-			}
-		}
+		private string dBClusterId;
 
-		public string DBVersion
-		{
-			get
-			{
-				return dBVersion;
-			}
-			set	
-			{
-				dBVersion = value;
-			}
-		}
+		private string dBLatestVersion;
 
-		public string DBMinorVersion
-		{
-			get
-			{
-				return dBMinorVersion;
-			}
-			set	
-			{
-				dBMinorVersion = value;
-			}
-		}
+		private string proxyRevisionVersion;
 
-		public string DBVersionStatus
+		private string dBMinorVersion;
+
+		private string proxyLatestVersion;
+
+		public string ProxyVersionStatus
 		{
 			get
 			{
-				return dBVersionStatus;
+				return proxyVersionStatus;
 			}
 			set	
 			{
-				dBVersionStatus = value;
+				proxyVersionStatus = value;
 			}
 		}
 
@@ -111,6 +71,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string DBVersion
+		{
+			get
+			{
+				return dBVersion;
+			}
+			set	
+			{
+				dBVersion = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public string DBRevisionVersion
 		{
 			get
@@ -120,6 +104,78 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				dBRevisionVersion = value;
+			}
+		}
+
+		public string DBVersionStatus
+		{
+			get
+			{
+				return dBVersionStatus;
+			}
+			set	
+			{
+				dBVersionStatus = value;
+			}
+		}
+
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
+			}
+		}
+
+		public string DBLatestVersion
+		{
+			get
+			{
+				return dBLatestVersion;
+			}
+			set	
+			{
+				dBLatestVersion = value;
+			}
+		}
+
+		public string ProxyRevisionVersion
+		{
+			get
+			{
+				return proxyRevisionVersion;
+			}
+			set	
+			{
+				proxyRevisionVersion = value;
+			}
+		}
+
+		public string DBMinorVersion
+		{
+			get
+			{
+				return dBMinorVersion;
+			}
+			set	
+			{
+				dBMinorVersion = value;
+			}
+		}
+
+		public string ProxyLatestVersion
+		{
+			get
+			{
+				return proxyLatestVersion;
+			}
+			set	
+			{
+				proxyLatestVersion = value;
 			}
 		}
 	}

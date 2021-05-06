@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class ModifyDBClusterParametersRequest : RpcAcsRequest<ModifyDBClusterParametersResponse>
+    public class DescribeParameterTemplatesRequest : RpcAcsRequest<DescribeParameterTemplatesResponse>
     {
-        public ModifyDBClusterParametersRequest()
-            : base("polardb", "2017-08-01", "ModifyDBClusterParameters", "polardb", "openAPI")
+        public DescribeParameterTemplatesRequest()
+            : base("polardb", "2017-08-01", "DescribeParameterTemplates", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,17 +42,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string parameterGroupId;
-
 		private string resourceOwnerAccount;
-
-		private string dBClusterId;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string parameters;
+		private string dBType;
+
+		private string dBVersion;
 
 		public long? ResourceOwnerId
 		{
@@ -67,19 +65,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string ParameterGroupId
-		{
-			get
-			{
-				return parameterGroupId;
-			}
-			set	
-			{
-				parameterGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ParameterGroupId", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -90,19 +75,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string DBClusterId
-		{
-			get
-			{
-				return dBClusterId;
-			}
-			set	
-			{
-				dBClusterId = value;
-				DictionaryUtil.Add(QueryParameters, "DBClusterId", value);
 			}
 		}
 
@@ -132,22 +104,35 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string Parameters
+		public string DBType
 		{
 			get
 			{
-				return parameters;
+				return dBType;
 			}
 			set	
 			{
-				parameters = value;
-				DictionaryUtil.Add(QueryParameters, "Parameters", value);
+				dBType = value;
+				DictionaryUtil.Add(QueryParameters, "DBType", value);
 			}
 		}
 
-        public override ModifyDBClusterParametersResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string DBVersion
+		{
+			get
+			{
+				return dBVersion;
+			}
+			set	
+			{
+				dBVersion = value;
+				DictionaryUtil.Add(QueryParameters, "DBVersion", value);
+			}
+		}
+
+        public override DescribeParameterTemplatesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDBClusterParametersResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeParameterTemplatesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
