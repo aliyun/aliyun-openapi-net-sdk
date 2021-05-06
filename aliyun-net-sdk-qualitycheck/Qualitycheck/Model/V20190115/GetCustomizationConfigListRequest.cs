@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Qualitycheck;
 using Aliyun.Acs.Qualitycheck.Transform;
 using Aliyun.Acs.Qualitycheck.Transform.V20190115;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
     public class GetCustomizationConfigListRequest : RpcAcsRequest<GetCustomizationConfigListResponse>
     {
         public GetCustomizationConfigListRequest()
-            : base("Qualitycheck", "2019-01-15", "GetCustomizationConfigList")
+            : base("Qualitycheck", "2019-01-15", "GetCustomizationConfigList", "Qualitycheck", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
