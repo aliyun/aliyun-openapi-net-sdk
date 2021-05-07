@@ -68,17 +68,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string tddlBizType;
 
+		private string period;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
+		private string usedTime;
+
 		private string dBInstanceClass;
 
 		private string vSwitchId;
 
 		private string privateIpAddress;
+
+		private string autoRenew;
 
 		private string vPCId;
 
@@ -272,6 +278,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -311,6 +330,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string UsedTime
+		{
+			get
+			{
+				return usedTime;
+			}
+			set	
+			{
+				usedTime = value;
+				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
+			}
+		}
+
 		public string DBInstanceClass
 		{
 			get
@@ -347,6 +379,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				privateIpAddress = value;
 				DictionaryUtil.Add(QueryParameters, "PrivateIpAddress", value);
+			}
+		}
+
+		public string AutoRenew
+		{
+			get
+			{
+				return autoRenew;
+			}
+			set	
+			{
+				autoRenew = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenew", value);
 			}
 		}
 

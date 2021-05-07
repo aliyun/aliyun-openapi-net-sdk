@@ -184,6 +184,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string dedicatedHostGroupName;
 
+			private string connectionString;
+
 			private List<DescribeDBInstances_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
 			public int? InsId
@@ -699,6 +701,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					dedicatedHostGroupName = value;
+				}
+			}
+
+			public string ConnectionString
+			{
+				get
+				{
+					return connectionString;
+				}
+				set	
+				{
+					connectionString = value;
 				}
 			}
 

@@ -82,6 +82,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstance.DedicatedHostZoneIdForLog = _ctx.StringValue("DescribeDBInstances.Items["+ i +"].DedicatedHostZoneIdForLog");
 				dBInstance.VpcName = _ctx.StringValue("DescribeDBInstances.Items["+ i +"].VpcName");
 				dBInstance.DedicatedHostGroupName = _ctx.StringValue("DescribeDBInstances.Items["+ i +"].DedicatedHostGroupName");
+				dBInstance.ConnectionString = _ctx.StringValue("DescribeDBInstances.Items["+ i +"].ConnectionString");
 
 				List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId> dBInstance_readOnlyDBInstanceIds = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId>();
 				for (int j = 0; j < _ctx.Length("DescribeDBInstances.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

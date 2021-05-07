@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeAvailableZonesRequest : RpcAcsRequest<DescribeAvailableZonesResponse>
+    public class DescribeDBInstanceEncryptionKeyRequest : RpcAcsRequest<DescribeDBInstanceEncryptionKeyResponse>
     {
-        public DescribeAvailableZonesRequest()
-            : base("Rds", "2014-08-15", "DescribeAvailableZones", "rds", "openAPI")
+        public DescribeDBInstanceEncryptionKeyRequest()
+            : base("Rds", "2014-08-15", "DescribeDBInstanceEncryptionKey", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,32 +40,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			Method = MethodType.POST;
         }
 
-		private string dBInstanceName;
-
 		private long? resourceOwnerId;
 
-		private string engineVersion;
+		private string securityToken;
 
-		private string engine;
+		private string dBInstanceId;
 
-		private string dispenseMode;
+		private string resourceOwnerAccount;
 
-		private string commodityCode;
+		private string ownerAccount;
 
-		private string zoneId;
+		private string encryptionKey;
 
-		public string DBInstanceName
-		{
-			get
-			{
-				return dBInstanceName;
-			}
-			set	
-			{
-				dBInstanceName = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceName", value);
-			}
-		}
+		private long? ownerId;
+
+		private string targetRegionId;
 
 		public long? ResourceOwnerId
 		{
@@ -80,79 +69,100 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string EngineVersion
+		public string SecurityToken
 		{
 			get
 			{
-				return engineVersion;
+				return securityToken;
 			}
 			set	
 			{
-				engineVersion = value;
-				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
-		public string Engine
+		public string DBInstanceId
 		{
 			get
 			{
-				return engine;
+				return dBInstanceId;
 			}
 			set	
 			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
-		public string DispenseMode
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return dispenseMode;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				dispenseMode = value;
-				DictionaryUtil.Add(QueryParameters, "DispenseMode", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
-		public string CommodityCode
+		public string OwnerAccount
 		{
 			get
 			{
-				return commodityCode;
+				return ownerAccount;
 			}
 			set	
 			{
-				commodityCode = value;
-				DictionaryUtil.Add(QueryParameters, "CommodityCode", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
-		public string ZoneId
+		public string EncryptionKey
 		{
 			get
 			{
-				return zoneId;
+				return encryptionKey;
 			}
 			set	
 			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+				encryptionKey = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionKey", value);
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public long? OwnerId
 		{
-			return false;
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
 		}
 
-        public override DescribeAvailableZonesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string TargetRegionId
+		{
+			get
+			{
+				return targetRegionId;
+			}
+			set	
+			{
+				targetRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetRegionId", value);
+			}
+		}
+
+        public override DescribeDBInstanceEncryptionKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAvailableZonesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDBInstanceEncryptionKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

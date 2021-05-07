@@ -130,6 +130,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string logFileName;
 
+			private string remoteStatus;
+
 			public long? FileSize
 			{
 				get
@@ -235,6 +237,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					logFileName = value;
+				}
+			}
+
+			public string RemoteStatus
+			{
+				get
+				{
+					return remoteStatus;
+				}
+				set	
+				{
+					remoteStatus = value;
 				}
 			}
 		}

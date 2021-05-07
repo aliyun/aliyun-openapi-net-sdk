@@ -1,3 +1,6 @@
+2021-05-07 Version: 2.5.11
+- Support interface DescribeDBInstanceEncryptionKey for DB Instance Cloud Disk Encryption.
+
 2021-05-06 Version: 3.9.7
 - Generated 2016-11-01 for `live`.
 

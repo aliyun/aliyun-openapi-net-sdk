@@ -49,6 +49,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				binLogFile.Checksum = _ctx.StringValue("DescribeBinlogFiles.Items["+ i +"].Checksum");
 				binLogFile.HostInstanceID = _ctx.StringValue("DescribeBinlogFiles.Items["+ i +"].HostInstanceID");
 				binLogFile.LogFileName = _ctx.StringValue("DescribeBinlogFiles.Items["+ i +"].LogFileName");
+				binLogFile.RemoteStatus = _ctx.StringValue("DescribeBinlogFiles.Items["+ i +"].RemoteStatus");
 
 				describeBinlogFilesResponse_items.Add(binLogFile);
 			}

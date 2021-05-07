@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private string connectionString;
+
 		private string engineVersion;
 
 		private string resourceGroupId;
@@ -104,6 +106,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ConnectionString
+		{
+			get
+			{
+				return connectionString;
+			}
+			set	
+			{
+				connectionString = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionString", value);
 			}
 		}
 
