@@ -179,6 +179,10 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private int? commitStatus;
 
+				private string deletedStatus;
+
+				private long? businessId;
+
 				public string ConnectionName
 				{
 					get
@@ -392,6 +396,30 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						commitStatus = value;
+					}
+				}
+
+				public string DeletedStatus
+				{
+					get
+					{
+						return deletedStatus;
+					}
+					set	
+					{
+						deletedStatus = value;
+					}
+				}
+
+				public long? BusinessId
+				{
+					get
+					{
+						return businessId;
+					}
+					set	
+					{
+						businessId = value;
 					}
 				}
 			}

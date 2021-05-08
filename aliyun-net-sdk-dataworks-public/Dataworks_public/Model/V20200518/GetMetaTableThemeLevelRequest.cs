@@ -28,61 +28,45 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class ListResourceGroupsRequest : RpcAcsRequest<ListResourceGroupsResponse>
+    public class GetMetaTableThemeLevelRequest : RpcAcsRequest<GetMetaTableThemeLevelResponse>
     {
-        public ListResourceGroupsRequest()
-            : base("dataworks-public", "2020-05-18", "ListResourceGroups")
+        public GetMetaTableThemeLevelRequest()
+            : base("dataworks-public", "2020-05-18", "GetMetaTableThemeLevel")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dataworks_public.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dataworks_public.Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
-		private string bizExtKey;
+		private string dataSourceType;
 
-		private int? resourceGroupType;
+		private string tableGuid;
 
-		private string keyword;
-
-		public string BizExtKey
+		public string DataSourceType
 		{
 			get
 			{
-				return bizExtKey;
+				return dataSourceType;
 			}
 			set	
 			{
-				bizExtKey = value;
-				DictionaryUtil.Add(QueryParameters, "BizExtKey", value);
+				dataSourceType = value;
+				DictionaryUtil.Add(QueryParameters, "DataSourceType", value);
 			}
 		}
 
-		public int? ResourceGroupType
+		public string TableGuid
 		{
 			get
 			{
-				return resourceGroupType;
+				return tableGuid;
 			}
 			set	
 			{
-				resourceGroupType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupType", value.ToString());
-			}
-		}
-
-		public string Keyword
-		{
-			get
-			{
-				return keyword;
-			}
-			set	
-			{
-				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+				tableGuid = value;
+				DictionaryUtil.Add(QueryParameters, "TableGuid", value);
 			}
 		}
 
@@ -91,9 +75,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override ListResourceGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetMetaTableThemeLevelResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListResourceGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetMetaTableThemeLevelResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

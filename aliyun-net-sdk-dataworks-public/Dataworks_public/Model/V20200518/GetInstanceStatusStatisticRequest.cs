@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class ListResourceGroupsRequest : RpcAcsRequest<ListResourceGroupsResponse>
+    public class GetInstanceStatusStatisticRequest : RpcAcsRequest<GetInstanceStatusStatisticResponse>
     {
-        public ListResourceGroupsRequest()
-            : base("dataworks-public", "2020-05-18", "ListResourceGroups")
+        public GetInstanceStatusStatisticRequest()
+            : base("dataworks-public", "2020-05-18", "GetInstanceStatusStatistic")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,48 +41,48 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string bizExtKey;
+		private string projectEnv;
 
-		private int? resourceGroupType;
+		private string bizDate;
 
-		private string keyword;
+		private long? projectId;
 
-		public string BizExtKey
+		public string ProjectEnv
 		{
 			get
 			{
-				return bizExtKey;
+				return projectEnv;
 			}
 			set	
 			{
-				bizExtKey = value;
-				DictionaryUtil.Add(QueryParameters, "BizExtKey", value);
+				projectEnv = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectEnv", value);
 			}
 		}
 
-		public int? ResourceGroupType
+		public string BizDate
 		{
 			get
 			{
-				return resourceGroupType;
+				return bizDate;
 			}
 			set	
 			{
-				resourceGroupType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupType", value.ToString());
+				bizDate = value;
+				DictionaryUtil.Add(BodyParameters, "BizDate", value);
 			}
 		}
 
-		public string Keyword
+		public long? ProjectId
 		{
 			get
 			{
-				return keyword;
+				return projectId;
 			}
 			set	
 			{
-				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+				projectId = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectId", value.ToString());
 			}
 		}
 
@@ -91,9 +91,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override ListResourceGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetInstanceStatusStatisticResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListResourceGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetInstanceStatusStatisticResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

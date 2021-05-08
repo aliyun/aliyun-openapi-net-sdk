@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class ListResourceGroupsRequest : RpcAcsRequest<ListResourceGroupsResponse>
+    public class ListDISyncTasksRequest : RpcAcsRequest<ListDISyncTasksResponse>
     {
-        public ListResourceGroupsRequest()
-            : base("dataworks-public", "2020-05-18", "ListResourceGroups")
+        public ListDISyncTasksRequest()
+            : base("dataworks-public", "2020-05-18", "ListDISyncTasks")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,48 +41,63 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string bizExtKey;
+		private string taskType;
 
-		private int? resourceGroupType;
+		private long? pageSize;
 
-		private string keyword;
+		private long? projectId;
 
-		public string BizExtKey
+		private long? pageNumber;
+
+		public string TaskType
 		{
 			get
 			{
-				return bizExtKey;
+				return taskType;
 			}
 			set	
 			{
-				bizExtKey = value;
-				DictionaryUtil.Add(QueryParameters, "BizExtKey", value);
+				taskType = value;
+				DictionaryUtil.Add(QueryParameters, "TaskType", value);
 			}
 		}
 
-		public int? ResourceGroupType
+		public long? PageSize
 		{
 			get
 			{
-				return resourceGroupType;
+				return pageSize;
 			}
 			set	
 			{
-				resourceGroupType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupType", value.ToString());
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string Keyword
+		public long? ProjectId
 		{
 			get
 			{
-				return keyword;
+				return projectId;
 			}
 			set	
 			{
-				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+				projectId = value;
+				DictionaryUtil.Add(QueryParameters, "ProjectId", value.ToString());
+			}
+		}
+
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -91,9 +106,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override ListResourceGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListDISyncTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListResourceGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListDISyncTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

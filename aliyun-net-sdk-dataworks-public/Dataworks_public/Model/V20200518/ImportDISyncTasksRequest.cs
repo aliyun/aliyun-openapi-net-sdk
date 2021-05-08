@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class ListResourceGroupsRequest : RpcAcsRequest<ListResourceGroupsResponse>
+    public class ImportDISyncTasksRequest : RpcAcsRequest<ImportDISyncTasksResponse>
     {
-        public ListResourceGroupsRequest()
-            : base("dataworks-public", "2020-05-18", "ListResourceGroups")
+        public ImportDISyncTasksRequest()
+            : base("dataworks-public", "2020-05-18", "ImportDISyncTasks")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,48 +41,63 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string bizExtKey;
+		private string taskType;
 
-		private int? resourceGroupType;
+		private string taskContent;
 
-		private string keyword;
+		private string taskParam;
 
-		public string BizExtKey
+		private long? projectId;
+
+		public string TaskType
 		{
 			get
 			{
-				return bizExtKey;
+				return taskType;
 			}
 			set	
 			{
-				bizExtKey = value;
-				DictionaryUtil.Add(QueryParameters, "BizExtKey", value);
+				taskType = value;
+				DictionaryUtil.Add(QueryParameters, "TaskType", value);
 			}
 		}
 
-		public int? ResourceGroupType
+		public string TaskContent
 		{
 			get
 			{
-				return resourceGroupType;
+				return taskContent;
 			}
 			set	
 			{
-				resourceGroupType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupType", value.ToString());
+				taskContent = value;
+				DictionaryUtil.Add(QueryParameters, "TaskContent", value);
 			}
 		}
 
-		public string Keyword
+		public string TaskParam
 		{
 			get
 			{
-				return keyword;
+				return taskParam;
 			}
 			set	
 			{
-				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+				taskParam = value;
+				DictionaryUtil.Add(QueryParameters, "TaskParam", value);
+			}
+		}
+
+		public long? ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(QueryParameters, "ProjectId", value.ToString());
 			}
 		}
 
@@ -91,9 +106,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override ListResourceGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ImportDISyncTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListResourceGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ImportDISyncTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

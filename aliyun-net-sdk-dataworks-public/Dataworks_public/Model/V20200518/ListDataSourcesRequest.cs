@@ -28,99 +28,70 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class CreateImportMigrationRequest : RpcAcsRequest<CreateImportMigrationResponse>
+    public class ListDataSourcesRequest : RpcAcsRequest<ListDataSourcesResponse>
     {
-        public CreateImportMigrationRequest()
-            : base("dataworks-public", "2020-05-18", "CreateImportMigration")
+        public ListDataSourcesRequest()
+            : base("dataworks-public", "2020-05-18", "ListDataSources")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dataworks_public.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dataworks_public.Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
-		private string description;
+		private string dataSourceType;
 
-		private string commitRule;
+		private int? pageNumber;
 
-		private string workspaceMap;
-
-		private string calculateEngineMap;
-
-		private string packageFile;
+		private string subType;
 
 		private string name;
 
-		private string packageType;
+		private int? envType;
+
+		private int? pageSize;
 
 		private long? projectId;
 
-		private string resourceGroupMap;
+		private string status;
 
-		public string Description
+		public string DataSourceType
 		{
 			get
 			{
-				return description;
+				return dataSourceType;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(BodyParameters, "Description", value);
+				dataSourceType = value;
+				DictionaryUtil.Add(QueryParameters, "DataSourceType", value);
 			}
 		}
 
-		public string CommitRule
+		public int? PageNumber
 		{
 			get
 			{
-				return commitRule;
+				return pageNumber;
 			}
 			set	
 			{
-				commitRule = value;
-				DictionaryUtil.Add(BodyParameters, "CommitRule", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string WorkspaceMap
+		public string SubType
 		{
 			get
 			{
-				return workspaceMap;
+				return subType;
 			}
 			set	
 			{
-				workspaceMap = value;
-				DictionaryUtil.Add(BodyParameters, "WorkspaceMap", value);
-			}
-		}
-
-		public string CalculateEngineMap
-		{
-			get
-			{
-				return calculateEngineMap;
-			}
-			set	
-			{
-				calculateEngineMap = value;
-				DictionaryUtil.Add(BodyParameters, "CalculateEngineMap", value);
-			}
-		}
-
-		public string PackageFile
-		{
-			get
-			{
-				return packageFile;
-			}
-			set	
-			{
-				packageFile = value;
-				DictionaryUtil.Add(BodyParameters, "PackageFile", value);
+				subType = value;
+				DictionaryUtil.Add(QueryParameters, "SubType", value);
 			}
 		}
 
@@ -133,20 +104,33 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				name = value;
-				DictionaryUtil.Add(BodyParameters, "Name", value);
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
-		public string PackageType
+		public int? EnvType
 		{
 			get
 			{
-				return packageType;
+				return envType;
 			}
 			set	
 			{
-				packageType = value;
-				DictionaryUtil.Add(BodyParameters, "PackageType", value);
+				envType = value;
+				DictionaryUtil.Add(QueryParameters, "EnvType", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -159,20 +143,20 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				projectId = value;
-				DictionaryUtil.Add(BodyParameters, "ProjectId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "ProjectId", value.ToString());
 			}
 		}
 
-		public string ResourceGroupMap
+		public string Status
 		{
 			get
 			{
-				return resourceGroupMap;
+				return status;
 			}
 			set	
 			{
-				resourceGroupMap = value;
-				DictionaryUtil.Add(BodyParameters, "ResourceGroupMap", value);
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 
@@ -181,9 +165,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override CreateImportMigrationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListDataSourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateImportMigrationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListDataSourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

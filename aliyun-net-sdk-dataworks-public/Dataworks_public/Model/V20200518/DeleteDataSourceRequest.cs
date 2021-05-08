@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class ListResourceGroupsRequest : RpcAcsRequest<ListResourceGroupsResponse>
+    public class DeleteDataSourceRequest : RpcAcsRequest<DeleteDataSourceResponse>
     {
-        public ListResourceGroupsRequest()
-            : base("dataworks-public", "2020-05-18", "ListResourceGroups")
+        public DeleteDataSourceRequest()
+            : base("dataworks-public", "2020-05-18", "DeleteDataSource")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,48 +41,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string bizExtKey;
+		private long? dataSourceId;
 
-		private int? resourceGroupType;
-
-		private string keyword;
-
-		public string BizExtKey
+		public long? DataSourceId
 		{
 			get
 			{
-				return bizExtKey;
+				return dataSourceId;
 			}
 			set	
 			{
-				bizExtKey = value;
-				DictionaryUtil.Add(QueryParameters, "BizExtKey", value);
-			}
-		}
-
-		public int? ResourceGroupType
-		{
-			get
-			{
-				return resourceGroupType;
-			}
-			set	
-			{
-				resourceGroupType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupType", value.ToString());
-			}
-		}
-
-		public string Keyword
-		{
-			get
-			{
-				return keyword;
-			}
-			set	
-			{
-				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+				dataSourceId = value;
+				DictionaryUtil.Add(QueryParameters, "DataSourceId", value.ToString());
 			}
 		}
 
@@ -91,9 +61,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override ListResourceGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteDataSourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListResourceGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteDataSourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

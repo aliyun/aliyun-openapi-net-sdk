@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class ListResourceGroupsRequest : RpcAcsRequest<ListResourceGroupsResponse>
+    public class ListNodesByOutputRequest : RpcAcsRequest<ListNodesByOutputResponse>
     {
-        public ListResourceGroupsRequest()
-            : base("dataworks-public", "2020-05-18", "ListResourceGroups")
+        public ListNodesByOutputRequest()
+            : base("dataworks-public", "2020-05-18", "ListNodesByOutput")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,48 +41,33 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string bizExtKey;
+		private string projectEnv;
 
-		private int? resourceGroupType;
+		private string outputs;
 
-		private string keyword;
-
-		public string BizExtKey
+		public string ProjectEnv
 		{
 			get
 			{
-				return bizExtKey;
+				return projectEnv;
 			}
 			set	
 			{
-				bizExtKey = value;
-				DictionaryUtil.Add(QueryParameters, "BizExtKey", value);
+				projectEnv = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectEnv", value);
 			}
 		}
 
-		public int? ResourceGroupType
+		public string Outputs
 		{
 			get
 			{
-				return resourceGroupType;
+				return outputs;
 			}
 			set	
 			{
-				resourceGroupType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupType", value.ToString());
-			}
-		}
-
-		public string Keyword
-		{
-			get
-			{
-				return keyword;
-			}
-			set	
-			{
-				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+				outputs = value;
+				DictionaryUtil.Add(BodyParameters, "Outputs", value);
 			}
 		}
 
@@ -91,9 +76,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override ListResourceGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListNodesByOutputResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListResourceGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListNodesByOutputResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

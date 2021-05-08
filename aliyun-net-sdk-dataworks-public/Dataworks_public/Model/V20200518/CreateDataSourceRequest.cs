@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class ListResourceGroupsRequest : RpcAcsRequest<ListResourceGroupsResponse>
+    public class CreateDataSourceRequest : RpcAcsRequest<CreateDataSourceResponse>
     {
-        public ListResourceGroupsRequest()
-            : base("dataworks-public", "2020-05-18", "ListResourceGroups")
+        public CreateDataSourceRequest()
+            : base("dataworks-public", "2020-05-18", "CreateDataSource")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,48 +41,108 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string bizExtKey;
+		private string dataSourceType;
 
-		private int? resourceGroupType;
+		private string description;
 
-		private string keyword;
+		private string content;
 
-		public string BizExtKey
+		private string subType;
+
+		private string name;
+
+		private int? envType;
+
+		private long? projectId;
+
+		public string DataSourceType
 		{
 			get
 			{
-				return bizExtKey;
+				return dataSourceType;
 			}
 			set	
 			{
-				bizExtKey = value;
-				DictionaryUtil.Add(QueryParameters, "BizExtKey", value);
+				dataSourceType = value;
+				DictionaryUtil.Add(QueryParameters, "DataSourceType", value);
 			}
 		}
 
-		public int? ResourceGroupType
+		public string Description
 		{
 			get
 			{
-				return resourceGroupType;
+				return description;
 			}
 			set	
 			{
-				resourceGroupType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupType", value.ToString());
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
-		public string Keyword
+		public string Content
 		{
 			get
 			{
-				return keyword;
+				return content;
 			}
 			set	
 			{
-				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+				content = value;
+				DictionaryUtil.Add(QueryParameters, "Content", value);
+			}
+		}
+
+		public string SubType
+		{
+			get
+			{
+				return subType;
+			}
+			set	
+			{
+				subType = value;
+				DictionaryUtil.Add(QueryParameters, "SubType", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public int? EnvType
+		{
+			get
+			{
+				return envType;
+			}
+			set	
+			{
+				envType = value;
+				DictionaryUtil.Add(QueryParameters, "EnvType", value.ToString());
+			}
+		}
+
+		public long? ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(QueryParameters, "ProjectId", value.ToString());
 			}
 		}
 
@@ -91,9 +151,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override ListResourceGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateDataSourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListResourceGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDataSourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

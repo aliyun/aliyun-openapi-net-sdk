@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class ListResourceGroupsRequest : RpcAcsRequest<ListResourceGroupsResponse>
+    public class RunSmokeTestRequest : RpcAcsRequest<RunSmokeTestResponse>
     {
-        public ListResourceGroupsRequest()
-            : base("dataworks-public", "2020-05-18", "ListResourceGroups")
+        public RunSmokeTestRequest()
+            : base("dataworks-public", "2020-05-18", "RunSmokeTest")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,48 +41,78 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string bizExtKey;
+		private string projectEnv;
 
-		private int? resourceGroupType;
+		private string bizdate;
 
-		private string keyword;
+		private string name;
 
-		public string BizExtKey
+		private string nodeParams;
+
+		private long? nodeId;
+
+		public string ProjectEnv
 		{
 			get
 			{
-				return bizExtKey;
+				return projectEnv;
 			}
 			set	
 			{
-				bizExtKey = value;
-				DictionaryUtil.Add(QueryParameters, "BizExtKey", value);
+				projectEnv = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectEnv", value);
 			}
 		}
 
-		public int? ResourceGroupType
+		public string Bizdate
 		{
 			get
 			{
-				return resourceGroupType;
+				return bizdate;
 			}
 			set	
 			{
-				resourceGroupType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupType", value.ToString());
+				bizdate = value;
+				DictionaryUtil.Add(BodyParameters, "Bizdate", value);
 			}
 		}
 
-		public string Keyword
+		public string Name
 		{
 			get
 			{
-				return keyword;
+				return name;
 			}
 			set	
 			{
-				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+				name = value;
+				DictionaryUtil.Add(BodyParameters, "Name", value);
+			}
+		}
+
+		public string NodeParams
+		{
+			get
+			{
+				return nodeParams;
+			}
+			set	
+			{
+				nodeParams = value;
+				DictionaryUtil.Add(BodyParameters, "NodeParams", value);
+			}
+		}
+
+		public long? NodeId
+		{
+			get
+			{
+				return nodeId;
+			}
+			set	
+			{
+				nodeId = value;
+				DictionaryUtil.Add(BodyParameters, "NodeId", value.ToString());
 			}
 		}
 
@@ -91,9 +121,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override ListResourceGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RunSmokeTestResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListResourceGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RunSmokeTestResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class ListResourceGroupsRequest : RpcAcsRequest<ListResourceGroupsResponse>
+    public class GetFileTypeStatisticRequest : RpcAcsRequest<GetFileTypeStatisticResponse>
     {
-        public ListResourceGroupsRequest()
-            : base("dataworks-public", "2020-05-18", "ListResourceGroups")
+        public GetFileTypeStatisticRequest()
+            : base("dataworks-public", "2020-05-18", "GetFileTypeStatistic")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,48 +41,33 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string bizExtKey;
+		private string projectEnv;
 
-		private int? resourceGroupType;
+		private long? projectId;
 
-		private string keyword;
-
-		public string BizExtKey
+		public string ProjectEnv
 		{
 			get
 			{
-				return bizExtKey;
+				return projectEnv;
 			}
 			set	
 			{
-				bizExtKey = value;
-				DictionaryUtil.Add(QueryParameters, "BizExtKey", value);
+				projectEnv = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectEnv", value);
 			}
 		}
 
-		public int? ResourceGroupType
+		public long? ProjectId
 		{
 			get
 			{
-				return resourceGroupType;
+				return projectId;
 			}
 			set	
 			{
-				resourceGroupType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupType", value.ToString());
-			}
-		}
-
-		public string Keyword
-		{
-			get
-			{
-				return keyword;
-			}
-			set	
-			{
-				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+				projectId = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectId", value.ToString());
 			}
 		}
 
@@ -91,9 +76,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override ListResourceGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetFileTypeStatisticResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListResourceGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetFileTypeStatisticResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

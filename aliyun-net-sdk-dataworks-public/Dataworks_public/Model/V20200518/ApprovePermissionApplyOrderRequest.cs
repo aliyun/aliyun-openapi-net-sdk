@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class ListResourceGroupsRequest : RpcAcsRequest<ListResourceGroupsResponse>
+    public class ApprovePermissionApplyOrderRequest : RpcAcsRequest<ApprovePermissionApplyOrderResponse>
     {
-        public ListResourceGroupsRequest()
-            : base("dataworks-public", "2020-05-18", "ListResourceGroups")
+        public ApprovePermissionApplyOrderRequest()
+            : base("dataworks-public", "2020-05-18", "ApprovePermissionApplyOrder")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,48 +41,48 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string bizExtKey;
+		private string flowId;
 
-		private int? resourceGroupType;
+		private string approveComment;
 
-		private string keyword;
+		private int? approveAction;
 
-		public string BizExtKey
+		public string FlowId
 		{
 			get
 			{
-				return bizExtKey;
+				return flowId;
 			}
 			set	
 			{
-				bizExtKey = value;
-				DictionaryUtil.Add(QueryParameters, "BizExtKey", value);
+				flowId = value;
+				DictionaryUtil.Add(QueryParameters, "FlowId", value);
 			}
 		}
 
-		public int? ResourceGroupType
+		public string ApproveComment
 		{
 			get
 			{
-				return resourceGroupType;
+				return approveComment;
 			}
 			set	
 			{
-				resourceGroupType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupType", value.ToString());
+				approveComment = value;
+				DictionaryUtil.Add(QueryParameters, "ApproveComment", value);
 			}
 		}
 
-		public string Keyword
+		public int? ApproveAction
 		{
 			get
 			{
-				return keyword;
+				return approveAction;
 			}
 			set	
 			{
-				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+				approveAction = value;
+				DictionaryUtil.Add(QueryParameters, "ApproveAction", value.ToString());
 			}
 		}
 
@@ -91,9 +91,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override ListResourceGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ApprovePermissionApplyOrderResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListResourceGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ApprovePermissionApplyOrderResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

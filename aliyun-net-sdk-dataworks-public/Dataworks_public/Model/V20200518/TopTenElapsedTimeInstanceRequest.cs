@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class ListResourceGroupsRequest : RpcAcsRequest<ListResourceGroupsResponse>
+    public class TopTenElapsedTimeInstanceRequest : RpcAcsRequest<TopTenElapsedTimeInstanceResponse>
     {
-        public ListResourceGroupsRequest()
-            : base("dataworks-public", "2020-05-18", "ListResourceGroups")
+        public TopTenElapsedTimeInstanceRequest()
+            : base("dataworks-public", "2020-05-18", "TopTenElapsedTimeInstance")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,48 +41,33 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string bizExtKey;
+		private string businessDate;
 
-		private int? resourceGroupType;
+		private long? projectId;
 
-		private string keyword;
-
-		public string BizExtKey
+		public string BusinessDate
 		{
 			get
 			{
-				return bizExtKey;
+				return businessDate;
 			}
 			set	
 			{
-				bizExtKey = value;
-				DictionaryUtil.Add(QueryParameters, "BizExtKey", value);
+				businessDate = value;
+				DictionaryUtil.Add(BodyParameters, "BusinessDate", value);
 			}
 		}
 
-		public int? ResourceGroupType
+		public long? ProjectId
 		{
 			get
 			{
-				return resourceGroupType;
+				return projectId;
 			}
 			set	
 			{
-				resourceGroupType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupType", value.ToString());
-			}
-		}
-
-		public string Keyword
-		{
-			get
-			{
-				return keyword;
-			}
-			set	
-			{
-				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+				projectId = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectId", value.ToString());
 			}
 		}
 
@@ -91,9 +76,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override ListResourceGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TopTenElapsedTimeInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListResourceGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TopTenElapsedTimeInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

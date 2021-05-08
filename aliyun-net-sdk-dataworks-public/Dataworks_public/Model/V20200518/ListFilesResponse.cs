@@ -209,6 +209,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private long? fileId;
 
+				private long? businessId;
+
 				public string ConnectionName
 				{
 					get
@@ -434,6 +436,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						fileId = value;
+					}
+				}
+
+				public long? BusinessId
+				{
+					get
+					{
+						return businessId;
+					}
+					set	
+					{
+						businessId = value;
 					}
 				}
 			}

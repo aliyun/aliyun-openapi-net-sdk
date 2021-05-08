@@ -58,6 +58,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			file.LastEditUser = _ctx.StringValue("GetFile.Data.File.LastEditUser");
 			file.LastEditTime = _ctx.LongValue("GetFile.Data.File.LastEditTime");
 			file.CommitStatus = _ctx.IntegerValue("GetFile.Data.File.CommitStatus");
+			file.DeletedStatus = _ctx.StringValue("GetFile.Data.File.DeletedStatus");
+			file.BusinessId = _ctx.LongValue("GetFile.Data.File.BusinessId");
 			data.File = file;
 
 			GetFileResponse.GetFile_Data.GetFile_NodeConfiguration nodeConfiguration = new GetFileResponse.GetFile_Data.GetFile_NodeConfiguration();

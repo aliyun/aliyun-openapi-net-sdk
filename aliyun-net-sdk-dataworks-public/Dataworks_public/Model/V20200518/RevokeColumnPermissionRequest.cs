@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class ListResourceGroupsRequest : RpcAcsRequest<ListResourceGroupsResponse>
+    public class RevokeColumnPermissionRequest : RpcAcsRequest<RevokeColumnPermissionResponse>
     {
-        public ListResourceGroupsRequest()
-            : base("dataworks-public", "2020-05-18", "ListResourceGroups")
+        public RevokeColumnPermissionRequest()
+            : base("dataworks-public", "2020-05-18", "RevokeColumnPermission")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,48 +41,93 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string bizExtKey;
+		private string revokeUserName;
 
-		private int? resourceGroupType;
+		private string maxComputeProjectName;
 
-		private string keyword;
+		private string columns;
 
-		public string BizExtKey
+		private string revokeUserId;
+
+		private string tableName;
+
+		private long? workspaceId;
+
+		public string RevokeUserName
 		{
 			get
 			{
-				return bizExtKey;
+				return revokeUserName;
 			}
 			set	
 			{
-				bizExtKey = value;
-				DictionaryUtil.Add(QueryParameters, "BizExtKey", value);
+				revokeUserName = value;
+				DictionaryUtil.Add(QueryParameters, "RevokeUserName", value);
 			}
 		}
 
-		public int? ResourceGroupType
+		public string MaxComputeProjectName
 		{
 			get
 			{
-				return resourceGroupType;
+				return maxComputeProjectName;
 			}
 			set	
 			{
-				resourceGroupType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupType", value.ToString());
+				maxComputeProjectName = value;
+				DictionaryUtil.Add(QueryParameters, "MaxComputeProjectName", value);
 			}
 		}
 
-		public string Keyword
+		public string Columns
 		{
 			get
 			{
-				return keyword;
+				return columns;
 			}
 			set	
 			{
-				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+				columns = value;
+				DictionaryUtil.Add(QueryParameters, "Columns", value);
+			}
+		}
+
+		public string RevokeUserId
+		{
+			get
+			{
+				return revokeUserId;
+			}
+			set	
+			{
+				revokeUserId = value;
+				DictionaryUtil.Add(QueryParameters, "RevokeUserId", value);
+			}
+		}
+
+		public string TableName
+		{
+			get
+			{
+				return tableName;
+			}
+			set	
+			{
+				tableName = value;
+				DictionaryUtil.Add(QueryParameters, "TableName", value);
+			}
+		}
+
+		public long? WorkspaceId
+		{
+			get
+			{
+				return workspaceId;
+			}
+			set	
+			{
+				workspaceId = value;
+				DictionaryUtil.Add(QueryParameters, "WorkspaceId", value.ToString());
 			}
 		}
 
@@ -91,9 +136,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override ListResourceGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RevokeColumnPermissionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListResourceGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RevokeColumnPermissionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class ListResourceGroupsRequest : RpcAcsRequest<ListResourceGroupsResponse>
+    public class RunManualDagNodesRequest : RpcAcsRequest<RunManualDagNodesResponse>
     {
-        public ListResourceGroupsRequest()
-            : base("dataworks-public", "2020-05-18", "ListResourceGroups")
+        public RunManualDagNodesRequest()
+            : base("dataworks-public", "2020-05-18", "RunManualDagNodes")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,48 +41,93 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string bizExtKey;
+		private string projectEnv;
 
-		private int? resourceGroupType;
+		private string projectName;
 
-		private string keyword;
+		private string bizDate;
 
-		public string BizExtKey
+		private string flowName;
+
+		private string dagParameters;
+
+		private string nodeParameters;
+
+		public string ProjectEnv
 		{
 			get
 			{
-				return bizExtKey;
+				return projectEnv;
 			}
 			set	
 			{
-				bizExtKey = value;
-				DictionaryUtil.Add(QueryParameters, "BizExtKey", value);
+				projectEnv = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectEnv", value);
 			}
 		}
 
-		public int? ResourceGroupType
+		public string ProjectName
 		{
 			get
 			{
-				return resourceGroupType;
+				return projectName;
 			}
 			set	
 			{
-				resourceGroupType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupType", value.ToString());
+				projectName = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectName", value);
 			}
 		}
 
-		public string Keyword
+		public string BizDate
 		{
 			get
 			{
-				return keyword;
+				return bizDate;
 			}
 			set	
 			{
-				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+				bizDate = value;
+				DictionaryUtil.Add(BodyParameters, "BizDate", value);
+			}
+		}
+
+		public string FlowName
+		{
+			get
+			{
+				return flowName;
+			}
+			set	
+			{
+				flowName = value;
+				DictionaryUtil.Add(BodyParameters, "FlowName", value);
+			}
+		}
+
+		public string DagParameters
+		{
+			get
+			{
+				return dagParameters;
+			}
+			set	
+			{
+				dagParameters = value;
+				DictionaryUtil.Add(BodyParameters, "DagParameters", value);
+			}
+		}
+
+		public string NodeParameters
+		{
+			get
+			{
+				return nodeParameters;
+			}
+			set	
+			{
+				nodeParameters = value;
+				DictionaryUtil.Add(BodyParameters, "NodeParameters", value);
 			}
 		}
 
@@ -91,9 +136,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override ListResourceGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RunManualDagNodesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListResourceGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RunManualDagNodesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

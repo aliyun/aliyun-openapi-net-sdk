@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class ListResourceGroupsRequest : RpcAcsRequest<ListResourceGroupsResponse>
+    public class ListInstanceAmountRequest : RpcAcsRequest<ListInstanceAmountResponse>
     {
-        public ListResourceGroupsRequest()
-            : base("dataworks-public", "2020-05-18", "ListResourceGroups")
+        public ListInstanceAmountRequest()
+            : base("dataworks-public", "2020-05-18", "ListInstanceAmount")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,48 +41,48 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string bizExtKey;
+		private string beginDate;
 
-		private int? resourceGroupType;
+		private string endDate;
 
-		private string keyword;
+		private long? projectId;
 
-		public string BizExtKey
+		public string BeginDate
 		{
 			get
 			{
-				return bizExtKey;
+				return beginDate;
 			}
 			set	
 			{
-				bizExtKey = value;
-				DictionaryUtil.Add(QueryParameters, "BizExtKey", value);
+				beginDate = value;
+				DictionaryUtil.Add(BodyParameters, "BeginDate", value);
 			}
 		}
 
-		public int? ResourceGroupType
+		public string EndDate
 		{
 			get
 			{
-				return resourceGroupType;
+				return endDate;
 			}
 			set	
 			{
-				resourceGroupType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupType", value.ToString());
+				endDate = value;
+				DictionaryUtil.Add(BodyParameters, "EndDate", value);
 			}
 		}
 
-		public string Keyword
+		public long? ProjectId
 		{
 			get
 			{
-				return keyword;
+				return projectId;
 			}
 			set	
 			{
-				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+				projectId = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectId", value.ToString());
 			}
 		}
 
@@ -91,9 +91,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override ListResourceGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListInstanceAmountResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListResourceGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListInstanceAmountResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

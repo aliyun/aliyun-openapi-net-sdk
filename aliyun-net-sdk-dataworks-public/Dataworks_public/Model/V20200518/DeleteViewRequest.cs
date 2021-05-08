@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class ListResourceGroupsRequest : RpcAcsRequest<ListResourceGroupsResponse>
+    public class DeleteViewRequest : RpcAcsRequest<DeleteViewResponse>
     {
-        public ListResourceGroupsRequest()
-            : base("dataworks-public", "2020-05-18", "ListResourceGroups")
+        public DeleteViewRequest()
+            : base("dataworks-public", "2020-05-18", "DeleteView")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,48 +41,33 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string bizExtKey;
+		private string viewName;
 
-		private int? resourceGroupType;
+		private string appGuid;
 
-		private string keyword;
-
-		public string BizExtKey
+		public string ViewName
 		{
 			get
 			{
-				return bizExtKey;
+				return viewName;
 			}
 			set	
 			{
-				bizExtKey = value;
-				DictionaryUtil.Add(QueryParameters, "BizExtKey", value);
+				viewName = value;
+				DictionaryUtil.Add(QueryParameters, "ViewName", value);
 			}
 		}
 
-		public int? ResourceGroupType
+		public string AppGuid
 		{
 			get
 			{
-				return resourceGroupType;
+				return appGuid;
 			}
 			set	
 			{
-				resourceGroupType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupType", value.ToString());
-			}
-		}
-
-		public string Keyword
-		{
-			get
-			{
-				return keyword;
-			}
-			set	
-			{
-				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+				appGuid = value;
+				DictionaryUtil.Add(QueryParameters, "AppGuid", value);
 			}
 		}
 
@@ -91,9 +76,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override ListResourceGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteViewResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListResourceGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteViewResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
