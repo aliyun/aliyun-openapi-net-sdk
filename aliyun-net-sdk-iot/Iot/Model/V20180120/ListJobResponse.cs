@@ -154,6 +154,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string type;
 
+			private long? scheduledTime;
+
 			public string JobId
 			{
 				get
@@ -235,6 +237,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public long? ScheduledTime
+			{
+				get
+				{
+					return scheduledTime;
+				}
+				set	
+				{
+					scheduledTime = value;
 				}
 			}
 		}

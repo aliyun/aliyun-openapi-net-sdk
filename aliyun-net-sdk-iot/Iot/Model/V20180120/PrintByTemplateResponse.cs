@@ -108,6 +108,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private int? retryCount;
 
+			private int? maxRetryCount;
+
 			public bool? Success
 			{
 				get
@@ -165,6 +167,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					retryCount = value;
+				}
+			}
+
+			public int? MaxRetryCount
+			{
+				get
+				{
+					return maxRetryCount;
+				}
+				set	
+				{
+					maxRetryCount = value;
 				}
 			}
 		}

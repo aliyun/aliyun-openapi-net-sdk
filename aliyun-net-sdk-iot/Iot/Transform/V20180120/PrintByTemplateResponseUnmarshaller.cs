@@ -42,6 +42,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.DeviceErrorMessage = _ctx.StringValue("PrintByTemplate.Data.DeviceErrorMessage");
 			data.Id = _ctx.StringValue("PrintByTemplate.Data.Id");
 			data.RetryCount = _ctx.IntegerValue("PrintByTemplate.Data.RetryCount");
+			data.MaxRetryCount = _ctx.IntegerValue("PrintByTemplate.Data.MaxRetryCount");
 			printByTemplateResponse.Data = data;
         
 			return printByTemplateResponse;

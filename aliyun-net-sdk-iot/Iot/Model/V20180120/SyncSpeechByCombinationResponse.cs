@@ -102,6 +102,14 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private int? retryCount;
 
+			private bool? success;
+
+			private int? maxRetryCount;
+
+			private string deviceErrorCode;
+
+			private string deviceErrorMessage;
+
 			public string Id
 			{
 				get
@@ -123,6 +131,54 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					retryCount = value;
+				}
+			}
+
+			public bool? Success
+			{
+				get
+				{
+					return success;
+				}
+				set	
+				{
+					success = value;
+				}
+			}
+
+			public int? MaxRetryCount
+			{
+				get
+				{
+					return maxRetryCount;
+				}
+				set	
+				{
+					maxRetryCount = value;
+				}
+			}
+
+			public string DeviceErrorCode
+			{
+				get
+				{
+					return deviceErrorCode;
+				}
+				set	
+				{
+					deviceErrorCode = value;
+				}
+			}
+
+			public string DeviceErrorMessage
+			{
+				get
+				{
+					return deviceErrorMessage;
+				}
+				set	
+				{
+					deviceErrorMessage = value;
 				}
 			}
 		}

@@ -100,6 +100,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string status;
 
+			private long? timestamp;
+
 			public string Status
 			{
 				get
@@ -109,6 +111,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public long? Timestamp
+			{
+				get
+				{
+					return timestamp;
+				}
+				set	
+				{
+					timestamp = value;
 				}
 			}
 		}

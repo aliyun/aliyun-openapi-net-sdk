@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Iot;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20180120;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class ListDeviceDistributeJobRequest : RpcAcsRequest<ListDeviceDistributeJobResponse>
     {
         public ListDeviceDistributeJobRequest()
-            : base("Iot", "2018-01-20", "ListDeviceDistributeJob", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "ListDeviceDistributeJob")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,6 +41,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private string jobId;
+
 		private int? pageSize;
 
 		private int? currentPage;
@@ -47,6 +50,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string targetUid;
 
 		private int? status;
+
+		public string JobId
+		{
+			get
+			{
+				return jobId;
+			}
+			set	
+			{
+				jobId = value;
+				DictionaryUtil.Add(BodyParameters, "JobId", value);
+			}
+		}
 
 		public int? PageSize
 		{

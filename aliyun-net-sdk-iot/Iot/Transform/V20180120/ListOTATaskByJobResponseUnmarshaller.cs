@@ -57,6 +57,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				simpleOTATaskInfo.Progress = _ctx.StringValue("ListOTATaskByJob.Data["+ i +"].Progress");
 				simpleOTATaskInfo.IotId = _ctx.StringValue("ListOTATaskByJob.Data["+ i +"].IotId");
 				simpleOTATaskInfo.UtcCreate = _ctx.StringValue("ListOTATaskByJob.Data["+ i +"].UtcCreate");
+				simpleOTATaskInfo.Timeout = _ctx.StringValue("ListOTATaskByJob.Data["+ i +"].Timeout");
 
 				listOTATaskByJobResponse_data.Add(simpleOTATaskInfo);
 			}

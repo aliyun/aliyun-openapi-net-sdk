@@ -45,6 +45,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.Type = _ctx.StringValue("QueryJob.Data.Type");
 			data.JobDocument = _ctx.StringValue("QueryJob.Data.JobDocument");
 			data.UtcModified = _ctx.StringValue("QueryJob.Data.UtcModified");
+			data.ScheduledTime = _ctx.LongValue("QueryJob.Data.ScheduledTime");
 
 			QueryJobResponse.QueryJob_Data.QueryJob_RolloutConfig rolloutConfig = new QueryJobResponse.QueryJob_Data.QueryJob_RolloutConfig();
 			rolloutConfig.MaximumPerMinute = _ctx.IntegerValue("QueryJob.Data.RolloutConfig.MaximumPerMinute");

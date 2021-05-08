@@ -39,6 +39,10 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			SyncSpeechByCombinationResponse.SyncSpeechByCombination_Data data = new SyncSpeechByCombinationResponse.SyncSpeechByCombination_Data();
 			data.Id = _ctx.StringValue("SyncSpeechByCombination.Data.Id");
 			data.RetryCount = _ctx.IntegerValue("SyncSpeechByCombination.Data.RetryCount");
+			data.Success = _ctx.BooleanValue("SyncSpeechByCombination.Data.Success");
+			data.MaxRetryCount = _ctx.IntegerValue("SyncSpeechByCombination.Data.MaxRetryCount");
+			data.DeviceErrorCode = _ctx.StringValue("SyncSpeechByCombination.Data.DeviceErrorCode");
+			data.DeviceErrorMessage = _ctx.StringValue("SyncSpeechByCombination.Data.DeviceErrorMessage");
 			syncSpeechByCombinationResponse.Data = data;
         
 			return syncSpeechByCombinationResponse;

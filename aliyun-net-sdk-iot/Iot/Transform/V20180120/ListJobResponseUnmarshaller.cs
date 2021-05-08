@@ -49,6 +49,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				dataItem.Status = _ctx.StringValue("ListJob.Data["+ i +"].Status");
 				dataItem.Description = _ctx.StringValue("ListJob.Data["+ i +"].Description");
 				dataItem.Type = _ctx.StringValue("ListJob.Data["+ i +"].Type");
+				dataItem.ScheduledTime = _ctx.LongValue("ListJob.Data["+ i +"].ScheduledTime");
 
 				listJobResponse_data.Add(dataItem);
 			}

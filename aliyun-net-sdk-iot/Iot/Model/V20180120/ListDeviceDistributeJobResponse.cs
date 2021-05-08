@@ -147,6 +147,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 				private int? strategy;
 
+				private string sourceRegion;
+
+				private string sourceInstanceName;
+
 				private List<ListDeviceDistributeJob_TargetInstanceConfigsItem> targetInstanceConfigs;
 
 				public long? GmtCreate
@@ -257,6 +261,30 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					}
 				}
 
+				public string SourceRegion
+				{
+					get
+					{
+						return sourceRegion;
+					}
+					set	
+					{
+						sourceRegion = value;
+					}
+				}
+
+				public string SourceInstanceName
+				{
+					get
+					{
+						return sourceInstanceName;
+					}
+					set	
+					{
+						sourceInstanceName = value;
+					}
+				}
+
 				public List<ListDeviceDistributeJob_TargetInstanceConfigsItem> TargetInstanceConfigs
 				{
 					get
@@ -274,6 +302,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 					private string targetInstanceId;
 
+					private string targetRegion;
+
+					private string targetInstanceName;
+
 					public string TargetInstanceId
 					{
 						get
@@ -283,6 +315,30 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 						set	
 						{
 							targetInstanceId = value;
+						}
+					}
+
+					public string TargetRegion
+					{
+						get
+						{
+							return targetRegion;
+						}
+						set	
+						{
+							targetRegion = value;
+						}
+					}
+
+					public string TargetInstanceName
+					{
+						get
+						{
+							return targetInstanceName;
+						}
+						set	
+						{
+							targetInstanceName = value;
 						}
 					}
 				}

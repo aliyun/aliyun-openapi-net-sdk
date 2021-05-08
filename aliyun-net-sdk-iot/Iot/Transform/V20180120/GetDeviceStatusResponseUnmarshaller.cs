@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 
 			GetDeviceStatusResponse.GetDeviceStatus_Data data = new GetDeviceStatusResponse.GetDeviceStatus_Data();
 			data.Status = _ctx.StringValue("GetDeviceStatus.Data.Status");
+			data.Timestamp = _ctx.LongValue("GetDeviceStatus.Data.Timestamp");
 			getDeviceStatusResponse.Data = data;
         
 			return getDeviceStatusResponse;

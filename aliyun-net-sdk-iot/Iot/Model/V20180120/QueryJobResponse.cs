@@ -114,6 +114,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string utcModified;
 
+			private long? scheduledTime;
+
 			private QueryJob_RolloutConfig rolloutConfig;
 
 			private QueryJob_TimeoutConfig timeoutConfig;
@@ -215,6 +217,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					utcModified = value;
+				}
+			}
+
+			public long? ScheduledTime
+			{
+				get
+				{
+					return scheduledTime;
+				}
+				set	
+				{
+					scheduledTime = value;
 				}
 			}
 

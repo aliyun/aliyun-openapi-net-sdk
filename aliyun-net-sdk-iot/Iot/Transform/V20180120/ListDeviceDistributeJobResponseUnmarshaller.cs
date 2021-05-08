@@ -51,11 +51,15 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				items.Total = _ctx.IntegerValue("ListDeviceDistributeJob.Data.JobInfo["+ i +"].Total");
 				items.Status = _ctx.IntegerValue("ListDeviceDistributeJob.Data.JobInfo["+ i +"].Status");
 				items.Strategy = _ctx.IntegerValue("ListDeviceDistributeJob.Data.JobInfo["+ i +"].Strategy");
+				items.SourceRegion = _ctx.StringValue("ListDeviceDistributeJob.Data.JobInfo["+ i +"].SourceRegion");
+				items.SourceInstanceName = _ctx.StringValue("ListDeviceDistributeJob.Data.JobInfo["+ i +"].SourceInstanceName");
 
 				List<ListDeviceDistributeJobResponse.ListDeviceDistributeJob_Data.ListDeviceDistributeJob_Items.ListDeviceDistributeJob_TargetInstanceConfigsItem> items_targetInstanceConfigs = new List<ListDeviceDistributeJobResponse.ListDeviceDistributeJob_Data.ListDeviceDistributeJob_Items.ListDeviceDistributeJob_TargetInstanceConfigsItem>();
 				for (int j = 0; j < _ctx.Length("ListDeviceDistributeJob.Data.JobInfo["+ i +"].TargetInstanceConfigs.Length"); j++) {
 					ListDeviceDistributeJobResponse.ListDeviceDistributeJob_Data.ListDeviceDistributeJob_Items.ListDeviceDistributeJob_TargetInstanceConfigsItem targetInstanceConfigsItem = new ListDeviceDistributeJobResponse.ListDeviceDistributeJob_Data.ListDeviceDistributeJob_Items.ListDeviceDistributeJob_TargetInstanceConfigsItem();
 					targetInstanceConfigsItem.TargetInstanceId = _ctx.StringValue("ListDeviceDistributeJob.Data.JobInfo["+ i +"].TargetInstanceConfigs["+ j +"].TargetInstanceId");
+					targetInstanceConfigsItem.TargetRegion = _ctx.StringValue("ListDeviceDistributeJob.Data.JobInfo["+ i +"].TargetInstanceConfigs["+ j +"].TargetRegion");
+					targetInstanceConfigsItem.TargetInstanceName = _ctx.StringValue("ListDeviceDistributeJob.Data.JobInfo["+ i +"].TargetInstanceConfigs["+ j +"].TargetInstanceName");
 
 					items_targetInstanceConfigs.Add(targetInstanceConfigsItem);
 				}
