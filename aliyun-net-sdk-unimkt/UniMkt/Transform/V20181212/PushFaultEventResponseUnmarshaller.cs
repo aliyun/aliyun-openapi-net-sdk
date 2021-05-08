@@ -26,16 +26,16 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 {
     public class PushFaultEventResponseUnmarshaller
     {
-        public static PushFaultEventResponse Unmarshall(UnmarshallerContext context)
+        public static PushFaultEventResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PushFaultEventResponse pushFaultEventResponse = new PushFaultEventResponse();
 
-			pushFaultEventResponse.HttpResponse = context.HttpResponse;
-			pushFaultEventResponse.Status = context.BooleanValue("PushFaultEvent.Status");
-			pushFaultEventResponse.Msg = context.StringValue("PushFaultEvent.Msg");
-			pushFaultEventResponse.Data = context.StringValue("PushFaultEvent.Data");
-			pushFaultEventResponse.ErrorCode = context.StringValue("PushFaultEvent.ErrorCode");
-			pushFaultEventResponse.RequestId = context.StringValue("PushFaultEvent.RequestId");
+			pushFaultEventResponse.HttpResponse = _ctx.HttpResponse;
+			pushFaultEventResponse.Status = _ctx.BooleanValue("PushFaultEvent.Status");
+			pushFaultEventResponse.Msg = _ctx.StringValue("PushFaultEvent.Msg");
+			pushFaultEventResponse.Data = _ctx.StringValue("PushFaultEvent.Data");
+			pushFaultEventResponse.ErrorCode = _ctx.StringValue("PushFaultEvent.ErrorCode");
+			pushFaultEventResponse.RequestId = _ctx.StringValue("PushFaultEvent.RequestId");
         
 			return pushFaultEventResponse;
         }

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 {
     public class PushDeviceStatusResponseUnmarshaller
     {
-        public static PushDeviceStatusResponse Unmarshall(UnmarshallerContext context)
+        public static PushDeviceStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PushDeviceStatusResponse pushDeviceStatusResponse = new PushDeviceStatusResponse();
 
-			pushDeviceStatusResponse.HttpResponse = context.HttpResponse;
-			pushDeviceStatusResponse.Status = context.BooleanValue("PushDeviceStatus.Status");
-			pushDeviceStatusResponse.Msg = context.StringValue("PushDeviceStatus.Msg");
-			pushDeviceStatusResponse.Data = context.StringValue("PushDeviceStatus.Data");
-			pushDeviceStatusResponse.ErrorCode = context.StringValue("PushDeviceStatus.ErrorCode");
-			pushDeviceStatusResponse.RequestId = context.StringValue("PushDeviceStatus.RequestId");
+			pushDeviceStatusResponse.HttpResponse = _ctx.HttpResponse;
+			pushDeviceStatusResponse.Status = _ctx.BooleanValue("PushDeviceStatus.Status");
+			pushDeviceStatusResponse.Msg = _ctx.StringValue("PushDeviceStatus.Msg");
+			pushDeviceStatusResponse.Data = _ctx.StringValue("PushDeviceStatus.Data");
+			pushDeviceStatusResponse.ErrorCode = _ctx.StringValue("PushDeviceStatus.ErrorCode");
+			pushDeviceStatusResponse.RequestId = _ctx.StringValue("PushDeviceStatus.RequestId");
         
 			return pushDeviceStatusResponse;
         }

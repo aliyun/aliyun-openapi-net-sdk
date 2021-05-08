@@ -26,15 +26,15 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 {
     public class SaveCpmTradeResponseUnmarshaller
     {
-        public static SaveCpmTradeResponse Unmarshall(UnmarshallerContext context)
+        public static SaveCpmTradeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SaveCpmTradeResponse saveCpmTradeResponse = new SaveCpmTradeResponse();
 
-			saveCpmTradeResponse.HttpResponse = context.HttpResponse;
-			saveCpmTradeResponse.Status = context.BooleanValue("SaveCpmTrade.Status");
-			saveCpmTradeResponse.Msg = context.StringValue("SaveCpmTrade.Msg");
-			saveCpmTradeResponse.ErrorCode = context.StringValue("SaveCpmTrade.ErrorCode");
-			saveCpmTradeResponse.RequestId = context.StringValue("SaveCpmTrade.RequestId");
+			saveCpmTradeResponse.HttpResponse = _ctx.HttpResponse;
+			saveCpmTradeResponse.Status = _ctx.BooleanValue("SaveCpmTrade.Status");
+			saveCpmTradeResponse.Msg = _ctx.StringValue("SaveCpmTrade.Msg");
+			saveCpmTradeResponse.ErrorCode = _ctx.StringValue("SaveCpmTrade.ErrorCode");
+			saveCpmTradeResponse.RequestId = _ctx.StringValue("SaveCpmTrade.RequestId");
         
 			return saveCpmTradeResponse;
         }

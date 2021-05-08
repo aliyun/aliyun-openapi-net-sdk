@@ -26,16 +26,16 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 {
     public class PushTradeDetailResponseUnmarshaller
     {
-        public static PushTradeDetailResponse Unmarshall(UnmarshallerContext context)
+        public static PushTradeDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PushTradeDetailResponse pushTradeDetailResponse = new PushTradeDetailResponse();
 
-			pushTradeDetailResponse.HttpResponse = context.HttpResponse;
-			pushTradeDetailResponse.Status = context.BooleanValue("PushTradeDetail.Status");
-			pushTradeDetailResponse.Msg = context.StringValue("PushTradeDetail.Msg");
-			pushTradeDetailResponse.Data = context.StringValue("PushTradeDetail.Data");
-			pushTradeDetailResponse.ErrorCode = context.StringValue("PushTradeDetail.ErrorCode");
-			pushTradeDetailResponse.RequestId = context.StringValue("PushTradeDetail.RequestId");
+			pushTradeDetailResponse.HttpResponse = _ctx.HttpResponse;
+			pushTradeDetailResponse.Status = _ctx.BooleanValue("PushTradeDetail.Status");
+			pushTradeDetailResponse.Msg = _ctx.StringValue("PushTradeDetail.Msg");
+			pushTradeDetailResponse.Data = _ctx.StringValue("PushTradeDetail.Data");
+			pushTradeDetailResponse.ErrorCode = _ctx.StringValue("PushTradeDetail.ErrorCode");
+			pushTradeDetailResponse.RequestId = _ctx.StringValue("PushTradeDetail.RequestId");
         
 			return pushTradeDetailResponse;
         }

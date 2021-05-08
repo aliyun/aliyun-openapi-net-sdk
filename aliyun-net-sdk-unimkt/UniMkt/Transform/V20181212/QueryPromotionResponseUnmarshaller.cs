@@ -26,18 +26,18 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 {
     public class QueryPromotionResponseUnmarshaller
     {
-        public static QueryPromotionResponse Unmarshall(UnmarshallerContext context)
+        public static QueryPromotionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryPromotionResponse queryPromotionResponse = new QueryPromotionResponse();
 
-			queryPromotionResponse.HttpResponse = context.HttpResponse;
-			queryPromotionResponse.Status = context.BooleanValue("QueryPromotion.Status");
-			queryPromotionResponse.Msg = context.StringValue("QueryPromotion.Msg");
-			queryPromotionResponse.ErrorCode = context.StringValue("QueryPromotion.ErrorCode");
-			queryPromotionResponse.RequestId = context.StringValue("QueryPromotion.RequestId");
-			queryPromotionResponse.Url = context.StringValue("QueryPromotion.Url");
-			queryPromotionResponse.UnionAmount = context.StringValue("QueryPromotion.UnionAmount");
-			queryPromotionResponse.NoPromotionUrl = context.StringValue("QueryPromotion.NoPromotionUrl");
+			queryPromotionResponse.HttpResponse = _ctx.HttpResponse;
+			queryPromotionResponse.Status = _ctx.BooleanValue("QueryPromotion.Status");
+			queryPromotionResponse.Msg = _ctx.StringValue("QueryPromotion.Msg");
+			queryPromotionResponse.ErrorCode = _ctx.StringValue("QueryPromotion.ErrorCode");
+			queryPromotionResponse.RequestId = _ctx.StringValue("QueryPromotion.RequestId");
+			queryPromotionResponse.Url = _ctx.StringValue("QueryPromotion.Url");
+			queryPromotionResponse.UnionAmount = _ctx.StringValue("QueryPromotion.UnionAmount");
+			queryPromotionResponse.NoPromotionUrl = _ctx.StringValue("QueryPromotion.NoPromotionUrl");
         
 			return queryPromotionResponse;
         }
