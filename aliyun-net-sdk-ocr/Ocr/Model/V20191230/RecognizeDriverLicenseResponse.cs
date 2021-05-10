@@ -27,6 +27,10 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 
 		private string requestId;
 
+		private string code;
+
+		private string message;
+
 		private RecognizeDriverLicense_Data data;
 
 		public string RequestId
@@ -38,6 +42,30 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -56,21 +84,9 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 		public class RecognizeDriverLicense_Data
 		{
 
-			private RecognizeDriverLicense_FaceResult faceResult;
-
 			private RecognizeDriverLicense_BackResult backResult;
 
-			public RecognizeDriverLicense_FaceResult FaceResult
-			{
-				get
-				{
-					return faceResult;
-				}
-				set	
-				{
-					faceResult = value;
-				}
-			}
+			private RecognizeDriverLicense_FaceResult faceResult;
 
 			public RecognizeDriverLicense_BackResult BackResult
 			{
@@ -84,24 +100,40 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 				}
 			}
 
-			public class RecognizeDriverLicense_FaceResult
+			public RecognizeDriverLicense_FaceResult FaceResult
 			{
+				get
+				{
+					return faceResult;
+				}
+				set	
+				{
+					faceResult = value;
+				}
+			}
+
+			public class RecognizeDriverLicense_BackResult
+			{
+
+				private string archiveNumber;
 
 				private string name;
 
-				private string licenseNumber;
+				private string cardNumber;
 
-				private string vehicleType;
+				private string record;
 
-				private string startDate;
-
-				private string endDate;
-
-				private string issueDate;
-
-				private string address;
-
-				private string gender;
+				public string ArchiveNumber
+				{
+					get
+					{
+						return archiveNumber;
+					}
+					set	
+					{
+						archiveNumber = value;
+					}
+				}
 
 				public string Name
 				{
@@ -115,17 +147,51 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					}
 				}
 
-				public string LicenseNumber
+				public string CardNumber
 				{
 					get
 					{
-						return licenseNumber;
+						return cardNumber;
 					}
 					set	
 					{
-						licenseNumber = value;
+						cardNumber = value;
 					}
 				}
+
+				public string Record
+				{
+					get
+					{
+						return record;
+					}
+					set	
+					{
+						record = value;
+					}
+				}
+			}
+
+			public class RecognizeDriverLicense_FaceResult
+			{
+
+				private string vehicleType;
+
+				private string issueDate;
+
+				private string endDate;
+
+				private string gender;
+
+				private string address;
+
+				private string startDate;
+
+				private string licenseNumber;
+
+				private string name;
+
+				private string issueUnit;
 
 				public string VehicleType
 				{
@@ -136,30 +202,6 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					set	
 					{
 						vehicleType = value;
-					}
-				}
-
-				public string StartDate
-				{
-					get
-					{
-						return startDate;
-					}
-					set	
-					{
-						startDate = value;
-					}
-				}
-
-				public string EndDate
-				{
-					get
-					{
-						return endDate;
-					}
-					set	
-					{
-						endDate = value;
 					}
 				}
 
@@ -175,15 +217,15 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					}
 				}
 
-				public string Address
+				public string EndDate
 				{
 					get
 					{
-						return address;
+						return endDate;
 					}
 					set	
 					{
-						address = value;
+						endDate = value;
 					}
 				}
 
@@ -198,22 +240,64 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 						gender = value;
 					}
 				}
-			}
 
-			public class RecognizeDriverLicense_BackResult
-			{
-
-				private string archiveNumber;
-
-				public string ArchiveNumber
+				public string Address
 				{
 					get
 					{
-						return archiveNumber;
+						return address;
 					}
 					set	
 					{
-						archiveNumber = value;
+						address = value;
+					}
+				}
+
+				public string StartDate
+				{
+					get
+					{
+						return startDate;
+					}
+					set	
+					{
+						startDate = value;
+					}
+				}
+
+				public string LicenseNumber
+				{
+					get
+					{
+						return licenseNumber;
+					}
+					set	
+					{
+						licenseNumber = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string IssueUnit
+				{
+					get
+					{
+						return issueUnit;
+					}
+					set	
+					{
+						issueUnit = value;
 					}
 				}
 			}

@@ -27,6 +27,10 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 
 		private string requestId;
 
+		private string code;
+
+		private string message;
+
 		private RecognizeLicensePlate_Data data;
 
 		public string RequestId
@@ -38,6 +42,30 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -73,15 +101,41 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 			public class RecognizeLicensePlate_Plate
 			{
 
+				private float? plateTypeConfidence;
+
+				private string plateType;
+
 				private float? confidence;
 
 				private string plateNumber;
 
-				private string plateType;
-
-				private float? plateTypeConfidence;
+				private List<RecognizeLicensePlate_PositionsItem> positions;
 
 				private RecognizeLicensePlate_Roi roi;
+
+				public float? PlateTypeConfidence
+				{
+					get
+					{
+						return plateTypeConfidence;
+					}
+					set	
+					{
+						plateTypeConfidence = value;
+					}
+				}
+
+				public string PlateType
+				{
+					get
+					{
+						return plateType;
+					}
+					set	
+					{
+						plateType = value;
+					}
+				}
 
 				public float? Confidence
 				{
@@ -107,27 +161,15 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					}
 				}
 
-				public string PlateType
+				public List<RecognizeLicensePlate_PositionsItem> Positions
 				{
 					get
 					{
-						return plateType;
+						return positions;
 					}
 					set	
 					{
-						plateType = value;
-					}
-				}
-
-				public float? PlateTypeConfidence
-				{
-					get
-					{
-						return plateTypeConfidence;
-					}
-					set	
-					{
-						plateTypeConfidence = value;
+						positions = value;
 					}
 				}
 
@@ -143,28 +185,48 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					}
 				}
 
-				public class RecognizeLicensePlate_Roi
+				public class RecognizeLicensePlate_PositionsItem
 				{
 
-					private int? h;
+					private long? x;
 
-					private int? w;
+					private long? y;
 
-					private int? x;
-
-					private int? y;
-
-					public int? H
+					public long? X
 					{
 						get
 						{
-							return h;
+							return x;
 						}
 						set	
 						{
-							h = value;
+							x = value;
 						}
 					}
+
+					public long? Y
+					{
+						get
+						{
+							return y;
+						}
+						set	
+						{
+							y = value;
+						}
+					}
+				}
+
+				public class RecognizeLicensePlate_Roi
+				{
+
+					private int? w;
+
+					private int? h;
+
+					private int? y;
+
+					private int? x;
 
 					public int? W
 					{
@@ -178,15 +240,15 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 						}
 					}
 
-					public int? X
+					public int? H
 					{
 						get
 						{
-							return x;
+							return h;
 						}
 						set	
 						{
-							x = value;
+							h = value;
 						}
 					}
 
@@ -199,6 +261,18 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 						set	
 						{
 							y = value;
+						}
+					}
+
+					public int? X
+					{
+						get
+						{
+							return x;
+						}
+						set	
+						{
+							x = value;
 						}
 					}
 				}
