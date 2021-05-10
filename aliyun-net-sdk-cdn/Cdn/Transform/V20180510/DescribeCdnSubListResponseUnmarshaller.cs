@@ -20,20 +20,21 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cdn.Model.V20141111;
+using Aliyun.Acs.Cdn.Model.V20180510;
 
-namespace Aliyun.Acs.Cdn.Transform.V20141111
+namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
-    public class AddLiveStreamTranscodeResponseUnmarshaller
+    public class DescribeCdnSubListResponseUnmarshaller
     {
-        public static AddLiveStreamTranscodeResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DescribeCdnSubListResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			AddLiveStreamTranscodeResponse addLiveStreamTranscodeResponse = new AddLiveStreamTranscodeResponse();
+			DescribeCdnSubListResponse describeCdnSubListResponse = new DescribeCdnSubListResponse();
 
-			addLiveStreamTranscodeResponse.HttpResponse = _ctx.HttpResponse;
-			addLiveStreamTranscodeResponse.RequestId = _ctx.StringValue("AddLiveStreamTranscode.RequestId");
+			describeCdnSubListResponse.HttpResponse = _ctx.HttpResponse;
+			describeCdnSubListResponse.RequestId = _ctx.StringValue("DescribeCdnSubList.RequestId");
+			describeCdnSubListResponse.Content = _ctx.StringValue("DescribeCdnSubList.Content");
         
-			return addLiveStreamTranscodeResponse;
+			return describeCdnSubListResponse;
         }
     }
 }

@@ -16,27 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Cdn.Model.V20180510;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
-	public class SetVideoSeekConfigResponse : AcsResponse
-	{
+    public class DeleteCdnSubTaskResponseUnmarshaller
+    {
+        public static DeleteCdnSubTaskResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			DeleteCdnSubTaskResponse deleteCdnSubTaskResponse = new DeleteCdnSubTaskResponse();
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			deleteCdnSubTaskResponse.HttpResponse = _ctx.HttpResponse;
+			deleteCdnSubTaskResponse.RequestId = _ctx.StringValue("DeleteCdnSubTask.RequestId");
+        
+			return deleteCdnSubTaskResponse;
+        }
+    }
 }

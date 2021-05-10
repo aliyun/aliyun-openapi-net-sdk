@@ -16,24 +16,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cdn.Model.V20180510;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Cdn.Transform.V20180510
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class ModifyUserCustomLogConfigResponseUnmarshaller
-    {
-        public static ModifyUserCustomLogConfigResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			ModifyUserCustomLogConfigResponse modifyUserCustomLogConfigResponse = new ModifyUserCustomLogConfigResponse();
+	public class DescribeCdnReportResponse : AcsResponse
+	{
 
-			modifyUserCustomLogConfigResponse.HttpResponse = _ctx.HttpResponse;
-			modifyUserCustomLogConfigResponse.RequestId = _ctx.StringValue("ModifyUserCustomLogConfig.RequestId");
-        
-			return modifyUserCustomLogConfigResponse;
-        }
-    }
+		private string requestId;
+
+		private string content;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string Content
+		{
+			get
+			{
+				return content;
+			}
+			set	
+			{
+				content = value;
+			}
+		}
+	}
 }

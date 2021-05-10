@@ -20,12 +20,14 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class AddLiveStreamTranscodeResponse : AcsResponse
+	public class DescribeEsExecuteDataResponse : AcsResponse
 	{
 
 		private string requestId;
+
+		private List<DescribeEsExecuteData_Content> contents;
 
 		public string RequestId
 		{
@@ -36,6 +38,64 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public List<DescribeEsExecuteData_Content> Contents
+		{
+			get
+			{
+				return contents;
+			}
+			set	
+			{
+				contents = value;
+			}
+		}
+
+		public class DescribeEsExecuteData_Content
+		{
+
+			private string name;
+
+			private List<string> columns;
+
+			private List<string> points;
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public List<string> Columns
+			{
+				get
+				{
+					return columns;
+				}
+				set	
+				{
+					columns = value;
+				}
+			}
+
+			public List<string> Points
+			{
+				get
+				{
+					return points;
+				}
+				set	
+				{
+					points = value;
+				}
 			}
 		}
 	}

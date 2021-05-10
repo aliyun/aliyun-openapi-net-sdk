@@ -24,16 +24,17 @@ using Aliyun.Acs.Cdn.Model.V20180510;
 
 namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
-    public class SetHttpErrorPageConfigResponseUnmarshaller
+    public class DescribeCdnReportListResponseUnmarshaller
     {
-        public static SetHttpErrorPageConfigResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DescribeCdnReportListResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			SetHttpErrorPageConfigResponse setHttpErrorPageConfigResponse = new SetHttpErrorPageConfigResponse();
+			DescribeCdnReportListResponse describeCdnReportListResponse = new DescribeCdnReportListResponse();
 
-			setHttpErrorPageConfigResponse.HttpResponse = _ctx.HttpResponse;
-			setHttpErrorPageConfigResponse.RequestId = _ctx.StringValue("SetHttpErrorPageConfig.RequestId");
+			describeCdnReportListResponse.HttpResponse = _ctx.HttpResponse;
+			describeCdnReportListResponse.RequestId = _ctx.StringValue("DescribeCdnReportList.RequestId");
+			describeCdnReportListResponse.Content = _ctx.StringValue("DescribeCdnReportList.Content");
         
-			return setHttpErrorPageConfigResponse;
+			return describeCdnReportListResponse;
         }
     }
 }

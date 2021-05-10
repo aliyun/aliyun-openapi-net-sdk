@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
-using Aliyun.Acs.Cdn.Transform.V20141111;
+using Aliyun.Acs.Cdn.Transform.V20180510;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class SetVideoSeekConfigRequest : RpcAcsRequest<SetVideoSeekConfigResponse>
+    public class UpdateCdnSubTaskRequest : RpcAcsRequest<UpdateCdnSubTaskResponse>
     {
-        public SetVideoSeekConfigRequest()
-            : base("Cdn", "2014-11-11", "SetVideoSeekConfig")
+        public UpdateCdnSubTaskRequest()
+            : base("Cdn", "2018-05-10", "UpdateCdnSubTask")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,13 +41,30 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			Method = MethodType.POST;
         }
 
+		private string startTime;
+
 		private string domainName;
+
+		private string endTime;
 
 		private long? ownerId;
 
-		private string securityToken;
+		private string reportIds;
 
-		private string enable;
+		private string status;
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(BodyParameters, "StartTime", value);
+			}
+		}
 
 		public string DomainName
 		{
@@ -58,7 +75,20 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				DictionaryUtil.Add(BodyParameters, "DomainName", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(BodyParameters, "EndTime", value);
 			}
 		}
 
@@ -75,35 +105,35 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string SecurityToken
+		public string ReportIds
 		{
 			get
 			{
-				return securityToken;
+				return reportIds;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				reportIds = value;
+				DictionaryUtil.Add(BodyParameters, "ReportIds", value);
 			}
 		}
 
-		public string Enable
+		public string Status
 		{
 			get
 			{
-				return enable;
+				return status;
 			}
 			set	
 			{
-				enable = value;
-				DictionaryUtil.Add(QueryParameters, "Enable", value);
+				status = value;
+				DictionaryUtil.Add(BodyParameters, "Status", value);
 			}
 		}
 
-        public override SetVideoSeekConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateCdnSubTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetVideoSeekConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateCdnSubTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

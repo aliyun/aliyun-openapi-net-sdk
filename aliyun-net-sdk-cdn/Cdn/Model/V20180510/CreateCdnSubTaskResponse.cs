@@ -16,24 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cdn.Model.V20180510;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Cdn.Transform.V20180510
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class SetErrorPageConfigResponseUnmarshaller
-    {
-        public static SetErrorPageConfigResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			SetErrorPageConfigResponse setErrorPageConfigResponse = new SetErrorPageConfigResponse();
+	public class CreateCdnSubTaskResponse : AcsResponse
+	{
 
-			setErrorPageConfigResponse.HttpResponse = _ctx.HttpResponse;
-			setErrorPageConfigResponse.RequestId = _ctx.StringValue("SetErrorPageConfig.RequestId");
-        
-			return setErrorPageConfigResponse;
-        }
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

@@ -28,10 +28,10 @@ using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class SetHttpErrorPageConfigRequest : RpcAcsRequest<SetHttpErrorPageConfigResponse>
+    public class DeleteCdnDeliverTaskRequest : RpcAcsRequest<DeleteCdnDeliverTaskResponse>
     {
-        public SetHttpErrorPageConfigRequest()
-            : base("Cdn", "2018-05-10", "SetHttpErrorPageConfig")
+        public DeleteCdnDeliverTaskRequest()
+            : base("Cdn", "2018-05-10", "DeleteCdnDeliverTask")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,52 +41,20 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			Method = MethodType.POST;
         }
 
-		private string pageUrl;
-
-		private string errorCode;
-
-		private string domainName;
+		private long? deliverId;
 
 		private long? ownerId;
 
-		private long? configId;
-
-		public string PageUrl
+		public long? DeliverId
 		{
 			get
 			{
-				return pageUrl;
+				return deliverId;
 			}
 			set	
 			{
-				pageUrl = value;
-				DictionaryUtil.Add(QueryParameters, "PageUrl", value);
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-				DictionaryUtil.Add(QueryParameters, "ErrorCode", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				deliverId = value;
+				DictionaryUtil.Add(QueryParameters, "DeliverId", value.ToString());
 			}
 		}
 
@@ -103,22 +71,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public long? ConfigId
-		{
-			get
-			{
-				return configId;
-			}
-			set	
-			{
-				configId = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigId", value.ToString());
-			}
-		}
-
-        public override SetHttpErrorPageConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteCdnDeliverTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetHttpErrorPageConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteCdnDeliverTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

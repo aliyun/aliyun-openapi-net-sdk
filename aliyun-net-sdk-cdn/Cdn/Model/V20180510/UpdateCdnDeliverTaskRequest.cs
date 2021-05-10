@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
-using Aliyun.Acs.Cdn.Transform.V20141111;
+using Aliyun.Acs.Cdn.Transform.V20180510;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class AddLiveStreamTranscodeRequest : RpcAcsRequest<AddLiveStreamTranscodeResponse>
+    public class UpdateCdnDeliverTaskRequest : RpcAcsRequest<UpdateCdnDeliverTaskResponse>
     {
-        public AddLiveStreamTranscodeRequest()
-            : base("Cdn", "2014-11-11", "AddLiveStreamTranscode")
+        public UpdateCdnDeliverTaskRequest()
+            : base("Cdn", "2018-05-10", "UpdateCdnDeliverTask")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,84 +41,71 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			Method = MethodType.POST;
         }
 
-		private string template;
+		private string reports;
 
-		private string securityToken;
+		private string deliver;
 
-		private string record;
+		private long? deliverId;
 
-		private string app;
-
-		private string ownerAccount;
+		private string domainName;
 
 		private long? ownerId;
 
-		private string domain;
+		private string schedule;
 
-		private string snapshot;
+		private string name;
 
-		public string Template
+		private string status;
+
+		public string Reports
 		{
 			get
 			{
-				return template;
+				return reports;
 			}
 			set	
 			{
-				template = value;
-				DictionaryUtil.Add(QueryParameters, "Template", value);
+				reports = value;
+				DictionaryUtil.Add(BodyParameters, "Reports", value);
 			}
 		}
 
-		public string SecurityToken
+		public string Deliver
 		{
 			get
 			{
-				return securityToken;
+				return deliver;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				deliver = value;
+				DictionaryUtil.Add(BodyParameters, "Deliver", value);
 			}
 		}
 
-		public string Record
+		public long? DeliverId
 		{
 			get
 			{
-				return record;
+				return deliverId;
 			}
 			set	
 			{
-				record = value;
-				DictionaryUtil.Add(QueryParameters, "Record", value);
+				deliverId = value;
+				DictionaryUtil.Add(BodyParameters, "DeliverId", value.ToString());
 			}
 		}
 
-		public string App
+		public string DomainName
 		{
 			get
 			{
-				return app;
+				return domainName;
 			}
 			set	
 			{
-				app = value;
-				DictionaryUtil.Add(QueryParameters, "App", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				domainName = value;
+				DictionaryUtil.Add(BodyParameters, "DomainName", value);
 			}
 		}
 
@@ -135,35 +122,48 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string Domain
+		public string Schedule
 		{
 			get
 			{
-				return domain;
+				return schedule;
 			}
 			set	
 			{
-				domain = value;
-				DictionaryUtil.Add(QueryParameters, "Domain", value);
+				schedule = value;
+				DictionaryUtil.Add(BodyParameters, "Schedule", value);
 			}
 		}
 
-		public string Snapshot
+		public string Name
 		{
 			get
 			{
-				return snapshot;
+				return name;
 			}
 			set	
 			{
-				snapshot = value;
-				DictionaryUtil.Add(QueryParameters, "Snapshot", value);
+				name = value;
+				DictionaryUtil.Add(BodyParameters, "Name", value);
 			}
 		}
 
-        public override AddLiveStreamTranscodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(BodyParameters, "Status", value);
+			}
+		}
+
+        public override UpdateCdnDeliverTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AddLiveStreamTranscodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateCdnDeliverTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

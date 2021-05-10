@@ -20,9 +20,9 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class ModifyPathCacheExpiredConfigResponse : AcsResponse
+	public class DeleteCdnSubTaskResponse : AcsResponse
 	{
 
 		private string requestId;

@@ -28,23 +28,52 @@ using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class ModifyUserCustomLogConfigRequest : RpcAcsRequest<ModifyUserCustomLogConfigResponse>
+    public class DescribeEsExceptionDataRequest : RpcAcsRequest<DescribeEsExceptionDataResponse>
     {
-        public ModifyUserCustomLogConfigRequest()
-            : base("Cdn", "2018-05-10", "ModifyUserCustomLogConfig")
+        public DescribeEsExceptionDataRequest()
+            : base("Cdn", "2018-05-10", "DescribeEsExceptionData")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cdn.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cdn.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private string startTime;
+
+		private string endTime;
 
 		private long? ownerId;
 
-		private string configId;
+		private string ruleId;
 
-		private string tag;
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
 
 		public long? OwnerId
 		{
@@ -59,35 +88,27 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string ConfigId
+		public string RuleId
 		{
 			get
 			{
-				return configId;
+				return ruleId;
 			}
 			set	
 			{
-				configId = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigId", value);
+				ruleId = value;
+				DictionaryUtil.Add(QueryParameters, "RuleId", value);
 			}
 		}
 
-		public string Tag
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return tag;
-			}
-			set	
-			{
-				tag = value;
-				DictionaryUtil.Add(QueryParameters, "Tag", value);
-			}
+			return false;
 		}
 
-        public override ModifyUserCustomLogConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeEsExceptionDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyUserCustomLogConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeEsExceptionDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

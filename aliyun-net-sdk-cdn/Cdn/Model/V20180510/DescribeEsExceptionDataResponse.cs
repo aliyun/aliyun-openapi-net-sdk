@@ -22,10 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class SetHttpErrorPageConfigResponse : AcsResponse
+	public class DescribeEsExceptionDataResponse : AcsResponse
 	{
 
 		private string requestId;
+
+		private List<DescribeEsExceptionData_Content> contents;
 
 		public string RequestId
 		{
@@ -36,6 +38,64 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public List<DescribeEsExceptionData_Content> Contents
+		{
+			get
+			{
+				return contents;
+			}
+			set	
+			{
+				contents = value;
+			}
+		}
+
+		public class DescribeEsExceptionData_Content
+		{
+
+			private string name;
+
+			private List<string> columns;
+
+			private List<string> points;
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public List<string> Columns
+			{
+				get
+				{
+					return columns;
+				}
+				set	
+				{
+					columns = value;
+				}
+			}
+
+			public List<string> Points
+			{
+				get
+				{
+					return points;
+				}
+				set	
+				{
+					points = value;
+				}
 			}
 		}
 	}

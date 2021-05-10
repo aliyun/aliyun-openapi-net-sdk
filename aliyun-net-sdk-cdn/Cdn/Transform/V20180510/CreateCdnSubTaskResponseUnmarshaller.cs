@@ -16,41 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Cdn.Model.V20180510;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
-	public class ListDomainsByLogConfigIdResponse : AcsResponse
-	{
+    public class CreateCdnSubTaskResponseUnmarshaller
+    {
+        public static CreateCdnSubTaskResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			CreateCdnSubTaskResponse createCdnSubTaskResponse = new CreateCdnSubTaskResponse();
 
-		private string requestId;
-
-		private List<string> domains;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public List<string> Domains
-		{
-			get
-			{
-				return domains;
-			}
-			set	
-			{
-				domains = value;
-			}
-		}
-	}
+			createCdnSubTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createCdnSubTaskResponse.RequestId = _ctx.StringValue("CreateCdnSubTask.RequestId");
+        
+			return createCdnSubTaskResponse;
+        }
+    }
 }

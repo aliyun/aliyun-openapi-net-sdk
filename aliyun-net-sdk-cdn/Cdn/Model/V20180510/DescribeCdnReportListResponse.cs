@@ -22,10 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class SetErrorPageConfigResponse : AcsResponse
+	public class DescribeCdnReportListResponse : AcsResponse
 	{
 
 		private string requestId;
+
+		private string content;
 
 		public string RequestId
 		{
@@ -36,6 +38,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Content
+		{
+			get
+			{
+				return content;
+			}
+			set	
+			{
+				content = value;
 			}
 		}
 	}

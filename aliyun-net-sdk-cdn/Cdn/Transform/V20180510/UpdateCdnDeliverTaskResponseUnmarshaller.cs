@@ -20,20 +20,20 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cdn.Model.V20141111;
+using Aliyun.Acs.Cdn.Model.V20180510;
 
-namespace Aliyun.Acs.Cdn.Transform.V20141111
+namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
-    public class SetVideoSeekConfigResponseUnmarshaller
+    public class UpdateCdnDeliverTaskResponseUnmarshaller
     {
-        public static SetVideoSeekConfigResponse Unmarshall(UnmarshallerContext _ctx)
+        public static UpdateCdnDeliverTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			SetVideoSeekConfigResponse setVideoSeekConfigResponse = new SetVideoSeekConfigResponse();
+			UpdateCdnDeliverTaskResponse updateCdnDeliverTaskResponse = new UpdateCdnDeliverTaskResponse();
 
-			setVideoSeekConfigResponse.HttpResponse = _ctx.HttpResponse;
-			setVideoSeekConfigResponse.RequestId = _ctx.StringValue("SetVideoSeekConfig.RequestId");
+			updateCdnDeliverTaskResponse.HttpResponse = _ctx.HttpResponse;
+			updateCdnDeliverTaskResponse.RequestId = _ctx.StringValue("UpdateCdnDeliverTask.RequestId");
         
-			return setVideoSeekConfigResponse;
+			return updateCdnDeliverTaskResponse;
         }
     }
 }

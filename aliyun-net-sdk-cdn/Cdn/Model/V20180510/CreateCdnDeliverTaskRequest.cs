@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
-using Aliyun.Acs.Cdn.Transform.V20141111;
+using Aliyun.Acs.Cdn.Transform.V20180510;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class ModifyPathCacheExpiredConfigRequest : RpcAcsRequest<ModifyPathCacheExpiredConfigResponse>
+    public class CreateCdnDeliverTaskRequest : RpcAcsRequest<CreateCdnDeliverTaskResponse>
     {
-        public ModifyPathCacheExpiredConfigRequest()
-            : base("Cdn", "2014-11-11", "ModifyPathCacheExpiredConfig")
+        public CreateCdnDeliverTaskRequest()
+            : base("Cdn", "2018-05-10", "CreateCdnDeliverTask")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,30 +41,43 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			Method = MethodType.POST;
         }
 
-		private string securityToken;
+		private string reports;
+
+		private string deliver;
 
 		private string domainName;
 
-		private string weight;
-
-		private string cacheContent;
-
 		private long? ownerId;
 
-		private string tTL;
+		private string schedule;
 
-		private string configID;
+		private string name;
 
-		public string SecurityToken
+		private string status;
+
+		public string Reports
 		{
 			get
 			{
-				return securityToken;
+				return reports;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				reports = value;
+				DictionaryUtil.Add(BodyParameters, "Reports", value);
+			}
+		}
+
+		public string Deliver
+		{
+			get
+			{
+				return deliver;
+			}
+			set	
+			{
+				deliver = value;
+				DictionaryUtil.Add(BodyParameters, "Deliver", value);
 			}
 		}
 
@@ -77,33 +90,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string Weight
-		{
-			get
-			{
-				return weight;
-			}
-			set	
-			{
-				weight = value;
-				DictionaryUtil.Add(QueryParameters, "Weight", value);
-			}
-		}
-
-		public string CacheContent
-		{
-			get
-			{
-				return cacheContent;
-			}
-			set	
-			{
-				cacheContent = value;
-				DictionaryUtil.Add(QueryParameters, "CacheContent", value);
+				DictionaryUtil.Add(BodyParameters, "DomainName", value);
 			}
 		}
 
@@ -120,35 +107,48 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string TTL
+		public string Schedule
 		{
 			get
 			{
-				return tTL;
+				return schedule;
 			}
 			set	
 			{
-				tTL = value;
-				DictionaryUtil.Add(QueryParameters, "TTL", value);
+				schedule = value;
+				DictionaryUtil.Add(BodyParameters, "Schedule", value);
 			}
 		}
 
-		public string ConfigID
+		public string Name
 		{
 			get
 			{
-				return configID;
+				return name;
 			}
 			set	
 			{
-				configID = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigID", value);
+				name = value;
+				DictionaryUtil.Add(BodyParameters, "Name", value);
 			}
 		}
 
-        public override ModifyPathCacheExpiredConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(BodyParameters, "Status", value);
+			}
+		}
+
+        public override CreateCdnDeliverTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyPathCacheExpiredConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateCdnDeliverTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

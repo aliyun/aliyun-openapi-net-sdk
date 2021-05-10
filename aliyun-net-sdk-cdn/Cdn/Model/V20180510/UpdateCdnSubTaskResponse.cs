@@ -16,24 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cdn.Model.V20141111;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Cdn.Transform.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class ModifyPathCacheExpiredConfigResponseUnmarshaller
-    {
-        public static ModifyPathCacheExpiredConfigResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			ModifyPathCacheExpiredConfigResponse modifyPathCacheExpiredConfigResponse = new ModifyPathCacheExpiredConfigResponse();
+	public class UpdateCdnSubTaskResponse : AcsResponse
+	{
 
-			modifyPathCacheExpiredConfigResponse.HttpResponse = _ctx.HttpResponse;
-			modifyPathCacheExpiredConfigResponse.RequestId = _ctx.StringValue("ModifyPathCacheExpiredConfig.RequestId");
-        
-			return modifyPathCacheExpiredConfigResponse;
-        }
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

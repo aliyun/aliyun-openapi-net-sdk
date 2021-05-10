@@ -24,25 +24,73 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
-using Aliyun.Acs.Cdn.Transform.V20141111;
+using Aliyun.Acs.Cdn.Transform.V20180510;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class ListDomainsByLogConfigIdRequest : RpcAcsRequest<ListDomainsByLogConfigIdResponse>
+    public class CreateCdnSubTaskRequest : RpcAcsRequest<CreateCdnSubTaskResponse>
     {
-        public ListDomainsByLogConfigIdRequest()
-            : base("Cdn", "2014-11-11", "ListDomainsByLogConfigId")
+        public CreateCdnSubTaskRequest()
+            : base("Cdn", "2018-05-10", "CreateCdnSubTask")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cdn.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cdn.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private string startTime;
+
+		private string domainName;
+
+		private string endTime;
 
 		private long? ownerId;
 
-		private string configId;
+		private string reportIds;
+
+		private string status;
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(BodyParameters, "StartTime", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(BodyParameters, "DomainName", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(BodyParameters, "EndTime", value);
+			}
+		}
 
 		public long? OwnerId
 		{
@@ -57,22 +105,35 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string ConfigId
+		public string ReportIds
 		{
 			get
 			{
-				return configId;
+				return reportIds;
 			}
 			set	
 			{
-				configId = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigId", value);
+				reportIds = value;
+				DictionaryUtil.Add(BodyParameters, "ReportIds", value);
 			}
 		}
 
-        public override ListDomainsByLogConfigIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(BodyParameters, "Status", value);
+			}
+		}
+
+        public override CreateCdnSubTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListDomainsByLogConfigIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateCdnSubTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -28,10 +28,10 @@ using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class SetErrorPageConfigRequest : RpcAcsRequest<SetErrorPageConfigResponse>
+    public class DescribeCdnReportListRequest : RpcAcsRequest<DescribeCdnReportListResponse>
     {
-        public SetErrorPageConfigRequest()
-            : base("Cdn", "2018-05-10", "SetErrorPageConfig")
+        public DescribeCdnReportListRequest()
+            : base("Cdn", "2018-05-10", "DescribeCdnReportList")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,65 +41,37 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			Method = MethodType.POST;
         }
 
-		private string pageType;
+		private long? reportId;
 
-		private string securityToken;
-
-		private string domainName;
-
-		private string customPageUrl;
+		private string permission;
 
 		private long? ownerId;
 
-		public string PageType
+		private string status;
+
+		public long? ReportId
 		{
 			get
 			{
-				return pageType;
+				return reportId;
 			}
 			set	
 			{
-				pageType = value;
-				DictionaryUtil.Add(QueryParameters, "PageType", value);
+				reportId = value;
+				DictionaryUtil.Add(QueryParameters, "ReportId", value.ToString());
 			}
 		}
 
-		public string SecurityToken
+		public string Permission
 		{
 			get
 			{
-				return securityToken;
+				return permission;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string CustomPageUrl
-		{
-			get
-			{
-				return customPageUrl;
-			}
-			set	
-			{
-				customPageUrl = value;
-				DictionaryUtil.Add(QueryParameters, "CustomPageUrl", value);
+				permission = value;
+				DictionaryUtil.Add(QueryParameters, "Permission", value);
 			}
 		}
 
@@ -116,9 +88,22 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-        public override SetErrorPageConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+        public override DescribeCdnReportListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetErrorPageConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCdnReportListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
