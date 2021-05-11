@@ -56,11 +56,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string securityToken;
 
+		private List<Tag> tags = new List<Tag>(){ };
+
 		private string businessInfo;
 
 		private string autoRenewPeriod;
 
 		private string period;
+
+		private bool? dryRun;
 
 		private string backupId;
 
@@ -74,9 +78,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string autoRenew;
 
-		private string zoneId;
+		private string port;
 
-		private string nodeType;
+		private string zoneId;
 
 		private string autoUseCoupon;
 
@@ -210,6 +214,24 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
 		public string BusinessInfo
 		{
 			get
@@ -246,6 +268,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				period = value;
 				DictionaryUtil.Add(QueryParameters, "Period", value);
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 
@@ -327,6 +362,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string Port
+		{
+			get
+			{
+				return port;
+			}
+			set	
+			{
+				port = value;
+				DictionaryUtil.Add(QueryParameters, "Port", value);
+			}
+		}
+
 		public string ZoneId
 		{
 			get
@@ -337,19 +385,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public string NodeType
-		{
-			get
-			{
-				return nodeType;
-			}
-			set	
-			{
-				nodeType = value;
-				DictionaryUtil.Add(QueryParameters, "NodeType", value);
 			}
 		}
 
@@ -532,6 +567,38 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				chargeType = value;
 				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

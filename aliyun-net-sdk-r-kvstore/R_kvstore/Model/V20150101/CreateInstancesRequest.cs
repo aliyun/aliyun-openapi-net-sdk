@@ -54,10 +54,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string businessInfo;
 
-		private string agentId;
-
-		private string restoreTime;
-
 		private bool? autoPay;
 
 		private string resourceOwnerAccount;
@@ -67,8 +63,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private long? ownerId;
 
 		private string token;
-
-		private string privateIpAddress;
 
 		private string autoRenew;
 
@@ -163,32 +157,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string AgentId
-		{
-			get
-			{
-				return agentId;
-			}
-			set	
-			{
-				agentId = value;
-				DictionaryUtil.Add(QueryParameters, "AgentId", value);
-			}
-		}
-
-		public string RestoreTime
-		{
-			get
-			{
-				return restoreTime;
-			}
-			set	
-			{
-				restoreTime = value;
-				DictionaryUtil.Add(QueryParameters, "RestoreTime", value);
-			}
-		}
-
 		public bool? AutoPay
 		{
 			get
@@ -251,19 +219,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				token = value;
 				DictionaryUtil.Add(QueryParameters, "Token", value);
-			}
-		}
-
-		public string PrivateIpAddress
-		{
-			get
-			{
-				return privateIpAddress;
-			}
-			set	
-			{
-				privateIpAddress = value;
-				DictionaryUtil.Add(QueryParameters, "PrivateIpAddress", value);
 			}
 		}
 
