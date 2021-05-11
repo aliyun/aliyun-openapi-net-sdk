@@ -160,6 +160,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private long? favoriteCount;
 
+			private bool? isView;
+
 			public string TableName
 			{
 				get
@@ -445,6 +447,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					favoriteCount = value;
+				}
+			}
+
+			public bool? IsView
+			{
+				get
+				{
+					return isView;
+				}
+				set	
+				{
+					isView = value;
 				}
 			}
 		}

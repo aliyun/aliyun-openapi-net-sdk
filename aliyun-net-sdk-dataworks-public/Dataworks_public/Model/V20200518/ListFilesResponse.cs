@@ -211,6 +211,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private long? businessId;
 
+				private bool? autoParse;
+
 				public string ConnectionName
 				{
 					get
@@ -448,6 +450,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						businessId = value;
+					}
+				}
+
+				public bool? AutoParse
+				{
+					get
+					{
+						return autoParse;
+					}
+					set	
+					{
+						autoParse = value;
 					}
 				}
 			}
