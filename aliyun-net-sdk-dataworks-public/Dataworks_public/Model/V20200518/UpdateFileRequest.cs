@@ -45,8 +45,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string dependentNodeIdList;
 
-		private bool? autoParse;
-
 		private string content;
 
 		private string projectIdentifier;
@@ -112,19 +110,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				dependentNodeIdList = value;
 				DictionaryUtil.Add(BodyParameters, "DependentNodeIdList", value);
-			}
-		}
-
-		public bool? AutoParse
-		{
-			get
-			{
-				return autoParse;
-			}
-			set	
-			{
-				autoParse = value;
-				DictionaryUtil.Add(BodyParameters, "AutoParse", value.ToString());
 			}
 		}
 
