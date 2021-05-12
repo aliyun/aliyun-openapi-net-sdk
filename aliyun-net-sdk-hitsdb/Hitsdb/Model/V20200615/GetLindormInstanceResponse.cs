@@ -71,6 +71,10 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private bool? enablePhoenix;
 
+		private string diskUsage;
+
+		private string diskThreshold;
+
 		private List<GetLindormInstance_Engine> engineList;
 
 		public string RequestId
@@ -346,6 +350,30 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			set	
 			{
 				enablePhoenix = value;
+			}
+		}
+
+		public string DiskUsage
+		{
+			get
+			{
+				return diskUsage;
+			}
+			set	
+			{
+				diskUsage = value;
+			}
+		}
+
+		public string DiskThreshold
+		{
+			get
+			{
+				return diskThreshold;
+			}
+			set	
+			{
+				diskThreshold = value;
 			}
 		}
 
