@@ -86,6 +86,11 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
         public override RestartLogstashResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return RestartLogstashResponseUnmarshaller.Unmarshall(unmarshallerContext);

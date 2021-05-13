@@ -33,9 +33,22 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			listInstanceIndicesResponse.HttpResponse = _ctx.HttpResponse;
 			listInstanceIndicesResponse.RequestId = _ctx.StringValue("ListInstanceIndices.RequestId");
 
-			List<string> listInstanceIndicesResponse_result = new List<string>();
+			ListInstanceIndicesResponse.ListInstanceIndices_Headers headers = new ListInstanceIndicesResponse.ListInstanceIndices_Headers();
+			headers.XManagedCount = _ctx.IntegerValue("ListInstanceIndices.Headers.X-Managed-Count");
+			headers.XManagedStorageSize = _ctx.LongValue("ListInstanceIndices.Headers.X-Managed-StorageSize");
+			listInstanceIndicesResponse.Headers = headers;
+
+			List<ListInstanceIndicesResponse.ListInstanceIndices_ResultItem> listInstanceIndicesResponse_result = new List<ListInstanceIndicesResponse.ListInstanceIndices_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListInstanceIndices.Result.Length"); i++) {
-				listInstanceIndicesResponse_result.Add(_ctx.StringValue("ListInstanceIndices.Result["+ i +"]"));
+				ListInstanceIndicesResponse.ListInstanceIndices_ResultItem resultItem = new ListInstanceIndicesResponse.ListInstanceIndices_ResultItem();
+				resultItem.Name = _ctx.StringValue("ListInstanceIndices.Result["+ i +"].name");
+				resultItem.Health = _ctx.StringValue("ListInstanceIndices.Result["+ i +"].health");
+				resultItem.Size = _ctx.LongValue("ListInstanceIndices.Result["+ i +"].size");
+				resultItem.CreateTime = _ctx.StringValue("ListInstanceIndices.Result["+ i +"].createTime");
+				resultItem.IsManaged = _ctx.StringValue("ListInstanceIndices.Result["+ i +"].isManaged");
+				resultItem.ManagedStatus = _ctx.StringValue("ListInstanceIndices.Result["+ i +"].managedStatus");
+
+				listInstanceIndicesResponse_result.Add(resultItem);
 			}
 			listInstanceIndicesResponse.Result = listInstanceIndicesResponse_result;
         

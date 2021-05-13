@@ -43,6 +43,10 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string instanceId;
 
+		private bool? isManaged;
+
+		private string name;
+
 		private string lang;
 
 		public string InstanceId
@@ -55,6 +59,32 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				instanceId = value;
 				DictionaryUtil.Add(PathParameters, "InstanceId", value);
+			}
+		}
+
+		public bool? IsManaged
+		{
+			get
+			{
+				return isManaged;
+			}
+			set	
+			{
+				isManaged = value;
+				DictionaryUtil.Add(QueryParameters, "isManaged", value.ToString());
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "name", value);
 			}
 		}
 

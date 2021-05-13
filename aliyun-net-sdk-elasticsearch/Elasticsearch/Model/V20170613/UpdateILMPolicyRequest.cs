@@ -27,25 +27,25 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class RestartInstanceRequest : RoaAcsRequest<RestartInstanceResponse>
+    public class UpdateILMPolicyRequest : RoaAcsRequest<UpdateILMPolicyResponse>
     {
-        public RestartInstanceRequest()
-            : base("elasticsearch", "2017-06-13", "RestartInstance", "elasticsearch", "openAPI")
+        public UpdateILMPolicyRequest()
+            : base("elasticsearch", "2017-06-13", "UpdateILMPolicy", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/instances/[InstanceId]/actions/restart";
-			Method = MethodType.POST;
+			UriPattern = "/openapi/instances/[InstanceId]/ilm-policies/[PolicyName]";
+			Method = MethodType.PUT;
         }
 
 		private string instanceId;
 
 		private string clientToken;
 
-		private bool? force;
+		private string policyName;
 
 		public string InstanceId
 		{
@@ -69,20 +69,20 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			set	
 			{
 				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "clientToken", value);
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		public bool? Force
+		public string PolicyName
 		{
 			get
 			{
-				return force;
+				return policyName;
 			}
 			set	
 			{
-				force = value;
-				DictionaryUtil.Add(QueryParameters, "force", value.ToString());
+				policyName = value;
+				DictionaryUtil.Add(PathParameters, "PolicyName", value);
 			}
 		}
 
@@ -91,9 +91,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			return false;
 		}
 
-        public override RestartInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateILMPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RestartInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateILMPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

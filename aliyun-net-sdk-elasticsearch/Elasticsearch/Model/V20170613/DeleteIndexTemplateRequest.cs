@@ -27,25 +27,23 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class RestartInstanceRequest : RoaAcsRequest<RestartInstanceResponse>
+    public class DeleteIndexTemplateRequest : RoaAcsRequest<DeleteIndexTemplateResponse>
     {
-        public RestartInstanceRequest()
-            : base("elasticsearch", "2017-06-13", "RestartInstance", "elasticsearch", "openAPI")
+        public DeleteIndexTemplateRequest()
+            : base("elasticsearch", "2017-06-13", "DeleteIndexTemplate", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/instances/[InstanceId]/actions/restart";
-			Method = MethodType.POST;
+			UriPattern = "/openapi/instances/[InstanceId]/index-templates/[IndexTemplate]";
+			Method = MethodType.DELETE;
         }
 
 		private string instanceId;
 
-		private string clientToken;
-
-		private bool? force;
+		private string indexTemplate;
 
 		public string InstanceId
 		{
@@ -60,29 +58,16 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public string ClientToken
+		public string IndexTemplate
 		{
 			get
 			{
-				return clientToken;
+				return indexTemplate;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "clientToken", value);
-			}
-		}
-
-		public bool? Force
-		{
-			get
-			{
-				return force;
-			}
-			set	
-			{
-				force = value;
-				DictionaryUtil.Add(QueryParameters, "force", value.ToString());
+				indexTemplate = value;
+				DictionaryUtil.Add(PathParameters, "IndexTemplate", value);
 			}
 		}
 
@@ -91,9 +76,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			return false;
 		}
 
-        public override RestartInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteIndexTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RestartInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteIndexTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

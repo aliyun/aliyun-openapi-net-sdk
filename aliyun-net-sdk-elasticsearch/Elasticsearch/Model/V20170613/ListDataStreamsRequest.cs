@@ -27,25 +27,25 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class RestartInstanceRequest : RoaAcsRequest<RestartInstanceResponse>
+    public class ListDataStreamsRequest : RoaAcsRequest<ListDataStreamsResponse>
     {
-        public RestartInstanceRequest()
-            : base("elasticsearch", "2017-06-13", "RestartInstance", "elasticsearch", "openAPI")
+        public ListDataStreamsRequest()
+            : base("elasticsearch", "2017-06-13", "ListDataStreams", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/instances/[InstanceId]/actions/restart";
-			Method = MethodType.POST;
+			UriPattern = "/openapi/instances/[InstanceId]/data-streams";
+			Method = MethodType.GET;
         }
 
 		private string instanceId;
 
-		private string clientToken;
+		private bool? isManaged;
 
-		private bool? force;
+		private string name;
 
 		public string InstanceId
 		{
@@ -60,29 +60,29 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public string ClientToken
+		public bool? IsManaged
 		{
 			get
 			{
-				return clientToken;
+				return isManaged;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "clientToken", value);
+				isManaged = value;
+				DictionaryUtil.Add(QueryParameters, "isManaged", value.ToString());
 			}
 		}
 
-		public bool? Force
+		public string Name
 		{
 			get
 			{
-				return force;
+				return name;
 			}
 			set	
 			{
-				force = value;
-				DictionaryUtil.Add(QueryParameters, "force", value.ToString());
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "name", value);
 			}
 		}
 
@@ -91,9 +91,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			return false;
 		}
 
-        public override RestartInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListDataStreamsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RestartInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListDataStreamsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

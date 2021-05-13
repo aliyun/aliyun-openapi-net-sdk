@@ -27,25 +27,23 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class RestartInstanceRequest : RoaAcsRequest<RestartInstanceResponse>
+    public class CreateIndexTemplateRequest : RoaAcsRequest<CreateIndexTemplateResponse>
     {
-        public RestartInstanceRequest()
-            : base("elasticsearch", "2017-06-13", "RestartInstance", "elasticsearch", "openAPI")
+        public CreateIndexTemplateRequest()
+            : base("elasticsearch", "2017-06-13", "CreateIndexTemplate", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/instances/[InstanceId]/actions/restart";
+			UriPattern = "/openapi/instances/[InstanceId]/index-templates";
 			Method = MethodType.POST;
         }
 
 		private string instanceId;
 
 		private string clientToken;
-
-		private bool? force;
 
 		public string InstanceId
 		{
@@ -69,20 +67,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			set	
 			{
 				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "clientToken", value);
-			}
-		}
-
-		public bool? Force
-		{
-			get
-			{
-				return force;
-			}
-			set	
-			{
-				force = value;
-				DictionaryUtil.Add(QueryParameters, "force", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -91,9 +76,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			return false;
 		}
 
-        public override RestartInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateIndexTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RestartInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateIndexTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

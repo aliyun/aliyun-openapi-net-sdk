@@ -27,17 +27,17 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class RestartInstanceRequest : RoaAcsRequest<RestartInstanceResponse>
+    public class CloseManagedIndexRequest : RoaAcsRequest<CloseManagedIndexResponse>
     {
-        public RestartInstanceRequest()
-            : base("elasticsearch", "2017-06-13", "RestartInstance", "elasticsearch", "openAPI")
+        public CloseManagedIndexRequest()
+            : base("elasticsearch", "2017-06-13", "CloseManagedIndex", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/instances/[InstanceId]/actions/restart";
+			UriPattern = "/openapi/instances/[InstanceId]/indices/[Index]/close-managed";
 			Method = MethodType.POST;
         }
 
@@ -45,7 +45,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string clientToken;
 
-		private bool? force;
+		private string index;
 
 		public string InstanceId
 		{
@@ -69,20 +69,20 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			set	
 			{
 				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "clientToken", value);
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		public bool? Force
+		public string Index
 		{
 			get
 			{
-				return force;
+				return index;
 			}
 			set	
 			{
-				force = value;
-				DictionaryUtil.Add(QueryParameters, "force", value.ToString());
+				index = value;
+				DictionaryUtil.Add(PathParameters, "Index", value);
 			}
 		}
 
@@ -91,9 +91,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			return false;
 		}
 
-        public override RestartInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CloseManagedIndexResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RestartInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CloseManagedIndexResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

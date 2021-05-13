@@ -22,14 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-	public class ListInstanceIndicesResponse : AcsResponse
+	public class DescribeIndexTemplateResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<ListInstanceIndices_ResultItem> result;
-
-		private ListInstanceIndices_Headers headers;
+		private DescribeIndexTemplate_Result result;
 
 		public string RequestId
 		{
@@ -43,7 +41,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public List<ListInstanceIndices_ResultItem> Result
+		public DescribeIndexTemplate_Result Result
 		{
 			get
 			{
@@ -55,134 +53,136 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public ListInstanceIndices_Headers Headers
-		{
-			get
-			{
-				return headers;
-			}
-			set	
-			{
-				headers = value;
-			}
-		}
-
-		public class ListInstanceIndices_ResultItem
+		public class DescribeIndexTemplate_Result
 		{
 
-			private string name;
+			private string indexTemplate;
 
-			private string health;
+			private bool? dataStream;
 
-			private long? size;
+			private int? priority;
 
-			private string createTime;
+			private string ilmPolicy;
 
-			private string isManaged;
+			private List<string> indexPatterns;
 
-			private string managedStatus;
+			private DescribeIndexTemplate_Template template;
 
-			public string Name
+			public string IndexTemplate
 			{
 				get
 				{
-					return name;
+					return indexTemplate;
 				}
 				set	
 				{
-					name = value;
+					indexTemplate = value;
 				}
 			}
 
-			public string Health
+			public bool? DataStream
 			{
 				get
 				{
-					return health;
+					return dataStream;
 				}
 				set	
 				{
-					health = value;
+					dataStream = value;
 				}
 			}
 
-			public long? Size
+			public int? Priority
 			{
 				get
 				{
-					return size;
+					return priority;
 				}
 				set	
 				{
-					size = value;
+					priority = value;
 				}
 			}
 
-			public string CreateTime
+			public string IlmPolicy
 			{
 				get
 				{
-					return createTime;
+					return ilmPolicy;
 				}
 				set	
 				{
-					createTime = value;
+					ilmPolicy = value;
 				}
 			}
 
-			public string IsManaged
+			public List<string> IndexPatterns
 			{
 				get
 				{
-					return isManaged;
+					return indexPatterns;
 				}
 				set	
 				{
-					isManaged = value;
+					indexPatterns = value;
 				}
 			}
 
-			public string ManagedStatus
+			public DescribeIndexTemplate_Template Template
 			{
 				get
 				{
-					return managedStatus;
+					return template;
 				}
 				set	
 				{
-					managedStatus = value;
-				}
-			}
-		}
-
-		public class ListInstanceIndices_Headers
-		{
-
-			private int? xManagedCount;
-
-			private long? xManagedStorageSize;
-
-			public int? XManagedCount
-			{
-				get
-				{
-					return xManagedCount;
-				}
-				set	
-				{
-					xManagedCount = value;
+					template = value;
 				}
 			}
 
-			public long? XManagedStorageSize
+			public class DescribeIndexTemplate_Template
 			{
-				get
+
+				private string settings;
+
+				private string mappings;
+
+				private string aliases;
+
+				public string Settings
 				{
-					return xManagedStorageSize;
+					get
+					{
+						return settings;
+					}
+					set	
+					{
+						settings = value;
+					}
 				}
-				set	
+
+				public string Mappings
 				{
-					xManagedStorageSize = value;
+					get
+					{
+						return mappings;
+					}
+					set	
+					{
+						mappings = value;
+					}
+				}
+
+				public string Aliases
+				{
+					get
+					{
+						return aliases;
+					}
+					set	
+					{
+						aliases = value;
+					}
 				}
 			}
 		}
