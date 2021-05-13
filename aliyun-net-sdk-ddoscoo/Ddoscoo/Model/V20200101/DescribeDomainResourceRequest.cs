@@ -28,10 +28,10 @@ using Aliyun.Acs.ddoscoo.Transform.V20200101;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
 {
-    public class CreateWebRuleRequest : RpcAcsRequest<CreateWebRuleResponse>
+    public class DescribeDomainResourceRequest : RpcAcsRequest<DescribeDomainResourceResponse>
     {
-        public CreateWebRuleRequest()
-            : base("ddoscoo", "2020-01-01", "CreateWebRule")
+        public DescribeDomainResourceRequest()
+            : base("ddoscoo", "2020-01-01", "DescribeDomainResource")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,82 +41,39 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private string httpsExt;
+		private int? pageNumber;
 
-		private string rules;
-
-		private string resourceGroupId;
-
-		private int? rsType;
-
-		private string defenseId;
+		private int? pageSize;
 
 		private List<string> instanceIdss = new List<string>(){ };
 
+		private string queryDomainPattern;
+
 		private string domain;
 
-		public string HttpsExt
+		public int? PageNumber
 		{
 			get
 			{
-				return httpsExt;
+				return pageNumber;
 			}
 			set	
 			{
-				httpsExt = value;
-				DictionaryUtil.Add(QueryParameters, "HttpsExt", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string Rules
+		public int? PageSize
 		{
 			get
 			{
-				return rules;
+				return pageSize;
 			}
 			set	
 			{
-				rules = value;
-				DictionaryUtil.Add(QueryParameters, "Rules", value);
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public int? RsType
-		{
-			get
-			{
-				return rsType;
-			}
-			set	
-			{
-				rsType = value;
-				DictionaryUtil.Add(QueryParameters, "RsType", value.ToString());
-			}
-		}
-
-		public string DefenseId
-		{
-			get
-			{
-				return defenseId;
-			}
-			set	
-			{
-				defenseId = value;
-				DictionaryUtil.Add(QueryParameters, "DefenseId", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -134,6 +91,19 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				{
 					DictionaryUtil.Add(QueryParameters,"InstanceIds." + (i + 1) , instanceIdss[i]);
 				}
+			}
+		}
+
+		public string QueryDomainPattern
+		{
+			get
+			{
+				return queryDomainPattern;
+			}
+			set	
+			{
+				queryDomainPattern = value;
+				DictionaryUtil.Add(QueryParameters, "QueryDomainPattern", value);
 			}
 		}
 
@@ -155,9 +125,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			return false;
 		}
 
-        public override CreateWebRuleResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDomainResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateWebRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDomainResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -28,10 +28,10 @@ using Aliyun.Acs.ddoscoo.Transform.V20200101;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
 {
-    public class CreateWebRuleRequest : RpcAcsRequest<CreateWebRuleResponse>
+    public class CreateDomainResourceRequest : RpcAcsRequest<CreateDomainResourceResponse>
     {
-        public CreateWebRuleRequest()
-            : base("ddoscoo", "2020-01-01", "CreateWebRule")
+        public CreateDomainResourceRequest()
+            : base("ddoscoo", "2020-01-01", "CreateDomainResource")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,15 +43,13 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 		private string httpsExt;
 
-		private string rules;
-
-		private string resourceGroupId;
-
 		private int? rsType;
 
-		private string defenseId;
+		private List<string> realServerss = new List<string>(){ };
 
 		private List<string> instanceIdss = new List<string>(){ };
+
+		private List<ProxyTypes> proxyTypess = new List<ProxyTypes>(){ };
 
 		private string domain;
 
@@ -68,32 +66,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			}
 		}
 
-		public string Rules
-		{
-			get
-			{
-				return rules;
-			}
-			set	
-			{
-				rules = value;
-				DictionaryUtil.Add(QueryParameters, "Rules", value);
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
 		public int? RsType
 		{
 			get
@@ -107,16 +79,20 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			}
 		}
 
-		public string DefenseId
+		public List<string> RealServerss
 		{
 			get
 			{
-				return defenseId;
+				return realServerss;
 			}
-			set	
+
+			set
 			{
-				defenseId = value;
-				DictionaryUtil.Add(QueryParameters, "DefenseId", value);
+				realServerss = value;
+				for (int i = 0; i < realServerss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"RealServers." + (i + 1) , realServerss[i]);
+				}
 			}
 		}
 
@@ -137,6 +113,27 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			}
 		}
 
+		public List<ProxyTypes> ProxyTypess
+		{
+			get
+			{
+				return proxyTypess;
+			}
+
+			set
+			{
+				proxyTypess = value;
+				for (int i = 0; i < proxyTypess.Count; i++)
+				{
+					for (int j = 0; j < proxyTypess[i].ProxyPortss.Count; j++)
+					{
+						DictionaryUtil.Add(QueryParameters,"ProxyTypes." + (i + 1) + ".ProxyPorts." +(j + 1), proxyTypess[i].ProxyPortss[j]);
+					}
+					DictionaryUtil.Add(QueryParameters,"ProxyTypes." + (i + 1) + ".ProxyType", proxyTypess[i].ProxyType);
+				}
+			}
+		}
+
 		public string Domain
 		{
 			get
@@ -150,14 +147,46 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			}
 		}
 
+		public class ProxyTypes
+		{
+
+			private List<int?> proxyPortss = new List<int?>(){ };
+
+			private string proxyType;
+
+			public List<int?> ProxyPortss
+			{
+				get
+				{
+					return proxyPortss;
+				}
+				set	
+				{
+					proxyPortss = value;
+				}
+			}
+
+			public string ProxyType
+			{
+				get
+				{
+					return proxyType;
+				}
+				set	
+				{
+					proxyType = value;
+				}
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override CreateWebRuleResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateDomainResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateWebRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDomainResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

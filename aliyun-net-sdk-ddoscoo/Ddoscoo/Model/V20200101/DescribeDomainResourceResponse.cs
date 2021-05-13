@@ -22,14 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
 {
-	public class DescribeWebRulesResponse : AcsResponse
+	public class DescribeDomainResourceResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private long? totalCount;
 
-		private List<DescribeWebRules_WebRule> webRules;
+		private List<DescribeDomainResource_WebRule> webRules;
 
 		public string RequestId
 		{
@@ -55,7 +55,7 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			}
 		}
 
-		public List<DescribeWebRules_WebRule> WebRules
+		public List<DescribeDomainResource_WebRule> WebRules
 		{
 			get
 			{
@@ -67,10 +67,12 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			}
 		}
 
-		public class DescribeWebRules_WebRule
+		public class DescribeDomainResource_WebRule
 		{
 
 			private string domain;
+
+			private int? rsType;
 
 			private bool? ccEnabled;
 
@@ -102,15 +104,19 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 			private string certName;
 
-			private List<DescribeWebRules_ProxyConfig> proxyTypes;
+			private string httpsExt;
 
-			private List<DescribeWebRules_RealServer> realServers;
+			private List<DescribeDomainResource_ProxyConfig> proxyTypes;
+
+			private List<string> realServers;
 
 			private List<string> whiteList;
 
 			private List<string> blackList;
 
 			private List<string> customCiphers;
+
+			private List<string> instanceIds;
 
 			public string Domain
 			{
@@ -121,6 +127,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					domain = value;
+				}
+			}
+
+			public int? RsType
+			{
+				get
+				{
+					return rsType;
+				}
+				set	
+				{
+					rsType = value;
 				}
 			}
 
@@ -304,7 +322,19 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public List<DescribeWebRules_ProxyConfig> ProxyTypes
+			public string HttpsExt
+			{
+				get
+				{
+					return httpsExt;
+				}
+				set	
+				{
+					httpsExt = value;
+				}
+			}
+
+			public List<DescribeDomainResource_ProxyConfig> ProxyTypes
 			{
 				get
 				{
@@ -316,7 +346,7 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public List<DescribeWebRules_RealServer> RealServers
+			public List<string> RealServers
 			{
 				get
 				{
@@ -364,7 +394,19 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public class DescribeWebRules_ProxyConfig
+			public List<string> InstanceIds
+			{
+				get
+				{
+					return instanceIds;
+				}
+				set	
+				{
+					instanceIds = value;
+				}
+			}
+
+			public class DescribeDomainResource_ProxyConfig
 			{
 
 				private string proxyType;
@@ -392,38 +434,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					set	
 					{
 						proxyPorts = value;
-					}
-				}
-			}
-
-			public class DescribeWebRules_RealServer
-			{
-
-				private int? rsType;
-
-				private string realServer;
-
-				public int? RsType
-				{
-					get
-					{
-						return rsType;
-					}
-					set	
-					{
-						rsType = value;
-					}
-				}
-
-				public string RealServer
-				{
-					get
-					{
-						return realServer;
-					}
-					set	
-					{
-						realServer = value;
 					}
 				}
 			}

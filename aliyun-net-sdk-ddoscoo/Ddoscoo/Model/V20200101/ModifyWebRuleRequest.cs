@@ -41,6 +41,8 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			Method = MethodType.POST;
         }
 
+		private string httpsExt;
+
 		private string resourceGroupId;
 
 		private int? rsType;
@@ -52,6 +54,19 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		private List<string> instanceIdss = new List<string>(){ };
 
 		private string domain;
+
+		public string HttpsExt
+		{
+			get
+			{
+				return httpsExt;
+			}
+			set	
+			{
+				httpsExt = value;
+				DictionaryUtil.Add(QueryParameters, "HttpsExt", value);
+			}
+		}
 
 		public string ResourceGroupId
 		{

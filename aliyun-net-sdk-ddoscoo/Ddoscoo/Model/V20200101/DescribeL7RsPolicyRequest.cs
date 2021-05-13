@@ -28,10 +28,10 @@ using Aliyun.Acs.ddoscoo.Transform.V20200101;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
 {
-    public class CreateWebRuleRequest : RpcAcsRequest<CreateWebRuleResponse>
+    public class DescribeL7RsPolicyRequest : RpcAcsRequest<DescribeL7RsPolicyResponse>
     {
-        public CreateWebRuleRequest()
-            : base("ddoscoo", "2020-01-01", "CreateWebRule")
+        public DescribeL7RsPolicyRequest()
+            : base("ddoscoo", "2020-01-01", "DescribeL7RsPolicy")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,45 +41,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private string httpsExt;
-
-		private string rules;
-
 		private string resourceGroupId;
 
-		private int? rsType;
-
-		private string defenseId;
-
-		private List<string> instanceIdss = new List<string>(){ };
+		private List<string> realServerss = new List<string>(){ };
 
 		private string domain;
-
-		public string HttpsExt
-		{
-			get
-			{
-				return httpsExt;
-			}
-			set	
-			{
-				httpsExt = value;
-				DictionaryUtil.Add(QueryParameters, "HttpsExt", value);
-			}
-		}
-
-		public string Rules
-		{
-			get
-			{
-				return rules;
-			}
-			set	
-			{
-				rules = value;
-				DictionaryUtil.Add(QueryParameters, "Rules", value);
-			}
-		}
 
 		public string ResourceGroupId
 		{
@@ -94,45 +60,19 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			}
 		}
 
-		public int? RsType
+		public List<string> RealServerss
 		{
 			get
 			{
-				return rsType;
-			}
-			set	
-			{
-				rsType = value;
-				DictionaryUtil.Add(QueryParameters, "RsType", value.ToString());
-			}
-		}
-
-		public string DefenseId
-		{
-			get
-			{
-				return defenseId;
-			}
-			set	
-			{
-				defenseId = value;
-				DictionaryUtil.Add(QueryParameters, "DefenseId", value);
-			}
-		}
-
-		public List<string> InstanceIdss
-		{
-			get
-			{
-				return instanceIdss;
+				return realServerss;
 			}
 
 			set
 			{
-				instanceIdss = value;
-				for (int i = 0; i < instanceIdss.Count; i++)
+				realServerss = value;
+				for (int i = 0; i < realServerss.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"InstanceIds." + (i + 1) , instanceIdss[i]);
+					DictionaryUtil.Add(QueryParameters,"RealServers." + (i + 1) , realServerss[i]);
 				}
 			}
 		}
@@ -155,9 +95,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			return false;
 		}
 
-        public override CreateWebRuleResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeL7RsPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateWebRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeL7RsPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -44,6 +44,13 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 				webRule.SslProtocols = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].SslProtocols");
 				webRule.SslCiphers = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].SslCiphers");
 				webRule.Http2Enable = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].Http2Enable");
+				webRule.Http2HttpsEnable = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].Http2HttpsEnable");
+				webRule.Https2HttpEnable = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].Https2HttpEnable");
+				webRule.PolicyMode = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].PolicyMode");
+				webRule.ProxyEnabled = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].ProxyEnabled");
+				webRule.Ssl13Enabled = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].Ssl13Enabled");
+				webRule.PunishStatus = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].PunishStatus");
+				webRule.PunishReason = _ctx.IntegerValue("DescribeWebRules.WebRules["+ i +"].PunishReason");
 				webRule.Cname = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].Cname");
 				webRule.CertName = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].CertName");
 
@@ -58,6 +65,12 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 					webRule_blackList.Add(_ctx.StringValue("DescribeWebRules.WebRules["+ i +"].BlackList["+ j +"]"));
 				}
 				webRule.BlackList = webRule_blackList;
+
+				List<string> webRule_customCiphers = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeWebRules.WebRules["+ i +"].CustomCiphers.Length"); j++) {
+					webRule_customCiphers.Add(_ctx.StringValue("DescribeWebRules.WebRules["+ i +"].CustomCiphers["+ j +"]"));
+				}
+				webRule.CustomCiphers = webRule_customCiphers;
 
 				List<DescribeWebRulesResponse.DescribeWebRules_WebRule.DescribeWebRules_ProxyConfig> webRule_proxyTypes = new List<DescribeWebRulesResponse.DescribeWebRules_WebRule.DescribeWebRules_ProxyConfig>();
 				for (int j = 0; j < _ctx.Length("DescribeWebRules.WebRules["+ i +"].ProxyTypes.Length"); j++) {
