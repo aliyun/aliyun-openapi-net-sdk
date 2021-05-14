@@ -52,6 +52,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string orderTimeLength;
 
+		private int? autoRenewPeriod;
+
 		private bool? autoPay;
 
 		private string resourceOwnerAccount;
@@ -63,6 +65,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private long? ownerId;
 
 		private string instanceId;
+
+		private bool? autoRenew;
 
 		public long? ResourceOwnerId
 		{
@@ -142,6 +146,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public int? AutoRenewPeriod
+		{
+			get
+			{
+				return autoRenewPeriod;
+			}
+			set	
+			{
+				autoRenewPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenewPeriod", value.ToString());
+			}
+		}
+
 		public bool? AutoPay
 		{
 			get
@@ -217,6 +234,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public bool? AutoRenew
+		{
+			get
+			{
+				return autoRenew;
+			}
+			set	
+			{
+				autoRenew = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenew", value.ToString());
 			}
 		}
 
