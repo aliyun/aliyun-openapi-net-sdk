@@ -42,6 +42,8 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 
 		private string orgName;
 
+		private long? mask;
+
 		private string dataFormat;
 
 		private List<URLList> uRLLists = new List<URLList>(){ };
@@ -58,6 +60,19 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			{
 				orgName = value;
 				DictionaryUtil.Add(BodyParameters, "OrgName", value);
+			}
+		}
+
+		public long? Mask
+		{
+			get
+			{
+				return mask;
+			}
+			set	
+			{
+				mask = value;
+				DictionaryUtil.Add(BodyParameters, "Mask", value.ToString());
 			}
 		}
 
