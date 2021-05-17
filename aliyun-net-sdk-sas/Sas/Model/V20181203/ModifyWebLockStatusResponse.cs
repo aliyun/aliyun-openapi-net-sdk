@@ -16,26 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Sas.Model.V20181203;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Sas.Transform.V20181203
+namespace Aliyun.Acs.Sas.Model.V20181203
 {
-    public class DescribeInstallCaptchaResponseUnmarshaller
-    {
-        public static DescribeInstallCaptchaResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			DescribeInstallCaptchaResponse describeInstallCaptchaResponse = new DescribeInstallCaptchaResponse();
+	public class ModifyWebLockStatusResponse : AcsResponse
+	{
 
-			describeInstallCaptchaResponse.HttpResponse = _ctx.HttpResponse;
-			describeInstallCaptchaResponse.RequestId = _ctx.StringValue("DescribeInstallCaptcha.RequestId");
-			describeInstallCaptchaResponse.CaptchaCode = _ctx.StringValue("DescribeInstallCaptcha.CaptchaCode");
-			describeInstallCaptchaResponse.Deadline = _ctx.StringValue("DescribeInstallCaptcha.Deadline");
-        
-			return describeInstallCaptchaResponse;
-        }
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

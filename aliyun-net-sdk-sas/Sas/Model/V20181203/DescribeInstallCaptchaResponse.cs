@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string captchaCode;
 
-		private int? deadline;
+		private string deadline;
 
 		public string RequestId
 		{
@@ -55,7 +55,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public int? Deadline
+		public string Deadline
 		{
 			get
 			{

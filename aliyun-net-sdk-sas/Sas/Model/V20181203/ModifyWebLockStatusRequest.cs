@@ -27,10 +27,10 @@ using Aliyun.Acs.Sas.Transform.V20181203;
 
 namespace Aliyun.Acs.Sas.Model.V20181203
 {
-    public class ModifyOperateVulRequest : RpcAcsRequest<ModifyOperateVulResponse>
+    public class ModifyWebLockStatusRequest : RpcAcsRequest<ModifyWebLockStatusResponse>
     {
-        public ModifyOperateVulRequest()
-            : base("Sas", "2018-12-03", "ModifyOperateVul", "sas", "openAPI")
+        public ModifyWebLockStatusRequest()
+            : base("Sas", "2018-12-03", "ModifyWebLockStatus", "sas", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,63 +40,63 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			Method = MethodType.POST;
         }
 
-		private string reason;
+		private string uuid;
 
-		private string type;
+		private string sourceIp;
 
-		private string info;
+		private string lang;
 
-		private string operateType;
+		private string status;
 
-		public string Reason
+		public string Uuid
 		{
 			get
 			{
-				return reason;
+				return uuid;
 			}
 			set	
 			{
-				reason = value;
-				DictionaryUtil.Add(QueryParameters, "Reason", value);
+				uuid = value;
+				DictionaryUtil.Add(QueryParameters, "Uuid", value);
 			}
 		}
 
-		public string Type
+		public string SourceIp
 		{
 			get
 			{
-				return type;
+				return sourceIp;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 
-		public string Info
+		public string Lang
 		{
 			get
 			{
-				return info;
+				return lang;
 			}
 			set	
 			{
-				info = value;
-				DictionaryUtil.Add(QueryParameters, "Info", value);
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
-		public string OperateType
+		public string Status
 		{
 			get
 			{
-				return operateType;
+				return status;
 			}
 			set	
 			{
-				operateType = value;
-				DictionaryUtil.Add(QueryParameters, "OperateType", value);
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 
@@ -105,9 +105,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			return false;
 		}
 
-        public override ModifyOperateVulResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyWebLockStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyOperateVulResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyWebLockStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

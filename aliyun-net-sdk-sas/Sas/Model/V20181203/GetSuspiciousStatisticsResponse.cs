@@ -31,6 +31,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private int? temindCount;
 
+		private int? remindCount;
+
 		private int? suspiciousCount;
 
 		private int? seriousCount;
@@ -68,6 +70,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				temindCount = value;
+			}
+		}
+
+		public int? RemindCount
+		{
+			get
+			{
+				return remindCount;
+			}
+			set	
+			{
+				remindCount = value;
 			}
 		}
 

@@ -24,18 +24,16 @@ using Aliyun.Acs.Sas.Model.V20181203;
 
 namespace Aliyun.Acs.Sas.Transform.V20181203
 {
-    public class DescribeInstallCaptchaResponseUnmarshaller
+    public class ModifyWebLockStatusResponseUnmarshaller
     {
-        public static DescribeInstallCaptchaResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ModifyWebLockStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DescribeInstallCaptchaResponse describeInstallCaptchaResponse = new DescribeInstallCaptchaResponse();
+			ModifyWebLockStatusResponse modifyWebLockStatusResponse = new ModifyWebLockStatusResponse();
 
-			describeInstallCaptchaResponse.HttpResponse = _ctx.HttpResponse;
-			describeInstallCaptchaResponse.RequestId = _ctx.StringValue("DescribeInstallCaptcha.RequestId");
-			describeInstallCaptchaResponse.CaptchaCode = _ctx.StringValue("DescribeInstallCaptcha.CaptchaCode");
-			describeInstallCaptchaResponse.Deadline = _ctx.StringValue("DescribeInstallCaptcha.Deadline");
+			modifyWebLockStatusResponse.HttpResponse = _ctx.HttpResponse;
+			modifyWebLockStatusResponse.RequestId = _ctx.StringValue("ModifyWebLockStatus.RequestId");
         
-			return describeInstallCaptchaResponse;
+			return modifyWebLockStatusResponse;
         }
     }
 }
