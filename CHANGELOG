@@ -1,3 +1,6 @@
+2021-05-17 Version: 1.0.28
+- Export new API for predictive dialer.
+
 2021-05-17 Version: 2.1.5
 - Add DescribeDcdnRefreshTaskById.
 
