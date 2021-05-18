@@ -42,19 +42,23 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string role;
 
+		private int? pageNumber;
+
+		private string hostName;
+
+		private int? pageSize;
+
+		private string hostNamePrefix;
+
 		private string clusterId;
 
-		private int? pageNumber;
+		private string hostNameSuffix;
 
 		private string filter;
 
 		private string privateIpAddress;
 
 		private string sequence;
-
-		private string hostName;
-
-		private int? pageSize;
 
 		private string sortBy;
 
@@ -71,6 +75,58 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string HostName
+		{
+			get
+			{
+				return hostName;
+			}
+			set	
+			{
+				hostName = value;
+				DictionaryUtil.Add(QueryParameters, "HostName", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string HostNamePrefix
+		{
+			get
+			{
+				return hostNamePrefix;
+			}
+			set	
+			{
+				hostNamePrefix = value;
+				DictionaryUtil.Add(QueryParameters, "HostNamePrefix", value);
+			}
+		}
+
 		public string ClusterId
 		{
 			get
@@ -84,16 +140,16 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public int? PageNumber
+		public string HostNameSuffix
 		{
 			get
 			{
-				return pageNumber;
+				return hostNameSuffix;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				hostNameSuffix = value;
+				DictionaryUtil.Add(QueryParameters, "HostNameSuffix", value);
 			}
 		}
 
@@ -133,32 +189,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				sequence = value;
 				DictionaryUtil.Add(QueryParameters, "Sequence", value);
-			}
-		}
-
-		public string HostName
-		{
-			get
-			{
-				return hostName;
-			}
-			set	
-			{
-				hostName = value;
-				DictionaryUtil.Add(QueryParameters, "HostName", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

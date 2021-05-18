@@ -28,10 +28,10 @@ using Aliyun.Acs.EHPC.Transform.V20180412;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class ListCustomImagesRequest : RpcAcsRequest<ListCustomImagesResponse>
+    public class EcdDeleteDesktopsRequest : RpcAcsRequest<EcdDeleteDesktopsResponse>
     {
-        public ListCustomImagesRequest()
-            : base("EHPC", "2018-04-12", "ListCustomImages")
+        public EcdDeleteDesktopsRequest()
+            : base("EHPC", "2018-04-12", "EcdDeleteDesktops")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,69 +40,28 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
             }
         }
 
-		private string clusterId;
+		private List<string> desktopIds = new List<string>(){ };
 
-		private string imageOwnerAlias;
-
-		private string baseOsTag;
-
-		private string instanceType;
-
-		public string ClusterId
+		public List<string> DesktopIds
 		{
 			get
 			{
-				return clusterId;
+				return desktopIds;
 			}
-			set	
+
+			set
 			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+				desktopIds = value;
+				for (int i = 0; i < desktopIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"DesktopId." + (i + 1) , desktopIds[i]);
+				}
 			}
 		}
 
-		public string ImageOwnerAlias
-		{
-			get
-			{
-				return imageOwnerAlias;
-			}
-			set	
-			{
-				imageOwnerAlias = value;
-				DictionaryUtil.Add(QueryParameters, "ImageOwnerAlias", value);
-			}
-		}
-
-		public string BaseOsTag
-		{
-			get
-			{
-				return baseOsTag;
-			}
-			set	
-			{
-				baseOsTag = value;
-				DictionaryUtil.Add(QueryParameters, "BaseOsTag", value);
-			}
-		}
-
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
-			}
-		}
-
-        public override ListCustomImagesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override EcdDeleteDesktopsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListCustomImagesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return EcdDeleteDesktopsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -50,6 +50,13 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				jobTemplates.ReRunable = _ctx.BooleanValue("ListJobTemplates.Templates["+ i +"].ReRunable");
 				jobTemplates.ArrayRequest = _ctx.StringValue("ListJobTemplates.Templates["+ i +"].ArrayRequest");
 				jobTemplates.Variables = _ctx.StringValue("ListJobTemplates.Templates["+ i +"].Variables");
+				jobTemplates.Queue = _ctx.StringValue("ListJobTemplates.Templates["+ i +"].Queue");
+				jobTemplates.ClockTime = _ctx.StringValue("ListJobTemplates.Templates["+ i +"].ClockTime");
+				jobTemplates.Node = _ctx.IntegerValue("ListJobTemplates.Templates["+ i +"].Node");
+				jobTemplates.Task = _ctx.IntegerValue("ListJobTemplates.Templates["+ i +"].Task");
+				jobTemplates.Thread = _ctx.IntegerValue("ListJobTemplates.Templates["+ i +"].Thread");
+				jobTemplates.Mem = _ctx.StringValue("ListJobTemplates.Templates["+ i +"].Mem");
+				jobTemplates.Gpu = _ctx.IntegerValue("ListJobTemplates.Templates["+ i +"].Gpu");
 
 				listJobTemplatesResponse_templates.Add(jobTemplates);
 			}

@@ -62,7 +62,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string resourceGroupId;
 
-			private string computeInstanceType;
+			private string hostNamePrefix;
+
+			private string hostNameSuffix;
+
+			private string spotStrategy;
+
+			private string imageId;
+
+			private bool? enableAutoGrow;
+
+			private List<ListQueues_Instance> spotInstanceTypes;
+
+			private List<string> computeInstanceType;
 
 			public string QueueName
 			{
@@ -100,7 +112,79 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				}
 			}
 
-			public string ComputeInstanceType
+			public string HostNamePrefix
+			{
+				get
+				{
+					return hostNamePrefix;
+				}
+				set	
+				{
+					hostNamePrefix = value;
+				}
+			}
+
+			public string HostNameSuffix
+			{
+				get
+				{
+					return hostNameSuffix;
+				}
+				set	
+				{
+					hostNameSuffix = value;
+				}
+			}
+
+			public string SpotStrategy
+			{
+				get
+				{
+					return spotStrategy;
+				}
+				set	
+				{
+					spotStrategy = value;
+				}
+			}
+
+			public string ImageId
+			{
+				get
+				{
+					return imageId;
+				}
+				set	
+				{
+					imageId = value;
+				}
+			}
+
+			public bool? EnableAutoGrow
+			{
+				get
+				{
+					return enableAutoGrow;
+				}
+				set	
+				{
+					enableAutoGrow = value;
+				}
+			}
+
+			public List<ListQueues_Instance> SpotInstanceTypes
+			{
+				get
+				{
+					return spotInstanceTypes;
+				}
+				set	
+				{
+					spotInstanceTypes = value;
+				}
+			}
+
+			public List<string> ComputeInstanceType
 			{
 				get
 				{
@@ -109,6 +193,38 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					computeInstanceType = value;
+				}
+			}
+
+			public class ListQueues_Instance
+			{
+
+				private string instanceType;
+
+				private float? spotPriceLimit;
+
+				public string InstanceType
+				{
+					get
+					{
+						return instanceType;
+					}
+					set	
+					{
+						instanceType = value;
+					}
+				}
+
+				public float? SpotPriceLimit
+				{
+					get
+					{
+						return spotPriceLimit;
+					}
+					set	
+					{
+						spotPriceLimit = value;
+					}
 				}
 			}
 		}

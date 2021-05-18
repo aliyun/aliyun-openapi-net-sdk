@@ -152,6 +152,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string clientVersion;
 
+			private bool? isComputeEss;
+
 			private ListClusters_Managers managers;
 
 			private ListClusters_Computes computes;
@@ -481,6 +483,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					clientVersion = value;
+				}
+			}
+
+			public bool? IsComputeEss
+			{
+				get
+				{
+					return isComputeEss;
+				}
+				set	
+				{
+					isComputeEss = value;
 				}
 			}
 

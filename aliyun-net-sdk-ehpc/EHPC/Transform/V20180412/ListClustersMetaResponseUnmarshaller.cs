@@ -50,6 +50,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				clusterInfoSimple.SchedulerType = _ctx.StringValue("ListClustersMeta.Clusters["+ i +"].SchedulerType");
 				clusterInfoSimple.VpcId = _ctx.StringValue("ListClustersMeta.Clusters["+ i +"].VpcId");
 				clusterInfoSimple.DeployMode = _ctx.StringValue("ListClustersMeta.Clusters["+ i +"].DeployMode");
+				clusterInfoSimple.IsComputeEss = _ctx.BooleanValue("ListClustersMeta.Clusters["+ i +"].IsComputeEss");
 
 				listClustersMetaResponse_clusters.Add(clusterInfoSimple);
 			}

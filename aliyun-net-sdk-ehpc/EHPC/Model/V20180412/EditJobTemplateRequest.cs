@@ -42,11 +42,15 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string stderrRedirectPath;
 
+		private string clockTime;
+
 		private string commandLine;
 
 		private string arrayRequest;
 
 		private string packagePath;
+
+		private string mem;
 
 		private string stdoutRedirectPath;
 
@@ -56,11 +60,21 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private bool? reRunable;
 
+		private int? thread;
+
 		private string templateId;
 
 		private int? priority;
 
+		private int? gpu;
+
+		private int? node;
+
+		private int? task;
+
 		private string name;
+
+		private string queue;
 
 		public string StderrRedirectPath
 		{
@@ -72,6 +86,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				stderrRedirectPath = value;
 				DictionaryUtil.Add(QueryParameters, "StderrRedirectPath", value);
+			}
+		}
+
+		public string ClockTime
+		{
+			get
+			{
+				return clockTime;
+			}
+			set	
+			{
+				clockTime = value;
+				DictionaryUtil.Add(QueryParameters, "ClockTime", value);
 			}
 		}
 
@@ -111,6 +138,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				packagePath = value;
 				DictionaryUtil.Add(QueryParameters, "PackagePath", value);
+			}
+		}
+
+		public string Mem
+		{
+			get
+			{
+				return mem;
+			}
+			set	
+			{
+				mem = value;
+				DictionaryUtil.Add(QueryParameters, "Mem", value);
 			}
 		}
 
@@ -166,6 +206,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public int? Thread
+		{
+			get
+			{
+				return thread;
+			}
+			set	
+			{
+				thread = value;
+				DictionaryUtil.Add(QueryParameters, "Thread", value.ToString());
+			}
+		}
+
 		public string TemplateId
 		{
 			get
@@ -192,6 +245,45 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public int? Gpu
+		{
+			get
+			{
+				return gpu;
+			}
+			set	
+			{
+				gpu = value;
+				DictionaryUtil.Add(QueryParameters, "Gpu", value.ToString());
+			}
+		}
+
+		public int? Node
+		{
+			get
+			{
+				return node;
+			}
+			set	
+			{
+				node = value;
+				DictionaryUtil.Add(QueryParameters, "Node", value.ToString());
+			}
+		}
+
+		public int? Task
+		{
+			get
+			{
+				return task;
+			}
+			set	
+			{
+				task = value;
+				DictionaryUtil.Add(QueryParameters, "Task", value.ToString());
+			}
+		}
+
 		public string Name
 		{
 			get
@@ -202,6 +294,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string Queue
+		{
+			get
+			{
+				return queue;
+			}
+			set	
+			{
+				queue = value;
+				DictionaryUtil.Add(QueryParameters, "Queue", value);
 			}
 		}
 

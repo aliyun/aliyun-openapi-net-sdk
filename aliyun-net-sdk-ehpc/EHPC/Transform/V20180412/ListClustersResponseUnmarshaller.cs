@@ -66,6 +66,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				clusterInfoSimple.ComputeSpotStrategy = _ctx.StringValue("ListClusters.Clusters["+ i +"].ComputeSpotStrategy");
 				clusterInfoSimple.ComputeSpotPriceLimit = _ctx.FloatValue("ListClusters.Clusters["+ i +"].ComputeSpotPriceLimit");
 				clusterInfoSimple.ClientVersion = _ctx.StringValue("ListClusters.Clusters["+ i +"].ClientVersion");
+				clusterInfoSimple.IsComputeEss = _ctx.BooleanValue("ListClusters.Clusters["+ i +"].IsComputeEss");
 
 				ListClustersResponse.ListClusters_ClusterInfoSimple.ListClusters_Managers managers = new ListClustersResponse.ListClusters_ClusterInfoSimple.ListClusters_Managers();
 				managers.Total = _ctx.IntegerValue("ListClusters.Clusters["+ i +"].Managers.Total");

@@ -120,6 +120,20 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string variables;
 
+			private string queue;
+
+			private string clockTime;
+
+			private int? node;
+
+			private int? task;
+
+			private int? thread;
+
+			private string mem;
+
+			private int? gpu;
+
 			public string Id
 			{
 				get
@@ -249,6 +263,90 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					variables = value;
+				}
+			}
+
+			public string Queue
+			{
+				get
+				{
+					return queue;
+				}
+				set	
+				{
+					queue = value;
+				}
+			}
+
+			public string ClockTime
+			{
+				get
+				{
+					return clockTime;
+				}
+				set	
+				{
+					clockTime = value;
+				}
+			}
+
+			public int? Node
+			{
+				get
+				{
+					return node;
+				}
+				set	
+				{
+					node = value;
+				}
+			}
+
+			public int? Task
+			{
+				get
+				{
+					return task;
+				}
+				set	
+				{
+					task = value;
+				}
+			}
+
+			public int? Thread
+			{
+				get
+				{
+					return thread;
+				}
+				set	
+				{
+					thread = value;
+				}
+			}
+
+			public string Mem
+			{
+				get
+				{
+					return mem;
+				}
+				set	
+				{
+					mem = value;
+				}
+			}
+
+			public int? Gpu
+			{
+				get
+				{
+					return gpu;
+				}
+				set	
+				{
+					gpu = value;
 				}
 			}
 		}

@@ -42,6 +42,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string keyPairName;
 
+		private bool? multiOs;
+
 		private string securityGroupName;
 
 		private string onPremiseVolumeRemotePath;
@@ -120,6 +122,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				keyPairName = value;
 				DictionaryUtil.Add(QueryParameters, "KeyPairName", value);
+			}
+		}
+
+		public bool? MultiOs
+		{
+			get
+			{
+				return multiOs;
+			}
+			set	
+			{
+				multiOs = value;
+				DictionaryUtil.Add(QueryParameters, "MultiOs", value.ToString());
 			}
 		}
 

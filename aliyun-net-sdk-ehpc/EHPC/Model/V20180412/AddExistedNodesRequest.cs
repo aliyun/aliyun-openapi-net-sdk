@@ -28,10 +28,10 @@ using Aliyun.Acs.EHPC.Transform.V20180412;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class ListCustomImagesRequest : RpcAcsRequest<ListCustomImagesResponse>
+    public class AddExistedNodesRequest : RpcAcsRequest<AddExistedNodesResponse>
     {
-        public ListCustomImagesRequest()
-            : base("EHPC", "2018-04-12", "ListCustomImages")
+        public AddExistedNodesRequest()
+            : base("EHPC", "2018-04-12", "AddExistedNodes")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,13 +40,60 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
             }
         }
 
+		private string imageId;
+
+		private List<Instance> instances = new List<Instance>(){ };
+
+		private string clientToken;
+
 		private string clusterId;
+
+		private string jobQueue;
 
 		private string imageOwnerAlias;
 
-		private string baseOsTag;
+		public string ImageId
+		{
+			get
+			{
+				return imageId;
+			}
+			set	
+			{
+				imageId = value;
+				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
 
-		private string instanceType;
+		public List<Instance> Instances
+		{
+			get
+			{
+				return instances;
+			}
+
+			set
+			{
+				instances = value;
+				for (int i = 0; i < instances.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Instance." + (i + 1) + ".Id", instances[i].Id);
+				}
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
 
 		public string ClusterId
 		{
@@ -58,6 +105,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				clusterId = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public string JobQueue
+		{
+			get
+			{
+				return jobQueue;
+			}
+			set	
+			{
+				jobQueue = value;
+				DictionaryUtil.Add(QueryParameters, "JobQueue", value);
 			}
 		}
 
@@ -74,35 +134,27 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string BaseOsTag
+		public class Instance
 		{
-			get
+
+			private string id;
+
+			public string Id
 			{
-				return baseOsTag;
-			}
-			set	
-			{
-				baseOsTag = value;
-				DictionaryUtil.Add(QueryParameters, "BaseOsTag", value);
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
 			}
 		}
 
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
-			}
-		}
-
-        public override ListCustomImagesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override AddExistedNodesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListCustomImagesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AddExistedNodesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

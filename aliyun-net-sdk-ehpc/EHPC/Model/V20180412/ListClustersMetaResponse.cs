@@ -120,6 +120,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string deployMode;
 
+			private bool? isComputeEss;
+
 			public string Id
 			{
 				get
@@ -249,6 +251,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					deployMode = value;
+				}
+			}
+
+			public bool? IsComputeEss
+			{
+				get
+				{
+					return isComputeEss;
+				}
+				set	
+				{
+					isComputeEss = value;
 				}
 			}
 		}

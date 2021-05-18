@@ -39,7 +39,27 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				queueInfo.QueueName = _ctx.StringValue("ListQueues.Queues["+ i +"].QueueName");
 				queueInfo.Type = _ctx.StringValue("ListQueues.Queues["+ i +"].Type");
 				queueInfo.ResourceGroupId = _ctx.StringValue("ListQueues.Queues["+ i +"].ResourceGroupId");
-				queueInfo.ComputeInstanceType = _ctx.StringValue("ListQueues.Queues["+ i +"].ComputeInstanceType");
+				queueInfo.HostNamePrefix = _ctx.StringValue("ListQueues.Queues["+ i +"].HostNamePrefix");
+				queueInfo.HostNameSuffix = _ctx.StringValue("ListQueues.Queues["+ i +"].HostNameSuffix");
+				queueInfo.SpotStrategy = _ctx.StringValue("ListQueues.Queues["+ i +"].SpotStrategy");
+				queueInfo.ImageId = _ctx.StringValue("ListQueues.Queues["+ i +"].ImageId");
+				queueInfo.EnableAutoGrow = _ctx.BooleanValue("ListQueues.Queues["+ i +"].EnableAutoGrow");
+
+				List<string> queueInfo_computeInstanceType = new List<string>();
+				for (int j = 0; j < _ctx.Length("ListQueues.Queues["+ i +"].ComputeInstanceType.Length"); j++) {
+					queueInfo_computeInstanceType.Add(_ctx.StringValue("ListQueues.Queues["+ i +"].ComputeInstanceType["+ j +"]"));
+				}
+				queueInfo.ComputeInstanceType = queueInfo_computeInstanceType;
+
+				List<ListQueuesResponse.ListQueues_QueueInfo.ListQueues_Instance> queueInfo_spotInstanceTypes = new List<ListQueuesResponse.ListQueues_QueueInfo.ListQueues_Instance>();
+				for (int j = 0; j < _ctx.Length("ListQueues.Queues["+ i +"].SpotInstanceTypes.Length"); j++) {
+					ListQueuesResponse.ListQueues_QueueInfo.ListQueues_Instance instance = new ListQueuesResponse.ListQueues_QueueInfo.ListQueues_Instance();
+					instance.InstanceType = _ctx.StringValue("ListQueues.Queues["+ i +"].SpotInstanceTypes["+ j +"].InstanceType");
+					instance.SpotPriceLimit = _ctx.FloatValue("ListQueues.Queues["+ i +"].SpotInstanceTypes["+ j +"].SpotPriceLimit");
+
+					queueInfo_spotInstanceTypes.Add(instance);
+				}
+				queueInfo.SpotInstanceTypes = queueInfo_spotInstanceTypes;
 
 				listQueuesResponse_queues.Add(queueInfo);
 			}

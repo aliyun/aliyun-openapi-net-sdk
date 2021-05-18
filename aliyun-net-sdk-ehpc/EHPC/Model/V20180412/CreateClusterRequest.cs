@@ -124,6 +124,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string osTag;
 
+		private bool? isComputeEss;
+
 		private List<Application> applications = new List<Application>(){ };
 
 		private string ecsChargeType;
@@ -703,6 +705,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				osTag = value;
 				DictionaryUtil.Add(QueryParameters, "OsTag", value);
+			}
+		}
+
+		public bool? IsComputeEss
+		{
+			get
+			{
+				return isComputeEss;
+			}
+			set	
+			{
+				isComputeEss = value;
+				DictionaryUtil.Add(QueryParameters, "IsComputeEss", value.ToString());
 			}
 		}
 

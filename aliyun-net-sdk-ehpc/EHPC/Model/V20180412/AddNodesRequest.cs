@@ -56,6 +56,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string systemDiskType;
 
+		private int? minCount;
+
 		private int? systemDiskSize;
 
 		private string instanceType;
@@ -195,6 +197,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				systemDiskType = value;
 				DictionaryUtil.Add(QueryParameters, "SystemDiskType", value);
+			}
+		}
+
+		public int? MinCount
+		{
+			get
+			{
+				return minCount;
+			}
+			set	
+			{
+				minCount = value;
+				DictionaryUtil.Add(QueryParameters, "MinCount", value.ToString());
 			}
 		}
 
