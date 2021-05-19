@@ -65,6 +65,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 				file.CommitStatus = _ctx.IntegerValue("ListFiles.Data.Files["+ i +"].CommitStatus");
 				file.FileId = _ctx.LongValue("ListFiles.Data.Files["+ i +"].FileId");
 				file.BusinessId = _ctx.LongValue("ListFiles.Data.Files["+ i +"].BusinessId");
+				file.AutoParsing = _ctx.BooleanValue("ListFiles.Data.Files["+ i +"].AutoParsing");
 
 				data_files.Add(file);
 			}

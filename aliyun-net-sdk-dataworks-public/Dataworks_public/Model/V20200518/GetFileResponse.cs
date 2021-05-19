@@ -183,6 +183,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private long? businessId;
 
+				private bool? autoParsing;
+
 				public string ConnectionName
 				{
 					get
@@ -422,6 +424,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 						businessId = value;
 					}
 				}
+
+				public bool? AutoParsing
+				{
+					get
+					{
+						return autoParsing;
+					}
+					set	
+					{
+						autoParsing = value;
+					}
+				}
 			}
 
 			public class GetFile_NodeConfiguration
@@ -628,6 +642,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 					private string input;
 
+					private string parseType;
+
 					public string Input
 					{
 						get
@@ -637,6 +653,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 						set	
 						{
 							input = value;
+						}
+					}
+
+					public string ParseType
+					{
+						get
+						{
+							return parseType;
+						}
+						set	
+						{
+							parseType = value;
 						}
 					}
 				}

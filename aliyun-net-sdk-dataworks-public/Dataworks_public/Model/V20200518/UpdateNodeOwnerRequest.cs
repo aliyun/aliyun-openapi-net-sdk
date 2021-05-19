@@ -43,9 +43,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string projectEnv;
 
-		private string owner;
-
 		private long? nodeId;
+
+		private string userId;
 
 		public string ProjectEnv
 		{
@@ -60,19 +60,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public string Owner
-		{
-			get
-			{
-				return owner;
-			}
-			set	
-			{
-				owner = value;
-				DictionaryUtil.Add(BodyParameters, "Owner", value);
-			}
-		}
-
 		public long? NodeId
 		{
 			get
@@ -83,6 +70,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				nodeId = value;
 				DictionaryUtil.Add(BodyParameters, "NodeId", value.ToString());
+			}
+		}
+
+		public string UserId
+		{
+			get
+			{
+				return userId;
+			}
+			set	
+			{
+				userId = value;
+				DictionaryUtil.Add(BodyParameters, "UserId", value);
 			}
 		}
 

@@ -87,6 +87,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string fileDescription;
 
+		private bool? autoParsing;
+
 		public string OutputList
 		{
 			get
@@ -383,6 +385,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				fileDescription = value;
 				DictionaryUtil.Add(BodyParameters, "FileDescription", value);
+			}
+		}
+
+		public bool? AutoParsing
+		{
+			get
+			{
+				return autoParsing;
+			}
+			set	
+			{
+				autoParsing = value;
+				DictionaryUtil.Add(BodyParameters, "AutoParsing", value.ToString());
 			}
 		}
 

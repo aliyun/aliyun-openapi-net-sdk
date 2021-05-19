@@ -43,7 +43,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string projectEnv;
 
-		private int? nodeType;
+		private int? schedulerType;
 
 		private long? nodeId;
 
@@ -60,16 +60,16 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? NodeType
+		public int? SchedulerType
 		{
 			get
 			{
-				return nodeType;
+				return schedulerType;
 			}
 			set	
 			{
-				nodeType = value;
-				DictionaryUtil.Add(BodyParameters, "NodeType", value.ToString());
+				schedulerType = value;
+				DictionaryUtil.Add(BodyParameters, "SchedulerType", value.ToString());
 			}
 		}
 

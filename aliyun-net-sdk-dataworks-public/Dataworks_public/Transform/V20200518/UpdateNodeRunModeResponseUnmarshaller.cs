@@ -31,12 +31,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			UpdateNodeRunModeResponse updateNodeRunModeResponse = new UpdateNodeRunModeResponse();
 
 			updateNodeRunModeResponse.HttpResponse = _ctx.HttpResponse;
-			updateNodeRunModeResponse.ErrorCode = _ctx.StringValue("UpdateNodeRunMode.ErrorCode");
-			updateNodeRunModeResponse.ErrorMessage = _ctx.StringValue("UpdateNodeRunMode.ErrorMessage");
-			updateNodeRunModeResponse.HttpStatusCode = _ctx.IntegerValue("UpdateNodeRunMode.HttpStatusCode");
 			updateNodeRunModeResponse.RequestId = _ctx.StringValue("UpdateNodeRunMode.RequestId");
 			updateNodeRunModeResponse.Success = _ctx.BooleanValue("UpdateNodeRunMode.Success");
-			updateNodeRunModeResponse.Data = _ctx.BooleanValue("UpdateNodeRunMode.Data");
         
 			return updateNodeRunModeResponse;
         }

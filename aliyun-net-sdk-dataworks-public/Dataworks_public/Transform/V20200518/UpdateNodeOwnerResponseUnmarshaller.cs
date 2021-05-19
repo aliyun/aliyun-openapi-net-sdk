@@ -31,12 +31,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			UpdateNodeOwnerResponse updateNodeOwnerResponse = new UpdateNodeOwnerResponse();
 
 			updateNodeOwnerResponse.HttpResponse = _ctx.HttpResponse;
-			updateNodeOwnerResponse.ErrorCode = _ctx.StringValue("UpdateNodeOwner.ErrorCode");
-			updateNodeOwnerResponse.ErrorMessage = _ctx.StringValue("UpdateNodeOwner.ErrorMessage");
-			updateNodeOwnerResponse.HttpStatusCode = _ctx.IntegerValue("UpdateNodeOwner.HttpStatusCode");
 			updateNodeOwnerResponse.RequestId = _ctx.StringValue("UpdateNodeOwner.RequestId");
 			updateNodeOwnerResponse.Success = _ctx.BooleanValue("UpdateNodeOwner.Success");
-			updateNodeOwnerResponse.Data = _ctx.BooleanValue("UpdateNodeOwner.Data");
         
 			return updateNodeOwnerResponse;
         }

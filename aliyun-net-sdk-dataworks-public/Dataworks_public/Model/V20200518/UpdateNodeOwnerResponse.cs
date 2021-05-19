@@ -25,53 +25,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class UpdateNodeOwnerResponse : AcsResponse
 	{
 
-		private string errorCode;
-
-		private string errorMessage;
-
-		private int? httpStatusCode;
-
 		private string requestId;
 
 		private bool? success;
-
-		private bool? data;
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
 
 		public string RequestId
 		{
@@ -94,18 +50,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public bool? Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
 			}
 		}
 	}
