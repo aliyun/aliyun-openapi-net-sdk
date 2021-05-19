@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Qualitycheck;
 using Aliyun.Acs.Qualitycheck.Transform;
 using Aliyun.Acs.Qualitycheck.Transform.V20190115;
 
@@ -30,13 +31,8 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
     public class InvalidRuleRequest : RpcAcsRequest<InvalidRuleResponse>
     {
         public InvalidRuleRequest()
-            : base("Qualitycheck", "2019-01-15", "InvalidRule", "Qualitycheck", "openAPI")
+            : base("Qualitycheck", "2019-01-15", "InvalidRule")
         {
-            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
-            {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Qualitycheck.Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Qualitycheck.Endpoint.endpointRegionalType, null);
-            }
 			Method = MethodType.POST;
         }
 

@@ -49,6 +49,7 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			data.Vid = _ctx.StringValue("GetResultToReview.Data.Vid");
 			data.Comments = _ctx.StringValue("GetResultToReview.Data.Comments");
 			data.FileId = _ctx.StringValue("GetResultToReview.Data.FileId");
+			data.Status = _ctx.IntegerValue("GetResultToReview.Data.Status");
 
 			List<GetResultToReviewResponse.GetResultToReview_Data.GetResultToReview_Dialogue> data_dialogues = new List<GetResultToReviewResponse.GetResultToReview_Data.GetResultToReview_Dialogue>();
 			for (int i = 0; i < _ctx.Length("GetResultToReview.Data.Dialogues.Length"); i++) {

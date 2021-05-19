@@ -295,6 +295,12 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 						private int? maxEmotionChangeValue2;
 
+						private string notRegex;
+
+						private float? similarity_threshold;
+
+						private int? delayTime;
+
 						private List<string> operKeyWords;
 
 						private List<string> references;
@@ -302,6 +308,10 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 						private List<string> similarlySentences;
 
 						private List<string> excludes;
+
+						private List<string> pvalues;
+
+						private List<string> antModelInfo;
 
 						public string Regex
 						{
@@ -591,6 +601,42 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							}
 						}
 
+						public string NotRegex
+						{
+							get
+							{
+								return notRegex;
+							}
+							set	
+							{
+								notRegex = value;
+							}
+						}
+
+						public float? Similarity_threshold
+						{
+							get
+							{
+								return similarity_threshold;
+							}
+							set	
+							{
+								similarity_threshold = value;
+							}
+						}
+
+						public int? DelayTime
+						{
+							get
+							{
+								return delayTime;
+							}
+							set	
+							{
+								delayTime = value;
+							}
+						}
+
 						public List<string> OperKeyWords
 						{
 							get
@@ -636,6 +682,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							set	
 							{
 								excludes = value;
+							}
+						}
+
+						public List<string> Pvalues
+						{
+							get
+							{
+								return pvalues;
+							}
+							set	
+							{
+								pvalues = value;
+							}
+						}
+
+						public List<string> AntModelInfo
+						{
+							get
+							{
+								return antModelInfo;
+							}
+							set	
+							{
+								antModelInfo = value;
 							}
 						}
 					}

@@ -122,6 +122,8 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 			private string fileId;
 
+			private int? status;
+
 			private List<GetResultToReview_Dialogue> dialogues;
 
 			private List<GetResultToReview_ScorePo> handScoreInfoList;
@@ -273,6 +275,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				set	
 				{
 					fileId = value;
+				}
+			}
+
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 

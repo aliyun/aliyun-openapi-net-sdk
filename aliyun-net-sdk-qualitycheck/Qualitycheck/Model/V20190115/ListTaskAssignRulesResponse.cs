@@ -160,6 +160,14 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 			private string skillGroupsStr;
 
+			private long? callTimeStart;
+
+			private long? callTimeEnd;
+
+			private int? assignmentType;
+
+			private string ruleName;
+
 			private List<ListTaskAssignRules_Agent> agents;
 
 			private List<ListTaskAssignRules_SkillGroup> skillGroups;
@@ -167,6 +175,8 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			private List<ListTaskAssignRules_Reviewer> reviewers;
 
 			private List<ListTaskAssignRules_RuleBasicInfo> rules;
+
+			private ListTaskAssignRules_SamplingMode samplingMode;
 
 			public long? RuleId
 			{
@@ -288,6 +298,54 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
+			public long? CallTimeStart
+			{
+				get
+				{
+					return callTimeStart;
+				}
+				set	
+				{
+					callTimeStart = value;
+				}
+			}
+
+			public long? CallTimeEnd
+			{
+				get
+				{
+					return callTimeEnd;
+				}
+				set	
+				{
+					callTimeEnd = value;
+				}
+			}
+
+			public int? AssignmentType
+			{
+				get
+				{
+					return assignmentType;
+				}
+				set	
+				{
+					assignmentType = value;
+				}
+			}
+
+			public string RuleName
+			{
+				get
+				{
+					return ruleName;
+				}
+				set	
+				{
+					ruleName = value;
+				}
+			}
+
 			public List<ListTaskAssignRules_Agent> Agents
 			{
 				get
@@ -333,6 +391,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				set	
 				{
 					rules = value;
+				}
+			}
+
+			public ListTaskAssignRules_SamplingMode SamplingMode
+			{
+				get
+				{
+					return samplingMode;
+				}
+				set	
+				{
+					samplingMode = value;
 				}
 			}
 
@@ -460,6 +530,154 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					set	
 					{
 						name = value;
+					}
+				}
+			}
+
+			public class ListTaskAssignRules_SamplingMode
+			{
+
+				private int? dimension;
+
+				private float? proportion;
+
+				private int? limit;
+
+				private int? numberOfDraws;
+
+				private int? anyNumberOfDraws;
+
+				private bool? designated;
+
+				private int? randomInspectionNumber;
+
+				private List<ListTaskAssignRules_SamplingModeAgent> samplingModeAgents;
+
+				public int? Dimension
+				{
+					get
+					{
+						return dimension;
+					}
+					set	
+					{
+						dimension = value;
+					}
+				}
+
+				public float? Proportion
+				{
+					get
+					{
+						return proportion;
+					}
+					set	
+					{
+						proportion = value;
+					}
+				}
+
+				public int? Limit
+				{
+					get
+					{
+						return limit;
+					}
+					set	
+					{
+						limit = value;
+					}
+				}
+
+				public int? NumberOfDraws
+				{
+					get
+					{
+						return numberOfDraws;
+					}
+					set	
+					{
+						numberOfDraws = value;
+					}
+				}
+
+				public int? AnyNumberOfDraws
+				{
+					get
+					{
+						return anyNumberOfDraws;
+					}
+					set	
+					{
+						anyNumberOfDraws = value;
+					}
+				}
+
+				public bool? Designated
+				{
+					get
+					{
+						return designated;
+					}
+					set	
+					{
+						designated = value;
+					}
+				}
+
+				public int? RandomInspectionNumber
+				{
+					get
+					{
+						return randomInspectionNumber;
+					}
+					set	
+					{
+						randomInspectionNumber = value;
+					}
+				}
+
+				public List<ListTaskAssignRules_SamplingModeAgent> SamplingModeAgents
+				{
+					get
+					{
+						return samplingModeAgents;
+					}
+					set	
+					{
+						samplingModeAgents = value;
+					}
+				}
+
+				public class ListTaskAssignRules_SamplingModeAgent
+				{
+
+					private string agentId;
+
+					private string agentName;
+
+					public string AgentId
+					{
+						get
+						{
+							return agentId;
+						}
+						set	
+						{
+							agentId = value;
+						}
+					}
+
+					public string AgentName
+					{
+						get
+						{
+							return agentName;
+						}
+						set	
+						{
+							agentName = value;
+						}
 					}
 				}
 			}

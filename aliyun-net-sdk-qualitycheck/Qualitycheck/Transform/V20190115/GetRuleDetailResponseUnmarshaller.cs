@@ -92,6 +92,9 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 					param.MaxEmotionChangeValue = _ctx.IntegerValue("GetRuleDetail.Data.Conditions["+ i +"].Operators["+ j +"].Param.MaxEmotionChangeValue");
 					param.CheckType1 = _ctx.IntegerValue("GetRuleDetail.Data.Conditions["+ i +"].Operators["+ j +"].Param.CheckType");
 					param.MaxEmotionChangeValue2 = _ctx.IntegerValue("GetRuleDetail.Data.Conditions["+ i +"].Operators["+ j +"].Param.MaxEmotionChangeValue");
+					param.NotRegex = _ctx.StringValue("GetRuleDetail.Data.Conditions["+ i +"].Operators["+ j +"].Param.NotRegex");
+					param.Similarity_threshold = _ctx.FloatValue("GetRuleDetail.Data.Conditions["+ i +"].Operators["+ j +"].Param.Similarity_threshold");
+					param.DelayTime = _ctx.IntegerValue("GetRuleDetail.Data.Conditions["+ i +"].Operators["+ j +"].Param.DelayTime");
 
 					List<string> param_operKeyWords = new List<string>();
 					for (int k = 0; k < _ctx.Length("GetRuleDetail.Data.Conditions["+ i +"].Operators["+ j +"].Param.OperKeyWords.Length"); k++) {
@@ -116,6 +119,18 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 						param_excludes.Add(_ctx.StringValue("GetRuleDetail.Data.Conditions["+ i +"].Operators["+ j +"].Param.Excludes["+ k +"]"));
 					}
 					param.Excludes = param_excludes;
+
+					List<string> param_pvalues = new List<string>();
+					for (int k = 0; k < _ctx.Length("GetRuleDetail.Data.Conditions["+ i +"].Operators["+ j +"].Param.Pvalues.Length"); k++) {
+						param_pvalues.Add(_ctx.StringValue("GetRuleDetail.Data.Conditions["+ i +"].Operators["+ j +"].Param.Pvalues["+ k +"]"));
+					}
+					param.Pvalues = param_pvalues;
+
+					List<string> param_antModelInfo = new List<string>();
+					for (int k = 0; k < _ctx.Length("GetRuleDetail.Data.Conditions["+ i +"].Operators["+ j +"].Param.AntModelInfo.Length"); k++) {
+						param_antModelInfo.Add(_ctx.StringValue("GetRuleDetail.Data.Conditions["+ i +"].Operators["+ j +"].Param.AntModelInfo["+ k +"]"));
+					}
+					param.AntModelInfo = param_antModelInfo;
 					operatorBasicInfo.Param = param;
 
 					conditionBasicInfo_operators.Add(operatorBasicInfo);

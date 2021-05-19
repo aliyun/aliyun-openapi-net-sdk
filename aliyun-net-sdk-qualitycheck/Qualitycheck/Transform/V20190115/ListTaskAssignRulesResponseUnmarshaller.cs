@@ -52,6 +52,30 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 				taskAssignRuleInfo.UpdateTime = _ctx.StringValue("ListTaskAssignRules.Data["+ i +"].UpdateTime");
 				taskAssignRuleInfo.AgentsStr = _ctx.StringValue("ListTaskAssignRules.Data["+ i +"].AgentsStr");
 				taskAssignRuleInfo.SkillGroupsStr = _ctx.StringValue("ListTaskAssignRules.Data["+ i +"].SkillGroupsStr");
+				taskAssignRuleInfo.CallTimeStart = _ctx.LongValue("ListTaskAssignRules.Data["+ i +"].CallTimeStart");
+				taskAssignRuleInfo.CallTimeEnd = _ctx.LongValue("ListTaskAssignRules.Data["+ i +"].CallTimeEnd");
+				taskAssignRuleInfo.AssignmentType = _ctx.IntegerValue("ListTaskAssignRules.Data["+ i +"].AssignmentType");
+				taskAssignRuleInfo.RuleName = _ctx.StringValue("ListTaskAssignRules.Data["+ i +"].RuleName");
+
+				ListTaskAssignRulesResponse.ListTaskAssignRules_TaskAssignRuleInfo.ListTaskAssignRules_SamplingMode samplingMode = new ListTaskAssignRulesResponse.ListTaskAssignRules_TaskAssignRuleInfo.ListTaskAssignRules_SamplingMode();
+				samplingMode.Dimension = _ctx.IntegerValue("ListTaskAssignRules.Data["+ i +"].SamplingMode.Dimension");
+				samplingMode.Proportion = _ctx.FloatValue("ListTaskAssignRules.Data["+ i +"].SamplingMode.Proportion");
+				samplingMode.Limit = _ctx.IntegerValue("ListTaskAssignRules.Data["+ i +"].SamplingMode.Limit");
+				samplingMode.NumberOfDraws = _ctx.IntegerValue("ListTaskAssignRules.Data["+ i +"].SamplingMode.NumberOfDraws");
+				samplingMode.AnyNumberOfDraws = _ctx.IntegerValue("ListTaskAssignRules.Data["+ i +"].SamplingMode.AnyNumberOfDraws");
+				samplingMode.Designated = _ctx.BooleanValue("ListTaskAssignRules.Data["+ i +"].SamplingMode.Designated");
+				samplingMode.RandomInspectionNumber = _ctx.IntegerValue("ListTaskAssignRules.Data["+ i +"].SamplingMode.RandomInspectionNumber");
+
+				List<ListTaskAssignRulesResponse.ListTaskAssignRules_TaskAssignRuleInfo.ListTaskAssignRules_SamplingMode.ListTaskAssignRules_SamplingModeAgent> samplingMode_samplingModeAgents = new List<ListTaskAssignRulesResponse.ListTaskAssignRules_TaskAssignRuleInfo.ListTaskAssignRules_SamplingMode.ListTaskAssignRules_SamplingModeAgent>();
+				for (int j = 0; j < _ctx.Length("ListTaskAssignRules.Data["+ i +"].SamplingMode.SamplingModeAgents.Length"); j++) {
+					ListTaskAssignRulesResponse.ListTaskAssignRules_TaskAssignRuleInfo.ListTaskAssignRules_SamplingMode.ListTaskAssignRules_SamplingModeAgent samplingModeAgent = new ListTaskAssignRulesResponse.ListTaskAssignRules_TaskAssignRuleInfo.ListTaskAssignRules_SamplingMode.ListTaskAssignRules_SamplingModeAgent();
+					samplingModeAgent.AgentId = _ctx.StringValue("ListTaskAssignRules.Data["+ i +"].SamplingMode.SamplingModeAgents["+ j +"].AgentId");
+					samplingModeAgent.AgentName = _ctx.StringValue("ListTaskAssignRules.Data["+ i +"].SamplingMode.SamplingModeAgents["+ j +"].AgentName");
+
+					samplingMode_samplingModeAgents.Add(samplingModeAgent);
+				}
+				samplingMode.SamplingModeAgents = samplingMode_samplingModeAgents;
+				taskAssignRuleInfo.SamplingMode = samplingMode;
 
 				List<ListTaskAssignRulesResponse.ListTaskAssignRules_TaskAssignRuleInfo.ListTaskAssignRules_Agent> taskAssignRuleInfo_agents = new List<ListTaskAssignRulesResponse.ListTaskAssignRules_TaskAssignRuleInfo.ListTaskAssignRules_Agent>();
 				for (int j = 0; j < _ctx.Length("ListTaskAssignRules.Data["+ i +"].Agents.Length"); j++) {
