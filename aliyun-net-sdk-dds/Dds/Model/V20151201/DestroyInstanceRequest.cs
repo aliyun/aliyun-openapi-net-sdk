@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Dds;
 using Aliyun.Acs.Dds.Transform;
 using Aliyun.Acs.Dds.Transform.V20151201;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DestroyInstanceRequest : RpcAcsRequest<DestroyInstanceResponse>
     {
         public DestroyInstanceRequest()
-            : base("Dds", "2015-12-01", "DestroyInstance", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "DestroyInstance")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

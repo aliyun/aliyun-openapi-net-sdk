@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Dds;
 using Aliyun.Acs.Dds.Transform;
 using Aliyun.Acs.Dds.Transform.V20151201;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class ModifyNodeSpecRequest : RpcAcsRequest<ModifyNodeSpecResponse>
     {
         public ModifyNodeSpecRequest()
-            : base("Dds", "2015-12-01", "ModifyNodeSpec", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "ModifyNodeSpec")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -46,8 +47,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private int? readonlyReplicas;
 
-		private string couponNo;
-
 		private string nodeClass;
 
 		private string securityToken;
@@ -56,11 +55,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string dBInstanceId;
 
-		private string switchTime;
-
 		private string nodeId;
-
-		private string businessInfo;
 
 		private bool? autoPay;
 
@@ -112,19 +107,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				readonlyReplicas = value;
 				DictionaryUtil.Add(QueryParameters, "ReadonlyReplicas", value.ToString());
-			}
-		}
-
-		public string CouponNo
-		{
-			get
-			{
-				return couponNo;
-			}
-			set	
-			{
-				couponNo = value;
-				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
 			}
 		}
 
@@ -180,19 +162,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string SwitchTime
-		{
-			get
-			{
-				return switchTime;
-			}
-			set	
-			{
-				switchTime = value;
-				DictionaryUtil.Add(QueryParameters, "SwitchTime", value);
-			}
-		}
-
 		public string NodeId
 		{
 			get
@@ -203,19 +172,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				nodeId = value;
 				DictionaryUtil.Add(QueryParameters, "NodeId", value);
-			}
-		}
-
-		public string BusinessInfo
-		{
-			get
-			{
-				return businessInfo;
-			}
-			set	
-			{
-				businessInfo = value;
-				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
 			}
 		}
 

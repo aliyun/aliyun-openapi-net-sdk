@@ -25,15 +25,39 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 	public class DescribeParameterTemplatesResponse : AcsResponse
 	{
 
+		private string parameterCount;
+
+		private string engineVersion;
+
 		private string requestId;
 
 		private string engine;
 
-		private string engineVersion;
-
-		private string parameterCount;
-
 		private List<DescribeParameterTemplates_TemplateRecord> parameters;
+
+		public string ParameterCount
+		{
+			get
+			{
+				return parameterCount;
+			}
+			set	
+			{
+				parameterCount = value;
+			}
+		}
+
+		public string EngineVersion
+		{
+			get
+			{
+				return engineVersion;
+			}
+			set	
+			{
+				engineVersion = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -59,30 +83,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string EngineVersion
-		{
-			get
-			{
-				return engineVersion;
-			}
-			set	
-			{
-				engineVersion = value;
-			}
-		}
-
-		public string ParameterCount
-		{
-			get
-			{
-				return parameterCount;
-			}
-			set	
-			{
-				parameterCount = value;
-			}
-		}
-
 		public List<DescribeParameterTemplates_TemplateRecord> Parameters
 		{
 			get
@@ -98,6 +98,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		public class DescribeParameterTemplates_TemplateRecord
 		{
 
+			private string checkingCode;
+
 			private string parameterName;
 
 			private string parameterValue;
@@ -106,9 +108,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private bool? forceRestart;
 
-			private string checkingCode;
-
 			private string parameterDescription;
+
+			public string CheckingCode
+			{
+				get
+				{
+					return checkingCode;
+				}
+				set	
+				{
+					checkingCode = value;
+				}
+			}
 
 			public string ParameterName
 			{
@@ -155,18 +167,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					forceRestart = value;
-				}
-			}
-
-			public string CheckingCode
-			{
-				get
-				{
-					return checkingCode;
-				}
-				set	
-				{
-					checkingCode = value;
 				}
 			}
 

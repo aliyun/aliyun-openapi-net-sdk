@@ -36,10 +36,10 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			describePriceResponse.OrderParams = _ctx.StringValue("DescribePrice.OrderParams");
 
 			DescribePriceResponse.DescribePrice_Order order = new DescribePriceResponse.DescribePrice_Order();
-			order.Currency = _ctx.StringValue("DescribePrice.Order.Currency");
-			order.TradeAmount = _ctx.StringValue("DescribePrice.Order.TradeAmount");
 			order.OriginalAmount = _ctx.StringValue("DescribePrice.Order.OriginalAmount");
 			order.DiscountAmount = _ctx.StringValue("DescribePrice.Order.DiscountAmount");
+			order.TradeAmount = _ctx.StringValue("DescribePrice.Order.TradeAmount");
+			order.Currency = _ctx.StringValue("DescribePrice.Order.Currency");
 
 			List<string> order_ruleIds1 = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribePrice.Order.RuleIds.Length"); i++) {
@@ -50,9 +50,9 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			List<DescribePriceResponse.DescribePrice_Order.DescribePrice_Coupon> order_coupons = new List<DescribePriceResponse.DescribePrice_Order.DescribePrice_Coupon>();
 			for (int i = 0; i < _ctx.Length("DescribePrice.Order.Coupons.Length"); i++) {
 				DescribePriceResponse.DescribePrice_Order.DescribePrice_Coupon coupon = new DescribePriceResponse.DescribePrice_Order.DescribePrice_Coupon();
-				coupon.CouponNo = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].CouponNo");
 				coupon.Description = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].Description");
 				coupon.IsSelected = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].IsSelected");
+				coupon.CouponNo = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].CouponNo");
 				coupon.Name = _ctx.StringValue("DescribePrice.Order.Coupons["+ i +"].Name");
 
 				order_coupons.Add(coupon);
@@ -63,10 +63,10 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			List<DescribePriceResponse.DescribePrice_SubOrder> describePriceResponse_subOrders = new List<DescribePriceResponse.DescribePrice_SubOrder>();
 			for (int i = 0; i < _ctx.Length("DescribePrice.SubOrders.Length"); i++) {
 				DescribePriceResponse.DescribePrice_SubOrder subOrder = new DescribePriceResponse.DescribePrice_SubOrder();
-				subOrder.InstanceId = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].InstanceId");
-				subOrder.TradeAmount = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].TradeAmount");
 				subOrder.OriginalAmount = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].OriginalAmount");
 				subOrder.DiscountAmount = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].DiscountAmount");
+				subOrder.TradeAmount = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].TradeAmount");
+				subOrder.InstanceId = _ctx.StringValue("DescribePrice.SubOrders["+ i +"].InstanceId");
 
 				List<string> subOrder_ruleIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribePrice.SubOrders["+ i +"].RuleIds.Length"); j++) {
