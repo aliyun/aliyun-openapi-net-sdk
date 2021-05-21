@@ -63,6 +63,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				loadBalancer.Bandwidth = _ctx.IntegerValue("DescribeLoadBalancers.LoadBalancers["+ i +"].Bandwidth");
 				loadBalancer.InternetChargeTypeAlias = _ctx.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].InternetChargeTypeAlias");
 				loadBalancer.LoadBalancerSpec = _ctx.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].LoadBalancerSpec");
+				loadBalancer.DeleteProtection = _ctx.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].DeleteProtection");
 
 				List<DescribeLoadBalancersResponse.DescribeLoadBalancers_LoadBalancer.DescribeLoadBalancers_Tag> loadBalancer_tags = new List<DescribeLoadBalancersResponse.DescribeLoadBalancers_LoadBalancer.DescribeLoadBalancers_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeLoadBalancers.LoadBalancers["+ i +"].Tags.Length"); j++) {

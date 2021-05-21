@@ -146,6 +146,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 			private string loadBalancerSpec;
 
+			private string deleteProtection;
+
 			private List<DescribeLoadBalancers_Tag> tags;
 
 			public string LoadBalancerId
@@ -433,6 +435,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					loadBalancerSpec = value;
+				}
+			}
+
+			public string DeleteProtection
+			{
+				get
+				{
+					return deleteProtection;
+				}
+				set	
+				{
+					deleteProtection = value;
 				}
 			}
 
