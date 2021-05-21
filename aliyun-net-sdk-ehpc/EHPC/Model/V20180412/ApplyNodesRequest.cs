@@ -52,6 +52,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string resourceAmountType;
 
+		private bool? strictResourceProvision;
+
 		private string systemDiskType;
 
 		private int? cores;
@@ -159,6 +161,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				resourceAmountType = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceAmountType", value);
+			}
+		}
+
+		public bool? StrictResourceProvision
+		{
+			get
+			{
+				return strictResourceProvision;
+			}
+			set	
+			{
+				strictResourceProvision = value;
+				DictionaryUtil.Add(QueryParameters, "StrictResourceProvision", value.ToString());
 			}
 		}
 
