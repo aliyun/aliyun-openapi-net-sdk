@@ -27,10 +27,10 @@ using Aliyun.Acs.Dts.Transform.V20200101;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-    public class DescribeDtsJobsRequest : RpcAcsRequest<DescribeDtsJobsResponse>
+    public class DescribeDtsJobLogsRequest : RpcAcsRequest<DescribeDtsJobLogsResponse>
     {
-        public DescribeDtsJobsRequest()
-            : base("Dts", "2020-01-01", "DescribeDtsJobs", "dts", "openAPI")
+        public DescribeDtsJobLogsRequest()
+            : base("Dts", "2020-01-01", "DescribeDtsJobLogs", "dts", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,38 +40,43 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private string orderDirection;
+		private long? endTime;
+
+		private long? startTime;
 
 		private string type;
 
 		private int? pageNumber;
 
-		private string orderColumn;
-
 		private int? pageSize;
 
-		private string groupId;
-
-		private string _params;
-
-		private string jobType;
-
-		private string tags;
-
-		private string region;
+		private string dtsJobId;
 
 		private string status;
 
-		public string OrderDirection
+		public long? EndTime
 		{
 			get
 			{
-				return orderDirection;
+				return endTime;
 			}
 			set	
 			{
-				orderDirection = value;
-				DictionaryUtil.Add(QueryParameters, "OrderDirection", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
 			}
 		}
 
@@ -101,19 +106,6 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
-		public string OrderColumn
-		{
-			get
-			{
-				return orderColumn;
-			}
-			set	
-			{
-				orderColumn = value;
-				DictionaryUtil.Add(QueryParameters, "OrderColumn", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -127,68 +119,16 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
-		public string GroupId
+		public string DtsJobId
 		{
 			get
 			{
-				return groupId;
+				return dtsJobId;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
-		public string _Params
-		{
-			get
-			{
-				return _params;
-			}
-			set	
-			{
-				_params = value;
-				DictionaryUtil.Add(QueryParameters, "Params", value);
-			}
-		}
-
-		public string JobType
-		{
-			get
-			{
-				return jobType;
-			}
-			set	
-			{
-				jobType = value;
-				DictionaryUtil.Add(QueryParameters, "JobType", value);
-			}
-		}
-
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
-		public string Region
-		{
-			get
-			{
-				return region;
-			}
-			set	
-			{
-				region = value;
-				DictionaryUtil.Add(QueryParameters, "Region", value);
+				dtsJobId = value;
+				DictionaryUtil.Add(QueryParameters, "DtsJobId", value);
 			}
 		}
 
@@ -210,9 +150,9 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			return false;
 		}
 
-        public override DescribeDtsJobsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDtsJobLogsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDtsJobsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDtsJobLogsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

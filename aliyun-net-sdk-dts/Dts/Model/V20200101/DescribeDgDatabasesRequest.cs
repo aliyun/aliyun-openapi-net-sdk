@@ -27,10 +27,10 @@ using Aliyun.Acs.Dts.Transform.V20200101;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-    public class DescribeDtsJobsRequest : RpcAcsRequest<DescribeDtsJobsResponse>
+    public class DescribeDgDatabasesRequest : RpcAcsRequest<DescribeDgDatabasesResponse>
     {
-        public DescribeDtsJobsRequest()
-            : base("Dts", "2020-01-01", "DescribeDtsJobs", "dts", "openAPI")
+        public DescribeDgDatabasesRequest()
+            : base("Dts", "2020-01-01", "DescribeDgDatabases", "dts", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,40 +40,25 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private string orderDirection;
-
 		private string type;
 
-		private int? pageNumber;
+		private string pageNumber;
 
-		private string orderColumn;
+		private string engine;
 
-		private int? pageSize;
+		private string pageSize;
 
-		private string groupId;
+		private string roleName;
 
-		private string _params;
+		private string ip;
 
-		private string jobType;
+		private string aliyunId;
 
-		private string tags;
+		private string instanceId;
+
+		private string port;
 
 		private string region;
-
-		private string status;
-
-		public string OrderDirection
-		{
-			get
-			{
-				return orderDirection;
-			}
-			set	
-			{
-				orderDirection = value;
-				DictionaryUtil.Add(QueryParameters, "OrderDirection", value);
-			}
-		}
 
 		public string Type
 		{
@@ -88,7 +73,7 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
-		public int? PageNumber
+		public string PageNumber
 		{
 			get
 			{
@@ -97,24 +82,24 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			set	
 			{
 				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value);
 			}
 		}
 
-		public string OrderColumn
+		public string Engine
 		{
 			get
 			{
-				return orderColumn;
+				return engine;
 			}
 			set	
 			{
-				orderColumn = value;
-				DictionaryUtil.Add(QueryParameters, "OrderColumn", value);
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
 			}
 		}
 
-		public int? PageSize
+		public string PageSize
 		{
 			get
 			{
@@ -123,59 +108,72 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			set	
 			{
 				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "PageSize", value);
 			}
 		}
 
-		public string GroupId
+		public string RoleName
 		{
 			get
 			{
-				return groupId;
+				return roleName;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+				roleName = value;
+				DictionaryUtil.Add(QueryParameters, "RoleName", value);
 			}
 		}
 
-		public string _Params
+		public string Ip
 		{
 			get
 			{
-				return _params;
+				return ip;
 			}
 			set	
 			{
-				_params = value;
-				DictionaryUtil.Add(QueryParameters, "Params", value);
+				ip = value;
+				DictionaryUtil.Add(QueryParameters, "Ip", value);
 			}
 		}
 
-		public string JobType
+		public string AliyunId
 		{
 			get
 			{
-				return jobType;
+				return aliyunId;
 			}
 			set	
 			{
-				jobType = value;
-				DictionaryUtil.Add(QueryParameters, "JobType", value);
+				aliyunId = value;
+				DictionaryUtil.Add(QueryParameters, "AliyunId", value);
 			}
 		}
 
-		public string Tags
+		public string InstanceId
 		{
 			get
 			{
-				return tags;
+				return instanceId;
 			}
 			set	
 			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string Port
+		{
+			get
+			{
+				return port;
+			}
+			set	
+			{
+				port = value;
+				DictionaryUtil.Add(QueryParameters, "Port", value);
 			}
 		}
 
@@ -192,27 +190,14 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DescribeDtsJobsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDgDatabasesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDtsJobsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDgDatabasesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

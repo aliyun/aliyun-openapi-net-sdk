@@ -25,17 +25,13 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 	public class DescribeDtsJobsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string dynamicCode;
 
-		private bool? success;
+		private string dynamicMessage;
 
 		private string errCode;
 
 		private string errMessage;
-
-		private string dynamicCode;
-
-		private string dynamicMessage;
 
 		private int? httpStatusCode;
 
@@ -43,31 +39,35 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 		private int? pageRecordCount;
 
+		private string requestId;
+
+		private bool? success;
+
 		private int? totalRecordCount;
 
 		private List<DescribeDtsJobs_DtsJobStatus> dtsJobList;
 
-		public string RequestId
+		public string DynamicCode
 		{
 			get
 			{
-				return requestId;
+				return dynamicCode;
 			}
 			set	
 			{
-				requestId = value;
+				dynamicCode = value;
 			}
 		}
 
-		public bool? Success
+		public string DynamicMessage
 		{
 			get
 			{
-				return success;
+				return dynamicMessage;
 			}
 			set	
 			{
-				success = value;
+				dynamicMessage = value;
 			}
 		}
 
@@ -92,30 +92,6 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			set	
 			{
 				errMessage = value;
-			}
-		}
-
-		public string DynamicCode
-		{
-			get
-			{
-				return dynamicCode;
-			}
-			set	
-			{
-				dynamicCode = value;
-			}
-		}
-
-		public string DynamicMessage
-		{
-			get
-			{
-				return dynamicMessage;
-			}
-			set	
-			{
-				dynamicMessage = value;
 			}
 		}
 
@@ -155,6 +131,30 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public int? TotalRecordCount
 		{
 			get
@@ -182,53 +182,113 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 		public class DescribeDtsJobs_DtsJobStatus
 		{
 
+			private string checkpoint;
+
+			private string createTime;
+
+			private string dbObject;
+
+			private int? delay;
+
 			private string dtsInstanceID;
-
-			private string dtsJobId;
-
-			private string dtsJobName;
 
 			private string dtsJobClass;
 
 			private string dtsJobDirection;
 
-			private string payType;
+			private string dtsJobId;
 
-			private string expireTime;
-
-			private string createTime;
-
-			private string status;
+			private string dtsJobName;
 
 			private string errorMessage;
 
-			private int? delay;
+			private string expireTime;
 
-			private string checkpoint;
-
-			private string dbObject;
+			private string payType;
 
 			private string reserved;
 
+			private string status;
+
+			private string consumptionClient;
+
+			private string beginTimestamp;
+
+			private string endTimestamp;
+
+			private string consumptionCheckpoint;
+
+			private string appName;
+
 			private List<DescribeDtsJobs_DtsTag> tagList;
-
-			private DescribeDtsJobs_SourceEndpoint sourceEndpoint;
-
-			private DescribeDtsJobs_DestinationEndpoint destinationEndpoint;
-
-			private DescribeDtsJobs_MigrationMode migrationMode;
-
-			private DescribeDtsJobs_PrecheckStatus precheckStatus;
-
-			private DescribeDtsJobs_StructureInitializationStatus structureInitializationStatus;
 
 			private DescribeDtsJobs_DataInitializationStatus dataInitializationStatus;
 
 			private DescribeDtsJobs_DataSynchronizationStatus dataSynchronizationStatus;
 
+			private DescribeDtsJobs_DataEtlStatus dataEtlStatus;
+
+			private DescribeDtsJobs_DestinationEndpoint destinationEndpoint;
+
+			private DescribeDtsJobs_MigrationMode migrationMode;
+
 			private DescribeDtsJobs_Performance performance;
 
+			private DescribeDtsJobs_PrecheckStatus precheckStatus;
+
 			private DescribeDtsJobs_ReverseJob reverseJob;
+
+			private DescribeDtsJobs_SourceEndpoint sourceEndpoint;
+
+			private DescribeDtsJobs_StructureInitializationStatus structureInitializationStatus;
+
+			public string Checkpoint
+			{
+				get
+				{
+					return checkpoint;
+				}
+				set	
+				{
+					checkpoint = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string DbObject
+			{
+				get
+				{
+					return dbObject;
+				}
+				set	
+				{
+					dbObject = value;
+				}
+			}
+
+			public int? Delay
+			{
+				get
+				{
+					return delay;
+				}
+				set	
+				{
+					delay = value;
+				}
+			}
 
 			public string DtsInstanceID
 			{
@@ -239,30 +299,6 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				set	
 				{
 					dtsInstanceID = value;
-				}
-			}
-
-			public string DtsJobId
-			{
-				get
-				{
-					return dtsJobId;
-				}
-				set	
-				{
-					dtsJobId = value;
-				}
-			}
-
-			public string DtsJobName
-			{
-				get
-				{
-					return dtsJobName;
-				}
-				set	
-				{
-					dtsJobName = value;
 				}
 			}
 
@@ -290,51 +326,27 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				}
 			}
 
-			public string PayType
+			public string DtsJobId
 			{
 				get
 				{
-					return payType;
+					return dtsJobId;
 				}
 				set	
 				{
-					payType = value;
+					dtsJobId = value;
 				}
 			}
 
-			public string ExpireTime
+			public string DtsJobName
 			{
 				get
 				{
-					return expireTime;
+					return dtsJobName;
 				}
 				set	
 				{
-					expireTime = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
+					dtsJobName = value;
 				}
 			}
 
@@ -350,39 +362,27 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				}
 			}
 
-			public int? Delay
+			public string ExpireTime
 			{
 				get
 				{
-					return delay;
+					return expireTime;
 				}
 				set	
 				{
-					delay = value;
+					expireTime = value;
 				}
 			}
 
-			public string Checkpoint
+			public string PayType
 			{
 				get
 				{
-					return checkpoint;
+					return payType;
 				}
 				set	
 				{
-					checkpoint = value;
-				}
-			}
-
-			public string DbObject
-			{
-				get
-				{
-					return dbObject;
-				}
-				set	
-				{
-					dbObject = value;
+					payType = value;
 				}
 			}
 
@@ -398,6 +398,78 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				}
 			}
 
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string ConsumptionClient
+			{
+				get
+				{
+					return consumptionClient;
+				}
+				set	
+				{
+					consumptionClient = value;
+				}
+			}
+
+			public string BeginTimestamp
+			{
+				get
+				{
+					return beginTimestamp;
+				}
+				set	
+				{
+					beginTimestamp = value;
+				}
+			}
+
+			public string EndTimestamp
+			{
+				get
+				{
+					return endTimestamp;
+				}
+				set	
+				{
+					endTimestamp = value;
+				}
+			}
+
+			public string ConsumptionCheckpoint
+			{
+				get
+				{
+					return consumptionCheckpoint;
+				}
+				set	
+				{
+					consumptionCheckpoint = value;
+				}
+			}
+
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
+				}
+			}
+
 			public List<DescribeDtsJobs_DtsTag> TagList
 			{
 				get
@@ -407,66 +479,6 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				set	
 				{
 					tagList = value;
-				}
-			}
-
-			public DescribeDtsJobs_SourceEndpoint SourceEndpoint
-			{
-				get
-				{
-					return sourceEndpoint;
-				}
-				set	
-				{
-					sourceEndpoint = value;
-				}
-			}
-
-			public DescribeDtsJobs_DestinationEndpoint DestinationEndpoint
-			{
-				get
-				{
-					return destinationEndpoint;
-				}
-				set	
-				{
-					destinationEndpoint = value;
-				}
-			}
-
-			public DescribeDtsJobs_MigrationMode MigrationMode
-			{
-				get
-				{
-					return migrationMode;
-				}
-				set	
-				{
-					migrationMode = value;
-				}
-			}
-
-			public DescribeDtsJobs_PrecheckStatus PrecheckStatus
-			{
-				get
-				{
-					return precheckStatus;
-				}
-				set	
-				{
-					precheckStatus = value;
-				}
-			}
-
-			public DescribeDtsJobs_StructureInitializationStatus StructureInitializationStatus
-			{
-				get
-				{
-					return structureInitializationStatus;
-				}
-				set	
-				{
-					structureInitializationStatus = value;
 				}
 			}
 
@@ -494,6 +506,42 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				}
 			}
 
+			public DescribeDtsJobs_DataEtlStatus DataEtlStatus
+			{
+				get
+				{
+					return dataEtlStatus;
+				}
+				set	
+				{
+					dataEtlStatus = value;
+				}
+			}
+
+			public DescribeDtsJobs_DestinationEndpoint DestinationEndpoint
+			{
+				get
+				{
+					return destinationEndpoint;
+				}
+				set	
+				{
+					destinationEndpoint = value;
+				}
+			}
+
+			public DescribeDtsJobs_MigrationMode MigrationMode
+			{
+				get
+				{
+					return migrationMode;
+				}
+				set	
+				{
+					migrationMode = value;
+				}
+			}
+
 			public DescribeDtsJobs_Performance Performance
 			{
 				get
@@ -506,6 +554,18 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				}
 			}
 
+			public DescribeDtsJobs_PrecheckStatus PrecheckStatus
+			{
+				get
+				{
+					return precheckStatus;
+				}
+				set	
+				{
+					precheckStatus = value;
+				}
+			}
+
 			public DescribeDtsJobs_ReverseJob ReverseJob
 			{
 				get
@@ -515,6 +575,30 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				set	
 				{
 					reverseJob = value;
+				}
+			}
+
+			public DescribeDtsJobs_SourceEndpoint SourceEndpoint
+			{
+				get
+				{
+					return sourceEndpoint;
+				}
+				set	
+				{
+					sourceEndpoint = value;
+				}
+			}
+
+			public DescribeDtsJobs_StructureInitializationStatus StructureInitializationStatus
+			{
+				get
+				{
+					return structureInitializationStatus;
+				}
+				set	
+				{
+					structureInitializationStatus = value;
 				}
 			}
 
@@ -550,146 +634,182 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				}
 			}
 
-			public class DescribeDtsJobs_SourceEndpoint
+			public class DescribeDtsJobs_DataInitializationStatus
 			{
 
-				private string instanceID;
+				private string errorMessage;
 
-				private string instanceType;
+				private string percent;
 
-				private string engineName;
+				private string progress;
 
-				private string ip;
+				private string status;
 
-				private string port;
-
-				private string databaseName;
-
-				private string oracleSID;
-
-				private string userName;
-
-				private string sslSolutionEnum;
-
-				private string region;
-
-				public string InstanceID
+				public string ErrorMessage
 				{
 					get
 					{
-						return instanceID;
+						return errorMessage;
 					}
 					set	
 					{
-						instanceID = value;
+						errorMessage = value;
 					}
 				}
 
-				public string InstanceType
+				public string Percent
 				{
 					get
 					{
-						return instanceType;
+						return percent;
 					}
 					set	
 					{
-						instanceType = value;
+						percent = value;
 					}
 				}
 
-				public string EngineName
+				public string Progress
 				{
 					get
 					{
-						return engineName;
+						return progress;
 					}
 					set	
 					{
-						engineName = value;
+						progress = value;
 					}
 				}
 
-				public string Ip
+				public string Status
 				{
 					get
 					{
-						return ip;
+						return status;
 					}
 					set	
 					{
-						ip = value;
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeDtsJobs_DataSynchronizationStatus
+			{
+
+				private string errorMessage;
+
+				private string percent;
+
+				private string progress;
+
+				private string status;
+
+				public string ErrorMessage
+				{
+					get
+					{
+						return errorMessage;
+					}
+					set	
+					{
+						errorMessage = value;
 					}
 				}
 
-				public string Port
+				public string Percent
 				{
 					get
 					{
-						return port;
+						return percent;
 					}
 					set	
 					{
-						port = value;
+						percent = value;
 					}
 				}
 
-				public string DatabaseName
+				public string Progress
 				{
 					get
 					{
-						return databaseName;
+						return progress;
 					}
 					set	
 					{
-						databaseName = value;
+						progress = value;
 					}
 				}
 
-				public string OracleSID
+				public string Status
 				{
 					get
 					{
-						return oracleSID;
+						return status;
 					}
 					set	
 					{
-						oracleSID = value;
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeDtsJobs_DataEtlStatus
+			{
+
+				private string errorMessage;
+
+				private string percent;
+
+				private string progress;
+
+				private string status;
+
+				public string ErrorMessage
+				{
+					get
+					{
+						return errorMessage;
+					}
+					set	
+					{
+						errorMessage = value;
 					}
 				}
 
-				public string UserName
+				public string Percent
 				{
 					get
 					{
-						return userName;
+						return percent;
 					}
 					set	
 					{
-						userName = value;
+						percent = value;
 					}
 				}
 
-				public string SslSolutionEnum
+				public string Progress
 				{
 					get
 					{
-						return sslSolutionEnum;
+						return progress;
 					}
 					set	
 					{
-						sslSolutionEnum = value;
+						progress = value;
 					}
 				}
 
-				public string Region
+				public string Status
 				{
 					get
 					{
-						return region;
+						return status;
 					}
 					set	
 					{
-						region = value;
+						status = value;
 					}
 				}
 			}
@@ -697,25 +817,49 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			public class DescribeDtsJobs_DestinationEndpoint
 			{
 
+				private string databaseName;
+
+				private string engineName;
+
 				private string instanceID;
 
 				private string instanceType;
 
-				private string engineName;
-
 				private string ip;
-
-				private string port;
-
-				private string databaseName;
 
 				private string oracleSID;
 
-				private string userName;
+				private string port;
+
+				private string region;
 
 				private string sslSolutionEnum;
 
-				private string region;
+				private string userName;
+
+				public string DatabaseName
+				{
+					get
+					{
+						return databaseName;
+					}
+					set	
+					{
+						databaseName = value;
+					}
+				}
+
+				public string EngineName
+				{
+					get
+					{
+						return engineName;
+					}
+					set	
+					{
+						engineName = value;
+					}
+				}
 
 				public string InstanceID
 				{
@@ -741,18 +885,6 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 					}
 				}
 
-				public string EngineName
-				{
-					get
-					{
-						return engineName;
-					}
-					set	
-					{
-						engineName = value;
-					}
-				}
-
 				public string Ip
 				{
 					get
@@ -762,30 +894,6 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 					set	
 					{
 						ip = value;
-					}
-				}
-
-				public string Port
-				{
-					get
-					{
-						return port;
-					}
-					set	
-					{
-						port = value;
-					}
-				}
-
-				public string DatabaseName
-				{
-					get
-					{
-						return databaseName;
-					}
-					set	
-					{
-						databaseName = value;
 					}
 				}
 
@@ -801,15 +909,27 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 					}
 				}
 
-				public string UserName
+				public string Port
 				{
 					get
 					{
-						return userName;
+						return port;
 					}
 					set	
 					{
-						userName = value;
+						port = value;
+					}
+				}
+
+				public string Region
+				{
+					get
+					{
+						return region;
+					}
+					set	
+					{
+						region = value;
 					}
 				}
 
@@ -825,15 +945,15 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 					}
 				}
 
-				public string Region
+				public string UserName
 				{
 					get
 					{
-						return region;
+						return userName;
 					}
 					set	
 					{
-						region = value;
+						userName = value;
 					}
 				}
 			}
@@ -841,23 +961,11 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			public class DescribeDtsJobs_MigrationMode
 			{
 
-				private bool? structureInitialization;
-
 				private bool? dataInitialization;
 
 				private bool? dataSynchronization;
 
-				public bool? StructureInitialization
-				{
-					get
-					{
-						return structureInitialization;
-					}
-					set	
-					{
-						structureInitialization = value;
-					}
-				}
+				private bool? structureInitialization;
 
 				public bool? DataInitialization
 				{
@@ -882,28 +990,72 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 						dataSynchronization = value;
 					}
 				}
+
+				public bool? StructureInitialization
+				{
+					get
+					{
+						return structureInitialization;
+					}
+					set	
+					{
+						structureInitialization = value;
+					}
+				}
+			}
+
+			public class DescribeDtsJobs_Performance
+			{
+
+				private string flow;
+
+				private string rps;
+
+				public string Flow
+				{
+					get
+					{
+						return flow;
+					}
+					set	
+					{
+						flow = value;
+					}
+				}
+
+				public string Rps
+				{
+					get
+					{
+						return rps;
+					}
+					set	
+					{
+						rps = value;
+					}
+				}
 			}
 
 			public class DescribeDtsJobs_PrecheckStatus
 			{
 
-				private string status;
+				private string errorMessage;
 
 				private string percent;
 
-				private string errorMessage;
+				private string status;
 
 				private List<DescribeDtsJobs_PrecheckDetail> detail;
 
-				public string Status
+				public string ErrorMessage
 				{
 					get
 					{
-						return status;
+						return errorMessage;
 					}
 					set	
 					{
-						status = value;
+						errorMessage = value;
 					}
 				}
 
@@ -919,15 +1071,15 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 					}
 				}
 
-				public string ErrorMessage
+				public string Status
 				{
 					get
 					{
-						return errorMessage;
+						return status;
 					}
 					set	
 					{
-						errorMessage = value;
+						status = value;
 					}
 				}
 
@@ -1018,264 +1170,100 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				}
 			}
 
-			public class DescribeDtsJobs_StructureInitializationStatus
-			{
-
-				private string status;
-
-				private string errorMessage;
-
-				private string percent;
-
-				private string progress;
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public string ErrorMessage
-				{
-					get
-					{
-						return errorMessage;
-					}
-					set	
-					{
-						errorMessage = value;
-					}
-				}
-
-				public string Percent
-				{
-					get
-					{
-						return percent;
-					}
-					set	
-					{
-						percent = value;
-					}
-				}
-
-				public string Progress
-				{
-					get
-					{
-						return progress;
-					}
-					set	
-					{
-						progress = value;
-					}
-				}
-			}
-
-			public class DescribeDtsJobs_DataInitializationStatus
-			{
-
-				private string status;
-
-				private string errorMessage;
-
-				private string percent;
-
-				private string progress;
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public string ErrorMessage
-				{
-					get
-					{
-						return errorMessage;
-					}
-					set	
-					{
-						errorMessage = value;
-					}
-				}
-
-				public string Percent
-				{
-					get
-					{
-						return percent;
-					}
-					set	
-					{
-						percent = value;
-					}
-				}
-
-				public string Progress
-				{
-					get
-					{
-						return progress;
-					}
-					set	
-					{
-						progress = value;
-					}
-				}
-			}
-
-			public class DescribeDtsJobs_DataSynchronizationStatus
-			{
-
-				private string status;
-
-				private string errorMessage;
-
-				private string percent;
-
-				private string progress;
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public string ErrorMessage
-				{
-					get
-					{
-						return errorMessage;
-					}
-					set	
-					{
-						errorMessage = value;
-					}
-				}
-
-				public string Percent
-				{
-					get
-					{
-						return percent;
-					}
-					set	
-					{
-						percent = value;
-					}
-				}
-
-				public string Progress
-				{
-					get
-					{
-						return progress;
-					}
-					set	
-					{
-						progress = value;
-					}
-				}
-			}
-
-			public class DescribeDtsJobs_Performance
-			{
-
-				private string rps;
-
-				private string flow;
-
-				public string Rps
-				{
-					get
-					{
-						return rps;
-					}
-					set	
-					{
-						rps = value;
-					}
-				}
-
-				public string Flow
-				{
-					get
-					{
-						return flow;
-					}
-					set	
-					{
-						flow = value;
-					}
-				}
-			}
-
 			public class DescribeDtsJobs_ReverseJob
 			{
 
+				private string checkpoint;
+
+				private string createTime;
+
+				private string dbObject;
+
+				private int? delay;
+
 				private string dtsInstanceID;
-
-				private string dtsJobId;
-
-				private string dtsJobName;
 
 				private string dtsJobClass;
 
 				private string dtsJobDirection;
 
-				private string payType;
+				private string dtsJobId;
 
-				private string expireTime;
-
-				private string createTime;
-
-				private string status;
+				private string dtsJobName;
 
 				private string errorMessage;
 
-				private int? delay;
+				private string expireTime;
 
-				private string checkpoint;
-
-				private string dbObject;
+				private string payType;
 
 				private string reserved;
 
-				private DescribeDtsJobs_SourceEndpoint1 sourceEndpoint1;
+				private string status;
 
-				private DescribeDtsJobs_DestinationEndpoint2 destinationEndpoint2;
+				private DescribeDtsJobs_DataInitializationStatus1 dataInitializationStatus1;
 
-				private DescribeDtsJobs_MigrationMode3 migrationMode3;
+				private DescribeDtsJobs_DataSynchronizationStatus2 dataSynchronizationStatus2;
 
-				private DescribeDtsJobs_PrecheckStatus4 precheckStatus4;
+				private DescribeDtsJobs_DestinationEndpoint3 destinationEndpoint3;
 
-				private DescribeDtsJobs_StructureInitializationStatus5 structureInitializationStatus5;
+				private DescribeDtsJobs_MigrationMode4 migrationMode4;
 
-				private DescribeDtsJobs_DataInitializationStatus6 dataInitializationStatus6;
+				private DescribeDtsJobs_Performance5 performance5;
 
-				private DescribeDtsJobs_DataSynchronizationStatus7 dataSynchronizationStatus7;
+				private DescribeDtsJobs_PrecheckStatus6 precheckStatus6;
 
-				private DescribeDtsJobs_Performance8 performance8;
+				private DescribeDtsJobs_SourceEndpoint7 sourceEndpoint7;
+
+				private DescribeDtsJobs_StructureInitializationStatus8 structureInitializationStatus8;
+
+				public string Checkpoint
+				{
+					get
+					{
+						return checkpoint;
+					}
+					set	
+					{
+						checkpoint = value;
+					}
+				}
+
+				public string CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
+				}
+
+				public string DbObject
+				{
+					get
+					{
+						return dbObject;
+					}
+					set	
+					{
+						dbObject = value;
+					}
+				}
+
+				public int? Delay
+				{
+					get
+					{
+						return delay;
+					}
+					set	
+					{
+						delay = value;
+					}
+				}
 
 				public string DtsInstanceID
 				{
@@ -1286,30 +1274,6 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 					set	
 					{
 						dtsInstanceID = value;
-					}
-				}
-
-				public string DtsJobId
-				{
-					get
-					{
-						return dtsJobId;
-					}
-					set	
-					{
-						dtsJobId = value;
-					}
-				}
-
-				public string DtsJobName
-				{
-					get
-					{
-						return dtsJobName;
-					}
-					set	
-					{
-						dtsJobName = value;
 					}
 				}
 
@@ -1337,51 +1301,27 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 					}
 				}
 
-				public string PayType
+				public string DtsJobId
 				{
 					get
 					{
-						return payType;
+						return dtsJobId;
 					}
 					set	
 					{
-						payType = value;
+						dtsJobId = value;
 					}
 				}
 
-				public string ExpireTime
+				public string DtsJobName
 				{
 					get
 					{
-						return expireTime;
+						return dtsJobName;
 					}
 					set	
 					{
-						expireTime = value;
-					}
-				}
-
-				public string CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
+						dtsJobName = value;
 					}
 				}
 
@@ -1397,39 +1337,27 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 					}
 				}
 
-				public int? Delay
+				public string ExpireTime
 				{
 					get
 					{
-						return delay;
+						return expireTime;
 					}
 					set	
 					{
-						delay = value;
+						expireTime = value;
 					}
 				}
 
-				public string Checkpoint
+				public string PayType
 				{
 					get
 					{
-						return checkpoint;
+						return payType;
 					}
 					set	
 					{
-						checkpoint = value;
-					}
-				}
-
-				public string DbObject
-				{
-					get
-					{
-						return dbObject;
-					}
-					set	
-					{
-						dbObject = value;
+						payType = value;
 					}
 				}
 
@@ -1445,124 +1373,280 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 					}
 				}
 
-				public DescribeDtsJobs_SourceEndpoint1 SourceEndpoint1
+				public string Status
 				{
 					get
 					{
-						return sourceEndpoint1;
+						return status;
 					}
 					set	
 					{
-						sourceEndpoint1 = value;
+						status = value;
 					}
 				}
 
-				public DescribeDtsJobs_DestinationEndpoint2 DestinationEndpoint2
+				public DescribeDtsJobs_DataInitializationStatus1 DataInitializationStatus1
 				{
 					get
 					{
-						return destinationEndpoint2;
+						return dataInitializationStatus1;
 					}
 					set	
 					{
-						destinationEndpoint2 = value;
+						dataInitializationStatus1 = value;
 					}
 				}
 
-				public DescribeDtsJobs_MigrationMode3 MigrationMode3
+				public DescribeDtsJobs_DataSynchronizationStatus2 DataSynchronizationStatus2
 				{
 					get
 					{
-						return migrationMode3;
+						return dataSynchronizationStatus2;
 					}
 					set	
 					{
-						migrationMode3 = value;
+						dataSynchronizationStatus2 = value;
 					}
 				}
 
-				public DescribeDtsJobs_PrecheckStatus4 PrecheckStatus4
+				public DescribeDtsJobs_DestinationEndpoint3 DestinationEndpoint3
 				{
 					get
 					{
-						return precheckStatus4;
+						return destinationEndpoint3;
 					}
 					set	
 					{
-						precheckStatus4 = value;
+						destinationEndpoint3 = value;
 					}
 				}
 
-				public DescribeDtsJobs_StructureInitializationStatus5 StructureInitializationStatus5
+				public DescribeDtsJobs_MigrationMode4 MigrationMode4
 				{
 					get
 					{
-						return structureInitializationStatus5;
+						return migrationMode4;
 					}
 					set	
 					{
-						structureInitializationStatus5 = value;
+						migrationMode4 = value;
 					}
 				}
 
-				public DescribeDtsJobs_DataInitializationStatus6 DataInitializationStatus6
+				public DescribeDtsJobs_Performance5 Performance5
 				{
 					get
 					{
-						return dataInitializationStatus6;
+						return performance5;
 					}
 					set	
 					{
-						dataInitializationStatus6 = value;
+						performance5 = value;
 					}
 				}
 
-				public DescribeDtsJobs_DataSynchronizationStatus7 DataSynchronizationStatus7
+				public DescribeDtsJobs_PrecheckStatus6 PrecheckStatus6
 				{
 					get
 					{
-						return dataSynchronizationStatus7;
+						return precheckStatus6;
 					}
 					set	
 					{
-						dataSynchronizationStatus7 = value;
+						precheckStatus6 = value;
 					}
 				}
 
-				public DescribeDtsJobs_Performance8 Performance8
+				public DescribeDtsJobs_SourceEndpoint7 SourceEndpoint7
 				{
 					get
 					{
-						return performance8;
+						return sourceEndpoint7;
 					}
 					set	
 					{
-						performance8 = value;
+						sourceEndpoint7 = value;
 					}
 				}
 
-				public class DescribeDtsJobs_SourceEndpoint1
+				public DescribeDtsJobs_StructureInitializationStatus8 StructureInitializationStatus8
 				{
+					get
+					{
+						return structureInitializationStatus8;
+					}
+					set	
+					{
+						structureInitializationStatus8 = value;
+					}
+				}
+
+				public class DescribeDtsJobs_DataInitializationStatus1
+				{
+
+					private string errorMessage;
+
+					private string percent;
+
+					private string progress;
+
+					private string status;
+
+					public string ErrorMessage
+					{
+						get
+						{
+							return errorMessage;
+						}
+						set	
+						{
+							errorMessage = value;
+						}
+					}
+
+					public string Percent
+					{
+						get
+						{
+							return percent;
+						}
+						set	
+						{
+							percent = value;
+						}
+					}
+
+					public string Progress
+					{
+						get
+						{
+							return progress;
+						}
+						set	
+						{
+							progress = value;
+						}
+					}
+
+					public string Status
+					{
+						get
+						{
+							return status;
+						}
+						set	
+						{
+							status = value;
+						}
+					}
+				}
+
+				public class DescribeDtsJobs_DataSynchronizationStatus2
+				{
+
+					private string errorMessage;
+
+					private string percent;
+
+					private string progress;
+
+					private string status;
+
+					public string ErrorMessage
+					{
+						get
+						{
+							return errorMessage;
+						}
+						set	
+						{
+							errorMessage = value;
+						}
+					}
+
+					public string Percent
+					{
+						get
+						{
+							return percent;
+						}
+						set	
+						{
+							percent = value;
+						}
+					}
+
+					public string Progress
+					{
+						get
+						{
+							return progress;
+						}
+						set	
+						{
+							progress = value;
+						}
+					}
+
+					public string Status
+					{
+						get
+						{
+							return status;
+						}
+						set	
+						{
+							status = value;
+						}
+					}
+				}
+
+				public class DescribeDtsJobs_DestinationEndpoint3
+				{
+
+					private string databaseName;
+
+					private string engineName;
 
 					private string instanceID;
 
 					private string instanceType;
 
-					private string engineName;
-
 					private string ip;
-
-					private string port;
-
-					private string databaseName;
 
 					private string oracleSID;
 
-					private string userName;
+					private string port;
+
+					private string region;
 
 					private string sslSolutionEnum;
 
-					private string region;
+					private string userName;
+
+					public string DatabaseName
+					{
+						get
+						{
+							return databaseName;
+						}
+						set	
+						{
+							databaseName = value;
+						}
+					}
+
+					public string EngineName
+					{
+						get
+						{
+							return engineName;
+						}
+						set	
+						{
+							engineName = value;
+						}
+					}
 
 					public string InstanceID
 					{
@@ -1588,18 +1672,6 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 						}
 					}
 
-					public string EngineName
-					{
-						get
-						{
-							return engineName;
-						}
-						set	
-						{
-							engineName = value;
-						}
-					}
-
 					public string Ip
 					{
 						get
@@ -1609,30 +1681,6 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 						set	
 						{
 							ip = value;
-						}
-					}
-
-					public string Port
-					{
-						get
-						{
-							return port;
-						}
-						set	
-						{
-							port = value;
-						}
-					}
-
-					public string DatabaseName
-					{
-						get
-						{
-							return databaseName;
-						}
-						set	
-						{
-							databaseName = value;
 						}
 					}
 
@@ -1648,114 +1696,6 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 						}
 					}
 
-					public string UserName
-					{
-						get
-						{
-							return userName;
-						}
-						set	
-						{
-							userName = value;
-						}
-					}
-
-					public string SslSolutionEnum
-					{
-						get
-						{
-							return sslSolutionEnum;
-						}
-						set	
-						{
-							sslSolutionEnum = value;
-						}
-					}
-
-					public string Region
-					{
-						get
-						{
-							return region;
-						}
-						set	
-						{
-							region = value;
-						}
-					}
-				}
-
-				public class DescribeDtsJobs_DestinationEndpoint2
-				{
-
-					private string instanceID;
-
-					private string instanceType;
-
-					private string engineName;
-
-					private string ip;
-
-					private string port;
-
-					private string databaseName;
-
-					private string oracleSID;
-
-					private string userName;
-
-					private string sslSolutionEnum;
-
-					private string region;
-
-					public string InstanceID
-					{
-						get
-						{
-							return instanceID;
-						}
-						set	
-						{
-							instanceID = value;
-						}
-					}
-
-					public string InstanceType
-					{
-						get
-						{
-							return instanceType;
-						}
-						set	
-						{
-							instanceType = value;
-						}
-					}
-
-					public string EngineName
-					{
-						get
-						{
-							return engineName;
-						}
-						set	
-						{
-							engineName = value;
-						}
-					}
-
-					public string Ip
-					{
-						get
-						{
-							return ip;
-						}
-						set	
-						{
-							ip = value;
-						}
-					}
-
 					public string Port
 					{
 						get
@@ -1768,39 +1708,15 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 						}
 					}
 
-					public string DatabaseName
+					public string Region
 					{
 						get
 						{
-							return databaseName;
+							return region;
 						}
 						set	
 						{
-							databaseName = value;
-						}
-					}
-
-					public string OracleSID
-					{
-						get
-						{
-							return oracleSID;
-						}
-						set	
-						{
-							oracleSID = value;
-						}
-					}
-
-					public string UserName
-					{
-						get
-						{
-							return userName;
-						}
-						set	
-						{
-							userName = value;
+							region = value;
 						}
 					}
 
@@ -1816,39 +1732,27 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 						}
 					}
 
-					public string Region
+					public string UserName
 					{
 						get
 						{
-							return region;
+							return userName;
 						}
 						set	
 						{
-							region = value;
+							userName = value;
 						}
 					}
 				}
 
-				public class DescribeDtsJobs_MigrationMode3
+				public class DescribeDtsJobs_MigrationMode4
 				{
-
-					private bool? structureInitialization;
 
 					private bool? dataInitialization;
 
 					private bool? dataSynchronization;
 
-					public bool? StructureInitialization
-					{
-						get
-						{
-							return structureInitialization;
-						}
-						set	
-						{
-							structureInitialization = value;
-						}
-					}
+					private bool? structureInitialization;
 
 					public bool? DataInitialization
 					{
@@ -1873,28 +1777,72 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 							dataSynchronization = value;
 						}
 					}
-				}
 
-				public class DescribeDtsJobs_PrecheckStatus4
-				{
-
-					private string status;
-
-					private string percent;
-
-					private string errorMessage;
-
-					private List<DescribeDtsJobs_PrecheckDetail10> detail9;
-
-					public string Status
+					public bool? StructureInitialization
 					{
 						get
 						{
-							return status;
+							return structureInitialization;
 						}
 						set	
 						{
-							status = value;
+							structureInitialization = value;
+						}
+					}
+				}
+
+				public class DescribeDtsJobs_Performance5
+				{
+
+					private string flow;
+
+					private string rps;
+
+					public string Flow
+					{
+						get
+						{
+							return flow;
+						}
+						set	
+						{
+							flow = value;
+						}
+					}
+
+					public string Rps
+					{
+						get
+						{
+							return rps;
+						}
+						set	
+						{
+							rps = value;
+						}
+					}
+				}
+
+				public class DescribeDtsJobs_PrecheckStatus6
+				{
+
+					private string errorMessage;
+
+					private string percent;
+
+					private string status;
+
+					private List<DescribeDtsJobs_PrecheckDetail10> detail9;
+
+					public string ErrorMessage
+					{
+						get
+						{
+							return errorMessage;
+						}
+						set	
+						{
+							errorMessage = value;
 						}
 					}
 
@@ -1910,15 +1858,15 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 						}
 					}
 
-					public string ErrorMessage
+					public string Status
 					{
 						get
 						{
-							return errorMessage;
+							return status;
 						}
 						set	
 						{
-							errorMessage = value;
+							status = value;
 						}
 					}
 
@@ -2009,10 +1957,152 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 					}
 				}
 
-				public class DescribeDtsJobs_StructureInitializationStatus5
+				public class DescribeDtsJobs_SourceEndpoint7
 				{
 
-					private string status;
+					private string databaseName;
+
+					private string engineName;
+
+					private string instanceID;
+
+					private string instanceType;
+
+					private string ip;
+
+					private string oracleSID;
+
+					private string port;
+
+					private string region;
+
+					private string sslSolutionEnum;
+
+					private string userName;
+
+					public string DatabaseName
+					{
+						get
+						{
+							return databaseName;
+						}
+						set	
+						{
+							databaseName = value;
+						}
+					}
+
+					public string EngineName
+					{
+						get
+						{
+							return engineName;
+						}
+						set	
+						{
+							engineName = value;
+						}
+					}
+
+					public string InstanceID
+					{
+						get
+						{
+							return instanceID;
+						}
+						set	
+						{
+							instanceID = value;
+						}
+					}
+
+					public string InstanceType
+					{
+						get
+						{
+							return instanceType;
+						}
+						set	
+						{
+							instanceType = value;
+						}
+					}
+
+					public string Ip
+					{
+						get
+						{
+							return ip;
+						}
+						set	
+						{
+							ip = value;
+						}
+					}
+
+					public string OracleSID
+					{
+						get
+						{
+							return oracleSID;
+						}
+						set	
+						{
+							oracleSID = value;
+						}
+					}
+
+					public string Port
+					{
+						get
+						{
+							return port;
+						}
+						set	
+						{
+							port = value;
+						}
+					}
+
+					public string Region
+					{
+						get
+						{
+							return region;
+						}
+						set	
+						{
+							region = value;
+						}
+					}
+
+					public string SslSolutionEnum
+					{
+						get
+						{
+							return sslSolutionEnum;
+						}
+						set	
+						{
+							sslSolutionEnum = value;
+						}
+					}
+
+					public string UserName
+					{
+						get
+						{
+							return userName;
+						}
+						set	
+						{
+							userName = value;
+						}
+					}
+				}
+
+				public class DescribeDtsJobs_StructureInitializationStatus8
+				{
 
 					private string errorMessage;
 
@@ -2020,17 +2110,7 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 					private string progress;
 
-					public string Status
-					{
-						get
-						{
-							return status;
-						}
-						set	
-						{
-							status = value;
-						}
-					}
+					private string status;
 
 					public string ErrorMessage
 					{
@@ -2067,18 +2147,6 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 							progress = value;
 						}
 					}
-				}
-
-				public class DescribeDtsJobs_DataInitializationStatus6
-				{
-
-					private string status;
-
-					private string errorMessage;
-
-					private string percent;
-
-					private string progress;
 
 					public string Status
 					{
@@ -2091,133 +2159,209 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 							status = value;
 						}
 					}
+				}
+			}
 
-					public string ErrorMessage
+			public class DescribeDtsJobs_SourceEndpoint
+			{
+
+				private string databaseName;
+
+				private string engineName;
+
+				private string instanceID;
+
+				private string instanceType;
+
+				private string ip;
+
+				private string oracleSID;
+
+				private string port;
+
+				private string region;
+
+				private string sslSolutionEnum;
+
+				private string userName;
+
+				public string DatabaseName
+				{
+					get
 					{
-						get
-						{
-							return errorMessage;
-						}
-						set	
-						{
-							errorMessage = value;
-						}
+						return databaseName;
 					}
-
-					public string Percent
+					set	
 					{
-						get
-						{
-							return percent;
-						}
-						set	
-						{
-							percent = value;
-						}
-					}
-
-					public string Progress
-					{
-						get
-						{
-							return progress;
-						}
-						set	
-						{
-							progress = value;
-						}
+						databaseName = value;
 					}
 				}
 
-				public class DescribeDtsJobs_DataSynchronizationStatus7
+				public string EngineName
 				{
-
-					private string status;
-
-					private string errorMessage;
-
-					private string percent;
-
-					private string progress;
-
-					public string Status
+					get
 					{
-						get
-						{
-							return status;
-						}
-						set	
-						{
-							status = value;
-						}
+						return engineName;
 					}
-
-					public string ErrorMessage
+					set	
 					{
-						get
-						{
-							return errorMessage;
-						}
-						set	
-						{
-							errorMessage = value;
-						}
-					}
-
-					public string Percent
-					{
-						get
-						{
-							return percent;
-						}
-						set	
-						{
-							percent = value;
-						}
-					}
-
-					public string Progress
-					{
-						get
-						{
-							return progress;
-						}
-						set	
-						{
-							progress = value;
-						}
+						engineName = value;
 					}
 				}
 
-				public class DescribeDtsJobs_Performance8
+				public string InstanceID
 				{
-
-					private string rps;
-
-					private string flow;
-
-					public string Rps
+					get
 					{
-						get
-						{
-							return rps;
-						}
-						set	
-						{
-							rps = value;
-						}
+						return instanceID;
 					}
-
-					public string Flow
+					set	
 					{
-						get
-						{
-							return flow;
-						}
-						set	
-						{
-							flow = value;
-						}
+						instanceID = value;
+					}
+				}
+
+				public string InstanceType
+				{
+					get
+					{
+						return instanceType;
+					}
+					set	
+					{
+						instanceType = value;
+					}
+				}
+
+				public string Ip
+				{
+					get
+					{
+						return ip;
+					}
+					set	
+					{
+						ip = value;
+					}
+				}
+
+				public string OracleSID
+				{
+					get
+					{
+						return oracleSID;
+					}
+					set	
+					{
+						oracleSID = value;
+					}
+				}
+
+				public string Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
+					}
+				}
+
+				public string Region
+				{
+					get
+					{
+						return region;
+					}
+					set	
+					{
+						region = value;
+					}
+				}
+
+				public string SslSolutionEnum
+				{
+					get
+					{
+						return sslSolutionEnum;
+					}
+					set	
+					{
+						sslSolutionEnum = value;
+					}
+				}
+
+				public string UserName
+				{
+					get
+					{
+						return userName;
+					}
+					set	
+					{
+						userName = value;
+					}
+				}
+			}
+
+			public class DescribeDtsJobs_StructureInitializationStatus
+			{
+
+				private string errorMessage;
+
+				private string percent;
+
+				private string progress;
+
+				private string status;
+
+				public string ErrorMessage
+				{
+					get
+					{
+						return errorMessage;
+					}
+					set	
+					{
+						errorMessage = value;
+					}
+				}
+
+				public string Percent
+				{
+					get
+					{
+						return percent;
+					}
+					set	
+					{
+						percent = value;
+					}
+				}
+
+				public string Progress
+				{
+					get
+					{
+						return progress;
+					}
+					set	
+					{
+						progress = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
 					}
 				}
 			}

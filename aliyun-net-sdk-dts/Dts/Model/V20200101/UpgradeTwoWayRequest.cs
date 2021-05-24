@@ -27,10 +27,10 @@ using Aliyun.Acs.Dts.Transform.V20200101;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-    public class SkipPreCheckRequest : RpcAcsRequest<SkipPreCheckResponse>
+    public class UpgradeTwoWayRequest : RpcAcsRequest<UpgradeTwoWayResponse>
     {
-        public SkipPreCheckRequest()
-            : base("Dts", "2020-01-01", "SkipPreCheck", "dts", "openAPI")
+        public UpgradeTwoWayRequest()
+            : base("Dts", "2020-01-01", "UpgradeTwoWay", "dts", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,78 +40,33 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private string skipPreCheckItems;
+		private string instanceClass;
 
-		private bool? skip;
+		private string instanceId;
 
-		private string jobId;
-
-		private string skipPreCheckNames;
-
-		private string dtsJobId;
-
-		public string SkipPreCheckItems
+		public string InstanceClass
 		{
 			get
 			{
-				return skipPreCheckItems;
+				return instanceClass;
 			}
 			set	
 			{
-				skipPreCheckItems = value;
-				DictionaryUtil.Add(QueryParameters, "SkipPreCheckItems", value);
+				instanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceClass", value);
 			}
 		}
 
-		public bool? Skip
+		public string InstanceId
 		{
 			get
 			{
-				return skip;
+				return instanceId;
 			}
 			set	
 			{
-				skip = value;
-				DictionaryUtil.Add(QueryParameters, "Skip", value.ToString());
-			}
-		}
-
-		public string JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value);
-			}
-		}
-
-		public string SkipPreCheckNames
-		{
-			get
-			{
-				return skipPreCheckNames;
-			}
-			set	
-			{
-				skipPreCheckNames = value;
-				DictionaryUtil.Add(QueryParameters, "SkipPreCheckNames", value);
-			}
-		}
-
-		public string DtsJobId
-		{
-			get
-			{
-				return dtsJobId;
-			}
-			set	
-			{
-				dtsJobId = value;
-				DictionaryUtil.Add(QueryParameters, "DtsJobId", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -120,9 +75,9 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			return false;
 		}
 
-        public override SkipPreCheckResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpgradeTwoWayResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SkipPreCheckResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpgradeTwoWayResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

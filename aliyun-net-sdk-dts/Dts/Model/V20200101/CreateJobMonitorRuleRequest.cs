@@ -27,10 +27,10 @@ using Aliyun.Acs.Dts.Transform.V20200101;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-    public class SkipPreCheckRequest : RpcAcsRequest<SkipPreCheckResponse>
+    public class CreateJobMonitorRuleRequest : RpcAcsRequest<CreateJobMonitorRuleResponse>
     {
-        public SkipPreCheckRequest()
-            : base("Dts", "2020-01-01", "SkipPreCheck", "dts", "openAPI")
+        public CreateJobMonitorRuleRequest()
+            : base("Dts", "2020-01-01", "CreateJobMonitorRule", "dts", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,65 +40,52 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private string skipPreCheckItems;
+		private string type;
 
-		private bool? skip;
+		private long? delayRuleTime;
 
-		private string jobId;
-
-		private string skipPreCheckNames;
+		private string phone;
 
 		private string dtsJobId;
 
-		public string SkipPreCheckItems
+		private string state;
+
+		public string Type
 		{
 			get
 			{
-				return skipPreCheckItems;
+				return type;
 			}
 			set	
 			{
-				skipPreCheckItems = value;
-				DictionaryUtil.Add(QueryParameters, "SkipPreCheckItems", value);
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 
-		public bool? Skip
+		public long? DelayRuleTime
 		{
 			get
 			{
-				return skip;
+				return delayRuleTime;
 			}
 			set	
 			{
-				skip = value;
-				DictionaryUtil.Add(QueryParameters, "Skip", value.ToString());
+				delayRuleTime = value;
+				DictionaryUtil.Add(QueryParameters, "DelayRuleTime", value.ToString());
 			}
 		}
 
-		public string JobId
+		public string Phone
 		{
 			get
 			{
-				return jobId;
+				return phone;
 			}
 			set	
 			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value);
-			}
-		}
-
-		public string SkipPreCheckNames
-		{
-			get
-			{
-				return skipPreCheckNames;
-			}
-			set	
-			{
-				skipPreCheckNames = value;
-				DictionaryUtil.Add(QueryParameters, "SkipPreCheckNames", value);
+				phone = value;
+				DictionaryUtil.Add(QueryParameters, "Phone", value);
 			}
 		}
 
@@ -115,14 +102,27 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
+		public string State
+		{
+			get
+			{
+				return state;
+			}
+			set	
+			{
+				state = value;
+				DictionaryUtil.Add(QueryParameters, "State", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override SkipPreCheckResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateJobMonitorRuleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SkipPreCheckResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateJobMonitorRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

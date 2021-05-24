@@ -27,10 +27,10 @@ using Aliyun.Acs.Dts.Transform.V20200101;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-    public class SkipPreCheckRequest : RpcAcsRequest<SkipPreCheckResponse>
+    public class DescribeJobDiffStatusRequest : RpcAcsRequest<DescribeJobDiffStatusResponse>
     {
-        public SkipPreCheckRequest()
-            : base("Dts", "2020-01-01", "SkipPreCheck", "dts", "openAPI")
+        public DescribeJobDiffStatusRequest()
+            : base("Dts", "2020-01-01", "DescribeJobDiffStatus", "dts", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,65 +40,65 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private string skipPreCheckItems;
+		private string pageNumber;
 
-		private bool? skip;
+		private string tbName;
 
-		private string jobId;
+		private string dbName;
 
-		private string skipPreCheckNames;
+		private string pageSize;
 
 		private string dtsJobId;
 
-		public string SkipPreCheckItems
+		public string PageNumber
 		{
 			get
 			{
-				return skipPreCheckItems;
+				return pageNumber;
 			}
 			set	
 			{
-				skipPreCheckItems = value;
-				DictionaryUtil.Add(QueryParameters, "SkipPreCheckItems", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value);
 			}
 		}
 
-		public bool? Skip
+		public string TbName
 		{
 			get
 			{
-				return skip;
+				return tbName;
 			}
 			set	
 			{
-				skip = value;
-				DictionaryUtil.Add(QueryParameters, "Skip", value.ToString());
+				tbName = value;
+				DictionaryUtil.Add(QueryParameters, "TbName", value);
 			}
 		}
 
-		public string JobId
+		public string DbName
 		{
 			get
 			{
-				return jobId;
+				return dbName;
 			}
 			set	
 			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value);
+				dbName = value;
+				DictionaryUtil.Add(QueryParameters, "DbName", value);
 			}
 		}
 
-		public string SkipPreCheckNames
+		public string PageSize
 		{
 			get
 			{
-				return skipPreCheckNames;
+				return pageSize;
 			}
 			set	
 			{
-				skipPreCheckNames = value;
-				DictionaryUtil.Add(QueryParameters, "SkipPreCheckNames", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value);
 			}
 		}
 
@@ -120,9 +120,9 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			return false;
 		}
 
-        public override SkipPreCheckResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeJobDiffStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SkipPreCheckResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeJobDiffStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

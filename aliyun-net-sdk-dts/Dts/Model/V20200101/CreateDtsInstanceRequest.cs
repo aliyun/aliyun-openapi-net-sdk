@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 		private string jobId;
 
+		private int? computeUnit;
+
 		private string destinationRegion;
 
 		private string period;
@@ -132,6 +134,19 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			{
 				jobId = value;
 				DictionaryUtil.Add(QueryParameters, "JobId", value);
+			}
+		}
+
+		public int? ComputeUnit
+		{
+			get
+			{
+				return computeUnit;
+			}
+			set	
+			{
+				computeUnit = value;
+				DictionaryUtil.Add(QueryParameters, "ComputeUnit", value.ToString());
 			}
 		}
 

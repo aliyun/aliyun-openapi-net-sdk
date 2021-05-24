@@ -27,10 +27,10 @@ using Aliyun.Acs.Dts.Transform.V20200101;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-    public class SkipPreCheckRequest : RpcAcsRequest<SkipPreCheckResponse>
+    public class DescribeJobMonitorRuleRequest : RpcAcsRequest<DescribeJobMonitorRuleResponse>
     {
-        public SkipPreCheckRequest()
-            : base("Dts", "2020-01-01", "SkipPreCheck", "dts", "openAPI")
+        public DescribeJobMonitorRuleRequest()
+            : base("Dts", "2020-01-01", "DescribeJobMonitorRule", "dts", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,67 +40,7 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private string skipPreCheckItems;
-
-		private bool? skip;
-
-		private string jobId;
-
-		private string skipPreCheckNames;
-
 		private string dtsJobId;
-
-		public string SkipPreCheckItems
-		{
-			get
-			{
-				return skipPreCheckItems;
-			}
-			set	
-			{
-				skipPreCheckItems = value;
-				DictionaryUtil.Add(QueryParameters, "SkipPreCheckItems", value);
-			}
-		}
-
-		public bool? Skip
-		{
-			get
-			{
-				return skip;
-			}
-			set	
-			{
-				skip = value;
-				DictionaryUtil.Add(QueryParameters, "Skip", value.ToString());
-			}
-		}
-
-		public string JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value);
-			}
-		}
-
-		public string SkipPreCheckNames
-		{
-			get
-			{
-				return skipPreCheckNames;
-			}
-			set	
-			{
-				skipPreCheckNames = value;
-				DictionaryUtil.Add(QueryParameters, "SkipPreCheckNames", value);
-			}
-		}
 
 		public string DtsJobId
 		{
@@ -120,9 +60,9 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			return false;
 		}
 
-        public override SkipPreCheckResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeJobMonitorRuleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SkipPreCheckResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeJobMonitorRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

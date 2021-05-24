@@ -27,10 +27,10 @@ using Aliyun.Acs.Dts.Transform.V20200101;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-    public class SkipPreCheckRequest : RpcAcsRequest<SkipPreCheckResponse>
+    public class WhiteIpListRequest : RpcAcsRequest<WhiteIpListResponse>
     {
-        public SkipPreCheckRequest()
-            : base("Dts", "2020-01-01", "SkipPreCheck", "dts", "openAPI")
+        public WhiteIpListRequest()
+            : base("Dts", "2020-01-01", "WhiteIpList", "dts", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,78 +40,48 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private string skipPreCheckItems;
+		private string destinationRegion;
 
-		private bool? skip;
+		private string type;
 
-		private string jobId;
+		private string region;
 
-		private string skipPreCheckNames;
-
-		private string dtsJobId;
-
-		public string SkipPreCheckItems
+		public string DestinationRegion
 		{
 			get
 			{
-				return skipPreCheckItems;
+				return destinationRegion;
 			}
 			set	
 			{
-				skipPreCheckItems = value;
-				DictionaryUtil.Add(QueryParameters, "SkipPreCheckItems", value);
+				destinationRegion = value;
+				DictionaryUtil.Add(QueryParameters, "DestinationRegion", value);
 			}
 		}
 
-		public bool? Skip
+		public string Type
 		{
 			get
 			{
-				return skip;
+				return type;
 			}
 			set	
 			{
-				skip = value;
-				DictionaryUtil.Add(QueryParameters, "Skip", value.ToString());
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 
-		public string JobId
+		public string Region
 		{
 			get
 			{
-				return jobId;
+				return region;
 			}
 			set	
 			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value);
-			}
-		}
-
-		public string SkipPreCheckNames
-		{
-			get
-			{
-				return skipPreCheckNames;
-			}
-			set	
-			{
-				skipPreCheckNames = value;
-				DictionaryUtil.Add(QueryParameters, "SkipPreCheckNames", value);
-			}
-		}
-
-		public string DtsJobId
-		{
-			get
-			{
-				return dtsJobId;
-			}
-			set	
-			{
-				dtsJobId = value;
-				DictionaryUtil.Add(QueryParameters, "DtsJobId", value);
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 
@@ -120,9 +90,9 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			return false;
 		}
 
-        public override SkipPreCheckResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override WhiteIpListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SkipPreCheckResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return WhiteIpListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

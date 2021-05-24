@@ -71,11 +71,35 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 		private string synchronizationDirection;
 
+		private string etlCalculator;
+
+		private string groupId;
+
+		private int? databaseCount;
+
+		private string subscribeTopic;
+
+		private string consumptionCheckpoint;
+
+		private string beginTimestamp;
+
+		private string endTimestamp;
+
+		private string consumptionClient;
+
+		private string appName;
+
+		private string destNetType;
+
 		private DescribeDtsJobDetail_SourceEndpoint sourceEndpoint;
 
 		private DescribeDtsJobDetail_DestinationEndpoint destinationEndpoint;
 
 		private DescribeDtsJobDetail_MigrationMode migrationMode;
+
+		private DescribeDtsJobDetail_SubscriptionHost subscriptionHost;
+
+		private DescribeDtsJobDetail_SubscriptionDataType subscriptionDataType;
 
 		public string RequestId
 		{
@@ -353,6 +377,126 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
+		public string EtlCalculator
+		{
+			get
+			{
+				return etlCalculator;
+			}
+			set	
+			{
+				etlCalculator = value;
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+			}
+		}
+
+		public int? DatabaseCount
+		{
+			get
+			{
+				return databaseCount;
+			}
+			set	
+			{
+				databaseCount = value;
+			}
+		}
+
+		public string SubscribeTopic
+		{
+			get
+			{
+				return subscribeTopic;
+			}
+			set	
+			{
+				subscribeTopic = value;
+			}
+		}
+
+		public string ConsumptionCheckpoint
+		{
+			get
+			{
+				return consumptionCheckpoint;
+			}
+			set	
+			{
+				consumptionCheckpoint = value;
+			}
+		}
+
+		public string BeginTimestamp
+		{
+			get
+			{
+				return beginTimestamp;
+			}
+			set	
+			{
+				beginTimestamp = value;
+			}
+		}
+
+		public string EndTimestamp
+		{
+			get
+			{
+				return endTimestamp;
+			}
+			set	
+			{
+				endTimestamp = value;
+			}
+		}
+
+		public string ConsumptionClient
+		{
+			get
+			{
+				return consumptionClient;
+			}
+			set	
+			{
+				consumptionClient = value;
+			}
+		}
+
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+			}
+		}
+
+		public string DestNetType
+		{
+			get
+			{
+				return destNetType;
+			}
+			set	
+			{
+				destNetType = value;
+			}
+		}
+
 		public DescribeDtsJobDetail_SourceEndpoint SourceEndpoint
 		{
 			get
@@ -386,6 +530,30 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			set	
 			{
 				migrationMode = value;
+			}
+		}
+
+		public DescribeDtsJobDetail_SubscriptionHost SubscriptionHost
+		{
+			get
+			{
+				return subscriptionHost;
+			}
+			set	
+			{
+				subscriptionHost = value;
+			}
+		}
+
+		public DescribeDtsJobDetail_SubscriptionDataType SubscriptionDataType
+		{
+			get
+			{
+				return subscriptionDataType;
+			}
+			set	
+			{
+				subscriptionDataType = value;
 			}
 		}
 
@@ -714,6 +882,8 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 			private bool? dataSynchronization;
 
+			private bool? dataExtractTransformLoad;
+
 			public bool? StructureInitialization
 			{
 				get
@@ -747,6 +917,96 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				set	
 				{
 					dataSynchronization = value;
+				}
+			}
+
+			public bool? DataExtractTransformLoad
+			{
+				get
+				{
+					return dataExtractTransformLoad;
+				}
+				set	
+				{
+					dataExtractTransformLoad = value;
+				}
+			}
+		}
+
+		public class DescribeDtsJobDetail_SubscriptionHost
+		{
+
+			private string publicHost;
+
+			private string privateHost;
+
+			private string vpcHost;
+
+			public string PublicHost
+			{
+				get
+				{
+					return publicHost;
+				}
+				set	
+				{
+					publicHost = value;
+				}
+			}
+
+			public string PrivateHost
+			{
+				get
+				{
+					return privateHost;
+				}
+				set	
+				{
+					privateHost = value;
+				}
+			}
+
+			public string VpcHost
+			{
+				get
+				{
+					return vpcHost;
+				}
+				set	
+				{
+					vpcHost = value;
+				}
+			}
+		}
+
+		public class DescribeDtsJobDetail_SubscriptionDataType
+		{
+
+			private bool? ddl;
+
+			private bool? dml;
+
+			public bool? Ddl
+			{
+				get
+				{
+					return ddl;
+				}
+				set	
+				{
+					ddl = value;
+				}
+			}
+
+			public bool? Dml
+			{
+				get
+				{
+					return dml;
+				}
+				set	
+				{
+					dml = value;
 				}
 			}
 		}

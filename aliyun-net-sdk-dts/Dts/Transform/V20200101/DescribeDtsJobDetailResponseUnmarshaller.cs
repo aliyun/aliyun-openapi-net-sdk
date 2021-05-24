@@ -54,6 +54,16 @@ namespace Aliyun.Acs.Dts.Transform.V20200101
 			describeDtsJobDetailResponse.ErrorMessage = _ctx.StringValue("DescribeDtsJobDetail.ErrorMessage");
 			describeDtsJobDetailResponse.DbObject = _ctx.StringValue("DescribeDtsJobDetail.DbObject");
 			describeDtsJobDetailResponse.SynchronizationDirection = _ctx.StringValue("DescribeDtsJobDetail.SynchronizationDirection");
+			describeDtsJobDetailResponse.EtlCalculator = _ctx.StringValue("DescribeDtsJobDetail.EtlCalculator");
+			describeDtsJobDetailResponse.GroupId = _ctx.StringValue("DescribeDtsJobDetail.GroupId");
+			describeDtsJobDetailResponse.DatabaseCount = _ctx.IntegerValue("DescribeDtsJobDetail.DatabaseCount");
+			describeDtsJobDetailResponse.SubscribeTopic = _ctx.StringValue("DescribeDtsJobDetail.SubscribeTopic");
+			describeDtsJobDetailResponse.ConsumptionCheckpoint = _ctx.StringValue("DescribeDtsJobDetail.ConsumptionCheckpoint");
+			describeDtsJobDetailResponse.BeginTimestamp = _ctx.StringValue("DescribeDtsJobDetail.BeginTimestamp");
+			describeDtsJobDetailResponse.EndTimestamp = _ctx.StringValue("DescribeDtsJobDetail.EndTimestamp");
+			describeDtsJobDetailResponse.ConsumptionClient = _ctx.StringValue("DescribeDtsJobDetail.ConsumptionClient");
+			describeDtsJobDetailResponse.AppName = _ctx.StringValue("DescribeDtsJobDetail.AppName");
+			describeDtsJobDetailResponse.DestNetType = _ctx.StringValue("DescribeDtsJobDetail.DestNetType");
 
 			DescribeDtsJobDetailResponse.DescribeDtsJobDetail_SourceEndpoint sourceEndpoint = new DescribeDtsJobDetailResponse.DescribeDtsJobDetail_SourceEndpoint();
 			sourceEndpoint.InstanceID = _ctx.StringValue("DescribeDtsJobDetail.SourceEndpoint.InstanceID");
@@ -87,7 +97,19 @@ namespace Aliyun.Acs.Dts.Transform.V20200101
 			migrationMode.StructureInitialization = _ctx.BooleanValue("DescribeDtsJobDetail.MigrationMode.StructureInitialization");
 			migrationMode.DataInitialization = _ctx.BooleanValue("DescribeDtsJobDetail.MigrationMode.DataInitialization");
 			migrationMode.DataSynchronization = _ctx.BooleanValue("DescribeDtsJobDetail.MigrationMode.DataSynchronization");
+			migrationMode.DataExtractTransformLoad = _ctx.BooleanValue("DescribeDtsJobDetail.MigrationMode.DataExtractTransformLoad");
 			describeDtsJobDetailResponse.MigrationMode = migrationMode;
+
+			DescribeDtsJobDetailResponse.DescribeDtsJobDetail_SubscriptionHost subscriptionHost = new DescribeDtsJobDetailResponse.DescribeDtsJobDetail_SubscriptionHost();
+			subscriptionHost.PublicHost = _ctx.StringValue("DescribeDtsJobDetail.SubscriptionHost.PublicHost");
+			subscriptionHost.PrivateHost = _ctx.StringValue("DescribeDtsJobDetail.SubscriptionHost.PrivateHost");
+			subscriptionHost.VpcHost = _ctx.StringValue("DescribeDtsJobDetail.SubscriptionHost.VpcHost");
+			describeDtsJobDetailResponse.SubscriptionHost = subscriptionHost;
+
+			DescribeDtsJobDetailResponse.DescribeDtsJobDetail_SubscriptionDataType subscriptionDataType = new DescribeDtsJobDetailResponse.DescribeDtsJobDetail_SubscriptionDataType();
+			subscriptionDataType.Ddl = _ctx.BooleanValue("DescribeDtsJobDetail.SubscriptionDataType.Ddl");
+			subscriptionDataType.Dml = _ctx.BooleanValue("DescribeDtsJobDetail.SubscriptionDataType.Dml");
+			describeDtsJobDetailResponse.SubscriptionDataType = subscriptionDataType;
         
 			return describeDtsJobDetailResponse;
         }

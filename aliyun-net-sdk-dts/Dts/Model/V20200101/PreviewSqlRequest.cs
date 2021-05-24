@@ -27,10 +27,10 @@ using Aliyun.Acs.Dts.Transform.V20200101;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-    public class SkipPreCheckRequest : RpcAcsRequest<SkipPreCheckResponse>
+    public class PreviewSqlRequest : RpcAcsRequest<PreviewSqlResponse>
     {
-        public SkipPreCheckRequest()
-            : base("Dts", "2020-01-01", "SkipPreCheck", "dts", "openAPI")
+        public PreviewSqlRequest()
+            : base("Dts", "2020-01-01", "PreviewSql", "dts", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,78 +40,18 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private string skipPreCheckItems;
+		private string etlCalculator;
 
-		private bool? skip;
-
-		private string jobId;
-
-		private string skipPreCheckNames;
-
-		private string dtsJobId;
-
-		public string SkipPreCheckItems
+		public string EtlCalculator
 		{
 			get
 			{
-				return skipPreCheckItems;
+				return etlCalculator;
 			}
 			set	
 			{
-				skipPreCheckItems = value;
-				DictionaryUtil.Add(QueryParameters, "SkipPreCheckItems", value);
-			}
-		}
-
-		public bool? Skip
-		{
-			get
-			{
-				return skip;
-			}
-			set	
-			{
-				skip = value;
-				DictionaryUtil.Add(QueryParameters, "Skip", value.ToString());
-			}
-		}
-
-		public string JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value);
-			}
-		}
-
-		public string SkipPreCheckNames
-		{
-			get
-			{
-				return skipPreCheckNames;
-			}
-			set	
-			{
-				skipPreCheckNames = value;
-				DictionaryUtil.Add(QueryParameters, "SkipPreCheckNames", value);
-			}
-		}
-
-		public string DtsJobId
-		{
-			get
-			{
-				return dtsJobId;
-			}
-			set	
-			{
-				dtsJobId = value;
-				DictionaryUtil.Add(QueryParameters, "DtsJobId", value);
+				etlCalculator = value;
+				DictionaryUtil.Add(QueryParameters, "EtlCalculator", value);
 			}
 		}
 
@@ -120,9 +60,9 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			return false;
 		}
 
-        public override SkipPreCheckResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override PreviewSqlResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SkipPreCheckResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return PreviewSqlResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

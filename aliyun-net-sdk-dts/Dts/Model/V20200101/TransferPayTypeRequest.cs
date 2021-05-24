@@ -27,10 +27,10 @@ using Aliyun.Acs.Dts.Transform.V20200101;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-    public class SkipPreCheckRequest : RpcAcsRequest<SkipPreCheckResponse>
+    public class TransferPayTypeRequest : RpcAcsRequest<TransferPayTypeResponse>
     {
-        public SkipPreCheckRequest()
-            : base("Dts", "2020-01-01", "SkipPreCheck", "dts", "openAPI")
+        public TransferPayTypeRequest()
+            : base("Dts", "2020-01-01", "TransferPayType", "dts", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,65 +40,52 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private string skipPreCheckItems;
+		private string period;
 
-		private bool? skip;
+		private string buyCount;
 
-		private string jobId;
-
-		private string skipPreCheckNames;
+		private string instanceClass;
 
 		private string dtsJobId;
 
-		public string SkipPreCheckItems
+		private string chargeType;
+
+		public string Period
 		{
 			get
 			{
-				return skipPreCheckItems;
+				return period;
 			}
 			set	
 			{
-				skipPreCheckItems = value;
-				DictionaryUtil.Add(QueryParameters, "SkipPreCheckItems", value);
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value);
 			}
 		}
 
-		public bool? Skip
+		public string BuyCount
 		{
 			get
 			{
-				return skip;
+				return buyCount;
 			}
 			set	
 			{
-				skip = value;
-				DictionaryUtil.Add(QueryParameters, "Skip", value.ToString());
+				buyCount = value;
+				DictionaryUtil.Add(QueryParameters, "BuyCount", value);
 			}
 		}
 
-		public string JobId
+		public string InstanceClass
 		{
 			get
 			{
-				return jobId;
+				return instanceClass;
 			}
 			set	
 			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value);
-			}
-		}
-
-		public string SkipPreCheckNames
-		{
-			get
-			{
-				return skipPreCheckNames;
-			}
-			set	
-			{
-				skipPreCheckNames = value;
-				DictionaryUtil.Add(QueryParameters, "SkipPreCheckNames", value);
+				instanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceClass", value);
 			}
 		}
 
@@ -115,14 +102,27 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
+		public string ChargeType
+		{
+			get
+			{
+				return chargeType;
+			}
+			set	
+			{
+				chargeType = value;
+				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override SkipPreCheckResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TransferPayTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SkipPreCheckResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TransferPayTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
