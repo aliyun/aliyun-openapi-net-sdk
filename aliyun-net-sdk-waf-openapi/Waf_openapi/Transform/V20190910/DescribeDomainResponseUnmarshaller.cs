@@ -40,6 +40,7 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 			domain.LoadBalancing = _ctx.IntegerValue("DescribeDomain.Domain.LoadBalancing");
 			domain.Cname = _ctx.StringValue("DescribeDomain.Domain.Cname");
 			domain.IsAccessProduct = _ctx.IntegerValue("DescribeDomain.Domain.IsAccessProduct");
+			domain.AccessHeaderMode = _ctx.IntegerValue("DescribeDomain.Domain.AccessHeaderMode");
 			domain.Version = _ctx.LongValue("DescribeDomain.Domain.Version");
 			domain.ClusterType = _ctx.IntegerValue("DescribeDomain.Domain.ClusterType");
 			domain.ConnectionTime = _ctx.IntegerValue("DescribeDomain.Domain.ConnectionTime");
@@ -66,6 +67,12 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 			}
 			domain.HttpPort = domain_httpPort;
 
+			List<string> domain_accessHeaders = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeDomain.Domain.AccessHeaders.Length"); i++) {
+				domain_accessHeaders.Add(_ctx.StringValue("DescribeDomain.Domain.AccessHeaders["+ i +"]"));
+			}
+			domain.AccessHeaders = domain_accessHeaders;
+
 			List<string> domain_httpsPort = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeDomain.Domain.HttpsPort.Length"); i++) {
 				domain_httpsPort.Add(_ctx.StringValue("DescribeDomain.Domain.HttpsPort["+ i +"]"));
@@ -86,6 +93,7 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 			for (int i = 0; i < _ctx.Length("DescribeDomain.Domain.CloudNativeInstances.Length"); i++) {
 				DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_CloudNativeInstancesItem cloudNativeInstancesItem = new DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_CloudNativeInstancesItem();
 				cloudNativeInstancesItem.CloudNativeProductName = _ctx.StringValue("DescribeDomain.Domain.CloudNativeInstances["+ i +"].CloudNativeProductName");
+				cloudNativeInstancesItem.RedirectionTypeName = _ctx.StringValue("DescribeDomain.Domain.CloudNativeInstances["+ i +"].RedirectionTypeName");
 				cloudNativeInstancesItem.InstanceId = _ctx.StringValue("DescribeDomain.Domain.CloudNativeInstances["+ i +"].InstanceId");
 				cloudNativeInstancesItem.IPAddressList = _ctx.StringValue("DescribeDomain.Domain.CloudNativeInstances["+ i +"].IPAddressList");
 

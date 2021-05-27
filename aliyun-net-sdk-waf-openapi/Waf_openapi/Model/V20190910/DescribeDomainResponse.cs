@@ -68,6 +68,8 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 			private int? isAccessProduct;
 
+			private int? accessHeaderMode;
+
 			private long? version;
 
 			private int? clusterType;
@@ -91,6 +93,8 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			private List<string> http2Port;
 
 			private List<string> httpPort;
+
+			private List<string> accessHeaders;
 
 			private List<string> httpsPort;
 
@@ -163,6 +167,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				set	
 				{
 					isAccessProduct = value;
+				}
+			}
+
+			public int? AccessHeaderMode
+			{
+				get
+				{
+					return accessHeaderMode;
+				}
+				set	
+				{
+					accessHeaderMode = value;
 				}
 			}
 
@@ -310,6 +326,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				}
 			}
 
+			public List<string> AccessHeaders
+			{
+				get
+				{
+					return accessHeaders;
+				}
+				set	
+				{
+					accessHeaders = value;
+				}
+			}
+
 			public List<string> HttpsPort
 			{
 				get
@@ -359,6 +387,8 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 				private string cloudNativeProductName;
 
+				private string redirectionTypeName;
+
 				private string instanceId;
 
 				private string iPAddressList;
@@ -374,6 +404,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 					set	
 					{
 						cloudNativeProductName = value;
+					}
+				}
+
+				public string RedirectionTypeName
+				{
+					get
+					{
+						return redirectionTypeName;
+					}
+					set	
+					{
+						redirectionTypeName = value;
 					}
 				}
 

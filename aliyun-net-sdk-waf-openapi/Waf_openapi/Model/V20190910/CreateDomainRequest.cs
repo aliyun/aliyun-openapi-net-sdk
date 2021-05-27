@@ -50,9 +50,13 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 		private int? writeTime;
 
+		private int? accessHeaderMode;
+
 		private string accessType;
 
 		private string logHeaders;
+
+		private string accessHeaders;
 
 		private int? connectionTime;
 
@@ -143,6 +147,19 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			}
 		}
 
+		public int? AccessHeaderMode
+		{
+			get
+			{
+				return accessHeaderMode;
+			}
+			set	
+			{
+				accessHeaderMode = value;
+				DictionaryUtil.Add(QueryParameters, "AccessHeaderMode", value.ToString());
+			}
+		}
+
 		public string AccessType
 		{
 			get
@@ -166,6 +183,19 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				logHeaders = value;
 				DictionaryUtil.Add(QueryParameters, "LogHeaders", value);
+			}
+		}
+
+		public string AccessHeaders
+		{
+			get
+			{
+				return accessHeaders;
+			}
+			set	
+			{
+				accessHeaders = value;
+				DictionaryUtil.Add(QueryParameters, "AccessHeaders", value);
 			}
 		}
 
