@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeGatewayTypesResponseUnmarshaller
     {
-        public static DescribeGatewayTypesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGatewayTypesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGatewayTypesResponse describeGatewayTypesResponse = new DescribeGatewayTypesResponse();
 
-			describeGatewayTypesResponse.HttpResponse = context.HttpResponse;
-			describeGatewayTypesResponse.RequestId = context.StringValue("DescribeGatewayTypes.RequestId");
-			describeGatewayTypesResponse.Success = context.BooleanValue("DescribeGatewayTypes.Success");
-			describeGatewayTypesResponse.Code = context.StringValue("DescribeGatewayTypes.Code");
-			describeGatewayTypesResponse.Message = context.StringValue("DescribeGatewayTypes.Message");
-			describeGatewayTypesResponse.Types = context.StringValue("DescribeGatewayTypes.Types");
+			describeGatewayTypesResponse.HttpResponse = _ctx.HttpResponse;
+			describeGatewayTypesResponse.RequestId = _ctx.StringValue("DescribeGatewayTypes.RequestId");
+			describeGatewayTypesResponse.Success = _ctx.BooleanValue("DescribeGatewayTypes.Success");
+			describeGatewayTypesResponse.Code = _ctx.StringValue("DescribeGatewayTypes.Code");
+			describeGatewayTypesResponse.Message = _ctx.StringValue("DescribeGatewayTypes.Message");
+			describeGatewayTypesResponse.Types = _ctx.StringValue("DescribeGatewayTypes.Types");
         
 			return describeGatewayTypesResponse;
         }

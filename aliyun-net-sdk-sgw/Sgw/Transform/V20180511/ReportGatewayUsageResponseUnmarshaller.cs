@@ -26,15 +26,15 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class ReportGatewayUsageResponseUnmarshaller
     {
-        public static ReportGatewayUsageResponse Unmarshall(UnmarshallerContext context)
+        public static ReportGatewayUsageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ReportGatewayUsageResponse reportGatewayUsageResponse = new ReportGatewayUsageResponse();
 
-			reportGatewayUsageResponse.HttpResponse = context.HttpResponse;
-			reportGatewayUsageResponse.RequestId = context.StringValue("ReportGatewayUsage.RequestId");
-			reportGatewayUsageResponse.Success = context.BooleanValue("ReportGatewayUsage.Success");
-			reportGatewayUsageResponse.Code = context.StringValue("ReportGatewayUsage.Code");
-			reportGatewayUsageResponse.Message = context.StringValue("ReportGatewayUsage.Message");
+			reportGatewayUsageResponse.HttpResponse = _ctx.HttpResponse;
+			reportGatewayUsageResponse.RequestId = _ctx.StringValue("ReportGatewayUsage.RequestId");
+			reportGatewayUsageResponse.Success = _ctx.BooleanValue("ReportGatewayUsage.Success");
+			reportGatewayUsageResponse.Code = _ctx.StringValue("ReportGatewayUsage.Code");
+			reportGatewayUsageResponse.Message = _ctx.StringValue("ReportGatewayUsage.Message");
         
 			return reportGatewayUsageResponse;
         }

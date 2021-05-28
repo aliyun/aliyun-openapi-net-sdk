@@ -26,19 +26,19 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeUserBusinessStatusResponseUnmarshaller
     {
-        public static DescribeUserBusinessStatusResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUserBusinessStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUserBusinessStatusResponse describeUserBusinessStatusResponse = new DescribeUserBusinessStatusResponse();
 
-			describeUserBusinessStatusResponse.HttpResponse = context.HttpResponse;
-			describeUserBusinessStatusResponse.RequestId = context.StringValue("DescribeUserBusinessStatus.RequestId");
-			describeUserBusinessStatusResponse.Success = context.BooleanValue("DescribeUserBusinessStatus.Success");
-			describeUserBusinessStatusResponse.Code = context.StringValue("DescribeUserBusinessStatus.Code");
-			describeUserBusinessStatusResponse.Message = context.StringValue("DescribeUserBusinessStatus.Message");
-			describeUserBusinessStatusResponse.IsEnabled = context.BooleanValue("DescribeUserBusinessStatus.IsEnabled");
-			describeUserBusinessStatusResponse.IsIndebted = context.BooleanValue("DescribeUserBusinessStatus.IsIndebted");
-			describeUserBusinessStatusResponse.IsIndebtedOverdue = context.BooleanValue("DescribeUserBusinessStatus.IsIndebtedOverdue");
-			describeUserBusinessStatusResponse.IsRiskControl = context.BooleanValue("DescribeUserBusinessStatus.IsRiskControl");
+			describeUserBusinessStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeUserBusinessStatusResponse.RequestId = _ctx.StringValue("DescribeUserBusinessStatus.RequestId");
+			describeUserBusinessStatusResponse.Success = _ctx.BooleanValue("DescribeUserBusinessStatus.Success");
+			describeUserBusinessStatusResponse.Code = _ctx.StringValue("DescribeUserBusinessStatus.Code");
+			describeUserBusinessStatusResponse.Message = _ctx.StringValue("DescribeUserBusinessStatus.Message");
+			describeUserBusinessStatusResponse.IsEnabled = _ctx.BooleanValue("DescribeUserBusinessStatus.IsEnabled");
+			describeUserBusinessStatusResponse.IsIndebted = _ctx.BooleanValue("DescribeUserBusinessStatus.IsIndebted");
+			describeUserBusinessStatusResponse.IsIndebtedOverdue = _ctx.BooleanValue("DescribeUserBusinessStatus.IsIndebtedOverdue");
+			describeUserBusinessStatusResponse.IsRiskControl = _ctx.BooleanValue("DescribeUserBusinessStatus.IsRiskControl");
         
 			return describeUserBusinessStatusResponse;
         }

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class UpdateGatewayFileShareResponseUnmarshaller
     {
-        public static UpdateGatewayFileShareResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateGatewayFileShareResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateGatewayFileShareResponse updateGatewayFileShareResponse = new UpdateGatewayFileShareResponse();
 
-			updateGatewayFileShareResponse.HttpResponse = context.HttpResponse;
-			updateGatewayFileShareResponse.RequestId = context.StringValue("UpdateGatewayFileShare.RequestId");
-			updateGatewayFileShareResponse.Success = context.BooleanValue("UpdateGatewayFileShare.Success");
-			updateGatewayFileShareResponse.Code = context.StringValue("UpdateGatewayFileShare.Code");
-			updateGatewayFileShareResponse.Message = context.StringValue("UpdateGatewayFileShare.Message");
-			updateGatewayFileShareResponse.TaskId = context.StringValue("UpdateGatewayFileShare.TaskId");
+			updateGatewayFileShareResponse.HttpResponse = _ctx.HttpResponse;
+			updateGatewayFileShareResponse.TaskId = _ctx.StringValue("UpdateGatewayFileShare.TaskId");
+			updateGatewayFileShareResponse.Message = _ctx.StringValue("UpdateGatewayFileShare.Message");
+			updateGatewayFileShareResponse.RequestId = _ctx.StringValue("UpdateGatewayFileShare.RequestId");
+			updateGatewayFileShareResponse.Code = _ctx.StringValue("UpdateGatewayFileShare.Code");
+			updateGatewayFileShareResponse.Success = _ctx.BooleanValue("UpdateGatewayFileShare.Success");
         
 			return updateGatewayFileShareResponse;
         }

@@ -26,21 +26,21 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class GenerateStsTokenResponseUnmarshaller
     {
-        public static GenerateStsTokenResponse Unmarshall(UnmarshallerContext context)
+        public static GenerateStsTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GenerateStsTokenResponse generateStsTokenResponse = new GenerateStsTokenResponse();
 
-			generateStsTokenResponse.HttpResponse = context.HttpResponse;
-			generateStsTokenResponse.RequestId = context.StringValue("GenerateStsToken.RequestId");
-			generateStsTokenResponse.Success = context.BooleanValue("GenerateStsToken.Success");
-			generateStsTokenResponse.Code = context.StringValue("GenerateStsToken.Code");
-			generateStsTokenResponse.Message = context.StringValue("GenerateStsToken.Message");
-			generateStsTokenResponse.AccessKeyId = context.StringValue("GenerateStsToken.AccessKeyId");
-			generateStsTokenResponse.AccessKeySecret = context.StringValue("GenerateStsToken.AccessKeySecret");
-			generateStsTokenResponse.Expiration = context.StringValue("GenerateStsToken.Expiration");
-			generateStsTokenResponse.SecurityToken = context.StringValue("GenerateStsToken.SecurityToken");
-			generateStsTokenResponse.SupportBundleTarget = context.StringValue("GenerateStsToken.SupportBundleTarget");
-			generateStsTokenResponse.Environment = context.StringValue("GenerateStsToken.Environment");
+			generateStsTokenResponse.HttpResponse = _ctx.HttpResponse;
+			generateStsTokenResponse.RequestId = _ctx.StringValue("GenerateStsToken.RequestId");
+			generateStsTokenResponse.Success = _ctx.BooleanValue("GenerateStsToken.Success");
+			generateStsTokenResponse.Code = _ctx.StringValue("GenerateStsToken.Code");
+			generateStsTokenResponse.Message = _ctx.StringValue("GenerateStsToken.Message");
+			generateStsTokenResponse.AccessKeyId = _ctx.StringValue("GenerateStsToken.AccessKeyId");
+			generateStsTokenResponse.AccessKeySecret = _ctx.StringValue("GenerateStsToken.AccessKeySecret");
+			generateStsTokenResponse.Expiration = _ctx.StringValue("GenerateStsToken.Expiration");
+			generateStsTokenResponse.SecurityToken = _ctx.StringValue("GenerateStsToken.SecurityToken");
+			generateStsTokenResponse.SupportBundleTarget = _ctx.StringValue("GenerateStsToken.SupportBundleTarget");
+			generateStsTokenResponse.Environment = _ctx.StringValue("GenerateStsToken.Environment");
         
 			return generateStsTokenResponse;
         }

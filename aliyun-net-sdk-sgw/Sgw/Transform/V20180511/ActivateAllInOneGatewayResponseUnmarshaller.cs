@@ -26,18 +26,18 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class ActivateAllInOneGatewayResponseUnmarshaller
     {
-        public static ActivateAllInOneGatewayResponse Unmarshall(UnmarshallerContext context)
+        public static ActivateAllInOneGatewayResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ActivateAllInOneGatewayResponse activateAllInOneGatewayResponse = new ActivateAllInOneGatewayResponse();
 
-			activateAllInOneGatewayResponse.HttpResponse = context.HttpResponse;
-			activateAllInOneGatewayResponse.RequestId = context.StringValue("ActivateAllInOneGateway.RequestId");
-			activateAllInOneGatewayResponse.Success = context.BooleanValue("ActivateAllInOneGateway.Success");
-			activateAllInOneGatewayResponse.Code = context.StringValue("ActivateAllInOneGateway.Code");
-			activateAllInOneGatewayResponse.Message = context.StringValue("ActivateAllInOneGateway.Message");
-			activateAllInOneGatewayResponse.GatewayId = context.StringValue("ActivateAllInOneGateway.GatewayId");
-			activateAllInOneGatewayResponse.RegionId = context.StringValue("ActivateAllInOneGateway.RegionId");
-			activateAllInOneGatewayResponse.LicenseContent = context.StringValue("ActivateAllInOneGateway.LicenseContent");
+			activateAllInOneGatewayResponse.HttpResponse = _ctx.HttpResponse;
+			activateAllInOneGatewayResponse.RequestId = _ctx.StringValue("ActivateAllInOneGateway.RequestId");
+			activateAllInOneGatewayResponse.Success = _ctx.BooleanValue("ActivateAllInOneGateway.Success");
+			activateAllInOneGatewayResponse.Code = _ctx.StringValue("ActivateAllInOneGateway.Code");
+			activateAllInOneGatewayResponse.Message = _ctx.StringValue("ActivateAllInOneGateway.Message");
+			activateAllInOneGatewayResponse.GatewayId = _ctx.StringValue("ActivateAllInOneGateway.GatewayId");
+			activateAllInOneGatewayResponse.RegionId = _ctx.StringValue("ActivateAllInOneGateway.RegionId");
+			activateAllInOneGatewayResponse.LicenseContent = _ctx.StringValue("ActivateAllInOneGateway.LicenseContent");
         
 			return activateAllInOneGatewayResponse;
         }

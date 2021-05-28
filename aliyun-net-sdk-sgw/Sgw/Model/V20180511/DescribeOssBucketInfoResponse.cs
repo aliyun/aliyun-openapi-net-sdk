@@ -45,6 +45,8 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 
 		private long? storageSize;
 
+		private bool? isVersioning;
+
 		public string RequestId
 		{
 			get
@@ -162,6 +164,18 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set	
 			{
 				storageSize = value;
+			}
+		}
+
+		public bool? IsVersioning
+		{
+			get
+			{
+				return isVersioning;
+			}
+			set	
+			{
+				isVersioning = value;
 			}
 		}
 	}

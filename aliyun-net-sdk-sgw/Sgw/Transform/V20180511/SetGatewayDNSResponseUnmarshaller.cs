@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class SetGatewayDNSResponseUnmarshaller
     {
-        public static SetGatewayDNSResponse Unmarshall(UnmarshallerContext context)
+        public static SetGatewayDNSResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetGatewayDNSResponse setGatewayDNSResponse = new SetGatewayDNSResponse();
 
-			setGatewayDNSResponse.HttpResponse = context.HttpResponse;
-			setGatewayDNSResponse.RequestId = context.StringValue("SetGatewayDNS.RequestId");
-			setGatewayDNSResponse.Success = context.BooleanValue("SetGatewayDNS.Success");
-			setGatewayDNSResponse.Code = context.StringValue("SetGatewayDNS.Code");
-			setGatewayDNSResponse.Message = context.StringValue("SetGatewayDNS.Message");
-			setGatewayDNSResponse.TaskId = context.StringValue("SetGatewayDNS.TaskId");
+			setGatewayDNSResponse.HttpResponse = _ctx.HttpResponse;
+			setGatewayDNSResponse.RequestId = _ctx.StringValue("SetGatewayDNS.RequestId");
+			setGatewayDNSResponse.Success = _ctx.BooleanValue("SetGatewayDNS.Success");
+			setGatewayDNSResponse.Code = _ctx.StringValue("SetGatewayDNS.Code");
+			setGatewayDNSResponse.Message = _ctx.StringValue("SetGatewayDNS.Message");
+			setGatewayDNSResponse.TaskId = _ctx.StringValue("SetGatewayDNS.TaskId");
         
 			return setGatewayDNSResponse;
         }

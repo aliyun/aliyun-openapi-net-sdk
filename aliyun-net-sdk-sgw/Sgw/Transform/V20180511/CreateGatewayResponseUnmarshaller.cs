@@ -26,17 +26,17 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class CreateGatewayResponseUnmarshaller
     {
-        public static CreateGatewayResponse Unmarshall(UnmarshallerContext context)
+        public static CreateGatewayResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateGatewayResponse createGatewayResponse = new CreateGatewayResponse();
 
-			createGatewayResponse.HttpResponse = context.HttpResponse;
-			createGatewayResponse.RequestId = context.StringValue("CreateGateway.RequestId");
-			createGatewayResponse.Success = context.BooleanValue("CreateGateway.Success");
-			createGatewayResponse.Code = context.StringValue("CreateGateway.Code");
-			createGatewayResponse.Message = context.StringValue("CreateGateway.Message");
-			createGatewayResponse.GatewayId = context.StringValue("CreateGateway.GatewayId");
-			createGatewayResponse.BuyURL = context.StringValue("CreateGateway.BuyURL");
+			createGatewayResponse.HttpResponse = _ctx.HttpResponse;
+			createGatewayResponse.RequestId = _ctx.StringValue("CreateGateway.RequestId");
+			createGatewayResponse.Success = _ctx.BooleanValue("CreateGateway.Success");
+			createGatewayResponse.Code = _ctx.StringValue("CreateGateway.Code");
+			createGatewayResponse.Message = _ctx.StringValue("CreateGateway.Message");
+			createGatewayResponse.GatewayId = _ctx.StringValue("CreateGateway.GatewayId");
+			createGatewayResponse.BuyURL = _ctx.StringValue("CreateGateway.BuyURL");
         
 			return createGatewayResponse;
         }

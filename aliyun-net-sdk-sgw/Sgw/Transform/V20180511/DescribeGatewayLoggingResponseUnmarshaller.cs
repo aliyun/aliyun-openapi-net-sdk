@@ -26,18 +26,18 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeGatewayLoggingResponseUnmarshaller
     {
-        public static DescribeGatewayLoggingResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGatewayLoggingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGatewayLoggingResponse describeGatewayLoggingResponse = new DescribeGatewayLoggingResponse();
 
-			describeGatewayLoggingResponse.HttpResponse = context.HttpResponse;
-			describeGatewayLoggingResponse.RequestId = context.StringValue("DescribeGatewayLogging.RequestId");
-			describeGatewayLoggingResponse.Success = context.BooleanValue("DescribeGatewayLogging.Success");
-			describeGatewayLoggingResponse.Code = context.StringValue("DescribeGatewayLogging.Code");
-			describeGatewayLoggingResponse.Message = context.StringValue("DescribeGatewayLogging.Message");
-			describeGatewayLoggingResponse.GatewayLoggingStatus = context.StringValue("DescribeGatewayLogging.GatewayLoggingStatus");
-			describeGatewayLoggingResponse.SlsProject = context.StringValue("DescribeGatewayLogging.SlsProject");
-			describeGatewayLoggingResponse.SlsLogstore = context.StringValue("DescribeGatewayLogging.SlsLogstore");
+			describeGatewayLoggingResponse.HttpResponse = _ctx.HttpResponse;
+			describeGatewayLoggingResponse.RequestId = _ctx.StringValue("DescribeGatewayLogging.RequestId");
+			describeGatewayLoggingResponse.Success = _ctx.BooleanValue("DescribeGatewayLogging.Success");
+			describeGatewayLoggingResponse.Code = _ctx.StringValue("DescribeGatewayLogging.Code");
+			describeGatewayLoggingResponse.Message = _ctx.StringValue("DescribeGatewayLogging.Message");
+			describeGatewayLoggingResponse.GatewayLoggingStatus = _ctx.StringValue("DescribeGatewayLogging.GatewayLoggingStatus");
+			describeGatewayLoggingResponse.SlsProject = _ctx.StringValue("DescribeGatewayLogging.SlsProject");
+			describeGatewayLoggingResponse.SlsLogstore = _ctx.StringValue("DescribeGatewayLogging.SlsLogstore");
         
 			return describeGatewayLoggingResponse;
         }

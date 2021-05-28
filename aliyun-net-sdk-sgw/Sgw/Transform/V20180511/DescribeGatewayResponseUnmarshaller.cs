@@ -26,54 +26,55 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeGatewayResponseUnmarshaller
     {
-        public static DescribeGatewayResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGatewayResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGatewayResponse describeGatewayResponse = new DescribeGatewayResponse();
 
-			describeGatewayResponse.HttpResponse = context.HttpResponse;
-			describeGatewayResponse.RequestId = context.StringValue("DescribeGateway.RequestId");
-			describeGatewayResponse.Success = context.BooleanValue("DescribeGateway.Success");
-			describeGatewayResponse.Code = context.StringValue("DescribeGateway.Code");
-			describeGatewayResponse.Message = context.StringValue("DescribeGateway.Message");
-			describeGatewayResponse.GatewayId = context.StringValue("DescribeGateway.GatewayId");
-			describeGatewayResponse.StorageBundleId = context.StringValue("DescribeGateway.StorageBundleId");
-			describeGatewayResponse.Name = context.StringValue("DescribeGateway.Name");
-			describeGatewayResponse.Description = context.StringValue("DescribeGateway.Description");
-			describeGatewayResponse.Location = context.StringValue("DescribeGateway.Location");
-			describeGatewayResponse.Category = context.StringValue("DescribeGateway.Category");
-			describeGatewayResponse.Type = context.StringValue("DescribeGateway.Type");
-			describeGatewayResponse.GatewayClass = context.StringValue("DescribeGateway.GatewayClass");
-			describeGatewayResponse.Model = context.StringValue("DescribeGateway.Model");
-			describeGatewayResponse.SerialNumber = context.StringValue("DescribeGateway.SerialNumber");
-			describeGatewayResponse.Status = context.StringValue("DescribeGateway.Status");
-			describeGatewayResponse.EcsInstanceId = context.StringValue("DescribeGateway.EcsInstanceId");
-			describeGatewayResponse.VpcId = context.StringValue("DescribeGateway.VpcId");
-			describeGatewayResponse.VSwitchId = context.StringValue("DescribeGateway.VSwitchId");
-			describeGatewayResponse.Ip = context.StringValue("DescribeGateway.Ip");
-			describeGatewayResponse.InnerIp = context.StringValue("DescribeGateway.InnerIp");
-			describeGatewayResponse.CreatedTime = context.LongValue("DescribeGateway.CreatedTime");
-			describeGatewayResponse.ActivatedTime = context.LongValue("DescribeGateway.ActivatedTime");
-			describeGatewayResponse.TaskId = context.StringValue("DescribeGateway.TaskId");
-			describeGatewayResponse.GatewayVersion = context.StringValue("DescribeGateway.GatewayVersion");
-			describeGatewayResponse.BuyURL = context.StringValue("DescribeGateway.BuyURL");
-			describeGatewayResponse.RenewURL = context.StringValue("DescribeGateway.RenewURL");
-			describeGatewayResponse.IsPostPaid = context.BooleanValue("DescribeGateway.IsPostPaid");
-			describeGatewayResponse.IsReleaseAfterExpiration = context.BooleanValue("DescribeGateway.IsReleaseAfterExpiration");
-			describeGatewayResponse.ExpiredTime = context.LongValue("DescribeGateway.ExpiredTime");
-			describeGatewayResponse.ExpireStatus = context.IntegerValue("DescribeGateway.ExpireStatus");
-			describeGatewayResponse.CommonBuyInstanceId = context.StringValue("DescribeGateway.CommonBuyInstanceId");
-			describeGatewayResponse.PublicNetworkBandwidth = context.IntegerValue("DescribeGateway.PublicNetworkBandwidth");
-			describeGatewayResponse.GatewayType = context.StringValue("DescribeGateway.GatewayType");
-			describeGatewayResponse.ElasticGateway = context.BooleanValue("DescribeGateway.ElasticGateway");
-			describeGatewayResponse.MaxThroughput = context.IntegerValue("DescribeGateway.MaxThroughput");
-			describeGatewayResponse.Capacity = context.IntegerValue("DescribeGateway.Capacity");
-			describeGatewayResponse.DataLoadType = context.StringValue("DescribeGateway.DataLoadType");
-			describeGatewayResponse.DataLoadInterval = context.IntegerValue("DescribeGateway.DataLoadInterval");
-			describeGatewayResponse.LastErrorKey = context.StringValue("DescribeGateway.LastErrorKey");
+			describeGatewayResponse.HttpResponse = _ctx.HttpResponse;
+			describeGatewayResponse.RequestId = _ctx.StringValue("DescribeGateway.RequestId");
+			describeGatewayResponse.Success = _ctx.BooleanValue("DescribeGateway.Success");
+			describeGatewayResponse.Code = _ctx.StringValue("DescribeGateway.Code");
+			describeGatewayResponse.Message = _ctx.StringValue("DescribeGateway.Message");
+			describeGatewayResponse.GatewayId = _ctx.StringValue("DescribeGateway.GatewayId");
+			describeGatewayResponse.StorageBundleId = _ctx.StringValue("DescribeGateway.StorageBundleId");
+			describeGatewayResponse.Name = _ctx.StringValue("DescribeGateway.Name");
+			describeGatewayResponse.Description = _ctx.StringValue("DescribeGateway.Description");
+			describeGatewayResponse.Location = _ctx.StringValue("DescribeGateway.Location");
+			describeGatewayResponse.Category = _ctx.StringValue("DescribeGateway.Category");
+			describeGatewayResponse.Type = _ctx.StringValue("DescribeGateway.Type");
+			describeGatewayResponse.GatewayClass = _ctx.StringValue("DescribeGateway.GatewayClass");
+			describeGatewayResponse.Model = _ctx.StringValue("DescribeGateway.Model");
+			describeGatewayResponse.SerialNumber = _ctx.StringValue("DescribeGateway.SerialNumber");
+			describeGatewayResponse.Status = _ctx.StringValue("DescribeGateway.Status");
+			describeGatewayResponse.EcsInstanceId = _ctx.StringValue("DescribeGateway.EcsInstanceId");
+			describeGatewayResponse.VpcId = _ctx.StringValue("DescribeGateway.VpcId");
+			describeGatewayResponse.VSwitchId = _ctx.StringValue("DescribeGateway.VSwitchId");
+			describeGatewayResponse.Ip = _ctx.StringValue("DescribeGateway.Ip");
+			describeGatewayResponse.InnerIp = _ctx.StringValue("DescribeGateway.InnerIp");
+			describeGatewayResponse.CreatedTime = _ctx.LongValue("DescribeGateway.CreatedTime");
+			describeGatewayResponse.ActivatedTime = _ctx.LongValue("DescribeGateway.ActivatedTime");
+			describeGatewayResponse.TaskId = _ctx.StringValue("DescribeGateway.TaskId");
+			describeGatewayResponse.GatewayVersion = _ctx.StringValue("DescribeGateway.GatewayVersion");
+			describeGatewayResponse.BuyURL = _ctx.StringValue("DescribeGateway.BuyURL");
+			describeGatewayResponse.RenewURL = _ctx.StringValue("DescribeGateway.RenewURL");
+			describeGatewayResponse.IsPostPaid = _ctx.BooleanValue("DescribeGateway.IsPostPaid");
+			describeGatewayResponse.IsReleaseAfterExpiration = _ctx.BooleanValue("DescribeGateway.IsReleaseAfterExpiration");
+			describeGatewayResponse.ExpiredTime = _ctx.LongValue("DescribeGateway.ExpiredTime");
+			describeGatewayResponse.ExpireStatus = _ctx.IntegerValue("DescribeGateway.ExpireStatus");
+			describeGatewayResponse.CommonBuyInstanceId = _ctx.StringValue("DescribeGateway.CommonBuyInstanceId");
+			describeGatewayResponse.PublicNetworkBandwidth = _ctx.IntegerValue("DescribeGateway.PublicNetworkBandwidth");
+			describeGatewayResponse.GatewayType = _ctx.StringValue("DescribeGateway.GatewayType");
+			describeGatewayResponse.ElasticGateway = _ctx.BooleanValue("DescribeGateway.ElasticGateway");
+			describeGatewayResponse.MaxThroughput = _ctx.IntegerValue("DescribeGateway.MaxThroughput");
+			describeGatewayResponse.Capacity = _ctx.IntegerValue("DescribeGateway.Capacity");
+			describeGatewayResponse.DataLoadType = _ctx.StringValue("DescribeGateway.DataLoadType");
+			describeGatewayResponse.DataLoadInterval = _ctx.IntegerValue("DescribeGateway.DataLoadInterval");
+			describeGatewayResponse.LastErrorKey = _ctx.StringValue("DescribeGateway.LastErrorKey");
+			describeGatewayResponse.InnerIpv6Ip = _ctx.StringValue("DescribeGateway.InnerIpv6Ip");
 
 			List<string> describeGatewayResponse_elasticNodes = new List<string>();
-			for (int i = 0; i < context.Length("DescribeGateway.ElasticNodes.Length"); i++) {
-				describeGatewayResponse_elasticNodes.Add(context.StringValue("DescribeGateway.ElasticNodes["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeGateway.ElasticNodes.Length"); i++) {
+				describeGatewayResponse_elasticNodes.Add(_ctx.StringValue("DescribeGateway.ElasticNodes["+ i +"]"));
 			}
 			describeGatewayResponse.ElasticNodes = describeGatewayResponse_elasticNodes;
         

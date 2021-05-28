@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeGatewayLogsResponseUnmarshaller
     {
-        public static DescribeGatewayLogsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGatewayLogsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGatewayLogsResponse describeGatewayLogsResponse = new DescribeGatewayLogsResponse();
 
-			describeGatewayLogsResponse.HttpResponse = context.HttpResponse;
-			describeGatewayLogsResponse.RequestId = context.StringValue("DescribeGatewayLogs.RequestId");
-			describeGatewayLogsResponse.Success = context.BooleanValue("DescribeGatewayLogs.Success");
-			describeGatewayLogsResponse.Code = context.StringValue("DescribeGatewayLogs.Code");
-			describeGatewayLogsResponse.Message = context.StringValue("DescribeGatewayLogs.Message");
-			describeGatewayLogsResponse.LogFilePaths = context.StringValue("DescribeGatewayLogs.LogFilePaths");
+			describeGatewayLogsResponse.HttpResponse = _ctx.HttpResponse;
+			describeGatewayLogsResponse.RequestId = _ctx.StringValue("DescribeGatewayLogs.RequestId");
+			describeGatewayLogsResponse.Success = _ctx.BooleanValue("DescribeGatewayLogs.Success");
+			describeGatewayLogsResponse.Code = _ctx.StringValue("DescribeGatewayLogs.Code");
+			describeGatewayLogsResponse.Message = _ctx.StringValue("DescribeGatewayLogs.Message");
+			describeGatewayLogsResponse.LogFilePaths = _ctx.StringValue("DescribeGatewayLogs.LogFilePaths");
         
 			return describeGatewayLogsResponse;
         }

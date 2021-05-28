@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class UpdateGatewayBlockVolumeResponseUnmarshaller
     {
-        public static UpdateGatewayBlockVolumeResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateGatewayBlockVolumeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateGatewayBlockVolumeResponse updateGatewayBlockVolumeResponse = new UpdateGatewayBlockVolumeResponse();
 
-			updateGatewayBlockVolumeResponse.HttpResponse = context.HttpResponse;
-			updateGatewayBlockVolumeResponse.RequestId = context.StringValue("UpdateGatewayBlockVolume.RequestId");
-			updateGatewayBlockVolumeResponse.Success = context.BooleanValue("UpdateGatewayBlockVolume.Success");
-			updateGatewayBlockVolumeResponse.Code = context.StringValue("UpdateGatewayBlockVolume.Code");
-			updateGatewayBlockVolumeResponse.Message = context.StringValue("UpdateGatewayBlockVolume.Message");
-			updateGatewayBlockVolumeResponse.TaskId = context.StringValue("UpdateGatewayBlockVolume.TaskId");
+			updateGatewayBlockVolumeResponse.HttpResponse = _ctx.HttpResponse;
+			updateGatewayBlockVolumeResponse.RequestId = _ctx.StringValue("UpdateGatewayBlockVolume.RequestId");
+			updateGatewayBlockVolumeResponse.Success = _ctx.BooleanValue("UpdateGatewayBlockVolume.Success");
+			updateGatewayBlockVolumeResponse.Code = _ctx.StringValue("UpdateGatewayBlockVolume.Code");
+			updateGatewayBlockVolumeResponse.Message = _ctx.StringValue("UpdateGatewayBlockVolume.Message");
+			updateGatewayBlockVolumeResponse.TaskId = _ctx.StringValue("UpdateGatewayBlockVolume.TaskId");
         
 			return updateGatewayBlockVolumeResponse;
         }

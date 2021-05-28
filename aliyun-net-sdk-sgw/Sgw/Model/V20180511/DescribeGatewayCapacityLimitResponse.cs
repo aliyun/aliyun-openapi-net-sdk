@@ -25,19 +25,31 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeGatewayCapacityLimitResponse : AcsResponse
 	{
 
+		private long? fileSystemSizeInTB;
+
 		private string requestId;
-
-		private bool? success;
-
-		private string code;
 
 		private string message;
 
+		private bool? isMetadataSeparate;
+
 		private long? fileNumber;
 
-		private long? fileSystemSizeInTB;
+		private string code;
 
-		private bool? isMetadataSeparate;
+		private bool? success;
+
+		public long? FileSystemSizeInTB
+		{
+			get
+			{
+				return fileSystemSizeInTB;
+			}
+			set	
+			{
+				fileSystemSizeInTB = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -48,30 +60,6 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
 			}
 		}
 
@@ -87,6 +75,18 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		public bool? IsMetadataSeparate
+		{
+			get
+			{
+				return isMetadataSeparate;
+			}
+			set	
+			{
+				isMetadataSeparate = value;
+			}
+		}
+
 		public long? FileNumber
 		{
 			get
@@ -99,27 +99,27 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public long? FileSystemSizeInTB
+		public string Code
 		{
 			get
 			{
-				return fileSystemSizeInTB;
+				return code;
 			}
 			set	
 			{
-				fileSystemSizeInTB = value;
+				code = value;
 			}
 		}
 
-		public bool? IsMetadataSeparate
+		public bool? Success
 		{
 			get
 			{
-				return isMetadataSeparate;
+				return success;
 			}
 			set	
 			{
-				isMetadataSeparate = value;
+				success = value;
 			}
 		}
 	}

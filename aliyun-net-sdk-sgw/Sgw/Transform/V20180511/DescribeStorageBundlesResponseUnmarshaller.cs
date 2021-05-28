@@ -26,29 +26,29 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeStorageBundlesResponseUnmarshaller
     {
-        public static DescribeStorageBundlesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeStorageBundlesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeStorageBundlesResponse describeStorageBundlesResponse = new DescribeStorageBundlesResponse();
 
-			describeStorageBundlesResponse.HttpResponse = context.HttpResponse;
-			describeStorageBundlesResponse.RequestId = context.StringValue("DescribeStorageBundles.RequestId");
-			describeStorageBundlesResponse.Success = context.BooleanValue("DescribeStorageBundles.Success");
-			describeStorageBundlesResponse.Code = context.StringValue("DescribeStorageBundles.Code");
-			describeStorageBundlesResponse.Message = context.StringValue("DescribeStorageBundles.Message");
-			describeStorageBundlesResponse.TotalCount = context.IntegerValue("DescribeStorageBundles.TotalCount");
-			describeStorageBundlesResponse.PageNumber = context.IntegerValue("DescribeStorageBundles.PageNumber");
-			describeStorageBundlesResponse.PageSize = context.IntegerValue("DescribeStorageBundles.PageSize");
+			describeStorageBundlesResponse.HttpResponse = _ctx.HttpResponse;
+			describeStorageBundlesResponse.RequestId = _ctx.StringValue("DescribeStorageBundles.RequestId");
+			describeStorageBundlesResponse.Success = _ctx.BooleanValue("DescribeStorageBundles.Success");
+			describeStorageBundlesResponse.Code = _ctx.StringValue("DescribeStorageBundles.Code");
+			describeStorageBundlesResponse.Message = _ctx.StringValue("DescribeStorageBundles.Message");
+			describeStorageBundlesResponse.TotalCount = _ctx.IntegerValue("DescribeStorageBundles.TotalCount");
+			describeStorageBundlesResponse.PageNumber = _ctx.IntegerValue("DescribeStorageBundles.PageNumber");
+			describeStorageBundlesResponse.PageSize = _ctx.IntegerValue("DescribeStorageBundles.PageSize");
 
 			List<DescribeStorageBundlesResponse.DescribeStorageBundles_StorageBundle> describeStorageBundlesResponse_storageBundles = new List<DescribeStorageBundlesResponse.DescribeStorageBundles_StorageBundle>();
-			for (int i = 0; i < context.Length("DescribeStorageBundles.StorageBundles.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeStorageBundles.StorageBundles.Length"); i++) {
 				DescribeStorageBundlesResponse.DescribeStorageBundles_StorageBundle storageBundle = new DescribeStorageBundlesResponse.DescribeStorageBundles_StorageBundle();
-				storageBundle.StorageBundleId = context.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].StorageBundleId");
-				storageBundle.Name = context.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].Name");
-				storageBundle.Description = context.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].Description");
-				storageBundle.BackendBucketRegionId = context.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].BackendBucketRegionId");
-				storageBundle.Location = context.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].Location");
-				storageBundle.CreatedTime = context.LongValue("DescribeStorageBundles.StorageBundles["+ i +"].CreatedTime");
-				storageBundle.ResourceGroupId = context.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].ResourceGroupId");
+				storageBundle.StorageBundleId = _ctx.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].StorageBundleId");
+				storageBundle.Name = _ctx.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].Name");
+				storageBundle.Description = _ctx.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].Description");
+				storageBundle.BackendBucketRegionId = _ctx.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].BackendBucketRegionId");
+				storageBundle.Location = _ctx.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].Location");
+				storageBundle.CreatedTime = _ctx.LongValue("DescribeStorageBundles.StorageBundles["+ i +"].CreatedTime");
+				storageBundle.ResourceGroupId = _ctx.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].ResourceGroupId");
 
 				describeStorageBundlesResponse_storageBundles.Add(storageBundle);
 			}

@@ -26,19 +26,19 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeGatewayADInfoResponseUnmarshaller
     {
-        public static DescribeGatewayADInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGatewayADInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGatewayADInfoResponse describeGatewayADInfoResponse = new DescribeGatewayADInfoResponse();
 
-			describeGatewayADInfoResponse.HttpResponse = context.HttpResponse;
-			describeGatewayADInfoResponse.RequestId = context.StringValue("DescribeGatewayADInfo.RequestId");
-			describeGatewayADInfoResponse.Success = context.BooleanValue("DescribeGatewayADInfo.Success");
-			describeGatewayADInfoResponse.Code = context.StringValue("DescribeGatewayADInfo.Code");
-			describeGatewayADInfoResponse.Message = context.StringValue("DescribeGatewayADInfo.Message");
-			describeGatewayADInfoResponse.Username = context.StringValue("DescribeGatewayADInfo.Username");
-			describeGatewayADInfoResponse.ServerIp = context.StringValue("DescribeGatewayADInfo.ServerIp");
-			describeGatewayADInfoResponse.DomainName = context.StringValue("DescribeGatewayADInfo.DomainName");
-			describeGatewayADInfoResponse.IsEnabled = context.BooleanValue("DescribeGatewayADInfo.IsEnabled");
+			describeGatewayADInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeGatewayADInfoResponse.RequestId = _ctx.StringValue("DescribeGatewayADInfo.RequestId");
+			describeGatewayADInfoResponse.Success = _ctx.BooleanValue("DescribeGatewayADInfo.Success");
+			describeGatewayADInfoResponse.Code = _ctx.StringValue("DescribeGatewayADInfo.Code");
+			describeGatewayADInfoResponse.Message = _ctx.StringValue("DescribeGatewayADInfo.Message");
+			describeGatewayADInfoResponse.Username = _ctx.StringValue("DescribeGatewayADInfo.Username");
+			describeGatewayADInfoResponse.ServerIp = _ctx.StringValue("DescribeGatewayADInfo.ServerIp");
+			describeGatewayADInfoResponse.DomainName = _ctx.StringValue("DescribeGatewayADInfo.DomainName");
+			describeGatewayADInfoResponse.IsEnabled = _ctx.BooleanValue("DescribeGatewayADInfo.IsEnabled");
         
 			return describeGatewayADInfoResponse;
         }

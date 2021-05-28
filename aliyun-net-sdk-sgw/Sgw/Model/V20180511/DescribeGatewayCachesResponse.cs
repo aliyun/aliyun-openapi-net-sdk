@@ -120,6 +120,8 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 
 			private string buyURL;
 
+			private string subscriptionInstanceId;
+
 			public long? SizeInGB
 			{
 				get
@@ -249,6 +251,18 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				set	
 				{
 					buyURL = value;
+				}
+			}
+
+			public string SubscriptionInstanceId
+			{
+				get
+				{
+					return subscriptionInstanceId;
+				}
+				set	
+				{
+					subscriptionInstanceId = value;
 				}
 			}
 		}

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class SetGatewayLDAPInfoResponseUnmarshaller
     {
-        public static SetGatewayLDAPInfoResponse Unmarshall(UnmarshallerContext context)
+        public static SetGatewayLDAPInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetGatewayLDAPInfoResponse setGatewayLDAPInfoResponse = new SetGatewayLDAPInfoResponse();
 
-			setGatewayLDAPInfoResponse.HttpResponse = context.HttpResponse;
-			setGatewayLDAPInfoResponse.RequestId = context.StringValue("SetGatewayLDAPInfo.RequestId");
-			setGatewayLDAPInfoResponse.Success = context.BooleanValue("SetGatewayLDAPInfo.Success");
-			setGatewayLDAPInfoResponse.Code = context.StringValue("SetGatewayLDAPInfo.Code");
-			setGatewayLDAPInfoResponse.Message = context.StringValue("SetGatewayLDAPInfo.Message");
-			setGatewayLDAPInfoResponse.TaskId = context.StringValue("SetGatewayLDAPInfo.TaskId");
+			setGatewayLDAPInfoResponse.HttpResponse = _ctx.HttpResponse;
+			setGatewayLDAPInfoResponse.RequestId = _ctx.StringValue("SetGatewayLDAPInfo.RequestId");
+			setGatewayLDAPInfoResponse.Success = _ctx.BooleanValue("SetGatewayLDAPInfo.Success");
+			setGatewayLDAPInfoResponse.Code = _ctx.StringValue("SetGatewayLDAPInfo.Code");
+			setGatewayLDAPInfoResponse.Message = _ctx.StringValue("SetGatewayLDAPInfo.Message");
+			setGatewayLDAPInfoResponse.TaskId = _ctx.StringValue("SetGatewayLDAPInfo.TaskId");
         
 			return setGatewayLDAPInfoResponse;
         }

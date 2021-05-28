@@ -34,8 +34,8 @@ namespace Aliyun.Acs.sgw.Model.V20180511
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sgw.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sgw.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -51,6 +51,8 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 		private int? pollingInterval;
 
 		private string readWriteClientList;
+
+		private bool? bypassCacheRead;
 
 		private int? backendLimit;
 
@@ -177,6 +179,19 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			{
 				readWriteClientList = value;
 				DictionaryUtil.Add(QueryParameters, "ReadWriteClientList", value);
+			}
+		}
+
+		public bool? BypassCacheRead
+		{
+			get
+			{
+				return bypassCacheRead;
+			}
+			set	
+			{
+				bypassCacheRead = value;
+				DictionaryUtil.Add(QueryParameters, "BypassCacheRead", value.ToString());
 			}
 		}
 

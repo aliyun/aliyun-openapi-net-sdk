@@ -25,15 +25,27 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeGatewayFileSharesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string message;
 
-		private bool? success;
+		private string requestId;
 
 		private string code;
 
-		private string message;
+		private bool? success;
 
 		private List<DescribeGatewayFileShares_FileShare> fileShares;
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public string Message
+		public bool? Success
 		{
 			get
 			{
-				return message;
+				return success;
 			}
 			set	
 			{
-				message = value;
+				success = value;
 			}
 		}
 
@@ -98,145 +98,215 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 		public class DescribeGatewayFileShares_FileShare
 		{
 
-			private string name;
+			private string serialNumber;
+
+			private string clientSideCmk;
+
+			private string partialSyncPaths;
+
+			private string pathPrefix;
+
+			private bool? bucketsStub;
+
+			private long? uploadQueue;
 
 			private string diskId;
 
-			private string diskType;
+			private long? ossUsed;
 
-			private string protocol;
+			private long? downloadQueue;
 
-			private long? size;
-
-			private bool? enabled;
-
-			private string state;
-
-			private long? totalUpload;
-
-			private long? totalDownload;
-
-			private string ossBucketName;
-
-			private string ossEndpoint;
-
-			private bool? ossBucketSsl;
-
-			private string localPath;
-
-			private string cacheMode;
-
-			private string address;
-
-			private string serialNumber;
+			private long? activeMessages;
 
 			private string indexId;
 
-			private bool? remoteSync;
+			private string mnsHealth;
 
-			private int? pollingInterval;
+			private bool? accessBasedEnumeration;
 
-			private bool? ignoreDelete;
+			private long? downloadRate;
 
 			private int? feLimit;
 
-			private int? beLimit;
+			private bool? supportArchive;
 
-			private bool? inPlace;
+			private string ossEndpoint;
 
-			private bool? browsable;
+			private string ossHealth;
 
-			private string squash;
+			private long? outRate;
 
-			private string rwUserList;
-
-			private string roUserList;
+			private string serverSideCmk;
 
 			private string rwClientList;
 
-			private string roClientList;
+			private string state;
 
-			private long? ossUsed;
+			private string protocol;
+
+			private bool? ossBucketSsl;
+
+			private int? downloadLimit;
+
+			private bool? inPlace;
+
+			private bool? remoteSync;
+
+			private long? fileNumLimit;
+
+			private string squash;
+
+			private string nfsFullPath;
+
+			private long? remainingMetaSpace;
+
+			private bool? transferAcceleration;
+
+			private long? size;
+
+			private bool? serverSideEncryption;
+
+			private bool? windowsAcl;
+
+			private bool? remoteSyncDownload;
+
+			private bool? clientSideEncryption;
+
+			private string bucketInfos;
+
+			private bool? nfsV4Optimization;
+
+			private long? totalUpload;
+
+			private string diskType;
 
 			private long? used;
 
-			private long? inRate;
+			private bool? ignoreDelete;
 
-			private long? outRate;
+			private string roUserList;
+
+			private long? fsSizeLimit;
+
+			private long? totalDownload;
+
+			private bool? enabled;
+
+			private int? highWatermark;
+
+			private string kmsRotatePeriod;
+
+			private string address;
+
+			private int? pollingInterval;
+
+			private string name;
+
+			private string ossBucketName;
+
+			private string expressSyncId;
 
 			private long? lagPeriod;
 
 			private bool? directIO;
 
-			private string nfsFullPath;
+			private string cacheMode;
 
-			private long? fileNumLimit;
+			private long? inRate;
 
-			private long? fsSizeLimit;
-
-			private bool? serverSideEncryption;
-
-			private string serverSideCmk;
-
-			private bool? clientSideEncryption;
-
-			private string clientSideCmk;
-
-			private string kmsRotatePeriod;
-
-			private string ossHealth;
-
-			private string pathPrefix;
-
-			private bool? fastReclaim;
-
-			private bool? supportArchive;
-
-			private long? remainingMetaSpace;
-
-			private string mnsHealth;
-
-			private string expressSyncId;
-
-			private bool? windowsAcl;
-
-			private bool? accessBasedEnumeration;
-
-			private bool? nfsV4Optimization;
-
-			private bool? bucketsStub;
-
-			private string bucketInfos;
-
-			private string obsoleteBuckets;
-
-			private bool? transferAcceleration;
-
-			private int? downloadLimit;
-
-			private bool? remoteSyncDownload;
-
-			private string partialSyncPaths;
+			private int? lowWatermark;
 
 			private int? syncProgress;
 
-			private long? uploadQueue;
+			private string serverSideAlgorithm;
 
-			private long? downloadQueue;
+			private string obsoleteBuckets;
 
-			private long? downloadRate;
+			private int? beLimit;
 
-			private long? activeMessages;
+			private string localPath;
 
-			public string Name
+			private string roClientList;
+
+			private string rwUserList;
+
+			private bool? fastReclaim;
+
+			private bool? browsable;
+
+			private bool? throttling;
+
+			private bool? bypassCacheRead;
+
+			public string SerialNumber
 			{
 				get
 				{
-					return name;
+					return serialNumber;
 				}
 				set	
 				{
-					name = value;
+					serialNumber = value;
+				}
+			}
+
+			public string ClientSideCmk
+			{
+				get
+				{
+					return clientSideCmk;
+				}
+				set	
+				{
+					clientSideCmk = value;
+				}
+			}
+
+			public string PartialSyncPaths
+			{
+				get
+				{
+					return partialSyncPaths;
+				}
+				set	
+				{
+					partialSyncPaths = value;
+				}
+			}
+
+			public string PathPrefix
+			{
+				get
+				{
+					return pathPrefix;
+				}
+				set	
+				{
+					pathPrefix = value;
+				}
+			}
+
+			public bool? BucketsStub
+			{
+				get
+				{
+					return bucketsStub;
+				}
+				set	
+				{
+					bucketsStub = value;
+				}
+			}
+
+			public long? UploadQueue
+			{
+				get
+				{
+					return uploadQueue;
+				}
+				set	
+				{
+					uploadQueue = value;
 				}
 			}
 
@@ -252,171 +322,39 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
-			public string DiskType
+			public long? OssUsed
 			{
 				get
 				{
-					return diskType;
+					return ossUsed;
 				}
 				set	
 				{
-					diskType = value;
+					ossUsed = value;
 				}
 			}
 
-			public string Protocol
+			public long? DownloadQueue
 			{
 				get
 				{
-					return protocol;
+					return downloadQueue;
 				}
 				set	
 				{
-					protocol = value;
+					downloadQueue = value;
 				}
 			}
 
-			public long? Size
+			public long? ActiveMessages
 			{
 				get
 				{
-					return size;
+					return activeMessages;
 				}
 				set	
 				{
-					size = value;
-				}
-			}
-
-			public bool? Enabled
-			{
-				get
-				{
-					return enabled;
-				}
-				set	
-				{
-					enabled = value;
-				}
-			}
-
-			public string State
-			{
-				get
-				{
-					return state;
-				}
-				set	
-				{
-					state = value;
-				}
-			}
-
-			public long? TotalUpload
-			{
-				get
-				{
-					return totalUpload;
-				}
-				set	
-				{
-					totalUpload = value;
-				}
-			}
-
-			public long? TotalDownload
-			{
-				get
-				{
-					return totalDownload;
-				}
-				set	
-				{
-					totalDownload = value;
-				}
-			}
-
-			public string OssBucketName
-			{
-				get
-				{
-					return ossBucketName;
-				}
-				set	
-				{
-					ossBucketName = value;
-				}
-			}
-
-			public string OssEndpoint
-			{
-				get
-				{
-					return ossEndpoint;
-				}
-				set	
-				{
-					ossEndpoint = value;
-				}
-			}
-
-			public bool? OssBucketSsl
-			{
-				get
-				{
-					return ossBucketSsl;
-				}
-				set	
-				{
-					ossBucketSsl = value;
-				}
-			}
-
-			public string LocalPath
-			{
-				get
-				{
-					return localPath;
-				}
-				set	
-				{
-					localPath = value;
-				}
-			}
-
-			public string CacheMode
-			{
-				get
-				{
-					return cacheMode;
-				}
-				set	
-				{
-					cacheMode = value;
-				}
-			}
-
-			public string Address
-			{
-				get
-				{
-					return address;
-				}
-				set	
-				{
-					address = value;
-				}
-			}
-
-			public string SerialNumber
-			{
-				get
-				{
-					return serialNumber;
-				}
-				set	
-				{
-					serialNumber = value;
+					activeMessages = value;
 				}
 			}
 
@@ -432,39 +370,39 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
-			public bool? RemoteSync
+			public string MnsHealth
 			{
 				get
 				{
-					return remoteSync;
+					return mnsHealth;
 				}
 				set	
 				{
-					remoteSync = value;
+					mnsHealth = value;
 				}
 			}
 
-			public int? PollingInterval
+			public bool? AccessBasedEnumeration
 			{
 				get
 				{
-					return pollingInterval;
+					return accessBasedEnumeration;
 				}
 				set	
 				{
-					pollingInterval = value;
+					accessBasedEnumeration = value;
 				}
 			}
 
-			public bool? IgnoreDelete
+			public long? DownloadRate
 			{
 				get
 				{
-					return ignoreDelete;
+					return downloadRate;
 				}
 				set	
 				{
-					ignoreDelete = value;
+					downloadRate = value;
 				}
 			}
 
@@ -480,75 +418,63 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
-			public int? BeLimit
+			public bool? SupportArchive
 			{
 				get
 				{
-					return beLimit;
+					return supportArchive;
 				}
 				set	
 				{
-					beLimit = value;
+					supportArchive = value;
 				}
 			}
 
-			public bool? InPlace
+			public string OssEndpoint
 			{
 				get
 				{
-					return inPlace;
+					return ossEndpoint;
 				}
 				set	
 				{
-					inPlace = value;
+					ossEndpoint = value;
 				}
 			}
 
-			public bool? Browsable
+			public string OssHealth
 			{
 				get
 				{
-					return browsable;
+					return ossHealth;
 				}
 				set	
 				{
-					browsable = value;
+					ossHealth = value;
 				}
 			}
 
-			public string Squash
+			public long? OutRate
 			{
 				get
 				{
-					return squash;
+					return outRate;
 				}
 				set	
 				{
-					squash = value;
+					outRate = value;
 				}
 			}
 
-			public string RwUserList
+			public string ServerSideCmk
 			{
 				get
 				{
-					return rwUserList;
+					return serverSideCmk;
 				}
 				set	
 				{
-					rwUserList = value;
-				}
-			}
-
-			public string RoUserList
-			{
-				get
-				{
-					return roUserList;
-				}
-				set	
-				{
-					roUserList = value;
+					serverSideCmk = value;
 				}
 			}
 
@@ -564,27 +490,243 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
-			public string RoClientList
+			public string State
 			{
 				get
 				{
-					return roClientList;
+					return state;
 				}
 				set	
 				{
-					roClientList = value;
+					state = value;
 				}
 			}
 
-			public long? OssUsed
+			public string Protocol
 			{
 				get
 				{
-					return ossUsed;
+					return protocol;
 				}
 				set	
 				{
-					ossUsed = value;
+					protocol = value;
+				}
+			}
+
+			public bool? OssBucketSsl
+			{
+				get
+				{
+					return ossBucketSsl;
+				}
+				set	
+				{
+					ossBucketSsl = value;
+				}
+			}
+
+			public int? DownloadLimit
+			{
+				get
+				{
+					return downloadLimit;
+				}
+				set	
+				{
+					downloadLimit = value;
+				}
+			}
+
+			public bool? InPlace
+			{
+				get
+				{
+					return inPlace;
+				}
+				set	
+				{
+					inPlace = value;
+				}
+			}
+
+			public bool? RemoteSync
+			{
+				get
+				{
+					return remoteSync;
+				}
+				set	
+				{
+					remoteSync = value;
+				}
+			}
+
+			public long? FileNumLimit
+			{
+				get
+				{
+					return fileNumLimit;
+				}
+				set	
+				{
+					fileNumLimit = value;
+				}
+			}
+
+			public string Squash
+			{
+				get
+				{
+					return squash;
+				}
+				set	
+				{
+					squash = value;
+				}
+			}
+
+			public string NfsFullPath
+			{
+				get
+				{
+					return nfsFullPath;
+				}
+				set	
+				{
+					nfsFullPath = value;
+				}
+			}
+
+			public long? RemainingMetaSpace
+			{
+				get
+				{
+					return remainingMetaSpace;
+				}
+				set	
+				{
+					remainingMetaSpace = value;
+				}
+			}
+
+			public bool? TransferAcceleration
+			{
+				get
+				{
+					return transferAcceleration;
+				}
+				set	
+				{
+					transferAcceleration = value;
+				}
+			}
+
+			public long? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
+				}
+			}
+
+			public bool? ServerSideEncryption
+			{
+				get
+				{
+					return serverSideEncryption;
+				}
+				set	
+				{
+					serverSideEncryption = value;
+				}
+			}
+
+			public bool? WindowsAcl
+			{
+				get
+				{
+					return windowsAcl;
+				}
+				set	
+				{
+					windowsAcl = value;
+				}
+			}
+
+			public bool? RemoteSyncDownload
+			{
+				get
+				{
+					return remoteSyncDownload;
+				}
+				set	
+				{
+					remoteSyncDownload = value;
+				}
+			}
+
+			public bool? ClientSideEncryption
+			{
+				get
+				{
+					return clientSideEncryption;
+				}
+				set	
+				{
+					clientSideEncryption = value;
+				}
+			}
+
+			public string BucketInfos
+			{
+				get
+				{
+					return bucketInfos;
+				}
+				set	
+				{
+					bucketInfos = value;
+				}
+			}
+
+			public bool? NfsV4Optimization
+			{
+				get
+				{
+					return nfsV4Optimization;
+				}
+				set	
+				{
+					nfsV4Optimization = value;
+				}
+			}
+
+			public long? TotalUpload
+			{
+				get
+				{
+					return totalUpload;
+				}
+				set	
+				{
+					totalUpload = value;
+				}
+			}
+
+			public string DiskType
+			{
+				get
+				{
+					return diskType;
+				}
+				set	
+				{
+					diskType = value;
 				}
 			}
 
@@ -600,27 +742,147 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
-			public long? InRate
+			public bool? IgnoreDelete
 			{
 				get
 				{
-					return inRate;
+					return ignoreDelete;
 				}
 				set	
 				{
-					inRate = value;
+					ignoreDelete = value;
 				}
 			}
 
-			public long? OutRate
+			public string RoUserList
 			{
 				get
 				{
-					return outRate;
+					return roUserList;
 				}
 				set	
 				{
-					outRate = value;
+					roUserList = value;
+				}
+			}
+
+			public long? FsSizeLimit
+			{
+				get
+				{
+					return fsSizeLimit;
+				}
+				set	
+				{
+					fsSizeLimit = value;
+				}
+			}
+
+			public long? TotalDownload
+			{
+				get
+				{
+					return totalDownload;
+				}
+				set	
+				{
+					totalDownload = value;
+				}
+			}
+
+			public bool? Enabled
+			{
+				get
+				{
+					return enabled;
+				}
+				set	
+				{
+					enabled = value;
+				}
+			}
+
+			public int? HighWatermark
+			{
+				get
+				{
+					return highWatermark;
+				}
+				set	
+				{
+					highWatermark = value;
+				}
+			}
+
+			public string KmsRotatePeriod
+			{
+				get
+				{
+					return kmsRotatePeriod;
+				}
+				set	
+				{
+					kmsRotatePeriod = value;
+				}
+			}
+
+			public string Address
+			{
+				get
+				{
+					return address;
+				}
+				set	
+				{
+					address = value;
+				}
+			}
+
+			public int? PollingInterval
+			{
+				get
+				{
+					return pollingInterval;
+				}
+				set	
+				{
+					pollingInterval = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string OssBucketName
+			{
+				get
+				{
+					return ossBucketName;
+				}
+				set	
+				{
+					ossBucketName = value;
+				}
+			}
+
+			public string ExpressSyncId
+			{
+				get
+				{
+					return expressSyncId;
+				}
+				set	
+				{
+					expressSyncId = value;
 				}
 			}
 
@@ -648,303 +910,39 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
-			public string NfsFullPath
+			public string CacheMode
 			{
 				get
 				{
-					return nfsFullPath;
+					return cacheMode;
 				}
 				set	
 				{
-					nfsFullPath = value;
+					cacheMode = value;
 				}
 			}
 
-			public long? FileNumLimit
+			public long? InRate
 			{
 				get
 				{
-					return fileNumLimit;
+					return inRate;
 				}
 				set	
 				{
-					fileNumLimit = value;
+					inRate = value;
 				}
 			}
 
-			public long? FsSizeLimit
+			public int? LowWatermark
 			{
 				get
 				{
-					return fsSizeLimit;
+					return lowWatermark;
 				}
 				set	
 				{
-					fsSizeLimit = value;
-				}
-			}
-
-			public bool? ServerSideEncryption
-			{
-				get
-				{
-					return serverSideEncryption;
-				}
-				set	
-				{
-					serverSideEncryption = value;
-				}
-			}
-
-			public string ServerSideCmk
-			{
-				get
-				{
-					return serverSideCmk;
-				}
-				set	
-				{
-					serverSideCmk = value;
-				}
-			}
-
-			public bool? ClientSideEncryption
-			{
-				get
-				{
-					return clientSideEncryption;
-				}
-				set	
-				{
-					clientSideEncryption = value;
-				}
-			}
-
-			public string ClientSideCmk
-			{
-				get
-				{
-					return clientSideCmk;
-				}
-				set	
-				{
-					clientSideCmk = value;
-				}
-			}
-
-			public string KmsRotatePeriod
-			{
-				get
-				{
-					return kmsRotatePeriod;
-				}
-				set	
-				{
-					kmsRotatePeriod = value;
-				}
-			}
-
-			public string OssHealth
-			{
-				get
-				{
-					return ossHealth;
-				}
-				set	
-				{
-					ossHealth = value;
-				}
-			}
-
-			public string PathPrefix
-			{
-				get
-				{
-					return pathPrefix;
-				}
-				set	
-				{
-					pathPrefix = value;
-				}
-			}
-
-			public bool? FastReclaim
-			{
-				get
-				{
-					return fastReclaim;
-				}
-				set	
-				{
-					fastReclaim = value;
-				}
-			}
-
-			public bool? SupportArchive
-			{
-				get
-				{
-					return supportArchive;
-				}
-				set	
-				{
-					supportArchive = value;
-				}
-			}
-
-			public long? RemainingMetaSpace
-			{
-				get
-				{
-					return remainingMetaSpace;
-				}
-				set	
-				{
-					remainingMetaSpace = value;
-				}
-			}
-
-			public string MnsHealth
-			{
-				get
-				{
-					return mnsHealth;
-				}
-				set	
-				{
-					mnsHealth = value;
-				}
-			}
-
-			public string ExpressSyncId
-			{
-				get
-				{
-					return expressSyncId;
-				}
-				set	
-				{
-					expressSyncId = value;
-				}
-			}
-
-			public bool? WindowsAcl
-			{
-				get
-				{
-					return windowsAcl;
-				}
-				set	
-				{
-					windowsAcl = value;
-				}
-			}
-
-			public bool? AccessBasedEnumeration
-			{
-				get
-				{
-					return accessBasedEnumeration;
-				}
-				set	
-				{
-					accessBasedEnumeration = value;
-				}
-			}
-
-			public bool? NfsV4Optimization
-			{
-				get
-				{
-					return nfsV4Optimization;
-				}
-				set	
-				{
-					nfsV4Optimization = value;
-				}
-			}
-
-			public bool? BucketsStub
-			{
-				get
-				{
-					return bucketsStub;
-				}
-				set	
-				{
-					bucketsStub = value;
-				}
-			}
-
-			public string BucketInfos
-			{
-				get
-				{
-					return bucketInfos;
-				}
-				set	
-				{
-					bucketInfos = value;
-				}
-			}
-
-			public string ObsoleteBuckets
-			{
-				get
-				{
-					return obsoleteBuckets;
-				}
-				set	
-				{
-					obsoleteBuckets = value;
-				}
-			}
-
-			public bool? TransferAcceleration
-			{
-				get
-				{
-					return transferAcceleration;
-				}
-				set	
-				{
-					transferAcceleration = value;
-				}
-			}
-
-			public int? DownloadLimit
-			{
-				get
-				{
-					return downloadLimit;
-				}
-				set	
-				{
-					downloadLimit = value;
-				}
-			}
-
-			public bool? RemoteSyncDownload
-			{
-				get
-				{
-					return remoteSyncDownload;
-				}
-				set	
-				{
-					remoteSyncDownload = value;
-				}
-			}
-
-			public string PartialSyncPaths
-			{
-				get
-				{
-					return partialSyncPaths;
-				}
-				set	
-				{
-					partialSyncPaths = value;
+					lowWatermark = value;
 				}
 			}
 
@@ -960,51 +958,123 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
-			public long? UploadQueue
+			public string ServerSideAlgorithm
 			{
 				get
 				{
-					return uploadQueue;
+					return serverSideAlgorithm;
 				}
 				set	
 				{
-					uploadQueue = value;
+					serverSideAlgorithm = value;
 				}
 			}
 
-			public long? DownloadQueue
+			public string ObsoleteBuckets
 			{
 				get
 				{
-					return downloadQueue;
+					return obsoleteBuckets;
 				}
 				set	
 				{
-					downloadQueue = value;
+					obsoleteBuckets = value;
 				}
 			}
 
-			public long? DownloadRate
+			public int? BeLimit
 			{
 				get
 				{
-					return downloadRate;
+					return beLimit;
 				}
 				set	
 				{
-					downloadRate = value;
+					beLimit = value;
 				}
 			}
 
-			public long? ActiveMessages
+			public string LocalPath
 			{
 				get
 				{
-					return activeMessages;
+					return localPath;
 				}
 				set	
 				{
-					activeMessages = value;
+					localPath = value;
+				}
+			}
+
+			public string RoClientList
+			{
+				get
+				{
+					return roClientList;
+				}
+				set	
+				{
+					roClientList = value;
+				}
+			}
+
+			public string RwUserList
+			{
+				get
+				{
+					return rwUserList;
+				}
+				set	
+				{
+					rwUserList = value;
+				}
+			}
+
+			public bool? FastReclaim
+			{
+				get
+				{
+					return fastReclaim;
+				}
+				set	
+				{
+					fastReclaim = value;
+				}
+			}
+
+			public bool? Browsable
+			{
+				get
+				{
+					return browsable;
+				}
+				set	
+				{
+					browsable = value;
+				}
+			}
+
+			public bool? Throttling
+			{
+				get
+				{
+					return throttling;
+				}
+				set	
+				{
+					throttling = value;
+				}
+			}
+
+			public bool? BypassCacheRead
+			{
+				get
+				{
+					return bypassCacheRead;
+				}
+				set	
+				{
+					bypassCacheRead = value;
 				}
 			}
 		}

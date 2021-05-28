@@ -103,6 +103,8 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 
 		private string lastErrorKey;
 
+		private string innerIpv6Ip;
+
 		private List<string> elasticNodes;
 
 		public string RequestId
@@ -570,6 +572,18 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set	
 			{
 				lastErrorKey = value;
+			}
+		}
+
+		public string InnerIpv6Ip
+		{
+			get
+			{
+				return innerIpv6Ip;
+			}
+			set	
+			{
+				innerIpv6Ip = value;
 			}
 		}
 

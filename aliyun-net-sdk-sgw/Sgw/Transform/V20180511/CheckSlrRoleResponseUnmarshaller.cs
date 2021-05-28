@@ -26,17 +26,17 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class CheckSlrRoleResponseUnmarshaller
     {
-        public static CheckSlrRoleResponse Unmarshall(UnmarshallerContext context)
+        public static CheckSlrRoleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckSlrRoleResponse checkSlrRoleResponse = new CheckSlrRoleResponse();
 
-			checkSlrRoleResponse.HttpResponse = context.HttpResponse;
-			checkSlrRoleResponse.RequestId = context.StringValue("CheckSlrRole.RequestId");
-			checkSlrRoleResponse.Success = context.BooleanValue("CheckSlrRole.Success");
-			checkSlrRoleResponse.Code = context.StringValue("CheckSlrRole.Code");
-			checkSlrRoleResponse.Message = context.StringValue("CheckSlrRole.Message");
-			checkSlrRoleResponse.Exist = context.BooleanValue("CheckSlrRole.Exist");
-			checkSlrRoleResponse.RequireOldWayCheck = context.BooleanValue("CheckSlrRole.RequireOldWayCheck");
+			checkSlrRoleResponse.HttpResponse = _ctx.HttpResponse;
+			checkSlrRoleResponse.RequestId = _ctx.StringValue("CheckSlrRole.RequestId");
+			checkSlrRoleResponse.Success = _ctx.BooleanValue("CheckSlrRole.Success");
+			checkSlrRoleResponse.Code = _ctx.StringValue("CheckSlrRole.Code");
+			checkSlrRoleResponse.Message = _ctx.StringValue("CheckSlrRole.Message");
+			checkSlrRoleResponse.Exist = _ctx.BooleanValue("CheckSlrRole.Exist");
+			checkSlrRoleResponse.RequireOldWayCheck = _ctx.BooleanValue("CheckSlrRole.RequireOldWayCheck");
         
 			return checkSlrRoleResponse;
         }

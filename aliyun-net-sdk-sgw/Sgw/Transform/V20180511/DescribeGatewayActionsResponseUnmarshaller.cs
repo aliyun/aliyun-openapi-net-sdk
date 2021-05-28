@@ -26,27 +26,27 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeGatewayActionsResponseUnmarshaller
     {
-        public static DescribeGatewayActionsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGatewayActionsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGatewayActionsResponse describeGatewayActionsResponse = new DescribeGatewayActionsResponse();
 
-			describeGatewayActionsResponse.HttpResponse = context.HttpResponse;
-			describeGatewayActionsResponse.RequestId = context.StringValue("DescribeGatewayActions.RequestId");
-			describeGatewayActionsResponse.Success = context.BooleanValue("DescribeGatewayActions.Success");
-			describeGatewayActionsResponse.Code = context.StringValue("DescribeGatewayActions.Code");
-			describeGatewayActionsResponse.Message = context.StringValue("DescribeGatewayActions.Message");
+			describeGatewayActionsResponse.HttpResponse = _ctx.HttpResponse;
+			describeGatewayActionsResponse.RequestId = _ctx.StringValue("DescribeGatewayActions.RequestId");
+			describeGatewayActionsResponse.Success = _ctx.BooleanValue("DescribeGatewayActions.Success");
+			describeGatewayActionsResponse.Code = _ctx.StringValue("DescribeGatewayActions.Code");
+			describeGatewayActionsResponse.Message = _ctx.StringValue("DescribeGatewayActions.Message");
 
 			List<DescribeGatewayActionsResponse.DescribeGatewayActions_Action> describeGatewayActionsResponse_actions = new List<DescribeGatewayActionsResponse.DescribeGatewayActions_Action>();
-			for (int i = 0; i < context.Length("DescribeGatewayActions.Actions.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeGatewayActions.Actions.Length"); i++) {
 				DescribeGatewayActionsResponse.DescribeGatewayActions_Action action = new DescribeGatewayActionsResponse.DescribeGatewayActions_Action();
-				action.GatewayId = context.StringValue("DescribeGatewayActions.Actions["+ i +"].GatewayId");
-				action.Self = context.StringValue("DescribeGatewayActions.Actions["+ i +"].Self");
-				action.Monitor = context.StringValue("DescribeGatewayActions.Actions["+ i +"].Monitor");
-				action.Disk = context.StringValue("DescribeGatewayActions.Actions["+ i +"].Disk");
-				action.Cache = context.StringValue("DescribeGatewayActions.Actions["+ i +"].Cache");
-				action.SmbUser = context.StringValue("DescribeGatewayActions.Actions["+ i +"].SmbUser");
-				action.AdLdap = context.StringValue("DescribeGatewayActions.Actions["+ i +"].AdLdap");
-				action.Target = context.StringValue("DescribeGatewayActions.Actions["+ i +"].Target");
+				action.GatewayId = _ctx.StringValue("DescribeGatewayActions.Actions["+ i +"].GatewayId");
+				action.Self = _ctx.StringValue("DescribeGatewayActions.Actions["+ i +"].Self");
+				action.Monitor = _ctx.StringValue("DescribeGatewayActions.Actions["+ i +"].Monitor");
+				action.Disk = _ctx.StringValue("DescribeGatewayActions.Actions["+ i +"].Disk");
+				action.Cache = _ctx.StringValue("DescribeGatewayActions.Actions["+ i +"].Cache");
+				action.SmbUser = _ctx.StringValue("DescribeGatewayActions.Actions["+ i +"].SmbUser");
+				action.AdLdap = _ctx.StringValue("DescribeGatewayActions.Actions["+ i +"].AdLdap");
+				action.Target = _ctx.StringValue("DescribeGatewayActions.Actions["+ i +"].Target");
 
 				describeGatewayActionsResponse_actions.Add(action);
 			}

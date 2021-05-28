@@ -26,15 +26,15 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class CheckRoleResponseUnmarshaller
     {
-        public static CheckRoleResponse Unmarshall(UnmarshallerContext context)
+        public static CheckRoleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckRoleResponse checkRoleResponse = new CheckRoleResponse();
 
-			checkRoleResponse.HttpResponse = context.HttpResponse;
-			checkRoleResponse.RequestId = context.StringValue("CheckRole.RequestId");
-			checkRoleResponse.Success = context.BooleanValue("CheckRole.Success");
-			checkRoleResponse.Code = context.StringValue("CheckRole.Code");
-			checkRoleResponse.Message = context.StringValue("CheckRole.Message");
+			checkRoleResponse.HttpResponse = _ctx.HttpResponse;
+			checkRoleResponse.RequestId = _ctx.StringValue("CheckRole.RequestId");
+			checkRoleResponse.Success = _ctx.BooleanValue("CheckRole.Success");
+			checkRoleResponse.Code = _ctx.StringValue("CheckRole.Code");
+			checkRoleResponse.Message = _ctx.StringValue("CheckRole.Message");
         
 			return checkRoleResponse;
         }

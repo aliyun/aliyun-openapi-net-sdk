@@ -26,15 +26,15 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class ReportFileSharesResponseUnmarshaller
     {
-        public static ReportFileSharesResponse Unmarshall(UnmarshallerContext context)
+        public static ReportFileSharesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ReportFileSharesResponse reportFileSharesResponse = new ReportFileSharesResponse();
 
-			reportFileSharesResponse.HttpResponse = context.HttpResponse;
-			reportFileSharesResponse.RequestId = context.StringValue("ReportFileShares.RequestId");
-			reportFileSharesResponse.Success = context.BooleanValue("ReportFileShares.Success");
-			reportFileSharesResponse.Code = context.StringValue("ReportFileShares.Code");
-			reportFileSharesResponse.Message = context.StringValue("ReportFileShares.Message");
+			reportFileSharesResponse.HttpResponse = _ctx.HttpResponse;
+			reportFileSharesResponse.RequestId = _ctx.StringValue("ReportFileShares.RequestId");
+			reportFileSharesResponse.Success = _ctx.BooleanValue("ReportFileShares.Success");
+			reportFileSharesResponse.Code = _ctx.StringValue("ReportFileShares.Code");
+			reportFileSharesResponse.Message = _ctx.StringValue("ReportFileShares.Message");
         
 			return reportFileSharesResponse;
         }

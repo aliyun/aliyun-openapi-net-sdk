@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeKmsKeyResponseUnmarshaller
     {
-        public static DescribeKmsKeyResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeKmsKeyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeKmsKeyResponse describeKmsKeyResponse = new DescribeKmsKeyResponse();
 
-			describeKmsKeyResponse.HttpResponse = context.HttpResponse;
-			describeKmsKeyResponse.RequestId = context.StringValue("DescribeKmsKey.RequestId");
-			describeKmsKeyResponse.Success = context.BooleanValue("DescribeKmsKey.Success");
-			describeKmsKeyResponse.Code = context.StringValue("DescribeKmsKey.Code");
-			describeKmsKeyResponse.Message = context.StringValue("DescribeKmsKey.Message");
-			describeKmsKeyResponse.IsValid = context.BooleanValue("DescribeKmsKey.IsValid");
+			describeKmsKeyResponse.HttpResponse = _ctx.HttpResponse;
+			describeKmsKeyResponse.RequestId = _ctx.StringValue("DescribeKmsKey.RequestId");
+			describeKmsKeyResponse.Success = _ctx.BooleanValue("DescribeKmsKey.Success");
+			describeKmsKeyResponse.Code = _ctx.StringValue("DescribeKmsKey.Code");
+			describeKmsKeyResponse.Message = _ctx.StringValue("DescribeKmsKey.Message");
+			describeKmsKeyResponse.IsValid = _ctx.BooleanValue("DescribeKmsKey.IsValid");
         
 			return describeKmsKeyResponse;
         }

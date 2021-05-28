@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class RestartFileSharesResponseUnmarshaller
     {
-        public static RestartFileSharesResponse Unmarshall(UnmarshallerContext context)
+        public static RestartFileSharesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RestartFileSharesResponse restartFileSharesResponse = new RestartFileSharesResponse();
 
-			restartFileSharesResponse.HttpResponse = context.HttpResponse;
-			restartFileSharesResponse.RequestId = context.StringValue("RestartFileShares.RequestId");
-			restartFileSharesResponse.Success = context.BooleanValue("RestartFileShares.Success");
-			restartFileSharesResponse.Code = context.StringValue("RestartFileShares.Code");
-			restartFileSharesResponse.Message = context.StringValue("RestartFileShares.Message");
-			restartFileSharesResponse.TaskId = context.StringValue("RestartFileShares.TaskId");
+			restartFileSharesResponse.HttpResponse = _ctx.HttpResponse;
+			restartFileSharesResponse.RequestId = _ctx.StringValue("RestartFileShares.RequestId");
+			restartFileSharesResponse.Success = _ctx.BooleanValue("RestartFileShares.Success");
+			restartFileSharesResponse.Code = _ctx.StringValue("RestartFileShares.Code");
+			restartFileSharesResponse.Message = _ctx.StringValue("RestartFileShares.Message");
+			restartFileSharesResponse.TaskId = _ctx.StringValue("RestartFileShares.TaskId");
         
 			return restartFileSharesResponse;
         }

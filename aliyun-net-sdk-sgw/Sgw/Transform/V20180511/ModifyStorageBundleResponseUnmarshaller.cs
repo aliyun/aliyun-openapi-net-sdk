@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class ModifyStorageBundleResponseUnmarshaller
     {
-        public static ModifyStorageBundleResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyStorageBundleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyStorageBundleResponse modifyStorageBundleResponse = new ModifyStorageBundleResponse();
 
-			modifyStorageBundleResponse.HttpResponse = context.HttpResponse;
-			modifyStorageBundleResponse.RequestId = context.StringValue("ModifyStorageBundle.RequestId");
-			modifyStorageBundleResponse.Success = context.BooleanValue("ModifyStorageBundle.Success");
-			modifyStorageBundleResponse.Code = context.StringValue("ModifyStorageBundle.Code");
-			modifyStorageBundleResponse.Message = context.StringValue("ModifyStorageBundle.Message");
-			modifyStorageBundleResponse.StorageBundleId = context.StringValue("ModifyStorageBundle.StorageBundleId");
+			modifyStorageBundleResponse.HttpResponse = _ctx.HttpResponse;
+			modifyStorageBundleResponse.RequestId = _ctx.StringValue("ModifyStorageBundle.RequestId");
+			modifyStorageBundleResponse.Success = _ctx.BooleanValue("ModifyStorageBundle.Success");
+			modifyStorageBundleResponse.Code = _ctx.StringValue("ModifyStorageBundle.Code");
+			modifyStorageBundleResponse.Message = _ctx.StringValue("ModifyStorageBundle.Message");
+			modifyStorageBundleResponse.StorageBundleId = _ctx.StringValue("ModifyStorageBundle.StorageBundleId");
         
 			return modifyStorageBundleResponse;
         }

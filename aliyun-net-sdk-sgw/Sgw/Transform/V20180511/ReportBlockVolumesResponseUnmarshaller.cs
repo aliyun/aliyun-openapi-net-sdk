@@ -26,15 +26,15 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class ReportBlockVolumesResponseUnmarshaller
     {
-        public static ReportBlockVolumesResponse Unmarshall(UnmarshallerContext context)
+        public static ReportBlockVolumesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ReportBlockVolumesResponse reportBlockVolumesResponse = new ReportBlockVolumesResponse();
 
-			reportBlockVolumesResponse.HttpResponse = context.HttpResponse;
-			reportBlockVolumesResponse.RequestId = context.StringValue("ReportBlockVolumes.RequestId");
-			reportBlockVolumesResponse.Success = context.BooleanValue("ReportBlockVolumes.Success");
-			reportBlockVolumesResponse.Code = context.StringValue("ReportBlockVolumes.Code");
-			reportBlockVolumesResponse.Message = context.StringValue("ReportBlockVolumes.Message");
+			reportBlockVolumesResponse.HttpResponse = _ctx.HttpResponse;
+			reportBlockVolumesResponse.RequestId = _ctx.StringValue("ReportBlockVolumes.RequestId");
+			reportBlockVolumesResponse.Success = _ctx.BooleanValue("ReportBlockVolumes.Success");
+			reportBlockVolumesResponse.Code = _ctx.StringValue("ReportBlockVolumes.Code");
+			reportBlockVolumesResponse.Message = _ctx.StringValue("ReportBlockVolumes.Message");
         
 			return reportBlockVolumesResponse;
         }

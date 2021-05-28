@@ -26,15 +26,15 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class CreateGatewayLoggingResponseUnmarshaller
     {
-        public static CreateGatewayLoggingResponse Unmarshall(UnmarshallerContext context)
+        public static CreateGatewayLoggingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateGatewayLoggingResponse createGatewayLoggingResponse = new CreateGatewayLoggingResponse();
 
-			createGatewayLoggingResponse.HttpResponse = context.HttpResponse;
-			createGatewayLoggingResponse.RequestId = context.StringValue("CreateGatewayLogging.RequestId");
-			createGatewayLoggingResponse.Success = context.BooleanValue("CreateGatewayLogging.Success");
-			createGatewayLoggingResponse.Code = context.StringValue("CreateGatewayLogging.Code");
-			createGatewayLoggingResponse.Message = context.StringValue("CreateGatewayLogging.Message");
+			createGatewayLoggingResponse.HttpResponse = _ctx.HttpResponse;
+			createGatewayLoggingResponse.RequestId = _ctx.StringValue("CreateGatewayLogging.RequestId");
+			createGatewayLoggingResponse.Success = _ctx.BooleanValue("CreateGatewayLogging.Success");
+			createGatewayLoggingResponse.Code = _ctx.StringValue("CreateGatewayLogging.Code");
+			createGatewayLoggingResponse.Message = _ctx.StringValue("CreateGatewayLogging.Message");
         
 			return createGatewayLoggingResponse;
         }

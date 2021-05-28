@@ -26,17 +26,17 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class ExpandCacheDiskResponseUnmarshaller
     {
-        public static ExpandCacheDiskResponse Unmarshall(UnmarshallerContext context)
+        public static ExpandCacheDiskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ExpandCacheDiskResponse expandCacheDiskResponse = new ExpandCacheDiskResponse();
 
-			expandCacheDiskResponse.HttpResponse = context.HttpResponse;
-			expandCacheDiskResponse.RequestId = context.StringValue("ExpandCacheDisk.RequestId");
-			expandCacheDiskResponse.Success = context.BooleanValue("ExpandCacheDisk.Success");
-			expandCacheDiskResponse.Code = context.StringValue("ExpandCacheDisk.Code");
-			expandCacheDiskResponse.Message = context.StringValue("ExpandCacheDisk.Message");
-			expandCacheDiskResponse.TaskId = context.StringValue("ExpandCacheDisk.TaskId");
-			expandCacheDiskResponse.BuyURL = context.StringValue("ExpandCacheDisk.BuyURL");
+			expandCacheDiskResponse.HttpResponse = _ctx.HttpResponse;
+			expandCacheDiskResponse.RequestId = _ctx.StringValue("ExpandCacheDisk.RequestId");
+			expandCacheDiskResponse.Success = _ctx.BooleanValue("ExpandCacheDisk.Success");
+			expandCacheDiskResponse.Code = _ctx.StringValue("ExpandCacheDisk.Code");
+			expandCacheDiskResponse.Message = _ctx.StringValue("ExpandCacheDisk.Message");
+			expandCacheDiskResponse.TaskId = _ctx.StringValue("ExpandCacheDisk.TaskId");
+			expandCacheDiskResponse.BuyURL = _ctx.StringValue("ExpandCacheDisk.BuyURL");
         
 			return expandCacheDiskResponse;
         }

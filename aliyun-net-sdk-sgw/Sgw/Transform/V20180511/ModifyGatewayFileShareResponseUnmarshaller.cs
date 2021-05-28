@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class ModifyGatewayFileShareResponseUnmarshaller
     {
-        public static ModifyGatewayFileShareResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyGatewayFileShareResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyGatewayFileShareResponse modifyGatewayFileShareResponse = new ModifyGatewayFileShareResponse();
 
-			modifyGatewayFileShareResponse.HttpResponse = context.HttpResponse;
-			modifyGatewayFileShareResponse.RequestId = context.StringValue("ModifyGatewayFileShare.RequestId");
-			modifyGatewayFileShareResponse.Success = context.BooleanValue("ModifyGatewayFileShare.Success");
-			modifyGatewayFileShareResponse.Code = context.StringValue("ModifyGatewayFileShare.Code");
-			modifyGatewayFileShareResponse.Message = context.StringValue("ModifyGatewayFileShare.Message");
-			modifyGatewayFileShareResponse.TaskId = context.StringValue("ModifyGatewayFileShare.TaskId");
+			modifyGatewayFileShareResponse.HttpResponse = _ctx.HttpResponse;
+			modifyGatewayFileShareResponse.RequestId = _ctx.StringValue("ModifyGatewayFileShare.RequestId");
+			modifyGatewayFileShareResponse.Success = _ctx.BooleanValue("ModifyGatewayFileShare.Success");
+			modifyGatewayFileShareResponse.Code = _ctx.StringValue("ModifyGatewayFileShare.Code");
+			modifyGatewayFileShareResponse.Message = _ctx.StringValue("ModifyGatewayFileShare.Message");
+			modifyGatewayFileShareResponse.TaskId = _ctx.StringValue("ModifyGatewayFileShare.TaskId");
         
 			return modifyGatewayFileShareResponse;
         }

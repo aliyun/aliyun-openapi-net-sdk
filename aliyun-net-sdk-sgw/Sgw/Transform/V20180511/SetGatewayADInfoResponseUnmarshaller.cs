@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class SetGatewayADInfoResponseUnmarshaller
     {
-        public static SetGatewayADInfoResponse Unmarshall(UnmarshallerContext context)
+        public static SetGatewayADInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetGatewayADInfoResponse setGatewayADInfoResponse = new SetGatewayADInfoResponse();
 
-			setGatewayADInfoResponse.HttpResponse = context.HttpResponse;
-			setGatewayADInfoResponse.RequestId = context.StringValue("SetGatewayADInfo.RequestId");
-			setGatewayADInfoResponse.Success = context.BooleanValue("SetGatewayADInfo.Success");
-			setGatewayADInfoResponse.Code = context.StringValue("SetGatewayADInfo.Code");
-			setGatewayADInfoResponse.Message = context.StringValue("SetGatewayADInfo.Message");
-			setGatewayADInfoResponse.TaskId = context.StringValue("SetGatewayADInfo.TaskId");
+			setGatewayADInfoResponse.HttpResponse = _ctx.HttpResponse;
+			setGatewayADInfoResponse.RequestId = _ctx.StringValue("SetGatewayADInfo.RequestId");
+			setGatewayADInfoResponse.Success = _ctx.BooleanValue("SetGatewayADInfo.Success");
+			setGatewayADInfoResponse.Code = _ctx.StringValue("SetGatewayADInfo.Code");
+			setGatewayADInfoResponse.Message = _ctx.StringValue("SetGatewayADInfo.Message");
+			setGatewayADInfoResponse.TaskId = _ctx.StringValue("SetGatewayADInfo.TaskId");
         
 			return setGatewayADInfoResponse;
         }

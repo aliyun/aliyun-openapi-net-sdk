@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class ValidateGatewayNameResponseUnmarshaller
     {
-        public static ValidateGatewayNameResponse Unmarshall(UnmarshallerContext context)
+        public static ValidateGatewayNameResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ValidateGatewayNameResponse validateGatewayNameResponse = new ValidateGatewayNameResponse();
 
-			validateGatewayNameResponse.HttpResponse = context.HttpResponse;
-			validateGatewayNameResponse.RequestId = context.StringValue("ValidateGatewayName.RequestId");
-			validateGatewayNameResponse.Success = context.BooleanValue("ValidateGatewayName.Success");
-			validateGatewayNameResponse.Code = context.StringValue("ValidateGatewayName.Code");
-			validateGatewayNameResponse.Message = context.StringValue("ValidateGatewayName.Message");
-			validateGatewayNameResponse.IsValid = context.BooleanValue("ValidateGatewayName.IsValid");
+			validateGatewayNameResponse.HttpResponse = _ctx.HttpResponse;
+			validateGatewayNameResponse.RequestId = _ctx.StringValue("ValidateGatewayName.RequestId");
+			validateGatewayNameResponse.Success = _ctx.BooleanValue("ValidateGatewayName.Success");
+			validateGatewayNameResponse.Code = _ctx.StringValue("ValidateGatewayName.Code");
+			validateGatewayNameResponse.Message = _ctx.StringValue("ValidateGatewayName.Message");
+			validateGatewayNameResponse.IsValid = _ctx.BooleanValue("ValidateGatewayName.IsValid");
         
 			return validateGatewayNameResponse;
         }

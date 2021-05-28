@@ -26,16 +26,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class ResetGatewayPasswordResponseUnmarshaller
     {
-        public static ResetGatewayPasswordResponse Unmarshall(UnmarshallerContext context)
+        public static ResetGatewayPasswordResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResetGatewayPasswordResponse resetGatewayPasswordResponse = new ResetGatewayPasswordResponse();
 
-			resetGatewayPasswordResponse.HttpResponse = context.HttpResponse;
-			resetGatewayPasswordResponse.RequestId = context.StringValue("ResetGatewayPassword.RequestId");
-			resetGatewayPasswordResponse.Success = context.BooleanValue("ResetGatewayPassword.Success");
-			resetGatewayPasswordResponse.Code = context.StringValue("ResetGatewayPassword.Code");
-			resetGatewayPasswordResponse.Message = context.StringValue("ResetGatewayPassword.Message");
-			resetGatewayPasswordResponse.TaskId = context.StringValue("ResetGatewayPassword.TaskId");
+			resetGatewayPasswordResponse.HttpResponse = _ctx.HttpResponse;
+			resetGatewayPasswordResponse.RequestId = _ctx.StringValue("ResetGatewayPassword.RequestId");
+			resetGatewayPasswordResponse.Success = _ctx.BooleanValue("ResetGatewayPassword.Success");
+			resetGatewayPasswordResponse.Code = _ctx.StringValue("ResetGatewayPassword.Code");
+			resetGatewayPasswordResponse.Message = _ctx.StringValue("ResetGatewayPassword.Message");
+			resetGatewayPasswordResponse.TaskId = _ctx.StringValue("ResetGatewayPassword.TaskId");
         
 			return resetGatewayPasswordResponse;
         }

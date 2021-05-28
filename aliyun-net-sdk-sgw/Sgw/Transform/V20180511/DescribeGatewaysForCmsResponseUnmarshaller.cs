@@ -26,25 +26,25 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeGatewaysForCmsResponseUnmarshaller
     {
-        public static DescribeGatewaysForCmsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGatewaysForCmsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGatewaysForCmsResponse describeGatewaysForCmsResponse = new DescribeGatewaysForCmsResponse();
 
-			describeGatewaysForCmsResponse.HttpResponse = context.HttpResponse;
-			describeGatewaysForCmsResponse.RequestId = context.StringValue("DescribeGatewaysForCms.RequestId");
-			describeGatewaysForCmsResponse.Success = context.BooleanValue("DescribeGatewaysForCms.Success");
-			describeGatewaysForCmsResponse.Code = context.StringValue("DescribeGatewaysForCms.Code");
-			describeGatewaysForCmsResponse.Message = context.StringValue("DescribeGatewaysForCms.Message");
-			describeGatewaysForCmsResponse.TotalCount = context.IntegerValue("DescribeGatewaysForCms.TotalCount");
-			describeGatewaysForCmsResponse.PageNumber = context.IntegerValue("DescribeGatewaysForCms.PageNumber");
-			describeGatewaysForCmsResponse.PageSize = context.IntegerValue("DescribeGatewaysForCms.PageSize");
+			describeGatewaysForCmsResponse.HttpResponse = _ctx.HttpResponse;
+			describeGatewaysForCmsResponse.RequestId = _ctx.StringValue("DescribeGatewaysForCms.RequestId");
+			describeGatewaysForCmsResponse.Success = _ctx.BooleanValue("DescribeGatewaysForCms.Success");
+			describeGatewaysForCmsResponse.Code = _ctx.StringValue("DescribeGatewaysForCms.Code");
+			describeGatewaysForCmsResponse.Message = _ctx.StringValue("DescribeGatewaysForCms.Message");
+			describeGatewaysForCmsResponse.TotalCount = _ctx.IntegerValue("DescribeGatewaysForCms.TotalCount");
+			describeGatewaysForCmsResponse.PageNumber = _ctx.IntegerValue("DescribeGatewaysForCms.PageNumber");
+			describeGatewaysForCmsResponse.PageSize = _ctx.IntegerValue("DescribeGatewaysForCms.PageSize");
 
 			List<DescribeGatewaysForCmsResponse.DescribeGatewaysForCms_Gateway> describeGatewaysForCmsResponse_gateways = new List<DescribeGatewaysForCmsResponse.DescribeGatewaysForCms_Gateway>();
-			for (int i = 0; i < context.Length("DescribeGatewaysForCms.Gateways.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeGatewaysForCms.Gateways.Length"); i++) {
 				DescribeGatewaysForCmsResponse.DescribeGatewaysForCms_Gateway gateway = new DescribeGatewaysForCmsResponse.DescribeGatewaysForCms_Gateway();
-				gateway.GatewayId = context.StringValue("DescribeGatewaysForCms.Gateways["+ i +"].GatewayId");
-				gateway.Name = context.StringValue("DescribeGatewaysForCms.Gateways["+ i +"].Name");
-				gateway.Description = context.StringValue("DescribeGatewaysForCms.Gateways["+ i +"].Description");
+				gateway.GatewayId = _ctx.StringValue("DescribeGatewaysForCms.Gateways["+ i +"].GatewayId");
+				gateway.Name = _ctx.StringValue("DescribeGatewaysForCms.Gateways["+ i +"].Name");
+				gateway.Description = _ctx.StringValue("DescribeGatewaysForCms.Gateways["+ i +"].Description");
 
 				describeGatewaysForCmsResponse_gateways.Add(gateway);
 			}

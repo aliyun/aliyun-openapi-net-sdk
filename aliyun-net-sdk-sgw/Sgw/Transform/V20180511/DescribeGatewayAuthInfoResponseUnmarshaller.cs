@@ -26,18 +26,18 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class DescribeGatewayAuthInfoResponseUnmarshaller
     {
-        public static DescribeGatewayAuthInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGatewayAuthInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGatewayAuthInfoResponse describeGatewayAuthInfoResponse = new DescribeGatewayAuthInfoResponse();
 
-			describeGatewayAuthInfoResponse.HttpResponse = context.HttpResponse;
-			describeGatewayAuthInfoResponse.RequestId = context.StringValue("DescribeGatewayAuthInfo.RequestId");
-			describeGatewayAuthInfoResponse.Success = context.BooleanValue("DescribeGatewayAuthInfo.Success");
-			describeGatewayAuthInfoResponse.Code = context.StringValue("DescribeGatewayAuthInfo.Code");
-			describeGatewayAuthInfoResponse.Message = context.StringValue("DescribeGatewayAuthInfo.Message");
-			describeGatewayAuthInfoResponse.PublicIp = context.StringValue("DescribeGatewayAuthInfo.PublicIp");
-			describeGatewayAuthInfoResponse.Username = context.StringValue("DescribeGatewayAuthInfo.Username");
-			describeGatewayAuthInfoResponse.Password = context.StringValue("DescribeGatewayAuthInfo.Password");
+			describeGatewayAuthInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeGatewayAuthInfoResponse.RequestId = _ctx.StringValue("DescribeGatewayAuthInfo.RequestId");
+			describeGatewayAuthInfoResponse.Success = _ctx.BooleanValue("DescribeGatewayAuthInfo.Success");
+			describeGatewayAuthInfoResponse.Code = _ctx.StringValue("DescribeGatewayAuthInfo.Code");
+			describeGatewayAuthInfoResponse.Message = _ctx.StringValue("DescribeGatewayAuthInfo.Message");
+			describeGatewayAuthInfoResponse.PublicIp = _ctx.StringValue("DescribeGatewayAuthInfo.PublicIp");
+			describeGatewayAuthInfoResponse.Username = _ctx.StringValue("DescribeGatewayAuthInfo.Username");
+			describeGatewayAuthInfoResponse.Password = _ctx.StringValue("DescribeGatewayAuthInfo.Password");
         
 			return describeGatewayAuthInfoResponse;
         }

@@ -34,15 +34,32 @@ namespace Aliyun.Acs.sgw.Model.V20180511
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sgw.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sgw.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
+		private string reasonDetail;
+
 		private string securityToken;
 
 		private string gatewayId;
+
+		private string reasonType;
+
+		public string ReasonDetail
+		{
+			get
+			{
+				return reasonDetail;
+			}
+			set	
+			{
+				reasonDetail = value;
+				DictionaryUtil.Add(QueryParameters, "ReasonDetail", value);
+			}
+		}
 
 		public string SecurityToken
 		{
@@ -67,6 +84,19 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			{
 				gatewayId = value;
 				DictionaryUtil.Add(QueryParameters, "GatewayId", value);
+			}
+		}
+
+		public string ReasonType
+		{
+			get
+			{
+				return reasonType;
+			}
+			set	
+			{
+				reasonType = value;
+				DictionaryUtil.Add(QueryParameters, "ReasonType", value);
 			}
 		}
 

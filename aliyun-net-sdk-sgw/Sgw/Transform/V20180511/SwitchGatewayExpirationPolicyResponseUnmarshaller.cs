@@ -26,15 +26,15 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 {
     public class SwitchGatewayExpirationPolicyResponseUnmarshaller
     {
-        public static SwitchGatewayExpirationPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static SwitchGatewayExpirationPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SwitchGatewayExpirationPolicyResponse switchGatewayExpirationPolicyResponse = new SwitchGatewayExpirationPolicyResponse();
 
-			switchGatewayExpirationPolicyResponse.HttpResponse = context.HttpResponse;
-			switchGatewayExpirationPolicyResponse.RequestId = context.StringValue("SwitchGatewayExpirationPolicy.RequestId");
-			switchGatewayExpirationPolicyResponse.Success = context.BooleanValue("SwitchGatewayExpirationPolicy.Success");
-			switchGatewayExpirationPolicyResponse.Code = context.StringValue("SwitchGatewayExpirationPolicy.Code");
-			switchGatewayExpirationPolicyResponse.Message = context.StringValue("SwitchGatewayExpirationPolicy.Message");
+			switchGatewayExpirationPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			switchGatewayExpirationPolicyResponse.RequestId = _ctx.StringValue("SwitchGatewayExpirationPolicy.RequestId");
+			switchGatewayExpirationPolicyResponse.Success = _ctx.BooleanValue("SwitchGatewayExpirationPolicy.Success");
+			switchGatewayExpirationPolicyResponse.Code = _ctx.StringValue("SwitchGatewayExpirationPolicy.Code");
+			switchGatewayExpirationPolicyResponse.Message = _ctx.StringValue("SwitchGatewayExpirationPolicy.Message");
         
 			return switchGatewayExpirationPolicyResponse;
         }
