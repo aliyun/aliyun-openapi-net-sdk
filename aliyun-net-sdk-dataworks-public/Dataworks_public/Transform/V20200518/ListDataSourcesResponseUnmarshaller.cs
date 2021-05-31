@@ -60,6 +60,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 				dataSourcesItem.Id = _ctx.IntegerValue("ListDataSources.Data.DataSources["+ i +"].Id");
 				dataSourcesItem.ProjectId = _ctx.IntegerValue("ListDataSources.Data.DataSources["+ i +"].ProjectId");
 				dataSourcesItem.Status = _ctx.IntegerValue("ListDataSources.Data.DataSources["+ i +"].Status");
+				dataSourcesItem.Content = _ctx.StringValue("ListDataSources.Data.DataSources["+ i +"].Content");
 
 				data_dataSources.Add(dataSourcesItem);
 			}
