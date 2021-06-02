@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			keyMetadata.RotationInterval = _ctx.StringValue("DescribeKey.KeyMetadata.RotationInterval");
 			keyMetadata.NextRotationDate = _ctx.StringValue("DescribeKey.KeyMetadata.NextRotationDate");
 			keyMetadata.KeySpec = _ctx.StringValue("DescribeKey.KeyMetadata.KeySpec");
+			keyMetadata.DeletionProtection = _ctx.StringValue("DescribeKey.KeyMetadata.DeletionProtection");
+			keyMetadata.DeletionProtectionDescription = _ctx.StringValue("DescribeKey.KeyMetadata.DeletionProtectionDescription");
 			describeKeyResponse.KeyMetadata = keyMetadata;
         
 			return describeKeyResponse;

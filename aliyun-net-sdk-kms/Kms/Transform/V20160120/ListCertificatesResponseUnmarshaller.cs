@@ -40,17 +40,19 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			for (int i = 0; i < _ctx.Length("ListCertificates.CertificateSummaryList.Length"); i++) {
 				ListCertificatesResponse.ListCertificates_CertificateSummary certificateSummary = new ListCertificatesResponse.ListCertificates_CertificateSummary();
 				certificateSummary.CertificateId = _ctx.StringValue("ListCertificates.CertificateSummaryList["+ i +"].CertificateId");
-				certificateSummary.Subject = _ctx.StringValue("ListCertificates.CertificateSummaryList["+ i +"].Subject");
-				certificateSummary.Issuer = _ctx.StringValue("ListCertificates.CertificateSummaryList["+ i +"].Issuer");
-				certificateSummary.KeySpec = _ctx.StringValue("ListCertificates.CertificateSummaryList["+ i +"].KeySpec");
-				certificateSummary.ProtectionLevel = _ctx.StringValue("ListCertificates.CertificateSummaryList["+ i +"].ProtectionLevel");
-				certificateSummary.NotBefore = _ctx.StringValue("ListCertificates.CertificateSummaryList["+ i +"].NotBefore");
-				certificateSummary.NotAfter = _ctx.StringValue("ListCertificates.CertificateSummaryList["+ i +"].NotAfter");
-				certificateSummary.Status = _ctx.StringValue("ListCertificates.CertificateSummaryList["+ i +"].Status");
 
 				listCertificatesResponse_certificateSummaryList.Add(certificateSummary);
 			}
 			listCertificatesResponse.CertificateSummaryList = listCertificatesResponse_certificateSummaryList;
+
+			List<ListCertificatesResponse.ListCertificates_Certificate> listCertificatesResponse_certificates = new List<ListCertificatesResponse.ListCertificates_Certificate>();
+			for (int i = 0; i < _ctx.Length("ListCertificates.Certificates.Length"); i++) {
+				ListCertificatesResponse.ListCertificates_Certificate certificate = new ListCertificatesResponse.ListCertificates_Certificate();
+				certificate.CertificateId = _ctx.StringValue("ListCertificates.Certificates["+ i +"].CertificateId");
+
+				listCertificatesResponse_certificates.Add(certificate);
+			}
+			listCertificatesResponse.Certificates = listCertificatesResponse_certificates;
         
 			return listCertificatesResponse;
         }

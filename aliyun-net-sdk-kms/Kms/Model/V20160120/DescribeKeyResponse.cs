@@ -90,6 +90,10 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 			private string keySpec;
 
+			private string deletionProtection;
+
+			private string deletionProtectionDescription;
+
 			public string CreationDate
 			{
 				get
@@ -291,6 +295,30 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				set	
 				{
 					keySpec = value;
+				}
+			}
+
+			public string DeletionProtection
+			{
+				get
+				{
+					return deletionProtection;
+				}
+				set	
+				{
+					deletionProtection = value;
+				}
+			}
+
+			public string DeletionProtectionDescription
+			{
+				get
+				{
+					return deletionProtectionDescription;
+				}
+				set	
+				{
+					deletionProtectionDescription = value;
 				}
 			}
 		}

@@ -28,10 +28,10 @@ using Aliyun.Acs.Kms.Transform.V20160120;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class CreateCertificateRequest : RpcAcsRequest<CreateCertificateResponse>
+    public class SetDeletionProtectionRequest : RpcAcsRequest<SetDeletionProtectionResponse>
     {
-        public CreateCertificateRequest()
-            : base("Kms", "2016-01-20", "CreateCertificate", "kms", "openAPI")
+        public SetDeletionProtectionRequest()
+            : base("Kms", "2016-01-20", "SetDeletionProtection", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,74 +42,54 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
-		private bool? exportablePrivateKey;
+		private bool? enableDeletionProtection;
 
-		private string subject;
+		private string protectedResourceArn;
 
-		private List<object> subjectAlternativeNames;
+		private string deletionProtectionDescription;
 
-		private string keySpec;
-
-		public bool? ExportablePrivateKey
+		public bool? EnableDeletionProtection
 		{
 			get
 			{
-				return exportablePrivateKey;
+				return enableDeletionProtection;
 			}
 			set	
 			{
-				exportablePrivateKey = value;
-				DictionaryUtil.Add(QueryParameters, "ExportablePrivateKey", value.ToString());
+				enableDeletionProtection = value;
+				DictionaryUtil.Add(QueryParameters, "EnableDeletionProtection", value.ToString());
 			}
 		}
 
-		public string Subject
+		public string ProtectedResourceArn
 		{
 			get
 			{
-				return subject;
+				return protectedResourceArn;
 			}
 			set	
 			{
-				subject = value;
-				DictionaryUtil.Add(QueryParameters, "Subject", value);
+				protectedResourceArn = value;
+				DictionaryUtil.Add(QueryParameters, "ProtectedResourceArn", value);
 			}
 		}
 
-		public List<object> SubjectAlternativeNames
+		public string DeletionProtectionDescription
 		{
 			get
 			{
-				return subjectAlternativeNames;
+				return deletionProtectionDescription;
 			}
 			set	
 			{
-				subjectAlternativeNames = value;
-				DictionaryUtil.Add(QueryParameters, "SubjectAlternativeNames", JsonConvert.SerializeObject(value));
+				deletionProtectionDescription = value;
+				DictionaryUtil.Add(QueryParameters, "DeletionProtectionDescription", value);
 			}
 		}
 
-		public string KeySpec
-		{
-			get
-			{
-				return keySpec;
-			}
-			set	
-			{
-				keySpec = value;
-				DictionaryUtil.Add(QueryParameters, "KeySpec", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override CreateCertificateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SetDeletionProtectionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetDeletionProtectionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

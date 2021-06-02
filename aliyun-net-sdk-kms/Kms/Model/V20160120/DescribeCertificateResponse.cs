@@ -33,8 +33,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string keySpec;
 
-		private string protectionLevel;
-
 		private string status;
 
 		private string createdAt;
@@ -58,6 +56,10 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 		private string subjectKeyIdentifier;
 
 		private string tags;
+
+		private bool? exportablePrivateKey;
+
+		private string protectionLevel;
 
 		private List<string> subjectAlternativeNames;
 
@@ -106,18 +108,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				keySpec = value;
-			}
-		}
-
-		public string ProtectionLevel
-		{
-			get
-			{
-				return protectionLevel;
-			}
-			set	
-			{
-				protectionLevel = value;
 			}
 		}
 
@@ -262,6 +252,30 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				tags = value;
+			}
+		}
+
+		public bool? ExportablePrivateKey
+		{
+			get
+			{
+				return exportablePrivateKey;
+			}
+			set	
+			{
+				exportablePrivateKey = value;
+			}
+		}
+
+		public string ProtectionLevel
+		{
+			get
+			{
+				return protectionLevel;
+			}
+			set	
+			{
+				protectionLevel = value;
 			}
 		}
 

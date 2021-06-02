@@ -35,6 +35,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private List<ListCertificates_CertificateSummary> certificateSummaryList;
 
+		private List<ListCertificates_Certificate> certificates;
+
 		public string RequestId
 		{
 			get
@@ -95,24 +97,22 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
+		public List<ListCertificates_Certificate> Certificates
+		{
+			get
+			{
+				return certificates;
+			}
+			set	
+			{
+				certificates = value;
+			}
+		}
+
 		public class ListCertificates_CertificateSummary
 		{
 
 			private string certificateId;
-
-			private string subject;
-
-			private string issuer;
-
-			private string keySpec;
-
-			private string protectionLevel;
-
-			private string notBefore;
-
-			private string notAfter;
-
-			private string status;
 
 			public string CertificateId
 			{
@@ -125,88 +125,22 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 					certificateId = value;
 				}
 			}
+		}
 
-			public string Subject
+		public class ListCertificates_Certificate
+		{
+
+			private string certificateId;
+
+			public string CertificateId
 			{
 				get
 				{
-					return subject;
+					return certificateId;
 				}
 				set	
 				{
-					subject = value;
-				}
-			}
-
-			public string Issuer
-			{
-				get
-				{
-					return issuer;
-				}
-				set	
-				{
-					issuer = value;
-				}
-			}
-
-			public string KeySpec
-			{
-				get
-				{
-					return keySpec;
-				}
-				set	
-				{
-					keySpec = value;
-				}
-			}
-
-			public string ProtectionLevel
-			{
-				get
-				{
-					return protectionLevel;
-				}
-				set	
-				{
-					protectionLevel = value;
-				}
-			}
-
-			public string NotBefore
-			{
-				get
-				{
-					return notBefore;
-				}
-				set	
-				{
-					notBefore = value;
-				}
-			}
-
-			public string NotAfter
-			{
-				get
-				{
-					return notAfter;
-				}
-				set	
-				{
-					notAfter = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
+					certificateId = value;
 				}
 			}
 		}

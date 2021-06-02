@@ -35,7 +35,6 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			describeCertificateResponse.CertificateId = _ctx.StringValue("DescribeCertificate.CertificateId");
 			describeCertificateResponse.Arn = _ctx.StringValue("DescribeCertificate.Arn");
 			describeCertificateResponse.KeySpec = _ctx.StringValue("DescribeCertificate.KeySpec");
-			describeCertificateResponse.ProtectionLevel = _ctx.StringValue("DescribeCertificate.ProtectionLevel");
 			describeCertificateResponse.Status = _ctx.StringValue("DescribeCertificate.Status");
 			describeCertificateResponse.CreatedAt = _ctx.StringValue("DescribeCertificate.CreatedAt");
 			describeCertificateResponse.UpdatedAt = _ctx.StringValue("DescribeCertificate.UpdatedAt");
@@ -48,6 +47,8 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			describeCertificateResponse.SubjectPublicKey = _ctx.StringValue("DescribeCertificate.SubjectPublicKey");
 			describeCertificateResponse.SubjectKeyIdentifier = _ctx.StringValue("DescribeCertificate.SubjectKeyIdentifier");
 			describeCertificateResponse.Tags = _ctx.StringValue("DescribeCertificate.Tags");
+			describeCertificateResponse.ExportablePrivateKey = _ctx.BooleanValue("DescribeCertificate.ExportablePrivateKey");
+			describeCertificateResponse.ProtectionLevel = _ctx.StringValue("DescribeCertificate.ProtectionLevel");
 
 			List<string> describeCertificateResponse_subjectAlternativeNames = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeCertificate.SubjectAlternativeNames.Length"); i++) {
