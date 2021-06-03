@@ -102,6 +102,10 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 
 			private string _value;
 
+			private string kind;
+
+			private string scopeName;
+
 			public string Name
 			{
 				get
@@ -123,6 +127,30 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				set	
 				{
 					_value = value;
+				}
+			}
+
+			public string Kind
+			{
+				get
+				{
+					return kind;
+				}
+				set	
+				{
+					kind = value;
+				}
+			}
+
+			public string ScopeName
+			{
+				get
+				{
+					return scopeName;
+				}
+				set	
+				{
+					scopeName = value;
 				}
 			}
 		}

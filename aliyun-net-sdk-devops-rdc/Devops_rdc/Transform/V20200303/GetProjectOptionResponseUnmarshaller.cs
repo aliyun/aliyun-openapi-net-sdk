@@ -41,6 +41,8 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 				GetProjectOptionResponse.GetProjectOption_Option option = new GetProjectOptionResponse.GetProjectOption_Option();
 				option.Name = _ctx.StringValue("GetProjectOption.Object["+ i +"].Name");
 				option._Value = _ctx.StringValue("GetProjectOption.Object["+ i +"].Value");
+				option.Kind = _ctx.StringValue("GetProjectOption.Object["+ i +"].Kind");
+				option.ScopeName = _ctx.StringValue("GetProjectOption.Object["+ i +"].ScopeName");
 
 				getProjectOptionResponse_object.Add(option);
 			}

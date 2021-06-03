@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.devops_rdc;
 using Aliyun.Acs.devops_rdc.Transform;
 using Aliyun.Acs.devops_rdc.Transform.V20200303;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
     public class DeleteDevopsOrganizationMembersRequest : RpcAcsRequest<DeleteDevopsOrganizationMembersResponse>
     {
         public DeleteDevopsOrganizationMembersRequest()
-            : base("devops-rdc", "2020-03-03", "DeleteDevopsOrganizationMembers", "1.9.6", "openAPI")
+            : base("devops-rdc", "2020-03-03", "DeleteDevopsOrganizationMembers")
         {
 			Method = MethodType.POST;
         }
