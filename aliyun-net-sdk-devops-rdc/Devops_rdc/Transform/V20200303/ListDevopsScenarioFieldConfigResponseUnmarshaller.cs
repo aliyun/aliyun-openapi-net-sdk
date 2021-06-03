@@ -41,6 +41,7 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 				ListDevopsScenarioFieldConfigResponse.ListDevopsScenarioFieldConfig_ScenarioFieldConfig scenarioFieldConfig = new ListDevopsScenarioFieldConfigResponse.ListDevopsScenarioFieldConfig_ScenarioFieldConfig();
 				scenarioFieldConfig.Id = _ctx.StringValue("ListDevopsScenarioFieldConfig.Object["+ i +"].Id");
 				scenarioFieldConfig.Type = _ctx.StringValue("ListDevopsScenarioFieldConfig.Object["+ i +"].Type");
+				scenarioFieldConfig.Name = _ctx.StringValue("ListDevopsScenarioFieldConfig.Object["+ i +"].Name");
 
 				listDevopsScenarioFieldConfigResponse_object.Add(scenarioFieldConfig);
 			}

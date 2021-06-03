@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.devops_rdc;
 using Aliyun.Acs.devops_rdc.Transform;
 using Aliyun.Acs.devops_rdc.Transform.V20200303;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
     public class GetPipelineInstanceBuildNumberStatusRequest : RpcAcsRequest<GetPipelineInstanceBuildNumberStatusResponse>
     {
         public GetPipelineInstanceBuildNumberStatusRequest()
-            : base("devops-rdc", "2020-03-03", "GetPipelineInstanceBuildNumberStatus")
+            : base("devops-rdc", "2020-03-03", "GetPipelineInstanceBuildNumberStatus", "1.9.6", "openAPI")
         {
 			Method = MethodType.POST;
         }
