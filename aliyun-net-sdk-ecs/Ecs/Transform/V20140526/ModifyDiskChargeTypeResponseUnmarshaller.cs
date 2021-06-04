@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			ModifyDiskChargeTypeResponse modifyDiskChargeTypeResponse = new ModifyDiskChargeTypeResponse();
 
 			modifyDiskChargeTypeResponse.HttpResponse = _ctx.HttpResponse;
-			modifyDiskChargeTypeResponse.RequestId = _ctx.StringValue("ModifyDiskChargeType.RequestId");
 			modifyDiskChargeTypeResponse.OrderId = _ctx.StringValue("ModifyDiskChargeType.OrderId");
+			modifyDiskChargeTypeResponse.RequestId = _ctx.StringValue("ModifyDiskChargeType.RequestId");
         
 			return modifyDiskChargeTypeResponse;
         }

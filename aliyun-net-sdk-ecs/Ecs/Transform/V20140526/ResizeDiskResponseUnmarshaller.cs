@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			ResizeDiskResponse resizeDiskResponse = new ResizeDiskResponse();
 
 			resizeDiskResponse.HttpResponse = _ctx.HttpResponse;
-			resizeDiskResponse.RequestId = _ctx.StringValue("ResizeDisk.RequestId");
 			resizeDiskResponse.OrderId = _ctx.StringValue("ResizeDisk.OrderId");
+			resizeDiskResponse.RequestId = _ctx.StringValue("ResizeDisk.RequestId");
         
 			return resizeDiskResponse;
         }

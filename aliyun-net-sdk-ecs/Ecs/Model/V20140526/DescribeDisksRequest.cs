@@ -90,6 +90,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string diskIds;
 
+		private string multiAttach;
+
 		private bool? deleteWithInstance;
 
 		private string resourceOwnerAccount;
@@ -239,7 +241,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				tags = value;
 				for (int i = 0; i < tags.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
 			}
@@ -441,6 +443,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				diskIds = value;
 				DictionaryUtil.Add(QueryParameters, "DiskIds", value);
+			}
+		}
+
+		public string MultiAttach
+		{
+			get
+			{
+				return multiAttach;
+			}
+			set	
+			{
+				multiAttach = value;
+				DictionaryUtil.Add(QueryParameters, "MultiAttach", value);
 			}
 		}
 

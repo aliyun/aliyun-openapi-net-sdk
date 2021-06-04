@@ -24,18 +24,16 @@ using Aliyun.Acs.Ecs.Model.V20140526;
 
 namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
-    public class CreateDiskResponseUnmarshaller
+    public class ModifyPrefixListResponseUnmarshaller
     {
-        public static CreateDiskResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ModifyPrefixListResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CreateDiskResponse createDiskResponse = new CreateDiskResponse();
+			ModifyPrefixListResponse modifyPrefixListResponse = new ModifyPrefixListResponse();
 
-			createDiskResponse.HttpResponse = _ctx.HttpResponse;
-			createDiskResponse.DiskId = _ctx.StringValue("CreateDisk.DiskId");
-			createDiskResponse.RequestId = _ctx.StringValue("CreateDisk.RequestId");
-			createDiskResponse.OrderId = _ctx.StringValue("CreateDisk.OrderId");
+			modifyPrefixListResponse.HttpResponse = _ctx.HttpResponse;
+			modifyPrefixListResponse.RequestId = _ctx.StringValue("ModifyPrefixList.RequestId");
         
-			return createDiskResponse;
+			return modifyPrefixListResponse;
         }
     }
 }

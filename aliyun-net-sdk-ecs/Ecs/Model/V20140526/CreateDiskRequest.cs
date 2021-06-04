@@ -58,11 +58,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? storageSetPartitionNumber;
 
+		private string multiAttach;
+
 		private List<Tag> tags = new List<Tag>(){ };
 
-		private List<Arn> arns = new List<Arn>(){ };
-
 		private string advancedFeatures;
+
+		private List<Arn> arns = new List<Arn>(){ };
 
 		private string dedicatedBlockStorageClusterId;
 
@@ -203,6 +205,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string MultiAttach
+		{
+			get
+			{
+				return multiAttach;
+			}
+			set	
+			{
+				multiAttach = value;
+				DictionaryUtil.Add(QueryParameters, "MultiAttach", value);
+			}
+		}
+
 		public List<Tag> Tags
 		{
 			get
@@ -215,9 +230,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				tags = value;
 				for (int i = 0; i < tags.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
+			}
+		}
+
+		public string AdvancedFeatures
+		{
+			get
+			{
+				return advancedFeatures;
+			}
+			set	
+			{
+				advancedFeatures = value;
+				DictionaryUtil.Add(QueryParameters, "AdvancedFeatures", value);
 			}
 		}
 
@@ -237,19 +265,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".RoleType", arns[i].RoleType);
 					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".AssumeRoleFor", arns[i].AssumeRoleFor);
 				}
-			}
-		}
-
-		public string AdvancedFeatures
-		{
-			get
-			{
-				return advancedFeatures;
-			}
-			set	
-			{
-				advancedFeatures = value;
-				DictionaryUtil.Add(QueryParameters, "AdvancedFeatures", value);
 			}
 		}
 

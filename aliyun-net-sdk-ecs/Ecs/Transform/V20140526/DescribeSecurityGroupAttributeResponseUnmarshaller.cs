@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				permission.SourceGroupName = _ctx.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].SourceGroupName");
 				permission.SourceCidrIp = _ctx.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].SourceCidrIp");
 				permission.Ipv6SourceCidrIp = _ctx.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].Ipv6SourceCidrIp");
+				permission.SourcePrefixListId = _ctx.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].SourcePrefixListId");
+				permission.SourcePrefixListName = _ctx.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].SourcePrefixListName");
 				permission.Policy = _ctx.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].Policy");
 				permission.NicType = _ctx.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].NicType");
 				permission.SourceGroupOwnerAccount = _ctx.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].SourceGroupOwnerAccount");
@@ -56,6 +58,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				permission.DestGroupName = _ctx.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].DestGroupName");
 				permission.DestCidrIp = _ctx.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].DestCidrIp");
 				permission.Ipv6DestCidrIp = _ctx.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].Ipv6DestCidrIp");
+				permission.DestPrefixListId = _ctx.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].DestPrefixListId");
+				permission.DestPrefixListName = _ctx.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].DestPrefixListName");
 				permission.DestGroupOwnerAccount = _ctx.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].DestGroupOwnerAccount");
 				permission.Priority = _ctx.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].Priority");
 				permission.Direction = _ctx.StringValue("DescribeSecurityGroupAttribute.Permissions["+ i +"].Direction");

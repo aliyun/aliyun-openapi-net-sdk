@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class CreateSnapshotGroupRequest : RpcAcsRequest<CreateSnapshotGroupResponse>
+    public class DescribePrefixListsRequest : RpcAcsRequest<DescribePrefixListsResponse>
     {
-        public CreateSnapshotGroupRequest()
-            : base("Ecs", "2014-05-26", "CreateSnapshotGroup", "ecs", "openAPI")
+        public DescribePrefixListsRequest()
+            : base("Ecs", "2014-05-26", "DescribePrefixLists", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,13 +42,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private bool? instantAccess;
+		private List<string> prefixListIds = new List<string>(){ };
 
-		private List<string> excludeDiskIds = new List<string>(){ };
+		private string nextToken;
 
-		private string description;
-
-		private int? instantAccessRetentionDays;
+		private string addressFamily;
 
 		private string resourceOwnerAccount;
 
@@ -56,9 +54,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private string instanceId;
+		private string prefixListName;
 
-		private string name;
+		private int? maxResults;
 
 		public long? ResourceOwnerId
 		{
@@ -73,59 +71,46 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public bool? InstantAccess
+		public List<string> PrefixListIds
 		{
 			get
 			{
-				return instantAccess;
-			}
-			set	
-			{
-				instantAccess = value;
-				DictionaryUtil.Add(QueryParameters, "InstantAccess", value.ToString());
-			}
-		}
-
-		public List<string> ExcludeDiskIds
-		{
-			get
-			{
-				return excludeDiskIds;
+				return prefixListIds;
 			}
 
 			set
 			{
-				excludeDiskIds = value;
-				for (int i = 0; i < excludeDiskIds.Count; i++)
+				prefixListIds = value;
+				for (int i = 0; i < prefixListIds.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"ExcludeDiskId." + (i + 1) , excludeDiskIds[i]);
+					DictionaryUtil.Add(QueryParameters,"PrefixListId." + (i + 1) , prefixListIds[i]);
 				}
 			}
 		}
 
-		public string Description
+		public string NextToken
 		{
 			get
 			{
-				return description;
+				return nextToken;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
-		public int? InstantAccessRetentionDays
+		public string AddressFamily
 		{
 			get
 			{
-				return instantAccessRetentionDays;
+				return addressFamily;
 			}
 			set	
 			{
-				instantAccessRetentionDays = value;
-				DictionaryUtil.Add(QueryParameters, "InstantAccessRetentionDays", value.ToString());
+				addressFamily = value;
+				DictionaryUtil.Add(QueryParameters, "AddressFamily", value);
 			}
 		}
 
@@ -168,35 +153,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceId
+		public string PrefixListName
 		{
 			get
 			{
-				return instanceId;
+				return prefixListName;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				prefixListName = value;
+				DictionaryUtil.Add(QueryParameters, "PrefixListName", value);
 			}
 		}
 
-		public string Name
+		public int? MaxResults
 		{
 			get
 			{
-				return name;
+				return maxResults;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
 			}
 		}
 
-        public override CreateSnapshotGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribePrefixListsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateSnapshotGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribePrefixListsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

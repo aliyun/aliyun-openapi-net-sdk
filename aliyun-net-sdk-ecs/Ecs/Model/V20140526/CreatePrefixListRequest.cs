@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeInvocationsRequest : RpcAcsRequest<DescribeInvocationsResponse>
+    public class CreatePrefixListRequest : RpcAcsRequest<CreatePrefixListResponse>
     {
-        public DescribeInvocationsRequest()
-            : base("Ecs", "2014-05-26", "DescribeInvocations", "ecs", "openAPI")
+        public CreatePrefixListRequest()
+            : base("Ecs", "2014-05-26", "CreatePrefixList", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,25 +42,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string invokeStatus;
+		private string clientToken;
 
-		private bool? includeOutput;
+		private string description;
 
-		private string commandId;
+		private int? maxEntries;
 
-		private long? pageNumber;
-
-		private string contentEncoding;
-
-		private string repeatMode;
-
-		private long? pageSize;
-
-		private string invokeId;
-
-		private bool? timed;
-
-		private string commandName;
+		private string addressFamily;
 
 		private string resourceOwnerAccount;
 
@@ -68,9 +56,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private string commandType;
+		private string prefixListName;
 
-		private string instanceId;
+		private List<Entry> entrys = new List<Entry>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -85,133 +73,55 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InvokeStatus
+		public string ClientToken
 		{
 			get
 			{
-				return invokeStatus;
+				return clientToken;
 			}
 			set	
 			{
-				invokeStatus = value;
-				DictionaryUtil.Add(QueryParameters, "InvokeStatus", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		public bool? IncludeOutput
+		public string Description
 		{
 			get
 			{
-				return includeOutput;
+				return description;
 			}
 			set	
 			{
-				includeOutput = value;
-				DictionaryUtil.Add(QueryParameters, "IncludeOutput", value.ToString());
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
-		public string CommandId
+		public int? MaxEntries
 		{
 			get
 			{
-				return commandId;
+				return maxEntries;
 			}
 			set	
 			{
-				commandId = value;
-				DictionaryUtil.Add(QueryParameters, "CommandId", value);
+				maxEntries = value;
+				DictionaryUtil.Add(QueryParameters, "MaxEntries", value.ToString());
 			}
 		}
 
-		public long? PageNumber
+		public string AddressFamily
 		{
 			get
 			{
-				return pageNumber;
+				return addressFamily;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string ContentEncoding
-		{
-			get
-			{
-				return contentEncoding;
-			}
-			set	
-			{
-				contentEncoding = value;
-				DictionaryUtil.Add(QueryParameters, "ContentEncoding", value);
-			}
-		}
-
-		public string RepeatMode
-		{
-			get
-			{
-				return repeatMode;
-			}
-			set	
-			{
-				repeatMode = value;
-				DictionaryUtil.Add(QueryParameters, "RepeatMode", value);
-			}
-		}
-
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string InvokeId
-		{
-			get
-			{
-				return invokeId;
-			}
-			set	
-			{
-				invokeId = value;
-				DictionaryUtil.Add(QueryParameters, "InvokeId", value);
-			}
-		}
-
-		public bool? Timed
-		{
-			get
-			{
-				return timed;
-			}
-			set	
-			{
-				timed = value;
-				DictionaryUtil.Add(QueryParameters, "Timed", value.ToString());
-			}
-		}
-
-		public string CommandName
-		{
-			get
-			{
-				return commandName;
-			}
-			set	
-			{
-				commandName = value;
-				DictionaryUtil.Add(QueryParameters, "CommandName", value);
+				addressFamily = value;
+				DictionaryUtil.Add(QueryParameters, "AddressFamily", value);
 			}
 		}
 
@@ -254,35 +164,72 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string CommandType
+		public string PrefixListName
 		{
 			get
 			{
-				return commandType;
+				return prefixListName;
 			}
 			set	
 			{
-				commandType = value;
-				DictionaryUtil.Add(QueryParameters, "CommandType", value);
+				prefixListName = value;
+				DictionaryUtil.Add(QueryParameters, "PrefixListName", value);
 			}
 		}
 
-		public string InstanceId
+		public List<Entry> Entrys
 		{
 			get
 			{
-				return instanceId;
+				return entrys;
 			}
-			set	
+
+			set
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				entrys = value;
+				for (int i = 0; i < entrys.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Entry." + (i + 1) + ".Cidr", entrys[i].Cidr);
+					DictionaryUtil.Add(QueryParameters,"Entry." + (i + 1) + ".Description", entrys[i].Description);
+				}
 			}
 		}
 
-        public override DescribeInvocationsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public class Entry
+		{
+
+			private string cidr;
+
+			private string description;
+
+			public string Cidr
+			{
+				get
+				{
+					return cidr;
+				}
+				set	
+				{
+					cidr = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+		}
+
+        public override CreatePrefixListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeInvocationsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreatePrefixListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			ReplaceSystemDiskResponse replaceSystemDiskResponse = new ReplaceSystemDiskResponse();
 
 			replaceSystemDiskResponse.HttpResponse = _ctx.HttpResponse;
-			replaceSystemDiskResponse.RequestId = _ctx.StringValue("ReplaceSystemDisk.RequestId");
 			replaceSystemDiskResponse.DiskId = _ctx.StringValue("ReplaceSystemDisk.DiskId");
+			replaceSystemDiskResponse.RequestId = _ctx.StringValue("ReplaceSystemDisk.RequestId");
         
 			return replaceSystemDiskResponse;
         }

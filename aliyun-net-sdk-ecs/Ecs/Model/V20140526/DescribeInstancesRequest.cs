@@ -88,6 +88,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? maxResults;
 
+		private List<string> ipv6Addresss = new List<string>(){ };
+
 		private string instanceNetworkType;
 
 		private string status;
@@ -289,7 +291,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				tags = value;
 				for (int i = 0; i < tags.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
 			}
@@ -452,6 +454,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				maxResults = value;
 				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
+		public List<string> Ipv6Addresss
+		{
+			get
+			{
+				return ipv6Addresss;
+			}
+
+			set
+			{
+				ipv6Addresss = value;
+				for (int i = 0; i < ipv6Addresss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Ipv6Address." + (i + 1) , ipv6Addresss[i]);
+				}
 			}
 		}
 

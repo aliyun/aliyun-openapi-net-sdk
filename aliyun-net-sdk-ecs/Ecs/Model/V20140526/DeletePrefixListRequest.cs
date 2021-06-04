@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class CreateSnapshotGroupRequest : RpcAcsRequest<CreateSnapshotGroupResponse>
+    public class DeletePrefixListRequest : RpcAcsRequest<DeletePrefixListResponse>
     {
-        public CreateSnapshotGroupRequest()
-            : base("Ecs", "2014-05-26", "CreateSnapshotGroup", "ecs", "openAPI")
+        public DeletePrefixListRequest()
+            : base("Ecs", "2014-05-26", "DeletePrefixList", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,23 +42,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private bool? instantAccess;
-
-		private List<string> excludeDiskIds = new List<string>(){ };
-
-		private string description;
-
-		private int? instantAccessRetentionDays;
+		private string prefixListId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string instanceId;
-
-		private string name;
 
 		public long? ResourceOwnerId
 		{
@@ -73,59 +63,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public bool? InstantAccess
+		public string PrefixListId
 		{
 			get
 			{
-				return instantAccess;
+				return prefixListId;
 			}
 			set	
 			{
-				instantAccess = value;
-				DictionaryUtil.Add(QueryParameters, "InstantAccess", value.ToString());
-			}
-		}
-
-		public List<string> ExcludeDiskIds
-		{
-			get
-			{
-				return excludeDiskIds;
-			}
-
-			set
-			{
-				excludeDiskIds = value;
-				for (int i = 0; i < excludeDiskIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ExcludeDiskId." + (i + 1) , excludeDiskIds[i]);
-				}
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public int? InstantAccessRetentionDays
-		{
-			get
-			{
-				return instantAccessRetentionDays;
-			}
-			set	
-			{
-				instantAccessRetentionDays = value;
-				DictionaryUtil.Add(QueryParameters, "InstantAccessRetentionDays", value.ToString());
+				prefixListId = value;
+				DictionaryUtil.Add(QueryParameters, "PrefixListId", value);
 			}
 		}
 
@@ -168,35 +115,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-        public override CreateSnapshotGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeletePrefixListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateSnapshotGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeletePrefixListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -115,8 +115,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				disks = value;
 				for (int i = 0; i < disks.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Disk." + (i + 1) + ".DiskId", disks[i].DiskId);
 					DictionaryUtil.Add(QueryParameters,"Disk." + (i + 1) + ".SnapshotId", disks[i].SnapshotId);
+					DictionaryUtil.Add(QueryParameters,"Disk." + (i + 1) + ".DiskId", disks[i].DiskId);
 				}
 			}
 		}
@@ -124,21 +124,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class Disk
 		{
 
-			private string diskId;
-
 			private string snapshotId;
 
-			public string DiskId
-			{
-				get
-				{
-					return diskId;
-				}
-				set	
-				{
-					diskId = value;
-				}
-			}
+			private string diskId;
 
 			public string SnapshotId
 			{
@@ -149,6 +137,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					snapshotId = value;
+				}
+			}
+
+			public string DiskId
+			{
+				get
+				{
+					return diskId;
+				}
+				set	
+				{
+					diskId = value;
 				}
 			}
 		}

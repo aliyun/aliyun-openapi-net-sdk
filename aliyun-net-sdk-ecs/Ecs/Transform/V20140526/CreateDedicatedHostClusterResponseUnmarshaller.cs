@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateDedicatedHostClusterResponse createDedicatedHostClusterResponse = new CreateDedicatedHostClusterResponse();
 
 			createDedicatedHostClusterResponse.HttpResponse = _ctx.HttpResponse;
-			createDedicatedHostClusterResponse.RequestId = _ctx.StringValue("CreateDedicatedHostCluster.RequestId");
 			createDedicatedHostClusterResponse.DedicatedHostClusterId = _ctx.StringValue("CreateDedicatedHostCluster.DedicatedHostClusterId");
+			createDedicatedHostClusterResponse.RequestId = _ctx.StringValue("CreateDedicatedHostCluster.RequestId");
         
 			return createDedicatedHostClusterResponse;
         }

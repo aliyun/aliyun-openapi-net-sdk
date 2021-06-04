@@ -80,6 +80,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<string> networkInterfaceIds = new List<string>(){ };
 
+		private List<string> ipv6Addresss = new List<string>(){ };
+
 		private string status;
 
 		public long? ResourceOwnerId
@@ -351,6 +353,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				for (int i = 0; i < networkInterfaceIds.Count; i++)
 				{
 					DictionaryUtil.Add(QueryParameters,"NetworkInterfaceId." + (i + 1) , networkInterfaceIds[i]);
+				}
+			}
+		}
+
+		public List<string> Ipv6Addresss
+		{
+			get
+			{
+				return ipv6Addresss;
+			}
+
+			set
+			{
+				ipv6Addresss = value;
+				for (int i = 0; i < ipv6Addresss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Ipv6Address." + (i + 1) , ipv6Addresss[i]);
 				}
 			}
 		}

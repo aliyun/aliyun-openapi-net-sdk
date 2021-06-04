@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string clientToken;
 
+		private string destPrefixListId;
+
 		private string securityGroupId;
 
 		private string description;
@@ -130,6 +132,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string DestPrefixListId
+		{
+			get
+			{
+				return destPrefixListId;
+			}
+			set	
+			{
+				destPrefixListId = value;
+				DictionaryUtil.Add(QueryParameters, "DestPrefixListId", value);
 			}
 		}
 

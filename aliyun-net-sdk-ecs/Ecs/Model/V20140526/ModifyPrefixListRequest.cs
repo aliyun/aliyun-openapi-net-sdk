@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class CreateSnapshotGroupRequest : RpcAcsRequest<CreateSnapshotGroupResponse>
+    public class ModifyPrefixListRequest : RpcAcsRequest<ModifyPrefixListResponse>
     {
-        public CreateSnapshotGroupRequest()
-            : base("Ecs", "2014-05-26", "CreateSnapshotGroup", "ecs", "openAPI")
+        public ModifyPrefixListRequest()
+            : base("Ecs", "2014-05-26", "ModifyPrefixList", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,13 +43,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private bool? instantAccess;
-
-		private List<string> excludeDiskIds = new List<string>(){ };
-
 		private string description;
 
-		private int? instantAccessRetentionDays;
+		private string prefixListId;
+
+		private List<AddEntry> addEntrys = new List<AddEntry>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -56,9 +55,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private string instanceId;
+		private string prefixListName;
 
-		private string name;
+		private List<RemoveEntry> removeEntrys = new List<RemoveEntry>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -70,36 +69,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public bool? InstantAccess
-		{
-			get
-			{
-				return instantAccess;
-			}
-			set	
-			{
-				instantAccess = value;
-				DictionaryUtil.Add(QueryParameters, "InstantAccess", value.ToString());
-			}
-		}
-
-		public List<string> ExcludeDiskIds
-		{
-			get
-			{
-				return excludeDiskIds;
-			}
-
-			set
-			{
-				excludeDiskIds = value;
-				for (int i = 0; i < excludeDiskIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ExcludeDiskId." + (i + 1) , excludeDiskIds[i]);
-				}
 			}
 		}
 
@@ -116,16 +85,34 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? InstantAccessRetentionDays
+		public string PrefixListId
 		{
 			get
 			{
-				return instantAccessRetentionDays;
+				return prefixListId;
 			}
 			set	
 			{
-				instantAccessRetentionDays = value;
-				DictionaryUtil.Add(QueryParameters, "InstantAccessRetentionDays", value.ToString());
+				prefixListId = value;
+				DictionaryUtil.Add(QueryParameters, "PrefixListId", value);
+			}
+		}
+
+		public List<AddEntry> AddEntrys
+		{
+			get
+			{
+				return addEntrys;
+			}
+
+			set
+			{
+				addEntrys = value;
+				for (int i = 0; i < addEntrys.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"AddEntry." + (i + 1) + ".Cidr", addEntrys[i].Cidr);
+					DictionaryUtil.Add(QueryParameters,"AddEntry." + (i + 1) + ".Description", addEntrys[i].Description);
+				}
 			}
 		}
 
@@ -168,35 +155,89 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceId
+		public string PrefixListName
 		{
 			get
 			{
-				return instanceId;
+				return prefixListName;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				prefixListName = value;
+				DictionaryUtil.Add(QueryParameters, "PrefixListName", value);
 			}
 		}
 
-		public string Name
+		public List<RemoveEntry> RemoveEntrys
 		{
 			get
 			{
-				return name;
+				return removeEntrys;
 			}
-			set	
+
+			set
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				removeEntrys = value;
+				for (int i = 0; i < removeEntrys.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"RemoveEntry." + (i + 1) + ".Cidr", removeEntrys[i].Cidr);
+				}
 			}
 		}
 
-        public override CreateSnapshotGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public class AddEntry
+		{
+
+			private string cidr;
+
+			private string description;
+
+			public string Cidr
+			{
+				get
+				{
+					return cidr;
+				}
+				set	
+				{
+					cidr = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+		}
+
+		public class RemoveEntry
+		{
+
+			private string cidr;
+
+			public string Cidr
+			{
+				get
+				{
+					return cidr;
+				}
+				set	
+				{
+					cidr = value;
+				}
+			}
+		}
+
+        public override ModifyPrefixListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateSnapshotGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyPrefixListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

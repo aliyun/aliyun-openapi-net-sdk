@@ -154,6 +154,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string ipv6SourceCidrIp;
 
+			private string sourcePrefixListId;
+
+			private string sourcePrefixListName;
+
 			private string policy;
 
 			private string nicType;
@@ -167,6 +171,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			private string destCidrIp;
 
 			private string ipv6DestCidrIp;
+
+			private string destPrefixListId;
+
+			private string destPrefixListName;
 
 			private string destGroupOwnerAccount;
 
@@ -262,6 +270,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string SourcePrefixListId
+			{
+				get
+				{
+					return sourcePrefixListId;
+				}
+				set	
+				{
+					sourcePrefixListId = value;
+				}
+			}
+
+			public string SourcePrefixListName
+			{
+				get
+				{
+					return sourcePrefixListName;
+				}
+				set	
+				{
+					sourcePrefixListName = value;
+				}
+			}
+
 			public string Policy
 			{
 				get
@@ -343,6 +375,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					ipv6DestCidrIp = value;
+				}
+			}
+
+			public string DestPrefixListId
+			{
+				get
+				{
+					return destPrefixListId;
+				}
+				set	
+				{
+					destPrefixListId = value;
+				}
+			}
+
+			public string DestPrefixListName
+			{
+				get
+				{
+					return destPrefixListName;
+				}
+				set	
+				{
+					destPrefixListName = value;
 				}
 			}
 

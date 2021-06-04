@@ -16,26 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Ecs.Model.V20140526;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Ecs.Transform.V20140526
+namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class CreateDiskResponseUnmarshaller
-    {
-        public static CreateDiskResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			CreateDiskResponse createDiskResponse = new CreateDiskResponse();
+	public class ModifyPrefixListResponse : AcsResponse
+	{
 
-			createDiskResponse.HttpResponse = _ctx.HttpResponse;
-			createDiskResponse.DiskId = _ctx.StringValue("CreateDisk.DiskId");
-			createDiskResponse.RequestId = _ctx.StringValue("CreateDisk.RequestId");
-			createDiskResponse.OrderId = _ctx.StringValue("CreateDisk.OrderId");
-        
-			return createDiskResponse;
-        }
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

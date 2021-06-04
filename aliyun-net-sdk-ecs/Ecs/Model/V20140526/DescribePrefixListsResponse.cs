@@ -22,12 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class StartInstancesResponse : AcsResponse
+	public class DescribePrefixListsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<StartInstances_InstanceResponse> instanceResponses;
+		private string nextToken;
+
+		private List<DescribePrefixLists_PrefixList> prefixLists;
 
 		public string RequestId
 		{
@@ -41,88 +43,128 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<StartInstances_InstanceResponse> InstanceResponses
+		public string NextToken
 		{
 			get
 			{
-				return instanceResponses;
+				return nextToken;
 			}
 			set	
 			{
-				instanceResponses = value;
+				nextToken = value;
 			}
 		}
 
-		public class StartInstances_InstanceResponse
+		public List<DescribePrefixLists_PrefixList> PrefixLists
+		{
+			get
+			{
+				return prefixLists;
+			}
+			set	
+			{
+				prefixLists = value;
+			}
+		}
+
+		public class DescribePrefixLists_PrefixList
 		{
 
-			private string code;
+			private string prefixListId;
 
-			private string message;
+			private string prefixListName;
 
-			private string instanceId;
+			private string addressFamily;
 
-			private string currentStatus;
+			private int? maxEntries;
 
-			private string previousStatus;
+			private string description;
 
-			public string Code
+			private string creationTime;
+
+			private int? associationCount;
+
+			public string PrefixListId
 			{
 				get
 				{
-					return code;
+					return prefixListId;
 				}
 				set	
 				{
-					code = value;
+					prefixListId = value;
 				}
 			}
 
-			public string Message
+			public string PrefixListName
 			{
 				get
 				{
-					return message;
+					return prefixListName;
 				}
 				set	
 				{
-					message = value;
+					prefixListName = value;
 				}
 			}
 
-			public string InstanceId
+			public string AddressFamily
 			{
 				get
 				{
-					return instanceId;
+					return addressFamily;
 				}
 				set	
 				{
-					instanceId = value;
+					addressFamily = value;
 				}
 			}
 
-			public string CurrentStatus
+			public int? MaxEntries
 			{
 				get
 				{
-					return currentStatus;
+					return maxEntries;
 				}
 				set	
 				{
-					currentStatus = value;
+					maxEntries = value;
 				}
 			}
 
-			public string PreviousStatus
+			public string Description
 			{
 				get
 				{
-					return previousStatus;
+					return description;
 				}
 				set	
 				{
-					previousStatus = value;
+					description = value;
+				}
+			}
+
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
+
+			public int? AssociationCount
+			{
+				get
+				{
+					return associationCount;
+				}
+				set	
+				{
+					associationCount = value;
 				}
 			}
 		}

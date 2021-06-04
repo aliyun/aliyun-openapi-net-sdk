@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private string sourcePrefixListId;
+
 		private string sourcePortRange;
 
 		private string clientToken;
@@ -103,6 +105,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string SourcePrefixListId
+		{
+			get
+			{
+				return sourcePrefixListId;
+			}
+			set	
+			{
+				sourcePrefixListId = value;
+				DictionaryUtil.Add(QueryParameters, "SourcePrefixListId", value);
 			}
 		}
 

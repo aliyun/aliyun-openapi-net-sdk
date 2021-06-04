@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<ResetDisksResponse.ResetDisks_OperationProgress> resetDisksResponse_operationProgressSet = new List<ResetDisksResponse.ResetDisks_OperationProgress>();
 			for (int i = 0; i < _ctx.Length("ResetDisks.OperationProgressSet.Length"); i++) {
 				ResetDisksResponse.ResetDisks_OperationProgress operationProgress = new ResetDisksResponse.ResetDisks_OperationProgress();
-				operationProgress.OperationStatus = _ctx.StringValue("ResetDisks.OperationProgressSet["+ i +"].OperationStatus");
-				operationProgress.ErrorCode = _ctx.StringValue("ResetDisks.OperationProgressSet["+ i +"].ErrorCode");
 				operationProgress.ErrorMsg = _ctx.StringValue("ResetDisks.OperationProgressSet["+ i +"].ErrorMsg");
+				operationProgress.ErrorCode = _ctx.StringValue("ResetDisks.OperationProgressSet["+ i +"].ErrorCode");
+				operationProgress.OperationStatus = _ctx.StringValue("ResetDisks.OperationProgressSet["+ i +"].OperationStatus");
 
 				List<ResetDisksResponse.ResetDisks_OperationProgress.ResetDisks_RelatedItem> operationProgress_relatedItemSet = new List<ResetDisksResponse.ResetDisks_OperationProgress.ResetDisks_RelatedItem>();
 				for (int j = 0; j < _ctx.Length("ResetDisks.OperationProgressSet["+ i +"].RelatedItemSet.Length"); j++) {

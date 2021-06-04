@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class CreateDedicatedHostClusterResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dedicatedHostClusterId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string DedicatedHostClusterId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				dedicatedHostClusterId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

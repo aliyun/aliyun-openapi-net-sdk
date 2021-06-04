@@ -22,16 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class RunInstancesResponse : AcsResponse
+	public class DescribePrefixListAssociationsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string orderId;
+		private string nextToken;
 
-		private float? tradePrice;
-
-		private List<string> instanceIdSets;
+		private List<DescribePrefixListAssociations_PrefixListAssociation> prefixListAssociations;
 
 		public string RequestId
 		{
@@ -45,39 +43,59 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string OrderId
+		public string NextToken
 		{
 			get
 			{
-				return orderId;
+				return nextToken;
 			}
 			set	
 			{
-				orderId = value;
+				nextToken = value;
 			}
 		}
 
-		public float? TradePrice
+		public List<DescribePrefixListAssociations_PrefixListAssociation> PrefixListAssociations
 		{
 			get
 			{
-				return tradePrice;
+				return prefixListAssociations;
 			}
 			set	
 			{
-				tradePrice = value;
+				prefixListAssociations = value;
 			}
 		}
 
-		public List<string> InstanceIdSets
+		public class DescribePrefixListAssociations_PrefixListAssociation
 		{
-			get
+
+			private string resourceId;
+
+			private string resourceType;
+
+			public string ResourceId
 			{
-				return instanceIdSets;
+				get
+				{
+					return resourceId;
+				}
+				set	
+				{
+					resourceId = value;
+				}
 			}
-			set	
+
+			public string ResourceType
 			{
-				instanceIdSets = value;
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
+				}
 			}
 		}
 	}

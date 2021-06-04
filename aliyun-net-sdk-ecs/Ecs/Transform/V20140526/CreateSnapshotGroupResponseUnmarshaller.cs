@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateSnapshotGroupResponse createSnapshotGroupResponse = new CreateSnapshotGroupResponse();
 
 			createSnapshotGroupResponse.HttpResponse = _ctx.HttpResponse;
-			createSnapshotGroupResponse.RequestId = _ctx.StringValue("CreateSnapshotGroup.RequestId");
 			createSnapshotGroupResponse.SnapshotGroupId = _ctx.StringValue("CreateSnapshotGroup.SnapshotGroupId");
+			createSnapshotGroupResponse.RequestId = _ctx.StringValue("CreateSnapshotGroup.RequestId");
         
 			return createSnapshotGroupResponse;
         }

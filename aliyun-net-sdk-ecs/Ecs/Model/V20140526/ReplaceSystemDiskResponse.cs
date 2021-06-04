@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class ReplaceSystemDiskResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string diskId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string DiskId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				diskId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

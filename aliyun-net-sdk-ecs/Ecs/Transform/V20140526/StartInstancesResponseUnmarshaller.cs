@@ -36,11 +36,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<StartInstancesResponse.StartInstances_InstanceResponse> startInstancesResponse_instanceResponses = new List<StartInstancesResponse.StartInstances_InstanceResponse>();
 			for (int i = 0; i < _ctx.Length("StartInstances.InstanceResponses.Length"); i++) {
 				StartInstancesResponse.StartInstances_InstanceResponse instanceResponse = new StartInstancesResponse.StartInstances_InstanceResponse();
-				instanceResponse.InstanceId = _ctx.StringValue("StartInstances.InstanceResponses["+ i +"].InstanceId");
-				instanceResponse.PreviousStatus = _ctx.StringValue("StartInstances.InstanceResponses["+ i +"].PreviousStatus");
-				instanceResponse.CurrentStatus = _ctx.StringValue("StartInstances.InstanceResponses["+ i +"].CurrentStatus");
 				instanceResponse.Code = _ctx.StringValue("StartInstances.InstanceResponses["+ i +"].Code");
 				instanceResponse.Message = _ctx.StringValue("StartInstances.InstanceResponses["+ i +"].Message");
+				instanceResponse.InstanceId = _ctx.StringValue("StartInstances.InstanceResponses["+ i +"].InstanceId");
+				instanceResponse.CurrentStatus = _ctx.StringValue("StartInstances.InstanceResponses["+ i +"].CurrentStatus");
+				instanceResponse.PreviousStatus = _ctx.StringValue("StartInstances.InstanceResponses["+ i +"].PreviousStatus");
 
 				startInstancesResponse_instanceResponses.Add(instanceResponse);
 			}

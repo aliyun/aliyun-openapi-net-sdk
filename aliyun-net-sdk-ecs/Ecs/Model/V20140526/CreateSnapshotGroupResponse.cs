@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class CreateSnapshotGroupResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string snapshotGroupId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string SnapshotGroupId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				snapshotGroupId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}
