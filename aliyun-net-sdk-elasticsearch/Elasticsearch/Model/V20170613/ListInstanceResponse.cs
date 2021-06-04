@@ -92,6 +92,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private string updatedAt;
 
+			private string postpaidServiceStatus;
+
 			private List<ListInstance_Tag> tags;
 
 			private List<Dictionary<string, string>> extendConfigs;
@@ -237,6 +239,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					updatedAt = value;
+				}
+			}
+
+			public string PostpaidServiceStatus
+			{
+				get
+				{
+					return postpaidServiceStatus;
+				}
+				set	
+				{
+					postpaidServiceStatus = value;
 				}
 			}
 

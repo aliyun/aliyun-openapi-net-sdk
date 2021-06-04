@@ -51,6 +51,7 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				instance.ResourceGroupId = _ctx.StringValue("ListInstance.Result["+ i +"].resourceGroupId");
 				instance.Status = _ctx.StringValue("ListInstance.Result["+ i +"].status");
 				instance.UpdatedAt = _ctx.StringValue("ListInstance.Result["+ i +"].updatedAt");
+				instance.PostpaidServiceStatus = _ctx.StringValue("ListInstance.Result["+ i +"].postpaidServiceStatus");
 
 				List<Dictionary<string, string>> instance_extendConfigs = new List<Dictionary<string, string>>();
 				for (int j = 0; j < _ctx.Length("ListInstance.Result["+ i +"].ExtendConfigs.Length"); j++) {
