@@ -20,20 +20,20 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Workorder.Model.V20200326
+namespace Aliyun.Acs.Workorder.Model.V20210510
 {
-	public class ListCategoriesResponse : AcsResponse
+	public class ListProductsResponse : AcsResponse
 	{
 
 		private int? code;
 
-		private string message;
-
 		private string requestId;
+
+		private string message;
 
 		private bool? success;
 
-		private ListCategories_Data data;
+		private List<ListProducts_DataItem> data;
 
 		public int? Code
 		{
@@ -44,18 +44,6 @@ namespace Aliyun.Acs.Workorder.Model.V20200326
 			set	
 			{
 				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -71,6 +59,18 @@ namespace Aliyun.Acs.Workorder.Model.V20200326
 			}
 		}
 
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
 		public bool? Success
 		{
 			get
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Workorder.Model.V20200326
 			}
 		}
 
-		public ListCategories_Data Data
+		public List<ListProducts_DataItem> Data
 		{
 			get
 			{
@@ -95,51 +95,93 @@ namespace Aliyun.Acs.Workorder.Model.V20200326
 			}
 		}
 
-		public class ListCategories_Data
+		public class ListProducts_DataItem
 		{
 
-			private List<ListCategories_ListItem> list;
+			private string topCategoryName;
 
-			public List<ListCategories_ListItem> List
+			private long? topCategoryId;
+
+			private int? orderNumber;
+
+			private List<ListProducts_RootsItem> roots;
+
+			public string TopCategoryName
 			{
 				get
 				{
-					return list;
+					return topCategoryName;
 				}
 				set	
 				{
-					list = value;
+					topCategoryName = value;
 				}
 			}
 
-			public class ListCategories_ListItem
+			public long? TopCategoryId
+			{
+				get
+				{
+					return topCategoryId;
+				}
+				set	
+				{
+					topCategoryId = value;
+				}
+			}
+
+			public int? OrderNumber
+			{
+				get
+				{
+					return orderNumber;
+				}
+				set	
+				{
+					orderNumber = value;
+				}
+			}
+
+			public List<ListProducts_RootsItem> Roots
+			{
+				get
+				{
+					return roots;
+				}
+				set	
+				{
+					roots = value;
+				}
+			}
+
+			public class ListProducts_RootsItem
 			{
 
-				private int? id;
+				private long? categoryId;
 
-				private string name;
+				private string categoryName;
 
-				public int? Id
+				public long? CategoryId
 				{
 					get
 					{
-						return id;
+						return categoryId;
 					}
 					set	
 					{
-						id = value;
+						categoryId = value;
 					}
 				}
 
-				public string Name
+				public string CategoryName
 				{
 					get
 					{
-						return name;
+						return categoryName;
 					}
 					set	
 					{
-						name = value;
+						categoryName = value;
 					}
 				}
 			}

@@ -22,37 +22,54 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Workorder;
 using Aliyun.Acs.Workorder.Transform;
-using Aliyun.Acs.Workorder.Transform.V20200326;
+using Aliyun.Acs.Workorder.Transform.V20210510;
 
-namespace Aliyun.Acs.Workorder.Model.V20200326
+namespace Aliyun.Acs.Workorder.Model.V20210510
 {
-    public class ListTicketNotesRequest : RpcAcsRequest<ListTicketNotesResponse>
+    public class ReplyTicketRequest : RpcAcsRequest<ReplyTicketResponse>
     {
-        public ListTicketNotesRequest()
-            : base("Workorder", "2020-03-26", "ListTicketNotes", "workorder", "openAPI")
+        public ReplyTicketRequest()
+            : base("Workorder", "2021-05-10", "ReplyTicket")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Workorder.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Workorder.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string language;
+		private string secContent;
+
+		private string content;
 
 		private string ticketId;
 
-		public string Language
+		public string SecContent
 		{
 			get
 			{
-				return language;
+				return secContent;
 			}
 			set	
 			{
-				language = value;
-				DictionaryUtil.Add(QueryParameters, "Language", value);
+				secContent = value;
+				DictionaryUtil.Add(BodyParameters, "SecContent", value);
+			}
+		}
+
+		public string Content
+		{
+			get
+			{
+				return content;
+			}
+			set	
+			{
+				content = value;
+				DictionaryUtil.Add(BodyParameters, "Content", value);
 			}
 		}
 
@@ -65,7 +82,7 @@ namespace Aliyun.Acs.Workorder.Model.V20200326
 			set	
 			{
 				ticketId = value;
-				DictionaryUtil.Add(QueryParameters, "TicketId", value);
+				DictionaryUtil.Add(BodyParameters, "TicketId", value);
 			}
 		}
 
@@ -74,9 +91,9 @@ namespace Aliyun.Acs.Workorder.Model.V20200326
 			return false;
 		}
 
-        public override ListTicketNotesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ReplyTicketResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListTicketNotesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ReplyTicketResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

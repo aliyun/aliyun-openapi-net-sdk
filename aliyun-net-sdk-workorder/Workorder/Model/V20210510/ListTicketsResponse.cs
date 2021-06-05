@@ -20,20 +20,26 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Workorder.Model.V20200326
+namespace Aliyun.Acs.Workorder.Model.V20210510
 {
 	public class ListTicketsResponse : AcsResponse
 	{
 
 		private int? code;
 
-		private bool? success;
+		private string requestId;
 
 		private string message;
 
-		private string requestId;
+		private int? pageNumber;
 
-		private ListTickets_Data data;
+		private int? pageSize;
+
+		private long? totalCount;
+
+		private bool? success;
+
+		private List<ListTickets_DataItem> data;
 
 		public int? Code
 		{
@@ -44,30 +50,6 @@ namespace Aliyun.Acs.Workorder.Model.V20200326
 			set	
 			{
 				code = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -83,7 +65,67 @@ namespace Aliyun.Acs.Workorder.Model.V20200326
 			}
 		}
 
-		public ListTickets_Data Data
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public long? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public List<ListTickets_DataItem> Data
 		{
 			get
 			{
@@ -95,135 +137,79 @@ namespace Aliyun.Acs.Workorder.Model.V20200326
 			}
 		}
 
-		public class ListTickets_Data
+		public class ListTickets_DataItem
 		{
 
-			private int? total;
+			private string title;
 
-			private int? pageSize;
+			private string ticketId;
 
-			private int? currentPage;
+			private ListTickets_Status status;
 
-			private List<ListTickets_ListItem> list;
-
-			public int? Total
+			public string Title
 			{
 				get
 				{
-					return total;
+					return title;
 				}
 				set	
 				{
-					total = value;
+					title = value;
 				}
 			}
 
-			public int? PageSize
+			public string TicketId
 			{
 				get
 				{
-					return pageSize;
+					return ticketId;
 				}
 				set	
 				{
-					pageSize = value;
+					ticketId = value;
 				}
 			}
 
-			public int? CurrentPage
+			public ListTickets_Status Status
 			{
 				get
 				{
-					return currentPage;
+					return status;
 				}
 				set	
 				{
-					currentPage = value;
+					status = value;
 				}
 			}
 
-			public List<ListTickets_ListItem> List
-			{
-				get
-				{
-					return list;
-				}
-				set	
-				{
-					list = value;
-				}
-			}
-
-			public class ListTickets_ListItem
+			public class ListTickets_Status
 			{
 
-				private int? addTime;
+				private string label;
 
-				private string ticketStatus;
+				private string _value;
 
-				private string creatorId;
-
-				private string id;
-
-				private string title;
-
-				public int? AddTime
+				public string Label
 				{
 					get
 					{
-						return addTime;
+						return label;
 					}
 					set	
 					{
-						addTime = value;
+						label = value;
 					}
 				}
 
-				public string TicketStatus
+				public string _Value
 				{
 					get
 					{
-						return ticketStatus;
+						return _value;
 					}
 					set	
 					{
-						ticketStatus = value;
-					}
-				}
-
-				public string CreatorId
-				{
-					get
-					{
-						return creatorId;
-					}
-					set	
-					{
-						creatorId = value;
-					}
-				}
-
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
-
-				public string Title
-				{
-					get
-					{
-						return title;
-					}
-					set	
-					{
-						title = value;
+						_value = value;
 					}
 				}
 			}

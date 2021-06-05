@@ -22,43 +22,26 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Workorder;
 using Aliyun.Acs.Workorder.Transform;
-using Aliyun.Acs.Workorder.Transform.V20200326;
+using Aliyun.Acs.Workorder.Transform.V20210510;
 
-namespace Aliyun.Acs.Workorder.Model.V20200326
+namespace Aliyun.Acs.Workorder.Model.V20210510
 {
-    public class ReplyTicketRequest : RpcAcsRequest<ReplyTicketResponse>
+    public class ListTicketNotesRequest : RpcAcsRequest<ListTicketNotesResponse>
     {
-        public ReplyTicketRequest()
-            : base("Workorder", "2020-03-26", "ReplyTicket", "workorder", "openAPI")
+        public ListTicketNotesRequest()
+            : base("Workorder", "2021-05-10", "ListTicketNotes")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Workorder.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Workorder.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string language;
-
 		private string ticketId;
-
-		private string content;
-
-		private string secretContent;
-
-		public string Language
-		{
-			get
-			{
-				return language;
-			}
-			set	
-			{
-				language = value;
-				DictionaryUtil.Add(QueryParameters, "Language", value);
-			}
-		}
 
 		public string TicketId
 		{
@@ -73,40 +56,14 @@ namespace Aliyun.Acs.Workorder.Model.V20200326
 			}
 		}
 
-		public string Content
-		{
-			get
-			{
-				return content;
-			}
-			set	
-			{
-				content = value;
-				DictionaryUtil.Add(QueryParameters, "Content", value);
-			}
-		}
-
-		public string SecretContent
-		{
-			get
-			{
-				return secretContent;
-			}
-			set	
-			{
-				secretContent = value;
-				DictionaryUtil.Add(QueryParameters, "SecretContent", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ReplyTicketResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListTicketNotesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ReplyTicketResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListTicketNotesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

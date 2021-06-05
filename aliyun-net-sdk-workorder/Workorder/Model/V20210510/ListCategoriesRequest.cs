@@ -22,50 +22,37 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Workorder;
 using Aliyun.Acs.Workorder.Transform;
-using Aliyun.Acs.Workorder.Transform.V20200326;
+using Aliyun.Acs.Workorder.Transform.V20210510;
 
-namespace Aliyun.Acs.Workorder.Model.V20200326
+namespace Aliyun.Acs.Workorder.Model.V20210510
 {
-    public class CloseTicketRequest : RpcAcsRequest<CloseTicketResponse>
+    public class ListCategoriesRequest : RpcAcsRequest<ListCategoriesResponse>
     {
-        public CloseTicketRequest()
-            : base("Workorder", "2020-03-26", "CloseTicket", "workorder", "openAPI")
+        public ListCategoriesRequest()
+            : base("Workorder", "2021-05-10", "ListCategories")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Workorder.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Workorder.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string language;
+		private long? parentId;
 
-		private string ticketId;
-
-		public string Language
+		public long? ParentId
 		{
 			get
 			{
-				return language;
+				return parentId;
 			}
 			set	
 			{
-				language = value;
-				DictionaryUtil.Add(QueryParameters, "Language", value);
-			}
-		}
-
-		public string TicketId
-		{
-			get
-			{
-				return ticketId;
-			}
-			set	
-			{
-				ticketId = value;
-				DictionaryUtil.Add(QueryParameters, "TicketId", value);
+				parentId = value;
+				DictionaryUtil.Add(QueryParameters, "ParentId", value.ToString());
 			}
 		}
 
@@ -74,9 +61,9 @@ namespace Aliyun.Acs.Workorder.Model.V20200326
 			return false;
 		}
 
-        public override CloseTicketResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListCategoriesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CloseTicketResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListCategoriesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

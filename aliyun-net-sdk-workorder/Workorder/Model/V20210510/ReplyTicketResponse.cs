@@ -20,34 +20,22 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Workorder.Model.V20200326
+namespace Aliyun.Acs.Workorder.Model.V20210510
 {
-	public class CreateTicketResponse : AcsResponse
+	public class ReplyTicketResponse : AcsResponse
 	{
 
+		private int? code;
+
 		private string requestId;
-
-		private string code;
-
-		private bool? success;
 
 		private string message;
 
 		private string data;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private bool? success;
 
-		public string Code
+		public int? Code
 		{
 			get
 			{
@@ -59,15 +47,15 @@ namespace Aliyun.Acs.Workorder.Model.V20200326
 			}
 		}
 
-		public bool? Success
+		public string RequestId
 		{
 			get
 			{
-				return success;
+				return requestId;
 			}
 			set	
 			{
-				success = value;
+				requestId = value;
 			}
 		}
 
@@ -92,6 +80,18 @@ namespace Aliyun.Acs.Workorder.Model.V20200326
 			set	
 			{
 				data = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

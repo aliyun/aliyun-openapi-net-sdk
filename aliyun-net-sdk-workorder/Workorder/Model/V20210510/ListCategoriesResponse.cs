@@ -20,20 +20,20 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Workorder.Model.V20200326
+namespace Aliyun.Acs.Workorder.Model.V20210510
 {
-	public class ListTicketNotesResponse : AcsResponse
+	public class ListCategoriesResponse : AcsResponse
 	{
 
 		private int? code;
 
-		private bool? success;
+		private string requestId;
 
 		private string message;
 
-		private string requestId;
+		private bool? success;
 
-		private ListTicketNotes_Data data;
+		private List<ListCategories_DataItem> data;
 
 		public int? Code
 		{
@@ -44,30 +44,6 @@ namespace Aliyun.Acs.Workorder.Model.V20200326
 			set	
 			{
 				code = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -83,7 +59,31 @@ namespace Aliyun.Acs.Workorder.Model.V20200326
 			}
 		}
 
-		public ListTicketNotes_Data Data
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public List<ListCategories_DataItem> Data
 		{
 			get
 			{
@@ -95,80 +95,34 @@ namespace Aliyun.Acs.Workorder.Model.V20200326
 			}
 		}
 
-		public class ListTicketNotes_Data
+		public class ListCategories_DataItem
 		{
 
-			private List<ListTicketNotes_ListItem> list;
+			private string categoryName;
 
-			public List<ListTicketNotes_ListItem> List
+			private long? categoryId;
+
+			public string CategoryName
 			{
 				get
 				{
-					return list;
+					return categoryName;
 				}
 				set	
 				{
-					list = value;
+					categoryName = value;
 				}
 			}
 
-			public class ListTicketNotes_ListItem
+			public long? CategoryId
 			{
-
-				private bool? fromOfficial;
-
-				private int? gmtCreated;
-
-				private string noteId;
-
-				private string content;
-
-				public bool? FromOfficial
+				get
 				{
-					get
-					{
-						return fromOfficial;
-					}
-					set	
-					{
-						fromOfficial = value;
-					}
+					return categoryId;
 				}
-
-				public int? GmtCreated
+				set	
 				{
-					get
-					{
-						return gmtCreated;
-					}
-					set	
-					{
-						gmtCreated = value;
-					}
-				}
-
-				public string NoteId
-				{
-					get
-					{
-						return noteId;
-					}
-					set	
-					{
-						noteId = value;
-					}
-				}
-
-				public string Content
-				{
-					get
-					{
-						return content;
-					}
-					set	
-					{
-						content = value;
-					}
+					categoryId = value;
 				}
 			}
 		}

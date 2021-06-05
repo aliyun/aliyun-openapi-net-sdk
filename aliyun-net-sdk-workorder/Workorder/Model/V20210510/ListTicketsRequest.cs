@@ -22,90 +22,92 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Workorder;
 using Aliyun.Acs.Workorder.Transform;
-using Aliyun.Acs.Workorder.Transform.V20200326;
+using Aliyun.Acs.Workorder.Transform.V20210510;
 
-namespace Aliyun.Acs.Workorder.Model.V20200326
+namespace Aliyun.Acs.Workorder.Model.V20210510
 {
     public class ListTicketsRequest : RpcAcsRequest<ListTicketsResponse>
     {
         public ListTicketsRequest()
-            : base("Workorder", "2020-03-26", "ListTickets", "workorder", "openAPI")
+            : base("Workorder", "2021-05-10", "ListTickets")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Workorder.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Workorder.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string productCode;
+		private long? beginDate;
 
-		private string language;
+		private List<string> statusLists = new List<string>(){ };
 
-		private string subUserId;
+		private int? pageNumber;
 
-		private long? createdBeforeTime;
+		private long? endDate;
 
 		private int? pageSize;
 
-		private string ids;
+		private string keyword;
 
-		private string ticketStatus;
+		private string ticketId;
 
-		private int? pageStart;
-
-		private long? createdAfterTime;
-
-		public string ProductCode
+		public long? BeginDate
 		{
 			get
 			{
-				return productCode;
+				return beginDate;
 			}
 			set	
 			{
-				productCode = value;
-				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+				beginDate = value;
+				DictionaryUtil.Add(QueryParameters, "BeginDate", value.ToString());
 			}
 		}
 
-		public string Language
+		public List<string> StatusLists
 		{
 			get
 			{
-				return language;
+				return statusLists;
 			}
-			set	
+
+			set
 			{
-				language = value;
-				DictionaryUtil.Add(QueryParameters, "Language", value);
+				statusLists = value;
+				for (int i = 0; i < statusLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"StatusList." + (i + 1) , statusLists[i]);
+				}
 			}
 		}
 
-		public string SubUserId
+		public int? PageNumber
 		{
 			get
 			{
-				return subUserId;
+				return pageNumber;
 			}
 			set	
 			{
-				subUserId = value;
-				DictionaryUtil.Add(QueryParameters, "SubUserId", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public long? CreatedBeforeTime
+		public long? EndDate
 		{
 			get
 			{
-				return createdBeforeTime;
+				return endDate;
 			}
 			set	
 			{
-				createdBeforeTime = value;
-				DictionaryUtil.Add(QueryParameters, "CreatedBeforeTime", value.ToString());
+				endDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndDate", value.ToString());
 			}
 		}
 
@@ -122,55 +124,29 @@ namespace Aliyun.Acs.Workorder.Model.V20200326
 			}
 		}
 
-		public string Ids
+		public string Keyword
 		{
 			get
 			{
-				return ids;
+				return keyword;
 			}
 			set	
 			{
-				ids = value;
-				DictionaryUtil.Add(QueryParameters, "Ids", value);
+				keyword = value;
+				DictionaryUtil.Add(QueryParameters, "Keyword", value);
 			}
 		}
 
-		public string TicketStatus
+		public string TicketId
 		{
 			get
 			{
-				return ticketStatus;
+				return ticketId;
 			}
 			set	
 			{
-				ticketStatus = value;
-				DictionaryUtil.Add(QueryParameters, "TicketStatus", value);
-			}
-		}
-
-		public int? PageStart
-		{
-			get
-			{
-				return pageStart;
-			}
-			set	
-			{
-				pageStart = value;
-				DictionaryUtil.Add(QueryParameters, "PageStart", value.ToString());
-			}
-		}
-
-		public long? CreatedAfterTime
-		{
-			get
-			{
-				return createdAfterTime;
-			}
-			set	
-			{
-				createdAfterTime = value;
-				DictionaryUtil.Add(QueryParameters, "CreatedAfterTime", value.ToString());
+				ticketId = value;
+				DictionaryUtil.Add(QueryParameters, "TicketId", value);
 			}
 		}
 

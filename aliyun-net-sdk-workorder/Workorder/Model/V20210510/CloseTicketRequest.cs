@@ -22,35 +22,37 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Workorder;
 using Aliyun.Acs.Workorder.Transform;
-using Aliyun.Acs.Workorder.Transform.V20200326;
+using Aliyun.Acs.Workorder.Transform.V20210510;
 
-namespace Aliyun.Acs.Workorder.Model.V20200326
+namespace Aliyun.Acs.Workorder.Model.V20210510
 {
-    public class ListProductsRequest : RpcAcsRequest<ListProductsResponse>
+    public class CloseTicketRequest : RpcAcsRequest<CloseTicketResponse>
     {
-        public ListProductsRequest()
-            : base("Workorder", "2020-03-26", "ListProducts", "workorder", "openAPI")
+        public CloseTicketRequest()
+            : base("Workorder", "2021-05-10", "CloseTicket")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Workorder.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Workorder.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string language;
+		private string ticketId;
 
-		public string Language
+		public string TicketId
 		{
 			get
 			{
-				return language;
+				return ticketId;
 			}
 			set	
 			{
-				language = value;
-				DictionaryUtil.Add(QueryParameters, "Language", value);
+				ticketId = value;
+				DictionaryUtil.Add(BodyParameters, "TicketId", value);
 			}
 		}
 
@@ -59,9 +61,9 @@ namespace Aliyun.Acs.Workorder.Model.V20200326
 			return false;
 		}
 
-        public override ListProductsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CloseTicketResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListProductsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CloseTicketResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

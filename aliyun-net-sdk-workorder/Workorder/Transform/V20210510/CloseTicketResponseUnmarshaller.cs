@@ -16,69 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Workorder.Model.V20210510;
 
-namespace Aliyun.Acs.Workorder.Model.V20200326
+namespace Aliyun.Acs.Workorder.Transform.V20210510
 {
-	public class ReplyTicketResponse : AcsResponse
-	{
+    public class CloseTicketResponseUnmarshaller
+    {
+        public static CloseTicketResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			CloseTicketResponse closeTicketResponse = new CloseTicketResponse();
 
-		private int? code;
-
-		private bool? success;
-
-		private string message;
-
-		private string requestId;
-
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			closeTicketResponse.HttpResponse = _ctx.HttpResponse;
+			closeTicketResponse.Code = _ctx.IntegerValue("CloseTicket.Code");
+			closeTicketResponse.RequestId = _ctx.StringValue("CloseTicket.RequestId");
+			closeTicketResponse.Message = _ctx.StringValue("CloseTicket.Message");
+			closeTicketResponse.Success = _ctx.BooleanValue("CloseTicket.Success");
+        
+			return closeTicketResponse;
+        }
+    }
 }

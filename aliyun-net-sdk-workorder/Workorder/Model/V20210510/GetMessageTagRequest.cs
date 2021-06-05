@@ -22,61 +22,33 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Workorder;
 using Aliyun.Acs.Workorder.Transform;
-using Aliyun.Acs.Workorder.Transform.V20200326;
+using Aliyun.Acs.Workorder.Transform.V20210510;
 
-namespace Aliyun.Acs.Workorder.Model.V20200326
+namespace Aliyun.Acs.Workorder.Model.V20210510
 {
-    public class ListCategoriesRequest : RpcAcsRequest<ListCategoriesResponse>
+    public class GetMessageTagRequest : RpcAcsRequest<GetMessageTagResponse>
     {
-        public ListCategoriesRequest()
-            : base("Workorder", "2020-03-26", "ListCategories", "workorder", "openAPI")
+        public GetMessageTagRequest()
+            : base("Workorder", "2021-05-10", "GetMessageTag")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Workorder.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Workorder.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
-
-		private string productCode;
-
-		private string language;
-
-		public string ProductCode
-		{
-			get
-			{
-				return productCode;
-			}
-			set	
-			{
-				productCode = value;
-				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
-			}
-		}
-
-		public string Language
-		{
-			get
-			{
-				return language;
-			}
-			set	
-			{
-				language = value;
-				DictionaryUtil.Add(QueryParameters, "Language", value);
-			}
-		}
 
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ListCategoriesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetMessageTagResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListCategoriesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetMessageTagResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
