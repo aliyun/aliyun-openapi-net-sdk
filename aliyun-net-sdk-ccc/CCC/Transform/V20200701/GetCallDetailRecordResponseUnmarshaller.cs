@@ -57,67 +57,67 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			data.ReleaseInitiator = _ctx.StringValue("GetCallDetailRecord.Data.ReleaseInitiator");
 			data.RecordingReady = _ctx.BooleanValue("GetCallDetailRecord.Data.RecordingReady");
 
-			List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrAgentEventsItem> data_cdrAgentEvents = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrAgentEventsItem>();
-			for (int i = 0; i < _ctx.Length("GetCallDetailRecord.Data.CdrAgentEvents.Length"); i++) {
-				GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrAgentEventsItem cdrAgentEventsItem = new GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrAgentEventsItem();
-				cdrAgentEventsItem.AgentId = _ctx.StringValue("GetCallDetailRecord.Data.CdrAgentEvents["+ i +"].AgentId");
-				cdrAgentEventsItem.AgentName = _ctx.StringValue("GetCallDetailRecord.Data.CdrAgentEvents["+ i +"].AgentName");
-				cdrAgentEventsItem.SkillGroupId = _ctx.StringValue("GetCallDetailRecord.Data.CdrAgentEvents["+ i +"].SkillGroupId");
+			List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_AgentEventsItem> data_agentEvents = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_AgentEventsItem>();
+			for (int i = 0; i < _ctx.Length("GetCallDetailRecord.Data.AgentEvents.Length"); i++) {
+				GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_AgentEventsItem agentEventsItem = new GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_AgentEventsItem();
+				agentEventsItem.AgentId = _ctx.StringValue("GetCallDetailRecord.Data.AgentEvents["+ i +"].AgentId");
+				agentEventsItem.AgentName = _ctx.StringValue("GetCallDetailRecord.Data.AgentEvents["+ i +"].AgentName");
+				agentEventsItem.SkillGroupId = _ctx.StringValue("GetCallDetailRecord.Data.AgentEvents["+ i +"].SkillGroupId");
 
-				List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrAgentEventsItem.GetCallDetailRecord_EventSequenceItem> cdrAgentEventsItem_eventSequence = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrAgentEventsItem.GetCallDetailRecord_EventSequenceItem>();
-				for (int j = 0; j < _ctx.Length("GetCallDetailRecord.Data.CdrAgentEvents["+ i +"].EventSequence.Length"); j++) {
-					GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrAgentEventsItem.GetCallDetailRecord_EventSequenceItem eventSequenceItem = new GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrAgentEventsItem.GetCallDetailRecord_EventSequenceItem();
-					eventSequenceItem._Event = _ctx.StringValue("GetCallDetailRecord.Data.CdrAgentEvents["+ i +"].EventSequence["+ j +"].Event");
-					eventSequenceItem.EventTime = _ctx.LongValue("GetCallDetailRecord.Data.CdrAgentEvents["+ i +"].EventSequence["+ j +"].EventTime");
+				List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_AgentEventsItem.GetCallDetailRecord_EventSequenceItem> agentEventsItem_eventSequence = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_AgentEventsItem.GetCallDetailRecord_EventSequenceItem>();
+				for (int j = 0; j < _ctx.Length("GetCallDetailRecord.Data.AgentEvents["+ i +"].EventSequence.Length"); j++) {
+					GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_AgentEventsItem.GetCallDetailRecord_EventSequenceItem eventSequenceItem = new GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_AgentEventsItem.GetCallDetailRecord_EventSequenceItem();
+					eventSequenceItem._Event = _ctx.StringValue("GetCallDetailRecord.Data.AgentEvents["+ i +"].EventSequence["+ j +"].Event");
+					eventSequenceItem.EventTime = _ctx.LongValue("GetCallDetailRecord.Data.AgentEvents["+ i +"].EventSequence["+ j +"].EventTime");
 
-					cdrAgentEventsItem_eventSequence.Add(eventSequenceItem);
+					agentEventsItem_eventSequence.Add(eventSequenceItem);
 				}
-				cdrAgentEventsItem.EventSequence = cdrAgentEventsItem_eventSequence;
+				agentEventsItem.EventSequence = agentEventsItem_eventSequence;
 
-				data_cdrAgentEvents.Add(cdrAgentEventsItem);
+				data_agentEvents.Add(agentEventsItem);
 			}
-			data.CdrAgentEvents = data_cdrAgentEvents;
+			data.AgentEvents = data_agentEvents;
 
-			List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrIvrEventsItem> data_cdrIvrEvents = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrIvrEventsItem>();
-			for (int i = 0; i < _ctx.Length("GetCallDetailRecord.Data.CdrIvrEvents.Length"); i++) {
-				GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrIvrEventsItem cdrIvrEventsItem = new GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrIvrEventsItem();
-				cdrIvrEventsItem.FlowId = _ctx.StringValue("GetCallDetailRecord.Data.CdrIvrEvents["+ i +"].FlowId");
+			List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_IvrEventsItem> data_ivrEvents = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_IvrEventsItem>();
+			for (int i = 0; i < _ctx.Length("GetCallDetailRecord.Data.IvrEvents.Length"); i++) {
+				GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_IvrEventsItem ivrEventsItem = new GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_IvrEventsItem();
+				ivrEventsItem.FlowId = _ctx.StringValue("GetCallDetailRecord.Data.IvrEvents["+ i +"].FlowId");
 
-				List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrIvrEventsItem.GetCallDetailRecord_EventSequenceItem2> cdrIvrEventsItem_eventSequence1 = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrIvrEventsItem.GetCallDetailRecord_EventSequenceItem2>();
-				for (int j = 0; j < _ctx.Length("GetCallDetailRecord.Data.CdrIvrEvents["+ i +"].EventSequence.Length"); j++) {
-					GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrIvrEventsItem.GetCallDetailRecord_EventSequenceItem2 eventSequenceItem2 = new GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrIvrEventsItem.GetCallDetailRecord_EventSequenceItem2();
-					eventSequenceItem2._Event = _ctx.StringValue("GetCallDetailRecord.Data.CdrIvrEvents["+ i +"].EventSequence["+ j +"].Event");
-					eventSequenceItem2.EventTime = _ctx.LongValue("GetCallDetailRecord.Data.CdrIvrEvents["+ i +"].EventSequence["+ j +"].EventTime");
+				List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_IvrEventsItem.GetCallDetailRecord_EventSequenceItem2> ivrEventsItem_eventSequence1 = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_IvrEventsItem.GetCallDetailRecord_EventSequenceItem2>();
+				for (int j = 0; j < _ctx.Length("GetCallDetailRecord.Data.IvrEvents["+ i +"].EventSequence.Length"); j++) {
+					GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_IvrEventsItem.GetCallDetailRecord_EventSequenceItem2 eventSequenceItem2 = new GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_IvrEventsItem.GetCallDetailRecord_EventSequenceItem2();
+					eventSequenceItem2._Event = _ctx.StringValue("GetCallDetailRecord.Data.IvrEvents["+ i +"].EventSequence["+ j +"].Event");
+					eventSequenceItem2.EventTime = _ctx.LongValue("GetCallDetailRecord.Data.IvrEvents["+ i +"].EventSequence["+ j +"].EventTime");
 
-					cdrIvrEventsItem_eventSequence1.Add(eventSequenceItem2);
+					ivrEventsItem_eventSequence1.Add(eventSequenceItem2);
 				}
-				cdrIvrEventsItem.EventSequence1 = cdrIvrEventsItem_eventSequence1;
+				ivrEventsItem.EventSequence1 = ivrEventsItem_eventSequence1;
 
-				data_cdrIvrEvents.Add(cdrIvrEventsItem);
+				data_ivrEvents.Add(ivrEventsItem);
 			}
-			data.CdrIvrEvents = data_cdrIvrEvents;
+			data.IvrEvents = data_ivrEvents;
 
-			List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrQueueEventsItem> data_cdrQueueEvents = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrQueueEventsItem>();
-			for (int i = 0; i < _ctx.Length("GetCallDetailRecord.Data.CdrQueueEvents.Length"); i++) {
-				GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrQueueEventsItem cdrQueueEventsItem = new GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrQueueEventsItem();
-				cdrQueueEventsItem.FlowId = _ctx.StringValue("GetCallDetailRecord.Data.CdrQueueEvents["+ i +"].FlowId");
-				cdrQueueEventsItem.QueueId = _ctx.StringValue("GetCallDetailRecord.Data.CdrQueueEvents["+ i +"].QueueId");
-				cdrQueueEventsItem.QueueName = _ctx.StringValue("GetCallDetailRecord.Data.CdrQueueEvents["+ i +"].QueueName");
-				cdrQueueEventsItem.QueueType = _ctx.IntegerValue("GetCallDetailRecord.Data.CdrQueueEvents["+ i +"].QueueType");
+			List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_QueueEventsItem> data_queueEvents = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_QueueEventsItem>();
+			for (int i = 0; i < _ctx.Length("GetCallDetailRecord.Data.QueueEvents.Length"); i++) {
+				GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_QueueEventsItem queueEventsItem = new GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_QueueEventsItem();
+				queueEventsItem.FlowId = _ctx.StringValue("GetCallDetailRecord.Data.QueueEvents["+ i +"].FlowId");
+				queueEventsItem.QueueId = _ctx.StringValue("GetCallDetailRecord.Data.QueueEvents["+ i +"].QueueId");
+				queueEventsItem.QueueName = _ctx.StringValue("GetCallDetailRecord.Data.QueueEvents["+ i +"].QueueName");
+				queueEventsItem.QueueType = _ctx.IntegerValue("GetCallDetailRecord.Data.QueueEvents["+ i +"].QueueType");
 
-				List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrQueueEventsItem.GetCallDetailRecord_EventSequenceItem4> cdrQueueEventsItem_eventSequence3 = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrQueueEventsItem.GetCallDetailRecord_EventSequenceItem4>();
-				for (int j = 0; j < _ctx.Length("GetCallDetailRecord.Data.CdrQueueEvents["+ i +"].EventSequence.Length"); j++) {
-					GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrQueueEventsItem.GetCallDetailRecord_EventSequenceItem4 eventSequenceItem4 = new GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CdrQueueEventsItem.GetCallDetailRecord_EventSequenceItem4();
-					eventSequenceItem4._Event = _ctx.StringValue("GetCallDetailRecord.Data.CdrQueueEvents["+ i +"].EventSequence["+ j +"].Event");
-					eventSequenceItem4.EventTime = _ctx.LongValue("GetCallDetailRecord.Data.CdrQueueEvents["+ i +"].EventSequence["+ j +"].EventTime");
+				List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_QueueEventsItem.GetCallDetailRecord_EventSequenceItem4> queueEventsItem_eventSequence3 = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_QueueEventsItem.GetCallDetailRecord_EventSequenceItem4>();
+				for (int j = 0; j < _ctx.Length("GetCallDetailRecord.Data.QueueEvents["+ i +"].EventSequence.Length"); j++) {
+					GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_QueueEventsItem.GetCallDetailRecord_EventSequenceItem4 eventSequenceItem4 = new GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_QueueEventsItem.GetCallDetailRecord_EventSequenceItem4();
+					eventSequenceItem4._Event = _ctx.StringValue("GetCallDetailRecord.Data.QueueEvents["+ i +"].EventSequence["+ j +"].Event");
+					eventSequenceItem4.EventTime = _ctx.LongValue("GetCallDetailRecord.Data.QueueEvents["+ i +"].EventSequence["+ j +"].EventTime");
 
-					cdrQueueEventsItem_eventSequence3.Add(eventSequenceItem4);
+					queueEventsItem_eventSequence3.Add(eventSequenceItem4);
 				}
-				cdrQueueEventsItem.EventSequence3 = cdrQueueEventsItem_eventSequence3;
+				queueEventsItem.EventSequence3 = queueEventsItem_eventSequence3;
 
-				data_cdrQueueEvents.Add(cdrQueueEventsItem);
+				data_queueEvents.Add(queueEventsItem);
 			}
-			data.CdrQueueEvents = data_cdrQueueEvents;
+			data.QueueEvents = data_queueEvents;
 			getCallDetailRecordResponse.Data = data;
         
 			return getCallDetailRecordResponse;

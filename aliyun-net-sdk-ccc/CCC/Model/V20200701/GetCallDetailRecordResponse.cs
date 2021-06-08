@@ -136,11 +136,11 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 			private bool? recordingReady;
 
-			private List<GetCallDetailRecord_CdrAgentEventsItem> cdrAgentEvents;
+			private List<GetCallDetailRecord_AgentEventsItem> agentEvents;
 
-			private List<GetCallDetailRecord_CdrIvrEventsItem> cdrIvrEvents;
+			private List<GetCallDetailRecord_IvrEventsItem> ivrEvents;
 
-			private List<GetCallDetailRecord_CdrQueueEventsItem> cdrQueueEvents;
+			private List<GetCallDetailRecord_QueueEventsItem> queueEvents;
 
 			public string AgentIds
 			{
@@ -370,43 +370,43 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				}
 			}
 
-			public List<GetCallDetailRecord_CdrAgentEventsItem> CdrAgentEvents
+			public List<GetCallDetailRecord_AgentEventsItem> AgentEvents
 			{
 				get
 				{
-					return cdrAgentEvents;
+					return agentEvents;
 				}
 				set	
 				{
-					cdrAgentEvents = value;
+					agentEvents = value;
 				}
 			}
 
-			public List<GetCallDetailRecord_CdrIvrEventsItem> CdrIvrEvents
+			public List<GetCallDetailRecord_IvrEventsItem> IvrEvents
 			{
 				get
 				{
-					return cdrIvrEvents;
+					return ivrEvents;
 				}
 				set	
 				{
-					cdrIvrEvents = value;
+					ivrEvents = value;
 				}
 			}
 
-			public List<GetCallDetailRecord_CdrQueueEventsItem> CdrQueueEvents
+			public List<GetCallDetailRecord_QueueEventsItem> QueueEvents
 			{
 				get
 				{
-					return cdrQueueEvents;
+					return queueEvents;
 				}
 				set	
 				{
-					cdrQueueEvents = value;
+					queueEvents = value;
 				}
 			}
 
-			public class GetCallDetailRecord_CdrAgentEventsItem
+			public class GetCallDetailRecord_AgentEventsItem
 			{
 
 				private string agentId;
@@ -498,7 +498,7 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				}
 			}
 
-			public class GetCallDetailRecord_CdrIvrEventsItem
+			public class GetCallDetailRecord_IvrEventsItem
 			{
 
 				private string flowId;
@@ -562,7 +562,7 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				}
 			}
 
-			public class GetCallDetailRecord_CdrQueueEventsItem
+			public class GetCallDetailRecord_QueueEventsItem
 			{
 
 				private string flowId;
