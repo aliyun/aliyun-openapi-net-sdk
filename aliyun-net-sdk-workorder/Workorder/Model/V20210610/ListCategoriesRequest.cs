@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Workorder;
 using Aliyun.Acs.Workorder.Transform;
-using Aliyun.Acs.Workorder.Transform.V20210510;
+using Aliyun.Acs.Workorder.Transform.V20210610;
 
-namespace Aliyun.Acs.Workorder.Model.V20210510
+namespace Aliyun.Acs.Workorder.Model.V20210610
 {
     public class ListCategoriesRequest : RpcAcsRequest<ListCategoriesResponse>
     {
         public ListCategoriesRequest()
-            : base("Workorder", "2021-05-10", "ListCategories")
+            : base("Workorder", "2021-06-10", "ListCategories")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,18 +41,33 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			Method = MethodType.POST;
         }
 
-		private long? parentId;
+		private long? productId;
 
-		public long? ParentId
+		private string name;
+
+		public long? ProductId
 		{
 			get
 			{
-				return parentId;
+				return productId;
 			}
 			set	
 			{
-				parentId = value;
-				DictionaryUtil.Add(QueryParameters, "ParentId", value.ToString());
+				productId = value;
+				DictionaryUtil.Add(BodyParameters, "ProductId", value.ToString());
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(BodyParameters, "Name", value);
 			}
 		}
 

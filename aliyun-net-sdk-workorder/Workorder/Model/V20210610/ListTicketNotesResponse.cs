@@ -20,9 +20,9 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Workorder.Model.V20210510
+namespace Aliyun.Acs.Workorder.Model.V20210610
 {
-	public class ListProductsResponse : AcsResponse
+	public class ListTicketNotesResponse : AcsResponse
 	{
 
 		private int? code;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 
 		private bool? success;
 
-		private List<ListProducts_DataItem> data;
+		private List<ListTicketNotes_DataItem> data;
 
 		public int? Code
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			}
 		}
 
-		public List<ListProducts_DataItem> Data
+		public List<ListTicketNotes_DataItem> Data
 		{
 			get
 			{
@@ -95,93 +95,167 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			}
 		}
 
-		public class ListProducts_DataItem
+		public class ListTicketNotes_DataItem
 		{
 
-			private string topCategoryName;
+			private int? status;
 
-			private long? topCategoryId;
+			private long? createTime;
 
-			private int? orderNumber;
+			private int? type;
 
-			private List<ListProducts_RootsItem> roots;
+			private long? dialogId;
 
-			public string TopCategoryName
+			private string tip;
+
+			private ListTicketNotes_Dialog dialog;
+
+			private ListTicketNotes_User user;
+
+			public int? Status
 			{
 				get
 				{
-					return topCategoryName;
+					return status;
 				}
 				set	
 				{
-					topCategoryName = value;
+					status = value;
 				}
 			}
 
-			public long? TopCategoryId
+			public long? CreateTime
 			{
 				get
 				{
-					return topCategoryId;
+					return createTime;
 				}
 				set	
 				{
-					topCategoryId = value;
+					createTime = value;
 				}
 			}
 
-			public int? OrderNumber
+			public int? Type
 			{
 				get
 				{
-					return orderNumber;
+					return type;
 				}
 				set	
 				{
-					orderNumber = value;
+					type = value;
 				}
 			}
 
-			public List<ListProducts_RootsItem> Roots
+			public long? DialogId
 			{
 				get
 				{
-					return roots;
+					return dialogId;
 				}
 				set	
 				{
-					roots = value;
+					dialogId = value;
 				}
 			}
 
-			public class ListProducts_RootsItem
+			public string Tip
+			{
+				get
+				{
+					return tip;
+				}
+				set	
+				{
+					tip = value;
+				}
+			}
+
+			public ListTicketNotes_Dialog Dialog
+			{
+				get
+				{
+					return dialog;
+				}
+				set	
+				{
+					dialog = value;
+				}
+			}
+
+			public ListTicketNotes_User User
+			{
+				get
+				{
+					return user;
+				}
+				set	
+				{
+					user = value;
+				}
+			}
+
+			public class ListTicketNotes_Dialog
 			{
 
-				private long? categoryId;
+				private string content;
 
-				private string categoryName;
+				private string schema;
 
-				public long? CategoryId
+				public string Content
 				{
 					get
 					{
-						return categoryId;
+						return content;
 					}
 					set	
 					{
-						categoryId = value;
+						content = value;
 					}
 				}
 
-				public string CategoryName
+				public string Schema
 				{
 					get
 					{
-						return categoryName;
+						return schema;
 					}
 					set	
 					{
-						categoryName = value;
+						schema = value;
+					}
+				}
+			}
+
+			public class ListTicketNotes_User
+			{
+
+				private string name;
+
+				private int? role;
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public int? Role
+				{
+					get
+					{
+						return role;
+					}
+					set	
+					{
+						role = value;
 					}
 				}
 			}

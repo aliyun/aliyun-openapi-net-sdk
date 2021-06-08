@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Workorder;
 using Aliyun.Acs.Workorder.Transform;
-using Aliyun.Acs.Workorder.Transform.V20210510;
+using Aliyun.Acs.Workorder.Transform.V20210610;
 
-namespace Aliyun.Acs.Workorder.Model.V20210510
+namespace Aliyun.Acs.Workorder.Model.V20210610
 {
-    public class ListTicketNotesRequest : RpcAcsRequest<ListTicketNotesResponse>
+    public class GetMqConsumerTagRequest : RpcAcsRequest<GetMqConsumerTagResponse>
     {
-        public ListTicketNotesRequest()
-            : base("Workorder", "2021-05-10", "ListTicketNotes")
+        public GetMqConsumerTagRequest()
+            : base("Workorder", "2021-06-10", "GetMqConsumerTag")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,29 +41,14 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			Method = MethodType.POST;
         }
 
-		private string ticketId;
-
-		public string TicketId
-		{
-			get
-			{
-				return ticketId;
-			}
-			set	
-			{
-				ticketId = value;
-				DictionaryUtil.Add(QueryParameters, "TicketId", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ListTicketNotesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetMqConsumerTagResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListTicketNotesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetMqConsumerTagResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

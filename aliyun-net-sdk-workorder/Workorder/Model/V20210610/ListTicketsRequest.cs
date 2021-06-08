@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Workorder;
 using Aliyun.Acs.Workorder.Transform;
-using Aliyun.Acs.Workorder.Transform.V20210510;
+using Aliyun.Acs.Workorder.Transform.V20210610;
 
-namespace Aliyun.Acs.Workorder.Model.V20210510
+namespace Aliyun.Acs.Workorder.Model.V20210610
 {
     public class ListTicketsRequest : RpcAcsRequest<ListTicketsResponse>
     {
         public ListTicketsRequest()
-            : base("Workorder", "2021-05-10", "ListTickets")
+            : base("Workorder", "2021-06-10", "ListTickets")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,9 +41,9 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			Method = MethodType.POST;
         }
 
-		private long? beginDate;
-
 		private List<string> statusLists = new List<string>(){ };
+
+		private long? startDate;
 
 		private int? pageNumber;
 
@@ -54,19 +54,6 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 		private string keyword;
 
 		private string ticketId;
-
-		public long? BeginDate
-		{
-			get
-			{
-				return beginDate;
-			}
-			set	
-			{
-				beginDate = value;
-				DictionaryUtil.Add(QueryParameters, "BeginDate", value.ToString());
-			}
-		}
 
 		public List<string> StatusLists
 		{
@@ -80,8 +67,21 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 				statusLists = value;
 				for (int i = 0; i < statusLists.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"StatusList." + (i + 1) , statusLists[i]);
+					DictionaryUtil.Add(BodyParameters,"StatusList." + (i + 1) , statusLists[i]);
 				}
+			}
+		}
+
+		public long? StartDate
+		{
+			get
+			{
+				return startDate;
+			}
+			set	
+			{
+				startDate = value;
+				DictionaryUtil.Add(BodyParameters, "StartDate", value.ToString());
 			}
 		}
 
@@ -107,7 +107,7 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			set	
 			{
 				endDate = value;
-				DictionaryUtil.Add(QueryParameters, "EndDate", value.ToString());
+				DictionaryUtil.Add(BodyParameters, "EndDate", value.ToString());
 			}
 		}
 
@@ -133,7 +133,7 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			set	
 			{
 				keyword = value;
-				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+				DictionaryUtil.Add(BodyParameters, "Keyword", value);
 			}
 		}
 
@@ -146,7 +146,7 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			set	
 			{
 				ticketId = value;
-				DictionaryUtil.Add(QueryParameters, "TicketId", value);
+				DictionaryUtil.Add(BodyParameters, "TicketId", value);
 			}
 		}
 

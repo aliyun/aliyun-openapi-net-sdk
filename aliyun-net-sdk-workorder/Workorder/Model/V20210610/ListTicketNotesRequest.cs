@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Workorder;
 using Aliyun.Acs.Workorder.Transform;
-using Aliyun.Acs.Workorder.Transform.V20210510;
+using Aliyun.Acs.Workorder.Transform.V20210610;
 
-namespace Aliyun.Acs.Workorder.Model.V20210510
+namespace Aliyun.Acs.Workorder.Model.V20210610
 {
-    public class CloseTicketRequest : RpcAcsRequest<CloseTicketResponse>
+    public class ListTicketNotesRequest : RpcAcsRequest<ListTicketNotesResponse>
     {
-        public CloseTicketRequest()
-            : base("Workorder", "2021-05-10", "CloseTicket")
+        public ListTicketNotesRequest()
+            : base("Workorder", "2021-06-10", "ListTicketNotes")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -52,7 +52,7 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			set	
 			{
 				ticketId = value;
-				DictionaryUtil.Add(BodyParameters, "TicketId", value);
+				DictionaryUtil.Add(QueryParameters, "TicketId", value);
 			}
 		}
 
@@ -61,9 +61,9 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			return false;
 		}
 
-        public override CloseTicketResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListTicketNotesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CloseTicketResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListTicketNotesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

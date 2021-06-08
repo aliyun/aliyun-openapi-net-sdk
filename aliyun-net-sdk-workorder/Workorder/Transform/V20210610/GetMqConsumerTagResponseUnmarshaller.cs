@@ -20,24 +20,24 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Workorder.Model.V20210510;
+using Aliyun.Acs.Workorder.Model.V20210610;
 
-namespace Aliyun.Acs.Workorder.Transform.V20210510
+namespace Aliyun.Acs.Workorder.Transform.V20210610
 {
-    public class CreateTicketResponseUnmarshaller
+    public class GetMqConsumerTagResponseUnmarshaller
     {
-        public static CreateTicketResponse Unmarshall(UnmarshallerContext _ctx)
+        public static GetMqConsumerTagResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CreateTicketResponse createTicketResponse = new CreateTicketResponse();
+			GetMqConsumerTagResponse getMqConsumerTagResponse = new GetMqConsumerTagResponse();
 
-			createTicketResponse.HttpResponse = _ctx.HttpResponse;
-			createTicketResponse.Code = _ctx.IntegerValue("CreateTicket.Code");
-			createTicketResponse.RequestId = _ctx.StringValue("CreateTicket.RequestId");
-			createTicketResponse.Message = _ctx.StringValue("CreateTicket.Message");
-			createTicketResponse.Data = _ctx.StringValue("CreateTicket.Data");
-			createTicketResponse.Success = _ctx.BooleanValue("CreateTicket.Success");
+			getMqConsumerTagResponse.HttpResponse = _ctx.HttpResponse;
+			getMqConsumerTagResponse.Code = _ctx.IntegerValue("GetMqConsumerTag.Code");
+			getMqConsumerTagResponse.RequestId = _ctx.StringValue("GetMqConsumerTag.RequestId");
+			getMqConsumerTagResponse.Message = _ctx.StringValue("GetMqConsumerTag.Message");
+			getMqConsumerTagResponse.Data = _ctx.StringValue("GetMqConsumerTag.Data");
+			getMqConsumerTagResponse.Success = _ctx.BooleanValue("GetMqConsumerTag.Success");
         
-			return createTicketResponse;
+			return getMqConsumerTagResponse;
         }
     }
 }

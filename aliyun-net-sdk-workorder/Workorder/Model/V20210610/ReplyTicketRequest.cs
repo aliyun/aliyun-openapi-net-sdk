@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Workorder;
 using Aliyun.Acs.Workorder.Transform;
-using Aliyun.Acs.Workorder.Transform.V20210510;
+using Aliyun.Acs.Workorder.Transform.V20210610;
 
-namespace Aliyun.Acs.Workorder.Model.V20210510
+namespace Aliyun.Acs.Workorder.Model.V20210610
 {
-    public class ListProductsRequest : RpcAcsRequest<ListProductsResponse>
+    public class ReplyTicketRequest : RpcAcsRequest<ReplyTicketResponse>
     {
-        public ListProductsRequest()
-            : base("Workorder", "2021-05-10", "ListProducts")
+        public ReplyTicketRequest()
+            : base("Workorder", "2021-06-10", "ReplyTicket")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,18 +41,48 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			Method = MethodType.POST;
         }
 
-		private string name;
+		private string secContent;
 
-		public string Name
+		private string content;
+
+		private string ticketId;
+
+		public string SecContent
 		{
 			get
 			{
-				return name;
+				return secContent;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				secContent = value;
+				DictionaryUtil.Add(BodyParameters, "SecContent", value);
+			}
+		}
+
+		public string Content
+		{
+			get
+			{
+				return content;
+			}
+			set	
+			{
+				content = value;
+				DictionaryUtil.Add(BodyParameters, "Content", value);
+			}
+		}
+
+		public string TicketId
+		{
+			get
+			{
+				return ticketId;
+			}
+			set	
+			{
+				ticketId = value;
+				DictionaryUtil.Add(BodyParameters, "TicketId", value);
 			}
 		}
 
@@ -61,9 +91,9 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			return false;
 		}
 
-        public override ListProductsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ReplyTicketResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListProductsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ReplyTicketResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

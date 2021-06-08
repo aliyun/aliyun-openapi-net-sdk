@@ -20,9 +20,9 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Workorder.Model.V20210510
+namespace Aliyun.Acs.Workorder.Model.V20210610
 {
-	public class ListCategoriesResponse : AcsResponse
+	public class ListTicketsResponse : AcsResponse
 	{
 
 		private int? code;
@@ -31,9 +31,15 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 
 		private string message;
 
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		private long? totalCount;
+
 		private bool? success;
 
-		private List<ListCategories_DataItem> data;
+		private List<ListTickets_DataItem> data;
 
 		public int? Code
 		{
@@ -71,6 +77,42 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			}
 		}
 
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public long? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
 		public bool? Success
 		{
 			get
@@ -83,7 +125,7 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			}
 		}
 
-		public List<ListCategories_DataItem> Data
+		public List<ListTickets_DataItem> Data
 		{
 			get
 			{
@@ -95,34 +137,80 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			}
 		}
 
-		public class ListCategories_DataItem
+		public class ListTickets_DataItem
 		{
 
-			private string categoryName;
+			private string title;
 
-			private long? categoryId;
+			private string ticketId;
 
-			public string CategoryName
+			private ListTickets_Status status;
+
+			public string Title
 			{
 				get
 				{
-					return categoryName;
+					return title;
 				}
 				set	
 				{
-					categoryName = value;
+					title = value;
 				}
 			}
 
-			public long? CategoryId
+			public string TicketId
 			{
 				get
 				{
-					return categoryId;
+					return ticketId;
 				}
 				set	
 				{
-					categoryId = value;
+					ticketId = value;
+				}
+			}
+
+			public ListTickets_Status Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public class ListTickets_Status
+			{
+
+				private string label;
+
+				private string _value;
+
+				public string Label
+				{
+					get
+					{
+						return label;
+					}
+					set	
+					{
+						label = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

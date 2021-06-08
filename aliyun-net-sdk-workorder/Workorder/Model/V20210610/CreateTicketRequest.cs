@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Workorder;
 using Aliyun.Acs.Workorder.Transform;
-using Aliyun.Acs.Workorder.Transform.V20210510;
+using Aliyun.Acs.Workorder.Transform.V20210610;
 
-namespace Aliyun.Acs.Workorder.Model.V20210510
+namespace Aliyun.Acs.Workorder.Model.V20210610
 {
-    public class GetMessageTagRequest : RpcAcsRequest<GetMessageTagResponse>
+    public class CreateTicketRequest : RpcAcsRequest<CreateTicketResponse>
     {
-        public GetMessageTagRequest()
-            : base("Workorder", "2021-05-10", "GetMessageTag")
+        public CreateTicketRequest()
+            : base("Workorder", "2021-06-10", "CreateTicket")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,14 +41,59 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			Method = MethodType.POST;
         }
 
+		private int? severity;
+
+		private string description;
+
+		private string categoryId;
+
+		public int? Severity
+		{
+			get
+			{
+				return severity;
+			}
+			set	
+			{
+				severity = value;
+				DictionaryUtil.Add(BodyParameters, "Severity", value.ToString());
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(BodyParameters, "Description", value);
+			}
+		}
+
+		public string CategoryId
+		{
+			get
+			{
+				return categoryId;
+			}
+			set	
+			{
+				categoryId = value;
+				DictionaryUtil.Add(BodyParameters, "CategoryId", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GetMessageTagResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateTicketResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetMessageTagResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateTicketResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

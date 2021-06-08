@@ -20,24 +20,24 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Workorder.Model.V20210510;
+using Aliyun.Acs.Workorder.Model.V20210610;
 
-namespace Aliyun.Acs.Workorder.Transform.V20210510
+namespace Aliyun.Acs.Workorder.Transform.V20210610
 {
-    public class GetMessageTagResponseUnmarshaller
+    public class ReplyTicketResponseUnmarshaller
     {
-        public static GetMessageTagResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ReplyTicketResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetMessageTagResponse getMessageTagResponse = new GetMessageTagResponse();
+			ReplyTicketResponse replyTicketResponse = new ReplyTicketResponse();
 
-			getMessageTagResponse.HttpResponse = _ctx.HttpResponse;
-			getMessageTagResponse.Code = _ctx.IntegerValue("GetMessageTag.Code");
-			getMessageTagResponse.RequestId = _ctx.StringValue("GetMessageTag.RequestId");
-			getMessageTagResponse.Message = _ctx.StringValue("GetMessageTag.Message");
-			getMessageTagResponse.Data = _ctx.StringValue("GetMessageTag.Data");
-			getMessageTagResponse.Success = _ctx.BooleanValue("GetMessageTag.Success");
+			replyTicketResponse.HttpResponse = _ctx.HttpResponse;
+			replyTicketResponse.Code = _ctx.IntegerValue("ReplyTicket.Code");
+			replyTicketResponse.RequestId = _ctx.StringValue("ReplyTicket.RequestId");
+			replyTicketResponse.Message = _ctx.StringValue("ReplyTicket.Message");
+			replyTicketResponse.Data = _ctx.StringValue("ReplyTicket.Data");
+			replyTicketResponse.Success = _ctx.BooleanValue("ReplyTicket.Success");
         
-			return getMessageTagResponse;
+			return replyTicketResponse;
         }
     }
 }

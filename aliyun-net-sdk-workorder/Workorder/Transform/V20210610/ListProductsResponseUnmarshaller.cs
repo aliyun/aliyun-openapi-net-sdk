@@ -20,9 +20,9 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Workorder.Model.V20210510;
+using Aliyun.Acs.Workorder.Model.V20210610;
 
-namespace Aliyun.Acs.Workorder.Transform.V20210510
+namespace Aliyun.Acs.Workorder.Transform.V20210610
 {
     public class ListProductsResponseUnmarshaller
     {
@@ -39,19 +39,18 @@ namespace Aliyun.Acs.Workorder.Transform.V20210510
 			List<ListProductsResponse.ListProducts_DataItem> listProductsResponse_data = new List<ListProductsResponse.ListProducts_DataItem>();
 			for (int i = 0; i < _ctx.Length("ListProducts.Data.Length"); i++) {
 				ListProductsResponse.ListProducts_DataItem dataItem = new ListProductsResponse.ListProducts_DataItem();
-				dataItem.TopCategoryName = _ctx.StringValue("ListProducts.Data["+ i +"].TopCategoryName");
-				dataItem.TopCategoryId = _ctx.LongValue("ListProducts.Data["+ i +"].TopCategoryId");
-				dataItem.OrderNumber = _ctx.IntegerValue("ListProducts.Data["+ i +"].OrderNumber");
+				dataItem.DirectoryName = _ctx.StringValue("ListProducts.Data["+ i +"].DirectoryName");
+				dataItem.DirectoryId = _ctx.LongValue("ListProducts.Data["+ i +"].DirectoryId");
 
-				List<ListProductsResponse.ListProducts_DataItem.ListProducts_RootsItem> dataItem_roots = new List<ListProductsResponse.ListProducts_DataItem.ListProducts_RootsItem>();
-				for (int j = 0; j < _ctx.Length("ListProducts.Data["+ i +"].Roots.Length"); j++) {
-					ListProductsResponse.ListProducts_DataItem.ListProducts_RootsItem rootsItem = new ListProductsResponse.ListProducts_DataItem.ListProducts_RootsItem();
-					rootsItem.CategoryId = _ctx.LongValue("ListProducts.Data["+ i +"].Roots["+ j +"].CategoryId");
-					rootsItem.CategoryName = _ctx.StringValue("ListProducts.Data["+ i +"].Roots["+ j +"].CategoryName");
+				List<ListProductsResponse.ListProducts_DataItem.ListProducts_ProductListItem> dataItem_productList = new List<ListProductsResponse.ListProducts_DataItem.ListProducts_ProductListItem>();
+				for (int j = 0; j < _ctx.Length("ListProducts.Data["+ i +"].ProductList.Length"); j++) {
+					ListProductsResponse.ListProducts_DataItem.ListProducts_ProductListItem productListItem = new ListProductsResponse.ListProducts_DataItem.ListProducts_ProductListItem();
+					productListItem.ProductId = _ctx.LongValue("ListProducts.Data["+ i +"].ProductList["+ j +"].ProductId");
+					productListItem.ProductName = _ctx.StringValue("ListProducts.Data["+ i +"].ProductList["+ j +"].ProductName");
 
-					dataItem_roots.Add(rootsItem);
+					dataItem_productList.Add(productListItem);
 				}
-				dataItem.Roots = dataItem_roots;
+				dataItem.ProductList = dataItem_productList;
 
 				listProductsResponse_data.Add(dataItem);
 			}

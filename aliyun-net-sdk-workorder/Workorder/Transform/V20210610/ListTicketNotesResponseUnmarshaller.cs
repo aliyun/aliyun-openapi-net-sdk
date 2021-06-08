@@ -20,9 +20,9 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Workorder.Model.V20210510;
+using Aliyun.Acs.Workorder.Model.V20210610;
 
-namespace Aliyun.Acs.Workorder.Transform.V20210510
+namespace Aliyun.Acs.Workorder.Transform.V20210610
 {
     public class ListTicketNotesResponseUnmarshaller
     {
@@ -45,15 +45,15 @@ namespace Aliyun.Acs.Workorder.Transform.V20210510
 				dataItem.DialogId = _ctx.LongValue("ListTicketNotes.Data["+ i +"].DialogId");
 				dataItem.Tip = _ctx.StringValue("ListTicketNotes.Data["+ i +"].Tip");
 
-				ListTicketNotesResponse.ListTicketNotes_DataItem.ListTicketNotes_DataInfo dataInfo = new ListTicketNotesResponse.ListTicketNotes_DataItem.ListTicketNotes_DataInfo();
-				dataInfo.Content = _ctx.StringValue("ListTicketNotes.Data["+ i +"].DataInfo.Content");
-				dataInfo.Schema = _ctx.StringValue("ListTicketNotes.Data["+ i +"].DataInfo.Schema");
-				dataItem.DataInfo = dataInfo;
+				ListTicketNotesResponse.ListTicketNotes_DataItem.ListTicketNotes_Dialog dialog = new ListTicketNotesResponse.ListTicketNotes_DataItem.ListTicketNotes_Dialog();
+				dialog.Content = _ctx.StringValue("ListTicketNotes.Data["+ i +"].Dialog.Content");
+				dialog.Schema = _ctx.StringValue("ListTicketNotes.Data["+ i +"].Dialog.Schema");
+				dataItem.Dialog = dialog;
 
-				ListTicketNotesResponse.ListTicketNotes_DataItem.ListTicketNotes_UserInfo userInfo = new ListTicketNotesResponse.ListTicketNotes_DataItem.ListTicketNotes_UserInfo();
-				userInfo.UserName = _ctx.StringValue("ListTicketNotes.Data["+ i +"].UserInfo.UserName");
-				userInfo.Role = _ctx.IntegerValue("ListTicketNotes.Data["+ i +"].UserInfo.Role");
-				dataItem.UserInfo = userInfo;
+				ListTicketNotesResponse.ListTicketNotes_DataItem.ListTicketNotes_User user = new ListTicketNotesResponse.ListTicketNotes_DataItem.ListTicketNotes_User();
+				user.Name = _ctx.StringValue("ListTicketNotes.Data["+ i +"].User.Name");
+				user.Role = _ctx.IntegerValue("ListTicketNotes.Data["+ i +"].User.Role");
+				dataItem.User = user;
 
 				listTicketNotesResponse_data.Add(dataItem);
 			}

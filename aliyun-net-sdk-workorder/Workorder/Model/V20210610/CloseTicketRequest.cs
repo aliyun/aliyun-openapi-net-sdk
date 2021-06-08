@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Workorder;
 using Aliyun.Acs.Workorder.Transform;
-using Aliyun.Acs.Workorder.Transform.V20210510;
+using Aliyun.Acs.Workorder.Transform.V20210610;
 
-namespace Aliyun.Acs.Workorder.Model.V20210510
+namespace Aliyun.Acs.Workorder.Model.V20210610
 {
-    public class CreateTicketRequest : RpcAcsRequest<CreateTicketResponse>
+    public class CloseTicketRequest : RpcAcsRequest<CloseTicketResponse>
     {
-        public CreateTicketRequest()
-            : base("Workorder", "2021-05-10", "CreateTicket")
+        public CloseTicketRequest()
+            : base("Workorder", "2021-06-10", "CloseTicket")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,48 +41,18 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			Method = MethodType.POST;
         }
 
-		private int? severity;
+		private string ticketId;
 
-		private string description;
-
-		private string categoryId;
-
-		public int? Severity
+		public string TicketId
 		{
 			get
 			{
-				return severity;
+				return ticketId;
 			}
 			set	
 			{
-				severity = value;
-				DictionaryUtil.Add(BodyParameters, "Severity", value.ToString());
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(BodyParameters, "Description", value);
-			}
-		}
-
-		public string CategoryId
-		{
-			get
-			{
-				return categoryId;
-			}
-			set	
-			{
-				categoryId = value;
-				DictionaryUtil.Add(BodyParameters, "CategoryId", value);
+				ticketId = value;
+				DictionaryUtil.Add(BodyParameters, "TicketId", value);
 			}
 		}
 
@@ -91,9 +61,9 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			return false;
 		}
 
-        public override CreateTicketResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CloseTicketResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateTicketResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CloseTicketResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

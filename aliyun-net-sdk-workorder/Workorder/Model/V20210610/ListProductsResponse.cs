@@ -20,9 +20,9 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Workorder.Model.V20210510
+namespace Aliyun.Acs.Workorder.Model.V20210610
 {
-	public class ListTicketsResponse : AcsResponse
+	public class ListProductsResponse : AcsResponse
 	{
 
 		private int? code;
@@ -31,15 +31,9 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 
 		private string message;
 
-		private int? pageNumber;
-
-		private int? pageSize;
-
-		private long? totalCount;
-
 		private bool? success;
 
-		private List<ListTickets_DataItem> data;
+		private List<ListProducts_DataItem> data;
 
 		public int? Code
 		{
@@ -77,42 +71,6 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public long? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
-
 		public bool? Success
 		{
 			get
@@ -125,7 +83,7 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			}
 		}
 
-		public List<ListTickets_DataItem> Data
+		public List<ListProducts_DataItem> Data
 		{
 			get
 			{
@@ -137,79 +95,79 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			}
 		}
 
-		public class ListTickets_DataItem
+		public class ListProducts_DataItem
 		{
 
-			private string title;
+			private string directoryName;
 
-			private string ticketId;
+			private long? directoryId;
 
-			private ListTickets_Status status;
+			private List<ListProducts_ProductListItem> productList;
 
-			public string Title
+			public string DirectoryName
 			{
 				get
 				{
-					return title;
+					return directoryName;
 				}
 				set	
 				{
-					title = value;
+					directoryName = value;
 				}
 			}
 
-			public string TicketId
+			public long? DirectoryId
 			{
 				get
 				{
-					return ticketId;
+					return directoryId;
 				}
 				set	
 				{
-					ticketId = value;
+					directoryId = value;
 				}
 			}
 
-			public ListTickets_Status Status
+			public List<ListProducts_ProductListItem> ProductList
 			{
 				get
 				{
-					return status;
+					return productList;
 				}
 				set	
 				{
-					status = value;
+					productList = value;
 				}
 			}
 
-			public class ListTickets_Status
+			public class ListProducts_ProductListItem
 			{
 
-				private string label;
+				private long? productId;
 
-				private string _value;
+				private string productName;
 
-				public string Label
+				public long? ProductId
 				{
 					get
 					{
-						return label;
+						return productId;
 					}
 					set	
 					{
-						label = value;
+						productId = value;
 					}
 				}
 
-				public string _Value
+				public string ProductName
 				{
 					get
 					{
-						return _value;
+						return productName;
 					}
 					set	
 					{
-						_value = value;
+						productName = value;
 					}
 				}
 			}

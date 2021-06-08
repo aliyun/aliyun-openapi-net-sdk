@@ -20,9 +20,9 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Workorder.Model.V20210510
+namespace Aliyun.Acs.Workorder.Model.V20210610
 {
-	public class CloseTicketResponse : AcsResponse
+	public class ListCategoriesResponse : AcsResponse
 	{
 
 		private int? code;
@@ -32,6 +32,8 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 		private string message;
 
 		private bool? success;
+
+		private List<ListCategories_DataItem> data;
 
 		public int? Code
 		{
@@ -78,6 +80,50 @@ namespace Aliyun.Acs.Workorder.Model.V20210510
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public List<ListCategories_DataItem> Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class ListCategories_DataItem
+		{
+
+			private long? categoryId;
+
+			private string categoryName;
+
+			public long? CategoryId
+			{
+				get
+				{
+					return categoryId;
+				}
+				set	
+				{
+					categoryId = value;
+				}
+			}
+
+			public string CategoryName
+			{
+				get
+				{
+					return categoryName;
+				}
+				set	
+				{
+					categoryName = value;
+				}
 			}
 		}
 	}

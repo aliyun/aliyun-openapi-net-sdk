@@ -20,9 +20,9 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Workorder.Model.V20210510
+namespace Aliyun.Acs.Workorder.Model.V20210610
 {
-	public class ReplyTicketResponse : AcsResponse
+	public class CreateTicketResponse : AcsResponse
 	{
 
 		private int? code;

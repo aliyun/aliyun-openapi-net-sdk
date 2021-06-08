@@ -20,23 +20,24 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Workorder.Model.V20210510;
+using Aliyun.Acs.Workorder.Model.V20210610;
 
-namespace Aliyun.Acs.Workorder.Transform.V20210510
+namespace Aliyun.Acs.Workorder.Transform.V20210610
 {
-    public class CloseTicketResponseUnmarshaller
+    public class CreateTicketResponseUnmarshaller
     {
-        public static CloseTicketResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateTicketResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CloseTicketResponse closeTicketResponse = new CloseTicketResponse();
+			CreateTicketResponse createTicketResponse = new CreateTicketResponse();
 
-			closeTicketResponse.HttpResponse = _ctx.HttpResponse;
-			closeTicketResponse.Code = _ctx.IntegerValue("CloseTicket.Code");
-			closeTicketResponse.RequestId = _ctx.StringValue("CloseTicket.RequestId");
-			closeTicketResponse.Message = _ctx.StringValue("CloseTicket.Message");
-			closeTicketResponse.Success = _ctx.BooleanValue("CloseTicket.Success");
+			createTicketResponse.HttpResponse = _ctx.HttpResponse;
+			createTicketResponse.Code = _ctx.IntegerValue("CreateTicket.Code");
+			createTicketResponse.RequestId = _ctx.StringValue("CreateTicket.RequestId");
+			createTicketResponse.Message = _ctx.StringValue("CreateTicket.Message");
+			createTicketResponse.Data = _ctx.StringValue("CreateTicket.Data");
+			createTicketResponse.Success = _ctx.BooleanValue("CreateTicket.Success");
         
-			return closeTicketResponse;
+			return createTicketResponse;
         }
     }
 }

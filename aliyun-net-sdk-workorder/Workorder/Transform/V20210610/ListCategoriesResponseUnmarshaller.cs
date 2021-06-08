@@ -20,9 +20,9 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Workorder.Model.V20210510;
+using Aliyun.Acs.Workorder.Model.V20210610;
 
-namespace Aliyun.Acs.Workorder.Transform.V20210510
+namespace Aliyun.Acs.Workorder.Transform.V20210610
 {
     public class ListCategoriesResponseUnmarshaller
     {
@@ -39,8 +39,8 @@ namespace Aliyun.Acs.Workorder.Transform.V20210510
 			List<ListCategoriesResponse.ListCategories_DataItem> listCategoriesResponse_data = new List<ListCategoriesResponse.ListCategories_DataItem>();
 			for (int i = 0; i < _ctx.Length("ListCategories.Data.Length"); i++) {
 				ListCategoriesResponse.ListCategories_DataItem dataItem = new ListCategoriesResponse.ListCategories_DataItem();
-				dataItem.CategoryName = _ctx.StringValue("ListCategories.Data["+ i +"].CategoryName");
 				dataItem.CategoryId = _ctx.LongValue("ListCategories.Data["+ i +"].CategoryId");
+				dataItem.CategoryName = _ctx.StringValue("ListCategories.Data["+ i +"].CategoryName");
 
 				listCategoriesResponse_data.Add(dataItem);
 			}
