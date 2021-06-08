@@ -162,6 +162,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private bool? isView;
 
+			private int? columnCount;
+
 			public string TableName
 			{
 				get
@@ -459,6 +461,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					isView = value;
+				}
+			}
+
+			public int? ColumnCount
+			{
+				get
+				{
+					return columnCount;
+				}
+				set	
+				{
+					columnCount = value;
 				}
 			}
 		}

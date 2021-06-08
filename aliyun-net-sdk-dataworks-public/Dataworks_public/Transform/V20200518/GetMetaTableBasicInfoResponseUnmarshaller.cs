@@ -63,6 +63,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			data.ViewCount = _ctx.LongValue("GetMetaTableBasicInfo.Data.ViewCount");
 			data.FavoriteCount = _ctx.LongValue("GetMetaTableBasicInfo.Data.FavoriteCount");
 			data.IsView = _ctx.BooleanValue("GetMetaTableBasicInfo.Data.IsView");
+			data.ColumnCount = _ctx.IntegerValue("GetMetaTableBasicInfo.Data.ColumnCount");
 			getMetaTableBasicInfoResponse.Data = data;
         
 			return getMetaTableBasicInfoResponse;
