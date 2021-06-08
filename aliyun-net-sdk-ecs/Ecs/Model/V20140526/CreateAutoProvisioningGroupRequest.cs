@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string launchConfigurationSystemDiskPerformanceLevel;
 
+		private List<string> launchConfigurationHostNamess = new List<string>(){ };
+
 		private string resourceGroupId;
 
 		private string launchConfigurationImageId;
@@ -77,6 +79,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private int? launchConfigurationInternetMaxBandwidthOut;
 
 		private string launchConfigurationHostName;
+
+		private string minTargetCapacity;
 
 		private float? maxSpotPrice;
 
@@ -156,16 +160,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				launchConfigurationDataDisks = value;
 				for (int i = 0; i < launchConfigurationDataDisks.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Size", launchConfigurationDataDisks[i].Size);
-					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Category", launchConfigurationDataDisks[i].Category);
 					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".PerformanceLevel", launchConfigurationDataDisks[i].PerformanceLevel);
-					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Device", launchConfigurationDataDisks[i].Device);
+					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".KmsKeyId", launchConfigurationDataDisks[i].KmsKeyId);
+					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Description", launchConfigurationDataDisks[i].Description);
 					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".SnapshotId", launchConfigurationDataDisks[i].SnapshotId);
+					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Size", launchConfigurationDataDisks[i].Size);
+					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Device", launchConfigurationDataDisks[i].Device);
+					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".DiskName", launchConfigurationDataDisks[i].DiskName);
+					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Category", launchConfigurationDataDisks[i].Category);
 					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".DeleteWithInstance", launchConfigurationDataDisks[i].DeleteWithInstance);
 					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Encrypted", launchConfigurationDataDisks[i].Encrypted);
-					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".KmsKeyId", launchConfigurationDataDisks[i].KmsKeyId);
-					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".DiskName", launchConfigurationDataDisks[i].DiskName);
-					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Description", launchConfigurationDataDisks[i].Description);
 				}
 			}
 		}
@@ -219,6 +223,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				launchConfigurationSystemDiskPerformanceLevel = value;
 				DictionaryUtil.Add(QueryParameters, "LaunchConfiguration.SystemDiskPerformanceLevel", value);
+			}
+		}
+
+		public List<string> LaunchConfigurationHostNamess
+		{
+			get
+			{
+				return launchConfigurationHostNamess;
+			}
+
+			set
+			{
+				launchConfigurationHostNamess = value;
+				for (int i = 0; i < launchConfigurationHostNamess.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.HostNames." + (i + 1) , launchConfigurationHostNamess[i]);
+				}
 			}
 		}
 
@@ -409,6 +430,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				launchConfigurationHostName = value;
 				DictionaryUtil.Add(QueryParameters, "LaunchConfiguration.HostName", value);
+			}
+		}
+
+		public string MinTargetCapacity
+		{
+			get
+			{
+				return minTargetCapacity;
+			}
+			set	
+			{
+				minTargetCapacity = value;
+				DictionaryUtil.Add(QueryParameters, "MinTargetCapacity", value);
 			}
 		}
 
@@ -619,11 +653,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				launchTemplateConfigs = value;
 				for (int i = 0; i < launchTemplateConfigs.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (i + 1) + ".InstanceType", launchTemplateConfigs[i].InstanceType);
-					DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (i + 1) + ".MaxPrice", launchTemplateConfigs[i].MaxPrice);
 					DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (i + 1) + ".VSwitchId", launchTemplateConfigs[i].VSwitchId);
-					DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (i + 1) + ".WeightedCapacity", launchTemplateConfigs[i].WeightedCapacity);
+					DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (i + 1) + ".MaxPrice", launchTemplateConfigs[i].MaxPrice);
 					DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (i + 1) + ".Priority", launchTemplateConfigs[i].Priority);
+					DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (i + 1) + ".InstanceType", launchTemplateConfigs[i].InstanceType);
+					DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (i + 1) + ".WeightedCapacity", launchTemplateConfigs[i].WeightedCapacity);
 				}
 			}
 		}
@@ -857,49 +891,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class LaunchConfigurationDataDisk
 		{
 
-			private int? size;
-
-			private string category;
-
 			private string performanceLevel;
+
+			private string kmsKeyId;
+
+			private string description;
+
+			private string snapshotId;
+
+			private int? size;
 
 			private string device;
 
-			private string snapshotId;
+			private string diskName;
+
+			private string category;
 
 			private bool? deleteWithInstance;
 
 			private bool? encrypted;
-
-			private string kmsKeyId;
-
-			private string diskName;
-
-			private string description;
-
-			public int? Size
-			{
-				get
-				{
-					return size;
-				}
-				set	
-				{
-					size = value;
-				}
-			}
-
-			public string Category
-			{
-				get
-				{
-					return category;
-				}
-				set	
-				{
-					category = value;
-				}
-			}
 
 			public string PerformanceLevel
 			{
@@ -910,6 +920,54 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					performanceLevel = value;
+				}
+			}
+
+			public string KmsKeyId
+			{
+				get
+				{
+					return kmsKeyId;
+				}
+				set	
+				{
+					kmsKeyId = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string SnapshotId
+			{
+				get
+				{
+					return snapshotId;
+				}
+				set	
+				{
+					snapshotId = value;
+				}
+			}
+
+			public int? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
 				}
 			}
 
@@ -925,15 +983,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string SnapshotId
+			public string DiskName
 			{
 				get
 				{
-					return snapshotId;
+					return diskName;
 				}
 				set	
 				{
-					snapshotId = value;
+					diskName = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
 				}
 			}
 
@@ -958,42 +1028,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					encrypted = value;
-				}
-			}
-
-			public string KmsKeyId
-			{
-				get
-				{
-					return kmsKeyId;
-				}
-				set	
-				{
-					kmsKeyId = value;
-				}
-			}
-
-			public string DiskName
-			{
-				get
-				{
-					return diskName;
-				}
-				set	
-				{
-					diskName = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
 				}
 			}
 		}
@@ -1037,25 +1071,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class LaunchTemplateConfig
 		{
 
-			private string instanceType;
+			private string vSwitchId;
 
 			private double? maxPrice;
 
-			private string vSwitchId;
+			private int? priority;
+
+			private string instanceType;
 
 			private double? weightedCapacity;
 
-			private int? priority;
-
-			public string InstanceType
+			public string VSwitchId
 			{
 				get
 				{
-					return instanceType;
+					return vSwitchId;
 				}
 				set	
 				{
-					instanceType = value;
+					vSwitchId = value;
 				}
 			}
 
@@ -1071,15 +1105,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string VSwitchId
+			public int? Priority
 			{
 				get
 				{
-					return vSwitchId;
+					return priority;
 				}
 				set	
 				{
-					vSwitchId = value;
+					priority = value;
+				}
+			}
+
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
 				}
 			}
 
@@ -1092,18 +1138,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					weightedCapacity = value;
-				}
-			}
-
-			public int? Priority
-			{
-				get
-				{
-					return priority;
-				}
-				set	
-				{
-					priority = value;
 				}
 			}
 		}

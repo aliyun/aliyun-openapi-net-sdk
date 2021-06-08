@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class CreateAutoProvisioningGroupResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string autoProvisioningGroupId;
 
-		private List<CreateAutoProvisioningGroup_LaunchResult> launchResults;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<CreateAutoProvisioningGroup_LaunchResult> launchResults;
 
 		public string AutoProvisioningGroupId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				autoProvisioningGroupId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,27 +70,39 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class CreateAutoProvisioningGroup_LaunchResult
 		{
 
-			private string spotStrategy;
-
-			private string instanceType;
-
 			private string zoneId;
-
-			private string errorCode;
 
 			private string errorMsg;
 
+			private string instanceType;
+
+			private string errorCode;
+
+			private string spotStrategy;
+
 			private List<string> instanceIds;
 
-			public string SpotStrategy
+			public string ZoneId
 			{
 				get
 				{
-					return spotStrategy;
+					return zoneId;
 				}
 				set	
 				{
-					spotStrategy = value;
+					zoneId = value;
+				}
+			}
+
+			public string ErrorMsg
+			{
+				get
+				{
+					return errorMsg;
+				}
+				set	
+				{
+					errorMsg = value;
 				}
 			}
 
@@ -106,18 +118,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
 			public string ErrorCode
 			{
 				get
@@ -130,15 +130,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string ErrorMsg
+			public string SpotStrategy
 			{
 				get
 				{
-					return errorMsg;
+					return spotStrategy;
 				}
 				set	
 				{
-					errorMsg = value;
+					spotStrategy = value;
 				}
 			}
 

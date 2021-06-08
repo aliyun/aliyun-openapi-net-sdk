@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateAutoProvisioningGroupResponse createAutoProvisioningGroupResponse = new CreateAutoProvisioningGroupResponse();
 
 			createAutoProvisioningGroupResponse.HttpResponse = _ctx.HttpResponse;
-			createAutoProvisioningGroupResponse.RequestId = _ctx.StringValue("CreateAutoProvisioningGroup.RequestId");
 			createAutoProvisioningGroupResponse.AutoProvisioningGroupId = _ctx.StringValue("CreateAutoProvisioningGroup.AutoProvisioningGroupId");
+			createAutoProvisioningGroupResponse.RequestId = _ctx.StringValue("CreateAutoProvisioningGroup.RequestId");
 
 			List<CreateAutoProvisioningGroupResponse.CreateAutoProvisioningGroup_LaunchResult> createAutoProvisioningGroupResponse_launchResults = new List<CreateAutoProvisioningGroupResponse.CreateAutoProvisioningGroup_LaunchResult>();
 			for (int i = 0; i < _ctx.Length("CreateAutoProvisioningGroup.LaunchResults.Length"); i++) {
 				CreateAutoProvisioningGroupResponse.CreateAutoProvisioningGroup_LaunchResult launchResult = new CreateAutoProvisioningGroupResponse.CreateAutoProvisioningGroup_LaunchResult();
-				launchResult.SpotStrategy = _ctx.StringValue("CreateAutoProvisioningGroup.LaunchResults["+ i +"].SpotStrategy");
-				launchResult.InstanceType = _ctx.StringValue("CreateAutoProvisioningGroup.LaunchResults["+ i +"].InstanceType");
 				launchResult.ZoneId = _ctx.StringValue("CreateAutoProvisioningGroup.LaunchResults["+ i +"].ZoneId");
-				launchResult.ErrorCode = _ctx.StringValue("CreateAutoProvisioningGroup.LaunchResults["+ i +"].ErrorCode");
 				launchResult.ErrorMsg = _ctx.StringValue("CreateAutoProvisioningGroup.LaunchResults["+ i +"].ErrorMsg");
+				launchResult.InstanceType = _ctx.StringValue("CreateAutoProvisioningGroup.LaunchResults["+ i +"].InstanceType");
+				launchResult.ErrorCode = _ctx.StringValue("CreateAutoProvisioningGroup.LaunchResults["+ i +"].ErrorCode");
+				launchResult.SpotStrategy = _ctx.StringValue("CreateAutoProvisioningGroup.LaunchResults["+ i +"].SpotStrategy");
 
 				List<string> launchResult_instanceIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("CreateAutoProvisioningGroup.LaunchResults["+ i +"].InstanceIds.Length"); j++) {
