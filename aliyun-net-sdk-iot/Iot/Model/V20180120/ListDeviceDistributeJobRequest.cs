@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string jobId;
 
+		private string nextToken;
+
 		private int? pageSize;
 
 		private int? currentPage;
@@ -60,6 +62,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				jobId = value;
 				DictionaryUtil.Add(BodyParameters, "JobId", value);
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 

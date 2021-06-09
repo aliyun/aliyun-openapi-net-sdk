@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 
 			ListDeviceDistributeJobResponse.ListDeviceDistributeJob_Data data = new ListDeviceDistributeJobResponse.ListDeviceDistributeJob_Data();
 			data.Total = _ctx.IntegerValue("ListDeviceDistributeJob.Data.Total");
+			data.NextToken = _ctx.StringValue("ListDeviceDistributeJob.Data.NextToken");
 
 			List<ListDeviceDistributeJobResponse.ListDeviceDistributeJob_Data.ListDeviceDistributeJob_Items> data_jobInfo = new List<ListDeviceDistributeJobResponse.ListDeviceDistributeJob_Data.ListDeviceDistributeJob_Items>();
 			for (int i = 0; i < _ctx.Length("ListDeviceDistributeJob.Data.JobInfo.Length"); i++) {

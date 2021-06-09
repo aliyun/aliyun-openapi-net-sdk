@@ -100,6 +100,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private int? total;
 
+			private string nextToken;
+
 			private List<ListDeviceDistributeJob_Items> jobInfo;
 
 			public int? Total
@@ -111,6 +113,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					total = value;
+				}
+			}
+
+			public string NextToken
+			{
+				get
+				{
+					return nextToken;
+				}
+				set	
+				{
+					nextToken = value;
 				}
 			}
 

@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QueryDeviceResponse : AcsResponse
+	public class ListOTAUnfinishedTaskByDeviceResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,17 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private int? total;
-
-		private int? pageSize;
-
-		private int? pageCount;
-
-		private int? page;
-
-		private string nextToken;
-
-		private List<QueryDevice_DeviceInfo> data;
+		private List<ListOTAUnfinishedTaskByDevice_SimpleOTATaskInfo> data;
 
 		public string RequestId
 		{
@@ -93,67 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public int? PageCount
-		{
-			get
-			{
-				return pageCount;
-			}
-			set	
-			{
-				pageCount = value;
-			}
-		}
-
-		public int? Page
-		{
-			get
-			{
-				return page;
-			}
-			set	
-			{
-				page = value;
-			}
-		}
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-			}
-		}
-
-		public List<QueryDevice_DeviceInfo> Data
+		public List<ListOTAUnfinishedTaskByDevice_SimpleOTATaskInfo> Data
 		{
 			get
 			{
@@ -165,138 +95,44 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class QueryDevice_DeviceInfo
+		public class ListOTAUnfinishedTaskByDevice_SimpleOTATaskInfo
 		{
 
-			private string deviceId;
-
-			private string deviceSecret;
-
-			private string productKey;
-
-			private string deviceStatus;
-
-			private string deviceName;
-
-			private string deviceType;
-
-			private string gmtCreate;
-
-			private string gmtModified;
-
-			private string utcCreate;
+			private string taskId;
 
 			private string utcModified;
 
+			private string productKey;
+
+			private string taskStatus;
+
+			private string jobId;
+
+			private string productName;
+
+			private string deviceName;
+
+			private string srcVersion;
+
+			private string destVersion;
+
 			private string iotId;
 
-			private string nickname;
+			private string utcCreate;
 
-			public string DeviceId
+			private string moduleName;
+
+			private string firmwareId;
+
+			public string TaskId
 			{
 				get
 				{
-					return deviceId;
+					return taskId;
 				}
 				set	
 				{
-					deviceId = value;
-				}
-			}
-
-			public string DeviceSecret
-			{
-				get
-				{
-					return deviceSecret;
-				}
-				set	
-				{
-					deviceSecret = value;
-				}
-			}
-
-			public string ProductKey
-			{
-				get
-				{
-					return productKey;
-				}
-				set	
-				{
-					productKey = value;
-				}
-			}
-
-			public string DeviceStatus
-			{
-				get
-				{
-					return deviceStatus;
-				}
-				set	
-				{
-					deviceStatus = value;
-				}
-			}
-
-			public string DeviceName
-			{
-				get
-				{
-					return deviceName;
-				}
-				set	
-				{
-					deviceName = value;
-				}
-			}
-
-			public string DeviceType
-			{
-				get
-				{
-					return deviceType;
-				}
-				set	
-				{
-					deviceType = value;
-				}
-			}
-
-			public string GmtCreate
-			{
-				get
-				{
-					return gmtCreate;
-				}
-				set	
-				{
-					gmtCreate = value;
-				}
-			}
-
-			public string GmtModified
-			{
-				get
-				{
-					return gmtModified;
-				}
-				set	
-				{
-					gmtModified = value;
-				}
-			}
-
-			public string UtcCreate
-			{
-				get
-				{
-					return utcCreate;
-				}
-				set	
-				{
-					utcCreate = value;
+					taskId = value;
 				}
 			}
 
@@ -312,6 +148,90 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
+			public string ProductKey
+			{
+				get
+				{
+					return productKey;
+				}
+				set	
+				{
+					productKey = value;
+				}
+			}
+
+			public string TaskStatus
+			{
+				get
+				{
+					return taskStatus;
+				}
+				set	
+				{
+					taskStatus = value;
+				}
+			}
+
+			public string JobId
+			{
+				get
+				{
+					return jobId;
+				}
+				set	
+				{
+					jobId = value;
+				}
+			}
+
+			public string ProductName
+			{
+				get
+				{
+					return productName;
+				}
+				set	
+				{
+					productName = value;
+				}
+			}
+
+			public string DeviceName
+			{
+				get
+				{
+					return deviceName;
+				}
+				set	
+				{
+					deviceName = value;
+				}
+			}
+
+			public string SrcVersion
+			{
+				get
+				{
+					return srcVersion;
+				}
+				set	
+				{
+					srcVersion = value;
+				}
+			}
+
+			public string DestVersion
+			{
+				get
+				{
+					return destVersion;
+				}
+				set	
+				{
+					destVersion = value;
+				}
+			}
+
 			public string IotId
 			{
 				get
@@ -324,15 +244,39 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public string Nickname
+			public string UtcCreate
 			{
 				get
 				{
-					return nickname;
+					return utcCreate;
 				}
 				set	
 				{
-					nickname = value;
+					utcCreate = value;
+				}
+			}
+
+			public string ModuleName
+			{
+				get
+				{
+					return moduleName;
+				}
+				set	
+				{
+					moduleName = value;
+				}
+			}
+
+			public string FirmwareId
+			{
+				get
+				{
+					return firmwareId;
+				}
+				set	
+				{
+					firmwareId = value;
 				}
 			}
 		}

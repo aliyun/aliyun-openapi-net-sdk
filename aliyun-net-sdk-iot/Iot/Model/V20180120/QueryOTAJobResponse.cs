@@ -144,6 +144,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private int? dynamicMode;
 
+			private bool? needPush;
+
+			private bool? needConfirm;
+
 			private List<QueryOTAJob_OtaTagDTO> tags;
 
 			private List<string> srcVersions;
@@ -421,6 +425,30 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					dynamicMode = value;
+				}
+			}
+
+			public bool? NeedPush
+			{
+				get
+				{
+					return needPush;
+				}
+				set	
+				{
+					needPush = value;
+				}
+			}
+
+			public bool? NeedConfirm
+			{
+				get
+				{
+					return needConfirm;
+				}
+				set	
+				{
+					needConfirm = value;
 				}
 			}
 

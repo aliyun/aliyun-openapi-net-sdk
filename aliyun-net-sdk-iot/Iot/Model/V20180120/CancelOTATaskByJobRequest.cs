@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string jobId;
 
+		private bool? cancelUnconfirmedTask;
+
 		private string iotInstanceId;
 
 		private bool? cancelQueuedTask;
@@ -75,6 +77,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				jobId = value;
 				DictionaryUtil.Add(QueryParameters, "JobId", value);
+			}
+		}
+
+		public bool? CancelUnconfirmedTask
+		{
+			get
+			{
+				return cancelUnconfirmedTask;
+			}
+			set	
+			{
+				cancelUnconfirmedTask = value;
+				DictionaryUtil.Add(QueryParameters, "CancelUnconfirmedTask", value.ToString());
 			}
 		}
 

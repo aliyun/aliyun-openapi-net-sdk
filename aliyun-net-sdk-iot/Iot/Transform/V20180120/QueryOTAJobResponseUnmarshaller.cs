@@ -60,6 +60,8 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.UtcScheduleFinishTime = _ctx.StringValue("QueryOTAJob.Data.UtcScheduleFinishTime");
 			data.OverwriteMode = _ctx.IntegerValue("QueryOTAJob.Data.OverwriteMode");
 			data.DynamicMode = _ctx.IntegerValue("QueryOTAJob.Data.DynamicMode");
+			data.NeedPush = _ctx.BooleanValue("QueryOTAJob.Data.NeedPush");
+			data.NeedConfirm = _ctx.BooleanValue("QueryOTAJob.Data.NeedConfirm");
 
 			List<string> data_srcVersions = new List<string>();
 			for (int i = 0; i < _ctx.Length("QueryOTAJob.Data.SrcVersions.Length"); i++) {

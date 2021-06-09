@@ -39,6 +39,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			queryDeviceResponse.PageSize = _ctx.IntegerValue("QueryDevice.PageSize");
 			queryDeviceResponse.PageCount = _ctx.IntegerValue("QueryDevice.PageCount");
 			queryDeviceResponse.Page = _ctx.IntegerValue("QueryDevice.Page");
+			queryDeviceResponse.NextToken = _ctx.StringValue("QueryDevice.NextToken");
 
 			List<QueryDeviceResponse.QueryDevice_DeviceInfo> queryDeviceResponse_data = new List<QueryDeviceResponse.QueryDevice_DeviceInfo>();
 			for (int i = 0; i < _ctx.Length("QueryDevice.Data.Length"); i++) {

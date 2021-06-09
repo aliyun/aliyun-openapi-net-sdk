@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CreateOTAVerifyJobRequest : RpcAcsRequest<CreateOTAVerifyJobResponse>
+    public class QueryDeviceInfoRequest : RpcAcsRequest<QueryDeviceInfoResponse>
     {
-        public CreateOTAVerifyJobRequest()
-            : base("Iot", "2018-01-20", "CreateOTAVerifyJob", "iot", "openAPI")
+        public QueryDeviceInfoRequest()
+            : base("Iot", "2018-01-20", "QueryDeviceInfo", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,56 +40,24 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private int? timeoutInMinutes;
-
-		private bool? needConfirm;
-
-		private bool? needPush;
+		private string iotId;
 
 		private string iotInstanceId;
 
-		private string firmwareId;
-
 		private string productKey;
 
-		private List<string> targetDeviceNames = new List<string>(){ };
+		private string deviceName;
 
-		public int? TimeoutInMinutes
+		public string IotId
 		{
 			get
 			{
-				return timeoutInMinutes;
+				return iotId;
 			}
 			set	
 			{
-				timeoutInMinutes = value;
-				DictionaryUtil.Add(QueryParameters, "TimeoutInMinutes", value.ToString());
-			}
-		}
-
-		public bool? NeedConfirm
-		{
-			get
-			{
-				return needConfirm;
-			}
-			set	
-			{
-				needConfirm = value;
-				DictionaryUtil.Add(QueryParameters, "NeedConfirm", value.ToString());
-			}
-		}
-
-		public bool? NeedPush
-		{
-			get
-			{
-				return needPush;
-			}
-			set	
-			{
-				needPush = value;
-				DictionaryUtil.Add(QueryParameters, "NeedPush", value.ToString());
+				iotId = value;
+				DictionaryUtil.Add(QueryParameters, "IotId", value);
 			}
 		}
 
@@ -106,19 +74,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string FirmwareId
-		{
-			get
-			{
-				return firmwareId;
-			}
-			set	
-			{
-				firmwareId = value;
-				DictionaryUtil.Add(QueryParameters, "FirmwareId", value);
-			}
-		}
-
 		public string ProductKey
 		{
 			get
@@ -132,26 +87,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public List<string> TargetDeviceNames
+		public string DeviceName
 		{
 			get
 			{
-				return targetDeviceNames;
+				return deviceName;
 			}
-
-			set
+			set	
 			{
-				targetDeviceNames = value;
-				for (int i = 0; i < targetDeviceNames.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TargetDeviceName." + (i + 1) , targetDeviceNames[i]);
-				}
+				deviceName = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
 			}
 		}
 
-        public override CreateOTAVerifyJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryDeviceInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateOTAVerifyJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryDeviceInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

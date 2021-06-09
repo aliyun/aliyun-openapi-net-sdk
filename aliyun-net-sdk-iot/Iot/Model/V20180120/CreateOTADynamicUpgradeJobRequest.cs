@@ -46,6 +46,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private int? timeoutInMinutes;
 
+		private bool? needConfirm;
+
+		private bool? needPush;
+
 		private string iotInstanceId;
 
 		private List<Tag> tags = new List<Tag>(){ };
@@ -98,6 +102,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				timeoutInMinutes = value;
 				DictionaryUtil.Add(QueryParameters, "TimeoutInMinutes", value.ToString());
+			}
+		}
+
+		public bool? NeedConfirm
+		{
+			get
+			{
+				return needConfirm;
+			}
+			set	
+			{
+				needConfirm = value;
+				DictionaryUtil.Add(QueryParameters, "NeedConfirm", value.ToString());
+			}
+		}
+
+		public bool? NeedPush
+		{
+			get
+			{
+				return needPush;
+			}
+			set	
+			{
+				needPush = value;
+				DictionaryUtil.Add(QueryParameters, "NeedPush", value.ToString());
 			}
 		}
 
