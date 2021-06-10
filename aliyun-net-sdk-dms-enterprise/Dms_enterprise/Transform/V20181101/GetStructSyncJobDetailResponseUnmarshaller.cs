@@ -32,16 +32,16 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getStructSyncJobDetailResponse.HttpResponse = _ctx.HttpResponse;
 			getStructSyncJobDetailResponse.RequestId = _ctx.StringValue("GetStructSyncJobDetail.RequestId");
-			getStructSyncJobDetailResponse.ErrorCode = _ctx.StringValue("GetStructSyncJobDetail.ErrorCode");
-			getStructSyncJobDetailResponse.ErrorMessage = _ctx.StringValue("GetStructSyncJobDetail.ErrorMessage");
 			getStructSyncJobDetailResponse.Success = _ctx.BooleanValue("GetStructSyncJobDetail.Success");
+			getStructSyncJobDetailResponse.ErrorMessage = _ctx.StringValue("GetStructSyncJobDetail.ErrorMessage");
+			getStructSyncJobDetailResponse.ErrorCode = _ctx.StringValue("GetStructSyncJobDetail.ErrorCode");
 
 			GetStructSyncJobDetailResponse.GetStructSyncJobDetail_StructSyncJobDetail structSyncJobDetail = new GetStructSyncJobDetailResponse.GetStructSyncJobDetail_StructSyncJobDetail();
-			structSyncJobDetail.SqlCount = _ctx.LongValue("GetStructSyncJobDetail.StructSyncJobDetail.SqlCount");
 			structSyncJobDetail.JobStatus = _ctx.StringValue("GetStructSyncJobDetail.StructSyncJobDetail.JobStatus");
 			structSyncJobDetail.Message = _ctx.StringValue("GetStructSyncJobDetail.StructSyncJobDetail.Message");
 			structSyncJobDetail.TableAnalyzed = _ctx.LongValue("GetStructSyncJobDetail.StructSyncJobDetail.TableAnalyzed");
 			structSyncJobDetail.TableCount = _ctx.LongValue("GetStructSyncJobDetail.StructSyncJobDetail.TableCount");
+			structSyncJobDetail.SqlCount = _ctx.LongValue("GetStructSyncJobDetail.StructSyncJobDetail.SqlCount");
 			structSyncJobDetail.ExecuteCount = _ctx.LongValue("GetStructSyncJobDetail.StructSyncJobDetail.ExecuteCount");
 			structSyncJobDetail.SecurityRule = _ctx.StringValue("GetStructSyncJobDetail.StructSyncJobDetail.SecurityRule");
 			structSyncJobDetail.DBTaskGroupId = _ctx.LongValue("GetStructSyncJobDetail.StructSyncJobDetail.DBTaskGroupId");

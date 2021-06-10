@@ -27,11 +27,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private string errorCode;
+		private bool? success;
 
 		private string errorMessage;
 
-		private bool? success;
+		private string errorCode;
 
 		private GetStructSyncJobDetail_StructSyncJobDetail structSyncJobDetail;
 
@@ -48,16 +48,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "ErrorCode")]
-		public string ErrorCode
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
 			get
 			{
-				return errorCode;
+				return success;
 			}
 			set	
 			{
-				errorCode = value;
+				success = value;
 			}
 		}
 
@@ -74,16 +74,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Success")]
-		public bool? Success
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
 		{
 			get
 			{
-				return success;
+				return errorCode;
 			}
 			set	
 			{
-				success = value;
+				errorCode = value;
 			}
 		}
 
@@ -103,8 +103,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class GetStructSyncJobDetail_StructSyncJobDetail
 		{
 
-			private long? sqlCount;
-
 			private string jobStatus;
 
 			private string message;
@@ -113,24 +111,13 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private long? tableCount;
 
+			private long? sqlCount;
+
 			private long? executeCount;
 
 			private string securityRule;
 
 			private long? dBTaskGroupId;
-
-			[JsonProperty(PropertyName = "SqlCount")]
-			public long? SqlCount
-			{
-				get
-				{
-					return sqlCount;
-				}
-				set	
-				{
-					sqlCount = value;
-				}
-			}
 
 			[JsonProperty(PropertyName = "JobStatus")]
 			public string JobStatus
@@ -181,6 +168,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					tableCount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SqlCount")]
+			public long? SqlCount
+			{
+				get
+				{
+					return sqlCount;
+				}
+				set	
+				{
+					sqlCount = value;
 				}
 			}
 

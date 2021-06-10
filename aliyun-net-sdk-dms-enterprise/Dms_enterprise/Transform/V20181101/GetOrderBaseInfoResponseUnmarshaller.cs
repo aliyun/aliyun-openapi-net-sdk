@@ -37,29 +37,29 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			getOrderBaseInfoResponse.Success = _ctx.BooleanValue("GetOrderBaseInfo.Success");
 
 			GetOrderBaseInfoResponse.GetOrderBaseInfo_OrderBaseInfo orderBaseInfo = new GetOrderBaseInfoResponse.GetOrderBaseInfo_OrderBaseInfo();
-			orderBaseInfo.StatusDesc = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.StatusDesc");
-			orderBaseInfo.WorkflowStatusDesc = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.WorkflowStatusDesc");
 			orderBaseInfo.Comment = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.Comment");
 			orderBaseInfo.CreateTime = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.CreateTime");
-			orderBaseInfo.WorkflowInstanceId = _ctx.LongValue("GetOrderBaseInfo.OrderBaseInfo.WorkflowInstanceId");
 			orderBaseInfo.Committer = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.Committer");
-			orderBaseInfo.OrderId = _ctx.LongValue("GetOrderBaseInfo.OrderBaseInfo.OrderId");
-			orderBaseInfo.LastModifyTime = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.LastModifyTime");
-			orderBaseInfo.PluginType = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.PluginType");
-			orderBaseInfo.StatusCode = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.StatusCode");
+			orderBaseInfo.WorkflowInstanceId = _ctx.LongValue("GetOrderBaseInfo.OrderBaseInfo.WorkflowInstanceId");
 			orderBaseInfo.CommitterId = _ctx.LongValue("GetOrderBaseInfo.OrderBaseInfo.CommitterId");
-
-			List<string> orderBaseInfo_relatedUserList = new List<string>();
-			for (int i = 0; i < _ctx.Length("GetOrderBaseInfo.OrderBaseInfo.RelatedUserList.Length"); i++) {
-				orderBaseInfo_relatedUserList.Add(_ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.RelatedUserList["+ i +"]"));
-			}
-			orderBaseInfo.RelatedUserList = orderBaseInfo_relatedUserList;
+			orderBaseInfo.LastModifyTime = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.LastModifyTime");
+			orderBaseInfo.StatusCode = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.StatusCode");
+			orderBaseInfo.WorkflowStatusDesc = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.WorkflowStatusDesc");
+			orderBaseInfo.StatusDesc = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.StatusDesc");
+			orderBaseInfo.PluginType = _ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.PluginType");
+			orderBaseInfo.OrderId = _ctx.LongValue("GetOrderBaseInfo.OrderBaseInfo.OrderId");
 
 			List<string> orderBaseInfo_relatedUserNickList = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetOrderBaseInfo.OrderBaseInfo.RelatedUserNickList.Length"); i++) {
 				orderBaseInfo_relatedUserNickList.Add(_ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.RelatedUserNickList["+ i +"]"));
 			}
 			orderBaseInfo.RelatedUserNickList = orderBaseInfo_relatedUserNickList;
+
+			List<string> orderBaseInfo_relatedUserList = new List<string>();
+			for (int i = 0; i < _ctx.Length("GetOrderBaseInfo.OrderBaseInfo.RelatedUserList.Length"); i++) {
+				orderBaseInfo_relatedUserList.Add(_ctx.StringValue("GetOrderBaseInfo.OrderBaseInfo.RelatedUserList["+ i +"]"));
+			}
+			orderBaseInfo.RelatedUserList = orderBaseInfo_relatedUserList;
 			getOrderBaseInfoResponse.OrderBaseInfo = orderBaseInfo;
         
 			return getOrderBaseInfoResponse;

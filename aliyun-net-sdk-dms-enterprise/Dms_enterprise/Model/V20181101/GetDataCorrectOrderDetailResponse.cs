@@ -105,9 +105,9 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string status;
 
-			private List<GetDataCorrectOrderDetail_Database> databaseList;
-
 			private List<GetDataCorrectOrderDetail_TaskCheckDO> preCheckDetail;
+
+			private List<GetDataCorrectOrderDetail_Database> databaseList;
 
 			private GetDataCorrectOrderDetail_OrderDetail orderDetail;
 
@@ -124,19 +124,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "DatabaseList")]
-			public List<GetDataCorrectOrderDetail_Database> DatabaseList
-			{
-				get
-				{
-					return databaseList;
-				}
-				set	
-				{
-					databaseList = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "PreCheckDetail")]
 			public List<GetDataCorrectOrderDetail_TaskCheckDO> PreCheckDetail
 			{
@@ -147,6 +134,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					preCheckDetail = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DatabaseList")]
+			public List<GetDataCorrectOrderDetail_Database> DatabaseList
+			{
+				get
+				{
+					return databaseList;
+				}
+				set	
+				{
+					databaseList = value;
 				}
 			}
 
@@ -163,31 +163,67 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public class GetDataCorrectOrderDetail_Database
+			public class GetDataCorrectOrderDetail_TaskCheckDO
 			{
 
-				private string searchName;
+				private string userTip;
 
-				private int? dbId;
+				private string checkStatus;
 
-				private bool? logic;
+				private string checkStep;
 
-				private string envType;
-
-				private string dbType;
-
-				[JsonProperty(PropertyName = "SearchName")]
-				public string SearchName
+				[JsonProperty(PropertyName = "UserTip")]
+				public string UserTip
 				{
 					get
 					{
-						return searchName;
+						return userTip;
 					}
 					set	
 					{
-						searchName = value;
+						userTip = value;
 					}
 				}
+
+				[JsonProperty(PropertyName = "CheckStatus")]
+				public string CheckStatus
+				{
+					get
+					{
+						return checkStatus;
+					}
+					set	
+					{
+						checkStatus = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "CheckStep")]
+				public string CheckStep
+				{
+					get
+					{
+						return checkStep;
+					}
+					set	
+					{
+						checkStep = value;
+					}
+				}
+			}
+
+			public class GetDataCorrectOrderDetail_Database
+			{
+
+				private int? dbId;
+
+				private string dbType;
+
+				private bool? logic;
+
+				private string searchName;
+
+				private string envType;
 
 				[JsonProperty(PropertyName = "DbId")]
 				public int? DbId
@@ -199,6 +235,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					set	
 					{
 						dbId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "DbType")]
+				public string DbType
+				{
+					get
+					{
+						return dbType;
+					}
+					set	
+					{
+						dbType = value;
 					}
 				}
 
@@ -215,6 +264,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
+				[JsonProperty(PropertyName = "SearchName")]
+				public string SearchName
+				{
+					get
+					{
+						return searchName;
+					}
+					set	
+					{
+						searchName = value;
+					}
+				}
+
 				[JsonProperty(PropertyName = "EnvType")]
 				public string EnvType
 				{
@@ -227,131 +289,56 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 						envType = value;
 					}
 				}
-
-				[JsonProperty(PropertyName = "DbType")]
-				public string DbType
-				{
-					get
-					{
-						return dbType;
-					}
-					set	
-					{
-						dbType = value;
-					}
-				}
-			}
-
-			public class GetDataCorrectOrderDetail_TaskCheckDO
-			{
-
-				private string userTip;
-
-				private string checkStep;
-
-				private string checkStatus;
-
-				[JsonProperty(PropertyName = "UserTip")]
-				public string UserTip
-				{
-					get
-					{
-						return userTip;
-					}
-					set	
-					{
-						userTip = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "CheckStep")]
-				public string CheckStep
-				{
-					get
-					{
-						return checkStep;
-					}
-					set	
-					{
-						checkStep = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "CheckStatus")]
-				public string CheckStatus
-				{
-					get
-					{
-						return checkStatus;
-					}
-					set	
-					{
-						checkStatus = value;
-					}
-				}
 			}
 
 			public class GetDataCorrectOrderDetail_OrderDetail
 			{
 
-				private long? estimateAffectRows;
+				private string rbSQL;
 
-				private bool? ignoreAffectRows;
-
-				private string exeSQL;
+				private string rbAttachmentName;
 
 				private string classify;
 
-				private string ignoreAffectRowsReason;
+				private string exeSQL;
 
-				private string attachmentName;
-
-				private string sqlType;
+				private long? estimateAffectRows;
 
 				private string rbSQLType;
 
 				private long? actualAffectRows;
 
-				private string rbAttachmentName;
+				private bool? ignoreAffectRows;
 
-				private string rbSQL;
+				private string attachmentName;
 
-				[JsonProperty(PropertyName = "EstimateAffectRows")]
-				public long? EstimateAffectRows
+				private string sqlType;
+
+				private string ignoreAffectRowsReason;
+
+				[JsonProperty(PropertyName = "RbSQL")]
+				public string RbSQL
 				{
 					get
 					{
-						return estimateAffectRows;
+						return rbSQL;
 					}
 					set	
 					{
-						estimateAffectRows = value;
+						rbSQL = value;
 					}
 				}
 
-				[JsonProperty(PropertyName = "IgnoreAffectRows")]
-				public bool? IgnoreAffectRows
+				[JsonProperty(PropertyName = "RbAttachmentName")]
+				public string RbAttachmentName
 				{
 					get
 					{
-						return ignoreAffectRows;
+						return rbAttachmentName;
 					}
 					set	
 					{
-						ignoreAffectRows = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "ExeSQL")]
-				public string ExeSQL
-				{
-					get
-					{
-						return exeSQL;
-					}
-					set	
-					{
-						exeSQL = value;
+						rbAttachmentName = value;
 					}
 				}
 
@@ -368,42 +355,29 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
-				[JsonProperty(PropertyName = "IgnoreAffectRowsReason")]
-				public string IgnoreAffectRowsReason
+				[JsonProperty(PropertyName = "ExeSQL")]
+				public string ExeSQL
 				{
 					get
 					{
-						return ignoreAffectRowsReason;
+						return exeSQL;
 					}
 					set	
 					{
-						ignoreAffectRowsReason = value;
+						exeSQL = value;
 					}
 				}
 
-				[JsonProperty(PropertyName = "AttachmentName")]
-				public string AttachmentName
+				[JsonProperty(PropertyName = "EstimateAffectRows")]
+				public long? EstimateAffectRows
 				{
 					get
 					{
-						return attachmentName;
+						return estimateAffectRows;
 					}
 					set	
 					{
-						attachmentName = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "SqlType")]
-				public string SqlType
-				{
-					get
-					{
-						return sqlType;
-					}
-					set	
-					{
-						sqlType = value;
+						estimateAffectRows = value;
 					}
 				}
 
@@ -433,29 +407,55 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
-				[JsonProperty(PropertyName = "RbAttachmentName")]
-				public string RbAttachmentName
+				[JsonProperty(PropertyName = "IgnoreAffectRows")]
+				public bool? IgnoreAffectRows
 				{
 					get
 					{
-						return rbAttachmentName;
+						return ignoreAffectRows;
 					}
 					set	
 					{
-						rbAttachmentName = value;
+						ignoreAffectRows = value;
 					}
 				}
 
-				[JsonProperty(PropertyName = "RbSQL")]
-				public string RbSQL
+				[JsonProperty(PropertyName = "AttachmentName")]
+				public string AttachmentName
 				{
 					get
 					{
-						return rbSQL;
+						return attachmentName;
 					}
 					set	
 					{
-						rbSQL = value;
+						attachmentName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "SqlType")]
+				public string SqlType
+				{
+					get
+					{
+						return sqlType;
+					}
+					set	
+					{
+						sqlType = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "IgnoreAffectRowsReason")]
+				public string IgnoreAffectRowsReason
+				{
+					get
+					{
+						return ignoreAffectRowsReason;
+					}
+					set	
+					{
+						ignoreAffectRowsReason = value;
 					}
 				}
 			}

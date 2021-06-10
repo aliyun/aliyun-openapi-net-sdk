@@ -118,35 +118,61 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class SearchDatabase_SearchDatabase
 		{
 
+			private string databaseId;
+
+			private string host;
+
 			private string dbaId;
+
+			private string schemaName;
+
+			private bool? logic;
+
+			private string datalinkName;
+
+			private int? port;
+
+			private string envType;
+
+			private string sid;
+
+			private string encoding;
+
+			private string dbType;
 
 			private string searchName;
 
 			private string alias;
 
-			private int? port;
-
-			private string datalinkName;
-
-			private string encoding;
-
-			private string host;
-
-			private string databaseId;
-
-			private bool? logic;
-
-			private string dbType;
-
-			private string envType;
-
-			private string schemaName;
-
-			private string sid;
+			private List<string> ownerIdList;
 
 			private List<string> ownerNameList;
 
-			private List<string> ownerIdList;
+			[JsonProperty(PropertyName = "DatabaseId")]
+			public string DatabaseId
+			{
+				get
+				{
+					return databaseId;
+				}
+				set	
+				{
+					databaseId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Host")]
+			public string Host
+			{
+				get
+				{
+					return host;
+				}
+				set	
+				{
+					host = value;
+				}
+			}
 
 			[JsonProperty(PropertyName = "DbaId")]
 			public string DbaId
@@ -158,6 +184,110 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					dbaId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SchemaName")]
+			public string SchemaName
+			{
+				get
+				{
+					return schemaName;
+				}
+				set	
+				{
+					schemaName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Logic")]
+			public bool? Logic
+			{
+				get
+				{
+					return logic;
+				}
+				set	
+				{
+					logic = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DatalinkName")]
+			public string DatalinkName
+			{
+				get
+				{
+					return datalinkName;
+				}
+				set	
+				{
+					datalinkName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Port")]
+			public int? Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EnvType")]
+			public string EnvType
+			{
+				get
+				{
+					return envType;
+				}
+				set	
+				{
+					envType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Sid")]
+			public string Sid
+			{
+				get
+				{
+					return sid;
+				}
+				set	
+				{
+					sid = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Encoding")]
+			public string Encoding
+			{
+				get
+				{
+					return encoding;
+				}
+				set	
+				{
+					encoding = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DbType")]
+			public string DbType
+			{
+				get
+				{
+					return dbType;
+				}
+				set	
+				{
+					dbType = value;
 				}
 			}
 
@@ -187,133 +317,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "Port")]
-			public int? Port
+			[JsonProperty(PropertyName = "OwnerIdList")]
+			public List<string> OwnerIdList
 			{
 				get
 				{
-					return port;
+					return ownerIdList;
 				}
 				set	
 				{
-					port = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "DatalinkName")]
-			public string DatalinkName
-			{
-				get
-				{
-					return datalinkName;
-				}
-				set	
-				{
-					datalinkName = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Encoding")]
-			public string Encoding
-			{
-				get
-				{
-					return encoding;
-				}
-				set	
-				{
-					encoding = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Host")]
-			public string Host
-			{
-				get
-				{
-					return host;
-				}
-				set	
-				{
-					host = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "DatabaseId")]
-			public string DatabaseId
-			{
-				get
-				{
-					return databaseId;
-				}
-				set	
-				{
-					databaseId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Logic")]
-			public bool? Logic
-			{
-				get
-				{
-					return logic;
-				}
-				set	
-				{
-					logic = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "DbType")]
-			public string DbType
-			{
-				get
-				{
-					return dbType;
-				}
-				set	
-				{
-					dbType = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "EnvType")]
-			public string EnvType
-			{
-				get
-				{
-					return envType;
-				}
-				set	
-				{
-					envType = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "SchemaName")]
-			public string SchemaName
-			{
-				get
-				{
-					return schemaName;
-				}
-				set	
-				{
-					schemaName = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Sid")]
-			public string Sid
-			{
-				get
-				{
-					return sid;
-				}
-				set	
-				{
-					sid = value;
+					ownerIdList = value;
 				}
 			}
 
@@ -327,19 +340,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					ownerNameList = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "OwnerIdList")]
-			public List<string> OwnerIdList
-			{
-				get
-				{
-					return ownerIdList;
-				}
-				set	
-				{
-					ownerIdList = value;
 				}
 			}
 		}

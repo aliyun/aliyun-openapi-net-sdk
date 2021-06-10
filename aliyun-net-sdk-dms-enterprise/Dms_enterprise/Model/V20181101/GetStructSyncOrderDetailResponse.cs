@@ -27,11 +27,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private string errorCode;
+		private bool? success;
 
 		private string errorMessage;
 
-		private bool? success;
+		private string errorCode;
 
 		private GetStructSyncOrderDetail_StructSyncOrderDetail structSyncOrderDetail;
 
@@ -48,16 +48,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "ErrorCode")]
-		public string ErrorCode
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
 			get
 			{
-				return errorCode;
+				return success;
 			}
 			set	
 			{
-				errorCode = value;
+				success = value;
 			}
 		}
 
@@ -74,16 +74,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Success")]
-		public bool? Success
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
 		{
 			get
 			{
-				return success;
+				return errorCode;
 			}
 			set	
 			{
-				success = value;
+				errorCode = value;
 			}
 		}
 
@@ -260,28 +260,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			public class GetStructSyncOrderDetail_SourceDatabaseInfo
 			{
 
-				private string searchName;
-
 				private long? dbId;
 
-				private bool? logic;
-
-				private string envType;
+				private string searchName;
 
 				private string dbType;
 
-				[JsonProperty(PropertyName = "SearchName")]
-				public string SearchName
-				{
-					get
-					{
-						return searchName;
-					}
-					set	
-					{
-						searchName = value;
-					}
-				}
+				private string envType;
+
+				private bool? logic;
 
 				[JsonProperty(PropertyName = "DbId")]
 				public long? DbId
@@ -296,16 +283,29 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
-				[JsonProperty(PropertyName = "Logic")]
-				public bool? Logic
+				[JsonProperty(PropertyName = "SearchName")]
+				public string SearchName
 				{
 					get
 					{
-						return logic;
+						return searchName;
 					}
 					set	
 					{
-						logic = value;
+						searchName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "DbType")]
+				public string DbType
+				{
+					get
+					{
+						return dbType;
+					}
+					set	
+					{
+						dbType = value;
 					}
 				}
 
@@ -322,16 +322,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
-				[JsonProperty(PropertyName = "DbType")]
-				public string DbType
+				[JsonProperty(PropertyName = "Logic")]
+				public bool? Logic
 				{
 					get
 					{
-						return dbType;
+						return logic;
 					}
 					set	
 					{
-						dbType = value;
+						logic = value;
 					}
 				}
 			}
@@ -339,28 +339,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			public class GetStructSyncOrderDetail_TargetDatabaseInfo
 			{
 
-				private string searchName;
-
 				private long? dbId;
 
-				private bool? logic;
-
-				private string envType;
+				private string searchName;
 
 				private string dbType;
 
-				[JsonProperty(PropertyName = "SearchName")]
-				public string SearchName
-				{
-					get
-					{
-						return searchName;
-					}
-					set	
-					{
-						searchName = value;
-					}
-				}
+				private string envType;
+
+				private bool? logic;
 
 				[JsonProperty(PropertyName = "DbId")]
 				public long? DbId
@@ -375,16 +362,29 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
-				[JsonProperty(PropertyName = "Logic")]
-				public bool? Logic
+				[JsonProperty(PropertyName = "SearchName")]
+				public string SearchName
 				{
 					get
 					{
-						return logic;
+						return searchName;
 					}
 					set	
 					{
-						logic = value;
+						searchName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "DbType")]
+				public string DbType
+				{
+					get
+					{
+						return dbType;
+					}
+					set	
+					{
+						dbType = value;
 					}
 				}
 
@@ -401,16 +401,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
-				[JsonProperty(PropertyName = "DbType")]
-				public string DbType
+				[JsonProperty(PropertyName = "Logic")]
+				public bool? Logic
 				{
 					get
 					{
-						return dbType;
+						return logic;
 					}
 					set	
 					{
-						dbType = value;
+						logic = value;
 					}
 				}
 			}

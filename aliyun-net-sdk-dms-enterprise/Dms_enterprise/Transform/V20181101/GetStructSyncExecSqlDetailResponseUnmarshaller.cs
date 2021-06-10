@@ -32,13 +32,13 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getStructSyncExecSqlDetailResponse.HttpResponse = _ctx.HttpResponse;
 			getStructSyncExecSqlDetailResponse.RequestId = _ctx.StringValue("GetStructSyncExecSqlDetail.RequestId");
-			getStructSyncExecSqlDetailResponse.ErrorCode = _ctx.StringValue("GetStructSyncExecSqlDetail.ErrorCode");
-			getStructSyncExecSqlDetailResponse.ErrorMessage = _ctx.StringValue("GetStructSyncExecSqlDetail.ErrorMessage");
 			getStructSyncExecSqlDetailResponse.Success = _ctx.BooleanValue("GetStructSyncExecSqlDetail.Success");
+			getStructSyncExecSqlDetailResponse.ErrorMessage = _ctx.StringValue("GetStructSyncExecSqlDetail.ErrorMessage");
+			getStructSyncExecSqlDetailResponse.ErrorCode = _ctx.StringValue("GetStructSyncExecSqlDetail.ErrorCode");
 
 			GetStructSyncExecSqlDetailResponse.GetStructSyncExecSqlDetail_StructSyncExecSqlDetail structSyncExecSqlDetail = new GetStructSyncExecSqlDetailResponse.GetStructSyncExecSqlDetail_StructSyncExecSqlDetail();
-			structSyncExecSqlDetail.ExecSql = _ctx.StringValue("GetStructSyncExecSqlDetail.StructSyncExecSqlDetail.ExecSql");
 			structSyncExecSqlDetail.TotalSqlCount = _ctx.LongValue("GetStructSyncExecSqlDetail.StructSyncExecSqlDetail.TotalSqlCount");
+			structSyncExecSqlDetail.ExecSql = _ctx.StringValue("GetStructSyncExecSqlDetail.StructSyncExecSqlDetail.ExecSql");
 			getStructSyncExecSqlDetailResponse.StructSyncExecSqlDetail = structSyncExecSqlDetail;
         
 			return getStructSyncExecSqlDetailResponse;

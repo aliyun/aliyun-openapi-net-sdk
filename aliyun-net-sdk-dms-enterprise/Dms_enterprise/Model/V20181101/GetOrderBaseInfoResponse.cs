@@ -103,57 +103,31 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class GetOrderBaseInfo_OrderBaseInfo
 		{
 
-			private string statusDesc;
-
-			private string workflowStatusDesc;
-
 			private string comment;
 
 			private string createTime;
 
-			private long? workflowInstanceId;
-
 			private string committer;
 
-			private long? orderId;
-
-			private string lastModifyTime;
-
-			private string pluginType;
-
-			private string statusCode;
+			private long? workflowInstanceId;
 
 			private long? committerId;
 
-			private List<string> relatedUserList;
+			private string lastModifyTime;
+
+			private string statusCode;
+
+			private string workflowStatusDesc;
+
+			private string statusDesc;
+
+			private string pluginType;
+
+			private long? orderId;
 
 			private List<string> relatedUserNickList;
 
-			[JsonProperty(PropertyName = "StatusDesc")]
-			public string StatusDesc
-			{
-				get
-				{
-					return statusDesc;
-				}
-				set	
-				{
-					statusDesc = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "WorkflowStatusDesc")]
-			public string WorkflowStatusDesc
-			{
-				get
-				{
-					return workflowStatusDesc;
-				}
-				set	
-				{
-					workflowStatusDesc = value;
-				}
-			}
+			private List<string> relatedUserList;
 
 			[JsonProperty(PropertyName = "Comment")]
 			public string Comment
@@ -181,19 +155,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "WorkflowInstanceId")]
-			public long? WorkflowInstanceId
-			{
-				get
-				{
-					return workflowInstanceId;
-				}
-				set	
-				{
-					workflowInstanceId = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "Committer")]
 			public string Committer
 			{
@@ -207,55 +168,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "OrderId")]
-			public long? OrderId
+			[JsonProperty(PropertyName = "WorkflowInstanceId")]
+			public long? WorkflowInstanceId
 			{
 				get
 				{
-					return orderId;
+					return workflowInstanceId;
 				}
 				set	
 				{
-					orderId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "LastModifyTime")]
-			public string LastModifyTime
-			{
-				get
-				{
-					return lastModifyTime;
-				}
-				set	
-				{
-					lastModifyTime = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "PluginType")]
-			public string PluginType
-			{
-				get
-				{
-					return pluginType;
-				}
-				set	
-				{
-					pluginType = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "StatusCode")]
-			public string StatusCode
-			{
-				get
-				{
-					return statusCode;
-				}
-				set	
-				{
-					statusCode = value;
+					workflowInstanceId = value;
 				}
 			}
 
@@ -272,16 +194,81 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "RelatedUserList")]
-			public List<string> RelatedUserList
+			[JsonProperty(PropertyName = "LastModifyTime")]
+			public string LastModifyTime
 			{
 				get
 				{
-					return relatedUserList;
+					return lastModifyTime;
 				}
 				set	
 				{
-					relatedUserList = value;
+					lastModifyTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StatusCode")]
+			public string StatusCode
+			{
+				get
+				{
+					return statusCode;
+				}
+				set	
+				{
+					statusCode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "WorkflowStatusDesc")]
+			public string WorkflowStatusDesc
+			{
+				get
+				{
+					return workflowStatusDesc;
+				}
+				set	
+				{
+					workflowStatusDesc = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StatusDesc")]
+			public string StatusDesc
+			{
+				get
+				{
+					return statusDesc;
+				}
+				set	
+				{
+					statusDesc = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PluginType")]
+			public string PluginType
+			{
+				get
+				{
+					return pluginType;
+				}
+				set	
+				{
+					pluginType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OrderId")]
+			public long? OrderId
+			{
+				get
+				{
+					return orderId;
+				}
+				set	
+				{
+					orderId = value;
 				}
 			}
 
@@ -295,6 +282,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					relatedUserNickList = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RelatedUserList")]
+			public List<string> RelatedUserList
+			{
+				get
+				{
+					return relatedUserList;
+				}
+				set	
+				{
+					relatedUserList = value;
 				}
 			}
 		}

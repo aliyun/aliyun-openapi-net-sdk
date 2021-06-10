@@ -118,90 +118,103 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ListInstances_Instance
 		{
 
-			private string instanceSource;
+			private string vpcId;
 
-			private string instanceId;
+			private string databaseUser;
 
-			private string databasePassword;
+			private string dbaId;
+
+			private int? useDsql;
 
 			private int? port;
 
-			private string host;
-
-			private int? exportTimeout;
-
-			private int? ddlOnline;
+			private string ecsInstanceId;
 
 			private string envType;
 
 			private string sid;
 
-			private int? useDsql;
-
-			private string ecsInstanceId;
-
-			private string dbaId;
-
-			private string vpcId;
-
-			private string ecsRegion;
-
-			private string instanceAlias;
-
-			private string state;
-
-			private string databaseUser;
-
-			private string instanceType;
+			private string safeRuleId;
 
 			private string dbaNickName;
 
-			private string dataLinkName;
-
 			private int? queryTimeout;
 
-			private string safeRuleId;
+			private string instanceSource;
 
-			private List<string> ownerNameList;
+			private string host;
+
+			private string state;
+
+			private string dataLinkName;
+
+			private int? exportTimeout;
+
+			private string instanceId;
+
+			private string instanceType;
+
+			private string databasePassword;
+
+			private string instanceAlias;
+
+			private int? ddlOnline;
+
+			private string ecsRegion;
 
 			private List<string> ownerIdList;
 
-			[JsonProperty(PropertyName = "InstanceSource")]
-			public string InstanceSource
+			private List<string> ownerNameList;
+
+			[JsonProperty(PropertyName = "VpcId")]
+			public string VpcId
 			{
 				get
 				{
-					return instanceSource;
+					return vpcId;
 				}
 				set	
 				{
-					instanceSource = value;
+					vpcId = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "InstanceId")]
-			public string InstanceId
+			[JsonProperty(PropertyName = "DatabaseUser")]
+			public string DatabaseUser
 			{
 				get
 				{
-					return instanceId;
+					return databaseUser;
 				}
 				set	
 				{
-					instanceId = value;
+					databaseUser = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "DatabasePassword")]
-			public string DatabasePassword
+			[JsonProperty(PropertyName = "DbaId")]
+			public string DbaId
 			{
 				get
 				{
-					return databasePassword;
+					return dbaId;
 				}
 				set	
 				{
-					databasePassword = value;
+					dbaId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UseDsql")]
+			public int? UseDsql
+			{
+				get
+				{
+					return useDsql;
+				}
+				set	
+				{
+					useDsql = value;
 				}
 			}
 
@@ -218,42 +231,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "Host")]
-			public string Host
+			[JsonProperty(PropertyName = "EcsInstanceId")]
+			public string EcsInstanceId
 			{
 				get
 				{
-					return host;
+					return ecsInstanceId;
 				}
 				set	
 				{
-					host = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "ExportTimeout")]
-			public int? ExportTimeout
-			{
-				get
-				{
-					return exportTimeout;
-				}
-				set	
-				{
-					exportTimeout = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "DdlOnline")]
-			public int? DdlOnline
-			{
-				get
-				{
-					return ddlOnline;
-				}
-				set	
-				{
-					ddlOnline = value;
+					ecsInstanceId = value;
 				}
 			}
 
@@ -283,120 +270,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "UseDsql")]
-			public int? UseDsql
+			[JsonProperty(PropertyName = "SafeRuleId")]
+			public string SafeRuleId
 			{
 				get
 				{
-					return useDsql;
+					return safeRuleId;
 				}
 				set	
 				{
-					useDsql = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "EcsInstanceId")]
-			public string EcsInstanceId
-			{
-				get
-				{
-					return ecsInstanceId;
-				}
-				set	
-				{
-					ecsInstanceId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "DbaId")]
-			public string DbaId
-			{
-				get
-				{
-					return dbaId;
-				}
-				set	
-				{
-					dbaId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "VpcId")]
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "EcsRegion")]
-			public string EcsRegion
-			{
-				get
-				{
-					return ecsRegion;
-				}
-				set	
-				{
-					ecsRegion = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "InstanceAlias")]
-			public string InstanceAlias
-			{
-				get
-				{
-					return instanceAlias;
-				}
-				set	
-				{
-					instanceAlias = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "State")]
-			public string State
-			{
-				get
-				{
-					return state;
-				}
-				set	
-				{
-					state = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "DatabaseUser")]
-			public string DatabaseUser
-			{
-				get
-				{
-					return databaseUser;
-				}
-				set	
-				{
-					databaseUser = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "InstanceType")]
-			public string InstanceType
-			{
-				get
-				{
-					return instanceType;
-				}
-				set	
-				{
-					instanceType = value;
+					safeRuleId = value;
 				}
 			}
 
@@ -413,19 +296,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "DataLinkName")]
-			public string DataLinkName
-			{
-				get
-				{
-					return dataLinkName;
-				}
-				set	
-				{
-					dataLinkName = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "QueryTimeout")]
 			public int? QueryTimeout
 			{
@@ -439,29 +309,146 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "SafeRuleId")]
-			public string SafeRuleId
+			[JsonProperty(PropertyName = "InstanceSource")]
+			public string InstanceSource
 			{
 				get
 				{
-					return safeRuleId;
+					return instanceSource;
 				}
 				set	
 				{
-					safeRuleId = value;
+					instanceSource = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "OwnerNameList")]
-			public List<string> OwnerNameList
+			[JsonProperty(PropertyName = "Host")]
+			public string Host
 			{
 				get
 				{
-					return ownerNameList;
+					return host;
 				}
 				set	
 				{
-					ownerNameList = value;
+					host = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "State")]
+			public string State
+			{
+				get
+				{
+					return state;
+				}
+				set	
+				{
+					state = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DataLinkName")]
+			public string DataLinkName
+			{
+				get
+				{
+					return dataLinkName;
+				}
+				set	
+				{
+					dataLinkName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExportTimeout")]
+			public int? ExportTimeout
+			{
+				get
+				{
+					return exportTimeout;
+				}
+				set	
+				{
+					exportTimeout = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceId")]
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceType")]
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DatabasePassword")]
+			public string DatabasePassword
+			{
+				get
+				{
+					return databasePassword;
+				}
+				set	
+				{
+					databasePassword = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceAlias")]
+			public string InstanceAlias
+			{
+				get
+				{
+					return instanceAlias;
+				}
+				set	
+				{
+					instanceAlias = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DdlOnline")]
+			public int? DdlOnline
+			{
+				get
+				{
+					return ddlOnline;
+				}
+				set	
+				{
+					ddlOnline = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EcsRegion")]
+			public string EcsRegion
+			{
+				get
+				{
+					return ecsRegion;
+				}
+				set	
+				{
+					ecsRegion = value;
 				}
 			}
 
@@ -475,6 +462,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					ownerIdList = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OwnerNameList")]
+			public List<string> OwnerNameList
+			{
+				get
+				{
+					return ownerNameList;
+				}
+				set	
+				{
+					ownerNameList = value;
 				}
 			}
 		}

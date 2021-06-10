@@ -25,30 +25,17 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 	public class GetDataCronClearTaskDetailListResponse : AcsResponse
 	{
 
-		private long? totalCount;
-
 		private string requestId;
-
-		private string errorCode;
-
-		private string errorMessage;
 
 		private bool? success;
 
-		private List<GetDataCronClearTaskDetailList_DataCronClearTaskDetail> dataCronClearTaskDetailList;
+		private string errorMessage;
 
-		[JsonProperty(PropertyName = "TotalCount")]
-		public long? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+		private string errorCode;
+
+		private long? totalCount;
+
+		private List<GetDataCronClearTaskDetailList_DataCronClearTaskDetail> dataCronClearTaskDetailList;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -63,16 +50,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "ErrorCode")]
-		public string ErrorCode
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
 			get
 			{
-				return errorCode;
+				return success;
 			}
 			set	
 			{
-				errorCode = value;
+				success = value;
 			}
 		}
 
@@ -89,16 +76,29 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Success")]
-		public bool? Success
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
 		{
 			get
 			{
-				return success;
+				return errorCode;
 			}
 			set	
 			{
-				success = value;
+				errorCode = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalCount")]
+		public long? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
 			}
 		}
 
@@ -118,13 +118,26 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class GetDataCronClearTaskDetailList_DataCronClearTaskDetail
 		{
 
-			private string jobStatus;
+			private long? dBTaskGroupId;
 
-			private string createTime;
+			private string jobStatus;
 
 			private long? actualAffectRows;
 
-			private long? dBTaskGroupId;
+			private string createTime;
+
+			[JsonProperty(PropertyName = "DBTaskGroupId")]
+			public long? DBTaskGroupId
+			{
+				get
+				{
+					return dBTaskGroupId;
+				}
+				set	
+				{
+					dBTaskGroupId = value;
+				}
+			}
 
 			[JsonProperty(PropertyName = "JobStatus")]
 			public string JobStatus
@@ -136,19 +149,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					jobStatus = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "CreateTime")]
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
 				}
 			}
 
@@ -165,16 +165,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "DBTaskGroupId")]
-			public long? DBTaskGroupId
+			[JsonProperty(PropertyName = "CreateTime")]
+			public string CreateTime
 			{
 				get
 				{
-					return dBTaskGroupId;
+					return createTime;
 				}
 				set	
 				{
-					dBTaskGroupId = value;
+					createTime = value;
 				}
 			}
 		}

@@ -103,22 +103,9 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class GetDataExportOrderDetail_DataExportOrderDetail
 		{
 
-			private GetDataExportOrderDetail_OrderDetail orderDetail;
-
 			private GetDataExportOrderDetail_KeyInfo keyInfo;
 
-			[JsonProperty(PropertyName = "OrderDetail")]
-			public GetDataExportOrderDetail_OrderDetail OrderDetail
-			{
-				get
-				{
-					return orderDetail;
-				}
-				set	
-				{
-					orderDetail = value;
-				}
-			}
+			private GetDataExportOrderDetail_OrderDetail orderDetail;
 
 			[JsonProperty(PropertyName = "KeyInfo")]
 			public GetDataExportOrderDetail_KeyInfo KeyInfo
@@ -133,76 +120,84 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "OrderDetail")]
+			public GetDataExportOrderDetail_OrderDetail OrderDetail
+			{
+				get
+				{
+					return orderDetail;
+				}
+				set	
+				{
+					orderDetail = value;
+				}
+			}
+
+			public class GetDataExportOrderDetail_KeyInfo
+			{
+
+				private long? preCheckId;
+
+				private string jobStatus;
+
+				[JsonProperty(PropertyName = "PreCheckId")]
+				public long? PreCheckId
+				{
+					get
+					{
+						return preCheckId;
+					}
+					set	
+					{
+						preCheckId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "JobStatus")]
+				public string JobStatus
+				{
+					get
+					{
+						return jobStatus;
+					}
+					set	
+					{
+						jobStatus = value;
+					}
+				}
+			}
+
 			public class GetDataExportOrderDetail_OrderDetail
 			{
 
-				private bool? ignoreAffectRows;
-
-				private string exeSQL;
-
-				private string classify;
-
-				private string ignoreAffectRowsReason;
+				private int? dbId;
 
 				private string database;
 
-				private int? dbId;
+				private string classify;
 
-				private long? actualAffectRows;
+				private string exeSQL;
 
 				private bool? logic;
 
+				private long? actualAffectRows;
+
+				private bool? ignoreAffectRows;
+
+				private string ignoreAffectRowsReason;
+
 				private string envType;
 
-				[JsonProperty(PropertyName = "IgnoreAffectRows")]
-				public bool? IgnoreAffectRows
+				[JsonProperty(PropertyName = "DbId")]
+				public int? DbId
 				{
 					get
 					{
-						return ignoreAffectRows;
+						return dbId;
 					}
 					set	
 					{
-						ignoreAffectRows = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "ExeSQL")]
-				public string ExeSQL
-				{
-					get
-					{
-						return exeSQL;
-					}
-					set	
-					{
-						exeSQL = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "Classify")]
-				public string Classify
-				{
-					get
-					{
-						return classify;
-					}
-					set	
-					{
-						classify = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "IgnoreAffectRowsReason")]
-				public string IgnoreAffectRowsReason
-				{
-					get
-					{
-						return ignoreAffectRowsReason;
-					}
-					set	
-					{
-						ignoreAffectRowsReason = value;
+						dbId = value;
 					}
 				}
 
@@ -219,29 +214,29 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
-				[JsonProperty(PropertyName = "DbId")]
-				public int? DbId
+				[JsonProperty(PropertyName = "Classify")]
+				public string Classify
 				{
 					get
 					{
-						return dbId;
+						return classify;
 					}
 					set	
 					{
-						dbId = value;
+						classify = value;
 					}
 				}
 
-				[JsonProperty(PropertyName = "ActualAffectRows")]
-				public long? ActualAffectRows
+				[JsonProperty(PropertyName = "ExeSQL")]
+				public string ExeSQL
 				{
 					get
 					{
-						return actualAffectRows;
+						return exeSQL;
 					}
 					set	
 					{
-						actualAffectRows = value;
+						exeSQL = value;
 					}
 				}
 
@@ -258,6 +253,45 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
+				[JsonProperty(PropertyName = "ActualAffectRows")]
+				public long? ActualAffectRows
+				{
+					get
+					{
+						return actualAffectRows;
+					}
+					set	
+					{
+						actualAffectRows = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "IgnoreAffectRows")]
+				public bool? IgnoreAffectRows
+				{
+					get
+					{
+						return ignoreAffectRows;
+					}
+					set	
+					{
+						ignoreAffectRows = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "IgnoreAffectRowsReason")]
+				public string IgnoreAffectRowsReason
+				{
+					get
+					{
+						return ignoreAffectRowsReason;
+					}
+					set	
+					{
+						ignoreAffectRowsReason = value;
+					}
+				}
+
 				[JsonProperty(PropertyName = "EnvType")]
 				public string EnvType
 				{
@@ -268,40 +302,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					set	
 					{
 						envType = value;
-					}
-				}
-			}
-
-			public class GetDataExportOrderDetail_KeyInfo
-			{
-
-				private string jobStatus;
-
-				private long? preCheckId;
-
-				[JsonProperty(PropertyName = "JobStatus")]
-				public string JobStatus
-				{
-					get
-					{
-						return jobStatus;
-					}
-					set	
-					{
-						jobStatus = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "PreCheckId")]
-				public long? PreCheckId
-				{
-					get
-					{
-						return preCheckId;
-					}
-					set	
-					{
-						preCheckId = value;
 					}
 				}
 			}

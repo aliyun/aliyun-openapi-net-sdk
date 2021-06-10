@@ -27,13 +27,13 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private long? workflowInstanceId;
-
-		private string errorCode;
+		private bool? success;
 
 		private string errorMessage;
 
-		private bool? success;
+		private string errorCode;
+
+		private long? workflowInstanceId;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -48,29 +48,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "WorkflowInstanceId")]
-		public long? WorkflowInstanceId
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
 			get
 			{
-				return workflowInstanceId;
+				return success;
 			}
 			set	
 			{
-				workflowInstanceId = value;
-			}
-		}
-
-		[JsonProperty(PropertyName = "ErrorCode")]
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				success = value;
 			}
 		}
 
@@ -87,16 +74,29 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Success")]
-		public bool? Success
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
 		{
 			get
 			{
-				return success;
+				return errorCode;
 			}
 			set	
 			{
-				success = value;
+				errorCode = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "WorkflowInstanceId")]
+		public long? WorkflowInstanceId
+		{
+			get
+			{
+				return workflowInstanceId;
+			}
+			set	
+			{
+				workflowInstanceId = value;
 			}
 		}
 	}

@@ -25,28 +25,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 	public class GetDataCorrectSQLFileResponse : AcsResponse
 	{
 
-		private string fileUrl;
-
 		private string requestId;
-
-		private string errorCode;
-
-		private string errorMessage;
 
 		private bool? success;
 
-		[JsonProperty(PropertyName = "FileUrl")]
-		public string FileUrl
-		{
-			get
-			{
-				return fileUrl;
-			}
-			set	
-			{
-				fileUrl = value;
-			}
-		}
+		private string errorMessage;
+
+		private string errorCode;
+
+		private string fileUrl;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -61,16 +48,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "ErrorCode")]
-		public string ErrorCode
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
 			get
 			{
-				return errorCode;
+				return success;
 			}
 			set	
 			{
-				errorCode = value;
+				success = value;
 			}
 		}
 
@@ -87,16 +74,29 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Success")]
-		public bool? Success
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
 		{
 			get
 			{
-				return success;
+				return errorCode;
 			}
 			set	
 			{
-				success = value;
+				errorCode = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "FileUrl")]
+		public string FileUrl
+		{
+			get
+			{
+				return fileUrl;
+			}
+			set	
+			{
+				fileUrl = value;
 			}
 		}
 	}

@@ -118,36 +118,23 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ListOrders_Order
 		{
 
-			private string statusDesc;
-
 			private string comment;
+
+			private string lastModifyTime;
+
+			private string statusCode;
 
 			private string createTime;
 
 			private string committer;
 
-			private long? orderId;
+			private long? committerId;
 
-			private string lastModifyTime;
+			private string statusDesc;
 
 			private string pluginType;
 
-			private long? committerId;
-
-			private string statusCode;
-
-			[JsonProperty(PropertyName = "StatusDesc")]
-			public string StatusDesc
-			{
-				get
-				{
-					return statusDesc;
-				}
-				set	
-				{
-					statusDesc = value;
-				}
-			}
+			private long? orderId;
 
 			[JsonProperty(PropertyName = "Comment")]
 			public string Comment
@@ -159,6 +146,32 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					comment = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LastModifyTime")]
+			public string LastModifyTime
+			{
+				get
+				{
+					return lastModifyTime;
+				}
+				set	
+				{
+					lastModifyTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StatusCode")]
+			public string StatusCode
+			{
+				get
+				{
+					return statusCode;
+				}
+				set	
+				{
+					statusCode = value;
 				}
 			}
 
@@ -188,29 +201,29 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "OrderId")]
-			public long? OrderId
+			[JsonProperty(PropertyName = "CommitterId")]
+			public long? CommitterId
 			{
 				get
 				{
-					return orderId;
+					return committerId;
 				}
 				set	
 				{
-					orderId = value;
+					committerId = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "LastModifyTime")]
-			public string LastModifyTime
+			[JsonProperty(PropertyName = "StatusDesc")]
+			public string StatusDesc
 			{
 				get
 				{
-					return lastModifyTime;
+					return statusDesc;
 				}
 				set	
 				{
-					lastModifyTime = value;
+					statusDesc = value;
 				}
 			}
 
@@ -227,29 +240,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "CommitterId")]
-			public long? CommitterId
+			[JsonProperty(PropertyName = "OrderId")]
+			public long? OrderId
 			{
 				get
 				{
-					return committerId;
+					return orderId;
 				}
 				set	
 				{
-					committerId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "StatusCode")]
-			public string StatusCode
-			{
-				get
-				{
-					return statusCode;
-				}
-				set	
-				{
-					statusCode = value;
+					orderId = value;
 				}
 			}
 		}

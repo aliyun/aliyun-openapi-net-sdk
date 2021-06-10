@@ -27,11 +27,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private string errorCode;
+		private bool? success;
 
 		private string errorMessage;
 
-		private bool? success;
+		private string errorCode;
 
 		private List<ListDDLPublishRecords_DDLPublishRecord> dDLPublishRecordList;
 
@@ -48,16 +48,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "ErrorCode")]
-		public string ErrorCode
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
 			get
 			{
-				return errorCode;
+				return success;
 			}
 			set	
 			{
-				errorCode = value;
+				success = value;
 			}
 		}
 
@@ -74,16 +74,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Success")]
-		public bool? Success
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
 		{
 			get
 			{
-				return success;
+				return errorCode;
 			}
 			set	
 			{
-				success = value;
+				errorCode = value;
 			}
 		}
 
@@ -103,38 +103,25 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ListDDLPublishRecords_DDLPublishRecord
 		{
 
-			private string statusDesc;
-
 			private string auditStatus;
+
+			private string auditExpireTime;
 
 			private long? creatorId;
 
 			private bool? finality;
 
-			private string auditExpireTime;
-
-			private long? workflowInstanceId;
-
-			private string riskLevel;
-
 			private string finalityReason;
 
 			private string publishStatus;
 
-			private List<ListDDLPublishRecords_PublishTaskInfo> publishTaskInfoList;
+			private string riskLevel;
 
-			[JsonProperty(PropertyName = "StatusDesc")]
-			public string StatusDesc
-			{
-				get
-				{
-					return statusDesc;
-				}
-				set	
-				{
-					statusDesc = value;
-				}
-			}
+			private string statusDesc;
+
+			private long? workflowInstanceId;
+
+			private List<ListDDLPublishRecords_PublishTaskInfo> publishTaskInfoList;
 
 			[JsonProperty(PropertyName = "AuditStatus")]
 			public string AuditStatus
@@ -146,6 +133,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					auditStatus = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AuditExpireTime")]
+			public string AuditExpireTime
+			{
+				get
+				{
+					return auditExpireTime;
+				}
+				set	
+				{
+					auditExpireTime = value;
 				}
 			}
 
@@ -175,45 +175,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "AuditExpireTime")]
-			public string AuditExpireTime
-			{
-				get
-				{
-					return auditExpireTime;
-				}
-				set	
-				{
-					auditExpireTime = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "WorkflowInstanceId")]
-			public long? WorkflowInstanceId
-			{
-				get
-				{
-					return workflowInstanceId;
-				}
-				set	
-				{
-					workflowInstanceId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "RiskLevel")]
-			public string RiskLevel
-			{
-				get
-				{
-					return riskLevel;
-				}
-				set	
-				{
-					riskLevel = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "FinalityReason")]
 			public string FinalityReason
 			{
@@ -240,6 +201,45 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "RiskLevel")]
+			public string RiskLevel
+			{
+				get
+				{
+					return riskLevel;
+				}
+				set	
+				{
+					riskLevel = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StatusDesc")]
+			public string StatusDesc
+			{
+				get
+				{
+					return statusDesc;
+				}
+				set	
+				{
+					statusDesc = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "WorkflowInstanceId")]
+			public long? WorkflowInstanceId
+			{
+				get
+				{
+					return workflowInstanceId;
+				}
+				set	
+				{
+					workflowInstanceId = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "PublishTaskInfoList")]
 			public List<ListDDLPublishRecords_PublishTaskInfo> PublishTaskInfoList
 			{
@@ -256,19 +256,71 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			public class ListDDLPublishRecords_PublishTaskInfo
 			{
 
+				private long? dbId;
+
+				private bool? logic;
+
+				private string planTime;
+
+				private string publishStrategy;
+
 				private string statusDesc;
 
 				private string taskJobStatus;
 
-				private string publishStrategy;
-
-				private long? dbId;
-
-				private string planTime;
-
-				private bool? logic;
-
 				private List<ListDDLPublishRecords_PublishJob> publishJobList;
+
+				[JsonProperty(PropertyName = "DbId")]
+				public long? DbId
+				{
+					get
+					{
+						return dbId;
+					}
+					set	
+					{
+						dbId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Logic")]
+				public bool? Logic
+				{
+					get
+					{
+						return logic;
+					}
+					set	
+					{
+						logic = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "PlanTime")]
+				public string PlanTime
+				{
+					get
+					{
+						return planTime;
+					}
+					set	
+					{
+						planTime = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "PublishStrategy")]
+				public string PublishStrategy
+				{
+					get
+					{
+						return publishStrategy;
+					}
+					set	
+					{
+						publishStrategy = value;
+					}
+				}
 
 				[JsonProperty(PropertyName = "StatusDesc")]
 				public string StatusDesc
@@ -296,58 +348,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
-				[JsonProperty(PropertyName = "PublishStrategy")]
-				public string PublishStrategy
-				{
-					get
-					{
-						return publishStrategy;
-					}
-					set	
-					{
-						publishStrategy = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "DbId")]
-				public long? DbId
-				{
-					get
-					{
-						return dbId;
-					}
-					set	
-					{
-						dbId = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "PlanTime")]
-				public string PlanTime
-				{
-					get
-					{
-						return planTime;
-					}
-					set	
-					{
-						planTime = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "Logic")]
-				public bool? Logic
-				{
-					get
-					{
-						return logic;
-					}
-					set	
-					{
-						logic = value;
-					}
-				}
-
 				[JsonProperty(PropertyName = "PublishJobList")]
 				public List<ListDDLPublishRecords_PublishJob> PublishJobList
 				{
@@ -364,41 +364,28 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				public class ListDDLPublishRecords_PublishJob
 				{
 
-					private string statusDesc;
-
-					private string tableName;
+					private long? executeCount;
 
 					private string scripts;
 
-					private string taskJobStatus;
+					private string tableName;
 
-					private long? executeCount;
+					private string statusDesc;
+
+					private string taskJobStatus;
 
 					private long? dBTaskGroupId;
 
-					[JsonProperty(PropertyName = "StatusDesc")]
-					public string StatusDesc
+					[JsonProperty(PropertyName = "ExecuteCount")]
+					public long? ExecuteCount
 					{
 						get
 						{
-							return statusDesc;
+							return executeCount;
 						}
 						set	
 						{
-							statusDesc = value;
-						}
-					}
-
-					[JsonProperty(PropertyName = "TableName")]
-					public string TableName
-					{
-						get
-						{
-							return tableName;
-						}
-						set	
-						{
-							tableName = value;
+							executeCount = value;
 						}
 					}
 
@@ -415,6 +402,32 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 						}
 					}
 
+					[JsonProperty(PropertyName = "TableName")]
+					public string TableName
+					{
+						get
+						{
+							return tableName;
+						}
+						set	
+						{
+							tableName = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "StatusDesc")]
+					public string StatusDesc
+					{
+						get
+						{
+							return statusDesc;
+						}
+						set	
+						{
+							statusDesc = value;
+						}
+					}
+
 					[JsonProperty(PropertyName = "TaskJobStatus")]
 					public string TaskJobStatus
 					{
@@ -425,19 +438,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 						set	
 						{
 							taskJobStatus = value;
-						}
-					}
-
-					[JsonProperty(PropertyName = "ExecuteCount")]
-					public long? ExecuteCount
-					{
-						get
-						{
-							return executeCount;
-						}
-						set	
-						{
-							executeCount = value;
 						}
 					}
 

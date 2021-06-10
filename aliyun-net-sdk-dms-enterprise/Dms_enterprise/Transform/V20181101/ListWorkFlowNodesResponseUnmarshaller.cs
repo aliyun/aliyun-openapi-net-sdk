@@ -41,16 +41,16 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 				ListWorkFlowNodesResponse.ListWorkFlowNodes_WorkflowNode workflowNode = new ListWorkFlowNodesResponse.ListWorkFlowNodes_WorkflowNode();
 				workflowNode.Comment = _ctx.StringValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].Comment");
 				workflowNode.CreateUserNickName = _ctx.StringValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].CreateUserNickName");
-				workflowNode.NodeName = _ctx.StringValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].NodeName");
 				workflowNode.NodeType = _ctx.StringValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].NodeType");
-				workflowNode.NodeId = _ctx.LongValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].NodeId");
+				workflowNode.NodeName = _ctx.StringValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].NodeName");
 				workflowNode.CreateUserId = _ctx.LongValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].CreateUserId");
+				workflowNode.NodeId = _ctx.LongValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].NodeId");
 
 				List<ListWorkFlowNodesResponse.ListWorkFlowNodes_WorkflowNode.ListWorkFlowNodes_AuditUser> workflowNode_auditUsers = new List<ListWorkFlowNodesResponse.ListWorkFlowNodes_WorkflowNode.ListWorkFlowNodes_AuditUser>();
 				for (int j = 0; j < _ctx.Length("ListWorkFlowNodes.WorkflowNodes["+ i +"].AuditUsers.Length"); j++) {
 					ListWorkFlowNodesResponse.ListWorkFlowNodes_WorkflowNode.ListWorkFlowNodes_AuditUser auditUser = new ListWorkFlowNodesResponse.ListWorkFlowNodes_WorkflowNode.ListWorkFlowNodes_AuditUser();
-					auditUser.UserId = _ctx.LongValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].AuditUsers["+ j +"].UserId");
 					auditUser.RealName = _ctx.StringValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].AuditUsers["+ j +"].RealName");
+					auditUser.UserId = _ctx.LongValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].AuditUsers["+ j +"].UserId");
 					auditUser.NickName = _ctx.StringValue("ListWorkFlowNodes.WorkflowNodes["+ i +"].AuditUsers["+ j +"].NickName");
 
 					workflowNode_auditUsers.Add(auditUser);

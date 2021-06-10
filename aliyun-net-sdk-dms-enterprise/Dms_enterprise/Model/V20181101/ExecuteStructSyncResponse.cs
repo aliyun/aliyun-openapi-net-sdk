@@ -27,11 +27,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private string errorCode;
+		private bool? success;
 
 		private string errorMessage;
 
-		private bool? success;
+		private string errorCode;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -46,16 +46,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "ErrorCode")]
-		public string ErrorCode
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
 			get
 			{
-				return errorCode;
+				return success;
 			}
 			set	
 			{
-				errorCode = value;
+				success = value;
 			}
 		}
 
@@ -72,16 +72,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Success")]
-		public bool? Success
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
 		{
 			get
 			{
-				return success;
+				return errorCode;
 			}
 			set	
 			{
-				success = value;
+				errorCode = value;
 			}
 		}
 	}

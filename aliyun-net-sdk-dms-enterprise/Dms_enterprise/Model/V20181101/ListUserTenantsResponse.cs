@@ -105,9 +105,9 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string status;
 
-			private string tenantName;
-
 			private long? tid;
+
+			private string tenantName;
 
 			[JsonProperty(PropertyName = "Status")]
 			public string Status
@@ -122,19 +122,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "TenantName")]
-			public string TenantName
-			{
-				get
-				{
-					return tenantName;
-				}
-				set	
-				{
-					tenantName = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "Tid")]
 			public long? Tid
 			{
@@ -145,6 +132,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					tid = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TenantName")]
+			public string TenantName
+			{
+				get
+				{
+					return tenantName;
+				}
+				set	
+				{
+					tenantName = value;
 				}
 			}
 		}

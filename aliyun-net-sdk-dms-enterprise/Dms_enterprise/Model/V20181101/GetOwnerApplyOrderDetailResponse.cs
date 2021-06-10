@@ -27,11 +27,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private string errorCode;
+		private bool? success;
 
 		private string errorMessage;
 
-		private bool? success;
+		private string errorCode;
 
 		private GetOwnerApplyOrderDetail_OwnerApplyOrderDetail ownerApplyOrderDetail;
 
@@ -48,16 +48,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "ErrorCode")]
-		public string ErrorCode
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
 			get
 			{
-				return errorCode;
+				return success;
 			}
 			set	
 			{
-				errorCode = value;
+				success = value;
 			}
 		}
 
@@ -74,16 +74,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Success")]
-		public bool? Success
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
 		{
 			get
 			{
-				return success;
+				return errorCode;
 			}
 			set	
 			{
-				success = value;
+				errorCode = value;
 			}
 		}
 
@@ -184,30 +184,17 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				public class GetOwnerApplyOrderDetail_ResourceDetail
 				{
 
-					private string tableName;
-
 					private string searchName;
-
-					private string envType;
 
 					private string dbType;
 
-					private List<string> ownerNickNames;
+					private string envType;
+
+					private string tableName;
 
 					private List<string> ownerIds;
 
-					[JsonProperty(PropertyName = "TableName")]
-					public string TableName
-					{
-						get
-						{
-							return tableName;
-						}
-						set	
-						{
-							tableName = value;
-						}
-					}
+					private List<string> ownerNickNames;
 
 					[JsonProperty(PropertyName = "SearchName")]
 					public string SearchName
@@ -219,19 +206,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 						set	
 						{
 							searchName = value;
-						}
-					}
-
-					[JsonProperty(PropertyName = "EnvType")]
-					public string EnvType
-					{
-						get
-						{
-							return envType;
-						}
-						set	
-						{
-							envType = value;
 						}
 					}
 
@@ -248,16 +222,29 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 						}
 					}
 
-					[JsonProperty(PropertyName = "OwnerNickNames")]
-					public List<string> OwnerNickNames
+					[JsonProperty(PropertyName = "EnvType")]
+					public string EnvType
 					{
 						get
 						{
-							return ownerNickNames;
+							return envType;
 						}
 						set	
 						{
-							ownerNickNames = value;
+							envType = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "TableName")]
+					public string TableName
+					{
+						get
+						{
+							return tableName;
+						}
+						set	
+						{
+							tableName = value;
 						}
 					}
 
@@ -271,6 +258,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 						set	
 						{
 							ownerIds = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "OwnerNickNames")]
+					public List<string> OwnerNickNames
+					{
+						get
+						{
+							return ownerNickNames;
+						}
+						set	
+						{
+							ownerNickNames = value;
 						}
 					}
 				}

@@ -40,24 +40,24 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			List<ListLogicDatabasesResponse.ListLogicDatabases_LogicDatabase> listLogicDatabasesResponse_logicDatabaseList = new List<ListLogicDatabasesResponse.ListLogicDatabases_LogicDatabase>();
 			for (int i = 0; i < _ctx.Length("ListLogicDatabases.LogicDatabaseList.Length"); i++) {
 				ListLogicDatabasesResponse.ListLogicDatabases_LogicDatabase logicDatabase = new ListLogicDatabasesResponse.ListLogicDatabases_LogicDatabase();
-				logicDatabase.SearchName = _ctx.StringValue("ListLogicDatabases.LogicDatabaseList["+ i +"].SearchName");
 				logicDatabase.DatabaseId = _ctx.StringValue("ListLogicDatabases.LogicDatabaseList["+ i +"].DatabaseId");
-				logicDatabase.Logic = _ctx.BooleanValue("ListLogicDatabases.LogicDatabaseList["+ i +"].Logic");
-				logicDatabase.EnvType = _ctx.StringValue("ListLogicDatabases.LogicDatabaseList["+ i +"].EnvType");
-				logicDatabase.SchemaName = _ctx.StringValue("ListLogicDatabases.LogicDatabaseList["+ i +"].SchemaName");
 				logicDatabase.DbType = _ctx.StringValue("ListLogicDatabases.LogicDatabaseList["+ i +"].DbType");
-
-				List<string> logicDatabase_ownerNameList = new List<string>();
-				for (int j = 0; j < _ctx.Length("ListLogicDatabases.LogicDatabaseList["+ i +"].OwnerNameList.Length"); j++) {
-					logicDatabase_ownerNameList.Add(_ctx.StringValue("ListLogicDatabases.LogicDatabaseList["+ i +"].OwnerNameList["+ j +"]"));
-				}
-				logicDatabase.OwnerNameList = logicDatabase_ownerNameList;
+				logicDatabase.Logic = _ctx.BooleanValue("ListLogicDatabases.LogicDatabaseList["+ i +"].Logic");
+				logicDatabase.SchemaName = _ctx.StringValue("ListLogicDatabases.LogicDatabaseList["+ i +"].SchemaName");
+				logicDatabase.SearchName = _ctx.StringValue("ListLogicDatabases.LogicDatabaseList["+ i +"].SearchName");
+				logicDatabase.EnvType = _ctx.StringValue("ListLogicDatabases.LogicDatabaseList["+ i +"].EnvType");
 
 				List<string> logicDatabase_ownerIdList = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListLogicDatabases.LogicDatabaseList["+ i +"].OwnerIdList.Length"); j++) {
 					logicDatabase_ownerIdList.Add(_ctx.StringValue("ListLogicDatabases.LogicDatabaseList["+ i +"].OwnerIdList["+ j +"]"));
 				}
 				logicDatabase.OwnerIdList = logicDatabase_ownerIdList;
+
+				List<string> logicDatabase_ownerNameList = new List<string>();
+				for (int j = 0; j < _ctx.Length("ListLogicDatabases.LogicDatabaseList["+ i +"].OwnerNameList.Length"); j++) {
+					logicDatabase_ownerNameList.Add(_ctx.StringValue("ListLogicDatabases.LogicDatabaseList["+ i +"].OwnerNameList["+ j +"]"));
+				}
+				logicDatabase.OwnerNameList = logicDatabase_ownerNameList;
 
 				listLogicDatabasesResponse_logicDatabaseList.Add(logicDatabase);
 			}

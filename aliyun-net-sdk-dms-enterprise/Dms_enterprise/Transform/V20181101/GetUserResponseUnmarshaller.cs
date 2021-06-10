@@ -37,17 +37,17 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			getUserResponse.Success = _ctx.BooleanValue("GetUser.Success");
 
 			GetUserResponse.GetUser_User user = new GetUserResponse.GetUser_User();
-			user.Uid = _ctx.StringValue("GetUser.User.Uid");
-			user.LastLoginTime = _ctx.StringValue("GetUser.User.LastLoginTime");
-			user.CurResultCount = _ctx.LongValue("GetUser.User.CurResultCount");
-			user.MaxResultCount = _ctx.LongValue("GetUser.User.MaxResultCount");
-			user.UserId = _ctx.StringValue("GetUser.User.UserId");
 			user.State = _ctx.StringValue("GetUser.User.State");
-			user.CurExecuteCount = _ctx.LongValue("GetUser.User.CurExecuteCount");
-			user.NickName = _ctx.StringValue("GetUser.User.NickName");
-			user.Mobile = _ctx.StringValue("GetUser.User.Mobile");
-			user.MaxExecuteCount = _ctx.LongValue("GetUser.User.MaxExecuteCount");
+			user.CurResultCount = _ctx.LongValue("GetUser.User.CurResultCount");
+			user.UserId = _ctx.StringValue("GetUser.User.UserId");
+			user.LastLoginTime = _ctx.StringValue("GetUser.User.LastLoginTime");
+			user.MaxResultCount = _ctx.LongValue("GetUser.User.MaxResultCount");
 			user.ParentUid = _ctx.LongValue("GetUser.User.ParentUid");
+			user.NickName = _ctx.StringValue("GetUser.User.NickName");
+			user.MaxExecuteCount = _ctx.LongValue("GetUser.User.MaxExecuteCount");
+			user.CurExecuteCount = _ctx.LongValue("GetUser.User.CurExecuteCount");
+			user.Mobile = _ctx.StringValue("GetUser.User.Mobile");
+			user.Uid = _ctx.StringValue("GetUser.User.Uid");
 
 			List<string> user_roleIdList = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetUser.User.RoleIdList.Length"); i++) {

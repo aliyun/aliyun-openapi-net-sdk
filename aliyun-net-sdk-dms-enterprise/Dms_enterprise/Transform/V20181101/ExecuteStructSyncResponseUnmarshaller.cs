@@ -32,9 +32,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			executeStructSyncResponse.HttpResponse = _ctx.HttpResponse;
 			executeStructSyncResponse.RequestId = _ctx.StringValue("ExecuteStructSync.RequestId");
-			executeStructSyncResponse.ErrorCode = _ctx.StringValue("ExecuteStructSync.ErrorCode");
-			executeStructSyncResponse.ErrorMessage = _ctx.StringValue("ExecuteStructSync.ErrorMessage");
 			executeStructSyncResponse.Success = _ctx.BooleanValue("ExecuteStructSync.Success");
+			executeStructSyncResponse.ErrorMessage = _ctx.StringValue("ExecuteStructSync.ErrorMessage");
+			executeStructSyncResponse.ErrorCode = _ctx.StringValue("ExecuteStructSync.ErrorCode");
         
 			return executeStructSyncResponse;
         }

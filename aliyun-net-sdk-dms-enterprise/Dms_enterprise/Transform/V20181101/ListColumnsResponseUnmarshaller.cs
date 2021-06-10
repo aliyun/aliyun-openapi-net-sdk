@@ -39,19 +39,19 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			List<ListColumnsResponse.ListColumns_Column> listColumnsResponse_columnList = new List<ListColumnsResponse.ListColumns_Column>();
 			for (int i = 0; i < _ctx.Length("ListColumns.ColumnList.Length"); i++) {
 				ListColumnsResponse.ListColumns_Column column = new ListColumnsResponse.ListColumns_Column();
-				column.ColumnId = _ctx.StringValue("ListColumns.ColumnList["+ i +"].ColumnId");
-				column.ColumnName = _ctx.StringValue("ListColumns.ColumnList["+ i +"].ColumnName");
-				column.DefaultValue = _ctx.StringValue("ListColumns.ColumnList["+ i +"].DefaultValue");
-				column.Description = _ctx.StringValue("ListColumns.ColumnList["+ i +"].Description");
 				column.ColumnType = _ctx.StringValue("ListColumns.ColumnList["+ i +"].ColumnType");
 				column.AutoIncrement = _ctx.BooleanValue("ListColumns.ColumnList["+ i +"].AutoIncrement");
-				column.FunctionType = _ctx.StringValue("ListColumns.ColumnList["+ i +"].FunctionType");
-				column.SecurityLevel = _ctx.StringValue("ListColumns.ColumnList["+ i +"].SecurityLevel");
-				column.DataLength = _ctx.LongValue("ListColumns.ColumnList["+ i +"].DataLength");
-				column.DataScale = _ctx.IntegerValue("ListColumns.ColumnList["+ i +"].DataScale");
-				column.DataPrecision = _ctx.IntegerValue("ListColumns.ColumnList["+ i +"].DataPrecision");
+				column.ColumnId = _ctx.StringValue("ListColumns.ColumnList["+ i +"].ColumnId");
+				column.DefaultValue = _ctx.StringValue("ListColumns.ColumnList["+ i +"].DefaultValue");
 				column.Sensitive = _ctx.BooleanValue("ListColumns.ColumnList["+ i +"].Sensitive");
+				column.ColumnName = _ctx.StringValue("ListColumns.ColumnList["+ i +"].ColumnName");
+				column.SecurityLevel = _ctx.StringValue("ListColumns.ColumnList["+ i +"].SecurityLevel");
+				column.Description = _ctx.StringValue("ListColumns.ColumnList["+ i +"].Description");
+				column.DataPrecision = _ctx.IntegerValue("ListColumns.ColumnList["+ i +"].DataPrecision");
+				column.DataScale = _ctx.IntegerValue("ListColumns.ColumnList["+ i +"].DataScale");
+				column.FunctionType = _ctx.StringValue("ListColumns.ColumnList["+ i +"].FunctionType");
 				column.Nullable = _ctx.BooleanValue("ListColumns.ColumnList["+ i +"].Nullable");
+				column.DataLength = _ctx.LongValue("ListColumns.ColumnList["+ i +"].DataLength");
 
 				listColumnsResponse_columnList.Add(column);
 			}

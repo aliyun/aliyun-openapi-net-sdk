@@ -39,23 +39,23 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			List<ListWorkFlowTemplatesResponse.ListWorkFlowTemplates_WorkFlowTemplate> listWorkFlowTemplatesResponse_workFlowTemplates = new List<ListWorkFlowTemplatesResponse.ListWorkFlowTemplates_WorkFlowTemplate>();
 			for (int i = 0; i < _ctx.Length("ListWorkFlowTemplates.WorkFlowTemplates.Length"); i++) {
 				ListWorkFlowTemplatesResponse.ListWorkFlowTemplates_WorkFlowTemplate workFlowTemplate = new ListWorkFlowTemplatesResponse.ListWorkFlowTemplates_WorkFlowTemplate();
-				workFlowTemplate.Comment = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].Comment");
-				workFlowTemplate.CreateUserId = _ctx.LongValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].CreateUserId");
-				workFlowTemplate.TemplateName = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].TemplateName");
-				workFlowTemplate.Enabled = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].Enabled");
 				workFlowTemplate.IsSystem = _ctx.IntegerValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].IsSystem");
+				workFlowTemplate.Comment = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].Comment");
+				workFlowTemplate.Enabled = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].Enabled");
+				workFlowTemplate.TemplateName = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].TemplateName");
 				workFlowTemplate.TemplateId = _ctx.LongValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].TemplateId");
+				workFlowTemplate.CreateUserId = _ctx.LongValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].CreateUserId");
 
 				List<ListWorkFlowTemplatesResponse.ListWorkFlowTemplates_WorkFlowTemplate.ListWorkFlowTemplates_WorkflowNode> workFlowTemplate_workflowNodes = new List<ListWorkFlowTemplatesResponse.ListWorkFlowTemplates_WorkFlowTemplate.ListWorkFlowTemplates_WorkflowNode>();
 				for (int j = 0; j < _ctx.Length("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes.Length"); j++) {
 					ListWorkFlowTemplatesResponse.ListWorkFlowTemplates_WorkFlowTemplate.ListWorkFlowTemplates_WorkflowNode workflowNode = new ListWorkFlowTemplatesResponse.ListWorkFlowTemplates_WorkFlowTemplate.ListWorkFlowTemplates_WorkflowNode();
 					workflowNode.Comment = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].Comment");
-					workflowNode.Position = _ctx.IntegerValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].Position");
-					workflowNode.NodeName = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeName");
 					workflowNode.NodeType = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeType");
-					workflowNode.NodeId = _ctx.LongValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeId");
+					workflowNode.NodeName = _ctx.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeName");
+					workflowNode.Position = _ctx.IntegerValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].Position");
 					workflowNode.CreateUserId = _ctx.LongValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].CreateUserId");
 					workflowNode.TemplateId = _ctx.LongValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].TemplateId");
+					workflowNode.NodeId = _ctx.LongValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeId");
 
 					workFlowTemplate_workflowNodes.Add(workflowNode);
 				}

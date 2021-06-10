@@ -32,9 +32,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getStructSyncOrderDetailResponse.HttpResponse = _ctx.HttpResponse;
 			getStructSyncOrderDetailResponse.RequestId = _ctx.StringValue("GetStructSyncOrderDetail.RequestId");
-			getStructSyncOrderDetailResponse.ErrorCode = _ctx.StringValue("GetStructSyncOrderDetail.ErrorCode");
-			getStructSyncOrderDetailResponse.ErrorMessage = _ctx.StringValue("GetStructSyncOrderDetail.ErrorMessage");
 			getStructSyncOrderDetailResponse.Success = _ctx.BooleanValue("GetStructSyncOrderDetail.Success");
+			getStructSyncOrderDetailResponse.ErrorMessage = _ctx.StringValue("GetStructSyncOrderDetail.ErrorMessage");
+			getStructSyncOrderDetailResponse.ErrorCode = _ctx.StringValue("GetStructSyncOrderDetail.ErrorCode");
 
 			GetStructSyncOrderDetailResponse.GetStructSyncOrderDetail_StructSyncOrderDetail structSyncOrderDetail = new GetStructSyncOrderDetailResponse.GetStructSyncOrderDetail_StructSyncOrderDetail();
 			structSyncOrderDetail.SourceType = _ctx.StringValue("GetStructSyncOrderDetail.StructSyncOrderDetail.SourceType");
@@ -42,19 +42,19 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			structSyncOrderDetail.IgnoreError = _ctx.BooleanValue("GetStructSyncOrderDetail.StructSyncOrderDetail.IgnoreError");
 
 			GetStructSyncOrderDetailResponse.GetStructSyncOrderDetail_StructSyncOrderDetail.GetStructSyncOrderDetail_SourceDatabaseInfo sourceDatabaseInfo = new GetStructSyncOrderDetailResponse.GetStructSyncOrderDetail_StructSyncOrderDetail.GetStructSyncOrderDetail_SourceDatabaseInfo();
-			sourceDatabaseInfo.SearchName = _ctx.StringValue("GetStructSyncOrderDetail.StructSyncOrderDetail.SourceDatabaseInfo.SearchName");
 			sourceDatabaseInfo.DbId = _ctx.LongValue("GetStructSyncOrderDetail.StructSyncOrderDetail.SourceDatabaseInfo.DbId");
-			sourceDatabaseInfo.Logic = _ctx.BooleanValue("GetStructSyncOrderDetail.StructSyncOrderDetail.SourceDatabaseInfo.Logic");
-			sourceDatabaseInfo.EnvType = _ctx.StringValue("GetStructSyncOrderDetail.StructSyncOrderDetail.SourceDatabaseInfo.EnvType");
+			sourceDatabaseInfo.SearchName = _ctx.StringValue("GetStructSyncOrderDetail.StructSyncOrderDetail.SourceDatabaseInfo.SearchName");
 			sourceDatabaseInfo.DbType = _ctx.StringValue("GetStructSyncOrderDetail.StructSyncOrderDetail.SourceDatabaseInfo.DbType");
+			sourceDatabaseInfo.EnvType = _ctx.StringValue("GetStructSyncOrderDetail.StructSyncOrderDetail.SourceDatabaseInfo.EnvType");
+			sourceDatabaseInfo.Logic = _ctx.BooleanValue("GetStructSyncOrderDetail.StructSyncOrderDetail.SourceDatabaseInfo.Logic");
 			structSyncOrderDetail.SourceDatabaseInfo = sourceDatabaseInfo;
 
 			GetStructSyncOrderDetailResponse.GetStructSyncOrderDetail_StructSyncOrderDetail.GetStructSyncOrderDetail_TargetDatabaseInfo targetDatabaseInfo = new GetStructSyncOrderDetailResponse.GetStructSyncOrderDetail_StructSyncOrderDetail.GetStructSyncOrderDetail_TargetDatabaseInfo();
-			targetDatabaseInfo.SearchName = _ctx.StringValue("GetStructSyncOrderDetail.StructSyncOrderDetail.TargetDatabaseInfo.SearchName");
 			targetDatabaseInfo.DbId = _ctx.LongValue("GetStructSyncOrderDetail.StructSyncOrderDetail.TargetDatabaseInfo.DbId");
-			targetDatabaseInfo.Logic = _ctx.BooleanValue("GetStructSyncOrderDetail.StructSyncOrderDetail.TargetDatabaseInfo.Logic");
-			targetDatabaseInfo.EnvType = _ctx.StringValue("GetStructSyncOrderDetail.StructSyncOrderDetail.TargetDatabaseInfo.EnvType");
+			targetDatabaseInfo.SearchName = _ctx.StringValue("GetStructSyncOrderDetail.StructSyncOrderDetail.TargetDatabaseInfo.SearchName");
 			targetDatabaseInfo.DbType = _ctx.StringValue("GetStructSyncOrderDetail.StructSyncOrderDetail.TargetDatabaseInfo.DbType");
+			targetDatabaseInfo.EnvType = _ctx.StringValue("GetStructSyncOrderDetail.StructSyncOrderDetail.TargetDatabaseInfo.EnvType");
+			targetDatabaseInfo.Logic = _ctx.BooleanValue("GetStructSyncOrderDetail.StructSyncOrderDetail.TargetDatabaseInfo.Logic");
 			structSyncOrderDetail.TargetDatabaseInfo = targetDatabaseInfo;
 
 			GetStructSyncOrderDetailResponse.GetStructSyncOrderDetail_StructSyncOrderDetail.GetStructSyncOrderDetail_SourceVersionInfo sourceVersionInfo = new GetStructSyncOrderDetailResponse.GetStructSyncOrderDetail_StructSyncOrderDetail.GetStructSyncOrderDetail_SourceVersionInfo();

@@ -32,9 +32,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			createFreeLockCorrectOrderResponse.HttpResponse = _ctx.HttpResponse;
 			createFreeLockCorrectOrderResponse.RequestId = _ctx.StringValue("CreateFreeLockCorrectOrder.RequestId");
-			createFreeLockCorrectOrderResponse.ErrorCode = _ctx.StringValue("CreateFreeLockCorrectOrder.ErrorCode");
-			createFreeLockCorrectOrderResponse.ErrorMessage = _ctx.StringValue("CreateFreeLockCorrectOrder.ErrorMessage");
 			createFreeLockCorrectOrderResponse.Success = _ctx.BooleanValue("CreateFreeLockCorrectOrder.Success");
+			createFreeLockCorrectOrderResponse.ErrorMessage = _ctx.StringValue("CreateFreeLockCorrectOrder.ErrorMessage");
+			createFreeLockCorrectOrderResponse.ErrorCode = _ctx.StringValue("CreateFreeLockCorrectOrder.ErrorCode");
 
 			List<string> createFreeLockCorrectOrderResponse_createOrderResult = new List<string>();
 			for (int i = 0; i < _ctx.Length("CreateFreeLockCorrectOrder.CreateOrderResult.Length"); i++) {

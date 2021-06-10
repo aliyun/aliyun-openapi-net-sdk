@@ -32,9 +32,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			createDataCronClearOrderResponse.HttpResponse = _ctx.HttpResponse;
 			createDataCronClearOrderResponse.RequestId = _ctx.StringValue("CreateDataCronClearOrder.RequestId");
-			createDataCronClearOrderResponse.ErrorCode = _ctx.StringValue("CreateDataCronClearOrder.ErrorCode");
-			createDataCronClearOrderResponse.ErrorMessage = _ctx.StringValue("CreateDataCronClearOrder.ErrorMessage");
 			createDataCronClearOrderResponse.Success = _ctx.BooleanValue("CreateDataCronClearOrder.Success");
+			createDataCronClearOrderResponse.ErrorMessage = _ctx.StringValue("CreateDataCronClearOrder.ErrorMessage");
+			createDataCronClearOrderResponse.ErrorCode = _ctx.StringValue("CreateDataCronClearOrder.ErrorCode");
 
 			List<string> createDataCronClearOrderResponse_createOrderResult = new List<string>();
 			for (int i = 0; i < _ctx.Length("CreateDataCronClearOrder.CreateOrderResult.Length"); i++) {

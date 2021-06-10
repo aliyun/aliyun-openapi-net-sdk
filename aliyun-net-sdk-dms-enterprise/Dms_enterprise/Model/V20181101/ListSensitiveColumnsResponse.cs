@@ -118,30 +118,17 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ListSensitiveColumns_SensitiveColumn
 		{
 
-			private string tableName;
-
 			private string columnName;
 
-			private long? columnCount;
-
-			private string functionType;
+			private string tableName;
 
 			private string securityLevel;
 
+			private long? columnCount;
+
 			private string schemaName;
 
-			[JsonProperty(PropertyName = "TableName")]
-			public string TableName
-			{
-				get
-				{
-					return tableName;
-				}
-				set	
-				{
-					tableName = value;
-				}
-			}
+			private string functionType;
 
 			[JsonProperty(PropertyName = "ColumnName")]
 			public string ColumnName
@@ -156,29 +143,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "ColumnCount")]
-			public long? ColumnCount
+			[JsonProperty(PropertyName = "TableName")]
+			public string TableName
 			{
 				get
 				{
-					return columnCount;
+					return tableName;
 				}
 				set	
 				{
-					columnCount = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "FunctionType")]
-			public string FunctionType
-			{
-				get
-				{
-					return functionType;
-				}
-				set	
-				{
-					functionType = value;
+					tableName = value;
 				}
 			}
 
@@ -195,6 +169,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "ColumnCount")]
+			public long? ColumnCount
+			{
+				get
+				{
+					return columnCount;
+				}
+				set	
+				{
+					columnCount = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "SchemaName")]
 			public string SchemaName
 			{
@@ -205,6 +192,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					schemaName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "FunctionType")]
+			public string FunctionType
+			{
+				get
+				{
+					return functionType;
+				}
+				set	
+				{
+					functionType = value;
 				}
 			}
 		}

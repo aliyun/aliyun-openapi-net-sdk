@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			CreateUploadOSSFileJobResponse createUploadOSSFileJobResponse = new CreateUploadOSSFileJobResponse();
 
 			createUploadOSSFileJobResponse.HttpResponse = _ctx.HttpResponse;
-			createUploadOSSFileJobResponse.JobKey = _ctx.StringValue("CreateUploadOSSFileJob.JobKey");
 			createUploadOSSFileJobResponse.RequestId = _ctx.StringValue("CreateUploadOSSFileJob.RequestId");
-			createUploadOSSFileJobResponse.ErrorCode = _ctx.StringValue("CreateUploadOSSFileJob.ErrorCode");
-			createUploadOSSFileJobResponse.ErrorMessage = _ctx.StringValue("CreateUploadOSSFileJob.ErrorMessage");
 			createUploadOSSFileJobResponse.Success = _ctx.BooleanValue("CreateUploadOSSFileJob.Success");
+			createUploadOSSFileJobResponse.ErrorMessage = _ctx.StringValue("CreateUploadOSSFileJob.ErrorMessage");
+			createUploadOSSFileJobResponse.ErrorCode = _ctx.StringValue("CreateUploadOSSFileJob.ErrorCode");
+			createUploadOSSFileJobResponse.JobKey = _ctx.StringValue("CreateUploadOSSFileJob.JobKey");
         
 			return createUploadOSSFileJobResponse;
         }

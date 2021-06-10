@@ -27,11 +27,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private string errorCode;
+		private bool? success;
 
 		private string errorMessage;
 
-		private bool? success;
+		private string errorCode;
 
 		private GetTableTopology_TableTopology tableTopology;
 
@@ -48,16 +48,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "ErrorCode")]
-		public string ErrorCode
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
 			get
 			{
-				return errorCode;
+				return success;
 			}
 			set	
 			{
-				errorCode = value;
+				success = value;
 			}
 		}
 
@@ -74,16 +74,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Success")]
-		public bool? Success
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
 		{
 			get
 			{
-				return success;
+				return errorCode;
 			}
 			set	
 			{
-				success = value;
+				errorCode = value;
 			}
 		}
 
@@ -103,26 +103,13 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class GetTableTopology_TableTopology
 		{
 
-			private string tableName;
-
 			private string tableGuid;
+
+			private string tableName;
 
 			private bool? logic;
 
 			private List<GetTableTopology_TableTopologyInfo> tableTopologyInfoList;
-
-			[JsonProperty(PropertyName = "TableName")]
-			public string TableName
-			{
-				get
-				{
-					return tableName;
-				}
-				set	
-				{
-					tableName = value;
-				}
-			}
 
 			[JsonProperty(PropertyName = "TableGuid")]
 			public string TableGuid
@@ -134,6 +121,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					tableGuid = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TableName")]
+			public string TableName
+			{
+				get
+				{
+					return tableName;
+				}
+				set	
+				{
+					tableName = value;
 				}
 			}
 
@@ -166,92 +166,27 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			public class GetTableTopology_TableTopologyInfo
 			{
 
-				private string tableNameExpr;
-
-				private string dbSearchName;
-
-				private string instanceSource;
-
-				private string instanceResourceId;
-
-				private long? instanceId;
-
 				private string tableNameList;
+
+				private string tableNameExpr;
 
 				private long? tableCount;
 
 				private long? dbId;
 
-				private string dbName;
+				private string dbSearchName;
+
+				private long? instanceId;
 
 				private string regionId;
 
+				private string instanceResourceId;
+
+				private string instanceSource;
+
+				private string dbName;
+
 				private string dbType;
-
-				[JsonProperty(PropertyName = "TableNameExpr")]
-				public string TableNameExpr
-				{
-					get
-					{
-						return tableNameExpr;
-					}
-					set	
-					{
-						tableNameExpr = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "DbSearchName")]
-				public string DbSearchName
-				{
-					get
-					{
-						return dbSearchName;
-					}
-					set	
-					{
-						dbSearchName = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "InstanceSource")]
-				public string InstanceSource
-				{
-					get
-					{
-						return instanceSource;
-					}
-					set	
-					{
-						instanceSource = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "InstanceResourceId")]
-				public string InstanceResourceId
-				{
-					get
-					{
-						return instanceResourceId;
-					}
-					set	
-					{
-						instanceResourceId = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "InstanceId")]
-				public long? InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
 
 				[JsonProperty(PropertyName = "TableNameList")]
 				public string TableNameList
@@ -263,6 +198,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					set	
 					{
 						tableNameList = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "TableNameExpr")]
+				public string TableNameExpr
+				{
+					get
+					{
+						return tableNameExpr;
+					}
+					set	
+					{
+						tableNameExpr = value;
 					}
 				}
 
@@ -292,16 +240,29 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
-				[JsonProperty(PropertyName = "DbName")]
-				public string DbName
+				[JsonProperty(PropertyName = "DbSearchName")]
+				public string DbSearchName
 				{
 					get
 					{
-						return dbName;
+						return dbSearchName;
 					}
 					set	
 					{
-						dbName = value;
+						dbSearchName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "InstanceId")]
+				public long? InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
 					}
 				}
 
@@ -315,6 +276,45 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					set	
 					{
 						regionId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "InstanceResourceId")]
+				public string InstanceResourceId
+				{
+					get
+					{
+						return instanceResourceId;
+					}
+					set	
+					{
+						instanceResourceId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "InstanceSource")]
+				public string InstanceSource
+				{
+					get
+					{
+						return instanceSource;
+					}
+					set	
+					{
+						instanceSource = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "DbName")]
+				public string DbName
+				{
+					get
+					{
+						return dbName;
+					}
+					set	
+					{
+						dbName = value;
 					}
 				}
 

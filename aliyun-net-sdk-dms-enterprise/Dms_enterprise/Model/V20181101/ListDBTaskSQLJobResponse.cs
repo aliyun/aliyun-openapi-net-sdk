@@ -25,30 +25,17 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 	public class ListDBTaskSQLJobResponse : AcsResponse
 	{
 
-		private long? totalCount;
-
 		private string requestId;
-
-		private string errorCode;
-
-		private string errorMessage;
 
 		private bool? success;
 
-		private List<ListDBTaskSQLJob_DBTaskSQLJob> dBTaskSQLJobList;
+		private string errorMessage;
 
-		[JsonProperty(PropertyName = "TotalCount")]
-		public long? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+		private string errorCode;
+
+		private long? totalCount;
+
+		private List<ListDBTaskSQLJob_DBTaskSQLJob> dBTaskSQLJobList;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -63,16 +50,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "ErrorCode")]
-		public string ErrorCode
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
 			get
 			{
-				return errorCode;
+				return success;
 			}
 			set	
 			{
-				errorCode = value;
+				success = value;
 			}
 		}
 
@@ -89,16 +76,29 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Success")]
-		public bool? Success
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
 		{
 			get
 			{
-				return success;
+				return errorCode;
 			}
 			set	
 			{
-				success = value;
+				errorCode = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalCount")]
+		public long? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
 			}
 		}
 
@@ -118,77 +118,38 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ListDBTaskSQLJob_DBTaskSQLJob
 		{
 
-			private string status;
-
-			private string comment;
-
-			private string lastExecTime;
-
-			private string dbSearchName;
+			private long? jobId;
 
 			private string jobType;
 
-			private string createTime;
+			private string comment;
 
-			private long? dbTaskGroupId;
+			private string dbSearchName;
 
 			private long? dbId;
 
 			private bool? logic;
 
-			private long? jobId;
+			private string createTime;
+
+			private string lastExecTime;
+
+			private long? dbTaskGroupId;
+
+			private string status;
 
 			private bool? transactional;
 
-			[JsonProperty(PropertyName = "Status")]
-			public string Status
+			[JsonProperty(PropertyName = "JobId")]
+			public long? JobId
 			{
 				get
 				{
-					return status;
+					return jobId;
 				}
 				set	
 				{
-					status = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Comment")]
-			public string Comment
-			{
-				get
-				{
-					return comment;
-				}
-				set	
-				{
-					comment = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "LastExecTime")]
-			public string LastExecTime
-			{
-				get
-				{
-					return lastExecTime;
-				}
-				set	
-				{
-					lastExecTime = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "DbSearchName")]
-			public string DbSearchName
-			{
-				get
-				{
-					return dbSearchName;
-				}
-				set	
-				{
-					dbSearchName = value;
+					jobId = value;
 				}
 			}
 
@@ -205,29 +166,29 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "CreateTime")]
-			public string CreateTime
+			[JsonProperty(PropertyName = "Comment")]
+			public string Comment
 			{
 				get
 				{
-					return createTime;
+					return comment;
 				}
 				set	
 				{
-					createTime = value;
+					comment = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "DbTaskGroupId")]
-			public long? DbTaskGroupId
+			[JsonProperty(PropertyName = "DbSearchName")]
+			public string DbSearchName
 			{
 				get
 				{
-					return dbTaskGroupId;
+					return dbSearchName;
 				}
 				set	
 				{
-					dbTaskGroupId = value;
+					dbSearchName = value;
 				}
 			}
 
@@ -257,16 +218,55 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "JobId")]
-			public long? JobId
+			[JsonProperty(PropertyName = "CreateTime")]
+			public string CreateTime
 			{
 				get
 				{
-					return jobId;
+					return createTime;
 				}
 				set	
 				{
-					jobId = value;
+					createTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LastExecTime")]
+			public string LastExecTime
+			{
+				get
+				{
+					return lastExecTime;
+				}
+				set	
+				{
+					lastExecTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DbTaskGroupId")]
+			public long? DbTaskGroupId
+			{
+				get
+				{
+					return dbTaskGroupId;
+				}
+				set	
+				{
+					dbTaskGroupId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Status")]
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 

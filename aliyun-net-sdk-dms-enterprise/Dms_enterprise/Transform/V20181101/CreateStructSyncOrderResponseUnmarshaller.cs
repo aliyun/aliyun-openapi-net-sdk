@@ -32,9 +32,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			createStructSyncOrderResponse.HttpResponse = _ctx.HttpResponse;
 			createStructSyncOrderResponse.RequestId = _ctx.StringValue("CreateStructSyncOrder.RequestId");
-			createStructSyncOrderResponse.ErrorCode = _ctx.StringValue("CreateStructSyncOrder.ErrorCode");
-			createStructSyncOrderResponse.ErrorMessage = _ctx.StringValue("CreateStructSyncOrder.ErrorMessage");
 			createStructSyncOrderResponse.Success = _ctx.BooleanValue("CreateStructSyncOrder.Success");
+			createStructSyncOrderResponse.ErrorMessage = _ctx.StringValue("CreateStructSyncOrder.ErrorMessage");
+			createStructSyncOrderResponse.ErrorCode = _ctx.StringValue("CreateStructSyncOrder.ErrorCode");
 
 			List<string> createStructSyncOrderResponse_createOrderResult = new List<string>();
 			for (int i = 0; i < _ctx.Length("CreateStructSyncOrder.CreateOrderResult.Length"); i++) {

@@ -31,24 +31,24 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			ListDBTaskSQLJobDetailResponse listDBTaskSQLJobDetailResponse = new ListDBTaskSQLJobDetailResponse();
 
 			listDBTaskSQLJobDetailResponse.HttpResponse = _ctx.HttpResponse;
-			listDBTaskSQLJobDetailResponse.TotalCount = _ctx.LongValue("ListDBTaskSQLJobDetail.TotalCount");
 			listDBTaskSQLJobDetailResponse.RequestId = _ctx.StringValue("ListDBTaskSQLJobDetail.RequestId");
-			listDBTaskSQLJobDetailResponse.ErrorCode = _ctx.StringValue("ListDBTaskSQLJobDetail.ErrorCode");
-			listDBTaskSQLJobDetailResponse.ErrorMessage = _ctx.StringValue("ListDBTaskSQLJobDetail.ErrorMessage");
 			listDBTaskSQLJobDetailResponse.Success = _ctx.BooleanValue("ListDBTaskSQLJobDetail.Success");
+			listDBTaskSQLJobDetailResponse.ErrorMessage = _ctx.StringValue("ListDBTaskSQLJobDetail.ErrorMessage");
+			listDBTaskSQLJobDetailResponse.ErrorCode = _ctx.StringValue("ListDBTaskSQLJobDetail.ErrorCode");
+			listDBTaskSQLJobDetailResponse.TotalCount = _ctx.LongValue("ListDBTaskSQLJobDetail.TotalCount");
 
 			List<ListDBTaskSQLJobDetailResponse.ListDBTaskSQLJobDetail_DBTaskSQLJobDetail> listDBTaskSQLJobDetailResponse_dBTaskSQLJobDetailList = new List<ListDBTaskSQLJobDetailResponse.ListDBTaskSQLJobDetail_DBTaskSQLJobDetail>();
 			for (int i = 0; i < _ctx.Length("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList.Length"); i++) {
 				ListDBTaskSQLJobDetailResponse.ListDBTaskSQLJobDetail_DBTaskSQLJobDetail dBTaskSQLJobDetail = new ListDBTaskSQLJobDetailResponse.ListDBTaskSQLJobDetail_DBTaskSQLJobDetail();
-				dBTaskSQLJobDetail.Status = _ctx.StringValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].Status");
-				dBTaskSQLJobDetail.Skip = _ctx.BooleanValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].Skip");
-				dBTaskSQLJobDetail.DbId = _ctx.LongValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].DbId");
-				dBTaskSQLJobDetail.SqlType = _ctx.StringValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].SqlType");
-				dBTaskSQLJobDetail.ExecuteCount = _ctx.LongValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].ExecuteCount");
-				dBTaskSQLJobDetail.Logic = _ctx.BooleanValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].Logic");
-				dBTaskSQLJobDetail.CurrentSql = _ctx.StringValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].CurrentSql");
 				dBTaskSQLJobDetail.JobDetailId = _ctx.LongValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].JobDetailId");
+				dBTaskSQLJobDetail.CurrentSql = _ctx.StringValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].CurrentSql");
+				dBTaskSQLJobDetail.ExecuteCount = _ctx.LongValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].ExecuteCount");
 				dBTaskSQLJobDetail.JobId = _ctx.LongValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].JobId");
+				dBTaskSQLJobDetail.DbId = _ctx.LongValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].DbId");
+				dBTaskSQLJobDetail.Logic = _ctx.BooleanValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].Logic");
+				dBTaskSQLJobDetail.Skip = _ctx.BooleanValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].Skip");
+				dBTaskSQLJobDetail.SqlType = _ctx.StringValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].SqlType");
+				dBTaskSQLJobDetail.Status = _ctx.StringValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].Status");
 
 				listDBTaskSQLJobDetailResponse_dBTaskSQLJobDetailList.Add(dBTaskSQLJobDetail);
 			}

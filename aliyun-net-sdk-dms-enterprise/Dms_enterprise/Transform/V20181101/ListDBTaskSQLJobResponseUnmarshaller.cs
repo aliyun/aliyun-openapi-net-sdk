@@ -31,25 +31,25 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			ListDBTaskSQLJobResponse listDBTaskSQLJobResponse = new ListDBTaskSQLJobResponse();
 
 			listDBTaskSQLJobResponse.HttpResponse = _ctx.HttpResponse;
-			listDBTaskSQLJobResponse.TotalCount = _ctx.LongValue("ListDBTaskSQLJob.TotalCount");
 			listDBTaskSQLJobResponse.RequestId = _ctx.StringValue("ListDBTaskSQLJob.RequestId");
-			listDBTaskSQLJobResponse.ErrorCode = _ctx.StringValue("ListDBTaskSQLJob.ErrorCode");
-			listDBTaskSQLJobResponse.ErrorMessage = _ctx.StringValue("ListDBTaskSQLJob.ErrorMessage");
 			listDBTaskSQLJobResponse.Success = _ctx.BooleanValue("ListDBTaskSQLJob.Success");
+			listDBTaskSQLJobResponse.ErrorMessage = _ctx.StringValue("ListDBTaskSQLJob.ErrorMessage");
+			listDBTaskSQLJobResponse.ErrorCode = _ctx.StringValue("ListDBTaskSQLJob.ErrorCode");
+			listDBTaskSQLJobResponse.TotalCount = _ctx.LongValue("ListDBTaskSQLJob.TotalCount");
 
 			List<ListDBTaskSQLJobResponse.ListDBTaskSQLJob_DBTaskSQLJob> listDBTaskSQLJobResponse_dBTaskSQLJobList = new List<ListDBTaskSQLJobResponse.ListDBTaskSQLJob_DBTaskSQLJob>();
 			for (int i = 0; i < _ctx.Length("ListDBTaskSQLJob.DBTaskSQLJobList.Length"); i++) {
 				ListDBTaskSQLJobResponse.ListDBTaskSQLJob_DBTaskSQLJob dBTaskSQLJob = new ListDBTaskSQLJobResponse.ListDBTaskSQLJob_DBTaskSQLJob();
-				dBTaskSQLJob.Status = _ctx.StringValue("ListDBTaskSQLJob.DBTaskSQLJobList["+ i +"].Status");
-				dBTaskSQLJob.Comment = _ctx.StringValue("ListDBTaskSQLJob.DBTaskSQLJobList["+ i +"].Comment");
-				dBTaskSQLJob.LastExecTime = _ctx.StringValue("ListDBTaskSQLJob.DBTaskSQLJobList["+ i +"].LastExecTime");
-				dBTaskSQLJob.DbSearchName = _ctx.StringValue("ListDBTaskSQLJob.DBTaskSQLJobList["+ i +"].DbSearchName");
+				dBTaskSQLJob.JobId = _ctx.LongValue("ListDBTaskSQLJob.DBTaskSQLJobList["+ i +"].JobId");
 				dBTaskSQLJob.JobType = _ctx.StringValue("ListDBTaskSQLJob.DBTaskSQLJobList["+ i +"].JobType");
-				dBTaskSQLJob.CreateTime = _ctx.StringValue("ListDBTaskSQLJob.DBTaskSQLJobList["+ i +"].CreateTime");
-				dBTaskSQLJob.DbTaskGroupId = _ctx.LongValue("ListDBTaskSQLJob.DBTaskSQLJobList["+ i +"].DbTaskGroupId");
+				dBTaskSQLJob.Comment = _ctx.StringValue("ListDBTaskSQLJob.DBTaskSQLJobList["+ i +"].Comment");
+				dBTaskSQLJob.DbSearchName = _ctx.StringValue("ListDBTaskSQLJob.DBTaskSQLJobList["+ i +"].DbSearchName");
 				dBTaskSQLJob.DbId = _ctx.LongValue("ListDBTaskSQLJob.DBTaskSQLJobList["+ i +"].DbId");
 				dBTaskSQLJob.Logic = _ctx.BooleanValue("ListDBTaskSQLJob.DBTaskSQLJobList["+ i +"].Logic");
-				dBTaskSQLJob.JobId = _ctx.LongValue("ListDBTaskSQLJob.DBTaskSQLJobList["+ i +"].JobId");
+				dBTaskSQLJob.CreateTime = _ctx.StringValue("ListDBTaskSQLJob.DBTaskSQLJobList["+ i +"].CreateTime");
+				dBTaskSQLJob.LastExecTime = _ctx.StringValue("ListDBTaskSQLJob.DBTaskSQLJobList["+ i +"].LastExecTime");
+				dBTaskSQLJob.DbTaskGroupId = _ctx.LongValue("ListDBTaskSQLJob.DBTaskSQLJobList["+ i +"].DbTaskGroupId");
+				dBTaskSQLJob.Status = _ctx.StringValue("ListDBTaskSQLJob.DBTaskSQLJobList["+ i +"].Status");
 				dBTaskSQLJob.Transactional = _ctx.BooleanValue("ListDBTaskSQLJob.DBTaskSQLJobList["+ i +"].Transactional");
 
 				listDBTaskSQLJobResponse_dBTaskSQLJobList.Add(dBTaskSQLJob);

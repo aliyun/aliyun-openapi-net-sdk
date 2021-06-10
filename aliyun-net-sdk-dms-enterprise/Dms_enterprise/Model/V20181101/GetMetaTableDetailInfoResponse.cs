@@ -103,22 +103,9 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class GetMetaTableDetailInfo_DetailInfo
 		{
 
-			private List<GetMetaTableDetailInfo_Column> columnList;
-
 			private List<GetMetaTableDetailInfo_Index> indexList;
 
-			[JsonProperty(PropertyName = "ColumnList")]
-			public List<GetMetaTableDetailInfo_Column> ColumnList
-			{
-				get
-				{
-					return columnList;
-				}
-				set	
-				{
-					columnList = value;
-				}
-			}
+			private List<GetMetaTableDetailInfo_Column> columnList;
 
 			[JsonProperty(PropertyName = "IndexList")]
 			public List<GetMetaTableDetailInfo_Index> IndexList
@@ -133,157 +120,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public class GetMetaTableDetailInfo_Column
+			[JsonProperty(PropertyName = "ColumnList")]
+			public List<GetMetaTableDetailInfo_Column> ColumnList
 			{
-
-				private string columnId;
-
-				private string columnName;
-
-				private string columnType;
-
-				private string description;
-
-				private string position;
-
-				private bool? autoIncrement;
-
-				private long? dataLength;
-
-				private int? dataScale;
-
-				private int? dataPrecision;
-
-				private bool? nullable;
-
-				[JsonProperty(PropertyName = "ColumnId")]
-				public string ColumnId
+				get
 				{
-					get
-					{
-						return columnId;
-					}
-					set	
-					{
-						columnId = value;
-					}
+					return columnList;
 				}
-
-				[JsonProperty(PropertyName = "ColumnName")]
-				public string ColumnName
+				set	
 				{
-					get
-					{
-						return columnName;
-					}
-					set	
-					{
-						columnName = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "ColumnType")]
-				public string ColumnType
-				{
-					get
-					{
-						return columnType;
-					}
-					set	
-					{
-						columnType = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "Description")]
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "Position")]
-				public string Position
-				{
-					get
-					{
-						return position;
-					}
-					set	
-					{
-						position = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "AutoIncrement")]
-				public bool? AutoIncrement
-				{
-					get
-					{
-						return autoIncrement;
-					}
-					set	
-					{
-						autoIncrement = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "DataLength")]
-				public long? DataLength
-				{
-					get
-					{
-						return dataLength;
-					}
-					set	
-					{
-						dataLength = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "DataScale")]
-				public int? DataScale
-				{
-					get
-					{
-						return dataScale;
-					}
-					set	
-					{
-						dataScale = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "DataPrecision")]
-				public int? DataPrecision
-				{
-					get
-					{
-						return dataPrecision;
-					}
-					set	
-					{
-						dataPrecision = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "Nullable")]
-				public bool? Nullable
-				{
-					get
-					{
-						return nullable;
-					}
-					set	
-					{
-						nullable = value;
-					}
+					columnList = value;
 				}
 			}
 
@@ -292,11 +138,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 				private string indexName;
 
-				private string indexId;
-
 				private bool? unique;
 
 				private string indexType;
+
+				private string indexId;
 
 				private List<string> indexColumns;
 
@@ -310,19 +156,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					set	
 					{
 						indexName = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "IndexId")]
-				public string IndexId
-				{
-					get
-					{
-						return indexId;
-					}
-					set	
-					{
-						indexId = value;
 					}
 				}
 
@@ -352,6 +185,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
+				[JsonProperty(PropertyName = "IndexId")]
+				public string IndexId
+				{
+					get
+					{
+						return indexId;
+					}
+					set	
+					{
+						indexId = value;
+					}
+				}
+
 				[JsonProperty(PropertyName = "IndexColumns")]
 				public List<string> IndexColumns
 				{
@@ -362,6 +208,160 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					set	
 					{
 						indexColumns = value;
+					}
+				}
+			}
+
+			public class GetMetaTableDetailInfo_Column
+			{
+
+				private string columnName;
+
+				private string description;
+
+				private int? dataScale;
+
+				private int? dataPrecision;
+
+				private string columnType;
+
+				private bool? autoIncrement;
+
+				private string position;
+
+				private bool? nullable;
+
+				private string columnId;
+
+				private long? dataLength;
+
+				[JsonProperty(PropertyName = "ColumnName")]
+				public string ColumnName
+				{
+					get
+					{
+						return columnName;
+					}
+					set	
+					{
+						columnName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Description")]
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "DataScale")]
+				public int? DataScale
+				{
+					get
+					{
+						return dataScale;
+					}
+					set	
+					{
+						dataScale = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "DataPrecision")]
+				public int? DataPrecision
+				{
+					get
+					{
+						return dataPrecision;
+					}
+					set	
+					{
+						dataPrecision = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ColumnType")]
+				public string ColumnType
+				{
+					get
+					{
+						return columnType;
+					}
+					set	
+					{
+						columnType = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "AutoIncrement")]
+				public bool? AutoIncrement
+				{
+					get
+					{
+						return autoIncrement;
+					}
+					set	
+					{
+						autoIncrement = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Position")]
+				public string Position
+				{
+					get
+					{
+						return position;
+					}
+					set	
+					{
+						position = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Nullable")]
+				public bool? Nullable
+				{
+					get
+					{
+						return nullable;
+					}
+					set	
+					{
+						nullable = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ColumnId")]
+				public string ColumnId
+				{
+					get
+					{
+						return columnId;
+					}
+					set	
+					{
+						columnId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "DataLength")]
+				public long? DataLength
+				{
+					get
+					{
+						return dataLength;
+					}
+					set	
+					{
+						dataLength = value;
 					}
 				}
 			}

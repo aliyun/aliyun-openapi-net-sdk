@@ -27,11 +27,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private string errorCode;
+		private bool? success;
 
 		private string errorMessage;
 
-		private bool? success;
+		private string errorCode;
 
 		private GetUserUploadFileJob_UploadFileJobDetail uploadFileJobDetail;
 
@@ -48,16 +48,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "ErrorCode")]
-		public string ErrorCode
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
 			get
 			{
-				return errorCode;
+				return success;
 			}
 			set	
 			{
-				errorCode = value;
+				success = value;
 			}
 		}
 
@@ -74,16 +74,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Success")]
-		public bool? Success
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
 		{
 			get
 			{
-				return success;
+				return errorCode;
 			}
 			set	
 			{
-				success = value;
+				errorCode = value;
 			}
 		}
 
@@ -103,53 +103,27 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class GetUserUploadFileJob_UploadFileJobDetail
 		{
 
-			private string jobStatus;
-
-			private string attachmentKey;
-
 			private string jobKey;
+
+			private string fileName;
+
+			private long? fileSize;
+
+			private string fileSource;
+
+			private string uploadType;
 
 			private string uploadURL;
 
 			private long? uploadedSize;
 
+			private string jobStatus;
+
 			private string jobStatusDesc;
 
-			private string fileSource;
-
-			private string fileName;
-
-			private string uploadType;
-
-			private long? fileSize;
+			private string attachmentKey;
 
 			private GetUserUploadFileJob_UploadOSSParam uploadOSSParam;
-
-			[JsonProperty(PropertyName = "JobStatus")]
-			public string JobStatus
-			{
-				get
-				{
-					return jobStatus;
-				}
-				set	
-				{
-					jobStatus = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "AttachmentKey")]
-			public string AttachmentKey
-			{
-				get
-				{
-					return attachmentKey;
-				}
-				set	
-				{
-					attachmentKey = value;
-				}
-			}
 
 			[JsonProperty(PropertyName = "JobKey")]
 			public string JobKey
@@ -161,6 +135,58 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					jobKey = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "FileName")]
+			public string FileName
+			{
+				get
+				{
+					return fileName;
+				}
+				set	
+				{
+					fileName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "FileSize")]
+			public long? FileSize
+			{
+				get
+				{
+					return fileSize;
+				}
+				set	
+				{
+					fileSize = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "FileSource")]
+			public string FileSource
+			{
+				get
+				{
+					return fileSource;
+				}
+				set	
+				{
+					fileSource = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UploadType")]
+			public string UploadType
+			{
+				get
+				{
+					return uploadType;
+				}
+				set	
+				{
+					uploadType = value;
 				}
 			}
 
@@ -190,6 +216,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "JobStatus")]
+			public string JobStatus
+			{
+				get
+				{
+					return jobStatus;
+				}
+				set	
+				{
+					jobStatus = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "JobStatusDesc")]
 			public string JobStatusDesc
 			{
@@ -203,55 +242,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "FileSource")]
-			public string FileSource
+			[JsonProperty(PropertyName = "AttachmentKey")]
+			public string AttachmentKey
 			{
 				get
 				{
-					return fileSource;
+					return attachmentKey;
 				}
 				set	
 				{
-					fileSource = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "FileName")]
-			public string FileName
-			{
-				get
-				{
-					return fileName;
-				}
-				set	
-				{
-					fileName = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "UploadType")]
-			public string UploadType
-			{
-				get
-				{
-					return uploadType;
-				}
-				set	
-				{
-					uploadType = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "FileSize")]
-			public long? FileSize
-			{
-				get
-				{
-					return fileSize;
-				}
-				set	
-				{
-					fileSize = value;
+					attachmentKey = value;
 				}
 			}
 
@@ -271,24 +271,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			public class GetUserUploadFileJob_UploadOSSParam
 			{
 
-				private string bucketName;
-
 				private string endpoint;
 
-				private string objectName;
+				private string bucketName;
 
-				[JsonProperty(PropertyName = "BucketName")]
-				public string BucketName
-				{
-					get
-					{
-						return bucketName;
-					}
-					set	
-					{
-						bucketName = value;
-					}
-				}
+				private string objectName;
 
 				[JsonProperty(PropertyName = "Endpoint")]
 				public string Endpoint
@@ -300,6 +287,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					set	
 					{
 						endpoint = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "BucketName")]
+				public string BucketName
+				{
+					get
+					{
+						return bucketName;
+					}
+					set	
+					{
+						bucketName = value;
 					}
 				}
 

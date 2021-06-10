@@ -39,18 +39,18 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			List<GetMetaTableColumnResponse.GetMetaTableColumn_Column> getMetaTableColumnResponse_columnList = new List<GetMetaTableColumnResponse.GetMetaTableColumn_Column>();
 			for (int i = 0; i < _ctx.Length("GetMetaTableColumn.ColumnList.Length"); i++) {
 				GetMetaTableColumnResponse.GetMetaTableColumn_Column column = new GetMetaTableColumnResponse.GetMetaTableColumn_Column();
+				column.ColumnType = _ctx.StringValue("GetMetaTableColumn.ColumnList["+ i +"].ColumnType");
+				column.AutoIncrement = _ctx.BooleanValue("GetMetaTableColumn.ColumnList["+ i +"].AutoIncrement");
 				column.ColumnId = _ctx.StringValue("GetMetaTableColumn.ColumnList["+ i +"].ColumnId");
 				column.ColumnName = _ctx.StringValue("GetMetaTableColumn.ColumnList["+ i +"].ColumnName");
-				column.Description = _ctx.StringValue("GetMetaTableColumn.ColumnList["+ i +"].Description");
-				column.ColumnType = _ctx.StringValue("GetMetaTableColumn.ColumnList["+ i +"].ColumnType");
-				column.Position = _ctx.IntegerValue("GetMetaTableColumn.ColumnList["+ i +"].Position");
-				column.AutoIncrement = _ctx.BooleanValue("GetMetaTableColumn.ColumnList["+ i +"].AutoIncrement");
 				column.SecurityLevel = _ctx.StringValue("GetMetaTableColumn.ColumnList["+ i +"].SecurityLevel");
-				column.DataLength = _ctx.LongValue("GetMetaTableColumn.ColumnList["+ i +"].DataLength");
-				column.DataScale = _ctx.IntegerValue("GetMetaTableColumn.ColumnList["+ i +"].DataScale");
-				column.DataPrecision = _ctx.IntegerValue("GetMetaTableColumn.ColumnList["+ i +"].DataPrecision");
 				column.PrimaryKey = _ctx.StringValue("GetMetaTableColumn.ColumnList["+ i +"].PrimaryKey");
+				column.Description = _ctx.StringValue("GetMetaTableColumn.ColumnList["+ i +"].Description");
+				column.DataPrecision = _ctx.IntegerValue("GetMetaTableColumn.ColumnList["+ i +"].DataPrecision");
+				column.DataScale = _ctx.IntegerValue("GetMetaTableColumn.ColumnList["+ i +"].DataScale");
+				column.Position = _ctx.IntegerValue("GetMetaTableColumn.ColumnList["+ i +"].Position");
 				column.Nullable = _ctx.BooleanValue("GetMetaTableColumn.ColumnList["+ i +"].Nullable");
+				column.DataLength = _ctx.LongValue("GetMetaTableColumn.ColumnList["+ i +"].DataLength");
 
 				getMetaTableColumnResponse_columnList.Add(column);
 			}

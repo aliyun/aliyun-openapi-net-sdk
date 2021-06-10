@@ -40,8 +40,8 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			for (int i = 0; i < _ctx.Length("ListUserTenants.TenantList.Length"); i++) {
 				ListUserTenantsResponse.ListUserTenants_Tenant tenant = new ListUserTenantsResponse.ListUserTenants_Tenant();
 				tenant.Status = _ctx.StringValue("ListUserTenants.TenantList["+ i +"].Status");
-				tenant.TenantName = _ctx.StringValue("ListUserTenants.TenantList["+ i +"].TenantName");
 				tenant.Tid = _ctx.LongValue("ListUserTenants.TenantList["+ i +"].Tid");
+				tenant.TenantName = _ctx.StringValue("ListUserTenants.TenantList["+ i +"].TenantName");
 
 				listUserTenantsResponse_tenantList.Add(tenant);
 			}

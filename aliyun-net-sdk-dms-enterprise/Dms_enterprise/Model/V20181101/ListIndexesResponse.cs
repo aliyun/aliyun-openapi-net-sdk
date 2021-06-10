@@ -103,28 +103,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ListIndexes_Index
 		{
 
-			private string tableId;
-
 			private string indexName;
+
+			private string indexType;
+
+			private string tableId;
 
 			private string indexId;
 
 			private string indexComment;
-
-			private string indexType;
-
-			[JsonProperty(PropertyName = "TableId")]
-			public string TableId
-			{
-				get
-				{
-					return tableId;
-				}
-				set	
-				{
-					tableId = value;
-				}
-			}
 
 			[JsonProperty(PropertyName = "IndexName")]
 			public string IndexName
@@ -136,6 +123,32 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					indexName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IndexType")]
+			public string IndexType
+			{
+				get
+				{
+					return indexType;
+				}
+				set	
+				{
+					indexType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TableId")]
+			public string TableId
+			{
+				get
+				{
+					return tableId;
+				}
+				set	
+				{
+					tableId = value;
 				}
 			}
 
@@ -162,19 +175,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					indexComment = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "IndexType")]
-			public string IndexType
-			{
-				get
-				{
-					return indexType;
-				}
-				set	
-				{
-					indexType = value;
 				}
 			}
 		}

@@ -27,11 +27,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private string errorCode;
+		private bool? success;
 
 		private string errorMessage;
 
-		private bool? success;
+		private string errorCode;
 
 		private GetPermApplyOrderDetail_PermApplyOrderDetail permApplyOrderDetail;
 
@@ -48,16 +48,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "ErrorCode")]
-		public string ErrorCode
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
 			get
 			{
-				return errorCode;
+				return success;
 			}
 			set	
 			{
-				errorCode = value;
+				success = value;
 			}
 		}
 
@@ -74,16 +74,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Success")]
-		public bool? Success
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
 		{
 			get
 			{
-				return success;
+				return errorCode;
 			}
 			set	
 			{
-				success = value;
+				errorCode = value;
 			}
 		}
 
@@ -103,26 +103,13 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class GetPermApplyOrderDetail_PermApplyOrderDetail
 		{
 
-			private string applyType;
-
 			private long? permType;
 
 			private long? seconds;
 
-			private List<GetPermApplyOrderDetail_Resource> resources;
+			private string applyType;
 
-			[JsonProperty(PropertyName = "ApplyType")]
-			public string ApplyType
-			{
-				get
-				{
-					return applyType;
-				}
-				set	
-				{
-					applyType = value;
-				}
-			}
+			private List<GetPermApplyOrderDetail_Resource> resources;
 
 			[JsonProperty(PropertyName = "PermType")]
 			public long? PermType
@@ -150,6 +137,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			[JsonProperty(PropertyName = "ApplyType")]
+			public string ApplyType
+			{
+				get
+				{
+					return applyType;
+				}
+				set	
+				{
+					applyType = value;
+				}
+			}
+
 			[JsonProperty(PropertyName = "Resources")]
 			public List<GetPermApplyOrderDetail_Resource> Resources
 			{
@@ -168,9 +168,9 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 				private GetPermApplyOrderDetail_DatabaseInfo databaseInfo;
 
-				private GetPermApplyOrderDetail_ColumnInfo columnInfo;
-
 				private GetPermApplyOrderDetail_TableInfo tableInfo;
+
+				private GetPermApplyOrderDetail_ColumnInfo columnInfo;
 
 				private GetPermApplyOrderDetail_InstanceInfo instanceInfo;
 
@@ -187,19 +187,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
-				[JsonProperty(PropertyName = "ColumnInfo")]
-				public GetPermApplyOrderDetail_ColumnInfo ColumnInfo
-				{
-					get
-					{
-						return columnInfo;
-					}
-					set	
-					{
-						columnInfo = value;
-					}
-				}
-
 				[JsonProperty(PropertyName = "TableInfo")]
 				public GetPermApplyOrderDetail_TableInfo TableInfo
 				{
@@ -210,6 +197,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					set	
 					{
 						tableInfo = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "ColumnInfo")]
+				public GetPermApplyOrderDetail_ColumnInfo ColumnInfo
+				{
+					get
+					{
+						return columnInfo;
+					}
+					set	
+					{
+						columnInfo = value;
 					}
 				}
 
@@ -229,32 +229,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				public class GetPermApplyOrderDetail_DatabaseInfo
 				{
 
-					private string searchName;
-
 					private long? dbId;
 
 					private bool? logic;
 
-					private string envType;
-
 					private string dbType;
 
-					private List<string> ownerNickNames;
+					private string searchName;
+
+					private string envType;
 
 					private List<string> ownerIds;
 
-					[JsonProperty(PropertyName = "SearchName")]
-					public string SearchName
-					{
-						get
-						{
-							return searchName;
-						}
-						set	
-						{
-							searchName = value;
-						}
-					}
+					private List<string> ownerNickNames;
 
 					[JsonProperty(PropertyName = "DbId")]
 					public long? DbId
@@ -282,19 +269,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 						}
 					}
 
-					[JsonProperty(PropertyName = "EnvType")]
-					public string EnvType
-					{
-						get
-						{
-							return envType;
-						}
-						set	
-						{
-							envType = value;
-						}
-					}
-
 					[JsonProperty(PropertyName = "DbType")]
 					public string DbType
 					{
@@ -308,16 +282,29 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 						}
 					}
 
-					[JsonProperty(PropertyName = "OwnerNickNames")]
-					public List<string> OwnerNickNames
+					[JsonProperty(PropertyName = "SearchName")]
+					public string SearchName
 					{
 						get
 						{
-							return ownerNickNames;
+							return searchName;
 						}
 						set	
 						{
-							ownerNickNames = value;
+							searchName = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "EnvType")]
+					public string EnvType
+					{
+						get
+						{
+							return envType;
+						}
+						set	
+						{
+							envType = value;
 						}
 					}
 
@@ -333,38 +320,17 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 							ownerIds = value;
 						}
 					}
-				}
 
-				public class GetPermApplyOrderDetail_ColumnInfo
-				{
-
-					private string columnName;
-
-					private string tableName;
-
-					[JsonProperty(PropertyName = "ColumnName")]
-					public string ColumnName
+					[JsonProperty(PropertyName = "OwnerNickNames")]
+					public List<string> OwnerNickNames
 					{
 						get
 						{
-							return columnName;
+							return ownerNickNames;
 						}
 						set	
 						{
-							columnName = value;
-						}
-					}
-
-					[JsonProperty(PropertyName = "TableName")]
-					public string TableName
-					{
-						get
-						{
-							return tableName;
-						}
-						set	
-						{
-							tableName = value;
+							ownerNickNames = value;
 						}
 					}
 				}
@@ -388,39 +354,73 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
-				public class GetPermApplyOrderDetail_InstanceInfo
+				public class GetPermApplyOrderDetail_ColumnInfo
 				{
 
-					private long? dbaId;
+					private string tableName;
 
-					private string searchName;
+					private string columnName;
 
-					private string instanceId;
-
-					private long? port;
-
-					private string host;
-
-					private string dbaNickName;
-
-					private string envType;
-
-					private string dbType;
-
-					private List<string> ownerNickName;
-
-					private List<string> ownerIds1;
-
-					[JsonProperty(PropertyName = "DbaId")]
-					public long? DbaId
+					[JsonProperty(PropertyName = "TableName")]
+					public string TableName
 					{
 						get
 						{
-							return dbaId;
+							return tableName;
 						}
 						set	
 						{
-							dbaId = value;
+							tableName = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "ColumnName")]
+					public string ColumnName
+					{
+						get
+						{
+							return columnName;
+						}
+						set	
+						{
+							columnName = value;
+						}
+					}
+				}
+
+				public class GetPermApplyOrderDetail_InstanceInfo
+				{
+
+					private string instanceId;
+
+					private string searchName;
+
+					private string dbType;
+
+					private string envType;
+
+					private string host;
+
+					private long? port;
+
+					private long? dbaId;
+
+					private string dbaNickName;
+
+					private List<string> ownerIds1;
+
+					private List<string> ownerNickName;
+
+					[JsonProperty(PropertyName = "InstanceId")]
+					public string InstanceId
+					{
+						get
+						{
+							return instanceId;
+						}
+						set	
+						{
+							instanceId = value;
 						}
 					}
 
@@ -437,55 +437,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 						}
 					}
 
-					[JsonProperty(PropertyName = "InstanceId")]
-					public string InstanceId
+					[JsonProperty(PropertyName = "DbType")]
+					public string DbType
 					{
 						get
 						{
-							return instanceId;
+							return dbType;
 						}
 						set	
 						{
-							instanceId = value;
-						}
-					}
-
-					[JsonProperty(PropertyName = "Port")]
-					public long? Port
-					{
-						get
-						{
-							return port;
-						}
-						set	
-						{
-							port = value;
-						}
-					}
-
-					[JsonProperty(PropertyName = "Host")]
-					public string Host
-					{
-						get
-						{
-							return host;
-						}
-						set	
-						{
-							host = value;
-						}
-					}
-
-					[JsonProperty(PropertyName = "DbaNickName")]
-					public string DbaNickName
-					{
-						get
-						{
-							return dbaNickName;
-						}
-						set	
-						{
-							dbaNickName = value;
+							dbType = value;
 						}
 					}
 
@@ -502,29 +463,55 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 						}
 					}
 
-					[JsonProperty(PropertyName = "DbType")]
-					public string DbType
+					[JsonProperty(PropertyName = "Host")]
+					public string Host
 					{
 						get
 						{
-							return dbType;
+							return host;
 						}
 						set	
 						{
-							dbType = value;
+							host = value;
 						}
 					}
 
-					[JsonProperty(PropertyName = "OwnerNickName")]
-					public List<string> OwnerNickName
+					[JsonProperty(PropertyName = "Port")]
+					public long? Port
 					{
 						get
 						{
-							return ownerNickName;
+							return port;
 						}
 						set	
 						{
-							ownerNickName = value;
+							port = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "DbaId")]
+					public long? DbaId
+					{
+						get
+						{
+							return dbaId;
+						}
+						set	
+						{
+							dbaId = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "DbaNickName")]
+					public string DbaNickName
+					{
+						get
+						{
+							return dbaNickName;
+						}
+						set	
+						{
+							dbaNickName = value;
 						}
 					}
 
@@ -538,6 +525,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 						set	
 						{
 							ownerIds1 = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "OwnerNickName")]
+					public List<string> OwnerNickName
+					{
+						get
+						{
+							return ownerNickName;
+						}
+						set	
+						{
+							ownerNickName = value;
 						}
 					}
 				}

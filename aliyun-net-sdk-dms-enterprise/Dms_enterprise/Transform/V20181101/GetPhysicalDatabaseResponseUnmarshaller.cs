@@ -37,32 +37,32 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			getPhysicalDatabaseResponse.Success = _ctx.BooleanValue("GetPhysicalDatabase.Success");
 
 			GetPhysicalDatabaseResponse.GetPhysicalDatabase_Database database = new GetPhysicalDatabaseResponse.GetPhysicalDatabase_Database();
-			database.SearchName = _ctx.StringValue("GetPhysicalDatabase.Database.SearchName");
+			database.DatabaseId = _ctx.StringValue("GetPhysicalDatabase.Database.DatabaseId");
+			database.Host = _ctx.StringValue("GetPhysicalDatabase.Database.Host");
+			database.CatalogName = _ctx.StringValue("GetPhysicalDatabase.Database.CatalogName");
+			database.DbaName = _ctx.StringValue("GetPhysicalDatabase.Database.DbaName");
+			database.State = _ctx.StringValue("GetPhysicalDatabase.Database.State");
+			database.DbaId = _ctx.StringValue("GetPhysicalDatabase.Database.DbaId");
+			database.SchemaName = _ctx.StringValue("GetPhysicalDatabase.Database.SchemaName");
 			database.InstanceId = _ctx.StringValue("GetPhysicalDatabase.Database.InstanceId");
 			database.Port = _ctx.IntegerValue("GetPhysicalDatabase.Database.Port");
-			database.Encoding = _ctx.StringValue("GetPhysicalDatabase.Database.Encoding");
-			database.Host = _ctx.StringValue("GetPhysicalDatabase.Database.Host");
-			database.DatabaseId = _ctx.StringValue("GetPhysicalDatabase.Database.DatabaseId");
-			database.DbType = _ctx.StringValue("GetPhysicalDatabase.Database.DbType");
 			database.EnvType = _ctx.StringValue("GetPhysicalDatabase.Database.EnvType");
 			database.Sid = _ctx.StringValue("GetPhysicalDatabase.Database.Sid");
-			database.DbaName = _ctx.StringValue("GetPhysicalDatabase.Database.DbaName");
-			database.DbaId = _ctx.StringValue("GetPhysicalDatabase.Database.DbaId");
-			database.State = _ctx.StringValue("GetPhysicalDatabase.Database.State");
-			database.CatalogName = _ctx.StringValue("GetPhysicalDatabase.Database.CatalogName");
-			database.SchemaName = _ctx.StringValue("GetPhysicalDatabase.Database.SchemaName");
-
-			List<string> database_ownerNameList = new List<string>();
-			for (int i = 0; i < _ctx.Length("GetPhysicalDatabase.Database.OwnerNameList.Length"); i++) {
-				database_ownerNameList.Add(_ctx.StringValue("GetPhysicalDatabase.Database.OwnerNameList["+ i +"]"));
-			}
-			database.OwnerNameList = database_ownerNameList;
+			database.Encoding = _ctx.StringValue("GetPhysicalDatabase.Database.Encoding");
+			database.DbType = _ctx.StringValue("GetPhysicalDatabase.Database.DbType");
+			database.SearchName = _ctx.StringValue("GetPhysicalDatabase.Database.SearchName");
 
 			List<string> database_ownerIdList = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetPhysicalDatabase.Database.OwnerIdList.Length"); i++) {
 				database_ownerIdList.Add(_ctx.StringValue("GetPhysicalDatabase.Database.OwnerIdList["+ i +"]"));
 			}
 			database.OwnerIdList = database_ownerIdList;
+
+			List<string> database_ownerNameList = new List<string>();
+			for (int i = 0; i < _ctx.Length("GetPhysicalDatabase.Database.OwnerNameList.Length"); i++) {
+				database_ownerNameList.Add(_ctx.StringValue("GetPhysicalDatabase.Database.OwnerNameList["+ i +"]"));
+			}
+			database.OwnerNameList = database_ownerNameList;
 			getPhysicalDatabaseResponse.Database = database;
         
 			return getPhysicalDatabaseResponse;

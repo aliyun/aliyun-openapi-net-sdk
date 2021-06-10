@@ -27,11 +27,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private string errorCode;
+		private bool? success;
 
 		private string errorMessage;
 
-		private bool? success;
+		private string errorCode;
 
 		private GetDataCorrectTaskDetail_DataCorrectTaskDetail dataCorrectTaskDetail;
 
@@ -48,16 +48,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "ErrorCode")]
-		public string ErrorCode
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
 			get
 			{
-				return errorCode;
+				return success;
 			}
 			set	
 			{
-				errorCode = value;
+				success = value;
 			}
 		}
 
@@ -74,16 +74,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Success")]
-		public bool? Success
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
 		{
 			get
 			{
-				return success;
+				return errorCode;
 			}
 			set	
 			{
-				success = value;
+				errorCode = value;
 			}
 		}
 
@@ -103,13 +103,26 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class GetDataCorrectTaskDetail_DataCorrectTaskDetail
 		{
 
-			private string jobStatus;
+			private long? dBTaskGroupId;
 
-			private string createTime;
+			private string jobStatus;
 
 			private long? actualAffectRows;
 
-			private long? dBTaskGroupId;
+			private string createTime;
+
+			[JsonProperty(PropertyName = "DBTaskGroupId")]
+			public long? DBTaskGroupId
+			{
+				get
+				{
+					return dBTaskGroupId;
+				}
+				set	
+				{
+					dBTaskGroupId = value;
+				}
+			}
 
 			[JsonProperty(PropertyName = "JobStatus")]
 			public string JobStatus
@@ -121,19 +134,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					jobStatus = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "CreateTime")]
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
 				}
 			}
 
@@ -150,16 +150,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "DBTaskGroupId")]
-			public long? DBTaskGroupId
+			[JsonProperty(PropertyName = "CreateTime")]
+			public string CreateTime
 			{
 				get
 				{
-					return dBTaskGroupId;
+					return createTime;
 				}
 				set	
 				{
-					dBTaskGroupId = value;
+					createTime = value;
 				}
 			}
 		}

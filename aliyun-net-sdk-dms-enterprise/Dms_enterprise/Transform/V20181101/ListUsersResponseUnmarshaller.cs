@@ -40,17 +40,17 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			List<ListUsersResponse.ListUsers_User> listUsersResponse_userList = new List<ListUsersResponse.ListUsers_User>();
 			for (int i = 0; i < _ctx.Length("ListUsers.UserList.Length"); i++) {
 				ListUsersResponse.ListUsers_User user = new ListUsersResponse.ListUsers_User();
-				user.Uid = _ctx.StringValue("ListUsers.UserList["+ i +"].Uid");
-				user.LastLoginTime = _ctx.StringValue("ListUsers.UserList["+ i +"].LastLoginTime");
-				user.CurResultCount = _ctx.LongValue("ListUsers.UserList["+ i +"].CurResultCount");
-				user.MaxResultCount = _ctx.LongValue("ListUsers.UserList["+ i +"].MaxResultCount");
-				user.UserId = _ctx.StringValue("ListUsers.UserList["+ i +"].UserId");
 				user.State = _ctx.StringValue("ListUsers.UserList["+ i +"].State");
-				user.CurExecuteCount = _ctx.LongValue("ListUsers.UserList["+ i +"].CurExecuteCount");
-				user.NickName = _ctx.StringValue("ListUsers.UserList["+ i +"].NickName");
-				user.Mobile = _ctx.StringValue("ListUsers.UserList["+ i +"].Mobile");
-				user.MaxExecuteCount = _ctx.LongValue("ListUsers.UserList["+ i +"].MaxExecuteCount");
+				user.CurResultCount = _ctx.LongValue("ListUsers.UserList["+ i +"].CurResultCount");
+				user.UserId = _ctx.StringValue("ListUsers.UserList["+ i +"].UserId");
+				user.LastLoginTime = _ctx.StringValue("ListUsers.UserList["+ i +"].LastLoginTime");
+				user.MaxResultCount = _ctx.LongValue("ListUsers.UserList["+ i +"].MaxResultCount");
 				user.ParentUid = _ctx.StringValue("ListUsers.UserList["+ i +"].ParentUid");
+				user.NickName = _ctx.StringValue("ListUsers.UserList["+ i +"].NickName");
+				user.MaxExecuteCount = _ctx.LongValue("ListUsers.UserList["+ i +"].MaxExecuteCount");
+				user.CurExecuteCount = _ctx.LongValue("ListUsers.UserList["+ i +"].CurExecuteCount");
+				user.Mobile = _ctx.StringValue("ListUsers.UserList["+ i +"].Mobile");
+				user.Uid = _ctx.StringValue("ListUsers.UserList["+ i +"].Uid");
 
 				List<string> user_roleIdList = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListUsers.UserList["+ i +"].RoleIdList.Length"); j++) {

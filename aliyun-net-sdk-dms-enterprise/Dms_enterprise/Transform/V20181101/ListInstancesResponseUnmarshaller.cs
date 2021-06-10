@@ -40,40 +40,40 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			List<ListInstancesResponse.ListInstances_Instance> listInstancesResponse_instanceList = new List<ListInstancesResponse.ListInstances_Instance>();
 			for (int i = 0; i < _ctx.Length("ListInstances.InstanceList.Length"); i++) {
 				ListInstancesResponse.ListInstances_Instance instance = new ListInstancesResponse.ListInstances_Instance();
-				instance.InstanceSource = _ctx.StringValue("ListInstances.InstanceList["+ i +"].InstanceSource");
-				instance.InstanceId = _ctx.StringValue("ListInstances.InstanceList["+ i +"].InstanceId");
-				instance.DatabasePassword = _ctx.StringValue("ListInstances.InstanceList["+ i +"].DatabasePassword");
+				instance.VpcId = _ctx.StringValue("ListInstances.InstanceList["+ i +"].VpcId");
+				instance.DatabaseUser = _ctx.StringValue("ListInstances.InstanceList["+ i +"].DatabaseUser");
+				instance.DbaId = _ctx.StringValue("ListInstances.InstanceList["+ i +"].DbaId");
+				instance.UseDsql = _ctx.IntegerValue("ListInstances.InstanceList["+ i +"].UseDsql");
 				instance.Port = _ctx.IntegerValue("ListInstances.InstanceList["+ i +"].Port");
-				instance.Host = _ctx.StringValue("ListInstances.InstanceList["+ i +"].Host");
-				instance.ExportTimeout = _ctx.IntegerValue("ListInstances.InstanceList["+ i +"].ExportTimeout");
-				instance.DdlOnline = _ctx.IntegerValue("ListInstances.InstanceList["+ i +"].DdlOnline");
+				instance.EcsInstanceId = _ctx.StringValue("ListInstances.InstanceList["+ i +"].EcsInstanceId");
 				instance.EnvType = _ctx.StringValue("ListInstances.InstanceList["+ i +"].EnvType");
 				instance.Sid = _ctx.StringValue("ListInstances.InstanceList["+ i +"].Sid");
-				instance.UseDsql = _ctx.IntegerValue("ListInstances.InstanceList["+ i +"].UseDsql");
-				instance.EcsInstanceId = _ctx.StringValue("ListInstances.InstanceList["+ i +"].EcsInstanceId");
-				instance.DbaId = _ctx.StringValue("ListInstances.InstanceList["+ i +"].DbaId");
-				instance.VpcId = _ctx.StringValue("ListInstances.InstanceList["+ i +"].VpcId");
-				instance.EcsRegion = _ctx.StringValue("ListInstances.InstanceList["+ i +"].EcsRegion");
-				instance.InstanceAlias = _ctx.StringValue("ListInstances.InstanceList["+ i +"].InstanceAlias");
-				instance.State = _ctx.StringValue("ListInstances.InstanceList["+ i +"].State");
-				instance.DatabaseUser = _ctx.StringValue("ListInstances.InstanceList["+ i +"].DatabaseUser");
-				instance.InstanceType = _ctx.StringValue("ListInstances.InstanceList["+ i +"].InstanceType");
-				instance.DbaNickName = _ctx.StringValue("ListInstances.InstanceList["+ i +"].DbaNickName");
-				instance.DataLinkName = _ctx.StringValue("ListInstances.InstanceList["+ i +"].DataLinkName");
-				instance.QueryTimeout = _ctx.IntegerValue("ListInstances.InstanceList["+ i +"].QueryTimeout");
 				instance.SafeRuleId = _ctx.StringValue("ListInstances.InstanceList["+ i +"].SafeRuleId");
-
-				List<string> instance_ownerNameList = new List<string>();
-				for (int j = 0; j < _ctx.Length("ListInstances.InstanceList["+ i +"].OwnerNameList.Length"); j++) {
-					instance_ownerNameList.Add(_ctx.StringValue("ListInstances.InstanceList["+ i +"].OwnerNameList["+ j +"]"));
-				}
-				instance.OwnerNameList = instance_ownerNameList;
+				instance.DbaNickName = _ctx.StringValue("ListInstances.InstanceList["+ i +"].DbaNickName");
+				instance.QueryTimeout = _ctx.IntegerValue("ListInstances.InstanceList["+ i +"].QueryTimeout");
+				instance.InstanceSource = _ctx.StringValue("ListInstances.InstanceList["+ i +"].InstanceSource");
+				instance.Host = _ctx.StringValue("ListInstances.InstanceList["+ i +"].Host");
+				instance.State = _ctx.StringValue("ListInstances.InstanceList["+ i +"].State");
+				instance.DataLinkName = _ctx.StringValue("ListInstances.InstanceList["+ i +"].DataLinkName");
+				instance.ExportTimeout = _ctx.IntegerValue("ListInstances.InstanceList["+ i +"].ExportTimeout");
+				instance.InstanceId = _ctx.StringValue("ListInstances.InstanceList["+ i +"].InstanceId");
+				instance.InstanceType = _ctx.StringValue("ListInstances.InstanceList["+ i +"].InstanceType");
+				instance.DatabasePassword = _ctx.StringValue("ListInstances.InstanceList["+ i +"].DatabasePassword");
+				instance.InstanceAlias = _ctx.StringValue("ListInstances.InstanceList["+ i +"].InstanceAlias");
+				instance.DdlOnline = _ctx.IntegerValue("ListInstances.InstanceList["+ i +"].DdlOnline");
+				instance.EcsRegion = _ctx.StringValue("ListInstances.InstanceList["+ i +"].EcsRegion");
 
 				List<string> instance_ownerIdList = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListInstances.InstanceList["+ i +"].OwnerIdList.Length"); j++) {
 					instance_ownerIdList.Add(_ctx.StringValue("ListInstances.InstanceList["+ i +"].OwnerIdList["+ j +"]"));
 				}
 				instance.OwnerIdList = instance_ownerIdList;
+
+				List<string> instance_ownerNameList = new List<string>();
+				for (int j = 0; j < _ctx.Length("ListInstances.InstanceList["+ i +"].OwnerNameList.Length"); j++) {
+					instance_ownerNameList.Add(_ctx.StringValue("ListInstances.InstanceList["+ i +"].OwnerNameList["+ j +"]"));
+				}
+				instance.OwnerNameList = instance_ownerNameList;
 
 				listInstancesResponse_instanceList.Add(instance);
 			}

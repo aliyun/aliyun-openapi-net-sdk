@@ -118,55 +118,42 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ListUsers_User
 		{
 
-			private string uid;
-
-			private string lastLoginTime;
+			private string state;
 
 			private long? curResultCount;
 
-			private long? maxResultCount;
-
 			private string userId;
 
-			private string state;
+			private string lastLoginTime;
 
-			private long? curExecuteCount;
+			private long? maxResultCount;
+
+			private string parentUid;
 
 			private string nickName;
 
-			private string mobile;
-
 			private long? maxExecuteCount;
 
-			private string parentUid;
+			private long? curExecuteCount;
+
+			private string mobile;
+
+			private string uid;
 
 			private List<string> roleIdList;
 
 			private List<string> roleNameList;
 
-			[JsonProperty(PropertyName = "Uid")]
-			public string Uid
+			[JsonProperty(PropertyName = "State")]
+			public string State
 			{
 				get
 				{
-					return uid;
+					return state;
 				}
 				set	
 				{
-					uid = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "LastLoginTime")]
-			public string LastLoginTime
-			{
-				get
-				{
-					return lastLoginTime;
-				}
-				set	
-				{
-					lastLoginTime = value;
+					state = value;
 				}
 			}
 
@@ -183,19 +170,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "MaxResultCount")]
-			public long? MaxResultCount
-			{
-				get
-				{
-					return maxResultCount;
-				}
-				set	
-				{
-					maxResultCount = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "UserId")]
 			public string UserId
 			{
@@ -209,29 +183,42 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "State")]
-			public string State
+			[JsonProperty(PropertyName = "LastLoginTime")]
+			public string LastLoginTime
 			{
 				get
 				{
-					return state;
+					return lastLoginTime;
 				}
 				set	
 				{
-					state = value;
+					lastLoginTime = value;
 				}
 			}
 
-			[JsonProperty(PropertyName = "CurExecuteCount")]
-			public long? CurExecuteCount
+			[JsonProperty(PropertyName = "MaxResultCount")]
+			public long? MaxResultCount
 			{
 				get
 				{
-					return curExecuteCount;
+					return maxResultCount;
 				}
 				set	
 				{
-					curExecuteCount = value;
+					maxResultCount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ParentUid")]
+			public string ParentUid
+			{
+				get
+				{
+					return parentUid;
+				}
+				set	
+				{
+					parentUid = value;
 				}
 			}
 
@@ -248,19 +235,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "Mobile")]
-			public string Mobile
-			{
-				get
-				{
-					return mobile;
-				}
-				set	
-				{
-					mobile = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "MaxExecuteCount")]
 			public long? MaxExecuteCount
 			{
@@ -274,16 +248,42 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "ParentUid")]
-			public string ParentUid
+			[JsonProperty(PropertyName = "CurExecuteCount")]
+			public long? CurExecuteCount
 			{
 				get
 				{
-					return parentUid;
+					return curExecuteCount;
 				}
 				set	
 				{
-					parentUid = value;
+					curExecuteCount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Mobile")]
+			public string Mobile
+			{
+				get
+				{
+					return mobile;
+				}
+				set	
+				{
+					mobile = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Uid")]
+			public string Uid
+			{
+				get
+				{
+					return uid;
+				}
+				set	
+				{
+					uid = value;
 				}
 			}
 

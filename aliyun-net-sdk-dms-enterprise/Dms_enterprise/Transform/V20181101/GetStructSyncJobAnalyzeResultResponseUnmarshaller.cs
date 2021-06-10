@@ -32,22 +32,11 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getStructSyncJobAnalyzeResultResponse.HttpResponse = _ctx.HttpResponse;
 			getStructSyncJobAnalyzeResultResponse.RequestId = _ctx.StringValue("GetStructSyncJobAnalyzeResult.RequestId");
-			getStructSyncJobAnalyzeResultResponse.ErrorCode = _ctx.StringValue("GetStructSyncJobAnalyzeResult.ErrorCode");
-			getStructSyncJobAnalyzeResultResponse.ErrorMessage = _ctx.StringValue("GetStructSyncJobAnalyzeResult.ErrorMessage");
 			getStructSyncJobAnalyzeResultResponse.Success = _ctx.BooleanValue("GetStructSyncJobAnalyzeResult.Success");
+			getStructSyncJobAnalyzeResultResponse.ErrorMessage = _ctx.StringValue("GetStructSyncJobAnalyzeResult.ErrorMessage");
+			getStructSyncJobAnalyzeResultResponse.ErrorCode = _ctx.StringValue("GetStructSyncJobAnalyzeResult.ErrorCode");
 
 			GetStructSyncJobAnalyzeResultResponse.GetStructSyncJobAnalyzeResult_StructSyncJobAnalyzeResult structSyncJobAnalyzeResult = new GetStructSyncJobAnalyzeResultResponse.GetStructSyncJobAnalyzeResult_StructSyncJobAnalyzeResult();
-
-			List<GetStructSyncJobAnalyzeResultResponse.GetStructSyncJobAnalyzeResult_StructSyncJobAnalyzeResult.GetStructSyncJobAnalyzeResult_Result> structSyncJobAnalyzeResult_resultList = new List<GetStructSyncJobAnalyzeResultResponse.GetStructSyncJobAnalyzeResult_StructSyncJobAnalyzeResult.GetStructSyncJobAnalyzeResult_Result>();
-			for (int i = 0; i < _ctx.Length("GetStructSyncJobAnalyzeResult.StructSyncJobAnalyzeResult.ResultList.Length"); i++) {
-				GetStructSyncJobAnalyzeResultResponse.GetStructSyncJobAnalyzeResult_StructSyncJobAnalyzeResult.GetStructSyncJobAnalyzeResult_Result result = new GetStructSyncJobAnalyzeResultResponse.GetStructSyncJobAnalyzeResult_StructSyncJobAnalyzeResult.GetStructSyncJobAnalyzeResult_Result();
-				result.SourceTableName = _ctx.StringValue("GetStructSyncJobAnalyzeResult.StructSyncJobAnalyzeResult.ResultList["+ i +"].SourceTableName");
-				result.Script = _ctx.StringValue("GetStructSyncJobAnalyzeResult.StructSyncJobAnalyzeResult.ResultList["+ i +"].Script");
-				result.TargetTableName = _ctx.StringValue("GetStructSyncJobAnalyzeResult.StructSyncJobAnalyzeResult.ResultList["+ i +"].TargetTableName");
-
-				structSyncJobAnalyzeResult_resultList.Add(result);
-			}
-			structSyncJobAnalyzeResult.ResultList = structSyncJobAnalyzeResult_resultList;
 
 			List<GetStructSyncJobAnalyzeResultResponse.GetStructSyncJobAnalyzeResult_StructSyncJobAnalyzeResult.GetStructSyncJobAnalyzeResult_Summary> structSyncJobAnalyzeResult_summaryList = new List<GetStructSyncJobAnalyzeResultResponse.GetStructSyncJobAnalyzeResult_StructSyncJobAnalyzeResult.GetStructSyncJobAnalyzeResult_Summary>();
 			for (int i = 0; i < _ctx.Length("GetStructSyncJobAnalyzeResult.StructSyncJobAnalyzeResult.SummaryList.Length"); i++) {
@@ -58,6 +47,17 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 				structSyncJobAnalyzeResult_summaryList.Add(summary);
 			}
 			structSyncJobAnalyzeResult.SummaryList = structSyncJobAnalyzeResult_summaryList;
+
+			List<GetStructSyncJobAnalyzeResultResponse.GetStructSyncJobAnalyzeResult_StructSyncJobAnalyzeResult.GetStructSyncJobAnalyzeResult_Result> structSyncJobAnalyzeResult_resultList = new List<GetStructSyncJobAnalyzeResultResponse.GetStructSyncJobAnalyzeResult_StructSyncJobAnalyzeResult.GetStructSyncJobAnalyzeResult_Result>();
+			for (int i = 0; i < _ctx.Length("GetStructSyncJobAnalyzeResult.StructSyncJobAnalyzeResult.ResultList.Length"); i++) {
+				GetStructSyncJobAnalyzeResultResponse.GetStructSyncJobAnalyzeResult_StructSyncJobAnalyzeResult.GetStructSyncJobAnalyzeResult_Result result = new GetStructSyncJobAnalyzeResultResponse.GetStructSyncJobAnalyzeResult_StructSyncJobAnalyzeResult.GetStructSyncJobAnalyzeResult_Result();
+				result.SourceTableName = _ctx.StringValue("GetStructSyncJobAnalyzeResult.StructSyncJobAnalyzeResult.ResultList["+ i +"].SourceTableName");
+				result.TargetTableName = _ctx.StringValue("GetStructSyncJobAnalyzeResult.StructSyncJobAnalyzeResult.ResultList["+ i +"].TargetTableName");
+				result.Script = _ctx.StringValue("GetStructSyncJobAnalyzeResult.StructSyncJobAnalyzeResult.ResultList["+ i +"].Script");
+
+				structSyncJobAnalyzeResult_resultList.Add(result);
+			}
+			structSyncJobAnalyzeResult.ResultList = structSyncJobAnalyzeResult_resultList;
 			getStructSyncJobAnalyzeResultResponse.StructSyncJobAnalyzeResult = structSyncJobAnalyzeResult;
         
 			return getStructSyncJobAnalyzeResultResponse;

@@ -27,11 +27,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private string errorCode;
+		private bool? success;
 
 		private string errorMessage;
 
-		private bool? success;
+		private string errorCode;
 
 		private GetDBTopology_DBTopology dBTopology;
 
@@ -48,16 +48,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "ErrorCode")]
-		public string ErrorCode
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
 			get
 			{
-				return errorCode;
+				return success;
 			}
 			set	
 			{
-				errorCode = value;
+				success = value;
 			}
 		}
 
@@ -74,16 +74,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Success")]
-		public bool? Success
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
 		{
 			get
 			{
-				return success;
+				return errorCode;
 			}
 			set	
 			{
-				success = value;
+				errorCode = value;
 			}
 		}
 
@@ -105,15 +105,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private long? logicDbId;
 
+			private string logicDbName;
+
 			private string searchName;
 
 			private string alias;
 
-			private string logicDbName;
+			private string dbType;
 
 			private string envType;
-
-			private string dbType;
 
 			private List<GetDBTopology_DBTopologyInfo> dBTopologyInfoList;
 
@@ -127,6 +127,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					logicDbId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LogicDbName")]
+			public string LogicDbName
+			{
+				get
+				{
+					return logicDbName;
+				}
+				set	
+				{
+					logicDbName = value;
 				}
 			}
 
@@ -156,16 +169,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "LogicDbName")]
-			public string LogicDbName
+			[JsonProperty(PropertyName = "DbType")]
+			public string DbType
 			{
 				get
 				{
-					return logicDbName;
+					return dbType;
 				}
 				set	
 				{
-					logicDbName = value;
+					dbType = value;
 				}
 			}
 
@@ -179,19 +192,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					envType = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "DbType")]
-			public string DbType
-			{
-				get
-				{
-					return dbType;
-				}
-				set	
-				{
-					dbType = value;
 				}
 			}
 
@@ -211,77 +211,25 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			public class GetDBTopology_DBTopologyInfo
 			{
 
-				private string instanceSource;
-
-				private string instanceResourceId;
-
-				private long? instanceId;
-
-				private string searchName;
-
 				private long? dbId;
-
-				private string catalogName;
-
-				private string regionId;
-
-				private string envType;
-
-				private string dbType;
 
 				private string schemaName;
 
-				[JsonProperty(PropertyName = "InstanceSource")]
-				public string InstanceSource
-				{
-					get
-					{
-						return instanceSource;
-					}
-					set	
-					{
-						instanceSource = value;
-					}
-				}
+				private string catalogName;
 
-				[JsonProperty(PropertyName = "InstanceResourceId")]
-				public string InstanceResourceId
-				{
-					get
-					{
-						return instanceResourceId;
-					}
-					set	
-					{
-						instanceResourceId = value;
-					}
-				}
+				private string searchName;
 
-				[JsonProperty(PropertyName = "InstanceId")]
-				public long? InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
+				private string dbType;
 
-				[JsonProperty(PropertyName = "SearchName")]
-				public string SearchName
-				{
-					get
-					{
-						return searchName;
-					}
-					set	
-					{
-						searchName = value;
-					}
-				}
+				private string envType;
+
+				private long? instanceId;
+
+				private string regionId;
+
+				private string instanceResourceId;
+
+				private string instanceSource;
 
 				[JsonProperty(PropertyName = "DbId")]
 				public long? DbId
@@ -293,6 +241,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					set	
 					{
 						dbId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "SchemaName")]
+				public string SchemaName
+				{
+					get
+					{
+						return schemaName;
+					}
+					set	
+					{
+						schemaName = value;
 					}
 				}
 
@@ -309,29 +270,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
-				[JsonProperty(PropertyName = "RegionId")]
-				public string RegionId
+				[JsonProperty(PropertyName = "SearchName")]
+				public string SearchName
 				{
 					get
 					{
-						return regionId;
+						return searchName;
 					}
 					set	
 					{
-						regionId = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "EnvType")]
-				public string EnvType
-				{
-					get
-					{
-						return envType;
-					}
-					set	
-					{
-						envType = value;
+						searchName = value;
 					}
 				}
 
@@ -348,16 +296,68 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
-				[JsonProperty(PropertyName = "SchemaName")]
-				public string SchemaName
+				[JsonProperty(PropertyName = "EnvType")]
+				public string EnvType
 				{
 					get
 					{
-						return schemaName;
+						return envType;
 					}
 					set	
 					{
-						schemaName = value;
+						envType = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "InstanceId")]
+				public long? InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "RegionId")]
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "InstanceResourceId")]
+				public string InstanceResourceId
+				{
+					get
+					{
+						return instanceResourceId;
+					}
+					set	
+					{
+						instanceResourceId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "InstanceSource")]
+				public string InstanceSource
+				{
+					get
+					{
+						return instanceSource;
+					}
+					set	
+					{
+						instanceSource = value;
 					}
 				}
 			}

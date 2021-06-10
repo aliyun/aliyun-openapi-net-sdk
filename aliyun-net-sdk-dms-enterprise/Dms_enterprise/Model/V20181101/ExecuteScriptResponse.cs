@@ -103,15 +103,28 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ExecuteScript_Result
 		{
 
+			private bool? success;
+
 			private string message;
 
 			private long? rowCount;
 
-			private bool? success;
-
 			private List<string> columnNames;
 
 			private List<Dictionary<string, string>> rows;
+
+			[JsonProperty(PropertyName = "Success")]
+			public bool? Success
+			{
+				get
+				{
+					return success;
+				}
+				set	
+				{
+					success = value;
+				}
+			}
 
 			[JsonProperty(PropertyName = "Message")]
 			public string Message
@@ -136,19 +149,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					rowCount = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Success")]
-			public bool? Success
-			{
-				get
-				{
-					return success;
-				}
-				set	
-				{
-					success = value;
 				}
 			}
 

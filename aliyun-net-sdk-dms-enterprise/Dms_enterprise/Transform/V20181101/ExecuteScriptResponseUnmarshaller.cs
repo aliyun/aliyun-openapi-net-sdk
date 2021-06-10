@@ -39,9 +39,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			List<ExecuteScriptResponse.ExecuteScript_Result> executeScriptResponse_results = new List<ExecuteScriptResponse.ExecuteScript_Result>();
 			for (int i = 0; i < _ctx.Length("ExecuteScript.Results.Length"); i++) {
 				ExecuteScriptResponse.ExecuteScript_Result result = new ExecuteScriptResponse.ExecuteScript_Result();
+				result.Success = _ctx.BooleanValue("ExecuteScript.Results["+ i +"].Success");
 				result.Message = _ctx.StringValue("ExecuteScript.Results["+ i +"].Message");
 				result.RowCount = _ctx.LongValue("ExecuteScript.Results["+ i +"].RowCount");
-				result.Success = _ctx.BooleanValue("ExecuteScript.Results["+ i +"].Success");
 
 				List<string> result_columnNames = new List<string>();
 				for (int j = 0; j < _ctx.Length("ExecuteScript.Results["+ i +"].ColumnNames.Length"); j++) {

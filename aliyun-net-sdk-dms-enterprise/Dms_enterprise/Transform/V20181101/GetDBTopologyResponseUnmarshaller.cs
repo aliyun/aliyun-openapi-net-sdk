@@ -32,31 +32,31 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getDBTopologyResponse.HttpResponse = _ctx.HttpResponse;
 			getDBTopologyResponse.RequestId = _ctx.StringValue("GetDBTopology.RequestId");
-			getDBTopologyResponse.ErrorCode = _ctx.StringValue("GetDBTopology.ErrorCode");
-			getDBTopologyResponse.ErrorMessage = _ctx.StringValue("GetDBTopology.ErrorMessage");
 			getDBTopologyResponse.Success = _ctx.BooleanValue("GetDBTopology.Success");
+			getDBTopologyResponse.ErrorMessage = _ctx.StringValue("GetDBTopology.ErrorMessage");
+			getDBTopologyResponse.ErrorCode = _ctx.StringValue("GetDBTopology.ErrorCode");
 
 			GetDBTopologyResponse.GetDBTopology_DBTopology dBTopology = new GetDBTopologyResponse.GetDBTopology_DBTopology();
 			dBTopology.LogicDbId = _ctx.LongValue("GetDBTopology.DBTopology.LogicDbId");
+			dBTopology.LogicDbName = _ctx.StringValue("GetDBTopology.DBTopology.LogicDbName");
 			dBTopology.SearchName = _ctx.StringValue("GetDBTopology.DBTopology.SearchName");
 			dBTopology.Alias = _ctx.StringValue("GetDBTopology.DBTopology.Alias");
-			dBTopology.LogicDbName = _ctx.StringValue("GetDBTopology.DBTopology.LogicDbName");
-			dBTopology.EnvType = _ctx.StringValue("GetDBTopology.DBTopology.EnvType");
 			dBTopology.DbType = _ctx.StringValue("GetDBTopology.DBTopology.DbType");
+			dBTopology.EnvType = _ctx.StringValue("GetDBTopology.DBTopology.EnvType");
 
 			List<GetDBTopologyResponse.GetDBTopology_DBTopology.GetDBTopology_DBTopologyInfo> dBTopology_dBTopologyInfoList = new List<GetDBTopologyResponse.GetDBTopology_DBTopology.GetDBTopology_DBTopologyInfo>();
 			for (int i = 0; i < _ctx.Length("GetDBTopology.DBTopology.DBTopologyInfoList.Length"); i++) {
 				GetDBTopologyResponse.GetDBTopology_DBTopology.GetDBTopology_DBTopologyInfo dBTopologyInfo = new GetDBTopologyResponse.GetDBTopology_DBTopology.GetDBTopology_DBTopologyInfo();
-				dBTopologyInfo.InstanceSource = _ctx.StringValue("GetDBTopology.DBTopology.DBTopologyInfoList["+ i +"].InstanceSource");
-				dBTopologyInfo.InstanceResourceId = _ctx.StringValue("GetDBTopology.DBTopology.DBTopologyInfoList["+ i +"].InstanceResourceId");
-				dBTopologyInfo.InstanceId = _ctx.LongValue("GetDBTopology.DBTopology.DBTopologyInfoList["+ i +"].InstanceId");
-				dBTopologyInfo.SearchName = _ctx.StringValue("GetDBTopology.DBTopology.DBTopologyInfoList["+ i +"].SearchName");
 				dBTopologyInfo.DbId = _ctx.LongValue("GetDBTopology.DBTopology.DBTopologyInfoList["+ i +"].DbId");
-				dBTopologyInfo.CatalogName = _ctx.StringValue("GetDBTopology.DBTopology.DBTopologyInfoList["+ i +"].CatalogName");
-				dBTopologyInfo.RegionId = _ctx.StringValue("GetDBTopology.DBTopology.DBTopologyInfoList["+ i +"].RegionId");
-				dBTopologyInfo.EnvType = _ctx.StringValue("GetDBTopology.DBTopology.DBTopologyInfoList["+ i +"].EnvType");
-				dBTopologyInfo.DbType = _ctx.StringValue("GetDBTopology.DBTopology.DBTopologyInfoList["+ i +"].DbType");
 				dBTopologyInfo.SchemaName = _ctx.StringValue("GetDBTopology.DBTopology.DBTopologyInfoList["+ i +"].SchemaName");
+				dBTopologyInfo.CatalogName = _ctx.StringValue("GetDBTopology.DBTopology.DBTopologyInfoList["+ i +"].CatalogName");
+				dBTopologyInfo.SearchName = _ctx.StringValue("GetDBTopology.DBTopology.DBTopologyInfoList["+ i +"].SearchName");
+				dBTopologyInfo.DbType = _ctx.StringValue("GetDBTopology.DBTopology.DBTopologyInfoList["+ i +"].DbType");
+				dBTopologyInfo.EnvType = _ctx.StringValue("GetDBTopology.DBTopology.DBTopologyInfoList["+ i +"].EnvType");
+				dBTopologyInfo.InstanceId = _ctx.LongValue("GetDBTopology.DBTopology.DBTopologyInfoList["+ i +"].InstanceId");
+				dBTopologyInfo.RegionId = _ctx.StringValue("GetDBTopology.DBTopology.DBTopologyInfoList["+ i +"].RegionId");
+				dBTopologyInfo.InstanceResourceId = _ctx.StringValue("GetDBTopology.DBTopology.DBTopologyInfoList["+ i +"].InstanceResourceId");
+				dBTopologyInfo.InstanceSource = _ctx.StringValue("GetDBTopology.DBTopology.DBTopologyInfoList["+ i +"].InstanceSource");
 
 				dBTopology_dBTopologyInfoList.Add(dBTopologyInfo);
 			}

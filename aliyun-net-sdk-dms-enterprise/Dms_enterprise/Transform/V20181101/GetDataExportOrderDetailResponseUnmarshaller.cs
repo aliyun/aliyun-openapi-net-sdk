@@ -38,22 +38,22 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			GetDataExportOrderDetailResponse.GetDataExportOrderDetail_DataExportOrderDetail dataExportOrderDetail = new GetDataExportOrderDetailResponse.GetDataExportOrderDetail_DataExportOrderDetail();
 
+			GetDataExportOrderDetailResponse.GetDataExportOrderDetail_DataExportOrderDetail.GetDataExportOrderDetail_KeyInfo keyInfo = new GetDataExportOrderDetailResponse.GetDataExportOrderDetail_DataExportOrderDetail.GetDataExportOrderDetail_KeyInfo();
+			keyInfo.PreCheckId = _ctx.LongValue("GetDataExportOrderDetail.DataExportOrderDetail.KeyInfo.PreCheckId");
+			keyInfo.JobStatus = _ctx.StringValue("GetDataExportOrderDetail.DataExportOrderDetail.KeyInfo.JobStatus");
+			dataExportOrderDetail.KeyInfo = keyInfo;
+
 			GetDataExportOrderDetailResponse.GetDataExportOrderDetail_DataExportOrderDetail.GetDataExportOrderDetail_OrderDetail orderDetail = new GetDataExportOrderDetailResponse.GetDataExportOrderDetail_DataExportOrderDetail.GetDataExportOrderDetail_OrderDetail();
-			orderDetail.IgnoreAffectRows = _ctx.BooleanValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.IgnoreAffectRows");
-			orderDetail.ExeSQL = _ctx.StringValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.ExeSQL");
-			orderDetail.Classify = _ctx.StringValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.Classify");
-			orderDetail.IgnoreAffectRowsReason = _ctx.StringValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.IgnoreAffectRowsReason");
-			orderDetail.Database = _ctx.StringValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.Database");
 			orderDetail.DbId = _ctx.IntegerValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.DbId");
-			orderDetail.ActualAffectRows = _ctx.LongValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.ActualAffectRows");
+			orderDetail.Database = _ctx.StringValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.Database");
+			orderDetail.Classify = _ctx.StringValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.Classify");
+			orderDetail.ExeSQL = _ctx.StringValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.ExeSQL");
 			orderDetail.Logic = _ctx.BooleanValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.Logic");
+			orderDetail.ActualAffectRows = _ctx.LongValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.ActualAffectRows");
+			orderDetail.IgnoreAffectRows = _ctx.BooleanValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.IgnoreAffectRows");
+			orderDetail.IgnoreAffectRowsReason = _ctx.StringValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.IgnoreAffectRowsReason");
 			orderDetail.EnvType = _ctx.StringValue("GetDataExportOrderDetail.DataExportOrderDetail.OrderDetail.EnvType");
 			dataExportOrderDetail.OrderDetail = orderDetail;
-
-			GetDataExportOrderDetailResponse.GetDataExportOrderDetail_DataExportOrderDetail.GetDataExportOrderDetail_KeyInfo keyInfo = new GetDataExportOrderDetailResponse.GetDataExportOrderDetail_DataExportOrderDetail.GetDataExportOrderDetail_KeyInfo();
-			keyInfo.JobStatus = _ctx.StringValue("GetDataExportOrderDetail.DataExportOrderDetail.KeyInfo.JobStatus");
-			keyInfo.PreCheckId = _ctx.LongValue("GetDataExportOrderDetail.DataExportOrderDetail.KeyInfo.PreCheckId");
-			dataExportOrderDetail.KeyInfo = keyInfo;
 			getDataExportOrderDetailResponse.DataExportOrderDetail = dataExportOrderDetail;
         
 			return getDataExportOrderDetailResponse;

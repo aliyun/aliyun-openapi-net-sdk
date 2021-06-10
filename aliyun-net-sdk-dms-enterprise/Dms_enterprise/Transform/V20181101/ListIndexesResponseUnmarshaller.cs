@@ -39,11 +39,11 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			List<ListIndexesResponse.ListIndexes_Index> listIndexesResponse_indexList = new List<ListIndexesResponse.ListIndexes_Index>();
 			for (int i = 0; i < _ctx.Length("ListIndexes.IndexList.Length"); i++) {
 				ListIndexesResponse.ListIndexes_Index index = new ListIndexesResponse.ListIndexes_Index();
-				index.TableId = _ctx.StringValue("ListIndexes.IndexList["+ i +"].TableId");
 				index.IndexName = _ctx.StringValue("ListIndexes.IndexList["+ i +"].IndexName");
+				index.IndexType = _ctx.StringValue("ListIndexes.IndexList["+ i +"].IndexType");
+				index.TableId = _ctx.StringValue("ListIndexes.IndexList["+ i +"].TableId");
 				index.IndexId = _ctx.StringValue("ListIndexes.IndexList["+ i +"].IndexId");
 				index.IndexComment = _ctx.StringValue("ListIndexes.IndexList["+ i +"].IndexComment");
-				index.IndexType = _ctx.StringValue("ListIndexes.IndexList["+ i +"].IndexType");
 
 				listIndexesResponse_indexList.Add(index);
 			}

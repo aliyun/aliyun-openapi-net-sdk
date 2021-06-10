@@ -39,16 +39,16 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			List<ListSensitiveColumnsDetailResponse.ListSensitiveColumnsDetail_SensitiveColumnsDetail> listSensitiveColumnsDetailResponse_sensitiveColumnsDetailList = new List<ListSensitiveColumnsDetailResponse.ListSensitiveColumnsDetail_SensitiveColumnsDetail>();
 			for (int i = 0; i < _ctx.Length("ListSensitiveColumnsDetail.SensitiveColumnsDetailList.Length"); i++) {
 				ListSensitiveColumnsDetailResponse.ListSensitiveColumnsDetail_SensitiveColumnsDetail sensitiveColumnsDetail = new ListSensitiveColumnsDetailResponse.ListSensitiveColumnsDetail_SensitiveColumnsDetail();
-				sensitiveColumnsDetail.TableName = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].TableName");
-				sensitiveColumnsDetail.ColumnName = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].ColumnName");
-				sensitiveColumnsDetail.ColumnType = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].ColumnType");
-				sensitiveColumnsDetail.SearchName = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].SearchName");
-				sensitiveColumnsDetail.ColumnDescription = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].ColumnDescription");
 				sensitiveColumnsDetail.DbId = _ctx.LongValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].DbId");
-				sensitiveColumnsDetail.Logic = _ctx.BooleanValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].Logic");
-				sensitiveColumnsDetail.EnvType = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].EnvType");
-				sensitiveColumnsDetail.SchemaName = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].SchemaName");
+				sensitiveColumnsDetail.ColumnName = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].ColumnName");
+				sensitiveColumnsDetail.ColumnDescription = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].ColumnDescription");
+				sensitiveColumnsDetail.TableName = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].TableName");
 				sensitiveColumnsDetail.DbType = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].DbType");
+				sensitiveColumnsDetail.ColumnType = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].ColumnType");
+				sensitiveColumnsDetail.Logic = _ctx.BooleanValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].Logic");
+				sensitiveColumnsDetail.SchemaName = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].SchemaName");
+				sensitiveColumnsDetail.SearchName = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].SearchName");
+				sensitiveColumnsDetail.EnvType = _ctx.StringValue("ListSensitiveColumnsDetail.SensitiveColumnsDetailList["+ i +"].EnvType");
 
 				listSensitiveColumnsDetailResponse_sensitiveColumnsDetailList.Add(sensitiveColumnsDetail);
 			}

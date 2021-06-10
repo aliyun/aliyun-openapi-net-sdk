@@ -32,69 +32,69 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getPermApplyOrderDetailResponse.HttpResponse = _ctx.HttpResponse;
 			getPermApplyOrderDetailResponse.RequestId = _ctx.StringValue("GetPermApplyOrderDetail.RequestId");
-			getPermApplyOrderDetailResponse.ErrorCode = _ctx.StringValue("GetPermApplyOrderDetail.ErrorCode");
-			getPermApplyOrderDetailResponse.ErrorMessage = _ctx.StringValue("GetPermApplyOrderDetail.ErrorMessage");
 			getPermApplyOrderDetailResponse.Success = _ctx.BooleanValue("GetPermApplyOrderDetail.Success");
+			getPermApplyOrderDetailResponse.ErrorMessage = _ctx.StringValue("GetPermApplyOrderDetail.ErrorMessage");
+			getPermApplyOrderDetailResponse.ErrorCode = _ctx.StringValue("GetPermApplyOrderDetail.ErrorCode");
 
 			GetPermApplyOrderDetailResponse.GetPermApplyOrderDetail_PermApplyOrderDetail permApplyOrderDetail = new GetPermApplyOrderDetailResponse.GetPermApplyOrderDetail_PermApplyOrderDetail();
-			permApplyOrderDetail.ApplyType = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.ApplyType");
 			permApplyOrderDetail.PermType = _ctx.LongValue("GetPermApplyOrderDetail.PermApplyOrderDetail.PermType");
 			permApplyOrderDetail.Seconds = _ctx.LongValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Seconds");
+			permApplyOrderDetail.ApplyType = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.ApplyType");
 
 			List<GetPermApplyOrderDetailResponse.GetPermApplyOrderDetail_PermApplyOrderDetail.GetPermApplyOrderDetail_Resource> permApplyOrderDetail_resources = new List<GetPermApplyOrderDetailResponse.GetPermApplyOrderDetail_PermApplyOrderDetail.GetPermApplyOrderDetail_Resource>();
 			for (int i = 0; i < _ctx.Length("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources.Length"); i++) {
 				GetPermApplyOrderDetailResponse.GetPermApplyOrderDetail_PermApplyOrderDetail.GetPermApplyOrderDetail_Resource resource = new GetPermApplyOrderDetailResponse.GetPermApplyOrderDetail_PermApplyOrderDetail.GetPermApplyOrderDetail_Resource();
 
 				GetPermApplyOrderDetailResponse.GetPermApplyOrderDetail_PermApplyOrderDetail.GetPermApplyOrderDetail_Resource.GetPermApplyOrderDetail_DatabaseInfo databaseInfo = new GetPermApplyOrderDetailResponse.GetPermApplyOrderDetail_PermApplyOrderDetail.GetPermApplyOrderDetail_Resource.GetPermApplyOrderDetail_DatabaseInfo();
-				databaseInfo.SearchName = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.SearchName");
 				databaseInfo.DbId = _ctx.LongValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.DbId");
 				databaseInfo.Logic = _ctx.BooleanValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.Logic");
-				databaseInfo.EnvType = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.EnvType");
 				databaseInfo.DbType = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.DbType");
-
-				List<string> databaseInfo_ownerNickNames = new List<string>();
-				for (int j = 0; j < _ctx.Length("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.OwnerNickNames.Length"); j++) {
-					databaseInfo_ownerNickNames.Add(_ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.OwnerNickNames["+ j +"]"));
-				}
-				databaseInfo.OwnerNickNames = databaseInfo_ownerNickNames;
+				databaseInfo.SearchName = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.SearchName");
+				databaseInfo.EnvType = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.EnvType");
 
 				List<string> databaseInfo_ownerIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.OwnerIds.Length"); j++) {
 					databaseInfo_ownerIds.Add(_ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.OwnerIds["+ j +"]"));
 				}
 				databaseInfo.OwnerIds = databaseInfo_ownerIds;
-				resource.DatabaseInfo = databaseInfo;
 
-				GetPermApplyOrderDetailResponse.GetPermApplyOrderDetail_PermApplyOrderDetail.GetPermApplyOrderDetail_Resource.GetPermApplyOrderDetail_ColumnInfo columnInfo = new GetPermApplyOrderDetailResponse.GetPermApplyOrderDetail_PermApplyOrderDetail.GetPermApplyOrderDetail_Resource.GetPermApplyOrderDetail_ColumnInfo();
-				columnInfo.ColumnName = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].ColumnInfo.ColumnName");
-				columnInfo.TableName = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].ColumnInfo.TableName");
-				resource.ColumnInfo = columnInfo;
+				List<string> databaseInfo_ownerNickNames = new List<string>();
+				for (int j = 0; j < _ctx.Length("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.OwnerNickNames.Length"); j++) {
+					databaseInfo_ownerNickNames.Add(_ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].DatabaseInfo.OwnerNickNames["+ j +"]"));
+				}
+				databaseInfo.OwnerNickNames = databaseInfo_ownerNickNames;
+				resource.DatabaseInfo = databaseInfo;
 
 				GetPermApplyOrderDetailResponse.GetPermApplyOrderDetail_PermApplyOrderDetail.GetPermApplyOrderDetail_Resource.GetPermApplyOrderDetail_TableInfo tableInfo = new GetPermApplyOrderDetailResponse.GetPermApplyOrderDetail_PermApplyOrderDetail.GetPermApplyOrderDetail_Resource.GetPermApplyOrderDetail_TableInfo();
 				tableInfo.TableName = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].TableInfo.TableName");
 				resource.TableInfo = tableInfo;
 
-				GetPermApplyOrderDetailResponse.GetPermApplyOrderDetail_PermApplyOrderDetail.GetPermApplyOrderDetail_Resource.GetPermApplyOrderDetail_InstanceInfo instanceInfo = new GetPermApplyOrderDetailResponse.GetPermApplyOrderDetail_PermApplyOrderDetail.GetPermApplyOrderDetail_Resource.GetPermApplyOrderDetail_InstanceInfo();
-				instanceInfo.DbaId = _ctx.LongValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.DbaId");
-				instanceInfo.SearchName = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.SearchName");
-				instanceInfo.InstanceId = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.InstanceId");
-				instanceInfo.Port = _ctx.LongValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.Port");
-				instanceInfo.Host = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.Host");
-				instanceInfo.DbaNickName = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.DbaNickName");
-				instanceInfo.EnvType = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.EnvType");
-				instanceInfo.DbType = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.DbType");
+				GetPermApplyOrderDetailResponse.GetPermApplyOrderDetail_PermApplyOrderDetail.GetPermApplyOrderDetail_Resource.GetPermApplyOrderDetail_ColumnInfo columnInfo = new GetPermApplyOrderDetailResponse.GetPermApplyOrderDetail_PermApplyOrderDetail.GetPermApplyOrderDetail_Resource.GetPermApplyOrderDetail_ColumnInfo();
+				columnInfo.TableName = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].ColumnInfo.TableName");
+				columnInfo.ColumnName = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].ColumnInfo.ColumnName");
+				resource.ColumnInfo = columnInfo;
 
-				List<string> instanceInfo_ownerNickName = new List<string>();
-				for (int j = 0; j < _ctx.Length("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.OwnerNickName.Length"); j++) {
-					instanceInfo_ownerNickName.Add(_ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.OwnerNickName["+ j +"]"));
-				}
-				instanceInfo.OwnerNickName = instanceInfo_ownerNickName;
+				GetPermApplyOrderDetailResponse.GetPermApplyOrderDetail_PermApplyOrderDetail.GetPermApplyOrderDetail_Resource.GetPermApplyOrderDetail_InstanceInfo instanceInfo = new GetPermApplyOrderDetailResponse.GetPermApplyOrderDetail_PermApplyOrderDetail.GetPermApplyOrderDetail_Resource.GetPermApplyOrderDetail_InstanceInfo();
+				instanceInfo.InstanceId = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.InstanceId");
+				instanceInfo.SearchName = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.SearchName");
+				instanceInfo.DbType = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.DbType");
+				instanceInfo.EnvType = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.EnvType");
+				instanceInfo.Host = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.Host");
+				instanceInfo.Port = _ctx.LongValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.Port");
+				instanceInfo.DbaId = _ctx.LongValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.DbaId");
+				instanceInfo.DbaNickName = _ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.DbaNickName");
 
 				List<string> instanceInfo_ownerIds1 = new List<string>();
 				for (int j = 0; j < _ctx.Length("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.OwnerIds.Length"); j++) {
 					instanceInfo_ownerIds1.Add(_ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.OwnerIds["+ j +"]"));
 				}
 				instanceInfo.OwnerIds1 = instanceInfo_ownerIds1;
+
+				List<string> instanceInfo_ownerNickName = new List<string>();
+				for (int j = 0; j < _ctx.Length("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.OwnerNickName.Length"); j++) {
+					instanceInfo_ownerNickName.Add(_ctx.StringValue("GetPermApplyOrderDetail.PermApplyOrderDetail.Resources["+ i +"].InstanceInfo.OwnerNickName["+ j +"]"));
+				}
+				instanceInfo.OwnerNickName = instanceInfo_ownerNickName;
 				resource.InstanceInfo = instanceInfo;
 
 				permApplyOrderDetail_resources.Add(resource);

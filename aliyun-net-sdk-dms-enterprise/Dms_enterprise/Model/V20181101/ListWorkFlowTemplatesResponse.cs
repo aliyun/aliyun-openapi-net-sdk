@@ -103,19 +103,32 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ListWorkFlowTemplates_WorkFlowTemplate
 		{
 
+			private int? isSystem;
+
 			private string comment;
-
-			private long? createUserId;
-
-			private string templateName;
 
 			private string enabled;
 
-			private int? isSystem;
+			private string templateName;
 
 			private long? templateId;
 
+			private long? createUserId;
+
 			private List<ListWorkFlowTemplates_WorkflowNode> workflowNodes;
+
+			[JsonProperty(PropertyName = "IsSystem")]
+			public int? IsSystem
+			{
+				get
+				{
+					return isSystem;
+				}
+				set	
+				{
+					isSystem = value;
+				}
+			}
 
 			[JsonProperty(PropertyName = "Comment")]
 			public string Comment
@@ -127,32 +140,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					comment = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "CreateUserId")]
-			public long? CreateUserId
-			{
-				get
-				{
-					return createUserId;
-				}
-				set	
-				{
-					createUserId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "TemplateName")]
-			public string TemplateName
-			{
-				get
-				{
-					return templateName;
-				}
-				set	
-				{
-					templateName = value;
 				}
 			}
 
@@ -169,16 +156,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "IsSystem")]
-			public int? IsSystem
+			[JsonProperty(PropertyName = "TemplateName")]
+			public string TemplateName
 			{
 				get
 				{
-					return isSystem;
+					return templateName;
 				}
 				set	
 				{
-					isSystem = value;
+					templateName = value;
 				}
 			}
 
@@ -192,6 +179,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					templateId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateUserId")]
+			public long? CreateUserId
+			{
+				get
+				{
+					return createUserId;
+				}
+				set	
+				{
+					createUserId = value;
 				}
 			}
 
@@ -213,17 +213,17 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 				private string comment;
 
-				private int? position;
+				private string nodeType;
 
 				private string nodeName;
 
-				private string nodeType;
-
-				private long? nodeId;
+				private int? position;
 
 				private long? createUserId;
 
 				private long? templateId;
+
+				private long? nodeId;
 
 				[JsonProperty(PropertyName = "Comment")]
 				public string Comment
@@ -235,32 +235,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					set	
 					{
 						comment = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "Position")]
-				public int? Position
-				{
-					get
-					{
-						return position;
-					}
-					set	
-					{
-						position = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "NodeName")]
-				public string NodeName
-				{
-					get
-					{
-						return nodeName;
-					}
-					set	
-					{
-						nodeName = value;
 					}
 				}
 
@@ -277,16 +251,29 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
-				[JsonProperty(PropertyName = "NodeId")]
-				public long? NodeId
+				[JsonProperty(PropertyName = "NodeName")]
+				public string NodeName
 				{
 					get
 					{
-						return nodeId;
+						return nodeName;
 					}
 					set	
 					{
-						nodeId = value;
+						nodeName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Position")]
+				public int? Position
+				{
+					get
+					{
+						return position;
+					}
+					set	
+					{
+						position = value;
 					}
 				}
 
@@ -313,6 +300,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					set	
 					{
 						templateId = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "NodeId")]
+				public long? NodeId
+				{
+					get
+					{
+						return nodeId;
+					}
+					set	
+					{
+						nodeId = value;
 					}
 				}
 			}

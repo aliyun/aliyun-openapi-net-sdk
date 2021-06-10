@@ -32,9 +32,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getOwnerApplyOrderDetailResponse.HttpResponse = _ctx.HttpResponse;
 			getOwnerApplyOrderDetailResponse.RequestId = _ctx.StringValue("GetOwnerApplyOrderDetail.RequestId");
-			getOwnerApplyOrderDetailResponse.ErrorCode = _ctx.StringValue("GetOwnerApplyOrderDetail.ErrorCode");
-			getOwnerApplyOrderDetailResponse.ErrorMessage = _ctx.StringValue("GetOwnerApplyOrderDetail.ErrorMessage");
 			getOwnerApplyOrderDetailResponse.Success = _ctx.BooleanValue("GetOwnerApplyOrderDetail.Success");
+			getOwnerApplyOrderDetailResponse.ErrorMessage = _ctx.StringValue("GetOwnerApplyOrderDetail.ErrorMessage");
+			getOwnerApplyOrderDetailResponse.ErrorCode = _ctx.StringValue("GetOwnerApplyOrderDetail.ErrorCode");
 
 			GetOwnerApplyOrderDetailResponse.GetOwnerApplyOrderDetail_OwnerApplyOrderDetail ownerApplyOrderDetail = new GetOwnerApplyOrderDetailResponse.GetOwnerApplyOrderDetail_OwnerApplyOrderDetail();
 			ownerApplyOrderDetail.ApplyType = _ctx.StringValue("GetOwnerApplyOrderDetail.OwnerApplyOrderDetail.ApplyType");
@@ -46,22 +46,22 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 				resource.TargetId = _ctx.StringValue("GetOwnerApplyOrderDetail.OwnerApplyOrderDetail.Resources["+ i +"].TargetId");
 
 				GetOwnerApplyOrderDetailResponse.GetOwnerApplyOrderDetail_OwnerApplyOrderDetail.GetOwnerApplyOrderDetail_Resource.GetOwnerApplyOrderDetail_ResourceDetail resourceDetail = new GetOwnerApplyOrderDetailResponse.GetOwnerApplyOrderDetail_OwnerApplyOrderDetail.GetOwnerApplyOrderDetail_Resource.GetOwnerApplyOrderDetail_ResourceDetail();
-				resourceDetail.TableName = _ctx.StringValue("GetOwnerApplyOrderDetail.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.TableName");
 				resourceDetail.SearchName = _ctx.StringValue("GetOwnerApplyOrderDetail.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.SearchName");
-				resourceDetail.EnvType = _ctx.StringValue("GetOwnerApplyOrderDetail.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.EnvType");
 				resourceDetail.DbType = _ctx.StringValue("GetOwnerApplyOrderDetail.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.DbType");
-
-				List<string> resourceDetail_ownerNickNames = new List<string>();
-				for (int j = 0; j < _ctx.Length("GetOwnerApplyOrderDetail.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.OwnerNickNames.Length"); j++) {
-					resourceDetail_ownerNickNames.Add(_ctx.StringValue("GetOwnerApplyOrderDetail.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.OwnerNickNames["+ j +"]"));
-				}
-				resourceDetail.OwnerNickNames = resourceDetail_ownerNickNames;
+				resourceDetail.EnvType = _ctx.StringValue("GetOwnerApplyOrderDetail.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.EnvType");
+				resourceDetail.TableName = _ctx.StringValue("GetOwnerApplyOrderDetail.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.TableName");
 
 				List<string> resourceDetail_ownerIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("GetOwnerApplyOrderDetail.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.OwnerIds.Length"); j++) {
 					resourceDetail_ownerIds.Add(_ctx.StringValue("GetOwnerApplyOrderDetail.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.OwnerIds["+ j +"]"));
 				}
 				resourceDetail.OwnerIds = resourceDetail_ownerIds;
+
+				List<string> resourceDetail_ownerNickNames = new List<string>();
+				for (int j = 0; j < _ctx.Length("GetOwnerApplyOrderDetail.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.OwnerNickNames.Length"); j++) {
+					resourceDetail_ownerNickNames.Add(_ctx.StringValue("GetOwnerApplyOrderDetail.OwnerApplyOrderDetail.Resources["+ i +"].ResourceDetail.OwnerNickNames["+ j +"]"));
+				}
+				resourceDetail.OwnerNickNames = resourceDetail_ownerNickNames;
 				resource.ResourceDetail = resourceDetail;
 
 				ownerApplyOrderDetail_resources.Add(resource);

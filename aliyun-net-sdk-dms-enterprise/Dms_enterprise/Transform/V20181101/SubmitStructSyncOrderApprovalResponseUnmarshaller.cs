@@ -32,10 +32,10 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			submitStructSyncOrderApprovalResponse.HttpResponse = _ctx.HttpResponse;
 			submitStructSyncOrderApprovalResponse.RequestId = _ctx.StringValue("SubmitStructSyncOrderApproval.RequestId");
-			submitStructSyncOrderApprovalResponse.WorkflowInstanceId = _ctx.LongValue("SubmitStructSyncOrderApproval.WorkflowInstanceId");
-			submitStructSyncOrderApprovalResponse.ErrorCode = _ctx.StringValue("SubmitStructSyncOrderApproval.ErrorCode");
-			submitStructSyncOrderApprovalResponse.ErrorMessage = _ctx.StringValue("SubmitStructSyncOrderApproval.ErrorMessage");
 			submitStructSyncOrderApprovalResponse.Success = _ctx.BooleanValue("SubmitStructSyncOrderApproval.Success");
+			submitStructSyncOrderApprovalResponse.ErrorMessage = _ctx.StringValue("SubmitStructSyncOrderApproval.ErrorMessage");
+			submitStructSyncOrderApprovalResponse.ErrorCode = _ctx.StringValue("SubmitStructSyncOrderApproval.ErrorCode");
+			submitStructSyncOrderApprovalResponse.WorkflowInstanceId = _ctx.LongValue("SubmitStructSyncOrderApproval.WorkflowInstanceId");
         
 			return submitStructSyncOrderApprovalResponse;
         }

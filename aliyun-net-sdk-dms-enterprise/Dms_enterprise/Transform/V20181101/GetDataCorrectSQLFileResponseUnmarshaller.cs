@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			GetDataCorrectSQLFileResponse getDataCorrectSQLFileResponse = new GetDataCorrectSQLFileResponse();
 
 			getDataCorrectSQLFileResponse.HttpResponse = _ctx.HttpResponse;
-			getDataCorrectSQLFileResponse.FileUrl = _ctx.StringValue("GetDataCorrectSQLFile.FileUrl");
 			getDataCorrectSQLFileResponse.RequestId = _ctx.StringValue("GetDataCorrectSQLFile.RequestId");
-			getDataCorrectSQLFileResponse.ErrorCode = _ctx.StringValue("GetDataCorrectSQLFile.ErrorCode");
-			getDataCorrectSQLFileResponse.ErrorMessage = _ctx.StringValue("GetDataCorrectSQLFile.ErrorMessage");
 			getDataCorrectSQLFileResponse.Success = _ctx.BooleanValue("GetDataCorrectSQLFile.Success");
+			getDataCorrectSQLFileResponse.ErrorMessage = _ctx.StringValue("GetDataCorrectSQLFile.ErrorMessage");
+			getDataCorrectSQLFileResponse.ErrorCode = _ctx.StringValue("GetDataCorrectSQLFile.ErrorCode");
+			getDataCorrectSQLFileResponse.FileUrl = _ctx.StringValue("GetDataCorrectSQLFile.FileUrl");
         
 			return getDataCorrectSQLFileResponse;
         }

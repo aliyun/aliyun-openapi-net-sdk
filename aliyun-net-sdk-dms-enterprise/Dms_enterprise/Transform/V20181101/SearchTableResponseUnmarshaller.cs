@@ -40,31 +40,31 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			List<SearchTableResponse.SearchTable_SearchTable> searchTableResponse_searchTableList = new List<SearchTableResponse.SearchTable_SearchTable>();
 			for (int i = 0; i < _ctx.Length("SearchTable.SearchTableList.Length"); i++) {
 				SearchTableResponse.SearchTable_SearchTable searchTable = new SearchTableResponse.SearchTable_SearchTable();
-				searchTable.TableId = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].TableId");
-				searchTable.TableName = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].TableName");
-				searchTable.TableGuid = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].TableGuid");
-				searchTable.Description = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].Description");
-				searchTable.TableSchemaName = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].TableSchemaName");
-				searchTable.Encoding = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].Encoding");
-				searchTable.DbName = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].DbName");
 				searchTable.DatabaseId = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].DatabaseId");
-				searchTable.Logic = _ctx.BooleanValue("SearchTable.SearchTableList["+ i +"].Logic");
+				searchTable.TableName = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].TableName");
 				searchTable.DBSearchName = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].DBSearchName");
-				searchTable.Engine = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].Engine");
-				searchTable.DbType = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].DbType");
+				searchTable.Logic = _ctx.BooleanValue("SearchTable.SearchTableList["+ i +"].Logic");
 				searchTable.EnvType = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].EnvType");
-
-				List<string> searchTable_ownerNameList = new List<string>();
-				for (int j = 0; j < _ctx.Length("SearchTable.SearchTableList["+ i +"].OwnerNameList.Length"); j++) {
-					searchTable_ownerNameList.Add(_ctx.StringValue("SearchTable.SearchTableList["+ i +"].OwnerNameList["+ j +"]"));
-				}
-				searchTable.OwnerNameList = searchTable_ownerNameList;
+				searchTable.DbName = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].DbName");
+				searchTable.Description = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].Description");
+				searchTable.Encoding = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].Encoding");
+				searchTable.DbType = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].DbType");
+				searchTable.TableSchemaName = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].TableSchemaName");
+				searchTable.TableGuid = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].TableGuid");
+				searchTable.Engine = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].Engine");
+				searchTable.TableId = _ctx.StringValue("SearchTable.SearchTableList["+ i +"].TableId");
 
 				List<string> searchTable_ownerIdList = new List<string>();
 				for (int j = 0; j < _ctx.Length("SearchTable.SearchTableList["+ i +"].OwnerIdList.Length"); j++) {
 					searchTable_ownerIdList.Add(_ctx.StringValue("SearchTable.SearchTableList["+ i +"].OwnerIdList["+ j +"]"));
 				}
 				searchTable.OwnerIdList = searchTable_ownerIdList;
+
+				List<string> searchTable_ownerNameList = new List<string>();
+				for (int j = 0; j < _ctx.Length("SearchTable.SearchTableList["+ i +"].OwnerNameList.Length"); j++) {
+					searchTable_ownerNameList.Add(_ctx.StringValue("SearchTable.SearchTableList["+ i +"].OwnerNameList["+ j +"]"));
+				}
+				searchTable.OwnerNameList = searchTable_ownerNameList;
 
 				searchTableResponse_searchTableList.Add(searchTable);
 			}

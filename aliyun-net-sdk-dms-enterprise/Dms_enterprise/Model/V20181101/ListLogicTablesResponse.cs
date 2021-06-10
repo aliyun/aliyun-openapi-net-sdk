@@ -118,36 +118,36 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ListLogicTables_LogicTable
 		{
 
-			private string tableId;
+			private string databaseId;
 
 			private string tableName;
 
-			private string tableGuid;
-
-			private string tableExpr;
-
 			private string tableCount;
-
-			private string databaseId;
-
-			private bool? logic;
 
 			private string schemaName;
 
-			private List<string> ownerNameList;
+			private bool? logic;
+
+			private string tableExpr;
+
+			private string tableGuid;
+
+			private string tableId;
 
 			private List<string> ownerIdList;
 
-			[JsonProperty(PropertyName = "TableId")]
-			public string TableId
+			private List<string> ownerNameList;
+
+			[JsonProperty(PropertyName = "DatabaseId")]
+			public string DatabaseId
 			{
 				get
 				{
-					return tableId;
+					return databaseId;
 				}
 				set	
 				{
-					tableId = value;
+					databaseId = value;
 				}
 			}
 
@@ -164,32 +164,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "TableGuid")]
-			public string TableGuid
-			{
-				get
-				{
-					return tableGuid;
-				}
-				set	
-				{
-					tableGuid = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "TableExpr")]
-			public string TableExpr
-			{
-				get
-				{
-					return tableExpr;
-				}
-				set	
-				{
-					tableExpr = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "TableCount")]
 			public string TableCount
 			{
@@ -200,32 +174,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					tableCount = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "DatabaseId")]
-			public string DatabaseId
-			{
-				get
-				{
-					return databaseId;
-				}
-				set	
-				{
-					databaseId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Logic")]
-			public bool? Logic
-			{
-				get
-				{
-					return logic;
-				}
-				set	
-				{
-					logic = value;
 				}
 			}
 
@@ -242,16 +190,55 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "OwnerNameList")]
-			public List<string> OwnerNameList
+			[JsonProperty(PropertyName = "Logic")]
+			public bool? Logic
 			{
 				get
 				{
-					return ownerNameList;
+					return logic;
 				}
 				set	
 				{
-					ownerNameList = value;
+					logic = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TableExpr")]
+			public string TableExpr
+			{
+				get
+				{
+					return tableExpr;
+				}
+				set	
+				{
+					tableExpr = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TableGuid")]
+			public string TableGuid
+			{
+				get
+				{
+					return tableGuid;
+				}
+				set	
+				{
+					tableGuid = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TableId")]
+			public string TableId
+			{
+				get
+				{
+					return tableId;
+				}
+				set	
+				{
+					tableId = value;
 				}
 			}
 
@@ -265,6 +252,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					ownerIdList = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OwnerNameList")]
+			public List<string> OwnerNameList
+			{
+				get
+				{
+					return ownerNameList;
+				}
+				set	
+				{
+					ownerNameList = value;
 				}
 			}
 		}

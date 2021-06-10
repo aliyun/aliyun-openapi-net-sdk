@@ -40,29 +40,29 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			List<ListTablesResponse.ListTables_Table> listTablesResponse_tableList = new List<ListTablesResponse.ListTables_Table>();
 			for (int i = 0; i < _ctx.Length("ListTables.TableList.Length"); i++) {
 				ListTablesResponse.ListTables_Table table = new ListTablesResponse.ListTables_Table();
-				table.TableId = _ctx.StringValue("ListTables.TableList["+ i +"].TableId");
-				table.TableName = _ctx.StringValue("ListTables.TableList["+ i +"].TableName");
-				table.TableGuid = _ctx.StringValue("ListTables.TableList["+ i +"].TableGuid");
-				table.TableType = _ctx.StringValue("ListTables.TableList["+ i +"].TableType");
-				table.Description = _ctx.StringValue("ListTables.TableList["+ i +"].Description");
-				table.TableSchemaName = _ctx.StringValue("ListTables.TableList["+ i +"].TableSchemaName");
-				table.Encoding = _ctx.StringValue("ListTables.TableList["+ i +"].Encoding");
 				table.DatabaseId = _ctx.StringValue("ListTables.TableList["+ i +"].DatabaseId");
-				table.NumRows = _ctx.LongValue("ListTables.TableList["+ i +"].NumRows");
+				table.TableName = _ctx.StringValue("ListTables.TableList["+ i +"].TableName");
 				table.StoreCapacity = _ctx.LongValue("ListTables.TableList["+ i +"].StoreCapacity");
+				table.Description = _ctx.StringValue("ListTables.TableList["+ i +"].Description");
+				table.Encoding = _ctx.StringValue("ListTables.TableList["+ i +"].Encoding");
+				table.TableSchemaName = _ctx.StringValue("ListTables.TableList["+ i +"].TableSchemaName");
+				table.TableType = _ctx.StringValue("ListTables.TableList["+ i +"].TableType");
+				table.TableGuid = _ctx.StringValue("ListTables.TableList["+ i +"].TableGuid");
 				table.Engine = _ctx.StringValue("ListTables.TableList["+ i +"].Engine");
-
-				List<string> table_ownerNameList = new List<string>();
-				for (int j = 0; j < _ctx.Length("ListTables.TableList["+ i +"].OwnerNameList.Length"); j++) {
-					table_ownerNameList.Add(_ctx.StringValue("ListTables.TableList["+ i +"].OwnerNameList["+ j +"]"));
-				}
-				table.OwnerNameList = table_ownerNameList;
+				table.NumRows = _ctx.LongValue("ListTables.TableList["+ i +"].NumRows");
+				table.TableId = _ctx.StringValue("ListTables.TableList["+ i +"].TableId");
 
 				List<string> table_ownerIdList = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListTables.TableList["+ i +"].OwnerIdList.Length"); j++) {
 					table_ownerIdList.Add(_ctx.StringValue("ListTables.TableList["+ i +"].OwnerIdList["+ j +"]"));
 				}
 				table.OwnerIdList = table_ownerIdList;
+
+				List<string> table_ownerNameList = new List<string>();
+				for (int j = 0; j < _ctx.Length("ListTables.TableList["+ i +"].OwnerNameList.Length"); j++) {
+					table_ownerNameList.Add(_ctx.StringValue("ListTables.TableList["+ i +"].OwnerNameList["+ j +"]"));
+				}
+				table.OwnerNameList = table_ownerNameList;
 
 				listTablesResponse_tableList.Add(table);
 			}

@@ -107,13 +107,13 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string createUserNickName;
 
-			private string nodeName;
-
 			private string nodeType;
 
-			private long? nodeId;
+			private string nodeName;
 
 			private long? createUserId;
+
+			private long? nodeId;
 
 			private List<ListWorkFlowNodes_AuditUser> auditUsers;
 
@@ -143,19 +143,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "NodeName")]
-			public string NodeName
-			{
-				get
-				{
-					return nodeName;
-				}
-				set	
-				{
-					nodeName = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "NodeType")]
 			public string NodeType
 			{
@@ -169,16 +156,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "NodeId")]
-			public long? NodeId
+			[JsonProperty(PropertyName = "NodeName")]
+			public string NodeName
 			{
 				get
 				{
-					return nodeId;
+					return nodeName;
 				}
 				set	
 				{
-					nodeId = value;
+					nodeName = value;
 				}
 			}
 
@@ -192,6 +179,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					createUserId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "NodeId")]
+			public long? NodeId
+			{
+				get
+				{
+					return nodeId;
+				}
+				set	
+				{
+					nodeId = value;
 				}
 			}
 
@@ -211,24 +211,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			public class ListWorkFlowNodes_AuditUser
 			{
 
-				private long? userId;
-
 				private string realName;
 
-				private string nickName;
+				private long? userId;
 
-				[JsonProperty(PropertyName = "UserId")]
-				public long? UserId
-				{
-					get
-					{
-						return userId;
-					}
-					set	
-					{
-						userId = value;
-					}
-				}
+				private string nickName;
 
 				[JsonProperty(PropertyName = "RealName")]
 				public string RealName
@@ -240,6 +227,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					set	
 					{
 						realName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "UserId")]
+				public long? UserId
+				{
+					get
+					{
+						return userId;
+					}
+					set	
+					{
+						userId = value;
 					}
 				}
 

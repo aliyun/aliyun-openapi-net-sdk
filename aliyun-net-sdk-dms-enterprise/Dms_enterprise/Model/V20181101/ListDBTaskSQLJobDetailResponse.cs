@@ -25,30 +25,17 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 	public class ListDBTaskSQLJobDetailResponse : AcsResponse
 	{
 
-		private long? totalCount;
-
 		private string requestId;
-
-		private string errorCode;
-
-		private string errorMessage;
 
 		private bool? success;
 
-		private List<ListDBTaskSQLJobDetail_DBTaskSQLJobDetail> dBTaskSQLJobDetailList;
+		private string errorMessage;
 
-		[JsonProperty(PropertyName = "TotalCount")]
-		public long? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
+		private string errorCode;
+
+		private long? totalCount;
+
+		private List<ListDBTaskSQLJobDetail_DBTaskSQLJobDetail> dBTaskSQLJobDetailList;
 
 		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
@@ -63,16 +50,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "ErrorCode")]
-		public string ErrorCode
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
 			get
 			{
-				return errorCode;
+				return success;
 			}
 			set	
 			{
-				errorCode = value;
+				success = value;
 			}
 		}
 
@@ -89,16 +76,29 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Success")]
-		public bool? Success
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
 		{
 			get
 			{
-				return success;
+				return errorCode;
 			}
 			set	
 			{
-				success = value;
+				errorCode = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "TotalCount")]
+		public long? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
 			}
 		}
 
@@ -118,99 +118,34 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ListDBTaskSQLJobDetail_DBTaskSQLJobDetail
 		{
 
-			private string status;
-
-			private bool? skip;
-
-			private long? dbId;
-
-			private string sqlType;
-
-			private long? executeCount;
-
-			private bool? logic;
+			private long? jobDetailId;
 
 			private string currentSql;
 
-			private long? jobDetailId;
+			private long? executeCount;
 
 			private long? jobId;
 
-			[JsonProperty(PropertyName = "Status")]
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+			private long? dbId;
 
-			[JsonProperty(PropertyName = "Skip")]
-			public bool? Skip
-			{
-				get
-				{
-					return skip;
-				}
-				set	
-				{
-					skip = value;
-				}
-			}
+			private bool? logic;
 
-			[JsonProperty(PropertyName = "DbId")]
-			public long? DbId
-			{
-				get
-				{
-					return dbId;
-				}
-				set	
-				{
-					dbId = value;
-				}
-			}
+			private bool? skip;
 
-			[JsonProperty(PropertyName = "SqlType")]
-			public string SqlType
-			{
-				get
-				{
-					return sqlType;
-				}
-				set	
-				{
-					sqlType = value;
-				}
-			}
+			private string sqlType;
 
-			[JsonProperty(PropertyName = "ExecuteCount")]
-			public long? ExecuteCount
-			{
-				get
-				{
-					return executeCount;
-				}
-				set	
-				{
-					executeCount = value;
-				}
-			}
+			private string status;
 
-			[JsonProperty(PropertyName = "Logic")]
-			public bool? Logic
+			[JsonProperty(PropertyName = "JobDetailId")]
+			public long? JobDetailId
 			{
 				get
 				{
-					return logic;
+					return jobDetailId;
 				}
 				set	
 				{
-					logic = value;
+					jobDetailId = value;
 				}
 			}
 
@@ -227,16 +162,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "JobDetailId")]
-			public long? JobDetailId
+			[JsonProperty(PropertyName = "ExecuteCount")]
+			public long? ExecuteCount
 			{
 				get
 				{
-					return jobDetailId;
+					return executeCount;
 				}
 				set	
 				{
-					jobDetailId = value;
+					executeCount = value;
 				}
 			}
 
@@ -250,6 +185,71 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					jobId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DbId")]
+			public long? DbId
+			{
+				get
+				{
+					return dbId;
+				}
+				set	
+				{
+					dbId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Logic")]
+			public bool? Logic
+			{
+				get
+				{
+					return logic;
+				}
+				set	
+				{
+					logic = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Skip")]
+			public bool? Skip
+			{
+				get
+				{
+					return skip;
+				}
+				set	
+				{
+					skip = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SqlType")]
+			public string SqlType
+			{
+				get
+				{
+					return sqlType;
+				}
+				set	
+				{
+					sqlType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Status")]
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

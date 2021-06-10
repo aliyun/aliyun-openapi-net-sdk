@@ -118,9 +118,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class GetOpLog_OpLogDetail
 		{
 
-			private long? userId;
+			private string module;
 
 			private string database;
+
+			private long? userId;
 
 			private string opContent;
 
@@ -128,20 +130,18 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private long? orderId;
 
-			private string module;
-
 			private string opTime;
 
-			[JsonProperty(PropertyName = "UserId")]
-			public long? UserId
+			[JsonProperty(PropertyName = "Module")]
+			public string Module
 			{
 				get
 				{
-					return userId;
+					return module;
 				}
 				set	
 				{
-					userId = value;
+					module = value;
 				}
 			}
 
@@ -155,6 +155,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					database = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UserId")]
+			public long? UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
 				}
 			}
 
@@ -194,19 +207,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					orderId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Module")]
-			public string Module
-			{
-				get
-				{
-					return module;
-				}
-				set	
-				{
-					module = value;
 				}
 			}
 

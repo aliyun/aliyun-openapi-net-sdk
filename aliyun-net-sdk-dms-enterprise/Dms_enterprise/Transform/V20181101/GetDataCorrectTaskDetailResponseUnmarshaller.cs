@@ -32,15 +32,15 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getDataCorrectTaskDetailResponse.HttpResponse = _ctx.HttpResponse;
 			getDataCorrectTaskDetailResponse.RequestId = _ctx.StringValue("GetDataCorrectTaskDetail.RequestId");
-			getDataCorrectTaskDetailResponse.ErrorCode = _ctx.StringValue("GetDataCorrectTaskDetail.ErrorCode");
-			getDataCorrectTaskDetailResponse.ErrorMessage = _ctx.StringValue("GetDataCorrectTaskDetail.ErrorMessage");
 			getDataCorrectTaskDetailResponse.Success = _ctx.BooleanValue("GetDataCorrectTaskDetail.Success");
+			getDataCorrectTaskDetailResponse.ErrorMessage = _ctx.StringValue("GetDataCorrectTaskDetail.ErrorMessage");
+			getDataCorrectTaskDetailResponse.ErrorCode = _ctx.StringValue("GetDataCorrectTaskDetail.ErrorCode");
 
 			GetDataCorrectTaskDetailResponse.GetDataCorrectTaskDetail_DataCorrectTaskDetail dataCorrectTaskDetail = new GetDataCorrectTaskDetailResponse.GetDataCorrectTaskDetail_DataCorrectTaskDetail();
-			dataCorrectTaskDetail.JobStatus = _ctx.StringValue("GetDataCorrectTaskDetail.DataCorrectTaskDetail.jobStatus");
-			dataCorrectTaskDetail.CreateTime = _ctx.StringValue("GetDataCorrectTaskDetail.DataCorrectTaskDetail.CreateTime");
-			dataCorrectTaskDetail.ActualAffectRows = _ctx.LongValue("GetDataCorrectTaskDetail.DataCorrectTaskDetail.ActualAffectRows");
 			dataCorrectTaskDetail.DBTaskGroupId = _ctx.LongValue("GetDataCorrectTaskDetail.DataCorrectTaskDetail.DBTaskGroupId");
+			dataCorrectTaskDetail.JobStatus = _ctx.StringValue("GetDataCorrectTaskDetail.DataCorrectTaskDetail.jobStatus");
+			dataCorrectTaskDetail.ActualAffectRows = _ctx.LongValue("GetDataCorrectTaskDetail.DataCorrectTaskDetail.ActualAffectRows");
+			dataCorrectTaskDetail.CreateTime = _ctx.StringValue("GetDataCorrectTaskDetail.DataCorrectTaskDetail.CreateTime");
 			getDataCorrectTaskDetailResponse.DataCorrectTaskDetail = dataCorrectTaskDetail;
         
 			return getDataCorrectTaskDetailResponse;

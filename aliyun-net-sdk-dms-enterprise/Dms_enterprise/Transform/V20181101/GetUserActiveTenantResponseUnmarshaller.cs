@@ -38,8 +38,8 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			GetUserActiveTenantResponse.GetUserActiveTenant_Tenant tenant = new GetUserActiveTenantResponse.GetUserActiveTenant_Tenant();
 			tenant.Status = _ctx.StringValue("GetUserActiveTenant.Tenant.Status");
-			tenant.TenantName = _ctx.StringValue("GetUserActiveTenant.Tenant.TenantName");
 			tenant.Tid = _ctx.LongValue("GetUserActiveTenant.Tenant.Tid");
+			tenant.TenantName = _ctx.StringValue("GetUserActiveTenant.Tenant.TenantName");
 			getUserActiveTenantResponse.Tenant = tenant;
         
 			return getUserActiveTenantResponse;

@@ -32,9 +32,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			createDataCorrectOrderResponse.HttpResponse = _ctx.HttpResponse;
 			createDataCorrectOrderResponse.RequestId = _ctx.StringValue("CreateDataCorrectOrder.RequestId");
-			createDataCorrectOrderResponse.ErrorCode = _ctx.StringValue("CreateDataCorrectOrder.ErrorCode");
-			createDataCorrectOrderResponse.ErrorMessage = _ctx.StringValue("CreateDataCorrectOrder.ErrorMessage");
 			createDataCorrectOrderResponse.Success = _ctx.BooleanValue("CreateDataCorrectOrder.Success");
+			createDataCorrectOrderResponse.ErrorMessage = _ctx.StringValue("CreateDataCorrectOrder.ErrorMessage");
+			createDataCorrectOrderResponse.ErrorCode = _ctx.StringValue("CreateDataCorrectOrder.ErrorCode");
 
 			List<string> createDataCorrectOrderResponse_createOrderResult = new List<string>();
 			for (int i = 0; i < _ctx.Length("CreateDataCorrectOrder.CreateOrderResult.Length"); i++) {

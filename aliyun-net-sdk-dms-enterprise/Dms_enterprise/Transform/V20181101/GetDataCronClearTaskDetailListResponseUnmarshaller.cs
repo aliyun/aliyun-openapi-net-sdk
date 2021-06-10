@@ -31,19 +31,19 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			GetDataCronClearTaskDetailListResponse getDataCronClearTaskDetailListResponse = new GetDataCronClearTaskDetailListResponse();
 
 			getDataCronClearTaskDetailListResponse.HttpResponse = _ctx.HttpResponse;
-			getDataCronClearTaskDetailListResponse.TotalCount = _ctx.LongValue("GetDataCronClearTaskDetailList.TotalCount");
 			getDataCronClearTaskDetailListResponse.RequestId = _ctx.StringValue("GetDataCronClearTaskDetailList.RequestId");
-			getDataCronClearTaskDetailListResponse.ErrorCode = _ctx.StringValue("GetDataCronClearTaskDetailList.ErrorCode");
-			getDataCronClearTaskDetailListResponse.ErrorMessage = _ctx.StringValue("GetDataCronClearTaskDetailList.ErrorMessage");
 			getDataCronClearTaskDetailListResponse.Success = _ctx.BooleanValue("GetDataCronClearTaskDetailList.Success");
+			getDataCronClearTaskDetailListResponse.ErrorMessage = _ctx.StringValue("GetDataCronClearTaskDetailList.ErrorMessage");
+			getDataCronClearTaskDetailListResponse.ErrorCode = _ctx.StringValue("GetDataCronClearTaskDetailList.ErrorCode");
+			getDataCronClearTaskDetailListResponse.TotalCount = _ctx.LongValue("GetDataCronClearTaskDetailList.TotalCount");
 
 			List<GetDataCronClearTaskDetailListResponse.GetDataCronClearTaskDetailList_DataCronClearTaskDetail> getDataCronClearTaskDetailListResponse_dataCronClearTaskDetailList = new List<GetDataCronClearTaskDetailListResponse.GetDataCronClearTaskDetailList_DataCronClearTaskDetail>();
 			for (int i = 0; i < _ctx.Length("GetDataCronClearTaskDetailList.DataCronClearTaskDetailList.Length"); i++) {
 				GetDataCronClearTaskDetailListResponse.GetDataCronClearTaskDetailList_DataCronClearTaskDetail dataCronClearTaskDetail = new GetDataCronClearTaskDetailListResponse.GetDataCronClearTaskDetailList_DataCronClearTaskDetail();
-				dataCronClearTaskDetail.JobStatus = _ctx.StringValue("GetDataCronClearTaskDetailList.DataCronClearTaskDetailList["+ i +"].jobStatus");
-				dataCronClearTaskDetail.CreateTime = _ctx.StringValue("GetDataCronClearTaskDetailList.DataCronClearTaskDetailList["+ i +"].CreateTime");
-				dataCronClearTaskDetail.ActualAffectRows = _ctx.LongValue("GetDataCronClearTaskDetailList.DataCronClearTaskDetailList["+ i +"].ActualAffectRows");
 				dataCronClearTaskDetail.DBTaskGroupId = _ctx.LongValue("GetDataCronClearTaskDetailList.DataCronClearTaskDetailList["+ i +"].DBTaskGroupId");
+				dataCronClearTaskDetail.JobStatus = _ctx.StringValue("GetDataCronClearTaskDetailList.DataCronClearTaskDetailList["+ i +"].jobStatus");
+				dataCronClearTaskDetail.ActualAffectRows = _ctx.LongValue("GetDataCronClearTaskDetailList.DataCronClearTaskDetailList["+ i +"].ActualAffectRows");
+				dataCronClearTaskDetail.CreateTime = _ctx.StringValue("GetDataCronClearTaskDetailList.DataCronClearTaskDetailList["+ i +"].CreateTime");
 
 				getDataCronClearTaskDetailListResponse_dataCronClearTaskDetailList.Add(dataCronClearTaskDetail);
 			}

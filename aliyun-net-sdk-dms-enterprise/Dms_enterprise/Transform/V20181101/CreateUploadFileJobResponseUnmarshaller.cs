@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			CreateUploadFileJobResponse createUploadFileJobResponse = new CreateUploadFileJobResponse();
 
 			createUploadFileJobResponse.HttpResponse = _ctx.HttpResponse;
-			createUploadFileJobResponse.JobKey = _ctx.StringValue("CreateUploadFileJob.JobKey");
 			createUploadFileJobResponse.RequestId = _ctx.StringValue("CreateUploadFileJob.RequestId");
-			createUploadFileJobResponse.ErrorCode = _ctx.StringValue("CreateUploadFileJob.ErrorCode");
-			createUploadFileJobResponse.ErrorMessage = _ctx.StringValue("CreateUploadFileJob.ErrorMessage");
 			createUploadFileJobResponse.Success = _ctx.BooleanValue("CreateUploadFileJob.Success");
+			createUploadFileJobResponse.ErrorMessage = _ctx.StringValue("CreateUploadFileJob.ErrorMessage");
+			createUploadFileJobResponse.ErrorCode = _ctx.StringValue("CreateUploadFileJob.ErrorCode");
+			createUploadFileJobResponse.JobKey = _ctx.StringValue("CreateUploadFileJob.JobKey");
         
 			return createUploadFileJobResponse;
         }

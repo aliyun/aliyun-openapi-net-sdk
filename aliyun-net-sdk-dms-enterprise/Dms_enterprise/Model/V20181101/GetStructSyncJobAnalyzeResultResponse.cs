@@ -27,11 +27,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private string errorCode;
+		private bool? success;
 
 		private string errorMessage;
 
-		private bool? success;
+		private string errorCode;
 
 		private GetStructSyncJobAnalyzeResult_StructSyncJobAnalyzeResult structSyncJobAnalyzeResult;
 
@@ -48,16 +48,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "ErrorCode")]
-		public string ErrorCode
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
 			get
 			{
-				return errorCode;
+				return success;
 			}
 			set	
 			{
-				errorCode = value;
+				success = value;
 			}
 		}
 
@@ -74,16 +74,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Success")]
-		public bool? Success
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
 		{
 			get
 			{
-				return success;
+				return errorCode;
 			}
 			set	
 			{
-				success = value;
+				errorCode = value;
 			}
 		}
 
@@ -103,22 +103,9 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class GetStructSyncJobAnalyzeResult_StructSyncJobAnalyzeResult
 		{
 
-			private List<GetStructSyncJobAnalyzeResult_Result> resultList;
-
 			private List<GetStructSyncJobAnalyzeResult_Summary> summaryList;
 
-			[JsonProperty(PropertyName = "ResultList")]
-			public List<GetStructSyncJobAnalyzeResult_Result> ResultList
-			{
-				get
-				{
-					return resultList;
-				}
-				set	
-				{
-					resultList = value;
-				}
-			}
+			private List<GetStructSyncJobAnalyzeResult_Result> resultList;
 
 			[JsonProperty(PropertyName = "SummaryList")]
 			public List<GetStructSyncJobAnalyzeResult_Summary> SummaryList
@@ -133,52 +120,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public class GetStructSyncJobAnalyzeResult_Result
+			[JsonProperty(PropertyName = "ResultList")]
+			public List<GetStructSyncJobAnalyzeResult_Result> ResultList
 			{
-
-				private string sourceTableName;
-
-				private string script;
-
-				private string targetTableName;
-
-				[JsonProperty(PropertyName = "SourceTableName")]
-				public string SourceTableName
+				get
 				{
-					get
-					{
-						return sourceTableName;
-					}
-					set	
-					{
-						sourceTableName = value;
-					}
+					return resultList;
 				}
-
-				[JsonProperty(PropertyName = "Script")]
-				public string Script
+				set	
 				{
-					get
-					{
-						return script;
-					}
-					set	
-					{
-						script = value;
-					}
-				}
-
-				[JsonProperty(PropertyName = "TargetTableName")]
-				public string TargetTableName
-				{
-					get
-					{
-						return targetTableName;
-					}
-					set	
-					{
-						targetTableName = value;
-					}
+					resultList = value;
 				}
 			}
 
@@ -212,6 +163,55 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					set	
 					{
 						count = value;
+					}
+				}
+			}
+
+			public class GetStructSyncJobAnalyzeResult_Result
+			{
+
+				private string sourceTableName;
+
+				private string targetTableName;
+
+				private string script;
+
+				[JsonProperty(PropertyName = "SourceTableName")]
+				public string SourceTableName
+				{
+					get
+					{
+						return sourceTableName;
+					}
+					set	
+					{
+						sourceTableName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "TargetTableName")]
+				public string TargetTableName
+				{
+					get
+					{
+						return targetTableName;
+					}
+					set	
+					{
+						targetTableName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "Script")]
+				public string Script
+				{
+					get
+					{
+						return script;
+					}
+					set	
+					{
+						script = value;
 					}
 				}
 			}

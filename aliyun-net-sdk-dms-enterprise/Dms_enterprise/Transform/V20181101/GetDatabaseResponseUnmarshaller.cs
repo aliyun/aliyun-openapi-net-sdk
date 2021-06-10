@@ -37,32 +37,32 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			getDatabaseResponse.Success = _ctx.BooleanValue("GetDatabase.Success");
 
 			GetDatabaseResponse.GetDatabase_Database database = new GetDatabaseResponse.GetDatabase_Database();
-			database.SearchName = _ctx.StringValue("GetDatabase.Database.SearchName");
+			database.DatabaseId = _ctx.StringValue("GetDatabase.Database.DatabaseId");
+			database.Host = _ctx.StringValue("GetDatabase.Database.Host");
+			database.CatalogName = _ctx.StringValue("GetDatabase.Database.CatalogName");
+			database.DbaName = _ctx.StringValue("GetDatabase.Database.DbaName");
+			database.State = _ctx.StringValue("GetDatabase.Database.State");
+			database.DbaId = _ctx.StringValue("GetDatabase.Database.DbaId");
+			database.SchemaName = _ctx.StringValue("GetDatabase.Database.SchemaName");
 			database.InstanceId = _ctx.StringValue("GetDatabase.Database.InstanceId");
 			database.Port = _ctx.IntegerValue("GetDatabase.Database.Port");
-			database.Encoding = _ctx.StringValue("GetDatabase.Database.Encoding");
-			database.Host = _ctx.StringValue("GetDatabase.Database.Host");
-			database.DatabaseId = _ctx.StringValue("GetDatabase.Database.DatabaseId");
-			database.DbType = _ctx.StringValue("GetDatabase.Database.DbType");
 			database.EnvType = _ctx.StringValue("GetDatabase.Database.EnvType");
 			database.Sid = _ctx.StringValue("GetDatabase.Database.Sid");
-			database.DbaName = _ctx.StringValue("GetDatabase.Database.DbaName");
-			database.DbaId = _ctx.StringValue("GetDatabase.Database.DbaId");
-			database.State = _ctx.StringValue("GetDatabase.Database.State");
-			database.CatalogName = _ctx.StringValue("GetDatabase.Database.CatalogName");
-			database.SchemaName = _ctx.StringValue("GetDatabase.Database.SchemaName");
-
-			List<string> database_ownerNameList = new List<string>();
-			for (int i = 0; i < _ctx.Length("GetDatabase.Database.OwnerNameList.Length"); i++) {
-				database_ownerNameList.Add(_ctx.StringValue("GetDatabase.Database.OwnerNameList["+ i +"]"));
-			}
-			database.OwnerNameList = database_ownerNameList;
+			database.Encoding = _ctx.StringValue("GetDatabase.Database.Encoding");
+			database.DbType = _ctx.StringValue("GetDatabase.Database.DbType");
+			database.SearchName = _ctx.StringValue("GetDatabase.Database.SearchName");
 
 			List<string> database_ownerIdList = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetDatabase.Database.OwnerIdList.Length"); i++) {
 				database_ownerIdList.Add(_ctx.StringValue("GetDatabase.Database.OwnerIdList["+ i +"]"));
 			}
 			database.OwnerIdList = database_ownerIdList;
+
+			List<string> database_ownerNameList = new List<string>();
+			for (int i = 0; i < _ctx.Length("GetDatabase.Database.OwnerNameList.Length"); i++) {
+				database_ownerNameList.Add(_ctx.StringValue("GetDatabase.Database.OwnerNameList["+ i +"]"));
+			}
+			database.OwnerNameList = database_ownerNameList;
 			getDatabaseResponse.Database = database;
         
 			return getDatabaseResponse;

@@ -103,36 +103,36 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class ListSensitiveColumnsDetail_SensitiveColumnsDetail
 		{
 
-			private string tableName;
+			private long? dbId;
 
 			private string columnName;
 
-			private string columnType;
-
-			private string searchName;
-
 			private string columnDescription;
 
-			private long? dbId;
-
-			private bool? logic;
-
-			private string envType;
-
-			private string schemaName;
+			private string tableName;
 
 			private string dbType;
 
-			[JsonProperty(PropertyName = "TableName")]
-			public string TableName
+			private string columnType;
+
+			private bool? logic;
+
+			private string schemaName;
+
+			private string searchName;
+
+			private string envType;
+
+			[JsonProperty(PropertyName = "DbId")]
+			public long? DbId
 			{
 				get
 				{
-					return tableName;
+					return dbId;
 				}
 				set	
 				{
-					tableName = value;
+					dbId = value;
 				}
 			}
 
@@ -149,32 +149,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "ColumnType")]
-			public string ColumnType
-			{
-				get
-				{
-					return columnType;
-				}
-				set	
-				{
-					columnType = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "SearchName")]
-			public string SearchName
-			{
-				get
-				{
-					return searchName;
-				}
-				set	
-				{
-					searchName = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "ColumnDescription")]
 			public string ColumnDescription
 			{
@@ -188,16 +162,42 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "DbId")]
-			public long? DbId
+			[JsonProperty(PropertyName = "TableName")]
+			public string TableName
 			{
 				get
 				{
-					return dbId;
+					return tableName;
 				}
 				set	
 				{
-					dbId = value;
+					tableName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DbType")]
+			public string DbType
+			{
+				get
+				{
+					return dbType;
+				}
+				set	
+				{
+					dbType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ColumnType")]
+			public string ColumnType
+			{
+				get
+				{
+					return columnType;
+				}
+				set	
+				{
+					columnType = value;
 				}
 			}
 
@@ -214,19 +214,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "EnvType")]
-			public string EnvType
-			{
-				get
-				{
-					return envType;
-				}
-				set	
-				{
-					envType = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "SchemaName")]
 			public string SchemaName
 			{
@@ -240,16 +227,29 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "DbType")]
-			public string DbType
+			[JsonProperty(PropertyName = "SearchName")]
+			public string SearchName
 			{
 				get
 				{
-					return dbType;
+					return searchName;
 				}
 				set	
 				{
-					dbType = value;
+					searchName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EnvType")]
+			public string EnvType
+			{
+				get
+				{
+					return envType;
+				}
+				set	
+				{
+					envType = value;
 				}
 			}
 		}

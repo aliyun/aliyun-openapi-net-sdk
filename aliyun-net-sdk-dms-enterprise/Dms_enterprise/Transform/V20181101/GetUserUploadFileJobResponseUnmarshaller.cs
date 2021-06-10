@@ -32,25 +32,25 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			getUserUploadFileJobResponse.HttpResponse = _ctx.HttpResponse;
 			getUserUploadFileJobResponse.RequestId = _ctx.StringValue("GetUserUploadFileJob.RequestId");
-			getUserUploadFileJobResponse.ErrorCode = _ctx.StringValue("GetUserUploadFileJob.ErrorCode");
-			getUserUploadFileJobResponse.ErrorMessage = _ctx.StringValue("GetUserUploadFileJob.ErrorMessage");
 			getUserUploadFileJobResponse.Success = _ctx.BooleanValue("GetUserUploadFileJob.Success");
+			getUserUploadFileJobResponse.ErrorMessage = _ctx.StringValue("GetUserUploadFileJob.ErrorMessage");
+			getUserUploadFileJobResponse.ErrorCode = _ctx.StringValue("GetUserUploadFileJob.ErrorCode");
 
 			GetUserUploadFileJobResponse.GetUserUploadFileJob_UploadFileJobDetail uploadFileJobDetail = new GetUserUploadFileJobResponse.GetUserUploadFileJob_UploadFileJobDetail();
-			uploadFileJobDetail.JobStatus = _ctx.StringValue("GetUserUploadFileJob.UploadFileJobDetail.JobStatus");
-			uploadFileJobDetail.AttachmentKey = _ctx.StringValue("GetUserUploadFileJob.UploadFileJobDetail.AttachmentKey");
 			uploadFileJobDetail.JobKey = _ctx.StringValue("GetUserUploadFileJob.UploadFileJobDetail.JobKey");
+			uploadFileJobDetail.FileName = _ctx.StringValue("GetUserUploadFileJob.UploadFileJobDetail.FileName");
+			uploadFileJobDetail.FileSize = _ctx.LongValue("GetUserUploadFileJob.UploadFileJobDetail.FileSize");
+			uploadFileJobDetail.FileSource = _ctx.StringValue("GetUserUploadFileJob.UploadFileJobDetail.FileSource");
+			uploadFileJobDetail.UploadType = _ctx.StringValue("GetUserUploadFileJob.UploadFileJobDetail.UploadType");
 			uploadFileJobDetail.UploadURL = _ctx.StringValue("GetUserUploadFileJob.UploadFileJobDetail.UploadURL");
 			uploadFileJobDetail.UploadedSize = _ctx.LongValue("GetUserUploadFileJob.UploadFileJobDetail.UploadedSize");
+			uploadFileJobDetail.JobStatus = _ctx.StringValue("GetUserUploadFileJob.UploadFileJobDetail.JobStatus");
 			uploadFileJobDetail.JobStatusDesc = _ctx.StringValue("GetUserUploadFileJob.UploadFileJobDetail.JobStatusDesc");
-			uploadFileJobDetail.FileSource = _ctx.StringValue("GetUserUploadFileJob.UploadFileJobDetail.FileSource");
-			uploadFileJobDetail.FileName = _ctx.StringValue("GetUserUploadFileJob.UploadFileJobDetail.FileName");
-			uploadFileJobDetail.UploadType = _ctx.StringValue("GetUserUploadFileJob.UploadFileJobDetail.UploadType");
-			uploadFileJobDetail.FileSize = _ctx.LongValue("GetUserUploadFileJob.UploadFileJobDetail.FileSize");
+			uploadFileJobDetail.AttachmentKey = _ctx.StringValue("GetUserUploadFileJob.UploadFileJobDetail.AttachmentKey");
 
 			GetUserUploadFileJobResponse.GetUserUploadFileJob_UploadFileJobDetail.GetUserUploadFileJob_UploadOSSParam uploadOSSParam = new GetUserUploadFileJobResponse.GetUserUploadFileJob_UploadFileJobDetail.GetUserUploadFileJob_UploadOSSParam();
-			uploadOSSParam.BucketName = _ctx.StringValue("GetUserUploadFileJob.UploadFileJobDetail.UploadOSSParam.BucketName");
 			uploadOSSParam.Endpoint = _ctx.StringValue("GetUserUploadFileJob.UploadFileJobDetail.UploadOSSParam.Endpoint");
+			uploadOSSParam.BucketName = _ctx.StringValue("GetUserUploadFileJob.UploadFileJobDetail.UploadOSSParam.BucketName");
 			uploadOSSParam.ObjectName = _ctx.StringValue("GetUserUploadFileJob.UploadFileJobDetail.UploadOSSParam.ObjectName");
 			uploadFileJobDetail.UploadOSSParam = uploadOSSParam;
 			getUserUploadFileJobResponse.UploadFileJobDetail = uploadFileJobDetail;

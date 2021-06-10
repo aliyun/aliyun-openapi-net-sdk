@@ -40,12 +40,12 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			List<GetOpLogResponse.GetOpLog_OpLogDetail> getOpLogResponse_opLogDetails = new List<GetOpLogResponse.GetOpLog_OpLogDetail>();
 			for (int i = 0; i < _ctx.Length("GetOpLog.OpLogDetails.Length"); i++) {
 				GetOpLogResponse.GetOpLog_OpLogDetail opLogDetail = new GetOpLogResponse.GetOpLog_OpLogDetail();
-				opLogDetail.UserId = _ctx.LongValue("GetOpLog.OpLogDetails["+ i +"].UserId");
+				opLogDetail.Module = _ctx.StringValue("GetOpLog.OpLogDetails["+ i +"].Module");
 				opLogDetail.Database = _ctx.StringValue("GetOpLog.OpLogDetails["+ i +"].Database");
+				opLogDetail.UserId = _ctx.LongValue("GetOpLog.OpLogDetails["+ i +"].UserId");
 				opLogDetail.OpContent = _ctx.StringValue("GetOpLog.OpLogDetails["+ i +"].OpContent");
 				opLogDetail.UserNick = _ctx.StringValue("GetOpLog.OpLogDetails["+ i +"].UserNick");
 				opLogDetail.OrderId = _ctx.LongValue("GetOpLog.OpLogDetails["+ i +"].OrderId");
-				opLogDetail.Module = _ctx.StringValue("GetOpLog.OpLogDetails["+ i +"].Module");
 				opLogDetail.OpTime = _ctx.StringValue("GetOpLog.OpLogDetails["+ i +"].OpTime");
 
 				getOpLogResponse_opLogDetails.Add(opLogDetail);

@@ -27,11 +27,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string requestId;
 
-		private string errorCode;
+		private bool? success;
 
 		private string errorMessage;
 
-		private bool? success;
+		private string errorCode;
 
 		private GetStructSyncExecSqlDetail_StructSyncExecSqlDetail structSyncExecSqlDetail;
 
@@ -48,16 +48,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "ErrorCode")]
-		public string ErrorCode
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
 			get
 			{
-				return errorCode;
+				return success;
 			}
 			set	
 			{
-				errorCode = value;
+				success = value;
 			}
 		}
 
@@ -74,16 +74,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Success")]
-		public bool? Success
+		[JsonProperty(PropertyName = "ErrorCode")]
+		public string ErrorCode
 		{
 			get
 			{
-				return success;
+				return errorCode;
 			}
 			set	
 			{
-				success = value;
+				errorCode = value;
 			}
 		}
 
@@ -103,22 +103,9 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		public class GetStructSyncExecSqlDetail_StructSyncExecSqlDetail
 		{
 
-			private string execSql;
-
 			private long? totalSqlCount;
 
-			[JsonProperty(PropertyName = "ExecSql")]
-			public string ExecSql
-			{
-				get
-				{
-					return execSql;
-				}
-				set	
-				{
-					execSql = value;
-				}
-			}
+			private string execSql;
 
 			[JsonProperty(PropertyName = "TotalSqlCount")]
 			public long? TotalSqlCount
@@ -130,6 +117,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					totalSqlCount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExecSql")]
+			public string ExecSql
+			{
+				get
+				{
+					return execSql;
+				}
+				set	
+				{
+					execSql = value;
 				}
 			}
 		}

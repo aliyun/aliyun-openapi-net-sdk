@@ -151,26 +151,26 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			public class GetTableDBTopology_DataSource
 			{
 
-				private int? port;
+				private string sid;
 
 				private string host;
 
 				private string dbType;
 
-				private string sid;
+				private int? port;
 
 				private List<GetTableDBTopology_Database> databaseList;
 
-				[JsonProperty(PropertyName = "Port")]
-				public int? Port
+				[JsonProperty(PropertyName = "Sid")]
+				public string Sid
 				{
 					get
 					{
-						return port;
+						return sid;
 					}
 					set	
 					{
-						port = value;
+						sid = value;
 					}
 				}
 
@@ -200,16 +200,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					}
 				}
 
-				[JsonProperty(PropertyName = "Sid")]
-				public string Sid
+				[JsonProperty(PropertyName = "Port")]
+				public int? Port
 				{
 					get
 					{
-						return sid;
+						return port;
 					}
 					set	
 					{
-						sid = value;
+						port = value;
 					}
 				}
 
@@ -233,9 +233,9 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 					private string dbName;
 
-					private string envType;
-
 					private string dbType;
+
+					private string envType;
 
 					private List<GetTableDBTopology_Table> tableList;
 
@@ -265,19 +265,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 						}
 					}
 
-					[JsonProperty(PropertyName = "EnvType")]
-					public string EnvType
-					{
-						get
-						{
-							return envType;
-						}
-						set	
-						{
-							envType = value;
-						}
-					}
-
 					[JsonProperty(PropertyName = "DbType")]
 					public string DbType
 					{
@@ -288,6 +275,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 						set	
 						{
 							dbType = value;
+						}
+					}
+
+					[JsonProperty(PropertyName = "EnvType")]
+					public string EnvType
+					{
+						get
+						{
+							return envType;
+						}
+						set	
+						{
+							envType = value;
 						}
 					}
 
@@ -307,24 +307,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					public class GetTableDBTopology_Table
 					{
 
-						private string tableId;
-
 						private string tableName;
 
 						private string tableType;
 
-						[JsonProperty(PropertyName = "TableId")]
-						public string TableId
-						{
-							get
-							{
-								return tableId;
-							}
-							set	
-							{
-								tableId = value;
-							}
-						}
+						private string tableId;
 
 						[JsonProperty(PropertyName = "TableName")]
 						public string TableName
@@ -349,6 +336,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 							set	
 							{
 								tableType = value;
+							}
+						}
+
+						[JsonProperty(PropertyName = "TableId")]
+						public string TableId
+						{
+							get
+							{
+								return tableId;
+							}
+							set	
+							{
+								tableId = value;
 							}
 						}
 					}
