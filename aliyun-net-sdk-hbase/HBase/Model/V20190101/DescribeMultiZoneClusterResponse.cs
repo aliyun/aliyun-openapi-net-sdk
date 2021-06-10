@@ -117,6 +117,10 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private string resourceGroupId;
 
+		private bool? encryptionType;
+
+		private string encryptionKey;
+
 		private List<DescribeMultiZoneCluster_MultiZoneInstanceModel> multiZoneInstanceModels;
 
 		private List<DescribeMultiZoneCluster_Tag> tags;
@@ -670,6 +674,30 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			set	
 			{
 				resourceGroupId = value;
+			}
+		}
+
+		public bool? EncryptionType
+		{
+			get
+			{
+				return encryptionType;
+			}
+			set	
+			{
+				encryptionType = value;
+			}
+		}
+
+		public string EncryptionKey
+		{
+			get
+			{
+				return encryptionKey;
+			}
+			set	
+			{
+				encryptionKey = value;
 			}
 		}
 

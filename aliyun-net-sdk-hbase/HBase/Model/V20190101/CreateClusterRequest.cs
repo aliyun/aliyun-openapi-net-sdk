@@ -56,6 +56,8 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private int? diskSize;
 
+		private string encryptionKey;
+
 		private string masterInstanceType;
 
 		private string diskType;
@@ -179,6 +181,19 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			{
 				diskSize = value;
 				DictionaryUtil.Add(QueryParameters, "DiskSize", value.ToString());
+			}
+		}
+
+		public string EncryptionKey
+		{
+			get
+			{
+				return encryptionKey;
+			}
+			set	
+			{
+				encryptionKey = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionKey", value);
 			}
 		}
 

@@ -75,6 +75,8 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 			describeInstanceResponse.Duration = _ctx.IntegerValue("DescribeInstance.Duration");
 			describeInstanceResponse.ColdStorageSize = _ctx.IntegerValue("DescribeInstance.ColdStorageSize");
 			describeInstanceResponse.ResourceGroupId = _ctx.StringValue("DescribeInstance.ResourceGroupId");
+			describeInstanceResponse.EncryptionType = _ctx.BooleanValue("DescribeInstance.EncryptionType");
+			describeInstanceResponse.EncryptionKey = _ctx.StringValue("DescribeInstance.EncryptionKey");
 
 			List<DescribeInstanceResponse.DescribeInstance_Tag> describeInstanceResponse_tags = new List<DescribeInstanceResponse.DescribeInstance_Tag>();
 			for (int i = 0; i < _ctx.Length("DescribeInstance.Tags.Length"); i++) {
