@@ -40,6 +40,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				liveAppRecord.AppName = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].AppName");
 				liveAppRecord.StreamName = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].StreamName");
 				liveAppRecord.SourceUrl = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].SourceUrl");
+				liveAppRecord.SourceUsing = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].SourceUsing");
 				liveAppRecord.StartTime = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].StartTime");
 				liveAppRecord.EndTime = _ctx.StringValue("DescribeLivePullStreamConfig.LiveAppRecordList["+ i +"].EndTime");
 

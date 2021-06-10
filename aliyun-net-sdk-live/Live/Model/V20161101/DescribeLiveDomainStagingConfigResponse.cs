@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeLivePullStreamConfigResponse : AcsResponse
+	public class DescribeLiveDomainStagingConfigResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeLivePullStreamConfig_LiveAppRecord> liveAppRecordList;
+		private List<DescribeLiveDomainStagingConfig_DomainConfig> domainConfigs;
 
 		public string RequestId
 		{
@@ -41,116 +41,106 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<DescribeLivePullStreamConfig_LiveAppRecord> LiveAppRecordList
+		public List<DescribeLiveDomainStagingConfig_DomainConfig> DomainConfigs
 		{
 			get
 			{
-				return liveAppRecordList;
+				return domainConfigs;
 			}
 			set	
 			{
-				liveAppRecordList = value;
+				domainConfigs = value;
 			}
 		}
 
-		public class DescribeLivePullStreamConfig_LiveAppRecord
+		public class DescribeLiveDomainStagingConfig_DomainConfig
 		{
 
-			private string domainName;
+			private string functionName;
 
-			private string appName;
+			private string configId;
 
-			private string streamName;
+			private string status;
 
-			private string sourceUrl;
+			private List<DescribeLiveDomainStagingConfig_FunctionArg> functionArgs;
 
-			private string sourceUsing;
-
-			private string startTime;
-
-			private string endTime;
-
-			public string DomainName
+			public string FunctionName
 			{
 				get
 				{
-					return domainName;
+					return functionName;
 				}
 				set	
 				{
-					domainName = value;
+					functionName = value;
 				}
 			}
 
-			public string AppName
+			public string ConfigId
 			{
 				get
 				{
-					return appName;
+					return configId;
 				}
 				set	
 				{
-					appName = value;
+					configId = value;
 				}
 			}
 
-			public string StreamName
+			public string Status
 			{
 				get
 				{
-					return streamName;
+					return status;
 				}
 				set	
 				{
-					streamName = value;
+					status = value;
 				}
 			}
 
-			public string SourceUrl
+			public List<DescribeLiveDomainStagingConfig_FunctionArg> FunctionArgs
 			{
 				get
 				{
-					return sourceUrl;
+					return functionArgs;
 				}
 				set	
 				{
-					sourceUrl = value;
+					functionArgs = value;
 				}
 			}
 
-			public string SourceUsing
+			public class DescribeLiveDomainStagingConfig_FunctionArg
 			{
-				get
-				{
-					return sourceUsing;
-				}
-				set	
-				{
-					sourceUsing = value;
-				}
-			}
 
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
+				private string argName;
 
-			public string EndTime
-			{
-				get
+				private string argValue;
+
+				public string ArgName
 				{
-					return endTime;
+					get
+					{
+						return argName;
+					}
+					set	
+					{
+						argName = value;
+					}
 				}
-				set	
+
+				public string ArgValue
 				{
-					endTime = value;
+					get
+					{
+						return argValue;
+					}
+					set	
+					{
+						argValue = value;
+					}
 				}
 			}
 		}
