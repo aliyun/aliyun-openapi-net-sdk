@@ -110,6 +110,14 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string state;
 
+			private string asPath;
+
+			private string community;
+
+			private string source;
+
+			private string routeEntryType;
+
 			public string VpnInstanceId
 			{
 				get
@@ -179,6 +187,54 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					state = value;
+				}
+			}
+
+			public string AsPath
+			{
+				get
+				{
+					return asPath;
+				}
+				set	
+				{
+					asPath = value;
+				}
+			}
+
+			public string Community
+			{
+				get
+				{
+					return community;
+				}
+				set	
+				{
+					community = value;
+				}
+			}
+
+			public string Source
+			{
+				get
+				{
+					return source;
+				}
+				set	
+				{
+					source = value;
+				}
+			}
+
+			public string RouteEntryType
+			{
+				get
+				{
+					return routeEntryType;
+				}
+				set	
+				{
+					routeEntryType = value;
 				}
 			}
 		}

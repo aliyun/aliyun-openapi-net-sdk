@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class ModifyIPv6TranslatorBandwidthResponseUnmarshaller
     {
-        public static ModifyIPv6TranslatorBandwidthResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyIPv6TranslatorBandwidthResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyIPv6TranslatorBandwidthResponse modifyIPv6TranslatorBandwidthResponse = new ModifyIPv6TranslatorBandwidthResponse();
 
-			modifyIPv6TranslatorBandwidthResponse.HttpResponse = context.HttpResponse;
-			modifyIPv6TranslatorBandwidthResponse.RequestId = context.StringValue("ModifyIPv6TranslatorBandwidth.RequestId");
-			modifyIPv6TranslatorBandwidthResponse.OrderId = context.StringValue("ModifyIPv6TranslatorBandwidth.OrderId");
+			modifyIPv6TranslatorBandwidthResponse.HttpResponse = _ctx.HttpResponse;
+			modifyIPv6TranslatorBandwidthResponse.RequestId = _ctx.StringValue("ModifyIPv6TranslatorBandwidth.RequestId");
+			modifyIPv6TranslatorBandwidthResponse.OrderId = _ctx.StringValue("ModifyIPv6TranslatorBandwidth.OrderId");
         
 			return modifyIPv6TranslatorBandwidthResponse;
         }

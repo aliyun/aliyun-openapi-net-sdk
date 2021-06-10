@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class MoveResourceGroupResponseUnmarshaller
     {
-        public static MoveResourceGroupResponse Unmarshall(UnmarshallerContext context)
+        public static MoveResourceGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			MoveResourceGroupResponse moveResourceGroupResponse = new MoveResourceGroupResponse();
 
-			moveResourceGroupResponse.HttpResponse = context.HttpResponse;
-			moveResourceGroupResponse.RequestId = context.StringValue("MoveResourceGroup.RequestId");
+			moveResourceGroupResponse.HttpResponse = _ctx.HttpResponse;
+			moveResourceGroupResponse.RequestId = _ctx.StringValue("MoveResourceGroup.RequestId");
         
 			return moveResourceGroupResponse;
         }

@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -54,6 +55,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private long? ownerId;
 
 		private string resourceType;
+
+		private int? maxResults;
 
 		public long? ResourceOwnerId
 		{
@@ -165,6 +168,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceType = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+			}
+		}
+
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
 			}
 		}
 

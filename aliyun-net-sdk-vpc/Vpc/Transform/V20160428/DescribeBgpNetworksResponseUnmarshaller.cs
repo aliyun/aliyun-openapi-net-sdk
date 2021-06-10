@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DescribeBgpNetworksResponseUnmarshaller
     {
-        public static DescribeBgpNetworksResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeBgpNetworksResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeBgpNetworksResponse describeBgpNetworksResponse = new DescribeBgpNetworksResponse();
 
-			describeBgpNetworksResponse.HttpResponse = context.HttpResponse;
-			describeBgpNetworksResponse.RequestId = context.StringValue("DescribeBgpNetworks.RequestId");
-			describeBgpNetworksResponse.TotalCount = context.IntegerValue("DescribeBgpNetworks.TotalCount");
-			describeBgpNetworksResponse.PageNumber = context.IntegerValue("DescribeBgpNetworks.PageNumber");
-			describeBgpNetworksResponse.PageSize = context.IntegerValue("DescribeBgpNetworks.PageSize");
+			describeBgpNetworksResponse.HttpResponse = _ctx.HttpResponse;
+			describeBgpNetworksResponse.RequestId = _ctx.StringValue("DescribeBgpNetworks.RequestId");
+			describeBgpNetworksResponse.TotalCount = _ctx.IntegerValue("DescribeBgpNetworks.TotalCount");
+			describeBgpNetworksResponse.PageNumber = _ctx.IntegerValue("DescribeBgpNetworks.PageNumber");
+			describeBgpNetworksResponse.PageSize = _ctx.IntegerValue("DescribeBgpNetworks.PageSize");
 
 			List<DescribeBgpNetworksResponse.DescribeBgpNetworks_BgpNetwork> describeBgpNetworksResponse_bgpNetworks = new List<DescribeBgpNetworksResponse.DescribeBgpNetworks_BgpNetwork>();
-			for (int i = 0; i < context.Length("DescribeBgpNetworks.BgpNetworks.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeBgpNetworks.BgpNetworks.Length"); i++) {
 				DescribeBgpNetworksResponse.DescribeBgpNetworks_BgpNetwork bgpNetwork = new DescribeBgpNetworksResponse.DescribeBgpNetworks_BgpNetwork();
-				bgpNetwork.VpcId = context.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].VpcId");
-				bgpNetwork.DstCidrBlock = context.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].DstCidrBlock");
-				bgpNetwork.RouterId = context.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].RouterId");
-				bgpNetwork.Status = context.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].Status");
+				bgpNetwork.VpcId = _ctx.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].VpcId");
+				bgpNetwork.DstCidrBlock = _ctx.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].DstCidrBlock");
+				bgpNetwork.RouterId = _ctx.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].RouterId");
+				bgpNetwork.Status = _ctx.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].Status");
 
 				describeBgpNetworksResponse_bgpNetworks.Add(bgpNetwork);
 			}

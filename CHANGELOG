@@ -1,3 +1,6 @@
+2021-06-10 Version: 3.0.7
+- Generated 2016-04-28 for `Vpc`.
+
 2021-06-09 Version: 7.25.0
 - Update TMP API, including QueryDevice, CreateThingModel, UpdateThingModel, ImportThingModelTsl, BatchPickThingModel, ListDeviceDistributeJob.
 - Add TMP API, including QueryDeviceInfo.

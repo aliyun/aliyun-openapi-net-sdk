@@ -51,6 +51,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string businessStatus;
 
+		private bool? enableBgp;
+
+		private bool? autoPropagate;
+
 		public string RequestId
 		{
 			get
@@ -204,6 +208,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				businessStatus = value;
+			}
+		}
+
+		public bool? EnableBgp
+		{
+			get
+			{
+				return enableBgp;
+			}
+			set	
+			{
+				enableBgp = value;
+			}
+		}
+
+		public bool? AutoPropagate
+		{
+			get
+			{
+				return autoPropagate;
+			}
+			set	
+			{
+				autoPropagate = value;
 			}
 		}
 	}

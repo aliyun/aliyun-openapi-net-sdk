@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class RecoverVirtualBorderRouterResponseUnmarshaller
     {
-        public static RecoverVirtualBorderRouterResponse Unmarshall(UnmarshallerContext context)
+        public static RecoverVirtualBorderRouterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RecoverVirtualBorderRouterResponse recoverVirtualBorderRouterResponse = new RecoverVirtualBorderRouterResponse();
 
-			recoverVirtualBorderRouterResponse.HttpResponse = context.HttpResponse;
-			recoverVirtualBorderRouterResponse.RequestId = context.StringValue("RecoverVirtualBorderRouter.RequestId");
+			recoverVirtualBorderRouterResponse.HttpResponse = _ctx.HttpResponse;
+			recoverVirtualBorderRouterResponse.RequestId = _ctx.StringValue("RecoverVirtualBorderRouter.RequestId");
         
 			return recoverVirtualBorderRouterResponse;
         }

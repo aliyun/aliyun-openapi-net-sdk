@@ -26,65 +26,77 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DescribeVpcAttributeResponseUnmarshaller
     {
-        public static DescribeVpcAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVpcAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVpcAttributeResponse describeVpcAttributeResponse = new DescribeVpcAttributeResponse();
 
-			describeVpcAttributeResponse.HttpResponse = context.HttpResponse;
-			describeVpcAttributeResponse.RequestId = context.StringValue("DescribeVpcAttribute.RequestId");
-			describeVpcAttributeResponse.VpcId = context.StringValue("DescribeVpcAttribute.VpcId");
-			describeVpcAttributeResponse.RegionId = context.StringValue("DescribeVpcAttribute.RegionId");
-			describeVpcAttributeResponse.Status = context.StringValue("DescribeVpcAttribute.Status");
-			describeVpcAttributeResponse.VpcName = context.StringValue("DescribeVpcAttribute.VpcName");
-			describeVpcAttributeResponse.CreationTime = context.StringValue("DescribeVpcAttribute.CreationTime");
-			describeVpcAttributeResponse.CidrBlock = context.StringValue("DescribeVpcAttribute.CidrBlock");
-			describeVpcAttributeResponse.Ipv6CidrBlock = context.StringValue("DescribeVpcAttribute.Ipv6CidrBlock");
-			describeVpcAttributeResponse.VRouterId = context.StringValue("DescribeVpcAttribute.VRouterId");
-			describeVpcAttributeResponse.Description = context.StringValue("DescribeVpcAttribute.Description");
-			describeVpcAttributeResponse.IsDefault = context.BooleanValue("DescribeVpcAttribute.IsDefault");
-			describeVpcAttributeResponse.ClassicLinkEnabled = context.BooleanValue("DescribeVpcAttribute.ClassicLinkEnabled");
-			describeVpcAttributeResponse.ResourceGroupId = context.StringValue("DescribeVpcAttribute.ResourceGroupId");
-			describeVpcAttributeResponse.NetworkAclNum = context.StringValue("DescribeVpcAttribute.NetworkAclNum");
-			describeVpcAttributeResponse.OwnerId = context.LongValue("DescribeVpcAttribute.OwnerId");
+			describeVpcAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			describeVpcAttributeResponse.RequestId = _ctx.StringValue("DescribeVpcAttribute.RequestId");
+			describeVpcAttributeResponse.VpcId = _ctx.StringValue("DescribeVpcAttribute.VpcId");
+			describeVpcAttributeResponse.RegionId = _ctx.StringValue("DescribeVpcAttribute.RegionId");
+			describeVpcAttributeResponse.Status = _ctx.StringValue("DescribeVpcAttribute.Status");
+			describeVpcAttributeResponse.VpcName = _ctx.StringValue("DescribeVpcAttribute.VpcName");
+			describeVpcAttributeResponse.CreationTime = _ctx.StringValue("DescribeVpcAttribute.CreationTime");
+			describeVpcAttributeResponse.CidrBlock = _ctx.StringValue("DescribeVpcAttribute.CidrBlock");
+			describeVpcAttributeResponse.Ipv6CidrBlock = _ctx.StringValue("DescribeVpcAttribute.Ipv6CidrBlock");
+			describeVpcAttributeResponse.VRouterId = _ctx.StringValue("DescribeVpcAttribute.VRouterId");
+			describeVpcAttributeResponse.Description = _ctx.StringValue("DescribeVpcAttribute.Description");
+			describeVpcAttributeResponse.IsDefault = _ctx.BooleanValue("DescribeVpcAttribute.IsDefault");
+			describeVpcAttributeResponse.ClassicLinkEnabled = _ctx.BooleanValue("DescribeVpcAttribute.ClassicLinkEnabled");
+			describeVpcAttributeResponse.ResourceGroupId = _ctx.StringValue("DescribeVpcAttribute.ResourceGroupId");
+			describeVpcAttributeResponse.NetworkAclNum = _ctx.StringValue("DescribeVpcAttribute.NetworkAclNum");
+			describeVpcAttributeResponse.OwnerId = _ctx.LongValue("DescribeVpcAttribute.OwnerId");
+			describeVpcAttributeResponse.DhcpOptionsSetId = _ctx.StringValue("DescribeVpcAttribute.DhcpOptionsSetId");
+			describeVpcAttributeResponse.DhcpOptionsSetStatus = _ctx.StringValue("DescribeVpcAttribute.DhcpOptionsSetStatus");
 
 			List<string> describeVpcAttributeResponse_vSwitchIds = new List<string>();
-			for (int i = 0; i < context.Length("DescribeVpcAttribute.VSwitchIds.Length"); i++) {
-				describeVpcAttributeResponse_vSwitchIds.Add(context.StringValue("DescribeVpcAttribute.VSwitchIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeVpcAttribute.VSwitchIds.Length"); i++) {
+				describeVpcAttributeResponse_vSwitchIds.Add(_ctx.StringValue("DescribeVpcAttribute.VSwitchIds["+ i +"]"));
 			}
 			describeVpcAttributeResponse.VSwitchIds = describeVpcAttributeResponse_vSwitchIds;
 
 			List<string> describeVpcAttributeResponse_userCidrs = new List<string>();
-			for (int i = 0; i < context.Length("DescribeVpcAttribute.UserCidrs.Length"); i++) {
-				describeVpcAttributeResponse_userCidrs.Add(context.StringValue("DescribeVpcAttribute.UserCidrs["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeVpcAttribute.UserCidrs.Length"); i++) {
+				describeVpcAttributeResponse_userCidrs.Add(_ctx.StringValue("DescribeVpcAttribute.UserCidrs["+ i +"]"));
 			}
 			describeVpcAttributeResponse.UserCidrs = describeVpcAttributeResponse_userCidrs;
 
 			List<string> describeVpcAttributeResponse_secondaryCidrBlocks = new List<string>();
-			for (int i = 0; i < context.Length("DescribeVpcAttribute.SecondaryCidrBlocks.Length"); i++) {
-				describeVpcAttributeResponse_secondaryCidrBlocks.Add(context.StringValue("DescribeVpcAttribute.SecondaryCidrBlocks["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeVpcAttribute.SecondaryCidrBlocks.Length"); i++) {
+				describeVpcAttributeResponse_secondaryCidrBlocks.Add(_ctx.StringValue("DescribeVpcAttribute.SecondaryCidrBlocks["+ i +"]"));
 			}
 			describeVpcAttributeResponse.SecondaryCidrBlocks = describeVpcAttributeResponse_secondaryCidrBlocks;
 
 			List<DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen> describeVpcAttributeResponse_associatedCens = new List<DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen>();
-			for (int i = 0; i < context.Length("DescribeVpcAttribute.AssociatedCens.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVpcAttribute.AssociatedCens.Length"); i++) {
 				DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen associatedCen = new DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen();
-				associatedCen.CenId = context.StringValue("DescribeVpcAttribute.AssociatedCens["+ i +"].CenId");
-				associatedCen.CenOwnerId = context.LongValue("DescribeVpcAttribute.AssociatedCens["+ i +"].CenOwnerId");
-				associatedCen.CenStatus = context.StringValue("DescribeVpcAttribute.AssociatedCens["+ i +"].CenStatus");
+				associatedCen.CenId = _ctx.StringValue("DescribeVpcAttribute.AssociatedCens["+ i +"].CenId");
+				associatedCen.CenOwnerId = _ctx.LongValue("DescribeVpcAttribute.AssociatedCens["+ i +"].CenOwnerId");
+				associatedCen.CenStatus = _ctx.StringValue("DescribeVpcAttribute.AssociatedCens["+ i +"].CenStatus");
 
 				describeVpcAttributeResponse_associatedCens.Add(associatedCen);
 			}
 			describeVpcAttributeResponse.AssociatedCens = describeVpcAttributeResponse_associatedCens;
 
 			List<DescribeVpcAttributeResponse.DescribeVpcAttribute_CloudResourceSetType> describeVpcAttributeResponse_cloudResources = new List<DescribeVpcAttributeResponse.DescribeVpcAttribute_CloudResourceSetType>();
-			for (int i = 0; i < context.Length("DescribeVpcAttribute.CloudResources.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVpcAttribute.CloudResources.Length"); i++) {
 				DescribeVpcAttributeResponse.DescribeVpcAttribute_CloudResourceSetType cloudResourceSetType = new DescribeVpcAttributeResponse.DescribeVpcAttribute_CloudResourceSetType();
-				cloudResourceSetType.ResourceType = context.StringValue("DescribeVpcAttribute.CloudResources["+ i +"].ResourceType");
-				cloudResourceSetType.ResourceCount = context.IntegerValue("DescribeVpcAttribute.CloudResources["+ i +"].ResourceCount");
+				cloudResourceSetType.ResourceType = _ctx.StringValue("DescribeVpcAttribute.CloudResources["+ i +"].ResourceType");
+				cloudResourceSetType.ResourceCount = _ctx.IntegerValue("DescribeVpcAttribute.CloudResources["+ i +"].ResourceCount");
 
 				describeVpcAttributeResponse_cloudResources.Add(cloudResourceSetType);
 			}
 			describeVpcAttributeResponse.CloudResources = describeVpcAttributeResponse_cloudResources;
+
+			List<DescribeVpcAttributeResponse.DescribeVpcAttribute_Ipv6CidrBlock> describeVpcAttributeResponse_ipv6CidrBlocks = new List<DescribeVpcAttributeResponse.DescribeVpcAttribute_Ipv6CidrBlock>();
+			for (int i = 0; i < _ctx.Length("DescribeVpcAttribute.Ipv6CidrBlocks.Length"); i++) {
+				DescribeVpcAttributeResponse.DescribeVpcAttribute_Ipv6CidrBlock ipv6CidrBlock = new DescribeVpcAttributeResponse.DescribeVpcAttribute_Ipv6CidrBlock();
+				ipv6CidrBlock.Ipv6CidrBlock = _ctx.StringValue("DescribeVpcAttribute.Ipv6CidrBlocks["+ i +"].Ipv6CidrBlock");
+				ipv6CidrBlock.Ipv6Isp = _ctx.StringValue("DescribeVpcAttribute.Ipv6CidrBlocks["+ i +"].Ipv6Isp");
+
+				describeVpcAttributeResponse_ipv6CidrBlocks.Add(ipv6CidrBlock);
+			}
+			describeVpcAttributeResponse.Ipv6CidrBlocks = describeVpcAttributeResponse_ipv6CidrBlocks;
         
 			return describeVpcAttributeResponse;
         }

@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -46,6 +47,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string acceptLanguage;
+
+		private string zoneType;
 
 		public long? ResourceOwnerId
 		{
@@ -96,6 +101,32 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AcceptLanguage
+		{
+			get
+			{
+				return acceptLanguage;
+			}
+			set	
+			{
+				acceptLanguage = value;
+				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
+			}
+		}
+
+		public string ZoneType
+		{
+			get
+			{
+				return zoneType;
+			}
+			set	
+			{
+				zoneType = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneType", value);
 			}
 		}
 

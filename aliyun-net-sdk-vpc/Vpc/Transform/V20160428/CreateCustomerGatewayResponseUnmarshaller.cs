@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class CreateCustomerGatewayResponseUnmarshaller
     {
-        public static CreateCustomerGatewayResponse Unmarshall(UnmarshallerContext context)
+        public static CreateCustomerGatewayResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateCustomerGatewayResponse createCustomerGatewayResponse = new CreateCustomerGatewayResponse();
 
-			createCustomerGatewayResponse.HttpResponse = context.HttpResponse;
-			createCustomerGatewayResponse.RequestId = context.StringValue("CreateCustomerGateway.RequestId");
-			createCustomerGatewayResponse.CustomerGatewayId = context.StringValue("CreateCustomerGateway.CustomerGatewayId");
-			createCustomerGatewayResponse.IpAddress = context.StringValue("CreateCustomerGateway.IpAddress");
-			createCustomerGatewayResponse.Name = context.StringValue("CreateCustomerGateway.Name");
-			createCustomerGatewayResponse.Description = context.StringValue("CreateCustomerGateway.Description");
-			createCustomerGatewayResponse.CreateTime = context.LongValue("CreateCustomerGateway.CreateTime");
+			createCustomerGatewayResponse.HttpResponse = _ctx.HttpResponse;
+			createCustomerGatewayResponse.RequestId = _ctx.StringValue("CreateCustomerGateway.RequestId");
+			createCustomerGatewayResponse.CustomerGatewayId = _ctx.StringValue("CreateCustomerGateway.CustomerGatewayId");
+			createCustomerGatewayResponse.IpAddress = _ctx.StringValue("CreateCustomerGateway.IpAddress");
+			createCustomerGatewayResponse.Name = _ctx.StringValue("CreateCustomerGateway.Name");
+			createCustomerGatewayResponse.Description = _ctx.StringValue("CreateCustomerGateway.Description");
+			createCustomerGatewayResponse.CreateTime = _ctx.LongValue("CreateCustomerGateway.CreateTime");
         
 			return createCustomerGatewayResponse;
         }

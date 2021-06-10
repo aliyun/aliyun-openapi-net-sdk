@@ -120,6 +120,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string createTime;
 
+			private string associatedInstanceType;
+
 			private List<string> associatedInstances;
 
 			private List<string> associatedEipAddresses;
@@ -253,6 +255,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			public string AssociatedInstanceType
+			{
+				get
+				{
+					return associatedInstanceType;
+				}
+				set	
+				{
+					associatedInstanceType = value;
 				}
 			}
 

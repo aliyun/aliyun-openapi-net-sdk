@@ -49,11 +49,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private bool? enableNatTraversal;
 
+		private string remoteCaCertificate;
+
 		private DescribeVpnConnection_IkeConfig ikeConfig;
 
 		private DescribeVpnConnection_IpsecConfig ipsecConfig;
 
 		private DescribeVpnConnection_VcoHealthCheck vcoHealthCheck;
+
+		private DescribeVpnConnection_VpnBgpConfig vpnBgpConfig;
 
 		public string RequestId
 		{
@@ -199,6 +203,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string RemoteCaCertificate
+		{
+			get
+			{
+				return remoteCaCertificate;
+			}
+			set	
+			{
+				remoteCaCertificate = value;
+			}
+		}
+
 		public DescribeVpnConnection_IkeConfig IkeConfig
 		{
 			get
@@ -232,6 +248,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				vcoHealthCheck = value;
+			}
+		}
+
+		public DescribeVpnConnection_VpnBgpConfig VpnBgpConfig
+		{
+			get
+			{
+				return vpnBgpConfig;
+			}
+			set	
+			{
+				vpnBgpConfig = value;
 			}
 		}
 
@@ -497,6 +525,108 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					retry = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+		}
+
+		public class DescribeVpnConnection_VpnBgpConfig
+		{
+
+			private string enableBgp;
+
+			private string tunnelCidr;
+
+			private string localBgpIp;
+
+			private string peerBgpIp;
+
+			private string localAsn;
+
+			private string peerAsn;
+
+			private string status;
+
+			public string EnableBgp
+			{
+				get
+				{
+					return enableBgp;
+				}
+				set	
+				{
+					enableBgp = value;
+				}
+			}
+
+			public string TunnelCidr
+			{
+				get
+				{
+					return tunnelCidr;
+				}
+				set	
+				{
+					tunnelCidr = value;
+				}
+			}
+
+			public string LocalBgpIp
+			{
+				get
+				{
+					return localBgpIp;
+				}
+				set	
+				{
+					localBgpIp = value;
+				}
+			}
+
+			public string PeerBgpIp
+			{
+				get
+				{
+					return peerBgpIp;
+				}
+				set	
+				{
+					peerBgpIp = value;
+				}
+			}
+
+			public string LocalAsn
+			{
+				get
+				{
+					return localAsn;
+				}
+				set	
+				{
+					localAsn = value;
+				}
+			}
+
+			public string PeerAsn
+			{
+				get
+				{
+					return peerAsn;
+				}
+				set	
+				{
+					peerAsn = value;
 				}
 			}
 

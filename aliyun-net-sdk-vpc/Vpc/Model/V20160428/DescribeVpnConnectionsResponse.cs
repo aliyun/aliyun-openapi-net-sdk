@@ -120,11 +120,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private bool? enableNatTraversal;
 
+			private string remoteCaCertificate;
+
 			private DescribeVpnConnections_IkeConfig ikeConfig;
 
 			private DescribeVpnConnections_IpsecConfig ipsecConfig;
 
 			private DescribeVpnConnections_VcoHealthCheck vcoHealthCheck;
+
+			private DescribeVpnConnections_VpnBgpConfig vpnBgpConfig;
 
 			public string VpnConnectionId
 			{
@@ -258,6 +262,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string RemoteCaCertificate
+			{
+				get
+				{
+					return remoteCaCertificate;
+				}
+				set	
+				{
+					remoteCaCertificate = value;
+				}
+			}
+
 			public DescribeVpnConnections_IkeConfig IkeConfig
 			{
 				get
@@ -291,6 +307,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					vcoHealthCheck = value;
+				}
+			}
+
+			public DescribeVpnConnections_VpnBgpConfig VpnBgpConfig
+			{
+				get
+				{
+					return vpnBgpConfig;
+				}
+				set	
+				{
+					vpnBgpConfig = value;
 				}
 			}
 
@@ -556,6 +584,94 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						retry = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+			}
+
+			public class DescribeVpnConnections_VpnBgpConfig
+			{
+
+				private string tunnelCidr;
+
+				private string localBgpIp;
+
+				private string peerBgpIp;
+
+				private string localAsn;
+
+				private string peerAsn;
+
+				private string status;
+
+				public string TunnelCidr
+				{
+					get
+					{
+						return tunnelCidr;
+					}
+					set	
+					{
+						tunnelCidr = value;
+					}
+				}
+
+				public string LocalBgpIp
+				{
+					get
+					{
+						return localBgpIp;
+					}
+					set	
+					{
+						localBgpIp = value;
+					}
+				}
+
+				public string PeerBgpIp
+				{
+					get
+					{
+						return peerBgpIp;
+					}
+					set	
+					{
+						peerBgpIp = value;
+					}
+				}
+
+				public string LocalAsn
+				{
+					get
+					{
+						return localAsn;
+					}
+					set	
+					{
+						localAsn = value;
+					}
+				}
+
+				public string PeerAsn
+				{
+					get
+					{
+						return peerAsn;
+					}
+					set	
+					{
+						peerAsn = value;
 					}
 				}
 

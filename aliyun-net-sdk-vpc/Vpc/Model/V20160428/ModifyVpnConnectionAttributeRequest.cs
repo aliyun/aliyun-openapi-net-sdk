@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string ikeConfig;
@@ -48,6 +49,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string clientToken;
 
 		private string ipsecConfig;
+
+		private string bgpConfig;
 
 		private string healthCheckConfig;
 
@@ -64,6 +67,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private long? ownerId;
 
 		private bool? enableDpd;
+
+		private string remoteCaCertificate;
 
 		private string vpnConnectionId;
 
@@ -133,6 +138,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ipsecConfig = value;
 				DictionaryUtil.Add(QueryParameters, "IpsecConfig", value);
+			}
+		}
+
+		public string BgpConfig
+		{
+			get
+			{
+				return bgpConfig;
+			}
+			set	
+			{
+				bgpConfig = value;
+				DictionaryUtil.Add(QueryParameters, "BgpConfig", value);
 			}
 		}
 
@@ -237,6 +255,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				enableDpd = value;
 				DictionaryUtil.Add(QueryParameters, "EnableDpd", value.ToString());
+			}
+		}
+
+		public string RemoteCaCertificate
+		{
+			get
+			{
+				return remoteCaCertificate;
+			}
+			set	
+			{
+				remoteCaCertificate = value;
+				DictionaryUtil.Add(QueryParameters, "RemoteCaCertificate", value);
 			}
 		}
 

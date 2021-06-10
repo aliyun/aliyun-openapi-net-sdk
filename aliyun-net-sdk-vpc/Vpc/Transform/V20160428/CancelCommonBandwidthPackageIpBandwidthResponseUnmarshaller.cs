@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class CancelCommonBandwidthPackageIpBandwidthResponseUnmarshaller
     {
-        public static CancelCommonBandwidthPackageIpBandwidthResponse Unmarshall(UnmarshallerContext context)
+        public static CancelCommonBandwidthPackageIpBandwidthResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CancelCommonBandwidthPackageIpBandwidthResponse cancelCommonBandwidthPackageIpBandwidthResponse = new CancelCommonBandwidthPackageIpBandwidthResponse();
 
-			cancelCommonBandwidthPackageIpBandwidthResponse.HttpResponse = context.HttpResponse;
-			cancelCommonBandwidthPackageIpBandwidthResponse.RequestId = context.StringValue("CancelCommonBandwidthPackageIpBandwidth.RequestId");
+			cancelCommonBandwidthPackageIpBandwidthResponse.HttpResponse = _ctx.HttpResponse;
+			cancelCommonBandwidthPackageIpBandwidthResponse.RequestId = _ctx.StringValue("CancelCommonBandwidthPackageIpBandwidth.RequestId");
         
 			return cancelCommonBandwidthPackageIpBandwidthResponse;
         }

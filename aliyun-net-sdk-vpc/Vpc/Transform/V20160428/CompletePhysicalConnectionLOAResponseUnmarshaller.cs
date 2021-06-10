@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class CompletePhysicalConnectionLOAResponseUnmarshaller
     {
-        public static CompletePhysicalConnectionLOAResponse Unmarshall(UnmarshallerContext context)
+        public static CompletePhysicalConnectionLOAResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CompletePhysicalConnectionLOAResponse completePhysicalConnectionLOAResponse = new CompletePhysicalConnectionLOAResponse();
 
-			completePhysicalConnectionLOAResponse.HttpResponse = context.HttpResponse;
-			completePhysicalConnectionLOAResponse.RequestId = context.StringValue("CompletePhysicalConnectionLOA.RequestId");
+			completePhysicalConnectionLOAResponse.HttpResponse = _ctx.HttpResponse;
+			completePhysicalConnectionLOAResponse.RequestId = _ctx.StringValue("CompletePhysicalConnectionLOA.RequestId");
         
 			return completePhysicalConnectionLOAResponse;
         }

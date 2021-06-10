@@ -55,9 +55,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? ownerId;
 
+		private string dhcpOptionsSetId;
+
+		private string dhcpOptionsSetStatus;
+
 		private List<DescribeVpcAttribute_AssociatedCen> associatedCens;
 
 		private List<DescribeVpcAttribute_CloudResourceSetType> cloudResources;
+
+		private List<DescribeVpcAttribute_Ipv6CidrBlock> ipv6CidrBlocks;
 
 		private List<string> vSwitchIds;
 
@@ -245,6 +251,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string DhcpOptionsSetId
+		{
+			get
+			{
+				return dhcpOptionsSetId;
+			}
+			set	
+			{
+				dhcpOptionsSetId = value;
+			}
+		}
+
+		public string DhcpOptionsSetStatus
+		{
+			get
+			{
+				return dhcpOptionsSetStatus;
+			}
+			set	
+			{
+				dhcpOptionsSetStatus = value;
+			}
+		}
+
 		public List<DescribeVpcAttribute_AssociatedCen> AssociatedCens
 		{
 			get
@@ -266,6 +296,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				cloudResources = value;
+			}
+		}
+
+		public List<DescribeVpcAttribute_Ipv6CidrBlock> Ipv6CidrBlocks
+		{
+			get
+			{
+				return ipv6CidrBlocks;
+			}
+			set	
+			{
+				ipv6CidrBlocks = value;
 			}
 		}
 
@@ -379,6 +421,38 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					resourceCount = value;
+				}
+			}
+		}
+
+		public class DescribeVpcAttribute_Ipv6CidrBlock
+		{
+
+			private string ipv6CidrBlock;
+
+			private string ipv6Isp;
+
+			public string Ipv6CidrBlock
+			{
+				get
+				{
+					return ipv6CidrBlock;
+				}
+				set	
+				{
+					ipv6CidrBlock = value;
+				}
+			}
+
+			public string Ipv6Isp
+			{
+				get
+				{
+					return ipv6Isp;
+				}
+				set	
+				{
+					ipv6Isp = value;
 				}
 			}
 		}

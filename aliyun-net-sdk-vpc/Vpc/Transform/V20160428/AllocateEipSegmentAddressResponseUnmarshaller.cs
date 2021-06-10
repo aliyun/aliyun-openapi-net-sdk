@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class AllocateEipSegmentAddressResponseUnmarshaller
     {
-        public static AllocateEipSegmentAddressResponse Unmarshall(UnmarshallerContext context)
+        public static AllocateEipSegmentAddressResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AllocateEipSegmentAddressResponse allocateEipSegmentAddressResponse = new AllocateEipSegmentAddressResponse();
 
-			allocateEipSegmentAddressResponse.HttpResponse = context.HttpResponse;
-			allocateEipSegmentAddressResponse.RequestId = context.StringValue("AllocateEipSegmentAddress.RequestId");
-			allocateEipSegmentAddressResponse.EipSegmentInstanceId = context.StringValue("AllocateEipSegmentAddress.EipSegmentInstanceId");
-			allocateEipSegmentAddressResponse.OrderId = context.LongValue("AllocateEipSegmentAddress.OrderId");
+			allocateEipSegmentAddressResponse.HttpResponse = _ctx.HttpResponse;
+			allocateEipSegmentAddressResponse.RequestId = _ctx.StringValue("AllocateEipSegmentAddress.RequestId");
+			allocateEipSegmentAddressResponse.EipSegmentInstanceId = _ctx.StringValue("AllocateEipSegmentAddress.EipSegmentInstanceId");
+			allocateEipSegmentAddressResponse.OrderId = _ctx.LongValue("AllocateEipSegmentAddress.OrderId");
         
 			return allocateEipSegmentAddressResponse;
         }

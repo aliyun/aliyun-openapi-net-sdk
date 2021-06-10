@@ -27,6 +27,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string requestId;
 
+		private string routeEntryId;
+
 		public string RequestId
 		{
 			get
@@ -36,6 +38,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string RouteEntryId
+		{
+			get
+			{
+				return routeEntryId;
+			}
+			set	
+			{
+				routeEntryId = value;
 			}
 		}
 	}

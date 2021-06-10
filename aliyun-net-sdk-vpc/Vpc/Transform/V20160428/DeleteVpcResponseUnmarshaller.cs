@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DeleteVpcResponseUnmarshaller
     {
-        public static DeleteVpcResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteVpcResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteVpcResponse deleteVpcResponse = new DeleteVpcResponse();
 
-			deleteVpcResponse.HttpResponse = context.HttpResponse;
-			deleteVpcResponse.RequestId = context.StringValue("DeleteVpc.RequestId");
+			deleteVpcResponse.HttpResponse = _ctx.HttpResponse;
+			deleteVpcResponse.RequestId = _ctx.StringValue("DeleteVpc.RequestId");
         
 			return deleteVpcResponse;
         }

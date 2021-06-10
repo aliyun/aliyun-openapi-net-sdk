@@ -26,31 +26,31 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DescribeFlowLogsResponseUnmarshaller
     {
-        public static DescribeFlowLogsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeFlowLogsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeFlowLogsResponse describeFlowLogsResponse = new DescribeFlowLogsResponse();
 
-			describeFlowLogsResponse.HttpResponse = context.HttpResponse;
-			describeFlowLogsResponse.RequestId = context.StringValue("DescribeFlowLogs.RequestId");
-			describeFlowLogsResponse.Success = context.StringValue("DescribeFlowLogs.Success");
-			describeFlowLogsResponse.TotalCount = context.StringValue("DescribeFlowLogs.TotalCount");
-			describeFlowLogsResponse.PageNumber = context.StringValue("DescribeFlowLogs.PageNumber");
-			describeFlowLogsResponse.PageSize = context.StringValue("DescribeFlowLogs.PageSize");
+			describeFlowLogsResponse.HttpResponse = _ctx.HttpResponse;
+			describeFlowLogsResponse.RequestId = _ctx.StringValue("DescribeFlowLogs.RequestId");
+			describeFlowLogsResponse.Success = _ctx.StringValue("DescribeFlowLogs.Success");
+			describeFlowLogsResponse.TotalCount = _ctx.StringValue("DescribeFlowLogs.TotalCount");
+			describeFlowLogsResponse.PageNumber = _ctx.StringValue("DescribeFlowLogs.PageNumber");
+			describeFlowLogsResponse.PageSize = _ctx.StringValue("DescribeFlowLogs.PageSize");
 
 			List<DescribeFlowLogsResponse.DescribeFlowLogs_FlowLog> describeFlowLogsResponse_flowLogs = new List<DescribeFlowLogsResponse.DescribeFlowLogs_FlowLog>();
-			for (int i = 0; i < context.Length("DescribeFlowLogs.FlowLogs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeFlowLogs.FlowLogs.Length"); i++) {
 				DescribeFlowLogsResponse.DescribeFlowLogs_FlowLog flowLog = new DescribeFlowLogsResponse.DescribeFlowLogs_FlowLog();
-				flowLog.FlowLogId = context.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].FlowLogId");
-				flowLog.FlowLogName = context.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].FlowLogName");
-				flowLog.Description = context.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].Description");
-				flowLog.CreationTime = context.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].CreationTime");
-				flowLog.ResourceType = context.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].ResourceType");
-				flowLog.ResourceId = context.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].ResourceId");
-				flowLog.ProjectName = context.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].ProjectName");
-				flowLog.LogStoreName = context.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].LogStoreName");
-				flowLog.Status = context.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].Status");
-				flowLog.TrafficType = context.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].TrafficType");
-				flowLog.RegionId = context.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].RegionId");
+				flowLog.FlowLogId = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].FlowLogId");
+				flowLog.FlowLogName = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].FlowLogName");
+				flowLog.Description = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].Description");
+				flowLog.CreationTime = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].CreationTime");
+				flowLog.ResourceType = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].ResourceType");
+				flowLog.ResourceId = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].ResourceId");
+				flowLog.ProjectName = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].ProjectName");
+				flowLog.LogStoreName = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].LogStoreName");
+				flowLog.Status = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].Status");
+				flowLog.TrafficType = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].TrafficType");
+				flowLog.RegionId = _ctx.StringValue("DescribeFlowLogs.FlowLogs["+ i +"].RegionId");
 
 				describeFlowLogsResponse_flowLogs.Add(flowLog);
 			}

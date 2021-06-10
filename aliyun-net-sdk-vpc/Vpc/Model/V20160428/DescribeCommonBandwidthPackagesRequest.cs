@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -50,6 +51,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private int? pageSize;
 
 		private string bandwidthPackageId;
+
+		private bool? dryRun;
 
 		private string resourceOwnerAccount;
 
@@ -134,6 +137,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				bandwidthPackageId = value;
 				DictionaryUtil.Add(QueryParameters, "BandwidthPackageId", value);
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 

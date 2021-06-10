@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class AssociateVpcCidrBlockResponseUnmarshaller
     {
-        public static AssociateVpcCidrBlockResponse Unmarshall(UnmarshallerContext context)
+        public static AssociateVpcCidrBlockResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AssociateVpcCidrBlockResponse associateVpcCidrBlockResponse = new AssociateVpcCidrBlockResponse();
 
-			associateVpcCidrBlockResponse.HttpResponse = context.HttpResponse;
-			associateVpcCidrBlockResponse.RequestId = context.StringValue("AssociateVpcCidrBlock.RequestId");
+			associateVpcCidrBlockResponse.HttpResponse = _ctx.HttpResponse;
+			associateVpcCidrBlockResponse.RequestId = _ctx.StringValue("AssociateVpcCidrBlock.RequestId");
         
 			return associateVpcCidrBlockResponse;
         }

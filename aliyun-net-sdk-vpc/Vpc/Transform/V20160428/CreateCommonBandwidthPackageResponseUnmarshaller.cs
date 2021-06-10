@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class CreateCommonBandwidthPackageResponseUnmarshaller
     {
-        public static CreateCommonBandwidthPackageResponse Unmarshall(UnmarshallerContext context)
+        public static CreateCommonBandwidthPackageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateCommonBandwidthPackageResponse createCommonBandwidthPackageResponse = new CreateCommonBandwidthPackageResponse();
 
-			createCommonBandwidthPackageResponse.HttpResponse = context.HttpResponse;
-			createCommonBandwidthPackageResponse.RequestId = context.StringValue("CreateCommonBandwidthPackage.RequestId");
-			createCommonBandwidthPackageResponse.BandwidthPackageId = context.StringValue("CreateCommonBandwidthPackage.BandwidthPackageId");
-			createCommonBandwidthPackageResponse.ResourceGroupId = context.StringValue("CreateCommonBandwidthPackage.ResourceGroupId");
+			createCommonBandwidthPackageResponse.HttpResponse = _ctx.HttpResponse;
+			createCommonBandwidthPackageResponse.RequestId = _ctx.StringValue("CreateCommonBandwidthPackage.RequestId");
+			createCommonBandwidthPackageResponse.BandwidthPackageId = _ctx.StringValue("CreateCommonBandwidthPackage.BandwidthPackageId");
+			createCommonBandwidthPackageResponse.ResourceGroupId = _ctx.StringValue("CreateCommonBandwidthPackage.ResourceGroupId");
         
 			return createCommonBandwidthPackageResponse;
         }

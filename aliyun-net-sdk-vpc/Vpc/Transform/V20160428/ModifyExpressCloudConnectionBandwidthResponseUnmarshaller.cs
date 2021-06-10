@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class ModifyExpressCloudConnectionBandwidthResponseUnmarshaller
     {
-        public static ModifyExpressCloudConnectionBandwidthResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyExpressCloudConnectionBandwidthResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyExpressCloudConnectionBandwidthResponse modifyExpressCloudConnectionBandwidthResponse = new ModifyExpressCloudConnectionBandwidthResponse();
 
-			modifyExpressCloudConnectionBandwidthResponse.HttpResponse = context.HttpResponse;
-			modifyExpressCloudConnectionBandwidthResponse.RequestId = context.StringValue("ModifyExpressCloudConnectionBandwidth.RequestId");
+			modifyExpressCloudConnectionBandwidthResponse.HttpResponse = _ctx.HttpResponse;
+			modifyExpressCloudConnectionBandwidthResponse.RequestId = _ctx.StringValue("ModifyExpressCloudConnectionBandwidth.RequestId");
         
 			return modifyExpressCloudConnectionBandwidthResponse;
         }

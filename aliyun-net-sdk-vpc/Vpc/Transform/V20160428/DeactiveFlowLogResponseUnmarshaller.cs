@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DeactiveFlowLogResponseUnmarshaller
     {
-        public static DeactiveFlowLogResponse Unmarshall(UnmarshallerContext context)
+        public static DeactiveFlowLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeactiveFlowLogResponse deactiveFlowLogResponse = new DeactiveFlowLogResponse();
 
-			deactiveFlowLogResponse.HttpResponse = context.HttpResponse;
-			deactiveFlowLogResponse.RequestId = context.StringValue("DeactiveFlowLog.RequestId");
-			deactiveFlowLogResponse.Success = context.StringValue("DeactiveFlowLog.Success");
+			deactiveFlowLogResponse.HttpResponse = _ctx.HttpResponse;
+			deactiveFlowLogResponse.RequestId = _ctx.StringValue("DeactiveFlowLog.RequestId");
+			deactiveFlowLogResponse.Success = _ctx.StringValue("DeactiveFlowLog.Success");
         
 			return deactiveFlowLogResponse;
         }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DeleteExpressConnectResponseUnmarshaller
     {
-        public static DeleteExpressConnectResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteExpressConnectResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteExpressConnectResponse deleteExpressConnectResponse = new DeleteExpressConnectResponse();
 
-			deleteExpressConnectResponse.HttpResponse = context.HttpResponse;
-			deleteExpressConnectResponse.RequestId = context.StringValue("DeleteExpressConnect.RequestId");
+			deleteExpressConnectResponse.HttpResponse = _ctx.HttpResponse;
+			deleteExpressConnectResponse.RequestId = _ctx.StringValue("DeleteExpressConnect.RequestId");
         
 			return deleteExpressConnectResponse;
         }

@@ -142,6 +142,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private bool? enableIpv6;
 
+			private string bandwidthStatus;
+
 			public string VbrId
 			{
 				get
@@ -403,6 +405,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					enableIpv6 = value;
+				}
+			}
+
+			public string BandwidthStatus
+			{
+				get
+				{
+					return bandwidthStatus;
+				}
+				set	
+				{
+					bandwidthStatus = value;
 				}
 			}
 		}

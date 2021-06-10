@@ -138,6 +138,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private bool? deletionProtection;
 
+			private int? serviceManaged;
+
 			private List<DescribeCommonBandwidthPackages_PublicIpAddresse> publicIpAddresses;
 
 			public string BandwidthPackageId
@@ -380,6 +382,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public int? ServiceManaged
+			{
+				get
+				{
+					return serviceManaged;
+				}
+				set	
+				{
+					serviceManaged = value;
+				}
+			}
+
 			public List<DescribeCommonBandwidthPackages_PublicIpAddresse> PublicIpAddresses
 			{
 				get
@@ -398,6 +412,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				private string allocationId;
 
 				private string ipAddress;
+
+				private string bandwidthPackageIpRelationStatus;
 
 				public string AllocationId
 				{
@@ -420,6 +436,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						ipAddress = value;
+					}
+				}
+
+				public string BandwidthPackageIpRelationStatus
+				{
+					get
+					{
+						return bandwidthPackageIpRelationStatus;
+					}
+					set	
+					{
+						bandwidthPackageIpRelationStatus = value;
 					}
 				}
 			}

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class ModifyFlowLogAttributeResponseUnmarshaller
     {
-        public static ModifyFlowLogAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyFlowLogAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyFlowLogAttributeResponse modifyFlowLogAttributeResponse = new ModifyFlowLogAttributeResponse();
 
-			modifyFlowLogAttributeResponse.HttpResponse = context.HttpResponse;
-			modifyFlowLogAttributeResponse.RequestId = context.StringValue("ModifyFlowLogAttribute.RequestId");
-			modifyFlowLogAttributeResponse.Success = context.StringValue("ModifyFlowLogAttribute.Success");
+			modifyFlowLogAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			modifyFlowLogAttributeResponse.RequestId = _ctx.StringValue("ModifyFlowLogAttribute.RequestId");
+			modifyFlowLogAttributeResponse.Success = _ctx.StringValue("ModifyFlowLogAttribute.Success");
         
 			return modifyFlowLogAttributeResponse;
         }

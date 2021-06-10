@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -47,11 +48,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string vpcName;
 
+		private string ipv6Isp;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string ipv6CidrBlock;
 
 		private string vpcId;
 
@@ -109,6 +114,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string Ipv6Isp
+		{
+			get
+			{
+				return ipv6Isp;
+			}
+			set	
+			{
+				ipv6Isp = value;
+				DictionaryUtil.Add(QueryParameters, "Ipv6Isp", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -145,6 +163,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Ipv6CidrBlock
+		{
+			get
+			{
+				return ipv6CidrBlock;
+			}
+			set	
+			{
+				ipv6CidrBlock = value;
+				DictionaryUtil.Add(QueryParameters, "Ipv6CidrBlock", value);
 			}
 		}
 

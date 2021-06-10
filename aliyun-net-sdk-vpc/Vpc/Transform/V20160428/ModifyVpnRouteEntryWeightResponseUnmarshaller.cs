@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class ModifyVpnRouteEntryWeightResponseUnmarshaller
     {
-        public static ModifyVpnRouteEntryWeightResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyVpnRouteEntryWeightResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyVpnRouteEntryWeightResponse modifyVpnRouteEntryWeightResponse = new ModifyVpnRouteEntryWeightResponse();
 
-			modifyVpnRouteEntryWeightResponse.HttpResponse = context.HttpResponse;
-			modifyVpnRouteEntryWeightResponse.RequestId = context.StringValue("ModifyVpnRouteEntryWeight.RequestId");
+			modifyVpnRouteEntryWeightResponse.HttpResponse = _ctx.HttpResponse;
+			modifyVpnRouteEntryWeightResponse.RequestId = _ctx.StringValue("ModifyVpnRouteEntryWeight.RequestId");
         
 			return modifyVpnRouteEntryWeightResponse;
         }

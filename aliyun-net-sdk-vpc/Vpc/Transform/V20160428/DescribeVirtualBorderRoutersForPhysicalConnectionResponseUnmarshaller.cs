@@ -26,41 +26,42 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DescribeVirtualBorderRoutersForPhysicalConnectionResponseUnmarshaller
     {
-        public static DescribeVirtualBorderRoutersForPhysicalConnectionResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVirtualBorderRoutersForPhysicalConnectionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVirtualBorderRoutersForPhysicalConnectionResponse describeVirtualBorderRoutersForPhysicalConnectionResponse = new DescribeVirtualBorderRoutersForPhysicalConnectionResponse();
 
-			describeVirtualBorderRoutersForPhysicalConnectionResponse.HttpResponse = context.HttpResponse;
-			describeVirtualBorderRoutersForPhysicalConnectionResponse.RequestId = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.RequestId");
-			describeVirtualBorderRoutersForPhysicalConnectionResponse.PageNumber = context.IntegerValue("DescribeVirtualBorderRoutersForPhysicalConnection.PageNumber");
-			describeVirtualBorderRoutersForPhysicalConnectionResponse.PageSize = context.IntegerValue("DescribeVirtualBorderRoutersForPhysicalConnection.PageSize");
-			describeVirtualBorderRoutersForPhysicalConnectionResponse.TotalCount = context.IntegerValue("DescribeVirtualBorderRoutersForPhysicalConnection.TotalCount");
+			describeVirtualBorderRoutersForPhysicalConnectionResponse.HttpResponse = _ctx.HttpResponse;
+			describeVirtualBorderRoutersForPhysicalConnectionResponse.RequestId = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.RequestId");
+			describeVirtualBorderRoutersForPhysicalConnectionResponse.PageNumber = _ctx.IntegerValue("DescribeVirtualBorderRoutersForPhysicalConnection.PageNumber");
+			describeVirtualBorderRoutersForPhysicalConnectionResponse.PageSize = _ctx.IntegerValue("DescribeVirtualBorderRoutersForPhysicalConnection.PageSize");
+			describeVirtualBorderRoutersForPhysicalConnectionResponse.TotalCount = _ctx.IntegerValue("DescribeVirtualBorderRoutersForPhysicalConnection.TotalCount");
 
 			List<DescribeVirtualBorderRoutersForPhysicalConnectionResponse.DescribeVirtualBorderRoutersForPhysicalConnection_VirtualBorderRouterForPhysicalConnectionType> describeVirtualBorderRoutersForPhysicalConnectionResponse_virtualBorderRouterForPhysicalConnectionSet = new List<DescribeVirtualBorderRoutersForPhysicalConnectionResponse.DescribeVirtualBorderRoutersForPhysicalConnection_VirtualBorderRouterForPhysicalConnectionType>();
-			for (int i = 0; i < context.Length("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet.Length"); i++) {
 				DescribeVirtualBorderRoutersForPhysicalConnectionResponse.DescribeVirtualBorderRoutersForPhysicalConnection_VirtualBorderRouterForPhysicalConnectionType virtualBorderRouterForPhysicalConnectionType = new DescribeVirtualBorderRoutersForPhysicalConnectionResponse.DescribeVirtualBorderRoutersForPhysicalConnection_VirtualBorderRouterForPhysicalConnectionType();
-				virtualBorderRouterForPhysicalConnectionType.VbrId = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].VbrId");
-				virtualBorderRouterForPhysicalConnectionType.VbrOwnerUid = context.LongValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].VbrOwnerUid");
-				virtualBorderRouterForPhysicalConnectionType.EccId = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].EccId");
-				virtualBorderRouterForPhysicalConnectionType.Type = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].Type");
-				virtualBorderRouterForPhysicalConnectionType.CreationTime = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].CreationTime");
-				virtualBorderRouterForPhysicalConnectionType.ActivationTime = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].ActivationTime");
-				virtualBorderRouterForPhysicalConnectionType.TerminationTime = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].TerminationTime");
-				virtualBorderRouterForPhysicalConnectionType.RecoveryTime = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].RecoveryTime");
-				virtualBorderRouterForPhysicalConnectionType.VlanId = context.IntegerValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].VlanId");
-				virtualBorderRouterForPhysicalConnectionType.Status = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].Status");
-				virtualBorderRouterForPhysicalConnectionType.CircuitCode = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].CircuitCode");
-				virtualBorderRouterForPhysicalConnectionType.LocalGatewayIp = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].LocalGatewayIp");
-				virtualBorderRouterForPhysicalConnectionType.PeerGatewayIp = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PeerGatewayIp");
-				virtualBorderRouterForPhysicalConnectionType.PeeringSubnetMask = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PeeringSubnetMask");
-				virtualBorderRouterForPhysicalConnectionType.PConnVbrChargeType = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PConnVbrChargeType");
-				virtualBorderRouterForPhysicalConnectionType.PConnVbrExpireTime = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PConnVbrExpireTime");
-				virtualBorderRouterForPhysicalConnectionType.PConnVbrBussinessStatus = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PConnVbrBussinessStatus");
-				virtualBorderRouterForPhysicalConnectionType.Bandwidth = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].Bandwidth");
-				virtualBorderRouterForPhysicalConnectionType.LocalIpv6GatewayIp = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].LocalIpv6GatewayIp");
-				virtualBorderRouterForPhysicalConnectionType.PeerIpv6GatewayIp = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PeerIpv6GatewayIp");
-				virtualBorderRouterForPhysicalConnectionType.PeeringIpv6SubnetMask = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PeeringIpv6SubnetMask");
-				virtualBorderRouterForPhysicalConnectionType.EnableIpv6 = context.BooleanValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].EnableIpv6");
+				virtualBorderRouterForPhysicalConnectionType.VbrId = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].VbrId");
+				virtualBorderRouterForPhysicalConnectionType.VbrOwnerUid = _ctx.LongValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].VbrOwnerUid");
+				virtualBorderRouterForPhysicalConnectionType.EccId = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].EccId");
+				virtualBorderRouterForPhysicalConnectionType.Type = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].Type");
+				virtualBorderRouterForPhysicalConnectionType.CreationTime = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].CreationTime");
+				virtualBorderRouterForPhysicalConnectionType.ActivationTime = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].ActivationTime");
+				virtualBorderRouterForPhysicalConnectionType.TerminationTime = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].TerminationTime");
+				virtualBorderRouterForPhysicalConnectionType.RecoveryTime = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].RecoveryTime");
+				virtualBorderRouterForPhysicalConnectionType.VlanId = _ctx.IntegerValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].VlanId");
+				virtualBorderRouterForPhysicalConnectionType.Status = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].Status");
+				virtualBorderRouterForPhysicalConnectionType.CircuitCode = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].CircuitCode");
+				virtualBorderRouterForPhysicalConnectionType.LocalGatewayIp = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].LocalGatewayIp");
+				virtualBorderRouterForPhysicalConnectionType.PeerGatewayIp = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PeerGatewayIp");
+				virtualBorderRouterForPhysicalConnectionType.PeeringSubnetMask = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PeeringSubnetMask");
+				virtualBorderRouterForPhysicalConnectionType.PConnVbrChargeType = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PConnVbrChargeType");
+				virtualBorderRouterForPhysicalConnectionType.PConnVbrExpireTime = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PConnVbrExpireTime");
+				virtualBorderRouterForPhysicalConnectionType.PConnVbrBussinessStatus = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PConnVbrBussinessStatus");
+				virtualBorderRouterForPhysicalConnectionType.Bandwidth = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].Bandwidth");
+				virtualBorderRouterForPhysicalConnectionType.LocalIpv6GatewayIp = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].LocalIpv6GatewayIp");
+				virtualBorderRouterForPhysicalConnectionType.PeerIpv6GatewayIp = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PeerIpv6GatewayIp");
+				virtualBorderRouterForPhysicalConnectionType.PeeringIpv6SubnetMask = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PeeringIpv6SubnetMask");
+				virtualBorderRouterForPhysicalConnectionType.EnableIpv6 = _ctx.BooleanValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].EnableIpv6");
+				virtualBorderRouterForPhysicalConnectionType.BandwidthStatus = _ctx.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].BandwidthStatus");
 
 				describeVirtualBorderRoutersForPhysicalConnectionResponse_virtualBorderRouterForPhysicalConnectionSet.Add(virtualBorderRouterForPhysicalConnectionType);
 			}

@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DescribeEipGatewayInfoResponseUnmarshaller
     {
-        public static DescribeEipGatewayInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeEipGatewayInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeEipGatewayInfoResponse describeEipGatewayInfoResponse = new DescribeEipGatewayInfoResponse();
 
-			describeEipGatewayInfoResponse.HttpResponse = context.HttpResponse;
-			describeEipGatewayInfoResponse.RequestId = context.StringValue("DescribeEipGatewayInfo.RequestId");
-			describeEipGatewayInfoResponse.Code = context.StringValue("DescribeEipGatewayInfo.Code");
-			describeEipGatewayInfoResponse.Message = context.StringValue("DescribeEipGatewayInfo.Message");
+			describeEipGatewayInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeEipGatewayInfoResponse.RequestId = _ctx.StringValue("DescribeEipGatewayInfo.RequestId");
+			describeEipGatewayInfoResponse.Code = _ctx.StringValue("DescribeEipGatewayInfo.Code");
+			describeEipGatewayInfoResponse.Message = _ctx.StringValue("DescribeEipGatewayInfo.Message");
 
 			List<DescribeEipGatewayInfoResponse.DescribeEipGatewayInfo_EipInfo> describeEipGatewayInfoResponse_eipInfos = new List<DescribeEipGatewayInfoResponse.DescribeEipGatewayInfo_EipInfo>();
-			for (int i = 0; i < context.Length("DescribeEipGatewayInfo.EipInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeEipGatewayInfo.EipInfos.Length"); i++) {
 				DescribeEipGatewayInfoResponse.DescribeEipGatewayInfo_EipInfo eipInfo = new DescribeEipGatewayInfoResponse.DescribeEipGatewayInfo_EipInfo();
-				eipInfo.Ip = context.StringValue("DescribeEipGatewayInfo.EipInfos["+ i +"].Ip");
-				eipInfo.IpGw = context.StringValue("DescribeEipGatewayInfo.EipInfos["+ i +"].IpGw");
-				eipInfo.IpMask = context.StringValue("DescribeEipGatewayInfo.EipInfos["+ i +"].IpMask");
+				eipInfo.Ip = _ctx.StringValue("DescribeEipGatewayInfo.EipInfos["+ i +"].Ip");
+				eipInfo.IpGw = _ctx.StringValue("DescribeEipGatewayInfo.EipInfos["+ i +"].IpGw");
+				eipInfo.IpMask = _ctx.StringValue("DescribeEipGatewayInfo.EipInfos["+ i +"].IpMask");
 
 				describeEipGatewayInfoResponse_eipInfos.Add(eipInfo);
 			}

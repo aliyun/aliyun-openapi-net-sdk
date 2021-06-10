@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class ModifyCustomerGatewayAttributeResponseUnmarshaller
     {
-        public static ModifyCustomerGatewayAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyCustomerGatewayAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyCustomerGatewayAttributeResponse modifyCustomerGatewayAttributeResponse = new ModifyCustomerGatewayAttributeResponse();
 
-			modifyCustomerGatewayAttributeResponse.HttpResponse = context.HttpResponse;
-			modifyCustomerGatewayAttributeResponse.RequestId = context.StringValue("ModifyCustomerGatewayAttribute.RequestId");
-			modifyCustomerGatewayAttributeResponse.CustomerGatewayId = context.StringValue("ModifyCustomerGatewayAttribute.CustomerGatewayId");
-			modifyCustomerGatewayAttributeResponse.IpAddress = context.StringValue("ModifyCustomerGatewayAttribute.IpAddress");
-			modifyCustomerGatewayAttributeResponse.Name = context.StringValue("ModifyCustomerGatewayAttribute.Name");
-			modifyCustomerGatewayAttributeResponse.Description = context.StringValue("ModifyCustomerGatewayAttribute.Description");
-			modifyCustomerGatewayAttributeResponse.CreateTime = context.LongValue("ModifyCustomerGatewayAttribute.CreateTime");
+			modifyCustomerGatewayAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			modifyCustomerGatewayAttributeResponse.RequestId = _ctx.StringValue("ModifyCustomerGatewayAttribute.RequestId");
+			modifyCustomerGatewayAttributeResponse.CustomerGatewayId = _ctx.StringValue("ModifyCustomerGatewayAttribute.CustomerGatewayId");
+			modifyCustomerGatewayAttributeResponse.IpAddress = _ctx.StringValue("ModifyCustomerGatewayAttribute.IpAddress");
+			modifyCustomerGatewayAttributeResponse.Name = _ctx.StringValue("ModifyCustomerGatewayAttribute.Name");
+			modifyCustomerGatewayAttributeResponse.Description = _ctx.StringValue("ModifyCustomerGatewayAttribute.Description");
+			modifyCustomerGatewayAttributeResponse.CreateTime = _ctx.LongValue("ModifyCustomerGatewayAttribute.CreateTime");
         
 			return modifyCustomerGatewayAttributeResponse;
         }

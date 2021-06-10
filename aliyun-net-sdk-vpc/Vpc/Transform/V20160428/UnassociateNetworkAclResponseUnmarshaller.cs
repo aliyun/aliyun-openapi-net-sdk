@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class UnassociateNetworkAclResponseUnmarshaller
     {
-        public static UnassociateNetworkAclResponse Unmarshall(UnmarshallerContext context)
+        public static UnassociateNetworkAclResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UnassociateNetworkAclResponse unassociateNetworkAclResponse = new UnassociateNetworkAclResponse();
 
-			unassociateNetworkAclResponse.HttpResponse = context.HttpResponse;
-			unassociateNetworkAclResponse.RequestId = context.StringValue("UnassociateNetworkAcl.RequestId");
+			unassociateNetworkAclResponse.HttpResponse = _ctx.HttpResponse;
+			unassociateNetworkAclResponse.RequestId = _ctx.StringValue("UnassociateNetworkAcl.RequestId");
         
 			return unassociateNetworkAclResponse;
         }

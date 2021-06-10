@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private ModifyVpnConnectionAttribute_VcoHealthCheck vcoHealthCheck;
 
+		private ModifyVpnConnectionAttribute_VpnBgpConfig vpnBgpConfig;
+
 		public string RequestId
 		{
 			get
@@ -232,6 +234,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				vcoHealthCheck = value;
+			}
+		}
+
+		public ModifyVpnConnectionAttribute_VpnBgpConfig VpnBgpConfig
+		{
+			get
+			{
+				return vpnBgpConfig;
+			}
+			set	
+			{
+				vpnBgpConfig = value;
 			}
 		}
 
@@ -495,6 +509,108 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					retry = value;
+				}
+			}
+		}
+
+		public class ModifyVpnConnectionAttribute_VpnBgpConfig
+		{
+
+			private string enableBgp;
+
+			private string tunnelCidr;
+
+			private string localBgpIp;
+
+			private string peerBgpIp;
+
+			private int? localAsn;
+
+			private int? peerAsn;
+
+			private string status;
+
+			public string EnableBgp
+			{
+				get
+				{
+					return enableBgp;
+				}
+				set	
+				{
+					enableBgp = value;
+				}
+			}
+
+			public string TunnelCidr
+			{
+				get
+				{
+					return tunnelCidr;
+				}
+				set	
+				{
+					tunnelCidr = value;
+				}
+			}
+
+			public string LocalBgpIp
+			{
+				get
+				{
+					return localBgpIp;
+				}
+				set	
+				{
+					localBgpIp = value;
+				}
+			}
+
+			public string PeerBgpIp
+			{
+				get
+				{
+					return peerBgpIp;
+				}
+				set	
+				{
+					peerBgpIp = value;
+				}
+			}
+
+			public int? LocalAsn
+			{
+				get
+				{
+					return localAsn;
+				}
+				set	
+				{
+					localAsn = value;
+				}
+			}
+
+			public int? PeerAsn
+			{
+				get
+				{
+					return peerAsn;
+				}
+				set	
+				{
+					peerAsn = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

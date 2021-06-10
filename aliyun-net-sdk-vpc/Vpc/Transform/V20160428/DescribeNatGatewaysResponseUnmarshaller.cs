@@ -26,70 +26,73 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class DescribeNatGatewaysResponseUnmarshaller
     {
-        public static DescribeNatGatewaysResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeNatGatewaysResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeNatGatewaysResponse describeNatGatewaysResponse = new DescribeNatGatewaysResponse();
 
-			describeNatGatewaysResponse.HttpResponse = context.HttpResponse;
-			describeNatGatewaysResponse.RequestId = context.StringValue("DescribeNatGateways.RequestId");
-			describeNatGatewaysResponse.TotalCount = context.IntegerValue("DescribeNatGateways.TotalCount");
-			describeNatGatewaysResponse.PageNumber = context.IntegerValue("DescribeNatGateways.PageNumber");
-			describeNatGatewaysResponse.PageSize = context.IntegerValue("DescribeNatGateways.PageSize");
+			describeNatGatewaysResponse.HttpResponse = _ctx.HttpResponse;
+			describeNatGatewaysResponse.RequestId = _ctx.StringValue("DescribeNatGateways.RequestId");
+			describeNatGatewaysResponse.TotalCount = _ctx.IntegerValue("DescribeNatGateways.TotalCount");
+			describeNatGatewaysResponse.PageNumber = _ctx.IntegerValue("DescribeNatGateways.PageNumber");
+			describeNatGatewaysResponse.PageSize = _ctx.IntegerValue("DescribeNatGateways.PageSize");
 
 			List<DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway> describeNatGatewaysResponse_natGateways = new List<DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway>();
-			for (int i = 0; i < context.Length("DescribeNatGateways.NatGateways.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeNatGateways.NatGateways.Length"); i++) {
 				DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway natGateway = new DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway();
-				natGateway.NatGatewayId = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].NatGatewayId");
-				natGateway.RegionId = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].RegionId");
-				natGateway.Name = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].Name");
-				natGateway.Description = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].Description");
-				natGateway.VpcId = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].VpcId");
-				natGateway.Spec = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].Spec");
-				natGateway.InstanceChargeType = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].InstanceChargeType");
-				natGateway.ExpiredTime = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].ExpiredTime");
-				natGateway.AutoPay = context.BooleanValue("DescribeNatGateways.NatGateways["+ i +"].AutoPay");
-				natGateway.BusinessStatus = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].BusinessStatus");
-				natGateway.CreationTime = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].CreationTime");
-				natGateway.Status = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].Status");
-				natGateway.NatType = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].NatType");
-				natGateway.InternetChargeType = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].InternetChargeType");
-				natGateway.ResourceGroupId = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].ResourceGroupId");
-				natGateway.DeletionProtection = context.BooleanValue("DescribeNatGateways.NatGateways["+ i +"].DeletionProtection");
+				natGateway.NatGatewayId = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].NatGatewayId");
+				natGateway.RegionId = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].RegionId");
+				natGateway.Name = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].Name");
+				natGateway.Description = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].Description");
+				natGateway.VpcId = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].VpcId");
+				natGateway.Spec = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].Spec");
+				natGateway.InstanceChargeType = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].InstanceChargeType");
+				natGateway.ExpiredTime = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].ExpiredTime");
+				natGateway.AutoPay = _ctx.BooleanValue("DescribeNatGateways.NatGateways["+ i +"].AutoPay");
+				natGateway.BusinessStatus = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].BusinessStatus");
+				natGateway.CreationTime = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].CreationTime");
+				natGateway.Status = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].Status");
+				natGateway.NatType = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].NatType");
+				natGateway.InternetChargeType = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].InternetChargeType");
+				natGateway.ResourceGroupId = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].ResourceGroupId");
+				natGateway.DeletionProtection = _ctx.BooleanValue("DescribeNatGateways.NatGateways["+ i +"].DeletionProtection");
+				natGateway.EcsMetricEnabled = _ctx.BooleanValue("DescribeNatGateways.NatGateways["+ i +"].EcsMetricEnabled");
 
 				List<string> natGateway_forwardTableIds = new List<string>();
-				for (int j = 0; j < context.Length("DescribeNatGateways.NatGateways["+ i +"].ForwardTableIds.Length"); j++) {
-					natGateway_forwardTableIds.Add(context.StringValue("DescribeNatGateways.NatGateways["+ i +"].ForwardTableIds["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeNatGateways.NatGateways["+ i +"].ForwardTableIds.Length"); j++) {
+					natGateway_forwardTableIds.Add(_ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].ForwardTableIds["+ j +"]"));
 				}
 				natGateway.ForwardTableIds = natGateway_forwardTableIds;
 
 				List<string> natGateway_snatTableIds = new List<string>();
-				for (int j = 0; j < context.Length("DescribeNatGateways.NatGateways["+ i +"].SnatTableIds.Length"); j++) {
-					natGateway_snatTableIds.Add(context.StringValue("DescribeNatGateways.NatGateways["+ i +"].SnatTableIds["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeNatGateways.NatGateways["+ i +"].SnatTableIds.Length"); j++) {
+					natGateway_snatTableIds.Add(_ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].SnatTableIds["+ j +"]"));
 				}
 				natGateway.SnatTableIds = natGateway_snatTableIds;
 
 				List<string> natGateway_bandwidthPackageIds = new List<string>();
-				for (int j = 0; j < context.Length("DescribeNatGateways.NatGateways["+ i +"].BandwidthPackageIds.Length"); j++) {
-					natGateway_bandwidthPackageIds.Add(context.StringValue("DescribeNatGateways.NatGateways["+ i +"].BandwidthPackageIds["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeNatGateways.NatGateways["+ i +"].BandwidthPackageIds.Length"); j++) {
+					natGateway_bandwidthPackageIds.Add(_ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].BandwidthPackageIds["+ j +"]"));
 				}
 				natGateway.BandwidthPackageIds = natGateway_bandwidthPackageIds;
 
 				DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway.DescribeNatGateways_NatGatewayPrivateInfo natGatewayPrivateInfo = new DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway.DescribeNatGateways_NatGatewayPrivateInfo();
-				natGatewayPrivateInfo.EniInstanceId = context.IntegerValue("DescribeNatGateways.NatGateways["+ i +"].NatGatewayPrivateInfo.EniInstanceId");
-				natGatewayPrivateInfo.PrivateIpAddress = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].NatGatewayPrivateInfo.PrivateIpAddress");
-				natGatewayPrivateInfo.VswitchId = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].NatGatewayPrivateInfo.VswitchId");
-				natGatewayPrivateInfo.IzNo = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].NatGatewayPrivateInfo.IzNo");
-				natGatewayPrivateInfo.MaxBandwidth = context.IntegerValue("DescribeNatGateways.NatGateways["+ i +"].NatGatewayPrivateInfo.MaxBandwidth");
+				natGatewayPrivateInfo.EniInstanceId = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].NatGatewayPrivateInfo.EniInstanceId");
+				natGatewayPrivateInfo.PrivateIpAddress = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].NatGatewayPrivateInfo.PrivateIpAddress");
+				natGatewayPrivateInfo.VswitchId = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].NatGatewayPrivateInfo.VswitchId");
+				natGatewayPrivateInfo.IzNo = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].NatGatewayPrivateInfo.IzNo");
+				natGatewayPrivateInfo.MaxBandwidth = _ctx.IntegerValue("DescribeNatGateways.NatGateways["+ i +"].NatGatewayPrivateInfo.MaxBandwidth");
+				natGatewayPrivateInfo.EniType = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].NatGatewayPrivateInfo.EniType");
 				natGateway.NatGatewayPrivateInfo = natGatewayPrivateInfo;
 
 				List<DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway.DescribeNatGateways_IpList> natGateway_ipLists = new List<DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway.DescribeNatGateways_IpList>();
-				for (int j = 0; j < context.Length("DescribeNatGateways.NatGateways["+ i +"].IpLists.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeNatGateways.NatGateways["+ i +"].IpLists.Length"); j++) {
 					DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway.DescribeNatGateways_IpList ipList = new DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway.DescribeNatGateways_IpList();
-					ipList.AllocationId = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].IpLists["+ j +"].AllocationId");
-					ipList.IpAddress = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].IpLists["+ j +"].IpAddress");
-					ipList.UsingStatus = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].IpLists["+ j +"].UsingStatus");
-					ipList.ApAccessEnabled = context.BooleanValue("DescribeNatGateways.NatGateways["+ i +"].IpLists["+ j +"].ApAccessEnabled");
-					ipList.SnatEntryEnabled = context.BooleanValue("DescribeNatGateways.NatGateways["+ i +"].IpLists["+ j +"].SnatEntryEnabled");
+					ipList.AllocationId = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].IpLists["+ j +"].AllocationId");
+					ipList.IpAddress = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].IpLists["+ j +"].IpAddress");
+					ipList.UsingStatus = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].IpLists["+ j +"].UsingStatus");
+					ipList.ApAccessEnabled = _ctx.BooleanValue("DescribeNatGateways.NatGateways["+ i +"].IpLists["+ j +"].ApAccessEnabled");
+					ipList.SnatEntryEnabled = _ctx.BooleanValue("DescribeNatGateways.NatGateways["+ i +"].IpLists["+ j +"].SnatEntryEnabled");
+					ipList.PrivateIpAddress = _ctx.StringValue("DescribeNatGateways.NatGateways["+ i +"].IpLists["+ j +"].PrivateIpAddress");
 
 					natGateway_ipLists.Add(ipList);
 				}

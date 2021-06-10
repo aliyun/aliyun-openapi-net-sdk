@@ -158,6 +158,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private bool? enableIpv6;
 
+			private string cloudBoxInstanceId;
+
 			private List<DescribeVirtualBorderRouters_AssociatedPhysicalConnection> associatedPhysicalConnections;
 
 			private List<DescribeVirtualBorderRouters_AssociatedCen> associatedCens;
@@ -522,6 +524,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string CloudBoxInstanceId
+			{
+				get
+				{
+					return cloudBoxInstanceId;
+				}
+				set	
+				{
+					cloudBoxInstanceId = value;
+				}
+			}
+
 			public List<DescribeVirtualBorderRouters_AssociatedPhysicalConnection> AssociatedPhysicalConnections
 			{
 				get
@@ -574,6 +588,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				private string peerIpv6GatewayIp;
 
 				private string peeringIpv6SubnetMask;
+
+				private string status;
+
+				private bool? enableIpv6;
 
 				public string CircuitCode
 				{
@@ -728,6 +746,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						peeringIpv6SubnetMask = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public bool? EnableIpv6
+				{
+					get
+					{
+						return enableIpv6;
+					}
+					set	
+					{
+						enableIpv6 = value;
 					}
 				}
 			}

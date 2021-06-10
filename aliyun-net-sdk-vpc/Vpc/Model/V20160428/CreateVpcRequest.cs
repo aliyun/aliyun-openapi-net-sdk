@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Vpc.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -50,6 +51,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string vpcName;
 
 		private string resourceGroupId;
+
+		private string ipv6Isp;
 
 		private string userCidr;
 
@@ -140,6 +143,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string Ipv6Isp
+		{
+			get
+			{
+				return ipv6Isp;
+			}
+			set	
+			{
+				ipv6Isp = value;
+				DictionaryUtil.Add(QueryParameters, "Ipv6Isp", value);
 			}
 		}
 

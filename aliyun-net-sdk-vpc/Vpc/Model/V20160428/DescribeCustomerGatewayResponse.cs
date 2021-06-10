@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? createTime;
 
+		private int? asn;
+
 		public string RequestId
 		{
 			get
@@ -106,6 +108,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				createTime = value;
+			}
+		}
+
+		public int? Asn
+		{
+			get
+			{
+				return asn;
+			}
+			set	
+			{
+				asn = value;
 			}
 		}
 	}

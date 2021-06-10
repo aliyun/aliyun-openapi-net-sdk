@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
     public class ModifyNatGatewayAttributeResponseUnmarshaller
     {
-        public static ModifyNatGatewayAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyNatGatewayAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyNatGatewayAttributeResponse modifyNatGatewayAttributeResponse = new ModifyNatGatewayAttributeResponse();
 
-			modifyNatGatewayAttributeResponse.HttpResponse = context.HttpResponse;
-			modifyNatGatewayAttributeResponse.RequestId = context.StringValue("ModifyNatGatewayAttribute.RequestId");
+			modifyNatGatewayAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			modifyNatGatewayAttributeResponse.RequestId = _ctx.StringValue("ModifyNatGatewayAttribute.RequestId");
         
 			return modifyNatGatewayAttributeResponse;
         }

@@ -122,6 +122,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string allocationTime;
 
+			private string ipv6Isp;
+
 			private DescribeIpv6Addresses_Ipv6InternetBandwidth ipv6InternetBandwidth;
 
 			public string Ipv6AddressId
@@ -265,6 +267,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					allocationTime = value;
+				}
+			}
+
+			public string Ipv6Isp
+			{
+				get
+				{
+					return ipv6Isp;
+				}
+				set	
+				{
+					ipv6Isp = value;
 				}
 			}
 
