@@ -27,6 +27,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string requestId;
 
+		private string sSLAutoRotate;
+
 		private List<DescribeDBClusterSSL_Item> items;
 
 		public string RequestId
@@ -38,6 +40,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string SSLAutoRotate
+		{
+			get
+			{
+				return sSLAutoRotate;
+			}
+			set	
+			{
+				sSLAutoRotate = value;
 			}
 		}
 
@@ -56,23 +70,23 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeDBClusterSSL_Item
 		{
 
-			private string dBEndpointId;
+			private string sSLExpireTime;
 
 			private string sSLEnabled;
 
 			private string sSLConnectionString;
 
-			private string sSLExpireTime;
+			private string dBEndpointId;
 
-			public string DBEndpointId
+			public string SSLExpireTime
 			{
 				get
 				{
-					return dBEndpointId;
+					return sSLExpireTime;
 				}
 				set	
 				{
-					dBEndpointId = value;
+					sSLExpireTime = value;
 				}
 			}
 
@@ -100,15 +114,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string SSLExpireTime
+			public string DBEndpointId
 			{
 				get
 				{
-					return sSLExpireTime;
+					return dBEndpointId;
 				}
 				set	
 				{
-					sSLExpireTime = value;
+					dBEndpointId = value;
 				}
 			}
 		}

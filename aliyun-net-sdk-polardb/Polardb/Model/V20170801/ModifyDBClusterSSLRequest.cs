@@ -44,6 +44,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dBEndpointId;
 
+		private string sSLAutoRotate;
+
 		private string resourceOwnerAccount;
 
 		private string dBClusterId;
@@ -79,6 +81,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				dBEndpointId = value;
 				DictionaryUtil.Add(QueryParameters, "DBEndpointId", value);
+			}
+		}
+
+		public string SSLAutoRotate
+		{
+			get
+			{
+				return sSLAutoRotate;
+			}
+			set	
+			{
+				sSLAutoRotate = value;
+				DictionaryUtil.Add(QueryParameters, "SSLAutoRotate", value);
 			}
 		}
 

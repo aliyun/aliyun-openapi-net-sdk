@@ -54,6 +54,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string roleArn;
 
+		private string encryptNewTables;
+
 		private string tDEStatus;
 
 		public long? ResourceOwnerId
@@ -144,6 +146,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				roleArn = value;
 				DictionaryUtil.Add(QueryParameters, "RoleArn", value);
+			}
+		}
+
+		public string EncryptNewTables
+		{
+			get
+			{
+				return encryptNewTables;
+			}
+			set	
+			{
+				encryptNewTables = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptNewTables", value);
 			}
 		}
 

@@ -25,39 +25,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeDBClustersResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private int? pageNumber;
-
 		private int? totalRecordCount;
 
 		private int? pageRecordCount;
 
+		private string requestId;
+
+		private int? pageNumber;
+
 		private List<DescribeDBClusters_DBCluster> items;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
 
 		public int? TotalRecordCount
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
 		public List<DescribeDBClusters_DBCluster> Items
 		{
 			get
@@ -98,119 +98,59 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeDBClusters_DBCluster
 		{
 
-			private string dBClusterId;
-
-			private string dBClusterDescription;
-
-			private string payType;
-
-			private string dBClusterNetworkType;
-
-			private string regionId;
-
-			private string zoneId;
+			private string vpcId;
 
 			private string expireTime;
 
 			private string expired;
 
-			private string dBClusterStatus;
-
-			private string engine;
-
-			private string dBType;
-
-			private string dBVersion;
-
-			private string lockMode;
-
-			private int? deletionLock;
+			private int? dBNodeNumber;
 
 			private string createTime;
 
-			private string vpcId;
-
-			private int? dBNodeNumber;
+			private string payType;
 
 			private string dBNodeClass;
 
-			private long? storageUsed;
+			private string dBType;
+
+			private string lockMode;
+
+			private string regionId;
+
+			private int? deletionLock;
+
+			private string dBVersion;
+
+			private string dBClusterId;
+
+			private string dBClusterStatus;
 
 			private string resourceGroupId;
 
-			private List<DescribeDBClusters_DBNode> dBNodes;
+			private long? storageUsed;
+
+			private string dBClusterNetworkType;
+
+			private string dBClusterDescription;
+
+			private string zoneId;
+
+			private string engine;
 
 			private List<DescribeDBClusters_Tag> tags;
 
-			public string DBClusterId
-			{
-				get
-				{
-					return dBClusterId;
-				}
-				set	
-				{
-					dBClusterId = value;
-				}
-			}
+			private List<DescribeDBClusters_DBNode> dBNodes;
 
-			public string DBClusterDescription
+			public string VpcId
 			{
 				get
 				{
-					return dBClusterDescription;
+					return vpcId;
 				}
 				set	
 				{
-					dBClusterDescription = value;
-				}
-			}
-
-			public string PayType
-			{
-				get
-				{
-					return payType;
-				}
-				set	
-				{
-					payType = value;
-				}
-			}
-
-			public string DBClusterNetworkType
-			{
-				get
-				{
-					return dBClusterNetworkType;
-				}
-				set	
-				{
-					dBClusterNetworkType = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
+					vpcId = value;
 				}
 			}
 
@@ -238,75 +178,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string DBClusterStatus
+			public int? DBNodeNumber
 			{
 				get
 				{
-					return dBClusterStatus;
+					return dBNodeNumber;
 				}
 				set	
 				{
-					dBClusterStatus = value;
-				}
-			}
-
-			public string Engine
-			{
-				get
-				{
-					return engine;
-				}
-				set	
-				{
-					engine = value;
-				}
-			}
-
-			public string DBType
-			{
-				get
-				{
-					return dBType;
-				}
-				set	
-				{
-					dBType = value;
-				}
-			}
-
-			public string DBVersion
-			{
-				get
-				{
-					return dBVersion;
-				}
-				set	
-				{
-					dBVersion = value;
-				}
-			}
-
-			public string LockMode
-			{
-				get
-				{
-					return lockMode;
-				}
-				set	
-				{
-					lockMode = value;
-				}
-			}
-
-			public int? DeletionLock
-			{
-				get
-				{
-					return deletionLock;
-				}
-				set	
-				{
-					deletionLock = value;
+					dBNodeNumber = value;
 				}
 			}
 
@@ -322,27 +202,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public string VpcId
+			public string PayType
 			{
 				get
 				{
-					return vpcId;
+					return payType;
 				}
 				set	
 				{
-					vpcId = value;
-				}
-			}
-
-			public int? DBNodeNumber
-			{
-				get
-				{
-					return dBNodeNumber;
-				}
-				set	
-				{
-					dBNodeNumber = value;
+					payType = value;
 				}
 			}
 
@@ -358,15 +226,87 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public long? StorageUsed
+			public string DBType
 			{
 				get
 				{
-					return storageUsed;
+					return dBType;
 				}
 				set	
 				{
-					storageUsed = value;
+					dBType = value;
+				}
+			}
+
+			public string LockMode
+			{
+				get
+				{
+					return lockMode;
+				}
+				set	
+				{
+					lockMode = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public int? DeletionLock
+			{
+				get
+				{
+					return deletionLock;
+				}
+				set	
+				{
+					deletionLock = value;
+				}
+			}
+
+			public string DBVersion
+			{
+				get
+				{
+					return dBVersion;
+				}
+				set	
+				{
+					dBVersion = value;
+				}
+			}
+
+			public string DBClusterId
+			{
+				get
+				{
+					return dBClusterId;
+				}
+				set	
+				{
+					dBClusterId = value;
+				}
+			}
+
+			public string DBClusterStatus
+			{
+				get
+				{
+					return dBClusterStatus;
+				}
+				set	
+				{
+					dBClusterStatus = value;
 				}
 			}
 
@@ -382,15 +322,63 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public List<DescribeDBClusters_DBNode> DBNodes
+			public long? StorageUsed
 			{
 				get
 				{
-					return dBNodes;
+					return storageUsed;
 				}
 				set	
 				{
-					dBNodes = value;
+					storageUsed = value;
+				}
+			}
+
+			public string DBClusterNetworkType
+			{
+				get
+				{
+					return dBClusterNetworkType;
+				}
+				set	
+				{
+					dBClusterNetworkType = value;
+				}
+			}
+
+			public string DBClusterDescription
+			{
+				get
+				{
+					return dBClusterDescription;
+				}
+				set	
+				{
+					dBClusterDescription = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
 				}
 			}
 
@@ -406,77 +394,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public class DescribeDBClusters_DBNode
+			public List<DescribeDBClusters_DBNode> DBNodes
 			{
-
-				private string dBNodeId;
-
-				private string dBNodeClass;
-
-				private string dBNodeRole;
-
-				private string regionId;
-
-				private string zoneId;
-
-				public string DBNodeId
+				get
 				{
-					get
-					{
-						return dBNodeId;
-					}
-					set	
-					{
-						dBNodeId = value;
-					}
+					return dBNodes;
 				}
-
-				public string DBNodeClass
+				set	
 				{
-					get
-					{
-						return dBNodeClass;
-					}
-					set	
-					{
-						dBNodeClass = value;
-					}
-				}
-
-				public string DBNodeRole
-				{
-					get
-					{
-						return dBNodeRole;
-					}
-					set	
-					{
-						dBNodeRole = value;
-					}
-				}
-
-				public string RegionId
-				{
-					get
-					{
-						return regionId;
-					}
-					set	
-					{
-						regionId = value;
-					}
-				}
-
-				public string ZoneId
-				{
-					get
-					{
-						return zoneId;
-					}
-					set	
-					{
-						zoneId = value;
-					}
+					dBNodes = value;
 				}
 			}
 
@@ -508,6 +434,80 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						_value = value;
+					}
+				}
+			}
+
+			public class DescribeDBClusters_DBNode
+			{
+
+				private string dBNodeClass;
+
+				private string zoneId;
+
+				private string dBNodeRole;
+
+				private string dBNodeId;
+
+				private string regionId;
+
+				public string DBNodeClass
+				{
+					get
+					{
+						return dBNodeClass;
+					}
+					set	
+					{
+						dBNodeClass = value;
+					}
+				}
+
+				public string ZoneId
+				{
+					get
+					{
+						return zoneId;
+					}
+					set	
+					{
+						zoneId = value;
+					}
+				}
+
+				public string DBNodeRole
+				{
+					get
+					{
+						return dBNodeRole;
+					}
+					set	
+					{
+						dBNodeRole = value;
+					}
+				}
+
+				public string DBNodeId
+				{
+					get
+					{
+						return dBNodeId;
+					}
+					set	
+					{
+						dBNodeId = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
 					}
 				}
 			}
