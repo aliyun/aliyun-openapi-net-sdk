@@ -23,14 +23,14 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Actiontrail.Transform;
-using Aliyun.Acs.Actiontrail.Transform.V20171204;
+using Aliyun.Acs.Actiontrail.Transform.V20200706;
 
-namespace Aliyun.Acs.Actiontrail.Model.V20171204
+namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
-    public class DeleteTrailRequest : RpcAcsRequest<DeleteTrailResponse>
+    public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
     {
-        public DeleteTrailRequest()
-            : base("Actiontrail", "2017-12-04", "DeleteTrail", "actiontrail", "openAPI")
+        public DescribeRegionsRequest()
+            : base("Actiontrail", "2020-07-06", "DescribeRegions", "actiontrail", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,24 +40,24 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			Method = MethodType.POST;
         }
 
-		private string name;
+		private string acceptLanguage;
 
-		public string Name
+		public string AcceptLanguage
 		{
 			get
 			{
-				return name;
+				return acceptLanguage;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				acceptLanguage = value;
+				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
 			}
 		}
 
-        public override DeleteTrailResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeRegionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteTrailResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeRegionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

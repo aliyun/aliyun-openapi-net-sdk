@@ -23,14 +23,14 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Actiontrail.Transform;
-using Aliyun.Acs.Actiontrail.Transform.V20171204;
+using Aliyun.Acs.Actiontrail.Transform.V20200706;
 
-namespace Aliyun.Acs.Actiontrail.Model.V20171204
+namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
-    public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
+    public class DeleteTrailRequest : RpcAcsRequest<DeleteTrailResponse>
     {
-        public DescribeRegionsRequest()
-            : base("Actiontrail", "2017-12-04", "DescribeRegions", "actiontrail", "openAPI")
+        public DeleteTrailRequest()
+            : base("Actiontrail", "2020-07-06", "DeleteTrail", "actiontrail", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,14 +40,24 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			Method = MethodType.POST;
         }
 
-		public override bool CheckShowJsonItemName()
+		private string name;
+
+		public string Name
 		{
-			return false;
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
 		}
 
-        public override DescribeRegionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteTrailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeRegionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteTrailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -20,22 +20,42 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Actiontrail.Model.V20171204
+namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
 	public class GetTrailStatusResponse : AcsResponse
 	{
 
+		private string latestDeliveryLogServiceTime;
+
 		private string requestId;
 
-		private bool? isLogging;
-
-		private string latestDeliveryError;
-
-		private string latestDeliveryTime;
+		private string latestDeliveryLogServiceError;
 
 		private string startLoggingTime;
 
+		private bool? ossBucketStatus;
+
+		private string latestDeliveryError;
+
 		private string stopLoggingTime;
+
+		private bool? slsLogStoreStatus;
+
+		private string latestDeliveryTime;
+
+		private bool? isLogging;
+
+		public string LatestDeliveryLogServiceTime
+		{
+			get
+			{
+				return latestDeliveryLogServiceTime;
+			}
+			set	
+			{
+				latestDeliveryLogServiceTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -49,39 +69,15 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			}
 		}
 
-		public bool? IsLogging
+		public string LatestDeliveryLogServiceError
 		{
 			get
 			{
-				return isLogging;
+				return latestDeliveryLogServiceError;
 			}
 			set	
 			{
-				isLogging = value;
-			}
-		}
-
-		public string LatestDeliveryError
-		{
-			get
-			{
-				return latestDeliveryError;
-			}
-			set	
-			{
-				latestDeliveryError = value;
-			}
-		}
-
-		public string LatestDeliveryTime
-		{
-			get
-			{
-				return latestDeliveryTime;
-			}
-			set	
-			{
-				latestDeliveryTime = value;
+				latestDeliveryLogServiceError = value;
 			}
 		}
 
@@ -97,6 +93,30 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			}
 		}
 
+		public bool? OssBucketStatus
+		{
+			get
+			{
+				return ossBucketStatus;
+			}
+			set	
+			{
+				ossBucketStatus = value;
+			}
+		}
+
+		public string LatestDeliveryError
+		{
+			get
+			{
+				return latestDeliveryError;
+			}
+			set	
+			{
+				latestDeliveryError = value;
+			}
+		}
+
 		public string StopLoggingTime
 		{
 			get
@@ -106,6 +126,42 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			set	
 			{
 				stopLoggingTime = value;
+			}
+		}
+
+		public bool? SlsLogStoreStatus
+		{
+			get
+			{
+				return slsLogStoreStatus;
+			}
+			set	
+			{
+				slsLogStoreStatus = value;
+			}
+		}
+
+		public string LatestDeliveryTime
+		{
+			get
+			{
+				return latestDeliveryTime;
+			}
+			set	
+			{
+				latestDeliveryTime = value;
+			}
+		}
+
+		public bool? IsLogging
+		{
+			get
+			{
+				return isLogging;
+			}
+			set	
+			{
+				isLogging = value;
 			}
 		}
 	}

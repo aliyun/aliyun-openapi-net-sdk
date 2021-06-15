@@ -16,27 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Actiontrail.Model.V20200706;
 
-namespace Aliyun.Acs.Actiontrail.Model.V20171204
+namespace Aliyun.Acs.Actiontrail.Transform.V20200706
 {
-	public class DeleteTrailResponse : AcsResponse
-	{
+    public class DeleteTrailResponseUnmarshaller
+    {
+        public static DeleteTrailResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			DeleteTrailResponse deleteTrailResponse = new DeleteTrailResponse();
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			deleteTrailResponse.HttpResponse = _ctx.HttpResponse;
+			deleteTrailResponse.RequestId = _ctx.StringValue("DeleteTrail.RequestId");
+        
+			return deleteTrailResponse;
+        }
+    }
 }

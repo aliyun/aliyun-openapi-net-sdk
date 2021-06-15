@@ -20,9 +20,9 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Actiontrail.Model.V20171204;
+using Aliyun.Acs.Actiontrail.Model.V20200706;
 
-namespace Aliyun.Acs.Actiontrail.Transform.V20171204
+namespace Aliyun.Acs.Actiontrail.Transform.V20200706
 {
     public class UpdateTrailResponseUnmarshaller
     {
@@ -31,17 +31,16 @@ namespace Aliyun.Acs.Actiontrail.Transform.V20171204
 			UpdateTrailResponse updateTrailResponse = new UpdateTrailResponse();
 
 			updateTrailResponse.HttpResponse = _ctx.HttpResponse;
-			updateTrailResponse.RequestId = _ctx.StringValue("UpdateTrail.RequestId");
-			updateTrailResponse.Name = _ctx.StringValue("UpdateTrail.Name");
-			updateTrailResponse.HomeRegion = _ctx.StringValue("UpdateTrail.HomeRegion");
-			updateTrailResponse.OssBucketName = _ctx.StringValue("UpdateTrail.OssBucketName");
-			updateTrailResponse.OssKeyPrefix = _ctx.StringValue("UpdateTrail.OssKeyPrefix");
-			updateTrailResponse.RoleName = _ctx.StringValue("UpdateTrail.RoleName");
 			updateTrailResponse.SlsProjectArn = _ctx.StringValue("UpdateTrail.SlsProjectArn");
-			updateTrailResponse.SlsWriteRoleArn = _ctx.StringValue("UpdateTrail.SlsWriteRoleArn");
 			updateTrailResponse.EventRW = _ctx.StringValue("UpdateTrail.EventRW");
+			updateTrailResponse.RequestId = _ctx.StringValue("UpdateTrail.RequestId");
+			updateTrailResponse.HomeRegion = _ctx.StringValue("UpdateTrail.HomeRegion");
+			updateTrailResponse.OssKeyPrefix = _ctx.StringValue("UpdateTrail.OssKeyPrefix");
+			updateTrailResponse.OssBucketName = _ctx.StringValue("UpdateTrail.OssBucketName");
+			updateTrailResponse.SlsWriteRoleArn = _ctx.StringValue("UpdateTrail.SlsWriteRoleArn");
+			updateTrailResponse.OssWriteRoleArn = _ctx.StringValue("UpdateTrail.OssWriteRoleArn");
 			updateTrailResponse.TrailRegion = _ctx.StringValue("UpdateTrail.TrailRegion");
-			updateTrailResponse.MnsTopicArn = _ctx.StringValue("UpdateTrail.MnsTopicArn");
+			updateTrailResponse.Name = _ctx.StringValue("UpdateTrail.Name");
         
 			return updateTrailResponse;
         }

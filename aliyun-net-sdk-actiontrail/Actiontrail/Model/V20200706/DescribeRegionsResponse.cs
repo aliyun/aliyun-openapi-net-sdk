@@ -20,20 +20,14 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Actiontrail.Model.V20171204
+namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
-	public class LookupEventsResponse : AcsResponse
+	public class DescribeRegionsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string nextToken;
-
-		private string startTime;
-
-		private string endTime;
-
-		private List<Dictionary<string, string>> events;
+		private List<DescribeRegions_Region> regions;
 
 		public string RequestId
 		{
@@ -47,51 +41,61 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			}
 		}
 
-		public string NextToken
+		public List<DescribeRegions_Region> Regions
 		{
 			get
 			{
-				return nextToken;
+				return regions;
 			}
 			set	
 			{
-				nextToken = value;
+				regions = value;
 			}
 		}
 
-		public string StartTime
+		public class DescribeRegions_Region
 		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-			}
-		}
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
+			private string regionId;
 
-		public List<Dictionary<string, string>> Events
-		{
-			get
+			private string regionEndpoint;
+
+			private string localName;
+
+			public string RegionId
 			{
-				return events;
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
 			}
-			set	
+
+			public string RegionEndpoint
 			{
-				events = value;
+				get
+				{
+					return regionEndpoint;
+				}
+				set	
+				{
+					regionEndpoint = value;
+				}
+			}
+
+			public string LocalName
+			{
+				get
+				{
+					return localName;
+				}
+				set	
+				{
+					localName = value;
+				}
 			}
 		}
 	}

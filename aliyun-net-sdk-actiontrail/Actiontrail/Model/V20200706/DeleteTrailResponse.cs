@@ -20,16 +20,12 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Actiontrail.Model.V20171204
+namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
-	public class StartLoggingResponse : AcsResponse
+	public class DeleteTrailResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private string param;
-
-		private string result;
 
 		public string RequestId
 		{
@@ -40,30 +36,6 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string Param
-		{
-			get
-			{
-				return param;
-			}
-			set	
-			{
-				param = value;
-			}
-		}
-
-		public string Result
-		{
-			get
-			{
-				return result;
-			}
-			set	
-			{
-				result = value;
 			}
 		}
 	}

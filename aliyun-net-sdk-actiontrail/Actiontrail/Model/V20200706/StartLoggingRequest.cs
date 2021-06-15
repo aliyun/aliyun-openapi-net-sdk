@@ -23,20 +23,21 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Actiontrail.Transform;
-using Aliyun.Acs.Actiontrail.Transform.V20171204;
+using Aliyun.Acs.Actiontrail.Transform.V20200706;
 
-namespace Aliyun.Acs.Actiontrail.Model.V20171204
+namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
-    public class StopLoggingRequest : RpcAcsRequest<StopLoggingResponse>
+    public class StartLoggingRequest : RpcAcsRequest<StartLoggingResponse>
     {
-        public StopLoggingRequest()
-            : base("Actiontrail", "2017-12-04", "StopLogging", "actiontrail", "openAPI")
+        public StartLoggingRequest()
+            : base("Actiontrail", "2020-07-06", "StartLogging", "actiontrail", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Actiontrail.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Actiontrail.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string name;
@@ -54,9 +55,9 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			}
 		}
 
-        public override StopLoggingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override StartLoggingResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StopLoggingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return StartLoggingResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

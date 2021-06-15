@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Actiontrail.Transform.V20200706
 			LookupEventsResponse lookupEventsResponse = new LookupEventsResponse();
 
 			lookupEventsResponse.HttpResponse = _ctx.HttpResponse;
-			lookupEventsResponse.RequestId = _ctx.StringValue("LookupEvents.RequestId");
-			lookupEventsResponse.NextToken = _ctx.StringValue("LookupEvents.NextToken");
-			lookupEventsResponse.StartTime = _ctx.StringValue("LookupEvents.StartTime");
 			lookupEventsResponse.EndTime = _ctx.StringValue("LookupEvents.EndTime");
+			lookupEventsResponse.NextToken = _ctx.StringValue("LookupEvents.NextToken");
+			lookupEventsResponse.RequestId = _ctx.StringValue("LookupEvents.RequestId");
+			lookupEventsResponse.StartTime = _ctx.StringValue("LookupEvents.StartTime");
 
 			List<Dictionary<string, string>> lookupEventsResponse_events = new List<Dictionary<string, string>>();
 			for (int i = 0; i < _ctx.Length("LookupEvents.Events.Length"); i++) {

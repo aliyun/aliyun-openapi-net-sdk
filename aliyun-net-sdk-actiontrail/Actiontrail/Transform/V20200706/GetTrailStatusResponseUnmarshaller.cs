@@ -20,9 +20,9 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Actiontrail.Model.V20171204;
+using Aliyun.Acs.Actiontrail.Model.V20200706;
 
-namespace Aliyun.Acs.Actiontrail.Transform.V20171204
+namespace Aliyun.Acs.Actiontrail.Transform.V20200706
 {
     public class GetTrailStatusResponseUnmarshaller
     {
@@ -31,12 +31,16 @@ namespace Aliyun.Acs.Actiontrail.Transform.V20171204
 			GetTrailStatusResponse getTrailStatusResponse = new GetTrailStatusResponse();
 
 			getTrailStatusResponse.HttpResponse = _ctx.HttpResponse;
+			getTrailStatusResponse.LatestDeliveryLogServiceTime = _ctx.StringValue("GetTrailStatus.LatestDeliveryLogServiceTime");
 			getTrailStatusResponse.RequestId = _ctx.StringValue("GetTrailStatus.RequestId");
-			getTrailStatusResponse.IsLogging = _ctx.BooleanValue("GetTrailStatus.IsLogging");
-			getTrailStatusResponse.LatestDeliveryError = _ctx.StringValue("GetTrailStatus.LatestDeliveryError");
-			getTrailStatusResponse.LatestDeliveryTime = _ctx.StringValue("GetTrailStatus.LatestDeliveryTime");
+			getTrailStatusResponse.LatestDeliveryLogServiceError = _ctx.StringValue("GetTrailStatus.LatestDeliveryLogServiceError");
 			getTrailStatusResponse.StartLoggingTime = _ctx.StringValue("GetTrailStatus.StartLoggingTime");
+			getTrailStatusResponse.OssBucketStatus = _ctx.BooleanValue("GetTrailStatus.OssBucketStatus");
+			getTrailStatusResponse.LatestDeliveryError = _ctx.StringValue("GetTrailStatus.LatestDeliveryError");
 			getTrailStatusResponse.StopLoggingTime = _ctx.StringValue("GetTrailStatus.StopLoggingTime");
+			getTrailStatusResponse.SlsLogStoreStatus = _ctx.BooleanValue("GetTrailStatus.SlsLogStoreStatus");
+			getTrailStatusResponse.LatestDeliveryTime = _ctx.StringValue("GetTrailStatus.LatestDeliveryTime");
+			getTrailStatusResponse.IsLogging = _ctx.BooleanValue("GetTrailStatus.IsLogging");
         
 			return getTrailStatusResponse;
         }

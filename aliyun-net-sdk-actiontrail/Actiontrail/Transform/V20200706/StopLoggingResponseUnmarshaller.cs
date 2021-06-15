@@ -20,22 +20,20 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Actiontrail.Model.V20171204;
+using Aliyun.Acs.Actiontrail.Model.V20200706;
 
-namespace Aliyun.Acs.Actiontrail.Transform.V20171204
+namespace Aliyun.Acs.Actiontrail.Transform.V20200706
 {
-    public class StartLoggingResponseUnmarshaller
+    public class StopLoggingResponseUnmarshaller
     {
-        public static StartLoggingResponse Unmarshall(UnmarshallerContext _ctx)
+        public static StopLoggingResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			StartLoggingResponse startLoggingResponse = new StartLoggingResponse();
+			StopLoggingResponse stopLoggingResponse = new StopLoggingResponse();
 
-			startLoggingResponse.HttpResponse = _ctx.HttpResponse;
-			startLoggingResponse.RequestId = _ctx.StringValue("StartLogging.RequestId");
-			startLoggingResponse.Param = _ctx.StringValue("StartLogging.Param");
-			startLoggingResponse.Result = _ctx.StringValue("StartLogging.Result");
+			stopLoggingResponse.HttpResponse = _ctx.HttpResponse;
+			stopLoggingResponse.RequestId = _ctx.StringValue("StopLogging.RequestId");
         
-			return startLoggingResponse;
+			return stopLoggingResponse;
         }
     }
 }

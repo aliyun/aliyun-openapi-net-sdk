@@ -20,14 +20,14 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Actiontrail.Model.V20171204
+namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
 	public class DescribeTrailsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeTrails_TrailListItem> trailList;
+		private List<DescribeTrails_Trail> trailList;
 
 		public string RequestId
 		{
@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			}
 		}
 
-		public List<DescribeTrails_TrailListItem> TrailList
+		public List<DescribeTrails_Trail> TrailList
 		{
 			get
 			{
@@ -53,50 +53,56 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			}
 		}
 
-		public class DescribeTrails_TrailListItem
+		public class DescribeTrails_Trail
 		{
-
-			private string name;
-
-			private string homeRegion;
-
-			private string roleName;
-
-			private string ossBucketName;
-
-			private string ossKeyPrefix;
-
-			private string eventRW;
-
-			private string slsWriteRoleArn;
-
-			private string slsProjectArn;
 
 			private string status;
 
-			private string trailRegion;
-
-			private string createTime;
-
-			private string updateTime;
+			private string homeRegion;
 
 			private string startLoggingTime;
 
+			private string createTime;
+
 			private string stopLoggingTime;
 
-			private string mnsTopicArn;
+			private string organizationId;
+
+			private string slsWriteRoleArn;
+
+			private string ossBucketLocation;
+
+			private string trailRegion;
+
+			private string name;
 
 			private bool? isOrganizationTrail;
 
-			public string Name
+			private string slsProjectArn;
+
+			private string eventRW;
+
+			private string ossKeyPrefix;
+
+			private string updateTime;
+
+			private string region;
+
+			private string ossBucketName;
+
+			private string ossWriteRoleArn;
+
+			private long? isShadowTrail;
+
+			public string Status
 			{
 				get
 				{
-					return name;
+					return status;
 				}
 				set	
 				{
-					name = value;
+					status = value;
 				}
 			}
 
@@ -112,99 +118,15 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 				}
 			}
 
-			public string RoleName
+			public string StartLoggingTime
 			{
 				get
 				{
-					return roleName;
+					return startLoggingTime;
 				}
 				set	
 				{
-					roleName = value;
-				}
-			}
-
-			public string OssBucketName
-			{
-				get
-				{
-					return ossBucketName;
-				}
-				set	
-				{
-					ossBucketName = value;
-				}
-			}
-
-			public string OssKeyPrefix
-			{
-				get
-				{
-					return ossKeyPrefix;
-				}
-				set	
-				{
-					ossKeyPrefix = value;
-				}
-			}
-
-			public string EventRW
-			{
-				get
-				{
-					return eventRW;
-				}
-				set	
-				{
-					eventRW = value;
-				}
-			}
-
-			public string SlsWriteRoleArn
-			{
-				get
-				{
-					return slsWriteRoleArn;
-				}
-				set	
-				{
-					slsWriteRoleArn = value;
-				}
-			}
-
-			public string SlsProjectArn
-			{
-				get
-				{
-					return slsProjectArn;
-				}
-				set	
-				{
-					slsProjectArn = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string TrailRegion
-			{
-				get
-				{
-					return trailRegion;
-				}
-				set	
-				{
-					trailRegion = value;
+					startLoggingTime = value;
 				}
 			}
 
@@ -220,30 +142,6 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 				}
 			}
 
-			public string UpdateTime
-			{
-				get
-				{
-					return updateTime;
-				}
-				set	
-				{
-					updateTime = value;
-				}
-			}
-
-			public string StartLoggingTime
-			{
-				get
-				{
-					return startLoggingTime;
-				}
-				set	
-				{
-					startLoggingTime = value;
-				}
-			}
-
 			public string StopLoggingTime
 			{
 				get
@@ -256,15 +154,63 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 				}
 			}
 
-			public string MnsTopicArn
+			public string OrganizationId
 			{
 				get
 				{
-					return mnsTopicArn;
+					return organizationId;
 				}
 				set	
 				{
-					mnsTopicArn = value;
+					organizationId = value;
+				}
+			}
+
+			public string SlsWriteRoleArn
+			{
+				get
+				{
+					return slsWriteRoleArn;
+				}
+				set	
+				{
+					slsWriteRoleArn = value;
+				}
+			}
+
+			public string OssBucketLocation
+			{
+				get
+				{
+					return ossBucketLocation;
+				}
+				set	
+				{
+					ossBucketLocation = value;
+				}
+			}
+
+			public string TrailRegion
+			{
+				get
+				{
+					return trailRegion;
+				}
+				set	
+				{
+					trailRegion = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 
@@ -277,6 +223,102 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 				set	
 				{
 					isOrganizationTrail = value;
+				}
+			}
+
+			public string SlsProjectArn
+			{
+				get
+				{
+					return slsProjectArn;
+				}
+				set	
+				{
+					slsProjectArn = value;
+				}
+			}
+
+			public string EventRW
+			{
+				get
+				{
+					return eventRW;
+				}
+				set	
+				{
+					eventRW = value;
+				}
+			}
+
+			public string OssKeyPrefix
+			{
+				get
+				{
+					return ossKeyPrefix;
+				}
+				set	
+				{
+					ossKeyPrefix = value;
+				}
+			}
+
+			public string UpdateTime
+			{
+				get
+				{
+					return updateTime;
+				}
+				set	
+				{
+					updateTime = value;
+				}
+			}
+
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
+				}
+			}
+
+			public string OssBucketName
+			{
+				get
+				{
+					return ossBucketName;
+				}
+				set	
+				{
+					ossBucketName = value;
+				}
+			}
+
+			public string OssWriteRoleArn
+			{
+				get
+				{
+					return ossWriteRoleArn;
+				}
+				set	
+				{
+					ossWriteRoleArn = value;
+				}
+			}
+
+			public long? IsShadowTrail
+			{
+				get
+				{
+					return isShadowTrail;
+				}
+				set	
+				{
+					isShadowTrail = value;
 				}
 			}
 		}

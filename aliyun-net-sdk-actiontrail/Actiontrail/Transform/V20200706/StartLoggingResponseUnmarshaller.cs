@@ -20,20 +20,20 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Actiontrail.Model.V20171204;
+using Aliyun.Acs.Actiontrail.Model.V20200706;
 
-namespace Aliyun.Acs.Actiontrail.Transform.V20171204
+namespace Aliyun.Acs.Actiontrail.Transform.V20200706
 {
-    public class DeleteTrailResponseUnmarshaller
+    public class StartLoggingResponseUnmarshaller
     {
-        public static DeleteTrailResponse Unmarshall(UnmarshallerContext _ctx)
+        public static StartLoggingResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DeleteTrailResponse deleteTrailResponse = new DeleteTrailResponse();
+			StartLoggingResponse startLoggingResponse = new StartLoggingResponse();
 
-			deleteTrailResponse.HttpResponse = _ctx.HttpResponse;
-			deleteTrailResponse.RequestId = _ctx.StringValue("DeleteTrail.RequestId");
+			startLoggingResponse.HttpResponse = _ctx.HttpResponse;
+			startLoggingResponse.RequestId = _ctx.StringValue("StartLogging.RequestId");
         
-			return deleteTrailResponse;
+			return startLoggingResponse;
         }
     }
 }

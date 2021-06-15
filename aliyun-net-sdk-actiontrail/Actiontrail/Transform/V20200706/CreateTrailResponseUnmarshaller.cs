@@ -20,9 +20,9 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Actiontrail.Model.V20171204;
+using Aliyun.Acs.Actiontrail.Model.V20200706;
 
-namespace Aliyun.Acs.Actiontrail.Transform.V20171204
+namespace Aliyun.Acs.Actiontrail.Transform.V20200706
 {
     public class CreateTrailResponseUnmarshaller
     {
@@ -31,17 +31,16 @@ namespace Aliyun.Acs.Actiontrail.Transform.V20171204
 			CreateTrailResponse createTrailResponse = new CreateTrailResponse();
 
 			createTrailResponse.HttpResponse = _ctx.HttpResponse;
-			createTrailResponse.RequestId = _ctx.StringValue("CreateTrail.RequestId");
-			createTrailResponse.Name = _ctx.StringValue("CreateTrail.Name");
-			createTrailResponse.HomeRegion = _ctx.StringValue("CreateTrail.HomeRegion");
-			createTrailResponse.OssBucketName = _ctx.StringValue("CreateTrail.OssBucketName");
-			createTrailResponse.OssKeyPrefix = _ctx.StringValue("CreateTrail.OssKeyPrefix");
-			createTrailResponse.RoleName = _ctx.StringValue("CreateTrail.RoleName");
 			createTrailResponse.SlsProjectArn = _ctx.StringValue("CreateTrail.SlsProjectArn");
-			createTrailResponse.SlsWriteRoleArn = _ctx.StringValue("CreateTrail.SlsWriteRoleArn");
 			createTrailResponse.EventRW = _ctx.StringValue("CreateTrail.EventRW");
+			createTrailResponse.RequestId = _ctx.StringValue("CreateTrail.RequestId");
+			createTrailResponse.HomeRegion = _ctx.StringValue("CreateTrail.HomeRegion");
+			createTrailResponse.OssKeyPrefix = _ctx.StringValue("CreateTrail.OssKeyPrefix");
+			createTrailResponse.OssBucketName = _ctx.StringValue("CreateTrail.OssBucketName");
+			createTrailResponse.SlsWriteRoleArn = _ctx.StringValue("CreateTrail.SlsWriteRoleArn");
+			createTrailResponse.OssWriteRoleArn = _ctx.StringValue("CreateTrail.OssWriteRoleArn");
 			createTrailResponse.TrailRegion = _ctx.StringValue("CreateTrail.TrailRegion");
-			createTrailResponse.MnsTopicArn = _ctx.StringValue("CreateTrail.MnsTopicArn");
+			createTrailResponse.Name = _ctx.StringValue("CreateTrail.Name");
         
 			return createTrailResponse;
         }

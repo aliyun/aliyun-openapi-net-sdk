@@ -23,14 +23,14 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Actiontrail.Transform;
-using Aliyun.Acs.Actiontrail.Transform.V20171204;
+using Aliyun.Acs.Actiontrail.Transform.V20200706;
 
-namespace Aliyun.Acs.Actiontrail.Model.V20171204
+namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
-    public class UpdateTrailRequest : RpcAcsRequest<UpdateTrailResponse>
+    public class CreateTrailRequest : RpcAcsRequest<CreateTrailResponse>
     {
-        public UpdateTrailRequest()
-            : base("Actiontrail", "2017-12-04", "UpdateTrail", "actiontrail", "openAPI")
+        public CreateTrailRequest()
+            : base("Actiontrail", "2020-07-06", "CreateTrail", "actiontrail", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,11 +44,11 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 
 		private string slsWriteRoleArn;
 
+		private bool? isOrganizationTrail;
+
 		private string ossKeyPrefix;
 
-		private string mnsTopicArn;
-
-		private string roleName;
+		private string ossWriteRoleArn;
 
 		private string eventRW;
 
@@ -84,6 +84,19 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			}
 		}
 
+		public bool? IsOrganizationTrail
+		{
+			get
+			{
+				return isOrganizationTrail;
+			}
+			set	
+			{
+				isOrganizationTrail = value;
+				DictionaryUtil.Add(QueryParameters, "IsOrganizationTrail", value.ToString());
+			}
+		}
+
 		public string OssKeyPrefix
 		{
 			get
@@ -97,29 +110,16 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			}
 		}
 
-		public string MnsTopicArn
+		public string OssWriteRoleArn
 		{
 			get
 			{
-				return mnsTopicArn;
+				return ossWriteRoleArn;
 			}
 			set	
 			{
-				mnsTopicArn = value;
-				DictionaryUtil.Add(QueryParameters, "MnsTopicArn", value);
-			}
-		}
-
-		public string RoleName
-		{
-			get
-			{
-				return roleName;
-			}
-			set	
-			{
-				roleName = value;
-				DictionaryUtil.Add(QueryParameters, "RoleName", value);
+				ossWriteRoleArn = value;
+				DictionaryUtil.Add(QueryParameters, "OssWriteRoleArn", value);
 			}
 		}
 
@@ -175,9 +175,9 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			}
 		}
 
-        public override UpdateTrailResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateTrailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateTrailResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateTrailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

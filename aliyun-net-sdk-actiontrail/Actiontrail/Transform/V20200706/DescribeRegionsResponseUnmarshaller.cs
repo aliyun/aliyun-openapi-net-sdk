@@ -20,9 +20,9 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Actiontrail.Model.V20171204;
+using Aliyun.Acs.Actiontrail.Model.V20200706;
 
-namespace Aliyun.Acs.Actiontrail.Transform.V20171204
+namespace Aliyun.Acs.Actiontrail.Transform.V20200706
 {
     public class DescribeRegionsResponseUnmarshaller
     {
@@ -33,17 +33,16 @@ namespace Aliyun.Acs.Actiontrail.Transform.V20171204
 			describeRegionsResponse.HttpResponse = _ctx.HttpResponse;
 			describeRegionsResponse.RequestId = _ctx.StringValue("DescribeRegions.RequestId");
 
-			DescribeRegionsResponse.DescribeRegions_Regions regions = new DescribeRegionsResponse.DescribeRegions_Regions();
+			List<DescribeRegionsResponse.DescribeRegions_Region> describeRegionsResponse_regions = new List<DescribeRegionsResponse.DescribeRegions_Region>();
+			for (int i = 0; i < _ctx.Length("DescribeRegions.Regions.Length"); i++) {
+				DescribeRegionsResponse.DescribeRegions_Region region = new DescribeRegionsResponse.DescribeRegions_Region();
+				region.RegionId = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
+				region.RegionEndpoint = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionEndpoint");
+				region.LocalName = _ctx.StringValue("DescribeRegions.Regions["+ i +"].LocalName");
 
-			List<DescribeRegionsResponse.DescribeRegions_Regions.DescribeRegions_RegionItem> regions_region = new List<DescribeRegionsResponse.DescribeRegions_Regions.DescribeRegions_RegionItem>();
-			for (int i = 0; i < _ctx.Length("DescribeRegions.Regions.Region.Length"); i++) {
-				DescribeRegionsResponse.DescribeRegions_Regions.DescribeRegions_RegionItem regionItem = new DescribeRegionsResponse.DescribeRegions_Regions.DescribeRegions_RegionItem();
-				regionItem.RegionId = _ctx.StringValue("DescribeRegions.Regions.Region["+ i +"].RegionId");
-
-				regions_region.Add(regionItem);
+				describeRegionsResponse_regions.Add(region);
 			}
-			regions.Region = regions_region;
-			describeRegionsResponse.Regions = regions;
+			describeRegionsResponse.Regions = describeRegionsResponse_regions;
         
 			return describeRegionsResponse;
         }

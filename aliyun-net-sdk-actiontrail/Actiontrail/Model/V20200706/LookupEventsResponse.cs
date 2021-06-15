@@ -25,25 +25,25 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 	public class LookupEventsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string endTime;
 
 		private string nextToken;
 
-		private string startTime;
+		private string requestId;
 
-		private string endTime;
+		private string startTime;
 
 		private List<Dictionary<string, string>> events;
 
-		public string RequestId
+		public string EndTime
 		{
 			get
 			{
-				return requestId;
+				return endTime;
 			}
 			set	
 			{
-				requestId = value;
+				endTime = value;
 			}
 		}
 
@@ -59,6 +59,18 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public string StartTime
 		{
 			get
@@ -68,18 +80,6 @@ namespace Aliyun.Acs.Actiontrail.Model.V20200706
 			set	
 			{
 				startTime = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
 			}
 		}
 

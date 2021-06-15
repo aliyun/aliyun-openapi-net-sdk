@@ -16,24 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Actiontrail.Model.V20171204;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Actiontrail.Transform.V20171204
+namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
-    public class StopLoggingResponseUnmarshaller
-    {
-        public static StopLoggingResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			StopLoggingResponse stopLoggingResponse = new StopLoggingResponse();
+	public class StartLoggingResponse : AcsResponse
+	{
 
-			stopLoggingResponse.HttpResponse = _ctx.HttpResponse;
-			stopLoggingResponse.RequestId = _ctx.StringValue("StopLogging.RequestId");
-        
-			return stopLoggingResponse;
-        }
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }
