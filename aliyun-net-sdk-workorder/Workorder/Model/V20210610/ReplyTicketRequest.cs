@@ -41,24 +41,11 @@ namespace Aliyun.Acs.Workorder.Model.V20210610
 			Method = MethodType.POST;
         }
 
-		private string secContent;
-
 		private string content;
 
-		private string ticketId;
+		private bool? encrypt;
 
-		public string SecContent
-		{
-			get
-			{
-				return secContent;
-			}
-			set	
-			{
-				secContent = value;
-				DictionaryUtil.Add(BodyParameters, "SecContent", value);
-			}
-		}
+		private string ticketId;
 
 		public string Content
 		{
@@ -70,6 +57,19 @@ namespace Aliyun.Acs.Workorder.Model.V20210610
 			{
 				content = value;
 				DictionaryUtil.Add(BodyParameters, "Content", value);
+			}
+		}
+
+		public bool? Encrypt
+		{
+			get
+			{
+				return encrypt;
+			}
+			set	
+			{
+				encrypt = value;
+				DictionaryUtil.Add(BodyParameters, "Encrypt", value.ToString());
 			}
 		}
 
