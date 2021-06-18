@@ -47,6 +47,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private bool? success;
 
+		private string templateSceneId;
+
 		private List<DescribeItems_ItemInfo> items;
 
 		public string ErrorMessage
@@ -181,6 +183,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
+		public string TemplateSceneId
+		{
+			get
+			{
+				return templateSceneId;
+			}
+			set	
+			{
+				templateSceneId = value;
+			}
+		}
+
 		public List<DescribeItems_ItemInfo> Items
 		{
 			get
@@ -299,6 +313,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			private string gmtCreate;
 
 			private string gmtModified;
+
+			private bool? beMember;
 
 			public string CategoryName
 			{
@@ -921,6 +937,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					gmtModified = value;
+				}
+			}
+
+			public bool? BeMember
+			{
+				get
+				{
+					return beMember;
+				}
+				set	
+				{
+					beMember = value;
 				}
 			}
 		}

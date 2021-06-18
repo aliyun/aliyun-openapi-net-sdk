@@ -22,24 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.cloudesl.Model.V20200201
 {
-	public class DescribeStoresResponse : AcsResponse
+	public class DescribeStoreStatisticsResponse : AcsResponse
 	{
 
 		private string errorMessage;
 
 		private string errorCode;
 
-		private int? totalCount;
-
 		private string message;
-
-		private int? pageSize;
 
 		private string dynamicCode;
 
 		private string code;
-
-		private int? pageNumber;
 
 		private string dynamicMessage;
 
@@ -47,7 +41,7 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private bool? success;
 
-		private List<DescribeStores_StoreInfo> stores;
+		private List<DescribeStoreStatistics_StoreStatisticsInfo> storeStatisticsInfoList;
 
 		public string ErrorMessage
 		{
@@ -73,18 +67,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
-
 		public string Message
 		{
 			get
@@ -94,18 +76,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				message = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
 			}
 		}
 
@@ -130,18 +100,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				code = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
 			}
 		}
 
@@ -181,38 +139,70 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public List<DescribeStores_StoreInfo> Stores
+		public List<DescribeStoreStatistics_StoreStatisticsInfo> StoreStatisticsInfoList
 		{
 			get
 			{
-				return stores;
+				return storeStatisticsInfoList;
 			}
 			set	
 			{
-				stores = value;
+				storeStatisticsInfoList = value;
 			}
 		}
 
-		public class DescribeStores_StoreInfo
+		public class DescribeStoreStatistics_StoreStatisticsInfo
 		{
+
+			private int? sendFailEsl;
+
+			private int? displayFailEsl;
 
 			private string storeName;
 
+			private int? activeApDevice;
+
+			private int? updateFailureEsl;
+
+			private int? updateEsl;
+
+			private int? offlineEslDevice;
+
+			private string statisticsTime;
+
 			private string storeId;
 
-			private string gmtCreate;
+			private int? bindEsl;
 
-			private string parentId;
+			private int? abnormalEsl;
 
-			private string userStoreCode;
+			private int? lowBatteryEsl;
 
-			private string gmtModified;
+			private int? bindItem;
 
-			private string phone;
+			public int? SendFailEsl
+			{
+				get
+				{
+					return sendFailEsl;
+				}
+				set	
+				{
+					sendFailEsl = value;
+				}
+			}
 
-			private string level;
-
-			private string templateVersion;
+			public int? DisplayFailEsl
+			{
+				get
+				{
+					return displayFailEsl;
+				}
+				set	
+				{
+					displayFailEsl = value;
+				}
+			}
 
 			public string StoreName
 			{
@@ -223,6 +213,66 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					storeName = value;
+				}
+			}
+
+			public int? ActiveApDevice
+			{
+				get
+				{
+					return activeApDevice;
+				}
+				set	
+				{
+					activeApDevice = value;
+				}
+			}
+
+			public int? UpdateFailureEsl
+			{
+				get
+				{
+					return updateFailureEsl;
+				}
+				set	
+				{
+					updateFailureEsl = value;
+				}
+			}
+
+			public int? UpdateEsl
+			{
+				get
+				{
+					return updateEsl;
+				}
+				set	
+				{
+					updateEsl = value;
+				}
+			}
+
+			public int? OfflineEslDevice
+			{
+				get
+				{
+					return offlineEslDevice;
+				}
+				set	
+				{
+					offlineEslDevice = value;
+				}
+			}
+
+			public string StatisticsTime
+			{
+				get
+				{
+					return statisticsTime;
+				}
+				set	
+				{
+					statisticsTime = value;
 				}
 			}
 
@@ -238,87 +288,51 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				}
 			}
 
-			public string GmtCreate
+			public int? BindEsl
 			{
 				get
 				{
-					return gmtCreate;
+					return bindEsl;
 				}
 				set	
 				{
-					gmtCreate = value;
+					bindEsl = value;
 				}
 			}
 
-			public string ParentId
+			public int? AbnormalEsl
 			{
 				get
 				{
-					return parentId;
+					return abnormalEsl;
 				}
 				set	
 				{
-					parentId = value;
+					abnormalEsl = value;
 				}
 			}
 
-			public string UserStoreCode
+			public int? LowBatteryEsl
 			{
 				get
 				{
-					return userStoreCode;
+					return lowBatteryEsl;
 				}
 				set	
 				{
-					userStoreCode = value;
+					lowBatteryEsl = value;
 				}
 			}
 
-			public string GmtModified
+			public int? BindItem
 			{
 				get
 				{
-					return gmtModified;
+					return bindItem;
 				}
 				set	
 				{
-					gmtModified = value;
-				}
-			}
-
-			public string Phone
-			{
-				get
-				{
-					return phone;
-				}
-				set	
-				{
-					phone = value;
-				}
-			}
-
-			public string Level
-			{
-				get
-				{
-					return level;
-				}
-				set	
-				{
-					level = value;
-				}
-			}
-
-			public string TemplateVersion
-			{
-				get
-				{
-					return templateVersion;
-				}
-				set	
-				{
-					templateVersion = value;
+					bindItem = value;
 				}
 			}
 		}

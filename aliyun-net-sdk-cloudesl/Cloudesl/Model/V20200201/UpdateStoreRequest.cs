@@ -46,6 +46,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private string storeId;
 
+		private string templateVersion;
+
 		private string userStoreCode;
 
 		private string phone;
@@ -86,6 +88,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				storeId = value;
 				DictionaryUtil.Add(BodyParameters, "StoreId", value);
+			}
+		}
+
+		public string TemplateVersion
+		{
+			get
+			{
+				return templateVersion;
+			}
+			set	
+			{
+				templateVersion = value;
+				DictionaryUtil.Add(BodyParameters, "TemplateVersion", value);
 			}
 		}
 

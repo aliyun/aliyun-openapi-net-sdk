@@ -42,6 +42,7 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 			describeItemsResponse.TotalCount = _ctx.IntegerValue("DescribeItems.TotalCount");
 			describeItemsResponse.RequestId = _ctx.StringValue("DescribeItems.RequestId");
 			describeItemsResponse.Success = _ctx.BooleanValue("DescribeItems.Success");
+			describeItemsResponse.TemplateSceneId = _ctx.StringValue("DescribeItems.TemplateSceneId");
 
 			List<DescribeItemsResponse.DescribeItems_ItemInfo> describeItemsResponse_items = new List<DescribeItemsResponse.DescribeItems_ItemInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeItems.Items.Length"); i++) {
@@ -98,6 +99,7 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 				itemInfo.PromotionStart = _ctx.StringValue("DescribeItems.Items["+ i +"].PromotionStart");
 				itemInfo.GmtCreate = _ctx.StringValue("DescribeItems.Items["+ i +"].GmtCreate");
 				itemInfo.GmtModified = _ctx.StringValue("DescribeItems.Items["+ i +"].GmtModified");
+				itemInfo.BeMember = _ctx.BooleanValue("DescribeItems.Items["+ i +"].BeMember");
 
 				describeItemsResponse_items.Add(itemInfo);
 			}

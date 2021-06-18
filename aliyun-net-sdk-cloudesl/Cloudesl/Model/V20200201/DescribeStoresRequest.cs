@@ -50,6 +50,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private string fromDate;
 
+		private string templateVersion;
+
 		private string toDate;
 
 		private int? pageSize;
@@ -118,6 +120,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				fromDate = value;
 				DictionaryUtil.Add(BodyParameters, "FromDate", value);
+			}
+		}
+
+		public string TemplateVersion
+		{
+			get
+			{
+				return templateVersion;
+			}
+			set	
+			{
+				templateVersion = value;
+				DictionaryUtil.Add(BodyParameters, "TemplateVersion", value);
 			}
 		}
 

@@ -27,10 +27,10 @@ using Aliyun.Acs.cloudesl.Transform.V20200201;
 
 namespace Aliyun.Acs.cloudesl.Model.V20200201
 {
-    public class AddApDeviceRequest : RpcAcsRequest<AddApDeviceResponse>
+    public class DescribeStoreStatisticsRequest : RpcAcsRequest<DescribeStoreStatisticsResponse>
     {
-        public AddApDeviceRequest()
-            : base("cloudesl", "2020-02-01", "AddApDevice", "cloudesl", "openAPI")
+        public DescribeStoreStatisticsRequest()
+            : base("cloudesl", "2020-02-01", "DescribeStoreStatistics", "cloudesl", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,15 +42,11 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private string extraParams;
 
-		private string clientToken;
-
-		private string remark;
-
-		private string apMac;
-
 		private string storeId;
 
-		private string serialNumber;
+		private string fromDate;
+
+		private string toDate;
 
 		public string ExtraParams
 		{
@@ -62,45 +58,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				extraParams = value;
 				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(BodyParameters, "ClientToken", value);
-			}
-		}
-
-		public string Remark
-		{
-			get
-			{
-				return remark;
-			}
-			set	
-			{
-				remark = value;
-				DictionaryUtil.Add(BodyParameters, "Remark", value);
-			}
-		}
-
-		public string ApMac
-		{
-			get
-			{
-				return apMac;
-			}
-			set	
-			{
-				apMac = value;
-				DictionaryUtil.Add(BodyParameters, "ApMac", value);
 			}
 		}
 
@@ -117,27 +74,35 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string SerialNumber
+		public string FromDate
 		{
 			get
 			{
-				return serialNumber;
+				return fromDate;
 			}
 			set	
 			{
-				serialNumber = value;
-				DictionaryUtil.Add(BodyParameters, "SerialNumber", value);
+				fromDate = value;
+				DictionaryUtil.Add(BodyParameters, "FromDate", value);
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string ToDate
 		{
-			return false;
+			get
+			{
+				return toDate;
+			}
+			set	
+			{
+				toDate = value;
+				DictionaryUtil.Add(BodyParameters, "ToDate", value);
+			}
 		}
 
-        public override AddApDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeStoreStatisticsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AddApDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeStoreStatisticsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

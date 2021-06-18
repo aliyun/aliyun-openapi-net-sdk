@@ -54,6 +54,7 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 				storeInfo.GmtModified = _ctx.StringValue("DescribeStores.Stores["+ i +"].GmtModified");
 				storeInfo.Phone = _ctx.StringValue("DescribeStores.Stores["+ i +"].Phone");
 				storeInfo.Level = _ctx.StringValue("DescribeStores.Stores["+ i +"].Level");
+				storeInfo.TemplateVersion = _ctx.StringValue("DescribeStores.Stores["+ i +"].TemplateVersion");
 
 				describeStoresResponse_stores.Add(storeInfo);
 			}
