@@ -78,6 +78,13 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				instance.PodCount = _ctx.IntegerValue("DescribeCloudCenterInstances.Instances["+ i +"].PodCount");
 				instance.ExposedStatus = _ctx.IntegerValue("DescribeCloudCenterInstances.Instances["+ i +"].ExposedStatus");
 				instance.AutoSnapshotsLevel = _ctx.IntegerValue("DescribeCloudCenterInstances.Instances["+ i +"].AutoSnapshotsLevel");
+				instance.ExposedCount = _ctx.IntegerValue("DescribeCloudCenterInstances.Instances["+ i +"].ExposedCount");
+				instance.Vendor = _ctx.IntegerValue("DescribeCloudCenterInstances.Instances["+ i +"].Vendor");
+				instance.VendorName = _ctx.StringValue("DescribeCloudCenterInstances.Instances["+ i +"].VendorName");
+				instance.Cores = _ctx.IntegerValue("DescribeCloudCenterInstances.Instances["+ i +"].Cores");
+				instance.AuthVersion = _ctx.IntegerValue("DescribeCloudCenterInstances.Instances["+ i +"].AuthVersion");
+				instance.Bind = _ctx.BooleanValue("DescribeCloudCenterInstances.Instances["+ i +"].Bind");
+				instance.AuthModifyTime = _ctx.LongValue("DescribeCloudCenterInstances.Instances["+ i +"].AuthModifyTime");
 
 				describeCloudCenterInstancesResponse_instances.Add(instance);
 			}

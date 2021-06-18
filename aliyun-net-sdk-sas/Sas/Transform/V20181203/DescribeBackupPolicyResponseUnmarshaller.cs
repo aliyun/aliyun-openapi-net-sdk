@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			backupPolicyDetail.Id = _ctx.LongValue("DescribeBackupPolicy.BackupPolicyDetail.Id");
 			backupPolicyDetail.Name = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDetail.Name");
 			backupPolicyDetail.Policy = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDetail.Policy");
+			backupPolicyDetail.PolicyVersion = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDetail.PolicyVersion");
+			backupPolicyDetail.RegionId = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDetail.RegionId");
 			backupPolicyDetail.Status = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDetail.Status");
 			backupPolicyDetail.ClientStatus = _ctx.StringValue("DescribeBackupPolicy.BackupPolicyDetail.ClientStatus");
 

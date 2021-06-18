@@ -42,13 +42,13 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private long? resourceOwnerId;
 
-		private string policyVersion;
-
 		private string uuid;
 
 		private string sourceIp;
 
 		private List<string> uuidLists = new List<string>(){ };
+
+		private string policyVersion;
 
 		public long? ResourceOwnerId
 		{
@@ -60,19 +60,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string PolicyVersion
-		{
-			get
-			{
-				return policyVersion;
-			}
-			set	
-			{
-				policyVersion = value;
-				DictionaryUtil.Add(QueryParameters, "PolicyVersion", value);
 			}
 		}
 
@@ -116,6 +103,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				{
 					DictionaryUtil.Add(QueryParameters,"UuidList." + (i + 1) , uuidLists[i]);
 				}
+			}
+		}
+
+		public string PolicyVersion
+		{
+			get
+			{
+				return policyVersion;
+			}
+			set	
+			{
+				policyVersion = value;
+				DictionaryUtil.Add(QueryParameters, "PolicyVersion", value);
 			}
 		}
 

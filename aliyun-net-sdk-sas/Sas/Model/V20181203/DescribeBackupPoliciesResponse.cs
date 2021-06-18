@@ -80,6 +80,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string policyVersion;
 
+			private string policyRegionId;
+
 			private string clientStatus;
 
 			private int? clientErrorCount;
@@ -89,6 +91,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			private int? healthClientCount;
 
 			private List<string> uuidList;
+
+			private List<string> remarkedUuidList;
 
 			private List<string> clientErrorUuidList;
 
@@ -156,6 +160,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string PolicyRegionId
+			{
+				get
+				{
+					return policyRegionId;
+				}
+				set	
+				{
+					policyRegionId = value;
+				}
+			}
+
 			public string ClientStatus
 			{
 				get
@@ -213,6 +229,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					uuidList = value;
+				}
+			}
+
+			public List<string> RemarkedUuidList
+			{
+				get
+				{
+					return remarkedUuidList;
+				}
+				set	
+				{
+					remarkedUuidList = value;
 				}
 			}
 

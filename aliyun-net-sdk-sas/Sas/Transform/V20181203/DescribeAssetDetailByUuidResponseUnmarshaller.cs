@@ -59,6 +59,9 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			assetDetail.VpcInstanceId = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.VpcInstanceId");
 			assetDetail.InstanceStatus = _ctx.StringValue("DescribeAssetDetailByUuid.AssetDetail.InstanceStatus");
 			assetDetail.CreateTime = _ctx.LongValue("DescribeAssetDetailByUuid.AssetDetail.CreateTime");
+			assetDetail.AuthVersion = _ctx.IntegerValue("DescribeAssetDetailByUuid.AssetDetail.AuthVersion");
+			assetDetail.Bind = _ctx.BooleanValue("DescribeAssetDetailByUuid.AssetDetail.Bind");
+			assetDetail.AuthModifyTime = _ctx.LongValue("DescribeAssetDetailByUuid.AssetDetail.AuthModifyTime");
 
 			List<string> assetDetail_ipList = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeAssetDetailByUuid.AssetDetail.IpList.Length"); i++) {

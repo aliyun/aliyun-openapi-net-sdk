@@ -82,6 +82,14 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private int? exposedInstanceCount;
 
+			private int? aliYunInstanceCount;
+
+			private int? idcInstanceCount;
+
+			private int? tencentInstanceCount;
+
+			private int? instanceSyncTaskCount;
+
 			public int? RiskInstanceCount
 			{
 				get
@@ -235,6 +243,54 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					exposedInstanceCount = value;
+				}
+			}
+
+			public int? AliYunInstanceCount
+			{
+				get
+				{
+					return aliYunInstanceCount;
+				}
+				set	
+				{
+					aliYunInstanceCount = value;
+				}
+			}
+
+			public int? IdcInstanceCount
+			{
+				get
+				{
+					return idcInstanceCount;
+				}
+				set	
+				{
+					idcInstanceCount = value;
+				}
+			}
+
+			public int? TencentInstanceCount
+			{
+				get
+				{
+					return tencentInstanceCount;
+				}
+				set	
+				{
+					tencentInstanceCount = value;
+				}
+			}
+
+			public int? InstanceSyncTaskCount
+			{
+				get
+				{
+					return instanceSyncTaskCount;
+				}
+				set	
+				{
+					instanceSyncTaskCount = value;
 				}
 			}
 		}

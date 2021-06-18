@@ -51,12 +51,18 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describeVersionConfigResponse.AppWhiteListAuthCount = _ctx.LongValue("DescribeVersionConfig.AppWhiteListAuthCount");
 			describeVersionConfigResponse.AppWhiteList = _ctx.IntegerValue("DescribeVersionConfig.AppWhiteList");
 			describeVersionConfigResponse.SlsCapacity = _ctx.LongValue("DescribeVersionConfig.SlsCapacity");
+			describeVersionConfigResponse.GmtCreate = _ctx.LongValue("DescribeVersionConfig.GmtCreate");
+			describeVersionConfigResponse.LastInstanceReleaseTime = _ctx.LongValue("DescribeVersionConfig.LastInstanceReleaseTime");
 			describeVersionConfigResponse.IsOverBalance = _ctx.BooleanValue("DescribeVersionConfig.IsOverBalance");
 			describeVersionConfigResponse.LastTrailEndTime = _ctx.LongValue("DescribeVersionConfig.LastTrailEndTime");
 			describeVersionConfigResponse.HoneypotCapacity = _ctx.LongValue("DescribeVersionConfig.HoneypotCapacity");
 			describeVersionConfigResponse.ImageScanCapacity = _ctx.LongValue("DescribeVersionConfig.ImageScanCapacity");
 			describeVersionConfigResponse.VmCores = _ctx.IntegerValue("DescribeVersionConfig.VmCores");
 			describeVersionConfigResponse.IsPaidUser = _ctx.BooleanValue("DescribeVersionConfig.IsPaidUser");
+			describeVersionConfigResponse.HighestVersion = _ctx.IntegerValue("DescribeVersionConfig.HighestVersion");
+			describeVersionConfigResponse.MVAuthCount = _ctx.IntegerValue("DescribeVersionConfig.MVAuthCount");
+			describeVersionConfigResponse.MVUnusedAuthCount = _ctx.IntegerValue("DescribeVersionConfig.MVUnusedAuthCount");
+			describeVersionConfigResponse.AllowPartialBuy = _ctx.IntegerValue("DescribeVersionConfig.AllowPartialBuy");
         
 			return describeVersionConfigResponse;
         }

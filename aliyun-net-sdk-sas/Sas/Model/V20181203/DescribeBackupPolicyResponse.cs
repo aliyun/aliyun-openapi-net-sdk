@@ -62,6 +62,10 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string policy;
 
+			private string policyVersion;
+
+			private string regionId;
+
 			private string status;
 
 			private string clientStatus;
@@ -101,6 +105,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					policy = value;
+				}
+			}
+
+			public string PolicyVersion
+			{
+				get
+				{
+					return policyVersion;
+				}
+				set	
+				{
+					policyVersion = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 

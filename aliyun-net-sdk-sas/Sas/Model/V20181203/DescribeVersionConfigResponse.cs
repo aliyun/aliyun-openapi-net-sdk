@@ -65,6 +65,10 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private long? slsCapacity;
 
+		private long? gmtCreate;
+
+		private long? lastInstanceReleaseTime;
+
 		private bool? isOverBalance;
 
 		private long? lastTrailEndTime;
@@ -76,6 +80,14 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		private int? vmCores;
 
 		private bool? isPaidUser;
+
+		private int? highestVersion;
+
+		private int? mVAuthCount;
+
+		private int? mVUnusedAuthCount;
+
+		private int? allowPartialBuy;
 
 		public string RequestId
 		{
@@ -317,6 +329,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public long? GmtCreate
+		{
+			get
+			{
+				return gmtCreate;
+			}
+			set	
+			{
+				gmtCreate = value;
+			}
+		}
+
+		public long? LastInstanceReleaseTime
+		{
+			get
+			{
+				return lastInstanceReleaseTime;
+			}
+			set	
+			{
+				lastInstanceReleaseTime = value;
+			}
+		}
+
 		public bool? IsOverBalance
 		{
 			get
@@ -386,6 +422,54 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				isPaidUser = value;
+			}
+		}
+
+		public int? HighestVersion
+		{
+			get
+			{
+				return highestVersion;
+			}
+			set	
+			{
+				highestVersion = value;
+			}
+		}
+
+		public int? MVAuthCount
+		{
+			get
+			{
+				return mVAuthCount;
+			}
+			set	
+			{
+				mVAuthCount = value;
+			}
+		}
+
+		public int? MVUnusedAuthCount
+		{
+			get
+			{
+				return mVUnusedAuthCount;
+			}
+			set	
+			{
+				mVUnusedAuthCount = value;
+			}
+		}
+
+		public int? AllowPartialBuy
+		{
+			get
+			{
+				return allowPartialBuy;
+			}
+			set	
+			{
+				allowPartialBuy = value;
 			}
 		}
 	}

@@ -48,6 +48,7 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				backupPolicy.Status = _ctx.StringValue("DescribeBackupPolicies.Policies["+ i +"].Status");
 				backupPolicy.Policy = _ctx.StringValue("DescribeBackupPolicies.Policies["+ i +"].Policy");
 				backupPolicy.PolicyVersion = _ctx.StringValue("DescribeBackupPolicies.Policies["+ i +"].PolicyVersion");
+				backupPolicy.PolicyRegionId = _ctx.StringValue("DescribeBackupPolicies.Policies["+ i +"].PolicyRegionId");
 				backupPolicy.ClientStatus = _ctx.StringValue("DescribeBackupPolicies.Policies["+ i +"].ClientStatus");
 				backupPolicy.ClientErrorCount = _ctx.IntegerValue("DescribeBackupPolicies.Policies["+ i +"].ClientErrorCount");
 				backupPolicy.ServiceErrorCount = _ctx.IntegerValue("DescribeBackupPolicies.Policies["+ i +"].ServiceErrorCount");
@@ -58,6 +59,12 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 					backupPolicy_uuidList.Add(_ctx.StringValue("DescribeBackupPolicies.Policies["+ i +"].UuidList["+ j +"]"));
 				}
 				backupPolicy.UuidList = backupPolicy_uuidList;
+
+				List<string> backupPolicy_remarkedUuidList = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeBackupPolicies.Policies["+ i +"].RemarkedUuidList.Length"); j++) {
+					backupPolicy_remarkedUuidList.Add(_ctx.StringValue("DescribeBackupPolicies.Policies["+ i +"].RemarkedUuidList["+ j +"]"));
+				}
+				backupPolicy.RemarkedUuidList = backupPolicy_remarkedUuidList;
 
 				List<string> backupPolicy_clientErrorUuidList = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeBackupPolicies.Policies["+ i +"].ClientErrorUuidList.Length"); j++) {

@@ -47,6 +47,10 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			groupedFields.GeneralAssetCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.GeneralAssetCount");
 			groupedFields.TestAssetCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.TestAssetCount");
 			groupedFields.ExposedInstanceCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.ExposedInstanceCount");
+			groupedFields.AliYunInstanceCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.AliYunInstanceCount");
+			groupedFields.IdcInstanceCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.IdcInstanceCount");
+			groupedFields.TencentInstanceCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.TencentInstanceCount");
+			groupedFields.InstanceSyncTaskCount = _ctx.IntegerValue("DescribeFieldStatistics.GroupedFields.InstanceSyncTaskCount");
 			describeFieldStatisticsResponse.GroupedFields = groupedFields;
         
 			return describeFieldStatisticsResponse;

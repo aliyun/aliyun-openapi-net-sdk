@@ -50,9 +50,9 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string policyVersion;
 
-		private string name;
+		private string policyRegionId;
 
-		private string status;
+		private string name;
 
 		public long? ResourceOwnerId
 		{
@@ -123,6 +123,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public string PolicyRegionId
+		{
+			get
+			{
+				return policyRegionId;
+			}
+			set	
+			{
+				policyRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "PolicyRegionId", value);
+			}
+		}
+
 		public string Name
 		{
 			get
@@ -133,19 +146,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 

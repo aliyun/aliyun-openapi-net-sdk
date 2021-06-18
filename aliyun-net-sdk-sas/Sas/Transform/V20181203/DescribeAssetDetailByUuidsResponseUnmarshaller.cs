@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				asset.RegionName = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].RegionName");
 				asset.VpcInstanceId = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].VpcInstanceId");
 				asset.OsName = _ctx.StringValue("DescribeAssetDetailByUuids.AssetList["+ i +"].OsName");
+				asset.Flag = _ctx.IntegerValue("DescribeAssetDetailByUuids.AssetList["+ i +"].Flag");
 
 				describeAssetDetailByUuidsResponse_assetList.Add(asset);
 			}

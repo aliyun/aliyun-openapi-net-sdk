@@ -42,13 +42,15 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private long? resourceOwnerId;
 
-		private int? currentPage;
-
 		private string sourceIp;
 
-		private string name;
+		private string machineRemark;
 
 		private int? pageSize;
+
+		private int? currentPage;
+
+		private string name;
 
 		private string status;
 
@@ -65,19 +67,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
 		public string SourceIp
 		{
 			get
@@ -91,16 +80,16 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string Name
+		public string MachineRemark
 		{
 			get
 			{
-				return name;
+				return machineRemark;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				machineRemark = value;
+				DictionaryUtil.Add(QueryParameters, "MachineRemark", value);
 			}
 		}
 
@@ -114,6 +103,32 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

@@ -44,21 +44,21 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string snapshotId;
 
+		private string vaultId;
+
 		private string uuid;
 
 		private string snapshotHash;
 
 		private string sourceIp;
 
-		private string snapshotVersion;
+		private string sourceType;
 
-		private string policyVersion;
+		private string snapshotVersion;
 
 		private string includes;
 
 		private string target;
-
-		private string instanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -83,6 +83,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				snapshotId = value;
 				DictionaryUtil.Add(QueryParameters, "SnapshotId", value);
+			}
+		}
+
+		public string VaultId
+		{
+			get
+			{
+				return vaultId;
+			}
+			set	
+			{
+				vaultId = value;
+				DictionaryUtil.Add(QueryParameters, "VaultId", value);
 			}
 		}
 
@@ -125,6 +138,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public string SourceType
+		{
+			get
+			{
+				return sourceType;
+			}
+			set	
+			{
+				sourceType = value;
+				DictionaryUtil.Add(QueryParameters, "SourceType", value);
+			}
+		}
+
 		public string SnapshotVersion
 		{
 			get
@@ -135,19 +161,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				snapshotVersion = value;
 				DictionaryUtil.Add(QueryParameters, "SnapshotVersion", value);
-			}
-		}
-
-		public string PolicyVersion
-		{
-			get
-			{
-				return policyVersion;
-			}
-			set	
-			{
-				policyVersion = value;
-				DictionaryUtil.Add(QueryParameters, "PolicyVersion", value);
 			}
 		}
 
@@ -174,19 +187,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				target = value;
 				DictionaryUtil.Add(QueryParameters, "Target", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

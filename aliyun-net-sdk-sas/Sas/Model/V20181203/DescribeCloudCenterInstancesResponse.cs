@@ -152,6 +152,20 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private int? autoSnapshotsLevel;
 
+			private int? exposedCount;
+
+			private int? vendor;
+
+			private string vendorName;
+
+			private int? cores;
+
+			private int? authVersion;
+
+			private bool? bind;
+
+			private long? authModifyTime;
+
 			public string InternetIp
 			{
 				get
@@ -557,6 +571,90 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					autoSnapshotsLevel = value;
+				}
+			}
+
+			public int? ExposedCount
+			{
+				get
+				{
+					return exposedCount;
+				}
+				set	
+				{
+					exposedCount = value;
+				}
+			}
+
+			public int? Vendor
+			{
+				get
+				{
+					return vendor;
+				}
+				set	
+				{
+					vendor = value;
+				}
+			}
+
+			public string VendorName
+			{
+				get
+				{
+					return vendorName;
+				}
+				set	
+				{
+					vendorName = value;
+				}
+			}
+
+			public int? Cores
+			{
+				get
+				{
+					return cores;
+				}
+				set	
+				{
+					cores = value;
+				}
+			}
+
+			public int? AuthVersion
+			{
+				get
+				{
+					return authVersion;
+				}
+				set	
+				{
+					authVersion = value;
+				}
+			}
+
+			public bool? Bind
+			{
+				get
+				{
+					return bind;
+				}
+				set	
+				{
+					bind = value;
+				}
+			}
+
+			public long? AuthModifyTime
+			{
+				get
+				{
+					return authModifyTime;
+				}
+				set	
+				{
+					authModifyTime = value;
 				}
 			}
 		}

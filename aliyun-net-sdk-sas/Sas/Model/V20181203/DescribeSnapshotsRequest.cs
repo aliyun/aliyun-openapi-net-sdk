@@ -60,6 +60,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string machineRegion;
 
+		private string isAliYunEcs;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -187,6 +189,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				machineRegion = value;
 				DictionaryUtil.Add(QueryParameters, "MachineRegion", value);
+			}
+		}
+
+		public string IsAliYunEcs
+		{
+			get
+			{
+				return isAliYunEcs;
+			}
+			set	
+			{
+				isAliYunEcs = value;
+				DictionaryUtil.Add(QueryParameters, "IsAliYunEcs", value);
 			}
 		}
 

@@ -84,6 +84,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string osName;
 
+			private int? flag;
+
 			public string InternetIp
 			{
 				get
@@ -249,6 +251,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					osName = value;
+				}
+			}
+
+			public int? Flag
+			{
+				get
+				{
+					return flag;
+				}
+				set	
+				{
+					flag = value;
 				}
 			}
 		}

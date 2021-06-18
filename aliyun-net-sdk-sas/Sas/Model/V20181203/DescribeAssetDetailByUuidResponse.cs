@@ -106,6 +106,12 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private long? createTime;
 
+			private int? authVersion;
+
+			private bool? bind;
+
+			private long? authModifyTime;
+
 			private List<string> ipList;
 
 			private List<string> macList;
@@ -409,6 +415,42 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			public int? AuthVersion
+			{
+				get
+				{
+					return authVersion;
+				}
+				set	
+				{
+					authVersion = value;
+				}
+			}
+
+			public bool? Bind
+			{
+				get
+				{
+					return bind;
+				}
+				set	
+				{
+					bind = value;
+				}
+			}
+
+			public long? AuthModifyTime
+			{
+				get
+				{
+					return authModifyTime;
+				}
+				set	
+				{
+					authModifyTime = value;
 				}
 			}
 

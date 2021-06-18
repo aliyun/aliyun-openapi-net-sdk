@@ -42,8 +42,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private long? resourceOwnerId;
 
-		private int? currentPage;
-
 		private string uuid;
 
 		private string sourceIp;
@@ -51,6 +49,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		private long? policyId;
 
 		private int? pageSize;
+
+		private int? currentPage;
 
 		public long? ResourceOwnerId
 		{
@@ -62,19 +62,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
@@ -127,6 +114,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
