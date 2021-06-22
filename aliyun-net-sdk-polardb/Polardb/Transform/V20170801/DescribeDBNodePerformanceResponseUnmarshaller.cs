@@ -31,13 +31,13 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			DescribeDBNodePerformanceResponse describeDBNodePerformanceResponse = new DescribeDBNodePerformanceResponse();
 
 			describeDBNodePerformanceResponse.HttpResponse = _ctx.HttpResponse;
+			describeDBNodePerformanceResponse.DBVersion = _ctx.StringValue("DescribeDBNodePerformance.DBVersion");
+			describeDBNodePerformanceResponse.EndTime = _ctx.StringValue("DescribeDBNodePerformance.EndTime");
 			describeDBNodePerformanceResponse.RequestId = _ctx.StringValue("DescribeDBNodePerformance.RequestId");
+			describeDBNodePerformanceResponse.StartTime = _ctx.StringValue("DescribeDBNodePerformance.StartTime");
+			describeDBNodePerformanceResponse.DBType = _ctx.StringValue("DescribeDBNodePerformance.DBType");
 			describeDBNodePerformanceResponse.DBNodeId = _ctx.StringValue("DescribeDBNodePerformance.DBNodeId");
 			describeDBNodePerformanceResponse.Engine = _ctx.StringValue("DescribeDBNodePerformance.Engine");
-			describeDBNodePerformanceResponse.DBType = _ctx.StringValue("DescribeDBNodePerformance.DBType");
-			describeDBNodePerformanceResponse.DBVersion = _ctx.StringValue("DescribeDBNodePerformance.DBVersion");
-			describeDBNodePerformanceResponse.StartTime = _ctx.StringValue("DescribeDBNodePerformance.StartTime");
-			describeDBNodePerformanceResponse.EndTime = _ctx.StringValue("DescribeDBNodePerformance.EndTime");
 
 			List<DescribeDBNodePerformanceResponse.DescribeDBNodePerformance_PerformanceItem> describeDBNodePerformanceResponse_performanceKeys = new List<DescribeDBNodePerformanceResponse.DescribeDBNodePerformance_PerformanceItem>();
 			for (int i = 0; i < _ctx.Length("DescribeDBNodePerformance.PerformanceKeys.Length"); i++) {
