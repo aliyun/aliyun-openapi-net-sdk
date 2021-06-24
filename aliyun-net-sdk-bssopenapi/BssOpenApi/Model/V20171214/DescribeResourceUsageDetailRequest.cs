@@ -28,10 +28,10 @@ using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class QuerySavingsPlansInstanceRequest : RpcAcsRequest<QuerySavingsPlansInstanceResponse>
+    public class DescribeResourceUsageDetailRequest : RpcAcsRequest<DescribeResourceUsageDetailResponse>
     {
-        public QuerySavingsPlansInstanceRequest()
-            : base("BssOpenApi", "2017-12-14", "QuerySavingsPlansInstance")
+        public DescribeResourceUsageDetailRequest()
+            : base("BssOpenApi", "2017-12-14", "DescribeResourceUsageDetail")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,145 +41,108 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			Method = MethodType.POST;
         }
 
-		private string endTime;
+		private string periodType;
 
-		private string startTime;
+		private long? billOwnerId;
 
-		private string locale;
+		private string resourceType;
 
-		private int? pageNum;
+		private string startPeriod;
 
-		private string instanceId;
+		private string endPeriod;
 
-		private int? pageSize;
+		private string nextToken;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private int? maxResults;
 
-		public string EndTime
+		public string PeriodType
 		{
 			get
 			{
-				return endTime;
+				return periodType;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				periodType = value;
+				DictionaryUtil.Add(QueryParameters, "PeriodType", value);
 			}
 		}
 
-		public string StartTime
+		public long? BillOwnerId
 		{
 			get
 			{
-				return startTime;
+				return billOwnerId;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				billOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "BillOwnerId", value.ToString());
 			}
 		}
 
-		public string Locale
+		public string ResourceType
 		{
 			get
 			{
-				return locale;
+				return resourceType;
 			}
 			set	
 			{
-				locale = value;
-				DictionaryUtil.Add(QueryParameters, "Locale", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
-		public int? PageNum
+		public string StartPeriod
 		{
 			get
 			{
-				return pageNum;
+				return startPeriod;
 			}
 			set	
 			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+				startPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "StartPeriod", value);
 			}
 		}
 
-		public string InstanceId
+		public string EndPeriod
 		{
 			get
 			{
-				return instanceId;
+				return endPeriod;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				endPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "EndPeriod", value);
 			}
 		}
 
-		public int? PageSize
+		public string NextToken
 		{
 			get
 			{
-				return pageSize;
+				return nextToken;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
-		public List<Tag> Tags
+		public int? MaxResults
 		{
 			get
 			{
-				return tags;
+				return maxResults;
 			}
-
-			set
+			set	
 			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
-			}
-		}
-
-		public class Tag
-		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
-
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
 			}
 		}
 
@@ -188,9 +151,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			return false;
 		}
 
-        public override QuerySavingsPlansInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeResourceUsageDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QuerySavingsPlansInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeResourceUsageDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

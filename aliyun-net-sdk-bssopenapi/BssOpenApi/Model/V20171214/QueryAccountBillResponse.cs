@@ -233,6 +233,12 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string billingDate;
 
+				private string billAccountID;
+
+				private string billAccountName;
+
+				private string bizType;
+
 				public string CostUnit
 				{
 					get
@@ -434,6 +440,42 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						billingDate = value;
+					}
+				}
+
+				public string BillAccountID
+				{
+					get
+					{
+						return billAccountID;
+					}
+					set	
+					{
+						billAccountID = value;
+					}
+				}
+
+				public string BillAccountName
+				{
+					get
+					{
+						return billAccountName;
+					}
+					set	
+					{
+						billAccountName = value;
+					}
+				}
+
+				public string BizType
+				{
+					get
+					{
+						return bizType;
+					}
+					set	
+					{
+						bizType = value;
 					}
 				}
 			}

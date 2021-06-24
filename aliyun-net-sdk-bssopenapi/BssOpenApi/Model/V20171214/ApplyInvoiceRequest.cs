@@ -59,6 +59,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private List<long?> selectedIdss = new List<long?>(){ };
 
+		private string userRemark;
+
 		public int? InvoicingType
 		{
 			get
@@ -177,6 +179,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				{
 					DictionaryUtil.Add(QueryParameters,"SelectedIds." + (i + 1) , selectedIdss[i]);
 				}
+			}
+		}
+
+		public string UserRemark
+		{
+			get
+			{
+				return userRemark;
+			}
+			set	
+			{
+				userRemark = value;
+				DictionaryUtil.Add(QueryParameters, "UserRemark", value);
 			}
 		}
 

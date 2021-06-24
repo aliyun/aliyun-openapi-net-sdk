@@ -183,7 +183,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string utilization;
 
-				private bool? share;
+				private string allocationStatus;
+
+				private List<QuerySavingsPlansInstance_Tag> tags;
 
 				public string InstanceId
 				{
@@ -341,15 +343,59 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public bool? Share
+				public string AllocationStatus
 				{
 					get
 					{
-						return share;
+						return allocationStatus;
 					}
 					set	
 					{
-						share = value;
+						allocationStatus = value;
+					}
+				}
+
+				public List<QuerySavingsPlansInstance_Tag> Tags
+				{
+					get
+					{
+						return tags;
+					}
+					set	
+					{
+						tags = value;
+					}
+				}
+
+				public class QuerySavingsPlansInstance_Tag
+				{
+
+					private string key;
+
+					private string _value;
+
+					public string Key
+					{
+						get
+						{
+							return key;
+						}
+						set	
+						{
+							key = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
+						}
 					}
 				}
 			}

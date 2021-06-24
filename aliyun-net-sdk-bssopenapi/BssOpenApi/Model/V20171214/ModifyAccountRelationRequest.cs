@@ -28,10 +28,10 @@ using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class QuerySavingsPlansInstanceRequest : RpcAcsRequest<QuerySavingsPlansInstanceResponse>
+    public class ModifyAccountRelationRequest : RpcAcsRequest<ModifyAccountRelationResponse>
     {
-        public QuerySavingsPlansInstanceRequest()
-            : base("BssOpenApi", "2017-12-14", "QuerySavingsPlansInstance")
+        public ModifyAccountRelationRequest()
+            : base("BssOpenApi", "2017-12-14", "ModifyAccountRelation")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,144 +41,130 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			Method = MethodType.POST;
         }
 
-		private string endTime;
+		private string childNick;
 
-		private string startTime;
+		private string relationOperation;
 
-		private string locale;
+		private string relationType;
 
-		private int? pageNum;
+		private long? parentUserId;
 
-		private string instanceId;
+		private long? childUserId;
 
-		private int? pageSize;
+		private string requestId;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private List<string> permissionCodess = new List<string>(){ };
 
-		public string EndTime
+		private List<string> roleCodess = new List<string>(){ };
+
+		public string ChildNick
 		{
 			get
 			{
-				return endTime;
+				return childNick;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				childNick = value;
+				DictionaryUtil.Add(QueryParameters, "ChildNick", value);
 			}
 		}
 
-		public string StartTime
+		public string RelationOperation
 		{
 			get
 			{
-				return startTime;
+				return relationOperation;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				relationOperation = value;
+				DictionaryUtil.Add(QueryParameters, "RelationOperation", value);
 			}
 		}
 
-		public string Locale
+		public string RelationType
 		{
 			get
 			{
-				return locale;
+				return relationType;
 			}
 			set	
 			{
-				locale = value;
-				DictionaryUtil.Add(QueryParameters, "Locale", value);
+				relationType = value;
+				DictionaryUtil.Add(QueryParameters, "RelationType", value);
 			}
 		}
 
-		public int? PageNum
+		public long? ParentUserId
 		{
 			get
 			{
-				return pageNum;
+				return parentUserId;
 			}
 			set	
 			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+				parentUserId = value;
+				DictionaryUtil.Add(QueryParameters, "ParentUserId", value.ToString());
 			}
 		}
 
-		public string InstanceId
+		public long? ChildUserId
 		{
 			get
 			{
-				return instanceId;
+				return childUserId;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				childUserId = value;
+				DictionaryUtil.Add(QueryParameters, "ChildUserId", value.ToString());
 			}
 		}
 
-		public int? PageSize
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				requestId = value;
+				DictionaryUtil.Add(QueryParameters, "RequestId", value);
 			}
 		}
 
-		public List<Tag> Tags
+		public List<string> PermissionCodess
 		{
 			get
 			{
-				return tags;
+				return permissionCodess;
 			}
 
 			set
 			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
+				permissionCodess = value;
+				for (int i = 0; i < permissionCodess.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					DictionaryUtil.Add(QueryParameters,"PermissionCodes." + (i + 1) , permissionCodess[i]);
 				}
 			}
 		}
 
-		public class Tag
+		public List<string> RoleCodess
 		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value
+			get
 			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
+				return roleCodess;
 			}
 
-			public string Key
+			set
 			{
-				get
+				roleCodess = value;
+				for (int i = 0; i < roleCodess.Count; i++)
 				{
-					return key;
-				}
-				set	
-				{
-					key = value;
+					DictionaryUtil.Add(QueryParameters,"RoleCodes." + (i + 1) , roleCodess[i]);
 				}
 			}
 		}
@@ -188,9 +174,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			return false;
 		}
 
-        public override QuerySavingsPlansInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyAccountRelationResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QuerySavingsPlansInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyAccountRelationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

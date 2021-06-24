@@ -86,6 +86,9 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				item.ServicePeriodUnit = _ctx.StringValue("DescribeInstanceBill.Data.Items["+ i +"].ServicePeriodUnit");
 				item.PipCode = _ctx.StringValue("DescribeInstanceBill.Data.Items["+ i +"].PipCode");
 				item.CommodityCode = _ctx.StringValue("DescribeInstanceBill.Data.Items["+ i +"].CommodityCode");
+				item.BillAccountID = _ctx.StringValue("DescribeInstanceBill.Data.Items["+ i +"].BillAccountID");
+				item.BillAccountName = _ctx.StringValue("DescribeInstanceBill.Data.Items["+ i +"].BillAccountName");
+				item.BizType = _ctx.StringValue("DescribeInstanceBill.Data.Items["+ i +"].BizType");
 
 				data_items.Add(item);
 			}

@@ -66,6 +66,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				item.RoundDownDiscount = _ctx.StringValue("QueryBillOverview.Data.Items["+ i +"].RoundDownDiscount");
 				item.PipCode = _ctx.StringValue("QueryBillOverview.Data.Items["+ i +"].PipCode");
 				item.CommodityCode = _ctx.StringValue("QueryBillOverview.Data.Items["+ i +"].CommodityCode");
+				item.BillAccountID = _ctx.StringValue("QueryBillOverview.Data.Items["+ i +"].BillAccountID");
+				item.BillAccountName = _ctx.StringValue("QueryBillOverview.Data.Items["+ i +"].BillAccountName");
+				item.BizType = _ctx.StringValue("QueryBillOverview.Data.Items["+ i +"].BizType");
+				item.OwnerID = _ctx.StringValue("QueryBillOverview.Data.Items["+ i +"].OwnerID");
 
 				data_items.Add(item);
 			}

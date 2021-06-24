@@ -277,6 +277,12 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string commodityCode;
 
+				private string billAccountID;
+
+				private string billAccountName;
+
+				private string bizType;
+
 				public string InstanceID
 				{
 					get
@@ -742,6 +748,42 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						commodityCode = value;
+					}
+				}
+
+				public string BillAccountID
+				{
+					get
+					{
+						return billAccountID;
+					}
+					set	
+					{
+						billAccountID = value;
+					}
+				}
+
+				public string BillAccountName
+				{
+					get
+					{
+						return billAccountName;
+					}
+					set	
+					{
+						billAccountName = value;
+					}
+				}
+
+				public string BizType
+				{
+					get
+					{
+						return bizType;
+					}
+					set	
+					{
+						bizType = value;
 					}
 				}
 			}

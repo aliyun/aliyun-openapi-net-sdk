@@ -28,10 +28,10 @@ using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class QuerySavingsPlansInstanceRequest : RpcAcsRequest<QuerySavingsPlansInstanceResponse>
+    public class QueryDPUtilizationDetailRequest : RpcAcsRequest<QueryDPUtilizationDetailResponse>
     {
-        public QuerySavingsPlansInstanceRequest()
-            : base("BssOpenApi", "2017-12-14", "QuerySavingsPlansInstance")
+        public QueryDPUtilizationDetailRequest()
+            : base("BssOpenApi", "2017-12-14", "QueryDPUtilizationDetail")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,19 +41,62 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			Method = MethodType.POST;
         }
 
+		private string deductedInstanceId;
+
+		private string lastToken;
+
+		private string instanceSpec;
+
 		private string endTime;
+
+		private bool? includeShare;
+
+		private string commodityCode;
 
 		private string startTime;
 
-		private string locale;
-
-		private int? pageNum;
-
 		private string instanceId;
 
-		private int? pageSize;
+		private int? limit;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		public string DeductedInstanceId
+		{
+			get
+			{
+				return deductedInstanceId;
+			}
+			set	
+			{
+				deductedInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DeductedInstanceId", value);
+			}
+		}
+
+		public string LastToken
+		{
+			get
+			{
+				return lastToken;
+			}
+			set	
+			{
+				lastToken = value;
+				DictionaryUtil.Add(QueryParameters, "LastToken", value);
+			}
+		}
+
+		public string InstanceSpec
+		{
+			get
+			{
+				return instanceSpec;
+			}
+			set	
+			{
+				instanceSpec = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceSpec", value);
+			}
+		}
 
 		public string EndTime
 		{
@@ -65,6 +108,32 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public bool? IncludeShare
+		{
+			get
+			{
+				return includeShare;
+			}
+			set	
+			{
+				includeShare = value;
+				DictionaryUtil.Add(QueryParameters, "IncludeShare", value.ToString());
+			}
+		}
+
+		public string CommodityCode
+		{
+			get
+			{
+				return commodityCode;
+			}
+			set	
+			{
+				commodityCode = value;
+				DictionaryUtil.Add(QueryParameters, "CommodityCode", value);
 			}
 		}
 
@@ -81,32 +150,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string Locale
-		{
-			get
-			{
-				return locale;
-			}
-			set	
-			{
-				locale = value;
-				DictionaryUtil.Add(QueryParameters, "Locale", value);
-			}
-		}
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
 		public string InstanceId
 		{
 			get
@@ -120,77 +163,22 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public int? PageSize
+		public int? Limit
 		{
 			get
 			{
-				return pageSize;
+				return limit;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				limit = value;
+				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
 			}
 		}
 
-		public List<Tag> Tags
-		{
-			get
-			{
-				return tags;
-			}
-
-			set
-			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
-			}
-		}
-
-		public class Tag
-		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
-
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override QuerySavingsPlansInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryDPUtilizationDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QuerySavingsPlansInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryDPUtilizationDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

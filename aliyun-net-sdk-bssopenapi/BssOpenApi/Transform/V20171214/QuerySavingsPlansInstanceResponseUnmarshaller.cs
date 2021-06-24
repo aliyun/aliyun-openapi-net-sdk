@@ -57,7 +57,17 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				savingsPlansDetailResponse.PrepayFee = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].PrepayFee");
 				savingsPlansDetailResponse.TotalSave = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].TotalSave");
 				savingsPlansDetailResponse.Utilization = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].Utilization");
-				savingsPlansDetailResponse.Share = _ctx.BooleanValue("QuerySavingsPlansInstance.Data.Items["+ i +"].Share");
+				savingsPlansDetailResponse.AllocationStatus = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].AllocationStatus");
+
+				List<QuerySavingsPlansInstanceResponse.QuerySavingsPlansInstance_Data.QuerySavingsPlansInstance_SavingsPlansDetailResponse.QuerySavingsPlansInstance_Tag> savingsPlansDetailResponse_tags = new List<QuerySavingsPlansInstanceResponse.QuerySavingsPlansInstance_Data.QuerySavingsPlansInstance_SavingsPlansDetailResponse.QuerySavingsPlansInstance_Tag>();
+				for (int j = 0; j < _ctx.Length("QuerySavingsPlansInstance.Data.Items["+ i +"].Tags.Length"); j++) {
+					QuerySavingsPlansInstanceResponse.QuerySavingsPlansInstance_Data.QuerySavingsPlansInstance_SavingsPlansDetailResponse.QuerySavingsPlansInstance_Tag tag = new QuerySavingsPlansInstanceResponse.QuerySavingsPlansInstance_Data.QuerySavingsPlansInstance_SavingsPlansDetailResponse.QuerySavingsPlansInstance_Tag();
+					tag.Key = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("QuerySavingsPlansInstance.Data.Items["+ i +"].Tags["+ j +"].Value");
+
+					savingsPlansDetailResponse_tags.Add(tag);
+				}
+				savingsPlansDetailResponse.Tags = savingsPlansDetailResponse_tags;
 
 				data_items.Add(savingsPlansDetailResponse);
 			}

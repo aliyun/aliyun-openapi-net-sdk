@@ -77,6 +77,9 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				item.SubOrderId = _ctx.StringValue("QuerySettleBill.Data.Items["+ i +"].SubOrderId");
 				item.PipCode = _ctx.StringValue("QuerySettleBill.Data.Items["+ i +"].PipCode");
 				item.CommodityCode = _ctx.StringValue("QuerySettleBill.Data.Items["+ i +"].CommodityCode");
+				item.BillAccountID = _ctx.StringValue("QuerySettleBill.Data.Items["+ i +"].BillAccountID");
+				item.BillAccountName = _ctx.StringValue("QuerySettleBill.Data.Items["+ i +"].BillAccountName");
+				item.BizType = _ctx.StringValue("QuerySettleBill.Data.Items["+ i +"].BizType");
 
 				data_items.Add(item);
 			}

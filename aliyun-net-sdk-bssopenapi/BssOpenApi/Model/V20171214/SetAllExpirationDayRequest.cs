@@ -28,10 +28,10 @@ using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class SubscribeBillToOSSRequest : RpcAcsRequest<SubscribeBillToOSSResponse>
+    public class SetAllExpirationDayRequest : RpcAcsRequest<SetAllExpirationDayResponse>
     {
-        public SubscribeBillToOSSRequest()
-            : base("BssOpenApi", "2017-12-14", "SubscribeBillToOSS")
+        public SetAllExpirationDayRequest()
+            : base("BssOpenApi", "2017-12-14", "SetAllExpirationDay")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,84 +41,44 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			Method = MethodType.POST;
         }
 
-		private long? bucketOwnerId;
+		private long? ownerId;
 
-		private string subscribeType;
+		private string unifyExpireDay;
 
-		private string subscribeBucket;
-
-		private string beginBillingCycle;
-
-		private string multAccountRelSubscribe;
-
-		public long? BucketOwnerId
+		public long? OwnerId
 		{
 			get
 			{
-				return bucketOwnerId;
+				return ownerId;
 			}
 			set	
 			{
-				bucketOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "BucketOwnerId", value.ToString());
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		public string SubscribeType
+		public string UnifyExpireDay
 		{
 			get
 			{
-				return subscribeType;
+				return unifyExpireDay;
 			}
 			set	
 			{
-				subscribeType = value;
-				DictionaryUtil.Add(QueryParameters, "SubscribeType", value);
+				unifyExpireDay = value;
+				DictionaryUtil.Add(QueryParameters, "UnifyExpireDay", value);
 			}
 		}
 
-		public string SubscribeBucket
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return subscribeBucket;
-			}
-			set	
-			{
-				subscribeBucket = value;
-				DictionaryUtil.Add(QueryParameters, "SubscribeBucket", value);
-			}
+			return false;
 		}
 
-		public string BeginBillingCycle
-		{
-			get
-			{
-				return beginBillingCycle;
-			}
-			set	
-			{
-				beginBillingCycle = value;
-				DictionaryUtil.Add(QueryParameters, "BeginBillingCycle", value);
-			}
-		}
-
-		public string MultAccountRelSubscribe
-		{
-			get
-			{
-				return multAccountRelSubscribe;
-			}
-			set	
-			{
-				multAccountRelSubscribe = value;
-				DictionaryUtil.Add(QueryParameters, "MultAccountRelSubscribe", value);
-			}
-		}
-
-        public override SubscribeBillToOSSResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SetAllExpirationDayResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SubscribeBillToOSSResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetAllExpirationDayResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
