@@ -22,52 +22,22 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-	public class PreviewSqlResponse : AcsResponse
+	public class ConfigureSubscriptionResponse : AcsResponse
 	{
-
-		private string dynamicCode;
-
-		private string dynamicMessage;
 
 		private string errCode;
 
 		private string errMessage;
 
-		private int? httpStatusCode;
-
 		private string requestId;
 
-		private bool? success;
+		private string success;
 
-		private string streamGraph;
+		private string dtsJobId;
 
-		private string validationException;
+		private string dtsInstanceId;
 
-		private List<string> sqlList;
-
-		public string DynamicCode
-		{
-			get
-			{
-				return dynamicCode;
-			}
-			set	
-			{
-				dynamicCode = value;
-			}
-		}
-
-		public string DynamicMessage
-		{
-			get
-			{
-				return dynamicMessage;
-			}
-			set	
-			{
-				dynamicMessage = value;
-			}
-		}
+		private string httpStatusCode;
 
 		public string ErrCode
 		{
@@ -93,18 +63,6 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -117,7 +75,7 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
-		public bool? Success
+		public string Success
 		{
 			get
 			{
@@ -129,39 +87,39 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
-		public string StreamGraph
+		public string DtsJobId
 		{
 			get
 			{
-				return streamGraph;
+				return dtsJobId;
 			}
 			set	
 			{
-				streamGraph = value;
+				dtsJobId = value;
 			}
 		}
 
-		public string ValidationException
+		public string DtsInstanceId
 		{
 			get
 			{
-				return validationException;
+				return dtsInstanceId;
 			}
 			set	
 			{
-				validationException = value;
+				dtsInstanceId = value;
 			}
 		}
 
-		public List<string> SqlList
+		public string HttpStatusCode
 		{
 			get
 			{
-				return sqlList;
+				return httpStatusCode;
 			}
 			set	
 			{
-				sqlList = value;
+				httpStatusCode = value;
 			}
 		}
 	}

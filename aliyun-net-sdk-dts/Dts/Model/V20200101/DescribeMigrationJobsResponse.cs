@@ -150,6 +150,10 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 			private string payType;
 
+			private string jobCreateTime;
+
+			private string instanceCreateTime;
+
 			private List<DescribeMigrationJobs_SynchronousObject> migrationObject;
 
 			private List<DescribeMigrationJobs_Tag> tags;
@@ -225,6 +229,30 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				set	
 				{
 					payType = value;
+				}
+			}
+
+			public string JobCreateTime
+			{
+				get
+				{
+					return jobCreateTime;
+				}
+				set	
+				{
+					jobCreateTime = value;
+				}
+			}
+
+			public string InstanceCreateTime
+			{
+				get
+				{
+					return instanceCreateTime;
+				}
+				set	
+				{
+					instanceCreateTime = value;
 				}
 			}
 

@@ -27,10 +27,10 @@ using Aliyun.Acs.Dts.Transform.V20200101;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-    public class TransferPayTypeRequest : RpcAcsRequest<TransferPayTypeResponse>
+    public class DeleteConsumerChannelRequest : RpcAcsRequest<DeleteConsumerChannelResponse>
     {
-        public TransferPayTypeRequest()
-            : base("Dts", "2020-01-01", "TransferPayType", "dts", "openAPI")
+        public DeleteConsumerChannelRequest()
+            : base("Dts", "2020-01-01", "DeleteConsumerChannel", "dts", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,37 +40,22 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private string period;
-
-		private string buyCount;
+		private string consumerGroupId;
 
 		private string dtsJobId;
 
-		private string chargeType;
+		private string dtsInstanceId;
 
-		public string Period
+		public string ConsumerGroupId
 		{
 			get
 			{
-				return period;
+				return consumerGroupId;
 			}
 			set	
 			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value);
-			}
-		}
-
-		public string BuyCount
-		{
-			get
-			{
-				return buyCount;
-			}
-			set	
-			{
-				buyCount = value;
-				DictionaryUtil.Add(QueryParameters, "BuyCount", value);
+				consumerGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ConsumerGroupId", value);
 			}
 		}
 
@@ -87,16 +72,16 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
-		public string ChargeType
+		public string DtsInstanceId
 		{
 			get
 			{
-				return chargeType;
+				return dtsInstanceId;
 			}
 			set	
 			{
-				chargeType = value;
-				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+				dtsInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DtsInstanceId", value);
 			}
 		}
 
@@ -105,9 +90,9 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			return false;
 		}
 
-        public override TransferPayTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteConsumerChannelResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TransferPayTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteConsumerChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

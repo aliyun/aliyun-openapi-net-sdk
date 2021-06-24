@@ -27,10 +27,10 @@ using Aliyun.Acs.Dts.Transform.V20200101;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-    public class DescribeDtsJobLogsRequest : RpcAcsRequest<DescribeDtsJobLogsResponse>
+    public class ModifyConsumerChannelRequest : RpcAcsRequest<ModifyConsumerChannelResponse>
     {
-        public DescribeDtsJobLogsRequest()
-            : base("Dts", "2020-01-01", "DescribeDtsJobLogs", "dts", "openAPI")
+        public ModifyConsumerChannelRequest()
+            : base("Dts", "2020-01-01", "ModifyConsumerChannel", "dts", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,82 +40,67 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private long? endTime;
+		private string consumerGroupName;
 
-		private long? startTime;
+		private string consumerGroupId;
 
-		private string type;
+		private string consumerGroupPassword;
 
-		private int? pageNumber;
-
-		private int? pageSize;
+		private string consumerGroupUserName;
 
 		private string dtsJobId;
 
-		private string status;
+		private string dtsInstanceId;
 
-		public long? EndTime
+		public string ConsumerGroupName
 		{
 			get
 			{
-				return endTime;
+				return consumerGroupName;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
+				consumerGroupName = value;
+				DictionaryUtil.Add(QueryParameters, "ConsumerGroupName", value);
 			}
 		}
 
-		public long? StartTime
+		public string ConsumerGroupId
 		{
 			get
 			{
-				return startTime;
+				return consumerGroupId;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+				consumerGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ConsumerGroupId", value);
 			}
 		}
 
-		public string Type
+		public string ConsumerGroupPassword
 		{
 			get
 			{
-				return type;
+				return consumerGroupPassword;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				consumerGroupPassword = value;
+				DictionaryUtil.Add(QueryParameters, "ConsumerGroupPassword", value);
 			}
 		}
 
-		public int? PageNumber
+		public string ConsumerGroupUserName
 		{
 			get
 			{
-				return pageNumber;
+				return consumerGroupUserName;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				consumerGroupUserName = value;
+				DictionaryUtil.Add(QueryParameters, "ConsumerGroupUserName", value);
 			}
 		}
 
@@ -132,16 +117,16 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
-		public string Status
+		public string DtsInstanceId
 		{
 			get
 			{
-				return status;
+				return dtsInstanceId;
 			}
 			set	
 			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
+				dtsInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DtsInstanceId", value);
 			}
 		}
 
@@ -150,9 +135,9 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			return false;
 		}
 
-        public override DescribeDtsJobLogsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyConsumerChannelResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDtsJobLogsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyConsumerChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

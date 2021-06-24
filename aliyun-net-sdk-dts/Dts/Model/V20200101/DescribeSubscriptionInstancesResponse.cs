@@ -160,6 +160,10 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 			private string subscriptionInstanceName;
 
+			private string jobCreateTime;
+
+			private string instanceCreateTime;
+
 			private List<DescribeSubscriptionInstances_SynchronousObject> subscriptionObject;
 
 			private List<DescribeSubscriptionInstances_Tag> tags;
@@ -287,6 +291,30 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				set	
 				{
 					subscriptionInstanceName = value;
+				}
+			}
+
+			public string JobCreateTime
+			{
+				get
+				{
+					return jobCreateTime;
+				}
+				set	
+				{
+					jobCreateTime = value;
+				}
+			}
+
+			public string InstanceCreateTime
+			{
+				get
+				{
+					return instanceCreateTime;
+				}
+				set	
+				{
+					instanceCreateTime = value;
 				}
 			}
 

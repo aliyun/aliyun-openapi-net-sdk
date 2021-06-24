@@ -27,10 +27,10 @@ using Aliyun.Acs.Dts.Transform.V20200101;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-    public class TransferPayTypeRequest : RpcAcsRequest<TransferPayTypeResponse>
+    public class CreateConsumerChannelRequest : RpcAcsRequest<CreateConsumerChannelResponse>
     {
-        public TransferPayTypeRequest()
-            : base("Dts", "2020-01-01", "TransferPayType", "dts", "openAPI")
+        public CreateConsumerChannelRequest()
+            : base("Dts", "2020-01-01", "CreateConsumerChannel", "dts", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,37 +40,52 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private string period;
+		private string consumerGroupName;
 
-		private string buyCount;
+		private string consumerGroupPassword;
+
+		private string consumerGroupUserName;
 
 		private string dtsJobId;
 
-		private string chargeType;
+		private string dtsInstanceId;
 
-		public string Period
+		public string ConsumerGroupName
 		{
 			get
 			{
-				return period;
+				return consumerGroupName;
 			}
 			set	
 			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value);
+				consumerGroupName = value;
+				DictionaryUtil.Add(QueryParameters, "ConsumerGroupName", value);
 			}
 		}
 
-		public string BuyCount
+		public string ConsumerGroupPassword
 		{
 			get
 			{
-				return buyCount;
+				return consumerGroupPassword;
 			}
 			set	
 			{
-				buyCount = value;
-				DictionaryUtil.Add(QueryParameters, "BuyCount", value);
+				consumerGroupPassword = value;
+				DictionaryUtil.Add(QueryParameters, "ConsumerGroupPassword", value);
+			}
+		}
+
+		public string ConsumerGroupUserName
+		{
+			get
+			{
+				return consumerGroupUserName;
+			}
+			set	
+			{
+				consumerGroupUserName = value;
+				DictionaryUtil.Add(QueryParameters, "ConsumerGroupUserName", value);
 			}
 		}
 
@@ -87,16 +102,16 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
-		public string ChargeType
+		public string DtsInstanceId
 		{
 			get
 			{
-				return chargeType;
+				return dtsInstanceId;
 			}
 			set	
 			{
-				chargeType = value;
-				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+				dtsInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DtsInstanceId", value);
 			}
 		}
 
@@ -105,9 +120,9 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			return false;
 		}
 
-        public override TransferPayTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateConsumerChannelResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TransferPayTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateConsumerChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

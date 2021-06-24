@@ -27,10 +27,10 @@ using Aliyun.Acs.Dts.Transform.V20200101;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-    public class TransferPayTypeRequest : RpcAcsRequest<TransferPayTypeResponse>
+    public class TransferInstanceClassRequest : RpcAcsRequest<TransferInstanceClassResponse>
     {
-        public TransferPayTypeRequest()
-            : base("Dts", "2020-01-01", "TransferPayType", "dts", "openAPI")
+        public TransferInstanceClassRequest()
+            : base("Dts", "2020-01-01", "TransferInstanceClass", "dts", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,37 +40,22 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private string period;
-
-		private string buyCount;
+		private string instanceClass;
 
 		private string dtsJobId;
 
-		private string chargeType;
+		private string orderType;
 
-		public string Period
+		public string InstanceClass
 		{
 			get
 			{
-				return period;
+				return instanceClass;
 			}
 			set	
 			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value);
-			}
-		}
-
-		public string BuyCount
-		{
-			get
-			{
-				return buyCount;
-			}
-			set	
-			{
-				buyCount = value;
-				DictionaryUtil.Add(QueryParameters, "BuyCount", value);
+				instanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceClass", value);
 			}
 		}
 
@@ -87,16 +72,16 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
-		public string ChargeType
+		public string OrderType
 		{
 			get
 			{
-				return chargeType;
+				return orderType;
 			}
 			set	
 			{
-				chargeType = value;
-				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+				orderType = value;
+				DictionaryUtil.Add(QueryParameters, "OrderType", value);
 			}
 		}
 
@@ -105,9 +90,9 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			return false;
 		}
 
-        public override TransferPayTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TransferInstanceClassResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TransferPayTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TransferInstanceClassResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

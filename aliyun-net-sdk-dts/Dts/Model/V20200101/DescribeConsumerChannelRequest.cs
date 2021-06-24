@@ -27,10 +27,10 @@ using Aliyun.Acs.Dts.Transform.V20200101;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-    public class TransferPayTypeRequest : RpcAcsRequest<TransferPayTypeResponse>
+    public class DescribeConsumerChannelRequest : RpcAcsRequest<DescribeConsumerChannelResponse>
     {
-        public TransferPayTypeRequest()
-            : base("Dts", "2020-01-01", "TransferPayType", "dts", "openAPI")
+        public DescribeConsumerChannelRequest()
+            : base("Dts", "2020-01-01", "DescribeConsumerChannel", "dts", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,37 +40,37 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private string period;
+		private int? pageNumber;
 
-		private string buyCount;
+		private int? pageSize;
 
 		private string dtsJobId;
 
-		private string chargeType;
+		private string dtsInstanceId;
 
-		public string Period
+		public int? PageNumber
 		{
 			get
 			{
-				return period;
+				return pageNumber;
 			}
 			set	
 			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string BuyCount
+		public int? PageSize
 		{
 			get
 			{
-				return buyCount;
+				return pageSize;
 			}
 			set	
 			{
-				buyCount = value;
-				DictionaryUtil.Add(QueryParameters, "BuyCount", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -87,16 +87,16 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
-		public string ChargeType
+		public string DtsInstanceId
 		{
 			get
 			{
-				return chargeType;
+				return dtsInstanceId;
 			}
 			set	
 			{
-				chargeType = value;
-				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+				dtsInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DtsInstanceId", value);
 			}
 		}
 
@@ -105,9 +105,9 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			return false;
 		}
 
-        public override TransferPayTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeConsumerChannelResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TransferPayTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeConsumerChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

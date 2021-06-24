@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Dts.Transform.V20200101
 				synchronizationInstance.SynchronizationJobClass = _ctx.StringValue("DescribeSynchronizationJobs.SynchronizationInstances["+ i +"].SynchronizationJobClass");
 				synchronizationInstance.SynchronizationJobId = _ctx.StringValue("DescribeSynchronizationJobs.SynchronizationInstances["+ i +"].SynchronizationJobId");
 				synchronizationInstance.SynchronizationJobName = _ctx.StringValue("DescribeSynchronizationJobs.SynchronizationInstances["+ i +"].SynchronizationJobName");
+				synchronizationInstance.JobCreateTime = _ctx.StringValue("DescribeSynchronizationJobs.SynchronizationInstances["+ i +"].JobCreateTime");
+				synchronizationInstance.InstanceCreateTime = _ctx.StringValue("DescribeSynchronizationJobs.SynchronizationInstances["+ i +"].InstanceCreateTime");
 
 				DescribeSynchronizationJobsResponse.DescribeSynchronizationJobs_SynchronizationInstance.DescribeSynchronizationJobs_DataInitializationStatus dataInitializationStatus = new DescribeSynchronizationJobsResponse.DescribeSynchronizationJobs_SynchronizationInstance.DescribeSynchronizationJobs_DataInitializationStatus();
 				dataInitializationStatus.ErrorMessage = _ctx.StringValue("DescribeSynchronizationJobs.SynchronizationInstances["+ i +"].DataInitializationStatus.ErrorMessage");

@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Dts.Transform.V20200101
 				migrationJob.MigrationJobName = _ctx.StringValue("DescribeMigrationJobs.MigrationJobs["+ i +"].MigrationJobName");
 				migrationJob.MigrationJobStatus = _ctx.StringValue("DescribeMigrationJobs.MigrationJobs["+ i +"].MigrationJobStatus");
 				migrationJob.PayType = _ctx.StringValue("DescribeMigrationJobs.MigrationJobs["+ i +"].PayType");
+				migrationJob.JobCreateTime = _ctx.StringValue("DescribeMigrationJobs.MigrationJobs["+ i +"].JobCreateTime");
+				migrationJob.InstanceCreateTime = _ctx.StringValue("DescribeMigrationJobs.MigrationJobs["+ i +"].InstanceCreateTime");
 
 				DescribeMigrationJobsResponse.DescribeMigrationJobs_MigrationJob.DescribeMigrationJobs_DataInitialization dataInitialization = new DescribeMigrationJobsResponse.DescribeMigrationJobs_MigrationJob.DescribeMigrationJobs_DataInitialization();
 				dataInitialization.ErrorMessage = _ctx.StringValue("DescribeMigrationJobs.MigrationJobs["+ i +"].DataInitialization.ErrorMessage");

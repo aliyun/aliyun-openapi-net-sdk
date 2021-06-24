@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Dts.Transform.V20200101
 				subscriptionInstance.SubscribeTopic = _ctx.StringValue("DescribeSubscriptionInstances.SubscriptionInstances["+ i +"].SubscribeTopic");
 				subscriptionInstance.SubscriptionInstanceID = _ctx.StringValue("DescribeSubscriptionInstances.SubscriptionInstances["+ i +"].SubscriptionInstanceID");
 				subscriptionInstance.SubscriptionInstanceName = _ctx.StringValue("DescribeSubscriptionInstances.SubscriptionInstances["+ i +"].SubscriptionInstanceName");
+				subscriptionInstance.JobCreateTime = _ctx.StringValue("DescribeSubscriptionInstances.SubscriptionInstances["+ i +"].JobCreateTime");
+				subscriptionInstance.InstanceCreateTime = _ctx.StringValue("DescribeSubscriptionInstances.SubscriptionInstances["+ i +"].InstanceCreateTime");
 
 				DescribeSubscriptionInstancesResponse.DescribeSubscriptionInstances_SubscriptionInstance.DescribeSubscriptionInstances_SourceEndpoint sourceEndpoint = new DescribeSubscriptionInstancesResponse.DescribeSubscriptionInstances_SubscriptionInstance.DescribeSubscriptionInstances_SourceEndpoint();
 				sourceEndpoint.InstanceID = _ctx.StringValue("DescribeSubscriptionInstances.SubscriptionInstances["+ i +"].SourceEndpoint.InstanceID");

@@ -27,10 +27,10 @@ using Aliyun.Acs.Dts.Transform.V20200101;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-    public class PreviewSqlRequest : RpcAcsRequest<PreviewSqlResponse>
+    public class RenewInstanceRequest : RpcAcsRequest<RenewInstanceResponse>
     {
-        public PreviewSqlRequest()
-            : base("Dts", "2020-01-01", "PreviewSql", "dts", "openAPI")
+        public RenewInstanceRequest()
+            : base("Dts", "2020-01-01", "RenewInstance", "dts", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,18 +40,63 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private string etlCalculator;
+		private string period;
 
-		public string EtlCalculator
+		private string buyCount;
+
+		private string dtsJobId;
+
+		private string chargeType;
+
+		public string Period
 		{
 			get
 			{
-				return etlCalculator;
+				return period;
 			}
 			set	
 			{
-				etlCalculator = value;
-				DictionaryUtil.Add(QueryParameters, "EtlCalculator", value);
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value);
+			}
+		}
+
+		public string BuyCount
+		{
+			get
+			{
+				return buyCount;
+			}
+			set	
+			{
+				buyCount = value;
+				DictionaryUtil.Add(QueryParameters, "BuyCount", value);
+			}
+		}
+
+		public string DtsJobId
+		{
+			get
+			{
+				return dtsJobId;
+			}
+			set	
+			{
+				dtsJobId = value;
+				DictionaryUtil.Add(QueryParameters, "DtsJobId", value);
+			}
+		}
+
+		public string ChargeType
+		{
+			get
+			{
+				return chargeType;
+			}
+			set	
+			{
+				chargeType = value;
+				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
 			}
 		}
 
@@ -60,9 +105,9 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			return false;
 		}
 
-        public override PreviewSqlResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RenewInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return PreviewSqlResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RenewInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

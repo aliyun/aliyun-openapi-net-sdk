@@ -122,6 +122,10 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 			private string synchronizationJobName;
 
+			private string jobCreateTime;
+
+			private string instanceCreateTime;
+
 			private List<DescribeSynchronizationJobs_Tag> tags;
 
 			private List<DescribeSynchronizationJobs_SynchronizationObject> synchronizationObjects;
@@ -281,6 +285,30 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				set	
 				{
 					synchronizationJobName = value;
+				}
+			}
+
+			public string JobCreateTime
+			{
+				get
+				{
+					return jobCreateTime;
+				}
+				set	
+				{
+					jobCreateTime = value;
+				}
+			}
+
+			public string InstanceCreateTime
+			{
+				get
+				{
+					return instanceCreateTime;
+				}
+				set	
+				{
+					instanceCreateTime = value;
 				}
 			}
 

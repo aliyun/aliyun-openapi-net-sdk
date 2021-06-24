@@ -22,22 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-	public class DescribeDtsJobLogsResponse : AcsResponse
+	public class DescribeConsumerChannelResponse : AcsResponse
 	{
-
-		private string dynamicCode;
-
-		private string dynamicMessage;
 
 		private string errCode;
 
 		private string errMessage;
 
-		private int? httpStatusCode;
-
 		private string requestId;
 
-		private bool? success;
+		private string success;
+
+		private string httpStatusCode;
 
 		private int? pageNumber;
 
@@ -45,31 +41,7 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 		private long? totalRecordCount;
 
-		private List<DescribeDtsJobLogs_JobRunningLog> jobRunningLogs;
-
-		public string DynamicCode
-		{
-			get
-			{
-				return dynamicCode;
-			}
-			set	
-			{
-				dynamicCode = value;
-			}
-		}
-
-		public string DynamicMessage
-		{
-			get
-			{
-				return dynamicMessage;
-			}
-			set	
-			{
-				dynamicMessage = value;
-			}
-		}
+		private List<DescribeConsumerChannel_ConsumerChannel> consumerChannels;
 
 		public string ErrCode
 		{
@@ -95,18 +67,6 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -119,7 +79,7 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
-		public bool? Success
+		public string Success
 		{
 			get
 			{
@@ -128,6 +88,18 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
 			}
 		}
 
@@ -167,102 +139,102 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			}
 		}
 
-		public List<DescribeDtsJobLogs_JobRunningLog> JobRunningLogs
+		public List<DescribeConsumerChannel_ConsumerChannel> ConsumerChannels
 		{
 			get
 			{
-				return jobRunningLogs;
+				return consumerChannels;
 			}
 			set	
 			{
-				jobRunningLogs = value;
+				consumerChannels = value;
 			}
 		}
 
-		public class DescribeDtsJobLogs_JobRunningLog
+		public class DescribeConsumerChannel_ConsumerChannel
 		{
 
-			private long? id;
+			private string consumerGroupId;
 
-			private string jobId;
+			private string consumerGroupName;
 
-			private long? logDatetime;
+			private string consumptionCheckpoint;
 
-			private string contentKey;
+			private long? unconsumedData;
 
-			private string status;
+			private long? messageDelay;
 
-			private List<string> _params;
+			private string consumerGroupUserName;
 
-			public long? Id
+			public string ConsumerGroupId
 			{
 				get
 				{
-					return id;
+					return consumerGroupId;
 				}
 				set	
 				{
-					id = value;
+					consumerGroupId = value;
 				}
 			}
 
-			public string JobId
+			public string ConsumerGroupName
 			{
 				get
 				{
-					return jobId;
+					return consumerGroupName;
 				}
 				set	
 				{
-					jobId = value;
+					consumerGroupName = value;
 				}
 			}
 
-			public long? LogDatetime
+			public string ConsumptionCheckpoint
 			{
 				get
 				{
-					return logDatetime;
+					return consumptionCheckpoint;
 				}
 				set	
 				{
-					logDatetime = value;
+					consumptionCheckpoint = value;
 				}
 			}
 
-			public string ContentKey
+			public long? UnconsumedData
 			{
 				get
 				{
-					return contentKey;
+					return unconsumedData;
 				}
 				set	
 				{
-					contentKey = value;
+					unconsumedData = value;
 				}
 			}
 
-			public string Status
+			public long? MessageDelay
 			{
 				get
 				{
-					return status;
+					return messageDelay;
 				}
 				set	
 				{
-					status = value;
+					messageDelay = value;
 				}
 			}
 
-			public List<string> _Params
+			public string ConsumerGroupUserName
 			{
 				get
 				{
-					return _params;
+					return consumerGroupUserName;
 				}
 				set	
 				{
-					_params = value;
+					consumerGroupUserName = value;
 				}
 			}
 		}
