@@ -75,6 +75,10 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private string diskThreshold;
 
+		private long? createMilliseconds;
+
+		private long? expiredMilliseconds;
+
 		private List<GetLindormInstance_Engine> engineList;
 
 		public string RequestId
@@ -374,6 +378,30 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			set	
 			{
 				diskThreshold = value;
+			}
+		}
+
+		public long? CreateMilliseconds
+		{
+			get
+			{
+				return createMilliseconds;
+			}
+			set	
+			{
+				createMilliseconds = value;
+			}
+		}
+
+		public long? ExpiredMilliseconds
+		{
+			get
+			{
+				return expiredMilliseconds;
+			}
+			set	
+			{
+				expiredMilliseconds = value;
 			}
 		}
 

@@ -126,6 +126,10 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 			private string vpcId;
 
+			private long? createMilliseconds;
+
+			private long? expiredMilliseconds;
+
 			public string InstanceId
 			{
 				get
@@ -291,6 +295,30 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 				set	
 				{
 					vpcId = value;
+				}
+			}
+
+			public long? CreateMilliseconds
+			{
+				get
+				{
+					return createMilliseconds;
+				}
+				set	
+				{
+					createMilliseconds = value;
+				}
+			}
+
+			public long? ExpiredMilliseconds
+			{
+				get
+				{
+					return expiredMilliseconds;
+				}
+				set	
+				{
+					expiredMilliseconds = value;
 				}
 			}
 		}

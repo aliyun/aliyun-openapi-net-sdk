@@ -53,6 +53,8 @@ namespace Aliyun.Acs.hitsdb.Transform.V20200615
 				lindormInstanceSummary.EngineType = _ctx.StringValue("GetLindormInstanceList.InstanceList["+ i +"].EngineType");
 				lindormInstanceSummary.AliUid = _ctx.LongValue("GetLindormInstanceList.InstanceList["+ i +"].AliUid");
 				lindormInstanceSummary.VpcId = _ctx.StringValue("GetLindormInstanceList.InstanceList["+ i +"].VpcId");
+				lindormInstanceSummary.CreateMilliseconds = _ctx.LongValue("GetLindormInstanceList.InstanceList["+ i +"].CreateMilliseconds");
+				lindormInstanceSummary.ExpiredMilliseconds = _ctx.LongValue("GetLindormInstanceList.InstanceList["+ i +"].ExpiredMilliseconds");
 
 				getLindormInstanceListResponse_instanceList.Add(lindormInstanceSummary);
 			}
