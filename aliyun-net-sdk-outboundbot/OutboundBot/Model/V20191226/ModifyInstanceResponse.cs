@@ -124,9 +124,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private int? maxConcurrentConversation;
 
+			private string nluServiceType;
+
 			private string owner;
 
-			private string nluServiceType;
+			private long? creatorId;
+
+			private string creatorName;
+
+			private string ownerName;
 
 			private ModifyInstance_NluProfile nluProfile;
 
@@ -202,6 +208,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
+			public string NluServiceType
+			{
+				get
+				{
+					return nluServiceType;
+				}
+				set	
+				{
+					nluServiceType = value;
+				}
+			}
+
 			public string Owner
 			{
 				get
@@ -214,15 +232,39 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string NluServiceType
+			public long? CreatorId
 			{
 				get
 				{
-					return nluServiceType;
+					return creatorId;
 				}
 				set	
 				{
-					nluServiceType = value;
+					creatorId = value;
+				}
+			}
+
+			public string CreatorName
+			{
+				get
+				{
+					return creatorName;
+				}
+				set	
+				{
+					creatorName = value;
+				}
+			}
+
+			public string OwnerName
+			{
+				get
+				{
+					return ownerName;
+				}
+				set	
+				{
+					ownerName = value;
 				}
 			}
 
@@ -241,23 +283,11 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			public class ModifyInstance_NluProfile
 			{
 
-				private string endpoint;
-
 				private string accessKey;
 
-				private string secretKey;
+				private string endpoint;
 
-				public string Endpoint
-				{
-					get
-					{
-						return endpoint;
-					}
-					set	
-					{
-						endpoint = value;
-					}
-				}
+				private string secretKey;
 
 				public string AccessKey
 				{
@@ -268,6 +298,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						accessKey = value;
+					}
+				}
+
+				public string Endpoint
+				{
+					get
+					{
+						return endpoint;
+					}
+					set	
+					{
+						endpoint = value;
 					}
 				}
 

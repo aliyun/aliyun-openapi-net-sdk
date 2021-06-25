@@ -37,6 +37,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private bool? success;
 
+		private List<string> jobsId;
+
 		public string Code
 		{
 			get
@@ -106,6 +108,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public List<string> JobsId
+		{
+			get
+			{
+				return jobsId;
+			}
+			set	
+			{
+				jobsId = value;
 			}
 		}
 	}

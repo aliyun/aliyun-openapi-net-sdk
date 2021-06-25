@@ -174,6 +174,12 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private long? updateTime;
 
+			private string chatbotId;
+
+			private string asrConfig;
+
+			private string ttsConfig;
+
 			public string DebugStatus
 			{
 				get
@@ -291,6 +297,42 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					updateTime = value;
+				}
+			}
+
+			public string ChatbotId
+			{
+				get
+				{
+					return chatbotId;
+				}
+				set	
+				{
+					chatbotId = value;
+				}
+			}
+
+			public string AsrConfig
+			{
+				get
+				{
+					return asrConfig;
+				}
+				set	
+				{
+					asrConfig = value;
+				}
+			}
+
+			public string TtsConfig
+			{
+				get
+				{
+					return ttsConfig;
+				}
+				set	
+				{
+					ttsConfig = value;
 				}
 			}
 		}

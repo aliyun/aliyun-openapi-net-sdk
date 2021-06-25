@@ -39,17 +39,28 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 
 			CreateJobGroupResponse.CreateJobGroup_JobGroup jobGroup = new CreateJobGroupResponse.CreateJobGroup_JobGroup();
 			jobGroup.CreationTime = _ctx.LongValue("CreateJobGroup.JobGroup.CreationTime");
+			jobGroup.JobDataParsingTaskId = _ctx.StringValue("CreateJobGroup.JobGroup.JobDataParsingTaskId");
 			jobGroup.JobFilePath = _ctx.StringValue("CreateJobGroup.JobGroup.JobFilePath");
 			jobGroup.JobGroupDescription = _ctx.StringValue("CreateJobGroup.JobGroup.JobGroupDescription");
 			jobGroup.JobGroupId = _ctx.StringValue("CreateJobGroup.JobGroup.JobGroupId");
 			jobGroup.JobGroupName = _ctx.StringValue("CreateJobGroup.JobGroup.JobGroupName");
+			jobGroup.ModifyTime = _ctx.StringValue("CreateJobGroup.JobGroup.ModifyTime");
 			jobGroup.ScenarioId = _ctx.StringValue("CreateJobGroup.JobGroup.ScenarioId");
+			jobGroup.ScriptName = _ctx.StringValue("CreateJobGroup.JobGroup.ScriptName");
+			jobGroup.ScriptVersion = _ctx.StringValue("CreateJobGroup.JobGroup.ScriptVersion");
+			jobGroup.Status = _ctx.StringValue("CreateJobGroup.JobGroup.Status");
 
 			List<string> jobGroup_callingNumbers = new List<string>();
 			for (int i = 0; i < _ctx.Length("CreateJobGroup.JobGroup.CallingNumbers.Length"); i++) {
 				jobGroup_callingNumbers.Add(_ctx.StringValue("CreateJobGroup.JobGroup.CallingNumbers["+ i +"]"));
 			}
 			jobGroup.CallingNumbers = jobGroup_callingNumbers;
+
+			CreateJobGroupResponse.CreateJobGroup_JobGroup.CreateJobGroup_ExportProgress exportProgress = new CreateJobGroupResponse.CreateJobGroup_JobGroup.CreateJobGroup_ExportProgress();
+			exportProgress.FileHttpUrl = _ctx.StringValue("CreateJobGroup.JobGroup.ExportProgress.FileHttpUrl");
+			exportProgress.Progress = _ctx.StringValue("CreateJobGroup.JobGroup.ExportProgress.Progress");
+			exportProgress.Status = _ctx.StringValue("CreateJobGroup.JobGroup.ExportProgress.Status");
+			jobGroup.ExportProgress = exportProgress;
 
 			CreateJobGroupResponse.CreateJobGroup_JobGroup.CreateJobGroup_Strategy strategy = new CreateJobGroupResponse.CreateJobGroup_JobGroup.CreateJobGroup_Strategy();
 			strategy.Customized = _ctx.StringValue("CreateJobGroup.JobGroup.Strategy.Customized");

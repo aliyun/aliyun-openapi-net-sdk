@@ -42,6 +42,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private int? maxConcurrentConversation;
 
+		private string resourceGroupId;
+
 		private string instanceName;
 
 		private string instanceDescription;
@@ -56,6 +58,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				maxConcurrentConversation = value;
 				DictionaryUtil.Add(QueryParameters, "MaxConcurrentConversation", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

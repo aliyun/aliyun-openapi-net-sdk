@@ -46,9 +46,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string instanceId;
 
+		private string rosterType;
+
+		private string jobDataParsingTaskId;
+
 		private string strategyJson;
 
 		private string jobGroupId;
+
+		private bool? isAsynchrony;
 
 		public List<string> JobsJsons
 		{
@@ -97,6 +103,32 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
+		public string RosterType
+		{
+			get
+			{
+				return rosterType;
+			}
+			set	
+			{
+				rosterType = value;
+				DictionaryUtil.Add(QueryParameters, "RosterType", value);
+			}
+		}
+
+		public string JobDataParsingTaskId
+		{
+			get
+			{
+				return jobDataParsingTaskId;
+			}
+			set	
+			{
+				jobDataParsingTaskId = value;
+				DictionaryUtil.Add(QueryParameters, "JobDataParsingTaskId", value);
+			}
+		}
+
 		public string StrategyJson
 		{
 			get
@@ -120,6 +152,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				jobGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "JobGroupId", value);
+			}
+		}
+
+		public bool? IsAsynchrony
+		{
+			get
+			{
+				return isAsynchrony;
+			}
+			set	
+			{
+				isAsynchrony = value;
+				DictionaryUtil.Add(QueryParameters, "IsAsynchrony", value.ToString());
 			}
 		}
 

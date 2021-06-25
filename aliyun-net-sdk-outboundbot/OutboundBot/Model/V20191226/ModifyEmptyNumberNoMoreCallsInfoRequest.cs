@@ -27,10 +27,10 @@ using Aliyun.Acs.OutboundBot.Transform.V20191226;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-    public class ListMediaRequest : RpcAcsRequest<ListMediaResponse>
+    public class ModifyEmptyNumberNoMoreCallsInfoRequest : RpcAcsRequest<ModifyEmptyNumberNoMoreCallsInfoResponse>
     {
-        public ListMediaRequest()
-            : base("OutboundBot", "2019-12-26", "ListMedia", "outboundbot", "openAPI")
+        public ModifyEmptyNumberNoMoreCallsInfoRequest()
+            : base("OutboundBot", "2019-12-26", "ModifyEmptyNumberNoMoreCallsInfo", "outboundbot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,74 +40,54 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			Method = MethodType.POST;
         }
 
-		private int? pageNumber;
+		private int? strategyLevel;
 
-		private string instanceId;
+		private bool? emptyNumberNoMoreCalls;
 
-		private int? pageSize;
+		private string entryId;
 
-		private string namePrefix;
-
-		public int? PageNumber
+		public int? StrategyLevel
 		{
 			get
 			{
-				return pageNumber;
+				return strategyLevel;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				strategyLevel = value;
+				DictionaryUtil.Add(QueryParameters, "StrategyLevel", value.ToString());
 			}
 		}
 
-		public string InstanceId
+		public bool? EmptyNumberNoMoreCalls
 		{
 			get
 			{
-				return instanceId;
+				return emptyNumberNoMoreCalls;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				emptyNumberNoMoreCalls = value;
+				DictionaryUtil.Add(QueryParameters, "EmptyNumberNoMoreCalls", value.ToString());
 			}
 		}
 
-		public int? PageSize
+		public string EntryId
 		{
 			get
 			{
-				return pageSize;
+				return entryId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				entryId = value;
+				DictionaryUtil.Add(QueryParameters, "EntryId", value);
 			}
 		}
 
-		public string NamePrefix
-		{
-			get
-			{
-				return namePrefix;
-			}
-			set	
-			{
-				namePrefix = value;
-				DictionaryUtil.Add(QueryParameters, "NamePrefix", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override ListMediaResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyEmptyNumberNoMoreCallsInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListMediaResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyEmptyNumberNoMoreCallsInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

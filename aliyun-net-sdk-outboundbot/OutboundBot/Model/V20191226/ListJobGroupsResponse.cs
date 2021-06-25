@@ -35,6 +35,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private bool? success;
 
+		private string asyncTaskId;
+
 		private ListJobGroups_JobGroups jobGroups;
 
 		public string Code
@@ -94,6 +96,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string AsyncTaskId
+		{
+			get
+			{
+				return asyncTaskId;
+			}
+			set	
+			{
+				asyncTaskId = value;
 			}
 		}
 
@@ -183,7 +197,17 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 				private string scriptName;
 
+				private string jobDataParsingTaskId;
+
+				private string modifyTime;
+
+				private string scriptVersion;
+
+				private string status;
+
 				private ListJobGroups_Progress progress;
+
+				private ListJobGroups_ExportProgress exportProgress;
 
 				private ListJobGroups_Strategy strategy;
 
@@ -259,6 +283,54 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
+				public string JobDataParsingTaskId
+				{
+					get
+					{
+						return jobDataParsingTaskId;
+					}
+					set	
+					{
+						jobDataParsingTaskId = value;
+					}
+				}
+
+				public string ModifyTime
+				{
+					get
+					{
+						return modifyTime;
+					}
+					set	
+					{
+						modifyTime = value;
+					}
+				}
+
+				public string ScriptVersion
+				{
+					get
+					{
+						return scriptVersion;
+					}
+					set	
+					{
+						scriptVersion = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
 				public ListJobGroups_Progress Progress
 				{
 					get
@@ -268,6 +340,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						progress = value;
+					}
+				}
+
+				public ListJobGroups_ExportProgress ExportProgress
+				{
+					get
+					{
+						return exportProgress;
+					}
+					set	
+					{
+						exportProgress = value;
 					}
 				}
 
@@ -297,6 +381,16 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					private int? totalJobs;
 
 					private int? totalNotAnswered;
+
+					private int? cancelledNum;
+
+					private int? failedNum;
+
+					private int? scheduling;
+
+					private int? pausedNum;
+
+					private int? executingNum;
 
 					public int? Duration
 					{
@@ -367,6 +461,112 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						set	
 						{
 							totalNotAnswered = value;
+						}
+					}
+
+					public int? CancelledNum
+					{
+						get
+						{
+							return cancelledNum;
+						}
+						set	
+						{
+							cancelledNum = value;
+						}
+					}
+
+					public int? FailedNum
+					{
+						get
+						{
+							return failedNum;
+						}
+						set	
+						{
+							failedNum = value;
+						}
+					}
+
+					public int? Scheduling
+					{
+						get
+						{
+							return scheduling;
+						}
+						set	
+						{
+							scheduling = value;
+						}
+					}
+
+					public int? PausedNum
+					{
+						get
+						{
+							return pausedNum;
+						}
+						set	
+						{
+							pausedNum = value;
+						}
+					}
+
+					public int? ExecutingNum
+					{
+						get
+						{
+							return executingNum;
+						}
+						set	
+						{
+							executingNum = value;
+						}
+					}
+				}
+
+				public class ListJobGroups_ExportProgress
+				{
+
+					private string fileHttpUrl;
+
+					private string progress;
+
+					private string status;
+
+					public string FileHttpUrl
+					{
+						get
+						{
+							return fileHttpUrl;
+						}
+						set	
+						{
+							fileHttpUrl = value;
+						}
+					}
+
+					public string Progress
+					{
+						get
+						{
+							return progress;
+						}
+						set	
+						{
+							progress = value;
+						}
+					}
+
+					public string Status
+					{
+						get
+						{
+							return status;
+						}
+						set	
+						{
+							status = value;
 						}
 					}
 				}

@@ -39,19 +39,29 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 
 			DescribeJobGroupResponse.DescribeJobGroup_JobGroup jobGroup = new DescribeJobGroupResponse.DescribeJobGroup_JobGroup();
 			jobGroup.CreationTime = _ctx.LongValue("DescribeJobGroup.JobGroup.CreationTime");
+			jobGroup.JobDataParsingTaskId = _ctx.StringValue("DescribeJobGroup.JobGroup.JobDataParsingTaskId");
 			jobGroup.JobFilePath = _ctx.StringValue("DescribeJobGroup.JobGroup.JobFilePath");
 			jobGroup.JobGroupDescription = _ctx.StringValue("DescribeJobGroup.JobGroup.JobGroupDescription");
 			jobGroup.JobGroupId = _ctx.StringValue("DescribeJobGroup.JobGroup.JobGroupId");
 			jobGroup.JobGroupName = _ctx.StringValue("DescribeJobGroup.JobGroup.JobGroupName");
+			jobGroup.ModifyTime = _ctx.StringValue("DescribeJobGroup.JobGroup.ModifyTime");
 			jobGroup.ScenarioId = _ctx.StringValue("DescribeJobGroup.JobGroup.ScenarioId");
 			jobGroup.ScriptId = _ctx.StringValue("DescribeJobGroup.JobGroup.ScriptId");
 			jobGroup.ScriptName = _ctx.StringValue("DescribeJobGroup.JobGroup.ScriptName");
+			jobGroup.ScriptVersion = _ctx.StringValue("DescribeJobGroup.JobGroup.ScriptVersion");
+			jobGroup.Status = _ctx.StringValue("DescribeJobGroup.JobGroup.Status");
 
 			List<string> jobGroup_callingNumbers = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeJobGroup.JobGroup.CallingNumbers.Length"); i++) {
 				jobGroup_callingNumbers.Add(_ctx.StringValue("DescribeJobGroup.JobGroup.CallingNumbers["+ i +"]"));
 			}
 			jobGroup.CallingNumbers = jobGroup_callingNumbers;
+
+			DescribeJobGroupResponse.DescribeJobGroup_JobGroup.DescribeJobGroup_ExportProgress exportProgress = new DescribeJobGroupResponse.DescribeJobGroup_JobGroup.DescribeJobGroup_ExportProgress();
+			exportProgress.FileHttpUrl = _ctx.StringValue("DescribeJobGroup.JobGroup.ExportProgress.FileHttpUrl");
+			exportProgress.Progress = _ctx.StringValue("DescribeJobGroup.JobGroup.ExportProgress.Progress");
+			exportProgress.Status = _ctx.StringValue("DescribeJobGroup.JobGroup.ExportProgress.Status");
+			jobGroup.ExportProgress = exportProgress;
 
 			DescribeJobGroupResponse.DescribeJobGroup_JobGroup.DescribeJobGroup_Progress progress = new DescribeJobGroupResponse.DescribeJobGroup_JobGroup.DescribeJobGroup_Progress();
 			progress.Cancelled = _ctx.IntegerValue("DescribeJobGroup.JobGroup.Progress.Cancelled");
@@ -118,6 +128,14 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			}
 			strategy.WorkingTime = strategy_workingTime;
 			jobGroup.Strategy = strategy;
+
+			DescribeJobGroupResponse.DescribeJobGroup_JobGroup.DescribeJobGroup_Result result = new DescribeJobGroupResponse.DescribeJobGroup_JobGroup.DescribeJobGroup_Result();
+			result.NoInteractNum = _ctx.IntegerValue("DescribeJobGroup.JobGroup.Result.NoInteractNum");
+			result.FinishedNum = _ctx.IntegerValue("DescribeJobGroup.JobGroup.Result.FinishedNum");
+			result.ClientHangupNum = _ctx.IntegerValue("DescribeJobGroup.JobGroup.Result.ClientHangupNum");
+			result.TimeoutHangupNum = _ctx.IntegerValue("DescribeJobGroup.JobGroup.Result.TimeoutHangupNum");
+			result.UnrecognizedNum = _ctx.IntegerValue("DescribeJobGroup.JobGroup.Result.UnrecognizedNum");
+			jobGroup.Result = result;
 			describeJobGroupResponse.JobGroup = jobGroup;
         
 			return describeJobGroupResponse;

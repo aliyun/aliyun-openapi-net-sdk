@@ -114,6 +114,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private long? creationTime;
 
+			private string jobDataParsingTaskId;
+
 			private string jobFilePath;
 
 			private string jobGroupDescription;
@@ -122,9 +124,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private string jobGroupName;
 
+			private string modifyTime;
+
 			private string scenarioId;
 
+			private string scriptName;
+
+			private string scriptVersion;
+
+			private string status;
+
 			private List<string> callingNumbers;
+
+			private CreateJobGroup_ExportProgress exportProgress;
 
 			private CreateJobGroup_Strategy strategy;
 
@@ -137,6 +149,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string JobDataParsingTaskId
+			{
+				get
+				{
+					return jobDataParsingTaskId;
+				}
+				set	
+				{
+					jobDataParsingTaskId = value;
 				}
 			}
 
@@ -188,6 +212,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
+			public string ModifyTime
+			{
+				get
+				{
+					return modifyTime;
+				}
+				set	
+				{
+					modifyTime = value;
+				}
+			}
+
 			public string ScenarioId
 			{
 				get
@@ -197,6 +233,42 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					scenarioId = value;
+				}
+			}
+
+			public string ScriptName
+			{
+				get
+				{
+					return scriptName;
+				}
+				set	
+				{
+					scriptName = value;
+				}
+			}
+
+			public string ScriptVersion
+			{
+				get
+				{
+					return scriptVersion;
+				}
+				set	
+				{
+					scriptVersion = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 
@@ -212,6 +284,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
+			public CreateJobGroup_ExportProgress ExportProgress
+			{
+				get
+				{
+					return exportProgress;
+				}
+				set	
+				{
+					exportProgress = value;
+				}
+			}
+
 			public CreateJobGroup_Strategy Strategy
 			{
 				get
@@ -221,6 +305,52 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					strategy = value;
+				}
+			}
+
+			public class CreateJobGroup_ExportProgress
+			{
+
+				private string fileHttpUrl;
+
+				private string progress;
+
+				private string status;
+
+				public string FileHttpUrl
+				{
+					get
+					{
+						return fileHttpUrl;
+					}
+					set	
+					{
+						fileHttpUrl = value;
+					}
+				}
+
+				public string Progress
+				{
+					get
+					{
+						return progress;
+					}
+					set	
+					{
+						progress = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
 				}
 			}
 

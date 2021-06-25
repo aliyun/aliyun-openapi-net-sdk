@@ -51,6 +51,9 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			script.ScriptName = _ctx.StringValue("DescribeScript.Script.ScriptName");
 			script.Status = _ctx.StringValue("DescribeScript.Script.Status");
 			script.UpdateTime = _ctx.LongValue("DescribeScript.Script.UpdateTime");
+			script.ChatbotId = _ctx.StringValue("DescribeScript.Script.ChatbotId");
+			script.AsrConfig = _ctx.StringValue("DescribeScript.Script.AsrConfig");
+			script.TtsConfig = _ctx.StringValue("DescribeScript.Script.TtsConfig");
 			describeScriptResponse.Script = script;
         
 			return describeScriptResponse;

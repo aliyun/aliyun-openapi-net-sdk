@@ -44,12 +44,16 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			instance.InstanceId = _ctx.StringValue("CreateInstance.Instance.InstanceId");
 			instance.InstanceName = _ctx.StringValue("CreateInstance.Instance.InstanceName");
 			instance.MaxConcurrentConversation = _ctx.IntegerValue("CreateInstance.Instance.MaxConcurrentConversation");
-			instance.Owner = _ctx.StringValue("CreateInstance.Instance.Owner");
 			instance.NluServiceType = _ctx.StringValue("CreateInstance.Instance.NluServiceType");
+			instance.Owner = _ctx.StringValue("CreateInstance.Instance.Owner");
+			instance.CreatorId = _ctx.LongValue("CreateInstance.Instance.CreatorId");
+			instance.CreatorName = _ctx.StringValue("CreateInstance.Instance.CreatorName");
+			instance.OwnerName = _ctx.StringValue("CreateInstance.Instance.OwnerName");
+			instance.ResourceGroupId = _ctx.StringValue("CreateInstance.Instance.ResourceGroupId");
 
 			CreateInstanceResponse.CreateInstance_Instance.CreateInstance_NluProfile nluProfile = new CreateInstanceResponse.CreateInstance_Instance.CreateInstance_NluProfile();
-			nluProfile.Endpoint = _ctx.StringValue("CreateInstance.Instance.NluProfile.Endpoint");
 			nluProfile.AccessKey = _ctx.StringValue("CreateInstance.Instance.NluProfile.AccessKey");
+			nluProfile.Endpoint = _ctx.StringValue("CreateInstance.Instance.NluProfile.Endpoint");
 			nluProfile.SecretKey = _ctx.StringValue("CreateInstance.Instance.NluProfile.SecretKey");
 			instance.NluProfile = nluProfile;
 			createInstanceResponse.Instance = instance;

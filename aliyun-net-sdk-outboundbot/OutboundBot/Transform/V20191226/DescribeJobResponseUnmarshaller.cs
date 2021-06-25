@@ -47,6 +47,12 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			job.Status = _ctx.StringValue("DescribeJob.Job.Status");
 			job.StrategyId = _ctx.StringValue("DescribeJob.Job.StrategyId");
 			job.SystemPriority = _ctx.IntegerValue("DescribeJob.Job.SystemPriority");
+			job.InstanceId = _ctx.StringValue("DescribeJob.Job.InstanceId");
+			job.DsReport = _ctx.StringValue("DescribeJob.Job.DsReport");
+			job.EndReason = _ctx.IntegerValue("DescribeJob.Job.EndReason");
+			job.ActualTime = _ctx.LongValue("DescribeJob.Job.ActualTime");
+			job.CalledNumber = _ctx.StringValue("DescribeJob.Job.CalledNumber");
+			job.NextExecutionTime = _ctx.LongValue("DescribeJob.Job.NextExecutionTime");
 
 			List<string> job_callingNumbers = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeJob.Job.CallingNumbers.Length"); i++) {
@@ -106,6 +112,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				task.ScenarioId = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].ScenarioId");
 				task.Status = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Status");
 				task.TaskId = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].TaskId");
+				task.EndTime = _ctx.LongValue("DescribeJob.Job.Tasks["+ i +"].EndTime");
 
 				DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_Contact3 contact3 = new DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_Contact3();
 				contact3.ContactId = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Contact.ContactId");
@@ -124,6 +131,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 					conversationDetail.Script = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Script");
 					conversationDetail.Speaker = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Speaker");
 					conversationDetail.Timestamp = _ctx.LongValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Timestamp");
+					conversationDetail.Action = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Action");
+					conversationDetail.ActionParams = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].ActionParams");
 
 					List<DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_ConversationDetail.DescribeJob_SummaryItem2> conversationDetail_summary1 = new List<DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_ConversationDetail.DescribeJob_SummaryItem2>();
 					for (int k = 0; k < _ctx.Length("DescribeJob.Job.Tasks["+ i +"].Conversation["+ j +"].Summary.Length"); k++) {

@@ -126,9 +126,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private int? maxConcurrentConversation;
 
-			private string owner;
+			private string ownerName;
+
+			private long? creatorId;
+
+			private string creatorName;
 
 			private string nluServiceType;
+
+			private string owner;
+
+			private string resourceGroupId;
+
+			private List<ListInstances_ResourceTag> resourceTags;
 
 			private ListInstances_NluProfile nluProfile;
 
@@ -216,15 +226,39 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string Owner
+			public string OwnerName
 			{
 				get
 				{
-					return owner;
+					return ownerName;
 				}
 				set	
 				{
-					owner = value;
+					ownerName = value;
+				}
+			}
+
+			public long? CreatorId
+			{
+				get
+				{
+					return creatorId;
+				}
+				set	
+				{
+					creatorId = value;
+				}
+			}
+
+			public string CreatorName
+			{
+				get
+				{
+					return creatorName;
+				}
+				set	
+				{
+					creatorName = value;
 				}
 			}
 
@@ -240,6 +274,42 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
+			public string Owner
+			{
+				get
+				{
+					return owner;
+				}
+				set	
+				{
+					owner = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public List<ListInstances_ResourceTag> ResourceTags
+			{
+				get
+				{
+					return resourceTags;
+				}
+				set	
+				{
+					resourceTags = value;
+				}
+			}
+
 			public ListInstances_NluProfile NluProfile
 			{
 				get
@@ -252,26 +322,46 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public class ListInstances_NluProfile
+			public class ListInstances_ResourceTag
 			{
 
-				private string endpoint;
+				private string key;
 
-				private string accessKey;
+				private string _value;
 
-				private string secretKey;
-
-				public string Endpoint
+				public string Key
 				{
 					get
 					{
-						return endpoint;
+						return key;
 					}
 					set	
 					{
-						endpoint = value;
+						key = value;
 					}
 				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
+				}
+			}
+
+			public class ListInstances_NluProfile
+			{
+
+				private string accessKey;
+
+				private string endpoint;
+
+				private string secretKey;
 
 				public string AccessKey
 				{
@@ -282,6 +372,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						accessKey = value;
+					}
+				}
+
+				public string Endpoint
+				{
+					get
+					{
+						return endpoint;
+					}
+					set	
+					{
+						endpoint = value;
 					}
 				}
 

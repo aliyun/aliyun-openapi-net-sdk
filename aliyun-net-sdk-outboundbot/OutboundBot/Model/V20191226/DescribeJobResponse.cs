@@ -130,6 +130,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private int? systemPriority;
 
+			private string instanceId;
+
+			private string dsReport;
+
+			private int? endReason;
+
+			private long? actualTime;
+
+			private string calledNumber;
+
+			private long? nextExecutionTime;
+
 			private List<DescribeJob_Contact> contacts;
 
 			private List<DescribeJob_KeyValuePair> extras;
@@ -245,6 +257,78 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					systemPriority = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string DsReport
+			{
+				get
+				{
+					return dsReport;
+				}
+				set	
+				{
+					dsReport = value;
+				}
+			}
+
+			public int? EndReason
+			{
+				get
+				{
+					return endReason;
+				}
+				set	
+				{
+					endReason = value;
+				}
+			}
+
+			public long? ActualTime
+			{
+				get
+				{
+					return actualTime;
+				}
+				set	
+				{
+					actualTime = value;
+				}
+			}
+
+			public string CalledNumber
+			{
+				get
+				{
+					return calledNumber;
+				}
+				set	
+				{
+					calledNumber = value;
+				}
+			}
+
+			public long? NextExecutionTime
+			{
+				get
+				{
+					return nextExecutionTime;
+				}
+				set	
+				{
+					nextExecutionTime = value;
 				}
 			}
 
@@ -529,6 +613,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 				private string taskId;
 
+				private long? endTime;
+
 				private List<DescribeJob_ConversationDetail> conversation;
 
 				private DescribeJob_Contact3 contact3;
@@ -677,6 +763,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
+				public long? EndTime
+				{
+					get
+					{
+						return endTime;
+					}
+					set	
+					{
+						endTime = value;
+					}
+				}
+
 				public List<DescribeJob_ConversationDetail> Conversation
 				{
 					get
@@ -709,6 +807,10 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					private string speaker;
 
 					private long? timestamp;
+
+					private string action;
+
+					private string actionParams;
 
 					private List<DescribeJob_SummaryItem2> summary1;
 
@@ -745,6 +847,30 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						set	
 						{
 							timestamp = value;
+						}
+					}
+
+					public string Action
+					{
+						get
+						{
+							return action;
+						}
+						set	
+						{
+							action = value;
+						}
+					}
+
+					public string ActionParams
+					{
+						get
+						{
+							return actionParams;
+						}
+						set	
+						{
+							actionParams = value;
 						}
 					}
 

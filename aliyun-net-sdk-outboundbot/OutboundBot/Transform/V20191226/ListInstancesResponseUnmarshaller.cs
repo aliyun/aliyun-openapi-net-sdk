@@ -47,14 +47,28 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				instance.InstanceName = _ctx.StringValue("ListInstances.Instances["+ i +"].InstanceName");
 				instance.IsTemplateContainer = _ctx.BooleanValue("ListInstances.Instances["+ i +"].IsTemplateContainer");
 				instance.MaxConcurrentConversation = _ctx.IntegerValue("ListInstances.Instances["+ i +"].MaxConcurrentConversation");
-				instance.Owner = _ctx.StringValue("ListInstances.Instances["+ i +"].Owner");
+				instance.OwnerName = _ctx.StringValue("ListInstances.Instances["+ i +"].OwnerName");
+				instance.CreatorId = _ctx.LongValue("ListInstances.Instances["+ i +"].CreatorId");
+				instance.CreatorName = _ctx.StringValue("ListInstances.Instances["+ i +"].CreatorName");
 				instance.NluServiceType = _ctx.StringValue("ListInstances.Instances["+ i +"].NluServiceType");
+				instance.Owner = _ctx.StringValue("ListInstances.Instances["+ i +"].Owner");
+				instance.ResourceGroupId = _ctx.StringValue("ListInstances.Instances["+ i +"].ResourceGroupId");
 
 				ListInstancesResponse.ListInstances_Instance.ListInstances_NluProfile nluProfile = new ListInstancesResponse.ListInstances_Instance.ListInstances_NluProfile();
-				nluProfile.Endpoint = _ctx.StringValue("ListInstances.Instances["+ i +"].NluProfile.Endpoint");
 				nluProfile.AccessKey = _ctx.StringValue("ListInstances.Instances["+ i +"].NluProfile.AccessKey");
+				nluProfile.Endpoint = _ctx.StringValue("ListInstances.Instances["+ i +"].NluProfile.Endpoint");
 				nluProfile.SecretKey = _ctx.StringValue("ListInstances.Instances["+ i +"].NluProfile.SecretKey");
 				instance.NluProfile = nluProfile;
+
+				List<ListInstancesResponse.ListInstances_Instance.ListInstances_ResourceTag> instance_resourceTags = new List<ListInstancesResponse.ListInstances_Instance.ListInstances_ResourceTag>();
+				for (int j = 0; j < _ctx.Length("ListInstances.Instances["+ i +"].ResourceTags.Length"); j++) {
+					ListInstancesResponse.ListInstances_Instance.ListInstances_ResourceTag resourceTag = new ListInstancesResponse.ListInstances_Instance.ListInstances_ResourceTag();
+					resourceTag.Key = _ctx.StringValue("ListInstances.Instances["+ i +"].ResourceTags["+ j +"].Key");
+					resourceTag._Value = _ctx.StringValue("ListInstances.Instances["+ i +"].ResourceTags["+ j +"].Value");
+
+					instance_resourceTags.Add(resourceTag);
+				}
+				instance.ResourceTags = instance_resourceTags;
 
 				listInstancesResponse_instances.Add(instance);
 			}

@@ -22,86 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-	public class ListMediaResponse : AcsResponse
+	public class GetAsrServerInfoResponse : AcsResponse
 	{
-
-		private string code;
-
-		private int? httpStatusCode;
-
-		private string message;
-
-		private int? pageNumber;
-
-		private int? pageSize;
 
 		private string requestId;
 
 		private bool? success;
 
-		private int? totalCount;
+		private string code;
 
-		private List<ListMedia_Media> mediaList;
+		private string message;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+		private int? httpStatusCode;
 
 		public string RequestId
 		{
@@ -127,59 +59,39 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public int? TotalCount
+		public string Code
 		{
 			get
 			{
-				return totalCount;
+				return code;
 			}
 			set	
 			{
-				totalCount = value;
+				code = value;
 			}
 		}
 
-		public List<ListMedia_Media> MediaList
+		public string Message
 		{
 			get
 			{
-				return mediaList;
+				return message;
 			}
 			set	
 			{
-				mediaList = value;
+				message = value;
 			}
 		}
 
-		public class ListMedia_Media
+		public int? HttpStatusCode
 		{
-
-			private string mediaId;
-
-			private string name;
-
-			public string MediaId
+			get
 			{
-				get
-				{
-					return mediaId;
-				}
-				set	
-				{
-					mediaId = value;
-				}
+				return httpStatusCode;
 			}
-
-			public string Name
+			set	
 			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
+				httpStatusCode = value;
 			}
 		}
 	}

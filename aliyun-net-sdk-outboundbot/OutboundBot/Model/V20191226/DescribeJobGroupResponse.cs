@@ -114,6 +114,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private long? creationTime;
 
+			private string jobDataParsingTaskId;
+
 			private string jobFilePath;
 
 			private string jobGroupDescription;
@@ -122,17 +124,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private string jobGroupName;
 
+			private string modifyTime;
+
 			private string scenarioId;
 
 			private string scriptId;
 
 			private string scriptName;
 
+			private string scriptVersion;
+
+			private string status;
+
 			private List<string> callingNumbers;
+
+			private DescribeJobGroup_ExportProgress exportProgress;
 
 			private DescribeJobGroup_Progress progress;
 
 			private DescribeJobGroup_Strategy strategy;
+
+			private DescribeJobGroup_Result result;
 
 			public long? CreationTime
 			{
@@ -143,6 +155,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string JobDataParsingTaskId
+			{
+				get
+				{
+					return jobDataParsingTaskId;
+				}
+				set	
+				{
+					jobDataParsingTaskId = value;
 				}
 			}
 
@@ -194,6 +218,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
+			public string ModifyTime
+			{
+				get
+				{
+					return modifyTime;
+				}
+				set	
+				{
+					modifyTime = value;
+				}
+			}
+
 			public string ScenarioId
 			{
 				get
@@ -230,6 +266,30 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
+			public string ScriptVersion
+			{
+				get
+				{
+					return scriptVersion;
+				}
+				set	
+				{
+					scriptVersion = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
 			public List<string> CallingNumbers
 			{
 				get
@@ -239,6 +299,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					callingNumbers = value;
+				}
+			}
+
+			public DescribeJobGroup_ExportProgress ExportProgress
+			{
+				get
+				{
+					return exportProgress;
+				}
+				set	
+				{
+					exportProgress = value;
 				}
 			}
 
@@ -263,6 +335,64 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					strategy = value;
+				}
+			}
+
+			public DescribeJobGroup_Result Result
+			{
+				get
+				{
+					return result;
+				}
+				set	
+				{
+					result = value;
+				}
+			}
+
+			public class DescribeJobGroup_ExportProgress
+			{
+
+				private string fileHttpUrl;
+
+				private string progress;
+
+				private string status;
+
+				public string FileHttpUrl
+				{
+					get
+					{
+						return fileHttpUrl;
+					}
+					set	
+					{
+						fileHttpUrl = value;
+					}
+				}
+
+				public string Progress
+				{
+					get
+					{
+						return progress;
+					}
+					set	
+					{
+						progress = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
 				}
 			}
 
@@ -726,6 +856,80 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						{
 							endTime = value;
 						}
+					}
+				}
+			}
+
+			public class DescribeJobGroup_Result
+			{
+
+				private int? noInteractNum;
+
+				private int? finishedNum;
+
+				private int? clientHangupNum;
+
+				private int? timeoutHangupNum;
+
+				private int? unrecognizedNum;
+
+				public int? NoInteractNum
+				{
+					get
+					{
+						return noInteractNum;
+					}
+					set	
+					{
+						noInteractNum = value;
+					}
+				}
+
+				public int? FinishedNum
+				{
+					get
+					{
+						return finishedNum;
+					}
+					set	
+					{
+						finishedNum = value;
+					}
+				}
+
+				public int? ClientHangupNum
+				{
+					get
+					{
+						return clientHangupNum;
+					}
+					set	
+					{
+						clientHangupNum = value;
+					}
+				}
+
+				public int? TimeoutHangupNum
+				{
+					get
+					{
+						return timeoutHangupNum;
+					}
+					set	
+					{
+						timeoutHangupNum = value;
+					}
+				}
+
+				public int? UnrecognizedNum
+				{
+					get
+					{
+						return unrecognizedNum;
+					}
+					set	
+					{
+						unrecognizedNum = value;
 					}
 				}
 			}
