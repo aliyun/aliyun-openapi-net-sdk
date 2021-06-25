@@ -41,40 +41,31 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			Method = MethodType.POST;
         }
 
-		private string splitItemID;
-
 		private string productCode;
 
 		private string subscriptionType;
+
+		private long? billOwnerId;
+
+		private string productType;
+
+		private string nextToken;
+
+		private string splitItemID;
 
 		private string billingCycle;
 
 		private long? ownerId;
 
-		private long? billOwnerId;
-
 		private List<TagFilter> tagFilters = new List<TagFilter>(){ };
 
-		private string productType;
+		private string billingDate;
 
 		private string instanceID;
 
-		private string nextToken;
+		private string granularity;
 
 		private int? maxResults;
-
-		public string SplitItemID
-		{
-			get
-			{
-				return splitItemID;
-			}
-			set	
-			{
-				splitItemID = value;
-				DictionaryUtil.Add(QueryParameters, "SplitItemID", value);
-			}
-		}
 
 		public string ProductCode
 		{
@@ -99,6 +90,58 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				subscriptionType = value;
 				DictionaryUtil.Add(QueryParameters, "SubscriptionType", value);
+			}
+		}
+
+		public long? BillOwnerId
+		{
+			get
+			{
+				return billOwnerId;
+			}
+			set	
+			{
+				billOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "BillOwnerId", value.ToString());
+			}
+		}
+
+		public string ProductType
+		{
+			get
+			{
+				return productType;
+			}
+			set	
+			{
+				productType = value;
+				DictionaryUtil.Add(QueryParameters, "ProductType", value);
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+			}
+		}
+
+		public string SplitItemID
+		{
+			get
+			{
+				return splitItemID;
+			}
+			set	
+			{
+				splitItemID = value;
+				DictionaryUtil.Add(QueryParameters, "SplitItemID", value);
 			}
 		}
 
@@ -128,19 +171,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public long? BillOwnerId
-		{
-			get
-			{
-				return billOwnerId;
-			}
-			set	
-			{
-				billOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "BillOwnerId", value.ToString());
-			}
-		}
-
 		public List<TagFilter> TagFilters
 		{
 			get
@@ -162,16 +192,16 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string ProductType
+		public string BillingDate
 		{
 			get
 			{
-				return productType;
+				return billingDate;
 			}
 			set	
 			{
-				productType = value;
-				DictionaryUtil.Add(QueryParameters, "ProductType", value);
+				billingDate = value;
+				DictionaryUtil.Add(QueryParameters, "BillingDate", value);
 			}
 		}
 
@@ -188,16 +218,16 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string NextToken
+		public string Granularity
 		{
 			get
 			{
-				return nextToken;
+				return granularity;
 			}
 			set	
 			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+				granularity = value;
+				DictionaryUtil.Add(QueryParameters, "Granularity", value);
 			}
 		}
 

@@ -291,6 +291,14 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string splitBillingCycle;
 
+				private string splitBillingDate;
+
+				private string bizType;
+
+				private string billAccountID;
+
+				private string billAccountName;
+
 				public string InstanceID
 				{
 					get
@@ -840,6 +848,54 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						splitBillingCycle = value;
+					}
+				}
+
+				public string SplitBillingDate
+				{
+					get
+					{
+						return splitBillingDate;
+					}
+					set	
+					{
+						splitBillingDate = value;
+					}
+				}
+
+				public string BizType
+				{
+					get
+					{
+						return bizType;
+					}
+					set	
+					{
+						bizType = value;
+					}
+				}
+
+				public string BillAccountID
+				{
+					get
+					{
+						return billAccountID;
+					}
+					set	
+					{
+						billAccountID = value;
+					}
+				}
+
+				public string BillAccountName
+				{
+					get
+					{
+						return billAccountName;
+					}
+					set	
+					{
+						billAccountName = value;
 					}
 				}
 			}

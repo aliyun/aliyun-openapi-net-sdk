@@ -93,6 +93,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				item.SplitAccountID = _ctx.StringValue("DescribeSplitItemBill.Data.Items["+ i +"].SplitAccountID");
 				item.SplitAccountName = _ctx.StringValue("DescribeSplitItemBill.Data.Items["+ i +"].SplitAccountName");
 				item.SplitBillingCycle = _ctx.StringValue("DescribeSplitItemBill.Data.Items["+ i +"].SplitBillingCycle");
+				item.SplitBillingDate = _ctx.StringValue("DescribeSplitItemBill.Data.Items["+ i +"].SplitBillingDate");
+				item.BizType = _ctx.StringValue("DescribeSplitItemBill.Data.Items["+ i +"].BizType");
+				item.BillAccountID = _ctx.StringValue("DescribeSplitItemBill.Data.Items["+ i +"].BillAccountID");
+				item.BillAccountName = _ctx.StringValue("DescribeSplitItemBill.Data.Items["+ i +"].BillAccountName");
 
 				data_items.Add(item);
 			}
