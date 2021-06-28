@@ -47,6 +47,9 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 				originSQLListItem.CheckStatus = _ctx.StringValue("ListSQLReviewOriginSQL.OriginSQLList["+ i +"].CheckStatus");
 				originSQLListItem.StatusDesc = _ctx.StringValue("ListSQLReviewOriginSQL.OriginSQLList["+ i +"].StatusDesc");
 				originSQLListItem.CheckedTime = _ctx.StringValue("ListSQLReviewOriginSQL.OriginSQLList["+ i +"].CheckedTime");
+				originSQLListItem.SqlHash = _ctx.StringValue("ListSQLReviewOriginSQL.OriginSQLList["+ i +"].SqlHash");
+				originSQLListItem.ReviewSummary = _ctx.StringValue("ListSQLReviewOriginSQL.OriginSQLList["+ i +"].ReviewSummary");
+				originSQLListItem.SQLReviewQueryKey = _ctx.StringValue("ListSQLReviewOriginSQL.OriginSQLList["+ i +"].SQLReviewQueryKey");
 
 				listSQLReviewOriginSQLResponse_originSQLList.Add(originSQLListItem);
 			}

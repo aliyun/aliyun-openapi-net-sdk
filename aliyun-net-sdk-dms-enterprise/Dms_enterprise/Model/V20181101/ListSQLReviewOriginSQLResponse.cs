@@ -132,6 +132,12 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string checkedTime;
 
+			private string sqlHash;
+
+			private string reviewSummary;
+
+			private string sQLReviewQueryKey;
+
 			[JsonProperty(PropertyName = "SQLId")]
 			public long? SQLId
 			{
@@ -220,6 +226,45 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					checkedTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SqlHash")]
+			public string SqlHash
+			{
+				get
+				{
+					return sqlHash;
+				}
+				set	
+				{
+					sqlHash = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ReviewSummary")]
+			public string ReviewSummary
+			{
+				get
+				{
+					return reviewSummary;
+				}
+				set	
+				{
+					reviewSummary = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SQLReviewQueryKey")]
+			public string SQLReviewQueryKey
+			{
+				get
+				{
+					return sQLReviewQueryKey;
+				}
+				set	
+				{
+					sQLReviewQueryKey = value;
 				}
 			}
 		}
