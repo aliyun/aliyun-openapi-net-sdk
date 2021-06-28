@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 			GetAlgorithmHistogramsResponse getAlgorithmHistogramsResponse = new GetAlgorithmHistogramsResponse();
 
 			getAlgorithmHistogramsResponse.HttpResponse = _ctx.HttpResponse;
-			getAlgorithmHistogramsResponse.RequestId = _ctx.StringValue("GetAlgorithmHistograms.RequestId");
 			getAlgorithmHistogramsResponse.Message = _ctx.StringValue("GetAlgorithmHistograms.Message");
+			getAlgorithmHistogramsResponse.RequestId = _ctx.StringValue("GetAlgorithmHistograms.RequestId");
 			getAlgorithmHistogramsResponse.Code = _ctx.StringValue("GetAlgorithmHistograms.Code");
 			getAlgorithmHistogramsResponse.Success = _ctx.BooleanValue("GetAlgorithmHistograms.Success");
 
@@ -43,8 +43,8 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 			List<GetAlgorithmHistogramsResponse.GetAlgorithmHistograms_Data.GetAlgorithmHistograms_HistogramsItem> data_histograms = new List<GetAlgorithmHistogramsResponse.GetAlgorithmHistograms_Data.GetAlgorithmHistograms_HistogramsItem>();
 			for (int i = 0; i < _ctx.Length("GetAlgorithmHistograms.Data.Histograms.Length"); i++) {
 				GetAlgorithmHistogramsResponse.GetAlgorithmHistograms_Data.GetAlgorithmHistograms_HistogramsItem histogramsItem = new GetAlgorithmHistogramsResponse.GetAlgorithmHistograms_Data.GetAlgorithmHistograms_HistogramsItem();
-				histogramsItem.FailureCount = _ctx.IntegerValue("GetAlgorithmHistograms.Data.Histograms["+ i +"].FailureCount");
 				histogramsItem.Time = _ctx.StringValue("GetAlgorithmHistograms.Data.Histograms["+ i +"].Time");
+				histogramsItem.FailureCount = _ctx.IntegerValue("GetAlgorithmHistograms.Data.Histograms["+ i +"].FailureCount");
 				histogramsItem.SuccessCount = _ctx.IntegerValue("GetAlgorithmHistograms.Data.Histograms["+ i +"].SuccessCount");
 
 				data_histograms.Add(histogramsItem);

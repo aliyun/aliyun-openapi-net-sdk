@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 			DeleteFilePredictResponse deleteFilePredictResponse = new DeleteFilePredictResponse();
 
 			deleteFilePredictResponse.HttpResponse = _ctx.HttpResponse;
-			deleteFilePredictResponse.RequestId = _ctx.StringValue("DeleteFilePredict.RequestId");
 			deleteFilePredictResponse.Message = _ctx.StringValue("DeleteFilePredict.Message");
+			deleteFilePredictResponse.RequestId = _ctx.StringValue("DeleteFilePredict.RequestId");
 			deleteFilePredictResponse.Code = _ctx.StringValue("DeleteFilePredict.Code");
 
 			DeleteFilePredictResponse.DeleteFilePredict_Data data = new DeleteFilePredictResponse.DeleteFilePredict_Data();

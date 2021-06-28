@@ -35,12 +35,12 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 
 			ImagePredictResponse.ImagePredict_ImagePredict imagePredict = new ImagePredictResponse.ImagePredict_ImagePredict();
 			imagePredict.Status = _ctx.StringValue("ImagePredict.ImagePredict.Status");
-			imagePredict.Message = _ctx.StringValue("ImagePredict.ImagePredict.Message");
 			imagePredict.PredictResult = _ctx.StringValue("ImagePredict.ImagePredict.PredictResult");
-			imagePredict.DataUrl = _ctx.StringValue("ImagePredict.ImagePredict.DataUrl");
-			imagePredict.PredictTime = _ctx.StringValue("ImagePredict.ImagePredict.PredictTime");
-			imagePredict.Code = _ctx.StringValue("ImagePredict.ImagePredict.Code");
 			imagePredict.PredictId = _ctx.StringValue("ImagePredict.ImagePredict.PredictId");
+			imagePredict.PredictTime = _ctx.StringValue("ImagePredict.ImagePredict.PredictTime");
+			imagePredict.DataUrl = _ctx.StringValue("ImagePredict.ImagePredict.DataUrl");
+			imagePredict.Code = _ctx.StringValue("ImagePredict.ImagePredict.Code");
+			imagePredict.Message = _ctx.StringValue("ImagePredict.ImagePredict.Message");
 			imagePredict.ModelId = _ctx.StringValue("ImagePredict.ImagePredict.ModelId");
 			imagePredictResponse.ImagePredict = imagePredict;
         

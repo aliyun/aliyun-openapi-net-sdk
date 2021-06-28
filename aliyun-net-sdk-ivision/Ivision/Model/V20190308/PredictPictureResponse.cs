@@ -25,25 +25,13 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 	public class PredictPictureResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string message;
+
+		private string requestId;
 
 		private string code;
 
 		private PredictPicture_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string Message
 		{
@@ -54,6 +42,18 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

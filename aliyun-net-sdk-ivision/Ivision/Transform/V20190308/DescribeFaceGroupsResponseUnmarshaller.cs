@@ -32,8 +32,8 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 
 			describeFaceGroupsResponse.HttpResponse = _ctx.HttpResponse;
 			describeFaceGroupsResponse.TotalNum = _ctx.LongValue("DescribeFaceGroups.TotalNum");
-			describeFaceGroupsResponse.RequestId = _ctx.StringValue("DescribeFaceGroups.RequestId");
 			describeFaceGroupsResponse.PageSize = _ctx.LongValue("DescribeFaceGroups.PageSize");
+			describeFaceGroupsResponse.RequestId = _ctx.StringValue("DescribeFaceGroups.RequestId");
 			describeFaceGroupsResponse.CurrentPage = _ctx.LongValue("DescribeFaceGroups.CurrentPage");
 			describeFaceGroupsResponse.NextPageToken = _ctx.StringValue("DescribeFaceGroups.NextPageToken");
 
@@ -41,8 +41,8 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 			for (int i = 0; i < _ctx.Length("DescribeFaceGroups.Groups.Length"); i++) {
 				DescribeFaceGroupsResponse.DescribeFaceGroups_Group group = new DescribeFaceGroupsResponse.DescribeFaceGroups_Group();
 				group.CreationTime = _ctx.StringValue("DescribeFaceGroups.Groups["+ i +"].CreationTime");
-				group.Name = _ctx.StringValue("DescribeFaceGroups.Groups["+ i +"].Name");
 				group.GroupId = _ctx.StringValue("DescribeFaceGroups.Groups["+ i +"].GroupId");
+				group.Name = _ctx.StringValue("DescribeFaceGroups.Groups["+ i +"].Name");
 
 				describeFaceGroupsResponse_groups.Add(group);
 			}

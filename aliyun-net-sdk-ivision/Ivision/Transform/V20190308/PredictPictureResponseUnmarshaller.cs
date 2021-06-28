@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 			PredictPictureResponse predictPictureResponse = new PredictPictureResponse();
 
 			predictPictureResponse.HttpResponse = _ctx.HttpResponse;
-			predictPictureResponse.RequestId = _ctx.StringValue("PredictPicture.RequestId");
 			predictPictureResponse.Message = _ctx.StringValue("PredictPicture.Message");
+			predictPictureResponse.RequestId = _ctx.StringValue("PredictPicture.RequestId");
 			predictPictureResponse.Code = _ctx.StringValue("PredictPicture.Code");
 
 			PredictPictureResponse.PredictPicture_Data data = new PredictPictureResponse.PredictPicture_Data();

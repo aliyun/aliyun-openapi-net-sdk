@@ -31,26 +31,26 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 			ListMyAlgorithmResponse listMyAlgorithmResponse = new ListMyAlgorithmResponse();
 
 			listMyAlgorithmResponse.HttpResponse = _ctx.HttpResponse;
-			listMyAlgorithmResponse.RequestId = _ctx.StringValue("ListMyAlgorithm.RequestId");
 			listMyAlgorithmResponse.Message = _ctx.StringValue("ListMyAlgorithm.Message");
+			listMyAlgorithmResponse.RequestId = _ctx.StringValue("ListMyAlgorithm.RequestId");
 			listMyAlgorithmResponse.Code = _ctx.StringValue("ListMyAlgorithm.Code");
 			listMyAlgorithmResponse.Success = _ctx.BooleanValue("ListMyAlgorithm.Success");
 
 			ListMyAlgorithmResponse.ListMyAlgorithm_Data data = new ListMyAlgorithmResponse.ListMyAlgorithm_Data();
-			data.TotalCount = _ctx.IntegerValue("ListMyAlgorithm.Data.TotalCount");
 			data.PageSize = _ctx.IntegerValue("ListMyAlgorithm.Data.PageSize");
 			data.PageNumber = _ctx.IntegerValue("ListMyAlgorithm.Data.PageNumber");
+			data.TotalCount = _ctx.IntegerValue("ListMyAlgorithm.Data.TotalCount");
 
 			List<ListMyAlgorithmResponse.ListMyAlgorithm_Data.ListMyAlgorithm_AlgorithmListItem> data_algorithmList = new List<ListMyAlgorithmResponse.ListMyAlgorithm_Data.ListMyAlgorithm_AlgorithmListItem>();
 			for (int i = 0; i < _ctx.Length("ListMyAlgorithm.Data.AlgorithmList.Length"); i++) {
 				ListMyAlgorithmResponse.ListMyAlgorithm_Data.ListMyAlgorithm_AlgorithmListItem algorithmListItem = new ListMyAlgorithmResponse.ListMyAlgorithm_Data.ListMyAlgorithm_AlgorithmListItem();
-				algorithmListItem.AlgorithmOrder = _ctx.IntegerValue("ListMyAlgorithm.Data.AlgorithmList["+ i +"].AlgorithmOrder");
-				algorithmListItem.YesterdayCount = _ctx.IntegerValue("ListMyAlgorithm.Data.AlgorithmList["+ i +"].YesterdayCount");
-				algorithmListItem.ApiDocUrl = _ctx.StringValue("ListMyAlgorithm.Data.AlgorithmList["+ i +"].ApiDocUrl");
+				algorithmListItem.AlgorithmName = _ctx.StringValue("ListMyAlgorithm.Data.AlgorithmList["+ i +"].AlgorithmName");
 				algorithmListItem.DeployRegion = _ctx.StringValue("ListMyAlgorithm.Data.AlgorithmList["+ i +"].DeployRegion");
 				algorithmListItem.CurrentMonthCount = _ctx.IntegerValue("ListMyAlgorithm.Data.AlgorithmList["+ i +"].CurrentMonthCount");
-				algorithmListItem.AlgorithmName = _ctx.StringValue("ListMyAlgorithm.Data.AlgorithmList["+ i +"].AlgorithmName");
 				algorithmListItem.AlgorithmCode = _ctx.StringValue("ListMyAlgorithm.Data.AlgorithmList["+ i +"].AlgorithmCode");
+				algorithmListItem.ApiDocUrl = _ctx.StringValue("ListMyAlgorithm.Data.AlgorithmList["+ i +"].ApiDocUrl");
+				algorithmListItem.YesterdayCount = _ctx.IntegerValue("ListMyAlgorithm.Data.AlgorithmList["+ i +"].YesterdayCount");
+				algorithmListItem.AlgorithmOrder = _ctx.IntegerValue("ListMyAlgorithm.Data.AlgorithmList["+ i +"].AlgorithmOrder");
 
 				data_algorithmList.Add(algorithmListItem);
 			}

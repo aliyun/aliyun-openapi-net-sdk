@@ -58,17 +58,17 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 
 			private string status;
 
-			private string message;
-
 			private string predictResult;
 
-			private string dataUrl;
+			private string predictId;
 
 			private string predictTime;
 
+			private string dataUrl;
+
 			private string code;
 
-			private string predictId;
+			private string message;
 
 			private string modelId;
 
@@ -84,18 +84,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
-			public string Message
-			{
-				get
-				{
-					return message;
-				}
-				set	
-				{
-					message = value;
-				}
-			}
-
 			public string PredictResult
 			{
 				get
@@ -108,15 +96,15 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
-			public string DataUrl
+			public string PredictId
 			{
 				get
 				{
-					return dataUrl;
+					return predictId;
 				}
 				set	
 				{
-					dataUrl = value;
+					predictId = value;
 				}
 			}
 
@@ -132,6 +120,18 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
+			public string DataUrl
+			{
+				get
+				{
+					return dataUrl;
+				}
+				set	
+				{
+					dataUrl = value;
+				}
+			}
+
 			public string Code
 			{
 				get
@@ -144,15 +144,15 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
-			public string PredictId
+			public string Message
 			{
 				get
 				{
-					return predictId;
+					return message;
 				}
 				set	
 				{
-					predictId = value;
+					message = value;
 				}
 			}
 

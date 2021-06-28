@@ -25,27 +25,15 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 	public class GetAlgorithmDetailResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string message;
+
+		private string requestId;
 
 		private string code;
 
 		private bool? success;
 
 		private GetAlgorithmDetail_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string Message
 		{
@@ -56,6 +44,18 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,39 +98,27 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 		public class GetAlgorithmDetail_Data
 		{
 
-			private int? currentMonthSuccessCount;
-
-			private string apiDocUrl;
+			private string algorithmName;
 
 			private string deployRegion;
 
 			private int? currentMonthCount;
 
-			private string algorithmName;
-
 			private string algorithmCode;
 
-			public int? CurrentMonthSuccessCount
-			{
-				get
-				{
-					return currentMonthSuccessCount;
-				}
-				set	
-				{
-					currentMonthSuccessCount = value;
-				}
-			}
+			private string apiDocUrl;
 
-			public string ApiDocUrl
+			private int? currentMonthSuccessCount;
+
+			public string AlgorithmName
 			{
 				get
 				{
-					return apiDocUrl;
+					return algorithmName;
 				}
 				set	
 				{
-					apiDocUrl = value;
+					algorithmName = value;
 				}
 			}
 
@@ -158,18 +146,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
-			public string AlgorithmName
-			{
-				get
-				{
-					return algorithmName;
-				}
-				set	
-				{
-					algorithmName = value;
-				}
-			}
-
 			public string AlgorithmCode
 			{
 				get
@@ -179,6 +155,30 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				set	
 				{
 					algorithmCode = value;
+				}
+			}
+
+			public string ApiDocUrl
+			{
+				get
+				{
+					return apiDocUrl;
+				}
+				set	
+				{
+					apiDocUrl = value;
+				}
+			}
+
+			public int? CurrentMonthSuccessCount
+			{
+				get
+				{
+					return currentMonthSuccessCount;
+				}
+				set	
+				{
+					currentMonthSuccessCount = value;
 				}
 			}
 		}

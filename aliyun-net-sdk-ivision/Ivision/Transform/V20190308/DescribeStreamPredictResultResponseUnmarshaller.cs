@@ -32,8 +32,8 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 
 			describeStreamPredictResultResponse.HttpResponse = _ctx.HttpResponse;
 			describeStreamPredictResultResponse.TotalNum = _ctx.LongValue("DescribeStreamPredictResult.TotalNum");
-			describeStreamPredictResultResponse.RequestId = _ctx.StringValue("DescribeStreamPredictResult.RequestId");
 			describeStreamPredictResultResponse.PageSize = _ctx.LongValue("DescribeStreamPredictResult.PageSize");
+			describeStreamPredictResultResponse.RequestId = _ctx.StringValue("DescribeStreamPredictResult.RequestId");
 			describeStreamPredictResultResponse.CurrentPage = _ctx.LongValue("DescribeStreamPredictResult.CurrentPage");
 			describeStreamPredictResultResponse.NextPageToken = _ctx.StringValue("DescribeStreamPredictResult.NextPageToken");
 
@@ -42,10 +42,10 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 				DescribeStreamPredictResultResponse.DescribeStreamPredictResult_StreamPredictData streamPredictData = new DescribeStreamPredictResultResponse.DescribeStreamPredictResult_StreamPredictData();
 				streamPredictData.Status = _ctx.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].Status");
 				streamPredictData.PredictResult = _ctx.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictResult");
-				streamPredictData.DataUrl = _ctx.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].DataUrl");
-				streamPredictData.PredictTime = _ctx.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictTime");
-				streamPredictData.Timestamp = _ctx.LongValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].Timestamp");
 				streamPredictData.PredictId = _ctx.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictId");
+				streamPredictData.PredictTime = _ctx.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictTime");
+				streamPredictData.DataUrl = _ctx.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].DataUrl");
+				streamPredictData.Timestamp = _ctx.LongValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].Timestamp");
 				streamPredictData.ModelId = _ctx.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].ModelId");
 
 				describeStreamPredictResultResponse_streamPredictDatas.Add(streamPredictData);

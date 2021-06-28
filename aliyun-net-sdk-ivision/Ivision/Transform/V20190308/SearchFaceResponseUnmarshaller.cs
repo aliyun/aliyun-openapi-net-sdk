@@ -35,10 +35,10 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 			searchFaceResponse.GroupId = _ctx.StringValue("SearchFace.GroupId");
 
 			SearchFaceResponse.SearchFace_Rect rect = new SearchFaceResponse.SearchFace_Rect();
-			rect.Left = _ctx.IntegerValue("SearchFace.Rect.Left");
 			rect.Top = _ctx.IntegerValue("SearchFace.Rect.Top");
-			rect.Height = _ctx.IntegerValue("SearchFace.Rect.Height");
 			rect.Width = _ctx.IntegerValue("SearchFace.Rect.Width");
+			rect.Height = _ctx.IntegerValue("SearchFace.Rect.Height");
+			rect.Left = _ctx.IntegerValue("SearchFace.Rect.Left");
 			searchFaceResponse.Rect = rect;
 
 			List<SearchFaceResponse.SearchFace_FaceResult> searchFaceResponse_faceResults = new List<SearchFaceResponse.SearchFace_FaceResult>();

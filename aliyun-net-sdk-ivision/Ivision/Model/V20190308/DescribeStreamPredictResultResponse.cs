@@ -27,9 +27,9 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 
 		private long? totalNum;
 
-		private string requestId;
-
 		private long? pageSize;
+
+		private string requestId;
 
 		private long? currentPage;
 
@@ -49,18 +49,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
 		public long? PageSize
 		{
 			get
@@ -70,6 +58,18 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -116,13 +116,13 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 
 			private string predictResult;
 
-			private string dataUrl;
+			private string predictId;
 
 			private string predictTime;
 
-			private long? timestamp;
+			private string dataUrl;
 
-			private string predictId;
+			private long? timestamp;
 
 			private string modelId;
 
@@ -150,15 +150,15 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
-			public string DataUrl
+			public string PredictId
 			{
 				get
 				{
-					return dataUrl;
+					return predictId;
 				}
 				set	
 				{
-					dataUrl = value;
+					predictId = value;
 				}
 			}
 
@@ -174,6 +174,18 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
+			public string DataUrl
+			{
+				get
+				{
+					return dataUrl;
+				}
+				set	
+				{
+					dataUrl = value;
+				}
+			}
+
 			public long? Timestamp
 			{
 				get
@@ -183,18 +195,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				set	
 				{
 					timestamp = value;
-				}
-			}
-
-			public string PredictId
-			{
-				get
-				{
-					return predictId;
-				}
-				set	
-				{
-					predictId = value;
 				}
 			}
 

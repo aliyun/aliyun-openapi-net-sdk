@@ -40,10 +40,10 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 				face.FaceToken = _ctx.StringValue("RegisterFace.Faces["+ i +"].FaceToken");
 
 				RegisterFaceResponse.RegisterFace_Face.RegisterFace_Rect rect = new RegisterFaceResponse.RegisterFace_Face.RegisterFace_Rect();
-				rect.Left = _ctx.IntegerValue("RegisterFace.Faces["+ i +"].Rect.Left");
 				rect.Top = _ctx.IntegerValue("RegisterFace.Faces["+ i +"].Rect.Top");
-				rect.Height = _ctx.IntegerValue("RegisterFace.Faces["+ i +"].Rect.Height");
 				rect.Width = _ctx.IntegerValue("RegisterFace.Faces["+ i +"].Rect.Width");
+				rect.Height = _ctx.IntegerValue("RegisterFace.Faces["+ i +"].Rect.Height");
+				rect.Left = _ctx.IntegerValue("RegisterFace.Faces["+ i +"].Rect.Left");
 				face.Rect = rect;
 
 				registerFaceResponse_faces.Add(face);

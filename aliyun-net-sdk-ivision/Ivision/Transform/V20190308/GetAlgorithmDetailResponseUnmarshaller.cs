@@ -31,18 +31,18 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 			GetAlgorithmDetailResponse getAlgorithmDetailResponse = new GetAlgorithmDetailResponse();
 
 			getAlgorithmDetailResponse.HttpResponse = _ctx.HttpResponse;
-			getAlgorithmDetailResponse.RequestId = _ctx.StringValue("GetAlgorithmDetail.RequestId");
 			getAlgorithmDetailResponse.Message = _ctx.StringValue("GetAlgorithmDetail.Message");
+			getAlgorithmDetailResponse.RequestId = _ctx.StringValue("GetAlgorithmDetail.RequestId");
 			getAlgorithmDetailResponse.Code = _ctx.StringValue("GetAlgorithmDetail.Code");
 			getAlgorithmDetailResponse.Success = _ctx.BooleanValue("GetAlgorithmDetail.Success");
 
 			GetAlgorithmDetailResponse.GetAlgorithmDetail_Data data = new GetAlgorithmDetailResponse.GetAlgorithmDetail_Data();
-			data.CurrentMonthSuccessCount = _ctx.IntegerValue("GetAlgorithmDetail.Data.CurrentMonthSuccessCount");
-			data.ApiDocUrl = _ctx.StringValue("GetAlgorithmDetail.Data.ApiDocUrl");
+			data.AlgorithmName = _ctx.StringValue("GetAlgorithmDetail.Data.AlgorithmName");
 			data.DeployRegion = _ctx.StringValue("GetAlgorithmDetail.Data.DeployRegion");
 			data.CurrentMonthCount = _ctx.IntegerValue("GetAlgorithmDetail.Data.CurrentMonthCount");
-			data.AlgorithmName = _ctx.StringValue("GetAlgorithmDetail.Data.AlgorithmName");
 			data.AlgorithmCode = _ctx.StringValue("GetAlgorithmDetail.Data.AlgorithmCode");
+			data.ApiDocUrl = _ctx.StringValue("GetAlgorithmDetail.Data.ApiDocUrl");
+			data.CurrentMonthSuccessCount = _ctx.IntegerValue("GetAlgorithmDetail.Data.CurrentMonthSuccessCount");
 			getAlgorithmDetailResponse.Data = data;
         
 			return getAlgorithmDetailResponse;

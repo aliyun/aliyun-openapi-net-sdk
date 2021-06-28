@@ -101,25 +101,13 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			public class RegisterFace_Rect
 			{
 
-				private int? left;
-
 				private int? top;
-
-				private int? height;
 
 				private int? width;
 
-				public int? Left
-				{
-					get
-					{
-						return left;
-					}
-					set	
-					{
-						left = value;
-					}
-				}
+				private int? height;
+
+				private int? left;
 
 				public int? Top
 				{
@@ -130,6 +118,18 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 					set	
 					{
 						top = value;
+					}
+				}
+
+				public int? Width
+				{
+					get
+					{
+						return width;
+					}
+					set	
+					{
+						width = value;
 					}
 				}
 
@@ -145,15 +145,15 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 					}
 				}
 
-				public int? Width
+				public int? Left
 				{
 					get
 					{
-						return width;
+						return left;
 					}
 					set	
 					{
-						width = value;
+						left = value;
 					}
 				}
 			}

@@ -25,27 +25,15 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 	public class GetAlgorithmHistogramsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string message;
+
+		private string requestId;
 
 		private string code;
 
 		private bool? success;
 
 		private GetAlgorithmHistograms_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string Message
 		{
@@ -56,6 +44,18 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -143,23 +143,11 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			public class GetAlgorithmHistograms_HistogramsItem
 			{
 
-				private int? failureCount;
-
 				private string time;
 
-				private int? successCount;
+				private int? failureCount;
 
-				public int? FailureCount
-				{
-					get
-					{
-						return failureCount;
-					}
-					set	
-					{
-						failureCount = value;
-					}
-				}
+				private int? successCount;
 
 				public string Time
 				{
@@ -170,6 +158,18 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 					set	
 					{
 						time = value;
+					}
+				}
+
+				public int? FailureCount
+				{
+					get
+					{
+						return failureCount;
+					}
+					set	
+					{
+						failureCount = value;
 					}
 				}
 

@@ -45,6 +45,8 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 
 		private string resourceUrl;
 
+		private string imageUrl;
+
 		private string customerData;
 
 		private string algorithmCode;
@@ -72,6 +74,19 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			{
 				resourceUrl = value;
 				DictionaryUtil.Add(BodyParameters, "ResourceUrl", value);
+			}
+		}
+
+		public string ImageUrl
+		{
+			get
+			{
+				return imageUrl;
+			}
+			set	
+			{
+				imageUrl = value;
+				DictionaryUtil.Add(BodyParameters, "ImageUrl", value);
 			}
 		}
 

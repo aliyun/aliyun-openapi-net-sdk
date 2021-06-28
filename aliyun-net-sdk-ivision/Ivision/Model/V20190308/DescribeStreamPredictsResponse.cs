@@ -27,9 +27,9 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 
 		private long? totalNum;
 
-		private string requestId;
-
 		private long? pageSize;
+
+		private string requestId;
 
 		private long? currentPage;
 
@@ -49,18 +49,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
 		public long? PageSize
 		{
 			get
@@ -70,6 +58,18 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -112,35 +112,47 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 		public class DescribeStreamPredicts_StreamPredict
 		{
 
+			private string creationTime;
+
 			private string status;
-
-			private string streamType;
-
-			private string probabilityThresholds;
-
-			private string streamId;
-
-			private string userData;
 
 			private string notify;
 
 			private string predictId;
 
-			private string detectIntervals;
-
 			private string modelUserData;
-
-			private string predictTemplateId;
 
 			private string output;
 
-			private string creationTime;
+			private string predictTemplateId;
+
+			private string streamId;
+
+			private string autoStart;
+
+			private string probabilityThresholds;
+
+			private string detectIntervals;
+
+			private string streamType;
+
+			private string userData;
 
 			private string modelIds;
 
 			private string faceGroupId;
 
-			private string autoStart;
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
 
 			public string Status
 			{
@@ -151,54 +163,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public string StreamType
-			{
-				get
-				{
-					return streamType;
-				}
-				set	
-				{
-					streamType = value;
-				}
-			}
-
-			public string ProbabilityThresholds
-			{
-				get
-				{
-					return probabilityThresholds;
-				}
-				set	
-				{
-					probabilityThresholds = value;
-				}
-			}
-
-			public string StreamId
-			{
-				get
-				{
-					return streamId;
-				}
-				set	
-				{
-					streamId = value;
-				}
-			}
-
-			public string UserData
-			{
-				get
-				{
-					return userData;
-				}
-				set	
-				{
-					userData = value;
 				}
 			}
 
@@ -226,18 +190,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
-			public string DetectIntervals
-			{
-				get
-				{
-					return detectIntervals;
-				}
-				set	
-				{
-					detectIntervals = value;
-				}
-			}
-
 			public string ModelUserData
 			{
 				get
@@ -247,18 +199,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				set	
 				{
 					modelUserData = value;
-				}
-			}
-
-			public string PredictTemplateId
-			{
-				get
-				{
-					return predictTemplateId;
-				}
-				set	
-				{
-					predictTemplateId = value;
 				}
 			}
 
@@ -274,15 +214,87 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
-			public string CreationTime
+			public string PredictTemplateId
 			{
 				get
 				{
-					return creationTime;
+					return predictTemplateId;
 				}
 				set	
 				{
-					creationTime = value;
+					predictTemplateId = value;
+				}
+			}
+
+			public string StreamId
+			{
+				get
+				{
+					return streamId;
+				}
+				set	
+				{
+					streamId = value;
+				}
+			}
+
+			public string AutoStart
+			{
+				get
+				{
+					return autoStart;
+				}
+				set	
+				{
+					autoStart = value;
+				}
+			}
+
+			public string ProbabilityThresholds
+			{
+				get
+				{
+					return probabilityThresholds;
+				}
+				set	
+				{
+					probabilityThresholds = value;
+				}
+			}
+
+			public string DetectIntervals
+			{
+				get
+				{
+					return detectIntervals;
+				}
+				set	
+				{
+					detectIntervals = value;
+				}
+			}
+
+			public string StreamType
+			{
+				get
+				{
+					return streamType;
+				}
+				set	
+				{
+					streamType = value;
+				}
+			}
+
+			public string UserData
+			{
+				get
+				{
+					return userData;
+				}
+				set	
+				{
+					userData = value;
 				}
 			}
 
@@ -307,18 +319,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				set	
 				{
 					faceGroupId = value;
-				}
-			}
-
-			public string AutoStart
-			{
-				get
-				{
-					return autoStart;
-				}
-				set	
-				{
-					autoStart = value;
 				}
 			}
 		}

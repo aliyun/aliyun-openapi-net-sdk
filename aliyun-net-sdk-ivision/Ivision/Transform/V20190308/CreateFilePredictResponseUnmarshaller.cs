@@ -31,8 +31,8 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 			CreateFilePredictResponse createFilePredictResponse = new CreateFilePredictResponse();
 
 			createFilePredictResponse.HttpResponse = _ctx.HttpResponse;
-			createFilePredictResponse.RequestId = _ctx.StringValue("CreateFilePredict.RequestId");
 			createFilePredictResponse.Message = _ctx.StringValue("CreateFilePredict.Message");
+			createFilePredictResponse.RequestId = _ctx.StringValue("CreateFilePredict.RequestId");
 			createFilePredictResponse.Code = _ctx.StringValue("CreateFilePredict.Code");
 
 			CreateFilePredictResponse.CreateFilePredict_Data data = new CreateFilePredictResponse.CreateFilePredict_Data();

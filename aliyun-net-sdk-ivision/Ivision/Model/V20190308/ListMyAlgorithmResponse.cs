@@ -25,27 +25,15 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 	public class ListMyAlgorithmResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string message;
+
+		private string requestId;
 
 		private string code;
 
 		private bool? success;
 
 		private ListMyAlgorithm_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string Message
 		{
@@ -56,6 +44,18 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,25 +98,13 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 		public class ListMyAlgorithm_Data
 		{
 
-			private int? totalCount;
-
 			private int? pageSize;
 
 			private int? pageNumber;
 
-			private List<ListMyAlgorithm_AlgorithmListItem> algorithmList;
+			private int? totalCount;
 
-			public int? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
+			private List<ListMyAlgorithm_AlgorithmListItem> algorithmList;
 
 			public int? PageSize
 			{
@@ -142,6 +130,18 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
+			public int? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
+				}
+			}
+
 			public List<ListMyAlgorithm_AlgorithmListItem> AlgorithmList
 			{
 				get
@@ -157,53 +157,29 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			public class ListMyAlgorithm_AlgorithmListItem
 			{
 
-				private int? algorithmOrder;
-
-				private int? yesterdayCount;
-
-				private string apiDocUrl;
+				private string algorithmName;
 
 				private string deployRegion;
 
 				private int? currentMonthCount;
 
-				private string algorithmName;
-
 				private string algorithmCode;
 
-				public int? AlgorithmOrder
-				{
-					get
-					{
-						return algorithmOrder;
-					}
-					set	
-					{
-						algorithmOrder = value;
-					}
-				}
+				private string apiDocUrl;
 
-				public int? YesterdayCount
-				{
-					get
-					{
-						return yesterdayCount;
-					}
-					set	
-					{
-						yesterdayCount = value;
-					}
-				}
+				private int? yesterdayCount;
 
-				public string ApiDocUrl
+				private int? algorithmOrder;
+
+				public string AlgorithmName
 				{
 					get
 					{
-						return apiDocUrl;
+						return algorithmName;
 					}
 					set	
 					{
-						apiDocUrl = value;
+						algorithmName = value;
 					}
 				}
 
@@ -231,18 +207,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 					}
 				}
 
-				public string AlgorithmName
-				{
-					get
-					{
-						return algorithmName;
-					}
-					set	
-					{
-						algorithmName = value;
-					}
-				}
-
 				public string AlgorithmCode
 				{
 					get
@@ -252,6 +216,42 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 					set	
 					{
 						algorithmCode = value;
+					}
+				}
+
+				public string ApiDocUrl
+				{
+					get
+					{
+						return apiDocUrl;
+					}
+					set	
+					{
+						apiDocUrl = value;
+					}
+				}
+
+				public int? YesterdayCount
+				{
+					get
+					{
+						return yesterdayCount;
+					}
+					set	
+					{
+						yesterdayCount = value;
+					}
+				}
+
+				public int? AlgorithmOrder
+				{
+					get
+					{
+						return algorithmOrder;
+					}
+					set	
+					{
+						algorithmOrder = value;
 					}
 				}
 			}
