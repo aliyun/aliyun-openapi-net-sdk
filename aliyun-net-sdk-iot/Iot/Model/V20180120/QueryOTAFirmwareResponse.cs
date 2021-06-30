@@ -132,6 +132,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string moduleName;
 
+			private string udi;
+
 			public string FirmwareName
 			{
 				get
@@ -333,6 +335,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					moduleName = value;
+				}
+			}
+
+			public string Udi
+			{
+				get
+				{
+					return udi;
+				}
+				set	
+				{
+					udi = value;
 				}
 			}
 		}

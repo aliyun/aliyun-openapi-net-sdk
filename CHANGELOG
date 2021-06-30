@@ -1,3 +1,8 @@
+2021-06-30 Version: 7.26.0
+- Add RerunJob.
+- Add Message API, QueryMessageInfo.
+- Update OTA API, including CreateOTAFirmware, QueryOTAFirmware.
+
 2021-06-28 Version: 1.1.6281
 - Create 6281 sdk.
 

@@ -54,6 +54,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			firmwareInfo.Type = _ctx.IntegerValue("QueryOTAFirmware.FirmwareInfo.Type");
 			firmwareInfo.VerifyProgress = _ctx.IntegerValue("QueryOTAFirmware.FirmwareInfo.VerifyProgress");
 			firmwareInfo.ModuleName = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.ModuleName");
+			firmwareInfo.Udi = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.Udi");
 			queryOTAFirmwareResponse.FirmwareInfo = firmwareInfo;
         
 			return queryOTAFirmwareResponse;

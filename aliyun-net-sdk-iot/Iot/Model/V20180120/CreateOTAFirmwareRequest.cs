@@ -64,6 +64,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string srcVersion;
 
+		private string udi;
+
 		private string destVersion;
 
 		public string SignMethod
@@ -219,6 +221,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				srcVersion = value;
 				DictionaryUtil.Add(QueryParameters, "SrcVersion", value);
+			}
+		}
+
+		public string Udi
+		{
+			get
+			{
+				return udi;
+			}
+			set	
+			{
+				udi = value;
+				DictionaryUtil.Add(QueryParameters, "Udi", value);
 			}
 		}
 
