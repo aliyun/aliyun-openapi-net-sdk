@@ -117,7 +117,7 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private string resourceGroupId;
 
-		private bool? encryptionType;
+		private string encryptionType;
 
 		private string encryptionKey;
 
@@ -677,7 +677,7 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
-		public bool? EncryptionType
+		public string EncryptionType
 		{
 			get
 			{

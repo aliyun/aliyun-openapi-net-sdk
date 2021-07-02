@@ -77,7 +77,7 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 			describeMultiZoneClusterResponse.ArbiterVSwitchIds = _ctx.StringValue("DescribeMultiZoneCluster.ArbiterVSwitchIds");
 			describeMultiZoneClusterResponse.VpcId = _ctx.StringValue("DescribeMultiZoneCluster.VpcId");
 			describeMultiZoneClusterResponse.ResourceGroupId = _ctx.StringValue("DescribeMultiZoneCluster.ResourceGroupId");
-			describeMultiZoneClusterResponse.EncryptionType = _ctx.BooleanValue("DescribeMultiZoneCluster.EncryptionType");
+			describeMultiZoneClusterResponse.EncryptionType = _ctx.StringValue("DescribeMultiZoneCluster.EncryptionType");
 			describeMultiZoneClusterResponse.EncryptionKey = _ctx.StringValue("DescribeMultiZoneCluster.EncryptionKey");
 
 			List<DescribeMultiZoneClusterResponse.DescribeMultiZoneCluster_MultiZoneInstanceModel> describeMultiZoneClusterResponse_multiZoneInstanceModels = new List<DescribeMultiZoneClusterResponse.DescribeMultiZoneCluster_MultiZoneInstanceModel>();
