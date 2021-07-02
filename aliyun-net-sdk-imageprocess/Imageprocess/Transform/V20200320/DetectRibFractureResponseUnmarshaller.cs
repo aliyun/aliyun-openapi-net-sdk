@@ -51,23 +51,23 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 			List<DetectRibFractureResponse.DetectRibFracture_Data.DetectRibFracture_DetectionsItem> data_detections = new List<DetectRibFractureResponse.DetectRibFracture_Data.DetectRibFracture_DetectionsItem>();
 			for (int i = 0; i < _ctx.Length("DetectRibFracture.Data.Detections.Length"); i++) {
 				DetectRibFractureResponse.DetectRibFracture_Data.DetectRibFracture_DetectionsItem detectionsItem = new DetectRibFractureResponse.DetectRibFracture_Data.DetectRibFracture_DetectionsItem();
-				detectionsItem.FractureCategory = _ctx.StringValue("DetectRibFracture.Data.Detections["+ i +"].FractureCategory");
+				detectionsItem.FractureId = _ctx.IntegerValue("DetectRibFracture.Data.Detections["+ i +"].FractureId");
 				detectionsItem.FractureConfidence = _ctx.FloatValue("DetectRibFracture.Data.Detections["+ i +"].FractureConfidence");
+				detectionsItem.FractureCategory = _ctx.StringValue("DetectRibFracture.Data.Detections["+ i +"].FractureCategory");
 				detectionsItem.FractureLocation = _ctx.StringValue("DetectRibFracture.Data.Detections["+ i +"].FractureLocation");
 				detectionsItem.FractureSegment = _ctx.LongValue("DetectRibFracture.Data.Detections["+ i +"].FractureSegment");
-				detectionsItem.FractureId = _ctx.IntegerValue("DetectRibFracture.Data.Detections["+ i +"].FractureId");
-
-				List<string> detectionsItem_coordinateImage = new List<string>();
-				for (int j = 0; j < _ctx.Length("DetectRibFracture.Data.Detections["+ i +"].CoordinateImage.Length"); j++) {
-					detectionsItem_coordinateImage.Add(_ctx.StringValue("DetectRibFracture.Data.Detections["+ i +"].CoordinateImage["+ j +"]"));
-				}
-				detectionsItem.CoordinateImage = detectionsItem_coordinateImage;
 
 				List<string> detectionsItem_coordinates = new List<string>();
 				for (int j = 0; j < _ctx.Length("DetectRibFracture.Data.Detections["+ i +"].Coordinates.Length"); j++) {
 					detectionsItem_coordinates.Add(_ctx.StringValue("DetectRibFracture.Data.Detections["+ i +"].Coordinates["+ j +"]"));
 				}
 				detectionsItem.Coordinates = detectionsItem_coordinates;
+
+				List<string> detectionsItem_coordinateImage = new List<string>();
+				for (int j = 0; j < _ctx.Length("DetectRibFracture.Data.Detections["+ i +"].CoordinateImage.Length"); j++) {
+					detectionsItem_coordinateImage.Add(_ctx.StringValue("DetectRibFracture.Data.Detections["+ i +"].CoordinateImage["+ j +"]"));
+				}
+				detectionsItem.CoordinateImage = detectionsItem_coordinateImage;
 
 				data_detections.Add(detectionsItem);
 			}

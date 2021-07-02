@@ -115,29 +115,29 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 			public class DetectRibFracture_DetectionsItem
 			{
 
-				private string fractureCategory;
+				private int? fractureId;
 
 				private float? fractureConfidence;
+
+				private string fractureCategory;
 
 				private string fractureLocation;
 
 				private long? fractureSegment;
 
-				private int? fractureId;
+				private List<string> coordinates;
 
 				private List<string> coordinateImage;
 
-				private List<string> coordinates;
-
-				public string FractureCategory
+				public int? FractureId
 				{
 					get
 					{
-						return fractureCategory;
+						return fractureId;
 					}
 					set	
 					{
-						fractureCategory = value;
+						fractureId = value;
 					}
 				}
 
@@ -150,6 +150,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 					set	
 					{
 						fractureConfidence = value;
+					}
+				}
+
+				public string FractureCategory
+				{
+					get
+					{
+						return fractureCategory;
+					}
+					set	
+					{
+						fractureCategory = value;
 					}
 				}
 
@@ -177,15 +189,15 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 					}
 				}
 
-				public int? FractureId
+				public List<string> Coordinates
 				{
 					get
 					{
-						return fractureId;
+						return coordinates;
 					}
 					set	
 					{
-						fractureId = value;
+						coordinates = value;
 					}
 				}
 
@@ -198,18 +210,6 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 					set	
 					{
 						coordinateImage = value;
-					}
-				}
-
-				public List<string> Coordinates
-				{
-					get
-					{
-						return coordinates;
-					}
-					set	
-					{
-						coordinates = value;
 					}
 				}
 			}
