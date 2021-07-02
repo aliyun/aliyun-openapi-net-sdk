@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class QueryPublicModelEngineRequest : RpcAcsRequest<QueryPublicModelEngineResponse>
+    public class SetDataSourceShareRequest : RpcAcsRequest<SetDataSourceShareResponse>
     {
-        public QueryPublicModelEngineRequest()
-            : base("dataworks-public", "2020-05-18", "QueryPublicModelEngine")
+        public SetDataSourceShareRequest()
+            : base("dataworks-public", "2020-05-18", "SetDataSourceShare")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,24 +41,69 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string text;
+		private string projectPermissions;
 
-		private string projectId;
+		private string datasourceName;
 
-		public string Text
+		private string userPermissions;
+
+		private string envType;
+
+		private long? projectId;
+
+		public string ProjectPermissions
 		{
 			get
 			{
-				return text;
+				return projectPermissions;
 			}
 			set	
 			{
-				text = value;
-				DictionaryUtil.Add(BodyParameters, "Text", value);
+				projectPermissions = value;
+				DictionaryUtil.Add(QueryParameters, "ProjectPermissions", value);
 			}
 		}
 
-		public string ProjectId
+		public string DatasourceName
+		{
+			get
+			{
+				return datasourceName;
+			}
+			set	
+			{
+				datasourceName = value;
+				DictionaryUtil.Add(QueryParameters, "DatasourceName", value);
+			}
+		}
+
+		public string UserPermissions
+		{
+			get
+			{
+				return userPermissions;
+			}
+			set	
+			{
+				userPermissions = value;
+				DictionaryUtil.Add(QueryParameters, "UserPermissions", value);
+			}
+		}
+
+		public string EnvType
+		{
+			get
+			{
+				return envType;
+			}
+			set	
+			{
+				envType = value;
+				DictionaryUtil.Add(QueryParameters, "EnvType", value);
+			}
+		}
+
+		public long? ProjectId
 		{
 			get
 			{
@@ -67,7 +112,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				projectId = value;
-				DictionaryUtil.Add(BodyParameters, "ProjectId", value);
+				DictionaryUtil.Add(QueryParameters, "ProjectId", value.ToString());
 			}
 		}
 
@@ -76,9 +121,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override QueryPublicModelEngineResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SetDataSourceShareResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryPublicModelEngineResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetDataSourceShareResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

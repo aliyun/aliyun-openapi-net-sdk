@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class QueryPublicModelEngineRequest : RpcAcsRequest<QueryPublicModelEngineResponse>
+    public class ImportConnectionsRequest : RpcAcsRequest<ImportConnectionsResponse>
     {
-        public QueryPublicModelEngineRequest()
-            : base("dataworks-public", "2020-05-18", "QueryPublicModelEngine")
+        public ImportConnectionsRequest()
+            : base("dataworks-public", "2020-05-18", "ImportConnections")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,24 +41,11 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string text;
+		private long? projectId;
 
-		private string projectId;
+		private string connections;
 
-		public string Text
-		{
-			get
-			{
-				return text;
-			}
-			set	
-			{
-				text = value;
-				DictionaryUtil.Add(BodyParameters, "Text", value);
-			}
-		}
-
-		public string ProjectId
+		public long? ProjectId
 		{
 			get
 			{
@@ -67,7 +54,20 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				projectId = value;
-				DictionaryUtil.Add(BodyParameters, "ProjectId", value);
+				DictionaryUtil.Add(QueryParameters, "ProjectId", value.ToString());
+			}
+		}
+
+		public string Connections
+		{
+			get
+			{
+				return connections;
+			}
+			set	
+			{
+				connections = value;
+				DictionaryUtil.Add(QueryParameters, "Connections", value);
 			}
 		}
 
@@ -76,9 +76,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override QueryPublicModelEngineResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ImportConnectionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryPublicModelEngineResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ImportConnectionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

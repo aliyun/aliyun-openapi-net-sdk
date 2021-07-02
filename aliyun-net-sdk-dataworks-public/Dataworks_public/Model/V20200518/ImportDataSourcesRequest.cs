@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class QueryPublicModelEngineRequest : RpcAcsRequest<QueryPublicModelEngineResponse>
+    public class ImportDataSourcesRequest : RpcAcsRequest<ImportDataSourcesResponse>
     {
-        public QueryPublicModelEngineRequest()
-            : base("dataworks-public", "2020-05-18", "QueryPublicModelEngine")
+        public ImportDataSourcesRequest()
+            : base("dataworks-public", "2020-05-18", "ImportDataSources")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,24 +41,24 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string text;
+		private string dataSources;
 
-		private string projectId;
+		private long? projectId;
 
-		public string Text
+		public string DataSources
 		{
 			get
 			{
-				return text;
+				return dataSources;
 			}
 			set	
 			{
-				text = value;
-				DictionaryUtil.Add(BodyParameters, "Text", value);
+				dataSources = value;
+				DictionaryUtil.Add(QueryParameters, "DataSources", value);
 			}
 		}
 
-		public string ProjectId
+		public long? ProjectId
 		{
 			get
 			{
@@ -67,7 +67,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				projectId = value;
-				DictionaryUtil.Add(BodyParameters, "ProjectId", value);
+				DictionaryUtil.Add(QueryParameters, "ProjectId", value.ToString());
 			}
 		}
 
@@ -76,9 +76,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override QueryPublicModelEngineResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ImportDataSourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryPublicModelEngineResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ImportDataSourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
