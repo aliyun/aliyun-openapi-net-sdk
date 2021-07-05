@@ -216,6 +216,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 			private int? screenHeight;
 
+			private int? eslSignal;
+
 			public string LastCommunicateTime
 			{
 				get
@@ -333,6 +335,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					screenHeight = value;
+				}
+			}
+
+			public int? EslSignal
+			{
+				get
+				{
+					return eslSignal;
+				}
+				set	
+				{
+					eslSignal = value;
 				}
 			}
 		}

@@ -56,6 +56,7 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 				eslDeviceInfo.BatteryLevel = _ctx.IntegerValue("DescribeEslDevices.EslDevices["+ i +"].BatteryLevel");
 				eslDeviceInfo.ScreenWidth = _ctx.IntegerValue("DescribeEslDevices.EslDevices["+ i +"].ScreenWidth");
 				eslDeviceInfo.ScreenHeight = _ctx.IntegerValue("DescribeEslDevices.EslDevices["+ i +"].ScreenHeight");
+				eslDeviceInfo.EslSignal = _ctx.IntegerValue("DescribeEslDevices.EslDevices["+ i +"].EslSignal");
 
 				describeEslDevicesResponse_eslDevices.Add(eslDeviceInfo);
 			}

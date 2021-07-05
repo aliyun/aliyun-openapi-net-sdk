@@ -64,6 +64,7 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 				userLogInfo.ItemBarCode = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].ItemBarCode");
 				userLogInfo.BePromotion = _ctx.BooleanValue("DescribeUserLog.UserLogs["+ i +"].BePromotion");
 				userLogInfo.UserId = _ctx.StringValue("DescribeUserLog.UserLogs["+ i +"].UserId");
+				userLogInfo.EslSignal = _ctx.IntegerValue("DescribeUserLog.UserLogs["+ i +"].EslSignal");
 
 				describeUserLogResponse_userLogs.Add(userLogInfo);
 			}

@@ -316,6 +316,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 			private bool? beMember;
 
+			private string templateSceneId;
+
 			public string CategoryName
 			{
 				get
@@ -949,6 +951,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					beMember = value;
+				}
+			}
+
+			public string TemplateSceneId
+			{
+				get
+				{
+					return templateSceneId;
+				}
+				set	
+				{
+					templateSceneId = value;
 				}
 			}
 		}

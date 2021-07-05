@@ -232,6 +232,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 			private string userId;
 
+			private int? eslSignal;
+
 			public string ResultCode
 			{
 				get
@@ -445,6 +447,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					userId = value;
+				}
+			}
+
+			public int? EslSignal
+			{
+				get
+				{
+					return eslSignal;
+				}
+				set	
+				{
+					eslSignal = value;
 				}
 			}
 		}

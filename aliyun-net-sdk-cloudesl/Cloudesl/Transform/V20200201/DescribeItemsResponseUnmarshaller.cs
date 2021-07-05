@@ -100,6 +100,7 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 				itemInfo.GmtCreate = _ctx.StringValue("DescribeItems.Items["+ i +"].GmtCreate");
 				itemInfo.GmtModified = _ctx.StringValue("DescribeItems.Items["+ i +"].GmtModified");
 				itemInfo.BeMember = _ctx.BooleanValue("DescribeItems.Items["+ i +"].BeMember");
+				itemInfo.TemplateSceneId = _ctx.StringValue("DescribeItems.Items["+ i +"].TemplateSceneId");
 
 				describeItemsResponse_items.Add(itemInfo);
 			}
