@@ -1,3 +1,6 @@
+2021-07-06 Version: 1.20.0
+- Support ListDataCorrectPreCheckDB,ListDataCorrectPreCheckSQL Order API.
+
 2021-07-05 Version: 2.0.6
 - Supported deleteItem for sdk.
 
