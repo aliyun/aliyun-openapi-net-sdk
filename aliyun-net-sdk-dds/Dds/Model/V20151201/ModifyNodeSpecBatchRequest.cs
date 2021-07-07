@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class ListTagResourcesRequest : RpcAcsRequest<ListTagResourcesResponse>
+    public class ModifyNodeSpecBatchRequest : RpcAcsRequest<ModifyNodeSpecBatchResponse>
     {
-        public ListTagResourcesRequest()
-            : base("Dds", "2015-12-01", "ListTagResources", "Dds", "openAPI")
+        public ModifyNodeSpecBatchRequest()
+            : base("Dds", "2015-12-01", "ModifyNodeSpecBatch", "Dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,23 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
-		private string nextToken;
+		private string clientToken;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private string nodesInfo;
 
-		private List<string> resourceIds = new List<string>(){ };
+		private string couponNo;
+
+		private string securityToken;
+
+		private string effectiveTime;
+
+		private string dBInstanceId;
+
+		private string businessInfo;
+
+		private bool? autoPay;
+
+		private string fromApp;
 
 		private string resourceOwnerAccount;
 
@@ -54,7 +66,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? ownerId;
 
-		private string resourceType;
+		private string orderType;
 
 		public long? ResourceOwnerId
 		{
@@ -69,51 +81,120 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string NextToken
+		public string ClientToken
 		{
 			get
 			{
-				return nextToken;
+				return clientToken;
 			}
 			set	
 			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		public List<Tag> Tags
+		public string NodesInfo
 		{
 			get
 			{
-				return tags;
+				return nodesInfo;
 			}
-
-			set
+			set	
 			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
+				nodesInfo = value;
+				DictionaryUtil.Add(QueryParameters, "NodesInfo", value);
 			}
 		}
 
-		public List<string> ResourceIds
+		public string CouponNo
 		{
 			get
 			{
-				return resourceIds;
+				return couponNo;
 			}
-
-			set
+			set	
 			{
-				resourceIds = value;
-				for (int i = 0; i < resourceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
-				}
+				couponNo = value;
+				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string EffectiveTime
+		{
+			get
+			{
+				return effectiveTime;
+			}
+			set	
+			{
+				effectiveTime = value;
+				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string BusinessInfo
+		{
+			get
+			{
+				return businessInfo;
+			}
+			set	
+			{
+				businessInfo = value;
+				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
+			}
+		}
+
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+			}
+		}
+
+		public string FromApp
+		{
+			get
+			{
+				return fromApp;
+			}
+			set	
+			{
+				fromApp = value;
+				DictionaryUtil.Add(QueryParameters, "FromApp", value);
 			}
 		}
 
@@ -156,54 +237,22 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string ResourceType
+		public string OrderType
 		{
 			get
 			{
-				return resourceType;
+				return orderType;
 			}
 			set	
 			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+				orderType = value;
+				DictionaryUtil.Add(QueryParameters, "OrderType", value);
 			}
 		}
 
-		public class Tag
-		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
-
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
-		}
-
-        public override ListTagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyNodeSpecBatchResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListTagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyNodeSpecBatchResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

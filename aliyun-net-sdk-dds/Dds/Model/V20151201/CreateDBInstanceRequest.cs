@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dds;
 using Aliyun.Acs.Dds.Transform;
 using Aliyun.Acs.Dds.Transform.V20151201;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class CreateDBInstanceRequest : RpcAcsRequest<CreateDBInstanceResponse>
     {
         public CreateDBInstanceRequest()
-            : base("Dds", "2015-12-01", "CreateDBInstance")
+            : base("Dds", "2015-12-01", "CreateDBInstance", "Dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

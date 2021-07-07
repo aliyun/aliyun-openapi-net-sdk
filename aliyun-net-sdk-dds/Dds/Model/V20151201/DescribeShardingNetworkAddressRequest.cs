@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dds;
 using Aliyun.Acs.Dds.Transform;
 using Aliyun.Acs.Dds.Transform.V20151201;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DescribeShardingNetworkAddressRequest : RpcAcsRequest<DescribeShardingNetworkAddressResponse>
     {
         public DescribeShardingNetworkAddressRequest()
-            : base("Dds", "2015-12-01", "DescribeShardingNetworkAddress")
+            : base("Dds", "2015-12-01", "DescribeShardingNetworkAddress", "Dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

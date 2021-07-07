@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dds;
 using Aliyun.Acs.Dds.Transform;
 using Aliyun.Acs.Dds.Transform.V20151201;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DescribeDedicatedClusterInstanceListRequest : RpcAcsRequest<DescribeDedicatedClusterInstanceListResponse>
     {
         public DescribeDedicatedClusterInstanceListRequest()
-            : base("Dds", "2015-12-01", "DescribeDedicatedClusterInstanceList")
+            : base("Dds", "2015-12-01", "DescribeDedicatedClusterInstanceList", "Dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

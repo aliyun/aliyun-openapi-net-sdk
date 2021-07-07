@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class ListTagResourcesRequest : RpcAcsRequest<ListTagResourcesResponse>
+    public class ModifyResourceGroupRequest : RpcAcsRequest<ModifyResourceGroupResponse>
     {
-        public ListTagResourcesRequest()
-            : base("Dds", "2015-12-01", "ListTagResources", "Dds", "openAPI")
+        public ModifyResourceGroupRequest()
+            : base("Dds", "2015-12-01", "ModifyResourceGroup", "Dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,19 +42,17 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
-		private string nextToken;
+		private string resourceGroupId;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private string securityToken;
 
-		private List<string> resourceIds = new List<string>(){ };
+		private string dBInstanceId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string resourceType;
 
 		public long? ResourceOwnerId
 		{
@@ -69,51 +67,42 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string NextToken
+		public string ResourceGroupId
 		{
 			get
 			{
-				return nextToken;
+				return resourceGroupId;
 			}
 			set	
 			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
-		public List<Tag> Tags
+		public string SecurityToken
 		{
 			get
 			{
-				return tags;
+				return securityToken;
 			}
-
-			set
+			set	
 			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
-		public List<string> ResourceIds
+		public string DBInstanceId
 		{
 			get
 			{
-				return resourceIds;
+				return dBInstanceId;
 			}
-
-			set
+			set	
 			{
-				resourceIds = value;
-				for (int i = 0; i < resourceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
-				}
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
@@ -156,54 +145,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
-			}
-		}
-
-		public class Tag
-		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
-
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
-		}
-
-        public override ListTagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyResourceGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListTagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyResourceGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

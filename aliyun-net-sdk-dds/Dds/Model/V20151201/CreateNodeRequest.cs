@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dds;
 using Aliyun.Acs.Dds.Transform;
 using Aliyun.Acs.Dds.Transform.V20151201;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class CreateNodeRequest : RpcAcsRequest<CreateNodeResponse>
     {
         public CreateNodeRequest()
-            : base("Dds", "2015-12-01", "CreateNode")
+            : base("Dds", "2015-12-01", "CreateNode", "Dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,11 +48,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private int? readonlyReplicas;
 
+		private string couponNo;
+
 		private string nodeClass;
 
 		private string securityToken;
 
 		private string dBInstanceId;
+
+		private string businessInfo;
 
 		private bool? autoPay;
 
@@ -119,6 +122,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string CouponNo
+		{
+			get
+			{
+				return couponNo;
+			}
+			set	
+			{
+				couponNo = value;
+				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
+			}
+		}
+
 		public string NodeClass
 		{
 			get
@@ -155,6 +171,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string BusinessInfo
+		{
+			get
+			{
+				return businessInfo;
+			}
+			set	
+			{
+				businessInfo = value;
+				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
 			}
 		}
 
