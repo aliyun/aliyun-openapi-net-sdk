@@ -82,6 +82,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string taskAction;
 
+			private string nodeId;
+
 			public int? BackupJobID
 			{
 				get
@@ -151,6 +153,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					taskAction = value;
+				}
+			}
+
+			public string NodeId
+			{
+				get
+				{
+					return nodeId;
+				}
+				set	
+				{
+					nodeId = value;
 				}
 			}
 		}

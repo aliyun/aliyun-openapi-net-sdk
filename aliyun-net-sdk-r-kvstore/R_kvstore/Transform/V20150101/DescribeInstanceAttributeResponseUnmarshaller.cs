@@ -81,6 +81,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				dBInstanceAttribute.GlobalInstanceId = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].GlobalInstanceId");
 				dBInstanceAttribute.SecondaryZoneId = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].SecondaryZoneId");
 				dBInstanceAttribute.ZoneType = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ZoneType");
+				dBInstanceAttribute.BackupLogStartTime = _ctx.StringValue("DescribeInstanceAttribute.Instances["+ i +"].BackupLogStartTime");
 
 				List<DescribeInstanceAttributeResponse.DescribeInstanceAttribute_DBInstanceAttribute.DescribeInstanceAttribute_Tag> dBInstanceAttribute_tags = new List<DescribeInstanceAttributeResponse.DescribeInstanceAttribute_DBInstanceAttribute.DescribeInstanceAttribute_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeInstanceAttribute.Instances["+ i +"].Tags.Length"); j++) {

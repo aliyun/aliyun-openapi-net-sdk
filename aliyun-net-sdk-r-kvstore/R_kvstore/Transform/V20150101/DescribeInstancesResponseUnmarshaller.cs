@@ -75,6 +75,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				kVStoreInstance.ResourceGroupId = _ctx.StringValue("DescribeInstances.Instances["+ i +"].ResourceGroupId");
 				kVStoreInstance.ShardCount = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].ShardCount");
 				kVStoreInstance.ProxyCount = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].ProxyCount");
+				kVStoreInstance.SecondaryZoneId = _ctx.StringValue("DescribeInstances.Instances["+ i +"].SecondaryZoneId");
+				kVStoreInstance.GlobalInstanceId = _ctx.StringValue("DescribeInstances.Instances["+ i +"].GlobalInstanceId");
 
 				List<DescribeInstancesResponse.DescribeInstances_KVStoreInstance.DescribeInstances_Tag> kVStoreInstance_tags = new List<DescribeInstancesResponse.DescribeInstances_KVStoreInstance.DescribeInstances_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeInstances.Instances["+ i +"].Tags.Length"); j++) {

@@ -146,6 +146,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string zoneType;
 
+			private string backupLogStartTime;
+
 			private List<DescribeInstanceAttribute_Tag> tags;
 
 			public string InstanceId
@@ -685,6 +687,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					zoneType = value;
+				}
+			}
+
+			public string BackupLogStartTime
+			{
+				get
+				{
+					return backupLogStartTime;
+				}
+				set	
+				{
+					backupLogStartTime = value;
 				}
 			}
 

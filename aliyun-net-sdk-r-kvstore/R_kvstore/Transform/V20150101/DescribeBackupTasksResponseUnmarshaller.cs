@@ -43,6 +43,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				backupJob.Process = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].Process");
 				backupJob.StartTime = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].StartTime");
 				backupJob.TaskAction = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].TaskAction");
+				backupJob.NodeId = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].NodeId");
 
 				describeBackupTasksResponse_backupJobs.Add(backupJob);
 			}

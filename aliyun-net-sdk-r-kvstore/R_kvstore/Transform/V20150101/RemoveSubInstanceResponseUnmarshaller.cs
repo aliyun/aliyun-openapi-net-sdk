@@ -24,20 +24,16 @@ using Aliyun.Acs.R_kvstore.Model.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
-    public class DescribeIntranetAttributeResponseUnmarshaller
+    public class RemoveSubInstanceResponseUnmarshaller
     {
-        public static DescribeIntranetAttributeResponse Unmarshall(UnmarshallerContext _ctx)
+        public static RemoveSubInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DescribeIntranetAttributeResponse describeIntranetAttributeResponse = new DescribeIntranetAttributeResponse();
+			RemoveSubInstanceResponse removeSubInstanceResponse = new RemoveSubInstanceResponse();
 
-			describeIntranetAttributeResponse.HttpResponse = _ctx.HttpResponse;
-			describeIntranetAttributeResponse.RequestId = _ctx.StringValue("DescribeIntranetAttribute.RequestId");
-			describeIntranetAttributeResponse.IntranetBandwidth = _ctx.IntegerValue("DescribeIntranetAttribute.IntranetBandwidth");
-			describeIntranetAttributeResponse.ExpireTime = _ctx.StringValue("DescribeIntranetAttribute.ExpireTime");
-			describeIntranetAttributeResponse.BandwidthExpireTime = _ctx.StringValue("DescribeIntranetAttribute.BandwidthExpireTime");
-			describeIntranetAttributeResponse.AutoRenewal = _ctx.BooleanValue("DescribeIntranetAttribute.AutoRenewal");
+			removeSubInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			removeSubInstanceResponse.RequestId = _ctx.StringValue("RemoveSubInstance.RequestId");
         
-			return describeIntranetAttributeResponse;
+			return removeSubInstanceResponse;
         }
     }
 }

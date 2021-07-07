@@ -170,6 +170,10 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private int? proxyCount;
 
+			private string secondaryZoneId;
+
+			private string globalInstanceId;
+
 			private List<DescribeInstances_Tag> tags;
 
 			public string ReplacateId
@@ -601,6 +605,30 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					proxyCount = value;
+				}
+			}
+
+			public string SecondaryZoneId
+			{
+				get
+				{
+					return secondaryZoneId;
+				}
+				set	
+				{
+					secondaryZoneId = value;
+				}
+			}
+
+			public string GlobalInstanceId
+			{
+				get
+				{
+					return globalInstanceId;
+				}
+				set	
+				{
+					globalInstanceId = value;
 				}
 			}
 

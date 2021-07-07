@@ -39,7 +39,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			List<DescribeDedicatedClusterInstanceListResponse.DescribeDedicatedClusterInstanceList_InstancesItem> describeDedicatedClusterInstanceListResponse_instances = new List<DescribeDedicatedClusterInstanceListResponse.DescribeDedicatedClusterInstanceList_InstancesItem>();
 			for (int i = 0; i < _ctx.Length("DescribeDedicatedClusterInstanceList.Instances.Length"); i++) {
 				DescribeDedicatedClusterInstanceListResponse.DescribeDedicatedClusterInstanceList_InstancesItem instancesItem = new DescribeDedicatedClusterInstanceListResponse.DescribeDedicatedClusterInstanceList_InstancesItem();
-				instancesItem.CharacterType = _ctx.IntegerValue("DescribeDedicatedClusterInstanceList.Instances["+ i +"].CharacterType");
+				instancesItem.CharacterType = _ctx.StringValue("DescribeDedicatedClusterInstanceList.Instances["+ i +"].CharacterType");
 				instancesItem.ClusterId = _ctx.StringValue("DescribeDedicatedClusterInstanceList.Instances["+ i +"].ClusterId");
 				instancesItem.ClusterName = _ctx.StringValue("DescribeDedicatedClusterInstanceList.Instances["+ i +"].ClusterName");
 				instancesItem.EngineVersion = _ctx.StringValue("DescribeDedicatedClusterInstanceList.Instances["+ i +"].EngineVersion");
@@ -61,6 +61,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				instancesItem.ShardCount = _ctx.IntegerValue("DescribeDedicatedClusterInstanceList.Instances["+ i +"].ShardCount");
 				instancesItem.CurrentBandWidth = _ctx.LongValue("DescribeDedicatedClusterInstanceList.Instances["+ i +"].CurrentBandWidth");
 				instancesItem.BandWidth = _ctx.LongValue("DescribeDedicatedClusterInstanceList.Instances["+ i +"].BandWidth");
+				instancesItem.ProxyCount = _ctx.IntegerValue("DescribeDedicatedClusterInstanceList.Instances["+ i +"].ProxyCount");
 
 				List<DescribeDedicatedClusterInstanceListResponse.DescribeDedicatedClusterInstanceList_InstancesItem.DescribeDedicatedClusterInstanceList_InstanceNodes> instancesItem_instanceNodeList = new List<DescribeDedicatedClusterInstanceListResponse.DescribeDedicatedClusterInstanceList_InstancesItem.DescribeDedicatedClusterInstanceList_InstanceNodes>();
 				for (int j = 0; j < _ctx.Length("DescribeDedicatedClusterInstanceList.Instances["+ i +"].InstanceNodeList.Length"); j++) {

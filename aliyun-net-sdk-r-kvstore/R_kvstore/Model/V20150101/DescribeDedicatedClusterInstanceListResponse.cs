@@ -98,7 +98,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeDedicatedClusterInstanceList_InstancesItem
 		{
 
-			private int? characterType;
+			private string characterType;
 
 			private string clusterId;
 
@@ -142,9 +142,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private long? bandWidth;
 
+			private int? proxyCount;
+
 			private List<DescribeDedicatedClusterInstanceList_InstanceNodes> instanceNodeList;
 
-			public int? CharacterType
+			public string CharacterType
 			{
 				get
 				{
@@ -405,6 +407,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					bandWidth = value;
+				}
+			}
+
+			public int? ProxyCount
+			{
+				get
+				{
+					return proxyCount;
+				}
+				set	
+				{
+					proxyCount = value;
 				}
 			}
 

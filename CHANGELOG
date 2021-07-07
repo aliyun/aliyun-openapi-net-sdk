@@ -1,3 +1,8 @@
+2021-07-07 Version: 2.19.0
+- Support FilterKey for RestoreInstance.
+- DescribeInstanceAttribute add return argument BackupLogStartTime.
+- Add RemoveSubInstance for Global Distributed Cache.
+
 2021-07-06 Version: 1.20.0
 - Support ListDataCorrectPreCheckDB,ListDataCorrectPreCheckSQL Order API.
 
