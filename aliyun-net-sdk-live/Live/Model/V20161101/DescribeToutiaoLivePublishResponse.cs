@@ -22,12 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeDRMCertListResponse : AcsResponse
+	public class DescribeToutiaoLivePublishResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeDRMCertList_CertInfo> dRMCertInfoListList;
+		private string description;
+
+		private List<DescribeToutiaoLivePublish_ContentItem> content;
 
 		public string RequestId
 		{
@@ -41,130 +43,156 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<DescribeDRMCertList_CertInfo> DRMCertInfoListList
+		public string Description
 		{
 			get
 			{
-				return dRMCertInfoListList;
+				return description;
 			}
 			set	
 			{
-				dRMCertInfoListList = value;
+				description = value;
 			}
 		}
 
-		public class DescribeDRMCertList_CertInfo
+		public List<DescribeToutiaoLivePublish_ContentItem> Content
+		{
+			get
+			{
+				return content;
+			}
+			set	
+			{
+				content = value;
+			}
+		}
+
+		public class DescribeToutiaoLivePublish_ContentItem
 		{
 
-			private string certId;
+			private string app;
 
-			private string certName;
+			private float? bitrate;
 
-			private string servCert;
+			private float? bwDiff;
 
-			private string privateKey;
+			private string cdnName;
 
-			private string passphrase;
+			private string domain;
 
-			private string ask;
+			private float? flr;
 
-			private string description;
+			private float? fps;
 
-			private string createDate;
+			private string streamName;
 
-			public string CertId
+			private long? timestamp;
+
+			public string App
 			{
 				get
 				{
-					return certId;
+					return app;
 				}
 				set	
 				{
-					certId = value;
+					app = value;
 				}
 			}
 
-			public string CertName
+			public float? Bitrate
 			{
 				get
 				{
-					return certName;
+					return bitrate;
 				}
 				set	
 				{
-					certName = value;
+					bitrate = value;
 				}
 			}
 
-			public string ServCert
+			public float? BwDiff
 			{
 				get
 				{
-					return servCert;
+					return bwDiff;
 				}
 				set	
 				{
-					servCert = value;
+					bwDiff = value;
 				}
 			}
 
-			public string PrivateKey
+			public string CdnName
 			{
 				get
 				{
-					return privateKey;
+					return cdnName;
 				}
 				set	
 				{
-					privateKey = value;
+					cdnName = value;
 				}
 			}
 
-			public string Passphrase
+			public string Domain
 			{
 				get
 				{
-					return passphrase;
+					return domain;
 				}
 				set	
 				{
-					passphrase = value;
+					domain = value;
 				}
 			}
 
-			public string Ask
+			public float? Flr
 			{
 				get
 				{
-					return ask;
+					return flr;
 				}
 				set	
 				{
-					ask = value;
+					flr = value;
 				}
 			}
 
-			public string Description
+			public float? Fps
 			{
 				get
 				{
-					return description;
+					return fps;
 				}
 				set	
 				{
-					description = value;
+					fps = value;
 				}
 			}
 
-			public string CreateDate
+			public string StreamName
 			{
 				get
 				{
-					return createDate;
+					return streamName;
 				}
 				set	
 				{
-					createDate = value;
+					streamName = value;
+				}
+			}
+
+			public long? Timestamp
+			{
+				get
+				{
+					return timestamp;
+				}
+				set	
+				{
+					timestamp = value;
 				}
 			}
 		}

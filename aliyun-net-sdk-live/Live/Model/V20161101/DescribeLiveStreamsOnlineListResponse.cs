@@ -132,6 +132,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string transcodeId;
 
+			private string transcodeDrm;
+
 			private string serverIp;
 
 			private string clientIp;
@@ -267,6 +269,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					transcodeId = value;
+				}
+			}
+
+			public string TranscodeDrm
+			{
+				get
+				{
+					return transcodeDrm;
+				}
+				set	
+				{
+					transcodeDrm = value;
 				}
 			}
 

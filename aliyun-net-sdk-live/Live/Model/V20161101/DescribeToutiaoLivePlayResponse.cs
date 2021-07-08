@@ -22,12 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeDRMCertListResponse : AcsResponse
+	public class DescribeToutiaoLivePlayResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeDRMCertList_CertInfo> dRMCertInfoListList;
+		private string description;
+
+		private List<DescribeToutiaoLivePlay_ContentItem> content;
 
 		public string RequestId
 		{
@@ -41,130 +43,128 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<DescribeDRMCertList_CertInfo> DRMCertInfoListList
+		public string Description
 		{
 			get
 			{
-				return dRMCertInfoListList;
+				return description;
 			}
 			set	
 			{
-				dRMCertInfoListList = value;
+				description = value;
 			}
 		}
 
-		public class DescribeDRMCertList_CertInfo
+		public List<DescribeToutiaoLivePlay_ContentItem> Content
+		{
+			get
+			{
+				return content;
+			}
+			set	
+			{
+				content = value;
+			}
+		}
+
+		public class DescribeToutiaoLivePlay_ContentItem
 		{
 
-			private string certId;
+			private string app;
 
-			private string certName;
+			private float? bandwidth;
 
-			private string servCert;
+			private string cdnName;
 
-			private string privateKey;
+			private string domain;
 
-			private string passphrase;
+			private long? playNum;
 
-			private string ask;
+			private string streamName;
 
-			private string description;
+			private long? timestamp;
 
-			private string createDate;
-
-			public string CertId
+			public string App
 			{
 				get
 				{
-					return certId;
+					return app;
 				}
 				set	
 				{
-					certId = value;
+					app = value;
 				}
 			}
 
-			public string CertName
+			public float? Bandwidth
 			{
 				get
 				{
-					return certName;
+					return bandwidth;
 				}
 				set	
 				{
-					certName = value;
+					bandwidth = value;
 				}
 			}
 
-			public string ServCert
+			public string CdnName
 			{
 				get
 				{
-					return servCert;
+					return cdnName;
 				}
 				set	
 				{
-					servCert = value;
+					cdnName = value;
 				}
 			}
 
-			public string PrivateKey
+			public string Domain
 			{
 				get
 				{
-					return privateKey;
+					return domain;
 				}
 				set	
 				{
-					privateKey = value;
+					domain = value;
 				}
 			}
 
-			public string Passphrase
+			public long? PlayNum
 			{
 				get
 				{
-					return passphrase;
+					return playNum;
 				}
 				set	
 				{
-					passphrase = value;
+					playNum = value;
 				}
 			}
 
-			public string Ask
+			public string StreamName
 			{
 				get
 				{
-					return ask;
+					return streamName;
 				}
 				set	
 				{
-					ask = value;
+					streamName = value;
 				}
 			}
 
-			public string Description
+			public long? Timestamp
 			{
 				get
 				{
-					return description;
+					return timestamp;
 				}
 				set	
 				{
-					description = value;
-				}
-			}
-
-			public string CreateDate
-			{
-				get
-				{
-					return createDate;
-				}
-				set	
-				{
-					createDate = value;
+					timestamp = value;
 				}
 			}
 		}

@@ -27,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeLiveRealtimeDeliveryAccRequest : RpcAcsRequest<DescribeLiveRealtimeDeliveryAccResponse>
+    public class DescribeToutiaoLivePublishRequest : RpcAcsRequest<DescribeToutiaoLivePublishResponse>
     {
-        public DescribeLiveRealtimeDeliveryAccRequest()
-            : base("live", "2016-11-01", "DescribeLiveRealtimeDeliveryAcc", "live", "openAPI")
+        public DescribeToutiaoLivePublishRequest()
+            : base("live", "2016-11-01", "DescribeToutiaoLivePublish", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,32 +40,17 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string project;
-
 		private string startTime;
 
-		private string domainName;
+		private string stream;
+
+		private string app;
 
 		private string endTime;
 
 		private long? ownerId;
 
-		private string interval;
-
-		private string logStore;
-
-		public string Project
-		{
-			get
-			{
-				return project;
-			}
-			set	
-			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
-			}
-		}
+		private string domain;
 
 		public string StartTime
 		{
@@ -80,16 +65,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string DomainName
+		public string Stream
 		{
 			get
 			{
-				return domainName;
+				return stream;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				stream = value;
+				DictionaryUtil.Add(QueryParameters, "Stream", value);
+			}
+		}
+
+		public string App
+		{
+			get
+			{
+				return app;
+			}
+			set	
+			{
+				app = value;
+				DictionaryUtil.Add(QueryParameters, "App", value);
 			}
 		}
 
@@ -119,35 +117,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Interval
+		public string Domain
 		{
 			get
 			{
-				return interval;
+				return domain;
 			}
 			set	
 			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
+				domain = value;
+				DictionaryUtil.Add(QueryParameters, "Domain", value);
 			}
 		}
 
-		public string LogStore
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return logStore;
-			}
-			set	
-			{
-				logStore = value;
-				DictionaryUtil.Add(QueryParameters, "LogStore", value);
-			}
+			return false;
 		}
 
-        public override DescribeLiveRealtimeDeliveryAccResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeToutiaoLivePublishResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveRealtimeDeliveryAccResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeToutiaoLivePublishResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

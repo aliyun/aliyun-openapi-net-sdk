@@ -27,22 +27,23 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeLiveRealtimeDeliveryAccRequest : RpcAcsRequest<DescribeLiveRealtimeDeliveryAccResponse>
+    public class UpdateLivePullStreamInfoConfigRequest : RpcAcsRequest<UpdateLivePullStreamInfoConfigResponse>
     {
-        public DescribeLiveRealtimeDeliveryAccRequest()
-            : base("live", "2016-11-01", "DescribeLiveRealtimeDeliveryAcc", "live", "openAPI")
+        public UpdateLivePullStreamInfoConfigRequest()
+            : base("live", "2016-11-01", "UpdateLivePullStreamInfoConfig", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.live.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.live.Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
-		private string project;
-
 		private string startTime;
+
+		private string appName;
+
+		private string streamName;
 
 		private string domainName;
 
@@ -50,22 +51,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
-		private string interval;
-
-		private string logStore;
-
-		public string Project
-		{
-			get
-			{
-				return project;
-			}
-			set	
-			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
-			}
-		}
+		private string sourceUrl;
 
 		public string StartTime
 		{
@@ -77,6 +63,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
+
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
 			}
 		}
 
@@ -119,35 +131,22 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Interval
+		public string SourceUrl
 		{
 			get
 			{
-				return interval;
+				return sourceUrl;
 			}
 			set	
 			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
+				sourceUrl = value;
+				DictionaryUtil.Add(QueryParameters, "SourceUrl", value);
 			}
 		}
 
-		public string LogStore
-		{
-			get
-			{
-				return logStore;
-			}
-			set	
-			{
-				logStore = value;
-				DictionaryUtil.Add(QueryParameters, "LogStore", value);
-			}
-		}
-
-        public override DescribeLiveRealtimeDeliveryAccResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateLivePullStreamInfoConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveRealtimeDeliveryAccResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateLivePullStreamInfoConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

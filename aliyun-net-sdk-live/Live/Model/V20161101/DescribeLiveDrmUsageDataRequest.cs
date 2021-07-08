@@ -27,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeLiveRealtimeDeliveryAccRequest : RpcAcsRequest<DescribeLiveRealtimeDeliveryAccResponse>
+    public class DescribeLiveDrmUsageDataRequest : RpcAcsRequest<DescribeLiveDrmUsageDataResponse>
     {
-        public DescribeLiveRealtimeDeliveryAccRequest()
-            : base("live", "2016-11-01", "DescribeLiveRealtimeDeliveryAcc", "live", "openAPI")
+        public DescribeLiveDrmUsageDataRequest()
+            : base("live", "2016-11-01", "DescribeLiveDrmUsageData", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,9 +40,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string project;
-
 		private string startTime;
+
+		private string splitBy;
 
 		private string domainName;
 
@@ -51,21 +51,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private long? ownerId;
 
 		private string interval;
-
-		private string logStore;
-
-		public string Project
-		{
-			get
-			{
-				return project;
-			}
-			set	
-			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
-			}
-		}
 
 		public string StartTime
 		{
@@ -77,6 +62,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string SplitBy
+		{
+			get
+			{
+				return splitBy;
+			}
+			set	
+			{
+				splitBy = value;
+				DictionaryUtil.Add(QueryParameters, "SplitBy", value);
 			}
 		}
 
@@ -132,22 +130,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string LogStore
-		{
-			get
-			{
-				return logStore;
-			}
-			set	
-			{
-				logStore = value;
-				DictionaryUtil.Add(QueryParameters, "LogStore", value);
-			}
-		}
-
-        public override DescribeLiveRealtimeDeliveryAccResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeLiveDrmUsageDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLiveRealtimeDeliveryAccResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLiveDrmUsageDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -43,6 +43,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				certInfo.Passphrase = _ctx.StringValue("DescribeDRMCertList.DRMCertInfoListList["+ i +"].Passphrase");
 				certInfo.Ask = _ctx.StringValue("DescribeDRMCertList.DRMCertInfoListList["+ i +"].Ask");
 				certInfo.Description = _ctx.StringValue("DescribeDRMCertList.DRMCertInfoListList["+ i +"].Description");
+				certInfo.CreateDate = _ctx.StringValue("DescribeDRMCertList.DRMCertInfoListList["+ i +"].CreateDate");
 
 				describeDRMCertListResponse_dRMCertInfoListList.Add(certInfo);
 			}

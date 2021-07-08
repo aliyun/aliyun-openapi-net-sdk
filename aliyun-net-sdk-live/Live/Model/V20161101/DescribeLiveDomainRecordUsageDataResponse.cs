@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeDRMCertListResponse : AcsResponse
+	public class DescribeLiveDomainRecordUsageDataResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeDRMCertList_CertInfo> dRMCertInfoListList;
+		private List<DescribeLiveDomainRecordUsageData_DataModule> recordUsageData;
 
 		public string RequestId
 		{
@@ -41,130 +41,88 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<DescribeDRMCertList_CertInfo> DRMCertInfoListList
+		public List<DescribeLiveDomainRecordUsageData_DataModule> RecordUsageData
 		{
 			get
 			{
-				return dRMCertInfoListList;
+				return recordUsageData;
 			}
 			set	
 			{
-				dRMCertInfoListList = value;
+				recordUsageData = value;
 			}
 		}
 
-		public class DescribeDRMCertList_CertInfo
+		public class DescribeLiveDomainRecordUsageData_DataModule
 		{
 
-			private string certId;
+			private string timeStamp;
 
-			private string certName;
+			private string domain;
 
-			private string servCert;
+			private string type;
 
-			private string privateKey;
+			private long? size;
 
-			private string passphrase;
+			private long? count;
 
-			private string ask;
-
-			private string description;
-
-			private string createDate;
-
-			public string CertId
+			public string TimeStamp
 			{
 				get
 				{
-					return certId;
+					return timeStamp;
 				}
 				set	
 				{
-					certId = value;
+					timeStamp = value;
 				}
 			}
 
-			public string CertName
+			public string Domain
 			{
 				get
 				{
-					return certName;
+					return domain;
 				}
 				set	
 				{
-					certName = value;
+					domain = value;
 				}
 			}
 
-			public string ServCert
+			public string Type
 			{
 				get
 				{
-					return servCert;
+					return type;
 				}
 				set	
 				{
-					servCert = value;
+					type = value;
 				}
 			}
 
-			public string PrivateKey
+			public long? Size
 			{
 				get
 				{
-					return privateKey;
+					return size;
 				}
 				set	
 				{
-					privateKey = value;
+					size = value;
 				}
 			}
 
-			public string Passphrase
+			public long? Count
 			{
 				get
 				{
-					return passphrase;
+					return count;
 				}
 				set	
 				{
-					passphrase = value;
-				}
-			}
-
-			public string Ask
-			{
-				get
-				{
-					return ask;
-				}
-				set	
-				{
-					ask = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string CreateDate
-			{
-				get
-				{
-					return createDate;
-				}
-				set	
-				{
-					createDate = value;
+					count = value;
 				}
 			}
 		}
