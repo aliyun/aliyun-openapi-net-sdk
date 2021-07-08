@@ -27,10 +27,10 @@ using Aliyun.Acs.Cassandra.Transform.V20190101;
 
 namespace Aliyun.Acs.Cassandra.Model.V20190101
 {
-    public class ModifyIpWhitelistRequest : RpcAcsRequest<ModifyIpWhitelistResponse>
+    public class MoveResourceGroupRequest : RpcAcsRequest<MoveResourceGroupResponse>
     {
-        public ModifyIpWhitelistRequest()
-            : base("Cassandra", "2019-01-01", "ModifyIpWhitelist", "Cassandra", "openAPI")
+        public MoveResourceGroupRequest()
+            : base("Cassandra", "2019-01-01", "MoveResourceGroup", "Cassandra", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,7 +42,7 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
 
 		private string clusterId;
 
-		private string ipList;
+		private string newResourceGroupId;
 
 		public string ClusterId
 		{
@@ -57,22 +57,22 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
 			}
 		}
 
-		public string IpList
+		public string NewResourceGroupId
 		{
 			get
 			{
-				return ipList;
+				return newResourceGroupId;
 			}
 			set	
 			{
-				ipList = value;
-				DictionaryUtil.Add(QueryParameters, "IpList", value);
+				newResourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "NewResourceGroupId", value);
 			}
 		}
 
-        public override ModifyIpWhitelistResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override MoveResourceGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyIpWhitelistResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return MoveResourceGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

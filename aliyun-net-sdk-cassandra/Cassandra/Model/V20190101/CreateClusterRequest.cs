@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cassandra.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cassandra.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
 		private string clientToken;
 
 		private string clusterName;
+
+		private string resourceGroupId;
 
 		private string password;
 
@@ -97,6 +99,19 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
 			{
 				clusterName = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterName", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

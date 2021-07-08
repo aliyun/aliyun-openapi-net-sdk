@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class DescribeIpWhitelistResponseUnmarshaller
     {
-        public static DescribeIpWhitelistResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeIpWhitelistResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeIpWhitelistResponse describeIpWhitelistResponse = new DescribeIpWhitelistResponse();
 
-			describeIpWhitelistResponse.HttpResponse = context.HttpResponse;
-			describeIpWhitelistResponse.RequestId = context.StringValue("DescribeIpWhitelist.RequestId");
+			describeIpWhitelistResponse.HttpResponse = _ctx.HttpResponse;
+			describeIpWhitelistResponse.RequestId = _ctx.StringValue("DescribeIpWhitelist.RequestId");
 
 			List<string> describeIpWhitelistResponse_ipList = new List<string>();
-			for (int i = 0; i < context.Length("DescribeIpWhitelist.IpList.Length"); i++) {
-				describeIpWhitelistResponse_ipList.Add(context.StringValue("DescribeIpWhitelist.IpList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeIpWhitelist.IpList.Length"); i++) {
+				describeIpWhitelistResponse_ipList.Add(_ctx.StringValue("DescribeIpWhitelist.IpList["+ i +"]"));
 			}
 			describeIpWhitelistResponse.IpList = describeIpWhitelistResponse_ipList;
         

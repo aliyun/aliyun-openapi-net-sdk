@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class ModifyAccountPasswordResponseUnmarshaller
     {
-        public static ModifyAccountPasswordResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyAccountPasswordResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyAccountPasswordResponse modifyAccountPasswordResponse = new ModifyAccountPasswordResponse();
 
-			modifyAccountPasswordResponse.HttpResponse = context.HttpResponse;
-			modifyAccountPasswordResponse.RequestId = context.StringValue("ModifyAccountPassword.RequestId");
+			modifyAccountPasswordResponse.HttpResponse = _ctx.HttpResponse;
+			modifyAccountPasswordResponse.RequestId = _ctx.StringValue("ModifyAccountPassword.RequestId");
         
 			return modifyAccountPasswordResponse;
         }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class RebootClusterResponseUnmarshaller
     {
-        public static RebootClusterResponse Unmarshall(UnmarshallerContext context)
+        public static RebootClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RebootClusterResponse rebootClusterResponse = new RebootClusterResponse();
 
-			rebootClusterResponse.HttpResponse = context.HttpResponse;
-			rebootClusterResponse.RequestId = context.StringValue("RebootCluster.RequestId");
+			rebootClusterResponse.HttpResponse = _ctx.HttpResponse;
+			rebootClusterResponse.RequestId = _ctx.StringValue("RebootCluster.RequestId");
         
 			return rebootClusterResponse;
         }

@@ -26,35 +26,36 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class DescribeClusterResponseUnmarshaller
     {
-        public static DescribeClusterResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeClusterResponse describeClusterResponse = new DescribeClusterResponse();
 
-			describeClusterResponse.HttpResponse = context.HttpResponse;
-			describeClusterResponse.RequestId = context.StringValue("DescribeCluster.RequestId");
+			describeClusterResponse.HttpResponse = _ctx.HttpResponse;
+			describeClusterResponse.RequestId = _ctx.StringValue("DescribeCluster.RequestId");
 
 			DescribeClusterResponse.DescribeCluster_Cluster cluster = new DescribeClusterResponse.DescribeCluster_Cluster();
-			cluster.ClusterId = context.StringValue("DescribeCluster.Cluster.ClusterId");
-			cluster.ClusterName = context.StringValue("DescribeCluster.Cluster.ClusterName");
-			cluster.Status = context.StringValue("DescribeCluster.Cluster.Status");
-			cluster.PayType = context.StringValue("DescribeCluster.Cluster.PayType");
-			cluster.CreatedTime = context.StringValue("DescribeCluster.Cluster.CreatedTime");
-			cluster.ExpireTime = context.StringValue("DescribeCluster.Cluster.ExpireTime");
-			cluster.MajorVersion = context.StringValue("DescribeCluster.Cluster.MajorVersion");
-			cluster.MinorVersion = context.StringValue("DescribeCluster.Cluster.MinorVersion");
-			cluster.DataCenterCount = context.IntegerValue("DescribeCluster.Cluster.DataCenterCount");
-			cluster.IsLatestVersion = context.BooleanValue("DescribeCluster.Cluster.IsLatestVersion");
-			cluster.MaintainStartTime = context.StringValue("DescribeCluster.Cluster.MaintainStartTime");
-			cluster.MaintainEndTime = context.StringValue("DescribeCluster.Cluster.MaintainEndTime");
-			cluster.LockMode = context.StringValue("DescribeCluster.Cluster.LockMode");
-			cluster.AutoRenewal = context.BooleanValue("DescribeCluster.Cluster.AutoRenewal");
-			cluster.AutoRenewPeriod = context.IntegerValue("DescribeCluster.Cluster.AutoRenewPeriod");
+			cluster.ClusterId = _ctx.StringValue("DescribeCluster.Cluster.ClusterId");
+			cluster.ClusterName = _ctx.StringValue("DescribeCluster.Cluster.ClusterName");
+			cluster.Status = _ctx.StringValue("DescribeCluster.Cluster.Status");
+			cluster.PayType = _ctx.StringValue("DescribeCluster.Cluster.PayType");
+			cluster.CreatedTime = _ctx.StringValue("DescribeCluster.Cluster.CreatedTime");
+			cluster.ExpireTime = _ctx.StringValue("DescribeCluster.Cluster.ExpireTime");
+			cluster.MajorVersion = _ctx.StringValue("DescribeCluster.Cluster.MajorVersion");
+			cluster.MinorVersion = _ctx.StringValue("DescribeCluster.Cluster.MinorVersion");
+			cluster.DataCenterCount = _ctx.IntegerValue("DescribeCluster.Cluster.DataCenterCount");
+			cluster.IsLatestVersion = _ctx.BooleanValue("DescribeCluster.Cluster.IsLatestVersion");
+			cluster.MaintainStartTime = _ctx.StringValue("DescribeCluster.Cluster.MaintainStartTime");
+			cluster.MaintainEndTime = _ctx.StringValue("DescribeCluster.Cluster.MaintainEndTime");
+			cluster.LockMode = _ctx.StringValue("DescribeCluster.Cluster.LockMode");
+			cluster.AutoRenewal = _ctx.BooleanValue("DescribeCluster.Cluster.AutoRenewal");
+			cluster.AutoRenewPeriod = _ctx.IntegerValue("DescribeCluster.Cluster.AutoRenewPeriod");
+			cluster.ResourceGroupId = _ctx.StringValue("DescribeCluster.Cluster.ResourceGroupId");
 
 			List<DescribeClusterResponse.DescribeCluster_Cluster.DescribeCluster_Tag> cluster_tags = new List<DescribeClusterResponse.DescribeCluster_Cluster.DescribeCluster_Tag>();
-			for (int i = 0; i < context.Length("DescribeCluster.Cluster.Tags.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCluster.Cluster.Tags.Length"); i++) {
 				DescribeClusterResponse.DescribeCluster_Cluster.DescribeCluster_Tag tag = new DescribeClusterResponse.DescribeCluster_Cluster.DescribeCluster_Tag();
-				tag.Key = context.StringValue("DescribeCluster.Cluster.Tags["+ i +"].Key");
-				tag._Value = context.StringValue("DescribeCluster.Cluster.Tags["+ i +"].Value");
+				tag.Key = _ctx.StringValue("DescribeCluster.Cluster.Tags["+ i +"].Key");
+				tag._Value = _ctx.StringValue("DescribeCluster.Cluster.Tags["+ i +"].Value");
 
 				cluster_tags.Add(tag);
 			}

@@ -16,24 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cassandra.Model.V20190101;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Cassandra.Transform.V20190101
+namespace Aliyun.Acs.Cassandra.Model.V20190101
 {
-    public class ModifyBackupPlanResponseUnmarshaller
-    {
-        public static ModifyBackupPlanResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			ModifyBackupPlanResponse modifyBackupPlanResponse = new ModifyBackupPlanResponse();
+	public class MoveResourceGroupResponse : AcsResponse
+	{
 
-			modifyBackupPlanResponse.HttpResponse = _ctx.HttpResponse;
-			modifyBackupPlanResponse.RequestId = _ctx.StringValue("ModifyBackupPlan.RequestId");
-        
-			return modifyBackupPlanResponse;
-        }
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

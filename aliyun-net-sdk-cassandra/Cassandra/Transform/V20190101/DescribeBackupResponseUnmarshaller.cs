@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class DescribeBackupResponseUnmarshaller
     {
-        public static DescribeBackupResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeBackupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeBackupResponse describeBackupResponse = new DescribeBackupResponse();
 
-			describeBackupResponse.HttpResponse = context.HttpResponse;
-			describeBackupResponse.RequestId = context.StringValue("DescribeBackup.RequestId");
+			describeBackupResponse.HttpResponse = _ctx.HttpResponse;
+			describeBackupResponse.RequestId = _ctx.StringValue("DescribeBackup.RequestId");
 
 			DescribeBackupResponse.DescribeBackup_Backup backup = new DescribeBackupResponse.DescribeBackup_Backup();
-			backup.ClusterId = context.StringValue("DescribeBackup.Backup.ClusterId");
-			backup.DataCenterId = context.StringValue("DescribeBackup.Backup.DataCenterId");
-			backup.BackupId = context.StringValue("DescribeBackup.Backup.BackupId");
-			backup.BackupType = context.StringValue("DescribeBackup.Backup.BackupType");
-			backup.Status = context.StringValue("DescribeBackup.Backup.Status");
-			backup.StartTime = context.StringValue("DescribeBackup.Backup.StartTime");
-			backup.EndTime = context.StringValue("DescribeBackup.Backup.EndTime");
-			backup.Size = context.LongValue("DescribeBackup.Backup.Size");
-			backup.Details = context.StringValue("DescribeBackup.Backup.Details");
+			backup.ClusterId = _ctx.StringValue("DescribeBackup.Backup.ClusterId");
+			backup.DataCenterId = _ctx.StringValue("DescribeBackup.Backup.DataCenterId");
+			backup.BackupId = _ctx.StringValue("DescribeBackup.Backup.BackupId");
+			backup.BackupType = _ctx.StringValue("DescribeBackup.Backup.BackupType");
+			backup.Status = _ctx.StringValue("DescribeBackup.Backup.Status");
+			backup.StartTime = _ctx.StringValue("DescribeBackup.Backup.StartTime");
+			backup.EndTime = _ctx.StringValue("DescribeBackup.Backup.EndTime");
+			backup.Size = _ctx.LongValue("DescribeBackup.Backup.Size");
+			backup.Details = _ctx.StringValue("DescribeBackup.Backup.Details");
 			describeBackupResponse.Backup = backup;
         
 			return describeBackupResponse;

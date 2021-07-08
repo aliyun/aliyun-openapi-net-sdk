@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class DescribeContactPointsResponseUnmarshaller
     {
-        public static DescribeContactPointsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeContactPointsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeContactPointsResponse describeContactPointsResponse = new DescribeContactPointsResponse();
 
-			describeContactPointsResponse.HttpResponse = context.HttpResponse;
-			describeContactPointsResponse.RequestId = context.StringValue("DescribeContactPoints.RequestId");
+			describeContactPointsResponse.HttpResponse = _ctx.HttpResponse;
+			describeContactPointsResponse.RequestId = _ctx.StringValue("DescribeContactPoints.RequestId");
 
 			List<DescribeContactPointsResponse.DescribeContactPoints_ContactPoint> describeContactPointsResponse_contactPoints = new List<DescribeContactPointsResponse.DescribeContactPoints_ContactPoint>();
-			for (int i = 0; i < context.Length("DescribeContactPoints.ContactPoints.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeContactPoints.ContactPoints.Length"); i++) {
 				DescribeContactPointsResponse.DescribeContactPoints_ContactPoint contactPoint = new DescribeContactPointsResponse.DescribeContactPoints_ContactPoint();
-				contactPoint.DataCenterId = context.StringValue("DescribeContactPoints.ContactPoints["+ i +"].DataCenterId");
-				contactPoint.Port = context.IntegerValue("DescribeContactPoints.ContactPoints["+ i +"].Port");
+				contactPoint.DataCenterId = _ctx.StringValue("DescribeContactPoints.ContactPoints["+ i +"].DataCenterId");
+				contactPoint.Port = _ctx.IntegerValue("DescribeContactPoints.ContactPoints["+ i +"].Port");
 
 				List<string> contactPoint_privateAddresses = new List<string>();
-				for (int j = 0; j < context.Length("DescribeContactPoints.ContactPoints["+ i +"].PrivateAddresses.Length"); j++) {
-					contactPoint_privateAddresses.Add(context.StringValue("DescribeContactPoints.ContactPoints["+ i +"].PrivateAddresses["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeContactPoints.ContactPoints["+ i +"].PrivateAddresses.Length"); j++) {
+					contactPoint_privateAddresses.Add(_ctx.StringValue("DescribeContactPoints.ContactPoints["+ i +"].PrivateAddresses["+ j +"]"));
 				}
 				contactPoint.PrivateAddresses = contactPoint_privateAddresses;
 
 				List<string> contactPoint_publicAddresses = new List<string>();
-				for (int j = 0; j < context.Length("DescribeContactPoints.ContactPoints["+ i +"].PublicAddresses.Length"); j++) {
-					contactPoint_publicAddresses.Add(context.StringValue("DescribeContactPoints.ContactPoints["+ i +"].PublicAddresses["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeContactPoints.ContactPoints["+ i +"].PublicAddresses.Length"); j++) {
+					contactPoint_publicAddresses.Add(_ctx.StringValue("DescribeContactPoints.ContactPoints["+ i +"].PublicAddresses["+ j +"]"));
 				}
 				contactPoint.PublicAddresses = contactPoint_publicAddresses;
 

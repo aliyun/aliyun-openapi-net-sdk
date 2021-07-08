@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class ExecuteNodeToolResponseUnmarshaller
     {
-        public static ExecuteNodeToolResponse Unmarshall(UnmarshallerContext context)
+        public static ExecuteNodeToolResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ExecuteNodeToolResponse executeNodeToolResponse = new ExecuteNodeToolResponse();
 
-			executeNodeToolResponse.HttpResponse = context.HttpResponse;
-			executeNodeToolResponse.RequestId = context.StringValue("ExecuteNodeTool.RequestId");
+			executeNodeToolResponse.HttpResponse = _ctx.HttpResponse;
+			executeNodeToolResponse.RequestId = _ctx.StringValue("ExecuteNodeTool.RequestId");
         
 			return executeNodeToolResponse;
         }

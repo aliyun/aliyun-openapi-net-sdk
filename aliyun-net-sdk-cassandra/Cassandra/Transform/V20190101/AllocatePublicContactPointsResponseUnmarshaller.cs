@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class AllocatePublicContactPointsResponseUnmarshaller
     {
-        public static AllocatePublicContactPointsResponse Unmarshall(UnmarshallerContext context)
+        public static AllocatePublicContactPointsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AllocatePublicContactPointsResponse allocatePublicContactPointsResponse = new AllocatePublicContactPointsResponse();
 
-			allocatePublicContactPointsResponse.HttpResponse = context.HttpResponse;
-			allocatePublicContactPointsResponse.RequestId = context.StringValue("AllocatePublicContactPoints.RequestId");
+			allocatePublicContactPointsResponse.HttpResponse = _ctx.HttpResponse;
+			allocatePublicContactPointsResponse.RequestId = _ctx.StringValue("AllocatePublicContactPoints.RequestId");
         
 			return allocatePublicContactPointsResponse;
         }

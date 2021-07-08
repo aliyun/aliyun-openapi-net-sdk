@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class UpgradeClusterVersionResponseUnmarshaller
     {
-        public static UpgradeClusterVersionResponse Unmarshall(UnmarshallerContext context)
+        public static UpgradeClusterVersionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpgradeClusterVersionResponse upgradeClusterVersionResponse = new UpgradeClusterVersionResponse();
 
-			upgradeClusterVersionResponse.HttpResponse = context.HttpResponse;
-			upgradeClusterVersionResponse.RequestId = context.StringValue("UpgradeClusterVersion.RequestId");
+			upgradeClusterVersionResponse.HttpResponse = _ctx.HttpResponse;
+			upgradeClusterVersionResponse.RequestId = _ctx.StringValue("UpgradeClusterVersion.RequestId");
         
 			return upgradeClusterVersionResponse;
         }

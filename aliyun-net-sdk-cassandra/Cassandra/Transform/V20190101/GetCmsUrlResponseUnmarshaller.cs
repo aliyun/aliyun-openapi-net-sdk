@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class GetCmsUrlResponseUnmarshaller
     {
-        public static GetCmsUrlResponse Unmarshall(UnmarshallerContext context)
+        public static GetCmsUrlResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetCmsUrlResponse getCmsUrlResponse = new GetCmsUrlResponse();
 
-			getCmsUrlResponse.HttpResponse = context.HttpResponse;
-			getCmsUrlResponse.RequestId = context.StringValue("GetCmsUrl.RequestId");
-			getCmsUrlResponse.Url = context.StringValue("GetCmsUrl.Url");
+			getCmsUrlResponse.HttpResponse = _ctx.HttpResponse;
+			getCmsUrlResponse.RequestId = _ctx.StringValue("GetCmsUrl.RequestId");
+			getCmsUrlResponse.Url = _ctx.StringValue("GetCmsUrl.Url");
         
 			return getCmsUrlResponse;
         }

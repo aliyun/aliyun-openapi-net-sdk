@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class ModifyIpWhitelistGroupResponseUnmarshaller
     {
-        public static ModifyIpWhitelistGroupResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyIpWhitelistGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyIpWhitelistGroupResponse modifyIpWhitelistGroupResponse = new ModifyIpWhitelistGroupResponse();
 
-			modifyIpWhitelistGroupResponse.HttpResponse = context.HttpResponse;
-			modifyIpWhitelistGroupResponse.RequestId = context.StringValue("ModifyIpWhitelistGroup.RequestId");
+			modifyIpWhitelistGroupResponse.HttpResponse = _ctx.HttpResponse;
+			modifyIpWhitelistGroupResponse.RequestId = _ctx.StringValue("ModifyIpWhitelistGroup.RequestId");
         
 			return modifyIpWhitelistGroupResponse;
         }

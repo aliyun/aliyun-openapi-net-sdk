@@ -122,6 +122,8 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
 
 			private int? autoRenewPeriod;
 
+			private string resourceGroupId;
+
 			private List<DescribeClusters_Tag> tags;
 
 			public string ClusterId
@@ -265,6 +267,18 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
 				set	
 				{
 					autoRenewPeriod = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 

@@ -26,25 +26,25 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class DescribeParametersResponseUnmarshaller
     {
-        public static DescribeParametersResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeParametersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeParametersResponse describeParametersResponse = new DescribeParametersResponse();
 
-			describeParametersResponse.HttpResponse = context.HttpResponse;
-			describeParametersResponse.RequestId = context.StringValue("DescribeParameters.RequestId");
-			describeParametersResponse.PageNumber = context.IntegerValue("DescribeParameters.PageNumber");
-			describeParametersResponse.PageSize = context.IntegerValue("DescribeParameters.PageSize");
-			describeParametersResponse.TotalCount = context.LongValue("DescribeParameters.TotalCount");
+			describeParametersResponse.HttpResponse = _ctx.HttpResponse;
+			describeParametersResponse.RequestId = _ctx.StringValue("DescribeParameters.RequestId");
+			describeParametersResponse.PageNumber = _ctx.IntegerValue("DescribeParameters.PageNumber");
+			describeParametersResponse.PageSize = _ctx.IntegerValue("DescribeParameters.PageSize");
+			describeParametersResponse.TotalCount = _ctx.LongValue("DescribeParameters.TotalCount");
 
 			List<DescribeParametersResponse.DescribeParameters_Parameter> describeParametersResponse_parameters = new List<DescribeParametersResponse.DescribeParameters_Parameter>();
-			for (int i = 0; i < context.Length("DescribeParameters.Parameters.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeParameters.Parameters.Length"); i++) {
 				DescribeParametersResponse.DescribeParameters_Parameter parameter = new DescribeParametersResponse.DescribeParameters_Parameter();
-				parameter.Name = context.StringValue("DescribeParameters.Parameters["+ i +"].Name");
-				parameter._Value = context.StringValue("DescribeParameters.Parameters["+ i +"].Value");
-				parameter.DefaultValue = context.StringValue("DescribeParameters.Parameters["+ i +"].DefaultValue");
-				parameter.DataType = context.StringValue("DescribeParameters.Parameters["+ i +"].DataType");
-				parameter.AllowedValues = context.StringValue("DescribeParameters.Parameters["+ i +"].AllowedValues");
-				parameter.Description = context.StringValue("DescribeParameters.Parameters["+ i +"].Description");
+				parameter.Name = _ctx.StringValue("DescribeParameters.Parameters["+ i +"].Name");
+				parameter._Value = _ctx.StringValue("DescribeParameters.Parameters["+ i +"].Value");
+				parameter.DefaultValue = _ctx.StringValue("DescribeParameters.Parameters["+ i +"].DefaultValue");
+				parameter.DataType = _ctx.StringValue("DescribeParameters.Parameters["+ i +"].DataType");
+				parameter.AllowedValues = _ctx.StringValue("DescribeParameters.Parameters["+ i +"].AllowedValues");
+				parameter.Description = _ctx.StringValue("DescribeParameters.Parameters["+ i +"].Description");
 
 				describeParametersResponse_parameters.Add(parameter);
 			}

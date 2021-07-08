@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
     public class DescribeNodeToolExecutionHistoryResponseUnmarshaller
     {
-        public static DescribeNodeToolExecutionHistoryResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeNodeToolExecutionHistoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeNodeToolExecutionHistoryResponse describeNodeToolExecutionHistoryResponse = new DescribeNodeToolExecutionHistoryResponse();
 
-			describeNodeToolExecutionHistoryResponse.HttpResponse = context.HttpResponse;
-			describeNodeToolExecutionHistoryResponse.RequestId = context.StringValue("DescribeNodeToolExecutionHistory.RequestId");
-			describeNodeToolExecutionHistoryResponse.JobId = context.StringValue("DescribeNodeToolExecutionHistory.JobId");
-			describeNodeToolExecutionHistoryResponse.Command = context.StringValue("DescribeNodeToolExecutionHistory.Command");
-			describeNodeToolExecutionHistoryResponse.Nodes = context.StringValue("DescribeNodeToolExecutionHistory.Nodes");
-			describeNodeToolExecutionHistoryResponse.ModifyTime = context.LongValue("DescribeNodeToolExecutionHistory.ModifyTime");
-			describeNodeToolExecutionHistoryResponse.CreateTime = context.LongValue("DescribeNodeToolExecutionHistory.CreateTime");
-			describeNodeToolExecutionHistoryResponse.RegionId = context.StringValue("DescribeNodeToolExecutionHistory.RegionId");
-			describeNodeToolExecutionHistoryResponse.IsEnded = context.BooleanValue("DescribeNodeToolExecutionHistory.IsEnded");
-			describeNodeToolExecutionHistoryResponse.Arguments = context.StringValue("DescribeNodeToolExecutionHistory.Arguments");
-			describeNodeToolExecutionHistoryResponse.ErrorMessage = context.StringValue("DescribeNodeToolExecutionHistory.ErrorMessage");
-			describeNodeToolExecutionHistoryResponse.DataCenterId = context.StringValue("DescribeNodeToolExecutionHistory.DataCenterId");
-			describeNodeToolExecutionHistoryResponse.Result = context.StringValue("DescribeNodeToolExecutionHistory.Result");
+			describeNodeToolExecutionHistoryResponse.HttpResponse = _ctx.HttpResponse;
+			describeNodeToolExecutionHistoryResponse.RequestId = _ctx.StringValue("DescribeNodeToolExecutionHistory.RequestId");
+			describeNodeToolExecutionHistoryResponse.JobId = _ctx.StringValue("DescribeNodeToolExecutionHistory.JobId");
+			describeNodeToolExecutionHistoryResponse.Command = _ctx.StringValue("DescribeNodeToolExecutionHistory.Command");
+			describeNodeToolExecutionHistoryResponse.Nodes = _ctx.StringValue("DescribeNodeToolExecutionHistory.Nodes");
+			describeNodeToolExecutionHistoryResponse.ModifyTime = _ctx.LongValue("DescribeNodeToolExecutionHistory.ModifyTime");
+			describeNodeToolExecutionHistoryResponse.CreateTime = _ctx.LongValue("DescribeNodeToolExecutionHistory.CreateTime");
+			describeNodeToolExecutionHistoryResponse.RegionId = _ctx.StringValue("DescribeNodeToolExecutionHistory.RegionId");
+			describeNodeToolExecutionHistoryResponse.IsEnded = _ctx.BooleanValue("DescribeNodeToolExecutionHistory.IsEnded");
+			describeNodeToolExecutionHistoryResponse.Arguments = _ctx.StringValue("DescribeNodeToolExecutionHistory.Arguments");
+			describeNodeToolExecutionHistoryResponse.ErrorMessage = _ctx.StringValue("DescribeNodeToolExecutionHistory.ErrorMessage");
+			describeNodeToolExecutionHistoryResponse.DataCenterId = _ctx.StringValue("DescribeNodeToolExecutionHistory.DataCenterId");
+			describeNodeToolExecutionHistoryResponse.Result = _ctx.StringValue("DescribeNodeToolExecutionHistory.Result");
         
 			return describeNodeToolExecutionHistoryResponse;
         }

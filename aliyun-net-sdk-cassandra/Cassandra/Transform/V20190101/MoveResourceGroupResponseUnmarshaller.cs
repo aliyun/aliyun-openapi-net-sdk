@@ -24,16 +24,16 @@ using Aliyun.Acs.Cassandra.Model.V20190101;
 
 namespace Aliyun.Acs.Cassandra.Transform.V20190101
 {
-    public class ModifyBackupPlanResponseUnmarshaller
+    public class MoveResourceGroupResponseUnmarshaller
     {
-        public static ModifyBackupPlanResponse Unmarshall(UnmarshallerContext _ctx)
+        public static MoveResourceGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			ModifyBackupPlanResponse modifyBackupPlanResponse = new ModifyBackupPlanResponse();
+			MoveResourceGroupResponse moveResourceGroupResponse = new MoveResourceGroupResponse();
 
-			modifyBackupPlanResponse.HttpResponse = _ctx.HttpResponse;
-			modifyBackupPlanResponse.RequestId = _ctx.StringValue("ModifyBackupPlan.RequestId");
+			moveResourceGroupResponse.HttpResponse = _ctx.HttpResponse;
+			moveResourceGroupResponse.RequestId = _ctx.StringValue("MoveResourceGroup.RequestId");
         
-			return modifyBackupPlanResponse;
+			return moveResourceGroupResponse;
         }
     }
 }
