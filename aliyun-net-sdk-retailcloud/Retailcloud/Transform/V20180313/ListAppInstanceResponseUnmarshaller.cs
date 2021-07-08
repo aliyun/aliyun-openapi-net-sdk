@@ -50,6 +50,7 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 				appInstanceDetail.Health = _ctx.StringValue("ListAppInstance.Data["+ i +"].Health");
 				appInstanceDetail.Requests = _ctx.StringValue("ListAppInstance.Data["+ i +"].Requests");
 				appInstanceDetail.Limits = _ctx.StringValue("ListAppInstance.Data["+ i +"].Limits");
+				appInstanceDetail.Version = _ctx.StringValue("ListAppInstance.Data["+ i +"].Version");
 
 				listAppInstanceResponse_data.Add(appInstanceDetail);
 			}

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.retailcloud;
 using Aliyun.Acs.retailcloud.Transform;
 using Aliyun.Acs.retailcloud.Transform.V20180313;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
     public class CreateAppRequest : RpcAcsRequest<CreateAppResponse>
     {
         public CreateAppRequest()
-            : base("retailcloud", "2018-03-13", "CreateApp", "retailcloud", "openAPI")
+            : base("retailcloud", "2018-03-13", "CreateApp")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,6 +50,8 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 		private string language;
 
 		private string title;
+
+		private string groupName;
 
 		private List<int?> middleWareIdLists = new List<int?>(){ };
 
@@ -124,6 +127,19 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			{
 				title = value;
 				DictionaryUtil.Add(BodyParameters, "Title", value);
+			}
+		}
+
+		public string GroupName
+		{
+			get
+			{
+				return groupName;
+			}
+			set	
+			{
+				groupName = value;
+				DictionaryUtil.Add(BodyParameters, "GroupName", value);
 			}
 		}
 

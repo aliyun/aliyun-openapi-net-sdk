@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.retailcloud;
 using Aliyun.Acs.retailcloud.Transform;
 using Aliyun.Acs.retailcloud.Transform.V20180313;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
     public class CreateEnvironmentRequest : RpcAcsRequest<CreateEnvironmentResponse>
     {
         public CreateEnvironmentRequest()
-            : base("retailcloud", "2018-03-13", "CreateEnvironment", "retailcloud", "openAPI")
+            : base("retailcloud", "2018-03-13", "CreateEnvironment")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,6 +50,8 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 		private int? envType;
 
 		private long? appSchemaId;
+
+		private string clusterId;
 
 		private string region;
 
@@ -114,6 +117,19 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			{
 				appSchemaId = value;
 				DictionaryUtil.Add(QueryParameters, "AppSchemaId", value.ToString());
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
 			}
 		}
 
