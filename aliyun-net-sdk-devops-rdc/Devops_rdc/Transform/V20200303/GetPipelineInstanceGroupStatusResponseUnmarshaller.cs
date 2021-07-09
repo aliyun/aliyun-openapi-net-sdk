@@ -31,10 +31,10 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			GetPipelineInstanceGroupStatusResponse getPipelineInstanceGroupStatusResponse = new GetPipelineInstanceGroupStatusResponse();
 
 			getPipelineInstanceGroupStatusResponse.HttpResponse = _ctx.HttpResponse;
+			getPipelineInstanceGroupStatusResponse.RequestId = _ctx.StringValue("GetPipelineInstanceGroupStatus.RequestId");
+			getPipelineInstanceGroupStatusResponse.ErrorMessage = _ctx.StringValue("GetPipelineInstanceGroupStatus.ErrorMessage");
 			getPipelineInstanceGroupStatusResponse.Success = _ctx.BooleanValue("GetPipelineInstanceGroupStatus.Success");
 			getPipelineInstanceGroupStatusResponse.ErrorCode = _ctx.StringValue("GetPipelineInstanceGroupStatus.ErrorCode");
-			getPipelineInstanceGroupStatusResponse.ErrorMessage = _ctx.StringValue("GetPipelineInstanceGroupStatus.ErrorMessage");
-			getPipelineInstanceGroupStatusResponse.RequestId = _ctx.StringValue("GetPipelineInstanceGroupStatus.RequestId");
 
 			GetPipelineInstanceGroupStatusResponse.GetPipelineInstanceGroupStatus__Object _object = new GetPipelineInstanceGroupStatusResponse.GetPipelineInstanceGroupStatus__Object();
 			_object.Status = _ctx.StringValue("GetPipelineInstanceGroupStatus.Object.Status");
@@ -42,8 +42,8 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			List<GetPipelineInstanceGroupStatusResponse.GetPipelineInstanceGroupStatus__Object.GetPipelineInstanceGroupStatus_Group> _object_groups = new List<GetPipelineInstanceGroupStatusResponse.GetPipelineInstanceGroupStatus__Object.GetPipelineInstanceGroupStatus_Group>();
 			for (int i = 0; i < _ctx.Length("GetPipelineInstanceGroupStatus.Object.Groups.Length"); i++) {
 				GetPipelineInstanceGroupStatusResponse.GetPipelineInstanceGroupStatus__Object.GetPipelineInstanceGroupStatus_Group group = new GetPipelineInstanceGroupStatusResponse.GetPipelineInstanceGroupStatus__Object.GetPipelineInstanceGroupStatus_Group();
-				group.Name = _ctx.StringValue("GetPipelineInstanceGroupStatus.Object.Groups["+ i +"].Name");
 				group.Status = _ctx.StringValue("GetPipelineInstanceGroupStatus.Object.Groups["+ i +"].Status");
+				group.Name = _ctx.StringValue("GetPipelineInstanceGroupStatus.Object.Groups["+ i +"].Name");
 
 				List<GetPipelineInstanceGroupStatusResponse.GetPipelineInstanceGroupStatus__Object.GetPipelineInstanceGroupStatus_Group.GetPipelineInstanceGroupStatus_Stage> group_stages = new List<GetPipelineInstanceGroupStatusResponse.GetPipelineInstanceGroupStatus__Object.GetPipelineInstanceGroupStatus_Group.GetPipelineInstanceGroupStatus_Stage>();
 				for (int j = 0; j < _ctx.Length("GetPipelineInstanceGroupStatus.Object.Groups["+ i +"].Stages.Length"); j++) {
@@ -54,8 +54,8 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 					List<GetPipelineInstanceGroupStatusResponse.GetPipelineInstanceGroupStatus__Object.GetPipelineInstanceGroupStatus_Group.GetPipelineInstanceGroupStatus_Stage.GetPipelineInstanceGroupStatus_Component> stage_components = new List<GetPipelineInstanceGroupStatusResponse.GetPipelineInstanceGroupStatus__Object.GetPipelineInstanceGroupStatus_Group.GetPipelineInstanceGroupStatus_Stage.GetPipelineInstanceGroupStatus_Component>();
 					for (int k = 0; k < _ctx.Length("GetPipelineInstanceGroupStatus.Object.Groups["+ i +"].Stages["+ j +"].Components.Length"); k++) {
 						GetPipelineInstanceGroupStatusResponse.GetPipelineInstanceGroupStatus__Object.GetPipelineInstanceGroupStatus_Group.GetPipelineInstanceGroupStatus_Stage.GetPipelineInstanceGroupStatus_Component component = new GetPipelineInstanceGroupStatusResponse.GetPipelineInstanceGroupStatus__Object.GetPipelineInstanceGroupStatus_Group.GetPipelineInstanceGroupStatus_Stage.GetPipelineInstanceGroupStatus_Component();
-						component.Name = _ctx.StringValue("GetPipelineInstanceGroupStatus.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].Name");
 						component.Status = _ctx.StringValue("GetPipelineInstanceGroupStatus.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].Status");
+						component.Name = _ctx.StringValue("GetPipelineInstanceGroupStatus.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].Name");
 						component.JobId = _ctx.StringValue("GetPipelineInstanceGroupStatus.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].JobId");
 
 						stage_components.Add(component);

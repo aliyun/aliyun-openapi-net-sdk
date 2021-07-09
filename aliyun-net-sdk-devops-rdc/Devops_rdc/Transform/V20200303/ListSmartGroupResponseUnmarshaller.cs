@@ -31,16 +31,16 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			ListSmartGroupResponse listSmartGroupResponse = new ListSmartGroupResponse();
 
 			listSmartGroupResponse.HttpResponse = _ctx.HttpResponse;
-			listSmartGroupResponse.Successful = _ctx.BooleanValue("ListSmartGroup.Successful");
-			listSmartGroupResponse.ErrorCode = _ctx.StringValue("ListSmartGroup.ErrorCode");
 			listSmartGroupResponse.ErrorMsg = _ctx.StringValue("ListSmartGroup.ErrorMsg");
 			listSmartGroupResponse.RequestId = _ctx.StringValue("ListSmartGroup.RequestId");
+			listSmartGroupResponse.Successful = _ctx.BooleanValue("ListSmartGroup.Successful");
+			listSmartGroupResponse.ErrorCode = _ctx.StringValue("ListSmartGroup.ErrorCode");
 
 			List<ListSmartGroupResponse.ListSmartGroup_SmartGroup> listSmartGroupResponse_object = new List<ListSmartGroupResponse.ListSmartGroup_SmartGroup>();
 			for (int i = 0; i < _ctx.Length("ListSmartGroup.Object.Length"); i++) {
 				ListSmartGroupResponse.ListSmartGroup_SmartGroup smartGroup = new ListSmartGroupResponse.ListSmartGroup_SmartGroup();
-				smartGroup.Id = _ctx.StringValue("ListSmartGroup.Object["+ i +"].Id");
 				smartGroup.Type = _ctx.StringValue("ListSmartGroup.Object["+ i +"].Type");
+				smartGroup.Id = _ctx.StringValue("ListSmartGroup.Object["+ i +"].Id");
 
 				listSmartGroupResponse_object.Add(smartGroup);
 			}

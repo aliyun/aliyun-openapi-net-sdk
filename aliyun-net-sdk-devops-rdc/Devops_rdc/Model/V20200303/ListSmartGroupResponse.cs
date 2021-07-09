@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class ListSmartGroupResponse : AcsResponse
 	{
 
-		private bool? successful;
-
-		private string errorCode;
-
 		private string errorMsg;
 
 		private string requestId;
 
+		private bool? successful;
+
+		private string errorCode;
+
 		private List<ListSmartGroup_SmartGroup> _object;
-
-		public bool? Successful
-		{
-			get
-			{
-				return successful;
-			}
-			set	
-			{
-				successful = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
 
 		public string ErrorMsg
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
+		public bool? Successful
+		{
+			get
+			{
+				return successful;
+			}
+			set	
+			{
+				successful = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
 		public List<ListSmartGroup_SmartGroup> _Object
 		{
 			get
@@ -98,21 +98,9 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 		public class ListSmartGroup_SmartGroup
 		{
 
-			private string id;
-
 			private string type;
 
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private string id;
 
 			public string Type
 			{
@@ -123,6 +111,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 		}

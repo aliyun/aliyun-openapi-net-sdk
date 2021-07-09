@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,15 +25,39 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class GetPipelineStepLogResponse : AcsResponse
 	{
 
+		private string requestId;
+
+		private string errorMessage;
+
 		private bool? success;
 
 		private string errorCode;
 
-		private string errorMessage;
-
-		private string requestId;
-
 		private GetPipelineStepLog__Object _object;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
 
 		public bool? Success
 		{
@@ -56,30 +80,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			set	
 			{
 				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
 			}
 		}
 

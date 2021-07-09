@@ -31,11 +31,11 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			TransferPipelineOwnerResponse transferPipelineOwnerResponse = new TransferPipelineOwnerResponse();
 
 			transferPipelineOwnerResponse.HttpResponse = _ctx.HttpResponse;
-			transferPipelineOwnerResponse.Success = _ctx.BooleanValue("TransferPipelineOwner.Success");
-			transferPipelineOwnerResponse.ErrorCode = _ctx.StringValue("TransferPipelineOwner.ErrorCode");
-			transferPipelineOwnerResponse.ErrorMessage = _ctx.StringValue("TransferPipelineOwner.ErrorMessage");
 			transferPipelineOwnerResponse.RequestId = _ctx.StringValue("TransferPipelineOwner.RequestId");
+			transferPipelineOwnerResponse.ErrorMessage = _ctx.StringValue("TransferPipelineOwner.ErrorMessage");
 			transferPipelineOwnerResponse._Object = _ctx.StringValue("TransferPipelineOwner.Object");
+			transferPipelineOwnerResponse.ErrorCode = _ctx.StringValue("TransferPipelineOwner.ErrorCode");
+			transferPipelineOwnerResponse.Success = _ctx.BooleanValue("TransferPipelineOwner.Success");
         
 			return transferPipelineOwnerResponse;
         }

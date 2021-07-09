@@ -31,11 +31,11 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			CancelPipelineResponse cancelPipelineResponse = new CancelPipelineResponse();
 
 			cancelPipelineResponse.HttpResponse = _ctx.HttpResponse;
-			cancelPipelineResponse.Success = _ctx.BooleanValue("CancelPipeline.Success");
-			cancelPipelineResponse.ErrorCode = _ctx.StringValue("CancelPipeline.ErrorCode");
+			cancelPipelineResponse.RequestId = _ctx.StringValue("CancelPipeline.RequestId");
 			cancelPipelineResponse.ErrorMessage = _ctx.StringValue("CancelPipeline.ErrorMessage");
 			cancelPipelineResponse._Object = _ctx.BooleanValue("CancelPipeline.Object");
-			cancelPipelineResponse.RequestId = _ctx.StringValue("CancelPipeline.RequestId");
+			cancelPipelineResponse.ErrorCode = _ctx.StringValue("CancelPipeline.ErrorCode");
+			cancelPipelineResponse.Success = _ctx.BooleanValue("CancelPipeline.Success");
         
 			return cancelPipelineResponse;
         }

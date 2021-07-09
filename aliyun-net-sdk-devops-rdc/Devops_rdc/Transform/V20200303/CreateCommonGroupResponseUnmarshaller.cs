@@ -31,10 +31,10 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			CreateCommonGroupResponse createCommonGroupResponse = new CreateCommonGroupResponse();
 
 			createCommonGroupResponse.HttpResponse = _ctx.HttpResponse;
-			createCommonGroupResponse.Successful = _ctx.BooleanValue("CreateCommonGroup.Successful");
-			createCommonGroupResponse.ErrorCode = _ctx.StringValue("CreateCommonGroup.ErrorCode");
 			createCommonGroupResponse.ErrorMsg = _ctx.StringValue("CreateCommonGroup.ErrorMsg");
 			createCommonGroupResponse.RequestId = _ctx.StringValue("CreateCommonGroup.RequestId");
+			createCommonGroupResponse.Successful = _ctx.BooleanValue("CreateCommonGroup.Successful");
+			createCommonGroupResponse.ErrorCode = _ctx.StringValue("CreateCommonGroup.ErrorCode");
 
 			CreateCommonGroupResponse.CreateCommonGroup__Object _object = new CreateCommonGroupResponse.CreateCommonGroup__Object();
 			_object.Id = _ctx.StringValue("CreateCommonGroup.Object.Id");

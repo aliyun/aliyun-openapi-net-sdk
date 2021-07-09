@@ -31,11 +31,11 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			CreateDevopsOrganizationResponse createDevopsOrganizationResponse = new CreateDevopsOrganizationResponse();
 
 			createDevopsOrganizationResponse.HttpResponse = _ctx.HttpResponse;
-			createDevopsOrganizationResponse.RequestId = _ctx.StringValue("CreateDevopsOrganization.RequestId");
-			createDevopsOrganizationResponse.ErrorCode = _ctx.StringValue("CreateDevopsOrganization.ErrorCode");
 			createDevopsOrganizationResponse.ErrorMessage = _ctx.StringValue("CreateDevopsOrganization.ErrorMessage");
-			createDevopsOrganizationResponse.Success = _ctx.BooleanValue("CreateDevopsOrganization.Success");
+			createDevopsOrganizationResponse.RequestId = _ctx.StringValue("CreateDevopsOrganization.RequestId");
 			createDevopsOrganizationResponse._Object = _ctx.StringValue("CreateDevopsOrganization.Object");
+			createDevopsOrganizationResponse.Success = _ctx.BooleanValue("CreateDevopsOrganization.Success");
+			createDevopsOrganizationResponse.ErrorCode = _ctx.StringValue("CreateDevopsOrganization.ErrorCode");
         
 			return createDevopsOrganizationResponse;
         }

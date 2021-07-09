@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class GetDevopsProjectTaskInfoResponse : AcsResponse
 	{
 
-		private bool? successful;
-
-		private string errorCode;
-
 		private string errorMsg;
 
 		private string requestId;
 
+		private bool? successful;
+
+		private string errorCode;
+
 		private GetDevopsProjectTaskInfo__Object _object;
-
-		public bool? Successful
-		{
-			get
-			{
-				return successful;
-			}
-			set	
-			{
-				successful = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
 
 		public string ErrorMsg
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
+		public bool? Successful
+		{
+			get
+			{
+				return successful;
+			}
+			set	
+			{
+				successful = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
 		public GetDevopsProjectTaskInfo__Object _Object
 		{
 			get
@@ -98,121 +98,49 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 		public class GetDevopsProjectTaskInfo__Object
 		{
 
-			private string tasklistId;
-
-			private string taskflowstatusId;
-
-			private string taskType;
-
-			private bool? isDeleted;
-
-			private string creatorId;
-
-			private bool? isTopInProject;
-
 			private string executorId;
-
-			private string storyPoint;
-
-			private string created;
-
-			private string organizationId;
-
-			private bool? isDone;
-
-			private string id;
-
-			private string updated;
-
-			private string sprintId;
 
 			private string projectId;
 
-			private string content;
-
-			private string note;
-
-			private string dueDate;
-
 			private string startDate;
 
-			private string visible;
+			private string storyPoint;
 
 			private string priority;
 
+			private bool? isTopInProject;
+
+			private string creatorId;
+
+			private string organizationId;
+
+			private string taskType;
+
+			private string visible;
+
+			private string tasklistId;
+
+			private bool? isDone;
+
+			private bool? isDeleted;
+
+			private string taskflowstatusId;
+
+			private string note;
+
+			private string sprintId;
+
+			private string updated;
+
+			private string dueDate;
+
+			private string created;
+
+			private string content;
+
+			private string id;
+
 			private List<string> involveMembers;
-
-			public string TasklistId
-			{
-				get
-				{
-					return tasklistId;
-				}
-				set	
-				{
-					tasklistId = value;
-				}
-			}
-
-			public string TaskflowstatusId
-			{
-				get
-				{
-					return taskflowstatusId;
-				}
-				set	
-				{
-					taskflowstatusId = value;
-				}
-			}
-
-			public string TaskType
-			{
-				get
-				{
-					return taskType;
-				}
-				set	
-				{
-					taskType = value;
-				}
-			}
-
-			public bool? IsDeleted
-			{
-				get
-				{
-					return isDeleted;
-				}
-				set	
-				{
-					isDeleted = value;
-				}
-			}
-
-			public string CreatorId
-			{
-				get
-				{
-					return creatorId;
-				}
-				set	
-				{
-					creatorId = value;
-				}
-			}
-
-			public bool? IsTopInProject
-			{
-				get
-				{
-					return isTopInProject;
-				}
-				set	
-				{
-					isTopInProject = value;
-				}
-			}
 
 			public string ExecutorId
 			{
@@ -223,90 +151,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				set	
 				{
 					executorId = value;
-				}
-			}
-
-			public string StoryPoint
-			{
-				get
-				{
-					return storyPoint;
-				}
-				set	
-				{
-					storyPoint = value;
-				}
-			}
-
-			public string Created
-			{
-				get
-				{
-					return created;
-				}
-				set	
-				{
-					created = value;
-				}
-			}
-
-			public string OrganizationId
-			{
-				get
-				{
-					return organizationId;
-				}
-				set	
-				{
-					organizationId = value;
-				}
-			}
-
-			public bool? IsDone
-			{
-				get
-				{
-					return isDone;
-				}
-				set	
-				{
-					isDone = value;
-				}
-			}
-
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
-
-			public string Updated
-			{
-				get
-				{
-					return updated;
-				}
-				set	
-				{
-					updated = value;
-				}
-			}
-
-			public string SprintId
-			{
-				get
-				{
-					return sprintId;
-				}
-				set	
-				{
-					sprintId = value;
 				}
 			}
 
@@ -322,42 +166,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public string Content
-			{
-				get
-				{
-					return content;
-				}
-				set	
-				{
-					content = value;
-				}
-			}
-
-			public string Note
-			{
-				get
-				{
-					return note;
-				}
-				set	
-				{
-					note = value;
-				}
-			}
-
-			public string DueDate
-			{
-				get
-				{
-					return dueDate;
-				}
-				set	
-				{
-					dueDate = value;
-				}
-			}
-
 			public string StartDate
 			{
 				get
@@ -367,6 +175,78 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				set	
 				{
 					startDate = value;
+				}
+			}
+
+			public string StoryPoint
+			{
+				get
+				{
+					return storyPoint;
+				}
+				set	
+				{
+					storyPoint = value;
+				}
+			}
+
+			public string Priority
+			{
+				get
+				{
+					return priority;
+				}
+				set	
+				{
+					priority = value;
+				}
+			}
+
+			public bool? IsTopInProject
+			{
+				get
+				{
+					return isTopInProject;
+				}
+				set	
+				{
+					isTopInProject = value;
+				}
+			}
+
+			public string CreatorId
+			{
+				get
+				{
+					return creatorId;
+				}
+				set	
+				{
+					creatorId = value;
+				}
+			}
+
+			public string OrganizationId
+			{
+				get
+				{
+					return organizationId;
+				}
+				set	
+				{
+					organizationId = value;
+				}
+			}
+
+			public string TaskType
+			{
+				get
+				{
+					return taskType;
+				}
+				set	
+				{
+					taskType = value;
 				}
 			}
 
@@ -382,15 +262,135 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public string Priority
+			public string TasklistId
 			{
 				get
 				{
-					return priority;
+					return tasklistId;
 				}
 				set	
 				{
-					priority = value;
+					tasklistId = value;
+				}
+			}
+
+			public bool? IsDone
+			{
+				get
+				{
+					return isDone;
+				}
+				set	
+				{
+					isDone = value;
+				}
+			}
+
+			public bool? IsDeleted
+			{
+				get
+				{
+					return isDeleted;
+				}
+				set	
+				{
+					isDeleted = value;
+				}
+			}
+
+			public string TaskflowstatusId
+			{
+				get
+				{
+					return taskflowstatusId;
+				}
+				set	
+				{
+					taskflowstatusId = value;
+				}
+			}
+
+			public string Note
+			{
+				get
+				{
+					return note;
+				}
+				set	
+				{
+					note = value;
+				}
+			}
+
+			public string SprintId
+			{
+				get
+				{
+					return sprintId;
+				}
+				set	
+				{
+					sprintId = value;
+				}
+			}
+
+			public string Updated
+			{
+				get
+				{
+					return updated;
+				}
+				set	
+				{
+					updated = value;
+				}
+			}
+
+			public string DueDate
+			{
+				get
+				{
+					return dueDate;
+				}
+				set	
+				{
+					dueDate = value;
+				}
+			}
+
+			public string Created
+			{
+				get
+				{
+					return created;
+				}
+				set	
+				{
+					created = value;
+				}
+			}
+
+			public string Content
+			{
+				get
+				{
+					return content;
+				}
+				set	
+				{
+					content = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 

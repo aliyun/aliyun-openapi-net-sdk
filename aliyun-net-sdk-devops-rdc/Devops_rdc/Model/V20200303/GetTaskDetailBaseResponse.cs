@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class GetTaskDetailBaseResponse : AcsResponse
 	{
 
-		private bool? successful;
-
-		private string errorCode;
-
 		private string errorMsg;
 
 		private string requestId;
 
+		private bool? successful;
+
+		private string errorCode;
+
 		private GetTaskDetailBase__Object _object;
-
-		public bool? Successful
-		{
-			get
-			{
-				return successful;
-			}
-			set	
-			{
-				successful = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
 
 		public string ErrorMsg
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
+		public bool? Successful
+		{
+			get
+			{
+				return successful;
+			}
+			set	
+			{
+				successful = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
 		public GetTaskDetailBase__Object _Object
 		{
 			get
@@ -98,87 +98,87 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 		public class GetTaskDetailBase__Object
 		{
 
-			private string parent;
+			private bool? isFavorite;
 
-			private string dueDate;
+			private string organization;
 
-			private string sprint;
+			private string executorId;
 
-			private int? rating;
+			private string scenariofieldconfigId;
 
-			private string sourceId;
+			private string projectId;
 
-			private string source;
-
-			private string stageId;
-
-			private string objectType;
-
-			private string taskflowstatusId;
-
-			private int? likesCount;
-
-			private string accomplished;
-
-			private int? objectlinksCount;
-
-			private string creatorId;
-
-			private string visible;
-
-			private string storyPoint;
-
-			private string created;
+			private bool? isTopInProject;
 
 			private int? priority;
 
-			private string recurrence;
+			private int? shareStatus;
 
-			private string untilDate;
+			private string accomplished;
 
-			private string id;
+			private string taskflowstatusId;
+
+			private string note;
 
 			private string updated;
 
-			private string startDate;
-
 			private int? uniqueId;
-
-			private bool? isFavorite;
-
-			private string note;
 
 			private bool? isArchived;
 
 			private string content;
 
-			private string sourceDate;
-
-			private int? attachmentsCount;
-
-			private string scenariofieldconfigId;
-
-			private bool? isTopInProject;
-
-			private string executorId;
-
-			private string organizationId;
-
-			private bool? isDone;
-
-			private string taskId;
-
 			private int? commentsCount;
 
-			private string organization;
+			private int? rating;
+
+			private string recurrence;
+
+			private string objectType;
 
 			private int? progress;
 
+			private string untilDate;
+
+			private string startDate;
+
+			private string storyPoint;
+
+			private int? objectlinksCount;
+
+			private string sprint;
+
+			private string creatorId;
+
+			private string source;
+
+			private string sourceId;
+
+			private string organizationId;
+
+			private string sourceDate;
+
+			private int? likesCount;
+
+			private string stageId;
+
+			private string visible;
+
+			private bool? isDone;
+
+			private string parent;
+
 			private string sprintId;
 
-			private string projectId;
+			private int? attachmentsCount;
 
-			private int? shareStatus;
+			private string dueDate;
+
+			private string created;
+
+			private string taskId;
+
+			private string id;
 
 			private List<GetTaskDetailBase_Customfield> customfields;
 
@@ -186,17 +186,17 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 
 			private List<GetTaskDetailBase_Involver> involvers;
 
+			private List<string> labels;
+
 			private List<string> divisions;
 
 			private List<string> ancestors;
 
-			private List<string> labels;
+			private List<string> involveMembers;
 
 			private List<string> tagIds;
 
 			private List<string> ancestorIds;
-
-			private List<string> involveMembers;
 
 			private GetTaskDetailBase_Scenariofieldconfig scenariofieldconfig;
 
@@ -218,195 +218,75 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 
 			private GetTaskDetailBase_Stage stage;
 
-			public string Parent
+			public bool? IsFavorite
 			{
 				get
 				{
-					return parent;
+					return isFavorite;
 				}
 				set	
 				{
-					parent = value;
+					isFavorite = value;
 				}
 			}
 
-			public string DueDate
+			public string Organization
 			{
 				get
 				{
-					return dueDate;
+					return organization;
 				}
 				set	
 				{
-					dueDate = value;
+					organization = value;
 				}
 			}
 
-			public string Sprint
+			public string ExecutorId
 			{
 				get
 				{
-					return sprint;
+					return executorId;
 				}
 				set	
 				{
-					sprint = value;
+					executorId = value;
 				}
 			}
 
-			public int? Rating
+			public string ScenariofieldconfigId
 			{
 				get
 				{
-					return rating;
+					return scenariofieldconfigId;
 				}
 				set	
 				{
-					rating = value;
+					scenariofieldconfigId = value;
 				}
 			}
 
-			public string SourceId
+			public string ProjectId
 			{
 				get
 				{
-					return sourceId;
+					return projectId;
 				}
 				set	
 				{
-					sourceId = value;
+					projectId = value;
 				}
 			}
 
-			public string Source
+			public bool? IsTopInProject
 			{
 				get
 				{
-					return source;
+					return isTopInProject;
 				}
 				set	
 				{
-					source = value;
-				}
-			}
-
-			public string StageId
-			{
-				get
-				{
-					return stageId;
-				}
-				set	
-				{
-					stageId = value;
-				}
-			}
-
-			public string ObjectType
-			{
-				get
-				{
-					return objectType;
-				}
-				set	
-				{
-					objectType = value;
-				}
-			}
-
-			public string TaskflowstatusId
-			{
-				get
-				{
-					return taskflowstatusId;
-				}
-				set	
-				{
-					taskflowstatusId = value;
-				}
-			}
-
-			public int? LikesCount
-			{
-				get
-				{
-					return likesCount;
-				}
-				set	
-				{
-					likesCount = value;
-				}
-			}
-
-			public string Accomplished
-			{
-				get
-				{
-					return accomplished;
-				}
-				set	
-				{
-					accomplished = value;
-				}
-			}
-
-			public int? ObjectlinksCount
-			{
-				get
-				{
-					return objectlinksCount;
-				}
-				set	
-				{
-					objectlinksCount = value;
-				}
-			}
-
-			public string CreatorId
-			{
-				get
-				{
-					return creatorId;
-				}
-				set	
-				{
-					creatorId = value;
-				}
-			}
-
-			public string Visible
-			{
-				get
-				{
-					return visible;
-				}
-				set	
-				{
-					visible = value;
-				}
-			}
-
-			public string StoryPoint
-			{
-				get
-				{
-					return storyPoint;
-				}
-				set	
-				{
-					storyPoint = value;
-				}
-			}
-
-			public string Created
-			{
-				get
-				{
-					return created;
-				}
-				set	
-				{
-					created = value;
+					isTopInProject = value;
 				}
 			}
 
@@ -422,39 +302,51 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public string Recurrence
+			public int? ShareStatus
 			{
 				get
 				{
-					return recurrence;
+					return shareStatus;
 				}
 				set	
 				{
-					recurrence = value;
+					shareStatus = value;
 				}
 			}
 
-			public string UntilDate
+			public string Accomplished
 			{
 				get
 				{
-					return untilDate;
+					return accomplished;
 				}
 				set	
 				{
-					untilDate = value;
+					accomplished = value;
 				}
 			}
 
-			public string Id
+			public string TaskflowstatusId
 			{
 				get
 				{
-					return id;
+					return taskflowstatusId;
 				}
 				set	
 				{
-					id = value;
+					taskflowstatusId = value;
+				}
+			}
+
+			public string Note
+			{
+				get
+				{
+					return note;
+				}
+				set	
+				{
+					note = value;
 				}
 			}
 
@@ -470,18 +362,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public string StartDate
-			{
-				get
-				{
-					return startDate;
-				}
-				set	
-				{
-					startDate = value;
-				}
-			}
-
 			public int? UniqueId
 			{
 				get
@@ -491,30 +371,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				set	
 				{
 					uniqueId = value;
-				}
-			}
-
-			public bool? IsFavorite
-			{
-				get
-				{
-					return isFavorite;
-				}
-				set	
-				{
-					isFavorite = value;
-				}
-			}
-
-			public string Note
-			{
-				get
-				{
-					return note;
-				}
-				set	
-				{
-					note = value;
 				}
 			}
 
@@ -542,102 +398,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public string SourceDate
-			{
-				get
-				{
-					return sourceDate;
-				}
-				set	
-				{
-					sourceDate = value;
-				}
-			}
-
-			public int? AttachmentsCount
-			{
-				get
-				{
-					return attachmentsCount;
-				}
-				set	
-				{
-					attachmentsCount = value;
-				}
-			}
-
-			public string ScenariofieldconfigId
-			{
-				get
-				{
-					return scenariofieldconfigId;
-				}
-				set	
-				{
-					scenariofieldconfigId = value;
-				}
-			}
-
-			public bool? IsTopInProject
-			{
-				get
-				{
-					return isTopInProject;
-				}
-				set	
-				{
-					isTopInProject = value;
-				}
-			}
-
-			public string ExecutorId
-			{
-				get
-				{
-					return executorId;
-				}
-				set	
-				{
-					executorId = value;
-				}
-			}
-
-			public string OrganizationId
-			{
-				get
-				{
-					return organizationId;
-				}
-				set	
-				{
-					organizationId = value;
-				}
-			}
-
-			public bool? IsDone
-			{
-				get
-				{
-					return isDone;
-				}
-				set	
-				{
-					isDone = value;
-				}
-			}
-
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
-
 			public int? CommentsCount
 			{
 				get
@@ -650,15 +410,39 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public string Organization
+			public int? Rating
 			{
 				get
 				{
-					return organization;
+					return rating;
 				}
 				set	
 				{
-					organization = value;
+					rating = value;
+				}
+			}
+
+			public string Recurrence
+			{
+				get
+				{
+					return recurrence;
+				}
+				set	
+				{
+					recurrence = value;
+				}
+			}
+
+			public string ObjectType
+			{
+				get
+				{
+					return objectType;
+				}
+				set	
+				{
+					objectType = value;
 				}
 			}
 
@@ -674,6 +458,186 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
+			public string UntilDate
+			{
+				get
+				{
+					return untilDate;
+				}
+				set	
+				{
+					untilDate = value;
+				}
+			}
+
+			public string StartDate
+			{
+				get
+				{
+					return startDate;
+				}
+				set	
+				{
+					startDate = value;
+				}
+			}
+
+			public string StoryPoint
+			{
+				get
+				{
+					return storyPoint;
+				}
+				set	
+				{
+					storyPoint = value;
+				}
+			}
+
+			public int? ObjectlinksCount
+			{
+				get
+				{
+					return objectlinksCount;
+				}
+				set	
+				{
+					objectlinksCount = value;
+				}
+			}
+
+			public string Sprint
+			{
+				get
+				{
+					return sprint;
+				}
+				set	
+				{
+					sprint = value;
+				}
+			}
+
+			public string CreatorId
+			{
+				get
+				{
+					return creatorId;
+				}
+				set	
+				{
+					creatorId = value;
+				}
+			}
+
+			public string Source
+			{
+				get
+				{
+					return source;
+				}
+				set	
+				{
+					source = value;
+				}
+			}
+
+			public string SourceId
+			{
+				get
+				{
+					return sourceId;
+				}
+				set	
+				{
+					sourceId = value;
+				}
+			}
+
+			public string OrganizationId
+			{
+				get
+				{
+					return organizationId;
+				}
+				set	
+				{
+					organizationId = value;
+				}
+			}
+
+			public string SourceDate
+			{
+				get
+				{
+					return sourceDate;
+				}
+				set	
+				{
+					sourceDate = value;
+				}
+			}
+
+			public int? LikesCount
+			{
+				get
+				{
+					return likesCount;
+				}
+				set	
+				{
+					likesCount = value;
+				}
+			}
+
+			public string StageId
+			{
+				get
+				{
+					return stageId;
+				}
+				set	
+				{
+					stageId = value;
+				}
+			}
+
+			public string Visible
+			{
+				get
+				{
+					return visible;
+				}
+				set	
+				{
+					visible = value;
+				}
+			}
+
+			public bool? IsDone
+			{
+				get
+				{
+					return isDone;
+				}
+				set	
+				{
+					isDone = value;
+				}
+			}
+
+			public string Parent
+			{
+				get
+				{
+					return parent;
+				}
+				set	
+				{
+					parent = value;
+				}
+			}
+
 			public string SprintId
 			{
 				get
@@ -686,27 +650,63 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public string ProjectId
+			public int? AttachmentsCount
 			{
 				get
 				{
-					return projectId;
+					return attachmentsCount;
 				}
 				set	
 				{
-					projectId = value;
+					attachmentsCount = value;
 				}
 			}
 
-			public int? ShareStatus
+			public string DueDate
 			{
 				get
 				{
-					return shareStatus;
+					return dueDate;
 				}
 				set	
 				{
-					shareStatus = value;
+					dueDate = value;
+				}
+			}
+
+			public string Created
+			{
+				get
+				{
+					return created;
+				}
+				set	
+				{
+					created = value;
+				}
+			}
+
+			public string TaskId
+			{
+				get
+				{
+					return taskId;
+				}
+				set	
+				{
+					taskId = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 
@@ -746,6 +746,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
+			public List<string> Labels
+			{
+				get
+				{
+					return labels;
+				}
+				set	
+				{
+					labels = value;
+				}
+			}
+
 			public List<string> Divisions
 			{
 				get
@@ -770,15 +782,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public List<string> Labels
+			public List<string> InvolveMembers
 			{
 				get
 				{
-					return labels;
+					return involveMembers;
 				}
 				set	
 				{
-					labels = value;
+					involveMembers = value;
 				}
 			}
 
@@ -803,18 +815,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				set	
 				{
 					ancestorIds = value;
-				}
-			}
-
-			public List<string> InvolveMembers
-			{
-				get
-				{
-					return involveMembers;
-				}
-				set	
-				{
-					involveMembers = value;
 				}
 			}
 
@@ -941,25 +941,13 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			public class GetTaskDetailBase_Customfield
 			{
 
-				private string customfieldId;
-
 				private string type;
+
+				private string customfieldId;
 
 				private List<GetTaskDetailBase_ValueInfo> _value;
 
 				private List<string> values;
-
-				public string CustomfieldId
-				{
-					get
-					{
-						return customfieldId;
-					}
-					set	
-					{
-						customfieldId = value;
-					}
-				}
 
 				public string Type
 				{
@@ -970,6 +958,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					set	
 					{
 						type = value;
+					}
+				}
+
+				public string CustomfieldId
+				{
+					get
+					{
+						return customfieldId;
+					}
+					set	
+					{
+						customfieldId = value;
 					}
 				}
 
@@ -1033,21 +1033,9 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			public class GetTaskDetailBase_Subtask
 			{
 
-				private string id;
-
 				private string content;
 
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
+				private string id;
 
 				public string Content
 				{
@@ -1058,6 +1046,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					set	
 					{
 						content = value;
+					}
+				}
+
+				public string Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
 					}
 				}
 			}
@@ -1097,25 +1097,13 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			public class GetTaskDetailBase_Scenariofieldconfig
 			{
 
-				private string name;
-
 				private string icon;
 
 				private string proTemplateConfigType;
 
-				private string id;
+				private string name;
 
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
+				private string id;
 
 				public string Icon
 				{
@@ -1138,6 +1126,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					set	
 					{
 						proTemplateConfigType = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 
@@ -1235,25 +1235,13 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			public class GetTaskDetailBase_Taskflowstatus
 			{
 
-				private string kind;
-
 				private string taskflowId;
 
 				private string name;
 
 				private string id;
 
-				public string Kind
-				{
-					get
-					{
-						return kind;
-					}
-					set	
-					{
-						kind = value;
-					}
-				}
+				private string kind;
 
 				public string TaskflowId
 				{
@@ -1288,6 +1276,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					set	
 					{
 						id = value;
+					}
+				}
+
+				public string Kind
+				{
+					get
+					{
+						return kind;
+					}
+					set	
+					{
+						kind = value;
 					}
 				}
 			}
@@ -1327,19 +1327,31 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			public class GetTaskDetailBase_Reminder
 			{
 
+				private string type;
+
 				private string date;
 
 				private string method;
 
 				private string creatorId;
 
-				private string type;
-
 				private List<string> memberRoles;
 
 				private List<string> members;
 
 				private List<string> rules;
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
 
 				public string Date
 				{
@@ -1374,18 +1386,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					set	
 					{
 						creatorId = value;
-					}
-				}
-
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
 					}
 				}
 
@@ -1429,21 +1429,9 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			public class GetTaskDetailBase_SubtaskCount
 			{
 
-				private int? total;
-
 				private int? done;
 
-				public int? Total
-				{
-					get
-					{
-						return total;
-					}
-					set	
-					{
-						total = value;
-					}
-				}
+				private int? total;
 
 				public int? Done
 				{
@@ -1456,6 +1444,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 						done = value;
 					}
 				}
+
+				public int? Total
+				{
+					get
+					{
+						return total;
+					}
+					set	
+					{
+						total = value;
+					}
+				}
 			}
 
 			public class GetTaskDetailBase_WorkTime
@@ -1463,9 +1463,9 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 
 				private int? usedTime;
 
-				private string unit;
-
 				private int? totalTime;
+
+				private string unit;
 
 				public int? UsedTime
 				{
@@ -1476,18 +1476,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					set	
 					{
 						usedTime = value;
-					}
-				}
-
-				public string Unit
-				{
-					get
-					{
-						return unit;
-					}
-					set	
-					{
-						unit = value;
 					}
 				}
 
@@ -1502,6 +1490,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 						totalTime = value;
 					}
 				}
+
+				public string Unit
+				{
+					get
+					{
+						return unit;
+					}
+					set	
+					{
+						unit = value;
+					}
+				}
 			}
 
 			public class GetTaskDetailBase_Badges
@@ -1509,11 +1509,11 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 
 				private int? likesCount;
 
+				private int? objectlinksCount;
+
 				private int? attachmentsCount;
 
 				private int? commentsCount;
-
-				private int? objectlinksCount;
 
 				public int? LikesCount
 				{
@@ -1524,6 +1524,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					set	
 					{
 						likesCount = value;
+					}
+				}
+
+				public int? ObjectlinksCount
+				{
+					get
+					{
+						return objectlinksCount;
+					}
+					set	
+					{
+						objectlinksCount = value;
 					}
 				}
 
@@ -1548,18 +1560,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					set	
 					{
 						commentsCount = value;
-					}
-				}
-
-				public int? ObjectlinksCount
-				{
-					get
-					{
-						return objectlinksCount;
-					}
-					set	
-					{
-						objectlinksCount = value;
 					}
 				}
 			}

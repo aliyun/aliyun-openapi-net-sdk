@@ -31,11 +31,11 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			InsertDevopsUserResponse insertDevopsUserResponse = new InsertDevopsUserResponse();
 
 			insertDevopsUserResponse.HttpResponse = _ctx.HttpResponse;
-			insertDevopsUserResponse.ErrorCode = _ctx.StringValue("InsertDevopsUser.ErrorCode");
-			insertDevopsUserResponse.ErrorMessage = _ctx.StringValue("InsertDevopsUser.ErrorMessage");
 			insertDevopsUserResponse.RequestId = _ctx.StringValue("InsertDevopsUser.RequestId");
-			insertDevopsUserResponse.Success = _ctx.BooleanValue("InsertDevopsUser.Success");
+			insertDevopsUserResponse.ErrorMessage = _ctx.StringValue("InsertDevopsUser.ErrorMessage");
 			insertDevopsUserResponse._Object = _ctx.StringValue("InsertDevopsUser.Object");
+			insertDevopsUserResponse.Success = _ctx.BooleanValue("InsertDevopsUser.Success");
+			insertDevopsUserResponse.ErrorCode = _ctx.StringValue("InsertDevopsUser.ErrorCode");
         
 			return insertDevopsUserResponse;
         }

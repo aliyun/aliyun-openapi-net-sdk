@@ -31,10 +31,10 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			DeleteCommonGroupResponse deleteCommonGroupResponse = new DeleteCommonGroupResponse();
 
 			deleteCommonGroupResponse.HttpResponse = _ctx.HttpResponse;
-			deleteCommonGroupResponse.Successful = _ctx.BooleanValue("DeleteCommonGroup.Successful");
-			deleteCommonGroupResponse.ErrorCode = _ctx.StringValue("DeleteCommonGroup.ErrorCode");
 			deleteCommonGroupResponse.ErrorMsg = _ctx.StringValue("DeleteCommonGroup.ErrorMsg");
 			deleteCommonGroupResponse.RequestId = _ctx.StringValue("DeleteCommonGroup.RequestId");
+			deleteCommonGroupResponse.Successful = _ctx.BooleanValue("DeleteCommonGroup.Successful");
+			deleteCommonGroupResponse.ErrorCode = _ctx.StringValue("DeleteCommonGroup.ErrorCode");
 
 			DeleteCommonGroupResponse.DeleteCommonGroup__Object _object = new DeleteCommonGroupResponse.DeleteCommonGroup__Object();
 			_object.Id = _ctx.StringValue("DeleteCommonGroup.Object.Id");

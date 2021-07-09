@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class CreateDevopsProjectTaskResponse : AcsResponse
 	{
 
-		private bool? successful;
-
-		private string errorCode;
-
 		private string errorMsg;
 
 		private string requestId;
 
+		private bool? successful;
+
+		private string errorCode;
+
 		private CreateDevopsProjectTask__Object _object;
-
-		public bool? Successful
-		{
-			get
-			{
-				return successful;
-			}
-			set	
-			{
-				successful = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
 
 		public string ErrorMsg
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
+		public bool? Successful
+		{
+			get
+			{
+				return successful;
+			}
+			set	
+			{
+				successful = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
 		public CreateDevopsProjectTask__Object _Object
 		{
 			get
@@ -98,211 +98,55 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 		public class CreateDevopsProjectTask__Object
 		{
 
-			private string note;
-
-			private string tasklistId;
-
-			private string dueDate;
-
-			private int? rating;
-
-			private string source;
-
-			private string content;
-
-			private string taskflowstatusId;
-
-			private string taskType;
-
-			private string scenarioFieldConfigId;
-
-			private int? pos;
-
-			private string ancestorIds;
-
-			private string creatorId;
-
-			private string visible;
-
 			private string executorId;
 
-			private string storyPoint;
-
-			private string created;
-
-			private string organizationId;
+			private string projectId;
 
 			private int? priority;
 
-			private bool? isDone;
+			private string scenarioFieldConfigId;
 
-			private string id;
+			private string ancestorIds;
+
+			private string taskType;
+
+			private string tasklistId;
+
+			private string taskflowstatusId;
+
+			private string note;
 
 			private string updated;
 
 			private int? uniqueId;
 
+			private string content;
+
+			private int? rating;
+
+			private int? pos;
+
+			private string storyPoint;
+
 			private string startDate;
+
+			private string creatorId;
+
+			private string source;
+
+			private string organizationId;
+
+			private string visible;
+
+			private bool? isDone;
 
 			private string sprintId;
 
-			private string projectId;
+			private string dueDate;
 
-			public string Note
-			{
-				get
-				{
-					return note;
-				}
-				set	
-				{
-					note = value;
-				}
-			}
+			private string created;
 
-			public string TasklistId
-			{
-				get
-				{
-					return tasklistId;
-				}
-				set	
-				{
-					tasklistId = value;
-				}
-			}
-
-			public string DueDate
-			{
-				get
-				{
-					return dueDate;
-				}
-				set	
-				{
-					dueDate = value;
-				}
-			}
-
-			public int? Rating
-			{
-				get
-				{
-					return rating;
-				}
-				set	
-				{
-					rating = value;
-				}
-			}
-
-			public string Source
-			{
-				get
-				{
-					return source;
-				}
-				set	
-				{
-					source = value;
-				}
-			}
-
-			public string Content
-			{
-				get
-				{
-					return content;
-				}
-				set	
-				{
-					content = value;
-				}
-			}
-
-			public string TaskflowstatusId
-			{
-				get
-				{
-					return taskflowstatusId;
-				}
-				set	
-				{
-					taskflowstatusId = value;
-				}
-			}
-
-			public string TaskType
-			{
-				get
-				{
-					return taskType;
-				}
-				set	
-				{
-					taskType = value;
-				}
-			}
-
-			public string ScenarioFieldConfigId
-			{
-				get
-				{
-					return scenarioFieldConfigId;
-				}
-				set	
-				{
-					scenarioFieldConfigId = value;
-				}
-			}
-
-			public int? Pos
-			{
-				get
-				{
-					return pos;
-				}
-				set	
-				{
-					pos = value;
-				}
-			}
-
-			public string AncestorIds
-			{
-				get
-				{
-					return ancestorIds;
-				}
-				set	
-				{
-					ancestorIds = value;
-				}
-			}
-
-			public string CreatorId
-			{
-				get
-				{
-					return creatorId;
-				}
-				set	
-				{
-					creatorId = value;
-				}
-			}
-
-			public string Visible
-			{
-				get
-				{
-					return visible;
-				}
-				set	
-				{
-					visible = value;
-				}
-			}
+			private string id;
 
 			public string ExecutorId
 			{
@@ -316,39 +160,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public string StoryPoint
+			public string ProjectId
 			{
 				get
 				{
-					return storyPoint;
+					return projectId;
 				}
 				set	
 				{
-					storyPoint = value;
-				}
-			}
-
-			public string Created
-			{
-				get
-				{
-					return created;
-				}
-				set	
-				{
-					created = value;
-				}
-			}
-
-			public string OrganizationId
-			{
-				get
-				{
-					return organizationId;
-				}
-				set	
-				{
-					organizationId = value;
+					projectId = value;
 				}
 			}
 
@@ -364,27 +184,75 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public bool? IsDone
+			public string ScenarioFieldConfigId
 			{
 				get
 				{
-					return isDone;
+					return scenarioFieldConfigId;
 				}
 				set	
 				{
-					isDone = value;
+					scenarioFieldConfigId = value;
 				}
 			}
 
-			public string Id
+			public string AncestorIds
 			{
 				get
 				{
-					return id;
+					return ancestorIds;
 				}
 				set	
 				{
-					id = value;
+					ancestorIds = value;
+				}
+			}
+
+			public string TaskType
+			{
+				get
+				{
+					return taskType;
+				}
+				set	
+				{
+					taskType = value;
+				}
+			}
+
+			public string TasklistId
+			{
+				get
+				{
+					return tasklistId;
+				}
+				set	
+				{
+					tasklistId = value;
+				}
+			}
+
+			public string TaskflowstatusId
+			{
+				get
+				{
+					return taskflowstatusId;
+				}
+				set	
+				{
+					taskflowstatusId = value;
+				}
+			}
+
+			public string Note
+			{
+				get
+				{
+					return note;
+				}
+				set	
+				{
+					note = value;
 				}
 			}
 
@@ -412,6 +280,54 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
+			public string Content
+			{
+				get
+				{
+					return content;
+				}
+				set	
+				{
+					content = value;
+				}
+			}
+
+			public int? Rating
+			{
+				get
+				{
+					return rating;
+				}
+				set	
+				{
+					rating = value;
+				}
+			}
+
+			public int? Pos
+			{
+				get
+				{
+					return pos;
+				}
+				set	
+				{
+					pos = value;
+				}
+			}
+
+			public string StoryPoint
+			{
+				get
+				{
+					return storyPoint;
+				}
+				set	
+				{
+					storyPoint = value;
+				}
+			}
+
 			public string StartDate
 			{
 				get
@@ -421,6 +337,66 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				set	
 				{
 					startDate = value;
+				}
+			}
+
+			public string CreatorId
+			{
+				get
+				{
+					return creatorId;
+				}
+				set	
+				{
+					creatorId = value;
+				}
+			}
+
+			public string Source
+			{
+				get
+				{
+					return source;
+				}
+				set	
+				{
+					source = value;
+				}
+			}
+
+			public string OrganizationId
+			{
+				get
+				{
+					return organizationId;
+				}
+				set	
+				{
+					organizationId = value;
+				}
+			}
+
+			public string Visible
+			{
+				get
+				{
+					return visible;
+				}
+				set	
+				{
+					visible = value;
+				}
+			}
+
+			public bool? IsDone
+			{
+				get
+				{
+					return isDone;
+				}
+				set	
+				{
+					isDone = value;
 				}
 			}
 
@@ -436,15 +412,39 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public string ProjectId
+			public string DueDate
 			{
 				get
 				{
-					return projectId;
+					return dueDate;
 				}
 				set	
 				{
-					projectId = value;
+					dueDate = value;
+				}
+			}
+
+			public string Created
+			{
+				get
+				{
+					return created;
+				}
+				set	
+				{
+					created = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 		}

@@ -32,9 +32,9 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 
 			listCredentialsResponse.HttpResponse = _ctx.HttpResponse;
 			listCredentialsResponse.RequestId = _ctx.StringValue("ListCredentials.RequestId");
-			listCredentialsResponse.ErrorCode = _ctx.StringValue("ListCredentials.ErrorCode");
 			listCredentialsResponse.ErrorMessage = _ctx.StringValue("ListCredentials.ErrorMessage");
 			listCredentialsResponse.Success = _ctx.BooleanValue("ListCredentials.Success");
+			listCredentialsResponse.ErrorCode = _ctx.StringValue("ListCredentials.ErrorCode");
 
 			List<Dictionary<string, string>> listCredentialsResponse_object = new List<Dictionary<string, string>>();
 			for (int i = 0; i < _ctx.Length("ListCredentials.Object.Length"); i++) {

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			DeletePipelineMemberResponse deletePipelineMemberResponse = new DeletePipelineMemberResponse();
 
 			deletePipelineMemberResponse.HttpResponse = _ctx.HttpResponse;
-			deletePipelineMemberResponse.Success = _ctx.BooleanValue("DeletePipelineMember.Success");
-			deletePipelineMemberResponse.ErrorCode = _ctx.StringValue("DeletePipelineMember.ErrorCode");
-			deletePipelineMemberResponse.ErrorMessage = _ctx.StringValue("DeletePipelineMember.ErrorMessage");
 			deletePipelineMemberResponse.RequestId = _ctx.StringValue("DeletePipelineMember.RequestId");
+			deletePipelineMemberResponse.ErrorMessage = _ctx.StringValue("DeletePipelineMember.ErrorMessage");
 			deletePipelineMemberResponse._Object = _ctx.BooleanValue("DeletePipelineMember.Object");
+			deletePipelineMemberResponse.ErrorCode = _ctx.StringValue("DeletePipelineMember.ErrorCode");
+			deletePipelineMemberResponse.Success = _ctx.BooleanValue("DeletePipelineMember.Success");
         
 			return deletePipelineMemberResponse;
         }

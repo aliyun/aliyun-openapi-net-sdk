@@ -31,10 +31,10 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			GetPipleineLatestInstanceStatusResponse getPipleineLatestInstanceStatusResponse = new GetPipleineLatestInstanceStatusResponse();
 
 			getPipleineLatestInstanceStatusResponse.HttpResponse = _ctx.HttpResponse;
+			getPipleineLatestInstanceStatusResponse.RequestId = _ctx.StringValue("GetPipleineLatestInstanceStatus.RequestId");
+			getPipleineLatestInstanceStatusResponse.ErrorMessage = _ctx.StringValue("GetPipleineLatestInstanceStatus.ErrorMessage");
 			getPipleineLatestInstanceStatusResponse.Success = _ctx.BooleanValue("GetPipleineLatestInstanceStatus.Success");
 			getPipleineLatestInstanceStatusResponse.ErrorCode = _ctx.StringValue("GetPipleineLatestInstanceStatus.ErrorCode");
-			getPipleineLatestInstanceStatusResponse.ErrorMessage = _ctx.StringValue("GetPipleineLatestInstanceStatus.ErrorMessage");
-			getPipleineLatestInstanceStatusResponse.RequestId = _ctx.StringValue("GetPipleineLatestInstanceStatus.RequestId");
 
 			GetPipleineLatestInstanceStatusResponse.GetPipleineLatestInstanceStatus__Object _object = new GetPipleineLatestInstanceStatusResponse.GetPipleineLatestInstanceStatus__Object();
 			_object.Status = _ctx.StringValue("GetPipleineLatestInstanceStatus.Object.Status");
@@ -42,8 +42,8 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			List<GetPipleineLatestInstanceStatusResponse.GetPipleineLatestInstanceStatus__Object.GetPipleineLatestInstanceStatus_Group> _object_groups = new List<GetPipleineLatestInstanceStatusResponse.GetPipleineLatestInstanceStatus__Object.GetPipleineLatestInstanceStatus_Group>();
 			for (int i = 0; i < _ctx.Length("GetPipleineLatestInstanceStatus.Object.Groups.Length"); i++) {
 				GetPipleineLatestInstanceStatusResponse.GetPipleineLatestInstanceStatus__Object.GetPipleineLatestInstanceStatus_Group group = new GetPipleineLatestInstanceStatusResponse.GetPipleineLatestInstanceStatus__Object.GetPipleineLatestInstanceStatus_Group();
-				group.Name = _ctx.StringValue("GetPipleineLatestInstanceStatus.Object.Groups["+ i +"].Name");
 				group.Status = _ctx.StringValue("GetPipleineLatestInstanceStatus.Object.Groups["+ i +"].Status");
+				group.Name = _ctx.StringValue("GetPipleineLatestInstanceStatus.Object.Groups["+ i +"].Name");
 
 				List<GetPipleineLatestInstanceStatusResponse.GetPipleineLatestInstanceStatus__Object.GetPipleineLatestInstanceStatus_Group.GetPipleineLatestInstanceStatus_Stage> group_stages = new List<GetPipleineLatestInstanceStatusResponse.GetPipleineLatestInstanceStatus__Object.GetPipleineLatestInstanceStatus_Group.GetPipleineLatestInstanceStatus_Stage>();
 				for (int j = 0; j < _ctx.Length("GetPipleineLatestInstanceStatus.Object.Groups["+ i +"].Stages.Length"); j++) {
@@ -54,8 +54,8 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 					List<GetPipleineLatestInstanceStatusResponse.GetPipleineLatestInstanceStatus__Object.GetPipleineLatestInstanceStatus_Group.GetPipleineLatestInstanceStatus_Stage.GetPipleineLatestInstanceStatus_Component> stage_components = new List<GetPipleineLatestInstanceStatusResponse.GetPipleineLatestInstanceStatus__Object.GetPipleineLatestInstanceStatus_Group.GetPipleineLatestInstanceStatus_Stage.GetPipleineLatestInstanceStatus_Component>();
 					for (int k = 0; k < _ctx.Length("GetPipleineLatestInstanceStatus.Object.Groups["+ i +"].Stages["+ j +"].Components.Length"); k++) {
 						GetPipleineLatestInstanceStatusResponse.GetPipleineLatestInstanceStatus__Object.GetPipleineLatestInstanceStatus_Group.GetPipleineLatestInstanceStatus_Stage.GetPipleineLatestInstanceStatus_Component component = new GetPipleineLatestInstanceStatusResponse.GetPipleineLatestInstanceStatus__Object.GetPipleineLatestInstanceStatus_Group.GetPipleineLatestInstanceStatus_Stage.GetPipleineLatestInstanceStatus_Component();
-						component.Name = _ctx.StringValue("GetPipleineLatestInstanceStatus.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].Name");
 						component.Status = _ctx.StringValue("GetPipleineLatestInstanceStatus.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].Status");
+						component.Name = _ctx.StringValue("GetPipleineLatestInstanceStatus.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].Name");
 						component.JobId = _ctx.LongValue("GetPipleineLatestInstanceStatus.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].JobId");
 
 						stage_components.Add(component);

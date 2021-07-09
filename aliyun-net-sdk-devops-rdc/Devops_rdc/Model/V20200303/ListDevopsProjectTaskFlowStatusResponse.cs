@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class ListDevopsProjectTaskFlowStatusResponse : AcsResponse
 	{
 
-		private bool? successful;
-
-		private string errorCode;
-
 		private string errorMsg;
 
 		private string requestId;
 
+		private bool? successful;
+
+		private string errorCode;
+
 		private List<ListDevopsProjectTaskFlowStatus_TaskflowStatus> _object;
-
-		public bool? Successful
-		{
-			get
-			{
-				return successful;
-			}
-			set	
-			{
-				successful = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
 
 		public string ErrorMsg
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
+		public bool? Successful
+		{
+			get
+			{
+				return successful;
+			}
+			set	
+			{
+				successful = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
 		public List<ListDevopsProjectTaskFlowStatus_TaskflowStatus> _Object
 		{
 			get
@@ -98,59 +98,35 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 		public class ListDevopsProjectTaskFlowStatus_TaskflowStatus
 		{
 
-			private bool? isDeleted;
-
-			private string rejectStatusIds;
-
-			private int? pos;
+			private string taskflowId;
 
 			private string kind;
 
-			private string created;
+			private int? pos;
 
-			private string taskflowId;
-
-			private string name;
-
-			private string creatorId;
-
-			private string id;
+			private bool? isDeleted;
 
 			private string updated;
 
-			public bool? IsDeleted
-			{
-				get
-				{
-					return isDeleted;
-				}
-				set	
-				{
-					isDeleted = value;
-				}
-			}
+			private string creatorId;
 
-			public string RejectStatusIds
-			{
-				get
-				{
-					return rejectStatusIds;
-				}
-				set	
-				{
-					rejectStatusIds = value;
-				}
-			}
+			private string name;
 
-			public int? Pos
+			private string created;
+
+			private string rejectStatusIds;
+
+			private string id;
+
+			public string TaskflowId
 			{
 				get
 				{
-					return pos;
+					return taskflowId;
 				}
 				set	
 				{
-					pos = value;
+					taskflowId = value;
 				}
 			}
 
@@ -166,39 +142,39 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public string Created
+			public int? Pos
 			{
 				get
 				{
-					return created;
+					return pos;
 				}
 				set	
 				{
-					created = value;
+					pos = value;
 				}
 			}
 
-			public string TaskflowId
+			public bool? IsDeleted
 			{
 				get
 				{
-					return taskflowId;
+					return isDeleted;
 				}
 				set	
 				{
-					taskflowId = value;
+					isDeleted = value;
 				}
 			}
 
-			public string Name
+			public string Updated
 			{
 				get
 				{
-					return name;
+					return updated;
 				}
 				set	
 				{
-					name = value;
+					updated = value;
 				}
 			}
 
@@ -214,6 +190,42 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string Created
+			{
+				get
+				{
+					return created;
+				}
+				set	
+				{
+					created = value;
+				}
+			}
+
+			public string RejectStatusIds
+			{
+				get
+				{
+					return rejectStatusIds;
+				}
+				set	
+				{
+					rejectStatusIds = value;
+				}
+			}
+
 			public string Id
 			{
 				get
@@ -223,18 +235,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				set	
 				{
 					id = value;
-				}
-			}
-
-			public string Updated
-			{
-				get
-				{
-					return updated;
-				}
-				set	
-				{
-					updated = value;
 				}
 			}
 		}

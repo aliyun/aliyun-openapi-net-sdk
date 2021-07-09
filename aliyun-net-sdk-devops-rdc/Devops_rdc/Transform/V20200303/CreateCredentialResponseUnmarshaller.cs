@@ -31,11 +31,11 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			CreateCredentialResponse createCredentialResponse = new CreateCredentialResponse();
 
 			createCredentialResponse.HttpResponse = _ctx.HttpResponse;
-			createCredentialResponse.RequestId = _ctx.StringValue("CreateCredential.RequestId");
-			createCredentialResponse.ErrorCode = _ctx.StringValue("CreateCredential.ErrorCode");
 			createCredentialResponse.ErrorMessage = _ctx.StringValue("CreateCredential.ErrorMessage");
-			createCredentialResponse.Success = _ctx.BooleanValue("CreateCredential.Success");
+			createCredentialResponse.RequestId = _ctx.StringValue("CreateCredential.RequestId");
 			createCredentialResponse._Object = _ctx.LongValue("CreateCredential.Object");
+			createCredentialResponse.Success = _ctx.BooleanValue("CreateCredential.Success");
+			createCredentialResponse.ErrorCode = _ctx.StringValue("CreateCredential.ErrorCode");
         
 			return createCredentialResponse;
         }

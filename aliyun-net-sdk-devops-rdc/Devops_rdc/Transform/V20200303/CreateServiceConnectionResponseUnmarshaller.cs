@@ -31,11 +31,11 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			CreateServiceConnectionResponse createServiceConnectionResponse = new CreateServiceConnectionResponse();
 
 			createServiceConnectionResponse.HttpResponse = _ctx.HttpResponse;
-			createServiceConnectionResponse.RequestId = _ctx.StringValue("CreateServiceConnection.RequestId");
-			createServiceConnectionResponse.ErrorCode = _ctx.StringValue("CreateServiceConnection.ErrorCode");
 			createServiceConnectionResponse.ErrorMessage = _ctx.StringValue("CreateServiceConnection.ErrorMessage");
-			createServiceConnectionResponse.Success = _ctx.BooleanValue("CreateServiceConnection.Success");
+			createServiceConnectionResponse.RequestId = _ctx.StringValue("CreateServiceConnection.RequestId");
 			createServiceConnectionResponse._Object = _ctx.LongValue("CreateServiceConnection.Object");
+			createServiceConnectionResponse.Success = _ctx.BooleanValue("CreateServiceConnection.Success");
+			createServiceConnectionResponse.ErrorCode = _ctx.StringValue("CreateServiceConnection.ErrorCode");
         
 			return createServiceConnectionResponse;
         }

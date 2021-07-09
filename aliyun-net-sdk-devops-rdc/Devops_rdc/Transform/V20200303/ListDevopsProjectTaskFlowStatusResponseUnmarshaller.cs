@@ -31,24 +31,24 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			ListDevopsProjectTaskFlowStatusResponse listDevopsProjectTaskFlowStatusResponse = new ListDevopsProjectTaskFlowStatusResponse();
 
 			listDevopsProjectTaskFlowStatusResponse.HttpResponse = _ctx.HttpResponse;
-			listDevopsProjectTaskFlowStatusResponse.Successful = _ctx.BooleanValue("ListDevopsProjectTaskFlowStatus.Successful");
-			listDevopsProjectTaskFlowStatusResponse.ErrorCode = _ctx.StringValue("ListDevopsProjectTaskFlowStatus.ErrorCode");
 			listDevopsProjectTaskFlowStatusResponse.ErrorMsg = _ctx.StringValue("ListDevopsProjectTaskFlowStatus.ErrorMsg");
 			listDevopsProjectTaskFlowStatusResponse.RequestId = _ctx.StringValue("ListDevopsProjectTaskFlowStatus.RequestId");
+			listDevopsProjectTaskFlowStatusResponse.Successful = _ctx.BooleanValue("ListDevopsProjectTaskFlowStatus.Successful");
+			listDevopsProjectTaskFlowStatusResponse.ErrorCode = _ctx.StringValue("ListDevopsProjectTaskFlowStatus.ErrorCode");
 
 			List<ListDevopsProjectTaskFlowStatusResponse.ListDevopsProjectTaskFlowStatus_TaskflowStatus> listDevopsProjectTaskFlowStatusResponse_object = new List<ListDevopsProjectTaskFlowStatusResponse.ListDevopsProjectTaskFlowStatus_TaskflowStatus>();
 			for (int i = 0; i < _ctx.Length("ListDevopsProjectTaskFlowStatus.Object.Length"); i++) {
 				ListDevopsProjectTaskFlowStatusResponse.ListDevopsProjectTaskFlowStatus_TaskflowStatus taskflowStatus = new ListDevopsProjectTaskFlowStatusResponse.ListDevopsProjectTaskFlowStatus_TaskflowStatus();
-				taskflowStatus.IsDeleted = _ctx.BooleanValue("ListDevopsProjectTaskFlowStatus.Object["+ i +"].IsDeleted");
-				taskflowStatus.RejectStatusIds = _ctx.StringValue("ListDevopsProjectTaskFlowStatus.Object["+ i +"].RejectStatusIds");
-				taskflowStatus.Pos = _ctx.IntegerValue("ListDevopsProjectTaskFlowStatus.Object["+ i +"].Pos");
-				taskflowStatus.Kind = _ctx.StringValue("ListDevopsProjectTaskFlowStatus.Object["+ i +"].Kind");
-				taskflowStatus.Created = _ctx.StringValue("ListDevopsProjectTaskFlowStatus.Object["+ i +"].Created");
 				taskflowStatus.TaskflowId = _ctx.StringValue("ListDevopsProjectTaskFlowStatus.Object["+ i +"].TaskflowId");
-				taskflowStatus.Name = _ctx.StringValue("ListDevopsProjectTaskFlowStatus.Object["+ i +"].Name");
-				taskflowStatus.CreatorId = _ctx.StringValue("ListDevopsProjectTaskFlowStatus.Object["+ i +"].CreatorId");
-				taskflowStatus.Id = _ctx.StringValue("ListDevopsProjectTaskFlowStatus.Object["+ i +"].Id");
+				taskflowStatus.Kind = _ctx.StringValue("ListDevopsProjectTaskFlowStatus.Object["+ i +"].Kind");
+				taskflowStatus.Pos = _ctx.IntegerValue("ListDevopsProjectTaskFlowStatus.Object["+ i +"].Pos");
+				taskflowStatus.IsDeleted = _ctx.BooleanValue("ListDevopsProjectTaskFlowStatus.Object["+ i +"].IsDeleted");
 				taskflowStatus.Updated = _ctx.StringValue("ListDevopsProjectTaskFlowStatus.Object["+ i +"].Updated");
+				taskflowStatus.CreatorId = _ctx.StringValue("ListDevopsProjectTaskFlowStatus.Object["+ i +"].CreatorId");
+				taskflowStatus.Name = _ctx.StringValue("ListDevopsProjectTaskFlowStatus.Object["+ i +"].Name");
+				taskflowStatus.Created = _ctx.StringValue("ListDevopsProjectTaskFlowStatus.Object["+ i +"].Created");
+				taskflowStatus.RejectStatusIds = _ctx.StringValue("ListDevopsProjectTaskFlowStatus.Object["+ i +"].RejectStatusIds");
+				taskflowStatus.Id = _ctx.StringValue("ListDevopsProjectTaskFlowStatus.Object["+ i +"].Id");
 
 				listDevopsProjectTaskFlowStatusResponse_object.Add(taskflowStatus);
 			}

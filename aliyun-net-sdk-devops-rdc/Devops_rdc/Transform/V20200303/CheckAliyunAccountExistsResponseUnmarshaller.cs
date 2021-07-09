@@ -31,11 +31,11 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			CheckAliyunAccountExistsResponse checkAliyunAccountExistsResponse = new CheckAliyunAccountExistsResponse();
 
 			checkAliyunAccountExistsResponse.HttpResponse = _ctx.HttpResponse;
-			checkAliyunAccountExistsResponse.Successful = _ctx.BooleanValue("CheckAliyunAccountExists.Successful");
-			checkAliyunAccountExistsResponse.ErrorCode = _ctx.StringValue("CheckAliyunAccountExists.ErrorCode");
 			checkAliyunAccountExistsResponse.ErrorMsg = _ctx.StringValue("CheckAliyunAccountExists.ErrorMsg");
 			checkAliyunAccountExistsResponse.RequestId = _ctx.StringValue("CheckAliyunAccountExists.RequestId");
 			checkAliyunAccountExistsResponse._Object = _ctx.BooleanValue("CheckAliyunAccountExists.Object");
+			checkAliyunAccountExistsResponse.Successful = _ctx.BooleanValue("CheckAliyunAccountExists.Successful");
+			checkAliyunAccountExistsResponse.ErrorCode = _ctx.StringValue("CheckAliyunAccountExists.ErrorCode");
         
 			return checkAliyunAccountExistsResponse;
         }

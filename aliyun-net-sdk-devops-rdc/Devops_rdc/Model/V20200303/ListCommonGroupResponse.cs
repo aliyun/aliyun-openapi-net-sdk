@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class ListCommonGroupResponse : AcsResponse
 	{
 
-		private bool? successful;
-
-		private string errorCode;
-
 		private string errorMsg;
 
 		private string requestId;
 
+		private bool? successful;
+
+		private string errorCode;
+
 		private List<ListCommonGroup_CommonGroup> _object;
-
-		public bool? Successful
-		{
-			get
-			{
-				return successful;
-			}
-			set	
-			{
-				successful = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
 
 		public string ErrorMsg
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
+		public bool? Successful
+		{
+			get
+			{
+				return successful;
+			}
+			set	
+			{
+				successful = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
 		public List<ListCommonGroup_CommonGroup> _Object
 		{
 			get
@@ -98,59 +98,23 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 		public class ListCommonGroup_CommonGroup
 		{
 
-			private string pinyin;
-
-			private bool? isRoot;
-
-			private int? pos;
-
 			private int? resourceCount;
-
-			private string name;
-
-			private string creatorId;
 
 			private string smartGroupId;
 
+			private int? pos;
+
 			private string projectId;
 
+			private bool? isRoot;
+
+			private string pinyin;
+
+			private string creatorId;
+
+			private string name;
+
 			private string id;
-
-			public string Pinyin
-			{
-				get
-				{
-					return pinyin;
-				}
-				set	
-				{
-					pinyin = value;
-				}
-			}
-
-			public bool? IsRoot
-			{
-				get
-				{
-					return isRoot;
-				}
-				set	
-				{
-					isRoot = value;
-				}
-			}
-
-			public int? Pos
-			{
-				get
-				{
-					return pos;
-				}
-				set	
-				{
-					pos = value;
-				}
-			}
 
 			public int? ResourceCount
 			{
@@ -161,30 +125,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				set	
 				{
 					resourceCount = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string CreatorId
-			{
-				get
-				{
-					return creatorId;
-				}
-				set	
-				{
-					creatorId = value;
 				}
 			}
 
@@ -200,6 +140,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
+			public int? Pos
+			{
+				get
+				{
+					return pos;
+				}
+				set	
+				{
+					pos = value;
+				}
+			}
+
 			public string ProjectId
 			{
 				get
@@ -209,6 +161,54 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				set	
 				{
 					projectId = value;
+				}
+			}
+
+			public bool? IsRoot
+			{
+				get
+				{
+					return isRoot;
+				}
+				set	
+				{
+					isRoot = value;
+				}
+			}
+
+			public string Pinyin
+			{
+				get
+				{
+					return pinyin;
+				}
+				set	
+				{
+					pinyin = value;
+				}
+			}
+
+			public string CreatorId
+			{
+				get
+				{
+					return creatorId;
+				}
+				set	
+				{
+					creatorId = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 

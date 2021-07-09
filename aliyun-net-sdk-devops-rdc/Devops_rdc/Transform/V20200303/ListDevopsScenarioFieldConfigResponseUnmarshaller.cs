@@ -31,17 +31,17 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			ListDevopsScenarioFieldConfigResponse listDevopsScenarioFieldConfigResponse = new ListDevopsScenarioFieldConfigResponse();
 
 			listDevopsScenarioFieldConfigResponse.HttpResponse = _ctx.HttpResponse;
-			listDevopsScenarioFieldConfigResponse.Successful = _ctx.BooleanValue("ListDevopsScenarioFieldConfig.Successful");
-			listDevopsScenarioFieldConfigResponse.ErrorCode = _ctx.StringValue("ListDevopsScenarioFieldConfig.ErrorCode");
 			listDevopsScenarioFieldConfigResponse.ErrorMsg = _ctx.StringValue("ListDevopsScenarioFieldConfig.ErrorMsg");
 			listDevopsScenarioFieldConfigResponse.RequestId = _ctx.StringValue("ListDevopsScenarioFieldConfig.RequestId");
+			listDevopsScenarioFieldConfigResponse.Successful = _ctx.BooleanValue("ListDevopsScenarioFieldConfig.Successful");
+			listDevopsScenarioFieldConfigResponse.ErrorCode = _ctx.StringValue("ListDevopsScenarioFieldConfig.ErrorCode");
 
 			List<ListDevopsScenarioFieldConfigResponse.ListDevopsScenarioFieldConfig_ScenarioFieldConfig> listDevopsScenarioFieldConfigResponse_object = new List<ListDevopsScenarioFieldConfigResponse.ListDevopsScenarioFieldConfig_ScenarioFieldConfig>();
 			for (int i = 0; i < _ctx.Length("ListDevopsScenarioFieldConfig.Object.Length"); i++) {
 				ListDevopsScenarioFieldConfigResponse.ListDevopsScenarioFieldConfig_ScenarioFieldConfig scenarioFieldConfig = new ListDevopsScenarioFieldConfigResponse.ListDevopsScenarioFieldConfig_ScenarioFieldConfig();
-				scenarioFieldConfig.Id = _ctx.StringValue("ListDevopsScenarioFieldConfig.Object["+ i +"].Id");
 				scenarioFieldConfig.Type = _ctx.StringValue("ListDevopsScenarioFieldConfig.Object["+ i +"].Type");
 				scenarioFieldConfig.Name = _ctx.StringValue("ListDevopsScenarioFieldConfig.Object["+ i +"].Name");
+				scenarioFieldConfig.Id = _ctx.StringValue("ListDevopsScenarioFieldConfig.Object["+ i +"].Id");
 
 				listDevopsScenarioFieldConfigResponse_object.Add(scenarioFieldConfig);
 			}

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			InsertProjectMembersResponse insertProjectMembersResponse = new InsertProjectMembersResponse();
 
 			insertProjectMembersResponse.HttpResponse = _ctx.HttpResponse;
+			insertProjectMembersResponse.ErrorMsg = _ctx.StringValue("InsertProjectMembers.ErrorMsg");
+			insertProjectMembersResponse.RequestId = _ctx.StringValue("InsertProjectMembers.RequestId");
+			insertProjectMembersResponse._Object = _ctx.BooleanValue("InsertProjectMembers.Object");
 			insertProjectMembersResponse.Successful = _ctx.BooleanValue("InsertProjectMembers.Successful");
 			insertProjectMembersResponse.ErrorCode = _ctx.StringValue("InsertProjectMembers.ErrorCode");
-			insertProjectMembersResponse.ErrorMsg = _ctx.StringValue("InsertProjectMembers.ErrorMsg");
-			insertProjectMembersResponse._Object = _ctx.BooleanValue("InsertProjectMembers.Object");
-			insertProjectMembersResponse.RequestId = _ctx.StringValue("InsertProjectMembers.RequestId");
         
 			return insertProjectMembersResponse;
         }

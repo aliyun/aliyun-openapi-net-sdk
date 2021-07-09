@@ -31,11 +31,11 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			UpdateDevopsProjectTaskResponse updateDevopsProjectTaskResponse = new UpdateDevopsProjectTaskResponse();
 
 			updateDevopsProjectTaskResponse.HttpResponse = _ctx.HttpResponse;
-			updateDevopsProjectTaskResponse.Successful = _ctx.BooleanValue("UpdateDevopsProjectTask.Successful");
-			updateDevopsProjectTaskResponse.ErrorCode = _ctx.StringValue("UpdateDevopsProjectTask.ErrorCode");
 			updateDevopsProjectTaskResponse.ErrorMsg = _ctx.StringValue("UpdateDevopsProjectTask.ErrorMsg");
 			updateDevopsProjectTaskResponse.RequestId = _ctx.StringValue("UpdateDevopsProjectTask.RequestId");
 			updateDevopsProjectTaskResponse._Object = _ctx.BooleanValue("UpdateDevopsProjectTask.Object");
+			updateDevopsProjectTaskResponse.Successful = _ctx.BooleanValue("UpdateDevopsProjectTask.Successful");
+			updateDevopsProjectTaskResponse.ErrorCode = _ctx.StringValue("UpdateDevopsProjectTask.ErrorCode");
         
 			return updateDevopsProjectTaskResponse;
         }

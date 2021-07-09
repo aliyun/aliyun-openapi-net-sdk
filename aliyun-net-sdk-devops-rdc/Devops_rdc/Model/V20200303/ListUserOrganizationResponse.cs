@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class ListUserOrganizationResponse : AcsResponse
 	{
 
+		private string errorMessage;
+
 		private string requestId;
 
 		private bool? success;
 
 		private string errorCode;
 
-		private string errorMessage;
-
 		private List<ListUserOrganization_Organization> _object;
+
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -68,18 +80,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			set	
 			{
 				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
 			}
 		}
 

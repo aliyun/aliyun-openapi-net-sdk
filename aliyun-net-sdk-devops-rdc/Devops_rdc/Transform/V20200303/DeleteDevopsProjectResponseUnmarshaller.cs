@@ -31,11 +31,11 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			DeleteDevopsProjectResponse deleteDevopsProjectResponse = new DeleteDevopsProjectResponse();
 
 			deleteDevopsProjectResponse.HttpResponse = _ctx.HttpResponse;
-			deleteDevopsProjectResponse.ErrorCode = _ctx.StringValue("DeleteDevopsProject.ErrorCode");
+			deleteDevopsProjectResponse.RequestId = _ctx.StringValue("DeleteDevopsProject.RequestId");
 			deleteDevopsProjectResponse.ErrorMessage = _ctx.StringValue("DeleteDevopsProject.ErrorMessage");
 			deleteDevopsProjectResponse._Object = _ctx.StringValue("DeleteDevopsProject.Object");
-			deleteDevopsProjectResponse.RequestId = _ctx.StringValue("DeleteDevopsProject.RequestId");
 			deleteDevopsProjectResponse.Success = _ctx.BooleanValue("DeleteDevopsProject.Success");
+			deleteDevopsProjectResponse.ErrorCode = _ctx.StringValue("DeleteDevopsProject.ErrorCode");
         
 			return deleteDevopsProjectResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class ListDevopsProjectsResponse : AcsResponse
 	{
 
-		private bool? successful;
-
-		private string errorCode;
-
 		private string errorMsg;
 
 		private string requestId;
 
+		private bool? successful;
+
+		private string errorCode;
+
 		private ListDevopsProjects__Object _object;
-
-		public bool? Successful
-		{
-			get
-			{
-				return successful;
-			}
-			set	
-			{
-				successful = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
 
 		public string ErrorMsg
 		{
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Successful
+		{
+			get
+			{
+				return successful;
+			}
+			set	
+			{
+				successful = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 
@@ -129,145 +129,37 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			public class ListDevopsProjects_Project
 			{
 
-				private int? roleId;
-
-				private string organizationId;
-
-				private string id;
-
-				private string creatorId;
-
-				private string visibility;
-
-				private string updated;
-
-				private int? tasksCount;
-
-				private string name;
-
-				private int? membersCount;
-
 				private string logo;
-
-				private bool? isTemplate;
 
 				private bool? isStar;
 
-				private bool? isPublic;
+				private string creatorId;
 
-				private bool? isArchived;
+				private int? membersCount;
+
+				private string organizationId;
+
+				private string visibility;
+
+				private bool? isTemplate;
 
 				private string description;
 
+				private string updated;
+
 				private string created;
 
-				public int? RoleId
-				{
-					get
-					{
-						return roleId;
-					}
-					set	
-					{
-						roleId = value;
-					}
-				}
+				private bool? isArchived;
 
-				public string OrganizationId
-				{
-					get
-					{
-						return organizationId;
-					}
-					set	
-					{
-						organizationId = value;
-					}
-				}
+				private string name;
 
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
+				private bool? isPublic;
 
-				public string CreatorId
-				{
-					get
-					{
-						return creatorId;
-					}
-					set	
-					{
-						creatorId = value;
-					}
-				}
+				private int? tasksCount;
 
-				public string Visibility
-				{
-					get
-					{
-						return visibility;
-					}
-					set	
-					{
-						visibility = value;
-					}
-				}
+				private string roleId;
 
-				public string Updated
-				{
-					get
-					{
-						return updated;
-					}
-					set	
-					{
-						updated = value;
-					}
-				}
-
-				public int? TasksCount
-				{
-					get
-					{
-						return tasksCount;
-					}
-					set	
-					{
-						tasksCount = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public int? MembersCount
-				{
-					get
-					{
-						return membersCount;
-					}
-					set	
-					{
-						membersCount = value;
-					}
-				}
+				private string id;
 
 				public string Logo
 				{
@@ -278,18 +170,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					set	
 					{
 						logo = value;
-					}
-				}
-
-				public bool? IsTemplate
-				{
-					get
-					{
-						return isTemplate;
-					}
-					set	
-					{
-						isTemplate = value;
 					}
 				}
 
@@ -305,27 +185,63 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					}
 				}
 
-				public bool? IsPublic
+				public string CreatorId
 				{
 					get
 					{
-						return isPublic;
+						return creatorId;
 					}
 					set	
 					{
-						isPublic = value;
+						creatorId = value;
 					}
 				}
 
-				public bool? IsArchived
+				public int? MembersCount
 				{
 					get
 					{
-						return isArchived;
+						return membersCount;
 					}
 					set	
 					{
-						isArchived = value;
+						membersCount = value;
+					}
+				}
+
+				public string OrganizationId
+				{
+					get
+					{
+						return organizationId;
+					}
+					set	
+					{
+						organizationId = value;
+					}
+				}
+
+				public string Visibility
+				{
+					get
+					{
+						return visibility;
+					}
+					set	
+					{
+						visibility = value;
+					}
+				}
+
+				public bool? IsTemplate
+				{
+					get
+					{
+						return isTemplate;
+					}
+					set	
+					{
+						isTemplate = value;
 					}
 				}
 
@@ -341,6 +257,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					}
 				}
 
+				public string Updated
+				{
+					get
+					{
+						return updated;
+					}
+					set	
+					{
+						updated = value;
+					}
+				}
+
 				public string Created
 				{
 					get
@@ -350,6 +278,78 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					set	
 					{
 						created = value;
+					}
+				}
+
+				public bool? IsArchived
+				{
+					get
+					{
+						return isArchived;
+					}
+					set	
+					{
+						isArchived = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public bool? IsPublic
+				{
+					get
+					{
+						return isPublic;
+					}
+					set	
+					{
+						isPublic = value;
+					}
+				}
+
+				public int? TasksCount
+				{
+					get
+					{
+						return tasksCount;
+					}
+					set	
+					{
+						tasksCount = value;
+					}
+				}
+
+				public string RoleId
+				{
+					get
+					{
+						return roleId;
+					}
+					set	
+					{
+						roleId = value;
+					}
+				}
+
+				public string Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
 					}
 				}
 			}

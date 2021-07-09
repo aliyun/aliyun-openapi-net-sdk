@@ -31,10 +31,10 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			UpdateCommonGroupResponse updateCommonGroupResponse = new UpdateCommonGroupResponse();
 
 			updateCommonGroupResponse.HttpResponse = _ctx.HttpResponse;
-			updateCommonGroupResponse.Successful = _ctx.BooleanValue("UpdateCommonGroup.Successful");
-			updateCommonGroupResponse.ErrorCode = _ctx.StringValue("UpdateCommonGroup.ErrorCode");
 			updateCommonGroupResponse.ErrorMsg = _ctx.StringValue("UpdateCommonGroup.ErrorMsg");
 			updateCommonGroupResponse.RequestId = _ctx.StringValue("UpdateCommonGroup.RequestId");
+			updateCommonGroupResponse.Successful = _ctx.BooleanValue("UpdateCommonGroup.Successful");
+			updateCommonGroupResponse.ErrorCode = _ctx.StringValue("UpdateCommonGroup.ErrorCode");
 
 			UpdateCommonGroupResponse.UpdateCommonGroup__Object _object = new UpdateCommonGroupResponse.UpdateCommonGroup__Object();
 			_object.Id = _ctx.StringValue("UpdateCommonGroup.Object.Id");

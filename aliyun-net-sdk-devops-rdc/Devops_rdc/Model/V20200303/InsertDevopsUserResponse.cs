@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,25 +25,25 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class InsertDevopsUserResponse : AcsResponse
 	{
 
-		private string errorCode;
+		private string requestId;
 
 		private string errorMessage;
 
-		private string requestId;
+		private string _object;
 
 		private bool? success;
 
-		private string _object;
+		private string errorCode;
 
-		public string ErrorCode
+		public string RequestId
 		{
 			get
 			{
-				return errorCode;
+				return requestId;
 			}
 			set	
 			{
-				errorCode = value;
+				requestId = value;
 			}
 		}
 
@@ -59,15 +59,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
-		public string RequestId
+		public string _Object
 		{
 			get
 			{
-				return requestId;
+				return _object;
 			}
 			set	
 			{
-				requestId = value;
+				_object = value;
 			}
 		}
 
@@ -83,15 +83,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
-		public string _Object
+		public string ErrorCode
 		{
 			get
 			{
-				return _object;
+				return errorCode;
 			}
 			set	
 			{
-				_object = value;
+				errorCode = value;
 			}
 		}
 	}

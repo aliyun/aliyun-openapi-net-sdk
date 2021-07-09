@@ -31,17 +31,17 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			GetUserByAliyunUidResponse getUserByAliyunUidResponse = new GetUserByAliyunUidResponse();
 
 			getUserByAliyunUidResponse.HttpResponse = _ctx.HttpResponse;
-			getUserByAliyunUidResponse.Successful = _ctx.BooleanValue("GetUserByAliyunUid.Successful");
-			getUserByAliyunUidResponse.ErrorCode = _ctx.StringValue("GetUserByAliyunUid.ErrorCode");
 			getUserByAliyunUidResponse.ErrorMsg = _ctx.StringValue("GetUserByAliyunUid.ErrorMsg");
 			getUserByAliyunUidResponse.RequestId = _ctx.StringValue("GetUserByAliyunUid.RequestId");
+			getUserByAliyunUidResponse.Successful = _ctx.BooleanValue("GetUserByAliyunUid.Successful");
+			getUserByAliyunUidResponse.ErrorCode = _ctx.StringValue("GetUserByAliyunUid.ErrorCode");
 
 			GetUserByAliyunUidResponse.GetUserByAliyunUid__Object _object = new GetUserByAliyunUidResponse.GetUserByAliyunUid__Object();
+			_object.AliyunPk = _ctx.StringValue("GetUserByAliyunUid.Object.AliyunPk");
+			_object.Email = _ctx.StringValue("GetUserByAliyunUid.Object.Email");
+			_object.AvatarUrl = _ctx.StringValue("GetUserByAliyunUid.Object.AvatarUrl");
 			_object.Name = _ctx.StringValue("GetUserByAliyunUid.Object.Name");
 			_object.Id = _ctx.StringValue("GetUserByAliyunUid.Object.Id");
-			_object.AliyunPk = _ctx.StringValue("GetUserByAliyunUid.Object.AliyunPk");
-			_object.AvatarUrl = _ctx.StringValue("GetUserByAliyunUid.Object.AvatarUrl");
-			_object.Email = _ctx.StringValue("GetUserByAliyunUid.Object.Email");
 			_object.Phone = _ctx.StringValue("GetUserByAliyunUid.Object.Phone");
 			getUserByAliyunUidResponse._Object = _object;
         

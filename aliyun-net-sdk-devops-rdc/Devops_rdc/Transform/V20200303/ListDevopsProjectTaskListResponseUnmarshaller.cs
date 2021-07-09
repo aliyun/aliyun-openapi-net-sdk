@@ -31,10 +31,10 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			ListDevopsProjectTaskListResponse listDevopsProjectTaskListResponse = new ListDevopsProjectTaskListResponse();
 
 			listDevopsProjectTaskListResponse.HttpResponse = _ctx.HttpResponse;
-			listDevopsProjectTaskListResponse.Successful = _ctx.BooleanValue("ListDevopsProjectTaskList.Successful");
-			listDevopsProjectTaskListResponse.ErrorCode = _ctx.StringValue("ListDevopsProjectTaskList.ErrorCode");
 			listDevopsProjectTaskListResponse.ErrorMsg = _ctx.StringValue("ListDevopsProjectTaskList.ErrorMsg");
 			listDevopsProjectTaskListResponse.RequestId = _ctx.StringValue("ListDevopsProjectTaskList.RequestId");
+			listDevopsProjectTaskListResponse.Successful = _ctx.BooleanValue("ListDevopsProjectTaskList.Successful");
+			listDevopsProjectTaskListResponse.ErrorCode = _ctx.StringValue("ListDevopsProjectTaskList.ErrorCode");
 
 			ListDevopsProjectTaskListResponse.ListDevopsProjectTaskList__Object _object = new ListDevopsProjectTaskListResponse.ListDevopsProjectTaskList__Object();
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class GetProjectOptionResponse : AcsResponse
 	{
 
-		private bool? successful;
-
-		private string errorCode;
-
 		private string errorMsg;
 
 		private string requestId;
 
+		private bool? successful;
+
+		private string errorCode;
+
 		private List<GetProjectOption_Option> _object;
-
-		public bool? Successful
-		{
-			get
-			{
-				return successful;
-			}
-			set	
-			{
-				successful = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
 
 		public string ErrorMsg
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
+		public bool? Successful
+		{
+			get
+			{
+				return successful;
+			}
+			set	
+			{
+				successful = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
 		public List<GetProjectOption_Option> _Object
 		{
 			get
@@ -98,25 +98,13 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 		public class GetProjectOption_Option
 		{
 
-			private string name;
-
 			private string _value;
 
-			private string kind;
+			private string name;
 
 			private string scopeName;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string kind;
 
 			public string _Value
 			{
@@ -130,15 +118,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public string Kind
+			public string Name
 			{
 				get
 				{
-					return kind;
+					return name;
 				}
 				set	
 				{
-					kind = value;
+					name = value;
 				}
 			}
 
@@ -151,6 +139,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				set	
 				{
 					scopeName = value;
+				}
+			}
+
+			public string Kind
+			{
+				get
+				{
+					return kind;
+				}
+				set	
+				{
+					kind = value;
 				}
 			}
 		}

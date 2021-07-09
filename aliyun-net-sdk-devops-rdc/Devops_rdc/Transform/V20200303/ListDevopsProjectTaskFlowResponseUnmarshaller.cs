@@ -31,17 +31,17 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			ListDevopsProjectTaskFlowResponse listDevopsProjectTaskFlowResponse = new ListDevopsProjectTaskFlowResponse();
 
 			listDevopsProjectTaskFlowResponse.HttpResponse = _ctx.HttpResponse;
-			listDevopsProjectTaskFlowResponse.Successful = _ctx.BooleanValue("ListDevopsProjectTaskFlow.Successful");
-			listDevopsProjectTaskFlowResponse.ErrorCode = _ctx.StringValue("ListDevopsProjectTaskFlow.ErrorCode");
 			listDevopsProjectTaskFlowResponse.ErrorMsg = _ctx.StringValue("ListDevopsProjectTaskFlow.ErrorMsg");
 			listDevopsProjectTaskFlowResponse.RequestId = _ctx.StringValue("ListDevopsProjectTaskFlow.RequestId");
+			listDevopsProjectTaskFlowResponse.Successful = _ctx.BooleanValue("ListDevopsProjectTaskFlow.Successful");
+			listDevopsProjectTaskFlowResponse.ErrorCode = _ctx.StringValue("ListDevopsProjectTaskFlow.ErrorCode");
 
 			List<ListDevopsProjectTaskFlowResponse.ListDevopsProjectTaskFlow_Taskflow> listDevopsProjectTaskFlowResponse_object = new List<ListDevopsProjectTaskFlowResponse.ListDevopsProjectTaskFlow_Taskflow>();
 			for (int i = 0; i < _ctx.Length("ListDevopsProjectTaskFlow.Object.Length"); i++) {
 				ListDevopsProjectTaskFlowResponse.ListDevopsProjectTaskFlow_Taskflow taskflow = new ListDevopsProjectTaskFlowResponse.ListDevopsProjectTaskFlow_Taskflow();
-				taskflow.Id = _ctx.StringValue("ListDevopsProjectTaskFlow.Object["+ i +"].Id");
 				taskflow.Type = _ctx.StringValue("ListDevopsProjectTaskFlow.Object["+ i +"].Type");
 				taskflow.Name = _ctx.StringValue("ListDevopsProjectTaskFlow.Object["+ i +"].Name");
+				taskflow.Id = _ctx.StringValue("ListDevopsProjectTaskFlow.Object["+ i +"].Id");
 
 				listDevopsProjectTaskFlowResponse_object.Add(taskflow);
 			}

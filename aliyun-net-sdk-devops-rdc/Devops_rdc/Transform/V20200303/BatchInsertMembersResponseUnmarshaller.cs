@@ -31,11 +31,11 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			BatchInsertMembersResponse batchInsertMembersResponse = new BatchInsertMembersResponse();
 
 			batchInsertMembersResponse.HttpResponse = _ctx.HttpResponse;
-			batchInsertMembersResponse.RequestId = _ctx.StringValue("BatchInsertMembers.RequestId");
-			batchInsertMembersResponse.ErrorCode = _ctx.StringValue("BatchInsertMembers.ErrorCode");
 			batchInsertMembersResponse.ErrorMessage = _ctx.StringValue("BatchInsertMembers.ErrorMessage");
-			batchInsertMembersResponse.Success = _ctx.BooleanValue("BatchInsertMembers.Success");
+			batchInsertMembersResponse.RequestId = _ctx.StringValue("BatchInsertMembers.RequestId");
 			batchInsertMembersResponse._Object = _ctx.BooleanValue("BatchInsertMembers.Object");
+			batchInsertMembersResponse.Success = _ctx.BooleanValue("BatchInsertMembers.Success");
+			batchInsertMembersResponse.ErrorCode = _ctx.StringValue("BatchInsertMembers.ErrorCode");
         
 			return batchInsertMembersResponse;
         }

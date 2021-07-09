@@ -31,28 +31,28 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			GetDevopsProjectSprintInfoResponse getDevopsProjectSprintInfoResponse = new GetDevopsProjectSprintInfoResponse();
 
 			getDevopsProjectSprintInfoResponse.HttpResponse = _ctx.HttpResponse;
-			getDevopsProjectSprintInfoResponse.Successful = _ctx.BooleanValue("GetDevopsProjectSprintInfo.Successful");
-			getDevopsProjectSprintInfoResponse.ErrorCode = _ctx.StringValue("GetDevopsProjectSprintInfo.ErrorCode");
 			getDevopsProjectSprintInfoResponse.ErrorMsg = _ctx.StringValue("GetDevopsProjectSprintInfo.ErrorMsg");
 			getDevopsProjectSprintInfoResponse.RequestId = _ctx.StringValue("GetDevopsProjectSprintInfo.RequestId");
+			getDevopsProjectSprintInfoResponse.Successful = _ctx.BooleanValue("GetDevopsProjectSprintInfo.Successful");
+			getDevopsProjectSprintInfoResponse.ErrorCode = _ctx.StringValue("GetDevopsProjectSprintInfo.ErrorCode");
 
 			GetDevopsProjectSprintInfoResponse.GetDevopsProjectSprintInfo__Object _object = new GetDevopsProjectSprintInfoResponse.GetDevopsProjectSprintInfo__Object();
+			_object.Status = _ctx.StringValue("GetDevopsProjectSprintInfo.Object.Status");
 			_object.Accomplished = _ctx.StringValue("GetDevopsProjectSprintInfo.Object.Accomplished");
+			_object.ProjectId = _ctx.StringValue("GetDevopsProjectSprintInfo.Object.ProjectId");
 			_object.IsDeleted = _ctx.BooleanValue("GetDevopsProjectSprintInfo.Object.IsDeleted");
-			_object.Created = _ctx.StringValue("GetDevopsProjectSprintInfo.Object.Created");
+			_object.StartDate = _ctx.StringValue("GetDevopsProjectSprintInfo.Object.StartDate");
+			_object.Updated = _ctx.StringValue("GetDevopsProjectSprintInfo.Object.Updated");
+			_object.CreatorId = _ctx.StringValue("GetDevopsProjectSprintInfo.Object.CreatorId");
 			_object.DueDate = _ctx.StringValue("GetDevopsProjectSprintInfo.Object.DueDate");
 			_object.Name = _ctx.StringValue("GetDevopsProjectSprintInfo.Object.Name");
-			_object.CreatorId = _ctx.StringValue("GetDevopsProjectSprintInfo.Object.CreatorId");
+			_object.Created = _ctx.StringValue("GetDevopsProjectSprintInfo.Object.Created");
 			_object.Id = _ctx.StringValue("GetDevopsProjectSprintInfo.Object.Id");
-			_object.Updated = _ctx.StringValue("GetDevopsProjectSprintInfo.Object.Updated");
-			_object.StartDate = _ctx.StringValue("GetDevopsProjectSprintInfo.Object.StartDate");
-			_object.Status = _ctx.StringValue("GetDevopsProjectSprintInfo.Object.Status");
-			_object.ProjectId = _ctx.StringValue("GetDevopsProjectSprintInfo.Object.ProjectId");
 
 			GetDevopsProjectSprintInfoResponse.GetDevopsProjectSprintInfo__Object.GetDevopsProjectSprintInfo_PlanToDo planToDo = new GetDevopsProjectSprintInfoResponse.GetDevopsProjectSprintInfo__Object.GetDevopsProjectSprintInfo_PlanToDo();
-			planToDo.StoryPoints = _ctx.IntegerValue("GetDevopsProjectSprintInfo.Object.PlanToDo.StoryPoints");
-			planToDo.WorkTimes = _ctx.IntegerValue("GetDevopsProjectSprintInfo.Object.PlanToDo.WorkTimes");
 			planToDo.Tasks = _ctx.IntegerValue("GetDevopsProjectSprintInfo.Object.PlanToDo.Tasks");
+			planToDo.WorkTimes = _ctx.IntegerValue("GetDevopsProjectSprintInfo.Object.PlanToDo.WorkTimes");
+			planToDo.StoryPoints = _ctx.IntegerValue("GetDevopsProjectSprintInfo.Object.PlanToDo.StoryPoints");
 			_object.PlanToDo = planToDo;
 			getDevopsProjectSprintInfoResponse._Object = _object;
         

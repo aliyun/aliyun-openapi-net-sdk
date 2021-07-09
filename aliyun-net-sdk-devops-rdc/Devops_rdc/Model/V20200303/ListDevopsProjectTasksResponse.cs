@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class ListDevopsProjectTasksResponse : AcsResponse
 	{
 
-		private bool? successful;
-
-		private string errorCode;
-
 		private string errorMsg;
 
 		private string requestId;
 
+		private bool? successful;
+
+		private string errorCode;
+
 		private List<ListDevopsProjectTasks_Task> _object;
-
-		public bool? Successful
-		{
-			get
-			{
-				return successful;
-			}
-			set	
-			{
-				successful = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
 
 		public string ErrorMsg
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
+		public bool? Successful
+		{
+			get
+			{
+				return successful;
+			}
+			set	
+			{
+				successful = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
 		public List<ListDevopsProjectTasks_Task> _Object
 		{
 			get
@@ -98,23 +98,35 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 		public class ListDevopsProjectTasks_Task
 		{
 
+			private string taskgroupId;
+
 			private string tasklistId;
 
 			private string projectId;
-
-			private string taskgroupId;
-
-			private string name;
-
-			private string creatorId;
-
-			private string created;
 
 			private string modifierId;
 
 			private string updated;
 
+			private string creatorId;
+
+			private string created;
+
+			private string name;
+
 			private string id;
+
+			public string TaskgroupId
+			{
+				get
+				{
+					return taskgroupId;
+				}
+				set	
+				{
+					taskgroupId = value;
+				}
+			}
 
 			public string TasklistId
 			{
@@ -140,27 +152,27 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public string TaskgroupId
+			public string ModifierId
 			{
 				get
 				{
-					return taskgroupId;
+					return modifierId;
 				}
 				set	
 				{
-					taskgroupId = value;
+					modifierId = value;
 				}
 			}
 
-			public string Name
+			public string Updated
 			{
 				get
 				{
-					return name;
+					return updated;
 				}
 				set	
 				{
-					name = value;
+					updated = value;
 				}
 			}
 
@@ -188,27 +200,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public string ModifierId
+			public string Name
 			{
 				get
 				{
-					return modifierId;
+					return name;
 				}
 				set	
 				{
-					modifierId = value;
-				}
-			}
-
-			public string Updated
-			{
-				get
-				{
-					return updated;
-				}
-				set	
-				{
-					updated = value;
+					name = value;
 				}
 			}
 

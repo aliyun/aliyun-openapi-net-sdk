@@ -31,11 +31,11 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			GetUserNameResponse getUserNameResponse = new GetUserNameResponse();
 
 			getUserNameResponse.HttpResponse = _ctx.HttpResponse;
-			getUserNameResponse.Successful = _ctx.BooleanValue("GetUserName.Successful");
-			getUserNameResponse.ErrorCode = _ctx.StringValue("GetUserName.ErrorCode");
 			getUserNameResponse.ErrorMsg = _ctx.StringValue("GetUserName.ErrorMsg");
 			getUserNameResponse.RequestId = _ctx.StringValue("GetUserName.RequestId");
 			getUserNameResponse._Object = _ctx.StringValue("GetUserName.Object");
+			getUserNameResponse.Successful = _ctx.BooleanValue("GetUserName.Successful");
+			getUserNameResponse.ErrorCode = _ctx.StringValue("GetUserName.ErrorCode");
         
 			return getUserNameResponse;
         }

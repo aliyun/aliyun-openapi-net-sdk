@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,39 +25,27 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class GetTaskDetailActivityResponse : AcsResponse
 	{
 
-		private bool? successful;
-
-		private string errorCode;
+		private int? httpStatusCode;
 
 		private string errorMsg;
 
 		private string requestId;
 
-		private int? httpStatusCode;
+		private bool? successful;
+
+		private string errorCode;
 
 		private List<GetTaskDetailActivity_Activity> _object;
 
-		public bool? Successful
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return successful;
+				return httpStatusCode;
 			}
 			set	
 			{
-				successful = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				httpStatusCode = value;
 			}
 		}
 
@@ -85,15 +73,27 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
-		public int? HttpStatusCode
+		public bool? Successful
 		{
 			get
 			{
-				return httpStatusCode;
+				return successful;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				successful = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 
@@ -112,37 +112,25 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 		public class GetTaskDetailActivity_Activity
 		{
 
-			private string created;
-
-			private string title;
+			private string updated;
 
 			private string action;
 
-			private string updated;
+			private string title;
+
+			private string created;
 
 			private string content;
 
-			public string Created
+			public string Updated
 			{
 				get
 				{
-					return created;
+					return updated;
 				}
 				set	
 				{
-					created = value;
-				}
-			}
-
-			public string Title
-			{
-				get
-				{
-					return title;
-				}
-				set	
-				{
-					title = value;
+					updated = value;
 				}
 			}
 
@@ -158,15 +146,27 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public string Updated
+			public string Title
 			{
 				get
 				{
-					return updated;
+					return title;
 				}
 				set	
 				{
-					updated = value;
+					title = value;
+				}
+			}
+
+			public string Created
+			{
+				get
+				{
+					return created;
+				}
+				set	
+				{
+					created = value;
 				}
 			}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -29,9 +29,9 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 
 		private string requestId;
 
-		private string errorCode;
-
 		private string successful;
+
+		private string errorCode;
 
 		private GetTaskListFilter__Object _object;
 
@@ -59,18 +59,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
 		public string Successful
 		{
 			get
@@ -80,6 +68,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			set	
 			{
 				successful = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 
@@ -143,103 +143,101 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			public class GetTaskListFilter_Task
 			{
 
-				private string id;
-
-				private string creatorId;
+				private bool? isFavorite;
 
 				private string executorId;
 
 				private string projectId;
 
-				private string taskListId;
-
-				private string organizationId;
-
-				private string stageId;
-
-				private string visible;
-
-				private string updated;
-
-				private string created;
-
-				private bool? isArchived;
-
-				private bool? isDone;
-
-				private bool? isTopInProject;
-
 				private int? priority;
 
-				private int? pos;
-
-				private string startDate;
-
-				private string dueDate;
-
-				private string accomplished;
-
-				private string note;
-
-				private string content;
-
-				private string recurrence;
-
-				private string sourceId;
-
-				private string sourceDate;
-
-				private int? commentsCount;
-
-				private int? attachmentsCount;
-
-				private int? likesCount;
-
-				private int? objectlinksCount;
-
-				private int? uniqueId;
-
-				private string storyPoint;
-
-				private int? progress;
-
-				private int? rating;
-
-				private bool? isFavorite;
+				private bool? isTopInProject;
 
 				private string scenariofFeldConfigId;
 
 				private int? shareStatus;
 
-				private string sprintId;
+				private string accomplished;
+
+				private string taskListId;
+
+				private string note;
+
+				private string updated;
+
+				private int? uniqueId;
+
+				private bool? isArchived;
+
+				private string content;
+
+				private int? rating;
+
+				private int? commentsCount;
 
 				private string taskFlowStatusId;
 
+				private string recurrence;
+
 				private string objectType;
 
-				private string source;
+				private int? progress;
 
 				private string untilDate;
 
-				private string taskId;
+				private string storyPoint;
+
+				private int? objectlinksCount;
+
+				private string startDate;
 
 				private string sprint;
 
+				private string creatorId;
+
+				private string source;
+
+				private string sourceId;
+
+				private string sourceDate;
+
+				private string organizationId;
+
+				private int? likesCount;
+
+				private string stageId;
+
+				private string visible;
+
+				private bool? isDone;
+
 				private string parent;
+
+				private string sprintId;
+
+				private int? attachmentsCount;
+
+				private string dueDate;
 
 				private string taskUniqueId;
 
+				private string created;
+
+				private string taskId;
+
+				private string id;
+
 				private List<GetTaskListFilter_Customfield> customfields;
-
-				private List<string> ancestorIds;
-
-				private List<string> labels;
-
-				private List<string> tagIds;
 
 				private List<string> involveMembers;
 
+				private List<string> tagIds;
+
+				private List<string> labels;
+
 				private List<string> divisions;
+
+				private List<string> ancestorIds;
 
 				private GetTaskListFilter_WorkTime workTime;
 
@@ -257,27 +255,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 
 				private GetTaskListFilter_TaskFlowStatus taskFlowStatus;
 
-				public string Id
+				public bool? IsFavorite
 				{
 					get
 					{
-						return id;
+						return isFavorite;
 					}
 					set	
 					{
-						id = value;
-					}
-				}
-
-				public string CreatorId
-				{
-					get
-					{
-						return creatorId;
-					}
-					set	
-					{
-						creatorId = value;
+						isFavorite = value;
 					}
 				}
 
@@ -305,114 +291,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					}
 				}
 
-				public string TaskListId
-				{
-					get
-					{
-						return taskListId;
-					}
-					set	
-					{
-						taskListId = value;
-					}
-				}
-
-				public string OrganizationId
-				{
-					get
-					{
-						return organizationId;
-					}
-					set	
-					{
-						organizationId = value;
-					}
-				}
-
-				public string StageId
-				{
-					get
-					{
-						return stageId;
-					}
-					set	
-					{
-						stageId = value;
-					}
-				}
-
-				public string Visible
-				{
-					get
-					{
-						return visible;
-					}
-					set	
-					{
-						visible = value;
-					}
-				}
-
-				public string Updated
-				{
-					get
-					{
-						return updated;
-					}
-					set	
-					{
-						updated = value;
-					}
-				}
-
-				public string Created
-				{
-					get
-					{
-						return created;
-					}
-					set	
-					{
-						created = value;
-					}
-				}
-
-				public bool? IsArchived
-				{
-					get
-					{
-						return isArchived;
-					}
-					set	
-					{
-						isArchived = value;
-					}
-				}
-
-				public bool? IsDone
-				{
-					get
-					{
-						return isDone;
-					}
-					set	
-					{
-						isDone = value;
-					}
-				}
-
-				public bool? IsTopInProject
-				{
-					get
-					{
-						return isTopInProject;
-					}
-					set	
-					{
-						isTopInProject = value;
-					}
-				}
-
 				public int? Priority
 				{
 					get
@@ -425,219 +303,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					}
 				}
 
-				public int? Pos
+				public bool? IsTopInProject
 				{
 					get
 					{
-						return pos;
+						return isTopInProject;
 					}
 					set	
 					{
-						pos = value;
-					}
-				}
-
-				public string StartDate
-				{
-					get
-					{
-						return startDate;
-					}
-					set	
-					{
-						startDate = value;
-					}
-				}
-
-				public string DueDate
-				{
-					get
-					{
-						return dueDate;
-					}
-					set	
-					{
-						dueDate = value;
-					}
-				}
-
-				public string Accomplished
-				{
-					get
-					{
-						return accomplished;
-					}
-					set	
-					{
-						accomplished = value;
-					}
-				}
-
-				public string Note
-				{
-					get
-					{
-						return note;
-					}
-					set	
-					{
-						note = value;
-					}
-				}
-
-				public string Content
-				{
-					get
-					{
-						return content;
-					}
-					set	
-					{
-						content = value;
-					}
-				}
-
-				public string Recurrence
-				{
-					get
-					{
-						return recurrence;
-					}
-					set	
-					{
-						recurrence = value;
-					}
-				}
-
-				public string SourceId
-				{
-					get
-					{
-						return sourceId;
-					}
-					set	
-					{
-						sourceId = value;
-					}
-				}
-
-				public string SourceDate
-				{
-					get
-					{
-						return sourceDate;
-					}
-					set	
-					{
-						sourceDate = value;
-					}
-				}
-
-				public int? CommentsCount
-				{
-					get
-					{
-						return commentsCount;
-					}
-					set	
-					{
-						commentsCount = value;
-					}
-				}
-
-				public int? AttachmentsCount
-				{
-					get
-					{
-						return attachmentsCount;
-					}
-					set	
-					{
-						attachmentsCount = value;
-					}
-				}
-
-				public int? LikesCount
-				{
-					get
-					{
-						return likesCount;
-					}
-					set	
-					{
-						likesCount = value;
-					}
-				}
-
-				public int? ObjectlinksCount
-				{
-					get
-					{
-						return objectlinksCount;
-					}
-					set	
-					{
-						objectlinksCount = value;
-					}
-				}
-
-				public int? UniqueId
-				{
-					get
-					{
-						return uniqueId;
-					}
-					set	
-					{
-						uniqueId = value;
-					}
-				}
-
-				public string StoryPoint
-				{
-					get
-					{
-						return storyPoint;
-					}
-					set	
-					{
-						storyPoint = value;
-					}
-				}
-
-				public int? Progress
-				{
-					get
-					{
-						return progress;
-					}
-					set	
-					{
-						progress = value;
-					}
-				}
-
-				public int? Rating
-				{
-					get
-					{
-						return rating;
-					}
-					set	
-					{
-						rating = value;
-					}
-				}
-
-				public bool? IsFavorite
-				{
-					get
-					{
-						return isFavorite;
-					}
-					set	
-					{
-						isFavorite = value;
+						isTopInProject = value;
 					}
 				}
 
@@ -665,15 +339,111 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					}
 				}
 
-				public string SprintId
+				public string Accomplished
 				{
 					get
 					{
-						return sprintId;
+						return accomplished;
 					}
 					set	
 					{
-						sprintId = value;
+						accomplished = value;
+					}
+				}
+
+				public string TaskListId
+				{
+					get
+					{
+						return taskListId;
+					}
+					set	
+					{
+						taskListId = value;
+					}
+				}
+
+				public string Note
+				{
+					get
+					{
+						return note;
+					}
+					set	
+					{
+						note = value;
+					}
+				}
+
+				public string Updated
+				{
+					get
+					{
+						return updated;
+					}
+					set	
+					{
+						updated = value;
+					}
+				}
+
+				public int? UniqueId
+				{
+					get
+					{
+						return uniqueId;
+					}
+					set	
+					{
+						uniqueId = value;
+					}
+				}
+
+				public bool? IsArchived
+				{
+					get
+					{
+						return isArchived;
+					}
+					set	
+					{
+						isArchived = value;
+					}
+				}
+
+				public string Content
+				{
+					get
+					{
+						return content;
+					}
+					set	
+					{
+						content = value;
+					}
+				}
+
+				public int? Rating
+				{
+					get
+					{
+						return rating;
+					}
+					set	
+					{
+						rating = value;
+					}
+				}
+
+				public int? CommentsCount
+				{
+					get
+					{
+						return commentsCount;
+					}
+					set	
+					{
+						commentsCount = value;
 					}
 				}
 
@@ -689,6 +459,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					}
 				}
 
+				public string Recurrence
+				{
+					get
+					{
+						return recurrence;
+					}
+					set	
+					{
+						recurrence = value;
+					}
+				}
+
 				public string ObjectType
 				{
 					get
@@ -701,15 +483,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					}
 				}
 
-				public string Source
+				public int? Progress
 				{
 					get
 					{
-						return source;
+						return progress;
 					}
 					set	
 					{
-						source = value;
+						progress = value;
 					}
 				}
 
@@ -725,15 +507,39 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					}
 				}
 
-				public string TaskId
+				public string StoryPoint
 				{
 					get
 					{
-						return taskId;
+						return storyPoint;
 					}
 					set	
 					{
-						taskId = value;
+						storyPoint = value;
+					}
+				}
+
+				public int? ObjectlinksCount
+				{
+					get
+					{
+						return objectlinksCount;
+					}
+					set	
+					{
+						objectlinksCount = value;
+					}
+				}
+
+				public string StartDate
+				{
+					get
+					{
+						return startDate;
+					}
+					set	
+					{
+						startDate = value;
 					}
 				}
 
@@ -749,6 +555,114 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					}
 				}
 
+				public string CreatorId
+				{
+					get
+					{
+						return creatorId;
+					}
+					set	
+					{
+						creatorId = value;
+					}
+				}
+
+				public string Source
+				{
+					get
+					{
+						return source;
+					}
+					set	
+					{
+						source = value;
+					}
+				}
+
+				public string SourceId
+				{
+					get
+					{
+						return sourceId;
+					}
+					set	
+					{
+						sourceId = value;
+					}
+				}
+
+				public string SourceDate
+				{
+					get
+					{
+						return sourceDate;
+					}
+					set	
+					{
+						sourceDate = value;
+					}
+				}
+
+				public string OrganizationId
+				{
+					get
+					{
+						return organizationId;
+					}
+					set	
+					{
+						organizationId = value;
+					}
+				}
+
+				public int? LikesCount
+				{
+					get
+					{
+						return likesCount;
+					}
+					set	
+					{
+						likesCount = value;
+					}
+				}
+
+				public string StageId
+				{
+					get
+					{
+						return stageId;
+					}
+					set	
+					{
+						stageId = value;
+					}
+				}
+
+				public string Visible
+				{
+					get
+					{
+						return visible;
+					}
+					set	
+					{
+						visible = value;
+					}
+				}
+
+				public bool? IsDone
+				{
+					get
+					{
+						return isDone;
+					}
+					set	
+					{
+						isDone = value;
+					}
+				}
+
 				public string Parent
 				{
 					get
@@ -758,6 +672,42 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					set	
 					{
 						parent = value;
+					}
+				}
+
+				public string SprintId
+				{
+					get
+					{
+						return sprintId;
+					}
+					set	
+					{
+						sprintId = value;
+					}
+				}
+
+				public int? AttachmentsCount
+				{
+					get
+					{
+						return attachmentsCount;
+					}
+					set	
+					{
+						attachmentsCount = value;
+					}
+				}
+
+				public string DueDate
+				{
+					get
+					{
+						return dueDate;
+					}
+					set	
+					{
+						dueDate = value;
 					}
 				}
 
@@ -773,6 +723,42 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					}
 				}
 
+				public string Created
+				{
+					get
+					{
+						return created;
+					}
+					set	
+					{
+						created = value;
+					}
+				}
+
+				public string TaskId
+				{
+					get
+					{
+						return taskId;
+					}
+					set	
+					{
+						taskId = value;
+					}
+				}
+
+				public string Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
+
 				public List<GetTaskListFilter_Customfield> Customfields
 				{
 					get
@@ -782,42 +768,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					set	
 					{
 						customfields = value;
-					}
-				}
-
-				public List<string> AncestorIds
-				{
-					get
-					{
-						return ancestorIds;
-					}
-					set	
-					{
-						ancestorIds = value;
-					}
-				}
-
-				public List<string> Labels
-				{
-					get
-					{
-						return labels;
-					}
-					set	
-					{
-						labels = value;
-					}
-				}
-
-				public List<string> TagIds
-				{
-					get
-					{
-						return tagIds;
-					}
-					set	
-					{
-						tagIds = value;
 					}
 				}
 
@@ -833,6 +783,30 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					}
 				}
 
+				public List<string> TagIds
+				{
+					get
+					{
+						return tagIds;
+					}
+					set	
+					{
+						tagIds = value;
+					}
+				}
+
+				public List<string> Labels
+				{
+					get
+					{
+						return labels;
+					}
+					set	
+					{
+						labels = value;
+					}
+				}
+
 				public List<string> Divisions
 				{
 					get
@@ -842,6 +816,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					set	
 					{
 						divisions = value;
+					}
+				}
+
+				public List<string> AncestorIds
+				{
+					get
+					{
+						return ancestorIds;
+					}
+					set	
+					{
+						ancestorIds = value;
 					}
 				}
 
@@ -944,25 +930,13 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				public class GetTaskListFilter_Customfield
 				{
 
-					private string customfieldId;
-
 					private string type;
+
+					private string customfieldId;
 
 					private string values;
 
 					private List<GetTaskListFilter_ValueItem> _value;
-
-					public string CustomfieldId
-					{
-						get
-						{
-							return customfieldId;
-						}
-						set	
-						{
-							customfieldId = value;
-						}
-					}
 
 					public string Type
 					{
@@ -973,6 +947,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 						set	
 						{
 							type = value;
+						}
+					}
+
+					public string CustomfieldId
+					{
+						get
+						{
+							return customfieldId;
+						}
+						set	
+						{
+							customfieldId = value;
 						}
 					}
 
@@ -1036,23 +1022,11 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				public class GetTaskListFilter_WorkTime
 				{
 
-					private int? totalTime;
-
 					private int? usedTime;
 
-					private string unit;
+					private int? totalTime;
 
-					public int? TotalTime
-					{
-						get
-						{
-							return totalTime;
-						}
-						set	
-						{
-							totalTime = value;
-						}
-					}
+					private string unit;
 
 					public int? UsedTime
 					{
@@ -1063,6 +1037,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 						set	
 						{
 							usedTime = value;
+						}
+					}
+
+					public int? TotalTime
+					{
+						get
+						{
+							return totalTime;
+						}
+						set	
+						{
+							totalTime = value;
 						}
 					}
 
@@ -1082,13 +1068,25 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				public class GetTaskListFilter_Badges
 				{
 
-					private int? objectlinksCount;
+					private int? likesCount;
 
-					private int? commentsCount;
+					private int? objectlinksCount;
 
 					private int? attachmentsCount;
 
-					private int? likesCount;
+					private int? commentsCount;
+
+					public int? LikesCount
+					{
+						get
+						{
+							return likesCount;
+						}
+						set	
+						{
+							likesCount = value;
+						}
+					}
 
 					public int? ObjectlinksCount
 					{
@@ -1099,18 +1097,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 						set	
 						{
 							objectlinksCount = value;
-						}
-					}
-
-					public int? CommentsCount
-					{
-						get
-						{
-							return commentsCount;
-						}
-						set	
-						{
-							commentsCount = value;
 						}
 					}
 
@@ -1126,15 +1112,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 						}
 					}
 
-					public int? LikesCount
+					public int? CommentsCount
 					{
 						get
 						{
-							return likesCount;
+							return commentsCount;
 						}
 						set	
 						{
-							likesCount = value;
+							commentsCount = value;
 						}
 					}
 				}
@@ -1142,21 +1128,9 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				public class GetTaskListFilter_SubtaskCount
 				{
 
-					private int? total;
-
 					private int? done;
 
-					public int? Total
-					{
-						get
-						{
-							return total;
-						}
-						set	
-						{
-							total = value;
-						}
-					}
+					private int? total;
 
 					public int? Done
 					{
@@ -1167,6 +1141,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 						set	
 						{
 							done = value;
+						}
+					}
+
+					public int? Total
+					{
+						get
+						{
+							return total;
+						}
+						set	
+						{
+							total = value;
 						}
 					}
 				}
@@ -1248,23 +1234,11 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				public class GetTaskListFilter_Creator
 				{
 
-					private string id;
-
 					private string name;
 
 					private string avatarUrl;
 
-					public string Id
-					{
-						get
-						{
-							return id;
-						}
-						set	
-						{
-							id = value;
-						}
-					}
+					private string id;
 
 					public string Name
 					{
@@ -1287,6 +1261,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 						set	
 						{
 							avatarUrl = value;
+						}
+					}
+
+					public string Id
+					{
+						get
+						{
+							return id;
+						}
+						set	
+						{
+							id = value;
 						}
 					}
 				}
@@ -1294,21 +1280,9 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				public class GetTaskListFilter_Stage
 				{
 
-					private string id;
-
 					private string name;
 
-					public string Id
-					{
-						get
-						{
-							return id;
-						}
-						set	
-						{
-							id = value;
-						}
-					}
+					private string id;
 
 					public string Name
 					{
@@ -1321,16 +1295,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 							name = value;
 						}
 					}
-				}
-
-				public class GetTaskListFilter_Executor
-				{
-
-					private string id;
-
-					private string name;
-
-					private string avatarUrl;
 
 					public string Id
 					{
@@ -1343,6 +1307,16 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 							id = value;
 						}
 					}
+				}
+
+				public class GetTaskListFilter_Executor
+				{
+
+					private string name;
+
+					private string avatarUrl;
+
+					private string id;
 
 					public string Name
 					{
@@ -1367,20 +1341,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 							avatarUrl = value;
 						}
 					}
-				}
-
-				public class GetTaskListFilter_TaskFlowStatus
-				{
-
-					private string id;
-
-					private string name;
-
-					private string kind;
-
-					private int? pos;
-
-					private string taskFlowId;
 
 					public string Id
 					{
@@ -1393,6 +1353,32 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 							id = value;
 						}
 					}
+				}
+
+				public class GetTaskListFilter_TaskFlowStatus
+				{
+
+					private string taskFlowId;
+
+					private string name;
+
+					private int? pos;
+
+					private string kind;
+
+					private string id;
+
+					public string TaskFlowId
+					{
+						get
+						{
+							return taskFlowId;
+						}
+						set	
+						{
+							taskFlowId = value;
+						}
+					}
 
 					public string Name
 					{
@@ -1403,18 +1389,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 						set	
 						{
 							name = value;
-						}
-					}
-
-					public string Kind
-					{
-						get
-						{
-							return kind;
-						}
-						set	
-						{
-							kind = value;
 						}
 					}
 
@@ -1430,15 +1404,27 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 						}
 					}
 
-					public string TaskFlowId
+					public string Kind
 					{
 						get
 						{
-							return taskFlowId;
+							return kind;
 						}
 						set	
 						{
-							taskFlowId = value;
+							kind = value;
+						}
+					}
+
+					public string Id
+					{
+						get
+						{
+							return id;
+						}
+						set	
+						{
+							id = value;
 						}
 					}
 				}

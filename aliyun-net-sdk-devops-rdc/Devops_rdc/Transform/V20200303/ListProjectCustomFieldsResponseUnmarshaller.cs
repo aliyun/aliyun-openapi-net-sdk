@@ -31,24 +31,24 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			ListProjectCustomFieldsResponse listProjectCustomFieldsResponse = new ListProjectCustomFieldsResponse();
 
 			listProjectCustomFieldsResponse.HttpResponse = _ctx.HttpResponse;
-			listProjectCustomFieldsResponse.Successful = _ctx.BooleanValue("ListProjectCustomFields.Successful");
-			listProjectCustomFieldsResponse.ErrorCode = _ctx.StringValue("ListProjectCustomFields.ErrorCode");
 			listProjectCustomFieldsResponse.ErrorMsg = _ctx.StringValue("ListProjectCustomFields.ErrorMsg");
 			listProjectCustomFieldsResponse.RequestId = _ctx.StringValue("ListProjectCustomFields.RequestId");
+			listProjectCustomFieldsResponse.Successful = _ctx.BooleanValue("ListProjectCustomFields.Successful");
+			listProjectCustomFieldsResponse.ErrorCode = _ctx.StringValue("ListProjectCustomFields.ErrorCode");
 
 			List<ListProjectCustomFieldsResponse.ListProjectCustomFields_CustomField> listProjectCustomFieldsResponse_object = new List<ListProjectCustomFieldsResponse.ListProjectCustomFields_CustomField>();
 			for (int i = 0; i < _ctx.Length("ListProjectCustomFields.Object.Length"); i++) {
 				ListProjectCustomFieldsResponse.ListProjectCustomFields_CustomField customField = new ListProjectCustomFieldsResponse.ListProjectCustomFields_CustomField();
-				customField.CustomFieldId = _ctx.StringValue("ListProjectCustomFields.Object["+ i +"].CustomFieldId");
 				customField.Type = _ctx.StringValue("ListProjectCustomFields.Object["+ i +"].Type");
+				customField.CustomFieldId = _ctx.StringValue("ListProjectCustomFields.Object["+ i +"].CustomFieldId");
 				customField.Subtype = _ctx.StringValue("ListProjectCustomFields.Object["+ i +"].Subtype");
 				customField.Name = _ctx.StringValue("ListProjectCustomFields.Object["+ i +"].Name");
 
 				List<ListProjectCustomFieldsResponse.ListProjectCustomFields_CustomField.ListProjectCustomFields__Value> customField_values = new List<ListProjectCustomFieldsResponse.ListProjectCustomFields_CustomField.ListProjectCustomFields__Value>();
 				for (int j = 0; j < _ctx.Length("ListProjectCustomFields.Object["+ i +"].Values.Length"); j++) {
 					ListProjectCustomFieldsResponse.ListProjectCustomFields_CustomField.ListProjectCustomFields__Value _value = new ListProjectCustomFieldsResponse.ListProjectCustomFields_CustomField.ListProjectCustomFields__Value();
-					_value.Id = _ctx.StringValue("ListProjectCustomFields.Object["+ i +"].Values["+ j +"].Id");
 					_value._Value = _ctx.StringValue("ListProjectCustomFields.Object["+ i +"].Values["+ j +"].Value");
+					_value.Id = _ctx.StringValue("ListProjectCustomFields.Object["+ i +"].Values["+ j +"].Id");
 
 					customField_values.Add(_value);
 				}

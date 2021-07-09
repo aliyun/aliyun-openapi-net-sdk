@@ -31,10 +31,10 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			ListUserOrganizationResponse listUserOrganizationResponse = new ListUserOrganizationResponse();
 
 			listUserOrganizationResponse.HttpResponse = _ctx.HttpResponse;
+			listUserOrganizationResponse.ErrorMessage = _ctx.StringValue("ListUserOrganization.ErrorMessage");
 			listUserOrganizationResponse.RequestId = _ctx.StringValue("ListUserOrganization.RequestId");
 			listUserOrganizationResponse.Success = _ctx.BooleanValue("ListUserOrganization.Success");
 			listUserOrganizationResponse.ErrorCode = _ctx.StringValue("ListUserOrganization.ErrorCode");
-			listUserOrganizationResponse.ErrorMessage = _ctx.StringValue("ListUserOrganization.ErrorMessage");
 
 			List<ListUserOrganizationResponse.ListUserOrganization_Organization> listUserOrganizationResponse_object = new List<ListUserOrganizationResponse.ListUserOrganization_Organization>();
 			for (int i = 0; i < _ctx.Length("ListUserOrganization.Object.Length"); i++) {

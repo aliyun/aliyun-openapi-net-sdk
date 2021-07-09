@@ -31,11 +31,11 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			InsertPipelineMemberResponse insertPipelineMemberResponse = new InsertPipelineMemberResponse();
 
 			insertPipelineMemberResponse.HttpResponse = _ctx.HttpResponse;
-			insertPipelineMemberResponse.Success = _ctx.BooleanValue("InsertPipelineMember.Success");
-			insertPipelineMemberResponse.ErrorCode = _ctx.StringValue("InsertPipelineMember.ErrorCode");
-			insertPipelineMemberResponse.ErrorMessage = _ctx.StringValue("InsertPipelineMember.ErrorMessage");
 			insertPipelineMemberResponse.RequestId = _ctx.StringValue("InsertPipelineMember.RequestId");
+			insertPipelineMemberResponse.ErrorMessage = _ctx.StringValue("InsertPipelineMember.ErrorMessage");
 			insertPipelineMemberResponse._Object = _ctx.BooleanValue("InsertPipelineMember.Object");
+			insertPipelineMemberResponse.ErrorCode = _ctx.StringValue("InsertPipelineMember.ErrorCode");
+			insertPipelineMemberResponse.Success = _ctx.BooleanValue("InsertPipelineMember.Success");
         
 			return insertPipelineMemberResponse;
         }

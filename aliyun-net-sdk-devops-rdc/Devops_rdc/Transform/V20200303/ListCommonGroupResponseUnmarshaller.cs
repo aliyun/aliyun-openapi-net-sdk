@@ -31,22 +31,22 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			ListCommonGroupResponse listCommonGroupResponse = new ListCommonGroupResponse();
 
 			listCommonGroupResponse.HttpResponse = _ctx.HttpResponse;
-			listCommonGroupResponse.Successful = _ctx.BooleanValue("ListCommonGroup.Successful");
-			listCommonGroupResponse.ErrorCode = _ctx.StringValue("ListCommonGroup.ErrorCode");
 			listCommonGroupResponse.ErrorMsg = _ctx.StringValue("ListCommonGroup.ErrorMsg");
 			listCommonGroupResponse.RequestId = _ctx.StringValue("ListCommonGroup.RequestId");
+			listCommonGroupResponse.Successful = _ctx.BooleanValue("ListCommonGroup.Successful");
+			listCommonGroupResponse.ErrorCode = _ctx.StringValue("ListCommonGroup.ErrorCode");
 
 			List<ListCommonGroupResponse.ListCommonGroup_CommonGroup> listCommonGroupResponse_object = new List<ListCommonGroupResponse.ListCommonGroup_CommonGroup>();
 			for (int i = 0; i < _ctx.Length("ListCommonGroup.Object.Length"); i++) {
 				ListCommonGroupResponse.ListCommonGroup_CommonGroup commonGroup = new ListCommonGroupResponse.ListCommonGroup_CommonGroup();
-				commonGroup.Pinyin = _ctx.StringValue("ListCommonGroup.Object["+ i +"].Pinyin");
-				commonGroup.IsRoot = _ctx.BooleanValue("ListCommonGroup.Object["+ i +"].IsRoot");
-				commonGroup.Pos = _ctx.IntegerValue("ListCommonGroup.Object["+ i +"].Pos");
 				commonGroup.ResourceCount = _ctx.IntegerValue("ListCommonGroup.Object["+ i +"].ResourceCount");
-				commonGroup.Name = _ctx.StringValue("ListCommonGroup.Object["+ i +"].Name");
-				commonGroup.CreatorId = _ctx.StringValue("ListCommonGroup.Object["+ i +"].CreatorId");
 				commonGroup.SmartGroupId = _ctx.StringValue("ListCommonGroup.Object["+ i +"].SmartGroupId");
+				commonGroup.Pos = _ctx.IntegerValue("ListCommonGroup.Object["+ i +"].Pos");
 				commonGroup.ProjectId = _ctx.StringValue("ListCommonGroup.Object["+ i +"].ProjectId");
+				commonGroup.IsRoot = _ctx.BooleanValue("ListCommonGroup.Object["+ i +"].IsRoot");
+				commonGroup.Pinyin = _ctx.StringValue("ListCommonGroup.Object["+ i +"].Pinyin");
+				commonGroup.CreatorId = _ctx.StringValue("ListCommonGroup.Object["+ i +"].CreatorId");
+				commonGroup.Name = _ctx.StringValue("ListCommonGroup.Object["+ i +"].Name");
 				commonGroup.Id = _ctx.StringValue("ListCommonGroup.Object["+ i +"].id");
 
 				listCommonGroupResponse_object.Add(commonGroup);

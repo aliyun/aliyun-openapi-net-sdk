@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class GetPipelineInstanceInfoResponse : AcsResponse
 	{
 
-		private string errorCode;
-
 		private string errorMessage;
 
 		private string requestId;
 
 		private bool? success;
 
-		private GetPipelineInstanceInfo__Object _object;
+		private string errorCode;
 
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
+		private GetPipelineInstanceInfo__Object _object;
 
 		public string ErrorMessage
 		{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
 		public GetPipelineInstanceInfo__Object _Object
 		{
 			get
@@ -98,19 +98,43 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 		public class GetPipelineInstanceInfo__Object
 		{
 
+			private string employeeId;
+
+			private long? endTime;
+
 			private string status;
 
 			private long? startTime;
 
-			private long? endTime;
-
 			private string sources;
 
-			private string employeeId;
+			private List<string> dockerImages;
 
 			private List<string> packageDownloadUrls;
 
-			private List<string> dockerImages;
+			public string EmployeeId
+			{
+				get
+				{
+					return employeeId;
+				}
+				set	
+				{
+					employeeId = value;
+				}
+			}
+
+			public long? EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
 
 			public string Status
 			{
@@ -136,18 +160,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public long? EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
-
 			public string Sources
 			{
 				get
@@ -160,15 +172,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public string EmployeeId
+			public List<string> DockerImages
 			{
 				get
 				{
-					return employeeId;
+					return dockerImages;
 				}
 				set	
 				{
-					employeeId = value;
+					dockerImages = value;
 				}
 			}
 
@@ -181,18 +193,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				set	
 				{
 					packageDownloadUrls = value;
-				}
-			}
-
-			public List<string> DockerImages
-			{
-				get
-				{
-					return dockerImages;
-				}
-				set	
-				{
-					dockerImages = value;
 				}
 			}
 		}

@@ -31,10 +31,10 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			GetPipelineStepLogResponse getPipelineStepLogResponse = new GetPipelineStepLogResponse();
 
 			getPipelineStepLogResponse.HttpResponse = _ctx.HttpResponse;
+			getPipelineStepLogResponse.RequestId = _ctx.StringValue("GetPipelineStepLog.RequestId");
+			getPipelineStepLogResponse.ErrorMessage = _ctx.StringValue("GetPipelineStepLog.ErrorMessage");
 			getPipelineStepLogResponse.Success = _ctx.BooleanValue("GetPipelineStepLog.Success");
 			getPipelineStepLogResponse.ErrorCode = _ctx.StringValue("GetPipelineStepLog.ErrorCode");
-			getPipelineStepLogResponse.ErrorMessage = _ctx.StringValue("GetPipelineStepLog.ErrorMessage");
-			getPipelineStepLogResponse.RequestId = _ctx.StringValue("GetPipelineStepLog.RequestId");
 
 			GetPipelineStepLogResponse.GetPipelineStepLog__Object _object = new GetPipelineStepLogResponse.GetPipelineStepLog__Object();
 			_object.Last = _ctx.IntegerValue("GetPipelineStepLog.Object.Last");

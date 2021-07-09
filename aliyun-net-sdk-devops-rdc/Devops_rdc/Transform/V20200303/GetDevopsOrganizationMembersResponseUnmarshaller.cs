@@ -31,20 +31,20 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			GetDevopsOrganizationMembersResponse getDevopsOrganizationMembersResponse = new GetDevopsOrganizationMembersResponse();
 
 			getDevopsOrganizationMembersResponse.HttpResponse = _ctx.HttpResponse;
-			getDevopsOrganizationMembersResponse.Successful = _ctx.BooleanValue("GetDevopsOrganizationMembers.Successful");
-			getDevopsOrganizationMembersResponse.ErrorCode = _ctx.StringValue("GetDevopsOrganizationMembers.ErrorCode");
 			getDevopsOrganizationMembersResponse.ErrorMsg = _ctx.StringValue("GetDevopsOrganizationMembers.ErrorMsg");
 			getDevopsOrganizationMembersResponse.RequestId = _ctx.StringValue("GetDevopsOrganizationMembers.RequestId");
+			getDevopsOrganizationMembersResponse.Successful = _ctx.BooleanValue("GetDevopsOrganizationMembers.Successful");
+			getDevopsOrganizationMembersResponse.ErrorCode = _ctx.StringValue("GetDevopsOrganizationMembers.ErrorCode");
 
 			List<GetDevopsOrganizationMembersResponse.GetDevopsOrganizationMembers_Member> getDevopsOrganizationMembersResponse_object = new List<GetDevopsOrganizationMembersResponse.GetDevopsOrganizationMembers_Member>();
 			for (int i = 0; i < _ctx.Length("GetDevopsOrganizationMembers.Object.Length"); i++) {
 				GetDevopsOrganizationMembersResponse.GetDevopsOrganizationMembers_Member member = new GetDevopsOrganizationMembersResponse.GetDevopsOrganizationMembers_Member();
-				member.MemberId = _ctx.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].MemberId");
+				member.Email = _ctx.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].Email");
+				member.AvatarUrl = _ctx.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].AvatarUrl");
 				member.UserId = _ctx.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].UserId");
+				member.MemberId = _ctx.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].MemberId");
 				member.Role = _ctx.IntegerValue("GetDevopsOrganizationMembers.Object["+ i +"].Role");
 				member.Name = _ctx.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].Name");
-				member.AvatarUrl = _ctx.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].AvatarUrl");
-				member.Email = _ctx.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].Email");
 				member.Phone = _ctx.StringValue("GetDevopsOrganizationMembers.Object["+ i +"].Phone");
 
 				getDevopsOrganizationMembersResponse_object.Add(member);

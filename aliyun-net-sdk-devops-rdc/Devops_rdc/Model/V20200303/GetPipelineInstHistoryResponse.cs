@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,15 +25,39 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class GetPipelineInstHistoryResponse : AcsResponse
 	{
 
+		private string requestId;
+
+		private string errorMessage;
+
 		private bool? success;
 
 		private string errorCode;
 
-		private string errorMessage;
-
-		private string requestId;
-
 		private GetPipelineInstHistory_Data data;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
 
 		public bool? Success
 		{
@@ -56,30 +80,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			set	
 			{
 				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
 			}
 		}
 
@@ -129,81 +129,45 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			public class GetPipelineInstHistory_PipelineInst
 			{
 
-				private string creator;
-
-				private long? modifyTime;
-
-				private int? pipelineConfigId;
-
-				private string modifier;
+				private string status;
 
 				private long? createTime;
 
-				private string packages;
-
-				private int? pipelineId;
-
-				private int? flowInstId;
-
-				private int? instNumber;
-
-				private string deletion;
-
 				private string statusName;
-
-				private int? id;
 
 				private int? triggerMode;
 
-				private string status;
+				private int? pipelineConfigId;
+
+				private string deletion;
+
+				private string creator;
+
+				private int? instNumber;
+
+				private string modifier;
+
+				private string packages;
+
+				private int? flowInstId;
+
+				private int? pipelineId;
+
+				private int? id;
+
+				private long? modifyTime;
 
 				private GetPipelineInstHistory_FlowInstance flowInstance;
 
-				public string Creator
+				public string Status
 				{
 					get
 					{
-						return creator;
+						return status;
 					}
 					set	
 					{
-						creator = value;
-					}
-				}
-
-				public long? ModifyTime
-				{
-					get
-					{
-						return modifyTime;
-					}
-					set	
-					{
-						modifyTime = value;
-					}
-				}
-
-				public int? PipelineConfigId
-				{
-					get
-					{
-						return pipelineConfigId;
-					}
-					set	
-					{
-						pipelineConfigId = value;
-					}
-				}
-
-				public string Modifier
-				{
-					get
-					{
-						return modifier;
-					}
-					set	
-					{
-						modifier = value;
+						status = value;
 					}
 				}
 
@@ -219,66 +183,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					}
 				}
 
-				public string Packages
-				{
-					get
-					{
-						return packages;
-					}
-					set	
-					{
-						packages = value;
-					}
-				}
-
-				public int? PipelineId
-				{
-					get
-					{
-						return pipelineId;
-					}
-					set	
-					{
-						pipelineId = value;
-					}
-				}
-
-				public int? FlowInstId
-				{
-					get
-					{
-						return flowInstId;
-					}
-					set	
-					{
-						flowInstId = value;
-					}
-				}
-
-				public int? InstNumber
-				{
-					get
-					{
-						return instNumber;
-					}
-					set	
-					{
-						instNumber = value;
-					}
-				}
-
-				public string Deletion
-				{
-					get
-					{
-						return deletion;
-					}
-					set	
-					{
-						deletion = value;
-					}
-				}
-
 				public string StatusName
 				{
 					get
@@ -288,18 +192,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					set	
 					{
 						statusName = value;
-					}
-				}
-
-				public int? Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
 					}
 				}
 
@@ -315,15 +207,123 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					}
 				}
 
-				public string Status
+				public int? PipelineConfigId
 				{
 					get
 					{
-						return status;
+						return pipelineConfigId;
 					}
 					set	
 					{
-						status = value;
+						pipelineConfigId = value;
+					}
+				}
+
+				public string Deletion
+				{
+					get
+					{
+						return deletion;
+					}
+					set	
+					{
+						deletion = value;
+					}
+				}
+
+				public string Creator
+				{
+					get
+					{
+						return creator;
+					}
+					set	
+					{
+						creator = value;
+					}
+				}
+
+				public int? InstNumber
+				{
+					get
+					{
+						return instNumber;
+					}
+					set	
+					{
+						instNumber = value;
+					}
+				}
+
+				public string Modifier
+				{
+					get
+					{
+						return modifier;
+					}
+					set	
+					{
+						modifier = value;
+					}
+				}
+
+				public string Packages
+				{
+					get
+					{
+						return packages;
+					}
+					set	
+					{
+						packages = value;
+					}
+				}
+
+				public int? FlowInstId
+				{
+					get
+					{
+						return flowInstId;
+					}
+					set	
+					{
+						flowInstId = value;
+					}
+				}
+
+				public int? PipelineId
+				{
+					get
+					{
+						return pipelineId;
+					}
+					set	
+					{
+						pipelineId = value;
+					}
+				}
+
+				public int? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
+
+				public long? ModifyTime
+				{
+					get
+					{
+						return modifyTime;
+					}
+					set	
+					{
+						modifyTime = value;
 					}
 				}
 
@@ -342,11 +342,17 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				public class GetPipelineInstHistory_FlowInstance
 				{
 
+					private string status;
+
+					private string stages;
+
+					private long? createTime;
+
+					private string statusName;
+
+					private string runningStatus;
+
 					private string creator;
-
-					private long? modifyTime;
-
-					private string systemId;
 
 					private string stageTopo;
 
@@ -354,25 +360,79 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 
 					private bool? autoDrivenStatus;
 
-					private long? createTime;
-
 					private string resultStatus;
-
-					private string runningStatus;
-
-					private string systemCode;
-
-					private string stages;
-
-					private string statusName;
 
 					private int? id;
 
-					private string status;
+					private string systemCode;
+
+					private long? modifyTime;
+
+					private string systemId;
 
 					private List<GetPipelineInstHistory_Group> groups;
 
 					private GetPipelineInstHistory_Result result;
+
+					public string Status
+					{
+						get
+						{
+							return status;
+						}
+						set	
+						{
+							status = value;
+						}
+					}
+
+					public string Stages
+					{
+						get
+						{
+							return stages;
+						}
+						set	
+						{
+							stages = value;
+						}
+					}
+
+					public long? CreateTime
+					{
+						get
+						{
+							return createTime;
+						}
+						set	
+						{
+							createTime = value;
+						}
+					}
+
+					public string StatusName
+					{
+						get
+						{
+							return statusName;
+						}
+						set	
+						{
+							statusName = value;
+						}
+					}
+
+					public string RunningStatus
+					{
+						get
+						{
+							return runningStatus;
+						}
+						set	
+						{
+							runningStatus = value;
+						}
+					}
 
 					public string Creator
 					{
@@ -383,30 +443,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 						set	
 						{
 							creator = value;
-						}
-					}
-
-					public long? ModifyTime
-					{
-						get
-						{
-							return modifyTime;
-						}
-						set	
-						{
-							modifyTime = value;
-						}
-					}
-
-					public string SystemId
-					{
-						get
-						{
-							return systemId;
-						}
-						set	
-						{
-							systemId = value;
 						}
 					}
 
@@ -446,18 +482,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 						}
 					}
 
-					public long? CreateTime
-					{
-						get
-						{
-							return createTime;
-						}
-						set	
-						{
-							createTime = value;
-						}
-					}
-
 					public string ResultStatus
 					{
 						get
@@ -467,54 +491,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 						set	
 						{
 							resultStatus = value;
-						}
-					}
-
-					public string RunningStatus
-					{
-						get
-						{
-							return runningStatus;
-						}
-						set	
-						{
-							runningStatus = value;
-						}
-					}
-
-					public string SystemCode
-					{
-						get
-						{
-							return systemCode;
-						}
-						set	
-						{
-							systemCode = value;
-						}
-					}
-
-					public string Stages
-					{
-						get
-						{
-							return stages;
-						}
-						set	
-						{
-							stages = value;
-						}
-					}
-
-					public string StatusName
-					{
-						get
-						{
-							return statusName;
-						}
-						set	
-						{
-							statusName = value;
 						}
 					}
 
@@ -530,15 +506,39 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 						}
 					}
 
-					public string Status
+					public string SystemCode
 					{
 						get
 						{
-							return status;
+							return systemCode;
 						}
 						set	
 						{
-							status = value;
+							systemCode = value;
+						}
+					}
+
+					public long? ModifyTime
+					{
+						get
+						{
+							return modifyTime;
+						}
+						set	
+						{
+							modifyTime = value;
+						}
+					}
+
+					public string SystemId
+					{
+						get
+						{
+							return systemId;
+						}
+						set	
+						{
+							systemId = value;
 						}
 					}
 
@@ -569,65 +569,41 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					public class GetPipelineInstHistory_Group
 					{
 
-						private string creator;
-
-						private long? modifyTime;
-
-						private string modifier;
+						private string status;
 
 						private long? createTime;
 
-						private int? flowInstId;
-
-						private string resultStatus;
-
 						private string deleteStatus;
-
-						private string name;
-
-						private long? startTime;
-
-						private long? endTime;
-
-						private int? id;
 
 						private int? idExtent;
 
-						private string status;
+						private string creator;
 
-						public string Creator
+						private long? endTime;
+
+						private long? startTime;
+
+						private string modifier;
+
+						private string resultStatus;
+
+						private int? flowInstId;
+
+						private string name;
+
+						private int? id;
+
+						private long? modifyTime;
+
+						public string Status
 						{
 							get
 							{
-								return creator;
+								return status;
 							}
 							set	
 							{
-								creator = value;
-							}
-						}
-
-						public long? ModifyTime
-						{
-							get
-							{
-								return modifyTime;
-							}
-							set	
-							{
-								modifyTime = value;
-							}
-						}
-
-						public string Modifier
-						{
-							get
-							{
-								return modifier;
-							}
-							set	
-							{
-								modifier = value;
+								status = value;
 							}
 						}
 
@@ -643,30 +619,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 							}
 						}
 
-						public int? FlowInstId
-						{
-							get
-							{
-								return flowInstId;
-							}
-							set	
-							{
-								flowInstId = value;
-							}
-						}
-
-						public string ResultStatus
-						{
-							get
-							{
-								return resultStatus;
-							}
-							set	
-							{
-								resultStatus = value;
-							}
-						}
-
 						public string DeleteStatus
 						{
 							get
@@ -676,54 +628,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 							set	
 							{
 								deleteStatus = value;
-							}
-						}
-
-						public string Name
-						{
-							get
-							{
-								return name;
-							}
-							set	
-							{
-								name = value;
-							}
-						}
-
-						public long? StartTime
-						{
-							get
-							{
-								return startTime;
-							}
-							set	
-							{
-								startTime = value;
-							}
-						}
-
-						public long? EndTime
-						{
-							get
-							{
-								return endTime;
-							}
-							set	
-							{
-								endTime = value;
-							}
-						}
-
-						public int? Id
-						{
-							get
-							{
-								return id;
-							}
-							set	
-							{
-								id = value;
 							}
 						}
 
@@ -739,15 +643,111 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 							}
 						}
 
-						public string Status
+						public string Creator
 						{
 							get
 							{
-								return status;
+								return creator;
 							}
 							set	
 							{
-								status = value;
+								creator = value;
+							}
+						}
+
+						public long? EndTime
+						{
+							get
+							{
+								return endTime;
+							}
+							set	
+							{
+								endTime = value;
+							}
+						}
+
+						public long? StartTime
+						{
+							get
+							{
+								return startTime;
+							}
+							set	
+							{
+								startTime = value;
+							}
+						}
+
+						public string Modifier
+						{
+							get
+							{
+								return modifier;
+							}
+							set	
+							{
+								modifier = value;
+							}
+						}
+
+						public string ResultStatus
+						{
+							get
+							{
+								return resultStatus;
+							}
+							set	
+							{
+								resultStatus = value;
+							}
+						}
+
+						public int? FlowInstId
+						{
+							get
+							{
+								return flowInstId;
+							}
+							set	
+							{
+								flowInstId = value;
+							}
+						}
+
+						public string Name
+						{
+							get
+							{
+								return name;
+							}
+							set	
+							{
+								name = value;
+							}
+						}
+
+						public int? Id
+						{
+							get
+							{
+								return id;
+							}
+							set	
+							{
+								id = value;
+							}
+						}
+
+						public long? ModifyTime
+						{
+							get
+							{
+								return modifyTime;
+							}
+							set	
+							{
+								modifyTime = value;
 							}
 						}
 					}
@@ -755,59 +755,35 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					public class GetPipelineInstHistory_Result
 					{
 
-						private string sources;
-
-						private string caches;
-
-						private int? enginePipelineId;
+						private int? enginePipelineNumber;
 
 						private string mixFlowInstId;
 
 						private string enginePipelineName;
 
-						private int? enginePipelineNumber;
+						private int? enginePipelineId;
 
-						private string dateTime;
+						private int? enginePipelineInstId;
 
 						private string timeStamp;
 
 						private string triggerMode;
 
-						private int? enginePipelineInstId;
+						private string sources;
 
-						public string Sources
+						private string caches;
+
+						private string dateTime;
+
+						public int? EnginePipelineNumber
 						{
 							get
 							{
-								return sources;
+								return enginePipelineNumber;
 							}
 							set	
 							{
-								sources = value;
-							}
-						}
-
-						public string Caches
-						{
-							get
-							{
-								return caches;
-							}
-							set	
-							{
-								caches = value;
-							}
-						}
-
-						public int? EnginePipelineId
-						{
-							get
-							{
-								return enginePipelineId;
-							}
-							set	
-							{
-								enginePipelineId = value;
+								enginePipelineNumber = value;
 							}
 						}
 
@@ -835,27 +811,27 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 							}
 						}
 
-						public int? EnginePipelineNumber
+						public int? EnginePipelineId
 						{
 							get
 							{
-								return enginePipelineNumber;
+								return enginePipelineId;
 							}
 							set	
 							{
-								enginePipelineNumber = value;
+								enginePipelineId = value;
 							}
 						}
 
-						public string DateTime
+						public int? EnginePipelineInstId
 						{
 							get
 							{
-								return dateTime;
+								return enginePipelineInstId;
 							}
 							set	
 							{
-								dateTime = value;
+								enginePipelineInstId = value;
 							}
 						}
 
@@ -883,15 +859,39 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 							}
 						}
 
-						public int? EnginePipelineInstId
+						public string Sources
 						{
 							get
 							{
-								return enginePipelineInstId;
+								return sources;
 							}
 							set	
 							{
-								enginePipelineInstId = value;
+								sources = value;
+							}
+						}
+
+						public string Caches
+						{
+							get
+							{
+								return caches;
+							}
+							set	
+							{
+								caches = value;
+							}
+						}
+
+						public string DateTime
+						{
+							get
+							{
+								return dateTime;
+							}
+							set	
+							{
+								dateTime = value;
 							}
 						}
 					}

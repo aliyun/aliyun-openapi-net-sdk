@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class ListProjectCustomFieldsResponse : AcsResponse
 	{
 
-		private bool? successful;
-
-		private string errorCode;
-
 		private string errorMsg;
 
 		private string requestId;
 
+		private bool? successful;
+
+		private string errorCode;
+
 		private List<ListProjectCustomFields_CustomField> _object;
-
-		public bool? Successful
-		{
-			get
-			{
-				return successful;
-			}
-			set	
-			{
-				successful = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
 
 		public string ErrorMsg
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
+		public bool? Successful
+		{
+			get
+			{
+				return successful;
+			}
+			set	
+			{
+				successful = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
 		public List<ListProjectCustomFields_CustomField> _Object
 		{
 			get
@@ -98,27 +98,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 		public class ListProjectCustomFields_CustomField
 		{
 
-			private string customFieldId;
-
 			private string type;
+
+			private string customFieldId;
 
 			private string subtype;
 
 			private string name;
 
 			private List<ListProjectCustomFields__Value> values;
-
-			public string CustomFieldId
-			{
-				get
-				{
-					return customFieldId;
-				}
-				set	
-				{
-					customFieldId = value;
-				}
-			}
 
 			public string Type
 			{
@@ -129,6 +117,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public string CustomFieldId
+			{
+				get
+				{
+					return customFieldId;
+				}
+				set	
+				{
+					customFieldId = value;
 				}
 			}
 
@@ -171,21 +171,9 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			public class ListProjectCustomFields__Value
 			{
 
-				private string id;
-
 				private string _value;
 
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
+				private string id;
 
 				public string _Value
 				{
@@ -196,6 +184,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					set	
 					{
 						_value = value;
+					}
+				}
+
+				public string Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
 					}
 				}
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,15 +25,39 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class GetPipelineInstanceBuildNumberStatusResponse : AcsResponse
 	{
 
+		private string requestId;
+
+		private string errorMessage;
+
 		private bool? success;
 
 		private string errorCode;
 
-		private string errorMessage;
-
-		private string requestId;
-
 		private GetPipelineInstanceBuildNumberStatus__Object _object;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
 
 		public bool? Success
 		{
@@ -56,30 +80,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			set	
 			{
 				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
 			}
 		}
 
@@ -129,23 +129,11 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			public class GetPipelineInstanceBuildNumberStatus_Group
 			{
 
-				private string name;
-
 				private string status;
 
-				private List<GetPipelineInstanceBuildNumberStatus_Stage> stages;
+				private string name;
 
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
+				private List<GetPipelineInstanceBuildNumberStatus_Stage> stages;
 
 				public string Status
 				{
@@ -156,6 +144,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 
@@ -219,23 +219,11 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 					public class GetPipelineInstanceBuildNumberStatus_Component
 					{
 
-						private string name;
-
 						private string status;
 
-						private long? jobId;
+						private string name;
 
-						public string Name
-						{
-							get
-							{
-								return name;
-							}
-							set	
-							{
-								name = value;
-							}
-						}
+						private long? jobId;
 
 						public string Status
 						{
@@ -246,6 +234,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 							set	
 							{
 								status = value;
+							}
+						}
+
+						public string Name
+						{
+							get
+							{
+								return name;
+							}
+							set	
+							{
+								name = value;
 							}
 						}
 

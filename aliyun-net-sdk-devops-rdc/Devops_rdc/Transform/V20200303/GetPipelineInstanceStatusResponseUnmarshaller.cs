@@ -31,11 +31,11 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			GetPipelineInstanceStatusResponse getPipelineInstanceStatusResponse = new GetPipelineInstanceStatusResponse();
 
 			getPipelineInstanceStatusResponse.HttpResponse = _ctx.HttpResponse;
-			getPipelineInstanceStatusResponse.Success = _ctx.BooleanValue("GetPipelineInstanceStatus.Success");
-			getPipelineInstanceStatusResponse.ErrorCode = _ctx.StringValue("GetPipelineInstanceStatus.ErrorCode");
+			getPipelineInstanceStatusResponse.RequestId = _ctx.StringValue("GetPipelineInstanceStatus.RequestId");
 			getPipelineInstanceStatusResponse.ErrorMessage = _ctx.StringValue("GetPipelineInstanceStatus.ErrorMessage");
 			getPipelineInstanceStatusResponse._Object = _ctx.StringValue("GetPipelineInstanceStatus.Object");
-			getPipelineInstanceStatusResponse.RequestId = _ctx.StringValue("GetPipelineInstanceStatus.RequestId");
+			getPipelineInstanceStatusResponse.ErrorCode = _ctx.StringValue("GetPipelineInstanceStatus.ErrorCode");
+			getPipelineInstanceStatusResponse.Success = _ctx.BooleanValue("GetPipelineInstanceStatus.Success");
         
 			return getPipelineInstanceStatusResponse;
         }

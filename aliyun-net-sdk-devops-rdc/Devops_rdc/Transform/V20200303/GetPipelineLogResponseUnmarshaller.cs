@@ -31,24 +31,24 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			GetPipelineLogResponse getPipelineLogResponse = new GetPipelineLogResponse();
 
 			getPipelineLogResponse.HttpResponse = _ctx.HttpResponse;
+			getPipelineLogResponse.RequestId = _ctx.StringValue("GetPipelineLog.RequestId");
+			getPipelineLogResponse.ErrorMessage = _ctx.StringValue("GetPipelineLog.ErrorMessage");
 			getPipelineLogResponse.Success = _ctx.BooleanValue("GetPipelineLog.Success");
 			getPipelineLogResponse.ErrorCode = _ctx.StringValue("GetPipelineLog.ErrorCode");
-			getPipelineLogResponse.ErrorMessage = _ctx.StringValue("GetPipelineLog.ErrorMessage");
-			getPipelineLogResponse.RequestId = _ctx.StringValue("GetPipelineLog.RequestId");
 
 			List<GetPipelineLogResponse.GetPipelineLog_Job> getPipelineLogResponse_object = new List<GetPipelineLogResponse.GetPipelineLog_Job>();
 			for (int i = 0; i < _ctx.Length("GetPipelineLog.Object.Length"); i++) {
 				GetPipelineLogResponse.GetPipelineLog_Job job = new GetPipelineLogResponse.GetPipelineLog_Job();
-				job.JobId = _ctx.LongValue("GetPipelineLog.Object["+ i +"].JobId");
 				job.ActionName = _ctx.StringValue("GetPipelineLog.Object["+ i +"].ActionName");
 				job.StartTime = _ctx.StringValue("GetPipelineLog.Object["+ i +"].StartTime");
+				job.JobId = _ctx.LongValue("GetPipelineLog.Object["+ i +"].JobId");
 
 				List<GetPipelineLogResponse.GetPipelineLog_Job.GetPipelineLog_BuildProcessNode> job_buildProcessNodes = new List<GetPipelineLogResponse.GetPipelineLog_Job.GetPipelineLog_BuildProcessNode>();
 				for (int j = 0; j < _ctx.Length("GetPipelineLog.Object["+ i +"].BuildProcessNodes.Length"); j++) {
 					GetPipelineLogResponse.GetPipelineLog_Job.GetPipelineLog_BuildProcessNode buildProcessNode = new GetPipelineLogResponse.GetPipelineLog_Job.GetPipelineLog_BuildProcessNode();
-					buildProcessNode.NodeName = _ctx.StringValue("GetPipelineLog.Object["+ i +"].BuildProcessNodes["+ j +"].NodeName");
-					buildProcessNode.NodeIndex = _ctx.IntegerValue("GetPipelineLog.Object["+ i +"].BuildProcessNodes["+ j +"].NodeIndex");
 					buildProcessNode.Status = _ctx.StringValue("GetPipelineLog.Object["+ i +"].BuildProcessNodes["+ j +"].Status");
+					buildProcessNode.NodeIndex = _ctx.IntegerValue("GetPipelineLog.Object["+ i +"].BuildProcessNodes["+ j +"].NodeIndex");
+					buildProcessNode.NodeName = _ctx.StringValue("GetPipelineLog.Object["+ i +"].BuildProcessNodes["+ j +"].NodeName");
 
 					job_buildProcessNodes.Add(buildProcessNode);
 				}

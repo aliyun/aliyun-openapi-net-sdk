@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 	public class GetDevopsProjectInfoResponse : AcsResponse
 	{
 
-		private bool? successful;
-
-		private string errorCode;
-
 		private string errorMsg;
 
 		private string requestId;
 
+		private bool? successful;
+
+		private string errorCode;
+
 		private GetDevopsProjectInfo__Object _object;
-
-		public bool? Successful
-		{
-			get
-			{
-				return successful;
-			}
-			set	
-			{
-				successful = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
 
 		public string ErrorMsg
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
+		public bool? Successful
+		{
+			get
+			{
+				return successful;
+			}
+			set	
+			{
+				successful = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
 		public GetDevopsProjectInfo__Object _Object
 		{
 			get
@@ -98,181 +98,73 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 		public class GetDevopsProjectInfo__Object
 		{
 
-			private string rootCollectionId;
-
-			private string endDate;
-
-			private bool? isArchived;
-
-			private string modifierId;
-
-			private string sourceId;
-
-			private string description;
-
-			private string py;
-
-			private string defaultRoleId;
-
-			private string customfields;
-
-			private bool? isDeleted;
+			private string sortMethod;
 
 			private string uniqueIdPrefix;
 
-			private int? nextTaskUniqueId;
-
-			private string creatorId;
-
-			private string logo;
-
-			private string defaultCollectionId;
-
-			private bool? isSuspended;
-
-			private string visibility;
-
 			private string normalType;
 
-			private string created;
-
-			private string organizationId;
-
-			private string sortMethod;
-
-			private string pinyin;
+			private string modifierId;
 
 			private string sourceType;
 
 			private bool? isTemplate;
 
-			private string name;
+			private string description;
 
-			private string id;
+			private string defaultRoleId;
 
-			private string category;
+			private string rootCollectionId;
+
+			private bool? isDeleted;
 
 			private string updated;
 
+			private string name;
+
+			private bool? isArchived;
+
+			private string endDate;
+
+			private string logo;
+
 			private string startDate;
 
-			public string RootCollectionId
-			{
-				get
-				{
-					return rootCollectionId;
-				}
-				set	
-				{
-					rootCollectionId = value;
-				}
-			}
+			private string pinyin;
 
-			public string EndDate
-			{
-				get
-				{
-					return endDate;
-				}
-				set	
-				{
-					endDate = value;
-				}
-			}
+			private string creatorId;
 
-			public bool? IsArchived
-			{
-				get
-				{
-					return isArchived;
-				}
-				set	
-				{
-					isArchived = value;
-				}
-			}
+			private string sourceId;
 
-			public string ModifierId
-			{
-				get
-				{
-					return modifierId;
-				}
-				set	
-				{
-					modifierId = value;
-				}
-			}
+			private string defaultCollectionId;
 
-			public string SourceId
-			{
-				get
-				{
-					return sourceId;
-				}
-				set	
-				{
-					sourceId = value;
-				}
-			}
+			private bool? isSuspended;
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
+			private string organizationId;
 
-			public string Py
-			{
-				get
-				{
-					return py;
-				}
-				set	
-				{
-					py = value;
-				}
-			}
+			private string visibility;
 
-			public string DefaultRoleId
-			{
-				get
-				{
-					return defaultRoleId;
-				}
-				set	
-				{
-					defaultRoleId = value;
-				}
-			}
+			private string py;
 
-			public string Customfields
-			{
-				get
-				{
-					return customfields;
-				}
-				set	
-				{
-					customfields = value;
-				}
-			}
+			private string category;
 
-			public bool? IsDeleted
+			private int? nextTaskUniqueId;
+
+			private string customfields;
+
+			private string created;
+
+			private string id;
+
+			public string SortMethod
 			{
 				get
 				{
-					return isDeleted;
+					return sortMethod;
 				}
 				set	
 				{
-					isDeleted = value;
+					sortMethod = value;
 				}
 			}
 
@@ -288,78 +180,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public int? NextTaskUniqueId
-			{
-				get
-				{
-					return nextTaskUniqueId;
-				}
-				set	
-				{
-					nextTaskUniqueId = value;
-				}
-			}
-
-			public string CreatorId
-			{
-				get
-				{
-					return creatorId;
-				}
-				set	
-				{
-					creatorId = value;
-				}
-			}
-
-			public string Logo
-			{
-				get
-				{
-					return logo;
-				}
-				set	
-				{
-					logo = value;
-				}
-			}
-
-			public string DefaultCollectionId
-			{
-				get
-				{
-					return defaultCollectionId;
-				}
-				set	
-				{
-					defaultCollectionId = value;
-				}
-			}
-
-			public bool? IsSuspended
-			{
-				get
-				{
-					return isSuspended;
-				}
-				set	
-				{
-					isSuspended = value;
-				}
-			}
-
-			public string Visibility
-			{
-				get
-				{
-					return visibility;
-				}
-				set	
-				{
-					visibility = value;
-				}
-			}
-
 			public string NormalType
 			{
 				get
@@ -372,51 +192,15 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public string Created
+			public string ModifierId
 			{
 				get
 				{
-					return created;
+					return modifierId;
 				}
 				set	
 				{
-					created = value;
-				}
-			}
-
-			public string OrganizationId
-			{
-				get
-				{
-					return organizationId;
-				}
-				set	
-				{
-					organizationId = value;
-				}
-			}
-
-			public string SortMethod
-			{
-				get
-				{
-					return sortMethod;
-				}
-				set	
-				{
-					sortMethod = value;
-				}
-			}
-
-			public string Pinyin
-			{
-				get
-				{
-					return pinyin;
-				}
-				set	
-				{
-					pinyin = value;
+					modifierId = value;
 				}
 			}
 
@@ -444,39 +228,51 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
-			public string Name
+			public string Description
 			{
 				get
 				{
-					return name;
+					return description;
 				}
 				set	
 				{
-					name = value;
+					description = value;
 				}
 			}
 
-			public string Id
+			public string DefaultRoleId
 			{
 				get
 				{
-					return id;
+					return defaultRoleId;
 				}
 				set	
 				{
-					id = value;
+					defaultRoleId = value;
 				}
 			}
 
-			public string Category
+			public string RootCollectionId
 			{
 				get
 				{
-					return category;
+					return rootCollectionId;
 				}
 				set	
 				{
-					category = value;
+					rootCollectionId = value;
+				}
+			}
+
+			public bool? IsDeleted
+			{
+				get
+				{
+					return isDeleted;
+				}
+				set	
+				{
+					isDeleted = value;
 				}
 			}
 
@@ -492,6 +288,54 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				}
 			}
 
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public bool? IsArchived
+			{
+				get
+				{
+					return isArchived;
+				}
+				set	
+				{
+					isArchived = value;
+				}
+			}
+
+			public string EndDate
+			{
+				get
+				{
+					return endDate;
+				}
+				set	
+				{
+					endDate = value;
+				}
+			}
+
+			public string Logo
+			{
+				get
+				{
+					return logo;
+				}
+				set	
+				{
+					logo = value;
+				}
+			}
+
 			public string StartDate
 			{
 				get
@@ -501,6 +345,162 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				set	
 				{
 					startDate = value;
+				}
+			}
+
+			public string Pinyin
+			{
+				get
+				{
+					return pinyin;
+				}
+				set	
+				{
+					pinyin = value;
+				}
+			}
+
+			public string CreatorId
+			{
+				get
+				{
+					return creatorId;
+				}
+				set	
+				{
+					creatorId = value;
+				}
+			}
+
+			public string SourceId
+			{
+				get
+				{
+					return sourceId;
+				}
+				set	
+				{
+					sourceId = value;
+				}
+			}
+
+			public string DefaultCollectionId
+			{
+				get
+				{
+					return defaultCollectionId;
+				}
+				set	
+				{
+					defaultCollectionId = value;
+				}
+			}
+
+			public bool? IsSuspended
+			{
+				get
+				{
+					return isSuspended;
+				}
+				set	
+				{
+					isSuspended = value;
+				}
+			}
+
+			public string OrganizationId
+			{
+				get
+				{
+					return organizationId;
+				}
+				set	
+				{
+					organizationId = value;
+				}
+			}
+
+			public string Visibility
+			{
+				get
+				{
+					return visibility;
+				}
+				set	
+				{
+					visibility = value;
+				}
+			}
+
+			public string Py
+			{
+				get
+				{
+					return py;
+				}
+				set	
+				{
+					py = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			public int? NextTaskUniqueId
+			{
+				get
+				{
+					return nextTaskUniqueId;
+				}
+				set	
+				{
+					nextTaskUniqueId = value;
+				}
+			}
+
+			public string Customfields
+			{
+				get
+				{
+					return customfields;
+				}
+				set	
+				{
+					customfields = value;
+				}
+			}
+
+			public string Created
+			{
+				get
+				{
+					return created;
+				}
+				set	
+				{
+					created = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 		}

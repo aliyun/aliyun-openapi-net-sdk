@@ -32,9 +32,9 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 
 			listServiceConnectionsResponse.HttpResponse = _ctx.HttpResponse;
 			listServiceConnectionsResponse.RequestId = _ctx.StringValue("ListServiceConnections.RequestId");
-			listServiceConnectionsResponse.ErrorCode = _ctx.StringValue("ListServiceConnections.ErrorCode");
 			listServiceConnectionsResponse.ErrorMessage = _ctx.StringValue("ListServiceConnections.ErrorMessage");
 			listServiceConnectionsResponse.Success = _ctx.BooleanValue("ListServiceConnections.Success");
+			listServiceConnectionsResponse.ErrorCode = _ctx.StringValue("ListServiceConnections.ErrorCode");
 
 			List<Dictionary<string, string>> listServiceConnectionsResponse_object = new List<Dictionary<string, string>>();
 			for (int i = 0; i < _ctx.Length("ListServiceConnections.Object.Length"); i++) {

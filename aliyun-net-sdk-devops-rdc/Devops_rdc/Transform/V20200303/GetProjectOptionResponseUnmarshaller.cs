@@ -31,18 +31,18 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			GetProjectOptionResponse getProjectOptionResponse = new GetProjectOptionResponse();
 
 			getProjectOptionResponse.HttpResponse = _ctx.HttpResponse;
-			getProjectOptionResponse.Successful = _ctx.BooleanValue("GetProjectOption.Successful");
-			getProjectOptionResponse.ErrorCode = _ctx.StringValue("GetProjectOption.ErrorCode");
 			getProjectOptionResponse.ErrorMsg = _ctx.StringValue("GetProjectOption.ErrorMsg");
 			getProjectOptionResponse.RequestId = _ctx.StringValue("GetProjectOption.RequestId");
+			getProjectOptionResponse.Successful = _ctx.BooleanValue("GetProjectOption.Successful");
+			getProjectOptionResponse.ErrorCode = _ctx.StringValue("GetProjectOption.ErrorCode");
 
 			List<GetProjectOptionResponse.GetProjectOption_Option> getProjectOptionResponse_object = new List<GetProjectOptionResponse.GetProjectOption_Option>();
 			for (int i = 0; i < _ctx.Length("GetProjectOption.Object.Length"); i++) {
 				GetProjectOptionResponse.GetProjectOption_Option option = new GetProjectOptionResponse.GetProjectOption_Option();
-				option.Name = _ctx.StringValue("GetProjectOption.Object["+ i +"].Name");
 				option._Value = _ctx.StringValue("GetProjectOption.Object["+ i +"].Value");
-				option.Kind = _ctx.StringValue("GetProjectOption.Object["+ i +"].Kind");
+				option.Name = _ctx.StringValue("GetProjectOption.Object["+ i +"].Name");
 				option.ScopeName = _ctx.StringValue("GetProjectOption.Object["+ i +"].ScopeName");
+				option.Kind = _ctx.StringValue("GetProjectOption.Object["+ i +"].Kind");
 
 				getProjectOptionResponse_object.Add(option);
 			}

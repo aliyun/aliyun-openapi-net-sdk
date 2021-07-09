@@ -31,11 +31,11 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			GetLastWorkspaceResponse getLastWorkspaceResponse = new GetLastWorkspaceResponse();
 
 			getLastWorkspaceResponse.HttpResponse = _ctx.HttpResponse;
-			getLastWorkspaceResponse.RequestId = _ctx.StringValue("GetLastWorkspace.RequestId");
-			getLastWorkspaceResponse.ErrorCode = _ctx.StringValue("GetLastWorkspace.ErrorCode");
 			getLastWorkspaceResponse.ErrorMessage = _ctx.StringValue("GetLastWorkspace.ErrorMessage");
-			getLastWorkspaceResponse.Success = _ctx.BooleanValue("GetLastWorkspace.Success");
+			getLastWorkspaceResponse.RequestId = _ctx.StringValue("GetLastWorkspace.RequestId");
 			getLastWorkspaceResponse._Object = _ctx.StringValue("GetLastWorkspace.Object");
+			getLastWorkspaceResponse.Success = _ctx.BooleanValue("GetLastWorkspace.Success");
+			getLastWorkspaceResponse.ErrorCode = _ctx.StringValue("GetLastWorkspace.ErrorCode");
         
 			return getLastWorkspaceResponse;
         }

@@ -31,19 +31,19 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			GetTaskDetailActivityResponse getTaskDetailActivityResponse = new GetTaskDetailActivityResponse();
 
 			getTaskDetailActivityResponse.HttpResponse = _ctx.HttpResponse;
-			getTaskDetailActivityResponse.Successful = _ctx.BooleanValue("GetTaskDetailActivity.Successful");
-			getTaskDetailActivityResponse.ErrorCode = _ctx.StringValue("GetTaskDetailActivity.ErrorCode");
+			getTaskDetailActivityResponse.HttpStatusCode = _ctx.IntegerValue("GetTaskDetailActivity.HttpStatusCode");
 			getTaskDetailActivityResponse.ErrorMsg = _ctx.StringValue("GetTaskDetailActivity.ErrorMsg");
 			getTaskDetailActivityResponse.RequestId = _ctx.StringValue("GetTaskDetailActivity.RequestId");
-			getTaskDetailActivityResponse.HttpStatusCode = _ctx.IntegerValue("GetTaskDetailActivity.HttpStatusCode");
+			getTaskDetailActivityResponse.Successful = _ctx.BooleanValue("GetTaskDetailActivity.Successful");
+			getTaskDetailActivityResponse.ErrorCode = _ctx.StringValue("GetTaskDetailActivity.ErrorCode");
 
 			List<GetTaskDetailActivityResponse.GetTaskDetailActivity_Activity> getTaskDetailActivityResponse_object = new List<GetTaskDetailActivityResponse.GetTaskDetailActivity_Activity>();
 			for (int i = 0; i < _ctx.Length("GetTaskDetailActivity.Object.Length"); i++) {
 				GetTaskDetailActivityResponse.GetTaskDetailActivity_Activity activity = new GetTaskDetailActivityResponse.GetTaskDetailActivity_Activity();
-				activity.Created = _ctx.StringValue("GetTaskDetailActivity.Object["+ i +"].Created");
-				activity.Title = _ctx.StringValue("GetTaskDetailActivity.Object["+ i +"].Title");
-				activity.Action = _ctx.StringValue("GetTaskDetailActivity.Object["+ i +"].Action");
 				activity.Updated = _ctx.StringValue("GetTaskDetailActivity.Object["+ i +"].Updated");
+				activity.Action = _ctx.StringValue("GetTaskDetailActivity.Object["+ i +"].Action");
+				activity.Title = _ctx.StringValue("GetTaskDetailActivity.Object["+ i +"].Title");
+				activity.Created = _ctx.StringValue("GetTaskDetailActivity.Object["+ i +"].Created");
 				activity.Content = _ctx.StringValue("GetTaskDetailActivity.Object["+ i +"].Content");
 
 				getTaskDetailActivityResponse_object.Add(activity);

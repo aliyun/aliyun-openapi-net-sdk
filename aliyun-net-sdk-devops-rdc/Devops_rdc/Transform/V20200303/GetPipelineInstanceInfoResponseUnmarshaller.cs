@@ -31,29 +31,29 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 			GetPipelineInstanceInfoResponse getPipelineInstanceInfoResponse = new GetPipelineInstanceInfoResponse();
 
 			getPipelineInstanceInfoResponse.HttpResponse = _ctx.HttpResponse;
-			getPipelineInstanceInfoResponse.ErrorCode = _ctx.StringValue("GetPipelineInstanceInfo.ErrorCode");
 			getPipelineInstanceInfoResponse.ErrorMessage = _ctx.StringValue("GetPipelineInstanceInfo.ErrorMessage");
 			getPipelineInstanceInfoResponse.RequestId = _ctx.StringValue("GetPipelineInstanceInfo.RequestId");
 			getPipelineInstanceInfoResponse.Success = _ctx.BooleanValue("GetPipelineInstanceInfo.Success");
+			getPipelineInstanceInfoResponse.ErrorCode = _ctx.StringValue("GetPipelineInstanceInfo.ErrorCode");
 
 			GetPipelineInstanceInfoResponse.GetPipelineInstanceInfo__Object _object = new GetPipelineInstanceInfoResponse.GetPipelineInstanceInfo__Object();
+			_object.EmployeeId = _ctx.StringValue("GetPipelineInstanceInfo.Object.EmployeeId");
+			_object.EndTime = _ctx.LongValue("GetPipelineInstanceInfo.Object.EndTime");
 			_object.Status = _ctx.StringValue("GetPipelineInstanceInfo.Object.Status");
 			_object.StartTime = _ctx.LongValue("GetPipelineInstanceInfo.Object.StartTime");
-			_object.EndTime = _ctx.LongValue("GetPipelineInstanceInfo.Object.EndTime");
 			_object.Sources = _ctx.StringValue("GetPipelineInstanceInfo.Object.Sources");
-			_object.EmployeeId = _ctx.StringValue("GetPipelineInstanceInfo.Object.EmployeeId");
-
-			List<string> _object_packageDownloadUrls = new List<string>();
-			for (int i = 0; i < _ctx.Length("GetPipelineInstanceInfo.Object.PackageDownloadUrls.Length"); i++) {
-				_object_packageDownloadUrls.Add(_ctx.StringValue("GetPipelineInstanceInfo.Object.PackageDownloadUrls["+ i +"]"));
-			}
-			_object.PackageDownloadUrls = _object_packageDownloadUrls;
 
 			List<string> _object_dockerImages = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetPipelineInstanceInfo.Object.DockerImages.Length"); i++) {
 				_object_dockerImages.Add(_ctx.StringValue("GetPipelineInstanceInfo.Object.DockerImages["+ i +"]"));
 			}
 			_object.DockerImages = _object_dockerImages;
+
+			List<string> _object_packageDownloadUrls = new List<string>();
+			for (int i = 0; i < _ctx.Length("GetPipelineInstanceInfo.Object.PackageDownloadUrls.Length"); i++) {
+				_object_packageDownloadUrls.Add(_ctx.StringValue("GetPipelineInstanceInfo.Object.PackageDownloadUrls["+ i +"]"));
+			}
+			_object.PackageDownloadUrls = _object_packageDownloadUrls;
 			getPipelineInstanceInfoResponse._Object = _object;
         
 			return getPipelineInstanceInfoResponse;

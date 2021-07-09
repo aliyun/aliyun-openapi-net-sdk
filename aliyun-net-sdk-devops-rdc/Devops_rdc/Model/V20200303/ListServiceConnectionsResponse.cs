@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
@@ -27,11 +27,11 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 
 		private string requestId;
 
-		private string errorCode;
-
 		private string errorMessage;
 
 		private bool? success;
+
+		private string errorCode;
 
 		private List<Dictionary<string, string>> _object;
 
@@ -44,18 +44,6 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
 			}
 		}
 
@@ -80,6 +68,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 
