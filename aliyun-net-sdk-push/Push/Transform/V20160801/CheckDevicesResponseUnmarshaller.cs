@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class CheckDevicesResponseUnmarshaller
     {
-        public static CheckDevicesResponse Unmarshall(UnmarshallerContext context)
+        public static CheckDevicesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckDevicesResponse checkDevicesResponse = new CheckDevicesResponse();
 
-			checkDevicesResponse.HttpResponse = context.HttpResponse;
-			checkDevicesResponse.RequestId = context.StringValue("CheckDevices.RequestId");
+			checkDevicesResponse.HttpResponse = _ctx.HttpResponse;
+			checkDevicesResponse.RequestId = _ctx.StringValue("CheckDevices.RequestId");
 
 			List<CheckDevicesResponse.CheckDevices_DeviceCheckInfo> checkDevicesResponse_deviceCheckInfos = new List<CheckDevicesResponse.CheckDevices_DeviceCheckInfo>();
-			for (int i = 0; i < context.Length("CheckDevices.DeviceCheckInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("CheckDevices.DeviceCheckInfos.Length"); i++) {
 				CheckDevicesResponse.CheckDevices_DeviceCheckInfo deviceCheckInfo = new CheckDevicesResponse.CheckDevices_DeviceCheckInfo();
-				deviceCheckInfo.DeviceId = context.StringValue("CheckDevices.DeviceCheckInfos["+ i +"].DeviceId");
-				deviceCheckInfo.Available = context.BooleanValue("CheckDevices.DeviceCheckInfos["+ i +"].Available");
+				deviceCheckInfo.DeviceId = _ctx.StringValue("CheckDevices.DeviceCheckInfos["+ i +"].DeviceId");
+				deviceCheckInfo.Available = _ctx.BooleanValue("CheckDevices.DeviceCheckInfos["+ i +"].Available");
 
 				checkDevicesResponse_deviceCheckInfos.Add(deviceCheckInfo);
 			}

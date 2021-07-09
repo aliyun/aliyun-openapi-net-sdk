@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class ListSummaryAppsResponseUnmarshaller
     {
-        public static ListSummaryAppsResponse Unmarshall(UnmarshallerContext context)
+        public static ListSummaryAppsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListSummaryAppsResponse listSummaryAppsResponse = new ListSummaryAppsResponse();
 
-			listSummaryAppsResponse.HttpResponse = context.HttpResponse;
-			listSummaryAppsResponse.RequestId = context.StringValue("ListSummaryApps.RequestId");
+			listSummaryAppsResponse.HttpResponse = _ctx.HttpResponse;
+			listSummaryAppsResponse.RequestId = _ctx.StringValue("ListSummaryApps.RequestId");
 
 			List<ListSummaryAppsResponse.ListSummaryApps_SummaryAppInfo> listSummaryAppsResponse_summaryAppInfos = new List<ListSummaryAppsResponse.ListSummaryApps_SummaryAppInfo>();
-			for (int i = 0; i < context.Length("ListSummaryApps.SummaryAppInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListSummaryApps.SummaryAppInfos.Length"); i++) {
 				ListSummaryAppsResponse.ListSummaryApps_SummaryAppInfo summaryAppInfo = new ListSummaryAppsResponse.ListSummaryApps_SummaryAppInfo();
-				summaryAppInfo.AppName = context.StringValue("ListSummaryApps.SummaryAppInfos["+ i +"].AppName");
-				summaryAppInfo.AppKey = context.LongValue("ListSummaryApps.SummaryAppInfos["+ i +"].AppKey");
+				summaryAppInfo.AppName = _ctx.StringValue("ListSummaryApps.SummaryAppInfos["+ i +"].AppName");
+				summaryAppInfo.AppKey = _ctx.LongValue("ListSummaryApps.SummaryAppInfos["+ i +"].AppKey");
 
 				listSummaryAppsResponse_summaryAppInfos.Add(summaryAppInfo);
 			}

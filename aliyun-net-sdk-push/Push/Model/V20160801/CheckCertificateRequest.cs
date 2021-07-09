@@ -28,10 +28,10 @@ using Aliyun.Acs.Push.Transform.V20160801;
 
 namespace Aliyun.Acs.Push.Model.V20160801
 {
-    public class QueryUniqueDeviceStatRequest : RpcAcsRequest<QueryUniqueDeviceStatResponse>
+    public class CheckCertificateRequest : RpcAcsRequest<CheckCertificateResponse>
     {
-        public QueryUniqueDeviceStatRequest()
-            : base("Push", "2016-08-01", "QueryUniqueDeviceStat")
+        public CheckCertificateRequest()
+            : base("Push", "2016-08-01", "CheckCertificate")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,52 +41,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			Method = MethodType.POST;
         }
 
-		private string endTime;
-
-		private string startTime;
-
-		private string granularity;
-
 		private long? appKey;
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string Granularity
-		{
-			get
-			{
-				return granularity;
-			}
-			set	
-			{
-				granularity = value;
-				DictionaryUtil.Add(QueryParameters, "Granularity", value);
-			}
-		}
 
 		public long? AppKey
 		{
@@ -101,9 +56,14 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-        public override QueryUniqueDeviceStatResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override CheckCertificateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryUniqueDeviceStatResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CheckCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

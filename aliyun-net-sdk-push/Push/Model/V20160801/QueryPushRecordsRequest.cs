@@ -35,8 +35,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Push.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Push.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -56,6 +56,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		private string target;
 
 		private long? appKey;
+
+		private int? page;
 
 		private string pushType;
 
@@ -160,6 +162,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				appKey = value;
 				DictionaryUtil.Add(QueryParameters, "AppKey", value.ToString());
+			}
+		}
+
+		public int? Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
+				DictionaryUtil.Add(QueryParameters, "Page", value.ToString());
 			}
 		}
 

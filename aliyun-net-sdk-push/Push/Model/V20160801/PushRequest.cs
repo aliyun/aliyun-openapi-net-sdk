@@ -35,8 +35,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Push.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Push.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -91,6 +91,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string iOSSubtitle;
 
+		private string androidXiaomiBigPictureUrl;
+
 		private bool? iOSRemind;
 
 		private string androidMusic;
@@ -103,6 +105,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private int? iOSBadge;
 
+		private string androidBigBody;
+
 		private bool? iOSBadgeAutoIncrement;
 
 		private string androidOpenType;
@@ -110,6 +114,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		private string title;
 
 		private int? smsDelaySecs;
+
+		private int? androidRenderStyle;
 
 		private string iOSExtParameters;
 
@@ -120,6 +126,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		private bool? iOSSilentNotification;
 
 		private string target;
+
+		private string androidBigTitle;
 
 		private string androidNotificationChannel;
 
@@ -464,6 +472,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public string AndroidXiaomiBigPictureUrl
+		{
+			get
+			{
+				return androidXiaomiBigPictureUrl;
+			}
+			set	
+			{
+				androidXiaomiBigPictureUrl = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidXiaomiBigPictureUrl", value);
+			}
+		}
+
 		public bool? IOSRemind
 		{
 			get
@@ -542,6 +563,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public string AndroidBigBody
+		{
+			get
+			{
+				return androidBigBody;
+			}
+			set	
+			{
+				androidBigBody = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidBigBody", value);
+			}
+		}
+
 		public bool? IOSBadgeAutoIncrement
 		{
 			get
@@ -591,6 +625,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				smsDelaySecs = value;
 				DictionaryUtil.Add(QueryParameters, "SmsDelaySecs", value.ToString());
+			}
+		}
+
+		public int? AndroidRenderStyle
+		{
+			get
+			{
+				return androidRenderStyle;
+			}
+			set	
+			{
+				androidRenderStyle = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidRenderStyle", value.ToString());
 			}
 		}
 
@@ -656,6 +703,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				target = value;
 				DictionaryUtil.Add(QueryParameters, "Target", value);
+			}
+		}
+
+		public string AndroidBigTitle
+		{
+			get
+			{
+				return androidBigTitle;
+			}
+			set	
+			{
+				androidBigTitle = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidBigTitle", value);
 			}
 		}
 

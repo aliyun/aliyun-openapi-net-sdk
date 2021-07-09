@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class QueryDeviceCountResponseUnmarshaller
     {
-        public static QueryDeviceCountResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDeviceCountResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDeviceCountResponse queryDeviceCountResponse = new QueryDeviceCountResponse();
 
-			queryDeviceCountResponse.HttpResponse = context.HttpResponse;
-			queryDeviceCountResponse.RequestId = context.StringValue("QueryDeviceCount.RequestId");
-			queryDeviceCountResponse.DeviceCount = context.LongValue("QueryDeviceCount.DeviceCount");
+			queryDeviceCountResponse.HttpResponse = _ctx.HttpResponse;
+			queryDeviceCountResponse.RequestId = _ctx.StringValue("QueryDeviceCount.RequestId");
+			queryDeviceCountResponse.DeviceCount = _ctx.LongValue("QueryDeviceCount.DeviceCount");
         
 			return queryDeviceCountResponse;
         }

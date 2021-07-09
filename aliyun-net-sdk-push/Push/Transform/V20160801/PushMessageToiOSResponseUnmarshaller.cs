@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class PushMessageToiOSResponseUnmarshaller
     {
-        public static PushMessageToiOSResponse Unmarshall(UnmarshallerContext context)
+        public static PushMessageToiOSResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PushMessageToiOSResponse pushMessageToiOSResponse = new PushMessageToiOSResponse();
 
-			pushMessageToiOSResponse.HttpResponse = context.HttpResponse;
-			pushMessageToiOSResponse.RequestId = context.StringValue("PushMessageToiOS.RequestId");
-			pushMessageToiOSResponse.MessageId = context.StringValue("PushMessageToiOS.MessageId");
+			pushMessageToiOSResponse.HttpResponse = _ctx.HttpResponse;
+			pushMessageToiOSResponse.RequestId = _ctx.StringValue("PushMessageToiOS.RequestId");
+			pushMessageToiOSResponse.MessageId = _ctx.StringValue("PushMessageToiOS.MessageId");
         
 			return pushMessageToiOSResponse;
         }

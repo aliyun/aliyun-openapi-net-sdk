@@ -26,28 +26,30 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class QueryPushRecordsResponseUnmarshaller
     {
-        public static QueryPushRecordsResponse Unmarshall(UnmarshallerContext context)
+        public static QueryPushRecordsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryPushRecordsResponse queryPushRecordsResponse = new QueryPushRecordsResponse();
 
-			queryPushRecordsResponse.HttpResponse = context.HttpResponse;
-			queryPushRecordsResponse.RequestId = context.StringValue("QueryPushRecords.RequestId");
-			queryPushRecordsResponse.NextToken = context.StringValue("QueryPushRecords.NextToken");
-			queryPushRecordsResponse.PageSize = context.IntegerValue("QueryPushRecords.PageSize");
+			queryPushRecordsResponse.HttpResponse = _ctx.HttpResponse;
+			queryPushRecordsResponse.RequestId = _ctx.StringValue("QueryPushRecords.RequestId");
+			queryPushRecordsResponse.NextToken = _ctx.StringValue("QueryPushRecords.NextToken");
+			queryPushRecordsResponse.PageSize = _ctx.IntegerValue("QueryPushRecords.PageSize");
+			queryPushRecordsResponse.Page = _ctx.IntegerValue("QueryPushRecords.Page");
+			queryPushRecordsResponse.Total = _ctx.IntegerValue("QueryPushRecords.Total");
 
 			List<QueryPushRecordsResponse.QueryPushRecords_PushInfo> queryPushRecordsResponse_pushInfos = new List<QueryPushRecordsResponse.QueryPushRecords_PushInfo>();
-			for (int i = 0; i < context.Length("QueryPushRecords.PushInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryPushRecords.PushInfos.Length"); i++) {
 				QueryPushRecordsResponse.QueryPushRecords_PushInfo pushInfo = new QueryPushRecordsResponse.QueryPushRecords_PushInfo();
-				pushInfo.AppKey = context.LongValue("QueryPushRecords.PushInfos["+ i +"].AppKey");
-				pushInfo.MessageId = context.StringValue("QueryPushRecords.PushInfos["+ i +"].MessageId");
-				pushInfo.PushType = context.StringValue("QueryPushRecords.PushInfos["+ i +"].PushType");
-				pushInfo.DeviceType = context.StringValue("QueryPushRecords.PushInfos["+ i +"].DeviceType");
-				pushInfo.Target = context.StringValue("QueryPushRecords.PushInfos["+ i +"].Target");
-				pushInfo.Source = context.StringValue("QueryPushRecords.PushInfos["+ i +"].Source");
-				pushInfo.PushTime = context.StringValue("QueryPushRecords.PushInfos["+ i +"].PushTime");
-				pushInfo.Title = context.StringValue("QueryPushRecords.PushInfos["+ i +"].Title");
-				pushInfo.Body = context.StringValue("QueryPushRecords.PushInfos["+ i +"].Body");
-				pushInfo.Status = context.StringValue("QueryPushRecords.PushInfos["+ i +"].Status");
+				pushInfo.AppKey = _ctx.LongValue("QueryPushRecords.PushInfos["+ i +"].AppKey");
+				pushInfo.MessageId = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].MessageId");
+				pushInfo.PushType = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].PushType");
+				pushInfo.DeviceType = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].DeviceType");
+				pushInfo.Target = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].Target");
+				pushInfo.Source = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].Source");
+				pushInfo.PushTime = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].PushTime");
+				pushInfo.Title = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].Title");
+				pushInfo.Body = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].Body");
+				pushInfo.Status = _ctx.StringValue("QueryPushRecords.PushInfos["+ i +"].Status");
 
 				queryPushRecordsResponse_pushInfos.Add(pushInfo);
 			}

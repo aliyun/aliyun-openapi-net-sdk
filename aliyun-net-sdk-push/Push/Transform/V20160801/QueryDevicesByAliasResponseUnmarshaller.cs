@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class QueryDevicesByAliasResponseUnmarshaller
     {
-        public static QueryDevicesByAliasResponse Unmarshall(UnmarshallerContext context)
+        public static QueryDevicesByAliasResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryDevicesByAliasResponse queryDevicesByAliasResponse = new QueryDevicesByAliasResponse();
 
-			queryDevicesByAliasResponse.HttpResponse = context.HttpResponse;
-			queryDevicesByAliasResponse.RequestId = context.StringValue("QueryDevicesByAlias.RequestId");
+			queryDevicesByAliasResponse.HttpResponse = _ctx.HttpResponse;
+			queryDevicesByAliasResponse.RequestId = _ctx.StringValue("QueryDevicesByAlias.RequestId");
 
 			List<string> queryDevicesByAliasResponse_deviceIds = new List<string>();
-			for (int i = 0; i < context.Length("QueryDevicesByAlias.DeviceIds.Length"); i++) {
-				queryDevicesByAliasResponse_deviceIds.Add(context.StringValue("QueryDevicesByAlias.DeviceIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("QueryDevicesByAlias.DeviceIds.Length"); i++) {
+				queryDevicesByAliasResponse_deviceIds.Add(_ctx.StringValue("QueryDevicesByAlias.DeviceIds["+ i +"]"));
 			}
 			queryDevicesByAliasResponse.DeviceIds = queryDevicesByAliasResponse_deviceIds;
         

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class CancelPushResponseUnmarshaller
     {
-        public static CancelPushResponse Unmarshall(UnmarshallerContext context)
+        public static CancelPushResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CancelPushResponse cancelPushResponse = new CancelPushResponse();
 
-			cancelPushResponse.HttpResponse = context.HttpResponse;
-			cancelPushResponse.RequestId = context.StringValue("CancelPush.RequestId");
+			cancelPushResponse.HttpResponse = _ctx.HttpResponse;
+			cancelPushResponse.RequestId = _ctx.StringValue("CancelPush.RequestId");
         
 			return cancelPushResponse;
         }

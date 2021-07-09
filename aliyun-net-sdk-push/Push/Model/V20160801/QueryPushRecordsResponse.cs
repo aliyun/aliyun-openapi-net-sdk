@@ -31,6 +31,10 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private int? pageSize;
 
+		private int? page;
+
+		private int? total;
+
 		private List<QueryPushRecords_PushInfo> pushInfos;
 
 		public string RequestId
@@ -66,6 +70,30 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public int? Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
+			}
+		}
+
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 

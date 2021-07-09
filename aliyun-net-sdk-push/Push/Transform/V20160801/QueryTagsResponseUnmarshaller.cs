@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class QueryTagsResponseUnmarshaller
     {
-        public static QueryTagsResponse Unmarshall(UnmarshallerContext context)
+        public static QueryTagsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryTagsResponse queryTagsResponse = new QueryTagsResponse();
 
-			queryTagsResponse.HttpResponse = context.HttpResponse;
-			queryTagsResponse.RequestId = context.StringValue("QueryTags.RequestId");
+			queryTagsResponse.HttpResponse = _ctx.HttpResponse;
+			queryTagsResponse.RequestId = _ctx.StringValue("QueryTags.RequestId");
 
 			List<QueryTagsResponse.QueryTags_TagInfo> queryTagsResponse_tagInfos = new List<QueryTagsResponse.QueryTags_TagInfo>();
-			for (int i = 0; i < context.Length("QueryTags.TagInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryTags.TagInfos.Length"); i++) {
 				QueryTagsResponse.QueryTags_TagInfo tagInfo = new QueryTagsResponse.QueryTags_TagInfo();
-				tagInfo.TagName = context.StringValue("QueryTags.TagInfos["+ i +"].TagName");
+				tagInfo.TagName = _ctx.StringValue("QueryTags.TagInfos["+ i +"].TagName");
 
 				queryTagsResponse_tagInfos.Add(tagInfo);
 			}

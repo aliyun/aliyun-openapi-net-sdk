@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class QueryUniqueDeviceStatResponseUnmarshaller
     {
-        public static QueryUniqueDeviceStatResponse Unmarshall(UnmarshallerContext context)
+        public static QueryUniqueDeviceStatResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryUniqueDeviceStatResponse queryUniqueDeviceStatResponse = new QueryUniqueDeviceStatResponse();
 
-			queryUniqueDeviceStatResponse.HttpResponse = context.HttpResponse;
-			queryUniqueDeviceStatResponse.RequestId = context.StringValue("QueryUniqueDeviceStat.RequestId");
+			queryUniqueDeviceStatResponse.HttpResponse = _ctx.HttpResponse;
+			queryUniqueDeviceStatResponse.RequestId = _ctx.StringValue("QueryUniqueDeviceStat.RequestId");
 
 			List<QueryUniqueDeviceStatResponse.QueryUniqueDeviceStat_AppDeviceStat> queryUniqueDeviceStatResponse_appDeviceStats = new List<QueryUniqueDeviceStatResponse.QueryUniqueDeviceStat_AppDeviceStat>();
-			for (int i = 0; i < context.Length("QueryUniqueDeviceStat.AppDeviceStats.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryUniqueDeviceStat.AppDeviceStats.Length"); i++) {
 				QueryUniqueDeviceStatResponse.QueryUniqueDeviceStat_AppDeviceStat appDeviceStat = new QueryUniqueDeviceStatResponse.QueryUniqueDeviceStat_AppDeviceStat();
-				appDeviceStat.Time = context.StringValue("QueryUniqueDeviceStat.AppDeviceStats["+ i +"].Time");
-				appDeviceStat.Count = context.LongValue("QueryUniqueDeviceStat.AppDeviceStats["+ i +"].Count");
+				appDeviceStat.Time = _ctx.StringValue("QueryUniqueDeviceStat.AppDeviceStats["+ i +"].Time");
+				appDeviceStat.Count = _ctx.LongValue("QueryUniqueDeviceStat.AppDeviceStats["+ i +"].Count");
 
 				queryUniqueDeviceStatResponse_appDeviceStats.Add(appDeviceStat);
 			}

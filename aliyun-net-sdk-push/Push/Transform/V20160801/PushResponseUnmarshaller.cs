@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 {
     public class PushResponseUnmarshaller
     {
-        public static PushResponse Unmarshall(UnmarshallerContext context)
+        public static PushResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PushResponse pushResponse = new PushResponse();
 
-			pushResponse.HttpResponse = context.HttpResponse;
-			pushResponse.RequestId = context.StringValue("Push.RequestId");
-			pushResponse.MessageId = context.StringValue("Push.MessageId");
+			pushResponse.HttpResponse = _ctx.HttpResponse;
+			pushResponse.RequestId = _ctx.StringValue("Push.RequestId");
+			pushResponse.MessageId = _ctx.StringValue("Push.MessageId");
         
 			return pushResponse;
         }

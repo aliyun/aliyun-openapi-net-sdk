@@ -35,8 +35,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Push.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Push.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -60,6 +60,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationBarType", pushTasks[i].AndroidNotificationBarType);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidExtParameters", pushTasks[i].AndroidExtParameters);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSBadge", pushTasks[i].IOSBadge);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidBigBody", pushTasks[i].AndroidBigBody);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSBadgeAutoIncrement", pushTasks[i].IOSBadgeAutoIncrement);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidOpenType", pushTasks[i].AndroidOpenType);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".Title", pushTasks[i].Title);
@@ -70,6 +71,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationHuaweiChannel", pushTasks[i].AndroidNotificationHuaweiChannel);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidPopupActivity", pushTasks[i].AndroidPopupActivity);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSRemindBody", pushTasks[i].IOSRemindBody);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidRenderStyle", pushTasks[i].AndroidRenderStyle);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSExtParameters", pushTasks[i].IOSExtParameters);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotifyType", pushTasks[i].AndroidNotifyType);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidPopupTitle", pushTasks[i].AndroidPopupTitle);
@@ -86,12 +88,14 @@ namespace Aliyun.Acs.Push.Model.V20160801
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSSilentNotification", pushTasks[i].IOSSilentNotification);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".JobKey", pushTasks[i].JobKey);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".Target", pushTasks[i].Target);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidBigTitle", pushTasks[i].AndroidBigTitle);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidOpenUrl", pushTasks[i].AndroidOpenUrl);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationChannel", pushTasks[i].AndroidNotificationChannel);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidRemind", pushTasks[i].AndroidRemind);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidActivity", pushTasks[i].AndroidActivity);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidXiaoMiNotifyBody", pushTasks[i].AndroidXiaoMiNotifyBody);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSSubtitle", pushTasks[i].IOSSubtitle);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidXiaomiBigPictureUrl", pushTasks[i].AndroidXiaomiBigPictureUrl);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSRemind", pushTasks[i].IOSRemind);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationNotifyId", pushTasks[i].AndroidNotificationNotifyId);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".TargetValue", pushTasks[i].TargetValue);
@@ -126,6 +130,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private int? iOSBadge;
 
+			private string androidBigBody;
+
 			private bool? iOSBadgeAutoIncrement;
 
 			private string androidOpenType;
@@ -145,6 +151,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private string androidPopupActivity;
 
 			private string iOSRemindBody;
+
+			private string androidRenderStyle;
 
 			private string iOSExtParameters;
 
@@ -178,6 +186,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string target;
 
+			private string androidBigTitle;
+
 			private string androidOpenUrl;
 
 			private string androidNotificationChannel;
@@ -189,6 +199,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private string androidXiaoMiNotifyBody;
 
 			private string iOSSubtitle;
+
+			private string androidXiaomiBigPictureUrl;
 
 			private bool? iOSRemind;
 
@@ -239,6 +251,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					iOSBadge = value;
+				}
+			}
+
+			public string AndroidBigBody
+			{
+				get
+				{
+					return androidBigBody;
+				}
+				set	
+				{
+					androidBigBody = value;
 				}
 			}
 
@@ -359,6 +383,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					iOSRemindBody = value;
+				}
+			}
+
+			public string AndroidRenderStyle
+			{
+				get
+				{
+					return androidRenderStyle;
+				}
+				set	
+				{
+					androidRenderStyle = value;
 				}
 			}
 
@@ -554,6 +590,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public string AndroidBigTitle
+			{
+				get
+				{
+					return androidBigTitle;
+				}
+				set	
+				{
+					androidBigTitle = value;
+				}
+			}
+
 			public string AndroidOpenUrl
 			{
 				get
@@ -623,6 +671,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					iOSSubtitle = value;
+				}
+			}
+
+			public string AndroidXiaomiBigPictureUrl
+			{
+				get
+				{
+					return androidXiaomiBigPictureUrl;
+				}
+				set	
+				{
+					androidXiaomiBigPictureUrl = value;
 				}
 			}
 
