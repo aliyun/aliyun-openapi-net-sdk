@@ -72,6 +72,10 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private long? fileId;
 
+			private string status;
+
+			private string message;
+
 			public long? FileId
 			{
 				get
@@ -81,6 +85,30 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					fileId = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string Message
+			{
+				get
+				{
+					return message;
+				}
+				set	
+				{
+					message = value;
 				}
 			}
 		}

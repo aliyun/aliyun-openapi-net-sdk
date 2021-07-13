@@ -36,6 +36,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 
 			CreateDISyncTaskResponse.CreateDISyncTask_Data data = new CreateDISyncTaskResponse.CreateDISyncTask_Data();
 			data.FileId = _ctx.LongValue("CreateDISyncTask.Data.FileId");
+			data.Status = _ctx.StringValue("CreateDISyncTask.Data.Status");
+			data.Message = _ctx.StringValue("CreateDISyncTask.Data.Message");
 			createDISyncTaskResponse.Data = data;
         
 			return createDISyncTaskResponse;
