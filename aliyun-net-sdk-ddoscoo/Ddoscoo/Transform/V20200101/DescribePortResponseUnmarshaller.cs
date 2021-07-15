@@ -31,17 +31,17 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribePortResponse describePortResponse = new DescribePortResponse();
 
 			describePortResponse.HttpResponse = _ctx.HttpResponse;
-			describePortResponse.RequestId = _ctx.StringValue("DescribePort.RequestId");
 			describePortResponse.TotalCount = _ctx.LongValue("DescribePort.TotalCount");
+			describePortResponse.RequestId = _ctx.StringValue("DescribePort.RequestId");
 
 			List<DescribePortResponse.DescribePort_NetworkRule> describePortResponse_networkRules = new List<DescribePortResponse.DescribePort_NetworkRule>();
 			for (int i = 0; i < _ctx.Length("DescribePort.NetworkRules.Length"); i++) {
 				DescribePortResponse.DescribePort_NetworkRule networkRule = new DescribePortResponse.DescribePort_NetworkRule();
-				networkRule.InstanceId = _ctx.StringValue("DescribePort.NetworkRules["+ i +"].InstanceId");
-				networkRule.FrontendProtocol = _ctx.StringValue("DescribePort.NetworkRules["+ i +"].FrontendProtocol");
 				networkRule.FrontendPort = _ctx.IntegerValue("DescribePort.NetworkRules["+ i +"].FrontendPort");
-				networkRule.BackendPort = _ctx.IntegerValue("DescribePort.NetworkRules["+ i +"].BackendPort");
 				networkRule.IsAutoCreate = _ctx.BooleanValue("DescribePort.NetworkRules["+ i +"].IsAutoCreate");
+				networkRule.FrontendProtocol = _ctx.StringValue("DescribePort.NetworkRules["+ i +"].FrontendProtocol");
+				networkRule.InstanceId = _ctx.StringValue("DescribePort.NetworkRules["+ i +"].InstanceId");
+				networkRule.BackendPort = _ctx.IntegerValue("DescribePort.NetworkRules["+ i +"].BackendPort");
 
 				List<string> networkRule_realServers = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribePort.NetworkRules["+ i +"].RealServers.Length"); j++) {

@@ -46,6 +46,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 				instance.Edition = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].Edition");
 				instance.Enabled = _ctx.IntegerValue("DescribeInstances.Instances["+ i +"].Enabled");
 				instance.ConnInstanceId = _ctx.StringValue("DescribeInstances.Instances["+ i +"].ConnInstanceId");
+				instance.IpVersion = _ctx.StringValue("DescribeInstances.Instances["+ i +"].IpVersion");
+				instance.IpMode = _ctx.StringValue("DescribeInstances.Instances["+ i +"].IpMode");
 
 				describeInstancesResponse_instances.Add(instance);
 			}

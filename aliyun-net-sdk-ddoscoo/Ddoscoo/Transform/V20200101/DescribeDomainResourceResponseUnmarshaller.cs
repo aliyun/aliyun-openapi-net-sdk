@@ -31,42 +31,30 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			DescribeDomainResourceResponse describeDomainResourceResponse = new DescribeDomainResourceResponse();
 
 			describeDomainResourceResponse.HttpResponse = _ctx.HttpResponse;
-			describeDomainResourceResponse.RequestId = _ctx.StringValue("DescribeDomainResource.RequestId");
 			describeDomainResourceResponse.TotalCount = _ctx.LongValue("DescribeDomainResource.TotalCount");
+			describeDomainResourceResponse.RequestId = _ctx.StringValue("DescribeDomainResource.RequestId");
 
 			List<DescribeDomainResourceResponse.DescribeDomainResource_WebRule> describeDomainResourceResponse_webRules = new List<DescribeDomainResourceResponse.DescribeDomainResource_WebRule>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainResource.WebRules.Length"); i++) {
 				DescribeDomainResourceResponse.DescribeDomainResource_WebRule webRule = new DescribeDomainResourceResponse.DescribeDomainResource_WebRule();
 				webRule.Domain = _ctx.StringValue("DescribeDomainResource.WebRules["+ i +"].Domain");
-				webRule.RsType = _ctx.IntegerValue("DescribeDomainResource.WebRules["+ i +"].RsType");
-				webRule.CcEnabled = _ctx.BooleanValue("DescribeDomainResource.WebRules["+ i +"].CcEnabled");
-				webRule.CcRuleEnabled = _ctx.BooleanValue("DescribeDomainResource.WebRules["+ i +"].CcRuleEnabled");
-				webRule.CcTemplate = _ctx.StringValue("DescribeDomainResource.WebRules["+ i +"].CcTemplate");
-				webRule.SslProtocols = _ctx.StringValue("DescribeDomainResource.WebRules["+ i +"].SslProtocols");
-				webRule.SslCiphers = _ctx.StringValue("DescribeDomainResource.WebRules["+ i +"].SslCiphers");
-				webRule.Http2Enable = _ctx.BooleanValue("DescribeDomainResource.WebRules["+ i +"].Http2Enable");
 				webRule.Http2HttpsEnable = _ctx.BooleanValue("DescribeDomainResource.WebRules["+ i +"].Http2HttpsEnable");
-				webRule.Https2HttpEnable = _ctx.BooleanValue("DescribeDomainResource.WebRules["+ i +"].Https2HttpEnable");
-				webRule.PolicyMode = _ctx.StringValue("DescribeDomainResource.WebRules["+ i +"].PolicyMode");
-				webRule.ProxyEnabled = _ctx.BooleanValue("DescribeDomainResource.WebRules["+ i +"].ProxyEnabled");
-				webRule.Ssl13Enabled = _ctx.BooleanValue("DescribeDomainResource.WebRules["+ i +"].Ssl13Enabled");
-				webRule.PunishStatus = _ctx.BooleanValue("DescribeDomainResource.WebRules["+ i +"].PunishStatus");
+				webRule.SslProtocols = _ctx.StringValue("DescribeDomainResource.WebRules["+ i +"].SslProtocols");
 				webRule.PunishReason = _ctx.IntegerValue("DescribeDomainResource.WebRules["+ i +"].PunishReason");
-				webRule.Cname = _ctx.StringValue("DescribeDomainResource.WebRules["+ i +"].Cname");
+				webRule.CcTemplate = _ctx.StringValue("DescribeDomainResource.WebRules["+ i +"].CcTemplate");
+				webRule.CcEnabled = _ctx.BooleanValue("DescribeDomainResource.WebRules["+ i +"].CcEnabled");
+				webRule.SslCiphers = _ctx.StringValue("DescribeDomainResource.WebRules["+ i +"].SslCiphers");
+				webRule.Ssl13Enabled = _ctx.BooleanValue("DescribeDomainResource.WebRules["+ i +"].Ssl13Enabled");
+				webRule.CcRuleEnabled = _ctx.BooleanValue("DescribeDomainResource.WebRules["+ i +"].CcRuleEnabled");
+				webRule.PunishStatus = _ctx.BooleanValue("DescribeDomainResource.WebRules["+ i +"].PunishStatus");
+				webRule.RsType = _ctx.IntegerValue("DescribeDomainResource.WebRules["+ i +"].RsType");
+				webRule.ProxyEnabled = _ctx.BooleanValue("DescribeDomainResource.WebRules["+ i +"].ProxyEnabled");
 				webRule.CertName = _ctx.StringValue("DescribeDomainResource.WebRules["+ i +"].CertName");
+				webRule.PolicyMode = _ctx.StringValue("DescribeDomainResource.WebRules["+ i +"].PolicyMode");
+				webRule.Cname = _ctx.StringValue("DescribeDomainResource.WebRules["+ i +"].Cname");
+				webRule.Http2Enable = _ctx.BooleanValue("DescribeDomainResource.WebRules["+ i +"].Http2Enable");
+				webRule.Https2HttpEnable = _ctx.BooleanValue("DescribeDomainResource.WebRules["+ i +"].Https2HttpEnable");
 				webRule.HttpsExt = _ctx.StringValue("DescribeDomainResource.WebRules["+ i +"].HttpsExt");
-
-				List<string> webRule_realServers = new List<string>();
-				for (int j = 0; j < _ctx.Length("DescribeDomainResource.WebRules["+ i +"].RealServers.Length"); j++) {
-					webRule_realServers.Add(_ctx.StringValue("DescribeDomainResource.WebRules["+ i +"].RealServers["+ j +"]"));
-				}
-				webRule.RealServers = webRule_realServers;
-
-				List<string> webRule_whiteList = new List<string>();
-				for (int j = 0; j < _ctx.Length("DescribeDomainResource.WebRules["+ i +"].WhiteList.Length"); j++) {
-					webRule_whiteList.Add(_ctx.StringValue("DescribeDomainResource.WebRules["+ i +"].WhiteList["+ j +"]"));
-				}
-				webRule.WhiteList = webRule_whiteList;
 
 				List<string> webRule_blackList = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeDomainResource.WebRules["+ i +"].BlackList.Length"); j++) {
@@ -74,11 +62,23 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 				}
 				webRule.BlackList = webRule_blackList;
 
+				List<string> webRule_whiteList = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeDomainResource.WebRules["+ i +"].WhiteList.Length"); j++) {
+					webRule_whiteList.Add(_ctx.StringValue("DescribeDomainResource.WebRules["+ i +"].WhiteList["+ j +"]"));
+				}
+				webRule.WhiteList = webRule_whiteList;
+
 				List<string> webRule_customCiphers = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeDomainResource.WebRules["+ i +"].CustomCiphers.Length"); j++) {
 					webRule_customCiphers.Add(_ctx.StringValue("DescribeDomainResource.WebRules["+ i +"].CustomCiphers["+ j +"]"));
 				}
 				webRule.CustomCiphers = webRule_customCiphers;
+
+				List<string> webRule_realServers = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeDomainResource.WebRules["+ i +"].RealServers.Length"); j++) {
+					webRule_realServers.Add(_ctx.StringValue("DescribeDomainResource.WebRules["+ i +"].RealServers["+ j +"]"));
+				}
+				webRule.RealServers = webRule_realServers;
 
 				List<string> webRule_instanceIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeDomainResource.WebRules["+ i +"].InstanceIds.Length"); j++) {

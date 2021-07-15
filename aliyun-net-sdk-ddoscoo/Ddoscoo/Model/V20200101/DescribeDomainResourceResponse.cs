@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribeDomainResourceResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? totalCount;
 
-		private List<DescribeDomainResource_WebRule> webRules;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDomainResource_WebRule> webRules;
 
 		public long? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -72,49 +72,49 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 			private string domain;
 
-			private int? rsType;
-
-			private bool? ccEnabled;
-
-			private bool? ccRuleEnabled;
-
-			private string ccTemplate;
+			private bool? http2HttpsEnable;
 
 			private string sslProtocols;
 
+			private int? punishReason;
+
+			private string ccTemplate;
+
+			private bool? ccEnabled;
+
 			private string sslCiphers;
-
-			private bool? http2Enable;
-
-			private bool? http2HttpsEnable;
-
-			private bool? https2HttpEnable;
-
-			private string policyMode;
-
-			private bool? proxyEnabled;
 
 			private bool? ssl13Enabled;
 
+			private bool? ccRuleEnabled;
+
 			private bool? punishStatus;
 
-			private int? punishReason;
+			private int? rsType;
+
+			private bool? proxyEnabled;
+
+			private string certName;
+
+			private string policyMode;
 
 			private string cname;
 
-			private string certName;
+			private bool? http2Enable;
+
+			private bool? https2HttpEnable;
 
 			private string httpsExt;
 
 			private List<DescribeDomainResource_ProxyConfig> proxyTypes;
 
-			private List<string> realServers;
+			private List<string> blackList;
 
 			private List<string> whiteList;
 
-			private List<string> blackList;
-
 			private List<string> customCiphers;
+
+			private List<string> realServers;
 
 			private List<string> instanceIds;
 
@@ -130,51 +130,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public int? RsType
+			public bool? Http2HttpsEnable
 			{
 				get
 				{
-					return rsType;
+					return http2HttpsEnable;
 				}
 				set	
 				{
-					rsType = value;
-				}
-			}
-
-			public bool? CcEnabled
-			{
-				get
-				{
-					return ccEnabled;
-				}
-				set	
-				{
-					ccEnabled = value;
-				}
-			}
-
-			public bool? CcRuleEnabled
-			{
-				get
-				{
-					return ccRuleEnabled;
-				}
-				set	
-				{
-					ccRuleEnabled = value;
-				}
-			}
-
-			public string CcTemplate
-			{
-				get
-				{
-					return ccTemplate;
-				}
-				set	
-				{
-					ccTemplate = value;
+					http2HttpsEnable = value;
 				}
 			}
 
@@ -190,6 +154,42 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
+			public int? PunishReason
+			{
+				get
+				{
+					return punishReason;
+				}
+				set	
+				{
+					punishReason = value;
+				}
+			}
+
+			public string CcTemplate
+			{
+				get
+				{
+					return ccTemplate;
+				}
+				set	
+				{
+					ccTemplate = value;
+				}
+			}
+
+			public bool? CcEnabled
+			{
+				get
+				{
+					return ccEnabled;
+				}
+				set	
+				{
+					ccEnabled = value;
+				}
+			}
+
 			public string SslCiphers
 			{
 				get
@@ -199,66 +199,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					sslCiphers = value;
-				}
-			}
-
-			public bool? Http2Enable
-			{
-				get
-				{
-					return http2Enable;
-				}
-				set	
-				{
-					http2Enable = value;
-				}
-			}
-
-			public bool? Http2HttpsEnable
-			{
-				get
-				{
-					return http2HttpsEnable;
-				}
-				set	
-				{
-					http2HttpsEnable = value;
-				}
-			}
-
-			public bool? Https2HttpEnable
-			{
-				get
-				{
-					return https2HttpEnable;
-				}
-				set	
-				{
-					https2HttpEnable = value;
-				}
-			}
-
-			public string PolicyMode
-			{
-				get
-				{
-					return policyMode;
-				}
-				set	
-				{
-					policyMode = value;
-				}
-			}
-
-			public bool? ProxyEnabled
-			{
-				get
-				{
-					return proxyEnabled;
-				}
-				set	
-				{
-					proxyEnabled = value;
 				}
 			}
 
@@ -274,6 +214,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
+			public bool? CcRuleEnabled
+			{
+				get
+				{
+					return ccRuleEnabled;
+				}
+				set	
+				{
+					ccRuleEnabled = value;
+				}
+			}
+
 			public bool? PunishStatus
 			{
 				get
@@ -286,15 +238,51 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public int? PunishReason
+			public int? RsType
 			{
 				get
 				{
-					return punishReason;
+					return rsType;
 				}
 				set	
 				{
-					punishReason = value;
+					rsType = value;
+				}
+			}
+
+			public bool? ProxyEnabled
+			{
+				get
+				{
+					return proxyEnabled;
+				}
+				set	
+				{
+					proxyEnabled = value;
+				}
+			}
+
+			public string CertName
+			{
+				get
+				{
+					return certName;
+				}
+				set	
+				{
+					certName = value;
+				}
+			}
+
+			public string PolicyMode
+			{
+				get
+				{
+					return policyMode;
+				}
+				set	
+				{
+					policyMode = value;
 				}
 			}
 
@@ -310,15 +298,27 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public string CertName
+			public bool? Http2Enable
 			{
 				get
 				{
-					return certName;
+					return http2Enable;
 				}
 				set	
 				{
-					certName = value;
+					http2Enable = value;
+				}
+			}
+
+			public bool? Https2HttpEnable
+			{
+				get
+				{
+					return https2HttpEnable;
+				}
+				set	
+				{
+					https2HttpEnable = value;
 				}
 			}
 
@@ -346,15 +346,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public List<string> RealServers
+			public List<string> BlackList
 			{
 				get
 				{
-					return realServers;
+					return blackList;
 				}
 				set	
 				{
-					realServers = value;
+					blackList = value;
 				}
 			}
 
@@ -370,18 +370,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public List<string> BlackList
-			{
-				get
-				{
-					return blackList;
-				}
-				set	
-				{
-					blackList = value;
-				}
-			}
-
 			public List<string> CustomCiphers
 			{
 				get
@@ -391,6 +379,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					customCiphers = value;
+				}
+			}
+
+			public List<string> RealServers
+			{
+				get
+				{
+					return realServers;
+				}
+				set	
+				{
+					realServers = value;
 				}
 			}
 

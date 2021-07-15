@@ -28,10 +28,10 @@ using Aliyun.Acs.ddoscoo.Transform.V20200101;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
 {
-    public class ConfigWebIpSetRequest : RpcAcsRequest<ConfigWebIpSetResponse>
+    public class DescribeAttackAnalysisMaxQpsRequest : RpcAcsRequest<DescribeAttackAnalysisMaxQpsResponse>
     {
-        public ConfigWebIpSetRequest()
-            : base("ddoscoo", "2020-01-01", "ConfigWebIpSet")
+        public DescribeAttackAnalysisMaxQpsRequest()
+            : base("ddoscoo", "2020-01-01", "DescribeAttackAnalysisMaxQps")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,71 +41,33 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private string resourceGroupId;
+		private long? endTime;
 
-		private List<string> blackLists = new List<string>(){ };
+		private long? startTime;
 
-		private List<string> whiteLists = new List<string>(){ };
-
-		private string domain;
-
-		public string ResourceGroupId
+		public long? EndTime
 		{
 			get
 			{
-				return resourceGroupId;
+				return endTime;
 			}
 			set	
 			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
 			}
 		}
 
-		public List<string> BlackLists
+		public long? StartTime
 		{
 			get
 			{
-				return blackLists;
-			}
-
-			set
-			{
-				blackLists = value;
-				for (int i = 0; i < blackLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"BlackList." + (i + 1) , blackLists[i]);
-				}
-			}
-		}
-
-		public List<string> WhiteLists
-		{
-			get
-			{
-				return whiteLists;
-			}
-
-			set
-			{
-				whiteLists = value;
-				for (int i = 0; i < whiteLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"WhiteList." + (i + 1) , whiteLists[i]);
-				}
-			}
-		}
-
-		public string Domain
-		{
-			get
-			{
-				return domain;
+				return startTime;
 			}
 			set	
 			{
-				domain = value;
-				DictionaryUtil.Add(QueryParameters, "Domain", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
 			}
 		}
 
@@ -114,9 +76,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			return false;
 		}
 
-        public override ConfigWebIpSetResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeAttackAnalysisMaxQpsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ConfigWebIpSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeAttackAnalysisMaxQpsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

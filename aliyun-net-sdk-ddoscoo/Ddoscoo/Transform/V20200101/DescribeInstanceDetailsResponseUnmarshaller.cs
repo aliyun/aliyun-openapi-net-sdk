@@ -44,6 +44,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 					DescribeInstanceDetailsResponse.DescribeInstanceDetails_InstanceDetail.DescribeInstanceDetails_EipInfo eipInfo = new DescribeInstanceDetailsResponse.DescribeInstanceDetails_InstanceDetail.DescribeInstanceDetails_EipInfo();
 					eipInfo.Eip = _ctx.StringValue("DescribeInstanceDetails.InstanceDetails["+ i +"].EipInfos["+ j +"].Eip");
 					eipInfo.Status = _ctx.StringValue("DescribeInstanceDetails.InstanceDetails["+ i +"].EipInfos["+ j +"].Status");
+					eipInfo.IpVersion = _ctx.StringValue("DescribeInstanceDetails.InstanceDetails["+ i +"].EipInfos["+ j +"].IpVersion");
+					eipInfo.IpMode = _ctx.StringValue("DescribeInstanceDetails.InstanceDetails["+ i +"].EipInfos["+ j +"].IpMode");
 
 					instanceDetail_eipInfos.Add(eipInfo);
 				}

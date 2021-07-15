@@ -25,23 +25,11 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 	public class DescribePortResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? totalCount;
 
-		private List<DescribePort_NetworkRule> networkRules;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribePort_NetworkRule> networkRules;
 
 		public long? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,27 +70,39 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 		public class DescribePort_NetworkRule
 		{
 
-			private string instanceId;
-
-			private string frontendProtocol;
-
 			private int? frontendPort;
-
-			private int? backendPort;
 
 			private bool? isAutoCreate;
 
+			private string frontendProtocol;
+
+			private string instanceId;
+
+			private int? backendPort;
+
 			private List<string> realServers;
 
-			public string InstanceId
+			public int? FrontendPort
 			{
 				get
 				{
-					return instanceId;
+					return frontendPort;
 				}
 				set	
 				{
-					instanceId = value;
+					frontendPort = value;
+				}
+			}
+
+			public bool? IsAutoCreate
+			{
+				get
+				{
+					return isAutoCreate;
+				}
+				set	
+				{
+					isAutoCreate = value;
 				}
 			}
 
@@ -106,15 +118,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				}
 			}
 
-			public int? FrontendPort
+			public string InstanceId
 			{
 				get
 				{
-					return frontendPort;
+					return instanceId;
 				}
 				set	
 				{
-					frontendPort = value;
+					instanceId = value;
 				}
 			}
 
@@ -127,18 +139,6 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					backendPort = value;
-				}
-			}
-
-			public bool? IsAutoCreate
-			{
-				get
-				{
-					return isAutoCreate;
-				}
-				set	
-				{
-					isAutoCreate = value;
 				}
 			}
 

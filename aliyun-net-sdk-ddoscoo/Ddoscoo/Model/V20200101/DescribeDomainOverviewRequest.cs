@@ -41,26 +41,13 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private long? endTime;
-
 		private long? startTime;
 
 		private string resourceGroupId;
 
-		private string domain;
+		private long? endTime;
 
-		public long? EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
-			}
-		}
+		private string domain;
 
 		public long? StartTime
 		{
@@ -85,6 +72,19 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			{
 				resourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
 			}
 		}
 

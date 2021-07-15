@@ -88,6 +88,10 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 			private string connInstanceId;
 
+			private string ipVersion;
+
+			private string ipMode;
+
 			public string InstanceId
 			{
 				get
@@ -193,6 +197,30 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					connInstanceId = value;
+				}
+			}
+
+			public string IpVersion
+			{
+				get
+				{
+					return ipVersion;
+				}
+				set	
+				{
+					ipVersion = value;
+				}
+			}
+
+			public string IpMode
+			{
+				get
+				{
+					return ipMode;
+				}
+				set	
+				{
+					ipMode = value;
 				}
 			}
 		}

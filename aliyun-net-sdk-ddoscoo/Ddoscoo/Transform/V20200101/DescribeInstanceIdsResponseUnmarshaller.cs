@@ -39,6 +39,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 				instance.InstanceId = _ctx.StringValue("DescribeInstanceIds.InstanceIds["+ i +"].InstanceId");
 				instance.Remark = _ctx.StringValue("DescribeInstanceIds.InstanceIds["+ i +"].Remark");
 				instance.Edition = _ctx.IntegerValue("DescribeInstanceIds.InstanceIds["+ i +"].Edition");
+				instance.IpVersion = _ctx.StringValue("DescribeInstanceIds.InstanceIds["+ i +"].IpVersion");
+				instance.IpMode = _ctx.StringValue("DescribeInstanceIds.InstanceIds["+ i +"].IpMode");
 
 				describeInstanceIdsResponse_instanceIds.Add(instance);
 			}

@@ -29,6 +29,8 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 		private List<DescribeDomainStatusCodeList_StatusCode> statusCodeList;
 
+		private List<DescribeDomainStatusCodeList_StatusCode> statusCodeList1;
+
 		public string RequestId
 		{
 			get
@@ -50,6 +52,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				statusCodeList = value;
+			}
+		}
+
+		public List<DescribeDomainStatusCodeList_StatusCode> StatusCodeList1
+		{
+			get
+			{
+				return statusCodeList1;
+			}
+			set	
+			{
+				statusCodeList1 = value;
 			}
 		}
 

@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
 {
-	public class DescribeInstanceIdsResponse : AcsResponse
+	public class DescribeAttackAnalysisMaxQpsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeInstanceIds_Instance> instanceIds;
+		private long? qps;
 
 		public string RequestId
 		{
@@ -41,89 +41,15 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			}
 		}
 
-		public List<DescribeInstanceIds_Instance> InstanceIds
+		public long? Qps
 		{
 			get
 			{
-				return instanceIds;
+				return qps;
 			}
 			set	
 			{
-				instanceIds = value;
-			}
-		}
-
-		public class DescribeInstanceIds_Instance
-		{
-
-			private string instanceId;
-
-			private string remark;
-
-			private int? edition;
-
-			private string ipVersion;
-
-			private string ipMode;
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string Remark
-			{
-				get
-				{
-					return remark;
-				}
-				set	
-				{
-					remark = value;
-				}
-			}
-
-			public int? Edition
-			{
-				get
-				{
-					return edition;
-				}
-				set	
-				{
-					edition = value;
-				}
-			}
-
-			public string IpVersion
-			{
-				get
-				{
-					return ipVersion;
-				}
-				set	
-				{
-					ipVersion = value;
-				}
-			}
-
-			public string IpMode
-			{
-				get
-				{
-					return ipMode;
-				}
-				set	
-				{
-					ipMode = value;
-				}
+				qps = value;
 			}
 		}
 	}

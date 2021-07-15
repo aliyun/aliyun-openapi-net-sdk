@@ -51,6 +51,30 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 		private long? status3XX;
 
+		private long? status2XX1;
+
+		private long? status5012;
+
+		private long? status5023;
+
+		private long? status5034;
+
+		private long? status5045;
+
+		private long? status2006;
+
+		private long? status4057;
+
+		private long? status5XX8;
+
+		private long? status4XX9;
+
+		private long? status40310;
+
+		private long? status40411;
+
+		private long? status3XX12;
+
 		public string RequestId
 		{
 			get
@@ -204,6 +228,150 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			set	
 			{
 				status3XX = value;
+			}
+		}
+
+		public long? Status2XX1
+		{
+			get
+			{
+				return status2XX1;
+			}
+			set	
+			{
+				status2XX1 = value;
+			}
+		}
+
+		public long? Status5012
+		{
+			get
+			{
+				return status5012;
+			}
+			set	
+			{
+				status5012 = value;
+			}
+		}
+
+		public long? Status5023
+		{
+			get
+			{
+				return status5023;
+			}
+			set	
+			{
+				status5023 = value;
+			}
+		}
+
+		public long? Status5034
+		{
+			get
+			{
+				return status5034;
+			}
+			set	
+			{
+				status5034 = value;
+			}
+		}
+
+		public long? Status5045
+		{
+			get
+			{
+				return status5045;
+			}
+			set	
+			{
+				status5045 = value;
+			}
+		}
+
+		public long? Status2006
+		{
+			get
+			{
+				return status2006;
+			}
+			set	
+			{
+				status2006 = value;
+			}
+		}
+
+		public long? Status4057
+		{
+			get
+			{
+				return status4057;
+			}
+			set	
+			{
+				status4057 = value;
+			}
+		}
+
+		public long? Status5XX8
+		{
+			get
+			{
+				return status5XX8;
+			}
+			set	
+			{
+				status5XX8 = value;
+			}
+		}
+
+		public long? Status4XX9
+		{
+			get
+			{
+				return status4XX9;
+			}
+			set	
+			{
+				status4XX9 = value;
+			}
+		}
+
+		public long? Status40310
+		{
+			get
+			{
+				return status40310;
+			}
+			set	
+			{
+				status40310 = value;
+			}
+		}
+
+		public long? Status40411
+		{
+			get
+			{
+				return status40411;
+			}
+			set	
+			{
+				status40411 = value;
+			}
+		}
+
+		public long? Status3XX12
+		{
+			get
+			{
+				return status3XX12;
+			}
+			set	
+			{
+				status3XX12 = value;
 			}
 		}
 	}

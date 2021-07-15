@@ -44,6 +44,18 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 			describeDomainStatusCodeCountResponse.Status403 = _ctx.LongValue("DescribeDomainStatusCodeCount.Status403");
 			describeDomainStatusCodeCountResponse.Status404 = _ctx.LongValue("DescribeDomainStatusCodeCount.Status404");
 			describeDomainStatusCodeCountResponse.Status3XX = _ctx.LongValue("DescribeDomainStatusCodeCount.Status3XX");
+			describeDomainStatusCodeCountResponse.Status2XX1 = _ctx.LongValue("DescribeDomainStatusCodeCount.Status2XX");
+			describeDomainStatusCodeCountResponse.Status5012 = _ctx.LongValue("DescribeDomainStatusCodeCount.Status501");
+			describeDomainStatusCodeCountResponse.Status5023 = _ctx.LongValue("DescribeDomainStatusCodeCount.Status502");
+			describeDomainStatusCodeCountResponse.Status5034 = _ctx.LongValue("DescribeDomainStatusCodeCount.Status503");
+			describeDomainStatusCodeCountResponse.Status5045 = _ctx.LongValue("DescribeDomainStatusCodeCount.Status504");
+			describeDomainStatusCodeCountResponse.Status2006 = _ctx.LongValue("DescribeDomainStatusCodeCount.Status200");
+			describeDomainStatusCodeCountResponse.Status4057 = _ctx.LongValue("DescribeDomainStatusCodeCount.Status405");
+			describeDomainStatusCodeCountResponse.Status5XX8 = _ctx.LongValue("DescribeDomainStatusCodeCount.Status5XX");
+			describeDomainStatusCodeCountResponse.Status4XX9 = _ctx.LongValue("DescribeDomainStatusCodeCount.Status4XX");
+			describeDomainStatusCodeCountResponse.Status40310 = _ctx.LongValue("DescribeDomainStatusCodeCount.Status403");
+			describeDomainStatusCodeCountResponse.Status40411 = _ctx.LongValue("DescribeDomainStatusCodeCount.Status404");
+			describeDomainStatusCodeCountResponse.Status3XX12 = _ctx.LongValue("DescribeDomainStatusCodeCount.Status3XX");
         
 			return describeDomainStatusCodeCountResponse;
         }

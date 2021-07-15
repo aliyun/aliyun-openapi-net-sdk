@@ -105,6 +105,10 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 				private string status;
 
+				private string ipVersion;
+
+				private string ipMode;
+
 				public string Eip
 				{
 					get
@@ -126,6 +130,30 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public string IpVersion
+				{
+					get
+					{
+						return ipVersion;
+					}
+					set	
+					{
+						ipVersion = value;
+					}
+				}
+
+				public string IpMode
+				{
+					get
+					{
+						return ipMode;
+					}
+					set	
+					{
+						ipMode = value;
 					}
 				}
 			}
