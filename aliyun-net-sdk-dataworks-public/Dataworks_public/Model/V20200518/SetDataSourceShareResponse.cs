@@ -72,6 +72,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private string status;
 
+			private string message;
+
 			public string Status
 			{
 				get
@@ -81,6 +83,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string Message
+			{
+				get
+				{
+					return message;
+				}
+				set	
+				{
+					message = value;
 				}
 			}
 		}

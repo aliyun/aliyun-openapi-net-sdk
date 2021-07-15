@@ -36,6 +36,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 
 			SetDataSourceShareResponse.SetDataSourceShare_Data data = new SetDataSourceShareResponse.SetDataSourceShare_Data();
 			data.Status = _ctx.StringValue("SetDataSourceShare.Data.Status");
+			data.Message = _ctx.StringValue("SetDataSourceShare.Data.Message");
 			setDataSourceShareResponse.Data = data;
         
 			return setDataSourceShareResponse;
