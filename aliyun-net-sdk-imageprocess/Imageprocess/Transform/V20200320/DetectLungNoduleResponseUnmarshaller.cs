@@ -38,8 +38,8 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 			List<DetectLungNoduleResponse.DetectLungNodule_Data.DetectLungNodule_Serie> data_series = new List<DetectLungNoduleResponse.DetectLungNodule_Data.DetectLungNodule_Serie>();
 			for (int i = 0; i < _ctx.Length("DetectLungNodule.Data.Series.Length"); i++) {
 				DetectLungNoduleResponse.DetectLungNodule_Data.DetectLungNodule_Serie serie = new DetectLungNoduleResponse.DetectLungNodule_Data.DetectLungNodule_Serie();
-				serie.Report = _ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].Report");
 				serie.SeriesInstanceUid = _ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].SeriesInstanceUid");
+				serie.Report = _ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].Report");
 
 				List<string> serie_origin = new List<string>();
 				for (int j = 0; j < _ctx.Length("DetectLungNodule.Data.Series["+ i +"].Origin.Length"); j++) {
@@ -56,20 +56,20 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 				List<DetectLungNoduleResponse.DetectLungNodule_Data.DetectLungNodule_Serie.DetectLungNodule_Element> serie_elements = new List<DetectLungNoduleResponse.DetectLungNodule_Data.DetectLungNodule_Serie.DetectLungNodule_Element>();
 				for (int j = 0; j < _ctx.Length("DetectLungNodule.Data.Series["+ i +"].Elements.Length"); j++) {
 					DetectLungNoduleResponse.DetectLungNodule_Data.DetectLungNodule_Serie.DetectLungNodule_Element element = new DetectLungNoduleResponse.DetectLungNodule_Data.DetectLungNodule_Serie.DetectLungNodule_Element();
-					element.ImageZ = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].ImageZ");
-					element.ImageY = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].ImageY");
-					element.ImageX = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].ImageX");
-					element.Lobe = _ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Lobe");
-					element.Category = _ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Category");
-					element.Lung = _ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Lung");
-					element.MeanValue = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].MeanValue");
-					element.Volume = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Volume");
-					element.Confidence = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Confidence");
-					element.X = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].X");
-					element.Y = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Y");
 					element.Z = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Z");
+					element.Lobe = _ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Lobe");
+					element.MeanValue = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].MeanValue");
+					element.ImageZ = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].ImageZ");
+					element.Lung = _ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Lung");
+					element.Confidence = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Confidence");
 					element.SOPInstanceUID = _ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].SOPInstanceUID");
+					element.ImageX = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].ImageX");
+					element.Y = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Y");
+					element.Category = _ctx.StringValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Category");
+					element.Volume = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Volume");
+					element.ImageY = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].ImageY");
 					element.Diameter = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].Diameter");
+					element.X = _ctx.FloatValue("DetectLungNodule.Data.Series["+ i +"].Elements["+ j +"].X");
 
 					serie_elements.Add(element);
 				}

@@ -138,6 +138,49 @@ namespace Aliyun.Acs.imageprocess.Transform.V20200320
 			}
 			detectRibFracture.Detections = detectRibFracture_detections;
 			data.DetectRibFracture = detectRibFracture;
+
+			ScreenChestCTResponse.ScreenChestCT_Data.ScreenChestCT_AnalyzeChestVessel analyzeChestVessel = new ScreenChestCTResponse.ScreenChestCT_Data.ScreenChestCT_AnalyzeChestVessel();
+			analyzeChestVessel.ResultURL = _ctx.StringValue("ScreenChestCT.Data.AnalyzeChestVessel.ResultURL");
+
+			ScreenChestCTResponse.ScreenChestCT_Data.ScreenChestCT_AnalyzeChestVessel.ScreenChestCT_AortaInfo aortaInfo = new ScreenChestCTResponse.ScreenChestCT_Data.ScreenChestCT_AnalyzeChestVessel.ScreenChestCT_AortaInfo();
+			aortaInfo.MaxAreaIndex = _ctx.LongValue("ScreenChestCT.Data.AnalyzeChestVessel.AortaInfo.MaxAreaIndex");
+			aortaInfo.MaxArea = _ctx.FloatValue("ScreenChestCT.Data.AnalyzeChestVessel.AortaInfo.MaxArea");
+			aortaInfo.MaxDiameter = _ctx.FloatValue("ScreenChestCT.Data.AnalyzeChestVessel.AortaInfo.MaxDiameter");
+			aortaInfo.LabelValue = _ctx.LongValue("ScreenChestCT.Data.AnalyzeChestVessel.AortaInfo.LabelValue");
+
+			List<string> aortaInfo_coordinates3 = new List<string>();
+			for (int i = 0; i < _ctx.Length("ScreenChestCT.Data.AnalyzeChestVessel.AortaInfo.Coordinates.Length"); i++) {
+				aortaInfo_coordinates3.Add(_ctx.StringValue("ScreenChestCT.Data.AnalyzeChestVessel.AortaInfo.Coordinates["+ i +"]"));
+			}
+			aortaInfo.Coordinates3 = aortaInfo_coordinates3;
+
+			List<string> aortaInfo_area = new List<string>();
+			for (int i = 0; i < _ctx.Length("ScreenChestCT.Data.AnalyzeChestVessel.AortaInfo.Area.Length"); i++) {
+				aortaInfo_area.Add(_ctx.StringValue("ScreenChestCT.Data.AnalyzeChestVessel.AortaInfo.Area["+ i +"]"));
+			}
+			aortaInfo.Area = aortaInfo_area;
+			analyzeChestVessel.AortaInfo = aortaInfo;
+
+			ScreenChestCTResponse.ScreenChestCT_Data.ScreenChestCT_AnalyzeChestVessel.ScreenChestCT_PulmonaryInfo pulmonaryInfo = new ScreenChestCTResponse.ScreenChestCT_Data.ScreenChestCT_AnalyzeChestVessel.ScreenChestCT_PulmonaryInfo();
+			pulmonaryInfo.MaxAreaIndex = _ctx.LongValue("ScreenChestCT.Data.AnalyzeChestVessel.PulmonaryInfo.MaxAreaIndex");
+			pulmonaryInfo.MaxArea = _ctx.FloatValue("ScreenChestCT.Data.AnalyzeChestVessel.PulmonaryInfo.MaxArea");
+			pulmonaryInfo.MaxDiameter = _ctx.FloatValue("ScreenChestCT.Data.AnalyzeChestVessel.PulmonaryInfo.MaxDiameter");
+			pulmonaryInfo.LabelValue = _ctx.LongValue("ScreenChestCT.Data.AnalyzeChestVessel.PulmonaryInfo.LabelValue");
+			pulmonaryInfo.NearestAortaArea = _ctx.FloatValue("ScreenChestCT.Data.AnalyzeChestVessel.PulmonaryInfo.NearestAortaArea");
+
+			List<string> pulmonaryInfo_coordinates4 = new List<string>();
+			for (int i = 0; i < _ctx.Length("ScreenChestCT.Data.AnalyzeChestVessel.PulmonaryInfo.Coordinates.Length"); i++) {
+				pulmonaryInfo_coordinates4.Add(_ctx.StringValue("ScreenChestCT.Data.AnalyzeChestVessel.PulmonaryInfo.Coordinates["+ i +"]"));
+			}
+			pulmonaryInfo.Coordinates4 = pulmonaryInfo_coordinates4;
+
+			List<string> pulmonaryInfo_area5 = new List<string>();
+			for (int i = 0; i < _ctx.Length("ScreenChestCT.Data.AnalyzeChestVessel.PulmonaryInfo.Area.Length"); i++) {
+				pulmonaryInfo_area5.Add(_ctx.StringValue("ScreenChestCT.Data.AnalyzeChestVessel.PulmonaryInfo.Area["+ i +"]"));
+			}
+			pulmonaryInfo.Area5 = pulmonaryInfo_area5;
+			analyzeChestVessel.PulmonaryInfo = pulmonaryInfo;
+			data.AnalyzeChestVessel = analyzeChestVessel;
 			screenChestCTResponse.Data = data;
         
 			return screenChestCTResponse;

@@ -94,6 +94,8 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 
 			private ScreenChestCT_DetectRibFracture detectRibFracture;
 
+			private ScreenChestCT_AnalyzeChestVessel analyzeChestVessel;
+
 			public string ErrorMessage
 			{
 				get
@@ -151,6 +153,18 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 				set	
 				{
 					detectRibFracture = value;
+				}
+			}
+
+			public ScreenChestCT_AnalyzeChestVessel AnalyzeChestVessel
+			{
+				get
+				{
+					return analyzeChestVessel;
+				}
+				set	
+				{
+					analyzeChestVessel = value;
 				}
 			}
 
@@ -709,6 +723,242 @@ namespace Aliyun.Acs.imageprocess.Model.V20200320
 						set	
 						{
 							coordinateImage = value;
+						}
+					}
+				}
+			}
+
+			public class ScreenChestCT_AnalyzeChestVessel
+			{
+
+				private string resultURL;
+
+				private ScreenChestCT_AortaInfo aortaInfo;
+
+				private ScreenChestCT_PulmonaryInfo pulmonaryInfo;
+
+				public string ResultURL
+				{
+					get
+					{
+						return resultURL;
+					}
+					set	
+					{
+						resultURL = value;
+					}
+				}
+
+				public ScreenChestCT_AortaInfo AortaInfo
+				{
+					get
+					{
+						return aortaInfo;
+					}
+					set	
+					{
+						aortaInfo = value;
+					}
+				}
+
+				public ScreenChestCT_PulmonaryInfo PulmonaryInfo
+				{
+					get
+					{
+						return pulmonaryInfo;
+					}
+					set	
+					{
+						pulmonaryInfo = value;
+					}
+				}
+
+				public class ScreenChestCT_AortaInfo
+				{
+
+					private long? maxAreaIndex;
+
+					private float? maxArea;
+
+					private float? maxDiameter;
+
+					private long? labelValue;
+
+					private List<string> coordinates3;
+
+					private List<string> area;
+
+					public long? MaxAreaIndex
+					{
+						get
+						{
+							return maxAreaIndex;
+						}
+						set	
+						{
+							maxAreaIndex = value;
+						}
+					}
+
+					public float? MaxArea
+					{
+						get
+						{
+							return maxArea;
+						}
+						set	
+						{
+							maxArea = value;
+						}
+					}
+
+					public float? MaxDiameter
+					{
+						get
+						{
+							return maxDiameter;
+						}
+						set	
+						{
+							maxDiameter = value;
+						}
+					}
+
+					public long? LabelValue
+					{
+						get
+						{
+							return labelValue;
+						}
+						set	
+						{
+							labelValue = value;
+						}
+					}
+
+					public List<string> Coordinates3
+					{
+						get
+						{
+							return coordinates3;
+						}
+						set	
+						{
+							coordinates3 = value;
+						}
+					}
+
+					public List<string> Area
+					{
+						get
+						{
+							return area;
+						}
+						set	
+						{
+							area = value;
+						}
+					}
+				}
+
+				public class ScreenChestCT_PulmonaryInfo
+				{
+
+					private long? maxAreaIndex;
+
+					private float? maxArea;
+
+					private float? maxDiameter;
+
+					private long? labelValue;
+
+					private float? nearestAortaArea;
+
+					private List<string> coordinates4;
+
+					private List<string> area5;
+
+					public long? MaxAreaIndex
+					{
+						get
+						{
+							return maxAreaIndex;
+						}
+						set	
+						{
+							maxAreaIndex = value;
+						}
+					}
+
+					public float? MaxArea
+					{
+						get
+						{
+							return maxArea;
+						}
+						set	
+						{
+							maxArea = value;
+						}
+					}
+
+					public float? MaxDiameter
+					{
+						get
+						{
+							return maxDiameter;
+						}
+						set	
+						{
+							maxDiameter = value;
+						}
+					}
+
+					public long? LabelValue
+					{
+						get
+						{
+							return labelValue;
+						}
+						set	
+						{
+							labelValue = value;
+						}
+					}
+
+					public float? NearestAortaArea
+					{
+						get
+						{
+							return nearestAortaArea;
+						}
+						set	
+						{
+							nearestAortaArea = value;
+						}
+					}
+
+					public List<string> Coordinates4
+					{
+						get
+						{
+							return coordinates4;
+						}
+						set	
+						{
+							coordinates4 = value;
+						}
+					}
+
+					public List<string> Area5
+					{
+						get
+						{
+							return area5;
+						}
+						set	
+						{
+							area5 = value;
 						}
 					}
 				}
