@@ -17,6 +17,8 @@
  * under the License.
  */
 
+using System.Threading;
+using System.Threading.Tasks;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Utils;
 
@@ -59,6 +61,44 @@ namespace Aliyun.Acs.Core.Auth
                 }
 
                 credentials = fetcher.Fetch();
+                return credentials;
+            }
+            catch (ClientException ex)
+            {
+                if (ex.ErrorCode.Equals("SDK.SessionTokenExpired") &&
+                    ex.ErrorMessage.Equals("Current session token has expired."))
+                {
+                    CommonLog.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
+                    throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
+                }
+
+                // Use the current expiring session token and wait for next round
+                credentials.SetLastFailedRefreshTime();
+            }
+
+            return credentials;
+        }
+
+        public async Task<AlibabaCloudCredentials> GetCredentialsAsync(CancellationToken cancellationToken)
+        {
+            try
+            {
+                if (credentials == null)
+                {
+                    credentials = await fetcher.FetchAsync(maxRetryTimes, cancellationToken).ConfigureAwait(false);
+                }
+
+                if (credentials.IsExpired())
+                {
+                    throw new ClientException("SDK.SessionTokenExpired", "Current session token has expired.");
+                }
+
+                if (!credentials.WillSoonExpire() || !credentials.ShouldRefresh())
+                {
+                    return credentials;
+                }
+
+                credentials = await fetcher.FetchAsync(cancellationToken).ConfigureAwait(false);
                 return credentials;
             }
             catch (ClientException ex)
