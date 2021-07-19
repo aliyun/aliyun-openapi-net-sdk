@@ -184,7 +184,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				tags = value;
 				for (int i = 0; i < tags.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
 			}

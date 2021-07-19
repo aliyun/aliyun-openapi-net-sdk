@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeInstanceHistoryEventsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeInstanceHistoryEvents_InstanceSystemEventType> instanceSystemEventSet;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,39 +98,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeInstanceHistoryEvents_InstanceSystemEventType
 		{
 
-			private string instanceId;
-
 			private string eventId;
 
 			private string eventPublishTime;
 
-			private string notBefore;
-
 			private string eventFinishTime;
 
-			private string reason;
+			private string resourceType;
 
 			private string impactLevel;
 
-			private string resourceType;
+			private string notBefore;
+
+			private string instanceId;
+
+			private string reason;
 
 			private DescribeInstanceHistoryEvents_EventType eventType;
 
 			private DescribeInstanceHistoryEvents_EventCycleStatus eventCycleStatus;
 
 			private DescribeInstanceHistoryEvents_ExtendedAttribute extendedAttribute;
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
 
 			public string EventId
 			{
@@ -156,18 +144,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string NotBefore
-			{
-				get
-				{
-					return notBefore;
-				}
-				set	
-				{
-					notBefore = value;
-				}
-			}
-
 			public string EventFinishTime
 			{
 				get
@@ -180,15 +156,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Reason
+			public string ResourceType
 			{
 				get
 				{
-					return reason;
+					return resourceType;
 				}
 				set	
 				{
-					reason = value;
+					resourceType = value;
 				}
 			}
 
@@ -204,15 +180,39 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string ResourceType
+			public string NotBefore
 			{
 				get
 				{
-					return resourceType;
+					return notBefore;
 				}
 				set	
 				{
-					resourceType = value;
+					notBefore = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string Reason
+			{
+				get
+				{
+					return reason;
+				}
+				set	
+				{
+					reason = value;
 				}
 			}
 
@@ -255,21 +255,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeInstanceHistoryEvents_EventType
 			{
 
-				private int? code;
-
 				private string name;
 
-				public int? Code
-				{
-					get
-					{
-						return code;
-					}
-					set	
-					{
-						code = value;
-					}
-				}
+				private int? code;
 
 				public string Name
 				{
@@ -280,6 +268,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						name = value;
+					}
+				}
+
+				public int? Code
+				{
+					get
+					{
+						return code;
+					}
+					set	
+					{
+						code = value;
 					}
 				}
 			}
@@ -287,21 +287,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeInstanceHistoryEvents_EventCycleStatus
 			{
 
-				private int? code;
-
 				private string name;
 
-				public int? Code
-				{
-					get
-					{
-						return code;
-					}
-					set	
-					{
-						code = value;
-					}
-				}
+				private int? code;
 
 				public string Name
 				{
@@ -314,16 +302,44 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						name = value;
 					}
 				}
+
+				public int? Code
+				{
+					get
+					{
+						return code;
+					}
+					set	
+					{
+						code = value;
+					}
+				}
 			}
 
 			public class DescribeInstanceHistoryEvents_ExtendedAttribute
 			{
 
-				private string diskId;
-
 				private string device;
 
+				private string diskId;
+
+				private string hostType;
+
+				private string hostId;
+
 				private List<DescribeInstanceHistoryEvents_InactiveDisk> inactiveDisks;
+
+				public string Device
+				{
+					get
+					{
+						return device;
+					}
+					set	
+					{
+						device = value;
+					}
+				}
 
 				public string DiskId
 				{
@@ -337,15 +353,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public string Device
+				public string HostType
 				{
 					get
 					{
-						return device;
+						return hostType;
 					}
 					set	
 					{
-						device = value;
+						hostType = value;
+					}
+				}
+
+				public string HostId
+				{
+					get
+					{
+						return hostId;
+					}
+					set	
+					{
+						hostId = value;
 					}
 				}
 
@@ -366,13 +394,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 					private string creationTime;
 
-					private string releaseTime;
-
-					private string deviceType;
+					private string deviceSize;
 
 					private string deviceCategory;
 
-					private string deviceSize;
+					private string deviceType;
+
+					private string releaseTime;
 
 					public string CreationTime
 					{
@@ -386,27 +414,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						}
 					}
 
-					public string ReleaseTime
+					public string DeviceSize
 					{
 						get
 						{
-							return releaseTime;
+							return deviceSize;
 						}
 						set	
 						{
-							releaseTime = value;
-						}
-					}
-
-					public string DeviceType
-					{
-						get
-						{
-							return deviceType;
-						}
-						set	
-						{
-							deviceType = value;
+							deviceSize = value;
 						}
 					}
 
@@ -422,15 +438,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						}
 					}
 
-					public string DeviceSize
+					public string DeviceType
 					{
 						get
 						{
-							return deviceSize;
+							return deviceType;
 						}
 						set	
 						{
-							deviceSize = value;
+							deviceType = value;
+						}
+					}
+
+					public string ReleaseTime
+					{
+						get
+						{
+							return releaseTime;
+						}
+						set	
+						{
+							releaseTime = value;
 						}
 					}
 				}

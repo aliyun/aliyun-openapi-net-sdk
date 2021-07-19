@@ -25,51 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeImagesResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string regionId;
-
-		private int? totalCount;
+		private int? pageSize;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private string requestId;
+
+		private int? totalCount;
+
+		private string regionId;
 
 		private List<DescribeImages_Image> images;
 
-		public string RequestId
+		public int? PageSize
 		{
 			get
 			{
-				return requestId;
+				return pageSize;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
+				pageSize = value;
 			}
 		}
 
@@ -85,15 +61,39 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
+				requestId = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
 			}
 		}
 
@@ -112,89 +112,77 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeImages_Image
 		{
 
-			private string progress;
+			private string creationTime;
 
-			private string imageId;
-
-			private string imageName;
+			private string status;
 
 			private string imageFamily;
 
+			private string progress;
+
+			private bool? isCopied;
+
+			private bool? isSupportIoOptimized;
+
+			private string imageOwnerAlias;
+
+			private bool? isSupportCloudinit;
+
 			private string imageVersion;
+
+			private string usage;
+
+			private string isSelfShared;
 
 			private string description;
 
 			private int? size;
 
-			private string imageOwnerAlias;
-
-			private bool? isSupportIoOptimized;
-
-			private bool? isSupportCloudinit;
-
-			private string oSName;
-
-			private string oSNameEn;
-
-			private string architecture;
-
-			private string status;
-
-			private string productCode;
-
-			private bool? isSubscribed;
-
-			private string creationTime;
-
-			private string isSelfShared;
-
-			private string oSType;
+			private string resourceGroupId;
 
 			private string platform;
 
-			private string usage;
+			private string oSNameEn;
 
-			private bool? isCopied;
+			private string imageName;
 
-			private string resourceGroupId;
+			private string oSName;
+
+			private string imageId;
+
+			private string oSType;
+
+			private bool? isSubscribed;
+
+			private string productCode;
+
+			private string architecture;
 
 			private List<DescribeImages_DiskDeviceMapping> diskDeviceMappings;
 
 			private List<DescribeImages_Tag> tags;
 
-			public string Progress
+			public string CreationTime
 			{
 				get
 				{
-					return progress;
+					return creationTime;
 				}
 				set	
 				{
-					progress = value;
+					creationTime = value;
 				}
 			}
 
-			public string ImageId
+			public string Status
 			{
 				get
 				{
-					return imageId;
+					return status;
 				}
 				set	
 				{
-					imageId = value;
-				}
-			}
-
-			public string ImageName
-			{
-				get
-				{
-					return imageName;
-				}
-				set	
-				{
-					imageName = value;
+					status = value;
 				}
 			}
 
@@ -210,6 +198,66 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string Progress
+			{
+				get
+				{
+					return progress;
+				}
+				set	
+				{
+					progress = value;
+				}
+			}
+
+			public bool? IsCopied
+			{
+				get
+				{
+					return isCopied;
+				}
+				set	
+				{
+					isCopied = value;
+				}
+			}
+
+			public bool? IsSupportIoOptimized
+			{
+				get
+				{
+					return isSupportIoOptimized;
+				}
+				set	
+				{
+					isSupportIoOptimized = value;
+				}
+			}
+
+			public string ImageOwnerAlias
+			{
+				get
+				{
+					return imageOwnerAlias;
+				}
+				set	
+				{
+					imageOwnerAlias = value;
+				}
+			}
+
+			public bool? IsSupportCloudinit
+			{
+				get
+				{
+					return isSupportCloudinit;
+				}
+				set	
+				{
+					isSupportCloudinit = value;
+				}
+			}
+
 			public string ImageVersion
 			{
 				get
@@ -219,6 +267,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					imageVersion = value;
+				}
+			}
+
+			public string Usage
+			{
+				get
+				{
+					return usage;
+				}
+				set	
+				{
+					usage = value;
+				}
+			}
+
+			public string IsSelfShared
+			{
+				get
+				{
+					return isSelfShared;
+				}
+				set	
+				{
+					isSelfShared = value;
 				}
 			}
 
@@ -246,147 +318,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string ImageOwnerAlias
+			public string ResourceGroupId
 			{
 				get
 				{
-					return imageOwnerAlias;
+					return resourceGroupId;
 				}
 				set	
 				{
-					imageOwnerAlias = value;
-				}
-			}
-
-			public bool? IsSupportIoOptimized
-			{
-				get
-				{
-					return isSupportIoOptimized;
-				}
-				set	
-				{
-					isSupportIoOptimized = value;
-				}
-			}
-
-			public bool? IsSupportCloudinit
-			{
-				get
-				{
-					return isSupportCloudinit;
-				}
-				set	
-				{
-					isSupportCloudinit = value;
-				}
-			}
-
-			public string OSName
-			{
-				get
-				{
-					return oSName;
-				}
-				set	
-				{
-					oSName = value;
-				}
-			}
-
-			public string OSNameEn
-			{
-				get
-				{
-					return oSNameEn;
-				}
-				set	
-				{
-					oSNameEn = value;
-				}
-			}
-
-			public string Architecture
-			{
-				get
-				{
-					return architecture;
-				}
-				set	
-				{
-					architecture = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string ProductCode
-			{
-				get
-				{
-					return productCode;
-				}
-				set	
-				{
-					productCode = value;
-				}
-			}
-
-			public bool? IsSubscribed
-			{
-				get
-				{
-					return isSubscribed;
-				}
-				set	
-				{
-					isSubscribed = value;
-				}
-			}
-
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
-
-			public string IsSelfShared
-			{
-				get
-				{
-					return isSelfShared;
-				}
-				set	
-				{
-					isSelfShared = value;
-				}
-			}
-
-			public string OSType
-			{
-				get
-				{
-					return oSType;
-				}
-				set	
-				{
-					oSType = value;
+					resourceGroupId = value;
 				}
 			}
 
@@ -402,39 +342,99 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Usage
+			public string OSNameEn
 			{
 				get
 				{
-					return usage;
+					return oSNameEn;
 				}
 				set	
 				{
-					usage = value;
+					oSNameEn = value;
 				}
 			}
 
-			public bool? IsCopied
+			public string ImageName
 			{
 				get
 				{
-					return isCopied;
+					return imageName;
 				}
 				set	
 				{
-					isCopied = value;
+					imageName = value;
 				}
 			}
 
-			public string ResourceGroupId
+			public string OSName
 			{
 				get
 				{
-					return resourceGroupId;
+					return oSName;
 				}
 				set	
 				{
-					resourceGroupId = value;
+					oSName = value;
+				}
+			}
+
+			public string ImageId
+			{
+				get
+				{
+					return imageId;
+				}
+				set	
+				{
+					imageId = value;
+				}
+			}
+
+			public string OSType
+			{
+				get
+				{
+					return oSType;
+				}
+				set	
+				{
+					oSType = value;
+				}
+			}
+
+			public bool? IsSubscribed
+			{
+				get
+				{
+					return isSubscribed;
+				}
+				set	
+				{
+					isSubscribed = value;
+				}
+			}
+
+			public string ProductCode
+			{
+				get
+				{
+					return productCode;
+				}
+				set	
+				{
+					productCode = value;
+				}
+			}
+
+			public string Architecture
+			{
+				get
+				{
+					return architecture;
+				}
+				set	
+				{
+					architecture = value;
 				}
 			}
 
@@ -465,59 +465,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeImages_DiskDeviceMapping
 			{
 
-				private string snapshotId;
-
-				private string size;
-
-				private string device;
-
 				private string type;
-
-				private string format;
 
 				private string importOSSBucket;
 
+				private string progress;
+
+				private string snapshotId;
+
 				private string importOSSObject;
 
-				private string progress;
+				private string device;
+
+				private string size;
 
 				private int? remainTime;
 
-				public string SnapshotId
-				{
-					get
-					{
-						return snapshotId;
-					}
-					set	
-					{
-						snapshotId = value;
-					}
-				}
-
-				public string Size
-				{
-					get
-					{
-						return size;
-					}
-					set	
-					{
-						size = value;
-					}
-				}
-
-				public string Device
-				{
-					get
-					{
-						return device;
-					}
-					set	
-					{
-						device = value;
-					}
-				}
+				private string format;
 
 				public string Type
 				{
@@ -528,18 +492,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						type = value;
-					}
-				}
-
-				public string Format
-				{
-					get
-					{
-						return format;
-					}
-					set	
-					{
-						format = value;
 					}
 				}
 
@@ -555,6 +507,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
+				public string Progress
+				{
+					get
+					{
+						return progress;
+					}
+					set	
+					{
+						progress = value;
+					}
+				}
+
+				public string SnapshotId
+				{
+					get
+					{
+						return snapshotId;
+					}
+					set	
+					{
+						snapshotId = value;
+					}
+				}
+
 				public string ImportOSSObject
 				{
 					get
@@ -567,15 +543,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public string Progress
+				public string Device
 				{
 					get
 					{
-						return progress;
+						return device;
 					}
 					set	
 					{
-						progress = value;
+						device = value;
+					}
+				}
+
+				public string Size
+				{
+					get
+					{
+						return size;
+					}
+					set	
+					{
+						size = value;
 					}
 				}
 
@@ -590,26 +578,26 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						remainTime = value;
 					}
 				}
+
+				public string Format
+				{
+					get
+					{
+						return format;
+					}
+					set	
+					{
+						format = value;
+					}
+				}
 			}
 
 			public class DescribeImages_Tag
 			{
 
-				private string tagKey;
-
 				private string tagValue;
 
-				public string TagKey
-				{
-					get
-					{
-						return tagKey;
-					}
-					set	
-					{
-						tagKey = value;
-					}
-				}
+				private string tagKey;
 
 				public string TagValue
 				{
@@ -620,6 +608,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						tagValue = value;
+					}
+				}
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
 					}
 				}
 			}

@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class ModifyInstanceChargeTypeResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string orderId;
 
-		private List<ModifyInstanceChargeType_FeeOfInstance> feeOfInstances;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ModifyInstanceChargeType_FeeOfInstance> feeOfInstances;
 
 		public string OrderId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				orderId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -72,9 +72,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string instanceId;
 
-			private string fee;
-
 			private string currency;
+
+			private string fee;
 
 			public string InstanceId
 			{
@@ -88,18 +88,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Fee
-			{
-				get
-				{
-					return fee;
-				}
-				set	
-				{
-					fee = value;
-				}
-			}
-
 			public string Currency
 			{
 				get
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					currency = value;
+				}
+			}
+
+			public string Fee
+			{
+				get
+				{
+					return fee;
+				}
+				set	
+				{
+					fee = value;
 				}
 			}
 		}

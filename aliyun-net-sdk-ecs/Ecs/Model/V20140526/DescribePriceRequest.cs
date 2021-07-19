@@ -62,7 +62,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? instanceCpuCoreCount;
 
+		private string spotStrategy;
+
 		private string internetChargeType;
+
+		private string zoneId;
 
 		private string instanceNetworkType;
 
@@ -107,6 +111,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string ownerAccount;
 
 		private int? dataDisk2Size;
+
+		private int? spotDuration;
 
 		private string resourceType;
 
@@ -261,6 +267,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string SpotStrategy
+		{
+			get
+			{
+				return spotStrategy;
+			}
+			set	
+			{
+				spotStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "SpotStrategy", value);
+			}
+		}
+
 		public string InternetChargeType
 		{
 			get
@@ -271,6 +290,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				internetChargeType = value;
 				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
@@ -561,6 +593,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				dataDisk2Size = value;
 				DictionaryUtil.Add(QueryParameters, "DataDisk.2.Size", value.ToString());
+			}
+		}
+
+		public int? SpotDuration
+		{
+			get
+			{
+				return spotDuration;
+			}
+			set	
+			{
+				spotDuration = value;
+				DictionaryUtil.Add(QueryParameters, "SpotDuration", value.ToString());
 			}
 		}
 

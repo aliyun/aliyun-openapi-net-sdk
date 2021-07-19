@@ -25,27 +25,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeCapacityReservationsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private int? maxResults;
+		private string requestId;
 
 		private int? totalCount;
 
-		private List<DescribeCapacityReservations_CapacityReservationItem> capacityReservationSet;
+		private int? maxResults;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeCapacityReservations_CapacityReservationItem> capacityReservationSet;
 
 		public string NextToken
 		{
@@ -59,15 +47,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? MaxResults
+		public string RequestId
 		{
 			get
 			{
-				return maxResults;
+				return requestId;
 			}
 			set	
 			{
-				maxResults = value;
+				requestId = value;
 			}
 		}
 
@@ -80,6 +68,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
 			}
 		}
 
@@ -98,35 +98,71 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeCapacityReservations_CapacityReservationItem
 		{
 
+			private string status;
+
+			private string timeSlot;
+
+			private string privatePoolOptionsMatchCriteria;
+
 			private string privatePoolOptionsId;
 
 			private string privatePoolOptionsName;
 
-			private string description;
-
 			private string regionId;
-
-			private string privatePoolOptionsMatchCriteria;
-
-			private string status;
-
-			private string startTime;
-
-			private string endTime;
-
-			private string endTimeType;
 
 			private string instanceChargeType;
 
-			private string platform;
+			private string endTime;
 
-			private string timeSlot;
+			private string startTime;
+
+			private string description;
+
+			private string endTimeType;
 
 			private string resourceGroupId;
+
+			private string platform;
 
 			private List<DescribeCapacityReservations_AllocatedResource> allocatedResources;
 
 			private List<DescribeCapacityReservations_Tag> tags;
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string TimeSlot
+			{
+				get
+				{
+					return timeSlot;
+				}
+				set	
+				{
+					timeSlot = value;
+				}
+			}
+
+			public string PrivatePoolOptionsMatchCriteria
+			{
+				get
+				{
+					return privatePoolOptionsMatchCriteria;
+				}
+				set	
+				{
+					privatePoolOptionsMatchCriteria = value;
+				}
+			}
 
 			public string PrivatePoolOptionsId
 			{
@@ -152,18 +188,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
 			public string RegionId
 			{
 				get
@@ -173,66 +197,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					regionId = value;
-				}
-			}
-
-			public string PrivatePoolOptionsMatchCriteria
-			{
-				get
-				{
-					return privatePoolOptionsMatchCriteria;
-				}
-				set	
-				{
-					privatePoolOptionsMatchCriteria = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
-
-			public string EndTimeType
-			{
-				get
-				{
-					return endTimeType;
-				}
-				set	
-				{
-					endTimeType = value;
 				}
 			}
 
@@ -248,27 +212,51 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Platform
+			public string EndTime
 			{
 				get
 				{
-					return platform;
+					return endTime;
 				}
 				set	
 				{
-					platform = value;
+					endTime = value;
 				}
 			}
 
-			public string TimeSlot
+			public string StartTime
 			{
 				get
 				{
-					return timeSlot;
+					return startTime;
 				}
 				set	
 				{
-					timeSlot = value;
+					startTime = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string EndTimeType
+			{
+				get
+				{
+					return endTimeType;
+				}
+				set	
+				{
+					endTimeType = value;
 				}
 			}
 
@@ -281,6 +269,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public string Platform
+			{
+				get
+				{
+					return platform;
+				}
+				set	
+				{
+					platform = value;
 				}
 			}
 
@@ -311,13 +311,37 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeCapacityReservations_AllocatedResource
 			{
 
+				private int? usedAmount;
+
+				private int? totalAmount;
+
 				private string zoneId;
 
 				private string instanceType;
 
-				private int? totalAmount;
+				public int? UsedAmount
+				{
+					get
+					{
+						return usedAmount;
+					}
+					set	
+					{
+						usedAmount = value;
+					}
+				}
 
-				private int? usedAmount;
+				public int? TotalAmount
+				{
+					get
+					{
+						return totalAmount;
+					}
+					set	
+					{
+						totalAmount = value;
+					}
+				}
 
 				public string ZoneId
 				{
@@ -342,50 +366,14 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						instanceType = value;
 					}
 				}
-
-				public int? TotalAmount
-				{
-					get
-					{
-						return totalAmount;
-					}
-					set	
-					{
-						totalAmount = value;
-					}
-				}
-
-				public int? UsedAmount
-				{
-					get
-					{
-						return usedAmount;
-					}
-					set	
-					{
-						usedAmount = value;
-					}
-				}
 			}
 
 			public class DescribeCapacityReservations_Tag
 			{
 
-				private string tagKey;
-
 				private string tagValue;
 
-				public string TagKey
-				{
-					get
-					{
-						return tagKey;
-					}
-					set	
-					{
-						tagKey = value;
-					}
-				}
+				private string tagKey;
 
 				public string TagValue
 				{
@@ -396,6 +384,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						tagValue = value;
+					}
+				}
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
 					}
 				}
 			}

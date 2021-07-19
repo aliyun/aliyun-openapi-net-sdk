@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeDedicatedHostsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeDedicatedHosts_DedicatedHost> dedicatedHosts;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,49 +98,49 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeDedicatedHosts_DedicatedHost
 		{
 
-			private string dedicatedHostId;
-
-			private string autoPlacement;
-
-			private string regionId;
-
-			private string zoneId;
-
-			private string dedicatedHostName;
-
-			private string machineId;
-
-			private string description;
-
-			private string dedicatedHostType;
-
-			private int? sockets;
-
-			private int? cores;
-
-			private int? physicalGpus;
-
-			private string gPUSpec;
-
-			private string actionOnMaintenance;
+			private string creationTime;
 
 			private string status;
 
-			private string creationTime;
+			private int? cores;
 
-			private string chargeType;
+			private string autoPlacement;
 
-			private string saleCycle;
-
-			private string expiredTime;
+			private string gPUSpec;
 
 			private string autoReleaseTime;
 
-			private string resourceGroupId;
+			private string chargeType;
+
+			private float? cpuOverCommitRatio;
+
+			private string actionOnMaintenance;
+
+			private string saleCycle;
+
+			private int? physicalGpus;
+
+			private string regionId;
+
+			private string dedicatedHostName;
+
+			private string description;
 
 			private string dedicatedHostClusterId;
 
-			private float? cpuOverCommitRatio;
+			private string expiredTime;
+
+			private string dedicatedHostType;
+
+			private string resourceGroupId;
+
+			private string zoneId;
+
+			private string dedicatedHostId;
+
+			private int? sockets;
+
+			private string machineId;
 
 			private List<DescribeDedicatedHosts_Instance> instances;
 
@@ -160,159 +160,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private DescribeDedicatedHosts_HostDetailInfo hostDetailInfo;
 
-			public string DedicatedHostId
+			public string CreationTime
 			{
 				get
 				{
-					return dedicatedHostId;
+					return creationTime;
 				}
 				set	
 				{
-					dedicatedHostId = value;
-				}
-			}
-
-			public string AutoPlacement
-			{
-				get
-				{
-					return autoPlacement;
-				}
-				set	
-				{
-					autoPlacement = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public string DedicatedHostName
-			{
-				get
-				{
-					return dedicatedHostName;
-				}
-				set	
-				{
-					dedicatedHostName = value;
-				}
-			}
-
-			public string MachineId
-			{
-				get
-				{
-					return machineId;
-				}
-				set	
-				{
-					machineId = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string DedicatedHostType
-			{
-				get
-				{
-					return dedicatedHostType;
-				}
-				set	
-				{
-					dedicatedHostType = value;
-				}
-			}
-
-			public int? Sockets
-			{
-				get
-				{
-					return sockets;
-				}
-				set	
-				{
-					sockets = value;
-				}
-			}
-
-			public int? Cores
-			{
-				get
-				{
-					return cores;
-				}
-				set	
-				{
-					cores = value;
-				}
-			}
-
-			public int? PhysicalGpus
-			{
-				get
-				{
-					return physicalGpus;
-				}
-				set	
-				{
-					physicalGpus = value;
-				}
-			}
-
-			public string GPUSpec
-			{
-				get
-				{
-					return gPUSpec;
-				}
-				set	
-				{
-					gPUSpec = value;
-				}
-			}
-
-			public string ActionOnMaintenance
-			{
-				get
-				{
-					return actionOnMaintenance;
-				}
-				set	
-				{
-					actionOnMaintenance = value;
+					creationTime = value;
 				}
 			}
 
@@ -328,51 +184,39 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string CreationTime
+			public int? Cores
 			{
 				get
 				{
-					return creationTime;
+					return cores;
 				}
 				set	
 				{
-					creationTime = value;
+					cores = value;
 				}
 			}
 
-			public string ChargeType
+			public string AutoPlacement
 			{
 				get
 				{
-					return chargeType;
+					return autoPlacement;
 				}
 				set	
 				{
-					chargeType = value;
+					autoPlacement = value;
 				}
 			}
 
-			public string SaleCycle
+			public string GPUSpec
 			{
 				get
 				{
-					return saleCycle;
+					return gPUSpec;
 				}
 				set	
 				{
-					saleCycle = value;
-				}
-			}
-
-			public string ExpiredTime
-			{
-				get
-				{
-					return expiredTime;
-				}
-				set	
-				{
-					expiredTime = value;
+					gPUSpec = value;
 				}
 			}
 
@@ -388,15 +232,99 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string ResourceGroupId
+			public string ChargeType
 			{
 				get
 				{
-					return resourceGroupId;
+					return chargeType;
 				}
 				set	
 				{
-					resourceGroupId = value;
+					chargeType = value;
+				}
+			}
+
+			public float? CpuOverCommitRatio
+			{
+				get
+				{
+					return cpuOverCommitRatio;
+				}
+				set	
+				{
+					cpuOverCommitRatio = value;
+				}
+			}
+
+			public string ActionOnMaintenance
+			{
+				get
+				{
+					return actionOnMaintenance;
+				}
+				set	
+				{
+					actionOnMaintenance = value;
+				}
+			}
+
+			public string SaleCycle
+			{
+				get
+				{
+					return saleCycle;
+				}
+				set	
+				{
+					saleCycle = value;
+				}
+			}
+
+			public int? PhysicalGpus
+			{
+				get
+				{
+					return physicalGpus;
+				}
+				set	
+				{
+					physicalGpus = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string DedicatedHostName
+			{
+				get
+				{
+					return dedicatedHostName;
+				}
+				set	
+				{
+					dedicatedHostName = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 
@@ -412,15 +340,87 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public float? CpuOverCommitRatio
+			public string ExpiredTime
 			{
 				get
 				{
-					return cpuOverCommitRatio;
+					return expiredTime;
 				}
 				set	
 				{
-					cpuOverCommitRatio = value;
+					expiredTime = value;
+				}
+			}
+
+			public string DedicatedHostType
+			{
+				get
+				{
+					return dedicatedHostType;
+				}
+				set	
+				{
+					dedicatedHostType = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string DedicatedHostId
+			{
+				get
+				{
+					return dedicatedHostId;
+				}
+				set	
+				{
+					dedicatedHostId = value;
+				}
+			}
+
+			public int? Sockets
+			{
+				get
+				{
+					return sockets;
+				}
+				set	
+				{
+					sockets = value;
+				}
+			}
+
+			public string MachineId
+			{
+				get
+				{
+					return machineId;
+				}
+				set	
+				{
+					machineId = value;
 				}
 			}
 
@@ -535,21 +535,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeDedicatedHosts_Instance
 			{
 
-				private string instanceId;
-
 				private string instanceType;
 
-				public string InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
+				private string instanceId;
 
 				public string InstanceType
 				{
@@ -560,6 +548,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						instanceType = value;
+					}
+				}
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
 					}
 				}
 			}
@@ -585,21 +585,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeDedicatedHosts_Tag
 			{
 
-				private string tagKey;
-
 				private string tagValue;
 
-				public string TagKey
-				{
-					get
-					{
-						return tagKey;
-					}
-					set	
-					{
-						tagKey = value;
-					}
-				}
+				private string tagKey;
 
 				public string TagValue
 				{
@@ -612,74 +600,62 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						tagValue = value;
 					}
 				}
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
 			}
 
 			public class DescribeDedicatedHosts_Capacity
 			{
 
-				private int? totalVcpus;
-
-				private int? availableVcpus;
-
-				private int? totalVgpus;
-
-				private int? availableVgpus;
-
-				private float? totalMemory;
-
 				private float? availableMemory;
-
-				private int? totalLocalStorage;
-
-				private int? availableLocalStorage;
 
 				private string localStorageCategory;
 
-				public int? TotalVcpus
+				private float? totalMemory;
+
+				private int? totalLocalStorage;
+
+				private int? totalVcpus;
+
+				private int? totalVgpus;
+
+				private int? availableLocalStorage;
+
+				private int? availableVcpus;
+
+				private int? availableVgpus;
+
+				public float? AvailableMemory
 				{
 					get
 					{
-						return totalVcpus;
+						return availableMemory;
 					}
 					set	
 					{
-						totalVcpus = value;
+						availableMemory = value;
 					}
 				}
 
-				public int? AvailableVcpus
+				public string LocalStorageCategory
 				{
 					get
 					{
-						return availableVcpus;
+						return localStorageCategory;
 					}
 					set	
 					{
-						availableVcpus = value;
-					}
-				}
-
-				public int? TotalVgpus
-				{
-					get
-					{
-						return totalVgpus;
-					}
-					set	
-					{
-						totalVgpus = value;
-					}
-				}
-
-				public int? AvailableVgpus
-				{
-					get
-					{
-						return availableVgpus;
-					}
-					set	
-					{
-						availableVgpus = value;
+						localStorageCategory = value;
 					}
 				}
 
@@ -695,18 +671,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public float? AvailableMemory
-				{
-					get
-					{
-						return availableMemory;
-					}
-					set	
-					{
-						availableMemory = value;
-					}
-				}
-
 				public int? TotalLocalStorage
 				{
 					get
@@ -716,6 +680,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						totalLocalStorage = value;
+					}
+				}
+
+				public int? TotalVcpus
+				{
+					get
+					{
+						return totalVcpus;
+					}
+					set	
+					{
+						totalVcpus = value;
+					}
+				}
+
+				public int? TotalVgpus
+				{
+					get
+					{
+						return totalVgpus;
+					}
+					set	
+					{
+						totalVgpus = value;
 					}
 				}
 
@@ -731,15 +719,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public string LocalStorageCategory
+				public int? AvailableVcpus
 				{
 					get
 					{
-						return localStorageCategory;
+						return availableVcpus;
 					}
 					set	
 					{
-						localStorageCategory = value;
+						availableVcpus = value;
+					}
+				}
+
+				public int? AvailableVgpus
+				{
+					get
+					{
+						return availableVgpus;
+					}
+					set	
+					{
+						availableVgpus = value;
 					}
 				}
 			}
@@ -747,21 +747,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeDedicatedHosts_NetworkAttributes
 			{
 
-				private int? slbUdpTimeout;
-
 				private int? udpTimeout;
 
-				public int? SlbUdpTimeout
-				{
-					get
-					{
-						return slbUdpTimeout;
-					}
-					set	
-					{
-						slbUdpTimeout = value;
-					}
-				}
+				private int? slbUdpTimeout;
 
 				public int? UdpTimeout
 				{
@@ -772,6 +760,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						udpTimeout = value;
+					}
+				}
+
+				public int? SlbUdpTimeout
+				{
+					get
+					{
+						return slbUdpTimeout;
+					}
+					set	
+					{
+						slbUdpTimeout = value;
 					}
 				}
 			}

@@ -31,45 +31,47 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeInstanceHistoryEventsResponse describeInstanceHistoryEventsResponse = new DescribeInstanceHistoryEventsResponse();
 
 			describeInstanceHistoryEventsResponse.HttpResponse = _ctx.HttpResponse;
-			describeInstanceHistoryEventsResponse.RequestId = _ctx.StringValue("DescribeInstanceHistoryEvents.RequestId");
-			describeInstanceHistoryEventsResponse.TotalCount = _ctx.IntegerValue("DescribeInstanceHistoryEvents.TotalCount");
-			describeInstanceHistoryEventsResponse.PageNumber = _ctx.IntegerValue("DescribeInstanceHistoryEvents.PageNumber");
 			describeInstanceHistoryEventsResponse.PageSize = _ctx.IntegerValue("DescribeInstanceHistoryEvents.PageSize");
+			describeInstanceHistoryEventsResponse.RequestId = _ctx.StringValue("DescribeInstanceHistoryEvents.RequestId");
+			describeInstanceHistoryEventsResponse.PageNumber = _ctx.IntegerValue("DescribeInstanceHistoryEvents.PageNumber");
+			describeInstanceHistoryEventsResponse.TotalCount = _ctx.IntegerValue("DescribeInstanceHistoryEvents.TotalCount");
 
 			List<DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType> describeInstanceHistoryEventsResponse_instanceSystemEventSet = new List<DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceHistoryEvents.InstanceSystemEventSet.Length"); i++) {
 				DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType instanceSystemEventType = new DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType();
-				instanceSystemEventType.InstanceId = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].InstanceId");
 				instanceSystemEventType.EventId = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventId");
 				instanceSystemEventType.EventPublishTime = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventPublishTime");
-				instanceSystemEventType.NotBefore = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].NotBefore");
 				instanceSystemEventType.EventFinishTime = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventFinishTime");
-				instanceSystemEventType.Reason = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].Reason");
-				instanceSystemEventType.ImpactLevel = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ImpactLevel");
 				instanceSystemEventType.ResourceType = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ResourceType");
+				instanceSystemEventType.ImpactLevel = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ImpactLevel");
+				instanceSystemEventType.NotBefore = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].NotBefore");
+				instanceSystemEventType.InstanceId = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].InstanceId");
+				instanceSystemEventType.Reason = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].Reason");
 
 				DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_EventType eventType = new DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_EventType();
-				eventType.Code = _ctx.IntegerValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventType.Code");
 				eventType.Name = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventType.Name");
+				eventType.Code = _ctx.IntegerValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventType.Code");
 				instanceSystemEventType.EventType = eventType;
 
 				DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_EventCycleStatus eventCycleStatus = new DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_EventCycleStatus();
-				eventCycleStatus.Code = _ctx.IntegerValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventCycleStatus.Code");
 				eventCycleStatus.Name = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventCycleStatus.Name");
+				eventCycleStatus.Code = _ctx.IntegerValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventCycleStatus.Code");
 				instanceSystemEventType.EventCycleStatus = eventCycleStatus;
 
 				DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_ExtendedAttribute extendedAttribute = new DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_ExtendedAttribute();
-				extendedAttribute.DiskId = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.DiskId");
 				extendedAttribute.Device = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.Device");
+				extendedAttribute.DiskId = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.DiskId");
+				extendedAttribute.HostType = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.HostType");
+				extendedAttribute.HostId = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.HostId");
 
 				List<DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_ExtendedAttribute.DescribeInstanceHistoryEvents_InactiveDisk> extendedAttribute_inactiveDisks = new List<DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_ExtendedAttribute.DescribeInstanceHistoryEvents_InactiveDisk>();
 				for (int j = 0; j < _ctx.Length("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks.Length"); j++) {
 					DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_ExtendedAttribute.DescribeInstanceHistoryEvents_InactiveDisk inactiveDisk = new DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_ExtendedAttribute.DescribeInstanceHistoryEvents_InactiveDisk();
 					inactiveDisk.CreationTime = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks["+ j +"].CreationTime");
-					inactiveDisk.ReleaseTime = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks["+ j +"].ReleaseTime");
-					inactiveDisk.DeviceType = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks["+ j +"].DeviceType");
-					inactiveDisk.DeviceCategory = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks["+ j +"].DeviceCategory");
 					inactiveDisk.DeviceSize = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks["+ j +"].DeviceSize");
+					inactiveDisk.DeviceCategory = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks["+ j +"].DeviceCategory");
+					inactiveDisk.DeviceType = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks["+ j +"].DeviceType");
+					inactiveDisk.ReleaseTime = _ctx.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks["+ j +"].ReleaseTime");
 
 					extendedAttribute_inactiveDisks.Add(inactiveDisk);
 				}

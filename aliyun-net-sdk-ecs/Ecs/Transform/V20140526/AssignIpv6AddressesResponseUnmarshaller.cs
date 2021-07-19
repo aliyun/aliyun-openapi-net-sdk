@@ -32,6 +32,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 
 			assignIpv6AddressesResponse.HttpResponse = _ctx.HttpResponse;
 			assignIpv6AddressesResponse.RequestId = _ctx.StringValue("AssignIpv6Addresses.RequestId");
+			assignIpv6AddressesResponse.NetworkInterfaceId = _ctx.StringValue("AssignIpv6Addresses.NetworkInterfaceId");
+
+			List<string> assignIpv6AddressesResponse_ipv6Sets = new List<string>();
+			for (int i = 0; i < _ctx.Length("AssignIpv6Addresses.Ipv6Sets.Length"); i++) {
+				assignIpv6AddressesResponse_ipv6Sets.Add(_ctx.StringValue("AssignIpv6Addresses.Ipv6Sets["+ i +"]"));
+			}
+			assignIpv6AddressesResponse.Ipv6Sets = assignIpv6AddressesResponse_ipv6Sets;
         
 			return assignIpv6AddressesResponse;
         }

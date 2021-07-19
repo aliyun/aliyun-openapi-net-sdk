@@ -66,6 +66,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceOwnerAccount;
 
+		private int? ipv6AddressCount;
+
 		private string ownerAccount;
 
 		private int? queuePairNumber;
@@ -81,6 +83,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private List<string> privateIpAddresss = new List<string>(){ };
 
 		private string primaryIpAddress;
+
+		private List<string> ipv6Addresss = new List<string>(){ };
 
 		public int? QueueNumber
 		{
@@ -256,6 +260,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public int? Ipv6AddressCount
+		{
+			get
+			{
+				return ipv6AddressCount;
+			}
+			set	
+			{
+				ipv6AddressCount = value;
+				DictionaryUtil.Add(QueryParameters, "Ipv6AddressCount", value.ToString());
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -365,6 +382,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				primaryIpAddress = value;
 				DictionaryUtil.Add(QueryParameters, "PrimaryIpAddress", value);
+			}
+		}
+
+		public List<string> Ipv6Addresss
+		{
+			get
+			{
+				return ipv6Addresss;
+			}
+
+			set
+			{
+				ipv6Addresss = value;
+				for (int i = 0; i < ipv6Addresss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Ipv6Address." + (i + 1) , ipv6Addresss[i]);
+				}
 			}
 		}
 

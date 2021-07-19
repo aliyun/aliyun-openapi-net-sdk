@@ -25,17 +25,53 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeSnapshotsResponse : AcsResponse
 	{
 
+		private string nextToken;
+
+		private int? pageSize;
+
+		private int? pageNumber;
+
 		private string requestId;
 
 		private int? totalCount;
 
-		private int? pageNumber;
-
-		private int? pageSize;
-
-		private string nextToken;
-
 		private List<DescribeSnapshots_Snapshot> snapshots;
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,42 +97,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-			}
-		}
-
 		public List<DescribeSnapshots_Snapshot> Snapshots
 		{
 			get
@@ -112,183 +112,67 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeSnapshots_Snapshot
 		{
 
-			private string snapshotId;
-
-			private string snapshotSN;
-
-			private string snapshotName;
-
-			private string progress;
-
-			private string productCode;
-
-			private string sourceDiskId;
-
-			private string sourceDiskType;
-
-			private int? retentionDays;
-
-			private bool? encrypted;
-
-			private string sourceDiskSize;
-
-			private string description;
+			private string status;
 
 			private string creationTime;
 
-			private string lastModifiedTime;
-
-			private string status;
-
-			private string usage;
-
-			private string sourceStorageType;
-
-			private int? remainTime;
-
-			private string resourceGroupId;
-
-			private string kMSKeyId;
-
-			private string category;
-
-			private string snapshotType;
+			private string progress;
 
 			private bool? instantAccess;
 
+			private int? remainTime;
+
+			private string sourceDiskSize;
+
+			private int? retentionDays;
+
+			private string sourceDiskType;
+
+			private string sourceStorageType;
+
+			private string usage;
+
+			private string lastModifiedTime;
+
+			private bool? encrypted;
+
+			private string snapshotType;
+
+			private string sourceDiskId;
+
+			private string snapshotName;
+
 			private int? instantAccessRetentionDays;
+
+			private string description;
+
+			private string snapshotId;
+
+			private string resourceGroupId;
+
+			private string category;
+
+			private string kMSKeyId;
+
+			private string snapshotSN;
+
+			private string productCode;
+
+			private string sourceSnapshotId;
+
+			private string sourceRegionId;
 
 			private List<DescribeSnapshots_Tag> tags;
 
-			public string SnapshotId
+			public string Status
 			{
 				get
 				{
-					return snapshotId;
+					return status;
 				}
 				set	
 				{
-					snapshotId = value;
-				}
-			}
-
-			public string SnapshotSN
-			{
-				get
-				{
-					return snapshotSN;
-				}
-				set	
-				{
-					snapshotSN = value;
-				}
-			}
-
-			public string SnapshotName
-			{
-				get
-				{
-					return snapshotName;
-				}
-				set	
-				{
-					snapshotName = value;
-				}
-			}
-
-			public string Progress
-			{
-				get
-				{
-					return progress;
-				}
-				set	
-				{
-					progress = value;
-				}
-			}
-
-			public string ProductCode
-			{
-				get
-				{
-					return productCode;
-				}
-				set	
-				{
-					productCode = value;
-				}
-			}
-
-			public string SourceDiskId
-			{
-				get
-				{
-					return sourceDiskId;
-				}
-				set	
-				{
-					sourceDiskId = value;
-				}
-			}
-
-			public string SourceDiskType
-			{
-				get
-				{
-					return sourceDiskType;
-				}
-				set	
-				{
-					sourceDiskType = value;
-				}
-			}
-
-			public int? RetentionDays
-			{
-				get
-				{
-					return retentionDays;
-				}
-				set	
-				{
-					retentionDays = value;
-				}
-			}
-
-			public bool? Encrypted
-			{
-				get
-				{
-					return encrypted;
-				}
-				set	
-				{
-					encrypted = value;
-				}
-			}
-
-			public string SourceDiskSize
-			{
-				get
-				{
-					return sourceDiskSize;
-				}
-				set	
-				{
-					sourceDiskSize = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
+					status = value;
 				}
 			}
 
@@ -304,111 +188,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string LastModifiedTime
+			public string Progress
 			{
 				get
 				{
-					return lastModifiedTime;
+					return progress;
 				}
 				set	
 				{
-					lastModifiedTime = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string Usage
-			{
-				get
-				{
-					return usage;
-				}
-				set	
-				{
-					usage = value;
-				}
-			}
-
-			public string SourceStorageType
-			{
-				get
-				{
-					return sourceStorageType;
-				}
-				set	
-				{
-					sourceStorageType = value;
-				}
-			}
-
-			public int? RemainTime
-			{
-				get
-				{
-					return remainTime;
-				}
-				set	
-				{
-					remainTime = value;
-				}
-			}
-
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
-				}
-			}
-
-			public string KMSKeyId
-			{
-				get
-				{
-					return kMSKeyId;
-				}
-				set	
-				{
-					kMSKeyId = value;
-				}
-			}
-
-			public string Category
-			{
-				get
-				{
-					return category;
-				}
-				set	
-				{
-					category = value;
-				}
-			}
-
-			public string SnapshotType
-			{
-				get
-				{
-					return snapshotType;
-				}
-				set	
-				{
-					snapshotType = value;
+					progress = value;
 				}
 			}
 
@@ -424,6 +212,138 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public int? RemainTime
+			{
+				get
+				{
+					return remainTime;
+				}
+				set	
+				{
+					remainTime = value;
+				}
+			}
+
+			public string SourceDiskSize
+			{
+				get
+				{
+					return sourceDiskSize;
+				}
+				set	
+				{
+					sourceDiskSize = value;
+				}
+			}
+
+			public int? RetentionDays
+			{
+				get
+				{
+					return retentionDays;
+				}
+				set	
+				{
+					retentionDays = value;
+				}
+			}
+
+			public string SourceDiskType
+			{
+				get
+				{
+					return sourceDiskType;
+				}
+				set	
+				{
+					sourceDiskType = value;
+				}
+			}
+
+			public string SourceStorageType
+			{
+				get
+				{
+					return sourceStorageType;
+				}
+				set	
+				{
+					sourceStorageType = value;
+				}
+			}
+
+			public string Usage
+			{
+				get
+				{
+					return usage;
+				}
+				set	
+				{
+					usage = value;
+				}
+			}
+
+			public string LastModifiedTime
+			{
+				get
+				{
+					return lastModifiedTime;
+				}
+				set	
+				{
+					lastModifiedTime = value;
+				}
+			}
+
+			public bool? Encrypted
+			{
+				get
+				{
+					return encrypted;
+				}
+				set	
+				{
+					encrypted = value;
+				}
+			}
+
+			public string SnapshotType
+			{
+				get
+				{
+					return snapshotType;
+				}
+				set	
+				{
+					snapshotType = value;
+				}
+			}
+
+			public string SourceDiskId
+			{
+				get
+				{
+					return sourceDiskId;
+				}
+				set	
+				{
+					sourceDiskId = value;
+				}
+			}
+
+			public string SnapshotName
+			{
+				get
+				{
+					return snapshotName;
+				}
+				set	
+				{
+					snapshotName = value;
+				}
+			}
+
 			public int? InstantAccessRetentionDays
 			{
 				get
@@ -433,6 +353,114 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					instantAccessRetentionDays = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string SnapshotId
+			{
+				get
+				{
+					return snapshotId;
+				}
+				set	
+				{
+					snapshotId = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			public string KMSKeyId
+			{
+				get
+				{
+					return kMSKeyId;
+				}
+				set	
+				{
+					kMSKeyId = value;
+				}
+			}
+
+			public string SnapshotSN
+			{
+				get
+				{
+					return snapshotSN;
+				}
+				set	
+				{
+					snapshotSN = value;
+				}
+			}
+
+			public string ProductCode
+			{
+				get
+				{
+					return productCode;
+				}
+				set	
+				{
+					productCode = value;
+				}
+			}
+
+			public string SourceSnapshotId
+			{
+				get
+				{
+					return sourceSnapshotId;
+				}
+				set	
+				{
+					sourceSnapshotId = value;
+				}
+			}
+
+			public string SourceRegionId
+			{
+				get
+				{
+					return sourceRegionId;
+				}
+				set	
+				{
+					sourceRegionId = value;
 				}
 			}
 
@@ -451,21 +479,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeSnapshots_Tag
 			{
 
-				private string tagKey;
-
 				private string tagValue;
 
-				public string TagKey
-				{
-					get
-					{
-						return tagKey;
-					}
-					set	
-					{
-						tagKey = value;
-					}
-				}
+				private string tagKey;
 
 				public string TagValue
 				{
@@ -476,6 +492,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						tagValue = value;
+					}
+				}
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
 					}
 				}
 			}

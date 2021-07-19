@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CopySnapshotResponse copySnapshotResponse = new CopySnapshotResponse();
 
 			copySnapshotResponse.HttpResponse = _ctx.HttpResponse;
-			copySnapshotResponse.RequestId = _ctx.StringValue("CopySnapshot.RequestId");
 			copySnapshotResponse.SnapshotId = _ctx.StringValue("CopySnapshot.SnapshotId");
+			copySnapshotResponse.RequestId = _ctx.StringValue("CopySnapshot.RequestId");
         
 			return copySnapshotResponse;
         }

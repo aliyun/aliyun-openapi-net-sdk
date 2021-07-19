@@ -27,11 +27,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string requestId;
 
+		private string imageId;
+
 		private string taskId;
 
 		private string regionId;
-
-		private string imageId;
 
 		public string RequestId
 		{
@@ -42,6 +42,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ImageId
+		{
+			get
+			{
+				return imageId;
+			}
+			set	
+			{
+				imageId = value;
 			}
 		}
 
@@ -66,18 +78,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				regionId = value;
-			}
-		}
-
-		public string ImageId
-		{
-			get
-			{
-				return imageId;
-			}
-			set	
-			{
-				imageId = value;
 			}
 		}
 	}

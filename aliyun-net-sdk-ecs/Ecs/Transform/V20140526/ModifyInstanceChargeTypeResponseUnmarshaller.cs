@@ -31,15 +31,15 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			ModifyInstanceChargeTypeResponse modifyInstanceChargeTypeResponse = new ModifyInstanceChargeTypeResponse();
 
 			modifyInstanceChargeTypeResponse.HttpResponse = _ctx.HttpResponse;
-			modifyInstanceChargeTypeResponse.RequestId = _ctx.StringValue("ModifyInstanceChargeType.RequestId");
 			modifyInstanceChargeTypeResponse.OrderId = _ctx.StringValue("ModifyInstanceChargeType.OrderId");
+			modifyInstanceChargeTypeResponse.RequestId = _ctx.StringValue("ModifyInstanceChargeType.RequestId");
 
 			List<ModifyInstanceChargeTypeResponse.ModifyInstanceChargeType_FeeOfInstance> modifyInstanceChargeTypeResponse_feeOfInstances = new List<ModifyInstanceChargeTypeResponse.ModifyInstanceChargeType_FeeOfInstance>();
 			for (int i = 0; i < _ctx.Length("ModifyInstanceChargeType.FeeOfInstances.Length"); i++) {
 				ModifyInstanceChargeTypeResponse.ModifyInstanceChargeType_FeeOfInstance feeOfInstance = new ModifyInstanceChargeTypeResponse.ModifyInstanceChargeType_FeeOfInstance();
 				feeOfInstance.InstanceId = _ctx.StringValue("ModifyInstanceChargeType.FeeOfInstances["+ i +"].InstanceId");
-				feeOfInstance.Fee = _ctx.StringValue("ModifyInstanceChargeType.FeeOfInstances["+ i +"].Fee");
 				feeOfInstance.Currency = _ctx.StringValue("ModifyInstanceChargeType.FeeOfInstances["+ i +"].Currency");
+				feeOfInstance.Fee = _ctx.StringValue("ModifyInstanceChargeType.FeeOfInstances["+ i +"].Fee");
 
 				modifyInstanceChargeTypeResponse_feeOfInstances.Add(feeOfInstance);
 			}

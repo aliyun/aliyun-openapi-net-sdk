@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? pageSize;
 
+		private string dedicatedHostClusterId;
+
 		private string dedicatedHostType;
 
 		private List<Tag> tags = new List<Tag>(){ };
@@ -143,6 +145,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string DedicatedHostClusterId
+		{
+			get
+			{
+				return dedicatedHostClusterId;
+			}
+			set	
+			{
+				dedicatedHostClusterId = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostClusterId", value);
 			}
 		}
 

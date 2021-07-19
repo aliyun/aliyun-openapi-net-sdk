@@ -157,6 +157,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<string> ipv6Addresss = new List<string>(){ };
 
+		private string securityOptionsConfidentialComputingMode;
+
 		private string clientToken;
 
 		private int? internetMaxBandwidthOut;
@@ -975,6 +977,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				{
 					DictionaryUtil.Add(QueryParameters,"Ipv6Address." + (i + 1) , ipv6Addresss[i]);
 				}
+			}
+		}
+
+		public string SecurityOptionsConfidentialComputingMode
+		{
+			get
+			{
+				return securityOptionsConfidentialComputingMode;
+			}
+			set	
+			{
+				securityOptionsConfidentialComputingMode = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityOptions.ConfidentialComputingMode", value);
 			}
 		}
 

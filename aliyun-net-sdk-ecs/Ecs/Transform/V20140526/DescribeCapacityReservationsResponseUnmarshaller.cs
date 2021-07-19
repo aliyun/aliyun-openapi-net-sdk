@@ -31,35 +31,35 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeCapacityReservationsResponse describeCapacityReservationsResponse = new DescribeCapacityReservationsResponse();
 
 			describeCapacityReservationsResponse.HttpResponse = _ctx.HttpResponse;
-			describeCapacityReservationsResponse.RequestId = _ctx.StringValue("DescribeCapacityReservations.RequestId");
 			describeCapacityReservationsResponse.NextToken = _ctx.StringValue("DescribeCapacityReservations.NextToken");
-			describeCapacityReservationsResponse.MaxResults = _ctx.IntegerValue("DescribeCapacityReservations.MaxResults");
+			describeCapacityReservationsResponse.RequestId = _ctx.StringValue("DescribeCapacityReservations.RequestId");
 			describeCapacityReservationsResponse.TotalCount = _ctx.IntegerValue("DescribeCapacityReservations.TotalCount");
+			describeCapacityReservationsResponse.MaxResults = _ctx.IntegerValue("DescribeCapacityReservations.MaxResults");
 
 			List<DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem> describeCapacityReservationsResponse_capacityReservationSet = new List<DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem>();
 			for (int i = 0; i < _ctx.Length("DescribeCapacityReservations.CapacityReservationSet.Length"); i++) {
 				DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem capacityReservationItem = new DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem();
+				capacityReservationItem.Status = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Status");
+				capacityReservationItem.TimeSlot = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].TimeSlot");
+				capacityReservationItem.PrivatePoolOptionsMatchCriteria = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].PrivatePoolOptionsMatchCriteria");
 				capacityReservationItem.PrivatePoolOptionsId = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].PrivatePoolOptionsId");
 				capacityReservationItem.PrivatePoolOptionsName = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].PrivatePoolOptionsName");
-				capacityReservationItem.Description = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Description");
 				capacityReservationItem.RegionId = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].RegionId");
-				capacityReservationItem.PrivatePoolOptionsMatchCriteria = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].PrivatePoolOptionsMatchCriteria");
-				capacityReservationItem.Status = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Status");
-				capacityReservationItem.StartTime = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].StartTime");
-				capacityReservationItem.EndTime = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].EndTime");
-				capacityReservationItem.EndTimeType = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].EndTimeType");
 				capacityReservationItem.InstanceChargeType = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].InstanceChargeType");
-				capacityReservationItem.Platform = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Platform");
-				capacityReservationItem.TimeSlot = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].TimeSlot");
+				capacityReservationItem.EndTime = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].EndTime");
+				capacityReservationItem.StartTime = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].StartTime");
+				capacityReservationItem.Description = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Description");
+				capacityReservationItem.EndTimeType = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].EndTimeType");
 				capacityReservationItem.ResourceGroupId = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].ResourceGroupId");
+				capacityReservationItem.Platform = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Platform");
 
 				List<DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_AllocatedResource> capacityReservationItem_allocatedResources = new List<DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_AllocatedResource>();
 				for (int j = 0; j < _ctx.Length("DescribeCapacityReservations.CapacityReservationSet["+ i +"].AllocatedResources.Length"); j++) {
 					DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_AllocatedResource allocatedResource = new DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_AllocatedResource();
+					allocatedResource.UsedAmount = _ctx.IntegerValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].UsedAmount");
+					allocatedResource.TotalAmount = _ctx.IntegerValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].TotalAmount");
 					allocatedResource.ZoneId = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].zoneId");
 					allocatedResource.InstanceType = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].InstanceType");
-					allocatedResource.TotalAmount = _ctx.IntegerValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].TotalAmount");
-					allocatedResource.UsedAmount = _ctx.IntegerValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].UsedAmount");
 
 					capacityReservationItem_allocatedResources.Add(allocatedResource);
 				}
@@ -68,8 +68,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				List<DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_Tag> capacityReservationItem_tags = new List<DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Tags.Length"); j++) {
 					DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_Tag tag = new DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_Tag();
-					tag.TagKey = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Tags["+ j +"].TagKey");
 					tag.TagValue = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Tags["+ j +"].TagValue");
+					tag.TagKey = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Tags["+ j +"].TagKey");
 
 					capacityReservationItem_tags.Add(tag);
 				}

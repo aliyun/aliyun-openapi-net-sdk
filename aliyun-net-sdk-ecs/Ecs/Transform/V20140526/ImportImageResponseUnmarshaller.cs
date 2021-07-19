@@ -32,9 +32,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 
 			importImageResponse.HttpResponse = _ctx.HttpResponse;
 			importImageResponse.RequestId = _ctx.StringValue("ImportImage.RequestId");
+			importImageResponse.ImageId = _ctx.StringValue("ImportImage.ImageId");
 			importImageResponse.TaskId = _ctx.StringValue("ImportImage.TaskId");
 			importImageResponse.RegionId = _ctx.StringValue("ImportImage.RegionId");
-			importImageResponse.ImageId = _ctx.StringValue("ImportImage.ImageId");
         
 			return importImageResponse;
         }

@@ -37,10 +37,10 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 
 			DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Price price = new DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Price();
 			price.OriginalPrice = _ctx.FloatValue("DescribePrice.PriceInfo.Price.OriginalPrice");
-			price.DiscountPrice = _ctx.FloatValue("DescribePrice.PriceInfo.Price.DiscountPrice");
-			price.TradePrice = _ctx.FloatValue("DescribePrice.PriceInfo.Price.TradePrice");
 			price.ReservedInstanceHourPrice = _ctx.FloatValue("DescribePrice.PriceInfo.Price.ReservedInstanceHourPrice");
+			price.DiscountPrice = _ctx.FloatValue("DescribePrice.PriceInfo.Price.DiscountPrice");
 			price.Currency = _ctx.StringValue("DescribePrice.PriceInfo.Price.Currency");
+			price.TradePrice = _ctx.FloatValue("DescribePrice.PriceInfo.Price.TradePrice");
 
 			List<DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Price.DescribePrice_ResourcePriceModel> price_detailInfos = new List<DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Price.DescribePrice_ResourcePriceModel>();
 			for (int i = 0; i < _ctx.Length("DescribePrice.PriceInfo.Price.DetailInfos.Length"); i++) {
@@ -53,8 +53,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				List<DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Price.DescribePrice_ResourcePriceModel.DescribePrice_Rule1> resourcePriceModel_subRules = new List<DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Price.DescribePrice_ResourcePriceModel.DescribePrice_Rule1>();
 				for (int j = 0; j < _ctx.Length("DescribePrice.PriceInfo.Price.DetailInfos["+ i +"].SubRules.Length"); j++) {
 					DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Price.DescribePrice_ResourcePriceModel.DescribePrice_Rule1 rule1 = new DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Price.DescribePrice_ResourcePriceModel.DescribePrice_Rule1();
-					rule1.RuleId = _ctx.LongValue("DescribePrice.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].RuleId");
 					rule1.Description = _ctx.StringValue("DescribePrice.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].Description");
+					rule1.RuleId = _ctx.LongValue("DescribePrice.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].RuleId");
 
 					resourcePriceModel_subRules.Add(rule1);
 				}
@@ -68,8 +68,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Rule> priceInfo_rules = new List<DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Rule>();
 			for (int i = 0; i < _ctx.Length("DescribePrice.PriceInfo.Rules.Length"); i++) {
 				DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Rule rule = new DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Rule();
-				rule.RuleId = _ctx.LongValue("DescribePrice.PriceInfo.Rules["+ i +"].RuleId");
 				rule.Description = _ctx.StringValue("DescribePrice.PriceInfo.Rules["+ i +"].Description");
+				rule.RuleId = _ctx.LongValue("DescribePrice.PriceInfo.Rules["+ i +"].RuleId");
 
 				priceInfo_rules.Add(rule);
 			}

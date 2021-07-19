@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateForwardEntryResponse createForwardEntryResponse = new CreateForwardEntryResponse();
 
 			createForwardEntryResponse.HttpResponse = _ctx.HttpResponse;
-			createForwardEntryResponse.RequestId = _ctx.StringValue("CreateForwardEntry.RequestId");
 			createForwardEntryResponse.ForwardEntryId = _ctx.StringValue("CreateForwardEntry.ForwardEntryId");
+			createForwardEntryResponse.RequestId = _ctx.StringValue("CreateForwardEntry.RequestId");
         
 			return createForwardEntryResponse;
         }

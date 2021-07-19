@@ -31,21 +31,21 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateNetworkInterfaceResponse createNetworkInterfaceResponse = new CreateNetworkInterfaceResponse();
 
 			createNetworkInterfaceResponse.HttpResponse = _ctx.HttpResponse;
-			createNetworkInterfaceResponse.RequestId = _ctx.StringValue("CreateNetworkInterface.RequestId");
-			createNetworkInterfaceResponse.NetworkInterfaceId = _ctx.StringValue("CreateNetworkInterface.NetworkInterfaceId");
 			createNetworkInterfaceResponse.Status = _ctx.StringValue("CreateNetworkInterface.Status");
 			createNetworkInterfaceResponse.Type = _ctx.StringValue("CreateNetworkInterface.Type");
 			createNetworkInterfaceResponse.VpcId = _ctx.StringValue("CreateNetworkInterface.VpcId");
-			createNetworkInterfaceResponse.VSwitchId = _ctx.StringValue("CreateNetworkInterface.VSwitchId");
-			createNetworkInterfaceResponse.ZoneId = _ctx.StringValue("CreateNetworkInterface.ZoneId");
-			createNetworkInterfaceResponse.PrivateIpAddress = _ctx.StringValue("CreateNetworkInterface.PrivateIpAddress");
-			createNetworkInterfaceResponse.MacAddress = _ctx.StringValue("CreateNetworkInterface.MacAddress");
 			createNetworkInterfaceResponse.NetworkInterfaceName = _ctx.StringValue("CreateNetworkInterface.NetworkInterfaceName");
+			createNetworkInterfaceResponse.MacAddress = _ctx.StringValue("CreateNetworkInterface.MacAddress");
+			createNetworkInterfaceResponse.NetworkInterfaceId = _ctx.StringValue("CreateNetworkInterface.NetworkInterfaceId");
+			createNetworkInterfaceResponse.ServiceID = _ctx.LongValue("CreateNetworkInterface.ServiceID");
+			createNetworkInterfaceResponse.OwnerId = _ctx.StringValue("CreateNetworkInterface.OwnerId");
+			createNetworkInterfaceResponse.ServiceManaged = _ctx.BooleanValue("CreateNetworkInterface.ServiceManaged");
+			createNetworkInterfaceResponse.VSwitchId = _ctx.StringValue("CreateNetworkInterface.VSwitchId");
+			createNetworkInterfaceResponse.RequestId = _ctx.StringValue("CreateNetworkInterface.RequestId");
 			createNetworkInterfaceResponse.Description = _ctx.StringValue("CreateNetworkInterface.Description");
 			createNetworkInterfaceResponse.ResourceGroupId = _ctx.StringValue("CreateNetworkInterface.ResourceGroupId");
-			createNetworkInterfaceResponse.ServiceID = _ctx.LongValue("CreateNetworkInterface.ServiceID");
-			createNetworkInterfaceResponse.ServiceManaged = _ctx.BooleanValue("CreateNetworkInterface.ServiceManaged");
-			createNetworkInterfaceResponse.OwnerId = _ctx.StringValue("CreateNetworkInterface.OwnerId");
+			createNetworkInterfaceResponse.ZoneId = _ctx.StringValue("CreateNetworkInterface.ZoneId");
+			createNetworkInterfaceResponse.PrivateIpAddress = _ctx.StringValue("CreateNetworkInterface.PrivateIpAddress");
 
 			List<string> createNetworkInterfaceResponse_securityGroupIds = new List<string>();
 			for (int i = 0; i < _ctx.Length("CreateNetworkInterface.SecurityGroupIds.Length"); i++) {
@@ -66,12 +66,21 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<CreateNetworkInterfaceResponse.CreateNetworkInterface_Tag> createNetworkInterfaceResponse_tags = new List<CreateNetworkInterfaceResponse.CreateNetworkInterface_Tag>();
 			for (int i = 0; i < _ctx.Length("CreateNetworkInterface.Tags.Length"); i++) {
 				CreateNetworkInterfaceResponse.CreateNetworkInterface_Tag tag = new CreateNetworkInterfaceResponse.CreateNetworkInterface_Tag();
-				tag.TagKey = _ctx.StringValue("CreateNetworkInterface.Tags["+ i +"].TagKey");
 				tag.TagValue = _ctx.StringValue("CreateNetworkInterface.Tags["+ i +"].TagValue");
+				tag.TagKey = _ctx.StringValue("CreateNetworkInterface.Tags["+ i +"].TagKey");
 
 				createNetworkInterfaceResponse_tags.Add(tag);
 			}
 			createNetworkInterfaceResponse.Tags = createNetworkInterfaceResponse_tags;
+
+			List<CreateNetworkInterfaceResponse.CreateNetworkInterface_Ipv6Set> createNetworkInterfaceResponse_ipv6Sets = new List<CreateNetworkInterfaceResponse.CreateNetworkInterface_Ipv6Set>();
+			for (int i = 0; i < _ctx.Length("CreateNetworkInterface.Ipv6Sets.Length"); i++) {
+				CreateNetworkInterfaceResponse.CreateNetworkInterface_Ipv6Set ipv6Set = new CreateNetworkInterfaceResponse.CreateNetworkInterface_Ipv6Set();
+				ipv6Set.Ipv6Address = _ctx.StringValue("CreateNetworkInterface.Ipv6Sets["+ i +"].Ipv6Address");
+
+				createNetworkInterfaceResponse_ipv6Sets.Add(ipv6Set);
+			}
+			createNetworkInterfaceResponse.Ipv6Sets = createNetworkInterfaceResponse_ipv6Sets;
         
 			return createNetworkInterfaceResponse;
         }

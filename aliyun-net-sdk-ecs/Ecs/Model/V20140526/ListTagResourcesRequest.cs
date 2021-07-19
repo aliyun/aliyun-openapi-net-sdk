@@ -171,11 +171,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				tagFilters = value;
 				for (int i = 0; i < tagFilters.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"TagFilter." + (i + 1) + ".TagKey", tagFilters[i].TagKey);
 					for (int j = 0; j < tagFilters[i].TagValuess.Count; j++)
 					{
 						DictionaryUtil.Add(QueryParameters,"TagFilter." + (i + 1) + ".TagValues." +(j + 1), tagFilters[i].TagValuess[j]);
 					}
+					DictionaryUtil.Add(QueryParameters,"TagFilter." + (i + 1) + ".TagKey", tagFilters[i].TagKey);
 				}
 			}
 		}
@@ -228,21 +228,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class TagFilter
 		{
 
-			private string tagKey;
-
 			private List<string> tagValuess = new List<string>(){ };
 
-			public string TagKey
-			{
-				get
-				{
-					return tagKey;
-				}
-				set	
-				{
-					tagKey = value;
-				}
-			}
+			private string tagKey;
 
 			public List<string> TagValuess
 			{
@@ -253,6 +241,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					tagValuess = value;
+				}
+			}
+
+			public string TagKey
+			{
+				get
+				{
+					return tagKey;
+				}
+				set	
+				{
+					tagKey = value;
 				}
 			}
 		}

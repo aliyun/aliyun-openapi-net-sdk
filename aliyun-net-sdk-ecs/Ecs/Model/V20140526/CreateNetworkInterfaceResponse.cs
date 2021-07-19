@@ -25,65 +25,43 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class CreateNetworkInterfaceResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string networkInterfaceId;
-
 		private string status;
 
 		private string type;
 
 		private string vpcId;
 
-		private string vSwitchId;
-
-		private string zoneId;
-
-		private string privateIpAddress;
+		private string networkInterfaceName;
 
 		private string macAddress;
 
-		private string networkInterfaceName;
+		private string networkInterfaceId;
+
+		private long? serviceID;
+
+		private string ownerId;
+
+		private bool? serviceManaged;
+
+		private string vSwitchId;
+
+		private string requestId;
 
 		private string description;
 
 		private string resourceGroupId;
 
-		private long? serviceID;
+		private string zoneId;
 
-		private bool? serviceManaged;
-
-		private string ownerId;
+		private string privateIpAddress;
 
 		private List<CreateNetworkInterface_PrivateIpSet> privateIpSets;
 
 		private List<CreateNetworkInterface_Tag> tags;
 
+		private List<CreateNetworkInterface_Ipv6Set> ipv6Sets;
+
 		private List<string> securityGroupIds;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string NetworkInterfaceId
-		{
-			get
-			{
-				return networkInterfaceId;
-			}
-			set	
-			{
-				networkInterfaceId = value;
-			}
-		}
 
 		public string Status
 		{
@@ -121,39 +99,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string VSwitchId
+		public string NetworkInterfaceName
 		{
 			get
 			{
-				return vSwitchId;
+				return networkInterfaceName;
 			}
 			set	
 			{
-				vSwitchId = value;
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-			}
-		}
-
-		public string PrivateIpAddress
-		{
-			get
-			{
-				return privateIpAddress;
-			}
-			set	
-			{
-				privateIpAddress = value;
+				networkInterfaceName = value;
 			}
 		}
 
@@ -169,15 +123,75 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string NetworkInterfaceName
+		public string NetworkInterfaceId
 		{
 			get
 			{
-				return networkInterfaceName;
+				return networkInterfaceId;
 			}
 			set	
 			{
-				networkInterfaceName = value;
+				networkInterfaceId = value;
+			}
+		}
+
+		public long? ServiceID
+		{
+			get
+			{
+				return serviceID;
+			}
+			set	
+			{
+				serviceID = value;
+			}
+		}
+
+		public string OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+			}
+		}
+
+		public bool? ServiceManaged
+		{
+			get
+			{
+				return serviceManaged;
+			}
+			set	
+			{
+				serviceManaged = value;
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -205,39 +219,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? ServiceID
+		public string ZoneId
 		{
 			get
 			{
-				return serviceID;
+				return zoneId;
 			}
 			set	
 			{
-				serviceID = value;
+				zoneId = value;
 			}
 		}
 
-		public bool? ServiceManaged
+		public string PrivateIpAddress
 		{
 			get
 			{
-				return serviceManaged;
+				return privateIpAddress;
 			}
 			set	
 			{
-				serviceManaged = value;
-			}
-		}
-
-		public string OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
+				privateIpAddress = value;
 			}
 		}
 
@@ -262,6 +264,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				tags = value;
+			}
+		}
+
+		public List<CreateNetworkInterface_Ipv6Set> Ipv6Sets
+		{
+			get
+			{
+				return ipv6Sets;
+			}
+			set	
+			{
+				ipv6Sets = value;
 			}
 		}
 
@@ -312,9 +326,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class CreateNetworkInterface_Tag
 		{
 
+			private string tagValue;
+
 			private string tagKey;
 
-			private string tagValue;
+			public string TagValue
+			{
+				get
+				{
+					return tagValue;
+				}
+				set	
+				{
+					tagValue = value;
+				}
+			}
 
 			public string TagKey
 			{
@@ -327,16 +353,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					tagKey = value;
 				}
 			}
+		}
 
-			public string TagValue
+		public class CreateNetworkInterface_Ipv6Set
+		{
+
+			private string ipv6Address;
+
+			public string Ipv6Address
 			{
 				get
 				{
-					return tagValue;
+					return ipv6Address;
 				}
 				set	
 				{
-					tagValue = value;
+					ipv6Address = value;
 				}
 			}
 		}
