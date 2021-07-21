@@ -62,6 +62,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string cookie;
 
+		private string healthCheckMethod;
+
 		private string healthCheckDomain;
 
 		private int? requestTimeout;
@@ -252,6 +254,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				cookie = value;
 				DictionaryUtil.Add(QueryParameters, "Cookie", value);
+			}
+		}
+
+		public string HealthCheckMethod
+		{
+			get
+			{
+				return healthCheckMethod;
+			}
+			set	
+			{
+				healthCheckMethod = value;
+				DictionaryUtil.Add(QueryParameters, "HealthCheckMethod", value);
 			}
 		}
 

@@ -75,6 +75,8 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerAttributeResponse.BusinessStatus = _ctx.StringValue("DescribeLoadBalancerAttribute.BusinessStatus");
 			describeLoadBalancerAttributeResponse.ModificationProtectionStatus = _ctx.StringValue("DescribeLoadBalancerAttribute.ModificationProtectionStatus");
 			describeLoadBalancerAttributeResponse.ModificationProtectionReason = _ctx.StringValue("DescribeLoadBalancerAttribute.ModificationProtectionReason");
+			describeLoadBalancerAttributeResponse.SpecBpsFlag = _ctx.BooleanValue("DescribeLoadBalancerAttribute.SpecBpsFlag");
+			describeLoadBalancerAttributeResponse.SpecType = _ctx.StringValue("DescribeLoadBalancerAttribute.SpecType");
 
 			List<string> describeLoadBalancerAttributeResponse_listenerPorts = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeLoadBalancerAttribute.ListenerPorts.Length"); i++) {

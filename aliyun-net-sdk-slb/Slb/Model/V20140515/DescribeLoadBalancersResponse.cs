@@ -148,6 +148,10 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 			private string deleteProtection;
 
+			private bool? specBpsFlag;
+
+			private string specType;
+
 			private List<DescribeLoadBalancers_Tag> tags;
 
 			public string LoadBalancerId
@@ -447,6 +451,30 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					deleteProtection = value;
+				}
+			}
+
+			public bool? SpecBpsFlag
+			{
+				get
+				{
+					return specBpsFlag;
+				}
+				set	
+				{
+					specBpsFlag = value;
+				}
+			}
+
+			public string SpecType
+			{
+				get
+				{
+					return specType;
+				}
+				set	
+				{
+					specType = value;
 				}
 			}
 
