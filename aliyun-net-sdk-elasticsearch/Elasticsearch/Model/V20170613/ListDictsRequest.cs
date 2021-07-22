@@ -27,40 +27,25 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class ListInstanceIndicesRequest : RoaAcsRequest<ListInstanceIndicesResponse>
+    public class ListDictsRequest : RoaAcsRequest<ListDictsResponse>
     {
-        public ListInstanceIndicesRequest()
-            : base("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch", "openAPI")
+        public ListDictsRequest()
+            : base("elasticsearch", "2017-06-13", "ListDicts", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/instances/[InstanceId]/indices";
+			UriPattern = "/openapi/instances/[InstanceId]/dicts";
 			Method = MethodType.GET;
         }
 
-		private bool? all;
-
 		private string instanceId;
 
-		private bool? isManaged;
+		private string analyzerType;
 
 		private string name;
-
-		public bool? All
-		{
-			get
-			{
-				return all;
-			}
-			set	
-			{
-				all = value;
-				DictionaryUtil.Add(QueryParameters, "all", value.ToString());
-			}
-		}
 
 		public string InstanceId
 		{
@@ -75,16 +60,16 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public bool? IsManaged
+		public string AnalyzerType
 		{
 			get
 			{
-				return isManaged;
+				return analyzerType;
 			}
 			set	
 			{
-				isManaged = value;
-				DictionaryUtil.Add(QueryParameters, "isManaged", value.ToString());
+				analyzerType = value;
+				DictionaryUtil.Add(QueryParameters, "analyzerType", value);
 			}
 		}
 
@@ -106,9 +91,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			return false;
 		}
 
-        public override ListInstanceIndicesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListDictsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListInstanceIndicesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListDictsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

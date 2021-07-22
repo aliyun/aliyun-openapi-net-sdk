@@ -27,38 +27,34 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class ListInstanceIndicesRequest : RoaAcsRequest<ListInstanceIndicesResponse>
+    public class ListShardRecoveriesRequest : RoaAcsRequest<ListShardRecoveriesResponse>
     {
-        public ListInstanceIndicesRequest()
-            : base("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch", "openAPI")
+        public ListShardRecoveriesRequest()
+            : base("elasticsearch", "2017-06-13", "ListShardRecoveries", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/instances/[InstanceId]/indices";
+			UriPattern = "/openapi/instances/[InstanceId]/cat-recovery";
 			Method = MethodType.GET;
         }
 
-		private bool? all;
+		private bool? activeOnly;
 
 		private string instanceId;
 
-		private bool? isManaged;
-
-		private string name;
-
-		public bool? All
+		public bool? ActiveOnly
 		{
 			get
 			{
-				return all;
+				return activeOnly;
 			}
 			set	
 			{
-				all = value;
-				DictionaryUtil.Add(QueryParameters, "all", value.ToString());
+				activeOnly = value;
+				DictionaryUtil.Add(QueryParameters, "activeOnly", value.ToString());
 			}
 		}
 
@@ -75,40 +71,14 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public bool? IsManaged
-		{
-			get
-			{
-				return isManaged;
-			}
-			set	
-			{
-				isManaged = value;
-				DictionaryUtil.Add(QueryParameters, "isManaged", value.ToString());
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "name", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ListInstanceIndicesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListShardRecoveriesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListInstanceIndicesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListShardRecoveriesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

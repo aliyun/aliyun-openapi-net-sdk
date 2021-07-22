@@ -94,6 +94,10 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private string postpaidServiceStatus;
 
+			private string isNewDeployment;
+
+			private bool? serviceVpc;
+
 			private List<ListInstance_Tag> tags;
 
 			private List<Dictionary<string, string>> extendConfigs;
@@ -251,6 +255,30 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					postpaidServiceStatus = value;
+				}
+			}
+
+			public string IsNewDeployment
+			{
+				get
+				{
+					return isNewDeployment;
+				}
+				set	
+				{
+					isNewDeployment = value;
+				}
+			}
+
+			public bool? ServiceVpc
+			{
+				get
+				{
+					return serviceVpc;
+				}
+				set	
+				{
+					serviceVpc = value;
 				}
 			}
 

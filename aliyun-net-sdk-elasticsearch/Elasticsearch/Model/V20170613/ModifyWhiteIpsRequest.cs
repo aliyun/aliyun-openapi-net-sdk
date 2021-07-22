@@ -41,6 +41,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			Method = MethodType.POST;
         }
 
+		private string modifyMode;
+
 		private string instanceId;
 
 		private string nodeType;
@@ -48,6 +50,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		private string clientToken;
 
 		private string networkType;
+
+		public string ModifyMode
+		{
+			get
+			{
+				return modifyMode;
+			}
+			set	
+			{
+				modifyMode = value;
+				DictionaryUtil.Add(BodyParameters, "modifyMode", value);
+			}
+		}
 
 		public string InstanceId
 		{

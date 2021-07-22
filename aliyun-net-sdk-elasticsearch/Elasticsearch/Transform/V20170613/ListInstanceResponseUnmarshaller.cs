@@ -52,6 +52,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				instance.Status = _ctx.StringValue("ListInstance.Result["+ i +"].status");
 				instance.UpdatedAt = _ctx.StringValue("ListInstance.Result["+ i +"].updatedAt");
 				instance.PostpaidServiceStatus = _ctx.StringValue("ListInstance.Result["+ i +"].postpaidServiceStatus");
+				instance.IsNewDeployment = _ctx.StringValue("ListInstance.Result["+ i +"].isNewDeployment");
+				instance.ServiceVpc = _ctx.BooleanValue("ListInstance.Result["+ i +"].serviceVpc");
 
 				List<Dictionary<string, string>> instance_extendConfigs = new List<Dictionary<string, string>>();
 				for (int j = 0; j < _ctx.Length("ListInstance.Result["+ i +"].ExtendConfigs.Length"); j++) {

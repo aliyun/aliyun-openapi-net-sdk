@@ -27,40 +27,25 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class ListInstanceIndicesRequest : RoaAcsRequest<ListInstanceIndicesResponse>
+    public class ListVpcEndpointsRequest : RoaAcsRequest<ListVpcEndpointsResponse>
     {
-        public ListInstanceIndicesRequest()
-            : base("elasticsearch", "2017-06-13", "ListInstanceIndices", "elasticsearch", "openAPI")
+        public ListVpcEndpointsRequest()
+            : base("elasticsearch", "2017-06-13", "ListVpcEndpoints", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/instances/[InstanceId]/indices";
+			UriPattern = "/openapi/instances/[InstanceId]/vpc-endpoints";
 			Method = MethodType.GET;
         }
 
-		private bool? all;
-
 		private string instanceId;
 
-		private bool? isManaged;
+		private int? size;
 
-		private string name;
-
-		public bool? All
-		{
-			get
-			{
-				return all;
-			}
-			set	
-			{
-				all = value;
-				DictionaryUtil.Add(QueryParameters, "all", value.ToString());
-			}
-		}
+		private int? page;
 
 		public string InstanceId
 		{
@@ -75,29 +60,29 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public bool? IsManaged
+		public int? Size
 		{
 			get
 			{
-				return isManaged;
+				return size;
 			}
 			set	
 			{
-				isManaged = value;
-				DictionaryUtil.Add(QueryParameters, "isManaged", value.ToString());
+				size = value;
+				DictionaryUtil.Add(QueryParameters, "size", value.ToString());
 			}
 		}
 
-		public string Name
+		public int? Page
 		{
 			get
 			{
-				return name;
+				return page;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "name", value);
+				page = value;
+				DictionaryUtil.Add(QueryParameters, "page", value.ToString());
 			}
 		}
 
@@ -106,9 +91,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			return false;
 		}
 
-        public override ListInstanceIndicesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListVpcEndpointsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListInstanceIndicesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListVpcEndpointsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

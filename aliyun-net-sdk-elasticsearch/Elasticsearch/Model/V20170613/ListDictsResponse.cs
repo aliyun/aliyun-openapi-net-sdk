@@ -22,12 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-	public class UpdateKibanaWhiteIpsResponse : AcsResponse
+	public class ListDictsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private UpdateKibanaWhiteIps_Result result;
+		private List<ListDicts_ResultItem> result;
+
+		private ListDicts_Headers headers;
 
 		public string RequestId
 		{
@@ -41,7 +43,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public UpdateKibanaWhiteIps_Result Result
+		public List<ListDicts_ResultItem> Result
 		{
 			get
 			{
@@ -53,34 +55,106 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public class UpdateKibanaWhiteIps_Result
+		public ListDicts_Headers Headers
+		{
+			get
+			{
+				return headers;
+			}
+			set	
+			{
+				headers = value;
+			}
+		}
+
+		public class ListDicts_ResultItem
 		{
 
-			private List<string> kibanaIPWhitelist;
+			private string name;
 
-			private List<string> kibanaPrivateIPWhitelist;
+			private long? fileSize;
 
-			public List<string> KibanaIPWhitelist
+			private string type;
+
+			private string sourceType;
+
+			private string downloadUrl;
+
+			public string Name
 			{
 				get
 				{
-					return kibanaIPWhitelist;
+					return name;
 				}
 				set	
 				{
-					kibanaIPWhitelist = value;
+					name = value;
 				}
 			}
 
-			public List<string> KibanaPrivateIPWhitelist
+			public long? FileSize
 			{
 				get
 				{
-					return kibanaPrivateIPWhitelist;
+					return fileSize;
 				}
 				set	
 				{
-					kibanaPrivateIPWhitelist = value;
+					fileSize = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+
+			public string SourceType
+			{
+				get
+				{
+					return sourceType;
+				}
+				set	
+				{
+					sourceType = value;
+				}
+			}
+
+			public string DownloadUrl
+			{
+				get
+				{
+					return downloadUrl;
+				}
+				set	
+				{
+					downloadUrl = value;
+				}
+			}
+		}
+
+		public class ListDicts_Headers
+		{
+
+			private int? xTotalCount;
+
+			public int? XTotalCount
+			{
+				get
+				{
+					return xTotalCount;
+				}
+				set	
+				{
+					xTotalCount = value;
 				}
 			}
 		}

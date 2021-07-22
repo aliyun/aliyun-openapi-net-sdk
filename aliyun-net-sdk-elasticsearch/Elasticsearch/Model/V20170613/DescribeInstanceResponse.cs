@@ -110,6 +110,12 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private bool? enableKibanaPrivateNetwork;
 
+			private bool? isNewDeployment;
+
+			private string postpaidServiceStatus;
+
+			private bool? serviceVpc;
+
 			private List<DescribeInstance_DictListItem> dictList;
 
 			private List<DescribeInstance_SynonymsDictsItem> synonymsDicts;
@@ -471,6 +477,42 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					enableKibanaPrivateNetwork = value;
+				}
+			}
+
+			public bool? IsNewDeployment
+			{
+				get
+				{
+					return isNewDeployment;
+				}
+				set	
+				{
+					isNewDeployment = value;
+				}
+			}
+
+			public string PostpaidServiceStatus
+			{
+				get
+				{
+					return postpaidServiceStatus;
+				}
+				set	
+				{
+					postpaidServiceStatus = value;
+				}
+			}
+
+			public bool? ServiceVpc
+			{
+				get
+				{
+					return serviceVpc;
+				}
+				set	
+				{
+					serviceVpc = value;
 				}
 			}
 
@@ -1029,6 +1071,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 				private string vsArea;
 
+				private List<DescribeInstance_WhiteIpGroupListItem> whiteIpGroupList;
+
 				public string Type
 				{
 					get
@@ -1074,6 +1118,64 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						vsArea = value;
+					}
+				}
+
+				public List<DescribeInstance_WhiteIpGroupListItem> WhiteIpGroupList
+				{
+					get
+					{
+						return whiteIpGroupList;
+					}
+					set	
+					{
+						whiteIpGroupList = value;
+					}
+				}
+
+				public class DescribeInstance_WhiteIpGroupListItem
+				{
+
+					private string groupName;
+
+					private string whiteIpType;
+
+					private List<string> ips;
+
+					public string GroupName
+					{
+						get
+						{
+							return groupName;
+						}
+						set	
+						{
+							groupName = value;
+						}
+					}
+
+					public string WhiteIpType
+					{
+						get
+						{
+							return whiteIpType;
+						}
+						set	
+						{
+							whiteIpType = value;
+						}
+					}
+
+					public List<string> Ips
+					{
+						get
+						{
+							return ips;
+						}
+						set	
+						{
+							ips = value;
+						}
 					}
 				}
 			}

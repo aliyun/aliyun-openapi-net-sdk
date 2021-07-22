@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-	public class UpdateKibanaWhiteIpsResponse : AcsResponse
+	public class CreateVpcEndpointResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private UpdateKibanaWhiteIps_Result result;
+		private CreateVpcEndpoint_Result result;
 
 		public string RequestId
 		{
@@ -41,7 +41,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public UpdateKibanaWhiteIps_Result Result
+		public CreateVpcEndpoint_Result Result
 		{
 			get
 			{
@@ -53,34 +53,62 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public class UpdateKibanaWhiteIps_Result
+		public class CreateVpcEndpoint_Result
 		{
 
-			private List<string> kibanaIPWhitelist;
+			private string endpointId;
 
-			private List<string> kibanaPrivateIPWhitelist;
+			private string endpointName;
 
-			public List<string> KibanaIPWhitelist
+			private string serviceId;
+
+			private string endpointDomain;
+
+			public string EndpointId
 			{
 				get
 				{
-					return kibanaIPWhitelist;
+					return endpointId;
 				}
 				set	
 				{
-					kibanaIPWhitelist = value;
+					endpointId = value;
 				}
 			}
 
-			public List<string> KibanaPrivateIPWhitelist
+			public string EndpointName
 			{
 				get
 				{
-					return kibanaPrivateIPWhitelist;
+					return endpointName;
 				}
 				set	
 				{
-					kibanaPrivateIPWhitelist = value;
+					endpointName = value;
+				}
+			}
+
+			public string ServiceId
+			{
+				get
+				{
+					return serviceId;
+				}
+				set	
+				{
+					serviceId = value;
+				}
+			}
+
+			public string EndpointDomain
+			{
+				get
+				{
+					return endpointDomain;
+				}
+				set	
+				{
+					endpointDomain = value;
 				}
 			}
 		}

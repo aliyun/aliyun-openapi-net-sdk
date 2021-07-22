@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-	public class UpdateKibanaWhiteIpsResponse : AcsResponse
+	public class DeleteVpcEndpointResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private UpdateKibanaWhiteIps_Result result;
+		private bool? result;
 
 		public string RequestId
 		{
@@ -41,7 +41,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public UpdateKibanaWhiteIps_Result Result
+		public bool? Result
 		{
 			get
 			{
@@ -50,38 +50,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			set	
 			{
 				result = value;
-			}
-		}
-
-		public class UpdateKibanaWhiteIps_Result
-		{
-
-			private List<string> kibanaIPWhitelist;
-
-			private List<string> kibanaPrivateIPWhitelist;
-
-			public List<string> KibanaIPWhitelist
-			{
-				get
-				{
-					return kibanaIPWhitelist;
-				}
-				set	
-				{
-					kibanaIPWhitelist = value;
-				}
-			}
-
-			public List<string> KibanaPrivateIPWhitelist
-			{
-				get
-				{
-					return kibanaPrivateIPWhitelist;
-				}
-				set	
-				{
-					kibanaPrivateIPWhitelist = value;
-				}
 			}
 		}
 	}
