@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class UpdateDISyncTaskRequest : RpcAcsRequest<UpdateDISyncTaskResponse>
+    public class StartDISyncInstanceRequest : RpcAcsRequest<StartDISyncInstanceResponse>
     {
-        public UpdateDISyncTaskRequest()
-            : base("dataworks-public", "2020-05-18", "UpdateDISyncTask")
+        public StartDISyncInstanceRequest()
+            : base("dataworks-public", "2020-05-18", "StartDISyncInstance")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,9 +43,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string taskType;
 
-		private string taskParam;
-
-		private string taskContent;
+		private string startParam;
 
 		private long? projectId;
 
@@ -64,29 +62,16 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public string TaskParam
+		public string StartParam
 		{
 			get
 			{
-				return taskParam;
+				return startParam;
 			}
 			set	
 			{
-				taskParam = value;
-				DictionaryUtil.Add(QueryParameters, "TaskParam", value);
-			}
-		}
-
-		public string TaskContent
-		{
-			get
-			{
-				return taskContent;
-			}
-			set	
-			{
-				taskContent = value;
-				DictionaryUtil.Add(QueryParameters, "TaskContent", value);
+				startParam = value;
+				DictionaryUtil.Add(QueryParameters, "StartParam", value);
 			}
 		}
 
@@ -121,9 +106,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override UpdateDISyncTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override StartDISyncInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateDISyncTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return StartDISyncInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -41,6 +41,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20180601
 			Method = MethodType.POST;
         }
 
+		private string actionType;
+
 		private string jobConfig;
 
 		private bool? createResGroup;
@@ -54,6 +56,23 @@ namespace Aliyun.Acs.dataworks_public.Model.V20180601
 		private string tables;
 
 		private string dataSource;
+
+		private long? projectId;
+
+		private long? fileId;
+
+		public string ActionType
+		{
+			get
+			{
+				return actionType;
+			}
+			set	
+			{
+				actionType = value;
+				DictionaryUtil.Add(QueryParameters, "ActionType", value);
+			}
+		}
 
 		public string JobConfig
 		{
@@ -143,6 +162,32 @@ namespace Aliyun.Acs.dataworks_public.Model.V20180601
 			{
 				dataSource = value;
 				DictionaryUtil.Add(QueryParameters, "DataSource", value);
+			}
+		}
+
+		public long? ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(QueryParameters, "ProjectId", value.ToString());
+			}
+		}
+
+		public long? FileId
+		{
+			get
+			{
+				return fileId;
+			}
+			set	
+			{
+				fileId = value;
+				DictionaryUtil.Add(QueryParameters, "FileId", value.ToString());
 			}
 		}
 

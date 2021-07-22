@@ -20,18 +20,16 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.dataworks_public.Model.V20180601
+namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-	public class QueryRealTimeProcessStatusResponse : AcsResponse
+	public class GetDISyncInstanceInfoResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string message;
+		private bool? success;
 
-		private int? code;
-
-		private QueryRealTimeProcessStatus_Data data;
+		private GetDISyncInstanceInfo_Data data;
 
 		public string RequestId
 		{
@@ -45,31 +43,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20180601
 			}
 		}
 
-		public string Message
+		public bool? Success
 		{
 			get
 			{
-				return message;
+				return success;
 			}
 			set	
 			{
-				message = value;
+				success = value;
 			}
 		}
 
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public QueryRealTimeProcessStatus_Data Data
+		public GetDISyncInstanceInfo_Data Data
 		{
 			get
 			{
@@ -81,20 +67,14 @@ namespace Aliyun.Acs.dataworks_public.Model.V20180601
 			}
 		}
 
-		public class QueryRealTimeProcessStatus_Data
+		public class GetDISyncInstanceInfo_Data
 		{
 
 			private string status;
 
-			private string taskId;
-
-			private string taskUrl;
+			private string name;
 
 			private string message;
-
-			private long? projectId;
-
-			private long? fileId;
 
 			public string Status
 			{
@@ -108,27 +88,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20180601
 				}
 			}
 
-			public string TaskId
+			public string Name
 			{
 				get
 				{
-					return taskId;
+					return name;
 				}
 				set	
 				{
-					taskId = value;
-				}
-			}
-
-			public string TaskUrl
-			{
-				get
-				{
-					return taskUrl;
-				}
-				set	
-				{
-					taskUrl = value;
+					name = value;
 				}
 			}
 
@@ -141,30 +109,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20180601
 				set	
 				{
 					message = value;
-				}
-			}
-
-			public long? ProjectId
-			{
-				get
-				{
-					return projectId;
-				}
-				set	
-				{
-					projectId = value;
-				}
-			}
-
-			public long? FileId
-			{
-				get
-				{
-					return fileId;
-				}
-				set	
-				{
-					fileId = value;
 				}
 			}
 		}

@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class UpdateDISyncTaskRequest : RpcAcsRequest<UpdateDISyncTaskResponse>
+    public class TerminateDISyncInstanceRequest : RpcAcsRequest<TerminateDISyncInstanceResponse>
     {
-        public UpdateDISyncTaskRequest()
-            : base("dataworks-public", "2020-05-18", "UpdateDISyncTask")
+        public TerminateDISyncInstanceRequest()
+            : base("dataworks-public", "2020-05-18", "TerminateDISyncInstance")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,10 +42,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
         }
 
 		private string taskType;
-
-		private string taskParam;
-
-		private string taskContent;
 
 		private long? projectId;
 
@@ -61,32 +57,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				taskType = value;
 				DictionaryUtil.Add(QueryParameters, "TaskType", value);
-			}
-		}
-
-		public string TaskParam
-		{
-			get
-			{
-				return taskParam;
-			}
-			set	
-			{
-				taskParam = value;
-				DictionaryUtil.Add(QueryParameters, "TaskParam", value);
-			}
-		}
-
-		public string TaskContent
-		{
-			get
-			{
-				return taskContent;
-			}
-			set	
-			{
-				taskContent = value;
-				DictionaryUtil.Add(QueryParameters, "TaskContent", value);
 			}
 		}
 
@@ -121,9 +91,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override UpdateDISyncTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TerminateDISyncInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateDISyncTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TerminateDISyncInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

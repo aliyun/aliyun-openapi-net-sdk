@@ -40,6 +40,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20180601
 			data.TaskId = _ctx.StringValue("QueryRealTimeProcessStatus.Data.TaskId");
 			data.TaskUrl = _ctx.StringValue("QueryRealTimeProcessStatus.Data.TaskUrl");
 			data.Message = _ctx.StringValue("QueryRealTimeProcessStatus.Data.Message");
+			data.ProjectId = _ctx.LongValue("QueryRealTimeProcessStatus.Data.ProjectId");
+			data.FileId = _ctx.LongValue("QueryRealTimeProcessStatus.Data.FileId");
 			queryRealTimeProcessStatusResponse.Data = data;
         
 			return queryRealTimeProcessStatusResponse;

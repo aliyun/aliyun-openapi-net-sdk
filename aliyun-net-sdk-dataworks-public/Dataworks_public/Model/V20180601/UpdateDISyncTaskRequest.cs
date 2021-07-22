@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.dataworks_public;
 using Aliyun.Acs.dataworks_public.Transform;
-using Aliyun.Acs.dataworks_public.Transform.V20200518;
+using Aliyun.Acs.dataworks_public.Transform.V20180601;
 
-namespace Aliyun.Acs.dataworks_public.Model.V20200518
+namespace Aliyun.Acs.dataworks_public.Model.V20180601
 {
     public class UpdateDISyncTaskRequest : RpcAcsRequest<UpdateDISyncTaskResponse>
     {
         public UpdateDISyncTaskRequest()
-            : base("dataworks-public", "2020-05-18", "UpdateDISyncTask")
+            : base("dataworks-public", "2018-06-01", "UpdateDISyncTask")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
