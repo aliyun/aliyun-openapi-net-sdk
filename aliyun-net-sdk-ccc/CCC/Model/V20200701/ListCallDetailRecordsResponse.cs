@@ -177,13 +177,23 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 				private string instanceId;
 
+				private long? ivrTime;
+
+				private long? queueTime;
+
+				private long? recordingDuration;
+
 				private bool? recordingReady;
 
 				private string releaseInitiator;
 
 				private long? releaseTime;
 
-				private int? satisfaction;
+				private long? ringTime;
+
+				private string satisfactionDescription;
+
+				private int? satisfactionIndex;
 
 				private string satisfactionSurveyChannel;
 
@@ -194,6 +204,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				private string skillGroupNames;
 
 				private long? startTime;
+
+				private long? waitTime;
 
 				public string AgentIds
 				{
@@ -315,6 +327,42 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
+				public long? IvrTime
+				{
+					get
+					{
+						return ivrTime;
+					}
+					set	
+					{
+						ivrTime = value;
+					}
+				}
+
+				public long? QueueTime
+				{
+					get
+					{
+						return queueTime;
+					}
+					set	
+					{
+						queueTime = value;
+					}
+				}
+
+				public long? RecordingDuration
+				{
+					get
+					{
+						return recordingDuration;
+					}
+					set	
+					{
+						recordingDuration = value;
+					}
+				}
+
 				public bool? RecordingReady
 				{
 					get
@@ -351,15 +399,39 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public int? Satisfaction
+				public long? RingTime
 				{
 					get
 					{
-						return satisfaction;
+						return ringTime;
 					}
 					set	
 					{
-						satisfaction = value;
+						ringTime = value;
+					}
+				}
+
+				public string SatisfactionDescription
+				{
+					get
+					{
+						return satisfactionDescription;
+					}
+					set	
+					{
+						satisfactionDescription = value;
+					}
+				}
+
+				public int? SatisfactionIndex
+				{
+					get
+					{
+						return satisfactionIndex;
+					}
+					set	
+					{
+						satisfactionIndex = value;
 					}
 				}
 
@@ -420,6 +492,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						startTime = value;
+					}
+				}
+
+				public long? WaitTime
+				{
+					get
+					{
+						return waitTime;
+					}
+					set	
+					{
+						waitTime = value;
 					}
 				}
 			}

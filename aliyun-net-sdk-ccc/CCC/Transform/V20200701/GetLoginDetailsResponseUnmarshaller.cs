@@ -50,6 +50,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			data.SipServerUrl = _ctx.StringValue("GetLoginDetails.Data.SipServerUrl");
 			data.UserId = _ctx.StringValue("GetLoginDetails.Data.UserId");
 			data.UserKey = _ctx.StringValue("GetLoginDetails.Data.UserKey");
+			data.AgentServerUrl = _ctx.StringValue("GetLoginDetails.Data.AgentServerUrl");
 			getLoginDetailsResponse.Data = data;
         
 			return getLoginDetailsResponse;

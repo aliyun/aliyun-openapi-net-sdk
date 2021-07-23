@@ -43,7 +43,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 				GetInstanceTrendingReportResponse.GetInstanceTrendingReport_Data.GetInstanceTrendingReport_InboundItem inboundItem = new GetInstanceTrendingReportResponse.GetInstanceTrendingReport_Data.GetInstanceTrendingReport_InboundItem();
 				inboundItem.CallsAbandonedInIVR = _ctx.LongValue("GetInstanceTrendingReport.Data.Inbound["+ i +"].CallsAbandonedInIVR");
 				inboundItem.CallsAbandonedInQueue = _ctx.LongValue("GetInstanceTrendingReport.Data.Inbound["+ i +"].CallsAbandonedInQueue");
-				inboundItem.CallsAbandonedInRinging = _ctx.LongValue("GetInstanceTrendingReport.Data.Inbound["+ i +"].CallsAbandonedInRinging");
+				inboundItem.CallsAbandonedInRing = _ctx.LongValue("GetInstanceTrendingReport.Data.Inbound["+ i +"].CallsAbandonedInRing");
 				inboundItem.CallsHandled = _ctx.LongValue("GetInstanceTrendingReport.Data.Inbound["+ i +"].CallsHandled");
 				inboundItem.CallsQueued = _ctx.LongValue("GetInstanceTrendingReport.Data.Inbound["+ i +"].CallsQueued");
 				inboundItem.StatsTime = _ctx.LongValue("GetInstanceTrendingReport.Data.Inbound["+ i +"].StatsTime");

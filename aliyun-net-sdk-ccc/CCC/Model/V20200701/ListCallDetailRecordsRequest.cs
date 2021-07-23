@@ -42,6 +42,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 		private string contactId;
 
+		private string criteria;
+
 		private string orderByField;
 
 		private long? startTime;
@@ -55,6 +57,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 		private int? pageSize;
 
 		private string sortOrder;
+
+		private string satisfactionDescriptionList;
 
 		private string agentId;
 
@@ -82,6 +86,19 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			{
 				contactId = value;
 				DictionaryUtil.Add(QueryParameters, "ContactId", value);
+			}
+		}
+
+		public string Criteria
+		{
+			get
+			{
+				return criteria;
+			}
+			set	
+			{
+				criteria = value;
+				DictionaryUtil.Add(QueryParameters, "Criteria", value);
 			}
 		}
 
@@ -173,6 +190,19 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			{
 				sortOrder = value;
 				DictionaryUtil.Add(QueryParameters, "SortOrder", value);
+			}
+		}
+
+		public string SatisfactionDescriptionList
+		{
+			get
+			{
+				return satisfactionDescriptionList;
+			}
+			set	
+			{
+				satisfactionDescriptionList = value;
+				DictionaryUtil.Add(QueryParameters, "SatisfactionDescriptionList", value);
 			}
 		}
 

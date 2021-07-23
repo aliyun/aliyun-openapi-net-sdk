@@ -183,9 +183,11 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 				private long? callsAbandonedInQueue;
 
-				private long? callsAbandonedInRinging;
+				private long? callsAbandonedInRing;
 
-				private long? callsConsulted;
+				private long? callsAttendedTransferred;
+
+				private long? callsBlindTransferred;
 
 				private long? callsHandled;
 
@@ -196,8 +198,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				private long? callsQueued;
 
 				private long? callsRinged;
-
-				private long? callsTransferred;
 
 				private float? handleRate;
 
@@ -220,6 +220,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				private long? maxWorkTime;
 
 				private float? satisfactionIndex;
+
+				private float? satisfactionRate;
 
 				private long? satisfactionSurveysOffered;
 
@@ -401,27 +403,39 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public long? CallsAbandonedInRinging
+				public long? CallsAbandonedInRing
 				{
 					get
 					{
-						return callsAbandonedInRinging;
+						return callsAbandonedInRing;
 					}
 					set	
 					{
-						callsAbandonedInRinging = value;
+						callsAbandonedInRing = value;
 					}
 				}
 
-				public long? CallsConsulted
+				public long? CallsAttendedTransferred
 				{
 					get
 					{
-						return callsConsulted;
+						return callsAttendedTransferred;
 					}
 					set	
 					{
-						callsConsulted = value;
+						callsAttendedTransferred = value;
+					}
+				}
+
+				public long? CallsBlindTransferred
+				{
+					get
+					{
+						return callsBlindTransferred;
+					}
+					set	
+					{
+						callsBlindTransferred = value;
 					}
 				}
 
@@ -482,18 +496,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						callsRinged = value;
-					}
-				}
-
-				public long? CallsTransferred
-				{
-					get
-					{
-						return callsTransferred;
-					}
-					set	
-					{
-						callsTransferred = value;
 					}
 				}
 
@@ -626,6 +628,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						satisfactionIndex = value;
+					}
+				}
+
+				public float? SatisfactionRate
+				{
+					get
+					{
+						return satisfactionRate;
+					}
+					set	
+					{
+						satisfactionRate = value;
 					}
 				}
 
@@ -781,23 +795,39 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 				private float? averageDialingTime;
 
+				private float? averageHoldTime;
+
+				private float? averageRingTime;
+
 				private float? averageTalkTime;
 
 				private float? averageWorkTime;
 
 				private long? callsAnswered;
 
+				private long? callsAttendedTransferred;
+
+				private long? callsBlindTransferred;
+
 				private long? callsDialed;
 
-				private long? callsDialedSuccess;
+				private long? callsHold;
+
+				private long? callsRinged;
 
 				private long? maxDialingTime;
+
+				private long? maxHoldTime;
+
+				private long? maxRingTime;
 
 				private long? maxTalkTime;
 
 				private long? maxWorkTime;
 
 				private float? satisfactionIndex;
+
+				private float? satisfactionRate;
 
 				private long? satisfactionSurveysOffered;
 
@@ -806,6 +836,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				private long? totalDialingTime;
 
 				private long? totalHoldTime;
+
+				private long? totalRingTime;
 
 				private long? totalTalkTime;
 
@@ -832,6 +864,30 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						averageDialingTime = value;
+					}
+				}
+
+				public float? AverageHoldTime
+				{
+					get
+					{
+						return averageHoldTime;
+					}
+					set	
+					{
+						averageHoldTime = value;
+					}
+				}
+
+				public float? AverageRingTime
+				{
+					get
+					{
+						return averageRingTime;
+					}
+					set	
+					{
+						averageRingTime = value;
 					}
 				}
 
@@ -871,6 +927,30 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
+				public long? CallsAttendedTransferred
+				{
+					get
+					{
+						return callsAttendedTransferred;
+					}
+					set	
+					{
+						callsAttendedTransferred = value;
+					}
+				}
+
+				public long? CallsBlindTransferred
+				{
+					get
+					{
+						return callsBlindTransferred;
+					}
+					set	
+					{
+						callsBlindTransferred = value;
+					}
+				}
+
 				public long? CallsDialed
 				{
 					get
@@ -883,15 +963,27 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public long? CallsDialedSuccess
+				public long? CallsHold
 				{
 					get
 					{
-						return callsDialedSuccess;
+						return callsHold;
 					}
 					set	
 					{
-						callsDialedSuccess = value;
+						callsHold = value;
+					}
+				}
+
+				public long? CallsRinged
+				{
+					get
+					{
+						return callsRinged;
+					}
+					set	
+					{
+						callsRinged = value;
 					}
 				}
 
@@ -904,6 +996,30 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						maxDialingTime = value;
+					}
+				}
+
+				public long? MaxHoldTime
+				{
+					get
+					{
+						return maxHoldTime;
+					}
+					set	
+					{
+						maxHoldTime = value;
+					}
+				}
+
+				public long? MaxRingTime
+				{
+					get
+					{
+						return maxRingTime;
+					}
+					set	
+					{
+						maxRingTime = value;
 					}
 				}
 
@@ -940,6 +1056,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						satisfactionIndex = value;
+					}
+				}
+
+				public float? SatisfactionRate
+				{
+					get
+					{
+						return satisfactionRate;
+					}
+					set	
+					{
+						satisfactionRate = value;
 					}
 				}
 
@@ -988,6 +1116,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						totalHoldTime = value;
+					}
+				}
+
+				public long? TotalRingTime
+				{
+					get
+					{
+						return totalRingTime;
+					}
+					set	
+					{
+						totalRingTime = value;
 					}
 				}
 
@@ -1042,6 +1182,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				private float? occupancyRate;
 
 				private float? satisfactionIndex;
+
+				private float? satisfactionRate;
 
 				private long? satisfactionSurveysOffered;
 
@@ -1202,6 +1344,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						satisfactionIndex = value;
+					}
+				}
+
+				public float? SatisfactionRate
+				{
+					get
+					{
+						return satisfactionRate;
+					}
+					set	
+					{
+						satisfactionRate = value;
 					}
 				}
 

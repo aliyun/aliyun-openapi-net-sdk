@@ -106,7 +106,7 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 			private long? loggedInAgents;
 
-			private long? longestCall;
+			private long? longestWaitingTime;
 
 			private long? readyAgents;
 
@@ -166,15 +166,15 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				}
 			}
 
-			public long? LongestCall
+			public long? LongestWaitingTime
 			{
 				get
 				{
-					return longestCall;
+					return longestWaitingTime;
 				}
 				set	
 				{
-					longestCall = value;
+					longestWaitingTime = value;
 				}
 			}
 

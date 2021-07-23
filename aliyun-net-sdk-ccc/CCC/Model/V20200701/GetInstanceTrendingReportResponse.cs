@@ -133,7 +133,7 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 				private long? callsAbandonedInQueue;
 
-				private long? callsAbandonedInRinging;
+				private long? callsAbandonedInRing;
 
 				private long? callsHandled;
 
@@ -167,15 +167,15 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public long? CallsAbandonedInRinging
+				public long? CallsAbandonedInRing
 				{
 					get
 					{
-						return callsAbandonedInRinging;
+						return callsAbandonedInRing;
 					}
 					set	
 					{
-						callsAbandonedInRinging = value;
+						callsAbandonedInRing = value;
 					}
 				}
 

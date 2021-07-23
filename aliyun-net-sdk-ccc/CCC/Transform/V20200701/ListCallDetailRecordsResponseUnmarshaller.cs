@@ -54,15 +54,21 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 				callDetailRecord.ContactType = _ctx.StringValue("ListCallDetailRecords.Data.List["+ i +"].ContactType");
 				callDetailRecord.EstablishedTime = _ctx.LongValue("ListCallDetailRecords.Data.List["+ i +"].EstablishedTime");
 				callDetailRecord.InstanceId = _ctx.StringValue("ListCallDetailRecords.Data.List["+ i +"].InstanceId");
+				callDetailRecord.IvrTime = _ctx.LongValue("ListCallDetailRecords.Data.List["+ i +"].IvrTime");
+				callDetailRecord.QueueTime = _ctx.LongValue("ListCallDetailRecords.Data.List["+ i +"].QueueTime");
+				callDetailRecord.RecordingDuration = _ctx.LongValue("ListCallDetailRecords.Data.List["+ i +"].RecordingDuration");
 				callDetailRecord.RecordingReady = _ctx.BooleanValue("ListCallDetailRecords.Data.List["+ i +"].RecordingReady");
 				callDetailRecord.ReleaseInitiator = _ctx.StringValue("ListCallDetailRecords.Data.List["+ i +"].ReleaseInitiator");
 				callDetailRecord.ReleaseTime = _ctx.LongValue("ListCallDetailRecords.Data.List["+ i +"].ReleaseTime");
-				callDetailRecord.Satisfaction = _ctx.IntegerValue("ListCallDetailRecords.Data.List["+ i +"].Satisfaction");
+				callDetailRecord.RingTime = _ctx.LongValue("ListCallDetailRecords.Data.List["+ i +"].RingTime");
+				callDetailRecord.SatisfactionDescription = _ctx.StringValue("ListCallDetailRecords.Data.List["+ i +"].SatisfactionDescription");
+				callDetailRecord.SatisfactionIndex = _ctx.IntegerValue("ListCallDetailRecords.Data.List["+ i +"].SatisfactionIndex");
 				callDetailRecord.SatisfactionSurveyChannel = _ctx.StringValue("ListCallDetailRecords.Data.List["+ i +"].SatisfactionSurveyChannel");
 				callDetailRecord.SatisfactionSurveyOffered = _ctx.BooleanValue("ListCallDetailRecords.Data.List["+ i +"].SatisfactionSurveyOffered");
 				callDetailRecord.SkillGroupIds = _ctx.StringValue("ListCallDetailRecords.Data.List["+ i +"].SkillGroupIds");
 				callDetailRecord.SkillGroupNames = _ctx.StringValue("ListCallDetailRecords.Data.List["+ i +"].SkillGroupNames");
 				callDetailRecord.StartTime = _ctx.LongValue("ListCallDetailRecords.Data.List["+ i +"].StartTime");
+				callDetailRecord.WaitTime = _ctx.LongValue("ListCallDetailRecords.Data.List["+ i +"].WaitTime");
 
 				data_list.Add(callDetailRecord);
 			}

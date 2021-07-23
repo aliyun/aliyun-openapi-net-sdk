@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20200701
 {
-	public class GetLoginDetailsResponse : AcsResponse
+	public class UpdateConfigItemsResponse : AcsResponse
 	{
 
 		private string code;
@@ -34,8 +34,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 		private string requestId;
 
 		private List<string> _params;
-
-		private GetLoginDetails_Data data;
 
 		public string Code
 		{
@@ -94,134 +92,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			set	
 			{
 				_params = value;
-			}
-		}
-
-		public GetLoginDetails_Data Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-			}
-		}
-
-		public class GetLoginDetails_Data
-		{
-
-			private string deviceId;
-
-			private string displayName;
-
-			private string extension;
-
-			private string signature;
-
-			private string sipServerUrl;
-
-			private string userId;
-
-			private string userKey;
-
-			private string agentServerUrl;
-
-			public string DeviceId
-			{
-				get
-				{
-					return deviceId;
-				}
-				set	
-				{
-					deviceId = value;
-				}
-			}
-
-			public string DisplayName
-			{
-				get
-				{
-					return displayName;
-				}
-				set	
-				{
-					displayName = value;
-				}
-			}
-
-			public string Extension
-			{
-				get
-				{
-					return extension;
-				}
-				set	
-				{
-					extension = value;
-				}
-			}
-
-			public string Signature
-			{
-				get
-				{
-					return signature;
-				}
-				set	
-				{
-					signature = value;
-				}
-			}
-
-			public string SipServerUrl
-			{
-				get
-				{
-					return sipServerUrl;
-				}
-				set	
-				{
-					sipServerUrl = value;
-				}
-			}
-
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
-
-			public string UserKey
-			{
-				get
-				{
-					return userKey;
-				}
-				set	
-				{
-					userKey = value;
-				}
-			}
-
-			public string AgentServerUrl
-			{
-				get
-				{
-					return agentServerUrl;
-				}
-				set	
-				{
-					agentServerUrl = value;
-				}
 			}
 		}
 	}

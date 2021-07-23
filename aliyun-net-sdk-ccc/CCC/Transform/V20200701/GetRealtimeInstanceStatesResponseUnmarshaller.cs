@@ -41,7 +41,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			data.InstanceId = _ctx.StringValue("GetRealtimeInstanceStates.Data.InstanceId");
 			data.InteractiveCalls = _ctx.LongValue("GetRealtimeInstanceStates.Data.InteractiveCalls");
 			data.LoggedInAgents = _ctx.LongValue("GetRealtimeInstanceStates.Data.LoggedInAgents");
-			data.LongestCall = _ctx.LongValue("GetRealtimeInstanceStates.Data.LongestCall");
+			data.LongestWaitingTime = _ctx.LongValue("GetRealtimeInstanceStates.Data.LongestWaitingTime");
 			data.ReadyAgents = _ctx.LongValue("GetRealtimeInstanceStates.Data.ReadyAgents");
 			data.TalkingAgents = _ctx.LongValue("GetRealtimeInstanceStates.Data.TalkingAgents");
 			data.TotalAgents = _ctx.LongValue("GetRealtimeInstanceStates.Data.TotalAgents");
