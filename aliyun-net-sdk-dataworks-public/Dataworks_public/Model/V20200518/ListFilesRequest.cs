@@ -59,6 +59,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string useType;
 
+		private long? nodeId;
+
 		public string Owner
 		{
 			get
@@ -173,6 +175,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				useType = value;
 				DictionaryUtil.Add(BodyParameters, "UseType", value);
+			}
+		}
+
+		public long? NodeId
+		{
+			get
+			{
+				return nodeId;
+			}
+			set	
+			{
+				nodeId = value;
+				DictionaryUtil.Add(BodyParameters, "NodeId", value.ToString());
 			}
 		}
 

@@ -76,6 +76,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			nodeConfiguration.DependentType = _ctx.StringValue("GetFile.Data.NodeConfiguration.DependentType");
 			nodeConfiguration.DependentNodeIdList = _ctx.StringValue("GetFile.Data.NodeConfiguration.DependentNodeIdList");
 			nodeConfiguration.ResourceGroupId = _ctx.LongValue("GetFile.Data.NodeConfiguration.ResourceGroupId");
+			nodeConfiguration.SchedulerType = _ctx.StringValue("GetFile.Data.NodeConfiguration.SchedulerType");
 
 			List<GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_NodeInputOutput> nodeConfiguration_inputList = new List<GetFileResponse.GetFile_Data.GetFile_NodeConfiguration.GetFile_NodeInputOutput>();
 			for (int i = 0; i < _ctx.Length("GetFile.Data.NodeConfiguration.InputList.Length"); i++) {

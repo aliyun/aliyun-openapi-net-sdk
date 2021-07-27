@@ -89,6 +89,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private bool? autoParsing;
 
+		private string schedulerType;
+
 		public int? FileType
 		{
 			get
@@ -398,6 +400,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				autoParsing = value;
 				DictionaryUtil.Add(BodyParameters, "AutoParsing", value.ToString());
+			}
+		}
+
+		public string SchedulerType
+		{
+			get
+			{
+				return schedulerType;
+			}
+			set	
+			{
+				schedulerType = value;
+				DictionaryUtil.Add(BodyParameters, "SchedulerType", value);
 			}
 		}
 

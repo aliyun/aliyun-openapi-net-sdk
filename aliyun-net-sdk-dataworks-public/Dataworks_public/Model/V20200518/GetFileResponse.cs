@@ -465,6 +465,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private long? resourceGroupId;
 
+				private string schedulerType;
+
 				private List<GetFile_NodeInputOutput> inputList;
 
 				private List<GetFile_NodeInputOutput1> outputList;
@@ -610,6 +612,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						resourceGroupId = value;
+					}
+				}
+
+				public string SchedulerType
+				{
+					get
+					{
+						return schedulerType;
+					}
+					set	
+					{
+						schedulerType = value;
 					}
 				}
 
