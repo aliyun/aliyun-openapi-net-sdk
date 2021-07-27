@@ -31,20 +31,20 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			CreateTairInstanceResponse createTairInstanceResponse = new CreateTairInstanceResponse();
 
 			createTairInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			createTairInstanceResponse.RequestId = _ctx.StringValue("CreateTairInstance.RequestId");
+			createTairInstanceResponse.Bandwidth = _ctx.LongValue("CreateTairInstance.Bandwidth");
+			createTairInstanceResponse.ChargeType = _ctx.StringValue("CreateTairInstance.ChargeType");
+			createTairInstanceResponse.Config = _ctx.StringValue("CreateTairInstance.Config");
+			createTairInstanceResponse.ConnectionDomain = _ctx.StringValue("CreateTairInstance.ConnectionDomain");
+			createTairInstanceResponse.Connections = _ctx.LongValue("CreateTairInstance.Connections");
 			createTairInstanceResponse.InstanceId = _ctx.StringValue("CreateTairInstance.InstanceId");
 			createTairInstanceResponse.InstanceName = _ctx.StringValue("CreateTairInstance.InstanceName");
-			createTairInstanceResponse.ConnectionDomain = _ctx.StringValue("CreateTairInstance.ConnectionDomain");
-			createTairInstanceResponse.Port = _ctx.IntegerValue("CreateTairInstance.Port");
 			createTairInstanceResponse.InstanceStatus = _ctx.StringValue("CreateTairInstance.InstanceStatus");
-			createTairInstanceResponse.RegionId = _ctx.StringValue("CreateTairInstance.RegionId");
+			createTairInstanceResponse.Port = _ctx.IntegerValue("CreateTairInstance.Port");
 			createTairInstanceResponse.QPS = _ctx.LongValue("CreateTairInstance.QPS");
-			createTairInstanceResponse.Bandwidth = _ctx.LongValue("CreateTairInstance.Bandwidth");
-			createTairInstanceResponse.Connections = _ctx.LongValue("CreateTairInstance.Connections");
-			createTairInstanceResponse.ZoneId = _ctx.StringValue("CreateTairInstance.ZoneId");
-			createTairInstanceResponse.Config = _ctx.StringValue("CreateTairInstance.Config");
-			createTairInstanceResponse.ChargeType = _ctx.StringValue("CreateTairInstance.ChargeType");
+			createTairInstanceResponse.RegionId = _ctx.StringValue("CreateTairInstance.RegionId");
+			createTairInstanceResponse.RequestId = _ctx.StringValue("CreateTairInstance.RequestId");
 			createTairInstanceResponse.TaskId = _ctx.StringValue("CreateTairInstance.TaskId");
+			createTairInstanceResponse.ZoneId = _ctx.StringValue("CreateTairInstance.ZoneId");
         
 			return createTairInstanceResponse;
         }

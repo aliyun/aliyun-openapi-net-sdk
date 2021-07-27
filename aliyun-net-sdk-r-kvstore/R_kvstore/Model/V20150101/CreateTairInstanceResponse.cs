@@ -25,43 +25,91 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class CreateTairInstanceResponse : AcsResponse
 	{
 
-		private string requestId;
+		private long? bandwidth;
+
+		private string chargeType;
+
+		private string config;
+
+		private string connectionDomain;
+
+		private long? connections;
 
 		private string instanceId;
 
 		private string instanceName;
 
-		private string connectionDomain;
+		private string instanceStatus;
 
 		private int? port;
 
-		private string instanceStatus;
+		private long? qPS;
 
 		private string regionId;
 
-		private long? qPS;
-
-		private long? bandwidth;
-
-		private long? connections;
-
-		private string zoneId;
-
-		private string config;
-
-		private string chargeType;
+		private string requestId;
 
 		private string taskId;
 
-		public string RequestId
+		private string zoneId;
+
+		public long? Bandwidth
 		{
 			get
 			{
-				return requestId;
+				return bandwidth;
 			}
 			set	
 			{
-				requestId = value;
+				bandwidth = value;
+			}
+		}
+
+		public string ChargeType
+		{
+			get
+			{
+				return chargeType;
+			}
+			set	
+			{
+				chargeType = value;
+			}
+		}
+
+		public string Config
+		{
+			get
+			{
+				return config;
+			}
+			set	
+			{
+				config = value;
+			}
+		}
+
+		public string ConnectionDomain
+		{
+			get
+			{
+				return connectionDomain;
+			}
+			set	
+			{
+				connectionDomain = value;
+			}
+		}
+
+		public long? Connections
+		{
+			get
+			{
+				return connections;
+			}
+			set	
+			{
+				connections = value;
 			}
 		}
 
@@ -89,15 +137,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string ConnectionDomain
+		public string InstanceStatus
 		{
 			get
 			{
-				return connectionDomain;
+				return instanceStatus;
 			}
 			set	
 			{
-				connectionDomain = value;
+				instanceStatus = value;
 			}
 		}
 
@@ -113,15 +161,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceStatus
+		public long? QPS
 		{
 			get
 			{
-				return instanceStatus;
+				return qPS;
 			}
 			set	
 			{
-				instanceStatus = value;
+				qPS = value;
 			}
 		}
 
@@ -137,75 +185,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public long? QPS
+		public string RequestId
 		{
 			get
 			{
-				return qPS;
+				return requestId;
 			}
 			set	
 			{
-				qPS = value;
-			}
-		}
-
-		public long? Bandwidth
-		{
-			get
-			{
-				return bandwidth;
-			}
-			set	
-			{
-				bandwidth = value;
-			}
-		}
-
-		public long? Connections
-		{
-			get
-			{
-				return connections;
-			}
-			set	
-			{
-				connections = value;
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-			}
-		}
-
-		public string Config
-		{
-			get
-			{
-				return config;
-			}
-			set	
-			{
-				config = value;
-			}
-		}
-
-		public string ChargeType
-		{
-			get
-			{
-				return chargeType;
-			}
-			set	
-			{
-				chargeType = value;
+				requestId = value;
 			}
 		}
 
@@ -218,6 +206,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				taskId = value;
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
 			}
 		}
 	}
