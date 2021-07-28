@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.retailcloud;
 using Aliyun.Acs.retailcloud.Transform;
 using Aliyun.Acs.retailcloud.Transform.V20180313;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
     public class DeployAppRequest : RpcAcsRequest<DeployAppResponse>
     {
         public DeployAppRequest()
-            : base("retailcloud", "2018-03-13", "DeployApp")
+            : base("retailcloud", "2018-03-13", "DeployApp", "retailcloud", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -60,6 +59,8 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 		private string name;
 
 		private List<string> initContainerImageLists = new List<string>(){ };
+
+		private string defaultPacketOfAppGroup;
 
 		private bool? armsFlag;
 
@@ -198,6 +199,19 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 				{
 					DictionaryUtil.Add(QueryParameters,"InitContainerImageList." + (i + 1) , initContainerImageLists[i]);
 				}
+			}
+		}
+
+		public string DefaultPacketOfAppGroup
+		{
+			get
+			{
+				return defaultPacketOfAppGroup;
+			}
+			set	
+			{
+				defaultPacketOfAppGroup = value;
+				DictionaryUtil.Add(QueryParameters, "DefaultPacketOfAppGroup", value);
 			}
 		}
 

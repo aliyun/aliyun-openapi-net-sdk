@@ -27,10 +27,10 @@ using Aliyun.Acs.retailcloud.Transform.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Model.V20180313
 {
-    public class CreateAppResourceAllocRequest : RpcAcsRequest<CreateAppResourceAllocResponse>
+    public class DescribePodContainerLogListRequest : RpcAcsRequest<DescribePodContainerLogListResponse>
     {
-        public CreateAppResourceAllocRequest()
-            : base("retailcloud", "2018-03-13", "CreateAppResourceAlloc", "retailcloud", "openAPI")
+        public DescribePodContainerLogListRequest()
+            : base("retailcloud", "2018-03-13", "DescribePodContainerLogList", "retailcloud", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,11 +40,26 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			Method = MethodType.POST;
         }
 
+		private int? line;
+
 		private long? appId;
 
-		private long? appEnvId;
+		private string podName;
 
-		private string clusterId;
+		private long? envId;
+
+		public int? Line
+		{
+			get
+			{
+				return line;
+			}
+			set	
+			{
+				line = value;
+				DictionaryUtil.Add(QueryParameters, "Line", value.ToString());
+			}
+		}
 
 		public long? AppId
 		{
@@ -59,29 +74,29 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			}
 		}
 
-		public long? AppEnvId
+		public string PodName
 		{
 			get
 			{
-				return appEnvId;
+				return podName;
 			}
 			set	
 			{
-				appEnvId = value;
-				DictionaryUtil.Add(QueryParameters, "AppEnvId", value.ToString());
+				podName = value;
+				DictionaryUtil.Add(QueryParameters, "PodName", value);
 			}
 		}
 
-		public string ClusterId
+		public long? EnvId
 		{
 			get
 			{
-				return clusterId;
+				return envId;
 			}
 			set	
 			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+				envId = value;
+				DictionaryUtil.Add(QueryParameters, "EnvId", value.ToString());
 			}
 		}
 
@@ -90,9 +105,9 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			return false;
 		}
 
-        public override CreateAppResourceAllocResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribePodContainerLogListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateAppResourceAllocResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribePodContainerLogListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

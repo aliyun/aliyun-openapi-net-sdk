@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.retailcloud;
 using Aliyun.Acs.retailcloud.Transform;
 using Aliyun.Acs.retailcloud.Transform.V20180313;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
     public class SyncPodInfoRequest : RpcAcsRequest<SyncPodInfoResponse>
     {
         public SyncPodInfoRequest()
-            : base("retailcloud", "2018-03-13", "SyncPodInfo")
+            : base("retailcloud", "2018-03-13", "SyncPodInfo", "retailcloud", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

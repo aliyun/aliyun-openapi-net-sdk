@@ -27,10 +27,10 @@ using Aliyun.Acs.retailcloud.Transform.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Model.V20180313
 {
-    public class UpdateDeployConfigRequest : RpcAcsRequest<UpdateDeployConfigResponse>
+    public class DescribeEventMonitorListRequest : RpcAcsRequest<DescribeEventMonitorListResponse>
     {
-        public UpdateDeployConfigRequest()
-            : base("retailcloud", "2018-03-13", "UpdateDeployConfig", "retailcloud", "openAPI")
+        public DescribeEventMonitorListRequest()
+            : base("retailcloud", "2018-03-13", "DescribeEventMonitorList", "retailcloud", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,77 +40,34 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			Method = MethodType.POST;
         }
 
-		private string codePath;
-
-		private List<string> configMapLists = new List<string>(){ };
-
-		private string configMap;
-
-		private string statefulSet;
+		private string eventLevel;
 
 		private long? appId;
 
-		private List<string> secretLists = new List<string>(){ };
+		private int? pageSize;
 
-		private long? id;
+		private string podName;
 
-		private string cronJob;
+		private long? endTime;
 
-		private string deployment;
+		private string eventType;
 
-		public string CodePath
+		private long? envId;
+
+		private long? startTime;
+
+		private int? pageNum;
+
+		public string EventLevel
 		{
 			get
 			{
-				return codePath;
+				return eventLevel;
 			}
 			set	
 			{
-				codePath = value;
-				DictionaryUtil.Add(QueryParameters, "CodePath", value);
-			}
-		}
-
-		public List<string> ConfigMapLists
-		{
-			get
-			{
-				return configMapLists;
-			}
-
-			set
-			{
-				configMapLists = value;
-				for (int i = 0; i < configMapLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ConfigMapList." + (i + 1) , configMapLists[i]);
-				}
-			}
-		}
-
-		public string ConfigMap
-		{
-			get
-			{
-				return configMap;
-			}
-			set	
-			{
-				configMap = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigMap", value);
-			}
-		}
-
-		public string StatefulSet
-		{
-			get
-			{
-				return statefulSet;
-			}
-			set	
-			{
-				statefulSet = value;
-				DictionaryUtil.Add(QueryParameters, "StatefulSet", value);
+				eventLevel = value;
+				DictionaryUtil.Add(QueryParameters, "EventLevel", value);
 			}
 		}
 
@@ -127,59 +84,94 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			}
 		}
 
-		public List<string> SecretLists
+		public int? PageSize
 		{
 			get
 			{
-				return secretLists;
-			}
-
-			set
-			{
-				secretLists = value;
-				for (int i = 0; i < secretLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SecretList." + (i + 1) , secretLists[i]);
-				}
-			}
-		}
-
-		public long? Id
-		{
-			get
-			{
-				return id;
+				return pageSize;
 			}
 			set	
 			{
-				id = value;
-				DictionaryUtil.Add(QueryParameters, "Id", value.ToString());
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string CronJob
+		public string PodName
 		{
 			get
 			{
-				return cronJob;
+				return podName;
 			}
 			set	
 			{
-				cronJob = value;
-				DictionaryUtil.Add(QueryParameters, "CronJob", value);
+				podName = value;
+				DictionaryUtil.Add(QueryParameters, "PodName", value);
 			}
 		}
 
-		public string Deployment
+		public long? EndTime
 		{
 			get
 			{
-				return deployment;
+				return endTime;
 			}
 			set	
 			{
-				deployment = value;
-				DictionaryUtil.Add(QueryParameters, "Deployment", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
+			}
+		}
+
+		public string EventType
+		{
+			get
+			{
+				return eventType;
+			}
+			set	
+			{
+				eventType = value;
+				DictionaryUtil.Add(QueryParameters, "EventType", value);
+			}
+		}
+
+		public long? EnvId
+		{
+			get
+			{
+				return envId;
+			}
+			set	
+			{
+				envId = value;
+				DictionaryUtil.Add(QueryParameters, "EnvId", value.ToString());
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 
@@ -188,9 +180,9 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			return false;
 		}
 
-        public override UpdateDeployConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeEventMonitorListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateDeployConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeEventMonitorListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

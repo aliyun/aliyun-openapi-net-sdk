@@ -27,10 +27,10 @@ using Aliyun.Acs.retailcloud.Transform.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Model.V20180313
 {
-    public class CreateAppResourceAllocRequest : RpcAcsRequest<CreateAppResourceAllocResponse>
+    public class DescribeAppMonitorMetricRequest : RpcAcsRequest<DescribeAppMonitorMetricResponse>
     {
-        public CreateAppResourceAllocRequest()
-            : base("retailcloud", "2018-03-13", "CreateAppResourceAlloc", "retailcloud", "openAPI")
+        public DescribeAppMonitorMetricRequest()
+            : base("retailcloud", "2018-03-13", "DescribeAppMonitorMetric", "retailcloud", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,11 +40,47 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			Method = MethodType.POST;
         }
 
+		private string deployOrderId;
+
+		private string metric;
+
 		private long? appId;
 
-		private long? appEnvId;
+		private string podName;
 
-		private string clusterId;
+		private long? endTime;
+
+		private long? envId;
+
+		private long? startTime;
+
+		private string type;
+
+		public string DeployOrderId
+		{
+			get
+			{
+				return deployOrderId;
+			}
+			set	
+			{
+				deployOrderId = value;
+				DictionaryUtil.Add(QueryParameters, "DeployOrderId", value);
+			}
+		}
+
+		public string Metric
+		{
+			get
+			{
+				return metric;
+			}
+			set	
+			{
+				metric = value;
+				DictionaryUtil.Add(QueryParameters, "Metric", value);
+			}
+		}
 
 		public long? AppId
 		{
@@ -59,29 +95,68 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			}
 		}
 
-		public long? AppEnvId
+		public string PodName
 		{
 			get
 			{
-				return appEnvId;
+				return podName;
 			}
 			set	
 			{
-				appEnvId = value;
-				DictionaryUtil.Add(QueryParameters, "AppEnvId", value.ToString());
+				podName = value;
+				DictionaryUtil.Add(QueryParameters, "PodName", value);
 			}
 		}
 
-		public string ClusterId
+		public long? EndTime
 		{
 			get
 			{
-				return clusterId;
+				return endTime;
 			}
 			set	
 			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
+			}
+		}
+
+		public long? EnvId
+		{
+			get
+			{
+				return envId;
+			}
+			set	
+			{
+				envId = value;
+				DictionaryUtil.Add(QueryParameters, "EnvId", value.ToString());
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 
@@ -90,9 +165,9 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			return false;
 		}
 
-        public override CreateAppResourceAllocResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeAppMonitorMetricResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateAppResourceAllocResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeAppMonitorMetricResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
