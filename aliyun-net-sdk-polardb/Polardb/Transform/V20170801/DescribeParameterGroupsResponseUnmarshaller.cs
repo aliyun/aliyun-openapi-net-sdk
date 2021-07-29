@@ -36,15 +36,15 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			List<DescribeParameterGroupsResponse.DescribeParameterGroups_ParameterGroupsItem> describeParameterGroupsResponse_parameterGroups = new List<DescribeParameterGroupsResponse.DescribeParameterGroups_ParameterGroupsItem>();
 			for (int i = 0; i < _ctx.Length("DescribeParameterGroups.ParameterGroups.Length"); i++) {
 				DescribeParameterGroupsResponse.DescribeParameterGroups_ParameterGroupsItem parameterGroupsItem = new DescribeParameterGroupsResponse.DescribeParameterGroups_ParameterGroupsItem();
+				parameterGroupsItem.DBType = _ctx.StringValue("DescribeParameterGroups.ParameterGroups["+ i +"].DBType");
 				parameterGroupsItem.DBVersion = _ctx.StringValue("DescribeParameterGroups.ParameterGroups["+ i +"].DBVersion");
-				parameterGroupsItem.ParameterGroupId = _ctx.StringValue("DescribeParameterGroups.ParameterGroups["+ i +"].ParameterGroupId");
-				parameterGroupsItem.ForceRestart = _ctx.StringValue("DescribeParameterGroups.ParameterGroups["+ i +"].ForceRestart");
 				parameterGroupsItem.ParameterGroupName = _ctx.StringValue("DescribeParameterGroups.ParameterGroups["+ i +"].ParameterGroupName");
-				parameterGroupsItem.CreateTime = _ctx.StringValue("DescribeParameterGroups.ParameterGroups["+ i +"].CreateTime");
-				parameterGroupsItem.ParameterGroupDesc = _ctx.StringValue("DescribeParameterGroups.ParameterGroups["+ i +"].ParameterGroupDesc");
+				parameterGroupsItem.ForceRestart = _ctx.StringValue("DescribeParameterGroups.ParameterGroups["+ i +"].ForceRestart");
 				parameterGroupsItem.ParameterGroupType = _ctx.StringValue("DescribeParameterGroups.ParameterGroups["+ i +"].ParameterGroupType");
 				parameterGroupsItem.ParameterCounts = _ctx.LongValue("DescribeParameterGroups.ParameterGroups["+ i +"].ParameterCounts");
-				parameterGroupsItem.DBType = _ctx.StringValue("DescribeParameterGroups.ParameterGroups["+ i +"].DBType");
+				parameterGroupsItem.ParameterGroupDesc = _ctx.StringValue("DescribeParameterGroups.ParameterGroups["+ i +"].ParameterGroupDesc");
+				parameterGroupsItem.CreateTime = _ctx.StringValue("DescribeParameterGroups.ParameterGroups["+ i +"].CreateTime");
+				parameterGroupsItem.ParameterGroupId = _ctx.StringValue("DescribeParameterGroups.ParameterGroups["+ i +"].ParameterGroupId");
 
 				describeParameterGroupsResponse_parameterGroups.Add(parameterGroupsItem);
 			}

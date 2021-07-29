@@ -56,23 +56,11 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeDBClusterAvailableResources_AvailableZone
 		{
 
-			private string regionId;
-
 			private string zoneId;
 
-			private List<DescribeDBClusterAvailableResources_SupportedEngine> supportedEngines;
+			private string regionId;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+			private List<DescribeDBClusterAvailableResources_SupportedEngine> supportedEngines;
 
 			public string ZoneId
 			{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					zoneId = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 

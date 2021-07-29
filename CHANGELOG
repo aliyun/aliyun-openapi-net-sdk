@@ -1,3 +1,8 @@
+2021-07-29 Version: 1.8.10
+- Supported DescribeMaskingRules.
+- ModifyMaskingRules.
+- DeleteMaskingRules.
+
 2021-07-29 Version: 2.0.18
 - ListAppInstanceResponse add status field.
 

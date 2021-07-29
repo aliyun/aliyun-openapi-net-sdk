@@ -24,17 +24,18 @@ using Aliyun.Acs.polardb.Model.V20170801;
 
 namespace Aliyun.Acs.polardb.Transform.V20170801
 {
-    public class CreateParameterGroupResponseUnmarshaller
+    public class DeleteMaskingRulesResponseUnmarshaller
     {
-        public static CreateParameterGroupResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DeleteMaskingRulesResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CreateParameterGroupResponse createParameterGroupResponse = new CreateParameterGroupResponse();
+			DeleteMaskingRulesResponse deleteMaskingRulesResponse = new DeleteMaskingRulesResponse();
 
-			createParameterGroupResponse.HttpResponse = _ctx.HttpResponse;
-			createParameterGroupResponse.RequestId = _ctx.StringValue("CreateParameterGroup.RequestId");
-			createParameterGroupResponse.ParameterGroupId = _ctx.StringValue("CreateParameterGroup.ParameterGroupId");
+			deleteMaskingRulesResponse.HttpResponse = _ctx.HttpResponse;
+			deleteMaskingRulesResponse.RequestId = _ctx.StringValue("DeleteMaskingRules.RequestId");
+			deleteMaskingRulesResponse.Message = _ctx.StringValue("DeleteMaskingRules.Message");
+			deleteMaskingRulesResponse.Success = _ctx.BooleanValue("DeleteMaskingRules.Success");
         
-			return createParameterGroupResponse;
+			return deleteMaskingRulesResponse;
         }
     }
 }

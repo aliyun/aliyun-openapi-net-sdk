@@ -36,8 +36,8 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			List<DescribeDBClusterAvailableResourcesResponse.DescribeDBClusterAvailableResources_AvailableZone> describeDBClusterAvailableResourcesResponse_availableZones = new List<DescribeDBClusterAvailableResourcesResponse.DescribeDBClusterAvailableResources_AvailableZone>();
 			for (int i = 0; i < _ctx.Length("DescribeDBClusterAvailableResources.AvailableZones.Length"); i++) {
 				DescribeDBClusterAvailableResourcesResponse.DescribeDBClusterAvailableResources_AvailableZone availableZone = new DescribeDBClusterAvailableResourcesResponse.DescribeDBClusterAvailableResources_AvailableZone();
-				availableZone.RegionId = _ctx.StringValue("DescribeDBClusterAvailableResources.AvailableZones["+ i +"].RegionId");
 				availableZone.ZoneId = _ctx.StringValue("DescribeDBClusterAvailableResources.AvailableZones["+ i +"].ZoneId");
+				availableZone.RegionId = _ctx.StringValue("DescribeDBClusterAvailableResources.AvailableZones["+ i +"].RegionId");
 
 				List<DescribeDBClusterAvailableResourcesResponse.DescribeDBClusterAvailableResources_AvailableZone.DescribeDBClusterAvailableResources_SupportedEngine> availableZone_supportedEngines = new List<DescribeDBClusterAvailableResourcesResponse.DescribeDBClusterAvailableResources_AvailableZone.DescribeDBClusterAvailableResources_SupportedEngine>();
 				for (int j = 0; j < _ctx.Length("DescribeDBClusterAvailableResources.AvailableZones["+ i +"].SupportedEngines.Length"); j++) {

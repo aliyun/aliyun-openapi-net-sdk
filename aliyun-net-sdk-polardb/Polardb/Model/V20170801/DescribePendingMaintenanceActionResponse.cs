@@ -25,27 +25,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribePendingMaintenanceActionResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalRecordCount;
+
+		private string requestId;
 
 		private int? pageSize;
 
 		private int? pageNumber;
 
 		private List<DescribePendingMaintenanceAction_ItemsItem> items;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public int? TotalRecordCount
 		{
@@ -56,6 +44,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				totalRecordCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,105 +98,33 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribePendingMaintenanceAction_ItemsItem
 		{
 
-			private int? id;
-
-			private string dBClusterId;
-
-			private string dBType;
-
-			private string startTime;
-
-			private string switchTime;
-
-			private string deadline;
-
 			private int? status;
-
-			private string createdTime;
-
-			private string modifiedTime;
-
-			private string resultInfo;
 
 			private string prepareInterval;
 
+			private string deadline;
+
+			private string dBType;
+
 			private string taskType;
+
+			private string startTime;
 
 			private string dBVersion;
 
+			private string modifiedTime;
+
+			private string dBClusterId;
+
 			private string region;
 
-			public int? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private string resultInfo;
 
-			public string DBClusterId
-			{
-				get
-				{
-					return dBClusterId;
-				}
-				set	
-				{
-					dBClusterId = value;
-				}
-			}
+			private string createdTime;
 
-			public string DBType
-			{
-				get
-				{
-					return dBType;
-				}
-				set	
-				{
-					dBType = value;
-				}
-			}
+			private int? id;
 
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
-			public string SwitchTime
-			{
-				get
-				{
-					return switchTime;
-				}
-				set	
-				{
-					switchTime = value;
-				}
-			}
-
-			public string Deadline
-			{
-				get
-				{
-					return deadline;
-				}
-				set	
-				{
-					deadline = value;
-				}
-			}
+			private string switchTime;
 
 			public int? Status
 			{
@@ -207,42 +135,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public string CreatedTime
-			{
-				get
-				{
-					return createdTime;
-				}
-				set	
-				{
-					createdTime = value;
-				}
-			}
-
-			public string ModifiedTime
-			{
-				get
-				{
-					return modifiedTime;
-				}
-				set	
-				{
-					modifiedTime = value;
-				}
-			}
-
-			public string ResultInfo
-			{
-				get
-				{
-					return resultInfo;
-				}
-				set	
-				{
-					resultInfo = value;
 				}
 			}
 
@@ -258,6 +150,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
+			public string Deadline
+			{
+				get
+				{
+					return deadline;
+				}
+				set	
+				{
+					deadline = value;
+				}
+			}
+
+			public string DBType
+			{
+				get
+				{
+					return dBType;
+				}
+				set	
+				{
+					dBType = value;
+				}
+			}
+
 			public string TaskType
 			{
 				get
@@ -267,6 +183,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					taskType = value;
+				}
+			}
+
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
 				}
 			}
 
@@ -282,6 +210,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
+			public string ModifiedTime
+			{
+				get
+				{
+					return modifiedTime;
+				}
+				set	
+				{
+					modifiedTime = value;
+				}
+			}
+
+			public string DBClusterId
+			{
+				get
+				{
+					return dBClusterId;
+				}
+				set	
+				{
+					dBClusterId = value;
+				}
+			}
+
 			public string Region
 			{
 				get
@@ -291,6 +243,54 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					region = value;
+				}
+			}
+
+			public string ResultInfo
+			{
+				get
+				{
+					return resultInfo;
+				}
+				set	
+				{
+					resultInfo = value;
+				}
+			}
+
+			public string CreatedTime
+			{
+				get
+				{
+					return createdTime;
+				}
+				set	
+				{
+					createdTime = value;
+				}
+			}
+
+			public int? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string SwitchTime
+			{
+				get
+				{
+					return switchTime;
+				}
+				set	
+				{
+					switchTime = value;
 				}
 			}
 		}

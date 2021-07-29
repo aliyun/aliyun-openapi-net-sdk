@@ -16,25 +16,55 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.polardb.Model.V20170801;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.polardb.Transform.V20170801
+namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class CreateParameterGroupResponseUnmarshaller
-    {
-        public static CreateParameterGroupResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			CreateParameterGroupResponse createParameterGroupResponse = new CreateParameterGroupResponse();
+	public class DeleteMaskingRulesResponse : AcsResponse
+	{
 
-			createParameterGroupResponse.HttpResponse = _ctx.HttpResponse;
-			createParameterGroupResponse.RequestId = _ctx.StringValue("CreateParameterGroup.RequestId");
-			createParameterGroupResponse.ParameterGroupId = _ctx.StringValue("CreateParameterGroup.ParameterGroupId");
-        
-			return createParameterGroupResponse;
-        }
-    }
+		private string requestId;
+
+		private string message;
+
+		private bool? success;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+	}
 }

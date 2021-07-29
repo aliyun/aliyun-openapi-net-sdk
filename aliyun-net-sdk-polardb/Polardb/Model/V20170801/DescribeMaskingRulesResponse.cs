@@ -22,12 +22,16 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-	public class CreateParameterGroupResponse : AcsResponse
+	public class DescribeMaskingRulesResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string parameterGroupId;
+		private string message;
+
+		private bool? success;
+
+		private DescribeMaskingRules_Data data;
 
 		public string RequestId
 		{
@@ -41,15 +45,57 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string ParameterGroupId
+		public string Message
 		{
 			get
 			{
-				return parameterGroupId;
+				return message;
 			}
 			set	
 			{
-				parameterGroupId = value;
+				message = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public DescribeMaskingRules_Data Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class DescribeMaskingRules_Data
+		{
+
+			private List<string> ruleList;
+
+			public List<string> RuleList
+			{
+				get
+				{
+					return ruleList;
+				}
+				set	
+				{
+					ruleList = value;
+				}
 			}
 		}
 	}
