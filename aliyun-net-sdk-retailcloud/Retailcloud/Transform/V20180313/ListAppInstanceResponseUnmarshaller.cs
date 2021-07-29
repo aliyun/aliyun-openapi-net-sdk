@@ -51,6 +51,7 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 				appInstanceDetail.Requests = _ctx.StringValue("ListAppInstance.Data["+ i +"].Requests");
 				appInstanceDetail.Limits = _ctx.StringValue("ListAppInstance.Data["+ i +"].Limits");
 				appInstanceDetail.Version = _ctx.StringValue("ListAppInstance.Data["+ i +"].Version");
+				appInstanceDetail.Status = _ctx.StringValue("ListAppInstance.Data["+ i +"].Status");
 
 				listAppInstanceResponse_data.Add(appInstanceDetail);
 			}

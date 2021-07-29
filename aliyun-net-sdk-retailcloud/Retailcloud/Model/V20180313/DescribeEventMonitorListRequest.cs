@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.retailcloud;
 using Aliyun.Acs.retailcloud.Transform;
 using Aliyun.Acs.retailcloud.Transform.V20180313;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
     public class DescribeEventMonitorListRequest : RpcAcsRequest<DescribeEventMonitorListResponse>
     {
         public DescribeEventMonitorListRequest()
-            : base("retailcloud", "2018-03-13", "DescribeEventMonitorList", "retailcloud", "openAPI")
+            : base("retailcloud", "2018-03-13", "DescribeEventMonitorList")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
