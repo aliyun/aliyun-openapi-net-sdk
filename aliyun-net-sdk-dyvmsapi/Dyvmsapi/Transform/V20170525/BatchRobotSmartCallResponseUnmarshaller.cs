@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
     public class BatchRobotSmartCallResponseUnmarshaller
     {
-        public static BatchRobotSmartCallResponse Unmarshall(UnmarshallerContext context)
+        public static BatchRobotSmartCallResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchRobotSmartCallResponse batchRobotSmartCallResponse = new BatchRobotSmartCallResponse();
 
-			batchRobotSmartCallResponse.HttpResponse = context.HttpResponse;
-			batchRobotSmartCallResponse.RequestId = context.StringValue("BatchRobotSmartCall.RequestId");
-			batchRobotSmartCallResponse.TaskId = context.StringValue("BatchRobotSmartCall.TaskId");
-			batchRobotSmartCallResponse.Code = context.StringValue("BatchRobotSmartCall.Code");
-			batchRobotSmartCallResponse.Message = context.StringValue("BatchRobotSmartCall.Message");
+			batchRobotSmartCallResponse.HttpResponse = _ctx.HttpResponse;
+			batchRobotSmartCallResponse.RequestId = _ctx.StringValue("BatchRobotSmartCall.RequestId");
+			batchRobotSmartCallResponse.TaskId = _ctx.StringValue("BatchRobotSmartCall.TaskId");
+			batchRobotSmartCallResponse.Code = _ctx.StringValue("BatchRobotSmartCall.Code");
+			batchRobotSmartCallResponse.Message = _ctx.StringValue("BatchRobotSmartCall.Message");
         
 			return batchRobotSmartCallResponse;
         }

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
     public class SingleCallByTtsResponseUnmarshaller
     {
-        public static SingleCallByTtsResponse Unmarshall(UnmarshallerContext context)
+        public static SingleCallByTtsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SingleCallByTtsResponse singleCallByTtsResponse = new SingleCallByTtsResponse();
 
-			singleCallByTtsResponse.HttpResponse = context.HttpResponse;
-			singleCallByTtsResponse.RequestId = context.StringValue("SingleCallByTts.RequestId");
-			singleCallByTtsResponse.CallId = context.StringValue("SingleCallByTts.CallId");
-			singleCallByTtsResponse.Code = context.StringValue("SingleCallByTts.Code");
-			singleCallByTtsResponse.Message = context.StringValue("SingleCallByTts.Message");
+			singleCallByTtsResponse.HttpResponse = _ctx.HttpResponse;
+			singleCallByTtsResponse.RequestId = _ctx.StringValue("SingleCallByTts.RequestId");
+			singleCallByTtsResponse.CallId = _ctx.StringValue("SingleCallByTts.CallId");
+			singleCallByTtsResponse.Code = _ctx.StringValue("SingleCallByTts.Code");
+			singleCallByTtsResponse.Message = _ctx.StringValue("SingleCallByTts.Message");
         
 			return singleCallByTtsResponse;
         }

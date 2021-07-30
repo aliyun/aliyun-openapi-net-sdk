@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
     public class AddRtcAccountResponseUnmarshaller
     {
-        public static AddRtcAccountResponse Unmarshall(UnmarshallerContext context)
+        public static AddRtcAccountResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddRtcAccountResponse addRtcAccountResponse = new AddRtcAccountResponse();
 
-			addRtcAccountResponse.HttpResponse = context.HttpResponse;
-			addRtcAccountResponse.RequestId = context.StringValue("AddRtcAccount.RequestId");
-			addRtcAccountResponse.Module = context.StringValue("AddRtcAccount.Module");
-			addRtcAccountResponse.Code = context.StringValue("AddRtcAccount.Code");
-			addRtcAccountResponse.Message = context.StringValue("AddRtcAccount.Message");
+			addRtcAccountResponse.HttpResponse = _ctx.HttpResponse;
+			addRtcAccountResponse.RequestId = _ctx.StringValue("AddRtcAccount.RequestId");
+			addRtcAccountResponse.Module = _ctx.StringValue("AddRtcAccount.Module");
+			addRtcAccountResponse.Code = _ctx.StringValue("AddRtcAccount.Code");
+			addRtcAccountResponse.Message = _ctx.StringValue("AddRtcAccount.Message");
         
 			return addRtcAccountResponse;
         }

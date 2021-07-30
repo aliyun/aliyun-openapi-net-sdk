@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
     public class BindNumberAndVoipIdResponseUnmarshaller
     {
-        public static BindNumberAndVoipIdResponse Unmarshall(UnmarshallerContext context)
+        public static BindNumberAndVoipIdResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BindNumberAndVoipIdResponse bindNumberAndVoipIdResponse = new BindNumberAndVoipIdResponse();
 
-			bindNumberAndVoipIdResponse.HttpResponse = context.HttpResponse;
-			bindNumberAndVoipIdResponse.RequestId = context.StringValue("BindNumberAndVoipId.RequestId");
-			bindNumberAndVoipIdResponse.Code = context.StringValue("BindNumberAndVoipId.Code");
-			bindNumberAndVoipIdResponse.Module = context.StringValue("BindNumberAndVoipId.Module");
-			bindNumberAndVoipIdResponse.Message = context.StringValue("BindNumberAndVoipId.Message");
+			bindNumberAndVoipIdResponse.HttpResponse = _ctx.HttpResponse;
+			bindNumberAndVoipIdResponse.RequestId = _ctx.StringValue("BindNumberAndVoipId.RequestId");
+			bindNumberAndVoipIdResponse.Code = _ctx.StringValue("BindNumberAndVoipId.Code");
+			bindNumberAndVoipIdResponse.Module = _ctx.StringValue("BindNumberAndVoipId.Module");
+			bindNumberAndVoipIdResponse.Message = _ctx.StringValue("BindNumberAndVoipId.Message");
         
 			return bindNumberAndVoipIdResponse;
         }

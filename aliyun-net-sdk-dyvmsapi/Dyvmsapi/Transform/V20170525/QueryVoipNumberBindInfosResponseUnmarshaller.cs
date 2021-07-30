@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
     public class QueryVoipNumberBindInfosResponseUnmarshaller
     {
-        public static QueryVoipNumberBindInfosResponse Unmarshall(UnmarshallerContext context)
+        public static QueryVoipNumberBindInfosResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryVoipNumberBindInfosResponse queryVoipNumberBindInfosResponse = new QueryVoipNumberBindInfosResponse();
 
-			queryVoipNumberBindInfosResponse.HttpResponse = context.HttpResponse;
-			queryVoipNumberBindInfosResponse.RequestId = context.StringValue("QueryVoipNumberBindInfos.RequestId");
-			queryVoipNumberBindInfosResponse.Module = context.StringValue("QueryVoipNumberBindInfos.Module");
-			queryVoipNumberBindInfosResponse.Code = context.StringValue("QueryVoipNumberBindInfos.Code");
-			queryVoipNumberBindInfosResponse.Message = context.StringValue("QueryVoipNumberBindInfos.Message");
+			queryVoipNumberBindInfosResponse.HttpResponse = _ctx.HttpResponse;
+			queryVoipNumberBindInfosResponse.RequestId = _ctx.StringValue("QueryVoipNumberBindInfos.RequestId");
+			queryVoipNumberBindInfosResponse.Module = _ctx.StringValue("QueryVoipNumberBindInfos.Module");
+			queryVoipNumberBindInfosResponse.Code = _ctx.StringValue("QueryVoipNumberBindInfos.Code");
+			queryVoipNumberBindInfosResponse.Message = _ctx.StringValue("QueryVoipNumberBindInfos.Message");
         
 			return queryVoipNumberBindInfosResponse;
         }

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
     public class QueryRobotTaskCallDetailResponseUnmarshaller
     {
-        public static QueryRobotTaskCallDetailResponse Unmarshall(UnmarshallerContext context)
+        public static QueryRobotTaskCallDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryRobotTaskCallDetailResponse queryRobotTaskCallDetailResponse = new QueryRobotTaskCallDetailResponse();
 
-			queryRobotTaskCallDetailResponse.HttpResponse = context.HttpResponse;
-			queryRobotTaskCallDetailResponse.RequestId = context.StringValue("QueryRobotTaskCallDetail.RequestId");
-			queryRobotTaskCallDetailResponse.Data = context.StringValue("QueryRobotTaskCallDetail.Data");
-			queryRobotTaskCallDetailResponse.Code = context.StringValue("QueryRobotTaskCallDetail.Code");
-			queryRobotTaskCallDetailResponse.Message = context.StringValue("QueryRobotTaskCallDetail.Message");
+			queryRobotTaskCallDetailResponse.HttpResponse = _ctx.HttpResponse;
+			queryRobotTaskCallDetailResponse.RequestId = _ctx.StringValue("QueryRobotTaskCallDetail.RequestId");
+			queryRobotTaskCallDetailResponse.Data = _ctx.StringValue("QueryRobotTaskCallDetail.Data");
+			queryRobotTaskCallDetailResponse.Code = _ctx.StringValue("QueryRobotTaskCallDetail.Code");
+			queryRobotTaskCallDetailResponse.Message = _ctx.StringValue("QueryRobotTaskCallDetail.Message");
         
 			return queryRobotTaskCallDetailResponse;
         }

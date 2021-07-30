@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
     public class IvrCallResponseUnmarshaller
     {
-        public static IvrCallResponse Unmarshall(UnmarshallerContext context)
+        public static IvrCallResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			IvrCallResponse ivrCallResponse = new IvrCallResponse();
 
-			ivrCallResponse.HttpResponse = context.HttpResponse;
-			ivrCallResponse.RequestId = context.StringValue("IvrCall.RequestId");
-			ivrCallResponse.CallId = context.StringValue("IvrCall.CallId");
-			ivrCallResponse.Code = context.StringValue("IvrCall.Code");
-			ivrCallResponse.Message = context.StringValue("IvrCall.Message");
+			ivrCallResponse.HttpResponse = _ctx.HttpResponse;
+			ivrCallResponse.RequestId = _ctx.StringValue("IvrCall.RequestId");
+			ivrCallResponse.CallId = _ctx.StringValue("IvrCall.CallId");
+			ivrCallResponse.Code = _ctx.StringValue("IvrCall.Code");
+			ivrCallResponse.Message = _ctx.StringValue("IvrCall.Message");
         
 			return ivrCallResponse;
         }

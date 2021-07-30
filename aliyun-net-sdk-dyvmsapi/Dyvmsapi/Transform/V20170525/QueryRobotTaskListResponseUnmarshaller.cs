@@ -26,15 +26,18 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
     public class QueryRobotTaskListResponseUnmarshaller
     {
-        public static QueryRobotTaskListResponse Unmarshall(UnmarshallerContext context)
+        public static QueryRobotTaskListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryRobotTaskListResponse queryRobotTaskListResponse = new QueryRobotTaskListResponse();
 
-			queryRobotTaskListResponse.HttpResponse = context.HttpResponse;
-			queryRobotTaskListResponse.RequestId = context.StringValue("QueryRobotTaskList.RequestId");
-			queryRobotTaskListResponse.Data = context.StringValue("QueryRobotTaskList.Data");
-			queryRobotTaskListResponse.Code = context.StringValue("QueryRobotTaskList.Code");
-			queryRobotTaskListResponse.Message = context.StringValue("QueryRobotTaskList.Message");
+			queryRobotTaskListResponse.HttpResponse = _ctx.HttpResponse;
+			queryRobotTaskListResponse.RequestId = _ctx.StringValue("QueryRobotTaskList.RequestId");
+			queryRobotTaskListResponse.Data = _ctx.StringValue("QueryRobotTaskList.Data");
+			queryRobotTaskListResponse.PageSize = _ctx.StringValue("QueryRobotTaskList.PageSize");
+			queryRobotTaskListResponse.PageNo = _ctx.StringValue("QueryRobotTaskList.PageNo");
+			queryRobotTaskListResponse.TotalCount = _ctx.StringValue("QueryRobotTaskList.TotalCount");
+			queryRobotTaskListResponse.Code = _ctx.StringValue("QueryRobotTaskList.Code");
+			queryRobotTaskListResponse.Message = _ctx.StringValue("QueryRobotTaskList.Message");
         
 			return queryRobotTaskListResponse;
         }

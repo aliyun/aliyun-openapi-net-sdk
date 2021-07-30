@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 {
     public class CancelRobotTaskResponseUnmarshaller
     {
-        public static CancelRobotTaskResponse Unmarshall(UnmarshallerContext context)
+        public static CancelRobotTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CancelRobotTaskResponse cancelRobotTaskResponse = new CancelRobotTaskResponse();
 
-			cancelRobotTaskResponse.HttpResponse = context.HttpResponse;
-			cancelRobotTaskResponse.RequestId = context.StringValue("CancelRobotTask.RequestId");
-			cancelRobotTaskResponse.Data = context.StringValue("CancelRobotTask.Data");
-			cancelRobotTaskResponse.Code = context.StringValue("CancelRobotTask.Code");
-			cancelRobotTaskResponse.Message = context.StringValue("CancelRobotTask.Message");
+			cancelRobotTaskResponse.HttpResponse = _ctx.HttpResponse;
+			cancelRobotTaskResponse.RequestId = _ctx.StringValue("CancelRobotTask.RequestId");
+			cancelRobotTaskResponse.Data = _ctx.StringValue("CancelRobotTask.Data");
+			cancelRobotTaskResponse.Code = _ctx.StringValue("CancelRobotTask.Code");
+			cancelRobotTaskResponse.Message = _ctx.StringValue("CancelRobotTask.Message");
         
 			return cancelRobotTaskResponse;
         }

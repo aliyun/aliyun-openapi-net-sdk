@@ -34,9 +34,10 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dyvmsapi.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dyvmsapi.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -74,6 +75,8 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 		private long? ownerId;
 
 		private int? ttsVolume;
+
+		private int? streamAsr;
 
 		private int? volume;
 
@@ -318,6 +321,19 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			{
 				ttsVolume = value;
 				DictionaryUtil.Add(QueryParameters, "TtsVolume", value.ToString());
+			}
+		}
+
+		public int? StreamAsr
+		{
+			get
+			{
+				return streamAsr;
+			}
+			set	
+			{
+				streamAsr = value;
+				DictionaryUtil.Add(QueryParameters, "StreamAsr", value.ToString());
 			}
 		}
 
