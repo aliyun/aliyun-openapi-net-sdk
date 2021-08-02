@@ -31,18 +31,18 @@ namespace Aliyun.Acs.imagerecog.Transform.V20190930
 			RecognizeFoodResponse recognizeFoodResponse = new RecognizeFoodResponse();
 
 			recognizeFoodResponse.HttpResponse = _ctx.HttpResponse;
-			recognizeFoodResponse.Message = _ctx.StringValue("RecognizeFood.Message");
 			recognizeFoodResponse.RequestId = _ctx.StringValue("RecognizeFood.RequestId");
 			recognizeFoodResponse.Code = _ctx.StringValue("RecognizeFood.Code");
+			recognizeFoodResponse.Message = _ctx.StringValue("RecognizeFood.Message");
 
 			RecognizeFoodResponse.RecognizeFood_Data data = new RecognizeFoodResponse.RecognizeFood_Data();
 
 			List<RecognizeFoodResponse.RecognizeFood_Data.RecognizeFood_TopFivesItem> data_topFives = new List<RecognizeFoodResponse.RecognizeFood_Data.RecognizeFood_TopFivesItem>();
 			for (int i = 0; i < _ctx.Length("RecognizeFood.Data.TopFives.Length"); i++) {
 				RecognizeFoodResponse.RecognizeFood_Data.RecognizeFood_TopFivesItem topFivesItem = new RecognizeFoodResponse.RecognizeFood_Data.RecognizeFood_TopFivesItem();
-				topFivesItem.Calorie = _ctx.StringValue("RecognizeFood.Data.TopFives["+ i +"].Calorie");
-				topFivesItem.Score = _ctx.FloatValue("RecognizeFood.Data.TopFives["+ i +"].Score");
 				topFivesItem.Category = _ctx.StringValue("RecognizeFood.Data.TopFives["+ i +"].Category");
+				topFivesItem.Score = _ctx.FloatValue("RecognizeFood.Data.TopFives["+ i +"].Score");
+				topFivesItem.Calorie = _ctx.StringValue("RecognizeFood.Data.TopFives["+ i +"].Calorie");
 
 				data_topFives.Add(topFivesItem);
 			}

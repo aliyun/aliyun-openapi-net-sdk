@@ -38,8 +38,8 @@ namespace Aliyun.Acs.imagerecog.Transform.V20190930
 			List<TaggingImageResponse.TaggingImage_Data.TaggingImage_Tag> data_tags = new List<TaggingImageResponse.TaggingImage_Data.TaggingImage_Tag>();
 			for (int i = 0; i < _ctx.Length("TaggingImage.Data.Tags.Length"); i++) {
 				TaggingImageResponse.TaggingImage_Data.TaggingImage_Tag tag = new TaggingImageResponse.TaggingImage_Data.TaggingImage_Tag();
-				tag.Confidence = _ctx.FloatValue("TaggingImage.Data.Tags["+ i +"].Confidence");
 				tag._Value = _ctx.StringValue("TaggingImage.Data.Tags["+ i +"].Value");
+				tag.Confidence = _ctx.FloatValue("TaggingImage.Data.Tags["+ i +"].Confidence");
 
 				data_tags.Add(tag);
 			}

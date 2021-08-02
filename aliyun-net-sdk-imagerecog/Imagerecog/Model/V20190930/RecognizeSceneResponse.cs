@@ -73,21 +73,9 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 			public class RecognizeScene_Tag
 			{
 
-				private float? confidence;
-
 				private string _value;
 
-				public float? Confidence
-				{
-					get
-					{
-						return confidence;
-					}
-					set	
-					{
-						confidence = value;
-					}
-				}
+				private float? confidence;
 
 				public string _Value
 				{
@@ -98,6 +86,18 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 					set	
 					{
 						_value = value;
+					}
+				}
+
+				public float? Confidence
+				{
+					get
+					{
+						return confidence;
+					}
+					set	
+					{
+						confidence = value;
 					}
 				}
 			}

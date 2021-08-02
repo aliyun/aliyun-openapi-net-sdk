@@ -38,8 +38,8 @@ namespace Aliyun.Acs.imagerecog.Transform.V20190930
 			List<RecognizeSceneResponse.RecognizeScene_Data.RecognizeScene_Tag> data_tags = new List<RecognizeSceneResponse.RecognizeScene_Data.RecognizeScene_Tag>();
 			for (int i = 0; i < _ctx.Length("RecognizeScene.Data.Tags.Length"); i++) {
 				RecognizeSceneResponse.RecognizeScene_Data.RecognizeScene_Tag tag = new RecognizeSceneResponse.RecognizeScene_Data.RecognizeScene_Tag();
-				tag.Confidence = _ctx.FloatValue("RecognizeScene.Data.Tags["+ i +"].Confidence");
 				tag._Value = _ctx.StringValue("RecognizeScene.Data.Tags["+ i +"].Value");
+				tag.Confidence = _ctx.FloatValue("RecognizeScene.Data.Tags["+ i +"].Confidence");
 
 				data_tags.Add(tag);
 			}

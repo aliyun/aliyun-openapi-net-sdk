@@ -40,20 +40,20 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 			Method = MethodType.POST;
         }
 
-		private bool? async;
+		private string mode;
 
 		private string imageURL;
 
-		public bool? Async
+		public string Mode
 		{
 			get
 			{
-				return async;
+				return mode;
 			}
 			set	
 			{
-				async = value;
-				DictionaryUtil.Add(BodyParameters, "Async", value.ToString());
+				mode = value;
+				DictionaryUtil.Add(BodyParameters, "Mode", value);
 			}
 		}
 

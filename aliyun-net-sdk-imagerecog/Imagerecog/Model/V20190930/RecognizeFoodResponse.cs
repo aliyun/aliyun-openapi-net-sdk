@@ -25,25 +25,13 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 	public class RecognizeFoodResponse : AcsResponse
 	{
 
-		private string message;
-
 		private string requestId;
 
 		private string code;
 
-		private RecognizeFood_Data data;
+		private string message;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+		private RecognizeFood_Data data;
 
 		public string RequestId
 		{
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 			set	
 			{
 				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -101,21 +101,21 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 			public class RecognizeFood_TopFivesItem
 			{
 
-				private string calorie;
+				private string category;
 
 				private float? score;
 
-				private string category;
+				private string calorie;
 
-				public string Calorie
+				public string Category
 				{
 					get
 					{
-						return calorie;
+						return category;
 					}
 					set	
 					{
-						calorie = value;
+						category = value;
 					}
 				}
 
@@ -131,15 +131,15 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 					}
 				}
 
-				public string Category
+				public string Calorie
 				{
 					get
 					{
-						return category;
+						return calorie;
 					}
 					set	
 					{
-						category = value;
+						calorie = value;
 					}
 				}
 			}
