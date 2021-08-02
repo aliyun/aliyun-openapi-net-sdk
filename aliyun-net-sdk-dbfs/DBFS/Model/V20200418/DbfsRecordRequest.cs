@@ -41,11 +41,24 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			Method = MethodType.POST;
         }
 
+		private string data;
+
 		private int? pageNumber;
 
 		private int? pageSize;
 
-		private string batchStrategyNo;
+		public string Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+				DictionaryUtil.Add(QueryParameters, "Data", value);
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -70,19 +83,6 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string BatchStrategyNo
-		{
-			get
-			{
-				return batchStrategyNo;
-			}
-			set	
-			{
-				batchStrategyNo = value;
-				DictionaryUtil.Add(QueryParameters, "BatchStrategyNo", value);
 			}
 		}
 

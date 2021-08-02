@@ -27,6 +27,12 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 
 		private string requestId;
 
+		private long? pageNo;
+
+		private long? pageSize;
+
+		private long? total;
+
 		private List<DbfsRecord_RecordsItem> records;
 
 		public string RequestId
@@ -38,6 +44,42 @@ namespace Aliyun.Acs.DBFS.Model.V20200418
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public long? PageNo
+		{
+			get
+			{
+				return pageNo;
+			}
+			set	
+			{
+				pageNo = value;
+			}
+		}
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public long? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 

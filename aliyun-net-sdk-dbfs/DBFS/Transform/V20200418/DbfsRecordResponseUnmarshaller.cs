@@ -32,6 +32,9 @@ namespace Aliyun.Acs.DBFS.Transform.V20200418
 
 			dbfsRecordResponse.HttpResponse = _ctx.HttpResponse;
 			dbfsRecordResponse.RequestId = _ctx.StringValue("DbfsRecord.RequestId");
+			dbfsRecordResponse.PageNo = _ctx.LongValue("DbfsRecord.PageNo");
+			dbfsRecordResponse.PageSize = _ctx.LongValue("DbfsRecord.PageSize");
+			dbfsRecordResponse.Total = _ctx.LongValue("DbfsRecord.Total");
 
 			List<DbfsRecordResponse.DbfsRecord_RecordsItem> dbfsRecordResponse_records = new List<DbfsRecordResponse.DbfsRecord_RecordsItem>();
 			for (int i = 0; i < _ctx.Length("DbfsRecord.Records.Length"); i++) {
