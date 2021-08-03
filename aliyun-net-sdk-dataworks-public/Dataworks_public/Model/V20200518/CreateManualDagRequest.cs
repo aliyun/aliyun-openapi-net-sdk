@@ -45,11 +45,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string projectName;
 
+		private string dagParameters;
+
+		private string includeNodeIds;
+
 		private string bizDate;
 
-		private string flowName;
+		private string excludeNodeIds;
 
-		private string dagParameters;
+		private string flowName;
 
 		private string nodeParameters;
 
@@ -79,6 +83,32 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string DagParameters
+		{
+			get
+			{
+				return dagParameters;
+			}
+			set	
+			{
+				dagParameters = value;
+				DictionaryUtil.Add(BodyParameters, "DagParameters", value);
+			}
+		}
+
+		public string IncludeNodeIds
+		{
+			get
+			{
+				return includeNodeIds;
+			}
+			set	
+			{
+				includeNodeIds = value;
+				DictionaryUtil.Add(BodyParameters, "IncludeNodeIds", value);
+			}
+		}
+
 		public string BizDate
 		{
 			get
@@ -92,6 +122,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string ExcludeNodeIds
+		{
+			get
+			{
+				return excludeNodeIds;
+			}
+			set	
+			{
+				excludeNodeIds = value;
+				DictionaryUtil.Add(BodyParameters, "ExcludeNodeIds", value);
+			}
+		}
+
 		public string FlowName
 		{
 			get
@@ -102,19 +145,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				flowName = value;
 				DictionaryUtil.Add(BodyParameters, "FlowName", value);
-			}
-		}
-
-		public string DagParameters
-		{
-			get
-			{
-				return dagParameters;
-			}
-			set	
-			{
-				dagParameters = value;
-				DictionaryUtil.Add(BodyParameters, "DagParameters", value);
 			}
 		}
 

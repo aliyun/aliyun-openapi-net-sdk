@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class TopTenElapsedTimeInstanceRequest : RpcAcsRequest<TopTenElapsedTimeInstanceResponse>
+    public class ListProjectIdsRequest : RpcAcsRequest<ListProjectIdsResponse>
     {
-        public TopTenElapsedTimeInstanceRequest()
-            : base("dataworks-public", "2020-05-18", "TopTenElapsedTimeInstance")
+        public ListProjectIdsRequest()
+            : base("dataworks-public", "2020-05-18", "ListProjectIds")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,18 +41,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private long? projectId;
+		private string userId;
 
-		public long? ProjectId
+		public string UserId
 		{
 			get
 			{
-				return projectId;
+				return userId;
 			}
 			set	
 			{
-				projectId = value;
-				DictionaryUtil.Add(BodyParameters, "ProjectId", value.ToString());
+				userId = value;
+				DictionaryUtil.Add(QueryParameters, "UserId", value);
 			}
 		}
 
@@ -61,9 +61,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override TopTenElapsedTimeInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListProjectIdsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TopTenElapsedTimeInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListProjectIdsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
