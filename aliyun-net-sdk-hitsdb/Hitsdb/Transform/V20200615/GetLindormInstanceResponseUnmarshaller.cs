@@ -58,6 +58,7 @@ namespace Aliyun.Acs.hitsdb.Transform.V20200615
 			getLindormInstanceResponse.DiskThreshold = _ctx.StringValue("GetLindormInstance.DiskThreshold");
 			getLindormInstanceResponse.CreateMilliseconds = _ctx.LongValue("GetLindormInstance.CreateMilliseconds");
 			getLindormInstanceResponse.ExpiredMilliseconds = _ctx.LongValue("GetLindormInstance.ExpiredMilliseconds");
+			getLindormInstanceResponse.EnableKms = _ctx.BooleanValue("GetLindormInstance.EnableKms");
 
 			List<GetLindormInstanceResponse.GetLindormInstance_Engine> getLindormInstanceResponse_engineList = new List<GetLindormInstanceResponse.GetLindormInstance_Engine>();
 			for (int i = 0; i < _ctx.Length("GetLindormInstance.EngineList.Length"); i++) {

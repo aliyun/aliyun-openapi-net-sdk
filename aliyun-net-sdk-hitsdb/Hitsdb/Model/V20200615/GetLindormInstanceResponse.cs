@@ -79,6 +79,8 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private long? expiredMilliseconds;
 
+		private bool? enableKms;
+
 		private List<GetLindormInstance_Engine> engineList;
 
 		public string RequestId
@@ -402,6 +404,18 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			set	
 			{
 				expiredMilliseconds = value;
+			}
+		}
+
+		public bool? EnableKms
+		{
+			get
+			{
+				return enableKms;
+			}
+			set	
+			{
+				enableKms = value;
 			}
 		}
 
