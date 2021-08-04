@@ -27,10 +27,10 @@ using Aliyun.Acs.imagerecog.Transform.V20190930;
 
 namespace Aliyun.Acs.imagerecog.Model.V20190930
 {
-    public class TaggingImageRequest : RpcAcsRequest<TaggingImageResponse>
+    public class TaggingAdImageRequest : RpcAcsRequest<TaggingAdImageResponse>
     {
-        public TaggingImageRequest()
-            : base("imagerecog", "2019-09-30", "TaggingImage", "imagerecog", "openAPI")
+        public TaggingAdImageRequest()
+            : base("imagerecog", "2019-09-30", "TaggingAdImage", "imagerecog", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,7 +40,22 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 			Method = MethodType.POST;
         }
 
+		private int? imageType;
+
 		private string imageURL;
+
+		public int? ImageType
+		{
+			get
+			{
+				return imageType;
+			}
+			set	
+			{
+				imageType = value;
+				DictionaryUtil.Add(BodyParameters, "ImageType", value.ToString());
+			}
+		}
 
 		public string ImageURL
 		{
@@ -60,9 +75,9 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 			return false;
 		}
 
-        public override TaggingImageResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TaggingAdImageResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TaggingImageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TaggingAdImageResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
