@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
     <RootNamespace>Aliyun.Acs.dataworks_public</RootNamespace>
-    <Version>3.3.25</Version>
+    <Version>3.3.26</Version>
     <Authors>Alibaba Cloud</Authors>
     <Copyright>©2009-2019 Alibaba Cloud</Copyright>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
