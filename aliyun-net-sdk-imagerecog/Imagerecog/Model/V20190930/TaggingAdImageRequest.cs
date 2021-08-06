@@ -40,22 +40,7 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 			Method = MethodType.POST;
         }
 
-		private int? imageType;
-
 		private string imageURL;
-
-		public int? ImageType
-		{
-			get
-			{
-				return imageType;
-			}
-			set	
-			{
-				imageType = value;
-				DictionaryUtil.Add(BodyParameters, "ImageType", value.ToString());
-			}
-		}
 
 		public string ImageURL
 		{
