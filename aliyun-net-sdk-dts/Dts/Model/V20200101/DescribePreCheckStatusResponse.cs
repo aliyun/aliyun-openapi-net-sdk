@@ -43,6 +43,12 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 		private string jobId;
 
+		private long? pageNumber;
+
+		private long? pageRecordCount;
+
+		private long? totalRecordCount;
+
 		private List<DescribePreCheckStatus_ProgressInfo> jobProgress;
 
 		private List<DescribePreCheckStatus_SubDistributedJobStatusItem> subDistributedJobStatus;
@@ -152,6 +158,42 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			set	
 			{
 				jobId = value;
+			}
+		}
+
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public long? PageRecordCount
+		{
+			get
+			{
+				return pageRecordCount;
+			}
+			set	
+			{
+				pageRecordCount = value;
+			}
+		}
+
+		public long? TotalRecordCount
+		{
+			get
+			{
+				return totalRecordCount;
+			}
+			set	
+			{
+				totalRecordCount = value;
 			}
 		}
 

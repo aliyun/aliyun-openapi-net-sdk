@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 		private string dtsJobId;
 
+		private string structPhase;
+
 		public string StructType
 		{
 			get
@@ -112,6 +114,19 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			{
 				dtsJobId = value;
 				DictionaryUtil.Add(QueryParameters, "DtsJobId", value);
+			}
+		}
+
+		public string StructPhase
+		{
+			get
+			{
+				return structPhase;
+			}
+			set	
+			{
+				structPhase = value;
+				DictionaryUtil.Add(QueryParameters, "StructPhase", value);
 			}
 		}
 

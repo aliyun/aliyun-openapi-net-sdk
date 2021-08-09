@@ -40,6 +40,9 @@ namespace Aliyun.Acs.Dts.Transform.V20200101
 			describePreCheckStatusResponse.Total = _ctx.IntegerValue("DescribePreCheckStatus.Total");
 			describePreCheckStatusResponse.RequestId = _ctx.StringValue("DescribePreCheckStatus.RequestId");
 			describePreCheckStatusResponse.JobId = _ctx.StringValue("DescribePreCheckStatus.JobId");
+			describePreCheckStatusResponse.PageNumber = _ctx.LongValue("DescribePreCheckStatus.PageNumber");
+			describePreCheckStatusResponse.PageRecordCount = _ctx.LongValue("DescribePreCheckStatus.PageRecordCount");
+			describePreCheckStatusResponse.TotalRecordCount = _ctx.LongValue("DescribePreCheckStatus.TotalRecordCount");
 
 			List<DescribePreCheckStatusResponse.DescribePreCheckStatus_ProgressInfo> describePreCheckStatusResponse_jobProgress = new List<DescribePreCheckStatusResponse.DescribePreCheckStatus_ProgressInfo>();
 			for (int i = 0; i < _ctx.Length("DescribePreCheckStatus.JobProgress.Length"); i++) {
