@@ -112,9 +112,23 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 		public class AnswerCall_Data
 		{
 
+			private long? contextId;
+
 			private AnswerCall_CallContext callContext;
 
 			private AnswerCall_UserContext userContext;
+
+			public long? ContextId
+			{
+				get
+				{
+					return contextId;
+				}
+				set	
+				{
+					contextId = value;
+				}
+			}
 
 			public AnswerCall_CallContext CallContext
 			{

@@ -43,6 +43,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			completeAttendedTransferResponse._Params = completeAttendedTransferResponse_params;
 
 			CompleteAttendedTransferResponse.CompleteAttendedTransfer_Data data = new CompleteAttendedTransferResponse.CompleteAttendedTransfer_Data();
+			data.ContextId = _ctx.LongValue("CompleteAttendedTransfer.Data.ContextId");
 
 			CompleteAttendedTransferResponse.CompleteAttendedTransfer_Data.CompleteAttendedTransfer_CallContext callContext = new CompleteAttendedTransferResponse.CompleteAttendedTransfer_Data.CompleteAttendedTransfer_CallContext();
 			callContext.CallType = _ctx.StringValue("CompleteAttendedTransfer.Data.CallContext.CallType");

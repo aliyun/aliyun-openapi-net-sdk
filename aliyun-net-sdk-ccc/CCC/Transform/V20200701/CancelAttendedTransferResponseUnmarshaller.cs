@@ -43,6 +43,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			cancelAttendedTransferResponse._Params = cancelAttendedTransferResponse_params;
 
 			CancelAttendedTransferResponse.CancelAttendedTransfer_Data data = new CancelAttendedTransferResponse.CancelAttendedTransfer_Data();
+			data.ContextId = _ctx.LongValue("CancelAttendedTransfer.Data.ContextId");
 
 			CancelAttendedTransferResponse.CancelAttendedTransfer_Data.CancelAttendedTransfer_CallContext callContext = new CancelAttendedTransferResponse.CancelAttendedTransfer_Data.CancelAttendedTransfer_CallContext();
 			callContext.CallType = _ctx.StringValue("CancelAttendedTransfer.Data.CallContext.CallType");

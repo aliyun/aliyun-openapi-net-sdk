@@ -43,6 +43,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			pollUserStatusResponse._Params = pollUserStatusResponse_params;
 
 			PollUserStatusResponse.PollUserStatus_Data data = new PollUserStatusResponse.PollUserStatus_Data();
+			data.ContextId = _ctx.LongValue("PollUserStatus.Data.ContextId");
 
 			PollUserStatusResponse.PollUserStatus_Data.PollUserStatus_CallContext callContext = new PollUserStatusResponse.PollUserStatus_Data.PollUserStatus_CallContext();
 			callContext.CallType = _ctx.StringValue("PollUserStatus.Data.CallContext.CallType");

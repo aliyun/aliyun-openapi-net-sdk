@@ -112,9 +112,23 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 		public class InitiateAttendedTransfer_Data
 		{
 
+			private long? contextId;
+
 			private InitiateAttendedTransfer_CallContext callContext;
 
 			private InitiateAttendedTransfer_UserContext userContext;
+
+			public long? ContextId
+			{
+				get
+				{
+					return contextId;
+				}
+				set	
+				{
+					contextId = value;
+				}
+			}
 
 			public InitiateAttendedTransfer_CallContext CallContext
 			{

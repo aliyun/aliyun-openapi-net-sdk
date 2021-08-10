@@ -112,9 +112,23 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 		public class MakeCall_Data
 		{
 
+			private long? contextId;
+
 			private MakeCall_CallContext callContext;
 
 			private MakeCall_UserContext userContext;
+
+			public long? ContextId
+			{
+				get
+				{
+					return contextId;
+				}
+				set	
+				{
+					contextId = value;
+				}
+			}
 
 			public MakeCall_CallContext CallContext
 			{

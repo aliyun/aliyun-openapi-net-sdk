@@ -43,6 +43,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			makeCallResponse._Params = makeCallResponse_params;
 
 			MakeCallResponse.MakeCall_Data data = new MakeCallResponse.MakeCall_Data();
+			data.ContextId = _ctx.LongValue("MakeCall.Data.ContextId");
 
 			MakeCallResponse.MakeCall_Data.MakeCall_CallContext callContext = new MakeCallResponse.MakeCall_Data.MakeCall_CallContext();
 			callContext.CallType = _ctx.StringValue("MakeCall.Data.CallContext.CallType");

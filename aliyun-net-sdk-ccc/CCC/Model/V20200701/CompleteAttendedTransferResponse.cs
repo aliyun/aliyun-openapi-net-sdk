@@ -112,9 +112,23 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 		public class CompleteAttendedTransfer_Data
 		{
 
+			private long? contextId;
+
 			private CompleteAttendedTransfer_CallContext callContext;
 
 			private CompleteAttendedTransfer_UserContext userContext;
+
+			public long? ContextId
+			{
+				get
+				{
+					return contextId;
+				}
+				set	
+				{
+					contextId = value;
+				}
+			}
 
 			public CompleteAttendedTransfer_CallContext CallContext
 			{

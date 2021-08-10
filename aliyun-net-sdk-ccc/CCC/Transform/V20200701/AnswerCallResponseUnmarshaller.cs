@@ -43,6 +43,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			answerCallResponse._Params = answerCallResponse_params;
 
 			AnswerCallResponse.AnswerCall_Data data = new AnswerCallResponse.AnswerCall_Data();
+			data.ContextId = _ctx.LongValue("AnswerCall.Data.ContextId");
 
 			AnswerCallResponse.AnswerCall_Data.AnswerCall_CallContext callContext = new AnswerCallResponse.AnswerCall_Data.AnswerCall_CallContext();
 			callContext.InstanceId = _ctx.StringValue("AnswerCall.Data.CallContext.InstanceId");

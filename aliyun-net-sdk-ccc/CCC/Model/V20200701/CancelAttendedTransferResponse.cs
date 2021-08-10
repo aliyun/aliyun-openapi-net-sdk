@@ -112,9 +112,23 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 		public class CancelAttendedTransfer_Data
 		{
 
+			private long? contextId;
+
 			private CancelAttendedTransfer_CallContext callContext;
 
 			private CancelAttendedTransfer_UserContext userContext;
+
+			public long? ContextId
+			{
+				get
+				{
+					return contextId;
+				}
+				set	
+				{
+					contextId = value;
+				}
+			}
 
 			public CancelAttendedTransfer_CallContext CallContext
 			{
