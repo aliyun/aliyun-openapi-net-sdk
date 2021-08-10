@@ -84,9 +84,23 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 		public class TaggingAdImage_Data
 		{
 
-			private List<TaggingAdImage_Tag> tags;
+			private string tagInfo;
 
-			public List<TaggingAdImage_Tag> Tags
+			private List<TaggingAdImage_TagsItem> tags;
+
+			public string TagInfo
+			{
+				get
+				{
+					return tagInfo;
+				}
+				set	
+				{
+					tagInfo = value;
+				}
+			}
+
+			public List<TaggingAdImage_TagsItem> Tags
 			{
 				get
 				{
@@ -98,7 +112,7 @@ namespace Aliyun.Acs.imagerecog.Model.V20190930
 				}
 			}
 
-			public class TaggingAdImage_Tag
+			public class TaggingAdImage_TagsItem
 			{
 
 				private string _value;

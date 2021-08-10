@@ -1,3 +1,6 @@
+2021-08-10 Version: 0.0.8
+- Update TaggingAdImage.
+
 2021-08-10 Version: 5.1.17
 - Supported DescribeSubscriptionMeta for distributed subscription.
 - Supported ParentChannelId for DescribeConsumerChannel.

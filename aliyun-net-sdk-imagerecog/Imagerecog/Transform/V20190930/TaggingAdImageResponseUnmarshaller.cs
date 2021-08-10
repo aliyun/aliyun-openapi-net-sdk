@@ -36,14 +36,15 @@ namespace Aliyun.Acs.imagerecog.Transform.V20190930
 			taggingAdImageResponse.Message = _ctx.StringValue("TaggingAdImage.Message");
 
 			TaggingAdImageResponse.TaggingAdImage_Data data = new TaggingAdImageResponse.TaggingAdImage_Data();
+			data.TagInfo = _ctx.StringValue("TaggingAdImage.Data.TagInfo");
 
-			List<TaggingAdImageResponse.TaggingAdImage_Data.TaggingAdImage_Tag> data_tags = new List<TaggingAdImageResponse.TaggingAdImage_Data.TaggingAdImage_Tag>();
+			List<TaggingAdImageResponse.TaggingAdImage_Data.TaggingAdImage_TagsItem> data_tags = new List<TaggingAdImageResponse.TaggingAdImage_Data.TaggingAdImage_TagsItem>();
 			for (int i = 0; i < _ctx.Length("TaggingAdImage.Data.Tags.Length"); i++) {
-				TaggingAdImageResponse.TaggingAdImage_Data.TaggingAdImage_Tag tag = new TaggingAdImageResponse.TaggingAdImage_Data.TaggingAdImage_Tag();
-				tag._Value = _ctx.StringValue("TaggingAdImage.Data.Tags["+ i +"].Value");
-				tag.Confidence = _ctx.FloatValue("TaggingAdImage.Data.Tags["+ i +"].Confidence");
+				TaggingAdImageResponse.TaggingAdImage_Data.TaggingAdImage_TagsItem tagsItem = new TaggingAdImageResponse.TaggingAdImage_Data.TaggingAdImage_TagsItem();
+				tagsItem._Value = _ctx.StringValue("TaggingAdImage.Data.Tags["+ i +"].Value");
+				tagsItem.Confidence = _ctx.FloatValue("TaggingAdImage.Data.Tags["+ i +"].Confidence");
 
-				data_tags.Add(tag);
+				data_tags.Add(tagsItem);
 			}
 			data.Tags = data_tags;
 			taggingAdImageResponse.Data = data;
