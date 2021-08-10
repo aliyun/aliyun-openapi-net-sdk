@@ -47,6 +47,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string instanceSpec;
 
+		private string prodCode;
+
 		private string endTime;
 
 		private bool? includeShare;
@@ -95,6 +97,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				instanceSpec = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceSpec", value);
+			}
+		}
+
+		public string ProdCode
+		{
+			get
+			{
+				return prodCode;
+			}
+			set	
+			{
+				prodCode = value;
+				DictionaryUtil.Add(QueryParameters, "ProdCode", value);
 			}
 		}
 
