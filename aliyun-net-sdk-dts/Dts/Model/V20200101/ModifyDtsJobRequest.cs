@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 		private string clientToken;
 
+		private string reserve;
+
 		private string dtsInstanceId;
 
 		private string synchronizationDirection;
@@ -71,6 +73,19 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string Reserve
+		{
+			get
+			{
+				return reserve;
+			}
+			set	
+			{
+				reserve = value;
+				DictionaryUtil.Add(BodyParameters, "Reserve", value);
 			}
 		}
 

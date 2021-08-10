@@ -27,10 +27,10 @@ using Aliyun.Acs.Dts.Transform.V20200101;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-    public class DescribeConsumerChannelRequest : RpcAcsRequest<DescribeConsumerChannelResponse>
+    public class DescribeSubscriptionMetaRequest : RpcAcsRequest<DescribeSubscriptionMetaResponse>
     {
-        public DescribeConsumerChannelRequest()
-            : base("Dts", "2020-01-01", "DescribeConsumerChannel", "dts", "openAPI")
+        public DescribeSubscriptionMetaRequest()
+            : base("Dts", "2020-01-01", "DescribeSubscriptionMeta", "dts", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,65 +40,50 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private int? pageNumber;
+		private string topics;
 
-		private string parentChannelId;
+		private string sid;
 
-		private int? pageSize;
-
-		private string dtsJobId;
+		private string subMigrationJobIds;
 
 		private string dtsInstanceId;
 
-		public int? PageNumber
+		public string Topics
 		{
 			get
 			{
-				return pageNumber;
+				return topics;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				topics = value;
+				DictionaryUtil.Add(QueryParameters, "Topics", value);
 			}
 		}
 
-		public string ParentChannelId
+		public string Sid
 		{
 			get
 			{
-				return parentChannelId;
+				return sid;
 			}
 			set	
 			{
-				parentChannelId = value;
-				DictionaryUtil.Add(QueryParameters, "ParentChannelId", value);
+				sid = value;
+				DictionaryUtil.Add(QueryParameters, "Sid", value);
 			}
 		}
 
-		public int? PageSize
+		public string SubMigrationJobIds
 		{
 			get
 			{
-				return pageSize;
+				return subMigrationJobIds;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string DtsJobId
-		{
-			get
-			{
-				return dtsJobId;
-			}
-			set	
-			{
-				dtsJobId = value;
-				DictionaryUtil.Add(QueryParameters, "DtsJobId", value);
+				subMigrationJobIds = value;
+				DictionaryUtil.Add(QueryParameters, "SubMigrationJobIds", value);
 			}
 		}
 
@@ -120,9 +105,9 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			return false;
 		}
 
-        public override DescribeConsumerChannelResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeSubscriptionMetaResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeConsumerChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeSubscriptionMetaResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
