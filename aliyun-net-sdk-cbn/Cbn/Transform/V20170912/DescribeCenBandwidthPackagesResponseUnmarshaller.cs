@@ -59,6 +59,7 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				cenBandwidthPackage.ReservationInternetChargeType = _ctx.StringValue("DescribeCenBandwidthPackages.CenBandwidthPackages["+ i +"].ReservationInternetChargeType");
 				cenBandwidthPackage.ReservationActiveTime = _ctx.StringValue("DescribeCenBandwidthPackages.CenBandwidthPackages["+ i +"].ReservationActiveTime");
 				cenBandwidthPackage.ReservationOrderType = _ctx.StringValue("DescribeCenBandwidthPackages.CenBandwidthPackages["+ i +"].ReservationOrderType");
+				cenBandwidthPackage.ResourceGroupId = _ctx.StringValue("DescribeCenBandwidthPackages.CenBandwidthPackages["+ i +"].ResourceGroupId");
 
 				List<string> cenBandwidthPackage_cenIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeCenBandwidthPackages.CenBandwidthPackages["+ i +"].CenIds.Length"); j++) {

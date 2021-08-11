@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				cen.Status = _ctx.StringValue("DescribeCens.Cens["+ i +"].Status");
 				cen.CreationTime = _ctx.StringValue("DescribeCens.Cens["+ i +"].CreationTime");
 				cen.Ipv6Level = _ctx.StringValue("DescribeCens.Cens["+ i +"].Ipv6Level");
+				cen.ResourceGroupId = _ctx.StringValue("DescribeCens.Cens["+ i +"].ResourceGroupId");
 
 				List<string> cen_cenBandwidthPackageIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeCens.Cens["+ i +"].CenBandwidthPackageIds.Length"); j++) {

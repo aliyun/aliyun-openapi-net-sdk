@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
 {
-	public class DescribeCensResponse : AcsResponse
+	public class ListTransitRoutersResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private int? pageSize;
 
-		private List<DescribeCens_Cen> cens;
+		private List<ListTransitRouters_TransitRouter> transitRouters;
 
 		public string RequestId
 		{
@@ -83,86 +83,48 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public List<DescribeCens_Cen> Cens
+		public List<ListTransitRouters_TransitRouter> TransitRouters
 		{
 			get
 			{
-				return cens;
+				return transitRouters;
 			}
 			set	
 			{
-				cens = value;
+				transitRouters = value;
 			}
 		}
 
-		public class DescribeCens_Cen
+		public class ListTransitRouters_TransitRouter
 		{
 
-			private string cenId;
-
-			private string name;
-
-			private string description;
-
-			private string protectionLevel;
+			private string transitRouterId;
 
 			private string status;
 
+			private string cenId;
+
+			private string regionId;
+
+			private long? aliUid;
+
+			private string type;
+
 			private string creationTime;
 
-			private string ipv6Level;
+			private string transitRouterName;
 
-			private string resourceGroupId;
+			private string transitRouterDescription;
 
-			private List<DescribeCens_Tag> tags;
-
-			private List<string> cenBandwidthPackageIds;
-
-			public string CenId
+			public string TransitRouterId
 			{
 				get
 				{
-					return cenId;
+					return transitRouterId;
 				}
 				set	
 				{
-					cenId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string ProtectionLevel
-			{
-				get
-				{
-					return protectionLevel;
-				}
-				set	
-				{
-					protectionLevel = value;
+					transitRouterId = value;
 				}
 			}
 
@@ -178,6 +140,54 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
+			public string CenId
+			{
+				get
+				{
+					return cenId;
+				}
+				set	
+				{
+					cenId = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public long? AliUid
+			{
+				get
+				{
+					return aliUid;
+				}
+				set	
+				{
+					aliUid = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+
 			public string CreationTime
 			{
 				get
@@ -190,83 +200,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string Ipv6Level
+			public string TransitRouterName
 			{
 				get
 				{
-					return ipv6Level;
+					return transitRouterName;
 				}
 				set	
 				{
-					ipv6Level = value;
+					transitRouterName = value;
 				}
 			}
 
-			public string ResourceGroupId
+			public string TransitRouterDescription
 			{
 				get
 				{
-					return resourceGroupId;
+					return transitRouterDescription;
 				}
 				set	
 				{
-					resourceGroupId = value;
-				}
-			}
-
-			public List<DescribeCens_Tag> Tags
-			{
-				get
-				{
-					return tags;
-				}
-				set	
-				{
-					tags = value;
-				}
-			}
-
-			public List<string> CenBandwidthPackageIds
-			{
-				get
-				{
-					return cenBandwidthPackageIds;
-				}
-				set	
-				{
-					cenBandwidthPackageIds = value;
-				}
-			}
-
-			public class DescribeCens_Tag
-			{
-
-				private string key;
-
-				private string _value;
-
-				public string Key
-				{
-					get
-					{
-						return key;
-					}
-					set	
-					{
-						key = value;
-					}
-				}
-
-				public string _Value
-				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
+					transitRouterDescription = value;
 				}
 			}
 		}

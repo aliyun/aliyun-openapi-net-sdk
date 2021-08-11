@@ -134,6 +134,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string matchAddressType;
 
+			private string transitRouterRouteTableId;
+
 			private List<string> sourceInstanceIds;
 
 			private List<string> destinationInstanceIds;
@@ -379,6 +381,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					matchAddressType = value;
+				}
+			}
+
+			public string TransitRouterRouteTableId
+			{
+				get
+				{
+					return transitRouterRouteTableId;
+				}
+				set	
+				{
+					transitRouterRouteTableId = value;
 				}
 			}
 

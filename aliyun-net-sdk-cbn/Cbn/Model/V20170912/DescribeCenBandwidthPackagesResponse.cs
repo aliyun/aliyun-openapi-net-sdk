@@ -138,6 +138,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string reservationOrderType;
 
+			private string resourceGroupId;
+
 			private List<DescribeCenBandwidthPackages_OrginInterRegionBandwidthLimit> orginInterRegionBandwidthLimits;
 
 			private List<DescribeCenBandwidthPackages_Tag> tags;
@@ -381,6 +383,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					reservationOrderType = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 
