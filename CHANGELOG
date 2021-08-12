@@ -1,3 +1,6 @@
+2021-08-12 Version: 1.21.0
+- Support CreateProxy, DeleteProxy, GetProxy, ListProxies, CreateProxyAccess, DeleteProxyAccess, ListProxyAccesses, InspectProxyAccessSecret Safety Protection Management APIs.
+
 2021-08-11 Version: 1.0.4
 - Support CEN latest Apis.
 
