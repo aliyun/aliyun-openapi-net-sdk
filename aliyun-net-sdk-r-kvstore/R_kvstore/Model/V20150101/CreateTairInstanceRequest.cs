@@ -96,6 +96,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string ownerAccount;
 
+		private string globalInstanceId;
+
 		private string vpcId;
 
 		private string chargeType;
@@ -461,6 +463,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string GlobalInstanceId
+		{
+			get
+			{
+				return globalInstanceId;
+			}
+			set	
+			{
+				globalInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "GlobalInstanceId", value);
 			}
 		}
 

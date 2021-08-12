@@ -52,6 +52,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string instanceChargeType;
 
+		private string nodeId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -141,6 +143,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceChargeType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+			}
+		}
+
+		public string NodeId
+		{
+			get
+			{
+				return nodeId;
+			}
+			set	
+			{
+				nodeId = value;
+				DictionaryUtil.Add(QueryParameters, "NodeId", value);
 			}
 		}
 

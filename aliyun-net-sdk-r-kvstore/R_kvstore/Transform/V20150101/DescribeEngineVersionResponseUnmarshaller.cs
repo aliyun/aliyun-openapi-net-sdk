@@ -38,6 +38,9 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			describeEngineVersionResponse.EnableUpgradeMinorVersion = _ctx.BooleanValue("DescribeEngineVersion.EnableUpgradeMinorVersion");
 			describeEngineVersionResponse.MajorVersion = _ctx.StringValue("DescribeEngineVersion.MajorVersion");
 			describeEngineVersionResponse.EnableUpgradeMajorVersion = _ctx.BooleanValue("DescribeEngineVersion.EnableUpgradeMajorVersion");
+			describeEngineVersionResponse.ProxyMinorVersion = _ctx.StringValue("DescribeEngineVersion.ProxyMinorVersion");
+			describeEngineVersionResponse.DBVersionRelease = _ctx.StringValue("DescribeEngineVersion.DBVersionRelease");
+			describeEngineVersionResponse.ProxyVersionRelease = _ctx.StringValue("DescribeEngineVersion.ProxyVersionRelease");
         
 			return describeEngineVersionResponse;
         }

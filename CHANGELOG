@@ -1,3 +1,7 @@
+2021-08-12 Version: 2.20.1
+- DescirbeAvailableResource add NodeId input parameter.
+- CreateTairInstance add GlobalInstanceId input paramter.
+
 2021-08-12 Version: 1.21.0
 - Support CreateProxy, DeleteProxy, GetProxy, ListProxies, CreateProxyAccess, DeleteProxyAccess, ListProxyAccesses, InspectProxyAccessSecret Safety Protection Management APIs.
 

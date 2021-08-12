@@ -39,6 +39,12 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private bool? enableUpgradeMajorVersion;
 
+		private string proxyMinorVersion;
+
+		private string dBVersionRelease;
+
+		private string proxyVersionRelease;
+
 		public string RequestId
 		{
 			get
@@ -120,6 +126,42 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				enableUpgradeMajorVersion = value;
+			}
+		}
+
+		public string ProxyMinorVersion
+		{
+			get
+			{
+				return proxyMinorVersion;
+			}
+			set	
+			{
+				proxyMinorVersion = value;
+			}
+		}
+
+		public string DBVersionRelease
+		{
+			get
+			{
+				return dBVersionRelease;
+			}
+			set	
+			{
+				dBVersionRelease = value;
+			}
+		}
+
+		public string ProxyVersionRelease
+		{
+			get
+			{
+				return proxyVersionRelease;
+			}
+			set	
+			{
+				proxyVersionRelease = value;
 			}
 		}
 	}
