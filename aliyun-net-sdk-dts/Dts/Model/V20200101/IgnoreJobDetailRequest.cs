@@ -27,10 +27,10 @@ using Aliyun.Acs.Dts.Transform.V20200101;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-    public class ModifyDtsJobRequest : RpcAcsRequest<ModifyDtsJobResponse>
+    public class IgnoreJobDetailRequest : RpcAcsRequest<IgnoreJobDetailResponse>
     {
-        public ModifyDtsJobRequest()
-            : base("Dts", "2020-01-01", "ModifyDtsJob", "dts", "openAPI")
+        public IgnoreJobDetailRequest()
+            : base("Dts", "2020-01-01", "IgnoreJobDetail", "dts", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,52 +40,52 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private string dbList;
+		private string jobCode;
 
-		private string clientToken;
+		private string dtsJobId;
 
-		private string etlOperatorColumnReference;
+		private string id;
 
 		private string dtsInstanceId;
 
 		private string synchronizationDirection;
 
-		public string DbList
+		public string JobCode
 		{
 			get
 			{
-				return dbList;
+				return jobCode;
 			}
 			set	
 			{
-				dbList = value;
-				DictionaryUtil.Add(BodyParameters, "DbList", value);
+				jobCode = value;
+				DictionaryUtil.Add(QueryParameters, "JobCode", value);
 			}
 		}
 
-		public string ClientToken
+		public string DtsJobId
 		{
 			get
 			{
-				return clientToken;
+				return dtsJobId;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+				dtsJobId = value;
+				DictionaryUtil.Add(QueryParameters, "DtsJobId", value);
 			}
 		}
 
-		public string EtlOperatorColumnReference
+		public string Id
 		{
 			get
 			{
-				return etlOperatorColumnReference;
+				return id;
 			}
 			set	
 			{
-				etlOperatorColumnReference = value;
-				DictionaryUtil.Add(BodyParameters, "EtlOperatorColumnReference", value);
+				id = value;
+				DictionaryUtil.Add(QueryParameters, "Id", value);
 			}
 		}
 
@@ -120,9 +120,9 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			return false;
 		}
 
-        public override ModifyDtsJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override IgnoreJobDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDtsJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return IgnoreJobDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

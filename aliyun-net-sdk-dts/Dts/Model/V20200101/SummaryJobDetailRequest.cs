@@ -27,10 +27,10 @@ using Aliyun.Acs.Dts.Transform.V20200101;
 
 namespace Aliyun.Acs.Dts.Model.V20200101
 {
-    public class ModifyDtsJobRequest : RpcAcsRequest<ModifyDtsJobResponse>
+    public class SummaryJobDetailRequest : RpcAcsRequest<SummaryJobDetailResponse>
     {
-        public ModifyDtsJobRequest()
-            : base("Dts", "2020-01-01", "ModifyDtsJob", "dts", "openAPI")
+        public SummaryJobDetailRequest()
+            : base("Dts", "2020-01-01", "SummaryJobDetail", "dts", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,52 +40,37 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private string dbList;
+		private string jobCode;
 
-		private string clientToken;
-
-		private string etlOperatorColumnReference;
+		private string dtsJobId;
 
 		private string dtsInstanceId;
 
 		private string synchronizationDirection;
 
-		public string DbList
+		public string JobCode
 		{
 			get
 			{
-				return dbList;
+				return jobCode;
 			}
 			set	
 			{
-				dbList = value;
-				DictionaryUtil.Add(BodyParameters, "DbList", value);
+				jobCode = value;
+				DictionaryUtil.Add(QueryParameters, "JobCode", value);
 			}
 		}
 
-		public string ClientToken
+		public string DtsJobId
 		{
 			get
 			{
-				return clientToken;
+				return dtsJobId;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string EtlOperatorColumnReference
-		{
-			get
-			{
-				return etlOperatorColumnReference;
-			}
-			set	
-			{
-				etlOperatorColumnReference = value;
-				DictionaryUtil.Add(BodyParameters, "EtlOperatorColumnReference", value);
+				dtsJobId = value;
+				DictionaryUtil.Add(QueryParameters, "DtsJobId", value);
 			}
 		}
 
@@ -120,9 +105,9 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			return false;
 		}
 
-        public override ModifyDtsJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SummaryJobDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDtsJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SummaryJobDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

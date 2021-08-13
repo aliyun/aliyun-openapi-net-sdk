@@ -268,6 +268,8 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 			private string ddlSql;
 
+			private string id;
+
 			private List<DescribePreCheckStatus_JobLog> logs;
 
 			public bool? Skip
@@ -534,6 +536,18 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				}
 			}
 
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
 			public List<DescribePreCheckStatus_JobLog> Logs
 			{
 				get
@@ -754,6 +768,8 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 				private string errDetail;
 
 				private string ddlSql;
+
+				private string id;
 
 				private List<DescribePreCheckStatus_JobLog4> logs3;
 
@@ -1018,6 +1034,18 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 					set	
 					{
 						ddlSql = value;
+					}
+				}
+
+				public string Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
 					}
 				}
 

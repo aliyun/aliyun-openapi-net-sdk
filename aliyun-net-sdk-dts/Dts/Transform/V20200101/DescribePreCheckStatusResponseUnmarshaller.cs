@@ -69,6 +69,7 @@ namespace Aliyun.Acs.Dts.Transform.V20200101
 				progressInfo.DestSchema = _ctx.StringValue("DescribePreCheckStatus.JobProgress["+ i +"].DestSchema");
 				progressInfo.ErrDetail = _ctx.StringValue("DescribePreCheckStatus.JobProgress["+ i +"].ErrDetail");
 				progressInfo.DdlSql = _ctx.StringValue("DescribePreCheckStatus.JobProgress["+ i +"].DdlSql");
+				progressInfo.Id = _ctx.StringValue("DescribePreCheckStatus.JobProgress["+ i +"].Id");
 
 				List<DescribePreCheckStatusResponse.DescribePreCheckStatus_ProgressInfo.DescribePreCheckStatus_JobLog> progressInfo_logs = new List<DescribePreCheckStatusResponse.DescribePreCheckStatus_ProgressInfo.DescribePreCheckStatus_JobLog>();
 				for (int j = 0; j < _ctx.Length("DescribePreCheckStatus.JobProgress["+ i +"].Logs.Length"); j++) {
@@ -121,6 +122,7 @@ namespace Aliyun.Acs.Dts.Transform.V20200101
 					progressInfo2.DestSchema = _ctx.StringValue("DescribePreCheckStatus.SubDistributedJobStatus["+ i +"].JobProgress["+ j +"].DestSchema");
 					progressInfo2.ErrDetail = _ctx.StringValue("DescribePreCheckStatus.SubDistributedJobStatus["+ i +"].JobProgress["+ j +"].ErrDetail");
 					progressInfo2.DdlSql = _ctx.StringValue("DescribePreCheckStatus.SubDistributedJobStatus["+ i +"].JobProgress["+ j +"].DdlSql");
+					progressInfo2.Id = _ctx.StringValue("DescribePreCheckStatus.SubDistributedJobStatus["+ i +"].JobProgress["+ j +"].Id");
 
 					List<DescribePreCheckStatusResponse.DescribePreCheckStatus_SubDistributedJobStatusItem.DescribePreCheckStatus_ProgressInfo2.DescribePreCheckStatus_JobLog4> progressInfo2_logs3 = new List<DescribePreCheckStatusResponse.DescribePreCheckStatus_SubDistributedJobStatusItem.DescribePreCheckStatus_ProgressInfo2.DescribePreCheckStatus_JobLog4>();
 					for (int k = 0; k < _ctx.Length("DescribePreCheckStatus.SubDistributedJobStatus["+ i +"].JobProgress["+ j +"].Logs.Length"); k++) {

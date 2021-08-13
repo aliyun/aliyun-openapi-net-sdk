@@ -1,3 +1,6 @@
+2021-08-13 Version: 5.1.18
+- Supported etlOperatorColumnReference for ModifyDtsJob.
+
 2021-08-12 Version: 2.0.0
 - Support query dbfs specification.
 

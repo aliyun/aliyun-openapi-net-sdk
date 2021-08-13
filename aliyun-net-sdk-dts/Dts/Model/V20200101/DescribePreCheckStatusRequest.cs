@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 
 		private string jobCode;
 
+		private string name;
+
 		private string dtsJobId;
 
 		private string structPhase;
@@ -101,6 +103,19 @@ namespace Aliyun.Acs.Dts.Model.V20200101
 			{
 				jobCode = value;
 				DictionaryUtil.Add(QueryParameters, "JobCode", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
