@@ -16,24 +16,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.EHPC.Model.V20180412;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.EHPC.Transform.V20180412
+namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class BindAccountToClusterUserResponseUnmarshaller
-    {
-        public static BindAccountToClusterUserResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			BindAccountToClusterUserResponse bindAccountToClusterUserResponse = new BindAccountToClusterUserResponse();
+	public class SetSchedulerInfoResponse : AcsResponse
+	{
 
-			bindAccountToClusterUserResponse.HttpResponse = _ctx.HttpResponse;
-			bindAccountToClusterUserResponse.RequestId = _ctx.StringValue("BindAccountToClusterUser.RequestId");
-        
-			return bindAccountToClusterUserResponse;
-        }
-    }
+		private string requestId;
+
+		private string message;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+	}
 }

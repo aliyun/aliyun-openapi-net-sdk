@@ -44,6 +44,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string clusterId;
 
+		private bool? sync;
+
 		private bool? releaseInstance;
 
 		public List<Instance> Instances
@@ -73,6 +75,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				clusterId = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public bool? Sync
+		{
+			get
+			{
+				return sync;
+			}
+			set	
+			{
+				sync = value;
+				DictionaryUtil.Add(QueryParameters, "Sync", value.ToString());
 			}
 		}
 

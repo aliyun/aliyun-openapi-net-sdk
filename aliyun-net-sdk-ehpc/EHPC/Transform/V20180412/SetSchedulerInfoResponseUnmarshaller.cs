@@ -16,27 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.EHPC.Model.V20180412;
 
-namespace Aliyun.Acs.EHPC.Model.V20180412
+namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
-	public class SetJobUserResponse : AcsResponse
-	{
+    public class SetSchedulerInfoResponseUnmarshaller
+    {
+        public static SetSchedulerInfoResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			SetSchedulerInfoResponse setSchedulerInfoResponse = new SetSchedulerInfoResponse();
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			setSchedulerInfoResponse.HttpResponse = _ctx.HttpResponse;
+			setSchedulerInfoResponse.RequestId = _ctx.StringValue("SetSchedulerInfo.RequestId");
+			setSchedulerInfoResponse.Message = _ctx.StringValue("SetSchedulerInfo.Message");
+        
+			return setSchedulerInfoResponse;
+        }
+    }
 }

@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-	public class ListAccountMappingResponse : AcsResponse
+	public class GetSchedulerInfoResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<ListAccountMapping_UserMapping> userMappings;
+		private List<GetSchedulerInfo_SchedInfoItem> schedInfo;
 
 		public string RequestId
 		{
@@ -41,60 +41,46 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public List<ListAccountMapping_UserMapping> UserMappings
+		public List<GetSchedulerInfo_SchedInfoItem> SchedInfo
 		{
 			get
 			{
-				return userMappings;
+				return schedInfo;
 			}
 			set	
 			{
-				userMappings = value;
+				schedInfo = value;
 			}
 		}
 
-		public class ListAccountMapping_UserMapping
+		public class GetSchedulerInfo_SchedInfoItem
 		{
 
-			private string userName;
+			private string schedName;
 
-			private string accountId;
+			private string configuration;
 
-			private string accountName;
-
-			public string UserName
+			public string SchedName
 			{
 				get
 				{
-					return userName;
+					return schedName;
 				}
 				set	
 				{
-					userName = value;
+					schedName = value;
 				}
 			}
 
-			public string AccountId
+			public string Configuration
 			{
 				get
 				{
-					return accountId;
+					return configuration;
 				}
 				set	
 				{
-					accountId = value;
-				}
-			}
-
-			public string AccountName
-			{
-				get
-				{
-					return accountName;
-				}
-				set	
-				{
-					accountName = value;
+					configuration = value;
 				}
 			}
 		}

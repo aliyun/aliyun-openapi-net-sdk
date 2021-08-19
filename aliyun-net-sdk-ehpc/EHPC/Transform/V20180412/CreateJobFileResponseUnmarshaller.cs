@@ -32,7 +32,6 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 
 			createJobFileResponse.HttpResponse = _ctx.HttpResponse;
 			createJobFileResponse.RequestId = _ctx.StringValue("CreateJobFile.RequestId");
-			createJobFileResponse.TemplateId = _ctx.StringValue("CreateJobFile.TemplateId");
         
 			return createJobFileResponse;
         }

@@ -32,16 +32,12 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 
 			listNodesNoPagingResponse.HttpResponse = _ctx.HttpResponse;
 			listNodesNoPagingResponse.RequestId = _ctx.StringValue("ListNodesNoPaging.RequestId");
-			listNodesNoPagingResponse.TotalCount = _ctx.IntegerValue("ListNodesNoPaging.TotalCount");
-			listNodesNoPagingResponse.PageNumber = _ctx.IntegerValue("ListNodesNoPaging.PageNumber");
-			listNodesNoPagingResponse.PageSize = _ctx.IntegerValue("ListNodesNoPaging.PageSize");
 
 			List<ListNodesNoPagingResponse.ListNodesNoPaging_NodeInfo> listNodesNoPagingResponse_nodes = new List<ListNodesNoPagingResponse.ListNodesNoPaging_NodeInfo>();
 			for (int i = 0; i < _ctx.Length("ListNodesNoPaging.Nodes.Length"); i++) {
 				ListNodesNoPagingResponse.ListNodesNoPaging_NodeInfo nodeInfo = new ListNodesNoPagingResponse.ListNodesNoPaging_NodeInfo();
 				nodeInfo.Id = _ctx.StringValue("ListNodesNoPaging.Nodes["+ i +"].Id");
 				nodeInfo.HostName = _ctx.StringValue("ListNodesNoPaging.Nodes["+ i +"].HostName");
-				nodeInfo.RegionId = _ctx.StringValue("ListNodesNoPaging.Nodes["+ i +"].RegionId");
 				nodeInfo.Status = _ctx.StringValue("ListNodesNoPaging.Nodes["+ i +"].Status");
 				nodeInfo.Version = _ctx.StringValue("ListNodesNoPaging.Nodes["+ i +"].Version");
 				nodeInfo.CreatedByEhpc = _ctx.BooleanValue("ListNodesNoPaging.Nodes["+ i +"].CreatedByEhpc");

@@ -238,19 +238,24 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				queuess = value;
 				for (int i = 0; i < queuess.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".SpotStrategy", queuess[i].SpotStrategy);
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".QueueName", queuess[i].QueueName);
-					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".MinNodesInQueue", queuess[i].MinNodesInQueue);
+					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".SystemDiskLevel", queuess[i].SystemDiskLevel);
 					for (int j = 0; j < queuess[i].InstanceTypess.Count; j++)
 					{
 						DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".InstanceTypes." +(j + 1), queuess[i].InstanceTypess[j]);
 					}
-					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".MaxNodesInQueue", queuess[i].MaxNodesInQueue);
-					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".InstanceType", queuess[i].InstanceType);
-					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".QueueImageId", queuess[i].QueueImageId);
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".EnableAutoGrow", queuess[i].EnableAutoGrow);
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".SpotPriceLimit", queuess[i].SpotPriceLimit);
+					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".HostNameSuffix", queuess[i].HostNameSuffix);
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".EnableAutoShrink", queuess[i].EnableAutoShrink);
+					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".SpotStrategy", queuess[i].SpotStrategy);
+					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".MinNodesInQueue", queuess[i].MinNodesInQueue);
+					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".SystemDiskCategory", queuess[i].SystemDiskCategory);
+					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".MaxNodesInQueue", queuess[i].MaxNodesInQueue);
+					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".SystemDiskSize", queuess[i].SystemDiskSize);
+					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".InstanceType", queuess[i].InstanceType);
+					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".QueueImageId", queuess[i].QueueImageId);
+					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".HostNamePrefix", queuess[i].HostNamePrefix);
 				}
 			}
 		}
@@ -284,37 +289,35 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		public class Queues
 		{
 
-			private string spotStrategy;
-
 			private string queueName;
 
-			private int? minNodesInQueue;
+			private string systemDiskLevel;
 
 			private List<InstanceTypes> instanceTypess = new List<InstanceTypes>(){ };
-
-			private int? maxNodesInQueue;
-
-			private string instanceType;
-
-			private string queueImageId;
 
 			private bool? enableAutoGrow;
 
 			private float? spotPriceLimit;
 
+			private string hostNameSuffix;
+
 			private bool? enableAutoShrink;
 
-			public string SpotStrategy
-			{
-				get
-				{
-					return spotStrategy;
-				}
-				set	
-				{
-					spotStrategy = value;
-				}
-			}
+			private string spotStrategy;
+
+			private int? minNodesInQueue;
+
+			private string systemDiskCategory;
+
+			private int? maxNodesInQueue;
+
+			private int? systemDiskSize;
+
+			private string instanceType;
+
+			private string queueImageId;
+
+			private string hostNamePrefix;
 
 			public string QueueName
 			{
@@ -328,15 +331,15 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				}
 			}
 
-			public int? MinNodesInQueue
+			public string SystemDiskLevel
 			{
 				get
 				{
-					return minNodesInQueue;
+					return systemDiskLevel;
 				}
 				set	
 				{
-					minNodesInQueue = value;
+					systemDiskLevel = value;
 				}
 			}
 
@@ -349,42 +352,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					instanceTypess = value;
-				}
-			}
-
-			public int? MaxNodesInQueue
-			{
-				get
-				{
-					return maxNodesInQueue;
-				}
-				set	
-				{
-					maxNodesInQueue = value;
-				}
-			}
-
-			public string InstanceType
-			{
-				get
-				{
-					return instanceType;
-				}
-				set	
-				{
-					instanceType = value;
-				}
-			}
-
-			public string QueueImageId
-			{
-				get
-				{
-					return queueImageId;
-				}
-				set	
-				{
-					queueImageId = value;
 				}
 			}
 
@@ -412,6 +379,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				}
 			}
 
+			public string HostNameSuffix
+			{
+				get
+				{
+					return hostNameSuffix;
+				}
+				set	
+				{
+					hostNameSuffix = value;
+				}
+			}
+
 			public bool? EnableAutoShrink
 			{
 				get
@@ -421,6 +400,102 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					enableAutoShrink = value;
+				}
+			}
+
+			public string SpotStrategy
+			{
+				get
+				{
+					return spotStrategy;
+				}
+				set	
+				{
+					spotStrategy = value;
+				}
+			}
+
+			public int? MinNodesInQueue
+			{
+				get
+				{
+					return minNodesInQueue;
+				}
+				set	
+				{
+					minNodesInQueue = value;
+				}
+			}
+
+			public string SystemDiskCategory
+			{
+				get
+				{
+					return systemDiskCategory;
+				}
+				set	
+				{
+					systemDiskCategory = value;
+				}
+			}
+
+			public int? MaxNodesInQueue
+			{
+				get
+				{
+					return maxNodesInQueue;
+				}
+				set	
+				{
+					maxNodesInQueue = value;
+				}
+			}
+
+			public int? SystemDiskSize
+			{
+				get
+				{
+					return systemDiskSize;
+				}
+				set	
+				{
+					systemDiskSize = value;
+				}
+			}
+
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
+
+			public string QueueImageId
+			{
+				get
+				{
+					return queueImageId;
+				}
+				set	
+				{
+					queueImageId = value;
+				}
+			}
+
+			public string HostNamePrefix
+			{
+				get
+				{
+					return hostNamePrefix;
+				}
+				set	
+				{
+					hostNamePrefix = value;
 				}
 			}
 
@@ -434,8 +509,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				private string instanceType;
 
 				private string zoneId;
-
-				private string hostNamePrefix;
 
 				private float? spotPriceLimit;
 
@@ -484,18 +557,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 					set	
 					{
 						zoneId = value;
-					}
-				}
-
-				public string HostNamePrefix
-				{
-					get
-					{
-						return hostNamePrefix;
-					}
-					set	
-					{
-						hostNamePrefix = value;
 					}
 				}
 

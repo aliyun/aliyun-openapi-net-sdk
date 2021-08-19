@@ -78,6 +78,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string hostNameSuffix;
 
+		private bool? sync;
+
 		private string vSwitchId;
 
 		private string periodUnit;
@@ -340,6 +342,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				hostNameSuffix = value;
 				DictionaryUtil.Add(QueryParameters, "HostNameSuffix", value);
+			}
+		}
+
+		public bool? Sync
+		{
+			get
+			{
+				return sync;
+			}
+			set	
+			{
+				sync = value;
+				DictionaryUtil.Add(QueryParameters, "Sync", value.ToString());
 			}
 		}
 

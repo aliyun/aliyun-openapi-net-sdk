@@ -62,6 +62,11 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				queueInfo.MaxNodesInQueue = _ctx.IntegerValue("GetAutoScaleConfig.Queues["+ i +"].MaxNodesInQueue");
 				queueInfo.MinNodesInQueue = _ctx.IntegerValue("GetAutoScaleConfig.Queues["+ i +"].MinNodesInQueue");
 				queueInfo.QueueImageId = _ctx.StringValue("GetAutoScaleConfig.Queues["+ i +"].QueueImageId");
+				queueInfo.HostNamePrefix = _ctx.StringValue("GetAutoScaleConfig.Queues["+ i +"].HostNamePrefix");
+				queueInfo.HostNameSuffix = _ctx.StringValue("GetAutoScaleConfig.Queues["+ i +"].HostNameSuffix");
+				queueInfo.SystemDiskSize = _ctx.IntegerValue("GetAutoScaleConfig.Queues["+ i +"].SystemDiskSize");
+				queueInfo.SystemDiskCategory = _ctx.StringValue("GetAutoScaleConfig.Queues["+ i +"].SystemDiskCategory");
+				queueInfo.SystemDiskLevel = _ctx.StringValue("GetAutoScaleConfig.Queues["+ i +"].SystemDiskLevel");
 
 				List<GetAutoScaleConfigResponse.GetAutoScaleConfig_QueueInfo.GetAutoScaleConfig_InstanceTypeInfo> queueInfo_instanceTypes = new List<GetAutoScaleConfigResponse.GetAutoScaleConfig_QueueInfo.GetAutoScaleConfig_InstanceTypeInfo>();
 				for (int j = 0; j < _ctx.Length("GetAutoScaleConfig.Queues["+ i +"].InstanceTypes.Length"); j++) {

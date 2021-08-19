@@ -27,12 +27,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string requestId;
 
-		private int? totalCount;
-
-		private int? pageNumber;
-
-		private int? pageSize;
-
 		private List<ListNodesNoPaging_NodeInfo> nodes;
 
 		public string RequestId
@@ -44,42 +38,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
 			}
 		}
 
@@ -101,8 +59,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			private string id;
 
 			private string hostName;
-
-			private string regionId;
 
 			private string status;
 
@@ -155,18 +111,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					hostName = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
 				}
 			}
 

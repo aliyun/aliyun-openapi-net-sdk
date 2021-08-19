@@ -28,10 +28,10 @@ using Aliyun.Acs.EHPC.Transform.V20180412;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class SetJobUserRequest : RpcAcsRequest<SetJobUserResponse>
+    public class GetSchedulerInfoRequest : RpcAcsRequest<GetSchedulerInfoResponse>
     {
-        public SetJobUserRequest()
-            : base("EHPC", "2018-04-12", "SetJobUser")
+        public GetSchedulerInfoRequest()
+            : base("EHPC", "2018-04-12", "GetSchedulerInfo")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,37 +40,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
             }
         }
 
-		private string runasUserPassword;
-
-		private string runasUser;
-
 		private string clusterId;
 
-		public string RunasUserPassword
-		{
-			get
-			{
-				return runasUserPassword;
-			}
-			set	
-			{
-				runasUserPassword = value;
-				DictionaryUtil.Add(QueryParameters, "RunasUserPassword", value);
-			}
-		}
-
-		public string RunasUser
-		{
-			get
-			{
-				return runasUser;
-			}
-			set	
-			{
-				runasUser = value;
-				DictionaryUtil.Add(QueryParameters, "RunasUser", value);
-			}
-		}
+		private List<Scheduler> schedulers = new List<Scheduler>(){ };
 
 		public string ClusterId
 		{
@@ -85,9 +57,49 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-        public override SetJobUserResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public List<Scheduler> Schedulers
+		{
+			get
+			{
+				return schedulers;
+			}
+
+			set
+			{
+				schedulers = value;
+				for (int i = 0; i < schedulers.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Scheduler." + (i + 1) + ".SchedName", schedulers[i].SchedName);
+				}
+			}
+		}
+
+		public class Scheduler
+		{
+
+			private string schedName;
+
+			public string SchedName
+			{
+				get
+				{
+					return schedName;
+				}
+				set	
+				{
+					schedName = value;
+				}
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override GetSchedulerInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetJobUserResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetSchedulerInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

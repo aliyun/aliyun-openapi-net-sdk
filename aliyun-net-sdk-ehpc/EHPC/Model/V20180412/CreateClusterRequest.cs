@@ -124,6 +124,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string osTag;
 
+		private string clusterVersion;
+
 		private bool? isComputeEss;
 
 		private List<Application> applications = new List<Application>(){ };
@@ -705,6 +707,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				osTag = value;
 				DictionaryUtil.Add(QueryParameters, "OsTag", value);
+			}
+		}
+
+		public string ClusterVersion
+		{
+			get
+			{
+				return clusterVersion;
+			}
+			set	
+			{
+				clusterVersion = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterVersion", value);
 			}
 		}
 

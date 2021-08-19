@@ -1,3 +1,6 @@
+2021-08-19 Version: 1.14.4
+- Support Round and Interval for ApplyNodes API.
+
 2021-08-19 Version: 1.0.7
 - Supported new features for outbound.
 
