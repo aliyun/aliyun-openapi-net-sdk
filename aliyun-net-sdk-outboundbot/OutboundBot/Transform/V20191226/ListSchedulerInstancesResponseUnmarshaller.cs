@@ -44,6 +44,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				schedulerInstance.InstanceId = _ctx.StringValue("ListSchedulerInstances.SchedulerInstances["+ i +"].InstanceId");
 				schedulerInstance.Business = _ctx.StringValue("ListSchedulerInstances.SchedulerInstances["+ i +"].Business");
 				schedulerInstance.MaxConcurrency = _ctx.IntegerValue("ListSchedulerInstances.SchedulerInstances["+ i +"].MaxConcurrency");
+				schedulerInstance.BaseStrategy = _ctx.StringValue("ListSchedulerInstances.SchedulerInstances["+ i +"].BaseStrategy");
 
 				listSchedulerInstancesResponse_schedulerInstances.Add(schedulerInstance);
 			}

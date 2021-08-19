@@ -615,6 +615,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 				private long? endTime;
 
+				private string endReason;
+
 				private List<DescribeJob_ConversationDetail> conversation;
 
 				private DescribeJob_Contact3 contact3;
@@ -772,6 +774,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						endTime = value;
+					}
+				}
+
+				public string EndReason
+				{
+					get
+					{
+						return endReason;
+					}
+					set	
+					{
+						endReason = value;
 					}
 				}
 

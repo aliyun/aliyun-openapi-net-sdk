@@ -195,6 +195,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 				private string rejectReason;
 
+				private bool? miniPlaybackEnabled;
+
 				public string DebugStatus
 				{
 					get
@@ -336,6 +338,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						rejectReason = value;
+					}
+				}
+
+				public bool? MiniPlaybackEnabled
+				{
+					get
+					{
+						return miniPlaybackEnabled;
+					}
+					set	
+					{
+						miniPlaybackEnabled = value;
 					}
 				}
 			}

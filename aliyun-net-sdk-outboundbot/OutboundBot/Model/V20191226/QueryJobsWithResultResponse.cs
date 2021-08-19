@@ -292,6 +292,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 					private List<QueryJobsWithResult_Extra> extras;
 
+					private List<QueryJobsWithResult_TagHit> tagHits;
+
 					private QueryJobsWithResult_Contact contact;
 
 					public string TaskEndReason
@@ -414,6 +416,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						}
 					}
 
+					public List<QueryJobsWithResult_TagHit> TagHits
+					{
+						get
+						{
+							return tagHits;
+						}
+						set	
+						{
+							tagHits = value;
+						}
+					}
+
 					public QueryJobsWithResult_Contact Contact
 					{
 						get
@@ -454,6 +468,38 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 							set	
 							{
 								_value = value;
+							}
+						}
+					}
+
+					public class QueryJobsWithResult_TagHit
+					{
+
+						private string tagGroup;
+
+						private string tagName;
+
+						public string TagGroup
+						{
+							get
+							{
+								return tagGroup;
+							}
+							set	
+							{
+								tagGroup = value;
+							}
+						}
+
+						public string TagName
+						{
+							get
+							{
+								return tagName;
+							}
+							set	
+							{
+								tagName = value;
 							}
 						}
 					}

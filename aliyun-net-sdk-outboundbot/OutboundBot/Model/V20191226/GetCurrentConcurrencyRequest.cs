@@ -27,10 +27,10 @@ using Aliyun.Acs.OutboundBot.Transform.V20191226;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-    public class ModifyInstanceRequest : RpcAcsRequest<ModifyInstanceResponse>
+    public class GetCurrentConcurrencyRequest : RpcAcsRequest<GetCurrentConcurrencyResponse>
     {
-        public ModifyInstanceRequest()
-            : base("OutboundBot", "2019-12-26", "ModifyInstance", "outboundbot", "openAPI")
+        public GetCurrentConcurrencyRequest()
+            : base("OutboundBot", "2019-12-26", "GetCurrentConcurrency", "outboundbot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,45 +40,7 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			Method = MethodType.POST;
         }
 
-		private int? maxConcurrentConversation;
-
-		private List<string> callingNumbers = new List<string>(){ };
-
 		private string instanceId;
-
-		private string instanceName;
-
-		private string instanceDescription;
-
-		public int? MaxConcurrentConversation
-		{
-			get
-			{
-				return maxConcurrentConversation;
-			}
-			set	
-			{
-				maxConcurrentConversation = value;
-				DictionaryUtil.Add(QueryParameters, "MaxConcurrentConversation", value.ToString());
-			}
-		}
-
-		public List<string> CallingNumbers
-		{
-			get
-			{
-				return callingNumbers;
-			}
-
-			set
-			{
-				callingNumbers = value;
-				for (int i = 0; i < callingNumbers.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"CallingNumber." + (i + 1) , callingNumbers[i]);
-				}
-			}
-		}
 
 		public string InstanceId
 		{
@@ -93,40 +55,14 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string InstanceName
-		{
-			get
-			{
-				return instanceName;
-			}
-			set	
-			{
-				instanceName = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceName", value);
-			}
-		}
-
-		public string InstanceDescription
-		{
-			get
-			{
-				return instanceDescription;
-			}
-			set	
-			{
-				instanceDescription = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceDescription", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ModifyInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetCurrentConcurrencyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetCurrentConcurrencyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

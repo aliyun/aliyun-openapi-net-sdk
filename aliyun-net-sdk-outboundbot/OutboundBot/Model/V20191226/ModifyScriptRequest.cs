@@ -40,6 +40,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			Method = MethodType.POST;
         }
 
+		private string ttsConfig;
+
 		private string industry;
 
 		private string scriptName;
@@ -48,9 +50,32 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string scriptId;
 
+		private List<string> scriptWaveforms = new List<string>(){ };
+
+		private string asrConfig;
+
+		private bool? miniPlaybackEnabled;
+
+		private string chatbotId;
+
 		private string instanceId;
 
 		private string scriptDescription;
+
+		private List<string> scriptContents = new List<string>(){ };
+
+		public string TtsConfig
+		{
+			get
+			{
+				return ttsConfig;
+			}
+			set	
+			{
+				ttsConfig = value;
+				DictionaryUtil.Add(QueryParameters, "TtsConfig", value);
+			}
+		}
 
 		public string Industry
 		{
@@ -104,6 +129,62 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
+		public List<string> ScriptWaveforms
+		{
+			get
+			{
+				return scriptWaveforms;
+			}
+
+			set
+			{
+				scriptWaveforms = value;
+				for (int i = 0; i < scriptWaveforms.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ScriptWaveform." + (i + 1) , scriptWaveforms[i]);
+				}
+			}
+		}
+
+		public string AsrConfig
+		{
+			get
+			{
+				return asrConfig;
+			}
+			set	
+			{
+				asrConfig = value;
+				DictionaryUtil.Add(QueryParameters, "AsrConfig", value);
+			}
+		}
+
+		public bool? MiniPlaybackEnabled
+		{
+			get
+			{
+				return miniPlaybackEnabled;
+			}
+			set	
+			{
+				miniPlaybackEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "MiniPlaybackEnabled", value.ToString());
+			}
+		}
+
+		public string ChatbotId
+		{
+			get
+			{
+				return chatbotId;
+			}
+			set	
+			{
+				chatbotId = value;
+				DictionaryUtil.Add(QueryParameters, "ChatbotId", value);
+			}
+		}
+
 		public string InstanceId
 		{
 			get
@@ -127,6 +208,23 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				scriptDescription = value;
 				DictionaryUtil.Add(QueryParameters, "ScriptDescription", value);
+			}
+		}
+
+		public List<string> ScriptContents
+		{
+			get
+			{
+				return scriptContents;
+			}
+
+			set
+			{
+				scriptContents = value;
+				for (int i = 0; i < scriptContents.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ScriptContent." + (i + 1) , scriptContents[i]);
+				}
 			}
 		}
 

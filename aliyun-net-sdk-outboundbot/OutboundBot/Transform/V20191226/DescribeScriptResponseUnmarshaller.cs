@@ -54,6 +54,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			script.ChatbotId = _ctx.StringValue("DescribeScript.Script.ChatbotId");
 			script.AsrConfig = _ctx.StringValue("DescribeScript.Script.AsrConfig");
 			script.TtsConfig = _ctx.StringValue("DescribeScript.Script.TtsConfig");
+			script.MiniPlaybackConfigEnabled = _ctx.BooleanValue("DescribeScript.Script.MiniPlaybackConfigEnabled");
 			describeScriptResponse.Script = script;
         
 			return describeScriptResponse;

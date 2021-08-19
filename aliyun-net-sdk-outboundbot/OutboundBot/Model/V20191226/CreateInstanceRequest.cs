@@ -44,9 +44,13 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string resourceGroupId;
 
+		private List<string> callingNumbers = new List<string>(){ };
+
 		private string instanceName;
 
 		private string instanceDescription;
+
+		private string nluServiceType;
 
 		public int? MaxConcurrentConversation
 		{
@@ -74,6 +78,23 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
+		public List<string> CallingNumbers
+		{
+			get
+			{
+				return callingNumbers;
+			}
+
+			set
+			{
+				callingNumbers = value;
+				for (int i = 0; i < callingNumbers.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"CallingNumber." + (i + 1) , callingNumbers[i]);
+				}
+			}
+		}
+
 		public string InstanceName
 		{
 			get
@@ -97,6 +118,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				instanceDescription = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceDescription", value);
+			}
+		}
+
+		public string NluServiceType
+		{
+			get
+			{
+				return nluServiceType;
+			}
+			set	
+			{
+				nluServiceType = value;
+				DictionaryUtil.Add(QueryParameters, "NluServiceType", value);
 			}
 		}
 

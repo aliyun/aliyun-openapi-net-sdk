@@ -57,6 +57,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				script.Status = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].Status");
 				script.UpdateTime = _ctx.LongValue("ListScripts.Scripts.List["+ i +"].UpdateTime");
 				script.RejectReason = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].RejectReason");
+				script.MiniPlaybackEnabled = _ctx.BooleanValue("ListScripts.Scripts.List["+ i +"].MiniPlaybackEnabled");
 
 				scripts_list.Add(script);
 			}

@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-	public class ListSchedulerInstancesResponse : AcsResponse
+	public class TerminateCallResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -34,8 +34,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private string message;
 
 		private int? httpStatusCode;
-
-		private List<ListSchedulerInstances_SchedulerInstance> schedulerInstances;
 
 		public string RequestId
 		{
@@ -94,92 +92,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
-			}
-		}
-
-		public List<ListSchedulerInstances_SchedulerInstance> SchedulerInstances
-		{
-			get
-			{
-				return schedulerInstances;
-			}
-			set	
-			{
-				schedulerInstances = value;
-			}
-		}
-
-		public class ListSchedulerInstances_SchedulerInstance
-		{
-
-			private string ownerId;
-
-			private string instanceId;
-
-			private string business;
-
-			private int? maxConcurrency;
-
-			private string baseStrategy;
-
-			public string OwnerId
-			{
-				get
-				{
-					return ownerId;
-				}
-				set	
-				{
-					ownerId = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string Business
-			{
-				get
-				{
-					return business;
-				}
-				set	
-				{
-					business = value;
-				}
-			}
-
-			public int? MaxConcurrency
-			{
-				get
-				{
-					return maxConcurrency;
-				}
-				set	
-				{
-					maxConcurrency = value;
-				}
-			}
-
-			public string BaseStrategy
-			{
-				get
-				{
-					return baseStrategy;
-				}
-				set	
-				{
-					baseStrategy = value;
-				}
 			}
 		}
 	}

@@ -180,6 +180,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private string ttsConfig;
 
+			private bool? miniPlaybackConfigEnabled;
+
 			public string DebugStatus
 			{
 				get
@@ -333,6 +335,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					ttsConfig = value;
+				}
+			}
+
+			public bool? MiniPlaybackConfigEnabled
+			{
+				get
+				{
+					return miniPlaybackConfigEnabled;
+				}
+				set	
+				{
+					miniPlaybackConfigEnabled = value;
 				}
 			}
 		}

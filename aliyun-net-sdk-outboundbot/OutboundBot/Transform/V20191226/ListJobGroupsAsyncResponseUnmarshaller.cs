@@ -55,6 +55,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				jobGroup.JobDataParsingTaskId = _ctx.StringValue("ListJobGroupsAsync.JobGroups["+ i +"].JobDataParsingTaskId");
 				jobGroup.ModifyTime = _ctx.StringValue("ListJobGroupsAsync.JobGroups["+ i +"].ModifyTime");
 				jobGroup.ScriptVersion = _ctx.StringValue("ListJobGroupsAsync.JobGroups["+ i +"].ScriptVersion");
+				jobGroup.TotalCallNum = _ctx.IntegerValue("ListJobGroupsAsync.JobGroups["+ i +"].TotalCallNum");
 
 				ListJobGroupsAsyncResponse.ListJobGroupsAsync_JobGroup.ListJobGroupsAsync_Strategy strategy = new ListJobGroupsAsyncResponse.ListJobGroupsAsync_JobGroup.ListJobGroupsAsync_Strategy();
 				strategy.StartTime = _ctx.LongValue("ListJobGroupsAsync.JobGroups["+ i +"].Strategy.StartTime");

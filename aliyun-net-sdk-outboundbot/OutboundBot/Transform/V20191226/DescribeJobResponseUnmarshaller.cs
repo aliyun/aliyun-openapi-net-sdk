@@ -113,6 +113,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				task.Status = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Status");
 				task.TaskId = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].TaskId");
 				task.EndTime = _ctx.LongValue("DescribeJob.Job.Tasks["+ i +"].EndTime");
+				task.EndReason = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].EndReason");
 
 				DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_Contact3 contact3 = new DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_Contact3();
 				contact3.ContactId = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Contact.ContactId");

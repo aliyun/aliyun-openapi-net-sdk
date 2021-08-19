@@ -46,6 +46,16 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				startJobResponse_taskIds.Add(keyValuePair);
 			}
 			startJobResponse.TaskIds = startJobResponse_taskIds;
+
+			List<StartJobResponse.StartJob_KeyValuePair> startJobResponse_callIds = new List<StartJobResponse.StartJob_KeyValuePair>();
+			for (int i = 0; i < _ctx.Length("StartJob.CallIds.Length"); i++) {
+				StartJobResponse.StartJob_KeyValuePair keyValuePair = new StartJobResponse.StartJob_KeyValuePair();
+				keyValuePair.Key = _ctx.StringValue("StartJob.CallIds["+ i +"].Key");
+				keyValuePair._Value = _ctx.StringValue("StartJob.CallIds["+ i +"].Value");
+
+				startJobResponse_callIds.Add(keyValuePair);
+			}
+			startJobResponse.CallIds = startJobResponse_callIds;
         
 			return startJobResponse;
         }

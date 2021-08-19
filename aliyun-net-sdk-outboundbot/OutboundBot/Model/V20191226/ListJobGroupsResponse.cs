@@ -205,6 +205,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 				private string status;
 
+				private int? totalCallNum;
+
 				private ListJobGroups_Progress progress;
 
 				private ListJobGroups_ExportProgress exportProgress;
@@ -328,6 +330,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public int? TotalCallNum
+				{
+					get
+					{
+						return totalCallNum;
+					}
+					set	
+					{
+						totalCallNum = value;
 					}
 				}
 

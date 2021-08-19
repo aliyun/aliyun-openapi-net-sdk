@@ -56,6 +56,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				jobGroup.ModifyTime = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].ModifyTime");
 				jobGroup.ScriptVersion = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].ScriptVersion");
 				jobGroup.Status = _ctx.StringValue("ListJobGroups.JobGroups.List["+ i +"].Status");
+				jobGroup.TotalCallNum = _ctx.IntegerValue("ListJobGroups.JobGroups.List["+ i +"].TotalCallNum");
 
 				ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup.ListJobGroups_Progress progress = new ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup.ListJobGroups_Progress();
 				progress.Duration = _ctx.IntegerValue("ListJobGroups.JobGroups.List["+ i +"].Progress.Duration");

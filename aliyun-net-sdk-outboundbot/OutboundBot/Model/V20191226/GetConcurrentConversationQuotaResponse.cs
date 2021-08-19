@@ -22,22 +22,22 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-	public class StartJobResponse : AcsResponse
+	public class GetConcurrentConversationQuotaResponse : AcsResponse
 	{
 
 		private string code;
 
 		private int? httpStatusCode;
 
+		private int? maxConcurrent;
+
 		private string message;
+
+		private int? remainingConcurrent;
 
 		private string requestId;
 
 		private bool? success;
-
-		private List<StartJob_KeyValuePair> taskIds;
-
-		private List<StartJob_KeyValuePair> callIds;
 
 		public string Code
 		{
@@ -63,6 +63,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
+		public int? MaxConcurrent
+		{
+			get
+			{
+				return maxConcurrent;
+			}
+			set	
+			{
+				maxConcurrent = value;
+			}
+		}
+
 		public string Message
 		{
 			get
@@ -72,6 +84,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public int? RemainingConcurrent
+		{
+			get
+			{
+				return remainingConcurrent;
+			}
+			set	
+			{
+				remainingConcurrent = value;
 			}
 		}
 
@@ -96,62 +120,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public List<StartJob_KeyValuePair> TaskIds
-		{
-			get
-			{
-				return taskIds;
-			}
-			set	
-			{
-				taskIds = value;
-			}
-		}
-
-		public List<StartJob_KeyValuePair> CallIds
-		{
-			get
-			{
-				return callIds;
-			}
-			set	
-			{
-				callIds = value;
-			}
-		}
-
-		public class StartJob_KeyValuePair
-		{
-
-			private string key;
-
-			private string _value;
-
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
-
-			public string _Value
-			{
-				get
-				{
-					return _value;
-				}
-				set	
-				{
-					_value = value;
-				}
 			}
 		}
 	}

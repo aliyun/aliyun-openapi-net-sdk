@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-	public class ListSchedulerInstancesResponse : AcsResponse
+	public class GetCurrentConcurrencyResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -35,7 +35,11 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private int? httpStatusCode;
 
-		private List<ListSchedulerInstances_SchedulerInstance> schedulerInstances;
+		private int? maxConcurrentConversation;
+
+		private int? currentConcurrency;
+
+		private string instanceId;
 
 		public string RequestId
 		{
@@ -97,89 +101,39 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public List<ListSchedulerInstances_SchedulerInstance> SchedulerInstances
+		public int? MaxConcurrentConversation
 		{
 			get
 			{
-				return schedulerInstances;
+				return maxConcurrentConversation;
 			}
 			set	
 			{
-				schedulerInstances = value;
+				maxConcurrentConversation = value;
 			}
 		}
 
-		public class ListSchedulerInstances_SchedulerInstance
+		public int? CurrentConcurrency
 		{
-
-			private string ownerId;
-
-			private string instanceId;
-
-			private string business;
-
-			private int? maxConcurrency;
-
-			private string baseStrategy;
-
-			public string OwnerId
+			get
 			{
-				get
-				{
-					return ownerId;
-				}
-				set	
-				{
-					ownerId = value;
-				}
+				return currentConcurrency;
 			}
-
-			public string InstanceId
+			set	
 			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
+				currentConcurrency = value;
 			}
+		}
 
-			public string Business
+		public string InstanceId
+		{
+			get
 			{
-				get
-				{
-					return business;
-				}
-				set	
-				{
-					business = value;
-				}
+				return instanceId;
 			}
-
-			public int? MaxConcurrency
+			set	
 			{
-				get
-				{
-					return maxConcurrency;
-				}
-				set	
-				{
-					maxConcurrency = value;
-				}
-			}
-
-			public string BaseStrategy
-			{
-				get
-				{
-					return baseStrategy;
-				}
-				set	
-				{
-					baseStrategy = value;
-				}
+				instanceId = value;
 			}
 		}
 	}

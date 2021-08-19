@@ -90,6 +90,16 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 					latestTask_extras.Add(extra);
 				}
 				latestTask.Extras = latestTask_extras;
+
+				List<QueryJobsWithResultResponse.QueryJobsWithResult_Jobs.QueryJobsWithResult_Job.QueryJobsWithResult_LatestTask.QueryJobsWithResult_TagHit> latestTask_tagHits = new List<QueryJobsWithResultResponse.QueryJobsWithResult_Jobs.QueryJobsWithResult_Job.QueryJobsWithResult_LatestTask.QueryJobsWithResult_TagHit>();
+				for (int j = 0; j < _ctx.Length("QueryJobsWithResult.Jobs.List["+ i +"].LatestTask.TagHits.Length"); j++) {
+					QueryJobsWithResultResponse.QueryJobsWithResult_Jobs.QueryJobsWithResult_Job.QueryJobsWithResult_LatestTask.QueryJobsWithResult_TagHit tagHit = new QueryJobsWithResultResponse.QueryJobsWithResult_Jobs.QueryJobsWithResult_Job.QueryJobsWithResult_LatestTask.QueryJobsWithResult_TagHit();
+					tagHit.TagGroup = _ctx.StringValue("QueryJobsWithResult.Jobs.List["+ i +"].LatestTask.TagHits["+ j +"].TagGroup");
+					tagHit.TagName = _ctx.StringValue("QueryJobsWithResult.Jobs.List["+ i +"].LatestTask.TagHits["+ j +"].TagName");
+
+					latestTask_tagHits.Add(tagHit);
+				}
+				latestTask.TagHits = latestTask_tagHits;
 				job.LatestTask = latestTask;
 
 				jobs_list.Add(job);

@@ -202,6 +202,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private string scriptVersion;
 
+			private int? totalCallNum;
+
 			private ListJobGroupsAsync_Strategy strategy;
 
 			private ListJobGroupsAsync_Progress progress;
@@ -325,6 +327,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					scriptVersion = value;
+				}
+			}
+
+			public int? TotalCallNum
+			{
+				get
+				{
+					return totalCallNum;
+				}
+				set	
+				{
+					totalCallNum = value;
 				}
 			}
 

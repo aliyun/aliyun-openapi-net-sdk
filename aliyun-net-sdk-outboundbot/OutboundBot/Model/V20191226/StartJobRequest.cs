@@ -44,6 +44,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private List<string> callingNumbers = new List<string>(){ };
 
+		private string scriptId;
+
 		private string instanceId;
 
 		private string jobGroupId;
@@ -77,6 +79,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				{
 					DictionaryUtil.Add(QueryParameters,"CallingNumber." + (i + 1) , callingNumbers[i]);
 				}
+			}
+		}
+
+		public string ScriptId
+		{
+			get
+			{
+				return scriptId;
+			}
+			set	
+			{
+				scriptId = value;
+				DictionaryUtil.Add(QueryParameters, "ScriptId", value);
 			}
 		}
 
