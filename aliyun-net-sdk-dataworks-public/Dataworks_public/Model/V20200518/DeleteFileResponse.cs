@@ -35,6 +35,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private int? httpStatusCode;
 
+		private long? deploymentId;
+
 		public string RequestId
 		{
 			get
@@ -92,6 +94,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				httpStatusCode = value;
+			}
+		}
+
+		public long? DeploymentId
+		{
+			get
+			{
+				return deploymentId;
+			}
+			set	
+			{
+				deploymentId = value;
 			}
 		}
 	}

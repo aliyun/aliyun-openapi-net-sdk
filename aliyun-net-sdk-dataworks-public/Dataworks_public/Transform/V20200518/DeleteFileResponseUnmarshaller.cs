@@ -36,6 +36,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			deleteFileResponse.ErrorCode = _ctx.StringValue("DeleteFile.ErrorCode");
 			deleteFileResponse.ErrorMessage = _ctx.StringValue("DeleteFile.ErrorMessage");
 			deleteFileResponse.HttpStatusCode = _ctx.IntegerValue("DeleteFile.HttpStatusCode");
+			deleteFileResponse.DeploymentId = _ctx.LongValue("DeleteFile.DeploymentId");
         
 			return deleteFileResponse;
         }

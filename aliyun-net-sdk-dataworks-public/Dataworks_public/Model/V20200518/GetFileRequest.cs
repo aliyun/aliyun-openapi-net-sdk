@@ -43,6 +43,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private long? projectId;
 
+		private long? nodeId;
+
 		private string projectIdentifier;
 
 		private long? fileId;
@@ -57,6 +59,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				projectId = value;
 				DictionaryUtil.Add(BodyParameters, "ProjectId", value.ToString());
+			}
+		}
+
+		public long? NodeId
+		{
+			get
+			{
+				return nodeId;
+			}
+			set	
+			{
+				nodeId = value;
+				DictionaryUtil.Add(BodyParameters, "NodeId", value.ToString());
 			}
 		}
 

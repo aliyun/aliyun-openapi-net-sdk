@@ -147,6 +147,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private string errorMessage;
 
+				private int? checkingStatus;
+
 				public string Name
 				{
 					get
@@ -252,6 +254,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						errorMessage = value;
+					}
+				}
+
+				public int? CheckingStatus
+				{
+					get
+					{
+						return checkingStatus;
+					}
+					set	
+					{
+						checkingStatus = value;
 					}
 				}
 			}

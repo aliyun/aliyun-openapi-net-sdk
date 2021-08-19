@@ -49,6 +49,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			deployment.FromEnvironment = _ctx.IntegerValue("GetDeployment.Data.Deployment.FromEnvironment");
 			deployment.ToEnvironment = _ctx.IntegerValue("GetDeployment.Data.Deployment.ToEnvironment");
 			deployment.ErrorMessage = _ctx.StringValue("GetDeployment.Data.Deployment.ErrorMessage");
+			deployment.CheckingStatus = _ctx.IntegerValue("GetDeployment.Data.Deployment.CheckingStatus");
 			data.Deployment = deployment;
 			getDeploymentResponse.Data = data;
         
