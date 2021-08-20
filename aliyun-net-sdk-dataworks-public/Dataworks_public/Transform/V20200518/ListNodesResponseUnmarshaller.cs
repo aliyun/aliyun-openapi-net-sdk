@@ -63,6 +63,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 				nodesItem.DqcType = _ctx.IntegerValue("ListNodes.Data.Nodes["+ i +"].DqcType");
 				nodesItem.DqcDescription = _ctx.StringValue("ListNodes.Data.Nodes["+ i +"].DqcDescription");
 				nodesItem.RelatedFlowId = _ctx.LongValue("ListNodes.Data.Nodes["+ i +"].RelatedFlowId");
+				nodesItem.BusinessId = _ctx.LongValue("ListNodes.Data.Nodes["+ i +"].BusinessId");
 
 				data_nodes.Add(nodesItem);
 			}

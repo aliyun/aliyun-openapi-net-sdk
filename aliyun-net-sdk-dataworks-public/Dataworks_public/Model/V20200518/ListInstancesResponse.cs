@@ -223,6 +223,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private int? taskRerunTime;
 
+				private long? businessId;
+
 				public long? NodeId
 				{
 					get
@@ -532,6 +534,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						taskRerunTime = value;
+					}
+				}
+
+				public long? BusinessId
+				{
+					get
+					{
+						return businessId;
+					}
+					set	
+					{
+						businessId = value;
 					}
 				}
 			}

@@ -64,6 +64,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			data.RelatedFlowId = _ctx.LongValue("GetInstance.Data.RelatedFlowId");
 			data.TaskType = _ctx.StringValue("GetInstance.Data.TaskType");
 			data.TaskRerunTime = _ctx.IntegerValue("GetInstance.Data.TaskRerunTime");
+			data.BusinessId = _ctx.LongValue("GetInstance.Data.BusinessId");
 			getInstanceResponse.Data = data;
         
 			return getInstanceResponse;

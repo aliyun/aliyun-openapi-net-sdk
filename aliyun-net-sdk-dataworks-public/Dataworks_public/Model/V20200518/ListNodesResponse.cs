@@ -207,6 +207,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private long? relatedFlowId;
 
+				private long? businessId;
+
 				public long? NodeId
 				{
 					get
@@ -420,6 +422,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						relatedFlowId = value;
+					}
+				}
+
+				public long? BusinessId
+				{
+					get
+					{
+						return businessId;
+					}
+					set	
+					{
+						businessId = value;
 					}
 				}
 			}

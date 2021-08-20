@@ -56,6 +56,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			data.DqcType = _ctx.IntegerValue("GetNode.Data.DqcType");
 			data.DqcDescription = _ctx.StringValue("GetNode.Data.DqcDescription");
 			data.RelatedFlowId = _ctx.LongValue("GetNode.Data.RelatedFlowId");
+			data.BusinessId = _ctx.LongValue("GetNode.Data.BusinessId");
 			getNodeResponse.Data = data;
         
 			return getNodeResponse;
