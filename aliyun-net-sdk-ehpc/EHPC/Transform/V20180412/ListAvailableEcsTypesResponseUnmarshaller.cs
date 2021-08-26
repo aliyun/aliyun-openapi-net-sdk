@@ -55,6 +55,12 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 					typesInfo.GPUSpec = _ctx.StringValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].GPUSpec");
 					typesInfo.Status = _ctx.StringValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].Status");
 
+					List<string> typesInfo_zoneIds = new List<string>();
+					for (int k = 0; k < _ctx.Length("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].ZoneIds.Length"); k++) {
+						typesInfo_zoneIds.Add(_ctx.StringValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].ZoneIds["+ k +"]"));
+					}
+					typesInfo.ZoneIds = typesInfo_zoneIds;
+
 					instanceTypeFamilyInfo_types.Add(typesInfo);
 				}
 				instanceTypeFamilyInfo.Types = instanceTypeFamilyInfo_types;
