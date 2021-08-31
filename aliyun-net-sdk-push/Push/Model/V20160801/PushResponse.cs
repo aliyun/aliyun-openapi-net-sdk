@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 	public class PushResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string messageId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string MessageId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			set	
 			{
 				messageId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

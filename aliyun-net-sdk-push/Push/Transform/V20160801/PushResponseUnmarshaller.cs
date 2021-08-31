@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 			PushResponse pushResponse = new PushResponse();
 
 			pushResponse.HttpResponse = _ctx.HttpResponse;
-			pushResponse.RequestId = _ctx.StringValue("Push.RequestId");
 			pushResponse.MessageId = _ctx.StringValue("Push.MessageId");
+			pushResponse.RequestId = _ctx.StringValue("Push.RequestId");
         
 			return pushResponse;
         }

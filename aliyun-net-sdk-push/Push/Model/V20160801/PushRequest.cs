@@ -73,6 +73,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string expireTime;
 
+		private string androidImageUrl;
+
 		private string androidNotificationVivoChannel;
 
 		private string iOSNotificationCategory;
@@ -82,6 +84,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		private bool? storeOffline;
 
 		private string smsParams;
+
+		private string androidInboxBody;
 
 		private string jobKey;
 
@@ -94,6 +98,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		private string androidXiaomiBigPictureUrl;
 
 		private bool? iOSRemind;
+
+		private string iOSNotificationThreadId;
 
 		private string androidMusic;
 
@@ -119,9 +125,13 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string iOSExtParameters;
 
+		private string androidXiaomiImageUrl;
+
 		private string smsTemplateName;
 
 		private string androidPopupBody;
+
+		private string androidBigPictureUrl;
 
 		private bool? iOSSilentNotification;
 
@@ -355,6 +365,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public string AndroidImageUrl
+		{
+			get
+			{
+				return androidImageUrl;
+			}
+			set	
+			{
+				androidImageUrl = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidImageUrl", value);
+			}
+		}
+
 		public string AndroidNotificationVivoChannel
 		{
 			get
@@ -417,6 +440,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				smsParams = value;
 				DictionaryUtil.Add(QueryParameters, "SmsParams", value);
+			}
+		}
+
+		public string AndroidInboxBody
+		{
+			get
+			{
+				return androidInboxBody;
+			}
+			set	
+			{
+				androidInboxBody = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidInboxBody", value);
 			}
 		}
 
@@ -495,6 +531,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				iOSRemind = value;
 				DictionaryUtil.Add(QueryParameters, "iOSRemind", value.ToString());
+			}
+		}
+
+		public string IOSNotificationThreadId
+		{
+			get
+			{
+				return iOSNotificationThreadId;
+			}
+			set	
+			{
+				iOSNotificationThreadId = value;
+				DictionaryUtil.Add(QueryParameters, "iOSNotificationThreadId", value);
 			}
 		}
 
@@ -654,6 +703,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public string AndroidXiaomiImageUrl
+		{
+			get
+			{
+				return androidXiaomiImageUrl;
+			}
+			set	
+			{
+				androidXiaomiImageUrl = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidXiaomiImageUrl", value);
+			}
+		}
+
 		public string SmsTemplateName
 		{
 			get
@@ -677,6 +739,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				androidPopupBody = value;
 				DictionaryUtil.Add(QueryParameters, "AndroidPopupBody", value);
+			}
+		}
+
+		public string AndroidBigPictureUrl
+		{
+			get
+			{
+				return androidBigPictureUrl;
+			}
+			set	
+			{
+				androidBigPictureUrl = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidBigPictureUrl", value);
 			}
 		}
 
