@@ -27,10 +27,10 @@ using Aliyun.Acs.reid_cloud.Transform.V20201029;
 
 namespace Aliyun.Acs.reid_cloud.Model.V20201029
 {
-    public class ListStoreRequest : RpcAcsRequest<ListStoreResponse>
+    public class DescribeCustomerFlowByLocationOfflineRequest : RpcAcsRequest<DescribeCustomerFlowByLocationOfflineResponse>
     {
-        public ListStoreRequest()
-            : base("reid_cloud", "2020-10-29", "ListStore", "1.2.2", "openAPI")
+        public DescribeCustomerFlowByLocationOfflineRequest()
+            : base("reid_cloud", "2020-10-29", "DescribeCustomerFlowByLocationOffline", "1.2.2", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,14 +40,44 @@ namespace Aliyun.Acs.reid_cloud.Model.V20201029
 			Method = MethodType.POST;
         }
 
+		private string startDate;
+
+		private long? storeId;
+
+		public string StartDate
+		{
+			get
+			{
+				return startDate;
+			}
+			set	
+			{
+				startDate = value;
+				DictionaryUtil.Add(BodyParameters, "StartDate", value);
+			}
+		}
+
+		public long? StoreId
+		{
+			get
+			{
+				return storeId;
+			}
+			set	
+			{
+				storeId = value;
+				DictionaryUtil.Add(BodyParameters, "StoreId", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ListStoreResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeCustomerFlowByLocationOfflineResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListStoreResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCustomerFlowByLocationOfflineResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
