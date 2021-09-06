@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QuerySpeechListRequest : RpcAcsRequest<QuerySpeechListResponse>
+    public class QuerySpeechDeviceRequest : RpcAcsRequest<QuerySpeechDeviceResponse>
     {
-        public QuerySpeechListRequest()
-            : base("Iot", "2018-01-20", "QuerySpeechList", "iot", "openAPI")
+        public QuerySpeechDeviceRequest()
+            : base("Iot", "2018-01-20", "QuerySpeechDevice", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,15 +40,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private string availableSpaceScope;
+
 		private string projectCode;
 
 		private int? pageId;
 
-		private string audioFormat;
-
 		private string iotInstanceId;
 
 		private int? pageSize;
+
+		private string availableSpace;
+
+		private string deviceName;
+
+		public string AvailableSpaceScope
+		{
+			get
+			{
+				return availableSpaceScope;
+			}
+			set	
+			{
+				availableSpaceScope = value;
+				DictionaryUtil.Add(BodyParameters, "AvailableSpaceScope", value);
+			}
+		}
 
 		public string ProjectCode
 		{
@@ -73,19 +90,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				pageId = value;
 				DictionaryUtil.Add(BodyParameters, "PageId", value.ToString());
-			}
-		}
-
-		public string AudioFormat
-		{
-			get
-			{
-				return audioFormat;
-			}
-			set	
-			{
-				audioFormat = value;
-				DictionaryUtil.Add(BodyParameters, "AudioFormat", value);
 			}
 		}
 
@@ -115,9 +119,35 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-        public override QuerySpeechListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string AvailableSpace
+		{
+			get
+			{
+				return availableSpace;
+			}
+			set	
+			{
+				availableSpace = value;
+				DictionaryUtil.Add(BodyParameters, "AvailableSpace", value);
+			}
+		}
+
+		public string DeviceName
+		{
+			get
+			{
+				return deviceName;
+			}
+			set	
+			{
+				deviceName = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceName", value);
+			}
+		}
+
+        public override QuerySpeechDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QuerySpeechListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QuerySpeechDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

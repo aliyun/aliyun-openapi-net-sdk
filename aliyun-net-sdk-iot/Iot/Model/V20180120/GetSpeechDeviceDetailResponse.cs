@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class SyncSpeechByCombinationResponse : AcsResponse
+	public class GetSpeechDeviceDetailResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private SyncSpeechByCombination_Data data;
+		private GetSpeechDeviceDetail_Data data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public SyncSpeechByCombination_Data Data
+		public GetSpeechDeviceDetail_Data Data
 		{
 			get
 			{
@@ -95,104 +95,104 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class SyncSpeechByCombination_Data
+		public class GetSpeechDeviceDetail_Data
 		{
 
-			private string id;
+			private string productKey;
 
-			private int? retryCount;
+			private string deviceName;
 
-			private bool? success;
+			private string iotId;
 
-			private int? maxRetryCount;
+			private string status;
 
-			private string deviceErrorCode;
+			private float? availableSpace;
 
-			private string deviceErrorMessage;
+			private float? totalSpace;
 
-			private string detail;
+			private long? speechListUpdateTime;
 
-			public string Id
+			public string ProductKey
 			{
 				get
 				{
-					return id;
+					return productKey;
 				}
 				set	
 				{
-					id = value;
+					productKey = value;
 				}
 			}
 
-			public int? RetryCount
+			public string DeviceName
 			{
 				get
 				{
-					return retryCount;
+					return deviceName;
 				}
 				set	
 				{
-					retryCount = value;
+					deviceName = value;
 				}
 			}
 
-			public bool? Success
+			public string IotId
 			{
 				get
 				{
-					return success;
+					return iotId;
 				}
 				set	
 				{
-					success = value;
+					iotId = value;
 				}
 			}
 
-			public int? MaxRetryCount
+			public string Status
 			{
 				get
 				{
-					return maxRetryCount;
+					return status;
 				}
 				set	
 				{
-					maxRetryCount = value;
+					status = value;
 				}
 			}
 
-			public string DeviceErrorCode
+			public float? AvailableSpace
 			{
 				get
 				{
-					return deviceErrorCode;
+					return availableSpace;
 				}
 				set	
 				{
-					deviceErrorCode = value;
+					availableSpace = value;
 				}
 			}
 
-			public string DeviceErrorMessage
+			public float? TotalSpace
 			{
 				get
 				{
-					return deviceErrorMessage;
+					return totalSpace;
 				}
 				set	
 				{
-					deviceErrorMessage = value;
+					totalSpace = value;
 				}
 			}
 
-			public string Detail
+			public long? SpeechListUpdateTime
 			{
 				get
 				{
-					return detail;
+					return speechListUpdateTime;
 				}
 				set	
 				{
-					detail = value;
+					speechListUpdateTime = value;
 				}
 			}
 		}

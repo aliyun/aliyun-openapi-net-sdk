@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class SyncSpeechByCombinationResponse : AcsResponse
+	public class QueryClientIdsResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private SyncSpeechByCombination_Data data;
+		private QueryClientIds_Data data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public SyncSpeechByCombination_Data Data
+		public QueryClientIds_Data Data
 		{
 			get
 			{
@@ -95,104 +95,66 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class SyncSpeechByCombination_Data
+		public class QueryClientIds_Data
 		{
 
-			private string id;
+			private string iotId;
 
-			private int? retryCount;
+			private List<QueryClientIds_DynamicRegClientId> dynamicRegClientIds;
 
-			private bool? success;
-
-			private int? maxRetryCount;
-
-			private string deviceErrorCode;
-
-			private string deviceErrorMessage;
-
-			private string detail;
-
-			public string Id
+			public string IotId
 			{
 				get
 				{
-					return id;
+					return iotId;
 				}
 				set	
 				{
-					id = value;
+					iotId = value;
 				}
 			}
 
-			public int? RetryCount
+			public List<QueryClientIds_DynamicRegClientId> DynamicRegClientIds
 			{
 				get
 				{
-					return retryCount;
+					return dynamicRegClientIds;
 				}
 				set	
 				{
-					retryCount = value;
+					dynamicRegClientIds = value;
 				}
 			}
 
-			public bool? Success
+			public class QueryClientIds_DynamicRegClientId
 			{
-				get
-				{
-					return success;
-				}
-				set	
-				{
-					success = value;
-				}
-			}
 
-			public int? MaxRetryCount
-			{
-				get
-				{
-					return maxRetryCount;
-				}
-				set	
-				{
-					maxRetryCount = value;
-				}
-			}
+				private string clientId;
 
-			public string DeviceErrorCode
-			{
-				get
-				{
-					return deviceErrorCode;
-				}
-				set	
-				{
-					deviceErrorCode = value;
-				}
-			}
+				private long? createTime;
 
-			public string DeviceErrorMessage
-			{
-				get
+				public string ClientId
 				{
-					return deviceErrorMessage;
+					get
+					{
+						return clientId;
+					}
+					set	
+					{
+						clientId = value;
+					}
 				}
-				set	
-				{
-					deviceErrorMessage = value;
-				}
-			}
 
-			public string Detail
-			{
-				get
+				public long? CreateTime
 				{
-					return detail;
-				}
-				set	
-				{
-					detail = value;
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
 				}
 			}
 		}

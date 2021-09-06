@@ -40,6 +40,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private string speechId;
+
+		private string audioFormat;
+
 		private string iotId;
 
 		private List<string> combinationLists = new List<string>(){ };
@@ -49,6 +53,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string productKey;
 
 		private string deviceName;
+
+		public string SpeechId
+		{
+			get
+			{
+				return speechId;
+			}
+			set	
+			{
+				speechId = value;
+				DictionaryUtil.Add(BodyParameters, "SpeechId", value);
+			}
+		}
+
+		public string AudioFormat
+		{
+			get
+			{
+				return audioFormat;
+			}
+			set	
+			{
+				audioFormat = value;
+				DictionaryUtil.Add(BodyParameters, "AudioFormat", value);
+			}
+		}
 
 		public string IotId
 		{

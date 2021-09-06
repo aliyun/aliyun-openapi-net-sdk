@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QuerySpeechListRequest : RpcAcsRequest<QuerySpeechListResponse>
+    public class TransformClientIdRequest : RpcAcsRequest<TransformClientIdResponse>
     {
-        public QuerySpeechListRequest()
-            : base("Iot", "2018-01-20", "QuerySpeechList", "iot", "openAPI")
+        public TransformClientIdRequest()
+            : base("Iot", "2018-01-20", "TransformClientId", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,52 +40,35 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string projectCode;
+		private string clientId;
 
-		private int? pageId;
-
-		private string audioFormat;
+		private string iotId;
 
 		private string iotInstanceId;
 
-		private int? pageSize;
-
-		public string ProjectCode
+		public string ClientId
 		{
 			get
 			{
-				return projectCode;
+				return clientId;
 			}
 			set	
 			{
-				projectCode = value;
-				DictionaryUtil.Add(BodyParameters, "ProjectCode", value);
+				clientId = value;
+				DictionaryUtil.Add(QueryParameters, "ClientId", value);
 			}
 		}
 
-		public int? PageId
+		public string IotId
 		{
 			get
 			{
-				return pageId;
+				return iotId;
 			}
 			set	
 			{
-				pageId = value;
-				DictionaryUtil.Add(BodyParameters, "PageId", value.ToString());
-			}
-		}
-
-		public string AudioFormat
-		{
-			get
-			{
-				return audioFormat;
-			}
-			set	
-			{
-				audioFormat = value;
-				DictionaryUtil.Add(BodyParameters, "AudioFormat", value);
+				iotId = value;
+				DictionaryUtil.Add(QueryParameters, "IotId", value);
 			}
 		}
 
@@ -98,26 +81,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				iotInstanceId = value;
-				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
-			}
-		}
-
-        public override QuerySpeechListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TransformClientIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QuerySpeechListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TransformClientIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

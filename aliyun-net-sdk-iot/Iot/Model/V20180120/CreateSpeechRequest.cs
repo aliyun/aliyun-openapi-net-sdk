@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string projectCode;
 
+		private string audioFormat;
+
 		private string iotInstanceId;
 
 		private string text;
@@ -79,6 +81,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				projectCode = value;
 				DictionaryUtil.Add(BodyParameters, "ProjectCode", value);
+			}
+		}
+
+		public string AudioFormat
+		{
+			get
+			{
+				return audioFormat;
+			}
+			set	
+			{
+				audioFormat = value;
+				DictionaryUtil.Add(BodyParameters, "AudioFormat", value);
 			}
 		}
 

@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QueryEdgeDriverResponse : AcsResponse
+	public class QuerySpeechDeviceResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private QueryEdgeDriver_Data data;
+		private QuerySpeechDevice_Data data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public QueryEdgeDriver_Data Data
+		public QuerySpeechDevice_Data Data
 		{
 			get
 			{
@@ -95,16 +95,16 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class QueryEdgeDriver_Data
+		public class QuerySpeechDevice_Data
 		{
 
 			private int? total;
 
+			private int? pageId;
+
 			private int? pageSize;
 
-			private int? currentPage;
-
-			private List<QueryEdgeDriver_Driver> driverList;
+			private List<QuerySpeechDevice_Items> list;
 
 			public int? Total
 			{
@@ -115,6 +115,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					total = value;
+				}
+			}
+
+			public int? PageId
+			{
+				get
+				{
+					return pageId;
+				}
+				set	
+				{
+					pageId = value;
 				}
 			}
 
@@ -130,170 +142,74 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public int? CurrentPage
+			public List<QuerySpeechDevice_Items> List
 			{
 				get
 				{
-					return currentPage;
+					return list;
 				}
 				set	
 				{
-					currentPage = value;
+					list = value;
 				}
 			}
 
-			public List<QueryEdgeDriver_Driver> DriverList
-			{
-				get
-				{
-					return driverList;
-				}
-				set	
-				{
-					driverList = value;
-				}
-			}
-
-			public class QueryEdgeDriver_Driver
+			public class QuerySpeechDevice_Items
 			{
 
-				private string driverId;
+				private string productKey;
 
-				private string driverName;
+				private string deviceName;
 
-				private string driverProtocol;
+				private string iotId;
 
-				private string runtime;
+				private float? availableSpace;
 
-				private string cpuArch;
-
-				private int? type;
-
-				private bool? isBuiltIn;
-
-				private long? gmtCreateTimestamp;
-
-				private long? gmtModifiedTimestamp;
-
-				private bool? isApply;
-
-				public string DriverId
+				public string ProductKey
 				{
 					get
 					{
-						return driverId;
+						return productKey;
 					}
 					set	
 					{
-						driverId = value;
+						productKey = value;
 					}
 				}
 
-				public string DriverName
+				public string DeviceName
 				{
 					get
 					{
-						return driverName;
+						return deviceName;
 					}
 					set	
 					{
-						driverName = value;
+						deviceName = value;
 					}
 				}
 
-				public string DriverProtocol
+				public string IotId
 				{
 					get
 					{
-						return driverProtocol;
+						return iotId;
 					}
 					set	
 					{
-						driverProtocol = value;
+						iotId = value;
 					}
 				}
 
-				public string Runtime
+				public float? AvailableSpace
 				{
 					get
 					{
-						return runtime;
+						return availableSpace;
 					}
 					set	
 					{
-						runtime = value;
-					}
-				}
-
-				public string CpuArch
-				{
-					get
-					{
-						return cpuArch;
-					}
-					set	
-					{
-						cpuArch = value;
-					}
-				}
-
-				public int? Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
-					}
-				}
-
-				public bool? IsBuiltIn
-				{
-					get
-					{
-						return isBuiltIn;
-					}
-					set	
-					{
-						isBuiltIn = value;
-					}
-				}
-
-				public long? GmtCreateTimestamp
-				{
-					get
-					{
-						return gmtCreateTimestamp;
-					}
-					set	
-					{
-						gmtCreateTimestamp = value;
-					}
-				}
-
-				public long? GmtModifiedTimestamp
-				{
-					get
-					{
-						return gmtModifiedTimestamp;
-					}
-					set	
-					{
-						gmtModifiedTimestamp = value;
-					}
-				}
-
-				public bool? IsApply
-				{
-					get
-					{
-						return isApply;
-					}
-					set	
-					{
-						isApply = value;
+						availableSpace = value;
 					}
 				}
 			}

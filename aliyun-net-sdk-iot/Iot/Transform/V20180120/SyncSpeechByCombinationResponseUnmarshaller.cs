@@ -43,6 +43,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.MaxRetryCount = _ctx.IntegerValue("SyncSpeechByCombination.Data.MaxRetryCount");
 			data.DeviceErrorCode = _ctx.StringValue("SyncSpeechByCombination.Data.DeviceErrorCode");
 			data.DeviceErrorMessage = _ctx.StringValue("SyncSpeechByCombination.Data.DeviceErrorMessage");
+			data.Detail = _ctx.StringValue("SyncSpeechByCombination.Data.Detail");
 			syncSpeechByCombinationResponse.Data = data;
         
 			return syncSpeechByCombinationResponse;

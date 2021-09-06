@@ -55,6 +55,19 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			firmwareInfo.VerifyProgress = _ctx.IntegerValue("QueryOTAFirmware.FirmwareInfo.VerifyProgress");
 			firmwareInfo.ModuleName = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.ModuleName");
 			firmwareInfo.Udi = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.Udi");
+
+			List<QueryOTAFirmwareResponse.QueryOTAFirmware_FirmwareInfo.QueryOTAFirmware_OtaPackageFileDTO> firmwareInfo_multiFiles = new List<QueryOTAFirmwareResponse.QueryOTAFirmware_FirmwareInfo.QueryOTAFirmware_OtaPackageFileDTO>();
+			for (int i = 0; i < _ctx.Length("QueryOTAFirmware.FirmwareInfo.MultiFiles.Length"); i++) {
+				QueryOTAFirmwareResponse.QueryOTAFirmware_FirmwareInfo.QueryOTAFirmware_OtaPackageFileDTO otaPackageFileDTO = new QueryOTAFirmwareResponse.QueryOTAFirmware_FirmwareInfo.QueryOTAFirmware_OtaPackageFileDTO();
+				otaPackageFileDTO.Name = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.MultiFiles["+ i +"].Name");
+				otaPackageFileDTO.Size = _ctx.IntegerValue("QueryOTAFirmware.FirmwareInfo.MultiFiles["+ i +"].Size");
+				otaPackageFileDTO.Url = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.MultiFiles["+ i +"].Url");
+				otaPackageFileDTO.SignValue = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.MultiFiles["+ i +"].SignValue");
+				otaPackageFileDTO.FileMd5 = _ctx.StringValue("QueryOTAFirmware.FirmwareInfo.MultiFiles["+ i +"].FileMd5");
+
+				firmwareInfo_multiFiles.Add(otaPackageFileDTO);
+			}
+			firmwareInfo.MultiFiles = firmwareInfo_multiFiles;
 			queryOTAFirmwareResponse.FirmwareInfo = firmwareInfo;
         
 			return queryOTAFirmwareResponse;

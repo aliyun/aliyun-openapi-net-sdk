@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QuerySpeechListResponse : AcsResponse
+	public class QueryDeviceSpeechResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private QuerySpeechList_Data data;
+		private QueryDeviceSpeech_Data data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public QuerySpeechList_Data Data
+		public QueryDeviceSpeech_Data Data
 		{
 			get
 			{
@@ -95,7 +95,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class QuerySpeechList_Data
+		public class QueryDeviceSpeech_Data
 		{
 
 			private int? total;
@@ -104,7 +104,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private int? pageSize;
 
-			private List<QuerySpeechList_Items> list;
+			private List<QueryDeviceSpeech_Items> list;
 
 			public int? Total
 			{
@@ -142,7 +142,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public List<QuerySpeechList_Items> List
+			public List<QueryDeviceSpeech_Items> List
 			{
 				get
 				{
@@ -154,34 +154,14 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public class QuerySpeechList_Items
+			public class QueryDeviceSpeech_Items
 			{
-
-				private string speechCode;
 
 				private string bizCode;
 
-				private string text;
-
-				private string voice;
-
-				private string speechType;
+				private float? size;
 
 				private string audioFormat;
-
-				private List<QuerySpeechList_Items1> speechList;
-
-				public string SpeechCode
-				{
-					get
-					{
-						return speechCode;
-					}
-					set	
-					{
-						speechCode = value;
-					}
-				}
 
 				public string BizCode
 				{
@@ -195,39 +175,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					}
 				}
 
-				public string Text
+				public float? Size
 				{
 					get
 					{
-						return text;
+						return size;
 					}
 					set	
 					{
-						text = value;
-					}
-				}
-
-				public string Voice
-				{
-					get
-					{
-						return voice;
-					}
-					set	
-					{
-						voice = value;
-					}
-				}
-
-				public string SpeechType
-				{
-					get
-					{
-						return speechType;
-					}
-					set	
-					{
-						speechType = value;
+						size = value;
 					}
 				}
 
@@ -240,78 +196,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					set	
 					{
 						audioFormat = value;
-					}
-				}
-
-				public List<QuerySpeechList_Items1> SpeechList
-				{
-					get
-					{
-						return speechList;
-					}
-					set	
-					{
-						speechList = value;
-					}
-				}
-
-				public class QuerySpeechList_Items1
-				{
-
-					private string speechCode;
-
-					private string bizCode;
-
-					private string text;
-
-					private string voice;
-
-					public string SpeechCode
-					{
-						get
-						{
-							return speechCode;
-						}
-						set	
-						{
-							speechCode = value;
-						}
-					}
-
-					public string BizCode
-					{
-						get
-						{
-							return bizCode;
-						}
-						set	
-						{
-							bizCode = value;
-						}
-					}
-
-					public string Text
-					{
-						get
-						{
-							return text;
-						}
-						set	
-						{
-							text = value;
-						}
-					}
-
-					public string Voice
-					{
-						get
-						{
-							return voice;
-						}
-						set	
-						{
-							voice = value;
-						}
 					}
 				}
 			}

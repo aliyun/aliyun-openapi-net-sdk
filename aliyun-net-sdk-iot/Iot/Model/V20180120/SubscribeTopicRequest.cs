@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QuerySpeechListRequest : RpcAcsRequest<QuerySpeechListResponse>
+    public class SubscribeTopicRequest : RpcAcsRequest<SubscribeTopicResponse>
     {
-        public QuerySpeechListRequest()
-            : base("Iot", "2018-01-20", "QuerySpeechList", "iot", "openAPI")
+        public SubscribeTopicRequest()
+            : base("Iot", "2018-01-20", "SubscribeTopic", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,54 +40,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string projectCode;
-
-		private int? pageId;
-
-		private string audioFormat;
-
 		private string iotInstanceId;
 
-		private int? pageSize;
+		private string productKey;
 
-		public string ProjectCode
-		{
-			get
-			{
-				return projectCode;
-			}
-			set	
-			{
-				projectCode = value;
-				DictionaryUtil.Add(BodyParameters, "ProjectCode", value);
-			}
-		}
+		private List<string> topics = new List<string>(){ };
 
-		public int? PageId
-		{
-			get
-			{
-				return pageId;
-			}
-			set	
-			{
-				pageId = value;
-				DictionaryUtil.Add(BodyParameters, "PageId", value.ToString());
-			}
-		}
-
-		public string AudioFormat
-		{
-			get
-			{
-				return audioFormat;
-			}
-			set	
-			{
-				audioFormat = value;
-				DictionaryUtil.Add(BodyParameters, "AudioFormat", value);
-			}
-		}
+		private string deviceName;
 
 		public string IotInstanceId
 		{
@@ -98,26 +57,56 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				iotInstanceId = value;
-				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 
-		public int? PageSize
+		public string ProductKey
 		{
 			get
 			{
-				return pageSize;
+				return productKey;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
-        public override QuerySpeechListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public List<string> Topics
+		{
+			get
+			{
+				return topics;
+			}
+
+			set
+			{
+				topics = value;
+				for (int i = 0; i < topics.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Topic." + (i + 1) , topics[i]);
+				}
+			}
+		}
+
+		public string DeviceName
+		{
+			get
+			{
+				return deviceName;
+			}
+			set	
+			{
+				deviceName = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
+			}
+		}
+
+        public override SubscribeTopicResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QuerySpeechListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SubscribeTopicResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

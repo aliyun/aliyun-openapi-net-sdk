@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QuerySpeechListRequest : RpcAcsRequest<QuerySpeechListResponse>
+    public class QueryDeviceSpeechRequest : RpcAcsRequest<QueryDeviceSpeechResponse>
     {
-        public QuerySpeechListRequest()
-            : base("Iot", "2018-01-20", "QuerySpeechList", "iot", "openAPI")
+        public QueryDeviceSpeechRequest()
+            : base("Iot", "2018-01-20", "QueryDeviceSpeech", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,28 +40,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string projectCode;
-
 		private int? pageId;
 
-		private string audioFormat;
+		private string iotId;
 
 		private string iotInstanceId;
 
 		private int? pageSize;
-
-		public string ProjectCode
-		{
-			get
-			{
-				return projectCode;
-			}
-			set	
-			{
-				projectCode = value;
-				DictionaryUtil.Add(BodyParameters, "ProjectCode", value);
-			}
-		}
 
 		public int? PageId
 		{
@@ -76,16 +61,16 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string AudioFormat
+		public string IotId
 		{
 			get
 			{
-				return audioFormat;
+				return iotId;
 			}
 			set	
 			{
-				audioFormat = value;
-				DictionaryUtil.Add(BodyParameters, "AudioFormat", value);
+				iotId = value;
+				DictionaryUtil.Add(BodyParameters, "IotId", value);
 			}
 		}
 
@@ -115,9 +100,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-        public override QuerySpeechListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryDeviceSpeechResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QuerySpeechListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryDeviceSpeechResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

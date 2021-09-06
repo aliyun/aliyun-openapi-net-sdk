@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class SyncSpeechByCombinationResponse : AcsResponse
+	public class DeleteDeviceSpeechResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,8 +32,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string code;
 
 		private string errorMessage;
-
-		private SyncSpeechByCombination_Data data;
 
 		public string RequestId
 		{
@@ -80,120 +78,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				errorMessage = value;
-			}
-		}
-
-		public SyncSpeechByCombination_Data Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-			}
-		}
-
-		public class SyncSpeechByCombination_Data
-		{
-
-			private string id;
-
-			private int? retryCount;
-
-			private bool? success;
-
-			private int? maxRetryCount;
-
-			private string deviceErrorCode;
-
-			private string deviceErrorMessage;
-
-			private string detail;
-
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
-
-			public int? RetryCount
-			{
-				get
-				{
-					return retryCount;
-				}
-				set	
-				{
-					retryCount = value;
-				}
-			}
-
-			public bool? Success
-			{
-				get
-				{
-					return success;
-				}
-				set	
-				{
-					success = value;
-				}
-			}
-
-			public int? MaxRetryCount
-			{
-				get
-				{
-					return maxRetryCount;
-				}
-				set	
-				{
-					maxRetryCount = value;
-				}
-			}
-
-			public string DeviceErrorCode
-			{
-				get
-				{
-					return deviceErrorCode;
-				}
-				set	
-				{
-					deviceErrorCode = value;
-				}
-			}
-
-			public string DeviceErrorMessage
-			{
-				get
-				{
-					return deviceErrorMessage;
-				}
-				set	
-				{
-					deviceErrorMessage = value;
-				}
-			}
-
-			public string Detail
-			{
-				get
-				{
-					return detail;
-				}
-				set	
-				{
-					detail = value;
-				}
 			}
 		}
 	}

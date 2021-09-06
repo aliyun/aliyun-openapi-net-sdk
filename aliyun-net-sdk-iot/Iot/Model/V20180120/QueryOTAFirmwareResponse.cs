@@ -134,6 +134,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string udi;
 
+			private List<QueryOTAFirmware_OtaPackageFileDTO> multiFiles;
+
 			public string FirmwareName
 			{
 				get
@@ -347,6 +349,92 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					udi = value;
+				}
+			}
+
+			public List<QueryOTAFirmware_OtaPackageFileDTO> MultiFiles
+			{
+				get
+				{
+					return multiFiles;
+				}
+				set	
+				{
+					multiFiles = value;
+				}
+			}
+
+			public class QueryOTAFirmware_OtaPackageFileDTO
+			{
+
+				private string name;
+
+				private int? size;
+
+				private string url;
+
+				private string signValue;
+
+				private string fileMd5;
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public int? Size
+				{
+					get
+					{
+						return size;
+					}
+					set	
+					{
+						size = value;
+					}
+				}
+
+				public string Url
+				{
+					get
+					{
+						return url;
+					}
+					set	
+					{
+						url = value;
+					}
+				}
+
+				public string SignValue
+				{
+					get
+					{
+						return signValue;
+					}
+					set	
+					{
+						signValue = value;
+					}
+				}
+
+				public string FileMd5
+				{
+					get
+					{
+						return fileMd5;
+					}
+					set	
+					{
+						fileMd5 = value;
+					}
 				}
 			}
 		}

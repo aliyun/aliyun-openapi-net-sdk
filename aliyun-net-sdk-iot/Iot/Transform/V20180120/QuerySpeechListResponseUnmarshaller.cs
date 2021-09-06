@@ -49,6 +49,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				items.Text = _ctx.StringValue("QuerySpeechList.Data.List["+ i +"].Text");
 				items.Voice = _ctx.StringValue("QuerySpeechList.Data.List["+ i +"].Voice");
 				items.SpeechType = _ctx.StringValue("QuerySpeechList.Data.List["+ i +"].SpeechType");
+				items.AudioFormat = _ctx.StringValue("QuerySpeechList.Data.List["+ i +"].AudioFormat");
 
 				List<QuerySpeechListResponse.QuerySpeechList_Data.QuerySpeechList_Items.QuerySpeechList_Items1> items_speechList = new List<QuerySpeechListResponse.QuerySpeechList_Data.QuerySpeechList_Items.QuerySpeechList_Items1>();
 				for (int j = 0; j < _ctx.Length("QuerySpeechList.Data.List["+ i +"].SpeechList.Length"); j++) {

@@ -70,6 +70,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
         public override QueryOTAFirmwareResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return QueryOTAFirmwareResponseUnmarshaller.Unmarshall(unmarshallerContext);

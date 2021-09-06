@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QuerySpeechListRequest : RpcAcsRequest<QuerySpeechListResponse>
+    public class DeleteDeviceSpeechRequest : RpcAcsRequest<DeleteDeviceSpeechResponse>
     {
-        public QuerySpeechListRequest()
-            : base("Iot", "2018-01-20", "QuerySpeechList", "iot", "openAPI")
+        public DeleteDeviceSpeechRequest()
+            : base("Iot", "2018-01-20", "DeleteDeviceSpeech", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,52 +40,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string projectCode;
-
-		private int? pageId;
-
-		private string audioFormat;
+		private string iotId;
 
 		private string iotInstanceId;
 
-		private int? pageSize;
+		private List<DeviceSpeechList> deviceSpeechLists = new List<DeviceSpeechList>(){ };
 
-		public string ProjectCode
+		public string IotId
 		{
 			get
 			{
-				return projectCode;
+				return iotId;
 			}
 			set	
 			{
-				projectCode = value;
-				DictionaryUtil.Add(BodyParameters, "ProjectCode", value);
-			}
-		}
-
-		public int? PageId
-		{
-			get
-			{
-				return pageId;
-			}
-			set	
-			{
-				pageId = value;
-				DictionaryUtil.Add(BodyParameters, "PageId", value.ToString());
-			}
-		}
-
-		public string AudioFormat
-		{
-			get
-			{
-				return audioFormat;
-			}
-			set	
-			{
-				audioFormat = value;
-				DictionaryUtil.Add(BodyParameters, "AudioFormat", value);
+				iotId = value;
+				DictionaryUtil.Add(BodyParameters, "IotId", value);
 			}
 		}
 
@@ -102,22 +72,59 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public int? PageSize
+		public List<DeviceSpeechList> DeviceSpeechLists
 		{
 			get
 			{
-				return pageSize;
+				return deviceSpeechLists;
 			}
-			set	
+
+			set
 			{
-				pageSize = value;
-				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+				deviceSpeechLists = value;
+				for (int i = 0; i < deviceSpeechLists.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"DeviceSpeechList." + (i + 1) + ".BizCode", deviceSpeechLists[i].BizCode);
+					DictionaryUtil.Add(BodyParameters,"DeviceSpeechList." + (i + 1) + ".AudioFormat", deviceSpeechLists[i].AudioFormat);
+				}
 			}
 		}
 
-        public override QuerySpeechListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public class DeviceSpeechList
+		{
+
+			private string bizCode;
+
+			private string audioFormat;
+
+			public string BizCode
+			{
+				get
+				{
+					return bizCode;
+				}
+				set	
+				{
+					bizCode = value;
+				}
+			}
+
+			public string AudioFormat
+			{
+				get
+				{
+					return audioFormat;
+				}
+				set	
+				{
+					audioFormat = value;
+				}
+			}
+		}
+
+        public override DeleteDeviceSpeechResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QuerySpeechListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteDeviceSpeechResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
