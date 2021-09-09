@@ -26,21 +26,21 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class QueryCommunicationLogsResponseUnmarshaller
     {
-        public static QueryCommunicationLogsResponse Unmarshall(UnmarshallerContext context)
+        public static QueryCommunicationLogsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryCommunicationLogsResponse queryCommunicationLogsResponse = new QueryCommunicationLogsResponse();
 
-			queryCommunicationLogsResponse.HttpResponse = context.HttpResponse;
-			queryCommunicationLogsResponse.RequestId = context.StringValue("QueryCommunicationLogs.RequestId");
+			queryCommunicationLogsResponse.HttpResponse = _ctx.HttpResponse;
+			queryCommunicationLogsResponse.RequestId = _ctx.StringValue("QueryCommunicationLogs.RequestId");
 
 			List<QueryCommunicationLogsResponse.QueryCommunicationLogs_TaskList> queryCommunicationLogsResponse_data = new List<QueryCommunicationLogsResponse.QueryCommunicationLogs_TaskList>();
-			for (int i = 0; i < context.Length("QueryCommunicationLogs.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryCommunicationLogs.Data.Length"); i++) {
 				QueryCommunicationLogsResponse.QueryCommunicationLogs_TaskList taskList = new QueryCommunicationLogsResponse.QueryCommunicationLogs_TaskList();
-				taskList.BizId = context.StringValue("QueryCommunicationLogs.Data["+ i +"].BizId");
-				taskList.Note = context.StringValue("QueryCommunicationLogs.Data["+ i +"].Note");
-				taskList.PartnerCode = context.StringValue("QueryCommunicationLogs.Data["+ i +"].PartnerCode");
-				taskList.UpdateTime = context.LongValue("QueryCommunicationLogs.Data["+ i +"].UpdateTime");
-				taskList.CreateTime = context.LongValue("QueryCommunicationLogs.Data["+ i +"].CreateTime");
+				taskList.BizId = _ctx.StringValue("QueryCommunicationLogs.Data["+ i +"].BizId");
+				taskList.Note = _ctx.StringValue("QueryCommunicationLogs.Data["+ i +"].Note");
+				taskList.PartnerCode = _ctx.StringValue("QueryCommunicationLogs.Data["+ i +"].PartnerCode");
+				taskList.UpdateTime = _ctx.LongValue("QueryCommunicationLogs.Data["+ i +"].UpdateTime");
+				taskList.CreateTime = _ctx.LongValue("QueryCommunicationLogs.Data["+ i +"].CreateTime");
 
 				queryCommunicationLogsResponse_data.Add(taskList);
 			}

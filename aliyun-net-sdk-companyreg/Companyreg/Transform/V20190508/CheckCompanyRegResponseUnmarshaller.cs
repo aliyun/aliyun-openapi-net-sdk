@@ -26,22 +26,22 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class CheckCompanyRegResponseUnmarshaller
     {
-        public static CheckCompanyRegResponse Unmarshall(UnmarshallerContext context)
+        public static CheckCompanyRegResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckCompanyRegResponse checkCompanyRegResponse = new CheckCompanyRegResponse();
 
-			checkCompanyRegResponse.HttpResponse = context.HttpResponse;
-			checkCompanyRegResponse.RequestId = context.StringValue("CheckCompanyReg.RequestId");
-			checkCompanyRegResponse.MatchCity = context.StringValue("CheckCompanyReg.MatchCity");
-			checkCompanyRegResponse.MatchBrand = context.StringValue("CheckCompanyReg.MatchBrand");
-			checkCompanyRegResponse.MatchSensitive = context.StringValue("CheckCompanyReg.MatchSensitive");
-			checkCompanyRegResponse.Level = context.StringValue("CheckCompanyReg.Level");
+			checkCompanyRegResponse.HttpResponse = _ctx.HttpResponse;
+			checkCompanyRegResponse.RequestId = _ctx.StringValue("CheckCompanyReg.RequestId");
+			checkCompanyRegResponse.MatchCity = _ctx.StringValue("CheckCompanyReg.MatchCity");
+			checkCompanyRegResponse.MatchBrand = _ctx.StringValue("CheckCompanyReg.MatchBrand");
+			checkCompanyRegResponse.MatchSensitive = _ctx.StringValue("CheckCompanyReg.MatchSensitive");
+			checkCompanyRegResponse.Level = _ctx.StringValue("CheckCompanyReg.Level");
 
 			List<CheckCompanyRegResponse.CheckCompanyReg_Company> checkCompanyRegResponse_similarCompanies = new List<CheckCompanyRegResponse.CheckCompanyReg_Company>();
-			for (int i = 0; i < context.Length("CheckCompanyReg.SimilarCompanies.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("CheckCompanyReg.SimilarCompanies.Length"); i++) {
 				CheckCompanyRegResponse.CheckCompanyReg_Company company = new CheckCompanyRegResponse.CheckCompanyReg_Company();
-				company.CompanyName = context.StringValue("CheckCompanyReg.SimilarCompanies["+ i +"].CompanyName");
-				company.Level = context.StringValue("CheckCompanyReg.SimilarCompanies["+ i +"].Level");
+				company.CompanyName = _ctx.StringValue("CheckCompanyReg.SimilarCompanies["+ i +"].CompanyName");
+				company.Level = _ctx.StringValue("CheckCompanyReg.SimilarCompanies["+ i +"].Level");
 
 				checkCompanyRegResponse_similarCompanies.Add(company);
 			}

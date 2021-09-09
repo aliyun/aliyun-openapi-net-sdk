@@ -26,12 +26,12 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class UploadIcpBasicMaterialResponseUnmarshaller
     {
-        public static UploadIcpBasicMaterialResponse Unmarshall(UnmarshallerContext context)
+        public static UploadIcpBasicMaterialResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UploadIcpBasicMaterialResponse uploadIcpBasicMaterialResponse = new UploadIcpBasicMaterialResponse();
 
-			uploadIcpBasicMaterialResponse.HttpResponse = context.HttpResponse;
-			uploadIcpBasicMaterialResponse.RequestId = context.StringValue("UploadIcpBasicMaterial.RequestId");
+			uploadIcpBasicMaterialResponse.HttpResponse = _ctx.HttpResponse;
+			uploadIcpBasicMaterialResponse.RequestId = _ctx.StringValue("UploadIcpBasicMaterial.RequestId");
         
 			return uploadIcpBasicMaterialResponse;
         }

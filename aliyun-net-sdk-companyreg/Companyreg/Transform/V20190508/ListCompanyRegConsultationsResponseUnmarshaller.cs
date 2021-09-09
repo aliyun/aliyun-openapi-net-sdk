@@ -26,29 +26,29 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class ListCompanyRegConsultationsResponseUnmarshaller
     {
-        public static ListCompanyRegConsultationsResponse Unmarshall(UnmarshallerContext context)
+        public static ListCompanyRegConsultationsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListCompanyRegConsultationsResponse listCompanyRegConsultationsResponse = new ListCompanyRegConsultationsResponse();
 
-			listCompanyRegConsultationsResponse.HttpResponse = context.HttpResponse;
-			listCompanyRegConsultationsResponse.RequestId = context.StringValue("ListCompanyRegConsultations.RequestId");
-			listCompanyRegConsultationsResponse.TotalItemNum = context.IntegerValue("ListCompanyRegConsultations.TotalItemNum");
-			listCompanyRegConsultationsResponse.CurrentPageNum = context.IntegerValue("ListCompanyRegConsultations.CurrentPageNum");
-			listCompanyRegConsultationsResponse.PageSize = context.IntegerValue("ListCompanyRegConsultations.PageSize");
-			listCompanyRegConsultationsResponse.TotalPageNum = context.IntegerValue("ListCompanyRegConsultations.TotalPageNum");
-			listCompanyRegConsultationsResponse.PrePage = context.BooleanValue("ListCompanyRegConsultations.PrePage");
-			listCompanyRegConsultationsResponse.NextPage = context.BooleanValue("ListCompanyRegConsultations.NextPage");
+			listCompanyRegConsultationsResponse.HttpResponse = _ctx.HttpResponse;
+			listCompanyRegConsultationsResponse.RequestId = _ctx.StringValue("ListCompanyRegConsultations.RequestId");
+			listCompanyRegConsultationsResponse.TotalItemNum = _ctx.IntegerValue("ListCompanyRegConsultations.TotalItemNum");
+			listCompanyRegConsultationsResponse.CurrentPageNum = _ctx.IntegerValue("ListCompanyRegConsultations.CurrentPageNum");
+			listCompanyRegConsultationsResponse.PageSize = _ctx.IntegerValue("ListCompanyRegConsultations.PageSize");
+			listCompanyRegConsultationsResponse.TotalPageNum = _ctx.IntegerValue("ListCompanyRegConsultations.TotalPageNum");
+			listCompanyRegConsultationsResponse.PrePage = _ctx.BooleanValue("ListCompanyRegConsultations.PrePage");
+			listCompanyRegConsultationsResponse.NextPage = _ctx.BooleanValue("ListCompanyRegConsultations.NextPage");
 
 			List<ListCompanyRegConsultationsResponse.ListCompanyRegConsultations_CompanyRegConsultation> listCompanyRegConsultationsResponse_data = new List<ListCompanyRegConsultationsResponse.ListCompanyRegConsultations_CompanyRegConsultation>();
-			for (int i = 0; i < context.Length("ListCompanyRegConsultations.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListCompanyRegConsultations.Data.Length"); i++) {
 				ListCompanyRegConsultationsResponse.ListCompanyRegConsultations_CompanyRegConsultation companyRegConsultation = new ListCompanyRegConsultationsResponse.ListCompanyRegConsultations_CompanyRegConsultation();
-				companyRegConsultation.BizId = context.StringValue("ListCompanyRegConsultations.Data["+ i +"].BizId");
-				companyRegConsultation.ConsultInfo = context.StringValue("ListCompanyRegConsultations.Data["+ i +"].ConsultInfo");
-				companyRegConsultation.GmtModified = context.LongValue("ListCompanyRegConsultations.Data["+ i +"].GmtModified");
-				companyRegConsultation.City = context.StringValue("ListCompanyRegConsultations.Data["+ i +"].City");
-				companyRegConsultation.PlatformName = context.StringValue("ListCompanyRegConsultations.Data["+ i +"].PlatformName");
-				companyRegConsultation.InboundPhone = context.StringValue("ListCompanyRegConsultations.Data["+ i +"].InboundPhone");
-				companyRegConsultation.OutboundPhone = context.StringValue("ListCompanyRegConsultations.Data["+ i +"].OutboundPhone");
+				companyRegConsultation.BizId = _ctx.StringValue("ListCompanyRegConsultations.Data["+ i +"].BizId");
+				companyRegConsultation.ConsultInfo = _ctx.StringValue("ListCompanyRegConsultations.Data["+ i +"].ConsultInfo");
+				companyRegConsultation.GmtModified = _ctx.LongValue("ListCompanyRegConsultations.Data["+ i +"].GmtModified");
+				companyRegConsultation.City = _ctx.StringValue("ListCompanyRegConsultations.Data["+ i +"].City");
+				companyRegConsultation.PlatformName = _ctx.StringValue("ListCompanyRegConsultations.Data["+ i +"].PlatformName");
+				companyRegConsultation.InboundPhone = _ctx.StringValue("ListCompanyRegConsultations.Data["+ i +"].InboundPhone");
+				companyRegConsultation.OutboundPhone = _ctx.StringValue("ListCompanyRegConsultations.Data["+ i +"].OutboundPhone");
 
 				listCompanyRegConsultationsResponse_data.Add(companyRegConsultation);
 			}

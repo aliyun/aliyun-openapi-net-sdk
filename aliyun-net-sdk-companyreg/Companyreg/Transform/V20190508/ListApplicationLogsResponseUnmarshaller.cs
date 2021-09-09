@@ -26,22 +26,22 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class ListApplicationLogsResponseUnmarshaller
     {
-        public static ListApplicationLogsResponse Unmarshall(UnmarshallerContext context)
+        public static ListApplicationLogsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListApplicationLogsResponse listApplicationLogsResponse = new ListApplicationLogsResponse();
 
-			listApplicationLogsResponse.HttpResponse = context.HttpResponse;
-			listApplicationLogsResponse.RequestId = context.StringValue("ListApplicationLogs.RequestId");
+			listApplicationLogsResponse.HttpResponse = _ctx.HttpResponse;
+			listApplicationLogsResponse.RequestId = _ctx.StringValue("ListApplicationLogs.RequestId");
 
 			List<ListApplicationLogsResponse.ListApplicationLogs_DataItem> listApplicationLogsResponse_data = new List<ListApplicationLogsResponse.ListApplicationLogs_DataItem>();
-			for (int i = 0; i < context.Length("ListApplicationLogs.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListApplicationLogs.Data.Length"); i++) {
 				ListApplicationLogsResponse.ListApplicationLogs_DataItem dataItem = new ListApplicationLogsResponse.ListApplicationLogs_DataItem();
-				dataItem.BizId = context.StringValue("ListApplicationLogs.Data["+ i +"].BizId");
-				dataItem.Note = context.StringValue("ListApplicationLogs.Data["+ i +"].Note");
-				dataItem.OperateType = context.IntegerValue("ListApplicationLogs.Data["+ i +"].OperateType");
-				dataItem.OperateTime = context.LongValue("ListApplicationLogs.Data["+ i +"].OperateTime");
-				dataItem.BizStatus = context.IntegerValue("ListApplicationLogs.Data["+ i +"].BizStatus");
-				dataItem.ExtendContent = context.StringValue("ListApplicationLogs.Data["+ i +"].ExtendContent");
+				dataItem.BizId = _ctx.StringValue("ListApplicationLogs.Data["+ i +"].BizId");
+				dataItem.Note = _ctx.StringValue("ListApplicationLogs.Data["+ i +"].Note");
+				dataItem.OperateType = _ctx.IntegerValue("ListApplicationLogs.Data["+ i +"].OperateType");
+				dataItem.OperateTime = _ctx.LongValue("ListApplicationLogs.Data["+ i +"].OperateTime");
+				dataItem.BizStatus = _ctx.IntegerValue("ListApplicationLogs.Data["+ i +"].BizStatus");
+				dataItem.ExtendContent = _ctx.StringValue("ListApplicationLogs.Data["+ i +"].ExtendContent");
 
 				listApplicationLogsResponse_data.Add(dataItem);
 			}

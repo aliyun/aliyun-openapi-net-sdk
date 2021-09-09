@@ -32,24 +32,40 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
         public UploadIcpBasicMaterialRequest()
             : base("companyreg", "2019-05-08", "UploadIcpBasicMaterial", "companyreg", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.companyreg.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.companyreg.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private string bizId;
+		private string socialCreditCode;
 
 		private string businessLicense;
 
+		private string corporateIdCard;
+
 		private string idCardList;
 
-		public string BizId
+		private string companyAddress;
+
+		private string companyName;
+
+		private string bizId;
+
+		private string corporateName;
+
+		public string SocialCreditCode
 		{
 			get
 			{
-				return bizId;
+				return socialCreditCode;
 			}
 			set	
 			{
-				bizId = value;
-				DictionaryUtil.Add(QueryParameters, "BizId", value);
+				socialCreditCode = value;
+				DictionaryUtil.Add(QueryParameters, "SocialCreditCode", value);
 			}
 		}
 
@@ -66,6 +82,19 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			}
 		}
 
+		public string CorporateIdCard
+		{
+			get
+			{
+				return corporateIdCard;
+			}
+			set	
+			{
+				corporateIdCard = value;
+				DictionaryUtil.Add(QueryParameters, "CorporateIdCard", value);
+			}
+		}
+
 		public string IdCardList
 		{
 			get
@@ -76,6 +105,58 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			{
 				idCardList = value;
 				DictionaryUtil.Add(QueryParameters, "IdCardList", value);
+			}
+		}
+
+		public string CompanyAddress
+		{
+			get
+			{
+				return companyAddress;
+			}
+			set	
+			{
+				companyAddress = value;
+				DictionaryUtil.Add(QueryParameters, "CompanyAddress", value);
+			}
+		}
+
+		public string CompanyName
+		{
+			get
+			{
+				return companyName;
+			}
+			set	
+			{
+				companyName = value;
+				DictionaryUtil.Add(QueryParameters, "CompanyName", value);
+			}
+		}
+
+		public string BizId
+		{
+			get
+			{
+				return bizId;
+			}
+			set	
+			{
+				bizId = value;
+				DictionaryUtil.Add(QueryParameters, "BizId", value);
+			}
+		}
+
+		public string CorporateName
+		{
+			get
+			{
+				return corporateName;
+			}
+			set	
+			{
+				corporateName = value;
+				DictionaryUtil.Add(QueryParameters, "CorporateName", value);
 			}
 		}
 

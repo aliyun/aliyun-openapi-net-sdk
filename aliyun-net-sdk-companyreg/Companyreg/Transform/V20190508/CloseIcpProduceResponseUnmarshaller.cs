@@ -26,15 +26,15 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class CloseIcpProduceResponseUnmarshaller
     {
-        public static CloseIcpProduceResponse Unmarshall(UnmarshallerContext context)
+        public static CloseIcpProduceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CloseIcpProduceResponse closeIcpProduceResponse = new CloseIcpProduceResponse();
 
-			closeIcpProduceResponse.HttpResponse = context.HttpResponse;
-			closeIcpProduceResponse.RequestId = context.StringValue("CloseIcpProduce.RequestId");
-			closeIcpProduceResponse.Success = context.BooleanValue("CloseIcpProduce.Success");
-			closeIcpProduceResponse.ErrorMsg = context.StringValue("CloseIcpProduce.ErrorMsg");
-			closeIcpProduceResponse.ErrorCode = context.StringValue("CloseIcpProduce.ErrorCode");
+			closeIcpProduceResponse.HttpResponse = _ctx.HttpResponse;
+			closeIcpProduceResponse.RequestId = _ctx.StringValue("CloseIcpProduce.RequestId");
+			closeIcpProduceResponse.Success = _ctx.BooleanValue("CloseIcpProduce.Success");
+			closeIcpProduceResponse.ErrorMsg = _ctx.StringValue("CloseIcpProduce.ErrorMsg");
+			closeIcpProduceResponse.ErrorCode = _ctx.StringValue("CloseIcpProduce.ErrorCode");
         
 			return closeIcpProduceResponse;
         }

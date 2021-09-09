@@ -32,11 +32,23 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
         public SubmitIcpSolutionRequest()
             : base("companyreg", "2019-05-08", "SubmitIcpSolution", "companyreg", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.companyreg.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.companyreg.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string area;
 
+		private string actionType;
+
 		private string intentionBizId;
+
+		private string source;
+
+		private string userId;
 
 		private int? icpType;
 
@@ -59,6 +71,19 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			}
 		}
 
+		public string ActionType
+		{
+			get
+			{
+				return actionType;
+			}
+			set	
+			{
+				actionType = value;
+				DictionaryUtil.Add(BodyParameters, "ActionType", value);
+			}
+		}
+
 		public string IntentionBizId
 		{
 			get
@@ -69,6 +94,32 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			{
 				intentionBizId = value;
 				DictionaryUtil.Add(BodyParameters, "IntentionBizId", value);
+			}
+		}
+
+		public string Source
+		{
+			get
+			{
+				return source;
+			}
+			set	
+			{
+				source = value;
+				DictionaryUtil.Add(BodyParameters, "Source", value);
+			}
+		}
+
+		public string UserId
+		{
+			get
+			{
+				return userId;
+			}
+			set	
+			{
+				userId = value;
+				DictionaryUtil.Add(BodyParameters, "UserId", value);
 			}
 		}
 

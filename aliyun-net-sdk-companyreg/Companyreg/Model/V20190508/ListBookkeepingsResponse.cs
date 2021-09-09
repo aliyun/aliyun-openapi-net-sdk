@@ -124,6 +124,8 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 
 			private string note;
 
+			private string commodityType;
+
 			public string BizId
 			{
 				get
@@ -193,6 +195,18 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 				set	
 				{
 					note = value;
+				}
+			}
+
+			public string CommodityType
+			{
+				get
+				{
+					return commodityType;
+				}
+				set	
+				{
+					commodityType = value;
 				}
 			}
 		}

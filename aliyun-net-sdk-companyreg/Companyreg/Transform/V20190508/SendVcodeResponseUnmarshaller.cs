@@ -26,12 +26,12 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class SendVcodeResponseUnmarshaller
     {
-        public static SendVcodeResponse Unmarshall(UnmarshallerContext context)
+        public static SendVcodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SendVcodeResponse sendVcodeResponse = new SendVcodeResponse();
 
-			sendVcodeResponse.HttpResponse = context.HttpResponse;
-			sendVcodeResponse.RequestId = context.StringValue("SendVcode.RequestId");
+			sendVcodeResponse.HttpResponse = _ctx.HttpResponse;
+			sendVcodeResponse.RequestId = _ctx.StringValue("SendVcode.RequestId");
         
 			return sendVcodeResponse;
         }

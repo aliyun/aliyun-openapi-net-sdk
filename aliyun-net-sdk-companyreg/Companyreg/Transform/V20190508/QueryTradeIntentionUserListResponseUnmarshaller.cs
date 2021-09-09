@@ -26,31 +26,31 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class QueryTradeIntentionUserListResponseUnmarshaller
     {
-        public static QueryTradeIntentionUserListResponse Unmarshall(UnmarshallerContext context)
+        public static QueryTradeIntentionUserListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryTradeIntentionUserListResponse queryTradeIntentionUserListResponse = new QueryTradeIntentionUserListResponse();
 
-			queryTradeIntentionUserListResponse.HttpResponse = context.HttpResponse;
-			queryTradeIntentionUserListResponse.RequestId = context.StringValue("QueryTradeIntentionUserList.RequestId");
-			queryTradeIntentionUserListResponse.TotalItemNum = context.IntegerValue("QueryTradeIntentionUserList.TotalItemNum");
-			queryTradeIntentionUserListResponse.CurrentPageNum = context.IntegerValue("QueryTradeIntentionUserList.CurrentPageNum");
-			queryTradeIntentionUserListResponse.PageSize = context.IntegerValue("QueryTradeIntentionUserList.PageSize");
-			queryTradeIntentionUserListResponse.TotalPageNum = context.IntegerValue("QueryTradeIntentionUserList.TotalPageNum");
+			queryTradeIntentionUserListResponse.HttpResponse = _ctx.HttpResponse;
+			queryTradeIntentionUserListResponse.RequestId = _ctx.StringValue("QueryTradeIntentionUserList.RequestId");
+			queryTradeIntentionUserListResponse.TotalItemNum = _ctx.IntegerValue("QueryTradeIntentionUserList.TotalItemNum");
+			queryTradeIntentionUserListResponse.CurrentPageNum = _ctx.IntegerValue("QueryTradeIntentionUserList.CurrentPageNum");
+			queryTradeIntentionUserListResponse.PageSize = _ctx.IntegerValue("QueryTradeIntentionUserList.PageSize");
+			queryTradeIntentionUserListResponse.TotalPageNum = _ctx.IntegerValue("QueryTradeIntentionUserList.TotalPageNum");
 
 			List<QueryTradeIntentionUserListResponse.QueryTradeIntentionUserList_Trademark> queryTradeIntentionUserListResponse_data = new List<QueryTradeIntentionUserListResponse.QueryTradeIntentionUserList_Trademark>();
-			for (int i = 0; i < context.Length("QueryTradeIntentionUserList.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryTradeIntentionUserList.Data.Length"); i++) {
 				QueryTradeIntentionUserListResponse.QueryTradeIntentionUserList_Trademark trademark = new QueryTradeIntentionUserListResponse.QueryTradeIntentionUserList_Trademark();
-				trademark.RegisterNumber = context.StringValue("QueryTradeIntentionUserList.Data["+ i +"].RegisterNumber");
-				trademark.Classification = context.StringValue("QueryTradeIntentionUserList.Data["+ i +"].Classification");
-				trademark.Mobile = context.StringValue("QueryTradeIntentionUserList.Data["+ i +"].Mobile");
-				trademark.UserName = context.StringValue("QueryTradeIntentionUserList.Data["+ i +"].UserName");
-				trademark.BizId = context.StringValue("QueryTradeIntentionUserList.Data["+ i +"].BizId");
-				trademark.Description = context.StringValue("QueryTradeIntentionUserList.Data["+ i +"].Description");
-				trademark.Status = context.IntegerValue("QueryTradeIntentionUserList.Data["+ i +"].Status");
-				trademark.Area = context.IntegerValue("QueryTradeIntentionUserList.Data["+ i +"].Area");
-				trademark.Type = context.IntegerValue("QueryTradeIntentionUserList.Data["+ i +"].Type");
-				trademark.CreateTime = context.LongValue("QueryTradeIntentionUserList.Data["+ i +"].CreateTime");
-				trademark.UpdateTime = context.LongValue("QueryTradeIntentionUserList.Data["+ i +"].UpdateTime");
+				trademark.RegisterNumber = _ctx.StringValue("QueryTradeIntentionUserList.Data["+ i +"].RegisterNumber");
+				trademark.Classification = _ctx.StringValue("QueryTradeIntentionUserList.Data["+ i +"].Classification");
+				trademark.Mobile = _ctx.StringValue("QueryTradeIntentionUserList.Data["+ i +"].Mobile");
+				trademark.UserName = _ctx.StringValue("QueryTradeIntentionUserList.Data["+ i +"].UserName");
+				trademark.BizId = _ctx.StringValue("QueryTradeIntentionUserList.Data["+ i +"].BizId");
+				trademark.Description = _ctx.StringValue("QueryTradeIntentionUserList.Data["+ i +"].Description");
+				trademark.Status = _ctx.IntegerValue("QueryTradeIntentionUserList.Data["+ i +"].Status");
+				trademark.Area = _ctx.IntegerValue("QueryTradeIntentionUserList.Data["+ i +"].Area");
+				trademark.Type = _ctx.IntegerValue("QueryTradeIntentionUserList.Data["+ i +"].Type");
+				trademark.CreateTime = _ctx.LongValue("QueryTradeIntentionUserList.Data["+ i +"].CreateTime");
+				trademark.UpdateTime = _ctx.LongValue("QueryTradeIntentionUserList.Data["+ i +"].UpdateTime");
 
 				queryTradeIntentionUserListResponse_data.Add(trademark);
 			}

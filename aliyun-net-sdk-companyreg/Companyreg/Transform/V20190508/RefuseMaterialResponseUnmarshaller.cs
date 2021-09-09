@@ -26,12 +26,12 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class RefuseMaterialResponseUnmarshaller
     {
-        public static RefuseMaterialResponse Unmarshall(UnmarshallerContext context)
+        public static RefuseMaterialResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RefuseMaterialResponse refuseMaterialResponse = new RefuseMaterialResponse();
 
-			refuseMaterialResponse.HttpResponse = context.HttpResponse;
-			refuseMaterialResponse.RequestId = context.StringValue("RefuseMaterial.RequestId");
+			refuseMaterialResponse.HttpResponse = _ctx.HttpResponse;
+			refuseMaterialResponse.RequestId = _ctx.StringValue("RefuseMaterial.RequestId");
         
 			return refuseMaterialResponse;
         }

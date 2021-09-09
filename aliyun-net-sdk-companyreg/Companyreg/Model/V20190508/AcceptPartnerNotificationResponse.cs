@@ -27,6 +27,12 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 
 		private string requestId;
 
+		private bool? success;
+
+		private string errorMsg;
+
+		private string errorCode;
+
 		public string RequestId
 		{
 			get
@@ -36,6 +42,42 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string ErrorMsg
+		{
+			get
+			{
+				return errorMsg;
+			}
+			set	
+			{
+				errorMsg = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 	}

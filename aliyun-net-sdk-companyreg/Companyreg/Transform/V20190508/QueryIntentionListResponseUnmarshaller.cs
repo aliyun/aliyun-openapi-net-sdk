@@ -26,30 +26,30 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class QueryIntentionListResponseUnmarshaller
     {
-        public static QueryIntentionListResponse Unmarshall(UnmarshallerContext context)
+        public static QueryIntentionListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryIntentionListResponse queryIntentionListResponse = new QueryIntentionListResponse();
 
-			queryIntentionListResponse.HttpResponse = context.HttpResponse;
-			queryIntentionListResponse.RequestId = context.StringValue("QueryIntentionList.RequestId");
-			queryIntentionListResponse.TotalItemNum = context.IntegerValue("QueryIntentionList.TotalItemNum");
-			queryIntentionListResponse.CurrentPageNum = context.IntegerValue("QueryIntentionList.CurrentPageNum");
-			queryIntentionListResponse.PageSize = context.IntegerValue("QueryIntentionList.PageSize");
-			queryIntentionListResponse.TotalPageNum = context.IntegerValue("QueryIntentionList.TotalPageNum");
+			queryIntentionListResponse.HttpResponse = _ctx.HttpResponse;
+			queryIntentionListResponse.RequestId = _ctx.StringValue("QueryIntentionList.RequestId");
+			queryIntentionListResponse.TotalItemNum = _ctx.IntegerValue("QueryIntentionList.TotalItemNum");
+			queryIntentionListResponse.CurrentPageNum = _ctx.IntegerValue("QueryIntentionList.CurrentPageNum");
+			queryIntentionListResponse.PageSize = _ctx.IntegerValue("QueryIntentionList.PageSize");
+			queryIntentionListResponse.TotalPageNum = _ctx.IntegerValue("QueryIntentionList.TotalPageNum");
 
 			List<QueryIntentionListResponse.QueryIntentionList_Intention> queryIntentionListResponse_data = new List<QueryIntentionListResponse.QueryIntentionList_Intention>();
-			for (int i = 0; i < context.Length("QueryIntentionList.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryIntentionList.Data.Length"); i++) {
 				QueryIntentionListResponse.QueryIntentionList_Intention intention = new QueryIntentionListResponse.QueryIntentionList_Intention();
-				intention.UserId = context.StringValue("QueryIntentionList.Data["+ i +"].UserId");
-				intention.RegisterNumber = context.StringValue("QueryIntentionList.Data["+ i +"].RegisterNumber");
-				intention.Classification = context.StringValue("QueryIntentionList.Data["+ i +"].Classification");
-				intention.Type = context.IntegerValue("QueryIntentionList.Data["+ i +"].Type");
-				intention.BizId = context.StringValue("QueryIntentionList.Data["+ i +"].BizId");
-				intention.Description = context.StringValue("QueryIntentionList.Data["+ i +"].Description");
-				intention.Status = context.IntegerValue("QueryIntentionList.Data["+ i +"].Status");
-				intention.UpdateTime = context.LongValue("QueryIntentionList.Data["+ i +"].UpdateTime");
-				intention.CreateTime = context.LongValue("QueryIntentionList.Data["+ i +"].CreateTime");
-				intention.Area = context.IntegerValue("QueryIntentionList.Data["+ i +"].Area");
+				intention.UserId = _ctx.StringValue("QueryIntentionList.Data["+ i +"].UserId");
+				intention.RegisterNumber = _ctx.StringValue("QueryIntentionList.Data["+ i +"].RegisterNumber");
+				intention.Classification = _ctx.StringValue("QueryIntentionList.Data["+ i +"].Classification");
+				intention.Type = _ctx.IntegerValue("QueryIntentionList.Data["+ i +"].Type");
+				intention.BizId = _ctx.StringValue("QueryIntentionList.Data["+ i +"].BizId");
+				intention.Description = _ctx.StringValue("QueryIntentionList.Data["+ i +"].Description");
+				intention.Status = _ctx.IntegerValue("QueryIntentionList.Data["+ i +"].Status");
+				intention.UpdateTime = _ctx.LongValue("QueryIntentionList.Data["+ i +"].UpdateTime");
+				intention.CreateTime = _ctx.LongValue("QueryIntentionList.Data["+ i +"].CreateTime");
+				intention.Area = _ctx.IntegerValue("QueryIntentionList.Data["+ i +"].Area");
 
 				queryIntentionListResponse_data.Add(intention);
 			}

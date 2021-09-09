@@ -26,18 +26,19 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 {
     public class GenerateUploadFilePolicyResponseUnmarshaller
     {
-        public static GenerateUploadFilePolicyResponse Unmarshall(UnmarshallerContext context)
+        public static GenerateUploadFilePolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GenerateUploadFilePolicyResponse generateUploadFilePolicyResponse = new GenerateUploadFilePolicyResponse();
 
-			generateUploadFilePolicyResponse.HttpResponse = context.HttpResponse;
-			generateUploadFilePolicyResponse.RequestId = context.StringValue("GenerateUploadFilePolicy.RequestId");
-			generateUploadFilePolicyResponse.EncodedPolicy = context.StringValue("GenerateUploadFilePolicy.EncodedPolicy");
-			generateUploadFilePolicyResponse.AccessId = context.StringValue("GenerateUploadFilePolicy.AccessId");
-			generateUploadFilePolicyResponse.Signature = context.StringValue("GenerateUploadFilePolicy.Signature");
-			generateUploadFilePolicyResponse.FileDir = context.StringValue("GenerateUploadFilePolicy.FileDir");
-			generateUploadFilePolicyResponse.Host = context.StringValue("GenerateUploadFilePolicy.Host");
-			generateUploadFilePolicyResponse.ExpireTime = context.LongValue("GenerateUploadFilePolicy.ExpireTime");
+			generateUploadFilePolicyResponse.HttpResponse = _ctx.HttpResponse;
+			generateUploadFilePolicyResponse.RequestId = _ctx.StringValue("GenerateUploadFilePolicy.RequestId");
+			generateUploadFilePolicyResponse.EncodedPolicy = _ctx.StringValue("GenerateUploadFilePolicy.EncodedPolicy");
+			generateUploadFilePolicyResponse.AccessId = _ctx.StringValue("GenerateUploadFilePolicy.AccessId");
+			generateUploadFilePolicyResponse.Signature = _ctx.StringValue("GenerateUploadFilePolicy.Signature");
+			generateUploadFilePolicyResponse.FileDir = _ctx.StringValue("GenerateUploadFilePolicy.FileDir");
+			generateUploadFilePolicyResponse.Host = _ctx.StringValue("GenerateUploadFilePolicy.Host");
+			generateUploadFilePolicyResponse.ExpireTime = _ctx.LongValue("GenerateUploadFilePolicy.ExpireTime");
+			generateUploadFilePolicyResponse.FileUrl = _ctx.StringValue("GenerateUploadFilePolicy.FileUrl");
         
 			return generateUploadFilePolicyResponse;
         }
