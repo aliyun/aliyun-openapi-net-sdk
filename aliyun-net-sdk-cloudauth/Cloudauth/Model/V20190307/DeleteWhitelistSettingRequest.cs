@@ -22,15 +22,16 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cloudauth;
 using Aliyun.Acs.Cloudauth.Transform;
-using Aliyun.Acs.Cloudauth.Transform.V20180916;
+using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20180916
+namespace Aliyun.Acs.Cloudauth.Model.V20190307
 {
-    public class CreateVerifySDKRequest : RpcAcsRequest<CreateVerifySDKResponse>
+    public class DeleteWhitelistSettingRequest : RpcAcsRequest<DeleteWhitelistSettingResponse>
     {
-        public CreateVerifySDKRequest()
-            : base("Cloudauth", "2018-09-16", "CreateVerifySDK", "cloudauth", "openAPI")
+        public DeleteWhitelistSettingRequest()
+            : base("Cloudauth", "2019-03-07", "DeleteWhitelistSetting")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,39 +41,13 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			Method = MethodType.POST;
         }
 
-		private string appUrl;
-
-		private string platform;
-
 		private string sourceIp;
 
 		private string lang;
 
-		public string AppUrl
-		{
-			get
-			{
-				return appUrl;
-			}
-			set	
-			{
-				appUrl = value;
-				DictionaryUtil.Add(QueryParameters, "AppUrl", value);
-			}
-		}
+		private string serviceCode;
 
-		public string Platform
-		{
-			get
-			{
-				return platform;
-			}
-			set	
-			{
-				platform = value;
-				DictionaryUtil.Add(QueryParameters, "Platform", value);
-			}
-		}
+		private string ids;
 
 		public string SourceIp
 		{
@@ -100,9 +75,40 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			}
 		}
 
-        public override CreateVerifySDKResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ServiceCode
+		{
+			get
+			{
+				return serviceCode;
+			}
+			set	
+			{
+				serviceCode = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceCode", value);
+			}
+		}
+
+		public string Ids
+		{
+			get
+			{
+				return ids;
+			}
+			set	
+			{
+				ids = value;
+				DictionaryUtil.Add(QueryParameters, "Ids", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DeleteWhitelistSettingResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateVerifySDKResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteWhitelistSettingResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

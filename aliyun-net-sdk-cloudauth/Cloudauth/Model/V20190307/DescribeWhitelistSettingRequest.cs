@@ -22,15 +22,16 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cloudauth;
 using Aliyun.Acs.Cloudauth.Transform;
-using Aliyun.Acs.Cloudauth.Transform.V20180916;
+using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20180916
+namespace Aliyun.Acs.Cloudauth.Model.V20190307
 {
-    public class DescribeDeviceInfoRequest : RpcAcsRequest<DescribeDeviceInfoResponse>
+    public class DescribeWhitelistSettingRequest : RpcAcsRequest<DescribeWhitelistSettingResponse>
     {
-        public DescribeDeviceInfoRequest()
-            : base("Cloudauth", "2018-09-16", "DescribeDeviceInfo", "cloudauth", "openAPI")
+        public DescribeWhitelistSettingRequest()
+            : base("Cloudauth", "2019-03-07", "DescribeWhitelistSetting")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,7 +41,11 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			Method = MethodType.POST;
         }
 
-		private string userDeviceId;
+		private long? validEndDate;
+
+		private string certifyId;
+
+		private string certNo;
 
 		private string sourceIp;
 
@@ -48,28 +53,52 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 
 		private string lang;
 
-		private string expiredStartDay;
-
-		private int? totalCount;
-
 		private int? currentPage;
 
-		private string deviceId;
+		private string serviceCode;
 
-		private string bizType;
+		private long? sceneId;
 
-		private string expiredEndDay;
+		private long? validStartDate;
 
-		public string UserDeviceId
+		private string status;
+
+		public long? ValidEndDate
 		{
 			get
 			{
-				return userDeviceId;
+				return validEndDate;
 			}
 			set	
 			{
-				userDeviceId = value;
-				DictionaryUtil.Add(QueryParameters, "UserDeviceId", value);
+				validEndDate = value;
+				DictionaryUtil.Add(QueryParameters, "ValidEndDate", value.ToString());
+			}
+		}
+
+		public string CertifyId
+		{
+			get
+			{
+				return certifyId;
+			}
+			set	
+			{
+				certifyId = value;
+				DictionaryUtil.Add(QueryParameters, "CertifyId", value);
+			}
+		}
+
+		public string CertNo
+		{
+			get
+			{
+				return certNo;
+			}
+			set	
+			{
+				certNo = value;
+				DictionaryUtil.Add(QueryParameters, "CertNo", value);
 			}
 		}
 
@@ -112,32 +141,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			}
 		}
 
-		public string ExpiredStartDay
-		{
-			get
-			{
-				return expiredStartDay;
-			}
-			set	
-			{
-				expiredStartDay = value;
-				DictionaryUtil.Add(QueryParameters, "ExpiredStartDay", value);
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-				DictionaryUtil.Add(QueryParameters, "TotalCount", value.ToString());
-			}
-		}
-
 		public int? CurrentPage
 		{
 			get
@@ -151,48 +154,66 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			}
 		}
 
-		public string DeviceId
+		public string ServiceCode
 		{
 			get
 			{
-				return deviceId;
+				return serviceCode;
 			}
 			set	
 			{
-				deviceId = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceId", value);
+				serviceCode = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceCode", value);
 			}
 		}
 
-		public string BizType
+		public long? SceneId
 		{
 			get
 			{
-				return bizType;
+				return sceneId;
 			}
 			set	
 			{
-				bizType = value;
-				DictionaryUtil.Add(QueryParameters, "BizType", value);
+				sceneId = value;
+				DictionaryUtil.Add(QueryParameters, "SceneId", value.ToString());
 			}
 		}
 
-		public string ExpiredEndDay
+		public long? ValidStartDate
 		{
 			get
 			{
-				return expiredEndDay;
+				return validStartDate;
 			}
 			set	
 			{
-				expiredEndDay = value;
-				DictionaryUtil.Add(QueryParameters, "ExpiredEndDay", value);
+				validStartDate = value;
+				DictionaryUtil.Add(QueryParameters, "ValidStartDate", value.ToString());
 			}
 		}
 
-        public override DescribeDeviceInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeWhitelistSettingResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDeviceInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeWhitelistSettingResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -20,20 +20,20 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20180916
+namespace Aliyun.Acs.Cloudauth.Model.V20190307
 {
-	public class DescribeDeviceInfoResponse : AcsResponse
+	public class DescribeWhitelistSettingResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private int? currentPage;
 
-		private int? totalCount;
+		private int? pageSize;
 
-		private List<DescribeDeviceInfo_DeviceInfo> deviceInfoList;
+		private List<DescribeWhitelistSetting_Item> items;
 
 		public string RequestId
 		{
@@ -44,30 +44,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
 			}
 		}
 
@@ -83,88 +59,168 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			}
 		}
 
-		public List<DescribeDeviceInfo_DeviceInfo> DeviceInfoList
+		public int? CurrentPage
 		{
 			get
 			{
-				return deviceInfoList;
+				return currentPage;
 			}
 			set	
 			{
-				deviceInfoList = value;
+				currentPage = value;
 			}
 		}
 
-		public class DescribeDeviceInfo_DeviceInfo
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public List<DescribeWhitelistSetting_Item> Items
+		{
+			get
+			{
+				return items;
+			}
+			set	
+			{
+				items = value;
+			}
+		}
+
+		public class DescribeWhitelistSetting_Item
 		{
 
-			private string deviceId;
+			private long? id;
 
-			private string userDeviceId;
+			private long? sceneId;
 
-			private string bizType;
+			private string validStartDate;
 
-			private string beginDay;
+			private string validEndDate;
 
-			private string expiredDay;
+			private string certNo;
 
-			public string DeviceId
+			private string certifyId;
+
+			private string status;
+
+			private string gmtCreate;
+
+			private string gmtModified;
+
+			public long? Id
 			{
 				get
 				{
-					return deviceId;
+					return id;
 				}
 				set	
 				{
-					deviceId = value;
+					id = value;
 				}
 			}
 
-			public string UserDeviceId
+			public long? SceneId
 			{
 				get
 				{
-					return userDeviceId;
+					return sceneId;
 				}
 				set	
 				{
-					userDeviceId = value;
+					sceneId = value;
 				}
 			}
 
-			public string BizType
+			public string ValidStartDate
 			{
 				get
 				{
-					return bizType;
+					return validStartDate;
 				}
 				set	
 				{
-					bizType = value;
+					validStartDate = value;
 				}
 			}
 
-			public string BeginDay
+			public string ValidEndDate
 			{
 				get
 				{
-					return beginDay;
+					return validEndDate;
 				}
 				set	
 				{
-					beginDay = value;
+					validEndDate = value;
 				}
 			}
 
-			public string ExpiredDay
+			public string CertNo
 			{
 				get
 				{
-					return expiredDay;
+					return certNo;
 				}
 				set	
 				{
-					expiredDay = value;
+					certNo = value;
+				}
+			}
+
+			public string CertifyId
+			{
+				get
+				{
+					return certifyId;
+				}
+				set	
+				{
+					certifyId = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
+			public string GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
 				}
 			}
 		}

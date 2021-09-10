@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cloudauth;
 using Aliyun.Acs.Cloudauth.Transform;
 using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
     public class VerifyDeviceRequest : RpcAcsRequest<VerifyDeviceResponse>
     {
         public VerifyDeviceRequest()
-            : base("Cloudauth", "2019-03-07", "VerifyDevice", "cloudauth", "openAPI")
+            : base("Cloudauth", "2019-03-07", "VerifyDevice")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

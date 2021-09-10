@@ -31,16 +31,16 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			DescribeFaceVerifyResponse describeFaceVerifyResponse = new DescribeFaceVerifyResponse();
 
 			describeFaceVerifyResponse.HttpResponse = _ctx.HttpResponse;
-			describeFaceVerifyResponse.RequestId = _ctx.StringValue("DescribeFaceVerify.RequestId");
-			describeFaceVerifyResponse.Message = _ctx.StringValue("DescribeFaceVerify.Message");
 			describeFaceVerifyResponse.Code = _ctx.StringValue("DescribeFaceVerify.Code");
+			describeFaceVerifyResponse.Message = _ctx.StringValue("DescribeFaceVerify.Message");
+			describeFaceVerifyResponse.RequestId = _ctx.StringValue("DescribeFaceVerify.RequestId");
 
 			DescribeFaceVerifyResponse.DescribeFaceVerify_ResultObject resultObject = new DescribeFaceVerifyResponse.DescribeFaceVerify_ResultObject();
-			resultObject.Passed = _ctx.StringValue("DescribeFaceVerify.ResultObject.Passed");
-			resultObject.IdentityInfo = _ctx.StringValue("DescribeFaceVerify.ResultObject.IdentityInfo");
-			resultObject.MaterialInfo = _ctx.StringValue("DescribeFaceVerify.ResultObject.MaterialInfo");
-			resultObject.DeviceToken = _ctx.StringValue("DescribeFaceVerify.ResultObject.DeviceToken");
 			resultObject.SubCode = _ctx.StringValue("DescribeFaceVerify.ResultObject.SubCode");
+			resultObject.MaterialInfo = _ctx.StringValue("DescribeFaceVerify.ResultObject.MaterialInfo");
+			resultObject.IdentityInfo = _ctx.StringValue("DescribeFaceVerify.ResultObject.IdentityInfo");
+			resultObject.DeviceToken = _ctx.StringValue("DescribeFaceVerify.ResultObject.DeviceToken");
+			resultObject.Passed = _ctx.StringValue("DescribeFaceVerify.ResultObject.Passed");
 			describeFaceVerifyResponse.ResultObject = resultObject;
         
 			return describeFaceVerifyResponse;

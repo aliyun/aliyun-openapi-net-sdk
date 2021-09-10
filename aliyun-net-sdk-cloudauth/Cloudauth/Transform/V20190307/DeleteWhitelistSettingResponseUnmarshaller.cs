@@ -20,21 +20,21 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cloudauth.Model.V20180916;
+using Aliyun.Acs.Cloudauth.Model.V20190307;
 
-namespace Aliyun.Acs.Cloudauth.Transform.V20180916
+namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 {
-    public class DescribeVerifySDKResponseUnmarshaller
+    public class DeleteWhitelistSettingResponseUnmarshaller
     {
-        public static DescribeVerifySDKResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DeleteWhitelistSettingResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DescribeVerifySDKResponse describeVerifySDKResponse = new DescribeVerifySDKResponse();
+			DeleteWhitelistSettingResponse deleteWhitelistSettingResponse = new DeleteWhitelistSettingResponse();
 
-			describeVerifySDKResponse.HttpResponse = _ctx.HttpResponse;
-			describeVerifySDKResponse.RequestId = _ctx.StringValue("DescribeVerifySDK.RequestId");
-			describeVerifySDKResponse.SdkUrl = _ctx.StringValue("DescribeVerifySDK.SdkUrl");
+			deleteWhitelistSettingResponse.HttpResponse = _ctx.HttpResponse;
+			deleteWhitelistSettingResponse.RequestId = _ctx.StringValue("DeleteWhitelistSetting.RequestId");
+			deleteWhitelistSettingResponse.ResultObject = _ctx.BooleanValue("DeleteWhitelistSetting.ResultObject");
         
-			return describeVerifySDKResponse;
+			return deleteWhitelistSettingResponse;
         }
     }
 }

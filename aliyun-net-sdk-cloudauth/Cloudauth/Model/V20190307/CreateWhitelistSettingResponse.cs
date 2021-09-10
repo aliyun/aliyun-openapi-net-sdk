@@ -16,25 +16,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cloudauth.Model.V20180916;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Cloudauth.Transform.V20180916
+namespace Aliyun.Acs.Cloudauth.Model.V20190307
 {
-    public class CreateVerifySDKResponseUnmarshaller
-    {
-        public static CreateVerifySDKResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			CreateVerifySDKResponse createVerifySDKResponse = new CreateVerifySDKResponse();
+	public class CreateWhitelistSettingResponse : AcsResponse
+	{
 
-			createVerifySDKResponse.HttpResponse = _ctx.HttpResponse;
-			createVerifySDKResponse.RequestId = _ctx.StringValue("CreateVerifySDK.RequestId");
-			createVerifySDKResponse.TaskId = _ctx.StringValue("CreateVerifySDK.TaskId");
-        
-			return createVerifySDKResponse;
-        }
-    }
+		private string requestId;
+
+		private bool? resultObject;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? ResultObject
+		{
+			get
+			{
+				return resultObject;
+			}
+			set	
+			{
+				resultObject = value;
+			}
+		}
+	}
 }

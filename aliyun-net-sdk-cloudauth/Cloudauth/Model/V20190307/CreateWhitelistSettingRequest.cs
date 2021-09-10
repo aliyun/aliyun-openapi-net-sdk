@@ -22,58 +22,62 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cloudauth;
 using Aliyun.Acs.Cloudauth.Transform;
-using Aliyun.Acs.Cloudauth.Transform.V20180916;
+using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20180916
+namespace Aliyun.Acs.Cloudauth.Model.V20190307
 {
-    public class SubmitVerificationRequest : RpcAcsRequest<SubmitVerificationResponse>
+    public class CreateWhitelistSettingRequest : RpcAcsRequest<CreateWhitelistSettingResponse>
     {
-        public SubmitVerificationRequest()
-            : base("Cloudauth", "2018-09-16", "SubmitVerification", "cloudauth", "openAPI")
+        public CreateWhitelistSettingRequest()
+            : base("Cloudauth", "2019-03-07", "CreateWhitelistSetting")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Cloudauth.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Cloudauth.Endpoint.endpointRegionalType, null);
             }
-			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private long? resourceOwnerId;
+		private string certifyId;
 
-		private string biz;
+		private string certNo;
 
 		private string sourceIp;
 
-		private List<Material> materials = new List<Material>(){ };
+		private string lang;
 
-		private string ticketId;
+		private int? validDay;
 
-		public long? ResourceOwnerId
+		private string serviceCode;
+
+		private long? sceneId;
+
+		public string CertifyId
 		{
 			get
 			{
-				return resourceOwnerId;
+				return certifyId;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				certifyId = value;
+				DictionaryUtil.Add(QueryParameters, "CertifyId", value);
 			}
 		}
 
-		public string Biz
+		public string CertNo
 		{
 			get
 			{
-				return biz;
+				return certNo;
 			}
 			set	
 			{
-				biz = value;
-				DictionaryUtil.Add(BodyParameters, "Biz", value);
+				certNo = value;
+				DictionaryUtil.Add(QueryParameters, "CertNo", value);
 			}
 		}
 
@@ -90,72 +94,66 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			}
 		}
 
-		public List<Material> Materials
+		public string Lang
 		{
 			get
 			{
-				return materials;
-			}
-
-			set
-			{
-				materials = value;
-				for (int i = 0; i < materials.Count; i++)
-				{
-					DictionaryUtil.Add(BodyParameters,"Material." + (i + 1) + ".MaterialType", materials[i].MaterialType);
-					DictionaryUtil.Add(BodyParameters,"Material." + (i + 1) + ".Value", materials[i].Value);
-				}
-			}
-		}
-
-		public string TicketId
-		{
-			get
-			{
-				return ticketId;
+				return lang;
 			}
 			set	
 			{
-				ticketId = value;
-				DictionaryUtil.Add(BodyParameters, "TicketId", value);
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
-		public class Material
+		public int? ValidDay
 		{
-
-			private string materialType;
-
-			private string value_;
-
-			public string MaterialType
+			get
 			{
-				get
-				{
-					return materialType;
-				}
-				set	
-				{
-					materialType = value;
-				}
+				return validDay;
 			}
-
-			public string Value
+			set	
 			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
+				validDay = value;
+				DictionaryUtil.Add(QueryParameters, "ValidDay", value.ToString());
 			}
 		}
 
-        public override SubmitVerificationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ServiceCode
+		{
+			get
+			{
+				return serviceCode;
+			}
+			set	
+			{
+				serviceCode = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceCode", value);
+			}
+		}
+
+		public long? SceneId
+		{
+			get
+			{
+				return sceneId;
+			}
+			set	
+			{
+				sceneId = value;
+				DictionaryUtil.Add(QueryParameters, "SceneId", value.ToString());
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override CreateWhitelistSettingResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SubmitVerificationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateWhitelistSettingResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

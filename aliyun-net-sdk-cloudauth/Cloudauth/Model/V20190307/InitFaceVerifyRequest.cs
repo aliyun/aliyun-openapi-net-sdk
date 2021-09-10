@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cloudauth;
 using Aliyun.Acs.Cloudauth.Transform;
 using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
     public class InitFaceVerifyRequest : RpcAcsRequest<InitFaceVerifyResponse>
     {
         public InitFaceVerifyRequest()
-            : base("Cloudauth", "2019-03-07", "InitFaceVerify", "cloudauth", "openAPI")
+            : base("Cloudauth", "2019-03-07", "InitFaceVerify")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -77,6 +78,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		private string returnUrl;
 
 		private string callbackUrl;
+
+		private string crop;
 
 		public string ProductCode
 		{
@@ -322,6 +325,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				callbackUrl = value;
 				DictionaryUtil.Add(QueryParameters, "CallbackUrl", value);
+			}
+		}
+
+		public string Crop
+		{
+			get
+			{
+				return crop;
+			}
+			set	
+			{
+				crop = value;
+				DictionaryUtil.Add(BodyParameters, "Crop", value);
 			}
 		}
 

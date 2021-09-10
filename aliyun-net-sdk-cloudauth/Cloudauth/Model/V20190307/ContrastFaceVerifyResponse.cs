@@ -25,23 +25,23 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 	public class ContrastFaceVerifyResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string code;
 
 		private string message;
 
-		private string code;
+		private string requestId;
 
 		private ContrastFaceVerify_ResultObject resultObject;
 
-		public string RequestId
+		public string Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
@@ -57,15 +57,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 
@@ -84,49 +84,25 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		public class ContrastFaceVerify_ResultObject
 		{
 
-			private string passed;
-
-			private string identityInfo;
-
-			private string materialInfo;
+			private string certifyId;
 
 			private string subCode;
 
-			private string certifyId;
+			private string materialInfo;
 
-			public string Passed
+			private string identityInfo;
+
+			private string passed;
+
+			public string CertifyId
 			{
 				get
 				{
-					return passed;
+					return certifyId;
 				}
 				set	
 				{
-					passed = value;
-				}
-			}
-
-			public string IdentityInfo
-			{
-				get
-				{
-					return identityInfo;
-				}
-				set	
-				{
-					identityInfo = value;
-				}
-			}
-
-			public string MaterialInfo
-			{
-				get
-				{
-					return materialInfo;
-				}
-				set	
-				{
-					materialInfo = value;
+					certifyId = value;
 				}
 			}
 
@@ -142,15 +118,39 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				}
 			}
 
-			public string CertifyId
+			public string MaterialInfo
 			{
 				get
 				{
-					return certifyId;
+					return materialInfo;
 				}
 				set	
 				{
-					certifyId = value;
+					materialInfo = value;
+				}
+			}
+
+			public string IdentityInfo
+			{
+				get
+				{
+					return identityInfo;
+				}
+				set	
+				{
+					identityInfo = value;
+				}
+			}
+
+			public string Passed
+			{
+				get
+				{
+					return passed;
+				}
+				set	
+				{
+					passed = value;
 				}
 			}
 		}

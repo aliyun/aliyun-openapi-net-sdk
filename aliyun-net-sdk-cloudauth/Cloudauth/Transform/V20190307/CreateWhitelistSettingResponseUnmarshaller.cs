@@ -16,41 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Cloudauth.Model.V20190307;
 
-namespace Aliyun.Acs.Cloudauth.Model.V20180916
+namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 {
-	public class CreateAuthKeyResponse : AcsResponse
-	{
+    public class CreateWhitelistSettingResponseUnmarshaller
+    {
+        public static CreateWhitelistSettingResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			CreateWhitelistSettingResponse createWhitelistSettingResponse = new CreateWhitelistSettingResponse();
 
-		private string requestId;
-
-		private string authKey;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string AuthKey
-		{
-			get
-			{
-				return authKey;
-			}
-			set	
-			{
-				authKey = value;
-			}
-		}
-	}
+			createWhitelistSettingResponse.HttpResponse = _ctx.HttpResponse;
+			createWhitelistSettingResponse.RequestId = _ctx.StringValue("CreateWhitelistSetting.RequestId");
+			createWhitelistSettingResponse.ResultObject = _ctx.BooleanValue("CreateWhitelistSetting.ResultObject");
+        
+			return createWhitelistSettingResponse;
+        }
+    }
 }

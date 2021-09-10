@@ -31,14 +31,14 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			CompareFaceVerifyResponse compareFaceVerifyResponse = new CompareFaceVerifyResponse();
 
 			compareFaceVerifyResponse.HttpResponse = _ctx.HttpResponse;
-			compareFaceVerifyResponse.RequestId = _ctx.StringValue("CompareFaceVerify.RequestId");
-			compareFaceVerifyResponse.Message = _ctx.StringValue("CompareFaceVerify.Message");
 			compareFaceVerifyResponse.Code = _ctx.StringValue("CompareFaceVerify.Code");
+			compareFaceVerifyResponse.Message = _ctx.StringValue("CompareFaceVerify.Message");
+			compareFaceVerifyResponse.RequestId = _ctx.StringValue("CompareFaceVerify.RequestId");
 
 			CompareFaceVerifyResponse.CompareFaceVerify_ResultObject resultObject = new CompareFaceVerifyResponse.CompareFaceVerify_ResultObject();
-			resultObject.Passed = _ctx.StringValue("CompareFaceVerify.ResultObject.Passed");
-			resultObject.VerifyScore = _ctx.FloatValue("CompareFaceVerify.ResultObject.VerifyScore");
 			resultObject.CertifyId = _ctx.StringValue("CompareFaceVerify.ResultObject.CertifyId");
+			resultObject.VerifyScore = _ctx.FloatValue("CompareFaceVerify.ResultObject.VerifyScore");
+			resultObject.Passed = _ctx.StringValue("CompareFaceVerify.ResultObject.Passed");
 			compareFaceVerifyResponse.ResultObject = resultObject;
         
 			return compareFaceVerifyResponse;

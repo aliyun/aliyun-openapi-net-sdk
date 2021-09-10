@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			InitFaceVerifyResponse initFaceVerifyResponse = new InitFaceVerifyResponse();
 
 			initFaceVerifyResponse.HttpResponse = _ctx.HttpResponse;
-			initFaceVerifyResponse.RequestId = _ctx.StringValue("InitFaceVerify.RequestId");
-			initFaceVerifyResponse.Message = _ctx.StringValue("InitFaceVerify.Message");
 			initFaceVerifyResponse.Code = _ctx.StringValue("InitFaceVerify.Code");
+			initFaceVerifyResponse.Message = _ctx.StringValue("InitFaceVerify.Message");
+			initFaceVerifyResponse.RequestId = _ctx.StringValue("InitFaceVerify.RequestId");
 
 			InitFaceVerifyResponse.InitFaceVerify_ResultObject resultObject = new InitFaceVerifyResponse.InitFaceVerify_ResultObject();
 			resultObject.CertifyId = _ctx.StringValue("InitFaceVerify.ResultObject.CertifyId");

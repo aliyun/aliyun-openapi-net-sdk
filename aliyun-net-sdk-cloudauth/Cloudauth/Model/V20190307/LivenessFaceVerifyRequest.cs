@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cloudauth;
 using Aliyun.Acs.Cloudauth.Transform;
 using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
     public class LivenessFaceVerifyRequest : RpcAcsRequest<LivenessFaceVerifyResponse>
     {
         public LivenessFaceVerifyRequest()
-            : base("Cloudauth", "2019-03-07", "LivenessFaceVerify", "cloudauth", "openAPI")
+            : base("Cloudauth", "2019-03-07", "LivenessFaceVerify")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -65,6 +66,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		private string ossBucketName;
 
 		private string model;
+
+		private string crop;
 
 		public string ProductCode
 		{
@@ -232,6 +235,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				model = value;
 				DictionaryUtil.Add(QueryParameters, "Model", value);
+			}
+		}
+
+		public string Crop
+		{
+			get
+			{
+				return crop;
+			}
+			set	
+			{
+				crop = value;
+				DictionaryUtil.Add(BodyParameters, "Crop", value);
 			}
 		}
 

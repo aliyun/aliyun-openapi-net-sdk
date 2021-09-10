@@ -25,23 +25,23 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 	public class CompareFaceVerifyResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string code;
 
 		private string message;
 
-		private string code;
+		private string requestId;
 
 		private CompareFaceVerify_ResultObject resultObject;
 
-		public string RequestId
+		public string Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
@@ -57,15 +57,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 
@@ -84,21 +84,21 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		public class CompareFaceVerify_ResultObject
 		{
 
-			private string passed;
+			private string certifyId;
 
 			private float? verifyScore;
 
-			private string certifyId;
+			private string passed;
 
-			public string Passed
+			public string CertifyId
 			{
 				get
 				{
-					return passed;
+					return certifyId;
 				}
 				set	
 				{
-					passed = value;
+					certifyId = value;
 				}
 			}
 
@@ -114,15 +114,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				}
 			}
 
-			public string CertifyId
+			public string Passed
 			{
 				get
 				{
-					return certifyId;
+					return passed;
 				}
 				set	
 				{
-					certifyId = value;
+					passed = value;
 				}
 			}
 		}
