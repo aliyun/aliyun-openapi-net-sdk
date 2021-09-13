@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20200701
 {
-	public class PollUserStatusResponse : AcsResponse
+	public class StartPredictiveCallResponse : AcsResponse
 	{
 
 		private string code;
@@ -35,7 +35,7 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 		private List<string> _params;
 
-		private PollUserStatus_Data data;
+		private StartPredictiveCall_Data data;
 
 		public string Code
 		{
@@ -97,7 +97,7 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			}
 		}
 
-		public PollUserStatus_Data Data
+		public StartPredictiveCall_Data Data
 		{
 			get
 			{
@@ -109,28 +109,14 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			}
 		}
 
-		public class PollUserStatus_Data
+		public class StartPredictiveCall_Data
 		{
 
-			private long? contextId;
+			private StartPredictiveCall_CallContext callContext;
 
-			private PollUserStatus_CallContext callContext;
+			private StartPredictiveCall_UserContext userContext;
 
-			private PollUserStatus_UserContext userContext;
-
-			public long? ContextId
-			{
-				get
-				{
-					return contextId;
-				}
-				set	
-				{
-					contextId = value;
-				}
-			}
-
-			public PollUserStatus_CallContext CallContext
+			public StartPredictiveCall_CallContext CallContext
 			{
 				get
 				{
@@ -142,7 +128,7 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				}
 			}
 
-			public PollUserStatus_UserContext UserContext
+			public StartPredictiveCall_UserContext UserContext
 			{
 				get
 				{
@@ -154,7 +140,7 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				}
 			}
 
-			public class PollUserStatus_CallContext
+			public class StartPredictiveCall_CallContext
 			{
 
 				private string callType;
@@ -163,7 +149,7 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 				private string jobId;
 
-				private List<PollUserStatus_ChannelContext> channelContexts;
+				private List<StartPredictiveCall_ChannelContext> channelContexts;
 
 				public string CallType
 				{
@@ -201,7 +187,7 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public List<PollUserStatus_ChannelContext> ChannelContexts
+				public List<StartPredictiveCall_ChannelContext> ChannelContexts
 				{
 					get
 					{
@@ -213,10 +199,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public class PollUserStatus_ChannelContext
+				public class StartPredictiveCall_ChannelContext
 				{
-
-					private int? index;
 
 					private string releaseInitiator;
 
@@ -228,8 +212,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 					private string channelFlags;
 
-					private string skillGroupId;
-
 					private long? timestamp;
 
 					private string associatedData;
@@ -238,27 +220,13 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 					private string callType;
 
-					private string channelVariables;
-
 					private string jobId;
 
 					private string channelId;
 
-					private string userExtension;
-
 					private string originator;
 
-					public int? Index
-					{
-						get
-						{
-							return index;
-						}
-						set	
-						{
-							index = value;
-						}
-					}
+					private string userExtension;
 
 					public string ReleaseInitiator
 					{
@@ -320,18 +288,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 						}
 					}
 
-					public string SkillGroupId
-					{
-						get
-						{
-							return skillGroupId;
-						}
-						set	
-						{
-							skillGroupId = value;
-						}
-					}
-
 					public long? Timestamp
 					{
 						get
@@ -380,18 +336,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 						}
 					}
 
-					public string ChannelVariables
-					{
-						get
-						{
-							return channelVariables;
-						}
-						set	
-						{
-							channelVariables = value;
-						}
-					}
-
 					public string JobId
 					{
 						get
@@ -416,18 +360,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 						}
 					}
 
-					public string UserExtension
-					{
-						get
-						{
-							return userExtension;
-						}
-						set	
-						{
-							userExtension = value;
-						}
-					}
-
 					public string Originator
 					{
 						get
@@ -439,10 +371,22 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 							originator = value;
 						}
 					}
+
+					public string UserExtension
+					{
+						get
+						{
+							return userExtension;
+						}
+						set	
+						{
+							userExtension = value;
+						}
+					}
 				}
 			}
 
-			public class PollUserStatus_UserContext
+			public class StartPredictiveCall_UserContext
 			{
 
 				private string extension;
@@ -462,6 +406,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				private string instanceId;
 
 				private bool? outboundScenario;
+
+				private string deviceState;
 
 				private string mobile;
 
@@ -576,6 +522,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						outboundScenario = value;
+					}
+				}
+
+				public string DeviceState
+				{
+					get
+					{
+						return deviceState;
+					}
+					set	
+					{
+						deviceState = value;
 					}
 				}
 

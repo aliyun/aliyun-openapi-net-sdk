@@ -53,22 +53,22 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			List<PollUserStatusResponse.PollUserStatus_Data.PollUserStatus_CallContext.PollUserStatus_ChannelContext> callContext_channelContexts = new List<PollUserStatusResponse.PollUserStatus_Data.PollUserStatus_CallContext.PollUserStatus_ChannelContext>();
 			for (int i = 0; i < _ctx.Length("PollUserStatus.Data.CallContext.ChannelContexts.Length"); i++) {
 				PollUserStatusResponse.PollUserStatus_Data.PollUserStatus_CallContext.PollUserStatus_ChannelContext channelContext = new PollUserStatusResponse.PollUserStatus_Data.PollUserStatus_CallContext.PollUserStatus_ChannelContext();
-				channelContext.AssociatedData = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].AssociatedData");
-				channelContext.CallType = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].CallType");
-				channelContext.ChannelFlags = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags");
-				channelContext.ChannelId = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].ChannelId");
+				channelContext.Index = _ctx.IntegerValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].Index");
+				channelContext.ReleaseInitiator = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].ReleaseInitiator");
 				channelContext.ChannelState = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].ChannelState");
 				channelContext.Destination = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].Destination");
-				channelContext.Index = _ctx.IntegerValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].Index");
-				channelContext.JobId = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].JobId");
-				channelContext.Originator = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].Originator");
-				channelContext.ReleaseInitiator = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].ReleaseInitiator");
-				channelContext.ReleaseReason = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason");
+				channelContext.UserId = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].UserId");
+				channelContext.ChannelFlags = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags");
 				channelContext.SkillGroupId = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].SkillGroupId");
 				channelContext.Timestamp = _ctx.LongValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].Timestamp");
-				channelContext.UserExtension = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].UserExtension");
-				channelContext.UserId = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].UserId");
+				channelContext.AssociatedData = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].AssociatedData");
+				channelContext.ReleaseReason = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason");
+				channelContext.CallType = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].CallType");
 				channelContext.ChannelVariables = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].ChannelVariables");
+				channelContext.JobId = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].JobId");
+				channelContext.ChannelId = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].ChannelId");
+				channelContext.UserExtension = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].UserExtension");
+				channelContext.Originator = _ctx.StringValue("PollUserStatus.Data.CallContext.ChannelContexts["+ i +"].Originator");
 
 				callContext_channelContexts.Add(channelContext);
 			}
@@ -76,18 +76,18 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			data.CallContext = callContext;
 
 			PollUserStatusResponse.PollUserStatus_Data.PollUserStatus_UserContext userContext = new PollUserStatusResponse.PollUserStatus_Data.PollUserStatus_UserContext();
-			userContext.BreakCode = _ctx.StringValue("PollUserStatus.Data.UserContext.BreakCode");
-			userContext.DeviceId = _ctx.StringValue("PollUserStatus.Data.UserContext.DeviceId");
 			userContext.Extension = _ctx.StringValue("PollUserStatus.Data.UserContext.Extension");
 			userContext.Heartbeat = _ctx.LongValue("PollUserStatus.Data.UserContext.Heartbeat");
-			userContext.InstanceId = _ctx.StringValue("PollUserStatus.Data.UserContext.InstanceId");
-			userContext.JobId = _ctx.StringValue("PollUserStatus.Data.UserContext.JobId");
-			userContext.Mobile = _ctx.StringValue("PollUserStatus.Data.UserContext.Mobile");
-			userContext.OutboundScenario = _ctx.BooleanValue("PollUserStatus.Data.UserContext.OutboundScenario");
-			userContext.Reserved = _ctx.LongValue("PollUserStatus.Data.UserContext.Reserved");
-			userContext.UserId = _ctx.StringValue("PollUserStatus.Data.UserContext.UserId");
-			userContext.UserState = _ctx.StringValue("PollUserStatus.Data.UserContext.UserState");
 			userContext.WorkMode = _ctx.StringValue("PollUserStatus.Data.UserContext.WorkMode");
+			userContext.DeviceId = _ctx.StringValue("PollUserStatus.Data.UserContext.DeviceId");
+			userContext.UserId = _ctx.StringValue("PollUserStatus.Data.UserContext.UserId");
+			userContext.Reserved = _ctx.LongValue("PollUserStatus.Data.UserContext.Reserved");
+			userContext.BreakCode = _ctx.StringValue("PollUserStatus.Data.UserContext.BreakCode");
+			userContext.InstanceId = _ctx.StringValue("PollUserStatus.Data.UserContext.InstanceId");
+			userContext.OutboundScenario = _ctx.BooleanValue("PollUserStatus.Data.UserContext.OutboundScenario");
+			userContext.Mobile = _ctx.StringValue("PollUserStatus.Data.UserContext.Mobile");
+			userContext.JobId = _ctx.StringValue("PollUserStatus.Data.UserContext.JobId");
+			userContext.UserState = _ctx.StringValue("PollUserStatus.Data.UserContext.UserState");
 
 			List<string> userContext_signedSkillGroupIdList = new List<string>();
 			for (int i = 0; i < _ctx.Length("PollUserStatus.Data.UserContext.SignedSkillGroupIdList.Length"); i++) {

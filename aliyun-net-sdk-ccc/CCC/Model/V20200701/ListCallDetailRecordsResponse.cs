@@ -157,115 +157,63 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			public class ListCallDetailRecords_CallDetailRecord
 			{
 
-				private string agentIds;
-
-				private string agentNames;
-
-				private string callDuration;
-
-				private string calledNumber;
-
-				private string callingNumber;
-
 				private string contactDisposition;
-
-				private string contactId;
 
 				private string contactType;
 
 				private long? establishedTime;
 
-				private string instanceId;
+				private string calledNumber;
 
-				private long? ivrTime;
-
-				private long? queueTime;
-
-				private long? recordingDuration;
-
-				private bool? recordingReady;
-
-				private string releaseInitiator;
-
-				private long? releaseTime;
-
-				private long? ringTime;
-
-				private string satisfactionDescription;
+				private string additionalBroker;
 
 				private int? satisfactionIndex;
 
 				private string satisfactionSurveyChannel;
 
-				private bool? satisfactionSurveyOffered;
-
-				private string skillGroupIds;
-
-				private string skillGroupNames;
-
-				private long? startTime;
+				private long? releaseTime;
 
 				private long? waitTime;
 
-				public string AgentIds
-				{
-					get
-					{
-						return agentIds;
-					}
-					set	
-					{
-						agentIds = value;
-					}
-				}
+				private string skillGroupNames;
 
-				public string AgentNames
-				{
-					get
-					{
-						return agentNames;
-					}
-					set	
-					{
-						agentNames = value;
-					}
-				}
+				private long? ivrTime;
 
-				public string CallDuration
-				{
-					get
-					{
-						return callDuration;
-					}
-					set	
-					{
-						callDuration = value;
-					}
-				}
+				private string satisfactionDescription;
 
-				public string CalledNumber
-				{
-					get
-					{
-						return calledNumber;
-					}
-					set	
-					{
-						calledNumber = value;
-					}
-				}
+				private string releaseInitiator;
 
-				public string CallingNumber
-				{
-					get
-					{
-						return callingNumber;
-					}
-					set	
-					{
-						callingNumber = value;
-					}
-				}
+				private string agentIds;
+
+				private string callDuration;
+
+				private bool? recordingReady;
+
+				private string instanceId;
+
+				private long? ringTime;
+
+				private bool? satisfactionSurveyOffered;
+
+				private string agentNames;
+
+				private long? startTime;
+
+				private string contactId;
+
+				private long? recordingDuration;
+
+				private string callingNumber;
+
+				private long? queueTime;
+
+				private string broker;
+
+				private string skillGroupIds;
+
+				private string callerLocation;
+
+				private string calleeLocation;
 
 				public string ContactDisposition
 				{
@@ -276,18 +224,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						contactDisposition = value;
-					}
-				}
-
-				public string ContactId
-				{
-					get
-					{
-						return contactId;
-					}
-					set	
-					{
-						contactId = value;
 					}
 				}
 
@@ -315,111 +251,27 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public string InstanceId
+				public string CalledNumber
 				{
 					get
 					{
-						return instanceId;
+						return calledNumber;
 					}
 					set	
 					{
-						instanceId = value;
+						calledNumber = value;
 					}
 				}
 
-				public long? IvrTime
+				public string AdditionalBroker
 				{
 					get
 					{
-						return ivrTime;
+						return additionalBroker;
 					}
 					set	
 					{
-						ivrTime = value;
-					}
-				}
-
-				public long? QueueTime
-				{
-					get
-					{
-						return queueTime;
-					}
-					set	
-					{
-						queueTime = value;
-					}
-				}
-
-				public long? RecordingDuration
-				{
-					get
-					{
-						return recordingDuration;
-					}
-					set	
-					{
-						recordingDuration = value;
-					}
-				}
-
-				public bool? RecordingReady
-				{
-					get
-					{
-						return recordingReady;
-					}
-					set	
-					{
-						recordingReady = value;
-					}
-				}
-
-				public string ReleaseInitiator
-				{
-					get
-					{
-						return releaseInitiator;
-					}
-					set	
-					{
-						releaseInitiator = value;
-					}
-				}
-
-				public long? ReleaseTime
-				{
-					get
-					{
-						return releaseTime;
-					}
-					set	
-					{
-						releaseTime = value;
-					}
-				}
-
-				public long? RingTime
-				{
-					get
-					{
-						return ringTime;
-					}
-					set	
-					{
-						ringTime = value;
-					}
-				}
-
-				public string SatisfactionDescription
-				{
-					get
-					{
-						return satisfactionDescription;
-					}
-					set	
-					{
-						satisfactionDescription = value;
+						additionalBroker = value;
 					}
 				}
 
@@ -447,27 +299,27 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public bool? SatisfactionSurveyOffered
+				public long? ReleaseTime
 				{
 					get
 					{
-						return satisfactionSurveyOffered;
+						return releaseTime;
 					}
 					set	
 					{
-						satisfactionSurveyOffered = value;
+						releaseTime = value;
 					}
 				}
 
-				public string SkillGroupIds
+				public long? WaitTime
 				{
 					get
 					{
-						return skillGroupIds;
+						return waitTime;
 					}
 					set	
 					{
-						skillGroupIds = value;
+						waitTime = value;
 					}
 				}
 
@@ -483,6 +335,126 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
+				public long? IvrTime
+				{
+					get
+					{
+						return ivrTime;
+					}
+					set	
+					{
+						ivrTime = value;
+					}
+				}
+
+				public string SatisfactionDescription
+				{
+					get
+					{
+						return satisfactionDescription;
+					}
+					set	
+					{
+						satisfactionDescription = value;
+					}
+				}
+
+				public string ReleaseInitiator
+				{
+					get
+					{
+						return releaseInitiator;
+					}
+					set	
+					{
+						releaseInitiator = value;
+					}
+				}
+
+				public string AgentIds
+				{
+					get
+					{
+						return agentIds;
+					}
+					set	
+					{
+						agentIds = value;
+					}
+				}
+
+				public string CallDuration
+				{
+					get
+					{
+						return callDuration;
+					}
+					set	
+					{
+						callDuration = value;
+					}
+				}
+
+				public bool? RecordingReady
+				{
+					get
+					{
+						return recordingReady;
+					}
+					set	
+					{
+						recordingReady = value;
+					}
+				}
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
+
+				public long? RingTime
+				{
+					get
+					{
+						return ringTime;
+					}
+					set	
+					{
+						ringTime = value;
+					}
+				}
+
+				public bool? SatisfactionSurveyOffered
+				{
+					get
+					{
+						return satisfactionSurveyOffered;
+					}
+					set	
+					{
+						satisfactionSurveyOffered = value;
+					}
+				}
+
+				public string AgentNames
+				{
+					get
+					{
+						return agentNames;
+					}
+					set	
+					{
+						agentNames = value;
+					}
+				}
+
 				public long? StartTime
 				{
 					get
@@ -495,15 +467,99 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public long? WaitTime
+				public string ContactId
 				{
 					get
 					{
-						return waitTime;
+						return contactId;
 					}
 					set	
 					{
-						waitTime = value;
+						contactId = value;
+					}
+				}
+
+				public long? RecordingDuration
+				{
+					get
+					{
+						return recordingDuration;
+					}
+					set	
+					{
+						recordingDuration = value;
+					}
+				}
+
+				public string CallingNumber
+				{
+					get
+					{
+						return callingNumber;
+					}
+					set	
+					{
+						callingNumber = value;
+					}
+				}
+
+				public long? QueueTime
+				{
+					get
+					{
+						return queueTime;
+					}
+					set	
+					{
+						queueTime = value;
+					}
+				}
+
+				public string Broker
+				{
+					get
+					{
+						return broker;
+					}
+					set	
+					{
+						broker = value;
+					}
+				}
+
+				public string SkillGroupIds
+				{
+					get
+					{
+						return skillGroupIds;
+					}
+					set	
+					{
+						skillGroupIds = value;
+					}
+				}
+
+				public string CallerLocation
+				{
+					get
+					{
+						return callerLocation;
+					}
+					set	
+					{
+						callerLocation = value;
+					}
+				}
+
+				public string CalleeLocation
+				{
+					get
+					{
+						return calleeLocation;
+					}
+					set	
+					{
+						calleeLocation = value;
 					}
 				}
 			}

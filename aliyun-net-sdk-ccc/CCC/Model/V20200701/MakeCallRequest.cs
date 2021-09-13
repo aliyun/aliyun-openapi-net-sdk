@@ -46,6 +46,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 		private string deviceId;
 
+		private string tags;
+
 		private int? timeoutSeconds;
 
 		private string caller;
@@ -88,6 +90,19 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			{
 				deviceId = value;
 				DictionaryUtil.Add(QueryParameters, "DeviceId", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
 			}
 		}
 

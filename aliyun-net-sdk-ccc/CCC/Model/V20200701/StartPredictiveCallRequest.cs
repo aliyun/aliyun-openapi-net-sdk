@@ -27,10 +27,10 @@ using Aliyun.Acs.CCC.Transform.V20200701;
 
 namespace Aliyun.Acs.CCC.Model.V20200701
 {
-    public class StartBack2BackCallRequest : RpcAcsRequest<StartBack2BackCallResponse>
+    public class StartPredictiveCallRequest : RpcAcsRequest<StartPredictiveCallResponse>
     {
-        public StartBack2BackCallRequest()
-            : base("CCC", "2020-07-01", "StartBack2BackCall", "CCC", "openAPI")
+        public StartPredictiveCallRequest()
+            : base("CCC", "2020-07-01", "StartPredictiveCall", "CCC", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,11 +40,11 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			Method = MethodType.POST;
         }
 
+		private string contactFlowId;
+
 		private string callee;
 
-		private string broker;
-
-		private string additionalBroker;
+		private string contactFlowVariables;
 
 		private string tags;
 
@@ -53,6 +53,19 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 		private string caller;
 
 		private string instanceId;
+
+		public string ContactFlowId
+		{
+			get
+			{
+				return contactFlowId;
+			}
+			set	
+			{
+				contactFlowId = value;
+				DictionaryUtil.Add(QueryParameters, "ContactFlowId", value);
+			}
+		}
 
 		public string Callee
 		{
@@ -67,29 +80,16 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			}
 		}
 
-		public string Broker
+		public string ContactFlowVariables
 		{
 			get
 			{
-				return broker;
+				return contactFlowVariables;
 			}
 			set	
 			{
-				broker = value;
-				DictionaryUtil.Add(QueryParameters, "Broker", value);
-			}
-		}
-
-		public string AdditionalBroker
-		{
-			get
-			{
-				return additionalBroker;
-			}
-			set	
-			{
-				additionalBroker = value;
-				DictionaryUtil.Add(QueryParameters, "AdditionalBroker", value);
+				contactFlowVariables = value;
+				DictionaryUtil.Add(QueryParameters, "ContactFlowVariables", value);
 			}
 		}
 
@@ -150,9 +150,9 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			return false;
 		}
 
-        public override StartBack2BackCallResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override StartPredictiveCallResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StartBack2BackCallResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return StartPredictiveCallResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

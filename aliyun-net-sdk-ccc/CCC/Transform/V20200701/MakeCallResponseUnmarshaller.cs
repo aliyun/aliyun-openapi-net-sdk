@@ -53,19 +53,19 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			List<MakeCallResponse.MakeCall_Data.MakeCall_CallContext.MakeCall_ChannelContext> callContext_channelContexts = new List<MakeCallResponse.MakeCall_Data.MakeCall_CallContext.MakeCall_ChannelContext>();
 			for (int i = 0; i < _ctx.Length("MakeCall.Data.CallContext.ChannelContexts.Length"); i++) {
 				MakeCallResponse.MakeCall_Data.MakeCall_CallContext.MakeCall_ChannelContext channelContext = new MakeCallResponse.MakeCall_Data.MakeCall_CallContext.MakeCall_ChannelContext();
-				channelContext.AssociatedData = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].AssociatedData");
-				channelContext.CallType = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].CallType");
-				channelContext.ChannelFlags = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags");
-				channelContext.ChannelId = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].ChannelId");
+				channelContext.ReleaseInitiator = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].ReleaseInitiator");
 				channelContext.ChannelState = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].ChannelState");
 				channelContext.Destination = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].Destination");
-				channelContext.JobId = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].JobId");
-				channelContext.Originator = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].Originator");
-				channelContext.ReleaseInitiator = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].ReleaseInitiator");
-				channelContext.ReleaseReason = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason");
-				channelContext.Timestamp = _ctx.LongValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].Timestamp");
-				channelContext.UserExtension = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].UserExtension");
 				channelContext.UserId = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].UserId");
+				channelContext.ChannelFlags = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags");
+				channelContext.Timestamp = _ctx.LongValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].Timestamp");
+				channelContext.AssociatedData = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].AssociatedData");
+				channelContext.ReleaseReason = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason");
+				channelContext.CallType = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].CallType");
+				channelContext.JobId = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].JobId");
+				channelContext.ChannelId = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].ChannelId");
+				channelContext.Originator = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].Originator");
+				channelContext.UserExtension = _ctx.StringValue("MakeCall.Data.CallContext.ChannelContexts["+ i +"].UserExtension");
 
 				callContext_channelContexts.Add(channelContext);
 			}
@@ -73,15 +73,15 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			data.CallContext = callContext;
 
 			MakeCallResponse.MakeCall_Data.MakeCall_UserContext userContext = new MakeCallResponse.MakeCall_Data.MakeCall_UserContext();
-			userContext.BreakCode = _ctx.StringValue("MakeCall.Data.UserContext.BreakCode");
-			userContext.DeviceId = _ctx.StringValue("MakeCall.Data.UserContext.DeviceId");
 			userContext.Extension = _ctx.StringValue("MakeCall.Data.UserContext.Extension");
-			userContext.InstanceId = _ctx.StringValue("MakeCall.Data.UserContext.InstanceId");
-			userContext.JobId = _ctx.StringValue("MakeCall.Data.UserContext.JobId");
-			userContext.OutboundScenario = _ctx.BooleanValue("MakeCall.Data.UserContext.OutboundScenario");
-			userContext.UserId = _ctx.StringValue("MakeCall.Data.UserContext.UserId");
-			userContext.UserState = _ctx.StringValue("MakeCall.Data.UserContext.UserState");
 			userContext.WorkMode = _ctx.StringValue("MakeCall.Data.UserContext.WorkMode");
+			userContext.DeviceId = _ctx.StringValue("MakeCall.Data.UserContext.DeviceId");
+			userContext.JobId = _ctx.StringValue("MakeCall.Data.UserContext.JobId");
+			userContext.UserId = _ctx.StringValue("MakeCall.Data.UserContext.UserId");
+			userContext.BreakCode = _ctx.StringValue("MakeCall.Data.UserContext.BreakCode");
+			userContext.InstanceId = _ctx.StringValue("MakeCall.Data.UserContext.InstanceId");
+			userContext.OutboundScenario = _ctx.BooleanValue("MakeCall.Data.UserContext.OutboundScenario");
+			userContext.UserState = _ctx.StringValue("MakeCall.Data.UserContext.UserState");
 
 			List<string> userContext_signedSkillGroupIdList = new List<string>();
 			for (int i = 0; i < _ctx.Length("MakeCall.Data.UserContext.SignedSkillGroupIdList.Length"); i++) {

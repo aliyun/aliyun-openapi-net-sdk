@@ -37,31 +37,33 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			getCallDetailRecordResponse.RequestId = _ctx.StringValue("GetCallDetailRecord.RequestId");
 
 			GetCallDetailRecordResponse.GetCallDetailRecord_Data data = new GetCallDetailRecordResponse.GetCallDetailRecord_Data();
-			data.AgentIds = _ctx.StringValue("GetCallDetailRecord.Data.AgentIds");
-			data.AgentNames = _ctx.StringValue("GetCallDetailRecord.Data.AgentNames");
-			data.CalledNumber = _ctx.StringValue("GetCallDetailRecord.Data.CalledNumber");
-			data.CallingNumber = _ctx.StringValue("GetCallDetailRecord.Data.CallingNumber");
+			data.ReleaseInitiator = _ctx.StringValue("GetCallDetailRecord.Data.ReleaseInitiator");
 			data.ContactDisposition = _ctx.StringValue("GetCallDetailRecord.Data.ContactDisposition");
-			data.ContactId = _ctx.StringValue("GetCallDetailRecord.Data.ContactId");
 			data.ContactType = _ctx.StringValue("GetCallDetailRecord.Data.ContactType");
+			data.AgentIds = _ctx.StringValue("GetCallDetailRecord.Data.AgentIds");
 			data.CallDuration = _ctx.LongValue("GetCallDetailRecord.Data.CallDuration");
+			data.RecordingReady = _ctx.BooleanValue("GetCallDetailRecord.Data.RecordingReady");
 			data.EstablishedTime = _ctx.LongValue("GetCallDetailRecord.Data.EstablishedTime");
 			data.InstanceId = _ctx.StringValue("GetCallDetailRecord.Data.InstanceId");
-			data.StartTime = _ctx.LongValue("GetCallDetailRecord.Data.StartTime");
-			data.ReleaseTime = _ctx.LongValue("GetCallDetailRecord.Data.ReleaseTime");
-			data.SkillGroupIds = _ctx.StringValue("GetCallDetailRecord.Data.SkillGroupIds");
-			data.SkillGroupNames = _ctx.StringValue("GetCallDetailRecord.Data.SkillGroupNames");
 			data.SatisfactionSurveyOffered = _ctx.BooleanValue("GetCallDetailRecord.Data.SatisfactionSurveyOffered");
+			data.CalledNumber = _ctx.StringValue("GetCallDetailRecord.Data.CalledNumber");
+			data.AgentNames = _ctx.StringValue("GetCallDetailRecord.Data.AgentNames");
 			data.Satisfaction = _ctx.IntegerValue("GetCallDetailRecord.Data.Satisfaction");
+			data.StartTime = _ctx.LongValue("GetCallDetailRecord.Data.StartTime");
+			data.ContactId = _ctx.StringValue("GetCallDetailRecord.Data.ContactId");
 			data.SatisfactionSurveyChannel = _ctx.StringValue("GetCallDetailRecord.Data.SatisfactionSurveyChannel");
-			data.ReleaseInitiator = _ctx.StringValue("GetCallDetailRecord.Data.ReleaseInitiator");
-			data.RecordingReady = _ctx.BooleanValue("GetCallDetailRecord.Data.RecordingReady");
+			data.ReleaseTime = _ctx.LongValue("GetCallDetailRecord.Data.ReleaseTime");
+			data.CallingNumber = _ctx.StringValue("GetCallDetailRecord.Data.CallingNumber");
+			data.SkillGroupNames = _ctx.StringValue("GetCallDetailRecord.Data.SkillGroupNames");
+			data.SkillGroupIds = _ctx.StringValue("GetCallDetailRecord.Data.SkillGroupIds");
+			data.CallerLocation = _ctx.StringValue("GetCallDetailRecord.Data.CallerLocation");
+			data.CalleeLocation = _ctx.StringValue("GetCallDetailRecord.Data.CalleeLocation");
 
 			List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_AgentEventsItem> data_agentEvents = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_AgentEventsItem>();
 			for (int i = 0; i < _ctx.Length("GetCallDetailRecord.Data.AgentEvents.Length"); i++) {
 				GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_AgentEventsItem agentEventsItem = new GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_AgentEventsItem();
-				agentEventsItem.AgentId = _ctx.StringValue("GetCallDetailRecord.Data.AgentEvents["+ i +"].AgentId");
 				agentEventsItem.AgentName = _ctx.StringValue("GetCallDetailRecord.Data.AgentEvents["+ i +"].AgentName");
+				agentEventsItem.AgentId = _ctx.StringValue("GetCallDetailRecord.Data.AgentEvents["+ i +"].AgentId");
 				agentEventsItem.SkillGroupId = _ctx.StringValue("GetCallDetailRecord.Data.AgentEvents["+ i +"].SkillGroupId");
 
 				List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_AgentEventsItem.GetCallDetailRecord_EventSequenceItem> agentEventsItem_eventSequence = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_AgentEventsItem.GetCallDetailRecord_EventSequenceItem>();
@@ -100,9 +102,9 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_QueueEventsItem> data_queueEvents = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_QueueEventsItem>();
 			for (int i = 0; i < _ctx.Length("GetCallDetailRecord.Data.QueueEvents.Length"); i++) {
 				GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_QueueEventsItem queueEventsItem = new GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_QueueEventsItem();
-				queueEventsItem.FlowId = _ctx.StringValue("GetCallDetailRecord.Data.QueueEvents["+ i +"].FlowId");
 				queueEventsItem.QueueId = _ctx.StringValue("GetCallDetailRecord.Data.QueueEvents["+ i +"].QueueId");
 				queueEventsItem.QueueName = _ctx.StringValue("GetCallDetailRecord.Data.QueueEvents["+ i +"].QueueName");
+				queueEventsItem.FlowId = _ctx.StringValue("GetCallDetailRecord.Data.QueueEvents["+ i +"].FlowId");
 				queueEventsItem.QueueType = _ctx.IntegerValue("GetCallDetailRecord.Data.QueueEvents["+ i +"].QueueType");
 
 				List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_QueueEventsItem.GetCallDetailRecord_EventSequenceItem4> queueEventsItem_eventSequence3 = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_QueueEventsItem.GetCallDetailRecord_EventSequenceItem4>();

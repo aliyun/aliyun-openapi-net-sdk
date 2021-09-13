@@ -157,95 +157,229 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			public class ListIntervalInstanceReport_Inbound
 			{
 
-				private float? abandonedRate;
-
-				private float? averageAbandonTime;
-
-				private float? averageAbandonedInIVRTime;
-
-				private float? averageAbandonedInQueueTime;
-
-				private float? averageAbandonedInRingTime;
-
-				private float? averageHoldTime;
-
 				private float? averageRingTime;
 
-				private float? averageTalkTime;
-
-				private float? averageWaitTime;
-
-				private float? averageWorkTime;
-
-				private long? callsAbandoned;
-
-				private long? callsAbandonedInIVR;
-
-				private long? callsAbandonedInQueue;
-
-				private long? callsAbandonedInRing;
-
-				private long? callsAttendedTransferred;
-
-				private long? callsBlindTransferred;
-
-				private long? callsHandled;
-
-				private long? callsHold;
-
-				private long? callsOffered;
-
-				private long? callsQueued;
-
-				private long? callsRinged;
-
-				private float? handleRate;
-
-				private long? maxAbandonTime;
+				private long? callsVoicemail;
 
 				private long? maxAbandonedInIVRTime;
 
-				private long? maxAbandonedInQueueTime;
+				private long? callsHandled;
 
-				private long? maxAbandonedInRingTime;
+				private long? callsIVRException;
 
-				private long? maxHoldTime;
-
-				private long? maxRingTime;
-
-				private long? maxTalkTime;
-
-				private long? maxWaitTime;
+				private long? callsAbandonedInIVR;
 
 				private long? maxWorkTime;
 
-				private float? satisfactionIndex;
-
-				private float? satisfactionRate;
-
-				private long? satisfactionSurveysOffered;
-
-				private long? satisfactionSurveysResponded;
-
-				private float? serviceLevel20;
-
-				private long? totalAbandonTime;
-
-				private long? totalAbandonedInIVRTime;
-
-				private long? totalAbandonedInQueueTime;
-
-				private long? totalAbandonedInRingTime;
-
 				private long? totalHoldTime;
+
+				private long? maxAbandonTime;
+
+				private float? averageAbandonTime;
+
+				private float? abandonedRate;
+
+				private long? callsRinged;
+
+				private long? callsQueuingFailed;
 
 				private long? totalRingTime;
 
 				private long? totalTalkTime;
 
-				private long? totalWaitTime;
+				private long? maxAbandonedInRingTime;
+
+				private long? callsBlindTransferred;
+
+				private float? averageAbandonedInIVRTime;
+
+				private float? averageAbandonedInQueueTime;
+
+				private long? maxWaitTime;
+
+				private float? averageTalkTime;
+
+				private long? callsAttendedTransferred;
+
+				private long? totalAbandonedInIVRTime;
+
+				private long? callsQueuingOverflow;
+
+				private long? callsAbandonedInRing;
+
+				private long? totalAbandonedInRingTime;
 
 				private long? totalWorkTime;
+
+				private float? averageWaitTime;
+
+				private float? averageWorkTime;
+
+				private long? callsQueued;
+
+				private float? averageAbandonedInRingTime;
+
+				private float? satisfactionIndex;
+
+				private long? callsAbandoned;
+
+				private long? maxAbandonedInQueueTime;
+
+				private long? callsAbandonedInVoiceNavigator;
+
+				private long? totalWaitTime;
+
+				private long? maxTalkTime;
+
+				private long? maxRingTime;
+
+				private long? totalAbandonTime;
+
+				private long? callsOffered;
+
+				private long? callsQueuingTimeout;
+
+				private float? serviceLevel20;
+
+				private long? maxHoldTime;
+
+				private long? callsForwardToOutsideNumber;
+
+				private float? satisfactionRate;
+
+				private long? callsHold;
+
+				private long? satisfactionSurveysOffered;
+
+				private float? handleRate;
+
+				private long? satisfactionSurveysResponded;
+
+				private float? averageHoldTime;
+
+				private long? callsAbandonedInQueue;
+
+				private long? totalAbandonedInQueueTime;
+
+				public float? AverageRingTime
+				{
+					get
+					{
+						return averageRingTime;
+					}
+					set	
+					{
+						averageRingTime = value;
+					}
+				}
+
+				public long? CallsVoicemail
+				{
+					get
+					{
+						return callsVoicemail;
+					}
+					set	
+					{
+						callsVoicemail = value;
+					}
+				}
+
+				public long? MaxAbandonedInIVRTime
+				{
+					get
+					{
+						return maxAbandonedInIVRTime;
+					}
+					set	
+					{
+						maxAbandonedInIVRTime = value;
+					}
+				}
+
+				public long? CallsHandled
+				{
+					get
+					{
+						return callsHandled;
+					}
+					set	
+					{
+						callsHandled = value;
+					}
+				}
+
+				public long? CallsIVRException
+				{
+					get
+					{
+						return callsIVRException;
+					}
+					set	
+					{
+						callsIVRException = value;
+					}
+				}
+
+				public long? CallsAbandonedInIVR
+				{
+					get
+					{
+						return callsAbandonedInIVR;
+					}
+					set	
+					{
+						callsAbandonedInIVR = value;
+					}
+				}
+
+				public long? MaxWorkTime
+				{
+					get
+					{
+						return maxWorkTime;
+					}
+					set	
+					{
+						maxWorkTime = value;
+					}
+				}
+
+				public long? TotalHoldTime
+				{
+					get
+					{
+						return totalHoldTime;
+					}
+					set	
+					{
+						totalHoldTime = value;
+					}
+				}
+
+				public long? MaxAbandonTime
+				{
+					get
+					{
+						return maxAbandonTime;
+					}
+					set	
+					{
+						maxAbandonTime = value;
+					}
+				}
+
+				public float? AverageAbandonTime
+				{
+					get
+					{
+						return averageAbandonTime;
+					}
+					set	
+					{
+						averageAbandonTime = value;
+					}
+				}
 
 				public float? AbandonedRate
 				{
@@ -259,15 +393,75 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public float? AverageAbandonTime
+				public long? CallsRinged
 				{
 					get
 					{
-						return averageAbandonTime;
+						return callsRinged;
 					}
 					set	
 					{
-						averageAbandonTime = value;
+						callsRinged = value;
+					}
+				}
+
+				public long? CallsQueuingFailed
+				{
+					get
+					{
+						return callsQueuingFailed;
+					}
+					set	
+					{
+						callsQueuingFailed = value;
+					}
+				}
+
+				public long? TotalRingTime
+				{
+					get
+					{
+						return totalRingTime;
+					}
+					set	
+					{
+						totalRingTime = value;
+					}
+				}
+
+				public long? TotalTalkTime
+				{
+					get
+					{
+						return totalTalkTime;
+					}
+					set	
+					{
+						totalTalkTime = value;
+					}
+				}
+
+				public long? MaxAbandonedInRingTime
+				{
+					get
+					{
+						return maxAbandonedInRingTime;
+					}
+					set	
+					{
+						maxAbandonedInRingTime = value;
+					}
+				}
+
+				public long? CallsBlindTransferred
+				{
+					get
+					{
+						return callsBlindTransferred;
+					}
+					set	
+					{
+						callsBlindTransferred = value;
 					}
 				}
 
@@ -295,39 +489,15 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public float? AverageAbandonedInRingTime
+				public long? MaxWaitTime
 				{
 					get
 					{
-						return averageAbandonedInRingTime;
+						return maxWaitTime;
 					}
 					set	
 					{
-						averageAbandonedInRingTime = value;
-					}
-				}
-
-				public float? AverageHoldTime
-				{
-					get
-					{
-						return averageHoldTime;
-					}
-					set	
-					{
-						averageHoldTime = value;
-					}
-				}
-
-				public float? AverageRingTime
-				{
-					get
-					{
-						return averageRingTime;
-					}
-					set	
-					{
-						averageRingTime = value;
+						maxWaitTime = value;
 					}
 				}
 
@@ -340,6 +510,78 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						averageTalkTime = value;
+					}
+				}
+
+				public long? CallsAttendedTransferred
+				{
+					get
+					{
+						return callsAttendedTransferred;
+					}
+					set	
+					{
+						callsAttendedTransferred = value;
+					}
+				}
+
+				public long? TotalAbandonedInIVRTime
+				{
+					get
+					{
+						return totalAbandonedInIVRTime;
+					}
+					set	
+					{
+						totalAbandonedInIVRTime = value;
+					}
+				}
+
+				public long? CallsQueuingOverflow
+				{
+					get
+					{
+						return callsQueuingOverflow;
+					}
+					set	
+					{
+						callsQueuingOverflow = value;
+					}
+				}
+
+				public long? CallsAbandonedInRing
+				{
+					get
+					{
+						return callsAbandonedInRing;
+					}
+					set	
+					{
+						callsAbandonedInRing = value;
+					}
+				}
+
+				public long? TotalAbandonedInRingTime
+				{
+					get
+					{
+						return totalAbandonedInRingTime;
+					}
+					set	
+					{
+						totalAbandonedInRingTime = value;
+					}
+				}
+
+				public long? TotalWorkTime
+				{
+					get
+					{
+						return totalWorkTime;
+					}
+					set	
+					{
+						totalWorkTime = value;
 					}
 				}
 
@@ -367,114 +609,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public long? CallsAbandoned
-				{
-					get
-					{
-						return callsAbandoned;
-					}
-					set	
-					{
-						callsAbandoned = value;
-					}
-				}
-
-				public long? CallsAbandonedInIVR
-				{
-					get
-					{
-						return callsAbandonedInIVR;
-					}
-					set	
-					{
-						callsAbandonedInIVR = value;
-					}
-				}
-
-				public long? CallsAbandonedInQueue
-				{
-					get
-					{
-						return callsAbandonedInQueue;
-					}
-					set	
-					{
-						callsAbandonedInQueue = value;
-					}
-				}
-
-				public long? CallsAbandonedInRing
-				{
-					get
-					{
-						return callsAbandonedInRing;
-					}
-					set	
-					{
-						callsAbandonedInRing = value;
-					}
-				}
-
-				public long? CallsAttendedTransferred
-				{
-					get
-					{
-						return callsAttendedTransferred;
-					}
-					set	
-					{
-						callsAttendedTransferred = value;
-					}
-				}
-
-				public long? CallsBlindTransferred
-				{
-					get
-					{
-						return callsBlindTransferred;
-					}
-					set	
-					{
-						callsBlindTransferred = value;
-					}
-				}
-
-				public long? CallsHandled
-				{
-					get
-					{
-						return callsHandled;
-					}
-					set	
-					{
-						callsHandled = value;
-					}
-				}
-
-				public long? CallsHold
-				{
-					get
-					{
-						return callsHold;
-					}
-					set	
-					{
-						callsHold = value;
-					}
-				}
-
-				public long? CallsOffered
-				{
-					get
-					{
-						return callsOffered;
-					}
-					set	
-					{
-						callsOffered = value;
-					}
-				}
-
 				public long? CallsQueued
 				{
 					get
@@ -487,51 +621,39 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public long? CallsRinged
+				public float? AverageAbandonedInRingTime
 				{
 					get
 					{
-						return callsRinged;
+						return averageAbandonedInRingTime;
 					}
 					set	
 					{
-						callsRinged = value;
+						averageAbandonedInRingTime = value;
 					}
 				}
 
-				public float? HandleRate
+				public float? SatisfactionIndex
 				{
 					get
 					{
-						return handleRate;
+						return satisfactionIndex;
 					}
 					set	
 					{
-						handleRate = value;
+						satisfactionIndex = value;
 					}
 				}
 
-				public long? MaxAbandonTime
+				public long? CallsAbandoned
 				{
 					get
 					{
-						return maxAbandonTime;
+						return callsAbandoned;
 					}
 					set	
 					{
-						maxAbandonTime = value;
-					}
-				}
-
-				public long? MaxAbandonedInIVRTime
-				{
-					get
-					{
-						return maxAbandonedInIVRTime;
-					}
-					set	
-					{
-						maxAbandonedInIVRTime = value;
+						callsAbandoned = value;
 					}
 				}
 
@@ -547,219 +669,15 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public long? MaxAbandonedInRingTime
+				public long? CallsAbandonedInVoiceNavigator
 				{
 					get
 					{
-						return maxAbandonedInRingTime;
+						return callsAbandonedInVoiceNavigator;
 					}
 					set	
 					{
-						maxAbandonedInRingTime = value;
-					}
-				}
-
-				public long? MaxHoldTime
-				{
-					get
-					{
-						return maxHoldTime;
-					}
-					set	
-					{
-						maxHoldTime = value;
-					}
-				}
-
-				public long? MaxRingTime
-				{
-					get
-					{
-						return maxRingTime;
-					}
-					set	
-					{
-						maxRingTime = value;
-					}
-				}
-
-				public long? MaxTalkTime
-				{
-					get
-					{
-						return maxTalkTime;
-					}
-					set	
-					{
-						maxTalkTime = value;
-					}
-				}
-
-				public long? MaxWaitTime
-				{
-					get
-					{
-						return maxWaitTime;
-					}
-					set	
-					{
-						maxWaitTime = value;
-					}
-				}
-
-				public long? MaxWorkTime
-				{
-					get
-					{
-						return maxWorkTime;
-					}
-					set	
-					{
-						maxWorkTime = value;
-					}
-				}
-
-				public float? SatisfactionIndex
-				{
-					get
-					{
-						return satisfactionIndex;
-					}
-					set	
-					{
-						satisfactionIndex = value;
-					}
-				}
-
-				public float? SatisfactionRate
-				{
-					get
-					{
-						return satisfactionRate;
-					}
-					set	
-					{
-						satisfactionRate = value;
-					}
-				}
-
-				public long? SatisfactionSurveysOffered
-				{
-					get
-					{
-						return satisfactionSurveysOffered;
-					}
-					set	
-					{
-						satisfactionSurveysOffered = value;
-					}
-				}
-
-				public long? SatisfactionSurveysResponded
-				{
-					get
-					{
-						return satisfactionSurveysResponded;
-					}
-					set	
-					{
-						satisfactionSurveysResponded = value;
-					}
-				}
-
-				public float? ServiceLevel20
-				{
-					get
-					{
-						return serviceLevel20;
-					}
-					set	
-					{
-						serviceLevel20 = value;
-					}
-				}
-
-				public long? TotalAbandonTime
-				{
-					get
-					{
-						return totalAbandonTime;
-					}
-					set	
-					{
-						totalAbandonTime = value;
-					}
-				}
-
-				public long? TotalAbandonedInIVRTime
-				{
-					get
-					{
-						return totalAbandonedInIVRTime;
-					}
-					set	
-					{
-						totalAbandonedInIVRTime = value;
-					}
-				}
-
-				public long? TotalAbandonedInQueueTime
-				{
-					get
-					{
-						return totalAbandonedInQueueTime;
-					}
-					set	
-					{
-						totalAbandonedInQueueTime = value;
-					}
-				}
-
-				public long? TotalAbandonedInRingTime
-				{
-					get
-					{
-						return totalAbandonedInRingTime;
-					}
-					set	
-					{
-						totalAbandonedInRingTime = value;
-					}
-				}
-
-				public long? TotalHoldTime
-				{
-					get
-					{
-						return totalHoldTime;
-					}
-					set	
-					{
-						totalHoldTime = value;
-					}
-				}
-
-				public long? TotalRingTime
-				{
-					get
-					{
-						return totalRingTime;
-					}
-					set	
-					{
-						totalRingTime = value;
-					}
-				}
-
-				public long? TotalTalkTime
-				{
-					get
-					{
-						return totalTalkTime;
-					}
-					set	
-					{
-						totalTalkTime = value;
+						callsAbandonedInVoiceNavigator = value;
 					}
 				}
 
@@ -775,239 +693,15 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public long? TotalWorkTime
+				public long? MaxTalkTime
 				{
 					get
 					{
-						return totalWorkTime;
+						return maxTalkTime;
 					}
 					set	
 					{
-						totalWorkTime = value;
-					}
-				}
-			}
-
-			public class ListIntervalInstanceReport_Outbound
-			{
-
-				private float? answerRate;
-
-				private float? averageDialingTime;
-
-				private float? averageHoldTime;
-
-				private float? averageRingTime;
-
-				private float? averageTalkTime;
-
-				private float? averageWorkTime;
-
-				private long? callsAnswered;
-
-				private long? callsAttendedTransferred;
-
-				private long? callsBlindTransferred;
-
-				private long? callsDialed;
-
-				private long? callsHold;
-
-				private long? callsRinged;
-
-				private long? maxDialingTime;
-
-				private long? maxHoldTime;
-
-				private long? maxRingTime;
-
-				private long? maxTalkTime;
-
-				private long? maxWorkTime;
-
-				private float? satisfactionIndex;
-
-				private float? satisfactionRate;
-
-				private long? satisfactionSurveysOffered;
-
-				private long? satisfactionSurveysResponded;
-
-				private long? totalDialingTime;
-
-				private long? totalHoldTime;
-
-				private long? totalRingTime;
-
-				private long? totalTalkTime;
-
-				private long? totalWorkTime;
-
-				public float? AnswerRate
-				{
-					get
-					{
-						return answerRate;
-					}
-					set	
-					{
-						answerRate = value;
-					}
-				}
-
-				public float? AverageDialingTime
-				{
-					get
-					{
-						return averageDialingTime;
-					}
-					set	
-					{
-						averageDialingTime = value;
-					}
-				}
-
-				public float? AverageHoldTime
-				{
-					get
-					{
-						return averageHoldTime;
-					}
-					set	
-					{
-						averageHoldTime = value;
-					}
-				}
-
-				public float? AverageRingTime
-				{
-					get
-					{
-						return averageRingTime;
-					}
-					set	
-					{
-						averageRingTime = value;
-					}
-				}
-
-				public float? AverageTalkTime
-				{
-					get
-					{
-						return averageTalkTime;
-					}
-					set	
-					{
-						averageTalkTime = value;
-					}
-				}
-
-				public float? AverageWorkTime
-				{
-					get
-					{
-						return averageWorkTime;
-					}
-					set	
-					{
-						averageWorkTime = value;
-					}
-				}
-
-				public long? CallsAnswered
-				{
-					get
-					{
-						return callsAnswered;
-					}
-					set	
-					{
-						callsAnswered = value;
-					}
-				}
-
-				public long? CallsAttendedTransferred
-				{
-					get
-					{
-						return callsAttendedTransferred;
-					}
-					set	
-					{
-						callsAttendedTransferred = value;
-					}
-				}
-
-				public long? CallsBlindTransferred
-				{
-					get
-					{
-						return callsBlindTransferred;
-					}
-					set	
-					{
-						callsBlindTransferred = value;
-					}
-				}
-
-				public long? CallsDialed
-				{
-					get
-					{
-						return callsDialed;
-					}
-					set	
-					{
-						callsDialed = value;
-					}
-				}
-
-				public long? CallsHold
-				{
-					get
-					{
-						return callsHold;
-					}
-					set	
-					{
-						callsHold = value;
-					}
-				}
-
-				public long? CallsRinged
-				{
-					get
-					{
-						return callsRinged;
-					}
-					set	
-					{
-						callsRinged = value;
-					}
-				}
-
-				public long? MaxDialingTime
-				{
-					get
-					{
-						return maxDialingTime;
-					}
-					set	
-					{
-						maxDialingTime = value;
-					}
-				}
-
-				public long? MaxHoldTime
-				{
-					get
-					{
-						return maxHoldTime;
-					}
-					set	
-					{
-						maxHoldTime = value;
+						maxTalkTime = value;
 					}
 				}
 
@@ -1023,39 +717,75 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public long? MaxTalkTime
+				public long? TotalAbandonTime
 				{
 					get
 					{
-						return maxTalkTime;
+						return totalAbandonTime;
 					}
 					set	
 					{
-						maxTalkTime = value;
+						totalAbandonTime = value;
 					}
 				}
 
-				public long? MaxWorkTime
+				public long? CallsOffered
 				{
 					get
 					{
-						return maxWorkTime;
+						return callsOffered;
 					}
 					set	
 					{
-						maxWorkTime = value;
+						callsOffered = value;
 					}
 				}
 
-				public float? SatisfactionIndex
+				public long? CallsQueuingTimeout
 				{
 					get
 					{
-						return satisfactionIndex;
+						return callsQueuingTimeout;
 					}
 					set	
 					{
-						satisfactionIndex = value;
+						callsQueuingTimeout = value;
+					}
+				}
+
+				public float? ServiceLevel20
+				{
+					get
+					{
+						return serviceLevel20;
+					}
+					set	
+					{
+						serviceLevel20 = value;
+					}
+				}
+
+				public long? MaxHoldTime
+				{
+					get
+					{
+						return maxHoldTime;
+					}
+					set	
+					{
+						maxHoldTime = value;
+					}
+				}
+
+				public long? CallsForwardToOutsideNumber
+				{
+					get
+					{
+						return callsForwardToOutsideNumber;
+					}
+					set	
+					{
+						callsForwardToOutsideNumber = value;
 					}
 				}
 
@@ -1071,6 +801,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
+				public long? CallsHold
+				{
+					get
+					{
+						return callsHold;
+					}
+					set	
+					{
+						callsHold = value;
+					}
+				}
+
 				public long? SatisfactionSurveysOffered
 				{
 					get
@@ -1083,6 +825,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
+				public float? HandleRate
+				{
+					get
+					{
+						return handleRate;
+					}
+					set	
+					{
+						handleRate = value;
+					}
+				}
+
 				public long? SatisfactionSurveysResponded
 				{
 					get
@@ -1092,6 +846,158 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						satisfactionSurveysResponded = value;
+					}
+				}
+
+				public float? AverageHoldTime
+				{
+					get
+					{
+						return averageHoldTime;
+					}
+					set	
+					{
+						averageHoldTime = value;
+					}
+				}
+
+				public long? CallsAbandonedInQueue
+				{
+					get
+					{
+						return callsAbandonedInQueue;
+					}
+					set	
+					{
+						callsAbandonedInQueue = value;
+					}
+				}
+
+				public long? TotalAbandonedInQueueTime
+				{
+					get
+					{
+						return totalAbandonedInQueueTime;
+					}
+					set	
+					{
+						totalAbandonedInQueueTime = value;
+					}
+				}
+			}
+
+			public class ListIntervalInstanceReport_Outbound
+			{
+
+				private float? averageRingTime;
+
+				private long? callsDialed;
+
+				private long? callsAnswered;
+
+				private long? totalWorkTime;
+
+				private long? maxWorkTime;
+
+				private long? totalDialingTime;
+
+				private long? totalHoldTime;
+
+				private float? averageWorkTime;
+
+				private float? satisfactionIndex;
+
+				private long? callsRinged;
+
+				private long? totalRingTime;
+
+				private long? maxTalkTime;
+
+				private long? maxRingTime;
+
+				private long? totalTalkTime;
+
+				private long? maxDialingTime;
+
+				private long? callsBlindTransferred;
+
+				private float? answerRate;
+
+				private long? maxHoldTime;
+
+				private float? averageTalkTime;
+
+				private float? satisfactionRate;
+
+				private long? callsAttendedTransferred;
+
+				private long? callsHold;
+
+				private long? satisfactionSurveysOffered;
+
+				private long? satisfactionSurveysResponded;
+
+				private float? averageHoldTime;
+
+				private float? averageDialingTime;
+
+				public float? AverageRingTime
+				{
+					get
+					{
+						return averageRingTime;
+					}
+					set	
+					{
+						averageRingTime = value;
+					}
+				}
+
+				public long? CallsDialed
+				{
+					get
+					{
+						return callsDialed;
+					}
+					set	
+					{
+						callsDialed = value;
+					}
+				}
+
+				public long? CallsAnswered
+				{
+					get
+					{
+						return callsAnswered;
+					}
+					set	
+					{
+						callsAnswered = value;
+					}
+				}
+
+				public long? TotalWorkTime
+				{
+					get
+					{
+						return totalWorkTime;
+					}
+					set	
+					{
+						totalWorkTime = value;
+					}
+				}
+
+				public long? MaxWorkTime
+				{
+					get
+					{
+						return maxWorkTime;
+					}
+					set	
+					{
+						maxWorkTime = value;
 					}
 				}
 
@@ -1119,138 +1025,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public long? TotalRingTime
-				{
-					get
-					{
-						return totalRingTime;
-					}
-					set	
-					{
-						totalRingTime = value;
-					}
-				}
-
-				public long? TotalTalkTime
-				{
-					get
-					{
-						return totalTalkTime;
-					}
-					set	
-					{
-						totalTalkTime = value;
-					}
-				}
-
-				public long? TotalWorkTime
-				{
-					get
-					{
-						return totalWorkTime;
-					}
-					set	
-					{
-						totalWorkTime = value;
-					}
-				}
-			}
-
-			public class ListIntervalInstanceReport_Overall
-			{
-
-				private float? averageBreakTime;
-
-				private float? averageHoldTime;
-
-				private float? averageReadyTime;
-
-				private float? averageTalkTime;
-
-				private float? averageWorkTime;
-
-				private long? maxBreakTime;
-
-				private long? maxHoldTime;
-
-				private long? maxReadyTime;
-
-				private long? maxTalkTime;
-
-				private long? maxWorkTime;
-
-				private float? occupancyRate;
-
-				private float? satisfactionIndex;
-
-				private float? satisfactionRate;
-
-				private long? satisfactionSurveysOffered;
-
-				private long? satisfactionSurveysResponded;
-
-				private long? totalBreakTime;
-
-				private long? totalCalls;
-
-				private long? totalHoldTime;
-
-				private long? totalLoggedInTime;
-
-				private long? totalReadyTime;
-
-				private long? totalTalkTime;
-
-				private long? totalWorkTime;
-
-				public float? AverageBreakTime
-				{
-					get
-					{
-						return averageBreakTime;
-					}
-					set	
-					{
-						averageBreakTime = value;
-					}
-				}
-
-				public float? AverageHoldTime
-				{
-					get
-					{
-						return averageHoldTime;
-					}
-					set	
-					{
-						averageHoldTime = value;
-					}
-				}
-
-				public float? AverageReadyTime
-				{
-					get
-					{
-						return averageReadyTime;
-					}
-					set	
-					{
-						averageReadyTime = value;
-					}
-				}
-
-				public float? AverageTalkTime
-				{
-					get
-					{
-						return averageTalkTime;
-					}
-					set	
-					{
-						averageTalkTime = value;
-					}
-				}
-
 				public float? AverageWorkTime
 				{
 					get
@@ -1260,78 +1034,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						averageWorkTime = value;
-					}
-				}
-
-				public long? MaxBreakTime
-				{
-					get
-					{
-						return maxBreakTime;
-					}
-					set	
-					{
-						maxBreakTime = value;
-					}
-				}
-
-				public long? MaxHoldTime
-				{
-					get
-					{
-						return maxHoldTime;
-					}
-					set	
-					{
-						maxHoldTime = value;
-					}
-				}
-
-				public long? MaxReadyTime
-				{
-					get
-					{
-						return maxReadyTime;
-					}
-					set	
-					{
-						maxReadyTime = value;
-					}
-				}
-
-				public long? MaxTalkTime
-				{
-					get
-					{
-						return maxTalkTime;
-					}
-					set	
-					{
-						maxTalkTime = value;
-					}
-				}
-
-				public long? MaxWorkTime
-				{
-					get
-					{
-						return maxWorkTime;
-					}
-					set	
-					{
-						maxWorkTime = value;
-					}
-				}
-
-				public float? OccupancyRate
-				{
-					get
-					{
-						return occupancyRate;
-					}
-					set	
-					{
-						occupancyRate = value;
 					}
 				}
 
@@ -1347,6 +1049,126 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
+				public long? CallsRinged
+				{
+					get
+					{
+						return callsRinged;
+					}
+					set	
+					{
+						callsRinged = value;
+					}
+				}
+
+				public long? TotalRingTime
+				{
+					get
+					{
+						return totalRingTime;
+					}
+					set	
+					{
+						totalRingTime = value;
+					}
+				}
+
+				public long? MaxTalkTime
+				{
+					get
+					{
+						return maxTalkTime;
+					}
+					set	
+					{
+						maxTalkTime = value;
+					}
+				}
+
+				public long? MaxRingTime
+				{
+					get
+					{
+						return maxRingTime;
+					}
+					set	
+					{
+						maxRingTime = value;
+					}
+				}
+
+				public long? TotalTalkTime
+				{
+					get
+					{
+						return totalTalkTime;
+					}
+					set	
+					{
+						totalTalkTime = value;
+					}
+				}
+
+				public long? MaxDialingTime
+				{
+					get
+					{
+						return maxDialingTime;
+					}
+					set	
+					{
+						maxDialingTime = value;
+					}
+				}
+
+				public long? CallsBlindTransferred
+				{
+					get
+					{
+						return callsBlindTransferred;
+					}
+					set	
+					{
+						callsBlindTransferred = value;
+					}
+				}
+
+				public float? AnswerRate
+				{
+					get
+					{
+						return answerRate;
+					}
+					set	
+					{
+						answerRate = value;
+					}
+				}
+
+				public long? MaxHoldTime
+				{
+					get
+					{
+						return maxHoldTime;
+					}
+					set	
+					{
+						maxHoldTime = value;
+					}
+				}
+
+				public float? AverageTalkTime
+				{
+					get
+					{
+						return averageTalkTime;
+					}
+					set	
+					{
+						averageTalkTime = value;
+					}
+				}
+
 				public float? SatisfactionRate
 				{
 					get
@@ -1356,6 +1178,30 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						satisfactionRate = value;
+					}
+				}
+
+				public long? CallsAttendedTransferred
+				{
+					get
+					{
+						return callsAttendedTransferred;
+					}
+					set	
+					{
+						callsAttendedTransferred = value;
+					}
+				}
+
+				public long? CallsHold
+				{
+					get
+					{
+						return callsHold;
+					}
+					set	
+					{
+						callsHold = value;
 					}
 				}
 
@@ -1383,39 +1229,87 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public long? TotalBreakTime
+				public float? AverageHoldTime
 				{
 					get
 					{
-						return totalBreakTime;
+						return averageHoldTime;
 					}
 					set	
 					{
-						totalBreakTime = value;
+						averageHoldTime = value;
 					}
 				}
 
-				public long? TotalCalls
+				public float? AverageDialingTime
 				{
 					get
 					{
-						return totalCalls;
+						return averageDialingTime;
 					}
 					set	
 					{
-						totalCalls = value;
+						averageDialingTime = value;
 					}
 				}
+			}
 
-				public long? TotalHoldTime
+			public class ListIntervalInstanceReport_Overall
+			{
+
+				private long? totalTalkTime;
+
+				private long? totalLoggedInTime;
+
+				private float? occupancyRate;
+
+				private long? totalWorkTime;
+
+				private long? maxHoldTime;
+
+				private long? maxWorkTime;
+
+				private float? averageBreakTime;
+
+				private long? totalHoldTime;
+
+				private float? satisfactionRate;
+
+				private long? maxBreakTime;
+
+				private float? averageWorkTime;
+
+				private float? averageTalkTime;
+
+				private float? satisfactionIndex;
+
+				private long? satisfactionSurveysOffered;
+
+				private long? satisfactionSurveysResponded;
+
+				private long? maxReadyTime;
+
+				private float? averageReadyTime;
+
+				private float? averageHoldTime;
+
+				private long? totalReadyTime;
+
+				private long? totalBreakTime;
+
+				private long? maxTalkTime;
+
+				private long? totalCalls;
+
+				public long? TotalTalkTime
 				{
 					get
 					{
-						return totalHoldTime;
+						return totalTalkTime;
 					}
 					set	
 					{
-						totalHoldTime = value;
+						totalTalkTime = value;
 					}
 				}
 
@@ -1431,27 +1325,15 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public long? TotalReadyTime
+				public float? OccupancyRate
 				{
 					get
 					{
-						return totalReadyTime;
+						return occupancyRate;
 					}
 					set	
 					{
-						totalReadyTime = value;
-					}
-				}
-
-				public long? TotalTalkTime
-				{
-					get
-					{
-						return totalTalkTime;
-					}
-					set	
-					{
-						totalTalkTime = value;
+						occupancyRate = value;
 					}
 				}
 
@@ -1464,6 +1346,222 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						totalWorkTime = value;
+					}
+				}
+
+				public long? MaxHoldTime
+				{
+					get
+					{
+						return maxHoldTime;
+					}
+					set	
+					{
+						maxHoldTime = value;
+					}
+				}
+
+				public long? MaxWorkTime
+				{
+					get
+					{
+						return maxWorkTime;
+					}
+					set	
+					{
+						maxWorkTime = value;
+					}
+				}
+
+				public float? AverageBreakTime
+				{
+					get
+					{
+						return averageBreakTime;
+					}
+					set	
+					{
+						averageBreakTime = value;
+					}
+				}
+
+				public long? TotalHoldTime
+				{
+					get
+					{
+						return totalHoldTime;
+					}
+					set	
+					{
+						totalHoldTime = value;
+					}
+				}
+
+				public float? SatisfactionRate
+				{
+					get
+					{
+						return satisfactionRate;
+					}
+					set	
+					{
+						satisfactionRate = value;
+					}
+				}
+
+				public long? MaxBreakTime
+				{
+					get
+					{
+						return maxBreakTime;
+					}
+					set	
+					{
+						maxBreakTime = value;
+					}
+				}
+
+				public float? AverageWorkTime
+				{
+					get
+					{
+						return averageWorkTime;
+					}
+					set	
+					{
+						averageWorkTime = value;
+					}
+				}
+
+				public float? AverageTalkTime
+				{
+					get
+					{
+						return averageTalkTime;
+					}
+					set	
+					{
+						averageTalkTime = value;
+					}
+				}
+
+				public float? SatisfactionIndex
+				{
+					get
+					{
+						return satisfactionIndex;
+					}
+					set	
+					{
+						satisfactionIndex = value;
+					}
+				}
+
+				public long? SatisfactionSurveysOffered
+				{
+					get
+					{
+						return satisfactionSurveysOffered;
+					}
+					set	
+					{
+						satisfactionSurveysOffered = value;
+					}
+				}
+
+				public long? SatisfactionSurveysResponded
+				{
+					get
+					{
+						return satisfactionSurveysResponded;
+					}
+					set	
+					{
+						satisfactionSurveysResponded = value;
+					}
+				}
+
+				public long? MaxReadyTime
+				{
+					get
+					{
+						return maxReadyTime;
+					}
+					set	
+					{
+						maxReadyTime = value;
+					}
+				}
+
+				public float? AverageReadyTime
+				{
+					get
+					{
+						return averageReadyTime;
+					}
+					set	
+					{
+						averageReadyTime = value;
+					}
+				}
+
+				public float? AverageHoldTime
+				{
+					get
+					{
+						return averageHoldTime;
+					}
+					set	
+					{
+						averageHoldTime = value;
+					}
+				}
+
+				public long? TotalReadyTime
+				{
+					get
+					{
+						return totalReadyTime;
+					}
+					set	
+					{
+						totalReadyTime = value;
+					}
+				}
+
+				public long? TotalBreakTime
+				{
+					get
+					{
+						return totalBreakTime;
+					}
+					set	
+					{
+						totalBreakTime = value;
+					}
+				}
+
+				public long? MaxTalkTime
+				{
+					get
+					{
+						return maxTalkTime;
+					}
+					set	
+					{
+						maxTalkTime = value;
+					}
+				}
+
+				public long? TotalCalls
+				{
+					get
+					{
+						return totalCalls;
+					}
+					set	
+					{
+						totalCalls = value;
 					}
 				}
 			}

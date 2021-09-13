@@ -98,43 +98,47 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 		public class GetCallDetailRecord_Data
 		{
 
-			private string agentIds;
-
-			private string agentNames;
-
-			private string calledNumber;
-
-			private string callingNumber;
+			private string releaseInitiator;
 
 			private string contactDisposition;
 
-			private string contactId;
-
 			private string contactType;
 
+			private string agentIds;
+
 			private long? callDuration;
+
+			private bool? recordingReady;
 
 			private long? establishedTime;
 
 			private string instanceId;
 
-			private long? startTime;
-
-			private long? releaseTime;
-
-			private string skillGroupIds;
-
-			private string skillGroupNames;
-
 			private bool? satisfactionSurveyOffered;
+
+			private string calledNumber;
+
+			private string agentNames;
 
 			private int? satisfaction;
 
+			private long? startTime;
+
+			private string contactId;
+
 			private string satisfactionSurveyChannel;
 
-			private string releaseInitiator;
+			private long? releaseTime;
 
-			private bool? recordingReady;
+			private string callingNumber;
+
+			private string skillGroupNames;
+
+			private string skillGroupIds;
+
+			private string callerLocation;
+
+			private string calleeLocation;
 
 			private List<GetCallDetailRecord_AgentEventsItem> agentEvents;
 
@@ -142,51 +146,15 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 			private List<GetCallDetailRecord_QueueEventsItem> queueEvents;
 
-			public string AgentIds
+			public string ReleaseInitiator
 			{
 				get
 				{
-					return agentIds;
+					return releaseInitiator;
 				}
 				set	
 				{
-					agentIds = value;
-				}
-			}
-
-			public string AgentNames
-			{
-				get
-				{
-					return agentNames;
-				}
-				set	
-				{
-					agentNames = value;
-				}
-			}
-
-			public string CalledNumber
-			{
-				get
-				{
-					return calledNumber;
-				}
-				set	
-				{
-					calledNumber = value;
-				}
-			}
-
-			public string CallingNumber
-			{
-				get
-				{
-					return callingNumber;
-				}
-				set	
-				{
-					callingNumber = value;
+					releaseInitiator = value;
 				}
 			}
 
@@ -202,18 +170,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				}
 			}
 
-			public string ContactId
-			{
-				get
-				{
-					return contactId;
-				}
-				set	
-				{
-					contactId = value;
-				}
-			}
-
 			public string ContactType
 			{
 				get
@@ -226,6 +182,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				}
 			}
 
+			public string AgentIds
+			{
+				get
+				{
+					return agentIds;
+				}
+				set	
+				{
+					agentIds = value;
+				}
+			}
+
 			public long? CallDuration
 			{
 				get
@@ -235,6 +203,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				set	
 				{
 					callDuration = value;
+				}
+			}
+
+			public bool? RecordingReady
+			{
+				get
+				{
+					return recordingReady;
+				}
+				set	
+				{
+					recordingReady = value;
 				}
 			}
 
@@ -262,54 +242,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				}
 			}
 
-			public long? StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
-			public long? ReleaseTime
-			{
-				get
-				{
-					return releaseTime;
-				}
-				set	
-				{
-					releaseTime = value;
-				}
-			}
-
-			public string SkillGroupIds
-			{
-				get
-				{
-					return skillGroupIds;
-				}
-				set	
-				{
-					skillGroupIds = value;
-				}
-			}
-
-			public string SkillGroupNames
-			{
-				get
-				{
-					return skillGroupNames;
-				}
-				set	
-				{
-					skillGroupNames = value;
-				}
-			}
-
 			public bool? SatisfactionSurveyOffered
 			{
 				get
@@ -319,6 +251,30 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				set	
 				{
 					satisfactionSurveyOffered = value;
+				}
+			}
+
+			public string CalledNumber
+			{
+				get
+				{
+					return calledNumber;
+				}
+				set	
+				{
+					calledNumber = value;
+				}
+			}
+
+			public string AgentNames
+			{
+				get
+				{
+					return agentNames;
+				}
+				set	
+				{
+					agentNames = value;
 				}
 			}
 
@@ -334,6 +290,30 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				}
 			}
 
+			public long? StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			public string ContactId
+			{
+				get
+				{
+					return contactId;
+				}
+				set	
+				{
+					contactId = value;
+				}
+			}
+
 			public string SatisfactionSurveyChannel
 			{
 				get
@@ -346,27 +326,75 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				}
 			}
 
-			public string ReleaseInitiator
+			public long? ReleaseTime
 			{
 				get
 				{
-					return releaseInitiator;
+					return releaseTime;
 				}
 				set	
 				{
-					releaseInitiator = value;
+					releaseTime = value;
 				}
 			}
 
-			public bool? RecordingReady
+			public string CallingNumber
 			{
 				get
 				{
-					return recordingReady;
+					return callingNumber;
 				}
 				set	
 				{
-					recordingReady = value;
+					callingNumber = value;
+				}
+			}
+
+			public string SkillGroupNames
+			{
+				get
+				{
+					return skillGroupNames;
+				}
+				set	
+				{
+					skillGroupNames = value;
+				}
+			}
+
+			public string SkillGroupIds
+			{
+				get
+				{
+					return skillGroupIds;
+				}
+				set	
+				{
+					skillGroupIds = value;
+				}
+			}
+
+			public string CallerLocation
+			{
+				get
+				{
+					return callerLocation;
+				}
+				set	
+				{
+					callerLocation = value;
+				}
+			}
+
+			public string CalleeLocation
+			{
+				get
+				{
+					return calleeLocation;
+				}
+				set	
+				{
+					calleeLocation = value;
 				}
 			}
 
@@ -409,25 +437,13 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			public class GetCallDetailRecord_AgentEventsItem
 			{
 
-				private string agentId;
-
 				private string agentName;
+
+				private string agentId;
 
 				private string skillGroupId;
 
 				private List<GetCallDetailRecord_EventSequenceItem> eventSequence;
-
-				public string AgentId
-				{
-					get
-					{
-						return agentId;
-					}
-					set	
-					{
-						agentId = value;
-					}
-				}
 
 				public string AgentName
 				{
@@ -438,6 +454,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						agentName = value;
+					}
+				}
+
+				public string AgentId
+				{
+					get
+					{
+						return agentId;
+					}
+					set	
+					{
+						agentId = value;
 					}
 				}
 
@@ -565,27 +593,15 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			public class GetCallDetailRecord_QueueEventsItem
 			{
 
-				private string flowId;
-
 				private string queueId;
 
 				private string queueName;
 
+				private string flowId;
+
 				private int? queueType;
 
 				private List<GetCallDetailRecord_EventSequenceItem4> eventSequence3;
-
-				public string FlowId
-				{
-					get
-					{
-						return flowId;
-					}
-					set	
-					{
-						flowId = value;
-					}
-				}
 
 				public string QueueId
 				{
@@ -608,6 +624,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						queueName = value;
+					}
+				}
+
+				public string FlowId
+				{
+					get
+					{
+						return flowId;
+					}
+					set	
+					{
+						flowId = value;
 					}
 				}
 

@@ -27,10 +27,10 @@ using Aliyun.Acs.CCC.Transform.V20200701;
 
 namespace Aliyun.Acs.CCC.Model.V20200701
 {
-    public class StartBack2BackCallRequest : RpcAcsRequest<StartBack2BackCallResponse>
+    public class ListUnassignedNumbersRequest : RpcAcsRequest<ListUnassignedNumbersResponse>
     {
-        public StartBack2BackCallRequest()
-            : base("CCC", "2020-07-01", "StartBack2BackCall", "CCC", "openAPI")
+        public ListUnassignedNumbersRequest()
+            : base("CCC", "2020-07-01", "ListUnassignedNumbers", "CCC", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,95 +40,37 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			Method = MethodType.POST;
         }
 
-		private string callee;
+		private int? pageNumber;
 
-		private string broker;
-
-		private string additionalBroker;
-
-		private string tags;
-
-		private int? timeoutSeconds;
-
-		private string caller;
+		private string searchPattern;
 
 		private string instanceId;
 
-		public string Callee
+		private int? pageSize;
+
+		public int? PageNumber
 		{
 			get
 			{
-				return callee;
+				return pageNumber;
 			}
 			set	
 			{
-				callee = value;
-				DictionaryUtil.Add(QueryParameters, "Callee", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string Broker
+		public string SearchPattern
 		{
 			get
 			{
-				return broker;
+				return searchPattern;
 			}
 			set	
 			{
-				broker = value;
-				DictionaryUtil.Add(QueryParameters, "Broker", value);
-			}
-		}
-
-		public string AdditionalBroker
-		{
-			get
-			{
-				return additionalBroker;
-			}
-			set	
-			{
-				additionalBroker = value;
-				DictionaryUtil.Add(QueryParameters, "AdditionalBroker", value);
-			}
-		}
-
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
-		public int? TimeoutSeconds
-		{
-			get
-			{
-				return timeoutSeconds;
-			}
-			set	
-			{
-				timeoutSeconds = value;
-				DictionaryUtil.Add(QueryParameters, "TimeoutSeconds", value.ToString());
-			}
-		}
-
-		public string Caller
-		{
-			get
-			{
-				return caller;
-			}
-			set	
-			{
-				caller = value;
-				DictionaryUtil.Add(QueryParameters, "Caller", value);
+				searchPattern = value;
+				DictionaryUtil.Add(QueryParameters, "SearchPattern", value);
 			}
 		}
 
@@ -145,14 +87,27 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			}
 		}
 
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override StartBack2BackCallResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListUnassignedNumbersResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StartBack2BackCallResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListUnassignedNumbersResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

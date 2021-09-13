@@ -216,77 +216,41 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				public class MakeCall_ChannelContext
 				{
 
-					private string associatedData;
-
-					private string callType;
-
-					private string channelFlags;
-
-					private string channelId;
+					private string releaseInitiator;
 
 					private string channelState;
 
 					private string destination;
 
-					private string jobId;
+					private string userId;
 
-					private string originator;
-
-					private string releaseInitiator;
-
-					private string releaseReason;
+					private string channelFlags;
 
 					private long? timestamp;
 
+					private string associatedData;
+
+					private string releaseReason;
+
+					private string callType;
+
+					private string jobId;
+
+					private string channelId;
+
+					private string originator;
+
 					private string userExtension;
 
-					private string userId;
-
-					public string AssociatedData
+					public string ReleaseInitiator
 					{
 						get
 						{
-							return associatedData;
+							return releaseInitiator;
 						}
 						set	
 						{
-							associatedData = value;
-						}
-					}
-
-					public string CallType
-					{
-						get
-						{
-							return callType;
-						}
-						set	
-						{
-							callType = value;
-						}
-					}
-
-					public string ChannelFlags
-					{
-						get
-						{
-							return channelFlags;
-						}
-						set	
-						{
-							channelFlags = value;
-						}
-					}
-
-					public string ChannelId
-					{
-						get
-						{
-							return channelId;
-						}
-						set	
-						{
-							channelId = value;
+							releaseInitiator = value;
 						}
 					}
 
@@ -314,51 +278,27 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 						}
 					}
 
-					public string JobId
+					public string UserId
 					{
 						get
 						{
-							return jobId;
+							return userId;
 						}
 						set	
 						{
-							jobId = value;
+							userId = value;
 						}
 					}
 
-					public string Originator
+					public string ChannelFlags
 					{
 						get
 						{
-							return originator;
+							return channelFlags;
 						}
 						set	
 						{
-							originator = value;
-						}
-					}
-
-					public string ReleaseInitiator
-					{
-						get
-						{
-							return releaseInitiator;
-						}
-						set	
-						{
-							releaseInitiator = value;
-						}
-					}
-
-					public string ReleaseReason
-					{
-						get
-						{
-							return releaseReason;
-						}
-						set	
-						{
-							releaseReason = value;
+							channelFlags = value;
 						}
 					}
 
@@ -374,6 +314,78 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 						}
 					}
 
+					public string AssociatedData
+					{
+						get
+						{
+							return associatedData;
+						}
+						set	
+						{
+							associatedData = value;
+						}
+					}
+
+					public string ReleaseReason
+					{
+						get
+						{
+							return releaseReason;
+						}
+						set	
+						{
+							releaseReason = value;
+						}
+					}
+
+					public string CallType
+					{
+						get
+						{
+							return callType;
+						}
+						set	
+						{
+							callType = value;
+						}
+					}
+
+					public string JobId
+					{
+						get
+						{
+							return jobId;
+						}
+						set	
+						{
+							jobId = value;
+						}
+					}
+
+					public string ChannelId
+					{
+						get
+						{
+							return channelId;
+						}
+						set	
+						{
+							channelId = value;
+						}
+					}
+
+					public string Originator
+					{
+						get
+						{
+							return originator;
+						}
+						set	
+						{
+							originator = value;
+						}
+					}
+
 					public string UserExtension
 					{
 						get
@@ -385,53 +397,53 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 							userExtension = value;
 						}
 					}
-
-					public string UserId
-					{
-						get
-						{
-							return userId;
-						}
-						set	
-						{
-							userId = value;
-						}
-					}
 				}
 			}
 
 			public class MakeCall_UserContext
 			{
 
-				private string breakCode;
-
-				private string deviceId;
-
 				private string extension;
-
-				private string instanceId;
-
-				private string jobId;
-
-				private bool? outboundScenario;
-
-				private string userId;
-
-				private string userState;
 
 				private string workMode;
 
+				private string deviceId;
+
+				private string jobId;
+
+				private string userId;
+
+				private string breakCode;
+
+				private string instanceId;
+
+				private bool? outboundScenario;
+
+				private string userState;
+
 				private List<string> signedSkillGroupIdList;
 
-				public string BreakCode
+				public string Extension
 				{
 					get
 					{
-						return breakCode;
+						return extension;
 					}
 					set	
 					{
-						breakCode = value;
+						extension = value;
+					}
+				}
+
+				public string WorkMode
+				{
+					get
+					{
+						return workMode;
+					}
+					set	
+					{
+						workMode = value;
 					}
 				}
 
@@ -447,30 +459,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public string Extension
-				{
-					get
-					{
-						return extension;
-					}
-					set	
-					{
-						extension = value;
-					}
-				}
-
-				public string InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
-
 				public string JobId
 				{
 					get
@@ -480,18 +468,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						jobId = value;
-					}
-				}
-
-				public bool? OutboundScenario
-				{
-					get
-					{
-						return outboundScenario;
-					}
-					set	
-					{
-						outboundScenario = value;
 					}
 				}
 
@@ -507,6 +483,42 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
+				public string BreakCode
+				{
+					get
+					{
+						return breakCode;
+					}
+					set	
+					{
+						breakCode = value;
+					}
+				}
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
+
+				public bool? OutboundScenario
+				{
+					get
+					{
+						return outboundScenario;
+					}
+					set	
+					{
+						outboundScenario = value;
+					}
+				}
+
 				public string UserState
 				{
 					get
@@ -516,18 +528,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						userState = value;
-					}
-				}
-
-				public string WorkMode
-				{
-					get
-					{
-						return workMode;
-					}
-					set	
-					{
-						workMode = value;
 					}
 				}
 
