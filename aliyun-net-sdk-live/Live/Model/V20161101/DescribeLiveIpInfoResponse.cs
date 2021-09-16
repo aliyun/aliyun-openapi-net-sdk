@@ -22,12 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeLiveDomainRecordUsageDataResponse : AcsResponse
+	public class DescribeLiveIpInfoResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeLiveDomainRecordUsageData_DataModule> recordUsageData;
+		private string iSP;
+
+		private string ispEname;
+
+		private string region;
+
+		private string regionEname;
 
 		public string RequestId
 		{
@@ -41,89 +47,51 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<DescribeLiveDomainRecordUsageData_DataModule> RecordUsageData
+		public string ISP
 		{
 			get
 			{
-				return recordUsageData;
+				return iSP;
 			}
 			set	
 			{
-				recordUsageData = value;
+				iSP = value;
 			}
 		}
 
-		public class DescribeLiveDomainRecordUsageData_DataModule
+		public string IspEname
 		{
-
-			private string timeStamp;
-
-			private string domain;
-
-			private string type;
-
-			private long? duration;
-
-			private long? count;
-
-			public string TimeStamp
+			get
 			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
+				return ispEname;
 			}
-
-			public string Domain
+			set	
 			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
-				}
+				ispEname = value;
 			}
+		}
 
-			public string Type
+		public string Region
+		{
+			get
 			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
+				return region;
 			}
-
-			public long? Duration
+			set	
 			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
-				}
+				region = value;
 			}
+		}
 
-			public long? Count
+		public string RegionEname
+		{
+			get
 			{
-				get
-				{
-					return count;
-				}
-				set	
-				{
-					count = value;
-				}
+				return regionEname;
+			}
+			set	
+			{
+				regionEname = value;
 			}
 		}
 	}

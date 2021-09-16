@@ -22,12 +22,22 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeLiveDomainRecordUsageDataResponse : AcsResponse
+	public class DescribeLiveEdgeTransferResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeLiveDomainRecordUsageData_DataModule> recordUsageData;
+		private string domainName;
+
+		private string appName;
+
+		private string streamName;
+
+		private string targetDomainList;
+
+		private string transferArgs;
+
+		private string httpDns;
 
 		public string RequestId
 		{
@@ -41,89 +51,75 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<DescribeLiveDomainRecordUsageData_DataModule> RecordUsageData
+		public string DomainName
 		{
 			get
 			{
-				return recordUsageData;
+				return domainName;
 			}
 			set	
 			{
-				recordUsageData = value;
+				domainName = value;
 			}
 		}
 
-		public class DescribeLiveDomainRecordUsageData_DataModule
+		public string AppName
 		{
-
-			private string timeStamp;
-
-			private string domain;
-
-			private string type;
-
-			private long? duration;
-
-			private long? count;
-
-			public string TimeStamp
+			get
 			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
+				return appName;
 			}
-
-			public string Domain
+			set	
 			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
-				}
+				appName = value;
 			}
+		}
 
-			public string Type
+		public string StreamName
+		{
+			get
 			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
+				return streamName;
 			}
-
-			public long? Duration
+			set	
 			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
-				}
+				streamName = value;
 			}
+		}
 
-			public long? Count
+		public string TargetDomainList
+		{
+			get
 			{
-				get
-				{
-					return count;
-				}
-				set	
-				{
-					count = value;
-				}
+				return targetDomainList;
+			}
+			set	
+			{
+				targetDomainList = value;
+			}
+		}
+
+		public string TransferArgs
+		{
+			get
+			{
+				return transferArgs;
+			}
+			set	
+			{
+				transferArgs = value;
+			}
+		}
+
+		public string HttpDns
+		{
+			get
+			{
+				return httpDns;
+			}
+			set	
+			{
+				httpDns = value;
 			}
 		}
 	}

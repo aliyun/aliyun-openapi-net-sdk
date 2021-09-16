@@ -22,12 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeLiveDomainRecordUsageDataResponse : AcsResponse
+	public class GetCustomTemplateResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeLiveDomainRecordUsageData_DataModule> recordUsageData;
+		private string template;
+
+		private string customTemplate;
 
 		public string RequestId
 		{
@@ -41,89 +43,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<DescribeLiveDomainRecordUsageData_DataModule> RecordUsageData
+		public string Template
 		{
 			get
 			{
-				return recordUsageData;
+				return template;
 			}
 			set	
 			{
-				recordUsageData = value;
+				template = value;
 			}
 		}
 
-		public class DescribeLiveDomainRecordUsageData_DataModule
+		public string CustomTemplate
 		{
-
-			private string timeStamp;
-
-			private string domain;
-
-			private string type;
-
-			private long? duration;
-
-			private long? count;
-
-			public string TimeStamp
+			get
 			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
+				return customTemplate;
 			}
-
-			public string Domain
+			set	
 			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
-				}
-			}
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-
-			public long? Duration
-			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
-				}
-			}
-
-			public long? Count
-			{
-				get
-				{
-					return count;
-				}
-				set	
-				{
-					count = value;
-				}
+				customTemplate = value;
 			}
 		}
 	}

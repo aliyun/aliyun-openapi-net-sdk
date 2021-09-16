@@ -42,6 +42,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				scene.OutputType = _ctx.StringValue("DescribeCasterScenes.SceneList["+ i +"].OutputType");
 				scene.LayoutId = _ctx.StringValue("DescribeCasterScenes.SceneList["+ i +"].LayoutId");
 				scene.StreamUrl = _ctx.StringValue("DescribeCasterScenes.SceneList["+ i +"].StreamUrl");
+				scene.RtsUrl = _ctx.StringValue("DescribeCasterScenes.SceneList["+ i +"].RtsUrl");
 				scene.Status = _ctx.IntegerValue("DescribeCasterScenes.SceneList["+ i +"].Status");
 
 				List<string> scene_componentIds = new List<string>();

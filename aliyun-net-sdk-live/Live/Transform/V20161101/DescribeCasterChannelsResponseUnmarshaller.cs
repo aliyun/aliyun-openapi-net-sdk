@@ -41,6 +41,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				channel.ResourceId = _ctx.StringValue("DescribeCasterChannels.Channels["+ i +"].ResourceId");
 				channel.StreamUrl = _ctx.StringValue("DescribeCasterChannels.Channels["+ i +"].StreamUrl");
 				channel.RtmpUrl = _ctx.StringValue("DescribeCasterChannels.Channels["+ i +"].RtmpUrl");
+				channel.RtsUrl = _ctx.StringValue("DescribeCasterChannels.Channels["+ i +"].RtsUrl");
+				channel.InputType = _ctx.IntegerValue("DescribeCasterChannels.Channels["+ i +"].InputType");
+				channel.FaceBeauty = _ctx.StringValue("DescribeCasterChannels.Channels["+ i +"].FaceBeauty");
 
 				describeCasterChannelsResponse_channels.Add(channel);
 			}

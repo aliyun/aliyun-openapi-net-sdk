@@ -146,6 +146,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private List<DescribeLiveRecordConfig_RecordFormat> recordFormatList;
 
+			private List<DescribeLiveRecordConfig_RecordFormat> transcodeRecordFormatList;
+
+			private List<string> transcodeTemplates;
+
 			public string DomainName
 			{
 				get
@@ -266,6 +270,30 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
+			public List<DescribeLiveRecordConfig_RecordFormat> TranscodeRecordFormatList
+			{
+				get
+				{
+					return transcodeRecordFormatList;
+				}
+				set	
+				{
+					transcodeRecordFormatList = value;
+				}
+			}
+
+			public List<string> TranscodeTemplates
+			{
+				get
+				{
+					return transcodeTemplates;
+				}
+				set	
+				{
+					transcodeTemplates = value;
+				}
+			}
+
 			public class DescribeLiveRecordConfig_RecordFormat
 			{
 
@@ -276,6 +304,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 				private string sliceOssObjectPrefix;
 
 				private int? cycleDuration;
+
+				private int? sliceDuration;
 
 				public string Format
 				{
@@ -322,6 +352,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						cycleDuration = value;
+					}
+				}
+
+				public int? SliceDuration
+				{
+					get
+					{
+						return sliceDuration;
+					}
+					set	
+					{
+						sliceDuration = value;
 					}
 				}
 			}

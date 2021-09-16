@@ -27,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class SetLiveStreamsNotifyUrlConfigRequest : RpcAcsRequest<SetLiveStreamsNotifyUrlConfigResponse>
+    public class DescribeLiveIpInfoRequest : RpcAcsRequest<DescribeLiveIpInfoResponse>
     {
-        public SetLiveStreamsNotifyUrlConfigRequest()
-            : base("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig", "live", "openAPI")
+        public DescribeLiveIpInfoRequest()
+            : base("live", "2016-11-01", "DescribeLiveIpInfo", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,52 +40,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string notifyReqAuth;
-
-		private string notifyUrl;
-
-		private string domainName;
+		private string iP;
 
 		private long? ownerId;
 
-		private string notifyAuthKey;
-
-		public string NotifyReqAuth
+		public string IP
 		{
 			get
 			{
-				return notifyReqAuth;
+				return iP;
 			}
 			set	
 			{
-				notifyReqAuth = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyReqAuth", value);
-			}
-		}
-
-		public string NotifyUrl
-		{
-			get
-			{
-				return notifyUrl;
-			}
-			set	
-			{
-				notifyUrl = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyUrl", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				iP = value;
+				DictionaryUtil.Add(QueryParameters, "IP", value);
 			}
 		}
 
@@ -102,22 +70,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string NotifyAuthKey
-		{
-			get
-			{
-				return notifyAuthKey;
-			}
-			set	
-			{
-				notifyAuthKey = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyAuthKey", value);
-			}
-		}
-
-        public override SetLiveStreamsNotifyUrlConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeLiveIpInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetLiveStreamsNotifyUrlConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLiveIpInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -80,6 +80,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string liveStreamUrl;
 
+			private string flvUrl;
+
 			private int? repeatNum;
 
 			private string vodUrl;
@@ -147,6 +149,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					liveStreamUrl = value;
+				}
+			}
+
+			public string FlvUrl
+			{
+				get
+				{
+					return flvUrl;
+				}
+				set	
+				{
+					flvUrl = value;
 				}
 			}
 

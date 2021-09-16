@@ -22,12 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeLiveDomainRecordUsageDataResponse : AcsResponse
+	public class DescribeLiveStreamStateResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeLiveDomainRecordUsageData_DataModule> recordUsageData;
+		private string streamState;
+
+		private string type;
 
 		public string RequestId
 		{
@@ -41,89 +43,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<DescribeLiveDomainRecordUsageData_DataModule> RecordUsageData
+		public string StreamState
 		{
 			get
 			{
-				return recordUsageData;
+				return streamState;
 			}
 			set	
 			{
-				recordUsageData = value;
+				streamState = value;
 			}
 		}
 
-		public class DescribeLiveDomainRecordUsageData_DataModule
+		public string Type
 		{
-
-			private string timeStamp;
-
-			private string domain;
-
-			private string type;
-
-			private long? duration;
-
-			private long? count;
-
-			public string TimeStamp
+			get
 			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
+				return type;
 			}
-
-			public string Domain
+			set	
 			{
-				get
-				{
-					return domain;
-				}
-				set	
-				{
-					domain = value;
-				}
-			}
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-
-			public long? Duration
-			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
-				}
-			}
-
-			public long? Count
-			{
-				get
-				{
-					return count;
-				}
-				set	
-				{
-					count = value;
-				}
+				type = value;
 			}
 		}
 	}

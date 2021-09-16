@@ -27,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class SetLiveStreamsNotifyUrlConfigRequest : RpcAcsRequest<SetLiveStreamsNotifyUrlConfigResponse>
+    public class CreateCustomTemplateRequest : RpcAcsRequest<CreateCustomTemplateResponse>
     {
-        public SetLiveStreamsNotifyUrlConfigRequest()
-            : base("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig", "live", "openAPI")
+        public CreateCustomTemplateRequest()
+            : base("live", "2016-11-01", "CreateCustomTemplate", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,52 +40,35 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string notifyReqAuth;
+		private string template;
 
-		private string notifyUrl;
-
-		private string domainName;
+		private string customTemplate;
 
 		private long? ownerId;
 
-		private string notifyAuthKey;
-
-		public string NotifyReqAuth
+		public string Template
 		{
 			get
 			{
-				return notifyReqAuth;
+				return template;
 			}
 			set	
 			{
-				notifyReqAuth = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyReqAuth", value);
+				template = value;
+				DictionaryUtil.Add(QueryParameters, "Template", value);
 			}
 		}
 
-		public string NotifyUrl
+		public string CustomTemplate
 		{
 			get
 			{
-				return notifyUrl;
+				return customTemplate;
 			}
 			set	
 			{
-				notifyUrl = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyUrl", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				customTemplate = value;
+				DictionaryUtil.Add(QueryParameters, "CustomTemplate", value);
 			}
 		}
 
@@ -102,22 +85,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string NotifyAuthKey
-		{
-			get
-			{
-				return notifyAuthKey;
-			}
-			set	
-			{
-				notifyAuthKey = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyAuthKey", value);
-			}
-		}
-
-        public override SetLiveStreamsNotifyUrlConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateCustomTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetLiveStreamsNotifyUrlConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateCustomTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

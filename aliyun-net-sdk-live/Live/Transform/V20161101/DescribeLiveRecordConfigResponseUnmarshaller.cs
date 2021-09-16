@@ -51,6 +51,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				liveAppRecord.EndTime = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].EndTime");
 				liveAppRecord.OnDemond = _ctx.IntegerValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].OnDemond");
 
+				List<string> liveAppRecord_transcodeTemplates = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].TranscodeTemplates.Length"); j++) {
+					liveAppRecord_transcodeTemplates.Add(_ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].TranscodeTemplates["+ j +"]"));
+				}
+				liveAppRecord.TranscodeTemplates = liveAppRecord_transcodeTemplates;
+
 				List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat> liveAppRecord_recordFormatList = new List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat>();
 				for (int j = 0; j < _ctx.Length("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList.Length"); j++) {
 					DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat recordFormat = new DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat();
@@ -58,10 +64,24 @@ namespace Aliyun.Acs.live.Transform.V20161101
 					recordFormat.OssObjectPrefix = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].OssObjectPrefix");
 					recordFormat.SliceOssObjectPrefix = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].SliceOssObjectPrefix");
 					recordFormat.CycleDuration = _ctx.IntegerValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].CycleDuration");
+					recordFormat.SliceDuration = _ctx.IntegerValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].RecordFormatList["+ j +"].SliceDuration");
 
 					liveAppRecord_recordFormatList.Add(recordFormat);
 				}
 				liveAppRecord.RecordFormatList = liveAppRecord_recordFormatList;
+
+				List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat> liveAppRecord_transcodeRecordFormatList = new List<DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat>();
+				for (int j = 0; j < _ctx.Length("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].TranscodeRecordFormatList.Length"); j++) {
+					DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat recordFormat = new DescribeLiveRecordConfigResponse.DescribeLiveRecordConfig_LiveAppRecord.DescribeLiveRecordConfig_RecordFormat();
+					recordFormat.Format = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].Format");
+					recordFormat.OssObjectPrefix = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].OssObjectPrefix");
+					recordFormat.SliceOssObjectPrefix = _ctx.StringValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].SliceOssObjectPrefix");
+					recordFormat.CycleDuration = _ctx.IntegerValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].CycleDuration");
+					recordFormat.SliceDuration = _ctx.IntegerValue("DescribeLiveRecordConfig.LiveAppRecordList["+ i +"].TranscodeRecordFormatList["+ j +"].SliceDuration");
+
+					liveAppRecord_transcodeRecordFormatList.Add(recordFormat);
+				}
+				liveAppRecord.TranscodeRecordFormatList = liveAppRecord_transcodeRecordFormatList;
 
 				describeLiveRecordConfigResponse_liveAppRecordList.Add(liveAppRecord);
 			}

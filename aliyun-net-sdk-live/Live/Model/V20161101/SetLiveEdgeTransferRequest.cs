@@ -27,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class SetLiveStreamsNotifyUrlConfigRequest : RpcAcsRequest<SetLiveStreamsNotifyUrlConfigResponse>
+    public class SetLiveEdgeTransferRequest : RpcAcsRequest<SetLiveEdgeTransferResponse>
     {
-        public SetLiveStreamsNotifyUrlConfigRequest()
-            : base("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig", "live", "openAPI")
+        public SetLiveEdgeTransferRequest()
+            : base("live", "2016-11-01", "SetLiveEdgeTransfer", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,39 +40,69 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string notifyReqAuth;
+		private string transferArgs;
 
-		private string notifyUrl;
+		private string appName;
+
+		private string streamName;
+
+		private string targetDomainList;
 
 		private string domainName;
 
 		private long? ownerId;
 
-		private string notifyAuthKey;
+		private string httpDns;
 
-		public string NotifyReqAuth
+		public string TransferArgs
 		{
 			get
 			{
-				return notifyReqAuth;
+				return transferArgs;
 			}
 			set	
 			{
-				notifyReqAuth = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyReqAuth", value);
+				transferArgs = value;
+				DictionaryUtil.Add(QueryParameters, "TransferArgs", value);
 			}
 		}
 
-		public string NotifyUrl
+		public string AppName
 		{
 			get
 			{
-				return notifyUrl;
+				return appName;
 			}
 			set	
 			{
-				notifyUrl = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyUrl", value);
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
+
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+			}
+		}
+
+		public string TargetDomainList
+		{
+			get
+			{
+				return targetDomainList;
+			}
+			set	
+			{
+				targetDomainList = value;
+				DictionaryUtil.Add(QueryParameters, "TargetDomainList", value);
 			}
 		}
 
@@ -102,22 +132,22 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string NotifyAuthKey
+		public string HttpDns
 		{
 			get
 			{
-				return notifyAuthKey;
+				return httpDns;
 			}
 			set	
 			{
-				notifyAuthKey = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyAuthKey", value);
+				httpDns = value;
+				DictionaryUtil.Add(QueryParameters, "HttpDns", value);
 			}
 		}
 
-        public override SetLiveStreamsNotifyUrlConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SetLiveEdgeTransferResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetLiveStreamsNotifyUrlConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetLiveEdgeTransferResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

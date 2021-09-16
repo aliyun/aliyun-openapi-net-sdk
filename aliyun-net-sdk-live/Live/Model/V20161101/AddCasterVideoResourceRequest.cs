@@ -40,6 +40,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
+		private int? inputType;
+
 		private int? endOffset;
 
 		private string materialId;
@@ -52,6 +54,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
+		private int? streamMonitor;
+
 		private int? beginOffset;
 
 		private string liveStreamUrl;
@@ -63,6 +67,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string resourceName;
 
 		private int? repeatNum;
+
+		public int? InputType
+		{
+			get
+			{
+				return inputType;
+			}
+			set	
+			{
+				inputType = value;
+				DictionaryUtil.Add(QueryParameters, "InputType", value.ToString());
+			}
+		}
 
 		public int? EndOffset
 		{
@@ -139,6 +156,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? StreamMonitor
+		{
+			get
+			{
+				return streamMonitor;
+			}
+			set	
+			{
+				streamMonitor = value;
+				DictionaryUtil.Add(QueryParameters, "StreamMonitor", value.ToString());
 			}
 		}
 

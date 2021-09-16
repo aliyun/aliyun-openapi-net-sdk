@@ -27,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class SetLiveStreamsNotifyUrlConfigRequest : RpcAcsRequest<SetLiveStreamsNotifyUrlConfigResponse>
+    public class GetCustomTemplateRequest : RpcAcsRequest<GetCustomTemplateResponse>
     {
-        public SetLiveStreamsNotifyUrlConfigRequest()
-            : base("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig", "live", "openAPI")
+        public GetCustomTemplateRequest()
+            : base("live", "2016-11-01", "GetCustomTemplate", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,52 +40,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string notifyReqAuth;
-
-		private string notifyUrl;
-
-		private string domainName;
+		private string template;
 
 		private long? ownerId;
 
-		private string notifyAuthKey;
-
-		public string NotifyReqAuth
+		public string Template
 		{
 			get
 			{
-				return notifyReqAuth;
+				return template;
 			}
 			set	
 			{
-				notifyReqAuth = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyReqAuth", value);
-			}
-		}
-
-		public string NotifyUrl
-		{
-			get
-			{
-				return notifyUrl;
-			}
-			set	
-			{
-				notifyUrl = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyUrl", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				template = value;
+				DictionaryUtil.Add(QueryParameters, "Template", value);
 			}
 		}
 
@@ -102,22 +70,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string NotifyAuthKey
-		{
-			get
-			{
-				return notifyAuthKey;
-			}
-			set	
-			{
-				notifyAuthKey = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyAuthKey", value);
-			}
-		}
-
-        public override SetLiveStreamsNotifyUrlConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetCustomTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetLiveStreamsNotifyUrlConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetCustomTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

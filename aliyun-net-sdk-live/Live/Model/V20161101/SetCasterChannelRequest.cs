@@ -40,6 +40,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
+		private string faceBeauty;
+
 		private int? seekOffset;
 
 		private int? playStatus;
@@ -51,6 +53,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private long? ownerId;
 
 		private string channelId;
+
+		public string FaceBeauty
+		{
+			get
+			{
+				return faceBeauty;
+			}
+			set	
+			{
+				faceBeauty = value;
+				DictionaryUtil.Add(QueryParameters, "FaceBeauty", value);
+			}
+		}
 
 		public int? SeekOffset
 		{

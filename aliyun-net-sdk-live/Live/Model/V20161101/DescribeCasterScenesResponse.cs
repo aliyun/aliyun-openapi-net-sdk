@@ -80,6 +80,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string streamUrl;
 
+			private string rtsUrl;
+
 			private int? status;
 
 			private List<DescribeCasterScenes_StreamInfo> streamInfos;
@@ -143,6 +145,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					streamUrl = value;
+				}
+			}
+
+			public string RtsUrl
+			{
+				get
+				{
+					return rtsUrl;
+				}
+				set	
+				{
+					rtsUrl = value;
 				}
 			}
 

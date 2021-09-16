@@ -38,6 +38,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				StartCasterResponse.StartCaster_SceneInfo sceneInfo = new StartCasterResponse.StartCaster_SceneInfo();
 				sceneInfo.SceneId = _ctx.StringValue("StartCaster.PvwSceneInfos["+ i +"].SceneId");
 				sceneInfo.StreamUrl = _ctx.StringValue("StartCaster.PvwSceneInfos["+ i +"].StreamUrl");
+				sceneInfo.RtsUrl = _ctx.StringValue("StartCaster.PvwSceneInfos["+ i +"].RtsUrl");
 
 				startCasterResponse_pvwSceneInfos.Add(sceneInfo);
 			}
@@ -48,6 +49,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				StartCasterResponse.StartCaster_SceneInfo1 sceneInfo1 = new StartCasterResponse.StartCaster_SceneInfo1();
 				sceneInfo1.SceneId = _ctx.StringValue("StartCaster.PgmSceneInfos["+ i +"].SceneId");
 				sceneInfo1.StreamUrl = _ctx.StringValue("StartCaster.PgmSceneInfos["+ i +"].StreamUrl");
+				sceneInfo1.RtsUrl = _ctx.StringValue("StartCaster.PgmSceneInfos["+ i +"].RtsUrl");
 
 				List<StartCasterResponse.StartCaster_SceneInfo1.StartCaster_StreamInfo> sceneInfo1_streamInfos = new List<StartCasterResponse.StartCaster_SceneInfo1.StartCaster_StreamInfo>();
 				for (int j = 0; j < _ctx.Length("StartCaster.PgmSceneInfos["+ i +"].StreamInfos.Length"); j++) {

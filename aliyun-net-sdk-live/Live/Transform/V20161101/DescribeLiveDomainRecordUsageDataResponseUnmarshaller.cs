@@ -39,7 +39,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				dataModule.TimeStamp = _ctx.StringValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].TimeStamp");
 				dataModule.Domain = _ctx.StringValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].Domain");
 				dataModule.Type = _ctx.StringValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].Type");
-				dataModule.Size = _ctx.LongValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].Size");
+				dataModule.Duration = _ctx.LongValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].Duration");
 				dataModule.Count = _ctx.LongValue("DescribeLiveDomainRecordUsageData.RecordUsageData["+ i +"].Count");
 
 				describeLiveDomainRecordUsageDataResponse_recordUsageData.Add(dataModule);
