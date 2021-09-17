@@ -63,6 +63,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string androidPopupTitle;
 
+		private string androidMessageHuaweiCategory;
+
 		private string iOSMusic;
 
 		private string iOSApnsEnv;
@@ -105,6 +107,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string iOSNotificationCollapseId;
 
+		private string androidMessageHuaweiUrgency;
+
 		private string pushType;
 
 		private string androidExtParameters;
@@ -134,6 +138,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		private string androidBigPictureUrl;
 
 		private bool? iOSSilentNotification;
+
+		private string sendChannels;
 
 		private string target;
 
@@ -297,6 +303,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				androidPopupTitle = value;
 				DictionaryUtil.Add(QueryParameters, "AndroidPopupTitle", value);
+			}
+		}
+
+		public string AndroidMessageHuaweiCategory
+		{
+			get
+			{
+				return androidMessageHuaweiCategory;
+			}
+			set	
+			{
+				androidMessageHuaweiCategory = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidMessageHuaweiCategory", value);
 			}
 		}
 
@@ -573,6 +592,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public string AndroidMessageHuaweiUrgency
+		{
+			get
+			{
+				return androidMessageHuaweiUrgency;
+			}
+			set	
+			{
+				androidMessageHuaweiUrgency = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidMessageHuaweiUrgency", value);
+			}
+		}
+
 		public string PushType
 		{
 			get
@@ -765,6 +797,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				iOSSilentNotification = value;
 				DictionaryUtil.Add(QueryParameters, "iOSSilentNotification", value.ToString());
+			}
+		}
+
+		public string SendChannels
+		{
+			get
+			{
+				return sendChannels;
+			}
+			set	
+			{
+				sendChannels = value;
+				DictionaryUtil.Add(QueryParameters, "SendChannels", value);
 			}
 		}
 

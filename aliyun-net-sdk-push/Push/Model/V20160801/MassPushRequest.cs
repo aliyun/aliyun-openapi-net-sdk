@@ -67,6 +67,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSRemindBody", pushTasks[i].IOSRemindBody);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotifyType", pushTasks[i].AndroidNotifyType);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidPopupTitle", pushTasks[i].AndroidPopupTitle);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidMessageHuaweiCategory", pushTasks[i].AndroidMessageHuaweiCategory);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSMusic", pushTasks[i].IOSMusic);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSApnsEnv", pushTasks[i].IOSApnsEnv);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSMutableContent", pushTasks[i].IOSMutableContent);
@@ -87,6 +88,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSNotificationThreadId", pushTasks[i].IOSNotificationThreadId);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidMusic", pushTasks[i].AndroidMusic);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSNotificationCollapseId", pushTasks[i].IOSNotificationCollapseId);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidMessageHuaweiUrgency", pushTasks[i].AndroidMessageHuaweiUrgency);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".PushType", pushTasks[i].PushType);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidExtParameters", pushTasks[i].AndroidExtParameters);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSBadge", pushTasks[i].IOSBadge);
@@ -100,6 +102,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidPopupBody", pushTasks[i].AndroidPopupBody);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidBigPictureUrl", pushTasks[i].AndroidBigPictureUrl);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSSilentNotification", pushTasks[i].IOSSilentNotification);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".SendChannels", pushTasks[i].SendChannels);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".Target", pushTasks[i].Target);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidBigTitle", pushTasks[i].AndroidBigTitle);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationChannel", pushTasks[i].AndroidNotificationChannel);
@@ -149,6 +152,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string androidPopupTitle;
 
+			private string androidMessageHuaweiCategory;
+
 			private string iOSMusic;
 
 			private string iOSApnsEnv;
@@ -189,6 +194,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private string iOSNotificationCollapseId;
 
+			private string androidMessageHuaweiUrgency;
+
 			private string pushType;
 
 			private string androidExtParameters;
@@ -214,6 +221,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private string androidBigPictureUrl;
 
 			private bool? iOSSilentNotification;
+
+			private string sendChannels;
 
 			private string target;
 
@@ -350,6 +359,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidPopupTitle = value;
+				}
+			}
+
+			public string AndroidMessageHuaweiCategory
+			{
+				get
+				{
+					return androidMessageHuaweiCategory;
+				}
+				set	
+				{
+					androidMessageHuaweiCategory = value;
 				}
 			}
 
@@ -593,6 +614,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public string AndroidMessageHuaweiUrgency
+			{
+				get
+				{
+					return androidMessageHuaweiUrgency;
+				}
+				set	
+				{
+					androidMessageHuaweiUrgency = value;
+				}
+			}
+
 			public string PushType
 			{
 				get
@@ -746,6 +779,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					iOSSilentNotification = value;
+				}
+			}
+
+			public string SendChannels
+			{
+				get
+				{
+					return sendChannels;
+				}
+				set	
+				{
+					sendChannels = value;
 				}
 			}
 
