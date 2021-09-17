@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyplsapi.Transform.V20170525
 {
     public class QueryRecordFileDownloadUrlResponseUnmarshaller
     {
-        public static QueryRecordFileDownloadUrlResponse Unmarshall(UnmarshallerContext context)
+        public static QueryRecordFileDownloadUrlResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryRecordFileDownloadUrlResponse queryRecordFileDownloadUrlResponse = new QueryRecordFileDownloadUrlResponse();
 
-			queryRecordFileDownloadUrlResponse.HttpResponse = context.HttpResponse;
-			queryRecordFileDownloadUrlResponse.RequestId = context.StringValue("QueryRecordFileDownloadUrl.RequestId");
-			queryRecordFileDownloadUrlResponse.Code = context.StringValue("QueryRecordFileDownloadUrl.Code");
-			queryRecordFileDownloadUrlResponse.Message = context.StringValue("QueryRecordFileDownloadUrl.Message");
-			queryRecordFileDownloadUrlResponse.DownloadUrl = context.StringValue("QueryRecordFileDownloadUrl.DownloadUrl");
+			queryRecordFileDownloadUrlResponse.HttpResponse = _ctx.HttpResponse;
+			queryRecordFileDownloadUrlResponse.Code = _ctx.StringValue("QueryRecordFileDownloadUrl.Code");
+			queryRecordFileDownloadUrlResponse.Message = _ctx.StringValue("QueryRecordFileDownloadUrl.Message");
+			queryRecordFileDownloadUrlResponse.RequestId = _ctx.StringValue("QueryRecordFileDownloadUrl.RequestId");
+			queryRecordFileDownloadUrlResponse.DownloadUrl = _ctx.StringValue("QueryRecordFileDownloadUrl.DownloadUrl");
         
 			return queryRecordFileDownloadUrlResponse;
         }

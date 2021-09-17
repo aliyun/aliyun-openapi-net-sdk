@@ -26,24 +26,24 @@ namespace Aliyun.Acs.Dyplsapi.Transform.V20170525
 {
     public class QuerySecretNoRemainResponseUnmarshaller
     {
-        public static QuerySecretNoRemainResponse Unmarshall(UnmarshallerContext context)
+        public static QuerySecretNoRemainResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QuerySecretNoRemainResponse querySecretNoRemainResponse = new QuerySecretNoRemainResponse();
 
-			querySecretNoRemainResponse.HttpResponse = context.HttpResponse;
-			querySecretNoRemainResponse.RequestId = context.StringValue("QuerySecretNoRemain.RequestId");
-			querySecretNoRemainResponse.Code = context.StringValue("QuerySecretNoRemain.Code");
-			querySecretNoRemainResponse.Message = context.StringValue("QuerySecretNoRemain.Message");
+			querySecretNoRemainResponse.HttpResponse = _ctx.HttpResponse;
+			querySecretNoRemainResponse.Code = _ctx.StringValue("QuerySecretNoRemain.Code");
+			querySecretNoRemainResponse.Message = _ctx.StringValue("QuerySecretNoRemain.Message");
+			querySecretNoRemainResponse.RequestId = _ctx.StringValue("QuerySecretNoRemain.RequestId");
 
 			QuerySecretNoRemainResponse.QuerySecretNoRemain_SecretRemainDTO secretRemainDTO = new QuerySecretNoRemainResponse.QuerySecretNoRemain_SecretRemainDTO();
-			secretRemainDTO.City = context.StringValue("QuerySecretNoRemain.SecretRemainDTO.City");
-			secretRemainDTO.Amount = context.LongValue("QuerySecretNoRemain.SecretRemainDTO.Amount");
+			secretRemainDTO.Amount = _ctx.LongValue("QuerySecretNoRemain.SecretRemainDTO.Amount");
+			secretRemainDTO.City = _ctx.StringValue("QuerySecretNoRemain.SecretRemainDTO.City");
 
 			List<QuerySecretNoRemainResponse.QuerySecretNoRemain_SecretRemainDTO.QuerySecretNoRemain_RemainDTO> secretRemainDTO_remainDTOList = new List<QuerySecretNoRemainResponse.QuerySecretNoRemain_SecretRemainDTO.QuerySecretNoRemain_RemainDTO>();
-			for (int i = 0; i < context.Length("QuerySecretNoRemain.SecretRemainDTO.RemainDTOList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QuerySecretNoRemain.SecretRemainDTO.RemainDTOList.Length"); i++) {
 				QuerySecretNoRemainResponse.QuerySecretNoRemain_SecretRemainDTO.QuerySecretNoRemain_RemainDTO remainDTO = new QuerySecretNoRemainResponse.QuerySecretNoRemain_SecretRemainDTO.QuerySecretNoRemain_RemainDTO();
-				remainDTO.City = context.StringValue("QuerySecretNoRemain.SecretRemainDTO.RemainDTOList["+ i +"].City");
-				remainDTO.Amount = context.LongValue("QuerySecretNoRemain.SecretRemainDTO.RemainDTOList["+ i +"].Amount");
+				remainDTO.Amount = _ctx.LongValue("QuerySecretNoRemain.SecretRemainDTO.RemainDTOList["+ i +"].Amount");
+				remainDTO.City = _ctx.StringValue("QuerySecretNoRemain.SecretRemainDTO.RemainDTOList["+ i +"].City");
 
 				secretRemainDTO_remainDTOList.Add(remainDTO);
 			}

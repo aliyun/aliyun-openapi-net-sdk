@@ -26,29 +26,29 @@ namespace Aliyun.Acs.Dyplsapi.Transform.V20170525
 {
     public class QuerySubscriptionDetailResponseUnmarshaller
     {
-        public static QuerySubscriptionDetailResponse Unmarshall(UnmarshallerContext context)
+        public static QuerySubscriptionDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QuerySubscriptionDetailResponse querySubscriptionDetailResponse = new QuerySubscriptionDetailResponse();
 
-			querySubscriptionDetailResponse.HttpResponse = context.HttpResponse;
-			querySubscriptionDetailResponse.RequestId = context.StringValue("QuerySubscriptionDetail.RequestId");
-			querySubscriptionDetailResponse.Code = context.StringValue("QuerySubscriptionDetail.Code");
-			querySubscriptionDetailResponse.Message = context.StringValue("QuerySubscriptionDetail.Message");
+			querySubscriptionDetailResponse.HttpResponse = _ctx.HttpResponse;
+			querySubscriptionDetailResponse.Code = _ctx.StringValue("QuerySubscriptionDetail.Code");
+			querySubscriptionDetailResponse.Message = _ctx.StringValue("QuerySubscriptionDetail.Message");
+			querySubscriptionDetailResponse.RequestId = _ctx.StringValue("QuerySubscriptionDetail.RequestId");
 
 			QuerySubscriptionDetailResponse.QuerySubscriptionDetail_SecretBindDetailDTO secretBindDetailDTO = new QuerySubscriptionDetailResponse.QuerySubscriptionDetail_SecretBindDetailDTO();
-			secretBindDetailDTO.SubsId = context.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.SubsId");
-			secretBindDetailDTO.PhoneNoA = context.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.PhoneNoA");
-			secretBindDetailDTO.PhoneNoX = context.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.PhoneNoX");
-			secretBindDetailDTO.PhoneNoB = context.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.PhoneNoB");
-			secretBindDetailDTO.Extension = context.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.Extension");
-			secretBindDetailDTO.GroupId = context.LongValue("QuerySubscriptionDetail.SecretBindDetailDTO.GroupId");
-			secretBindDetailDTO.GmtCreate = context.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.GmtCreate");
-			secretBindDetailDTO.ExpireDate = context.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.ExpireDate");
-			secretBindDetailDTO.NeedRecord = context.BooleanValue("QuerySubscriptionDetail.SecretBindDetailDTO.NeedRecord");
-			secretBindDetailDTO.CallRestrict = context.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.CallRestrict");
-			secretBindDetailDTO.Status = context.LongValue("QuerySubscriptionDetail.SecretBindDetailDTO.Status");
-			secretBindDetailDTO.ASRStatus = context.BooleanValue("QuerySubscriptionDetail.SecretBindDetailDTO.ASRStatus");
-			secretBindDetailDTO.ASRModelId = context.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.ASRModelId");
+			secretBindDetailDTO.Status = _ctx.LongValue("QuerySubscriptionDetail.SecretBindDetailDTO.Status");
+			secretBindDetailDTO.Extension = _ctx.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.Extension");
+			secretBindDetailDTO.PhoneNoB = _ctx.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.PhoneNoB");
+			secretBindDetailDTO.GroupId = _ctx.LongValue("QuerySubscriptionDetail.SecretBindDetailDTO.GroupId");
+			secretBindDetailDTO.NeedRecord = _ctx.BooleanValue("QuerySubscriptionDetail.SecretBindDetailDTO.NeedRecord");
+			secretBindDetailDTO.ASRStatus = _ctx.BooleanValue("QuerySubscriptionDetail.SecretBindDetailDTO.ASRStatus");
+			secretBindDetailDTO.GmtCreate = _ctx.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.GmtCreate");
+			secretBindDetailDTO.ExpireDate = _ctx.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.ExpireDate");
+			secretBindDetailDTO.SubsId = _ctx.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.SubsId");
+			secretBindDetailDTO.PhoneNoX = _ctx.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.PhoneNoX");
+			secretBindDetailDTO.CallRestrict = _ctx.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.CallRestrict");
+			secretBindDetailDTO.ASRModelId = _ctx.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.ASRModelId");
+			secretBindDetailDTO.PhoneNoA = _ctx.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.PhoneNoA");
 			querySubscriptionDetailResponse.SecretBindDetailDTO = secretBindDetailDTO;
         
 			return querySubscriptionDetailResponse;

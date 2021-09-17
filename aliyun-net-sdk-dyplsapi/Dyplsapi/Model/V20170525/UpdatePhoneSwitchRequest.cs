@@ -1,0 +1,159 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Dyplsapi;
+using Aliyun.Acs.Dyplsapi.Transform;
+using Aliyun.Acs.Dyplsapi.Transform.V20170525;
+
+namespace Aliyun.Acs.Dyplsapi.Model.V20170525
+{
+    public class UpdatePhoneSwitchRequest : RpcAcsRequest<UpdatePhoneSwitchResponse>
+    {
+        public UpdatePhoneSwitchRequest()
+            : base("Dyplsapi", "2017-05-25", "UpdatePhoneSwitch")
+        {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dyplsapi.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dyplsapi.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
+        }
+
+		private long? resourceOwnerId;
+
+		private int? switchStatus;
+
+		private long? subsId;
+
+		private string secretNo;
+
+		private string resourceOwnerAccount;
+
+		private long? ownerId;
+
+		private string poolKey;
+
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public int? SwitchStatus
+		{
+			get
+			{
+				return switchStatus;
+			}
+			set	
+			{
+				switchStatus = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchStatus", value.ToString());
+			}
+		}
+
+		public long? SubsId
+		{
+			get
+			{
+				return subsId;
+			}
+			set	
+			{
+				subsId = value;
+				DictionaryUtil.Add(QueryParameters, "SubsId", value.ToString());
+			}
+		}
+
+		public string SecretNo
+		{
+			get
+			{
+				return secretNo;
+			}
+			set	
+			{
+				secretNo = value;
+				DictionaryUtil.Add(QueryParameters, "SecretNo", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string PoolKey
+		{
+			get
+			{
+				return poolKey;
+			}
+			set	
+			{
+				poolKey = value;
+				DictionaryUtil.Add(QueryParameters, "PoolKey", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override UpdatePhoneSwitchResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        {
+            return UpdatePhoneSwitchResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
+}

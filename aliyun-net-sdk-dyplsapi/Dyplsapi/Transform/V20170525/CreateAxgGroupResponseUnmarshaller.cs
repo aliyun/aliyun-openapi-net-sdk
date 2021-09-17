@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dyplsapi.Transform.V20170525
 {
     public class CreateAxgGroupResponseUnmarshaller
     {
-        public static CreateAxgGroupResponse Unmarshall(UnmarshallerContext context)
+        public static CreateAxgGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateAxgGroupResponse createAxgGroupResponse = new CreateAxgGroupResponse();
 
-			createAxgGroupResponse.HttpResponse = context.HttpResponse;
-			createAxgGroupResponse.RequestId = context.StringValue("CreateAxgGroup.RequestId");
-			createAxgGroupResponse.Code = context.StringValue("CreateAxgGroup.Code");
-			createAxgGroupResponse.Message = context.StringValue("CreateAxgGroup.Message");
-			createAxgGroupResponse.GroupId = context.LongValue("CreateAxgGroup.GroupId");
+			createAxgGroupResponse.HttpResponse = _ctx.HttpResponse;
+			createAxgGroupResponse.Code = _ctx.StringValue("CreateAxgGroup.Code");
+			createAxgGroupResponse.Message = _ctx.StringValue("CreateAxgGroup.Message");
+			createAxgGroupResponse.RequestId = _ctx.StringValue("CreateAxgGroup.RequestId");
+			createAxgGroupResponse.GroupId = _ctx.LongValue("CreateAxgGroup.GroupId");
         
 			return createAxgGroupResponse;
         }

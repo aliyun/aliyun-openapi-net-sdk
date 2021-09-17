@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dyplsapi.Model.V20170525
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 	public class BindAxbResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string code;
 
 		private string message;
 
-		private BindAxb_SecretBindDTO secretBindDTO;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private BindAxb_SecretBindDTO secretBindDTO;
 
 		public string Code
 		{
@@ -69,6 +57,18 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public BindAxb_SecretBindDTO SecretBindDTO
 		{
 			get
@@ -84,11 +84,23 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 		public class BindAxb_SecretBindDTO
 		{
 
+			private string extension;
+
 			private string subsId;
 
 			private string secretNo;
 
-			private string extension;
+			public string Extension
+			{
+				get
+				{
+					return extension;
+				}
+				set	
+				{
+					extension = value;
+				}
+			}
 
 			public string SubsId
 			{
@@ -111,18 +123,6 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 				set	
 				{
 					secretNo = value;
-				}
-			}
-
-			public string Extension
-			{
-				get
-				{
-					return extension;
-				}
-				set	
-				{
-					extension = value;
 				}
 			}
 		}

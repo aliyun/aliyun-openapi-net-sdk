@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Dyplsapi.Transform.V20170525
 {
     public class OperateBlackNoResponseUnmarshaller
     {
-        public static OperateBlackNoResponse Unmarshall(UnmarshallerContext context)
+        public static OperateBlackNoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			OperateBlackNoResponse operateBlackNoResponse = new OperateBlackNoResponse();
 
-			operateBlackNoResponse.HttpResponse = context.HttpResponse;
-			operateBlackNoResponse.RequestId = context.StringValue("OperateBlackNo.RequestId");
-			operateBlackNoResponse.Code = context.StringValue("OperateBlackNo.Code");
-			operateBlackNoResponse.Message = context.StringValue("OperateBlackNo.Message");
+			operateBlackNoResponse.HttpResponse = _ctx.HttpResponse;
+			operateBlackNoResponse.Code = _ctx.StringValue("OperateBlackNo.Code");
+			operateBlackNoResponse.Message = _ctx.StringValue("OperateBlackNo.Message");
+			operateBlackNoResponse.RequestId = _ctx.StringValue("OperateBlackNo.RequestId");
         
 			return operateBlackNoResponse;
         }

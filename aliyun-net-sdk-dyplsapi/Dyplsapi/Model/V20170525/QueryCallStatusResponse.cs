@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dyplsapi.Model.V20170525
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 	public class QueryCallStatusResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string code;
 
 		private string message;
 
-		private QueryCallStatus_SecretCallStatusDTO secretCallStatusDTO;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private QueryCallStatus_SecretCallStatusDTO secretCallStatusDTO;
 
 		public string Code
 		{
@@ -69,6 +57,18 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public QueryCallStatus_SecretCallStatusDTO SecretCallStatusDTO
 		{
 			get
@@ -84,21 +84,9 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 		public class QueryCallStatus_SecretCallStatusDTO
 		{
 
-			private int? status;
-
 			private string calledNo;
 
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+			private int? status;
 
 			public string CalledNo
 			{
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 				set	
 				{
 					calledNo = value;
+				}
+			}
+
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

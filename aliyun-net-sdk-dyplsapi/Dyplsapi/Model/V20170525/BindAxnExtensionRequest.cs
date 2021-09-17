@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Dyplsapi;
 using Aliyun.Acs.Dyplsapi.Transform;
 using Aliyun.Acs.Dyplsapi.Transform.V20170525;
 
@@ -30,12 +31,12 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
     public class BindAxnExtensionRequest : RpcAcsRequest<BindAxnExtensionResponse>
     {
         public BindAxnExtensionRequest()
-            : base("Dyplsapi", "2017-05-25", "BindAxnExtension", "dypls", "openAPI")
+            : base("Dyplsapi", "2017-05-25", "BindAxnExtension")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dyplsapi.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dyplsapi.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -73,6 +74,8 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 		private string outId;
 
 		private string aSRModelId;
+
+		private string callRestrict;
 
 		public long? ResourceOwnerId
 		{
@@ -292,6 +295,19 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			{
 				aSRModelId = value;
 				DictionaryUtil.Add(QueryParameters, "ASRModelId", value);
+			}
+		}
+
+		public string CallRestrict
+		{
+			get
+			{
+				return callRestrict;
+			}
+			set	
+			{
+				callRestrict = value;
+				DictionaryUtil.Add(QueryParameters, "CallRestrict", value);
 			}
 		}
 

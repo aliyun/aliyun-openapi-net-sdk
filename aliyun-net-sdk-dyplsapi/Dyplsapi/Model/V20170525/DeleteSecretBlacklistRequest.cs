@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Dyplsapi;
 using Aliyun.Acs.Dyplsapi.Transform;
 using Aliyun.Acs.Dyplsapi.Transform.V20170525;
 
@@ -30,12 +31,12 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
     public class DeleteSecretBlacklistRequest : RpcAcsRequest<DeleteSecretBlacklistResponse>
     {
         public DeleteSecretBlacklistRequest()
-            : base("Dyplsapi", "2017-05-25", "DeleteSecretBlacklist", "dypls", "openAPI")
+            : base("Dyplsapi", "2017-05-25", "DeleteSecretBlacklist")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dyplsapi.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dyplsapi.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -47,6 +48,8 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 		private string poolKey;
 
 		private string blackNo;
+
+		private string wayControl;
 
 		public string BlackType
 		{
@@ -97,6 +100,19 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			{
 				blackNo = value;
 				DictionaryUtil.Add(QueryParameters, "BlackNo", value);
+			}
+		}
+
+		public string WayControl
+		{
+			get
+			{
+				return wayControl;
+			}
+			set	
+			{
+				wayControl = value;
+				DictionaryUtil.Add(QueryParameters, "WayControl", value);
 			}
 		}
 
