@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Green;
 using Aliyun.Acs.Green.Transform;
 using Aliyun.Acs.Green.Transform.V20180509;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Green.Model.V20180509
     public class VideoSyncScanRequest : RoaAcsRequest<VideoSyncScanResponse>
     {
         public VideoSyncScanRequest()
-            : base("Green", "2018-05-09", "VideoSyncScan", "green", "openAPI")
+            : base("Green", "2018-05-09", "VideoSyncScan")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
