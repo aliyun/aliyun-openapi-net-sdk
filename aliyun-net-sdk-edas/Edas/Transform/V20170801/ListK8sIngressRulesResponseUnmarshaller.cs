@@ -38,32 +38,33 @@ namespace Aliyun.Acs.Edas.Transform.V20170801
 			List<ListK8sIngressRulesResponse.ListK8sIngressRules_DataItem> listK8sIngressRulesResponse_data = new List<ListK8sIngressRulesResponse.ListK8sIngressRules_DataItem>();
 			for (int i = 0; i < _ctx.Length("ListK8sIngressRules.Data.Length"); i++) {
 				ListK8sIngressRulesResponse.ListK8sIngressRules_DataItem dataItem = new ListK8sIngressRulesResponse.ListK8sIngressRules_DataItem();
-				dataItem.ClusterId = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].ClusterId");
 				dataItem.ClusterName = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].ClusterName");
+				dataItem.ClusterId = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].ClusterId");
 				dataItem.RegionId = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].RegionId");
 
 				List<ListK8sIngressRulesResponse.ListK8sIngressRules_DataItem.ListK8sIngressRules_IngressConfsItem> dataItem_ingressConfs = new List<ListK8sIngressRulesResponse.ListK8sIngressRules_DataItem.ListK8sIngressRules_IngressConfsItem>();
 				for (int j = 0; j < _ctx.Length("ListK8sIngressRules.Data["+ i +"].IngressConfs.Length"); j++) {
 					ListK8sIngressRulesResponse.ListK8sIngressRules_DataItem.ListK8sIngressRules_IngressConfsItem ingressConfsItem = new ListK8sIngressRulesResponse.ListK8sIngressRules_DataItem.ListK8sIngressRules_IngressConfsItem();
-					ingressConfsItem.Name = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].Name");
-					ingressConfsItem._Namespace = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].Namespace");
-					ingressConfsItem.Endpoint = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].Endpoint");
 					ingressConfsItem.CreationTime = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].CreationTime");
+					ingressConfsItem.SslRedirect = _ctx.BooleanValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].SslRedirect");
+					ingressConfsItem.Endpoint = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].Endpoint");
+					ingressConfsItem._Namespace = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].Namespace");
+					ingressConfsItem.Name = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].Name");
 					ingressConfsItem.DashboardUrl = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].DashboardUrl");
 
 					List<ListK8sIngressRulesResponse.ListK8sIngressRules_DataItem.ListK8sIngressRules_IngressConfsItem.ListK8sIngressRules_RulesItem> ingressConfsItem_rules = new List<ListK8sIngressRulesResponse.ListK8sIngressRules_DataItem.ListK8sIngressRules_IngressConfsItem.ListK8sIngressRules_RulesItem>();
 					for (int k = 0; k < _ctx.Length("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].Rules.Length"); k++) {
 						ListK8sIngressRulesResponse.ListK8sIngressRules_DataItem.ListK8sIngressRules_IngressConfsItem.ListK8sIngressRules_RulesItem rulesItem = new ListK8sIngressRulesResponse.ListK8sIngressRules_DataItem.ListK8sIngressRules_IngressConfsItem.ListK8sIngressRules_RulesItem();
-						rulesItem.Host = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Host");
 						rulesItem.SecretName = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].SecretName");
+						rulesItem.Host = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Host");
 
 						List<ListK8sIngressRulesResponse.ListK8sIngressRules_DataItem.ListK8sIngressRules_IngressConfsItem.ListK8sIngressRules_RulesItem.ListK8sIngressRules_PathsItem> rulesItem_paths = new List<ListK8sIngressRulesResponse.ListK8sIngressRules_DataItem.ListK8sIngressRules_IngressConfsItem.ListK8sIngressRules_RulesItem.ListK8sIngressRules_PathsItem>();
 						for (int l = 0; l < _ctx.Length("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths.Length"); l++) {
 							ListK8sIngressRulesResponse.ListK8sIngressRules_DataItem.ListK8sIngressRules_IngressConfsItem.ListK8sIngressRules_RulesItem.ListK8sIngressRules_PathsItem pathsItem = new ListK8sIngressRulesResponse.ListK8sIngressRules_DataItem.ListK8sIngressRules_IngressConfsItem.ListK8sIngressRules_RulesItem.ListK8sIngressRules_PathsItem();
-							pathsItem.Path = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].Path");
-							pathsItem.AppId = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].AppId");
-							pathsItem.AppName = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].AppName");
 							pathsItem.Status = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].Status");
+							pathsItem.Path = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].Path");
+							pathsItem.AppName = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].AppName");
+							pathsItem.AppId = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].AppId");
 
 							ListK8sIngressRulesResponse.ListK8sIngressRules_DataItem.ListK8sIngressRules_IngressConfsItem.ListK8sIngressRules_RulesItem.ListK8sIngressRules_PathsItem.ListK8sIngressRules_Backend backend = new ListK8sIngressRulesResponse.ListK8sIngressRules_DataItem.ListK8sIngressRules_IngressConfsItem.ListK8sIngressRules_RulesItem.ListK8sIngressRules_PathsItem.ListK8sIngressRules_Backend();
 							backend.ServiceName = _ctx.StringValue("ListK8sIngressRules.Data["+ i +"].IngressConfs["+ j +"].Rules["+ k +"].Paths["+ l +"].Backend.ServiceName");

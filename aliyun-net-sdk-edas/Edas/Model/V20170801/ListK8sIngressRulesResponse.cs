@@ -84,25 +84,13 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 		public class ListK8sIngressRules_DataItem
 		{
 
-			private string clusterId;
-
 			private string clusterName;
+
+			private string clusterId;
 
 			private string regionId;
 
 			private List<ListK8sIngressRules_IngressConfsItem> ingressConfs;
-
-			public string ClusterId
-			{
-				get
-				{
-					return clusterId;
-				}
-				set	
-				{
-					clusterId = value;
-				}
-			}
 
 			public string ClusterName
 			{
@@ -113,6 +101,18 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 				set	
 				{
 					clusterName = value;
+				}
+			}
+
+			public string ClusterId
+			{
+				get
+				{
+					return clusterId;
+				}
+				set	
+				{
+					clusterId = value;
 				}
 			}
 
@@ -143,39 +143,41 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 			public class ListK8sIngressRules_IngressConfsItem
 			{
 
-				private string name;
+				private string creationTime;
 
-				private string _namespace;
+				private bool? sslRedirect;
 
 				private string endpoint;
 
-				private string creationTime;
+				private string _namespace;
+
+				private string name;
 
 				private string dashboardUrl;
 
 				private List<ListK8sIngressRules_RulesItem> rules;
 
-				public string Name
+				public string CreationTime
 				{
 					get
 					{
-						return name;
+						return creationTime;
 					}
 					set	
 					{
-						name = value;
+						creationTime = value;
 					}
 				}
 
-				public string _Namespace
+				public bool? SslRedirect
 				{
 					get
 					{
-						return _namespace;
+						return sslRedirect;
 					}
 					set	
 					{
-						_namespace = value;
+						sslRedirect = value;
 					}
 				}
 
@@ -191,15 +193,27 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 					}
 				}
 
-				public string CreationTime
+				public string _Namespace
 				{
 					get
 					{
-						return creationTime;
+						return _namespace;
 					}
 					set	
 					{
-						creationTime = value;
+						_namespace = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
 					}
 				}
 
@@ -230,23 +244,11 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 				public class ListK8sIngressRules_RulesItem
 				{
 
-					private string host;
-
 					private string secretName;
 
-					private List<ListK8sIngressRules_PathsItem> paths;
+					private string host;
 
-					public string Host
-					{
-						get
-						{
-							return host;
-						}
-						set	
-						{
-							host = value;
-						}
-					}
+					private List<ListK8sIngressRules_PathsItem> paths;
 
 					public string SecretName
 					{
@@ -257,6 +259,18 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 						set	
 						{
 							secretName = value;
+						}
+					}
+
+					public string Host
+					{
+						get
+						{
+							return host;
+						}
+						set	
+						{
+							host = value;
 						}
 					}
 
@@ -275,15 +289,27 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 					public class ListK8sIngressRules_PathsItem
 					{
 
-						private string path;
+						private string status;
 
-						private string appId;
+						private string path;
 
 						private string appName;
 
-						private string status;
+						private string appId;
 
 						private ListK8sIngressRules_Backend backend;
+
+						public string Status
+						{
+							get
+							{
+								return status;
+							}
+							set	
+							{
+								status = value;
+							}
+						}
 
 						public string Path
 						{
@@ -294,18 +320,6 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 							set	
 							{
 								path = value;
-							}
-						}
-
-						public string AppId
-						{
-							get
-							{
-								return appId;
-							}
-							set	
-							{
-								appId = value;
 							}
 						}
 
@@ -321,15 +335,15 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 							}
 						}
 
-						public string Status
+						public string AppId
 						{
 							get
 							{
-								return status;
+								return appId;
 							}
 							set	
 							{
-								status = value;
+								appId = value;
 							}
 						}
 

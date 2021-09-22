@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 	public class CreateK8sSecretResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? code;
 
 		private string message;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public int? Code
 		{
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

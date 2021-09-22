@@ -84,29 +84,43 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 		public class GetChangeOrderInfo_ChangeOrderInfo
 		{
 
+			private int? status;
+
 			private string changeOrderId;
 
-			private string createUserId;
-
-			private string desc;
-
-			private int? batchCount;
-
 			private string batchType;
-
-			private int? status;
 
 			private string coType;
 
 			private string createTime;
 
+			private string changeOrderDescription;
+
+			private int? batchCount;
+
+			private string createUserId;
+
 			private bool? supportRollback;
 
-			private string changeOrderDescription;
+			private string desc;
 
 			private List<GetChangeOrderInfo_PipelineInfo> pipelineInfoList;
 
+			private List<string> targets;
+
 			private GetChangeOrderInfo_TrafficControl trafficControl;
+
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
 
 			public string ChangeOrderId
 			{
@@ -120,42 +134,6 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 				}
 			}
 
-			public string CreateUserId
-			{
-				get
-				{
-					return createUserId;
-				}
-				set	
-				{
-					createUserId = value;
-				}
-			}
-
-			public string Desc
-			{
-				get
-				{
-					return desc;
-				}
-				set	
-				{
-					desc = value;
-				}
-			}
-
-			public int? BatchCount
-			{
-				get
-				{
-					return batchCount;
-				}
-				set	
-				{
-					batchCount = value;
-				}
-			}
-
 			public string BatchType
 			{
 				get
@@ -165,18 +143,6 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 				set	
 				{
 					batchType = value;
-				}
-			}
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
 				}
 			}
 
@@ -204,18 +170,6 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 				}
 			}
 
-			public bool? SupportRollback
-			{
-				get
-				{
-					return supportRollback;
-				}
-				set	
-				{
-					supportRollback = value;
-				}
-			}
-
 			public string ChangeOrderDescription
 			{
 				get
@@ -228,6 +182,54 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 				}
 			}
 
+			public int? BatchCount
+			{
+				get
+				{
+					return batchCount;
+				}
+				set	
+				{
+					batchCount = value;
+				}
+			}
+
+			public string CreateUserId
+			{
+				get
+				{
+					return createUserId;
+				}
+				set	
+				{
+					createUserId = value;
+				}
+			}
+
+			public bool? SupportRollback
+			{
+				get
+				{
+					return supportRollback;
+				}
+				set	
+				{
+					supportRollback = value;
+				}
+			}
+
+			public string Desc
+			{
+				get
+				{
+					return desc;
+				}
+				set	
+				{
+					desc = value;
+				}
+			}
+
 			public List<GetChangeOrderInfo_PipelineInfo> PipelineInfoList
 			{
 				get
@@ -237,6 +239,18 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 				set	
 				{
 					pipelineInfoList = value;
+				}
+			}
+
+			public List<string> Targets
+			{
+				get
+				{
+					return targets;
+				}
+				set	
+				{
+					targets = value;
 				}
 			}
 
@@ -255,31 +269,19 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 			public class GetChangeOrderInfo_PipelineInfo
 			{
 
-				private string pipelineId;
-
 				private string pipelineName;
-
-				private int? pipelineStatus;
 
 				private string startTime;
 
 				private string updateTime;
 
+				private int? pipelineStatus;
+
+				private string pipelineId;
+
 				private List<GetChangeOrderInfo_StageInfoDTO> stageList;
 
 				private List<GetChangeOrderInfo_StageDetailDTO> stageDetailList;
-
-				public string PipelineId
-				{
-					get
-					{
-						return pipelineId;
-					}
-					set	
-					{
-						pipelineId = value;
-					}
-				}
 
 				public string PipelineName
 				{
@@ -290,18 +292,6 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 					set	
 					{
 						pipelineName = value;
-					}
-				}
-
-				public int? PipelineStatus
-				{
-					get
-					{
-						return pipelineStatus;
-					}
-					set	
-					{
-						pipelineStatus = value;
 					}
 				}
 
@@ -326,6 +316,30 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 					set	
 					{
 						updateTime = value;
+					}
+				}
+
+				public int? PipelineStatus
+				{
+					get
+					{
+						return pipelineStatus;
+					}
+					set	
+					{
+						pipelineStatus = value;
+					}
+				}
+
+				public string PipelineId
+				{
+					get
+					{
+						return pipelineId;
+					}
+					set	
+					{
+						pipelineId = value;
 					}
 				}
 
@@ -358,9 +372,9 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 
 					private string stageId;
 
-					private string stageName;
-
 					private int? status;
+
+					private string stageName;
 
 					private GetChangeOrderInfo_StageResultDTO stageResultDTO;
 
@@ -376,18 +390,6 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 						}
 					}
 
-					public string StageName
-					{
-						get
-						{
-							return stageName;
-						}
-						set	
-						{
-							stageName = value;
-						}
-					}
-
 					public int? Status
 					{
 						get
@@ -397,6 +399,18 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 						set	
 						{
 							status = value;
+						}
+					}
+
+					public string StageName
+					{
+						get
+						{
+							return stageName;
+						}
+						set	
+						{
+							stageName = value;
 						}
 					}
 
@@ -446,27 +460,27 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 						public class GetChangeOrderInfo_InstanceDTO
 						{
 
-							private string instanceName;
+							private int? status;
 
 							private string instanceIp;
 
-							private int? status;
-
 							private string podName;
+
+							private string instanceName;
 
 							private string podStatus;
 
 							private List<GetChangeOrderInfo_InstanceStageDTO> instanceStageDTOList;
 
-							public string InstanceName
+							public int? Status
 							{
 								get
 								{
-									return instanceName;
+									return status;
 								}
 								set	
 								{
-									instanceName = value;
+									status = value;
 								}
 							}
 
@@ -482,18 +496,6 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 								}
 							}
 
-							public int? Status
-							{
-								get
-								{
-									return status;
-								}
-								set	
-								{
-									status = value;
-								}
-							}
-
 							public string PodName
 							{
 								get
@@ -503,6 +505,18 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 								set	
 								{
 									podName = value;
+								}
+							}
+
+							public string InstanceName
+							{
+								get
+								{
+									return instanceName;
+								}
+								set	
+								{
+									instanceName = value;
 								}
 							}
 
@@ -535,15 +549,15 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 
 								private string stageId;
 
-								private string stageName;
-
 								private int? status;
-
-								private string stageMessage;
 
 								private string startTime;
 
+								private string stageMessage;
+
 								private string finishTime;
+
+								private string stageName;
 
 								public string StageId
 								{
@@ -554,18 +568,6 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 									set	
 									{
 										stageId = value;
-									}
-								}
-
-								public string StageName
-								{
-									get
-									{
-										return stageName;
-									}
-									set	
-									{
-										stageName = value;
 									}
 								}
 
@@ -581,18 +583,6 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 									}
 								}
 
-								public string StageMessage
-								{
-									get
-									{
-										return stageMessage;
-									}
-									set	
-									{
-										stageMessage = value;
-									}
-								}
-
 								public string StartTime
 								{
 									get
@@ -602,6 +592,18 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 									set	
 									{
 										startTime = value;
+									}
+								}
+
+								public string StageMessage
+								{
+									get
+									{
+										return stageMessage;
+									}
+									set	
+									{
+										stageMessage = value;
 									}
 								}
 
@@ -616,6 +618,18 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 										finishTime = value;
 									}
 								}
+
+								public string StageName
+								{
+									get
+									{
+										return stageName;
+									}
+									set	
+									{
+										stageName = value;
+									}
+								}
 							}
 						}
 
@@ -624,11 +638,11 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 
 							private string stageId;
 
-							private string stageName;
-
 							private int? status;
 
 							private string message;
+
+							private string stageName;
 
 							public string StageId
 							{
@@ -639,18 +653,6 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 								set	
 								{
 									stageId = value;
-								}
-							}
-
-							public string StageName
-							{
-								get
-								{
-									return stageName;
-								}
-								set	
-								{
-									stageName = value;
 								}
 							}
 
@@ -677,6 +679,18 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 									message = value;
 								}
 							}
+
+							public string StageName
+							{
+								get
+								{
+									return stageName;
+								}
+								set	
+								{
+									stageName = value;
+								}
+							}
 						}
 					}
 				}
@@ -686,9 +700,9 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 
 					private string stageId;
 
-					private string stageName;
-
 					private int? stageStatus;
+
+					private string stageName;
 
 					private List<GetChangeOrderInfo_TaskInfoDTO> taskList;
 
@@ -704,18 +718,6 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 						}
 					}
 
-					public string StageName
-					{
-						get
-						{
-							return stageName;
-						}
-						set	
-						{
-							stageName = value;
-						}
-					}
-
 					public int? StageStatus
 					{
 						get
@@ -725,6 +727,18 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 						set	
 						{
 							stageStatus = value;
+						}
+					}
+
+					public string StageName
+					{
+						get
+						{
+							return stageName;
+						}
+						set	
+						{
+							stageName = value;
 						}
 					}
 
@@ -743,33 +757,45 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 					public class GetChangeOrderInfo_TaskInfoDTO
 					{
 
-						private string taskName;
+						private int? taskErrorIgnorance;
+
+						private bool? showManualIgnorance;
 
 						private string taskStatus;
 
 						private string taskMessage;
 
-						private string taskId;
+						private string taskName;
 
 						private string taskErrorCode;
 
-						private string taskErrorMessage;
-
-						private bool? showManualIgnorance;
-
-						private int? taskErrorIgnorance;
-
 						private int? retryType;
 
-						public string TaskName
+						private string taskId;
+
+						private string taskErrorMessage;
+
+						public int? TaskErrorIgnorance
 						{
 							get
 							{
-								return taskName;
+								return taskErrorIgnorance;
 							}
 							set	
 							{
-								taskName = value;
+								taskErrorIgnorance = value;
+							}
+						}
+
+						public bool? ShowManualIgnorance
+						{
+							get
+							{
+								return showManualIgnorance;
+							}
+							set	
+							{
+								showManualIgnorance = value;
 							}
 						}
 
@@ -797,15 +823,15 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 							}
 						}
 
-						public string TaskId
+						public string TaskName
 						{
 							get
 							{
-								return taskId;
+								return taskName;
 							}
 							set	
 							{
-								taskId = value;
+								taskName = value;
 							}
 						}
 
@@ -821,42 +847,6 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 							}
 						}
 
-						public string TaskErrorMessage
-						{
-							get
-							{
-								return taskErrorMessage;
-							}
-							set	
-							{
-								taskErrorMessage = value;
-							}
-						}
-
-						public bool? ShowManualIgnorance
-						{
-							get
-							{
-								return showManualIgnorance;
-							}
-							set	
-							{
-								showManualIgnorance = value;
-							}
-						}
-
-						public int? TaskErrorIgnorance
-						{
-							get
-							{
-								return taskErrorIgnorance;
-							}
-							set	
-							{
-								taskErrorIgnorance = value;
-							}
-						}
-
 						public int? RetryType
 						{
 							get
@@ -868,6 +858,30 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 								retryType = value;
 							}
 						}
+
+						public string TaskId
+						{
+							get
+							{
+								return taskId;
+							}
+							set	
+							{
+								taskId = value;
+							}
+						}
+
+						public string TaskErrorMessage
+						{
+							get
+							{
+								return taskErrorMessage;
+							}
+							set	
+							{
+								taskErrorMessage = value;
+							}
+						}
 					}
 				}
 			}
@@ -875,23 +889,11 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 			public class GetChangeOrderInfo_TrafficControl
 			{
 
-				private string rules;
-
 				private string routes;
 
-				private string tips;
+				private string rules;
 
-				public string Rules
-				{
-					get
-					{
-						return rules;
-					}
-					set	
-					{
-						rules = value;
-					}
-				}
+				private string tips;
 
 				public string Routes
 				{
@@ -902,6 +904,18 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 					set	
 					{
 						routes = value;
+					}
+				}
+
+				public string Rules
+				{
+					get
+					{
+						return rules;
+					}
+					set	
+					{
+						rules = value;
 					}
 				}
 

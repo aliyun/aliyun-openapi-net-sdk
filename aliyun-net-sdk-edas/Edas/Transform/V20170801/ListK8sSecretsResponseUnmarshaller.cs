@@ -43,14 +43,48 @@ namespace Aliyun.Acs.Edas.Transform.V20170801
 				List<ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem> resultItem_secrets = new List<ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem>();
 				for (int j = 0; j < _ctx.Length("ListK8sSecrets.Result["+ i +"].Secrets.Length"); j++) {
 					ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem secretsItem = new ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem();
-					secretsItem.Name = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].Name");
-					secretsItem._Namespace = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].Namespace");
-					secretsItem.CreationTime = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].CreationTime");
 					secretsItem.Type = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].Type");
-					secretsItem.ClusterId = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].ClusterId");
+					secretsItem.CreationTime = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].CreationTime");
 					secretsItem.ClusterName = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].ClusterName");
-					secretsItem.CertId = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].CertId");
+					secretsItem._Namespace = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].Namespace");
+					secretsItem.Base64Encoded = _ctx.BooleanValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].Base64Encoded");
 					secretsItem.CertRegionId = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].CertRegionId");
+					secretsItem.CertId = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].CertId");
+					secretsItem.Name = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].Name");
+					secretsItem.ClusterId = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].ClusterId");
+
+					ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_CertDetail certDetail = new ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_CertDetail();
+					certDetail.EndTime = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].CertDetail.EndTime");
+					certDetail.Status = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].CertDetail.Status");
+					certDetail.StartTime = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].CertDetail.StartTime");
+					certDetail.Issuer = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].CertDetail.Issuer");
+
+					List<string> certDetail_domainNames = new List<string>();
+					for (int k = 0; k < _ctx.Length("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].CertDetail.DomainNames.Length"); k++) {
+						certDetail_domainNames.Add(_ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].CertDetail.DomainNames["+ k +"]"));
+					}
+					certDetail.DomainNames = certDetail_domainNames;
+					secretsItem.CertDetail = certDetail;
+
+					List<ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_RelatedIngressRulesItem> secretsItem_relatedIngressRules = new List<ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_RelatedIngressRulesItem>();
+					for (int k = 0; k < _ctx.Length("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].RelatedIngressRules.Length"); k++) {
+						ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_RelatedIngressRulesItem relatedIngressRulesItem = new ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_RelatedIngressRulesItem();
+						relatedIngressRulesItem.Name = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].RelatedIngressRules["+ k +"].Name");
+						relatedIngressRulesItem._Namespace = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].RelatedIngressRules["+ k +"].Namespace");
+
+						List<ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_RelatedIngressRulesItem.ListK8sSecrets_RelatedAppsItem> relatedIngressRulesItem_relatedApps1 = new List<ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_RelatedIngressRulesItem.ListK8sSecrets_RelatedAppsItem>();
+						for (int l = 0; l < _ctx.Length("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].RelatedIngressRules["+ k +"].RelatedApps.Length"); l++) {
+							ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_RelatedIngressRulesItem.ListK8sSecrets_RelatedAppsItem relatedAppsItem = new ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_RelatedIngressRulesItem.ListK8sSecrets_RelatedAppsItem();
+							relatedAppsItem.AppName = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].RelatedIngressRules["+ k +"].RelatedApps["+ l +"].AppName");
+							relatedAppsItem.AppId = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].RelatedIngressRules["+ k +"].RelatedApps["+ l +"].AppId");
+
+							relatedIngressRulesItem_relatedApps1.Add(relatedAppsItem);
+						}
+						relatedIngressRulesItem.RelatedApps1 = relatedIngressRulesItem_relatedApps1;
+
+						secretsItem_relatedIngressRules.Add(relatedIngressRulesItem);
+					}
+					secretsItem.RelatedIngressRules = secretsItem_relatedIngressRules;
 
 					List<ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_DataItem> secretsItem_data = new List<ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_DataItem>();
 					for (int k = 0; k < _ctx.Length("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].Data.Length"); k++) {
@@ -62,13 +96,13 @@ namespace Aliyun.Acs.Edas.Transform.V20170801
 					}
 					secretsItem.Data = secretsItem_data;
 
-					List<ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_RelatedAppsItem> secretsItem_relatedApps = new List<ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_RelatedAppsItem>();
+					List<ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_RelatedAppsItem2> secretsItem_relatedApps = new List<ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_RelatedAppsItem2>();
 					for (int k = 0; k < _ctx.Length("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].RelatedApps.Length"); k++) {
-						ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_RelatedAppsItem relatedAppsItem = new ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_RelatedAppsItem();
-						relatedAppsItem.AppName = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].RelatedApps["+ k +"].AppName");
-						relatedAppsItem.AppId = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].RelatedApps["+ k +"].AppId");
+						ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_RelatedAppsItem2 relatedAppsItem2 = new ListK8sSecretsResponse.ListK8sSecrets_ResultItem.ListK8sSecrets_SecretsItem.ListK8sSecrets_RelatedAppsItem2();
+						relatedAppsItem2.AppName = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].RelatedApps["+ k +"].AppName");
+						relatedAppsItem2.AppId = _ctx.StringValue("ListK8sSecrets.Result["+ i +"].Secrets["+ j +"].RelatedApps["+ k +"].AppId");
 
-						secretsItem_relatedApps.Add(relatedAppsItem);
+						secretsItem_relatedApps.Add(relatedAppsItem2);
 					}
 					secretsItem.RelatedApps = secretsItem_relatedApps;
 

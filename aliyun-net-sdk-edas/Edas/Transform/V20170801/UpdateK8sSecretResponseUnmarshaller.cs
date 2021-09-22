@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Edas.Transform.V20170801
 			UpdateK8sSecretResponse updateK8sSecretResponse = new UpdateK8sSecretResponse();
 
 			updateK8sSecretResponse.HttpResponse = _ctx.HttpResponse;
-			updateK8sSecretResponse.RequestId = _ctx.StringValue("UpdateK8sSecret.RequestId");
 			updateK8sSecretResponse.Code = _ctx.IntegerValue("UpdateK8sSecret.Code");
 			updateK8sSecretResponse.Message = _ctx.StringValue("UpdateK8sSecret.Message");
+			updateK8sSecretResponse.RequestId = _ctx.StringValue("UpdateK8sSecret.RequestId");
         
 			return updateK8sSecretResponse;
         }

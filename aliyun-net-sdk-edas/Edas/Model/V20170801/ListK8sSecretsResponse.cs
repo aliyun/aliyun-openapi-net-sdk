@@ -115,47 +115,41 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 			public class ListK8sSecrets_SecretsItem
 			{
 
-				private string name;
-
-				private string _namespace;
+				private string type;
 
 				private string creationTime;
 
-				private string type;
-
-				private string clusterId;
-
 				private string clusterName;
 
-				private string certId;
+				private string _namespace;
+
+				private bool? base64Encoded;
 
 				private string certRegionId;
 
+				private string certId;
+
+				private string name;
+
+				private string clusterId;
+
+				private List<ListK8sSecrets_RelatedIngressRulesItem> relatedIngressRules;
+
 				private List<ListK8sSecrets_DataItem> data;
 
-				private List<ListK8sSecrets_RelatedAppsItem> relatedApps;
+				private List<ListK8sSecrets_RelatedAppsItem2> relatedApps;
 
-				public string Name
+				private ListK8sSecrets_CertDetail certDetail;
+
+				public string Type
 				{
 					get
 					{
-						return name;
+						return type;
 					}
 					set	
 					{
-						name = value;
-					}
-				}
-
-				public string _Namespace
-				{
-					get
-					{
-						return _namespace;
-					}
-					set	
-					{
-						_namespace = value;
+						type = value;
 					}
 				}
 
@@ -171,30 +165,6 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 					}
 				}
 
-				public string Type
-				{
-					get
-					{
-						return type;
-					}
-					set	
-					{
-						type = value;
-					}
-				}
-
-				public string ClusterId
-				{
-					get
-					{
-						return clusterId;
-					}
-					set	
-					{
-						clusterId = value;
-					}
-				}
-
 				public string ClusterName
 				{
 					get
@@ -207,15 +177,27 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 					}
 				}
 
-				public string CertId
+				public string _Namespace
 				{
 					get
 					{
-						return certId;
+						return _namespace;
 					}
 					set	
 					{
-						certId = value;
+						_namespace = value;
+					}
+				}
+
+				public bool? Base64Encoded
+				{
+					get
+					{
+						return base64Encoded;
+					}
+					set	
+					{
+						base64Encoded = value;
 					}
 				}
 
@@ -231,6 +213,54 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 					}
 				}
 
+				public string CertId
+				{
+					get
+					{
+						return certId;
+					}
+					set	
+					{
+						certId = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string ClusterId
+				{
+					get
+					{
+						return clusterId;
+					}
+					set	
+					{
+						clusterId = value;
+					}
+				}
+
+				public List<ListK8sSecrets_RelatedIngressRulesItem> RelatedIngressRules
+				{
+					get
+					{
+						return relatedIngressRules;
+					}
+					set	
+					{
+						relatedIngressRules = value;
+					}
+				}
+
 				public List<ListK8sSecrets_DataItem> Data
 				{
 					get
@@ -243,7 +273,7 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 					}
 				}
 
-				public List<ListK8sSecrets_RelatedAppsItem> RelatedApps
+				public List<ListK8sSecrets_RelatedAppsItem2> RelatedApps
 				{
 					get
 					{
@@ -252,6 +282,96 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 					set	
 					{
 						relatedApps = value;
+					}
+				}
+
+				public ListK8sSecrets_CertDetail CertDetail
+				{
+					get
+					{
+						return certDetail;
+					}
+					set	
+					{
+						certDetail = value;
+					}
+				}
+
+				public class ListK8sSecrets_RelatedIngressRulesItem
+				{
+
+					private string name;
+
+					private string _namespace;
+
+					private List<ListK8sSecrets_RelatedAppsItem> relatedApps1;
+
+					public string Name
+					{
+						get
+						{
+							return name;
+						}
+						set	
+						{
+							name = value;
+						}
+					}
+
+					public string _Namespace
+					{
+						get
+						{
+							return _namespace;
+						}
+						set	
+						{
+							_namespace = value;
+						}
+					}
+
+					public List<ListK8sSecrets_RelatedAppsItem> RelatedApps1
+					{
+						get
+						{
+							return relatedApps1;
+						}
+						set	
+						{
+							relatedApps1 = value;
+						}
+					}
+
+					public class ListK8sSecrets_RelatedAppsItem
+					{
+
+						private string appName;
+
+						private string appId;
+
+						public string AppName
+						{
+							get
+							{
+								return appName;
+							}
+							set	
+							{
+								appName = value;
+							}
+						}
+
+						public string AppId
+						{
+							get
+							{
+								return appId;
+							}
+							set	
+							{
+								appId = value;
+							}
+						}
 					}
 				}
 
@@ -287,7 +407,7 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 					}
 				}
 
-				public class ListK8sSecrets_RelatedAppsItem
+				public class ListK8sSecrets_RelatedAppsItem2
 				{
 
 					private string appName;
@@ -315,6 +435,80 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 						set	
 						{
 							appId = value;
+						}
+					}
+				}
+
+				public class ListK8sSecrets_CertDetail
+				{
+
+					private string endTime;
+
+					private string status;
+
+					private string startTime;
+
+					private string issuer;
+
+					private List<string> domainNames;
+
+					public string EndTime
+					{
+						get
+						{
+							return endTime;
+						}
+						set	
+						{
+							endTime = value;
+						}
+					}
+
+					public string Status
+					{
+						get
+						{
+							return status;
+						}
+						set	
+						{
+							status = value;
+						}
+					}
+
+					public string StartTime
+					{
+						get
+						{
+							return startTime;
+						}
+						set	
+						{
+							startTime = value;
+						}
+					}
+
+					public string Issuer
+					{
+						get
+						{
+							return issuer;
+						}
+						set	
+						{
+							issuer = value;
+						}
+					}
+
+					public List<string> DomainNames
+					{
+						get
+						{
+							return domainNames;
+						}
+						set	
+						{
+							domainNames = value;
 						}
 					}
 				}

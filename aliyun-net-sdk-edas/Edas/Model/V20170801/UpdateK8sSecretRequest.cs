@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 			Method = MethodType.PUT;
         }
 
+		private bool? base64Encoded;
+
 		private string data;
 
 		private string name;
@@ -55,6 +57,19 @@ namespace Aliyun.Acs.Edas.Model.V20170801
 		private string type;
 
 		private string certRegionId;
+
+		public bool? Base64Encoded
+		{
+			get
+			{
+				return base64Encoded;
+			}
+			set	
+			{
+				base64Encoded = value;
+				DictionaryUtil.Add(BodyParameters, "Base64Encoded", value.ToString());
+			}
+		}
 
 		public string Data
 		{
