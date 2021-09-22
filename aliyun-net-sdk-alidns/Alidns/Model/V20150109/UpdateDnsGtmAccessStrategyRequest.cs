@@ -72,6 +72,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private List<FailoverAddrPool> failoverAddrPools = new List<FailoverAddrPool>(){ };
 
+		private string accessMode;
+
 		public string DefaultLbaStrategy
 		{
 			get
@@ -287,6 +289,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 					DictionaryUtil.Add(QueryParameters,"FailoverAddrPool." + (i + 1) + ".Id", failoverAddrPools[i].Id);
 					DictionaryUtil.Add(QueryParameters,"FailoverAddrPool." + (i + 1) + ".LbaWeight", failoverAddrPools[i].LbaWeight);
 				}
+			}
+		}
+
+		public string AccessMode
+		{
+			get
+			{
+				return accessMode;
+			}
+			set	
+			{
+				accessMode = value;
+				DictionaryUtil.Add(QueryParameters, "AccessMode", value);
 			}
 		}
 

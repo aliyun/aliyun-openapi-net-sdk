@@ -25,17 +25,29 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 	public class DescribeGtmInstancesResponse : AcsResponse
 	{
 
+		private int? pageSize;
+
 		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalPages;
 
 		private int? totalItems;
 
-		private int? totalPages;
-
 		private List<DescribeGtmInstances_GtmInstance> gtmInstances;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,15 +73,15 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public int? PageSize
+		public int? TotalPages
 		{
 			get
 			{
-				return pageSize;
+				return totalPages;
 			}
 			set	
 			{
-				pageSize = value;
+				totalPages = value;
 			}
 		}
 
@@ -82,18 +94,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			set	
 			{
 				totalItems = value;
-			}
-		}
-
-		public int? TotalPages
-		{
-			get
-			{
-				return totalPages;
-			}
-			set	
-			{
-				totalPages = value;
 			}
 		}
 
@@ -112,143 +112,37 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		public class DescribeGtmInstances_GtmInstance
 		{
 
-			private string instanceId;
-
-			private string instanceName;
-
-			private string cname;
-
-			private string userDomainName;
-
-			private string versionCode;
-
-			private int? ttl;
-
-			private string lbaStrategy;
-
-			private string createTime;
-
-			private long? createTimestamp;
-
 			private string expireTime;
-
-			private long? expireTimestamp;
-
-			private string alertGroup;
-
-			private string cnameMode;
 
 			private int? accessStrategyNum;
 
+			private string createTime;
+
+			private string cnameMode;
+
+			private string instanceId;
+
+			private long? expireTimestamp;
+
+			private int? ttl;
+
+			private string alertGroup;
+
 			private int? addressPoolNum;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private string instanceName;
 
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
-				}
-			}
+			private string lbaStrategy;
 
-			public string Cname
-			{
-				get
-				{
-					return cname;
-				}
-				set	
-				{
-					cname = value;
-				}
-			}
+			private string cname;
 
-			public string UserDomainName
-			{
-				get
-				{
-					return userDomainName;
-				}
-				set	
-				{
-					userDomainName = value;
-				}
-			}
+			private string versionCode;
 
-			public string VersionCode
-			{
-				get
-				{
-					return versionCode;
-				}
-				set	
-				{
-					versionCode = value;
-				}
-			}
+			private string userDomainName;
 
-			public int? Ttl
-			{
-				get
-				{
-					return ttl;
-				}
-				set	
-				{
-					ttl = value;
-				}
-			}
+			private long? createTimestamp;
 
-			public string LbaStrategy
-			{
-				get
-				{
-					return lbaStrategy;
-				}
-				set	
-				{
-					lbaStrategy = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public long? CreateTimestamp
-			{
-				get
-				{
-					return createTimestamp;
-				}
-				set	
-				{
-					createTimestamp = value;
-				}
-			}
+			private string resourceGroupId;
 
 			public string ExpireTime
 			{
@@ -259,42 +153,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					expireTime = value;
-				}
-			}
-
-			public long? ExpireTimestamp
-			{
-				get
-				{
-					return expireTimestamp;
-				}
-				set	
-				{
-					expireTimestamp = value;
-				}
-			}
-
-			public string AlertGroup
-			{
-				get
-				{
-					return alertGroup;
-				}
-				set	
-				{
-					alertGroup = value;
-				}
-			}
-
-			public string CnameMode
-			{
-				get
-				{
-					return cnameMode;
-				}
-				set	
-				{
-					cnameMode = value;
 				}
 			}
 
@@ -310,6 +168,78 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				}
 			}
 
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string CnameMode
+			{
+				get
+				{
+					return cnameMode;
+				}
+				set	
+				{
+					cnameMode = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public long? ExpireTimestamp
+			{
+				get
+				{
+					return expireTimestamp;
+				}
+				set	
+				{
+					expireTimestamp = value;
+				}
+			}
+
+			public int? Ttl
+			{
+				get
+				{
+					return ttl;
+				}
+				set	
+				{
+					ttl = value;
+				}
+			}
+
+			public string AlertGroup
+			{
+				get
+				{
+					return alertGroup;
+				}
+				set	
+				{
+					alertGroup = value;
+				}
+			}
+
 			public int? AddressPoolNum
 			{
 				get
@@ -319,6 +249,90 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					addressPoolNum = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string LbaStrategy
+			{
+				get
+				{
+					return lbaStrategy;
+				}
+				set	
+				{
+					lbaStrategy = value;
+				}
+			}
+
+			public string Cname
+			{
+				get
+				{
+					return cname;
+				}
+				set	
+				{
+					cname = value;
+				}
+			}
+
+			public string VersionCode
+			{
+				get
+				{
+					return versionCode;
+				}
+				set	
+				{
+					versionCode = value;
+				}
+			}
+
+			public string UserDomainName
+			{
+				get
+				{
+					return userDomainName;
+				}
+				set	
+				{
+					userDomainName = value;
+				}
+			}
+
+			public long? CreateTimestamp
+			{
+				get
+				{
+					return createTimestamp;
+				}
+				set	
+				{
+					createTimestamp = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 		}

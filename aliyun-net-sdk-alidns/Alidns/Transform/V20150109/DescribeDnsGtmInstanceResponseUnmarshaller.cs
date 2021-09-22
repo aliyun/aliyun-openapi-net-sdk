@@ -31,34 +31,36 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			DescribeDnsGtmInstanceResponse describeDnsGtmInstanceResponse = new DescribeDnsGtmInstanceResponse();
 
 			describeDnsGtmInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			describeDnsGtmInstanceResponse.ExpireTimestamp = _ctx.LongValue("DescribeDnsGtmInstance.ExpireTimestamp");
 			describeDnsGtmInstanceResponse.RequestId = _ctx.StringValue("DescribeDnsGtmInstance.RequestId");
+			describeDnsGtmInstanceResponse.ResourceGroupId = _ctx.StringValue("DescribeDnsGtmInstance.ResourceGroupId");
 			describeDnsGtmInstanceResponse.InstanceId = _ctx.StringValue("DescribeDnsGtmInstance.InstanceId");
-			describeDnsGtmInstanceResponse.VersionCode = _ctx.StringValue("DescribeDnsGtmInstance.VersionCode");
-			describeDnsGtmInstanceResponse.SmsQuota = _ctx.IntegerValue("DescribeDnsGtmInstance.SmsQuota");
 			describeDnsGtmInstanceResponse.TaskQuota = _ctx.IntegerValue("DescribeDnsGtmInstance.TaskQuota");
 			describeDnsGtmInstanceResponse.CreateTime = _ctx.StringValue("DescribeDnsGtmInstance.CreateTime");
-			describeDnsGtmInstanceResponse.CreateTimestamp = _ctx.LongValue("DescribeDnsGtmInstance.CreateTimestamp");
-			describeDnsGtmInstanceResponse.ExpireTime = _ctx.StringValue("DescribeDnsGtmInstance.ExpireTime");
-			describeDnsGtmInstanceResponse.ExpireTimestamp = _ctx.LongValue("DescribeDnsGtmInstance.ExpireTimestamp");
-			describeDnsGtmInstanceResponse.ResourceGroupId = _ctx.StringValue("DescribeDnsGtmInstance.ResourceGroupId");
+			describeDnsGtmInstanceResponse.SmsQuota = _ctx.IntegerValue("DescribeDnsGtmInstance.SmsQuota");
+			describeDnsGtmInstanceResponse.VersionCode = _ctx.StringValue("DescribeDnsGtmInstance.VersionCode");
 			describeDnsGtmInstanceResponse.PaymentType = _ctx.StringValue("DescribeDnsGtmInstance.PaymentType");
+			describeDnsGtmInstanceResponse.ExpireTime = _ctx.StringValue("DescribeDnsGtmInstance.ExpireTime");
+			describeDnsGtmInstanceResponse.CreateTimestamp = _ctx.LongValue("DescribeDnsGtmInstance.CreateTimestamp");
 
 			DescribeDnsGtmInstanceResponse.DescribeDnsGtmInstance_Config config = new DescribeDnsGtmInstanceResponse.DescribeDnsGtmInstance_Config();
-			config.InstanceName = _ctx.StringValue("DescribeDnsGtmInstance.Config.InstanceName");
-			config.CnameType = _ctx.StringValue("DescribeDnsGtmInstance.Config.CnameType");
-			config.PublicUserDomainName = _ctx.StringValue("DescribeDnsGtmInstance.Config.PublicUserDomainName");
-			config.PublicCnameMode = _ctx.StringValue("DescribeDnsGtmInstance.Config.PublicCnameMode");
-			config.PubicZoneName = _ctx.StringValue("DescribeDnsGtmInstance.Config.PubicZoneName");
 			config.Ttl = _ctx.IntegerValue("DescribeDnsGtmInstance.Config.Ttl");
-			config.StrategyMode = _ctx.StringValue("DescribeDnsGtmInstance.Config.StrategyMode");
 			config.AlertGroup = _ctx.StringValue("DescribeDnsGtmInstance.Config.AlertGroup");
+			config.CnameType = _ctx.StringValue("DescribeDnsGtmInstance.Config.CnameType");
+			config.StrategyMode = _ctx.StringValue("DescribeDnsGtmInstance.Config.StrategyMode");
+			config.InstanceName = _ctx.StringValue("DescribeDnsGtmInstance.Config.InstanceName");
+			config.PublicCnameMode = _ctx.StringValue("DescribeDnsGtmInstance.Config.PublicCnameMode");
+			config.PublicUserDomainName = _ctx.StringValue("DescribeDnsGtmInstance.Config.PublicUserDomainName");
+			config.PubicZoneName = _ctx.StringValue("DescribeDnsGtmInstance.Config.PubicZoneName");
+			config.PublicRr = _ctx.StringValue("DescribeDnsGtmInstance.Config.PublicRr");
 
 			List<DescribeDnsGtmInstanceResponse.DescribeDnsGtmInstance_Config.DescribeDnsGtmInstance_AlertConfigItem> config_alertConfig = new List<DescribeDnsGtmInstanceResponse.DescribeDnsGtmInstance_Config.DescribeDnsGtmInstance_AlertConfigItem>();
 			for (int i = 0; i < _ctx.Length("DescribeDnsGtmInstance.Config.AlertConfig.Length"); i++) {
 				DescribeDnsGtmInstanceResponse.DescribeDnsGtmInstance_Config.DescribeDnsGtmInstance_AlertConfigItem alertConfigItem = new DescribeDnsGtmInstanceResponse.DescribeDnsGtmInstance_Config.DescribeDnsGtmInstance_AlertConfigItem();
-				alertConfigItem.NoticeType = _ctx.StringValue("DescribeDnsGtmInstance.Config.AlertConfig["+ i +"].NoticeType");
 				alertConfigItem.SmsNotice = _ctx.BooleanValue("DescribeDnsGtmInstance.Config.AlertConfig["+ i +"].SmsNotice");
+				alertConfigItem.NoticeType = _ctx.StringValue("DescribeDnsGtmInstance.Config.AlertConfig["+ i +"].NoticeType");
 				alertConfigItem.EmailNotice = _ctx.BooleanValue("DescribeDnsGtmInstance.Config.AlertConfig["+ i +"].EmailNotice");
+				alertConfigItem.DingtalkNotice = _ctx.BooleanValue("DescribeDnsGtmInstance.Config.AlertConfig["+ i +"].DingtalkNotice");
 
 				config_alertConfig.Add(alertConfigItem);
 			}
@@ -66,9 +68,10 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			describeDnsGtmInstanceResponse.Config = config;
 
 			DescribeDnsGtmInstanceResponse.DescribeDnsGtmInstance_UsedQuota usedQuota = new DescribeDnsGtmInstanceResponse.DescribeDnsGtmInstance_UsedQuota();
+			usedQuota.EmailUsedCount = _ctx.IntegerValue("DescribeDnsGtmInstance.UsedQuota.EmailUsedCount");
 			usedQuota.TaskUsedCount = _ctx.IntegerValue("DescribeDnsGtmInstance.UsedQuota.TaskUsedCount");
 			usedQuota.SmsUsedCount = _ctx.IntegerValue("DescribeDnsGtmInstance.UsedQuota.SmsUsedCount");
-			usedQuota.EmailUsedCount = _ctx.IntegerValue("DescribeDnsGtmInstance.UsedQuota.EmailUsedCount");
+			usedQuota.DingtalkUsedCount = _ctx.IntegerValue("DescribeDnsGtmInstance.UsedQuota.DingtalkUsedCount");
 			describeDnsGtmInstanceResponse.UsedQuota = usedQuota;
         
 			return describeDnsGtmInstanceResponse;

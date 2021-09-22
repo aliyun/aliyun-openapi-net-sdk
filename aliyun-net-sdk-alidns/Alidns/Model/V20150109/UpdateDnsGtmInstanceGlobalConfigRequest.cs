@@ -54,9 +54,13 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private int? ttl;
 
+		private bool? forceUpdate;
+
 		private string instanceId;
 
 		private string instanceName;
+
+		private string publicRr;
 
 		private string publicZoneName;
 
@@ -111,6 +115,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				alertConfigs = value;
 				for (int i = 0; i < alertConfigs.Count; i++)
 				{
+					DictionaryUtil.Add(QueryParameters,"AlertConfig." + (i + 1) + ".DingtalkNotice", alertConfigs[i].DingtalkNotice);
 					DictionaryUtil.Add(QueryParameters,"AlertConfig." + (i + 1) + ".SmsNotice", alertConfigs[i].SmsNotice);
 					DictionaryUtil.Add(QueryParameters,"AlertConfig." + (i + 1) + ".NoticeType", alertConfigs[i].NoticeType);
 					DictionaryUtil.Add(QueryParameters,"AlertConfig." + (i + 1) + ".EmailNotice", alertConfigs[i].EmailNotice);
@@ -157,6 +162,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
+		public bool? ForceUpdate
+		{
+			get
+			{
+				return forceUpdate;
+			}
+			set	
+			{
+				forceUpdate = value;
+				DictionaryUtil.Add(QueryParameters, "ForceUpdate", value.ToString());
+			}
+		}
+
 		public string InstanceId
 		{
 			get
@@ -183,6 +201,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
+		public string PublicRr
+		{
+			get
+			{
+				return publicRr;
+			}
+			set	
+			{
+				publicRr = value;
+				DictionaryUtil.Add(QueryParameters, "PublicRr", value);
+			}
+		}
+
 		public string PublicZoneName
 		{
 			get
@@ -199,11 +230,25 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		public class AlertConfig
 		{
 
+			private bool? dingtalkNotice;
+
 			private bool? smsNotice;
 
 			private string noticeType;
 
 			private bool? emailNotice;
+
+			public bool? DingtalkNotice
+			{
+				get
+				{
+					return dingtalkNotice;
+				}
+				set	
+				{
+					dingtalkNotice = value;
+				}
+			}
 
 			public bool? SmsNotice
 			{

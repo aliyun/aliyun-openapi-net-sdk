@@ -25,31 +25,43 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 	public class DescribeDnsGtmInstanceResponse : AcsResponse
 	{
 
+		private long? expireTimestamp;
+
 		private string requestId;
 
+		private string resourceGroupId;
+
 		private string instanceId;
-
-		private string versionCode;
-
-		private int? smsQuota;
 
 		private int? taskQuota;
 
 		private string createTime;
 
-		private long? createTimestamp;
+		private int? smsQuota;
+
+		private string versionCode;
+
+		private string paymentType;
 
 		private string expireTime;
 
-		private long? expireTimestamp;
-
-		private string resourceGroupId;
-
-		private string paymentType;
+		private long? createTimestamp;
 
 		private DescribeDnsGtmInstance_Config config;
 
 		private DescribeDnsGtmInstance_UsedQuota usedQuota;
+
+		public long? ExpireTimestamp
+		{
+			get
+			{
+				return expireTimestamp;
+			}
+			set	
+			{
+				expireTimestamp = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -63,6 +75,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+			}
+		}
+
 		public string InstanceId
 		{
 			get
@@ -72,30 +96,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			set	
 			{
 				instanceId = value;
-			}
-		}
-
-		public string VersionCode
-		{
-			get
-			{
-				return versionCode;
-			}
-			set	
-			{
-				versionCode = value;
-			}
-		}
-
-		public int? SmsQuota
-		{
-			get
-			{
-				return smsQuota;
-			}
-			set	
-			{
-				smsQuota = value;
 			}
 		}
 
@@ -123,15 +123,39 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public long? CreateTimestamp
+		public int? SmsQuota
 		{
 			get
 			{
-				return createTimestamp;
+				return smsQuota;
 			}
 			set	
 			{
-				createTimestamp = value;
+				smsQuota = value;
+			}
+		}
+
+		public string VersionCode
+		{
+			get
+			{
+				return versionCode;
+			}
+			set	
+			{
+				versionCode = value;
+			}
+		}
+
+		public string PaymentType
+		{
+			get
+			{
+				return paymentType;
+			}
+			set	
+			{
+				paymentType = value;
 			}
 		}
 
@@ -147,39 +171,15 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public long? ExpireTimestamp
+		public long? CreateTimestamp
 		{
 			get
 			{
-				return expireTimestamp;
+				return createTimestamp;
 			}
 			set	
 			{
-				expireTimestamp = value;
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-			}
-		}
-
-		public string PaymentType
-		{
-			get
-			{
-				return paymentType;
-			}
-			set	
-			{
-				paymentType = value;
+				createTimestamp = value;
 			}
 		}
 
@@ -210,33 +210,47 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		public class DescribeDnsGtmInstance_Config
 		{
 
-			private string instanceName;
-
-			private string cnameType;
-
-			private string publicUserDomainName;
-
-			private string publicCnameMode;
-
-			private string pubicZoneName;
-
 			private int? ttl;
-
-			private string strategyMode;
 
 			private string alertGroup;
 
+			private string cnameType;
+
+			private string strategyMode;
+
+			private string instanceName;
+
+			private string publicCnameMode;
+
+			private string publicUserDomainName;
+
+			private string pubicZoneName;
+
+			private string publicRr;
+
 			private List<DescribeDnsGtmInstance_AlertConfigItem> alertConfig;
 
-			public string InstanceName
+			public int? Ttl
 			{
 				get
 				{
-					return instanceName;
+					return ttl;
 				}
 				set	
 				{
-					instanceName = value;
+					ttl = value;
+				}
+			}
+
+			public string AlertGroup
+			{
+				get
+				{
+					return alertGroup;
+				}
+				set	
+				{
+					alertGroup = value;
 				}
 			}
 
@@ -252,15 +266,27 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				}
 			}
 
-			public string PublicUserDomainName
+			public string StrategyMode
 			{
 				get
 				{
-					return publicUserDomainName;
+					return strategyMode;
 				}
 				set	
 				{
-					publicUserDomainName = value;
+					strategyMode = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
 				}
 			}
 
@@ -276,6 +302,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				}
 			}
 
+			public string PublicUserDomainName
+			{
+				get
+				{
+					return publicUserDomainName;
+				}
+				set	
+				{
+					publicUserDomainName = value;
+				}
+			}
+
 			public string PubicZoneName
 			{
 				get
@@ -288,39 +326,15 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				}
 			}
 
-			public int? Ttl
+			public string PublicRr
 			{
 				get
 				{
-					return ttl;
+					return publicRr;
 				}
 				set	
 				{
-					ttl = value;
-				}
-			}
-
-			public string StrategyMode
-			{
-				get
-				{
-					return strategyMode;
-				}
-				set	
-				{
-					strategyMode = value;
-				}
-			}
-
-			public string AlertGroup
-			{
-				get
-				{
-					return alertGroup;
-				}
-				set	
-				{
-					alertGroup = value;
+					publicRr = value;
 				}
 			}
 
@@ -339,23 +353,13 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			public class DescribeDnsGtmInstance_AlertConfigItem
 			{
 
-				private string noticeType;
-
 				private bool? smsNotice;
+
+				private string noticeType;
 
 				private bool? emailNotice;
 
-				public string NoticeType
-				{
-					get
-					{
-						return noticeType;
-					}
-					set	
-					{
-						noticeType = value;
-					}
-				}
+				private bool? dingtalkNotice;
 
 				public bool? SmsNotice
 				{
@@ -366,6 +370,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 					set	
 					{
 						smsNotice = value;
+					}
+				}
+
+				public string NoticeType
+				{
+					get
+					{
+						return noticeType;
+					}
+					set	
+					{
+						noticeType = value;
 					}
 				}
 
@@ -380,17 +396,43 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 						emailNotice = value;
 					}
 				}
+
+				public bool? DingtalkNotice
+				{
+					get
+					{
+						return dingtalkNotice;
+					}
+					set	
+					{
+						dingtalkNotice = value;
+					}
+				}
 			}
 		}
 
 		public class DescribeDnsGtmInstance_UsedQuota
 		{
 
+			private int? emailUsedCount;
+
 			private int? taskUsedCount;
 
 			private int? smsUsedCount;
 
-			private int? emailUsedCount;
+			private int? dingtalkUsedCount;
+
+			public int? EmailUsedCount
+			{
+				get
+				{
+					return emailUsedCount;
+				}
+				set	
+				{
+					emailUsedCount = value;
+				}
+			}
 
 			public int? TaskUsedCount
 			{
@@ -416,15 +458,15 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				}
 			}
 
-			public int? EmailUsedCount
+			public int? DingtalkUsedCount
 			{
 				get
 				{
-					return emailUsedCount;
+					return dingtalkUsedCount;
 				}
 				set	
 				{
-					emailUsedCount = value;
+					dingtalkUsedCount = value;
 				}
 			}
 		}

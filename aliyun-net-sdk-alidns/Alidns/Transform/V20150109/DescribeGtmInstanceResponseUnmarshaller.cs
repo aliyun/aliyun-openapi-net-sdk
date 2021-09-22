@@ -31,22 +31,23 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			DescribeGtmInstanceResponse describeGtmInstanceResponse = new DescribeGtmInstanceResponse();
 
 			describeGtmInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			describeGtmInstanceResponse.ExpireTimestamp = _ctx.LongValue("DescribeGtmInstance.ExpireTimestamp");
+			describeGtmInstanceResponse.UserDomainName = _ctx.StringValue("DescribeGtmInstance.UserDomainName");
 			describeGtmInstanceResponse.RequestId = _ctx.StringValue("DescribeGtmInstance.RequestId");
+			describeGtmInstanceResponse.LbaStrategy = _ctx.StringValue("DescribeGtmInstance.LbaStrategy");
 			describeGtmInstanceResponse.InstanceId = _ctx.StringValue("DescribeGtmInstance.InstanceId");
+			describeGtmInstanceResponse.CreateTime = _ctx.StringValue("DescribeGtmInstance.CreateTime");
+			describeGtmInstanceResponse.CnameMode = _ctx.StringValue("DescribeGtmInstance.CnameMode");
+			describeGtmInstanceResponse.Ttl = _ctx.IntegerValue("DescribeGtmInstance.Ttl");
+			describeGtmInstanceResponse.Cname = _ctx.StringValue("DescribeGtmInstance.Cname");
 			describeGtmInstanceResponse.InstanceName = _ctx.StringValue("DescribeGtmInstance.InstanceName");
 			describeGtmInstanceResponse.VersionCode = _ctx.StringValue("DescribeGtmInstance.VersionCode");
-			describeGtmInstanceResponse.ExpireTime = _ctx.StringValue("DescribeGtmInstance.ExpireTime");
-			describeGtmInstanceResponse.ExpireTimestamp = _ctx.LongValue("DescribeGtmInstance.ExpireTimestamp");
-			describeGtmInstanceResponse.Cname = _ctx.StringValue("DescribeGtmInstance.Cname");
-			describeGtmInstanceResponse.UserDomainName = _ctx.StringValue("DescribeGtmInstance.UserDomainName");
-			describeGtmInstanceResponse.Ttl = _ctx.IntegerValue("DescribeGtmInstance.Ttl");
-			describeGtmInstanceResponse.LbaStrategy = _ctx.StringValue("DescribeGtmInstance.LbaStrategy");
-			describeGtmInstanceResponse.CreateTime = _ctx.StringValue("DescribeGtmInstance.CreateTime");
-			describeGtmInstanceResponse.CreateTimestamp = _ctx.LongValue("DescribeGtmInstance.CreateTimestamp");
 			describeGtmInstanceResponse.AlertGroup = _ctx.StringValue("DescribeGtmInstance.AlertGroup");
-			describeGtmInstanceResponse.CnameMode = _ctx.StringValue("DescribeGtmInstance.CnameMode");
-			describeGtmInstanceResponse.AccessStrategyNum = _ctx.IntegerValue("DescribeGtmInstance.AccessStrategyNum");
 			describeGtmInstanceResponse.AddressPoolNum = _ctx.IntegerValue("DescribeGtmInstance.AddressPoolNum");
+			describeGtmInstanceResponse.AccessStrategyNum = _ctx.IntegerValue("DescribeGtmInstance.AccessStrategyNum");
+			describeGtmInstanceResponse.ExpireTime = _ctx.StringValue("DescribeGtmInstance.ExpireTime");
+			describeGtmInstanceResponse.CreateTimestamp = _ctx.LongValue("DescribeGtmInstance.CreateTimestamp");
+			describeGtmInstanceResponse.ResourceGroupId = _ctx.StringValue("DescribeGtmInstance.ResourceGroupId");
         
 			return describeGtmInstanceResponse;
         }

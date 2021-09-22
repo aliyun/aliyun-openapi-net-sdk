@@ -25,37 +25,63 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 	public class DescribeGtmInstanceResponse : AcsResponse
 	{
 
+		private long? expireTimestamp;
+
+		private string userDomainName;
+
 		private string requestId;
 
+		private string lbaStrategy;
+
 		private string instanceId;
+
+		private string createTime;
+
+		private string cnameMode;
+
+		private int? ttl;
+
+		private string cname;
 
 		private string instanceName;
 
 		private string versionCode;
 
-		private string expireTime;
-
-		private long? expireTimestamp;
-
-		private string cname;
-
-		private string userDomainName;
-
-		private int? ttl;
-
-		private string lbaStrategy;
-
-		private string createTime;
-
-		private long? createTimestamp;
-
 		private string alertGroup;
 
-		private string cnameMode;
+		private int? addressPoolNum;
 
 		private int? accessStrategyNum;
 
-		private int? addressPoolNum;
+		private string expireTime;
+
+		private long? createTimestamp;
+
+		private string resourceGroupId;
+
+		public long? ExpireTimestamp
+		{
+			get
+			{
+				return expireTimestamp;
+			}
+			set	
+			{
+				expireTimestamp = value;
+			}
+		}
+
+		public string UserDomainName
+		{
+			get
+			{
+				return userDomainName;
+			}
+			set	
+			{
+				userDomainName = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -69,6 +95,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
+		public string LbaStrategy
+		{
+			get
+			{
+				return lbaStrategy;
+			}
+			set	
+			{
+				lbaStrategy = value;
+			}
+		}
+
 		public string InstanceId
 		{
 			get
@@ -78,6 +116,54 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			set	
 			{
 				instanceId = value;
+			}
+		}
+
+		public string CreateTime
+		{
+			get
+			{
+				return createTime;
+			}
+			set	
+			{
+				createTime = value;
+			}
+		}
+
+		public string CnameMode
+		{
+			get
+			{
+				return cnameMode;
+			}
+			set	
+			{
+				cnameMode = value;
+			}
+		}
+
+		public int? Ttl
+		{
+			get
+			{
+				return ttl;
+			}
+			set	
+			{
+				ttl = value;
+			}
+		}
+
+		public string Cname
+		{
+			get
+			{
+				return cname;
+			}
+			set	
+			{
+				cname = value;
 			}
 		}
 
@@ -105,102 +191,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string ExpireTime
-		{
-			get
-			{
-				return expireTime;
-			}
-			set	
-			{
-				expireTime = value;
-			}
-		}
-
-		public long? ExpireTimestamp
-		{
-			get
-			{
-				return expireTimestamp;
-			}
-			set	
-			{
-				expireTimestamp = value;
-			}
-		}
-
-		public string Cname
-		{
-			get
-			{
-				return cname;
-			}
-			set	
-			{
-				cname = value;
-			}
-		}
-
-		public string UserDomainName
-		{
-			get
-			{
-				return userDomainName;
-			}
-			set	
-			{
-				userDomainName = value;
-			}
-		}
-
-		public int? Ttl
-		{
-			get
-			{
-				return ttl;
-			}
-			set	
-			{
-				ttl = value;
-			}
-		}
-
-		public string LbaStrategy
-		{
-			get
-			{
-				return lbaStrategy;
-			}
-			set	
-			{
-				lbaStrategy = value;
-			}
-		}
-
-		public string CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
-
-		public long? CreateTimestamp
-		{
-			get
-			{
-				return createTimestamp;
-			}
-			set	
-			{
-				createTimestamp = value;
-			}
-		}
-
 		public string AlertGroup
 		{
 			get
@@ -213,15 +203,15 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string CnameMode
+		public int? AddressPoolNum
 		{
 			get
 			{
-				return cnameMode;
+				return addressPoolNum;
 			}
 			set	
 			{
-				cnameMode = value;
+				addressPoolNum = value;
 			}
 		}
 
@@ -237,15 +227,39 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public int? AddressPoolNum
+		public string ExpireTime
 		{
 			get
 			{
-				return addressPoolNum;
+				return expireTime;
 			}
 			set	
 			{
-				addressPoolNum = value;
+				expireTime = value;
+			}
+		}
+
+		public long? CreateTimestamp
+		{
+			get
+			{
+				return createTimestamp;
+			}
+			set	
+			{
+				createTimestamp = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 	}
