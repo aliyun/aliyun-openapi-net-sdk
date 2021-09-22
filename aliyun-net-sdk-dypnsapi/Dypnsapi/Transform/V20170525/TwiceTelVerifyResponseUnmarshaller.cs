@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Dypnsapi.Transform.V20170525
 {
     public class TwiceTelVerifyResponseUnmarshaller
     {
-        public static TwiceTelVerifyResponse Unmarshall(UnmarshallerContext context)
+        public static TwiceTelVerifyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TwiceTelVerifyResponse twiceTelVerifyResponse = new TwiceTelVerifyResponse();
 
-			twiceTelVerifyResponse.HttpResponse = context.HttpResponse;
-			twiceTelVerifyResponse.RequestId = context.StringValue("TwiceTelVerify.RequestId");
-			twiceTelVerifyResponse.Code = context.StringValue("TwiceTelVerify.Code");
-			twiceTelVerifyResponse.Message = context.StringValue("TwiceTelVerify.Message");
+			twiceTelVerifyResponse.HttpResponse = _ctx.HttpResponse;
+			twiceTelVerifyResponse.Code = _ctx.StringValue("TwiceTelVerify.Code");
+			twiceTelVerifyResponse.Message = _ctx.StringValue("TwiceTelVerify.Message");
+			twiceTelVerifyResponse.RequestId = _ctx.StringValue("TwiceTelVerify.RequestId");
 
 			TwiceTelVerifyResponse.TwiceTelVerify_TwiceTelVerifyResult twiceTelVerifyResult = new TwiceTelVerifyResponse.TwiceTelVerify_TwiceTelVerifyResult();
-			twiceTelVerifyResult.Carrier = context.StringValue("TwiceTelVerify.TwiceTelVerifyResult.Carrier");
-			twiceTelVerifyResult.VerifyResult = context.IntegerValue("TwiceTelVerify.TwiceTelVerifyResult.VerifyResult");
+			twiceTelVerifyResult.Carrier = _ctx.StringValue("TwiceTelVerify.TwiceTelVerifyResult.Carrier");
+			twiceTelVerifyResult.VerifyResult = _ctx.IntegerValue("TwiceTelVerify.TwiceTelVerifyResult.VerifyResult");
 			twiceTelVerifyResponse.TwiceTelVerifyResult = twiceTelVerifyResult;
         
 			return twiceTelVerifyResponse;

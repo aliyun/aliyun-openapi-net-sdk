@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-	public class GetMobileResponse : AcsResponse
+	public class GetSmsAuthTokensResponse : AcsResponse
 	{
 
 		private string code;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 
 		private string requestId;
 
-		private GetMobile_GetMobileResultDTO getMobileResultDTO;
+		private GetSmsAuthTokens_Data data;
 
 		public string Code
 		{
@@ -69,32 +69,88 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public GetMobile_GetMobileResultDTO GetMobileResultDTO
+		public GetSmsAuthTokens_Data Data
 		{
 			get
 			{
-				return getMobileResultDTO;
+				return data;
 			}
 			set	
 			{
-				getMobileResultDTO = value;
+				data = value;
 			}
 		}
 
-		public class GetMobile_GetMobileResultDTO
+		public class GetSmsAuthTokens_Data
 		{
 
-			private string mobile;
+			private string bizToken;
 
-			public string Mobile
+			private string stsAccessKeySecret;
+
+			private string stsAccessKeyId;
+
+			private long? expireTime;
+
+			private string stsToken;
+
+			public string BizToken
 			{
 				get
 				{
-					return mobile;
+					return bizToken;
 				}
 				set	
 				{
-					mobile = value;
+					bizToken = value;
+				}
+			}
+
+			public string StsAccessKeySecret
+			{
+				get
+				{
+					return stsAccessKeySecret;
+				}
+				set	
+				{
+					stsAccessKeySecret = value;
+				}
+			}
+
+			public string StsAccessKeyId
+			{
+				get
+				{
+					return stsAccessKeyId;
+				}
+				set	
+				{
+					stsAccessKeyId = value;
+				}
+			}
+
+			public long? ExpireTime
+			{
+				get
+				{
+					return expireTime;
+				}
+				set	
+				{
+					expireTime = value;
+				}
+			}
+
+			public string StsToken
+			{
+				get
+				{
+					return stsToken;
+				}
+				set	
+				{
+					stsToken = value;
 				}
 			}
 		}

@@ -28,10 +28,10 @@ using Aliyun.Acs.Dypnsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-    public class GetAuthTokenRequest : RpcAcsRequest<GetAuthTokenResponse>
+    public class GetCertifyResultRequest : RpcAcsRequest<GetCertifyResultResponse>
     {
-        public GetAuthTokenRequest()
-            : base("Dypnsapi", "2017-05-25", "GetAuthToken")
+        public GetCertifyResultRequest()
+            : base("Dypnsapi", "2017-05-25", "GetCertifyResult")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,11 +45,9 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 
 		private string resourceOwnerAccount;
 
-		private string origin;
-
 		private long? ownerId;
 
-		private string url;
+		private string token;
 
 		public long? ResourceOwnerId
 		{
@@ -77,19 +75,6 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string Origin
-		{
-			get
-			{
-				return origin;
-			}
-			set	
-			{
-				origin = value;
-				DictionaryUtil.Add(QueryParameters, "Origin", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -103,16 +88,16 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string Url
+		public string Token
 		{
 			get
 			{
-				return url;
+				return token;
 			}
 			set	
 			{
-				url = value;
-				DictionaryUtil.Add(QueryParameters, "Url", value);
+				token = value;
+				DictionaryUtil.Add(QueryParameters, "Token", value);
 			}
 		}
 
@@ -121,9 +106,9 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			return false;
 		}
 
-        public override GetAuthTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetCertifyResultResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetAuthTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetCertifyResultResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -24,22 +24,22 @@ using Aliyun.Acs.Dypnsapi.Model.V20170525;
 
 namespace Aliyun.Acs.Dypnsapi.Transform.V20170525
 {
-    public class DescribeVerifySchemeResponseUnmarshaller
+    public class GetAuthorizationUrlResponseUnmarshaller
     {
-        public static DescribeVerifySchemeResponse Unmarshall(UnmarshallerContext _ctx)
+        public static GetAuthorizationUrlResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DescribeVerifySchemeResponse describeVerifySchemeResponse = new DescribeVerifySchemeResponse();
+			GetAuthorizationUrlResponse getAuthorizationUrlResponse = new GetAuthorizationUrlResponse();
 
-			describeVerifySchemeResponse.HttpResponse = _ctx.HttpResponse;
-			describeVerifySchemeResponse.Code = _ctx.StringValue("DescribeVerifyScheme.Code");
-			describeVerifySchemeResponse.Message = _ctx.StringValue("DescribeVerifyScheme.Message");
-			describeVerifySchemeResponse.RequestId = _ctx.StringValue("DescribeVerifyScheme.RequestId");
+			getAuthorizationUrlResponse.HttpResponse = _ctx.HttpResponse;
+			getAuthorizationUrlResponse.Code = _ctx.StringValue("GetAuthorizationUrl.Code");
+			getAuthorizationUrlResponse.Message = _ctx.StringValue("GetAuthorizationUrl.Message");
+			getAuthorizationUrlResponse.RequestId = _ctx.StringValue("GetAuthorizationUrl.RequestId");
 
-			DescribeVerifySchemeResponse.DescribeVerifyScheme_SchemeQueryResultDTO schemeQueryResultDTO = new DescribeVerifySchemeResponse.DescribeVerifyScheme_SchemeQueryResultDTO();
-			schemeQueryResultDTO.AppEncryptInfo = _ctx.StringValue("DescribeVerifyScheme.SchemeQueryResultDTO.AppEncryptInfo");
-			describeVerifySchemeResponse.SchemeQueryResultDTO = schemeQueryResultDTO;
+			GetAuthorizationUrlResponse.GetAuthorizationUrl_Data data = new GetAuthorizationUrlResponse.GetAuthorizationUrl_Data();
+			data.AuthorizationUrl = _ctx.StringValue("GetAuthorizationUrl.Data.AuthorizationUrl");
+			getAuthorizationUrlResponse.Data = data;
         
-			return describeVerifySchemeResponse;
+			return getAuthorizationUrlResponse;
         }
     }
 }

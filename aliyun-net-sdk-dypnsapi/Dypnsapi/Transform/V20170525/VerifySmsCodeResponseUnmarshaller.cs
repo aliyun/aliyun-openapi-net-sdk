@@ -24,22 +24,19 @@ using Aliyun.Acs.Dypnsapi.Model.V20170525;
 
 namespace Aliyun.Acs.Dypnsapi.Transform.V20170525
 {
-    public class DescribeVerifySchemeResponseUnmarshaller
+    public class VerifySmsCodeResponseUnmarshaller
     {
-        public static DescribeVerifySchemeResponse Unmarshall(UnmarshallerContext _ctx)
+        public static VerifySmsCodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DescribeVerifySchemeResponse describeVerifySchemeResponse = new DescribeVerifySchemeResponse();
+			VerifySmsCodeResponse verifySmsCodeResponse = new VerifySmsCodeResponse();
 
-			describeVerifySchemeResponse.HttpResponse = _ctx.HttpResponse;
-			describeVerifySchemeResponse.Code = _ctx.StringValue("DescribeVerifyScheme.Code");
-			describeVerifySchemeResponse.Message = _ctx.StringValue("DescribeVerifyScheme.Message");
-			describeVerifySchemeResponse.RequestId = _ctx.StringValue("DescribeVerifyScheme.RequestId");
-
-			DescribeVerifySchemeResponse.DescribeVerifyScheme_SchemeQueryResultDTO schemeQueryResultDTO = new DescribeVerifySchemeResponse.DescribeVerifyScheme_SchemeQueryResultDTO();
-			schemeQueryResultDTO.AppEncryptInfo = _ctx.StringValue("DescribeVerifyScheme.SchemeQueryResultDTO.AppEncryptInfo");
-			describeVerifySchemeResponse.SchemeQueryResultDTO = schemeQueryResultDTO;
+			verifySmsCodeResponse.HttpResponse = _ctx.HttpResponse;
+			verifySmsCodeResponse.Code = _ctx.StringValue("VerifySmsCode.Code");
+			verifySmsCodeResponse.Message = _ctx.StringValue("VerifySmsCode.Message");
+			verifySmsCodeResponse.Data = _ctx.BooleanValue("VerifySmsCode.Data");
+			verifySmsCodeResponse.RequestId = _ctx.StringValue("VerifySmsCode.RequestId");
         
-			return describeVerifySchemeResponse;
+			return verifySmsCodeResponse;
         }
     }
 }

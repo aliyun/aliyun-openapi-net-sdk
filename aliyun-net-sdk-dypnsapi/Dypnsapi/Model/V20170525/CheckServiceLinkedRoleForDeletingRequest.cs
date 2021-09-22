@@ -28,10 +28,10 @@ using Aliyun.Acs.Dypnsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-    public class GetAuthTokenRequest : RpcAcsRequest<GetAuthTokenResponse>
+    public class CheckServiceLinkedRoleForDeletingRequest : RpcAcsRequest<CheckServiceLinkedRoleForDeletingResponse>
     {
-        public GetAuthTokenRequest()
-            : base("Dypnsapi", "2017-05-25", "GetAuthToken")
+        public CheckServiceLinkedRoleForDeletingRequest()
+            : base("Dypnsapi", "2017-05-25", "CheckServiceLinkedRoleForDeleting")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,13 +43,19 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private string deletionTaskId;
 
-		private string origin;
+		private string accountId;
+
+		private string serviceName;
+
+		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
-		private string url;
+		private string sPIRegionId;
+
+		private string roleArn;
 
 		public long? ResourceOwnerId
 		{
@@ -61,6 +67,45 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string DeletionTaskId
+		{
+			get
+			{
+				return deletionTaskId;
+			}
+			set	
+			{
+				deletionTaskId = value;
+				DictionaryUtil.Add(QueryParameters, "DeletionTaskId", value);
+			}
+		}
+
+		public string AccountId
+		{
+			get
+			{
+				return accountId;
+			}
+			set	
+			{
+				accountId = value;
+				DictionaryUtil.Add(QueryParameters, "AccountId", value);
+			}
+		}
+
+		public string ServiceName
+		{
+			get
+			{
+				return serviceName;
+			}
+			set	
+			{
+				serviceName = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
 			}
 		}
 
@@ -77,19 +122,6 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string Origin
-		{
-			get
-			{
-				return origin;
-			}
-			set	
-			{
-				origin = value;
-				DictionaryUtil.Add(QueryParameters, "Origin", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -103,16 +135,29 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string Url
+		public string SPIRegionId
 		{
 			get
 			{
-				return url;
+				return sPIRegionId;
 			}
 			set	
 			{
-				url = value;
-				DictionaryUtil.Add(QueryParameters, "Url", value);
+				sPIRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "SPIRegionId", value);
+			}
+		}
+
+		public string RoleArn
+		{
+			get
+			{
+				return roleArn;
+			}
+			set	
+			{
+				roleArn = value;
+				DictionaryUtil.Add(QueryParameters, "RoleArn", value);
 			}
 		}
 
@@ -121,9 +166,9 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			return false;
 		}
 
-        public override GetAuthTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CheckServiceLinkedRoleForDeletingResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetAuthTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CheckServiceLinkedRoleForDeletingResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

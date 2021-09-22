@@ -28,10 +28,10 @@ using Aliyun.Acs.Dypnsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-    public class GetAuthTokenRequest : RpcAcsRequest<GetAuthTokenResponse>
+    public class GetSmsAuthTokensRequest : RpcAcsRequest<GetSmsAuthTokensResponse>
     {
-        public GetAuthTokenRequest()
-            : base("Dypnsapi", "2017-05-25", "GetAuthToken")
+        public GetSmsAuthTokensRequest()
+            : base("Dypnsapi", "2017-05-25", "GetSmsAuthTokens")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,13 +43,25 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 
 		private long? resourceOwnerId;
 
+		private string bundleId;
+
+		private string signName;
+
+		private string sceneCode;
+
 		private string resourceOwnerAccount;
 
-		private string origin;
+		private int? smsCodeExpire;
+
+		private string packageName;
+
+		private string osType;
 
 		private long? ownerId;
 
-		private string url;
+		private string smsTemplateCode;
+
+		private long? expire;
 
 		public long? ResourceOwnerId
 		{
@@ -61,6 +73,45 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string BundleId
+		{
+			get
+			{
+				return bundleId;
+			}
+			set	
+			{
+				bundleId = value;
+				DictionaryUtil.Add(QueryParameters, "BundleId", value);
+			}
+		}
+
+		public string SignName
+		{
+			get
+			{
+				return signName;
+			}
+			set	
+			{
+				signName = value;
+				DictionaryUtil.Add(QueryParameters, "SignName", value);
+			}
+		}
+
+		public string SceneCode
+		{
+			get
+			{
+				return sceneCode;
+			}
+			set	
+			{
+				sceneCode = value;
+				DictionaryUtil.Add(QueryParameters, "SceneCode", value);
 			}
 		}
 
@@ -77,16 +128,42 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string Origin
+		public int? SmsCodeExpire
 		{
 			get
 			{
-				return origin;
+				return smsCodeExpire;
 			}
 			set	
 			{
-				origin = value;
-				DictionaryUtil.Add(QueryParameters, "Origin", value);
+				smsCodeExpire = value;
+				DictionaryUtil.Add(QueryParameters, "SmsCodeExpire", value.ToString());
+			}
+		}
+
+		public string PackageName
+		{
+			get
+			{
+				return packageName;
+			}
+			set	
+			{
+				packageName = value;
+				DictionaryUtil.Add(QueryParameters, "PackageName", value);
+			}
+		}
+
+		public string OsType
+		{
+			get
+			{
+				return osType;
+			}
+			set	
+			{
+				osType = value;
+				DictionaryUtil.Add(QueryParameters, "OsType", value);
 			}
 		}
 
@@ -103,16 +180,29 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string Url
+		public string SmsTemplateCode
 		{
 			get
 			{
-				return url;
+				return smsTemplateCode;
 			}
 			set	
 			{
-				url = value;
-				DictionaryUtil.Add(QueryParameters, "Url", value);
+				smsTemplateCode = value;
+				DictionaryUtil.Add(QueryParameters, "SmsTemplateCode", value);
+			}
+		}
+
+		public long? Expire
+		{
+			get
+			{
+				return expire;
+			}
+			set	
+			{
+				expire = value;
+				DictionaryUtil.Add(QueryParameters, "Expire", value.ToString());
 			}
 		}
 
@@ -121,9 +211,9 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			return false;
 		}
 
-        public override GetAuthTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetSmsAuthTokensResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetAuthTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetSmsAuthTokensResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -28,10 +28,10 @@ using Aliyun.Acs.Dypnsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-    public class GetAuthTokenRequest : RpcAcsRequest<GetAuthTokenResponse>
+    public class GetAuthorizationUrlRequest : RpcAcsRequest<GetAuthorizationUrlResponse>
     {
-        public GetAuthTokenRequest()
-            : base("Dypnsapi", "2017-05-25", "GetAuthToken")
+        public GetAuthorizationUrlRequest()
+            : base("Dypnsapi", "2017-05-25", "GetAuthorizationUrl")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,11 +45,13 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 
 		private string resourceOwnerAccount;
 
-		private string origin;
+		private long? schemeId;
 
 		private long? ownerId;
 
-		private string url;
+		private string phoneNo;
+
+		private string endDate;
 
 		public long? ResourceOwnerId
 		{
@@ -77,16 +79,16 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string Origin
+		public long? SchemeId
 		{
 			get
 			{
-				return origin;
+				return schemeId;
 			}
 			set	
 			{
-				origin = value;
-				DictionaryUtil.Add(QueryParameters, "Origin", value);
+				schemeId = value;
+				DictionaryUtil.Add(QueryParameters, "SchemeId", value.ToString());
 			}
 		}
 
@@ -103,16 +105,29 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string Url
+		public string PhoneNo
 		{
 			get
 			{
-				return url;
+				return phoneNo;
 			}
 			set	
 			{
-				url = value;
-				DictionaryUtil.Add(QueryParameters, "Url", value);
+				phoneNo = value;
+				DictionaryUtil.Add(QueryParameters, "PhoneNo", value);
+			}
+		}
+
+		public string EndDate
+		{
+			get
+			{
+				return endDate;
+			}
+			set	
+			{
+				endDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndDate", value);
 			}
 		}
 
@@ -121,9 +136,9 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			return false;
 		}
 
-        public override GetAuthTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetAuthorizationUrlResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetAuthTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetAuthorizationUrlResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

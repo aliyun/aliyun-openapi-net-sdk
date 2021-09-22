@@ -28,10 +28,10 @@ using Aliyun.Acs.Dypnsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-    public class GetAuthTokenRequest : RpcAcsRequest<GetAuthTokenResponse>
+    public class VerifySmsCodeRequest : RpcAcsRequest<VerifySmsCodeResponse>
     {
-        public GetAuthTokenRequest()
-            : base("Dypnsapi", "2017-05-25", "GetAuthToken")
+        public VerifySmsCodeRequest()
+            : base("Dypnsapi", "2017-05-25", "VerifySmsCode")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,78 +41,48 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			Method = MethodType.POST;
         }
 
-		private long? resourceOwnerId;
+		private string smsToken;
 
-		private string resourceOwnerAccount;
+		private string phoneNumber;
 
-		private string origin;
+		private string smsCode;
 
-		private long? ownerId;
-
-		private string url;
-
-		public long? ResourceOwnerId
+		public string SmsToken
 		{
 			get
 			{
-				return resourceOwnerId;
+				return smsToken;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				smsToken = value;
+				DictionaryUtil.Add(QueryParameters, "SmsToken", value);
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string PhoneNumber
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return phoneNumber;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				phoneNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
 			}
 		}
 
-		public string Origin
+		public string SmsCode
 		{
 			get
 			{
-				return origin;
+				return smsCode;
 			}
 			set	
 			{
-				origin = value;
-				DictionaryUtil.Add(QueryParameters, "Origin", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Url
-		{
-			get
-			{
-				return url;
-			}
-			set	
-			{
-				url = value;
-				DictionaryUtil.Add(QueryParameters, "Url", value);
+				smsCode = value;
+				DictionaryUtil.Add(QueryParameters, "SmsCode", value);
 			}
 		}
 
@@ -121,9 +91,9 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			return false;
 		}
 
-        public override GetAuthTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override VerifySmsCodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetAuthTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return VerifySmsCodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

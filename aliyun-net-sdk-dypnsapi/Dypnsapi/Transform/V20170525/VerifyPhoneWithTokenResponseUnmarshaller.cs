@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Dypnsapi.Transform.V20170525
 {
     public class VerifyPhoneWithTokenResponseUnmarshaller
     {
-        public static VerifyPhoneWithTokenResponse Unmarshall(UnmarshallerContext context)
+        public static VerifyPhoneWithTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			VerifyPhoneWithTokenResponse verifyPhoneWithTokenResponse = new VerifyPhoneWithTokenResponse();
 
-			verifyPhoneWithTokenResponse.HttpResponse = context.HttpResponse;
-			verifyPhoneWithTokenResponse.RequestId = context.StringValue("VerifyPhoneWithToken.RequestId");
-			verifyPhoneWithTokenResponse.Code = context.StringValue("VerifyPhoneWithToken.Code");
-			verifyPhoneWithTokenResponse.Message = context.StringValue("VerifyPhoneWithToken.Message");
+			verifyPhoneWithTokenResponse.HttpResponse = _ctx.HttpResponse;
+			verifyPhoneWithTokenResponse.Code = _ctx.StringValue("VerifyPhoneWithToken.Code");
+			verifyPhoneWithTokenResponse.Message = _ctx.StringValue("VerifyPhoneWithToken.Message");
+			verifyPhoneWithTokenResponse.RequestId = _ctx.StringValue("VerifyPhoneWithToken.RequestId");
 
 			VerifyPhoneWithTokenResponse.VerifyPhoneWithToken_GateVerify gateVerify = new VerifyPhoneWithTokenResponse.VerifyPhoneWithToken_GateVerify();
-			gateVerify.VerifyId = context.StringValue("VerifyPhoneWithToken.GateVerify.VerifyId");
-			gateVerify.VerifyResult = context.StringValue("VerifyPhoneWithToken.GateVerify.VerifyResult");
+			gateVerify.VerifyResult = _ctx.StringValue("VerifyPhoneWithToken.GateVerify.VerifyResult");
+			gateVerify.VerifyId = _ctx.StringValue("VerifyPhoneWithToken.GateVerify.VerifyId");
 			verifyPhoneWithTokenResponse.GateVerify = gateVerify;
         
 			return verifyPhoneWithTokenResponse;

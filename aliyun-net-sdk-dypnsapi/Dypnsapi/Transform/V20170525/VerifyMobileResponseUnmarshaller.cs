@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Dypnsapi.Transform.V20170525
 {
     public class VerifyMobileResponseUnmarshaller
     {
-        public static VerifyMobileResponse Unmarshall(UnmarshallerContext context)
+        public static VerifyMobileResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			VerifyMobileResponse verifyMobileResponse = new VerifyMobileResponse();
 
-			verifyMobileResponse.HttpResponse = context.HttpResponse;
-			verifyMobileResponse.RequestId = context.StringValue("VerifyMobile.RequestId");
-			verifyMobileResponse.Code = context.StringValue("VerifyMobile.Code");
-			verifyMobileResponse.Message = context.StringValue("VerifyMobile.Message");
+			verifyMobileResponse.HttpResponse = _ctx.HttpResponse;
+			verifyMobileResponse.Code = _ctx.StringValue("VerifyMobile.Code");
+			verifyMobileResponse.Message = _ctx.StringValue("VerifyMobile.Message");
+			verifyMobileResponse.RequestId = _ctx.StringValue("VerifyMobile.RequestId");
 
 			VerifyMobileResponse.VerifyMobile_GateVerifyResultDTO gateVerifyResultDTO = new VerifyMobileResponse.VerifyMobile_GateVerifyResultDTO();
-			gateVerifyResultDTO.VerifyId = context.StringValue("VerifyMobile.GateVerifyResultDTO.VerifyId");
-			gateVerifyResultDTO.VerifyResult = context.StringValue("VerifyMobile.GateVerifyResultDTO.VerifyResult");
+			gateVerifyResultDTO.VerifyResult = _ctx.StringValue("VerifyMobile.GateVerifyResultDTO.VerifyResult");
+			gateVerifyResultDTO.VerifyId = _ctx.StringValue("VerifyMobile.GateVerifyResultDTO.VerifyId");
 			verifyMobileResponse.GateVerifyResultDTO = gateVerifyResultDTO;
         
 			return verifyMobileResponse;

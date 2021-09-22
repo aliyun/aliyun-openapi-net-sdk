@@ -28,10 +28,10 @@ using Aliyun.Acs.Dypnsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-    public class GetAuthTokenRequest : RpcAcsRequest<GetAuthTokenResponse>
+    public class GetSmsCodeRequest : RpcAcsRequest<GetSmsCodeResponse>
     {
-        public GetAuthTokenRequest()
-            : base("Dypnsapi", "2017-05-25", "GetAuthToken")
+        public GetSmsCodeRequest()
+            : base("Dypnsapi", "2017-05-25", "GetSmsCode")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,89 +41,69 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			Method = MethodType.POST;
         }
 
-		private long? resourceOwnerId;
+		private string phoneNumber;
 
-		private string resourceOwnerAccount;
+		private string bizToken;
 
-		private string origin;
+		private string sceneCode;
 
-		private long? ownerId;
+		private string osType;
 
-		private string url;
-
-		public long? ResourceOwnerId
+		public string PhoneNumber
 		{
 			get
 			{
-				return resourceOwnerId;
+				return phoneNumber;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				phoneNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string BizToken
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return bizToken;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				bizToken = value;
+				DictionaryUtil.Add(QueryParameters, "BizToken", value);
 			}
 		}
 
-		public string Origin
+		public string SceneCode
 		{
 			get
 			{
-				return origin;
+				return sceneCode;
 			}
 			set	
 			{
-				origin = value;
-				DictionaryUtil.Add(QueryParameters, "Origin", value);
+				sceneCode = value;
+				DictionaryUtil.Add(QueryParameters, "SceneCode", value);
 			}
 		}
 
-		public long? OwnerId
+		public string OsType
 		{
 			get
 			{
-				return ownerId;
+				return osType;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				osType = value;
+				DictionaryUtil.Add(QueryParameters, "OsType", value);
 			}
 		}
 
-		public string Url
-		{
-			get
-			{
-				return url;
-			}
-			set	
-			{
-				url = value;
-				DictionaryUtil.Add(QueryParameters, "Url", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override GetAuthTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetSmsCodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetAuthTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetSmsCodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dypnsapi.Transform.V20170525
 {
     public class DeleteVerifySchemeResponseUnmarshaller
     {
-        public static DeleteVerifySchemeResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteVerifySchemeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteVerifySchemeResponse deleteVerifySchemeResponse = new DeleteVerifySchemeResponse();
 
-			deleteVerifySchemeResponse.HttpResponse = context.HttpResponse;
-			deleteVerifySchemeResponse.RequestId = context.StringValue("DeleteVerifyScheme.RequestId");
-			deleteVerifySchemeResponse.Code = context.StringValue("DeleteVerifyScheme.Code");
-			deleteVerifySchemeResponse.Message = context.StringValue("DeleteVerifyScheme.Message");
-			deleteVerifySchemeResponse.Result = context.BooleanValue("DeleteVerifyScheme.Result");
+			deleteVerifySchemeResponse.HttpResponse = _ctx.HttpResponse;
+			deleteVerifySchemeResponse.Code = _ctx.StringValue("DeleteVerifyScheme.Code");
+			deleteVerifySchemeResponse.Message = _ctx.StringValue("DeleteVerifyScheme.Message");
+			deleteVerifySchemeResponse.RequestId = _ctx.StringValue("DeleteVerifyScheme.RequestId");
+			deleteVerifySchemeResponse.Result = _ctx.BooleanValue("DeleteVerifyScheme.Result");
         
 			return deleteVerifySchemeResponse;
         }

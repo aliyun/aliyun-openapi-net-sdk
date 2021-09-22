@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-	public class GetMobileResponse : AcsResponse
+	public class GetCertifyResultResponse : AcsResponse
 	{
 
 		private string code;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 
 		private string requestId;
 
-		private GetMobile_GetMobileResultDTO getMobileResultDTO;
+		private List<GetCertifyResult_DataItem> data;
 
 		public string Code
 		{
@@ -69,32 +69,88 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public GetMobile_GetMobileResultDTO GetMobileResultDTO
+		public List<GetCertifyResult_DataItem> Data
 		{
 			get
 			{
-				return getMobileResultDTO;
+				return data;
 			}
 			set	
 			{
-				getMobileResultDTO = value;
+				data = value;
 			}
 		}
 
-		public class GetMobile_GetMobileResultDTO
+		public class GetCertifyResult_DataItem
 		{
 
-			private string mobile;
+			private string materialInfo;
 
-			public string Mobile
+			private string identityInfo;
+
+			private string verifyDesc;
+
+			private string verifyResult;
+
+			private string deviceToken;
+
+			public string MaterialInfo
 			{
 				get
 				{
-					return mobile;
+					return materialInfo;
 				}
 				set	
 				{
-					mobile = value;
+					materialInfo = value;
+				}
+			}
+
+			public string IdentityInfo
+			{
+				get
+				{
+					return identityInfo;
+				}
+				set	
+				{
+					identityInfo = value;
+				}
+			}
+
+			public string VerifyDesc
+			{
+				get
+				{
+					return verifyDesc;
+				}
+				set	
+				{
+					verifyDesc = value;
+				}
+			}
+
+			public string VerifyResult
+			{
+				get
+				{
+					return verifyResult;
+				}
+				set	
+				{
+					verifyResult = value;
+				}
+			}
+
+			public string DeviceToken
+			{
+				get
+				{
+					return deviceToken;
+				}
+				set	
+				{
+					deviceToken = value;
 				}
 			}
 		}

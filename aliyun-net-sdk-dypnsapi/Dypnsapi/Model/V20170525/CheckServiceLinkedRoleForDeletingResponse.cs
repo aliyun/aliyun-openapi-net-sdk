@@ -22,38 +22,24 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-	public class GetMobileResponse : AcsResponse
+	public class CheckServiceLinkedRoleForDeletingResponse : AcsResponse
 	{
 
-		private string code;
-
-		private string message;
+		private string deletable;
 
 		private string requestId;
 
-		private GetMobile_GetMobileResultDTO getMobileResultDTO;
+		private List<CheckServiceLinkedRoleForDeleting_RoleUsage> roleUsages;
 
-		public string Code
+		public string Deletable
 		{
 			get
 			{
-				return code;
+				return deletable;
 			}
 			set	
 			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
+				deletable = value;
 			}
 		}
 
@@ -69,32 +55,46 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public GetMobile_GetMobileResultDTO GetMobileResultDTO
+		public List<CheckServiceLinkedRoleForDeleting_RoleUsage> RoleUsages
 		{
 			get
 			{
-				return getMobileResultDTO;
+				return roleUsages;
 			}
 			set	
 			{
-				getMobileResultDTO = value;
+				roleUsages = value;
 			}
 		}
 
-		public class GetMobile_GetMobileResultDTO
+		public class CheckServiceLinkedRoleForDeleting_RoleUsage
 		{
 
-			private string mobile;
+			private string region;
 
-			public string Mobile
+			private List<string> resources;
+
+			public string Region
 			{
 				get
 				{
-					return mobile;
+					return region;
 				}
 				set	
 				{
-					mobile = value;
+					region = value;
+				}
+			}
+
+			public List<string> Resources
+			{
+				get
+				{
+					return resources;
+				}
+				set	
+				{
+					resources = value;
 				}
 			}
 		}

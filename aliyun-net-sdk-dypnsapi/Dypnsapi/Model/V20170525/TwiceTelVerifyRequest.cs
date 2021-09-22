@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Dypnsapi;
 using Aliyun.Acs.Dypnsapi.Transform;
 using Aliyun.Acs.Dypnsapi.Transform.V20170525;
 
@@ -30,12 +31,12 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
     public class TwiceTelVerifyRequest : RpcAcsRequest<TwiceTelVerifyResponse>
     {
         public TwiceTelVerifyRequest()
-            : base("Dypnsapi", "2017-05-25", "TwiceTelVerify", "dypns", "openAPI")
+            : base("Dypnsapi", "2017-05-25", "TwiceTelVerify")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dypnsapi.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dypnsapi.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
