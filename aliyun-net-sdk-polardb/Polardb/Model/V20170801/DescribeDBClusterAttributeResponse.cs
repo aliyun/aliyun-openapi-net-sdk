@@ -35,15 +35,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dBClusterId;
 
-		private string dBClusterNetworkType;
-
 		private string dBType;
+
+		private string dBClusterNetworkType;
 
 		private bool? isLatestVersion;
 
-		private string dBVersion;
-
 		private long? storageMax;
+
+		private string dBVersion;
 
 		private string zoneIds;
 
@@ -63,23 +63,25 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string expired;
 
-		private string lockMode;
-
 		private string payType;
+
+		private string lockMode;
 
 		private long? storageUsed;
 
 		private string dBVersionStatus;
 
-		private string subCategory;
-
 		private string creationTime;
-
-		private string regionId;
 
 		private long? sQLSize;
 
+		private string regionId;
+
 		private string expireTime;
+
+		private string subCategory;
+
+		private bool? isProxyLatestVersion;
 
 		private List<DescribeDBClusterAttribute_DBNode> dBNodes;
 
@@ -145,18 +147,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DBClusterNetworkType
-		{
-			get
-			{
-				return dBClusterNetworkType;
-			}
-			set	
-			{
-				dBClusterNetworkType = value;
-			}
-		}
-
 		public string DBType
 		{
 			get
@@ -166,6 +156,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				dBType = value;
+			}
+		}
+
+		public string DBClusterNetworkType
+		{
+			get
+			{
+				return dBClusterNetworkType;
+			}
+			set	
+			{
+				dBClusterNetworkType = value;
 			}
 		}
 
@@ -181,18 +183,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DBVersion
-		{
-			get
-			{
-				return dBVersion;
-			}
-			set	
-			{
-				dBVersion = value;
-			}
-		}
-
 		public long? StorageMax
 		{
 			get
@@ -202,6 +192,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				storageMax = value;
+			}
+		}
+
+		public string DBVersion
+		{
+			get
+			{
+				return dBVersion;
+			}
+			set	
+			{
+				dBVersion = value;
 			}
 		}
 
@@ -313,18 +315,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string LockMode
-		{
-			get
-			{
-				return lockMode;
-			}
-			set	
-			{
-				lockMode = value;
-			}
-		}
-
 		public string PayType
 		{
 			get
@@ -334,6 +324,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				payType = value;
+			}
+		}
+
+		public string LockMode
+		{
+			get
+			{
+				return lockMode;
+			}
+			set	
+			{
+				lockMode = value;
 			}
 		}
 
@@ -361,18 +363,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string SubCategory
-		{
-			get
-			{
-				return subCategory;
-			}
-			set	
-			{
-				subCategory = value;
-			}
-		}
-
 		public string CreationTime
 		{
 			get
@@ -382,18 +372,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				creationTime = value;
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
 			}
 		}
 
@@ -409,6 +387,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+			}
+		}
+
 		public string ExpireTime
 		{
 			get
@@ -418,6 +408,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				expireTime = value;
+			}
+		}
+
+		public string SubCategory
+		{
+			get
+			{
+				return subCategory;
+			}
+			set	
+			{
+				subCategory = value;
+			}
+		}
+
+		public bool? IsProxyLatestVersion
+		{
+			get
+			{
+				return isProxyLatestVersion;
+			}
+			set	
+			{
+				isProxyLatestVersion = value;
 			}
 		}
 
@@ -448,71 +462,23 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeDBClusterAttribute_DBNode
 		{
 
-			private string dBNodeStatus;
-
-			private int? maxConnections;
-
-			private string zoneId;
-
-			private string dBNodeRole;
-
 			private string creationTime;
-
-			private string dBNodeId;
 
 			private int? failoverPriority;
 
-			private string dBNodeClass;
-
 			private int? maxIOPS;
 
-			public string DBNodeStatus
-			{
-				get
-				{
-					return dBNodeStatus;
-				}
-				set	
-				{
-					dBNodeStatus = value;
-				}
-			}
+			private string dBNodeClass;
 
-			public int? MaxConnections
-			{
-				get
-				{
-					return maxConnections;
-				}
-				set	
-				{
-					maxConnections = value;
-				}
-			}
+			private string dBNodeRole;
 
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
+			private string zoneId;
 
-			public string DBNodeRole
-			{
-				get
-				{
-					return dBNodeRole;
-				}
-				set	
-				{
-					dBNodeRole = value;
-				}
-			}
+			private int? maxConnections;
+
+			private string dBNodeStatus;
+
+			private string dBNodeId;
 
 			public string CreationTime
 			{
@@ -523,18 +489,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					creationTime = value;
-				}
-			}
-
-			public string DBNodeId
-			{
-				get
-				{
-					return dBNodeId;
-				}
-				set	
-				{
-					dBNodeId = value;
 				}
 			}
 
@@ -550,6 +504,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
+			public int? MaxIOPS
+			{
+				get
+				{
+					return maxIOPS;
+				}
+				set	
+				{
+					maxIOPS = value;
+				}
+			}
+
 			public string DBNodeClass
 			{
 				get
@@ -562,15 +528,63 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public int? MaxIOPS
+			public string DBNodeRole
 			{
 				get
 				{
-					return maxIOPS;
+					return dBNodeRole;
 				}
 				set	
 				{
-					maxIOPS = value;
+					dBNodeRole = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public int? MaxConnections
+			{
+				get
+				{
+					return maxConnections;
+				}
+				set	
+				{
+					maxConnections = value;
+				}
+			}
+
+			public string DBNodeStatus
+			{
+				get
+				{
+					return dBNodeStatus;
+				}
+				set	
+				{
+					dBNodeStatus = value;
+				}
+			}
+
+			public string DBNodeId
+			{
+				get
+				{
+					return dBNodeId;
+				}
+				set	
+				{
+					dBNodeId = value;
 				}
 			}
 		}
@@ -578,21 +592,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		public class DescribeDBClusterAttribute_Tag
 		{
 
-			private string _value;
-
 			private string key;
 
-			public string _Value
-			{
-				get
-				{
-					return _value;
-				}
-				set	
-				{
-					_value = value;
-				}
-			}
+			private string _value;
 
 			public string Key
 			{
@@ -603,6 +605,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					key = value;
+				}
+			}
+
+			public string _Value
+			{
+				get
+				{
+					return _value;
+				}
+				set	
+				{
+					_value = value;
 				}
 			}
 		}

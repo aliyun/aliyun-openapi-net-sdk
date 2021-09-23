@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class DescribeScheduleTasksRequest : RpcAcsRequest<DescribeScheduleTasksResponse>
+    public class CreateStoragePlanRequest : RpcAcsRequest<CreateStoragePlanResponse>
     {
-        public DescribeScheduleTasksRequest()
-            : base("polardb", "2017-08-01", "DescribeScheduleTasks", "polardb", "openAPI")
+        public CreateStoragePlanRequest()
+            : base("polardb", "2017-08-01", "CreateStoragePlan", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,25 +42,21 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string dBClusterDescription;
+		private string clientToken;
 
-		private int? pageNumber;
+		private string storageType;
 
-		private int? pageSize;
+		private string period;
 
 		private string resourceOwnerAccount;
-
-		private string orderId;
-
-		private string dBClusterId;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string taskAction;
+		private string usedTime;
 
-		private string status;
+		private string storageClass;
 
 		public long? ResourceOwnerId
 		{
@@ -75,42 +71,42 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DBClusterDescription
+		public string ClientToken
 		{
 			get
 			{
-				return dBClusterDescription;
+				return clientToken;
 			}
 			set	
 			{
-				dBClusterDescription = value;
-				DictionaryUtil.Add(QueryParameters, "DBClusterDescription", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		public int? PageNumber
+		public string StorageType
 		{
 			get
 			{
-				return pageNumber;
+				return storageType;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				storageType = value;
+				DictionaryUtil.Add(QueryParameters, "StorageType", value);
 			}
 		}
 
-		public int? PageSize
+		public string Period
 		{
 			get
 			{
-				return pageSize;
+				return period;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value);
 			}
 		}
 
@@ -124,32 +120,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-				DictionaryUtil.Add(QueryParameters, "OrderId", value);
-			}
-		}
-
-		public string DBClusterId
-		{
-			get
-			{
-				return dBClusterId;
-			}
-			set	
-			{
-				dBClusterId = value;
-				DictionaryUtil.Add(QueryParameters, "DBClusterId", value);
 			}
 		}
 
@@ -179,29 +149,29 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string TaskAction
+		public string UsedTime
 		{
 			get
 			{
-				return taskAction;
+				return usedTime;
 			}
 			set	
 			{
-				taskAction = value;
-				DictionaryUtil.Add(QueryParameters, "TaskAction", value);
+				usedTime = value;
+				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
 			}
 		}
 
-		public string Status
+		public string StorageClass
 		{
 			get
 			{
-				return status;
+				return storageClass;
 			}
 			set	
 			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
+				storageClass = value;
+				DictionaryUtil.Add(QueryParameters, "StorageClass", value);
 			}
 		}
 
@@ -210,9 +180,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			return false;
 		}
 
-        public override DescribeScheduleTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateStoragePlanResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeScheduleTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateStoragePlanResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

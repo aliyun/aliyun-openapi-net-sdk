@@ -36,11 +36,11 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterAttributeResponse.ResourceGroupId = _ctx.StringValue("DescribeDBClusterAttribute.ResourceGroupId");
 			describeDBClusterAttributeResponse.DataLevel1BackupChainSize = _ctx.LongValue("DescribeDBClusterAttribute.DataLevel1BackupChainSize");
 			describeDBClusterAttributeResponse.DBClusterId = _ctx.StringValue("DescribeDBClusterAttribute.DBClusterId");
-			describeDBClusterAttributeResponse.DBClusterNetworkType = _ctx.StringValue("DescribeDBClusterAttribute.DBClusterNetworkType");
 			describeDBClusterAttributeResponse.DBType = _ctx.StringValue("DescribeDBClusterAttribute.DBType");
+			describeDBClusterAttributeResponse.DBClusterNetworkType = _ctx.StringValue("DescribeDBClusterAttribute.DBClusterNetworkType");
 			describeDBClusterAttributeResponse.IsLatestVersion = _ctx.BooleanValue("DescribeDBClusterAttribute.IsLatestVersion");
-			describeDBClusterAttributeResponse.DBVersion = _ctx.StringValue("DescribeDBClusterAttribute.DBVersion");
 			describeDBClusterAttributeResponse.StorageMax = _ctx.LongValue("DescribeDBClusterAttribute.StorageMax");
+			describeDBClusterAttributeResponse.DBVersion = _ctx.StringValue("DescribeDBClusterAttribute.DBVersion");
 			describeDBClusterAttributeResponse.ZoneIds = _ctx.StringValue("DescribeDBClusterAttribute.ZoneIds");
 			describeDBClusterAttributeResponse.MaintainTime = _ctx.StringValue("DescribeDBClusterAttribute.MaintainTime");
 			describeDBClusterAttributeResponse.Engine = _ctx.StringValue("DescribeDBClusterAttribute.Engine");
@@ -50,28 +50,29 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterAttributeResponse.VSwitchId = _ctx.StringValue("DescribeDBClusterAttribute.VSwitchId");
 			describeDBClusterAttributeResponse.DBClusterDescription = _ctx.StringValue("DescribeDBClusterAttribute.DBClusterDescription");
 			describeDBClusterAttributeResponse.Expired = _ctx.StringValue("DescribeDBClusterAttribute.Expired");
-			describeDBClusterAttributeResponse.LockMode = _ctx.StringValue("DescribeDBClusterAttribute.LockMode");
 			describeDBClusterAttributeResponse.PayType = _ctx.StringValue("DescribeDBClusterAttribute.PayType");
+			describeDBClusterAttributeResponse.LockMode = _ctx.StringValue("DescribeDBClusterAttribute.LockMode");
 			describeDBClusterAttributeResponse.StorageUsed = _ctx.LongValue("DescribeDBClusterAttribute.StorageUsed");
 			describeDBClusterAttributeResponse.DBVersionStatus = _ctx.StringValue("DescribeDBClusterAttribute.DBVersionStatus");
-			describeDBClusterAttributeResponse.SubCategory = _ctx.StringValue("DescribeDBClusterAttribute.SubCategory");
 			describeDBClusterAttributeResponse.CreationTime = _ctx.StringValue("DescribeDBClusterAttribute.CreationTime");
-			describeDBClusterAttributeResponse.RegionId = _ctx.StringValue("DescribeDBClusterAttribute.RegionId");
 			describeDBClusterAttributeResponse.SQLSize = _ctx.LongValue("DescribeDBClusterAttribute.SQLSize");
+			describeDBClusterAttributeResponse.RegionId = _ctx.StringValue("DescribeDBClusterAttribute.RegionId");
 			describeDBClusterAttributeResponse.ExpireTime = _ctx.StringValue("DescribeDBClusterAttribute.ExpireTime");
+			describeDBClusterAttributeResponse.SubCategory = _ctx.StringValue("DescribeDBClusterAttribute.SubCategory");
+			describeDBClusterAttributeResponse.IsProxyLatestVersion = _ctx.BooleanValue("DescribeDBClusterAttribute.IsProxyLatestVersion");
 
 			List<DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_DBNode> describeDBClusterAttributeResponse_dBNodes = new List<DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_DBNode>();
 			for (int i = 0; i < _ctx.Length("DescribeDBClusterAttribute.DBNodes.Length"); i++) {
 				DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_DBNode dBNode = new DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_DBNode();
-				dBNode.DBNodeStatus = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].DBNodeStatus");
-				dBNode.MaxConnections = _ctx.IntegerValue("DescribeDBClusterAttribute.DBNodes["+ i +"].MaxConnections");
-				dBNode.ZoneId = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].ZoneId");
-				dBNode.DBNodeRole = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].DBNodeRole");
 				dBNode.CreationTime = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].CreationTime");
-				dBNode.DBNodeId = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].DBNodeId");
 				dBNode.FailoverPriority = _ctx.IntegerValue("DescribeDBClusterAttribute.DBNodes["+ i +"].FailoverPriority");
-				dBNode.DBNodeClass = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].DBNodeClass");
 				dBNode.MaxIOPS = _ctx.IntegerValue("DescribeDBClusterAttribute.DBNodes["+ i +"].MaxIOPS");
+				dBNode.DBNodeClass = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].DBNodeClass");
+				dBNode.DBNodeRole = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].DBNodeRole");
+				dBNode.ZoneId = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].ZoneId");
+				dBNode.MaxConnections = _ctx.IntegerValue("DescribeDBClusterAttribute.DBNodes["+ i +"].MaxConnections");
+				dBNode.DBNodeStatus = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].DBNodeStatus");
+				dBNode.DBNodeId = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].DBNodeId");
 
 				describeDBClusterAttributeResponse_dBNodes.Add(dBNode);
 			}
@@ -80,8 +81,8 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			List<DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_Tag> describeDBClusterAttributeResponse_tags = new List<DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_Tag>();
 			for (int i = 0; i < _ctx.Length("DescribeDBClusterAttribute.Tags.Length"); i++) {
 				DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_Tag tag = new DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_Tag();
-				tag._Value = _ctx.StringValue("DescribeDBClusterAttribute.Tags["+ i +"].Value");
 				tag.Key = _ctx.StringValue("DescribeDBClusterAttribute.Tags["+ i +"].Key");
+				tag._Value = _ctx.StringValue("DescribeDBClusterAttribute.Tags["+ i +"].Value");
 
 				describeDBClusterAttributeResponse_tags.Add(tag);
 			}

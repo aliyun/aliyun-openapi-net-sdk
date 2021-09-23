@@ -25,27 +25,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeScheduleTasksResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string message;
 
 		private string code;
 
 		private bool? success;
 
-		private DescribeScheduleTasks_Data data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private DescribeScheduleTasks_Data data;
 
 		public string Message
 		{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public DescribeScheduleTasks_Data Data
 		{
 			get
@@ -100,9 +100,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private int? totalRecordCount;
 
-			private int? pageSize;
-
 			private int? pageNumber;
+
+			private int? pageSize;
 
 			private List<DescribeScheduleTasks_TimerInfosItem> timerInfos;
 
@@ -118,18 +118,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				}
 			}
 
-			public int? PageSize
-			{
-				get
-				{
-					return pageSize;
-				}
-				set	
-				{
-					pageSize = value;
-				}
-			}
-
 			public int? PageNumber
 			{
 				get
@@ -139,6 +127,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					pageNumber = value;
+				}
+			}
+
+			public int? PageSize
+			{
+				get
+				{
+					return pageSize;
+				}
+				set	
+				{
+					pageSize = value;
 				}
 			}
 
@@ -161,23 +161,23 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 				private string action;
 
-				private string taskId;
+				private string plannedEndTime;
 
 				private string plannedTime;
-
-				private string dbClusterDescription;
-
-				private string plannedStartTime;
 
 				private string dBClusterId;
 
 				private string region;
 
+				private string plannedStartTime;
+
+				private string taskId;
+
 				private string orderId;
 
-				private string plannedEndTime;
-
 				private string dbClusterStatus;
+
+				private string dbClusterDescription;
 
 				public string Status
 				{
@@ -203,15 +203,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					}
 				}
 
-				public string TaskId
+				public string PlannedEndTime
 				{
 					get
 					{
-						return taskId;
+						return plannedEndTime;
 					}
 					set	
 					{
-						taskId = value;
+						plannedEndTime = value;
 					}
 				}
 
@@ -224,30 +224,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						plannedTime = value;
-					}
-				}
-
-				public string DbClusterDescription
-				{
-					get
-					{
-						return dbClusterDescription;
-					}
-					set	
-					{
-						dbClusterDescription = value;
-					}
-				}
-
-				public string PlannedStartTime
-				{
-					get
-					{
-						return plannedStartTime;
-					}
-					set	
-					{
-						plannedStartTime = value;
 					}
 				}
 
@@ -275,6 +251,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					}
 				}
 
+				public string PlannedStartTime
+				{
+					get
+					{
+						return plannedStartTime;
+					}
+					set	
+					{
+						plannedStartTime = value;
+					}
+				}
+
+				public string TaskId
+				{
+					get
+					{
+						return taskId;
+					}
+					set	
+					{
+						taskId = value;
+					}
+				}
+
 				public string OrderId
 				{
 					get
@@ -287,18 +287,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					}
 				}
 
-				public string PlannedEndTime
-				{
-					get
-					{
-						return plannedEndTime;
-					}
-					set	
-					{
-						plannedEndTime = value;
-					}
-				}
-
 				public string DbClusterStatus
 				{
 					get
@@ -308,6 +296,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						dbClusterStatus = value;
+					}
+				}
+
+				public string DbClusterDescription
+				{
+					get
+					{
+						return dbClusterDescription;
+					}
+					set	
+					{
+						dbClusterDescription = value;
 					}
 				}
 			}

@@ -226,6 +226,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string role;
 
+			private List<DescribeGlobalDatabaseNetwork_DBNode> dBNodes;
+
 			public string ReplicaLag
 			{
 				get
@@ -379,6 +381,148 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					role = value;
+				}
+			}
+
+			public List<DescribeGlobalDatabaseNetwork_DBNode> DBNodes
+			{
+				get
+				{
+					return dBNodes;
+				}
+				set	
+				{
+					dBNodes = value;
+				}
+			}
+
+			public class DescribeGlobalDatabaseNetwork_DBNode
+			{
+
+				private string dBNodeClass;
+
+				private string zoneId;
+
+				private string creationTime;
+
+				private string dBNodeRole;
+
+				private string dBNodeStatus;
+
+				private int? failoverPriority;
+
+				private int? maxConnections;
+
+				private int? maxIOPS;
+
+				private string dBNodeId;
+
+				public string DBNodeClass
+				{
+					get
+					{
+						return dBNodeClass;
+					}
+					set	
+					{
+						dBNodeClass = value;
+					}
+				}
+
+				public string ZoneId
+				{
+					get
+					{
+						return zoneId;
+					}
+					set	
+					{
+						zoneId = value;
+					}
+				}
+
+				public string CreationTime
+				{
+					get
+					{
+						return creationTime;
+					}
+					set	
+					{
+						creationTime = value;
+					}
+				}
+
+				public string DBNodeRole
+				{
+					get
+					{
+						return dBNodeRole;
+					}
+					set	
+					{
+						dBNodeRole = value;
+					}
+				}
+
+				public string DBNodeStatus
+				{
+					get
+					{
+						return dBNodeStatus;
+					}
+					set	
+					{
+						dBNodeStatus = value;
+					}
+				}
+
+				public int? FailoverPriority
+				{
+					get
+					{
+						return failoverPriority;
+					}
+					set	
+					{
+						failoverPriority = value;
+					}
+				}
+
+				public int? MaxConnections
+				{
+					get
+					{
+						return maxConnections;
+					}
+					set	
+					{
+						maxConnections = value;
+					}
+				}
+
+				public int? MaxIOPS
+				{
+					get
+					{
+						return maxIOPS;
+					}
+					set	
+					{
+						maxIOPS = value;
+					}
+				}
+
+				public string DBNodeId
+				{
+					get
+					{
+						return dBNodeId;
+					}
+					set	
+					{
+						dBNodeId = value;
+					}
 				}
 			}
 		}

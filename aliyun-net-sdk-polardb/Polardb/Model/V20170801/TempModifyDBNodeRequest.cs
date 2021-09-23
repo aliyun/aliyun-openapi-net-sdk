@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class DescribeScheduleTasksRequest : RpcAcsRequest<DescribeScheduleTasksResponse>
+    public class TempModifyDBNodeRequest : RpcAcsRequest<TempModifyDBNodeResponse>
     {
-        public DescribeScheduleTasksRequest()
-            : base("polardb", "2017-08-01", "DescribeScheduleTasks", "polardb", "openAPI")
+        public TempModifyDBNodeRequest()
+            : base("polardb", "2017-08-01", "TempModifyDBNode", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,25 +42,23 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string dBClusterDescription;
+		private string clientToken;
 
-		private int? pageNumber;
-
-		private int? pageSize;
+		private string restoreTime;
 
 		private string resourceOwnerAccount;
-
-		private string orderId;
 
 		private string dBClusterId;
 
 		private string ownerAccount;
 
+		private string operationType;
+
 		private long? ownerId;
 
-		private string taskAction;
+		private string modifyType;
 
-		private string status;
+		private List<DBNode> dBNodes = new List<DBNode>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -75,42 +73,29 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DBClusterDescription
+		public string ClientToken
 		{
 			get
 			{
-				return dBClusterDescription;
+				return clientToken;
 			}
 			set	
 			{
-				dBClusterDescription = value;
-				DictionaryUtil.Add(QueryParameters, "DBClusterDescription", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		public int? PageNumber
+		public string RestoreTime
 		{
 			get
 			{
-				return pageNumber;
+				return restoreTime;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				restoreTime = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreTime", value);
 			}
 		}
 
@@ -124,19 +109,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-				DictionaryUtil.Add(QueryParameters, "OrderId", value);
 			}
 		}
 
@@ -166,6 +138,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string OperationType
+		{
+			get
+			{
+				return operationType;
+			}
+			set	
+			{
+				operationType = value;
+				DictionaryUtil.Add(QueryParameters, "OperationType", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -179,29 +164,66 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string TaskAction
+		public string ModifyType
 		{
 			get
 			{
-				return taskAction;
+				return modifyType;
 			}
 			set	
 			{
-				taskAction = value;
-				DictionaryUtil.Add(QueryParameters, "TaskAction", value);
+				modifyType = value;
+				DictionaryUtil.Add(QueryParameters, "ModifyType", value);
 			}
 		}
 
-		public string Status
+		public List<DBNode> DBNodes
 		{
 			get
 			{
-				return status;
+				return dBNodes;
 			}
-			set	
+
+			set
 			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
+				dBNodes = value;
+				for (int i = 0; i < dBNodes.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"DBNode." + (i + 1) + ".TargetClass", dBNodes[i].TargetClass);
+					DictionaryUtil.Add(QueryParameters,"DBNode." + (i + 1) + ".ZoneId", dBNodes[i].ZoneId);
+				}
+			}
+		}
+
+		public class DBNode
+		{
+
+			private string targetClass;
+
+			private string zoneId;
+
+			public string TargetClass
+			{
+				get
+				{
+					return targetClass;
+				}
+				set	
+				{
+					targetClass = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
 			}
 		}
 
@@ -210,9 +232,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			return false;
 		}
 
-        public override DescribeScheduleTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TempModifyDBNodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeScheduleTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TempModifyDBNodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

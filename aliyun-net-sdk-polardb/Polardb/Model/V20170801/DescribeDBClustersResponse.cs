@@ -138,6 +138,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string engine;
 
+			private string category;
+
 			private List<DescribeDBClusters_Tag> tags;
 
 			private List<DescribeDBClusters_DBNode> dBNodes;
@@ -379,6 +381,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					engine = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
 				}
 			}
 

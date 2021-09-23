@@ -24,19 +24,18 @@ using Aliyun.Acs.polardb.Model.V20170801;
 
 namespace Aliyun.Acs.polardb.Transform.V20170801
 {
-    public class CreateDBClusterResponseUnmarshaller
+    public class CreateStoragePlanResponseUnmarshaller
     {
-        public static CreateDBClusterResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateStoragePlanResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CreateDBClusterResponse createDBClusterResponse = new CreateDBClusterResponse();
+			CreateStoragePlanResponse createStoragePlanResponse = new CreateStoragePlanResponse();
 
-			createDBClusterResponse.HttpResponse = _ctx.HttpResponse;
-			createDBClusterResponse.RequestId = _ctx.StringValue("CreateDBCluster.RequestId");
-			createDBClusterResponse.ResourceGroupId = _ctx.StringValue("CreateDBCluster.ResourceGroupId");
-			createDBClusterResponse.DBClusterId = _ctx.StringValue("CreateDBCluster.DBClusterId");
-			createDBClusterResponse.OrderId = _ctx.StringValue("CreateDBCluster.OrderId");
+			createStoragePlanResponse.HttpResponse = _ctx.HttpResponse;
+			createStoragePlanResponse.RequestId = _ctx.StringValue("CreateStoragePlan.RequestId");
+			createStoragePlanResponse.DBInstanceId = _ctx.StringValue("CreateStoragePlan.DBInstanceId");
+			createStoragePlanResponse.OrderId = _ctx.StringValue("CreateStoragePlan.OrderId");
         
-			return createDBClusterResponse;
+			return createStoragePlanResponse;
         }
     }
 }

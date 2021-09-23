@@ -67,6 +67,23 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				dBCluster.DBClusterDescription = _ctx.StringValue("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].DBClusterDescription");
 				dBCluster.Role = _ctx.StringValue("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].Role");
 
+				List<DescribeGlobalDatabaseNetworkResponse.DescribeGlobalDatabaseNetwork_DBCluster.DescribeGlobalDatabaseNetwork_DBNode> dBCluster_dBNodes = new List<DescribeGlobalDatabaseNetworkResponse.DescribeGlobalDatabaseNetwork_DBCluster.DescribeGlobalDatabaseNetwork_DBNode>();
+				for (int j = 0; j < _ctx.Length("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].DBNodes.Length"); j++) {
+					DescribeGlobalDatabaseNetworkResponse.DescribeGlobalDatabaseNetwork_DBCluster.DescribeGlobalDatabaseNetwork_DBNode dBNode = new DescribeGlobalDatabaseNetworkResponse.DescribeGlobalDatabaseNetwork_DBCluster.DescribeGlobalDatabaseNetwork_DBNode();
+					dBNode.DBNodeClass = _ctx.StringValue("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].DBNodes["+ j +"].DBNodeClass");
+					dBNode.ZoneId = _ctx.StringValue("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].DBNodes["+ j +"].ZoneId");
+					dBNode.CreationTime = _ctx.StringValue("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].DBNodes["+ j +"].CreationTime");
+					dBNode.DBNodeRole = _ctx.StringValue("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].DBNodes["+ j +"].DBNodeRole");
+					dBNode.DBNodeStatus = _ctx.StringValue("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].DBNodes["+ j +"].DBNodeStatus");
+					dBNode.FailoverPriority = _ctx.IntegerValue("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].DBNodes["+ j +"].FailoverPriority");
+					dBNode.MaxConnections = _ctx.IntegerValue("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].DBNodes["+ j +"].MaxConnections");
+					dBNode.MaxIOPS = _ctx.IntegerValue("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].DBNodes["+ j +"].MaxIOPS");
+					dBNode.DBNodeId = _ctx.StringValue("DescribeGlobalDatabaseNetwork.DBClusters["+ i +"].DBNodes["+ j +"].DBNodeId");
+
+					dBCluster_dBNodes.Add(dBNode);
+				}
+				dBCluster.DBNodes = dBCluster_dBNodes;
+
 				describeGlobalDatabaseNetworkResponse_dBClusters.Add(dBCluster);
 			}
 			describeGlobalDatabaseNetworkResponse.DBClusters = describeGlobalDatabaseNetworkResponse_dBClusters;

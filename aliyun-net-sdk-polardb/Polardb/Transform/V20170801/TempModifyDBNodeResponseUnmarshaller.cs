@@ -24,19 +24,24 @@ using Aliyun.Acs.polardb.Model.V20170801;
 
 namespace Aliyun.Acs.polardb.Transform.V20170801
 {
-    public class CreateDBClusterResponseUnmarshaller
+    public class TempModifyDBNodeResponseUnmarshaller
     {
-        public static CreateDBClusterResponse Unmarshall(UnmarshallerContext _ctx)
+        public static TempModifyDBNodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CreateDBClusterResponse createDBClusterResponse = new CreateDBClusterResponse();
+			TempModifyDBNodeResponse tempModifyDBNodeResponse = new TempModifyDBNodeResponse();
 
-			createDBClusterResponse.HttpResponse = _ctx.HttpResponse;
-			createDBClusterResponse.RequestId = _ctx.StringValue("CreateDBCluster.RequestId");
-			createDBClusterResponse.ResourceGroupId = _ctx.StringValue("CreateDBCluster.ResourceGroupId");
-			createDBClusterResponse.DBClusterId = _ctx.StringValue("CreateDBCluster.DBClusterId");
-			createDBClusterResponse.OrderId = _ctx.StringValue("CreateDBCluster.OrderId");
+			tempModifyDBNodeResponse.HttpResponse = _ctx.HttpResponse;
+			tempModifyDBNodeResponse.RequestId = _ctx.StringValue("TempModifyDBNode.RequestId");
+			tempModifyDBNodeResponse.DBClusterId = _ctx.StringValue("TempModifyDBNode.DBClusterId");
+			tempModifyDBNodeResponse.OrderId = _ctx.StringValue("TempModifyDBNode.OrderId");
+
+			List<string> tempModifyDBNodeResponse_dBNodeIds = new List<string>();
+			for (int i = 0; i < _ctx.Length("TempModifyDBNode.DBNodeIds.Length"); i++) {
+				tempModifyDBNodeResponse_dBNodeIds.Add(_ctx.StringValue("TempModifyDBNode.DBNodeIds["+ i +"]"));
+			}
+			tempModifyDBNodeResponse.DBNodeIds = tempModifyDBNodeResponse_dBNodeIds;
         
-			return createDBClusterResponse;
+			return tempModifyDBNodeResponse;
         }
     }
 }
