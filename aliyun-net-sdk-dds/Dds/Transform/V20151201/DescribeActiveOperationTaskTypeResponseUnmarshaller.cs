@@ -37,6 +37,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			for (int i = 0; i < _ctx.Length("DescribeActiveOperationTaskType.TypeList.Length"); i++) {
 				DescribeActiveOperationTaskTypeResponse.DescribeActiveOperationTaskType_Items items = new DescribeActiveOperationTaskTypeResponse.DescribeActiveOperationTaskType_Items();
 				items.TaskType = _ctx.StringValue("DescribeActiveOperationTaskType.TypeList["+ i +"].TaskType");
+				items.TaskTypeInfoEn = _ctx.StringValue("DescribeActiveOperationTaskType.TypeList["+ i +"].TaskTypeInfoEn");
+				items.TaskTypeInfoZh = _ctx.StringValue("DescribeActiveOperationTaskType.TypeList["+ i +"].TaskTypeInfoZh");
 				items.Count = _ctx.IntegerValue("DescribeActiveOperationTaskType.TypeList["+ i +"].Count");
 
 				describeActiveOperationTaskTypeResponse_typeList.Add(items);

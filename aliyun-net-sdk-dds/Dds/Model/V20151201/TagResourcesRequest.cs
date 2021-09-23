@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class TagResourcesRequest : RpcAcsRequest<TagResourcesResponse>
     {
         public TagResourcesRequest()
-            : base("Dds", "2015-12-01", "TagResources", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "TagResources", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

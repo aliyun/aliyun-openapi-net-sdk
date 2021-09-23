@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class CreateRecommendationTaskRequest : RpcAcsRequest<CreateRecommendationTaskResponse>
     {
         public CreateRecommendationTaskRequest()
-            : base("Dds", "2015-12-01", "CreateRecommendationTask", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "CreateRecommendationTask", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

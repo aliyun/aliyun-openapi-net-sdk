@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DestroyInstanceRequest : RpcAcsRequest<DestroyInstanceResponse>
     {
         public DestroyInstanceRequest()
-            : base("Dds", "2015-12-01", "DestroyInstance", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "DestroyInstance", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

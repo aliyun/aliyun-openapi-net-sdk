@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class UntagResourcesRequest : RpcAcsRequest<UntagResourcesResponse>
     {
         public UntagResourcesRequest()
-            : base("Dds", "2015-12-01", "UntagResources", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "UntagResources", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

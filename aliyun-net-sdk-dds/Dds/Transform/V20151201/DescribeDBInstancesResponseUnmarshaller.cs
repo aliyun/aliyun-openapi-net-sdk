@@ -53,6 +53,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.DBInstanceStatus = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].DBInstanceStatus");
 				dBInstance.RegionId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].RegionId");
 				dBInstance.DBInstanceStorage = _ctx.IntegerValue("DescribeDBInstances.DBInstances["+ i +"].DBInstanceStorage");
+				dBInstance.CapacityUnit = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].CapacityUnit");
 				dBInstance.ResourceGroupId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].ResourceGroupId");
 				dBInstance.ZoneId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].ZoneId");
 				dBInstance.DBInstanceId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].DBInstanceId");

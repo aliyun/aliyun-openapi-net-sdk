@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class RestartDBInstanceRequest : RpcAcsRequest<RestartDBInstanceResponse>
     {
         public RestartDBInstanceRequest()
-            : base("Dds", "2015-12-01", "RestartDBInstance", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "RestartDBInstance", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

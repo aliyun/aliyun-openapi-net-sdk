@@ -24,18 +24,18 @@ using Aliyun.Acs.Dds.Model.V20151201;
 
 namespace Aliyun.Acs.Dds.Transform.V20151201
 {
-    public class CreateServerlessDBInstanceResponseUnmarshaller
+    public class CreateNodeBatchResponseUnmarshaller
     {
-        public static CreateServerlessDBInstanceResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateNodeBatchResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CreateServerlessDBInstanceResponse createServerlessDBInstanceResponse = new CreateServerlessDBInstanceResponse();
+			CreateNodeBatchResponse createNodeBatchResponse = new CreateNodeBatchResponse();
 
-			createServerlessDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			createServerlessDBInstanceResponse.RequestId = _ctx.StringValue("CreateServerlessDBInstance.RequestId");
-			createServerlessDBInstanceResponse.DBInstanceId = _ctx.StringValue("CreateServerlessDBInstance.DBInstanceId");
-			createServerlessDBInstanceResponse.OrderId = _ctx.StringValue("CreateServerlessDBInstance.OrderId");
+			createNodeBatchResponse.HttpResponse = _ctx.HttpResponse;
+			createNodeBatchResponse.RequestId = _ctx.StringValue("CreateNodeBatch.RequestId");
+			createNodeBatchResponse.OrderId = _ctx.StringValue("CreateNodeBatch.OrderId");
+			createNodeBatchResponse.NodeId = _ctx.StringValue("CreateNodeBatch.NodeId");
         
-			return createServerlessDBInstanceResponse;
+			return createNodeBatchResponse;
         }
     }
 }

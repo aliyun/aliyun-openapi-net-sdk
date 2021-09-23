@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class ModifyBackupPolicyRequest : RpcAcsRequest<ModifyBackupPolicyResponse>
     {
         public ModifyBackupPolicyRequest()
-            : base("Dds", "2015-12-01", "ModifyBackupPolicy", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "ModifyBackupPolicy", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string dBInstanceId;
 
+		private long? enableBackupLog;
+
 		private string preferredBackupPeriod;
 
 		private string resourceOwnerAccount;
@@ -55,6 +57,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private long? ownerId;
 
 		private string preferredBackupTime;
+
+		private long? backupRetentionPeriod;
+
+		private long? logBackupRetentionPeriod;
 
 		public long? ResourceOwnerId
 		{
@@ -92,6 +98,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public long? EnableBackupLog
+		{
+			get
+			{
+				return enableBackupLog;
+			}
+			set	
+			{
+				enableBackupLog = value;
+				DictionaryUtil.Add(QueryParameters, "EnableBackupLog", value.ToString());
 			}
 		}
 
@@ -157,6 +176,32 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				preferredBackupTime = value;
 				DictionaryUtil.Add(QueryParameters, "PreferredBackupTime", value);
+			}
+		}
+
+		public long? BackupRetentionPeriod
+		{
+			get
+			{
+				return backupRetentionPeriod;
+			}
+			set	
+			{
+				backupRetentionPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "BackupRetentionPeriod", value.ToString());
+			}
+		}
+
+		public long? LogBackupRetentionPeriod
+		{
+			get
+			{
+				return logBackupRetentionPeriod;
+			}
+			set	
+			{
+				logBackupRetentionPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "LogBackupRetentionPeriod", value.ToString());
 			}
 		}
 

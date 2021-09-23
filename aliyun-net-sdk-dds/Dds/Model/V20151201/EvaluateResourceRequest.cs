@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class EvaluateResourceRequest : RpcAcsRequest<EvaluateResourceResponse>
     {
         public EvaluateResourceRequest()
-            : base("Dds", "2015-12-01", "EvaluateResource", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "EvaluateResource", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

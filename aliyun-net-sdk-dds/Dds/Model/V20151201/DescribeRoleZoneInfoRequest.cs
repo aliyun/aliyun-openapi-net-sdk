@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DescribeRoleZoneInfoRequest : RpcAcsRequest<DescribeRoleZoneInfoResponse>
     {
         public DescribeRoleZoneInfoRequest()
-            : base("Dds", "2015-12-01", "DescribeRoleZoneInfo", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeRoleZoneInfo", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

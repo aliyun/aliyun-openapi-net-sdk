@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			TransformToPrePaidResponse transformToPrePaidResponse = new TransformToPrePaidResponse();
 
 			transformToPrePaidResponse.HttpResponse = _ctx.HttpResponse;
+			transformToPrePaidResponse.EndTime = _ctx.StringValue("TransformToPrePaid.EndTime");
 			transformToPrePaidResponse.RequestId = _ctx.StringValue("TransformToPrePaid.RequestId");
 			transformToPrePaidResponse.OrderId = _ctx.StringValue("TransformToPrePaid.OrderId");
-			transformToPrePaidResponse.EndTime = _ctx.StringValue("TransformToPrePaid.EndTime");
         
 			return transformToPrePaidResponse;
         }

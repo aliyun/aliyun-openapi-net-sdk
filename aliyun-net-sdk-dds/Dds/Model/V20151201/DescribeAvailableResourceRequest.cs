@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DescribeAvailableResourceRequest : RpcAcsRequest<DescribeAvailableResourceResponse>
     {
         public DescribeAvailableResourceRequest()
-            : base("Dds", "2015-12-01", "DescribeAvailableResource", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeAvailableResource", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
+		private string resourceGroupId;
+
 		private string securityToken;
 
 		private string instanceChargeType;
@@ -51,6 +53,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string dbType;
 
 		private string zoneId;
 
@@ -64,6 +68,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -129,6 +146,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string DbType
+		{
+			get
+			{
+				return dbType;
+			}
+			set	
+			{
+				dbType = value;
+				DictionaryUtil.Add(QueryParameters, "DbType", value);
 			}
 		}
 

@@ -87,23 +87,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			public class DescribeAvailableResource_AvailableZone
 			{
 
-				private string regionId;
-
 				private string zoneId;
 
-				private List<DescribeAvailableResource_SupportedEngineVersion> supportedEngineVersions;
+				private string regionId;
 
-				public string RegionId
-				{
-					get
-					{
-						return regionId;
-					}
-					set	
-					{
-						regionId = value;
-					}
-				}
+				private List<DescribeAvailableResource_SupportedEngineVersion> supportedEngineVersions;
 
 				public string ZoneId
 				{
@@ -114,6 +102,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						zoneId = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
 					}
 				}
 
@@ -239,21 +239,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 							public class DescribeAvailableResource_AvailableResource
 							{
 
-								private string instanceClass;
-
 								private string instanceClassRemark;
 
-								public string InstanceClass
-								{
-									get
-									{
-										return instanceClass;
-									}
-									set	
-									{
-										instanceClass = value;
-									}
-								}
+								private string instanceClass;
 
 								public string InstanceClassRemark
 								{
@@ -264,6 +252,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 									set	
 									{
 										instanceClassRemark = value;
+									}
+								}
+
+								public string InstanceClass
+								{
+									get
+									{
+										return instanceClass;
+									}
+									set	
+									{
+										instanceClass = value;
 									}
 								}
 							}

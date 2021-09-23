@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class CreateDBInstanceRequest : RpcAcsRequest<CreateDBInstanceResponse>
     {
         public CreateDBInstanceRequest()
-            : base("Dds", "2015-12-01", "CreateDBInstance", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "CreateDBInstance", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

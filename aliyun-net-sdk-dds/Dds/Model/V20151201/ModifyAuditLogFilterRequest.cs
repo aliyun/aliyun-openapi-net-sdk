@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class ModifyAuditLogFilterRequest : RpcAcsRequest<ModifyAuditLogFilterResponse>
     {
         public ModifyAuditLogFilterRequest()
-            : base("Dds", "2015-12-01", "ModifyAuditLogFilter", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "ModifyAuditLogFilter", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

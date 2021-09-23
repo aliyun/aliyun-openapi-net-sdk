@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class CreateNodeRequest : RpcAcsRequest<CreateNodeResponse>
     {
         public CreateNodeRequest()
-            : base("Dds", "2015-12-01", "CreateNode", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "CreateNode", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -59,8 +59,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string businessInfo;
 
 		private bool? autoPay;
-
-		private string fromApp;
 
 		private string resourceOwnerAccount;
 
@@ -197,19 +195,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				autoPay = value;
 				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
-			}
-		}
-
-		public string FromApp
-		{
-			get
-			{
-				return fromApp;
-			}
-			set	
-			{
-				fromApp = value;
-				DictionaryUtil.Add(QueryParameters, "FromApp", value);
 			}
 		}
 

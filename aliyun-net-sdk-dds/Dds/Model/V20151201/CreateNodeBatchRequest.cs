@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribeReplicaSetRoleRequest : RpcAcsRequest<DescribeReplicaSetRoleResponse>
+    public class CreateNodeBatchRequest : RpcAcsRequest<CreateNodeBatchResponse>
     {
-        public DescribeReplicaSetRoleRequest()
-            : base("Dds", "2015-12-01", "DescribeReplicaSetRole", "dds", "openAPI")
+        public CreateNodeBatchRequest()
+            : base("Dds", "2015-12-01", "CreateNodeBatch", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,9 +42,21 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
+		private string clientToken;
+
+		private string nodesInfo;
+
+		private string couponNo;
+
 		private string securityToken;
 
 		private string dBInstanceId;
+
+		private string businessInfo;
+
+		private bool? autoPay;
+
+		private string fromApp;
 
 		private string resourceOwnerAccount;
 
@@ -62,6 +74,45 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string NodesInfo
+		{
+			get
+			{
+				return nodesInfo;
+			}
+			set	
+			{
+				nodesInfo = value;
+				DictionaryUtil.Add(QueryParameters, "NodesInfo", value);
+			}
+		}
+
+		public string CouponNo
+		{
+			get
+			{
+				return couponNo;
+			}
+			set	
+			{
+				couponNo = value;
+				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
 			}
 		}
 
@@ -88,6 +139,45 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string BusinessInfo
+		{
+			get
+			{
+				return businessInfo;
+			}
+			set	
+			{
+				businessInfo = value;
+				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
+			}
+		}
+
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+			}
+		}
+
+		public string FromApp
+		{
+			get
+			{
+				return fromApp;
+			}
+			set	
+			{
+				fromApp = value;
+				DictionaryUtil.Add(QueryParameters, "FromApp", value);
 			}
 		}
 
@@ -130,9 +220,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-        public override DescribeReplicaSetRoleResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateNodeBatchResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeReplicaSetRoleResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateNodeBatchResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

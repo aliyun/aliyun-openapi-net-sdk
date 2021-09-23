@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DescribePriceRequest : RpcAcsRequest<DescribePriceResponse>
     {
         public DescribePriceRequest()
-            : base("Dds", "2015-12-01", "DescribePrice", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribePrice", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

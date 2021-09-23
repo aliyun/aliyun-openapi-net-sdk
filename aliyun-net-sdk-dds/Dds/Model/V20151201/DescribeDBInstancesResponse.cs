@@ -126,6 +126,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private int? dBInstanceStorage;
 
+			private string capacityUnit;
+
 			private string resourceGroupId;
 
 			private string zoneId;
@@ -311,6 +313,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					dBInstanceStorage = value;
+				}
+			}
+
+			public string CapacityUnit
+			{
+				get
+				{
+					return capacityUnit;
+				}
+				set	
+				{
+					capacityUnit = value;
 				}
 			}
 
