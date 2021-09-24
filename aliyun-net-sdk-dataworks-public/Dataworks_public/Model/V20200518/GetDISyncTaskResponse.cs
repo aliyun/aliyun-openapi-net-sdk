@@ -76,6 +76,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private string message;
 
+			private GetDISyncTask_SolutionDetail solutionDetail;
+
 			public string Code
 			{
 				get
@@ -109,6 +111,176 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					message = value;
+				}
+			}
+
+			public GetDISyncTask_SolutionDetail SolutionDetail
+			{
+				get
+				{
+					return solutionDetail;
+				}
+				set	
+				{
+					solutionDetail = value;
+				}
+			}
+
+			public class GetDISyncTask_SolutionDetail
+			{
+
+				private long? id;
+
+				private string type;
+
+				private long? projectId;
+
+				private string status;
+
+				private string processContent;
+
+				private string startTime;
+
+				private string name;
+
+				private string creatorName;
+
+				private string sourceType;
+
+				private string submitTime;
+
+				private string processExtra;
+
+				public long? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public long? ProjectId
+				{
+					get
+					{
+						return projectId;
+					}
+					set	
+					{
+						projectId = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string ProcessContent
+				{
+					get
+					{
+						return processContent;
+					}
+					set	
+					{
+						processContent = value;
+					}
+				}
+
+				public string StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string CreatorName
+				{
+					get
+					{
+						return creatorName;
+					}
+					set	
+					{
+						creatorName = value;
+					}
+				}
+
+				public string SourceType
+				{
+					get
+					{
+						return sourceType;
+					}
+					set	
+					{
+						sourceType = value;
+					}
+				}
+
+				public string SubmitTime
+				{
+					get
+					{
+						return submitTime;
+					}
+					set	
+					{
+						submitTime = value;
+					}
+				}
+
+				public string ProcessExtra
+				{
+					get
+					{
+						return processExtra;
+					}
+					set	
+					{
+						processExtra = value;
+					}
 				}
 			}
 		}

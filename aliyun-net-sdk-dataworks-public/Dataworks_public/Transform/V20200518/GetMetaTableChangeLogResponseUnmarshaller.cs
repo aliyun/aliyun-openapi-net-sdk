@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetMetaTableChangeLogResponse getMetaTableChangeLogResponse = new GetMetaTableChangeLogResponse();
 
 			getMetaTableChangeLogResponse.HttpResponse = _ctx.HttpResponse;
-			getMetaTableChangeLogResponse.RequestId = _ctx.StringValue("GetMetaTableChangeLog.RequestId");
-			getMetaTableChangeLogResponse.ErrorCode = _ctx.StringValue("GetMetaTableChangeLog.ErrorCode");
-			getMetaTableChangeLogResponse.ErrorMessage = _ctx.StringValue("GetMetaTableChangeLog.ErrorMessage");
 			getMetaTableChangeLogResponse.HttpStatusCode = _ctx.IntegerValue("GetMetaTableChangeLog.HttpStatusCode");
+			getMetaTableChangeLogResponse.ErrorMessage = _ctx.StringValue("GetMetaTableChangeLog.ErrorMessage");
+			getMetaTableChangeLogResponse.RequestId = _ctx.StringValue("GetMetaTableChangeLog.RequestId");
 			getMetaTableChangeLogResponse.Success = _ctx.BooleanValue("GetMetaTableChangeLog.Success");
+			getMetaTableChangeLogResponse.ErrorCode = _ctx.StringValue("GetMetaTableChangeLog.ErrorCode");
 
 			GetMetaTableChangeLogResponse.GetMetaTableChangeLog_Data data = new GetMetaTableChangeLogResponse.GetMetaTableChangeLog_Data();
 			data.PageNumber = _ctx.IntegerValue("GetMetaTableChangeLog.Data.PageNumber");
@@ -45,12 +45,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<GetMetaTableChangeLogResponse.GetMetaTableChangeLog_Data.GetMetaTableChangeLog_DataEntityListItem> data_dataEntityList = new List<GetMetaTableChangeLogResponse.GetMetaTableChangeLog_Data.GetMetaTableChangeLog_DataEntityListItem>();
 			for (int i = 0; i < _ctx.Length("GetMetaTableChangeLog.Data.DataEntityList.Length"); i++) {
 				GetMetaTableChangeLogResponse.GetMetaTableChangeLog_Data.GetMetaTableChangeLog_DataEntityListItem dataEntityListItem = new GetMetaTableChangeLogResponse.GetMetaTableChangeLog_Data.GetMetaTableChangeLog_DataEntityListItem();
-				dataEntityListItem.CreateTime = _ctx.LongValue("GetMetaTableChangeLog.Data.DataEntityList["+ i +"].CreateTime");
-				dataEntityListItem.ModifiedTime = _ctx.LongValue("GetMetaTableChangeLog.Data.DataEntityList["+ i +"].ModifiedTime");
-				dataEntityListItem.ChangeType = _ctx.StringValue("GetMetaTableChangeLog.Data.DataEntityList["+ i +"].ChangeType");
-				dataEntityListItem._Operator = _ctx.StringValue("GetMetaTableChangeLog.Data.DataEntityList["+ i +"].Operator");
 				dataEntityListItem.ObjectType = _ctx.StringValue("GetMetaTableChangeLog.Data.DataEntityList["+ i +"].ObjectType");
+				dataEntityListItem.ModifiedTime = _ctx.LongValue("GetMetaTableChangeLog.Data.DataEntityList["+ i +"].ModifiedTime");
+				dataEntityListItem.CreateTime = _ctx.LongValue("GetMetaTableChangeLog.Data.DataEntityList["+ i +"].CreateTime");
 				dataEntityListItem.ChangeContent = _ctx.StringValue("GetMetaTableChangeLog.Data.DataEntityList["+ i +"].ChangeContent");
+				dataEntityListItem._Operator = _ctx.StringValue("GetMetaTableChangeLog.Data.DataEntityList["+ i +"].Operator");
+				dataEntityListItem.ChangeType = _ctx.StringValue("GetMetaTableChangeLog.Data.DataEntityList["+ i +"].ChangeType");
 
 				data_dataEntityList.Add(dataEntityListItem);
 			}

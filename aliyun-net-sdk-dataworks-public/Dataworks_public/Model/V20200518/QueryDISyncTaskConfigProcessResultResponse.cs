@@ -22,32 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-	public class RunCycleDagNodesResponse : AcsResponse
+	public class QueryDISyncTaskConfigProcessResultResponse : AcsResponse
 	{
-
-		private int? httpStatusCode;
 
 		private string requestId;
 
-		private string errorMessage;
-
 		private bool? success;
 
-		private string errorCode;
-
-		private List<string> data;
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
+		private QueryDISyncTaskConfigProcessResult_Data data;
 
 		public string RequestId
 		{
@@ -58,18 +40,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
 			}
 		}
 
@@ -85,19 +55,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public List<string> Data
+		public QueryDISyncTaskConfigProcessResult_Data Data
 		{
 			get
 			{
@@ -106,6 +64,52 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				data = value;
+			}
+		}
+
+		public class QueryDISyncTaskConfigProcessResult_Data
+		{
+
+			private string status;
+
+			private string message;
+
+			private string taskContent;
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string Message
+			{
+				get
+				{
+					return message;
+				}
+				set	
+				{
+					message = value;
+				}
+			}
+
+			public string TaskContent
+			{
+				get
+				{
+					return taskContent;
+				}
+				set	
+				{
+					taskContent = value;
+				}
 			}
 		}
 	}

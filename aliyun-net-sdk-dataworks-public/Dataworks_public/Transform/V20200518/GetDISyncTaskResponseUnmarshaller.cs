@@ -38,6 +38,20 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			data.Code = _ctx.StringValue("GetDISyncTask.Data.Code");
 			data.Status = _ctx.StringValue("GetDISyncTask.Data.Status");
 			data.Message = _ctx.StringValue("GetDISyncTask.Data.Message");
+
+			GetDISyncTaskResponse.GetDISyncTask_Data.GetDISyncTask_SolutionDetail solutionDetail = new GetDISyncTaskResponse.GetDISyncTask_Data.GetDISyncTask_SolutionDetail();
+			solutionDetail.Id = _ctx.LongValue("GetDISyncTask.Data.SolutionDetail.Id");
+			solutionDetail.Type = _ctx.StringValue("GetDISyncTask.Data.SolutionDetail.Type");
+			solutionDetail.ProjectId = _ctx.LongValue("GetDISyncTask.Data.SolutionDetail.ProjectId");
+			solutionDetail.Status = _ctx.StringValue("GetDISyncTask.Data.SolutionDetail.Status");
+			solutionDetail.ProcessContent = _ctx.StringValue("GetDISyncTask.Data.SolutionDetail.ProcessContent");
+			solutionDetail.StartTime = _ctx.StringValue("GetDISyncTask.Data.SolutionDetail.StartTime");
+			solutionDetail.Name = _ctx.StringValue("GetDISyncTask.Data.SolutionDetail.Name");
+			solutionDetail.CreatorName = _ctx.StringValue("GetDISyncTask.Data.SolutionDetail.CreatorName");
+			solutionDetail.SourceType = _ctx.StringValue("GetDISyncTask.Data.SolutionDetail.SourceType");
+			solutionDetail.SubmitTime = _ctx.StringValue("GetDISyncTask.Data.SolutionDetail.SubmitTime");
+			solutionDetail.ProcessExtra = _ctx.StringValue("GetDISyncTask.Data.SolutionDetail.ProcessExtra");
+			data.SolutionDetail = solutionDetail;
 			getDISyncTaskResponse.Data = data;
         
 			return getDISyncTaskResponse;

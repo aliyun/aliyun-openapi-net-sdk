@@ -31,11 +31,11 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			RunCycleDagNodesResponse runCycleDagNodesResponse = new RunCycleDagNodesResponse();
 
 			runCycleDagNodesResponse.HttpResponse = _ctx.HttpResponse;
-			runCycleDagNodesResponse.ErrorCode = _ctx.StringValue("RunCycleDagNodes.ErrorCode");
-			runCycleDagNodesResponse.ErrorMessage = _ctx.StringValue("RunCycleDagNodes.ErrorMessage");
 			runCycleDagNodesResponse.HttpStatusCode = _ctx.IntegerValue("RunCycleDagNodes.HttpStatusCode");
 			runCycleDagNodesResponse.RequestId = _ctx.StringValue("RunCycleDagNodes.RequestId");
+			runCycleDagNodesResponse.ErrorMessage = _ctx.StringValue("RunCycleDagNodes.ErrorMessage");
 			runCycleDagNodesResponse.Success = _ctx.BooleanValue("RunCycleDagNodes.Success");
+			runCycleDagNodesResponse.ErrorCode = _ctx.StringValue("RunCycleDagNodes.ErrorCode");
 
 			List<string> runCycleDagNodesResponse_data = new List<string>();
 			for (int i = 0; i < _ctx.Length("RunCycleDagNodes.Data.Length"); i++) {
