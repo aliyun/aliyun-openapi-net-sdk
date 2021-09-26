@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.vs;
 using Aliyun.Acs.vs.Transform;
 using Aliyun.Acs.vs.Transform.V20181212;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.vs.Model.V20181212
     public class DescribeVsUserResourcePackageRequest : RpcAcsRequest<DescribeVsUserResourcePackageResponse>
     {
         public DescribeVsUserResourcePackageRequest()
-            : base("vs", "2018-12-12", "DescribeVsUserResourcePackage", "vs", "openAPI")
+            : base("vs", "2018-12-12", "DescribeVsUserResourcePackage")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
