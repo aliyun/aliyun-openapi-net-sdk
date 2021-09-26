@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class AddVsPullStreamInfoConfigResponseUnmarshaller
     {
-        public static AddVsPullStreamInfoConfigResponse Unmarshall(UnmarshallerContext context)
+        public static AddVsPullStreamInfoConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddVsPullStreamInfoConfigResponse addVsPullStreamInfoConfigResponse = new AddVsPullStreamInfoConfigResponse();
 
-			addVsPullStreamInfoConfigResponse.HttpResponse = context.HttpResponse;
-			addVsPullStreamInfoConfigResponse.RequestId = context.StringValue("AddVsPullStreamInfoConfig.RequestId");
+			addVsPullStreamInfoConfigResponse.HttpResponse = _ctx.HttpResponse;
+			addVsPullStreamInfoConfigResponse.RequestId = _ctx.StringValue("AddVsPullStreamInfoConfig.RequestId");
         
 			return addVsPullStreamInfoConfigResponse;
         }

@@ -26,20 +26,20 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class BatchUnbindTemplateResponseUnmarshaller
     {
-        public static BatchUnbindTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static BatchUnbindTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchUnbindTemplateResponse batchUnbindTemplateResponse = new BatchUnbindTemplateResponse();
 
-			batchUnbindTemplateResponse.HttpResponse = context.HttpResponse;
-			batchUnbindTemplateResponse.RequestId = context.StringValue("BatchUnbindTemplate.RequestId");
+			batchUnbindTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			batchUnbindTemplateResponse.RequestId = _ctx.StringValue("BatchUnbindTemplate.RequestId");
 
 			List<BatchUnbindTemplateResponse.BatchUnbindTemplate_Binding> batchUnbindTemplateResponse_bindings = new List<BatchUnbindTemplateResponse.BatchUnbindTemplate_Binding>();
-			for (int i = 0; i < context.Length("BatchUnbindTemplate.Bindings.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("BatchUnbindTemplate.Bindings.Length"); i++) {
 				BatchUnbindTemplateResponse.BatchUnbindTemplate_Binding binding = new BatchUnbindTemplateResponse.BatchUnbindTemplate_Binding();
-				binding.TemplateId = context.StringValue("BatchUnbindTemplate.Bindings["+ i +"].TemplateId");
-				binding.InstanceId = context.StringValue("BatchUnbindTemplate.Bindings["+ i +"].InstanceId");
-				binding.InstanceType = context.StringValue("BatchUnbindTemplate.Bindings["+ i +"].InstanceType");
-				binding.Error = context.StringValue("BatchUnbindTemplate.Bindings["+ i +"].Error");
+				binding.TemplateId = _ctx.StringValue("BatchUnbindTemplate.Bindings["+ i +"].TemplateId");
+				binding.InstanceId = _ctx.StringValue("BatchUnbindTemplate.Bindings["+ i +"].InstanceId");
+				binding.InstanceType = _ctx.StringValue("BatchUnbindTemplate.Bindings["+ i +"].InstanceType");
+				binding.Error = _ctx.StringValue("BatchUnbindTemplate.Bindings["+ i +"].Error");
 
 				batchUnbindTemplateResponse_bindings.Add(binding);
 			}

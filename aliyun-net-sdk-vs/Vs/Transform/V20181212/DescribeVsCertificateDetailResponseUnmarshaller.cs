@@ -26,16 +26,16 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeVsCertificateDetailResponseUnmarshaller
     {
-        public static DescribeVsCertificateDetailResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVsCertificateDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVsCertificateDetailResponse describeVsCertificateDetailResponse = new DescribeVsCertificateDetailResponse();
 
-			describeVsCertificateDetailResponse.HttpResponse = context.HttpResponse;
-			describeVsCertificateDetailResponse.RequestId = context.StringValue("DescribeVsCertificateDetail.RequestId");
-			describeVsCertificateDetailResponse.Cert = context.StringValue("DescribeVsCertificateDetail.Cert");
-			describeVsCertificateDetailResponse.Key = context.StringValue("DescribeVsCertificateDetail.Key");
-			describeVsCertificateDetailResponse.CertId = context.LongValue("DescribeVsCertificateDetail.CertId");
-			describeVsCertificateDetailResponse.CertName = context.StringValue("DescribeVsCertificateDetail.CertName");
+			describeVsCertificateDetailResponse.HttpResponse = _ctx.HttpResponse;
+			describeVsCertificateDetailResponse.RequestId = _ctx.StringValue("DescribeVsCertificateDetail.RequestId");
+			describeVsCertificateDetailResponse.Cert = _ctx.StringValue("DescribeVsCertificateDetail.Cert");
+			describeVsCertificateDetailResponse.Key = _ctx.StringValue("DescribeVsCertificateDetail.Key");
+			describeVsCertificateDetailResponse.CertId = _ctx.LongValue("DescribeVsCertificateDetail.CertId");
+			describeVsCertificateDetailResponse.CertName = _ctx.StringValue("DescribeVsCertificateDetail.CertName");
         
 			return describeVsCertificateDetailResponse;
         }

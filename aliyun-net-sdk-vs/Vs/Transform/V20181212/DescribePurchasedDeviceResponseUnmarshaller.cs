@@ -26,24 +26,24 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribePurchasedDeviceResponseUnmarshaller
     {
-        public static DescribePurchasedDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribePurchasedDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribePurchasedDeviceResponse describePurchasedDeviceResponse = new DescribePurchasedDeviceResponse();
 
-			describePurchasedDeviceResponse.HttpResponse = context.HttpResponse;
-			describePurchasedDeviceResponse.RequestId = context.StringValue("DescribePurchasedDevice.RequestId");
-			describePurchasedDeviceResponse.Id = context.StringValue("DescribePurchasedDevice.Id");
-			describePurchasedDeviceResponse.Name = context.StringValue("DescribePurchasedDevice.Name");
-			describePurchasedDeviceResponse.Description = context.StringValue("DescribePurchasedDevice.Description");
-			describePurchasedDeviceResponse.Type = context.StringValue("DescribePurchasedDevice.Type");
-			describePurchasedDeviceResponse.SubType = context.StringValue("DescribePurchasedDevice.SubType");
-			describePurchasedDeviceResponse.RegisterCode = context.StringValue("DescribePurchasedDevice.RegisterCode");
-			describePurchasedDeviceResponse.Vendor = context.StringValue("DescribePurchasedDevice.Vendor");
-			describePurchasedDeviceResponse.OrderId = context.StringValue("DescribePurchasedDevice.OrderId");
-			describePurchasedDeviceResponse.Region = context.StringValue("DescribePurchasedDevice.Region");
-			describePurchasedDeviceResponse.GroupId = context.StringValue("DescribePurchasedDevice.GroupId");
-			describePurchasedDeviceResponse.GroupName = context.StringValue("DescribePurchasedDevice.GroupName");
-			describePurchasedDeviceResponse.CreatedTime = context.StringValue("DescribePurchasedDevice.CreatedTime");
+			describePurchasedDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			describePurchasedDeviceResponse.RequestId = _ctx.StringValue("DescribePurchasedDevice.RequestId");
+			describePurchasedDeviceResponse.Id = _ctx.StringValue("DescribePurchasedDevice.Id");
+			describePurchasedDeviceResponse.Name = _ctx.StringValue("DescribePurchasedDevice.Name");
+			describePurchasedDeviceResponse.Description = _ctx.StringValue("DescribePurchasedDevice.Description");
+			describePurchasedDeviceResponse.Type = _ctx.StringValue("DescribePurchasedDevice.Type");
+			describePurchasedDeviceResponse.SubType = _ctx.StringValue("DescribePurchasedDevice.SubType");
+			describePurchasedDeviceResponse.RegisterCode = _ctx.StringValue("DescribePurchasedDevice.RegisterCode");
+			describePurchasedDeviceResponse.Vendor = _ctx.StringValue("DescribePurchasedDevice.Vendor");
+			describePurchasedDeviceResponse.OrderId = _ctx.StringValue("DescribePurchasedDevice.OrderId");
+			describePurchasedDeviceResponse.Region = _ctx.StringValue("DescribePurchasedDevice.Region");
+			describePurchasedDeviceResponse.GroupId = _ctx.StringValue("DescribePurchasedDevice.GroupId");
+			describePurchasedDeviceResponse.GroupName = _ctx.StringValue("DescribePurchasedDevice.GroupName");
+			describePurchasedDeviceResponse.CreatedTime = _ctx.StringValue("DescribePurchasedDevice.CreatedTime");
         
 			return describePurchasedDeviceResponse;
         }

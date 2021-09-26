@@ -26,14 +26,14 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeStreamURLResponseUnmarshaller
     {
-        public static DescribeStreamURLResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeStreamURLResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeStreamURLResponse describeStreamURLResponse = new DescribeStreamURLResponse();
 
-			describeStreamURLResponse.HttpResponse = context.HttpResponse;
-			describeStreamURLResponse.RequestId = context.StringValue("DescribeStreamURL.RequestId");
-			describeStreamURLResponse.Url = context.StringValue("DescribeStreamURL.Url");
-			describeStreamURLResponse.ExpireTime = context.LongValue("DescribeStreamURL.ExpireTime");
+			describeStreamURLResponse.HttpResponse = _ctx.HttpResponse;
+			describeStreamURLResponse.RequestId = _ctx.StringValue("DescribeStreamURL.RequestId");
+			describeStreamURLResponse.Url = _ctx.StringValue("DescribeStreamURL.Url");
+			describeStreamURLResponse.ExpireTime = _ctx.LongValue("DescribeStreamURL.ExpireTime");
         
 			return describeStreamURLResponse;
         }

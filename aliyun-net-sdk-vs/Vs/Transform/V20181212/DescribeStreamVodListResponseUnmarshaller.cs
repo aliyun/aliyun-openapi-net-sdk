@@ -26,18 +26,18 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeStreamVodListResponseUnmarshaller
     {
-        public static DescribeStreamVodListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeStreamVodListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeStreamVodListResponse describeStreamVodListResponse = new DescribeStreamVodListResponse();
 
-			describeStreamVodListResponse.HttpResponse = context.HttpResponse;
-			describeStreamVodListResponse.RequestId = context.StringValue("DescribeStreamVodList.RequestId");
+			describeStreamVodListResponse.HttpResponse = _ctx.HttpResponse;
+			describeStreamVodListResponse.RequestId = _ctx.StringValue("DescribeStreamVodList.RequestId");
 
 			List<DescribeStreamVodListResponse.DescribeStreamVodList_Record> describeStreamVodListResponse_records = new List<DescribeStreamVodListResponse.DescribeStreamVodList_Record>();
-			for (int i = 0; i < context.Length("DescribeStreamVodList.Records.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeStreamVodList.Records.Length"); i++) {
 				DescribeStreamVodListResponse.DescribeStreamVodList_Record record = new DescribeStreamVodListResponse.DescribeStreamVodList_Record();
-				record.StartTime = context.LongValue("DescribeStreamVodList.Records["+ i +"].StartTime");
-				record.EndTime = context.LongValue("DescribeStreamVodList.Records["+ i +"].EndTime");
+				record.StartTime = _ctx.LongValue("DescribeStreamVodList.Records["+ i +"].StartTime");
+				record.EndTime = _ctx.LongValue("DescribeStreamVodList.Records["+ i +"].EndTime");
 
 				describeStreamVodListResponse_records.Add(record);
 			}

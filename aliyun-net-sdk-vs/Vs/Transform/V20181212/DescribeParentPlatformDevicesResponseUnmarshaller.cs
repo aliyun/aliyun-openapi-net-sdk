@@ -26,25 +26,25 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeParentPlatformDevicesResponseUnmarshaller
     {
-        public static DescribeParentPlatformDevicesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeParentPlatformDevicesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeParentPlatformDevicesResponse describeParentPlatformDevicesResponse = new DescribeParentPlatformDevicesResponse();
 
-			describeParentPlatformDevicesResponse.HttpResponse = context.HttpResponse;
-			describeParentPlatformDevicesResponse.RequestId = context.StringValue("DescribeParentPlatformDevices.RequestId");
-			describeParentPlatformDevicesResponse.PageSize = context.LongValue("DescribeParentPlatformDevices.PageSize");
-			describeParentPlatformDevicesResponse.PageNum = context.LongValue("DescribeParentPlatformDevices.PageNum");
-			describeParentPlatformDevicesResponse.PageCount = context.LongValue("DescribeParentPlatformDevices.PageCount");
-			describeParentPlatformDevicesResponse.TotalCount = context.LongValue("DescribeParentPlatformDevices.TotalCount");
+			describeParentPlatformDevicesResponse.HttpResponse = _ctx.HttpResponse;
+			describeParentPlatformDevicesResponse.RequestId = _ctx.StringValue("DescribeParentPlatformDevices.RequestId");
+			describeParentPlatformDevicesResponse.PageSize = _ctx.LongValue("DescribeParentPlatformDevices.PageSize");
+			describeParentPlatformDevicesResponse.PageNum = _ctx.LongValue("DescribeParentPlatformDevices.PageNum");
+			describeParentPlatformDevicesResponse.PageCount = _ctx.LongValue("DescribeParentPlatformDevices.PageCount");
+			describeParentPlatformDevicesResponse.TotalCount = _ctx.LongValue("DescribeParentPlatformDevices.TotalCount");
 
 			List<DescribeParentPlatformDevicesResponse.DescribeParentPlatformDevices_Device> describeParentPlatformDevicesResponse_devices = new List<DescribeParentPlatformDevicesResponse.DescribeParentPlatformDevices_Device>();
-			for (int i = 0; i < context.Length("DescribeParentPlatformDevices.Devices.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeParentPlatformDevices.Devices.Length"); i++) {
 				DescribeParentPlatformDevicesResponse.DescribeParentPlatformDevices_Device device = new DescribeParentPlatformDevicesResponse.DescribeParentPlatformDevices_Device();
-				device.Id = context.StringValue("DescribeParentPlatformDevices.Devices["+ i +"].Id");
-				device.Name = context.StringValue("DescribeParentPlatformDevices.Devices["+ i +"].Name");
-				device.GbId = context.StringValue("DescribeParentPlatformDevices.Devices["+ i +"].GbId");
-				device.GroupId = context.StringValue("DescribeParentPlatformDevices.Devices["+ i +"].GroupId");
-				device.ParentId = context.StringValue("DescribeParentPlatformDevices.Devices["+ i +"].ParentId");
+				device.Id = _ctx.StringValue("DescribeParentPlatformDevices.Devices["+ i +"].Id");
+				device.Name = _ctx.StringValue("DescribeParentPlatformDevices.Devices["+ i +"].Name");
+				device.GbId = _ctx.StringValue("DescribeParentPlatformDevices.Devices["+ i +"].GbId");
+				device.GroupId = _ctx.StringValue("DescribeParentPlatformDevices.Devices["+ i +"].GroupId");
+				device.ParentId = _ctx.StringValue("DescribeParentPlatformDevices.Devices["+ i +"].ParentId");
 
 				describeParentPlatformDevicesResponse_devices.Add(device);
 			}

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class StopTransferStreamResponseUnmarshaller
     {
-        public static StopTransferStreamResponse Unmarshall(UnmarshallerContext context)
+        public static StopTransferStreamResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopTransferStreamResponse stopTransferStreamResponse = new StopTransferStreamResponse();
 
-			stopTransferStreamResponse.HttpResponse = context.HttpResponse;
-			stopTransferStreamResponse.RequestId = context.StringValue("StopTransferStream.RequestId");
+			stopTransferStreamResponse.HttpResponse = _ctx.HttpResponse;
+			stopTransferStreamResponse.RequestId = _ctx.StringValue("StopTransferStream.RequestId");
         
 			return stopTransferStreamResponse;
         }

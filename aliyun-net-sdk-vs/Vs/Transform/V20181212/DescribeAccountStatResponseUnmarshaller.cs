@@ -26,17 +26,17 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeAccountStatResponseUnmarshaller
     {
-        public static DescribeAccountStatResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAccountStatResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAccountStatResponse describeAccountStatResponse = new DescribeAccountStatResponse();
 
-			describeAccountStatResponse.HttpResponse = context.HttpResponse;
-			describeAccountStatResponse.RequestId = context.StringValue("DescribeAccountStat.RequestId");
-			describeAccountStatResponse.Id = context.StringValue("DescribeAccountStat.Id");
-			describeAccountStatResponse.GroupNum = context.LongValue("DescribeAccountStat.GroupNum");
-			describeAccountStatResponse.GroupLimit = context.LongValue("DescribeAccountStat.GroupLimit");
-			describeAccountStatResponse.TemplateNum = context.LongValue("DescribeAccountStat.TemplateNum");
-			describeAccountStatResponse.TemplateLimit = context.LongValue("DescribeAccountStat.TemplateLimit");
+			describeAccountStatResponse.HttpResponse = _ctx.HttpResponse;
+			describeAccountStatResponse.RequestId = _ctx.StringValue("DescribeAccountStat.RequestId");
+			describeAccountStatResponse.Id = _ctx.StringValue("DescribeAccountStat.Id");
+			describeAccountStatResponse.GroupNum = _ctx.LongValue("DescribeAccountStat.GroupNum");
+			describeAccountStatResponse.GroupLimit = _ctx.LongValue("DescribeAccountStat.GroupLimit");
+			describeAccountStatResponse.TemplateNum = _ctx.LongValue("DescribeAccountStat.TemplateNum");
+			describeAccountStatResponse.TemplateLimit = _ctx.LongValue("DescribeAccountStat.TemplateLimit");
         
 			return describeAccountStatResponse;
         }

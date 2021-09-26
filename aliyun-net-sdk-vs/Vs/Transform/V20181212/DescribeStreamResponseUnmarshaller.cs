@@ -26,25 +26,25 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeStreamResponseUnmarshaller
     {
-        public static DescribeStreamResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeStreamResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeStreamResponse describeStreamResponse = new DescribeStreamResponse();
 
-			describeStreamResponse.HttpResponse = context.HttpResponse;
-			describeStreamResponse.RequestId = context.StringValue("DescribeStream.RequestId");
-			describeStreamResponse.Id = context.StringValue("DescribeStream.Id");
-			describeStreamResponse.Name = context.StringValue("DescribeStream.Name");
-			describeStreamResponse.PushDomain = context.StringValue("DescribeStream.PushDomain");
-			describeStreamResponse.PlayDomain = context.StringValue("DescribeStream.PlayDomain");
-			describeStreamResponse.App = context.StringValue("DescribeStream.App");
-			describeStreamResponse.Protocol = context.StringValue("DescribeStream.Protocol");
-			describeStreamResponse.GroupId = context.StringValue("DescribeStream.GroupId");
-			describeStreamResponse.DeviceId = context.StringValue("DescribeStream.DeviceId");
-			describeStreamResponse.Enabled = context.BooleanValue("DescribeStream.Enabled");
-			describeStreamResponse.Status = context.StringValue("DescribeStream.Status");
-			describeStreamResponse.Height = context.IntegerValue("DescribeStream.Height");
-			describeStreamResponse.Width = context.IntegerValue("DescribeStream.Width");
-			describeStreamResponse.CreatedTime = context.StringValue("DescribeStream.CreatedTime");
+			describeStreamResponse.HttpResponse = _ctx.HttpResponse;
+			describeStreamResponse.RequestId = _ctx.StringValue("DescribeStream.RequestId");
+			describeStreamResponse.Id = _ctx.StringValue("DescribeStream.Id");
+			describeStreamResponse.Name = _ctx.StringValue("DescribeStream.Name");
+			describeStreamResponse.PushDomain = _ctx.StringValue("DescribeStream.PushDomain");
+			describeStreamResponse.PlayDomain = _ctx.StringValue("DescribeStream.PlayDomain");
+			describeStreamResponse.App = _ctx.StringValue("DescribeStream.App");
+			describeStreamResponse.Protocol = _ctx.StringValue("DescribeStream.Protocol");
+			describeStreamResponse.GroupId = _ctx.StringValue("DescribeStream.GroupId");
+			describeStreamResponse.DeviceId = _ctx.StringValue("DescribeStream.DeviceId");
+			describeStreamResponse.Enabled = _ctx.BooleanValue("DescribeStream.Enabled");
+			describeStreamResponse.Status = _ctx.StringValue("DescribeStream.Status");
+			describeStreamResponse.Height = _ctx.IntegerValue("DescribeStream.Height");
+			describeStreamResponse.Width = _ctx.IntegerValue("DescribeStream.Width");
+			describeStreamResponse.CreatedTime = _ctx.StringValue("DescribeStream.CreatedTime");
         
 			return describeStreamResponse;
         }

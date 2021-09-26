@@ -26,13 +26,13 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class SetPresetResponseUnmarshaller
     {
-        public static SetPresetResponse Unmarshall(UnmarshallerContext context)
+        public static SetPresetResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetPresetResponse setPresetResponse = new SetPresetResponse();
 
-			setPresetResponse.HttpResponse = context.HttpResponse;
-			setPresetResponse.RequestId = context.StringValue("SetPreset.RequestId");
-			setPresetResponse.Id = context.StringValue("SetPreset.Id");
+			setPresetResponse.HttpResponse = _ctx.HttpResponse;
+			setPresetResponse.RequestId = _ctx.StringValue("SetPreset.RequestId");
+			setPresetResponse.Id = _ctx.StringValue("SetPreset.Id");
         
 			return setPresetResponse;
         }

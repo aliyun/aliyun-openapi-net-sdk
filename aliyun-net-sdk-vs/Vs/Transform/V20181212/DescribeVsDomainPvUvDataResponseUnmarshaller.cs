@@ -26,21 +26,23 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeVsDomainPvUvDataResponseUnmarshaller
     {
-        public static DescribeVsDomainPvUvDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVsDomainPvUvDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVsDomainPvUvDataResponse describeVsDomainPvUvDataResponse = new DescribeVsDomainPvUvDataResponse();
 
-			describeVsDomainPvUvDataResponse.HttpResponse = context.HttpResponse;
-			describeVsDomainPvUvDataResponse.RequestId = context.StringValue("DescribeVsDomainPvUvData.RequestId");
-			describeVsDomainPvUvDataResponse.DomainName = context.StringValue("DescribeVsDomainPvUvData.DomainName");
-			describeVsDomainPvUvDataResponse.StartTime = context.StringValue("DescribeVsDomainPvUvData.StartTime");
+			describeVsDomainPvUvDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeVsDomainPvUvDataResponse.RequestId = _ctx.StringValue("DescribeVsDomainPvUvData.RequestId");
+			describeVsDomainPvUvDataResponse.DomainName = _ctx.StringValue("DescribeVsDomainPvUvData.DomainName");
+			describeVsDomainPvUvDataResponse.StartTime = _ctx.StringValue("DescribeVsDomainPvUvData.StartTime");
+			describeVsDomainPvUvDataResponse.EndTime = _ctx.StringValue("DescribeVsDomainPvUvData.EndTime");
+			describeVsDomainPvUvDataResponse.DataInterval = _ctx.StringValue("DescribeVsDomainPvUvData.DataInterval");
 
 			List<DescribeVsDomainPvUvDataResponse.DescribeVsDomainPvUvData_PvUvDataInfo> describeVsDomainPvUvDataResponse_pvUvDataInfos = new List<DescribeVsDomainPvUvDataResponse.DescribeVsDomainPvUvData_PvUvDataInfo>();
-			for (int i = 0; i < context.Length("DescribeVsDomainPvUvData.PvUvDataInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVsDomainPvUvData.PvUvDataInfos.Length"); i++) {
 				DescribeVsDomainPvUvDataResponse.DescribeVsDomainPvUvData_PvUvDataInfo pvUvDataInfo = new DescribeVsDomainPvUvDataResponse.DescribeVsDomainPvUvData_PvUvDataInfo();
-				pvUvDataInfo.PV = context.StringValue("DescribeVsDomainPvUvData.PvUvDataInfos["+ i +"].PV");
-				pvUvDataInfo.UV = context.StringValue("DescribeVsDomainPvUvData.PvUvDataInfos["+ i +"].UV");
-				pvUvDataInfo.TimeStamp = context.StringValue("DescribeVsDomainPvUvData.PvUvDataInfos["+ i +"].TimeStamp");
+				pvUvDataInfo.PV = _ctx.StringValue("DescribeVsDomainPvUvData.PvUvDataInfos["+ i +"].PV");
+				pvUvDataInfo.UV = _ctx.StringValue("DescribeVsDomainPvUvData.PvUvDataInfos["+ i +"].UV");
+				pvUvDataInfo.TimeStamp = _ctx.StringValue("DescribeVsDomainPvUvData.PvUvDataInfos["+ i +"].TimeStamp");
 
 				describeVsDomainPvUvDataResponse_pvUvDataInfos.Add(pvUvDataInfo);
 			}

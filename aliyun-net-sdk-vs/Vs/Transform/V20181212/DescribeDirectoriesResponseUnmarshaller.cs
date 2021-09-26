@@ -26,26 +26,26 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeDirectoriesResponseUnmarshaller
     {
-        public static DescribeDirectoriesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDirectoriesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDirectoriesResponse describeDirectoriesResponse = new DescribeDirectoriesResponse();
 
-			describeDirectoriesResponse.HttpResponse = context.HttpResponse;
-			describeDirectoriesResponse.RequestId = context.StringValue("DescribeDirectories.RequestId");
-			describeDirectoriesResponse.PageSize = context.LongValue("DescribeDirectories.PageSize");
-			describeDirectoriesResponse.PageNum = context.LongValue("DescribeDirectories.PageNum");
-			describeDirectoriesResponse.PageCount = context.LongValue("DescribeDirectories.PageCount");
-			describeDirectoriesResponse.TotalCount = context.LongValue("DescribeDirectories.TotalCount");
+			describeDirectoriesResponse.HttpResponse = _ctx.HttpResponse;
+			describeDirectoriesResponse.RequestId = _ctx.StringValue("DescribeDirectories.RequestId");
+			describeDirectoriesResponse.PageSize = _ctx.LongValue("DescribeDirectories.PageSize");
+			describeDirectoriesResponse.PageNum = _ctx.LongValue("DescribeDirectories.PageNum");
+			describeDirectoriesResponse.PageCount = _ctx.LongValue("DescribeDirectories.PageCount");
+			describeDirectoriesResponse.TotalCount = _ctx.LongValue("DescribeDirectories.TotalCount");
 
 			List<DescribeDirectoriesResponse.DescribeDirectories_Directory> describeDirectoriesResponse_directories = new List<DescribeDirectoriesResponse.DescribeDirectories_Directory>();
-			for (int i = 0; i < context.Length("DescribeDirectories.Directories.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDirectories.Directories.Length"); i++) {
 				DescribeDirectoriesResponse.DescribeDirectories_Directory directory = new DescribeDirectoriesResponse.DescribeDirectories_Directory();
-				directory.Id = context.StringValue("DescribeDirectories.Directories["+ i +"].Id");
-				directory.Name = context.StringValue("DescribeDirectories.Directories["+ i +"].Name");
-				directory.Description = context.StringValue("DescribeDirectories.Directories["+ i +"].Description");
-				directory.GroupId = context.StringValue("DescribeDirectories.Directories["+ i +"].GroupId");
-				directory.ParentId = context.StringValue("DescribeDirectories.Directories["+ i +"].ParentId");
-				directory.CreatedTime = context.StringValue("DescribeDirectories.Directories["+ i +"].CreatedTime");
+				directory.Id = _ctx.StringValue("DescribeDirectories.Directories["+ i +"].Id");
+				directory.Name = _ctx.StringValue("DescribeDirectories.Directories["+ i +"].Name");
+				directory.Description = _ctx.StringValue("DescribeDirectories.Directories["+ i +"].Description");
+				directory.GroupId = _ctx.StringValue("DescribeDirectories.Directories["+ i +"].GroupId");
+				directory.ParentId = _ctx.StringValue("DescribeDirectories.Directories["+ i +"].ParentId");
+				directory.CreatedTime = _ctx.StringValue("DescribeDirectories.Directories["+ i +"].CreatedTime");
 
 				describeDirectoriesResponse_directories.Add(directory);
 			}

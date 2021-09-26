@@ -26,19 +26,19 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class BatchBindParentPlatformDevicesResponseUnmarshaller
     {
-        public static BatchBindParentPlatformDevicesResponse Unmarshall(UnmarshallerContext context)
+        public static BatchBindParentPlatformDevicesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchBindParentPlatformDevicesResponse batchBindParentPlatformDevicesResponse = new BatchBindParentPlatformDevicesResponse();
 
-			batchBindParentPlatformDevicesResponse.HttpResponse = context.HttpResponse;
-			batchBindParentPlatformDevicesResponse.RequestId = context.StringValue("BatchBindParentPlatformDevices.RequestId");
+			batchBindParentPlatformDevicesResponse.HttpResponse = _ctx.HttpResponse;
+			batchBindParentPlatformDevicesResponse.RequestId = _ctx.StringValue("BatchBindParentPlatformDevices.RequestId");
 
 			List<BatchBindParentPlatformDevicesResponse.BatchBindParentPlatformDevices_Result> batchBindParentPlatformDevicesResponse_results = new List<BatchBindParentPlatformDevicesResponse.BatchBindParentPlatformDevices_Result>();
-			for (int i = 0; i < context.Length("BatchBindParentPlatformDevices.Results.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("BatchBindParentPlatformDevices.Results.Length"); i++) {
 				BatchBindParentPlatformDevicesResponse.BatchBindParentPlatformDevices_Result result = new BatchBindParentPlatformDevicesResponse.BatchBindParentPlatformDevices_Result();
-				result.ParentPlatformId = context.StringValue("BatchBindParentPlatformDevices.Results["+ i +"].ParentPlatformId");
-				result.DeviceId = context.StringValue("BatchBindParentPlatformDevices.Results["+ i +"].DeviceId");
-				result.Error = context.StringValue("BatchBindParentPlatformDevices.Results["+ i +"].Error");
+				result.ParentPlatformId = _ctx.StringValue("BatchBindParentPlatformDevices.Results["+ i +"].ParentPlatformId");
+				result.DeviceId = _ctx.StringValue("BatchBindParentPlatformDevices.Results["+ i +"].DeviceId");
+				result.Error = _ctx.StringValue("BatchBindParentPlatformDevices.Results["+ i +"].Error");
 
 				batchBindParentPlatformDevicesResponse_results.Add(result);
 			}

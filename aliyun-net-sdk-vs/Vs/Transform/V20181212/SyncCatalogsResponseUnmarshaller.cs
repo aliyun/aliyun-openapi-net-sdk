@@ -26,13 +26,13 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class SyncCatalogsResponseUnmarshaller
     {
-        public static SyncCatalogsResponse Unmarshall(UnmarshallerContext context)
+        public static SyncCatalogsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SyncCatalogsResponse syncCatalogsResponse = new SyncCatalogsResponse();
 
-			syncCatalogsResponse.HttpResponse = context.HttpResponse;
-			syncCatalogsResponse.RequestId = context.StringValue("SyncCatalogs.RequestId");
-			syncCatalogsResponse.Id = context.StringValue("SyncCatalogs.Id");
+			syncCatalogsResponse.HttpResponse = _ctx.HttpResponse;
+			syncCatalogsResponse.RequestId = _ctx.StringValue("SyncCatalogs.RequestId");
+			syncCatalogsResponse.Id = _ctx.StringValue("SyncCatalogs.Id");
         
 			return syncCatalogsResponse;
         }

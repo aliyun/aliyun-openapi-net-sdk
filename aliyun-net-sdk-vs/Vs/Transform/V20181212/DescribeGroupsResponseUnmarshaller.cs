@@ -26,61 +26,61 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeGroupsResponseUnmarshaller
     {
-        public static DescribeGroupsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeGroupsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeGroupsResponse describeGroupsResponse = new DescribeGroupsResponse();
 
-			describeGroupsResponse.HttpResponse = context.HttpResponse;
-			describeGroupsResponse.RequestId = context.StringValue("DescribeGroups.RequestId");
-			describeGroupsResponse.PageSize = context.LongValue("DescribeGroups.PageSize");
-			describeGroupsResponse.PageNum = context.LongValue("DescribeGroups.PageNum");
-			describeGroupsResponse.PageCount = context.LongValue("DescribeGroups.PageCount");
-			describeGroupsResponse.TotalCount = context.LongValue("DescribeGroups.TotalCount");
+			describeGroupsResponse.HttpResponse = _ctx.HttpResponse;
+			describeGroupsResponse.RequestId = _ctx.StringValue("DescribeGroups.RequestId");
+			describeGroupsResponse.PageSize = _ctx.LongValue("DescribeGroups.PageSize");
+			describeGroupsResponse.PageNum = _ctx.LongValue("DescribeGroups.PageNum");
+			describeGroupsResponse.PageCount = _ctx.LongValue("DescribeGroups.PageCount");
+			describeGroupsResponse.TotalCount = _ctx.LongValue("DescribeGroups.TotalCount");
 
 			List<DescribeGroupsResponse.DescribeGroups_Group> describeGroupsResponse_groups = new List<DescribeGroupsResponse.DescribeGroups_Group>();
-			for (int i = 0; i < context.Length("DescribeGroups.Groups.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeGroups.Groups.Length"); i++) {
 				DescribeGroupsResponse.DescribeGroups_Group group = new DescribeGroupsResponse.DescribeGroups_Group();
-				group.Id = context.StringValue("DescribeGroups.Groups["+ i +"].Id");
-				group.AliasId = context.StringValue("DescribeGroups.Groups["+ i +"].AliasId");
-				group.Name = context.StringValue("DescribeGroups.Groups["+ i +"].Name");
-				group.Description = context.StringValue("DescribeGroups.Groups["+ i +"].Description");
-				group.App = context.StringValue("DescribeGroups.Groups["+ i +"].App");
-				group.Region = context.StringValue("DescribeGroups.Groups["+ i +"].Region");
-				group.InProtocol = context.StringValue("DescribeGroups.Groups["+ i +"].InProtocol");
-				group.OutProtocol = context.StringValue("DescribeGroups.Groups["+ i +"].OutProtocol");
-				group.Enabled = context.BooleanValue("DescribeGroups.Groups["+ i +"].Enabled");
-				group.Status = context.StringValue("DescribeGroups.Groups["+ i +"].Status");
-				group.CreatedTime = context.StringValue("DescribeGroups.Groups["+ i +"].CreatedTime");
-				group.PushDomain = context.StringValue("DescribeGroups.Groups["+ i +"].PushDomain");
-				group.PlayDomain = context.StringValue("DescribeGroups.Groups["+ i +"].PlayDomain");
-				group.LazyPull = context.BooleanValue("DescribeGroups.Groups["+ i +"].LazyPull");
-				group.Callback = context.StringValue("DescribeGroups.Groups["+ i +"].Callback");
-				group.CaptureInterval = context.IntegerValue("DescribeGroups.Groups["+ i +"].CaptureInterval");
-				group.CaptureImage = context.IntegerValue("DescribeGroups.Groups["+ i +"].CaptureImage");
-				group.CaptureVideo = context.IntegerValue("DescribeGroups.Groups["+ i +"].CaptureVideo");
-				group.CaptureOssBucket = context.StringValue("DescribeGroups.Groups["+ i +"].CaptureOssBucket");
-				group.CaptureOssPath = context.StringValue("DescribeGroups.Groups["+ i +"].CaptureOssPath");
-				group.GbId = context.StringValue("DescribeGroups.Groups["+ i +"].GbId");
-				group.GbIp = context.StringValue("DescribeGroups.Groups["+ i +"].GbIp");
-				group.GbPort = context.LongValue("DescribeGroups.Groups["+ i +"].GbPort");
+				group.Id = _ctx.StringValue("DescribeGroups.Groups["+ i +"].Id");
+				group.AliasId = _ctx.StringValue("DescribeGroups.Groups["+ i +"].AliasId");
+				group.Name = _ctx.StringValue("DescribeGroups.Groups["+ i +"].Name");
+				group.Description = _ctx.StringValue("DescribeGroups.Groups["+ i +"].Description");
+				group.App = _ctx.StringValue("DescribeGroups.Groups["+ i +"].App");
+				group.Region = _ctx.StringValue("DescribeGroups.Groups["+ i +"].Region");
+				group.InProtocol = _ctx.StringValue("DescribeGroups.Groups["+ i +"].InProtocol");
+				group.OutProtocol = _ctx.StringValue("DescribeGroups.Groups["+ i +"].OutProtocol");
+				group.Enabled = _ctx.BooleanValue("DescribeGroups.Groups["+ i +"].Enabled");
+				group.Status = _ctx.StringValue("DescribeGroups.Groups["+ i +"].Status");
+				group.CreatedTime = _ctx.StringValue("DescribeGroups.Groups["+ i +"].CreatedTime");
+				group.PushDomain = _ctx.StringValue("DescribeGroups.Groups["+ i +"].PushDomain");
+				group.PlayDomain = _ctx.StringValue("DescribeGroups.Groups["+ i +"].PlayDomain");
+				group.LazyPull = _ctx.BooleanValue("DescribeGroups.Groups["+ i +"].LazyPull");
+				group.Callback = _ctx.StringValue("DescribeGroups.Groups["+ i +"].Callback");
+				group.CaptureInterval = _ctx.IntegerValue("DescribeGroups.Groups["+ i +"].CaptureInterval");
+				group.CaptureImage = _ctx.IntegerValue("DescribeGroups.Groups["+ i +"].CaptureImage");
+				group.CaptureVideo = _ctx.IntegerValue("DescribeGroups.Groups["+ i +"].CaptureVideo");
+				group.CaptureOssBucket = _ctx.StringValue("DescribeGroups.Groups["+ i +"].CaptureOssBucket");
+				group.CaptureOssPath = _ctx.StringValue("DescribeGroups.Groups["+ i +"].CaptureOssPath");
+				group.GbId = _ctx.StringValue("DescribeGroups.Groups["+ i +"].GbId");
+				group.GbIp = _ctx.StringValue("DescribeGroups.Groups["+ i +"].GbIp");
+				group.GbPort = _ctx.LongValue("DescribeGroups.Groups["+ i +"].GbPort");
 
 				List<string> group_gbUdpPorts = new List<string>();
-				for (int j = 0; j < context.Length("DescribeGroups.Groups["+ i +"].GbUdpPorts.Length"); j++) {
-					group_gbUdpPorts.Add(context.StringValue("DescribeGroups.Groups["+ i +"].GbUdpPorts["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeGroups.Groups["+ i +"].GbUdpPorts.Length"); j++) {
+					group_gbUdpPorts.Add(_ctx.StringValue("DescribeGroups.Groups["+ i +"].GbUdpPorts["+ j +"]"));
 				}
 				group.GbUdpPorts = group_gbUdpPorts;
 
 				List<string> group_gbTcpPorts = new List<string>();
-				for (int j = 0; j < context.Length("DescribeGroups.Groups["+ i +"].GbTcpPorts.Length"); j++) {
-					group_gbTcpPorts.Add(context.StringValue("DescribeGroups.Groups["+ i +"].GbTcpPorts["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeGroups.Groups["+ i +"].GbTcpPorts.Length"); j++) {
+					group_gbTcpPorts.Add(_ctx.StringValue("DescribeGroups.Groups["+ i +"].GbTcpPorts["+ j +"]"));
 				}
 				group.GbTcpPorts = group_gbTcpPorts;
 
 				DescribeGroupsResponse.DescribeGroups_Group.DescribeGroups_Stats stats = new DescribeGroupsResponse.DescribeGroups_Group.DescribeGroups_Stats();
-				stats.DeviceNum = context.LongValue("DescribeGroups.Groups["+ i +"].Stats.DeviceNum");
-				stats.IedNum = context.LongValue("DescribeGroups.Groups["+ i +"].Stats.IedNum");
-				stats.IpcNum = context.LongValue("DescribeGroups.Groups["+ i +"].Stats.IpcNum");
-				stats.PlatformNum = context.LongValue("DescribeGroups.Groups["+ i +"].Stats.PlatformNum");
+				stats.DeviceNum = _ctx.LongValue("DescribeGroups.Groups["+ i +"].Stats.DeviceNum");
+				stats.IedNum = _ctx.LongValue("DescribeGroups.Groups["+ i +"].Stats.IedNum");
+				stats.IpcNum = _ctx.LongValue("DescribeGroups.Groups["+ i +"].Stats.IpcNum");
+				stats.PlatformNum = _ctx.LongValue("DescribeGroups.Groups["+ i +"].Stats.PlatformNum");
 				group.Stats = stats;
 
 				describeGroupsResponse_groups.Add(group);

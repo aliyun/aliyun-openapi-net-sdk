@@ -31,6 +31,10 @@ namespace Aliyun.Acs.vs.Model.V20181212
 
 		private string startTime;
 
+		private string endTime;
+
+		private string dataInterval;
+
 		private List<DescribeVsDomainUvData_UsageData> uvDataInterval;
 
 		public string RequestId
@@ -66,6 +70,30 @@ namespace Aliyun.Acs.vs.Model.V20181212
 			set	
 			{
 				startTime = value;
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public string DataInterval
+		{
+			get
+			{
+				return dataInterval;
+			}
+			set	
+			{
+				dataInterval = value;
 			}
 		}
 

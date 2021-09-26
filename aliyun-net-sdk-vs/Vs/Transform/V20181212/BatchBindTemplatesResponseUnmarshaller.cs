@@ -26,20 +26,20 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class BatchBindTemplatesResponseUnmarshaller
     {
-        public static BatchBindTemplatesResponse Unmarshall(UnmarshallerContext context)
+        public static BatchBindTemplatesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchBindTemplatesResponse batchBindTemplatesResponse = new BatchBindTemplatesResponse();
 
-			batchBindTemplatesResponse.HttpResponse = context.HttpResponse;
-			batchBindTemplatesResponse.RequestId = context.StringValue("BatchBindTemplates.RequestId");
+			batchBindTemplatesResponse.HttpResponse = _ctx.HttpResponse;
+			batchBindTemplatesResponse.RequestId = _ctx.StringValue("BatchBindTemplates.RequestId");
 
 			List<BatchBindTemplatesResponse.BatchBindTemplates_Result> batchBindTemplatesResponse_results = new List<BatchBindTemplatesResponse.BatchBindTemplates_Result>();
-			for (int i = 0; i < context.Length("BatchBindTemplates.Results.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("BatchBindTemplates.Results.Length"); i++) {
 				BatchBindTemplatesResponse.BatchBindTemplates_Result result = new BatchBindTemplatesResponse.BatchBindTemplates_Result();
-				result.TemplateId = context.StringValue("BatchBindTemplates.Results["+ i +"].TemplateId");
-				result.InstanceId = context.StringValue("BatchBindTemplates.Results["+ i +"].InstanceId");
-				result.InstanceType = context.StringValue("BatchBindTemplates.Results["+ i +"].InstanceType");
-				result.Error = context.StringValue("BatchBindTemplates.Results["+ i +"].Error");
+				result.TemplateId = _ctx.StringValue("BatchBindTemplates.Results["+ i +"].TemplateId");
+				result.InstanceId = _ctx.StringValue("BatchBindTemplates.Results["+ i +"].InstanceId");
+				result.InstanceType = _ctx.StringValue("BatchBindTemplates.Results["+ i +"].InstanceType");
+				result.Error = _ctx.StringValue("BatchBindTemplates.Results["+ i +"].Error");
 
 				batchBindTemplatesResponse_results.Add(result);
 			}

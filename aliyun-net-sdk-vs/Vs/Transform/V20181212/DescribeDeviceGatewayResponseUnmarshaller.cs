@@ -26,16 +26,16 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeDeviceGatewayResponseUnmarshaller
     {
-        public static DescribeDeviceGatewayResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDeviceGatewayResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDeviceGatewayResponse describeDeviceGatewayResponse = new DescribeDeviceGatewayResponse();
 
-			describeDeviceGatewayResponse.HttpResponse = context.HttpResponse;
-			describeDeviceGatewayResponse.RequestId = context.StringValue("DescribeDeviceGateway.RequestId");
-			describeDeviceGatewayResponse.Host = context.StringValue("DescribeDeviceGateway.Host");
-			describeDeviceGatewayResponse.Port = context.LongValue("DescribeDeviceGateway.Port");
-			describeDeviceGatewayResponse.Protocol = context.StringValue("DescribeDeviceGateway.Protocol");
-			describeDeviceGatewayResponse.Token = context.StringValue("DescribeDeviceGateway.Token");
+			describeDeviceGatewayResponse.HttpResponse = _ctx.HttpResponse;
+			describeDeviceGatewayResponse.RequestId = _ctx.StringValue("DescribeDeviceGateway.RequestId");
+			describeDeviceGatewayResponse.Host = _ctx.StringValue("DescribeDeviceGateway.Host");
+			describeDeviceGatewayResponse.Port = _ctx.LongValue("DescribeDeviceGateway.Port");
+			describeDeviceGatewayResponse.Protocol = _ctx.StringValue("DescribeDeviceGateway.Protocol");
+			describeDeviceGatewayResponse.Token = _ctx.StringValue("DescribeDeviceGateway.Token");
         
 			return describeDeviceGatewayResponse;
         }

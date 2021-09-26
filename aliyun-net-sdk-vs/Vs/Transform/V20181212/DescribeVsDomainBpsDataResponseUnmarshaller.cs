@@ -26,22 +26,22 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeVsDomainBpsDataResponseUnmarshaller
     {
-        public static DescribeVsDomainBpsDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVsDomainBpsDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVsDomainBpsDataResponse describeVsDomainBpsDataResponse = new DescribeVsDomainBpsDataResponse();
 
-			describeVsDomainBpsDataResponse.HttpResponse = context.HttpResponse;
-			describeVsDomainBpsDataResponse.RequestId = context.StringValue("DescribeVsDomainBpsData.RequestId");
-			describeVsDomainBpsDataResponse.DomainName = context.StringValue("DescribeVsDomainBpsData.DomainName");
-			describeVsDomainBpsDataResponse.StartTime = context.StringValue("DescribeVsDomainBpsData.StartTime");
-			describeVsDomainBpsDataResponse.EndTime = context.StringValue("DescribeVsDomainBpsData.EndTime");
-			describeVsDomainBpsDataResponse.DataInterval = context.StringValue("DescribeVsDomainBpsData.DataInterval");
+			describeVsDomainBpsDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeVsDomainBpsDataResponse.RequestId = _ctx.StringValue("DescribeVsDomainBpsData.RequestId");
+			describeVsDomainBpsDataResponse.DomainName = _ctx.StringValue("DescribeVsDomainBpsData.DomainName");
+			describeVsDomainBpsDataResponse.StartTime = _ctx.StringValue("DescribeVsDomainBpsData.StartTime");
+			describeVsDomainBpsDataResponse.EndTime = _ctx.StringValue("DescribeVsDomainBpsData.EndTime");
+			describeVsDomainBpsDataResponse.DataInterval = _ctx.StringValue("DescribeVsDomainBpsData.DataInterval");
 
 			List<DescribeVsDomainBpsDataResponse.DescribeVsDomainBpsData_DataModule> describeVsDomainBpsDataResponse_bpsDataPerInterval = new List<DescribeVsDomainBpsDataResponse.DescribeVsDomainBpsData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeVsDomainBpsData.BpsDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVsDomainBpsData.BpsDataPerInterval.Length"); i++) {
 				DescribeVsDomainBpsDataResponse.DescribeVsDomainBpsData_DataModule dataModule = new DescribeVsDomainBpsDataResponse.DescribeVsDomainBpsData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeVsDomainBpsData.BpsDataPerInterval["+ i +"].TimeStamp");
-				dataModule.BpsValue = context.StringValue("DescribeVsDomainBpsData.BpsDataPerInterval["+ i +"].BpsValue");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeVsDomainBpsData.BpsDataPerInterval["+ i +"].TimeStamp");
+				dataModule.BpsValue = _ctx.StringValue("DescribeVsDomainBpsData.BpsDataPerInterval["+ i +"].BpsValue");
 
 				describeVsDomainBpsDataResponse_bpsDataPerInterval.Add(dataModule);
 			}

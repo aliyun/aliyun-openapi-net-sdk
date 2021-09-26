@@ -26,36 +26,36 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeParentPlatformsResponseUnmarshaller
     {
-        public static DescribeParentPlatformsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeParentPlatformsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeParentPlatformsResponse describeParentPlatformsResponse = new DescribeParentPlatformsResponse();
 
-			describeParentPlatformsResponse.HttpResponse = context.HttpResponse;
-			describeParentPlatformsResponse.RequestId = context.StringValue("DescribeParentPlatforms.RequestId");
-			describeParentPlatformsResponse.PageSize = context.LongValue("DescribeParentPlatforms.PageSize");
-			describeParentPlatformsResponse.PageNum = context.LongValue("DescribeParentPlatforms.PageNum");
-			describeParentPlatformsResponse.PageCount = context.LongValue("DescribeParentPlatforms.PageCount");
-			describeParentPlatformsResponse.TotalCount = context.LongValue("DescribeParentPlatforms.TotalCount");
+			describeParentPlatformsResponse.HttpResponse = _ctx.HttpResponse;
+			describeParentPlatformsResponse.RequestId = _ctx.StringValue("DescribeParentPlatforms.RequestId");
+			describeParentPlatformsResponse.PageSize = _ctx.LongValue("DescribeParentPlatforms.PageSize");
+			describeParentPlatformsResponse.PageNum = _ctx.LongValue("DescribeParentPlatforms.PageNum");
+			describeParentPlatformsResponse.PageCount = _ctx.LongValue("DescribeParentPlatforms.PageCount");
+			describeParentPlatformsResponse.TotalCount = _ctx.LongValue("DescribeParentPlatforms.TotalCount");
 
 			List<DescribeParentPlatformsResponse.DescribeParentPlatforms_Platform> describeParentPlatformsResponse_platforms = new List<DescribeParentPlatformsResponse.DescribeParentPlatforms_Platform>();
-			for (int i = 0; i < context.Length("DescribeParentPlatforms.Platforms.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeParentPlatforms.Platforms.Length"); i++) {
 				DescribeParentPlatformsResponse.DescribeParentPlatforms_Platform platform = new DescribeParentPlatformsResponse.DescribeParentPlatforms_Platform();
-				platform.Id = context.StringValue("DescribeParentPlatforms.Platforms["+ i +"].Id");
-				platform.Name = context.StringValue("DescribeParentPlatforms.Platforms["+ i +"].Name");
-				platform.Description = context.StringValue("DescribeParentPlatforms.Platforms["+ i +"].Description");
-				platform.Protocol = context.StringValue("DescribeParentPlatforms.Platforms["+ i +"].Protocol");
-				platform.Status = context.StringValue("DescribeParentPlatforms.Platforms["+ i +"].Status");
-				platform.GbId = context.StringValue("DescribeParentPlatforms.Platforms["+ i +"].GbId");
-				platform.Ip = context.StringValue("DescribeParentPlatforms.Platforms["+ i +"].Ip");
-				platform.Port = context.LongValue("DescribeParentPlatforms.Platforms["+ i +"].Port");
-				platform.ClientGbId = context.StringValue("DescribeParentPlatforms.Platforms["+ i +"].ClientGbId");
-				platform.ClientAuth = context.BooleanValue("DescribeParentPlatforms.Platforms["+ i +"].ClientAuth");
-				platform.ClientUsername = context.StringValue("DescribeParentPlatforms.Platforms["+ i +"].ClientUsername");
-				platform.ClientPassword = context.StringValue("DescribeParentPlatforms.Platforms["+ i +"].ClientPassword");
-				platform.ClientIp = context.StringValue("DescribeParentPlatforms.Platforms["+ i +"].ClientIp");
-				platform.ClientPort = context.LongValue("DescribeParentPlatforms.Platforms["+ i +"].ClientPort");
-				platform.AutoStart = context.BooleanValue("DescribeParentPlatforms.Platforms["+ i +"].AutoStart");
-				platform.CreatedTime = context.StringValue("DescribeParentPlatforms.Platforms["+ i +"].CreatedTime");
+				platform.Id = _ctx.StringValue("DescribeParentPlatforms.Platforms["+ i +"].Id");
+				platform.Name = _ctx.StringValue("DescribeParentPlatforms.Platforms["+ i +"].Name");
+				platform.Description = _ctx.StringValue("DescribeParentPlatforms.Platforms["+ i +"].Description");
+				platform.Protocol = _ctx.StringValue("DescribeParentPlatforms.Platforms["+ i +"].Protocol");
+				platform.Status = _ctx.StringValue("DescribeParentPlatforms.Platforms["+ i +"].Status");
+				platform.GbId = _ctx.StringValue("DescribeParentPlatforms.Platforms["+ i +"].GbId");
+				platform.Ip = _ctx.StringValue("DescribeParentPlatforms.Platforms["+ i +"].Ip");
+				platform.Port = _ctx.LongValue("DescribeParentPlatforms.Platforms["+ i +"].Port");
+				platform.ClientGbId = _ctx.StringValue("DescribeParentPlatforms.Platforms["+ i +"].ClientGbId");
+				platform.ClientAuth = _ctx.BooleanValue("DescribeParentPlatforms.Platforms["+ i +"].ClientAuth");
+				platform.ClientUsername = _ctx.StringValue("DescribeParentPlatforms.Platforms["+ i +"].ClientUsername");
+				platform.ClientPassword = _ctx.StringValue("DescribeParentPlatforms.Platforms["+ i +"].ClientPassword");
+				platform.ClientIp = _ctx.StringValue("DescribeParentPlatforms.Platforms["+ i +"].ClientIp");
+				platform.ClientPort = _ctx.LongValue("DescribeParentPlatforms.Platforms["+ i +"].ClientPort");
+				platform.AutoStart = _ctx.BooleanValue("DescribeParentPlatforms.Platforms["+ i +"].AutoStart");
+				platform.CreatedTime = _ctx.StringValue("DescribeParentPlatforms.Platforms["+ i +"].CreatedTime");
 
 				describeParentPlatformsResponse_platforms.Add(platform);
 			}

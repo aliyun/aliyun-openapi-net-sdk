@@ -26,25 +26,25 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeVsDomainConfigsResponseUnmarshaller
     {
-        public static DescribeVsDomainConfigsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVsDomainConfigsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVsDomainConfigsResponse describeVsDomainConfigsResponse = new DescribeVsDomainConfigsResponse();
 
-			describeVsDomainConfigsResponse.HttpResponse = context.HttpResponse;
-			describeVsDomainConfigsResponse.RequestId = context.StringValue("DescribeVsDomainConfigs.RequestId");
+			describeVsDomainConfigsResponse.HttpResponse = _ctx.HttpResponse;
+			describeVsDomainConfigsResponse.RequestId = _ctx.StringValue("DescribeVsDomainConfigs.RequestId");
 
 			List<DescribeVsDomainConfigsResponse.DescribeVsDomainConfigs_DomainConfig> describeVsDomainConfigsResponse_domainConfigs = new List<DescribeVsDomainConfigsResponse.DescribeVsDomainConfigs_DomainConfig>();
-			for (int i = 0; i < context.Length("DescribeVsDomainConfigs.DomainConfigs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVsDomainConfigs.DomainConfigs.Length"); i++) {
 				DescribeVsDomainConfigsResponse.DescribeVsDomainConfigs_DomainConfig domainConfig = new DescribeVsDomainConfigsResponse.DescribeVsDomainConfigs_DomainConfig();
-				domainConfig.FunctionName = context.StringValue("DescribeVsDomainConfigs.DomainConfigs["+ i +"].FunctionName");
-				domainConfig.ConfigId = context.StringValue("DescribeVsDomainConfigs.DomainConfigs["+ i +"].ConfigId");
-				domainConfig.Status = context.StringValue("DescribeVsDomainConfigs.DomainConfigs["+ i +"].Status");
+				domainConfig.FunctionName = _ctx.StringValue("DescribeVsDomainConfigs.DomainConfigs["+ i +"].FunctionName");
+				domainConfig.ConfigId = _ctx.StringValue("DescribeVsDomainConfigs.DomainConfigs["+ i +"].ConfigId");
+				domainConfig.Status = _ctx.StringValue("DescribeVsDomainConfigs.DomainConfigs["+ i +"].Status");
 
 				List<DescribeVsDomainConfigsResponse.DescribeVsDomainConfigs_DomainConfig.DescribeVsDomainConfigs_FunctionArg> domainConfig_functionArgs = new List<DescribeVsDomainConfigsResponse.DescribeVsDomainConfigs_DomainConfig.DescribeVsDomainConfigs_FunctionArg>();
-				for (int j = 0; j < context.Length("DescribeVsDomainConfigs.DomainConfigs["+ i +"].FunctionArgs.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeVsDomainConfigs.DomainConfigs["+ i +"].FunctionArgs.Length"); j++) {
 					DescribeVsDomainConfigsResponse.DescribeVsDomainConfigs_DomainConfig.DescribeVsDomainConfigs_FunctionArg functionArg = new DescribeVsDomainConfigsResponse.DescribeVsDomainConfigs_DomainConfig.DescribeVsDomainConfigs_FunctionArg();
-					functionArg.ArgName = context.StringValue("DescribeVsDomainConfigs.DomainConfigs["+ i +"].FunctionArgs["+ j +"].ArgName");
-					functionArg.ArgValue = context.StringValue("DescribeVsDomainConfigs.DomainConfigs["+ i +"].FunctionArgs["+ j +"].ArgValue");
+					functionArg.ArgName = _ctx.StringValue("DescribeVsDomainConfigs.DomainConfigs["+ i +"].FunctionArgs["+ j +"].ArgName");
+					functionArg.ArgValue = _ctx.StringValue("DescribeVsDomainConfigs.DomainConfigs["+ i +"].FunctionArgs["+ j +"].ArgValue");
 
 					domainConfig_functionArgs.Add(functionArg);
 				}

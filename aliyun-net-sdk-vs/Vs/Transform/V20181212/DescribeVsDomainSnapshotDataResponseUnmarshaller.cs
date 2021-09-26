@@ -26,21 +26,21 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeVsDomainSnapshotDataResponseUnmarshaller
     {
-        public static DescribeVsDomainSnapshotDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVsDomainSnapshotDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVsDomainSnapshotDataResponse describeVsDomainSnapshotDataResponse = new DescribeVsDomainSnapshotDataResponse();
 
-			describeVsDomainSnapshotDataResponse.HttpResponse = context.HttpResponse;
-			describeVsDomainSnapshotDataResponse.RequestId = context.StringValue("DescribeVsDomainSnapshotData.RequestId");
-			describeVsDomainSnapshotDataResponse.DomainName = context.StringValue("DescribeVsDomainSnapshotData.DomainName");
-			describeVsDomainSnapshotDataResponse.StartTime = context.StringValue("DescribeVsDomainSnapshotData.StartTime");
-			describeVsDomainSnapshotDataResponse.EndTime = context.StringValue("DescribeVsDomainSnapshotData.EndTime");
+			describeVsDomainSnapshotDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeVsDomainSnapshotDataResponse.RequestId = _ctx.StringValue("DescribeVsDomainSnapshotData.RequestId");
+			describeVsDomainSnapshotDataResponse.DomainName = _ctx.StringValue("DescribeVsDomainSnapshotData.DomainName");
+			describeVsDomainSnapshotDataResponse.StartTime = _ctx.StringValue("DescribeVsDomainSnapshotData.StartTime");
+			describeVsDomainSnapshotDataResponse.EndTime = _ctx.StringValue("DescribeVsDomainSnapshotData.EndTime");
 
 			List<DescribeVsDomainSnapshotDataResponse.DescribeVsDomainSnapshotData_DataModule> describeVsDomainSnapshotDataResponse_snapshotDataPerInterval = new List<DescribeVsDomainSnapshotDataResponse.DescribeVsDomainSnapshotData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeVsDomainSnapshotData.SnapshotDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVsDomainSnapshotData.SnapshotDataPerInterval.Length"); i++) {
 				DescribeVsDomainSnapshotDataResponse.DescribeVsDomainSnapshotData_DataModule dataModule = new DescribeVsDomainSnapshotDataResponse.DescribeVsDomainSnapshotData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeVsDomainSnapshotData.SnapshotDataPerInterval["+ i +"].TimeStamp");
-				dataModule.SnapshotValue = context.StringValue("DescribeVsDomainSnapshotData.SnapshotDataPerInterval["+ i +"].SnapshotValue");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeVsDomainSnapshotData.SnapshotDataPerInterval["+ i +"].TimeStamp");
+				dataModule.SnapshotValue = _ctx.StringValue("DescribeVsDomainSnapshotData.SnapshotDataPerInterval["+ i +"].SnapshotValue");
 
 				describeVsDomainSnapshotDataResponse_snapshotDataPerInterval.Add(dataModule);
 			}

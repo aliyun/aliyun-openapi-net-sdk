@@ -26,18 +26,18 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class BatchDeleteDevicesResponseUnmarshaller
     {
-        public static BatchDeleteDevicesResponse Unmarshall(UnmarshallerContext context)
+        public static BatchDeleteDevicesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchDeleteDevicesResponse batchDeleteDevicesResponse = new BatchDeleteDevicesResponse();
 
-			batchDeleteDevicesResponse.HttpResponse = context.HttpResponse;
-			batchDeleteDevicesResponse.RequestId = context.StringValue("BatchDeleteDevices.RequestId");
+			batchDeleteDevicesResponse.HttpResponse = _ctx.HttpResponse;
+			batchDeleteDevicesResponse.RequestId = _ctx.StringValue("BatchDeleteDevices.RequestId");
 
 			List<BatchDeleteDevicesResponse.BatchDeleteDevices_Result> batchDeleteDevicesResponse_results = new List<BatchDeleteDevicesResponse.BatchDeleteDevices_Result>();
-			for (int i = 0; i < context.Length("BatchDeleteDevices.Results.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("BatchDeleteDevices.Results.Length"); i++) {
 				BatchDeleteDevicesResponse.BatchDeleteDevices_Result result = new BatchDeleteDevicesResponse.BatchDeleteDevices_Result();
-				result.Id = context.StringValue("BatchDeleteDevices.Results["+ i +"].Id");
-				result.Error = context.StringValue("BatchDeleteDevices.Results["+ i +"].Error");
+				result.Id = _ctx.StringValue("BatchDeleteDevices.Results["+ i +"].Id");
+				result.Error = _ctx.StringValue("BatchDeleteDevices.Results["+ i +"].Error");
 
 				batchDeleteDevicesResponse_results.Add(result);
 			}

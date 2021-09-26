@@ -26,13 +26,13 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class StopMoveResponseUnmarshaller
     {
-        public static StopMoveResponse Unmarshall(UnmarshallerContext context)
+        public static StopMoveResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopMoveResponse stopMoveResponse = new StopMoveResponse();
 
-			stopMoveResponse.HttpResponse = context.HttpResponse;
-			stopMoveResponse.RequestId = context.StringValue("StopMove.RequestId");
-			stopMoveResponse.Id = context.StringValue("StopMove.Id");
+			stopMoveResponse.HttpResponse = _ctx.HttpResponse;
+			stopMoveResponse.RequestId = _ctx.StringValue("StopMove.RequestId");
+			stopMoveResponse.Id = _ctx.StringValue("StopMove.Id");
         
 			return stopMoveResponse;
         }

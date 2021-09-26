@@ -26,28 +26,28 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeParentPlatformResponseUnmarshaller
     {
-        public static DescribeParentPlatformResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeParentPlatformResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeParentPlatformResponse describeParentPlatformResponse = new DescribeParentPlatformResponse();
 
-			describeParentPlatformResponse.HttpResponse = context.HttpResponse;
-			describeParentPlatformResponse.RequestId = context.StringValue("DescribeParentPlatform.RequestId");
-			describeParentPlatformResponse.Id = context.StringValue("DescribeParentPlatform.Id");
-			describeParentPlatformResponse.Name = context.StringValue("DescribeParentPlatform.Name");
-			describeParentPlatformResponse.Description = context.StringValue("DescribeParentPlatform.Description");
-			describeParentPlatformResponse.Protocol = context.StringValue("DescribeParentPlatform.Protocol");
-			describeParentPlatformResponse.Status = context.StringValue("DescribeParentPlatform.Status");
-			describeParentPlatformResponse.GbId = context.StringValue("DescribeParentPlatform.GbId");
-			describeParentPlatformResponse.Ip = context.StringValue("DescribeParentPlatform.Ip");
-			describeParentPlatformResponse.Port = context.LongValue("DescribeParentPlatform.Port");
-			describeParentPlatformResponse.ClientGbId = context.StringValue("DescribeParentPlatform.ClientGbId");
-			describeParentPlatformResponse.ClientAuth = context.BooleanValue("DescribeParentPlatform.ClientAuth");
-			describeParentPlatformResponse.ClientUsername = context.StringValue("DescribeParentPlatform.ClientUsername");
-			describeParentPlatformResponse.ClientPassword = context.StringValue("DescribeParentPlatform.ClientPassword");
-			describeParentPlatformResponse.ClientIp = context.StringValue("DescribeParentPlatform.ClientIp");
-			describeParentPlatformResponse.ClientPort = context.LongValue("DescribeParentPlatform.ClientPort");
-			describeParentPlatformResponse.AutoStart = context.BooleanValue("DescribeParentPlatform.AutoStart");
-			describeParentPlatformResponse.CreatedTime = context.StringValue("DescribeParentPlatform.CreatedTime");
+			describeParentPlatformResponse.HttpResponse = _ctx.HttpResponse;
+			describeParentPlatformResponse.RequestId = _ctx.StringValue("DescribeParentPlatform.RequestId");
+			describeParentPlatformResponse.Id = _ctx.StringValue("DescribeParentPlatform.Id");
+			describeParentPlatformResponse.Name = _ctx.StringValue("DescribeParentPlatform.Name");
+			describeParentPlatformResponse.Description = _ctx.StringValue("DescribeParentPlatform.Description");
+			describeParentPlatformResponse.Protocol = _ctx.StringValue("DescribeParentPlatform.Protocol");
+			describeParentPlatformResponse.Status = _ctx.StringValue("DescribeParentPlatform.Status");
+			describeParentPlatformResponse.GbId = _ctx.StringValue("DescribeParentPlatform.GbId");
+			describeParentPlatformResponse.Ip = _ctx.StringValue("DescribeParentPlatform.Ip");
+			describeParentPlatformResponse.Port = _ctx.LongValue("DescribeParentPlatform.Port");
+			describeParentPlatformResponse.ClientGbId = _ctx.StringValue("DescribeParentPlatform.ClientGbId");
+			describeParentPlatformResponse.ClientAuth = _ctx.BooleanValue("DescribeParentPlatform.ClientAuth");
+			describeParentPlatformResponse.ClientUsername = _ctx.StringValue("DescribeParentPlatform.ClientUsername");
+			describeParentPlatformResponse.ClientPassword = _ctx.StringValue("DescribeParentPlatform.ClientPassword");
+			describeParentPlatformResponse.ClientIp = _ctx.StringValue("DescribeParentPlatform.ClientIp");
+			describeParentPlatformResponse.ClientPort = _ctx.LongValue("DescribeParentPlatform.ClientPort");
+			describeParentPlatformResponse.AutoStart = _ctx.BooleanValue("DescribeParentPlatform.AutoStart");
+			describeParentPlatformResponse.CreatedTime = _ctx.StringValue("DescribeParentPlatform.CreatedTime");
         
 			return describeParentPlatformResponse;
         }

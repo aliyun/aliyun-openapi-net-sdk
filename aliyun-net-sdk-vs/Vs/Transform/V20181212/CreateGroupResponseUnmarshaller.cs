@@ -26,16 +26,16 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class CreateGroupResponseUnmarshaller
     {
-        public static CreateGroupResponse Unmarshall(UnmarshallerContext context)
+        public static CreateGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateGroupResponse createGroupResponse = new CreateGroupResponse();
 
-			createGroupResponse.HttpResponse = context.HttpResponse;
-			createGroupResponse.RequestId = context.StringValue("CreateGroup.RequestId");
-			createGroupResponse.Id = context.StringValue("CreateGroup.Id");
-			createGroupResponse.GbId = context.StringValue("CreateGroup.GbId");
-			createGroupResponse.GbIp = context.StringValue("CreateGroup.GbIp");
-			createGroupResponse.GbPort = context.LongValue("CreateGroup.GbPort");
+			createGroupResponse.HttpResponse = _ctx.HttpResponse;
+			createGroupResponse.RequestId = _ctx.StringValue("CreateGroup.RequestId");
+			createGroupResponse.Id = _ctx.StringValue("CreateGroup.Id");
+			createGroupResponse.GbId = _ctx.StringValue("CreateGroup.GbId");
+			createGroupResponse.GbIp = _ctx.StringValue("CreateGroup.GbIp");
+			createGroupResponse.GbPort = _ctx.LongValue("CreateGroup.GbPort");
         
 			return createGroupResponse;
         }

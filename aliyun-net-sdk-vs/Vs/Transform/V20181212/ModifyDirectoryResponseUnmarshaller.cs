@@ -26,13 +26,13 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class ModifyDirectoryResponseUnmarshaller
     {
-        public static ModifyDirectoryResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDirectoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDirectoryResponse modifyDirectoryResponse = new ModifyDirectoryResponse();
 
-			modifyDirectoryResponse.HttpResponse = context.HttpResponse;
-			modifyDirectoryResponse.RequestId = context.StringValue("ModifyDirectory.RequestId");
-			modifyDirectoryResponse.Id = context.StringValue("ModifyDirectory.Id");
+			modifyDirectoryResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDirectoryResponse.RequestId = _ctx.StringValue("ModifyDirectory.RequestId");
+			modifyDirectoryResponse.Id = _ctx.StringValue("ModifyDirectory.Id");
         
 			return modifyDirectoryResponse;
         }

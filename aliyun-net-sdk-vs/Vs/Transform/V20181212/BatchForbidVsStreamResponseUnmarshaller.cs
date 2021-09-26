@@ -26,23 +26,23 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class BatchForbidVsStreamResponseUnmarshaller
     {
-        public static BatchForbidVsStreamResponse Unmarshall(UnmarshallerContext context)
+        public static BatchForbidVsStreamResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchForbidVsStreamResponse batchForbidVsStreamResponse = new BatchForbidVsStreamResponse();
 
-			batchForbidVsStreamResponse.HttpResponse = context.HttpResponse;
-			batchForbidVsStreamResponse.RequestId = context.StringValue("BatchForbidVsStream.RequestId");
+			batchForbidVsStreamResponse.HttpResponse = _ctx.HttpResponse;
+			batchForbidVsStreamResponse.RequestId = _ctx.StringValue("BatchForbidVsStream.RequestId");
 
 			List<BatchForbidVsStreamResponse.BatchForbidVsStream_ForbidResultInfo> batchForbidVsStreamResponse_forbidResult = new List<BatchForbidVsStreamResponse.BatchForbidVsStream_ForbidResultInfo>();
-			for (int i = 0; i < context.Length("BatchForbidVsStream.ForbidResult.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("BatchForbidVsStream.ForbidResult.Length"); i++) {
 				BatchForbidVsStreamResponse.BatchForbidVsStream_ForbidResultInfo forbidResultInfo = new BatchForbidVsStreamResponse.BatchForbidVsStream_ForbidResultInfo();
-				forbidResultInfo.Result = context.StringValue("BatchForbidVsStream.ForbidResult["+ i +"].Result");
-				forbidResultInfo.Detail = context.StringValue("BatchForbidVsStream.ForbidResult["+ i +"].Detail");
-				forbidResultInfo.Count = context.IntegerValue("BatchForbidVsStream.ForbidResult["+ i +"].Count");
+				forbidResultInfo.Result = _ctx.StringValue("BatchForbidVsStream.ForbidResult["+ i +"].Result");
+				forbidResultInfo.Detail = _ctx.StringValue("BatchForbidVsStream.ForbidResult["+ i +"].Detail");
+				forbidResultInfo.Count = _ctx.IntegerValue("BatchForbidVsStream.ForbidResult["+ i +"].Count");
 
 				List<string> forbidResultInfo_channels = new List<string>();
-				for (int j = 0; j < context.Length("BatchForbidVsStream.ForbidResult["+ i +"].Channels.Length"); j++) {
-					forbidResultInfo_channels.Add(context.StringValue("BatchForbidVsStream.ForbidResult["+ i +"].Channels["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("BatchForbidVsStream.ForbidResult["+ i +"].Channels.Length"); j++) {
+					forbidResultInfo_channels.Add(_ctx.StringValue("BatchForbidVsStream.ForbidResult["+ i +"].Channels["+ j +"]"));
 				}
 				forbidResultInfo.Channels = forbidResultInfo_channels;
 

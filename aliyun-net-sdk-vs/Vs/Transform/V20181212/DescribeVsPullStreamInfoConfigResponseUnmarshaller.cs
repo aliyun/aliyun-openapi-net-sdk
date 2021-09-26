@@ -26,22 +26,22 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeVsPullStreamInfoConfigResponseUnmarshaller
     {
-        public static DescribeVsPullStreamInfoConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVsPullStreamInfoConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVsPullStreamInfoConfigResponse describeVsPullStreamInfoConfigResponse = new DescribeVsPullStreamInfoConfigResponse();
 
-			describeVsPullStreamInfoConfigResponse.HttpResponse = context.HttpResponse;
-			describeVsPullStreamInfoConfigResponse.RequestId = context.StringValue("DescribeVsPullStreamInfoConfig.RequestId");
+			describeVsPullStreamInfoConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeVsPullStreamInfoConfigResponse.RequestId = _ctx.StringValue("DescribeVsPullStreamInfoConfig.RequestId");
 
 			List<DescribeVsPullStreamInfoConfigResponse.DescribeVsPullStreamInfoConfig_LiveAppRecord> describeVsPullStreamInfoConfigResponse_liveAppRecordList = new List<DescribeVsPullStreamInfoConfigResponse.DescribeVsPullStreamInfoConfig_LiveAppRecord>();
-			for (int i = 0; i < context.Length("DescribeVsPullStreamInfoConfig.LiveAppRecordList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVsPullStreamInfoConfig.LiveAppRecordList.Length"); i++) {
 				DescribeVsPullStreamInfoConfigResponse.DescribeVsPullStreamInfoConfig_LiveAppRecord liveAppRecord = new DescribeVsPullStreamInfoConfigResponse.DescribeVsPullStreamInfoConfig_LiveAppRecord();
-				liveAppRecord.DomainName = context.StringValue("DescribeVsPullStreamInfoConfig.LiveAppRecordList["+ i +"].DomainName");
-				liveAppRecord.AppName = context.StringValue("DescribeVsPullStreamInfoConfig.LiveAppRecordList["+ i +"].AppName");
-				liveAppRecord.StreamName = context.StringValue("DescribeVsPullStreamInfoConfig.LiveAppRecordList["+ i +"].StreamName");
-				liveAppRecord.SourceUrl = context.StringValue("DescribeVsPullStreamInfoConfig.LiveAppRecordList["+ i +"].SourceUrl");
-				liveAppRecord.StartTime = context.StringValue("DescribeVsPullStreamInfoConfig.LiveAppRecordList["+ i +"].StartTime");
-				liveAppRecord.EndTime = context.StringValue("DescribeVsPullStreamInfoConfig.LiveAppRecordList["+ i +"].EndTime");
+				liveAppRecord.DomainName = _ctx.StringValue("DescribeVsPullStreamInfoConfig.LiveAppRecordList["+ i +"].DomainName");
+				liveAppRecord.AppName = _ctx.StringValue("DescribeVsPullStreamInfoConfig.LiveAppRecordList["+ i +"].AppName");
+				liveAppRecord.StreamName = _ctx.StringValue("DescribeVsPullStreamInfoConfig.LiveAppRecordList["+ i +"].StreamName");
+				liveAppRecord.SourceUrl = _ctx.StringValue("DescribeVsPullStreamInfoConfig.LiveAppRecordList["+ i +"].SourceUrl");
+				liveAppRecord.StartTime = _ctx.StringValue("DescribeVsPullStreamInfoConfig.LiveAppRecordList["+ i +"].StartTime");
+				liveAppRecord.EndTime = _ctx.StringValue("DescribeVsPullStreamInfoConfig.LiveAppRecordList["+ i +"].EndTime");
 
 				describeVsPullStreamInfoConfigResponse_liveAppRecordList.Add(liveAppRecord);
 			}

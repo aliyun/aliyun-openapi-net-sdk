@@ -26,16 +26,16 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribeVodStreamURLResponseUnmarshaller
     {
-        public static DescribeVodStreamURLResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVodStreamURLResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVodStreamURLResponse describeVodStreamURLResponse = new DescribeVodStreamURLResponse();
 
-			describeVodStreamURLResponse.HttpResponse = context.HttpResponse;
-			describeVodStreamURLResponse.RequestId = context.StringValue("DescribeVodStreamURL.RequestId");
-			describeVodStreamURLResponse.Url = context.StringValue("DescribeVodStreamURL.Url");
-			describeVodStreamURLResponse.OutProtocol = context.StringValue("DescribeVodStreamURL.OutProtocol");
-			describeVodStreamURLResponse.Port = context.LongValue("DescribeVodStreamURL.Port");
-			describeVodStreamURLResponse.TxId = context.StringValue("DescribeVodStreamURL.TxId");
+			describeVodStreamURLResponse.HttpResponse = _ctx.HttpResponse;
+			describeVodStreamURLResponse.RequestId = _ctx.StringValue("DescribeVodStreamURL.RequestId");
+			describeVodStreamURLResponse.Url = _ctx.StringValue("DescribeVodStreamURL.Url");
+			describeVodStreamURLResponse.OutProtocol = _ctx.StringValue("DescribeVodStreamURL.OutProtocol");
+			describeVodStreamURLResponse.Port = _ctx.LongValue("DescribeVodStreamURL.Port");
+			describeVodStreamURLResponse.TxId = _ctx.StringValue("DescribeVodStreamURL.TxId");
         
 			return describeVodStreamURLResponse;
         }

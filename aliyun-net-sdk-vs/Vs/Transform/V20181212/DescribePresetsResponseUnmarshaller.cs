@@ -26,19 +26,19 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DescribePresetsResponseUnmarshaller
     {
-        public static DescribePresetsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribePresetsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribePresetsResponse describePresetsResponse = new DescribePresetsResponse();
 
-			describePresetsResponse.HttpResponse = context.HttpResponse;
-			describePresetsResponse.RequestId = context.StringValue("DescribePresets.RequestId");
-			describePresetsResponse.Id = context.StringValue("DescribePresets.Id");
+			describePresetsResponse.HttpResponse = _ctx.HttpResponse;
+			describePresetsResponse.RequestId = _ctx.StringValue("DescribePresets.RequestId");
+			describePresetsResponse.Id = _ctx.StringValue("DescribePresets.Id");
 
 			List<DescribePresetsResponse.DescribePresets_Preset> describePresetsResponse_presets = new List<DescribePresetsResponse.DescribePresets_Preset>();
-			for (int i = 0; i < context.Length("DescribePresets.Presets.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribePresets.Presets.Length"); i++) {
 				DescribePresetsResponse.DescribePresets_Preset preset = new DescribePresetsResponse.DescribePresets_Preset();
-				preset.Id = context.StringValue("DescribePresets.Presets["+ i +"].Id");
-				preset.Name = context.StringValue("DescribePresets.Presets["+ i +"].Name");
+				preset.Id = _ctx.StringValue("DescribePresets.Presets["+ i +"].Id");
+				preset.Name = _ctx.StringValue("DescribePresets.Presets["+ i +"].Name");
 
 				describePresetsResponse_presets.Add(preset);
 			}

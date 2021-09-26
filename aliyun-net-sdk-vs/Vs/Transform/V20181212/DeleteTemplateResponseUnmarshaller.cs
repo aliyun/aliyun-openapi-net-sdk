@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vs.Transform.V20181212
 {
     public class DeleteTemplateResponseUnmarshaller
     {
-        public static DeleteTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteTemplateResponse deleteTemplateResponse = new DeleteTemplateResponse();
 
-			deleteTemplateResponse.HttpResponse = context.HttpResponse;
-			deleteTemplateResponse.RequestId = context.StringValue("DeleteTemplate.RequestId");
+			deleteTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			deleteTemplateResponse.RequestId = _ctx.StringValue("DeleteTemplate.RequestId");
         
 			return deleteTemplateResponse;
         }

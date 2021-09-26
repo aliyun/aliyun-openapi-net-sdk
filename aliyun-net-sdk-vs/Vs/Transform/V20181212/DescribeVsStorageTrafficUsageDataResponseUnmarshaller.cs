@@ -1,0 +1,57 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+using System;
+using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.vs.Model.V20181212;
+
+namespace Aliyun.Acs.vs.Transform.V20181212
+{
+    public class DescribeVsStorageTrafficUsageDataResponseUnmarshaller
+    {
+        public static DescribeVsStorageTrafficUsageDataResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			DescribeVsStorageTrafficUsageDataResponse describeVsStorageTrafficUsageDataResponse = new DescribeVsStorageTrafficUsageDataResponse();
+
+			describeVsStorageTrafficUsageDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeVsStorageTrafficUsageDataResponse.RequestId = _ctx.StringValue("DescribeVsStorageTrafficUsageData.RequestId");
+
+			List<DescribeVsStorageTrafficUsageDataResponse.DescribeVsStorageTrafficUsageData_TrafficUsageDataModule> describeVsStorageTrafficUsageDataResponse_trafficUsage = new List<DescribeVsStorageTrafficUsageDataResponse.DescribeVsStorageTrafficUsageData_TrafficUsageDataModule>();
+			for (int i = 0; i < _ctx.Length("DescribeVsStorageTrafficUsageData.TrafficUsage.Length"); i++) {
+				DescribeVsStorageTrafficUsageDataResponse.DescribeVsStorageTrafficUsageData_TrafficUsageDataModule trafficUsageDataModule = new DescribeVsStorageTrafficUsageDataResponse.DescribeVsStorageTrafficUsageData_TrafficUsageDataModule();
+				trafficUsageDataModule.TimeStamp = _ctx.StringValue("DescribeVsStorageTrafficUsageData.TrafficUsage["+ i +"].TimeStamp");
+				trafficUsageDataModule.Bucket = _ctx.StringValue("DescribeVsStorageTrafficUsageData.TrafficUsage["+ i +"].Bucket");
+				trafficUsageDataModule.LanTrafficInDataValue = _ctx.LongValue("DescribeVsStorageTrafficUsageData.TrafficUsage["+ i +"].LanTrafficInDataValue");
+				trafficUsageDataModule.LanTrafficOutDataValue = _ctx.LongValue("DescribeVsStorageTrafficUsageData.TrafficUsage["+ i +"].LanTrafficOutDataValue");
+				trafficUsageDataModule.WanTrafficInDataValue = _ctx.LongValue("DescribeVsStorageTrafficUsageData.TrafficUsage["+ i +"].WanTrafficInDataValue");
+				trafficUsageDataModule.WanTrafficOutDataValue = _ctx.LongValue("DescribeVsStorageTrafficUsageData.TrafficUsage["+ i +"].WanTrafficOutDataValue");
+				trafficUsageDataModule.LanBandwidthInDataValue = _ctx.FloatValue("DescribeVsStorageTrafficUsageData.TrafficUsage["+ i +"].LanBandwidthInDataValue");
+				trafficUsageDataModule.LanBandwidthOutDataValue = _ctx.FloatValue("DescribeVsStorageTrafficUsageData.TrafficUsage["+ i +"].LanBandwidthOutDataValue");
+				trafficUsageDataModule.WanBandwidthInDataValue = _ctx.FloatValue("DescribeVsStorageTrafficUsageData.TrafficUsage["+ i +"].WanBandwidthInDataValue");
+				trafficUsageDataModule.WanBandwidthOutDataValue = _ctx.FloatValue("DescribeVsStorageTrafficUsageData.TrafficUsage["+ i +"].WanBandwidthOutDataValue");
+
+				describeVsStorageTrafficUsageDataResponse_trafficUsage.Add(trafficUsageDataModule);
+			}
+			describeVsStorageTrafficUsageDataResponse.TrafficUsage = describeVsStorageTrafficUsageDataResponse_trafficUsage;
+        
+			return describeVsStorageTrafficUsageDataResponse;
+        }
+    }
+}
