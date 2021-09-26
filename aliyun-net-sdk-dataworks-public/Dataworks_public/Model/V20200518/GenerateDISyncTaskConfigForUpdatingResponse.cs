@@ -25,23 +25,11 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GenerateDISyncTaskConfigForUpdatingResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private GenerateDISyncTaskConfigForUpdating_Data data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private GenerateDISyncTaskConfigForUpdating_Data data;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,23 +70,11 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GenerateDISyncTaskConfigForUpdating_Data
 		{
 
-			private long? processId;
-
 			private string status;
 
-			private string message;
+			private long? processId;
 
-			public long? ProcessId
-			{
-				get
-				{
-					return processId;
-				}
-				set	
-				{
-					processId = value;
-				}
-			}
+			private string message;
 
 			public string Status
 			{
@@ -97,6 +85,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public long? ProcessId
+			{
+				get
+				{
+					return processId;
+				}
+				set	
+				{
+					processId = value;
 				}
 			}
 

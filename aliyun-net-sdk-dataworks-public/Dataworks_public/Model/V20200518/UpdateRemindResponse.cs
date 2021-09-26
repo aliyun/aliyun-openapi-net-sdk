@@ -25,17 +25,65 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class UpdateRemindResponse : AcsResponse
 	{
 
+		private int? httpStatusCode;
+
+		private bool? data;
+
+		private string errorMessage;
+
+		private string requestId;
+
 		private bool? success;
 
 		private string errorCode;
 
-		private string errorMessage;
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
 
-		private int? httpStatusCode;
+		public bool? Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
 
-		private string requestId;
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
 
-		private bool? data;
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public bool? Success
 		{
@@ -58,54 +106,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
 			}
 		}
 	}

@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GenerateDISyncTaskConfigForUpdatingResponse generateDISyncTaskConfigForUpdatingResponse = new GenerateDISyncTaskConfigForUpdatingResponse();
 
 			generateDISyncTaskConfigForUpdatingResponse.HttpResponse = _ctx.HttpResponse;
-			generateDISyncTaskConfigForUpdatingResponse.RequestId = _ctx.StringValue("GenerateDISyncTaskConfigForUpdating.RequestId");
 			generateDISyncTaskConfigForUpdatingResponse.Success = _ctx.BooleanValue("GenerateDISyncTaskConfigForUpdating.Success");
+			generateDISyncTaskConfigForUpdatingResponse.RequestId = _ctx.StringValue("GenerateDISyncTaskConfigForUpdating.RequestId");
 
 			GenerateDISyncTaskConfigForUpdatingResponse.GenerateDISyncTaskConfigForUpdating_Data data = new GenerateDISyncTaskConfigForUpdatingResponse.GenerateDISyncTaskConfigForUpdating_Data();
-			data.ProcessId = _ctx.LongValue("GenerateDISyncTaskConfigForUpdating.Data.ProcessId");
 			data.Status = _ctx.StringValue("GenerateDISyncTaskConfigForUpdating.Data.Status");
+			data.ProcessId = _ctx.LongValue("GenerateDISyncTaskConfigForUpdating.Data.ProcessId");
 			data.Message = _ctx.StringValue("GenerateDISyncTaskConfigForUpdating.Data.Message");
 			generateDISyncTaskConfigForUpdatingResponse.Data = data;
         

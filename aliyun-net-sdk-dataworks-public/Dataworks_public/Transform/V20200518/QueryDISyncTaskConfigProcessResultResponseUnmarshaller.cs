@@ -31,8 +31,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			QueryDISyncTaskConfigProcessResultResponse queryDISyncTaskConfigProcessResultResponse = new QueryDISyncTaskConfigProcessResultResponse();
 
 			queryDISyncTaskConfigProcessResultResponse.HttpResponse = _ctx.HttpResponse;
-			queryDISyncTaskConfigProcessResultResponse.RequestId = _ctx.StringValue("QueryDISyncTaskConfigProcessResult.RequestId");
 			queryDISyncTaskConfigProcessResultResponse.Success = _ctx.BooleanValue("QueryDISyncTaskConfigProcessResult.Success");
+			queryDISyncTaskConfigProcessResultResponse.RequestId = _ctx.StringValue("QueryDISyncTaskConfigProcessResult.RequestId");
 
 			QueryDISyncTaskConfigProcessResultResponse.QueryDISyncTaskConfigProcessResult_Data data = new QueryDISyncTaskConfigProcessResultResponse.QueryDISyncTaskConfigProcessResult_Data();
 			data.Status = _ctx.StringValue("QueryDISyncTaskConfigProcessResult.Data.Status");
