@@ -26,34 +26,45 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 {
     public class DescribeColumnsResponseUnmarshaller
     {
-        public static DescribeColumnsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeColumnsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeColumnsResponse describeColumnsResponse = new DescribeColumnsResponse();
 
-			describeColumnsResponse.HttpResponse = context.HttpResponse;
-			describeColumnsResponse.RequestId = context.StringValue("DescribeColumns.RequestId");
-			describeColumnsResponse.PageSize = context.IntegerValue("DescribeColumns.PageSize");
-			describeColumnsResponse.CurrentPage = context.IntegerValue("DescribeColumns.CurrentPage");
-			describeColumnsResponse.TotalCount = context.IntegerValue("DescribeColumns.TotalCount");
+			describeColumnsResponse.HttpResponse = _ctx.HttpResponse;
+			describeColumnsResponse.CurrentPage = _ctx.IntegerValue("DescribeColumns.CurrentPage");
+			describeColumnsResponse.RequestId = _ctx.StringValue("DescribeColumns.RequestId");
+			describeColumnsResponse.PageSize = _ctx.IntegerValue("DescribeColumns.PageSize");
+			describeColumnsResponse.TotalCount = _ctx.IntegerValue("DescribeColumns.TotalCount");
 
 			List<DescribeColumnsResponse.DescribeColumns_Column> describeColumnsResponse_items = new List<DescribeColumnsResponse.DescribeColumns_Column>();
-			for (int i = 0; i < context.Length("DescribeColumns.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeColumns.Items.Length"); i++) {
 				DescribeColumnsResponse.DescribeColumns_Column column = new DescribeColumnsResponse.DescribeColumns_Column();
-				column.Id = context.StringValue("DescribeColumns.Items["+ i +"].Id");
-				column.Name = context.StringValue("DescribeColumns.Items["+ i +"].Name");
-				column.InstanceId = context.LongValue("DescribeColumns.Items["+ i +"].InstanceId");
-				column.TableId = context.LongValue("DescribeColumns.Items["+ i +"].TableId");
-				column.CreationTime = context.LongValue("DescribeColumns.Items["+ i +"].CreationTime");
-				column.Sensitive = context.BooleanValue("DescribeColumns.Items["+ i +"].Sensitive");
-				column.ProductCode = context.StringValue("DescribeColumns.Items["+ i +"].ProductCode");
-				column.DataType = context.StringValue("DescribeColumns.Items["+ i +"].DataType");
-				column.OdpsRiskLevelValue = context.IntegerValue("DescribeColumns.Items["+ i +"].OdpsRiskLevelValue");
-				column.OdpsRiskLevelName = context.StringValue("DescribeColumns.Items["+ i +"].OdpsRiskLevelName");
-				column.RiskLevelId = context.LongValue("DescribeColumns.Items["+ i +"].RiskLevelId");
-				column.RiskLevelName = context.StringValue("DescribeColumns.Items["+ i +"].RiskLevelName");
-				column.RuleId = context.LongValue("DescribeColumns.Items["+ i +"].RuleId");
-				column.RuleName = context.StringValue("DescribeColumns.Items["+ i +"].RuleName");
-				column.DepartName = context.StringValue("DescribeColumns.Items["+ i +"].DepartName");
+				column.CreationTime = _ctx.LongValue("DescribeColumns.Items["+ i +"].CreationTime");
+				column.TableName = _ctx.StringValue("DescribeColumns.Items["+ i +"].TableName");
+				column.DataType = _ctx.StringValue("DescribeColumns.Items["+ i +"].DataType");
+				column.OdpsRiskLevelValue = _ctx.IntegerValue("DescribeColumns.Items["+ i +"].OdpsRiskLevelValue");
+				column.DepartName = _ctx.StringValue("DescribeColumns.Items["+ i +"].DepartName");
+				column.InstanceId = _ctx.LongValue("DescribeColumns.Items["+ i +"].InstanceId");
+				column.RiskLevelId = _ctx.LongValue("DescribeColumns.Items["+ i +"].RiskLevelId");
+				column.RuleName = _ctx.StringValue("DescribeColumns.Items["+ i +"].RuleName");
+				column.RuleId = _ctx.LongValue("DescribeColumns.Items["+ i +"].RuleId");
+				column.Sensitive = _ctx.BooleanValue("DescribeColumns.Items["+ i +"].Sensitive");
+				column.SensLevelName = _ctx.StringValue("DescribeColumns.Items["+ i +"].SensLevelName");
+				column.InstanceName = _ctx.StringValue("DescribeColumns.Items["+ i +"].InstanceName");
+				column.RiskLevelName = _ctx.StringValue("DescribeColumns.Items["+ i +"].RiskLevelName");
+				column.OdpsRiskLevelName = _ctx.StringValue("DescribeColumns.Items["+ i +"].OdpsRiskLevelName");
+				column.Name = _ctx.StringValue("DescribeColumns.Items["+ i +"].Name");
+				column.TableId = _ctx.LongValue("DescribeColumns.Items["+ i +"].TableId");
+				column.Id = _ctx.StringValue("DescribeColumns.Items["+ i +"].Id");
+				column.ProductCode = _ctx.StringValue("DescribeColumns.Items["+ i +"].ProductCode");
+				column.RevisionStatus = _ctx.LongValue("DescribeColumns.Items["+ i +"].RevisionStatus");
+				column.RevisionId = _ctx.LongValue("DescribeColumns.Items["+ i +"].RevisionId");
+
+				List<string> column_sampleList = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeColumns.Items["+ i +"].SampleList.Length"); j++) {
+					column_sampleList.Add(_ctx.StringValue("DescribeColumns.Items["+ i +"].SampleList["+ j +"]"));
+				}
+				column.SampleList = column_sampleList;
 
 				describeColumnsResponse_items.Add(column);
 			}

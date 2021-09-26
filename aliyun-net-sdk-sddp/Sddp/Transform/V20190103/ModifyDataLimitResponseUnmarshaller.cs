@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 {
     public class ModifyDataLimitResponseUnmarshaller
     {
-        public static ModifyDataLimitResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDataLimitResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDataLimitResponse modifyDataLimitResponse = new ModifyDataLimitResponse();
 
-			modifyDataLimitResponse.HttpResponse = context.HttpResponse;
-			modifyDataLimitResponse.RequestId = context.StringValue("ModifyDataLimit.RequestId");
+			modifyDataLimitResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDataLimitResponse.RequestId = _ctx.StringValue("ModifyDataLimit.RequestId");
         
 			return modifyDataLimitResponse;
         }

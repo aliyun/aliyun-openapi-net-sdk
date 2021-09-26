@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 {
     public class ExecDatamaskResponseUnmarshaller
     {
-        public static ExecDatamaskResponse Unmarshall(UnmarshallerContext context)
+        public static ExecDatamaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ExecDatamaskResponse execDatamaskResponse = new ExecDatamaskResponse();
 
-			execDatamaskResponse.HttpResponse = context.HttpResponse;
-			execDatamaskResponse.RequestId = context.StringValue("ExecDatamask.RequestId");
-			execDatamaskResponse.Data = context.StringValue("ExecDatamask.Data");
+			execDatamaskResponse.HttpResponse = _ctx.HttpResponse;
+			execDatamaskResponse.RequestId = _ctx.StringValue("ExecDatamask.RequestId");
+			execDatamaskResponse.Data = _ctx.StringValue("ExecDatamask.Data");
         
 			return execDatamaskResponse;
         }

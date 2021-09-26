@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 {
     public class ModifyEventStatusResponseUnmarshaller
     {
-        public static ModifyEventStatusResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyEventStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyEventStatusResponse modifyEventStatusResponse = new ModifyEventStatusResponse();
 
-			modifyEventStatusResponse.HttpResponse = context.HttpResponse;
-			modifyEventStatusResponse.RequestId = context.StringValue("ModifyEventStatus.RequestId");
+			modifyEventStatusResponse.HttpResponse = _ctx.HttpResponse;
+			modifyEventStatusResponse.RequestId = _ctx.StringValue("ModifyEventStatus.RequestId");
         
 			return modifyEventStatusResponse;
         }

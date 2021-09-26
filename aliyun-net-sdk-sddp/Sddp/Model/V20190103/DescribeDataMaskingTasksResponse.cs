@@ -128,6 +128,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private int? triggerType;
 
+			private bool? originalTable;
+
 			public long? Id
 			{
 				get
@@ -305,6 +307,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					triggerType = value;
+				}
+			}
+
+			public bool? OriginalTable
+			{
+				get
+				{
+					return originalTable;
+				}
+				set	
+				{
+					originalTable = value;
 				}
 			}
 		}

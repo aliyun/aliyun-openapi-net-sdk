@@ -149,6 +149,14 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 				private int? category;
 
+				private string categoryName;
+
+				private string riskLevelName;
+
+				private long? riskLevelId;
+
+				private List<string> sampleList;
+
 				public string RuleName
 				{
 					get
@@ -182,6 +190,54 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					set	
 					{
 						category = value;
+					}
+				}
+
+				public string CategoryName
+				{
+					get
+					{
+						return categoryName;
+					}
+					set	
+					{
+						categoryName = value;
+					}
+				}
+
+				public string RiskLevelName
+				{
+					get
+					{
+						return riskLevelName;
+					}
+					set	
+					{
+						riskLevelName = value;
+					}
+				}
+
+				public long? RiskLevelId
+				{
+					get
+					{
+						return riskLevelId;
+					}
+					set	
+					{
+						riskLevelId = value;
+					}
+				}
+
+				public List<string> SampleList
+				{
+					get
+					{
+						return sampleList;
+					}
+					set	
+					{
+						sampleList = value;
 					}
 				}
 			}

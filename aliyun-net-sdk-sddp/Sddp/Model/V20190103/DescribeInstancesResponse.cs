@@ -136,6 +136,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private int? s3Count;
 
+			private string countDetails;
+
 			private long? lastFinishTime;
 
 			private string regionName;
@@ -143,6 +145,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			private string regionId;
 
 			private string engineType;
+
+			private int? s1Count;
+
+			private float? riskScore;
+
+			private float? lastRiskScore;
+
+			private string sensLevelName;
+
+			private string instanceDescription;
+
+			private string tenantName;
 
 			public long? Id
 			{
@@ -372,6 +386,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
+			public string CountDetails
+			{
+				get
+				{
+					return countDetails;
+				}
+				set	
+				{
+					countDetails = value;
+				}
+			}
+
 			public long? LastFinishTime
 			{
 				get
@@ -417,6 +443,78 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					engineType = value;
+				}
+			}
+
+			public int? S1Count
+			{
+				get
+				{
+					return s1Count;
+				}
+				set	
+				{
+					s1Count = value;
+				}
+			}
+
+			public float? RiskScore
+			{
+				get
+				{
+					return riskScore;
+				}
+				set	
+				{
+					riskScore = value;
+				}
+			}
+
+			public float? LastRiskScore
+			{
+				get
+				{
+					return lastRiskScore;
+				}
+				set	
+				{
+					lastRiskScore = value;
+				}
+			}
+
+			public string SensLevelName
+			{
+				get
+				{
+					return sensLevelName;
+				}
+				set	
+				{
+					sensLevelName = value;
+				}
+			}
+
+			public string InstanceDescription
+			{
+				get
+				{
+					return instanceDescription;
+				}
+				set	
+				{
+					instanceDescription = value;
+				}
+			}
+
+			public string TenantName
+			{
+				get
+				{
+					return tenantName;
+				}
+				set	
+				{
+					tenantName = value;
 				}
 			}
 		}

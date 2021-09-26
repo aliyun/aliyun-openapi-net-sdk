@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 {
     public class ModifyDefaultLevelResponseUnmarshaller
     {
-        public static ModifyDefaultLevelResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDefaultLevelResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDefaultLevelResponse modifyDefaultLevelResponse = new ModifyDefaultLevelResponse();
 
-			modifyDefaultLevelResponse.HttpResponse = context.HttpResponse;
-			modifyDefaultLevelResponse.RequestId = context.StringValue("ModifyDefaultLevel.RequestId");
+			modifyDefaultLevelResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDefaultLevelResponse.RequestId = _ctx.StringValue("ModifyDefaultLevel.RequestId");
         
 			return modifyDefaultLevelResponse;
         }

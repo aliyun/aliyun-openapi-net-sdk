@@ -98,6 +98,14 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private string dealReason;
 
+			private string userIdValue;
+
+			private string dealUserIdValue;
+
+			private string logDetail;
+
+			private List<DescribeEventDetail_HandleInfo> handleInfoList;
+
 			private DescribeEventDetail_Detail detail;
 
 			public long? Id
@@ -352,6 +360,54 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
+			public string UserIdValue
+			{
+				get
+				{
+					return userIdValue;
+				}
+				set	
+				{
+					userIdValue = value;
+				}
+			}
+
+			public string DealUserIdValue
+			{
+				get
+				{
+					return dealUserIdValue;
+				}
+				set	
+				{
+					dealUserIdValue = value;
+				}
+			}
+
+			public string LogDetail
+			{
+				get
+				{
+					return logDetail;
+				}
+				set	
+				{
+					logDetail = value;
+				}
+			}
+
+			public List<DescribeEventDetail_HandleInfo> HandleInfoList
+			{
+				get
+				{
+					return handleInfoList;
+				}
+				set	
+				{
+					handleInfoList = value;
+				}
+			}
+
 			public DescribeEventDetail_Detail Detail
 			{
 				get
@@ -361,6 +417,122 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					detail = value;
+				}
+			}
+
+			public class DescribeEventDetail_HandleInfo
+			{
+
+				private string handlerType;
+
+				private string handlerName;
+
+				private int? handlerValue;
+
+				private string currentValue;
+
+				private long? disableTime;
+
+				private long? enableTime;
+
+				private int? status;
+
+				private long? id;
+
+				public string HandlerType
+				{
+					get
+					{
+						return handlerType;
+					}
+					set	
+					{
+						handlerType = value;
+					}
+				}
+
+				public string HandlerName
+				{
+					get
+					{
+						return handlerName;
+					}
+					set	
+					{
+						handlerName = value;
+					}
+				}
+
+				public int? HandlerValue
+				{
+					get
+					{
+						return handlerValue;
+					}
+					set	
+					{
+						handlerValue = value;
+					}
+				}
+
+				public string CurrentValue
+				{
+					get
+					{
+						return currentValue;
+					}
+					set	
+					{
+						currentValue = value;
+					}
+				}
+
+				public long? DisableTime
+				{
+					get
+					{
+						return disableTime;
+					}
+					set	
+					{
+						disableTime = value;
+					}
+				}
+
+				public long? EnableTime
+				{
+					get
+					{
+						return enableTime;
+					}
+					set	
+					{
+						enableTime = value;
+					}
+				}
+
+				public int? Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public long? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
 				}
 			}
 

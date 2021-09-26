@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 {
     public class CreateRuleResponseUnmarshaller
     {
-        public static CreateRuleResponse Unmarshall(UnmarshallerContext context)
+        public static CreateRuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateRuleResponse createRuleResponse = new CreateRuleResponse();
 
-			createRuleResponse.HttpResponse = context.HttpResponse;
-			createRuleResponse.RequestId = context.StringValue("CreateRule.RequestId");
-			createRuleResponse.Id = context.IntegerValue("CreateRule.Id");
+			createRuleResponse.HttpResponse = _ctx.HttpResponse;
+			createRuleResponse.RequestId = _ctx.StringValue("CreateRule.RequestId");
+			createRuleResponse.Id = _ctx.IntegerValue("CreateRule.Id");
         
 			return createRuleResponse;
         }

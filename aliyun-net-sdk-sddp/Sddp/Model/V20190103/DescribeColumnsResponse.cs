@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 	public class DescribeColumnsResponse : AcsResponse
 	{
 
+		private int? currentPage;
+
 		private string requestId;
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private int? totalCount;
 
 		private List<DescribeColumns_Column> items;
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			set	
 			{
 				pageSize = value;
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
 			}
 		}
 
@@ -98,83 +98,47 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		public class DescribeColumns_Column
 		{
 
-			private string id;
-
-			private string name;
-
-			private long? instanceId;
-
-			private long? tableId;
-
 			private long? creationTime;
 
-			private bool? sensitive;
-
-			private string productCode;
+			private string tableName;
 
 			private string dataType;
 
 			private int? odpsRiskLevelValue;
 
-			private string odpsRiskLevelName;
+			private string departName;
+
+			private long? instanceId;
 
 			private long? riskLevelId;
 
-			private string riskLevelName;
+			private string ruleName;
 
 			private long? ruleId;
 
-			private string ruleName;
+			private bool? sensitive;
 
-			private string departName;
+			private string sensLevelName;
 
-			public string Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private string instanceName;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string riskLevelName;
 
-			public long? InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private string odpsRiskLevelName;
 
-			public long? TableId
-			{
-				get
-				{
-					return tableId;
-				}
-				set	
-				{
-					tableId = value;
-				}
-			}
+			private string name;
+
+			private long? tableId;
+
+			private string id;
+
+			private string productCode;
+
+			private long? revisionStatus;
+
+			private long? revisionId;
+
+			private List<string> sampleList;
 
 			public long? CreationTime
 			{
@@ -188,27 +152,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public bool? Sensitive
+			public string TableName
 			{
 				get
 				{
-					return sensitive;
+					return tableName;
 				}
 				set	
 				{
-					sensitive = value;
-				}
-			}
-
-			public string ProductCode
-			{
-				get
-				{
-					return productCode;
-				}
-				set	
-				{
-					productCode = value;
+					tableName = value;
 				}
 			}
 
@@ -236,15 +188,27 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string OdpsRiskLevelName
+			public string DepartName
 			{
 				get
 				{
-					return odpsRiskLevelName;
+					return departName;
 				}
 				set	
 				{
-					odpsRiskLevelName = value;
+					departName = value;
+				}
+			}
+
+			public long? InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 
@@ -260,15 +224,15 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string RiskLevelName
+			public string RuleName
 			{
 				get
 				{
-					return riskLevelName;
+					return ruleName;
 				}
 				set	
 				{
-					riskLevelName = value;
+					ruleName = value;
 				}
 			}
 
@@ -284,27 +248,147 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string RuleName
+			public bool? Sensitive
 			{
 				get
 				{
-					return ruleName;
+					return sensitive;
 				}
 				set	
 				{
-					ruleName = value;
+					sensitive = value;
 				}
 			}
 
-			public string DepartName
+			public string SensLevelName
 			{
 				get
 				{
-					return departName;
+					return sensLevelName;
 				}
 				set	
 				{
-					departName = value;
+					sensLevelName = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string RiskLevelName
+			{
+				get
+				{
+					return riskLevelName;
+				}
+				set	
+				{
+					riskLevelName = value;
+				}
+			}
+
+			public string OdpsRiskLevelName
+			{
+				get
+				{
+					return odpsRiskLevelName;
+				}
+				set	
+				{
+					odpsRiskLevelName = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public long? TableId
+			{
+				get
+				{
+					return tableId;
+				}
+				set	
+				{
+					tableId = value;
+				}
+			}
+
+			public string Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string ProductCode
+			{
+				get
+				{
+					return productCode;
+				}
+				set	
+				{
+					productCode = value;
+				}
+			}
+
+			public long? RevisionStatus
+			{
+				get
+				{
+					return revisionStatus;
+				}
+				set	
+				{
+					revisionStatus = value;
+				}
+			}
+
+			public long? RevisionId
+			{
+				get
+				{
+					return revisionId;
+				}
+				set	
+				{
+					revisionId = value;
+				}
+			}
+
+			public List<string> SampleList
+			{
+				get
+				{
+					return sampleList;
+				}
+				set	
+				{
+					sampleList = value;
 				}
 			}
 		}

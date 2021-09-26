@@ -26,33 +26,38 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 {
     public class DescribeDataMaskingRunHistoryResponseUnmarshaller
     {
-        public static DescribeDataMaskingRunHistoryResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDataMaskingRunHistoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDataMaskingRunHistoryResponse describeDataMaskingRunHistoryResponse = new DescribeDataMaskingRunHistoryResponse();
 
-			describeDataMaskingRunHistoryResponse.HttpResponse = context.HttpResponse;
-			describeDataMaskingRunHistoryResponse.RequestId = context.StringValue("DescribeDataMaskingRunHistory.RequestId");
-			describeDataMaskingRunHistoryResponse.PageSize = context.IntegerValue("DescribeDataMaskingRunHistory.PageSize");
-			describeDataMaskingRunHistoryResponse.CurrentPage = context.IntegerValue("DescribeDataMaskingRunHistory.CurrentPage");
-			describeDataMaskingRunHistoryResponse.TotalCount = context.IntegerValue("DescribeDataMaskingRunHistory.TotalCount");
+			describeDataMaskingRunHistoryResponse.HttpResponse = _ctx.HttpResponse;
+			describeDataMaskingRunHistoryResponse.RequestId = _ctx.StringValue("DescribeDataMaskingRunHistory.RequestId");
+			describeDataMaskingRunHistoryResponse.PageSize = _ctx.IntegerValue("DescribeDataMaskingRunHistory.PageSize");
+			describeDataMaskingRunHistoryResponse.CurrentPage = _ctx.IntegerValue("DescribeDataMaskingRunHistory.CurrentPage");
+			describeDataMaskingRunHistoryResponse.TotalCount = _ctx.IntegerValue("DescribeDataMaskingRunHistory.TotalCount");
 
 			List<DescribeDataMaskingRunHistoryResponse.DescribeDataMaskingRunHistory_Task> describeDataMaskingRunHistoryResponse_items = new List<DescribeDataMaskingRunHistoryResponse.DescribeDataMaskingRunHistory_Task>();
-			for (int i = 0; i < context.Length("DescribeDataMaskingRunHistory.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDataMaskingRunHistory.Items.Length"); i++) {
 				DescribeDataMaskingRunHistoryResponse.DescribeDataMaskingRunHistory_Task task = new DescribeDataMaskingRunHistoryResponse.DescribeDataMaskingRunHistory_Task();
-				task.Id = context.LongValue("DescribeDataMaskingRunHistory.Items["+ i +"].Id");
-				task.TaskId = context.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].TaskId");
-				task.StartTime = context.LongValue("DescribeDataMaskingRunHistory.Items["+ i +"].StartTime");
-				task.RunIndex = context.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].RunIndex");
-				task.Type = context.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].Type");
-				task.DstType = context.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].DstType");
-				task.Percentage = context.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].Percentage");
-				task.SrcType = context.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].SrcType");
-				task.MaskingCount = context.LongValue("DescribeDataMaskingRunHistory.Items["+ i +"].MaskingCount");
-				task.ConflictCount = context.LongValue("DescribeDataMaskingRunHistory.Items["+ i +"].ConflictCount");
-				task.Status = context.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].Status");
-				task.FailCode = context.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].FailCode");
-				task.DstTypeCode = context.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].DstTypeCode");
-				task.SrcTypeCode = context.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].SrcTypeCode");
+				task.Id = _ctx.LongValue("DescribeDataMaskingRunHistory.Items["+ i +"].Id");
+				task.TaskId = _ctx.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].TaskId");
+				task.StartTime = _ctx.LongValue("DescribeDataMaskingRunHistory.Items["+ i +"].StartTime");
+				task.EndTime = _ctx.LongValue("DescribeDataMaskingRunHistory.Items["+ i +"].EndTime");
+				task.RunIndex = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].RunIndex");
+				task.Type = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].Type");
+				task.DstType = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].DstType");
+				task.Percentage = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].Percentage");
+				task.SrcType = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].SrcType");
+				task.MaskingCount = _ctx.LongValue("DescribeDataMaskingRunHistory.Items["+ i +"].MaskingCount");
+				task.ConflictCount = _ctx.LongValue("DescribeDataMaskingRunHistory.Items["+ i +"].ConflictCount");
+				task.Status = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].Status");
+				task.FailCode = _ctx.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].FailCode");
+				task.DstTypeCode = _ctx.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].DstTypeCode");
+				task.SrcTypeCode = _ctx.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].SrcTypeCode");
+				task.HasSubProcess = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].HasSubProcess");
+				task.HasDownloadFile = _ctx.IntegerValue("DescribeDataMaskingRunHistory.Items["+ i +"].HasDownloadFile");
+				task.SrcTableName = _ctx.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].SrcTableName");
+				task.FailMsg = _ctx.StringValue("DescribeDataMaskingRunHistory.Items["+ i +"].FailMsg");
 
 				describeDataMaskingRunHistoryResponse_items.Add(task);
 			}

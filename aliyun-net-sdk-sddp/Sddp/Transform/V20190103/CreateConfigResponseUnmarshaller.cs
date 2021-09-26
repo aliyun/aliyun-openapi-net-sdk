@@ -26,12 +26,13 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 {
     public class CreateConfigResponseUnmarshaller
     {
-        public static CreateConfigResponse Unmarshall(UnmarshallerContext context)
+        public static CreateConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateConfigResponse createConfigResponse = new CreateConfigResponse();
 
-			createConfigResponse.HttpResponse = context.HttpResponse;
-			createConfigResponse.RequestId = context.StringValue("CreateConfig.RequestId");
+			createConfigResponse.HttpResponse = _ctx.HttpResponse;
+			createConfigResponse.RequestId = _ctx.StringValue("CreateConfig.RequestId");
+			createConfigResponse.Id = _ctx.LongValue("CreateConfig.Id");
         
 			return createConfigResponse;
         }

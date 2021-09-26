@@ -138,6 +138,14 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private bool? backed;
 
+			private string instanceName;
+
+			private string userIdValue;
+
+			private string dealUserIdValue;
+
+			private int? warnLevel;
+
 			public long? Id
 			{
 				get
@@ -375,6 +383,54 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					backed = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string UserIdValue
+			{
+				get
+				{
+					return userIdValue;
+				}
+				set	
+				{
+					userIdValue = value;
+				}
+			}
+
+			public string DealUserIdValue
+			{
+				get
+				{
+					return dealUserIdValue;
+				}
+				set	
+				{
+					dealUserIdValue = value;
+				}
+			}
+
+			public int? WarnLevel
+			{
+				get
+				{
+					return warnLevel;
+				}
+				set	
+				{
+					warnLevel = value;
 				}
 			}
 		}

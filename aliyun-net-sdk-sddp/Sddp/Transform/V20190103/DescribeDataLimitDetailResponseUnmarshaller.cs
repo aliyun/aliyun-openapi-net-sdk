@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 {
     public class DescribeDataLimitDetailResponseUnmarshaller
     {
-        public static DescribeDataLimitDetailResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDataLimitDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDataLimitDetailResponse describeDataLimitDetailResponse = new DescribeDataLimitDetailResponse();
 
-			describeDataLimitDetailResponse.HttpResponse = context.HttpResponse;
-			describeDataLimitDetailResponse.RequestId = context.StringValue("DescribeDataLimitDetail.RequestId");
+			describeDataLimitDetailResponse.HttpResponse = _ctx.HttpResponse;
+			describeDataLimitDetailResponse.RequestId = _ctx.StringValue("DescribeDataLimitDetail.RequestId");
 
 			DescribeDataLimitDetailResponse.DescribeDataLimitDetail_DataLimit dataLimit = new DescribeDataLimitDetailResponse.DescribeDataLimitDetail_DataLimit();
-			dataLimit.RegionId = context.StringValue("DescribeDataLimitDetail.DataLimit.RegionId");
-			dataLimit.LocalName = context.StringValue("DescribeDataLimitDetail.DataLimit.LocalName");
-			dataLimit.ParentId = context.StringValue("DescribeDataLimitDetail.DataLimit.ParentId");
-			dataLimit.Id = context.LongValue("DescribeDataLimitDetail.DataLimit.Id");
-			dataLimit.UserName = context.StringValue("DescribeDataLimitDetail.DataLimit.UserName");
-			dataLimit.GmtCreate = context.LongValue("DescribeDataLimitDetail.DataLimit.GmtCreate");
-			dataLimit.Connector = context.StringValue("DescribeDataLimitDetail.DataLimit.Connector");
-			dataLimit.CheckStatus = context.IntegerValue("DescribeDataLimitDetail.DataLimit.CheckStatus");
-			dataLimit.CheckStatusName = context.StringValue("DescribeDataLimitDetail.DataLimit.CheckStatusName");
-			dataLimit.ResourceType = context.LongValue("DescribeDataLimitDetail.DataLimit.ResourceType");
-			dataLimit.ResourceTypeCode = context.StringValue("DescribeDataLimitDetail.DataLimit.ResourceTypeCode");
-			dataLimit.AuditStatus = context.IntegerValue("DescribeDataLimitDetail.DataLimit.AuditStatus");
-			dataLimit.LogStoreDay = context.IntegerValue("DescribeDataLimitDetail.DataLimit.LogStoreDay");
-			dataLimit.Port = context.IntegerValue("DescribeDataLimitDetail.DataLimit.Port");
+			dataLimit.RegionId = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.RegionId");
+			dataLimit.LocalName = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.LocalName");
+			dataLimit.ParentId = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.ParentId");
+			dataLimit.Id = _ctx.LongValue("DescribeDataLimitDetail.DataLimit.Id");
+			dataLimit.UserName = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.UserName");
+			dataLimit.GmtCreate = _ctx.LongValue("DescribeDataLimitDetail.DataLimit.GmtCreate");
+			dataLimit.Connector = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.Connector");
+			dataLimit.CheckStatus = _ctx.IntegerValue("DescribeDataLimitDetail.DataLimit.CheckStatus");
+			dataLimit.CheckStatusName = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.CheckStatusName");
+			dataLimit.ResourceType = _ctx.LongValue("DescribeDataLimitDetail.DataLimit.ResourceType");
+			dataLimit.ResourceTypeCode = _ctx.StringValue("DescribeDataLimitDetail.DataLimit.ResourceTypeCode");
+			dataLimit.AuditStatus = _ctx.IntegerValue("DescribeDataLimitDetail.DataLimit.AuditStatus");
+			dataLimit.LogStoreDay = _ctx.IntegerValue("DescribeDataLimitDetail.DataLimit.LogStoreDay");
+			dataLimit.Port = _ctx.IntegerValue("DescribeDataLimitDetail.DataLimit.Port");
 			describeDataLimitDetailResponse.DataLimit = dataLimit;
         
 			return describeDataLimitDetailResponse;

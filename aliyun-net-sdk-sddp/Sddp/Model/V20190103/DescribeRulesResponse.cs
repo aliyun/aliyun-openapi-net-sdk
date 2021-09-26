@@ -142,6 +142,12 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private string majorKey;
 
+			private string contentCategory;
+
+			private string target;
+
+			private string groupId;
+
 			public long? Id
 			{
 				get
@@ -403,6 +409,42 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					majorKey = value;
+				}
+			}
+
+			public string ContentCategory
+			{
+				get
+				{
+					return contentCategory;
+				}
+				set	
+				{
+					contentCategory = value;
+				}
+			}
+
+			public string Target
+			{
+				get
+				{
+					return target;
+				}
+				set	
+				{
+					target = value;
+				}
+			}
+
+			public string GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
 				}
 			}
 		}

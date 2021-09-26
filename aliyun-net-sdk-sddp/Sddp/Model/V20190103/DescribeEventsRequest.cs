@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sddp;
 using Aliyun.Acs.Sddp.Transform;
 using Aliyun.Acs.Sddp.Transform.V20190103;
 
@@ -30,13 +31,14 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
     public class DescribeEventsRequest : RpcAcsRequest<DescribeEventsResponse>
     {
         public DescribeEventsRequest()
-            : base("Sddp", "2019-01-03", "DescribeEvents", "sddp", "openAPI")
+            : base("Sddp", "2019-01-03", "DescribeEvents")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Sddp.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Sddp.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string productCode;
@@ -53,6 +55,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private int? pageSize;
 
+		private long? id;
+
 		private string lang;
 
 		private string dealUserId;
@@ -61,7 +65,11 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private int? currentPage;
 
+		private string instanceName;
+
 		private string status;
+
+		private string userName;
 
 		public string ProductCode
 		{
@@ -154,6 +162,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
+		public long? Id
+		{
+			get
+			{
+				return id;
+			}
+			set	
+			{
+				id = value;
+				DictionaryUtil.Add(QueryParameters, "Id", value.ToString());
+			}
+		}
+
 		public string Lang
 		{
 			get
@@ -206,6 +227,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
+		public string InstanceName
+		{
+			get
+			{
+				return instanceName;
+			}
+			set	
+			{
+				instanceName = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceName", value);
+			}
+		}
+
 		public string Status
 		{
 			get
@@ -216,6 +250,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				status = value;
 				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+		public string UserName
+		{
+			get
+			{
+				return userName;
+			}
+			set	
+			{
+				userName = value;
+				DictionaryUtil.Add(QueryParameters, "UserName", value);
 			}
 		}
 

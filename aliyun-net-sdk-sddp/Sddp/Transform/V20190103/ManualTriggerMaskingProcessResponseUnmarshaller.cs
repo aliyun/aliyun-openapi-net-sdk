@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 {
     public class ManualTriggerMaskingProcessResponseUnmarshaller
     {
-        public static ManualTriggerMaskingProcessResponse Unmarshall(UnmarshallerContext context)
+        public static ManualTriggerMaskingProcessResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ManualTriggerMaskingProcessResponse manualTriggerMaskingProcessResponse = new ManualTriggerMaskingProcessResponse();
 
-			manualTriggerMaskingProcessResponse.HttpResponse = context.HttpResponse;
-			manualTriggerMaskingProcessResponse.RequestId = context.StringValue("ManualTriggerMaskingProcess.RequestId");
+			manualTriggerMaskingProcessResponse.HttpResponse = _ctx.HttpResponse;
+			manualTriggerMaskingProcessResponse.RequestId = _ctx.StringValue("ManualTriggerMaskingProcess.RequestId");
         
 			return manualTriggerMaskingProcessResponse;
         }

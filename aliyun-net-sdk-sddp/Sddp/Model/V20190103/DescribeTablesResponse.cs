@@ -130,9 +130,25 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private int? s3Count;
 
+			private int? s1Count;
+
+			private string countDetails;
+
 			private int? totalRows;
 
 			private long? lastScanTime;
+
+			private string regionName;
+
+			private string instanceName;
+
+			private string sensLevelName;
+
+			private string instanceDescription;
+
+			private string tenantName;
+
+			private List<DescribeTables_Rule> ruleList;
 
 			public long? Id
 			{
@@ -326,6 +342,30 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
+			public int? S1Count
+			{
+				get
+				{
+					return s1Count;
+				}
+				set	
+				{
+					s1Count = value;
+				}
+			}
+
+			public string CountDetails
+			{
+				get
+				{
+					return countDetails;
+				}
+				set	
+				{
+					countDetails = value;
+				}
+			}
+
 			public int? TotalRows
 			{
 				get
@@ -347,6 +387,138 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					lastScanTime = value;
+				}
+			}
+
+			public string RegionName
+			{
+				get
+				{
+					return regionName;
+				}
+				set	
+				{
+					regionName = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string SensLevelName
+			{
+				get
+				{
+					return sensLevelName;
+				}
+				set	
+				{
+					sensLevelName = value;
+				}
+			}
+
+			public string InstanceDescription
+			{
+				get
+				{
+					return instanceDescription;
+				}
+				set	
+				{
+					instanceDescription = value;
+				}
+			}
+
+			public string TenantName
+			{
+				get
+				{
+					return tenantName;
+				}
+				set	
+				{
+					tenantName = value;
+				}
+			}
+
+			public List<DescribeTables_Rule> RuleList
+			{
+				get
+				{
+					return ruleList;
+				}
+				set	
+				{
+					ruleList = value;
+				}
+			}
+
+			public class DescribeTables_Rule
+			{
+
+				private string name;
+
+				private string displayName;
+
+				private long? count;
+
+				private long? riskLevelId;
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string DisplayName
+				{
+					get
+					{
+						return displayName;
+					}
+					set	
+					{
+						displayName = value;
+					}
+				}
+
+				public long? Count
+				{
+					get
+					{
+						return count;
+					}
+					set	
+					{
+						count = value;
+					}
+				}
+
+				public long? RiskLevelId
+				{
+					get
+					{
+						return riskLevelId;
+					}
+					set	
+					{
+						riskLevelId = value;
+					}
 				}
 			}
 		}

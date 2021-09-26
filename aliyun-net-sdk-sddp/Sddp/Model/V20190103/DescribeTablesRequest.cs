@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Sddp;
 using Aliyun.Acs.Sddp.Transform;
 using Aliyun.Acs.Sddp.Transform.V20190103;
 
@@ -30,13 +31,14 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
     public class DescribeTablesRequest : RpcAcsRequest<DescribeTablesResponse>
     {
         public DescribeTablesRequest()
-            : base("Sddp", "2019-01-03", "DescribeTables", "sddp", "openAPI")
+            : base("Sddp", "2019-01-03", "DescribeTables")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Sddp.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Sddp.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string productCode;
@@ -45,15 +47,31 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private long? packageId;
 
+		private string ruleName;
+
 		private long? riskLevelId;
+
+		private long? startTime;
+
+		private long? lastScanTimeEnd;
+
+		private long? lastScanTimeStart;
+
+		private string sensLevelName;
 
 		private int? pageSize;
 
+		private string instanceDescription;
+
 		private string lang;
+
+		private long? endTime;
 
 		private int? currentPage;
 
 		private long? instanceId;
+
+		private string instanceName;
 
 		private string name;
 
@@ -98,6 +116,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
+		public string RuleName
+		{
+			get
+			{
+				return ruleName;
+			}
+			set	
+			{
+				ruleName = value;
+				DictionaryUtil.Add(QueryParameters, "RuleName", value);
+			}
+		}
+
 		public long? RiskLevelId
 		{
 			get
@@ -108,6 +139,58 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				riskLevelId = value;
 				DictionaryUtil.Add(QueryParameters, "RiskLevelId", value.ToString());
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public long? LastScanTimeEnd
+		{
+			get
+			{
+				return lastScanTimeEnd;
+			}
+			set	
+			{
+				lastScanTimeEnd = value;
+				DictionaryUtil.Add(QueryParameters, "LastScanTimeEnd", value.ToString());
+			}
+		}
+
+		public long? LastScanTimeStart
+		{
+			get
+			{
+				return lastScanTimeStart;
+			}
+			set	
+			{
+				lastScanTimeStart = value;
+				DictionaryUtil.Add(QueryParameters, "LastScanTimeStart", value.ToString());
+			}
+		}
+
+		public string SensLevelName
+		{
+			get
+			{
+				return sensLevelName;
+			}
+			set	
+			{
+				sensLevelName = value;
+				DictionaryUtil.Add(QueryParameters, "SensLevelName", value);
 			}
 		}
 
@@ -124,6 +207,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
+		public string InstanceDescription
+		{
+			get
+			{
+				return instanceDescription;
+			}
+			set	
+			{
+				instanceDescription = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceDescription", value);
+			}
+		}
+
 		public string Lang
 		{
 			get
@@ -134,6 +230,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
 			}
 		}
 
@@ -160,6 +269,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value.ToString());
+			}
+		}
+
+		public string InstanceName
+		{
+			get
+			{
+				return instanceName;
+			}
+			set	
+			{
+				instanceName = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceName", value);
 			}
 		}
 

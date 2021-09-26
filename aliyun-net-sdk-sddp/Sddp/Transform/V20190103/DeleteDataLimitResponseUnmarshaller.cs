@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 {
     public class DeleteDataLimitResponseUnmarshaller
     {
-        public static DeleteDataLimitResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDataLimitResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDataLimitResponse deleteDataLimitResponse = new DeleteDataLimitResponse();
 
-			deleteDataLimitResponse.HttpResponse = context.HttpResponse;
-			deleteDataLimitResponse.RequestId = context.StringValue("DeleteDataLimit.RequestId");
+			deleteDataLimitResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDataLimitResponse.RequestId = _ctx.StringValue("DeleteDataLimit.RequestId");
         
 			return deleteDataLimitResponse;
         }
