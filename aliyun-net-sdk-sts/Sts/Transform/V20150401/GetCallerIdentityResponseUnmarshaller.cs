@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Sts.Transform.V20150401
 {
     public class GetCallerIdentityResponseUnmarshaller
     {
-        public static GetCallerIdentityResponse Unmarshall(UnmarshallerContext context)
+        public static GetCallerIdentityResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetCallerIdentityResponse getCallerIdentityResponse = new GetCallerIdentityResponse();
 
-			getCallerIdentityResponse.HttpResponse = context.HttpResponse;
-			getCallerIdentityResponse.AccountId = context.StringValue("GetCallerIdentity.AccountId");
-			getCallerIdentityResponse.UserId = context.StringValue("GetCallerIdentity.UserId");
-			getCallerIdentityResponse.RoleId = context.StringValue("GetCallerIdentity.RoleId");
-			getCallerIdentityResponse.Arn = context.StringValue("GetCallerIdentity.Arn");
-			getCallerIdentityResponse.IdentityType = context.StringValue("GetCallerIdentity.IdentityType");
-			getCallerIdentityResponse.PrincipalId = context.StringValue("GetCallerIdentity.PrincipalId");
-			getCallerIdentityResponse.RequestId = context.StringValue("GetCallerIdentity.RequestId");
+			getCallerIdentityResponse.HttpResponse = _ctx.HttpResponse;
+			getCallerIdentityResponse.IdentityType = _ctx.StringValue("GetCallerIdentity.IdentityType");
+			getCallerIdentityResponse.AccountId = _ctx.StringValue("GetCallerIdentity.AccountId");
+			getCallerIdentityResponse.RequestId = _ctx.StringValue("GetCallerIdentity.RequestId");
+			getCallerIdentityResponse.PrincipalId = _ctx.StringValue("GetCallerIdentity.PrincipalId");
+			getCallerIdentityResponse.UserId = _ctx.StringValue("GetCallerIdentity.UserId");
+			getCallerIdentityResponse.Arn = _ctx.StringValue("GetCallerIdentity.Arn");
+			getCallerIdentityResponse.RoleId = _ctx.StringValue("GetCallerIdentity.RoleId");
         
 			return getCallerIdentityResponse;
         }

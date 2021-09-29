@@ -1,3 +1,6 @@
+2021-09-29 Version: 3.1.0
+- Supported AssumeRoleWithOIDC.
+
 2021-09-28 Version: 3.4.2
 - Generated 2020-05-18 for `dataworks-public`.
 

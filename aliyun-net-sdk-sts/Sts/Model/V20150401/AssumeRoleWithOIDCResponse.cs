@@ -22,16 +22,16 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Sts.Model.V20150401
 {
-	public class AssumeRoleWithSAMLResponse : AcsResponse
+	public class AssumeRoleWithOIDCResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private AssumeRoleWithSAML_SAMLAssertionInfo sAMLAssertionInfo;
+		private AssumeRoleWithOIDC_OIDCTokenInfo oIDCTokenInfo;
 
-		private AssumeRoleWithSAML_AssumedRoleUser assumedRoleUser;
+		private AssumeRoleWithOIDC_AssumedRoleUser assumedRoleUser;
 
-		private AssumeRoleWithSAML_Credentials credentials;
+		private AssumeRoleWithOIDC_Credentials credentials;
 
 		public string RequestId
 		{
@@ -45,19 +45,19 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
-		public AssumeRoleWithSAML_SAMLAssertionInfo SAMLAssertionInfo
+		public AssumeRoleWithOIDC_OIDCTokenInfo OIDCTokenInfo
 		{
 			get
 			{
-				return sAMLAssertionInfo;
+				return oIDCTokenInfo;
 			}
 			set	
 			{
-				sAMLAssertionInfo = value;
+				oIDCTokenInfo = value;
 			}
 		}
 
-		public AssumeRoleWithSAML_AssumedRoleUser AssumedRoleUser
+		public AssumeRoleWithOIDC_AssumedRoleUser AssumedRoleUser
 		{
 			get
 			{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
-		public AssumeRoleWithSAML_Credentials Credentials
+		public AssumeRoleWithOIDC_Credentials Credentials
 		{
 			get
 			{
@@ -81,26 +81,24 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
-		public class AssumeRoleWithSAML_SAMLAssertionInfo
+		public class AssumeRoleWithOIDC_OIDCTokenInfo
 		{
-
-			private string subjectType;
-
-			private string issuer;
-
-			private string recipient;
 
 			private string subject;
 
-			public string SubjectType
+			private string issuer;
+
+			private string clientIds;
+
+			public string Subject
 			{
 				get
 				{
-					return subjectType;
+					return subject;
 				}
 				set	
 				{
-					subjectType = value;
+					subject = value;
 				}
 			}
 
@@ -116,49 +114,25 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 				}
 			}
 
-			public string Recipient
+			public string ClientIds
 			{
 				get
 				{
-					return recipient;
+					return clientIds;
 				}
 				set	
 				{
-					recipient = value;
-				}
-			}
-
-			public string Subject
-			{
-				get
-				{
-					return subject;
-				}
-				set	
-				{
-					subject = value;
+					clientIds = value;
 				}
 			}
 		}
 
-		public class AssumeRoleWithSAML_AssumedRoleUser
+		public class AssumeRoleWithOIDC_AssumedRoleUser
 		{
-
-			private string arn;
 
 			private string assumedRoleId;
 
-			public string Arn
-			{
-				get
-				{
-					return arn;
-				}
-				set	
-				{
-					arn = value;
-				}
-			}
+			private string arn;
 
 			public string AssumedRoleId
 			{
@@ -171,18 +145,30 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 					assumedRoleId = value;
 				}
 			}
+
+			public string Arn
+			{
+				get
+				{
+					return arn;
+				}
+				set	
+				{
+					arn = value;
+				}
+			}
 		}
 
-		public class AssumeRoleWithSAML_Credentials
+		public class AssumeRoleWithOIDC_Credentials
 		{
 
 			private string securityToken;
 
-			private string accessKeyId;
+			private string expiration;
 
 			private string accessKeySecret;
 
-			private string expiration;
+			private string accessKeyId;
 
 			public string SecurityToken
 			{
@@ -196,15 +182,15 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 				}
 			}
 
-			public string AccessKeyId
+			public string Expiration
 			{
 				get
 				{
-					return accessKeyId;
+					return expiration;
 				}
 				set	
 				{
-					accessKeyId = value;
+					expiration = value;
 				}
 			}
 
@@ -220,15 +206,15 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 				}
 			}
 
-			public string Expiration
+			public string AccessKeyId
 			{
 				get
 				{
-					return expiration;
+					return accessKeyId;
 				}
 				set	
 				{
-					expiration = value;
+					accessKeyId = value;
 				}
 			}
 		}

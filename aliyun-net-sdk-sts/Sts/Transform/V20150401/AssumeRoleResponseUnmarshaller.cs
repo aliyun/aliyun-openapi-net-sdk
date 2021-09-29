@@ -26,24 +26,24 @@ namespace Aliyun.Acs.Sts.Transform.V20150401
 {
     public class AssumeRoleResponseUnmarshaller
     {
-        public static AssumeRoleResponse Unmarshall(UnmarshallerContext context)
+        public static AssumeRoleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AssumeRoleResponse assumeRoleResponse = new AssumeRoleResponse();
 
-			assumeRoleResponse.HttpResponse = context.HttpResponse;
-			assumeRoleResponse.RequestId = context.StringValue("AssumeRole.RequestId");
-
-			AssumeRoleResponse.AssumeRole_Credentials credentials = new AssumeRoleResponse.AssumeRole_Credentials();
-			credentials.SecurityToken = context.StringValue("AssumeRole.Credentials.SecurityToken");
-			credentials.AccessKeySecret = context.StringValue("AssumeRole.Credentials.AccessKeySecret");
-			credentials.AccessKeyId = context.StringValue("AssumeRole.Credentials.AccessKeyId");
-			credentials.Expiration = context.StringValue("AssumeRole.Credentials.Expiration");
-			assumeRoleResponse.Credentials = credentials;
+			assumeRoleResponse.HttpResponse = _ctx.HttpResponse;
+			assumeRoleResponse.RequestId = _ctx.StringValue("AssumeRole.RequestId");
 
 			AssumeRoleResponse.AssumeRole_AssumedRoleUser assumedRoleUser = new AssumeRoleResponse.AssumeRole_AssumedRoleUser();
-			assumedRoleUser.Arn = context.StringValue("AssumeRole.AssumedRoleUser.Arn");
-			assumedRoleUser.AssumedRoleId = context.StringValue("AssumeRole.AssumedRoleUser.AssumedRoleId");
+			assumedRoleUser.AssumedRoleId = _ctx.StringValue("AssumeRole.AssumedRoleUser.AssumedRoleId");
+			assumedRoleUser.Arn = _ctx.StringValue("AssumeRole.AssumedRoleUser.Arn");
 			assumeRoleResponse.AssumedRoleUser = assumedRoleUser;
+
+			AssumeRoleResponse.AssumeRole_Credentials credentials = new AssumeRoleResponse.AssumeRole_Credentials();
+			credentials.SecurityToken = _ctx.StringValue("AssumeRole.Credentials.SecurityToken");
+			credentials.Expiration = _ctx.StringValue("AssumeRole.Credentials.Expiration");
+			credentials.AccessKeySecret = _ctx.StringValue("AssumeRole.Credentials.AccessKeySecret");
+			credentials.AccessKeyId = _ctx.StringValue("AssumeRole.Credentials.AccessKeyId");
+			assumeRoleResponse.Credentials = credentials;
         
 			return assumeRoleResponse;
         }

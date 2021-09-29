@@ -28,10 +28,10 @@ using Aliyun.Acs.Sts.Transform.V20150401;
 
 namespace Aliyun.Acs.Sts.Model.V20150401
 {
-    public class AssumeRoleWithSAMLRequest : RpcAcsRequest<AssumeRoleWithSAMLResponse>
+    public class AssumeRoleWithOIDCRequest : RpcAcsRequest<AssumeRoleWithOIDCResponse>
     {
-        public AssumeRoleWithSAMLRequest()
-            : base("Sts", "2015-04-01", "AssumeRoleWithSAML")
+        public AssumeRoleWithOIDCRequest()
+            : base("Sts", "2015-04-01", "AssumeRoleWithOIDC")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,28 +42,17 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			Method = MethodType.POST;
         }
 
-		private string sAMLAssertion;
-
 		private string roleArn;
 
-		private string sAMLProviderArn;
+		private string roleSessionName;
+
+		private string oIDCToken;
 
 		private long? durationSeconds;
 
-		private string policy;
+		private string oIDCProviderArn;
 
-		public string SAMLAssertion
-		{
-			get
-			{
-				return sAMLAssertion;
-			}
-			set	
-			{
-				sAMLAssertion = value;
-				DictionaryUtil.Add(QueryParameters, "SAMLAssertion", value);
-			}
-		}
+		private string policy;
 
 		public string RoleArn
 		{
@@ -78,16 +67,29 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
-		public string SAMLProviderArn
+		public string RoleSessionName
 		{
 			get
 			{
-				return sAMLProviderArn;
+				return roleSessionName;
 			}
 			set	
 			{
-				sAMLProviderArn = value;
-				DictionaryUtil.Add(QueryParameters, "SAMLProviderArn", value);
+				roleSessionName = value;
+				DictionaryUtil.Add(QueryParameters, "RoleSessionName", value);
+			}
+		}
+
+		public string OIDCToken
+		{
+			get
+			{
+				return oIDCToken;
+			}
+			set	
+			{
+				oIDCToken = value;
+				DictionaryUtil.Add(QueryParameters, "OIDCToken", value);
 			}
 		}
 
@@ -104,6 +106,19 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
+		public string OIDCProviderArn
+		{
+			get
+			{
+				return oIDCProviderArn;
+			}
+			set	
+			{
+				oIDCProviderArn = value;
+				DictionaryUtil.Add(QueryParameters, "OIDCProviderArn", value);
+			}
+		}
+
 		public string Policy
 		{
 			get
@@ -117,9 +132,14 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
-        public override AssumeRoleWithSAMLResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override AssumeRoleWithOIDCResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AssumeRoleWithSAMLResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AssumeRoleWithOIDCResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
