@@ -60,9 +60,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 			private long? logCount;
 
-			private List<DescribeCdnDomainLogs_PageInfoDetail> pageInfos;
-
 			private List<DescribeCdnDomainLogs_LogInfoDetail> logInfos;
+
+			private DescribeCdnDomainLogs_PageInfos pageInfos;
 
 			public string DomainName
 			{
@@ -88,18 +88,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public List<DescribeCdnDomainLogs_PageInfoDetail> PageInfos
-			{
-				get
-				{
-					return pageInfos;
-				}
-				set	
-				{
-					pageInfos = value;
-				}
-			}
-
 			public List<DescribeCdnDomainLogs_LogInfoDetail> LogInfos
 			{
 				get
@@ -112,49 +100,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public class DescribeCdnDomainLogs_PageInfoDetail
+			public DescribeCdnDomainLogs_PageInfos PageInfos
 			{
-
-				private long? pageIndex;
-
-				private long? pageSize;
-
-				private long? total;
-
-				public long? PageIndex
+				get
 				{
-					get
-					{
-						return pageIndex;
-					}
-					set	
-					{
-						pageIndex = value;
-					}
+					return pageInfos;
 				}
-
-				public long? PageSize
+				set	
 				{
-					get
-					{
-						return pageSize;
-					}
-					set	
-					{
-						pageSize = value;
-					}
-				}
-
-				public long? Total
-				{
-					get
-					{
-						return total;
-					}
-					set	
-					{
-						total = value;
-					}
+					pageInfos = value;
 				}
 			}
 
@@ -228,6 +182,52 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					set	
 					{
 						endTime = value;
+					}
+				}
+			}
+
+			public class DescribeCdnDomainLogs_PageInfos
+			{
+
+				private long? pageIndex;
+
+				private long? pageSize;
+
+				private long? total;
+
+				public long? PageIndex
+				{
+					get
+					{
+						return pageIndex;
+					}
+					set	
+					{
+						pageIndex = value;
+					}
+				}
+
+				public long? PageSize
+				{
+					get
+					{
+						return pageSize;
+					}
+					set	
+					{
+						pageSize = value;
+					}
+				}
+
+				public long? Total
+				{
+					get
+					{
+						return total;
+					}
+					set	
+					{
+						total = value;
 					}
 				}
 			}

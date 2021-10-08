@@ -55,8 +55,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string name;
 
-		private string status;
-
 		public string Reports
 		{
 			get
@@ -145,19 +143,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				name = value;
 				DictionaryUtil.Add(BodyParameters, "Name", value);
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(BodyParameters, "Status", value);
 			}
 		}
 

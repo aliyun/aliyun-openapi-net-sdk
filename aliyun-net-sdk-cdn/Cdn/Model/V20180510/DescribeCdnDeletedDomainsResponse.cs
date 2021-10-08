@@ -22,12 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class BatchSetCdnDomainConfigResponse : AcsResponse
+	public class DescribeCdnDeletedDomainsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<BatchSetCdnDomainConfig_DomainConfigModel> domainConfigList;
+		private long? pageNumber;
+
+		private long? pageSize;
+
+		private long? totalCount;
+
+		private List<DescribeCdnDeletedDomains_PageData> domains;
 
 		public string RequestId
 		{
@@ -41,26 +47,60 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public List<BatchSetCdnDomainConfig_DomainConfigModel> DomainConfigList
+		public long? PageNumber
 		{
 			get
 			{
-				return domainConfigList;
+				return pageNumber;
 			}
 			set	
 			{
-				domainConfigList = value;
+				pageNumber = value;
 			}
 		}
 
-		public class BatchSetCdnDomainConfig_DomainConfigModel
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public long? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public List<DescribeCdnDeletedDomains_PageData> Domains
+		{
+			get
+			{
+				return domains;
+			}
+			set	
+			{
+				domains = value;
+			}
+		}
+
+		public class DescribeCdnDeletedDomains_PageData
 		{
 
 			private string domainName;
 
-			private long? configId;
-
-			private string functionName;
+			private string gmtModified;
 
 			public string DomainName
 			{
@@ -74,27 +114,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				}
 			}
 
-			public long? ConfigId
+			public string GmtModified
 			{
 				get
 				{
-					return configId;
+					return gmtModified;
 				}
 				set	
 				{
-					configId = value;
-				}
-			}
-
-			public string FunctionName
-			{
-				get
-				{
-					return functionName;
-				}
-				set	
-				{
-					functionName = value;
+					gmtModified = value;
 				}
 			}
 		}

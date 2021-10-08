@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string startTime;
 
+		private string type;
+
 		private string dataProtocol;
 
 		private string area;
@@ -67,6 +69,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 

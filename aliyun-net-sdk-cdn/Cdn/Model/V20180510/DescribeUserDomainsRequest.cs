@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			Method = MethodType.POST;
         }
 
+		private string source;
+
 		private int? pageNumber;
 
 		private bool? checkDomainShow;
@@ -68,6 +70,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		private string domainSearchType;
 
 		private string changeStartTime;
+
+		public string Source
+		{
+			get
+			{
+				return source;
+			}
+			set	
+			{
+				source = value;
+				DictionaryUtil.Add(QueryParameters, "Source", value);
+			}
+		}
 
 		public int? PageNumber
 		{

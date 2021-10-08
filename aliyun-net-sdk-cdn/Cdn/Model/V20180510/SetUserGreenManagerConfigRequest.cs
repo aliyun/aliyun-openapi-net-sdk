@@ -28,10 +28,10 @@ using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class UpdateCdnSubTaskRequest : RpcAcsRequest<UpdateCdnSubTaskResponse>
+    public class SetUserGreenManagerConfigRequest : RpcAcsRequest<SetUserGreenManagerConfigResponse>
     {
-        public UpdateCdnSubTaskRequest()
-            : base("Cdn", "2018-05-10", "UpdateCdnSubTask")
+        public SetUserGreenManagerConfigRequest()
+            : base("Cdn", "2018-05-10", "SetUserGreenManagerConfig")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,54 +41,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			Method = MethodType.POST;
         }
 
-		private string startTime;
-
-		private string domainName;
-
-		private string endTime;
-
 		private long? ownerId;
 
-		private string reportIds;
+		private string securityToken;
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(BodyParameters, "StartTime", value);
-			}
-		}
+		private string quota;
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(BodyParameters, "DomainName", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(BodyParameters, "EndTime", value);
-			}
-		}
+		private string ratio;
 
 		public long? OwnerId
 		{
@@ -103,22 +62,48 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string ReportIds
+		public string SecurityToken
 		{
 			get
 			{
-				return reportIds;
+				return securityToken;
 			}
 			set	
 			{
-				reportIds = value;
-				DictionaryUtil.Add(BodyParameters, "ReportIds", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
-        public override UpdateCdnSubTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Quota
+		{
+			get
+			{
+				return quota;
+			}
+			set	
+			{
+				quota = value;
+				DictionaryUtil.Add(QueryParameters, "Quota", value);
+			}
+		}
+
+		public string Ratio
+		{
+			get
+			{
+				return ratio;
+			}
+			set	
+			{
+				ratio = value;
+				DictionaryUtil.Add(QueryParameters, "Ratio", value);
+			}
+		}
+
+        public override SetUserGreenManagerConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateCdnSubTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetUserGreenManagerConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

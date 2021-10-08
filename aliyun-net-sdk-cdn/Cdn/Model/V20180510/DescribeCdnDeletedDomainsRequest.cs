@@ -28,10 +28,10 @@ using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class SetDomainGreenManagerConfigRequest : RpcAcsRequest<SetDomainGreenManagerConfigResponse>
+    public class DescribeCdnDeletedDomainsRequest : RpcAcsRequest<DescribeCdnDeletedDomainsResponse>
     {
-        public SetDomainGreenManagerConfigRequest()
-            : base("Cdn", "2018-05-10", "SetDomainGreenManagerConfig")
+        public DescribeCdnDeletedDomainsRequest()
+            : base("Cdn", "2018-05-10", "DescribeCdnDeletedDomains")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,35 +41,35 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			Method = MethodType.POST;
         }
 
-		private string enable;
+		private int? pageNumber;
 
-		private string domainName;
+		private int? pageSize;
 
 		private long? ownerId;
 
-		public string Enable
+		public int? PageNumber
 		{
 			get
 			{
-				return enable;
+				return pageNumber;
 			}
 			set	
 			{
-				enable = value;
-				DictionaryUtil.Add(QueryParameters, "Enable", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string DomainName
+		public int? PageSize
 		{
 			get
 			{
-				return domainName;
+				return pageSize;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -86,9 +86,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-        public override SetDomainGreenManagerConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeCdnDeletedDomainsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetDomainGreenManagerConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCdnDeletedDomainsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -28,10 +28,10 @@ using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class UpdateCdnSubTaskRequest : RpcAcsRequest<UpdateCdnSubTaskResponse>
+    public class DescribeDomainMultiUsageDataRequest : RpcAcsRequest<DescribeDomainMultiUsageDataResponse>
     {
-        public UpdateCdnSubTaskRequest()
-            : base("Cdn", "2018-05-10", "UpdateCdnSubTask")
+        public DescribeDomainMultiUsageDataRequest()
+            : base("Cdn", "2018-05-10", "DescribeDomainMultiUsageData")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,8 +49,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private long? ownerId;
 
-		private string reportIds;
-
 		public string StartTime
 		{
 			get
@@ -60,7 +58,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				startTime = value;
-				DictionaryUtil.Add(BodyParameters, "StartTime", value);
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -73,7 +71,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				domainName = value;
-				DictionaryUtil.Add(BodyParameters, "DomainName", value);
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -86,7 +84,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				endTime = value;
-				DictionaryUtil.Add(BodyParameters, "EndTime", value);
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -103,22 +101,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string ReportIds
-		{
-			get
-			{
-				return reportIds;
-			}
-			set	
-			{
-				reportIds = value;
-				DictionaryUtil.Add(BodyParameters, "ReportIds", value);
-			}
-		}
-
-        public override UpdateCdnSubTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDomainMultiUsageDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateCdnSubTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDomainMultiUsageDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

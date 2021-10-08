@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
-using Aliyun.Acs.Cdn.Transform.V20141111;
+using Aliyun.Acs.Cdn.Transform.V20180510;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class DescribeUserCustomerLabelsRequest : RpcAcsRequest<DescribeUserCustomerLabelsResponse>
+    public class BatchDeleteCdnDomainConfigRequest : RpcAcsRequest<BatchDeleteCdnDomainConfigResponse>
     {
-        public DescribeUserCustomerLabelsRequest()
-            : base("Cdn", "2014-11-11", "DescribeUserCustomerLabels")
+        public BatchDeleteCdnDomainConfigRequest()
+            : base("Cdn", "2018-05-10", "BatchDeleteCdnDomainConfig")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,11 +41,54 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			Method = MethodType.POST;
         }
 
+		private string functionNames;
+
+		private string domainNames;
+
+		private string ownerAccount;
+
 		private long? ownerId;
 
-		private long? uid;
-
 		private string securityToken;
+
+		public string FunctionNames
+		{
+			get
+			{
+				return functionNames;
+			}
+			set	
+			{
+				functionNames = value;
+				DictionaryUtil.Add(QueryParameters, "FunctionNames", value);
+			}
+		}
+
+		public string DomainNames
+		{
+			get
+			{
+				return domainNames;
+			}
+			set	
+			{
+				domainNames = value;
+				DictionaryUtil.Add(QueryParameters, "DomainNames", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
 
 		public long? OwnerId
 		{
@@ -57,19 +100,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public long? Uid
-		{
-			get
-			{
-				return uid;
-			}
-			set	
-			{
-				uid = value;
-				DictionaryUtil.Add(QueryParameters, "Uid", value.ToString());
 			}
 		}
 
@@ -86,9 +116,9 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-        public override DescribeUserCustomerLabelsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override BatchDeleteCdnDomainConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeUserCustomerLabelsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchDeleteCdnDomainConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -20,21 +20,20 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cdn.Model.V20141111;
+using Aliyun.Acs.Cdn.Model.V20180510;
 
-namespace Aliyun.Acs.Cdn.Transform.V20141111
+namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
-    public class DescribeUserCustomerLabelsResponseUnmarshaller
+    public class BatchDeleteCdnDomainConfigResponseUnmarshaller
     {
-        public static DescribeUserCustomerLabelsResponse Unmarshall(UnmarshallerContext _ctx)
+        public static BatchDeleteCdnDomainConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DescribeUserCustomerLabelsResponse describeUserCustomerLabelsResponse = new DescribeUserCustomerLabelsResponse();
+			BatchDeleteCdnDomainConfigResponse batchDeleteCdnDomainConfigResponse = new BatchDeleteCdnDomainConfigResponse();
 
-			describeUserCustomerLabelsResponse.HttpResponse = _ctx.HttpResponse;
-			describeUserCustomerLabelsResponse.RequestId = _ctx.StringValue("DescribeUserCustomerLabels.RequestId");
-			describeUserCustomerLabelsResponse.IsInnerUser = _ctx.BooleanValue("DescribeUserCustomerLabels.IsInnerUser");
+			batchDeleteCdnDomainConfigResponse.HttpResponse = _ctx.HttpResponse;
+			batchDeleteCdnDomainConfigResponse.RequestId = _ctx.StringValue("BatchDeleteCdnDomainConfig.RequestId");
         
-			return describeUserCustomerLabelsResponse;
+			return batchDeleteCdnDomainConfigResponse;
         }
     }
 }

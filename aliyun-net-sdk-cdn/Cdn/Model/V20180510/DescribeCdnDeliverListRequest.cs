@@ -45,8 +45,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private long? ownerId;
 
-		private string status;
-
 		public long? DeliverId
 		{
 			get
@@ -70,19 +68,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 

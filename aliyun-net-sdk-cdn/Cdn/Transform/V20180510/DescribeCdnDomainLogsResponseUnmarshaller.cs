@@ -39,16 +39,11 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 				domainLogDetail.DomainName = _ctx.StringValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].DomainName");
 				domainLogDetail.LogCount = _ctx.LongValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].LogCount");
 
-				List<DescribeCdnDomainLogsResponse.DescribeCdnDomainLogs_DomainLogDetail.DescribeCdnDomainLogs_PageInfoDetail> domainLogDetail_pageInfos = new List<DescribeCdnDomainLogsResponse.DescribeCdnDomainLogs_DomainLogDetail.DescribeCdnDomainLogs_PageInfoDetail>();
-				for (int j = 0; j < _ctx.Length("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].PageInfos.Length"); j++) {
-					DescribeCdnDomainLogsResponse.DescribeCdnDomainLogs_DomainLogDetail.DescribeCdnDomainLogs_PageInfoDetail pageInfoDetail = new DescribeCdnDomainLogsResponse.DescribeCdnDomainLogs_DomainLogDetail.DescribeCdnDomainLogs_PageInfoDetail();
-					pageInfoDetail.PageIndex = _ctx.LongValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].PageInfos["+ j +"].PageIndex");
-					pageInfoDetail.PageSize = _ctx.LongValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].PageInfos["+ j +"].PageSize");
-					pageInfoDetail.Total = _ctx.LongValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].PageInfos["+ j +"].Total");
-
-					domainLogDetail_pageInfos.Add(pageInfoDetail);
-				}
-				domainLogDetail.PageInfos = domainLogDetail_pageInfos;
+				DescribeCdnDomainLogsResponse.DescribeCdnDomainLogs_DomainLogDetail.DescribeCdnDomainLogs_PageInfos pageInfos = new DescribeCdnDomainLogsResponse.DescribeCdnDomainLogs_DomainLogDetail.DescribeCdnDomainLogs_PageInfos();
+				pageInfos.PageIndex = _ctx.LongValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].PageInfos.PageIndex");
+				pageInfos.PageSize = _ctx.LongValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].PageInfos.PageSize");
+				pageInfos.Total = _ctx.LongValue("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].PageInfos.Total");
+				domainLogDetail.PageInfos = pageInfos;
 
 				List<DescribeCdnDomainLogsResponse.DescribeCdnDomainLogs_DomainLogDetail.DescribeCdnDomainLogs_LogInfoDetail> domainLogDetail_logInfos = new List<DescribeCdnDomainLogsResponse.DescribeCdnDomainLogs_DomainLogDetail.DescribeCdnDomainLogs_LogInfoDetail>();
 				for (int j = 0; j < _ctx.Length("DescribeCdnDomainLogs.DomainLogDetails["+ i +"].LogInfos.Length"); j++) {

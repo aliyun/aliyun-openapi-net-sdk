@@ -41,30 +41,11 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			Method = MethodType.POST;
         }
 
-		private string startTime;
-
 		private string domainName;
-
-		private string endTime;
 
 		private long? ownerId;
 
 		private string reportIds;
-
-		private string status;
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(BodyParameters, "StartTime", value);
-			}
-		}
 
 		public string DomainName
 		{
@@ -76,19 +57,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				domainName = value;
 				DictionaryUtil.Add(BodyParameters, "DomainName", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(BodyParameters, "EndTime", value);
 			}
 		}
 
@@ -115,19 +83,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				reportIds = value;
 				DictionaryUtil.Add(BodyParameters, "ReportIds", value);
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(BodyParameters, "Status", value);
 			}
 		}
 

@@ -24,16 +24,16 @@ using Aliyun.Acs.Cdn.Model.V20180510;
 
 namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
-    public class SetDomainGreenManagerConfigResponseUnmarshaller
+    public class SetUserGreenManagerConfigResponseUnmarshaller
     {
-        public static SetDomainGreenManagerConfigResponse Unmarshall(UnmarshallerContext _ctx)
+        public static SetUserGreenManagerConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			SetDomainGreenManagerConfigResponse setDomainGreenManagerConfigResponse = new SetDomainGreenManagerConfigResponse();
+			SetUserGreenManagerConfigResponse setUserGreenManagerConfigResponse = new SetUserGreenManagerConfigResponse();
 
-			setDomainGreenManagerConfigResponse.HttpResponse = _ctx.HttpResponse;
-			setDomainGreenManagerConfigResponse.RequestId = _ctx.StringValue("SetDomainGreenManagerConfig.RequestId");
+			setUserGreenManagerConfigResponse.HttpResponse = _ctx.HttpResponse;
+			setUserGreenManagerConfigResponse.RequestId = _ctx.StringValue("SetUserGreenManagerConfig.RequestId");
         
-			return setDomainGreenManagerConfigResponse;
+			return setUserGreenManagerConfigResponse;
         }
     }
 }

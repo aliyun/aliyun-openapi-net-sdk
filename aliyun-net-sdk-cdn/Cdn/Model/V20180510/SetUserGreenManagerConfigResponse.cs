@@ -20,14 +20,12 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeUserCustomerLabelsResponse : AcsResponse
+	public class SetUserGreenManagerConfigResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private bool? isInnerUser;
 
 		public string RequestId
 		{
@@ -38,18 +36,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public bool? IsInnerUser
-		{
-			get
-			{
-				return isInnerUser;
-			}
-			set	
-			{
-				isInnerUser = value;
 			}
 		}
 	}
