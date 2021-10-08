@@ -43,11 +43,7 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 
 		private long? reportId;
 
-		private string permission;
-
 		private long? ownerId;
-
-		private string status;
 
 		public long? ReportId
 		{
@@ -62,19 +58,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string Permission
-		{
-			get
-			{
-				return permission;
-			}
-			set	
-			{
-				permission = value;
-				DictionaryUtil.Add(QueryParameters, "Permission", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -85,19 +68,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 

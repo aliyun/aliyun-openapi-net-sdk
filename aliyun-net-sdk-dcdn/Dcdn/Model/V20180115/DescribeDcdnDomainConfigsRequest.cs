@@ -49,6 +49,8 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 
 		private string securityToken;
 
+		private string configId;
+
 		public string FunctionNames
 		{
 			get
@@ -98,6 +100,19 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string ConfigId
+		{
+			get
+			{
+				return configId;
+			}
+			set	
+			{
+				configId = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigId", value);
 			}
 		}
 

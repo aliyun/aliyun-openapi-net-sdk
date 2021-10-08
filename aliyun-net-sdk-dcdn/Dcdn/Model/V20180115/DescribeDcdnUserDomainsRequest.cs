@@ -55,6 +55,8 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 
 		private List<Tag> tags = new List<Tag>(){ };
 
+		private string coverage;
+
 		private string domainName;
 
 		private long? ownerId;
@@ -158,6 +160,19 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
+			}
+		}
+
+		public string Coverage
+		{
+			get
+			{
+				return coverage;
+			}
+			set	
+			{
+				coverage = value;
+				DictionaryUtil.Add(QueryParameters, "Coverage", value);
 			}
 		}
 

@@ -47,6 +47,10 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 
 		private int? pageSize;
 
+		private string funcFilter;
+
+		private string domainName;
+
 		private long? ownerId;
 
 		private int? funcId;
@@ -87,6 +91,32 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string FuncFilter
+		{
+			get
+			{
+				return funcFilter;
+			}
+			set	
+			{
+				funcFilter = value;
+				DictionaryUtil.Add(QueryParameters, "FuncFilter", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 

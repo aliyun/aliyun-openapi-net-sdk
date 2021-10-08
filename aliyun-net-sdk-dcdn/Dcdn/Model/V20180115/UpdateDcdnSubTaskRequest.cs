@@ -51,8 +51,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 
 		private string reportIds;
 
-		private string status;
-
 		public string StartTime
 		{
 			get
@@ -115,19 +113,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			{
 				reportIds = value;
 				DictionaryUtil.Add(BodyParameters, "ReportIds", value);
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(BodyParameters, "Status", value);
 			}
 		}
 

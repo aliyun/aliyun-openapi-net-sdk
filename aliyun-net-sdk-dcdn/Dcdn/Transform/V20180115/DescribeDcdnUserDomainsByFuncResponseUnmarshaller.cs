@@ -41,7 +41,6 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 				DescribeDcdnUserDomainsByFuncResponse.DescribeDcdnUserDomainsByFunc_PageData pageData = new DescribeDcdnUserDomainsByFuncResponse.DescribeDcdnUserDomainsByFunc_PageData();
 				pageData.DomainName = _ctx.StringValue("DescribeDcdnUserDomainsByFunc.Domains["+ i +"].DomainName");
 				pageData.Cname = _ctx.StringValue("DescribeDcdnUserDomainsByFunc.Domains["+ i +"].Cname");
-				pageData.CdnType = _ctx.StringValue("DescribeDcdnUserDomainsByFunc.Domains["+ i +"].CdnType");
 				pageData.DomainStatus = _ctx.StringValue("DescribeDcdnUserDomainsByFunc.Domains["+ i +"].DomainStatus");
 				pageData.GmtCreated = _ctx.StringValue("DescribeDcdnUserDomainsByFunc.Domains["+ i +"].GmtCreated");
 				pageData.GmtModified = _ctx.StringValue("DescribeDcdnUserDomainsByFunc.Domains["+ i +"].GmtModified");

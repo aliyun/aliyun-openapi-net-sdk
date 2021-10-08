@@ -102,8 +102,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 
 			private string cname;
 
-			private string cdnType;
-
 			private string domainStatus;
 
 			private string gmtCreated;
@@ -141,18 +139,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 				set	
 				{
 					cname = value;
-				}
-			}
-
-			public string CdnType
-			{
-				get
-				{
-					return cdnType;
-				}
-				set	
-				{
-					cdnType = value;
 				}
 			}
 
