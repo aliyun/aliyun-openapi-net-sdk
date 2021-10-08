@@ -22,12 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
-	public class BatchSetScdnDomainConfigsResponse : AcsResponse
+	public class BatchStopScdnDomainResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private List<BatchSetScdnDomainConfigs_DomainConfigModel> domainConfigList;
 
 		public string RequestId
 		{
@@ -38,64 +36,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public List<BatchSetScdnDomainConfigs_DomainConfigModel> DomainConfigList
-		{
-			get
-			{
-				return domainConfigList;
-			}
-			set	
-			{
-				domainConfigList = value;
-			}
-		}
-
-		public class BatchSetScdnDomainConfigs_DomainConfigModel
-		{
-
-			private string domainName;
-
-			private long? configId;
-
-			private string functionName;
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
-			public long? ConfigId
-			{
-				get
-				{
-					return configId;
-				}
-				set	
-				{
-					configId = value;
-				}
-			}
-
-			public string FunctionName
-			{
-				get
-				{
-					return functionName;
-				}
-				set	
-				{
-					functionName = value;
-				}
 			}
 		}
 	}

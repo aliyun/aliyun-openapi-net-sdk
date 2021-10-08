@@ -28,10 +28,10 @@ using Aliyun.Acs.scdn.Transform.V20171115;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
-    public class DescribeScdnDomainConfigsRequest : RpcAcsRequest<DescribeScdnDomainConfigsResponse>
+    public class BatchStartScdnDomainRequest : RpcAcsRequest<BatchStartScdnDomainResponse>
     {
-        public DescribeScdnDomainConfigsRequest()
-            : base("scdn", "2017-11-15", "DescribeScdnDomainConfigs")
+        public BatchStartScdnDomainRequest()
+            : base("scdn", "2017-11-15", "BatchStartScdnDomain")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,39 +41,22 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			Method = MethodType.POST;
         }
 
-		private string functionNames;
-
-		private string domainName;
+		private string domainNames;
 
 		private long? ownerId;
 
 		private string securityToken;
 
-		private string configId;
-
-		public string FunctionNames
+		public string DomainNames
 		{
 			get
 			{
-				return functionNames;
+				return domainNames;
 			}
 			set	
 			{
-				functionNames = value;
-				DictionaryUtil.Add(QueryParameters, "FunctionNames", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				domainNames = value;
+				DictionaryUtil.Add(QueryParameters, "DomainNames", value);
 			}
 		}
 
@@ -103,22 +86,9 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string ConfigId
-		{
-			get
-			{
-				return configId;
-			}
-			set	
-			{
-				configId = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigId", value);
-			}
-		}
-
-        public override DescribeScdnDomainConfigsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override BatchStartScdnDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeScdnDomainConfigsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchStartScdnDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
