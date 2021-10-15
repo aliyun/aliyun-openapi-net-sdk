@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Domain.Transform.V20180208
 			ReserveDomainResponse reserveDomainResponse = new ReserveDomainResponse();
 
 			reserveDomainResponse.HttpResponse = _ctx.HttpResponse;
-			reserveDomainResponse.RequestId = _ctx.StringValue("ReserveDomain.RequestId");
 			reserveDomainResponse.AuctionId = _ctx.StringValue("ReserveDomain.AuctionId");
+			reserveDomainResponse.RequestId = _ctx.StringValue("ReserveDomain.RequestId");
         
 			return reserveDomainResponse;
         }

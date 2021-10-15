@@ -31,30 +31,31 @@ namespace Aliyun.Acs.Domain.Transform.V20180208
 			QueryBrokerDemandResponse queryBrokerDemandResponse = new QueryBrokerDemandResponse();
 
 			queryBrokerDemandResponse.HttpResponse = _ctx.HttpResponse;
+			queryBrokerDemandResponse.CurrentPageNum = _ctx.IntegerValue("QueryBrokerDemand.CurrentPageNum");
+			queryBrokerDemandResponse.TotalPageNum = _ctx.IntegerValue("QueryBrokerDemand.TotalPageNum");
+			queryBrokerDemandResponse.PageSize = _ctx.IntegerValue("QueryBrokerDemand.PageSize");
 			queryBrokerDemandResponse.RequestId = _ctx.StringValue("QueryBrokerDemand.RequestId");
 			queryBrokerDemandResponse.TotalItemNum = _ctx.IntegerValue("QueryBrokerDemand.TotalItemNum");
-			queryBrokerDemandResponse.CurrentPageNum = _ctx.IntegerValue("QueryBrokerDemand.CurrentPageNum");
-			queryBrokerDemandResponse.PageSize = _ctx.IntegerValue("QueryBrokerDemand.PageSize");
-			queryBrokerDemandResponse.TotalPageNum = _ctx.IntegerValue("QueryBrokerDemand.TotalPageNum");
 
 			List<QueryBrokerDemandResponse.QueryBrokerDemand_Demand> queryBrokerDemandResponse_data = new List<QueryBrokerDemandResponse.QueryBrokerDemand_Demand>();
 			for (int i = 0; i < _ctx.Length("QueryBrokerDemand.Data.Length"); i++) {
 				QueryBrokerDemandResponse.QueryBrokerDemand_Demand demand = new QueryBrokerDemandResponse.QueryBrokerDemand_Demand();
-				demand.BizId = _ctx.StringValue("QueryBrokerDemand.Data["+ i +"].BizId");
 				demand.Status = _ctx.StringValue("QueryBrokerDemand.Data["+ i +"].Status");
-				demand.DemandDomain = _ctx.StringValue("QueryBrokerDemand.Data["+ i +"].DemandDomain");
 				demand.DemandPrice = _ctx.FloatValue("QueryBrokerDemand.Data["+ i +"].DemandPrice");
-				demand.Mobile = _ctx.StringValue("QueryBrokerDemand.Data["+ i +"].Mobile");
-				demand.Description = _ctx.StringValue("QueryBrokerDemand.Data["+ i +"].Description");
+				demand.BizId = _ctx.StringValue("QueryBrokerDemand.Data["+ i +"].BizId");
+				demand.BargainSellerMobile = _ctx.StringValue("QueryBrokerDemand.Data["+ i +"].BargainSellerMobile");
 				demand.PublishTime = _ctx.LongValue("QueryBrokerDemand.Data["+ i +"].PublishTime");
-				demand.PayDomain = _ctx.StringValue("QueryBrokerDemand.Data["+ i +"].PayDomain");
+				demand.ProduceType = _ctx.IntegerValue("QueryBrokerDemand.Data["+ i +"].ProduceType");
+				demand.DemandDomain = _ctx.StringValue("QueryBrokerDemand.Data["+ i +"].DemandDomain");
+				demand.Description = _ctx.StringValue("QueryBrokerDemand.Data["+ i +"].Description");
+				demand.Mobile = _ctx.StringValue("QueryBrokerDemand.Data["+ i +"].Mobile");
+				demand.ServicePayPrice = _ctx.FloatValue("QueryBrokerDemand.Data["+ i +"].ServicePayPrice");
 				demand.PayPrice = _ctx.FloatValue("QueryBrokerDemand.Data["+ i +"].PayPrice");
 				demand.PayTime = _ctx.LongValue("QueryBrokerDemand.Data["+ i +"].PayTime");
-				demand.ProduceType = _ctx.IntegerValue("QueryBrokerDemand.Data["+ i +"].ProduceType");
 				demand.BargainSellerPrice = _ctx.FloatValue("QueryBrokerDemand.Data["+ i +"].BargainSellerPrice");
-				demand.BargainSellerMobile = _ctx.StringValue("QueryBrokerDemand.Data["+ i +"].BargainSellerMobile");
-				demand.ServicePayPrice = _ctx.FloatValue("QueryBrokerDemand.Data["+ i +"].ServicePayPrice");
 				demand.OrderType = _ctx.IntegerValue("QueryBrokerDemand.Data["+ i +"].OrderType");
+				demand.PayDomain = _ctx.StringValue("QueryBrokerDemand.Data["+ i +"].PayDomain");
+				demand.AuditStatus = _ctx.IntegerValue("QueryBrokerDemand.Data["+ i +"].AuditStatus");
 
 				queryBrokerDemandResponse_data.Add(demand);
 			}

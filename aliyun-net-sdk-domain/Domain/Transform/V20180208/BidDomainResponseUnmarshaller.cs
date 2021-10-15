@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Domain.Transform.V20180208
 			BidDomainResponse bidDomainResponse = new BidDomainResponse();
 
 			bidDomainResponse.HttpResponse = _ctx.HttpResponse;
-			bidDomainResponse.RequestId = _ctx.StringValue("BidDomain.RequestId");
 			bidDomainResponse.AuctionId = _ctx.StringValue("BidDomain.AuctionId");
+			bidDomainResponse.RequestId = _ctx.StringValue("BidDomain.RequestId");
         
 			return bidDomainResponse;
         }

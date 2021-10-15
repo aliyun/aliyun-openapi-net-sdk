@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Domain;
 using Aliyun.Acs.Domain.Transform;
-using Aliyun.Acs.Domain.Transform.V20180129;
+using Aliyun.Acs.Domain.Transform.V20180208;
 
-namespace Aliyun.Acs.Domain.Model.V20180129
+namespace Aliyun.Acs.Domain.Model.V20180208
 {
-    public class QueryOperationAuditInfoDetailRequest : RpcAcsRequest<QueryOperationAuditInfoDetailResponse>
+    public class CreateFixedPriceDemandOrderRequest : RpcAcsRequest<CreateFixedPriceDemandOrderResponse>
     {
-        public QueryOperationAuditInfoDetailRequest()
-            : base("Domain", "2018-01-29", "QueryOperationAuditInfoDetail")
+        public CreateFixedPriceDemandOrderRequest()
+            : base("Domain", "2018-02-08", "CreateFixedPriceDemandOrder")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,33 +41,63 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			Method = MethodType.POST;
         }
 
-		private long? auditRecordId;
+		private string code;
 
-		private string lang;
+		private string contactId;
 
-		public long? AuditRecordId
+		private string domain;
+
+		private string source;
+
+		public string Code
 		{
 			get
 			{
-				return auditRecordId;
+				return code;
 			}
 			set	
 			{
-				auditRecordId = value;
-				DictionaryUtil.Add(QueryParameters, "AuditRecordId", value.ToString());
+				code = value;
+				DictionaryUtil.Add(QueryParameters, "Code", value);
 			}
 		}
 
-		public string Lang
+		public string ContactId
 		{
 			get
 			{
-				return lang;
+				return contactId;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				contactId = value;
+				DictionaryUtil.Add(QueryParameters, "ContactId", value);
+			}
+		}
+
+		public string Domain
+		{
+			get
+			{
+				return domain;
+			}
+			set	
+			{
+				domain = value;
+				DictionaryUtil.Add(QueryParameters, "Domain", value);
+			}
+		}
+
+		public string Source
+		{
+			get
+			{
+				return source;
+			}
+			set	
+			{
+				source = value;
+				DictionaryUtil.Add(QueryParameters, "Source", value);
 			}
 		}
 
@@ -76,9 +106,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			return false;
 		}
 
-        public override QueryOperationAuditInfoDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateFixedPriceDemandOrderResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryOperationAuditInfoDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateFixedPriceDemandOrderResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

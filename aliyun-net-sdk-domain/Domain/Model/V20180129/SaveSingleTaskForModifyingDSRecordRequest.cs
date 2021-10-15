@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Domain;
 using Aliyun.Acs.Domain.Transform;
 using Aliyun.Acs.Domain.Transform.V20180129;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
     public class SaveSingleTaskForModifyingDSRecordRequest : RpcAcsRequest<SaveSingleTaskForModifyingDSRecordResponse>
     {
         public SaveSingleTaskForModifyingDSRecordRequest()
-            : base("Domain", "2018-01-29", "SaveSingleTaskForModifyingDSRecord", "domain", "openAPI")
+            : base("Domain", "2018-01-29", "SaveSingleTaskForModifyingDSRecord")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

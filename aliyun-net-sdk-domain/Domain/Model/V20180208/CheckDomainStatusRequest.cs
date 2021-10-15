@@ -24,50 +24,34 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Domain;
 using Aliyun.Acs.Domain.Transform;
-using Aliyun.Acs.Domain.Transform.V20180129;
+using Aliyun.Acs.Domain.Transform.V20180208;
 
-namespace Aliyun.Acs.Domain.Model.V20180129
+namespace Aliyun.Acs.Domain.Model.V20180208
 {
-    public class QueryOperationAuditInfoDetailRequest : RpcAcsRequest<QueryOperationAuditInfoDetailResponse>
+    public class CheckDomainStatusRequest : RpcAcsRequest<CheckDomainStatusResponse>
     {
-        public QueryOperationAuditInfoDetailRequest()
-            : base("Domain", "2018-01-29", "QueryOperationAuditInfoDetail")
+        public CheckDomainStatusRequest()
+            : base("Domain", "2018-02-08", "CheckDomainStatus")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Domain.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Domain.Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
-		private long? auditRecordId;
+		private string domain;
 
-		private string lang;
-
-		public long? AuditRecordId
+		public string Domain
 		{
 			get
 			{
-				return auditRecordId;
+				return domain;
 			}
 			set	
 			{
-				auditRecordId = value;
-				DictionaryUtil.Add(QueryParameters, "AuditRecordId", value.ToString());
-			}
-		}
-
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				domain = value;
+				DictionaryUtil.Add(QueryParameters, "Domain", value);
 			}
 		}
 
@@ -76,9 +60,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			return false;
 		}
 
-        public override QueryOperationAuditInfoDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CheckDomainStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryOperationAuditInfoDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CheckDomainStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
