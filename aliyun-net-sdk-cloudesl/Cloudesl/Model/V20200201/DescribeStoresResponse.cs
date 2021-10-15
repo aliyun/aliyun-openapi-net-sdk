@@ -214,6 +214,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 			private string templateVersion;
 
+			private string timeZone;
+
 			public string StoreName
 			{
 				get
@@ -319,6 +321,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					templateVersion = value;
+				}
+			}
+
+			public string TimeZone
+			{
+				get
+				{
+					return timeZone;
+				}
+				set	
+				{
+					timeZone = value;
 				}
 			}
 		}

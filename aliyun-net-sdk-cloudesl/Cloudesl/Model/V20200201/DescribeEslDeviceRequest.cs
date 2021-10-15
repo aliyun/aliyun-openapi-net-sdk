@@ -27,10 +27,10 @@ using Aliyun.Acs.cloudesl.Transform.V20200201;
 
 namespace Aliyun.Acs.cloudesl.Model.V20200201
 {
-    public class CreateStoreRequest : RpcAcsRequest<CreateStoreResponse>
+    public class DescribeEslDeviceRequest : RpcAcsRequest<DescribeEslDeviceResponse>
     {
-        public CreateStoreRequest()
-            : base("cloudesl", "2020-02-01", "CreateStore", "cloudesl", "openAPI")
+        public DescribeEslDeviceRequest()
+            : base("cloudesl", "2020-02-01", "DescribeEslDevice", "cloudesl", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,108 +40,78 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			Method = MethodType.POST;
         }
 
-		private string extraParams;
+		private string storeId;
 
-		private string clientToken;
+		private long? pageNumber;
 
-		private string timeZone;
+		private string fromDate;
 
-		private string storeName;
+		private string toDate;
 
-		private string parentId;
+		private long? pageSize;
 
-		private string userStoreCode;
-
-		private string phone;
-
-		public string ExtraParams
+		public string StoreId
 		{
 			get
 			{
-				return extraParams;
+				return storeId;
 			}
 			set	
 			{
-				extraParams = value;
-				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
+				storeId = value;
+				DictionaryUtil.Add(BodyParameters, "StoreId", value);
 			}
 		}
 
-		public string ClientToken
+		public long? PageNumber
 		{
 			get
 			{
-				return clientToken;
+				return pageNumber;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(BodyParameters, "ClientToken", value);
+				pageNumber = value;
+				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string TimeZone
+		public string FromDate
 		{
 			get
 			{
-				return timeZone;
+				return fromDate;
 			}
 			set	
 			{
-				timeZone = value;
-				DictionaryUtil.Add(BodyParameters, "TimeZone", value);
+				fromDate = value;
+				DictionaryUtil.Add(BodyParameters, "FromDate", value);
 			}
 		}
 
-		public string StoreName
+		public string ToDate
 		{
 			get
 			{
-				return storeName;
+				return toDate;
 			}
 			set	
 			{
-				storeName = value;
-				DictionaryUtil.Add(BodyParameters, "StoreName", value);
+				toDate = value;
+				DictionaryUtil.Add(BodyParameters, "ToDate", value);
 			}
 		}
 
-		public string ParentId
+		public long? PageSize
 		{
 			get
 			{
-				return parentId;
+				return pageSize;
 			}
 			set	
 			{
-				parentId = value;
-				DictionaryUtil.Add(BodyParameters, "ParentId", value);
-			}
-		}
-
-		public string UserStoreCode
-		{
-			get
-			{
-				return userStoreCode;
-			}
-			set	
-			{
-				userStoreCode = value;
-				DictionaryUtil.Add(BodyParameters, "UserStoreCode", value);
-			}
-		}
-
-		public string Phone
-		{
-			get
-			{
-				return phone;
-			}
-			set	
-			{
-				phone = value;
-				DictionaryUtil.Add(BodyParameters, "Phone", value);
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -150,9 +120,9 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			return false;
 		}
 
-        public override CreateStoreResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeEslDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateStoreResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeEslDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

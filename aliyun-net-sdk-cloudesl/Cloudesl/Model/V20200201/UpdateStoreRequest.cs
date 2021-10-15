@@ -42,6 +42,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private string extraParams;
 
+		private string timezone;
+
 		private string storeName;
 
 		private string storeId;
@@ -62,6 +64,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				extraParams = value;
 				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
+			}
+		}
+
+		public string Timezone
+		{
+			get
+			{
+				return timezone;
+			}
+			set	
+			{
+				timezone = value;
+				DictionaryUtil.Add(BodyParameters, "Timezone", value);
 			}
 		}
 
