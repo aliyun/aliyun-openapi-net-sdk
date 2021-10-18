@@ -84,6 +84,10 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 			private string accessType;
 
+			private int? sniStatus;
+
+			private string sniHost;
+
 			private List<DescribeDomain_LogHeader> logHeaders;
 
 			private List<DescribeDomain_CloudNativeInstancesItem> cloudNativeInstances;
@@ -263,6 +267,30 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				set	
 				{
 					accessType = value;
+				}
+			}
+
+			public int? SniStatus
+			{
+				get
+				{
+					return sniStatus;
+				}
+				set	
+				{
+					sniStatus = value;
+				}
+			}
+
+			public string SniHost
+			{
+				get
+				{
+					return sniHost;
+				}
+				set	
+				{
+					sniHost = value;
 				}
 			}
 

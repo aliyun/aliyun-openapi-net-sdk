@@ -48,6 +48,8 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 			domain.WriteTime = _ctx.IntegerValue("DescribeDomain.Domain.WriteTime");
 			domain.ResourceGroupId = _ctx.StringValue("DescribeDomain.Domain.ResourceGroupId");
 			domain.AccessType = _ctx.StringValue("DescribeDomain.Domain.AccessType");
+			domain.SniStatus = _ctx.IntegerValue("DescribeDomain.Domain.SniStatus");
+			domain.SniHost = _ctx.StringValue("DescribeDomain.Domain.SniHost");
 
 			List<string> domain_sourceIps = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeDomain.Domain.SourceIps.Length"); i++) {

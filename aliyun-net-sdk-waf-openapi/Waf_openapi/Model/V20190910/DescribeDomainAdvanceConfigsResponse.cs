@@ -87,51 +87,51 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			public class DescribeDomainAdvanceConfigs_Profile
 			{
 
-				private string cname;
-
-				private int? resolvedType;
-
-				private int? vipServiceStatus;
-
-				private int? certStatus;
-
-				private int? exclusiveVipStatus;
-
 				private int? ipv6Status;
-
-				private string httpPort;
-
-				private string httpsPort;
-
-				private string http2Port;
-
-				private string rs;
-
-				private int? clusterType;
 
 				private string gSLBStatus;
 
-				public string Cname
+				private int? vipServiceStatus;
+
+				private int? clusterType;
+
+				private int? exclusiveVipStatus;
+
+				private string cname;
+
+				private int? certStatus;
+
+				private int? resolvedType;
+
+				private List<string> http2Port;
+
+				private List<string> httpPort;
+
+				private List<string> rs;
+
+				private List<string> httpsPort;
+
+				public int? Ipv6Status
 				{
 					get
 					{
-						return cname;
+						return ipv6Status;
 					}
 					set	
 					{
-						cname = value;
+						ipv6Status = value;
 					}
 				}
 
-				public int? ResolvedType
+				public string GSLBStatus
 				{
 					get
 					{
-						return resolvedType;
+						return gSLBStatus;
 					}
 					set	
 					{
-						resolvedType = value;
+						gSLBStatus = value;
 					}
 				}
 
@@ -147,15 +147,15 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 					}
 				}
 
-				public int? CertStatus
+				public int? ClusterType
 				{
 					get
 					{
-						return certStatus;
+						return clusterType;
 					}
 					set	
 					{
-						certStatus = value;
+						clusterType = value;
 					}
 				}
 
@@ -171,43 +171,43 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 					}
 				}
 
-				public int? Ipv6Status
+				public string Cname
 				{
 					get
 					{
-						return ipv6Status;
+						return cname;
 					}
 					set	
 					{
-						ipv6Status = value;
+						cname = value;
 					}
 				}
 
-				public string HttpPort
+				public int? CertStatus
 				{
 					get
 					{
-						return httpPort;
+						return certStatus;
 					}
 					set	
 					{
-						httpPort = value;
+						certStatus = value;
 					}
 				}
 
-				public string HttpsPort
+				public int? ResolvedType
 				{
 					get
 					{
-						return httpsPort;
+						return resolvedType;
 					}
 					set	
 					{
-						httpsPort = value;
+						resolvedType = value;
 					}
 				}
 
-				public string Http2Port
+				public List<string> Http2Port
 				{
 					get
 					{
@@ -219,7 +219,19 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 					}
 				}
 
-				public string Rs
+				public List<string> HttpPort
+				{
+					get
+					{
+						return httpPort;
+					}
+					set	
+					{
+						httpPort = value;
+					}
+				}
+
+				public List<string> Rs
 				{
 					get
 					{
@@ -231,27 +243,15 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 					}
 				}
 
-				public int? ClusterType
+				public List<string> HttpsPort
 				{
 					get
 					{
-						return clusterType;
+						return httpsPort;
 					}
 					set	
 					{
-						clusterType = value;
-					}
-				}
-
-				public string GSLBStatus
-				{
-					get
-					{
-						return gSLBStatus;
-					}
-					set	
-					{
-						gSLBStatus = value;
+						httpsPort = value;
 					}
 				}
 			}

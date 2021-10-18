@@ -1,3 +1,6 @@
+2021-10-18 Version: 1.1.6
+- Generated 2019-09-10, 2018-01-17 for `waf-openapi`.
+
 2021-10-18 Version: 4.24.11
 - Adjust ecs openapi endpoint.
 - Fix SDK array format.

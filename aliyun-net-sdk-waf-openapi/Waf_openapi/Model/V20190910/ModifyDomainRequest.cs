@@ -42,11 +42,15 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 		private int? ipFollowStatus;
 
+		private string sniHost;
+
 		private string httpPort;
 
 		private string http2Port;
 
 		private int? writeTime;
+
+		private int? sniStatus;
 
 		private int? accessHeaderMode;
 
@@ -93,6 +97,19 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			}
 		}
 
+		public string SniHost
+		{
+			get
+			{
+				return sniHost;
+			}
+			set	
+			{
+				sniHost = value;
+				DictionaryUtil.Add(QueryParameters, "SniHost", value);
+			}
+		}
+
 		public string HttpPort
 		{
 			get
@@ -129,6 +146,19 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				writeTime = value;
 				DictionaryUtil.Add(QueryParameters, "WriteTime", value.ToString());
+			}
+		}
+
+		public int? SniStatus
+		{
+			get
+			{
+				return sniStatus;
+			}
+			set	
+			{
+				sniStatus = value;
+				DictionaryUtil.Add(QueryParameters, "SniStatus", value.ToString());
 			}
 		}
 
