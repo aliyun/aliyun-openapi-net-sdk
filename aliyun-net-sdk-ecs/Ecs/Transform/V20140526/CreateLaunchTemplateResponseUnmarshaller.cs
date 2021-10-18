@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateLaunchTemplateResponse createLaunchTemplateResponse = new CreateLaunchTemplateResponse();
 
 			createLaunchTemplateResponse.HttpResponse = _ctx.HttpResponse;
-			createLaunchTemplateResponse.RequestId = _ctx.StringValue("CreateLaunchTemplate.RequestId");
 			createLaunchTemplateResponse.LaunchTemplateId = _ctx.StringValue("CreateLaunchTemplate.LaunchTemplateId");
+			createLaunchTemplateResponse.RequestId = _ctx.StringValue("CreateLaunchTemplate.RequestId");
         
 			return createLaunchTemplateResponse;
         }

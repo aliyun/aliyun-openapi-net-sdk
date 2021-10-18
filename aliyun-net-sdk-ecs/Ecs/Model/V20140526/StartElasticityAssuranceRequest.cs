@@ -51,6 +51,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -64,6 +65,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "PrivatePoolOptions.Id")]
 		public string PrivatePoolOptionsId
 		{
 			get
@@ -77,6 +79,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -90,6 +93,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -103,6 +107,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get

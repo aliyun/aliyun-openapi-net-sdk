@@ -73,10 +73,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				securityGroupIds = value;
-				for (int i = 0; i < securityGroupIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SecurityGroupId." + (i + 1) , securityGroupIds[i]);
-				}
 			}
 		}
 

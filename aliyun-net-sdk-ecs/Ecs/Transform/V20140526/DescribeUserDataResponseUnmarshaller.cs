@@ -32,9 +32,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 
 			describeUserDataResponse.HttpResponse = _ctx.HttpResponse;
 			describeUserDataResponse.RequestId = _ctx.StringValue("DescribeUserData.RequestId");
-			describeUserDataResponse.RegionId = _ctx.StringValue("DescribeUserData.RegionId");
 			describeUserDataResponse.InstanceId = _ctx.StringValue("DescribeUserData.InstanceId");
 			describeUserDataResponse.UserData = _ctx.StringValue("DescribeUserData.UserData");
+			describeUserDataResponse.RegionId = _ctx.StringValue("DescribeUserData.RegionId");
         
 			return describeUserDataResponse;
         }

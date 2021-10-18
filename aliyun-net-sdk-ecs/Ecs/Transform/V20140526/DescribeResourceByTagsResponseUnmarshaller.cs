@@ -39,8 +39,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DescribeResourceByTagsResponse.DescribeResourceByTags_Resource> describeResourceByTagsResponse_resources = new List<DescribeResourceByTagsResponse.DescribeResourceByTags_Resource>();
 			for (int i = 0; i < _ctx.Length("DescribeResourceByTags.Resources.Length"); i++) {
 				DescribeResourceByTagsResponse.DescribeResourceByTags_Resource resource = new DescribeResourceByTagsResponse.DescribeResourceByTags_Resource();
-				resource.ResourceId = _ctx.StringValue("DescribeResourceByTags.Resources["+ i +"].ResourceId");
 				resource.ResourceType = _ctx.StringValue("DescribeResourceByTags.Resources["+ i +"].ResourceType");
+				resource.ResourceId = _ctx.StringValue("DescribeResourceByTags.Resources["+ i +"].ResourceId");
 				resource.RegionId = _ctx.StringValue("DescribeResourceByTags.Resources["+ i +"].RegionId");
 
 				describeResourceByTagsResponse_resources.Add(resource);

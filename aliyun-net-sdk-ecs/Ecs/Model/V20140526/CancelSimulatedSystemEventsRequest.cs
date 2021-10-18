@@ -60,10 +60,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				eventIds = value;
-				for (int i = 0; i < eventIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"EventId." + (i + 1) , eventIds[i]);
-				}
 			}
 		}
 

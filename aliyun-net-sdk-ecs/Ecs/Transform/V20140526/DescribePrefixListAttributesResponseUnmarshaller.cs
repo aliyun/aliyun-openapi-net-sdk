@@ -31,19 +31,19 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribePrefixListAttributesResponse describePrefixListAttributesResponse = new DescribePrefixListAttributesResponse();
 
 			describePrefixListAttributesResponse.HttpResponse = _ctx.HttpResponse;
-			describePrefixListAttributesResponse.RequestId = _ctx.StringValue("DescribePrefixListAttributes.RequestId");
-			describePrefixListAttributesResponse.PrefixListId = _ctx.StringValue("DescribePrefixListAttributes.PrefixListId");
-			describePrefixListAttributesResponse.PrefixListName = _ctx.StringValue("DescribePrefixListAttributes.PrefixListName");
-			describePrefixListAttributesResponse.AddressFamily = _ctx.StringValue("DescribePrefixListAttributes.AddressFamily");
-			describePrefixListAttributesResponse.MaxEntries = _ctx.IntegerValue("DescribePrefixListAttributes.MaxEntries");
-			describePrefixListAttributesResponse.Description = _ctx.StringValue("DescribePrefixListAttributes.Description");
 			describePrefixListAttributesResponse.CreationTime = _ctx.StringValue("DescribePrefixListAttributes.CreationTime");
+			describePrefixListAttributesResponse.MaxEntries = _ctx.IntegerValue("DescribePrefixListAttributes.MaxEntries");
+			describePrefixListAttributesResponse.RequestId = _ctx.StringValue("DescribePrefixListAttributes.RequestId");
+			describePrefixListAttributesResponse.Description = _ctx.StringValue("DescribePrefixListAttributes.Description");
+			describePrefixListAttributesResponse.AddressFamily = _ctx.StringValue("DescribePrefixListAttributes.AddressFamily");
+			describePrefixListAttributesResponse.PrefixListName = _ctx.StringValue("DescribePrefixListAttributes.PrefixListName");
+			describePrefixListAttributesResponse.PrefixListId = _ctx.StringValue("DescribePrefixListAttributes.PrefixListId");
 
 			List<DescribePrefixListAttributesResponse.DescribePrefixListAttributes_Entry> describePrefixListAttributesResponse_entries = new List<DescribePrefixListAttributesResponse.DescribePrefixListAttributes_Entry>();
 			for (int i = 0; i < _ctx.Length("DescribePrefixListAttributes.Entries.Length"); i++) {
 				DescribePrefixListAttributesResponse.DescribePrefixListAttributes_Entry entry = new DescribePrefixListAttributesResponse.DescribePrefixListAttributes_Entry();
-				entry.Cidr = _ctx.StringValue("DescribePrefixListAttributes.Entries["+ i +"].Cidr");
 				entry.Description = _ctx.StringValue("DescribePrefixListAttributes.Entries["+ i +"].Description");
+				entry.Cidr = _ctx.StringValue("DescribePrefixListAttributes.Entries["+ i +"].Cidr");
 
 				describePrefixListAttributesResponse_entries.Add(entry);
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,24 +25,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class ModifyDedicatedHostsChargeTypeResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string orderId;
+
+		private string requestId;
 
 		private List<ModifyDedicatedHostsChargeType_FeeOfInstance> feeOfInstances;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "OrderId")]
 		public string OrderId
 		{
 			get
@@ -55,6 +44,20 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "FeeOfInstances")]
 		public List<ModifyDedicatedHostsChargeType_FeeOfInstance> FeeOfInstances
 		{
 			get
@@ -72,10 +75,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string instanceId;
 
-			private string fee;
-
 			private string currency;
 
+			private string fee;
+
+			[JsonProperty(PropertyName = "InstanceId")]
 			public string InstanceId
 			{
 				get
@@ -88,18 +92,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Fee
-			{
-				get
-				{
-					return fee;
-				}
-				set	
-				{
-					fee = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Currency")]
 			public string Currency
 			{
 				get
@@ -109,6 +102,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					currency = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Fee")]
+			public string Fee
+			{
+				get
+				{
+					return fee;
+				}
+				set	
+				{
+					fee = value;
 				}
 			}
 		}

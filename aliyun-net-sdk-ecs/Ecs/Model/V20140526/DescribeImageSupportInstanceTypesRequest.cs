@@ -50,7 +50,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private List<Filter> filters = new List<Filter>(){ };
+		private List<string> filters = new List<string>(){ };
 
 		public string ActionType
 		{
@@ -117,7 +117,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Filter> Filters
+		public List<string> Filters
 		{
 			get
 			{
@@ -127,10 +127,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				filters = value;
-				for (int i = 0; i < filters.Count; i++)
+				if(filters != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Value", filters[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
+					for (int depth1 = 0; depth1 < filters.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Filter." + (depth1 + 1), filters[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Filter." + (depth1 + 1), filters[depth1]);
+					}
 				}
 			}
 		}
@@ -142,7 +145,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string key;
 
-			public string Value
+			public string Value_
 			{
 				get
 				{

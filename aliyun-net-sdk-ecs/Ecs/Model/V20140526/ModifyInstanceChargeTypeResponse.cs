@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<ModifyInstanceChargeType_FeeOfInstance> feeOfInstances;
 
+		[JsonProperty(PropertyName = "OrderId")]
 		public string OrderId
 		{
 			get
@@ -43,6 +44,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -55,6 +57,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "FeeOfInstances")]
 		public List<ModifyInstanceChargeType_FeeOfInstance> FeeOfInstances
 		{
 			get
@@ -76,6 +79,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string fee;
 
+			[JsonProperty(PropertyName = "InstanceId")]
 			public string InstanceId
 			{
 				get
@@ -88,6 +92,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "Currency")]
 			public string Currency
 			{
 				get
@@ -100,6 +105,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "Fee")]
 			public string Fee
 			{
 				get

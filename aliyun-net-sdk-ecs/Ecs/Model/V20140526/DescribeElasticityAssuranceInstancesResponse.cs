@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeElasticityAssuranceInstancesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private int? maxResults;
+		private string requestId;
 
 		private int? totalCount;
 
-		private List<DescribeElasticityAssuranceInstances_InstanceIdSet> elasticityAssuranceItem;
+		private int? maxResults;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeElasticityAssuranceInstances_InstanceIdSet> elasticityAssuranceItem;
 
 		public string NextToken
 		{
@@ -59,15 +47,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? MaxResults
+		public string RequestId
 		{
 			get
 			{
-				return maxResults;
+				return requestId;
 			}
 			set	
 			{
-				maxResults = value;
+				requestId = value;
 			}
 		}
 
@@ -80,6 +68,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
 			}
 		}
 

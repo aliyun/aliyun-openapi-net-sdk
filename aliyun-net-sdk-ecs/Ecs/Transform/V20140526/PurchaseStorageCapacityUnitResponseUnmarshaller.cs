@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			PurchaseStorageCapacityUnitResponse purchaseStorageCapacityUnitResponse = new PurchaseStorageCapacityUnitResponse();
 
 			purchaseStorageCapacityUnitResponse.HttpResponse = _ctx.HttpResponse;
-			purchaseStorageCapacityUnitResponse.RequestId = _ctx.StringValue("PurchaseStorageCapacityUnit.RequestId");
 			purchaseStorageCapacityUnitResponse.OrderId = _ctx.StringValue("PurchaseStorageCapacityUnit.OrderId");
+			purchaseStorageCapacityUnitResponse.RequestId = _ctx.StringValue("PurchaseStorageCapacityUnit.RequestId");
 
 			List<string> purchaseStorageCapacityUnitResponse_storageCapacityUnitIds = new List<string>();
 			for (int i = 0; i < _ctx.Length("PurchaseStorageCapacityUnit.StorageCapacityUnitIds.Length"); i++) {

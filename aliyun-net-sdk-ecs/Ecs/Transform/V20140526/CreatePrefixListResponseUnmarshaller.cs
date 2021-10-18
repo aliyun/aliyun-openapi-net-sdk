@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreatePrefixListResponse createPrefixListResponse = new CreatePrefixListResponse();
 
 			createPrefixListResponse.HttpResponse = _ctx.HttpResponse;
-			createPrefixListResponse.RequestId = _ctx.StringValue("CreatePrefixList.RequestId");
 			createPrefixListResponse.PrefixListId = _ctx.StringValue("CreatePrefixList.PrefixListId");
+			createPrefixListResponse.RequestId = _ctx.StringValue("CreatePrefixList.RequestId");
         
 			return createPrefixListResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeManagedInstancesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private long? pageSize;
 
-		private long? totalCount;
+		private string requestId;
 
 		private long? pageNumber;
 
-		private long? pageSize;
+		private long? totalCount;
 
 		private List<DescribeManagedInstances_Instance> instances;
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public long? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? PageSize
+		public long? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,67 +98,67 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeManagedInstances_Instance
 		{
 
-			private string instanceId;
+			private string lastInvokedTime;
 
-			private string instanceName;
+			private bool? connected;
 
-			private string activationId;
+			private string internetIp;
 
 			private string hostname;
 
-			private string machineId;
+			private string instanceId;
 
-			private string osType;
-
-			private string osVersion;
+			private string activationId;
 
 			private string intranetIp;
-
-			private string internetIp;
 
 			private string agentVersion;
 
 			private string registrationTime;
 
+			private string instanceName;
+
+			private string osType;
+
+			private string osVersion;
+
 			private long? invocationCount;
 
-			private string lastInvokedTime;
+			private string machineId;
 
-			private bool? connected;
-
-			public string InstanceId
+			public string LastInvokedTime
 			{
 				get
 				{
-					return instanceId;
+					return lastInvokedTime;
 				}
 				set	
 				{
-					instanceId = value;
+					lastInvokedTime = value;
 				}
 			}
 
-			public string InstanceName
+			public bool? Connected
 			{
 				get
 				{
-					return instanceName;
+					return connected;
 				}
 				set	
 				{
-					instanceName = value;
+					connected = value;
 				}
 			}
 
-			public string ActivationId
+			public string InternetIp
 			{
 				get
 				{
-					return activationId;
+					return internetIp;
 				}
 				set	
 				{
-					activationId = value;
+					internetIp = value;
 				}
 			}
 
@@ -174,39 +174,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string MachineId
+			public string InstanceId
 			{
 				get
 				{
-					return machineId;
+					return instanceId;
 				}
 				set	
 				{
-					machineId = value;
+					instanceId = value;
 				}
 			}
 
-			public string OsType
+			public string ActivationId
 			{
 				get
 				{
-					return osType;
+					return activationId;
 				}
 				set	
 				{
-					osType = value;
-				}
-			}
-
-			public string OsVersion
-			{
-				get
-				{
-					return osVersion;
-				}
-				set	
-				{
-					osVersion = value;
+					activationId = value;
 				}
 			}
 
@@ -219,18 +207,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					intranetIp = value;
-				}
-			}
-
-			public string InternetIp
-			{
-				get
-				{
-					return internetIp;
-				}
-				set	
-				{
-					internetIp = value;
 				}
 			}
 
@@ -258,6 +234,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string OsType
+			{
+				get
+				{
+					return osType;
+				}
+				set	
+				{
+					osType = value;
+				}
+			}
+
+			public string OsVersion
+			{
+				get
+				{
+					return osVersion;
+				}
+				set	
+				{
+					osVersion = value;
+				}
+			}
+
 			public long? InvocationCount
 			{
 				get
@@ -270,27 +282,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string LastInvokedTime
+			public string MachineId
 			{
 				get
 				{
-					return lastInvokedTime;
+					return machineId;
 				}
 				set	
 				{
-					lastInvokedTime = value;
-				}
-			}
-
-			public bool? Connected
-			{
-				get
-				{
-					return connected;
-				}
-				set	
-				{
-					connected = value;
+					machineId = value;
 				}
 			}
 		}

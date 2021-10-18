@@ -31,19 +31,19 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribePrefixListsResponse describePrefixListsResponse = new DescribePrefixListsResponse();
 
 			describePrefixListsResponse.HttpResponse = _ctx.HttpResponse;
-			describePrefixListsResponse.RequestId = _ctx.StringValue("DescribePrefixLists.RequestId");
 			describePrefixListsResponse.NextToken = _ctx.StringValue("DescribePrefixLists.NextToken");
+			describePrefixListsResponse.RequestId = _ctx.StringValue("DescribePrefixLists.RequestId");
 
 			List<DescribePrefixListsResponse.DescribePrefixLists_PrefixList> describePrefixListsResponse_prefixLists = new List<DescribePrefixListsResponse.DescribePrefixLists_PrefixList>();
 			for (int i = 0; i < _ctx.Length("DescribePrefixLists.PrefixLists.Length"); i++) {
 				DescribePrefixListsResponse.DescribePrefixLists_PrefixList prefixList = new DescribePrefixListsResponse.DescribePrefixLists_PrefixList();
-				prefixList.PrefixListId = _ctx.StringValue("DescribePrefixLists.PrefixLists["+ i +"].PrefixListId");
-				prefixList.PrefixListName = _ctx.StringValue("DescribePrefixLists.PrefixLists["+ i +"].PrefixListName");
-				prefixList.AddressFamily = _ctx.StringValue("DescribePrefixLists.PrefixLists["+ i +"].AddressFamily");
-				prefixList.MaxEntries = _ctx.IntegerValue("DescribePrefixLists.PrefixLists["+ i +"].MaxEntries");
-				prefixList.Description = _ctx.StringValue("DescribePrefixLists.PrefixLists["+ i +"].Description");
 				prefixList.CreationTime = _ctx.StringValue("DescribePrefixLists.PrefixLists["+ i +"].CreationTime");
 				prefixList.AssociationCount = _ctx.IntegerValue("DescribePrefixLists.PrefixLists["+ i +"].AssociationCount");
+				prefixList.MaxEntries = _ctx.IntegerValue("DescribePrefixLists.PrefixLists["+ i +"].MaxEntries");
+				prefixList.Description = _ctx.StringValue("DescribePrefixLists.PrefixLists["+ i +"].Description");
+				prefixList.AddressFamily = _ctx.StringValue("DescribePrefixLists.PrefixLists["+ i +"].AddressFamily");
+				prefixList.PrefixListName = _ctx.StringValue("DescribePrefixLists.PrefixLists["+ i +"].PrefixListName");
+				prefixList.PrefixListId = _ctx.StringValue("DescribePrefixLists.PrefixLists["+ i +"].PrefixListId");
 
 				describePrefixListsResponse_prefixLists.Add(prefixList);
 			}

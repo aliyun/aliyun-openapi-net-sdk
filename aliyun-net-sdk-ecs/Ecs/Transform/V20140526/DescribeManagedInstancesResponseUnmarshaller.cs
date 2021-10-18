@@ -31,28 +31,28 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeManagedInstancesResponse describeManagedInstancesResponse = new DescribeManagedInstancesResponse();
 
 			describeManagedInstancesResponse.HttpResponse = _ctx.HttpResponse;
-			describeManagedInstancesResponse.RequestId = _ctx.StringValue("DescribeManagedInstances.RequestId");
-			describeManagedInstancesResponse.TotalCount = _ctx.LongValue("DescribeManagedInstances.TotalCount");
-			describeManagedInstancesResponse.PageNumber = _ctx.LongValue("DescribeManagedInstances.PageNumber");
 			describeManagedInstancesResponse.PageSize = _ctx.LongValue("DescribeManagedInstances.PageSize");
+			describeManagedInstancesResponse.RequestId = _ctx.StringValue("DescribeManagedInstances.RequestId");
+			describeManagedInstancesResponse.PageNumber = _ctx.LongValue("DescribeManagedInstances.PageNumber");
+			describeManagedInstancesResponse.TotalCount = _ctx.LongValue("DescribeManagedInstances.TotalCount");
 
 			List<DescribeManagedInstancesResponse.DescribeManagedInstances_Instance> describeManagedInstancesResponse_instances = new List<DescribeManagedInstancesResponse.DescribeManagedInstances_Instance>();
 			for (int i = 0; i < _ctx.Length("DescribeManagedInstances.Instances.Length"); i++) {
 				DescribeManagedInstancesResponse.DescribeManagedInstances_Instance instance = new DescribeManagedInstancesResponse.DescribeManagedInstances_Instance();
-				instance.InstanceId = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].InstanceId");
-				instance.InstanceName = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].InstanceName");
-				instance.ActivationId = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].ActivationId");
-				instance.Hostname = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].Hostname");
-				instance.MachineId = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].MachineId");
-				instance.OsType = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].OsType");
-				instance.OsVersion = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].OsVersion");
-				instance.IntranetIp = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].IntranetIp");
-				instance.InternetIp = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].InternetIp");
-				instance.AgentVersion = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].AgentVersion");
-				instance.RegistrationTime = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].RegistrationTime");
-				instance.InvocationCount = _ctx.LongValue("DescribeManagedInstances.Instances["+ i +"].InvocationCount");
 				instance.LastInvokedTime = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].LastInvokedTime");
 				instance.Connected = _ctx.BooleanValue("DescribeManagedInstances.Instances["+ i +"].Connected");
+				instance.InternetIp = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].InternetIp");
+				instance.Hostname = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].Hostname");
+				instance.InstanceId = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].InstanceId");
+				instance.ActivationId = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].ActivationId");
+				instance.IntranetIp = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].IntranetIp");
+				instance.AgentVersion = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].AgentVersion");
+				instance.RegistrationTime = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].RegistrationTime");
+				instance.InstanceName = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].InstanceName");
+				instance.OsType = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].OsType");
+				instance.OsVersion = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].OsVersion");
+				instance.InvocationCount = _ctx.LongValue("DescribeManagedInstances.Instances["+ i +"].InvocationCount");
+				instance.MachineId = _ctx.StringValue("DescribeManagedInstances.Instances["+ i +"].MachineId");
 
 				describeManagedInstancesResponse_instances.Add(instance);
 			}

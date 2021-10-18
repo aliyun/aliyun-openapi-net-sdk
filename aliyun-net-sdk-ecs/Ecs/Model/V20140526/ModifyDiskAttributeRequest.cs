@@ -63,6 +63,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -76,6 +77,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -89,6 +91,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "DiskName")]
 		public string DiskName
 		{
 			get
@@ -102,6 +105,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "DeleteAutoSnapshot")]
 		public bool? DeleteAutoSnapshot
 		{
 			get
@@ -115,6 +119,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "DiskIds")]
 		public List<string> DiskIdss
 		{
 			get
@@ -125,13 +130,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				diskIdss = value;
-				for (int i = 0; i < diskIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DiskIds." + (i + 1) , diskIdss[i]);
-				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "DiskId")]
 		public string DiskId
 		{
 			get
@@ -145,6 +147,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "DeleteWithInstance")]
 		public bool? DeleteWithInstance
 		{
 			get
@@ -158,6 +161,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "EnableAutoSnapshot")]
 		public bool? EnableAutoSnapshot
 		{
 			get
@@ -171,6 +175,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -184,6 +189,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -197,6 +203,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get

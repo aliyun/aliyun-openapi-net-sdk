@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,17 +25,41 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeDemandsResponse : AcsResponse
 	{
 
+		private int? pageSize;
+
+		private int? pageNumber;
+
 		private string requestId;
 
 		private int? totalCount;
 
-		private int? pageNumber;
-
-		private int? pageSize;
-
 		private string regionId;
 
 		private List<DescribeDemands_Demand> demands;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -58,30 +82,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				totalCount = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
 			}
 		}
 
@@ -112,103 +112,43 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeDemands_Demand
 		{
 
-			private string zoneId;
-
-			private string demandTime;
-
-			private string instanceTypeFamily;
-
-			private string demandId;
-
-			private string demandName;
-
 			private string comment;
 
 			private string demandDescription;
 
+			private string demandId;
+
+			private string demandTime;
+
 			private string instanceType;
 
-			private string instanceChargeType;
+			private string demandName;
 
 			private int? period;
 
-			private string periodUnit;
-
-			private string startTime;
-
-			private string endTime;
-
-			private string demandStatus;
-
-			private int? totalAmount;
+			private string instanceChargeType;
 
 			private int? availableAmount;
 
+			private string endTime;
+
+			private string startTime;
+
+			private string periodUnit;
+
+			private string zoneId;
+
 			private int? usedAmount;
+
+			private int? totalAmount;
 
 			private int? deliveringAmount;
 
+			private string instanceTypeFamily;
+
+			private string demandStatus;
+
 			private List<DescribeDemands_SupplyInfo> supplyInfos;
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public string DemandTime
-			{
-				get
-				{
-					return demandTime;
-				}
-				set	
-				{
-					demandTime = value;
-				}
-			}
-
-			public string InstanceTypeFamily
-			{
-				get
-				{
-					return instanceTypeFamily;
-				}
-				set	
-				{
-					instanceTypeFamily = value;
-				}
-			}
-
-			public string DemandId
-			{
-				get
-				{
-					return demandId;
-				}
-				set	
-				{
-					demandId = value;
-				}
-			}
-
-			public string DemandName
-			{
-				get
-				{
-					return demandName;
-				}
-				set	
-				{
-					demandName = value;
-				}
-			}
 
 			public string Comment
 			{
@@ -234,6 +174,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string DemandId
+			{
+				get
+				{
+					return demandId;
+				}
+				set	
+				{
+					demandId = value;
+				}
+			}
+
+			public string DemandTime
+			{
+				get
+				{
+					return demandTime;
+				}
+				set	
+				{
+					demandTime = value;
+				}
+			}
+
 			public string InstanceType
 			{
 				get
@@ -246,15 +210,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string InstanceChargeType
+			public string DemandName
 			{
 				get
 				{
-					return instanceChargeType;
+					return demandName;
 				}
 				set	
 				{
-					instanceChargeType = value;
+					demandName = value;
 				}
 			}
 
@@ -270,63 +234,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string PeriodUnit
+			public string InstanceChargeType
 			{
 				get
 				{
-					return periodUnit;
+					return instanceChargeType;
 				}
 				set	
 				{
-					periodUnit = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
-
-			public string DemandStatus
-			{
-				get
-				{
-					return demandStatus;
-				}
-				set	
-				{
-					demandStatus = value;
-				}
-			}
-
-			public int? TotalAmount
-			{
-				get
-				{
-					return totalAmount;
-				}
-				set	
-				{
-					totalAmount = value;
+					instanceChargeType = value;
 				}
 			}
 
@@ -342,6 +258,54 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			public string PeriodUnit
+			{
+				get
+				{
+					return periodUnit;
+				}
+				set	
+				{
+					periodUnit = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
 			public int? UsedAmount
 			{
 				get
@@ -354,6 +318,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public int? TotalAmount
+			{
+				get
+				{
+					return totalAmount;
+				}
+				set	
+				{
+					totalAmount = value;
+				}
+			}
+
 			public int? DeliveringAmount
 			{
 				get
@@ -363,6 +339,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					deliveringAmount = value;
+				}
+			}
+
+			public string InstanceTypeFamily
+			{
+				get
+				{
+					return instanceTypeFamily;
+				}
+				set	
+				{
+					instanceTypeFamily = value;
+				}
+			}
+
+			public string DemandStatus
+			{
+				get
+				{
+					return demandStatus;
+				}
+				set	
+				{
+					demandStatus = value;
 				}
 			}
 

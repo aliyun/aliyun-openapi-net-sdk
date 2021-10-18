@@ -43,7 +43,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private List<MaintenanceWindow> maintenanceWindows = new List<MaintenanceWindow>(){ };
+		private List<string> maintenanceWindows = new List<string>(){ };
 
 		private string actionOnMaintenance;
 
@@ -53,10 +53,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private List<string> instanceIds = new List<string>(){ };
-
 		private bool? notifyOnMaintenance;
 
+		private List<string> instanceIds = new List<string>(){ };
+
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -70,7 +71,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<MaintenanceWindow> MaintenanceWindows
+		[JsonProperty(PropertyName = "MaintenanceWindow")]
+		public List<string> MaintenanceWindows
 		{
 			get
 			{
@@ -80,14 +82,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				maintenanceWindows = value;
-				for (int i = 0; i < maintenanceWindows.Count; i++)
+				if(maintenanceWindows != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"MaintenanceWindow." + (i + 1) + ".StartTime", maintenanceWindows[i].StartTime);
-					DictionaryUtil.Add(QueryParameters,"MaintenanceWindow." + (i + 1) + ".EndTime", maintenanceWindows[i].EndTime);
+					for (int depth1 = 0; depth1 < maintenanceWindows.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"MaintenanceWindow." + (depth1 + 1), maintenanceWindows[depth1]);
+						DictionaryUtil.Add(QueryParameters,"MaintenanceWindow." + (depth1 + 1), maintenanceWindows[depth1]);
+					}
 				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "ActionOnMaintenance")]
 		public string ActionOnMaintenance
 		{
 			get
@@ -101,6 +107,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -114,6 +121,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -127,6 +135,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -140,23 +149,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<string> InstanceIds
-		{
-			get
-			{
-				return instanceIds;
-			}
-
-			set
-			{
-				instanceIds = value;
-				for (int i = 0; i < instanceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
-				}
-			}
-		}
-
+		[JsonProperty(PropertyName = "NotifyOnMaintenance")]
 		public bool? NotifyOnMaintenance
 		{
 			get
@@ -170,25 +163,28 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceId")]
+		public List<string> InstanceIds
+		{
+			get
+			{
+				return instanceIds;
+			}
+
+			set
+			{
+				instanceIds = value;
+			}
+		}
+
 		public class MaintenanceWindow
 		{
 
-			private string startTime;
-
 			private string endTime;
 
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
+			private string startTime;
 
+			[JsonProperty(PropertyName = "EndTime")]
 			public string EndTime
 			{
 				get
@@ -198,6 +194,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					endTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StartTime")]
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
 				}
 			}
 		}

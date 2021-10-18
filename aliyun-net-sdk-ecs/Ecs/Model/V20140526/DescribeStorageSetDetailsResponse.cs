@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeStorageSetDetailsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeStorageSetDetails_Disk> disks;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,31 +98,31 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeStorageSetDetails_Disk
 		{
 
-			private string diskId;
+			private string creationTime;
 
 			private string diskName;
 
-			private string category;
+			private string zoneId;
 
 			private string storageSetId;
 
-			private string creationTime;
+			private string diskId;
+
+			private string category;
 
 			private int? storageSetPartitionNumber;
 
 			private string regionId;
 
-			private string zoneId;
-
-			public string DiskId
+			public string CreationTime
 			{
 				get
 				{
-					return diskId;
+					return creationTime;
 				}
 				set	
 				{
-					diskId = value;
+					creationTime = value;
 				}
 			}
 
@@ -138,15 +138,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Category
+			public string ZoneId
 			{
 				get
 				{
-					return category;
+					return zoneId;
 				}
 				set	
 				{
-					category = value;
+					zoneId = value;
 				}
 			}
 
@@ -162,15 +162,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string CreationTime
+			public string DiskId
 			{
 				get
 				{
-					return creationTime;
+					return diskId;
 				}
 				set	
 				{
-					creationTime = value;
+					diskId = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
 				}
 			}
 
@@ -195,18 +207,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					regionId = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
 				}
 			}
 		}

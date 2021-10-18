@@ -32,16 +32,16 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 
 			describeImageSupportInstanceTypesResponse.HttpResponse = _ctx.HttpResponse;
 			describeImageSupportInstanceTypesResponse.RequestId = _ctx.StringValue("DescribeImageSupportInstanceTypes.RequestId");
-			describeImageSupportInstanceTypesResponse.RegionId = _ctx.StringValue("DescribeImageSupportInstanceTypes.RegionId");
 			describeImageSupportInstanceTypesResponse.ImageId = _ctx.StringValue("DescribeImageSupportInstanceTypes.ImageId");
+			describeImageSupportInstanceTypesResponse.RegionId = _ctx.StringValue("DescribeImageSupportInstanceTypes.RegionId");
 
 			List<DescribeImageSupportInstanceTypesResponse.DescribeImageSupportInstanceTypes_InstanceType> describeImageSupportInstanceTypesResponse_instanceTypes = new List<DescribeImageSupportInstanceTypesResponse.DescribeImageSupportInstanceTypes_InstanceType>();
 			for (int i = 0; i < _ctx.Length("DescribeImageSupportInstanceTypes.InstanceTypes.Length"); i++) {
 				DescribeImageSupportInstanceTypesResponse.DescribeImageSupportInstanceTypes_InstanceType instanceType = new DescribeImageSupportInstanceTypesResponse.DescribeImageSupportInstanceTypes_InstanceType();
 				instanceType.InstanceTypeId = _ctx.StringValue("DescribeImageSupportInstanceTypes.InstanceTypes["+ i +"].InstanceTypeId");
+				instanceType.InstanceTypeFamily = _ctx.StringValue("DescribeImageSupportInstanceTypes.InstanceTypes["+ i +"].InstanceTypeFamily");
 				instanceType.CpuCoreCount = _ctx.IntegerValue("DescribeImageSupportInstanceTypes.InstanceTypes["+ i +"].CpuCoreCount");
 				instanceType.MemorySize = _ctx.FloatValue("DescribeImageSupportInstanceTypes.InstanceTypes["+ i +"].MemorySize");
-				instanceType.InstanceTypeFamily = _ctx.StringValue("DescribeImageSupportInstanceTypes.InstanceTypes["+ i +"].InstanceTypeFamily");
 
 				describeImageSupportInstanceTypesResponse_instanceTypes.Add(instanceType);
 			}

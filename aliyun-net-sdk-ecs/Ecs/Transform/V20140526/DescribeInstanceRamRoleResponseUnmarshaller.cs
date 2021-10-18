@@ -32,14 +32,14 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 
 			describeInstanceRamRoleResponse.HttpResponse = _ctx.HttpResponse;
 			describeInstanceRamRoleResponse.RequestId = _ctx.StringValue("DescribeInstanceRamRole.RequestId");
-			describeInstanceRamRoleResponse.RegionId = _ctx.StringValue("DescribeInstanceRamRole.RegionId");
 			describeInstanceRamRoleResponse.TotalCount = _ctx.IntegerValue("DescribeInstanceRamRole.TotalCount");
+			describeInstanceRamRoleResponse.RegionId = _ctx.StringValue("DescribeInstanceRamRole.RegionId");
 
 			List<DescribeInstanceRamRoleResponse.DescribeInstanceRamRole_InstanceRamRoleSet> describeInstanceRamRoleResponse_instanceRamRoleSets = new List<DescribeInstanceRamRoleResponse.DescribeInstanceRamRole_InstanceRamRoleSet>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceRamRole.InstanceRamRoleSets.Length"); i++) {
 				DescribeInstanceRamRoleResponse.DescribeInstanceRamRole_InstanceRamRoleSet instanceRamRoleSet = new DescribeInstanceRamRoleResponse.DescribeInstanceRamRole_InstanceRamRoleSet();
-				instanceRamRoleSet.InstanceId = _ctx.StringValue("DescribeInstanceRamRole.InstanceRamRoleSets["+ i +"].InstanceId");
 				instanceRamRoleSet.RamRoleName = _ctx.StringValue("DescribeInstanceRamRole.InstanceRamRoleSets["+ i +"].RamRoleName");
+				instanceRamRoleSet.InstanceId = _ctx.StringValue("DescribeInstanceRamRole.InstanceRamRoleSets["+ i +"].InstanceId");
 
 				describeInstanceRamRoleResponse_instanceRamRoleSets.Add(instanceRamRoleSet);
 			}

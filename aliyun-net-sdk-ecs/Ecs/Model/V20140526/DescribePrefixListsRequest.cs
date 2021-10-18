@@ -42,9 +42,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private List<string> prefixListIds = new List<string>(){ };
-
 		private string nextToken;
+
+		private List<string> prefixListIds = new List<string>(){ };
 
 		private string addressFamily;
 
@@ -71,23 +71,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<string> PrefixListIds
-		{
-			get
-			{
-				return prefixListIds;
-			}
-
-			set
-			{
-				prefixListIds = value;
-				for (int i = 0; i < prefixListIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"PrefixListId." + (i + 1) , prefixListIds[i]);
-				}
-			}
-		}
-
 		public string NextToken
 		{
 			get
@@ -98,6 +81,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				nextToken = value;
 				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+			}
+		}
+
+		public List<string> PrefixListIds
+		{
+			get
+			{
+				return prefixListIds;
+			}
+
+			set
+			{
+				prefixListIds = value;
 			}
 		}
 

@@ -31,24 +31,34 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeStorageCapacityUnitsResponse describeStorageCapacityUnitsResponse = new DescribeStorageCapacityUnitsResponse();
 
 			describeStorageCapacityUnitsResponse.HttpResponse = _ctx.HttpResponse;
-			describeStorageCapacityUnitsResponse.RequestId = _ctx.StringValue("DescribeStorageCapacityUnits.RequestId");
-			describeStorageCapacityUnitsResponse.TotalCount = _ctx.IntegerValue("DescribeStorageCapacityUnits.TotalCount");
-			describeStorageCapacityUnitsResponse.PageNumber = _ctx.IntegerValue("DescribeStorageCapacityUnits.PageNumber");
 			describeStorageCapacityUnitsResponse.PageSize = _ctx.IntegerValue("DescribeStorageCapacityUnits.PageSize");
+			describeStorageCapacityUnitsResponse.RequestId = _ctx.StringValue("DescribeStorageCapacityUnits.RequestId");
+			describeStorageCapacityUnitsResponse.PageNumber = _ctx.IntegerValue("DescribeStorageCapacityUnits.PageNumber");
+			describeStorageCapacityUnitsResponse.TotalCount = _ctx.IntegerValue("DescribeStorageCapacityUnits.TotalCount");
 
 			List<DescribeStorageCapacityUnitsResponse.DescribeStorageCapacityUnits_StorageCapacityUnit> describeStorageCapacityUnitsResponse_storageCapacityUnits = new List<DescribeStorageCapacityUnitsResponse.DescribeStorageCapacityUnits_StorageCapacityUnit>();
 			for (int i = 0; i < _ctx.Length("DescribeStorageCapacityUnits.StorageCapacityUnits.Length"); i++) {
 				DescribeStorageCapacityUnitsResponse.DescribeStorageCapacityUnits_StorageCapacityUnit storageCapacityUnit = new DescribeStorageCapacityUnitsResponse.DescribeStorageCapacityUnits_StorageCapacityUnit();
-				storageCapacityUnit.RegionId = _ctx.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].RegionId");
-				storageCapacityUnit.StorageCapacityUnitId = _ctx.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].StorageCapacityUnitId");
-				storageCapacityUnit.Name = _ctx.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].Name");
-				storageCapacityUnit.Capacity = _ctx.IntegerValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].Capacity");
-				storageCapacityUnit.Status = _ctx.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].Status");
 				storageCapacityUnit.CreationTime = _ctx.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].CreationTime");
-				storageCapacityUnit.ExpiredTime = _ctx.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].ExpiredTime");
+				storageCapacityUnit.Status = _ctx.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].Status");
 				storageCapacityUnit.StartTime = _ctx.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].StartTime");
+				storageCapacityUnit.Capacity = _ctx.IntegerValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].Capacity");
 				storageCapacityUnit.Description = _ctx.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].Description");
 				storageCapacityUnit.AllocationStatus = _ctx.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].AllocationStatus");
+				storageCapacityUnit.ExpiredTime = _ctx.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].ExpiredTime");
+				storageCapacityUnit.StorageCapacityUnitId = _ctx.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].StorageCapacityUnitId");
+				storageCapacityUnit.Name = _ctx.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].Name");
+				storageCapacityUnit.RegionId = _ctx.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].RegionId");
+
+				List<DescribeStorageCapacityUnitsResponse.DescribeStorageCapacityUnits_StorageCapacityUnit.DescribeStorageCapacityUnits_Tag> storageCapacityUnit_tags = new List<DescribeStorageCapacityUnitsResponse.DescribeStorageCapacityUnits_StorageCapacityUnit.DescribeStorageCapacityUnits_Tag>();
+				for (int j = 0; j < _ctx.Length("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].Tags.Length"); j++) {
+					DescribeStorageCapacityUnitsResponse.DescribeStorageCapacityUnits_StorageCapacityUnit.DescribeStorageCapacityUnits_Tag tag = new DescribeStorageCapacityUnitsResponse.DescribeStorageCapacityUnits_StorageCapacityUnit.DescribeStorageCapacityUnits_Tag();
+					tag.TagValue = _ctx.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].Tags["+ j +"].TagValue");
+					tag.TagKey = _ctx.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].Tags["+ j +"].TagKey");
+
+					storageCapacityUnit_tags.Add(tag);
+				}
+				storageCapacityUnit.Tags = storageCapacityUnit_tags;
 
 				describeStorageCapacityUnitsResponse_storageCapacityUnits.Add(storageCapacityUnit);
 			}

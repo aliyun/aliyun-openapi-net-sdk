@@ -105,10 +105,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				networkInterfacePermissionIds = value;
-				for (int i = 0; i < networkInterfacePermissionIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"NetworkInterfacePermissionId." + (i + 1) , networkInterfacePermissionIds[i]);
-				}
 			}
 		}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<ResetDisks_OperationProgress> operationProgressSet;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OperationProgressSet")]
 		public List<ResetDisks_OperationProgress> OperationProgressSet
 		{
 			get
@@ -64,6 +66,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private List<ResetDisks_RelatedItem> relatedItemSet;
 
+			[JsonProperty(PropertyName = "ErrorMsg")]
 			public string ErrorMsg
 			{
 				get
@@ -76,6 +79,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "ErrorCode")]
 			public string ErrorCode
 			{
 				get
@@ -88,6 +92,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "OperationStatus")]
 			public string OperationStatus
 			{
 				get
@@ -100,6 +105,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "RelatedItemSet")]
 			public List<ResetDisks_RelatedItem> RelatedItemSet
 			{
 				get
@@ -119,6 +125,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string _value;
 
+				[JsonProperty(PropertyName = "Name")]
 				public string Name
 				{
 					get
@@ -131,6 +138,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
+				[JsonProperty(PropertyName = "_Value")]
 				public string _Value
 				{
 					get

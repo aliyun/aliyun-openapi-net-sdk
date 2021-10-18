@@ -31,21 +31,21 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeStorageSetsResponse describeStorageSetsResponse = new DescribeStorageSetsResponse();
 
 			describeStorageSetsResponse.HttpResponse = _ctx.HttpResponse;
-			describeStorageSetsResponse.RequestId = _ctx.StringValue("DescribeStorageSets.RequestId");
-			describeStorageSetsResponse.TotalCount = _ctx.IntegerValue("DescribeStorageSets.TotalCount");
-			describeStorageSetsResponse.PageNumber = _ctx.IntegerValue("DescribeStorageSets.PageNumber");
 			describeStorageSetsResponse.PageSize = _ctx.IntegerValue("DescribeStorageSets.PageSize");
+			describeStorageSetsResponse.RequestId = _ctx.StringValue("DescribeStorageSets.RequestId");
+			describeStorageSetsResponse.PageNumber = _ctx.IntegerValue("DescribeStorageSets.PageNumber");
+			describeStorageSetsResponse.TotalCount = _ctx.IntegerValue("DescribeStorageSets.TotalCount");
 
 			List<DescribeStorageSetsResponse.DescribeStorageSets_StorageSet> describeStorageSetsResponse_storageSets = new List<DescribeStorageSetsResponse.DescribeStorageSets_StorageSet>();
 			for (int i = 0; i < _ctx.Length("DescribeStorageSets.StorageSets.Length"); i++) {
 				DescribeStorageSetsResponse.DescribeStorageSets_StorageSet storageSet = new DescribeStorageSetsResponse.DescribeStorageSets_StorageSet();
-				storageSet.StorageSetId = _ctx.StringValue("DescribeStorageSets.StorageSets["+ i +"].StorageSetId");
 				storageSet.CreationTime = _ctx.StringValue("DescribeStorageSets.StorageSets["+ i +"].CreationTime");
-				storageSet.StorageSetName = _ctx.StringValue("DescribeStorageSets.StorageSets["+ i +"].StorageSetName");
 				storageSet.Description = _ctx.StringValue("DescribeStorageSets.StorageSets["+ i +"].Description");
-				storageSet.StorageSetPartitionNumber = _ctx.IntegerValue("DescribeStorageSets.StorageSets["+ i +"].StorageSetPartitionNumber");
-				storageSet.RegionId = _ctx.StringValue("DescribeStorageSets.StorageSets["+ i +"].RegionId");
 				storageSet.ZoneId = _ctx.StringValue("DescribeStorageSets.StorageSets["+ i +"].ZoneId");
+				storageSet.StorageSetId = _ctx.StringValue("DescribeStorageSets.StorageSets["+ i +"].StorageSetId");
+				storageSet.StorageSetPartitionNumber = _ctx.IntegerValue("DescribeStorageSets.StorageSets["+ i +"].StorageSetPartitionNumber");
+				storageSet.StorageSetName = _ctx.StringValue("DescribeStorageSets.StorageSets["+ i +"].StorageSetName");
+				storageSet.RegionId = _ctx.StringValue("DescribeStorageSets.StorageSets["+ i +"].RegionId");
 
 				describeStorageSetsResponse_storageSets.Add(storageSet);
 			}

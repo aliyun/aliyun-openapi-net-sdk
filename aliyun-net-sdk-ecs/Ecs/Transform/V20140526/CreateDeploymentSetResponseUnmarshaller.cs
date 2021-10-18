@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateDeploymentSetResponse createDeploymentSetResponse = new CreateDeploymentSetResponse();
 
 			createDeploymentSetResponse.HttpResponse = _ctx.HttpResponse;
-			createDeploymentSetResponse.RequestId = _ctx.StringValue("CreateDeploymentSet.RequestId");
 			createDeploymentSetResponse.DeploymentSetId = _ctx.StringValue("CreateDeploymentSet.DeploymentSetId");
+			createDeploymentSetResponse.RequestId = _ctx.StringValue("CreateDeploymentSet.RequestId");
         
 			return createDeploymentSetResponse;
         }

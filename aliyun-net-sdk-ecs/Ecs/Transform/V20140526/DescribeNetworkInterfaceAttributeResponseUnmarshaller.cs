@@ -31,26 +31,26 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeNetworkInterfaceAttributeResponse describeNetworkInterfaceAttributeResponse = new DescribeNetworkInterfaceAttributeResponse();
 
 			describeNetworkInterfaceAttributeResponse.HttpResponse = _ctx.HttpResponse;
-			describeNetworkInterfaceAttributeResponse.RequestId = _ctx.StringValue("DescribeNetworkInterfaceAttribute.RequestId");
-			describeNetworkInterfaceAttributeResponse.NetworkInterfaceId = _ctx.StringValue("DescribeNetworkInterfaceAttribute.NetworkInterfaceId");
-			describeNetworkInterfaceAttributeResponse.Status = _ctx.StringValue("DescribeNetworkInterfaceAttribute.Status");
-			describeNetworkInterfaceAttributeResponse.Type = _ctx.StringValue("DescribeNetworkInterfaceAttribute.Type");
+			describeNetworkInterfaceAttributeResponse.CreationTime = _ctx.StringValue("DescribeNetworkInterfaceAttribute.CreationTime");
 			describeNetworkInterfaceAttributeResponse.VpcId = _ctx.StringValue("DescribeNetworkInterfaceAttribute.VpcId");
+			describeNetworkInterfaceAttributeResponse.Type = _ctx.StringValue("DescribeNetworkInterfaceAttribute.Type");
+			describeNetworkInterfaceAttributeResponse.Status = _ctx.StringValue("DescribeNetworkInterfaceAttribute.Status");
+			describeNetworkInterfaceAttributeResponse.NetworkInterfaceTrafficMode = _ctx.StringValue("DescribeNetworkInterfaceAttribute.NetworkInterfaceTrafficMode");
+			describeNetworkInterfaceAttributeResponse.NetworkInterfaceName = _ctx.StringValue("DescribeNetworkInterfaceAttribute.NetworkInterfaceName");
+			describeNetworkInterfaceAttributeResponse.MacAddress = _ctx.StringValue("DescribeNetworkInterfaceAttribute.MacAddress");
+			describeNetworkInterfaceAttributeResponse.QueuePairNumber = _ctx.IntegerValue("DescribeNetworkInterfaceAttribute.QueuePairNumber");
+			describeNetworkInterfaceAttributeResponse.NetworkInterfaceId = _ctx.StringValue("DescribeNetworkInterfaceAttribute.NetworkInterfaceId");
+			describeNetworkInterfaceAttributeResponse.ServiceID = _ctx.LongValue("DescribeNetworkInterfaceAttribute.ServiceID");
+			describeNetworkInterfaceAttributeResponse.InstanceId = _ctx.StringValue("DescribeNetworkInterfaceAttribute.InstanceId");
+			describeNetworkInterfaceAttributeResponse.OwnerId = _ctx.StringValue("DescribeNetworkInterfaceAttribute.OwnerId");
+			describeNetworkInterfaceAttributeResponse.ServiceManaged = _ctx.BooleanValue("DescribeNetworkInterfaceAttribute.ServiceManaged");
 			describeNetworkInterfaceAttributeResponse.VSwitchId = _ctx.StringValue("DescribeNetworkInterfaceAttribute.VSwitchId");
+			describeNetworkInterfaceAttributeResponse.RequestId = _ctx.StringValue("DescribeNetworkInterfaceAttribute.RequestId");
+			describeNetworkInterfaceAttributeResponse.Description = _ctx.StringValue("DescribeNetworkInterfaceAttribute.Description");
+			describeNetworkInterfaceAttributeResponse.ResourceGroupId = _ctx.StringValue("DescribeNetworkInterfaceAttribute.ResourceGroupId");
 			describeNetworkInterfaceAttributeResponse.ZoneId = _ctx.StringValue("DescribeNetworkInterfaceAttribute.ZoneId");
 			describeNetworkInterfaceAttributeResponse.PrivateIpAddress = _ctx.StringValue("DescribeNetworkInterfaceAttribute.PrivateIpAddress");
-			describeNetworkInterfaceAttributeResponse.MacAddress = _ctx.StringValue("DescribeNetworkInterfaceAttribute.MacAddress");
-			describeNetworkInterfaceAttributeResponse.NetworkInterfaceName = _ctx.StringValue("DescribeNetworkInterfaceAttribute.NetworkInterfaceName");
-			describeNetworkInterfaceAttributeResponse.Description = _ctx.StringValue("DescribeNetworkInterfaceAttribute.Description");
-			describeNetworkInterfaceAttributeResponse.InstanceId = _ctx.StringValue("DescribeNetworkInterfaceAttribute.InstanceId");
-			describeNetworkInterfaceAttributeResponse.CreationTime = _ctx.StringValue("DescribeNetworkInterfaceAttribute.CreationTime");
-			describeNetworkInterfaceAttributeResponse.ResourceGroupId = _ctx.StringValue("DescribeNetworkInterfaceAttribute.ResourceGroupId");
-			describeNetworkInterfaceAttributeResponse.ServiceID = _ctx.LongValue("DescribeNetworkInterfaceAttribute.ServiceID");
-			describeNetworkInterfaceAttributeResponse.ServiceManaged = _ctx.BooleanValue("DescribeNetworkInterfaceAttribute.ServiceManaged");
 			describeNetworkInterfaceAttributeResponse.QueueNumber = _ctx.IntegerValue("DescribeNetworkInterfaceAttribute.QueueNumber");
-			describeNetworkInterfaceAttributeResponse.OwnerId = _ctx.StringValue("DescribeNetworkInterfaceAttribute.OwnerId");
-			describeNetworkInterfaceAttributeResponse.NetworkInterfaceTrafficMode = _ctx.StringValue("DescribeNetworkInterfaceAttribute.NetworkInterfaceTrafficMode");
-			describeNetworkInterfaceAttributeResponse.QueuePairNumber = _ctx.IntegerValue("DescribeNetworkInterfaceAttribute.QueuePairNumber");
 
 			List<string> describeNetworkInterfaceAttributeResponse_securityGroupIds = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeNetworkInterfaceAttribute.SecurityGroupIds.Length"); i++) {
@@ -64,9 +64,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeNetworkInterfaceAttributeResponse.AssociatedPublicIp = associatedPublicIp;
 
 			DescribeNetworkInterfaceAttributeResponse.DescribeNetworkInterfaceAttribute_Attachment attachment = new DescribeNetworkInterfaceAttributeResponse.DescribeNetworkInterfaceAttribute_Attachment();
+			attachment.DeviceIndex = _ctx.IntegerValue("DescribeNetworkInterfaceAttribute.Attachment.DeviceIndex");
 			attachment.InstanceId = _ctx.StringValue("DescribeNetworkInterfaceAttribute.Attachment.InstanceId");
 			attachment.TrunkNetworkInterfaceId = _ctx.StringValue("DescribeNetworkInterfaceAttribute.Attachment.TrunkNetworkInterfaceId");
-			attachment.DeviceIndex = _ctx.IntegerValue("DescribeNetworkInterfaceAttribute.Attachment.DeviceIndex");
 
 			List<string> attachment_memberNetworkInterfaceIds = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeNetworkInterfaceAttribute.Attachment.MemberNetworkInterfaceIds.Length"); i++) {
@@ -102,8 +102,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DescribeNetworkInterfaceAttributeResponse.DescribeNetworkInterfaceAttribute_Tag> describeNetworkInterfaceAttributeResponse_tags = new List<DescribeNetworkInterfaceAttributeResponse.DescribeNetworkInterfaceAttribute_Tag>();
 			for (int i = 0; i < _ctx.Length("DescribeNetworkInterfaceAttribute.Tags.Length"); i++) {
 				DescribeNetworkInterfaceAttributeResponse.DescribeNetworkInterfaceAttribute_Tag tag = new DescribeNetworkInterfaceAttributeResponse.DescribeNetworkInterfaceAttribute_Tag();
-				tag.TagKey = _ctx.StringValue("DescribeNetworkInterfaceAttribute.Tags["+ i +"].TagKey");
 				tag.TagValue = _ctx.StringValue("DescribeNetworkInterfaceAttribute.Tags["+ i +"].TagValue");
+				tag.TagKey = _ctx.StringValue("DescribeNetworkInterfaceAttribute.Tags["+ i +"].TagKey");
 
 				describeNetworkInterfaceAttributeResponse_tags.Add(tag);
 			}

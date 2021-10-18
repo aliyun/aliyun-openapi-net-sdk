@@ -63,6 +63,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				image.IsSubscribed = _ctx.BooleanValue("DescribeImages.Images["+ i +"].IsSubscribed");
 				image.ProductCode = _ctx.StringValue("DescribeImages.Images["+ i +"].ProductCode");
 				image.Architecture = _ctx.StringValue("DescribeImages.Images["+ i +"].Architecture");
+				image.IsPublic = _ctx.BooleanValue("DescribeImages.Images["+ i +"].IsPublic");
+				image.ImageOwnerId = _ctx.LongValue("DescribeImages.Images["+ i +"].ImageOwnerId");
 
 				List<DescribeImagesResponse.DescribeImages_Image.DescribeImages_DiskDeviceMapping> image_diskDeviceMappings = new List<DescribeImagesResponse.DescribeImages_Image.DescribeImages_DiskDeviceMapping>();
 				for (int j = 0; j < _ctx.Length("DescribeImages.Images["+ i +"].DiskDeviceMappings.Length"); j++) {

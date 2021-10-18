@@ -57,6 +57,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string password;
 
+		private SystemDisk systemDisk_;
+
 		private int? deploymentSetGroupNo;
 
 		private string systemDiskAutoSnapshotPolicyId;
@@ -103,7 +105,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceType;
 
-		private List<Arn> arns = new List<Arn>(){ };
+		private List<string> arns = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -137,7 +139,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? storageSetPartitionNumber;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private List<string> tags = new List<string>(){ };
 
 		private string privatePoolOptionsId;
 
@@ -179,7 +181,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string deploymentSetId;
 
-		private List<NetworkInterface> networkInterfaces = new List<NetworkInterface>(){ };
+		private List<string> networkInterfaces = new List<string>(){ };
 
 		private int? amount;
 
@@ -195,7 +197,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? launchTemplateVersion;
 
-		private List<DataDisk> dataDisks = new List<DataDisk>(){ };
+		private List<string> dataDisks = new List<string>(){ };
 
 		private string storageSetId;
 
@@ -203,6 +205,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string systemDiskDescription;
 
+		[JsonProperty(PropertyName = "UniqueSuffix")]
 		public bool? UniqueSuffix
 		{
 			get
@@ -216,6 +219,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityEnhancementStrategy")]
 		public string SecurityEnhancementStrategy
 		{
 			get
@@ -229,6 +233,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "MinAmount")]
 		public int? MinAmount
 		{
 			get
@@ -242,6 +247,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "DeletionProtection")]
 		public bool? DeletionProtection
 		{
 			get
@@ -255,6 +261,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceGroupId")]
 		public string ResourceGroupId
 		{
 			get
@@ -268,6 +275,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "PrivatePoolOptions.MatchCriteria")]
 		public string PrivatePoolOptionsMatchCriteria
 		{
 			get
@@ -281,6 +289,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "HostName")]
 		public string HostName
 		{
 			get
@@ -294,6 +303,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Password")]
 		public string Password
 		{
 			get
@@ -307,6 +317,26 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SystemDisk")]
+		public SystemDisk SystemDisk_
+		{
+			get
+			{
+				return systemDisk_;
+			}
+
+			set
+			{
+				systemDisk_ = value;
+				if(SystemDisk_ != null)
+				{
+
+					DictionaryUtil.Add(QueryParameters,"SystemDisk.StorageClusterId", SystemDisk_.StorageClusterId);
+				}
+			}
+		}
+
+		[JsonProperty(PropertyName = "DeploymentSetGroupNo")]
 		public int? DeploymentSetGroupNo
 		{
 			get
@@ -320,6 +350,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SystemDisk.AutoSnapshotPolicyId")]
 		public string SystemDiskAutoSnapshotPolicyId
 		{
 			get
@@ -333,6 +364,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "CpuOptions.Core")]
 		public int? CpuOptionsCore
 		{
 			get
@@ -346,6 +378,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Period")]
 		public int? Period
 		{
 			get
@@ -359,6 +392,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "DryRun")]
 		public bool? DryRun
 		{
 			get
@@ -372,6 +406,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "CpuOptions.Numa")]
 		public string CpuOptionsNuma
 		{
 			get
@@ -385,6 +420,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -398,6 +434,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SpotStrategy")]
 		public string SpotStrategy
 		{
 			get
@@ -411,6 +448,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "PrivateIpAddress")]
 		public string PrivateIpAddress
 		{
 			get
@@ -424,6 +462,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "PeriodUnit")]
 		public string PeriodUnit
 		{
 			get
@@ -437,6 +476,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "AutoRenew")]
 		public bool? AutoRenew
 		{
 			get
@@ -450,6 +490,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "InternetChargeType")]
 		public string InternetChargeType
 		{
 			get
@@ -463,6 +504,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "InternetMaxBandwidthIn")]
 		public int? InternetMaxBandwidthIn
 		{
 			get
@@ -476,6 +518,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Affinity")]
 		public string Affinity
 		{
 			get
@@ -489,6 +532,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ImageId")]
 		public string ImageId
 		{
 			get
@@ -502,6 +546,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SpotInterruptionBehavior")]
 		public string SpotInterruptionBehavior
 		{
 			get
@@ -515,6 +560,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "NetworkInterfaceQueueNumber")]
 		public int? NetworkInterfaceQueueNumber
 		{
 			get
@@ -528,6 +574,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "IoOptimized")]
 		public string IoOptimized
 		{
 			get
@@ -541,6 +588,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityGroupId")]
 		public string SecurityGroupId
 		{
 			get
@@ -554,6 +602,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "HibernationOptions.Configured")]
 		public bool? HibernationOptionsConfigured
 		{
 			get
@@ -567,6 +616,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SystemDisk.PerformanceLevel")]
 		public string SystemDiskPerformanceLevel
 		{
 			get
@@ -580,6 +630,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "PasswordInherit")]
 		public bool? PasswordInherit
 		{
 			get
@@ -593,6 +644,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceType")]
 		public string InstanceType
 		{
 			get
@@ -606,7 +658,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Arn> Arns
+		[JsonProperty(PropertyName = "Arn")]
+		public List<string> Arns
 		{
 			get
 			{
@@ -616,15 +669,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				arns = value;
-				for (int i = 0; i < arns.Count; i++)
+				if(arns != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".RoleType", arns[i].RoleType);
-					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".Rolearn", arns[i].Rolearn);
-					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".AssumeRoleFor", arns[i].AssumeRoleFor);
+					for (int depth1 = 0; depth1 < arns.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Arn." + (depth1 + 1), arns[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Arn." + (depth1 + 1), arns[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Arn." + (depth1 + 1), arns[depth1]);
+					}
 				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -638,6 +695,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SchedulerOptions.DedicatedHostClusterId")]
 		public string SchedulerOptionsDedicatedHostClusterId
 		{
 			get
@@ -651,6 +709,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SystemDisk.DiskName")]
 		public string SystemDiskDiskName
 		{
 			get
@@ -664,6 +723,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "DedicatedHostId")]
 		public string DedicatedHostId
 		{
 			get
@@ -677,6 +737,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SpotDuration")]
 		public int? SpotDuration
 		{
 			get
@@ -690,6 +751,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityGroupIds")]
 		public List<string> SecurityGroupIdss
 		{
 			get
@@ -700,13 +762,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				securityGroupIdss = value;
-				for (int i = 0; i < securityGroupIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SecurityGroupIds." + (i + 1) , securityGroupIdss[i]);
-				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "SystemDisk.Size")]
 		public string SystemDiskSize
 		{
 			get
@@ -720,6 +779,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ImageFamily")]
 		public string ImageFamily
 		{
 			get
@@ -733,6 +793,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "LaunchTemplateName")]
 		public string LaunchTemplateName
 		{
 			get
@@ -746,6 +807,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -759,6 +821,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "HpcClusterId")]
 		public string HpcClusterId
 		{
 			get
@@ -772,6 +835,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "HttpPutResponseHopLimit")]
 		public int? HttpPutResponseHopLimit
 		{
 			get
@@ -785,6 +849,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Isp")]
 		public string Isp
 		{
 			get
@@ -798,6 +863,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "KeyPairName")]
 		public string KeyPairName
 		{
 			get
@@ -811,6 +877,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SpotPriceLimit")]
 		public float? SpotPriceLimit
 		{
 			get
@@ -824,6 +891,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "StorageSetPartitionNumber")]
 		public int? StorageSetPartitionNumber
 		{
 			get
@@ -837,7 +905,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Tag> Tags
+		[JsonProperty(PropertyName = "Tag")]
+		public List<string> Tags
 		{
 			get
 			{
@@ -847,14 +916,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				tags = value;
-				for (int i = 0; i < tags.Count; i++)
+				if(tags != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
 				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "PrivatePoolOptions.Id")]
 		public string PrivatePoolOptionsId
 		{
 			get
@@ -868,6 +941,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "AutoRenewPeriod")]
 		public int? AutoRenewPeriod
 		{
 			get
@@ -881,6 +955,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "LaunchTemplateId")]
 		public string LaunchTemplateId
 		{
 			get
@@ -894,6 +969,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Ipv6AddressCount")]
 		public int? Ipv6AddressCount
 		{
 			get
@@ -907,6 +983,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "HostNames")]
 		public List<string> HostNamess
 		{
 			get
@@ -917,13 +994,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				hostNamess = value;
-				for (int i = 0; i < hostNamess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"HostNames." + (i + 1) , hostNamess[i]);
-				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "VSwitchId")]
 		public string VSwitchId
 		{
 			get
@@ -937,6 +1011,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceName")]
 		public string InstanceName
 		{
 			get
@@ -950,6 +1025,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ZoneId")]
 		public string ZoneId
 		{
 			get
@@ -963,6 +1039,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Ipv6Address")]
 		public List<string> Ipv6Addresss
 		{
 			get
@@ -973,13 +1050,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				ipv6Addresss = value;
-				for (int i = 0; i < ipv6Addresss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Ipv6Address." + (i + 1) , ipv6Addresss[i]);
-				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityOptions.ConfidentialComputingMode")]
 		public string SecurityOptionsConfidentialComputingMode
 		{
 			get
@@ -993,6 +1067,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ClientToken")]
 		public string ClientToken
 		{
 			get
@@ -1006,6 +1081,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "InternetMaxBandwidthOut")]
 		public int? InternetMaxBandwidthOut
 		{
 			get
@@ -1019,6 +1095,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -1032,6 +1109,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "CpuOptions.ThreadsPerCore")]
 		public int? CpuOptionsThreadsPerCore
 		{
 			get
@@ -1045,6 +1123,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SystemDisk.Category")]
 		public string SystemDiskCategory
 		{
 			get
@@ -1058,6 +1137,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityOptions.TrustedSystemMode")]
 		public string SecurityOptionsTrustedSystemMode
 		{
 			get
@@ -1071,6 +1151,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "UserData")]
 		public string UserData
 		{
 			get
@@ -1084,6 +1165,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "HttpEndpoint")]
 		public string HttpEndpoint
 		{
 			get
@@ -1097,6 +1179,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceChargeType")]
 		public string InstanceChargeType
 		{
 			get
@@ -1110,6 +1193,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "DeploymentSetId")]
 		public string DeploymentSetId
 		{
 			get
@@ -1123,7 +1207,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<NetworkInterface> NetworkInterfaces
+		[JsonProperty(PropertyName = "NetworkInterface")]
+		public List<string> NetworkInterfaces
 		{
 			get
 			{
@@ -1133,22 +1218,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				networkInterfaces = value;
-				for (int i = 0; i < networkInterfaces.Count; i++)
+				if(networkInterfaces != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".VSwitchId", networkInterfaces[i].VSwitchId);
-					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".NetworkInterfaceName", networkInterfaces[i].NetworkInterfaceName);
-					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".Description", networkInterfaces[i].Description);
-					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".SecurityGroupId", networkInterfaces[i].SecurityGroupId);
-					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".PrimaryIpAddress", networkInterfaces[i].PrimaryIpAddress);
-					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".QueueNumber", networkInterfaces[i].QueueNumber);
-					for (int j = 0; j < networkInterfaces[i].SecurityGroupIdss.Count; j++)
+					for (int depth1 = 0; depth1 < networkInterfaces.Count; depth1++)
 					{
-						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".SecurityGroupIds." +(j + 1), networkInterfaces[i].SecurityGroupIdss[j]);
+						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
+						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
+						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
+						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
+						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
+						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
 					}
 				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "Amount")]
 		public int? Amount
 		{
 			get
@@ -1162,6 +1247,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -1175,6 +1261,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Tenancy")]
 		public string Tenancy
 		{
 			get
@@ -1188,6 +1275,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "RamRoleName")]
 		public string RamRoleName
 		{
 			get
@@ -1201,6 +1289,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "AutoReleaseTime")]
 		public string AutoReleaseTime
 		{
 			get
@@ -1214,6 +1303,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "CreditSpecification")]
 		public string CreditSpecification
 		{
 			get
@@ -1227,6 +1317,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "LaunchTemplateVersion")]
 		public long? LaunchTemplateVersion
 		{
 			get
@@ -1240,7 +1331,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<DataDisk> DataDisks
+		[JsonProperty(PropertyName = "DataDisk")]
+		public List<string> DataDisks
 		{
 			get
 			{
@@ -1250,24 +1342,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				dataDisks = value;
-				for (int i = 0; i < dataDisks.Count; i++)
+				if(dataDisks != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".PerformanceLevel", dataDisks[i].PerformanceLevel);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".AutoSnapshotPolicyId", dataDisks[i].AutoSnapshotPolicyId);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Encrypted", dataDisks[i].Encrypted);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Description", dataDisks[i].Description);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".SnapshotId", dataDisks[i].SnapshotId);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Device", dataDisks[i].Device);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Size", dataDisks[i].Size);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DiskName", dataDisks[i].DiskName);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Category", dataDisks[i].Category);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".EncryptAlgorithm", dataDisks[i].EncryptAlgorithm);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DeleteWithInstance", dataDisks[i].DeleteWithInstance);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".KMSKeyId", dataDisks[i].KMSKeyId);
+					for (int depth1 = 0; depth1 < dataDisks.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+					}
 				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "StorageSetId")]
 		public string StorageSetId
 		{
 			get
@@ -1281,6 +1378,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "HttpTokens")]
 		public string HttpTokens
 		{
 			get
@@ -1294,6 +1392,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SystemDisk.Description")]
 		public string SystemDiskDescription
 		{
 			get
@@ -1307,6 +1406,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public class SystemDisk
+		{
+
+			private string storageClusterId;
+
+			[JsonProperty(PropertyName = "StorageClusterId")]
+			public string StorageClusterId
+			{
+				get
+				{
+					return storageClusterId;
+				}
+				set	
+				{
+					storageClusterId = value;
+				}
+			}
+		}
+
 		public class Arn
 		{
 
@@ -1316,6 +1434,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private long? assumeRoleFor;
 
+			[JsonProperty(PropertyName = "RoleType")]
 			public string RoleType
 			{
 				get
@@ -1328,6 +1447,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "Rolearn")]
 			public string Rolearn
 			{
 				get
@@ -1340,6 +1460,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "AssumeRoleFor")]
 			public long? AssumeRoleFor
 			{
 				get
@@ -1360,6 +1481,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string value_;
 
+			[JsonProperty(PropertyName = "Key")]
 			public string Key
 			{
 				get
@@ -1372,7 +1494,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Value
+			[JsonProperty(PropertyName = "Value")]
+			public string Value_
 			{
 				get
 				{
@@ -1402,6 +1525,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private List<string> securityGroupIdss = new List<string>(){ };
 
+			[JsonProperty(PropertyName = "VSwitchId")]
 			public string VSwitchId
 			{
 				get
@@ -1414,6 +1538,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "NetworkInterfaceName")]
 			public string NetworkInterfaceName
 			{
 				get
@@ -1426,6 +1551,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -1438,6 +1564,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "SecurityGroupId")]
 			public string SecurityGroupId
 			{
 				get
@@ -1450,6 +1577,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "PrimaryIpAddress")]
 			public string PrimaryIpAddress
 			{
 				get
@@ -1462,6 +1590,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "QueueNumber")]
 			public int? QueueNumber
 			{
 				get
@@ -1474,6 +1603,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "SecurityGroupIds")]
 			public List<string> SecurityGroupIdss
 			{
 				get
@@ -1514,6 +1644,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string kMSKeyId;
 
+			private string storageClusterId;
+
+			[JsonProperty(PropertyName = "PerformanceLevel")]
 			public string PerformanceLevel
 			{
 				get
@@ -1526,6 +1659,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "AutoSnapshotPolicyId")]
 			public string AutoSnapshotPolicyId
 			{
 				get
@@ -1538,6 +1672,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "Encrypted")]
 			public string Encrypted
 			{
 				get
@@ -1550,6 +1685,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -1562,6 +1698,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "SnapshotId")]
 			public string SnapshotId
 			{
 				get
@@ -1574,6 +1711,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "Device")]
 			public string Device
 			{
 				get
@@ -1586,6 +1724,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "Size")]
 			public int? Size
 			{
 				get
@@ -1598,6 +1737,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "DiskName")]
 			public string DiskName
 			{
 				get
@@ -1610,6 +1750,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "Category")]
 			public string Category
 			{
 				get
@@ -1622,6 +1763,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "EncryptAlgorithm")]
 			public string EncryptAlgorithm
 			{
 				get
@@ -1634,6 +1776,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "DeleteWithInstance")]
 			public bool? DeleteWithInstance
 			{
 				get
@@ -1646,6 +1789,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "KMSKeyId")]
 			public string KMSKeyId
 			{
 				get
@@ -1655,6 +1799,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					kMSKeyId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StorageClusterId")]
+			public string StorageClusterId
+			{
+				get
+				{
+					return storageClusterId;
+				}
+				set	
+				{
+					storageClusterId = value;
 				}
 			}
 		}

@@ -34,38 +34,38 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeImageFromFamilyResponse.RequestId = _ctx.StringValue("DescribeImageFromFamily.RequestId");
 
 			DescribeImageFromFamilyResponse.DescribeImageFromFamily_Image image = new DescribeImageFromFamilyResponse.DescribeImageFromFamily_Image();
-			image.Progress = _ctx.StringValue("DescribeImageFromFamily.Image.Progress");
-			image.ImageId = _ctx.StringValue("DescribeImageFromFamily.Image.ImageId");
-			image.ImageName = _ctx.StringValue("DescribeImageFromFamily.Image.ImageName");
+			image.CreationTime = _ctx.StringValue("DescribeImageFromFamily.Image.CreationTime");
+			image.Status = _ctx.StringValue("DescribeImageFromFamily.Image.Status");
 			image.ImageFamily = _ctx.StringValue("DescribeImageFromFamily.Image.ImageFamily");
+			image.Progress = _ctx.StringValue("DescribeImageFromFamily.Image.Progress");
+			image.IsCopied = _ctx.BooleanValue("DescribeImageFromFamily.Image.IsCopied");
+			image.IsSupportIoOptimized = _ctx.BooleanValue("DescribeImageFromFamily.Image.IsSupportIoOptimized");
+			image.ImageOwnerAlias = _ctx.StringValue("DescribeImageFromFamily.Image.ImageOwnerAlias");
+			image.IsSupportCloudinit = _ctx.BooleanValue("DescribeImageFromFamily.Image.IsSupportCloudinit");
 			image.ImageVersion = _ctx.StringValue("DescribeImageFromFamily.Image.ImageVersion");
+			image.Usage = _ctx.StringValue("DescribeImageFromFamily.Image.Usage");
+			image.IsSelfShared = _ctx.StringValue("DescribeImageFromFamily.Image.IsSelfShared");
 			image.Description = _ctx.StringValue("DescribeImageFromFamily.Image.Description");
 			image.Size = _ctx.IntegerValue("DescribeImageFromFamily.Image.Size");
-			image.ImageOwnerAlias = _ctx.StringValue("DescribeImageFromFamily.Image.ImageOwnerAlias");
-			image.IsSupportIoOptimized = _ctx.BooleanValue("DescribeImageFromFamily.Image.IsSupportIoOptimized");
-			image.IsSupportCloudinit = _ctx.BooleanValue("DescribeImageFromFamily.Image.IsSupportCloudinit");
-			image.OSName = _ctx.StringValue("DescribeImageFromFamily.Image.OSName");
-			image.Architecture = _ctx.StringValue("DescribeImageFromFamily.Image.Architecture");
-			image.Status = _ctx.StringValue("DescribeImageFromFamily.Image.Status");
-			image.ProductCode = _ctx.StringValue("DescribeImageFromFamily.Image.ProductCode");
-			image.IsSubscribed = _ctx.BooleanValue("DescribeImageFromFamily.Image.IsSubscribed");
-			image.CreationTime = _ctx.StringValue("DescribeImageFromFamily.Image.CreationTime");
-			image.IsSelfShared = _ctx.StringValue("DescribeImageFromFamily.Image.IsSelfShared");
-			image.OSType = _ctx.StringValue("DescribeImageFromFamily.Image.OSType");
 			image.Platform = _ctx.StringValue("DescribeImageFromFamily.Image.Platform");
-			image.Usage = _ctx.StringValue("DescribeImageFromFamily.Image.Usage");
-			image.IsCopied = _ctx.BooleanValue("DescribeImageFromFamily.Image.IsCopied");
+			image.ImageName = _ctx.StringValue("DescribeImageFromFamily.Image.ImageName");
+			image.OSName = _ctx.StringValue("DescribeImageFromFamily.Image.OSName");
+			image.ImageId = _ctx.StringValue("DescribeImageFromFamily.Image.ImageId");
+			image.OSType = _ctx.StringValue("DescribeImageFromFamily.Image.OSType");
+			image.IsSubscribed = _ctx.BooleanValue("DescribeImageFromFamily.Image.IsSubscribed");
+			image.ProductCode = _ctx.StringValue("DescribeImageFromFamily.Image.ProductCode");
+			image.Architecture = _ctx.StringValue("DescribeImageFromFamily.Image.Architecture");
 
 			List<DescribeImageFromFamilyResponse.DescribeImageFromFamily_Image.DescribeImageFromFamily_DiskDeviceMapping> image_diskDeviceMappings = new List<DescribeImageFromFamilyResponse.DescribeImageFromFamily_Image.DescribeImageFromFamily_DiskDeviceMapping>();
 			for (int i = 0; i < _ctx.Length("DescribeImageFromFamily.Image.DiskDeviceMappings.Length"); i++) {
 				DescribeImageFromFamilyResponse.DescribeImageFromFamily_Image.DescribeImageFromFamily_DiskDeviceMapping diskDeviceMapping = new DescribeImageFromFamilyResponse.DescribeImageFromFamily_Image.DescribeImageFromFamily_DiskDeviceMapping();
+				diskDeviceMapping.Type = _ctx.StringValue("DescribeImageFromFamily.Image.DiskDeviceMappings["+ i +"].Type");
+				diskDeviceMapping.ImportOSSBucket = _ctx.StringValue("DescribeImageFromFamily.Image.DiskDeviceMappings["+ i +"].ImportOSSBucket");
 				diskDeviceMapping.SnapshotId = _ctx.StringValue("DescribeImageFromFamily.Image.DiskDeviceMappings["+ i +"].SnapshotId");
+				diskDeviceMapping.ImportOSSObject = _ctx.StringValue("DescribeImageFromFamily.Image.DiskDeviceMappings["+ i +"].ImportOSSObject");
 				diskDeviceMapping.Size = _ctx.StringValue("DescribeImageFromFamily.Image.DiskDeviceMappings["+ i +"].Size");
 				diskDeviceMapping.Device = _ctx.StringValue("DescribeImageFromFamily.Image.DiskDeviceMappings["+ i +"].Device");
-				diskDeviceMapping.Type = _ctx.StringValue("DescribeImageFromFamily.Image.DiskDeviceMappings["+ i +"].Type");
 				diskDeviceMapping.Format = _ctx.StringValue("DescribeImageFromFamily.Image.DiskDeviceMappings["+ i +"].Format");
-				diskDeviceMapping.ImportOSSBucket = _ctx.StringValue("DescribeImageFromFamily.Image.DiskDeviceMappings["+ i +"].ImportOSSBucket");
-				diskDeviceMapping.ImportOSSObject = _ctx.StringValue("DescribeImageFromFamily.Image.DiskDeviceMappings["+ i +"].ImportOSSObject");
 
 				image_diskDeviceMappings.Add(diskDeviceMapping);
 			}
@@ -74,8 +74,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DescribeImageFromFamilyResponse.DescribeImageFromFamily_Image.DescribeImageFromFamily_Tag> image_tags = new List<DescribeImageFromFamilyResponse.DescribeImageFromFamily_Image.DescribeImageFromFamily_Tag>();
 			for (int i = 0; i < _ctx.Length("DescribeImageFromFamily.Image.Tags.Length"); i++) {
 				DescribeImageFromFamilyResponse.DescribeImageFromFamily_Image.DescribeImageFromFamily_Tag tag = new DescribeImageFromFamilyResponse.DescribeImageFromFamily_Image.DescribeImageFromFamily_Tag();
-				tag.TagKey = _ctx.StringValue("DescribeImageFromFamily.Image.Tags["+ i +"].TagKey");
 				tag.TagValue = _ctx.StringValue("DescribeImageFromFamily.Image.Tags["+ i +"].TagValue");
+				tag.TagKey = _ctx.StringValue("DescribeImageFromFamily.Image.Tags["+ i +"].TagKey");
 
 				image_tags.Add(tag);
 			}

@@ -49,7 +49,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string excessCapacityTerminationPolicy;
 
-		private List<LaunchTemplateConfig> launchTemplateConfigs = new List<LaunchTemplateConfig>(){ };
+		private List<string> launchTemplateConfigs = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -69,6 +69,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string autoProvisioningGroupName;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -82,6 +83,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "TerminateInstancesWithExpiration")]
 		public bool? TerminateInstancesWithExpiration
 		{
 			get
@@ -95,6 +97,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "DefaultTargetCapacityType")]
 		public string DefaultTargetCapacityType
 		{
 			get
@@ -108,6 +111,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExcessCapacityTerminationPolicy")]
 		public string ExcessCapacityTerminationPolicy
 		{
 			get
@@ -121,7 +125,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<LaunchTemplateConfig> LaunchTemplateConfigs
+		[JsonProperty(PropertyName = "LaunchTemplateConfig")]
+		public List<string> LaunchTemplateConfigs
 		{
 			get
 			{
@@ -131,17 +136,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				launchTemplateConfigs = value;
-				for (int i = 0; i < launchTemplateConfigs.Count; i++)
+				if(launchTemplateConfigs != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (i + 1) + ".InstanceType", launchTemplateConfigs[i].InstanceType);
-					DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (i + 1) + ".MaxPrice", launchTemplateConfigs[i].MaxPrice);
-					DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (i + 1) + ".VSwitchId", launchTemplateConfigs[i].VSwitchId);
-					DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (i + 1) + ".WeightedCapacity", launchTemplateConfigs[i].WeightedCapacity);
-					DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (i + 1) + ".Priority", launchTemplateConfigs[i].Priority);
+					for (int depth1 = 0; depth1 < launchTemplateConfigs.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (depth1 + 1), launchTemplateConfigs[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (depth1 + 1), launchTemplateConfigs[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (depth1 + 1), launchTemplateConfigs[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (depth1 + 1), launchTemplateConfigs[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (depth1 + 1), launchTemplateConfigs[depth1]);
+					}
 				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -155,6 +164,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -168,6 +178,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -181,6 +192,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "AutoProvisioningGroupId")]
 		public string AutoProvisioningGroupId
 		{
 			get
@@ -194,6 +206,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "PayAsYouGoTargetCapacity")]
 		public string PayAsYouGoTargetCapacity
 		{
 			get
@@ -207,6 +220,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalTargetCapacity")]
 		public string TotalTargetCapacity
 		{
 			get
@@ -220,6 +234,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SpotTargetCapacity")]
 		public string SpotTargetCapacity
 		{
 			get
@@ -233,6 +248,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "MaxSpotPrice")]
 		public float? MaxSpotPrice
 		{
 			get
@@ -246,6 +262,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "AutoProvisioningGroupName")]
 		public string AutoProvisioningGroupName
 		{
 			get
@@ -262,40 +279,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class LaunchTemplateConfig
 		{
 
-			private string instanceType;
+			private string vSwitchId;
 
 			private double? maxPrice;
 
-			private string vSwitchId;
+			private int? priority;
+
+			private string instanceType;
 
 			private double? weightedCapacity;
 
-			private int? priority;
-
-			public string InstanceType
-			{
-				get
-				{
-					return instanceType;
-				}
-				set	
-				{
-					instanceType = value;
-				}
-			}
-
-			public double? MaxPrice
-			{
-				get
-				{
-					return maxPrice;
-				}
-				set	
-				{
-					maxPrice = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "VSwitchId")]
 			public string VSwitchId
 			{
 				get
@@ -308,18 +302,20 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public double? WeightedCapacity
+			[JsonProperty(PropertyName = "MaxPrice")]
+			public double? MaxPrice
 			{
 				get
 				{
-					return weightedCapacity;
+					return maxPrice;
 				}
 				set	
 				{
-					weightedCapacity = value;
+					maxPrice = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "Priority")]
 			public int? Priority
 			{
 				get
@@ -329,6 +325,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					priority = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceType")]
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "WeightedCapacity")]
+			public double? WeightedCapacity
+			{
+				get
+				{
+					return weightedCapacity;
+				}
+				set	
+				{
+					weightedCapacity = value;
 				}
 			}
 		}

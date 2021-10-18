@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateAutoSnapshotPolicyResponse createAutoSnapshotPolicyResponse = new CreateAutoSnapshotPolicyResponse();
 
 			createAutoSnapshotPolicyResponse.HttpResponse = _ctx.HttpResponse;
-			createAutoSnapshotPolicyResponse.RequestId = _ctx.StringValue("CreateAutoSnapshotPolicy.RequestId");
 			createAutoSnapshotPolicyResponse.AutoSnapshotPolicyId = _ctx.StringValue("CreateAutoSnapshotPolicy.AutoSnapshotPolicyId");
+			createAutoSnapshotPolicyResponse.RequestId = _ctx.StringValue("CreateAutoSnapshotPolicy.RequestId");
         
 			return createAutoSnapshotPolicyResponse;
         }

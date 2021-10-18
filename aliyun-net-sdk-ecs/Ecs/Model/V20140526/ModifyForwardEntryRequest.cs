@@ -63,6 +63,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string externalPort;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -76,6 +77,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ForwardTableId")]
 		public string ForwardTableId
 		{
 			get
@@ -89,6 +91,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "InternalIp")]
 		public string InternalIp
 		{
 			get
@@ -102,6 +105,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ForwardEntryId")]
 		public string ForwardEntryId
 		{
 			get
@@ -115,6 +119,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExternalIp")]
 		public string ExternalIp
 		{
 			get
@@ -128,6 +133,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -141,6 +147,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "IpProtocol")]
 		public string IpProtocol
 		{
 			get
@@ -154,6 +161,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -167,6 +175,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -180,6 +189,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "InternalPort")]
 		public string InternalPort
 		{
 			get
@@ -193,6 +203,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ExternalPort")]
 		public string ExternalPort
 		{
 			get

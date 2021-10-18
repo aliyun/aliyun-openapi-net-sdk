@@ -60,9 +60,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? systemDiskIops;
 
-		private List<TemplateTag> templateTags = new List<TemplateTag>(){ };
+		private List<string> templateTags = new List<string>(){ };
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private List<string> tags = new List<string>(){ };
 
 		private int? period;
 
@@ -112,9 +112,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? enableVmOsConfig;
 
-		private List<NetworkInterface> networkInterfaces = new List<NetworkInterface>(){ };
-
 		private string deploymentSetId;
+
+		private List<string> networkInterfaces = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -130,7 +130,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<string> securityGroupIdss = new List<string>(){ };
 
-		private List<DataDisk> dataDisks = new List<DataDisk>(){ };
+		private List<string> dataDisks = new List<string>(){ };
 
 		private int? systemDiskSize;
 
@@ -268,7 +268,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<TemplateTag> TemplateTags
+		public List<string> TemplateTags
 		{
 			get
 			{
@@ -278,15 +278,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				templateTags = value;
-				for (int i = 0; i < templateTags.Count; i++)
+				if(templateTags != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"TemplateTag." + (i + 1) + ".Key", templateTags[i].Key);
-					DictionaryUtil.Add(QueryParameters,"TemplateTag." + (i + 1) + ".Value", templateTags[i].Value);
+					for (int depth1 = 0; depth1 < templateTags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"TemplateTag." + (depth1 + 1), templateTags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"TemplateTag." + (depth1 + 1), templateTags[depth1]);
+					}
 				}
 			}
 		}
 
-		public List<Tag> Tags
+		public List<string> Tags
 		{
 			get
 			{
@@ -296,10 +299,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				tags = value;
-				for (int i = 0; i < tags.Count; i++)
+				if(tags != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
 				}
 			}
 		}
@@ -616,31 +622,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<NetworkInterface> NetworkInterfaces
-		{
-			get
-			{
-				return networkInterfaces;
-			}
-
-			set
-			{
-				networkInterfaces = value;
-				for (int i = 0; i < networkInterfaces.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".PrimaryIpAddress", networkInterfaces[i].PrimaryIpAddress);
-					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".VSwitchId", networkInterfaces[i].VSwitchId);
-					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".SecurityGroupId", networkInterfaces[i].SecurityGroupId);
-					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".NetworkInterfaceName", networkInterfaces[i].NetworkInterfaceName);
-					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".Description", networkInterfaces[i].Description);
-					for (int j = 0; j < networkInterfaces[i].SecurityGroupIdss.Count; j++)
-					{
-						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".SecurityGroupIds." +(j + 1), networkInterfaces[i].SecurityGroupIdss[j]);
-					}
-				}
-			}
-		}
-
 		public string DeploymentSetId
 		{
 			get
@@ -651,6 +632,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				deploymentSetId = value;
 				DictionaryUtil.Add(QueryParameters, "DeploymentSetId", value);
+			}
+		}
+
+		public List<string> NetworkInterfaces
+		{
+			get
+			{
+				return networkInterfaces;
+			}
+
+			set
+			{
+				networkInterfaces = value;
+				if(networkInterfaces != null)
+				{
+					for (int depth1 = 0; depth1 < networkInterfaces.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
+						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
+						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
+						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
+						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
+					}
+				}
 			}
 		}
 
@@ -742,14 +747,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				securityGroupIdss = value;
-				for (int i = 0; i < securityGroupIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SecurityGroupIds." + (i + 1) , securityGroupIdss[i]);
-				}
 			}
 		}
 
-		public List<DataDisk> DataDisks
+		public List<string> DataDisks
 		{
 			get
 			{
@@ -759,17 +760,20 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				dataDisks = value;
-				for (int i = 0; i < dataDisks.Count; i++)
+				if(dataDisks != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Size", dataDisks[i].Size);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".SnapshotId", dataDisks[i].SnapshotId);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Category", dataDisks[i].Category);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Encrypted", dataDisks[i].Encrypted);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DiskName", dataDisks[i].DiskName);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Description", dataDisks[i].Description);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DeleteWithInstance", dataDisks[i].DeleteWithInstance);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Device", dataDisks[i].Device);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".PerformanceLevel", dataDisks[i].PerformanceLevel);
+					for (int depth1 = 0; depth1 < dataDisks.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+					}
 				}
 			}
 		}
@@ -832,7 +836,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Value
+			public string Value_
 			{
 				get
 				{
@@ -864,7 +868,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Value
+			public string Value_
 			{
 				get
 				{
@@ -880,29 +884,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class NetworkInterface
 		{
 
-			private string primaryIpAddress;
-
 			private string vSwitchId;
-
-			private string securityGroupId;
 
 			private string networkInterfaceName;
 
 			private string description;
 
-			private List<string> securityGroupIdss = new List<string>(){ };
+			private string securityGroupId;
 
-			public string PrimaryIpAddress
-			{
-				get
-				{
-					return primaryIpAddress;
-				}
-				set	
-				{
-					primaryIpAddress = value;
-				}
-			}
+			private string primaryIpAddress;
+
+			private List<string> securityGroupIdss = new List<string>(){ };
 
 			public string VSwitchId
 			{
@@ -913,18 +905,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					vSwitchId = value;
-				}
-			}
-
-			public string SecurityGroupId
-			{
-				get
-				{
-					return securityGroupId;
-				}
-				set	
-				{
-					securityGroupId = value;
 				}
 			}
 
@@ -952,6 +932,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string SecurityGroupId
+			{
+				get
+				{
+					return securityGroupId;
+				}
+				set	
+				{
+					securityGroupId = value;
+				}
+			}
+
+			public string PrimaryIpAddress
+			{
+				get
+				{
+					return primaryIpAddress;
+				}
+				set	
+				{
+					primaryIpAddress = value;
+				}
+			}
+
 			public List<string> SecurityGroupIdss
 			{
 				get
@@ -968,81 +972,33 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DataDisk
 		{
 
-			private int? size;
-
-			private string snapshotId;
-
-			private string category;
-
-			private string encrypted;
-
-			private string diskName;
+			private string performanceLevel;
 
 			private string description;
 
-			private bool? deleteWithInstance;
+			private string snapshotId;
+
+			private int? size;
 
 			private string device;
 
-			private string performanceLevel;
+			private string diskName;
 
-			public int? Size
+			private string category;
+
+			private bool? deleteWithInstance;
+
+			private string encrypted;
+
+			public string PerformanceLevel
 			{
 				get
 				{
-					return size;
+					return performanceLevel;
 				}
 				set	
 				{
-					size = value;
-				}
-			}
-
-			public string SnapshotId
-			{
-				get
-				{
-					return snapshotId;
-				}
-				set	
-				{
-					snapshotId = value;
-				}
-			}
-
-			public string Category
-			{
-				get
-				{
-					return category;
-				}
-				set	
-				{
-					category = value;
-				}
-			}
-
-			public string Encrypted
-			{
-				get
-				{
-					return encrypted;
-				}
-				set	
-				{
-					encrypted = value;
-				}
-			}
-
-			public string DiskName
-			{
-				get
-				{
-					return diskName;
-				}
-				set	
-				{
-					diskName = value;
+					performanceLevel = value;
 				}
 			}
 
@@ -1058,15 +1014,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public bool? DeleteWithInstance
+			public string SnapshotId
 			{
 				get
 				{
-					return deleteWithInstance;
+					return snapshotId;
 				}
 				set	
 				{
-					deleteWithInstance = value;
+					snapshotId = value;
+				}
+			}
+
+			public int? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
 				}
 			}
 
@@ -1082,15 +1050,51 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string PerformanceLevel
+			public string DiskName
 			{
 				get
 				{
-					return performanceLevel;
+					return diskName;
 				}
 				set	
 				{
-					performanceLevel = value;
+					diskName = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			public bool? DeleteWithInstance
+			{
+				get
+				{
+					return deleteWithInstance;
+				}
+				set	
+				{
+					deleteWithInstance = value;
+				}
+			}
+
+			public string Encrypted
+			{
+				get
+				{
+					return encrypted;
+				}
+				set	
+				{
+					encrypted = value;
 				}
 			}
 		}

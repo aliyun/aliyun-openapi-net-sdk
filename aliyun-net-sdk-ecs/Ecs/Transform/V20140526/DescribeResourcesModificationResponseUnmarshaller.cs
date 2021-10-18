@@ -36,10 +36,10 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DescribeResourcesModificationResponse.DescribeResourcesModification_AvailableZone> describeResourcesModificationResponse_availableZones = new List<DescribeResourcesModificationResponse.DescribeResourcesModification_AvailableZone>();
 			for (int i = 0; i < _ctx.Length("DescribeResourcesModification.AvailableZones.Length"); i++) {
 				DescribeResourcesModificationResponse.DescribeResourcesModification_AvailableZone availableZone = new DescribeResourcesModificationResponse.DescribeResourcesModification_AvailableZone();
-				availableZone.RegionId = _ctx.StringValue("DescribeResourcesModification.AvailableZones["+ i +"].RegionId");
 				availableZone.ZoneId = _ctx.StringValue("DescribeResourcesModification.AvailableZones["+ i +"].ZoneId");
 				availableZone.Status = _ctx.StringValue("DescribeResourcesModification.AvailableZones["+ i +"].Status");
 				availableZone.StatusCategory = _ctx.StringValue("DescribeResourcesModification.AvailableZones["+ i +"].StatusCategory");
+				availableZone.RegionId = _ctx.StringValue("DescribeResourcesModification.AvailableZones["+ i +"].RegionId");
 
 				List<DescribeResourcesModificationResponse.DescribeResourcesModification_AvailableZone.DescribeResourcesModification_AvailableResource> availableZone_availableResources = new List<DescribeResourcesModificationResponse.DescribeResourcesModification_AvailableZone.DescribeResourcesModification_AvailableResource>();
 				for (int j = 0; j < _ctx.Length("DescribeResourcesModification.AvailableZones["+ i +"].AvailableResources.Length"); j++) {
@@ -49,12 +49,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					List<DescribeResourcesModificationResponse.DescribeResourcesModification_AvailableZone.DescribeResourcesModification_AvailableResource.DescribeResourcesModification_SupportedResource> availableResource_supportedResources = new List<DescribeResourcesModificationResponse.DescribeResourcesModification_AvailableZone.DescribeResourcesModification_AvailableResource.DescribeResourcesModification_SupportedResource>();
 					for (int k = 0; k < _ctx.Length("DescribeResourcesModification.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources.Length"); k++) {
 						DescribeResourcesModificationResponse.DescribeResourcesModification_AvailableZone.DescribeResourcesModification_AvailableResource.DescribeResourcesModification_SupportedResource supportedResource = new DescribeResourcesModificationResponse.DescribeResourcesModification_AvailableZone.DescribeResourcesModification_AvailableResource.DescribeResourcesModification_SupportedResource();
-						supportedResource._Value = _ctx.StringValue("DescribeResourcesModification.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Value");
 						supportedResource.Status = _ctx.StringValue("DescribeResourcesModification.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Status");
-						supportedResource.StatusCategory = _ctx.StringValue("DescribeResourcesModification.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].StatusCategory");
-						supportedResource.Min = _ctx.IntegerValue("DescribeResourcesModification.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Min");
+						supportedResource._Value = _ctx.StringValue("DescribeResourcesModification.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Value");
 						supportedResource.Max = _ctx.IntegerValue("DescribeResourcesModification.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Max");
 						supportedResource.Unit = _ctx.StringValue("DescribeResourcesModification.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Unit");
+						supportedResource.StatusCategory = _ctx.StringValue("DescribeResourcesModification.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].StatusCategory");
+						supportedResource.Min = _ctx.IntegerValue("DescribeResourcesModification.AvailableZones["+ i +"].AvailableResources["+ j +"].SupportedResources["+ k +"].Min");
 
 						availableResource_supportedResources.Add(supportedResource);
 					}

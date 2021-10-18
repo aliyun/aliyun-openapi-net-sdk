@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -26,6 +26,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	{
 
 		private string requestId;
+
+		private string nextToken;
 
 		private List<DescribeInstanceTypes_InstanceType> instanceTypes;
 
@@ -38,6 +40,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
 			}
 		}
 
@@ -56,133 +70,73 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeInstanceTypes_InstanceType
 		{
 
-			private string instanceTypeId;
-
-			private int? cpuCoreCount;
-
-			private float? memorySize;
-
-			private string instanceTypeFamily;
-
-			private long? localStorageCapacity;
-
-			private int? localStorageAmount;
+			private int? eniTotalQuantity;
 
 			private string localStorageCategory;
 
-			private int? gPUAmount;
+			private int? primaryEniQueueNumber;
 
-			private string gPUSpec;
+			private float? memorySize;
 
-			private int? initialCredit;
-
-			private int? baselineCredit;
-
-			private int? eniQuantity;
-
-			private int? eniPrivateIpAddressQuantity;
-
-			private int? eniIpv6AddressQuantity;
-
-			private int? instanceBandwidthRx;
-
-			private int? instanceBandwidthTx;
-
-			private long? instancePpsRx;
-
-			private long? instancePpsTx;
+			private long? localStorageCapacity;
 
 			private string instanceFamilyLevel;
 
-			private int? totalEniQueueQuantity;
+			private long? instancePpsRx;
 
-			private bool? eniTrunkSupported;
-
-			private int? eniTotalQuantity;
+			private int? eniIpv6AddressQuantity;
 
 			private int? maximumQueueNumberPerEni;
 
-			private int? primaryEniQueueNumber;
+			private string instanceTypeId;
+
+			private int? instanceBandwidthRx;
 
 			private int? secondaryEniQueueNumber;
 
-			private int? diskQuantity;
+			private string gPUSpec;
 
-			private int? eriQuantity;
+			private int? instanceBandwidthTx;
 
 			private int? queuePairNumber;
 
+			private int? eriQuantity;
+
+			private int? gPUAmount;
+
+			private int? totalEniQueueQuantity;
+
 			private string nvmeSupport;
 
-			public string InstanceTypeId
-			{
-				get
-				{
-					return instanceTypeId;
-				}
-				set	
-				{
-					instanceTypeId = value;
-				}
-			}
+			private int? diskQuantity;
 
-			public int? CpuCoreCount
-			{
-				get
-				{
-					return cpuCoreCount;
-				}
-				set	
-				{
-					cpuCoreCount = value;
-				}
-			}
+			private int? initialCredit;
 
-			public float? MemorySize
-			{
-				get
-				{
-					return memorySize;
-				}
-				set	
-				{
-					memorySize = value;
-				}
-			}
+			private int? localStorageAmount;
 
-			public string InstanceTypeFamily
-			{
-				get
-				{
-					return instanceTypeFamily;
-				}
-				set	
-				{
-					instanceTypeFamily = value;
-				}
-			}
+			private int? baselineCredit;
 
-			public long? LocalStorageCapacity
-			{
-				get
-				{
-					return localStorageCapacity;
-				}
-				set	
-				{
-					localStorageCapacity = value;
-				}
-			}
+			private long? instancePpsTx;
 
-			public int? LocalStorageAmount
+			private int? eniPrivateIpAddressQuantity;
+
+			private int? cpuCoreCount;
+
+			private string instanceTypeFamily;
+
+			private int? eniQuantity;
+
+			private bool? eniTrunkSupported;
+
+			public int? EniTotalQuantity
 			{
 				get
 				{
-					return localStorageAmount;
+					return eniTotalQuantity;
 				}
 				set	
 				{
-					localStorageAmount = value;
+					eniTotalQuantity = value;
 				}
 			}
 
@@ -198,135 +152,39 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public int? GPUAmount
+			public int? PrimaryEniQueueNumber
 			{
 				get
 				{
-					return gPUAmount;
+					return primaryEniQueueNumber;
 				}
 				set	
 				{
-					gPUAmount = value;
+					primaryEniQueueNumber = value;
 				}
 			}
 
-			public string GPUSpec
+			public float? MemorySize
 			{
 				get
 				{
-					return gPUSpec;
+					return memorySize;
 				}
 				set	
 				{
-					gPUSpec = value;
+					memorySize = value;
 				}
 			}
 
-			public int? InitialCredit
+			public long? LocalStorageCapacity
 			{
 				get
 				{
-					return initialCredit;
+					return localStorageCapacity;
 				}
 				set	
 				{
-					initialCredit = value;
-				}
-			}
-
-			public int? BaselineCredit
-			{
-				get
-				{
-					return baselineCredit;
-				}
-				set	
-				{
-					baselineCredit = value;
-				}
-			}
-
-			public int? EniQuantity
-			{
-				get
-				{
-					return eniQuantity;
-				}
-				set	
-				{
-					eniQuantity = value;
-				}
-			}
-
-			public int? EniPrivateIpAddressQuantity
-			{
-				get
-				{
-					return eniPrivateIpAddressQuantity;
-				}
-				set	
-				{
-					eniPrivateIpAddressQuantity = value;
-				}
-			}
-
-			public int? EniIpv6AddressQuantity
-			{
-				get
-				{
-					return eniIpv6AddressQuantity;
-				}
-				set	
-				{
-					eniIpv6AddressQuantity = value;
-				}
-			}
-
-			public int? InstanceBandwidthRx
-			{
-				get
-				{
-					return instanceBandwidthRx;
-				}
-				set	
-				{
-					instanceBandwidthRx = value;
-				}
-			}
-
-			public int? InstanceBandwidthTx
-			{
-				get
-				{
-					return instanceBandwidthTx;
-				}
-				set	
-				{
-					instanceBandwidthTx = value;
-				}
-			}
-
-			public long? InstancePpsRx
-			{
-				get
-				{
-					return instancePpsRx;
-				}
-				set	
-				{
-					instancePpsRx = value;
-				}
-			}
-
-			public long? InstancePpsTx
-			{
-				get
-				{
-					return instancePpsTx;
-				}
-				set	
-				{
-					instancePpsTx = value;
+					localStorageCapacity = value;
 				}
 			}
 
@@ -342,39 +200,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public int? TotalEniQueueQuantity
+			public long? InstancePpsRx
 			{
 				get
 				{
-					return totalEniQueueQuantity;
+					return instancePpsRx;
 				}
 				set	
 				{
-					totalEniQueueQuantity = value;
+					instancePpsRx = value;
 				}
 			}
 
-			public bool? EniTrunkSupported
+			public int? EniIpv6AddressQuantity
 			{
 				get
 				{
-					return eniTrunkSupported;
+					return eniIpv6AddressQuantity;
 				}
 				set	
 				{
-					eniTrunkSupported = value;
-				}
-			}
-
-			public int? EniTotalQuantity
-			{
-				get
-				{
-					return eniTotalQuantity;
-				}
-				set	
-				{
-					eniTotalQuantity = value;
+					eniIpv6AddressQuantity = value;
 				}
 			}
 
@@ -390,15 +236,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public int? PrimaryEniQueueNumber
+			public string InstanceTypeId
 			{
 				get
 				{
-					return primaryEniQueueNumber;
+					return instanceTypeId;
 				}
 				set	
 				{
-					primaryEniQueueNumber = value;
+					instanceTypeId = value;
+				}
+			}
+
+			public int? InstanceBandwidthRx
+			{
+				get
+				{
+					return instanceBandwidthRx;
+				}
+				set	
+				{
+					instanceBandwidthRx = value;
 				}
 			}
 
@@ -414,27 +272,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public int? DiskQuantity
+			public string GPUSpec
 			{
 				get
 				{
-					return diskQuantity;
+					return gPUSpec;
 				}
 				set	
 				{
-					diskQuantity = value;
+					gPUSpec = value;
 				}
 			}
 
-			public int? EriQuantity
+			public int? InstanceBandwidthTx
 			{
 				get
 				{
-					return eriQuantity;
+					return instanceBandwidthTx;
 				}
 				set	
 				{
-					eriQuantity = value;
+					instanceBandwidthTx = value;
 				}
 			}
 
@@ -450,6 +308,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public int? EriQuantity
+			{
+				get
+				{
+					return eriQuantity;
+				}
+				set	
+				{
+					eriQuantity = value;
+				}
+			}
+
+			public int? GPUAmount
+			{
+				get
+				{
+					return gPUAmount;
+				}
+				set	
+				{
+					gPUAmount = value;
+				}
+			}
+
+			public int? TotalEniQueueQuantity
+			{
+				get
+				{
+					return totalEniQueueQuantity;
+				}
+				set	
+				{
+					totalEniQueueQuantity = value;
+				}
+			}
+
 			public string NvmeSupport
 			{
 				get
@@ -459,6 +353,126 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					nvmeSupport = value;
+				}
+			}
+
+			public int? DiskQuantity
+			{
+				get
+				{
+					return diskQuantity;
+				}
+				set	
+				{
+					diskQuantity = value;
+				}
+			}
+
+			public int? InitialCredit
+			{
+				get
+				{
+					return initialCredit;
+				}
+				set	
+				{
+					initialCredit = value;
+				}
+			}
+
+			public int? LocalStorageAmount
+			{
+				get
+				{
+					return localStorageAmount;
+				}
+				set	
+				{
+					localStorageAmount = value;
+				}
+			}
+
+			public int? BaselineCredit
+			{
+				get
+				{
+					return baselineCredit;
+				}
+				set	
+				{
+					baselineCredit = value;
+				}
+			}
+
+			public long? InstancePpsTx
+			{
+				get
+				{
+					return instancePpsTx;
+				}
+				set	
+				{
+					instancePpsTx = value;
+				}
+			}
+
+			public int? EniPrivateIpAddressQuantity
+			{
+				get
+				{
+					return eniPrivateIpAddressQuantity;
+				}
+				set	
+				{
+					eniPrivateIpAddressQuantity = value;
+				}
+			}
+
+			public int? CpuCoreCount
+			{
+				get
+				{
+					return cpuCoreCount;
+				}
+				set	
+				{
+					cpuCoreCount = value;
+				}
+			}
+
+			public string InstanceTypeFamily
+			{
+				get
+				{
+					return instanceTypeFamily;
+				}
+				set	
+				{
+					instanceTypeFamily = value;
+				}
+			}
+
+			public int? EniQuantity
+			{
+				get
+				{
+					return eniQuantity;
+				}
+				set	
+				{
+					eniQuantity = value;
+				}
+			}
+
+			public bool? EniTrunkSupported
+			{
+				get
+				{
+					return eniTrunkSupported;
+				}
+				set	
+				{
+					eniTrunkSupported = value;
 				}
 			}
 		}

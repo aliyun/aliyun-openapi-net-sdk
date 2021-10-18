@@ -31,26 +31,26 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeSnapshotLinksResponse describeSnapshotLinksResponse = new DescribeSnapshotLinksResponse();
 
 			describeSnapshotLinksResponse.HttpResponse = _ctx.HttpResponse;
-			describeSnapshotLinksResponse.RequestId = _ctx.StringValue("DescribeSnapshotLinks.RequestId");
-			describeSnapshotLinksResponse.TotalCount = _ctx.IntegerValue("DescribeSnapshotLinks.TotalCount");
-			describeSnapshotLinksResponse.PageNumber = _ctx.IntegerValue("DescribeSnapshotLinks.PageNumber");
 			describeSnapshotLinksResponse.PageSize = _ctx.IntegerValue("DescribeSnapshotLinks.PageSize");
+			describeSnapshotLinksResponse.RequestId = _ctx.StringValue("DescribeSnapshotLinks.RequestId");
+			describeSnapshotLinksResponse.PageNumber = _ctx.IntegerValue("DescribeSnapshotLinks.PageNumber");
+			describeSnapshotLinksResponse.TotalCount = _ctx.IntegerValue("DescribeSnapshotLinks.TotalCount");
 
 			List<DescribeSnapshotLinksResponse.DescribeSnapshotLinks_SnapshotLink> describeSnapshotLinksResponse_snapshotLinks = new List<DescribeSnapshotLinksResponse.DescribeSnapshotLinks_SnapshotLink>();
 			for (int i = 0; i < _ctx.Length("DescribeSnapshotLinks.SnapshotLinks.Length"); i++) {
 				DescribeSnapshotLinksResponse.DescribeSnapshotLinks_SnapshotLink snapshotLink = new DescribeSnapshotLinksResponse.DescribeSnapshotLinks_SnapshotLink();
-				snapshotLink.SnapshotLinkId = _ctx.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].SnapshotLinkId");
-				snapshotLink.RegionId = _ctx.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].RegionId");
-				snapshotLink.InstanceId = _ctx.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].InstanceId");
-				snapshotLink.InstanceName = _ctx.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].InstanceName");
-				snapshotLink.SourceDiskId = _ctx.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].SourceDiskId");
+				snapshotLink.InstantAccess = _ctx.BooleanValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].InstantAccess");
+				snapshotLink.TotalSize = _ctx.LongValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].TotalSize");
 				snapshotLink.SourceDiskName = _ctx.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].SourceDiskName");
 				snapshotLink.SourceDiskSize = _ctx.IntegerValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].SourceDiskSize");
 				snapshotLink.SourceDiskType = _ctx.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].SourceDiskType");
-				snapshotLink.Category = _ctx.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].Category");
-				snapshotLink.InstantAccess = _ctx.BooleanValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].InstantAccess");
-				snapshotLink.TotalSize = _ctx.LongValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].TotalSize");
+				snapshotLink.InstanceId = _ctx.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].InstanceId");
+				snapshotLink.SnapshotLinkId = _ctx.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].SnapshotLinkId");
 				snapshotLink.TotalCount = _ctx.IntegerValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].TotalCount");
+				snapshotLink.RegionId = _ctx.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].RegionId");
+				snapshotLink.SourceDiskId = _ctx.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].SourceDiskId");
+				snapshotLink.InstanceName = _ctx.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].InstanceName");
+				snapshotLink.Category = _ctx.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].Category");
 
 				describeSnapshotLinksResponse_snapshotLinks.Add(snapshotLink);
 			}

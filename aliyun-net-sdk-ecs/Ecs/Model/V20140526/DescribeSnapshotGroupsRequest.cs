@@ -42,7 +42,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private string resourceGroupId;
+
 		private string nextToken;
+
+		private List<string> tags = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -75,6 +79,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
 		public string NextToken
 		{
 			get
@@ -85,6 +102,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				nextToken = value;
 				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+			}
+		}
+
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
 			}
 		}
 
@@ -124,10 +162,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				snapshotGroupIds = value;
-				for (int i = 0; i < snapshotGroupIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SnapshotGroupId." + (i + 1) , snapshotGroupIds[i]);
-				}
 			}
 		}
 
@@ -154,10 +188,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				additionalAttributess = value;
-				for (int i = 0; i < additionalAttributess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"AdditionalAttributes." + (i + 1) , additionalAttributess[i]);
-				}
 			}
 		}
 
@@ -210,9 +240,37 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				statuss = value;
-				for (int i = 0; i < statuss.Count; i++)
+			}
+		}
+
+		public class Tag
+		{
+
+			private string key;
+
+			private string value_;
+
+			public string Key
+			{
+				get
 				{
-					DictionaryUtil.Add(QueryParameters,"Status." + (i + 1) , statuss[i]);
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
 				}
 			}
 		}

@@ -31,30 +31,30 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeInstanceAttributeResponse describeInstanceAttributeResponse = new DescribeInstanceAttributeResponse();
 
 			describeInstanceAttributeResponse.HttpResponse = _ctx.HttpResponse;
-			describeInstanceAttributeResponse.RequestId = _ctx.StringValue("DescribeInstanceAttribute.RequestId");
-			describeInstanceAttributeResponse.InstanceId = _ctx.StringValue("DescribeInstanceAttribute.InstanceId");
-			describeInstanceAttributeResponse.InstanceName = _ctx.StringValue("DescribeInstanceAttribute.InstanceName");
-			describeInstanceAttributeResponse.ImageId = _ctx.StringValue("DescribeInstanceAttribute.ImageId");
-			describeInstanceAttributeResponse.RegionId = _ctx.StringValue("DescribeInstanceAttribute.RegionId");
-			describeInstanceAttributeResponse.ZoneId = _ctx.StringValue("DescribeInstanceAttribute.ZoneId");
-			describeInstanceAttributeResponse.ClusterId = _ctx.StringValue("DescribeInstanceAttribute.ClusterId");
-			describeInstanceAttributeResponse.InstanceType = _ctx.StringValue("DescribeInstanceAttribute.InstanceType");
-			describeInstanceAttributeResponse.Cpu = _ctx.IntegerValue("DescribeInstanceAttribute.Cpu");
-			describeInstanceAttributeResponse.Memory = _ctx.IntegerValue("DescribeInstanceAttribute.Memory");
-			describeInstanceAttributeResponse.HostName = _ctx.StringValue("DescribeInstanceAttribute.HostName");
 			describeInstanceAttributeResponse.Status = _ctx.StringValue("DescribeInstanceAttribute.Status");
-			describeInstanceAttributeResponse.InternetChargeType = _ctx.StringValue("DescribeInstanceAttribute.InternetChargeType");
-			describeInstanceAttributeResponse.InternetMaxBandwidthIn = _ctx.IntegerValue("DescribeInstanceAttribute.InternetMaxBandwidthIn");
-			describeInstanceAttributeResponse.InternetMaxBandwidthOut = _ctx.IntegerValue("DescribeInstanceAttribute.InternetMaxBandwidthOut");
-			describeInstanceAttributeResponse.VlanId = _ctx.StringValue("DescribeInstanceAttribute.VlanId");
 			describeInstanceAttributeResponse.SerialNumber = _ctx.StringValue("DescribeInstanceAttribute.SerialNumber");
 			describeInstanceAttributeResponse.CreationTime = _ctx.StringValue("DescribeInstanceAttribute.CreationTime");
+			describeInstanceAttributeResponse.RequestId = _ctx.StringValue("DescribeInstanceAttribute.RequestId");
 			describeInstanceAttributeResponse.Description = _ctx.StringValue("DescribeInstanceAttribute.Description");
+			describeInstanceAttributeResponse.InstanceName = _ctx.StringValue("DescribeInstanceAttribute.InstanceName");
 			describeInstanceAttributeResponse.InstanceNetworkType = _ctx.StringValue("DescribeInstanceAttribute.InstanceNetworkType");
-			describeInstanceAttributeResponse.IoOptimized = _ctx.StringValue("DescribeInstanceAttribute.IoOptimized");
-			describeInstanceAttributeResponse.InstanceChargeType = _ctx.StringValue("DescribeInstanceAttribute.InstanceChargeType");
-			describeInstanceAttributeResponse.ExpiredTime = _ctx.StringValue("DescribeInstanceAttribute.ExpiredTime");
+			describeInstanceAttributeResponse.Memory = _ctx.IntegerValue("DescribeInstanceAttribute.Memory");
+			describeInstanceAttributeResponse.ImageId = _ctx.StringValue("DescribeInstanceAttribute.ImageId");
+			describeInstanceAttributeResponse.ClusterId = _ctx.StringValue("DescribeInstanceAttribute.ClusterId");
+			describeInstanceAttributeResponse.VlanId = _ctx.StringValue("DescribeInstanceAttribute.VlanId");
 			describeInstanceAttributeResponse.StoppedMode = _ctx.StringValue("DescribeInstanceAttribute.StoppedMode");
+			describeInstanceAttributeResponse.HostName = _ctx.StringValue("DescribeInstanceAttribute.HostName");
+			describeInstanceAttributeResponse.InstanceId = _ctx.StringValue("DescribeInstanceAttribute.InstanceId");
+			describeInstanceAttributeResponse.InstanceType = _ctx.StringValue("DescribeInstanceAttribute.InstanceType");
+			describeInstanceAttributeResponse.InternetMaxBandwidthIn = _ctx.IntegerValue("DescribeInstanceAttribute.InternetMaxBandwidthIn");
+			describeInstanceAttributeResponse.InternetMaxBandwidthOut = _ctx.IntegerValue("DescribeInstanceAttribute.InternetMaxBandwidthOut");
+			describeInstanceAttributeResponse.RegionId = _ctx.StringValue("DescribeInstanceAttribute.RegionId");
+			describeInstanceAttributeResponse.InstanceChargeType = _ctx.StringValue("DescribeInstanceAttribute.InstanceChargeType");
+			describeInstanceAttributeResponse.IoOptimized = _ctx.StringValue("DescribeInstanceAttribute.IoOptimized");
+			describeInstanceAttributeResponse.Cpu = _ctx.IntegerValue("DescribeInstanceAttribute.Cpu");
+			describeInstanceAttributeResponse.ExpiredTime = _ctx.StringValue("DescribeInstanceAttribute.ExpiredTime");
+			describeInstanceAttributeResponse.ZoneId = _ctx.StringValue("DescribeInstanceAttribute.ZoneId");
+			describeInstanceAttributeResponse.InternetChargeType = _ctx.StringValue("DescribeInstanceAttribute.InternetChargeType");
 			describeInstanceAttributeResponse.CreditSpecification = _ctx.StringValue("DescribeInstanceAttribute.CreditSpecification");
 
 			List<string> describeInstanceAttributeResponse_securityGroupIds = new List<string>();
@@ -77,8 +77,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 
 			DescribeInstanceAttributeResponse.DescribeInstanceAttribute_VpcAttributes vpcAttributes = new DescribeInstanceAttributeResponse.DescribeInstanceAttribute_VpcAttributes();
 			vpcAttributes.VpcId = _ctx.StringValue("DescribeInstanceAttribute.VpcAttributes.VpcId");
-			vpcAttributes.VSwitchId = _ctx.StringValue("DescribeInstanceAttribute.VpcAttributes.VSwitchId");
 			vpcAttributes.NatIpAddress = _ctx.StringValue("DescribeInstanceAttribute.VpcAttributes.NatIpAddress");
+			vpcAttributes.VSwitchId = _ctx.StringValue("DescribeInstanceAttribute.VpcAttributes.VSwitchId");
 
 			List<string> vpcAttributes_privateIpAddress = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceAttribute.VpcAttributes.PrivateIpAddress.Length"); i++) {
@@ -88,15 +88,15 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeInstanceAttributeResponse.VpcAttributes = vpcAttributes;
 
 			DescribeInstanceAttributeResponse.DescribeInstanceAttribute_EipAddress eipAddress = new DescribeInstanceAttributeResponse.DescribeInstanceAttribute_EipAddress();
-			eipAddress.AllocationId = _ctx.StringValue("DescribeInstanceAttribute.EipAddress.AllocationId");
+			eipAddress.InternetChargeType = _ctx.StringValue("DescribeInstanceAttribute.EipAddress.InternetChargeType");
 			eipAddress.IpAddress = _ctx.StringValue("DescribeInstanceAttribute.EipAddress.IpAddress");
 			eipAddress.Bandwidth = _ctx.IntegerValue("DescribeInstanceAttribute.EipAddress.Bandwidth");
-			eipAddress.InternetChargeType = _ctx.StringValue("DescribeInstanceAttribute.EipAddress.InternetChargeType");
+			eipAddress.AllocationId = _ctx.StringValue("DescribeInstanceAttribute.EipAddress.AllocationId");
 			describeInstanceAttributeResponse.EipAddress = eipAddress;
 
 			DescribeInstanceAttributeResponse.DescribeInstanceAttribute_DedicatedHostAttribute dedicatedHostAttribute = new DescribeInstanceAttributeResponse.DescribeInstanceAttribute_DedicatedHostAttribute();
-			dedicatedHostAttribute.DedicatedHostId = _ctx.StringValue("DescribeInstanceAttribute.DedicatedHostAttribute.DedicatedHostId");
 			dedicatedHostAttribute.DedicatedHostName = _ctx.StringValue("DescribeInstanceAttribute.DedicatedHostAttribute.DedicatedHostName");
+			dedicatedHostAttribute.DedicatedHostId = _ctx.StringValue("DescribeInstanceAttribute.DedicatedHostAttribute.DedicatedHostId");
 			describeInstanceAttributeResponse.DedicatedHostAttribute = dedicatedHostAttribute;
 
 			List<DescribeInstanceAttributeResponse.DescribeInstanceAttribute_LockReason> describeInstanceAttributeResponse_operationLocks = new List<DescribeInstanceAttributeResponse.DescribeInstanceAttribute_LockReason>();

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeInstanceTypeFamilies_InstanceTypeFamily
 		{
 
-			private string instanceTypeFamilyId;
-
 			private string generation;
 
-			public string InstanceTypeFamilyId
-			{
-				get
-				{
-					return instanceTypeFamilyId;
-				}
-				set	
-				{
-					instanceTypeFamilyId = value;
-				}
-			}
+			private string instanceTypeFamilyId;
 
 			public string Generation
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					generation = value;
+				}
+			}
+
+			public string InstanceTypeFamilyId
+			{
+				get
+				{
+					return instanceTypeFamilyId;
+				}
+				set	
+				{
+					instanceTypeFamilyId = value;
 				}
 			}
 		}

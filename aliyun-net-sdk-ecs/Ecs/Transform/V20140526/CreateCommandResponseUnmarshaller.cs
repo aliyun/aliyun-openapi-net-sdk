@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateCommandResponse createCommandResponse = new CreateCommandResponse();
 
 			createCommandResponse.HttpResponse = _ctx.HttpResponse;
-			createCommandResponse.RequestId = _ctx.StringValue("CreateCommand.RequestId");
 			createCommandResponse.CommandId = _ctx.StringValue("CreateCommand.CommandId");
+			createCommandResponse.RequestId = _ctx.StringValue("CreateCommand.RequestId");
         
 			return createCommandResponse;
         }

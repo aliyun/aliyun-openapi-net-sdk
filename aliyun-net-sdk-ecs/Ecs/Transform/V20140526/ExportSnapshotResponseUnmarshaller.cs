@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			ExportSnapshotResponse exportSnapshotResponse = new ExportSnapshotResponse();
 
 			exportSnapshotResponse.HttpResponse = _ctx.HttpResponse;
-			exportSnapshotResponse.RequestId = _ctx.StringValue("ExportSnapshot.RequestId");
 			exportSnapshotResponse.TaskId = _ctx.StringValue("ExportSnapshot.TaskId");
+			exportSnapshotResponse.RequestId = _ctx.StringValue("ExportSnapshot.RequestId");
         
 			return exportSnapshotResponse;
         }

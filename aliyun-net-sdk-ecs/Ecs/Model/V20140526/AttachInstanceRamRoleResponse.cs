@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class AttachInstanceRamRoleResponse : AcsResponse
 	{
 
+		private string ramRoleName;
+
 		private string requestId;
 
 		private int? totalCount;
 
 		private int? failCount;
 
-		private string ramRoleName;
-
 		private List<AttachInstanceRamRole_AttachInstanceRamRoleResult> attachInstanceRamRoleResults;
+
+		public string RamRoleName
+		{
+			get
+			{
+				return ramRoleName;
+			}
+			set	
+			{
+				ramRoleName = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -71,18 +83,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RamRoleName
-		{
-			get
-			{
-				return ramRoleName;
-			}
-			set	
-			{
-				ramRoleName = value;
-			}
-		}
-
 		public List<AttachInstanceRamRole_AttachInstanceRamRoleResult> AttachInstanceRamRoleResults
 		{
 			get
@@ -98,37 +98,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class AttachInstanceRamRole_AttachInstanceRamRoleResult
 		{
 
-			private string instanceId;
-
-			private bool? success;
-
 			private string code;
 
 			private string message;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private string instanceId;
 
-			public bool? Success
-			{
-				get
-				{
-					return success;
-				}
-				set	
-				{
-					success = value;
-				}
-			}
+			private bool? success;
 
 			public string Code
 			{
@@ -151,6 +127,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					message = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public bool? Success
+			{
+				get
+				{
+					return success;
+				}
+				set	
+				{
+					success = value;
 				}
 			}
 		}

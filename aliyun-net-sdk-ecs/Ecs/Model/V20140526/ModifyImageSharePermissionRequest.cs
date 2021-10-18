@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string imageId;
 
+		private bool? isPublic;
+
 		private string launchPermission;
 
 		private string resourceOwnerAccount;
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<string> removeAccounts = new List<string>(){ };
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -70,6 +73,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ImageId")]
 		public string ImageId
 		{
 			get
@@ -83,6 +87,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "IsPublic")]
+		public bool? IsPublic
+		{
+			get
+			{
+				return isPublic;
+			}
+			set	
+			{
+				isPublic = value;
+				DictionaryUtil.Add(QueryParameters, "IsPublic", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "LaunchPermission")]
 		public string LaunchPermission
 		{
 			get
@@ -96,6 +115,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -109,6 +129,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -122,6 +143,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -135,6 +157,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "AddAccount")]
 		public List<string> AddAccounts
 		{
 			get
@@ -145,13 +168,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				addAccounts = value;
-				for (int i = 0; i < addAccounts.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"AddAccount." + (i + 1) , addAccounts[i]);
-				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "RemoveAccount")]
 		public List<string> RemoveAccounts
 		{
 			get
@@ -162,10 +182,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				removeAccounts = value;
-				for (int i = 0; i < removeAccounts.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RemoveAccount." + (i + 1) , removeAccounts[i]);
-				}
 			}
 		}
 

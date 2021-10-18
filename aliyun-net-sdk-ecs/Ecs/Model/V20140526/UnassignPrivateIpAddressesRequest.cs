@@ -53,6 +53,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string networkInterfaceId;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -66,6 +67,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -79,6 +81,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -92,6 +95,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -105,6 +109,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "PrivateIpAddress")]
 		public List<string> PrivateIpAddresss
 		{
 			get
@@ -115,13 +120,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				privateIpAddresss = value;
-				for (int i = 0; i < privateIpAddresss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"PrivateIpAddress." + (i + 1) , privateIpAddresss[i]);
-				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "NetworkInterfaceId")]
 		public string NetworkInterfaceId
 		{
 			get

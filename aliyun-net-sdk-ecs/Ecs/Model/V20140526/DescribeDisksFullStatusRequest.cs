@@ -76,10 +76,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				eventIds = value;
-				for (int i = 0; i < eventIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"EventId." + (i + 1) , eventIds[i]);
-				}
 			}
 		}
 
@@ -145,10 +141,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				diskIds = value;
-				for (int i = 0; i < diskIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DiskId." + (i + 1) , diskIds[i]);
-				}
 			}
 		}
 

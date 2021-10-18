@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -134,7 +134,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private bool? deleteAutoSnapshot;
 
-			private string dedicatedBlockStorageClusterId;
+			private string storageClusterId;
 
 			private bool? encrypted;
 
@@ -330,15 +330,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string DedicatedBlockStorageClusterId
+			public string StorageClusterId
 			{
 				get
 				{
-					return dedicatedBlockStorageClusterId;
+					return storageClusterId;
 				}
 				set	
 				{
-					dedicatedBlockStorageClusterId = value;
+					storageClusterId = value;
 				}
 			}
 

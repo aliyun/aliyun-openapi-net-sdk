@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateVSwitchResponse createVSwitchResponse = new CreateVSwitchResponse();
 
 			createVSwitchResponse.HttpResponse = _ctx.HttpResponse;
-			createVSwitchResponse.RequestId = _ctx.StringValue("CreateVSwitch.RequestId");
 			createVSwitchResponse.VSwitchId = _ctx.StringValue("CreateVSwitch.VSwitchId");
+			createVSwitchResponse.RequestId = _ctx.StringValue("CreateVSwitch.RequestId");
         
 			return createVSwitchResponse;
         }

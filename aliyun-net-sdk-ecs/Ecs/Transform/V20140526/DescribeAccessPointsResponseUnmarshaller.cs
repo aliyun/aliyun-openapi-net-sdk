@@ -39,14 +39,14 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DescribeAccessPointsResponse.DescribeAccessPoints_AccessPointType> describeAccessPointsResponse_accessPointSet = new List<DescribeAccessPointsResponse.DescribeAccessPoints_AccessPointType>();
 			for (int i = 0; i < _ctx.Length("DescribeAccessPoints.AccessPointSet.Length"); i++) {
 				DescribeAccessPointsResponse.DescribeAccessPoints_AccessPointType accessPointType = new DescribeAccessPointsResponse.DescribeAccessPoints_AccessPointType();
-				accessPointType.AccessPointId = _ctx.StringValue("DescribeAccessPoints.AccessPointSet["+ i +"].AccessPointId");
 				accessPointType.Status = _ctx.StringValue("DescribeAccessPoints.AccessPointSet["+ i +"].Status");
 				accessPointType.Type = _ctx.StringValue("DescribeAccessPoints.AccessPointSet["+ i +"].Type");
-				accessPointType.AttachedRegionNo = _ctx.StringValue("DescribeAccessPoints.AccessPointSet["+ i +"].AttachedRegionNo");
-				accessPointType.Location = _ctx.StringValue("DescribeAccessPoints.AccessPointSet["+ i +"].Location");
 				accessPointType.HostOperator = _ctx.StringValue("DescribeAccessPoints.AccessPointSet["+ i +"].HostOperator");
-				accessPointType.Name = _ctx.StringValue("DescribeAccessPoints.AccessPointSet["+ i +"].Name");
 				accessPointType.Description = _ctx.StringValue("DescribeAccessPoints.AccessPointSet["+ i +"].Description");
+				accessPointType.AttachedRegionNo = _ctx.StringValue("DescribeAccessPoints.AccessPointSet["+ i +"].AttachedRegionNo");
+				accessPointType.Name = _ctx.StringValue("DescribeAccessPoints.AccessPointSet["+ i +"].Name");
+				accessPointType.AccessPointId = _ctx.StringValue("DescribeAccessPoints.AccessPointSet["+ i +"].AccessPointId");
+				accessPointType.Location = _ctx.StringValue("DescribeAccessPoints.AccessPointSet["+ i +"].Location");
 
 				describeAccessPointsResponse_accessPointSet.Add(accessPointType);
 			}

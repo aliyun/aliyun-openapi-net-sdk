@@ -342,10 +342,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				instanceTypeLists = value;
-				for (int i = 0; i < instanceTypeLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceTypeList." + (i + 1) , instanceTypeLists[i]);
-				}
 			}
 		}
 

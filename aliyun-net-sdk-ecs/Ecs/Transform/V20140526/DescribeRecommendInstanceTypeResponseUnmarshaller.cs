@@ -36,22 +36,22 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType> describeRecommendInstanceTypeResponse_data = new List<DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType>();
 			for (int i = 0; i < _ctx.Length("DescribeRecommendInstanceType.Data.Length"); i++) {
 				DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType recommendInstanceType = new DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType();
-				recommendInstanceType.RegionId = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].RegionId");
 				recommendInstanceType.CommodityCode = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].CommodityCode");
-				recommendInstanceType.Scene = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].Scene");
-				recommendInstanceType.InstanceChargeType = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceChargeType");
-				recommendInstanceType.SpotStrategy = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].SpotStrategy");
-				recommendInstanceType.Priority = _ctx.IntegerValue("DescribeRecommendInstanceType.Data["+ i +"].Priority");
 				recommendInstanceType.ZoneId = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].ZoneId");
+				recommendInstanceType.Priority = _ctx.IntegerValue("DescribeRecommendInstanceType.Data["+ i +"].Priority");
 				recommendInstanceType.NetworkType = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].NetworkType");
+				recommendInstanceType.Scene = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].Scene");
+				recommendInstanceType.SpotStrategy = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].SpotStrategy");
+				recommendInstanceType.RegionId = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].RegionId");
+				recommendInstanceType.InstanceChargeType = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceChargeType");
 
 				DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_InstanceType instanceType = new DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_InstanceType();
-				instanceType.Generation = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceType.Generation");
-				instanceType.InstanceTypeFamily = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceType.InstanceTypeFamily");
-				instanceType.InstanceType = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceType.InstanceType");
 				instanceType.SupportIoOptimized = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceType.SupportIoOptimized");
 				instanceType.Cores = _ctx.IntegerValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceType.Cores");
 				instanceType.Memory = _ctx.IntegerValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceType.Memory");
+				instanceType.InstanceType = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceType.InstanceType");
+				instanceType.InstanceTypeFamily = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceType.InstanceTypeFamily");
+				instanceType.Generation = _ctx.StringValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceType.Generation");
 				recommendInstanceType.InstanceType = instanceType;
 
 				List<DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_Zone> recommendInstanceType_zones = new List<DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_Zone>();

@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeElasticityAssuranceInstancesResponse describeElasticityAssuranceInstancesResponse = new DescribeElasticityAssuranceInstancesResponse();
 
 			describeElasticityAssuranceInstancesResponse.HttpResponse = _ctx.HttpResponse;
-			describeElasticityAssuranceInstancesResponse.RequestId = _ctx.StringValue("DescribeElasticityAssuranceInstances.RequestId");
 			describeElasticityAssuranceInstancesResponse.NextToken = _ctx.StringValue("DescribeElasticityAssuranceInstances.NextToken");
-			describeElasticityAssuranceInstancesResponse.MaxResults = _ctx.IntegerValue("DescribeElasticityAssuranceInstances.MaxResults");
+			describeElasticityAssuranceInstancesResponse.RequestId = _ctx.StringValue("DescribeElasticityAssuranceInstances.RequestId");
 			describeElasticityAssuranceInstancesResponse.TotalCount = _ctx.IntegerValue("DescribeElasticityAssuranceInstances.TotalCount");
+			describeElasticityAssuranceInstancesResponse.MaxResults = _ctx.IntegerValue("DescribeElasticityAssuranceInstances.MaxResults");
 
 			List<DescribeElasticityAssuranceInstancesResponse.DescribeElasticityAssuranceInstances_InstanceIdSet> describeElasticityAssuranceInstancesResponse_elasticityAssuranceItem = new List<DescribeElasticityAssuranceInstancesResponse.DescribeElasticityAssuranceInstances_InstanceIdSet>();
 			for (int i = 0; i < _ctx.Length("DescribeElasticityAssuranceInstances.ElasticityAssuranceItem.Length"); i++) {

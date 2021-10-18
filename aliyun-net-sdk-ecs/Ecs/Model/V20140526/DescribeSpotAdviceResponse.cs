@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeSpotAdviceResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string regionId;
 
-		private List<DescribeSpotAdvice_AvailableSpotZone> availableSpotZones;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeSpotAdvice_AvailableSpotZone> availableSpotZones;
 
 		public string RegionId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				regionId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -101,37 +101,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeSpotAdvice_AvailableSpotResource
 			{
 
-				private string instanceType;
-
-				private float? interruptionRate;
-
 				private string interruptRateDesc;
 
 				private int? averageSpotDiscount;
 
-				public string InstanceType
-				{
-					get
-					{
-						return instanceType;
-					}
-					set	
-					{
-						instanceType = value;
-					}
-				}
+				private string instanceType;
 
-				public float? InterruptionRate
-				{
-					get
-					{
-						return interruptionRate;
-					}
-					set	
-					{
-						interruptionRate = value;
-					}
-				}
+				private float? interruptionRate;
 
 				public string InterruptRateDesc
 				{
@@ -154,6 +130,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						averageSpotDiscount = value;
+					}
+				}
+
+				public string InstanceType
+				{
+					get
+					{
+						return instanceType;
+					}
+					set	
+					{
+						instanceType = value;
+					}
+				}
+
+				public float? InterruptionRate
+				{
+					get
+					{
+						return interruptionRate;
+					}
+					set	
+					{
+						interruptionRate = value;
 					}
 				}
 			}

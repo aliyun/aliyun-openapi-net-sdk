@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string actionType;
 
+		private long? imageOwnerId;
+
 		private long? resourceOwnerId;
 
 		private string imageId;
@@ -62,11 +64,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? isSupportCloudinit;
 
+		private bool? isPublic;
+
 		private int? pageSize;
 
 		private string instanceType;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private List<string> tags = new List<string>(){ };
 
 		private string architecture;
 
@@ -82,7 +86,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private List<Filter> filters = new List<Filter>(){ };
+		private List<string> filters = new List<string>(){ };
 
 		private string imageFamily;
 
@@ -98,6 +102,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				actionType = value;
 				DictionaryUtil.Add(QueryParameters, "ActionType", value);
+			}
+		}
+
+		public long? ImageOwnerId
+		{
+			get
+			{
+				return imageOwnerId;
+			}
+			set	
+			{
+				imageOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ImageOwnerId", value.ToString());
 			}
 		}
 
@@ -231,6 +248,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public bool? IsPublic
+		{
+			get
+			{
+				return isPublic;
+			}
+			set	
+			{
+				isPublic = value;
+				DictionaryUtil.Add(QueryParameters, "IsPublic", value.ToString());
+			}
+		}
+
 		public int? PageSize
 		{
 			get
@@ -257,7 +287,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Tag> Tags
+		public List<string> Tags
 		{
 			get
 			{
@@ -267,10 +297,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				tags = value;
-				for (int i = 0; i < tags.Count; i++)
+				if(tags != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
 				}
 			}
 		}
@@ -366,7 +399,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Filter> Filters
+		public List<string> Filters
 		{
 			get
 			{
@@ -376,10 +409,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				filters = value;
-				for (int i = 0; i < filters.Count; i++)
+				if(filters != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Value", filters[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
+					for (int depth1 = 0; depth1 < filters.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Filter." + (depth1 + 1), filters[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Filter." + (depth1 + 1), filters[depth1]);
+					}
 				}
 			}
 		}
@@ -417,7 +453,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string key;
 
-			public string Value
+			public string Value_
 			{
 				get
 				{
@@ -449,7 +485,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string key;
 
-			public string Value
+			public string Value_
 			{
 				get
 				{

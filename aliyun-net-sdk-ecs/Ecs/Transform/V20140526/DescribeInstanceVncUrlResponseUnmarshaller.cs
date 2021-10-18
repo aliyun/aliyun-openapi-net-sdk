@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeInstanceVncUrlResponse describeInstanceVncUrlResponse = new DescribeInstanceVncUrlResponse();
 
 			describeInstanceVncUrlResponse.HttpResponse = _ctx.HttpResponse;
-			describeInstanceVncUrlResponse.RequestId = _ctx.StringValue("DescribeInstanceVncUrl.RequestId");
 			describeInstanceVncUrlResponse.VncUrl = _ctx.StringValue("DescribeInstanceVncUrl.VncUrl");
+			describeInstanceVncUrlResponse.RequestId = _ctx.StringValue("DescribeInstanceVncUrl.RequestId");
         
 			return describeInstanceVncUrlResponse;
         }

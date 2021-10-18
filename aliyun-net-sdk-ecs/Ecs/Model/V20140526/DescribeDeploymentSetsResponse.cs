@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,51 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeDeploymentSetsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string regionId;
-
-		private int? totalCount;
+		private int? pageSize;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private string requestId;
+
+		private int? totalCount;
+
+		private string regionId;
 
 		private List<DescribeDeploymentSets_DeploymentSet> deploymentSets;
 
-		public string RequestId
+		public int? PageSize
 		{
 			get
 			{
-				return requestId;
+				return pageSize;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
+				pageSize = value;
 			}
 		}
 
@@ -85,15 +61,39 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
+				requestId = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
 			}
 		}
 
@@ -112,61 +112,37 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeDeploymentSets_DeploymentSet
 		{
 
-			private string deploymentSetId;
-
-			private string deploymentSetDescription;
-
-			private string deploymentSetName;
+			private string creationTime;
 
 			private string strategy;
 
+			private string deploymentSetId;
+
 			private string deploymentStrategy;
+
+			private string deploymentSetDescription;
 
 			private string domain;
 
+			private int? groupCount;
+
 			private string granularity;
 
-			private int? groupCount;
+			private string deploymentSetName;
 
 			private int? instanceAmount;
 
-			private string creationTime;
-
 			private List<string> instanceIds;
 
-			public string DeploymentSetId
+			public string CreationTime
 			{
 				get
 				{
-					return deploymentSetId;
+					return creationTime;
 				}
 				set	
 				{
-					deploymentSetId = value;
-				}
-			}
-
-			public string DeploymentSetDescription
-			{
-				get
-				{
-					return deploymentSetDescription;
-				}
-				set	
-				{
-					deploymentSetDescription = value;
-				}
-			}
-
-			public string DeploymentSetName
-			{
-				get
-				{
-					return deploymentSetName;
-				}
-				set	
-				{
-					deploymentSetName = value;
+					creationTime = value;
 				}
 			}
 
@@ -182,6 +158,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string DeploymentSetId
+			{
+				get
+				{
+					return deploymentSetId;
+				}
+				set	
+				{
+					deploymentSetId = value;
+				}
+			}
+
 			public string DeploymentStrategy
 			{
 				get
@@ -191,6 +179,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					deploymentStrategy = value;
+				}
+			}
+
+			public string DeploymentSetDescription
+			{
+				get
+				{
+					return deploymentSetDescription;
+				}
+				set	
+				{
+					deploymentSetDescription = value;
 				}
 			}
 
@@ -206,18 +206,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Granularity
-			{
-				get
-				{
-					return granularity;
-				}
-				set	
-				{
-					granularity = value;
-				}
-			}
-
 			public int? GroupCount
 			{
 				get
@@ -230,6 +218,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string Granularity
+			{
+				get
+				{
+					return granularity;
+				}
+				set	
+				{
+					granularity = value;
+				}
+			}
+
+			public string DeploymentSetName
+			{
+				get
+				{
+					return deploymentSetName;
+				}
+				set	
+				{
+					deploymentSetName = value;
+				}
+			}
+
 			public int? InstanceAmount
 			{
 				get
@@ -239,18 +251,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					instanceAmount = value;
-				}
-			}
-
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
 				}
 			}
 

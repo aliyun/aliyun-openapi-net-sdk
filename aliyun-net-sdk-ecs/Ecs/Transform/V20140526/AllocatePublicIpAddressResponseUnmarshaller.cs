@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			AllocatePublicIpAddressResponse allocatePublicIpAddressResponse = new AllocatePublicIpAddressResponse();
 
 			allocatePublicIpAddressResponse.HttpResponse = _ctx.HttpResponse;
-			allocatePublicIpAddressResponse.RequestId = _ctx.StringValue("AllocatePublicIpAddress.RequestId");
 			allocatePublicIpAddressResponse.IpAddress = _ctx.StringValue("AllocatePublicIpAddress.IpAddress");
+			allocatePublicIpAddressResponse.RequestId = _ctx.StringValue("AllocatePublicIpAddress.RequestId");
         
 			return allocatePublicIpAddressResponse;
         }

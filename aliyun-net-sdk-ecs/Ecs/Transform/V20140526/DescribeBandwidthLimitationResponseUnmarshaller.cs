@@ -37,8 +37,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			for (int i = 0; i < _ctx.Length("DescribeBandwidthLimitation.Bandwidths.Length"); i++) {
 				DescribeBandwidthLimitationResponse.DescribeBandwidthLimitation_Bandwidth bandwidth = new DescribeBandwidthLimitationResponse.DescribeBandwidthLimitation_Bandwidth();
 				bandwidth.InternetChargeType = _ctx.StringValue("DescribeBandwidthLimitation.Bandwidths["+ i +"].InternetChargeType");
-				bandwidth.Min = _ctx.IntegerValue("DescribeBandwidthLimitation.Bandwidths["+ i +"].Min");
 				bandwidth.Max = _ctx.IntegerValue("DescribeBandwidthLimitation.Bandwidths["+ i +"].Max");
+				bandwidth.Min = _ctx.IntegerValue("DescribeBandwidthLimitation.Bandwidths["+ i +"].Min");
 				bandwidth.Unit = _ctx.StringValue("DescribeBandwidthLimitation.Bandwidths["+ i +"].Unit");
 
 				describeBandwidthLimitationResponse_bandwidths.Add(bandwidth);

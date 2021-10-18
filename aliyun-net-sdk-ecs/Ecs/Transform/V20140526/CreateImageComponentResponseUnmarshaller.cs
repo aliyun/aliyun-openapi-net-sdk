@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateImageComponentResponse createImageComponentResponse = new CreateImageComponentResponse();
 
 			createImageComponentResponse.HttpResponse = _ctx.HttpResponse;
-			createImageComponentResponse.RequestId = _ctx.StringValue("CreateImageComponent.RequestId");
 			createImageComponentResponse.ImageComponentId = _ctx.StringValue("CreateImageComponent.ImageComponentId");
+			createImageComponentResponse.RequestId = _ctx.StringValue("CreateImageComponent.RequestId");
         
 			return createImageComponentResponse;
         }

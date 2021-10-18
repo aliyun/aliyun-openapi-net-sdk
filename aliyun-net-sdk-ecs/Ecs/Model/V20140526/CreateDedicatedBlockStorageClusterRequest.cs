@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string description;
 
+		private string type;
+
 		private int? capacity;
 
 		private int? period;
@@ -55,8 +57,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string fromApp;
 
 		private string resourceOwnerAccount;
-
-		private string performanceLevel;
 
 		private string ownerAccount;
 
@@ -120,6 +120,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
 		public int? Capacity
 		{
 			get
@@ -169,19 +182,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string PerformanceLevel
-		{
-			get
-			{
-				return performanceLevel;
-			}
-			set	
-			{
-				performanceLevel = value;
-				DictionaryUtil.Add(QueryParameters, "PerformanceLevel", value);
 			}
 		}
 

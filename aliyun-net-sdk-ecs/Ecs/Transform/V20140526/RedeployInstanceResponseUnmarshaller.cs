@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			RedeployInstanceResponse redeployInstanceResponse = new RedeployInstanceResponse();
 
 			redeployInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			redeployInstanceResponse.RequestId = _ctx.StringValue("RedeployInstance.RequestId");
 			redeployInstanceResponse.TaskId = _ctx.StringValue("RedeployInstance.TaskId");
+			redeployInstanceResponse.RequestId = _ctx.StringValue("RedeployInstance.RequestId");
         
 			return redeployInstanceResponse;
         }

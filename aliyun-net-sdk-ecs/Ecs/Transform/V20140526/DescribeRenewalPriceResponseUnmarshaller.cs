@@ -38,8 +38,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Price price = new DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Price();
 			price.OriginalPrice = _ctx.FloatValue("DescribeRenewalPrice.PriceInfo.Price.OriginalPrice");
 			price.DiscountPrice = _ctx.FloatValue("DescribeRenewalPrice.PriceInfo.Price.DiscountPrice");
-			price.TradePrice = _ctx.FloatValue("DescribeRenewalPrice.PriceInfo.Price.TradePrice");
 			price.Currency = _ctx.StringValue("DescribeRenewalPrice.PriceInfo.Price.Currency");
+			price.TradePrice = _ctx.FloatValue("DescribeRenewalPrice.PriceInfo.Price.TradePrice");
 
 			List<DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Price.DescribeRenewalPrice_ResourcePriceModel> price_detailInfos = new List<DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Price.DescribeRenewalPrice_ResourcePriceModel>();
 			for (int i = 0; i < _ctx.Length("DescribeRenewalPrice.PriceInfo.Price.DetailInfos.Length"); i++) {
@@ -52,8 +52,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				List<DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Price.DescribeRenewalPrice_ResourcePriceModel.DescribeRenewalPrice_Rule1> resourcePriceModel_subRules = new List<DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Price.DescribeRenewalPrice_ResourcePriceModel.DescribeRenewalPrice_Rule1>();
 				for (int j = 0; j < _ctx.Length("DescribeRenewalPrice.PriceInfo.Price.DetailInfos["+ i +"].SubRules.Length"); j++) {
 					DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Price.DescribeRenewalPrice_ResourcePriceModel.DescribeRenewalPrice_Rule1 rule1 = new DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Price.DescribeRenewalPrice_ResourcePriceModel.DescribeRenewalPrice_Rule1();
-					rule1.RuleId = _ctx.LongValue("DescribeRenewalPrice.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].RuleId");
 					rule1.Description = _ctx.StringValue("DescribeRenewalPrice.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].Description");
+					rule1.RuleId = _ctx.LongValue("DescribeRenewalPrice.PriceInfo.Price.DetailInfos["+ i +"].SubRules["+ j +"].RuleId");
 
 					resourcePriceModel_subRules.Add(rule1);
 				}
@@ -67,8 +67,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Rule> priceInfo_rules = new List<DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Rule>();
 			for (int i = 0; i < _ctx.Length("DescribeRenewalPrice.PriceInfo.Rules.Length"); i++) {
 				DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Rule rule = new DescribeRenewalPriceResponse.DescribeRenewalPrice_PriceInfo.DescribeRenewalPrice_Rule();
-				rule.RuleId = _ctx.LongValue("DescribeRenewalPrice.PriceInfo.Rules["+ i +"].RuleId");
 				rule.Description = _ctx.StringValue("DescribeRenewalPrice.PriceInfo.Rules["+ i +"].Description");
+				rule.RuleId = _ctx.LongValue("DescribeRenewalPrice.PriceInfo.Rules["+ i +"].RuleId");
 
 				priceInfo_rules.Add(rule);
 			}

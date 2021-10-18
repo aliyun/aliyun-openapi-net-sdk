@@ -31,33 +31,34 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeAutoSnapshotPolicyExResponse describeAutoSnapshotPolicyExResponse = new DescribeAutoSnapshotPolicyExResponse();
 
 			describeAutoSnapshotPolicyExResponse.HttpResponse = _ctx.HttpResponse;
-			describeAutoSnapshotPolicyExResponse.RequestId = _ctx.StringValue("DescribeAutoSnapshotPolicyEx.RequestId");
-			describeAutoSnapshotPolicyExResponse.TotalCount = _ctx.IntegerValue("DescribeAutoSnapshotPolicyEx.TotalCount");
-			describeAutoSnapshotPolicyExResponse.PageNumber = _ctx.IntegerValue("DescribeAutoSnapshotPolicyEx.PageNumber");
 			describeAutoSnapshotPolicyExResponse.PageSize = _ctx.IntegerValue("DescribeAutoSnapshotPolicyEx.PageSize");
+			describeAutoSnapshotPolicyExResponse.RequestId = _ctx.StringValue("DescribeAutoSnapshotPolicyEx.RequestId");
+			describeAutoSnapshotPolicyExResponse.PageNumber = _ctx.IntegerValue("DescribeAutoSnapshotPolicyEx.PageNumber");
+			describeAutoSnapshotPolicyExResponse.TotalCount = _ctx.IntegerValue("DescribeAutoSnapshotPolicyEx.TotalCount");
 
 			List<DescribeAutoSnapshotPolicyExResponse.DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy> describeAutoSnapshotPolicyExResponse_autoSnapshotPolicies = new List<DescribeAutoSnapshotPolicyExResponse.DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy>();
 			for (int i = 0; i < _ctx.Length("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies.Length"); i++) {
 				DescribeAutoSnapshotPolicyExResponse.DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy autoSnapshotPolicy = new DescribeAutoSnapshotPolicyExResponse.DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy();
-				autoSnapshotPolicy.AutoSnapshotPolicyId = _ctx.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].AutoSnapshotPolicyId");
-				autoSnapshotPolicy.RegionId = _ctx.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].RegionId");
-				autoSnapshotPolicy.AutoSnapshotPolicyName = _ctx.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].AutoSnapshotPolicyName");
 				autoSnapshotPolicy.TimePoints = _ctx.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].TimePoints");
-				autoSnapshotPolicy.RepeatWeekdays = _ctx.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].RepeatWeekdays");
-				autoSnapshotPolicy.RetentionDays = _ctx.IntegerValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].RetentionDays");
-				autoSnapshotPolicy.DiskNums = _ctx.IntegerValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].DiskNums");
-				autoSnapshotPolicy.VolumeNums = _ctx.IntegerValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].VolumeNums");
 				autoSnapshotPolicy.CreationTime = _ctx.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].CreationTime");
 				autoSnapshotPolicy.Status = _ctx.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].Status");
-				autoSnapshotPolicy.EnableCrossRegionCopy = _ctx.BooleanValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].EnableCrossRegionCopy");
+				autoSnapshotPolicy.AutoSnapshotPolicyName = _ctx.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].AutoSnapshotPolicyName");
 				autoSnapshotPolicy.TargetCopyRegions = _ctx.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].TargetCopyRegions");
 				autoSnapshotPolicy.CopiedSnapshotsRetentionDays = _ctx.IntegerValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].CopiedSnapshotsRetentionDays");
+				autoSnapshotPolicy.AutoSnapshotPolicyId = _ctx.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].AutoSnapshotPolicyId");
+				autoSnapshotPolicy.RetentionDays = _ctx.IntegerValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].RetentionDays");
+				autoSnapshotPolicy.RegionId = _ctx.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].RegionId");
+				autoSnapshotPolicy.DiskNums = _ctx.IntegerValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].DiskNums");
+				autoSnapshotPolicy.EnableCrossRegionCopy = _ctx.BooleanValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].EnableCrossRegionCopy");
+				autoSnapshotPolicy.RepeatWeekdays = _ctx.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].RepeatWeekdays");
+				autoSnapshotPolicy.VolumeNums = _ctx.IntegerValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].VolumeNums");
+				autoSnapshotPolicy.ResourceGroupId = _ctx.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].ResourceGroupId");
 
 				List<DescribeAutoSnapshotPolicyExResponse.DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy.DescribeAutoSnapshotPolicyEx_Tag> autoSnapshotPolicy_tags = new List<DescribeAutoSnapshotPolicyExResponse.DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy.DescribeAutoSnapshotPolicyEx_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].Tags.Length"); j++) {
 					DescribeAutoSnapshotPolicyExResponse.DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy.DescribeAutoSnapshotPolicyEx_Tag tag = new DescribeAutoSnapshotPolicyExResponse.DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy.DescribeAutoSnapshotPolicyEx_Tag();
-					tag.TagKey = _ctx.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].Tags["+ j +"].TagKey");
 					tag.TagValue = _ctx.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].Tags["+ j +"].TagValue");
+					tag.TagKey = _ctx.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].Tags["+ j +"].TagKey");
 
 					autoSnapshotPolicy_tags.Add(tag);
 				}

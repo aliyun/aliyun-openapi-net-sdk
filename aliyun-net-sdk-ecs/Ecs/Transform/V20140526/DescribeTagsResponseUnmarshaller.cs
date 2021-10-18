@@ -39,22 +39,22 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DescribeTagsResponse.DescribeTags_Tag> describeTagsResponse_tags = new List<DescribeTagsResponse.DescribeTags_Tag>();
 			for (int i = 0; i < _ctx.Length("DescribeTags.Tags.Length"); i++) {
 				DescribeTagsResponse.DescribeTags_Tag tag = new DescribeTagsResponse.DescribeTags_Tag();
-				tag.TagKey = _ctx.StringValue("DescribeTags.Tags["+ i +"].TagKey");
 				tag.TagValue = _ctx.StringValue("DescribeTags.Tags["+ i +"].TagValue");
+				tag.TagKey = _ctx.StringValue("DescribeTags.Tags["+ i +"].TagKey");
 
 				DescribeTagsResponse.DescribeTags_Tag.DescribeTags_ResourceTypeCount resourceTypeCount = new DescribeTagsResponse.DescribeTags_Tag.DescribeTags_ResourceTypeCount();
 				resourceTypeCount.Instance = _ctx.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Instance");
-				resourceTypeCount.Disk = _ctx.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Disk");
-				resourceTypeCount.Volume = _ctx.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Volume");
 				resourceTypeCount.Image = _ctx.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Image");
-				resourceTypeCount.Snapshot = _ctx.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Snapshot");
+				resourceTypeCount.Ddh = _ctx.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Ddh");
+				resourceTypeCount.SnapshotPolicy = _ctx.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.SnapshotPolicy");
 				resourceTypeCount.Securitygroup = _ctx.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Securitygroup");
+				resourceTypeCount.Snapshot = _ctx.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Snapshot");
+				resourceTypeCount.ReservedInstance = _ctx.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.ReservedInstance");
 				resourceTypeCount.LaunchTemplate = _ctx.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.LaunchTemplate");
 				resourceTypeCount.Eni = _ctx.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Eni");
-				resourceTypeCount.Ddh = _ctx.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Ddh");
+				resourceTypeCount.Disk = _ctx.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Disk");
 				resourceTypeCount.KeyPair = _ctx.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.KeyPair");
-				resourceTypeCount.SnapshotPolicy = _ctx.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.SnapshotPolicy");
-				resourceTypeCount.ReservedInstance = _ctx.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.ReservedInstance");
+				resourceTypeCount.Volume = _ctx.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Volume");
 				tag.ResourceTypeCount = resourceTypeCount;
 
 				describeTagsResponse_tags.Add(tag);

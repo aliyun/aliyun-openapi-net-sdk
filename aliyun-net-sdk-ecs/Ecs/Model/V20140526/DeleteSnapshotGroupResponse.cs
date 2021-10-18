@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -56,23 +56,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DeleteSnapshotGroup_OperationProgress
 		{
 
-			private string operationStatus;
+			private string errorMsg;
 
 			private string errorCode;
 
-			private string errorMsg;
+			private string operationStatus;
 
 			private List<DeleteSnapshotGroup_RelatedItem> relatedItemSet;
 
-			public string OperationStatus
+			public string ErrorMsg
 			{
 				get
 				{
-					return operationStatus;
+					return errorMsg;
 				}
 				set	
 				{
-					operationStatus = value;
+					errorMsg = value;
 				}
 			}
 
@@ -88,15 +88,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string ErrorMsg
+			public string OperationStatus
 			{
 				get
 				{
-					return errorMsg;
+					return operationStatus;
 				}
 				set	
 				{
-					errorMsg = value;
+					operationStatus = value;
 				}
 			}
 

@@ -31,16 +31,16 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeInstanceStatusResponse describeInstanceStatusResponse = new DescribeInstanceStatusResponse();
 
 			describeInstanceStatusResponse.HttpResponse = _ctx.HttpResponse;
-			describeInstanceStatusResponse.RequestId = _ctx.StringValue("DescribeInstanceStatus.RequestId");
-			describeInstanceStatusResponse.TotalCount = _ctx.IntegerValue("DescribeInstanceStatus.TotalCount");
-			describeInstanceStatusResponse.PageNumber = _ctx.IntegerValue("DescribeInstanceStatus.PageNumber");
 			describeInstanceStatusResponse.PageSize = _ctx.IntegerValue("DescribeInstanceStatus.PageSize");
+			describeInstanceStatusResponse.RequestId = _ctx.StringValue("DescribeInstanceStatus.RequestId");
+			describeInstanceStatusResponse.PageNumber = _ctx.IntegerValue("DescribeInstanceStatus.PageNumber");
+			describeInstanceStatusResponse.TotalCount = _ctx.IntegerValue("DescribeInstanceStatus.TotalCount");
 
 			List<DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus> describeInstanceStatusResponse_instanceStatuses = new List<DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceStatus.InstanceStatuses.Length"); i++) {
 				DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus instanceStatus = new DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus();
-				instanceStatus.InstanceId = _ctx.StringValue("DescribeInstanceStatus.InstanceStatuses["+ i +"].InstanceId");
 				instanceStatus.Status = _ctx.StringValue("DescribeInstanceStatus.InstanceStatuses["+ i +"].Status");
+				instanceStatus.InstanceId = _ctx.StringValue("DescribeInstanceStatus.InstanceStatuses["+ i +"].InstanceId");
 
 				describeInstanceStatusResponse_instanceStatuses.Add(instanceStatus);
 			}

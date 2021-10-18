@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class AttachKeyPairResponse : AcsResponse
 	{
 
+		private string keyPairName;
+
 		private string requestId;
 
 		private string totalCount;
 
 		private string failCount;
 
-		private string keyPairName;
-
 		private List<AttachKeyPair_Result> results;
+
+		public string KeyPairName
+		{
+			get
+			{
+				return keyPairName;
+			}
+			set	
+			{
+				keyPairName = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -71,18 +83,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string KeyPairName
-		{
-			get
-			{
-				return keyPairName;
-			}
-			set	
-			{
-				keyPairName = value;
-			}
-		}
-
 		public List<AttachKeyPair_Result> Results
 		{
 			get
@@ -98,37 +98,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class AttachKeyPair_Result
 		{
 
-			private string instanceId;
-
-			private string success;
-
 			private string code;
 
 			private string message;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private string instanceId;
 
-			public string Success
-			{
-				get
-				{
-					return success;
-				}
-				set	
-				{
-					success = value;
-				}
-			}
+			private string success;
 
 			public string Code
 			{
@@ -151,6 +127,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					message = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string Success
+			{
+				get
+				{
+					return success;
+				}
+				set	
+				{
+					success = value;
 				}
 			}
 		}

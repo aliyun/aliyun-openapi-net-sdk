@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,17 +25,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeTaskAttributeResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string taskId;
-
-		private string regionId;
-
-		private string taskAction;
-
-		private string taskStatus;
-
-		private string taskProcess;
+		private string creationTime;
 
 		private string supportCancel;
 
@@ -43,83 +33,33 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? successCount;
 
+		private string regionId;
+
+		private string taskAction;
+
 		private int? failedCount;
 
-		private string creationTime;
+		private string requestId;
+
+		private string taskStatus;
+
+		private string taskProcess;
 
 		private string finishedTime;
 
+		private string taskId;
+
 		private List<DescribeTaskAttribute_OperationProgress> operationProgressSet;
 
-		public string RequestId
+		public string CreationTime
 		{
 			get
 			{
-				return requestId;
+				return creationTime;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
-
-		public string TaskAction
-		{
-			get
-			{
-				return taskAction;
-			}
-			set	
-			{
-				taskAction = value;
-			}
-		}
-
-		public string TaskStatus
-		{
-			get
-			{
-				return taskStatus;
-			}
-			set	
-			{
-				taskStatus = value;
-			}
-		}
-
-		public string TaskProcess
-		{
-			get
-			{
-				return taskProcess;
-			}
-			set	
-			{
-				taskProcess = value;
+				creationTime = value;
 			}
 		}
 
@@ -159,6 +99,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+			}
+		}
+
+		public string TaskAction
+		{
+			get
+			{
+				return taskAction;
+			}
+			set	
+			{
+				taskAction = value;
+			}
+		}
+
 		public int? FailedCount
 		{
 			get
@@ -171,15 +135,39 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string CreationTime
+		public string RequestId
 		{
 			get
 			{
-				return creationTime;
+				return requestId;
 			}
 			set	
 			{
-				creationTime = value;
+				requestId = value;
+			}
+		}
+
+		public string TaskStatus
+		{
+			get
+			{
+				return taskStatus;
+			}
+			set	
+			{
+				taskStatus = value;
+			}
+		}
+
+		public string TaskProcess
+		{
+			get
+			{
+				return taskProcess;
+			}
+			set	
+			{
+				taskProcess = value;
 			}
 		}
 
@@ -192,6 +180,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				finishedTime = value;
+			}
+		}
+
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
 			}
 		}
 
@@ -210,23 +210,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeTaskAttribute_OperationProgress
 		{
 
-			private string operationStatus;
+			private string errorMsg;
 
 			private string errorCode;
 
-			private string errorMsg;
+			private string operationStatus;
 
 			private List<DescribeTaskAttribute_RelatedItem> relatedItemSet;
 
-			public string OperationStatus
+			public string ErrorMsg
 			{
 				get
 				{
-					return operationStatus;
+					return errorMsg;
 				}
 				set	
 				{
-					operationStatus = value;
+					errorMsg = value;
 				}
 			}
 
@@ -242,15 +242,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string ErrorMsg
+			public string OperationStatus
 			{
 				get
 				{
-					return errorMsg;
+					return operationStatus;
 				}
 				set	
 				{
-					errorMsg = value;
+					operationStatus = value;
 				}
 			}
 

@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DeleteSnapshotGroupResponse.DeleteSnapshotGroup_OperationProgress> deleteSnapshotGroupResponse_operationProgressSet = new List<DeleteSnapshotGroupResponse.DeleteSnapshotGroup_OperationProgress>();
 			for (int i = 0; i < _ctx.Length("DeleteSnapshotGroup.OperationProgressSet.Length"); i++) {
 				DeleteSnapshotGroupResponse.DeleteSnapshotGroup_OperationProgress operationProgress = new DeleteSnapshotGroupResponse.DeleteSnapshotGroup_OperationProgress();
-				operationProgress.OperationStatus = _ctx.StringValue("DeleteSnapshotGroup.OperationProgressSet["+ i +"].OperationStatus");
-				operationProgress.ErrorCode = _ctx.StringValue("DeleteSnapshotGroup.OperationProgressSet["+ i +"].ErrorCode");
 				operationProgress.ErrorMsg = _ctx.StringValue("DeleteSnapshotGroup.OperationProgressSet["+ i +"].ErrorMsg");
+				operationProgress.ErrorCode = _ctx.StringValue("DeleteSnapshotGroup.OperationProgressSet["+ i +"].ErrorCode");
+				operationProgress.OperationStatus = _ctx.StringValue("DeleteSnapshotGroup.OperationProgressSet["+ i +"].OperationStatus");
 
 				List<DeleteSnapshotGroupResponse.DeleteSnapshotGroup_OperationProgress.DeleteSnapshotGroup_RelatedItem> operationProgress_relatedItemSet = new List<DeleteSnapshotGroupResponse.DeleteSnapshotGroup_OperationProgress.DeleteSnapshotGroup_RelatedItem>();
 				for (int j = 0; j < _ctx.Length("DeleteSnapshotGroup.OperationProgressSet["+ i +"].RelatedItemSet.Length"); j++) {

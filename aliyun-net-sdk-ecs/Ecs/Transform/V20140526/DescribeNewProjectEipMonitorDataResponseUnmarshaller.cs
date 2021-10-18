@@ -36,12 +36,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DescribeNewProjectEipMonitorDataResponse.DescribeNewProjectEipMonitorData_EipMonitorData> describeNewProjectEipMonitorDataResponse_eipMonitorDatas = new List<DescribeNewProjectEipMonitorDataResponse.DescribeNewProjectEipMonitorData_EipMonitorData>();
 			for (int i = 0; i < _ctx.Length("DescribeNewProjectEipMonitorData.EipMonitorDatas.Length"); i++) {
 				DescribeNewProjectEipMonitorDataResponse.DescribeNewProjectEipMonitorData_EipMonitorData eipMonitorData = new DescribeNewProjectEipMonitorDataResponse.DescribeNewProjectEipMonitorData_EipMonitorData();
-				eipMonitorData.EipRX = _ctx.IntegerValue("DescribeNewProjectEipMonitorData.EipMonitorDatas["+ i +"].EipRX");
 				eipMonitorData.EipTX = _ctx.IntegerValue("DescribeNewProjectEipMonitorData.EipMonitorDatas["+ i +"].EipTX");
-				eipMonitorData.EipFlow = _ctx.IntegerValue("DescribeNewProjectEipMonitorData.EipMonitorDatas["+ i +"].EipFlow");
-				eipMonitorData.EipBandwidth = _ctx.IntegerValue("DescribeNewProjectEipMonitorData.EipMonitorDatas["+ i +"].EipBandwidth");
 				eipMonitorData.EipPackets = _ctx.IntegerValue("DescribeNewProjectEipMonitorData.EipMonitorDatas["+ i +"].EipPackets");
+				eipMonitorData.EipBandwidth = _ctx.IntegerValue("DescribeNewProjectEipMonitorData.EipMonitorDatas["+ i +"].EipBandwidth");
 				eipMonitorData.TimeStamp = _ctx.StringValue("DescribeNewProjectEipMonitorData.EipMonitorDatas["+ i +"].TimeStamp");
+				eipMonitorData.EipFlow = _ctx.IntegerValue("DescribeNewProjectEipMonitorData.EipMonitorDatas["+ i +"].EipFlow");
+				eipMonitorData.EipRX = _ctx.IntegerValue("DescribeNewProjectEipMonitorData.EipMonitorDatas["+ i +"].EipRX");
 
 				describeNewProjectEipMonitorDataResponse_eipMonitorDatas.Add(eipMonitorData);
 			}

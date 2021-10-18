@@ -38,15 +38,15 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeInstanceModificationPriceResponse.DescribeInstanceModificationPrice_PriceInfo.DescribeInstanceModificationPrice_Price price = new DescribeInstanceModificationPriceResponse.DescribeInstanceModificationPrice_PriceInfo.DescribeInstanceModificationPrice_Price();
 			price.OriginalPrice = _ctx.FloatValue("DescribeInstanceModificationPrice.PriceInfo.Price.OriginalPrice");
 			price.DiscountPrice = _ctx.FloatValue("DescribeInstanceModificationPrice.PriceInfo.Price.DiscountPrice");
-			price.TradePrice = _ctx.FloatValue("DescribeInstanceModificationPrice.PriceInfo.Price.TradePrice");
 			price.Currency = _ctx.StringValue("DescribeInstanceModificationPrice.PriceInfo.Price.Currency");
+			price.TradePrice = _ctx.FloatValue("DescribeInstanceModificationPrice.PriceInfo.Price.TradePrice");
 			priceInfo.Price = price;
 
 			List<DescribeInstanceModificationPriceResponse.DescribeInstanceModificationPrice_PriceInfo.DescribeInstanceModificationPrice_Rule> priceInfo_rules = new List<DescribeInstanceModificationPriceResponse.DescribeInstanceModificationPrice_PriceInfo.DescribeInstanceModificationPrice_Rule>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceModificationPrice.PriceInfo.Rules.Length"); i++) {
 				DescribeInstanceModificationPriceResponse.DescribeInstanceModificationPrice_PriceInfo.DescribeInstanceModificationPrice_Rule rule = new DescribeInstanceModificationPriceResponse.DescribeInstanceModificationPrice_PriceInfo.DescribeInstanceModificationPrice_Rule();
-				rule.RuleId = _ctx.LongValue("DescribeInstanceModificationPrice.PriceInfo.Rules["+ i +"].RuleId");
 				rule.Description = _ctx.StringValue("DescribeInstanceModificationPrice.PriceInfo.Rules["+ i +"].Description");
+				rule.RuleId = _ctx.LongValue("DescribeInstanceModificationPrice.PriceInfo.Rules["+ i +"].RuleId");
 
 				priceInfo_rules.Add(rule);
 			}

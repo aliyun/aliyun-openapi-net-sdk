@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -56,157 +56,49 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeInstanceMonitorData_InstanceMonitorData
 		{
 
-			private string instanceId;
-
-			private int? cPU;
-
-			private int? intranetRX;
-
-			private int? intranetTX;
-
-			private int? intranetBandwidth;
-
-			private int? internetRX;
-
-			private int? internetTX;
-
-			private int? internetBandwidth;
-
-			private int? iOPSRead;
-
-			private int? iOPSWrite;
+			private float? cPUCreditBalance;
 
 			private int? bPSRead;
 
-			private int? bPSWrite;
+			private int? internetTX;
+
+			private int? cPU;
 
 			private float? cPUCreditUsage;
 
-			private float? cPUCreditBalance;
+			private int? iOPSWrite;
 
-			private float? cPUAdvanceCreditBalance;
+			private int? intranetTX;
+
+			private string instanceId;
+
+			private int? bPSWrite;
 
 			private float? cPUNotpaidSurplusCreditUsage;
 
+			private float? cPUAdvanceCreditBalance;
+
+			private int? iOPSRead;
+
+			private int? internetBandwidth;
+
+			private int? internetRX;
+
 			private string timeStamp;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private int? intranetRX;
 
-			public int? CPU
-			{
-				get
-				{
-					return cPU;
-				}
-				set	
-				{
-					cPU = value;
-				}
-			}
+			private int? intranetBandwidth;
 
-			public int? IntranetRX
+			public float? CPUCreditBalance
 			{
 				get
 				{
-					return intranetRX;
+					return cPUCreditBalance;
 				}
 				set	
 				{
-					intranetRX = value;
-				}
-			}
-
-			public int? IntranetTX
-			{
-				get
-				{
-					return intranetTX;
-				}
-				set	
-				{
-					intranetTX = value;
-				}
-			}
-
-			public int? IntranetBandwidth
-			{
-				get
-				{
-					return intranetBandwidth;
-				}
-				set	
-				{
-					intranetBandwidth = value;
-				}
-			}
-
-			public int? InternetRX
-			{
-				get
-				{
-					return internetRX;
-				}
-				set	
-				{
-					internetRX = value;
-				}
-			}
-
-			public int? InternetTX
-			{
-				get
-				{
-					return internetTX;
-				}
-				set	
-				{
-					internetTX = value;
-				}
-			}
-
-			public int? InternetBandwidth
-			{
-				get
-				{
-					return internetBandwidth;
-				}
-				set	
-				{
-					internetBandwidth = value;
-				}
-			}
-
-			public int? IOPSRead
-			{
-				get
-				{
-					return iOPSRead;
-				}
-				set	
-				{
-					iOPSRead = value;
-				}
-			}
-
-			public int? IOPSWrite
-			{
-				get
-				{
-					return iOPSWrite;
-				}
-				set	
-				{
-					iOPSWrite = value;
+					cPUCreditBalance = value;
 				}
 			}
 
@@ -222,15 +114,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public int? BPSWrite
+			public int? InternetTX
 			{
 				get
 				{
-					return bPSWrite;
+					return internetTX;
 				}
 				set	
 				{
-					bPSWrite = value;
+					internetTX = value;
+				}
+			}
+
+			public int? CPU
+			{
+				get
+				{
+					return cPU;
+				}
+				set	
+				{
+					cPU = value;
 				}
 			}
 
@@ -246,27 +150,51 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public float? CPUCreditBalance
+			public int? IOPSWrite
 			{
 				get
 				{
-					return cPUCreditBalance;
+					return iOPSWrite;
 				}
 				set	
 				{
-					cPUCreditBalance = value;
+					iOPSWrite = value;
 				}
 			}
 
-			public float? CPUAdvanceCreditBalance
+			public int? IntranetTX
 			{
 				get
 				{
-					return cPUAdvanceCreditBalance;
+					return intranetTX;
 				}
 				set	
 				{
-					cPUAdvanceCreditBalance = value;
+					intranetTX = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public int? BPSWrite
+			{
+				get
+				{
+					return bPSWrite;
+				}
+				set	
+				{
+					bPSWrite = value;
 				}
 			}
 
@@ -282,6 +210,54 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public float? CPUAdvanceCreditBalance
+			{
+				get
+				{
+					return cPUAdvanceCreditBalance;
+				}
+				set	
+				{
+					cPUAdvanceCreditBalance = value;
+				}
+			}
+
+			public int? IOPSRead
+			{
+				get
+				{
+					return iOPSRead;
+				}
+				set	
+				{
+					iOPSRead = value;
+				}
+			}
+
+			public int? InternetBandwidth
+			{
+				get
+				{
+					return internetBandwidth;
+				}
+				set	
+				{
+					internetBandwidth = value;
+				}
+			}
+
+			public int? InternetRX
+			{
+				get
+				{
+					return internetRX;
+				}
+				set	
+				{
+					internetRX = value;
+				}
+			}
+
 			public string TimeStamp
 			{
 				get
@@ -291,6 +267,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					timeStamp = value;
+				}
+			}
+
+			public int? IntranetRX
+			{
+				get
+				{
+					return intranetRX;
+				}
+				set	
+				{
+					intranetRX = value;
+				}
+			}
+
+			public int? IntranetBandwidth
+			{
+				get
+				{
+					return intranetBandwidth;
+				}
+				set	
+				{
+					intranetBandwidth = value;
 				}
 			}
 		}

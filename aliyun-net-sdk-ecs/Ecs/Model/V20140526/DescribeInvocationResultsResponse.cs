@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -115,35 +115,59 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeInvocationResults_InvocationResult
 			{
 
-				private string commandId;
-
-				private string invokeId;
-
-				private string instanceId;
-
-				private string startTime;
-
-				private string stopTime;
-
-				private string finishedTime;
+				private string invocationStatus;
 
 				private int? repeats;
+
+				private string commandId;
+
+				private string instanceId;
 
 				private string output;
 
 				private int? dropped;
 
-				private string invokeRecordStatus;
-
-				private string invocationStatus;
+				private string stopTime;
 
 				private long? exitCode;
 
-				private string errorCode;
+				private string startTime;
 
 				private string errorInfo;
 
+				private string errorCode;
+
+				private string finishedTime;
+
+				private string invokeId;
+
+				private string invokeRecordStatus;
+
 				private string username;
+
+				public string InvocationStatus
+				{
+					get
+					{
+						return invocationStatus;
+					}
+					set	
+					{
+						invocationStatus = value;
+					}
+				}
+
+				public int? Repeats
+				{
+					get
+					{
+						return repeats;
+					}
+					set	
+					{
+						repeats = value;
+					}
+				}
 
 				public string CommandId
 				{
@@ -157,18 +181,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public string InvokeId
-				{
-					get
-					{
-						return invokeId;
-					}
-					set	
-					{
-						invokeId = value;
-					}
-				}
-
 				public string InstanceId
 				{
 					get
@@ -178,54 +190,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						instanceId = value;
-					}
-				}
-
-				public string StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
-					}
-				}
-
-				public string StopTime
-				{
-					get
-					{
-						return stopTime;
-					}
-					set	
-					{
-						stopTime = value;
-					}
-				}
-
-				public string FinishedTime
-				{
-					get
-					{
-						return finishedTime;
-					}
-					set	
-					{
-						finishedTime = value;
-					}
-				}
-
-				public int? Repeats
-				{
-					get
-					{
-						return repeats;
-					}
-					set	
-					{
-						repeats = value;
 					}
 				}
 
@@ -253,27 +217,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public string InvokeRecordStatus
+				public string StopTime
 				{
 					get
 					{
-						return invokeRecordStatus;
+						return stopTime;
 					}
 					set	
 					{
-						invokeRecordStatus = value;
-					}
-				}
-
-				public string InvocationStatus
-				{
-					get
-					{
-						return invocationStatus;
-					}
-					set	
-					{
-						invocationStatus = value;
+						stopTime = value;
 					}
 				}
 
@@ -289,15 +241,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public string ErrorCode
+				public string StartTime
 				{
 					get
 					{
-						return errorCode;
+						return startTime;
 					}
 					set	
 					{
-						errorCode = value;
+						startTime = value;
 					}
 				}
 
@@ -310,6 +262,54 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						errorInfo = value;
+					}
+				}
+
+				public string ErrorCode
+				{
+					get
+					{
+						return errorCode;
+					}
+					set	
+					{
+						errorCode = value;
+					}
+				}
+
+				public string FinishedTime
+				{
+					get
+					{
+						return finishedTime;
+					}
+					set	
+					{
+						finishedTime = value;
+					}
+				}
+
+				public string InvokeId
+				{
+					get
+					{
+						return invokeId;
+					}
+					set	
+					{
+						invokeId = value;
+					}
+				}
+
+				public string InvokeRecordStatus
+				{
+					get
+					{
+						return invokeRecordStatus;
+					}
+					set	
+					{
+						invokeRecordStatus = value;
 					}
 				}
 

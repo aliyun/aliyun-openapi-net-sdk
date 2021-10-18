@@ -62,7 +62,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? deviceAvailable;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private List<string> tags = new List<string>(){ };
 
 		private string filter3Value;
 
@@ -279,7 +279,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Tag> Tags
+		public List<string> Tags
 		{
 			get
 			{
@@ -289,10 +289,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				tags = value;
-				for (int i = 0; i < tags.Count; i++)
+				if(tags != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
 				}
 			}
 		}
@@ -385,10 +388,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				additionalAttributess = value;
-				for (int i = 0; i < additionalAttributess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"AdditionalAttributes." + (i + 1) , additionalAttributess[i]);
-				}
 			}
 		}
 
@@ -467,10 +466,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				ipv6Addresss = value;
-				for (int i = 0; i < ipv6Addresss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Ipv6Address." + (i + 1) , ipv6Addresss[i]);
-				}
 			}
 		}
 
@@ -780,7 +775,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string key;
 
-			public string Value
+			public string Value_
 			{
 				get
 				{

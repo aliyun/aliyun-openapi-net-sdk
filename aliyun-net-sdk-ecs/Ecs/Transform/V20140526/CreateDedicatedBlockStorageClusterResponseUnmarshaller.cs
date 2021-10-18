@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateDedicatedBlockStorageClusterResponse createDedicatedBlockStorageClusterResponse = new CreateDedicatedBlockStorageClusterResponse();
 
 			createDedicatedBlockStorageClusterResponse.HttpResponse = _ctx.HttpResponse;
-			createDedicatedBlockStorageClusterResponse.RequestId = _ctx.StringValue("CreateDedicatedBlockStorageCluster.RequestId");
 			createDedicatedBlockStorageClusterResponse.DedicatedBlockStorageClusterOrderId = _ctx.StringValue("CreateDedicatedBlockStorageCluster.DedicatedBlockStorageClusterOrderId");
+			createDedicatedBlockStorageClusterResponse.RequestId = _ctx.StringValue("CreateDedicatedBlockStorageCluster.RequestId");
 			createDedicatedBlockStorageClusterResponse.DedicatedBlockStorageClusterId = _ctx.StringValue("CreateDedicatedBlockStorageCluster.DedicatedBlockStorageClusterId");
         
 			return createDedicatedBlockStorageClusterResponse;

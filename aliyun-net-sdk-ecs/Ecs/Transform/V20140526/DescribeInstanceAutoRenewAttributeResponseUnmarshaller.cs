@@ -39,11 +39,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DescribeInstanceAutoRenewAttributeResponse.DescribeInstanceAutoRenewAttribute_InstanceRenewAttribute> describeInstanceAutoRenewAttributeResponse_instanceRenewAttributes = new List<DescribeInstanceAutoRenewAttributeResponse.DescribeInstanceAutoRenewAttribute_InstanceRenewAttribute>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceAutoRenewAttribute.InstanceRenewAttributes.Length"); i++) {
 				DescribeInstanceAutoRenewAttributeResponse.DescribeInstanceAutoRenewAttribute_InstanceRenewAttribute instanceRenewAttribute = new DescribeInstanceAutoRenewAttributeResponse.DescribeInstanceAutoRenewAttribute_InstanceRenewAttribute();
+				instanceRenewAttribute.PeriodUnit = _ctx.StringValue("DescribeInstanceAutoRenewAttribute.InstanceRenewAttributes["+ i +"].PeriodUnit");
+				instanceRenewAttribute.Duration = _ctx.IntegerValue("DescribeInstanceAutoRenewAttribute.InstanceRenewAttributes["+ i +"].Duration");
+				instanceRenewAttribute.RenewalStatus = _ctx.StringValue("DescribeInstanceAutoRenewAttribute.InstanceRenewAttributes["+ i +"].RenewalStatus");
 				instanceRenewAttribute.InstanceId = _ctx.StringValue("DescribeInstanceAutoRenewAttribute.InstanceRenewAttributes["+ i +"].InstanceId");
 				instanceRenewAttribute.AutoRenewEnabled = _ctx.BooleanValue("DescribeInstanceAutoRenewAttribute.InstanceRenewAttributes["+ i +"].AutoRenewEnabled");
-				instanceRenewAttribute.Duration = _ctx.IntegerValue("DescribeInstanceAutoRenewAttribute.InstanceRenewAttributes["+ i +"].Duration");
-				instanceRenewAttribute.PeriodUnit = _ctx.StringValue("DescribeInstanceAutoRenewAttribute.InstanceRenewAttributes["+ i +"].PeriodUnit");
-				instanceRenewAttribute.RenewalStatus = _ctx.StringValue("DescribeInstanceAutoRenewAttribute.InstanceRenewAttributes["+ i +"].RenewalStatus");
 
 				describeInstanceAutoRenewAttributeResponse_instanceRenewAttributes.Add(instanceRenewAttribute);
 			}

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateKeyPairResponse createKeyPairResponse = new CreateKeyPairResponse();
 
 			createKeyPairResponse.HttpResponse = _ctx.HttpResponse;
-			createKeyPairResponse.RequestId = _ctx.StringValue("CreateKeyPair.RequestId");
-			createKeyPairResponse.KeyPairId = _ctx.StringValue("CreateKeyPair.KeyPairId");
-			createKeyPairResponse.KeyPairName = _ctx.StringValue("CreateKeyPair.KeyPairName");
-			createKeyPairResponse.KeyPairFingerPrint = _ctx.StringValue("CreateKeyPair.KeyPairFingerPrint");
 			createKeyPairResponse.PrivateKeyBody = _ctx.StringValue("CreateKeyPair.PrivateKeyBody");
+			createKeyPairResponse.KeyPairName = _ctx.StringValue("CreateKeyPair.KeyPairName");
+			createKeyPairResponse.KeyPairId = _ctx.StringValue("CreateKeyPair.KeyPairId");
+			createKeyPairResponse.RequestId = _ctx.StringValue("CreateKeyPair.RequestId");
+			createKeyPairResponse.KeyPairFingerPrint = _ctx.StringValue("CreateKeyPair.KeyPairFingerPrint");
         
 			return createKeyPairResponse;
         }

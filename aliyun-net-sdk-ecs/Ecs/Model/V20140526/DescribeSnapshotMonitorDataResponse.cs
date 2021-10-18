@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeSnapshotMonitorData_DataPoint
 		{
 
-			private string timeStamp;
-
 			private long? size;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string timeStamp;
 
 			public long? Size
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					size = value;
+				}
+			}
+
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 		}

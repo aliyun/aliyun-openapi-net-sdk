@@ -31,18 +31,18 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			AttachKeyPairResponse attachKeyPairResponse = new AttachKeyPairResponse();
 
 			attachKeyPairResponse.HttpResponse = _ctx.HttpResponse;
+			attachKeyPairResponse.KeyPairName = _ctx.StringValue("AttachKeyPair.KeyPairName");
 			attachKeyPairResponse.RequestId = _ctx.StringValue("AttachKeyPair.RequestId");
 			attachKeyPairResponse.TotalCount = _ctx.StringValue("AttachKeyPair.TotalCount");
 			attachKeyPairResponse.FailCount = _ctx.StringValue("AttachKeyPair.FailCount");
-			attachKeyPairResponse.KeyPairName = _ctx.StringValue("AttachKeyPair.KeyPairName");
 
 			List<AttachKeyPairResponse.AttachKeyPair_Result> attachKeyPairResponse_results = new List<AttachKeyPairResponse.AttachKeyPair_Result>();
 			for (int i = 0; i < _ctx.Length("AttachKeyPair.Results.Length"); i++) {
 				AttachKeyPairResponse.AttachKeyPair_Result result = new AttachKeyPairResponse.AttachKeyPair_Result();
-				result.InstanceId = _ctx.StringValue("AttachKeyPair.Results["+ i +"].InstanceId");
-				result.Success = _ctx.StringValue("AttachKeyPair.Results["+ i +"].Success");
 				result.Code = _ctx.StringValue("AttachKeyPair.Results["+ i +"].Code");
 				result.Message = _ctx.StringValue("AttachKeyPair.Results["+ i +"].Message");
+				result.InstanceId = _ctx.StringValue("AttachKeyPair.Results["+ i +"].InstanceId");
+				result.Success = _ctx.StringValue("AttachKeyPair.Results["+ i +"].Success");
 
 				attachKeyPairResponse_results.Add(result);
 			}

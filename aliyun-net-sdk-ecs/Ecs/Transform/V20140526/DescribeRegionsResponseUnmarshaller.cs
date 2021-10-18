@@ -36,10 +36,10 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DescribeRegionsResponse.DescribeRegions_Region> describeRegionsResponse_regions = new List<DescribeRegionsResponse.DescribeRegions_Region>();
 			for (int i = 0; i < _ctx.Length("DescribeRegions.Regions.Length"); i++) {
 				DescribeRegionsResponse.DescribeRegions_Region region = new DescribeRegionsResponse.DescribeRegions_Region();
-				region.RegionId = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
-				region.LocalName = _ctx.StringValue("DescribeRegions.Regions["+ i +"].LocalName");
-				region.RegionEndpoint = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionEndpoint");
 				region.Status = _ctx.StringValue("DescribeRegions.Regions["+ i +"].Status");
+				region.RegionEndpoint = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionEndpoint");
+				region.LocalName = _ctx.StringValue("DescribeRegions.Regions["+ i +"].LocalName");
+				region.RegionId = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
 
 				describeRegionsResponse_regions.Add(region);
 			}

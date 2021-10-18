@@ -34,16 +34,16 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			disableActivationResponse.RequestId = _ctx.StringValue("DisableActivation.RequestId");
 
 			DisableActivationResponse.DisableActivation_Activation activation = new DisableActivationResponse.DisableActivation_Activation();
-			activation.ActivationId = _ctx.StringValue("DisableActivation.Activation.ActivationId");
-			activation.InstanceName = _ctx.StringValue("DisableActivation.Activation.InstanceName");
-			activation.Description = _ctx.StringValue("DisableActivation.Activation.Description");
-			activation.InstanceCount = _ctx.IntegerValue("DisableActivation.Activation.InstanceCount");
-			activation.TimeToLiveInHours = _ctx.LongValue("DisableActivation.Activation.TimeToLiveInHours");
-			activation.IpAddressRange = _ctx.StringValue("DisableActivation.Activation.IpAddressRange");
-			activation.RegisteredCount = _ctx.IntegerValue("DisableActivation.Activation.RegisteredCount");
-			activation.DeregisteredCount = _ctx.IntegerValue("DisableActivation.Activation.DeregisteredCount");
-			activation.Disabled = _ctx.BooleanValue("DisableActivation.Activation.Disabled");
 			activation.CreationTime = _ctx.StringValue("DisableActivation.Activation.CreationTime");
+			activation.DeregisteredCount = _ctx.IntegerValue("DisableActivation.Activation.DeregisteredCount");
+			activation.InstanceCount = _ctx.IntegerValue("DisableActivation.Activation.InstanceCount");
+			activation.Description = _ctx.StringValue("DisableActivation.Activation.Description");
+			activation.RegisteredCount = _ctx.IntegerValue("DisableActivation.Activation.RegisteredCount");
+			activation.InstanceName = _ctx.StringValue("DisableActivation.Activation.InstanceName");
+			activation.Disabled = _ctx.BooleanValue("DisableActivation.Activation.Disabled");
+			activation.IpAddressRange = _ctx.StringValue("DisableActivation.Activation.IpAddressRange");
+			activation.TimeToLiveInHours = _ctx.LongValue("DisableActivation.Activation.TimeToLiveInHours");
+			activation.ActivationId = _ctx.StringValue("DisableActivation.Activation.ActivationId");
 			disableActivationResponse.Activation = activation;
         
 			return disableActivationResponse;

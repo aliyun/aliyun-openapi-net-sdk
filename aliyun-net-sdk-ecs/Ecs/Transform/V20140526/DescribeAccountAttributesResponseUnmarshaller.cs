@@ -41,13 +41,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				List<DescribeAccountAttributesResponse.DescribeAccountAttributes_AccountAttributeItem.DescribeAccountAttributes_ValueItem> accountAttributeItem_attributeValues = new List<DescribeAccountAttributesResponse.DescribeAccountAttributes_AccountAttributeItem.DescribeAccountAttributes_ValueItem>();
 				for (int j = 0; j < _ctx.Length("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues.Length"); j++) {
 					DescribeAccountAttributesResponse.DescribeAccountAttributes_AccountAttributeItem.DescribeAccountAttributes_ValueItem valueItem = new DescribeAccountAttributesResponse.DescribeAccountAttributes_AccountAttributeItem.DescribeAccountAttributes_ValueItem();
+					valueItem.DiskCategory = _ctx.StringValue("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].DiskCategory");
 					valueItem._Value = _ctx.StringValue("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].Value");
 					valueItem.ExpiredTime = _ctx.StringValue("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].ExpiredTime");
 					valueItem.ZoneId = _ctx.StringValue("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].ZoneId");
-					valueItem.InstanceChargeType = _ctx.StringValue("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].InstanceChargeType");
 					valueItem.InstanceType = _ctx.StringValue("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].InstanceType");
 					valueItem.Count = _ctx.IntegerValue("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].Count");
-					valueItem.DiskCategory = _ctx.StringValue("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].DiskCategory");
+					valueItem.InstanceChargeType = _ctx.StringValue("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].InstanceChargeType");
 
 					accountAttributeItem_attributeValues.Add(valueItem);
 				}

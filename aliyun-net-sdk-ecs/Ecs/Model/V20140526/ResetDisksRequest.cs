@@ -49,8 +49,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private List<Disk> disks = new List<Disk>(){ };
+		private List<string> disks = new List<string>(){ };
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -64,6 +65,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -77,6 +79,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -90,6 +93,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -103,7 +107,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Disk> Disks
+		[JsonProperty(PropertyName = "Disk")]
+		public List<string> Disks
 		{
 			get
 			{
@@ -113,10 +118,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				disks = value;
-				for (int i = 0; i < disks.Count; i++)
+				if(disks != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Disk." + (i + 1) + ".SnapshotId", disks[i].SnapshotId);
-					DictionaryUtil.Add(QueryParameters,"Disk." + (i + 1) + ".DiskId", disks[i].DiskId);
+					for (int depth1 = 0; depth1 < disks.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Disk." + (depth1 + 1), disks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Disk." + (depth1 + 1), disks[depth1]);
+					}
 				}
 			}
 		}
@@ -128,6 +136,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string diskId;
 
+			[JsonProperty(PropertyName = "SnapshotId")]
 			public string SnapshotId
 			{
 				get
@@ -140,6 +149,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "DiskId")]
 			public string DiskId
 			{
 				get

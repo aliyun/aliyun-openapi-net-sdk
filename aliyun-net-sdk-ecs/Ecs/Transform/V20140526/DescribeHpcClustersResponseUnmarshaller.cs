@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeHpcClustersResponse describeHpcClustersResponse = new DescribeHpcClustersResponse();
 
 			describeHpcClustersResponse.HttpResponse = _ctx.HttpResponse;
-			describeHpcClustersResponse.RequestId = _ctx.StringValue("DescribeHpcClusters.RequestId");
-			describeHpcClustersResponse.TotalCount = _ctx.IntegerValue("DescribeHpcClusters.TotalCount");
-			describeHpcClustersResponse.PageNumber = _ctx.IntegerValue("DescribeHpcClusters.PageNumber");
 			describeHpcClustersResponse.PageSize = _ctx.IntegerValue("DescribeHpcClusters.PageSize");
+			describeHpcClustersResponse.RequestId = _ctx.StringValue("DescribeHpcClusters.RequestId");
+			describeHpcClustersResponse.PageNumber = _ctx.IntegerValue("DescribeHpcClusters.PageNumber");
+			describeHpcClustersResponse.TotalCount = _ctx.IntegerValue("DescribeHpcClusters.TotalCount");
 
 			List<DescribeHpcClustersResponse.DescribeHpcClusters_HpcCluster> describeHpcClustersResponse_hpcClusters = new List<DescribeHpcClustersResponse.DescribeHpcClusters_HpcCluster>();
 			for (int i = 0; i < _ctx.Length("DescribeHpcClusters.HpcClusters.Length"); i++) {

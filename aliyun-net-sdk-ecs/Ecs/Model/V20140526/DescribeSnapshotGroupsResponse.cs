@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeSnapshotGroupsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private List<DescribeSnapshotGroups_SnapshotGroup> snapshotGroups;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeSnapshotGroups_SnapshotGroup> snapshotGroups;
 
 		public string NextToken
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,45 +70,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeSnapshotGroups_SnapshotGroup
 		{
 
-			private string instanceId;
-
-			private string snapshotGroupId;
-
 			private string status;
-
-			private string name;
-
-			private string description;
 
 			private string creationTime;
 
+			private string description;
+
 			private string progressStatus;
 
+			private string snapshotGroupId;
+
+			private string instanceId;
+
+			private string name;
+
+			private string resourceGroupId;
+
+			private List<DescribeSnapshotGroups_Tag> tags;
+
 			private List<DescribeSnapshotGroups_Snapshot> snapshots;
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string SnapshotGroupId
-			{
-				get
-				{
-					return snapshotGroupId;
-				}
-				set	
-				{
-					snapshotGroupId = value;
-				}
-			}
 
 			public string Status
 			{
@@ -119,30 +99,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
 				}
 			}
 
@@ -158,6 +114,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
 			public string ProgressStatus
 			{
 				get
@@ -167,6 +135,66 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					progressStatus = value;
+				}
+			}
+
+			public string SnapshotGroupId
+			{
+				get
+				{
+					return snapshotGroupId;
+				}
+				set	
+				{
+					snapshotGroupId = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public List<DescribeSnapshotGroups_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 
@@ -182,30 +210,64 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public class DescribeSnapshotGroups_Snapshot
+			public class DescribeSnapshotGroups_Tag
 			{
 
-				private string snapshotId;
+				private string key;
 
-				private string progress;
+				private string _value;
 
-				private string sourceDiskId;
-
-				private string sourceDiskType;
-
-				private bool? instantAccess;
-
-				private int? instantAccessRetentionDays;
-
-				public string SnapshotId
+				public string Key
 				{
 					get
 					{
-						return snapshotId;
+						return key;
 					}
 					set	
 					{
-						snapshotId = value;
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
+				}
+			}
+
+			public class DescribeSnapshotGroups_Snapshot
+			{
+
+				private string sourceDiskId;
+
+				private string progress;
+
+				private int? instantAccessRetentionDays;
+
+				private string snapshotId;
+
+				private bool? instantAccess;
+
+				private string sourceDiskType;
+
+				private List<DescribeSnapshotGroups_Tag2> tags1;
+
+				public string SourceDiskId
+				{
+					get
+					{
+						return sourceDiskId;
+					}
+					set	
+					{
+						sourceDiskId = value;
 					}
 				}
 
@@ -221,27 +283,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public string SourceDiskId
+				public int? InstantAccessRetentionDays
 				{
 					get
 					{
-						return sourceDiskId;
+						return instantAccessRetentionDays;
 					}
 					set	
 					{
-						sourceDiskId = value;
+						instantAccessRetentionDays = value;
 					}
 				}
 
-				public string SourceDiskType
+				public string SnapshotId
 				{
 					get
 					{
-						return sourceDiskType;
+						return snapshotId;
 					}
 					set	
 					{
-						sourceDiskType = value;
+						snapshotId = value;
 					}
 				}
 
@@ -257,15 +319,59 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public int? InstantAccessRetentionDays
+				public string SourceDiskType
 				{
 					get
 					{
-						return instantAccessRetentionDays;
+						return sourceDiskType;
 					}
 					set	
 					{
-						instantAccessRetentionDays = value;
+						sourceDiskType = value;
+					}
+				}
+
+				public List<DescribeSnapshotGroups_Tag2> Tags1
+				{
+					get
+					{
+						return tags1;
+					}
+					set	
+					{
+						tags1 = value;
+					}
+				}
+
+				public class DescribeSnapshotGroups_Tag2
+				{
+
+					private string key;
+
+					private string _value;
+
+					public string Key
+					{
+						get
+						{
+							return key;
+						}
+						set	
+						{
+							key = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
+						}
 					}
 				}
 			}

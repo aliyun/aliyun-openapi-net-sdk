@@ -31,27 +31,27 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeCommandsResponse describeCommandsResponse = new DescribeCommandsResponse();
 
 			describeCommandsResponse.HttpResponse = _ctx.HttpResponse;
-			describeCommandsResponse.RequestId = _ctx.StringValue("DescribeCommands.RequestId");
-			describeCommandsResponse.TotalCount = _ctx.LongValue("DescribeCommands.TotalCount");
-			describeCommandsResponse.PageNumber = _ctx.LongValue("DescribeCommands.PageNumber");
 			describeCommandsResponse.PageSize = _ctx.LongValue("DescribeCommands.PageSize");
+			describeCommandsResponse.RequestId = _ctx.StringValue("DescribeCommands.RequestId");
+			describeCommandsResponse.PageNumber = _ctx.LongValue("DescribeCommands.PageNumber");
+			describeCommandsResponse.TotalCount = _ctx.LongValue("DescribeCommands.TotalCount");
 
 			List<DescribeCommandsResponse.DescribeCommands_Command> describeCommandsResponse_commands = new List<DescribeCommandsResponse.DescribeCommands_Command>();
 			for (int i = 0; i < _ctx.Length("DescribeCommands.Commands.Length"); i++) {
 				DescribeCommandsResponse.DescribeCommands_Command command = new DescribeCommandsResponse.DescribeCommands_Command();
-				command.CommandId = _ctx.StringValue("DescribeCommands.Commands["+ i +"].CommandId");
-				command.Name = _ctx.StringValue("DescribeCommands.Commands["+ i +"].Name");
+				command.CreationTime = _ctx.StringValue("DescribeCommands.Commands["+ i +"].CreationTime");
 				command.Type = _ctx.StringValue("DescribeCommands.Commands["+ i +"].Type");
-				command.Version = _ctx.IntegerValue("DescribeCommands.Commands["+ i +"].Version");
-				command.Latest = _ctx.BooleanValue("DescribeCommands.Commands["+ i +"].Latest");
-				command.Provider = _ctx.StringValue("DescribeCommands.Commands["+ i +"].Provider");
-				command.Category = _ctx.StringValue("DescribeCommands.Commands["+ i +"].Category");
-				command.Description = _ctx.StringValue("DescribeCommands.Commands["+ i +"].Description");
-				command.CommandContent = _ctx.StringValue("DescribeCommands.Commands["+ i +"].CommandContent");
-				command.WorkingDir = _ctx.StringValue("DescribeCommands.Commands["+ i +"].WorkingDir");
 				command.Timeout = _ctx.LongValue("DescribeCommands.Commands["+ i +"].Timeout");
 				command.InvokeTimes = _ctx.IntegerValue("DescribeCommands.Commands["+ i +"].InvokeTimes");
-				command.CreationTime = _ctx.StringValue("DescribeCommands.Commands["+ i +"].CreationTime");
+				command.CommandId = _ctx.StringValue("DescribeCommands.Commands["+ i +"].CommandId");
+				command.WorkingDir = _ctx.StringValue("DescribeCommands.Commands["+ i +"].WorkingDir");
+				command.Description = _ctx.StringValue("DescribeCommands.Commands["+ i +"].Description");
+				command.Version = _ctx.IntegerValue("DescribeCommands.Commands["+ i +"].Version");
+				command.Provider = _ctx.StringValue("DescribeCommands.Commands["+ i +"].Provider");
+				command.CommandContent = _ctx.StringValue("DescribeCommands.Commands["+ i +"].CommandContent");
+				command.Category = _ctx.StringValue("DescribeCommands.Commands["+ i +"].Category");
+				command.Latest = _ctx.BooleanValue("DescribeCommands.Commands["+ i +"].Latest");
+				command.Name = _ctx.StringValue("DescribeCommands.Commands["+ i +"].Name");
 				command.EnableParameter = _ctx.BooleanValue("DescribeCommands.Commands["+ i +"].EnableParameter");
 
 				List<string> command_parameterNames = new List<string>();

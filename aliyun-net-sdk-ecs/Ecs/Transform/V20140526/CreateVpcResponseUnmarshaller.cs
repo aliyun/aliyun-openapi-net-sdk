@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateVpcResponse createVpcResponse = new CreateVpcResponse();
 
 			createVpcResponse.HttpResponse = _ctx.HttpResponse;
-			createVpcResponse.RequestId = _ctx.StringValue("CreateVpc.RequestId");
 			createVpcResponse.VpcId = _ctx.StringValue("CreateVpc.VpcId");
 			createVpcResponse.VRouterId = _ctx.StringValue("CreateVpc.VRouterId");
+			createVpcResponse.RequestId = _ctx.StringValue("CreateVpc.RequestId");
 			createVpcResponse.RouteTableId = _ctx.StringValue("CreateVpc.RouteTableId");
         
 			return createVpcResponse;

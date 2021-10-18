@@ -31,22 +31,22 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeStorageSetDetailsResponse describeStorageSetDetailsResponse = new DescribeStorageSetDetailsResponse();
 
 			describeStorageSetDetailsResponse.HttpResponse = _ctx.HttpResponse;
-			describeStorageSetDetailsResponse.RequestId = _ctx.StringValue("DescribeStorageSetDetails.RequestId");
-			describeStorageSetDetailsResponse.TotalCount = _ctx.IntegerValue("DescribeStorageSetDetails.TotalCount");
-			describeStorageSetDetailsResponse.PageNumber = _ctx.IntegerValue("DescribeStorageSetDetails.PageNumber");
 			describeStorageSetDetailsResponse.PageSize = _ctx.IntegerValue("DescribeStorageSetDetails.PageSize");
+			describeStorageSetDetailsResponse.RequestId = _ctx.StringValue("DescribeStorageSetDetails.RequestId");
+			describeStorageSetDetailsResponse.PageNumber = _ctx.IntegerValue("DescribeStorageSetDetails.PageNumber");
+			describeStorageSetDetailsResponse.TotalCount = _ctx.IntegerValue("DescribeStorageSetDetails.TotalCount");
 
 			List<DescribeStorageSetDetailsResponse.DescribeStorageSetDetails_Disk> describeStorageSetDetailsResponse_disks = new List<DescribeStorageSetDetailsResponse.DescribeStorageSetDetails_Disk>();
 			for (int i = 0; i < _ctx.Length("DescribeStorageSetDetails.Disks.Length"); i++) {
 				DescribeStorageSetDetailsResponse.DescribeStorageSetDetails_Disk disk = new DescribeStorageSetDetailsResponse.DescribeStorageSetDetails_Disk();
-				disk.DiskId = _ctx.StringValue("DescribeStorageSetDetails.Disks["+ i +"].DiskId");
-				disk.DiskName = _ctx.StringValue("DescribeStorageSetDetails.Disks["+ i +"].DiskName");
-				disk.Category = _ctx.StringValue("DescribeStorageSetDetails.Disks["+ i +"].Category");
-				disk.StorageSetId = _ctx.StringValue("DescribeStorageSetDetails.Disks["+ i +"].StorageSetId");
 				disk.CreationTime = _ctx.StringValue("DescribeStorageSetDetails.Disks["+ i +"].CreationTime");
+				disk.DiskName = _ctx.StringValue("DescribeStorageSetDetails.Disks["+ i +"].DiskName");
+				disk.ZoneId = _ctx.StringValue("DescribeStorageSetDetails.Disks["+ i +"].ZoneId");
+				disk.StorageSetId = _ctx.StringValue("DescribeStorageSetDetails.Disks["+ i +"].StorageSetId");
+				disk.DiskId = _ctx.StringValue("DescribeStorageSetDetails.Disks["+ i +"].DiskId");
+				disk.Category = _ctx.StringValue("DescribeStorageSetDetails.Disks["+ i +"].Category");
 				disk.StorageSetPartitionNumber = _ctx.IntegerValue("DescribeStorageSetDetails.Disks["+ i +"].StorageSetPartitionNumber");
 				disk.RegionId = _ctx.StringValue("DescribeStorageSetDetails.Disks["+ i +"].RegionId");
-				disk.ZoneId = _ctx.StringValue("DescribeStorageSetDetails.Disks["+ i +"].ZoneId");
 
 				describeStorageSetDetailsResponse_disks.Add(disk);
 			}

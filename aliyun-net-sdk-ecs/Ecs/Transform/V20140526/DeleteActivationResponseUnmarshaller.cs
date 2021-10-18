@@ -34,15 +34,15 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			deleteActivationResponse.RequestId = _ctx.StringValue("DeleteActivation.RequestId");
 
 			DeleteActivationResponse.DeleteActivation_Activation activation = new DeleteActivationResponse.DeleteActivation_Activation();
-			activation.ActivationId = _ctx.StringValue("DeleteActivation.Activation.ActivationId");
-			activation.InstanceName = _ctx.StringValue("DeleteActivation.Activation.InstanceName");
-			activation.Description = _ctx.StringValue("DeleteActivation.Activation.Description");
-			activation.InstanceCount = _ctx.IntegerValue("DeleteActivation.Activation.InstanceCount");
-			activation.TimeToLiveInHours = _ctx.LongValue("DeleteActivation.Activation.TimeToLiveInHours");
-			activation.IpAddressRange = _ctx.StringValue("DeleteActivation.Activation.IpAddressRange");
-			activation.RegisteredCount = _ctx.IntegerValue("DeleteActivation.Activation.RegisteredCount");
-			activation.DeregisteredCount = _ctx.IntegerValue("DeleteActivation.Activation.DeregisteredCount");
 			activation.CreationTime = _ctx.StringValue("DeleteActivation.Activation.CreationTime");
+			activation.DeregisteredCount = _ctx.IntegerValue("DeleteActivation.Activation.DeregisteredCount");
+			activation.InstanceCount = _ctx.IntegerValue("DeleteActivation.Activation.InstanceCount");
+			activation.Description = _ctx.StringValue("DeleteActivation.Activation.Description");
+			activation.RegisteredCount = _ctx.IntegerValue("DeleteActivation.Activation.RegisteredCount");
+			activation.InstanceName = _ctx.StringValue("DeleteActivation.Activation.InstanceName");
+			activation.IpAddressRange = _ctx.StringValue("DeleteActivation.Activation.IpAddressRange");
+			activation.TimeToLiveInHours = _ctx.LongValue("DeleteActivation.Activation.TimeToLiveInHours");
+			activation.ActivationId = _ctx.StringValue("DeleteActivation.Activation.ActivationId");
 			deleteActivationResponse.Activation = activation;
         
 			return deleteActivationResponse;

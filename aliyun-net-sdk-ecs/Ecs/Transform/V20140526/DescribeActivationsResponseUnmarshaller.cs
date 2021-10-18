@@ -31,24 +31,24 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeActivationsResponse describeActivationsResponse = new DescribeActivationsResponse();
 
 			describeActivationsResponse.HttpResponse = _ctx.HttpResponse;
-			describeActivationsResponse.RequestId = _ctx.StringValue("DescribeActivations.RequestId");
-			describeActivationsResponse.TotalCount = _ctx.LongValue("DescribeActivations.TotalCount");
-			describeActivationsResponse.PageNumber = _ctx.LongValue("DescribeActivations.PageNumber");
 			describeActivationsResponse.PageSize = _ctx.LongValue("DescribeActivations.PageSize");
+			describeActivationsResponse.RequestId = _ctx.StringValue("DescribeActivations.RequestId");
+			describeActivationsResponse.PageNumber = _ctx.LongValue("DescribeActivations.PageNumber");
+			describeActivationsResponse.TotalCount = _ctx.LongValue("DescribeActivations.TotalCount");
 
 			List<DescribeActivationsResponse.DescribeActivations_Activation> describeActivationsResponse_activationList = new List<DescribeActivationsResponse.DescribeActivations_Activation>();
 			for (int i = 0; i < _ctx.Length("DescribeActivations.ActivationList.Length"); i++) {
 				DescribeActivationsResponse.DescribeActivations_Activation activation = new DescribeActivationsResponse.DescribeActivations_Activation();
-				activation.ActivationId = _ctx.StringValue("DescribeActivations.ActivationList["+ i +"].ActivationId");
-				activation.InstanceName = _ctx.StringValue("DescribeActivations.ActivationList["+ i +"].InstanceName");
-				activation.Description = _ctx.StringValue("DescribeActivations.ActivationList["+ i +"].Description");
-				activation.InstanceCount = _ctx.IntegerValue("DescribeActivations.ActivationList["+ i +"].InstanceCount");
-				activation.TimeToLiveInHours = _ctx.LongValue("DescribeActivations.ActivationList["+ i +"].TimeToLiveInHours");
-				activation.IpAddressRange = _ctx.StringValue("DescribeActivations.ActivationList["+ i +"].IpAddressRange");
-				activation.RegisteredCount = _ctx.IntegerValue("DescribeActivations.ActivationList["+ i +"].RegisteredCount");
-				activation.DeregisteredCount = _ctx.IntegerValue("DescribeActivations.ActivationList["+ i +"].DeregisteredCount");
-				activation.Disabled = _ctx.BooleanValue("DescribeActivations.ActivationList["+ i +"].Disabled");
 				activation.CreationTime = _ctx.StringValue("DescribeActivations.ActivationList["+ i +"].CreationTime");
+				activation.DeregisteredCount = _ctx.IntegerValue("DescribeActivations.ActivationList["+ i +"].DeregisteredCount");
+				activation.InstanceCount = _ctx.IntegerValue("DescribeActivations.ActivationList["+ i +"].InstanceCount");
+				activation.Description = _ctx.StringValue("DescribeActivations.ActivationList["+ i +"].Description");
+				activation.RegisteredCount = _ctx.IntegerValue("DescribeActivations.ActivationList["+ i +"].RegisteredCount");
+				activation.InstanceName = _ctx.StringValue("DescribeActivations.ActivationList["+ i +"].InstanceName");
+				activation.Disabled = _ctx.BooleanValue("DescribeActivations.ActivationList["+ i +"].Disabled");
+				activation.IpAddressRange = _ctx.StringValue("DescribeActivations.ActivationList["+ i +"].IpAddressRange");
+				activation.TimeToLiveInHours = _ctx.LongValue("DescribeActivations.ActivationList["+ i +"].TimeToLiveInHours");
+				activation.ActivationId = _ctx.StringValue("DescribeActivations.ActivationList["+ i +"].ActivationId");
 
 				describeActivationsResponse_activationList.Add(activation);
 			}

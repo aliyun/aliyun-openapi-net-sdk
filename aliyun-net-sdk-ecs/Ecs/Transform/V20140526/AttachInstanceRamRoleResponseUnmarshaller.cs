@@ -31,18 +31,18 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			AttachInstanceRamRoleResponse attachInstanceRamRoleResponse = new AttachInstanceRamRoleResponse();
 
 			attachInstanceRamRoleResponse.HttpResponse = _ctx.HttpResponse;
+			attachInstanceRamRoleResponse.RamRoleName = _ctx.StringValue("AttachInstanceRamRole.RamRoleName");
 			attachInstanceRamRoleResponse.RequestId = _ctx.StringValue("AttachInstanceRamRole.RequestId");
 			attachInstanceRamRoleResponse.TotalCount = _ctx.IntegerValue("AttachInstanceRamRole.TotalCount");
 			attachInstanceRamRoleResponse.FailCount = _ctx.IntegerValue("AttachInstanceRamRole.FailCount");
-			attachInstanceRamRoleResponse.RamRoleName = _ctx.StringValue("AttachInstanceRamRole.RamRoleName");
 
 			List<AttachInstanceRamRoleResponse.AttachInstanceRamRole_AttachInstanceRamRoleResult> attachInstanceRamRoleResponse_attachInstanceRamRoleResults = new List<AttachInstanceRamRoleResponse.AttachInstanceRamRole_AttachInstanceRamRoleResult>();
 			for (int i = 0; i < _ctx.Length("AttachInstanceRamRole.AttachInstanceRamRoleResults.Length"); i++) {
 				AttachInstanceRamRoleResponse.AttachInstanceRamRole_AttachInstanceRamRoleResult attachInstanceRamRoleResult = new AttachInstanceRamRoleResponse.AttachInstanceRamRole_AttachInstanceRamRoleResult();
-				attachInstanceRamRoleResult.InstanceId = _ctx.StringValue("AttachInstanceRamRole.AttachInstanceRamRoleResults["+ i +"].InstanceId");
-				attachInstanceRamRoleResult.Success = _ctx.BooleanValue("AttachInstanceRamRole.AttachInstanceRamRoleResults["+ i +"].Success");
 				attachInstanceRamRoleResult.Code = _ctx.StringValue("AttachInstanceRamRole.AttachInstanceRamRoleResults["+ i +"].Code");
 				attachInstanceRamRoleResult.Message = _ctx.StringValue("AttachInstanceRamRole.AttachInstanceRamRoleResults["+ i +"].Message");
+				attachInstanceRamRoleResult.InstanceId = _ctx.StringValue("AttachInstanceRamRole.AttachInstanceRamRoleResults["+ i +"].InstanceId");
+				attachInstanceRamRoleResult.Success = _ctx.BooleanValue("AttachInstanceRamRole.AttachInstanceRamRoleResults["+ i +"].Success");
 
 				attachInstanceRamRoleResponse_attachInstanceRamRoleResults.Add(attachInstanceRamRoleResult);
 			}

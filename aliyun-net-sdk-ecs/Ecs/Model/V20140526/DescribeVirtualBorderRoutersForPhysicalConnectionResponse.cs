@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -98,45 +98,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeVirtualBorderRoutersForPhysicalConnection_VirtualBorderRouterForPhysicalConnectionType
 		{
 
-			private string vbrId;
-
-			private long? vbrOwnerUid;
-
 			private string creationTime;
-
-			private string activationTime;
-
-			private string terminationTime;
-
-			private string recoveryTime;
-
-			private int? vlanId;
 
 			private string circuitCode;
 
-			public string VbrId
-			{
-				get
-				{
-					return vbrId;
-				}
-				set	
-				{
-					vbrId = value;
-				}
-			}
+			private string recoveryTime;
 
-			public long? VbrOwnerUid
-			{
-				get
-				{
-					return vbrOwnerUid;
-				}
-				set	
-				{
-					vbrOwnerUid = value;
-				}
-			}
+			private string terminationTime;
+
+			private string activationTime;
+
+			private long? vbrOwnerUid;
+
+			private string vbrId;
+
+			private int? vlanId;
 
 			public string CreationTime
 			{
@@ -150,27 +126,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string ActivationTime
+			public string CircuitCode
 			{
 				get
 				{
-					return activationTime;
+					return circuitCode;
 				}
 				set	
 				{
-					activationTime = value;
-				}
-			}
-
-			public string TerminationTime
-			{
-				get
-				{
-					return terminationTime;
-				}
-				set	
-				{
-					terminationTime = value;
+					circuitCode = value;
 				}
 			}
 
@@ -186,6 +150,54 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string TerminationTime
+			{
+				get
+				{
+					return terminationTime;
+				}
+				set	
+				{
+					terminationTime = value;
+				}
+			}
+
+			public string ActivationTime
+			{
+				get
+				{
+					return activationTime;
+				}
+				set	
+				{
+					activationTime = value;
+				}
+			}
+
+			public long? VbrOwnerUid
+			{
+				get
+				{
+					return vbrOwnerUid;
+				}
+				set	
+				{
+					vbrOwnerUid = value;
+				}
+			}
+
+			public string VbrId
+			{
+				get
+				{
+					return vbrId;
+				}
+				set	
+				{
+					vbrId = value;
+				}
+			}
+
 			public int? VlanId
 			{
 				get
@@ -195,18 +207,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					vlanId = value;
-				}
-			}
-
-			public string CircuitCode
-			{
-				get
-				{
-					return circuitCode;
-				}
-				set	
-				{
-					circuitCode = value;
 				}
 			}
 		}

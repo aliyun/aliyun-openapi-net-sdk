@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeDeploymentSetSupportedInstanceTypeFamilyResponse describeDeploymentSetSupportedInstanceTypeFamilyResponse = new DescribeDeploymentSetSupportedInstanceTypeFamilyResponse();
 
 			describeDeploymentSetSupportedInstanceTypeFamilyResponse.HttpResponse = _ctx.HttpResponse;
-			describeDeploymentSetSupportedInstanceTypeFamilyResponse.RequestId = _ctx.StringValue("DescribeDeploymentSetSupportedInstanceTypeFamily.RequestId");
 			describeDeploymentSetSupportedInstanceTypeFamilyResponse.InstanceTypeFamilies = _ctx.StringValue("DescribeDeploymentSetSupportedInstanceTypeFamily.InstanceTypeFamilies");
+			describeDeploymentSetSupportedInstanceTypeFamilyResponse.RequestId = _ctx.StringValue("DescribeDeploymentSetSupportedInstanceTypeFamily.RequestId");
         
 			return describeDeploymentSetSupportedInstanceTypeFamilyResponse;
         }

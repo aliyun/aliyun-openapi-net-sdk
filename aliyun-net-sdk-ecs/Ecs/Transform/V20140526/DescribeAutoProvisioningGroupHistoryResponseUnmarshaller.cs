@@ -31,24 +31,24 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeAutoProvisioningGroupHistoryResponse describeAutoProvisioningGroupHistoryResponse = new DescribeAutoProvisioningGroupHistoryResponse();
 
 			describeAutoProvisioningGroupHistoryResponse.HttpResponse = _ctx.HttpResponse;
-			describeAutoProvisioningGroupHistoryResponse.RequestId = _ctx.StringValue("DescribeAutoProvisioningGroupHistory.RequestId");
-			describeAutoProvisioningGroupHistoryResponse.TotalCount = _ctx.IntegerValue("DescribeAutoProvisioningGroupHistory.TotalCount");
-			describeAutoProvisioningGroupHistoryResponse.PageNumber = _ctx.IntegerValue("DescribeAutoProvisioningGroupHistory.PageNumber");
 			describeAutoProvisioningGroupHistoryResponse.PageSize = _ctx.IntegerValue("DescribeAutoProvisioningGroupHistory.PageSize");
+			describeAutoProvisioningGroupHistoryResponse.RequestId = _ctx.StringValue("DescribeAutoProvisioningGroupHistory.RequestId");
+			describeAutoProvisioningGroupHistoryResponse.PageNumber = _ctx.IntegerValue("DescribeAutoProvisioningGroupHistory.PageNumber");
+			describeAutoProvisioningGroupHistoryResponse.TotalCount = _ctx.IntegerValue("DescribeAutoProvisioningGroupHistory.TotalCount");
 
 			List<DescribeAutoProvisioningGroupHistoryResponse.DescribeAutoProvisioningGroupHistory_AutoProvisioningGroupHistory> describeAutoProvisioningGroupHistoryResponse_autoProvisioningGroupHistories = new List<DescribeAutoProvisioningGroupHistoryResponse.DescribeAutoProvisioningGroupHistory_AutoProvisioningGroupHistory>();
 			for (int i = 0; i < _ctx.Length("DescribeAutoProvisioningGroupHistory.AutoProvisioningGroupHistories.Length"); i++) {
 				DescribeAutoProvisioningGroupHistoryResponse.DescribeAutoProvisioningGroupHistory_AutoProvisioningGroupHistory autoProvisioningGroupHistory = new DescribeAutoProvisioningGroupHistoryResponse.DescribeAutoProvisioningGroupHistory_AutoProvisioningGroupHistory();
-				autoProvisioningGroupHistory.TaskId = _ctx.StringValue("DescribeAutoProvisioningGroupHistory.AutoProvisioningGroupHistories["+ i +"].TaskId");
 				autoProvisioningGroupHistory.Status = _ctx.StringValue("DescribeAutoProvisioningGroupHistory.AutoProvisioningGroupHistories["+ i +"].Status");
-				autoProvisioningGroupHistory.LastEventTime = _ctx.StringValue("DescribeAutoProvisioningGroupHistory.AutoProvisioningGroupHistories["+ i +"].LastEventTime");
 				autoProvisioningGroupHistory.StartTime = _ctx.StringValue("DescribeAutoProvisioningGroupHistory.AutoProvisioningGroupHistories["+ i +"].StartTime");
+				autoProvisioningGroupHistory.TaskId = _ctx.StringValue("DescribeAutoProvisioningGroupHistory.AutoProvisioningGroupHistories["+ i +"].TaskId");
+				autoProvisioningGroupHistory.LastEventTime = _ctx.StringValue("DescribeAutoProvisioningGroupHistory.AutoProvisioningGroupHistories["+ i +"].LastEventTime");
 
 				List<DescribeAutoProvisioningGroupHistoryResponse.DescribeAutoProvisioningGroupHistory_AutoProvisioningGroupHistory.DescribeAutoProvisioningGroupHistory_ActivityDetail> autoProvisioningGroupHistory_activityDetails = new List<DescribeAutoProvisioningGroupHistoryResponse.DescribeAutoProvisioningGroupHistory_AutoProvisioningGroupHistory.DescribeAutoProvisioningGroupHistory_ActivityDetail>();
 				for (int j = 0; j < _ctx.Length("DescribeAutoProvisioningGroupHistory.AutoProvisioningGroupHistories["+ i +"].ActivityDetails.Length"); j++) {
 					DescribeAutoProvisioningGroupHistoryResponse.DescribeAutoProvisioningGroupHistory_AutoProvisioningGroupHistory.DescribeAutoProvisioningGroupHistory_ActivityDetail activityDetail = new DescribeAutoProvisioningGroupHistoryResponse.DescribeAutoProvisioningGroupHistory_AutoProvisioningGroupHistory.DescribeAutoProvisioningGroupHistory_ActivityDetail();
-					activityDetail.Detail = _ctx.StringValue("DescribeAutoProvisioningGroupHistory.AutoProvisioningGroupHistories["+ i +"].ActivityDetails["+ j +"].Detail");
 					activityDetail.Status = _ctx.StringValue("DescribeAutoProvisioningGroupHistory.AutoProvisioningGroupHistories["+ i +"].ActivityDetails["+ j +"].Status");
+					activityDetail.Detail = _ctx.StringValue("DescribeAutoProvisioningGroupHistory.AutoProvisioningGroupHistories["+ i +"].ActivityDetails["+ j +"].Detail");
 
 					autoProvisioningGroupHistory_activityDetails.Add(activityDetail);
 				}

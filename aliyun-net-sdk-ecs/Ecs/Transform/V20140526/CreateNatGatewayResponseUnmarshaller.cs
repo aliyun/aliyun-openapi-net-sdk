@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateNatGatewayResponse createNatGatewayResponse = new CreateNatGatewayResponse();
 
 			createNatGatewayResponse.HttpResponse = _ctx.HttpResponse;
-			createNatGatewayResponse.RequestId = _ctx.StringValue("CreateNatGateway.RequestId");
 			createNatGatewayResponse.NatGatewayId = _ctx.StringValue("CreateNatGateway.NatGatewayId");
+			createNatGatewayResponse.RequestId = _ctx.StringValue("CreateNatGateway.RequestId");
 
 			List<string> createNatGatewayResponse_forwardTableIds = new List<string>();
 			for (int i = 0; i < _ctx.Length("CreateNatGateway.ForwardTableIds.Length"); i++) {

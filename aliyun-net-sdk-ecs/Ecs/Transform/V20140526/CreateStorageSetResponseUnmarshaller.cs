@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateStorageSetResponse createStorageSetResponse = new CreateStorageSetResponse();
 
 			createStorageSetResponse.HttpResponse = _ctx.HttpResponse;
-			createStorageSetResponse.RequestId = _ctx.StringValue("CreateStorageSet.RequestId");
 			createStorageSetResponse.StorageSetId = _ctx.StringValue("CreateStorageSet.StorageSetId");
+			createStorageSetResponse.RequestId = _ctx.StringValue("CreateStorageSet.RequestId");
         
 			return createStorageSetResponse;
         }

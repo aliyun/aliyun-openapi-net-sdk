@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<StopInstances_InstanceResponse> instanceResponses;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceResponses")]
 		public List<StopInstances_InstanceResponse> InstanceResponses
 		{
 			get
@@ -56,52 +58,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class StopInstances_InstanceResponse
 		{
 
-			private string instanceId;
-
-			private string previousStatus;
-
-			private string currentStatus;
-
 			private string code;
 
 			private string message;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private string instanceId;
 
-			public string PreviousStatus
-			{
-				get
-				{
-					return previousStatus;
-				}
-				set	
-				{
-					previousStatus = value;
-				}
-			}
+			private string currentStatus;
 
-			public string CurrentStatus
-			{
-				get
-				{
-					return currentStatus;
-				}
-				set	
-				{
-					currentStatus = value;
-				}
-			}
+			private string previousStatus;
 
+			[JsonProperty(PropertyName = "Code")]
 			public string Code
 			{
 				get
@@ -114,6 +81,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "Message")]
 			public string Message
 			{
 				get
@@ -123,6 +91,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					message = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceId")]
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CurrentStatus")]
+			public string CurrentStatus
+			{
+				get
+				{
+					return currentStatus;
+				}
+				set	
+				{
+					currentStatus = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "PreviousStatus")]
+			public string PreviousStatus
+			{
+				get
+				{
+					return previousStatus;
+				}
+				set	
+				{
+					previousStatus = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeDisksFullStatusResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeDisksFullStatus_DiskFullStatusType> diskFullStatusSet;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -187,9 +187,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string eventId;
 
-				private string eventTime;
-
 				private string eventEndTime;
+
+				private string eventTime;
 
 				private string impactLevel;
 
@@ -207,18 +207,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public string EventTime
-				{
-					get
-					{
-						return eventTime;
-					}
-					set	
-					{
-						eventTime = value;
-					}
-				}
-
 				public string EventEndTime
 				{
 					get
@@ -228,6 +216,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						eventEndTime = value;
+					}
+				}
+
+				public string EventTime
+				{
+					get
+					{
+						return eventTime;
+					}
+					set	
+					{
+						eventTime = value;
 					}
 				}
 
@@ -258,21 +258,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				public class DescribeDisksFullStatus_EventType
 				{
 
-					private int? code;
-
 					private string name;
 
-					public int? Code
-					{
-						get
-						{
-							return code;
-						}
-						set	
-						{
-							code = value;
-						}
-					}
+					private int? code;
 
 					public string Name
 					{
@@ -285,27 +273,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 							name = value;
 						}
 					}
+
+					public int? Code
+					{
+						get
+						{
+							return code;
+						}
+						set	
+						{
+							code = value;
+						}
+					}
 				}
 			}
 
 			public class DescribeDisksFullStatus_Status
 			{
 
-				private int? code;
-
 				private string name;
 
-				public int? Code
-				{
-					get
-					{
-						return code;
-					}
-					set	
-					{
-						code = value;
-					}
-				}
+				private int? code;
 
 				public string Name
 				{
@@ -316,6 +304,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						name = value;
+					}
+				}
+
+				public int? Code
+				{
+					get
+					{
+						return code;
+					}
+					set	
+					{
+						code = value;
 					}
 				}
 			}
@@ -323,21 +323,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeDisksFullStatus_HealthStatus
 			{
 
-				private int? code;
-
 				private string name;
 
-				public int? Code
-				{
-					get
-					{
-						return code;
-					}
-					set	
-					{
-						code = value;
-					}
-				}
+				private int? code;
 
 				public string Name
 				{
@@ -348,6 +336,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						name = value;
+					}
+				}
+
+				public int? Code
+				{
+					get
+					{
+						return code;
+					}
+					set	
+					{
+						code = value;
 					}
 				}
 			}

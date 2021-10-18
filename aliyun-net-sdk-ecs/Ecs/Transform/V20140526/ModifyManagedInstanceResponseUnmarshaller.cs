@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			modifyManagedInstanceResponse.RequestId = _ctx.StringValue("ModifyManagedInstance.RequestId");
 
 			ModifyManagedInstanceResponse.ModifyManagedInstance_Instance instance = new ModifyManagedInstanceResponse.ModifyManagedInstance_Instance();
-			instance.InstanceId = _ctx.StringValue("ModifyManagedInstance.Instance.InstanceId");
 			instance.InstanceName = _ctx.StringValue("ModifyManagedInstance.Instance.InstanceName");
+			instance.InstanceId = _ctx.StringValue("ModifyManagedInstance.Instance.InstanceId");
 			modifyManagedInstanceResponse.Instance = instance;
         
 			return modifyManagedInstanceResponse;

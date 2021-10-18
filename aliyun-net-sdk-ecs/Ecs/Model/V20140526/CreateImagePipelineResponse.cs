@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class CreateImagePipelineResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string imagePipelineId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string ImagePipelineId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				imagePipelineId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

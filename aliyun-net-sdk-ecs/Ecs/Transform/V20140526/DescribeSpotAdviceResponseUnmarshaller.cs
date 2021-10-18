@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeSpotAdviceResponse describeSpotAdviceResponse = new DescribeSpotAdviceResponse();
 
 			describeSpotAdviceResponse.HttpResponse = _ctx.HttpResponse;
-			describeSpotAdviceResponse.RequestId = _ctx.StringValue("DescribeSpotAdvice.RequestId");
 			describeSpotAdviceResponse.RegionId = _ctx.StringValue("DescribeSpotAdvice.RegionId");
+			describeSpotAdviceResponse.RequestId = _ctx.StringValue("DescribeSpotAdvice.RequestId");
 
 			List<DescribeSpotAdviceResponse.DescribeSpotAdvice_AvailableSpotZone> describeSpotAdviceResponse_availableSpotZones = new List<DescribeSpotAdviceResponse.DescribeSpotAdvice_AvailableSpotZone>();
 			for (int i = 0; i < _ctx.Length("DescribeSpotAdvice.AvailableSpotZones.Length"); i++) {
@@ -42,10 +42,10 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				List<DescribeSpotAdviceResponse.DescribeSpotAdvice_AvailableSpotZone.DescribeSpotAdvice_AvailableSpotResource> availableSpotZone_availableSpotResources = new List<DescribeSpotAdviceResponse.DescribeSpotAdvice_AvailableSpotZone.DescribeSpotAdvice_AvailableSpotResource>();
 				for (int j = 0; j < _ctx.Length("DescribeSpotAdvice.AvailableSpotZones["+ i +"].AvailableSpotResources.Length"); j++) {
 					DescribeSpotAdviceResponse.DescribeSpotAdvice_AvailableSpotZone.DescribeSpotAdvice_AvailableSpotResource availableSpotResource = new DescribeSpotAdviceResponse.DescribeSpotAdvice_AvailableSpotZone.DescribeSpotAdvice_AvailableSpotResource();
-					availableSpotResource.InstanceType = _ctx.StringValue("DescribeSpotAdvice.AvailableSpotZones["+ i +"].AvailableSpotResources["+ j +"].InstanceType");
-					availableSpotResource.InterruptionRate = _ctx.FloatValue("DescribeSpotAdvice.AvailableSpotZones["+ i +"].AvailableSpotResources["+ j +"].InterruptionRate");
 					availableSpotResource.InterruptRateDesc = _ctx.StringValue("DescribeSpotAdvice.AvailableSpotZones["+ i +"].AvailableSpotResources["+ j +"].InterruptRateDesc");
 					availableSpotResource.AverageSpotDiscount = _ctx.IntegerValue("DescribeSpotAdvice.AvailableSpotZones["+ i +"].AvailableSpotResources["+ j +"].AverageSpotDiscount");
+					availableSpotResource.InstanceType = _ctx.StringValue("DescribeSpotAdvice.AvailableSpotZones["+ i +"].AvailableSpotResources["+ j +"].InstanceType");
+					availableSpotResource.InterruptionRate = _ctx.FloatValue("DescribeSpotAdvice.AvailableSpotZones["+ i +"].AvailableSpotResources["+ j +"].InterruptionRate");
 
 					availableSpotZone_availableSpotResources.Add(availableSpotResource);
 				}

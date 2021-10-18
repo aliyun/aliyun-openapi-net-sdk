@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribePrefixListAssociationsResponse describePrefixListAssociationsResponse = new DescribePrefixListAssociationsResponse();
 
 			describePrefixListAssociationsResponse.HttpResponse = _ctx.HttpResponse;
-			describePrefixListAssociationsResponse.RequestId = _ctx.StringValue("DescribePrefixListAssociations.RequestId");
 			describePrefixListAssociationsResponse.NextToken = _ctx.StringValue("DescribePrefixListAssociations.NextToken");
+			describePrefixListAssociationsResponse.RequestId = _ctx.StringValue("DescribePrefixListAssociations.RequestId");
 
 			List<DescribePrefixListAssociationsResponse.DescribePrefixListAssociations_PrefixListAssociation> describePrefixListAssociationsResponse_prefixListAssociations = new List<DescribePrefixListAssociationsResponse.DescribePrefixListAssociations_PrefixListAssociation>();
 			for (int i = 0; i < _ctx.Length("DescribePrefixListAssociations.PrefixListAssociations.Length"); i++) {

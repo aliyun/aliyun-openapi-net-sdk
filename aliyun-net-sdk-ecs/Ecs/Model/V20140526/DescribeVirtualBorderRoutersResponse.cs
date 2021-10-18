@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -98,103 +98,55 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeVirtualBorderRouters_VirtualBorderRouterType
 		{
 
-			private string vbrId;
-
-			private string creationTime;
-
-			private string activationTime;
-
-			private string terminationTime;
-
-			private string recoveryTime;
+			private string vlanInterfaceId;
 
 			private string status;
 
-			private int? vlanId;
+			private string creationTime;
 
 			private string circuitCode;
 
-			private string routeTableId;
-
-			private string vlanInterfaceId;
+			private string physicalConnectionOwnerUid;
 
 			private string localGatewayIp;
 
-			private string peerGatewayIp;
-
-			private string peeringSubnetMask;
-
-			private string physicalConnectionId;
-
-			private string physicalConnectionStatus;
+			private string activationTime;
 
 			private string physicalConnectionBusinessStatus;
 
-			private string physicalConnectionOwnerUid;
+			private string peeringSubnetMask;
 
-			private string accessPointId;
-
-			private string name;
+			private string routeTableId;
 
 			private string description;
 
-			public string VbrId
-			{
-				get
-				{
-					return vbrId;
-				}
-				set	
-				{
-					vbrId = value;
-				}
-			}
+			private string physicalConnectionStatus;
 
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
+			private string recoveryTime;
 
-			public string ActivationTime
-			{
-				get
-				{
-					return activationTime;
-				}
-				set	
-				{
-					activationTime = value;
-				}
-			}
+			private string terminationTime;
 
-			public string TerminationTime
-			{
-				get
-				{
-					return terminationTime;
-				}
-				set	
-				{
-					terminationTime = value;
-				}
-			}
+			private string peerGatewayIp;
 
-			public string RecoveryTime
+			private string name;
+
+			private string accessPointId;
+
+			private string vbrId;
+
+			private string physicalConnectionId;
+
+			private int? vlanId;
+
+			public string VlanInterfaceId
 			{
 				get
 				{
-					return recoveryTime;
+					return vlanInterfaceId;
 				}
 				set	
 				{
-					recoveryTime = value;
+					vlanInterfaceId = value;
 				}
 			}
 
@@ -210,15 +162,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public int? VlanId
+			public string CreationTime
 			{
 				get
 				{
-					return vlanId;
+					return creationTime;
 				}
 				set	
 				{
-					vlanId = value;
+					creationTime = value;
 				}
 			}
 
@@ -234,27 +186,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string RouteTableId
+			public string PhysicalConnectionOwnerUid
 			{
 				get
 				{
-					return routeTableId;
+					return physicalConnectionOwnerUid;
 				}
 				set	
 				{
-					routeTableId = value;
-				}
-			}
-
-			public string VlanInterfaceId
-			{
-				get
-				{
-					return vlanInterfaceId;
-				}
-				set	
-				{
-					vlanInterfaceId = value;
+					physicalConnectionOwnerUid = value;
 				}
 			}
 
@@ -270,51 +210,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string PeerGatewayIp
+			public string ActivationTime
 			{
 				get
 				{
-					return peerGatewayIp;
+					return activationTime;
 				}
 				set	
 				{
-					peerGatewayIp = value;
-				}
-			}
-
-			public string PeeringSubnetMask
-			{
-				get
-				{
-					return peeringSubnetMask;
-				}
-				set	
-				{
-					peeringSubnetMask = value;
-				}
-			}
-
-			public string PhysicalConnectionId
-			{
-				get
-				{
-					return physicalConnectionId;
-				}
-				set	
-				{
-					physicalConnectionId = value;
-				}
-			}
-
-			public string PhysicalConnectionStatus
-			{
-				get
-				{
-					return physicalConnectionStatus;
-				}
-				set	
-				{
-					physicalConnectionStatus = value;
+					activationTime = value;
 				}
 			}
 
@@ -330,27 +234,87 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string PhysicalConnectionOwnerUid
+			public string PeeringSubnetMask
 			{
 				get
 				{
-					return physicalConnectionOwnerUid;
+					return peeringSubnetMask;
 				}
 				set	
 				{
-					physicalConnectionOwnerUid = value;
+					peeringSubnetMask = value;
 				}
 			}
 
-			public string AccessPointId
+			public string RouteTableId
 			{
 				get
 				{
-					return accessPointId;
+					return routeTableId;
 				}
 				set	
 				{
-					accessPointId = value;
+					routeTableId = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string PhysicalConnectionStatus
+			{
+				get
+				{
+					return physicalConnectionStatus;
+				}
+				set	
+				{
+					physicalConnectionStatus = value;
+				}
+			}
+
+			public string RecoveryTime
+			{
+				get
+				{
+					return recoveryTime;
+				}
+				set	
+				{
+					recoveryTime = value;
+				}
+			}
+
+			public string TerminationTime
+			{
+				get
+				{
+					return terminationTime;
+				}
+				set	
+				{
+					terminationTime = value;
+				}
+			}
+
+			public string PeerGatewayIp
+			{
+				get
+				{
+					return peerGatewayIp;
+				}
+				set	
+				{
+					peerGatewayIp = value;
 				}
 			}
 
@@ -366,15 +330,51 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Description
+			public string AccessPointId
 			{
 				get
 				{
-					return description;
+					return accessPointId;
 				}
 				set	
 				{
-					description = value;
+					accessPointId = value;
+				}
+			}
+
+			public string VbrId
+			{
+				get
+				{
+					return vbrId;
+				}
+				set	
+				{
+					vbrId = value;
+				}
+			}
+
+			public string PhysicalConnectionId
+			{
+				get
+				{
+					return physicalConnectionId;
+				}
+				set	
+				{
+					physicalConnectionId = value;
+				}
+			}
+
+			public int? VlanId
+			{
+				get
+				{
+					return vlanId;
+				}
+				set	
+				{
+					vlanId = value;
 				}
 			}
 		}

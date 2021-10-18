@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeCloudAssistantStatusResponse : AcsResponse
 	{
 
-		private string requestId;
+		private long? pageSize;
 
-		private long? totalCount;
+		private string requestId;
 
 		private long? pageNumber;
 
-		private long? pageSize;
+		private long? totalCount;
 
 		private List<DescribeCloudAssistantStatus_InstanceCloudAssistantStatus> instanceCloudAssistantStatusSet;
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public long? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? PageSize
+		public long? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,45 +98,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeCloudAssistantStatus_InstanceCloudAssistantStatus
 		{
 
-			private string instanceId;
-
-			private string oSType;
-
 			private string cloudAssistantStatus;
-
-			private string cloudAssistantVersion;
-
-			private long? invocationCount;
-
-			private long? activeTaskCount;
 
 			private string lastInvokedTime;
 
+			private string cloudAssistantVersion;
+
+			private long? activeTaskCount;
+
+			private long? invocationCount;
+
+			private string instanceId;
+
 			private string lastHeartbeatTime;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private string oSType;
 
-			public string OSType
-			{
-				get
-				{
-					return oSType;
-				}
-				set	
-				{
-					oSType = value;
-				}
-			}
+			private bool? supportSessionManager;
 
 			public string CloudAssistantStatus
 			{
@@ -147,42 +125,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					cloudAssistantStatus = value;
-				}
-			}
-
-			public string CloudAssistantVersion
-			{
-				get
-				{
-					return cloudAssistantVersion;
-				}
-				set	
-				{
-					cloudAssistantVersion = value;
-				}
-			}
-
-			public long? InvocationCount
-			{
-				get
-				{
-					return invocationCount;
-				}
-				set	
-				{
-					invocationCount = value;
-				}
-			}
-
-			public long? ActiveTaskCount
-			{
-				get
-				{
-					return activeTaskCount;
-				}
-				set	
-				{
-					activeTaskCount = value;
 				}
 			}
 
@@ -198,6 +140,54 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string CloudAssistantVersion
+			{
+				get
+				{
+					return cloudAssistantVersion;
+				}
+				set	
+				{
+					cloudAssistantVersion = value;
+				}
+			}
+
+			public long? ActiveTaskCount
+			{
+				get
+				{
+					return activeTaskCount;
+				}
+				set	
+				{
+					activeTaskCount = value;
+				}
+			}
+
+			public long? InvocationCount
+			{
+				get
+				{
+					return invocationCount;
+				}
+				set	
+				{
+					invocationCount = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
 			public string LastHeartbeatTime
 			{
 				get
@@ -207,6 +197,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					lastHeartbeatTime = value;
+				}
+			}
+
+			public string OSType
+			{
+				get
+				{
+					return oSType;
+				}
+				set	
+				{
+					oSType = value;
+				}
+			}
+
+			public bool? SupportSessionManager
+			{
+				get
+				{
+					return supportSessionManager;
+				}
+				set	
+				{
+					supportSessionManager = value;
 				}
 			}
 		}

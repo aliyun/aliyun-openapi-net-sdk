@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,67 +25,31 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribePrefixListAttributesResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string prefixListId;
-
-		private string prefixListName;
-
-		private string addressFamily;
+		private string creationTime;
 
 		private int? maxEntries;
 
+		private string requestId;
+
 		private string description;
 
-		private string creationTime;
+		private string addressFamily;
+
+		private string prefixListName;
+
+		private string prefixListId;
 
 		private List<DescribePrefixListAttributes_Entry> entries;
 
-		public string RequestId
+		public string CreationTime
 		{
 			get
 			{
-				return requestId;
+				return creationTime;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string PrefixListId
-		{
-			get
-			{
-				return prefixListId;
-			}
-			set	
-			{
-				prefixListId = value;
-			}
-		}
-
-		public string PrefixListName
-		{
-			get
-			{
-				return prefixListName;
-			}
-			set	
-			{
-				prefixListName = value;
-			}
-		}
-
-		public string AddressFamily
-		{
-			get
-			{
-				return addressFamily;
-			}
-			set	
-			{
-				addressFamily = value;
+				creationTime = value;
 			}
 		}
 
@@ -101,6 +65,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public string Description
 		{
 			get
@@ -113,15 +89,39 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string CreationTime
+		public string AddressFamily
 		{
 			get
 			{
-				return creationTime;
+				return addressFamily;
 			}
 			set	
 			{
-				creationTime = value;
+				addressFamily = value;
+			}
+		}
+
+		public string PrefixListName
+		{
+			get
+			{
+				return prefixListName;
+			}
+			set	
+			{
+				prefixListName = value;
+			}
+		}
+
+		public string PrefixListId
+		{
+			get
+			{
+				return prefixListId;
+			}
+			set	
+			{
+				prefixListId = value;
 			}
 		}
 
@@ -140,21 +140,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribePrefixListAttributes_Entry
 		{
 
-			private string cidr;
-
 			private string description;
 
-			public string Cidr
-			{
-				get
-				{
-					return cidr;
-				}
-				set	
-				{
-					cidr = value;
-				}
-			}
+			private string cidr;
 
 			public string Description
 			{
@@ -165,6 +153,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string Cidr
+			{
+				get
+				{
+					return cidr;
+				}
+				set	
+				{
+					cidr = value;
 				}
 			}
 		}

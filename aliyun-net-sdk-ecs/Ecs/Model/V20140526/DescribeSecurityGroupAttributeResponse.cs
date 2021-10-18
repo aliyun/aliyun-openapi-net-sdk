@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,21 +25,33 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeSecurityGroupAttributeResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string regionId;
-
-		private string securityGroupId;
-
-		private string description;
-
-		private string securityGroupName;
-
 		private string vpcId;
+
+		private string requestId;
 
 		private string innerAccessPolicy;
 
+		private string description;
+
+		private string securityGroupId;
+
+		private string securityGroupName;
+
+		private string regionId;
+
 		private List<DescribeSecurityGroupAttribute_Permission> permissions;
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -53,27 +65,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
+		public string InnerAccessPolicy
 		{
 			get
 			{
-				return regionId;
+				return innerAccessPolicy;
 			}
 			set	
 			{
-				regionId = value;
-			}
-		}
-
-		public string SecurityGroupId
-		{
-			get
-			{
-				return securityGroupId;
-			}
-			set	
-			{
-				securityGroupId = value;
+				innerAccessPolicy = value;
 			}
 		}
 
@@ -89,6 +89,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+			}
+		}
+
 		public string SecurityGroupName
 		{
 			get
@@ -101,27 +113,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string VpcId
+		public string RegionId
 		{
 			get
 			{
-				return vpcId;
+				return regionId;
 			}
 			set	
 			{
-				vpcId = value;
-			}
-		}
-
-		public string InnerAccessPolicy
-		{
-			get
-			{
-				return innerAccessPolicy;
-			}
-			set	
-			{
-				innerAccessPolicy = value;
+				regionId = value;
 			}
 		}
 
@@ -140,85 +140,61 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeSecurityGroupAttribute_Permission
 		{
 
-			private string ipProtocol;
-
-			private string portRange;
-
-			private string sourcePortRange;
+			private string direction;
 
 			private string sourceGroupId;
 
-			private string sourceGroupName;
-
-			private string sourceCidrIp;
-
-			private string ipv6SourceCidrIp;
-
-			private string sourcePrefixListId;
-
-			private string sourcePrefixListName;
-
-			private string policy;
-
-			private string nicType;
-
-			private string sourceGroupOwnerAccount;
-
-			private string destGroupId;
-
-			private string destGroupName;
-
-			private string destCidrIp;
-
-			private string ipv6DestCidrIp;
+			private string destGroupOwnerAccount;
 
 			private string destPrefixListId;
 
 			private string destPrefixListName;
 
-			private string destGroupOwnerAccount;
+			private string sourceCidrIp;
 
-			private string priority;
-
-			private string direction;
-
-			private string description;
+			private string ipv6DestCidrIp;
 
 			private string createTime;
 
-			public string IpProtocol
-			{
-				get
-				{
-					return ipProtocol;
-				}
-				set	
-				{
-					ipProtocol = value;
-				}
-			}
+			private string ipv6SourceCidrIp;
 
-			public string PortRange
-			{
-				get
-				{
-					return portRange;
-				}
-				set	
-				{
-					portRange = value;
-				}
-			}
+			private string destGroupId;
 
-			public string SourcePortRange
+			private string destCidrIp;
+
+			private string ipProtocol;
+
+			private string priority;
+
+			private string destGroupName;
+
+			private string nicType;
+
+			private string policy;
+
+			private string description;
+
+			private string portRange;
+
+			private string sourcePrefixListName;
+
+			private string sourcePrefixListId;
+
+			private string sourceGroupOwnerAccount;
+
+			private string sourceGroupName;
+
+			private string sourcePortRange;
+
+			public string Direction
 			{
 				get
 				{
-					return sourcePortRange;
+					return direction;
 				}
 				set	
 				{
-					sourcePortRange = value;
+					direction = value;
 				}
 			}
 
@@ -234,147 +210,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string SourceGroupName
+			public string DestGroupOwnerAccount
 			{
 				get
 				{
-					return sourceGroupName;
+					return destGroupOwnerAccount;
 				}
 				set	
 				{
-					sourceGroupName = value;
-				}
-			}
-
-			public string SourceCidrIp
-			{
-				get
-				{
-					return sourceCidrIp;
-				}
-				set	
-				{
-					sourceCidrIp = value;
-				}
-			}
-
-			public string Ipv6SourceCidrIp
-			{
-				get
-				{
-					return ipv6SourceCidrIp;
-				}
-				set	
-				{
-					ipv6SourceCidrIp = value;
-				}
-			}
-
-			public string SourcePrefixListId
-			{
-				get
-				{
-					return sourcePrefixListId;
-				}
-				set	
-				{
-					sourcePrefixListId = value;
-				}
-			}
-
-			public string SourcePrefixListName
-			{
-				get
-				{
-					return sourcePrefixListName;
-				}
-				set	
-				{
-					sourcePrefixListName = value;
-				}
-			}
-
-			public string Policy
-			{
-				get
-				{
-					return policy;
-				}
-				set	
-				{
-					policy = value;
-				}
-			}
-
-			public string NicType
-			{
-				get
-				{
-					return nicType;
-				}
-				set	
-				{
-					nicType = value;
-				}
-			}
-
-			public string SourceGroupOwnerAccount
-			{
-				get
-				{
-					return sourceGroupOwnerAccount;
-				}
-				set	
-				{
-					sourceGroupOwnerAccount = value;
-				}
-			}
-
-			public string DestGroupId
-			{
-				get
-				{
-					return destGroupId;
-				}
-				set	
-				{
-					destGroupId = value;
-				}
-			}
-
-			public string DestGroupName
-			{
-				get
-				{
-					return destGroupName;
-				}
-				set	
-				{
-					destGroupName = value;
-				}
-			}
-
-			public string DestCidrIp
-			{
-				get
-				{
-					return destCidrIp;
-				}
-				set	
-				{
-					destCidrIp = value;
-				}
-			}
-
-			public string Ipv6DestCidrIp
-			{
-				get
-				{
-					return ipv6DestCidrIp;
-				}
-				set	
-				{
-					ipv6DestCidrIp = value;
+					destGroupOwnerAccount = value;
 				}
 			}
 
@@ -402,15 +246,87 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string DestGroupOwnerAccount
+			public string SourceCidrIp
 			{
 				get
 				{
-					return destGroupOwnerAccount;
+					return sourceCidrIp;
 				}
 				set	
 				{
-					destGroupOwnerAccount = value;
+					sourceCidrIp = value;
+				}
+			}
+
+			public string Ipv6DestCidrIp
+			{
+				get
+				{
+					return ipv6DestCidrIp;
+				}
+				set	
+				{
+					ipv6DestCidrIp = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string Ipv6SourceCidrIp
+			{
+				get
+				{
+					return ipv6SourceCidrIp;
+				}
+				set	
+				{
+					ipv6SourceCidrIp = value;
+				}
+			}
+
+			public string DestGroupId
+			{
+				get
+				{
+					return destGroupId;
+				}
+				set	
+				{
+					destGroupId = value;
+				}
+			}
+
+			public string DestCidrIp
+			{
+				get
+				{
+					return destCidrIp;
+				}
+				set	
+				{
+					destCidrIp = value;
+				}
+			}
+
+			public string IpProtocol
+			{
+				get
+				{
+					return ipProtocol;
+				}
+				set	
+				{
+					ipProtocol = value;
 				}
 			}
 
@@ -426,15 +342,39 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Direction
+			public string DestGroupName
 			{
 				get
 				{
-					return direction;
+					return destGroupName;
 				}
 				set	
 				{
-					direction = value;
+					destGroupName = value;
+				}
+			}
+
+			public string NicType
+			{
+				get
+				{
+					return nicType;
+				}
+				set	
+				{
+					nicType = value;
+				}
+			}
+
+			public string Policy
+			{
+				get
+				{
+					return policy;
+				}
+				set	
+				{
+					policy = value;
 				}
 			}
 
@@ -450,15 +390,75 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string CreateTime
+			public string PortRange
 			{
 				get
 				{
-					return createTime;
+					return portRange;
 				}
 				set	
 				{
-					createTime = value;
+					portRange = value;
+				}
+			}
+
+			public string SourcePrefixListName
+			{
+				get
+				{
+					return sourcePrefixListName;
+				}
+				set	
+				{
+					sourcePrefixListName = value;
+				}
+			}
+
+			public string SourcePrefixListId
+			{
+				get
+				{
+					return sourcePrefixListId;
+				}
+				set	
+				{
+					sourcePrefixListId = value;
+				}
+			}
+
+			public string SourceGroupOwnerAccount
+			{
+				get
+				{
+					return sourceGroupOwnerAccount;
+				}
+				set	
+				{
+					sourceGroupOwnerAccount = value;
+				}
+			}
+
+			public string SourceGroupName
+			{
+				get
+				{
+					return sourceGroupName;
+				}
+				set	
+				{
+					sourceGroupName = value;
+				}
+			}
+
+			public string SourcePortRange
+			{
+				get
+				{
+					return sourcePortRange;
+				}
+				set	
+				{
+					sourcePortRange = value;
 				}
 			}
 		}

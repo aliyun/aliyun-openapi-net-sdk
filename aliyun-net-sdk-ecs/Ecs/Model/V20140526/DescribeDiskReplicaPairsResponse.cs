@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeDiskReplicaPairsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private List<DescribeDiskReplicaPairs_DiskReplicaPair> diskReplicaPairs;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDiskReplicaPairs_DiskReplicaPair> diskReplicaPairs;
 
 		public string NextToken
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,43 +70,31 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeDiskReplicaPairs_DiskReplicaPair
 		{
 
-			private string replicaPairId;
-
-			private string sourceRegion;
+			private string status;
 
 			private string sourceDiskId;
 
-			private string destinationRegion;
-
-			private string destinationDiskId;
-
-			private string pairName;
+			private string replicaPairId;
 
 			private string description;
 
-			private string status;
+			private string destinationRegion;
 
-			public string ReplicaPairId
+			private string pairName;
+
+			private string sourceRegion;
+
+			private string destinationDiskId;
+
+			public string Status
 			{
 				get
 				{
-					return replicaPairId;
+					return status;
 				}
 				set	
 				{
-					replicaPairId = value;
-				}
-			}
-
-			public string SourceRegion
-			{
-				get
-				{
-					return sourceRegion;
-				}
-				set	
-				{
-					sourceRegion = value;
+					status = value;
 				}
 			}
 
@@ -122,39 +110,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string DestinationRegion
+			public string ReplicaPairId
 			{
 				get
 				{
-					return destinationRegion;
+					return replicaPairId;
 				}
 				set	
 				{
-					destinationRegion = value;
-				}
-			}
-
-			public string DestinationDiskId
-			{
-				get
-				{
-					return destinationDiskId;
-				}
-				set	
-				{
-					destinationDiskId = value;
-				}
-			}
-
-			public string PairName
-			{
-				get
-				{
-					return pairName;
-				}
-				set	
-				{
-					pairName = value;
+					replicaPairId = value;
 				}
 			}
 
@@ -170,15 +134,51 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Status
+			public string DestinationRegion
 			{
 				get
 				{
-					return status;
+					return destinationRegion;
 				}
 				set	
 				{
-					status = value;
+					destinationRegion = value;
+				}
+			}
+
+			public string PairName
+			{
+				get
+				{
+					return pairName;
+				}
+				set	
+				{
+					pairName = value;
+				}
+			}
+
+			public string SourceRegion
+			{
+				get
+				{
+					return sourceRegion;
+				}
+				set	
+				{
+					sourceRegion = value;
+				}
+			}
+
+			public string DestinationDiskId
+			{
+				get
+				{
+					return destinationDiskId;
+				}
+				set	
+				{
+					destinationDiskId = value;
 				}
 			}
 		}

@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeDisksFullStatusResponse describeDisksFullStatusResponse = new DescribeDisksFullStatusResponse();
 
 			describeDisksFullStatusResponse.HttpResponse = _ctx.HttpResponse;
-			describeDisksFullStatusResponse.RequestId = _ctx.StringValue("DescribeDisksFullStatus.RequestId");
-			describeDisksFullStatusResponse.TotalCount = _ctx.IntegerValue("DescribeDisksFullStatus.TotalCount");
-			describeDisksFullStatusResponse.PageNumber = _ctx.IntegerValue("DescribeDisksFullStatus.PageNumber");
 			describeDisksFullStatusResponse.PageSize = _ctx.IntegerValue("DescribeDisksFullStatus.PageSize");
+			describeDisksFullStatusResponse.RequestId = _ctx.StringValue("DescribeDisksFullStatus.RequestId");
+			describeDisksFullStatusResponse.PageNumber = _ctx.IntegerValue("DescribeDisksFullStatus.PageNumber");
+			describeDisksFullStatusResponse.TotalCount = _ctx.IntegerValue("DescribeDisksFullStatus.TotalCount");
 
 			List<DescribeDisksFullStatusResponse.DescribeDisksFullStatus_DiskFullStatusType> describeDisksFullStatusResponse_diskFullStatusSet = new List<DescribeDisksFullStatusResponse.DescribeDisksFullStatus_DiskFullStatusType>();
 			for (int i = 0; i < _ctx.Length("DescribeDisksFullStatus.DiskFullStatusSet.Length"); i++) {
@@ -44,26 +44,26 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				diskFullStatusType.Device = _ctx.StringValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].Device");
 
 				DescribeDisksFullStatusResponse.DescribeDisksFullStatus_DiskFullStatusType.DescribeDisksFullStatus_Status status = new DescribeDisksFullStatusResponse.DescribeDisksFullStatus_DiskFullStatusType.DescribeDisksFullStatus_Status();
-				status.Code = _ctx.IntegerValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].Status.Code");
 				status.Name = _ctx.StringValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].Status.Name");
+				status.Code = _ctx.IntegerValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].Status.Code");
 				diskFullStatusType.Status = status;
 
 				DescribeDisksFullStatusResponse.DescribeDisksFullStatus_DiskFullStatusType.DescribeDisksFullStatus_HealthStatus healthStatus = new DescribeDisksFullStatusResponse.DescribeDisksFullStatus_DiskFullStatusType.DescribeDisksFullStatus_HealthStatus();
-				healthStatus.Code = _ctx.IntegerValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].HealthStatus.Code");
 				healthStatus.Name = _ctx.StringValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].HealthStatus.Name");
+				healthStatus.Code = _ctx.IntegerValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].HealthStatus.Code");
 				diskFullStatusType.HealthStatus = healthStatus;
 
 				List<DescribeDisksFullStatusResponse.DescribeDisksFullStatus_DiskFullStatusType.DescribeDisksFullStatus_DiskEventType> diskFullStatusType_diskEventSet = new List<DescribeDisksFullStatusResponse.DescribeDisksFullStatus_DiskFullStatusType.DescribeDisksFullStatus_DiskEventType>();
 				for (int j = 0; j < _ctx.Length("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].DiskEventSet.Length"); j++) {
 					DescribeDisksFullStatusResponse.DescribeDisksFullStatus_DiskFullStatusType.DescribeDisksFullStatus_DiskEventType diskEventType = new DescribeDisksFullStatusResponse.DescribeDisksFullStatus_DiskFullStatusType.DescribeDisksFullStatus_DiskEventType();
 					diskEventType.EventId = _ctx.StringValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventId");
-					diskEventType.EventTime = _ctx.StringValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventTime");
 					diskEventType.EventEndTime = _ctx.StringValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventEndTime");
+					diskEventType.EventTime = _ctx.StringValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventTime");
 					diskEventType.ImpactLevel = _ctx.StringValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].ImpactLevel");
 
 					DescribeDisksFullStatusResponse.DescribeDisksFullStatus_DiskFullStatusType.DescribeDisksFullStatus_DiskEventType.DescribeDisksFullStatus_EventType eventType = new DescribeDisksFullStatusResponse.DescribeDisksFullStatus_DiskFullStatusType.DescribeDisksFullStatus_DiskEventType.DescribeDisksFullStatus_EventType();
-					eventType.Code = _ctx.IntegerValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventType.Code");
 					eventType.Name = _ctx.StringValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventType.Name");
+					eventType.Code = _ctx.IntegerValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventType.Code");
 					diskEventType.EventType = eventType;
 
 					diskFullStatusType_diskEventSet.Add(diskEventType);

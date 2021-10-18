@@ -36,11 +36,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<RebootInstancesResponse.RebootInstances_InstanceResponse> rebootInstancesResponse_instanceResponses = new List<RebootInstancesResponse.RebootInstances_InstanceResponse>();
 			for (int i = 0; i < _ctx.Length("RebootInstances.InstanceResponses.Length"); i++) {
 				RebootInstancesResponse.RebootInstances_InstanceResponse instanceResponse = new RebootInstancesResponse.RebootInstances_InstanceResponse();
-				instanceResponse.InstanceId = _ctx.StringValue("RebootInstances.InstanceResponses["+ i +"].InstanceId");
-				instanceResponse.PreviousStatus = _ctx.StringValue("RebootInstances.InstanceResponses["+ i +"].PreviousStatus");
-				instanceResponse.CurrentStatus = _ctx.StringValue("RebootInstances.InstanceResponses["+ i +"].CurrentStatus");
 				instanceResponse.Code = _ctx.StringValue("RebootInstances.InstanceResponses["+ i +"].Code");
 				instanceResponse.Message = _ctx.StringValue("RebootInstances.InstanceResponses["+ i +"].Message");
+				instanceResponse.InstanceId = _ctx.StringValue("RebootInstances.InstanceResponses["+ i +"].InstanceId");
+				instanceResponse.CurrentStatus = _ctx.StringValue("RebootInstances.InstanceResponses["+ i +"].CurrentStatus");
+				instanceResponse.PreviousStatus = _ctx.StringValue("RebootInstances.InstanceResponses["+ i +"].PreviousStatus");
 
 				rebootInstancesResponse_instanceResponses.Add(instanceResponse);
 			}

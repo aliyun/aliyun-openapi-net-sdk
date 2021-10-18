@@ -59,6 +59,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<string> instanceIds = new List<string>(){ };
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -72,6 +73,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "StoppedMode")]
 		public string StoppedMode
 		{
 			get
@@ -85,6 +87,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ForceStop")]
 		public bool? ForceStop
 		{
 			get
@@ -98,6 +101,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "BatchOptimization")]
 		public string BatchOptimization
 		{
 			get
@@ -111,6 +115,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "DryRun")]
 		public bool? DryRun
 		{
 			get
@@ -124,6 +129,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -137,6 +143,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -150,6 +157,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -163,6 +171,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceId")]
 		public List<string> InstanceIds
 		{
 			get
@@ -173,10 +182,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				instanceIds = value;
-				for (int i = 0; i < instanceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
-				}
 			}
 		}
 

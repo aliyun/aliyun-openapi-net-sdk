@@ -73,10 +73,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				attributeNames = value;
-				for (int i = 0; i < attributeNames.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"AttributeName." + (i + 1) , attributeNames[i]);
-				}
 			}
 		}
 

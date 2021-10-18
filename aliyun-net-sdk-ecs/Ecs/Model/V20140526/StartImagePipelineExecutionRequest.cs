@@ -47,7 +47,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string clientToken;
 
-		private List<TemplateTag> templateTags = new List<TemplateTag>(){ };
+		private List<string> templateTags = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -55,6 +55,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
+		[JsonProperty(PropertyName = "ImagePipelineId")]
 		public string ImagePipelineId
 		{
 			get
@@ -68,6 +69,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -81,6 +83,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ClientToken")]
 		public string ClientToken
 		{
 			get
@@ -94,7 +97,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<TemplateTag> TemplateTags
+		[JsonProperty(PropertyName = "TemplateTag")]
+		public List<string> TemplateTags
 		{
 			get
 			{
@@ -104,14 +108,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				templateTags = value;
-				for (int i = 0; i < templateTags.Count; i++)
+				if(templateTags != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"TemplateTag." + (i + 1) + ".Key", templateTags[i].Key);
-					DictionaryUtil.Add(QueryParameters,"TemplateTag." + (i + 1) + ".Value", templateTags[i].Value);
+					for (int depth1 = 0; depth1 < templateTags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"TemplateTag." + (depth1 + 1), templateTags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"TemplateTag." + (depth1 + 1), templateTags[depth1]);
+					}
 				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -125,6 +133,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -138,6 +147,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -158,6 +168,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string value_;
 
+			[JsonProperty(PropertyName = "Key")]
 			public string Key
 			{
 				get
@@ -170,7 +181,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Value
+			[JsonProperty(PropertyName = "Value")]
+			public string Value_
 			{
 				get
 				{

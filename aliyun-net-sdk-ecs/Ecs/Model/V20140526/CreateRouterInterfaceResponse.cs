@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string requestId;
 
-		private string routerInterfaceId;
-
 		private long? orderId;
+
+		private string routerInterfaceId;
 
 		public string RequestId
 		{
@@ -43,18 +43,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RouterInterfaceId
-		{
-			get
-			{
-				return routerInterfaceId;
-			}
-			set	
-			{
-				routerInterfaceId = value;
-			}
-		}
-
 		public long? OrderId
 		{
 			get
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				orderId = value;
+			}
+		}
+
+		public string RouterInterfaceId
+		{
+			get
+			{
+				return routerInterfaceId;
+			}
+			set	
+			{
+				routerInterfaceId = value;
 			}
 		}
 	}

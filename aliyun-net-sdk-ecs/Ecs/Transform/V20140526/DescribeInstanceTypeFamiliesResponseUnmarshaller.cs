@@ -36,8 +36,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DescribeInstanceTypeFamiliesResponse.DescribeInstanceTypeFamilies_InstanceTypeFamily> describeInstanceTypeFamiliesResponse_instanceTypeFamilies = new List<DescribeInstanceTypeFamiliesResponse.DescribeInstanceTypeFamilies_InstanceTypeFamily>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceTypeFamilies.InstanceTypeFamilies.Length"); i++) {
 				DescribeInstanceTypeFamiliesResponse.DescribeInstanceTypeFamilies_InstanceTypeFamily instanceTypeFamily = new DescribeInstanceTypeFamiliesResponse.DescribeInstanceTypeFamilies_InstanceTypeFamily();
-				instanceTypeFamily.InstanceTypeFamilyId = _ctx.StringValue("DescribeInstanceTypeFamilies.InstanceTypeFamilies["+ i +"].InstanceTypeFamilyId");
 				instanceTypeFamily.Generation = _ctx.StringValue("DescribeInstanceTypeFamilies.InstanceTypeFamilies["+ i +"].Generation");
+				instanceTypeFamily.InstanceTypeFamilyId = _ctx.StringValue("DescribeInstanceTypeFamilies.InstanceTypeFamilies["+ i +"].InstanceTypeFamilyId");
 
 				describeInstanceTypeFamiliesResponse_instanceTypeFamilies.Add(instanceTypeFamily);
 			}

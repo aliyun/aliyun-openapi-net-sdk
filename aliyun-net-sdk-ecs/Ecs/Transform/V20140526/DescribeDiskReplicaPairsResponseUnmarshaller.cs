@@ -31,20 +31,20 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeDiskReplicaPairsResponse describeDiskReplicaPairsResponse = new DescribeDiskReplicaPairsResponse();
 
 			describeDiskReplicaPairsResponse.HttpResponse = _ctx.HttpResponse;
-			describeDiskReplicaPairsResponse.RequestId = _ctx.StringValue("DescribeDiskReplicaPairs.RequestId");
 			describeDiskReplicaPairsResponse.NextToken = _ctx.StringValue("DescribeDiskReplicaPairs.NextToken");
+			describeDiskReplicaPairsResponse.RequestId = _ctx.StringValue("DescribeDiskReplicaPairs.RequestId");
 
 			List<DescribeDiskReplicaPairsResponse.DescribeDiskReplicaPairs_DiskReplicaPair> describeDiskReplicaPairsResponse_diskReplicaPairs = new List<DescribeDiskReplicaPairsResponse.DescribeDiskReplicaPairs_DiskReplicaPair>();
 			for (int i = 0; i < _ctx.Length("DescribeDiskReplicaPairs.DiskReplicaPairs.Length"); i++) {
 				DescribeDiskReplicaPairsResponse.DescribeDiskReplicaPairs_DiskReplicaPair diskReplicaPair = new DescribeDiskReplicaPairsResponse.DescribeDiskReplicaPairs_DiskReplicaPair();
-				diskReplicaPair.ReplicaPairId = _ctx.StringValue("DescribeDiskReplicaPairs.DiskReplicaPairs["+ i +"].ReplicaPairId");
-				diskReplicaPair.SourceRegion = _ctx.StringValue("DescribeDiskReplicaPairs.DiskReplicaPairs["+ i +"].SourceRegion");
-				diskReplicaPair.SourceDiskId = _ctx.StringValue("DescribeDiskReplicaPairs.DiskReplicaPairs["+ i +"].SourceDiskId");
-				diskReplicaPair.DestinationRegion = _ctx.StringValue("DescribeDiskReplicaPairs.DiskReplicaPairs["+ i +"].DestinationRegion");
-				diskReplicaPair.DestinationDiskId = _ctx.StringValue("DescribeDiskReplicaPairs.DiskReplicaPairs["+ i +"].DestinationDiskId");
-				diskReplicaPair.PairName = _ctx.StringValue("DescribeDiskReplicaPairs.DiskReplicaPairs["+ i +"].PairName");
-				diskReplicaPair.Description = _ctx.StringValue("DescribeDiskReplicaPairs.DiskReplicaPairs["+ i +"].Description");
 				diskReplicaPair.Status = _ctx.StringValue("DescribeDiskReplicaPairs.DiskReplicaPairs["+ i +"].Status");
+				diskReplicaPair.SourceDiskId = _ctx.StringValue("DescribeDiskReplicaPairs.DiskReplicaPairs["+ i +"].SourceDiskId");
+				diskReplicaPair.ReplicaPairId = _ctx.StringValue("DescribeDiskReplicaPairs.DiskReplicaPairs["+ i +"].ReplicaPairId");
+				diskReplicaPair.Description = _ctx.StringValue("DescribeDiskReplicaPairs.DiskReplicaPairs["+ i +"].Description");
+				diskReplicaPair.DestinationRegion = _ctx.StringValue("DescribeDiskReplicaPairs.DiskReplicaPairs["+ i +"].DestinationRegion");
+				diskReplicaPair.PairName = _ctx.StringValue("DescribeDiskReplicaPairs.DiskReplicaPairs["+ i +"].PairName");
+				diskReplicaPair.SourceRegion = _ctx.StringValue("DescribeDiskReplicaPairs.DiskReplicaPairs["+ i +"].SourceRegion");
+				diskReplicaPair.DestinationDiskId = _ctx.StringValue("DescribeDiskReplicaPairs.DiskReplicaPairs["+ i +"].DestinationDiskId");
 
 				describeDiskReplicaPairsResponse_diskReplicaPairs.Add(diskReplicaPair);
 			}

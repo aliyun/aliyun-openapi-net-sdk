@@ -32,11 +32,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 
 			describeImageSharePermissionResponse.HttpResponse = _ctx.HttpResponse;
 			describeImageSharePermissionResponse.RequestId = _ctx.StringValue("DescribeImageSharePermission.RequestId");
-			describeImageSharePermissionResponse.RegionId = _ctx.StringValue("DescribeImageSharePermission.RegionId");
-			describeImageSharePermissionResponse.TotalCount = _ctx.IntegerValue("DescribeImageSharePermission.TotalCount");
 			describeImageSharePermissionResponse.PageNumber = _ctx.IntegerValue("DescribeImageSharePermission.PageNumber");
 			describeImageSharePermissionResponse.PageSize = _ctx.IntegerValue("DescribeImageSharePermission.PageSize");
+			describeImageSharePermissionResponse.TotalCount = _ctx.IntegerValue("DescribeImageSharePermission.TotalCount");
 			describeImageSharePermissionResponse.ImageId = _ctx.StringValue("DescribeImageSharePermission.ImageId");
+			describeImageSharePermissionResponse.RegionId = _ctx.StringValue("DescribeImageSharePermission.RegionId");
 
 			List<DescribeImageSharePermissionResponse.DescribeImageSharePermission_ShareGroup> describeImageSharePermissionResponse_shareGroups = new List<DescribeImageSharePermissionResponse.DescribeImageSharePermission_ShareGroup>();
 			for (int i = 0; i < _ctx.Length("DescribeImageSharePermission.ShareGroups.Length"); i++) {

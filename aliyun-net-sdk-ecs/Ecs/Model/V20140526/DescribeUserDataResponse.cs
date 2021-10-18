@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -27,11 +27,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string requestId;
 
-		private string regionId;
-
 		private string instanceId;
 
 		private string userData;
+
+		private string regionId;
 
 		public string RequestId
 		{
@@ -42,18 +42,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
 			}
 		}
 
@@ -78,6 +66,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				userData = value;
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
 			}
 		}
 	}

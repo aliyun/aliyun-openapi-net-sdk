@@ -40,7 +40,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			Method = MethodType.POST;
         }
 
-		private List<LaunchConfigurationDataDisk> launchConfigurationDataDisks = new List<LaunchConfigurationDataDisk>(){ };
+		private List<string> launchConfigurationDataDisks = new List<string>(){ };
 
 		private long? resourceOwnerId;
 
@@ -64,9 +64,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string launchConfigurationKeyPairName;
 
-		private List<SystemDiskConfig> systemDiskConfigs = new List<SystemDiskConfig>(){ };
+		private List<string> systemDiskConfigs = new List<string>(){ };
 
-		private List<DataDiskConfig> dataDiskConfigs = new List<DataDiskConfig>(){ };
+		private List<string> dataDiskConfigs = new List<string>(){ };
 
 		private string validUntil;
 
@@ -112,7 +112,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string excessCapacityTerminationPolicy;
 
-		private List<LaunchTemplateConfig> launchTemplateConfigs = new List<LaunchTemplateConfig>(){ };
+		private List<string> launchTemplateConfigs = new List<string>(){ };
 
 		private string launchConfigurationRamRoleName;
 
@@ -122,7 +122,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string launchConfigurationSecurityEnhancementStrategy;
 
-		private List<LaunchConfigurationTag> launchConfigurationTags = new List<LaunchConfigurationTag>(){ };
+		private List<string> launchConfigurationTags = new List<string>(){ };
 
 		private string launchConfigurationDeploymentSetId;
 
@@ -148,7 +148,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string autoProvisioningGroupName;
 
-		public List<LaunchConfigurationDataDisk> LaunchConfigurationDataDisks
+		public List<string> LaunchConfigurationDataDisks
 		{
 			get
 			{
@@ -158,18 +158,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				launchConfigurationDataDisks = value;
-				for (int i = 0; i < launchConfigurationDataDisks.Count; i++)
+				if(launchConfigurationDataDisks != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".PerformanceLevel", launchConfigurationDataDisks[i].PerformanceLevel);
-					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".KmsKeyId", launchConfigurationDataDisks[i].KmsKeyId);
-					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Description", launchConfigurationDataDisks[i].Description);
-					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".SnapshotId", launchConfigurationDataDisks[i].SnapshotId);
-					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Size", launchConfigurationDataDisks[i].Size);
-					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Device", launchConfigurationDataDisks[i].Device);
-					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".DiskName", launchConfigurationDataDisks[i].DiskName);
-					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Category", launchConfigurationDataDisks[i].Category);
-					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".DeleteWithInstance", launchConfigurationDataDisks[i].DeleteWithInstance);
-					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Encrypted", launchConfigurationDataDisks[i].Encrypted);
+					for (int depth1 = 0; depth1 < launchConfigurationDataDisks.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (depth1 + 1), launchConfigurationDataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (depth1 + 1), launchConfigurationDataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (depth1 + 1), launchConfigurationDataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (depth1 + 1), launchConfigurationDataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (depth1 + 1), launchConfigurationDataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (depth1 + 1), launchConfigurationDataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (depth1 + 1), launchConfigurationDataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (depth1 + 1), launchConfigurationDataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (depth1 + 1), launchConfigurationDataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (depth1 + 1), launchConfigurationDataDisks[depth1]);
+					}
 				}
 			}
 		}
@@ -236,10 +239,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				launchConfigurationHostNamess = value;
-				for (int i = 0; i < launchConfigurationHostNamess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.HostNames." + (i + 1) , launchConfigurationHostNamess[i]);
-				}
 			}
 		}
 
@@ -321,7 +320,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<SystemDiskConfig> SystemDiskConfigs
+		public List<string> SystemDiskConfigs
 		{
 			get
 			{
@@ -331,14 +330,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				systemDiskConfigs = value;
-				for (int i = 0; i < systemDiskConfigs.Count; i++)
+				if(systemDiskConfigs != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"SystemDiskConfig." + (i + 1) + ".DiskCategory", systemDiskConfigs[i].DiskCategory);
+					for (int depth1 = 0; depth1 < systemDiskConfigs.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"SystemDiskConfig." + (depth1 + 1), systemDiskConfigs[depth1]);
+					}
 				}
 			}
 		}
 
-		public List<DataDiskConfig> DataDiskConfigs
+		public List<string> DataDiskConfigs
 		{
 			get
 			{
@@ -348,9 +350,12 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				dataDiskConfigs = value;
-				for (int i = 0; i < dataDiskConfigs.Count; i++)
+				if(dataDiskConfigs != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"DataDiskConfig." + (i + 1) + ".DiskCategory", dataDiskConfigs[i].DiskCategory);
+					for (int depth1 = 0; depth1 < dataDiskConfigs.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"DataDiskConfig." + (depth1 + 1), dataDiskConfigs[depth1]);
+					}
 				}
 			}
 		}
@@ -641,7 +646,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<LaunchTemplateConfig> LaunchTemplateConfigs
+		public List<string> LaunchTemplateConfigs
 		{
 			get
 			{
@@ -651,13 +656,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				launchTemplateConfigs = value;
-				for (int i = 0; i < launchTemplateConfigs.Count; i++)
+				if(launchTemplateConfigs != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (i + 1) + ".VSwitchId", launchTemplateConfigs[i].VSwitchId);
-					DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (i + 1) + ".MaxPrice", launchTemplateConfigs[i].MaxPrice);
-					DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (i + 1) + ".Priority", launchTemplateConfigs[i].Priority);
-					DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (i + 1) + ".InstanceType", launchTemplateConfigs[i].InstanceType);
-					DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (i + 1) + ".WeightedCapacity", launchTemplateConfigs[i].WeightedCapacity);
+					for (int depth1 = 0; depth1 < launchTemplateConfigs.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (depth1 + 1), launchTemplateConfigs[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (depth1 + 1), launchTemplateConfigs[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (depth1 + 1), launchTemplateConfigs[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (depth1 + 1), launchTemplateConfigs[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchTemplateConfig." + (depth1 + 1), launchTemplateConfigs[depth1]);
+					}
 				}
 			}
 		}
@@ -714,7 +722,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<LaunchConfigurationTag> LaunchConfigurationTags
+		public List<string> LaunchConfigurationTags
 		{
 			get
 			{
@@ -724,10 +732,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				launchConfigurationTags = value;
-				for (int i = 0; i < launchConfigurationTags.Count; i++)
+				if(launchConfigurationTags != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.Tag." + (i + 1) + ".Key", launchConfigurationTags[i].Key);
-					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.Tag." + (i + 1) + ".Value", launchConfigurationTags[i].Value);
+					for (int depth1 = 0; depth1 < launchConfigurationTags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.Tag." + (depth1 + 1), launchConfigurationTags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.Tag." + (depth1 + 1), launchConfigurationTags[depth1]);
+					}
 				}
 			}
 		}
@@ -1161,7 +1172,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Value
+			public string Value_
 			{
 				get
 				{

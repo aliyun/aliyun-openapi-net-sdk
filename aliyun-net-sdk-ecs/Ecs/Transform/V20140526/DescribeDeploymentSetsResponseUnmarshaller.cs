@@ -31,25 +31,25 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeDeploymentSetsResponse describeDeploymentSetsResponse = new DescribeDeploymentSetsResponse();
 
 			describeDeploymentSetsResponse.HttpResponse = _ctx.HttpResponse;
-			describeDeploymentSetsResponse.RequestId = _ctx.StringValue("DescribeDeploymentSets.RequestId");
-			describeDeploymentSetsResponse.RegionId = _ctx.StringValue("DescribeDeploymentSets.RegionId");
-			describeDeploymentSetsResponse.TotalCount = _ctx.IntegerValue("DescribeDeploymentSets.TotalCount");
-			describeDeploymentSetsResponse.PageNumber = _ctx.IntegerValue("DescribeDeploymentSets.PageNumber");
 			describeDeploymentSetsResponse.PageSize = _ctx.IntegerValue("DescribeDeploymentSets.PageSize");
+			describeDeploymentSetsResponse.PageNumber = _ctx.IntegerValue("DescribeDeploymentSets.PageNumber");
+			describeDeploymentSetsResponse.RequestId = _ctx.StringValue("DescribeDeploymentSets.RequestId");
+			describeDeploymentSetsResponse.TotalCount = _ctx.IntegerValue("DescribeDeploymentSets.TotalCount");
+			describeDeploymentSetsResponse.RegionId = _ctx.StringValue("DescribeDeploymentSets.RegionId");
 
 			List<DescribeDeploymentSetsResponse.DescribeDeploymentSets_DeploymentSet> describeDeploymentSetsResponse_deploymentSets = new List<DescribeDeploymentSetsResponse.DescribeDeploymentSets_DeploymentSet>();
 			for (int i = 0; i < _ctx.Length("DescribeDeploymentSets.DeploymentSets.Length"); i++) {
 				DescribeDeploymentSetsResponse.DescribeDeploymentSets_DeploymentSet deploymentSet = new DescribeDeploymentSetsResponse.DescribeDeploymentSets_DeploymentSet();
-				deploymentSet.DeploymentSetId = _ctx.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].DeploymentSetId");
-				deploymentSet.DeploymentSetDescription = _ctx.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].DeploymentSetDescription");
-				deploymentSet.DeploymentSetName = _ctx.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].DeploymentSetName");
-				deploymentSet.Strategy = _ctx.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].Strategy");
-				deploymentSet.DeploymentStrategy = _ctx.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].DeploymentStrategy");
-				deploymentSet.Domain = _ctx.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].Domain");
-				deploymentSet.Granularity = _ctx.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].Granularity");
-				deploymentSet.GroupCount = _ctx.IntegerValue("DescribeDeploymentSets.DeploymentSets["+ i +"].GroupCount");
-				deploymentSet.InstanceAmount = _ctx.IntegerValue("DescribeDeploymentSets.DeploymentSets["+ i +"].InstanceAmount");
 				deploymentSet.CreationTime = _ctx.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].CreationTime");
+				deploymentSet.Strategy = _ctx.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].Strategy");
+				deploymentSet.DeploymentSetId = _ctx.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].DeploymentSetId");
+				deploymentSet.DeploymentStrategy = _ctx.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].DeploymentStrategy");
+				deploymentSet.DeploymentSetDescription = _ctx.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].DeploymentSetDescription");
+				deploymentSet.Domain = _ctx.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].Domain");
+				deploymentSet.GroupCount = _ctx.IntegerValue("DescribeDeploymentSets.DeploymentSets["+ i +"].GroupCount");
+				deploymentSet.Granularity = _ctx.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].Granularity");
+				deploymentSet.DeploymentSetName = _ctx.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].DeploymentSetName");
+				deploymentSet.InstanceAmount = _ctx.IntegerValue("DescribeDeploymentSets.DeploymentSets["+ i +"].InstanceAmount");
 
 				List<string> deploymentSet_instanceIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeDeploymentSets.DeploymentSets["+ i +"].InstanceIds.Length"); j++) {

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -56,35 +56,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeRegions_Region
 		{
 
-			private string regionId;
-
-			private string localName;
+			private string status;
 
 			private string regionEndpoint;
 
-			private string status;
+			private string localName;
 
-			public string RegionId
+			private string regionId;
+
+			public string Status
 			{
 				get
 				{
-					return regionId;
+					return status;
 				}
 				set	
 				{
-					regionId = value;
-				}
-			}
-
-			public string LocalName
-			{
-				get
-				{
-					return localName;
-				}
-				set	
-				{
-					localName = value;
+					status = value;
 				}
 			}
 
@@ -100,15 +88,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Status
+			public string LocalName
 			{
 				get
 				{
-					return status;
+					return localName;
 				}
 				set	
 				{
-					status = value;
+					localName = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 		}

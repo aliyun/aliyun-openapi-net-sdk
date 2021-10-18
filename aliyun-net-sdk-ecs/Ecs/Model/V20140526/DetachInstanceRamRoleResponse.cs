@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DetachInstanceRamRoleResponse : AcsResponse
 	{
 
+		private string ramRoleName;
+
 		private string requestId;
 
 		private int? totalCount;
 
 		private int? failCount;
 
-		private string ramRoleName;
-
 		private List<DetachInstanceRamRole_DetachInstanceRamRoleResult> detachInstanceRamRoleResults;
+
+		public string RamRoleName
+		{
+			get
+			{
+				return ramRoleName;
+			}
+			set	
+			{
+				ramRoleName = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -71,18 +83,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RamRoleName
-		{
-			get
-			{
-				return ramRoleName;
-			}
-			set	
-			{
-				ramRoleName = value;
-			}
-		}
-
 		public List<DetachInstanceRamRole_DetachInstanceRamRoleResult> DetachInstanceRamRoleResults
 		{
 			get
@@ -98,39 +98,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DetachInstanceRamRole_DetachInstanceRamRoleResult
 		{
 
-			private string instanceId;
-
-			private bool? success;
-
 			private string code;
 
 			private string message;
 
+			private string instanceId;
+
+			private bool? success;
+
 			private List<DetachInstanceRamRole_InstanceRamRoleSet> instanceRamRoleSets;
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public bool? Success
-			{
-				get
-				{
-					return success;
-				}
-				set	
-				{
-					success = value;
-				}
-			}
 
 			public string Code
 			{
@@ -156,6 +132,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public bool? Success
+			{
+				get
+				{
+					return success;
+				}
+				set	
+				{
+					success = value;
+				}
+			}
+
 			public List<DetachInstanceRamRole_InstanceRamRoleSet> InstanceRamRoleSets
 			{
 				get
@@ -171,21 +171,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DetachInstanceRamRole_InstanceRamRoleSet
 			{
 
-				private string instanceId;
-
 				private string ramRoleName;
 
-				public string InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
+				private string instanceId;
 
 				public string RamRoleName
 				{
@@ -196,6 +184,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						ramRoleName = value;
+					}
+				}
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
 					}
 				}
 			}

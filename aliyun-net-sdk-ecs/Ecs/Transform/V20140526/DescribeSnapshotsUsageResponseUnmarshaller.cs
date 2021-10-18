@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeSnapshotsUsageResponse describeSnapshotsUsageResponse = new DescribeSnapshotsUsageResponse();
 
 			describeSnapshotsUsageResponse.HttpResponse = _ctx.HttpResponse;
+			describeSnapshotsUsageResponse.SnapshotSize = _ctx.LongValue("DescribeSnapshotsUsage.SnapshotSize");
 			describeSnapshotsUsageResponse.RequestId = _ctx.StringValue("DescribeSnapshotsUsage.RequestId");
 			describeSnapshotsUsageResponse.SnapshotCount = _ctx.IntegerValue("DescribeSnapshotsUsage.SnapshotCount");
-			describeSnapshotsUsageResponse.SnapshotSize = _ctx.LongValue("DescribeSnapshotsUsage.SnapshotSize");
         
 			return describeSnapshotsUsageResponse;
         }

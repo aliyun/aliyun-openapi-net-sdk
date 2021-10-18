@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,26 +25,28 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class ModifyReservedInstanceAttributeResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? httpStatusCode;
 
 		private string code;
 
 		private string message;
 
-		private int? httpStatusCode;
+		private string requestId;
 
-		public string RequestId
+		[JsonProperty(PropertyName = "HttpStatusCode")]
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return requestId;
+				return httpStatusCode;
 			}
 			set	
 			{
-				requestId = value;
+				httpStatusCode = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -69,15 +72,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? HttpStatusCode
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return httpStatusCode;
+				return requestId;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				requestId = value;
 			}
 		}
 	}

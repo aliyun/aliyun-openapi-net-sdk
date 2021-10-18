@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,53 +25,53 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeInstanceAttributeResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string instanceId;
-
-		private string instanceName;
-
-		private string imageId;
-
-		private string regionId;
-
-		private string zoneId;
-
-		private string clusterId;
-
-		private string instanceType;
-
-		private int? cpu;
-
-		private int? memory;
-
-		private string hostName;
-
 		private string status;
-
-		private string internetChargeType;
-
-		private int? internetMaxBandwidthIn;
-
-		private int? internetMaxBandwidthOut;
-
-		private string vlanId;
 
 		private string serialNumber;
 
 		private string creationTime;
 
+		private string requestId;
+
 		private string description;
+
+		private string instanceName;
 
 		private string instanceNetworkType;
 
-		private string ioOptimized;
+		private int? memory;
+
+		private string imageId;
+
+		private string clusterId;
+
+		private string vlanId;
+
+		private string stoppedMode;
+
+		private string hostName;
+
+		private string instanceId;
+
+		private string instanceType;
+
+		private int? internetMaxBandwidthIn;
+
+		private int? internetMaxBandwidthOut;
+
+		private string regionId;
 
 		private string instanceChargeType;
 
+		private string ioOptimized;
+
+		private int? cpu;
+
 		private string expiredTime;
 
-		private string stoppedMode;
+		private string zoneId;
+
+		private string internetChargeType;
 
 		private string creditSpecification;
 
@@ -89,138 +89,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private DescribeInstanceAttribute_DedicatedHostAttribute dedicatedHostAttribute;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
-
-		public string InstanceName
-		{
-			get
-			{
-				return instanceName;
-			}
-			set	
-			{
-				instanceName = value;
-			}
-		}
-
-		public string ImageId
-		{
-			get
-			{
-				return imageId;
-			}
-			set	
-			{
-				imageId = value;
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-			}
-		}
-
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-			}
-		}
-
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-			}
-		}
-
-		public int? Cpu
-		{
-			get
-			{
-				return cpu;
-			}
-			set	
-			{
-				cpu = value;
-			}
-		}
-
-		public int? Memory
-		{
-			get
-			{
-				return memory;
-			}
-			set	
-			{
-				memory = value;
-			}
-		}
-
-		public string HostName
-		{
-			get
-			{
-				return hostName;
-			}
-			set	
-			{
-				hostName = value;
-			}
-		}
-
 		public string Status
 		{
 			get
@@ -230,54 +98,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				status = value;
-			}
-		}
-
-		public string InternetChargeType
-		{
-			get
-			{
-				return internetChargeType;
-			}
-			set	
-			{
-				internetChargeType = value;
-			}
-		}
-
-		public int? InternetMaxBandwidthIn
-		{
-			get
-			{
-				return internetMaxBandwidthIn;
-			}
-			set	
-			{
-				internetMaxBandwidthIn = value;
-			}
-		}
-
-		public int? InternetMaxBandwidthOut
-		{
-			get
-			{
-				return internetMaxBandwidthOut;
-			}
-			set	
-			{
-				internetMaxBandwidthOut = value;
-			}
-		}
-
-		public string VlanId
-		{
-			get
-			{
-				return vlanId;
-			}
-			set	
-			{
-				vlanId = value;
 			}
 		}
 
@@ -305,6 +125,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public string Description
 		{
 			get
@@ -314,6 +146,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				description = value;
+			}
+		}
+
+		public string InstanceName
+		{
+			get
+			{
+				return instanceName;
+			}
+			set	
+			{
+				instanceName = value;
 			}
 		}
 
@@ -329,15 +173,135 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string IoOptimized
+		public int? Memory
 		{
 			get
 			{
-				return ioOptimized;
+				return memory;
 			}
 			set	
 			{
-				ioOptimized = value;
+				memory = value;
+			}
+		}
+
+		public string ImageId
+		{
+			get
+			{
+				return imageId;
+			}
+			set	
+			{
+				imageId = value;
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+			}
+		}
+
+		public string VlanId
+		{
+			get
+			{
+				return vlanId;
+			}
+			set	
+			{
+				vlanId = value;
+			}
+		}
+
+		public string StoppedMode
+		{
+			get
+			{
+				return stoppedMode;
+			}
+			set	
+			{
+				stoppedMode = value;
+			}
+		}
+
+		public string HostName
+		{
+			get
+			{
+				return hostName;
+			}
+			set	
+			{
+				hostName = value;
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+			}
+		}
+
+		public int? InternetMaxBandwidthIn
+		{
+			get
+			{
+				return internetMaxBandwidthIn;
+			}
+			set	
+			{
+				internetMaxBandwidthIn = value;
+			}
+		}
+
+		public int? InternetMaxBandwidthOut
+		{
+			get
+			{
+				return internetMaxBandwidthOut;
+			}
+			set	
+			{
+				internetMaxBandwidthOut = value;
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
 			}
 		}
 
@@ -353,6 +317,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string IoOptimized
+		{
+			get
+			{
+				return ioOptimized;
+			}
+			set	
+			{
+				ioOptimized = value;
+			}
+		}
+
+		public int? Cpu
+		{
+			get
+			{
+				return cpu;
+			}
+			set	
+			{
+				cpu = value;
+			}
+		}
+
 		public string ExpiredTime
 		{
 			get
@@ -365,15 +353,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string StoppedMode
+		public string ZoneId
 		{
 			get
 			{
-				return stoppedMode;
+				return zoneId;
 			}
 			set	
 			{
-				stoppedMode = value;
+				zoneId = value;
+			}
+		}
+
+		public string InternetChargeType
+		{
+			get
+			{
+				return internetChargeType;
+			}
+			set	
+			{
+				internetChargeType = value;
 			}
 		}
 
@@ -496,9 +496,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string vpcId;
 
-			private string vSwitchId;
-
 			private string natIpAddress;
+
+			private string vSwitchId;
 
 			private List<string> privateIpAddress;
 
@@ -514,18 +514,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string VSwitchId
-			{
-				get
-				{
-					return vSwitchId;
-				}
-				set	
-				{
-					vSwitchId = value;
-				}
-			}
-
 			public string NatIpAddress
 			{
 				get
@@ -535,6 +523,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					natIpAddress = value;
+				}
+			}
+
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
 				}
 			}
 
@@ -554,23 +554,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeInstanceAttribute_EipAddress
 		{
 
-			private string allocationId;
+			private string internetChargeType;
 
 			private string ipAddress;
 
 			private int? bandwidth;
 
-			private string internetChargeType;
+			private string allocationId;
 
-			public string AllocationId
+			public string InternetChargeType
 			{
 				get
 				{
-					return allocationId;
+					return internetChargeType;
 				}
 				set	
 				{
-					allocationId = value;
+					internetChargeType = value;
 				}
 			}
 
@@ -598,15 +598,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string InternetChargeType
+			public string AllocationId
 			{
 				get
 				{
-					return internetChargeType;
+					return allocationId;
 				}
 				set	
 				{
-					internetChargeType = value;
+					allocationId = value;
 				}
 			}
 		}
@@ -614,21 +614,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeInstanceAttribute_DedicatedHostAttribute
 		{
 
-			private string dedicatedHostId;
-
 			private string dedicatedHostName;
 
-			public string DedicatedHostId
-			{
-				get
-				{
-					return dedicatedHostId;
-				}
-				set	
-				{
-					dedicatedHostId = value;
-				}
-			}
+			private string dedicatedHostId;
 
 			public string DedicatedHostName
 			{
@@ -639,6 +627,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					dedicatedHostName = value;
+				}
+			}
+
+			public string DedicatedHostId
+			{
+				get
+				{
+					return dedicatedHostId;
+				}
+				set	
+				{
+					dedicatedHostId = value;
 				}
 			}
 		}

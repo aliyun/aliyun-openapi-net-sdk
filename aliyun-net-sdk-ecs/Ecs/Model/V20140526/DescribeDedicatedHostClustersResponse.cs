@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeDedicatedHostClustersResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeDedicatedHostClusters_DedicatedHostCluster> dedicatedHostClusters;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,23 +98,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeDedicatedHostClusters_DedicatedHostCluster
 		{
 
+			private string description;
+
 			private string dedicatedHostClusterId;
 
-			private string regionId;
+			private string resourceGroupId;
 
 			private string zoneId;
 
+			private string regionId;
+
 			private string dedicatedHostClusterName;
-
-			private string description;
-
-			private string resourceGroupId;
 
 			private List<DescribeDedicatedHostClusters_Tag> tags;
 
 			private List<string> dedicatedHostIds;
 
 			private DescribeDedicatedHostClusters_DedicatedHostClusterCapacity dedicatedHostClusterCapacity;
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
 
 			public string DedicatedHostClusterId
 			{
@@ -128,15 +140,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string RegionId
+			public string ResourceGroupId
 			{
 				get
 				{
-					return regionId;
+					return resourceGroupId;
 				}
 				set	
 				{
-					regionId = value;
+					resourceGroupId = value;
 				}
 			}
 
@@ -152,6 +164,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
 			public string DedicatedHostClusterName
 			{
 				get
@@ -161,30 +185,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					dedicatedHostClusterName = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
 				}
 			}
 
@@ -227,21 +227,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeDedicatedHostClusters_Tag
 			{
 
-				private string tagKey;
-
 				private string tagValue;
 
-				public string TagKey
-				{
-					get
-					{
-						return tagKey;
-					}
-					set	
-					{
-						tagKey = value;
-					}
-				}
+				private string tagKey;
 
 				public string TagValue
 				{
@@ -254,34 +242,34 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						tagValue = value;
 					}
 				}
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
 			}
 
 			public class DescribeDedicatedHostClusters_DedicatedHostClusterCapacity
 			{
 
-				private int? totalVcpus;
-
 				private int? availableVcpus;
+
+				private int? availableMemory;
 
 				private int? totalMemory;
 
-				private int? availableMemory;
+				private int? totalVcpus;
 
 				private List<DescribeDedicatedHostClusters_LocalStorageCapacity> localStorageCapacities;
 
 				private List<DescribeDedicatedHostClusters_AvailableInstanceType> availableInstanceTypes;
-
-				public int? TotalVcpus
-				{
-					get
-					{
-						return totalVcpus;
-					}
-					set	
-					{
-						totalVcpus = value;
-					}
-				}
 
 				public int? AvailableVcpus
 				{
@@ -292,6 +280,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						availableVcpus = value;
+					}
+				}
+
+				public int? AvailableMemory
+				{
+					get
+					{
+						return availableMemory;
+					}
+					set	
+					{
+						availableMemory = value;
 					}
 				}
 
@@ -307,15 +307,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public int? AvailableMemory
+				public int? TotalVcpus
 				{
 					get
 					{
-						return availableMemory;
+						return totalVcpus;
 					}
 					set	
 					{
-						availableMemory = value;
+						totalVcpus = value;
 					}
 				}
 
@@ -346,21 +346,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				public class DescribeDedicatedHostClusters_LocalStorageCapacity
 				{
 
-					private int? totalDisk;
+					private string dataDiskCategory;
 
 					private int? availableDisk;
 
-					private string dataDiskCategory;
+					private int? totalDisk;
 
-					public int? TotalDisk
+					public string DataDiskCategory
 					{
 						get
 						{
-							return totalDisk;
+							return dataDiskCategory;
 						}
 						set	
 						{
-							totalDisk = value;
+							dataDiskCategory = value;
 						}
 					}
 
@@ -376,15 +376,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						}
 					}
 
-					public string DataDiskCategory
+					public int? TotalDisk
 					{
 						get
 						{
-							return dataDiskCategory;
+							return totalDisk;
 						}
 						set	
 						{
-							dataDiskCategory = value;
+							totalDisk = value;
 						}
 					}
 				}

@@ -31,26 +31,26 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeAutoProvisioningGroupInstancesResponse describeAutoProvisioningGroupInstancesResponse = new DescribeAutoProvisioningGroupInstancesResponse();
 
 			describeAutoProvisioningGroupInstancesResponse.HttpResponse = _ctx.HttpResponse;
-			describeAutoProvisioningGroupInstancesResponse.RequestId = _ctx.StringValue("DescribeAutoProvisioningGroupInstances.RequestId");
-			describeAutoProvisioningGroupInstancesResponse.TotalCount = _ctx.IntegerValue("DescribeAutoProvisioningGroupInstances.TotalCount");
-			describeAutoProvisioningGroupInstancesResponse.PageNumber = _ctx.IntegerValue("DescribeAutoProvisioningGroupInstances.PageNumber");
 			describeAutoProvisioningGroupInstancesResponse.PageSize = _ctx.IntegerValue("DescribeAutoProvisioningGroupInstances.PageSize");
+			describeAutoProvisioningGroupInstancesResponse.RequestId = _ctx.StringValue("DescribeAutoProvisioningGroupInstances.RequestId");
+			describeAutoProvisioningGroupInstancesResponse.PageNumber = _ctx.IntegerValue("DescribeAutoProvisioningGroupInstances.PageNumber");
+			describeAutoProvisioningGroupInstancesResponse.TotalCount = _ctx.IntegerValue("DescribeAutoProvisioningGroupInstances.TotalCount");
 
 			List<DescribeAutoProvisioningGroupInstancesResponse.DescribeAutoProvisioningGroupInstances_Instance> describeAutoProvisioningGroupInstancesResponse_instances = new List<DescribeAutoProvisioningGroupInstancesResponse.DescribeAutoProvisioningGroupInstances_Instance>();
 			for (int i = 0; i < _ctx.Length("DescribeAutoProvisioningGroupInstances.Instances.Length"); i++) {
 				DescribeAutoProvisioningGroupInstancesResponse.DescribeAutoProvisioningGroupInstances_Instance instance = new DescribeAutoProvisioningGroupInstancesResponse.DescribeAutoProvisioningGroupInstances_Instance();
-				instance.InstanceId = _ctx.StringValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].InstanceId");
 				instance.Status = _ctx.StringValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].Status");
-				instance.RegionId = _ctx.StringValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].RegionId");
-				instance.ZoneId = _ctx.StringValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].ZoneId");
-				instance.CPU = _ctx.IntegerValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].CPU");
-				instance.Memory = _ctx.IntegerValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].Memory");
-				instance.InstanceType = _ctx.StringValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].InstanceType");
-				instance.IsSpot = _ctx.BooleanValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].IsSpot");
-				instance.IoOptimized = _ctx.BooleanValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].IoOptimized");
-				instance.NetworkType = _ctx.StringValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].NetworkType");
-				instance.OsType = _ctx.StringValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].OsType");
 				instance.CreationTime = _ctx.StringValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].CreationTime");
+				instance.IsSpot = _ctx.BooleanValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].IsSpot");
+				instance.CPU = _ctx.IntegerValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].CPU");
+				instance.InstanceId = _ctx.StringValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].InstanceId");
+				instance.NetworkType = _ctx.StringValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].NetworkType");
+				instance.InstanceType = _ctx.StringValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].InstanceType");
+				instance.RegionId = _ctx.StringValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].RegionId");
+				instance.IoOptimized = _ctx.BooleanValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].IoOptimized");
+				instance.OsType = _ctx.StringValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].OsType");
+				instance.ZoneId = _ctx.StringValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].ZoneId");
+				instance.Memory = _ctx.IntegerValue("DescribeAutoProvisioningGroupInstances.Instances["+ i +"].Memory");
 
 				describeAutoProvisioningGroupInstancesResponse_instances.Add(instance);
 			}

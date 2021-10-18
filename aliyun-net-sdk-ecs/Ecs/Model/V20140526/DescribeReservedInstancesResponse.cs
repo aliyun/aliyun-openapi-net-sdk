@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeReservedInstancesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeReservedInstances_ReservedInstance> reservedInstances;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,161 +98,41 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeReservedInstances_ReservedInstance
 		{
 
-			private string reservedInstanceId;
-
-			private string regionId;
-
-			private string zoneId;
-
-			private string reservedInstanceName;
-
-			private string description;
-
-			private string instanceType;
-
-			private string scope;
-
-			private string offeringType;
-
-			private string platform;
-
-			private int? instanceAmount;
-
 			private string status;
 
 			private string creationTime;
 
-			private string expiredTime;
+			private string reservedInstanceName;
+
+			private string reservedInstanceId;
+
+			private string instanceType;
+
+			private int? instanceAmount;
+
+			private string regionId;
+
+			private string offeringType;
 
 			private string startTime;
 
-			private string resourceGroupId;
+			private string description;
 
 			private string allocationStatus;
+
+			private string expiredTime;
+
+			private string resourceGroupId;
+
+			private string zoneId;
+
+			private string platform;
+
+			private string scope;
 
 			private List<DescribeReservedInstances_OperationLock> operationLocks;
 
 			private List<DescribeReservedInstances_Tag> tags;
-
-			public string ReservedInstanceId
-			{
-				get
-				{
-					return reservedInstanceId;
-				}
-				set	
-				{
-					reservedInstanceId = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public string ReservedInstanceName
-			{
-				get
-				{
-					return reservedInstanceName;
-				}
-				set	
-				{
-					reservedInstanceName = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string InstanceType
-			{
-				get
-				{
-					return instanceType;
-				}
-				set	
-				{
-					instanceType = value;
-				}
-			}
-
-			public string Scope
-			{
-				get
-				{
-					return scope;
-				}
-				set	
-				{
-					scope = value;
-				}
-			}
-
-			public string OfferingType
-			{
-				get
-				{
-					return offeringType;
-				}
-				set	
-				{
-					offeringType = value;
-				}
-			}
-
-			public string Platform
-			{
-				get
-				{
-					return platform;
-				}
-				set	
-				{
-					platform = value;
-				}
-			}
-
-			public int? InstanceAmount
-			{
-				get
-				{
-					return instanceAmount;
-				}
-				set	
-				{
-					instanceAmount = value;
-				}
-			}
 
 			public string Status
 			{
@@ -278,15 +158,75 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string ExpiredTime
+			public string ReservedInstanceName
 			{
 				get
 				{
-					return expiredTime;
+					return reservedInstanceName;
 				}
 				set	
 				{
-					expiredTime = value;
+					reservedInstanceName = value;
+				}
+			}
+
+			public string ReservedInstanceId
+			{
+				get
+				{
+					return reservedInstanceId;
+				}
+				set	
+				{
+					reservedInstanceId = value;
+				}
+			}
+
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
+
+			public int? InstanceAmount
+			{
+				get
+				{
+					return instanceAmount;
+				}
+				set	
+				{
+					instanceAmount = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string OfferingType
+			{
+				get
+				{
+					return offeringType;
+				}
+				set	
+				{
+					offeringType = value;
 				}
 			}
 
@@ -302,15 +242,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string ResourceGroupId
+			public string Description
 			{
 				get
 				{
-					return resourceGroupId;
+					return description;
 				}
 				set	
 				{
-					resourceGroupId = value;
+					description = value;
 				}
 			}
 
@@ -323,6 +263,66 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					allocationStatus = value;
+				}
+			}
+
+			public string ExpiredTime
+			{
+				get
+				{
+					return expiredTime;
+				}
+				set	
+				{
+					expiredTime = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string Platform
+			{
+				get
+				{
+					return platform;
+				}
+				set	
+				{
+					platform = value;
+				}
+			}
+
+			public string Scope
+			{
+				get
+				{
+					return scope;
+				}
+				set	
+				{
+					scope = value;
 				}
 			}
 
@@ -371,21 +371,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeReservedInstances_Tag
 			{
 
-				private string tagKey;
-
 				private string tagValue;
 
-				public string TagKey
-				{
-					get
-					{
-						return tagKey;
-					}
-					set	
-					{
-						tagKey = value;
-					}
-				}
+				private string tagKey;
 
 				public string TagValue
 				{
@@ -396,6 +384,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						tagValue = value;
+					}
+				}
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
 					}
 				}
 			}

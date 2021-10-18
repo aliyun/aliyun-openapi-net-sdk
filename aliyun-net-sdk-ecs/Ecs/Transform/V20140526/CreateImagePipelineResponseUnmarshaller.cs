@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateImagePipelineResponse createImagePipelineResponse = new CreateImagePipelineResponse();
 
 			createImagePipelineResponse.HttpResponse = _ctx.HttpResponse;
-			createImagePipelineResponse.RequestId = _ctx.StringValue("CreateImagePipeline.RequestId");
 			createImagePipelineResponse.ImagePipelineId = _ctx.StringValue("CreateImagePipeline.ImagePipelineId");
+			createImagePipelineResponse.RequestId = _ctx.StringValue("CreateImagePipeline.RequestId");
         
 			return createImagePipelineResponse;
         }

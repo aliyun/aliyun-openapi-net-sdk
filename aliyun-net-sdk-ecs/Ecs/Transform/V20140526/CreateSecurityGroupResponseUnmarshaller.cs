@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateSecurityGroupResponse createSecurityGroupResponse = new CreateSecurityGroupResponse();
 
 			createSecurityGroupResponse.HttpResponse = _ctx.HttpResponse;
-			createSecurityGroupResponse.RequestId = _ctx.StringValue("CreateSecurityGroup.RequestId");
 			createSecurityGroupResponse.SecurityGroupId = _ctx.StringValue("CreateSecurityGroup.SecurityGroupId");
+			createSecurityGroupResponse.RequestId = _ctx.StringValue("CreateSecurityGroup.RequestId");
         
 			return createSecurityGroupResponse;
         }

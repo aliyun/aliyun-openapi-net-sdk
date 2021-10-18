@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateDiskReplicaPairResponse createDiskReplicaPairResponse = new CreateDiskReplicaPairResponse();
 
 			createDiskReplicaPairResponse.HttpResponse = _ctx.HttpResponse;
-			createDiskReplicaPairResponse.RequestId = _ctx.StringValue("CreateDiskReplicaPair.RequestId");
 			createDiskReplicaPairResponse.PairId = _ctx.StringValue("CreateDiskReplicaPair.PairId");
+			createDiskReplicaPairResponse.RequestId = _ctx.StringValue("CreateDiskReplicaPair.RequestId");
         
 			return createDiskReplicaPairResponse;
         }

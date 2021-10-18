@@ -32,18 +32,18 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 
 			describeSpotPriceHistoryResponse.HttpResponse = _ctx.HttpResponse;
 			describeSpotPriceHistoryResponse.RequestId = _ctx.StringValue("DescribeSpotPriceHistory.RequestId");
-			describeSpotPriceHistoryResponse.NextOffset = _ctx.IntegerValue("DescribeSpotPriceHistory.NextOffset");
 			describeSpotPriceHistoryResponse.Currency = _ctx.StringValue("DescribeSpotPriceHistory.Currency");
+			describeSpotPriceHistoryResponse.NextOffset = _ctx.IntegerValue("DescribeSpotPriceHistory.NextOffset");
 
 			List<DescribeSpotPriceHistoryResponse.DescribeSpotPriceHistory_SpotPriceType> describeSpotPriceHistoryResponse_spotPrices = new List<DescribeSpotPriceHistoryResponse.DescribeSpotPriceHistory_SpotPriceType>();
 			for (int i = 0; i < _ctx.Length("DescribeSpotPriceHistory.SpotPrices.Length"); i++) {
 				DescribeSpotPriceHistoryResponse.DescribeSpotPriceHistory_SpotPriceType spotPriceType = new DescribeSpotPriceHistoryResponse.DescribeSpotPriceHistory_SpotPriceType();
-				spotPriceType.ZoneId = _ctx.StringValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].ZoneId");
-				spotPriceType.InstanceType = _ctx.StringValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].InstanceType");
 				spotPriceType.IoOptimized = _ctx.StringValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].IoOptimized");
+				spotPriceType.ZoneId = _ctx.StringValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].ZoneId");
+				spotPriceType.SpotPrice = _ctx.FloatValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].SpotPrice");
 				spotPriceType.Timestamp = _ctx.StringValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].Timestamp");
 				spotPriceType.NetworkType = _ctx.StringValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].NetworkType");
-				spotPriceType.SpotPrice = _ctx.FloatValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].SpotPrice");
+				spotPriceType.InstanceType = _ctx.StringValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].InstanceType");
 				spotPriceType.OriginPrice = _ctx.FloatValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].OriginPrice");
 
 				describeSpotPriceHistoryResponse_spotPrices.Add(spotPriceType);

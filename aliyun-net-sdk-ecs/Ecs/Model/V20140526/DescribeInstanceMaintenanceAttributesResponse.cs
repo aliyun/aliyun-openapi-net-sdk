@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeInstanceMaintenanceAttributesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeInstanceMaintenanceAttributes_MaintenanceAttribute> maintenanceAttributes;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,25 +98,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeInstanceMaintenanceAttributes_MaintenanceAttribute
 		{
 
-			private string instanceId;
-
 			private bool? notifyOnMaintenance;
+
+			private string instanceId;
 
 			private List<DescribeInstanceMaintenanceAttributes_MaintenanceWindow> maintenanceWindows;
 
 			private DescribeInstanceMaintenanceAttributes_ActionOnMaintenance actionOnMaintenance;
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
 
 			public bool? NotifyOnMaintenance
 			{
@@ -127,6 +115,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					notifyOnMaintenance = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 
@@ -157,21 +157,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeInstanceMaintenanceAttributes_MaintenanceWindow
 			{
 
-				private string startTime;
-
 				private string endTime;
 
-				public string StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
-					}
-				}
+				private string startTime;
 
 				public string EndTime
 				{
@@ -184,28 +172,28 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						endTime = value;
 					}
 				}
+
+				public string StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
 			}
 
 			public class DescribeInstanceMaintenanceAttributes_ActionOnMaintenance
 			{
 
-				private string _value;
-
 				private string defaultValue;
 
-				private List<string> supportedValues;
+				private string _value;
 
-				public string _Value
-				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
-				}
+				private List<string> supportedValues;
 
 				public string DefaultValue
 				{
@@ -216,6 +204,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						defaultValue = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 

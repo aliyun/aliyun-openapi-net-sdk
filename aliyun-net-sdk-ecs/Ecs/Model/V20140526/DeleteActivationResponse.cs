@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -56,105 +56,33 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DeleteActivation_Activation
 		{
 
-			private string activationId;
-
-			private string instanceName;
-
-			private string description;
-
-			private int? instanceCount;
-
-			private long? timeToLiveInHours;
-
-			private string ipAddressRange;
-
-			private int? registeredCount;
+			private string creationTime;
 
 			private int? deregisteredCount;
 
-			private string creationTime;
+			private int? instanceCount;
 
-			public string ActivationId
+			private string description;
+
+			private int? registeredCount;
+
+			private string instanceName;
+
+			private string ipAddressRange;
+
+			private long? timeToLiveInHours;
+
+			private string activationId;
+
+			public string CreationTime
 			{
 				get
 				{
-					return activationId;
+					return creationTime;
 				}
 				set	
 				{
-					activationId = value;
-				}
-			}
-
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public int? InstanceCount
-			{
-				get
-				{
-					return instanceCount;
-				}
-				set	
-				{
-					instanceCount = value;
-				}
-			}
-
-			public long? TimeToLiveInHours
-			{
-				get
-				{
-					return timeToLiveInHours;
-				}
-				set	
-				{
-					timeToLiveInHours = value;
-				}
-			}
-
-			public string IpAddressRange
-			{
-				get
-				{
-					return ipAddressRange;
-				}
-				set	
-				{
-					ipAddressRange = value;
-				}
-			}
-
-			public int? RegisteredCount
-			{
-				get
-				{
-					return registeredCount;
-				}
-				set	
-				{
-					registeredCount = value;
+					creationTime = value;
 				}
 			}
 
@@ -170,15 +98,87 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string CreationTime
+			public int? InstanceCount
 			{
 				get
 				{
-					return creationTime;
+					return instanceCount;
 				}
 				set	
 				{
-					creationTime = value;
+					instanceCount = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public int? RegisteredCount
+			{
+				get
+				{
+					return registeredCount;
+				}
+				set	
+				{
+					registeredCount = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string IpAddressRange
+			{
+				get
+				{
+					return ipAddressRange;
+				}
+				set	
+				{
+					ipAddressRange = value;
+				}
+			}
+
+			public long? TimeToLiveInHours
+			{
+				get
+				{
+					return timeToLiveInHours;
+				}
+				set	
+				{
+					timeToLiveInHours = value;
+				}
+			}
+
+			public string ActivationId
+			{
+				get
+				{
+					return activationId;
+				}
+				set	
+				{
+					activationId = value;
 				}
 			}
 		}

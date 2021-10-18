@@ -31,34 +31,34 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeBandwidthPackagesResponse describeBandwidthPackagesResponse = new DescribeBandwidthPackagesResponse();
 
 			describeBandwidthPackagesResponse.HttpResponse = _ctx.HttpResponse;
-			describeBandwidthPackagesResponse.RequestId = _ctx.StringValue("DescribeBandwidthPackages.RequestId");
-			describeBandwidthPackagesResponse.TotalCount = _ctx.IntegerValue("DescribeBandwidthPackages.TotalCount");
-			describeBandwidthPackagesResponse.PageNumber = _ctx.IntegerValue("DescribeBandwidthPackages.PageNumber");
 			describeBandwidthPackagesResponse.PageSize = _ctx.IntegerValue("DescribeBandwidthPackages.PageSize");
+			describeBandwidthPackagesResponse.RequestId = _ctx.StringValue("DescribeBandwidthPackages.RequestId");
+			describeBandwidthPackagesResponse.PageNumber = _ctx.IntegerValue("DescribeBandwidthPackages.PageNumber");
+			describeBandwidthPackagesResponse.TotalCount = _ctx.IntegerValue("DescribeBandwidthPackages.TotalCount");
 
 			List<DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage> describeBandwidthPackagesResponse_bandwidthPackages = new List<DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage>();
 			for (int i = 0; i < _ctx.Length("DescribeBandwidthPackages.BandwidthPackages.Length"); i++) {
 				DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage bandwidthPackage = new DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage();
-				bandwidthPackage.BandwidthPackageId = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].BandwidthPackageId");
+				bandwidthPackage.Status = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].Status");
+				bandwidthPackage.CreationTime = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].CreationTime");
+				bandwidthPackage.IpCount = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].IpCount");
 				bandwidthPackage.RegionId = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].RegionId");
-				bandwidthPackage.Name = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].Name");
-				bandwidthPackage.Description = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].Description");
-				bandwidthPackage.ZoneId = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].ZoneId");
-				bandwidthPackage.NatGatewayId = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].NatGatewayId");
-				bandwidthPackage.Bandwidth = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].Bandwidth");
 				bandwidthPackage.InstanceChargeType = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].InstanceChargeType");
+				bandwidthPackage.BandwidthPackageId = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].BandwidthPackageId");
+				bandwidthPackage.Description = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].Description");
+				bandwidthPackage.Bandwidth = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].Bandwidth");
+				bandwidthPackage.NatGatewayId = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].NatGatewayId");
+				bandwidthPackage.ZoneId = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].ZoneId");
 				bandwidthPackage.InternetChargeType = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].InternetChargeType");
 				bandwidthPackage.BusinessStatus = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].BusinessStatus");
-				bandwidthPackage.IpCount = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].IpCount");
+				bandwidthPackage.Name = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].Name");
 				bandwidthPackage.ISP = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].ISP");
-				bandwidthPackage.CreationTime = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].CreationTime");
-				bandwidthPackage.Status = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].Status");
 
 				List<DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage.DescribeBandwidthPackages_PublicIpAddresse> bandwidthPackage_publicIpAddresses = new List<DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage.DescribeBandwidthPackages_PublicIpAddresse>();
 				for (int j = 0; j < _ctx.Length("DescribeBandwidthPackages.BandwidthPackages["+ i +"].PublicIpAddresses.Length"); j++) {
 					DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage.DescribeBandwidthPackages_PublicIpAddresse publicIpAddresse = new DescribeBandwidthPackagesResponse.DescribeBandwidthPackages_BandwidthPackage.DescribeBandwidthPackages_PublicIpAddresse();
-					publicIpAddresse.AllocationId = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].PublicIpAddresses["+ j +"].AllocationId");
 					publicIpAddresse.IpAddress = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].PublicIpAddresses["+ j +"].IpAddress");
+					publicIpAddresse.AllocationId = _ctx.StringValue("DescribeBandwidthPackages.BandwidthPackages["+ i +"].PublicIpAddresses["+ j +"].AllocationId");
 
 					bandwidthPackage_publicIpAddresses.Add(publicIpAddresse);
 				}

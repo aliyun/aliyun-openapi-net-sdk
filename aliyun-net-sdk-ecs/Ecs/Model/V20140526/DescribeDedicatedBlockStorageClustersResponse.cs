@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeDedicatedBlockStorageClustersResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private List<DescribeDedicatedBlockStorageClusters_DedicatedBlockStorageCluster> dedicatedBlockStorageClusters;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDedicatedBlockStorageClusters_DedicatedBlockStorageCluster> dedicatedBlockStorageClusters;
 
 		public string NextToken
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,73 +70,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeDedicatedBlockStorageClusters_DedicatedBlockStorageCluster
 		{
 
-			private string dedicatedBlockStorageClusterId;
-
-			private string dedicatedBlockStorageClusterName;
-
-			private string description;
-
-			private string zoneId;
-
 			private string status;
 
-			private string category;
+			private string type;
 
-			private string performanceLevel;
+			private string description;
 
 			private string expiredTime;
 
 			private string createTime;
 
+			private string zoneId;
+
+			private string category;
+
+			private string dedicatedBlockStorageClusterName;
+
+			private string dedicatedBlockStorageClusterId;
+
 			private DescribeDedicatedBlockStorageClusters_DedicatedBlockStorageClusterCapacity dedicatedBlockStorageClusterCapacity;
-
-			public string DedicatedBlockStorageClusterId
-			{
-				get
-				{
-					return dedicatedBlockStorageClusterId;
-				}
-				set	
-				{
-					dedicatedBlockStorageClusterId = value;
-				}
-			}
-
-			public string DedicatedBlockStorageClusterName
-			{
-				get
-				{
-					return dedicatedBlockStorageClusterName;
-				}
-				set	
-				{
-					dedicatedBlockStorageClusterName = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
 
 			public string Status
 			{
@@ -150,27 +102,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Category
+			public string Type
 			{
 				get
 				{
-					return category;
+					return type;
 				}
 				set	
 				{
-					category = value;
+					type = value;
 				}
 			}
 
-			public string PerformanceLevel
+			public string Description
 			{
 				get
 				{
-					return performanceLevel;
+					return description;
 				}
 				set	
 				{
-					performanceLevel = value;
+					description = value;
 				}
 			}
 
@@ -198,6 +150,54 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			public string DedicatedBlockStorageClusterName
+			{
+				get
+				{
+					return dedicatedBlockStorageClusterName;
+				}
+				set	
+				{
+					dedicatedBlockStorageClusterName = value;
+				}
+			}
+
+			public string DedicatedBlockStorageClusterId
+			{
+				get
+				{
+					return dedicatedBlockStorageClusterId;
+				}
+				set	
+				{
+					dedicatedBlockStorageClusterId = value;
+				}
+			}
+
 			public DescribeDedicatedBlockStorageClusters_DedicatedBlockStorageClusterCapacity DedicatedBlockStorageClusterCapacity
 			{
 				get
@@ -213,21 +213,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeDedicatedBlockStorageClusters_DedicatedBlockStorageClusterCapacity
 			{
 
-				private long? availableCapacity;
-
 				private long? totalCapacity;
 
-				public long? AvailableCapacity
-				{
-					get
-					{
-						return availableCapacity;
-					}
-					set	
-					{
-						availableCapacity = value;
-					}
-				}
+				private long? availableCapacity;
 
 				public long? TotalCapacity
 				{
@@ -238,6 +226,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						totalCapacity = value;
+					}
+				}
+
+				public long? AvailableCapacity
+				{
+					get
+					{
+						return availableCapacity;
+					}
+					set	
+					{
+						availableCapacity = value;
 					}
 				}
 			}

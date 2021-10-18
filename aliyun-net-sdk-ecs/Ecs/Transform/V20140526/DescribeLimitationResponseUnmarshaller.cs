@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeLimitationResponse describeLimitationResponse = new DescribeLimitationResponse();
 
 			describeLimitationResponse.HttpResponse = _ctx.HttpResponse;
-			describeLimitationResponse.RequestId = _ctx.StringValue("DescribeLimitation.RequestId");
 			describeLimitationResponse.Limitation = _ctx.StringValue("DescribeLimitation.Limitation");
 			describeLimitationResponse._Value = _ctx.StringValue("DescribeLimitation.Value");
+			describeLimitationResponse.RequestId = _ctx.StringValue("DescribeLimitation.RequestId");
         
 			return describeLimitationResponse;
         }

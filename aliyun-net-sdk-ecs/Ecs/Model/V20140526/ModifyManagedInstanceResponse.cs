@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private ModifyManagedInstance_Instance instance;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Instance")]
 		public ModifyManagedInstance_Instance Instance
 		{
 			get
@@ -56,22 +58,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class ModifyManagedInstance_Instance
 		{
 
-			private string instanceId;
-
 			private string instanceName;
 
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private string instanceId;
 
+			[JsonProperty(PropertyName = "InstanceName")]
 			public string InstanceName
 			{
 				get
@@ -81,6 +72,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					instanceName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceId")]
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 		}

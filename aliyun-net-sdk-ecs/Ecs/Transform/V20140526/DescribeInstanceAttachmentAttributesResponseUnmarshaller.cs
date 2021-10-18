@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeInstanceAttachmentAttributesResponse describeInstanceAttachmentAttributesResponse = new DescribeInstanceAttachmentAttributesResponse();
 
 			describeInstanceAttachmentAttributesResponse.HttpResponse = _ctx.HttpResponse;
-			describeInstanceAttachmentAttributesResponse.RequestId = _ctx.StringValue("DescribeInstanceAttachmentAttributes.RequestId");
-			describeInstanceAttachmentAttributesResponse.TotalCount = _ctx.IntegerValue("DescribeInstanceAttachmentAttributes.TotalCount");
-			describeInstanceAttachmentAttributesResponse.PageNumber = _ctx.IntegerValue("DescribeInstanceAttachmentAttributes.PageNumber");
 			describeInstanceAttachmentAttributesResponse.PageSize = _ctx.IntegerValue("DescribeInstanceAttachmentAttributes.PageSize");
+			describeInstanceAttachmentAttributesResponse.RequestId = _ctx.StringValue("DescribeInstanceAttachmentAttributes.RequestId");
+			describeInstanceAttachmentAttributesResponse.PageNumber = _ctx.IntegerValue("DescribeInstanceAttachmentAttributes.PageNumber");
+			describeInstanceAttachmentAttributesResponse.TotalCount = _ctx.IntegerValue("DescribeInstanceAttachmentAttributes.TotalCount");
 
 			List<DescribeInstanceAttachmentAttributesResponse.DescribeInstanceAttachmentAttributes_Instance> describeInstanceAttachmentAttributesResponse_instances = new List<DescribeInstanceAttachmentAttributesResponse.DescribeInstanceAttachmentAttributes_Instance>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceAttachmentAttributes.Instances.Length"); i++) {
 				DescribeInstanceAttachmentAttributesResponse.DescribeInstanceAttachmentAttributes_Instance instance = new DescribeInstanceAttachmentAttributesResponse.DescribeInstanceAttachmentAttributes_Instance();
 				instance.InstanceId = _ctx.StringValue("DescribeInstanceAttachmentAttributes.Instances["+ i +"].InstanceId");
-				instance.PrivatePoolOptionsId = _ctx.StringValue("DescribeInstanceAttachmentAttributes.Instances["+ i +"].PrivatePoolOptionsId");
 				instance.PrivatePoolOptionsMatchCriteria = _ctx.StringValue("DescribeInstanceAttachmentAttributes.Instances["+ i +"].PrivatePoolOptionsMatchCriteria");
+				instance.PrivatePoolOptionsId = _ctx.StringValue("DescribeInstanceAttachmentAttributes.Instances["+ i +"].PrivatePoolOptionsId");
 
 				describeInstanceAttachmentAttributesResponse_instances.Add(instance);
 			}

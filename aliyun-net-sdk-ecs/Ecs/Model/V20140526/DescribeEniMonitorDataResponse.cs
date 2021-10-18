@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeEniMonitorDataResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
 
-		private List<DescribeEniMonitorData_EniMonitorData> monitorData;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeEniMonitorData_EniMonitorData> monitorData;
 
 		public int? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,31 +70,31 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeEniMonitorData_EniMonitorData
 		{
 
-			private string eniId;
+			private string packetRx;
 
 			private string timeStamp;
 
-			private string packetTx;
+			private string dropPacketRx;
 
-			private string packetRx;
+			private string eniId;
+
+			private string dropPacketTx;
+
+			private string packetTx;
 
 			private string intranetTx;
 
 			private string intranetRx;
 
-			private string dropPacketTx;
-
-			private string dropPacketRx;
-
-			public string EniId
+			public string PacketRx
 			{
 				get
 				{
-					return eniId;
+					return packetRx;
 				}
 				set	
 				{
-					eniId = value;
+					packetRx = value;
 				}
 			}
 
@@ -110,6 +110,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string DropPacketRx
+			{
+				get
+				{
+					return dropPacketRx;
+				}
+				set	
+				{
+					dropPacketRx = value;
+				}
+			}
+
+			public string EniId
+			{
+				get
+				{
+					return eniId;
+				}
+				set	
+				{
+					eniId = value;
+				}
+			}
+
+			public string DropPacketTx
+			{
+				get
+				{
+					return dropPacketTx;
+				}
+				set	
+				{
+					dropPacketTx = value;
+				}
+			}
+
 			public string PacketTx
 			{
 				get
@@ -119,18 +155,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					packetTx = value;
-				}
-			}
-
-			public string PacketRx
-			{
-				get
-				{
-					return packetRx;
-				}
-				set	
-				{
-					packetRx = value;
 				}
 			}
 
@@ -155,30 +179,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					intranetRx = value;
-				}
-			}
-
-			public string DropPacketTx
-			{
-				get
-				{
-					return dropPacketTx;
-				}
-				set	
-				{
-					dropPacketTx = value;
-				}
-			}
-
-			public string DropPacketRx
-			{
-				get
-				{
-					return dropPacketRx;
-				}
-				set	
-				{
-					dropPacketRx = value;
 				}
 			}
 		}

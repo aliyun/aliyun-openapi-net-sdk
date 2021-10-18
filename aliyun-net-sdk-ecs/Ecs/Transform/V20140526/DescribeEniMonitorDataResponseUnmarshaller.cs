@@ -31,20 +31,20 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeEniMonitorDataResponse describeEniMonitorDataResponse = new DescribeEniMonitorDataResponse();
 
 			describeEniMonitorDataResponse.HttpResponse = _ctx.HttpResponse;
-			describeEniMonitorDataResponse.RequestId = _ctx.StringValue("DescribeEniMonitorData.RequestId");
 			describeEniMonitorDataResponse.TotalCount = _ctx.IntegerValue("DescribeEniMonitorData.TotalCount");
+			describeEniMonitorDataResponse.RequestId = _ctx.StringValue("DescribeEniMonitorData.RequestId");
 
 			List<DescribeEniMonitorDataResponse.DescribeEniMonitorData_EniMonitorData> describeEniMonitorDataResponse_monitorData = new List<DescribeEniMonitorDataResponse.DescribeEniMonitorData_EniMonitorData>();
 			for (int i = 0; i < _ctx.Length("DescribeEniMonitorData.MonitorData.Length"); i++) {
 				DescribeEniMonitorDataResponse.DescribeEniMonitorData_EniMonitorData eniMonitorData = new DescribeEniMonitorDataResponse.DescribeEniMonitorData_EniMonitorData();
-				eniMonitorData.EniId = _ctx.StringValue("DescribeEniMonitorData.MonitorData["+ i +"].EniId");
-				eniMonitorData.TimeStamp = _ctx.StringValue("DescribeEniMonitorData.MonitorData["+ i +"].TimeStamp");
-				eniMonitorData.PacketTx = _ctx.StringValue("DescribeEniMonitorData.MonitorData["+ i +"].PacketTx");
 				eniMonitorData.PacketRx = _ctx.StringValue("DescribeEniMonitorData.MonitorData["+ i +"].PacketRx");
+				eniMonitorData.TimeStamp = _ctx.StringValue("DescribeEniMonitorData.MonitorData["+ i +"].TimeStamp");
+				eniMonitorData.DropPacketRx = _ctx.StringValue("DescribeEniMonitorData.MonitorData["+ i +"].DropPacketRx");
+				eniMonitorData.EniId = _ctx.StringValue("DescribeEniMonitorData.MonitorData["+ i +"].EniId");
+				eniMonitorData.DropPacketTx = _ctx.StringValue("DescribeEniMonitorData.MonitorData["+ i +"].DropPacketTx");
+				eniMonitorData.PacketTx = _ctx.StringValue("DescribeEniMonitorData.MonitorData["+ i +"].PacketTx");
 				eniMonitorData.IntranetTx = _ctx.StringValue("DescribeEniMonitorData.MonitorData["+ i +"].IntranetTx");
 				eniMonitorData.IntranetRx = _ctx.StringValue("DescribeEniMonitorData.MonitorData["+ i +"].IntranetRx");
-				eniMonitorData.DropPacketTx = _ctx.StringValue("DescribeEniMonitorData.MonitorData["+ i +"].DropPacketTx");
-				eniMonitorData.DropPacketRx = _ctx.StringValue("DescribeEniMonitorData.MonitorData["+ i +"].DropPacketRx");
 
 				describeEniMonitorDataResponse_monitorData.Add(eniMonitorData);
 			}

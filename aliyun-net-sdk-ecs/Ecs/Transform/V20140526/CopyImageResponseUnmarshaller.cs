@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CopyImageResponse copyImageResponse = new CopyImageResponse();
 
 			copyImageResponse.HttpResponse = _ctx.HttpResponse;
-			copyImageResponse.RequestId = _ctx.StringValue("CopyImage.RequestId");
 			copyImageResponse.ImageId = _ctx.StringValue("CopyImage.ImageId");
+			copyImageResponse.RequestId = _ctx.StringValue("CopyImage.RequestId");
         
 			return copyImageResponse;
         }

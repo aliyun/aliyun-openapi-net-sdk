@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeImagePipelineExecutionsResponse : AcsResponse
 	{
 
+		private string nextToken;
+
 		private string requestId;
 
 		private int? totalCount;
 
-		private string nextToken;
-
 		private int? maxResults;
 
 		private List<DescribeImagePipelineExecutions_ImagePipelineExecutionSet> imagePipelineExecution;
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				totalCount = value;
-			}
-		}
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
 			}
 		}
 
@@ -100,19 +100,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string creationTime;
 
-			private string modifiedTime;
-
-			private string imageId;
-
 			private string imagePipelineId;
-
-			private string executionId;
 
 			private string status;
 
-			private string message;
+			private string modifiedTime;
 
 			private string resourceGroupId;
+
+			private string message;
+
+			private string imageId;
+
+			private string executionId;
 
 			private List<DescribeImagePipelineExecutions_Tag> tags;
 
@@ -128,30 +128,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string ModifiedTime
-			{
-				get
-				{
-					return modifiedTime;
-				}
-				set	
-				{
-					modifiedTime = value;
-				}
-			}
-
-			public string ImageId
-			{
-				get
-				{
-					return imageId;
-				}
-				set	
-				{
-					imageId = value;
-				}
-			}
-
 			public string ImagePipelineId
 			{
 				get
@@ -161,18 +137,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					imagePipelineId = value;
-				}
-			}
-
-			public string ExecutionId
-			{
-				get
-				{
-					return executionId;
-				}
-				set	
-				{
-					executionId = value;
 				}
 			}
 
@@ -188,15 +152,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Message
+			public string ModifiedTime
 			{
 				get
 				{
-					return message;
+					return modifiedTime;
 				}
 				set	
 				{
-					message = value;
+					modifiedTime = value;
 				}
 			}
 
@@ -209,6 +173,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public string Message
+			{
+				get
+				{
+					return message;
+				}
+				set	
+				{
+					message = value;
+				}
+			}
+
+			public string ImageId
+			{
+				get
+				{
+					return imageId;
+				}
+				set	
+				{
+					imageId = value;
+				}
+			}
+
+			public string ExecutionId
+			{
+				get
+				{
+					return executionId;
+				}
+				set	
+				{
+					executionId = value;
 				}
 			}
 
@@ -227,21 +227,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeImagePipelineExecutions_Tag
 			{
 
-				private string tagKey;
-
 				private string tagValue;
 
-				public string TagKey
-				{
-					get
-					{
-						return tagKey;
-					}
-					set	
-					{
-						tagKey = value;
-					}
-				}
+				private string tagKey;
 
 				public string TagValue
 				{
@@ -252,6 +240,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						tagValue = value;
+					}
+				}
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
 					}
 				}
 			}

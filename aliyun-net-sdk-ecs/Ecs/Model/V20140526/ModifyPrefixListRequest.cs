@@ -47,7 +47,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string prefixListId;
 
-		private List<AddEntry> addEntrys = new List<AddEntry>(){ };
+		private List<string> addEntrys = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -57,8 +57,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string prefixListName;
 
-		private List<RemoveEntry> removeEntrys = new List<RemoveEntry>(){ };
+		private List<string> removeEntrys = new List<string>(){ };
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -72,6 +73,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Description")]
 		public string Description
 		{
 			get
@@ -85,6 +87,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "PrefixListId")]
 		public string PrefixListId
 		{
 			get
@@ -98,7 +101,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<AddEntry> AddEntrys
+		[JsonProperty(PropertyName = "AddEntry")]
+		public List<string> AddEntrys
 		{
 			get
 			{
@@ -108,14 +112,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				addEntrys = value;
-				for (int i = 0; i < addEntrys.Count; i++)
+				if(addEntrys != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"AddEntry." + (i + 1) + ".Cidr", addEntrys[i].Cidr);
-					DictionaryUtil.Add(QueryParameters,"AddEntry." + (i + 1) + ".Description", addEntrys[i].Description);
+					for (int depth1 = 0; depth1 < addEntrys.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"AddEntry." + (depth1 + 1), addEntrys[depth1]);
+						DictionaryUtil.Add(QueryParameters,"AddEntry." + (depth1 + 1), addEntrys[depth1]);
+					}
 				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -129,6 +137,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -142,6 +151,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -155,6 +165,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "PrefixListName")]
 		public string PrefixListName
 		{
 			get
@@ -168,7 +179,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<RemoveEntry> RemoveEntrys
+		[JsonProperty(PropertyName = "RemoveEntry")]
+		public List<string> RemoveEntrys
 		{
 			get
 			{
@@ -178,9 +190,12 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				removeEntrys = value;
-				for (int i = 0; i < removeEntrys.Count; i++)
+				if(removeEntrys != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"RemoveEntry." + (i + 1) + ".Cidr", removeEntrys[i].Cidr);
+					for (int depth1 = 0; depth1 < removeEntrys.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"RemoveEntry." + (depth1 + 1), removeEntrys[depth1]);
+					}
 				}
 			}
 		}
@@ -188,22 +203,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class AddEntry
 		{
 
-			private string cidr;
-
 			private string description;
 
-			public string Cidr
-			{
-				get
-				{
-					return cidr;
-				}
-				set	
-				{
-					cidr = value;
-				}
-			}
+			private string cidr;
 
+			[JsonProperty(PropertyName = "Description")]
 			public string Description
 			{
 				get
@@ -215,6 +219,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					description = value;
 				}
 			}
+
+			[JsonProperty(PropertyName = "Cidr")]
+			public string Cidr
+			{
+				get
+				{
+					return cidr;
+				}
+				set	
+				{
+					cidr = value;
+				}
+			}
 		}
 
 		public class RemoveEntry
@@ -222,6 +239,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string cidr;
 
+			[JsonProperty(PropertyName = "Cidr")]
 			public string Cidr
 			{
 				get

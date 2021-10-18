@@ -39,26 +39,26 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DescribeVirtualBorderRoutersResponse.DescribeVirtualBorderRouters_VirtualBorderRouterType> describeVirtualBorderRoutersResponse_virtualBorderRouterSet = new List<DescribeVirtualBorderRoutersResponse.DescribeVirtualBorderRouters_VirtualBorderRouterType>();
 			for (int i = 0; i < _ctx.Length("DescribeVirtualBorderRouters.VirtualBorderRouterSet.Length"); i++) {
 				DescribeVirtualBorderRoutersResponse.DescribeVirtualBorderRouters_VirtualBorderRouterType virtualBorderRouterType = new DescribeVirtualBorderRoutersResponse.DescribeVirtualBorderRouters_VirtualBorderRouterType();
-				virtualBorderRouterType.VbrId = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].VbrId");
-				virtualBorderRouterType.CreationTime = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].CreationTime");
-				virtualBorderRouterType.ActivationTime = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].ActivationTime");
-				virtualBorderRouterType.TerminationTime = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].TerminationTime");
-				virtualBorderRouterType.RecoveryTime = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].RecoveryTime");
-				virtualBorderRouterType.Status = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].Status");
-				virtualBorderRouterType.VlanId = _ctx.IntegerValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].VlanId");
-				virtualBorderRouterType.CircuitCode = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].CircuitCode");
-				virtualBorderRouterType.RouteTableId = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].RouteTableId");
 				virtualBorderRouterType.VlanInterfaceId = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].VlanInterfaceId");
-				virtualBorderRouterType.LocalGatewayIp = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].LocalGatewayIp");
-				virtualBorderRouterType.PeerGatewayIp = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].PeerGatewayIp");
-				virtualBorderRouterType.PeeringSubnetMask = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].PeeringSubnetMask");
-				virtualBorderRouterType.PhysicalConnectionId = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].PhysicalConnectionId");
-				virtualBorderRouterType.PhysicalConnectionStatus = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].PhysicalConnectionStatus");
-				virtualBorderRouterType.PhysicalConnectionBusinessStatus = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].PhysicalConnectionBusinessStatus");
+				virtualBorderRouterType.Status = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].Status");
+				virtualBorderRouterType.CreationTime = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].CreationTime");
+				virtualBorderRouterType.CircuitCode = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].CircuitCode");
 				virtualBorderRouterType.PhysicalConnectionOwnerUid = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].PhysicalConnectionOwnerUid");
-				virtualBorderRouterType.AccessPointId = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].AccessPointId");
-				virtualBorderRouterType.Name = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].Name");
+				virtualBorderRouterType.LocalGatewayIp = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].LocalGatewayIp");
+				virtualBorderRouterType.ActivationTime = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].ActivationTime");
+				virtualBorderRouterType.PhysicalConnectionBusinessStatus = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].PhysicalConnectionBusinessStatus");
+				virtualBorderRouterType.PeeringSubnetMask = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].PeeringSubnetMask");
+				virtualBorderRouterType.RouteTableId = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].RouteTableId");
 				virtualBorderRouterType.Description = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].Description");
+				virtualBorderRouterType.PhysicalConnectionStatus = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].PhysicalConnectionStatus");
+				virtualBorderRouterType.RecoveryTime = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].RecoveryTime");
+				virtualBorderRouterType.TerminationTime = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].TerminationTime");
+				virtualBorderRouterType.PeerGatewayIp = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].PeerGatewayIp");
+				virtualBorderRouterType.Name = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].Name");
+				virtualBorderRouterType.AccessPointId = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].AccessPointId");
+				virtualBorderRouterType.VbrId = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].VbrId");
+				virtualBorderRouterType.PhysicalConnectionId = _ctx.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].PhysicalConnectionId");
+				virtualBorderRouterType.VlanId = _ctx.IntegerValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].VlanId");
 
 				describeVirtualBorderRoutersResponse_virtualBorderRouterSet.Add(virtualBorderRouterType);
 			}

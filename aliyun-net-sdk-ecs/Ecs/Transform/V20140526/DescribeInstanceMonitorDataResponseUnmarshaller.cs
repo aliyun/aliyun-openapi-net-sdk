@@ -36,23 +36,23 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DescribeInstanceMonitorDataResponse.DescribeInstanceMonitorData_InstanceMonitorData> describeInstanceMonitorDataResponse_monitorData = new List<DescribeInstanceMonitorDataResponse.DescribeInstanceMonitorData_InstanceMonitorData>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceMonitorData.MonitorData.Length"); i++) {
 				DescribeInstanceMonitorDataResponse.DescribeInstanceMonitorData_InstanceMonitorData instanceMonitorData = new DescribeInstanceMonitorDataResponse.DescribeInstanceMonitorData_InstanceMonitorData();
-				instanceMonitorData.InstanceId = _ctx.StringValue("DescribeInstanceMonitorData.MonitorData["+ i +"].InstanceId");
-				instanceMonitorData.CPU = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].CPU");
-				instanceMonitorData.IntranetRX = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].IntranetRX");
-				instanceMonitorData.IntranetTX = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].IntranetTX");
-				instanceMonitorData.IntranetBandwidth = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].IntranetBandwidth");
-				instanceMonitorData.InternetRX = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].InternetRX");
-				instanceMonitorData.InternetTX = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].InternetTX");
-				instanceMonitorData.InternetBandwidth = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].InternetBandwidth");
-				instanceMonitorData.IOPSRead = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].IOPSRead");
-				instanceMonitorData.IOPSWrite = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].IOPSWrite");
-				instanceMonitorData.BPSRead = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].BPSRead");
-				instanceMonitorData.BPSWrite = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].BPSWrite");
-				instanceMonitorData.CPUCreditUsage = _ctx.FloatValue("DescribeInstanceMonitorData.MonitorData["+ i +"].CPUCreditUsage");
 				instanceMonitorData.CPUCreditBalance = _ctx.FloatValue("DescribeInstanceMonitorData.MonitorData["+ i +"].CPUCreditBalance");
-				instanceMonitorData.CPUAdvanceCreditBalance = _ctx.FloatValue("DescribeInstanceMonitorData.MonitorData["+ i +"].CPUAdvanceCreditBalance");
+				instanceMonitorData.BPSRead = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].BPSRead");
+				instanceMonitorData.InternetTX = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].InternetTX");
+				instanceMonitorData.CPU = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].CPU");
+				instanceMonitorData.CPUCreditUsage = _ctx.FloatValue("DescribeInstanceMonitorData.MonitorData["+ i +"].CPUCreditUsage");
+				instanceMonitorData.IOPSWrite = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].IOPSWrite");
+				instanceMonitorData.IntranetTX = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].IntranetTX");
+				instanceMonitorData.InstanceId = _ctx.StringValue("DescribeInstanceMonitorData.MonitorData["+ i +"].InstanceId");
+				instanceMonitorData.BPSWrite = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].BPSWrite");
 				instanceMonitorData.CPUNotpaidSurplusCreditUsage = _ctx.FloatValue("DescribeInstanceMonitorData.MonitorData["+ i +"].CPUNotpaidSurplusCreditUsage");
+				instanceMonitorData.CPUAdvanceCreditBalance = _ctx.FloatValue("DescribeInstanceMonitorData.MonitorData["+ i +"].CPUAdvanceCreditBalance");
+				instanceMonitorData.IOPSRead = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].IOPSRead");
+				instanceMonitorData.InternetBandwidth = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].InternetBandwidth");
+				instanceMonitorData.InternetRX = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].InternetRX");
 				instanceMonitorData.TimeStamp = _ctx.StringValue("DescribeInstanceMonitorData.MonitorData["+ i +"].TimeStamp");
+				instanceMonitorData.IntranetRX = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].IntranetRX");
+				instanceMonitorData.IntranetBandwidth = _ctx.IntegerValue("DescribeInstanceMonitorData.MonitorData["+ i +"].IntranetBandwidth");
 
 				describeInstanceMonitorDataResponse_monitorData.Add(instanceMonitorData);
 			}

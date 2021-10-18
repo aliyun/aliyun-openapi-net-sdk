@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeCapacityReservationInstancesResponse describeCapacityReservationInstancesResponse = new DescribeCapacityReservationInstancesResponse();
 
 			describeCapacityReservationInstancesResponse.HttpResponse = _ctx.HttpResponse;
-			describeCapacityReservationInstancesResponse.RequestId = _ctx.StringValue("DescribeCapacityReservationInstances.RequestId");
 			describeCapacityReservationInstancesResponse.NextToken = _ctx.StringValue("DescribeCapacityReservationInstances.NextToken");
-			describeCapacityReservationInstancesResponse.MaxResults = _ctx.IntegerValue("DescribeCapacityReservationInstances.MaxResults");
+			describeCapacityReservationInstancesResponse.RequestId = _ctx.StringValue("DescribeCapacityReservationInstances.RequestId");
 			describeCapacityReservationInstancesResponse.TotalCount = _ctx.IntegerValue("DescribeCapacityReservationInstances.TotalCount");
+			describeCapacityReservationInstancesResponse.MaxResults = _ctx.IntegerValue("DescribeCapacityReservationInstances.MaxResults");
 
 			List<DescribeCapacityReservationInstancesResponse.DescribeCapacityReservationInstances_InstanceIdSet> describeCapacityReservationInstancesResponse_capacityReservationItem = new List<DescribeCapacityReservationInstancesResponse.DescribeCapacityReservationInstances_InstanceIdSet>();
 			for (int i = 0; i < _ctx.Length("DescribeCapacityReservationInstances.CapacityReservationItem.Length"); i++) {

@@ -31,23 +31,23 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeVpcsResponse describeVpcsResponse = new DescribeVpcsResponse();
 
 			describeVpcsResponse.HttpResponse = _ctx.HttpResponse;
-			describeVpcsResponse.RequestId = _ctx.StringValue("DescribeVpcs.RequestId");
-			describeVpcsResponse.TotalCount = _ctx.IntegerValue("DescribeVpcs.TotalCount");
-			describeVpcsResponse.PageNumber = _ctx.IntegerValue("DescribeVpcs.PageNumber");
 			describeVpcsResponse.PageSize = _ctx.IntegerValue("DescribeVpcs.PageSize");
+			describeVpcsResponse.RequestId = _ctx.StringValue("DescribeVpcs.RequestId");
+			describeVpcsResponse.PageNumber = _ctx.IntegerValue("DescribeVpcs.PageNumber");
+			describeVpcsResponse.TotalCount = _ctx.IntegerValue("DescribeVpcs.TotalCount");
 
 			List<DescribeVpcsResponse.DescribeVpcs_Vpc> describeVpcsResponse_vpcs = new List<DescribeVpcsResponse.DescribeVpcs_Vpc>();
 			for (int i = 0; i < _ctx.Length("DescribeVpcs.Vpcs.Length"); i++) {
 				DescribeVpcsResponse.DescribeVpcs_Vpc vpc = new DescribeVpcsResponse.DescribeVpcs_Vpc();
-				vpc.VpcId = _ctx.StringValue("DescribeVpcs.Vpcs["+ i +"].VpcId");
-				vpc.RegionId = _ctx.StringValue("DescribeVpcs.Vpcs["+ i +"].RegionId");
-				vpc.Status = _ctx.StringValue("DescribeVpcs.Vpcs["+ i +"].Status");
-				vpc.VpcName = _ctx.StringValue("DescribeVpcs.Vpcs["+ i +"].VpcName");
 				vpc.CreationTime = _ctx.StringValue("DescribeVpcs.Vpcs["+ i +"].CreationTime");
-				vpc.CidrBlock = _ctx.StringValue("DescribeVpcs.Vpcs["+ i +"].CidrBlock");
+				vpc.VpcName = _ctx.StringValue("DescribeVpcs.Vpcs["+ i +"].VpcName");
+				vpc.Status = _ctx.StringValue("DescribeVpcs.Vpcs["+ i +"].Status");
+				vpc.VpcId = _ctx.StringValue("DescribeVpcs.Vpcs["+ i +"].VpcId");
 				vpc.VRouterId = _ctx.StringValue("DescribeVpcs.Vpcs["+ i +"].VRouterId");
-				vpc.Description = _ctx.StringValue("DescribeVpcs.Vpcs["+ i +"].Description");
 				vpc.IsDefault = _ctx.BooleanValue("DescribeVpcs.Vpcs["+ i +"].IsDefault");
+				vpc.CidrBlock = _ctx.StringValue("DescribeVpcs.Vpcs["+ i +"].CidrBlock");
+				vpc.Description = _ctx.StringValue("DescribeVpcs.Vpcs["+ i +"].Description");
+				vpc.RegionId = _ctx.StringValue("DescribeVpcs.Vpcs["+ i +"].RegionId");
 
 				List<string> vpc_vSwitchIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeVpcs.Vpcs["+ i +"].VSwitchIds.Length"); j++) {

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -87,21 +87,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeRenewalPrice_Rule
 			{
 
-				private long? ruleId;
-
 				private string description;
 
-				public long? RuleId
-				{
-					get
-					{
-						return ruleId;
-					}
-					set	
-					{
-						ruleId = value;
-					}
-				}
+				private long? ruleId;
 
 				public string Description
 				{
@@ -114,6 +102,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						description = value;
 					}
 				}
+
+				public long? RuleId
+				{
+					get
+					{
+						return ruleId;
+					}
+					set	
+					{
+						ruleId = value;
+					}
+				}
 			}
 
 			public class DescribeRenewalPrice_Price
@@ -123,9 +123,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private float? discountPrice;
 
-				private float? tradePrice;
-
 				private string currency;
+
+				private float? tradePrice;
 
 				private List<DescribeRenewalPrice_ResourcePriceModel> detailInfos;
 
@@ -153,18 +153,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public float? TradePrice
-				{
-					get
-					{
-						return tradePrice;
-					}
-					set	
-					{
-						tradePrice = value;
-					}
-				}
-
 				public string Currency
 				{
 					get
@@ -174,6 +162,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						currency = value;
+					}
+				}
+
+				public float? TradePrice
+				{
+					get
+					{
+						return tradePrice;
+					}
+					set	
+					{
+						tradePrice = value;
 					}
 				}
 
@@ -265,21 +265,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					public class DescribeRenewalPrice_Rule1
 					{
 
-						private long? ruleId;
-
 						private string description;
 
-						public long? RuleId
-						{
-							get
-							{
-								return ruleId;
-							}
-							set	
-							{
-								ruleId = value;
-							}
-						}
+						private long? ruleId;
 
 						public string Description
 						{
@@ -290,6 +278,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 							set	
 							{
 								description = value;
+							}
+						}
+
+						public long? RuleId
+						{
+							get
+							{
+								return ruleId;
+							}
+							set	
+							{
+								ruleId = value;
 							}
 						}
 					}

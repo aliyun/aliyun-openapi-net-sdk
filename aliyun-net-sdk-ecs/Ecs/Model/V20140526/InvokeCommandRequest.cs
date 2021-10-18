@@ -65,6 +65,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string username;
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -78,6 +79,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "CommandId")]
 		public string CommandId
 		{
 			get
@@ -91,6 +93,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Frequency")]
 		public string Frequency
 		{
 			get
@@ -104,6 +107,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "RepeatMode")]
 		public string RepeatMode
 		{
 			get
@@ -117,6 +121,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "WindowsPasswordName")]
 		public string WindowsPasswordName
 		{
 			get
@@ -130,6 +135,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Timed")]
 		public bool? Timed
 		{
 			get
@@ -143,6 +149,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -156,6 +163,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -169,6 +177,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -182,6 +191,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceId")]
 		public List<string> InstanceIds
 		{
 			get
@@ -192,13 +202,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				instanceIds = value;
-				for (int i = 0; i < instanceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
-				}
 			}
 		}
 
+		[JsonProperty(PropertyName = "Parameters")]
 		public Dictionary<object,object> Parameters
 		{
 			get
@@ -212,6 +219,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "Username")]
 		public string Username
 		{
 			get

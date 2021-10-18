@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeDiskMonitorDataResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
 
-		private List<DescribeDiskMonitorData_DiskMonitorData> monitorData;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDiskMonitorData_DiskMonitorData> monitorData;
 
 		public int? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,35 +70,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeDiskMonitorData_DiskMonitorData
 		{
 
-			private string diskId;
+			private int? bPSRead;
 
 			private int? iOPSRead;
 
-			private int? iOPSWrite;
-
-			private int? iOPSTotal;
-
-			private int? bPSRead;
-
-			private int? bPSWrite;
+			private int? latencyRead;
 
 			private int? bPSTotal;
 
-			private int? latencyRead;
-
-			private int? latencyWrite;
+			private int? iOPSTotal;
 
 			private string timeStamp;
 
-			public string DiskId
+			private int? latencyWrite;
+
+			private int? iOPSWrite;
+
+			private string diskId;
+
+			private int? bPSWrite;
+
+			public int? BPSRead
 			{
 				get
 				{
-					return diskId;
+					return bPSRead;
 				}
 				set	
 				{
-					diskId = value;
+					bPSRead = value;
 				}
 			}
 
@@ -114,51 +114,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public int? IOPSWrite
+			public int? LatencyRead
 			{
 				get
 				{
-					return iOPSWrite;
+					return latencyRead;
 				}
 				set	
 				{
-					iOPSWrite = value;
-				}
-			}
-
-			public int? IOPSTotal
-			{
-				get
-				{
-					return iOPSTotal;
-				}
-				set	
-				{
-					iOPSTotal = value;
-				}
-			}
-
-			public int? BPSRead
-			{
-				get
-				{
-					return bPSRead;
-				}
-				set	
-				{
-					bPSRead = value;
-				}
-			}
-
-			public int? BPSWrite
-			{
-				get
-				{
-					return bPSWrite;
-				}
-				set	
-				{
-					bPSWrite = value;
+					latencyRead = value;
 				}
 			}
 
@@ -174,15 +138,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public int? LatencyRead
+			public int? IOPSTotal
 			{
 				get
 				{
-					return latencyRead;
+					return iOPSTotal;
 				}
 				set	
 				{
-					latencyRead = value;
+					iOPSTotal = value;
+				}
+			}
+
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 
@@ -198,15 +174,39 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string TimeStamp
+			public int? IOPSWrite
 			{
 				get
 				{
-					return timeStamp;
+					return iOPSWrite;
 				}
 				set	
 				{
-					timeStamp = value;
+					iOPSWrite = value;
+				}
+			}
+
+			public string DiskId
+			{
+				get
+				{
+					return diskId;
+				}
+				set	
+				{
+					diskId = value;
+				}
+			}
+
+			public int? BPSWrite
+			{
+				get
+				{
+					return bPSWrite;
+				}
+				set	
+				{
+					bPSWrite = value;
 				}
 			}
 		}

@@ -65,6 +65,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? systemDiskPolicyEnabled;
 
+		[JsonProperty(PropertyName = "DataDiskPolicyEnabled")]
 		public bool? DataDiskPolicyEnabled
 		{
 			get
@@ -78,6 +79,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
 			get
@@ -91,6 +93,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "DataDiskPolicyRetentionDays")]
 		public int? DataDiskPolicyRetentionDays
 		{
 			get
@@ -104,6 +107,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SystemDiskPolicyRetentionLastWeek")]
 		public bool? SystemDiskPolicyRetentionLastWeek
 		{
 			get
@@ -117,6 +121,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SystemDiskPolicyRetentionDays")]
 		public int? SystemDiskPolicyRetentionDays
 		{
 			get
@@ -130,6 +135,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "DataDiskPolicyTimePeriod")]
 		public int? DataDiskPolicyTimePeriod
 		{
 			get
@@ -143,6 +149,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "ResourceOwnerAccount")]
 		public string ResourceOwnerAccount
 		{
 			get
@@ -156,6 +163,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerAccount")]
 		public string OwnerAccount
 		{
 			get
@@ -169,6 +177,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SystemDiskPolicyTimePeriod")]
 		public int? SystemDiskPolicyTimePeriod
 		{
 			get
@@ -182,6 +191,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OwnerId")]
 		public long? OwnerId
 		{
 			get
@@ -195,6 +205,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "DataDiskPolicyRetentionLastWeek")]
 		public bool? DataDiskPolicyRetentionLastWeek
 		{
 			get
@@ -208,6 +219,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "SystemDiskPolicyEnabled")]
 		public bool? SystemDiskPolicyEnabled
 		{
 			get

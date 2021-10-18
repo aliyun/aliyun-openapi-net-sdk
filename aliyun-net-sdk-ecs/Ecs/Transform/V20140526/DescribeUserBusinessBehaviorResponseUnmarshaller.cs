@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeUserBusinessBehaviorResponse describeUserBusinessBehaviorResponse = new DescribeUserBusinessBehaviorResponse();
 
 			describeUserBusinessBehaviorResponse.HttpResponse = _ctx.HttpResponse;
-			describeUserBusinessBehaviorResponse.RequestId = _ctx.StringValue("DescribeUserBusinessBehavior.RequestId");
 			describeUserBusinessBehaviorResponse.StatusValue = _ctx.StringValue("DescribeUserBusinessBehavior.StatusValue");
+			describeUserBusinessBehaviorResponse.RequestId = _ctx.StringValue("DescribeUserBusinessBehavior.RequestId");
         
 			return describeUserBusinessBehaviorResponse;
         }

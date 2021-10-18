@@ -41,8 +41,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				List<DescribeSecurityGroupReferencesResponse.DescribeSecurityGroupReferences_SecurityGroupReference.DescribeSecurityGroupReferences_ReferencingSecurityGroup> securityGroupReference_referencingSecurityGroups = new List<DescribeSecurityGroupReferencesResponse.DescribeSecurityGroupReferences_SecurityGroupReference.DescribeSecurityGroupReferences_ReferencingSecurityGroup>();
 				for (int j = 0; j < _ctx.Length("DescribeSecurityGroupReferences.SecurityGroupReferences["+ i +"].ReferencingSecurityGroups.Length"); j++) {
 					DescribeSecurityGroupReferencesResponse.DescribeSecurityGroupReferences_SecurityGroupReference.DescribeSecurityGroupReferences_ReferencingSecurityGroup referencingSecurityGroup = new DescribeSecurityGroupReferencesResponse.DescribeSecurityGroupReferences_SecurityGroupReference.DescribeSecurityGroupReferences_ReferencingSecurityGroup();
-					referencingSecurityGroup.AliUid = _ctx.StringValue("DescribeSecurityGroupReferences.SecurityGroupReferences["+ i +"].ReferencingSecurityGroups["+ j +"].AliUid");
 					referencingSecurityGroup.SecurityGroupId = _ctx.StringValue("DescribeSecurityGroupReferences.SecurityGroupReferences["+ i +"].ReferencingSecurityGroups["+ j +"].SecurityGroupId");
+					referencingSecurityGroup.AliUid = _ctx.StringValue("DescribeSecurityGroupReferences.SecurityGroupReferences["+ i +"].ReferencingSecurityGroups["+ j +"].AliUid");
 
 					securityGroupReference_referencingSecurityGroups.Add(referencingSecurityGroup);
 				}

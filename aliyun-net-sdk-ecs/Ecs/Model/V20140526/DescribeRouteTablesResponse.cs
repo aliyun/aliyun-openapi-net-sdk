@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeRouteTablesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeRouteTables_RouteTable> routeTables;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,17 +98,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeRouteTables_RouteTable
 		{
 
+			private string creationTime;
+
 			private string vRouterId;
 
 			private string routeTableId;
 
-			private string routeTableType;
-
-			private string creationTime;
-
 			private string resourceGroupId;
 
+			private string routeTableType;
+
 			private List<DescribeRouteTables_RouteEntry> routeEntrys;
+
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
 
 			public string VRouterId
 			{
@@ -134,30 +146,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string RouteTableType
-			{
-				get
-				{
-					return routeTableType;
-				}
-				set	
-				{
-					routeTableType = value;
-				}
-			}
-
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
-
 			public string ResourceGroupId
 			{
 				get
@@ -167,6 +155,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public string RouteTableType
+			{
+				get
+				{
+					return routeTableType;
+				}
+				set	
+				{
+					routeTableType = value;
 				}
 			}
 
@@ -185,43 +185,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeRouteTables_RouteEntry
 			{
 
-				private string routeTableId;
-
-				private string destinationCidrBlock;
-
 				private string type;
 
 				private string status;
 
-				private string instanceId;
-
 				private string nextHopType;
 
+				private string destinationCidrBlock;
+
+				private string instanceId;
+
+				private string routeTableId;
+
 				private List<DescribeRouteTables_NextHop> nextHops;
-
-				public string RouteTableId
-				{
-					get
-					{
-						return routeTableId;
-					}
-					set	
-					{
-						routeTableId = value;
-					}
-				}
-
-				public string DestinationCidrBlock
-				{
-					get
-					{
-						return destinationCidrBlock;
-					}
-					set	
-					{
-						destinationCidrBlock = value;
-					}
-				}
 
 				public string Type
 				{
@@ -247,6 +223,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
+				public string NextHopType
+				{
+					get
+					{
+						return nextHopType;
+					}
+					set	
+					{
+						nextHopType = value;
+					}
+				}
+
+				public string DestinationCidrBlock
+				{
+					get
+					{
+						return destinationCidrBlock;
+					}
+					set	
+					{
+						destinationCidrBlock = value;
+					}
+				}
+
 				public string InstanceId
 				{
 					get
@@ -259,15 +259,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public string NextHopType
+				public string RouteTableId
 				{
 					get
 					{
-						return nextHopType;
+						return routeTableId;
 					}
 					set	
 					{
-						nextHopType = value;
+						routeTableId = value;
 					}
 				}
 
@@ -286,23 +286,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				public class DescribeRouteTables_NextHop
 				{
 
-					private string nextHopType;
+					private int? weight;
 
 					private string nextHopId;
 
+					private string nextHopType;
+
 					private int? enabled;
 
-					private int? weight;
-
-					public string NextHopType
+					public int? Weight
 					{
 						get
 						{
-							return nextHopType;
+							return weight;
 						}
 						set	
 						{
-							nextHopType = value;
+							weight = value;
 						}
 					}
 
@@ -318,6 +318,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						}
 					}
 
+					public string NextHopType
+					{
+						get
+						{
+							return nextHopType;
+						}
+						set	
+						{
+							nextHopType = value;
+						}
+					}
+
 					public int? Enabled
 					{
 						get
@@ -327,18 +339,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						set	
 						{
 							enabled = value;
-						}
-					}
-
-					public int? Weight
-					{
-						get
-						{
-							return weight;
-						}
-						set	
-						{
-							weight = value;
 						}
 					}
 				}

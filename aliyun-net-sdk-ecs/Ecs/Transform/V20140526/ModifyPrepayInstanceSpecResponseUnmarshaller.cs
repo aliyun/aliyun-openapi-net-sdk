@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			ModifyPrepayInstanceSpecResponse modifyPrepayInstanceSpecResponse = new ModifyPrepayInstanceSpecResponse();
 
 			modifyPrepayInstanceSpecResponse.HttpResponse = _ctx.HttpResponse;
-			modifyPrepayInstanceSpecResponse.RequestId = _ctx.StringValue("ModifyPrepayInstanceSpec.RequestId");
 			modifyPrepayInstanceSpecResponse.OrderId = _ctx.StringValue("ModifyPrepayInstanceSpec.OrderId");
+			modifyPrepayInstanceSpecResponse.RequestId = _ctx.StringValue("ModifyPrepayInstanceSpec.RequestId");
         
 			return modifyPrepayInstanceSpecResponse;
         }

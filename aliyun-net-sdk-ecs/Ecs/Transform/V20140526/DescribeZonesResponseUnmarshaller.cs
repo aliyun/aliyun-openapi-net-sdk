@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			for (int i = 0; i < _ctx.Length("DescribeZones.Zones.Length"); i++) {
 				DescribeZonesResponse.DescribeZones_Zone zone = new DescribeZonesResponse.DescribeZones_Zone();
 				zone.ZoneId = _ctx.StringValue("DescribeZones.Zones["+ i +"].ZoneId");
+				zone.ZoneType = _ctx.StringValue("DescribeZones.Zones["+ i +"].ZoneType");
 				zone.LocalName = _ctx.StringValue("DescribeZones.Zones["+ i +"].LocalName");
 
 				List<string> zone_availableResourceCreation = new List<string>();
@@ -45,11 +46,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				}
 				zone.AvailableResourceCreation = zone_availableResourceCreation;
 
-				List<string> zone_availableDiskCategories = new List<string>();
-				for (int j = 0; j < _ctx.Length("DescribeZones.Zones["+ i +"].AvailableDiskCategories.Length"); j++) {
-					zone_availableDiskCategories.Add(_ctx.StringValue("DescribeZones.Zones["+ i +"].AvailableDiskCategories["+ j +"]"));
+				List<string> zone_dedicatedHostGenerations = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeZones.Zones["+ i +"].DedicatedHostGenerations.Length"); j++) {
+					zone_dedicatedHostGenerations.Add(_ctx.StringValue("DescribeZones.Zones["+ i +"].DedicatedHostGenerations["+ j +"]"));
 				}
-				zone.AvailableDiskCategories = zone_availableDiskCategories;
+				zone.DedicatedHostGenerations = zone_dedicatedHostGenerations;
 
 				List<string> zone_availableInstanceTypes = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeZones.Zones["+ i +"].AvailableInstanceTypes.Length"); j++) {
@@ -57,11 +58,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				}
 				zone.AvailableInstanceTypes = zone_availableInstanceTypes;
 
-				List<string> zone_availableVolumeCategories = new List<string>();
-				for (int j = 0; j < _ctx.Length("DescribeZones.Zones["+ i +"].AvailableVolumeCategories.Length"); j++) {
-					zone_availableVolumeCategories.Add(_ctx.StringValue("DescribeZones.Zones["+ i +"].AvailableVolumeCategories["+ j +"]"));
+				List<string> zone_availableDiskCategories = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeZones.Zones["+ i +"].AvailableDiskCategories.Length"); j++) {
+					zone_availableDiskCategories.Add(_ctx.StringValue("DescribeZones.Zones["+ i +"].AvailableDiskCategories["+ j +"]"));
 				}
-				zone.AvailableVolumeCategories = zone_availableVolumeCategories;
+				zone.AvailableDiskCategories = zone_availableDiskCategories;
 
 				List<string> zone_availableDedicatedHostTypes = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeZones.Zones["+ i +"].AvailableDedicatedHostTypes.Length"); j++) {
@@ -69,11 +70,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				}
 				zone.AvailableDedicatedHostTypes = zone_availableDedicatedHostTypes;
 
-				List<string> zone_dedicatedHostGenerations = new List<string>();
-				for (int j = 0; j < _ctx.Length("DescribeZones.Zones["+ i +"].DedicatedHostGenerations.Length"); j++) {
-					zone_dedicatedHostGenerations.Add(_ctx.StringValue("DescribeZones.Zones["+ i +"].DedicatedHostGenerations["+ j +"]"));
+				List<string> zone_availableVolumeCategories = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeZones.Zones["+ i +"].AvailableVolumeCategories.Length"); j++) {
+					zone_availableVolumeCategories.Add(_ctx.StringValue("DescribeZones.Zones["+ i +"].AvailableVolumeCategories["+ j +"]"));
 				}
-				zone.DedicatedHostGenerations = zone_dedicatedHostGenerations;
+				zone.AvailableVolumeCategories = zone_availableVolumeCategories;
 
 				List<DescribeZonesResponse.DescribeZones_Zone.DescribeZones_ResourcesInfo> zone_availableResources = new List<DescribeZonesResponse.DescribeZones_Zone.DescribeZones_ResourcesInfo>();
 				for (int j = 0; j < _ctx.Length("DescribeZones.Zones["+ i +"].AvailableResources.Length"); j++) {
@@ -86,17 +87,17 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					}
 					resourcesInfo.SystemDiskCategories = resourcesInfo_systemDiskCategories;
 
+					List<string> resourcesInfo_instanceGenerations = new List<string>();
+					for (int k = 0; k < _ctx.Length("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].InstanceGenerations.Length"); k++) {
+						resourcesInfo_instanceGenerations.Add(_ctx.StringValue("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].InstanceGenerations["+ k +"]"));
+					}
+					resourcesInfo.InstanceGenerations = resourcesInfo_instanceGenerations;
+
 					List<string> resourcesInfo_dataDiskCategories = new List<string>();
 					for (int k = 0; k < _ctx.Length("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].DataDiskCategories.Length"); k++) {
 						resourcesInfo_dataDiskCategories.Add(_ctx.StringValue("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].DataDiskCategories["+ k +"]"));
 					}
 					resourcesInfo.DataDiskCategories = resourcesInfo_dataDiskCategories;
-
-					List<string> resourcesInfo_networkTypes = new List<string>();
-					for (int k = 0; k < _ctx.Length("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].NetworkTypes.Length"); k++) {
-						resourcesInfo_networkTypes.Add(_ctx.StringValue("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].NetworkTypes["+ k +"]"));
-					}
-					resourcesInfo.NetworkTypes = resourcesInfo_networkTypes;
 
 					List<string> resourcesInfo_instanceTypes = new List<string>();
 					for (int k = 0; k < _ctx.Length("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].InstanceTypes.Length"); k++) {
@@ -110,11 +111,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					}
 					resourcesInfo.InstanceTypeFamilies = resourcesInfo_instanceTypeFamilies;
 
-					List<string> resourcesInfo_instanceGenerations = new List<string>();
-					for (int k = 0; k < _ctx.Length("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].InstanceGenerations.Length"); k++) {
-						resourcesInfo_instanceGenerations.Add(_ctx.StringValue("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].InstanceGenerations["+ k +"]"));
+					List<string> resourcesInfo_networkTypes = new List<string>();
+					for (int k = 0; k < _ctx.Length("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].NetworkTypes.Length"); k++) {
+						resourcesInfo_networkTypes.Add(_ctx.StringValue("DescribeZones.Zones["+ i +"].AvailableResources["+ j +"].NetworkTypes["+ k +"]"));
 					}
-					resourcesInfo.InstanceGenerations = resourcesInfo_instanceGenerations;
+					resourcesInfo.NetworkTypes = resourcesInfo_networkTypes;
 
 					zone_availableResources.Add(resourcesInfo);
 				}

@@ -31,34 +31,28 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeImagePipelinesResponse describeImagePipelinesResponse = new DescribeImagePipelinesResponse();
 
 			describeImagePipelinesResponse.HttpResponse = _ctx.HttpResponse;
+			describeImagePipelinesResponse.NextToken = _ctx.StringValue("DescribeImagePipelines.NextToken");
 			describeImagePipelinesResponse.RequestId = _ctx.StringValue("DescribeImagePipelines.RequestId");
 			describeImagePipelinesResponse.TotalCount = _ctx.IntegerValue("DescribeImagePipelines.TotalCount");
-			describeImagePipelinesResponse.NextToken = _ctx.StringValue("DescribeImagePipelines.NextToken");
 			describeImagePipelinesResponse.MaxResults = _ctx.IntegerValue("DescribeImagePipelines.MaxResults");
 
 			List<DescribeImagePipelinesResponse.DescribeImagePipelines_ImagePipelineSet> describeImagePipelinesResponse_imagePipeline = new List<DescribeImagePipelinesResponse.DescribeImagePipelines_ImagePipelineSet>();
 			for (int i = 0; i < _ctx.Length("DescribeImagePipelines.ImagePipeline.Length"); i++) {
 				DescribeImagePipelinesResponse.DescribeImagePipelines_ImagePipelineSet imagePipelineSet = new DescribeImagePipelinesResponse.DescribeImagePipelines_ImagePipelineSet();
 				imagePipelineSet.CreationTime = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].CreationTime");
-				imagePipelineSet.ImagePipelineId = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].ImagePipelineId");
-				imagePipelineSet.Name = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].Name");
-				imagePipelineSet.Description = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].Description");
-				imagePipelineSet.BaseImageType = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].BaseImageType");
-				imagePipelineSet.BaseImage = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].BaseImage");
-				imagePipelineSet.ImageName = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].ImageName");
-				imagePipelineSet.VSwitchId = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].VSwitchId");
+				imagePipelineSet.DeleteInstanceOnFailure = _ctx.BooleanValue("DescribeImagePipelines.ImagePipeline["+ i +"].DeleteInstanceOnFailure");
 				imagePipelineSet.InstanceType = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].InstanceType");
 				imagePipelineSet.InternetMaxBandwidthOut = _ctx.IntegerValue("DescribeImagePipelines.ImagePipeline["+ i +"].InternetMaxBandwidthOut");
+				imagePipelineSet.ImagePipelineId = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].ImagePipelineId");
+				imagePipelineSet.VSwitchId = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].VSwitchId");
 				imagePipelineSet.SystemDiskSize = _ctx.IntegerValue("DescribeImagePipelines.ImagePipeline["+ i +"].SystemDiskSize");
-				imagePipelineSet.DeleteInstanceOnFailure = _ctx.BooleanValue("DescribeImagePipelines.ImagePipeline["+ i +"].DeleteInstanceOnFailure");
-				imagePipelineSet.BuildContent = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].BuildContent");
+				imagePipelineSet.Description = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].Description");
+				imagePipelineSet.BaseImage = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].BaseImage");
 				imagePipelineSet.ResourceGroupId = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].ResourceGroupId");
-
-				List<string> imagePipelineSet_addAccounts = new List<string>();
-				for (int j = 0; j < _ctx.Length("DescribeImagePipelines.ImagePipeline["+ i +"].AddAccounts.Length"); j++) {
-					imagePipelineSet_addAccounts.Add(_ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].AddAccounts["+ j +"]"));
-				}
-				imagePipelineSet.AddAccounts = imagePipelineSet_addAccounts;
+				imagePipelineSet.ImageName = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].ImageName");
+				imagePipelineSet.BaseImageType = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].BaseImageType");
+				imagePipelineSet.Name = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].Name");
+				imagePipelineSet.BuildContent = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].BuildContent");
 
 				List<string> imagePipelineSet_toRegionIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeImagePipelines.ImagePipeline["+ i +"].ToRegionIds.Length"); j++) {
@@ -66,11 +60,17 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				}
 				imagePipelineSet.ToRegionIds = imagePipelineSet_toRegionIds;
 
+				List<string> imagePipelineSet_addAccounts = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeImagePipelines.ImagePipeline["+ i +"].AddAccounts.Length"); j++) {
+					imagePipelineSet_addAccounts.Add(_ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].AddAccounts["+ j +"]"));
+				}
+				imagePipelineSet.AddAccounts = imagePipelineSet_addAccounts;
+
 				List<DescribeImagePipelinesResponse.DescribeImagePipelines_ImagePipelineSet.DescribeImagePipelines_Tag> imagePipelineSet_tags = new List<DescribeImagePipelinesResponse.DescribeImagePipelines_ImagePipelineSet.DescribeImagePipelines_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeImagePipelines.ImagePipeline["+ i +"].Tags.Length"); j++) {
 					DescribeImagePipelinesResponse.DescribeImagePipelines_ImagePipelineSet.DescribeImagePipelines_Tag tag = new DescribeImagePipelinesResponse.DescribeImagePipelines_ImagePipelineSet.DescribeImagePipelines_Tag();
-					tag.TagKey = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].Tags["+ j +"].TagKey");
 					tag.TagValue = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].Tags["+ j +"].TagValue");
+					tag.TagKey = _ctx.StringValue("DescribeImagePipelines.ImagePipeline["+ i +"].Tags["+ j +"].TagKey");
 
 					imagePipelineSet_tags.Add(tag);
 				}

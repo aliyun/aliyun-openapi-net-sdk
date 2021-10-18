@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -56,37 +56,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeDedicatedHostAutoRenew_DedicatedHostRenewAttribute
 		{
 
-			private string dedicatedHostId;
-
-			private bool? autoRenewEnabled;
+			private string periodUnit;
 
 			private int? duration;
 
-			private string periodUnit;
+			private string dedicatedHostId;
 
 			private string renewalStatus;
 
-			public string DedicatedHostId
-			{
-				get
-				{
-					return dedicatedHostId;
-				}
-				set	
-				{
-					dedicatedHostId = value;
-				}
-			}
+			private bool? autoRenewEnabled;
 
-			public bool? AutoRenewEnabled
+			private string autoRenewWithEcs;
+
+			public string PeriodUnit
 			{
 				get
 				{
-					return autoRenewEnabled;
+					return periodUnit;
 				}
 				set	
 				{
-					autoRenewEnabled = value;
+					periodUnit = value;
 				}
 			}
 
@@ -102,15 +92,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string PeriodUnit
+			public string DedicatedHostId
 			{
 				get
 				{
-					return periodUnit;
+					return dedicatedHostId;
 				}
 				set	
 				{
-					periodUnit = value;
+					dedicatedHostId = value;
 				}
 			}
 
@@ -123,6 +113,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					renewalStatus = value;
+				}
+			}
+
+			public bool? AutoRenewEnabled
+			{
+				get
+				{
+					return autoRenewEnabled;
+				}
+				set	
+				{
+					autoRenewEnabled = value;
+				}
+			}
+
+			public string AutoRenewWithEcs
+			{
+				get
+				{
+					return autoRenewWithEcs;
+				}
+				set	
+				{
+					autoRenewWithEcs = value;
 				}
 			}
 		}

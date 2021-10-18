@@ -31,33 +31,33 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeDemandsResponse describeDemandsResponse = new DescribeDemandsResponse();
 
 			describeDemandsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDemandsResponse.PageSize = _ctx.IntegerValue("DescribeDemands.PageSize");
+			describeDemandsResponse.PageNumber = _ctx.IntegerValue("DescribeDemands.PageNumber");
 			describeDemandsResponse.RequestId = _ctx.StringValue("DescribeDemands.RequestId");
 			describeDemandsResponse.TotalCount = _ctx.IntegerValue("DescribeDemands.TotalCount");
-			describeDemandsResponse.PageNumber = _ctx.IntegerValue("DescribeDemands.PageNumber");
-			describeDemandsResponse.PageSize = _ctx.IntegerValue("DescribeDemands.PageSize");
 			describeDemandsResponse.RegionId = _ctx.StringValue("DescribeDemands.RegionId");
 
 			List<DescribeDemandsResponse.DescribeDemands_Demand> describeDemandsResponse_demands = new List<DescribeDemandsResponse.DescribeDemands_Demand>();
 			for (int i = 0; i < _ctx.Length("DescribeDemands.Demands.Length"); i++) {
 				DescribeDemandsResponse.DescribeDemands_Demand demand = new DescribeDemandsResponse.DescribeDemands_Demand();
-				demand.ZoneId = _ctx.StringValue("DescribeDemands.Demands["+ i +"].ZoneId");
-				demand.DemandTime = _ctx.StringValue("DescribeDemands.Demands["+ i +"].DemandTime");
-				demand.InstanceTypeFamily = _ctx.StringValue("DescribeDemands.Demands["+ i +"].InstanceTypeFamily");
-				demand.DemandId = _ctx.StringValue("DescribeDemands.Demands["+ i +"].DemandId");
-				demand.DemandName = _ctx.StringValue("DescribeDemands.Demands["+ i +"].DemandName");
 				demand.Comment = _ctx.StringValue("DescribeDemands.Demands["+ i +"].Comment");
 				demand.DemandDescription = _ctx.StringValue("DescribeDemands.Demands["+ i +"].DemandDescription");
+				demand.DemandId = _ctx.StringValue("DescribeDemands.Demands["+ i +"].DemandId");
+				demand.DemandTime = _ctx.StringValue("DescribeDemands.Demands["+ i +"].DemandTime");
 				demand.InstanceType = _ctx.StringValue("DescribeDemands.Demands["+ i +"].InstanceType");
-				demand.InstanceChargeType = _ctx.StringValue("DescribeDemands.Demands["+ i +"].InstanceChargeType");
+				demand.DemandName = _ctx.StringValue("DescribeDemands.Demands["+ i +"].DemandName");
 				demand.Period = _ctx.IntegerValue("DescribeDemands.Demands["+ i +"].Period");
-				demand.PeriodUnit = _ctx.StringValue("DescribeDemands.Demands["+ i +"].PeriodUnit");
-				demand.StartTime = _ctx.StringValue("DescribeDemands.Demands["+ i +"].StartTime");
-				demand.EndTime = _ctx.StringValue("DescribeDemands.Demands["+ i +"].EndTime");
-				demand.DemandStatus = _ctx.StringValue("DescribeDemands.Demands["+ i +"].DemandStatus");
-				demand.TotalAmount = _ctx.IntegerValue("DescribeDemands.Demands["+ i +"].TotalAmount");
+				demand.InstanceChargeType = _ctx.StringValue("DescribeDemands.Demands["+ i +"].InstanceChargeType");
 				demand.AvailableAmount = _ctx.IntegerValue("DescribeDemands.Demands["+ i +"].AvailableAmount");
+				demand.EndTime = _ctx.StringValue("DescribeDemands.Demands["+ i +"].EndTime");
+				demand.StartTime = _ctx.StringValue("DescribeDemands.Demands["+ i +"].StartTime");
+				demand.PeriodUnit = _ctx.StringValue("DescribeDemands.Demands["+ i +"].PeriodUnit");
+				demand.ZoneId = _ctx.StringValue("DescribeDemands.Demands["+ i +"].ZoneId");
 				demand.UsedAmount = _ctx.IntegerValue("DescribeDemands.Demands["+ i +"].UsedAmount");
+				demand.TotalAmount = _ctx.IntegerValue("DescribeDemands.Demands["+ i +"].TotalAmount");
 				demand.DeliveringAmount = _ctx.IntegerValue("DescribeDemands.Demands["+ i +"].DeliveringAmount");
+				demand.InstanceTypeFamily = _ctx.StringValue("DescribeDemands.Demands["+ i +"].InstanceTypeFamily");
+				demand.DemandStatus = _ctx.StringValue("DescribeDemands.Demands["+ i +"].DemandStatus");
 
 				List<DescribeDemandsResponse.DescribeDemands_Demand.DescribeDemands_SupplyInfo> demand_supplyInfos = new List<DescribeDemandsResponse.DescribeDemands_Demand.DescribeDemands_SupplyInfo>();
 				for (int j = 0; j < _ctx.Length("DescribeDemands.Demands["+ i +"].SupplyInfos.Length"); j++) {

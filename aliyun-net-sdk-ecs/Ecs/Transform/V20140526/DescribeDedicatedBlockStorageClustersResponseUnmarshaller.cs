@@ -31,25 +31,25 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeDedicatedBlockStorageClustersResponse describeDedicatedBlockStorageClustersResponse = new DescribeDedicatedBlockStorageClustersResponse();
 
 			describeDedicatedBlockStorageClustersResponse.HttpResponse = _ctx.HttpResponse;
-			describeDedicatedBlockStorageClustersResponse.RequestId = _ctx.StringValue("DescribeDedicatedBlockStorageClusters.RequestId");
 			describeDedicatedBlockStorageClustersResponse.NextToken = _ctx.StringValue("DescribeDedicatedBlockStorageClusters.NextToken");
+			describeDedicatedBlockStorageClustersResponse.RequestId = _ctx.StringValue("DescribeDedicatedBlockStorageClusters.RequestId");
 
 			List<DescribeDedicatedBlockStorageClustersResponse.DescribeDedicatedBlockStorageClusters_DedicatedBlockStorageCluster> describeDedicatedBlockStorageClustersResponse_dedicatedBlockStorageClusters = new List<DescribeDedicatedBlockStorageClustersResponse.DescribeDedicatedBlockStorageClusters_DedicatedBlockStorageCluster>();
 			for (int i = 0; i < _ctx.Length("DescribeDedicatedBlockStorageClusters.DedicatedBlockStorageClusters.Length"); i++) {
 				DescribeDedicatedBlockStorageClustersResponse.DescribeDedicatedBlockStorageClusters_DedicatedBlockStorageCluster dedicatedBlockStorageCluster = new DescribeDedicatedBlockStorageClustersResponse.DescribeDedicatedBlockStorageClusters_DedicatedBlockStorageCluster();
-				dedicatedBlockStorageCluster.DedicatedBlockStorageClusterId = _ctx.StringValue("DescribeDedicatedBlockStorageClusters.DedicatedBlockStorageClusters["+ i +"].DedicatedBlockStorageClusterId");
-				dedicatedBlockStorageCluster.DedicatedBlockStorageClusterName = _ctx.StringValue("DescribeDedicatedBlockStorageClusters.DedicatedBlockStorageClusters["+ i +"].DedicatedBlockStorageClusterName");
-				dedicatedBlockStorageCluster.Description = _ctx.StringValue("DescribeDedicatedBlockStorageClusters.DedicatedBlockStorageClusters["+ i +"].Description");
-				dedicatedBlockStorageCluster.ZoneId = _ctx.StringValue("DescribeDedicatedBlockStorageClusters.DedicatedBlockStorageClusters["+ i +"].ZoneId");
 				dedicatedBlockStorageCluster.Status = _ctx.StringValue("DescribeDedicatedBlockStorageClusters.DedicatedBlockStorageClusters["+ i +"].Status");
-				dedicatedBlockStorageCluster.Category = _ctx.StringValue("DescribeDedicatedBlockStorageClusters.DedicatedBlockStorageClusters["+ i +"].Category");
-				dedicatedBlockStorageCluster.PerformanceLevel = _ctx.StringValue("DescribeDedicatedBlockStorageClusters.DedicatedBlockStorageClusters["+ i +"].PerformanceLevel");
+				dedicatedBlockStorageCluster.Type = _ctx.StringValue("DescribeDedicatedBlockStorageClusters.DedicatedBlockStorageClusters["+ i +"].Type");
+				dedicatedBlockStorageCluster.Description = _ctx.StringValue("DescribeDedicatedBlockStorageClusters.DedicatedBlockStorageClusters["+ i +"].Description");
 				dedicatedBlockStorageCluster.ExpiredTime = _ctx.StringValue("DescribeDedicatedBlockStorageClusters.DedicatedBlockStorageClusters["+ i +"].ExpiredTime");
 				dedicatedBlockStorageCluster.CreateTime = _ctx.StringValue("DescribeDedicatedBlockStorageClusters.DedicatedBlockStorageClusters["+ i +"].CreateTime");
+				dedicatedBlockStorageCluster.ZoneId = _ctx.StringValue("DescribeDedicatedBlockStorageClusters.DedicatedBlockStorageClusters["+ i +"].ZoneId");
+				dedicatedBlockStorageCluster.Category = _ctx.StringValue("DescribeDedicatedBlockStorageClusters.DedicatedBlockStorageClusters["+ i +"].Category");
+				dedicatedBlockStorageCluster.DedicatedBlockStorageClusterName = _ctx.StringValue("DescribeDedicatedBlockStorageClusters.DedicatedBlockStorageClusters["+ i +"].DedicatedBlockStorageClusterName");
+				dedicatedBlockStorageCluster.DedicatedBlockStorageClusterId = _ctx.StringValue("DescribeDedicatedBlockStorageClusters.DedicatedBlockStorageClusters["+ i +"].DedicatedBlockStorageClusterId");
 
 				DescribeDedicatedBlockStorageClustersResponse.DescribeDedicatedBlockStorageClusters_DedicatedBlockStorageCluster.DescribeDedicatedBlockStorageClusters_DedicatedBlockStorageClusterCapacity dedicatedBlockStorageClusterCapacity = new DescribeDedicatedBlockStorageClustersResponse.DescribeDedicatedBlockStorageClusters_DedicatedBlockStorageCluster.DescribeDedicatedBlockStorageClusters_DedicatedBlockStorageClusterCapacity();
-				dedicatedBlockStorageClusterCapacity.AvailableCapacity = _ctx.LongValue("DescribeDedicatedBlockStorageClusters.DedicatedBlockStorageClusters["+ i +"].DedicatedBlockStorageClusterCapacity.AvailableCapacity");
 				dedicatedBlockStorageClusterCapacity.TotalCapacity = _ctx.LongValue("DescribeDedicatedBlockStorageClusters.DedicatedBlockStorageClusters["+ i +"].DedicatedBlockStorageClusterCapacity.TotalCapacity");
+				dedicatedBlockStorageClusterCapacity.AvailableCapacity = _ctx.LongValue("DescribeDedicatedBlockStorageClusters.DedicatedBlockStorageClusters["+ i +"].DedicatedBlockStorageClusterCapacity.AvailableCapacity");
 				dedicatedBlockStorageCluster.DedicatedBlockStorageClusterCapacity = dedicatedBlockStorageClusterCapacity;
 
 				describeDedicatedBlockStorageClustersResponse_dedicatedBlockStorageClusters.Add(dedicatedBlockStorageCluster);

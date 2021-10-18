@@ -39,24 +39,24 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DescribePhysicalConnectionsResponse.DescribePhysicalConnections_PhysicalConnectionType> describePhysicalConnectionsResponse_physicalConnectionSet = new List<DescribePhysicalConnectionsResponse.DescribePhysicalConnections_PhysicalConnectionType>();
 			for (int i = 0; i < _ctx.Length("DescribePhysicalConnections.PhysicalConnectionSet.Length"); i++) {
 				DescribePhysicalConnectionsResponse.DescribePhysicalConnections_PhysicalConnectionType physicalConnectionType = new DescribePhysicalConnectionsResponse.DescribePhysicalConnections_PhysicalConnectionType();
-				physicalConnectionType.PhysicalConnectionId = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].PhysicalConnectionId");
-				physicalConnectionType.AccessPointId = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].AccessPointId");
-				physicalConnectionType.Type = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].Type");
-				physicalConnectionType.Status = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].Status");
-				physicalConnectionType.BusinessStatus = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].BusinessStatus");
-				physicalConnectionType.CreationTime = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].CreationTime");
-				physicalConnectionType.EnabledTime = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].EnabledTime");
-				physicalConnectionType.LineOperator = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].LineOperator");
-				physicalConnectionType.Spec = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].Spec");
-				physicalConnectionType.PeerLocation = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].PeerLocation");
-				physicalConnectionType.PortType = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].PortType");
-				physicalConnectionType.RedundantPhysicalConnectionId = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].RedundantPhysicalConnectionId");
-				physicalConnectionType.Name = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].Name");
-				physicalConnectionType.Description = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].Description");
 				physicalConnectionType.AdLocation = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].AdLocation");
+				physicalConnectionType.CreationTime = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].CreationTime");
+				physicalConnectionType.Status = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].Status");
+				physicalConnectionType.Type = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].Type");
 				physicalConnectionType.PortNumber = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].PortNumber");
 				physicalConnectionType.CircuitCode = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].CircuitCode");
+				physicalConnectionType.Spec = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].Spec");
 				physicalConnectionType.Bandwidth = _ctx.LongValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].Bandwidth");
+				physicalConnectionType.Description = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].Description");
+				physicalConnectionType.PortType = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].PortType");
+				physicalConnectionType.EnabledTime = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].EnabledTime");
+				physicalConnectionType.BusinessStatus = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].BusinessStatus");
+				physicalConnectionType.LineOperator = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].LineOperator");
+				physicalConnectionType.Name = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].Name");
+				physicalConnectionType.RedundantPhysicalConnectionId = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].RedundantPhysicalConnectionId");
+				physicalConnectionType.PeerLocation = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].PeerLocation");
+				physicalConnectionType.AccessPointId = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].AccessPointId");
+				physicalConnectionType.PhysicalConnectionId = _ctx.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].PhysicalConnectionId");
 
 				describePhysicalConnectionsResponse_physicalConnectionSet.Add(physicalConnectionType);
 			}

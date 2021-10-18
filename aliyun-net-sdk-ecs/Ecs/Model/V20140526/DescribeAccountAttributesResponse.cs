@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -87,19 +87,31 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeAccountAttributes_ValueItem
 			{
 
+				private string diskCategory;
+
 				private string _value;
 
 				private string expiredTime;
 
 				private string zoneId;
 
-				private string instanceChargeType;
-
 				private string instanceType;
 
 				private int? count;
 
-				private string diskCategory;
+				private string instanceChargeType;
+
+				public string DiskCategory
+				{
+					get
+					{
+						return diskCategory;
+					}
+					set	
+					{
+						diskCategory = value;
+					}
+				}
 
 				public string _Value
 				{
@@ -137,18 +149,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public string InstanceChargeType
-				{
-					get
-					{
-						return instanceChargeType;
-					}
-					set	
-					{
-						instanceChargeType = value;
-					}
-				}
-
 				public string InstanceType
 				{
 					get
@@ -173,15 +173,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public string DiskCategory
+				public string InstanceChargeType
 				{
 					get
 					{
-						return diskCategory;
+						return instanceChargeType;
 					}
 					set	
 					{
-						diskCategory = value;
+						instanceChargeType = value;
 					}
 				}
 			}

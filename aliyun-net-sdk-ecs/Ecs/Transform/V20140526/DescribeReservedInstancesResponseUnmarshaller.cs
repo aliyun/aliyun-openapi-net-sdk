@@ -31,30 +31,30 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeReservedInstancesResponse describeReservedInstancesResponse = new DescribeReservedInstancesResponse();
 
 			describeReservedInstancesResponse.HttpResponse = _ctx.HttpResponse;
-			describeReservedInstancesResponse.RequestId = _ctx.StringValue("DescribeReservedInstances.RequestId");
-			describeReservedInstancesResponse.TotalCount = _ctx.IntegerValue("DescribeReservedInstances.TotalCount");
-			describeReservedInstancesResponse.PageNumber = _ctx.IntegerValue("DescribeReservedInstances.PageNumber");
 			describeReservedInstancesResponse.PageSize = _ctx.IntegerValue("DescribeReservedInstances.PageSize");
+			describeReservedInstancesResponse.RequestId = _ctx.StringValue("DescribeReservedInstances.RequestId");
+			describeReservedInstancesResponse.PageNumber = _ctx.IntegerValue("DescribeReservedInstances.PageNumber");
+			describeReservedInstancesResponse.TotalCount = _ctx.IntegerValue("DescribeReservedInstances.TotalCount");
 
 			List<DescribeReservedInstancesResponse.DescribeReservedInstances_ReservedInstance> describeReservedInstancesResponse_reservedInstances = new List<DescribeReservedInstancesResponse.DescribeReservedInstances_ReservedInstance>();
 			for (int i = 0; i < _ctx.Length("DescribeReservedInstances.ReservedInstances.Length"); i++) {
 				DescribeReservedInstancesResponse.DescribeReservedInstances_ReservedInstance reservedInstance = new DescribeReservedInstancesResponse.DescribeReservedInstances_ReservedInstance();
-				reservedInstance.ReservedInstanceId = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].ReservedInstanceId");
-				reservedInstance.RegionId = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].RegionId");
-				reservedInstance.ZoneId = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].ZoneId");
-				reservedInstance.ReservedInstanceName = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].ReservedInstanceName");
-				reservedInstance.Description = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].Description");
-				reservedInstance.InstanceType = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].InstanceType");
-				reservedInstance.Scope = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].Scope");
-				reservedInstance.OfferingType = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].OfferingType");
-				reservedInstance.Platform = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].Platform");
-				reservedInstance.InstanceAmount = _ctx.IntegerValue("DescribeReservedInstances.ReservedInstances["+ i +"].InstanceAmount");
 				reservedInstance.Status = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].Status");
 				reservedInstance.CreationTime = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].CreationTime");
-				reservedInstance.ExpiredTime = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].ExpiredTime");
+				reservedInstance.ReservedInstanceName = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].ReservedInstanceName");
+				reservedInstance.ReservedInstanceId = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].ReservedInstanceId");
+				reservedInstance.InstanceType = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].InstanceType");
+				reservedInstance.InstanceAmount = _ctx.IntegerValue("DescribeReservedInstances.ReservedInstances["+ i +"].InstanceAmount");
+				reservedInstance.RegionId = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].RegionId");
+				reservedInstance.OfferingType = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].OfferingType");
 				reservedInstance.StartTime = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].StartTime");
-				reservedInstance.ResourceGroupId = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].ResourceGroupId");
+				reservedInstance.Description = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].Description");
 				reservedInstance.AllocationStatus = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].AllocationStatus");
+				reservedInstance.ExpiredTime = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].ExpiredTime");
+				reservedInstance.ResourceGroupId = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].ResourceGroupId");
+				reservedInstance.ZoneId = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].ZoneId");
+				reservedInstance.Platform = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].Platform");
+				reservedInstance.Scope = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].Scope");
 
 				List<DescribeReservedInstancesResponse.DescribeReservedInstances_ReservedInstance.DescribeReservedInstances_OperationLock> reservedInstance_operationLocks = new List<DescribeReservedInstancesResponse.DescribeReservedInstances_ReservedInstance.DescribeReservedInstances_OperationLock>();
 				for (int j = 0; j < _ctx.Length("DescribeReservedInstances.ReservedInstances["+ i +"].OperationLocks.Length"); j++) {
@@ -68,8 +68,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				List<DescribeReservedInstancesResponse.DescribeReservedInstances_ReservedInstance.DescribeReservedInstances_Tag> reservedInstance_tags = new List<DescribeReservedInstancesResponse.DescribeReservedInstances_ReservedInstance.DescribeReservedInstances_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeReservedInstances.ReservedInstances["+ i +"].Tags.Length"); j++) {
 					DescribeReservedInstancesResponse.DescribeReservedInstances_ReservedInstance.DescribeReservedInstances_Tag tag = new DescribeReservedInstancesResponse.DescribeReservedInstances_ReservedInstance.DescribeReservedInstances_Tag();
-					tag.TagKey = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].Tags["+ j +"].TagKey");
 					tag.TagValue = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].Tags["+ j +"].TagValue");
+					tag.TagKey = _ctx.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].Tags["+ j +"].TagKey");
 
 					reservedInstance_tags.Add(tag);
 				}

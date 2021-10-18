@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeNetworkInterfacePermissionsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeNetworkInterfacePermissions_NetworkInterfacePermission> networkInterfacePermissions;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,39 +98,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeNetworkInterfacePermissions_NetworkInterfacePermission
 		{
 
-			private long? accountId;
-
-			private string serviceName;
+			private string permission;
 
 			private string networkInterfaceId;
 
+			private long? accountId;
+
 			private string networkInterfacePermissionId;
 
-			private string permission;
+			private string serviceName;
 
 			private string permissionState;
 
-			public long? AccountId
+			public string Permission
 			{
 				get
 				{
-					return accountId;
+					return permission;
 				}
 				set	
 				{
-					accountId = value;
-				}
-			}
-
-			public string ServiceName
-			{
-				get
-				{
-					return serviceName;
-				}
-				set	
-				{
-					serviceName = value;
+					permission = value;
 				}
 			}
 
@@ -146,6 +134,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public long? AccountId
+			{
+				get
+				{
+					return accountId;
+				}
+				set	
+				{
+					accountId = value;
+				}
+			}
+
 			public string NetworkInterfacePermissionId
 			{
 				get
@@ -158,15 +158,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string Permission
+			public string ServiceName
 			{
 				get
 				{
-					return permission;
+					return serviceName;
 				}
 				set	
 				{
-					permission = value;
+					serviceName = value;
 				}
 			}
 

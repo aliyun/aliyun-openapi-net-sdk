@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -27,15 +27,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string requestId;
 
-		private string regionId;
-
-		private int? totalCount;
-
 		private int? pageNumber;
 
 		private int? pageSize;
 
+		private int? totalCount;
+
 		private string imageId;
+
+		private string regionId;
 
 		private List<DescribeImageSharePermission_ShareGroup> shareGroups;
 
@@ -50,30 +50,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -101,6 +77,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
 		public string ImageId
 		{
 			get
@@ -110,6 +98,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				imageId = value;
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
 			}
 		}
 

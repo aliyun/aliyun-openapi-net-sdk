@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			InvokeCommandResponse invokeCommandResponse = new InvokeCommandResponse();
 
 			invokeCommandResponse.HttpResponse = _ctx.HttpResponse;
-			invokeCommandResponse.RequestId = _ctx.StringValue("InvokeCommand.RequestId");
 			invokeCommandResponse.InvokeId = _ctx.StringValue("InvokeCommand.InvokeId");
+			invokeCommandResponse.RequestId = _ctx.StringValue("InvokeCommand.RequestId");
         
 			return invokeCommandResponse;
         }

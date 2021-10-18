@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -29,6 +29,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<StartInstances_InstanceResponse> instanceResponses;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceResponses")]
 		public List<StartInstances_InstanceResponse> InstanceResponses
 		{
 			get
@@ -66,6 +68,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string previousStatus;
 
+			[JsonProperty(PropertyName = "Code")]
 			public string Code
 			{
 				get
@@ -78,6 +81,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "Message")]
 			public string Message
 			{
 				get
@@ -90,6 +94,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "InstanceId")]
 			public string InstanceId
 			{
 				get
@@ -102,6 +107,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "CurrentStatus")]
 			public string CurrentStatus
 			{
 				get
@@ -114,6 +120,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			[JsonProperty(PropertyName = "PreviousStatus")]
 			public string PreviousStatus
 			{
 				get

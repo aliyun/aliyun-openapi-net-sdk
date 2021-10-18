@@ -34,19 +34,19 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			deregisterManagedInstanceResponse.RequestId = _ctx.StringValue("DeregisterManagedInstance.RequestId");
 
 			DeregisterManagedInstanceResponse.DeregisterManagedInstance_Instance instance = new DeregisterManagedInstanceResponse.DeregisterManagedInstance_Instance();
-			instance.InstanceId = _ctx.StringValue("DeregisterManagedInstance.Instance.InstanceId");
-			instance.InstanceName = _ctx.StringValue("DeregisterManagedInstance.Instance.InstanceName");
-			instance.ActivationId = _ctx.StringValue("DeregisterManagedInstance.Instance.ActivationId");
-			instance.Hostname = _ctx.StringValue("DeregisterManagedInstance.Instance.Hostname");
-			instance.MachineId = _ctx.StringValue("DeregisterManagedInstance.Instance.MachineId");
-			instance.OsType = _ctx.StringValue("DeregisterManagedInstance.Instance.OsType");
-			instance.OsVersion = _ctx.StringValue("DeregisterManagedInstance.Instance.OsVersion");
-			instance.IntranetIp = _ctx.StringValue("DeregisterManagedInstance.Instance.IntranetIp");
+			instance.LastInvokedTime = _ctx.StringValue("DeregisterManagedInstance.Instance.LastInvokedTime");
 			instance.InternetIp = _ctx.StringValue("DeregisterManagedInstance.Instance.InternetIp");
+			instance.Hostname = _ctx.StringValue("DeregisterManagedInstance.Instance.Hostname");
+			instance.InstanceId = _ctx.StringValue("DeregisterManagedInstance.Instance.InstanceId");
+			instance.ActivationId = _ctx.StringValue("DeregisterManagedInstance.Instance.ActivationId");
+			instance.IntranetIp = _ctx.StringValue("DeregisterManagedInstance.Instance.IntranetIp");
 			instance.AgentVersion = _ctx.StringValue("DeregisterManagedInstance.Instance.AgentVersion");
 			instance.RegistrationTime = _ctx.StringValue("DeregisterManagedInstance.Instance.RegistrationTime");
+			instance.InstanceName = _ctx.StringValue("DeregisterManagedInstance.Instance.InstanceName");
+			instance.OsType = _ctx.StringValue("DeregisterManagedInstance.Instance.OsType");
+			instance.OsVersion = _ctx.StringValue("DeregisterManagedInstance.Instance.OsVersion");
 			instance.InvocationCount = _ctx.LongValue("DeregisterManagedInstance.Instance.InvocationCount");
-			instance.LastInvokedTime = _ctx.StringValue("DeregisterManagedInstance.Instance.LastInvokedTime");
+			instance.MachineId = _ctx.StringValue("DeregisterManagedInstance.Instance.MachineId");
 			deregisterManagedInstanceResponse.Instance = instance;
         
 			return deregisterManagedInstanceResponse;

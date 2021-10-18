@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			GetInstanceConsoleOutputResponse getInstanceConsoleOutputResponse = new GetInstanceConsoleOutputResponse();
 
 			getInstanceConsoleOutputResponse.HttpResponse = _ctx.HttpResponse;
+			getInstanceConsoleOutputResponse.LastUpdateTime = _ctx.StringValue("GetInstanceConsoleOutput.LastUpdateTime");
 			getInstanceConsoleOutputResponse.RequestId = _ctx.StringValue("GetInstanceConsoleOutput.RequestId");
 			getInstanceConsoleOutputResponse.InstanceId = _ctx.StringValue("GetInstanceConsoleOutput.InstanceId");
 			getInstanceConsoleOutputResponse.ConsoleOutput = _ctx.StringValue("GetInstanceConsoleOutput.ConsoleOutput");
-			getInstanceConsoleOutputResponse.LastUpdateTime = _ctx.StringValue("GetInstanceConsoleOutput.LastUpdateTime");
         
 			return getInstanceConsoleOutputResponse;
         }

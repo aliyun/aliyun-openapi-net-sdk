@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,51 +25,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeSecurityGroupsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string regionId;
-
-		private int? totalCount;
+		private int? pageSize;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private string requestId;
+
+		private int? totalCount;
+
+		private string regionId;
+
+		private string nextToken;
 
 		private List<DescribeSecurityGroups_SecurityGroup> securityGroups;
 
-		public string RequestId
+		public int? PageSize
 		{
 			get
 			{
-				return requestId;
+				return pageSize;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
+				pageSize = value;
 			}
 		}
 
@@ -85,15 +63,51 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
+				requestId = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
 			}
 		}
 
@@ -112,63 +126,39 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeSecurityGroups_SecurityGroup
 		{
 
-			private string securityGroupId;
-
-			private string description;
-
-			private string securityGroupName;
+			private string creationTime;
 
 			private string vpcId;
 
-			private string creationTime;
+			private bool? serviceManaged;
+
+			private string description;
+
+			private string securityGroupId;
+
+			private string resourceGroupId;
+
+			private string securityGroupName;
+
+			private int? ecsCount;
+
+			private long? serviceID;
 
 			private string securityGroupType;
 
 			private int? availableInstanceAmount;
 
-			private int? ecsCount;
-
-			private string resourceGroupId;
-
-			private long? serviceID;
-
-			private bool? serviceManaged;
-
 			private List<DescribeSecurityGroups_Tag> tags;
 
-			public string SecurityGroupId
+			public string CreationTime
 			{
 				get
 				{
-					return securityGroupId;
+					return creationTime;
 				}
 				set	
 				{
-					securityGroupId = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string SecurityGroupName
-			{
-				get
-				{
-					return securityGroupName;
-				}
-				set	
-				{
-					securityGroupName = value;
+					creationTime = value;
 				}
 			}
 
@@ -184,15 +174,87 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string CreationTime
+			public bool? ServiceManaged
 			{
 				get
 				{
-					return creationTime;
+					return serviceManaged;
 				}
 				set	
 				{
-					creationTime = value;
+					serviceManaged = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string SecurityGroupId
+			{
+				get
+				{
+					return securityGroupId;
+				}
+				set	
+				{
+					securityGroupId = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string SecurityGroupName
+			{
+				get
+				{
+					return securityGroupName;
+				}
+				set	
+				{
+					securityGroupName = value;
+				}
+			}
+
+			public int? EcsCount
+			{
+				get
+				{
+					return ecsCount;
+				}
+				set	
+				{
+					ecsCount = value;
+				}
+			}
+
+			public long? ServiceID
+			{
+				get
+				{
+					return serviceID;
+				}
+				set	
+				{
+					serviceID = value;
 				}
 			}
 
@@ -220,54 +282,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public int? EcsCount
-			{
-				get
-				{
-					return ecsCount;
-				}
-				set	
-				{
-					ecsCount = value;
-				}
-			}
-
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
-				}
-			}
-
-			public long? ServiceID
-			{
-				get
-				{
-					return serviceID;
-				}
-				set	
-				{
-					serviceID = value;
-				}
-			}
-
-			public bool? ServiceManaged
-			{
-				get
-				{
-					return serviceManaged;
-				}
-				set	
-				{
-					serviceManaged = value;
-				}
-			}
-
 			public List<DescribeSecurityGroups_Tag> Tags
 			{
 				get
@@ -283,21 +297,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeSecurityGroups_Tag
 			{
 
-				private string tagKey;
-
 				private string tagValue;
 
-				public string TagKey
-				{
-					get
-					{
-						return tagKey;
-					}
-					set	
-					{
-						tagKey = value;
-					}
-				}
+				private string tagKey;
 
 				public string TagValue
 				{
@@ -308,6 +310,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						tagValue = value;
+					}
+				}
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
 					}
 				}
 			}

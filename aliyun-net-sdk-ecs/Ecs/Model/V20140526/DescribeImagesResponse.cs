@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -157,6 +157,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			private string productCode;
 
 			private string architecture;
+
+			private bool? isPublic;
+
+			private long? imageOwnerId;
 
 			private List<DescribeImages_DiskDeviceMapping> diskDeviceMappings;
 
@@ -435,6 +439,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					architecture = value;
+				}
+			}
+
+			public bool? IsPublic
+			{
+				get
+				{
+					return isPublic;
+				}
+				set	
+				{
+					isPublic = value;
+				}
+			}
+
+			public long? ImageOwnerId
+			{
+				get
+				{
+					return imageOwnerId;
+				}
+				set	
+				{
+					imageOwnerId = value;
 				}
 			}
 

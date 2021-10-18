@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateCapacityReservationResponse createCapacityReservationResponse = new CreateCapacityReservationResponse();
 
 			createCapacityReservationResponse.HttpResponse = _ctx.HttpResponse;
-			createCapacityReservationResponse.RequestId = _ctx.StringValue("CreateCapacityReservation.RequestId");
 			createCapacityReservationResponse.PrivatePoolOptionsId = _ctx.StringValue("CreateCapacityReservation.PrivatePoolOptionsId");
+			createCapacityReservationResponse.RequestId = _ctx.StringValue("CreateCapacityReservation.RequestId");
         
 			return createCapacityReservationResponse;
         }

@@ -34,11 +34,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			createNetworkInterfacePermissionResponse.RequestId = _ctx.StringValue("CreateNetworkInterfacePermission.RequestId");
 
 			CreateNetworkInterfacePermissionResponse.CreateNetworkInterfacePermission_NetworkInterfacePermission networkInterfacePermission = new CreateNetworkInterfacePermissionResponse.CreateNetworkInterfacePermission_NetworkInterfacePermission();
-			networkInterfacePermission.AccountId = _ctx.LongValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.AccountId");
-			networkInterfacePermission.ServiceName = _ctx.StringValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.ServiceName");
-			networkInterfacePermission.NetworkInterfaceId = _ctx.StringValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.NetworkInterfaceId");
-			networkInterfacePermission.NetworkInterfacePermissionId = _ctx.StringValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.NetworkInterfacePermissionId");
 			networkInterfacePermission.Permission = _ctx.StringValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.Permission");
+			networkInterfacePermission.NetworkInterfaceId = _ctx.StringValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.NetworkInterfaceId");
+			networkInterfacePermission.AccountId = _ctx.LongValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.AccountId");
+			networkInterfacePermission.NetworkInterfacePermissionId = _ctx.StringValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.NetworkInterfacePermissionId");
+			networkInterfacePermission.ServiceName = _ctx.StringValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.ServiceName");
 			networkInterfacePermission.PermissionState = _ctx.StringValue("CreateNetworkInterfacePermission.NetworkInterfacePermission.PermissionState");
 			createNetworkInterfacePermissionResponse.NetworkInterfacePermission = networkInterfacePermission;
         

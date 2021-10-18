@@ -36,8 +36,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DescribeInstanceTopologyResponse.DescribeInstanceTopology_Topology> describeInstanceTopologyResponse_topologys = new List<DescribeInstanceTopologyResponse.DescribeInstanceTopology_Topology>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceTopology.Topologys.Length"); i++) {
 				DescribeInstanceTopologyResponse.DescribeInstanceTopology_Topology topology = new DescribeInstanceTopologyResponse.DescribeInstanceTopology_Topology();
-				topology.InstanceId = _ctx.StringValue("DescribeInstanceTopology.Topologys["+ i +"].InstanceId");
 				topology.HostId = _ctx.StringValue("DescribeInstanceTopology.Topologys["+ i +"].HostId");
+				topology.InstanceId = _ctx.StringValue("DescribeInstanceTopology.Topologys["+ i +"].InstanceId");
 
 				describeInstanceTopologyResponse_topologys.Add(topology);
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeImagePipelinesResponse : AcsResponse
 	{
 
+		private string nextToken;
+
 		private string requestId;
 
 		private int? totalCount;
 
-		private string nextToken;
-
 		private int? maxResults;
 
 		private List<DescribeImagePipelines_ImagePipelineSet> imagePipeline;
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				totalCount = value;
-			}
-		}
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
 			}
 		}
 
@@ -100,37 +100,37 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string creationTime;
 
-			private string imagePipelineId;
-
-			private string name;
-
-			private string description;
-
-			private string baseImageType;
-
-			private string baseImage;
-
-			private string imageName;
-
-			private string vSwitchId;
+			private bool? deleteInstanceOnFailure;
 
 			private string instanceType;
 
 			private int? internetMaxBandwidthOut;
 
+			private string imagePipelineId;
+
+			private string vSwitchId;
+
 			private int? systemDiskSize;
 
-			private bool? deleteInstanceOnFailure;
+			private string description;
 
-			private string buildContent;
+			private string baseImage;
 
 			private string resourceGroupId;
 
+			private string imageName;
+
+			private string baseImageType;
+
+			private string name;
+
+			private string buildContent;
+
 			private List<DescribeImagePipelines_Tag> tags;
 
-			private List<string> addAccounts;
-
 			private List<string> toRegionIds;
+
+			private List<string> addAccounts;
 
 			public string CreationTime
 			{
@@ -144,87 +144,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string ImagePipelineId
+			public bool? DeleteInstanceOnFailure
 			{
 				get
 				{
-					return imagePipelineId;
+					return deleteInstanceOnFailure;
 				}
 				set	
 				{
-					imagePipelineId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string BaseImageType
-			{
-				get
-				{
-					return baseImageType;
-				}
-				set	
-				{
-					baseImageType = value;
-				}
-			}
-
-			public string BaseImage
-			{
-				get
-				{
-					return baseImage;
-				}
-				set	
-				{
-					baseImage = value;
-				}
-			}
-
-			public string ImageName
-			{
-				get
-				{
-					return imageName;
-				}
-				set	
-				{
-					imageName = value;
-				}
-			}
-
-			public string VSwitchId
-			{
-				get
-				{
-					return vSwitchId;
-				}
-				set	
-				{
-					vSwitchId = value;
+					deleteInstanceOnFailure = value;
 				}
 			}
 
@@ -252,6 +180,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string ImagePipelineId
+			{
+				get
+				{
+					return imagePipelineId;
+				}
+				set	
+				{
+					imagePipelineId = value;
+				}
+			}
+
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
 			public int? SystemDiskSize
 			{
 				get
@@ -264,27 +216,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public bool? DeleteInstanceOnFailure
+			public string Description
 			{
 				get
 				{
-					return deleteInstanceOnFailure;
+					return description;
 				}
 				set	
 				{
-					deleteInstanceOnFailure = value;
+					description = value;
 				}
 			}
 
-			public string BuildContent
+			public string BaseImage
 			{
 				get
 				{
-					return buildContent;
+					return baseImage;
 				}
 				set	
 				{
-					buildContent = value;
+					baseImage = value;
 				}
 			}
 
@@ -300,6 +252,54 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string ImageName
+			{
+				get
+				{
+					return imageName;
+				}
+				set	
+				{
+					imageName = value;
+				}
+			}
+
+			public string BaseImageType
+			{
+				get
+				{
+					return baseImageType;
+				}
+				set	
+				{
+					baseImageType = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string BuildContent
+			{
+				get
+				{
+					return buildContent;
+				}
+				set	
+				{
+					buildContent = value;
+				}
+			}
+
 			public List<DescribeImagePipelines_Tag> Tags
 			{
 				get
@@ -309,18 +309,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					tags = value;
-				}
-			}
-
-			public List<string> AddAccounts
-			{
-				get
-				{
-					return addAccounts;
-				}
-				set	
-				{
-					addAccounts = value;
 				}
 			}
 
@@ -336,24 +324,24 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public List<string> AddAccounts
+			{
+				get
+				{
+					return addAccounts;
+				}
+				set	
+				{
+					addAccounts = value;
+				}
+			}
+
 			public class DescribeImagePipelines_Tag
 			{
 
-				private string tagKey;
-
 				private string tagValue;
 
-				public string TagKey
-				{
-					get
-					{
-						return tagKey;
-					}
-					set	
-					{
-						tagKey = value;
-					}
-				}
+				private string tagKey;
 
 				public string TagValue
 				{
@@ -364,6 +352,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						tagValue = value;
+					}
+				}
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
 					}
 				}
 			}

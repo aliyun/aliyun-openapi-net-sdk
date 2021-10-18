@@ -51,7 +51,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				disk.StorageSetPartitionNumber = _ctx.IntegerValue("DescribeDisks.Disks["+ i +"].StorageSetPartitionNumber");
 				disk.DiskId = _ctx.StringValue("DescribeDisks.Disks["+ i +"].DiskId");
 				disk.DeleteAutoSnapshot = _ctx.BooleanValue("DescribeDisks.Disks["+ i +"].DeleteAutoSnapshot");
-				disk.DedicatedBlockStorageClusterId = _ctx.StringValue("DescribeDisks.Disks["+ i +"].DedicatedBlockStorageClusterId");
+				disk.StorageClusterId = _ctx.StringValue("DescribeDisks.Disks["+ i +"].StorageClusterId");
 				disk.Encrypted = _ctx.BooleanValue("DescribeDisks.Disks["+ i +"].Encrypted");
 				disk.IOPSRead = _ctx.IntegerValue("DescribeDisks.Disks["+ i +"].IOPSRead");
 				disk.MountInstanceNum = _ctx.IntegerValue("DescribeDisks.Disks["+ i +"].MountInstanceNum");

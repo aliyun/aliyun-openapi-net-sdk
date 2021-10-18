@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -33,6 +33,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<string> instanceIdSets;
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "OrderId")]
 		public string OrderId
 		{
 			get
@@ -57,6 +59,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "TradePrice")]
 		public float? TradePrice
 		{
 			get
@@ -69,6 +72,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		[JsonProperty(PropertyName = "InstanceIdSets")]
 		public List<string> InstanceIdSets
 		{
 			get

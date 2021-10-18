@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string requestId;
 
-		private string activationId;
-
 		private string activationCode;
+
+		private string activationId;
 
 		public string RequestId
 		{
@@ -43,18 +43,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ActivationId
-		{
-			get
-			{
-				return activationId;
-			}
-			set	
-			{
-				activationId = value;
-			}
-		}
-
 		public string ActivationCode
 		{
 			get
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				activationCode = value;
+			}
+		}
+
+		public string ActivationId
+		{
+			get
+			{
+				return activationId;
+			}
+			set	
+			{
+				activationId = value;
 			}
 		}
 	}

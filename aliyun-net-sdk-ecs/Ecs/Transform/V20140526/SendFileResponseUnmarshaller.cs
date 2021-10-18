@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			SendFileResponse sendFileResponse = new SendFileResponse();
 
 			sendFileResponse.HttpResponse = _ctx.HttpResponse;
-			sendFileResponse.RequestId = _ctx.StringValue("SendFile.RequestId");
 			sendFileResponse.InvokeId = _ctx.StringValue("SendFile.InvokeId");
+			sendFileResponse.RequestId = _ctx.StringValue("SendFile.RequestId");
         
 			return sendFileResponse;
         }

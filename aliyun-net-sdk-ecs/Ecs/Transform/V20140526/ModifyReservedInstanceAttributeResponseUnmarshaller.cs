@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			ModifyReservedInstanceAttributeResponse modifyReservedInstanceAttributeResponse = new ModifyReservedInstanceAttributeResponse();
 
 			modifyReservedInstanceAttributeResponse.HttpResponse = _ctx.HttpResponse;
-			modifyReservedInstanceAttributeResponse.RequestId = _ctx.StringValue("ModifyReservedInstanceAttribute.RequestId");
+			modifyReservedInstanceAttributeResponse.HttpStatusCode = _ctx.IntegerValue("ModifyReservedInstanceAttribute.HttpStatusCode");
 			modifyReservedInstanceAttributeResponse.Code = _ctx.StringValue("ModifyReservedInstanceAttribute.Code");
 			modifyReservedInstanceAttributeResponse.Message = _ctx.StringValue("ModifyReservedInstanceAttribute.Message");
-			modifyReservedInstanceAttributeResponse.HttpStatusCode = _ctx.IntegerValue("ModifyReservedInstanceAttribute.HttpStatusCode");
+			modifyReservedInstanceAttributeResponse.RequestId = _ctx.StringValue("ModifyReservedInstanceAttribute.RequestId");
         
 			return modifyReservedInstanceAttributeResponse;
         }

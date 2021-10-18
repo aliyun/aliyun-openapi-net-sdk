@@ -58,7 +58,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string prefixListName;
 
-		private List<Entry> entrys = new List<Entry>(){ };
+		private List<string> entrys = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -177,7 +177,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Entry> Entrys
+		public List<string> Entrys
 		{
 			get
 			{
@@ -187,10 +187,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				entrys = value;
-				for (int i = 0; i < entrys.Count; i++)
+				if(entrys != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Entry." + (i + 1) + ".Cidr", entrys[i].Cidr);
-					DictionaryUtil.Add(QueryParameters,"Entry." + (i + 1) + ".Description", entrys[i].Description);
+					for (int depth1 = 0; depth1 < entrys.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Entry." + (depth1 + 1), entrys[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Entry." + (depth1 + 1), entrys[depth1]);
+					}
 				}
 			}
 		}
@@ -198,21 +201,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class Entry
 		{
 
-			private string cidr;
-
 			private string description;
 
-			public string Cidr
-			{
-				get
-				{
-					return cidr;
-				}
-				set	
-				{
-					cidr = value;
-				}
-			}
+			private string cidr;
 
 			public string Description
 			{
@@ -223,6 +214,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string Cidr
+			{
+				get
+				{
+					return cidr;
+				}
+				set	
+				{
+					cidr = value;
 				}
 			}
 		}

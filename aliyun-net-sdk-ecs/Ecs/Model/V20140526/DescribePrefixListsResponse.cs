@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribePrefixListsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private List<DescribePrefixLists_PrefixList> prefixLists;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribePrefixLists_PrefixList> prefixLists;
 
 		public string NextToken
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,53 +70,41 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribePrefixLists_PrefixList
 		{
 
-			private string prefixListId;
+			private string creationTime;
 
-			private string prefixListName;
-
-			private string addressFamily;
+			private int? associationCount;
 
 			private int? maxEntries;
 
 			private string description;
 
-			private string creationTime;
+			private string addressFamily;
 
-			private int? associationCount;
+			private string prefixListName;
 
-			public string PrefixListId
+			private string prefixListId;
+
+			public string CreationTime
 			{
 				get
 				{
-					return prefixListId;
+					return creationTime;
 				}
 				set	
 				{
-					prefixListId = value;
+					creationTime = value;
 				}
 			}
 
-			public string PrefixListName
+			public int? AssociationCount
 			{
 				get
 				{
-					return prefixListName;
+					return associationCount;
 				}
 				set	
 				{
-					prefixListName = value;
-				}
-			}
-
-			public string AddressFamily
-			{
-				get
-				{
-					return addressFamily;
-				}
-				set	
-				{
-					addressFamily = value;
+					associationCount = value;
 				}
 			}
 
@@ -144,27 +132,39 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string CreationTime
+			public string AddressFamily
 			{
 				get
 				{
-					return creationTime;
+					return addressFamily;
 				}
 				set	
 				{
-					creationTime = value;
+					addressFamily = value;
 				}
 			}
 
-			public int? AssociationCount
+			public string PrefixListName
 			{
 				get
 				{
-					return associationCount;
+					return prefixListName;
 				}
 				set	
 				{
-					associationCount = value;
+					prefixListName = value;
+				}
+			}
+
+			public string PrefixListId
+			{
+				get
+				{
+					return prefixListId;
+				}
+				set	
+				{
+					prefixListId = value;
 				}
 			}
 		}

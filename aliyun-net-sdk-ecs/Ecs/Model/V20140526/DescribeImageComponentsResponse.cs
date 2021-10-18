@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeImageComponentsResponse : AcsResponse
 	{
 
+		private string nextToken;
+
 		private string requestId;
 
 		private int? totalCount;
 
-		private string nextToken;
-
 		private int? maxResults;
 
 		private List<DescribeImageComponents_ImageComponentSet> imageComponent;
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -56,18 +68,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				totalCount = value;
-			}
-		}
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
 			}
 		}
 
@@ -100,19 +100,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string creationTime;
 
-			private string imageComponentId;
-
-			private string name;
-
 			private string description;
 
 			private string systemType;
 
+			private string imageComponentId;
+
 			private string componentType;
+
+			private string resourceGroupId;
+
+			private string name;
 
 			private string content;
 
-			private string resourceGroupId;
+			private string owner;
 
 			private List<DescribeImageComponents_Tag> tags;
 
@@ -125,30 +127,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					creationTime = value;
-				}
-			}
-
-			public string ImageComponentId
-			{
-				get
-				{
-					return imageComponentId;
-				}
-				set	
-				{
-					imageComponentId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
 				}
 			}
 
@@ -176,6 +154,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string ImageComponentId
+			{
+				get
+				{
+					return imageComponentId;
+				}
+				set	
+				{
+					imageComponentId = value;
+				}
+			}
+
 			public string ComponentType
 			{
 				get
@@ -185,6 +175,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					componentType = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 
@@ -200,15 +214,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string ResourceGroupId
+			public string Owner
 			{
 				get
 				{
-					return resourceGroupId;
+					return owner;
 				}
 				set	
 				{
-					resourceGroupId = value;
+					owner = value;
 				}
 			}
 
@@ -227,21 +241,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeImageComponents_Tag
 			{
 
-				private string tagKey;
-
 				private string tagValue;
 
-				public string TagKey
-				{
-					get
-					{
-						return tagKey;
-					}
-					set	
-					{
-						tagKey = value;
-					}
-				}
+				private string tagKey;
 
 				public string TagValue
 				{
@@ -252,6 +254,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						tagValue = value;
+					}
+				}
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
 					}
 				}
 			}

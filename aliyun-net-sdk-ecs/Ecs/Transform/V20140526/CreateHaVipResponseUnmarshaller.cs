@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateHaVipResponse createHaVipResponse = new CreateHaVipResponse();
 
 			createHaVipResponse.HttpResponse = _ctx.HttpResponse;
-			createHaVipResponse.RequestId = _ctx.StringValue("CreateHaVip.RequestId");
 			createHaVipResponse.HaVipId = _ctx.StringValue("CreateHaVip.HaVipId");
+			createHaVipResponse.RequestId = _ctx.StringValue("CreateHaVip.RequestId");
         
 			return createHaVipResponse;
         }

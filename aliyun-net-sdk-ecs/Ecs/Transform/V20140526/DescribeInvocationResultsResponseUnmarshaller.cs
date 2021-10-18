@@ -41,20 +41,20 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DescribeInvocationResultsResponse.DescribeInvocationResults_Invocation.DescribeInvocationResults_InvocationResult> invocation_invocationResults = new List<DescribeInvocationResultsResponse.DescribeInvocationResults_Invocation.DescribeInvocationResults_InvocationResult>();
 			for (int i = 0; i < _ctx.Length("DescribeInvocationResults.Invocation.InvocationResults.Length"); i++) {
 				DescribeInvocationResultsResponse.DescribeInvocationResults_Invocation.DescribeInvocationResults_InvocationResult invocationResult = new DescribeInvocationResultsResponse.DescribeInvocationResults_Invocation.DescribeInvocationResults_InvocationResult();
-				invocationResult.CommandId = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].CommandId");
-				invocationResult.InvokeId = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].InvokeId");
-				invocationResult.InstanceId = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].InstanceId");
-				invocationResult.StartTime = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].StartTime");
-				invocationResult.StopTime = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].StopTime");
-				invocationResult.FinishedTime = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].FinishedTime");
+				invocationResult.InvocationStatus = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].InvocationStatus");
 				invocationResult.Repeats = _ctx.IntegerValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].Repeats");
+				invocationResult.CommandId = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].CommandId");
+				invocationResult.InstanceId = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].InstanceId");
 				invocationResult.Output = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].Output");
 				invocationResult.Dropped = _ctx.IntegerValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].Dropped");
-				invocationResult.InvokeRecordStatus = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].InvokeRecordStatus");
-				invocationResult.InvocationStatus = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].InvocationStatus");
+				invocationResult.StopTime = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].StopTime");
 				invocationResult.ExitCode = _ctx.LongValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].ExitCode");
-				invocationResult.ErrorCode = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].ErrorCode");
+				invocationResult.StartTime = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].StartTime");
 				invocationResult.ErrorInfo = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].ErrorInfo");
+				invocationResult.ErrorCode = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].ErrorCode");
+				invocationResult.FinishedTime = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].FinishedTime");
+				invocationResult.InvokeId = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].InvokeId");
+				invocationResult.InvokeRecordStatus = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].InvokeRecordStatus");
 				invocationResult.Username = _ctx.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].Username");
 
 				invocation_invocationResults.Add(invocationResult);

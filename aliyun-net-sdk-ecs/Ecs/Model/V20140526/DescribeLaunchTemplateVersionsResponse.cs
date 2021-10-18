@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeLaunchTemplateVersionsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeLaunchTemplateVersions_LaunchTemplateVersionSet> launchTemplateVersionSets;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,59 +98,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeLaunchTemplateVersions_LaunchTemplateVersionSet
 		{
 
-			private string createTime;
-
-			private string modifiedTime;
-
-			private string launchTemplateId;
-
 			private string launchTemplateName;
 
 			private bool? defaultVersion;
 
 			private long? versionNumber;
 
-			private string versionDescription;
+			private string modifiedTime;
+
+			private string launchTemplateId;
+
+			private string createTime;
 
 			private string createdBy;
 
+			private string versionDescription;
+
 			private DescribeLaunchTemplateVersions_LaunchTemplateData launchTemplateData;
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string ModifiedTime
-			{
-				get
-				{
-					return modifiedTime;
-				}
-				set	
-				{
-					modifiedTime = value;
-				}
-			}
-
-			public string LaunchTemplateId
-			{
-				get
-				{
-					return launchTemplateId;
-				}
-				set	
-				{
-					launchTemplateId = value;
-				}
-			}
 
 			public string LaunchTemplateName
 			{
@@ -188,15 +152,39 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string VersionDescription
+			public string ModifiedTime
 			{
 				get
 				{
-					return versionDescription;
+					return modifiedTime;
 				}
 				set	
 				{
-					versionDescription = value;
+					modifiedTime = value;
+				}
+			}
+
+			public string LaunchTemplateId
+			{
+				get
+				{
+					return launchTemplateId;
+				}
+				set	
+				{
+					launchTemplateId = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
 				}
 			}
 
@@ -209,6 +197,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					createdBy = value;
+				}
+			}
+
+			public string VersionDescription
+			{
+				get
+				{
+					return versionDescription;
+				}
+				set	
+				{
+					versionDescription = value;
 				}
 			}
 
@@ -227,79 +227,79 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeLaunchTemplateVersions_LaunchTemplateData
 			{
 
-				private string imageId;
-
-				private string imageOwnerAlias;
-
-				private bool? passwordInherit;
-
-				private string instanceType;
-
-				private string securityGroupId;
+				private string deploymentSetId;
 
 				private string vpcId;
 
-				private string vSwitchId;
-
-				private string instanceName;
-
-				private string description;
-
-				private int? internetMaxBandwidthIn;
-
-				private int? internetMaxBandwidthOut;
-
-				private string hostName;
-
-				private string zoneId;
-
-				private int? systemDiskSize;
-
-				private string systemDiskCategory;
-
-				private string systemDiskDiskName;
-
-				private string systemDiskDescription;
-
-				private int? systemDiskIops;
-
 				private string systemDiskPerformanceLevel;
-
-				private bool? systemDiskDeleteWithInstance;
-
-				private string ioOptimized;
-
-				private string instanceChargeType;
-
-				private int? period;
-
-				private string internetChargeType;
-
-				private bool? enableVmOsConfig;
-
-				private string networkType;
-
-				private string userData;
 
 				private string keyPairName;
 
-				private string ramRoleName;
+				private string securityGroupId;
 
-				private string autoReleaseTime;
+				private string networkType;
 
 				private string spotStrategy;
 
-				private float? spotPriceLimit;
+				private bool? enableVmOsConfig;
+
+				private string description;
 
 				private int? spotDuration;
 
-				private string resourceGroupId;
+				private string instanceName;
 
 				private string securityEnhancementStrategy;
 
+				private string userData;
+
+				private string systemDiskDiskName;
+
+				private int? systemDiskSize;
+
+				private float? spotPriceLimit;
+
+				private bool? passwordInherit;
+
 				private string privateIpAddress;
 
-				private string deploymentSetId;
+				private string imageId;
+
+				private bool? systemDiskDeleteWithInstance;
+
+				private string systemDiskCategory;
+
+				private string autoReleaseTime;
+
+				private string systemDiskDescription;
+
+				private string imageOwnerAlias;
+
+				private string hostName;
+
+				private int? systemDiskIops;
+
+				private int? internetMaxBandwidthOut;
+
+				private int? internetMaxBandwidthIn;
+
+				private string instanceType;
+
+				private int? period;
+
+				private string instanceChargeType;
+
+				private string ioOptimized;
+
+				private string ramRoleName;
+
+				private string vSwitchId;
+
+				private string resourceGroupId;
+
+				private string internetChargeType;
+
+				private string zoneId;
 
 				private List<DescribeLaunchTemplateVersions_DataDisk> dataDisks;
 
@@ -309,63 +309,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private List<string> securityGroupIds;
 
-				public string ImageId
+				public string DeploymentSetId
 				{
 					get
 					{
-						return imageId;
+						return deploymentSetId;
 					}
 					set	
 					{
-						imageId = value;
-					}
-				}
-
-				public string ImageOwnerAlias
-				{
-					get
-					{
-						return imageOwnerAlias;
-					}
-					set	
-					{
-						imageOwnerAlias = value;
-					}
-				}
-
-				public bool? PasswordInherit
-				{
-					get
-					{
-						return passwordInherit;
-					}
-					set	
-					{
-						passwordInherit = value;
-					}
-				}
-
-				public string InstanceType
-				{
-					get
-					{
-						return instanceType;
-					}
-					set	
-					{
-						instanceType = value;
-					}
-				}
-
-				public string SecurityGroupId
-				{
-					get
-					{
-						return securityGroupId;
-					}
-					set	
-					{
-						securityGroupId = value;
+						deploymentSetId = value;
 					}
 				}
 
@@ -381,150 +333,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public string VSwitchId
-				{
-					get
-					{
-						return vSwitchId;
-					}
-					set	
-					{
-						vSwitchId = value;
-					}
-				}
-
-				public string InstanceName
-				{
-					get
-					{
-						return instanceName;
-					}
-					set	
-					{
-						instanceName = value;
-					}
-				}
-
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
-
-				public int? InternetMaxBandwidthIn
-				{
-					get
-					{
-						return internetMaxBandwidthIn;
-					}
-					set	
-					{
-						internetMaxBandwidthIn = value;
-					}
-				}
-
-				public int? InternetMaxBandwidthOut
-				{
-					get
-					{
-						return internetMaxBandwidthOut;
-					}
-					set	
-					{
-						internetMaxBandwidthOut = value;
-					}
-				}
-
-				public string HostName
-				{
-					get
-					{
-						return hostName;
-					}
-					set	
-					{
-						hostName = value;
-					}
-				}
-
-				public string ZoneId
-				{
-					get
-					{
-						return zoneId;
-					}
-					set	
-					{
-						zoneId = value;
-					}
-				}
-
-				public int? SystemDiskSize
-				{
-					get
-					{
-						return systemDiskSize;
-					}
-					set	
-					{
-						systemDiskSize = value;
-					}
-				}
-
-				public string SystemDiskCategory
-				{
-					get
-					{
-						return systemDiskCategory;
-					}
-					set	
-					{
-						systemDiskCategory = value;
-					}
-				}
-
-				public string SystemDiskDiskName
-				{
-					get
-					{
-						return systemDiskDiskName;
-					}
-					set	
-					{
-						systemDiskDiskName = value;
-					}
-				}
-
-				public string SystemDiskDescription
-				{
-					get
-					{
-						return systemDiskDescription;
-					}
-					set	
-					{
-						systemDiskDescription = value;
-					}
-				}
-
-				public int? SystemDiskIops
-				{
-					get
-					{
-						return systemDiskIops;
-					}
-					set	
-					{
-						systemDiskIops = value;
-					}
-				}
-
 				public string SystemDiskPerformanceLevel
 				{
 					get
@@ -534,102 +342,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						systemDiskPerformanceLevel = value;
-					}
-				}
-
-				public bool? SystemDiskDeleteWithInstance
-				{
-					get
-					{
-						return systemDiskDeleteWithInstance;
-					}
-					set	
-					{
-						systemDiskDeleteWithInstance = value;
-					}
-				}
-
-				public string IoOptimized
-				{
-					get
-					{
-						return ioOptimized;
-					}
-					set	
-					{
-						ioOptimized = value;
-					}
-				}
-
-				public string InstanceChargeType
-				{
-					get
-					{
-						return instanceChargeType;
-					}
-					set	
-					{
-						instanceChargeType = value;
-					}
-				}
-
-				public int? Period
-				{
-					get
-					{
-						return period;
-					}
-					set	
-					{
-						period = value;
-					}
-				}
-
-				public string InternetChargeType
-				{
-					get
-					{
-						return internetChargeType;
-					}
-					set	
-					{
-						internetChargeType = value;
-					}
-				}
-
-				public bool? EnableVmOsConfig
-				{
-					get
-					{
-						return enableVmOsConfig;
-					}
-					set	
-					{
-						enableVmOsConfig = value;
-					}
-				}
-
-				public string NetworkType
-				{
-					get
-					{
-						return networkType;
-					}
-					set	
-					{
-						networkType = value;
-					}
-				}
-
-				public string UserData
-				{
-					get
-					{
-						return userData;
-					}
-					set	
-					{
-						userData = value;
 					}
 				}
 
@@ -645,27 +357,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public string RamRoleName
+				public string SecurityGroupId
 				{
 					get
 					{
-						return ramRoleName;
+						return securityGroupId;
 					}
 					set	
 					{
-						ramRoleName = value;
+						securityGroupId = value;
 					}
 				}
 
-				public string AutoReleaseTime
+				public string NetworkType
 				{
 					get
 					{
-						return autoReleaseTime;
+						return networkType;
 					}
 					set	
 					{
-						autoReleaseTime = value;
+						networkType = value;
 					}
 				}
 
@@ -681,15 +393,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public float? SpotPriceLimit
+				public bool? EnableVmOsConfig
 				{
 					get
 					{
-						return spotPriceLimit;
+						return enableVmOsConfig;
 					}
 					set	
 					{
-						spotPriceLimit = value;
+						enableVmOsConfig = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
 					}
 				}
 
@@ -705,15 +429,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public string ResourceGroupId
+				public string InstanceName
 				{
 					get
 					{
-						return resourceGroupId;
+						return instanceName;
 					}
 					set	
 					{
-						resourceGroupId = value;
+						instanceName = value;
 					}
 				}
 
@@ -729,6 +453,66 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
+				public string UserData
+				{
+					get
+					{
+						return userData;
+					}
+					set	
+					{
+						userData = value;
+					}
+				}
+
+				public string SystemDiskDiskName
+				{
+					get
+					{
+						return systemDiskDiskName;
+					}
+					set	
+					{
+						systemDiskDiskName = value;
+					}
+				}
+
+				public int? SystemDiskSize
+				{
+					get
+					{
+						return systemDiskSize;
+					}
+					set	
+					{
+						systemDiskSize = value;
+					}
+				}
+
+				public float? SpotPriceLimit
+				{
+					get
+					{
+						return spotPriceLimit;
+					}
+					set	
+					{
+						spotPriceLimit = value;
+					}
+				}
+
+				public bool? PasswordInherit
+				{
+					get
+					{
+						return passwordInherit;
+					}
+					set	
+					{
+						passwordInherit = value;
+					}
+				}
+
 				public string PrivateIpAddress
 				{
 					get
@@ -741,15 +525,231 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
-				public string DeploymentSetId
+				public string ImageId
 				{
 					get
 					{
-						return deploymentSetId;
+						return imageId;
 					}
 					set	
 					{
-						deploymentSetId = value;
+						imageId = value;
+					}
+				}
+
+				public bool? SystemDiskDeleteWithInstance
+				{
+					get
+					{
+						return systemDiskDeleteWithInstance;
+					}
+					set	
+					{
+						systemDiskDeleteWithInstance = value;
+					}
+				}
+
+				public string SystemDiskCategory
+				{
+					get
+					{
+						return systemDiskCategory;
+					}
+					set	
+					{
+						systemDiskCategory = value;
+					}
+				}
+
+				public string AutoReleaseTime
+				{
+					get
+					{
+						return autoReleaseTime;
+					}
+					set	
+					{
+						autoReleaseTime = value;
+					}
+				}
+
+				public string SystemDiskDescription
+				{
+					get
+					{
+						return systemDiskDescription;
+					}
+					set	
+					{
+						systemDiskDescription = value;
+					}
+				}
+
+				public string ImageOwnerAlias
+				{
+					get
+					{
+						return imageOwnerAlias;
+					}
+					set	
+					{
+						imageOwnerAlias = value;
+					}
+				}
+
+				public string HostName
+				{
+					get
+					{
+						return hostName;
+					}
+					set	
+					{
+						hostName = value;
+					}
+				}
+
+				public int? SystemDiskIops
+				{
+					get
+					{
+						return systemDiskIops;
+					}
+					set	
+					{
+						systemDiskIops = value;
+					}
+				}
+
+				public int? InternetMaxBandwidthOut
+				{
+					get
+					{
+						return internetMaxBandwidthOut;
+					}
+					set	
+					{
+						internetMaxBandwidthOut = value;
+					}
+				}
+
+				public int? InternetMaxBandwidthIn
+				{
+					get
+					{
+						return internetMaxBandwidthIn;
+					}
+					set	
+					{
+						internetMaxBandwidthIn = value;
+					}
+				}
+
+				public string InstanceType
+				{
+					get
+					{
+						return instanceType;
+					}
+					set	
+					{
+						instanceType = value;
+					}
+				}
+
+				public int? Period
+				{
+					get
+					{
+						return period;
+					}
+					set	
+					{
+						period = value;
+					}
+				}
+
+				public string InstanceChargeType
+				{
+					get
+					{
+						return instanceChargeType;
+					}
+					set	
+					{
+						instanceChargeType = value;
+					}
+				}
+
+				public string IoOptimized
+				{
+					get
+					{
+						return ioOptimized;
+					}
+					set	
+					{
+						ioOptimized = value;
+					}
+				}
+
+				public string RamRoleName
+				{
+					get
+					{
+						return ramRoleName;
+					}
+					set	
+					{
+						ramRoleName = value;
+					}
+				}
+
+				public string VSwitchId
+				{
+					get
+					{
+						return vSwitchId;
+					}
+					set	
+					{
+						vSwitchId = value;
+					}
+				}
+
+				public string ResourceGroupId
+				{
+					get
+					{
+						return resourceGroupId;
+					}
+					set	
+					{
+						resourceGroupId = value;
+					}
+				}
+
+				public string InternetChargeType
+				{
+					get
+					{
+						return internetChargeType;
+					}
+					set	
+					{
+						internetChargeType = value;
+					}
+				}
+
+				public string ZoneId
+				{
+					get
+					{
+						return zoneId;
+					}
+					set	
+					{
+						zoneId = value;
 					}
 				}
 
@@ -804,33 +804,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				public class DescribeLaunchTemplateVersions_DataDisk
 				{
 
-					private int? size;
-
-					private string snapshotId;
-
-					private string category;
-
-					private string encrypted;
-
-					private string diskName;
+					private string performanceLevel;
 
 					private string description;
 
-					private bool? deleteWithInstance;
+					private string snapshotId;
 
 					private string device;
 
-					private string performanceLevel;
+					private int? size;
 
-					public int? Size
+					private string diskName;
+
+					private string category;
+
+					private bool? deleteWithInstance;
+
+					private string encrypted;
+
+					public string PerformanceLevel
 					{
 						get
 						{
-							return size;
+							return performanceLevel;
 						}
 						set	
 						{
-							size = value;
+							performanceLevel = value;
+						}
+					}
+
+					public string Description
+					{
+						get
+						{
+							return description;
+						}
+						set	
+						{
+							description = value;
 						}
 					}
 
@@ -846,27 +858,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						}
 					}
 
-					public string Category
+					public string Device
 					{
 						get
 						{
-							return category;
+							return device;
 						}
 						set	
 						{
-							category = value;
+							device = value;
 						}
 					}
 
-					public string Encrypted
+					public int? Size
 					{
 						get
 						{
-							return encrypted;
+							return size;
 						}
 						set	
 						{
-							encrypted = value;
+							size = value;
 						}
 					}
 
@@ -882,15 +894,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						}
 					}
 
-					public string Description
+					public string Category
 					{
 						get
 						{
-							return description;
+							return category;
 						}
 						set	
 						{
-							description = value;
+							category = value;
 						}
 					}
 
@@ -906,27 +918,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						}
 					}
 
-					public string Device
+					public string Encrypted
 					{
 						get
 						{
-							return device;
+							return encrypted;
 						}
 						set	
 						{
-							device = value;
-						}
-					}
-
-					public string PerformanceLevel
-					{
-						get
-						{
-							return performanceLevel;
-						}
-						set	
-						{
-							performanceLevel = value;
+							encrypted = value;
 						}
 					}
 				}
@@ -934,27 +934,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				public class DescribeLaunchTemplateVersions_NetworkInterface
 				{
 
-					private string primaryIpAddress;
+					private string networkInterfaceName;
 
 					private string vSwitchId;
 
-					private string securityGroupId;
-
-					private string networkInterfaceName;
-
 					private string description;
+
+					private string primaryIpAddress;
+
+					private string securityGroupId;
 
 					private List<string> securityGroupIds1;
 
-					public string PrimaryIpAddress
+					public string NetworkInterfaceName
 					{
 						get
 						{
-							return primaryIpAddress;
+							return networkInterfaceName;
 						}
 						set	
 						{
-							primaryIpAddress = value;
+							networkInterfaceName = value;
 						}
 					}
 
@@ -970,30 +970,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						}
 					}
 
-					public string SecurityGroupId
-					{
-						get
-						{
-							return securityGroupId;
-						}
-						set	
-						{
-							securityGroupId = value;
-						}
-					}
-
-					public string NetworkInterfaceName
-					{
-						get
-						{
-							return networkInterfaceName;
-						}
-						set	
-						{
-							networkInterfaceName = value;
-						}
-					}
-
 					public string Description
 					{
 						get
@@ -1003,6 +979,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						set	
 						{
 							description = value;
+						}
+					}
+
+					public string PrimaryIpAddress
+					{
+						get
+						{
+							return primaryIpAddress;
+						}
+						set	
+						{
+							primaryIpAddress = value;
+						}
+					}
+
+					public string SecurityGroupId
+					{
+						get
+						{
+							return securityGroupId;
+						}
+						set	
+						{
+							securityGroupId = value;
 						}
 					}
 

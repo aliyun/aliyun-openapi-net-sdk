@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -98,149 +98,65 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeRouterInterfaces_RouterInterfaceType
 		{
 
-			private string routerInterfaceId;
-
-			private string oppositeRegionId;
-
-			private string role;
-
-			private string spec;
-
-			private string name;
-
-			private string description;
-
-			private string routerId;
-
-			private string routerType;
+			private string healthCheckTargetIp;
 
 			private string creationTime;
 
-			private string endTime;
-
-			private string chargeType;
-
 			private string status;
 
-			private string businessStatus;
-
-			private string connectedTime;
+			private string spec;
 
 			private string oppositeInterfaceId;
 
-			private string oppositeInterfaceSpec;
+			private string routerInterfaceId;
 
-			private string oppositeInterfaceStatus;
-
-			private string oppositeInterfaceBusinessStatus;
-
-			private string oppositeRouterId;
+			private string chargeType;
 
 			private string oppositeRouterType;
 
 			private string oppositeInterfaceOwnerId;
 
-			private string accessPointId;
+			private string description;
 
-			private string oppositeAccessPointId;
+			private string name;
+
+			private string oppositeRouterId;
+
+			private string oppositeInterfaceSpec;
+
+			private string routerId;
+
+			private string oppositeInterfaceBusinessStatus;
+
+			private string connectedTime;
+
+			private string oppositeInterfaceStatus;
 
 			private string healthCheckSourceIp;
 
-			private string healthCheckTargetIp;
+			private string endTime;
 
-			public string RouterInterfaceId
+			private string oppositeRegionId;
+
+			private string oppositeAccessPointId;
+
+			private string businessStatus;
+
+			private string role;
+
+			private string routerType;
+
+			private string accessPointId;
+
+			public string HealthCheckTargetIp
 			{
 				get
 				{
-					return routerInterfaceId;
+					return healthCheckTargetIp;
 				}
 				set	
 				{
-					routerInterfaceId = value;
-				}
-			}
-
-			public string OppositeRegionId
-			{
-				get
-				{
-					return oppositeRegionId;
-				}
-				set	
-				{
-					oppositeRegionId = value;
-				}
-			}
-
-			public string Role
-			{
-				get
-				{
-					return role;
-				}
-				set	
-				{
-					role = value;
-				}
-			}
-
-			public string Spec
-			{
-				get
-				{
-					return spec;
-				}
-				set	
-				{
-					spec = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string RouterId
-			{
-				get
-				{
-					return routerId;
-				}
-				set	
-				{
-					routerId = value;
-				}
-			}
-
-			public string RouterType
-			{
-				get
-				{
-					return routerType;
-				}
-				set	
-				{
-					routerType = value;
+					healthCheckTargetIp = value;
 				}
 			}
 
@@ -256,30 +172,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
-				}
-			}
-
-			public string ChargeType
-			{
-				get
-				{
-					return chargeType;
-				}
-				set	
-				{
-					chargeType = value;
-				}
-			}
-
 			public string Status
 			{
 				get
@@ -292,27 +184,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string BusinessStatus
+			public string Spec
 			{
 				get
 				{
-					return businessStatus;
+					return spec;
 				}
 				set	
 				{
-					businessStatus = value;
-				}
-			}
-
-			public string ConnectedTime
-			{
-				get
-				{
-					return connectedTime;
-				}
-				set	
-				{
-					connectedTime = value;
+					spec = value;
 				}
 			}
 
@@ -328,51 +208,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string OppositeInterfaceSpec
+			public string RouterInterfaceId
 			{
 				get
 				{
-					return oppositeInterfaceSpec;
+					return routerInterfaceId;
 				}
 				set	
 				{
-					oppositeInterfaceSpec = value;
+					routerInterfaceId = value;
 				}
 			}
 
-			public string OppositeInterfaceStatus
+			public string ChargeType
 			{
 				get
 				{
-					return oppositeInterfaceStatus;
+					return chargeType;
 				}
 				set	
 				{
-					oppositeInterfaceStatus = value;
-				}
-			}
-
-			public string OppositeInterfaceBusinessStatus
-			{
-				get
-				{
-					return oppositeInterfaceBusinessStatus;
-				}
-				set	
-				{
-					oppositeInterfaceBusinessStatus = value;
-				}
-			}
-
-			public string OppositeRouterId
-			{
-				get
-				{
-					return oppositeRouterId;
-				}
-				set	
-				{
-					oppositeRouterId = value;
+					chargeType = value;
 				}
 			}
 
@@ -400,27 +256,99 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string AccessPointId
+			public string Description
 			{
 				get
 				{
-					return accessPointId;
+					return description;
 				}
 				set	
 				{
-					accessPointId = value;
+					description = value;
 				}
 			}
 
-			public string OppositeAccessPointId
+			public string Name
 			{
 				get
 				{
-					return oppositeAccessPointId;
+					return name;
 				}
 				set	
 				{
-					oppositeAccessPointId = value;
+					name = value;
+				}
+			}
+
+			public string OppositeRouterId
+			{
+				get
+				{
+					return oppositeRouterId;
+				}
+				set	
+				{
+					oppositeRouterId = value;
+				}
+			}
+
+			public string OppositeInterfaceSpec
+			{
+				get
+				{
+					return oppositeInterfaceSpec;
+				}
+				set	
+				{
+					oppositeInterfaceSpec = value;
+				}
+			}
+
+			public string RouterId
+			{
+				get
+				{
+					return routerId;
+				}
+				set	
+				{
+					routerId = value;
+				}
+			}
+
+			public string OppositeInterfaceBusinessStatus
+			{
+				get
+				{
+					return oppositeInterfaceBusinessStatus;
+				}
+				set	
+				{
+					oppositeInterfaceBusinessStatus = value;
+				}
+			}
+
+			public string ConnectedTime
+			{
+				get
+				{
+					return connectedTime;
+				}
+				set	
+				{
+					connectedTime = value;
+				}
+			}
+
+			public string OppositeInterfaceStatus
+			{
+				get
+				{
+					return oppositeInterfaceStatus;
+				}
+				set	
+				{
+					oppositeInterfaceStatus = value;
 				}
 			}
 
@@ -436,15 +364,87 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string HealthCheckTargetIp
+			public string EndTime
 			{
 				get
 				{
-					return healthCheckTargetIp;
+					return endTime;
 				}
 				set	
 				{
-					healthCheckTargetIp = value;
+					endTime = value;
+				}
+			}
+
+			public string OppositeRegionId
+			{
+				get
+				{
+					return oppositeRegionId;
+				}
+				set	
+				{
+					oppositeRegionId = value;
+				}
+			}
+
+			public string OppositeAccessPointId
+			{
+				get
+				{
+					return oppositeAccessPointId;
+				}
+				set	
+				{
+					oppositeAccessPointId = value;
+				}
+			}
+
+			public string BusinessStatus
+			{
+				get
+				{
+					return businessStatus;
+				}
+				set	
+				{
+					businessStatus = value;
+				}
+			}
+
+			public string Role
+			{
+				get
+				{
+					return role;
+				}
+				set	
+				{
+					role = value;
+				}
+			}
+
+			public string RouterType
+			{
+				get
+				{
+					return routerType;
+				}
+				set	
+				{
+					routerType = value;
+				}
+			}
+
+			public string AccessPointId
+			{
+				get
+				{
+					return accessPointId;
+				}
+				set	
+				{
+					accessPointId = value;
 				}
 			}
 		}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			CreateHpcClusterResponse createHpcClusterResponse = new CreateHpcClusterResponse();
 
 			createHpcClusterResponse.HttpResponse = _ctx.HttpResponse;
-			createHpcClusterResponse.RequestId = _ctx.StringValue("CreateHpcCluster.RequestId");
 			createHpcClusterResponse.HpcClusterId = _ctx.StringValue("CreateHpcCluster.HpcClusterId");
+			createHpcClusterResponse.RequestId = _ctx.StringValue("CreateHpcCluster.RequestId");
         
 			return createHpcClusterResponse;
         }

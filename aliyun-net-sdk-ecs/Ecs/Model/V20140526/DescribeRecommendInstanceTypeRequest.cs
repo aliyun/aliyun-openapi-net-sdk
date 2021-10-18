@@ -257,10 +257,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				instanceTypeFamilys = value;
-				for (int i = 0; i < instanceTypeFamilys.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceTypeFamily." + (i + 1) , instanceTypeFamilys[i]);
-				}
 			}
 		}
 

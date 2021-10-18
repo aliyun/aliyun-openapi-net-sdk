@@ -144,10 +144,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				privateIpAddresss = value;
-				for (int i = 0; i < privateIpAddresss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"PrivateIpAddress." + (i + 1) , privateIpAddresss[i]);
-				}
 			}
 		}
 

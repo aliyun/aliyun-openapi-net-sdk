@@ -31,16 +31,16 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeClassicLinkInstancesResponse describeClassicLinkInstancesResponse = new DescribeClassicLinkInstancesResponse();
 
 			describeClassicLinkInstancesResponse.HttpResponse = _ctx.HttpResponse;
-			describeClassicLinkInstancesResponse.RequestId = _ctx.StringValue("DescribeClassicLinkInstances.RequestId");
-			describeClassicLinkInstancesResponse.TotalCount = _ctx.IntegerValue("DescribeClassicLinkInstances.TotalCount");
-			describeClassicLinkInstancesResponse.PageNumber = _ctx.IntegerValue("DescribeClassicLinkInstances.PageNumber");
 			describeClassicLinkInstancesResponse.PageSize = _ctx.IntegerValue("DescribeClassicLinkInstances.PageSize");
+			describeClassicLinkInstancesResponse.RequestId = _ctx.StringValue("DescribeClassicLinkInstances.RequestId");
+			describeClassicLinkInstancesResponse.PageNumber = _ctx.IntegerValue("DescribeClassicLinkInstances.PageNumber");
+			describeClassicLinkInstancesResponse.TotalCount = _ctx.IntegerValue("DescribeClassicLinkInstances.TotalCount");
 
 			List<DescribeClassicLinkInstancesResponse.DescribeClassicLinkInstances_Link> describeClassicLinkInstancesResponse_links = new List<DescribeClassicLinkInstancesResponse.DescribeClassicLinkInstances_Link>();
 			for (int i = 0; i < _ctx.Length("DescribeClassicLinkInstances.Links.Length"); i++) {
 				DescribeClassicLinkInstancesResponse.DescribeClassicLinkInstances_Link link = new DescribeClassicLinkInstancesResponse.DescribeClassicLinkInstances_Link();
-				link.InstanceId = _ctx.StringValue("DescribeClassicLinkInstances.Links["+ i +"].InstanceId");
 				link.VpcId = _ctx.StringValue("DescribeClassicLinkInstances.Links["+ i +"].VpcId");
+				link.InstanceId = _ctx.StringValue("DescribeClassicLinkInstances.Links["+ i +"].InstanceId");
 
 				describeClassicLinkInstancesResponse_links.Add(link);
 			}

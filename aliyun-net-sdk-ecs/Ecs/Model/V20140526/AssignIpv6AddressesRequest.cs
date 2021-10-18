@@ -142,10 +142,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				ipv6Addresss = value;
-				for (int i = 0; i < ipv6Addresss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Ipv6Address." + (i + 1) , ipv6Addresss[i]);
-				}
 			}
 		}
 

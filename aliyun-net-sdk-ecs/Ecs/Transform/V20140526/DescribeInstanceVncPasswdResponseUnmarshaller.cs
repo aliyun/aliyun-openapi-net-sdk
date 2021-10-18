@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeInstanceVncPasswdResponse describeInstanceVncPasswdResponse = new DescribeInstanceVncPasswdResponse();
 
 			describeInstanceVncPasswdResponse.HttpResponse = _ctx.HttpResponse;
-			describeInstanceVncPasswdResponse.RequestId = _ctx.StringValue("DescribeInstanceVncPasswd.RequestId");
 			describeInstanceVncPasswdResponse.VncPasswd = _ctx.StringValue("DescribeInstanceVncPasswd.VncPasswd");
+			describeInstanceVncPasswdResponse.RequestId = _ctx.StringValue("DescribeInstanceVncPasswd.RequestId");
         
 			return describeInstanceVncPasswdResponse;
         }

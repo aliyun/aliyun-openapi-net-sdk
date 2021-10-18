@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -56,65 +56,53 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DeregisterManagedInstance_Instance
 		{
 
-			private string instanceId;
+			private string lastInvokedTime;
 
-			private string instanceName;
-
-			private string activationId;
+			private string internetIp;
 
 			private string hostname;
 
-			private string machineId;
+			private string instanceId;
 
-			private string osType;
-
-			private string osVersion;
+			private string activationId;
 
 			private string intranetIp;
-
-			private string internetIp;
 
 			private string agentVersion;
 
 			private string registrationTime;
 
+			private string instanceName;
+
+			private string osType;
+
+			private string osVersion;
+
 			private long? invocationCount;
 
-			private string lastInvokedTime;
+			private string machineId;
 
-			public string InstanceId
+			public string LastInvokedTime
 			{
 				get
 				{
-					return instanceId;
+					return lastInvokedTime;
 				}
 				set	
 				{
-					instanceId = value;
+					lastInvokedTime = value;
 				}
 			}
 
-			public string InstanceName
+			public string InternetIp
 			{
 				get
 				{
-					return instanceName;
+					return internetIp;
 				}
 				set	
 				{
-					instanceName = value;
-				}
-			}
-
-			public string ActivationId
-			{
-				get
-				{
-					return activationId;
-				}
-				set	
-				{
-					activationId = value;
+					internetIp = value;
 				}
 			}
 
@@ -130,39 +118,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string MachineId
+			public string InstanceId
 			{
 				get
 				{
-					return machineId;
+					return instanceId;
 				}
 				set	
 				{
-					machineId = value;
+					instanceId = value;
 				}
 			}
 
-			public string OsType
+			public string ActivationId
 			{
 				get
 				{
-					return osType;
+					return activationId;
 				}
 				set	
 				{
-					osType = value;
-				}
-			}
-
-			public string OsVersion
-			{
-				get
-				{
-					return osVersion;
-				}
-				set	
-				{
-					osVersion = value;
+					activationId = value;
 				}
 			}
 
@@ -175,18 +151,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					intranetIp = value;
-				}
-			}
-
-			public string InternetIp
-			{
-				get
-				{
-					return internetIp;
-				}
-				set	
-				{
-					internetIp = value;
 				}
 			}
 
@@ -214,6 +178,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string OsType
+			{
+				get
+				{
+					return osType;
+				}
+				set	
+				{
+					osType = value;
+				}
+			}
+
+			public string OsVersion
+			{
+				get
+				{
+					return osVersion;
+				}
+				set	
+				{
+					osVersion = value;
+				}
+			}
+
 			public long? InvocationCount
 			{
 				get
@@ -226,15 +226,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string LastInvokedTime
+			public string MachineId
 			{
 				get
 				{
-					return lastInvokedTime;
+					return machineId;
 				}
 				set	
 				{
-					lastInvokedTime = value;
+					machineId = value;
 				}
 			}
 		}

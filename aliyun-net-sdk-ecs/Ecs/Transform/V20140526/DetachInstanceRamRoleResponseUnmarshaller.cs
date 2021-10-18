@@ -31,24 +31,24 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DetachInstanceRamRoleResponse detachInstanceRamRoleResponse = new DetachInstanceRamRoleResponse();
 
 			detachInstanceRamRoleResponse.HttpResponse = _ctx.HttpResponse;
+			detachInstanceRamRoleResponse.RamRoleName = _ctx.StringValue("DetachInstanceRamRole.RamRoleName");
 			detachInstanceRamRoleResponse.RequestId = _ctx.StringValue("DetachInstanceRamRole.RequestId");
 			detachInstanceRamRoleResponse.TotalCount = _ctx.IntegerValue("DetachInstanceRamRole.TotalCount");
 			detachInstanceRamRoleResponse.FailCount = _ctx.IntegerValue("DetachInstanceRamRole.FailCount");
-			detachInstanceRamRoleResponse.RamRoleName = _ctx.StringValue("DetachInstanceRamRole.RamRoleName");
 
 			List<DetachInstanceRamRoleResponse.DetachInstanceRamRole_DetachInstanceRamRoleResult> detachInstanceRamRoleResponse_detachInstanceRamRoleResults = new List<DetachInstanceRamRoleResponse.DetachInstanceRamRole_DetachInstanceRamRoleResult>();
 			for (int i = 0; i < _ctx.Length("DetachInstanceRamRole.DetachInstanceRamRoleResults.Length"); i++) {
 				DetachInstanceRamRoleResponse.DetachInstanceRamRole_DetachInstanceRamRoleResult detachInstanceRamRoleResult = new DetachInstanceRamRoleResponse.DetachInstanceRamRole_DetachInstanceRamRoleResult();
-				detachInstanceRamRoleResult.InstanceId = _ctx.StringValue("DetachInstanceRamRole.DetachInstanceRamRoleResults["+ i +"].InstanceId");
-				detachInstanceRamRoleResult.Success = _ctx.BooleanValue("DetachInstanceRamRole.DetachInstanceRamRoleResults["+ i +"].Success");
 				detachInstanceRamRoleResult.Code = _ctx.StringValue("DetachInstanceRamRole.DetachInstanceRamRoleResults["+ i +"].Code");
 				detachInstanceRamRoleResult.Message = _ctx.StringValue("DetachInstanceRamRole.DetachInstanceRamRoleResults["+ i +"].Message");
+				detachInstanceRamRoleResult.InstanceId = _ctx.StringValue("DetachInstanceRamRole.DetachInstanceRamRoleResults["+ i +"].InstanceId");
+				detachInstanceRamRoleResult.Success = _ctx.BooleanValue("DetachInstanceRamRole.DetachInstanceRamRoleResults["+ i +"].Success");
 
 				List<DetachInstanceRamRoleResponse.DetachInstanceRamRole_DetachInstanceRamRoleResult.DetachInstanceRamRole_InstanceRamRoleSet> detachInstanceRamRoleResult_instanceRamRoleSets = new List<DetachInstanceRamRoleResponse.DetachInstanceRamRole_DetachInstanceRamRoleResult.DetachInstanceRamRole_InstanceRamRoleSet>();
 				for (int j = 0; j < _ctx.Length("DetachInstanceRamRole.DetachInstanceRamRoleResults["+ i +"].InstanceRamRoleSets.Length"); j++) {
 					DetachInstanceRamRoleResponse.DetachInstanceRamRole_DetachInstanceRamRoleResult.DetachInstanceRamRole_InstanceRamRoleSet instanceRamRoleSet = new DetachInstanceRamRoleResponse.DetachInstanceRamRole_DetachInstanceRamRoleResult.DetachInstanceRamRole_InstanceRamRoleSet();
-					instanceRamRoleSet.InstanceId = _ctx.StringValue("DetachInstanceRamRole.DetachInstanceRamRoleResults["+ i +"].InstanceRamRoleSets["+ j +"].InstanceId");
 					instanceRamRoleSet.RamRoleName = _ctx.StringValue("DetachInstanceRamRole.DetachInstanceRamRoleResults["+ i +"].InstanceRamRoleSets["+ j +"].RamRoleName");
+					instanceRamRoleSet.InstanceId = _ctx.StringValue("DetachInstanceRamRole.DetachInstanceRamRoleResults["+ i +"].InstanceRamRoleSets["+ j +"].InstanceId");
 
 					detachInstanceRamRoleResult_instanceRamRoleSets.Add(instanceRamRoleSet);
 				}

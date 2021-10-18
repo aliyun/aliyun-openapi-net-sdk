@@ -31,21 +31,21 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			DescribeTasksResponse describeTasksResponse = new DescribeTasksResponse();
 
 			describeTasksResponse.HttpResponse = _ctx.HttpResponse;
-			describeTasksResponse.RequestId = _ctx.StringValue("DescribeTasks.RequestId");
-			describeTasksResponse.RegionId = _ctx.StringValue("DescribeTasks.RegionId");
-			describeTasksResponse.TotalCount = _ctx.IntegerValue("DescribeTasks.TotalCount");
-			describeTasksResponse.PageNumber = _ctx.IntegerValue("DescribeTasks.PageNumber");
 			describeTasksResponse.PageSize = _ctx.IntegerValue("DescribeTasks.PageSize");
+			describeTasksResponse.PageNumber = _ctx.IntegerValue("DescribeTasks.PageNumber");
+			describeTasksResponse.RequestId = _ctx.StringValue("DescribeTasks.RequestId");
+			describeTasksResponse.TotalCount = _ctx.IntegerValue("DescribeTasks.TotalCount");
+			describeTasksResponse.RegionId = _ctx.StringValue("DescribeTasks.RegionId");
 
 			List<DescribeTasksResponse.DescribeTasks_Task> describeTasksResponse_taskSet = new List<DescribeTasksResponse.DescribeTasks_Task>();
 			for (int i = 0; i < _ctx.Length("DescribeTasks.TaskSet.Length"); i++) {
 				DescribeTasksResponse.DescribeTasks_Task task = new DescribeTasksResponse.DescribeTasks_Task();
+				task.CreationTime = _ctx.StringValue("DescribeTasks.TaskSet["+ i +"].CreationTime");
+				task.TaskStatus = _ctx.StringValue("DescribeTasks.TaskSet["+ i +"].TaskStatus");
+				task.FinishedTime = _ctx.StringValue("DescribeTasks.TaskSet["+ i +"].FinishedTime");
+				task.SupportCancel = _ctx.StringValue("DescribeTasks.TaskSet["+ i +"].SupportCancel");
 				task.TaskId = _ctx.StringValue("DescribeTasks.TaskSet["+ i +"].TaskId");
 				task.TaskAction = _ctx.StringValue("DescribeTasks.TaskSet["+ i +"].TaskAction");
-				task.TaskStatus = _ctx.StringValue("DescribeTasks.TaskSet["+ i +"].TaskStatus");
-				task.SupportCancel = _ctx.StringValue("DescribeTasks.TaskSet["+ i +"].SupportCancel");
-				task.CreationTime = _ctx.StringValue("DescribeTasks.TaskSet["+ i +"].CreationTime");
-				task.FinishedTime = _ctx.StringValue("DescribeTasks.TaskSet["+ i +"].FinishedTime");
 
 				describeTasksResponse_taskSet.Add(task);
 			}

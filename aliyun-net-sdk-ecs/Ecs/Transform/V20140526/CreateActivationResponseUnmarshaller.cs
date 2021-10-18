@@ -32,8 +32,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 
 			createActivationResponse.HttpResponse = _ctx.HttpResponse;
 			createActivationResponse.RequestId = _ctx.StringValue("CreateActivation.RequestId");
-			createActivationResponse.ActivationId = _ctx.StringValue("CreateActivation.ActivationId");
 			createActivationResponse.ActivationCode = _ctx.StringValue("CreateActivation.ActivationCode");
+			createActivationResponse.ActivationId = _ctx.StringValue("CreateActivation.ActivationId");
         
 			return createActivationResponse;
         }

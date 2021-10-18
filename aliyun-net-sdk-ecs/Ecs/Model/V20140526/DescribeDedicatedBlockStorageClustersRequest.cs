@@ -96,10 +96,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				dedicatedBlockStorageClusterIds = value;
-				for (int i = 0; i < dedicatedBlockStorageClusterIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DedicatedBlockStorageClusterId." + (i + 1) , dedicatedBlockStorageClusterIds[i]);
-				}
 			}
 		}
 
@@ -191,10 +187,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				statuss = value;
-				for (int i = 0; i < statuss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Status." + (i + 1) , statuss[i]);
-				}
 			}
 		}
 

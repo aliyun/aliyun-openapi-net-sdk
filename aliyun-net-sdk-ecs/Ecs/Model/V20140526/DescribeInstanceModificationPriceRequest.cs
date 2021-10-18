@@ -52,7 +52,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private List<DataDisk> dataDisks = new List<DataDisk>(){ };
+		private List<string> dataDisks = new List<string>(){ };
 
 		private string instanceId;
 
@@ -134,7 +134,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<DataDisk> DataDisks
+		public List<string> DataDisks
 		{
 			get
 			{
@@ -144,11 +144,14 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				dataDisks = value;
-				for (int i = 0; i < dataDisks.Count; i++)
+				if(dataDisks != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Size", dataDisks[i].Size);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Category", dataDisks[i].Category);
-					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".PerformanceLevel", dataDisks[i].PerformanceLevel);
+					for (int depth1 = 0; depth1 < dataDisks.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (depth1 + 1), dataDisks[depth1]);
+					}
 				}
 			}
 		}
@@ -169,11 +172,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DataDisk
 		{
 
+			private string performanceLevel;
+
 			private int? size;
 
 			private string category;
 
-			private string performanceLevel;
+			public string PerformanceLevel
+			{
+				get
+				{
+					return performanceLevel;
+				}
+				set	
+				{
+					performanceLevel = value;
+				}
+			}
 
 			public int? Size
 			{
@@ -196,18 +211,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					category = value;
-				}
-			}
-
-			public string PerformanceLevel
-			{
-				get
-				{
-					return performanceLevel;
-				}
-				set	
-				{
-					performanceLevel = value;
 				}
 			}
 		}

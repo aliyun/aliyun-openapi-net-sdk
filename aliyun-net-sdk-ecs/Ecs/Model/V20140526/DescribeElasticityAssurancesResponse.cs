@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 	public class DescribeElasticityAssurancesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private int? maxResults;
+		private string requestId;
 
 		private int? totalCount;
 
-		private List<DescribeElasticityAssurances_ElasticityAssuranceItem> elasticityAssuranceSet;
+		private int? maxResults;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeElasticityAssurances_ElasticityAssuranceItem> elasticityAssuranceSet;
 
 		public string NextToken
 		{
@@ -59,15 +47,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? MaxResults
+		public string RequestId
 		{
 			get
 			{
-				return maxResults;
+				return requestId;
 			}
 			set	
 			{
-				maxResults = value;
+				requestId = value;
 			}
 		}
 
@@ -80,6 +68,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
 			}
 		}
 
@@ -98,79 +98,43 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		public class DescribeElasticityAssurances_ElasticityAssuranceItem
 		{
 
-			private string privatePoolOptionsId;
-
-			private string privatePoolOptionsName;
-
-			private string description;
-
-			private string regionId;
+			private string status;
 
 			private string privatePoolOptionsMatchCriteria;
 
+			private string privatePoolOptionsId;
+
 			private int? usedAssuranceTimes;
-
-			private string totalAssuranceTimes;
-
-			private string status;
-
-			private string startTime;
-
-			private string endTime;
 
 			private string latestStartTime;
 
+			private string privatePoolOptionsName;
+
+			private string regionId;
+
+			private string endTime;
+
+			private string startTime;
+
+			private string description;
+
 			private string resourceGroupId;
+
+			private string totalAssuranceTimes;
 
 			private List<DescribeElasticityAssurances_AllocatedResource> allocatedResources;
 
 			private List<DescribeElasticityAssurances_Tag> tags;
 
-			public string PrivatePoolOptionsId
+			public string Status
 			{
 				get
 				{
-					return privatePoolOptionsId;
+					return status;
 				}
 				set	
 				{
-					privatePoolOptionsId = value;
-				}
-			}
-
-			public string PrivatePoolOptionsName
-			{
-				get
-				{
-					return privatePoolOptionsName;
-				}
-				set	
-				{
-					privatePoolOptionsName = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
+					status = value;
 				}
 			}
 
@@ -186,6 +150,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string PrivatePoolOptionsId
+			{
+				get
+				{
+					return privatePoolOptionsId;
+				}
+				set	
+				{
+					privatePoolOptionsId = value;
+				}
+			}
+
 			public int? UsedAssuranceTimes
 			{
 				get
@@ -195,54 +171,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					usedAssuranceTimes = value;
-				}
-			}
-
-			public string TotalAssuranceTimes
-			{
-				get
-				{
-					return totalAssuranceTimes;
-				}
-				set	
-				{
-					totalAssuranceTimes = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
 				}
 			}
 
@@ -258,6 +186,66 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string PrivatePoolOptionsName
+			{
+				get
+				{
+					return privatePoolOptionsName;
+				}
+				set	
+				{
+					privatePoolOptionsName = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
 			public string ResourceGroupId
 			{
 				get
@@ -267,6 +255,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public string TotalAssuranceTimes
+			{
+				get
+				{
+					return totalAssuranceTimes;
+				}
+				set	
+				{
+					totalAssuranceTimes = value;
 				}
 			}
 
@@ -297,13 +297,37 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			public class DescribeElasticityAssurances_AllocatedResource
 			{
 
+				private int? usedAmount;
+
+				private int? totalAmount;
+
 				private string zoneId;
 
 				private string instanceType;
 
-				private int? totalAmount;
+				public int? UsedAmount
+				{
+					get
+					{
+						return usedAmount;
+					}
+					set	
+					{
+						usedAmount = value;
+					}
+				}
 
-				private int? usedAmount;
+				public int? TotalAmount
+				{
+					get
+					{
+						return totalAmount;
+					}
+					set	
+					{
+						totalAmount = value;
+					}
+				}
 
 				public string ZoneId
 				{
@@ -328,50 +352,14 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						instanceType = value;
 					}
 				}
-
-				public int? TotalAmount
-				{
-					get
-					{
-						return totalAmount;
-					}
-					set	
-					{
-						totalAmount = value;
-					}
-				}
-
-				public int? UsedAmount
-				{
-					get
-					{
-						return usedAmount;
-					}
-					set	
-					{
-						usedAmount = value;
-					}
-				}
 			}
 
 			public class DescribeElasticityAssurances_Tag
 			{
 
-				private string tagKey;
-
 				private string tagValue;
 
-				public string TagKey
-				{
-					get
-					{
-						return tagKey;
-					}
-					set	
-					{
-						tagKey = value;
-					}
-				}
+				private string tagKey;
 
 				public string TagValue
 				{
@@ -382,6 +370,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						tagValue = value;
+					}
+				}
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
 					}
 				}
 			}

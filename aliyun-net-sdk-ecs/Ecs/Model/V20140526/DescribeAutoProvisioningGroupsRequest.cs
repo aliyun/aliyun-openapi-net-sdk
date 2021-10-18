@@ -107,10 +107,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				autoProvisioningGroupStatuss = value;
-				for (int i = 0; i < autoProvisioningGroupStatuss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"AutoProvisioningGroupStatus." + (i + 1) , autoProvisioningGroupStatuss[i]);
-				}
 			}
 		}
 
@@ -163,10 +159,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				autoProvisioningGroupIds = value;
-				for (int i = 0; i < autoProvisioningGroupIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"AutoProvisioningGroupId." + (i + 1) , autoProvisioningGroupIds[i]);
-				}
 			}
 		}
 
