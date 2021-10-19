@@ -41,9 +41,24 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			Method = MethodType.POST;
         }
 
+		private int? totalPartitions;
+
 		private int? replicas;
 
 		private long? envId;
+
+		public int? TotalPartitions
+		{
+			get
+			{
+				return totalPartitions;
+			}
+			set	
+			{
+				totalPartitions = value;
+				DictionaryUtil.Add(QueryParameters, "TotalPartitions", value.ToString());
+			}
+		}
 
 		public int? Replicas
 		{

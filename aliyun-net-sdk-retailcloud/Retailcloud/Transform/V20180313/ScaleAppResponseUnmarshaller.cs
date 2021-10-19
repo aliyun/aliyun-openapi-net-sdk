@@ -37,9 +37,9 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 			scaleAppResponse.Success = _ctx.BooleanValue("ScaleApp.Success");
 
 			ScaleAppResponse.ScaleApp_Result result = new ScaleAppResponse.ScaleApp_Result();
-			result.Admitted = _ctx.BooleanValue("ScaleApp.Result.Admitted");
 			result.BusinessCode = _ctx.StringValue("ScaleApp.Result.BusinessCode");
 			result.DeployOrderId = _ctx.LongValue("ScaleApp.Result.DeployOrderId");
+			result.Admitted = _ctx.BooleanValue("ScaleApp.Result.Admitted");
 			scaleAppResponse.Result = result;
         
 			return scaleAppResponse;
