@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QueryDeviceGroupInfoRequest : RpcAcsRequest<QueryDeviceGroupInfoResponse>
+    public class DeleteDeviceDynamicGroupRequest : RpcAcsRequest<DeleteDeviceDynamicGroupResponse>
     {
-        public QueryDeviceGroupInfoRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceGroupInfo", "iot", "openAPI")
+        public DeleteDeviceDynamicGroupRequest()
+            : base("Iot", "2018-01-20", "DeleteDeviceDynamicGroup", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,24 +40,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string groupType;
-
 		private string iotInstanceId;
 
 		private string groupId;
-
-		public string GroupType
-		{
-			get
-			{
-				return groupType;
-			}
-			set	
-			{
-				groupType = value;
-				DictionaryUtil.Add(QueryParameters, "GroupType", value);
-			}
-		}
 
 		public string IotInstanceId
 		{
@@ -85,9 +70,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-        public override QueryDeviceGroupInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteDeviceDynamicGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryDeviceGroupInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteDeviceDynamicGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

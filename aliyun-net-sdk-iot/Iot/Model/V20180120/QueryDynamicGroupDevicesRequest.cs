@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QueryDeviceGroupInfoRequest : RpcAcsRequest<QueryDeviceGroupInfoResponse>
+    public class QueryDynamicGroupDevicesRequest : RpcAcsRequest<QueryDynamicGroupDevicesResponse>
     {
-        public QueryDeviceGroupInfoRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceGroupInfo", "iot", "openAPI")
+        public QueryDynamicGroupDevicesRequest()
+            : base("Iot", "2018-01-20", "QueryDynamicGroupDevices", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,22 +40,34 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string groupType;
+		private string nextToken;
 
 		private string iotInstanceId;
 
+		private int? pageSize;
+
+		private bool? fuzzyName;
+
 		private string groupId;
 
-		public string GroupType
+		private int? currentPage;
+
+		private string productKey;
+
+		private string deviceName;
+
+		private string status;
+
+		public string NextToken
 		{
 			get
 			{
-				return groupType;
+				return nextToken;
 			}
 			set	
 			{
-				groupType = value;
-				DictionaryUtil.Add(QueryParameters, "GroupType", value);
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
@@ -72,6 +84,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public bool? FuzzyName
+		{
+			get
+			{
+				return fuzzyName;
+			}
+			set	
+			{
+				fuzzyName = value;
+				DictionaryUtil.Add(QueryParameters, "FuzzyName", value.ToString());
+			}
+		}
+
 		public string GroupId
 		{
 			get
@@ -85,9 +123,61 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-        public override QueryDeviceGroupInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public string DeviceName
+		{
+			get
+			{
+				return deviceName;
+			}
+			set	
+			{
+				deviceName = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+        public override QueryDynamicGroupDevicesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryDeviceGroupInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryDynamicGroupDevicesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

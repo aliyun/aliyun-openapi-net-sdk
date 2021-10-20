@@ -62,6 +62,9 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.DynamicMode = _ctx.IntegerValue("QueryOTAJob.Data.DynamicMode");
 			data.NeedPush = _ctx.BooleanValue("QueryOTAJob.Data.NeedPush");
 			data.NeedConfirm = _ctx.BooleanValue("QueryOTAJob.Data.NeedConfirm");
+			data.GroupId = _ctx.StringValue("QueryOTAJob.Data.GroupId");
+			data.GroupName = _ctx.StringValue("QueryOTAJob.Data.GroupName");
+			data.DownloadProtocol = _ctx.StringValue("QueryOTAJob.Data.DownloadProtocol");
 
 			List<string> data_srcVersions = new List<string>();
 			for (int i = 0; i < _ctx.Length("QueryOTAJob.Data.SrcVersions.Length"); i++) {

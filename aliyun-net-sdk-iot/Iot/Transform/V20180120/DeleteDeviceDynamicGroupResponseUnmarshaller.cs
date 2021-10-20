@@ -24,25 +24,19 @@ using Aliyun.Acs.Iot.Model.V20180120;
 
 namespace Aliyun.Acs.Iot.Transform.V20180120
 {
-    public class SubscribeTopicResponseUnmarshaller
+    public class DeleteDeviceDynamicGroupResponseUnmarshaller
     {
-        public static SubscribeTopicResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DeleteDeviceDynamicGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			SubscribeTopicResponse subscribeTopicResponse = new SubscribeTopicResponse();
+			DeleteDeviceDynamicGroupResponse deleteDeviceDynamicGroupResponse = new DeleteDeviceDynamicGroupResponse();
 
-			subscribeTopicResponse.HttpResponse = _ctx.HttpResponse;
-			subscribeTopicResponse.RequestId = _ctx.StringValue("SubscribeTopic.RequestId");
-			subscribeTopicResponse.Success = _ctx.BooleanValue("SubscribeTopic.Success");
-			subscribeTopicResponse.Code = _ctx.StringValue("SubscribeTopic.Code");
-			subscribeTopicResponse.ErrorMessage = _ctx.StringValue("SubscribeTopic.ErrorMessage");
-
-			List<string> subscribeTopicResponse_failureTopics = new List<string>();
-			for (int i = 0; i < _ctx.Length("SubscribeTopic.FailureTopics.Length"); i++) {
-				subscribeTopicResponse_failureTopics.Add(_ctx.StringValue("SubscribeTopic.FailureTopics["+ i +"]"));
-			}
-			subscribeTopicResponse.FailureTopics = subscribeTopicResponse_failureTopics;
+			deleteDeviceDynamicGroupResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDeviceDynamicGroupResponse.RequestId = _ctx.StringValue("DeleteDeviceDynamicGroup.RequestId");
+			deleteDeviceDynamicGroupResponse.Success = _ctx.BooleanValue("DeleteDeviceDynamicGroup.Success");
+			deleteDeviceDynamicGroupResponse.Code = _ctx.StringValue("DeleteDeviceDynamicGroup.Code");
+			deleteDeviceDynamicGroupResponse.ErrorMessage = _ctx.StringValue("DeleteDeviceDynamicGroup.ErrorMessage");
         
-			return subscribeTopicResponse;
+			return deleteDeviceDynamicGroupResponse;
         }
     }
 }

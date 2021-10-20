@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QueryDeviceGroupListResponse : AcsResponse
+	public class QueryDeviceTunnelResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,15 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private int? currentPage;
-
-		private int? pageCount;
-
-		private int? pageSize;
-
-		private int? total;
-
-		private List<QueryDeviceGroupList_GroupInfo> data;
+		private QueryDeviceTunnel_Data data;
 
 		public string RequestId
 		{
@@ -91,55 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-			}
-		}
-
-		public int? PageCount
-		{
-			get
-			{
-				return pageCount;
-			}
-			set	
-			{
-				pageCount = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
-
-		public List<QueryDeviceGroupList_GroupInfo> Data
+		public QueryDeviceTunnel_Data Data
 		{
 			get
 			{
@@ -151,76 +95,174 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class QueryDeviceGroupList_GroupInfo
+		public class QueryDeviceTunnel_Data
 		{
 
-			private string groupId;
+			private string tunnelId;
 
-			private string utcCreate;
+			private string tunnelState;
 
-			private string groupName;
+			private string productKey;
 
-			private string groupDesc;
+			private string deviceName;
 
-			private string groupType;
+			private string iotId;
 
-			public string GroupId
+			private string deviceConnState;
+
+			private string sourceConnState;
+
+			private string udi;
+
+			private string description;
+
+			private string utcCreated;
+
+			private string utcClosed;
+
+			private string productName;
+
+			public string TunnelId
 			{
 				get
 				{
-					return groupId;
+					return tunnelId;
 				}
 				set	
 				{
-					groupId = value;
+					tunnelId = value;
 				}
 			}
 
-			public string UtcCreate
+			public string TunnelState
 			{
 				get
 				{
-					return utcCreate;
+					return tunnelState;
 				}
 				set	
 				{
-					utcCreate = value;
+					tunnelState = value;
 				}
 			}
 
-			public string GroupName
+			public string ProductKey
 			{
 				get
 				{
-					return groupName;
+					return productKey;
 				}
 				set	
 				{
-					groupName = value;
+					productKey = value;
 				}
 			}
 
-			public string GroupDesc
+			public string DeviceName
 			{
 				get
 				{
-					return groupDesc;
+					return deviceName;
 				}
 				set	
 				{
-					groupDesc = value;
+					deviceName = value;
 				}
 			}
 
-			public string GroupType
+			public string IotId
 			{
 				get
 				{
-					return groupType;
+					return iotId;
 				}
 				set	
 				{
-					groupType = value;
+					iotId = value;
+				}
+			}
+
+			public string DeviceConnState
+			{
+				get
+				{
+					return deviceConnState;
+				}
+				set	
+				{
+					deviceConnState = value;
+				}
+			}
+
+			public string SourceConnState
+			{
+				get
+				{
+					return sourceConnState;
+				}
+				set	
+				{
+					sourceConnState = value;
+				}
+			}
+
+			public string Udi
+			{
+				get
+				{
+					return udi;
+				}
+				set	
+				{
+					udi = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string UtcCreated
+			{
+				get
+				{
+					return utcCreated;
+				}
+				set	
+				{
+					utcCreated = value;
+				}
+			}
+
+			public string UtcClosed
+			{
+				get
+				{
+					return utcClosed;
+				}
+				set	
+				{
+					utcClosed = value;
+				}
+			}
+
+			public string ProductName
+			{
+				get
+				{
+					return productName;
+				}
+				set	
+				{
+					productName = value;
 				}
 			}
 		}

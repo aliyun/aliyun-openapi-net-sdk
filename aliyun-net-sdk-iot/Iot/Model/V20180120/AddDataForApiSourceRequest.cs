@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QueryDeviceGroupInfoRequest : RpcAcsRequest<QueryDeviceGroupInfoResponse>
+    public class AddDataForApiSourceRequest : RpcAcsRequest<AddDataForApiSourceResponse>
     {
-        public QueryDeviceGroupInfoRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceGroupInfo", "iot", "openAPI")
+        public AddDataForApiSourceRequest()
+            : base("Iot", "2018-01-20", "AddDataForApiSource", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,22 +40,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string groupType;
+		private string content;
 
 		private string iotInstanceId;
 
-		private string groupId;
+		private string apiId;
 
-		public string GroupType
+		public string Content
 		{
 			get
 			{
-				return groupType;
+				return content;
 			}
 			set	
 			{
-				groupType = value;
-				DictionaryUtil.Add(QueryParameters, "GroupType", value);
+				content = value;
+				DictionaryUtil.Add(QueryParameters, "Content", value);
 			}
 		}
 
@@ -72,22 +72,27 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string GroupId
+		public string ApiId
 		{
 			get
 			{
-				return groupId;
+				return apiId;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+				apiId = value;
+				DictionaryUtil.Add(QueryParameters, "ApiId", value);
 			}
 		}
 
-        public override QueryDeviceGroupInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override AddDataForApiSourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryDeviceGroupInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AddDataForApiSourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

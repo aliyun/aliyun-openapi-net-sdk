@@ -112,6 +112,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private int? deviceOnline;
 
+			private string dynamicGroupExpression;
+
 			public string GroupId
 			{
 				get
@@ -193,6 +195,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					deviceOnline = value;
+				}
+			}
+
+			public string DynamicGroupExpression
+			{
+				get
+				{
+					return dynamicGroupExpression;
+				}
+				set	
+				{
+					dynamicGroupExpression = value;
 				}
 			}
 		}

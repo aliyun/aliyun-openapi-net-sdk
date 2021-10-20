@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class SubscribeTopicResponse : AcsResponse
+	public class BatchAddDataForApiSourceResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private List<string> failureTopics;
+		private string data;
 
 		public string RequestId
 		{
@@ -83,15 +83,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public List<string> FailureTopics
+		public string Data
 		{
 			get
 			{
-				return failureTopics;
+				return data;
 			}
 			set	
 			{
-				failureTopics = value;
+				data = value;
 			}
 		}
 	}

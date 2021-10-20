@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QueryDeviceGroupInfoRequest : RpcAcsRequest<QueryDeviceGroupInfoResponse>
+    public class CreateDeviceTunnelRequest : RpcAcsRequest<CreateDeviceTunnelResponse>
     {
-        public QueryDeviceGroupInfoRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceGroupInfo", "iot", "openAPI")
+        public CreateDeviceTunnelRequest()
+            : base("Iot", "2018-01-20", "CreateDeviceTunnel", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,22 +40,41 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string groupType;
+		private string description;
+
+		private string iotId;
 
 		private string iotInstanceId;
 
-		private string groupId;
+		private string productKey;
 
-		public string GroupType
+		private string deviceName;
+
+		private string udi;
+
+		public string Description
 		{
 			get
 			{
-				return groupType;
+				return description;
 			}
 			set	
 			{
-				groupType = value;
-				DictionaryUtil.Add(QueryParameters, "GroupType", value);
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string IotId
+		{
+			get
+			{
+				return iotId;
+			}
+			set	
+			{
+				iotId = value;
+				DictionaryUtil.Add(QueryParameters, "IotId", value);
 			}
 		}
 
@@ -72,22 +91,53 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string GroupId
+		public string ProductKey
 		{
 			get
 			{
-				return groupId;
+				return productKey;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
-        public override QueryDeviceGroupInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string DeviceName
+		{
+			get
+			{
+				return deviceName;
+			}
+			set	
+			{
+				deviceName = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
+			}
+		}
+
+		public string Udi
+		{
+			get
+			{
+				return udi;
+			}
+			set	
+			{
+				udi = value;
+				DictionaryUtil.Add(QueryParameters, "Udi", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override CreateDeviceTunnelResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryDeviceGroupInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDeviceTunnelResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

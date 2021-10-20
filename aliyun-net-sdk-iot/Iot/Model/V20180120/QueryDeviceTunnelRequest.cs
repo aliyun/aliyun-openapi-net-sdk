@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QueryDeviceGroupInfoRequest : RpcAcsRequest<QueryDeviceGroupInfoResponse>
+    public class QueryDeviceTunnelRequest : RpcAcsRequest<QueryDeviceTunnelResponse>
     {
-        public QueryDeviceGroupInfoRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceGroupInfo", "iot", "openAPI")
+        public QueryDeviceTunnelRequest()
+            : base("Iot", "2018-01-20", "QueryDeviceTunnel", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,24 +40,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string groupType;
-
 		private string iotInstanceId;
 
-		private string groupId;
-
-		public string GroupType
-		{
-			get
-			{
-				return groupType;
-			}
-			set	
-			{
-				groupType = value;
-				DictionaryUtil.Add(QueryParameters, "GroupType", value);
-			}
-		}
+		private string tunnelId;
 
 		public string IotInstanceId
 		{
@@ -72,22 +57,27 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string GroupId
+		public string TunnelId
 		{
 			get
 			{
-				return groupId;
+				return tunnelId;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+				tunnelId = value;
+				DictionaryUtil.Add(QueryParameters, "TunnelId", value);
 			}
 		}
 
-        public override QueryDeviceGroupInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override QueryDeviceTunnelResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryDeviceGroupInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryDeviceTunnelResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QueryDeviceGroupInfoRequest : RpcAcsRequest<QueryDeviceGroupInfoResponse>
+    public class ListSourceReplicaRequest : RpcAcsRequest<ListSourceReplicaResponse>
     {
-        public QueryDeviceGroupInfoRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceGroupInfo", "iot", "openAPI")
+        public ListSourceReplicaRequest()
+            : base("Iot", "2018-01-20", "ListSourceReplica", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,24 +40,17 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string groupType;
-
 		private string iotInstanceId;
 
-		private string groupId;
+		private string context;
 
-		public string GroupType
-		{
-			get
-			{
-				return groupType;
-			}
-			set	
-			{
-				groupType = value;
-				DictionaryUtil.Add(QueryParameters, "GroupType", value);
-			}
-		}
+		private int? pageSize;
+
+		private string sourceType;
+
+		private int? pageNo;
+
+		private string lpInstanceId;
 
 		public string IotInstanceId
 		{
@@ -68,26 +61,83 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
 			}
 		}
 
-		public string GroupId
+		public string Context
 		{
 			get
 			{
-				return groupId;
+				return context;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+				context = value;
+				DictionaryUtil.Add(BodyParameters, "Context", value);
 			}
 		}
 
-        public override QueryDeviceGroupInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string SourceType
+		{
+			get
+			{
+				return sourceType;
+			}
+			set	
+			{
+				sourceType = value;
+				DictionaryUtil.Add(QueryParameters, "SourceType", value);
+			}
+		}
+
+		public int? PageNo
+		{
+			get
+			{
+				return pageNo;
+			}
+			set	
+			{
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
+			}
+		}
+
+		public string LpInstanceId
+		{
+			get
+			{
+				return lpInstanceId;
+			}
+			set	
+			{
+				lpInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "LpInstanceId", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override ListSourceReplicaResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryDeviceGroupInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListSourceReplicaResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

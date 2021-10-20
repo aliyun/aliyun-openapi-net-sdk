@@ -177,6 +177,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 				private bool? isApply;
 
+				private int? useOfficialConfig;
+
 				public string DriverId
 				{
 					get
@@ -294,6 +296,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					set	
 					{
 						isApply = value;
+					}
+				}
+
+				public int? UseOfficialConfig
+				{
+					get
+					{
+						return useOfficialConfig;
+					}
+					set	
+					{
+						useOfficialConfig = value;
 					}
 				}
 			}

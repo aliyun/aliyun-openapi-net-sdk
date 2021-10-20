@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QueryDeviceGroupListResponse : AcsResponse
+	public class CreateDeviceDynamicGroupResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,15 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private int? currentPage;
-
-		private int? pageCount;
-
-		private int? pageSize;
-
-		private int? total;
-
-		private List<QueryDeviceGroupList_GroupInfo> data;
+		private CreateDeviceDynamicGroup_Data data;
 
 		public string RequestId
 		{
@@ -91,55 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-			}
-		}
-
-		public int? PageCount
-		{
-			get
-			{
-				return pageCount;
-			}
-			set	
-			{
-				pageCount = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
-
-		public List<QueryDeviceGroupList_GroupInfo> Data
+		public CreateDeviceDynamicGroup_Data Data
 		{
 			get
 			{
@@ -151,7 +95,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class QueryDeviceGroupList_GroupInfo
+		public class CreateDeviceDynamicGroup_Data
 		{
 
 			private string groupId;
@@ -162,7 +106,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string groupDesc;
 
-			private string groupType;
+			private string dynamicGroupExpression;
 
 			public string GroupId
 			{
@@ -212,15 +156,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public string GroupType
+			public string DynamicGroupExpression
 			{
 				get
 				{
-					return groupType;
+					return dynamicGroupExpression;
 				}
 				set	
 				{
-					groupType = value;
+					dynamicGroupExpression = value;
 				}
 			}
 		}

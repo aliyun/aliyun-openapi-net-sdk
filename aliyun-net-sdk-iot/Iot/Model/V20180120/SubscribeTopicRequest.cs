@@ -104,6 +104,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
         public override SubscribeTopicResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return SubscribeTopicResponseUnmarshaller.Unmarshall(unmarshallerContext);

@@ -148,6 +148,12 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private bool? needConfirm;
 
+			private string groupId;
+
+			private string groupName;
+
+			private string downloadProtocol;
+
 			private List<QueryOTAJob_OtaTagDTO> tags;
 
 			private List<string> srcVersions;
@@ -449,6 +455,42 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					needConfirm = value;
+				}
+			}
+
+			public string GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
+				}
+			}
+
+			public string GroupName
+			{
+				get
+				{
+					return groupName;
+				}
+				set	
+				{
+					groupName = value;
+				}
+			}
+
+			public string DownloadProtocol
+			{
+				get
+				{
+					return downloadProtocol;
+				}
+				set	
+				{
+					downloadProtocol = value;
 				}
 			}
 

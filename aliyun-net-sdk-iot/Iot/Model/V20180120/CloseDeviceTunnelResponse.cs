@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class SubscribeTopicResponse : AcsResponse
+	public class CloseDeviceTunnelResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,8 +32,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string code;
 
 		private string errorMessage;
-
-		private List<string> failureTopics;
 
 		public string RequestId
 		{
@@ -80,18 +78,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				errorMessage = value;
-			}
-		}
-
-		public List<string> FailureTopics
-		{
-			get
-			{
-				return failureTopics;
-			}
-			set	
-			{
-				failureTopics = value;
 			}
 		}
 	}

@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QueryDeviceGroupInfoRequest : RpcAcsRequest<QueryDeviceGroupInfoResponse>
+    public class CreateDeviceDynamicGroupRequest : RpcAcsRequest<CreateDeviceDynamicGroupResponse>
     {
-        public QueryDeviceGroupInfoRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceGroupInfo", "iot", "openAPI")
+        public CreateDeviceDynamicGroupRequest()
+            : base("Iot", "2018-01-20", "CreateDeviceDynamicGroup", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,22 +40,24 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string groupType;
+		private string dynamicGroupExpression;
 
 		private string iotInstanceId;
 
-		private string groupId;
+		private string groupName;
 
-		public string GroupType
+		private string groupDesc;
+
+		public string DynamicGroupExpression
 		{
 			get
 			{
-				return groupType;
+				return dynamicGroupExpression;
 			}
 			set	
 			{
-				groupType = value;
-				DictionaryUtil.Add(QueryParameters, "GroupType", value);
+				dynamicGroupExpression = value;
+				DictionaryUtil.Add(QueryParameters, "DynamicGroupExpression", value);
 			}
 		}
 
@@ -72,22 +74,35 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string GroupId
+		public string GroupName
 		{
 			get
 			{
-				return groupId;
+				return groupName;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+				groupName = value;
+				DictionaryUtil.Add(QueryParameters, "GroupName", value);
 			}
 		}
 
-        public override QueryDeviceGroupInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string GroupDesc
+		{
+			get
+			{
+				return groupDesc;
+			}
+			set	
+			{
+				groupDesc = value;
+				DictionaryUtil.Add(QueryParameters, "GroupDesc", value);
+			}
+		}
+
+        public override CreateDeviceDynamicGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryDeviceGroupInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDeviceDynamicGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

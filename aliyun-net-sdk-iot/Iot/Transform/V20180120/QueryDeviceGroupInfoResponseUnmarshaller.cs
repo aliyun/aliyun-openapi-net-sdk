@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.DeviceCount = _ctx.IntegerValue("QueryDeviceGroupInfo.Data.DeviceCount");
 			data.DeviceActive = _ctx.IntegerValue("QueryDeviceGroupInfo.Data.DeviceActive");
 			data.DeviceOnline = _ctx.IntegerValue("QueryDeviceGroupInfo.Data.DeviceOnline");
+			data.DynamicGroupExpression = _ctx.StringValue("QueryDeviceGroupInfo.Data.DynamicGroupExpression");
 			queryDeviceGroupInfoResponse.Data = data;
         
 			return queryDeviceGroupInfoResponse;

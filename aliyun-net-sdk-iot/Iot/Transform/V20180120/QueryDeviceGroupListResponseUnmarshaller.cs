@@ -47,6 +47,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				groupInfo.UtcCreate = _ctx.StringValue("QueryDeviceGroupList.Data["+ i +"].UtcCreate");
 				groupInfo.GroupName = _ctx.StringValue("QueryDeviceGroupList.Data["+ i +"].GroupName");
 				groupInfo.GroupDesc = _ctx.StringValue("QueryDeviceGroupList.Data["+ i +"].GroupDesc");
+				groupInfo.GroupType = _ctx.StringValue("QueryDeviceGroupList.Data["+ i +"].GroupType");
 
 				queryDeviceGroupListResponse_data.Add(groupInfo);
 			}

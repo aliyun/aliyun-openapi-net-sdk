@@ -24,25 +24,19 @@ using Aliyun.Acs.Iot.Model.V20180120;
 
 namespace Aliyun.Acs.Iot.Transform.V20180120
 {
-    public class SubscribeTopicResponseUnmarshaller
+    public class CloseDeviceTunnelResponseUnmarshaller
     {
-        public static SubscribeTopicResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CloseDeviceTunnelResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			SubscribeTopicResponse subscribeTopicResponse = new SubscribeTopicResponse();
+			CloseDeviceTunnelResponse closeDeviceTunnelResponse = new CloseDeviceTunnelResponse();
 
-			subscribeTopicResponse.HttpResponse = _ctx.HttpResponse;
-			subscribeTopicResponse.RequestId = _ctx.StringValue("SubscribeTopic.RequestId");
-			subscribeTopicResponse.Success = _ctx.BooleanValue("SubscribeTopic.Success");
-			subscribeTopicResponse.Code = _ctx.StringValue("SubscribeTopic.Code");
-			subscribeTopicResponse.ErrorMessage = _ctx.StringValue("SubscribeTopic.ErrorMessage");
-
-			List<string> subscribeTopicResponse_failureTopics = new List<string>();
-			for (int i = 0; i < _ctx.Length("SubscribeTopic.FailureTopics.Length"); i++) {
-				subscribeTopicResponse_failureTopics.Add(_ctx.StringValue("SubscribeTopic.FailureTopics["+ i +"]"));
-			}
-			subscribeTopicResponse.FailureTopics = subscribeTopicResponse_failureTopics;
+			closeDeviceTunnelResponse.HttpResponse = _ctx.HttpResponse;
+			closeDeviceTunnelResponse.RequestId = _ctx.StringValue("CloseDeviceTunnel.RequestId");
+			closeDeviceTunnelResponse.Success = _ctx.BooleanValue("CloseDeviceTunnel.Success");
+			closeDeviceTunnelResponse.Code = _ctx.StringValue("CloseDeviceTunnel.Code");
+			closeDeviceTunnelResponse.ErrorMessage = _ctx.StringValue("CloseDeviceTunnel.ErrorMessage");
         
-			return subscribeTopicResponse;
+			return closeDeviceTunnelResponse;
         }
     }
 }

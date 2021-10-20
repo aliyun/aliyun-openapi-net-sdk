@@ -24,25 +24,20 @@ using Aliyun.Acs.Iot.Model.V20180120;
 
 namespace Aliyun.Acs.Iot.Transform.V20180120
 {
-    public class SubscribeTopicResponseUnmarshaller
+    public class AddDataForApiSourceResponseUnmarshaller
     {
-        public static SubscribeTopicResponse Unmarshall(UnmarshallerContext _ctx)
+        public static AddDataForApiSourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			SubscribeTopicResponse subscribeTopicResponse = new SubscribeTopicResponse();
+			AddDataForApiSourceResponse addDataForApiSourceResponse = new AddDataForApiSourceResponse();
 
-			subscribeTopicResponse.HttpResponse = _ctx.HttpResponse;
-			subscribeTopicResponse.RequestId = _ctx.StringValue("SubscribeTopic.RequestId");
-			subscribeTopicResponse.Success = _ctx.BooleanValue("SubscribeTopic.Success");
-			subscribeTopicResponse.Code = _ctx.StringValue("SubscribeTopic.Code");
-			subscribeTopicResponse.ErrorMessage = _ctx.StringValue("SubscribeTopic.ErrorMessage");
-
-			List<string> subscribeTopicResponse_failureTopics = new List<string>();
-			for (int i = 0; i < _ctx.Length("SubscribeTopic.FailureTopics.Length"); i++) {
-				subscribeTopicResponse_failureTopics.Add(_ctx.StringValue("SubscribeTopic.FailureTopics["+ i +"]"));
-			}
-			subscribeTopicResponse.FailureTopics = subscribeTopicResponse_failureTopics;
+			addDataForApiSourceResponse.HttpResponse = _ctx.HttpResponse;
+			addDataForApiSourceResponse.RequestId = _ctx.StringValue("AddDataForApiSource.RequestId");
+			addDataForApiSourceResponse.Success = _ctx.BooleanValue("AddDataForApiSource.Success");
+			addDataForApiSourceResponse.Code = _ctx.StringValue("AddDataForApiSource.Code");
+			addDataForApiSourceResponse.ErrorMessage = _ctx.StringValue("AddDataForApiSource.ErrorMessage");
+			addDataForApiSourceResponse.Data = _ctx.LongValue("AddDataForApiSource.Data");
         
-			return subscribeTopicResponse;
+			return addDataForApiSourceResponse;
         }
     }
 }

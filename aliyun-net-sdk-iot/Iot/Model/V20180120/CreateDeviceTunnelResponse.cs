@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QueryDeviceGroupListResponse : AcsResponse
+	public class CreateDeviceTunnelResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,15 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private int? currentPage;
-
-		private int? pageCount;
-
-		private int? pageSize;
-
-		private int? total;
-
-		private List<QueryDeviceGroupList_GroupInfo> data;
+		private CreateDeviceTunnel_Data data;
 
 		public string RequestId
 		{
@@ -91,55 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-			}
-		}
-
-		public int? PageCount
-		{
-			get
-			{
-				return pageCount;
-			}
-			set	
-			{
-				pageCount = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
-
-		public List<QueryDeviceGroupList_GroupInfo> Data
+		public CreateDeviceTunnel_Data Data
 		{
 			get
 			{
@@ -151,76 +95,48 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class QueryDeviceGroupList_GroupInfo
+		public class CreateDeviceTunnel_Data
 		{
 
-			private string groupId;
+			private string tunnelId;
 
-			private string utcCreate;
+			private string sourceAccessToken;
 
-			private string groupName;
+			private string sourceURI;
 
-			private string groupDesc;
-
-			private string groupType;
-
-			public string GroupId
+			public string TunnelId
 			{
 				get
 				{
-					return groupId;
+					return tunnelId;
 				}
 				set	
 				{
-					groupId = value;
+					tunnelId = value;
 				}
 			}
 
-			public string UtcCreate
+			public string SourceAccessToken
 			{
 				get
 				{
-					return utcCreate;
+					return sourceAccessToken;
 				}
 				set	
 				{
-					utcCreate = value;
+					sourceAccessToken = value;
 				}
 			}
 
-			public string GroupName
+			public string SourceURI
 			{
 				get
 				{
-					return groupName;
+					return sourceURI;
 				}
 				set	
 				{
-					groupName = value;
-				}
-			}
-
-			public string GroupDesc
-			{
-				get
-				{
-					return groupDesc;
-				}
-				set	
-				{
-					groupDesc = value;
-				}
-			}
-
-			public string GroupType
-			{
-				get
-				{
-					return groupType;
-				}
-				set	
-				{
-					groupType = value;
+					sourceURI = value;
 				}
 			}
 		}

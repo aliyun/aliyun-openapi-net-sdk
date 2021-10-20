@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private List<string> groupTypess = new List<string>(){ };
+
 		private string superGroupId;
 
 		private string iotInstanceId;
@@ -49,6 +51,23 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private int? currentPage;
 
 		private string groupName;
+
+		public List<string> GroupTypess
+		{
+			get
+			{
+				return groupTypess;
+			}
+
+			set
+			{
+				groupTypess = value;
+				for (int i = 0; i < groupTypess.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"GroupTypes." + (i + 1) , groupTypess[i]);
+				}
+			}
+		}
 
 		public string SuperGroupId
 		{

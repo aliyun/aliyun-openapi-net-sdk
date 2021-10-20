@@ -40,11 +40,26 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private string groupType;
+
 		private string iotInstanceId;
 
 		private string tagString;
 
 		private string groupId;
+
+		public string GroupType
+		{
+			get
+			{
+				return groupType;
+			}
+			set	
+			{
+				groupType = value;
+				DictionaryUtil.Add(QueryParameters, "GroupType", value);
+			}
+		}
 
 		public string IotInstanceId
 		{

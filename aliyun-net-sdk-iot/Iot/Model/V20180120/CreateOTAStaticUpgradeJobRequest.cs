@@ -46,9 +46,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private bool? needConfirm;
 
+		private string groupType;
+
 		private bool? needPush;
 
 		private string iotInstanceId;
+
+		private string downloadProtocol;
 
 		private string targetSelection;
 
@@ -59,6 +63,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string grayPercent;
 
 		private string dnListFileUrl;
+
+		private string groupId;
 
 		private string firmwareId;
 
@@ -115,6 +121,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public string GroupType
+		{
+			get
+			{
+				return groupType;
+			}
+			set	
+			{
+				groupType = value;
+				DictionaryUtil.Add(QueryParameters, "GroupType", value);
+			}
+		}
+
 		public bool? NeedPush
 		{
 			get
@@ -138,6 +157,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public string DownloadProtocol
+		{
+			get
+			{
+				return downloadProtocol;
+			}
+			set	
+			{
+				downloadProtocol = value;
+				DictionaryUtil.Add(QueryParameters, "DownloadProtocol", value);
 			}
 		}
 
@@ -208,6 +240,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				dnListFileUrl = value;
 				DictionaryUtil.Add(QueryParameters, "DnListFileUrl", value);
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 

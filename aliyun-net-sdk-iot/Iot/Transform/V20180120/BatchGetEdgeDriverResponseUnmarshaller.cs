@@ -48,6 +48,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				driver.IsBuiltIn = _ctx.BooleanValue("BatchGetEdgeDriver.DriverList["+ i +"].IsBuiltIn");
 				driver.GmtCreateTimestamp = _ctx.LongValue("BatchGetEdgeDriver.DriverList["+ i +"].GmtCreateTimestamp");
 				driver.GmtModifiedTimestamp = _ctx.LongValue("BatchGetEdgeDriver.DriverList["+ i +"].GmtModifiedTimestamp");
+				driver.UseOfficialConfig = _ctx.IntegerValue("BatchGetEdgeDriver.DriverList["+ i +"].UseOfficialConfig");
 
 				batchGetEdgeDriverResponse_driverList.Add(driver);
 			}
