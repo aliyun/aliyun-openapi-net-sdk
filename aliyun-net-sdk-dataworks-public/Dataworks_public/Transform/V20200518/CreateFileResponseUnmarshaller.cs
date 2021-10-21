@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			CreateFileResponse createFileResponse = new CreateFileResponse();
 
 			createFileResponse.HttpResponse = _ctx.HttpResponse;
+			createFileResponse.HttpStatusCode = _ctx.IntegerValue("CreateFile.HttpStatusCode");
+			createFileResponse.Data = _ctx.LongValue("CreateFile.Data");
 			createFileResponse.RequestId = _ctx.StringValue("CreateFile.RequestId");
+			createFileResponse.ErrorMessage = _ctx.StringValue("CreateFile.ErrorMessage");
 			createFileResponse.Success = _ctx.BooleanValue("CreateFile.Success");
 			createFileResponse.ErrorCode = _ctx.StringValue("CreateFile.ErrorCode");
-			createFileResponse.ErrorMessage = _ctx.StringValue("CreateFile.ErrorMessage");
-			createFileResponse.Data = _ctx.LongValue("CreateFile.Data");
-			createFileResponse.HttpStatusCode = _ctx.IntegerValue("CreateFile.HttpStatusCode");
         
 			return createFileResponse;
         }

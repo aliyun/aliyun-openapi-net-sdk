@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			ExportDISyncTasksResponse exportDISyncTasksResponse = new ExportDISyncTasksResponse();
 
 			exportDISyncTasksResponse.HttpResponse = _ctx.HttpResponse;
-			exportDISyncTasksResponse.RequestId = _ctx.StringValue("ExportDISyncTasks.RequestId");
-			exportDISyncTasksResponse.Success = _ctx.BooleanValue("ExportDISyncTasks.Success");
+			exportDISyncTasksResponse.Success = _ctx.BooleanValue("ExportDISyncTasks.success");
+			exportDISyncTasksResponse.RequestId = _ctx.StringValue("ExportDISyncTasks.requestId");
 
-			ExportDISyncTasksResponse.ExportDISyncTasks_TaskDetail taskDetail = new ExportDISyncTasksResponse.ExportDISyncTasks_TaskDetail();
-			taskDetail.RealTimeSolution = _ctx.StringValue("ExportDISyncTasks.TaskDetail.RealTimeSolution");
-			exportDISyncTasksResponse.TaskDetail = taskDetail;
+			ExportDISyncTasksResponse.ExportDISyncTasks_Data data = new ExportDISyncTasksResponse.ExportDISyncTasks_Data();
+			data.RealTimeSolution = _ctx.StringValue("ExportDISyncTasks.Data.realTimeSolution");
+			exportDISyncTasksResponse.Data = data;
         
 			return exportDISyncTasksResponse;
         }

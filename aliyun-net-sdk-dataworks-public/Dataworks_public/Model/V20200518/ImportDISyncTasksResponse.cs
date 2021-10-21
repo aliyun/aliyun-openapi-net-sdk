@@ -25,23 +25,11 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class ImportDISyncTasksResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private ImportDISyncTasks_TaskInfo taskInfo;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private ImportDISyncTasks_TaskInfo taskInfo;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

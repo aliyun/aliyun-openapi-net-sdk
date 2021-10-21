@@ -25,23 +25,11 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class ExportDISyncTasksResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private ExportDISyncTasks_TaskDetail taskDetail;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private ExportDISyncTasks_Data data;
 
 		public bool? Success
 		{
@@ -55,19 +43,31 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public ExportDISyncTasks_TaskDetail TaskDetail
+		public string RequestId
 		{
 			get
 			{
-				return taskDetail;
+				return requestId;
 			}
 			set	
 			{
-				taskDetail = value;
+				requestId = value;
 			}
 		}
 
-		public class ExportDISyncTasks_TaskDetail
+		public ExportDISyncTasks_Data Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class ExportDISyncTasks_Data
 		{
 
 			private string realTimeSolution;

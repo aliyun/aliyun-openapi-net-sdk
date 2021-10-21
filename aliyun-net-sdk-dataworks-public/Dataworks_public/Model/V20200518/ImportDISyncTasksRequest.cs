@@ -43,9 +43,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string taskType;
 
-		private string taskContent;
-
 		private string taskParam;
+
+		private string body;
 
 		private long? projectId;
 
@@ -62,19 +62,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public string TaskContent
-		{
-			get
-			{
-				return taskContent;
-			}
-			set	
-			{
-				taskContent = value;
-				DictionaryUtil.Add(QueryParameters, "TaskContent", value);
-			}
-		}
-
 		public string TaskParam
 		{
 			get
@@ -85,6 +72,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				taskParam = value;
 				DictionaryUtil.Add(QueryParameters, "TaskParam", value);
+			}
+		}
+
+		public string Body
+		{
+			get
+			{
+				return body;
+			}
+			set	
+			{
+				body = value;
+				DictionaryUtil.Add(BodyParameters, "body", value);
 			}
 		}
 

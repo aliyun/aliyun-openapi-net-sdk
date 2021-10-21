@@ -1,3 +1,6 @@
+2021-10-21 Version: 3.4.3
+- Generated 2020-05-18 for `dataworks-public`.
+
 2021-10-20 Version: 7.29.0
 - Add DeviceCenter API, including CreateDeviceDynamicGroup, DeleteDeviceDynamicGroup, QueryDynamicGroupDevices.
 - Update DeviceCenter API, including SetDeviceGroupTags, QueryDeviceGroupByFuzzyName, QueryDeviceGroupByDevice, QueryDeviceGroupTagList, UpdateDeviceGroup, QueryDeviceGroupList, QueryDeviceGroupInfo.

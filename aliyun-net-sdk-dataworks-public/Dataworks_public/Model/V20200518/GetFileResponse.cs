@@ -25,51 +25,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetFileResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
-		private string errorCode;
+		private int? httpStatusCode;
 
 		private string errorMessage;
 
-		private int? httpStatusCode;
+		private string requestId;
+
+		private string errorCode;
+
+		private bool? success;
 
 		private GetFile_Data data;
 
-		public string RequestId
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return requestId;
+				return httpStatusCode;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				httpStatusCode = value;
 			}
 		}
 
@@ -85,15 +61,39 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? HttpStatusCode
+		public string RequestId
 		{
 			get
 			{
-				return httpStatusCode;
+				return requestId;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				requestId = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -143,81 +143,81 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetFile_File
 			{
 
-				private string connectionName;
+				private int? commitStatus;
 
-				private long? parentId;
+				private bool? autoParsing;
 
-				private bool? isMaxCompute;
+				private string owner;
 
 				private long? createTime;
 
-				private string createUser;
+				private int? fileType;
+
+				private int? currentVersion;
 
 				private long? bizId;
 
-				private string fileFolderId;
+				private string lastEditUser;
 
 				private string fileName;
 
-				private int? fileType;
+				private string connectionName;
 
 				private string useType;
 
+				private string fileFolderId;
+
+				private long? parentId;
+
+				private string createUser;
+
+				private bool? isMaxCompute;
+
+				private long? businessId;
+
 				private string fileDescription;
+
+				private string deletedStatus;
+
+				private long? lastEditTime;
 
 				private string content;
 
 				private long? nodeId;
 
-				private int? currentVersion;
-
-				private string owner;
-
-				private string lastEditUser;
-
-				private long? lastEditTime;
-
-				private int? commitStatus;
-
-				private string deletedStatus;
-
-				private long? businessId;
-
-				private bool? autoParsing;
-
-				public string ConnectionName
+				public int? CommitStatus
 				{
 					get
 					{
-						return connectionName;
+						return commitStatus;
 					}
 					set	
 					{
-						connectionName = value;
+						commitStatus = value;
 					}
 				}
 
-				public long? ParentId
+				public bool? AutoParsing
 				{
 					get
 					{
-						return parentId;
+						return autoParsing;
 					}
 					set	
 					{
-						parentId = value;
+						autoParsing = value;
 					}
 				}
 
-				public bool? IsMaxCompute
+				public string Owner
 				{
 					get
 					{
-						return isMaxCompute;
+						return owner;
 					}
 					set	
 					{
-						isMaxCompute = value;
+						owner = value;
 					}
 				}
 
@@ -233,15 +233,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string CreateUser
+				public int? FileType
 				{
 					get
 					{
-						return createUser;
+						return fileType;
 					}
 					set	
 					{
-						createUser = value;
+						fileType = value;
+					}
+				}
+
+				public int? CurrentVersion
+				{
+					get
+					{
+						return currentVersion;
+					}
+					set	
+					{
+						currentVersion = value;
 					}
 				}
 
@@ -257,15 +269,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string FileFolderId
+				public string LastEditUser
 				{
 					get
 					{
-						return fileFolderId;
+						return lastEditUser;
 					}
 					set	
 					{
-						fileFolderId = value;
+						lastEditUser = value;
 					}
 				}
 
@@ -281,15 +293,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public int? FileType
+				public string ConnectionName
 				{
 					get
 					{
-						return fileType;
+						return connectionName;
 					}
 					set	
 					{
-						fileType = value;
+						connectionName = value;
 					}
 				}
 
@@ -305,6 +317,66 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
+				public string FileFolderId
+				{
+					get
+					{
+						return fileFolderId;
+					}
+					set	
+					{
+						fileFolderId = value;
+					}
+				}
+
+				public long? ParentId
+				{
+					get
+					{
+						return parentId;
+					}
+					set	
+					{
+						parentId = value;
+					}
+				}
+
+				public string CreateUser
+				{
+					get
+					{
+						return createUser;
+					}
+					set	
+					{
+						createUser = value;
+					}
+				}
+
+				public bool? IsMaxCompute
+				{
+					get
+					{
+						return isMaxCompute;
+					}
+					set	
+					{
+						isMaxCompute = value;
+					}
+				}
+
+				public long? BusinessId
+				{
+					get
+					{
+						return businessId;
+					}
+					set	
+					{
+						businessId = value;
+					}
+				}
+
 				public string FileDescription
 				{
 					get
@@ -314,6 +386,30 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						fileDescription = value;
+					}
+				}
+
+				public string DeletedStatus
+				{
+					get
+					{
+						return deletedStatus;
+					}
+					set	
+					{
+						deletedStatus = value;
+					}
+				}
+
+				public long? LastEditTime
+				{
+					get
+					{
+						return lastEditTime;
+					}
+					set	
+					{
+						lastEditTime = value;
 					}
 				}
 
@@ -340,112 +436,14 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 						nodeId = value;
 					}
 				}
-
-				public int? CurrentVersion
-				{
-					get
-					{
-						return currentVersion;
-					}
-					set	
-					{
-						currentVersion = value;
-					}
-				}
-
-				public string Owner
-				{
-					get
-					{
-						return owner;
-					}
-					set	
-					{
-						owner = value;
-					}
-				}
-
-				public string LastEditUser
-				{
-					get
-					{
-						return lastEditUser;
-					}
-					set	
-					{
-						lastEditUser = value;
-					}
-				}
-
-				public long? LastEditTime
-				{
-					get
-					{
-						return lastEditTime;
-					}
-					set	
-					{
-						lastEditTime = value;
-					}
-				}
-
-				public int? CommitStatus
-				{
-					get
-					{
-						return commitStatus;
-					}
-					set	
-					{
-						commitStatus = value;
-					}
-				}
-
-				public string DeletedStatus
-				{
-					get
-					{
-						return deletedStatus;
-					}
-					set	
-					{
-						deletedStatus = value;
-					}
-				}
-
-				public long? BusinessId
-				{
-					get
-					{
-						return businessId;
-					}
-					set	
-					{
-						businessId = value;
-					}
-				}
-
-				public bool? AutoParsing
-				{
-					get
-					{
-						return autoParsing;
-					}
-					set	
-					{
-						autoParsing = value;
-					}
-				}
 			}
 
 			public class GetFile_NodeConfiguration
 			{
 
-				private int? autoRerunTimes;
-
-				private int? autoRerunIntervalMillis;
-
 				private string rerunMode;
+
+				private string schedulerType;
 
 				private bool? stop;
 
@@ -455,45 +453,23 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private long? endEffectDate;
 
-				private string cronExpress;
-
 				private string cycleType;
-
-				private string dependentType;
 
 				private string dependentNodeIdList;
 
 				private long? resourceGroupId;
 
-				private string schedulerType;
+				private string dependentType;
+
+				private int? autoRerunTimes;
+
+				private int? autoRerunIntervalMillis;
+
+				private string cronExpress;
 
 				private List<GetFile_NodeInputOutput> inputList;
 
 				private List<GetFile_NodeInputOutput1> outputList;
-
-				public int? AutoRerunTimes
-				{
-					get
-					{
-						return autoRerunTimes;
-					}
-					set	
-					{
-						autoRerunTimes = value;
-					}
-				}
-
-				public int? AutoRerunIntervalMillis
-				{
-					get
-					{
-						return autoRerunIntervalMillis;
-					}
-					set	
-					{
-						autoRerunIntervalMillis = value;
-					}
-				}
 
 				public string RerunMode
 				{
@@ -504,6 +480,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						rerunMode = value;
+					}
+				}
+
+				public string SchedulerType
+				{
+					get
+					{
+						return schedulerType;
+					}
+					set	
+					{
+						schedulerType = value;
 					}
 				}
 
@@ -555,18 +543,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string CronExpress
-				{
-					get
-					{
-						return cronExpress;
-					}
-					set	
-					{
-						cronExpress = value;
-					}
-				}
-
 				public string CycleType
 				{
 					get
@@ -576,18 +552,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						cycleType = value;
-					}
-				}
-
-				public string DependentType
-				{
-					get
-					{
-						return dependentType;
-					}
-					set	
-					{
-						dependentType = value;
 					}
 				}
 
@@ -615,15 +579,51 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string SchedulerType
+				public string DependentType
 				{
 					get
 					{
-						return schedulerType;
+						return dependentType;
 					}
 					set	
 					{
-						schedulerType = value;
+						dependentType = value;
+					}
+				}
+
+				public int? AutoRerunTimes
+				{
+					get
+					{
+						return autoRerunTimes;
+					}
+					set	
+					{
+						autoRerunTimes = value;
+					}
+				}
+
+				public int? AutoRerunIntervalMillis
+				{
+					get
+					{
+						return autoRerunIntervalMillis;
+					}
+					set	
+					{
+						autoRerunIntervalMillis = value;
+					}
+				}
+
+				public string CronExpress
+				{
+					get
+					{
+						return cronExpress;
+					}
+					set	
+					{
+						cronExpress = value;
 					}
 				}
 
@@ -686,21 +686,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				public class GetFile_NodeInputOutput1
 				{
 
-					private string output;
-
 					private string refTableName;
 
-					public string Output
-					{
-						get
-						{
-							return output;
-						}
-						set	
-						{
-							output = value;
-						}
-					}
+					private string output;
 
 					public string RefTableName
 					{
@@ -711,6 +699,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 						set	
 						{
 							refTableName = value;
+						}
+					}
+
+					public string Output
+					{
+						get
+						{
+							return output;
+						}
+						set	
+						{
+							output = value;
 						}
 					}
 				}
