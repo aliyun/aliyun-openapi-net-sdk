@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string modifyMode;
 
+		private string freshWhiteListReadins;
+
 		private string dBInstanceIPArrayAttribute;
 
 		public string DBInstanceIPArrayName
@@ -144,6 +146,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				modifyMode = value;
 				DictionaryUtil.Add(QueryParameters, "ModifyMode", value);
+			}
+		}
+
+		public string FreshWhiteListReadins
+		{
+			get
+			{
+				return freshWhiteListReadins;
+			}
+			set	
+			{
+				freshWhiteListReadins = value;
+				DictionaryUtil.Add(QueryParameters, "FreshWhiteListReadins", value);
 			}
 		}
 

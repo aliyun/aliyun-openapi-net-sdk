@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
+		private string resourceType;
+
 		private string tags;
 
 		public long? ResourceOwnerId
@@ -144,6 +146,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 

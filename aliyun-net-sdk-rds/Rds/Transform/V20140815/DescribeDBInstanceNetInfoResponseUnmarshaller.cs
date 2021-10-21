@@ -67,6 +67,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 					dBInstanceWeight.DBInstanceType = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].DBInstanceType");
 					dBInstanceWeight.Availability = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].Availability");
 					dBInstanceWeight.Weight = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].Weight");
+					dBInstanceWeight.Role = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].DBInstanceWeights["+ j +"].Role");
 
 					dBInstanceNetInfo_dBInstanceWeights.Add(dBInstanceWeight);
 				}

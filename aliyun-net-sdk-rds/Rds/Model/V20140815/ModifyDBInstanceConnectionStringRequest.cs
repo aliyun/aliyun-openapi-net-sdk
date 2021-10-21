@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string connectionStringPrefix;
 
+		private string generalGroupName;
+
 		private string dBInstanceId;
 
 		private string resourceOwnerAccount;
@@ -79,6 +81,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				connectionStringPrefix = value;
 				DictionaryUtil.Add(QueryParameters, "ConnectionStringPrefix", value);
+			}
+		}
+
+		public string GeneralGroupName
+		{
+			get
+			{
+				return generalGroupName;
+			}
+			set	
+			{
+				generalGroupName = value;
+				DictionaryUtil.Add(QueryParameters, "GeneralGroupName", value);
 			}
 		}
 

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			CreateReadOnlyDBInstanceResponse createReadOnlyDBInstanceResponse = new CreateReadOnlyDBInstanceResponse();
 
 			createReadOnlyDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			createReadOnlyDBInstanceResponse.RequestId = _ctx.StringValue("CreateReadOnlyDBInstance.RequestId");
 			createReadOnlyDBInstanceResponse.DBInstanceId = _ctx.StringValue("CreateReadOnlyDBInstance.DBInstanceId");
-			createReadOnlyDBInstanceResponse.OrderId = _ctx.StringValue("CreateReadOnlyDBInstance.OrderId");
-			createReadOnlyDBInstanceResponse.ConnectionString = _ctx.StringValue("CreateReadOnlyDBInstance.ConnectionString");
+			createReadOnlyDBInstanceResponse.RequestId = _ctx.StringValue("CreateReadOnlyDBInstance.RequestId");
 			createReadOnlyDBInstanceResponse.Port = _ctx.StringValue("CreateReadOnlyDBInstance.Port");
+			createReadOnlyDBInstanceResponse.ConnectionString = _ctx.StringValue("CreateReadOnlyDBInstance.ConnectionString");
+			createReadOnlyDBInstanceResponse.OrderId = _ctx.StringValue("CreateReadOnlyDBInstance.OrderId");
         
 			return createReadOnlyDBInstanceResponse;
         }

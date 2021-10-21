@@ -31,9 +31,37 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string sSLExpireTime;
 
-		private string requireUpdate;
+		private string sSLEnabled;
 
 		private string requireUpdateReason;
+
+		private string cAType;
+
+		private string serverCert;
+
+		private string serverKey;
+
+		private string sSLCreateTime;
+
+		private string clientCACert;
+
+		private string clientCACertExpireTime;
+
+		private string clientCertRevocationList;
+
+		private string aCL;
+
+		private string replicationACL;
+
+		private string serverCAUrl;
+
+		private string requireUpdate;
+
+		private string requireUpdateItem;
+
+		private string lastModifyStatus;
+
+		private string modifyStatusReason;
 
 		public string RequestId
 		{
@@ -71,15 +99,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string RequireUpdate
+		public string SSLEnabled
 		{
 			get
 			{
-				return requireUpdate;
+				return sSLEnabled;
 			}
 			set	
 			{
-				requireUpdate = value;
+				sSLEnabled = value;
 			}
 		}
 
@@ -92,6 +120,174 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requireUpdateReason = value;
+			}
+		}
+
+		public string CAType
+		{
+			get
+			{
+				return cAType;
+			}
+			set	
+			{
+				cAType = value;
+			}
+		}
+
+		public string ServerCert
+		{
+			get
+			{
+				return serverCert;
+			}
+			set	
+			{
+				serverCert = value;
+			}
+		}
+
+		public string ServerKey
+		{
+			get
+			{
+				return serverKey;
+			}
+			set	
+			{
+				serverKey = value;
+			}
+		}
+
+		public string SSLCreateTime
+		{
+			get
+			{
+				return sSLCreateTime;
+			}
+			set	
+			{
+				sSLCreateTime = value;
+			}
+		}
+
+		public string ClientCACert
+		{
+			get
+			{
+				return clientCACert;
+			}
+			set	
+			{
+				clientCACert = value;
+			}
+		}
+
+		public string ClientCACertExpireTime
+		{
+			get
+			{
+				return clientCACertExpireTime;
+			}
+			set	
+			{
+				clientCACertExpireTime = value;
+			}
+		}
+
+		public string ClientCertRevocationList
+		{
+			get
+			{
+				return clientCertRevocationList;
+			}
+			set	
+			{
+				clientCertRevocationList = value;
+			}
+		}
+
+		public string ACL
+		{
+			get
+			{
+				return aCL;
+			}
+			set	
+			{
+				aCL = value;
+			}
+		}
+
+		public string ReplicationACL
+		{
+			get
+			{
+				return replicationACL;
+			}
+			set	
+			{
+				replicationACL = value;
+			}
+		}
+
+		public string ServerCAUrl
+		{
+			get
+			{
+				return serverCAUrl;
+			}
+			set	
+			{
+				serverCAUrl = value;
+			}
+		}
+
+		public string RequireUpdate
+		{
+			get
+			{
+				return requireUpdate;
+			}
+			set	
+			{
+				requireUpdate = value;
+			}
+		}
+
+		public string RequireUpdateItem
+		{
+			get
+			{
+				return requireUpdateItem;
+			}
+			set	
+			{
+				requireUpdateItem = value;
+			}
+		}
+
+		public string LastModifyStatus
+		{
+			get
+			{
+				return lastModifyStatus;
+			}
+			set	
+			{
+				lastModifyStatus = value;
+			}
+		}
+
+		public string ModifyStatusReason
+		{
+			get
+			{
+				return modifyStatusReason;
+			}
+			set	
+			{
+				modifyStatusReason = value;
 			}
 		}
 	}

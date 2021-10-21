@@ -25,27 +25,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBInstanceHAConfigResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dBInstanceId;
 
-		private string syncMode;
+		private string requestId;
 
 		private string hAMode;
 
-		private List<DescribeDBInstanceHAConfig_NodeInfo> hostInstanceInfos;
+		private string syncMode;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDBInstanceHAConfig_NodeInfo> hostInstanceInfos;
 
 		public string DBInstanceId
 		{
@@ -59,15 +47,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string SyncMode
+		public string RequestId
 		{
 			get
 			{
-				return syncMode;
+				return requestId;
 			}
 			set	
 			{
-				syncMode = value;
+				requestId = value;
 			}
 		}
 
@@ -80,6 +68,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				hAMode = value;
+			}
+		}
+
+		public string SyncMode
+		{
+			get
+			{
+				return syncMode;
+			}
+			set	
+			{
+				syncMode = value;
 			}
 		}
 
@@ -98,13 +98,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeDBInstanceHAConfig_NodeInfo
 		{
 
-			private string nodeId;
-
-			private string regionId;
-
 			private string logSyncTime;
-
-			private string dataSyncTime;
 
 			private string nodeType;
 
@@ -112,29 +106,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string syncStatus;
 
-			public string NodeId
-			{
-				get
-				{
-					return nodeId;
-				}
-				set	
-				{
-					nodeId = value;
-				}
-			}
+			private string dataSyncTime;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+			private string nodeId;
+
+			private string regionId;
 
 			public string LogSyncTime
 			{
@@ -145,18 +121,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					logSyncTime = value;
-				}
-			}
-
-			public string DataSyncTime
-			{
-				get
-				{
-					return dataSyncTime;
-				}
-				set	
-				{
-					dataSyncTime = value;
 				}
 			}
 
@@ -193,6 +157,42 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					syncStatus = value;
+				}
+			}
+
+			public string DataSyncTime
+			{
+				get
+				{
+					return dataSyncTime;
+				}
+				set	
+				{
+					dataSyncTime = value;
+				}
+			}
+
+			public string NodeId
+			{
+				get
+				{
+					return nodeId;
+				}
+				set	
+				{
+					nodeId = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 		}

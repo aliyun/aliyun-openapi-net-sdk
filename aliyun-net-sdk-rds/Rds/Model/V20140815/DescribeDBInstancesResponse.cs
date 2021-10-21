@@ -29,9 +29,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageNumber;
 
+		private int? pageRecordCount;
+
 		private int? totalRecordCount;
 
-		private int? pageRecordCount;
+		private string nextToken;
 
 		private List<DescribeDBInstances_DBInstance> items;
 
@@ -59,6 +61,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public int? PageRecordCount
+		{
+			get
+			{
+				return pageRecordCount;
+			}
+			set	
+			{
+				pageRecordCount = value;
+			}
+		}
+
 		public int? TotalRecordCount
 		{
 			get
@@ -71,15 +85,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? PageRecordCount
+		public string NextToken
 		{
 			get
 			{
-				return pageRecordCount;
+				return nextToken;
 			}
 			set	
 			{
-				pageRecordCount = value;
+				nextToken = value;
 			}
 		}
 
@@ -98,129 +112,137 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		public class DescribeDBInstances_DBInstance
 		{
 
-			private int? insId;
+			private string vpcId;
 
-			private string dBInstanceId;
+			private string dedicatedHostIdForLog;
 
-			private string dBInstanceDescription;
+			private string createTime;
 
 			private string payType;
 
-			private string dBInstanceType;
+			private string dedicatedHostNameForLog;
 
-			private string regionId;
+			private bool? mutriORsignle;
+
+			private string dedicatedHostGroupName;
+
+			private string engineVersion;
+
+			private string dedicatedHostGroupId;
+
+			private string vpcName;
+
+			private string dedicatedHostZoneIdForMaster;
+
+			private int? insId;
+
+			private string connectionString;
+
+			private string instanceNetworkType;
+
+			private string masterInstanceId;
+
+			private string autoUpgradeMinorVersion;
 
 			private string expireTime;
 
 			private string destroyTime;
 
-			private string dBInstanceStatus;
+			private string guardDBInstanceId;
 
-			private string engine;
+			private string dedicatedHostNameForMaster;
 
-			private string dBInstanceNetType;
+			private string zoneId;
+
+			private int? tipsLevel;
+
+			private string dBInstanceId;
+
+			private string dedicatedHostIdForMaster;
+
+			private string replicateId;
+
+			private string tempDBInstanceId;
+
+			private string dBInstanceStorageType;
 
 			private string connectionMode;
 
 			private string lockMode;
 
-			private string category;
-
-			private string dBInstanceStorageType;
-
-			private string dBInstanceClass;
-
-			private string instanceNetworkType;
+			private string generalGroupName;
 
 			private string vpcCloudInstanceId;
 
-			private string lockReason;
-
-			private string zoneId;
-
-			private bool? mutriORsignle;
-
-			private string createTime;
-
-			private string engineVersion;
-
-			private string guardDBInstanceId;
-
-			private string tempDBInstanceId;
-
-			private string masterInstanceId;
-
-			private string vpcId;
-
-			private string vSwitchId;
-
-			private string replicateId;
-
-			private string resourceGroupId;
-
-			private string autoUpgradeMinorVersion;
-
-			private string dedicatedHostGroupId;
-
-			private string dedicatedHostIdForMaster;
-
-			private string dedicatedHostIdForSlave;
-
-			private string dedicatedHostIdForLog;
-
-			private string dedicatedHostNameForMaster;
-
-			private string dedicatedHostNameForSlave;
-
-			private string dedicatedHostNameForLog;
-
-			private string dedicatedHostZoneIdForMaster;
-
 			private string dedicatedHostZoneIdForSlave;
+
+			private string tips;
 
 			private string dedicatedHostZoneIdForLog;
 
-			private string vpcName;
+			private string dedicatedHostNameForSlave;
 
-			private string dedicatedHostGroupName;
+			private string dBInstanceDescription;
 
-			private string connectionString;
+			private string dBInstanceNetType;
+
+			private string dBInstanceType;
+
+			private string lockReason;
+
+			private string dBInstanceStatus;
+
+			private string regionId;
+
+			private string vSwitchId;
+
+			private string dedicatedHostIdForSlave;
+
+			private string resourceGroupId;
+
+			private string category;
+
+			private string engine;
+
+			private string dBInstanceClass;
+
+			private int? switchWeight;
 
 			private List<DescribeDBInstances_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
-			public int? InsId
+			public string VpcId
 			{
 				get
 				{
-					return insId;
+					return vpcId;
 				}
 				set	
 				{
-					insId = value;
+					vpcId = value;
 				}
 			}
 
-			public string DBInstanceId
+			public string DedicatedHostIdForLog
 			{
 				get
 				{
-					return dBInstanceId;
+					return dedicatedHostIdForLog;
 				}
 				set	
 				{
-					dBInstanceId = value;
+					dedicatedHostIdForLog = value;
 				}
 			}
 
-			public string DBInstanceDescription
+			public string CreateTime
 			{
 				get
 				{
-					return dBInstanceDescription;
+					return createTime;
 				}
 				set	
 				{
-					dBInstanceDescription = value;
+					createTime = value;
 				}
 			}
 
@@ -236,27 +258,147 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string DBInstanceType
+			public string DedicatedHostNameForLog
 			{
 				get
 				{
-					return dBInstanceType;
+					return dedicatedHostNameForLog;
 				}
 				set	
 				{
-					dBInstanceType = value;
+					dedicatedHostNameForLog = value;
 				}
 			}
 
-			public string RegionId
+			public bool? MutriORsignle
 			{
 				get
 				{
-					return regionId;
+					return mutriORsignle;
 				}
 				set	
 				{
-					regionId = value;
+					mutriORsignle = value;
+				}
+			}
+
+			public string DedicatedHostGroupName
+			{
+				get
+				{
+					return dedicatedHostGroupName;
+				}
+				set	
+				{
+					dedicatedHostGroupName = value;
+				}
+			}
+
+			public string EngineVersion
+			{
+				get
+				{
+					return engineVersion;
+				}
+				set	
+				{
+					engineVersion = value;
+				}
+			}
+
+			public string DedicatedHostGroupId
+			{
+				get
+				{
+					return dedicatedHostGroupId;
+				}
+				set	
+				{
+					dedicatedHostGroupId = value;
+				}
+			}
+
+			public string VpcName
+			{
+				get
+				{
+					return vpcName;
+				}
+				set	
+				{
+					vpcName = value;
+				}
+			}
+
+			public string DedicatedHostZoneIdForMaster
+			{
+				get
+				{
+					return dedicatedHostZoneIdForMaster;
+				}
+				set	
+				{
+					dedicatedHostZoneIdForMaster = value;
+				}
+			}
+
+			public int? InsId
+			{
+				get
+				{
+					return insId;
+				}
+				set	
+				{
+					insId = value;
+				}
+			}
+
+			public string ConnectionString
+			{
+				get
+				{
+					return connectionString;
+				}
+				set	
+				{
+					connectionString = value;
+				}
+			}
+
+			public string InstanceNetworkType
+			{
+				get
+				{
+					return instanceNetworkType;
+				}
+				set	
+				{
+					instanceNetworkType = value;
+				}
+			}
+
+			public string MasterInstanceId
+			{
+				get
+				{
+					return masterInstanceId;
+				}
+				set	
+				{
+					masterInstanceId = value;
+				}
+			}
+
+			public string AutoUpgradeMinorVersion
+			{
+				get
+				{
+					return autoUpgradeMinorVersion;
+				}
+				set	
+				{
+					autoUpgradeMinorVersion = value;
 				}
 			}
 
@@ -284,39 +426,111 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string DBInstanceStatus
+			public string GuardDBInstanceId
 			{
 				get
 				{
-					return dBInstanceStatus;
+					return guardDBInstanceId;
 				}
 				set	
 				{
-					dBInstanceStatus = value;
+					guardDBInstanceId = value;
 				}
 			}
 
-			public string Engine
+			public string DedicatedHostNameForMaster
 			{
 				get
 				{
-					return engine;
+					return dedicatedHostNameForMaster;
 				}
 				set	
 				{
-					engine = value;
+					dedicatedHostNameForMaster = value;
 				}
 			}
 
-			public string DBInstanceNetType
+			public string ZoneId
 			{
 				get
 				{
-					return dBInstanceNetType;
+					return zoneId;
 				}
 				set	
 				{
-					dBInstanceNetType = value;
+					zoneId = value;
+				}
+			}
+
+			public int? TipsLevel
+			{
+				get
+				{
+					return tipsLevel;
+				}
+				set	
+				{
+					tipsLevel = value;
+				}
+			}
+
+			public string DBInstanceId
+			{
+				get
+				{
+					return dBInstanceId;
+				}
+				set	
+				{
+					dBInstanceId = value;
+				}
+			}
+
+			public string DedicatedHostIdForMaster
+			{
+				get
+				{
+					return dedicatedHostIdForMaster;
+				}
+				set	
+				{
+					dedicatedHostIdForMaster = value;
+				}
+			}
+
+			public string ReplicateId
+			{
+				get
+				{
+					return replicateId;
+				}
+				set	
+				{
+					replicateId = value;
+				}
+			}
+
+			public string TempDBInstanceId
+			{
+				get
+				{
+					return tempDBInstanceId;
+				}
+				set	
+				{
+					tempDBInstanceId = value;
+				}
+			}
+
+			public string DBInstanceStorageType
+			{
+				get
+				{
+					return dBInstanceStorageType;
+				}
+				set	
+				{
+					dBInstanceStorageType = value;
 				}
 			}
 
@@ -344,51 +558,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string Category
+			public string GeneralGroupName
 			{
 				get
 				{
-					return category;
+					return generalGroupName;
 				}
 				set	
 				{
-					category = value;
-				}
-			}
-
-			public string DBInstanceStorageType
-			{
-				get
-				{
-					return dBInstanceStorageType;
-				}
-				set	
-				{
-					dBInstanceStorageType = value;
-				}
-			}
-
-			public string DBInstanceClass
-			{
-				get
-				{
-					return dBInstanceClass;
-				}
-				set	
-				{
-					dBInstanceClass = value;
-				}
-			}
-
-			public string InstanceNetworkType
-			{
-				get
-				{
-					return instanceNetworkType;
-				}
-				set	
-				{
-					instanceNetworkType = value;
+					generalGroupName = value;
 				}
 			}
 
@@ -404,258 +582,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string LockReason
-			{
-				get
-				{
-					return lockReason;
-				}
-				set	
-				{
-					lockReason = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public bool? MutriORsignle
-			{
-				get
-				{
-					return mutriORsignle;
-				}
-				set	
-				{
-					mutriORsignle = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
-			public string EngineVersion
-			{
-				get
-				{
-					return engineVersion;
-				}
-				set	
-				{
-					engineVersion = value;
-				}
-			}
-
-			public string GuardDBInstanceId
-			{
-				get
-				{
-					return guardDBInstanceId;
-				}
-				set	
-				{
-					guardDBInstanceId = value;
-				}
-			}
-
-			public string TempDBInstanceId
-			{
-				get
-				{
-					return tempDBInstanceId;
-				}
-				set	
-				{
-					tempDBInstanceId = value;
-				}
-			}
-
-			public string MasterInstanceId
-			{
-				get
-				{
-					return masterInstanceId;
-				}
-				set	
-				{
-					masterInstanceId = value;
-				}
-			}
-
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
-
-			public string VSwitchId
-			{
-				get
-				{
-					return vSwitchId;
-				}
-				set	
-				{
-					vSwitchId = value;
-				}
-			}
-
-			public string ReplicateId
-			{
-				get
-				{
-					return replicateId;
-				}
-				set	
-				{
-					replicateId = value;
-				}
-			}
-
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
-				}
-			}
-
-			public string AutoUpgradeMinorVersion
-			{
-				get
-				{
-					return autoUpgradeMinorVersion;
-				}
-				set	
-				{
-					autoUpgradeMinorVersion = value;
-				}
-			}
-
-			public string DedicatedHostGroupId
-			{
-				get
-				{
-					return dedicatedHostGroupId;
-				}
-				set	
-				{
-					dedicatedHostGroupId = value;
-				}
-			}
-
-			public string DedicatedHostIdForMaster
-			{
-				get
-				{
-					return dedicatedHostIdForMaster;
-				}
-				set	
-				{
-					dedicatedHostIdForMaster = value;
-				}
-			}
-
-			public string DedicatedHostIdForSlave
-			{
-				get
-				{
-					return dedicatedHostIdForSlave;
-				}
-				set	
-				{
-					dedicatedHostIdForSlave = value;
-				}
-			}
-
-			public string DedicatedHostIdForLog
-			{
-				get
-				{
-					return dedicatedHostIdForLog;
-				}
-				set	
-				{
-					dedicatedHostIdForLog = value;
-				}
-			}
-
-			public string DedicatedHostNameForMaster
-			{
-				get
-				{
-					return dedicatedHostNameForMaster;
-				}
-				set	
-				{
-					dedicatedHostNameForMaster = value;
-				}
-			}
-
-			public string DedicatedHostNameForSlave
-			{
-				get
-				{
-					return dedicatedHostNameForSlave;
-				}
-				set	
-				{
-					dedicatedHostNameForSlave = value;
-				}
-			}
-
-			public string DedicatedHostNameForLog
-			{
-				get
-				{
-					return dedicatedHostNameForLog;
-				}
-				set	
-				{
-					dedicatedHostNameForLog = value;
-				}
-			}
-
-			public string DedicatedHostZoneIdForMaster
-			{
-				get
-				{
-					return dedicatedHostZoneIdForMaster;
-				}
-				set	
-				{
-					dedicatedHostZoneIdForMaster = value;
-				}
-			}
-
 			public string DedicatedHostZoneIdForSlave
 			{
 				get
@@ -665,6 +591,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					dedicatedHostZoneIdForSlave = value;
+				}
+			}
+
+			public string Tips
+			{
+				get
+				{
+					return tips;
+				}
+				set	
+				{
+					tips = value;
 				}
 			}
 
@@ -680,39 +618,171 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string VpcName
+			public string DedicatedHostNameForSlave
 			{
 				get
 				{
-					return vpcName;
+					return dedicatedHostNameForSlave;
 				}
 				set	
 				{
-					vpcName = value;
+					dedicatedHostNameForSlave = value;
 				}
 			}
 
-			public string DedicatedHostGroupName
+			public string DBInstanceDescription
 			{
 				get
 				{
-					return dedicatedHostGroupName;
+					return dBInstanceDescription;
 				}
 				set	
 				{
-					dedicatedHostGroupName = value;
+					dBInstanceDescription = value;
 				}
 			}
 
-			public string ConnectionString
+			public string DBInstanceNetType
 			{
 				get
 				{
-					return connectionString;
+					return dBInstanceNetType;
 				}
 				set	
 				{
-					connectionString = value;
+					dBInstanceNetType = value;
+				}
+			}
+
+			public string DBInstanceType
+			{
+				get
+				{
+					return dBInstanceType;
+				}
+				set	
+				{
+					dBInstanceType = value;
+				}
+			}
+
+			public string LockReason
+			{
+				get
+				{
+					return lockReason;
+				}
+				set	
+				{
+					lockReason = value;
+				}
+			}
+
+			public string DBInstanceStatus
+			{
+				get
+				{
+					return dBInstanceStatus;
+				}
+				set	
+				{
+					dBInstanceStatus = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
+			public string DedicatedHostIdForSlave
+			{
+				get
+				{
+					return dedicatedHostIdForSlave;
+				}
+				set	
+				{
+					dedicatedHostIdForSlave = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
+				}
+			}
+
+			public string DBInstanceClass
+			{
+				get
+				{
+					return dBInstanceClass;
+				}
+				set	
+				{
+					dBInstanceClass = value;
+				}
+			}
+
+			public int? SwitchWeight
+			{
+				get
+				{
+					return switchWeight;
+				}
+				set	
+				{
+					switchWeight = value;
 				}
 			}
 

@@ -31,11 +31,16 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			CreateDBInstanceResponse createDBInstanceResponse = new CreateDBInstanceResponse();
 
 			createDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			createDBInstanceResponse.DryRunResult = _ctx.BooleanValue("CreateDBInstance.DryRunResult");
+			createDBInstanceResponse.TagResult = _ctx.BooleanValue("CreateDBInstance.TagResult");
 			createDBInstanceResponse.RequestId = _ctx.StringValue("CreateDBInstance.RequestId");
-			createDBInstanceResponse.DBInstanceId = _ctx.StringValue("CreateDBInstance.DBInstanceId");
-			createDBInstanceResponse.OrderId = _ctx.StringValue("CreateDBInstance.OrderId");
 			createDBInstanceResponse.ConnectionString = _ctx.StringValue("CreateDBInstance.ConnectionString");
+			createDBInstanceResponse.Message = _ctx.StringValue("CreateDBInstance.Message");
+			createDBInstanceResponse.DBInstanceId = _ctx.StringValue("CreateDBInstance.DBInstanceId");
 			createDBInstanceResponse.Port = _ctx.StringValue("CreateDBInstance.Port");
+			createDBInstanceResponse.TaskId = _ctx.StringValue("CreateDBInstance.TaskId");
+			createDBInstanceResponse.DryRun = _ctx.BooleanValue("CreateDBInstance.DryRun");
+			createDBInstanceResponse.OrderId = _ctx.StringValue("CreateDBInstance.OrderId");
         
 			return createDBInstanceResponse;
         }

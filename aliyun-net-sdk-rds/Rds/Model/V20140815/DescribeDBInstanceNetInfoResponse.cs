@@ -309,6 +309,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 				private string weight;
 
+				private string role;
+
 				public string DBInstanceId
 				{
 					get
@@ -354,6 +356,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					set	
 					{
 						weight = value;
+					}
+				}
+
+				public string Role
+				{
+					get
+					{
+						return role;
+					}
+					set	
+					{
+						role = value;
 					}
 				}
 			}

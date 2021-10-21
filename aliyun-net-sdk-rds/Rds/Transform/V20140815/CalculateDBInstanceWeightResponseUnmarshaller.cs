@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceWeight.ReadonlyInstanceSQLDelayedTime = _ctx.StringValue("CalculateDBInstanceWeight.Items["+ i +"].ReadonlyInstanceSQLDelayedTime");
 				dBInstanceWeight.Availability = _ctx.StringValue("CalculateDBInstanceWeight.Items["+ i +"].Availability");
 				dBInstanceWeight.Weight = _ctx.StringValue("CalculateDBInstanceWeight.Items["+ i +"].Weight");
+				dBInstanceWeight.Role = _ctx.StringValue("CalculateDBInstanceWeight.Items["+ i +"].Role");
 
 				calculateDBInstanceWeightResponse_items.Add(dBInstanceWeight);
 			}

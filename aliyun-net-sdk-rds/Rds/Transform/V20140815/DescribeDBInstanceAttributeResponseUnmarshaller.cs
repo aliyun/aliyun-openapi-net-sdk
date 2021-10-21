@@ -110,6 +110,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceAttribute.OriginConfiguration = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].OriginConfiguration");
 				dBInstanceAttribute.DedicatedHostGroupId = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DedicatedHostGroupId");
 				dBInstanceAttribute.SuperPermissionMode = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].SuperPermissionMode");
+				dBInstanceAttribute.GeneralGroupName = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].GeneralGroupName");
+				dBInstanceAttribute.TipsLevel = _ctx.IntegerValue("DescribeDBInstanceAttribute.Items["+ i +"].TipsLevel");
+				dBInstanceAttribute.Tips = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Tips");
 
 				DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra extra = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra();
 				extra.ReplicaGroupID = _ctx.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.ReplicaGroupID");

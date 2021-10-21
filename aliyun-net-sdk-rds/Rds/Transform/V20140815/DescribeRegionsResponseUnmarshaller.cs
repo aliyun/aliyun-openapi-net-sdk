@@ -36,8 +36,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			List<DescribeRegionsResponse.DescribeRegions_RDSRegion> describeRegionsResponse_regions = new List<DescribeRegionsResponse.DescribeRegions_RDSRegion>();
 			for (int i = 0; i < _ctx.Length("DescribeRegions.Regions.Length"); i++) {
 				DescribeRegionsResponse.DescribeRegions_RDSRegion rDSRegion = new DescribeRegionsResponse.DescribeRegions_RDSRegion();
-				rDSRegion.RegionId = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
 				rDSRegion.ZoneId = _ctx.StringValue("DescribeRegions.Regions["+ i +"].ZoneId");
+				rDSRegion.RegionEndpoint = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionEndpoint");
+				rDSRegion.LocalName = _ctx.StringValue("DescribeRegions.Regions["+ i +"].LocalName");
+				rDSRegion.RegionId = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
+				rDSRegion.ZoneName = _ctx.StringValue("DescribeRegions.Regions["+ i +"].ZoneName");
 
 				describeRegionsResponse_regions.Add(rDSRegion);
 			}

@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class DescribeDBInstanceTDEResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string tDEStatus;
 
-		private List<DescribeDBInstanceTDE_Database> databases;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDBInstanceTDE_Database> databases;
 
 		public string TDEStatus
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				tDEStatus = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 	public class ModifyDBInstanceSpecResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string dBInstanceId;
 
-		private long? orderId;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private long? orderId;
 
 		public string DBInstanceId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				dBInstanceId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

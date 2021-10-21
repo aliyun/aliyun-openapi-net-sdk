@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				eventItemsItem.EventReason = _ctx.StringValue("DescribeEvents.EventItems["+ i +"].EventReason");
 				eventItemsItem.EventPayload = _ctx.StringValue("DescribeEvents.EventItems["+ i +"].EventPayload");
 				eventItemsItem.EventRecordTime = _ctx.StringValue("DescribeEvents.EventItems["+ i +"].EventRecordTime");
+				eventItemsItem.CallerUid = _ctx.LongValue("DescribeEvents.EventItems["+ i +"].CallerUid");
 
 				describeEventsResponse_eventItems.Add(eventItemsItem);
 			}

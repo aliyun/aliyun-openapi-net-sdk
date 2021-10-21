@@ -34,10 +34,10 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describePriceResponse.RequestId = _ctx.StringValue("DescribePrice.RequestId");
 
 			DescribePriceResponse.DescribePrice_PriceInfo priceInfo = new DescribePriceResponse.DescribePrice_PriceInfo();
-			priceInfo.Currency = _ctx.StringValue("DescribePrice.PriceInfo.Currency");
 			priceInfo.OriginalPrice = _ctx.FloatValue("DescribePrice.PriceInfo.OriginalPrice");
-			priceInfo.TradePrice = _ctx.FloatValue("DescribePrice.PriceInfo.TradePrice");
 			priceInfo.DiscountPrice = _ctx.FloatValue("DescribePrice.PriceInfo.DiscountPrice");
+			priceInfo.Currency = _ctx.StringValue("DescribePrice.PriceInfo.Currency");
+			priceInfo.TradePrice = _ctx.FloatValue("DescribePrice.PriceInfo.TradePrice");
 
 			List<string> priceInfo_ruleIds = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribePrice.PriceInfo.RuleIds.Length"); i++) {
@@ -54,10 +54,10 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			List<DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Coupon> priceInfo_coupons = new List<DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Coupon>();
 			for (int i = 0; i < _ctx.Length("DescribePrice.PriceInfo.Coupons.Length"); i++) {
 				DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Coupon coupon = new DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Coupon();
+				coupon.IsSelected = _ctx.StringValue("DescribePrice.PriceInfo.Coupons["+ i +"].IsSelected");
 				coupon.CouponNo = _ctx.StringValue("DescribePrice.PriceInfo.Coupons["+ i +"].CouponNo");
 				coupon.Name = _ctx.StringValue("DescribePrice.PriceInfo.Coupons["+ i +"].Name");
 				coupon.Description = _ctx.StringValue("DescribePrice.PriceInfo.Coupons["+ i +"].Description");
-				coupon.IsSelected = _ctx.StringValue("DescribePrice.PriceInfo.Coupons["+ i +"].IsSelected");
 
 				priceInfo_coupons.Add(coupon);
 			}
@@ -67,9 +67,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			List<DescribePriceResponse.DescribePrice_Rule> describePriceResponse_rules = new List<DescribePriceResponse.DescribePrice_Rule>();
 			for (int i = 0; i < _ctx.Length("DescribePrice.Rules.Length"); i++) {
 				DescribePriceResponse.DescribePrice_Rule rule = new DescribePriceResponse.DescribePrice_Rule();
-				rule.RuleId = _ctx.LongValue("DescribePrice.Rules["+ i +"].RuleId");
 				rule.Name = _ctx.StringValue("DescribePrice.Rules["+ i +"].Name");
 				rule.Description = _ctx.StringValue("DescribePrice.Rules["+ i +"].Description");
+				rule.RuleId = _ctx.LongValue("DescribePrice.Rules["+ i +"].RuleId");
 
 				describePriceResponse_rules.Add(rule);
 			}

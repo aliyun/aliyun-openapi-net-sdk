@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			ModifySecurityIpsResponse modifySecurityIpsResponse = new ModifySecurityIpsResponse();
 
 			modifySecurityIpsResponse.HttpResponse = _ctx.HttpResponse;
-			modifySecurityIpsResponse.RequestId = _ctx.StringValue("ModifySecurityIps.RequestId");
 			modifySecurityIpsResponse.TaskId = _ctx.StringValue("ModifySecurityIps.TaskId");
+			modifySecurityIpsResponse.RequestId = _ctx.StringValue("ModifySecurityIps.RequestId");
         
 			return modifySecurityIpsResponse;
         }

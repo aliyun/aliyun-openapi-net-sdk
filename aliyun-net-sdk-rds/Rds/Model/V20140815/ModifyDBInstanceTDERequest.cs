@@ -42,6 +42,12 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private string certificate;
+
+		private string privateKey;
+
+		private string passWord;
+
 		private string dBInstanceId;
 
 		private string resourceOwnerAccount;
@@ -68,6 +74,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string Certificate
+		{
+			get
+			{
+				return certificate;
+			}
+			set	
+			{
+				certificate = value;
+				DictionaryUtil.Add(QueryParameters, "Certificate", value);
+			}
+		}
+
+		public string PrivateKey
+		{
+			get
+			{
+				return privateKey;
+			}
+			set	
+			{
+				privateKey = value;
+				DictionaryUtil.Add(QueryParameters, "PrivateKey", value);
+			}
+		}
+
+		public string PassWord
+		{
+			get
+			{
+				return passWord;
+			}
+			set	
+			{
+				passWord = value;
+				DictionaryUtil.Add(QueryParameters, "PassWord", value);
 			}
 		}
 

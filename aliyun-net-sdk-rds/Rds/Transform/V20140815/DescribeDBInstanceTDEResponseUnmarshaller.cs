@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			DescribeDBInstanceTDEResponse describeDBInstanceTDEResponse = new DescribeDBInstanceTDEResponse();
 
 			describeDBInstanceTDEResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBInstanceTDEResponse.RequestId = _ctx.StringValue("DescribeDBInstanceTDE.RequestId");
 			describeDBInstanceTDEResponse.TDEStatus = _ctx.StringValue("DescribeDBInstanceTDE.TDEStatus");
+			describeDBInstanceTDEResponse.RequestId = _ctx.StringValue("DescribeDBInstanceTDE.RequestId");
 
 			List<DescribeDBInstanceTDEResponse.DescribeDBInstanceTDE_Database> describeDBInstanceTDEResponse_databases = new List<DescribeDBInstanceTDEResponse.DescribeDBInstanceTDE_Database>();
 			for (int i = 0; i < _ctx.Length("DescribeDBInstanceTDE.Databases.Length"); i++) {
