@@ -46,6 +46,14 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 				healthInfo.TotalNum = _ctx.IntegerValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].TotalNum");
 				healthInfo.AgentHeartBeatLostNum = _ctx.IntegerValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].AgentHeartBeatLostNum");
 				healthInfo.CreatedTime = _ctx.LongValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].CreatedTime");
+				healthInfo.HealthStatus = _ctx.StringValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthStatus");
+				healthInfo.StoppedHealthNum = _ctx.IntegerValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].StoppedHealthNum");
+				healthInfo.GoodHealthNum = _ctx.IntegerValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].GoodHealthNum");
+				healthInfo.WarningHealthNum = _ctx.IntegerValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].WarningHealthNum");
+				healthInfo.BadHealthNum = _ctx.IntegerValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].BadHealthNum");
+				healthInfo.UnknownHealthNum = _ctx.IntegerValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].UnknownHealthNum");
+				healthInfo.DisabledHealthNum = _ctx.IntegerValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].DisabledHealthNum");
+				healthInfo.NoneHealthNum = _ctx.IntegerValue("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].NoneHealthNum");
 
 				List<ListClusterServiceComponentHealthInfoResponse.ListClusterServiceComponentHealthInfo_HealthInfo.ListClusterServiceComponentHealthInfo_HealthDetail> healthInfo_healthDetailList = new List<ListClusterServiceComponentHealthInfoResponse.ListClusterServiceComponentHealthInfo_HealthInfo.ListClusterServiceComponentHealthInfo_HealthDetail>();
 				for (int j = 0; j < _ctx.Length("ListClusterServiceComponentHealthInfo.HealthInfoList["+ i +"].HealthDetailList.Length"); j++) {

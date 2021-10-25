@@ -27,10 +27,10 @@ using Aliyun.Acs.Emr.Transform.V20160408;
 
 namespace Aliyun.Acs.Emr.Model.V20160408
 {
-    public class ListClusterServiceComponentHealthInfoRequest : RpcAcsRequest<ListClusterServiceComponentHealthInfoResponse>
+    public class DescribeDiskOpsActivityRequest : RpcAcsRequest<DescribeDiskOpsActivityResponse>
     {
-        public ListClusterServiceComponentHealthInfoRequest()
-            : base("Emr", "2016-04-08", "ListClusterServiceComponentHealthInfo", "emr", "openAPI")
+        public DescribeDiskOpsActivityRequest()
+            : base("Emr", "2016-04-08", "DescribeDiskOpsActivity", "emr", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,13 +40,32 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			Method = MethodType.POST;
         }
 
+		private string eventId;
+
 		private long? resourceOwnerId;
 
-		private string componentName;
+		private string currentStage;
 
 		private string clusterId;
 
-		private string serviceName;
+		private string instanceId;
+
+		private string diskId;
+
+		private string currentState;
+
+		public string EventId
+		{
+			get
+			{
+				return eventId;
+			}
+			set	
+			{
+				eventId = value;
+				DictionaryUtil.Add(QueryParameters, "EventId", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -61,16 +80,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string ComponentName
+		public string CurrentStage
 		{
 			get
 			{
-				return componentName;
+				return currentStage;
 			}
 			set	
 			{
-				componentName = value;
-				DictionaryUtil.Add(QueryParameters, "ComponentName", value);
+				currentStage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentStage", value);
 			}
 		}
 
@@ -87,22 +106,48 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string ServiceName
+		public string InstanceId
 		{
 			get
 			{
-				return serviceName;
+				return instanceId;
 			}
 			set	
 			{
-				serviceName = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-        public override ListClusterServiceComponentHealthInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string DiskId
+		{
+			get
+			{
+				return diskId;
+			}
+			set	
+			{
+				diskId = value;
+				DictionaryUtil.Add(QueryParameters, "DiskId", value);
+			}
+		}
+
+		public string CurrentState
+		{
+			get
+			{
+				return currentState;
+			}
+			set	
+			{
+				currentState = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentState", value);
+			}
+		}
+
+        public override DescribeDiskOpsActivityResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListClusterServiceComponentHealthInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDiskOpsActivityResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

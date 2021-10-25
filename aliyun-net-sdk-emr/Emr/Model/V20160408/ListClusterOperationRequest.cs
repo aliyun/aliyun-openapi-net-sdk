@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private int? pageSize;
 
+		private string operationId;
+
 		private string serviceName;
 
 		private string status;
@@ -101,6 +103,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string OperationId
+		{
+			get
+			{
+				return operationId;
+			}
+			set	
+			{
+				operationId = value;
+				DictionaryUtil.Add(QueryParameters, "OperationId", value);
 			}
 		}
 

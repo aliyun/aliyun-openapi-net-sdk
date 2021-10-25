@@ -27,10 +27,10 @@ using Aliyun.Acs.Emr.Transform.V20160408;
 
 namespace Aliyun.Acs.Emr.Model.V20160408
 {
-    public class ListClusterServiceComponentHealthInfoRequest : RpcAcsRequest<ListClusterServiceComponentHealthInfoResponse>
+    public class ListLocalDiskComponentInfoRequest : RpcAcsRequest<ListLocalDiskComponentInfoResponse>
     {
-        public ListClusterServiceComponentHealthInfoRequest()
-            : base("Emr", "2016-04-08", "ListClusterServiceComponentHealthInfo", "emr", "openAPI")
+        public ListLocalDiskComponentInfoRequest()
+            : base("Emr", "2016-04-08", "ListLocalDiskComponentInfo", "emr", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,9 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private long? resourceOwnerId;
 
-		private string componentName;
-
 		private string clusterId;
 
-		private string serviceName;
+		private string instanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -58,19 +56,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ComponentName
-		{
-			get
-			{
-				return componentName;
-			}
-			set	
-			{
-				componentName = value;
-				DictionaryUtil.Add(QueryParameters, "ComponentName", value);
 			}
 		}
 
@@ -87,22 +72,22 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string ServiceName
+		public string InstanceId
 		{
 			get
 			{
-				return serviceName;
+				return instanceId;
 			}
 			set	
 			{
-				serviceName = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-        public override ListClusterServiceComponentHealthInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListLocalDiskComponentInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListClusterServiceComponentHealthInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListLocalDiskComponentInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

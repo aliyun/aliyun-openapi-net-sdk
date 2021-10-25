@@ -134,6 +134,12 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string commissionStatus;
 
+			private string state;
+
+			private string healthStatus;
+
+			private long? healthReportTime;
+
 			public string ServiceName
 			{
 				get
@@ -347,6 +353,42 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					commissionStatus = value;
+				}
+			}
+
+			public string State
+			{
+				get
+				{
+					return state;
+				}
+				set	
+				{
+					state = value;
+				}
+			}
+
+			public string HealthStatus
+			{
+				get
+				{
+					return healthStatus;
+				}
+				set	
+				{
+					healthStatus = value;
+				}
+			}
+
+			public long? HealthReportTime
+			{
+				get
+				{
+					return healthReportTime;
+				}
+				set	
+				{
+					healthReportTime = value;
 				}
 			}
 		}

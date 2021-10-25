@@ -76,6 +76,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string comment;
 
+			private string state;
+
 			private List<ListClusterInstalledService_ServiceAction> serviceActionList;
 
 			public string ServiceName
@@ -195,6 +197,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					comment = value;
+				}
+			}
+
+			public string State
+			{
+				get
+				{
+					return state;
+				}
+				set	
+				{
+					state = value;
 				}
 			}
 

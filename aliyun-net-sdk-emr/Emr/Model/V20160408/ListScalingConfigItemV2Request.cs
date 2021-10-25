@@ -40,11 +40,9 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			Method = MethodType.POST;
         }
 
+		private string configItemType;
+
 		private long? resourceOwnerId;
-
-		private int? pageCount;
-
-		private string orderMode;
 
 		private int? pageNumber;
 
@@ -52,15 +50,20 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private string resourceGroupId;
 
-		private int? limit;
-
 		private int? pageSize;
 
-		private int? currentSize;
-
-		private string orderField;
-
-		private string configItemType;
+		public string ConfigItemType
+		{
+			get
+			{
+				return configItemType;
+			}
+			set	
+			{
+				configItemType = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigItemType", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -72,32 +75,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public int? PageCount
-		{
-			get
-			{
-				return pageCount;
-			}
-			set	
-			{
-				pageCount = value;
-				DictionaryUtil.Add(QueryParameters, "PageCount", value.ToString());
-			}
-		}
-
-		public string OrderMode
-		{
-			get
-			{
-				return orderMode;
-			}
-			set	
-			{
-				orderMode = value;
-				DictionaryUtil.Add(QueryParameters, "OrderMode", value);
 			}
 		}
 
@@ -140,19 +117,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public int? Limit
-		{
-			get
-			{
-				return limit;
-			}
-			set	
-			{
-				limit = value;
-				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -163,45 +127,6 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public int? CurrentSize
-		{
-			get
-			{
-				return currentSize;
-			}
-			set	
-			{
-				currentSize = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentSize", value.ToString());
-			}
-		}
-
-		public string OrderField
-		{
-			get
-			{
-				return orderField;
-			}
-			set	
-			{
-				orderField = value;
-				DictionaryUtil.Add(QueryParameters, "OrderField", value);
-			}
-		}
-
-		public string ConfigItemType
-		{
-			get
-			{
-				return configItemType;
-			}
-			set	
-			{
-				configItemType = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigItemType", value);
 			}
 		}
 

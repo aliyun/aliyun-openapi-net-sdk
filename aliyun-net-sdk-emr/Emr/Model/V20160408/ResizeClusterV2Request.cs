@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private List<HostComponentInfo> hostComponentInfos = new List<HostComponentInfo>(){ };
 
+		private string clickhouseConf;
+
 		private List<HostGroup> hostGroups = new List<HostGroup>(){ };
 
 		private List<PromotionInfo> promotionInfos = new List<PromotionInfo>(){ };
@@ -128,6 +130,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
+		public string ClickhouseConf
+		{
+			get
+			{
+				return clickhouseConf;
+			}
+			set	
+			{
+				clickhouseConf = value;
+				DictionaryUtil.Add(QueryParameters, "ClickhouseConf", value);
+			}
+		}
+
 		public List<HostGroup> HostGroups
 		{
 			get
@@ -143,6 +158,7 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".Period", hostGroups[i].Period);
 					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".SysDiskCapacity", hostGroups[i].SysDiskCapacity);
 					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".HostKeyPairName", hostGroups[i].HostKeyPairName);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".PrivatePoolOptionsId", hostGroups[i].PrivatePoolOptionsId);
 					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".DiskCapacity", hostGroups[i].DiskCapacity);
 					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".SysDiskType", hostGroups[i].SysDiskType);
 					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".ClusterId", hostGroups[i].ClusterId);
@@ -159,6 +175,7 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".CreateType", hostGroups[i].CreateType);
 					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".HostPassword", hostGroups[i].HostPassword);
 					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".HostGroupType", hostGroups[i].HostGroupType);
+					DictionaryUtil.Add(QueryParameters,"HostGroup." + (i + 1) + ".PrivatePoolOptionsMatchCriteria", hostGroups[i].PrivatePoolOptionsMatchCriteria);
 				}
 			}
 		}
@@ -237,6 +254,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string hostKeyPairName;
 
+			private string privatePoolOptionsId;
+
 			private int? diskCapacity;
 
 			private string sysDiskType;
@@ -268,6 +287,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			private string hostPassword;
 
 			private string hostGroupType;
+
+			private string privatePoolOptionsMatchCriteria;
 
 			public int? Period
 			{
@@ -302,6 +323,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					hostKeyPairName = value;
+				}
+			}
+
+			public string PrivatePoolOptionsId
+			{
+				get
+				{
+					return privatePoolOptionsId;
+				}
+				set	
+				{
+					privatePoolOptionsId = value;
 				}
 			}
 
@@ -494,6 +527,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					hostGroupType = value;
+				}
+			}
+
+			public string PrivatePoolOptionsMatchCriteria
+			{
+				get
+				{
+					return privatePoolOptionsMatchCriteria;
+				}
+				set	
+				{
+					privatePoolOptionsMatchCriteria = value;
 				}
 			}
 		}

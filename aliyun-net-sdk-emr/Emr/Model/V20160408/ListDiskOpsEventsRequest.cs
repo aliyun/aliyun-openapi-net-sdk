@@ -27,10 +27,10 @@ using Aliyun.Acs.Emr.Transform.V20160408;
 
 namespace Aliyun.Acs.Emr.Model.V20160408
 {
-    public class ListClusterServiceComponentHealthInfoRequest : RpcAcsRequest<ListClusterServiceComponentHealthInfoResponse>
+    public class ListDiskOpsEventsRequest : RpcAcsRequest<ListDiskOpsEventsResponse>
     {
-        public ListClusterServiceComponentHealthInfoRequest()
-            : base("Emr", "2016-04-08", "ListClusterServiceComponentHealthInfo", "emr", "openAPI")
+        public ListDiskOpsEventsRequest()
+            : base("Emr", "2016-04-08", "ListDiskOpsEvents", "emr", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,15 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private long? resourceOwnerId;
 
-		private string componentName;
+		private long? endTime;
 
 		private string clusterId;
 
-		private string serviceName;
+		private long? startTime;
+
+		private int? pageNumber;
+
+		private int? pageSize;
 
 		public long? ResourceOwnerId
 		{
@@ -61,16 +65,16 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string ComponentName
+		public long? EndTime
 		{
 			get
 			{
-				return componentName;
+				return endTime;
 			}
 			set	
 			{
-				componentName = value;
-				DictionaryUtil.Add(QueryParameters, "ComponentName", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
 			}
 		}
 
@@ -87,22 +91,48 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string ServiceName
+		public long? StartTime
 		{
 			get
 			{
-				return serviceName;
+				return startTime;
 			}
 			set	
 			{
-				serviceName = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
 			}
 		}
 
-        public override ListClusterServiceComponentHealthInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+        public override ListDiskOpsEventsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListClusterServiceComponentHealthInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListDiskOpsEventsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

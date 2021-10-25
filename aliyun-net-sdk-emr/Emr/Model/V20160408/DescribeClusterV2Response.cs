@@ -1503,6 +1503,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 				private string status;
 
+				private string clusterType;
+
 				public string ClusterId
 				{
 					get
@@ -1536,6 +1538,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public string ClusterType
+				{
+					get
+					{
+						return clusterType;
+					}
+					set	
+					{
+						clusterType = value;
 					}
 				}
 			}

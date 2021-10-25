@@ -90,6 +90,7 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 			relateClusterInfo.ClusterId = _ctx.StringValue("DescribeClusterV2.ClusterInfo.RelateClusterInfo.ClusterId");
 			relateClusterInfo.ClusterName = _ctx.StringValue("DescribeClusterV2.ClusterInfo.RelateClusterInfo.ClusterName");
 			relateClusterInfo.Status = _ctx.StringValue("DescribeClusterV2.ClusterInfo.RelateClusterInfo.Status");
+			relateClusterInfo.ClusterType = _ctx.StringValue("DescribeClusterV2.ClusterInfo.RelateClusterInfo.ClusterType");
 			clusterInfo.RelateClusterInfo = relateClusterInfo;
 
 			DescribeClusterV2Response.DescribeClusterV2_ClusterInfo.DescribeClusterV2_HostPoolInfo hostPoolInfo = new DescribeClusterV2Response.DescribeClusterV2_ClusterInfo.DescribeClusterV2_HostPoolInfo();

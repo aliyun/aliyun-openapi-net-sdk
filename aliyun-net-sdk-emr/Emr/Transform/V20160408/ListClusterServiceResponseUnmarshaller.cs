@@ -51,6 +51,7 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 				clusterService.AbnormalNum = _ctx.IntegerValue("ListClusterService.ClusterServiceList["+ i +"].AbnormalNum");
 				clusterService.StoppedNum = _ctx.IntegerValue("ListClusterService.ClusterServiceList["+ i +"].StoppedNum");
 				clusterService.NeedRestartNum = _ctx.IntegerValue("ListClusterService.ClusterServiceList["+ i +"].NeedRestartNum");
+				clusterService.State = _ctx.StringValue("ListClusterService.ClusterServiceList["+ i +"].State");
 
 				List<ListClusterServiceResponse.ListClusterService_ClusterService.ListClusterService_ServiceAction> clusterService_serviceActionList = new List<ListClusterServiceResponse.ListClusterService_ClusterService.ListClusterService_ServiceAction>();
 				for (int j = 0; j < _ctx.Length("ListClusterService.ClusterServiceList["+ i +"].ServiceActionList.Length"); j++) {

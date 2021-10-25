@@ -27,10 +27,10 @@ using Aliyun.Acs.Emr.Transform.V20160408;
 
 namespace Aliyun.Acs.Emr.Model.V20160408
 {
-    public class ListClusterServiceComponentHealthInfoRequest : RpcAcsRequest<ListClusterServiceComponentHealthInfoResponse>
+    public class DescribeEmrMainVersionRequest : RpcAcsRequest<DescribeEmrMainVersionResponse>
     {
-        public ListClusterServiceComponentHealthInfoRequest()
-            : base("Emr", "2016-04-08", "ListClusterServiceComponentHealthInfo", "emr", "openAPI")
+        public DescribeEmrMainVersionRequest()
+            : base("Emr", "2016-04-08", "DescribeEmrMainVersion", "emr", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,7 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private long? resourceOwnerId;
 
-		private string componentName;
-
-		private string clusterId;
-
-		private string serviceName;
+		private string emrVersion;
 
 		public long? ResourceOwnerId
 		{
@@ -61,48 +57,22 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string ComponentName
+		public string EmrVersion
 		{
 			get
 			{
-				return componentName;
+				return emrVersion;
 			}
 			set	
 			{
-				componentName = value;
-				DictionaryUtil.Add(QueryParameters, "ComponentName", value);
+				emrVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EmrVersion", value);
 			}
 		}
 
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
-		public string ServiceName
-		{
-			get
-			{
-				return serviceName;
-			}
-			set	
-			{
-				serviceName = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
-			}
-		}
-
-        public override ListClusterServiceComponentHealthInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeEmrMainVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListClusterServiceComponentHealthInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeEmrMainVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

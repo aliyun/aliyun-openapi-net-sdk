@@ -83,14 +83,17 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 			clusterInfo.AutoScalingByLoadAllowed = _ctx.BooleanValue("DescribeClusterBasicInfo.ClusterInfo.AutoScalingByLoadAllowed");
 			clusterInfo.AutoScalingWithGraceAllowed = _ctx.BooleanValue("DescribeClusterBasicInfo.ClusterInfo.AutoScalingWithGraceAllowed");
 			clusterInfo.ResizeDiskEnable = _ctx.BooleanValue("DescribeClusterBasicInfo.ClusterInfo.ResizeDiskEnable");
+			clusterInfo.ResizeClusterEnable = _ctx.BooleanValue("DescribeClusterBasicInfo.ClusterInfo.ResizeClusterEnable");
 			clusterInfo.MetaStoreType = _ctx.StringValue("DescribeClusterBasicInfo.ClusterInfo.MetaStoreType");
 			clusterInfo.K8sClusterId = _ctx.StringValue("DescribeClusterBasicInfo.ClusterInfo.K8sClusterId");
 			clusterInfo.OperationId = _ctx.StringValue("DescribeClusterBasicInfo.ClusterInfo.OperationId");
+			clusterInfo.ClickhouseConf = _ctx.StringValue("DescribeClusterBasicInfo.ClusterInfo.ClickhouseConf");
 
 			DescribeClusterBasicInfoResponse.DescribeClusterBasicInfo_ClusterInfo.DescribeClusterBasicInfo_RelateClusterInfo relateClusterInfo = new DescribeClusterBasicInfoResponse.DescribeClusterBasicInfo_ClusterInfo.DescribeClusterBasicInfo_RelateClusterInfo();
 			relateClusterInfo.ClusterId = _ctx.StringValue("DescribeClusterBasicInfo.ClusterInfo.RelateClusterInfo.ClusterId");
 			relateClusterInfo.ClusterName = _ctx.StringValue("DescribeClusterBasicInfo.ClusterInfo.RelateClusterInfo.ClusterName");
 			relateClusterInfo.Status = _ctx.StringValue("DescribeClusterBasicInfo.ClusterInfo.RelateClusterInfo.Status");
+			relateClusterInfo.ClusterType = _ctx.StringValue("DescribeClusterBasicInfo.ClusterInfo.RelateClusterInfo.ClusterType");
 			clusterInfo.RelateClusterInfo = relateClusterInfo;
 
 			DescribeClusterBasicInfoResponse.DescribeClusterBasicInfo_ClusterInfo.DescribeClusterBasicInfo_HostPoolInfo hostPoolInfo = new DescribeClusterBasicInfoResponse.DescribeClusterBasicInfo_ClusterInfo.DescribeClusterBasicInfo_HostPoolInfo();

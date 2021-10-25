@@ -57,6 +57,9 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 				component.HostInstanceId = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].HostInstanceId");
 				component.SerialNumber = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].SerialNumber");
 				component.CommissionStatus = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].CommissionStatus");
+				component.State = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].State");
+				component.HealthStatus = _ctx.StringValue("ListClusterHostComponent.ComponentList["+ i +"].HealthStatus");
+				component.HealthReportTime = _ctx.LongValue("ListClusterHostComponent.ComponentList["+ i +"].HealthReportTime");
 
 				listClusterHostComponentResponse_componentList.Add(component);
 			}

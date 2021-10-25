@@ -154,11 +154,15 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private bool? resizeDiskEnable;
 
+			private bool? resizeClusterEnable;
+
 			private string metaStoreType;
 
 			private string k8sClusterId;
 
 			private string operationId;
+
+			private string clickhouseConf;
 
 			private List<DescribeClusterBasicInfo_GatewayClusterInfo> gatewayClusterInfoList;
 
@@ -762,6 +766,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				}
 			}
 
+			public bool? ResizeClusterEnable
+			{
+				get
+				{
+					return resizeClusterEnable;
+				}
+				set	
+				{
+					resizeClusterEnable = value;
+				}
+			}
+
 			public string MetaStoreType
 			{
 				get
@@ -795,6 +811,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					operationId = value;
+				}
+			}
+
+			public string ClickhouseConf
+			{
+				get
+				{
+					return clickhouseConf;
+				}
+				set	
+				{
+					clickhouseConf = value;
 				}
 			}
 
@@ -983,6 +1011,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 				private string status;
 
+				private string clusterType;
+
 				public string ClusterId
 				{
 					get
@@ -1016,6 +1046,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public string ClusterType
+				{
+					get
+					{
+						return clusterType;
+					}
+					set	
+					{
+						clusterType = value;
 					}
 				}
 			}

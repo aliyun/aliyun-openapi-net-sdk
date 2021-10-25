@@ -64,6 +64,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private bool? defaultStatus;
 
+		private string vpcId;
+
 		private string name;
 
 		private List<string> clusterTypeLists = new List<string>(){ };
@@ -234,6 +236,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				defaultStatus = value;
 				DictionaryUtil.Add(QueryParameters, "DefaultStatus", value.ToString());
+			}
+		}
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
 			}
 		}
 

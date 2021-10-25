@@ -104,7 +104,7 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			set	
 			{
 				runConf = value;
-				DictionaryUtil.Add(QueryParameters, "RunConf", value);
+				DictionaryUtil.Add(BodyParameters, "RunConf", value);
 			}
 		}
 
@@ -117,7 +117,7 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			set	
 			{
 				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				DictionaryUtil.Add(BodyParameters, "Description", value);
 			}
 		}
 
@@ -143,7 +143,7 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			set	
 			{
 				paramConf = value;
-				DictionaryUtil.Add(QueryParameters, "ParamConf", value);
+				DictionaryUtil.Add(BodyParameters, "ParamConf", value);
 			}
 		}
 
@@ -159,8 +159,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				resourceLists = value;
 				for (int i = 0; i < resourceLists.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"ResourceList." + (i + 1) + ".Path", resourceLists[i].Path);
-					DictionaryUtil.Add(QueryParameters,"ResourceList." + (i + 1) + ".Alias", resourceLists[i].Alias);
+					DictionaryUtil.Add(BodyParameters,"ResourceList." + (i + 1) + ".Path", resourceLists[i].Path);
+					DictionaryUtil.Add(BodyParameters,"ResourceList." + (i + 1) + ".Alias", resourceLists[i].Alias);
 				}
 			}
 		}
@@ -200,7 +200,7 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			set	
 			{
 				monitorConf = value;
-				DictionaryUtil.Add(QueryParameters, "MonitorConf", value);
+				DictionaryUtil.Add(BodyParameters, "MonitorConf", value);
 			}
 		}
 
@@ -252,7 +252,7 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			set	
 			{
 				envConf = value;
-				DictionaryUtil.Add(QueryParameters, "EnvConf", value);
+				DictionaryUtil.Add(BodyParameters, "EnvConf", value);
 			}
 		}
 
@@ -291,7 +291,7 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			set	
 			{
 				_params = value;
-				DictionaryUtil.Add(QueryParameters, "Params", value);
+				DictionaryUtil.Add(BodyParameters, "Params", value);
 			}
 		}
 
@@ -304,7 +304,7 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			set	
 			{
 				customVariables = value;
-				DictionaryUtil.Add(QueryParameters, "CustomVariables", value);
+				DictionaryUtil.Add(BodyParameters, "CustomVariables", value);
 			}
 		}
 

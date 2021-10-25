@@ -27,10 +27,10 @@ using Aliyun.Acs.Emr.Transform.V20160408;
 
 namespace Aliyun.Acs.Emr.Model.V20160408
 {
-    public class ListClusterServiceComponentHealthInfoRequest : RpcAcsRequest<ListClusterServiceComponentHealthInfoResponse>
+    public class CreateClusterHostGroupRequest : RpcAcsRequest<CreateClusterHostGroupResponse>
     {
-        public ListClusterServiceComponentHealthInfoRequest()
-            : base("Emr", "2016-04-08", "ListClusterServiceComponentHealthInfo", "emr", "openAPI")
+        public CreateClusterHostGroupRequest()
+            : base("Emr", "2016-04-08", "CreateClusterHostGroup", "emr", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,21 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private long? resourceOwnerId;
 
-		private string componentName;
+		private string hostGroupParams;
+
+		private string securityGroupId;
+
+		private string hostGroupName;
 
 		private string clusterId;
 
-		private string serviceName;
+		private string vswitchId;
+
+		private string comment;
+
+		private string payType;
+
+		private string hostGroupType;
 
 		public long? ResourceOwnerId
 		{
@@ -61,16 +71,42 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string ComponentName
+		public string HostGroupParams
 		{
 			get
 			{
-				return componentName;
+				return hostGroupParams;
 			}
 			set	
 			{
-				componentName = value;
-				DictionaryUtil.Add(QueryParameters, "ComponentName", value);
+				hostGroupParams = value;
+				DictionaryUtil.Add(QueryParameters, "HostGroupParams", value);
+			}
+		}
+
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
+			}
+		}
+
+		public string HostGroupName
+		{
+			get
+			{
+				return hostGroupName;
+			}
+			set	
+			{
+				hostGroupName = value;
+				DictionaryUtil.Add(QueryParameters, "HostGroupName", value);
 			}
 		}
 
@@ -87,22 +123,61 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
-		public string ServiceName
+		public string VswitchId
 		{
 			get
 			{
-				return serviceName;
+				return vswitchId;
 			}
 			set	
 			{
-				serviceName = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
+				vswitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VswitchId", value);
 			}
 		}
 
-        public override ListClusterServiceComponentHealthInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Comment
+		{
+			get
+			{
+				return comment;
+			}
+			set	
+			{
+				comment = value;
+				DictionaryUtil.Add(QueryParameters, "Comment", value);
+			}
+		}
+
+		public string PayType
+		{
+			get
+			{
+				return payType;
+			}
+			set	
+			{
+				payType = value;
+				DictionaryUtil.Add(QueryParameters, "PayType", value);
+			}
+		}
+
+		public string HostGroupType
+		{
+			get
+			{
+				return hostGroupType;
+			}
+			set	
+			{
+				hostGroupType = value;
+				DictionaryUtil.Add(QueryParameters, "HostGroupType", value);
+			}
+		}
+
+        public override CreateClusterHostGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListClusterServiceComponentHealthInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateClusterHostGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

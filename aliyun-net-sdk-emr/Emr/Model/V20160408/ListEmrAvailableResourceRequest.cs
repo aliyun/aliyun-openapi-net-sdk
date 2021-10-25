@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private string instanceType;
 
+		private string emrVersion;
+
 		private string instanceChargeType;
 
 		private string clusterId;
@@ -128,6 +130,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				instanceType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
+
+		public string EmrVersion
+		{
+			get
+			{
+				return emrVersion;
+			}
+			set	
+			{
+				emrVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EmrVersion", value);
 			}
 		}
 

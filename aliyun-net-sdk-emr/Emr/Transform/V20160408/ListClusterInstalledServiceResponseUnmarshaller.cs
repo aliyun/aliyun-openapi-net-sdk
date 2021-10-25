@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 				clusterInstalledService.NeedRestartNum = _ctx.IntegerValue("ListClusterInstalledService.ClusterInstalledServiceList["+ i +"].needRestartNum");
 				clusterInstalledService.AbnormalNum = _ctx.IntegerValue("ListClusterInstalledService.ClusterInstalledServiceList["+ i +"].abnormalNum");
 				clusterInstalledService.Comment = _ctx.StringValue("ListClusterInstalledService.ClusterInstalledServiceList["+ i +"].comment");
+				clusterInstalledService.State = _ctx.StringValue("ListClusterInstalledService.ClusterInstalledServiceList["+ i +"].State");
 
 				List<ListClusterInstalledServiceResponse.ListClusterInstalledService_ClusterInstalledService.ListClusterInstalledService_ServiceAction> clusterInstalledService_serviceActionList = new List<ListClusterInstalledServiceResponse.ListClusterInstalledService_ClusterInstalledService.ListClusterInstalledService_ServiceAction>();
 				for (int j = 0; j < _ctx.Length("ListClusterInstalledService.ClusterInstalledServiceList["+ i +"].ServiceActionList.Length"); j++) {
