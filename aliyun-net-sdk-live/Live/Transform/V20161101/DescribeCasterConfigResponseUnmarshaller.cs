@@ -69,6 +69,22 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			}
 			recordConfig.RecordFormat = recordConfig_recordFormat;
 			describeCasterConfigResponse.RecordConfig = recordConfig;
+
+			List<DescribeCasterConfigResponse.DescribeCasterConfig_SyncGroup> describeCasterConfigResponse_syncGroupsConfig = new List<DescribeCasterConfigResponse.DescribeCasterConfig_SyncGroup>();
+			for (int i = 0; i < _ctx.Length("DescribeCasterConfig.SyncGroupsConfig.Length"); i++) {
+				DescribeCasterConfigResponse.DescribeCasterConfig_SyncGroup syncGroup = new DescribeCasterConfigResponse.DescribeCasterConfig_SyncGroup();
+				syncGroup.Mode = _ctx.IntegerValue("DescribeCasterConfig.SyncGroupsConfig["+ i +"].Mode");
+				syncGroup.HostResourceId = _ctx.StringValue("DescribeCasterConfig.SyncGroupsConfig["+ i +"].HostResourceId");
+
+				List<string> syncGroup_resourceIds = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeCasterConfig.SyncGroupsConfig["+ i +"].ResourceIds.Length"); j++) {
+					syncGroup_resourceIds.Add(_ctx.StringValue("DescribeCasterConfig.SyncGroupsConfig["+ i +"].ResourceIds["+ j +"]"));
+				}
+				syncGroup.ResourceIds = syncGroup_resourceIds;
+
+				describeCasterConfigResponse_syncGroupsConfig.Add(syncGroup);
+			}
+			describeCasterConfigResponse.SyncGroupsConfig = describeCasterConfigResponse_syncGroupsConfig;
         
 			return describeCasterConfigResponse;
         }
