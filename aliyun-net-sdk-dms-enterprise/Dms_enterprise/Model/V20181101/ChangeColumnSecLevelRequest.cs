@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,10 +27,10 @@ using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 {
-    public class RevokeUserPermissionRequest : RpcAcsRequest<RevokeUserPermissionResponse>
+    public class ChangeColumnSecLevelRequest : RpcAcsRequest<ChangeColumnSecLevelResponse>
     {
-        public RevokeUserPermissionRequest()
-            : base("dms-enterprise", "2018-11-01", "RevokeUserPermission", "dms-enterprise", "openAPI")
+        public ChangeColumnSecLevelRequest()
+            : base("dms-enterprise", "2018-11-01", "ChangeColumnSecLevel", "dms-enterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,83 +40,72 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			Method = MethodType.POST;
         }
 
-		private string permTypes;
+		private string schemaName;
 
-		private string userAccessId;
+		private bool? isLogic;
 
-		private string dsType;
+		private string newLevel;
 
-		private string userId;
+		private string columnName;
 
 		private long? tid;
 
-		private long? instanceId;
-
-		private string dbId;
-
-		private string tableId;
-
-		private bool? logic;
+		private long? dbId;
 
 		private string tableName;
 
-		[JsonProperty(PropertyName = "PermTypes")]
-		public string PermTypes
+		public string SchemaName
 		{
 			get
 			{
-				return permTypes;
+				return schemaName;
 			}
 			set	
 			{
-				permTypes = value;
-				DictionaryUtil.Add(QueryParameters, "PermTypes", value);
+				schemaName = value;
+				DictionaryUtil.Add(QueryParameters, "SchemaName", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "UserAccessId")]
-		public string UserAccessId
+		public bool? IsLogic
 		{
 			get
 			{
-				return userAccessId;
+				return isLogic;
 			}
 			set	
 			{
-				userAccessId = value;
-				DictionaryUtil.Add(QueryParameters, "UserAccessId", value);
+				isLogic = value;
+				DictionaryUtil.Add(QueryParameters, "IsLogic", value.ToString());
 			}
 		}
 
-		[JsonProperty(PropertyName = "DsType")]
-		public string DsType
+		public string NewLevel
 		{
 			get
 			{
-				return dsType;
+				return newLevel;
 			}
 			set	
 			{
-				dsType = value;
-				DictionaryUtil.Add(QueryParameters, "DsType", value);
+				newLevel = value;
+				DictionaryUtil.Add(QueryParameters, "NewLevel", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "UserId")]
-		public string UserId
+		public string ColumnName
 		{
 			get
 			{
-				return userId;
+				return columnName;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				columnName = value;
+				DictionaryUtil.Add(QueryParameters, "ColumnName", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
 		{
 			get
@@ -131,22 +119,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "InstanceId")]
-		public long? InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "DbId")]
-		public string DbId
+		public long? DbId
 		{
 			get
 			{
@@ -155,39 +128,10 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			set	
 			{
 				dbId = value;
-				DictionaryUtil.Add(QueryParameters, "DbId", value);
+				DictionaryUtil.Add(QueryParameters, "DbId", value.ToString());
 			}
 		}
 
-		[JsonProperty(PropertyName = "TableId")]
-		public string TableId
-		{
-			get
-			{
-				return tableId;
-			}
-			set	
-			{
-				tableId = value;
-				DictionaryUtil.Add(QueryParameters, "TableId", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "Logic")]
-		public bool? Logic
-		{
-			get
-			{
-				return logic;
-			}
-			set	
-			{
-				logic = value;
-				DictionaryUtil.Add(QueryParameters, "Logic", value.ToString());
-			}
-		}
-
-		[JsonProperty(PropertyName = "TableName")]
 		public string TableName
 		{
 			get
@@ -201,9 +145,9 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-        public override RevokeUserPermissionResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ChangeColumnSecLevelResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RevokeUserPermissionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ChangeColumnSecLevelResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -75,6 +75,11 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 				}
 				instance.OwnerNameList = instance_ownerNameList;
 
+				ListInstancesResponse.ListInstances_Instance.ListInstances_StandardGroup standardGroup = new ListInstancesResponse.ListInstances_Instance.ListInstances_StandardGroup();
+				standardGroup.GroupName = _ctx.StringValue("ListInstances.InstanceList["+ i +"].StandardGroup.GroupName");
+				standardGroup.GroupMode = _ctx.StringValue("ListInstances.InstanceList["+ i +"].StandardGroup.GroupMode");
+				instance.StandardGroup = standardGroup;
+
 				listInstancesResponse_instanceList.Add(instance);
 			}
 			listInstancesResponse.InstanceList = listInstancesResponse_instanceList;

@@ -28,10 +28,10 @@ using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 {
-    public class ListSensitiveColumnsDetailRequest : RpcAcsRequest<ListSensitiveColumnsDetailResponse>
+    public class EditLogicDatabaseRequest : RpcAcsRequest<EditLogicDatabaseResponse>
     {
-        public ListSensitiveColumnsDetailRequest()
-            : base("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail", "dms-enterprise", "openAPI")
+        public EditLogicDatabaseRequest()
+            : base("dms-enterprise", "2018-11-01", "EditLogicDatabase", "dms-enterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,43 +41,25 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			Method = MethodType.POST;
         }
 
-		private string schemaName;
-
-		private string columnName;
+		private long? logicDbId;
 
 		private long? tid;
 
-		private long? dbId;
+		private List<long?> databaseIds = new List<long?>(){ };
 
-		private bool? logic;
+		private string alias;
 
-		private string tableName;
-
-		[JsonProperty(PropertyName = "SchemaName")]
-		public string SchemaName
+		[JsonProperty(PropertyName = "LogicDbId")]
+		public long? LogicDbId
 		{
 			get
 			{
-				return schemaName;
+				return logicDbId;
 			}
 			set	
 			{
-				schemaName = value;
-				DictionaryUtil.Add(QueryParameters, "SchemaName", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "ColumnName")]
-		public string ColumnName
-		{
-			get
-			{
-				return columnName;
-			}
-			set	
-			{
-				columnName = value;
-				DictionaryUtil.Add(QueryParameters, "ColumnName", value);
+				logicDbId = value;
+				DictionaryUtil.Add(QueryParameters, "LogicDbId", value.ToString());
 			}
 		}
 
@@ -95,51 +77,49 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "DbId")]
-		public long? DbId
+		[JsonProperty(PropertyName = "DatabaseIds")]
+		public List<long?> DatabaseIds
 		{
 			get
 			{
-				return dbId;
+				return databaseIds;
 			}
-			set	
+
+			set
 			{
-				dbId = value;
-				DictionaryUtil.Add(QueryParameters, "DbId", value.ToString());
+				databaseIds = value;
+				if(databaseIds != null)
+				{
+					for (int depth1 = 0; depth1 < databaseIds.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"DatabaseIds." + (depth1 + 1), databaseIds[depth1]);
+					}
+				}
 			}
 		}
 
-		[JsonProperty(PropertyName = "Logic")]
-		public bool? Logic
+		[JsonProperty(PropertyName = "Alias")]
+		public string Alias
 		{
 			get
 			{
-				return logic;
+				return alias;
 			}
 			set	
 			{
-				logic = value;
-				DictionaryUtil.Add(QueryParameters, "Logic", value.ToString());
+				alias = value;
+				DictionaryUtil.Add(QueryParameters, "Alias", value);
 			}
 		}
 
-		[JsonProperty(PropertyName = "TableName")]
-		public string TableName
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return tableName;
-			}
-			set	
-			{
-				tableName = value;
-				DictionaryUtil.Add(QueryParameters, "TableName", value);
-			}
+			return false;
 		}
 
-        public override ListSensitiveColumnsDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override EditLogicDatabaseResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListSensitiveColumnsDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return EditLogicDatabaseResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

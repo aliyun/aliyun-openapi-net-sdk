@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 {
-	public class ListUserPermissionsResponse : AcsResponse
+	public class ListInstanceUserPermissionsResponse : AcsResponse
 	{
 
 		private long? totalCount;
@@ -35,7 +35,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private bool? success;
 
-		private List<ListUserPermissions_UserPermission> userPermissions;
+		private List<ListInstanceUserPermissions_UserPermission> userPermissions;
 
 		[JsonProperty(PropertyName = "TotalCount")]
 		public long? TotalCount
@@ -103,7 +103,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		}
 
 		[JsonProperty(PropertyName = "UserPermissions")]
-		public List<ListUserPermissions_UserPermission> UserPermissions
+		public List<ListInstanceUserPermissions_UserPermission> UserPermissions
 		{
 			get
 			{
@@ -115,68 +115,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public class ListUserPermissions_UserPermission
+		public class ListInstanceUserPermissions_UserPermission
 		{
 
-			private string dbId;
-
-			private string tableName;
-
 			private string userId;
-
-			private string schemaName;
-
-			private bool? logic;
 
 			private string userNickName;
 
 			private string instanceId;
 
-			private string envType;
-
-			private string columnName;
-
-			private string dbType;
-
-			private string dsType;
-
-			private string tableId;
-
-			private string searchName;
-
-			private string alias;
-
-			private string host;
-
-			private long? port;
-
-			private List<ListUserPermissions_PermDetail> permDetails;
-
-			[JsonProperty(PropertyName = "DbId")]
-			public string DbId
-			{
-				get
-				{
-					return dbId;
-				}
-				set	
-				{
-					dbId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "TableName")]
-			public string TableName
-			{
-				get
-				{
-					return tableName;
-				}
-				set	
-				{
-					tableName = value;
-				}
-			}
+			private List<ListInstanceUserPermissions_PermDetail> permDetails;
 
 			[JsonProperty(PropertyName = "UserId")]
 			public string UserId
@@ -188,32 +136,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					userId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "SchemaName")]
-			public string SchemaName
-			{
-				get
-				{
-					return schemaName;
-				}
-				set	
-				{
-					schemaName = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Logic")]
-			public bool? Logic
-			{
-				get
-				{
-					return logic;
-				}
-				set	
-				{
-					logic = value;
 				}
 			}
 
@@ -243,125 +165,8 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			[JsonProperty(PropertyName = "EnvType")]
-			public string EnvType
-			{
-				get
-				{
-					return envType;
-				}
-				set	
-				{
-					envType = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "ColumnName")]
-			public string ColumnName
-			{
-				get
-				{
-					return columnName;
-				}
-				set	
-				{
-					columnName = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "DbType")]
-			public string DbType
-			{
-				get
-				{
-					return dbType;
-				}
-				set	
-				{
-					dbType = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "DsType")]
-			public string DsType
-			{
-				get
-				{
-					return dsType;
-				}
-				set	
-				{
-					dsType = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "TableId")]
-			public string TableId
-			{
-				get
-				{
-					return tableId;
-				}
-				set	
-				{
-					tableId = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "SearchName")]
-			public string SearchName
-			{
-				get
-				{
-					return searchName;
-				}
-				set	
-				{
-					searchName = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Alias")]
-			public string Alias
-			{
-				get
-				{
-					return alias;
-				}
-				set	
-				{
-					alias = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Host")]
-			public string Host
-			{
-				get
-				{
-					return host;
-				}
-				set	
-				{
-					host = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "Port")]
-			public long? Port
-			{
-				get
-				{
-					return port;
-				}
-				set	
-				{
-					port = value;
-				}
-			}
-
 			[JsonProperty(PropertyName = "PermDetails")]
-			public List<ListUserPermissions_PermDetail> PermDetails
+			public List<ListInstanceUserPermissions_PermDetail> PermDetails
 			{
 				get
 				{
@@ -373,7 +178,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public class ListUserPermissions_PermDetail
+			public class ListInstanceUserPermissions_PermDetail
 			{
 
 				private string originFrom;

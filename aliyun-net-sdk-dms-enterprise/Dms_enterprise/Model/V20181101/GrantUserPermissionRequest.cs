@@ -51,6 +51,8 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private long? tid;
 
+		private long? instanceId;
+
 		private string dbId;
 
 		private string tableId;
@@ -126,6 +128,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				tid = value;
 				DictionaryUtil.Add(QueryParameters, "Tid", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "InstanceId")]
+		public long? InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value.ToString());
 			}
 		}
 

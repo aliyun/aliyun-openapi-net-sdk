@@ -54,6 +54,8 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 				userPermission.TableId = _ctx.StringValue("ListUserPermissions.UserPermissions["+ i +"].TableId");
 				userPermission.SearchName = _ctx.StringValue("ListUserPermissions.UserPermissions["+ i +"].SearchName");
 				userPermission.Alias = _ctx.StringValue("ListUserPermissions.UserPermissions["+ i +"].Alias");
+				userPermission.Host = _ctx.StringValue("ListUserPermissions.UserPermissions["+ i +"].Host");
+				userPermission.Port = _ctx.LongValue("ListUserPermissions.UserPermissions["+ i +"].Port");
 
 				List<ListUserPermissionsResponse.ListUserPermissions_UserPermission.ListUserPermissions_PermDetail> userPermission_permDetails = new List<ListUserPermissionsResponse.ListUserPermissions_UserPermission.ListUserPermissions_PermDetail>();
 				for (int j = 0; j < _ctx.Length("ListUserPermissions.UserPermissions["+ i +"].PermDetails.Length"); j++) {

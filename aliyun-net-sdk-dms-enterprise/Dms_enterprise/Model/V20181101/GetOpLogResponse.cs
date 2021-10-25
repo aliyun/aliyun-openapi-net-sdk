@@ -122,7 +122,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string database;
 
-			private long? userId;
+			private string userId;
 
 			private string opContent;
 
@@ -159,7 +159,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 
 			[JsonProperty(PropertyName = "UserId")]
-			public long? UserId
+			public string UserId
 			{
 				get
 				{

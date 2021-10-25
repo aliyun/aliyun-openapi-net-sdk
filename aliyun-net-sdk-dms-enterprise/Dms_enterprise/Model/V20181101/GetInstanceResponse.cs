@@ -151,6 +151,8 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private List<string> ownerNameList;
 
+			private GetInstance_StandardGroup standardGroup;
+
 			[JsonProperty(PropertyName = "VpcId")]
 			public string VpcId
 			{
@@ -460,6 +462,53 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					ownerNameList = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StandardGroup")]
+			public GetInstance_StandardGroup StandardGroup
+			{
+				get
+				{
+					return standardGroup;
+				}
+				set	
+				{
+					standardGroup = value;
+				}
+			}
+
+			public class GetInstance_StandardGroup
+			{
+
+				private string groupName;
+
+				private string groupMode;
+
+				[JsonProperty(PropertyName = "GroupName")]
+				public string GroupName
+				{
+					get
+					{
+						return groupName;
+					}
+					set	
+					{
+						groupName = value;
+					}
+				}
+
+				[JsonProperty(PropertyName = "GroupMode")]
+				public string GroupMode
+				{
+					get
+					{
+						return groupMode;
+					}
+					set	
+					{
+						groupMode = value;
+					}
 				}
 			}
 		}

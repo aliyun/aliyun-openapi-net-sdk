@@ -28,10 +28,10 @@ using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 {
-    public class ListUserPermissionsRequest : RpcAcsRequest<ListUserPermissionsResponse>
+    public class ListInstanceUserPermissionsRequest : RpcAcsRequest<ListInstanceUserPermissionsResponse>
     {
-        public ListUserPermissionsRequest()
-            : base("dms-enterprise", "2018-11-01", "ListUserPermissions", "dms-enterprise", "openAPI")
+        public ListInstanceUserPermissionsRequest()
+            : base("dms-enterprise", "2018-11-01", "ListInstanceUserPermissions", "dms-enterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,53 +41,15 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			Method = MethodType.POST;
         }
 
-		private string searchKey;
-
-		private string userId;
-
 		private long? tid;
 
 		private int? pageNumber;
 
-		private string permType;
-
-		private string databaseName;
-
-		private string envType;
-
-		private string dbType;
+		private string instanceId;
 
 		private int? pageSize;
 
-		private bool? logic;
-
-		[JsonProperty(PropertyName = "SearchKey")]
-		public string SearchKey
-		{
-			get
-			{
-				return searchKey;
-			}
-			set	
-			{
-				searchKey = value;
-				DictionaryUtil.Add(QueryParameters, "SearchKey", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "UserId")]
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
-			}
-		}
+		private string userName;
 
 		[JsonProperty(PropertyName = "Tid")]
 		public long? Tid
@@ -117,59 +79,17 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "PermType")]
-		public string PermType
+		[JsonProperty(PropertyName = "InstanceId")]
+		public string InstanceId
 		{
 			get
 			{
-				return permType;
+				return instanceId;
 			}
 			set	
 			{
-				permType = value;
-				DictionaryUtil.Add(QueryParameters, "PermType", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "DatabaseName")]
-		public string DatabaseName
-		{
-			get
-			{
-				return databaseName;
-			}
-			set	
-			{
-				databaseName = value;
-				DictionaryUtil.Add(QueryParameters, "DatabaseName", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "EnvType")]
-		public string EnvType
-		{
-			get
-			{
-				return envType;
-			}
-			set	
-			{
-				envType = value;
-				DictionaryUtil.Add(QueryParameters, "EnvType", value);
-			}
-		}
-
-		[JsonProperty(PropertyName = "DbType")]
-		public string DbType
-		{
-			get
-			{
-				return dbType;
-			}
-			set	
-			{
-				dbType = value;
-				DictionaryUtil.Add(QueryParameters, "DbType", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -187,23 +107,23 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "Logic")]
-		public bool? Logic
+		[JsonProperty(PropertyName = "UserName")]
+		public string UserName
 		{
 			get
 			{
-				return logic;
+				return userName;
 			}
 			set	
 			{
-				logic = value;
-				DictionaryUtil.Add(QueryParameters, "Logic", value.ToString());
+				userName = value;
+				DictionaryUtil.Add(QueryParameters, "UserName", value);
 			}
 		}
 
-        public override ListUserPermissionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListInstanceUserPermissionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListUserPermissionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListInstanceUserPermissionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

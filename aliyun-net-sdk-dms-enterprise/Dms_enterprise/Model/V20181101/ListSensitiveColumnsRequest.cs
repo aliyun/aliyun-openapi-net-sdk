@@ -51,7 +51,11 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string securityLevel;
 
+		private long? dbId;
+
 		private int? pageSize;
+
+		private bool? logic;
 
 		private string tableName;
 
@@ -125,6 +129,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		[JsonProperty(PropertyName = "DbId")]
+		public long? DbId
+		{
+			get
+			{
+				return dbId;
+			}
+			set	
+			{
+				dbId = value;
+				DictionaryUtil.Add(QueryParameters, "DbId", value.ToString());
+			}
+		}
+
 		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
@@ -136,6 +154,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		[JsonProperty(PropertyName = "Logic")]
+		public bool? Logic
+		{
+			get
+			{
+				return logic;
+			}
+			set	
+			{
+				logic = value;
+				DictionaryUtil.Add(QueryParameters, "Logic", value.ToString());
 			}
 		}
 
