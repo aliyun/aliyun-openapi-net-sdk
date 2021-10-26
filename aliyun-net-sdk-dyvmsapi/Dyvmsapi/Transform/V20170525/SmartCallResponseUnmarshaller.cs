@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 			SmartCallResponse smartCallResponse = new SmartCallResponse();
 
 			smartCallResponse.HttpResponse = _ctx.HttpResponse;
-			smartCallResponse.RequestId = _ctx.StringValue("SmartCall.RequestId");
-			smartCallResponse.CallId = _ctx.StringValue("SmartCall.CallId");
 			smartCallResponse.Code = _ctx.StringValue("SmartCall.Code");
 			smartCallResponse.Message = _ctx.StringValue("SmartCall.Message");
+			smartCallResponse.RequestId = _ctx.StringValue("SmartCall.RequestId");
+			smartCallResponse.CallId = _ctx.StringValue("SmartCall.CallId");
         
 			return smartCallResponse;
         }

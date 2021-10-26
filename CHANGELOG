@@ -1,3 +1,6 @@
+2021-10-26 Version: 3.2.0
+- Update Dyvmsapi SDK.
+
 2021-10-25 Version: 1.22.0
 - Support ListInstances and GetInstance API to return StandardGroup information.
 - Support ListUserPermissions, GrantUserPermission, GrantUserPermission to operate instance permission.

@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Dyvmsapi.Transform.V20170525
 			SingleCallByTtsResponse singleCallByTtsResponse = new SingleCallByTtsResponse();
 
 			singleCallByTtsResponse.HttpResponse = _ctx.HttpResponse;
-			singleCallByTtsResponse.RequestId = _ctx.StringValue("SingleCallByTts.RequestId");
-			singleCallByTtsResponse.CallId = _ctx.StringValue("SingleCallByTts.CallId");
 			singleCallByTtsResponse.Code = _ctx.StringValue("SingleCallByTts.Code");
 			singleCallByTtsResponse.Message = _ctx.StringValue("SingleCallByTts.Message");
+			singleCallByTtsResponse.RequestId = _ctx.StringValue("SingleCallByTts.RequestId");
+			singleCallByTtsResponse.CallId = _ctx.StringValue("SingleCallByTts.CallId");
         
 			return singleCallByTtsResponse;
         }
