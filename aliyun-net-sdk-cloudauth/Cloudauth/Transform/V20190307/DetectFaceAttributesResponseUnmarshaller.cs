@@ -31,39 +31,39 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			DetectFaceAttributesResponse detectFaceAttributesResponse = new DetectFaceAttributesResponse();
 
 			detectFaceAttributesResponse.HttpResponse = _ctx.HttpResponse;
-			detectFaceAttributesResponse.RequestId = _ctx.StringValue("DetectFaceAttributes.RequestId");
-			detectFaceAttributesResponse.Success = _ctx.BooleanValue("DetectFaceAttributes.Success");
 			detectFaceAttributesResponse.Code = _ctx.StringValue("DetectFaceAttributes.Code");
 			detectFaceAttributesResponse.Message = _ctx.StringValue("DetectFaceAttributes.Message");
+			detectFaceAttributesResponse.RequestId = _ctx.StringValue("DetectFaceAttributes.RequestId");
+			detectFaceAttributesResponse.Success = _ctx.BooleanValue("DetectFaceAttributes.Success");
 
 			DetectFaceAttributesResponse.DetectFaceAttributes_Data data = new DetectFaceAttributesResponse.DetectFaceAttributes_Data();
-			data.ImgWidth = _ctx.IntegerValue("DetectFaceAttributes.Data.ImgWidth");
 			data.ImgHeight = _ctx.IntegerValue("DetectFaceAttributes.Data.ImgHeight");
+			data.ImgWidth = _ctx.IntegerValue("DetectFaceAttributes.Data.ImgWidth");
 
 			List<DetectFaceAttributesResponse.DetectFaceAttributes_Data.DetectFaceAttributes_FaceAttributesDetectInfo> data_faceInfos = new List<DetectFaceAttributesResponse.DetectFaceAttributes_Data.DetectFaceAttributes_FaceAttributesDetectInfo>();
 			for (int i = 0; i < _ctx.Length("DetectFaceAttributes.Data.FaceInfos.Length"); i++) {
 				DetectFaceAttributesResponse.DetectFaceAttributes_Data.DetectFaceAttributes_FaceAttributesDetectInfo faceAttributesDetectInfo = new DetectFaceAttributesResponse.DetectFaceAttributes_Data.DetectFaceAttributes_FaceAttributesDetectInfo();
 
 				DetectFaceAttributesResponse.DetectFaceAttributes_Data.DetectFaceAttributes_FaceAttributesDetectInfo.DetectFaceAttributes_FaceRect faceRect = new DetectFaceAttributesResponse.DetectFaceAttributes_Data.DetectFaceAttributes_FaceAttributesDetectInfo.DetectFaceAttributes_FaceRect();
-				faceRect.Top = _ctx.IntegerValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceRect.Top");
 				faceRect.Left = _ctx.IntegerValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceRect.Left");
+				faceRect.Top = _ctx.IntegerValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceRect.Top");
 				faceRect.Width = _ctx.IntegerValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceRect.Width");
 				faceRect.Height = _ctx.IntegerValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceRect.Height");
 				faceAttributesDetectInfo.FaceRect = faceRect;
 
 				DetectFaceAttributesResponse.DetectFaceAttributes_Data.DetectFaceAttributes_FaceAttributesDetectInfo.DetectFaceAttributes_FaceAttributes faceAttributes = new DetectFaceAttributesResponse.DetectFaceAttributes_Data.DetectFaceAttributes_FaceAttributesDetectInfo.DetectFaceAttributes_FaceAttributes();
-				faceAttributes.Age = _ctx.IntegerValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Age");
 				faceAttributes.Glasses = _ctx.StringValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Glasses");
-				faceAttributes.Facetype = _ctx.StringValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Facetype");
-				faceAttributes.Blur = _ctx.FloatValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Blur");
 				faceAttributes.Facequal = _ctx.FloatValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Facequal");
 				faceAttributes.Integrity = _ctx.IntegerValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Integrity");
+				faceAttributes.Facetype = _ctx.StringValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Facetype");
 				faceAttributes.Respirator = _ctx.StringValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Respirator");
 				faceAttributes.AppearanceScore = _ctx.FloatValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.AppearanceScore");
+				faceAttributes.Age = _ctx.IntegerValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Age");
+				faceAttributes.Blur = _ctx.FloatValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Blur");
 
 				DetectFaceAttributesResponse.DetectFaceAttributes_Data.DetectFaceAttributes_FaceAttributesDetectInfo.DetectFaceAttributes_FaceAttributes.DetectFaceAttributes_Gender gender = new DetectFaceAttributesResponse.DetectFaceAttributes_Data.DetectFaceAttributes_FaceAttributesDetectInfo.DetectFaceAttributes_FaceAttributes.DetectFaceAttributes_Gender();
-				gender.Score = _ctx.FloatValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Gender.Score");
 				gender._Value = _ctx.StringValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Gender.Value");
+				gender.Score = _ctx.FloatValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Gender.Score");
 				faceAttributes.Gender = gender;
 
 				DetectFaceAttributesResponse.DetectFaceAttributes_Data.DetectFaceAttributes_FaceAttributesDetectInfo.DetectFaceAttributes_FaceAttributes.DetectFaceAttributes_Smiling smiling = new DetectFaceAttributesResponse.DetectFaceAttributes_Data.DetectFaceAttributes_FaceAttributesDetectInfo.DetectFaceAttributes_FaceAttributes.DetectFaceAttributes_Smiling();

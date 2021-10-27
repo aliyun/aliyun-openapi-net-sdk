@@ -25,23 +25,23 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 	public class InitDeviceResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string code;
 
 		private string message;
 
-		private string code;
+		private string requestId;
 
 		private InitDevice_ResultObject resultObject;
 
-		public string RequestId
+		public string Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
@@ -57,15 +57,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public string Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 
@@ -84,81 +84,45 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		public class InitDevice_ResultObject
 		{
 
-			private string certifyId;
-
-			private string protocol;
-
-			private string extParams;
-
-			private string retCode;
+			private string ossEndPoint;
 
 			private string retCodeSub;
 
-			private string retMessageSub;
+			private string protocol;
+
+			private string certifyId;
+
+			private string extParams;
 
 			private string message;
 
-			private string ossEndPoint;
+			private string fileName;
 
 			private string accessKeyId;
 
-			private string accessKeySecret;
+			private string presignedUrl;
 
 			private string securityToken;
 
-			private string bucketName;
-
 			private string fileNamePrefix;
 
-			private string fileName;
+			private string bucketName;
 
-			private string presignedUrl;
+			private string accessKeySecret;
 
-			public string CertifyId
+			private string retMessageSub;
+
+			private string retCode;
+
+			public string OssEndPoint
 			{
 				get
 				{
-					return certifyId;
+					return ossEndPoint;
 				}
 				set	
 				{
-					certifyId = value;
-				}
-			}
-
-			public string Protocol
-			{
-				get
-				{
-					return protocol;
-				}
-				set	
-				{
-					protocol = value;
-				}
-			}
-
-			public string ExtParams
-			{
-				get
-				{
-					return extParams;
-				}
-				set	
-				{
-					extParams = value;
-				}
-			}
-
-			public string RetCode
-			{
-				get
-				{
-					return retCode;
-				}
-				set	
-				{
-					retCode = value;
+					ossEndPoint = value;
 				}
 			}
 
@@ -174,15 +138,39 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				}
 			}
 
-			public string RetMessageSub
+			public string Protocol
 			{
 				get
 				{
-					return retMessageSub;
+					return protocol;
 				}
 				set	
 				{
-					retMessageSub = value;
+					protocol = value;
+				}
+			}
+
+			public string CertifyId
+			{
+				get
+				{
+					return certifyId;
+				}
+				set	
+				{
+					certifyId = value;
+				}
+			}
+
+			public string ExtParams
+			{
+				get
+				{
+					return extParams;
+				}
+				set	
+				{
+					extParams = value;
 				}
 			}
 
@@ -198,15 +186,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				}
 			}
 
-			public string OssEndPoint
+			public string FileName
 			{
 				get
 				{
-					return ossEndPoint;
+					return fileName;
 				}
 				set	
 				{
-					ossEndPoint = value;
+					fileName = value;
 				}
 			}
 
@@ -222,15 +210,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				}
 			}
 
-			public string AccessKeySecret
+			public string PresignedUrl
 			{
 				get
 				{
-					return accessKeySecret;
+					return presignedUrl;
 				}
 				set	
 				{
-					accessKeySecret = value;
+					presignedUrl = value;
 				}
 			}
 
@@ -246,18 +234,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				}
 			}
 
-			public string BucketName
-			{
-				get
-				{
-					return bucketName;
-				}
-				set	
-				{
-					bucketName = value;
-				}
-			}
-
 			public string FileNamePrefix
 			{
 				get
@@ -270,27 +246,51 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				}
 			}
 
-			public string FileName
+			public string BucketName
 			{
 				get
 				{
-					return fileName;
+					return bucketName;
 				}
 				set	
 				{
-					fileName = value;
+					bucketName = value;
 				}
 			}
 
-			public string PresignedUrl
+			public string AccessKeySecret
 			{
 				get
 				{
-					return presignedUrl;
+					return accessKeySecret;
 				}
 				set	
 				{
-					presignedUrl = value;
+					accessKeySecret = value;
+				}
+			}
+
+			public string RetMessageSub
+			{
+				get
+				{
+					return retMessageSub;
+				}
+				set	
+				{
+					retMessageSub = value;
+				}
+			}
+
+			public string RetCode
+			{
+				get
+				{
+					return retCode;
+				}
+				set	
+				{
+					retCode = value;
 				}
 			}
 		}

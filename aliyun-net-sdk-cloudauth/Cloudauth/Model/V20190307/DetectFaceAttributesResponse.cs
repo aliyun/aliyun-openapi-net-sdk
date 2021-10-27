@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 	public class DetectFaceAttributesResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private DetectFaceAttributes_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public DetectFaceAttributes_Data Data
 		{
 			get
@@ -98,23 +98,11 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		public class DetectFaceAttributes_Data
 		{
 
-			private int? imgWidth;
-
 			private int? imgHeight;
 
-			private List<DetectFaceAttributes_FaceAttributesDetectInfo> faceInfos;
+			private int? imgWidth;
 
-			public int? ImgWidth
-			{
-				get
-				{
-					return imgWidth;
-				}
-				set	
-				{
-					imgWidth = value;
-				}
-			}
+			private List<DetectFaceAttributes_FaceAttributesDetectInfo> faceInfos;
 
 			public int? ImgHeight
 			{
@@ -125,6 +113,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				set	
 				{
 					imgHeight = value;
+				}
+			}
+
+			public int? ImgWidth
+			{
+				get
+				{
+					return imgWidth;
+				}
+				set	
+				{
+					imgWidth = value;
 				}
 			}
 
@@ -174,25 +174,13 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				public class DetectFaceAttributes_FaceRect
 				{
 
-					private int? top;
-
 					private int? left;
+
+					private int? top;
 
 					private int? width;
 
 					private int? height;
-
-					public int? Top
-					{
-						get
-						{
-							return top;
-						}
-						set	
-						{
-							top = value;
-						}
-					}
 
 					public int? Left
 					{
@@ -203,6 +191,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 						set	
 						{
 							left = value;
+						}
+					}
+
+					public int? Top
+					{
+						get
+						{
+							return top;
+						}
+						set	
+						{
+							top = value;
 						}
 					}
 
@@ -234,39 +234,27 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				public class DetectFaceAttributes_FaceAttributes
 				{
 
-					private int? age;
-
 					private string glasses;
-
-					private string facetype;
-
-					private float? blur;
 
 					private float? facequal;
 
 					private int? integrity;
 
+					private string facetype;
+
 					private string respirator;
 
 					private float? appearanceScore;
+
+					private int? age;
+
+					private float? blur;
 
 					private DetectFaceAttributes_Gender gender;
 
 					private DetectFaceAttributes_Smiling smiling;
 
 					private DetectFaceAttributes_Headpose headpose;
-
-					public int? Age
-					{
-						get
-						{
-							return age;
-						}
-						set	
-						{
-							age = value;
-						}
-					}
 
 					public string Glasses
 					{
@@ -277,30 +265,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 						set	
 						{
 							glasses = value;
-						}
-					}
-
-					public string Facetype
-					{
-						get
-						{
-							return facetype;
-						}
-						set	
-						{
-							facetype = value;
-						}
-					}
-
-					public float? Blur
-					{
-						get
-						{
-							return blur;
-						}
-						set	
-						{
-							blur = value;
 						}
 					}
 
@@ -328,6 +292,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 						}
 					}
 
+					public string Facetype
+					{
+						get
+						{
+							return facetype;
+						}
+						set	
+						{
+							facetype = value;
+						}
+					}
+
 					public string Respirator
 					{
 						get
@@ -349,6 +325,30 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 						set	
 						{
 							appearanceScore = value;
+						}
+					}
+
+					public int? Age
+					{
+						get
+						{
+							return age;
+						}
+						set	
+						{
+							age = value;
+						}
+					}
+
+					public float? Blur
+					{
+						get
+						{
+							return blur;
+						}
+						set	
+						{
+							blur = value;
 						}
 					}
 
@@ -391,21 +391,9 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 					public class DetectFaceAttributes_Gender
 					{
 
-						private float? score;
-
 						private string _value;
 
-						public float? Score
-						{
-							get
-							{
-								return score;
-							}
-							set	
-							{
-								score = value;
-							}
-						}
+						private float? score;
 
 						public string _Value
 						{
@@ -416,6 +404,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 							set	
 							{
 								_value = value;
+							}
+						}
+
+						public float? Score
+						{
+							get
+							{
+								return score;
+							}
+							set	
+							{
+								score = value;
 							}
 						}
 					}

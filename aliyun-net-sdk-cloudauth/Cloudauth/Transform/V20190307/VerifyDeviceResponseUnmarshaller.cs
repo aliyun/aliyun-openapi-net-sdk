@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			VerifyDeviceResponse verifyDeviceResponse = new VerifyDeviceResponse();
 
 			verifyDeviceResponse.HttpResponse = _ctx.HttpResponse;
-			verifyDeviceResponse.RequestId = _ctx.StringValue("VerifyDevice.RequestId");
 			verifyDeviceResponse.Code = _ctx.StringValue("VerifyDevice.Code");
 			verifyDeviceResponse.Message = _ctx.StringValue("VerifyDevice.Message");
+			verifyDeviceResponse.RequestId = _ctx.StringValue("VerifyDevice.RequestId");
 
 			VerifyDeviceResponse.VerifyDevice_ResultObject resultObject = new VerifyDeviceResponse.VerifyDevice_ResultObject();
-			resultObject.ValidationRetCode = _ctx.StringValue("VerifyDevice.ResultObject.ValidationRetCode");
-			resultObject.ProductRetCode = _ctx.StringValue("VerifyDevice.ResultObject.ProductRetCode");
 			resultObject.RetCodeSub = _ctx.StringValue("VerifyDevice.ResultObject.RetCodeSub");
-			resultObject.RetMessageSub = _ctx.StringValue("VerifyDevice.ResultObject.RetMessageSub");
+			resultObject.ProductRetCode = _ctx.StringValue("VerifyDevice.ResultObject.ProductRetCode");
 			resultObject.HasNext = _ctx.StringValue("VerifyDevice.ResultObject.HasNext");
+			resultObject.RetMessageSub = _ctx.StringValue("VerifyDevice.ResultObject.RetMessageSub");
 			resultObject.ExtParams = _ctx.StringValue("VerifyDevice.ResultObject.ExtParams");
+			resultObject.ValidationRetCode = _ctx.StringValue("VerifyDevice.ResultObject.ValidationRetCode");
 			verifyDeviceResponse.ResultObject = resultObject;
         
 			return verifyDeviceResponse;
