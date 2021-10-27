@@ -77,6 +77,13 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 			describeInstanceResponse.ResourceGroupId = _ctx.StringValue("DescribeInstance.ResourceGroupId");
 			describeInstanceResponse.EncryptionType = _ctx.StringValue("DescribeInstance.EncryptionType");
 			describeInstanceResponse.EncryptionKey = _ctx.StringValue("DescribeInstance.EncryptionKey");
+			describeInstanceResponse.NeedUpgrade = _ctx.BooleanValue("DescribeInstance.NeedUpgrade");
+
+			List<string> describeInstanceResponse_needUpgradeComps = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeInstance.NeedUpgradeComps.Length"); i++) {
+				describeInstanceResponse_needUpgradeComps.Add(_ctx.StringValue("DescribeInstance.NeedUpgradeComps["+ i +"]"));
+			}
+			describeInstanceResponse.NeedUpgradeComps = describeInstanceResponse_needUpgradeComps;
 
 			List<DescribeInstanceResponse.DescribeInstance_Tag> describeInstanceResponse_tags = new List<DescribeInstanceResponse.DescribeInstance_Tag>();
 			for (int i = 0; i < _ctx.Length("DescribeInstance.Tags.Length"); i++) {

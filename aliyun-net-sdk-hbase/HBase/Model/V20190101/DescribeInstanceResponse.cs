@@ -117,7 +117,11 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private string encryptionKey;
 
+		private bool? needUpgrade;
+
 		private List<DescribeInstance_Tag> tags;
+
+		private List<string> needUpgradeComps;
 
 		public string RequestId
 		{
@@ -671,6 +675,18 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
+		public bool? NeedUpgrade
+		{
+			get
+			{
+				return needUpgrade;
+			}
+			set	
+			{
+				needUpgrade = value;
+			}
+		}
+
 		public List<DescribeInstance_Tag> Tags
 		{
 			get
@@ -680,6 +696,18 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			set	
 			{
 				tags = value;
+			}
+		}
+
+		public List<string> NeedUpgradeComps
+		{
+			get
+			{
+				return needUpgradeComps;
+			}
+			set	
+			{
+				needUpgradeComps = value;
 			}
 		}
 
