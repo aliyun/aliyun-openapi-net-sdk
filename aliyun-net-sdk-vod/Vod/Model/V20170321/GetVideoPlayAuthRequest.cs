@@ -43,6 +43,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string videoId;
 
+		private string apiVersion;
+
 		private long? authInfoTimeout;
 
 		public string VideoId
@@ -55,6 +57,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				videoId = value;
 				DictionaryUtil.Add(QueryParameters, "VideoId", value);
+			}
+		}
+
+		public string ApiVersion
+		{
+			get
+			{
+				return apiVersion;
+			}
+			set	
+			{
+				apiVersion = value;
+				DictionaryUtil.Add(QueryParameters, "ApiVersion", value);
 			}
 		}
 
