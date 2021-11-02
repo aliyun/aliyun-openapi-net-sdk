@@ -31,15 +31,15 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			GetVideoPlayAuthResponse getVideoPlayAuthResponse = new GetVideoPlayAuthResponse();
 
 			getVideoPlayAuthResponse.HttpResponse = _ctx.HttpResponse;
-			getVideoPlayAuthResponse.RequestId = _ctx.StringValue("GetVideoPlayAuth.RequestId");
 			getVideoPlayAuthResponse.PlayAuth = _ctx.StringValue("GetVideoPlayAuth.PlayAuth");
+			getVideoPlayAuthResponse.RequestId = _ctx.StringValue("GetVideoPlayAuth.RequestId");
 
 			GetVideoPlayAuthResponse.GetVideoPlayAuth_VideoMeta videoMeta = new GetVideoPlayAuthResponse.GetVideoPlayAuth_VideoMeta();
-			videoMeta.CoverURL = _ctx.StringValue("GetVideoPlayAuth.VideoMeta.CoverURL");
-			videoMeta.Duration = _ctx.FloatValue("GetVideoPlayAuth.VideoMeta.Duration");
 			videoMeta.Status = _ctx.StringValue("GetVideoPlayAuth.VideoMeta.Status");
+			videoMeta.Duration = _ctx.FloatValue("GetVideoPlayAuth.VideoMeta.Duration");
 			videoMeta.Title = _ctx.StringValue("GetVideoPlayAuth.VideoMeta.Title");
 			videoMeta.VideoId = _ctx.StringValue("GetVideoPlayAuth.VideoMeta.VideoId");
+			videoMeta.CoverURL = _ctx.StringValue("GetVideoPlayAuth.VideoMeta.CoverURL");
 			getVideoPlayAuthResponse.VideoMeta = videoMeta;
         
 			return getVideoPlayAuthResponse;
