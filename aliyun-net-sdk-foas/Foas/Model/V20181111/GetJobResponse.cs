@@ -94,6 +94,8 @@ namespace Aliyun.Acs.foas.Model.V20181111
 
 			private string jobId;
 
+			private string fileId;
+
 			public string JobName
 			{
 				get
@@ -319,6 +321,18 @@ namespace Aliyun.Acs.foas.Model.V20181111
 				set	
 				{
 					jobId = value;
+				}
+			}
+
+			public string FileId
+			{
+				get
+				{
+					return fileId;
+				}
+				set	
+				{
+					fileId = value;
 				}
 			}
 		}

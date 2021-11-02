@@ -26,13 +26,13 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class GetInstanceCheckpointResponseUnmarshaller
     {
-        public static GetInstanceCheckpointResponse Unmarshall(UnmarshallerContext context)
+        public static GetInstanceCheckpointResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetInstanceCheckpointResponse getInstanceCheckpointResponse = new GetInstanceCheckpointResponse();
 
-			getInstanceCheckpointResponse.HttpResponse = context.HttpResponse;
-			getInstanceCheckpointResponse.RequestId = context.StringValue("GetInstanceCheckpoint.RequestId");
-			getInstanceCheckpointResponse.Checkpoints = context.StringValue("GetInstanceCheckpoint.Checkpoints");
+			getInstanceCheckpointResponse.HttpResponse = _ctx.HttpResponse;
+			getInstanceCheckpointResponse.RequestId = _ctx.StringValue("GetInstanceCheckpoint.RequestId");
+			getInstanceCheckpointResponse.Checkpoints = _ctx.StringValue("GetInstanceCheckpoint.Checkpoints");
         
 			return getInstanceCheckpointResponse;
         }

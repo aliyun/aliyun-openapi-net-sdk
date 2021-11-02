@@ -26,26 +26,27 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class GetProjectResponseUnmarshaller
     {
-        public static GetProjectResponse Unmarshall(UnmarshallerContext context)
+        public static GetProjectResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetProjectResponse getProjectResponse = new GetProjectResponse();
 
-			getProjectResponse.HttpResponse = context.HttpResponse;
-			getProjectResponse.RequestId = context.StringValue("GetProject.RequestId");
+			getProjectResponse.HttpResponse = _ctx.HttpResponse;
+			getProjectResponse.RequestId = _ctx.StringValue("GetProject.RequestId");
 
 			GetProjectResponse.GetProject_Project project = new GetProjectResponse.GetProject_Project();
-			project.Name = context.StringValue("GetProject.Project.Name");
-			project.State = context.StringValue("GetProject.Project.State");
-			project.Creator = context.StringValue("GetProject.Project.Creator");
-			project.CreateTime = context.LongValue("GetProject.Project.CreateTime");
-			project.Modifier = context.StringValue("GetProject.Project.Modifier");
-			project.ModifyTime = context.LongValue("GetProject.Project.ModifyTime");
-			project.Description = context.StringValue("GetProject.Project.Description");
-			project.DeployType = context.StringValue("GetProject.Project.DeployType");
-			project.ClusterId = context.StringValue("GetProject.Project.ClusterId");
-			project.ManagerIds = context.StringValue("GetProject.Project.ManagerIds");
-			project.Region = context.StringValue("GetProject.Project.Region");
-			project.Id = context.StringValue("GetProject.Project.Id");
+			project.Name = _ctx.StringValue("GetProject.Project.Name");
+			project.State = _ctx.StringValue("GetProject.Project.State");
+			project.Creator = _ctx.StringValue("GetProject.Project.Creator");
+			project.CreateTime = _ctx.LongValue("GetProject.Project.CreateTime");
+			project.Modifier = _ctx.StringValue("GetProject.Project.Modifier");
+			project.ModifyTime = _ctx.LongValue("GetProject.Project.ModifyTime");
+			project.Description = _ctx.StringValue("GetProject.Project.Description");
+			project.DeployType = _ctx.StringValue("GetProject.Project.DeployType");
+			project.ClusterId = _ctx.StringValue("GetProject.Project.ClusterId");
+			project.ManagerIds = _ctx.StringValue("GetProject.Project.ManagerIds");
+			project.Region = _ctx.StringValue("GetProject.Project.Region");
+			project.Id = _ctx.StringValue("GetProject.Project.Id");
+			project.GlobalJobConfig = _ctx.StringValue("GetProject.Project.GlobalJobConfig");
 			getProjectResponse.Project = project;
         
 			return getProjectResponse;

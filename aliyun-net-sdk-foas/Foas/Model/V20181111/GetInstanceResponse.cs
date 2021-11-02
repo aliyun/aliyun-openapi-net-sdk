@@ -102,6 +102,10 @@ namespace Aliyun.Acs.foas.Model.V20181111
 
 			private long? endTime;
 
+			private string autoScaleParams;
+
+			private int? priority;
+
 			public long? Id
 			{
 				get
@@ -375,6 +379,30 @@ namespace Aliyun.Acs.foas.Model.V20181111
 				set	
 				{
 					endTime = value;
+				}
+			}
+
+			public string AutoScaleParams
+			{
+				get
+				{
+					return autoScaleParams;
+				}
+				set	
+				{
+					autoScaleParams = value;
+				}
+			}
+
+			public int? Priority
+			{
+				get
+				{
+					return priority;
+				}
+				set	
+				{
+					priority = value;
 				}
 			}
 		}

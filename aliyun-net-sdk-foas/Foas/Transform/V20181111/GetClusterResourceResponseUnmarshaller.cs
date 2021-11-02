@@ -26,20 +26,20 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class GetClusterResourceResponseUnmarshaller
     {
-        public static GetClusterResourceResponse Unmarshall(UnmarshallerContext context)
+        public static GetClusterResourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetClusterResourceResponse getClusterResourceResponse = new GetClusterResourceResponse();
 
-			getClusterResourceResponse.HttpResponse = context.HttpResponse;
-			getClusterResourceResponse.RequestId = context.StringValue("GetClusterResource.RequestId");
+			getClusterResourceResponse.HttpResponse = _ctx.HttpResponse;
+			getClusterResourceResponse.RequestId = _ctx.StringValue("GetClusterResource.RequestId");
 
 			GetClusterResourceResponse.GetClusterResource_Resource resource = new GetClusterResourceResponse.GetClusterResource_Resource();
-			resource.TotalMB = context.LongValue("GetClusterResource.Resource.TotalMB");
-			resource.AllocatedMB = context.LongValue("GetClusterResource.Resource.AllocatedMB");
-			resource.AvailableMB = context.LongValue("GetClusterResource.Resource.AvailableMB");
-			resource.TotalVirtualCores = context.LongValue("GetClusterResource.Resource.TotalVirtualCores");
-			resource.AllocatedVirtualCores = context.LongValue("GetClusterResource.Resource.AllocatedVirtualCores");
-			resource.AvailableVirtualCores = context.LongValue("GetClusterResource.Resource.AvailableVirtualCores");
+			resource.TotalMB = _ctx.LongValue("GetClusterResource.Resource.TotalMB");
+			resource.AllocatedMB = _ctx.LongValue("GetClusterResource.Resource.AllocatedMB");
+			resource.AvailableMB = _ctx.LongValue("GetClusterResource.Resource.AvailableMB");
+			resource.TotalVirtualCores = _ctx.LongValue("GetClusterResource.Resource.TotalVirtualCores");
+			resource.AllocatedVirtualCores = _ctx.LongValue("GetClusterResource.Resource.AllocatedVirtualCores");
+			resource.AvailableVirtualCores = _ctx.LongValue("GetClusterResource.Resource.AvailableVirtualCores");
 			getClusterResourceResponse.Resource = resource;
         
 			return getClusterResourceResponse;

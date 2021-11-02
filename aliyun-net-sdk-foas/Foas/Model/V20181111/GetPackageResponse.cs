@@ -86,6 +86,14 @@ namespace Aliyun.Acs.foas.Model.V20181111
 
 			private string tag;
 
+			private string scanLink;
+
+			private string scanState;
+
+			private string scanErrorMessage;
+
+			private string scanExtBizNo;
+
 			public string ProjectName
 			{
 				get
@@ -263,6 +271,54 @@ namespace Aliyun.Acs.foas.Model.V20181111
 				set	
 				{
 					tag = value;
+				}
+			}
+
+			public string ScanLink
+			{
+				get
+				{
+					return scanLink;
+				}
+				set	
+				{
+					scanLink = value;
+				}
+			}
+
+			public string ScanState
+			{
+				get
+				{
+					return scanState;
+				}
+				set	
+				{
+					scanState = value;
+				}
+			}
+
+			public string ScanErrorMessage
+			{
+				get
+				{
+					return scanErrorMessage;
+				}
+				set	
+				{
+					scanErrorMessage = value;
+				}
+			}
+
+			public string ScanExtBizNo
+			{
+				get
+				{
+					return scanExtBizNo;
+				}
+				set	
+				{
+					scanExtBizNo = value;
 				}
 			}
 		}

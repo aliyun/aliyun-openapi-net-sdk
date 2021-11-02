@@ -26,12 +26,12 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class DeleteQueueResponseUnmarshaller
     {
-        public static DeleteQueueResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteQueueResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteQueueResponse deleteQueueResponse = new DeleteQueueResponse();
 
-			deleteQueueResponse.HttpResponse = context.HttpResponse;
-			deleteQueueResponse.RequestId = context.StringValue("DeleteQueue.RequestId");
+			deleteQueueResponse.HttpResponse = _ctx.HttpResponse;
+			deleteQueueResponse.RequestId = _ctx.StringValue("DeleteQueue.RequestId");
         
 			return deleteQueueResponse;
         }

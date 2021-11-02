@@ -26,29 +26,33 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class GetPackageResponseUnmarshaller
     {
-        public static GetPackageResponse Unmarshall(UnmarshallerContext context)
+        public static GetPackageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetPackageResponse getPackageResponse = new GetPackageResponse();
 
-			getPackageResponse.HttpResponse = context.HttpResponse;
-			getPackageResponse.RequestId = context.StringValue("GetPackage.RequestId");
+			getPackageResponse.HttpResponse = _ctx.HttpResponse;
+			getPackageResponse.RequestId = _ctx.StringValue("GetPackage.RequestId");
 
 			GetPackageResponse.GetPackage_Package package = new GetPackageResponse.GetPackage_Package();
-			package.ProjectName = context.StringValue("GetPackage.Package.ProjectName");
-			package.PackageName = context.StringValue("GetPackage.Package.PackageName");
-			package.Creator = context.StringValue("GetPackage.Package.Creator");
-			package.Modifier = context.StringValue("GetPackage.Package.Modifier");
-			package.CreateTime = context.LongValue("GetPackage.Package.CreateTime");
-			package.ModifyTime = context.LongValue("GetPackage.Package.ModifyTime");
-			package.OriginName = context.StringValue("GetPackage.Package.OriginName");
-			package.Type = context.StringValue("GetPackage.Package.Type");
-			package.Md5 = context.StringValue("GetPackage.Package.Md5");
-			package.Description = context.StringValue("GetPackage.Package.Description");
-			package.OssEndpoint = context.StringValue("GetPackage.Package.OssEndpoint");
-			package.OssBucket = context.StringValue("GetPackage.Package.OssBucket");
-			package.OssOwner = context.StringValue("GetPackage.Package.OssOwner");
-			package.OssPath = context.StringValue("GetPackage.Package.OssPath");
-			package.Tag = context.StringValue("GetPackage.Package.Tag");
+			package.ProjectName = _ctx.StringValue("GetPackage.Package.ProjectName");
+			package.PackageName = _ctx.StringValue("GetPackage.Package.PackageName");
+			package.Creator = _ctx.StringValue("GetPackage.Package.Creator");
+			package.Modifier = _ctx.StringValue("GetPackage.Package.Modifier");
+			package.CreateTime = _ctx.LongValue("GetPackage.Package.CreateTime");
+			package.ModifyTime = _ctx.LongValue("GetPackage.Package.ModifyTime");
+			package.OriginName = _ctx.StringValue("GetPackage.Package.OriginName");
+			package.Type = _ctx.StringValue("GetPackage.Package.Type");
+			package.Md5 = _ctx.StringValue("GetPackage.Package.Md5");
+			package.Description = _ctx.StringValue("GetPackage.Package.Description");
+			package.OssEndpoint = _ctx.StringValue("GetPackage.Package.OssEndpoint");
+			package.OssBucket = _ctx.StringValue("GetPackage.Package.OssBucket");
+			package.OssOwner = _ctx.StringValue("GetPackage.Package.OssOwner");
+			package.OssPath = _ctx.StringValue("GetPackage.Package.OssPath");
+			package.Tag = _ctx.StringValue("GetPackage.Package.Tag");
+			package.ScanLink = _ctx.StringValue("GetPackage.Package.ScanLink");
+			package.ScanState = _ctx.StringValue("GetPackage.Package.ScanState");
+			package.ScanErrorMessage = _ctx.StringValue("GetPackage.Package.ScanErrorMessage");
+			package.ScanExtBizNo = _ctx.StringValue("GetPackage.Package.ScanExtBizNo");
 			getPackageResponse.Package = package;
         
 			return getPackageResponse;

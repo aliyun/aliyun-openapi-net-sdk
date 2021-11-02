@@ -34,8 +34,8 @@ namespace Aliyun.Acs.foas.Model.V20181111
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.foas.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.foas.Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
 			UriPattern = "/api/v2/projects/[projectName]/jobs/[jobName]/planjson";
@@ -47,6 +47,8 @@ namespace Aliyun.Acs.foas.Model.V20181111
 		private float? expectedGB;
 
 		private float? expectedCore;
+
+		private string advisorAction;
 
 		private string jobName;
 
@@ -88,6 +90,19 @@ namespace Aliyun.Acs.foas.Model.V20181111
 			{
 				expectedCore = value;
 				DictionaryUtil.Add(QueryParameters, "expectedCore", value.ToString());
+			}
+		}
+
+		public string AdvisorAction
+		{
+			get
+			{
+				return advisorAction;
+			}
+			set	
+			{
+				advisorAction = value;
+				DictionaryUtil.Add(QueryParameters, "AdvisorAction", value);
 			}
 		}
 

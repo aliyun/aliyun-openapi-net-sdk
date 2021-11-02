@@ -26,12 +26,12 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class OfflineJobResponseUnmarshaller
     {
-        public static OfflineJobResponse Unmarshall(UnmarshallerContext context)
+        public static OfflineJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			OfflineJobResponse offlineJobResponse = new OfflineJobResponse();
 
-			offlineJobResponse.HttpResponse = context.HttpResponse;
-			offlineJobResponse.RequestId = context.StringValue("OfflineJob.RequestId");
+			offlineJobResponse.HttpResponse = _ctx.HttpResponse;
+			offlineJobResponse.RequestId = _ctx.StringValue("OfflineJob.RequestId");
         
 			return offlineJobResponse;
         }

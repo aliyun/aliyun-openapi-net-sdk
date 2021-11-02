@@ -26,31 +26,31 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class GetClusterDetailsResponseUnmarshaller
     {
-        public static GetClusterDetailsResponse Unmarshall(UnmarshallerContext context)
+        public static GetClusterDetailsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetClusterDetailsResponse getClusterDetailsResponse = new GetClusterDetailsResponse();
 
-			getClusterDetailsResponse.HttpResponse = context.HttpResponse;
-			getClusterDetailsResponse.RequestId = context.StringValue("GetClusterDetails.RequestId");
+			getClusterDetailsResponse.HttpResponse = _ctx.HttpResponse;
+			getClusterDetailsResponse.RequestId = _ctx.StringValue("GetClusterDetails.RequestId");
 
 			GetClusterDetailsResponse.GetClusterDetails_Details details = new GetClusterDetailsResponse.GetClusterDetails_Details();
-			details.ClusterId = context.StringValue("GetClusterDetails.Details.ClusterId");
-			details.RegionId = context.StringValue("GetClusterDetails.Details.RegionId");
-			details.ZoneId = context.StringValue("GetClusterDetails.Details.ZoneId");
-			details.State = context.StringValue("GetClusterDetails.Details.State");
-			details.Description = context.StringValue("GetClusterDetails.Details.Description");
-			details.DisplayName = context.StringValue("GetClusterDetails.Details.DisplayName");
-			details.OwnerId = context.StringValue("GetClusterDetails.Details.OwnerId");
-			details._Operator = context.StringValue("GetClusterDetails.Details.Operator");
-			details.StorageType = context.StringValue("GetClusterDetails.Details.StorageType");
-			details.GmtCreate = context.LongValue("GetClusterDetails.Details.GmtCreate");
-			details.GmtModified = context.LongValue("GetClusterDetails.Details.GmtModified");
-			details.UserOssInfo = context.StringValue("GetClusterDetails.Details.UserOssInfo");
-			details.UserVpcId = context.StringValue("GetClusterDetails.Details.UserVpcId");
-			details.UserSGId = context.StringValue("GetClusterDetails.Details.UserSGId");
-			details.UserVSwitchList = context.StringValue("GetClusterDetails.Details.UserVSwitchList");
-			details.IsMixDeploy = context.BooleanValue("GetClusterDetails.Details.IsMixDeploy");
-			details.InstanceInfos = context.StringValue("GetClusterDetails.Details.InstanceInfos");
+			details.ClusterId = _ctx.StringValue("GetClusterDetails.Details.ClusterId");
+			details.RegionId = _ctx.StringValue("GetClusterDetails.Details.RegionId");
+			details.ZoneId = _ctx.StringValue("GetClusterDetails.Details.ZoneId");
+			details.State = _ctx.StringValue("GetClusterDetails.Details.State");
+			details.Description = _ctx.StringValue("GetClusterDetails.Details.Description");
+			details.DisplayName = _ctx.StringValue("GetClusterDetails.Details.DisplayName");
+			details.OwnerId = _ctx.StringValue("GetClusterDetails.Details.OwnerId");
+			details._Operator = _ctx.StringValue("GetClusterDetails.Details.Operator");
+			details.StorageType = _ctx.StringValue("GetClusterDetails.Details.StorageType");
+			details.GmtCreate = _ctx.LongValue("GetClusterDetails.Details.GmtCreate");
+			details.GmtModified = _ctx.LongValue("GetClusterDetails.Details.GmtModified");
+			details.UserOssInfo = _ctx.StringValue("GetClusterDetails.Details.UserOssInfo");
+			details.UserVpcId = _ctx.StringValue("GetClusterDetails.Details.UserVpcId");
+			details.UserSGId = _ctx.StringValue("GetClusterDetails.Details.UserSGId");
+			details.UserVSwitchList = _ctx.StringValue("GetClusterDetails.Details.UserVSwitchList");
+			details.IsMixDeploy = _ctx.BooleanValue("GetClusterDetails.Details.IsMixDeploy");
+			details.InstanceInfos = _ctx.StringValue("GetClusterDetails.Details.InstanceInfos");
 			getClusterDetailsResponse.Details = details;
         
 			return getClusterDetailsResponse;

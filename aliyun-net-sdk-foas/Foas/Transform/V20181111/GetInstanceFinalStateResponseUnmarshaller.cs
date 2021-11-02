@@ -26,13 +26,13 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class GetInstanceFinalStateResponseUnmarshaller
     {
-        public static GetInstanceFinalStateResponse Unmarshall(UnmarshallerContext context)
+        public static GetInstanceFinalStateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetInstanceFinalStateResponse getInstanceFinalStateResponse = new GetInstanceFinalStateResponse();
 
-			getInstanceFinalStateResponse.HttpResponse = context.HttpResponse;
-			getInstanceFinalStateResponse.RequestId = context.StringValue("GetInstanceFinalState.RequestId");
-			getInstanceFinalStateResponse.Finalstate = context.StringValue("GetInstanceFinalState.Finalstate");
+			getInstanceFinalStateResponse.HttpResponse = _ctx.HttpResponse;
+			getInstanceFinalStateResponse.RequestId = _ctx.StringValue("GetInstanceFinalState.RequestId");
+			getInstanceFinalStateResponse.Finalstate = _ctx.StringValue("GetInstanceFinalState.Finalstate");
         
 			return getInstanceFinalStateResponse;
         }

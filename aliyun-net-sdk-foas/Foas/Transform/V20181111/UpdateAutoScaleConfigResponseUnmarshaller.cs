@@ -26,12 +26,12 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class UpdateAutoScaleConfigResponseUnmarshaller
     {
-        public static UpdateAutoScaleConfigResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateAutoScaleConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateAutoScaleConfigResponse updateAutoScaleConfigResponse = new UpdateAutoScaleConfigResponse();
 
-			updateAutoScaleConfigResponse.HttpResponse = context.HttpResponse;
-			updateAutoScaleConfigResponse.RequestId = context.StringValue("UpdateAutoScaleConfig.RequestId");
+			updateAutoScaleConfigResponse.HttpResponse = _ctx.HttpResponse;
+			updateAutoScaleConfigResponse.RequestId = _ctx.StringValue("UpdateAutoScaleConfig.RequestId");
         
 			return updateAutoScaleConfigResponse;
         }

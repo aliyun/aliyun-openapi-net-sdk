@@ -78,6 +78,8 @@ namespace Aliyun.Acs.foas.Model.V20181111
 
 			private int? maxMem;
 
+			private string externalInfo;
+
 			public string ClusterId
 			{
 				get
@@ -207,6 +209,18 @@ namespace Aliyun.Acs.foas.Model.V20181111
 				set	
 				{
 					maxMem = value;
+				}
+			}
+
+			public string ExternalInfo
+			{
+				get
+				{
+					return externalInfo;
+				}
+				set	
+				{
+					externalInfo = value;
 				}
 			}
 		}

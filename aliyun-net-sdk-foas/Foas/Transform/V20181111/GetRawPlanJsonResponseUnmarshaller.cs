@@ -26,13 +26,13 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class GetRawPlanJsonResponseUnmarshaller
     {
-        public static GetRawPlanJsonResponse Unmarshall(UnmarshallerContext context)
+        public static GetRawPlanJsonResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetRawPlanJsonResponse getRawPlanJsonResponse = new GetRawPlanJsonResponse();
 
-			getRawPlanJsonResponse.HttpResponse = context.HttpResponse;
-			getRawPlanJsonResponse.RequestId = context.StringValue("GetRawPlanJson.RequestId");
-			getRawPlanJsonResponse.SessionId = context.StringValue("GetRawPlanJson.SessionId");
+			getRawPlanJsonResponse.HttpResponse = _ctx.HttpResponse;
+			getRawPlanJsonResponse.RequestId = _ctx.StringValue("GetRawPlanJson.RequestId");
+			getRawPlanJsonResponse.SessionId = _ctx.StringValue("GetRawPlanJson.SessionId");
         
 			return getRawPlanJsonResponse;
         }

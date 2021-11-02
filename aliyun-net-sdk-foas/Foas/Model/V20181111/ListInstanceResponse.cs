@@ -158,6 +158,8 @@ namespace Aliyun.Acs.foas.Model.V20181111
 
 			private long? endTime;
 
+			private int? priority;
+
 			public long? Id
 			{
 				get
@@ -431,6 +433,18 @@ namespace Aliyun.Acs.foas.Model.V20181111
 				set	
 				{
 					endTime = value;
+				}
+			}
+
+			public int? Priority
+			{
+				get
+				{
+					return priority;
+				}
+				set	
+				{
+					priority = value;
 				}
 			}
 		}

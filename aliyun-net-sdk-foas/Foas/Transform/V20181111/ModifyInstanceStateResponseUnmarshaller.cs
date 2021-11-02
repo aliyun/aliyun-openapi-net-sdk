@@ -26,12 +26,12 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class ModifyInstanceStateResponseUnmarshaller
     {
-        public static ModifyInstanceStateResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyInstanceStateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyInstanceStateResponse modifyInstanceStateResponse = new ModifyInstanceStateResponse();
 
-			modifyInstanceStateResponse.HttpResponse = context.HttpResponse;
-			modifyInstanceStateResponse.RequestId = context.StringValue("ModifyInstanceState.RequestId");
+			modifyInstanceStateResponse.HttpResponse = _ctx.HttpResponse;
+			modifyInstanceStateResponse.RequestId = _ctx.StringValue("ModifyInstanceState.RequestId");
         
 			return modifyInstanceStateResponse;
         }

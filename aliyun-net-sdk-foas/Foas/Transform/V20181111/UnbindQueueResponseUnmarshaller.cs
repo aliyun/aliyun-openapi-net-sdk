@@ -26,12 +26,12 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class UnbindQueueResponseUnmarshaller
     {
-        public static UnbindQueueResponse Unmarshall(UnmarshallerContext context)
+        public static UnbindQueueResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UnbindQueueResponse unbindQueueResponse = new UnbindQueueResponse();
 
-			unbindQueueResponse.HttpResponse = context.HttpResponse;
-			unbindQueueResponse.RequestId = context.StringValue("UnbindQueue.RequestId");
+			unbindQueueResponse.HttpResponse = _ctx.HttpResponse;
+			unbindQueueResponse.RequestId = _ctx.StringValue("UnbindQueue.RequestId");
         
 			return unbindQueueResponse;
         }

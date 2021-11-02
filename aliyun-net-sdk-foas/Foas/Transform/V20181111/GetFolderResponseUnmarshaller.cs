@@ -26,16 +26,16 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 {
     public class GetFolderResponseUnmarshaller
     {
-        public static GetFolderResponse Unmarshall(UnmarshallerContext context)
+        public static GetFolderResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetFolderResponse getFolderResponse = new GetFolderResponse();
 
-			getFolderResponse.HttpResponse = context.HttpResponse;
-			getFolderResponse.RequestId = context.StringValue("GetFolder.RequestId");
+			getFolderResponse.HttpResponse = _ctx.HttpResponse;
+			getFolderResponse.RequestId = _ctx.StringValue("GetFolder.RequestId");
 
 			GetFolderResponse.GetFolder_Folder folder = new GetFolderResponse.GetFolder_Folder();
-			folder.FolderId = context.LongValue("GetFolder.Folder.FolderId");
-			folder.Path = context.StringValue("GetFolder.Folder.Path");
+			folder.FolderId = _ctx.LongValue("GetFolder.Folder.FolderId");
+			folder.Path = _ctx.StringValue("GetFolder.Folder.Path");
 			getFolderResponse.Folder = folder;
         
 			return getFolderResponse;
