@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DeleteStreamResponseUnmarshaller
     {
-        public static DeleteStreamResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteStreamResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteStreamResponse deleteStreamResponse = new DeleteStreamResponse();
 
-			deleteStreamResponse.HttpResponse = context.HttpResponse;
-			deleteStreamResponse.RequestId = context.StringValue("DeleteStream.RequestId");
+			deleteStreamResponse.HttpResponse = _ctx.HttpResponse;
+			deleteStreamResponse.RequestId = _ctx.StringValue("DeleteStream.RequestId");
         
 			return deleteStreamResponse;
         }

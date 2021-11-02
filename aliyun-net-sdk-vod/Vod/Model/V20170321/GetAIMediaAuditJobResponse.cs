@@ -195,6 +195,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private List<GetAIMediaAuditJob_TextResultItem> textResult;
 
+				private List<GetAIMediaAuditJob_AudioResultItem> audioResult;
+
 				private GetAIMediaAuditJob_VideoResult videoResult;
 
 				public string Suggestion
@@ -254,6 +256,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						textResult = value;
+					}
+				}
+
+				public List<GetAIMediaAuditJob_AudioResultItem> AudioResult
+				{
+					get
+					{
+						return audioResult;
+					}
+					set	
+					{
+						audioResult = value;
 					}
 				}
 
@@ -487,6 +501,66 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						set	
 						{
 							content = value;
+						}
+					}
+				}
+
+				public class GetAIMediaAuditJob_AudioResultItem
+				{
+
+					private string suggestion;
+
+					private string label;
+
+					private string scene;
+
+					private string score;
+
+					public string Suggestion
+					{
+						get
+						{
+							return suggestion;
+						}
+						set	
+						{
+							suggestion = value;
+						}
+					}
+
+					public string Label
+					{
+						get
+						{
+							return label;
+						}
+						set	
+						{
+							label = value;
+						}
+					}
+
+					public string Scene
+					{
+						get
+						{
+							return scene;
+						}
+						set	
+						{
+							scene = value;
+						}
+					}
+
+					public string Score
+					{
+						get
+						{
+							return score;
+						}
+						set	
+						{
+							score = value;
 						}
 					}
 				}

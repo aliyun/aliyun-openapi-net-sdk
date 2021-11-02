@@ -26,24 +26,25 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetEditingProjectResponseUnmarshaller
     {
-        public static GetEditingProjectResponse Unmarshall(UnmarshallerContext context)
+        public static GetEditingProjectResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetEditingProjectResponse getEditingProjectResponse = new GetEditingProjectResponse();
 
-			getEditingProjectResponse.HttpResponse = context.HttpResponse;
-			getEditingProjectResponse.RequestId = context.StringValue("GetEditingProject.RequestId");
+			getEditingProjectResponse.HttpResponse = _ctx.HttpResponse;
+			getEditingProjectResponse.RequestId = _ctx.StringValue("GetEditingProject.RequestId");
 
 			GetEditingProjectResponse.GetEditingProject_Project project = new GetEditingProjectResponse.GetEditingProject_Project();
-			project.ProjectId = context.StringValue("GetEditingProject.Project.ProjectId");
-			project.CreationTime = context.StringValue("GetEditingProject.Project.CreationTime");
-			project.ModifiedTime = context.StringValue("GetEditingProject.Project.ModifiedTime");
-			project.Status = context.StringValue("GetEditingProject.Project.Status");
-			project.Description = context.StringValue("GetEditingProject.Project.Description");
-			project.Title = context.StringValue("GetEditingProject.Project.Title");
-			project.Timeline = context.StringValue("GetEditingProject.Project.Timeline");
-			project.CoverURL = context.StringValue("GetEditingProject.Project.CoverURL");
-			project.StorageLocation = context.StringValue("GetEditingProject.Project.StorageLocation");
-			project.RegionId = context.StringValue("GetEditingProject.Project.RegionId");
+			project.ProjectId = _ctx.StringValue("GetEditingProject.Project.ProjectId");
+			project.CreationTime = _ctx.StringValue("GetEditingProject.Project.CreationTime");
+			project.ModifiedTime = _ctx.StringValue("GetEditingProject.Project.ModifiedTime");
+			project.Status = _ctx.StringValue("GetEditingProject.Project.Status");
+			project.Description = _ctx.StringValue("GetEditingProject.Project.Description");
+			project.Title = _ctx.StringValue("GetEditingProject.Project.Title");
+			project.Timeline = _ctx.StringValue("GetEditingProject.Project.Timeline");
+			project.CoverURL = _ctx.StringValue("GetEditingProject.Project.CoverURL");
+			project.StorageLocation = _ctx.StringValue("GetEditingProject.Project.StorageLocation");
+			project.RegionId = _ctx.StringValue("GetEditingProject.Project.RegionId");
+			project.FEExtend = _ctx.StringValue("GetEditingProject.Project.FEExtend");
 			getEditingProjectResponse.Project = project;
         
 			return getEditingProjectResponse;

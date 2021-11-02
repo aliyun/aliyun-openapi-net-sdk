@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DeleteMessageCallbackResponseUnmarshaller
     {
-        public static DeleteMessageCallbackResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteMessageCallbackResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteMessageCallbackResponse deleteMessageCallbackResponse = new DeleteMessageCallbackResponse();
 
-			deleteMessageCallbackResponse.HttpResponse = context.HttpResponse;
-			deleteMessageCallbackResponse.RequestId = context.StringValue("DeleteMessageCallback.RequestId");
+			deleteMessageCallbackResponse.HttpResponse = _ctx.HttpResponse;
+			deleteMessageCallbackResponse.RequestId = _ctx.StringValue("DeleteMessageCallback.RequestId");
         
 			return deleteMessageCallbackResponse;
         }

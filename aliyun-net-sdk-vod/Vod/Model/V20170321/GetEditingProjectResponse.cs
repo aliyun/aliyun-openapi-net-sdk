@@ -76,6 +76,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string regionId;
 
+			private string fEExtend;
+
 			public string ProjectId
 			{
 				get
@@ -193,6 +195,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string FEExtend
+			{
+				get
+				{
+					return fEExtend;
+				}
+				set	
+				{
+					fEExtend = value;
 				}
 			}
 		}

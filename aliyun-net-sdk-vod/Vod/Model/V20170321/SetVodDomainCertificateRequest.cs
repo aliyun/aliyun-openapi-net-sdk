@@ -34,8 +34,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -53,8 +53,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private long? ownerId;
 
 		private string sSLPub;
-
-		private string region;
 
 		public string SSLProtocol
 		{
@@ -144,19 +142,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				sSLPub = value;
 				DictionaryUtil.Add(QueryParameters, "SSLPub", value);
-			}
-		}
-
-		public string Region
-		{
-			get
-			{
-				return region;
-			}
-			set	
-			{
-				region = value;
-				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 

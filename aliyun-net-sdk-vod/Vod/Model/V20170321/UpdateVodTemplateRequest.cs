@@ -34,36 +34,17 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
-		private long? resourceOwnerId;
-
 		private string templateConfig;
-
-		private string vodTemplateId;
-
-		private string resourceOwnerAccount;
-
-		private long? ownerId;
 
 		private string name;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+		private string vodTemplateId;
 
 		public string TemplateConfig
 		{
@@ -78,45 +59,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string VodTemplateId
-		{
-			get
-			{
-				return vodTemplateId;
-			}
-			set	
-			{
-				vodTemplateId = value;
-				DictionaryUtil.Add(QueryParameters, "VodTemplateId", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public string Name
 		{
 			get
@@ -127,6 +69,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string VodTemplateId
+		{
+			get
+			{
+				return vodTemplateId;
+			}
+			set	
+			{
+				vodTemplateId = value;
+				DictionaryUtil.Add(QueryParameters, "VodTemplateId", value);
 			}
 		}
 

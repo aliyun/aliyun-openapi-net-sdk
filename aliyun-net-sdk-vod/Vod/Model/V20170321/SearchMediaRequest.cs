@@ -34,15 +34,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
-
-		private long? resourceOwnerId;
-
-		private string sessionId;
 
 		private string scrollToken;
 
@@ -50,43 +46,13 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private int? pageSize;
 
-		private string resourceOwnerAccount;
-
 		private string match;
-
-		private long? ownerId;
 
 		private int? pageNo;
 
 		private string sortBy;
 
 		private string fields;
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string SessionId
-		{
-			get
-			{
-				return sessionId;
-			}
-			set	
-			{
-				sessionId = value;
-				DictionaryUtil.Add(QueryParameters, "SessionId", value);
-			}
-		}
 
 		public string ScrollToken
 		{
@@ -127,19 +93,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string Match
 		{
 			get
@@ -150,19 +103,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				match = value;
 				DictionaryUtil.Add(QueryParameters, "Match", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

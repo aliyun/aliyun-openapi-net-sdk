@@ -26,13 +26,13 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class SetDefaultAITemplateResponseUnmarshaller
     {
-        public static SetDefaultAITemplateResponse Unmarshall(UnmarshallerContext context)
+        public static SetDefaultAITemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetDefaultAITemplateResponse setDefaultAITemplateResponse = new SetDefaultAITemplateResponse();
 
-			setDefaultAITemplateResponse.HttpResponse = context.HttpResponse;
-			setDefaultAITemplateResponse.RequestId = context.StringValue("SetDefaultAITemplate.RequestId");
-			setDefaultAITemplateResponse.TemplateId = context.StringValue("SetDefaultAITemplate.TemplateId");
+			setDefaultAITemplateResponse.HttpResponse = _ctx.HttpResponse;
+			setDefaultAITemplateResponse.RequestId = _ctx.StringValue("SetDefaultAITemplate.RequestId");
+			setDefaultAITemplateResponse.TemplateId = _ctx.StringValue("SetDefaultAITemplate.TemplateId");
         
 			return setDefaultAITemplateResponse;
         }

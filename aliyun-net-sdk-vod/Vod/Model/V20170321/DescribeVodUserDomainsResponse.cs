@@ -102,8 +102,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string cname;
 
-			private string cdnType;
-
 			private string domainStatus;
 
 			private string gmtCreated;
@@ -113,8 +111,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			private string description;
 
 			private string sslProtocol;
-
-			private string weight;
 
 			private string sandbox;
 
@@ -141,18 +137,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					cname = value;
-				}
-			}
-
-			public string CdnType
-			{
-				get
-				{
-					return cdnType;
-				}
-				set	
-				{
-					cdnType = value;
 				}
 			}
 
@@ -213,18 +197,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					sslProtocol = value;
-				}
-			}
-
-			public string Weight
-			{
-				get
-				{
-					return weight;
-				}
-				set	
-				{
-					weight = value;
 				}
 			}
 

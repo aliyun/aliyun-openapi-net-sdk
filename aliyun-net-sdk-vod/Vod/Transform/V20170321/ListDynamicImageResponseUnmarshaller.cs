@@ -26,27 +26,27 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class ListDynamicImageResponseUnmarshaller
     {
-        public static ListDynamicImageResponse Unmarshall(UnmarshallerContext context)
+        public static ListDynamicImageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListDynamicImageResponse listDynamicImageResponse = new ListDynamicImageResponse();
 
-			listDynamicImageResponse.HttpResponse = context.HttpResponse;
-			listDynamicImageResponse.RequestId = context.StringValue("ListDynamicImage.RequestId");
+			listDynamicImageResponse.HttpResponse = _ctx.HttpResponse;
+			listDynamicImageResponse.RequestId = _ctx.StringValue("ListDynamicImage.RequestId");
 
 			List<ListDynamicImageResponse.ListDynamicImage_DynamicImage> listDynamicImageResponse_dynamicImageList = new List<ListDynamicImageResponse.ListDynamicImage_DynamicImage>();
-			for (int i = 0; i < context.Length("ListDynamicImage.DynamicImageList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListDynamicImage.DynamicImageList.Length"); i++) {
 				ListDynamicImageResponse.ListDynamicImage_DynamicImage dynamicImage = new ListDynamicImageResponse.ListDynamicImage_DynamicImage();
-				dynamicImage.VideoId = context.StringValue("ListDynamicImage.DynamicImageList["+ i +"].VideoId");
-				dynamicImage.DynamicImageId = context.StringValue("ListDynamicImage.DynamicImageList["+ i +"].DynamicImageId");
-				dynamicImage.JobId = context.StringValue("ListDynamicImage.DynamicImageList["+ i +"].JobId");
-				dynamicImage.FileURL = context.StringValue("ListDynamicImage.DynamicImageList["+ i +"].FileURL");
-				dynamicImage.Width = context.StringValue("ListDynamicImage.DynamicImageList["+ i +"].Width");
-				dynamicImage.Height = context.StringValue("ListDynamicImage.DynamicImageList["+ i +"].Height");
-				dynamicImage.Duration = context.StringValue("ListDynamicImage.DynamicImageList["+ i +"].Duration");
-				dynamicImage.Format = context.StringValue("ListDynamicImage.DynamicImageList["+ i +"].Format");
-				dynamicImage.FileSize = context.StringValue("ListDynamicImage.DynamicImageList["+ i +"].FileSize");
-				dynamicImage.Fps = context.StringValue("ListDynamicImage.DynamicImageList["+ i +"].Fps");
-				dynamicImage.CreationTime = context.StringValue("ListDynamicImage.DynamicImageList["+ i +"].CreationTime");
+				dynamicImage.VideoId = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].VideoId");
+				dynamicImage.DynamicImageId = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].DynamicImageId");
+				dynamicImage.JobId = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].JobId");
+				dynamicImage.FileURL = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].FileURL");
+				dynamicImage.Width = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].Width");
+				dynamicImage.Height = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].Height");
+				dynamicImage.Duration = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].Duration");
+				dynamicImage.Format = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].Format");
+				dynamicImage.FileSize = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].FileSize");
+				dynamicImage.Fps = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].Fps");
+				dynamicImage.CreationTime = _ctx.StringValue("ListDynamicImage.DynamicImageList["+ i +"].CreationTime");
 
 				listDynamicImageResponse_dynamicImageList.Add(dynamicImage);
 			}

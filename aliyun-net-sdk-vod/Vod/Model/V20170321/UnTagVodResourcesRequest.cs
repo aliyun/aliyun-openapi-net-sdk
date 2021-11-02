@@ -34,11 +34,13 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
+
+		private bool? all;
 
 		private List<string> resourceIds = new List<string>(){ };
 
@@ -47,6 +49,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string resourceType;
 
 		private List<string> tagKeys = new List<string>(){ };
+
+		public bool? All
+		{
+			get
+			{
+				return all;
+			}
+			set	
+			{
+				all = value;
+				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
+			}
+		}
 
 		public List<string> ResourceIds
 		{

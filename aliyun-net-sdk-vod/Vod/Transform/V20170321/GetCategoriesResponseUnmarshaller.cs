@@ -26,31 +26,31 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetCategoriesResponseUnmarshaller
     {
-        public static GetCategoriesResponse Unmarshall(UnmarshallerContext context)
+        public static GetCategoriesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetCategoriesResponse getCategoriesResponse = new GetCategoriesResponse();
 
-			getCategoriesResponse.HttpResponse = context.HttpResponse;
-			getCategoriesResponse.RequestId = context.StringValue("GetCategories.RequestId");
-			getCategoriesResponse.SubTotal = context.LongValue("GetCategories.SubTotal");
+			getCategoriesResponse.HttpResponse = _ctx.HttpResponse;
+			getCategoriesResponse.RequestId = _ctx.StringValue("GetCategories.RequestId");
+			getCategoriesResponse.SubTotal = _ctx.LongValue("GetCategories.SubTotal");
 
 			GetCategoriesResponse.GetCategories_Category1 category1 = new GetCategoriesResponse.GetCategories_Category1();
-			category1.CateId = context.LongValue("GetCategories.Category.CateId");
-			category1.CateName = context.StringValue("GetCategories.Category.CateName");
-			category1.Level = context.LongValue("GetCategories.Category.Level");
-			category1.ParentId = context.LongValue("GetCategories.Category.ParentId");
-			category1.Type = context.StringValue("GetCategories.Category.Type");
+			category1.CateId = _ctx.LongValue("GetCategories.Category.CateId");
+			category1.CateName = _ctx.StringValue("GetCategories.Category.CateName");
+			category1.Level = _ctx.LongValue("GetCategories.Category.Level");
+			category1.ParentId = _ctx.LongValue("GetCategories.Category.ParentId");
+			category1.Type = _ctx.StringValue("GetCategories.Category.Type");
 			getCategoriesResponse.Category1 = category1;
 
 			List<GetCategoriesResponse.GetCategories_Category> getCategoriesResponse_subCategories = new List<GetCategoriesResponse.GetCategories_Category>();
-			for (int i = 0; i < context.Length("GetCategories.SubCategories.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetCategories.SubCategories.Length"); i++) {
 				GetCategoriesResponse.GetCategories_Category category = new GetCategoriesResponse.GetCategories_Category();
-				category.CateId = context.LongValue("GetCategories.SubCategories["+ i +"].CateId");
-				category.CateName = context.StringValue("GetCategories.SubCategories["+ i +"].CateName");
-				category.Level = context.LongValue("GetCategories.SubCategories["+ i +"].Level");
-				category.ParentId = context.LongValue("GetCategories.SubCategories["+ i +"].ParentId");
-				category.SubTotal = context.LongValue("GetCategories.SubCategories["+ i +"].SubTotal");
-				category.Type = context.StringValue("GetCategories.SubCategories["+ i +"].Type");
+				category.CateId = _ctx.LongValue("GetCategories.SubCategories["+ i +"].CateId");
+				category.CateName = _ctx.StringValue("GetCategories.SubCategories["+ i +"].CateName");
+				category.Level = _ctx.LongValue("GetCategories.SubCategories["+ i +"].Level");
+				category.ParentId = _ctx.LongValue("GetCategories.SubCategories["+ i +"].ParentId");
+				category.SubTotal = _ctx.LongValue("GetCategories.SubCategories["+ i +"].SubTotal");
+				category.Type = _ctx.StringValue("GetCategories.SubCategories["+ i +"].Type");
 
 				getCategoriesResponse_subCategories.Add(category);
 			}

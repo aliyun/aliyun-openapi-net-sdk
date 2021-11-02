@@ -56,21 +56,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class UploadMediaByURL_UploadJob
 		{
 
-			private string jobId;
-
 			private string sourceURL;
 
-			public string JobId
-			{
-				get
-				{
-					return jobId;
-				}
-				set	
-				{
-					jobId = value;
-				}
-			}
+			private string jobId;
 
 			public string SourceURL
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					sourceURL = value;
+				}
+			}
+
+			public string JobId
+			{
+				get
+				{
+					return jobId;
+				}
+				set	
+				{
+					jobId = value;
 				}
 			}
 		}

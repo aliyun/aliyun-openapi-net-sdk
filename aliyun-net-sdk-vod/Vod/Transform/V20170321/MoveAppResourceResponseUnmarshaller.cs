@@ -26,22 +26,22 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class MoveAppResourceResponseUnmarshaller
     {
-        public static MoveAppResourceResponse Unmarshall(UnmarshallerContext context)
+        public static MoveAppResourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			MoveAppResourceResponse moveAppResourceResponse = new MoveAppResourceResponse();
 
-			moveAppResourceResponse.HttpResponse = context.HttpResponse;
-			moveAppResourceResponse.RequestId = context.StringValue("MoveAppResource.RequestId");
+			moveAppResourceResponse.HttpResponse = _ctx.HttpResponse;
+			moveAppResourceResponse.RequestId = _ctx.StringValue("MoveAppResource.RequestId");
 
 			List<string> moveAppResourceResponse_nonExistResourceIds = new List<string>();
-			for (int i = 0; i < context.Length("MoveAppResource.NonExistResourceIds.Length"); i++) {
-				moveAppResourceResponse_nonExistResourceIds.Add(context.StringValue("MoveAppResource.NonExistResourceIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("MoveAppResource.NonExistResourceIds.Length"); i++) {
+				moveAppResourceResponse_nonExistResourceIds.Add(_ctx.StringValue("MoveAppResource.NonExistResourceIds["+ i +"]"));
 			}
 			moveAppResourceResponse.NonExistResourceIds = moveAppResourceResponse_nonExistResourceIds;
 
 			List<string> moveAppResourceResponse_failedResourceIds = new List<string>();
-			for (int i = 0; i < context.Length("MoveAppResource.FailedResourceIds.Length"); i++) {
-				moveAppResourceResponse_failedResourceIds.Add(context.StringValue("MoveAppResource.FailedResourceIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("MoveAppResource.FailedResourceIds.Length"); i++) {
+				moveAppResourceResponse_failedResourceIds.Add(_ctx.StringValue("MoveAppResource.FailedResourceIds["+ i +"]"));
 			}
 			moveAppResourceResponse.FailedResourceIds = moveAppResourceResponse_failedResourceIds;
         

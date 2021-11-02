@@ -26,24 +26,24 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class ListWatermarkResponseUnmarshaller
     {
-        public static ListWatermarkResponse Unmarshall(UnmarshallerContext context)
+        public static ListWatermarkResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListWatermarkResponse listWatermarkResponse = new ListWatermarkResponse();
 
-			listWatermarkResponse.HttpResponse = context.HttpResponse;
-			listWatermarkResponse.RequestId = context.StringValue("ListWatermark.RequestId");
+			listWatermarkResponse.HttpResponse = _ctx.HttpResponse;
+			listWatermarkResponse.RequestId = _ctx.StringValue("ListWatermark.RequestId");
 
 			List<ListWatermarkResponse.ListWatermark_WatermarkInfo> listWatermarkResponse_watermarkInfos = new List<ListWatermarkResponse.ListWatermark_WatermarkInfo>();
-			for (int i = 0; i < context.Length("ListWatermark.WatermarkInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListWatermark.WatermarkInfos.Length"); i++) {
 				ListWatermarkResponse.ListWatermark_WatermarkInfo watermarkInfo = new ListWatermarkResponse.ListWatermark_WatermarkInfo();
-				watermarkInfo.CreationTime = context.StringValue("ListWatermark.WatermarkInfos["+ i +"].CreationTime");
-				watermarkInfo.Type = context.StringValue("ListWatermark.WatermarkInfos["+ i +"].Type");
-				watermarkInfo.IsDefault = context.StringValue("ListWatermark.WatermarkInfos["+ i +"].IsDefault");
-				watermarkInfo.WatermarkId = context.StringValue("ListWatermark.WatermarkInfos["+ i +"].WatermarkId");
-				watermarkInfo.Name = context.StringValue("ListWatermark.WatermarkInfos["+ i +"].Name");
-				watermarkInfo.FileUrl = context.StringValue("ListWatermark.WatermarkInfos["+ i +"].FileUrl");
-				watermarkInfo.WatermarkConfig = context.StringValue("ListWatermark.WatermarkInfos["+ i +"].WatermarkConfig");
-				watermarkInfo.AppId = context.StringValue("ListWatermark.WatermarkInfos["+ i +"].AppId");
+				watermarkInfo.CreationTime = _ctx.StringValue("ListWatermark.WatermarkInfos["+ i +"].CreationTime");
+				watermarkInfo.Type = _ctx.StringValue("ListWatermark.WatermarkInfos["+ i +"].Type");
+				watermarkInfo.IsDefault = _ctx.StringValue("ListWatermark.WatermarkInfos["+ i +"].IsDefault");
+				watermarkInfo.WatermarkId = _ctx.StringValue("ListWatermark.WatermarkInfos["+ i +"].WatermarkId");
+				watermarkInfo.Name = _ctx.StringValue("ListWatermark.WatermarkInfos["+ i +"].Name");
+				watermarkInfo.FileUrl = _ctx.StringValue("ListWatermark.WatermarkInfos["+ i +"].FileUrl");
+				watermarkInfo.WatermarkConfig = _ctx.StringValue("ListWatermark.WatermarkInfos["+ i +"].WatermarkConfig");
+				watermarkInfo.AppId = _ctx.StringValue("ListWatermark.WatermarkInfos["+ i +"].AppId");
 
 				listWatermarkResponse_watermarkInfos.Add(watermarkInfo);
 			}

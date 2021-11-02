@@ -26,24 +26,24 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DescribeVodDomainUsageDataResponseUnmarshaller
     {
-        public static DescribeVodDomainUsageDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVodDomainUsageDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVodDomainUsageDataResponse describeVodDomainUsageDataResponse = new DescribeVodDomainUsageDataResponse();
 
-			describeVodDomainUsageDataResponse.HttpResponse = context.HttpResponse;
-			describeVodDomainUsageDataResponse.RequestId = context.StringValue("DescribeVodDomainUsageData.RequestId");
-			describeVodDomainUsageDataResponse.DomainName = context.StringValue("DescribeVodDomainUsageData.DomainName");
-			describeVodDomainUsageDataResponse.StartTime = context.StringValue("DescribeVodDomainUsageData.StartTime");
-			describeVodDomainUsageDataResponse.EndTime = context.StringValue("DescribeVodDomainUsageData.EndTime");
-			describeVodDomainUsageDataResponse.Type = context.StringValue("DescribeVodDomainUsageData.Type");
-			describeVodDomainUsageDataResponse.Area = context.StringValue("DescribeVodDomainUsageData.Area");
-			describeVodDomainUsageDataResponse.DataInterval = context.StringValue("DescribeVodDomainUsageData.DataInterval");
+			describeVodDomainUsageDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeVodDomainUsageDataResponse.RequestId = _ctx.StringValue("DescribeVodDomainUsageData.RequestId");
+			describeVodDomainUsageDataResponse.DomainName = _ctx.StringValue("DescribeVodDomainUsageData.DomainName");
+			describeVodDomainUsageDataResponse.StartTime = _ctx.StringValue("DescribeVodDomainUsageData.StartTime");
+			describeVodDomainUsageDataResponse.EndTime = _ctx.StringValue("DescribeVodDomainUsageData.EndTime");
+			describeVodDomainUsageDataResponse.Type = _ctx.StringValue("DescribeVodDomainUsageData.Type");
+			describeVodDomainUsageDataResponse.Area = _ctx.StringValue("DescribeVodDomainUsageData.Area");
+			describeVodDomainUsageDataResponse.DataInterval = _ctx.StringValue("DescribeVodDomainUsageData.DataInterval");
 
 			List<DescribeVodDomainUsageDataResponse.DescribeVodDomainUsageData_DataModule> describeVodDomainUsageDataResponse_usageDataPerInterval = new List<DescribeVodDomainUsageDataResponse.DescribeVodDomainUsageData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeVodDomainUsageData.UsageDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVodDomainUsageData.UsageDataPerInterval.Length"); i++) {
 				DescribeVodDomainUsageDataResponse.DescribeVodDomainUsageData_DataModule dataModule = new DescribeVodDomainUsageDataResponse.DescribeVodDomainUsageData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeVodDomainUsageData.UsageDataPerInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeVodDomainUsageData.UsageDataPerInterval["+ i +"].Value");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeVodDomainUsageData.UsageDataPerInterval["+ i +"].TimeStamp");
+				dataModule._Value = _ctx.StringValue("DescribeVodDomainUsageData.UsageDataPerInterval["+ i +"].Value");
 
 				describeVodDomainUsageDataResponse_usageDataPerInterval.Add(dataModule);
 			}

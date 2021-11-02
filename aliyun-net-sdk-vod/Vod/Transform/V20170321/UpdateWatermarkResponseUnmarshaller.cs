@@ -26,21 +26,21 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class UpdateWatermarkResponseUnmarshaller
     {
-        public static UpdateWatermarkResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateWatermarkResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateWatermarkResponse updateWatermarkResponse = new UpdateWatermarkResponse();
 
-			updateWatermarkResponse.HttpResponse = context.HttpResponse;
-			updateWatermarkResponse.RequestId = context.StringValue("UpdateWatermark.RequestId");
+			updateWatermarkResponse.HttpResponse = _ctx.HttpResponse;
+			updateWatermarkResponse.RequestId = _ctx.StringValue("UpdateWatermark.RequestId");
 
 			UpdateWatermarkResponse.UpdateWatermark_WatermarkInfo watermarkInfo = new UpdateWatermarkResponse.UpdateWatermark_WatermarkInfo();
-			watermarkInfo.CreationTime = context.StringValue("UpdateWatermark.WatermarkInfo.CreationTime");
-			watermarkInfo.Type = context.StringValue("UpdateWatermark.WatermarkInfo.Type");
-			watermarkInfo.IsDefault = context.StringValue("UpdateWatermark.WatermarkInfo.IsDefault");
-			watermarkInfo.WatermarkId = context.StringValue("UpdateWatermark.WatermarkInfo.WatermarkId");
-			watermarkInfo.Name = context.StringValue("UpdateWatermark.WatermarkInfo.Name");
-			watermarkInfo.FileUrl = context.StringValue("UpdateWatermark.WatermarkInfo.FileUrl");
-			watermarkInfo.WatermarkConfig = context.StringValue("UpdateWatermark.WatermarkInfo.WatermarkConfig");
+			watermarkInfo.CreationTime = _ctx.StringValue("UpdateWatermark.WatermarkInfo.CreationTime");
+			watermarkInfo.Type = _ctx.StringValue("UpdateWatermark.WatermarkInfo.Type");
+			watermarkInfo.IsDefault = _ctx.StringValue("UpdateWatermark.WatermarkInfo.IsDefault");
+			watermarkInfo.WatermarkId = _ctx.StringValue("UpdateWatermark.WatermarkInfo.WatermarkId");
+			watermarkInfo.Name = _ctx.StringValue("UpdateWatermark.WatermarkInfo.Name");
+			watermarkInfo.FileUrl = _ctx.StringValue("UpdateWatermark.WatermarkInfo.FileUrl");
+			watermarkInfo.WatermarkConfig = _ctx.StringValue("UpdateWatermark.WatermarkInfo.WatermarkConfig");
 			updateWatermarkResponse.WatermarkInfo = watermarkInfo;
         
 			return updateWatermarkResponse;

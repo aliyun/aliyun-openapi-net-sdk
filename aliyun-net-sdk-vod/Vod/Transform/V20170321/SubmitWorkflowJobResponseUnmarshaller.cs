@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class SubmitWorkflowJobResponseUnmarshaller
     {
-        public static SubmitWorkflowJobResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitWorkflowJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitWorkflowJobResponse submitWorkflowJobResponse = new SubmitWorkflowJobResponse();
 
-			submitWorkflowJobResponse.HttpResponse = context.HttpResponse;
-			submitWorkflowJobResponse.RequestId = context.StringValue("SubmitWorkflowJob.RequestId");
+			submitWorkflowJobResponse.HttpResponse = _ctx.HttpResponse;
+			submitWorkflowJobResponse.RequestId = _ctx.StringValue("SubmitWorkflowJob.RequestId");
         
 			return submitWorkflowJobResponse;
         }

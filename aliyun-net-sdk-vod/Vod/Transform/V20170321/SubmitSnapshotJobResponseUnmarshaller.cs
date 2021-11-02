@@ -26,15 +26,15 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class SubmitSnapshotJobResponseUnmarshaller
     {
-        public static SubmitSnapshotJobResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitSnapshotJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitSnapshotJobResponse submitSnapshotJobResponse = new SubmitSnapshotJobResponse();
 
-			submitSnapshotJobResponse.HttpResponse = context.HttpResponse;
-			submitSnapshotJobResponse.RequestId = context.StringValue("SubmitSnapshotJob.RequestId");
+			submitSnapshotJobResponse.HttpResponse = _ctx.HttpResponse;
+			submitSnapshotJobResponse.RequestId = _ctx.StringValue("SubmitSnapshotJob.RequestId");
 
 			SubmitSnapshotJobResponse.SubmitSnapshotJob_SnapshotJob snapshotJob = new SubmitSnapshotJobResponse.SubmitSnapshotJob_SnapshotJob();
-			snapshotJob.JobId = context.StringValue("SubmitSnapshotJob.SnapshotJob.JobId");
+			snapshotJob.JobId = _ctx.StringValue("SubmitSnapshotJob.SnapshotJob.JobId");
 			submitSnapshotJobResponse.SnapshotJob = snapshotJob;
         
 			return submitSnapshotJobResponse;

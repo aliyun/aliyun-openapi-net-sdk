@@ -26,24 +26,24 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DescribeVodTranscodeDataResponseUnmarshaller
     {
-        public static DescribeVodTranscodeDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVodTranscodeDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVodTranscodeDataResponse describeVodTranscodeDataResponse = new DescribeVodTranscodeDataResponse();
 
-			describeVodTranscodeDataResponse.HttpResponse = context.HttpResponse;
-			describeVodTranscodeDataResponse.RequestId = context.StringValue("DescribeVodTranscodeData.RequestId");
-			describeVodTranscodeDataResponse.DataInterval = context.StringValue("DescribeVodTranscodeData.DataInterval");
+			describeVodTranscodeDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeVodTranscodeDataResponse.RequestId = _ctx.StringValue("DescribeVodTranscodeData.RequestId");
+			describeVodTranscodeDataResponse.DataInterval = _ctx.StringValue("DescribeVodTranscodeData.DataInterval");
 
 			List<DescribeVodTranscodeDataResponse.DescribeVodTranscodeData_TranscodeDataItem> describeVodTranscodeDataResponse_transcodeData = new List<DescribeVodTranscodeDataResponse.DescribeVodTranscodeData_TranscodeDataItem>();
-			for (int i = 0; i < context.Length("DescribeVodTranscodeData.TranscodeData.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVodTranscodeData.TranscodeData.Length"); i++) {
 				DescribeVodTranscodeDataResponse.DescribeVodTranscodeData_TranscodeDataItem transcodeDataItem = new DescribeVodTranscodeDataResponse.DescribeVodTranscodeData_TranscodeDataItem();
-				transcodeDataItem.TimeStamp = context.StringValue("DescribeVodTranscodeData.TranscodeData["+ i +"].TimeStamp");
+				transcodeDataItem.TimeStamp = _ctx.StringValue("DescribeVodTranscodeData.TranscodeData["+ i +"].TimeStamp");
 
 				List<DescribeVodTranscodeDataResponse.DescribeVodTranscodeData_TranscodeDataItem.DescribeVodTranscodeData_DataItem> transcodeDataItem_data = new List<DescribeVodTranscodeDataResponse.DescribeVodTranscodeData_TranscodeDataItem.DescribeVodTranscodeData_DataItem>();
-				for (int j = 0; j < context.Length("DescribeVodTranscodeData.TranscodeData["+ i +"].Data.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeVodTranscodeData.TranscodeData["+ i +"].Data.Length"); j++) {
 					DescribeVodTranscodeDataResponse.DescribeVodTranscodeData_TranscodeDataItem.DescribeVodTranscodeData_DataItem dataItem = new DescribeVodTranscodeDataResponse.DescribeVodTranscodeData_TranscodeDataItem.DescribeVodTranscodeData_DataItem();
-					dataItem.Name = context.StringValue("DescribeVodTranscodeData.TranscodeData["+ i +"].Data["+ j +"].Name");
-					dataItem._Value = context.StringValue("DescribeVodTranscodeData.TranscodeData["+ i +"].Data["+ j +"].Value");
+					dataItem.Name = _ctx.StringValue("DescribeVodTranscodeData.TranscodeData["+ i +"].Data["+ j +"].Name");
+					dataItem._Value = _ctx.StringValue("DescribeVodTranscodeData.TranscodeData["+ i +"].Data["+ j +"].Value");
 
 					transcodeDataItem_data.Add(dataItem);
 				}

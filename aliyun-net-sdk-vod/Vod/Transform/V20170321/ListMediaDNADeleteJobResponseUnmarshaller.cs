@@ -26,28 +26,28 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class ListMediaDNADeleteJobResponseUnmarshaller
     {
-        public static ListMediaDNADeleteJobResponse Unmarshall(UnmarshallerContext context)
+        public static ListMediaDNADeleteJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListMediaDNADeleteJobResponse listMediaDNADeleteJobResponse = new ListMediaDNADeleteJobResponse();
 
-			listMediaDNADeleteJobResponse.HttpResponse = context.HttpResponse;
-			listMediaDNADeleteJobResponse.RequestId = context.StringValue("ListMediaDNADeleteJob.RequestId");
+			listMediaDNADeleteJobResponse.HttpResponse = _ctx.HttpResponse;
+			listMediaDNADeleteJobResponse.RequestId = _ctx.StringValue("ListMediaDNADeleteJob.RequestId");
 
 			List<string> listMediaDNADeleteJobResponse_nonExistAIJobIds = new List<string>();
-			for (int i = 0; i < context.Length("ListMediaDNADeleteJob.NonExistAIJobIds.Length"); i++) {
-				listMediaDNADeleteJobResponse_nonExistAIJobIds.Add(context.StringValue("ListMediaDNADeleteJob.NonExistAIJobIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("ListMediaDNADeleteJob.NonExistAIJobIds.Length"); i++) {
+				listMediaDNADeleteJobResponse_nonExistAIJobIds.Add(_ctx.StringValue("ListMediaDNADeleteJob.NonExistAIJobIds["+ i +"]"));
 			}
 			listMediaDNADeleteJobResponse.NonExistAIJobIds = listMediaDNADeleteJobResponse_nonExistAIJobIds;
 
 			List<ListMediaDNADeleteJobResponse.ListMediaDNADeleteJob_AIJob> listMediaDNADeleteJobResponse_aIJobList = new List<ListMediaDNADeleteJobResponse.ListMediaDNADeleteJob_AIJob>();
-			for (int i = 0; i < context.Length("ListMediaDNADeleteJob.AIJobList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListMediaDNADeleteJob.AIJobList.Length"); i++) {
 				ListMediaDNADeleteJobResponse.ListMediaDNADeleteJob_AIJob aIJob = new ListMediaDNADeleteJobResponse.ListMediaDNADeleteJob_AIJob();
-				aIJob.JobId = context.StringValue("ListMediaDNADeleteJob.AIJobList["+ i +"].JobId");
-				aIJob.MediaId = context.StringValue("ListMediaDNADeleteJob.AIJobList["+ i +"].MediaId");
-				aIJob.Status = context.StringValue("ListMediaDNADeleteJob.AIJobList["+ i +"].Status");
-				aIJob.Code = context.StringValue("ListMediaDNADeleteJob.AIJobList["+ i +"].Code");
-				aIJob.Message = context.StringValue("ListMediaDNADeleteJob.AIJobList["+ i +"].Message");
-				aIJob.FpDBId = context.StringValue("ListMediaDNADeleteJob.AIJobList["+ i +"].FpDBId");
+				aIJob.JobId = _ctx.StringValue("ListMediaDNADeleteJob.AIJobList["+ i +"].JobId");
+				aIJob.MediaId = _ctx.StringValue("ListMediaDNADeleteJob.AIJobList["+ i +"].MediaId");
+				aIJob.Status = _ctx.StringValue("ListMediaDNADeleteJob.AIJobList["+ i +"].Status");
+				aIJob.Code = _ctx.StringValue("ListMediaDNADeleteJob.AIJobList["+ i +"].Code");
+				aIJob.Message = _ctx.StringValue("ListMediaDNADeleteJob.AIJobList["+ i +"].Message");
+				aIJob.FpDBId = _ctx.StringValue("ListMediaDNADeleteJob.AIJobList["+ i +"].FpDBId");
 
 				listMediaDNADeleteJobResponse_aIJobList.Add(aIJob);
 			}

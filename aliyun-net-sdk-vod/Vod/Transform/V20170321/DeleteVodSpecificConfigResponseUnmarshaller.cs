@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DeleteVodSpecificConfigResponseUnmarshaller
     {
-        public static DeleteVodSpecificConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteVodSpecificConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteVodSpecificConfigResponse deleteVodSpecificConfigResponse = new DeleteVodSpecificConfigResponse();
 
-			deleteVodSpecificConfigResponse.HttpResponse = context.HttpResponse;
-			deleteVodSpecificConfigResponse.RequestId = context.StringValue("DeleteVodSpecificConfig.RequestId");
+			deleteVodSpecificConfigResponse.HttpResponse = _ctx.HttpResponse;
+			deleteVodSpecificConfigResponse.RequestId = _ctx.StringValue("DeleteVodSpecificConfig.RequestId");
         
 			return deleteVodSpecificConfigResponse;
         }

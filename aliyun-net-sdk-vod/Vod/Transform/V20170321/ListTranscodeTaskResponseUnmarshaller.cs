@@ -26,23 +26,23 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class ListTranscodeTaskResponseUnmarshaller
     {
-        public static ListTranscodeTaskResponse Unmarshall(UnmarshallerContext context)
+        public static ListTranscodeTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListTranscodeTaskResponse listTranscodeTaskResponse = new ListTranscodeTaskResponse();
 
-			listTranscodeTaskResponse.HttpResponse = context.HttpResponse;
-			listTranscodeTaskResponse.RequestId = context.StringValue("ListTranscodeTask.RequestId");
+			listTranscodeTaskResponse.HttpResponse = _ctx.HttpResponse;
+			listTranscodeTaskResponse.RequestId = _ctx.StringValue("ListTranscodeTask.RequestId");
 
 			List<ListTranscodeTaskResponse.ListTranscodeTask_TranscodeTask> listTranscodeTaskResponse_transcodeTaskList = new List<ListTranscodeTaskResponse.ListTranscodeTask_TranscodeTask>();
-			for (int i = 0; i < context.Length("ListTranscodeTask.TranscodeTaskList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListTranscodeTask.TranscodeTaskList.Length"); i++) {
 				ListTranscodeTaskResponse.ListTranscodeTask_TranscodeTask transcodeTask = new ListTranscodeTaskResponse.ListTranscodeTask_TranscodeTask();
-				transcodeTask.TranscodeTaskId = context.StringValue("ListTranscodeTask.TranscodeTaskList["+ i +"].TranscodeTaskId");
-				transcodeTask.VideoId = context.StringValue("ListTranscodeTask.TranscodeTaskList["+ i +"].VideoId");
-				transcodeTask.TaskStatus = context.StringValue("ListTranscodeTask.TranscodeTaskList["+ i +"].TaskStatus");
-				transcodeTask.TranscodeTemplateGroupId = context.StringValue("ListTranscodeTask.TranscodeTaskList["+ i +"].TranscodeTemplateGroupId");
-				transcodeTask.CreationTime = context.StringValue("ListTranscodeTask.TranscodeTaskList["+ i +"].CreationTime");
-				transcodeTask.CompleteTime = context.StringValue("ListTranscodeTask.TranscodeTaskList["+ i +"].CompleteTime");
-				transcodeTask.Trigger = context.StringValue("ListTranscodeTask.TranscodeTaskList["+ i +"].Trigger");
+				transcodeTask.TranscodeTaskId = _ctx.StringValue("ListTranscodeTask.TranscodeTaskList["+ i +"].TranscodeTaskId");
+				transcodeTask.VideoId = _ctx.StringValue("ListTranscodeTask.TranscodeTaskList["+ i +"].VideoId");
+				transcodeTask.TaskStatus = _ctx.StringValue("ListTranscodeTask.TranscodeTaskList["+ i +"].TaskStatus");
+				transcodeTask.TranscodeTemplateGroupId = _ctx.StringValue("ListTranscodeTask.TranscodeTaskList["+ i +"].TranscodeTemplateGroupId");
+				transcodeTask.CreationTime = _ctx.StringValue("ListTranscodeTask.TranscodeTaskList["+ i +"].CreationTime");
+				transcodeTask.CompleteTime = _ctx.StringValue("ListTranscodeTask.TranscodeTaskList["+ i +"].CompleteTime");
+				transcodeTask.Trigger = _ctx.StringValue("ListTranscodeTask.TranscodeTaskList["+ i +"].Trigger");
 
 				listTranscodeTaskResponse_transcodeTaskList.Add(transcodeTask);
 			}

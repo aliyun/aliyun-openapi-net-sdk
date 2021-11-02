@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class CreateAuditResponseUnmarshaller
     {
-        public static CreateAuditResponse Unmarshall(UnmarshallerContext context)
+        public static CreateAuditResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateAuditResponse createAuditResponse = new CreateAuditResponse();
 
-			createAuditResponse.HttpResponse = context.HttpResponse;
-			createAuditResponse.RequestId = context.StringValue("CreateAudit.RequestId");
+			createAuditResponse.HttpResponse = _ctx.HttpResponse;
+			createAuditResponse.RequestId = _ctx.StringValue("CreateAudit.RequestId");
         
 			return createAuditResponse;
         }

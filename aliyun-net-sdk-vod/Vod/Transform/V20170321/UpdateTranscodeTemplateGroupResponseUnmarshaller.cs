@@ -26,13 +26,13 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class UpdateTranscodeTemplateGroupResponseUnmarshaller
     {
-        public static UpdateTranscodeTemplateGroupResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateTranscodeTemplateGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateTranscodeTemplateGroupResponse updateTranscodeTemplateGroupResponse = new UpdateTranscodeTemplateGroupResponse();
 
-			updateTranscodeTemplateGroupResponse.HttpResponse = context.HttpResponse;
-			updateTranscodeTemplateGroupResponse.RequestId = context.StringValue("UpdateTranscodeTemplateGroup.RequestId");
-			updateTranscodeTemplateGroupResponse.TranscodeTemplateGroupId = context.StringValue("UpdateTranscodeTemplateGroup.TranscodeTemplateGroupId");
+			updateTranscodeTemplateGroupResponse.HttpResponse = _ctx.HttpResponse;
+			updateTranscodeTemplateGroupResponse.RequestId = _ctx.StringValue("UpdateTranscodeTemplateGroup.RequestId");
+			updateTranscodeTemplateGroupResponse.TranscodeTemplateGroupId = _ctx.StringValue("UpdateTranscodeTemplateGroup.TranscodeTemplateGroupId");
         
 			return updateTranscodeTemplateGroupResponse;
         }

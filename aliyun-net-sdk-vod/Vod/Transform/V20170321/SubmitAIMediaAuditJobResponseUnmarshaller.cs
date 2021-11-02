@@ -26,14 +26,14 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class SubmitAIMediaAuditJobResponseUnmarshaller
     {
-        public static SubmitAIMediaAuditJobResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitAIMediaAuditJobResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitAIMediaAuditJobResponse submitAIMediaAuditJobResponse = new SubmitAIMediaAuditJobResponse();
 
-			submitAIMediaAuditJobResponse.HttpResponse = context.HttpResponse;
-			submitAIMediaAuditJobResponse.RequestId = context.StringValue("SubmitAIMediaAuditJob.RequestId");
-			submitAIMediaAuditJobResponse.MediaId = context.StringValue("SubmitAIMediaAuditJob.MediaId");
-			submitAIMediaAuditJobResponse.JobId = context.StringValue("SubmitAIMediaAuditJob.JobId");
+			submitAIMediaAuditJobResponse.HttpResponse = _ctx.HttpResponse;
+			submitAIMediaAuditJobResponse.RequestId = _ctx.StringValue("SubmitAIMediaAuditJob.RequestId");
+			submitAIMediaAuditJobResponse.MediaId = _ctx.StringValue("SubmitAIMediaAuditJob.MediaId");
+			submitAIMediaAuditJobResponse.JobId = _ctx.StringValue("SubmitAIMediaAuditJob.JobId");
         
 			return submitAIMediaAuditJobResponse;
         }

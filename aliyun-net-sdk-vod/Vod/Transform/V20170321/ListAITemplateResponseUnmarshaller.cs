@@ -26,24 +26,24 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class ListAITemplateResponseUnmarshaller
     {
-        public static ListAITemplateResponse Unmarshall(UnmarshallerContext context)
+        public static ListAITemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListAITemplateResponse listAITemplateResponse = new ListAITemplateResponse();
 
-			listAITemplateResponse.HttpResponse = context.HttpResponse;
-			listAITemplateResponse.RequestId = context.StringValue("ListAITemplate.RequestId");
+			listAITemplateResponse.HttpResponse = _ctx.HttpResponse;
+			listAITemplateResponse.RequestId = _ctx.StringValue("ListAITemplate.RequestId");
 
 			List<ListAITemplateResponse.ListAITemplate_TemplateInfoListItem> listAITemplateResponse_templateInfoList = new List<ListAITemplateResponse.ListAITemplate_TemplateInfoListItem>();
-			for (int i = 0; i < context.Length("ListAITemplate.TemplateInfoList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListAITemplate.TemplateInfoList.Length"); i++) {
 				ListAITemplateResponse.ListAITemplate_TemplateInfoListItem templateInfoListItem = new ListAITemplateResponse.ListAITemplate_TemplateInfoListItem();
-				templateInfoListItem.TemplateId = context.StringValue("ListAITemplate.TemplateInfoList["+ i +"].TemplateId");
-				templateInfoListItem.TemplateType = context.StringValue("ListAITemplate.TemplateInfoList["+ i +"].TemplateType");
-				templateInfoListItem.TemplateName = context.StringValue("ListAITemplate.TemplateInfoList["+ i +"].TemplateName");
-				templateInfoListItem.TemplateConfig = context.StringValue("ListAITemplate.TemplateInfoList["+ i +"].TemplateConfig");
-				templateInfoListItem.Source = context.StringValue("ListAITemplate.TemplateInfoList["+ i +"].Source");
-				templateInfoListItem.IsDefault = context.StringValue("ListAITemplate.TemplateInfoList["+ i +"].IsDefault");
-				templateInfoListItem.CreationTime = context.StringValue("ListAITemplate.TemplateInfoList["+ i +"].CreationTime");
-				templateInfoListItem.ModifyTime = context.StringValue("ListAITemplate.TemplateInfoList["+ i +"].ModifyTime");
+				templateInfoListItem.TemplateId = _ctx.StringValue("ListAITemplate.TemplateInfoList["+ i +"].TemplateId");
+				templateInfoListItem.TemplateType = _ctx.StringValue("ListAITemplate.TemplateInfoList["+ i +"].TemplateType");
+				templateInfoListItem.TemplateName = _ctx.StringValue("ListAITemplate.TemplateInfoList["+ i +"].TemplateName");
+				templateInfoListItem.TemplateConfig = _ctx.StringValue("ListAITemplate.TemplateInfoList["+ i +"].TemplateConfig");
+				templateInfoListItem.Source = _ctx.StringValue("ListAITemplate.TemplateInfoList["+ i +"].Source");
+				templateInfoListItem.IsDefault = _ctx.StringValue("ListAITemplate.TemplateInfoList["+ i +"].IsDefault");
+				templateInfoListItem.CreationTime = _ctx.StringValue("ListAITemplate.TemplateInfoList["+ i +"].CreationTime");
+				templateInfoListItem.ModifyTime = _ctx.StringValue("ListAITemplate.TemplateInfoList["+ i +"].ModifyTime");
 
 				listAITemplateResponse_templateInfoList.Add(templateInfoListItem);
 			}

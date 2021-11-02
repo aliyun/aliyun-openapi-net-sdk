@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class SetDefaultWatermarkResponseUnmarshaller
     {
-        public static SetDefaultWatermarkResponse Unmarshall(UnmarshallerContext context)
+        public static SetDefaultWatermarkResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetDefaultWatermarkResponse setDefaultWatermarkResponse = new SetDefaultWatermarkResponse();
 
-			setDefaultWatermarkResponse.HttpResponse = context.HttpResponse;
-			setDefaultWatermarkResponse.RequestId = context.StringValue("SetDefaultWatermark.RequestId");
+			setDefaultWatermarkResponse.HttpResponse = _ctx.HttpResponse;
+			setDefaultWatermarkResponse.RequestId = _ctx.StringValue("SetDefaultWatermark.RequestId");
         
 			return setDefaultWatermarkResponse;
         }

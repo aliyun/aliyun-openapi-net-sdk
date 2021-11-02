@@ -26,14 +26,14 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class ProduceEditingProjectVideoResponseUnmarshaller
     {
-        public static ProduceEditingProjectVideoResponse Unmarshall(UnmarshallerContext context)
+        public static ProduceEditingProjectVideoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ProduceEditingProjectVideoResponse produceEditingProjectVideoResponse = new ProduceEditingProjectVideoResponse();
 
-			produceEditingProjectVideoResponse.HttpResponse = context.HttpResponse;
-			produceEditingProjectVideoResponse.RequestId = context.StringValue("ProduceEditingProjectVideo.RequestId");
-			produceEditingProjectVideoResponse.MediaId = context.StringValue("ProduceEditingProjectVideo.MediaId");
-			produceEditingProjectVideoResponse.ProjectId = context.StringValue("ProduceEditingProjectVideo.ProjectId");
+			produceEditingProjectVideoResponse.HttpResponse = _ctx.HttpResponse;
+			produceEditingProjectVideoResponse.RequestId = _ctx.StringValue("ProduceEditingProjectVideo.RequestId");
+			produceEditingProjectVideoResponse.MediaId = _ctx.StringValue("ProduceEditingProjectVideo.MediaId");
+			produceEditingProjectVideoResponse.ProjectId = _ctx.StringValue("ProduceEditingProjectVideo.ProjectId");
         
 			return produceEditingProjectVideoResponse;
         }

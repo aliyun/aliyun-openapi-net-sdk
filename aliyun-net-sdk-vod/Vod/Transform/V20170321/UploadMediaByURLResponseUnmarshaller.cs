@@ -26,18 +26,18 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class UploadMediaByURLResponseUnmarshaller
     {
-        public static UploadMediaByURLResponse Unmarshall(UnmarshallerContext context)
+        public static UploadMediaByURLResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UploadMediaByURLResponse uploadMediaByURLResponse = new UploadMediaByURLResponse();
 
-			uploadMediaByURLResponse.HttpResponse = context.HttpResponse;
-			uploadMediaByURLResponse.RequestId = context.StringValue("UploadMediaByURL.RequestId");
+			uploadMediaByURLResponse.HttpResponse = _ctx.HttpResponse;
+			uploadMediaByURLResponse.RequestId = _ctx.StringValue("UploadMediaByURL.RequestId");
 
 			List<UploadMediaByURLResponse.UploadMediaByURL_UploadJob> uploadMediaByURLResponse_uploadJobs = new List<UploadMediaByURLResponse.UploadMediaByURL_UploadJob>();
-			for (int i = 0; i < context.Length("UploadMediaByURL.UploadJobs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("UploadMediaByURL.UploadJobs.Length"); i++) {
 				UploadMediaByURLResponse.UploadMediaByURL_UploadJob uploadJob = new UploadMediaByURLResponse.UploadMediaByURL_UploadJob();
-				uploadJob.JobId = context.StringValue("UploadMediaByURL.UploadJobs["+ i +"].JobId");
-				uploadJob.SourceURL = context.StringValue("UploadMediaByURL.UploadJobs["+ i +"].SourceURL");
+				uploadJob.SourceURL = _ctx.StringValue("UploadMediaByURL.UploadJobs["+ i +"].SourceURL");
+				uploadJob.JobId = _ctx.StringValue("UploadMediaByURL.UploadJobs["+ i +"].JobId");
 
 				uploadMediaByURLResponse_uploadJobs.Add(uploadJob);
 			}

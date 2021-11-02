@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DeleteMultipartUploadResponseUnmarshaller
     {
-        public static DeleteMultipartUploadResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteMultipartUploadResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteMultipartUploadResponse deleteMultipartUploadResponse = new DeleteMultipartUploadResponse();
 
-			deleteMultipartUploadResponse.HttpResponse = context.HttpResponse;
-			deleteMultipartUploadResponse.RequestId = context.StringValue("DeleteMultipartUpload.RequestId");
+			deleteMultipartUploadResponse.HttpResponse = _ctx.HttpResponse;
+			deleteMultipartUploadResponse.RequestId = _ctx.StringValue("DeleteMultipartUpload.RequestId");
         
 			return deleteMultipartUploadResponse;
         }

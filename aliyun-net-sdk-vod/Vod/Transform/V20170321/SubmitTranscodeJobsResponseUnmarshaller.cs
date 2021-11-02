@@ -26,18 +26,18 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class SubmitTranscodeJobsResponseUnmarshaller
     {
-        public static SubmitTranscodeJobsResponse Unmarshall(UnmarshallerContext context)
+        public static SubmitTranscodeJobsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SubmitTranscodeJobsResponse submitTranscodeJobsResponse = new SubmitTranscodeJobsResponse();
 
-			submitTranscodeJobsResponse.HttpResponse = context.HttpResponse;
-			submitTranscodeJobsResponse.RequestId = context.StringValue("SubmitTranscodeJobs.RequestId");
-			submitTranscodeJobsResponse.TranscodeTaskId = context.StringValue("SubmitTranscodeJobs.TranscodeTaskId");
+			submitTranscodeJobsResponse.HttpResponse = _ctx.HttpResponse;
+			submitTranscodeJobsResponse.RequestId = _ctx.StringValue("SubmitTranscodeJobs.RequestId");
+			submitTranscodeJobsResponse.TranscodeTaskId = _ctx.StringValue("SubmitTranscodeJobs.TranscodeTaskId");
 
 			List<SubmitTranscodeJobsResponse.SubmitTranscodeJobs_TranscodeJob> submitTranscodeJobsResponse_transcodeJobs = new List<SubmitTranscodeJobsResponse.SubmitTranscodeJobs_TranscodeJob>();
-			for (int i = 0; i < context.Length("SubmitTranscodeJobs.TranscodeJobs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("SubmitTranscodeJobs.TranscodeJobs.Length"); i++) {
 				SubmitTranscodeJobsResponse.SubmitTranscodeJobs_TranscodeJob transcodeJob = new SubmitTranscodeJobsResponse.SubmitTranscodeJobs_TranscodeJob();
-				transcodeJob.JobId = context.StringValue("SubmitTranscodeJobs.TranscodeJobs["+ i +"].JobId");
+				transcodeJob.JobId = _ctx.StringValue("SubmitTranscodeJobs.TranscodeJobs["+ i +"].JobId");
 
 				submitTranscodeJobsResponse_transcodeJobs.Add(transcodeJob);
 			}

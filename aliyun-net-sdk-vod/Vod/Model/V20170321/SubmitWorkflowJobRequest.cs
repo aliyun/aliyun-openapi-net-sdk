@@ -34,75 +34,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
-		private long? resourceOwnerId;
-
-		private string workflowId;
-
-		private string resourceOwnerAccount;
-
-		private long? ownerId;
-
 		private string mediaId;
 
-		private string fileUrl;
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string WorkflowId
-		{
-			get
-			{
-				return workflowId;
-			}
-			set	
-			{
-				workflowId = value;
-				DictionaryUtil.Add(QueryParameters, "WorkflowId", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string workflowId;
 
 		public string MediaId
 		{
@@ -117,16 +57,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string FileUrl
+		public string WorkflowId
 		{
 			get
 			{
-				return fileUrl;
+				return workflowId;
 			}
 			set	
 			{
-				fileUrl = value;
-				DictionaryUtil.Add(QueryParameters, "FileUrl", value);
+				workflowId = value;
+				DictionaryUtil.Add(QueryParameters, "WorkflowId", value);
 			}
 		}
 

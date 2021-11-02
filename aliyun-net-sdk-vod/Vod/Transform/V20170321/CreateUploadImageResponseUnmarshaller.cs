@@ -26,17 +26,17 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class CreateUploadImageResponseUnmarshaller
     {
-        public static CreateUploadImageResponse Unmarshall(UnmarshallerContext context)
+        public static CreateUploadImageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateUploadImageResponse createUploadImageResponse = new CreateUploadImageResponse();
 
-			createUploadImageResponse.HttpResponse = context.HttpResponse;
-			createUploadImageResponse.RequestId = context.StringValue("CreateUploadImage.RequestId");
-			createUploadImageResponse.ImageId = context.StringValue("CreateUploadImage.ImageId");
-			createUploadImageResponse.ImageURL = context.StringValue("CreateUploadImage.ImageURL");
-			createUploadImageResponse.UploadAddress = context.StringValue("CreateUploadImage.UploadAddress");
-			createUploadImageResponse.UploadAuth = context.StringValue("CreateUploadImage.UploadAuth");
-			createUploadImageResponse.FileURL = context.StringValue("CreateUploadImage.FileURL");
+			createUploadImageResponse.HttpResponse = _ctx.HttpResponse;
+			createUploadImageResponse.RequestId = _ctx.StringValue("CreateUploadImage.RequestId");
+			createUploadImageResponse.ImageId = _ctx.StringValue("CreateUploadImage.ImageId");
+			createUploadImageResponse.ImageURL = _ctx.StringValue("CreateUploadImage.ImageURL");
+			createUploadImageResponse.UploadAddress = _ctx.StringValue("CreateUploadImage.UploadAddress");
+			createUploadImageResponse.UploadAuth = _ctx.StringValue("CreateUploadImage.UploadAuth");
+			createUploadImageResponse.FileURL = _ctx.StringValue("CreateUploadImage.FileURL");
         
 			return createUploadImageResponse;
         }

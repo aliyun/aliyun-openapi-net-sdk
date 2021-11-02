@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DeleteCategoryResponseUnmarshaller
     {
-        public static DeleteCategoryResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteCategoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteCategoryResponse deleteCategoryResponse = new DeleteCategoryResponse();
 
-			deleteCategoryResponse.HttpResponse = context.HttpResponse;
-			deleteCategoryResponse.RequestId = context.StringValue("DeleteCategory.RequestId");
+			deleteCategoryResponse.HttpResponse = _ctx.HttpResponse;
+			deleteCategoryResponse.RequestId = _ctx.StringValue("DeleteCategory.RequestId");
         
 			return deleteCategoryResponse;
         }

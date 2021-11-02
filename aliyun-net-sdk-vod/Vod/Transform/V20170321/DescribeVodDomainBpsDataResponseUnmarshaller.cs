@@ -26,29 +26,29 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DescribeVodDomainBpsDataResponseUnmarshaller
     {
-        public static DescribeVodDomainBpsDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVodDomainBpsDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVodDomainBpsDataResponse describeVodDomainBpsDataResponse = new DescribeVodDomainBpsDataResponse();
 
-			describeVodDomainBpsDataResponse.HttpResponse = context.HttpResponse;
-			describeVodDomainBpsDataResponse.RequestId = context.StringValue("DescribeVodDomainBpsData.RequestId");
-			describeVodDomainBpsDataResponse.DomainName = context.StringValue("DescribeVodDomainBpsData.DomainName");
-			describeVodDomainBpsDataResponse.StartTime = context.StringValue("DescribeVodDomainBpsData.StartTime");
-			describeVodDomainBpsDataResponse.EndTime = context.StringValue("DescribeVodDomainBpsData.EndTime");
-			describeVodDomainBpsDataResponse.LocationNameEn = context.StringValue("DescribeVodDomainBpsData.LocationNameEn");
-			describeVodDomainBpsDataResponse.IspNameEn = context.StringValue("DescribeVodDomainBpsData.IspNameEn");
-			describeVodDomainBpsDataResponse.DataInterval = context.StringValue("DescribeVodDomainBpsData.DataInterval");
+			describeVodDomainBpsDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeVodDomainBpsDataResponse.RequestId = _ctx.StringValue("DescribeVodDomainBpsData.RequestId");
+			describeVodDomainBpsDataResponse.DomainName = _ctx.StringValue("DescribeVodDomainBpsData.DomainName");
+			describeVodDomainBpsDataResponse.StartTime = _ctx.StringValue("DescribeVodDomainBpsData.StartTime");
+			describeVodDomainBpsDataResponse.EndTime = _ctx.StringValue("DescribeVodDomainBpsData.EndTime");
+			describeVodDomainBpsDataResponse.LocationNameEn = _ctx.StringValue("DescribeVodDomainBpsData.LocationNameEn");
+			describeVodDomainBpsDataResponse.IspNameEn = _ctx.StringValue("DescribeVodDomainBpsData.IspNameEn");
+			describeVodDomainBpsDataResponse.DataInterval = _ctx.StringValue("DescribeVodDomainBpsData.DataInterval");
 
 			List<DescribeVodDomainBpsDataResponse.DescribeVodDomainBpsData_DataModule> describeVodDomainBpsDataResponse_bpsDataPerInterval = new List<DescribeVodDomainBpsDataResponse.DescribeVodDomainBpsData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeVodDomainBpsData.BpsDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVodDomainBpsData.BpsDataPerInterval.Length"); i++) {
 				DescribeVodDomainBpsDataResponse.DescribeVodDomainBpsData_DataModule dataModule = new DescribeVodDomainBpsDataResponse.DescribeVodDomainBpsData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"].Value");
-				dataModule.DomesticValue = context.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"].DomesticValue");
-				dataModule.OverseasValue = context.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"].OverseasValue");
-				dataModule.HttpsValue = context.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"].HttpsValue");
-				dataModule.HttpsDomesticValue = context.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"].HttpsDomesticValue");
-				dataModule.HttpsOverseasValue = context.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"].HttpsOverseasValue");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"].TimeStamp");
+				dataModule._Value = _ctx.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"].Value");
+				dataModule.DomesticValue = _ctx.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"].DomesticValue");
+				dataModule.OverseasValue = _ctx.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"].OverseasValue");
+				dataModule.HttpsValue = _ctx.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"].HttpsValue");
+				dataModule.HttpsDomesticValue = _ctx.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"].HttpsDomesticValue");
+				dataModule.HttpsOverseasValue = _ctx.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"].HttpsOverseasValue");
 
 				describeVodDomainBpsDataResponse_bpsDataPerInterval.Add(dataModule);
 			}

@@ -26,32 +26,32 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DescribePlayUserTotalResponseUnmarshaller
     {
-        public static DescribePlayUserTotalResponse Unmarshall(UnmarshallerContext context)
+        public static DescribePlayUserTotalResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribePlayUserTotalResponse describePlayUserTotalResponse = new DescribePlayUserTotalResponse();
 
-			describePlayUserTotalResponse.HttpResponse = context.HttpResponse;
-			describePlayUserTotalResponse.RequestId = context.StringValue("DescribePlayUserTotal.RequestId");
+			describePlayUserTotalResponse.HttpResponse = _ctx.HttpResponse;
+			describePlayUserTotalResponse.RequestId = _ctx.StringValue("DescribePlayUserTotal.RequestId");
 
 			List<DescribePlayUserTotalResponse.DescribePlayUserTotal_UserPlayStatisTotal> describePlayUserTotalResponse_userPlayStatisTotals = new List<DescribePlayUserTotalResponse.DescribePlayUserTotal_UserPlayStatisTotal>();
-			for (int i = 0; i < context.Length("DescribePlayUserTotal.UserPlayStatisTotals.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribePlayUserTotal.UserPlayStatisTotals.Length"); i++) {
 				DescribePlayUserTotalResponse.DescribePlayUserTotal_UserPlayStatisTotal userPlayStatisTotal = new DescribePlayUserTotalResponse.DescribePlayUserTotal_UserPlayStatisTotal();
-				userPlayStatisTotal.Date = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].Date");
-				userPlayStatisTotal.PlayDuration = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].PlayDuration");
-				userPlayStatisTotal.PlayRange = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].PlayRange");
+				userPlayStatisTotal.Date = _ctx.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].Date");
+				userPlayStatisTotal.PlayDuration = _ctx.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].PlayDuration");
+				userPlayStatisTotal.PlayRange = _ctx.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].PlayRange");
 
 				DescribePlayUserTotalResponse.DescribePlayUserTotal_UserPlayStatisTotal.DescribePlayUserTotal_VV vV = new DescribePlayUserTotalResponse.DescribePlayUserTotal_UserPlayStatisTotal.DescribePlayUserTotal_VV();
-				vV.Android = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].VV.Android");
-				vV.IOS = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].VV.iOS");
-				vV.Flash = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].VV.Flash");
-				vV.HTML5 = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].VV.HTML5");
+				vV.Android = _ctx.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].VV.Android");
+				vV.IOS = _ctx.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].VV.iOS");
+				vV.Flash = _ctx.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].VV.Flash");
+				vV.HTML5 = _ctx.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].VV.HTML5");
 				userPlayStatisTotal.VV = vV;
 
 				DescribePlayUserTotalResponse.DescribePlayUserTotal_UserPlayStatisTotal.DescribePlayUserTotal_UV uV = new DescribePlayUserTotalResponse.DescribePlayUserTotal_UserPlayStatisTotal.DescribePlayUserTotal_UV();
-				uV.Android = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].UV.Android");
-				uV.IOS = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].UV.iOS");
-				uV.Flash = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].UV.Flash");
-				uV.HTML5 = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].UV.HTML5");
+				uV.Android = _ctx.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].UV.Android");
+				uV.IOS = _ctx.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].UV.iOS");
+				uV.Flash = _ctx.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].UV.Flash");
+				uV.HTML5 = _ctx.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].UV.HTML5");
 				userPlayStatisTotal.UV = uV;
 
 				describePlayUserTotalResponse_userPlayStatisTotals.Add(userPlayStatisTotal);

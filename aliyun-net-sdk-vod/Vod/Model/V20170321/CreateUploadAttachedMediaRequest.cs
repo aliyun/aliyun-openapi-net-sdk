@@ -34,15 +34,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
-
-		private long? resourceOwnerId;
-
-		private string icon;
 
 		private string description;
 
@@ -56,13 +52,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string userData;
 
-		private long? cateId;
-
-		private string resourceOwnerAccount;
-
 		private string cateIds;
-
-		private long? ownerId;
 
 		private string tags;
 
@@ -71,32 +61,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string fileName;
 
 		private string appId;
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string Icon
-		{
-			get
-			{
-				return icon;
-			}
-			set	
-			{
-				icon = value;
-				DictionaryUtil.Add(QueryParameters, "Icon", value);
-			}
-		}
 
 		public string Description
 		{
@@ -176,32 +140,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? CateId
-		{
-			get
-			{
-				return cateId;
-			}
-			set	
-			{
-				cateId = value;
-				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string CateIds
 		{
 			get
@@ -212,19 +150,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				cateIds = value;
 				DictionaryUtil.Add(QueryParameters, "CateIds", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

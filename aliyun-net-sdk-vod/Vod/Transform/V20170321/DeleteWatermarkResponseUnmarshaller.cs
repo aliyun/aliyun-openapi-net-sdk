@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DeleteWatermarkResponseUnmarshaller
     {
-        public static DeleteWatermarkResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteWatermarkResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteWatermarkResponse deleteWatermarkResponse = new DeleteWatermarkResponse();
 
-			deleteWatermarkResponse.HttpResponse = context.HttpResponse;
-			deleteWatermarkResponse.RequestId = context.StringValue("DeleteWatermark.RequestId");
+			deleteWatermarkResponse.HttpResponse = _ctx.HttpResponse;
+			deleteWatermarkResponse.RequestId = _ctx.StringValue("DeleteWatermark.RequestId");
         
 			return deleteWatermarkResponse;
         }

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class UpdateAttachedMediaInfosResponseUnmarshaller
     {
-        public static UpdateAttachedMediaInfosResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateAttachedMediaInfosResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateAttachedMediaInfosResponse updateAttachedMediaInfosResponse = new UpdateAttachedMediaInfosResponse();
 
-			updateAttachedMediaInfosResponse.HttpResponse = context.HttpResponse;
-			updateAttachedMediaInfosResponse.RequestId = context.StringValue("UpdateAttachedMediaInfos.RequestId");
+			updateAttachedMediaInfosResponse.HttpResponse = _ctx.HttpResponse;
+			updateAttachedMediaInfosResponse.RequestId = _ctx.StringValue("UpdateAttachedMediaInfos.RequestId");
 
 			List<string> updateAttachedMediaInfosResponse_nonExistMediaIds = new List<string>();
-			for (int i = 0; i < context.Length("UpdateAttachedMediaInfos.NonExistMediaIds.Length"); i++) {
-				updateAttachedMediaInfosResponse_nonExistMediaIds.Add(context.StringValue("UpdateAttachedMediaInfos.NonExistMediaIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("UpdateAttachedMediaInfos.NonExistMediaIds.Length"); i++) {
+				updateAttachedMediaInfosResponse_nonExistMediaIds.Add(_ctx.StringValue("UpdateAttachedMediaInfos.NonExistMediaIds["+ i +"]"));
 			}
 			updateAttachedMediaInfosResponse.NonExistMediaIds = updateAttachedMediaInfosResponse_nonExistMediaIds;
         

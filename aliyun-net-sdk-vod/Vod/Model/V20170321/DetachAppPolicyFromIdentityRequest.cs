@@ -34,36 +34,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
-		private long? resourceOwnerId;
+		private string identityType;
 
 		private string policyNames;
 
 		private string identityName;
 
-		private string identityType;
-
-		private string resourceOwnerAccount;
-
-		private long? ownerId;
-
 		private string appId;
 
-		public long? ResourceOwnerId
+		public string IdentityType
 		{
 			get
 			{
-				return resourceOwnerId;
+				return identityType;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				identityType = value;
+				DictionaryUtil.Add(QueryParameters, "IdentityType", value);
 			}
 		}
 
@@ -90,45 +84,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				identityName = value;
 				DictionaryUtil.Add(QueryParameters, "IdentityName", value);
-			}
-		}
-
-		public string IdentityType
-		{
-			get
-			{
-				return identityType;
-			}
-			set	
-			{
-				identityType = value;
-				DictionaryUtil.Add(QueryParameters, "IdentityType", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

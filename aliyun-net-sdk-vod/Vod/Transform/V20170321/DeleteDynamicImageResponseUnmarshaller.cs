@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DeleteDynamicImageResponseUnmarshaller
     {
-        public static DeleteDynamicImageResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDynamicImageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDynamicImageResponse deleteDynamicImageResponse = new DeleteDynamicImageResponse();
 
-			deleteDynamicImageResponse.HttpResponse = context.HttpResponse;
-			deleteDynamicImageResponse.RequestId = context.StringValue("DeleteDynamicImage.RequestId");
+			deleteDynamicImageResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDynamicImageResponse.RequestId = _ctx.StringValue("DeleteDynamicImage.RequestId");
         
 			return deleteDynamicImageResponse;
         }

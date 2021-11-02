@@ -26,13 +26,13 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class CreateAppInfoResponseUnmarshaller
     {
-        public static CreateAppInfoResponse Unmarshall(UnmarshallerContext context)
+        public static CreateAppInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateAppInfoResponse createAppInfoResponse = new CreateAppInfoResponse();
 
-			createAppInfoResponse.HttpResponse = context.HttpResponse;
-			createAppInfoResponse.RequestId = context.StringValue("CreateAppInfo.RequestId");
-			createAppInfoResponse.AppId = context.StringValue("CreateAppInfo.AppId");
+			createAppInfoResponse.HttpResponse = _ctx.HttpResponse;
+			createAppInfoResponse.AppId = _ctx.StringValue("CreateAppInfo.AppId");
+			createAppInfoResponse.RequestId = _ctx.StringValue("CreateAppInfo.RequestId");
         
 			return createAppInfoResponse;
         }

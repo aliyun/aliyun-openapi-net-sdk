@@ -26,22 +26,22 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DetachAppPolicyFromIdentityResponseUnmarshaller
     {
-        public static DetachAppPolicyFromIdentityResponse Unmarshall(UnmarshallerContext context)
+        public static DetachAppPolicyFromIdentityResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetachAppPolicyFromIdentityResponse detachAppPolicyFromIdentityResponse = new DetachAppPolicyFromIdentityResponse();
 
-			detachAppPolicyFromIdentityResponse.HttpResponse = context.HttpResponse;
-			detachAppPolicyFromIdentityResponse.RequestId = context.StringValue("DetachAppPolicyFromIdentity.RequestId");
+			detachAppPolicyFromIdentityResponse.HttpResponse = _ctx.HttpResponse;
+			detachAppPolicyFromIdentityResponse.RequestId = _ctx.StringValue("DetachAppPolicyFromIdentity.RequestId");
 
 			List<string> detachAppPolicyFromIdentityResponse_nonExistPolicyNames = new List<string>();
-			for (int i = 0; i < context.Length("DetachAppPolicyFromIdentity.NonExistPolicyNames.Length"); i++) {
-				detachAppPolicyFromIdentityResponse_nonExistPolicyNames.Add(context.StringValue("DetachAppPolicyFromIdentity.NonExistPolicyNames["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DetachAppPolicyFromIdentity.NonExistPolicyNames.Length"); i++) {
+				detachAppPolicyFromIdentityResponse_nonExistPolicyNames.Add(_ctx.StringValue("DetachAppPolicyFromIdentity.NonExistPolicyNames["+ i +"]"));
 			}
 			detachAppPolicyFromIdentityResponse.NonExistPolicyNames = detachAppPolicyFromIdentityResponse_nonExistPolicyNames;
 
 			List<string> detachAppPolicyFromIdentityResponse_failedPolicyNames = new List<string>();
-			for (int i = 0; i < context.Length("DetachAppPolicyFromIdentity.FailedPolicyNames.Length"); i++) {
-				detachAppPolicyFromIdentityResponse_failedPolicyNames.Add(context.StringValue("DetachAppPolicyFromIdentity.FailedPolicyNames["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DetachAppPolicyFromIdentity.FailedPolicyNames.Length"); i++) {
+				detachAppPolicyFromIdentityResponse_failedPolicyNames.Add(_ctx.StringValue("DetachAppPolicyFromIdentity.FailedPolicyNames["+ i +"]"));
 			}
 			detachAppPolicyFromIdentityResponse.FailedPolicyNames = detachAppPolicyFromIdentityResponse_failedPolicyNames;
         

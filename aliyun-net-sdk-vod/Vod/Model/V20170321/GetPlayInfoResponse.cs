@@ -414,6 +414,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string transcodeMode;
 
+			private string danMuURL;
+
 			private List<GetPlayInfo_Thumbnail> thumbnailList;
 
 			public string OutputType
@@ -521,6 +523,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					transcodeMode = value;
+				}
+			}
+
+			public string DanMuURL
+			{
+				get
+				{
+					return danMuURL;
+				}
+				set	
+				{
+					danMuURL = value;
 				}
 			}
 

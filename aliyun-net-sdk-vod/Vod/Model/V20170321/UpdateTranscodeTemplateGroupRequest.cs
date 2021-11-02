@@ -34,25 +34,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private string transcodeTemplateList;
 
-		private long? resourceOwnerId;
-
-		private string locked;
-
-		private string resourceOwnerAccount;
-
-		private long? ownerId;
-
 		private string transcodeTemplateGroupId;
 
 		private string name;
+
+		private string locked;
 
 		public string TranscodeTemplateList
 		{
@@ -64,58 +58,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				transcodeTemplateList = value;
 				DictionaryUtil.Add(QueryParameters, "TranscodeTemplateList", value);
-			}
-		}
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string Locked
-		{
-			get
-			{
-				return locked;
-			}
-			set	
-			{
-				locked = value;
-				DictionaryUtil.Add(QueryParameters, "Locked", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -142,6 +84,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string Locked
+		{
+			get
+			{
+				return locked;
+			}
+			set	
+			{
+				locked = value;
+				DictionaryUtil.Add(QueryParameters, "Locked", value);
 			}
 		}
 

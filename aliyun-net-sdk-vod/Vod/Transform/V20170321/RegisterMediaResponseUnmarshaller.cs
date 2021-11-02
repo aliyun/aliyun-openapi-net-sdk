@@ -26,25 +26,25 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class RegisterMediaResponseUnmarshaller
     {
-        public static RegisterMediaResponse Unmarshall(UnmarshallerContext context)
+        public static RegisterMediaResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RegisterMediaResponse registerMediaResponse = new RegisterMediaResponse();
 
-			registerMediaResponse.HttpResponse = context.HttpResponse;
-			registerMediaResponse.RequestId = context.StringValue("RegisterMedia.RequestId");
+			registerMediaResponse.HttpResponse = _ctx.HttpResponse;
+			registerMediaResponse.RequestId = _ctx.StringValue("RegisterMedia.RequestId");
 
 			List<string> registerMediaResponse_failedFileURLs = new List<string>();
-			for (int i = 0; i < context.Length("RegisterMedia.FailedFileURLs.Length"); i++) {
-				registerMediaResponse_failedFileURLs.Add(context.StringValue("RegisterMedia.FailedFileURLs["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("RegisterMedia.FailedFileURLs.Length"); i++) {
+				registerMediaResponse_failedFileURLs.Add(_ctx.StringValue("RegisterMedia.FailedFileURLs["+ i +"]"));
 			}
 			registerMediaResponse.FailedFileURLs = registerMediaResponse_failedFileURLs;
 
 			List<RegisterMediaResponse.RegisterMedia_RegisteredMedia> registerMediaResponse_registeredMediaList = new List<RegisterMediaResponse.RegisterMedia_RegisteredMedia>();
-			for (int i = 0; i < context.Length("RegisterMedia.RegisteredMediaList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("RegisterMedia.RegisteredMediaList.Length"); i++) {
 				RegisterMediaResponse.RegisterMedia_RegisteredMedia registeredMedia = new RegisterMediaResponse.RegisterMedia_RegisteredMedia();
-				registeredMedia.MediaId = context.StringValue("RegisterMedia.RegisteredMediaList["+ i +"].MediaId");
-				registeredMedia.FileURL = context.StringValue("RegisterMedia.RegisteredMediaList["+ i +"].FileURL");
-				registeredMedia.NewRegister = context.BooleanValue("RegisterMedia.RegisteredMediaList["+ i +"].NewRegister");
+				registeredMedia.MediaId = _ctx.StringValue("RegisterMedia.RegisteredMediaList["+ i +"].MediaId");
+				registeredMedia.FileURL = _ctx.StringValue("RegisterMedia.RegisteredMediaList["+ i +"].FileURL");
+				registeredMedia.NewRegister = _ctx.BooleanValue("RegisterMedia.RegisteredMediaList["+ i +"].NewRegister");
 
 				registerMediaResponse_registeredMediaList.Add(registeredMedia);
 			}

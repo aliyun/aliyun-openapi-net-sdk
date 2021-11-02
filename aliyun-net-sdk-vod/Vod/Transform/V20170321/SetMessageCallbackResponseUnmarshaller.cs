@@ -26,12 +26,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class SetMessageCallbackResponseUnmarshaller
     {
-        public static SetMessageCallbackResponse Unmarshall(UnmarshallerContext context)
+        public static SetMessageCallbackResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetMessageCallbackResponse setMessageCallbackResponse = new SetMessageCallbackResponse();
 
-			setMessageCallbackResponse.HttpResponse = context.HttpResponse;
-			setMessageCallbackResponse.RequestId = context.StringValue("SetMessageCallback.RequestId");
+			setMessageCallbackResponse.HttpResponse = _ctx.HttpResponse;
+			setMessageCallbackResponse.RequestId = _ctx.StringValue("SetMessageCallback.RequestId");
         
 			return setMessageCallbackResponse;
         }

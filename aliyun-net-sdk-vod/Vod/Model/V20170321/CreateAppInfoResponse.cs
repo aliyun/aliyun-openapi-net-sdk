@@ -25,21 +25,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	public class CreateAppInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string appId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string AppId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				appId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

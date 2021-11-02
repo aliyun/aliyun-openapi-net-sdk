@@ -26,24 +26,24 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class ListSnapshotsResponseUnmarshaller
     {
-        public static ListSnapshotsResponse Unmarshall(UnmarshallerContext context)
+        public static ListSnapshotsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListSnapshotsResponse listSnapshotsResponse = new ListSnapshotsResponse();
 
-			listSnapshotsResponse.HttpResponse = context.HttpResponse;
-			listSnapshotsResponse.RequestId = context.StringValue("ListSnapshots.RequestId");
+			listSnapshotsResponse.HttpResponse = _ctx.HttpResponse;
+			listSnapshotsResponse.RequestId = _ctx.StringValue("ListSnapshots.RequestId");
 
 			ListSnapshotsResponse.ListSnapshots_MediaSnapshot mediaSnapshot = new ListSnapshotsResponse.ListSnapshots_MediaSnapshot();
-			mediaSnapshot.Total = context.LongValue("ListSnapshots.MediaSnapshot.Total");
-			mediaSnapshot.Regular = context.StringValue("ListSnapshots.MediaSnapshot.Regular");
-			mediaSnapshot.CreationTime = context.StringValue("ListSnapshots.MediaSnapshot.CreationTime");
-			mediaSnapshot.JobId = context.StringValue("ListSnapshots.MediaSnapshot.JobId");
+			mediaSnapshot.Total = _ctx.LongValue("ListSnapshots.MediaSnapshot.Total");
+			mediaSnapshot.Regular = _ctx.StringValue("ListSnapshots.MediaSnapshot.Regular");
+			mediaSnapshot.CreationTime = _ctx.StringValue("ListSnapshots.MediaSnapshot.CreationTime");
+			mediaSnapshot.JobId = _ctx.StringValue("ListSnapshots.MediaSnapshot.JobId");
 
 			List<ListSnapshotsResponse.ListSnapshots_MediaSnapshot.ListSnapshots_Snapshot> mediaSnapshot_snapshots = new List<ListSnapshotsResponse.ListSnapshots_MediaSnapshot.ListSnapshots_Snapshot>();
-			for (int i = 0; i < context.Length("ListSnapshots.MediaSnapshot.Snapshots.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListSnapshots.MediaSnapshot.Snapshots.Length"); i++) {
 				ListSnapshotsResponse.ListSnapshots_MediaSnapshot.ListSnapshots_Snapshot snapshot = new ListSnapshotsResponse.ListSnapshots_MediaSnapshot.ListSnapshots_Snapshot();
-				snapshot.Index = context.LongValue("ListSnapshots.MediaSnapshot.Snapshots["+ i +"].Index");
-				snapshot.Url = context.StringValue("ListSnapshots.MediaSnapshot.Snapshots["+ i +"].Url");
+				snapshot.Index = _ctx.LongValue("ListSnapshots.MediaSnapshot.Snapshots["+ i +"].Index");
+				snapshot.Url = _ctx.StringValue("ListSnapshots.MediaSnapshot.Snapshots["+ i +"].Url");
 
 				mediaSnapshot_snapshots.Add(snapshot);
 			}

@@ -26,23 +26,23 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetAuditHistoryResponseUnmarshaller
     {
-        public static GetAuditHistoryResponse Unmarshall(UnmarshallerContext context)
+        public static GetAuditHistoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetAuditHistoryResponse getAuditHistoryResponse = new GetAuditHistoryResponse();
 
-			getAuditHistoryResponse.HttpResponse = context.HttpResponse;
-			getAuditHistoryResponse.RequestId = context.StringValue("GetAuditHistory.RequestId");
-			getAuditHistoryResponse.Status = context.StringValue("GetAuditHistory.Status");
-			getAuditHistoryResponse.Total = context.LongValue("GetAuditHistory.Total");
+			getAuditHistoryResponse.HttpResponse = _ctx.HttpResponse;
+			getAuditHistoryResponse.RequestId = _ctx.StringValue("GetAuditHistory.RequestId");
+			getAuditHistoryResponse.Status = _ctx.StringValue("GetAuditHistory.Status");
+			getAuditHistoryResponse.Total = _ctx.LongValue("GetAuditHistory.Total");
 
 			List<GetAuditHistoryResponse.GetAuditHistory_History> getAuditHistoryResponse_histories = new List<GetAuditHistoryResponse.GetAuditHistory_History>();
-			for (int i = 0; i < context.Length("GetAuditHistory.Histories.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetAuditHistory.Histories.Length"); i++) {
 				GetAuditHistoryResponse.GetAuditHistory_History history = new GetAuditHistoryResponse.GetAuditHistory_History();
-				history.CreationTime = context.StringValue("GetAuditHistory.Histories["+ i +"].CreationTime");
-				history.Status = context.StringValue("GetAuditHistory.Histories["+ i +"].Status");
-				history.Reason = context.StringValue("GetAuditHistory.Histories["+ i +"].Reason");
-				history.Comment = context.StringValue("GetAuditHistory.Histories["+ i +"].Comment");
-				history.Auditor = context.StringValue("GetAuditHistory.Histories["+ i +"].Auditor");
+				history.CreationTime = _ctx.StringValue("GetAuditHistory.Histories["+ i +"].CreationTime");
+				history.Status = _ctx.StringValue("GetAuditHistory.Histories["+ i +"].Status");
+				history.Reason = _ctx.StringValue("GetAuditHistory.Histories["+ i +"].Reason");
+				history.Comment = _ctx.StringValue("GetAuditHistory.Histories["+ i +"].Comment");
+				history.Auditor = _ctx.StringValue("GetAuditHistory.Histories["+ i +"].Auditor");
 
 				getAuditHistoryResponse_histories.Add(history);
 			}

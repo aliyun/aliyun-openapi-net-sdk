@@ -26,20 +26,20 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetVideoPlayAuthResponseUnmarshaller
     {
-        public static GetVideoPlayAuthResponse Unmarshall(UnmarshallerContext context)
+        public static GetVideoPlayAuthResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetVideoPlayAuthResponse getVideoPlayAuthResponse = new GetVideoPlayAuthResponse();
 
-			getVideoPlayAuthResponse.HttpResponse = context.HttpResponse;
-			getVideoPlayAuthResponse.RequestId = context.StringValue("GetVideoPlayAuth.RequestId");
-			getVideoPlayAuthResponse.PlayAuth = context.StringValue("GetVideoPlayAuth.PlayAuth");
+			getVideoPlayAuthResponse.HttpResponse = _ctx.HttpResponse;
+			getVideoPlayAuthResponse.RequestId = _ctx.StringValue("GetVideoPlayAuth.RequestId");
+			getVideoPlayAuthResponse.PlayAuth = _ctx.StringValue("GetVideoPlayAuth.PlayAuth");
 
 			GetVideoPlayAuthResponse.GetVideoPlayAuth_VideoMeta videoMeta = new GetVideoPlayAuthResponse.GetVideoPlayAuth_VideoMeta();
-			videoMeta.CoverURL = context.StringValue("GetVideoPlayAuth.VideoMeta.CoverURL");
-			videoMeta.Duration = context.FloatValue("GetVideoPlayAuth.VideoMeta.Duration");
-			videoMeta.Status = context.StringValue("GetVideoPlayAuth.VideoMeta.Status");
-			videoMeta.Title = context.StringValue("GetVideoPlayAuth.VideoMeta.Title");
-			videoMeta.VideoId = context.StringValue("GetVideoPlayAuth.VideoMeta.VideoId");
+			videoMeta.CoverURL = _ctx.StringValue("GetVideoPlayAuth.VideoMeta.CoverURL");
+			videoMeta.Duration = _ctx.FloatValue("GetVideoPlayAuth.VideoMeta.Duration");
+			videoMeta.Status = _ctx.StringValue("GetVideoPlayAuth.VideoMeta.Status");
+			videoMeta.Title = _ctx.StringValue("GetVideoPlayAuth.VideoMeta.Title");
+			videoMeta.VideoId = _ctx.StringValue("GetVideoPlayAuth.VideoMeta.VideoId");
 			getVideoPlayAuthResponse.VideoMeta = videoMeta;
         
 			return getVideoPlayAuthResponse;

@@ -26,24 +26,24 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DescribeVodAIDataResponseUnmarshaller
     {
-        public static DescribeVodAIDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVodAIDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVodAIDataResponse describeVodAIDataResponse = new DescribeVodAIDataResponse();
 
-			describeVodAIDataResponse.HttpResponse = context.HttpResponse;
-			describeVodAIDataResponse.RequestId = context.StringValue("DescribeVodAIData.RequestId");
-			describeVodAIDataResponse.DataInterval = context.StringValue("DescribeVodAIData.DataInterval");
+			describeVodAIDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeVodAIDataResponse.RequestId = _ctx.StringValue("DescribeVodAIData.RequestId");
+			describeVodAIDataResponse.DataInterval = _ctx.StringValue("DescribeVodAIData.DataInterval");
 
 			List<DescribeVodAIDataResponse.DescribeVodAIData_AIDataItem> describeVodAIDataResponse_aIData = new List<DescribeVodAIDataResponse.DescribeVodAIData_AIDataItem>();
-			for (int i = 0; i < context.Length("DescribeVodAIData.AIData.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVodAIData.AIData.Length"); i++) {
 				DescribeVodAIDataResponse.DescribeVodAIData_AIDataItem aIDataItem = new DescribeVodAIDataResponse.DescribeVodAIData_AIDataItem();
-				aIDataItem.TimeStamp = context.StringValue("DescribeVodAIData.AIData["+ i +"].TimeStamp");
+				aIDataItem.TimeStamp = _ctx.StringValue("DescribeVodAIData.AIData["+ i +"].TimeStamp");
 
 				List<DescribeVodAIDataResponse.DescribeVodAIData_AIDataItem.DescribeVodAIData_DataItem> aIDataItem_data = new List<DescribeVodAIDataResponse.DescribeVodAIData_AIDataItem.DescribeVodAIData_DataItem>();
-				for (int j = 0; j < context.Length("DescribeVodAIData.AIData["+ i +"].Data.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeVodAIData.AIData["+ i +"].Data.Length"); j++) {
 					DescribeVodAIDataResponse.DescribeVodAIData_AIDataItem.DescribeVodAIData_DataItem dataItem = new DescribeVodAIDataResponse.DescribeVodAIData_AIDataItem.DescribeVodAIData_DataItem();
-					dataItem.Name = context.StringValue("DescribeVodAIData.AIData["+ i +"].Data["+ j +"].Name");
-					dataItem._Value = context.StringValue("DescribeVodAIData.AIData["+ i +"].Data["+ j +"].Value");
+					dataItem.Name = _ctx.StringValue("DescribeVodAIData.AIData["+ i +"].Data["+ j +"].Name");
+					dataItem._Value = _ctx.StringValue("DescribeVodAIData.AIData["+ i +"].Data["+ j +"].Value");
 
 					aIDataItem_data.Add(dataItem);
 				}

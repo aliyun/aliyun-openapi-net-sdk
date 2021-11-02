@@ -26,16 +26,16 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DeleteTranscodeTemplateGroupResponseUnmarshaller
     {
-        public static DeleteTranscodeTemplateGroupResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteTranscodeTemplateGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteTranscodeTemplateGroupResponse deleteTranscodeTemplateGroupResponse = new DeleteTranscodeTemplateGroupResponse();
 
-			deleteTranscodeTemplateGroupResponse.HttpResponse = context.HttpResponse;
-			deleteTranscodeTemplateGroupResponse.RequestId = context.StringValue("DeleteTranscodeTemplateGroup.RequestId");
+			deleteTranscodeTemplateGroupResponse.HttpResponse = _ctx.HttpResponse;
+			deleteTranscodeTemplateGroupResponse.RequestId = _ctx.StringValue("DeleteTranscodeTemplateGroup.RequestId");
 
 			List<string> deleteTranscodeTemplateGroupResponse_nonExistTranscodeTemplateIds = new List<string>();
-			for (int i = 0; i < context.Length("DeleteTranscodeTemplateGroup.NonExistTranscodeTemplateIds.Length"); i++) {
-				deleteTranscodeTemplateGroupResponse_nonExistTranscodeTemplateIds.Add(context.StringValue("DeleteTranscodeTemplateGroup.NonExistTranscodeTemplateIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DeleteTranscodeTemplateGroup.NonExistTranscodeTemplateIds.Length"); i++) {
+				deleteTranscodeTemplateGroupResponse_nonExistTranscodeTemplateIds.Add(_ctx.StringValue("DeleteTranscodeTemplateGroup.NonExistTranscodeTemplateIds["+ i +"]"));
 			}
 			deleteTranscodeTemplateGroupResponse.NonExistTranscodeTemplateIds = deleteTranscodeTemplateGroupResponse_nonExistTranscodeTemplateIds;
         

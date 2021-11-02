@@ -26,20 +26,20 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DescribeVodStorageDataResponseUnmarshaller
     {
-        public static DescribeVodStorageDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVodStorageDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVodStorageDataResponse describeVodStorageDataResponse = new DescribeVodStorageDataResponse();
 
-			describeVodStorageDataResponse.HttpResponse = context.HttpResponse;
-			describeVodStorageDataResponse.RequestId = context.StringValue("DescribeVodStorageData.RequestId");
-			describeVodStorageDataResponse.DataInterval = context.StringValue("DescribeVodStorageData.DataInterval");
+			describeVodStorageDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeVodStorageDataResponse.RequestId = _ctx.StringValue("DescribeVodStorageData.RequestId");
+			describeVodStorageDataResponse.DataInterval = _ctx.StringValue("DescribeVodStorageData.DataInterval");
 
 			List<DescribeVodStorageDataResponse.DescribeVodStorageData_StorageDataItem> describeVodStorageDataResponse_storageData = new List<DescribeVodStorageDataResponse.DescribeVodStorageData_StorageDataItem>();
-			for (int i = 0; i < context.Length("DescribeVodStorageData.StorageData.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeVodStorageData.StorageData.Length"); i++) {
 				DescribeVodStorageDataResponse.DescribeVodStorageData_StorageDataItem storageDataItem = new DescribeVodStorageDataResponse.DescribeVodStorageData_StorageDataItem();
-				storageDataItem.TimeStamp = context.StringValue("DescribeVodStorageData.StorageData["+ i +"].TimeStamp");
-				storageDataItem.StorageUtilization = context.StringValue("DescribeVodStorageData.StorageData["+ i +"].StorageUtilization");
-				storageDataItem.NetworkOut = context.StringValue("DescribeVodStorageData.StorageData["+ i +"].NetworkOut");
+				storageDataItem.TimeStamp = _ctx.StringValue("DescribeVodStorageData.StorageData["+ i +"].TimeStamp");
+				storageDataItem.StorageUtilization = _ctx.StringValue("DescribeVodStorageData.StorageData["+ i +"].StorageUtilization");
+				storageDataItem.NetworkOut = _ctx.StringValue("DescribeVodStorageData.StorageData["+ i +"].NetworkOut");
 
 				describeVodStorageDataResponse_storageData.Add(storageDataItem);
 			}

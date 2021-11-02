@@ -26,24 +26,24 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class ListTranscodeTemplateGroupResponseUnmarshaller
     {
-        public static ListTranscodeTemplateGroupResponse Unmarshall(UnmarshallerContext context)
+        public static ListTranscodeTemplateGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListTranscodeTemplateGroupResponse listTranscodeTemplateGroupResponse = new ListTranscodeTemplateGroupResponse();
 
-			listTranscodeTemplateGroupResponse.HttpResponse = context.HttpResponse;
-			listTranscodeTemplateGroupResponse.RequestId = context.StringValue("ListTranscodeTemplateGroup.RequestId");
+			listTranscodeTemplateGroupResponse.HttpResponse = _ctx.HttpResponse;
+			listTranscodeTemplateGroupResponse.RequestId = _ctx.StringValue("ListTranscodeTemplateGroup.RequestId");
 
 			List<ListTranscodeTemplateGroupResponse.ListTranscodeTemplateGroup_TranscodeTemplateGroup> listTranscodeTemplateGroupResponse_transcodeTemplateGroupList = new List<ListTranscodeTemplateGroupResponse.ListTranscodeTemplateGroup_TranscodeTemplateGroup>();
-			for (int i = 0; i < context.Length("ListTranscodeTemplateGroup.TranscodeTemplateGroupList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListTranscodeTemplateGroup.TranscodeTemplateGroupList.Length"); i++) {
 				ListTranscodeTemplateGroupResponse.ListTranscodeTemplateGroup_TranscodeTemplateGroup transcodeTemplateGroup = new ListTranscodeTemplateGroupResponse.ListTranscodeTemplateGroup_TranscodeTemplateGroup();
-				transcodeTemplateGroup.CreationTime = context.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].CreationTime");
-				transcodeTemplateGroup.ModifyTime = context.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].ModifyTime");
-				transcodeTemplateGroup.Name = context.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].Name");
-				transcodeTemplateGroup.IsDefault = context.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].IsDefault");
-				transcodeTemplateGroup.Locked = context.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].Locked");
-				transcodeTemplateGroup.TranscodeTemplateGroupId = context.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].TranscodeTemplateGroupId");
-				transcodeTemplateGroup.TranscodeMode = context.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].TranscodeMode");
-				transcodeTemplateGroup.AppId = context.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].AppId");
+				transcodeTemplateGroup.CreationTime = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].CreationTime");
+				transcodeTemplateGroup.ModifyTime = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].ModifyTime");
+				transcodeTemplateGroup.Name = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].Name");
+				transcodeTemplateGroup.IsDefault = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].IsDefault");
+				transcodeTemplateGroup.Locked = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].Locked");
+				transcodeTemplateGroup.TranscodeTemplateGroupId = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].TranscodeTemplateGroupId");
+				transcodeTemplateGroup.TranscodeMode = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].TranscodeMode");
+				transcodeTemplateGroup.AppId = _ctx.StringValue("ListTranscodeTemplateGroup.TranscodeTemplateGroupList["+ i +"].AppId");
 
 				listTranscodeTemplateGroupResponse_transcodeTemplateGroupList.Add(transcodeTemplateGroup);
 			}

@@ -26,24 +26,24 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetMediaAuditAudioResultDetailResponseUnmarshaller
     {
-        public static GetMediaAuditAudioResultDetailResponse Unmarshall(UnmarshallerContext context)
+        public static GetMediaAuditAudioResultDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMediaAuditAudioResultDetailResponse getMediaAuditAudioResultDetailResponse = new GetMediaAuditAudioResultDetailResponse();
 
-			getMediaAuditAudioResultDetailResponse.HttpResponse = context.HttpResponse;
-			getMediaAuditAudioResultDetailResponse.RequestId = context.StringValue("GetMediaAuditAudioResultDetail.RequestId");
+			getMediaAuditAudioResultDetailResponse.HttpResponse = _ctx.HttpResponse;
+			getMediaAuditAudioResultDetailResponse.RequestId = _ctx.StringValue("GetMediaAuditAudioResultDetail.RequestId");
 
 			GetMediaAuditAudioResultDetailResponse.GetMediaAuditAudioResultDetail_MediaAuditAudioResultDetail mediaAuditAudioResultDetail = new GetMediaAuditAudioResultDetailResponse.GetMediaAuditAudioResultDetail_MediaAuditAudioResultDetail();
-			mediaAuditAudioResultDetail.Total = context.IntegerValue("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.Total");
-			mediaAuditAudioResultDetail.PageTotal = context.IntegerValue("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.PageTotal");
+			mediaAuditAudioResultDetail.Total = _ctx.IntegerValue("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.Total");
+			mediaAuditAudioResultDetail.PageTotal = _ctx.IntegerValue("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.PageTotal");
 
 			List<GetMediaAuditAudioResultDetailResponse.GetMediaAuditAudioResultDetail_MediaAuditAudioResultDetail.GetMediaAuditAudioResultDetail_ListItem> mediaAuditAudioResultDetail_list = new List<GetMediaAuditAudioResultDetailResponse.GetMediaAuditAudioResultDetail_MediaAuditAudioResultDetail.GetMediaAuditAudioResultDetail_ListItem>();
-			for (int i = 0; i < context.Length("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.List.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.List.Length"); i++) {
 				GetMediaAuditAudioResultDetailResponse.GetMediaAuditAudioResultDetail_MediaAuditAudioResultDetail.GetMediaAuditAudioResultDetail_ListItem listItem = new GetMediaAuditAudioResultDetailResponse.GetMediaAuditAudioResultDetail_MediaAuditAudioResultDetail.GetMediaAuditAudioResultDetail_ListItem();
-				listItem.StartTime = context.LongValue("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.List["+ i +"].StartTime");
-				listItem.EndTime = context.LongValue("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.List["+ i +"].EndTime");
-				listItem.Text = context.StringValue("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.List["+ i +"].Text");
-				listItem.Label = context.StringValue("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.List["+ i +"].Label");
+				listItem.StartTime = _ctx.LongValue("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.List["+ i +"].StartTime");
+				listItem.EndTime = _ctx.LongValue("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.List["+ i +"].EndTime");
+				listItem.Text = _ctx.StringValue("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.List["+ i +"].Text");
+				listItem.Label = _ctx.StringValue("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.List["+ i +"].Label");
 
 				mediaAuditAudioResultDetail_list.Add(listItem);
 			}

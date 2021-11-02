@@ -26,29 +26,29 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class GetAppInfosResponseUnmarshaller
     {
-        public static GetAppInfosResponse Unmarshall(UnmarshallerContext context)
+        public static GetAppInfosResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetAppInfosResponse getAppInfosResponse = new GetAppInfosResponse();
 
-			getAppInfosResponse.HttpResponse = context.HttpResponse;
-			getAppInfosResponse.RequestId = context.StringValue("GetAppInfos.RequestId");
+			getAppInfosResponse.HttpResponse = _ctx.HttpResponse;
+			getAppInfosResponse.RequestId = _ctx.StringValue("GetAppInfos.RequestId");
 
 			List<string> getAppInfosResponse_nonExistAppIds = new List<string>();
-			for (int i = 0; i < context.Length("GetAppInfos.NonExistAppIds.Length"); i++) {
-				getAppInfosResponse_nonExistAppIds.Add(context.StringValue("GetAppInfos.NonExistAppIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetAppInfos.NonExistAppIds.Length"); i++) {
+				getAppInfosResponse_nonExistAppIds.Add(_ctx.StringValue("GetAppInfos.NonExistAppIds["+ i +"]"));
 			}
 			getAppInfosResponse.NonExistAppIds = getAppInfosResponse_nonExistAppIds;
 
 			List<GetAppInfosResponse.GetAppInfos_AppInfo> getAppInfosResponse_appInfoList = new List<GetAppInfosResponse.GetAppInfos_AppInfo>();
-			for (int i = 0; i < context.Length("GetAppInfos.AppInfoList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetAppInfos.AppInfoList.Length"); i++) {
 				GetAppInfosResponse.GetAppInfos_AppInfo appInfo = new GetAppInfosResponse.GetAppInfos_AppInfo();
-				appInfo.AppId = context.StringValue("GetAppInfos.AppInfoList["+ i +"].AppId");
-				appInfo.AppName = context.StringValue("GetAppInfos.AppInfoList["+ i +"].AppName");
-				appInfo.Type = context.StringValue("GetAppInfos.AppInfoList["+ i +"].Type");
-				appInfo.Description = context.StringValue("GetAppInfos.AppInfoList["+ i +"].Description");
-				appInfo.Status = context.StringValue("GetAppInfos.AppInfoList["+ i +"].Status");
-				appInfo.CreationTime = context.StringValue("GetAppInfos.AppInfoList["+ i +"].CreationTime");
-				appInfo.ModificationTime = context.StringValue("GetAppInfos.AppInfoList["+ i +"].ModificationTime");
+				appInfo.AppId = _ctx.StringValue("GetAppInfos.AppInfoList["+ i +"].AppId");
+				appInfo.AppName = _ctx.StringValue("GetAppInfos.AppInfoList["+ i +"].AppName");
+				appInfo.Type = _ctx.StringValue("GetAppInfos.AppInfoList["+ i +"].Type");
+				appInfo.Description = _ctx.StringValue("GetAppInfos.AppInfoList["+ i +"].Description");
+				appInfo.Status = _ctx.StringValue("GetAppInfos.AppInfoList["+ i +"].Status");
+				appInfo.CreationTime = _ctx.StringValue("GetAppInfos.AppInfoList["+ i +"].CreationTime");
+				appInfo.ModificationTime = _ctx.StringValue("GetAppInfos.AppInfoList["+ i +"].ModificationTime");
 
 				getAppInfosResponse_appInfoList.Add(appInfo);
 			}

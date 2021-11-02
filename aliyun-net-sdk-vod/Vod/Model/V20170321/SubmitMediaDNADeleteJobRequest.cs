@@ -34,15 +34,13 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.vod.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
 
 		private string resourceOwnerId;
-
-		private string fpDBId;
 
 		private string resourceOwnerAccount;
 
@@ -62,19 +60,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
-			}
-		}
-
-		public string FpDBId
-		{
-			get
-			{
-				return fpDBId;
-			}
-			set	
-			{
-				fpDBId = value;
-				DictionaryUtil.Add(QueryParameters, "FpDBId", value);
 			}
 		}
 

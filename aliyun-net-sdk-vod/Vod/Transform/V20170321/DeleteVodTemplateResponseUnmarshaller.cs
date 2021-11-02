@@ -26,13 +26,13 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 {
     public class DeleteVodTemplateResponseUnmarshaller
     {
-        public static DeleteVodTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteVodTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteVodTemplateResponse deleteVodTemplateResponse = new DeleteVodTemplateResponse();
 
-			deleteVodTemplateResponse.HttpResponse = context.HttpResponse;
-			deleteVodTemplateResponse.RequestId = context.StringValue("DeleteVodTemplate.RequestId");
-			deleteVodTemplateResponse.VodTemplateId = context.StringValue("DeleteVodTemplate.VodTemplateId");
+			deleteVodTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			deleteVodTemplateResponse.RequestId = _ctx.StringValue("DeleteVodTemplate.RequestId");
+			deleteVodTemplateResponse.VodTemplateId = _ctx.StringValue("DeleteVodTemplate.VodTemplateId");
         
 			return deleteVodTemplateResponse;
         }
