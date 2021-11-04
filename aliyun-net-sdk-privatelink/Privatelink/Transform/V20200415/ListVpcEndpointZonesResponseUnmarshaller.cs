@@ -31,21 +31,21 @@ namespace Aliyun.Acs.Privatelink.Transform.V20200415
 			ListVpcEndpointZonesResponse listVpcEndpointZonesResponse = new ListVpcEndpointZonesResponse();
 
 			listVpcEndpointZonesResponse.HttpResponse = _ctx.HttpResponse;
-			listVpcEndpointZonesResponse.RequestId = _ctx.StringValue("ListVpcEndpointZones.RequestId");
 			listVpcEndpointZonesResponse.NextToken = _ctx.StringValue("ListVpcEndpointZones.NextToken");
+			listVpcEndpointZonesResponse.RequestId = _ctx.StringValue("ListVpcEndpointZones.RequestId");
 			listVpcEndpointZonesResponse.MaxResults = _ctx.StringValue("ListVpcEndpointZones.MaxResults");
 
 			List<ListVpcEndpointZonesResponse.ListVpcEndpointZones_Zone> listVpcEndpointZonesResponse_zones = new List<ListVpcEndpointZonesResponse.ListVpcEndpointZones_Zone>();
 			for (int i = 0; i < _ctx.Length("ListVpcEndpointZones.Zones.Length"); i++) {
 				ListVpcEndpointZonesResponse.ListVpcEndpointZones_Zone zone = new ListVpcEndpointZonesResponse.ListVpcEndpointZones_Zone();
-				zone.EniId = _ctx.StringValue("ListVpcEndpointZones.Zones["+ i +"].EniId");
-				zone.ZoneId = _ctx.StringValue("ListVpcEndpointZones.Zones["+ i +"].ZoneId");
-				zone.ServiceStatus = _ctx.StringValue("ListVpcEndpointZones.Zones["+ i +"].ServiceStatus");
 				zone.VSwitchId = _ctx.StringValue("ListVpcEndpointZones.Zones["+ i +"].VSwitchId");
 				zone.EniIp = _ctx.StringValue("ListVpcEndpointZones.Zones["+ i +"].EniIp");
 				zone.ZoneStatus = _ctx.StringValue("ListVpcEndpointZones.Zones["+ i +"].ZoneStatus");
-				zone.RegionId = _ctx.StringValue("ListVpcEndpointZones.Zones["+ i +"].RegionId");
+				zone.ZoneId = _ctx.StringValue("ListVpcEndpointZones.Zones["+ i +"].ZoneId");
+				zone.ServiceStatus = _ctx.StringValue("ListVpcEndpointZones.Zones["+ i +"].ServiceStatus");
+				zone.EniId = _ctx.StringValue("ListVpcEndpointZones.Zones["+ i +"].EniId");
 				zone.ZoneDomain = _ctx.StringValue("ListVpcEndpointZones.Zones["+ i +"].ZoneDomain");
+				zone.RegionId = _ctx.StringValue("ListVpcEndpointZones.Zones["+ i +"].RegionId");
 
 				listVpcEndpointZonesResponse_zones.Add(zone);
 			}

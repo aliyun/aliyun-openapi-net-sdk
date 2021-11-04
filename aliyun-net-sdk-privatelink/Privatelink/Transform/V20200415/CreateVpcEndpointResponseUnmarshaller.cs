@@ -31,19 +31,19 @@ namespace Aliyun.Acs.Privatelink.Transform.V20200415
 			CreateVpcEndpointResponse createVpcEndpointResponse = new CreateVpcEndpointResponse();
 
 			createVpcEndpointResponse.HttpResponse = _ctx.HttpResponse;
-			createVpcEndpointResponse.EndpointStatus = _ctx.StringValue("CreateVpcEndpoint.EndpointStatus");
-			createVpcEndpointResponse.EndpointName = _ctx.StringValue("CreateVpcEndpoint.EndpointName");
-			createVpcEndpointResponse.VpcId = _ctx.StringValue("CreateVpcEndpoint.VpcId");
-			createVpcEndpointResponse.RequestId = _ctx.StringValue("CreateVpcEndpoint.RequestId");
 			createVpcEndpointResponse.EndpointDomain = _ctx.StringValue("CreateVpcEndpoint.EndpointDomain");
-			createVpcEndpointResponse.ServiceName = _ctx.StringValue("CreateVpcEndpoint.ServiceName");
-			createVpcEndpointResponse.EndpointId = _ctx.StringValue("CreateVpcEndpoint.EndpointId");
-			createVpcEndpointResponse.Bandwidth = _ctx.LongValue("CreateVpcEndpoint.Bandwidth");
+			createVpcEndpointResponse.RequestId = _ctx.StringValue("CreateVpcEndpoint.RequestId");
 			createVpcEndpointResponse.CreateTime = _ctx.StringValue("CreateVpcEndpoint.CreateTime");
 			createVpcEndpointResponse.EndpointBusinessStatus = _ctx.StringValue("CreateVpcEndpoint.EndpointBusinessStatus");
 			createVpcEndpointResponse.EndpointDescription = _ctx.StringValue("CreateVpcEndpoint.EndpointDescription");
-			createVpcEndpointResponse.ConnectionStatus = _ctx.StringValue("CreateVpcEndpoint.ConnectionStatus");
 			createVpcEndpointResponse.ServiceId = _ctx.StringValue("CreateVpcEndpoint.ServiceId");
+			createVpcEndpointResponse.EndpointStatus = _ctx.StringValue("CreateVpcEndpoint.EndpointStatus");
+			createVpcEndpointResponse.VpcId = _ctx.StringValue("CreateVpcEndpoint.VpcId");
+			createVpcEndpointResponse.EndpointName = _ctx.StringValue("CreateVpcEndpoint.EndpointName");
+			createVpcEndpointResponse.ServiceName = _ctx.StringValue("CreateVpcEndpoint.ServiceName");
+			createVpcEndpointResponse.Bandwidth = _ctx.LongValue("CreateVpcEndpoint.Bandwidth");
+			createVpcEndpointResponse.EndpointId = _ctx.StringValue("CreateVpcEndpoint.EndpointId");
+			createVpcEndpointResponse.ConnectionStatus = _ctx.StringValue("CreateVpcEndpoint.ConnectionStatus");
         
 			return createVpcEndpointResponse;
         }

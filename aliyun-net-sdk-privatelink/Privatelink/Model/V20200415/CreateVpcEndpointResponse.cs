@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Privatelink.Model.V20200415
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 	public class CreateVpcEndpointResponse : AcsResponse
 	{
 
-		private string endpointStatus;
-
-		private string endpointName;
-
-		private string vpcId;
-
-		private string requestId;
-
 		private string endpointDomain;
 
-		private string serviceName;
-
-		private string endpointId;
-
-		private long? bandwidth;
+		private string requestId;
 
 		private string createTime;
 
@@ -47,57 +35,21 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private string endpointDescription;
 
-		private string connectionStatus;
-
 		private string serviceId;
 
-		public string EndpointStatus
-		{
-			get
-			{
-				return endpointStatus;
-			}
-			set	
-			{
-				endpointStatus = value;
-			}
-		}
+		private string endpointStatus;
 
-		public string EndpointName
-		{
-			get
-			{
-				return endpointName;
-			}
-			set	
-			{
-				endpointName = value;
-			}
-		}
+		private string vpcId;
 
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-			}
-		}
+		private string endpointName;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string serviceName;
+
+		private long? bandwidth;
+
+		private string endpointId;
+
+		private string connectionStatus;
 
 		public string EndpointDomain
 		{
@@ -111,39 +63,15 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string ServiceName
+		public string RequestId
 		{
 			get
 			{
-				return serviceName;
+				return requestId;
 			}
 			set	
 			{
-				serviceName = value;
-			}
-		}
-
-		public string EndpointId
-		{
-			get
-			{
-				return endpointId;
-			}
-			set	
-			{
-				endpointId = value;
-			}
-		}
-
-		public long? Bandwidth
-		{
-			get
-			{
-				return bandwidth;
-			}
-			set	
-			{
-				bandwidth = value;
+				requestId = value;
 			}
 		}
 
@@ -183,18 +111,6 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string ConnectionStatus
-		{
-			get
-			{
-				return connectionStatus;
-			}
-			set	
-			{
-				connectionStatus = value;
-			}
-		}
-
 		public string ServiceId
 		{
 			get
@@ -204,6 +120,90 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			set	
 			{
 				serviceId = value;
+			}
+		}
+
+		public string EndpointStatus
+		{
+			get
+			{
+				return endpointStatus;
+			}
+			set	
+			{
+				endpointStatus = value;
+			}
+		}
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+			}
+		}
+
+		public string EndpointName
+		{
+			get
+			{
+				return endpointName;
+			}
+			set	
+			{
+				endpointName = value;
+			}
+		}
+
+		public string ServiceName
+		{
+			get
+			{
+				return serviceName;
+			}
+			set	
+			{
+				serviceName = value;
+			}
+		}
+
+		public long? Bandwidth
+		{
+			get
+			{
+				return bandwidth;
+			}
+			set	
+			{
+				bandwidth = value;
+			}
+		}
+
+		public string EndpointId
+		{
+			get
+			{
+				return endpointId;
+			}
+			set	
+			{
+				endpointId = value;
+			}
+		}
+
+		public string ConnectionStatus
+		{
+			get
+			{
+				return connectionStatus;
+			}
+			set	
+			{
+				connectionStatus = value;
 			}
 		}
 	}

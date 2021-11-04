@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Privatelink.Model.V20200415
@@ -31,17 +31,19 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private string serviceDescription;
 
-		private int? maxBandwidth;
-
 		private string createTime;
 
-		private string serviceDomain;
+		private int? maxBandwidth;
 
 		private int? minBandwidth;
 
-		private string serviceId;
+		private string serviceDomain;
 
 		private bool? autoAcceptEnabled;
+
+		private bool? zoneAffinityEnabled;
+
+		private string serviceId;
 
 		private string serviceBusinessStatus;
 
@@ -53,7 +55,23 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private string regionId;
 
-		private bool? zoneAffinityEnabled;
+		private string serviceType;
+
+		private string serviceResourceType;
+
+		private bool? privateServiceDomainEnabled;
+
+		private string privateServiceDomain;
+
+		private string privateServiceDomainVerifyStatus;
+
+		private string privateServiceDomainBusinessStatus;
+
+		private string privateServiceDomainVerifyName;
+
+		private string privateServiceDomainVerifyValue;
+
+		private string privateServiceName;
 
 		private List<string> zones;
 
@@ -93,18 +111,6 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public int? MaxBandwidth
-		{
-			get
-			{
-				return maxBandwidth;
-			}
-			set	
-			{
-				maxBandwidth = value;
-			}
-		}
-
 		public string CreateTime
 		{
 			get
@@ -117,15 +123,15 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string ServiceDomain
+		public int? MaxBandwidth
 		{
 			get
 			{
-				return serviceDomain;
+				return maxBandwidth;
 			}
 			set	
 			{
-				serviceDomain = value;
+				maxBandwidth = value;
 			}
 		}
 
@@ -141,15 +147,15 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string ServiceId
+		public string ServiceDomain
 		{
 			get
 			{
-				return serviceId;
+				return serviceDomain;
 			}
 			set	
 			{
-				serviceId = value;
+				serviceDomain = value;
 			}
 		}
 
@@ -162,6 +168,30 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			set	
 			{
 				autoAcceptEnabled = value;
+			}
+		}
+
+		public bool? ZoneAffinityEnabled
+		{
+			get
+			{
+				return zoneAffinityEnabled;
+			}
+			set	
+			{
+				zoneAffinityEnabled = value;
+			}
+		}
+
+		public string ServiceId
+		{
+			get
+			{
+				return serviceId;
+			}
+			set	
+			{
+				serviceId = value;
 			}
 		}
 
@@ -225,15 +255,111 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public bool? ZoneAffinityEnabled
+		public string ServiceType
 		{
 			get
 			{
-				return zoneAffinityEnabled;
+				return serviceType;
 			}
 			set	
 			{
-				zoneAffinityEnabled = value;
+				serviceType = value;
+			}
+		}
+
+		public string ServiceResourceType
+		{
+			get
+			{
+				return serviceResourceType;
+			}
+			set	
+			{
+				serviceResourceType = value;
+			}
+		}
+
+		public bool? PrivateServiceDomainEnabled
+		{
+			get
+			{
+				return privateServiceDomainEnabled;
+			}
+			set	
+			{
+				privateServiceDomainEnabled = value;
+			}
+		}
+
+		public string PrivateServiceDomain
+		{
+			get
+			{
+				return privateServiceDomain;
+			}
+			set	
+			{
+				privateServiceDomain = value;
+			}
+		}
+
+		public string PrivateServiceDomainVerifyStatus
+		{
+			get
+			{
+				return privateServiceDomainVerifyStatus;
+			}
+			set	
+			{
+				privateServiceDomainVerifyStatus = value;
+			}
+		}
+
+		public string PrivateServiceDomainBusinessStatus
+		{
+			get
+			{
+				return privateServiceDomainBusinessStatus;
+			}
+			set	
+			{
+				privateServiceDomainBusinessStatus = value;
+			}
+		}
+
+		public string PrivateServiceDomainVerifyName
+		{
+			get
+			{
+				return privateServiceDomainVerifyName;
+			}
+			set	
+			{
+				privateServiceDomainVerifyName = value;
+			}
+		}
+
+		public string PrivateServiceDomainVerifyValue
+		{
+			get
+			{
+				return privateServiceDomainVerifyValue;
+			}
+			set	
+			{
+				privateServiceDomainVerifyValue = value;
+			}
+		}
+
+		public string PrivateServiceName
+		{
+			get
+			{
+				return privateServiceName;
+			}
+			set	
+			{
+				privateServiceName = value;
 			}
 		}
 

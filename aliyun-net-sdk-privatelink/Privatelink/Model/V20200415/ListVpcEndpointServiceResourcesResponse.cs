@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Privatelink.Model.V20200415
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 	public class ListVpcEndpointServiceResourcesResponse : AcsResponse
 	{
 
-		private string maxResults;
-
 		private string nextToken;
 
 		private string requestId;
 
-		private List<ListVpcEndpointServiceResources_Resource> resources;
+		private string maxResults;
 
-		public string MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-			}
-		}
+		private List<ListVpcEndpointServiceResources_Resource> resources;
 
 		public string NextToken
 		{
@@ -69,6 +57,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
+		public string MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+			}
+		}
+
 		public List<ListVpcEndpointServiceResources_Resource> Resources
 		{
 			get
@@ -84,67 +84,25 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 		public class ListVpcEndpointServiceResources_Resource
 		{
 
-			private string zoneId;
-
-			private string resourceId;
-
-			private string resourceType;
-
-			private string ip;
-
 			private string vpcId;
 
 			private string vSwitchId;
 
+			private string resourceType;
+
+			private string zoneId;
+
+			private string ip;
+
+			private string resourceId;
+
 			private string regionId;
 
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
+			private long? relatedEndpointCount;
 
-			public string ResourceId
-			{
-				get
-				{
-					return resourceId;
-				}
-				set	
-				{
-					resourceId = value;
-				}
-			}
+			private bool? autoAllocatedEnabled;
 
-			public string ResourceType
-			{
-				get
-				{
-					return resourceType;
-				}
-				set	
-				{
-					resourceType = value;
-				}
-			}
-
-			public string Ip
-			{
-				get
-				{
-					return ip;
-				}
-				set	
-				{
-					ip = value;
-				}
-			}
+			private string statusInfo;
 
 			public string VpcId
 			{
@@ -170,6 +128,54 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				}
 			}
 
+			public string ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string Ip
+			{
+				get
+				{
+					return ip;
+				}
+				set	
+				{
+					ip = value;
+				}
+			}
+
+			public string ResourceId
+			{
+				get
+				{
+					return resourceId;
+				}
+				set	
+				{
+					resourceId = value;
+				}
+			}
+
 			public string RegionId
 			{
 				get
@@ -179,6 +185,42 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public long? RelatedEndpointCount
+			{
+				get
+				{
+					return relatedEndpointCount;
+				}
+				set	
+				{
+					relatedEndpointCount = value;
+				}
+			}
+
+			public bool? AutoAllocatedEnabled
+			{
+				get
+				{
+					return autoAllocatedEnabled;
+				}
+				set	
+				{
+					autoAllocatedEnabled = value;
+				}
+			}
+
+			public string StatusInfo
+			{
+				get
+				{
+					return statusInfo;
+				}
+				set	
+				{
+					statusInfo = value;
 				}
 			}
 		}

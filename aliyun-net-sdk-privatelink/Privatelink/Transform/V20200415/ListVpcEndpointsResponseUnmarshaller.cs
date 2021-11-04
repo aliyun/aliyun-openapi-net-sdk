@@ -31,28 +31,29 @@ namespace Aliyun.Acs.Privatelink.Transform.V20200415
 			ListVpcEndpointsResponse listVpcEndpointsResponse = new ListVpcEndpointsResponse();
 
 			listVpcEndpointsResponse.HttpResponse = _ctx.HttpResponse;
-			listVpcEndpointsResponse.RequestId = _ctx.StringValue("ListVpcEndpoints.RequestId");
 			listVpcEndpointsResponse.NextToken = _ctx.StringValue("ListVpcEndpoints.NextToken");
+			listVpcEndpointsResponse.RequestId = _ctx.StringValue("ListVpcEndpoints.RequestId");
 			listVpcEndpointsResponse.MaxResults = _ctx.StringValue("ListVpcEndpoints.MaxResults");
 
 			List<ListVpcEndpointsResponse.ListVpcEndpoints_Endpoint> listVpcEndpointsResponse_endpoints = new List<ListVpcEndpointsResponse.ListVpcEndpoints_Endpoint>();
 			for (int i = 0; i < _ctx.Length("ListVpcEndpoints.Endpoints.Length"); i++) {
 				ListVpcEndpointsResponse.ListVpcEndpoints_Endpoint endpoint = new ListVpcEndpointsResponse.ListVpcEndpoints_Endpoint();
-				endpoint.EndpointDomain = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].EndpointDomain");
-				endpoint.ResourceOwner = _ctx.BooleanValue("ListVpcEndpoints.Endpoints["+ i +"].ResourceOwner");
-				endpoint.CreateTime = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].CreateTime");
-				endpoint.EndpointBusinessStatus = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].EndpointBusinessStatus");
-				endpoint.EndpointDescription = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].EndpointDescription");
-				endpoint.ServiceId = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].ServiceId");
-				endpoint.EndpointStatus = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].EndpointStatus");
-				endpoint.EndpointName = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].EndpointName");
 				endpoint.VpcId = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].VpcId");
-				endpoint.ServiceName = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].ServiceName");
-				endpoint.EndpointId = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].EndpointId");
-				endpoint.Bandwidth = _ctx.LongValue("ListVpcEndpoints.Endpoints["+ i +"].Bandwidth");
-				endpoint.RegionId = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].RegionId");
-				endpoint.ConnectionStatus = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].ConnectionStatus");
+				endpoint.EndpointName = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].EndpointName");
+				endpoint.EndpointType = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].EndpointType");
+				endpoint.CreateTime = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].CreateTime");
+				endpoint.ServiceId = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].ServiceId");
 				endpoint.ZoneAffinityEnabled = _ctx.BooleanValue("ListVpcEndpoints.Endpoints["+ i +"].ZoneAffinityEnabled");
+				endpoint.EndpointDomain = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].EndpointDomain");
+				endpoint.EndpointStatus = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].EndpointStatus");
+				endpoint.RegionId = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].RegionId");
+				endpoint.ResourceOwner = _ctx.BooleanValue("ListVpcEndpoints.Endpoints["+ i +"].ResourceOwner");
+				endpoint.Bandwidth = _ctx.LongValue("ListVpcEndpoints.Endpoints["+ i +"].Bandwidth");
+				endpoint.ConnectionStatus = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].ConnectionStatus");
+				endpoint.EndpointDescription = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].EndpointDescription");
+				endpoint.EndpointId = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].EndpointId");
+				endpoint.EndpointBusinessStatus = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].EndpointBusinessStatus");
+				endpoint.ServiceName = _ctx.StringValue("ListVpcEndpoints.Endpoints["+ i +"].ServiceName");
 
 				listVpcEndpointsResponse_endpoints.Add(endpoint);
 			}

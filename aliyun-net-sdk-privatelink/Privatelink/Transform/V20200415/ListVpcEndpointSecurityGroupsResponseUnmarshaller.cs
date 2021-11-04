@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Privatelink.Transform.V20200415
 			ListVpcEndpointSecurityGroupsResponse listVpcEndpointSecurityGroupsResponse = new ListVpcEndpointSecurityGroupsResponse();
 
 			listVpcEndpointSecurityGroupsResponse.HttpResponse = _ctx.HttpResponse;
-			listVpcEndpointSecurityGroupsResponse.MaxResults = _ctx.StringValue("ListVpcEndpointSecurityGroups.MaxResults");
 			listVpcEndpointSecurityGroupsResponse.NextToken = _ctx.StringValue("ListVpcEndpointSecurityGroups.NextToken");
 			listVpcEndpointSecurityGroupsResponse.RequestId = _ctx.StringValue("ListVpcEndpointSecurityGroups.RequestId");
+			listVpcEndpointSecurityGroupsResponse.MaxResults = _ctx.StringValue("ListVpcEndpointSecurityGroups.MaxResults");
 
 			List<ListVpcEndpointSecurityGroupsResponse.ListVpcEndpointSecurityGroups_SecurityGroup> listVpcEndpointSecurityGroupsResponse_securityGroups = new List<ListVpcEndpointSecurityGroupsResponse.ListVpcEndpointSecurityGroups_SecurityGroup>();
 			for (int i = 0; i < _ctx.Length("ListVpcEndpointSecurityGroups.SecurityGroups.Length"); i++) {

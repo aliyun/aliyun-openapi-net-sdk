@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Privatelink.Model.V20200415
@@ -27,13 +27,13 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private string payer;
 
-		private string requestId;
-
 		private string endpointDomain;
 
-		private bool? resourceOwner;
+		private string requestId;
 
 		private string createTime;
+
+		private bool? resourceOwner;
 
 		private string endpointBusinessStatus;
 
@@ -43,15 +43,19 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private string endpointStatus;
 
+		private string vpcId;
+
 		private string endpointName;
 
-		private string vpcId;
+		private long? zonePrivateIpAddressCount;
+
+		private string endpointType;
 
 		private string serviceName;
 
-		private string endpointId;
-
 		private int? bandwidth;
+
+		private string endpointId;
 
 		private string regionId;
 
@@ -71,18 +75,6 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
 		public string EndpointDomain
 		{
 			get
@@ -95,15 +87,15 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public bool? ResourceOwner
+		public string RequestId
 		{
 			get
 			{
-				return resourceOwner;
+				return requestId;
 			}
 			set	
 			{
-				resourceOwner = value;
+				requestId = value;
 			}
 		}
 
@@ -116,6 +108,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			set	
 			{
 				createTime = value;
+			}
+		}
+
+		public bool? ResourceOwner
+		{
+			get
+			{
+				return resourceOwner;
+			}
+			set	
+			{
+				resourceOwner = value;
 			}
 		}
 
@@ -167,6 +171,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+			}
+		}
+
 		public string EndpointName
 		{
 			get
@@ -179,15 +195,27 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string VpcId
+		public long? ZonePrivateIpAddressCount
 		{
 			get
 			{
-				return vpcId;
+				return zonePrivateIpAddressCount;
 			}
 			set	
 			{
-				vpcId = value;
+				zonePrivateIpAddressCount = value;
+			}
+		}
+
+		public string EndpointType
+		{
+			get
+			{
+				return endpointType;
+			}
+			set	
+			{
+				endpointType = value;
 			}
 		}
 
@@ -203,18 +231,6 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string EndpointId
-		{
-			get
-			{
-				return endpointId;
-			}
-			set	
-			{
-				endpointId = value;
-			}
-		}
-
 		public int? Bandwidth
 		{
 			get
@@ -224,6 +240,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			set	
 			{
 				bandwidth = value;
+			}
+		}
+
+		public string EndpointId
+		{
+			get
+			{
+				return endpointId;
+			}
+			set	
+			{
+				endpointId = value;
 			}
 		}
 

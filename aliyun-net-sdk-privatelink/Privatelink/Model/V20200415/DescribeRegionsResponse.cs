@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Privatelink.Model.V20200415
@@ -56,23 +56,11 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 		public class DescribeRegions_Region
 		{
 
-			private string regionId;
-
 			private string localName;
 
 			private string regionEndpoint;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+			private string regionId;
 
 			public string LocalName
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				set	
 				{
 					regionEndpoint = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 		}

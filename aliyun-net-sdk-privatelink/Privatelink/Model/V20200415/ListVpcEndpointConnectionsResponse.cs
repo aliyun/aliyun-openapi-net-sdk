@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Privatelink.Model.V20200415
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 	public class ListVpcEndpointConnectionsResponse : AcsResponse
 	{
 
-		private string maxResults;
-
 		private string nextToken;
 
 		private string requestId;
 
-		private List<ListVpcEndpointConnections_Connection> connections;
+		private string maxResults;
 
-		public string MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-			}
-		}
+		private List<ListVpcEndpointConnections_Connection> connections;
 
 		public string NextToken
 		{
@@ -69,6 +57,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
+		public string MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+			}
+		}
+
 		public List<ListVpcEndpointConnections_Connection> Connections
 		{
 			get
@@ -84,93 +84,33 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 		public class ListVpcEndpointConnections_Connection
 		{
 
-			private string serviceId;
-
-			private string endpointId;
-
-			private long? endpointOwnerId;
-
-			private string connectionStatus;
-
-			private string endpointVpcId;
-
-			private int? bandwidth;
+			private bool? resourceOwner;
 
 			private string modifiedTime;
 
-			private bool? resourceOwner;
+			private int? bandwidth;
+
+			private long? endpointOwnerId;
+
+			private string serviceId;
+
+			private string connectionStatus;
+
+			private string endpointId;
+
+			private string endpointVpcId;
 
 			private List<ListVpcEndpointConnections_Zone> zones;
 
-			public string ServiceId
+			public bool? ResourceOwner
 			{
 				get
 				{
-					return serviceId;
+					return resourceOwner;
 				}
 				set	
 				{
-					serviceId = value;
-				}
-			}
-
-			public string EndpointId
-			{
-				get
-				{
-					return endpointId;
-				}
-				set	
-				{
-					endpointId = value;
-				}
-			}
-
-			public long? EndpointOwnerId
-			{
-				get
-				{
-					return endpointOwnerId;
-				}
-				set	
-				{
-					endpointOwnerId = value;
-				}
-			}
-
-			public string ConnectionStatus
-			{
-				get
-				{
-					return connectionStatus;
-				}
-				set	
-				{
-					connectionStatus = value;
-				}
-			}
-
-			public string EndpointVpcId
-			{
-				get
-				{
-					return endpointVpcId;
-				}
-				set	
-				{
-					endpointVpcId = value;
-				}
-			}
-
-			public int? Bandwidth
-			{
-				get
-				{
-					return bandwidth;
-				}
-				set	
-				{
-					bandwidth = value;
+					resourceOwner = value;
 				}
 			}
 
@@ -186,15 +126,75 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				}
 			}
 
-			public bool? ResourceOwner
+			public int? Bandwidth
 			{
 				get
 				{
-					return resourceOwner;
+					return bandwidth;
 				}
 				set	
 				{
-					resourceOwner = value;
+					bandwidth = value;
+				}
+			}
+
+			public long? EndpointOwnerId
+			{
+				get
+				{
+					return endpointOwnerId;
+				}
+				set	
+				{
+					endpointOwnerId = value;
+				}
+			}
+
+			public string ServiceId
+			{
+				get
+				{
+					return serviceId;
+				}
+				set	
+				{
+					serviceId = value;
+				}
+			}
+
+			public string ConnectionStatus
+			{
+				get
+				{
+					return connectionStatus;
+				}
+				set	
+				{
+					connectionStatus = value;
+				}
+			}
+
+			public string EndpointId
+			{
+				get
+				{
+					return endpointId;
+				}
+				set	
+				{
+					endpointId = value;
+				}
+			}
+
+			public string EndpointVpcId
+			{
+				get
+				{
+					return endpointVpcId;
+				}
+				set	
+				{
+					endpointVpcId = value;
 				}
 			}
 
@@ -213,15 +213,35 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			public class ListVpcEndpointConnections_Zone
 			{
 
+				private string vSwitchId;
+
 				private string zoneId;
+
+				private string resourceId;
 
 				private string eniId;
 
 				private string zoneDomain;
 
-				private string vSwitchId;
+				private string zoneStatus;
 
-				private string resourceId;
+				private string replacedResourceId;
+
+				private string replacedEniId;
+
+				private string statusInfo;
+
+				public string VSwitchId
+				{
+					get
+					{
+						return vSwitchId;
+					}
+					set	
+					{
+						vSwitchId = value;
+					}
+				}
 
 				public string ZoneId
 				{
@@ -232,6 +252,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 					set	
 					{
 						zoneId = value;
+					}
+				}
+
+				public string ResourceId
+				{
+					get
+					{
+						return resourceId;
+					}
+					set	
+					{
+						resourceId = value;
 					}
 				}
 
@@ -259,27 +291,51 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 					}
 				}
 
-				public string VSwitchId
+				public string ZoneStatus
 				{
 					get
 					{
-						return vSwitchId;
+						return zoneStatus;
 					}
 					set	
 					{
-						vSwitchId = value;
+						zoneStatus = value;
 					}
 				}
 
-				public string ResourceId
+				public string ReplacedResourceId
 				{
 					get
 					{
-						return resourceId;
+						return replacedResourceId;
 					}
 					set	
 					{
-						resourceId = value;
+						replacedResourceId = value;
+					}
+				}
+
+				public string ReplacedEniId
+				{
+					get
+					{
+						return replacedEniId;
+					}
+					set	
+					{
+						replacedEniId = value;
+					}
+				}
+
+				public string StatusInfo
+				{
+					get
+					{
+						return statusInfo;
+					}
+					set	
+					{
+						statusInfo = value;
 					}
 				}
 			}

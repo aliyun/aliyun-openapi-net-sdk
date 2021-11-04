@@ -45,7 +45,7 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private List<string> securityGroupIds = new List<string>(){ };
 
-		private List<Zone> zones = new List<Zone>(){ };
+		private List<string> zones = new List<string>(){ };
 
 		private string serviceName;
 
@@ -82,14 +82,10 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			set
 			{
 				securityGroupIds = value;
-				for (int i = 0; i < securityGroupIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SecurityGroupId." + (i + 1) , securityGroupIds[i]);
-				}
 			}
 		}
 
-		public List<Zone> Zones
+		public List<string> Zones
 		{
 			get
 			{
@@ -99,11 +95,14 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			set
 			{
 				zones = value;
-				for (int i = 0; i < zones.Count; i++)
+				if(zones != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Zone." + (i + 1) + ".VSwitchId", zones[i].VSwitchId);
-					DictionaryUtil.Add(QueryParameters,"Zone." + (i + 1) + ".ZoneId", zones[i].ZoneId);
-					DictionaryUtil.Add(QueryParameters,"Zone." + (i + 1) + ".ip", zones[i].Ip);
+					for (int depth1 = 0; depth1 < zones.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Zone." + (depth1 + 1), zones[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Zone." + (depth1 + 1), zones[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Zone." + (depth1 + 1), zones[depth1]);
+					}
 				}
 			}
 		}

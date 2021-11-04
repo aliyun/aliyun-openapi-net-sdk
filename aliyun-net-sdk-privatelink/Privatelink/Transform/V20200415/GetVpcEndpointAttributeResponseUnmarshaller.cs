@@ -32,19 +32,21 @@ namespace Aliyun.Acs.Privatelink.Transform.V20200415
 
 			getVpcEndpointAttributeResponse.HttpResponse = _ctx.HttpResponse;
 			getVpcEndpointAttributeResponse.Payer = _ctx.StringValue("GetVpcEndpointAttribute.Payer");
-			getVpcEndpointAttributeResponse.RequestId = _ctx.StringValue("GetVpcEndpointAttribute.RequestId");
 			getVpcEndpointAttributeResponse.EndpointDomain = _ctx.StringValue("GetVpcEndpointAttribute.EndpointDomain");
-			getVpcEndpointAttributeResponse.ResourceOwner = _ctx.BooleanValue("GetVpcEndpointAttribute.ResourceOwner");
+			getVpcEndpointAttributeResponse.RequestId = _ctx.StringValue("GetVpcEndpointAttribute.RequestId");
 			getVpcEndpointAttributeResponse.CreateTime = _ctx.StringValue("GetVpcEndpointAttribute.CreateTime");
+			getVpcEndpointAttributeResponse.ResourceOwner = _ctx.BooleanValue("GetVpcEndpointAttribute.ResourceOwner");
 			getVpcEndpointAttributeResponse.EndpointBusinessStatus = _ctx.StringValue("GetVpcEndpointAttribute.EndpointBusinessStatus");
 			getVpcEndpointAttributeResponse.EndpointDescription = _ctx.StringValue("GetVpcEndpointAttribute.EndpointDescription");
 			getVpcEndpointAttributeResponse.ServiceId = _ctx.StringValue("GetVpcEndpointAttribute.ServiceId");
 			getVpcEndpointAttributeResponse.EndpointStatus = _ctx.StringValue("GetVpcEndpointAttribute.EndpointStatus");
-			getVpcEndpointAttributeResponse.EndpointName = _ctx.StringValue("GetVpcEndpointAttribute.EndpointName");
 			getVpcEndpointAttributeResponse.VpcId = _ctx.StringValue("GetVpcEndpointAttribute.VpcId");
+			getVpcEndpointAttributeResponse.EndpointName = _ctx.StringValue("GetVpcEndpointAttribute.EndpointName");
+			getVpcEndpointAttributeResponse.ZonePrivateIpAddressCount = _ctx.LongValue("GetVpcEndpointAttribute.ZonePrivateIpAddressCount");
+			getVpcEndpointAttributeResponse.EndpointType = _ctx.StringValue("GetVpcEndpointAttribute.EndpointType");
 			getVpcEndpointAttributeResponse.ServiceName = _ctx.StringValue("GetVpcEndpointAttribute.ServiceName");
-			getVpcEndpointAttributeResponse.EndpointId = _ctx.StringValue("GetVpcEndpointAttribute.EndpointId");
 			getVpcEndpointAttributeResponse.Bandwidth = _ctx.IntegerValue("GetVpcEndpointAttribute.Bandwidth");
+			getVpcEndpointAttributeResponse.EndpointId = _ctx.StringValue("GetVpcEndpointAttribute.EndpointId");
 			getVpcEndpointAttributeResponse.RegionId = _ctx.StringValue("GetVpcEndpointAttribute.RegionId");
 			getVpcEndpointAttributeResponse.ConnectionStatus = _ctx.StringValue("GetVpcEndpointAttribute.ConnectionStatus");
 			getVpcEndpointAttributeResponse.ZoneAffinityEnabled = _ctx.BooleanValue("GetVpcEndpointAttribute.ZoneAffinityEnabled");

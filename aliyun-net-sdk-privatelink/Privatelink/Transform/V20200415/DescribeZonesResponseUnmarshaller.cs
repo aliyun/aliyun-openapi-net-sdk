@@ -36,8 +36,8 @@ namespace Aliyun.Acs.Privatelink.Transform.V20200415
 			List<DescribeZonesResponse.DescribeZones_Zone> describeZonesResponse_zones = new List<DescribeZonesResponse.DescribeZones_Zone>();
 			for (int i = 0; i < _ctx.Length("DescribeZones.Zones.Length"); i++) {
 				DescribeZonesResponse.DescribeZones_Zone zone = new DescribeZonesResponse.DescribeZones_Zone();
-				zone.ZoneId = _ctx.StringValue("DescribeZones.Zones["+ i +"].ZoneId");
 				zone.LocalName = _ctx.StringValue("DescribeZones.Zones["+ i +"].LocalName");
+				zone.ZoneId = _ctx.StringValue("DescribeZones.Zones["+ i +"].ZoneId");
 
 				describeZonesResponse_zones.Add(zone);
 			}

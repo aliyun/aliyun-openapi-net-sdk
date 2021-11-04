@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Privatelink.Model.V20200415
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 	public class ListVpcEndpointsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
+
+		private string requestId;
 
 		private string maxResults;
 
 		private List<ListVpcEndpoints_Endpoint> endpoints;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string NextToken
 		{
@@ -54,6 +42,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -84,117 +84,47 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 		public class ListVpcEndpoints_Endpoint
 		{
 
-			private string endpointDomain;
-
-			private bool? resourceOwner;
-
-			private string createTime;
-
-			private string endpointBusinessStatus;
-
-			private string endpointDescription;
-
-			private string serviceId;
-
-			private string endpointStatus;
+			private string vpcId;
 
 			private string endpointName;
 
-			private string vpcId;
+			private string endpointType;
 
-			private string serviceName;
+			private string createTime;
 
-			private string endpointId;
-
-			private long? bandwidth;
-
-			private string regionId;
-
-			private string connectionStatus;
+			private string serviceId;
 
 			private bool? zoneAffinityEnabled;
 
-			public string EndpointDomain
-			{
-				get
-				{
-					return endpointDomain;
-				}
-				set	
-				{
-					endpointDomain = value;
-				}
-			}
+			private string endpointDomain;
 
-			public bool? ResourceOwner
-			{
-				get
-				{
-					return resourceOwner;
-				}
-				set	
-				{
-					resourceOwner = value;
-				}
-			}
+			private string endpointStatus;
 
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
+			private string regionId;
 
-			public string EndpointBusinessStatus
-			{
-				get
-				{
-					return endpointBusinessStatus;
-				}
-				set	
-				{
-					endpointBusinessStatus = value;
-				}
-			}
+			private bool? resourceOwner;
 
-			public string EndpointDescription
-			{
-				get
-				{
-					return endpointDescription;
-				}
-				set	
-				{
-					endpointDescription = value;
-				}
-			}
+			private long? bandwidth;
 
-			public string ServiceId
-			{
-				get
-				{
-					return serviceId;
-				}
-				set	
-				{
-					serviceId = value;
-				}
-			}
+			private string connectionStatus;
 
-			public string EndpointStatus
+			private string endpointDescription;
+
+			private string endpointId;
+
+			private string endpointBusinessStatus;
+
+			private string serviceName;
+
+			public string VpcId
 			{
 				get
 				{
-					return endpointStatus;
+					return vpcId;
 				}
 				set	
 				{
-					endpointStatus = value;
+					vpcId = value;
 				}
 			}
 
@@ -210,51 +140,75 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				}
 			}
 
-			public string VpcId
+			public string EndpointType
 			{
 				get
 				{
-					return vpcId;
+					return endpointType;
 				}
 				set	
 				{
-					vpcId = value;
+					endpointType = value;
 				}
 			}
 
-			public string ServiceName
+			public string CreateTime
 			{
 				get
 				{
-					return serviceName;
+					return createTime;
 				}
 				set	
 				{
-					serviceName = value;
+					createTime = value;
 				}
 			}
 
-			public string EndpointId
+			public string ServiceId
 			{
 				get
 				{
-					return endpointId;
+					return serviceId;
 				}
 				set	
 				{
-					endpointId = value;
+					serviceId = value;
 				}
 			}
 
-			public long? Bandwidth
+			public bool? ZoneAffinityEnabled
 			{
 				get
 				{
-					return bandwidth;
+					return zoneAffinityEnabled;
 				}
 				set	
 				{
-					bandwidth = value;
+					zoneAffinityEnabled = value;
+				}
+			}
+
+			public string EndpointDomain
+			{
+				get
+				{
+					return endpointDomain;
+				}
+				set	
+				{
+					endpointDomain = value;
+				}
+			}
+
+			public string EndpointStatus
+			{
+				get
+				{
+					return endpointStatus;
+				}
+				set	
+				{
+					endpointStatus = value;
 				}
 			}
 
@@ -270,6 +224,30 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				}
 			}
 
+			public bool? ResourceOwner
+			{
+				get
+				{
+					return resourceOwner;
+				}
+				set	
+				{
+					resourceOwner = value;
+				}
+			}
+
+			public long? Bandwidth
+			{
+				get
+				{
+					return bandwidth;
+				}
+				set	
+				{
+					bandwidth = value;
+				}
+			}
+
 			public string ConnectionStatus
 			{
 				get
@@ -282,15 +260,51 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				}
 			}
 
-			public bool? ZoneAffinityEnabled
+			public string EndpointDescription
 			{
 				get
 				{
-					return zoneAffinityEnabled;
+					return endpointDescription;
 				}
 				set	
 				{
-					zoneAffinityEnabled = value;
+					endpointDescription = value;
+				}
+			}
+
+			public string EndpointId
+			{
+				get
+				{
+					return endpointId;
+				}
+				set	
+				{
+					endpointId = value;
+				}
+			}
+
+			public string EndpointBusinessStatus
+			{
+				get
+				{
+					return endpointBusinessStatus;
+				}
+				set	
+				{
+					endpointBusinessStatus = value;
+				}
+			}
+
+			public string ServiceName
+			{
+				get
+				{
+					return serviceName;
+				}
+				set	
+				{
+					serviceName = value;
 				}
 			}
 		}

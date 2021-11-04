@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Privatelink.Model.V20200415
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 	public class ListVpcEndpointServicesByEndUserResponse : AcsResponse
 	{
 
-		private string maxResults;
-
 		private string nextToken;
 
 		private string requestId;
 
-		private List<ListVpcEndpointServicesByEndUser_Service> services;
+		private string maxResults;
 
-		public string MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-			}
-		}
+		private List<ListVpcEndpointServicesByEndUser_Service> services;
 
 		public string NextToken
 		{
@@ -69,6 +57,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
+		public string MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+			}
+		}
+
 		public List<ListVpcEndpointServicesByEndUser_Service> Services
 		{
 			get
@@ -84,15 +84,29 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 		public class ListVpcEndpointServicesByEndUser_Service
 		{
 
+			private string payer;
+
 			private string serviceDomain;
 
 			private string serviceId;
 
 			private string serviceName;
 
-			private string payer;
+			private string serviceType;
 
 			private List<string> zones;
+
+			public string Payer
+			{
+				get
+				{
+					return payer;
+				}
+				set	
+				{
+					payer = value;
+				}
+			}
 
 			public string ServiceDomain
 			{
@@ -130,15 +144,15 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				}
 			}
 
-			public string Payer
+			public string ServiceType
 			{
 				get
 				{
-					return payer;
+					return serviceType;
 				}
 				set	
 				{
-					payer = value;
+					serviceType = value;
 				}
 			}
 

@@ -31,17 +31,18 @@ namespace Aliyun.Acs.Privatelink.Transform.V20200415
 			ListVpcEndpointServicesByEndUserResponse listVpcEndpointServicesByEndUserResponse = new ListVpcEndpointServicesByEndUserResponse();
 
 			listVpcEndpointServicesByEndUserResponse.HttpResponse = _ctx.HttpResponse;
-			listVpcEndpointServicesByEndUserResponse.MaxResults = _ctx.StringValue("ListVpcEndpointServicesByEndUser.MaxResults");
 			listVpcEndpointServicesByEndUserResponse.NextToken = _ctx.StringValue("ListVpcEndpointServicesByEndUser.NextToken");
 			listVpcEndpointServicesByEndUserResponse.RequestId = _ctx.StringValue("ListVpcEndpointServicesByEndUser.RequestId");
+			listVpcEndpointServicesByEndUserResponse.MaxResults = _ctx.StringValue("ListVpcEndpointServicesByEndUser.MaxResults");
 
 			List<ListVpcEndpointServicesByEndUserResponse.ListVpcEndpointServicesByEndUser_Service> listVpcEndpointServicesByEndUserResponse_services = new List<ListVpcEndpointServicesByEndUserResponse.ListVpcEndpointServicesByEndUser_Service>();
 			for (int i = 0; i < _ctx.Length("ListVpcEndpointServicesByEndUser.Services.Length"); i++) {
 				ListVpcEndpointServicesByEndUserResponse.ListVpcEndpointServicesByEndUser_Service service = new ListVpcEndpointServicesByEndUserResponse.ListVpcEndpointServicesByEndUser_Service();
+				service.Payer = _ctx.StringValue("ListVpcEndpointServicesByEndUser.Services["+ i +"].Payer");
 				service.ServiceDomain = _ctx.StringValue("ListVpcEndpointServicesByEndUser.Services["+ i +"].ServiceDomain");
 				service.ServiceId = _ctx.StringValue("ListVpcEndpointServicesByEndUser.Services["+ i +"].ServiceId");
 				service.ServiceName = _ctx.StringValue("ListVpcEndpointServicesByEndUser.Services["+ i +"].ServiceName");
-				service.Payer = _ctx.StringValue("ListVpcEndpointServicesByEndUser.Services["+ i +"].Payer");
+				service.ServiceType = _ctx.StringValue("ListVpcEndpointServicesByEndUser.Services["+ i +"].ServiceType");
 
 				List<string> service_zones = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListVpcEndpointServicesByEndUser.Services["+ i +"].Zones.Length"); j++) {

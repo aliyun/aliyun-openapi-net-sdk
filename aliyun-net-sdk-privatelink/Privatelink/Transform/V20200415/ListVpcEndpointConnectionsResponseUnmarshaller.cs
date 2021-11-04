@@ -31,30 +31,34 @@ namespace Aliyun.Acs.Privatelink.Transform.V20200415
 			ListVpcEndpointConnectionsResponse listVpcEndpointConnectionsResponse = new ListVpcEndpointConnectionsResponse();
 
 			listVpcEndpointConnectionsResponse.HttpResponse = _ctx.HttpResponse;
-			listVpcEndpointConnectionsResponse.MaxResults = _ctx.StringValue("ListVpcEndpointConnections.MaxResults");
 			listVpcEndpointConnectionsResponse.NextToken = _ctx.StringValue("ListVpcEndpointConnections.NextToken");
 			listVpcEndpointConnectionsResponse.RequestId = _ctx.StringValue("ListVpcEndpointConnections.RequestId");
+			listVpcEndpointConnectionsResponse.MaxResults = _ctx.StringValue("ListVpcEndpointConnections.MaxResults");
 
 			List<ListVpcEndpointConnectionsResponse.ListVpcEndpointConnections_Connection> listVpcEndpointConnectionsResponse_connections = new List<ListVpcEndpointConnectionsResponse.ListVpcEndpointConnections_Connection>();
 			for (int i = 0; i < _ctx.Length("ListVpcEndpointConnections.Connections.Length"); i++) {
 				ListVpcEndpointConnectionsResponse.ListVpcEndpointConnections_Connection connection = new ListVpcEndpointConnectionsResponse.ListVpcEndpointConnections_Connection();
-				connection.ServiceId = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].ServiceId");
-				connection.EndpointId = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].EndpointId");
-				connection.EndpointOwnerId = _ctx.LongValue("ListVpcEndpointConnections.Connections["+ i +"].EndpointOwnerId");
-				connection.ConnectionStatus = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].ConnectionStatus");
-				connection.EndpointVpcId = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].EndpointVpcId");
-				connection.Bandwidth = _ctx.IntegerValue("ListVpcEndpointConnections.Connections["+ i +"].Bandwidth");
-				connection.ModifiedTime = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].ModifiedTime");
 				connection.ResourceOwner = _ctx.BooleanValue("ListVpcEndpointConnections.Connections["+ i +"].ResourceOwner");
+				connection.ModifiedTime = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].ModifiedTime");
+				connection.Bandwidth = _ctx.IntegerValue("ListVpcEndpointConnections.Connections["+ i +"].Bandwidth");
+				connection.EndpointOwnerId = _ctx.LongValue("ListVpcEndpointConnections.Connections["+ i +"].EndpointOwnerId");
+				connection.ServiceId = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].ServiceId");
+				connection.ConnectionStatus = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].ConnectionStatus");
+				connection.EndpointId = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].EndpointId");
+				connection.EndpointVpcId = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].EndpointVpcId");
 
 				List<ListVpcEndpointConnectionsResponse.ListVpcEndpointConnections_Connection.ListVpcEndpointConnections_Zone> connection_zones = new List<ListVpcEndpointConnectionsResponse.ListVpcEndpointConnections_Connection.ListVpcEndpointConnections_Zone>();
 				for (int j = 0; j < _ctx.Length("ListVpcEndpointConnections.Connections["+ i +"].Zones.Length"); j++) {
 					ListVpcEndpointConnectionsResponse.ListVpcEndpointConnections_Connection.ListVpcEndpointConnections_Zone zone = new ListVpcEndpointConnectionsResponse.ListVpcEndpointConnections_Connection.ListVpcEndpointConnections_Zone();
+					zone.VSwitchId = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].Zones["+ j +"].VSwitchId");
 					zone.ZoneId = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].Zones["+ j +"].ZoneId");
+					zone.ResourceId = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].Zones["+ j +"].ResourceId");
 					zone.EniId = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].Zones["+ j +"].EniId");
 					zone.ZoneDomain = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].Zones["+ j +"].ZoneDomain");
-					zone.VSwitchId = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].Zones["+ j +"].VSwitchId");
-					zone.ResourceId = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].Zones["+ j +"].ResourceId");
+					zone.ZoneStatus = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].Zones["+ j +"].ZoneStatus");
+					zone.ReplacedResourceId = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].Zones["+ j +"].ReplacedResourceId");
+					zone.ReplacedEniId = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].Zones["+ j +"].ReplacedEniId");
+					zone.StatusInfo = _ctx.StringValue("ListVpcEndpointConnections.Connections["+ i +"].Zones["+ j +"].StatusInfo");
 
 					connection_zones.Add(zone);
 				}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Privatelink.Model.V20200415
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 	public class ListVpcEndpointZonesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
+
+		private string requestId;
 
 		private string maxResults;
 
 		private List<ListVpcEndpointZones_Zone> zones;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public string NextToken
 		{
@@ -54,6 +42,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -84,57 +84,21 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 		public class ListVpcEndpointZones_Zone
 		{
 
-			private string eniId;
-
-			private string zoneId;
-
-			private string serviceStatus;
-
 			private string vSwitchId;
 
 			private string eniIp;
 
 			private string zoneStatus;
 
-			private string regionId;
+			private string zoneId;
+
+			private string serviceStatus;
+
+			private string eniId;
 
 			private string zoneDomain;
 
-			public string EniId
-			{
-				get
-				{
-					return eniId;
-				}
-				set	
-				{
-					eniId = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public string ServiceStatus
-			{
-				get
-				{
-					return serviceStatus;
-				}
-				set	
-				{
-					serviceStatus = value;
-				}
-			}
+			private string regionId;
 
 			public string VSwitchId
 			{
@@ -172,15 +136,39 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				}
 			}
 
-			public string RegionId
+			public string ZoneId
 			{
 				get
 				{
-					return regionId;
+					return zoneId;
 				}
 				set	
 				{
-					regionId = value;
+					zoneId = value;
+				}
+			}
+
+			public string ServiceStatus
+			{
+				get
+				{
+					return serviceStatus;
+				}
+				set	
+				{
+					serviceStatus = value;
+				}
+			}
+
+			public string EniId
+			{
+				get
+				{
+					return eniId;
+				}
+				set	
+				{
+					eniId = value;
 				}
 			}
 
@@ -193,6 +181,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				set	
 				{
 					zoneDomain = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 		}

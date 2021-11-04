@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Privatelink.Transform.V20200415
 			ListVpcEndpointServiceUsersResponse listVpcEndpointServiceUsersResponse = new ListVpcEndpointServiceUsersResponse();
 
 			listVpcEndpointServiceUsersResponse.HttpResponse = _ctx.HttpResponse;
-			listVpcEndpointServiceUsersResponse.MaxResults = _ctx.StringValue("ListVpcEndpointServiceUsers.MaxResults");
 			listVpcEndpointServiceUsersResponse.NextToken = _ctx.StringValue("ListVpcEndpointServiceUsers.NextToken");
 			listVpcEndpointServiceUsersResponse.RequestId = _ctx.StringValue("ListVpcEndpointServiceUsers.RequestId");
+			listVpcEndpointServiceUsersResponse.MaxResults = _ctx.StringValue("ListVpcEndpointServiceUsers.MaxResults");
 
 			List<ListVpcEndpointServiceUsersResponse.ListVpcEndpointServiceUsers_User> listVpcEndpointServiceUsersResponse_users = new List<ListVpcEndpointServiceUsersResponse.ListVpcEndpointServiceUsers_User>();
 			for (int i = 0; i < _ctx.Length("ListVpcEndpointServiceUsers.Users.Length"); i++) {

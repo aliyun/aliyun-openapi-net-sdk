@@ -51,7 +51,7 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private bool? dryRun;
 
-		private List<Resource> resources = new List<Resource>(){ };
+		private List<string> resources = new List<string>(){ };
 
 		private string serviceDescription;
 
@@ -120,7 +120,7 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public List<Resource> Resources
+		public List<string> Resources
 		{
 			get
 			{
@@ -130,10 +130,13 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			set
 			{
 				resources = value;
-				for (int i = 0; i < resources.Count; i++)
+				if(resources != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Resource." + (i + 1) + ".ResourceType", resources[i].ResourceType);
-					DictionaryUtil.Add(QueryParameters,"Resource." + (i + 1) + ".ResourceId", resources[i].ResourceId);
+					for (int depth1 = 0; depth1 < resources.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Resource." + (depth1 + 1), resources[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Resource." + (depth1 + 1), resources[depth1]);
+					}
 				}
 			}
 		}

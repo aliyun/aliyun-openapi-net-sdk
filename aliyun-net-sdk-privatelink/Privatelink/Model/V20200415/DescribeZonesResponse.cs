@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Privatelink.Model.V20200415
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 		public class DescribeZones_Zone
 		{
 
-			private string zoneId;
-
 			private string localName;
 
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
+			private string zoneId;
 
 			public string LocalName
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				set	
 				{
 					localName = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Privatelink.Model.V20200415
@@ -31,19 +31,19 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private string serviceName;
 
-		private string serviceDescription;
-
 		private string serviceStatus;
+
+		private string serviceDescription;
 
 		private string createTime;
 
-		private bool? zoneAffinityEnabled;
-
 		private string serviceDomain;
 
-		private string serviceId;
+		private bool? zoneAffinityEnabled;
 
 		private bool? autoAcceptEnabled;
+
+		private string serviceId;
 
 		public string ServiceBusinessStatus
 		{
@@ -81,18 +81,6 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string ServiceDescription
-		{
-			get
-			{
-				return serviceDescription;
-			}
-			set	
-			{
-				serviceDescription = value;
-			}
-		}
-
 		public string ServiceStatus
 		{
 			get
@@ -102,6 +90,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			set	
 			{
 				serviceStatus = value;
+			}
+		}
+
+		public string ServiceDescription
+		{
+			get
+			{
+				return serviceDescription;
+			}
+			set	
+			{
+				serviceDescription = value;
 			}
 		}
 
@@ -117,18 +117,6 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public bool? ZoneAffinityEnabled
-		{
-			get
-			{
-				return zoneAffinityEnabled;
-			}
-			set	
-			{
-				zoneAffinityEnabled = value;
-			}
-		}
-
 		public string ServiceDomain
 		{
 			get
@@ -141,15 +129,15 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string ServiceId
+		public bool? ZoneAffinityEnabled
 		{
 			get
 			{
-				return serviceId;
+				return zoneAffinityEnabled;
 			}
 			set	
 			{
-				serviceId = value;
+				zoneAffinityEnabled = value;
 			}
 		}
 
@@ -162,6 +150,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			set	
 			{
 				autoAcceptEnabled = value;
+			}
+		}
+
+		public string ServiceId
+		{
+			get
+			{
+				return serviceId;
+			}
+			set	
+			{
+				serviceId = value;
 			}
 		}
 	}
