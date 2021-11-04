@@ -115,6 +115,8 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string envType;
 
+			private string alias;
+
 			private List<string> ownerIdList;
 
 			private List<string> ownerNameList;
@@ -194,6 +196,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					envType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Alias")]
+			public string Alias
+			{
+				get
+				{
+					return alias;
+				}
+				set	
+				{
+					alias = value;
 				}
 			}
 

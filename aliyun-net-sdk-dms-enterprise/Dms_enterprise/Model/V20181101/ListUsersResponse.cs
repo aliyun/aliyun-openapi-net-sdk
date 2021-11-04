@@ -140,6 +140,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string uid;
 
+			private string email;
+
+			private string dingRobot;
+
+			private string webhook;
+
+			private string signatureMethod;
+
+			private string notificationMode;
+
 			private List<string> roleIdList;
 
 			private List<string> roleNameList;
@@ -284,6 +294,71 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					uid = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Email")]
+			public string Email
+			{
+				get
+				{
+					return email;
+				}
+				set	
+				{
+					email = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DingRobot")]
+			public string DingRobot
+			{
+				get
+				{
+					return dingRobot;
+				}
+				set	
+				{
+					dingRobot = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Webhook")]
+			public string Webhook
+			{
+				get
+				{
+					return webhook;
+				}
+				set	
+				{
+					webhook = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SignatureMethod")]
+			public string SignatureMethod
+			{
+				get
+				{
+					return signatureMethod;
+				}
+				set	
+				{
+					signatureMethod = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "NotificationMode")]
+			public string NotificationMode
+			{
+				get
+				{
+					return notificationMode;
+				}
+				set	
+				{
+					notificationMode = value;
 				}
 			}
 

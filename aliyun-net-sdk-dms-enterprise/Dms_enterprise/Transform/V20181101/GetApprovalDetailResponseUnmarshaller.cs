@@ -38,6 +38,7 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 
 			GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail approvalDetail = new GetApprovalDetailResponse.GetApprovalDetail_ApprovalDetail();
 			approvalDetail.Description = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.Description");
+			approvalDetail.CreateTime = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.CreateTime");
 			approvalDetail.OrderType = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.OrderType");
 			approvalDetail.Title = _ctx.StringValue("GetApprovalDetail.ApprovalDetail.Title");
 			approvalDetail.AuditId = _ctx.LongValue("GetApprovalDetail.ApprovalDetail.AuditId");

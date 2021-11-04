@@ -48,6 +48,11 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 			user.CurExecuteCount = _ctx.LongValue("GetUser.User.CurExecuteCount");
 			user.Mobile = _ctx.StringValue("GetUser.User.Mobile");
 			user.Uid = _ctx.StringValue("GetUser.User.Uid");
+			user.Email = _ctx.StringValue("GetUser.User.Email");
+			user.DingRobot = _ctx.StringValue("GetUser.User.DingRobot");
+			user.Webhook = _ctx.StringValue("GetUser.User.Webhook");
+			user.SignatureMethod = _ctx.StringValue("GetUser.User.SignatureMethod");
+			user.NotificationMode = _ctx.StringValue("GetUser.User.NotificationMode");
 
 			List<string> user_roleIdList = new List<string>();
 			for (int i = 0; i < _ctx.Length("GetUser.User.RoleIdList.Length"); i++) {

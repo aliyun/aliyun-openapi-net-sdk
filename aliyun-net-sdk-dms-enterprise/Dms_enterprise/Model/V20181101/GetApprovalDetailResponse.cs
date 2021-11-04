@@ -105,6 +105,8 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string description;
 
+			private string createTime;
+
 			private string orderType;
 
 			private string title;
@@ -131,6 +133,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					description = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreateTime")]
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
 				}
 			}
 
