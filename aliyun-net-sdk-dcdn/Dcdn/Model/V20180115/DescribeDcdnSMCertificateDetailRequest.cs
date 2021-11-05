@@ -28,10 +28,10 @@ using Aliyun.Acs.dcdn.Transform.V20180115;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class DescribeDcdnUserResourcePackageRequest : RpcAcsRequest<DescribeDcdnUserResourcePackageResponse>
+    public class DescribeDcdnSMCertificateDetailRequest : RpcAcsRequest<DescribeDcdnSMCertificateDetailResponse>
     {
-        public DescribeDcdnUserResourcePackageRequest()
-            : base("dcdn", "2018-01-15", "DescribeDcdnUserResourcePackage")
+        public DescribeDcdnSMCertificateDetailRequest()
+            : base("dcdn", "2018-01-15", "DescribeDcdnSMCertificateDetail")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,7 +45,7 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 
 		private string securityToken;
 
-		private string status;
+		private string certIdentifier;
 
 		public long? OwnerId
 		{
@@ -73,22 +73,22 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string Status
+		public string CertIdentifier
 		{
 			get
 			{
-				return status;
+				return certIdentifier;
 			}
 			set	
 			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
+				certIdentifier = value;
+				DictionaryUtil.Add(QueryParameters, "CertIdentifier", value);
 			}
 		}
 
-        public override DescribeDcdnUserResourcePackageResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDcdnSMCertificateDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDcdnUserResourcePackageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDcdnSMCertificateDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

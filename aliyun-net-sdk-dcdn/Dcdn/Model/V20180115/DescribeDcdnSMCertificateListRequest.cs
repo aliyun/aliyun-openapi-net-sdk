@@ -28,10 +28,10 @@ using Aliyun.Acs.dcdn.Transform.V20180115;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class DescribeDcdnUserResourcePackageRequest : RpcAcsRequest<DescribeDcdnUserResourcePackageResponse>
+    public class DescribeDcdnSMCertificateListRequest : RpcAcsRequest<DescribeDcdnSMCertificateListResponse>
     {
-        public DescribeDcdnUserResourcePackageRequest()
-            : base("dcdn", "2018-01-15", "DescribeDcdnUserResourcePackage")
+        public DescribeDcdnSMCertificateListRequest()
+            : base("dcdn", "2018-01-15", "DescribeDcdnSMCertificateList")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,11 +41,24 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			Method = MethodType.POST;
         }
 
+		private string domainName;
+
 		private long? ownerId;
 
 		private string securityToken;
 
-		private string status;
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
 
 		public long? OwnerId
 		{
@@ -73,22 +86,14 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string Status
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
-			}
+			return false;
 		}
 
-        public override DescribeDcdnUserResourcePackageResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDcdnSMCertificateListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDcdnUserResourcePackageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDcdnSMCertificateListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

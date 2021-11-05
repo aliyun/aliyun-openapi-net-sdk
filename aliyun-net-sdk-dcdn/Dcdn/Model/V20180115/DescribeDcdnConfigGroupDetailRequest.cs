@@ -28,10 +28,10 @@ using Aliyun.Acs.dcdn.Transform.V20180115;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class DescribeDcdnUserResourcePackageRequest : RpcAcsRequest<DescribeDcdnUserResourcePackageResponse>
+    public class DescribeDcdnConfigGroupDetailRequest : RpcAcsRequest<DescribeDcdnConfigGroupDetailResponse>
     {
-        public DescribeDcdnUserResourcePackageRequest()
-            : base("dcdn", "2018-01-15", "DescribeDcdnUserResourcePackage")
+        public DescribeDcdnConfigGroupDetailRequest()
+            : base("dcdn", "2018-01-15", "DescribeDcdnConfigGroupDetail")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,11 +41,24 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			Method = MethodType.POST;
         }
 
+		private string configGroupName;
+
 		private long? ownerId;
 
-		private string securityToken;
+		private string configGroupId;
 
-		private string status;
+		public string ConfigGroupName
+		{
+			get
+			{
+				return configGroupName;
+			}
+			set	
+			{
+				configGroupName = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigGroupName", value);
+			}
+		}
 
 		public long? OwnerId
 		{
@@ -60,35 +73,22 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string SecurityToken
+		public string ConfigGroupId
 		{
 			get
 			{
-				return securityToken;
+				return configGroupId;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				configGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigGroupId", value);
 			}
 		}
 
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
-			}
-		}
-
-        public override DescribeDcdnUserResourcePackageResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDcdnConfigGroupDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDcdnUserResourcePackageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDcdnConfigGroupDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

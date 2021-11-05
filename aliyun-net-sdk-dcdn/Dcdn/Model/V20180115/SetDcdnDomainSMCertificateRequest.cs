@@ -28,10 +28,10 @@ using Aliyun.Acs.dcdn.Transform.V20180115;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class DescribeDcdnUserResourcePackageRequest : RpcAcsRequest<DescribeDcdnUserResourcePackageResponse>
+    public class SetDcdnDomainSMCertificateRequest : RpcAcsRequest<SetDcdnDomainSMCertificateResponse>
     {
-        public DescribeDcdnUserResourcePackageRequest()
-            : base("dcdn", "2018-01-15", "DescribeDcdnUserResourcePackage")
+        public SetDcdnDomainSMCertificateRequest()
+            : base("dcdn", "2018-01-15", "SetDcdnDomainSMCertificate")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,11 +41,26 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			Method = MethodType.POST;
         }
 
+		private string domainName;
+
 		private long? ownerId;
 
 		private string securityToken;
 
-		private string status;
+		private string certIdentifier;
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
 
 		public long? OwnerId
 		{
@@ -73,22 +88,22 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string Status
+		public string CertIdentifier
 		{
 			get
 			{
-				return status;
+				return certIdentifier;
 			}
 			set	
 			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
+				certIdentifier = value;
+				DictionaryUtil.Add(QueryParameters, "CertIdentifier", value);
 			}
 		}
 
-        public override DescribeDcdnUserResourcePackageResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SetDcdnDomainSMCertificateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDcdnUserResourcePackageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetDcdnDomainSMCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
