@@ -49,6 +49,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 
 			QueryJobResponse.QueryJob_Data.QueryJob_RolloutConfig rolloutConfig = new QueryJobResponse.QueryJob_Data.QueryJob_RolloutConfig();
 			rolloutConfig.MaximumPerMinute = _ctx.IntegerValue("QueryJob.Data.RolloutConfig.MaximumPerMinute");
+			rolloutConfig.MessageQoS = _ctx.StringValue("QueryJob.Data.RolloutConfig.MessageQoS");
 			data.RolloutConfig = rolloutConfig;
 
 			QueryJobResponse.QueryJob_Data.QueryJob_TimeoutConfig timeoutConfig = new QueryJobResponse.QueryJob_Data.QueryJob_TimeoutConfig();

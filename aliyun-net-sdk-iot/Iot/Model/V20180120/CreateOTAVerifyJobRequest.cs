@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string iotInstanceId;
 
+		private string downloadProtocol;
+
 		private List<Tag> tags = new List<Tag>(){ };
 
 		private string firmwareId;
@@ -105,6 +107,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public string DownloadProtocol
+		{
+			get
+			{
+				return downloadProtocol;
+			}
+			set	
+			{
+				downloadProtocol = value;
+				DictionaryUtil.Add(QueryParameters, "DownloadProtocol", value);
 			}
 		}
 

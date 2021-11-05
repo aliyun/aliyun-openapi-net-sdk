@@ -285,6 +285,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 				private int? maximumPerMinute;
 
+				private string messageQoS;
+
 				public int? MaximumPerMinute
 				{
 					get
@@ -294,6 +296,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					set	
 					{
 						maximumPerMinute = value;
+					}
+				}
+
+				public string MessageQoS
+				{
+					get
+					{
+						return messageQoS;
+					}
+					set	
+					{
+						messageQoS = value;
 					}
 				}
 			}
