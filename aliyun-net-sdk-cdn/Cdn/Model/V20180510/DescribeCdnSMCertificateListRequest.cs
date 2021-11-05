@@ -28,10 +28,10 @@ using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class DescribeCdnUserResourcePackageRequest : RpcAcsRequest<DescribeCdnUserResourcePackageResponse>
+    public class DescribeCdnSMCertificateListRequest : RpcAcsRequest<DescribeCdnSMCertificateListResponse>
     {
-        public DescribeCdnUserResourcePackageRequest()
-            : base("Cdn", "2018-05-10", "DescribeCdnUserResourcePackage")
+        public DescribeCdnSMCertificateListRequest()
+            : base("Cdn", "2018-05-10", "DescribeCdnSMCertificateList")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,11 +41,24 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			Method = MethodType.POST;
         }
 
+		private string domainName;
+
 		private long? ownerId;
 
 		private string securityToken;
 
-		private string status;
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
 
 		public long? OwnerId
 		{
@@ -73,22 +86,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
-			}
-		}
-
-        public override DescribeCdnUserResourcePackageResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeCdnSMCertificateListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCdnUserResourcePackageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCdnSMCertificateListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -1,3 +1,6 @@
+2021-11-05 Version: 3.6.7
+- Add SetCdnDomainSMCertificate.
+
 2021-11-05 Version: 7.30.0
 - Update OTA API, including CreateOTAVerifyJob.
 
