@@ -27,25 +27,57 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class UpdateDescriptionRequest : RoaAcsRequest<UpdateDescriptionResponse>
+    public class UpdateApmRequest : RoaAcsRequest<UpdateApmResponse>
     {
-        public UpdateDescriptionRequest()
-            : base("elasticsearch", "2017-06-13", "UpdateDescription", "elasticsearch", "openAPI")
+        public UpdateApmRequest()
+            : base("elasticsearch", "2017-06-13", "UpdateApm", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/instances/[InstanceId]/description";
-			Method = MethodType.POST;
+			UriPattern = "/openapi/apm/[instanceId]";
+			Method = MethodType.PUT;
         }
+
+		private string outputES;
+
+		private string outputESPassword;
 
 		private string instanceId;
 
-		private string clientToken;
+		private string yml;
 
-		private string body;
+		private string outputESUserName;
+
+		private string token;
+
+		public string OutputES
+		{
+			get
+			{
+				return outputES;
+			}
+			set	
+			{
+				outputES = value;
+				DictionaryUtil.Add(QueryParameters, "outputES", value);
+			}
+		}
+
+		public string OutputESPassword
+		{
+			get
+			{
+				return outputESPassword;
+			}
+			set	
+			{
+				outputESPassword = value;
+				DictionaryUtil.Add(QueryParameters, "outputESPassword", value);
+			}
+		}
 
 		public string InstanceId
 		{
@@ -56,33 +88,46 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			set	
 			{
 				instanceId = value;
-				DictionaryUtil.Add(PathParameters, "InstanceId", value);
+				DictionaryUtil.Add(PathParameters, "instanceId", value);
 			}
 		}
 
-		public string ClientToken
+		public string Yml
 		{
 			get
 			{
-				return clientToken;
+				return yml;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "clientToken", value);
+				yml = value;
+				DictionaryUtil.Add(QueryParameters, "yml", value);
 			}
 		}
 
-		public string Body
+		public string OutputESUserName
 		{
 			get
 			{
-				return body;
+				return outputESUserName;
 			}
 			set	
 			{
-				body = value;
-				DictionaryUtil.Add(BodyParameters, "body", value);
+				outputESUserName = value;
+				DictionaryUtil.Add(QueryParameters, "outputESUserName", value);
+			}
+		}
+
+		public string Token
+		{
+			get
+			{
+				return token;
+			}
+			set	
+			{
+				token = value;
+				DictionaryUtil.Add(QueryParameters, "token", value);
 			}
 		}
 
@@ -91,9 +136,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			return false;
 		}
 
-        public override UpdateDescriptionResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateApmResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateDescriptionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateApmResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

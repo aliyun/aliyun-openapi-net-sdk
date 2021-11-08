@@ -16,16 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
+using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.elasticsearch
-{
-    public class Endpoint
-    {
-        public static Dictionary<string, string> endpointMap = new Dictionary<string, string>() 
-        {};
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.elasticsearch.Model.V20170613;
 
-        public static string endpointRegionalType = "regional";
+namespace Aliyun.Acs.elasticsearch.Transform.V20170613
+{
+    public class UpdateApmResponseUnmarshaller
+    {
+        public static UpdateApmResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			UpdateApmResponse updateApmResponse = new UpdateApmResponse();
+
+			updateApmResponse.HttpResponse = _ctx.HttpResponse;
+			updateApmResponse.RequestId = _ctx.StringValue("UpdateApm.requestId");
+        
+			return updateApmResponse;
+        }
     }
 }

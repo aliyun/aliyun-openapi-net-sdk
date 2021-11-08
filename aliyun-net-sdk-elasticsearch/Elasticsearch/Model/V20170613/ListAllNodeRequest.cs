@@ -43,6 +43,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string instanceId;
 
+		private bool? extended;
+
 		public string InstanceId
 		{
 			get
@@ -53,6 +55,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				instanceId = value;
 				DictionaryUtil.Add(PathParameters, "InstanceId", value);
+			}
+		}
+
+		public bool? Extended
+		{
+			get
+			{
+				return extended;
+			}
+			set	
+			{
+				extended = value;
+				DictionaryUtil.Add(QueryParameters, "extended", value.ToString());
 			}
 		}
 

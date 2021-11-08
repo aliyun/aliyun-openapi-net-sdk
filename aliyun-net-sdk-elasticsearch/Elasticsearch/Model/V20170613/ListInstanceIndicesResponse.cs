@@ -70,17 +70,69 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListInstanceIndices_ResultItem
 		{
 
+			private string isManaged;
+
+			private string createTime;
+
+			private long? size;
+
+			private string managedStatus;
+
 			private string name;
 
 			private string health;
 
-			private long? size;
+			private string phase;
 
-			private string createTime;
+			private string ilmExplain;
 
-			private string isManaged;
+			public string IsManaged
+			{
+				get
+				{
+					return isManaged;
+				}
+				set	
+				{
+					isManaged = value;
+				}
+			}
 
-			private string managedStatus;
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public long? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
+				}
+			}
+
+			public string ManagedStatus
+			{
+				get
+				{
+					return managedStatus;
+				}
+				set	
+				{
+					managedStatus = value;
+				}
+			}
 
 			public string Name
 			{
@@ -106,51 +158,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public long? Size
+			public string Phase
 			{
 				get
 				{
-					return size;
+					return phase;
 				}
 				set	
 				{
-					size = value;
+					phase = value;
 				}
 			}
 
-			public string CreateTime
+			public string IlmExplain
 			{
 				get
 				{
-					return createTime;
+					return ilmExplain;
 				}
 				set	
 				{
-					createTime = value;
-				}
-			}
-
-			public string IsManaged
-			{
-				get
-				{
-					return isManaged;
-				}
-				set	
-				{
-					isManaged = value;
-				}
-			}
-
-			public string ManagedStatus
-			{
-				get
-				{
-					return managedStatus;
-				}
-				set	
-				{
-					managedStatus = value;
+					ilmExplain = value;
 				}
 			}
 		}
@@ -158,9 +186,25 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListInstanceIndices_Headers
 		{
 
+			private long? xManagedStorageSize;
+
 			private int? xManagedCount;
 
-			private long? xManagedStorageSize;
+			private long? xOSSStorageSize;
+
+			private int? xOSSCount;
+
+			public long? XManagedStorageSize
+			{
+				get
+				{
+					return xManagedStorageSize;
+				}
+				set	
+				{
+					xManagedStorageSize = value;
+				}
+			}
 
 			public int? XManagedCount
 			{
@@ -174,15 +218,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public long? XManagedStorageSize
+			public long? XOSSStorageSize
 			{
 				get
 				{
-					return xManagedStorageSize;
+					return xOSSStorageSize;
 				}
 				set	
 				{
-					xManagedStorageSize = value;
+					xOSSStorageSize = value;
+				}
+			}
+
+			public int? XOSSCount
+			{
+				get
+				{
+					return xOSSCount;
+				}
+				set	
+				{
+					xOSSCount = value;
 				}
 			}
 		}

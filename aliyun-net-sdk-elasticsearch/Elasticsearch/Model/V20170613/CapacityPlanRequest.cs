@@ -27,73 +27,28 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class UpdateDescriptionRequest : RoaAcsRequest<UpdateDescriptionResponse>
+    public class CapacityPlanRequest : RoaAcsRequest<CapacityPlanResponse>
     {
-        public UpdateDescriptionRequest()
-            : base("elasticsearch", "2017-06-13", "UpdateDescription", "elasticsearch", "openAPI")
+        public CapacityPlanRequest()
+            : base("elasticsearch", "2017-06-13", "CapacityPlan", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/instances/[InstanceId]/description";
+			UriPattern = "/openapi/assist/actions/capacity-plan";
 			Method = MethodType.POST;
         }
-
-		private string instanceId;
-
-		private string clientToken;
-
-		private string body;
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(PathParameters, "InstanceId", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "clientToken", value);
-			}
-		}
-
-		public string Body
-		{
-			get
-			{
-				return body;
-			}
-			set	
-			{
-				body = value;
-				DictionaryUtil.Add(BodyParameters, "body", value);
-			}
-		}
 
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override UpdateDescriptionResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CapacityPlanResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateDescriptionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CapacityPlanResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

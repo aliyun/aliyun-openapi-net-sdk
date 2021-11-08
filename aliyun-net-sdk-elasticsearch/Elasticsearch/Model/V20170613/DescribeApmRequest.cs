@@ -27,25 +27,21 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class UpdateDescriptionRequest : RoaAcsRequest<UpdateDescriptionResponse>
+    public class DescribeApmRequest : RoaAcsRequest<DescribeApmResponse>
     {
-        public UpdateDescriptionRequest()
-            : base("elasticsearch", "2017-06-13", "UpdateDescription", "elasticsearch", "openAPI")
+        public DescribeApmRequest()
+            : base("elasticsearch", "2017-06-13", "DescribeApm", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/instances/[InstanceId]/description";
-			Method = MethodType.POST;
+			UriPattern = "/openapi/apm/[instanceId]";
+			Method = MethodType.GET;
         }
 
 		private string instanceId;
-
-		private string clientToken;
-
-		private string body;
 
 		public string InstanceId
 		{
@@ -56,33 +52,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			set	
 			{
 				instanceId = value;
-				DictionaryUtil.Add(PathParameters, "InstanceId", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "clientToken", value);
-			}
-		}
-
-		public string Body
-		{
-			get
-			{
-				return body;
-			}
-			set	
-			{
-				body = value;
-				DictionaryUtil.Add(BodyParameters, "body", value);
+				DictionaryUtil.Add(PathParameters, "instanceId", value);
 			}
 		}
 
@@ -91,9 +61,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			return false;
 		}
 
-        public override UpdateDescriptionResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeApmResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateDescriptionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeApmResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

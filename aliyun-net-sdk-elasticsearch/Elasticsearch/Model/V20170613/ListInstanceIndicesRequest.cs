@@ -47,7 +47,13 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private bool? isManaged;
 
+		private int? size;
+
 		private string name;
+
+		private int? page;
+
+		private bool? isOpenstore;
 
 		public bool? All
 		{
@@ -88,6 +94,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
+		public int? Size
+		{
+			get
+			{
+				return size;
+			}
+			set	
+			{
+				size = value;
+				DictionaryUtil.Add(QueryParameters, "size", value.ToString());
+			}
+		}
+
 		public string Name
 		{
 			get
@@ -98,6 +117,32 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "name", value);
+			}
+		}
+
+		public int? Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
+				DictionaryUtil.Add(QueryParameters, "page", value.ToString());
+			}
+		}
+
+		public bool? IsOpenstore
+		{
+			get
+			{
+				return isOpenstore;
+			}
+			set	
+			{
+				isOpenstore = value;
+				DictionaryUtil.Add(QueryParameters, "isOpenstore", value.ToString());
 			}
 		}
 

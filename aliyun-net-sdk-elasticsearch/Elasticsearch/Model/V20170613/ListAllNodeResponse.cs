@@ -56,45 +56,35 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 		public class ListAllNode_ResultItem
 		{
 
-			private string host;
-
-			private int? port;
+			private string heapPercent;
 
 			private string zoneId;
 
-			private string nodeType;
+			private string hostName;
 
 			private string cpuPercent;
 
-			private string loadOneM;
+			private string host;
 
-			private string heapPercent;
-
-			private string health;
+			private string nodeType;
 
 			private string diskUsedPercent;
 
-			public string Host
-			{
-				get
-				{
-					return host;
-				}
-				set	
-				{
-					host = value;
-				}
-			}
+			private int? port;
 
-			public int? Port
+			private string loadOneM;
+
+			private string health;
+
+			public string HeapPercent
 			{
 				get
 				{
-					return port;
+					return heapPercent;
 				}
 				set	
 				{
-					port = value;
+					heapPercent = value;
 				}
 			}
 
@@ -110,15 +100,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string NodeType
+			public string HostName
 			{
 				get
 				{
-					return nodeType;
+					return hostName;
 				}
 				set	
 				{
-					nodeType = value;
+					hostName = value;
 				}
 			}
 
@@ -134,39 +124,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string LoadOneM
+			public string Host
 			{
 				get
 				{
-					return loadOneM;
+					return host;
 				}
 				set	
 				{
-					loadOneM = value;
+					host = value;
 				}
 			}
 
-			public string HeapPercent
+			public string NodeType
 			{
 				get
 				{
-					return heapPercent;
+					return nodeType;
 				}
 				set	
 				{
-					heapPercent = value;
-				}
-			}
-
-			public string Health
-			{
-				get
-				{
-					return health;
-				}
-				set	
-				{
-					health = value;
+					nodeType = value;
 				}
 			}
 
@@ -179,6 +157,42 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					diskUsedPercent = value;
+				}
+			}
+
+			public int? Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
+				}
+			}
+
+			public string LoadOneM
+			{
+				get
+				{
+					return loadOneM;
+				}
+				set	
+				{
+					loadOneM = value;
+				}
+			}
+
+			public string Health
+			{
+				get
+				{
+					return health;
+				}
+				set	
+				{
+					health = value;
 				}
 			}
 		}

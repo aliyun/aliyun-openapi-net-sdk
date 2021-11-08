@@ -34,19 +34,23 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			listInstanceIndicesResponse.RequestId = _ctx.StringValue("ListInstanceIndices.RequestId");
 
 			ListInstanceIndicesResponse.ListInstanceIndices_Headers headers = new ListInstanceIndicesResponse.ListInstanceIndices_Headers();
-			headers.XManagedCount = _ctx.IntegerValue("ListInstanceIndices.Headers.X-Managed-Count");
 			headers.XManagedStorageSize = _ctx.LongValue("ListInstanceIndices.Headers.X-Managed-StorageSize");
+			headers.XManagedCount = _ctx.IntegerValue("ListInstanceIndices.Headers.X-Managed-Count");
+			headers.XOSSStorageSize = _ctx.LongValue("ListInstanceIndices.Headers.X-OSS-StorageSize");
+			headers.XOSSCount = _ctx.IntegerValue("ListInstanceIndices.Headers.X-OSS-Count");
 			listInstanceIndicesResponse.Headers = headers;
 
 			List<ListInstanceIndicesResponse.ListInstanceIndices_ResultItem> listInstanceIndicesResponse_result = new List<ListInstanceIndicesResponse.ListInstanceIndices_ResultItem>();
 			for (int i = 0; i < _ctx.Length("ListInstanceIndices.Result.Length"); i++) {
 				ListInstanceIndicesResponse.ListInstanceIndices_ResultItem resultItem = new ListInstanceIndicesResponse.ListInstanceIndices_ResultItem();
+				resultItem.IsManaged = _ctx.StringValue("ListInstanceIndices.Result["+ i +"].isManaged");
+				resultItem.CreateTime = _ctx.StringValue("ListInstanceIndices.Result["+ i +"].createTime");
+				resultItem.Size = _ctx.LongValue("ListInstanceIndices.Result["+ i +"].size");
+				resultItem.ManagedStatus = _ctx.StringValue("ListInstanceIndices.Result["+ i +"].managedStatus");
 				resultItem.Name = _ctx.StringValue("ListInstanceIndices.Result["+ i +"].name");
 				resultItem.Health = _ctx.StringValue("ListInstanceIndices.Result["+ i +"].health");
-				resultItem.Size = _ctx.LongValue("ListInstanceIndices.Result["+ i +"].size");
-				resultItem.CreateTime = _ctx.StringValue("ListInstanceIndices.Result["+ i +"].createTime");
-				resultItem.IsManaged = _ctx.StringValue("ListInstanceIndices.Result["+ i +"].isManaged");
-				resultItem.ManagedStatus = _ctx.StringValue("ListInstanceIndices.Result["+ i +"].managedStatus");
+				resultItem.Phase = _ctx.StringValue("ListInstanceIndices.Result["+ i +"].phase");
+				resultItem.IlmExplain = _ctx.StringValue("ListInstanceIndices.Result["+ i +"].ilmExplain");
 
 				listInstanceIndicesResponse_result.Add(resultItem);
 			}
