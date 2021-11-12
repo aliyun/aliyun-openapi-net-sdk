@@ -25,27 +25,27 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 	public class DescribeMetaListResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string totalPageCount;
 
 		private string totalRecordCount;
 
-		private string totalPageCount;
-
 		private string pageSize;
+
+		private string requestId;
 
 		private string pageNumber;
 
 		private List<DescribeMetaList_MetaItem> items;
 
-		public string RequestId
+		public string TotalPageCount
 		{
 			get
 			{
-				return requestId;
+				return totalPageCount;
 			}
 			set	
 			{
-				requestId = value;
+				totalPageCount = value;
 			}
 		}
 
@@ -61,18 +61,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string TotalPageCount
-		{
-			get
-			{
-				return totalPageCount;
-			}
-			set	
-			{
-				totalPageCount = value;
-			}
-		}
-
 		public string PageSize
 		{
 			get
@@ -82,6 +70,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

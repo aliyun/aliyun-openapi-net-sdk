@@ -179,6 +179,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 				private string dbClusterDescription;
 
+				private bool? taskCancel;
+
 				public string Status
 				{
 					get
@@ -308,6 +310,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						dbClusterDescription = value;
+					}
+				}
+
+				public bool? TaskCancel
+				{
+					get
+					{
+						return taskCancel;
+					}
+					set	
+					{
+						taskCancel = value;
 					}
 				}
 			}

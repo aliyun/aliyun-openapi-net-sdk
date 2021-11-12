@@ -55,6 +55,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				timerInfosItem.OrderId = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].OrderId");
 				timerInfosItem.DbClusterStatus = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].DbClusterStatus");
 				timerInfosItem.DbClusterDescription = _ctx.StringValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].DbClusterDescription");
+				timerInfosItem.TaskCancel = _ctx.BooleanValue("DescribeScheduleTasks.Data.TimerInfos["+ i +"].TaskCancel");
 
 				data_timerInfos.Add(timerInfosItem);
 			}

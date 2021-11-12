@@ -31,10 +31,10 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			DescribeMetaListResponse describeMetaListResponse = new DescribeMetaListResponse();
 
 			describeMetaListResponse.HttpResponse = _ctx.HttpResponse;
-			describeMetaListResponse.RequestId = _ctx.StringValue("DescribeMetaList.RequestId");
-			describeMetaListResponse.TotalRecordCount = _ctx.StringValue("DescribeMetaList.TotalRecordCount");
 			describeMetaListResponse.TotalPageCount = _ctx.StringValue("DescribeMetaList.TotalPageCount");
+			describeMetaListResponse.TotalRecordCount = _ctx.StringValue("DescribeMetaList.TotalRecordCount");
 			describeMetaListResponse.PageSize = _ctx.StringValue("DescribeMetaList.PageSize");
+			describeMetaListResponse.RequestId = _ctx.StringValue("DescribeMetaList.RequestId");
 			describeMetaListResponse.PageNumber = _ctx.StringValue("DescribeMetaList.PageNumber");
 
 			List<DescribeMetaListResponse.DescribeMetaList_MetaItem> describeMetaListResponse_items = new List<DescribeMetaListResponse.DescribeMetaList_MetaItem>();
