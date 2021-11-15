@@ -46,6 +46,7 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 				instanceSpec.DefenseCount = _ctx.IntegerValue("DescribeInstanceSpecs.InstanceSpecs["+ i +"].DefenseCount");
 				instanceSpec.FunctionVersion = _ctx.StringValue("DescribeInstanceSpecs.InstanceSpecs["+ i +"].FunctionVersion");
 				instanceSpec.QpsLimit = _ctx.IntegerValue("DescribeInstanceSpecs.InstanceSpecs["+ i +"].QpsLimit");
+				instanceSpec.ElasticBw = _ctx.IntegerValue("DescribeInstanceSpecs.InstanceSpecs["+ i +"].ElasticBw");
 
 				describeInstanceSpecsResponse_instanceSpecs.Add(instanceSpec);
 			}

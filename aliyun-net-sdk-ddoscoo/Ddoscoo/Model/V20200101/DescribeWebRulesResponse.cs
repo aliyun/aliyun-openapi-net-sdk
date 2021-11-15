@@ -84,6 +84,8 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 			private bool? http2Enable;
 
+			private bool? ocspEnabled;
+
 			private bool? http2HttpsEnable;
 
 			private bool? https2HttpEnable;
@@ -193,6 +195,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					http2Enable = value;
+				}
+			}
+
+			public bool? OcspEnabled
+			{
+				get
+				{
+					return ocspEnabled;
+				}
+				set	
+				{
+					ocspEnabled = value;
 				}
 			}
 

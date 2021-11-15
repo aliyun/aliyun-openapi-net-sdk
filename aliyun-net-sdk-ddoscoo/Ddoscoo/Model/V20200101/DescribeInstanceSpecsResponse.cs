@@ -76,6 +76,8 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 			private int? qpsLimit;
 
+			private int? elasticBw;
+
 			public string InstanceId
 			{
 				get
@@ -193,6 +195,18 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 				set	
 				{
 					qpsLimit = value;
+				}
+			}
+
+			public int? ElasticBw
+			{
+				get
+				{
+					return elasticBw;
+				}
+				set	
+				{
+					elasticBw = value;
 				}
 			}
 		}

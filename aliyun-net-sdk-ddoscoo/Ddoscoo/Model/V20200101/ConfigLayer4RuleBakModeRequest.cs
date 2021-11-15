@@ -28,10 +28,10 @@ using Aliyun.Acs.ddoscoo.Transform.V20200101;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
 {
-    public class DescribeDDosAllEventListRequest : RpcAcsRequest<DescribeDDosAllEventListResponse>
+    public class ConfigLayer4RuleBakModeRequest : RpcAcsRequest<ConfigLayer4RuleBakModeResponse>
     {
-        public DescribeDDosAllEventListRequest()
-            : base("ddoscoo", "2020-01-01", "DescribeDDosAllEventList")
+        public ConfigLayer4RuleBakModeRequest()
+            : base("ddoscoo", "2020-01-01", "ConfigLayer4RuleBakMode")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,78 +41,33 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			Method = MethodType.POST;
         }
 
-		private long? startTime;
+		private string bakMode;
 
-		private int? pageNumber;
+		private string listeners;
 
-		private int? pageSize;
-
-		private long? endTime;
-
-		private string eventType;
-
-		public long? StartTime
+		public string BakMode
 		{
 			get
 			{
-				return startTime;
+				return bakMode;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+				bakMode = value;
+				DictionaryUtil.Add(QueryParameters, "BakMode", value);
 			}
 		}
 
-		public int? PageNumber
+		public string Listeners
 		{
 			get
 			{
-				return pageNumber;
+				return listeners;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public long? EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
-			}
-		}
-
-		public string EventType
-		{
-			get
-			{
-				return eventType;
-			}
-			set	
-			{
-				eventType = value;
-				DictionaryUtil.Add(QueryParameters, "EventType", value);
+				listeners = value;
+				DictionaryUtil.Add(QueryParameters, "Listeners", value);
 			}
 		}
 
@@ -121,9 +76,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			return false;
 		}
 
-        public override DescribeDDosAllEventListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ConfigLayer4RuleBakModeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDDosAllEventListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ConfigLayer4RuleBakModeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

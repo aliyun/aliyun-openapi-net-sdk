@@ -44,6 +44,8 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 				attackEvent.StartTime = _ctx.LongValue("DescribeDDosAllEventList.AttackEvents["+ i +"].StartTime");
 				attackEvent.EndTime = _ctx.LongValue("DescribeDDosAllEventList.AttackEvents["+ i +"].EndTime");
 				attackEvent.Mbps = _ctx.LongValue("DescribeDDosAllEventList.AttackEvents["+ i +"].Mbps");
+				attackEvent.Region = _ctx.StringValue("DescribeDDosAllEventList.AttackEvents["+ i +"].Region");
+				attackEvent.Area = _ctx.StringValue("DescribeDDosAllEventList.AttackEvents["+ i +"].Area");
 
 				describeDDosAllEventListResponse_attackEvents.Add(attackEvent);
 			}

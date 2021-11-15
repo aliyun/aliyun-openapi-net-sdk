@@ -22,14 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
 {
-	public class DescribeDDosAllEventListResponse : AcsResponse
+	public class DescribeSystemLogResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private long? total;
 
-		private List<DescribeDDosAllEventList_AttackEvent> attackEvents;
+		private List<DescribeSystemLog_SystemLogItem> systemLog;
 
 		public string RequestId
 		{
@@ -55,144 +55,130 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			}
 		}
 
-		public List<DescribeDDosAllEventList_AttackEvent> AttackEvents
+		public List<DescribeSystemLog_SystemLogItem> SystemLog
 		{
 			get
 			{
-				return attackEvents;
+				return systemLog;
 			}
 			set	
 			{
-				attackEvents = value;
+				systemLog = value;
 			}
 		}
 
-		public class DescribeDDosAllEventList_AttackEvent
+		public class DescribeSystemLog_SystemLogItem
 		{
 
-			private long? pps;
+			private long? gmtCreate;
 
-			private string eventType;
+			private long? gmtModified;
 
-			private string port;
+			private int? entityType;
 
-			private string ip;
+			private string entityObject;
 
-			private long? startTime;
+			private int? opAction;
 
-			private long? endTime;
+			private string opAccount;
 
-			private long? mbps;
+			private string opDesc;
 
-			private string region;
+			private int? status;
 
-			private string area;
-
-			public long? Pps
+			public long? GmtCreate
 			{
 				get
 				{
-					return pps;
+					return gmtCreate;
 				}
 				set	
 				{
-					pps = value;
+					gmtCreate = value;
 				}
 			}
 
-			public string EventType
+			public long? GmtModified
 			{
 				get
 				{
-					return eventType;
+					return gmtModified;
 				}
 				set	
 				{
-					eventType = value;
+					gmtModified = value;
 				}
 			}
 
-			public string Port
+			public int? EntityType
 			{
 				get
 				{
-					return port;
+					return entityType;
 				}
 				set	
 				{
-					port = value;
+					entityType = value;
 				}
 			}
 
-			public string Ip
+			public string EntityObject
 			{
 				get
 				{
-					return ip;
+					return entityObject;
 				}
 				set	
 				{
-					ip = value;
+					entityObject = value;
 				}
 			}
 
-			public long? StartTime
+			public int? OpAction
 			{
 				get
 				{
-					return startTime;
+					return opAction;
 				}
 				set	
 				{
-					startTime = value;
+					opAction = value;
 				}
 			}
 
-			public long? EndTime
+			public string OpAccount
 			{
 				get
 				{
-					return endTime;
+					return opAccount;
 				}
 				set	
 				{
-					endTime = value;
+					opAccount = value;
 				}
 			}
 
-			public long? Mbps
+			public string OpDesc
 			{
 				get
 				{
-					return mbps;
+					return opDesc;
 				}
 				set	
 				{
-					mbps = value;
+					opDesc = value;
 				}
 			}
 
-			public string Region
+			public int? Status
 			{
 				get
 				{
-					return region;
+					return status;
 				}
 				set	
 				{
-					region = value;
-				}
-			}
-
-			public string Area
-			{
-				get
-				{
-					return area;
-				}
-				set	
-				{
-					area = value;
+					status = value;
 				}
 			}
 		}

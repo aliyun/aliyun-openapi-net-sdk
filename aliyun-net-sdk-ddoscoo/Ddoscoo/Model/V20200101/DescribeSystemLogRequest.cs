@@ -28,10 +28,10 @@ using Aliyun.Acs.ddoscoo.Transform.V20200101;
 
 namespace Aliyun.Acs.ddoscoo.Model.V20200101
 {
-    public class DescribeDDosAllEventListRequest : RpcAcsRequest<DescribeDDosAllEventListResponse>
+    public class DescribeSystemLogRequest : RpcAcsRequest<DescribeSystemLogResponse>
     {
-        public DescribeDDosAllEventListRequest()
-            : base("ddoscoo", "2020-01-01", "DescribeDDosAllEventList")
+        public DescribeSystemLogRequest()
+            : base("ddoscoo", "2020-01-01", "DescribeSystemLog")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,7 +49,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 
 		private long? endTime;
 
-		private string eventType;
+		private string entityObject;
+
+		private int? entityType;
 
 		public long? StartTime
 		{
@@ -103,16 +105,29 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			}
 		}
 
-		public string EventType
+		public string EntityObject
 		{
 			get
 			{
-				return eventType;
+				return entityObject;
 			}
 			set	
 			{
-				eventType = value;
-				DictionaryUtil.Add(QueryParameters, "EventType", value);
+				entityObject = value;
+				DictionaryUtil.Add(QueryParameters, "EntityObject", value);
+			}
+		}
+
+		public int? EntityType
+		{
+			get
+			{
+				return entityType;
+			}
+			set	
+			{
+				entityType = value;
+				DictionaryUtil.Add(QueryParameters, "EntityType", value.ToString());
 			}
 		}
 
@@ -121,9 +136,9 @@ namespace Aliyun.Acs.ddoscoo.Model.V20200101
 			return false;
 		}
 
-        public override DescribeDDosAllEventListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeSystemLogResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDDosAllEventListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeSystemLogResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

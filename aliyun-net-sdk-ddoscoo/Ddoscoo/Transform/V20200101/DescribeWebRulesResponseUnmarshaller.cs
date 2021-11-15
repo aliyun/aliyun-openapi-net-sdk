@@ -44,6 +44,7 @@ namespace Aliyun.Acs.ddoscoo.Transform.V20200101
 				webRule.SslProtocols = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].SslProtocols");
 				webRule.SslCiphers = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].SslCiphers");
 				webRule.Http2Enable = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].Http2Enable");
+				webRule.OcspEnabled = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].OcspEnabled");
 				webRule.Http2HttpsEnable = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].Http2HttpsEnable");
 				webRule.Https2HttpEnable = _ctx.BooleanValue("DescribeWebRules.WebRules["+ i +"].Https2HttpEnable");
 				webRule.PolicyMode = _ctx.StringValue("DescribeWebRules.WebRules["+ i +"].PolicyMode");
