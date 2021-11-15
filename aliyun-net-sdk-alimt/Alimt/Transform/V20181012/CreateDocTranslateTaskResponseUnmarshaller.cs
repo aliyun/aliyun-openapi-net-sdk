@@ -31,9 +31,9 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 			CreateDocTranslateTaskResponse createDocTranslateTaskResponse = new CreateDocTranslateTaskResponse();
 
 			createDocTranslateTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createDocTranslateTaskResponse.Status = _ctx.StringValue("CreateDocTranslateTask.Status");
 			createDocTranslateTaskResponse.RequestId = _ctx.StringValue("CreateDocTranslateTask.RequestId");
 			createDocTranslateTaskResponse.TaskId = _ctx.StringValue("CreateDocTranslateTask.TaskId");
-			createDocTranslateTaskResponse.Status = _ctx.StringValue("CreateDocTranslateTask.Status");
         
 			return createDocTranslateTaskResponse;
         }

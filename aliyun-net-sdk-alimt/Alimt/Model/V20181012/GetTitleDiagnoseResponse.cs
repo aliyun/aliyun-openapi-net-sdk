@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 	public class GetTitleDiagnoseResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? code;
 
 		private string message;
 
-		private GetTitleDiagnose_Data data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private GetTitleDiagnose_Data data;
 
 		public int? Code
 		{
@@ -69,6 +57,18 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public GetTitleDiagnose_Data Data
 		{
 			get
@@ -84,85 +84,25 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 		public class GetTitleDiagnose_Data
 		{
 
-			private string containCoreClasses;
-
-			private string overLengthLimit;
-
-			private string wordSpelledCorrectError;
-
-			private string allUppercaseWords;
-
-			private string noFirstUppercaseList;
-
 			private string duplicateWords;
 
-			private string disableWords;
+			private string containCoreClasses;
 
 			private string wordCount;
 
-			private string totalScore;
-
 			private string languageQualityScore;
 
-			public string ContainCoreClasses
-			{
-				get
-				{
-					return containCoreClasses;
-				}
-				set	
-				{
-					containCoreClasses = value;
-				}
-			}
+			private string allUppercaseWords;
 
-			public string OverLengthLimit
-			{
-				get
-				{
-					return overLengthLimit;
-				}
-				set	
-				{
-					overLengthLimit = value;
-				}
-			}
+			private string overLengthLimit;
 
-			public string WordSpelledCorrectError
-			{
-				get
-				{
-					return wordSpelledCorrectError;
-				}
-				set	
-				{
-					wordSpelledCorrectError = value;
-				}
-			}
+			private string disableWords;
 
-			public string AllUppercaseWords
-			{
-				get
-				{
-					return allUppercaseWords;
-				}
-				set	
-				{
-					allUppercaseWords = value;
-				}
-			}
+			private string noFirstUppercaseList;
 
-			public string NoFirstUppercaseList
-			{
-				get
-				{
-					return noFirstUppercaseList;
-				}
-				set	
-				{
-					noFirstUppercaseList = value;
-				}
-			}
+			private string totalScore;
+
+			private string wordSpelledCorrectError;
 
 			public string DuplicateWords
 			{
@@ -176,15 +116,15 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 				}
 			}
 
-			public string DisableWords
+			public string ContainCoreClasses
 			{
 				get
 				{
-					return disableWords;
+					return containCoreClasses;
 				}
 				set	
 				{
-					disableWords = value;
+					containCoreClasses = value;
 				}
 			}
 
@@ -200,6 +140,66 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 				}
 			}
 
+			public string LanguageQualityScore
+			{
+				get
+				{
+					return languageQualityScore;
+				}
+				set	
+				{
+					languageQualityScore = value;
+				}
+			}
+
+			public string AllUppercaseWords
+			{
+				get
+				{
+					return allUppercaseWords;
+				}
+				set	
+				{
+					allUppercaseWords = value;
+				}
+			}
+
+			public string OverLengthLimit
+			{
+				get
+				{
+					return overLengthLimit;
+				}
+				set	
+				{
+					overLengthLimit = value;
+				}
+			}
+
+			public string DisableWords
+			{
+				get
+				{
+					return disableWords;
+				}
+				set	
+				{
+					disableWords = value;
+				}
+			}
+
+			public string NoFirstUppercaseList
+			{
+				get
+				{
+					return noFirstUppercaseList;
+				}
+				set	
+				{
+					noFirstUppercaseList = value;
+				}
+			}
+
 			public string TotalScore
 			{
 				get
@@ -212,15 +212,15 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 				}
 			}
 
-			public string LanguageQualityScore
+			public string WordSpelledCorrectError
 			{
 				get
 				{
-					return languageQualityScore;
+					return wordSpelledCorrectError;
 				}
 				set	
 				{
-					languageQualityScore = value;
+					wordSpelledCorrectError = value;
 				}
 			}
 		}

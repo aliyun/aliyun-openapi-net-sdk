@@ -24,22 +24,19 @@ using Aliyun.Acs.alimt.Model.V20181012;
 
 namespace Aliyun.Acs.alimt.Transform.V20181012
 {
-    public class GetTitleGenerateResponseUnmarshaller
+    public class GetTranslateReportResponseUnmarshaller
     {
-        public static GetTitleGenerateResponse Unmarshall(UnmarshallerContext _ctx)
+        public static GetTranslateReportResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetTitleGenerateResponse getTitleGenerateResponse = new GetTitleGenerateResponse();
+			GetTranslateReportResponse getTranslateReportResponse = new GetTranslateReportResponse();
 
-			getTitleGenerateResponse.HttpResponse = _ctx.HttpResponse;
-			getTitleGenerateResponse.Code = _ctx.IntegerValue("GetTitleGenerate.Code");
-			getTitleGenerateResponse.Message = _ctx.StringValue("GetTitleGenerate.Message");
-			getTitleGenerateResponse.RequestId = _ctx.StringValue("GetTitleGenerate.RequestId");
-
-			GetTitleGenerateResponse.GetTitleGenerate_Data data = new GetTitleGenerateResponse.GetTitleGenerate_Data();
-			data.Titles = _ctx.StringValue("GetTitleGenerate.Data.Titles");
-			getTitleGenerateResponse.Data = data;
+			getTranslateReportResponse.HttpResponse = _ctx.HttpResponse;
+			getTranslateReportResponse.Code = _ctx.IntegerValue("GetTranslateReport.Code");
+			getTranslateReportResponse.Message = _ctx.StringValue("GetTranslateReport.Message");
+			getTranslateReportResponse.Data = _ctx.StringValue("GetTranslateReport.Data");
+			getTranslateReportResponse.RequestId = _ctx.StringValue("GetTranslateReport.RequestId");
         
-			return getTitleGenerateResponse;
+			return getTranslateReportResponse;
         }
     }
 }

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 			CreateImageTranslateTaskResponse createImageTranslateTaskResponse = new CreateImageTranslateTaskResponse();
 
 			createImageTranslateTaskResponse.HttpResponse = _ctx.HttpResponse;
-			createImageTranslateTaskResponse.RequestId = _ctx.StringValue("CreateImageTranslateTask.RequestId");
 			createImageTranslateTaskResponse.Code = _ctx.IntegerValue("CreateImageTranslateTask.Code");
 			createImageTranslateTaskResponse.Message = _ctx.StringValue("CreateImageTranslateTask.Message");
+			createImageTranslateTaskResponse.RequestId = _ctx.StringValue("CreateImageTranslateTask.RequestId");
 
 			CreateImageTranslateTaskResponse.CreateImageTranslateTask_Data data = new CreateImageTranslateTaskResponse.CreateImageTranslateTask_Data();
 			data.TaskId = _ctx.StringValue("CreateImageTranslateTask.Data.TaskId");

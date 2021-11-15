@@ -31,9 +31,9 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 			GetTitleIntelligenceResponse getTitleIntelligenceResponse = new GetTitleIntelligenceResponse();
 
 			getTitleIntelligenceResponse.HttpResponse = _ctx.HttpResponse;
-			getTitleIntelligenceResponse.RequestId = _ctx.StringValue("GetTitleIntelligence.RequestId");
 			getTitleIntelligenceResponse.Code = _ctx.IntegerValue("GetTitleIntelligence.Code");
 			getTitleIntelligenceResponse.Message = _ctx.StringValue("GetTitleIntelligence.Message");
+			getTitleIntelligenceResponse.RequestId = _ctx.StringValue("GetTitleIntelligence.RequestId");
 
 			GetTitleIntelligenceResponse.GetTitleIntelligence_Data data = new GetTitleIntelligenceResponse.GetTitleIntelligence_Data();
 			data.Titles = _ctx.StringValue("GetTitleIntelligence.Data.Titles");

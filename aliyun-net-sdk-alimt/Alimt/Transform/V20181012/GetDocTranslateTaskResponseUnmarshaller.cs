@@ -31,13 +31,13 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 			GetDocTranslateTaskResponse getDocTranslateTaskResponse = new GetDocTranslateTaskResponse();
 
 			getDocTranslateTaskResponse.HttpResponse = _ctx.HttpResponse;
-			getDocTranslateTaskResponse.RequestId = _ctx.StringValue("GetDocTranslateTask.RequestId");
-			getDocTranslateTaskResponse.TaskId = _ctx.StringValue("GetDocTranslateTask.TaskId");
 			getDocTranslateTaskResponse.Status = _ctx.StringValue("GetDocTranslateTask.Status");
+			getDocTranslateTaskResponse.RequestId = _ctx.StringValue("GetDocTranslateTask.RequestId");
 			getDocTranslateTaskResponse.TranslateFileUrl = _ctx.StringValue("GetDocTranslateTask.TranslateFileUrl");
 			getDocTranslateTaskResponse.TranslateErrorCode = _ctx.StringValue("GetDocTranslateTask.TranslateErrorCode");
-			getDocTranslateTaskResponse.TranslateErrorMessage = _ctx.StringValue("GetDocTranslateTask.TranslateErrorMessage");
 			getDocTranslateTaskResponse.PageCount = _ctx.IntegerValue("GetDocTranslateTask.PageCount");
+			getDocTranslateTaskResponse.TaskId = _ctx.StringValue("GetDocTranslateTask.TaskId");
+			getDocTranslateTaskResponse.TranslateErrorMessage = _ctx.StringValue("GetDocTranslateTask.TranslateErrorMessage");
         
 			return getDocTranslateTaskResponse;
         }

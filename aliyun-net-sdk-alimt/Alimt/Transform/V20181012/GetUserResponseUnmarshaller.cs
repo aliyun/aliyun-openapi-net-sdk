@@ -24,22 +24,19 @@ using Aliyun.Acs.alimt.Model.V20181012;
 
 namespace Aliyun.Acs.alimt.Transform.V20181012
 {
-    public class GetTitleGenerateResponseUnmarshaller
+    public class GetUserResponseUnmarshaller
     {
-        public static GetTitleGenerateResponse Unmarshall(UnmarshallerContext _ctx)
+        public static GetUserResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetTitleGenerateResponse getTitleGenerateResponse = new GetTitleGenerateResponse();
+			GetUserResponse getUserResponse = new GetUserResponse();
 
-			getTitleGenerateResponse.HttpResponse = _ctx.HttpResponse;
-			getTitleGenerateResponse.Code = _ctx.IntegerValue("GetTitleGenerate.Code");
-			getTitleGenerateResponse.Message = _ctx.StringValue("GetTitleGenerate.Message");
-			getTitleGenerateResponse.RequestId = _ctx.StringValue("GetTitleGenerate.RequestId");
-
-			GetTitleGenerateResponse.GetTitleGenerate_Data data = new GetTitleGenerateResponse.GetTitleGenerate_Data();
-			data.Titles = _ctx.StringValue("GetTitleGenerate.Data.Titles");
-			getTitleGenerateResponse.Data = data;
+			getUserResponse.HttpResponse = _ctx.HttpResponse;
+			getUserResponse.Code = _ctx.IntegerValue("GetUser.Code");
+			getUserResponse.Message = _ctx.StringValue("GetUser.Message");
+			getUserResponse.Data = _ctx.StringValue("GetUser.Data");
+			getUserResponse.RequestId = _ctx.StringValue("GetUser.RequestId");
         
-			return getTitleGenerateResponse;
+			return getUserResponse;
         }
     }
 }

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 			GetImageDiagnoseResponse getImageDiagnoseResponse = new GetImageDiagnoseResponse();
 
 			getImageDiagnoseResponse.HttpResponse = _ctx.HttpResponse;
-			getImageDiagnoseResponse.RequestId = _ctx.StringValue("GetImageDiagnose.RequestId");
 			getImageDiagnoseResponse.Code = _ctx.IntegerValue("GetImageDiagnose.Code");
 			getImageDiagnoseResponse.Message = _ctx.StringValue("GetImageDiagnose.Message");
+			getImageDiagnoseResponse.RequestId = _ctx.StringValue("GetImageDiagnose.RequestId");
 
 			GetImageDiagnoseResponse.GetImageDiagnose_Data data = new GetImageDiagnoseResponse.GetImageDiagnose_Data();
 			data.Language = _ctx.StringValue("GetImageDiagnose.Data.Language");

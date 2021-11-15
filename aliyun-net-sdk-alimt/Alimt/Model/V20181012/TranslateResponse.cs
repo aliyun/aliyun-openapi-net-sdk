@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 	public class TranslateResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? code;
 
 		private string message;
 
-		private Translate_Data data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private Translate_Data data;
 
 		public int? Code
 		{
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

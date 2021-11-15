@@ -31,9 +31,9 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 			TranslateECommerceResponse translateECommerceResponse = new TranslateECommerceResponse();
 
 			translateECommerceResponse.HttpResponse = _ctx.HttpResponse;
-			translateECommerceResponse.RequestId = _ctx.StringValue("TranslateECommerce.RequestId");
 			translateECommerceResponse.Code = _ctx.IntegerValue("TranslateECommerce.Code");
 			translateECommerceResponse.Message = _ctx.StringValue("TranslateECommerce.Message");
+			translateECommerceResponse.RequestId = _ctx.StringValue("TranslateECommerce.RequestId");
 
 			TranslateECommerceResponse.TranslateECommerce_Data data = new TranslateECommerceResponse.TranslateECommerce_Data();
 			data.Translated = _ctx.StringValue("TranslateECommerce.Data.Translated");

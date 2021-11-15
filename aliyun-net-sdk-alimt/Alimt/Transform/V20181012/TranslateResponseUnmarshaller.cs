@@ -31,9 +31,9 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 			TranslateResponse translateResponse = new TranslateResponse();
 
 			translateResponse.HttpResponse = _ctx.HttpResponse;
-			translateResponse.RequestId = _ctx.StringValue("Translate.RequestId");
 			translateResponse.Code = _ctx.IntegerValue("Translate.Code");
 			translateResponse.Message = _ctx.StringValue("Translate.Message");
+			translateResponse.RequestId = _ctx.StringValue("Translate.RequestId");
 
 			TranslateResponse.Translate_Data data = new TranslateResponse.Translate_Data();
 			data.Translated = _ctx.StringValue("Translate.Data.Translated");

@@ -22,34 +22,16 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
 {
-	public class GetDocTranslateTaskResponse : AcsResponse
+	public class TranslateImageResponse : AcsResponse
 	{
-
-		private string status;
 
 		private string requestId;
 
-		private string translateFileUrl;
+		private int? code;
 
-		private string translateErrorCode;
+		private string message;
 
-		private int? pageCount;
-
-		private string taskId;
-
-		private string translateErrorMessage;
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
+		private TranslateImage_Data data;
 
 		public string RequestId
 		{
@@ -63,63 +45,85 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			}
 		}
 
-		public string TranslateFileUrl
+		public int? Code
 		{
 			get
 			{
-				return translateFileUrl;
+				return code;
 			}
 			set	
 			{
-				translateFileUrl = value;
+				code = value;
 			}
 		}
 
-		public string TranslateErrorCode
+		public string Message
 		{
 			get
 			{
-				return translateErrorCode;
+				return message;
 			}
 			set	
 			{
-				translateErrorCode = value;
+				message = value;
 			}
 		}
 
-		public int? PageCount
+		public TranslateImage_Data Data
 		{
 			get
 			{
-				return pageCount;
+				return data;
 			}
 			set	
 			{
-				pageCount = value;
+				data = value;
 			}
 		}
 
-		public string TaskId
+		public class TranslateImage_Data
 		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-			}
-		}
 
-		public string TranslateErrorMessage
-		{
-			get
+			private string inPaintingUrl;
+
+			private string templateJson;
+
+			private string finalImageUrl;
+
+			public string InPaintingUrl
 			{
-				return translateErrorMessage;
+				get
+				{
+					return inPaintingUrl;
+				}
+				set	
+				{
+					inPaintingUrl = value;
+				}
 			}
-			set	
+
+			public string TemplateJson
 			{
-				translateErrorMessage = value;
+				get
+				{
+					return templateJson;
+				}
+				set	
+				{
+					templateJson = value;
+				}
+			}
+
+			public string FinalImageUrl
+			{
+				get
+				{
+					return finalImageUrl;
+				}
+				set	
+				{
+					finalImageUrl = value;
+				}
 			}
 		}
 	}

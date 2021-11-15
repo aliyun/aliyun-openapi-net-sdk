@@ -22,22 +22,50 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
 {
-	public class GetDetectLanguageResponse : AcsResponse
+	public class GetTranslateReportResponse : AcsResponse
 	{
 
-		private string detectedLanguage;
+		private int? code;
+
+		private string message;
+
+		private string data;
 
 		private string requestId;
 
-		public string DetectedLanguage
+		public int? Code
 		{
 			get
 			{
-				return detectedLanguage;
+				return code;
 			}
 			set	
 			{
-				detectedLanguage = value;
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public string Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
 			}
 		}
 

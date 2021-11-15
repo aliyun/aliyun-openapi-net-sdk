@@ -24,22 +24,24 @@ using Aliyun.Acs.alimt.Model.V20181012;
 
 namespace Aliyun.Acs.alimt.Transform.V20181012
 {
-    public class GetTitleGenerateResponseUnmarshaller
+    public class TranslateImageResponseUnmarshaller
     {
-        public static GetTitleGenerateResponse Unmarshall(UnmarshallerContext _ctx)
+        public static TranslateImageResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetTitleGenerateResponse getTitleGenerateResponse = new GetTitleGenerateResponse();
+			TranslateImageResponse translateImageResponse = new TranslateImageResponse();
 
-			getTitleGenerateResponse.HttpResponse = _ctx.HttpResponse;
-			getTitleGenerateResponse.Code = _ctx.IntegerValue("GetTitleGenerate.Code");
-			getTitleGenerateResponse.Message = _ctx.StringValue("GetTitleGenerate.Message");
-			getTitleGenerateResponse.RequestId = _ctx.StringValue("GetTitleGenerate.RequestId");
+			translateImageResponse.HttpResponse = _ctx.HttpResponse;
+			translateImageResponse.RequestId = _ctx.StringValue("TranslateImage.RequestId");
+			translateImageResponse.Code = _ctx.IntegerValue("TranslateImage.Code");
+			translateImageResponse.Message = _ctx.StringValue("TranslateImage.Message");
 
-			GetTitleGenerateResponse.GetTitleGenerate_Data data = new GetTitleGenerateResponse.GetTitleGenerate_Data();
-			data.Titles = _ctx.StringValue("GetTitleGenerate.Data.Titles");
-			getTitleGenerateResponse.Data = data;
+			TranslateImageResponse.TranslateImage_Data data = new TranslateImageResponse.TranslateImage_Data();
+			data.InPaintingUrl = _ctx.StringValue("TranslateImage.Data.InPaintingUrl");
+			data.TemplateJson = _ctx.StringValue("TranslateImage.Data.TemplateJson");
+			data.FinalImageUrl = _ctx.StringValue("TranslateImage.Data.FinalImageUrl");
+			translateImageResponse.Data = data;
         
-			return getTitleGenerateResponse;
+			return translateImageResponse;
         }
     }
 }

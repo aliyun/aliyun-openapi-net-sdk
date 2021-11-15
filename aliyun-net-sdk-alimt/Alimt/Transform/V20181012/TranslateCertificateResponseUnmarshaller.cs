@@ -38,10 +38,10 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 			List<TranslateCertificateResponse.TranslateCertificate_Data.TranslateCertificate_CertificateTranslateItemDTO> data_translatedValues = new List<TranslateCertificateResponse.TranslateCertificate_Data.TranslateCertificate_CertificateTranslateItemDTO>();
 			for (int i = 0; i < _ctx.Length("TranslateCertificate.Data.TranslatedValues.Length"); i++) {
 				TranslateCertificateResponse.TranslateCertificate_Data.TranslateCertificate_CertificateTranslateItemDTO certificateTranslateItemDTO = new TranslateCertificateResponse.TranslateCertificate_Data.TranslateCertificate_CertificateTranslateItemDTO();
+				certificateTranslateItemDTO.KeyTranslation = _ctx.StringValue("TranslateCertificate.Data.TranslatedValues["+ i +"].KeyTranslation");
 				certificateTranslateItemDTO.Key = _ctx.StringValue("TranslateCertificate.Data.TranslatedValues["+ i +"].Key");
 				certificateTranslateItemDTO._Value = _ctx.StringValue("TranslateCertificate.Data.TranslatedValues["+ i +"].Value");
 				certificateTranslateItemDTO.ValueTranslation = _ctx.StringValue("TranslateCertificate.Data.TranslatedValues["+ i +"].ValueTranslation");
-				certificateTranslateItemDTO.KeyTranslation = _ctx.StringValue("TranslateCertificate.Data.TranslatedValues["+ i +"].KeyTranslation");
 
 				data_translatedValues.Add(certificateTranslateItemDTO);
 			}

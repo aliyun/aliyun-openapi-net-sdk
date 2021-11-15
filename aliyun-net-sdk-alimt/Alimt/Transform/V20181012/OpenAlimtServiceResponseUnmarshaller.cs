@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 			OpenAlimtServiceResponse openAlimtServiceResponse = new OpenAlimtServiceResponse();
 
 			openAlimtServiceResponse.HttpResponse = _ctx.HttpResponse;
-			openAlimtServiceResponse.RequestId = _ctx.StringValue("OpenAlimtService.RequestId");
 			openAlimtServiceResponse.OrderId = _ctx.StringValue("OpenAlimtService.OrderId");
+			openAlimtServiceResponse.RequestId = _ctx.StringValue("OpenAlimtService.RequestId");
         
 			return openAlimtServiceResponse;
         }

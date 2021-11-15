@@ -31,21 +31,21 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 			GetTitleDiagnoseResponse getTitleDiagnoseResponse = new GetTitleDiagnoseResponse();
 
 			getTitleDiagnoseResponse.HttpResponse = _ctx.HttpResponse;
-			getTitleDiagnoseResponse.RequestId = _ctx.StringValue("GetTitleDiagnose.RequestId");
 			getTitleDiagnoseResponse.Code = _ctx.IntegerValue("GetTitleDiagnose.Code");
 			getTitleDiagnoseResponse.Message = _ctx.StringValue("GetTitleDiagnose.Message");
+			getTitleDiagnoseResponse.RequestId = _ctx.StringValue("GetTitleDiagnose.RequestId");
 
 			GetTitleDiagnoseResponse.GetTitleDiagnose_Data data = new GetTitleDiagnoseResponse.GetTitleDiagnose_Data();
-			data.ContainCoreClasses = _ctx.StringValue("GetTitleDiagnose.Data.ContainCoreClasses");
-			data.OverLengthLimit = _ctx.StringValue("GetTitleDiagnose.Data.OverLengthLimit");
-			data.WordSpelledCorrectError = _ctx.StringValue("GetTitleDiagnose.Data.WordSpelledCorrectError");
-			data.AllUppercaseWords = _ctx.StringValue("GetTitleDiagnose.Data.AllUppercaseWords");
-			data.NoFirstUppercaseList = _ctx.StringValue("GetTitleDiagnose.Data.NoFirstUppercaseList");
 			data.DuplicateWords = _ctx.StringValue("GetTitleDiagnose.Data.DuplicateWords");
-			data.DisableWords = _ctx.StringValue("GetTitleDiagnose.Data.DisableWords");
+			data.ContainCoreClasses = _ctx.StringValue("GetTitleDiagnose.Data.ContainCoreClasses");
 			data.WordCount = _ctx.StringValue("GetTitleDiagnose.Data.WordCount");
-			data.TotalScore = _ctx.StringValue("GetTitleDiagnose.Data.TotalScore");
 			data.LanguageQualityScore = _ctx.StringValue("GetTitleDiagnose.Data.LanguageQualityScore");
+			data.AllUppercaseWords = _ctx.StringValue("GetTitleDiagnose.Data.AllUppercaseWords");
+			data.OverLengthLimit = _ctx.StringValue("GetTitleDiagnose.Data.OverLengthLimit");
+			data.DisableWords = _ctx.StringValue("GetTitleDiagnose.Data.DisableWords");
+			data.NoFirstUppercaseList = _ctx.StringValue("GetTitleDiagnose.Data.NoFirstUppercaseList");
+			data.TotalScore = _ctx.StringValue("GetTitleDiagnose.Data.TotalScore");
+			data.WordSpelledCorrectError = _ctx.StringValue("GetTitleDiagnose.Data.WordSpelledCorrectError");
 			getTitleDiagnoseResponse.Data = data;
         
 			return getTitleDiagnoseResponse;

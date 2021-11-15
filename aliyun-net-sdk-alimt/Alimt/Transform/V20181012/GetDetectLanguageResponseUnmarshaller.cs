@@ -31,8 +31,8 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 			GetDetectLanguageResponse getDetectLanguageResponse = new GetDetectLanguageResponse();
 
 			getDetectLanguageResponse.HttpResponse = _ctx.HttpResponse;
-			getDetectLanguageResponse.RequestId = _ctx.StringValue("GetDetectLanguage.RequestId");
 			getDetectLanguageResponse.DetectedLanguage = _ctx.StringValue("GetDetectLanguage.DetectedLanguage");
+			getDetectLanguageResponse.RequestId = _ctx.StringValue("GetDetectLanguage.RequestId");
         
 			return getDetectLanguageResponse;
         }

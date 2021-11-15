@@ -28,10 +28,10 @@ using Aliyun.Acs.alimt.Transform.V20181012;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
 {
-    public class TranslateECommerceRequest : RpcAcsRequest<TranslateECommerceResponse>
+    public class TranslateImageRequest : RpcAcsRequest<TranslateImageResponse>
     {
-        public TranslateECommerceRequest()
-            : base("alimt", "2018-10-12", "TranslateECommerce")
+        public TranslateImageRequest()
+            : base("alimt", "2018-10-12", "TranslateImage")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,15 +41,30 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			Method = MethodType.POST;
         }
 
+		private string ext;
+
 		private string sourceLanguage;
 
-		private string sourceText;
+		private string field;
 
-		private string formatType;
-
-		private string scene;
+		private string imageUrl;
 
 		private string targetLanguage;
+
+		private string imageBase64;
+
+		public string Ext
+		{
+			get
+			{
+				return ext;
+			}
+			set	
+			{
+				ext = value;
+				DictionaryUtil.Add(BodyParameters, "Ext", value);
+			}
+		}
 
 		public string SourceLanguage
 		{
@@ -64,42 +79,29 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			}
 		}
 
-		public string SourceText
+		public string Field
 		{
 			get
 			{
-				return sourceText;
+				return field;
 			}
 			set	
 			{
-				sourceText = value;
-				DictionaryUtil.Add(BodyParameters, "SourceText", value);
+				field = value;
+				DictionaryUtil.Add(BodyParameters, "Field", value);
 			}
 		}
 
-		public string FormatType
+		public string ImageUrl
 		{
 			get
 			{
-				return formatType;
+				return imageUrl;
 			}
 			set	
 			{
-				formatType = value;
-				DictionaryUtil.Add(BodyParameters, "FormatType", value);
-			}
-		}
-
-		public string Scene
-		{
-			get
-			{
-				return scene;
-			}
-			set	
-			{
-				scene = value;
-				DictionaryUtil.Add(BodyParameters, "Scene", value);
+				imageUrl = value;
+				DictionaryUtil.Add(BodyParameters, "ImageUrl", value);
 			}
 		}
 
@@ -116,14 +118,27 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			}
 		}
 
+		public string ImageBase64
+		{
+			get
+			{
+				return imageBase64;
+			}
+			set	
+			{
+				imageBase64 = value;
+				DictionaryUtil.Add(BodyParameters, "ImageBase64", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override TranslateECommerceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TranslateImageResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TranslateECommerceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TranslateImageResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

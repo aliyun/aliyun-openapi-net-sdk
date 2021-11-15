@@ -31,9 +31,9 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 			GetBatchTranslateResponse getBatchTranslateResponse = new GetBatchTranslateResponse();
 
 			getBatchTranslateResponse.HttpResponse = _ctx.HttpResponse;
-			getBatchTranslateResponse.RequestId = _ctx.StringValue("GetBatchTranslate.RequestId");
 			getBatchTranslateResponse.Code = _ctx.IntegerValue("GetBatchTranslate.Code");
 			getBatchTranslateResponse.Message = _ctx.StringValue("GetBatchTranslate.Message");
+			getBatchTranslateResponse.RequestId = _ctx.StringValue("GetBatchTranslate.RequestId");
 
 			List<Dictionary<string, string>> getBatchTranslateResponse_translatedList = new List<Dictionary<string, string>>();
 			for (int i = 0; i < _ctx.Length("GetBatchTranslate.TranslatedList.Length"); i++) {
