@@ -22,12 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-	public class CreateTableResponse : AcsResponse
+	public class UpdateIDEEventResultResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private CreateTable_TaskInfo taskInfo;
 
 		public string RequestId
 		{
@@ -38,78 +36,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public CreateTable_TaskInfo TaskInfo
-		{
-			get
-			{
-				return taskInfo;
-			}
-			set	
-			{
-				taskInfo = value;
-			}
-		}
-
-		public class CreateTable_TaskInfo
-		{
-
-			private string status;
-
-			private string nextTaskId;
-
-			private string taskId;
-
-			private string content;
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string NextTaskId
-			{
-				get
-				{
-					return nextTaskId;
-				}
-				set	
-				{
-					nextTaskId = value;
-				}
-			}
-
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
-
-			public string Content
-			{
-				get
-				{
-					return content;
-				}
-				set	
-				{
-					content = value;
-				}
 			}
 		}
 	}

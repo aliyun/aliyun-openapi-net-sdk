@@ -31,27 +31,27 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetNodeParentsResponse getNodeParentsResponse = new GetNodeParentsResponse();
 
 			getNodeParentsResponse.HttpResponse = _ctx.HttpResponse;
-			getNodeParentsResponse.Success = _ctx.BooleanValue("GetNodeParents.Success");
 			getNodeParentsResponse.HttpStatusCode = _ctx.IntegerValue("GetNodeParents.HttpStatusCode");
-			getNodeParentsResponse.ErrorCode = _ctx.StringValue("GetNodeParents.ErrorCode");
-			getNodeParentsResponse.ErrorMessage = _ctx.StringValue("GetNodeParents.ErrorMessage");
 			getNodeParentsResponse.RequestId = _ctx.StringValue("GetNodeParents.RequestId");
+			getNodeParentsResponse.ErrorMessage = _ctx.StringValue("GetNodeParents.ErrorMessage");
+			getNodeParentsResponse.ErrorCode = _ctx.StringValue("GetNodeParents.ErrorCode");
+			getNodeParentsResponse.Success = _ctx.BooleanValue("GetNodeParents.Success");
 
 			GetNodeParentsResponse.GetNodeParents_Data data = new GetNodeParentsResponse.GetNodeParents_Data();
 
 			List<GetNodeParentsResponse.GetNodeParents_Data.GetNodeParents_NodesItem> data_nodes = new List<GetNodeParentsResponse.GetNodeParents_Data.GetNodeParents_NodesItem>();
 			for (int i = 0; i < _ctx.Length("GetNodeParents.Data.Nodes.Length"); i++) {
 				GetNodeParentsResponse.GetNodeParents_Data.GetNodeParents_NodesItem nodesItem = new GetNodeParentsResponse.GetNodeParents_Data.GetNodeParents_NodesItem();
-				nodesItem.NodeId = _ctx.LongValue("GetNodeParents.Data.Nodes["+ i +"].NodeId");
-				nodesItem.NodeName = _ctx.StringValue("GetNodeParents.Data.Nodes["+ i +"].NodeName");
-				nodesItem.CronExpress = _ctx.StringValue("GetNodeParents.Data.Nodes["+ i +"].CronExpress");
 				nodesItem.SchedulerType = _ctx.StringValue("GetNodeParents.Data.Nodes["+ i +"].SchedulerType");
-				nodesItem.ProgramType = _ctx.StringValue("GetNodeParents.Data.Nodes["+ i +"].ProgramType");
-				nodesItem.OwnerId = _ctx.StringValue("GetNodeParents.Data.Nodes["+ i +"].OwnerId");
-				nodesItem.ProjectId = _ctx.LongValue("GetNodeParents.Data.Nodes["+ i +"].ProjectId");
-				nodesItem.Repeatability = _ctx.BooleanValue("GetNodeParents.Data.Nodes["+ i +"].Repeatability");
-				nodesItem.Priority = _ctx.IntegerValue("GetNodeParents.Data.Nodes["+ i +"].Priority");
 				nodesItem.BaselineId = _ctx.LongValue("GetNodeParents.Data.Nodes["+ i +"].BaselineId");
+				nodesItem.Repeatability = _ctx.BooleanValue("GetNodeParents.Data.Nodes["+ i +"].Repeatability");
+				nodesItem.NodeName = _ctx.StringValue("GetNodeParents.Data.Nodes["+ i +"].NodeName");
+				nodesItem.ProjectId = _ctx.LongValue("GetNodeParents.Data.Nodes["+ i +"].ProjectId");
+				nodesItem.ProgramType = _ctx.StringValue("GetNodeParents.Data.Nodes["+ i +"].ProgramType");
+				nodesItem.Priority = _ctx.IntegerValue("GetNodeParents.Data.Nodes["+ i +"].Priority");
+				nodesItem.OwnerId = _ctx.StringValue("GetNodeParents.Data.Nodes["+ i +"].OwnerId");
+				nodesItem.CronExpress = _ctx.StringValue("GetNodeParents.Data.Nodes["+ i +"].CronExpress");
+				nodesItem.NodeId = _ctx.LongValue("GetNodeParents.Data.Nodes["+ i +"].NodeId");
 
 				data_nodes.Add(nodesItem);
 			}

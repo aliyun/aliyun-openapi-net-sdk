@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class GetInstanceStatusStatisticRequest : RpcAcsRequest<GetInstanceStatusStatisticResponse>
+    public class UpdateIDEEventResultRequest : RpcAcsRequest<UpdateIDEEventResultResponse>
     {
-        public GetInstanceStatusStatisticRequest()
-            : base("dataworks-public", "2020-05-18", "GetInstanceStatusStatistic")
+        public UpdateIDEEventResultRequest()
+            : base("dataworks-public", "2020-05-18", "UpdateIDEEventResult")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,78 +41,63 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string projectEnv;
+		private string checkResultTip;
 
-		private string dagType;
+		private string checkResult;
 
-		private string bizDate;
+		private string messageId;
 
-		private string schedulerType;
+		private string extensionCode;
 
-		private long? projectId;
-
-		public string ProjectEnv
+		public string CheckResultTip
 		{
 			get
 			{
-				return projectEnv;
+				return checkResultTip;
 			}
 			set	
 			{
-				projectEnv = value;
-				DictionaryUtil.Add(BodyParameters, "ProjectEnv", value);
+				checkResultTip = value;
+				DictionaryUtil.Add(BodyParameters, "CheckResultTip", value);
 			}
 		}
 
-		public string DagType
+		public string CheckResult
 		{
 			get
 			{
-				return dagType;
+				return checkResult;
 			}
 			set	
 			{
-				dagType = value;
-				DictionaryUtil.Add(BodyParameters, "DagType", value);
+				checkResult = value;
+				DictionaryUtil.Add(BodyParameters, "CheckResult", value);
 			}
 		}
 
-		public string BizDate
+		public string MessageId
 		{
 			get
 			{
-				return bizDate;
+				return messageId;
 			}
 			set	
 			{
-				bizDate = value;
-				DictionaryUtil.Add(BodyParameters, "BizDate", value);
+				messageId = value;
+				DictionaryUtil.Add(BodyParameters, "MessageId", value);
 			}
 		}
 
-		public string SchedulerType
+		public string ExtensionCode
 		{
 			get
 			{
-				return schedulerType;
+				return extensionCode;
 			}
 			set	
 			{
-				schedulerType = value;
-				DictionaryUtil.Add(BodyParameters, "SchedulerType", value);
-			}
-		}
-
-		public long? ProjectId
-		{
-			get
-			{
-				return projectId;
-			}
-			set	
-			{
-				projectId = value;
-				DictionaryUtil.Add(BodyParameters, "ProjectId", value.ToString());
+				extensionCode = value;
+				DictionaryUtil.Add(BodyParameters, "ExtensionCode", value);
 			}
 		}
 
@@ -121,9 +106,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override GetInstanceStatusStatisticResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateIDEEventResultResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetInstanceStatusStatisticResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateIDEEventResultResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

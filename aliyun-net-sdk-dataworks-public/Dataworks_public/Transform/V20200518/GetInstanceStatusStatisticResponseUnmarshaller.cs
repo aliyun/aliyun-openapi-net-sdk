@@ -34,13 +34,13 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			getInstanceStatusStatisticResponse.RequestId = _ctx.StringValue("GetInstanceStatusStatistic.RequestId");
 
 			GetInstanceStatusStatisticResponse.GetInstanceStatusStatistic_StatusCount statusCount = new GetInstanceStatusStatisticResponse.GetInstanceStatusStatistic_StatusCount();
+			statusCount.FailureCount = _ctx.IntegerValue("GetInstanceStatusStatistic.StatusCount.FailureCount");
+			statusCount.WaitTimeCount = _ctx.IntegerValue("GetInstanceStatusStatistic.StatusCount.WaitTimeCount");
+			statusCount.RunningCount = _ctx.IntegerValue("GetInstanceStatusStatistic.StatusCount.RunningCount");
+			statusCount.SuccessCount = _ctx.IntegerValue("GetInstanceStatusStatistic.StatusCount.SuccessCount");
 			statusCount.TotalCount = _ctx.IntegerValue("GetInstanceStatusStatistic.StatusCount.TotalCount");
 			statusCount.NotRunCount = _ctx.IntegerValue("GetInstanceStatusStatistic.StatusCount.NotRunCount");
-			statusCount.WaitTimeCount = _ctx.IntegerValue("GetInstanceStatusStatistic.StatusCount.WaitTimeCount");
 			statusCount.WaitResCount = _ctx.IntegerValue("GetInstanceStatusStatistic.StatusCount.WaitResCount");
-			statusCount.RunningCount = _ctx.IntegerValue("GetInstanceStatusStatistic.StatusCount.RunningCount");
-			statusCount.FailureCount = _ctx.IntegerValue("GetInstanceStatusStatistic.StatusCount.FailureCount");
-			statusCount.SuccessCount = _ctx.IntegerValue("GetInstanceStatusStatistic.StatusCount.SuccessCount");
 			getInstanceStatusStatisticResponse.StatusCount = statusCount;
         
 			return getInstanceStatusStatisticResponse;

@@ -31,45 +31,46 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			ListQualityRulesResponse listQualityRulesResponse = new ListQualityRulesResponse();
 
 			listQualityRulesResponse.HttpResponse = _ctx.HttpResponse;
-			listQualityRulesResponse.ErrorCode = _ctx.StringValue("ListQualityRules.ErrorCode");
-			listQualityRulesResponse.Success = _ctx.BooleanValue("ListQualityRules.Success");
-			listQualityRulesResponse.ErrorMessage = _ctx.StringValue("ListQualityRules.ErrorMessage");
 			listQualityRulesResponse.HttpStatusCode = _ctx.IntegerValue("ListQualityRules.HttpStatusCode");
 			listQualityRulesResponse.RequestId = _ctx.StringValue("ListQualityRules.RequestId");
+			listQualityRulesResponse.ErrorMessage = _ctx.StringValue("ListQualityRules.ErrorMessage");
+			listQualityRulesResponse.Success = _ctx.BooleanValue("ListQualityRules.Success");
+			listQualityRulesResponse.ErrorCode = _ctx.StringValue("ListQualityRules.ErrorCode");
 
 			ListQualityRulesResponse.ListQualityRules_Data data = new ListQualityRulesResponse.ListQualityRules_Data();
-			data.TotalCount = _ctx.LongValue("ListQualityRules.Data.TotalCount");
 			data.PageNumber = _ctx.IntegerValue("ListQualityRules.Data.PageNumber");
 			data.PageSize = _ctx.IntegerValue("ListQualityRules.Data.PageSize");
+			data.TotalCount = _ctx.LongValue("ListQualityRules.Data.TotalCount");
 
 			List<ListQualityRulesResponse.ListQualityRules_Data.ListQualityRules_RulesItem> data_rules = new List<ListQualityRulesResponse.ListQualityRules_Data.ListQualityRules_RulesItem>();
 			for (int i = 0; i < _ctx.Length("ListQualityRules.Data.Rules.Length"); i++) {
 				ListQualityRulesResponse.ListQualityRules_Data.ListQualityRules_RulesItem rulesItem = new ListQualityRulesResponse.ListQualityRules_Data.ListQualityRules_RulesItem();
-				rulesItem.ProjectName = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].ProjectName");
-				rulesItem.TableName = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].TableName");
-				rulesItem.Id = _ctx.IntegerValue("ListQualityRules.Data.Rules["+ i +"].Id");
-				rulesItem.EntityId = _ctx.IntegerValue("ListQualityRules.Data.Rules["+ i +"].EntityId");
-				rulesItem.Property = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].Property");
-				rulesItem.MethodId = _ctx.IntegerValue("ListQualityRules.Data.Rules["+ i +"].MethodId");
-				rulesItem.MethodName = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].MethodName");
-				rulesItem.OnDuty = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].OnDuty");
-				rulesItem.RuleType = _ctx.IntegerValue("ListQualityRules.Data.Rules["+ i +"].RuleType");
 				rulesItem.BlockType = _ctx.IntegerValue("ListQualityRules.Data.Rules["+ i +"].BlockType");
-				rulesItem.TemplateId = _ctx.IntegerValue("ListQualityRules.Data.Rules["+ i +"].TemplateId");
-				rulesItem.TemplateName = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].TemplateName");
-				rulesItem.RuleCheckerRelationId = _ctx.IntegerValue("ListQualityRules.Data.Rules["+ i +"].RuleCheckerRelationId");
-				rulesItem.CheckerId = _ctx.IntegerValue("ListQualityRules.Data.Rules["+ i +"].CheckerId");
-				rulesItem.FixCheck = _ctx.BooleanValue("ListQualityRules.Data.Rules["+ i +"].FixCheck");
-				rulesItem.Trend = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].Trend");
-				rulesItem.WarningThreshold = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].WarningThreshold");
-				rulesItem.CriticalThreshold = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].CriticalThreshold");
-				rulesItem.HistoryWarningThreshold = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].HistoryWarningThreshold");
-				rulesItem.HistoryCriticalThreshold = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].HistoryCriticalThreshold");
-				rulesItem.PropertyKey = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].PropertyKey");
-				rulesItem.MatchExpression = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].MatchExpression");
-				rulesItem.Comment = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].Comment");
-				rulesItem.ExpectValue = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].ExpectValue");
 				rulesItem.OnDutyAccountName = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].OnDutyAccountName");
+				rulesItem.Property = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].Property");
+				rulesItem.WarningThreshold = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].WarningThreshold");
+				rulesItem.TableName = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].TableName");
+				rulesItem.OnDuty = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].OnDuty");
+				rulesItem.Comment = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].Comment");
+				rulesItem.RuleCheckerRelationId = _ctx.IntegerValue("ListQualityRules.Data.Rules["+ i +"].RuleCheckerRelationId");
+				rulesItem.FixCheck = _ctx.BooleanValue("ListQualityRules.Data.Rules["+ i +"].FixCheck");
+				rulesItem.MethodId = _ctx.IntegerValue("ListQualityRules.Data.Rules["+ i +"].MethodId");
+				rulesItem.TemplateName = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].TemplateName");
+				rulesItem.Trend = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].Trend");
+				rulesItem.HistoryWarningThreshold = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].HistoryWarningThreshold");
+				rulesItem.RuleType = _ctx.IntegerValue("ListQualityRules.Data.Rules["+ i +"].RuleType");
+				rulesItem.MatchExpression = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].MatchExpression");
+				rulesItem.ProjectName = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].ProjectName");
+				rulesItem.PropertyKey = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].PropertyKey");
+				rulesItem.CriticalThreshold = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].CriticalThreshold");
+				rulesItem.HistoryCriticalThreshold = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].HistoryCriticalThreshold");
+				rulesItem.MethodName = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].MethodName");
+				rulesItem.CheckerId = _ctx.IntegerValue("ListQualityRules.Data.Rules["+ i +"].CheckerId");
+				rulesItem.EntityId = _ctx.IntegerValue("ListQualityRules.Data.Rules["+ i +"].EntityId");
+				rulesItem.ExpectValue = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].ExpectValue");
+				rulesItem.TemplateId = _ctx.IntegerValue("ListQualityRules.Data.Rules["+ i +"].TemplateId");
+				rulesItem.Id = _ctx.IntegerValue("ListQualityRules.Data.Rules["+ i +"].Id");
+				rulesItem.RuleName = _ctx.StringValue("ListQualityRules.Data.Rules["+ i +"].RuleName");
 
 				data_rules.Add(rulesItem);
 			}

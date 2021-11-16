@@ -31,25 +31,26 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetDagResponse getDagResponse = new GetDagResponse();
 
 			getDagResponse.HttpResponse = _ctx.HttpResponse;
-			getDagResponse.Success = _ctx.BooleanValue("GetDag.Success");
 			getDagResponse.HttpStatusCode = _ctx.IntegerValue("GetDag.HttpStatusCode");
-			getDagResponse.ErrorCode = _ctx.StringValue("GetDag.ErrorCode");
-			getDagResponse.ErrorMessage = _ctx.StringValue("GetDag.ErrorMessage");
 			getDagResponse.RequestId = _ctx.StringValue("GetDag.RequestId");
+			getDagResponse.ErrorMessage = _ctx.StringValue("GetDag.ErrorMessage");
+			getDagResponse.ErrorCode = _ctx.StringValue("GetDag.ErrorCode");
+			getDagResponse.Success = _ctx.BooleanValue("GetDag.Success");
 
 			GetDagResponse.GetDag_Data data = new GetDagResponse.GetDag_Data();
-			data.ProjectId = _ctx.LongValue("GetDag.Data.ProjectId");
-			data.DagId = _ctx.LongValue("GetDag.Data.DagId");
-			data.Name = _ctx.StringValue("GetDag.Data.Name");
 			data.Type = _ctx.StringValue("GetDag.Data.Type");
 			data.Status = _ctx.StringValue("GetDag.Data.Status");
-			data.Bizdate = _ctx.LongValue("GetDag.Data.Bizdate");
-			data.Gmtdate = _ctx.LongValue("GetDag.Data.Gmtdate");
-			data.StartTime = _ctx.LongValue("GetDag.Data.StartTime");
 			data.FinishTime = _ctx.LongValue("GetDag.Data.FinishTime");
 			data.CreateTime = _ctx.LongValue("GetDag.Data.CreateTime");
+			data.ProjectId = _ctx.LongValue("GetDag.Data.ProjectId");
+			data.DagId = _ctx.LongValue("GetDag.Data.DagId");
+			data.Gmtdate = _ctx.LongValue("GetDag.Data.Gmtdate");
+			data.StartTime = _ctx.LongValue("GetDag.Data.StartTime");
 			data.CreateUser = _ctx.StringValue("GetDag.Data.CreateUser");
+			data.Bizdate = _ctx.LongValue("GetDag.Data.Bizdate");
+			data.Name = _ctx.StringValue("GetDag.Data.Name");
 			data.ModifyTime = _ctx.LongValue("GetDag.Data.ModifyTime");
+			data.OpSeq = _ctx.LongValue("GetDag.Data.OpSeq");
 			getDagResponse.Data = data;
         
 			return getDagResponse;

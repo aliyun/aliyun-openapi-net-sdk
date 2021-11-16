@@ -36,22 +36,23 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			List<ListManualDagInstancesResponse.ListManualDagInstances_InstancesItem> listManualDagInstancesResponse_instances = new List<ListManualDagInstancesResponse.ListManualDagInstances_InstancesItem>();
 			for (int i = 0; i < _ctx.Length("ListManualDagInstances.Instances.Length"); i++) {
 				ListManualDagInstancesResponse.ListManualDagInstances_InstancesItem instancesItem = new ListManualDagInstancesResponse.ListManualDagInstances_InstancesItem();
-				instancesItem.NodeId = _ctx.LongValue("ListManualDagInstances.Instances["+ i +"].NodeId");
-				instancesItem.InstanceId = _ctx.LongValue("ListManualDagInstances.Instances["+ i +"].InstanceId");
-				instancesItem.DagId = _ctx.LongValue("ListManualDagInstances.Instances["+ i +"].DagId");
-				instancesItem.DagType = _ctx.StringValue("ListManualDagInstances.Instances["+ i +"].DagType");
 				instancesItem.Status = _ctx.StringValue("ListManualDagInstances.Instances["+ i +"].Status");
+				instancesItem.BeginRunningTime = _ctx.LongValue("ListManualDagInstances.Instances["+ i +"].BeginRunningTime");
 				instancesItem.BizDate = _ctx.LongValue("ListManualDagInstances.Instances["+ i +"].BizDate");
 				instancesItem.CycTime = _ctx.LongValue("ListManualDagInstances.Instances["+ i +"].CycTime");
+				instancesItem.FinishTime = _ctx.LongValue("ListManualDagInstances.Instances["+ i +"].FinishTime");
 				instancesItem.CreateTime = _ctx.LongValue("ListManualDagInstances.Instances["+ i +"].CreateTime");
-				instancesItem.ModifyTime = _ctx.LongValue("ListManualDagInstances.Instances["+ i +"].ModifyTime");
+				instancesItem.DagId = _ctx.LongValue("ListManualDagInstances.Instances["+ i +"].DagId");
+				instancesItem.InstanceId = _ctx.LongValue("ListManualDagInstances.Instances["+ i +"].InstanceId");
+				instancesItem.BeginWaitResTime = _ctx.LongValue("ListManualDagInstances.Instances["+ i +"].BeginWaitResTime");
+				instancesItem.TaskType = _ctx.StringValue("ListManualDagInstances.Instances["+ i +"].TaskType");
+				instancesItem.ParamValues = _ctx.StringValue("ListManualDagInstances.Instances["+ i +"].ParamValues");
+				instancesItem.DagType = _ctx.StringValue("ListManualDagInstances.Instances["+ i +"].DagType");
 				instancesItem.NodeName = _ctx.StringValue("ListManualDagInstances.Instances["+ i +"].NodeName");
 				instancesItem.BeginWaitTimeTime = _ctx.LongValue("ListManualDagInstances.Instances["+ i +"].BeginWaitTimeTime");
-				instancesItem.BeginWaitResTime = _ctx.LongValue("ListManualDagInstances.Instances["+ i +"].BeginWaitResTime");
-				instancesItem.BeginRunningTime = _ctx.LongValue("ListManualDagInstances.Instances["+ i +"].BeginRunningTime");
-				instancesItem.ParamValues = _ctx.StringValue("ListManualDagInstances.Instances["+ i +"].ParamValues");
-				instancesItem.FinishTime = _ctx.LongValue("ListManualDagInstances.Instances["+ i +"].FinishTime");
-				instancesItem.TaskType = _ctx.StringValue("ListManualDagInstances.Instances["+ i +"].TaskType");
+				instancesItem.NodeId = _ctx.LongValue("ListManualDagInstances.Instances["+ i +"].NodeId");
+				instancesItem.ModifyTime = _ctx.LongValue("ListManualDagInstances.Instances["+ i +"].ModifyTime");
+				instancesItem.CreateUser = _ctx.StringValue("ListManualDagInstances.Instances["+ i +"].CreateUser");
 
 				listManualDagInstancesResponse_instances.Add(instancesItem);
 			}

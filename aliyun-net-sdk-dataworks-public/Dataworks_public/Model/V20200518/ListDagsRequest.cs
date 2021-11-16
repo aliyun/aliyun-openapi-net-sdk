@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class GetInstanceStatusStatisticRequest : RpcAcsRequest<GetInstanceStatusStatisticResponse>
+    public class ListDagsRequest : RpcAcsRequest<ListDagsResponse>
     {
-        public GetInstanceStatusStatisticRequest()
-            : base("dataworks-public", "2020-05-18", "GetInstanceStatusStatistic")
+        public ListDagsRequest()
+            : base("dataworks-public", "2020-05-18", "ListDags")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,13 +43,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string projectEnv;
 
-		private string dagType;
-
-		private string bizDate;
-
-		private string schedulerType;
-
-		private long? projectId;
+		private long? opSeq;
 
 		public string ProjectEnv
 		{
@@ -64,55 +58,16 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public string DagType
+		public long? OpSeq
 		{
 			get
 			{
-				return dagType;
+				return opSeq;
 			}
 			set	
 			{
-				dagType = value;
-				DictionaryUtil.Add(BodyParameters, "DagType", value);
-			}
-		}
-
-		public string BizDate
-		{
-			get
-			{
-				return bizDate;
-			}
-			set	
-			{
-				bizDate = value;
-				DictionaryUtil.Add(BodyParameters, "BizDate", value);
-			}
-		}
-
-		public string SchedulerType
-		{
-			get
-			{
-				return schedulerType;
-			}
-			set	
-			{
-				schedulerType = value;
-				DictionaryUtil.Add(BodyParameters, "SchedulerType", value);
-			}
-		}
-
-		public long? ProjectId
-		{
-			get
-			{
-				return projectId;
-			}
-			set	
-			{
-				projectId = value;
-				DictionaryUtil.Add(BodyParameters, "ProjectId", value.ToString());
+				opSeq = value;
+				DictionaryUtil.Add(BodyParameters, "OpSeq", value.ToString());
 			}
 		}
 
@@ -121,9 +76,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override GetInstanceStatusStatisticResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListDagsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetInstanceStatusStatisticResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListDagsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

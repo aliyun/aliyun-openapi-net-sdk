@@ -25,51 +25,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class ListQualityResultsByRuleResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
-		private string errorCode;
+		private int? httpStatusCode;
 
 		private string errorMessage;
 
-		private int? httpStatusCode;
+		private string requestId;
+
+		private string errorCode;
+
+		private bool? success;
 
 		private ListQualityResultsByRule_Data data;
 
-		public string RequestId
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return requestId;
+				return httpStatusCode;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				httpStatusCode = value;
 			}
 		}
 
@@ -85,15 +61,39 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? HttpStatusCode
+		public string RequestId
 		{
 			get
 			{
-				return httpStatusCode;
+				return requestId;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				requestId = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -112,25 +112,13 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class ListQualityResultsByRule_Data
 		{
 
-			private long? totalCount;
-
 			private int? pageNumber;
 
 			private int? pageSize;
 
-			private List<ListQualityResultsByRule_RuleChecksItem> ruleChecks;
+			private long? totalCount;
 
-			public long? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
+			private List<ListQualityResultsByRule_RuleChecksItem> ruleChecks;
 
 			public int? PageNumber
 			{
@@ -156,6 +144,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
+			public long? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
+				}
+			}
+
 			public List<ListQualityResultsByRule_RuleChecksItem> RuleChecks
 			{
 				get
@@ -171,195 +171,87 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class ListQualityResultsByRule_RuleChecksItem
 			{
 
-				private int? id;
-
-				private string taskId;
-
-				private int? entityId;
-
-				private int? ruleId;
-
-				private string property;
-
-				private long? bizDate;
-
-				private string dateType;
-
-				private string actualExpression;
-
-				private string matchExpression;
-
 				private int? blockType;
-
-				private int? checkResult;
-
-				private int? checkResultStatus;
-
-				private string methodName;
-
-				private string comment;
-
-				private string whereCondition;
-
-				private long? beginTime;
-
-				private long? endTime;
-
-				private string timeCost;
-
-				private string externalType;
-
-				private string externalId;
-
-				private bool? discreteCheck;
-
-				private bool? fixedCheck;
-
-				private string trend;
 
 				private float? warningThreshold;
 
-				private float? criticalThreshold;
-
-				private float? expectValue;
-
-				private string op;
-
-				private string projectName;
+				private string property;
 
 				private string tableName;
 
-				private int? templateId;
+				private string comment;
+
+				private int? checkResultStatus;
 
 				private string templateName;
 
-				private string resultString;
+				private string checkerName;
 
-				private int? checkerId;
+				private int? ruleId;
 
-				private int? checkerType;
+				private bool? fixedCheck;
 
-				private string ruleName;
-
-				private bool? isPrediction;
+				private string op;
 
 				private float? upperValue;
 
+				private string actualExpression;
+
+				private string externalId;
+
+				private string timeCost;
+
+				private string trend;
+
+				private string externalType;
+
+				private long? bizDate;
+
+				private int? checkResult;
+
+				private string resultString;
+
+				private string matchExpression;
+
+				private int? checkerType;
+
+				private string projectName;
+
+				private long? beginTime;
+
+				private string dateType;
+
+				private float? criticalThreshold;
+
+				private bool? isPrediction;
+
+				private string ruleName;
+
+				private int? checkerId;
+
+				private bool? discreteCheck;
+
+				private long? endTime;
+
+				private string methodName;
+
 				private float? lowerValue;
 
-				private string checkerName;
+				private int? entityId;
+
+				private string whereCondition;
+
+				private float? expectValue;
+
+				private int? templateId;
+
+				private string taskId;
+
+				private int? id;
 
 				private List<ListQualityResultsByRule_ReferenceValueItem> referenceValue;
 
 				private List<ListQualityResultsByRule_SampleValueItem> sampleValue;
-
-				public int? Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
-					}
-				}
-
-				public string TaskId
-				{
-					get
-					{
-						return taskId;
-					}
-					set	
-					{
-						taskId = value;
-					}
-				}
-
-				public int? EntityId
-				{
-					get
-					{
-						return entityId;
-					}
-					set	
-					{
-						entityId = value;
-					}
-				}
-
-				public int? RuleId
-				{
-					get
-					{
-						return ruleId;
-					}
-					set	
-					{
-						ruleId = value;
-					}
-				}
-
-				public string Property
-				{
-					get
-					{
-						return property;
-					}
-					set	
-					{
-						property = value;
-					}
-				}
-
-				public long? BizDate
-				{
-					get
-					{
-						return bizDate;
-					}
-					set	
-					{
-						bizDate = value;
-					}
-				}
-
-				public string DateType
-				{
-					get
-					{
-						return dateType;
-					}
-					set	
-					{
-						dateType = value;
-					}
-				}
-
-				public string ActualExpression
-				{
-					get
-					{
-						return actualExpression;
-					}
-					set	
-					{
-						actualExpression = value;
-					}
-				}
-
-				public string MatchExpression
-				{
-					get
-					{
-						return matchExpression;
-					}
-					set	
-					{
-						matchExpression = value;
-					}
-				}
 
 				public int? BlockType
 				{
@@ -370,162 +262,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						blockType = value;
-					}
-				}
-
-				public int? CheckResult
-				{
-					get
-					{
-						return checkResult;
-					}
-					set	
-					{
-						checkResult = value;
-					}
-				}
-
-				public int? CheckResultStatus
-				{
-					get
-					{
-						return checkResultStatus;
-					}
-					set	
-					{
-						checkResultStatus = value;
-					}
-				}
-
-				public string MethodName
-				{
-					get
-					{
-						return methodName;
-					}
-					set	
-					{
-						methodName = value;
-					}
-				}
-
-				public string Comment
-				{
-					get
-					{
-						return comment;
-					}
-					set	
-					{
-						comment = value;
-					}
-				}
-
-				public string WhereCondition
-				{
-					get
-					{
-						return whereCondition;
-					}
-					set	
-					{
-						whereCondition = value;
-					}
-				}
-
-				public long? BeginTime
-				{
-					get
-					{
-						return beginTime;
-					}
-					set	
-					{
-						beginTime = value;
-					}
-				}
-
-				public long? EndTime
-				{
-					get
-					{
-						return endTime;
-					}
-					set	
-					{
-						endTime = value;
-					}
-				}
-
-				public string TimeCost
-				{
-					get
-					{
-						return timeCost;
-					}
-					set	
-					{
-						timeCost = value;
-					}
-				}
-
-				public string ExternalType
-				{
-					get
-					{
-						return externalType;
-					}
-					set	
-					{
-						externalType = value;
-					}
-				}
-
-				public string ExternalId
-				{
-					get
-					{
-						return externalId;
-					}
-					set	
-					{
-						externalId = value;
-					}
-				}
-
-				public bool? DiscreteCheck
-				{
-					get
-					{
-						return discreteCheck;
-					}
-					set	
-					{
-						discreteCheck = value;
-					}
-				}
-
-				public bool? FixedCheck
-				{
-					get
-					{
-						return fixedCheck;
-					}
-					set	
-					{
-						fixedCheck = value;
-					}
-				}
-
-				public string Trend
-				{
-					get
-					{
-						return trend;
-					}
-					set	
-					{
-						trend = value;
 					}
 				}
 
@@ -541,51 +277,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public float? CriticalThreshold
+				public string Property
 				{
 					get
 					{
-						return criticalThreshold;
+						return property;
 					}
 					set	
 					{
-						criticalThreshold = value;
-					}
-				}
-
-				public float? ExpectValue
-				{
-					get
-					{
-						return expectValue;
-					}
-					set	
-					{
-						expectValue = value;
-					}
-				}
-
-				public string Op
-				{
-					get
-					{
-						return op;
-					}
-					set	
-					{
-						op = value;
-					}
-				}
-
-				public string ProjectName
-				{
-					get
-					{
-						return projectName;
-					}
-					set	
-					{
-						projectName = value;
+						property = value;
 					}
 				}
 
@@ -601,15 +301,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public int? TemplateId
+				public string Comment
 				{
 					get
 					{
-						return templateId;
+						return comment;
 					}
 					set	
 					{
-						templateId = value;
+						comment = value;
+					}
+				}
+
+				public int? CheckResultStatus
+				{
+					get
+					{
+						return checkResultStatus;
+					}
+					set	
+					{
+						checkResultStatus = value;
 					}
 				}
 
@@ -625,63 +337,51 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string ResultString
+				public string CheckerName
 				{
 					get
 					{
-						return resultString;
+						return checkerName;
 					}
 					set	
 					{
-						resultString = value;
+						checkerName = value;
 					}
 				}
 
-				public int? CheckerId
+				public int? RuleId
 				{
 					get
 					{
-						return checkerId;
+						return ruleId;
 					}
 					set	
 					{
-						checkerId = value;
+						ruleId = value;
 					}
 				}
 
-				public int? CheckerType
+				public bool? FixedCheck
 				{
 					get
 					{
-						return checkerType;
+						return fixedCheck;
 					}
 					set	
 					{
-						checkerType = value;
+						fixedCheck = value;
 					}
 				}
 
-				public string RuleName
+				public string Op
 				{
 					get
 					{
-						return ruleName;
+						return op;
 					}
 					set	
 					{
-						ruleName = value;
-					}
-				}
-
-				public bool? IsPrediction
-				{
-					get
-					{
-						return isPrediction;
-					}
-					set	
-					{
-						isPrediction = value;
+						op = value;
 					}
 				}
 
@@ -697,6 +397,246 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
+				public string ActualExpression
+				{
+					get
+					{
+						return actualExpression;
+					}
+					set	
+					{
+						actualExpression = value;
+					}
+				}
+
+				public string ExternalId
+				{
+					get
+					{
+						return externalId;
+					}
+					set	
+					{
+						externalId = value;
+					}
+				}
+
+				public string TimeCost
+				{
+					get
+					{
+						return timeCost;
+					}
+					set	
+					{
+						timeCost = value;
+					}
+				}
+
+				public string Trend
+				{
+					get
+					{
+						return trend;
+					}
+					set	
+					{
+						trend = value;
+					}
+				}
+
+				public string ExternalType
+				{
+					get
+					{
+						return externalType;
+					}
+					set	
+					{
+						externalType = value;
+					}
+				}
+
+				public long? BizDate
+				{
+					get
+					{
+						return bizDate;
+					}
+					set	
+					{
+						bizDate = value;
+					}
+				}
+
+				public int? CheckResult
+				{
+					get
+					{
+						return checkResult;
+					}
+					set	
+					{
+						checkResult = value;
+					}
+				}
+
+				public string ResultString
+				{
+					get
+					{
+						return resultString;
+					}
+					set	
+					{
+						resultString = value;
+					}
+				}
+
+				public string MatchExpression
+				{
+					get
+					{
+						return matchExpression;
+					}
+					set	
+					{
+						matchExpression = value;
+					}
+				}
+
+				public int? CheckerType
+				{
+					get
+					{
+						return checkerType;
+					}
+					set	
+					{
+						checkerType = value;
+					}
+				}
+
+				public string ProjectName
+				{
+					get
+					{
+						return projectName;
+					}
+					set	
+					{
+						projectName = value;
+					}
+				}
+
+				public long? BeginTime
+				{
+					get
+					{
+						return beginTime;
+					}
+					set	
+					{
+						beginTime = value;
+					}
+				}
+
+				public string DateType
+				{
+					get
+					{
+						return dateType;
+					}
+					set	
+					{
+						dateType = value;
+					}
+				}
+
+				public float? CriticalThreshold
+				{
+					get
+					{
+						return criticalThreshold;
+					}
+					set	
+					{
+						criticalThreshold = value;
+					}
+				}
+
+				public bool? IsPrediction
+				{
+					get
+					{
+						return isPrediction;
+					}
+					set	
+					{
+						isPrediction = value;
+					}
+				}
+
+				public string RuleName
+				{
+					get
+					{
+						return ruleName;
+					}
+					set	
+					{
+						ruleName = value;
+					}
+				}
+
+				public int? CheckerId
+				{
+					get
+					{
+						return checkerId;
+					}
+					set	
+					{
+						checkerId = value;
+					}
+				}
+
+				public bool? DiscreteCheck
+				{
+					get
+					{
+						return discreteCheck;
+					}
+					set	
+					{
+						discreteCheck = value;
+					}
+				}
+
+				public long? EndTime
+				{
+					get
+					{
+						return endTime;
+					}
+					set	
+					{
+						endTime = value;
+					}
+				}
+
+				public string MethodName
+				{
+					get
+					{
+						return methodName;
+					}
+					set	
+					{
+						methodName = value;
+					}
+				}
+
 				public float? LowerValue
 				{
 					get
@@ -709,15 +649,75 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string CheckerName
+				public int? EntityId
 				{
 					get
 					{
-						return checkerName;
+						return entityId;
 					}
 					set	
 					{
-						checkerName = value;
+						entityId = value;
+					}
+				}
+
+				public string WhereCondition
+				{
+					get
+					{
+						return whereCondition;
+					}
+					set	
+					{
+						whereCondition = value;
+					}
+				}
+
+				public float? ExpectValue
+				{
+					get
+					{
+						return expectValue;
+					}
+					set	
+					{
+						expectValue = value;
+					}
+				}
+
+				public int? TemplateId
+				{
+					get
+					{
+						return templateId;
+					}
+					set	
+					{
+						templateId = value;
+					}
+				}
+
+				public string TaskId
+				{
+					get
+					{
+						return taskId;
+					}
+					set	
+					{
+						taskId = value;
+					}
+				}
+
+				public int? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
 					}
 				}
 
@@ -748,27 +748,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				public class ListQualityResultsByRule_ReferenceValueItem
 				{
 
-					private string bizDate;
-
 					private string discreteProperty;
 
 					private float? _value;
 
-					private float? threshold;
+					private string bizDate;
 
 					private int? singleCheckResult;
 
-					public string BizDate
-					{
-						get
-						{
-							return bizDate;
-						}
-						set	
-						{
-							bizDate = value;
-						}
-					}
+					private float? threshold;
 
 					public string DiscreteProperty
 					{
@@ -794,15 +782,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 						}
 					}
 
-					public float? Threshold
+					public string BizDate
 					{
 						get
 						{
-							return threshold;
+							return bizDate;
 						}
 						set	
 						{
-							threshold = value;
+							bizDate = value;
 						}
 					}
 
@@ -817,28 +805,28 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 							singleCheckResult = value;
 						}
 					}
+
+					public float? Threshold
+					{
+						get
+						{
+							return threshold;
+						}
+						set	
+						{
+							threshold = value;
+						}
+					}
 				}
 
 				public class ListQualityResultsByRule_SampleValueItem
 				{
 
-					private string bizDate;
-
 					private string discreteProperty;
 
-					private float? _value;
+					private string bizDate;
 
-					public string BizDate
-					{
-						get
-						{
-							return bizDate;
-						}
-						set	
-						{
-							bizDate = value;
-						}
-					}
+					private float? _value;
 
 					public string DiscreteProperty
 					{
@@ -849,6 +837,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 						set	
 						{
 							discreteProperty = value;
+						}
+					}
+
+					public string BizDate
+					{
+						get
+						{
+							return bizDate;
+						}
+						set	
+						{
+							bizDate = value;
 						}
 					}
 

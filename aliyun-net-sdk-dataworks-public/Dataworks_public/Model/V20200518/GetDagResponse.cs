@@ -25,29 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetDagResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private int? httpStatusCode;
-
-		private string errorCode;
-
-		private string errorMessage;
 
 		private string requestId;
 
-		private GetDag_Data data;
+		private string errorMessage;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private string errorCode;
+
+		private bool? success;
+
+		private GetDag_Data data;
 
 		public int? HttpStatusCode
 		{
@@ -61,15 +49,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public string ErrorCode
+		public string RequestId
 		{
 			get
 			{
-				return errorCode;
+				return requestId;
 			}
 			set	
 			{
-				errorCode = value;
+				requestId = value;
 			}
 		}
 
@@ -85,15 +73,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public string RequestId
+		public string ErrorCode
 		{
 			get
 			{
-				return requestId;
+				return errorCode;
 			}
 			set	
 			{
-				requestId = value;
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -112,65 +112,31 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetDag_Data
 		{
 
-			private long? projectId;
-
-			private long? dagId;
-
-			private string name;
-
 			private string type;
 
 			private string status;
-
-			private long? bizdate;
-
-			private long? gmtdate;
-
-			private long? startTime;
 
 			private long? finishTime;
 
 			private long? createTime;
 
+			private long? projectId;
+
+			private long? dagId;
+
+			private long? gmtdate;
+
+			private long? startTime;
+
 			private string createUser;
+
+			private long? bizdate;
+
+			private string name;
 
 			private long? modifyTime;
 
-			public long? ProjectId
-			{
-				get
-				{
-					return projectId;
-				}
-				set	
-				{
-					projectId = value;
-				}
-			}
-
-			public long? DagId
-			{
-				get
-				{
-					return dagId;
-				}
-				set	
-				{
-					dagId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private long? opSeq;
 
 			public string Type
 			{
@@ -193,42 +159,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public long? Bizdate
-			{
-				get
-				{
-					return bizdate;
-				}
-				set	
-				{
-					bizdate = value;
-				}
-			}
-
-			public long? Gmtdate
-			{
-				get
-				{
-					return gmtdate;
-				}
-				set	
-				{
-					gmtdate = value;
-				}
-			}
-
-			public long? StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
 				}
 			}
 
@@ -256,6 +186,54 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
+			public long? ProjectId
+			{
+				get
+				{
+					return projectId;
+				}
+				set	
+				{
+					projectId = value;
+				}
+			}
+
+			public long? DagId
+			{
+				get
+				{
+					return dagId;
+				}
+				set	
+				{
+					dagId = value;
+				}
+			}
+
+			public long? Gmtdate
+			{
+				get
+				{
+					return gmtdate;
+				}
+				set	
+				{
+					gmtdate = value;
+				}
+			}
+
+			public long? StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
 			public string CreateUser
 			{
 				get
@@ -268,6 +246,30 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
+			public long? Bizdate
+			{
+				get
+				{
+					return bizdate;
+				}
+				set	
+				{
+					bizdate = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
 			public long? ModifyTime
 			{
 				get
@@ -277,6 +279,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					modifyTime = value;
+				}
+			}
+
+			public long? OpSeq
+			{
+				get
+				{
+					return opSeq;
+				}
+				set	
+				{
+					opSeq = value;
 				}
 			}
 		}

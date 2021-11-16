@@ -25,29 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetNodeParentsResponse : AcsResponse
 	{
 
-		private bool? success;
-
 		private int? httpStatusCode;
-
-		private string errorCode;
-
-		private string errorMessage;
 
 		private string requestId;
 
-		private GetNodeParents_Data data;
+		private string errorMessage;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private string errorCode;
+
+		private bool? success;
+
+		private GetNodeParents_Data data;
 
 		public int? HttpStatusCode
 		{
@@ -61,15 +49,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public string ErrorCode
+		public string RequestId
 		{
 			get
 			{
-				return errorCode;
+				return requestId;
 			}
 			set	
 			{
-				errorCode = value;
+				requestId = value;
 			}
 		}
 
@@ -85,15 +73,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public string RequestId
+		public string ErrorCode
 		{
 			get
 			{
-				return requestId;
+				return errorCode;
 			}
 			set	
 			{
-				requestId = value;
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -129,61 +129,25 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetNodeParents_NodesItem
 			{
 
-				private long? nodeId;
-
-				private string nodeName;
-
-				private string cronExpress;
-
 				private string schedulerType;
-
-				private string programType;
-
-				private string ownerId;
-
-				private long? projectId;
-
-				private bool? repeatability;
-
-				private int? priority;
 
 				private long? baselineId;
 
-				public long? NodeId
-				{
-					get
-					{
-						return nodeId;
-					}
-					set	
-					{
-						nodeId = value;
-					}
-				}
+				private bool? repeatability;
 
-				public string NodeName
-				{
-					get
-					{
-						return nodeName;
-					}
-					set	
-					{
-						nodeName = value;
-					}
-				}
+				private string nodeName;
 
-				public string CronExpress
-				{
-					get
-					{
-						return cronExpress;
-					}
-					set	
-					{
-						cronExpress = value;
-					}
-				}
+				private long? projectId;
+
+				private string programType;
+
+				private int? priority;
+
+				private string ownerId;
+
+				private string cronExpress;
+
+				private long? nodeId;
 
 				public string SchedulerType
 				{
@@ -197,39 +161,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string ProgramType
+				public long? BaselineId
 				{
 					get
 					{
-						return programType;
+						return baselineId;
 					}
 					set	
 					{
-						programType = value;
-					}
-				}
-
-				public string OwnerId
-				{
-					get
-					{
-						return ownerId;
-					}
-					set	
-					{
-						ownerId = value;
-					}
-				}
-
-				public long? ProjectId
-				{
-					get
-					{
-						return projectId;
-					}
-					set	
-					{
-						projectId = value;
+						baselineId = value;
 					}
 				}
 
@@ -245,6 +185,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
+				public string NodeName
+				{
+					get
+					{
+						return nodeName;
+					}
+					set	
+					{
+						nodeName = value;
+					}
+				}
+
+				public long? ProjectId
+				{
+					get
+					{
+						return projectId;
+					}
+					set	
+					{
+						projectId = value;
+					}
+				}
+
+				public string ProgramType
+				{
+					get
+					{
+						return programType;
+					}
+					set	
+					{
+						programType = value;
+					}
+				}
+
 				public int? Priority
 				{
 					get
@@ -257,15 +233,39 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public long? BaselineId
+				public string OwnerId
 				{
 					get
 					{
-						return baselineId;
+						return ownerId;
 					}
 					set	
 					{
-						baselineId = value;
+						ownerId = value;
+					}
+				}
+
+				public string CronExpress
+				{
+					get
+					{
+						return cronExpress;
+					}
+					set	
+					{
+						cronExpress = value;
+					}
+				}
+
+				public long? NodeId
+				{
+					get
+					{
+						return nodeId;
+					}
+					set	
+					{
+						nodeId = value;
 					}
 				}
 			}

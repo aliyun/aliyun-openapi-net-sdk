@@ -24,23 +24,16 @@ using Aliyun.Acs.dataworks_public.Model.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
-    public class CreateTableResponseUnmarshaller
+    public class UpdateIDEEventResultResponseUnmarshaller
     {
-        public static CreateTableResponse Unmarshall(UnmarshallerContext _ctx)
+        public static UpdateIDEEventResultResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CreateTableResponse createTableResponse = new CreateTableResponse();
+			UpdateIDEEventResultResponse updateIDEEventResultResponse = new UpdateIDEEventResultResponse();
 
-			createTableResponse.HttpResponse = _ctx.HttpResponse;
-			createTableResponse.RequestId = _ctx.StringValue("CreateTable.RequestId");
-
-			CreateTableResponse.CreateTable_TaskInfo taskInfo = new CreateTableResponse.CreateTable_TaskInfo();
-			taskInfo.Status = _ctx.StringValue("CreateTable.TaskInfo.Status");
-			taskInfo.NextTaskId = _ctx.StringValue("CreateTable.TaskInfo.NextTaskId");
-			taskInfo.TaskId = _ctx.StringValue("CreateTable.TaskInfo.TaskId");
-			taskInfo.Content = _ctx.StringValue("CreateTable.TaskInfo.Content");
-			createTableResponse.TaskInfo = taskInfo;
+			updateIDEEventResultResponse.HttpResponse = _ctx.HttpResponse;
+			updateIDEEventResultResponse.RequestId = _ctx.StringValue("UpdateIDEEventResult.RequestId");
         
-			return createTableResponse;
+			return updateIDEEventResultResponse;
         }
     }
 }

@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-	public class GetNodeChildrenResponse : AcsResponse
+	public class ListDagsResponse : AcsResponse
 	{
 
 		private int? httpStatusCode;
@@ -35,7 +35,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private bool? success;
 
-		private GetNodeChildren_Data data;
+		private ListDags_Data data;
 
 		public int? HttpStatusCode
 		{
@@ -97,7 +97,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public GetNodeChildren_Data Data
+		public ListDags_Data Data
 		{
 			get
 			{
@@ -109,91 +109,97 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public class GetNodeChildren_Data
+		public class ListDags_Data
 		{
 
-			private List<GetNodeChildren_NodesItem> nodes;
+			private List<ListDags_Dag> dags;
 
-			public List<GetNodeChildren_NodesItem> Nodes
+			public List<ListDags_Dag> Dags
 			{
 				get
 				{
-					return nodes;
+					return dags;
 				}
 				set	
 				{
-					nodes = value;
+					dags = value;
 				}
 			}
 
-			public class GetNodeChildren_NodesItem
+			public class ListDags_Dag
 			{
 
-				private string schedulerType;
+				private string type;
 
-				private long? baselineId;
+				private string status;
 
-				private bool? repeatability;
+				private long? finishTime;
 
-				private string nodeName;
+				private long? createTime;
 
 				private long? projectId;
 
-				private string programType;
+				private long? dagId;
 
-				private int? priority;
+				private long? gmtdate;
 
-				private string ownerId;
+				private long? startTime;
 
-				private string cronExpress;
+				private string createUser;
 
-				private long? nodeId;
+				private long? bizdate;
 
-				public string SchedulerType
+				private string name;
+
+				private long? modifyTime;
+
+				private long? opSeq;
+
+				public string Type
 				{
 					get
 					{
-						return schedulerType;
+						return type;
 					}
 					set	
 					{
-						schedulerType = value;
+						type = value;
 					}
 				}
 
-				public long? BaselineId
+				public string Status
 				{
 					get
 					{
-						return baselineId;
+						return status;
 					}
 					set	
 					{
-						baselineId = value;
+						status = value;
 					}
 				}
 
-				public bool? Repeatability
+				public long? FinishTime
 				{
 					get
 					{
-						return repeatability;
+						return finishTime;
 					}
 					set	
 					{
-						repeatability = value;
+						finishTime = value;
 					}
 				}
 
-				public string NodeName
+				public long? CreateTime
 				{
 					get
 					{
-						return nodeName;
+						return createTime;
 					}
 					set	
 					{
-						nodeName = value;
+						createTime = value;
 					}
 				}
 
@@ -209,63 +215,99 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string ProgramType
+				public long? DagId
 				{
 					get
 					{
-						return programType;
+						return dagId;
 					}
 					set	
 					{
-						programType = value;
+						dagId = value;
 					}
 				}
 
-				public int? Priority
+				public long? Gmtdate
 				{
 					get
 					{
-						return priority;
+						return gmtdate;
 					}
 					set	
 					{
-						priority = value;
+						gmtdate = value;
 					}
 				}
 
-				public string OwnerId
+				public long? StartTime
 				{
 					get
 					{
-						return ownerId;
+						return startTime;
 					}
 					set	
 					{
-						ownerId = value;
+						startTime = value;
 					}
 				}
 
-				public string CronExpress
+				public string CreateUser
 				{
 					get
 					{
-						return cronExpress;
+						return createUser;
 					}
 					set	
 					{
-						cronExpress = value;
+						createUser = value;
 					}
 				}
 
-				public long? NodeId
+				public long? Bizdate
 				{
 					get
 					{
-						return nodeId;
+						return bizdate;
 					}
 					set	
 					{
-						nodeId = value;
+						bizdate = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public long? ModifyTime
+				{
+					get
+					{
+						return modifyTime;
+					}
+					set	
+					{
+						modifyTime = value;
+					}
+				}
+
+				public long? OpSeq
+				{
+					get
+					{
+						return opSeq;
+					}
+					set	
+					{
+						opSeq = value;
 					}
 				}
 			}

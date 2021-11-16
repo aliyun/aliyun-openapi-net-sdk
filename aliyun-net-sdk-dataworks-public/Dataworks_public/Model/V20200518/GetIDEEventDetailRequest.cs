@@ -28,10 +28,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class GetInstanceStatusStatisticRequest : RpcAcsRequest<GetInstanceStatusStatisticResponse>
+    public class GetIDEEventDetailRequest : RpcAcsRequest<GetIDEEventDetailResponse>
     {
-        public GetInstanceStatusStatisticRequest()
-            : base("dataworks-public", "2020-05-18", "GetInstanceStatusStatistic")
+        public GetIDEEventDetailRequest()
+            : base("dataworks-public", "2020-05-18", "GetIDEEventDetail")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,65 +41,20 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string projectEnv;
-
-		private string dagType;
-
-		private string bizDate;
-
-		private string schedulerType;
+		private string messageId;
 
 		private long? projectId;
 
-		public string ProjectEnv
+		public string MessageId
 		{
 			get
 			{
-				return projectEnv;
+				return messageId;
 			}
 			set	
 			{
-				projectEnv = value;
-				DictionaryUtil.Add(BodyParameters, "ProjectEnv", value);
-			}
-		}
-
-		public string DagType
-		{
-			get
-			{
-				return dagType;
-			}
-			set	
-			{
-				dagType = value;
-				DictionaryUtil.Add(BodyParameters, "DagType", value);
-			}
-		}
-
-		public string BizDate
-		{
-			get
-			{
-				return bizDate;
-			}
-			set	
-			{
-				bizDate = value;
-				DictionaryUtil.Add(BodyParameters, "BizDate", value);
-			}
-		}
-
-		public string SchedulerType
-		{
-			get
-			{
-				return schedulerType;
-			}
-			set	
-			{
-				schedulerType = value;
-				DictionaryUtil.Add(BodyParameters, "SchedulerType", value);
+				messageId = value;
+				DictionaryUtil.Add(BodyParameters, "MessageId", value);
 			}
 		}
 
@@ -121,9 +76,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override GetInstanceStatusStatisticResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetIDEEventDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetInstanceStatusStatisticResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetIDEEventDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

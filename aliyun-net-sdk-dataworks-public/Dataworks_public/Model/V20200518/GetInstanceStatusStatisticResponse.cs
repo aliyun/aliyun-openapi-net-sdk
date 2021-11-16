@@ -56,19 +56,67 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetInstanceStatusStatistic_StatusCount
 		{
 
+			private int? failureCount;
+
+			private int? waitTimeCount;
+
+			private int? runningCount;
+
+			private int? successCount;
+
 			private int? totalCount;
 
 			private int? notRunCount;
 
-			private int? waitTimeCount;
-
 			private int? waitResCount;
 
-			private int? runningCount;
+			public int? FailureCount
+			{
+				get
+				{
+					return failureCount;
+				}
+				set	
+				{
+					failureCount = value;
+				}
+			}
 
-			private int? failureCount;
+			public int? WaitTimeCount
+			{
+				get
+				{
+					return waitTimeCount;
+				}
+				set	
+				{
+					waitTimeCount = value;
+				}
+			}
 
-			private int? successCount;
+			public int? RunningCount
+			{
+				get
+				{
+					return runningCount;
+				}
+				set	
+				{
+					runningCount = value;
+				}
+			}
+
+			public int? SuccessCount
+			{
+				get
+				{
+					return successCount;
+				}
+				set	
+				{
+					successCount = value;
+				}
+			}
 
 			public int? TotalCount
 			{
@@ -94,18 +142,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public int? WaitTimeCount
-			{
-				get
-				{
-					return waitTimeCount;
-				}
-				set	
-				{
-					waitTimeCount = value;
-				}
-			}
-
 			public int? WaitResCount
 			{
 				get
@@ -115,42 +151,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					waitResCount = value;
-				}
-			}
-
-			public int? RunningCount
-			{
-				get
-				{
-					return runningCount;
-				}
-				set	
-				{
-					runningCount = value;
-				}
-			}
-
-			public int? FailureCount
-			{
-				get
-				{
-					return failureCount;
-				}
-				set	
-				{
-					failureCount = value;
-				}
-			}
-
-			public int? SuccessCount
-			{
-				get
-				{
-					return successCount;
-				}
-				set	
-				{
-					successCount = value;
 				}
 			}
 		}

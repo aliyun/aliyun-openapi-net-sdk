@@ -25,41 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetInstanceResponse : AcsResponse
 	{
 
-		private string errorCode;
-
-		private string errorMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errorMessage;
+
 		private bool? success;
 
+		private string errorCode;
+
 		private GetInstance_Data data;
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -85,6 +61,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
 		public bool? Success
 		{
 			get
@@ -94,6 +82,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 
@@ -112,107 +112,61 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetInstance_Data
 		{
 
-			private long? nodeId;
-
-			private long? instanceId;
-
-			private long? dagId;
-
-			private string dagType;
-
 			private string status;
-
-			private long? bizdate;
-
-			private string paramValues;
 
 			private long? cycTime;
 
+			private long? beginRunningTime;
+
 			private long? finishTime;
 
-			private long? beginWaitTimeTime;
-
-			private long? beginWaitResTime;
-
-			private long? beginRunningTime;
+			private string errorMessage;
 
 			private long? createTime;
 
-			private long? modifyTime;
-
-			private string nodeName;
+			private long? dagId;
 
 			private int? priority;
 
+			private string taskType;
+
+			private string paramValues;
+
+			private string connection;
+
 			private long? baselineId;
+
+			private int? dqcType;
+
+			private string dagType;
+
+			private long? businessId;
+
+			private int? taskRerunTime;
+
+			private long? modifyTime;
 
 			private bool? repeatability;
 
 			private long? repeatInterval;
 
-			private string connection;
+			private long? instanceId;
 
-			private int? dqcType;
-
-			private string dqcDescription;
-
-			private string errorMessage;
+			private long? beginWaitResTime;
 
 			private long? relatedFlowId;
 
-			private string taskType;
+			private long? bizdate;
 
-			private int? taskRerunTime;
+			private string nodeName;
 
-			private long? businessId;
+			private long? beginWaitTimeTime;
 
-			public long? NodeId
-			{
-				get
-				{
-					return nodeId;
-				}
-				set	
-				{
-					nodeId = value;
-				}
-			}
+			private string dqcDescription;
 
-			public long? InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
+			private long? nodeId;
 
-			public long? DagId
-			{
-				get
-				{
-					return dagId;
-				}
-				set	
-				{
-					dagId = value;
-				}
-			}
-
-			public string DagType
-			{
-				get
-				{
-					return dagType;
-				}
-				set	
-				{
-					dagType = value;
-				}
-			}
+			private string createUser;
 
 			public string Status
 			{
@@ -223,30 +177,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public long? Bizdate
-			{
-				get
-				{
-					return bizdate;
-				}
-				set	
-				{
-					bizdate = value;
-				}
-			}
-
-			public string ParamValues
-			{
-				get
-				{
-					return paramValues;
-				}
-				set	
-				{
-					paramValues = value;
 				}
 			}
 
@@ -262,6 +192,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
+			public long? BeginRunningTime
+			{
+				get
+				{
+					return beginRunningTime;
+				}
+				set	
+				{
+					beginRunningTime = value;
+				}
+			}
+
 			public long? FinishTime
 			{
 				get
@@ -274,39 +216,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public long? BeginWaitTimeTime
+			public string ErrorMessage
 			{
 				get
 				{
-					return beginWaitTimeTime;
+					return errorMessage;
 				}
 				set	
 				{
-					beginWaitTimeTime = value;
-				}
-			}
-
-			public long? BeginWaitResTime
-			{
-				get
-				{
-					return beginWaitResTime;
-				}
-				set	
-				{
-					beginWaitResTime = value;
-				}
-			}
-
-			public long? BeginRunningTime
-			{
-				get
-				{
-					return beginRunningTime;
-				}
-				set	
-				{
-					beginRunningTime = value;
+					errorMessage = value;
 				}
 			}
 
@@ -322,27 +240,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public long? ModifyTime
+			public long? DagId
 			{
 				get
 				{
-					return modifyTime;
+					return dagId;
 				}
 				set	
 				{
-					modifyTime = value;
-				}
-			}
-
-			public string NodeName
-			{
-				get
-				{
-					return nodeName;
-				}
-				set	
-				{
-					nodeName = value;
+					dagId = value;
 				}
 			}
 
@@ -358,6 +264,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
+			public string TaskType
+			{
+				get
+				{
+					return taskType;
+				}
+				set	
+				{
+					taskType = value;
+				}
+			}
+
+			public string ParamValues
+			{
+				get
+				{
+					return paramValues;
+				}
+				set	
+				{
+					paramValues = value;
+				}
+			}
+
+			public string Connection
+			{
+				get
+				{
+					return connection;
+				}
+				set	
+				{
+					connection = value;
+				}
+			}
+
 			public long? BaselineId
 			{
 				get
@@ -367,6 +309,66 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					baselineId = value;
+				}
+			}
+
+			public int? DqcType
+			{
+				get
+				{
+					return dqcType;
+				}
+				set	
+				{
+					dqcType = value;
+				}
+			}
+
+			public string DagType
+			{
+				get
+				{
+					return dagType;
+				}
+				set	
+				{
+					dagType = value;
+				}
+			}
+
+			public long? BusinessId
+			{
+				get
+				{
+					return businessId;
+				}
+				set	
+				{
+					businessId = value;
+				}
+			}
+
+			public int? TaskRerunTime
+			{
+				get
+				{
+					return taskRerunTime;
+				}
+				set	
+				{
+					taskRerunTime = value;
+				}
+			}
+
+			public long? ModifyTime
+			{
+				get
+				{
+					return modifyTime;
+				}
+				set	
+				{
+					modifyTime = value;
 				}
 			}
 
@@ -394,51 +396,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string Connection
+			public long? InstanceId
 			{
 				get
 				{
-					return connection;
+					return instanceId;
 				}
 				set	
 				{
-					connection = value;
+					instanceId = value;
 				}
 			}
 
-			public int? DqcType
+			public long? BeginWaitResTime
 			{
 				get
 				{
-					return dqcType;
+					return beginWaitResTime;
 				}
 				set	
 				{
-					dqcType = value;
-				}
-			}
-
-			public string DqcDescription
-			{
-				get
-				{
-					return dqcDescription;
-				}
-				set	
-				{
-					dqcDescription = value;
-				}
-			}
-
-			public string ErrorMessage
-			{
-				get
-				{
-					return errorMessage;
-				}
-				set	
-				{
-					errorMessage = value;
+					beginWaitResTime = value;
 				}
 			}
 
@@ -454,39 +432,75 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string TaskType
+			public long? Bizdate
 			{
 				get
 				{
-					return taskType;
+					return bizdate;
 				}
 				set	
 				{
-					taskType = value;
+					bizdate = value;
 				}
 			}
 
-			public int? TaskRerunTime
+			public string NodeName
 			{
 				get
 				{
-					return taskRerunTime;
+					return nodeName;
 				}
 				set	
 				{
-					taskRerunTime = value;
+					nodeName = value;
 				}
 			}
 
-			public long? BusinessId
+			public long? BeginWaitTimeTime
 			{
 				get
 				{
-					return businessId;
+					return beginWaitTimeTime;
 				}
 				set	
 				{
-					businessId = value;
+					beginWaitTimeTime = value;
+				}
+			}
+
+			public string DqcDescription
+			{
+				get
+				{
+					return dqcDescription;
+				}
+				set	
+				{
+					dqcDescription = value;
+				}
+			}
+
+			public long? NodeId
+			{
+				get
+				{
+					return nodeId;
+				}
+				set	
+				{
+					nodeId = value;
+				}
+			}
+
+			public string CreateUser
+			{
+				get
+				{
+					return createUser;
+				}
+				set	
+				{
+					createUser = value;
 				}
 			}
 		}

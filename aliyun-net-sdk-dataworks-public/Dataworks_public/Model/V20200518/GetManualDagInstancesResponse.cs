@@ -56,85 +56,39 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetManualDagInstances_InstancesItem
 		{
 
-			private long? nodeId;
-
-			private long? instanceId;
-
-			private long? dagId;
-
-			private string dagType;
-
 			private string status;
+
+			private long? beginRunningTime;
 
 			private long? bizDate;
 
 			private long? cycTime;
 
+			private long? finishTime;
+
 			private long? createTime;
 
-			private long? modifyTime;
+			private long? dagId;
+
+			private long? instanceId;
+
+			private long? beginWaitResTime;
+
+			private string taskType;
+
+			private string paramValues;
+
+			private string dagType;
 
 			private string nodeName;
 
 			private long? beginWaitTimeTime;
 
-			private long? beginWaitResTime;
+			private long? nodeId;
 
-			private long? beginRunningTime;
+			private long? modifyTime;
 
-			private string paramValues;
-
-			private long? finishTime;
-
-			private string taskType;
-
-			public long? NodeId
-			{
-				get
-				{
-					return nodeId;
-				}
-				set	
-				{
-					nodeId = value;
-				}
-			}
-
-			public long? InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public long? DagId
-			{
-				get
-				{
-					return dagId;
-				}
-				set	
-				{
-					dagId = value;
-				}
-			}
-
-			public string DagType
-			{
-				get
-				{
-					return dagType;
-				}
-				set	
-				{
-					dagType = value;
-				}
-			}
+			private string createUser;
 
 			public string Status
 			{
@@ -145,6 +99,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public long? BeginRunningTime
+			{
+				get
+				{
+					return beginRunningTime;
+				}
+				set	
+				{
+					beginRunningTime = value;
 				}
 			}
 
@@ -172,6 +138,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
+			public long? FinishTime
+			{
+				get
+				{
+					return finishTime;
+				}
+				set	
+				{
+					finishTime = value;
+				}
+			}
+
 			public long? CreateTime
 			{
 				get
@@ -184,15 +162,75 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public long? ModifyTime
+			public long? DagId
 			{
 				get
 				{
-					return modifyTime;
+					return dagId;
 				}
 				set	
 				{
-					modifyTime = value;
+					dagId = value;
+				}
+			}
+
+			public long? InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public long? BeginWaitResTime
+			{
+				get
+				{
+					return beginWaitResTime;
+				}
+				set	
+				{
+					beginWaitResTime = value;
+				}
+			}
+
+			public string TaskType
+			{
+				get
+				{
+					return taskType;
+				}
+				set	
+				{
+					taskType = value;
+				}
+			}
+
+			public string ParamValues
+			{
+				get
+				{
+					return paramValues;
+				}
+				set	
+				{
+					paramValues = value;
+				}
+			}
+
+			public string DagType
+			{
+				get
+				{
+					return dagType;
+				}
+				set	
+				{
+					dagType = value;
 				}
 			}
 
@@ -220,63 +258,39 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public long? BeginWaitResTime
+			public long? NodeId
 			{
 				get
 				{
-					return beginWaitResTime;
+					return nodeId;
 				}
 				set	
 				{
-					beginWaitResTime = value;
+					nodeId = value;
 				}
 			}
 
-			public long? BeginRunningTime
+			public long? ModifyTime
 			{
 				get
 				{
-					return beginRunningTime;
+					return modifyTime;
 				}
 				set	
 				{
-					beginRunningTime = value;
+					modifyTime = value;
 				}
 			}
 
-			public string ParamValues
+			public string CreateUser
 			{
 				get
 				{
-					return paramValues;
+					return createUser;
 				}
 				set	
 				{
-					paramValues = value;
-				}
-			}
-
-			public long? FinishTime
-			{
-				get
-				{
-					return finishTime;
-				}
-				set	
-				{
-					finishTime = value;
-				}
-			}
-
-			public string TaskType
-			{
-				get
-				{
-					return taskType;
-				}
-				set	
-				{
-					taskType = value;
+					createUser = value;
 				}
 			}
 		}
