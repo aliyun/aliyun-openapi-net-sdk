@@ -27,10 +27,10 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class DeleteStreamRequest : RpcAcsRequest<DeleteStreamResponse>
+    public class UpdateStreamInfoRequest : RpcAcsRequest<UpdateStreamInfoResponse>
     {
-        public DeleteStreamRequest()
-            : base("vod", "2017-03-21", "DeleteStream", "vod", "openAPI")
+        public UpdateStreamInfoRequest()
+            : base("vod", "2017-03-21", "UpdateStreamInfo", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,39 +40,39 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
-		private string videoId;
+		private string jobId;
 
-		private string jobIds;
+		private string mediaId;
 
-		public string VideoId
+		public string JobId
 		{
 			get
 			{
-				return videoId;
+				return jobId;
 			}
 			set	
 			{
-				videoId = value;
-				DictionaryUtil.Add(QueryParameters, "VideoId", value);
+				jobId = value;
+				DictionaryUtil.Add(QueryParameters, "JobId", value);
 			}
 		}
 
-		public string JobIds
+		public string MediaId
 		{
 			get
 			{
-				return jobIds;
+				return mediaId;
 			}
 			set	
 			{
-				jobIds = value;
-				DictionaryUtil.Add(QueryParameters, "JobIds", value);
+				mediaId = value;
+				DictionaryUtil.Add(QueryParameters, "MediaId", value);
 			}
 		}
 
-        public override DeleteStreamResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateStreamInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteStreamResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateStreamInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.vod;
 using Aliyun.Acs.vod.Transform;
 using Aliyun.Acs.vod.Transform.V20170321;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class UpdateImageInfosRequest : RpcAcsRequest<UpdateImageInfosResponse>
     {
         public UpdateImageInfosRequest()
-            : base("vod", "2017-03-21", "UpdateImageInfos")
+            : base("vod", "2017-03-21", "UpdateImageInfos", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

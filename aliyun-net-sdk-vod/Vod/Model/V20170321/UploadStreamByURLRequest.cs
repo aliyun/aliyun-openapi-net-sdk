@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.vod;
 using Aliyun.Acs.vod.Transform;
 using Aliyun.Acs.vod.Transform.V20170321;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class UploadStreamByURLRequest : RpcAcsRequest<UploadStreamByURLResponse>
     {
         public UploadStreamByURLRequest()
-            : base("vod", "2017-03-21", "UploadStreamByURL")
+            : base("vod", "2017-03-21", "UploadStreamByURL", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,13 +42,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string fileExtension;
 
-		private string mediaId;
-
 		private string userData;
+
+		private string hDRType;
 
 		private string definition;
 
 		private string streamURL;
+
+		private string mediaId;
 
 		public string FileExtension
 		{
@@ -64,19 +65,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string MediaId
-		{
-			get
-			{
-				return mediaId;
-			}
-			set	
-			{
-				mediaId = value;
-				DictionaryUtil.Add(QueryParameters, "MediaId", value);
-			}
-		}
-
 		public string UserData
 		{
 			get
@@ -87,6 +75,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				userData = value;
 				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
+
+		public string HDRType
+		{
+			get
+			{
+				return hDRType;
+			}
+			set	
+			{
+				hDRType = value;
+				DictionaryUtil.Add(QueryParameters, "HDRType", value);
 			}
 		}
 
@@ -113,6 +114,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				streamURL = value;
 				DictionaryUtil.Add(QueryParameters, "StreamURL", value);
+			}
+		}
+
+		public string MediaId
+		{
+			get
+			{
+				return mediaId;
+			}
+			set	
+			{
+				mediaId = value;
+				DictionaryUtil.Add(QueryParameters, "MediaId", value);
 			}
 		}
 

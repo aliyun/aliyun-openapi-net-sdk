@@ -56,61 +56,37 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		public class GetMezzanineInfo_Mezzanine
 		{
 
-			private string videoId;
-
-			private string bitrate;
-
 			private string creationTime;
-
-			private string duration;
-
-			private string fps;
-
-			private long? height;
-
-			private long? width;
-
-			private long? size;
 
 			private string status;
 
 			private string fileURL;
 
+			private string videoId;
+
+			private long? height;
+
+			private string bitrate;
+
 			private string fileName;
 
-			private string cRC64;
+			private string outputType;
 
 			private string preprocessStatus;
 
-			private string outputType;
+			private long? width;
+
+			private long? size;
+
+			private string cRC64;
+
+			private string duration;
+
+			private string fps;
 
 			private List<GetMezzanineInfo_AudioStream> audioStreamList;
 
 			private List<GetMezzanineInfo_VideoStream> videoStreamList;
-
-			public string VideoId
-			{
-				get
-				{
-					return videoId;
-				}
-				set	
-				{
-					videoId = value;
-				}
-			}
-
-			public string Bitrate
-			{
-				get
-				{
-					return bitrate;
-				}
-				set	
-				{
-					bitrate = value;
-				}
-			}
 
 			public string CreationTime
 			{
@@ -121,66 +97,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					creationTime = value;
-				}
-			}
-
-			public string Duration
-			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
-				}
-			}
-
-			public string Fps
-			{
-				get
-				{
-					return fps;
-				}
-				set	
-				{
-					fps = value;
-				}
-			}
-
-			public long? Height
-			{
-				get
-				{
-					return height;
-				}
-				set	
-				{
-					height = value;
-				}
-			}
-
-			public long? Width
-			{
-				get
-				{
-					return width;
-				}
-				set	
-				{
-					width = value;
-				}
-			}
-
-			public long? Size
-			{
-				get
-				{
-					return size;
-				}
-				set	
-				{
-					size = value;
 				}
 			}
 
@@ -208,6 +124,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public string VideoId
+			{
+				get
+				{
+					return videoId;
+				}
+				set	
+				{
+					videoId = value;
+				}
+			}
+
+			public long? Height
+			{
+				get
+				{
+					return height;
+				}
+				set	
+				{
+					height = value;
+				}
+			}
+
+			public string Bitrate
+			{
+				get
+				{
+					return bitrate;
+				}
+				set	
+				{
+					bitrate = value;
+				}
+			}
+
 			public string FileName
 			{
 				get
@@ -220,15 +172,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string CRC64
+			public string OutputType
 			{
 				get
 				{
-					return cRC64;
+					return outputType;
 				}
 				set	
 				{
-					cRC64 = value;
+					outputType = value;
 				}
 			}
 
@@ -244,15 +196,63 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public string OutputType
+			public long? Width
 			{
 				get
 				{
-					return outputType;
+					return width;
 				}
 				set	
 				{
-					outputType = value;
+					width = value;
+				}
+			}
+
+			public long? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
+				}
+			}
+
+			public string CRC64
+			{
+				get
+				{
+					return cRC64;
+				}
+				set	
+				{
+					cRC64 = value;
+				}
+			}
+
+			public string Duration
+			{
+				get
+				{
+					return duration;
+				}
+				set	
+				{
+					duration = value;
+				}
+			}
+
+			public string Fps
+			{
+				get
+				{
+					return fps;
+				}
+				set	
+				{
+					fps = value;
 				}
 			}
 
@@ -285,35 +285,35 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string index;
 
-				private string codecName;
-
-				private string codecLongName;
-
-				private string codecTimeBase;
-
-				private string codecTagString;
-
-				private string codecTag;
+				private string timebase;
 
 				private string sampleFmt;
 
 				private string sampleRate;
 
-				private string channels;
-
 				private string channelLayout;
 
-				private string timebase;
+				private string lang;
 
-				private string startTime;
+				private string codecLongName;
 
-				private string duration;
-
-				private string bitrate;
+				private string channels;
 
 				private string numFrames;
 
-				private string lang;
+				private string bitrate;
+
+				private string codecTagString;
+
+				private string startTime;
+
+				private string codecName;
+
+				private string duration;
+
+				private string codecTag;
+
+				private string codecTimeBase;
 
 				public string Index
 				{
@@ -327,63 +327,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string CodecName
+				public string Timebase
 				{
 					get
 					{
-						return codecName;
+						return timebase;
 					}
 					set	
 					{
-						codecName = value;
-					}
-				}
-
-				public string CodecLongName
-				{
-					get
-					{
-						return codecLongName;
-					}
-					set	
-					{
-						codecLongName = value;
-					}
-				}
-
-				public string CodecTimeBase
-				{
-					get
-					{
-						return codecTimeBase;
-					}
-					set	
-					{
-						codecTimeBase = value;
-					}
-				}
-
-				public string CodecTagString
-				{
-					get
-					{
-						return codecTagString;
-					}
-					set	
-					{
-						codecTagString = value;
-					}
-				}
-
-				public string CodecTag
-				{
-					get
-					{
-						return codecTag;
-					}
-					set	
-					{
-						codecTag = value;
+						timebase = value;
 					}
 				}
 
@@ -411,18 +363,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string Channels
-				{
-					get
-					{
-						return channels;
-					}
-					set	
-					{
-						channels = value;
-					}
-				}
-
 				public string ChannelLayout
 				{
 					get
@@ -435,66 +375,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string Timebase
-				{
-					get
-					{
-						return timebase;
-					}
-					set	
-					{
-						timebase = value;
-					}
-				}
-
-				public string StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
-					}
-				}
-
-				public string Duration
-				{
-					get
-					{
-						return duration;
-					}
-					set	
-					{
-						duration = value;
-					}
-				}
-
-				public string Bitrate
-				{
-					get
-					{
-						return bitrate;
-					}
-					set	
-					{
-						bitrate = value;
-					}
-				}
-
-				public string NumFrames
-				{
-					get
-					{
-						return numFrames;
-					}
-					set	
-					{
-						numFrames = value;
-					}
-				}
-
 				public string Lang
 				{
 					get
@@ -504,80 +384,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						lang = value;
-					}
-				}
-			}
-
-			public class GetMezzanineInfo_VideoStream
-			{
-
-				private string index;
-
-				private string codecName;
-
-				private string codecLongName;
-
-				private string profile;
-
-				private string codecTimeBase;
-
-				private string codecTagString;
-
-				private string codecTag;
-
-				private string width;
-
-				private string height;
-
-				private string hasBFrames;
-
-				private string sar;
-
-				private string dar;
-
-				private string pixFmt;
-
-				private string level;
-
-				private string fps;
-
-				private string avgFPS;
-
-				private string timebase;
-
-				private string startTime;
-
-				private string duration;
-
-				private string numFrames;
-
-				private string lang;
-
-				private string rotate;
-
-				private string bitrate;
-
-				public string Index
-				{
-					get
-					{
-						return index;
-					}
-					set	
-					{
-						index = value;
-					}
-				}
-
-				public string CodecName
-				{
-					get
-					{
-						return codecName;
-					}
-					set	
-					{
-						codecName = value;
 					}
 				}
 
@@ -593,195 +399,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string Profile
+				public string Channels
 				{
 					get
 					{
-						return profile;
+						return channels;
 					}
 					set	
 					{
-						profile = value;
-					}
-				}
-
-				public string CodecTimeBase
-				{
-					get
-					{
-						return codecTimeBase;
-					}
-					set	
-					{
-						codecTimeBase = value;
-					}
-				}
-
-				public string CodecTagString
-				{
-					get
-					{
-						return codecTagString;
-					}
-					set	
-					{
-						codecTagString = value;
-					}
-				}
-
-				public string CodecTag
-				{
-					get
-					{
-						return codecTag;
-					}
-					set	
-					{
-						codecTag = value;
-					}
-				}
-
-				public string Width
-				{
-					get
-					{
-						return width;
-					}
-					set	
-					{
-						width = value;
-					}
-				}
-
-				public string Height
-				{
-					get
-					{
-						return height;
-					}
-					set	
-					{
-						height = value;
-					}
-				}
-
-				public string HasBFrames
-				{
-					get
-					{
-						return hasBFrames;
-					}
-					set	
-					{
-						hasBFrames = value;
-					}
-				}
-
-				public string Sar
-				{
-					get
-					{
-						return sar;
-					}
-					set	
-					{
-						sar = value;
-					}
-				}
-
-				public string Dar
-				{
-					get
-					{
-						return dar;
-					}
-					set	
-					{
-						dar = value;
-					}
-				}
-
-				public string PixFmt
-				{
-					get
-					{
-						return pixFmt;
-					}
-					set	
-					{
-						pixFmt = value;
-					}
-				}
-
-				public string Level
-				{
-					get
-					{
-						return level;
-					}
-					set	
-					{
-						level = value;
-					}
-				}
-
-				public string Fps
-				{
-					get
-					{
-						return fps;
-					}
-					set	
-					{
-						fps = value;
-					}
-				}
-
-				public string AvgFPS
-				{
-					get
-					{
-						return avgFPS;
-					}
-					set	
-					{
-						avgFPS = value;
-					}
-				}
-
-				public string Timebase
-				{
-					get
-					{
-						return timebase;
-					}
-					set	
-					{
-						timebase = value;
-					}
-				}
-
-				public string StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
-					}
-				}
-
-				public string Duration
-				{
-					get
-					{
-						return duration;
-					}
-					set	
-					{
-						duration = value;
+						channels = value;
 					}
 				}
 
@@ -797,6 +423,190 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
+				public string Bitrate
+				{
+					get
+					{
+						return bitrate;
+					}
+					set	
+					{
+						bitrate = value;
+					}
+				}
+
+				public string CodecTagString
+				{
+					get
+					{
+						return codecTagString;
+					}
+					set	
+					{
+						codecTagString = value;
+					}
+				}
+
+				public string StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
+
+				public string CodecName
+				{
+					get
+					{
+						return codecName;
+					}
+					set	
+					{
+						codecName = value;
+					}
+				}
+
+				public string Duration
+				{
+					get
+					{
+						return duration;
+					}
+					set	
+					{
+						duration = value;
+					}
+				}
+
+				public string CodecTag
+				{
+					get
+					{
+						return codecTag;
+					}
+					set	
+					{
+						codecTag = value;
+					}
+				}
+
+				public string CodecTimeBase
+				{
+					get
+					{
+						return codecTimeBase;
+					}
+					set	
+					{
+						codecTimeBase = value;
+					}
+				}
+			}
+
+			public class GetMezzanineInfo_VideoStream
+			{
+
+				private string timebase;
+
+				private string index;
+
+				private string avgFPS;
+
+				private string pixFmt;
+
+				private string lang;
+
+				private string sar;
+
+				private string height;
+
+				private string codecLongName;
+
+				private string numFrames;
+
+				private string bitrate;
+
+				private string rotate;
+
+				private string codecTagString;
+
+				private string hasBFrames;
+
+				private string profile;
+
+				private string startTime;
+
+				private string dar;
+
+				private string codecName;
+
+				private string width;
+
+				private string duration;
+
+				private string fps;
+
+				private string codecTag;
+
+				private string codecTimeBase;
+
+				private string level;
+
+				private string hDRType;
+
+				public string Timebase
+				{
+					get
+					{
+						return timebase;
+					}
+					set	
+					{
+						timebase = value;
+					}
+				}
+
+				public string Index
+				{
+					get
+					{
+						return index;
+					}
+					set	
+					{
+						index = value;
+					}
+				}
+
+				public string AvgFPS
+				{
+					get
+					{
+						return avgFPS;
+					}
+					set	
+					{
+						avgFPS = value;
+					}
+				}
+
+				public string PixFmt
+				{
+					get
+					{
+						return pixFmt;
+					}
+					set	
+					{
+						pixFmt = value;
+					}
+				}
+
 				public string Lang
 				{
 					get
@@ -806,6 +616,66 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						lang = value;
+					}
+				}
+
+				public string Sar
+				{
+					get
+					{
+						return sar;
+					}
+					set	
+					{
+						sar = value;
+					}
+				}
+
+				public string Height
+				{
+					get
+					{
+						return height;
+					}
+					set	
+					{
+						height = value;
+					}
+				}
+
+				public string CodecLongName
+				{
+					get
+					{
+						return codecLongName;
+					}
+					set	
+					{
+						codecLongName = value;
+					}
+				}
+
+				public string NumFrames
+				{
+					get
+					{
+						return numFrames;
+					}
+					set	
+					{
+						numFrames = value;
+					}
+				}
+
+				public string Bitrate
+				{
+					get
+					{
+						return bitrate;
+					}
+					set	
+					{
+						bitrate = value;
 					}
 				}
 
@@ -821,15 +691,159 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string Bitrate
+				public string CodecTagString
 				{
 					get
 					{
-						return bitrate;
+						return codecTagString;
 					}
 					set	
 					{
-						bitrate = value;
+						codecTagString = value;
+					}
+				}
+
+				public string HasBFrames
+				{
+					get
+					{
+						return hasBFrames;
+					}
+					set	
+					{
+						hasBFrames = value;
+					}
+				}
+
+				public string Profile
+				{
+					get
+					{
+						return profile;
+					}
+					set	
+					{
+						profile = value;
+					}
+				}
+
+				public string StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
+
+				public string Dar
+				{
+					get
+					{
+						return dar;
+					}
+					set	
+					{
+						dar = value;
+					}
+				}
+
+				public string CodecName
+				{
+					get
+					{
+						return codecName;
+					}
+					set	
+					{
+						codecName = value;
+					}
+				}
+
+				public string Width
+				{
+					get
+					{
+						return width;
+					}
+					set	
+					{
+						width = value;
+					}
+				}
+
+				public string Duration
+				{
+					get
+					{
+						return duration;
+					}
+					set	
+					{
+						duration = value;
+					}
+				}
+
+				public string Fps
+				{
+					get
+					{
+						return fps;
+					}
+					set	
+					{
+						fps = value;
+					}
+				}
+
+				public string CodecTag
+				{
+					get
+					{
+						return codecTag;
+					}
+					set	
+					{
+						codecTag = value;
+					}
+				}
+
+				public string CodecTimeBase
+				{
+					get
+					{
+						return codecTimeBase;
+					}
+					set	
+					{
+						codecTimeBase = value;
+					}
+				}
+
+				public string Level
+				{
+					get
+					{
+						return level;
+					}
+					set	
+					{
+						level = value;
+					}
+				}
+
+				public string HDRType
+				{
+					get
+					{
+						return hDRType;
+					}
+					set	
+					{
+						hDRType = value;
 					}
 				}
 			}
