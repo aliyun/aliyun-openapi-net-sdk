@@ -31,7 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			RemoveApmResponse removeApmResponse = new RemoveApmResponse();
 
 			removeApmResponse.HttpResponse = _ctx.HttpResponse;
-			removeApmResponse.RequestId = _ctx.StringValue("RemoveApm.requestId");
+			removeApmResponse.RequestId = _ctx.StringValue("RemoveApm.RequestId");
+			removeApmResponse.Result = _ctx.BooleanValue("RemoveApm.Result");
         
 			return removeApmResponse;
         }

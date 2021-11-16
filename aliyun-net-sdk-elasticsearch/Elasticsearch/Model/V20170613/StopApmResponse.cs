@@ -27,6 +27,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string requestId;
 
+		private bool? result;
+
 		public string RequestId
 		{
 			get
@@ -36,6 +38,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Result
+		{
+			get
+			{
+				return result;
+			}
+			set	
+			{
+				result = value;
 			}
 		}
 	}

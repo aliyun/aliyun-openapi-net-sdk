@@ -31,7 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			StartApmResponse startApmResponse = new StartApmResponse();
 
 			startApmResponse.HttpResponse = _ctx.HttpResponse;
-			startApmResponse.RequestId = _ctx.StringValue("StartApm.requestId");
+			startApmResponse.RequestId = _ctx.StringValue("StartApm.RequestId");
+			startApmResponse.Result = _ctx.BooleanValue("StartApm.Result");
         
 			return startApmResponse;
         }

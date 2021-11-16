@@ -22,12 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-	public class DescribeApmResponse : AcsResponse
+	public class ListApmResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private DescribeApm_Result result;
+		private List<ListApm_返回结果> result;
+
+		private ListApm_Headers headers;
 
 		public string RequestId
 		{
@@ -41,7 +43,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public DescribeApm_Result Result
+		public List<ListApm_返回结果> Result
 		{
 			get
 			{
@@ -53,18 +55,26 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public class DescribeApm_Result
+		public ListApm_Headers Headers
 		{
+			get
+			{
+				return headers;
+			}
+			set	
+			{
+				headers = value;
+			}
+		}
 
-			private string apmServerDomain;
+		public class ListApm_返回结果
+		{
 
 			private string createdAt;
 
 			private long? deployedReplica;
 
 			private string description;
-
-			private long? endTime;
 
 			private string instanceId;
 
@@ -74,15 +84,13 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private string outputESUserName;
 
-			private string outputEsDescription;
-
 			private string ownerId;
 
 			private string paymentType;
 
 			private string region;
 
-			private int? replica;
+			private long? replica;
 
 			private string resourceSpec;
 
@@ -95,18 +103,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			private string vsArea;
 
 			private string vswitchId;
-
-			public string ApmServerDomain
-			{
-				get
-				{
-					return apmServerDomain;
-				}
-				set	
-				{
-					apmServerDomain = value;
-				}
-			}
 
 			public string CreatedAt
 			{
@@ -141,18 +137,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					description = value;
-				}
-			}
-
-			public long? EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
 				}
 			}
 
@@ -204,18 +188,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string OutputEsDescription
-			{
-				get
-				{
-					return outputEsDescription;
-				}
-				set	
-				{
-					outputEsDescription = value;
-				}
-			}
-
 			public string OwnerId
 			{
 				get
@@ -252,7 +224,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public int? Replica
+			public long? Replica
 			{
 				get
 				{
@@ -333,6 +305,24 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					vswitchId = value;
+				}
+			}
+		}
+
+		public class ListApm_Headers
+		{
+
+			private long? xTotalCount;
+
+			public long? XTotalCount
+			{
+				get
+				{
+					return xTotalCount;
+				}
+				set	
+				{
+					xTotalCount = value;
 				}
 			}
 		}

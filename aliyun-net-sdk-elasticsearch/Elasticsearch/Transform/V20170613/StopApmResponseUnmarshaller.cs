@@ -31,7 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			StopApmResponse stopApmResponse = new StopApmResponse();
 
 			stopApmResponse.HttpResponse = _ctx.HttpResponse;
-			stopApmResponse.RequestId = _ctx.StringValue("StopApm.requestId");
+			stopApmResponse.RequestId = _ctx.StringValue("StopApm.RequestId");
+			stopApmResponse.Result = _ctx.BooleanValue("StopApm.Result");
         
 			return stopApmResponse;
         }

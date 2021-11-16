@@ -31,7 +31,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			UpdateApmResponse updateApmResponse = new UpdateApmResponse();
 
 			updateApmResponse.HttpResponse = _ctx.HttpResponse;
-			updateApmResponse.RequestId = _ctx.StringValue("UpdateApm.requestId");
+			updateApmResponse.RequestId = _ctx.StringValue("UpdateApm.RequestId");
+			updateApmResponse.Result = _ctx.BooleanValue("UpdateApm.Result");
         
 			return updateApmResponse;
         }
