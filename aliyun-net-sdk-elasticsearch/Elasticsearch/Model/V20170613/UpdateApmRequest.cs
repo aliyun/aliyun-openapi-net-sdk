@@ -41,43 +41,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			Method = MethodType.PUT;
         }
 
-		private string outputES;
-
-		private string outputESPassword;
-
 		private string instanceId;
 
-		private string yml;
-
-		private string outputESUserName;
-
-		private string token;
-
-		public string OutputES
-		{
-			get
-			{
-				return outputES;
-			}
-			set	
-			{
-				outputES = value;
-				DictionaryUtil.Add(QueryParameters, "outputES", value);
-			}
-		}
-
-		public string OutputESPassword
-		{
-			get
-			{
-				return outputESPassword;
-			}
-			set	
-			{
-				outputESPassword = value;
-				DictionaryUtil.Add(QueryParameters, "outputESPassword", value);
-			}
-		}
+		private string body;
 
 		public string InstanceId
 		{
@@ -92,42 +58,16 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public string Yml
+		public string Body
 		{
 			get
 			{
-				return yml;
+				return body;
 			}
 			set	
 			{
-				yml = value;
-				DictionaryUtil.Add(QueryParameters, "yml", value);
-			}
-		}
-
-		public string OutputESUserName
-		{
-			get
-			{
-				return outputESUserName;
-			}
-			set	
-			{
-				outputESUserName = value;
-				DictionaryUtil.Add(QueryParameters, "outputESUserName", value);
-			}
-		}
-
-		public string Token
-		{
-			get
-			{
-				return token;
-			}
-			set	
-			{
-				token = value;
-				DictionaryUtil.Add(QueryParameters, "token", value);
+				body = value;
+				DictionaryUtil.Add(BodyParameters, "body", value);
 			}
 		}
 
