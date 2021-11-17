@@ -43,7 +43,6 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			result.NodeAmount = _ctx.LongValue("DescribeApm.Result.nodeAmount");
 			result.OutputES = _ctx.StringValue("DescribeApm.Result.outputES");
 			result.OutputESUserName = _ctx.StringValue("DescribeApm.Result.outputESUserName");
-			result.OutputEsDescription = _ctx.StringValue("DescribeApm.Result.outputEsDescription");
 			result.OwnerId = _ctx.StringValue("DescribeApm.Result.ownerId");
 			result.PaymentType = _ctx.StringValue("DescribeApm.Result.paymentType");
 			result.Region = _ctx.StringValue("DescribeApm.Result.region");

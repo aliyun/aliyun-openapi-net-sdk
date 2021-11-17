@@ -74,8 +74,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private string outputESUserName;
 
-			private string outputEsDescription;
-
 			private string ownerId;
 
 			private string paymentType;
@@ -201,18 +199,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					outputESUserName = value;
-				}
-			}
-
-			public string OutputEsDescription
-			{
-				get
-				{
-					return outputEsDescription;
-				}
-				set	
-				{
-					outputEsDescription = value;
 				}
 			}
 
