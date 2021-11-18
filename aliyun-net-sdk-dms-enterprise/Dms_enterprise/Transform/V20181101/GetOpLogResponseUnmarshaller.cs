@@ -43,6 +43,7 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 				opLogDetail.Module = _ctx.StringValue("GetOpLog.OpLogDetails["+ i +"].Module");
 				opLogDetail.Database = _ctx.StringValue("GetOpLog.OpLogDetails["+ i +"].Database");
 				opLogDetail.UserId = _ctx.StringValue("GetOpLog.OpLogDetails["+ i +"].UserId");
+				opLogDetail.OpUserId = _ctx.LongValue("GetOpLog.OpLogDetails["+ i +"].OpUserId");
 				opLogDetail.OpContent = _ctx.StringValue("GetOpLog.OpLogDetails["+ i +"].OpContent");
 				opLogDetail.UserNick = _ctx.StringValue("GetOpLog.OpLogDetails["+ i +"].UserNick");
 				opLogDetail.OrderId = _ctx.LongValue("GetOpLog.OpLogDetails["+ i +"].OrderId");

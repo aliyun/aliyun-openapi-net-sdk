@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 {
-	public class GetOpLogResponse : AcsResponse
+	public class ListInstanceLoginAuditLogResponse : AcsResponse
 	{
 
 		private long? totalCount;
@@ -35,7 +35,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private bool? success;
 
-		private List<GetOpLog_OpLogDetail> opLogDetails;
+		private List<ListInstanceLoginAuditLog_InstanceLoginAuditLog> instanceLoginAuditLogList;
 
 		[JsonProperty(PropertyName = "TotalCount")]
 		public long? TotalCount
@@ -102,128 +102,35 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "OpLogDetails")]
-		public List<GetOpLog_OpLogDetail> OpLogDetails
+		[JsonProperty(PropertyName = "InstanceLoginAuditLogList")]
+		public List<ListInstanceLoginAuditLog_InstanceLoginAuditLog> InstanceLoginAuditLogList
 		{
 			get
 			{
-				return opLogDetails;
+				return instanceLoginAuditLogList;
 			}
 			set	
 			{
-				opLogDetails = value;
+				instanceLoginAuditLogList = value;
 			}
 		}
 
-		public class GetOpLog_OpLogDetail
+		public class ListInstanceLoginAuditLog_InstanceLoginAuditLog
 		{
-
-			private string module;
-
-			private string database;
-
-			private string userId;
-
-			private long? opUserId;
-
-			private string opContent;
-
-			private string userNick;
-
-			private long? orderId;
 
 			private string opTime;
 
-			[JsonProperty(PropertyName = "Module")]
-			public string Module
-			{
-				get
-				{
-					return module;
-				}
-				set	
-				{
-					module = value;
-				}
-			}
+			private string userName;
 
-			[JsonProperty(PropertyName = "Database")]
-			public string Database
-			{
-				get
-				{
-					return database;
-				}
-				set	
-				{
-					database = value;
-				}
-			}
+			private long? userId;
 
-			[JsonProperty(PropertyName = "UserId")]
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
+			private string instanceName;
 
-			[JsonProperty(PropertyName = "OpUserId")]
-			public long? OpUserId
-			{
-				get
-				{
-					return opUserId;
-				}
-				set	
-				{
-					opUserId = value;
-				}
-			}
+			private long? instanceId;
 
-			[JsonProperty(PropertyName = "OpContent")]
-			public string OpContent
-			{
-				get
-				{
-					return opContent;
-				}
-				set	
-				{
-					opContent = value;
-				}
-			}
+			private string dbUser;
 
-			[JsonProperty(PropertyName = "UserNick")]
-			public string UserNick
-			{
-				get
-				{
-					return userNick;
-				}
-				set	
-				{
-					userNick = value;
-				}
-			}
-
-			[JsonProperty(PropertyName = "OrderId")]
-			public long? OrderId
-			{
-				get
-				{
-					return orderId;
-				}
-				set	
-				{
-					orderId = value;
-				}
-			}
+			private string requestIp;
 
 			[JsonProperty(PropertyName = "OpTime")]
 			public string OpTime
@@ -235,6 +142,84 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					opTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UserName")]
+			public string UserName
+			{
+				get
+				{
+					return userName;
+				}
+				set	
+				{
+					userName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UserId")]
+			public long? UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceName")]
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceId")]
+			public long? InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DbUser")]
+			public string DbUser
+			{
+				get
+				{
+					return dbUser;
+				}
+				set	
+				{
+					dbUser = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RequestIp")]
+			public string RequestIp
+			{
+				get
+				{
+					return requestIp;
+				}
+				set	
+				{
+					requestIp = value;
 				}
 			}
 		}

@@ -1,3 +1,7 @@
+2021-11-18 Version: 1.24.0
+- Support ListInstanceLoginAuditLog, ListProxySQLExecAuditLog API.
+- Support GetOpLog API to return OpUserId information.
+
 2021-11-17 Version: 3.0.29
 - Update apm interface parameter.
 

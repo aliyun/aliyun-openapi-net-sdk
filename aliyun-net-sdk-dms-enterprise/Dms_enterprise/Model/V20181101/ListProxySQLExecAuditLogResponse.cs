@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 {
-	public class GetOpLogResponse : AcsResponse
+	public class ListProxySQLExecAuditLogResponse : AcsResponse
 	{
 
 		private long? totalCount;
@@ -35,7 +35,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private bool? success;
 
-		private List<GetOpLog_OpLogDetail> opLogDetails;
+		private List<ListProxySQLExecAuditLog_ProxySQLExecAuditLog> proxySQLExecAuditLogList;
 
 		[JsonProperty(PropertyName = "TotalCount")]
 		public long? TotalCount
@@ -102,128 +102,45 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		[JsonProperty(PropertyName = "OpLogDetails")]
-		public List<GetOpLog_OpLogDetail> OpLogDetails
+		[JsonProperty(PropertyName = "ProxySQLExecAuditLogList")]
+		public List<ListProxySQLExecAuditLog_ProxySQLExecAuditLog> ProxySQLExecAuditLogList
 		{
 			get
 			{
-				return opLogDetails;
+				return proxySQLExecAuditLogList;
 			}
 			set	
 			{
-				opLogDetails = value;
+				proxySQLExecAuditLogList = value;
 			}
 		}
 
-		public class GetOpLog_OpLogDetail
+		public class ListProxySQLExecAuditLog_ProxySQLExecAuditLog
 		{
-
-			private string module;
-
-			private string database;
-
-			private string userId;
-
-			private long? opUserId;
-
-			private string opContent;
-
-			private string userNick;
-
-			private long? orderId;
 
 			private string opTime;
 
-			[JsonProperty(PropertyName = "Module")]
-			public string Module
-			{
-				get
-				{
-					return module;
-				}
-				set	
-				{
-					module = value;
-				}
-			}
+			private string userName;
 
-			[JsonProperty(PropertyName = "Database")]
-			public string Database
-			{
-				get
-				{
-					return database;
-				}
-				set	
-				{
-					database = value;
-				}
-			}
+			private long? userId;
 
-			[JsonProperty(PropertyName = "UserId")]
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
+			private string instanceName;
 
-			[JsonProperty(PropertyName = "OpUserId")]
-			public long? OpUserId
-			{
-				get
-				{
-					return opUserId;
-				}
-				set	
-				{
-					opUserId = value;
-				}
-			}
+			private long? instanceId;
 
-			[JsonProperty(PropertyName = "OpContent")]
-			public string OpContent
-			{
-				get
-				{
-					return opContent;
-				}
-				set	
-				{
-					opContent = value;
-				}
-			}
+			private string schemaName;
 
-			[JsonProperty(PropertyName = "UserNick")]
-			public string UserNick
-			{
-				get
-				{
-					return userNick;
-				}
-				set	
-				{
-					userNick = value;
-				}
-			}
+			private string sQLType;
 
-			[JsonProperty(PropertyName = "OrderId")]
-			public long? OrderId
-			{
-				get
-				{
-					return orderId;
-				}
-				set	
-				{
-					orderId = value;
-				}
-			}
+			private string sQL;
+
+			private string execState;
+
+			private long? affectRows;
+
+			private long? elapsedTime;
+
+			private string remark;
 
 			[JsonProperty(PropertyName = "OpTime")]
 			public string OpTime
@@ -235,6 +152,149 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					opTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UserName")]
+			public string UserName
+			{
+				get
+				{
+					return userName;
+				}
+				set	
+				{
+					userName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UserId")]
+			public long? UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceName")]
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceId")]
+			public long? InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SchemaName")]
+			public string SchemaName
+			{
+				get
+				{
+					return schemaName;
+				}
+				set	
+				{
+					schemaName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SQLType")]
+			public string SQLType
+			{
+				get
+				{
+					return sQLType;
+				}
+				set	
+				{
+					sQLType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SQL")]
+			public string SQL
+			{
+				get
+				{
+					return sQL;
+				}
+				set	
+				{
+					sQL = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExecState")]
+			public string ExecState
+			{
+				get
+				{
+					return execState;
+				}
+				set	
+				{
+					execState = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AffectRows")]
+			public long? AffectRows
+			{
+				get
+				{
+					return affectRows;
+				}
+				set	
+				{
+					affectRows = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ElapsedTime")]
+			public long? ElapsedTime
+			{
+				get
+				{
+					return elapsedTime;
+				}
+				set	
+				{
+					elapsedTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Remark")]
+			public string Remark
+			{
+				get
+				{
+					return remark;
+				}
+				set	
+				{
+					remark = value;
 				}
 			}
 		}
