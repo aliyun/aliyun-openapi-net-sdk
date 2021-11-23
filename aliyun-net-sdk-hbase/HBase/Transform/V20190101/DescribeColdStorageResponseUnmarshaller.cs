@@ -31,12 +31,14 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 			DescribeColdStorageResponse describeColdStorageResponse = new DescribeColdStorageResponse();
 
 			describeColdStorageResponse.HttpResponse = _ctx.HttpResponse;
-			describeColdStorageResponse.RequestId = _ctx.StringValue("DescribeColdStorage.RequestId");
-			describeColdStorageResponse.ClusterId = _ctx.StringValue("DescribeColdStorage.ClusterId");
 			describeColdStorageResponse.OpenStatus = _ctx.StringValue("DescribeColdStorage.OpenStatus");
-			describeColdStorageResponse.ColdStorageSize = _ctx.StringValue("DescribeColdStorage.ColdStorageSize");
-			describeColdStorageResponse.ColdStorageUsePercent = _ctx.StringValue("DescribeColdStorage.ColdStorageUsePercent");
+			describeColdStorageResponse.RequestId = _ctx.StringValue("DescribeColdStorage.RequestId");
 			describeColdStorageResponse.PayType = _ctx.StringValue("DescribeColdStorage.PayType");
+			describeColdStorageResponse.ColdStorageUsePercent = _ctx.StringValue("DescribeColdStorage.ColdStorageUsePercent");
+			describeColdStorageResponse.ColdStorageUseAmount = _ctx.StringValue("DescribeColdStorage.ColdStorageUseAmount");
+			describeColdStorageResponse.ColdStorageSize = _ctx.StringValue("DescribeColdStorage.ColdStorageSize");
+			describeColdStorageResponse.ColdStorageType = _ctx.StringValue("DescribeColdStorage.ColdStorageType");
+			describeColdStorageResponse.ClusterId = _ctx.StringValue("DescribeColdStorage.ClusterId");
         
 			return describeColdStorageResponse;
         }

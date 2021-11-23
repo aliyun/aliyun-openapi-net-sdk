@@ -25,41 +25,21 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 	public class DescribeColdStorageResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string clusterId;
-
 		private string openStatus;
 
-		private string coldStorageSize;
-
-		private string coldStorageUsePercent;
+		private string requestId;
 
 		private string payType;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string coldStorageUsePercent;
 
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-			}
-		}
+		private string coldStorageUseAmount;
+
+		private string coldStorageSize;
+
+		private string coldStorageType;
+
+		private string clusterId;
 
 		public string OpenStatus
 		{
@@ -73,15 +53,27 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
-		public string ColdStorageSize
+		public string RequestId
 		{
 			get
 			{
-				return coldStorageSize;
+				return requestId;
 			}
 			set	
 			{
-				coldStorageSize = value;
+				requestId = value;
+			}
+		}
+
+		public string PayType
+		{
+			get
+			{
+				return payType;
+			}
+			set	
+			{
+				payType = value;
 			}
 		}
 
@@ -97,15 +89,51 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
-		public string PayType
+		public string ColdStorageUseAmount
 		{
 			get
 			{
-				return payType;
+				return coldStorageUseAmount;
 			}
 			set	
 			{
-				payType = value;
+				coldStorageUseAmount = value;
+			}
+		}
+
+		public string ColdStorageSize
+		{
+			get
+			{
+				return coldStorageSize;
+			}
+			set	
+			{
+				coldStorageSize = value;
+			}
+		}
+
+		public string ColdStorageType
+		{
+			get
+			{
+				return coldStorageType;
+			}
+			set	
+			{
+				coldStorageType = value;
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
 			}
 		}
 	}
