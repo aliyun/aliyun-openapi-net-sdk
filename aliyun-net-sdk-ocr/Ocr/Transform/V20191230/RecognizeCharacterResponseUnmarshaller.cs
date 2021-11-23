@@ -38,15 +38,15 @@ namespace Aliyun.Acs.ocr.Transform.V20191230
 			List<RecognizeCharacterResponse.RecognizeCharacter_Data.RecognizeCharacter_Result> data_results = new List<RecognizeCharacterResponse.RecognizeCharacter_Data.RecognizeCharacter_Result>();
 			for (int i = 0; i < _ctx.Length("RecognizeCharacter.Data.Results.Length"); i++) {
 				RecognizeCharacterResponse.RecognizeCharacter_Data.RecognizeCharacter_Result result = new RecognizeCharacterResponse.RecognizeCharacter_Data.RecognizeCharacter_Result();
-				result.Probability = _ctx.FloatValue("RecognizeCharacter.Data.Results["+ i +"].Probability");
 				result.Text = _ctx.StringValue("RecognizeCharacter.Data.Results["+ i +"].Text");
+				result.Probability = _ctx.FloatValue("RecognizeCharacter.Data.Results["+ i +"].Probability");
 
 				RecognizeCharacterResponse.RecognizeCharacter_Data.RecognizeCharacter_Result.RecognizeCharacter_TextRectangles textRectangles = new RecognizeCharacterResponse.RecognizeCharacter_Data.RecognizeCharacter_Result.RecognizeCharacter_TextRectangles();
-				textRectangles.Angle = _ctx.IntegerValue("RecognizeCharacter.Data.Results["+ i +"].TextRectangles.Angle");
-				textRectangles.Left = _ctx.IntegerValue("RecognizeCharacter.Data.Results["+ i +"].TextRectangles.Left");
 				textRectangles.Top = _ctx.IntegerValue("RecognizeCharacter.Data.Results["+ i +"].TextRectangles.Top");
 				textRectangles.Width = _ctx.IntegerValue("RecognizeCharacter.Data.Results["+ i +"].TextRectangles.Width");
 				textRectangles.Height = _ctx.IntegerValue("RecognizeCharacter.Data.Results["+ i +"].TextRectangles.Height");
+				textRectangles.Angle = _ctx.IntegerValue("RecognizeCharacter.Data.Results["+ i +"].TextRectangles.Angle");
+				textRectangles.Left = _ctx.IntegerValue("RecognizeCharacter.Data.Results["+ i +"].TextRectangles.Left");
 				result.TextRectangles = textRectangles;
 
 				data_results.Add(result);

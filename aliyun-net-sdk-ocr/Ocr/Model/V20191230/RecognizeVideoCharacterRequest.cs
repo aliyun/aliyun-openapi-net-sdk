@@ -27,10 +27,10 @@ using Aliyun.Acs.ocr.Transform.V20191230;
 
 namespace Aliyun.Acs.ocr.Model.V20191230
 {
-    public class RecognizeCharacterRequest : RpcAcsRequest<RecognizeCharacterResponse>
+    public class RecognizeVideoCharacterRequest : RpcAcsRequest<RecognizeVideoCharacterResponse>
     {
-        public RecognizeCharacterRequest()
-            : base("ocr", "2019-12-30", "RecognizeCharacter", "ocr", "openAPI")
+        public RecognizeVideoCharacterRequest()
+            : base("ocr", "2019-12-30", "RecognizeVideoCharacter", "ocr", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,48 +40,18 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 			Method = MethodType.POST;
         }
 
-		private int? minHeight;
+		private string videoURL;
 
-		private bool? outputProbability;
-
-		private string imageURL;
-
-		public int? MinHeight
+		public string VideoURL
 		{
 			get
 			{
-				return minHeight;
+				return videoURL;
 			}
 			set	
 			{
-				minHeight = value;
-				DictionaryUtil.Add(BodyParameters, "MinHeight", value.ToString());
-			}
-		}
-
-		public bool? OutputProbability
-		{
-			get
-			{
-				return outputProbability;
-			}
-			set	
-			{
-				outputProbability = value;
-				DictionaryUtil.Add(BodyParameters, "OutputProbability", value.ToString());
-			}
-		}
-
-		public string ImageURL
-		{
-			get
-			{
-				return imageURL;
-			}
-			set	
-			{
-				imageURL = value;
-				DictionaryUtil.Add(BodyParameters, "ImageURL", value);
+				videoURL = value;
+				DictionaryUtil.Add(BodyParameters, "VideoURL", value);
 			}
 		}
 
@@ -90,9 +60,9 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 			return false;
 		}
 
-        public override RecognizeCharacterResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RecognizeVideoCharacterResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RecognizeCharacterResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RecognizeVideoCharacterResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

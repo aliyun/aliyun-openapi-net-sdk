@@ -56,21 +56,9 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 		public class RecognizeDrivingLicense_Data
 		{
 
-			private RecognizeDrivingLicense_FaceResult faceResult;
-
 			private RecognizeDrivingLicense_BackResult backResult;
 
-			public RecognizeDrivingLicense_FaceResult FaceResult
-			{
-				get
-				{
-					return faceResult;
-				}
-				set	
-				{
-					faceResult = value;
-				}
-			}
+			private RecognizeDrivingLicense_FaceResult faceResult;
 
 			public RecognizeDrivingLicense_BackResult BackResult
 			{
@@ -84,28 +72,112 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 				}
 			}
 
-			public class RecognizeDrivingLicense_FaceResult
+			public RecognizeDrivingLicense_FaceResult FaceResult
 			{
+				get
+				{
+					return faceResult;
+				}
+				set	
+				{
+					faceResult = value;
+				}
+			}
+
+			public class RecognizeDrivingLicense_BackResult
+			{
+
+				private string overallDimension;
+
+				private string inspectionRecord;
+
+				private string unladenMass;
+
+				private string fileNumber;
+
+				private string tractionMass;
+
+				private string grossMass;
 
 				private string plateNumber;
 
-				private string vehicleType;
+				private string approvedPassengerCapacity;
 
-				private string owner;
+				private string energyType;
 
-				private string useCharacter;
+				private string approvedLoad;
 
-				private string address;
+				public string OverallDimension
+				{
+					get
+					{
+						return overallDimension;
+					}
+					set	
+					{
+						overallDimension = value;
+					}
+				}
 
-				private string model;
+				public string InspectionRecord
+				{
+					get
+					{
+						return inspectionRecord;
+					}
+					set	
+					{
+						inspectionRecord = value;
+					}
+				}
 
-				private string vin;
+				public string UnladenMass
+				{
+					get
+					{
+						return unladenMass;
+					}
+					set	
+					{
+						unladenMass = value;
+					}
+				}
 
-				private string engineNumber;
+				public string FileNumber
+				{
+					get
+					{
+						return fileNumber;
+					}
+					set	
+					{
+						fileNumber = value;
+					}
+				}
 
-				private string registerDate;
+				public string TractionMass
+				{
+					get
+					{
+						return tractionMass;
+					}
+					set	
+					{
+						tractionMass = value;
+					}
+				}
 
-				private string issueDate;
+				public string GrossMass
+				{
+					get
+					{
+						return grossMass;
+					}
+					set	
+					{
+						grossMass = value;
+					}
+				}
 
 				public string PlateNumber
 				{
@@ -116,6 +188,90 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					set	
 					{
 						plateNumber = value;
+					}
+				}
+
+				public string ApprovedPassengerCapacity
+				{
+					get
+					{
+						return approvedPassengerCapacity;
+					}
+					set	
+					{
+						approvedPassengerCapacity = value;
+					}
+				}
+
+				public string EnergyType
+				{
+					get
+					{
+						return energyType;
+					}
+					set	
+					{
+						energyType = value;
+					}
+				}
+
+				public string ApprovedLoad
+				{
+					get
+					{
+						return approvedLoad;
+					}
+					set	
+					{
+						approvedLoad = value;
+					}
+				}
+			}
+
+			public class RecognizeDrivingLicense_FaceResult
+			{
+
+				private string issueDate;
+
+				private string model;
+
+				private string vehicleType;
+
+				private string owner;
+
+				private string engineNumber;
+
+				private string plateNumber;
+
+				private string address;
+
+				private string useCharacter;
+
+				private string vin;
+
+				private string registerDate;
+
+				public string IssueDate
+				{
+					get
+					{
+						return issueDate;
+					}
+					set	
+					{
+						issueDate = value;
+					}
+				}
+
+				public string Model
+				{
+					get
+					{
+						return model;
+					}
+					set	
+					{
+						model = value;
 					}
 				}
 
@@ -143,15 +299,27 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					}
 				}
 
-				public string UseCharacter
+				public string EngineNumber
 				{
 					get
 					{
-						return useCharacter;
+						return engineNumber;
 					}
 					set	
 					{
-						useCharacter = value;
+						engineNumber = value;
+					}
+				}
+
+				public string PlateNumber
+				{
+					get
+					{
+						return plateNumber;
+					}
+					set	
+					{
+						plateNumber = value;
 					}
 				}
 
@@ -167,15 +335,15 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					}
 				}
 
-				public string Model
+				public string UseCharacter
 				{
 					get
 					{
-						return model;
+						return useCharacter;
 					}
 					set	
 					{
-						model = value;
+						useCharacter = value;
 					}
 				}
 
@@ -191,18 +359,6 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					}
 				}
 
-				public string EngineNumber
-				{
-					get
-					{
-						return engineNumber;
-					}
-					set	
-					{
-						engineNumber = value;
-					}
-				}
-
 				public string RegisterDate
 				{
 					get
@@ -212,162 +368,6 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					set	
 					{
 						registerDate = value;
-					}
-				}
-
-				public string IssueDate
-				{
-					get
-					{
-						return issueDate;
-					}
-					set	
-					{
-						issueDate = value;
-					}
-				}
-			}
-
-			public class RecognizeDrivingLicense_BackResult
-			{
-
-				private string approvedPassengerCapacity;
-
-				private string approvedLoad;
-
-				private string fileNumber;
-
-				private string grossMass;
-
-				private string energyType;
-
-				private string inspectionRecord;
-
-				private string overallDimension;
-
-				private string tractionMass;
-
-				private string unladenMass;
-
-				private string plateNumber;
-
-				public string ApprovedPassengerCapacity
-				{
-					get
-					{
-						return approvedPassengerCapacity;
-					}
-					set	
-					{
-						approvedPassengerCapacity = value;
-					}
-				}
-
-				public string ApprovedLoad
-				{
-					get
-					{
-						return approvedLoad;
-					}
-					set	
-					{
-						approvedLoad = value;
-					}
-				}
-
-				public string FileNumber
-				{
-					get
-					{
-						return fileNumber;
-					}
-					set	
-					{
-						fileNumber = value;
-					}
-				}
-
-				public string GrossMass
-				{
-					get
-					{
-						return grossMass;
-					}
-					set	
-					{
-						grossMass = value;
-					}
-				}
-
-				public string EnergyType
-				{
-					get
-					{
-						return energyType;
-					}
-					set	
-					{
-						energyType = value;
-					}
-				}
-
-				public string InspectionRecord
-				{
-					get
-					{
-						return inspectionRecord;
-					}
-					set	
-					{
-						inspectionRecord = value;
-					}
-				}
-
-				public string OverallDimension
-				{
-					get
-					{
-						return overallDimension;
-					}
-					set	
-					{
-						overallDimension = value;
-					}
-				}
-
-				public string TractionMass
-				{
-					get
-					{
-						return tractionMass;
-					}
-					set	
-					{
-						tractionMass = value;
-					}
-				}
-
-				public string UnladenMass
-				{
-					get
-					{
-						return unladenMass;
-					}
-					set	
-					{
-						unladenMass = value;
-					}
-				}
-
-				public string PlateNumber
-				{
-					get
-					{
-						return plateNumber;
-					}
-					set	
-					{
-						plateNumber = value;
 					}
 				}
 			}

@@ -73,23 +73,11 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 			public class RecognizeCharacter_Result
 			{
 
-				private float? probability;
-
 				private string text;
 
-				private RecognizeCharacter_TextRectangles textRectangles;
+				private float? probability;
 
-				public float? Probability
-				{
-					get
-					{
-						return probability;
-					}
-					set	
-					{
-						probability = value;
-					}
-				}
+				private RecognizeCharacter_TextRectangles textRectangles;
 
 				public string Text
 				{
@@ -100,6 +88,18 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					set	
 					{
 						text = value;
+					}
+				}
+
+				public float? Probability
+				{
+					get
+					{
+						return probability;
+					}
+					set	
+					{
+						probability = value;
 					}
 				}
 
@@ -118,39 +118,15 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 				public class RecognizeCharacter_TextRectangles
 				{
 
-					private int? angle;
-
-					private int? left;
-
 					private int? top;
 
 					private int? width;
 
 					private int? height;
 
-					public int? Angle
-					{
-						get
-						{
-							return angle;
-						}
-						set	
-						{
-							angle = value;
-						}
-					}
+					private int? angle;
 
-					public int? Left
-					{
-						get
-						{
-							return left;
-						}
-						set	
-						{
-							left = value;
-						}
-					}
+					private int? left;
 
 					public int? Top
 					{
@@ -185,6 +161,30 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 						set	
 						{
 							height = value;
+						}
+					}
+
+					public int? Angle
+					{
+						get
+						{
+							return angle;
+						}
+						set	
+						{
+							angle = value;
+						}
+					}
+
+					public int? Left
+					{
+						get
+						{
+							return left;
+						}
+						set	
+						{
+							left = value;
 						}
 					}
 				}

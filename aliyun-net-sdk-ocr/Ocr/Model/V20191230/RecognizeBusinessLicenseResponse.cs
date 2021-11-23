@@ -56,69 +56,33 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 		public class RecognizeBusinessLicense_Data
 		{
 
-			private float? angle;
-
-			private string registerNumber;
-
-			private string name;
-
 			private string type;
-
-			private string legalPerson;
 
 			private string establishDate;
 
 			private string validPeriod;
 
+			private string business;
+
+			private float? angle;
+
+			private string registerNumber;
+
 			private string address;
 
 			private string capital;
 
-			private string business;
+			private string name;
 
-			private RecognizeBusinessLicense_Emblem emblem;
-
-			private RecognizeBusinessLicense_Title title;
+			private string legalPerson;
 
 			private RecognizeBusinessLicense_Stamp stamp;
 
+			private RecognizeBusinessLicense_Title title;
+
+			private RecognizeBusinessLicense_Emblem emblem;
+
 			private RecognizeBusinessLicense_QRCode qRCode;
-
-			public float? Angle
-			{
-				get
-				{
-					return angle;
-				}
-				set	
-				{
-					angle = value;
-				}
-			}
-
-			public string RegisterNumber
-			{
-				get
-				{
-					return registerNumber;
-				}
-				set	
-				{
-					registerNumber = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
 
 			public string Type
 			{
@@ -129,18 +93,6 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 				set	
 				{
 					type = value;
-				}
-			}
-
-			public string LegalPerson
-			{
-				get
-				{
-					return legalPerson;
-				}
-				set	
-				{
-					legalPerson = value;
 				}
 			}
 
@@ -168,6 +120,42 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 				}
 			}
 
+			public string Business
+			{
+				get
+				{
+					return business;
+				}
+				set	
+				{
+					business = value;
+				}
+			}
+
+			public float? Angle
+			{
+				get
+				{
+					return angle;
+				}
+				set	
+				{
+					angle = value;
+				}
+			}
+
+			public string RegisterNumber
+			{
+				get
+				{
+					return registerNumber;
+				}
+				set	
+				{
+					registerNumber = value;
+				}
+			}
+
 			public string Address
 			{
 				get
@@ -192,39 +180,27 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 				}
 			}
 
-			public string Business
+			public string Name
 			{
 				get
 				{
-					return business;
+					return name;
 				}
 				set	
 				{
-					business = value;
+					name = value;
 				}
 			}
 
-			public RecognizeBusinessLicense_Emblem Emblem
+			public string LegalPerson
 			{
 				get
 				{
-					return emblem;
+					return legalPerson;
 				}
 				set	
 				{
-					emblem = value;
-				}
-			}
-
-			public RecognizeBusinessLicense_Title Title
-			{
-				get
-				{
-					return title;
-				}
-				set	
-				{
-					title = value;
+					legalPerson = value;
 				}
 			}
 
@@ -240,6 +216,30 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 				}
 			}
 
+			public RecognizeBusinessLicense_Title Title
+			{
+				get
+				{
+					return title;
+				}
+				set	
+				{
+					title = value;
+				}
+			}
+
+			public RecognizeBusinessLicense_Emblem Emblem
+			{
+				get
+				{
+					return emblem;
+				}
+				set	
+				{
+					emblem = value;
+				}
+			}
+
 			public RecognizeBusinessLicense_QRCode QRCode
 			{
 				get
@@ -252,16 +252,16 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 				}
 			}
 
-			public class RecognizeBusinessLicense_Emblem
+			public class RecognizeBusinessLicense_Stamp
 			{
 
 				private int? top;
 
-				private int? left;
+				private int? width;
 
 				private int? height;
 
-				private int? width;
+				private int? left;
 
 				public int? Top
 				{
@@ -275,15 +275,15 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					}
 				}
 
-				public int? Left
+				public int? Width
 				{
 					get
 					{
-						return left;
+						return width;
 					}
 					set	
 					{
-						left = value;
+						width = value;
 					}
 				}
 
@@ -299,15 +299,15 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					}
 				}
 
-				public int? Width
+				public int? Left
 				{
 					get
 					{
-						return width;
+						return left;
 					}
 					set	
 					{
-						width = value;
+						left = value;
 					}
 				}
 			}
@@ -317,11 +317,11 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 
 				private int? top;
 
-				private int? left;
+				private int? width;
 
 				private int? height;
 
-				private int? width;
+				private int? left;
 
 				public int? Top
 				{
@@ -335,15 +335,15 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					}
 				}
 
-				public int? Left
+				public int? Width
 				{
 					get
 					{
-						return left;
+						return width;
 					}
 					set	
 					{
-						left = value;
+						width = value;
 					}
 				}
 
@@ -359,29 +359,29 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					}
 				}
 
-				public int? Width
+				public int? Left
 				{
 					get
 					{
-						return width;
+						return left;
 					}
 					set	
 					{
-						width = value;
+						left = value;
 					}
 				}
 			}
 
-			public class RecognizeBusinessLicense_Stamp
+			public class RecognizeBusinessLicense_Emblem
 			{
 
 				private int? top;
 
-				private int? left;
+				private int? width;
 
 				private int? height;
 
-				private int? width;
+				private int? left;
 
 				public int? Top
 				{
@@ -395,15 +395,15 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					}
 				}
 
-				public int? Left
+				public int? Width
 				{
 					get
 					{
-						return left;
+						return width;
 					}
 					set	
 					{
-						left = value;
+						width = value;
 					}
 				}
 
@@ -419,15 +419,15 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					}
 				}
 
-				public int? Width
+				public int? Left
 				{
 					get
 					{
-						return width;
+						return left;
 					}
 					set	
 					{
-						width = value;
+						left = value;
 					}
 				}
 			}
@@ -437,11 +437,11 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 
 				private int? top;
 
-				private int? left;
+				private int? width;
 
 				private int? height;
 
-				private int? width;
+				private int? left;
 
 				public int? Top
 				{
@@ -455,15 +455,15 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					}
 				}
 
-				public int? Left
+				public int? Width
 				{
 					get
 					{
-						return left;
+						return width;
 					}
 					set	
 					{
-						left = value;
+						width = value;
 					}
 				}
 
@@ -479,15 +479,15 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					}
 				}
 
-				public int? Width
+				public int? Left
 				{
 					get
 					{
-						return width;
+						return left;
 					}
 					set	
 					{
-						width = value;
+						left = value;
 					}
 				}
 			}

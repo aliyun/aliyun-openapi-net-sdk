@@ -73,23 +73,11 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 			public class RecognizeQrCode_Element
 			{
 
-				private string taskId;
-
 				private string imageURL;
 
-				private List<RecognizeQrCode_Result> results;
+				private string taskId;
 
-				public string TaskId
-				{
-					get
-					{
-						return taskId;
-					}
-					set	
-					{
-						taskId = value;
-					}
-				}
+				private List<RecognizeQrCode_Result> results;
 
 				public string ImageURL
 				{
@@ -100,6 +88,18 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 					set	
 					{
 						imageURL = value;
+					}
+				}
+
+				public string TaskId
+				{
+					get
+					{
+						return taskId;
+					}
+					set	
+					{
+						taskId = value;
 					}
 				}
 
@@ -118,25 +118,13 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 				public class RecognizeQrCode_Result
 				{
 
-					private string label;
-
 					private string suggestion;
+
+					private string label;
 
 					private float? rate;
 
 					private List<string> qrCodesData;
-
-					public string Label
-					{
-						get
-						{
-							return label;
-						}
-						set	
-						{
-							label = value;
-						}
-					}
 
 					public string Suggestion
 					{
@@ -147,6 +135,18 @@ namespace Aliyun.Acs.ocr.Model.V20191230
 						set	
 						{
 							suggestion = value;
+						}
+					}
+
+					public string Label
+					{
+						get
+						{
+							return label;
+						}
+						set	
+						{
+							label = value;
 						}
 					}
 

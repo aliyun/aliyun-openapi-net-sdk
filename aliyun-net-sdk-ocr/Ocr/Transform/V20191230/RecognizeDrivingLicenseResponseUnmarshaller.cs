@@ -35,31 +35,31 @@ namespace Aliyun.Acs.ocr.Transform.V20191230
 
 			RecognizeDrivingLicenseResponse.RecognizeDrivingLicense_Data data = new RecognizeDrivingLicenseResponse.RecognizeDrivingLicense_Data();
 
+			RecognizeDrivingLicenseResponse.RecognizeDrivingLicense_Data.RecognizeDrivingLicense_BackResult backResult = new RecognizeDrivingLicenseResponse.RecognizeDrivingLicense_Data.RecognizeDrivingLicense_BackResult();
+			backResult.OverallDimension = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.OverallDimension");
+			backResult.InspectionRecord = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.InspectionRecord");
+			backResult.UnladenMass = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.UnladenMass");
+			backResult.FileNumber = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.FileNumber");
+			backResult.TractionMass = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.TractionMass");
+			backResult.GrossMass = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.GrossMass");
+			backResult.PlateNumber = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.PlateNumber");
+			backResult.ApprovedPassengerCapacity = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.ApprovedPassengerCapacity");
+			backResult.EnergyType = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.EnergyType");
+			backResult.ApprovedLoad = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.ApprovedLoad");
+			data.BackResult = backResult;
+
 			RecognizeDrivingLicenseResponse.RecognizeDrivingLicense_Data.RecognizeDrivingLicense_FaceResult faceResult = new RecognizeDrivingLicenseResponse.RecognizeDrivingLicense_Data.RecognizeDrivingLicense_FaceResult();
-			faceResult.PlateNumber = _ctx.StringValue("RecognizeDrivingLicense.Data.FaceResult.PlateNumber");
+			faceResult.IssueDate = _ctx.StringValue("RecognizeDrivingLicense.Data.FaceResult.IssueDate");
+			faceResult.Model = _ctx.StringValue("RecognizeDrivingLicense.Data.FaceResult.Model");
 			faceResult.VehicleType = _ctx.StringValue("RecognizeDrivingLicense.Data.FaceResult.VehicleType");
 			faceResult.Owner = _ctx.StringValue("RecognizeDrivingLicense.Data.FaceResult.Owner");
-			faceResult.UseCharacter = _ctx.StringValue("RecognizeDrivingLicense.Data.FaceResult.UseCharacter");
-			faceResult.Address = _ctx.StringValue("RecognizeDrivingLicense.Data.FaceResult.Address");
-			faceResult.Model = _ctx.StringValue("RecognizeDrivingLicense.Data.FaceResult.Model");
-			faceResult.Vin = _ctx.StringValue("RecognizeDrivingLicense.Data.FaceResult.Vin");
 			faceResult.EngineNumber = _ctx.StringValue("RecognizeDrivingLicense.Data.FaceResult.EngineNumber");
+			faceResult.PlateNumber = _ctx.StringValue("RecognizeDrivingLicense.Data.FaceResult.PlateNumber");
+			faceResult.Address = _ctx.StringValue("RecognizeDrivingLicense.Data.FaceResult.Address");
+			faceResult.UseCharacter = _ctx.StringValue("RecognizeDrivingLicense.Data.FaceResult.UseCharacter");
+			faceResult.Vin = _ctx.StringValue("RecognizeDrivingLicense.Data.FaceResult.Vin");
 			faceResult.RegisterDate = _ctx.StringValue("RecognizeDrivingLicense.Data.FaceResult.RegisterDate");
-			faceResult.IssueDate = _ctx.StringValue("RecognizeDrivingLicense.Data.FaceResult.IssueDate");
 			data.FaceResult = faceResult;
-
-			RecognizeDrivingLicenseResponse.RecognizeDrivingLicense_Data.RecognizeDrivingLicense_BackResult backResult = new RecognizeDrivingLicenseResponse.RecognizeDrivingLicense_Data.RecognizeDrivingLicense_BackResult();
-			backResult.ApprovedPassengerCapacity = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.ApprovedPassengerCapacity");
-			backResult.ApprovedLoad = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.ApprovedLoad");
-			backResult.FileNumber = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.FileNumber");
-			backResult.GrossMass = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.GrossMass");
-			backResult.EnergyType = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.EnergyType");
-			backResult.InspectionRecord = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.InspectionRecord");
-			backResult.OverallDimension = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.OverallDimension");
-			backResult.TractionMass = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.TractionMass");
-			backResult.UnladenMass = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.UnladenMass");
-			backResult.PlateNumber = _ctx.StringValue("RecognizeDrivingLicense.Data.BackResult.PlateNumber");
-			data.BackResult = backResult;
 			recognizeDrivingLicenseResponse.Data = data;
         
 			return recognizeDrivingLicenseResponse;

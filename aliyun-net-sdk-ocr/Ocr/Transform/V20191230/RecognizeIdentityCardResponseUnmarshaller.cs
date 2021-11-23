@@ -35,54 +35,54 @@ namespace Aliyun.Acs.ocr.Transform.V20191230
 
 			RecognizeIdentityCardResponse.RecognizeIdentityCard_Data data = new RecognizeIdentityCardResponse.RecognizeIdentityCard_Data();
 
+			RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_BackResult backResult = new RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_BackResult();
+			backResult.EndDate = _ctx.StringValue("RecognizeIdentityCard.Data.BackResult.EndDate");
+			backResult.Issue = _ctx.StringValue("RecognizeIdentityCard.Data.BackResult.Issue");
+			backResult.StartDate = _ctx.StringValue("RecognizeIdentityCard.Data.BackResult.StartDate");
+			data.BackResult = backResult;
+
 			RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult frontResult = new RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult();
-			frontResult.Address = _ctx.StringValue("RecognizeIdentityCard.Data.FrontResult.Address");
-			frontResult.Name = _ctx.StringValue("RecognizeIdentityCard.Data.FrontResult.Name");
-			frontResult.Nationality = _ctx.StringValue("RecognizeIdentityCard.Data.FrontResult.Nationality");
-			frontResult.IDNumber = _ctx.StringValue("RecognizeIdentityCard.Data.FrontResult.IDNumber");
-			frontResult.Gender = _ctx.StringValue("RecognizeIdentityCard.Data.FrontResult.Gender");
 			frontResult.BirthDate = _ctx.StringValue("RecognizeIdentityCard.Data.FrontResult.BirthDate");
+			frontResult.Gender = _ctx.StringValue("RecognizeIdentityCard.Data.FrontResult.Gender");
+			frontResult.Address = _ctx.StringValue("RecognizeIdentityCard.Data.FrontResult.Address");
+			frontResult.Nationality = _ctx.StringValue("RecognizeIdentityCard.Data.FrontResult.Nationality");
+			frontResult.Name = _ctx.StringValue("RecognizeIdentityCard.Data.FrontResult.Name");
+			frontResult.IDNumber = _ctx.StringValue("RecognizeIdentityCard.Data.FrontResult.IDNumber");
 
 			RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_FaceRectangle faceRectangle = new RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_FaceRectangle();
 			faceRectangle.Angle = _ctx.FloatValue("RecognizeIdentityCard.Data.FrontResult.FaceRectangle.Angle");
 
-			RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_FaceRectangle.RecognizeIdentityCard_Center center = new RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_FaceRectangle.RecognizeIdentityCard_Center();
-			center.X = _ctx.FloatValue("RecognizeIdentityCard.Data.FrontResult.FaceRectangle.Center.X");
-			center.Y = _ctx.FloatValue("RecognizeIdentityCard.Data.FrontResult.FaceRectangle.Center.Y");
-			faceRectangle.Center = center;
-
 			RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_FaceRectangle.RecognizeIdentityCard_Size size = new RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_FaceRectangle.RecognizeIdentityCard_Size();
-			size.Height = _ctx.FloatValue("RecognizeIdentityCard.Data.FrontResult.FaceRectangle.Size.Height");
 			size.Width = _ctx.FloatValue("RecognizeIdentityCard.Data.FrontResult.FaceRectangle.Size.Width");
+			size.Height = _ctx.FloatValue("RecognizeIdentityCard.Data.FrontResult.FaceRectangle.Size.Height");
 			faceRectangle.Size = size;
+
+			RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_FaceRectangle.RecognizeIdentityCard_Center center = new RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_FaceRectangle.RecognizeIdentityCard_Center();
+			center.Y = _ctx.FloatValue("RecognizeIdentityCard.Data.FrontResult.FaceRectangle.Center.Y");
+			center.X = _ctx.FloatValue("RecognizeIdentityCard.Data.FrontResult.FaceRectangle.Center.X");
+			faceRectangle.Center = center;
 			frontResult.FaceRectangle = faceRectangle;
-
-			List<RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_CardArea> frontResult_cardAreas = new List<RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_CardArea>();
-			for (int i = 0; i < _ctx.Length("RecognizeIdentityCard.Data.FrontResult.CardAreas.Length"); i++) {
-				RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_CardArea cardArea = new RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_CardArea();
-				cardArea.X = _ctx.FloatValue("RecognizeIdentityCard.Data.FrontResult.CardAreas["+ i +"].X");
-				cardArea.Y = _ctx.FloatValue("RecognizeIdentityCard.Data.FrontResult.CardAreas["+ i +"].Y");
-
-				frontResult_cardAreas.Add(cardArea);
-			}
-			frontResult.CardAreas = frontResult_cardAreas;
 
 			List<RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_FaceRectVertice> frontResult_faceRectVertices = new List<RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_FaceRectVertice>();
 			for (int i = 0; i < _ctx.Length("RecognizeIdentityCard.Data.FrontResult.FaceRectVertices.Length"); i++) {
 				RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_FaceRectVertice faceRectVertice = new RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_FaceRectVertice();
-				faceRectVertice.X = _ctx.FloatValue("RecognizeIdentityCard.Data.FrontResult.FaceRectVertices["+ i +"].X");
 				faceRectVertice.Y = _ctx.FloatValue("RecognizeIdentityCard.Data.FrontResult.FaceRectVertices["+ i +"].Y");
+				faceRectVertice.X = _ctx.FloatValue("RecognizeIdentityCard.Data.FrontResult.FaceRectVertices["+ i +"].X");
 
 				frontResult_faceRectVertices.Add(faceRectVertice);
 			}
 			frontResult.FaceRectVertices = frontResult_faceRectVertices;
-			data.FrontResult = frontResult;
 
-			RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_BackResult backResult = new RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_BackResult();
-			backResult.StartDate = _ctx.StringValue("RecognizeIdentityCard.Data.BackResult.StartDate");
-			backResult.EndDate = _ctx.StringValue("RecognizeIdentityCard.Data.BackResult.EndDate");
-			backResult.Issue = _ctx.StringValue("RecognizeIdentityCard.Data.BackResult.Issue");
-			data.BackResult = backResult;
+			List<RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_CardArea> frontResult_cardAreas = new List<RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_CardArea>();
+			for (int i = 0; i < _ctx.Length("RecognizeIdentityCard.Data.FrontResult.CardAreas.Length"); i++) {
+				RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_CardArea cardArea = new RecognizeIdentityCardResponse.RecognizeIdentityCard_Data.RecognizeIdentityCard_FrontResult.RecognizeIdentityCard_CardArea();
+				cardArea.Y = _ctx.FloatValue("RecognizeIdentityCard.Data.FrontResult.CardAreas["+ i +"].Y");
+				cardArea.X = _ctx.FloatValue("RecognizeIdentityCard.Data.FrontResult.CardAreas["+ i +"].X");
+
+				frontResult_cardAreas.Add(cardArea);
+			}
+			frontResult.CardAreas = frontResult_cardAreas;
+			data.FrontResult = frontResult;
 			recognizeIdentityCardResponse.Data = data;
         
 			return recognizeIdentityCardResponse;

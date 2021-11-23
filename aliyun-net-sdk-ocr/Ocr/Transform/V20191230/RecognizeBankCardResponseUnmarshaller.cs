@@ -34,9 +34,9 @@ namespace Aliyun.Acs.ocr.Transform.V20191230
 			recognizeBankCardResponse.RequestId = _ctx.StringValue("RecognizeBankCard.RequestId");
 
 			RecognizeBankCardResponse.RecognizeBankCard_Data data = new RecognizeBankCardResponse.RecognizeBankCard_Data();
-			data.BankName = _ctx.StringValue("RecognizeBankCard.Data.BankName");
 			data.CardNumber = _ctx.StringValue("RecognizeBankCard.Data.CardNumber");
 			data.ValidDate = _ctx.StringValue("RecognizeBankCard.Data.ValidDate");
+			data.BankName = _ctx.StringValue("RecognizeBankCard.Data.BankName");
 			recognizeBankCardResponse.Data = data;
         
 			return recognizeBankCardResponse;
