@@ -158,6 +158,10 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string k8sClusterId;
 
+			private bool? dataDiskEncrypted;
+
+			private string dataDiskKMSKeyId;
+
 			private List<DescribeClusterV2_GatewayClusterInfo> gatewayClusterInfoList;
 
 			private List<DescribeClusterV2_HostGroup> hostGroupList;
@@ -783,6 +787,30 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					k8sClusterId = value;
+				}
+			}
+
+			public bool? DataDiskEncrypted
+			{
+				get
+				{
+					return dataDiskEncrypted;
+				}
+				set	
+				{
+					dataDiskEncrypted = value;
+				}
+			}
+
+			public string DataDiskKMSKeyId
+			{
+				get
+				{
+					return dataDiskKMSKeyId;
+				}
+				set	
+				{
+					dataDiskKMSKeyId = value;
 				}
 			}
 

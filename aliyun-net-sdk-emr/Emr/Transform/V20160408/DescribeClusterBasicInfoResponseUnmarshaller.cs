@@ -88,6 +88,8 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 			clusterInfo.K8sClusterId = _ctx.StringValue("DescribeClusterBasicInfo.ClusterInfo.K8sClusterId");
 			clusterInfo.OperationId = _ctx.StringValue("DescribeClusterBasicInfo.ClusterInfo.OperationId");
 			clusterInfo.ClickhouseConf = _ctx.StringValue("DescribeClusterBasicInfo.ClusterInfo.ClickhouseConf");
+			clusterInfo.DataDiskEncrypted = _ctx.BooleanValue("DescribeClusterBasicInfo.ClusterInfo.DataDiskEncrypted");
+			clusterInfo.DataDiskKMSKeyId = _ctx.StringValue("DescribeClusterBasicInfo.ClusterInfo.DataDiskKMSKeyId");
 
 			DescribeClusterBasicInfoResponse.DescribeClusterBasicInfo_ClusterInfo.DescribeClusterBasicInfo_RelateClusterInfo relateClusterInfo = new DescribeClusterBasicInfoResponse.DescribeClusterBasicInfo_ClusterInfo.DescribeClusterBasicInfo_RelateClusterInfo();
 			relateClusterInfo.ClusterId = _ctx.StringValue("DescribeClusterBasicInfo.ClusterInfo.RelateClusterInfo.ClusterId");

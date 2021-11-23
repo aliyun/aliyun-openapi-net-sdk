@@ -85,6 +85,8 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 			clusterInfo.ResizeDiskEnable = _ctx.BooleanValue("DescribeClusterV2.ClusterInfo.ResizeDiskEnable");
 			clusterInfo.MetaStoreType = _ctx.StringValue("DescribeClusterV2.ClusterInfo.MetaStoreType");
 			clusterInfo.K8sClusterId = _ctx.StringValue("DescribeClusterV2.ClusterInfo.K8sClusterId");
+			clusterInfo.DataDiskEncrypted = _ctx.BooleanValue("DescribeClusterV2.ClusterInfo.DataDiskEncrypted");
+			clusterInfo.DataDiskKMSKeyId = _ctx.StringValue("DescribeClusterV2.ClusterInfo.DataDiskKMSKeyId");
 
 			DescribeClusterV2Response.DescribeClusterV2_ClusterInfo.DescribeClusterV2_RelateClusterInfo relateClusterInfo = new DescribeClusterV2Response.DescribeClusterV2_ClusterInfo.DescribeClusterV2_RelateClusterInfo();
 			relateClusterInfo.ClusterId = _ctx.StringValue("DescribeClusterV2.ClusterInfo.RelateClusterInfo.ClusterId");

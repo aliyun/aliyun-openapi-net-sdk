@@ -164,6 +164,10 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string clickhouseConf;
 
+			private bool? dataDiskEncrypted;
+
+			private string dataDiskKMSKeyId;
+
 			private List<DescribeClusterBasicInfo_GatewayClusterInfo> gatewayClusterInfoList;
 
 			private List<DescribeClusterBasicInfo_BootstrapAction> bootstrapActionList;
@@ -823,6 +827,30 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					clickhouseConf = value;
+				}
+			}
+
+			public bool? DataDiskEncrypted
+			{
+				get
+				{
+					return dataDiskEncrypted;
+				}
+				set	
+				{
+					dataDiskEncrypted = value;
+				}
+			}
+
+			public string DataDiskKMSKeyId
+			{
+				get
+				{
+					return dataDiskKMSKeyId;
+				}
+				set	
+				{
+					dataDiskKMSKeyId = value;
 				}
 			}
 

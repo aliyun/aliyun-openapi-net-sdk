@@ -100,11 +100,15 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 		private string depositType;
 
+		private string dataDiskKMSKeyId;
+
 		private bool? useLocalMetaDb;
 
 		private string templateName;
 
 		private string userDefinedEmrEcsRole;
+
+		private bool? dataDiskEncrypted;
 
 		private string vpcId;
 
@@ -522,6 +526,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			}
 		}
 
+		public string DataDiskKMSKeyId
+		{
+			get
+			{
+				return dataDiskKMSKeyId;
+			}
+			set	
+			{
+				dataDiskKMSKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "DataDiskKMSKeyId", value);
+			}
+		}
+
 		public bool? UseLocalMetaDb
 		{
 			get
@@ -558,6 +575,19 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 			{
 				userDefinedEmrEcsRole = value;
 				DictionaryUtil.Add(QueryParameters, "UserDefinedEmrEcsRole", value);
+			}
+		}
+
+		public bool? DataDiskEncrypted
+		{
+			get
+			{
+				return dataDiskEncrypted;
+			}
+			set	
+			{
+				dataDiskEncrypted = value;
+				DictionaryUtil.Add(QueryParameters, "DataDiskEncrypted", value.ToString());
 			}
 		}
 

@@ -126,6 +126,10 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 			private string metaStoreConf;
 
+			private bool? dataDiskEncrypted;
+
+			private string dataDiskKMSKeyId;
+
 			private List<DescribeClusterTemplate_BootstrapAction> bootstrapActionList;
 
 			private List<DescribeClusterTemplate_HostGroup> hostGroupList;
@@ -553,6 +557,30 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 				set	
 				{
 					metaStoreConf = value;
+				}
+			}
+
+			public bool? DataDiskEncrypted
+			{
+				get
+				{
+					return dataDiskEncrypted;
+				}
+				set	
+				{
+					dataDiskEncrypted = value;
+				}
+			}
+
+			public string DataDiskKMSKeyId
+			{
+				get
+				{
+					return dataDiskKMSKeyId;
+				}
+				set	
+				{
+					dataDiskKMSKeyId = value;
 				}
 			}
 

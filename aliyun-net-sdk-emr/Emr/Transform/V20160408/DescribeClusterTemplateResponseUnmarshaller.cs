@@ -69,6 +69,8 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 			templateInfo.MasterPwd = _ctx.StringValue("DescribeClusterTemplate.TemplateInfo.MasterPwd");
 			templateInfo.MetaStoreType = _ctx.StringValue("DescribeClusterTemplate.TemplateInfo.MetaStoreType");
 			templateInfo.MetaStoreConf = _ctx.StringValue("DescribeClusterTemplate.TemplateInfo.MetaStoreConf");
+			templateInfo.DataDiskEncrypted = _ctx.BooleanValue("DescribeClusterTemplate.TemplateInfo.DataDiskEncrypted");
+			templateInfo.DataDiskKMSKeyId = _ctx.StringValue("DescribeClusterTemplate.TemplateInfo.DataDiskKMSKeyId");
 
 			List<string> templateInfo_softwareInfoList = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeClusterTemplate.TemplateInfo.SoftwareInfoList.Length"); i++) {
