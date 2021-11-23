@@ -35,15 +35,15 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			onsTrendGroupOutputTpsResponse.HelpUrl = _ctx.StringValue("OnsTrendGroupOutputTps.HelpUrl");
 
 			OnsTrendGroupOutputTpsResponse.OnsTrendGroupOutputTps_Data data = new OnsTrendGroupOutputTpsResponse.OnsTrendGroupOutputTps_Data();
-			data.Title = _ctx.StringValue("OnsTrendGroupOutputTps.Data.Title");
 			data.XUnit = _ctx.StringValue("OnsTrendGroupOutputTps.Data.XUnit");
 			data.YUnit = _ctx.StringValue("OnsTrendGroupOutputTps.Data.YUnit");
+			data.Title = _ctx.StringValue("OnsTrendGroupOutputTps.Data.Title");
 
 			List<OnsTrendGroupOutputTpsResponse.OnsTrendGroupOutputTps_Data.OnsTrendGroupOutputTps_StatsDataDo> data_records = new List<OnsTrendGroupOutputTpsResponse.OnsTrendGroupOutputTps_Data.OnsTrendGroupOutputTps_StatsDataDo>();
 			for (int i = 0; i < _ctx.Length("OnsTrendGroupOutputTps.Data.Records.Length"); i++) {
 				OnsTrendGroupOutputTpsResponse.OnsTrendGroupOutputTps_Data.OnsTrendGroupOutputTps_StatsDataDo statsDataDo = new OnsTrendGroupOutputTpsResponse.OnsTrendGroupOutputTps_Data.OnsTrendGroupOutputTps_StatsDataDo();
-				statsDataDo.X = _ctx.LongValue("OnsTrendGroupOutputTps.Data.Records["+ i +"].X");
 				statsDataDo.Y = _ctx.FloatValue("OnsTrendGroupOutputTps.Data.Records["+ i +"].Y");
+				statsDataDo.X = _ctx.LongValue("OnsTrendGroupOutputTps.Data.Records["+ i +"].X");
 
 				data_records.Add(statsDataDo);
 			}

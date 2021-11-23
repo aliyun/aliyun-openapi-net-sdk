@@ -32,8 +32,8 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 
 			onsTraceQueryByMsgIdResponse.HttpResponse = _ctx.HttpResponse;
 			onsTraceQueryByMsgIdResponse.RequestId = _ctx.StringValue("OnsTraceQueryByMsgId.RequestId");
-			onsTraceQueryByMsgIdResponse.HelpUrl = _ctx.StringValue("OnsTraceQueryByMsgId.HelpUrl");
 			onsTraceQueryByMsgIdResponse.QueryId = _ctx.StringValue("OnsTraceQueryByMsgId.QueryId");
+			onsTraceQueryByMsgIdResponse.HelpUrl = _ctx.StringValue("OnsTraceQueryByMsgId.HelpUrl");
         
 			return onsTraceQueryByMsgIdResponse;
         }

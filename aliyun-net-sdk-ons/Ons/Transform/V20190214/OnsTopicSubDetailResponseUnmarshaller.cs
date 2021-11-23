@@ -40,8 +40,8 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			for (int i = 0; i < _ctx.Length("OnsTopicSubDetail.Data.SubscriptionDataList.Length"); i++) {
 				OnsTopicSubDetailResponse.OnsTopicSubDetail_Data.OnsTopicSubDetail_SubscriptionDataListItem subscriptionDataListItem = new OnsTopicSubDetailResponse.OnsTopicSubDetail_Data.OnsTopicSubDetail_SubscriptionDataListItem();
 				subscriptionDataListItem.GroupId = _ctx.StringValue("OnsTopicSubDetail.Data.SubscriptionDataList["+ i +"].GroupId");
-				subscriptionDataListItem.SubString = _ctx.StringValue("OnsTopicSubDetail.Data.SubscriptionDataList["+ i +"].SubString");
 				subscriptionDataListItem.MessageModel = _ctx.StringValue("OnsTopicSubDetail.Data.SubscriptionDataList["+ i +"].MessageModel");
+				subscriptionDataListItem.SubString = _ctx.StringValue("OnsTopicSubDetail.Data.SubscriptionDataList["+ i +"].SubString");
 
 				data_subscriptionDataList.Add(subscriptionDataListItem);
 			}

@@ -35,15 +35,15 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			onsMqttQueryHistoryOnlineResponse.HelpUrl = _ctx.StringValue("OnsMqttQueryHistoryOnline.HelpUrl");
 
 			OnsMqttQueryHistoryOnlineResponse.OnsMqttQueryHistoryOnline_Data data = new OnsMqttQueryHistoryOnlineResponse.OnsMqttQueryHistoryOnline_Data();
-			data.Title = _ctx.StringValue("OnsMqttQueryHistoryOnline.Data.Title");
 			data.XUnit = _ctx.StringValue("OnsMqttQueryHistoryOnline.Data.XUnit");
 			data.YUnit = _ctx.StringValue("OnsMqttQueryHistoryOnline.Data.YUnit");
+			data.Title = _ctx.StringValue("OnsMqttQueryHistoryOnline.Data.Title");
 
 			List<OnsMqttQueryHistoryOnlineResponse.OnsMqttQueryHistoryOnline_Data.OnsMqttQueryHistoryOnline_StatsDataDo> data_records = new List<OnsMqttQueryHistoryOnlineResponse.OnsMqttQueryHistoryOnline_Data.OnsMqttQueryHistoryOnline_StatsDataDo>();
 			for (int i = 0; i < _ctx.Length("OnsMqttQueryHistoryOnline.Data.Records.Length"); i++) {
 				OnsMqttQueryHistoryOnlineResponse.OnsMqttQueryHistoryOnline_Data.OnsMqttQueryHistoryOnline_StatsDataDo statsDataDo = new OnsMqttQueryHistoryOnlineResponse.OnsMqttQueryHistoryOnline_Data.OnsMqttQueryHistoryOnline_StatsDataDo();
-				statsDataDo.X = _ctx.LongValue("OnsMqttQueryHistoryOnline.Data.Records["+ i +"].X");
 				statsDataDo.Y = _ctx.FloatValue("OnsMqttQueryHistoryOnline.Data.Records["+ i +"].Y");
+				statsDataDo.X = _ctx.LongValue("OnsMqttQueryHistoryOnline.Data.Records["+ i +"].X");
 
 				data_records.Add(statsDataDo);
 			}

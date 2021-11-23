@@ -32,8 +32,8 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 
 			onsMessageSendResponse.HttpResponse = _ctx.HttpResponse;
 			onsMessageSendResponse.RequestId = _ctx.StringValue("OnsMessageSend.RequestId");
-			onsMessageSendResponse.HelpUrl = _ctx.StringValue("OnsMessageSend.HelpUrl");
 			onsMessageSendResponse.Data = _ctx.StringValue("OnsMessageSend.Data");
+			onsMessageSendResponse.HelpUrl = _ctx.StringValue("OnsMessageSend.HelpUrl");
         
 			return onsMessageSendResponse;
         }

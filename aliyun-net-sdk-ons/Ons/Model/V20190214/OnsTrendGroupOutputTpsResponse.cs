@@ -70,25 +70,13 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 		public class OnsTrendGroupOutputTps_Data
 		{
 
-			private string title;
-
 			private string xUnit;
 
 			private string yUnit;
 
-			private List<OnsTrendGroupOutputTps_StatsDataDo> records;
+			private string title;
 
-			public string Title
-			{
-				get
-				{
-					return title;
-				}
-				set	
-				{
-					title = value;
-				}
-			}
+			private List<OnsTrendGroupOutputTps_StatsDataDo> records;
 
 			public string XUnit
 			{
@@ -114,6 +102,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
+			public string Title
+			{
+				get
+				{
+					return title;
+				}
+				set	
+				{
+					title = value;
+				}
+			}
+
 			public List<OnsTrendGroupOutputTps_StatsDataDo> Records
 			{
 				get
@@ -129,21 +129,9 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			public class OnsTrendGroupOutputTps_StatsDataDo
 			{
 
-				private long? x;
-
 				private float? y;
 
-				public long? X
-				{
-					get
-					{
-						return x;
-					}
-					set	
-					{
-						x = value;
-					}
-				}
+				private long? x;
 
 				public float? Y
 				{
@@ -154,6 +142,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					set	
 					{
 						y = value;
+					}
+				}
+
+				public long? X
+				{
+					get
+					{
+						return x;
+					}
+					set	
+					{
+						x = value;
 					}
 				}
 			}

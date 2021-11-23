@@ -36,15 +36,15 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 
 			OnsMqttQueryClientByClientIdResponse.OnsMqttQueryClientByClientId_MqttClientInfoDo mqttClientInfoDo = new OnsMqttQueryClientByClientIdResponse.OnsMqttQueryClientByClientId_MqttClientInfoDo();
 			mqttClientInfoDo.Online = _ctx.BooleanValue("OnsMqttQueryClientByClientId.MqttClientInfoDo.Online");
-			mqttClientInfoDo.ClientId = _ctx.StringValue("OnsMqttQueryClientByClientId.MqttClientInfoDo.ClientId");
-			mqttClientInfoDo.SocketChannel = _ctx.StringValue("OnsMqttQueryClientByClientId.MqttClientInfoDo.SocketChannel");
 			mqttClientInfoDo.LastTouch = _ctx.LongValue("OnsMqttQueryClientByClientId.MqttClientInfoDo.LastTouch");
+			mqttClientInfoDo.SocketChannel = _ctx.StringValue("OnsMqttQueryClientByClientId.MqttClientInfoDo.SocketChannel");
+			mqttClientInfoDo.ClientId = _ctx.StringValue("OnsMqttQueryClientByClientId.MqttClientInfoDo.ClientId");
 
 			List<OnsMqttQueryClientByClientIdResponse.OnsMqttQueryClientByClientId_MqttClientInfoDo.OnsMqttQueryClientByClientId_SubscriptionDo> mqttClientInfoDo_subScriptonData = new List<OnsMqttQueryClientByClientIdResponse.OnsMqttQueryClientByClientId_MqttClientInfoDo.OnsMqttQueryClientByClientId_SubscriptionDo>();
 			for (int i = 0; i < _ctx.Length("OnsMqttQueryClientByClientId.MqttClientInfoDo.SubScriptonData.Length"); i++) {
 				OnsMqttQueryClientByClientIdResponse.OnsMqttQueryClientByClientId_MqttClientInfoDo.OnsMqttQueryClientByClientId_SubscriptionDo subscriptionDo = new OnsMqttQueryClientByClientIdResponse.OnsMqttQueryClientByClientId_MqttClientInfoDo.OnsMqttQueryClientByClientId_SubscriptionDo();
-				subscriptionDo.ParentTopic = _ctx.StringValue("OnsMqttQueryClientByClientId.MqttClientInfoDo.SubScriptonData["+ i +"].ParentTopic");
 				subscriptionDo.SubTopic = _ctx.StringValue("OnsMqttQueryClientByClientId.MqttClientInfoDo.SubScriptonData["+ i +"].SubTopic");
+				subscriptionDo.ParentTopic = _ctx.StringValue("OnsMqttQueryClientByClientId.MqttClientInfoDo.SubScriptonData["+ i +"].ParentTopic");
 				subscriptionDo.Qos = _ctx.IntegerValue("OnsMqttQueryClientByClientId.MqttClientInfoDo.SubScriptonData["+ i +"].Qos");
 
 				mqttClientInfoDo_subScriptonData.Add(subscriptionDo);

@@ -70,53 +70,29 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 		public class OnsConsumerStatus_Data
 		{
 
-			private bool? online;
-
-			private long? totalDiff;
-
 			private float? consumeTps;
-
-			private long? lastTimestamp;
-
-			private long? delayTime;
 
 			private string consumeModel;
 
-			private bool? subscriptionSame;
-
-			private bool? rebalanceOK;
+			private long? totalDiff;
 
 			private string instanceId;
 
-			private List<OnsConsumerStatus_ConnectionDo> connectionSet;
+			private bool? subscriptionSame;
 
-			private List<OnsConsumerStatus_DetailInTopicDo> detailInTopicList;
+			private long? delayTime;
+
+			private long? lastTimestamp;
+
+			private bool? online;
+
+			private bool? rebalanceOK;
+
+			private List<OnsConsumerStatus_ConnectionDo> connectionSet;
 
 			private List<OnsConsumerStatus_ConsumerConnectionInfoDo> consumerConnectionInfoList;
 
-			public bool? Online
-			{
-				get
-				{
-					return online;
-				}
-				set	
-				{
-					online = value;
-				}
-			}
-
-			public long? TotalDiff
-			{
-				get
-				{
-					return totalDiff;
-				}
-				set	
-				{
-					totalDiff = value;
-				}
-			}
+			private List<OnsConsumerStatus_DetailInTopicDo> detailInTopicList;
 
 			public float? ConsumeTps
 			{
@@ -127,30 +103,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					consumeTps = value;
-				}
-			}
-
-			public long? LastTimestamp
-			{
-				get
-				{
-					return lastTimestamp;
-				}
-				set	
-				{
-					lastTimestamp = value;
-				}
-			}
-
-			public long? DelayTime
-			{
-				get
-				{
-					return delayTime;
-				}
-				set	
-				{
-					delayTime = value;
 				}
 			}
 
@@ -166,27 +118,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public bool? SubscriptionSame
+			public long? TotalDiff
 			{
 				get
 				{
-					return subscriptionSame;
+					return totalDiff;
 				}
 				set	
 				{
-					subscriptionSame = value;
-				}
-			}
-
-			public bool? RebalanceOK
-			{
-				get
-				{
-					return rebalanceOK;
-				}
-				set	
-				{
-					rebalanceOK = value;
+					totalDiff = value;
 				}
 			}
 
@@ -202,6 +142,66 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
+			public bool? SubscriptionSame
+			{
+				get
+				{
+					return subscriptionSame;
+				}
+				set	
+				{
+					subscriptionSame = value;
+				}
+			}
+
+			public long? DelayTime
+			{
+				get
+				{
+					return delayTime;
+				}
+				set	
+				{
+					delayTime = value;
+				}
+			}
+
+			public long? LastTimestamp
+			{
+				get
+				{
+					return lastTimestamp;
+				}
+				set	
+				{
+					lastTimestamp = value;
+				}
+			}
+
+			public bool? Online
+			{
+				get
+				{
+					return online;
+				}
+				set	
+				{
+					online = value;
+				}
+			}
+
+			public bool? RebalanceOK
+			{
+				get
+				{
+					return rebalanceOK;
+				}
+				set	
+				{
+					rebalanceOK = value;
+				}
+			}
+
 			public List<OnsConsumerStatus_ConnectionDo> ConnectionSet
 			{
 				get
@@ -211,18 +211,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					connectionSet = value;
-				}
-			}
-
-			public List<OnsConsumerStatus_DetailInTopicDo> DetailInTopicList
-			{
-				get
-				{
-					return detailInTopicList;
-				}
-				set	
-				{
-					detailInTopicList = value;
 				}
 			}
 
@@ -238,28 +226,52 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
+			public List<OnsConsumerStatus_DetailInTopicDo> DetailInTopicList
+			{
+				get
+				{
+					return detailInTopicList;
+				}
+				set	
+				{
+					detailInTopicList = value;
+				}
+			}
+
 			public class OnsConsumerStatus_ConnectionDo
 			{
 
-				private string clientId;
+				private string remoteIP;
+
+				private string version;
 
 				private string clientAddr;
 
 				private string language;
 
-				private string version;
+				private string clientId;
 
-				private string remoteIP;
-
-				public string ClientId
+				public string RemoteIP
 				{
 					get
 					{
-						return clientId;
+						return remoteIP;
 					}
 					set	
 					{
-						clientId = value;
+						remoteIP = value;
+					}
+				}
+
+				public string Version
+				{
+					get
+					{
+						return version;
+					}
+					set	
+					{
+						version = value;
 					}
 				}
 
@@ -287,87 +299,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					}
 				}
 
-				public string Version
+				public string ClientId
 				{
 					get
 					{
-						return version;
+						return clientId;
 					}
 					set	
 					{
-						version = value;
-					}
-				}
-
-				public string RemoteIP
-				{
-					get
-					{
-						return remoteIP;
-					}
-					set	
-					{
-						remoteIP = value;
-					}
-				}
-			}
-
-			public class OnsConsumerStatus_DetailInTopicDo
-			{
-
-				private string topic;
-
-				private long? totalDiff;
-
-				private long? lastTimestamp;
-
-				private long? delayTime;
-
-				public string Topic
-				{
-					get
-					{
-						return topic;
-					}
-					set	
-					{
-						topic = value;
-					}
-				}
-
-				public long? TotalDiff
-				{
-					get
-					{
-						return totalDiff;
-					}
-					set	
-					{
-						totalDiff = value;
-					}
-				}
-
-				public long? LastTimestamp
-				{
-					get
-					{
-						return lastTimestamp;
-					}
-					set	
-					{
-						lastTimestamp = value;
-					}
-				}
-
-				public long? DelayTime
-				{
-					get
-					{
-						return delayTime;
-					}
-					set	
-					{
-						delayTime = value;
+						clientId = value;
 					}
 				}
 			}
@@ -375,29 +315,77 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			public class OnsConsumerStatus_ConsumerConnectionInfoDo
 			{
 
+				private string consumeModel;
+
+				private long? lastTimeStamp;
+
+				private long? startTimeStamp;
+
+				private string language;
+
 				private string clientId;
 
 				private string connection;
 
-				private string language;
-
 				private string version;
-
-				private string consumeModel;
 
 				private string consumeType;
 
 				private int? threadCount;
 
-				private long? startTimeStamp;
-
-				private long? lastTimeStamp;
+				private List<OnsConsumerStatus_ConsumerRunningDataDo> runningDataList;
 
 				private List<OnsConsumerStatus_SubscriptionData> subscriptionSet;
 
-				private List<OnsConsumerStatus_ConsumerRunningDataDo> runningDataList;
-
 				private List<OnsConsumerStatus_ThreadTrackDo> jstack;
+
+				public string ConsumeModel
+				{
+					get
+					{
+						return consumeModel;
+					}
+					set	
+					{
+						consumeModel = value;
+					}
+				}
+
+				public long? LastTimeStamp
+				{
+					get
+					{
+						return lastTimeStamp;
+					}
+					set	
+					{
+						lastTimeStamp = value;
+					}
+				}
+
+				public long? StartTimeStamp
+				{
+					get
+					{
+						return startTimeStamp;
+					}
+					set	
+					{
+						startTimeStamp = value;
+					}
+				}
+
+				public string Language
+				{
+					get
+					{
+						return language;
+					}
+					set	
+					{
+						language = value;
+					}
+				}
 
 				public string ClientId
 				{
@@ -423,18 +411,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					}
 				}
 
-				public string Language
-				{
-					get
-					{
-						return language;
-					}
-					set	
-					{
-						language = value;
-					}
-				}
-
 				public string Version
 				{
 					get
@@ -444,18 +420,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					set	
 					{
 						version = value;
-					}
-				}
-
-				public string ConsumeModel
-				{
-					get
-					{
-						return consumeModel;
-					}
-					set	
-					{
-						consumeModel = value;
 					}
 				}
 
@@ -483,27 +447,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					}
 				}
 
-				public long? StartTimeStamp
+				public List<OnsConsumerStatus_ConsumerRunningDataDo> RunningDataList
 				{
 					get
 					{
-						return startTimeStamp;
+						return runningDataList;
 					}
 					set	
 					{
-						startTimeStamp = value;
-					}
-				}
-
-				public long? LastTimeStamp
-				{
-					get
-					{
-						return lastTimeStamp;
-					}
-					set	
-					{
-						lastTimeStamp = value;
+						runningDataList = value;
 					}
 				}
 
@@ -519,18 +471,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					}
 				}
 
-				public List<OnsConsumerStatus_ConsumerRunningDataDo> RunningDataList
-				{
-					get
-					{
-						return runningDataList;
-					}
-					set	
-					{
-						runningDataList = value;
-					}
-				}
-
 				public List<OnsConsumerStatus_ThreadTrackDo> Jstack
 				{
 					get
@@ -543,80 +483,20 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					}
 				}
 
-				public class OnsConsumerStatus_SubscriptionData
-				{
-
-					private string topic;
-
-					private string subString;
-
-					private long? subVersion;
-
-					private List<string> tagsSet;
-
-					public string Topic
-					{
-						get
-						{
-							return topic;
-						}
-						set	
-						{
-							topic = value;
-						}
-					}
-
-					public string SubString
-					{
-						get
-						{
-							return subString;
-						}
-						set	
-						{
-							subString = value;
-						}
-					}
-
-					public long? SubVersion
-					{
-						get
-						{
-							return subVersion;
-						}
-						set	
-						{
-							subVersion = value;
-						}
-					}
-
-					public List<string> TagsSet
-					{
-						get
-						{
-							return tagsSet;
-						}
-						set	
-						{
-							tagsSet = value;
-						}
-					}
-				}
-
 				public class OnsConsumerStatus_ConsumerRunningDataDo
 				{
 
 					private string groupId;
 
+					private float? rt;
+
 					private string topic;
 
-					private float? rt;
+					private long? failedCountPerHour;
 
 					private float? okTps;
 
 					private float? failedTps;
-
-					private long? failedCountPerHour;
 
 					public string GroupId
 					{
@@ -630,6 +510,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 						}
 					}
 
+					public float? Rt
+					{
+						get
+						{
+							return rt;
+						}
+						set	
+						{
+							rt = value;
+						}
+					}
+
 					public string Topic
 					{
 						get
@@ -642,15 +534,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 						}
 					}
 
-					public float? Rt
+					public long? FailedCountPerHour
 					{
 						get
 						{
-							return rt;
+							return failedCountPerHour;
 						}
 						set	
 						{
-							rt = value;
+							failedCountPerHour = value;
 						}
 					}
 
@@ -677,16 +569,64 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 							failedTps = value;
 						}
 					}
+				}
 
-					public long? FailedCountPerHour
+				public class OnsConsumerStatus_SubscriptionData
+				{
+
+					private string subString;
+
+					private long? subVersion;
+
+					private string topic;
+
+					private List<string> tagsSet;
+
+					public string SubString
 					{
 						get
 						{
-							return failedCountPerHour;
+							return subString;
 						}
 						set	
 						{
-							failedCountPerHour = value;
+							subString = value;
+						}
+					}
+
+					public long? SubVersion
+					{
+						get
+						{
+							return subVersion;
+						}
+						set	
+						{
+							subVersion = value;
+						}
+					}
+
+					public string Topic
+					{
+						get
+						{
+							return topic;
+						}
+						set	
+						{
+							topic = value;
+						}
+					}
+
+					public List<string> TagsSet
+					{
+						get
+						{
+							return tagsSet;
+						}
+						set	
+						{
+							tagsSet = value;
 						}
 					}
 				}
@@ -720,6 +660,66 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 						{
 							trackList = value;
 						}
+					}
+				}
+			}
+
+			public class OnsConsumerStatus_DetailInTopicDo
+			{
+
+				private long? delayTime;
+
+				private long? totalDiff;
+
+				private long? lastTimestamp;
+
+				private string topic;
+
+				public long? DelayTime
+				{
+					get
+					{
+						return delayTime;
+					}
+					set	
+					{
+						delayTime = value;
+					}
+				}
+
+				public long? TotalDiff
+				{
+					get
+					{
+						return totalDiff;
+					}
+					set	
+					{
+						totalDiff = value;
+					}
+				}
+
+				public long? LastTimestamp
+				{
+					get
+					{
+						return lastTimestamp;
+					}
+					set	
+					{
+						lastTimestamp = value;
+					}
+				}
+
+				public string Topic
+				{
+					get
+					{
+						return topic;
+					}
+					set	
+					{
+						topic = value;
 					}
 				}
 			}

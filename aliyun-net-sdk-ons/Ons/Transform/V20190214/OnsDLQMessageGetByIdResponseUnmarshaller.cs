@@ -35,25 +35,25 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			onsDLQMessageGetByIdResponse.HelpUrl = _ctx.StringValue("OnsDLQMessageGetById.HelpUrl");
 
 			OnsDLQMessageGetByIdResponse.OnsDLQMessageGetById_Data data = new OnsDLQMessageGetByIdResponse.OnsDLQMessageGetById_Data();
-			data.Topic = _ctx.StringValue("OnsDLQMessageGetById.Data.Topic");
-			data.Flag = _ctx.IntegerValue("OnsDLQMessageGetById.Data.Flag");
-			data.Body = _ctx.StringValue("OnsDLQMessageGetById.Data.Body");
-			data.StoreSize = _ctx.IntegerValue("OnsDLQMessageGetById.Data.StoreSize");
-			data.BornTimestamp = _ctx.LongValue("OnsDLQMessageGetById.Data.BornTimestamp");
-			data.BornHost = _ctx.StringValue("OnsDLQMessageGetById.Data.BornHost");
-			data.StoreTimestamp = _ctx.LongValue("OnsDLQMessageGetById.Data.StoreTimestamp");
-			data.StoreHost = _ctx.StringValue("OnsDLQMessageGetById.Data.StoreHost");
-			data.MsgId = _ctx.StringValue("OnsDLQMessageGetById.Data.MsgId");
 			data.OffsetId = _ctx.StringValue("OnsDLQMessageGetById.Data.OffsetId");
-			data.BodyCRC = _ctx.IntegerValue("OnsDLQMessageGetById.Data.BodyCRC");
+			data.StoreSize = _ctx.IntegerValue("OnsDLQMessageGetById.Data.StoreSize");
 			data.ReconsumeTimes = _ctx.IntegerValue("OnsDLQMessageGetById.Data.ReconsumeTimes");
+			data.StoreTimestamp = _ctx.LongValue("OnsDLQMessageGetById.Data.StoreTimestamp");
+			data.Body = _ctx.StringValue("OnsDLQMessageGetById.Data.Body");
 			data.InstanceId = _ctx.StringValue("OnsDLQMessageGetById.Data.InstanceId");
+			data.MsgId = _ctx.StringValue("OnsDLQMessageGetById.Data.MsgId");
+			data.Flag = _ctx.IntegerValue("OnsDLQMessageGetById.Data.Flag");
+			data.StoreHost = _ctx.StringValue("OnsDLQMessageGetById.Data.StoreHost");
+			data.Topic = _ctx.StringValue("OnsDLQMessageGetById.Data.Topic");
+			data.BornTimestamp = _ctx.LongValue("OnsDLQMessageGetById.Data.BornTimestamp");
+			data.BodyCRC = _ctx.IntegerValue("OnsDLQMessageGetById.Data.BodyCRC");
+			data.BornHost = _ctx.StringValue("OnsDLQMessageGetById.Data.BornHost");
 
 			List<OnsDLQMessageGetByIdResponse.OnsDLQMessageGetById_Data.OnsDLQMessageGetById_MessageProperty> data_propertyList = new List<OnsDLQMessageGetByIdResponse.OnsDLQMessageGetById_Data.OnsDLQMessageGetById_MessageProperty>();
 			for (int i = 0; i < _ctx.Length("OnsDLQMessageGetById.Data.PropertyList.Length"); i++) {
 				OnsDLQMessageGetByIdResponse.OnsDLQMessageGetById_Data.OnsDLQMessageGetById_MessageProperty messageProperty = new OnsDLQMessageGetByIdResponse.OnsDLQMessageGetById_Data.OnsDLQMessageGetById_MessageProperty();
-				messageProperty.Name = _ctx.StringValue("OnsDLQMessageGetById.Data.PropertyList["+ i +"].Name");
 				messageProperty._Value = _ctx.StringValue("OnsDLQMessageGetById.Data.PropertyList["+ i +"].Value");
+				messageProperty.Name = _ctx.StringValue("OnsDLQMessageGetById.Data.PropertyList["+ i +"].Name");
 
 				data_propertyList.Add(messageProperty);
 			}

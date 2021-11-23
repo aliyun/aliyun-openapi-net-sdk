@@ -38,12 +38,12 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			for (int i = 0; i < _ctx.Length("OnsGroupList.Data.Length"); i++) {
 				OnsGroupListResponse.OnsGroupList_SubscribeInfoDo subscribeInfoDo = new OnsGroupListResponse.OnsGroupList_SubscribeInfoDo();
 				subscribeInfoDo.Owner = _ctx.StringValue("OnsGroupList.Data["+ i +"].Owner");
-				subscribeInfoDo.GroupId = _ctx.StringValue("OnsGroupList.Data["+ i +"].GroupId");
 				subscribeInfoDo.UpdateTime = _ctx.LongValue("OnsGroupList.Data["+ i +"].UpdateTime");
-				subscribeInfoDo.Remark = _ctx.StringValue("OnsGroupList.Data["+ i +"].Remark");
-				subscribeInfoDo.InstanceId = _ctx.StringValue("OnsGroupList.Data["+ i +"].InstanceId");
 				subscribeInfoDo.IndependentNaming = _ctx.BooleanValue("OnsGroupList.Data["+ i +"].IndependentNaming");
+				subscribeInfoDo.GroupId = _ctx.StringValue("OnsGroupList.Data["+ i +"].GroupId");
+				subscribeInfoDo.Remark = _ctx.StringValue("OnsGroupList.Data["+ i +"].Remark");
 				subscribeInfoDo.CreateTime = _ctx.LongValue("OnsGroupList.Data["+ i +"].CreateTime");
+				subscribeInfoDo.InstanceId = _ctx.StringValue("OnsGroupList.Data["+ i +"].InstanceId");
 				subscribeInfoDo.GroupType = _ctx.StringValue("OnsGroupList.Data["+ i +"].GroupType");
 
 				List<OnsGroupListResponse.OnsGroupList_SubscribeInfoDo.OnsGroupList_Tag> subscribeInfoDo_tags = new List<OnsGroupListResponse.OnsGroupList_SubscribeInfoDo.OnsGroupList_Tag>();

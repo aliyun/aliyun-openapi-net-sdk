@@ -25,23 +25,11 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 	public class ListTagResourcesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string nextToken;
 
-		private List<ListTagResources_TagResource> tagResources;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<ListTagResources_TagResource> tagResources;
 
 		public string NextToken
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			set	
 			{
 				nextToken = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,25 +70,37 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 		public class ListTagResources_TagResource
 		{
 
-			private string tagKey;
-
-			private string tagValue;
-
 			private string resourceType;
-
-			private string resourceId;
 
 			private string instanceId;
 
-			public string TagKey
+			private string tagValue;
+
+			private string resourceId;
+
+			private string tagKey;
+
+			public string ResourceType
 			{
 				get
 				{
-					return tagKey;
+					return resourceType;
 				}
 				set	
 				{
-					tagKey = value;
+					resourceType = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 
@@ -104,18 +116,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public string ResourceType
-			{
-				get
-				{
-					return resourceType;
-				}
-				set	
-				{
-					resourceType = value;
-				}
-			}
-
 			public string ResourceId
 			{
 				get
@@ -128,15 +128,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public string InstanceId
+			public string TagKey
 			{
 				get
 				{
-					return instanceId;
+					return tagKey;
 				}
 				set	
 				{
-					instanceId = value;
+					tagKey = value;
 				}
 			}
 		}

@@ -39,10 +39,10 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			List<OnsConsumerGetConnectionResponse.OnsConsumerGetConnection_Data.OnsConsumerGetConnection_ConnectionDo> data_connectionList = new List<OnsConsumerGetConnectionResponse.OnsConsumerGetConnection_Data.OnsConsumerGetConnection_ConnectionDo>();
 			for (int i = 0; i < _ctx.Length("OnsConsumerGetConnection.Data.ConnectionList.Length"); i++) {
 				OnsConsumerGetConnectionResponse.OnsConsumerGetConnection_Data.OnsConsumerGetConnection_ConnectionDo connectionDo = new OnsConsumerGetConnectionResponse.OnsConsumerGetConnection_Data.OnsConsumerGetConnection_ConnectionDo();
-				connectionDo.ClientId = _ctx.StringValue("OnsConsumerGetConnection.Data.ConnectionList["+ i +"].ClientId");
+				connectionDo.Version = _ctx.StringValue("OnsConsumerGetConnection.Data.ConnectionList["+ i +"].Version");
 				connectionDo.ClientAddr = _ctx.StringValue("OnsConsumerGetConnection.Data.ConnectionList["+ i +"].ClientAddr");
 				connectionDo.Language = _ctx.StringValue("OnsConsumerGetConnection.Data.ConnectionList["+ i +"].Language");
-				connectionDo.Version = _ctx.StringValue("OnsConsumerGetConnection.Data.ConnectionList["+ i +"].Version");
+				connectionDo.ClientId = _ctx.StringValue("OnsConsumerGetConnection.Data.ConnectionList["+ i +"].ClientId");
 
 				data_connectionList.Add(connectionDo);
 			}

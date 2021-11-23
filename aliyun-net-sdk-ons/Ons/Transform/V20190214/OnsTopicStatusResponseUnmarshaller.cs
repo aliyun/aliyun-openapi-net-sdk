@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			onsTopicStatusResponse.HelpUrl = _ctx.StringValue("OnsTopicStatus.HelpUrl");
 
 			OnsTopicStatusResponse.OnsTopicStatus_Data data = new OnsTopicStatusResponse.OnsTopicStatus_Data();
-			data.TotalCount = _ctx.LongValue("OnsTopicStatus.Data.TotalCount");
-			data.LastTimeStamp = _ctx.LongValue("OnsTopicStatus.Data.LastTimeStamp");
 			data.Perm = _ctx.IntegerValue("OnsTopicStatus.Data.Perm");
+			data.LastTimeStamp = _ctx.LongValue("OnsTopicStatus.Data.LastTimeStamp");
+			data.TotalCount = _ctx.LongValue("OnsTopicStatus.Data.TotalCount");
 			onsTopicStatusResponse.Data = data;
         
 			return onsTopicStatusResponse;

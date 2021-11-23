@@ -35,14 +35,14 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 
 			OnsGroupSubDetailResponse.OnsGroupSubDetail_Data data = new OnsGroupSubDetailResponse.OnsGroupSubDetail_Data();
 			data.GroupId = _ctx.StringValue("OnsGroupSubDetail.Data.GroupId");
-			data.Online = _ctx.BooleanValue("OnsGroupSubDetail.Data.Online");
 			data.MessageModel = _ctx.StringValue("OnsGroupSubDetail.Data.MessageModel");
+			data.Online = _ctx.BooleanValue("OnsGroupSubDetail.Data.Online");
 
 			List<OnsGroupSubDetailResponse.OnsGroupSubDetail_Data.OnsGroupSubDetail_SubscriptionDataListItem> data_subscriptionDataList = new List<OnsGroupSubDetailResponse.OnsGroupSubDetail_Data.OnsGroupSubDetail_SubscriptionDataListItem>();
 			for (int i = 0; i < _ctx.Length("OnsGroupSubDetail.Data.SubscriptionDataList.Length"); i++) {
 				OnsGroupSubDetailResponse.OnsGroupSubDetail_Data.OnsGroupSubDetail_SubscriptionDataListItem subscriptionDataListItem = new OnsGroupSubDetailResponse.OnsGroupSubDetail_Data.OnsGroupSubDetail_SubscriptionDataListItem();
-				subscriptionDataListItem.Topic = _ctx.StringValue("OnsGroupSubDetail.Data.SubscriptionDataList["+ i +"].Topic");
 				subscriptionDataListItem.SubString = _ctx.StringValue("OnsGroupSubDetail.Data.SubscriptionDataList["+ i +"].SubString");
+				subscriptionDataListItem.Topic = _ctx.StringValue("OnsGroupSubDetail.Data.SubscriptionDataList["+ i +"].Topic");
 
 				data_subscriptionDataList.Add(subscriptionDataListItem);
 			}

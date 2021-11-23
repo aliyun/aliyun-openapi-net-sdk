@@ -70,65 +70,29 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 		public class OnsInstanceInServiceList_InstanceVO
 		{
 
-			private string instanceId;
-
-			private int? instanceStatus;
-
-			private long? releaseTime;
-
-			private int? instanceType;
+			private bool? independentNaming;
 
 			private string instanceName;
 
-			private bool? independentNaming;
+			private long? releaseTime;
+
+			private int? instanceStatus;
+
+			private string instanceId;
+
+			private int? instanceType;
 
 			private List<OnsInstanceInServiceList_Tag> tags;
 
-			public string InstanceId
+			public bool? IndependentNaming
 			{
 				get
 				{
-					return instanceId;
+					return independentNaming;
 				}
 				set	
 				{
-					instanceId = value;
-				}
-			}
-
-			public int? InstanceStatus
-			{
-				get
-				{
-					return instanceStatus;
-				}
-				set	
-				{
-					instanceStatus = value;
-				}
-			}
-
-			public long? ReleaseTime
-			{
-				get
-				{
-					return releaseTime;
-				}
-				set	
-				{
-					releaseTime = value;
-				}
-			}
-
-			public int? InstanceType
-			{
-				get
-				{
-					return instanceType;
-				}
-				set	
-				{
-					instanceType = value;
+					independentNaming = value;
 				}
 			}
 
@@ -144,15 +108,51 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public bool? IndependentNaming
+			public long? ReleaseTime
 			{
 				get
 				{
-					return independentNaming;
+					return releaseTime;
 				}
 				set	
 				{
-					independentNaming = value;
+					releaseTime = value;
+				}
+			}
+
+			public int? InstanceStatus
+			{
+				get
+				{
+					return instanceStatus;
+				}
+				set	
+				{
+					instanceStatus = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public int? InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
 				}
 			}
 

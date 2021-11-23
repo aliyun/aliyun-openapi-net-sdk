@@ -35,10 +35,10 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			onsConsumerTimeSpanResponse.HelpUrl = _ctx.StringValue("OnsConsumerTimeSpan.HelpUrl");
 
 			OnsConsumerTimeSpanResponse.OnsConsumerTimeSpan_Data data = new OnsConsumerTimeSpanResponse.OnsConsumerTimeSpan_Data();
-			data.Topic = _ctx.StringValue("OnsConsumerTimeSpan.Data.Topic");
-			data.MinTimeStamp = _ctx.LongValue("OnsConsumerTimeSpan.Data.MinTimeStamp");
 			data.MaxTimeStamp = _ctx.LongValue("OnsConsumerTimeSpan.Data.MaxTimeStamp");
 			data.ConsumeTimeStamp = _ctx.LongValue("OnsConsumerTimeSpan.Data.ConsumeTimeStamp");
+			data.Topic = _ctx.StringValue("OnsConsumerTimeSpan.Data.Topic");
+			data.MinTimeStamp = _ctx.LongValue("OnsConsumerTimeSpan.Data.MinTimeStamp");
 			data.InstanceId = _ctx.StringValue("OnsConsumerTimeSpan.Data.InstanceId");
 			onsConsumerTimeSpanResponse.Data = data;
         

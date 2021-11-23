@@ -37,9 +37,9 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			List<OnsMessageTraceResponse.OnsMessageTrace_MessageTrack> onsMessageTraceResponse_data = new List<OnsMessageTraceResponse.OnsMessageTrace_MessageTrack>();
 			for (int i = 0; i < _ctx.Length("OnsMessageTrace.Data.Length"); i++) {
 				OnsMessageTraceResponse.OnsMessageTrace_MessageTrack messageTrack = new OnsMessageTraceResponse.OnsMessageTrace_MessageTrack();
-				messageTrack.ConsumerGroup = _ctx.StringValue("OnsMessageTrace.Data["+ i +"].ConsumerGroup");
-				messageTrack.TrackType = _ctx.StringValue("OnsMessageTrace.Data["+ i +"].TrackType");
 				messageTrack.ExceptionDesc = _ctx.StringValue("OnsMessageTrace.Data["+ i +"].ExceptionDesc");
+				messageTrack.TrackType = _ctx.StringValue("OnsMessageTrace.Data["+ i +"].TrackType");
+				messageTrack.ConsumerGroup = _ctx.StringValue("OnsMessageTrace.Data["+ i +"].ConsumerGroup");
 				messageTrack.InstanceId = _ctx.StringValue("OnsMessageTrace.Data["+ i +"].InstanceId");
 
 				onsMessageTraceResponse_data.Add(messageTrack);

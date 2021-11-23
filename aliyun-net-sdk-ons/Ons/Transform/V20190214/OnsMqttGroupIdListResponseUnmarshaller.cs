@@ -37,16 +37,16 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			List<OnsMqttGroupIdListResponse.OnsMqttGroupIdList_MqttGroupIdDo> onsMqttGroupIdListResponse_data = new List<OnsMqttGroupIdListResponse.OnsMqttGroupIdList_MqttGroupIdDo>();
 			for (int i = 0; i < _ctx.Length("OnsMqttGroupIdList.Data.Length"); i++) {
 				OnsMqttGroupIdListResponse.OnsMqttGroupIdList_MqttGroupIdDo mqttGroupIdDo = new OnsMqttGroupIdListResponse.OnsMqttGroupIdList_MqttGroupIdDo();
-				mqttGroupIdDo.Id = _ctx.LongValue("OnsMqttGroupIdList.Data["+ i +"].Id");
-				mqttGroupIdDo.ChannelId = _ctx.IntegerValue("OnsMqttGroupIdList.Data["+ i +"].ChannelId");
-				mqttGroupIdDo.Owner = _ctx.StringValue("OnsMqttGroupIdList.Data["+ i +"].Owner");
-				mqttGroupIdDo.GroupId = _ctx.StringValue("OnsMqttGroupIdList.Data["+ i +"].GroupId");
-				mqttGroupIdDo.Topic = _ctx.StringValue("OnsMqttGroupIdList.Data["+ i +"].Topic");
 				mqttGroupIdDo.Status = _ctx.IntegerValue("OnsMqttGroupIdList.Data["+ i +"].Status");
-				mqttGroupIdDo.CreateTime = _ctx.LongValue("OnsMqttGroupIdList.Data["+ i +"].CreateTime");
 				mqttGroupIdDo.UpdateTime = _ctx.LongValue("OnsMqttGroupIdList.Data["+ i +"].UpdateTime");
-				mqttGroupIdDo.InstanceId = _ctx.StringValue("OnsMqttGroupIdList.Data["+ i +"].InstanceId");
+				mqttGroupIdDo.Owner = _ctx.StringValue("OnsMqttGroupIdList.Data["+ i +"].Owner");
 				mqttGroupIdDo.IndependentNaming = _ctx.BooleanValue("OnsMqttGroupIdList.Data["+ i +"].IndependentNaming");
+				mqttGroupIdDo.GroupId = _ctx.StringValue("OnsMqttGroupIdList.Data["+ i +"].GroupId");
+				mqttGroupIdDo.CreateTime = _ctx.LongValue("OnsMqttGroupIdList.Data["+ i +"].CreateTime");
+				mqttGroupIdDo.Topic = _ctx.StringValue("OnsMqttGroupIdList.Data["+ i +"].Topic");
+				mqttGroupIdDo.ChannelId = _ctx.IntegerValue("OnsMqttGroupIdList.Data["+ i +"].ChannelId");
+				mqttGroupIdDo.InstanceId = _ctx.StringValue("OnsMqttGroupIdList.Data["+ i +"].InstanceId");
+				mqttGroupIdDo.Id = _ctx.LongValue("OnsMqttGroupIdList.Data["+ i +"].Id");
 
 				onsMqttGroupIdListResponse_data.Add(mqttGroupIdDo);
 			}

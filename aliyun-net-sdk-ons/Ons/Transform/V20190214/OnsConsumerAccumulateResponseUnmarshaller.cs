@@ -35,19 +35,19 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			onsConsumerAccumulateResponse.HelpUrl = _ctx.StringValue("OnsConsumerAccumulate.HelpUrl");
 
 			OnsConsumerAccumulateResponse.OnsConsumerAccumulate_Data data = new OnsConsumerAccumulateResponse.OnsConsumerAccumulate_Data();
-			data.Online = _ctx.BooleanValue("OnsConsumerAccumulate.Data.Online");
-			data.TotalDiff = _ctx.LongValue("OnsConsumerAccumulate.Data.TotalDiff");
 			data.ConsumeTps = _ctx.FloatValue("OnsConsumerAccumulate.Data.ConsumeTps");
-			data.LastTimestamp = _ctx.LongValue("OnsConsumerAccumulate.Data.LastTimestamp");
 			data.DelayTime = _ctx.LongValue("OnsConsumerAccumulate.Data.DelayTime");
+			data.LastTimestamp = _ctx.LongValue("OnsConsumerAccumulate.Data.LastTimestamp");
+			data.TotalDiff = _ctx.LongValue("OnsConsumerAccumulate.Data.TotalDiff");
+			data.Online = _ctx.BooleanValue("OnsConsumerAccumulate.Data.Online");
 
 			List<OnsConsumerAccumulateResponse.OnsConsumerAccumulate_Data.OnsConsumerAccumulate_DetailInTopicDo> data_detailInTopicList = new List<OnsConsumerAccumulateResponse.OnsConsumerAccumulate_Data.OnsConsumerAccumulate_DetailInTopicDo>();
 			for (int i = 0; i < _ctx.Length("OnsConsumerAccumulate.Data.DetailInTopicList.Length"); i++) {
 				OnsConsumerAccumulateResponse.OnsConsumerAccumulate_Data.OnsConsumerAccumulate_DetailInTopicDo detailInTopicDo = new OnsConsumerAccumulateResponse.OnsConsumerAccumulate_Data.OnsConsumerAccumulate_DetailInTopicDo();
-				detailInTopicDo.Topic = _ctx.StringValue("OnsConsumerAccumulate.Data.DetailInTopicList["+ i +"].Topic");
+				detailInTopicDo.DelayTime = _ctx.LongValue("OnsConsumerAccumulate.Data.DetailInTopicList["+ i +"].DelayTime");
 				detailInTopicDo.TotalDiff = _ctx.LongValue("OnsConsumerAccumulate.Data.DetailInTopicList["+ i +"].TotalDiff");
 				detailInTopicDo.LastTimestamp = _ctx.LongValue("OnsConsumerAccumulate.Data.DetailInTopicList["+ i +"].LastTimestamp");
-				detailInTopicDo.DelayTime = _ctx.LongValue("OnsConsumerAccumulate.Data.DetailInTopicList["+ i +"].DelayTime");
+				detailInTopicDo.Topic = _ctx.StringValue("OnsConsumerAccumulate.Data.DetailInTopicList["+ i +"].Topic");
 
 				data_detailInTopicList.Add(detailInTopicDo);
 			}

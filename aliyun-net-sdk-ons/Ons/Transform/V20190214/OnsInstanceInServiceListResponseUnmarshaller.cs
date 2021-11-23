@@ -37,12 +37,12 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			List<OnsInstanceInServiceListResponse.OnsInstanceInServiceList_InstanceVO> onsInstanceInServiceListResponse_data = new List<OnsInstanceInServiceListResponse.OnsInstanceInServiceList_InstanceVO>();
 			for (int i = 0; i < _ctx.Length("OnsInstanceInServiceList.Data.Length"); i++) {
 				OnsInstanceInServiceListResponse.OnsInstanceInServiceList_InstanceVO instanceVO = new OnsInstanceInServiceListResponse.OnsInstanceInServiceList_InstanceVO();
-				instanceVO.InstanceId = _ctx.StringValue("OnsInstanceInServiceList.Data["+ i +"].InstanceId");
-				instanceVO.InstanceStatus = _ctx.IntegerValue("OnsInstanceInServiceList.Data["+ i +"].InstanceStatus");
-				instanceVO.ReleaseTime = _ctx.LongValue("OnsInstanceInServiceList.Data["+ i +"].ReleaseTime");
-				instanceVO.InstanceType = _ctx.IntegerValue("OnsInstanceInServiceList.Data["+ i +"].InstanceType");
-				instanceVO.InstanceName = _ctx.StringValue("OnsInstanceInServiceList.Data["+ i +"].InstanceName");
 				instanceVO.IndependentNaming = _ctx.BooleanValue("OnsInstanceInServiceList.Data["+ i +"].IndependentNaming");
+				instanceVO.InstanceName = _ctx.StringValue("OnsInstanceInServiceList.Data["+ i +"].InstanceName");
+				instanceVO.ReleaseTime = _ctx.LongValue("OnsInstanceInServiceList.Data["+ i +"].ReleaseTime");
+				instanceVO.InstanceStatus = _ctx.IntegerValue("OnsInstanceInServiceList.Data["+ i +"].InstanceStatus");
+				instanceVO.InstanceId = _ctx.StringValue("OnsInstanceInServiceList.Data["+ i +"].InstanceId");
+				instanceVO.InstanceType = _ctx.IntegerValue("OnsInstanceInServiceList.Data["+ i +"].InstanceType");
 
 				List<OnsInstanceInServiceListResponse.OnsInstanceInServiceList_InstanceVO.OnsInstanceInServiceList_Tag> instanceVO_tags = new List<OnsInstanceInServiceListResponse.OnsInstanceInServiceList_InstanceVO.OnsInstanceInServiceList_Tag>();
 				for (int j = 0; j < _ctx.Length("OnsInstanceInServiceList.Data["+ i +"].Tags.Length"); j++) {

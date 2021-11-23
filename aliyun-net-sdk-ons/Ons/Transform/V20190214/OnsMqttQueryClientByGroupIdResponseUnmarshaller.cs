@@ -35,8 +35,8 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			onsMqttQueryClientByGroupIdResponse.HelpUrl = _ctx.StringValue("OnsMqttQueryClientByGroupId.HelpUrl");
 
 			OnsMqttQueryClientByGroupIdResponse.OnsMqttQueryClientByGroupId_MqttClientSetDo mqttClientSetDo = new OnsMqttQueryClientByGroupIdResponse.OnsMqttQueryClientByGroupId_MqttClientSetDo();
-			mqttClientSetDo.OnlineCount = _ctx.LongValue("OnsMqttQueryClientByGroupId.MqttClientSetDo.OnlineCount");
 			mqttClientSetDo.PersistCount = _ctx.LongValue("OnsMqttQueryClientByGroupId.MqttClientSetDo.PersistCount");
+			mqttClientSetDo.OnlineCount = _ctx.LongValue("OnsMqttQueryClientByGroupId.MqttClientSetDo.OnlineCount");
 			onsMqttQueryClientByGroupIdResponse.MqttClientSetDo = mqttClientSetDo;
         
 			return onsMqttQueryClientByGroupIdResponse;

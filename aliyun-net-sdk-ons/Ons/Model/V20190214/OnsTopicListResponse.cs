@@ -70,59 +70,35 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 		public class OnsTopicList_PublishInfoDo
 		{
 
-			private string topic;
-
-			private string owner;
-
-			private int? relation;
+			private int? messageType;
 
 			private string relationName;
 
-			private long? createTime;
-
-			private string remark;
-
-			private int? messageType;
-
-			private string instanceId;
+			private string owner;
 
 			private bool? independentNaming;
 
+			private string remark;
+
+			private int? relation;
+
+			private long? createTime;
+
+			private string topic;
+
+			private string instanceId;
+
 			private List<OnsTopicList_Tag> tags;
 
-			public string Topic
+			public int? MessageType
 			{
 				get
 				{
-					return topic;
+					return messageType;
 				}
 				set	
 				{
-					topic = value;
-				}
-			}
-
-			public string Owner
-			{
-				get
-				{
-					return owner;
-				}
-				set	
-				{
-					owner = value;
-				}
-			}
-
-			public int? Relation
-			{
-				get
-				{
-					return relation;
-				}
-				set	
-				{
-					relation = value;
+					messageType = value;
 				}
 			}
 
@@ -138,15 +114,27 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public long? CreateTime
+			public string Owner
 			{
 				get
 				{
-					return createTime;
+					return owner;
 				}
 				set	
 				{
-					createTime = value;
+					owner = value;
+				}
+			}
+
+			public bool? IndependentNaming
+			{
+				get
+				{
+					return independentNaming;
+				}
+				set	
+				{
+					independentNaming = value;
 				}
 			}
 
@@ -162,15 +150,39 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public int? MessageType
+			public int? Relation
 			{
 				get
 				{
-					return messageType;
+					return relation;
 				}
 				set	
 				{
-					messageType = value;
+					relation = value;
+				}
+			}
+
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string Topic
+			{
+				get
+				{
+					return topic;
+				}
+				set	
+				{
+					topic = value;
 				}
 			}
 
@@ -183,18 +195,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					instanceId = value;
-				}
-			}
-
-			public bool? IndependentNaming
-			{
-				get
-				{
-					return independentNaming;
-				}
-				set	
-				{
-					independentNaming = value;
 				}
 			}
 

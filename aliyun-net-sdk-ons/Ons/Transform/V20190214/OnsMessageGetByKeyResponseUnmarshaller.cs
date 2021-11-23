@@ -37,25 +37,25 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			List<OnsMessageGetByKeyResponse.OnsMessageGetByKey_OnsRestMessageDo> onsMessageGetByKeyResponse_data = new List<OnsMessageGetByKeyResponse.OnsMessageGetByKey_OnsRestMessageDo>();
 			for (int i = 0; i < _ctx.Length("OnsMessageGetByKey.Data.Length"); i++) {
 				OnsMessageGetByKeyResponse.OnsMessageGetByKey_OnsRestMessageDo onsRestMessageDo = new OnsMessageGetByKeyResponse.OnsMessageGetByKey_OnsRestMessageDo();
-				onsRestMessageDo.Topic = _ctx.StringValue("OnsMessageGetByKey.Data["+ i +"].Topic");
-				onsRestMessageDo.Flag = _ctx.IntegerValue("OnsMessageGetByKey.Data["+ i +"].Flag");
-				onsRestMessageDo.Body = _ctx.StringValue("OnsMessageGetByKey.Data["+ i +"].Body");
-				onsRestMessageDo.StoreSize = _ctx.IntegerValue("OnsMessageGetByKey.Data["+ i +"].StoreSize");
-				onsRestMessageDo.BornTimestamp = _ctx.LongValue("OnsMessageGetByKey.Data["+ i +"].BornTimestamp");
-				onsRestMessageDo.BornHost = _ctx.StringValue("OnsMessageGetByKey.Data["+ i +"].BornHost");
-				onsRestMessageDo.StoreTimestamp = _ctx.LongValue("OnsMessageGetByKey.Data["+ i +"].StoreTimestamp");
-				onsRestMessageDo.StoreHost = _ctx.StringValue("OnsMessageGetByKey.Data["+ i +"].StoreHost");
-				onsRestMessageDo.MsgId = _ctx.StringValue("OnsMessageGetByKey.Data["+ i +"].MsgId");
 				onsRestMessageDo.OffsetId = _ctx.StringValue("OnsMessageGetByKey.Data["+ i +"].OffsetId");
-				onsRestMessageDo.BodyCRC = _ctx.IntegerValue("OnsMessageGetByKey.Data["+ i +"].BodyCRC");
+				onsRestMessageDo.StoreSize = _ctx.IntegerValue("OnsMessageGetByKey.Data["+ i +"].StoreSize");
 				onsRestMessageDo.ReconsumeTimes = _ctx.IntegerValue("OnsMessageGetByKey.Data["+ i +"].ReconsumeTimes");
+				onsRestMessageDo.StoreTimestamp = _ctx.LongValue("OnsMessageGetByKey.Data["+ i +"].StoreTimestamp");
+				onsRestMessageDo.Body = _ctx.StringValue("OnsMessageGetByKey.Data["+ i +"].Body");
 				onsRestMessageDo.InstanceId = _ctx.StringValue("OnsMessageGetByKey.Data["+ i +"].InstanceId");
+				onsRestMessageDo.MsgId = _ctx.StringValue("OnsMessageGetByKey.Data["+ i +"].MsgId");
+				onsRestMessageDo.Flag = _ctx.IntegerValue("OnsMessageGetByKey.Data["+ i +"].Flag");
+				onsRestMessageDo.StoreHost = _ctx.StringValue("OnsMessageGetByKey.Data["+ i +"].StoreHost");
+				onsRestMessageDo.Topic = _ctx.StringValue("OnsMessageGetByKey.Data["+ i +"].Topic");
+				onsRestMessageDo.BornTimestamp = _ctx.LongValue("OnsMessageGetByKey.Data["+ i +"].BornTimestamp");
+				onsRestMessageDo.BodyCRC = _ctx.IntegerValue("OnsMessageGetByKey.Data["+ i +"].BodyCRC");
+				onsRestMessageDo.BornHost = _ctx.StringValue("OnsMessageGetByKey.Data["+ i +"].BornHost");
 
 				List<OnsMessageGetByKeyResponse.OnsMessageGetByKey_OnsRestMessageDo.OnsMessageGetByKey_MessageProperty> onsRestMessageDo_propertyList = new List<OnsMessageGetByKeyResponse.OnsMessageGetByKey_OnsRestMessageDo.OnsMessageGetByKey_MessageProperty>();
 				for (int j = 0; j < _ctx.Length("OnsMessageGetByKey.Data["+ i +"].PropertyList.Length"); j++) {
 					OnsMessageGetByKeyResponse.OnsMessageGetByKey_OnsRestMessageDo.OnsMessageGetByKey_MessageProperty messageProperty = new OnsMessageGetByKeyResponse.OnsMessageGetByKey_OnsRestMessageDo.OnsMessageGetByKey_MessageProperty();
-					messageProperty.Name = _ctx.StringValue("OnsMessageGetByKey.Data["+ i +"].PropertyList["+ j +"].Name");
 					messageProperty._Value = _ctx.StringValue("OnsMessageGetByKey.Data["+ i +"].PropertyList["+ j +"].Value");
+					messageProperty.Name = _ctx.StringValue("OnsMessageGetByKey.Data["+ i +"].PropertyList["+ j +"].Name");
 
 					onsRestMessageDo_propertyList.Add(messageProperty);
 				}

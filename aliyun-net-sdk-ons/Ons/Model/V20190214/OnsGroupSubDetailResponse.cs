@@ -58,9 +58,9 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 			private string groupId;
 
-			private bool? online;
-
 			private string messageModel;
+
+			private bool? online;
 
 			private List<OnsGroupSubDetail_SubscriptionDataListItem> subscriptionDataList;
 
@@ -76,18 +76,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public bool? Online
-			{
-				get
-				{
-					return online;
-				}
-				set	
-				{
-					online = value;
-				}
-			}
-
 			public string MessageModel
 			{
 				get
@@ -97,6 +85,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					messageModel = value;
+				}
+			}
+
+			public bool? Online
+			{
+				get
+				{
+					return online;
+				}
+				set	
+				{
+					online = value;
 				}
 			}
 
@@ -115,21 +115,9 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			public class OnsGroupSubDetail_SubscriptionDataListItem
 			{
 
-				private string topic;
-
 				private string subString;
 
-				public string Topic
-				{
-					get
-					{
-						return topic;
-					}
-					set	
-					{
-						topic = value;
-					}
-				}
+				private string topic;
 
 				public string SubString
 				{
@@ -140,6 +128,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					set	
 					{
 						subString = value;
+					}
+				}
+
+				public string Topic
+				{
+					get
+					{
+						return topic;
+					}
+					set	
+					{
+						topic = value;
 					}
 				}
 			}

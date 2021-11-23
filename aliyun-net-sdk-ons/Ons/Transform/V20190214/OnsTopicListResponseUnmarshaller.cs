@@ -37,15 +37,15 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			List<OnsTopicListResponse.OnsTopicList_PublishInfoDo> onsTopicListResponse_data = new List<OnsTopicListResponse.OnsTopicList_PublishInfoDo>();
 			for (int i = 0; i < _ctx.Length("OnsTopicList.Data.Length"); i++) {
 				OnsTopicListResponse.OnsTopicList_PublishInfoDo publishInfoDo = new OnsTopicListResponse.OnsTopicList_PublishInfoDo();
-				publishInfoDo.Topic = _ctx.StringValue("OnsTopicList.Data["+ i +"].Topic");
-				publishInfoDo.Owner = _ctx.StringValue("OnsTopicList.Data["+ i +"].Owner");
-				publishInfoDo.Relation = _ctx.IntegerValue("OnsTopicList.Data["+ i +"].Relation");
-				publishInfoDo.RelationName = _ctx.StringValue("OnsTopicList.Data["+ i +"].RelationName");
-				publishInfoDo.CreateTime = _ctx.LongValue("OnsTopicList.Data["+ i +"].CreateTime");
-				publishInfoDo.Remark = _ctx.StringValue("OnsTopicList.Data["+ i +"].Remark");
 				publishInfoDo.MessageType = _ctx.IntegerValue("OnsTopicList.Data["+ i +"].MessageType");
-				publishInfoDo.InstanceId = _ctx.StringValue("OnsTopicList.Data["+ i +"].InstanceId");
+				publishInfoDo.RelationName = _ctx.StringValue("OnsTopicList.Data["+ i +"].RelationName");
+				publishInfoDo.Owner = _ctx.StringValue("OnsTopicList.Data["+ i +"].Owner");
 				publishInfoDo.IndependentNaming = _ctx.BooleanValue("OnsTopicList.Data["+ i +"].IndependentNaming");
+				publishInfoDo.Remark = _ctx.StringValue("OnsTopicList.Data["+ i +"].Remark");
+				publishInfoDo.Relation = _ctx.IntegerValue("OnsTopicList.Data["+ i +"].Relation");
+				publishInfoDo.CreateTime = _ctx.LongValue("OnsTopicList.Data["+ i +"].CreateTime");
+				publishInfoDo.Topic = _ctx.StringValue("OnsTopicList.Data["+ i +"].Topic");
+				publishInfoDo.InstanceId = _ctx.StringValue("OnsTopicList.Data["+ i +"].InstanceId");
 
 				List<OnsTopicListResponse.OnsTopicList_PublishInfoDo.OnsTopicList_Tag> publishInfoDo_tags = new List<OnsTopicListResponse.OnsTopicList_PublishInfoDo.OnsTopicList_Tag>();
 				for (int j = 0; j < _ctx.Length("OnsTopicList.Data["+ i +"].Tags.Length"); j++) {

@@ -89,9 +89,9 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 				private string groupId;
 
-				private string subString;
-
 				private string messageModel;
+
+				private string subString;
 
 				public string GroupId
 				{
@@ -105,18 +105,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					}
 				}
 
-				public string SubString
-				{
-					get
-					{
-						return subString;
-					}
-					set	
-					{
-						subString = value;
-					}
-				}
-
 				public string MessageModel
 				{
 					get
@@ -126,6 +114,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					set	
 					{
 						messageModel = value;
+					}
+				}
+
+				public string SubString
+				{
+					get
+					{
+						return subString;
+					}
+					set	
+					{
+						subString = value;
 					}
 				}
 			}
