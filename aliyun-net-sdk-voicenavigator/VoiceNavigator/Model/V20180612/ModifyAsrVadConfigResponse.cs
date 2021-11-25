@@ -22,42 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 {
-	public class BeginDialogueResponse : AcsResponse
+	public class ModifyAsrVadConfigResponse : AcsResponse
 	{
 
-		private string action;
-
-		private bool? interruptible;
-
 		private string requestId;
-
-		private string actionParams;
-
-		private string textResponse;
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-			}
-		}
-
-		public bool? Interruptible
-		{
-			get
-			{
-				return interruptible;
-			}
-			set	
-			{
-				interruptible = value;
-			}
-		}
 
 		public string RequestId
 		{
@@ -68,30 +36,6 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string ActionParams
-		{
-			get
-			{
-				return actionParams;
-			}
-			set	
-			{
-				actionParams = value;
-			}
-		}
-
-		public string TextResponse
-		{
-			get
-			{
-				return textResponse;
-			}
-			set	
-			{
-				textResponse = value;
 			}
 		}
 	}

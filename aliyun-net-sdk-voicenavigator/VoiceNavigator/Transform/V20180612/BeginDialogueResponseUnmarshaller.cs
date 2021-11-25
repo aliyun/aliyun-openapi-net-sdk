@@ -31,11 +31,11 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 			BeginDialogueResponse beginDialogueResponse = new BeginDialogueResponse();
 
 			beginDialogueResponse.HttpResponse = _ctx.HttpResponse;
-			beginDialogueResponse.RequestId = _ctx.StringValue("BeginDialogue.RequestId");
-			beginDialogueResponse.TextResponse = _ctx.StringValue("BeginDialogue.TextResponse");
-			beginDialogueResponse.Interruptible = _ctx.BooleanValue("BeginDialogue.Interruptible");
 			beginDialogueResponse.Action = _ctx.StringValue("BeginDialogue.Action");
+			beginDialogueResponse.Interruptible = _ctx.BooleanValue("BeginDialogue.Interruptible");
+			beginDialogueResponse.RequestId = _ctx.StringValue("BeginDialogue.RequestId");
 			beginDialogueResponse.ActionParams = _ctx.StringValue("BeginDialogue.ActionParams");
+			beginDialogueResponse.TextResponse = _ctx.StringValue("BeginDialogue.TextResponse");
         
 			return beginDialogueResponse;
         }

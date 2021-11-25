@@ -31,22 +31,22 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 			ListConversationsResponse listConversationsResponse = new ListConversationsResponse();
 
 			listConversationsResponse.HttpResponse = _ctx.HttpResponse;
-			listConversationsResponse.RequestId = _ctx.StringValue("ListConversations.RequestId");
 			listConversationsResponse.TotalCount = _ctx.LongValue("ListConversations.TotalCount");
-			listConversationsResponse.PageNumber = _ctx.IntegerValue("ListConversations.PageNumber");
 			listConversationsResponse.PageSize = _ctx.IntegerValue("ListConversations.PageSize");
+			listConversationsResponse.RequestId = _ctx.StringValue("ListConversations.RequestId");
+			listConversationsResponse.PageNumber = _ctx.IntegerValue("ListConversations.PageNumber");
 
 			List<ListConversationsResponse.ListConversations_Conversation> listConversationsResponse_conversations = new List<ListConversationsResponse.ListConversations_Conversation>();
 			for (int i = 0; i < _ctx.Length("ListConversations.Conversations.Length"); i++) {
 				ListConversationsResponse.ListConversations_Conversation conversation = new ListConversationsResponse.ListConversations_Conversation();
-				conversation.CallingNumber = _ctx.StringValue("ListConversations.Conversations["+ i +"].CallingNumber");
-				conversation.BeginTime = _ctx.LongValue("ListConversations.Conversations["+ i +"].BeginTime");
 				conversation.EndTime = _ctx.LongValue("ListConversations.Conversations["+ i +"].EndTime");
-				conversation.TransferredToAgent = _ctx.BooleanValue("ListConversations.Conversations["+ i +"].TransferredToAgent");
-				conversation.SkillGroupId = _ctx.StringValue("ListConversations.Conversations["+ i +"].SkillGroupId");
-				conversation.UserUtteranceCount = _ctx.IntegerValue("ListConversations.Conversations["+ i +"].UserUtteranceCount");
-				conversation.EffectiveAnswerCount = _ctx.IntegerValue("ListConversations.Conversations["+ i +"].EffectiveAnswerCount");
+				conversation.HasToAgent = _ctx.BooleanValue("ListConversations.Conversations["+ i +"].HasToAgent");
+				conversation.StartTime = _ctx.LongValue("ListConversations.Conversations["+ i +"].StartTime");
+				conversation.SkillGroup = _ctx.StringValue("ListConversations.Conversations["+ i +"].SkillGroup");
 				conversation.ConversationId = _ctx.StringValue("ListConversations.Conversations["+ i +"].ConversationId");
+				conversation.CallingNumber = _ctx.StringValue("ListConversations.Conversations["+ i +"].CallingNumber");
+				conversation.EndReason = _ctx.IntegerValue("ListConversations.Conversations["+ i +"].EndReason");
+				conversation.Rounds = _ctx.IntegerValue("ListConversations.Conversations["+ i +"].Rounds");
 
 				listConversationsResponse_conversations.Add(conversation);
 			}

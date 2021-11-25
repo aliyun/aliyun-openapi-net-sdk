@@ -50,6 +50,8 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 
 		private string additionalContext;
 
+		private long? instanceOwnerId;
+
 		private string utterance;
 
 		public string ConversationId
@@ -114,6 +116,19 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			{
 				additionalContext = value;
 				DictionaryUtil.Add(QueryParameters, "AdditionalContext", value);
+			}
+		}
+
+		public long? InstanceOwnerId
+		{
+			get
+			{
+				return instanceOwnerId;
+			}
+			set	
+			{
+				instanceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceOwnerId", value.ToString());
 			}
 		}
 

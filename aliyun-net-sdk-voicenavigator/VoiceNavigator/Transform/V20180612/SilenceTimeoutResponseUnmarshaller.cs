@@ -32,9 +32,9 @@ namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 
 			silenceTimeoutResponse.HttpResponse = _ctx.HttpResponse;
 			silenceTimeoutResponse.Action = _ctx.StringValue("SilenceTimeout.Action");
-			silenceTimeoutResponse.ActionParams = _ctx.StringValue("SilenceTimeout.ActionParams");
 			silenceTimeoutResponse.Interruptible = _ctx.BooleanValue("SilenceTimeout.Interruptible");
 			silenceTimeoutResponse.RequestId = _ctx.StringValue("SilenceTimeout.RequestId");
+			silenceTimeoutResponse.ActionParams = _ctx.StringValue("SilenceTimeout.ActionParams");
 			silenceTimeoutResponse.TextResponse = _ctx.StringValue("SilenceTimeout.TextResponse");
         
 			return silenceTimeoutResponse;

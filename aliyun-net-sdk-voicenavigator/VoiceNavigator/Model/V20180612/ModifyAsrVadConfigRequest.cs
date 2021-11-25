@@ -27,69 +27,21 @@ using Aliyun.Acs.VoiceNavigator.Transform.V20180612;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 {
-    public class BeginDialogueRequest : RpcAcsRequest<BeginDialogueResponse>
+    public class ModifyAsrVadConfigRequest : RpcAcsRequest<ModifyAsrVadConfigResponse>
     {
-        public BeginDialogueRequest()
-            : base("VoiceNavigator", "2018-06-12", "BeginDialogue", "voicebot", "openAPI")
+        public ModifyAsrVadConfigRequest()
+            : base("VoiceNavigator", "2018-06-12", "ModifyAsrVadConfig", "voicebot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.VoiceNavigator.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.VoiceNavigator.Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
-
-		private string conversationId;
-
-		private string initialContext;
-
-		private string callingNumber;
 
 		private string instanceId;
 
-		private string calledNumber;
-
-		private long? instanceOwnerId;
-
-		public string ConversationId
-		{
-			get
-			{
-				return conversationId;
-			}
-			set	
-			{
-				conversationId = value;
-				DictionaryUtil.Add(QueryParameters, "ConversationId", value);
-			}
-		}
-
-		public string InitialContext
-		{
-			get
-			{
-				return initialContext;
-			}
-			set	
-			{
-				initialContext = value;
-				DictionaryUtil.Add(QueryParameters, "InitialContext", value);
-			}
-		}
-
-		public string CallingNumber
-		{
-			get
-			{
-				return callingNumber;
-			}
-			set	
-			{
-				callingNumber = value;
-				DictionaryUtil.Add(QueryParameters, "CallingNumber", value);
-			}
-		}
+		private string speechNoiseThreshold;
 
 		public string InstanceId
 		{
@@ -104,29 +56,16 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public string CalledNumber
+		public string SpeechNoiseThreshold
 		{
 			get
 			{
-				return calledNumber;
+				return speechNoiseThreshold;
 			}
 			set	
 			{
-				calledNumber = value;
-				DictionaryUtil.Add(QueryParameters, "CalledNumber", value);
-			}
-		}
-
-		public long? InstanceOwnerId
-		{
-			get
-			{
-				return instanceOwnerId;
-			}
-			set	
-			{
-				instanceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceOwnerId", value.ToString());
+				speechNoiseThreshold = value;
+				DictionaryUtil.Add(QueryParameters, "SpeechNoiseThreshold", value);
 			}
 		}
 
@@ -135,9 +74,9 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			return false;
 		}
 
-        public override BeginDialogueResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyAsrVadConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BeginDialogueResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyAsrVadConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -22,40 +22,42 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 {
-	public class BeginDialogueResponse : AcsResponse
+	public class CreateDownloadUrlResponse : AcsResponse
 	{
 
-		private string action;
+		private int? httpStatusCode;
 
-		private bool? interruptible;
+		private string fileHttpUrl;
 
 		private string requestId;
 
-		private string actionParams;
+		private bool? success;
 
-		private string textResponse;
+		private string code;
 
-		public string Action
+		private string message;
+
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return action;
+				return httpStatusCode;
 			}
 			set	
 			{
-				action = value;
+				httpStatusCode = value;
 			}
 		}
 
-		public bool? Interruptible
+		public string FileHttpUrl
 		{
 			get
 			{
-				return interruptible;
+				return fileHttpUrl;
 			}
 			set	
 			{
-				interruptible = value;
+				fileHttpUrl = value;
 			}
 		}
 
@@ -71,27 +73,39 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public string ActionParams
+		public bool? Success
 		{
 			get
 			{
-				return actionParams;
+				return success;
 			}
 			set	
 			{
-				actionParams = value;
+				success = value;
 			}
 		}
 
-		public string TextResponse
+		public string Code
 		{
 			get
 			{
-				return textResponse;
+				return code;
 			}
 			set	
 			{
-				textResponse = value;
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 	}

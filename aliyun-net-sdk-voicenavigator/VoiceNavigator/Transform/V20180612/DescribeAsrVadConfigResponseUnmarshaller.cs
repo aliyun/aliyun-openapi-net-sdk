@@ -24,20 +24,17 @@ using Aliyun.Acs.VoiceNavigator.Model.V20180612;
 
 namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 {
-    public class CollectedNumberResponseUnmarshaller
+    public class DescribeAsrVadConfigResponseUnmarshaller
     {
-        public static CollectedNumberResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DescribeAsrVadConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CollectedNumberResponse collectedNumberResponse = new CollectedNumberResponse();
+			DescribeAsrVadConfigResponse describeAsrVadConfigResponse = new DescribeAsrVadConfigResponse();
 
-			collectedNumberResponse.HttpResponse = _ctx.HttpResponse;
-			collectedNumberResponse.Action = _ctx.StringValue("CollectedNumber.Action");
-			collectedNumberResponse.Interruptible = _ctx.BooleanValue("CollectedNumber.Interruptible");
-			collectedNumberResponse.RequestId = _ctx.StringValue("CollectedNumber.RequestId");
-			collectedNumberResponse.ActionParams = _ctx.StringValue("CollectedNumber.ActionParams");
-			collectedNumberResponse.TextResponse = _ctx.StringValue("CollectedNumber.TextResponse");
+			describeAsrVadConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeAsrVadConfigResponse.SpeechNoiseThreshold = _ctx.StringValue("DescribeAsrVadConfig.SpeechNoiseThreshold");
+			describeAsrVadConfigResponse.RequestId = _ctx.StringValue("DescribeAsrVadConfig.RequestId");
         
-			return collectedNumberResponse;
+			return describeAsrVadConfigResponse;
         }
     }
 }

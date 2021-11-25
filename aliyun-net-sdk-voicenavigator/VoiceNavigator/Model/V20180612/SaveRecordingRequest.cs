@@ -54,6 +54,8 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 
 		private string filePath;
 
+		private long? instanceOwnerId;
+
 		public string ConversationId
 		{
 			get
@@ -142,6 +144,19 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			{
 				filePath = value;
 				DictionaryUtil.Add(QueryParameters, "FilePath", value);
+			}
+		}
+
+		public long? InstanceOwnerId
+		{
+			get
+			{
+				return instanceOwnerId;
+			}
+			set	
+			{
+				instanceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceOwnerId", value.ToString());
 			}
 		}
 

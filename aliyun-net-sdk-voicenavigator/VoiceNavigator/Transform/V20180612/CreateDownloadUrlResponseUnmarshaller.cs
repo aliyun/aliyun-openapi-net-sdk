@@ -24,20 +24,21 @@ using Aliyun.Acs.VoiceNavigator.Model.V20180612;
 
 namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 {
-    public class CollectedNumberResponseUnmarshaller
+    public class CreateDownloadUrlResponseUnmarshaller
     {
-        public static CollectedNumberResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateDownloadUrlResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CollectedNumberResponse collectedNumberResponse = new CollectedNumberResponse();
+			CreateDownloadUrlResponse createDownloadUrlResponse = new CreateDownloadUrlResponse();
 
-			collectedNumberResponse.HttpResponse = _ctx.HttpResponse;
-			collectedNumberResponse.Action = _ctx.StringValue("CollectedNumber.Action");
-			collectedNumberResponse.Interruptible = _ctx.BooleanValue("CollectedNumber.Interruptible");
-			collectedNumberResponse.RequestId = _ctx.StringValue("CollectedNumber.RequestId");
-			collectedNumberResponse.ActionParams = _ctx.StringValue("CollectedNumber.ActionParams");
-			collectedNumberResponse.TextResponse = _ctx.StringValue("CollectedNumber.TextResponse");
+			createDownloadUrlResponse.HttpResponse = _ctx.HttpResponse;
+			createDownloadUrlResponse.HttpStatusCode = _ctx.IntegerValue("CreateDownloadUrl.HttpStatusCode");
+			createDownloadUrlResponse.FileHttpUrl = _ctx.StringValue("CreateDownloadUrl.FileHttpUrl");
+			createDownloadUrlResponse.RequestId = _ctx.StringValue("CreateDownloadUrl.RequestId");
+			createDownloadUrlResponse.Success = _ctx.BooleanValue("CreateDownloadUrl.Success");
+			createDownloadUrlResponse.Code = _ctx.StringValue("CreateDownloadUrl.Code");
+			createDownloadUrlResponse.Message = _ctx.StringValue("CreateDownloadUrl.Message");
         
-			return collectedNumberResponse;
+			return createDownloadUrlResponse;
         }
     }
 }

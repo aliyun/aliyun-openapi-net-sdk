@@ -39,11 +39,47 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
             }
         }
 
+		private long? beginTimeLeftRange;
+
+		private string query;
+
 		private int? pageNumber;
+
+		private long? result;
+
+		private string callingNumber;
 
 		private string instanceId;
 
+		private long? beginTimeRightRange;
+
 		private int? pageSize;
+
+		public long? BeginTimeLeftRange
+		{
+			get
+			{
+				return beginTimeLeftRange;
+			}
+			set	
+			{
+				beginTimeLeftRange = value;
+				DictionaryUtil.Add(QueryParameters, "BeginTimeLeftRange", value.ToString());
+			}
+		}
+
+		public string Query
+		{
+			get
+			{
+				return query;
+			}
+			set	
+			{
+				query = value;
+				DictionaryUtil.Add(QueryParameters, "Query", value);
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -58,6 +94,32 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
+		public long? Result
+		{
+			get
+			{
+				return result;
+			}
+			set	
+			{
+				result = value;
+				DictionaryUtil.Add(QueryParameters, "Result", value.ToString());
+			}
+		}
+
+		public string CallingNumber
+		{
+			get
+			{
+				return callingNumber;
+			}
+			set	
+			{
+				callingNumber = value;
+				DictionaryUtil.Add(QueryParameters, "CallingNumber", value);
+			}
+		}
+
 		public string InstanceId
 		{
 			get
@@ -68,6 +130,19 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public long? BeginTimeRightRange
+		{
+			get
+			{
+				return beginTimeRightRange;
+			}
+			set	
+			{
+				beginTimeRightRange = value;
+				DictionaryUtil.Add(QueryParameters, "BeginTimeRightRange", value.ToString());
 			}
 		}
 

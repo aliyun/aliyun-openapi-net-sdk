@@ -41,6 +41,8 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 
 		private string instanceId;
 
+		private long? instanceOwnerId;
+
 		public string InstanceId
 		{
 			get
@@ -51,6 +53,19 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public long? InstanceOwnerId
+		{
+			get
+			{
+				return instanceOwnerId;
+			}
+			set	
+			{
+				instanceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceOwnerId", value.ToString());
 			}
 		}
 

@@ -24,20 +24,16 @@ using Aliyun.Acs.VoiceNavigator.Model.V20180612;
 
 namespace Aliyun.Acs.VoiceNavigator.Transform.V20180612
 {
-    public class CollectedNumberResponseUnmarshaller
+    public class ModifyAsrVadConfigResponseUnmarshaller
     {
-        public static CollectedNumberResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ModifyAsrVadConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CollectedNumberResponse collectedNumberResponse = new CollectedNumberResponse();
+			ModifyAsrVadConfigResponse modifyAsrVadConfigResponse = new ModifyAsrVadConfigResponse();
 
-			collectedNumberResponse.HttpResponse = _ctx.HttpResponse;
-			collectedNumberResponse.Action = _ctx.StringValue("CollectedNumber.Action");
-			collectedNumberResponse.Interruptible = _ctx.BooleanValue("CollectedNumber.Interruptible");
-			collectedNumberResponse.RequestId = _ctx.StringValue("CollectedNumber.RequestId");
-			collectedNumberResponse.ActionParams = _ctx.StringValue("CollectedNumber.ActionParams");
-			collectedNumberResponse.TextResponse = _ctx.StringValue("CollectedNumber.TextResponse");
+			modifyAsrVadConfigResponse.HttpResponse = _ctx.HttpResponse;
+			modifyAsrVadConfigResponse.RequestId = _ctx.StringValue("ModifyAsrVadConfig.RequestId");
         
-			return collectedNumberResponse;
+			return modifyAsrVadConfigResponse;
         }
     }
 }
