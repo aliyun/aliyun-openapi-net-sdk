@@ -22,18 +22,20 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-	public class RecordFailureResponse : AcsResponse
+	public class CreateDownloadUrlResponse : AcsResponse
 	{
 
 		private int? httpStatusCode;
 
-		private string code;
-
-		private string message;
+		private string fileHttpUrl;
 
 		private string requestId;
 
 		private bool? success;
+
+		private string code;
+
+		private string message;
 
 		public int? HttpStatusCode
 		{
@@ -47,27 +49,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string Code
+		public string FileHttpUrl
 		{
 			get
 			{
-				return code;
+				return fileHttpUrl;
 			}
 			set	
 			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
+				fileHttpUrl = value;
 			}
 		}
 
@@ -92,6 +82,30 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 	}

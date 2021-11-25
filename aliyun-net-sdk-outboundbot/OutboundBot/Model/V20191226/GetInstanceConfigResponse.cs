@@ -22,8 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-	public class RecordFailureResponse : AcsResponse
+	public class GetInstanceConfigResponse : AcsResponse
 	{
+
+		private string requestId;
 
 		private int? httpStatusCode;
 
@@ -31,9 +33,21 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string message;
 
-		private string requestId;
-
 		private bool? success;
+
+		private GetInstanceConfig_Data data;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public int? HttpStatusCode
 		{
@@ -71,18 +85,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
 		public bool? Success
 		{
 			get
@@ -92,6 +94,82 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public GetInstanceConfig_Data Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class GetInstanceConfig_Data
+		{
+
+			private GetInstanceConfig_InstanceConfig instanceConfig;
+
+			public GetInstanceConfig_InstanceConfig InstanceConfig
+			{
+				get
+				{
+					return instanceConfig;
+				}
+				set	
+				{
+					instanceConfig = value;
+				}
+			}
+
+			public class GetInstanceConfig_InstanceConfig
+			{
+
+				private bool? miniPlaybackSystemSwitch;
+
+				private bool? newBargeInSystemSwitch;
+
+				private bool? searchTaskFunctionSwitch;
+
+				public bool? MiniPlaybackSystemSwitch
+				{
+					get
+					{
+						return miniPlaybackSystemSwitch;
+					}
+					set	
+					{
+						miniPlaybackSystemSwitch = value;
+					}
+				}
+
+				public bool? NewBargeInSystemSwitch
+				{
+					get
+					{
+						return newBargeInSystemSwitch;
+					}
+					set	
+					{
+						newBargeInSystemSwitch = value;
+					}
+				}
+
+				public bool? SearchTaskFunctionSwitch
+				{
+					get
+					{
+						return searchTaskFunctionSwitch;
+					}
+					set	
+					{
+						searchTaskFunctionSwitch = value;
+					}
+				}
 			}
 		}
 	}

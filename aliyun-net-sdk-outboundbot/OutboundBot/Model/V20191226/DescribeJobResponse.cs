@@ -25,9 +25,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class DescribeJobResponse : AcsResponse
 	{
 
-		private string code;
-
 		private int? httpStatusCode;
+
+		private string code;
 
 		private string message;
 
@@ -36,18 +36,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private bool? success;
 
 		private DescribeJob_Job job;
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -58,6 +46,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -112,35 +112,35 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class DescribeJob_Job
 		{
 
-			private string failureReason;
+			private string status;
 
-			private string jobGroupId;
-
-			private string jobId;
+			private long? actualTime;
 
 			private int? priority;
 
-			private string referenceId;
+			private string dsReport;
 
-			private string scenarioId;
+			private long? nextExecutionTime;
 
-			private string status;
-
-			private string strategyId;
+			private string failureReason;
 
 			private int? systemPriority;
 
 			private string instanceId;
 
-			private string dsReport;
+			private string calledNumber;
+
+			private string referenceId;
+
+			private string jobGroupId;
+
+			private string scenarioId;
+
+			private string strategyId;
 
 			private int? endReason;
 
-			private long? actualTime;
-
-			private string calledNumber;
-
-			private long? nextExecutionTime;
+			private string jobId;
 
 			private List<DescribeJob_Contact> contacts;
 
@@ -152,39 +152,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private List<string> callingNumbers;
 
-			public string FailureReason
+			public string Status
 			{
 				get
 				{
-					return failureReason;
+					return status;
 				}
 				set	
 				{
-					failureReason = value;
+					status = value;
 				}
 			}
 
-			public string JobGroupId
+			public long? ActualTime
 			{
 				get
 				{
-					return jobGroupId;
+					return actualTime;
 				}
 				set	
 				{
-					jobGroupId = value;
-				}
-			}
-
-			public string JobId
-			{
-				get
-				{
-					return jobId;
-				}
-				set	
-				{
-					jobId = value;
+					actualTime = value;
 				}
 			}
 
@@ -200,51 +188,39 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string ReferenceId
+			public string DsReport
 			{
 				get
 				{
-					return referenceId;
+					return dsReport;
 				}
 				set	
 				{
-					referenceId = value;
+					dsReport = value;
 				}
 			}
 
-			public string ScenarioId
+			public long? NextExecutionTime
 			{
 				get
 				{
-					return scenarioId;
+					return nextExecutionTime;
 				}
 				set	
 				{
-					scenarioId = value;
+					nextExecutionTime = value;
 				}
 			}
 
-			public string Status
+			public string FailureReason
 			{
 				get
 				{
-					return status;
+					return failureReason;
 				}
 				set	
 				{
-					status = value;
-				}
-			}
-
-			public string StrategyId
-			{
-				get
-				{
-					return strategyId;
-				}
-				set	
-				{
-					strategyId = value;
+					failureReason = value;
 				}
 			}
 
@@ -272,15 +248,63 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public string DsReport
+			public string CalledNumber
 			{
 				get
 				{
-					return dsReport;
+					return calledNumber;
 				}
 				set	
 				{
-					dsReport = value;
+					calledNumber = value;
+				}
+			}
+
+			public string ReferenceId
+			{
+				get
+				{
+					return referenceId;
+				}
+				set	
+				{
+					referenceId = value;
+				}
+			}
+
+			public string JobGroupId
+			{
+				get
+				{
+					return jobGroupId;
+				}
+				set	
+				{
+					jobGroupId = value;
+				}
+			}
+
+			public string ScenarioId
+			{
+				get
+				{
+					return scenarioId;
+				}
+				set	
+				{
+					scenarioId = value;
+				}
+			}
+
+			public string StrategyId
+			{
+				get
+				{
+					return strategyId;
+				}
+				set	
+				{
+					strategyId = value;
 				}
 			}
 
@@ -296,39 +320,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				}
 			}
 
-			public long? ActualTime
+			public string JobId
 			{
 				get
 				{
-					return actualTime;
+					return jobId;
 				}
 				set	
 				{
-					actualTime = value;
-				}
-			}
-
-			public string CalledNumber
-			{
-				get
-				{
-					return calledNumber;
-				}
-				set	
-				{
-					calledNumber = value;
-				}
-			}
-
-			public long? NextExecutionTime
-			{
-				get
-				{
-					return nextExecutionTime;
-				}
-				set	
-				{
-					nextExecutionTime = value;
+					jobId = value;
 				}
 			}
 
@@ -395,21 +395,45 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			public class DescribeJob_Contact
 			{
 
-				private string contactId;
+				private string phoneNumber;
 
-				private string contactName;
+				private string state;
+
+				private string contactId;
 
 				private string honorific;
 
 				private string jobId;
 
-				private string phoneNumber;
-
-				private string referenceId;
+				private string contactName;
 
 				private string role;
 
-				private string state;
+				private string referenceId;
+
+				public string PhoneNumber
+				{
+					get
+					{
+						return phoneNumber;
+					}
+					set	
+					{
+						phoneNumber = value;
+					}
+				}
+
+				public string State
+				{
+					get
+					{
+						return state;
+					}
+					set	
+					{
+						state = value;
+					}
+				}
 
 				public string ContactId
 				{
@@ -420,18 +444,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						contactId = value;
-					}
-				}
-
-				public string ContactName
-				{
-					get
-					{
-						return contactName;
-					}
-					set	
-					{
-						contactName = value;
 					}
 				}
 
@@ -459,27 +471,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string PhoneNumber
+				public string ContactName
 				{
 					get
 					{
-						return phoneNumber;
+						return contactName;
 					}
 					set	
 					{
-						phoneNumber = value;
-					}
-				}
-
-				public string ReferenceId
-				{
-					get
-					{
-						return referenceId;
-					}
-					set	
-					{
-						referenceId = value;
+						contactName = value;
 					}
 				}
 
@@ -495,15 +495,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string State
+				public string ReferenceId
 				{
 					get
 					{
-						return state;
+						return referenceId;
 					}
 					set	
 					{
-						state = value;
+						referenceId = value;
 					}
 				}
 			}
@@ -543,11 +543,23 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			public class DescribeJob_SummaryItem
 			{
 
+				private string summaryName;
+
 				private string category;
 
 				private string content;
 
-				private string summaryName;
+				public string SummaryName
+				{
+					get
+					{
+						return summaryName;
+					}
+					set	
+					{
+						summaryName = value;
+					}
+				}
 
 				public string Category
 				{
@@ -572,148 +584,54 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						content = value;
 					}
 				}
-
-				public string SummaryName
-				{
-					get
-					{
-						return summaryName;
-					}
-					set	
-					{
-						summaryName = value;
-					}
-				}
 			}
 
 			public class DescribeJob_Task
 			{
 
-				private long? actualTime;
-
-				private string brief;
-
-				private string callId;
-
-				private string calledNumber;
-
-				private string callingNumber;
-
-				private string chatbotId;
-
-				private int? duration;
-
-				private string jobId;
+				private string status;
 
 				private long? planedTime;
 
-				private string scenarioId;
+				private string chatbotId;
 
-				private string status;
+				private long? actualTime;
 
-				private string taskId;
+				private string calledNumber;
 
 				private long? endTime;
 
+				private string scenarioId;
+
 				private string endReason;
+
+				private string jobId;
+
+				private string callId;
+
+				private string callingNumber;
+
+				private string brief;
+
+				private int? duration;
+
+				private string taskId;
+
+				private string hangUpDirection;
 
 				private List<DescribeJob_ConversationDetail> conversation;
 
 				private DescribeJob_Contact3 contact3;
 
-				public long? ActualTime
+				public string Status
 				{
 					get
 					{
-						return actualTime;
+						return status;
 					}
 					set	
 					{
-						actualTime = value;
-					}
-				}
-
-				public string Brief
-				{
-					get
-					{
-						return brief;
-					}
-					set	
-					{
-						brief = value;
-					}
-				}
-
-				public string CallId
-				{
-					get
-					{
-						return callId;
-					}
-					set	
-					{
-						callId = value;
-					}
-				}
-
-				public string CalledNumber
-				{
-					get
-					{
-						return calledNumber;
-					}
-					set	
-					{
-						calledNumber = value;
-					}
-				}
-
-				public string CallingNumber
-				{
-					get
-					{
-						return callingNumber;
-					}
-					set	
-					{
-						callingNumber = value;
-					}
-				}
-
-				public string ChatbotId
-				{
-					get
-					{
-						return chatbotId;
-					}
-					set	
-					{
-						chatbotId = value;
-					}
-				}
-
-				public int? Duration
-				{
-					get
-					{
-						return duration;
-					}
-					set	
-					{
-						duration = value;
-					}
-				}
-
-				public string JobId
-				{
-					get
-					{
-						return jobId;
-					}
-					set	
-					{
-						jobId = value;
+						status = value;
 					}
 				}
 
@@ -729,39 +647,39 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string ScenarioId
+				public string ChatbotId
 				{
 					get
 					{
-						return scenarioId;
+						return chatbotId;
 					}
 					set	
 					{
-						scenarioId = value;
+						chatbotId = value;
 					}
 				}
 
-				public string Status
+				public long? ActualTime
 				{
 					get
 					{
-						return status;
+						return actualTime;
 					}
 					set	
 					{
-						status = value;
+						actualTime = value;
 					}
 				}
 
-				public string TaskId
+				public string CalledNumber
 				{
 					get
 					{
-						return taskId;
+						return calledNumber;
 					}
 					set	
 					{
-						taskId = value;
+						calledNumber = value;
 					}
 				}
 
@@ -777,6 +695,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
+				public string ScenarioId
+				{
+					get
+					{
+						return scenarioId;
+					}
+					set	
+					{
+						scenarioId = value;
+					}
+				}
+
 				public string EndReason
 				{
 					get
@@ -786,6 +716,90 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						endReason = value;
+					}
+				}
+
+				public string JobId
+				{
+					get
+					{
+						return jobId;
+					}
+					set	
+					{
+						jobId = value;
+					}
+				}
+
+				public string CallId
+				{
+					get
+					{
+						return callId;
+					}
+					set	
+					{
+						callId = value;
+					}
+				}
+
+				public string CallingNumber
+				{
+					get
+					{
+						return callingNumber;
+					}
+					set	
+					{
+						callingNumber = value;
+					}
+				}
+
+				public string Brief
+				{
+					get
+					{
+						return brief;
+					}
+					set	
+					{
+						brief = value;
+					}
+				}
+
+				public int? Duration
+				{
+					get
+					{
+						return duration;
+					}
+					set	
+					{
+						duration = value;
+					}
+				}
+
+				public string TaskId
+				{
+					get
+					{
+						return taskId;
+					}
+					set	
+					{
+						taskId = value;
+					}
+				}
+
+				public string HangUpDirection
+				{
+					get
+					{
+						return hangUpDirection;
+					}
+					set	
+					{
+						hangUpDirection = value;
 					}
 				}
 
@@ -816,51 +830,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				public class DescribeJob_ConversationDetail
 				{
 
-					private string script;
-
-					private string speaker;
-
-					private long? timestamp;
+					private string actionParams;
 
 					private string action;
 
-					private string actionParams;
+					private long? timestamp;
+
+					private string speaker;
+
+					private string script;
 
 					private List<DescribeJob_SummaryItem2> summary1;
 
-					public string Script
+					public string ActionParams
 					{
 						get
 						{
-							return script;
+							return actionParams;
 						}
 						set	
 						{
-							script = value;
-						}
-					}
-
-					public string Speaker
-					{
-						get
-						{
-							return speaker;
-						}
-						set	
-						{
-							speaker = value;
-						}
-					}
-
-					public long? Timestamp
-					{
-						get
-						{
-							return timestamp;
-						}
-						set	
-						{
-							timestamp = value;
+							actionParams = value;
 						}
 					}
 
@@ -876,15 +866,39 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						}
 					}
 
-					public string ActionParams
+					public long? Timestamp
 					{
 						get
 						{
-							return actionParams;
+							return timestamp;
 						}
 						set	
 						{
-							actionParams = value;
+							timestamp = value;
+						}
+					}
+
+					public string Speaker
+					{
+						get
+						{
+							return speaker;
+						}
+						set	
+						{
+							speaker = value;
+						}
+					}
+
+					public string Script
+					{
+						get
+						{
+							return script;
+						}
+						set	
+						{
+							script = value;
 						}
 					}
 
@@ -903,11 +917,23 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					public class DescribeJob_SummaryItem2
 					{
 
+						private string summaryName;
+
 						private string category;
 
 						private string content;
 
-						private string summaryName;
+						public string SummaryName
+						{
+							get
+							{
+								return summaryName;
+							}
+							set	
+							{
+								summaryName = value;
+							}
+						}
 
 						public string Category
 						{
@@ -932,39 +958,51 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 								content = value;
 							}
 						}
-
-						public string SummaryName
-						{
-							get
-							{
-								return summaryName;
-							}
-							set	
-							{
-								summaryName = value;
-							}
-						}
 					}
 				}
 
 				public class DescribeJob_Contact3
 				{
 
-					private string contactId;
+					private string phoneNumber;
 
-					private string contactName;
+					private string state;
+
+					private string contactId;
 
 					private string honorific;
 
 					private string jobId;
 
-					private string phoneNumber;
-
-					private string referenceId;
+					private string contactName;
 
 					private string role;
 
-					private string state;
+					private string referenceId;
+
+					public string PhoneNumber
+					{
+						get
+						{
+							return phoneNumber;
+						}
+						set	
+						{
+							phoneNumber = value;
+						}
+					}
+
+					public string State
+					{
+						get
+						{
+							return state;
+						}
+						set	
+						{
+							state = value;
+						}
+					}
 
 					public string ContactId
 					{
@@ -975,18 +1013,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						set	
 						{
 							contactId = value;
-						}
-					}
-
-					public string ContactName
-					{
-						get
-						{
-							return contactName;
-						}
-						set	
-						{
-							contactName = value;
 						}
 					}
 
@@ -1014,27 +1040,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						}
 					}
 
-					public string PhoneNumber
+					public string ContactName
 					{
 						get
 						{
-							return phoneNumber;
+							return contactName;
 						}
 						set	
 						{
-							phoneNumber = value;
-						}
-					}
-
-					public string ReferenceId
-					{
-						get
-						{
-							return referenceId;
-						}
-						set	
-						{
-							referenceId = value;
+							contactName = value;
 						}
 					}
 
@@ -1050,15 +1064,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						}
 					}
 
-					public string State
+					public string ReferenceId
 					{
 						get
 						{
-							return state;
+							return referenceId;
 						}
 						set	
 						{
-							state = value;
+							referenceId = value;
 						}
 					}
 				}

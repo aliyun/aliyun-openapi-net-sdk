@@ -25,41 +25,29 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class QueryJobsWithResultResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
+		private int? httpStatusCode;
 
 		private string code;
 
 		private string message;
 
-		private int? httpStatusCode;
+		private string requestId;
+
+		private bool? success;
 
 		private List<string> variableNames;
 
 		private QueryJobsWithResult_Jobs jobs;
 
-		public string RequestId
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return requestId;
+				return httpStatusCode;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
+				httpStatusCode = value;
 			}
 		}
 
@@ -87,15 +75,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public int? HttpStatusCode
+		public string RequestId
 		{
 			get
 			{
-				return httpStatusCode;
+				return requestId;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -126,27 +126,15 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class QueryJobsWithResult_Jobs
 		{
 
-			private int? pageCount;
-
 			private int? pageNumber;
 
 			private int? pageSize;
 
+			private int? pageCount;
+
 			private int? rowCount;
 
 			private List<QueryJobsWithResult_Job> list;
-
-			public int? PageCount
-			{
-				get
-				{
-					return pageCount;
-				}
-				set	
-				{
-					pageCount = value;
-				}
-			}
 
 			public int? PageNumber
 			{
@@ -169,6 +157,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					pageSize = value;
+				}
+			}
+
+			public int? PageCount
+			{
+				get
+				{
+					return pageCount;
+				}
+				set	
+				{
+					pageCount = value;
 				}
 			}
 
@@ -199,25 +199,25 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			public class QueryJobsWithResult_Job
 			{
 
-				private string jobFailureReason;
+				private string status;
 
 				private string statusName;
 
-				private string id;
+				private string jobFailureReason;
 
-				private string status;
+				private string id;
 
 				private QueryJobsWithResult_LatestTask latestTask;
 
-				public string JobFailureReason
+				public string Status
 				{
 					get
 					{
-						return jobFailureReason;
+						return status;
 					}
 					set	
 					{
-						jobFailureReason = value;
+						status = value;
 					}
 				}
 
@@ -233,6 +233,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
+				public string JobFailureReason
+				{
+					get
+					{
+						return jobFailureReason;
+					}
+					set	
+					{
+						jobFailureReason = value;
+					}
+				}
+
 				public string Id
 				{
 					get
@@ -242,18 +254,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						id = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
 					}
 				}
 
@@ -272,29 +272,43 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				public class QueryJobsWithResult_LatestTask
 				{
 
+					private string status;
+
 					private string taskEndReason;
-
-					private int? callDuration;
-
-					private string callDurationDisplay;
-
-					private string statusName;
 
 					private bool? hasAnswered;
 
+					private int? callDuration;
+
 					private bool? hasReachedEndOfFlow;
+
+					private string statusName;
 
 					private long? callTime;
 
-					private bool? hasHangUpByRejection;
+					private string callDurationDisplay;
 
-					private string status;
+					private bool? hasHangUpByRejection;
 
 					private List<QueryJobsWithResult_Extra> extras;
 
 					private List<QueryJobsWithResult_TagHit> tagHits;
 
+					private List<QueryJobsWithResult_ExceptionCode> dialExceptionCodes;
+
 					private QueryJobsWithResult_Contact contact;
+
+					public string Status
+					{
+						get
+						{
+							return status;
+						}
+						set	
+						{
+							status = value;
+						}
+					}
 
 					public string TaskEndReason
 					{
@@ -305,42 +319,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						set	
 						{
 							taskEndReason = value;
-						}
-					}
-
-					public int? CallDuration
-					{
-						get
-						{
-							return callDuration;
-						}
-						set	
-						{
-							callDuration = value;
-						}
-					}
-
-					public string CallDurationDisplay
-					{
-						get
-						{
-							return callDurationDisplay;
-						}
-						set	
-						{
-							callDurationDisplay = value;
-						}
-					}
-
-					public string StatusName
-					{
-						get
-						{
-							return statusName;
-						}
-						set	
-						{
-							statusName = value;
 						}
 					}
 
@@ -356,6 +334,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						}
 					}
 
+					public int? CallDuration
+					{
+						get
+						{
+							return callDuration;
+						}
+						set	
+						{
+							callDuration = value;
+						}
+					}
+
 					public bool? HasReachedEndOfFlow
 					{
 						get
@@ -365,6 +355,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						set	
 						{
 							hasReachedEndOfFlow = value;
+						}
+					}
+
+					public string StatusName
+					{
+						get
+						{
+							return statusName;
+						}
+						set	
+						{
+							statusName = value;
 						}
 					}
 
@@ -380,6 +382,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						}
 					}
 
+					public string CallDurationDisplay
+					{
+						get
+						{
+							return callDurationDisplay;
+						}
+						set	
+						{
+							callDurationDisplay = value;
+						}
+					}
+
 					public bool? HasHangUpByRejection
 					{
 						get
@@ -389,18 +403,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						set	
 						{
 							hasHangUpByRejection = value;
-						}
-					}
-
-					public string Status
-					{
-						get
-						{
-							return status;
-						}
-						set	
-						{
-							status = value;
 						}
 					}
 
@@ -425,6 +427,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						set	
 						{
 							tagHits = value;
+						}
+					}
+
+					public List<QueryJobsWithResult_ExceptionCode> DialExceptionCodes
+					{
+						get
+						{
+							return dialExceptionCodes;
+						}
+						set	
+						{
+							dialExceptionCodes = value;
 						}
 					}
 
@@ -475,21 +489,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					public class QueryJobsWithResult_TagHit
 					{
 
-						private string tagGroup;
-
 						private string tagName;
 
-						public string TagGroup
-						{
-							get
-							{
-								return tagGroup;
-							}
-							set	
-							{
-								tagGroup = value;
-							}
-						}
+						private string tagGroup;
 
 						public string TagName
 						{
@@ -502,40 +504,84 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 								tagName = value;
 							}
 						}
+
+						public string TagGroup
+						{
+							get
+							{
+								return tagGroup;
+							}
+							set	
+							{
+								tagGroup = value;
+							}
+						}
+					}
+
+					public class QueryJobsWithResult_ExceptionCode
+					{
+
+						private string code;
+
+						private string hint;
+
+						public string Code
+						{
+							get
+							{
+								return code;
+							}
+							set	
+							{
+								code = value;
+							}
+						}
+
+						public string Hint
+						{
+							get
+							{
+								return hint;
+							}
+							set	
+							{
+								hint = value;
+							}
+						}
 					}
 
 					public class QueryJobsWithResult_Contact
 					{
 
-						private string preferredPhoneNumber;
+						private int? round;
 
 						private string jobUuid;
 
+						private string preferredPhoneNumber;
+
 						private string phoneNumber;
-
-						private string role;
-
-						private int? round;
-
-						private string name;
-
-						private string id;
 
 						private string state;
 
-						private string referenceId;
-
 						private string honorific;
 
-						public string PreferredPhoneNumber
+						private string name;
+
+						private string role;
+
+						private string id;
+
+						private string referenceId;
+
+						public int? Round
 						{
 							get
 							{
-								return preferredPhoneNumber;
+								return round;
 							}
 							set	
 							{
-								preferredPhoneNumber = value;
+								round = value;
 							}
 						}
 
@@ -551,6 +597,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 							}
 						}
 
+						public string PreferredPhoneNumber
+						{
+							get
+							{
+								return preferredPhoneNumber;
+							}
+							set	
+							{
+								preferredPhoneNumber = value;
+							}
+						}
+
 						public string PhoneNumber
 						{
 							get
@@ -560,54 +618,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 							set	
 							{
 								phoneNumber = value;
-							}
-						}
-
-						public string Role
-						{
-							get
-							{
-								return role;
-							}
-							set	
-							{
-								role = value;
-							}
-						}
-
-						public int? Round
-						{
-							get
-							{
-								return round;
-							}
-							set	
-							{
-								round = value;
-							}
-						}
-
-						public string Name
-						{
-							get
-							{
-								return name;
-							}
-							set	
-							{
-								name = value;
-							}
-						}
-
-						public string Id
-						{
-							get
-							{
-								return id;
-							}
-							set	
-							{
-								id = value;
 							}
 						}
 
@@ -623,18 +633,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 							}
 						}
 
-						public string ReferenceId
-						{
-							get
-							{
-								return referenceId;
-							}
-							set	
-							{
-								referenceId = value;
-							}
-						}
-
 						public string Honorific
 						{
 							get
@@ -644,6 +642,54 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 							set	
 							{
 								honorific = value;
+							}
+						}
+
+						public string Name
+						{
+							get
+							{
+								return name;
+							}
+							set	
+							{
+								name = value;
+							}
+						}
+
+						public string Role
+						{
+							get
+							{
+								return role;
+							}
+							set	
+							{
+								role = value;
+							}
+						}
+
+						public string Id
+						{
+							get
+							{
+								return id;
+							}
+							set	
+							{
+								id = value;
+							}
+						}
+
+						public string ReferenceId
+						{
+							get
+							{
+								return referenceId;
+							}
+							set	
+							{
+								referenceId = value;
 							}
 						}
 					}

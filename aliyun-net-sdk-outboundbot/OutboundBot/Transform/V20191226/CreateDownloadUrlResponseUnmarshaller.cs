@@ -24,20 +24,21 @@ using Aliyun.Acs.OutboundBot.Model.V20191226;
 
 namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
-    public class RecordFailureResponseUnmarshaller
+    public class CreateDownloadUrlResponseUnmarshaller
     {
-        public static RecordFailureResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateDownloadUrlResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			RecordFailureResponse recordFailureResponse = new RecordFailureResponse();
+			CreateDownloadUrlResponse createDownloadUrlResponse = new CreateDownloadUrlResponse();
 
-			recordFailureResponse.HttpResponse = _ctx.HttpResponse;
-			recordFailureResponse.HttpStatusCode = _ctx.IntegerValue("RecordFailure.HttpStatusCode");
-			recordFailureResponse.Code = _ctx.StringValue("RecordFailure.Code");
-			recordFailureResponse.Message = _ctx.StringValue("RecordFailure.Message");
-			recordFailureResponse.RequestId = _ctx.StringValue("RecordFailure.RequestId");
-			recordFailureResponse.Success = _ctx.BooleanValue("RecordFailure.Success");
+			createDownloadUrlResponse.HttpResponse = _ctx.HttpResponse;
+			createDownloadUrlResponse.HttpStatusCode = _ctx.IntegerValue("CreateDownloadUrl.HttpStatusCode");
+			createDownloadUrlResponse.FileHttpUrl = _ctx.StringValue("CreateDownloadUrl.FileHttpUrl");
+			createDownloadUrlResponse.RequestId = _ctx.StringValue("CreateDownloadUrl.RequestId");
+			createDownloadUrlResponse.Success = _ctx.BooleanValue("CreateDownloadUrl.Success");
+			createDownloadUrlResponse.Code = _ctx.StringValue("CreateDownloadUrl.Code");
+			createDownloadUrlResponse.Message = _ctx.StringValue("CreateDownloadUrl.Message");
         
-			return recordFailureResponse;
+			return createDownloadUrlResponse;
         }
     }
 }

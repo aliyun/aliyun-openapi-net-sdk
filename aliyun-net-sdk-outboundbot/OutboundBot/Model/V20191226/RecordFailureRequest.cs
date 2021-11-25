@@ -54,6 +54,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string taskId;
 
+		private string exceptionCodes;
+
 		public string CallId
 		{
 			get
@@ -142,6 +144,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				taskId = value;
 				DictionaryUtil.Add(QueryParameters, "TaskId", value);
+			}
+		}
+
+		public string ExceptionCodes
+		{
+			get
+			{
+				return exceptionCodes;
+			}
+			set	
+			{
+				exceptionCodes = value;
+				DictionaryUtil.Add(QueryParameters, "ExceptionCodes", value);
 			}
 		}
 
