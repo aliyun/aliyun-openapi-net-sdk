@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 	public class GetBusinessCategoryListResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private List<GetBusinessCategoryList_BusinessCategoryBasicInfo> data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public List<GetBusinessCategoryList_BusinessCategoryBasicInfo> Data
 		{
 			get
@@ -98,21 +98,21 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 		public class GetBusinessCategoryList_BusinessCategoryBasicInfo
 		{
 
-			private int? bid;
+			private string businessName;
 
 			private int? serviceType;
 
-			private string businessName;
+			private int? bid;
 
-			public int? Bid
+			public string BusinessName
 			{
 				get
 				{
-					return bid;
+					return businessName;
 				}
 				set	
 				{
-					bid = value;
+					businessName = value;
 				}
 			}
 
@@ -128,15 +128,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public string BusinessName
+			public int? Bid
 			{
 				get
 				{
-					return businessName;
+					return bid;
 				}
 				set	
 				{
-					businessName = value;
+					bid = value;
 				}
 			}
 		}

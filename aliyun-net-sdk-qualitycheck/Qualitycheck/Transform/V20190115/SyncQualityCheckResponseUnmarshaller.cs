@@ -31,46 +31,46 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			SyncQualityCheckResponse syncQualityCheckResponse = new SyncQualityCheckResponse();
 
 			syncQualityCheckResponse.HttpResponse = _ctx.HttpResponse;
-			syncQualityCheckResponse.RequestId = _ctx.StringValue("SyncQualityCheck.RequestId");
-			syncQualityCheckResponse.Success = _ctx.BooleanValue("SyncQualityCheck.Success");
 			syncQualityCheckResponse.Code = _ctx.StringValue("SyncQualityCheck.Code");
 			syncQualityCheckResponse.Message = _ctx.StringValue("SyncQualityCheck.Message");
+			syncQualityCheckResponse.RequestId = _ctx.StringValue("SyncQualityCheck.RequestId");
+			syncQualityCheckResponse.Success = _ctx.BooleanValue("SyncQualityCheck.Success");
 
 			SyncQualityCheckResponse.SyncQualityCheck_Data data = new SyncQualityCheckResponse.SyncQualityCheck_Data();
 			data.Score = _ctx.IntegerValue("SyncQualityCheck.Data.Score");
+			data.TaskId = _ctx.StringValue("SyncQualityCheck.Data.TaskId");
 			data.Tid = _ctx.StringValue("SyncQualityCheck.Data.Tid");
 			data.BeginTime = _ctx.LongValue("SyncQualityCheck.Data.BeginTime");
-			data.TaskId = _ctx.StringValue("SyncQualityCheck.Data.TaskId");
 
 			List<SyncQualityCheckResponse.SyncQualityCheck_Data.SyncQualityCheck_RuleHitInfo> data_rules = new List<SyncQualityCheckResponse.SyncQualityCheck_Data.SyncQualityCheck_RuleHitInfo>();
 			for (int i = 0; i < _ctx.Length("SyncQualityCheck.Data.Rules.Length"); i++) {
 				SyncQualityCheckResponse.SyncQualityCheck_Data.SyncQualityCheck_RuleHitInfo ruleHitInfo = new SyncQualityCheckResponse.SyncQualityCheck_Data.SyncQualityCheck_RuleHitInfo();
-				ruleHitInfo.Rid = _ctx.StringValue("SyncQualityCheck.Data.Rules["+ i +"].Rid");
 				ruleHitInfo.RuleName = _ctx.StringValue("SyncQualityCheck.Data.Rules["+ i +"].RuleName");
+				ruleHitInfo.Rid = _ctx.StringValue("SyncQualityCheck.Data.Rules["+ i +"].Rid");
 
 				List<SyncQualityCheckResponse.SyncQualityCheck_Data.SyncQualityCheck_RuleHitInfo.SyncQualityCheck_ConditionHitInfo> ruleHitInfo_hit = new List<SyncQualityCheckResponse.SyncQualityCheck_Data.SyncQualityCheck_RuleHitInfo.SyncQualityCheck_ConditionHitInfo>();
 				for (int j = 0; j < _ctx.Length("SyncQualityCheck.Data.Rules["+ i +"].Hit.Length"); j++) {
 					SyncQualityCheckResponse.SyncQualityCheck_Data.SyncQualityCheck_RuleHitInfo.SyncQualityCheck_ConditionHitInfo conditionHitInfo = new SyncQualityCheckResponse.SyncQualityCheck_Data.SyncQualityCheck_RuleHitInfo.SyncQualityCheck_ConditionHitInfo();
 
 					SyncQualityCheckResponse.SyncQualityCheck_Data.SyncQualityCheck_RuleHitInfo.SyncQualityCheck_ConditionHitInfo.SyncQualityCheck_Phrase phrase = new SyncQualityCheckResponse.SyncQualityCheck_Data.SyncQualityCheck_RuleHitInfo.SyncQualityCheck_ConditionHitInfo.SyncQualityCheck_Phrase();
-					phrase.Role = _ctx.StringValue("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].Phrase.Role");
-					phrase.Identity = _ctx.StringValue("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].Phrase.Identity");
 					phrase.Words = _ctx.StringValue("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].Phrase.Words");
+					phrase.Identity = _ctx.StringValue("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].Phrase.Identity");
 					phrase.Begin = _ctx.LongValue("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].Phrase.Begin");
-					phrase.End = _ctx.LongValue("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].Phrase.End");
 					phrase.EmotionValue = _ctx.IntegerValue("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].Phrase.EmotionValue");
+					phrase.End = _ctx.LongValue("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].Phrase.End");
 					phrase.SpeechRate = _ctx.IntegerValue("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].Phrase.SpeechRate");
+					phrase.Role = _ctx.StringValue("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].Phrase.Role");
 					phrase.SilenceDuration = _ctx.IntegerValue("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].Phrase.SilenceDuration");
 					conditionHitInfo.Phrase = phrase;
 
 					List<SyncQualityCheckResponse.SyncQualityCheck_Data.SyncQualityCheck_RuleHitInfo.SyncQualityCheck_ConditionHitInfo.SyncQualityCheck_HitKeyWord> conditionHitInfo_hitKeyWords = new List<SyncQualityCheckResponse.SyncQualityCheck_Data.SyncQualityCheck_RuleHitInfo.SyncQualityCheck_ConditionHitInfo.SyncQualityCheck_HitKeyWord>();
 					for (int k = 0; k < _ctx.Length("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].HitKeyWords.Length"); k++) {
 						SyncQualityCheckResponse.SyncQualityCheck_Data.SyncQualityCheck_RuleHitInfo.SyncQualityCheck_ConditionHitInfo.SyncQualityCheck_HitKeyWord hitKeyWord = new SyncQualityCheckResponse.SyncQualityCheck_Data.SyncQualityCheck_RuleHitInfo.SyncQualityCheck_ConditionHitInfo.SyncQualityCheck_HitKeyWord();
-						hitKeyWord.Val = _ctx.StringValue("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].HitKeyWords["+ k +"].Val");
-						hitKeyWord.Pid = _ctx.IntegerValue("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].HitKeyWords["+ k +"].Pid");
-						hitKeyWord.From = _ctx.IntegerValue("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].HitKeyWords["+ k +"].From");
 						hitKeyWord.To = _ctx.IntegerValue("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].HitKeyWords["+ k +"].To");
+						hitKeyWord.From = _ctx.IntegerValue("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].HitKeyWords["+ k +"].From");
+						hitKeyWord.Val = _ctx.StringValue("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].HitKeyWords["+ k +"].Val");
 						hitKeyWord.Cid = _ctx.IntegerValue("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].HitKeyWords["+ k +"].Cid");
+						hitKeyWord.Pid = _ctx.IntegerValue("SyncQualityCheck.Data.Rules["+ i +"].Hit["+ j +"].HitKeyWords["+ k +"].Pid");
 
 						conditionHitInfo_hitKeyWords.Add(hitKeyWord);
 					}

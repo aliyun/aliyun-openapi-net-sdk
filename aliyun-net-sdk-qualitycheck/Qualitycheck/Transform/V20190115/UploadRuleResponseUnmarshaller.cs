@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			UploadRuleResponse uploadRuleResponse = new UploadRuleResponse();
 
 			uploadRuleResponse.HttpResponse = _ctx.HttpResponse;
-			uploadRuleResponse.RequestId = _ctx.StringValue("UploadRule.RequestId");
-			uploadRuleResponse.Success = _ctx.BooleanValue("UploadRule.Success");
 			uploadRuleResponse.Code = _ctx.StringValue("UploadRule.Code");
 			uploadRuleResponse.Message = _ctx.StringValue("UploadRule.Message");
+			uploadRuleResponse.RequestId = _ctx.StringValue("UploadRule.RequestId");
+			uploadRuleResponse.Success = _ctx.BooleanValue("UploadRule.Success");
 
 			List<string> uploadRuleResponse_data = new List<string>();
 			for (int i = 0; i < _ctx.Length("UploadRule.Data.Length"); i++) {

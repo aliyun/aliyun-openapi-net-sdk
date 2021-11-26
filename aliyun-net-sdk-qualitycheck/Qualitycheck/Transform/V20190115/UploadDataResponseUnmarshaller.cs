@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			UploadDataResponse uploadDataResponse = new UploadDataResponse();
 
 			uploadDataResponse.HttpResponse = _ctx.HttpResponse;
-			uploadDataResponse.RequestId = _ctx.StringValue("UploadData.RequestId");
-			uploadDataResponse.Success = _ctx.BooleanValue("UploadData.Success");
 			uploadDataResponse.Code = _ctx.StringValue("UploadData.Code");
 			uploadDataResponse.Message = _ctx.StringValue("UploadData.Message");
 			uploadDataResponse.Data = _ctx.StringValue("UploadData.Data");
+			uploadDataResponse.RequestId = _ctx.StringValue("UploadData.RequestId");
+			uploadDataResponse.Success = _ctx.BooleanValue("UploadData.Success");
         
 			return uploadDataResponse;
         }

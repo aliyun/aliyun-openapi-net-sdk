@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			DeleteWarningConfigResponse deleteWarningConfigResponse = new DeleteWarningConfigResponse();
 
 			deleteWarningConfigResponse.HttpResponse = _ctx.HttpResponse;
-			deleteWarningConfigResponse.RequestId = _ctx.StringValue("DeleteWarningConfig.RequestId");
-			deleteWarningConfigResponse.Success = _ctx.BooleanValue("DeleteWarningConfig.Success");
 			deleteWarningConfigResponse.Code = _ctx.StringValue("DeleteWarningConfig.Code");
 			deleteWarningConfigResponse.Message = _ctx.StringValue("DeleteWarningConfig.Message");
+			deleteWarningConfigResponse.RequestId = _ctx.StringValue("DeleteWarningConfig.RequestId");
+			deleteWarningConfigResponse.Success = _ctx.BooleanValue("DeleteWarningConfig.Success");
         
 			return deleteWarningConfigResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 	public class GetCustomizationConfigListResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private List<GetCustomizationConfigList_ModelCustomizationDataSetPo> data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public List<GetCustomizationConfigList_ModelCustomizationDataSetPo> Data
 		{
 			get
@@ -98,65 +98,17 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 		public class GetCustomizationConfigList_ModelCustomizationDataSetPo
 		{
 
-			private long? modelId;
-
-			private string modeCustomizationId;
-
-			private string modelName;
-
-			private int? modelStatus;
-
 			private int? taskType;
 
 			private string createTime;
 
-			public long? ModelId
-			{
-				get
-				{
-					return modelId;
-				}
-				set	
-				{
-					modelId = value;
-				}
-			}
+			private int? modelStatus;
 
-			public string ModeCustomizationId
-			{
-				get
-				{
-					return modeCustomizationId;
-				}
-				set	
-				{
-					modeCustomizationId = value;
-				}
-			}
+			private string modelName;
 
-			public string ModelName
-			{
-				get
-				{
-					return modelName;
-				}
-				set	
-				{
-					modelName = value;
-				}
-			}
+			private long? modelId;
 
-			public int? ModelStatus
-			{
-				get
-				{
-					return modelStatus;
-				}
-				set	
-				{
-					modelStatus = value;
-				}
-			}
+			private string modeCustomizationId;
 
 			public int? TaskType
 			{
@@ -179,6 +131,54 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			public int? ModelStatus
+			{
+				get
+				{
+					return modelStatus;
+				}
+				set	
+				{
+					modelStatus = value;
+				}
+			}
+
+			public string ModelName
+			{
+				get
+				{
+					return modelName;
+				}
+				set	
+				{
+					modelName = value;
+				}
+			}
+
+			public long? ModelId
+			{
+				get
+				{
+					return modelId;
+				}
+				set	
+				{
+					modelId = value;
+				}
+			}
+
+			public string ModeCustomizationId
+			{
+				get
+				{
+					return modeCustomizationId;
+				}
+				set	
+				{
+					modeCustomizationId = value;
 				}
 			}
 		}

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			UploadAudioDataResponse uploadAudioDataResponse = new UploadAudioDataResponse();
 
 			uploadAudioDataResponse.HttpResponse = _ctx.HttpResponse;
-			uploadAudioDataResponse.RequestId = _ctx.StringValue("UploadAudioData.RequestId");
-			uploadAudioDataResponse.Success = _ctx.BooleanValue("UploadAudioData.Success");
 			uploadAudioDataResponse.Code = _ctx.StringValue("UploadAudioData.Code");
 			uploadAudioDataResponse.Message = _ctx.StringValue("UploadAudioData.Message");
 			uploadAudioDataResponse.Data = _ctx.StringValue("UploadAudioData.Data");
+			uploadAudioDataResponse.RequestId = _ctx.StringValue("UploadAudioData.RequestId");
+			uploadAudioDataResponse.Success = _ctx.BooleanValue("UploadAudioData.Success");
         
 			return uploadAudioDataResponse;
         }

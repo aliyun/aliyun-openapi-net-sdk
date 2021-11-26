@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 	public class UploadAudioDataResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
 		private string data;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private bool? success;
 
 		public string Code
 		{
@@ -92,6 +68,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			set	
 			{
 				data = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

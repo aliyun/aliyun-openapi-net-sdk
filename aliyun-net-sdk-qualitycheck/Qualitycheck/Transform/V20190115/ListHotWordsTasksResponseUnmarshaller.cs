@@ -42,33 +42,33 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			List<ListHotWordsTasksResponse.ListHotWordsTasks_HotWordsTaskPo> listHotWordsTasksResponse_data = new List<ListHotWordsTasksResponse.ListHotWordsTasks_HotWordsTaskPo>();
 			for (int i = 0; i < _ctx.Length("ListHotWordsTasks.Data.Length"); i++) {
 				ListHotWordsTasksResponse.ListHotWordsTasks_HotWordsTaskPo hotWordsTaskPo = new ListHotWordsTasksResponse.ListHotWordsTasks_HotWordsTaskPo();
-				hotWordsTaskPo.TaskConfigId = _ctx.LongValue("ListHotWordsTasks.Data["+ i +"].TaskConfigId");
-				hotWordsTaskPo.Name = _ctx.StringValue("ListHotWordsTasks.Data["+ i +"].Name");
-				hotWordsTaskPo.Status = _ctx.IntegerValue("ListHotWordsTasks.Data["+ i +"].Status");
-				hotWordsTaskPo.Type = _ctx.IntegerValue("ListHotWordsTasks.Data["+ i +"].Type");
-				hotWordsTaskPo.StartTime = _ctx.StringValue("ListHotWordsTasks.Data["+ i +"].StartTime");
-				hotWordsTaskPo.TimeInterval = _ctx.IntegerValue("ListHotWordsTasks.Data["+ i +"].TimeInterval");
-				hotWordsTaskPo.TimeUnit = _ctx.IntegerValue("ListHotWordsTasks.Data["+ i +"].TimeUnit");
 				hotWordsTaskPo.EndTime = _ctx.StringValue("ListHotWordsTasks.Data["+ i +"].EndTime");
+				hotWordsTaskPo.Type = _ctx.IntegerValue("ListHotWordsTasks.Data["+ i +"].Type");
+				hotWordsTaskPo.Status = _ctx.IntegerValue("ListHotWordsTasks.Data["+ i +"].Status");
+				hotWordsTaskPo.TimeInterval = _ctx.IntegerValue("ListHotWordsTasks.Data["+ i +"].TimeInterval");
+				hotWordsTaskPo.StartTime = _ctx.StringValue("ListHotWordsTasks.Data["+ i +"].StartTime");
+				hotWordsTaskPo.TaskConfigId = _ctx.LongValue("ListHotWordsTasks.Data["+ i +"].TaskConfigId");
+				hotWordsTaskPo.Message = _ctx.StringValue("ListHotWordsTasks.Data["+ i +"].Message");
 				hotWordsTaskPo.InstanceStatus = _ctx.IntegerValue("ListHotWordsTasks.Data["+ i +"].InstanceStatus");
 				hotWordsTaskPo.LastExecutionTime = _ctx.StringValue("ListHotWordsTasks.Data["+ i +"].LastExecutionTime");
-				hotWordsTaskPo.Message = _ctx.StringValue("ListHotWordsTasks.Data["+ i +"].Message");
+				hotWordsTaskPo.Name = _ctx.StringValue("ListHotWordsTasks.Data["+ i +"].Name");
+				hotWordsTaskPo.TimeUnit = _ctx.IntegerValue("ListHotWordsTasks.Data["+ i +"].TimeUnit");
 
 				ListHotWordsTasksResponse.ListHotWordsTasks_HotWordsTaskPo.ListHotWordsTasks_DialogueParam dialogueParam = new ListHotWordsTasksResponse.ListHotWordsTasks_HotWordsTaskPo.ListHotWordsTasks_DialogueParam();
-				dialogueParam.DialogueId = _ctx.LongValue("ListHotWordsTasks.Data["+ i +"].DialogueParam.DialogueId");
-				dialogueParam.Role = _ctx.IntegerValue("ListHotWordsTasks.Data["+ i +"].DialogueParam.Role");
-				dialogueParam.StartIndex = _ctx.IntegerValue("ListHotWordsTasks.Data["+ i +"].DialogueParam.StartIndex");
-				dialogueParam.EndIndex = _ctx.IntegerValue("ListHotWordsTasks.Data["+ i +"].DialogueParam.EndIndex");
-				dialogueParam.SourceType = _ctx.IntegerValue("ListHotWordsTasks.Data["+ i +"].DialogueParam.SourceType");
-				dialogueParam.DataSetIds = _ctx.StringValue("ListHotWordsTasks.Data["+ i +"].DialogueParam.DataSetIds");
-				dialogueParam.StartTime = _ctx.StringValue("ListHotWordsTasks.Data["+ i +"].DialogueParam.StartTime");
 				dialogueParam.EndTime = _ctx.StringValue("ListHotWordsTasks.Data["+ i +"].DialogueParam.EndTime");
+				dialogueParam.DialogueId = _ctx.LongValue("ListHotWordsTasks.Data["+ i +"].DialogueParam.DialogueId");
+				dialogueParam.EndIndex = _ctx.IntegerValue("ListHotWordsTasks.Data["+ i +"].DialogueParam.EndIndex");
+				dialogueParam.StartTime = _ctx.StringValue("ListHotWordsTasks.Data["+ i +"].DialogueParam.StartTime");
+				dialogueParam.SourceType = _ctx.IntegerValue("ListHotWordsTasks.Data["+ i +"].DialogueParam.SourceType");
+				dialogueParam.StartIndex = _ctx.IntegerValue("ListHotWordsTasks.Data["+ i +"].DialogueParam.StartIndex");
+				dialogueParam.Role = _ctx.IntegerValue("ListHotWordsTasks.Data["+ i +"].DialogueParam.Role");
+				dialogueParam.DataSetIds = _ctx.StringValue("ListHotWordsTasks.Data["+ i +"].DialogueParam.DataSetIds");
 				hotWordsTaskPo.DialogueParam = dialogueParam;
 
 				ListHotWordsTasksResponse.ListHotWordsTasks_HotWordsTaskPo.ListHotWordsTasks_WordsParam wordsParam = new ListHotWordsTasksResponse.ListHotWordsTasks_HotWordsTaskPo.ListHotWordsTasks_WordsParam();
-				wordsParam.ExtraConfigId = _ctx.LongValue("ListHotWordsTasks.Data["+ i +"].WordsParam.ExtraConfigId");
 				wordsParam.Excludes = _ctx.StringValue("ListHotWordsTasks.Data["+ i +"].WordsParam.Excludes");
 				wordsParam.Includes = _ctx.StringValue("ListHotWordsTasks.Data["+ i +"].WordsParam.Includes");
+				wordsParam.ExtraConfigId = _ctx.LongValue("ListHotWordsTasks.Data["+ i +"].WordsParam.ExtraConfigId");
 				hotWordsTaskPo.WordsParam = wordsParam;
 
 				listHotWordsTasksResponse_data.Add(hotWordsTaskPo);

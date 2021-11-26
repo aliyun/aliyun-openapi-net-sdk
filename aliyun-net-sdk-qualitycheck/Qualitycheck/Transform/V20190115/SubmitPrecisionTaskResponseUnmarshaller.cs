@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			SubmitPrecisionTaskResponse submitPrecisionTaskResponse = new SubmitPrecisionTaskResponse();
 
 			submitPrecisionTaskResponse.HttpResponse = _ctx.HttpResponse;
-			submitPrecisionTaskResponse.RequestId = _ctx.StringValue("SubmitPrecisionTask.RequestId");
-			submitPrecisionTaskResponse.Success = _ctx.BooleanValue("SubmitPrecisionTask.Success");
 			submitPrecisionTaskResponse.Code = _ctx.StringValue("SubmitPrecisionTask.Code");
 			submitPrecisionTaskResponse.Message = _ctx.StringValue("SubmitPrecisionTask.Message");
 			submitPrecisionTaskResponse.Data = _ctx.StringValue("SubmitPrecisionTask.Data");
+			submitPrecisionTaskResponse.RequestId = _ctx.StringValue("SubmitPrecisionTask.RequestId");
+			submitPrecisionTaskResponse.Success = _ctx.BooleanValue("SubmitPrecisionTask.Success");
         
 			return submitPrecisionTaskResponse;
         }

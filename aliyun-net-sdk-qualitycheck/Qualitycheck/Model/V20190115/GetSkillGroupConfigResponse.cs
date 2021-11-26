@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 	public class GetSkillGroupConfigResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private GetSkillGroupConfig_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public GetSkillGroupConfig_Data Data
 		{
 			get
@@ -98,139 +98,55 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 		public class GetSkillGroupConfig_Data
 		{
 
-			private long? id;
-
-			private string instanceId;
-
-			private long? modelId;
-
-			private string modelName;
-
-			private string name;
-
-			private string rid;
-
-			private string skillGroupId;
-
-			private string skillGroupName;
+			private int? type;
 
 			private int? status;
 
-			private int? type;
-
-			private long? vocabId;
-
-			private string vocabName;
-
-			private string createTime;
-
 			private string updateTime;
-
-			private int? qualityCheckType;
 
 			private int? allContentQualityCheck;
 
-			private string allRids;
+			private string createTime;
+
+			private string skillGroupId;
+
+			private string instanceId;
+
+			private long? vocabId;
 
 			private int? skillGroupFrom;
+
+			private string rid;
+
+			private string skillGroupName;
+
+			private string modelName;
+
+			private string allRids;
+
+			private string name;
+
+			private long? modelId;
+
+			private long? id;
+
+			private int? qualityCheckType;
+
+			private string vocabName;
 
 			private List<GetSkillGroupConfig_RuleNameInfo> ruleList;
 
 			private List<GetSkillGroupConfig_RuleNameInfo> allRuleList;
 
-			public long? Id
+			public int? Type
 			{
 				get
 				{
-					return id;
+					return type;
 				}
 				set	
 				{
-					id = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public long? ModelId
-			{
-				get
-				{
-					return modelId;
-				}
-				set	
-				{
-					modelId = value;
-				}
-			}
-
-			public string ModelName
-			{
-				get
-				{
-					return modelName;
-				}
-				set	
-				{
-					modelName = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Rid
-			{
-				get
-				{
-					return rid;
-				}
-				set	
-				{
-					rid = value;
-				}
-			}
-
-			public string SkillGroupId
-			{
-				get
-				{
-					return skillGroupId;
-				}
-				set	
-				{
-					skillGroupId = value;
-				}
-			}
-
-			public string SkillGroupName
-			{
-				get
-				{
-					return skillGroupName;
-				}
-				set	
-				{
-					skillGroupName = value;
+					type = value;
 				}
 			}
 
@@ -246,54 +162,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public int? Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-
-			public long? VocabId
-			{
-				get
-				{
-					return vocabId;
-				}
-				set	
-				{
-					vocabId = value;
-				}
-			}
-
-			public string VocabName
-			{
-				get
-				{
-					return vocabName;
-				}
-				set	
-				{
-					vocabName = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
 			public string UpdateTime
 			{
 				get
@@ -303,18 +171,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				set	
 				{
 					updateTime = value;
-				}
-			}
-
-			public int? QualityCheckType
-			{
-				get
-				{
-					return qualityCheckType;
-				}
-				set	
-				{
-					qualityCheckType = value;
 				}
 			}
 
@@ -330,15 +186,51 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public string AllRids
+			public string CreateTime
 			{
 				get
 				{
-					return allRids;
+					return createTime;
 				}
 				set	
 				{
-					allRids = value;
+					createTime = value;
+				}
+			}
+
+			public string SkillGroupId
+			{
+				get
+				{
+					return skillGroupId;
+				}
+				set	
+				{
+					skillGroupId = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public long? VocabId
+			{
+				get
+				{
+					return vocabId;
+				}
+				set	
+				{
+					vocabId = value;
 				}
 			}
 
@@ -351,6 +243,114 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				set	
 				{
 					skillGroupFrom = value;
+				}
+			}
+
+			public string Rid
+			{
+				get
+				{
+					return rid;
+				}
+				set	
+				{
+					rid = value;
+				}
+			}
+
+			public string SkillGroupName
+			{
+				get
+				{
+					return skillGroupName;
+				}
+				set	
+				{
+					skillGroupName = value;
+				}
+			}
+
+			public string ModelName
+			{
+				get
+				{
+					return modelName;
+				}
+				set	
+				{
+					modelName = value;
+				}
+			}
+
+			public string AllRids
+			{
+				get
+				{
+					return allRids;
+				}
+				set	
+				{
+					allRids = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public long? ModelId
+			{
+				get
+				{
+					return modelId;
+				}
+				set	
+				{
+					modelId = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public int? QualityCheckType
+			{
+				get
+				{
+					return qualityCheckType;
+				}
+				set	
+				{
+					qualityCheckType = value;
+				}
+			}
+
+			public string VocabName
+			{
+				get
+				{
+					return vocabName;
+				}
+				set	
+				{
+					vocabName = value;
 				}
 			}
 
@@ -381,21 +381,9 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			public class GetSkillGroupConfig_RuleNameInfo
 			{
 
-				private long? rid;
-
 				private string ruleName;
 
-				public long? Rid
-				{
-					get
-					{
-						return rid;
-					}
-					set	
-					{
-						rid = value;
-					}
-				}
+				private long? rid;
 
 				public string RuleName
 				{
@@ -406,6 +394,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					set	
 					{
 						ruleName = value;
+					}
+				}
+
+				public long? Rid
+				{
+					get
+					{
+						return rid;
+					}
+					set	
+					{
+						rid = value;
 					}
 				}
 			}

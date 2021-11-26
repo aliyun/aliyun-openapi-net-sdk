@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			DeleteScoreForApiResponse deleteScoreForApiResponse = new DeleteScoreForApiResponse();
 
 			deleteScoreForApiResponse.HttpResponse = _ctx.HttpResponse;
-			deleteScoreForApiResponse.RequestId = _ctx.StringValue("DeleteScoreForApi.RequestId");
-			deleteScoreForApiResponse.Success = _ctx.BooleanValue("DeleteScoreForApi.Success");
 			deleteScoreForApiResponse.Code = _ctx.StringValue("DeleteScoreForApi.Code");
 			deleteScoreForApiResponse.Message = _ctx.StringValue("DeleteScoreForApi.Message");
+			deleteScoreForApiResponse.RequestId = _ctx.StringValue("DeleteScoreForApi.RequestId");
+			deleteScoreForApiResponse.Success = _ctx.BooleanValue("DeleteScoreForApi.Success");
         
 			return deleteScoreForApiResponse;
         }

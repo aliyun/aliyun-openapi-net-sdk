@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			SubmitQualityCheckTaskResponse submitQualityCheckTaskResponse = new SubmitQualityCheckTaskResponse();
 
 			submitQualityCheckTaskResponse.HttpResponse = _ctx.HttpResponse;
-			submitQualityCheckTaskResponse.RequestId = _ctx.StringValue("SubmitQualityCheckTask.RequestId");
-			submitQualityCheckTaskResponse.Success = _ctx.BooleanValue("SubmitQualityCheckTask.Success");
 			submitQualityCheckTaskResponse.Code = _ctx.StringValue("SubmitQualityCheckTask.Code");
 			submitQualityCheckTaskResponse.Message = _ctx.StringValue("SubmitQualityCheckTask.Message");
 			submitQualityCheckTaskResponse.Data = _ctx.StringValue("SubmitQualityCheckTask.Data");
+			submitQualityCheckTaskResponse.RequestId = _ctx.StringValue("SubmitQualityCheckTask.RequestId");
+			submitQualityCheckTaskResponse.Success = _ctx.BooleanValue("SubmitQualityCheckTask.Success");
         
 			return submitQualityCheckTaskResponse;
         }

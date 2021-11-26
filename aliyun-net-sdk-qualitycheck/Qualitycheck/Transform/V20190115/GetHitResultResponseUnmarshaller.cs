@@ -35,15 +35,15 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			getHitResultResponse.Success = _ctx.BooleanValue("GetHitResult.Success");
 			getHitResultResponse.Code = _ctx.StringValue("GetHitResult.Code");
 			getHitResultResponse.Message = _ctx.StringValue("GetHitResult.Message");
-			getHitResultResponse.Count = _ctx.IntegerValue("GetHitResult.Count");
-			getHitResultResponse.PageSize = _ctx.IntegerValue("GetHitResult.PageSize");
 			getHitResultResponse.PageNumber = _ctx.IntegerValue("GetHitResult.PageNumber");
+			getHitResultResponse.PageSize = _ctx.IntegerValue("GetHitResult.PageSize");
+			getHitResultResponse.Count = _ctx.IntegerValue("GetHitResult.Count");
 
 			List<GetHitResultResponse.GetHitResult_ResultInfo> getHitResultResponse_data = new List<GetHitResultResponse.GetHitResult_ResultInfo>();
 			for (int i = 0; i < _ctx.Length("GetHitResult.Data.Length"); i++) {
 				GetHitResultResponse.GetHitResult_ResultInfo resultInfo = new GetHitResultResponse.GetHitResult_ResultInfo();
-				resultInfo.Rid = _ctx.LongValue("GetHitResult.Data["+ i +"].Rid");
 				resultInfo.RuleName = _ctx.StringValue("GetHitResult.Data["+ i +"].RuleName");
+				resultInfo.Rid = _ctx.LongValue("GetHitResult.Data["+ i +"].Rid");
 
 				getHitResultResponse_data.Add(resultInfo);
 			}

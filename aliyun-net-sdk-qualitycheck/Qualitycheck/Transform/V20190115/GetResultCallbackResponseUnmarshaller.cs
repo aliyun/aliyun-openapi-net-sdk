@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			GetResultCallbackResponse getResultCallbackResponse = new GetResultCallbackResponse();
 
 			getResultCallbackResponse.HttpResponse = _ctx.HttpResponse;
-			getResultCallbackResponse.RequestId = _ctx.StringValue("GetResultCallback.RequestId");
-			getResultCallbackResponse.Success = _ctx.BooleanValue("GetResultCallback.Success");
 			getResultCallbackResponse.Code = _ctx.StringValue("GetResultCallback.Code");
 			getResultCallbackResponse.Message = _ctx.StringValue("GetResultCallback.Message");
+			getResultCallbackResponse.RequestId = _ctx.StringValue("GetResultCallback.RequestId");
+			getResultCallbackResponse.Success = _ctx.BooleanValue("GetResultCallback.Success");
         
 			return getResultCallbackResponse;
         }

@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			DeleteSkillGroupConfigResponse deleteSkillGroupConfigResponse = new DeleteSkillGroupConfigResponse();
 
 			deleteSkillGroupConfigResponse.HttpResponse = _ctx.HttpResponse;
-			deleteSkillGroupConfigResponse.RequestId = _ctx.StringValue("DeleteSkillGroupConfig.RequestId");
-			deleteSkillGroupConfigResponse.Success = _ctx.BooleanValue("DeleteSkillGroupConfig.Success");
 			deleteSkillGroupConfigResponse.Code = _ctx.StringValue("DeleteSkillGroupConfig.Code");
 			deleteSkillGroupConfigResponse.Message = _ctx.StringValue("DeleteSkillGroupConfig.Message");
+			deleteSkillGroupConfigResponse.RequestId = _ctx.StringValue("DeleteSkillGroupConfig.RequestId");
+			deleteSkillGroupConfigResponse.Success = _ctx.BooleanValue("DeleteSkillGroupConfig.Success");
         
 			return deleteSkillGroupConfigResponse;
         }

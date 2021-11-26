@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			SubmitComplaintResponse submitComplaintResponse = new SubmitComplaintResponse();
 
 			submitComplaintResponse.HttpResponse = _ctx.HttpResponse;
-			submitComplaintResponse.RequestId = _ctx.StringValue("SubmitComplaint.RequestId");
-			submitComplaintResponse.Success = _ctx.BooleanValue("SubmitComplaint.Success");
 			submitComplaintResponse.Code = _ctx.StringValue("SubmitComplaint.Code");
 			submitComplaintResponse.Message = _ctx.StringValue("SubmitComplaint.Message");
 			submitComplaintResponse.Data = _ctx.StringValue("SubmitComplaint.Data");
+			submitComplaintResponse.RequestId = _ctx.StringValue("SubmitComplaint.RequestId");
+			submitComplaintResponse.Success = _ctx.BooleanValue("SubmitComplaint.Success");
         
 			return submitComplaintResponse;
         }

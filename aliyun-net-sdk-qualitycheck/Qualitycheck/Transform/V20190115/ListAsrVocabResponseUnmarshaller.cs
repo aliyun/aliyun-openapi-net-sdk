@@ -31,19 +31,19 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			ListAsrVocabResponse listAsrVocabResponse = new ListAsrVocabResponse();
 
 			listAsrVocabResponse.HttpResponse = _ctx.HttpResponse;
-			listAsrVocabResponse.RequestId = _ctx.StringValue("ListAsrVocab.RequestId");
-			listAsrVocabResponse.Success = _ctx.BooleanValue("ListAsrVocab.Success");
 			listAsrVocabResponse.Code = _ctx.StringValue("ListAsrVocab.Code");
 			listAsrVocabResponse.Message = _ctx.StringValue("ListAsrVocab.Message");
+			listAsrVocabResponse.RequestId = _ctx.StringValue("ListAsrVocab.RequestId");
+			listAsrVocabResponse.Success = _ctx.BooleanValue("ListAsrVocab.Success");
 
 			List<ListAsrVocabResponse.ListAsrVocab_AsrVocab> listAsrVocabResponse_data = new List<ListAsrVocabResponse.ListAsrVocab_AsrVocab>();
 			for (int i = 0; i < _ctx.Length("ListAsrVocab.Data.Length"); i++) {
 				ListAsrVocabResponse.ListAsrVocab_AsrVocab asrVocab = new ListAsrVocabResponse.ListAsrVocab_AsrVocab();
-				asrVocab.Id = _ctx.StringValue("ListAsrVocab.Data["+ i +"].Id");
+				asrVocab.VocabularyId = _ctx.StringValue("ListAsrVocab.Data["+ i +"].VocabularyId");
+				asrVocab.UpdateTime = _ctx.StringValue("ListAsrVocab.Data["+ i +"].UpdateTime");
 				asrVocab.Name = _ctx.StringValue("ListAsrVocab.Data["+ i +"].Name");
 				asrVocab.CreateTime = _ctx.StringValue("ListAsrVocab.Data["+ i +"].CreateTime");
-				asrVocab.UpdateTime = _ctx.StringValue("ListAsrVocab.Data["+ i +"].UpdateTime");
-				asrVocab.VocabularyId = _ctx.StringValue("ListAsrVocab.Data["+ i +"].VocabularyId");
+				asrVocab.Id = _ctx.StringValue("ListAsrVocab.Data["+ i +"].Id");
 
 				listAsrVocabResponse_data.Add(asrVocab);
 			}

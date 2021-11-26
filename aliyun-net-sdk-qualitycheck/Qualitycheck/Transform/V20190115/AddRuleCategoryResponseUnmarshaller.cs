@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			AddRuleCategoryResponse addRuleCategoryResponse = new AddRuleCategoryResponse();
 
 			addRuleCategoryResponse.HttpResponse = _ctx.HttpResponse;
-			addRuleCategoryResponse.RequestId = _ctx.StringValue("AddRuleCategory.RequestId");
-			addRuleCategoryResponse.Success = _ctx.BooleanValue("AddRuleCategory.Success");
 			addRuleCategoryResponse.Code = _ctx.StringValue("AddRuleCategory.Code");
 			addRuleCategoryResponse.Message = _ctx.StringValue("AddRuleCategory.Message");
+			addRuleCategoryResponse.RequestId = _ctx.StringValue("AddRuleCategory.RequestId");
+			addRuleCategoryResponse.Success = _ctx.BooleanValue("AddRuleCategory.Success");
 
 			AddRuleCategoryResponse.AddRuleCategory_Data data = new AddRuleCategoryResponse.AddRuleCategory_Data();
 			data.Select = _ctx.BooleanValue("AddRuleCategory.Data.Select");

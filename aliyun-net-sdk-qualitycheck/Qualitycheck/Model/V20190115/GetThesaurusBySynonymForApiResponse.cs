@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 	public class GetThesaurusBySynonymForApiResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private List<GetThesaurusBySynonymForApi_ThesaurusPo> data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public List<GetThesaurusBySynonymForApi_ThesaurusPo> Data
 		{
 			get
@@ -98,23 +98,11 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 		public class GetThesaurusBySynonymForApi_ThesaurusPo
 		{
 
-			private long? id;
-
 			private string business;
 
-			private List<string> synonymList;
+			private long? id;
 
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private List<string> synonymList;
 
 			public string Business
 			{
@@ -125,6 +113,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				set	
 				{
 					business = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 

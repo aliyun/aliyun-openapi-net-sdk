@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			SaveConfigDataSetResponse saveConfigDataSetResponse = new SaveConfigDataSetResponse();
 
 			saveConfigDataSetResponse.HttpResponse = _ctx.HttpResponse;
-			saveConfigDataSetResponse.RequestId = _ctx.StringValue("SaveConfigDataSet.RequestId");
-			saveConfigDataSetResponse.Success = _ctx.BooleanValue("SaveConfigDataSet.Success");
 			saveConfigDataSetResponse.Code = _ctx.StringValue("SaveConfigDataSet.Code");
 			saveConfigDataSetResponse.Message = _ctx.StringValue("SaveConfigDataSet.Message");
+			saveConfigDataSetResponse.RequestId = _ctx.StringValue("SaveConfigDataSet.RequestId");
+			saveConfigDataSetResponse.Success = _ctx.BooleanValue("SaveConfigDataSet.Success");
         
 			return saveConfigDataSetResponse;
         }

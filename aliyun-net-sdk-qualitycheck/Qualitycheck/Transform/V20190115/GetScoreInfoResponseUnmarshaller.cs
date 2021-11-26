@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			GetScoreInfoResponse getScoreInfoResponse = new GetScoreInfoResponse();
 
 			getScoreInfoResponse.HttpResponse = _ctx.HttpResponse;
-			getScoreInfoResponse.RequestId = _ctx.StringValue("GetScoreInfo.RequestId");
-			getScoreInfoResponse.Success = _ctx.BooleanValue("GetScoreInfo.Success");
 			getScoreInfoResponse.Code = _ctx.StringValue("GetScoreInfo.Code");
 			getScoreInfoResponse.Message = _ctx.StringValue("GetScoreInfo.Message");
+			getScoreInfoResponse.RequestId = _ctx.StringValue("GetScoreInfo.RequestId");
+			getScoreInfoResponse.Success = _ctx.BooleanValue("GetScoreInfo.Success");
 
 			List<GetScoreInfoResponse.GetScoreInfo_ScorePo> getScoreInfoResponse_data = new List<GetScoreInfoResponse.GetScoreInfo_ScorePo>();
 			for (int i = 0; i < _ctx.Length("GetScoreInfo.Data.Length"); i++) {
@@ -45,9 +45,9 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 				List<GetScoreInfoResponse.GetScoreInfo_ScorePo.GetScoreInfo_ScoreParam> scorePo_scoreInfos = new List<GetScoreInfoResponse.GetScoreInfo_ScorePo.GetScoreInfo_ScoreParam>();
 				for (int j = 0; j < _ctx.Length("GetScoreInfo.Data["+ i +"].ScoreInfos.Length"); j++) {
 					GetScoreInfoResponse.GetScoreInfo_ScorePo.GetScoreInfo_ScoreParam scoreParam = new GetScoreInfoResponse.GetScoreInfo_ScorePo.GetScoreInfo_ScoreParam();
+					scoreParam.ScoreSubName = _ctx.StringValue("GetScoreInfo.Data["+ i +"].ScoreInfos["+ j +"].ScoreSubName");
 					scoreParam.ScoreNum = _ctx.IntegerValue("GetScoreInfo.Data["+ i +"].ScoreInfos["+ j +"].ScoreNum");
 					scoreParam.ScoreSubId = _ctx.IntegerValue("GetScoreInfo.Data["+ i +"].ScoreInfos["+ j +"].ScoreSubId");
-					scoreParam.ScoreSubName = _ctx.StringValue("GetScoreInfo.Data["+ i +"].ScoreInfos["+ j +"].ScoreSubName");
 					scoreParam.ScoreType = _ctx.IntegerValue("GetScoreInfo.Data["+ i +"].ScoreInfos["+ j +"].ScoreType");
 
 					scorePo_scoreInfos.Add(scoreParam);

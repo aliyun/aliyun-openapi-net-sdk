@@ -35,19 +35,19 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			listRulesResponse.Success = _ctx.BooleanValue("ListRules.Success");
 			listRulesResponse.Code = _ctx.StringValue("ListRules.Code");
 			listRulesResponse.Message = _ctx.StringValue("ListRules.Message");
-			listRulesResponse.Count = _ctx.IntegerValue("ListRules.Count");
-			listRulesResponse.PageSize = _ctx.IntegerValue("ListRules.PageSize");
 			listRulesResponse.PageNumber = _ctx.IntegerValue("ListRules.PageNumber");
+			listRulesResponse.PageSize = _ctx.IntegerValue("ListRules.PageSize");
+			listRulesResponse.Count = _ctx.IntegerValue("ListRules.Count");
 
 			List<ListRulesResponse.ListRules_Rule> listRulesResponse_data = new List<ListRulesResponse.ListRules_Rule>();
 			for (int i = 0; i < _ctx.Length("ListRules.Data.Length"); i++) {
 				ListRulesResponse.ListRules_Rule rule = new ListRulesResponse.ListRules_Rule();
-				rule.Name = _ctx.StringValue("ListRules.Data["+ i +"].Name");
 				rule.Type = _ctx.IntegerValue("ListRules.Data["+ i +"].Type");
-				rule.Comments = _ctx.StringValue("ListRules.Data["+ i +"].Comments");
-				rule.CreateTime = _ctx.StringValue("ListRules.Data["+ i +"].CreateTime");
-				rule.TypeName = _ctx.StringValue("ListRules.Data["+ i +"].TypeName");
 				rule.RuleType = _ctx.IntegerValue("ListRules.Data["+ i +"].RuleType");
+				rule.CreateTime = _ctx.StringValue("ListRules.Data["+ i +"].CreateTime");
+				rule.Comments = _ctx.StringValue("ListRules.Data["+ i +"].Comments");
+				rule.TypeName = _ctx.StringValue("ListRules.Data["+ i +"].TypeName");
+				rule.Name = _ctx.StringValue("ListRules.Data["+ i +"].Name");
 				rule.Rid = _ctx.LongValue("ListRules.Data["+ i +"].Rid");
 
 				List<string> rule_businessCategoryNameList = new List<string>();

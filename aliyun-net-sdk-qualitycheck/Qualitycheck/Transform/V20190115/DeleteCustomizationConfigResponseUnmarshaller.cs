@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			DeleteCustomizationConfigResponse deleteCustomizationConfigResponse = new DeleteCustomizationConfigResponse();
 
 			deleteCustomizationConfigResponse.HttpResponse = _ctx.HttpResponse;
-			deleteCustomizationConfigResponse.RequestId = _ctx.StringValue("DeleteCustomizationConfig.RequestId");
-			deleteCustomizationConfigResponse.Success = _ctx.BooleanValue("DeleteCustomizationConfig.Success");
 			deleteCustomizationConfigResponse.Code = _ctx.StringValue("DeleteCustomizationConfig.Code");
 			deleteCustomizationConfigResponse.Message = _ctx.StringValue("DeleteCustomizationConfig.Message");
 			deleteCustomizationConfigResponse.Data = _ctx.StringValue("DeleteCustomizationConfig.Data");
+			deleteCustomizationConfigResponse.RequestId = _ctx.StringValue("DeleteCustomizationConfig.RequestId");
+			deleteCustomizationConfigResponse.Success = _ctx.BooleanValue("DeleteCustomizationConfig.Success");
         
 			return deleteCustomizationConfigResponse;
         }

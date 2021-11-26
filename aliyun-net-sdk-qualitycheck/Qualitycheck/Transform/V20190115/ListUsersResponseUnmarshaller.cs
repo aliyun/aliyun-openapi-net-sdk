@@ -42,15 +42,15 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			List<ListUsersResponse.ListUsers_User> listUsersResponse_data = new List<ListUsersResponse.ListUsers_User>();
 			for (int i = 0; i < _ctx.Length("ListUsers.Data.Length"); i++) {
 				ListUsersResponse.ListUsers_User user = new ListUsersResponse.ListUsers_User();
-				user.Id = _ctx.LongValue("ListUsers.Data["+ i +"].Id");
-				user.UserName = _ctx.StringValue("ListUsers.Data["+ i +"].UserName");
 				user.DisplayName = _ctx.StringValue("ListUsers.Data["+ i +"].DisplayName");
-				user.CreateTime = _ctx.StringValue("ListUsers.Data["+ i +"].CreateTime");
 				user.UpdateTime = _ctx.StringValue("ListUsers.Data["+ i +"].UpdateTime");
 				user.Description = _ctx.StringValue("ListUsers.Data["+ i +"].Description");
+				user.CreateTime = _ctx.StringValue("ListUsers.Data["+ i +"].CreateTime");
+				user.LoginUserType = _ctx.IntegerValue("ListUsers.Data["+ i +"].LoginUserType");
 				user.AliUid = _ctx.StringValue("ListUsers.Data["+ i +"].AliUid");
 				user.RoleName = _ctx.StringValue("ListUsers.Data["+ i +"].RoleName");
-				user.LoginUserType = _ctx.IntegerValue("ListUsers.Data["+ i +"].LoginUserType");
+				user.UserName = _ctx.StringValue("ListUsers.Data["+ i +"].UserName");
+				user.Id = _ctx.LongValue("ListUsers.Data["+ i +"].Id");
 
 				listUsersResponse_data.Add(user);
 			}

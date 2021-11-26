@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			InsertScoreForApiResponse insertScoreForApiResponse = new InsertScoreForApiResponse();
 
 			insertScoreForApiResponse.HttpResponse = _ctx.HttpResponse;
-			insertScoreForApiResponse.RequestId = _ctx.StringValue("InsertScoreForApi.RequestId");
-			insertScoreForApiResponse.Success = _ctx.BooleanValue("InsertScoreForApi.Success");
 			insertScoreForApiResponse.Code = _ctx.StringValue("InsertScoreForApi.Code");
 			insertScoreForApiResponse.Message = _ctx.StringValue("InsertScoreForApi.Message");
+			insertScoreForApiResponse.RequestId = _ctx.StringValue("InsertScoreForApi.RequestId");
+			insertScoreForApiResponse.Success = _ctx.BooleanValue("InsertScoreForApi.Success");
 
 			InsertScoreForApiResponse.InsertScoreForApi_Data data = new InsertScoreForApiResponse.InsertScoreForApi_Data();
 			data.ScoreId = _ctx.LongValue("InsertScoreForApi.Data.ScoreId");

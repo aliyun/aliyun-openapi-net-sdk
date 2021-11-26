@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 	public class ListRolesResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private List<ListRoles_Role> data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public List<ListRoles_Role> Data
 		{
 			get
@@ -98,41 +98,17 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 		public class ListRoles_Role
 		{
 
-			private long? id;
-
-			private string name;
-
 			private string displayName;
-
-			private int? level;
-
-			private string createTime;
 
 			private string updateTime;
 
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private string createTime;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string name;
+
+			private long? id;
+
+			private int? level;
 
 			public string DisplayName
 			{
@@ -146,15 +122,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public int? Level
+			public string UpdateTime
 			{
 				get
 				{
-					return level;
+					return updateTime;
 				}
 				set	
 				{
-					level = value;
+					updateTime = value;
 				}
 			}
 
@@ -170,15 +146,39 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public string UpdateTime
+			public string Name
 			{
 				get
 				{
-					return updateTime;
+					return name;
 				}
 				set	
 				{
-					updateTime = value;
+					name = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public int? Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
 				}
 			}
 		}

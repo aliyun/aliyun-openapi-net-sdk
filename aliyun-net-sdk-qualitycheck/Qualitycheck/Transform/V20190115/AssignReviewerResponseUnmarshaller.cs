@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			AssignReviewerResponse assignReviewerResponse = new AssignReviewerResponse();
 
 			assignReviewerResponse.HttpResponse = _ctx.HttpResponse;
-			assignReviewerResponse.RequestId = _ctx.StringValue("AssignReviewer.RequestId");
-			assignReviewerResponse.Success = _ctx.BooleanValue("AssignReviewer.Success");
 			assignReviewerResponse.Code = _ctx.StringValue("AssignReviewer.Code");
 			assignReviewerResponse.Message = _ctx.StringValue("AssignReviewer.Message");
+			assignReviewerResponse.RequestId = _ctx.StringValue("AssignReviewer.RequestId");
+			assignReviewerResponse.Success = _ctx.BooleanValue("AssignReviewer.Success");
         
 			return assignReviewerResponse;
         }

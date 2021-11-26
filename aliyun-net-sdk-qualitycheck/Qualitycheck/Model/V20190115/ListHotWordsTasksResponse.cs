@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -140,65 +140,41 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 		public class ListHotWordsTasks_HotWordsTaskPo
 		{
 
-			private long? taskConfigId;
-
-			private string name;
-
-			private int? status;
+			private string endTime;
 
 			private int? type;
 
-			private string startTime;
+			private int? status;
 
 			private int? timeInterval;
 
-			private int? timeUnit;
+			private string startTime;
 
-			private string endTime;
+			private long? taskConfigId;
+
+			private string message;
 
 			private int? instanceStatus;
 
 			private string lastExecutionTime;
 
-			private string message;
+			private string name;
+
+			private int? timeUnit;
 
 			private ListHotWordsTasks_DialogueParam dialogueParam;
 
 			private ListHotWordsTasks_WordsParam wordsParam;
 
-			public long? TaskConfigId
+			public string EndTime
 			{
 				get
 				{
-					return taskConfigId;
+					return endTime;
 				}
 				set	
 				{
-					taskConfigId = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public int? Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
+					endTime = value;
 				}
 			}
 
@@ -214,15 +190,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public string StartTime
+			public int? Status
 			{
 				get
 				{
-					return startTime;
+					return status;
 				}
 				set	
 				{
-					startTime = value;
+					status = value;
 				}
 			}
 
@@ -238,27 +214,39 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public int? TimeUnit
+			public string StartTime
 			{
 				get
 				{
-					return timeUnit;
+					return startTime;
 				}
 				set	
 				{
-					timeUnit = value;
+					startTime = value;
 				}
 			}
 
-			public string EndTime
+			public long? TaskConfigId
 			{
 				get
 				{
-					return endTime;
+					return taskConfigId;
 				}
 				set	
 				{
-					endTime = value;
+					taskConfigId = value;
+				}
+			}
+
+			public string Message
+			{
+				get
+				{
+					return message;
+				}
+				set	
+				{
+					message = value;
 				}
 			}
 
@@ -286,15 +274,27 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public string Message
+			public string Name
 			{
 				get
 				{
-					return message;
+					return name;
 				}
 				set	
 				{
-					message = value;
+					name = value;
+				}
+			}
+
+			public int? TimeUnit
+			{
+				get
+				{
+					return timeUnit;
+				}
+				set	
+				{
+					timeUnit = value;
 				}
 			}
 
@@ -325,21 +325,33 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			public class ListHotWordsTasks_DialogueParam
 			{
 
+				private string endTime;
+
 				private long? dialogueId;
-
-				private int? role;
-
-				private int? startIndex;
 
 				private int? endIndex;
 
+				private string startTime;
+
 				private int? sourceType;
+
+				private int? startIndex;
+
+				private int? role;
 
 				private string dataSetIds;
 
-				private string startTime;
-
-				private string endTime;
+				public string EndTime
+				{
+					get
+					{
+						return endTime;
+					}
+					set	
+					{
+						endTime = value;
+					}
+				}
 
 				public long? DialogueId
 				{
@@ -350,30 +362,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					set	
 					{
 						dialogueId = value;
-					}
-				}
-
-				public int? Role
-				{
-					get
-					{
-						return role;
-					}
-					set	
-					{
-						role = value;
-					}
-				}
-
-				public int? StartIndex
-				{
-					get
-					{
-						return startIndex;
-					}
-					set	
-					{
-						startIndex = value;
 					}
 				}
 
@@ -389,6 +377,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					}
 				}
 
+				public string StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
+
 				public int? SourceType
 				{
 					get
@@ -398,6 +398,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					set	
 					{
 						sourceType = value;
+					}
+				}
+
+				public int? StartIndex
+				{
+					get
+					{
+						return startIndex;
+					}
+					set	
+					{
+						startIndex = value;
+					}
+				}
+
+				public int? Role
+				{
+					get
+					{
+						return role;
+					}
+					set	
+					{
+						role = value;
 					}
 				}
 
@@ -412,52 +436,16 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 						dataSetIds = value;
 					}
 				}
-
-				public string StartTime
-				{
-					get
-					{
-						return startTime;
-					}
-					set	
-					{
-						startTime = value;
-					}
-				}
-
-				public string EndTime
-				{
-					get
-					{
-						return endTime;
-					}
-					set	
-					{
-						endTime = value;
-					}
-				}
 			}
 
 			public class ListHotWordsTasks_WordsParam
 			{
 
-				private long? extraConfigId;
-
 				private string excludes;
 
 				private string includes;
 
-				public long? ExtraConfigId
-				{
-					get
-					{
-						return extraConfigId;
-					}
-					set	
-					{
-						extraConfigId = value;
-					}
-				}
+				private long? extraConfigId;
 
 				public string Excludes
 				{
@@ -480,6 +468,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					set	
 					{
 						includes = value;
+					}
+				}
+
+				public long? ExtraConfigId
+				{
+					get
+					{
+						return extraConfigId;
+					}
+					set	
+					{
+						extraConfigId = value;
 					}
 				}
 			}

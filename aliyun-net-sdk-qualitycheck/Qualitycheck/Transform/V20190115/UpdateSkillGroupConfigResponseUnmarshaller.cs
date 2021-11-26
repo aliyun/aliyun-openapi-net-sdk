@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			UpdateSkillGroupConfigResponse updateSkillGroupConfigResponse = new UpdateSkillGroupConfigResponse();
 
 			updateSkillGroupConfigResponse.HttpResponse = _ctx.HttpResponse;
-			updateSkillGroupConfigResponse.RequestId = _ctx.StringValue("UpdateSkillGroupConfig.RequestId");
-			updateSkillGroupConfigResponse.Success = _ctx.BooleanValue("UpdateSkillGroupConfig.Success");
 			updateSkillGroupConfigResponse.Code = _ctx.StringValue("UpdateSkillGroupConfig.Code");
 			updateSkillGroupConfigResponse.Message = _ctx.StringValue("UpdateSkillGroupConfig.Message");
+			updateSkillGroupConfigResponse.RequestId = _ctx.StringValue("UpdateSkillGroupConfig.RequestId");
+			updateSkillGroupConfigResponse.Success = _ctx.BooleanValue("UpdateSkillGroupConfig.Success");
         
 			return updateSkillGroupConfigResponse;
         }

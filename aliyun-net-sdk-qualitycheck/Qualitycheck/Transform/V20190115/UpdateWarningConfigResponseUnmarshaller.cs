@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			UpdateWarningConfigResponse updateWarningConfigResponse = new UpdateWarningConfigResponse();
 
 			updateWarningConfigResponse.HttpResponse = _ctx.HttpResponse;
-			updateWarningConfigResponse.RequestId = _ctx.StringValue("UpdateWarningConfig.RequestId");
-			updateWarningConfigResponse.Success = _ctx.BooleanValue("UpdateWarningConfig.Success");
 			updateWarningConfigResponse.Code = _ctx.StringValue("UpdateWarningConfig.Code");
 			updateWarningConfigResponse.Message = _ctx.StringValue("UpdateWarningConfig.Message");
+			updateWarningConfigResponse.RequestId = _ctx.StringValue("UpdateWarningConfig.RequestId");
+			updateWarningConfigResponse.Success = _ctx.BooleanValue("UpdateWarningConfig.Success");
         
 			return updateWarningConfigResponse;
         }

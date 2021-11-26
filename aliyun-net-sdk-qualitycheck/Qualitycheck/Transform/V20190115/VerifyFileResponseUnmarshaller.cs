@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			VerifyFileResponse verifyFileResponse = new VerifyFileResponse();
 
 			verifyFileResponse.HttpResponse = _ctx.HttpResponse;
-			verifyFileResponse.RequestId = _ctx.StringValue("VerifyFile.RequestId");
-			verifyFileResponse.Success = _ctx.BooleanValue("VerifyFile.Success");
 			verifyFileResponse.Code = _ctx.StringValue("VerifyFile.Code");
 			verifyFileResponse.Message = _ctx.StringValue("VerifyFile.Message");
 			verifyFileResponse.Data = _ctx.FloatValue("VerifyFile.Data");
+			verifyFileResponse.RequestId = _ctx.StringValue("VerifyFile.RequestId");
+			verifyFileResponse.Success = _ctx.BooleanValue("VerifyFile.Success");
         
 			return verifyFileResponse;
         }

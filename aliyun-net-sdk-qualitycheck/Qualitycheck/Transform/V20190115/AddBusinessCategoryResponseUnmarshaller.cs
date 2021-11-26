@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			AddBusinessCategoryResponse addBusinessCategoryResponse = new AddBusinessCategoryResponse();
 
 			addBusinessCategoryResponse.HttpResponse = _ctx.HttpResponse;
-			addBusinessCategoryResponse.RequestId = _ctx.StringValue("AddBusinessCategory.RequestId");
-			addBusinessCategoryResponse.Success = _ctx.BooleanValue("AddBusinessCategory.Success");
 			addBusinessCategoryResponse.Code = _ctx.StringValue("AddBusinessCategory.Code");
 			addBusinessCategoryResponse.Message = _ctx.StringValue("AddBusinessCategory.Message");
 			addBusinessCategoryResponse.Data = _ctx.StringValue("AddBusinessCategory.Data");
+			addBusinessCategoryResponse.RequestId = _ctx.StringValue("AddBusinessCategory.RequestId");
+			addBusinessCategoryResponse.Success = _ctx.BooleanValue("AddBusinessCategory.Success");
         
 			return addBusinessCategoryResponse;
         }

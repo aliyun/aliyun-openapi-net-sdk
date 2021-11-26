@@ -31,37 +31,37 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			GetRuleResponse getRuleResponse = new GetRuleResponse();
 
 			getRuleResponse.HttpResponse = _ctx.HttpResponse;
-			getRuleResponse.RequestId = _ctx.StringValue("GetRule.RequestId");
-			getRuleResponse.Success = _ctx.BooleanValue("GetRule.Success");
 			getRuleResponse.Code = _ctx.StringValue("GetRule.Code");
 			getRuleResponse.Message = _ctx.StringValue("GetRule.Message");
+			getRuleResponse.RequestId = _ctx.StringValue("GetRule.RequestId");
+			getRuleResponse.Success = _ctx.BooleanValue("GetRule.Success");
 
 			GetRuleResponse.GetRule_Data data = new GetRuleResponse.GetRule_Data();
 
 			List<GetRuleResponse.GetRule_Data.GetRule_RuleInfo> data_rules = new List<GetRuleResponse.GetRule_Data.GetRule_RuleInfo>();
 			for (int i = 0; i < _ctx.Length("GetRule.Data.Rules.Length"); i++) {
 				GetRuleResponse.GetRule_Data.GetRule_RuleInfo ruleInfo = new GetRuleResponse.GetRule_Data.GetRule_RuleInfo();
-				ruleInfo.Rid = _ctx.StringValue("GetRule.Data.Rules["+ i +"].Rid");
-				ruleInfo.RuleLambda = _ctx.StringValue("GetRule.Data.Rules["+ i +"].RuleLambda");
-				ruleInfo.Name = _ctx.StringValue("GetRule.Data.Rules["+ i +"].Name");
-				ruleInfo.Type = _ctx.IntegerValue("GetRule.Data.Rules["+ i +"].Type");
 				ruleInfo.Status = _ctx.IntegerValue("GetRule.Data.Rules["+ i +"].Status");
+				ruleInfo.Type = _ctx.IntegerValue("GetRule.Data.Rules["+ i +"].Type");
+				ruleInfo.ScoreSubId = _ctx.IntegerValue("GetRule.Data.Rules["+ i +"].ScoreSubId");
+				ruleInfo.IsOnline = _ctx.IntegerValue("GetRule.Data.Rules["+ i +"].IsOnline");
+				ruleInfo.CreateTime = _ctx.StringValue("GetRule.Data.Rules["+ i +"].CreateTime");
+				ruleInfo.CreateEmpid = _ctx.StringValue("GetRule.Data.Rules["+ i +"].CreateEmpid");
+				ruleInfo.LastUpdateEmpid = _ctx.StringValue("GetRule.Data.Rules["+ i +"].LastUpdateEmpid");
 				ruleInfo.IsDelete = _ctx.IntegerValue("GetRule.Data.Rules["+ i +"].IsDelete");
-				ruleInfo.StartTime = _ctx.StringValue("GetRule.Data.Rules["+ i +"].StartTime");
+				ruleInfo.Rid = _ctx.StringValue("GetRule.Data.Rules["+ i +"].Rid");
+				ruleInfo.RuleScoreType = _ctx.IntegerValue("GetRule.Data.Rules["+ i +"].RuleScoreType");
 				ruleInfo.EndTime = _ctx.StringValue("GetRule.Data.Rules["+ i +"].EndTime");
 				ruleInfo.Weight = _ctx.StringValue("GetRule.Data.Rules["+ i +"].Weight");
-				ruleInfo.IsOnline = _ctx.IntegerValue("GetRule.Data.Rules["+ i +"].IsOnline");
-				ruleInfo.CreateEmpid = _ctx.StringValue("GetRule.Data.Rules["+ i +"].CreateEmpid");
-				ruleInfo.CreateTime = _ctx.StringValue("GetRule.Data.Rules["+ i +"].CreateTime");
-				ruleInfo.LastUpdateTime = _ctx.StringValue("GetRule.Data.Rules["+ i +"].LastUpdateTime");
-				ruleInfo.LastUpdateEmpid = _ctx.StringValue("GetRule.Data.Rules["+ i +"].LastUpdateEmpid");
-				ruleInfo.Comments = _ctx.StringValue("GetRule.Data.Rules["+ i +"].Comments");
-				ruleInfo.AutoReview = _ctx.IntegerValue("GetRule.Data.Rules["+ i +"].AutoReview");
-				ruleInfo.RuleScoreType = _ctx.IntegerValue("GetRule.Data.Rules["+ i +"].RuleScoreType");
-				ruleInfo.ScoreName = _ctx.StringValue("GetRule.Data.Rules["+ i +"].ScoreName");
+				ruleInfo.StartTime = _ctx.StringValue("GetRule.Data.Rules["+ i +"].StartTime");
+				ruleInfo.RuleLambda = _ctx.StringValue("GetRule.Data.Rules["+ i +"].RuleLambda");
 				ruleInfo.ScoreSubName = _ctx.StringValue("GetRule.Data.Rules["+ i +"].ScoreSubName");
+				ruleInfo.AutoReview = _ctx.IntegerValue("GetRule.Data.Rules["+ i +"].AutoReview");
+				ruleInfo.Comments = _ctx.StringValue("GetRule.Data.Rules["+ i +"].Comments");
+				ruleInfo.LastUpdateTime = _ctx.StringValue("GetRule.Data.Rules["+ i +"].LastUpdateTime");
+				ruleInfo.ScoreName = _ctx.StringValue("GetRule.Data.Rules["+ i +"].ScoreName");
+				ruleInfo.Name = _ctx.StringValue("GetRule.Data.Rules["+ i +"].Name");
 				ruleInfo.ScoreId = _ctx.IntegerValue("GetRule.Data.Rules["+ i +"].ScoreId");
-				ruleInfo.ScoreSubId = _ctx.IntegerValue("GetRule.Data.Rules["+ i +"].ScoreSubId");
 
 				List<string> ruleInfo_businessCategoryNameList = new List<string>();
 				for (int j = 0; j < _ctx.Length("GetRule.Data.Rules["+ i +"].BusinessCategoryNameList.Length"); j++) {

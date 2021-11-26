@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			AddThesaurusForApiResponse addThesaurusForApiResponse = new AddThesaurusForApiResponse();
 
 			addThesaurusForApiResponse.HttpResponse = _ctx.HttpResponse;
-			addThesaurusForApiResponse.RequestId = _ctx.StringValue("AddThesaurusForApi.RequestId");
-			addThesaurusForApiResponse.Success = _ctx.BooleanValue("AddThesaurusForApi.Success");
 			addThesaurusForApiResponse.Code = _ctx.StringValue("AddThesaurusForApi.Code");
 			addThesaurusForApiResponse.Message = _ctx.StringValue("AddThesaurusForApi.Message");
 			addThesaurusForApiResponse.Data = _ctx.LongValue("AddThesaurusForApi.Data");
+			addThesaurusForApiResponse.RequestId = _ctx.StringValue("AddThesaurusForApi.RequestId");
+			addThesaurusForApiResponse.Success = _ctx.BooleanValue("AddThesaurusForApi.Success");
         
 			return addThesaurusForApiResponse;
         }

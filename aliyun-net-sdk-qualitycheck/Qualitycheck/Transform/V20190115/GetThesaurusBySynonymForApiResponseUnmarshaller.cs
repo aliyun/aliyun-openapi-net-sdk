@@ -31,16 +31,16 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			GetThesaurusBySynonymForApiResponse getThesaurusBySynonymForApiResponse = new GetThesaurusBySynonymForApiResponse();
 
 			getThesaurusBySynonymForApiResponse.HttpResponse = _ctx.HttpResponse;
-			getThesaurusBySynonymForApiResponse.RequestId = _ctx.StringValue("GetThesaurusBySynonymForApi.RequestId");
-			getThesaurusBySynonymForApiResponse.Success = _ctx.BooleanValue("GetThesaurusBySynonymForApi.Success");
 			getThesaurusBySynonymForApiResponse.Code = _ctx.StringValue("GetThesaurusBySynonymForApi.Code");
 			getThesaurusBySynonymForApiResponse.Message = _ctx.StringValue("GetThesaurusBySynonymForApi.Message");
+			getThesaurusBySynonymForApiResponse.RequestId = _ctx.StringValue("GetThesaurusBySynonymForApi.RequestId");
+			getThesaurusBySynonymForApiResponse.Success = _ctx.BooleanValue("GetThesaurusBySynonymForApi.Success");
 
 			List<GetThesaurusBySynonymForApiResponse.GetThesaurusBySynonymForApi_ThesaurusPo> getThesaurusBySynonymForApiResponse_data = new List<GetThesaurusBySynonymForApiResponse.GetThesaurusBySynonymForApi_ThesaurusPo>();
 			for (int i = 0; i < _ctx.Length("GetThesaurusBySynonymForApi.Data.Length"); i++) {
 				GetThesaurusBySynonymForApiResponse.GetThesaurusBySynonymForApi_ThesaurusPo thesaurusPo = new GetThesaurusBySynonymForApiResponse.GetThesaurusBySynonymForApi_ThesaurusPo();
-				thesaurusPo.Id = _ctx.LongValue("GetThesaurusBySynonymForApi.Data["+ i +"].Id");
 				thesaurusPo.Business = _ctx.StringValue("GetThesaurusBySynonymForApi.Data["+ i +"].Business");
+				thesaurusPo.Id = _ctx.LongValue("GetThesaurusBySynonymForApi.Data["+ i +"].Id");
 
 				List<string> thesaurusPo_synonymList = new List<string>();
 				for (int j = 0; j < _ctx.Length("GetThesaurusBySynonymForApi.Data["+ i +"].SynonymList.Length"); j++) {

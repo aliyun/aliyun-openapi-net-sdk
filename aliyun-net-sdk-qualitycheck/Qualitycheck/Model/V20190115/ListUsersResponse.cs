@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -140,47 +140,23 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 		public class ListUsers_User
 		{
 
-			private long? id;
-
-			private string userName;
-
 			private string displayName;
-
-			private string createTime;
 
 			private string updateTime;
 
 			private string description;
 
+			private string createTime;
+
+			private int? loginUserType;
+
 			private string aliUid;
 
 			private string roleName;
 
-			private int? loginUserType;
+			private string userName;
 
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
-
-			public string UserName
-			{
-				get
-				{
-					return userName;
-				}
-				set	
-				{
-					userName = value;
-				}
-			}
+			private long? id;
 
 			public string DisplayName
 			{
@@ -191,18 +167,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				set	
 				{
 					displayName = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
 				}
 			}
 
@@ -230,6 +194,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public int? LoginUserType
+			{
+				get
+				{
+					return loginUserType;
+				}
+				set	
+				{
+					loginUserType = value;
+				}
+			}
+
 			public string AliUid
 			{
 				get
@@ -254,15 +242,27 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public int? LoginUserType
+			public string UserName
 			{
 				get
 				{
-					return loginUserType;
+					return userName;
 				}
 				set	
 				{
-					loginUserType = value;
+					userName = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
 				}
 			}
 		}

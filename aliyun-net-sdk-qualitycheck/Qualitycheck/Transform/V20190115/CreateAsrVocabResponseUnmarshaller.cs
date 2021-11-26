@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			CreateAsrVocabResponse createAsrVocabResponse = new CreateAsrVocabResponse();
 
 			createAsrVocabResponse.HttpResponse = _ctx.HttpResponse;
-			createAsrVocabResponse.RequestId = _ctx.StringValue("CreateAsrVocab.RequestId");
-			createAsrVocabResponse.Success = _ctx.BooleanValue("CreateAsrVocab.Success");
 			createAsrVocabResponse.Code = _ctx.StringValue("CreateAsrVocab.Code");
 			createAsrVocabResponse.Message = _ctx.StringValue("CreateAsrVocab.Message");
 			createAsrVocabResponse.Data = _ctx.StringValue("CreateAsrVocab.Data");
+			createAsrVocabResponse.RequestId = _ctx.StringValue("CreateAsrVocab.RequestId");
+			createAsrVocabResponse.Success = _ctx.BooleanValue("CreateAsrVocab.Success");
         
 			return createAsrVocabResponse;
         }

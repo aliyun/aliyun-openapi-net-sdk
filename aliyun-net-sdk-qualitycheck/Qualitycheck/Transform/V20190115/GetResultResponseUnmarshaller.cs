@@ -33,78 +33,78 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			getResultResponse.HttpResponse = _ctx.HttpResponse;
 			getResultResponse.RequestId = _ctx.StringValue("GetResult.RequestId");
 			getResultResponse.Success = _ctx.BooleanValue("GetResult.Success");
+			getResultResponse.ResultCountId = _ctx.StringValue("GetResult.ResultCountId");
 			getResultResponse.Code = _ctx.StringValue("GetResult.Code");
 			getResultResponse.Message = _ctx.StringValue("GetResult.Message");
-			getResultResponse.Count = _ctx.IntegerValue("GetResult.Count");
-			getResultResponse.PageSize = _ctx.IntegerValue("GetResult.PageSize");
 			getResultResponse.PageNumber = _ctx.IntegerValue("GetResult.PageNumber");
-			getResultResponse.ResultCountId = _ctx.StringValue("GetResult.ResultCountId");
+			getResultResponse.PageSize = _ctx.IntegerValue("GetResult.PageSize");
+			getResultResponse.Count = _ctx.IntegerValue("GetResult.Count");
 
 			List<GetResultResponse.GetResult_ResultInfo> getResultResponse_data = new List<GetResultResponse.GetResult_ResultInfo>();
 			for (int i = 0; i < _ctx.Length("GetResult.Data.Length"); i++) {
 				GetResultResponse.GetResult_ResultInfo resultInfo = new GetResultResponse.GetResult_ResultInfo();
-				resultInfo.Score = _ctx.IntegerValue("GetResult.Data["+ i +"].Score");
-				resultInfo.Comments = _ctx.StringValue("GetResult.Data["+ i +"].Comments");
-				resultInfo.ErrorMessage = _ctx.StringValue("GetResult.Data["+ i +"].ErrorMessage");
 				resultInfo.Status = _ctx.IntegerValue("GetResult.Data["+ i +"].Status");
-				resultInfo.ReviewStatus = _ctx.IntegerValue("GetResult.Data["+ i +"].ReviewStatus");
-				resultInfo.ReviewResult = _ctx.IntegerValue("GetResult.Data["+ i +"].ReviewResult");
-				resultInfo.TaskId = _ctx.StringValue("GetResult.Data["+ i +"].TaskId");
-				resultInfo.TaskName = _ctx.StringValue("GetResult.Data["+ i +"].TaskName");
-				resultInfo.CreateTime = _ctx.StringValue("GetResult.Data["+ i +"].CreateTime");
-				resultInfo.Reviewer = _ctx.StringValue("GetResult.Data["+ i +"].Reviewer");
-				resultInfo.Resolver = _ctx.StringValue("GetResult.Data["+ i +"].Resolver");
-				resultInfo.ReviewTime = _ctx.StringValue("GetResult.Data["+ i +"].ReviewTime");
-				resultInfo.CreateTimeLong = _ctx.StringValue("GetResult.Data["+ i +"].CreateTimeLong");
-				resultInfo.ReviewTimeLong = _ctx.StringValue("GetResult.Data["+ i +"].ReviewTimeLong");
-				resultInfo.ReviewType = _ctx.IntegerValue("GetResult.Data["+ i +"].ReviewType");
 				resultInfo.AssignmentTime = _ctx.StringValue("GetResult.Data["+ i +"].AssignmentTime");
 				resultInfo.LastDataId = _ctx.StringValue("GetResult.Data["+ i +"].LastDataId");
+				resultInfo.ErrorMessage = _ctx.StringValue("GetResult.Data["+ i +"].ErrorMessage");
+				resultInfo.Reviewer = _ctx.StringValue("GetResult.Data["+ i +"].Reviewer");
+				resultInfo.CreateTime = _ctx.StringValue("GetResult.Data["+ i +"].CreateTime");
+				resultInfo.ReviewStatus = _ctx.IntegerValue("GetResult.Data["+ i +"].ReviewStatus");
+				resultInfo.ReviewTimeLong = _ctx.StringValue("GetResult.Data["+ i +"].ReviewTimeLong");
+				resultInfo.TaskName = _ctx.StringValue("GetResult.Data["+ i +"].TaskName");
+				resultInfo.ReviewResult = _ctx.IntegerValue("GetResult.Data["+ i +"].ReviewResult");
+				resultInfo.Score = _ctx.IntegerValue("GetResult.Data["+ i +"].Score");
+				resultInfo.CreateTimeLong = _ctx.StringValue("GetResult.Data["+ i +"].CreateTimeLong");
+				resultInfo.ReviewTime = _ctx.StringValue("GetResult.Data["+ i +"].ReviewTime");
+				resultInfo.Comments = _ctx.StringValue("GetResult.Data["+ i +"].Comments");
+				resultInfo.TaskId = _ctx.StringValue("GetResult.Data["+ i +"].TaskId");
+				resultInfo.ReviewType = _ctx.IntegerValue("GetResult.Data["+ i +"].ReviewType");
+				resultInfo.Resolver = _ctx.StringValue("GetResult.Data["+ i +"].Resolver");
 
 				GetResultResponse.GetResult_ResultInfo.GetResult_Recording recording = new GetResultResponse.GetResult_ResultInfo.GetResult_Recording();
-				recording.Id = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Id");
-				recording.PrimaryId = _ctx.StringValue("GetResult.Data["+ i +"].Recording.PrimaryId");
-				recording.CallId = _ctx.StringValue("GetResult.Data["+ i +"].Recording.CallId");
-				recording.Name = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Name");
-				recording.Url = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Url");
-				recording.DataSetName = _ctx.StringValue("GetResult.Data["+ i +"].Recording.DataSetName");
-				recording.Duration = _ctx.LongValue("GetResult.Data["+ i +"].Recording.Duration");
-				recording.Caller = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Caller");
+				recording.Remark13 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark13");
 				recording.Callee = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Callee");
-				recording.CallTime = _ctx.StringValue("GetResult.Data["+ i +"].Recording.CallTime");
-				recording.CallType = _ctx.IntegerValue("GetResult.Data["+ i +"].Recording.CallType");
-				recording.Business = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Business");
+				recording.DialogueSize = _ctx.IntegerValue("GetResult.Data["+ i +"].Recording.DialogueSize");
+				recording.PrimaryId = _ctx.StringValue("GetResult.Data["+ i +"].Recording.PrimaryId");
+				recording.Remark12 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark12");
 				recording.Remark1 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark1");
-				recording.Remark2 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark2");
-				recording.Remark3 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark3");
-				recording.Remark4 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark4");
-				recording.Remark5 = _ctx.LongValue("GetResult.Data["+ i +"].Recording.Remark5");
-				recording.Remark6 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark6");
 				recording.Remark7 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark7");
 				recording.Remark8 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark8");
+				recording.Remark2 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark2");
+				recording.CallId = _ctx.StringValue("GetResult.Data["+ i +"].Recording.CallId");
 				recording.Remark9 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark9");
+				recording.Name = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Name");
+				recording.Remark6 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark6");
 				recording.Remark10 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark10");
+				recording.Business = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Business");
+				recording.Remark3 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark3");
+				recording.Url = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Url");
 				recording.Remark11 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark11");
-				recording.Remark12 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark12");
-				recording.Remark13 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark13");
-				recording.DialogueSize = _ctx.IntegerValue("GetResult.Data["+ i +"].Recording.DialogueSize");
+				recording.Remark4 = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Remark4");
+				recording.CallType = _ctx.IntegerValue("GetResult.Data["+ i +"].Recording.CallType");
+				recording.Caller = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Caller");
+				recording.DataSetName = _ctx.StringValue("GetResult.Data["+ i +"].Recording.DataSetName");
+				recording.Duration = _ctx.LongValue("GetResult.Data["+ i +"].Recording.Duration");
+				recording.Remark5 = _ctx.LongValue("GetResult.Data["+ i +"].Recording.Remark5");
+				recording.Id = _ctx.StringValue("GetResult.Data["+ i +"].Recording.Id");
+				recording.CallTime = _ctx.StringValue("GetResult.Data["+ i +"].Recording.CallTime");
 				resultInfo.Recording = recording;
 
 				GetResultResponse.GetResult_ResultInfo.GetResult_Agent agent = new GetResultResponse.GetResult_ResultInfo.GetResult_Agent();
-				agent.Id = _ctx.StringValue("GetResult.Data["+ i +"].Agent.Id");
 				agent.Name = _ctx.StringValue("GetResult.Data["+ i +"].Agent.Name");
 				agent.SkillGroup = _ctx.StringValue("GetResult.Data["+ i +"].Agent.SkillGroup");
+				agent.Id = _ctx.StringValue("GetResult.Data["+ i +"].Agent.Id");
 				resultInfo.Agent = agent;
 
 				List<GetResultResponse.GetResult_ResultInfo.GetResult_AsrResultItem> resultInfo_asrResult = new List<GetResultResponse.GetResult_ResultInfo.GetResult_AsrResultItem>();
 				for (int j = 0; j < _ctx.Length("GetResult.Data["+ i +"].AsrResult.Length"); j++) {
 					GetResultResponse.GetResult_ResultInfo.GetResult_AsrResultItem asrResultItem = new GetResultResponse.GetResult_ResultInfo.GetResult_AsrResultItem();
-					asrResultItem.Role = _ctx.StringValue("GetResult.Data["+ i +"].AsrResult["+ j +"].Role");
 					asrResultItem.Words = _ctx.StringValue("GetResult.Data["+ i +"].AsrResult["+ j +"].Words");
 					asrResultItem.Begin = _ctx.LongValue("GetResult.Data["+ i +"].AsrResult["+ j +"].Begin");
-					asrResultItem.End = _ctx.LongValue("GetResult.Data["+ i +"].AsrResult["+ j +"].End");
 					asrResultItem.EmotionValue = _ctx.IntegerValue("GetResult.Data["+ i +"].AsrResult["+ j +"].EmotionValue");
+					asrResultItem.End = _ctx.LongValue("GetResult.Data["+ i +"].AsrResult["+ j +"].End");
 					asrResultItem.SpeechRate = _ctx.IntegerValue("GetResult.Data["+ i +"].AsrResult["+ j +"].SpeechRate");
+					asrResultItem.Role = _ctx.StringValue("GetResult.Data["+ i +"].AsrResult["+ j +"].Role");
 
 					resultInfo_asrResult.Add(asrResultItem);
 				}
@@ -113,10 +113,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 				List<GetResultResponse.GetResult_ResultInfo.GetResult_HitResultItem> resultInfo_hitResult = new List<GetResultResponse.GetResult_ResultInfo.GetResult_HitResultItem>();
 				for (int j = 0; j < _ctx.Length("GetResult.Data["+ i +"].HitResult.Length"); j++) {
 					GetResultResponse.GetResult_ResultInfo.GetResult_HitResultItem hitResultItem = new GetResultResponse.GetResult_ResultInfo.GetResult_HitResultItem();
-					hitResultItem.Rid = _ctx.StringValue("GetResult.Data["+ i +"].HitResult["+ j +"].Rid");
-					hitResultItem.Name = _ctx.StringValue("GetResult.Data["+ i +"].HitResult["+ j +"].Name");
 					hitResultItem.Type = _ctx.StringValue("GetResult.Data["+ i +"].HitResult["+ j +"].Type");
 					hitResultItem.ReviewResult = _ctx.IntegerValue("GetResult.Data["+ i +"].HitResult["+ j +"].ReviewResult");
+					hitResultItem.Name = _ctx.StringValue("GetResult.Data["+ i +"].HitResult["+ j +"].Name");
+					hitResultItem.Rid = _ctx.StringValue("GetResult.Data["+ i +"].HitResult["+ j +"].Rid");
 
 					List<GetResultResponse.GetResult_ResultInfo.GetResult_HitResultItem.GetResult_Hit> hitResultItem_hits = new List<GetResultResponse.GetResult_ResultInfo.GetResult_HitResultItem.GetResult_Hit>();
 					for (int k = 0; k < _ctx.Length("GetResult.Data["+ i +"].HitResult["+ j +"].Hits.Length"); k++) {
@@ -129,20 +129,20 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 						hit.Cid = hit_cid;
 
 						GetResultResponse.GetResult_ResultInfo.GetResult_HitResultItem.GetResult_Hit.GetResult_Phrase phrase = new GetResultResponse.GetResult_ResultInfo.GetResult_HitResultItem.GetResult_Hit.GetResult_Phrase();
-						phrase.Role = _ctx.StringValue("GetResult.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.Role");
-						phrase.Words = _ctx.StringValue("GetResult.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.Words");
-						phrase.Begin = _ctx.LongValue("GetResult.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.Begin");
-						phrase.End = _ctx.IntegerValue("GetResult.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.End");
 						phrase.EmotionValue = _ctx.IntegerValue("GetResult.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.EmotionValue");
+						phrase.End = _ctx.IntegerValue("GetResult.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.End");
+						phrase.Words = _ctx.StringValue("GetResult.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.Words");
+						phrase.Role = _ctx.StringValue("GetResult.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.Role");
+						phrase.Begin = _ctx.LongValue("GetResult.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].Phrase.Begin");
 						hit.Phrase = phrase;
 
 						List<GetResultResponse.GetResult_ResultInfo.GetResult_HitResultItem.GetResult_Hit.GetResult_KeyWord> hit_keyWords = new List<GetResultResponse.GetResult_ResultInfo.GetResult_HitResultItem.GetResult_Hit.GetResult_KeyWord>();
 						for (int l = 0; l < _ctx.Length("GetResult.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords.Length"); l++) {
 							GetResultResponse.GetResult_ResultInfo.GetResult_HitResultItem.GetResult_Hit.GetResult_KeyWord keyWord = new GetResultResponse.GetResult_ResultInfo.GetResult_HitResultItem.GetResult_Hit.GetResult_KeyWord();
-							keyWord.Cid = _ctx.StringValue("GetResult.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords["+ l +"].Cid");
 							keyWord.From = _ctx.IntegerValue("GetResult.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords["+ l +"].From");
 							keyWord.To = _ctx.IntegerValue("GetResult.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords["+ l +"].To");
 							keyWord.Val = _ctx.StringValue("GetResult.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords["+ l +"].Val");
+							keyWord.Cid = _ctx.StringValue("GetResult.Data["+ i +"].HitResult["+ j +"].Hits["+ k +"].KeyWords["+ l +"].Cid");
 
 							hit_keyWords.Add(keyWord);
 						}
@@ -159,10 +159,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 				List<GetResultResponse.GetResult_ResultInfo.GetResult_HitScoreItem> resultInfo_hitScore = new List<GetResultResponse.GetResult_ResultInfo.GetResult_HitScoreItem>();
 				for (int j = 0; j < _ctx.Length("GetResult.Data["+ i +"].HitScore.Length"); j++) {
 					GetResultResponse.GetResult_ResultInfo.GetResult_HitScoreItem hitScoreItem = new GetResultResponse.GetResult_ResultInfo.GetResult_HitScoreItem();
-					hitScoreItem.ScoreId = _ctx.StringValue("GetResult.Data["+ i +"].HitScore["+ j +"].ScoreId");
-					hitScoreItem.RuleId = _ctx.StringValue("GetResult.Data["+ i +"].HitScore["+ j +"].RuleId");
 					hitScoreItem.ScoreName = _ctx.StringValue("GetResult.Data["+ i +"].HitScore["+ j +"].ScoreName");
 					hitScoreItem.ScoreNumber = _ctx.StringValue("GetResult.Data["+ i +"].HitScore["+ j +"].ScoreNumber");
+					hitScoreItem.ScoreId = _ctx.StringValue("GetResult.Data["+ i +"].HitScore["+ j +"].ScoreId");
+					hitScoreItem.RuleId = _ctx.StringValue("GetResult.Data["+ i +"].HitScore["+ j +"].RuleId");
 
 					resultInfo_hitScore.Add(hitScoreItem);
 				}

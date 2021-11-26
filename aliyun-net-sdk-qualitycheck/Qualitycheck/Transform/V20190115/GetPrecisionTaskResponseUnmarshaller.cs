@@ -31,32 +31,32 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			GetPrecisionTaskResponse getPrecisionTaskResponse = new GetPrecisionTaskResponse();
 
 			getPrecisionTaskResponse.HttpResponse = _ctx.HttpResponse;
-			getPrecisionTaskResponse.RequestId = _ctx.StringValue("GetPrecisionTask.RequestId");
-			getPrecisionTaskResponse.Success = _ctx.BooleanValue("GetPrecisionTask.Success");
 			getPrecisionTaskResponse.Code = _ctx.StringValue("GetPrecisionTask.Code");
 			getPrecisionTaskResponse.Message = _ctx.StringValue("GetPrecisionTask.Message");
+			getPrecisionTaskResponse.RequestId = _ctx.StringValue("GetPrecisionTask.RequestId");
+			getPrecisionTaskResponse.Success = _ctx.BooleanValue("GetPrecisionTask.Success");
 
 			GetPrecisionTaskResponse.GetPrecisionTask_Data data = new GetPrecisionTaskResponse.GetPrecisionTask_Data();
-			data.Name = _ctx.StringValue("GetPrecisionTask.Data.Name");
-			data.Source = _ctx.IntegerValue("GetPrecisionTask.Data.Source");
-			data.DataSetId = _ctx.LongValue("GetPrecisionTask.Data.DataSetId");
-			data.DataSetName = _ctx.StringValue("GetPrecisionTask.Data.DataSetName");
-			data.TaskId = _ctx.StringValue("GetPrecisionTask.Data.TaskId");
-			data.Duration = _ctx.IntegerValue("GetPrecisionTask.Data.Duration");
-			data.UpdateTime = _ctx.StringValue("GetPrecisionTask.Data.UpdateTime");
 			data.Status = _ctx.IntegerValue("GetPrecisionTask.Data.Status");
-			data.TotalCount = _ctx.IntegerValue("GetPrecisionTask.Data.TotalCount");
-			data.VerifiedCount = _ctx.IntegerValue("GetPrecisionTask.Data.VerifiedCount");
+			data.UpdateTime = _ctx.StringValue("GetPrecisionTask.Data.UpdateTime");
 			data.IncorrectWords = _ctx.IntegerValue("GetPrecisionTask.Data.IncorrectWords");
+			data.DataSetId = _ctx.LongValue("GetPrecisionTask.Data.DataSetId");
+			data.VerifiedCount = _ctx.IntegerValue("GetPrecisionTask.Data.VerifiedCount");
+			data.Duration = _ctx.IntegerValue("GetPrecisionTask.Data.Duration");
+			data.DataSetName = _ctx.StringValue("GetPrecisionTask.Data.DataSetName");
+			data.TotalCount = _ctx.IntegerValue("GetPrecisionTask.Data.TotalCount");
+			data.Source = _ctx.IntegerValue("GetPrecisionTask.Data.Source");
+			data.Name = _ctx.StringValue("GetPrecisionTask.Data.Name");
+			data.TaskId = _ctx.StringValue("GetPrecisionTask.Data.TaskId");
 
 			List<GetPrecisionTaskResponse.GetPrecisionTask_Data.GetPrecisionTask_Precision> data_precisions = new List<GetPrecisionTaskResponse.GetPrecisionTask_Data.GetPrecisionTask_Precision>();
 			for (int i = 0; i < _ctx.Length("GetPrecisionTask.Data.Precisions.Length"); i++) {
 				GetPrecisionTaskResponse.GetPrecisionTask_Data.GetPrecisionTask_Precision precision = new GetPrecisionTaskResponse.GetPrecisionTask_Data.GetPrecisionTask_Precision();
-				precision.ModelName = _ctx.StringValue("GetPrecisionTask.Data.Precisions["+ i +"].ModelName");
-				precision.ModelId = _ctx.LongValue("GetPrecisionTask.Data.Precisions["+ i +"].ModelId");
-				precision.Precision = _ctx.FloatValue("GetPrecisionTask.Data.Precisions["+ i +"].Precision");
 				precision.Status = _ctx.IntegerValue("GetPrecisionTask.Data.Precisions["+ i +"].Status");
+				precision.ModelName = _ctx.StringValue("GetPrecisionTask.Data.Precisions["+ i +"].ModelName");
 				precision.TaskId = _ctx.StringValue("GetPrecisionTask.Data.Precisions["+ i +"].TaskId");
+				precision.Precision = _ctx.FloatValue("GetPrecisionTask.Data.Precisions["+ i +"].Precision");
+				precision.ModelId = _ctx.LongValue("GetPrecisionTask.Data.Precisions["+ i +"].ModelId");
 
 				data_precisions.Add(precision);
 			}

@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			GetBusinessCategoryListResponse getBusinessCategoryListResponse = new GetBusinessCategoryListResponse();
 
 			getBusinessCategoryListResponse.HttpResponse = _ctx.HttpResponse;
-			getBusinessCategoryListResponse.RequestId = _ctx.StringValue("GetBusinessCategoryList.RequestId");
-			getBusinessCategoryListResponse.Success = _ctx.BooleanValue("GetBusinessCategoryList.Success");
 			getBusinessCategoryListResponse.Code = _ctx.StringValue("GetBusinessCategoryList.Code");
 			getBusinessCategoryListResponse.Message = _ctx.StringValue("GetBusinessCategoryList.Message");
+			getBusinessCategoryListResponse.RequestId = _ctx.StringValue("GetBusinessCategoryList.RequestId");
+			getBusinessCategoryListResponse.Success = _ctx.BooleanValue("GetBusinessCategoryList.Success");
 
 			List<GetBusinessCategoryListResponse.GetBusinessCategoryList_BusinessCategoryBasicInfo> getBusinessCategoryListResponse_data = new List<GetBusinessCategoryListResponse.GetBusinessCategoryList_BusinessCategoryBasicInfo>();
 			for (int i = 0; i < _ctx.Length("GetBusinessCategoryList.Data.Length"); i++) {
 				GetBusinessCategoryListResponse.GetBusinessCategoryList_BusinessCategoryBasicInfo businessCategoryBasicInfo = new GetBusinessCategoryListResponse.GetBusinessCategoryList_BusinessCategoryBasicInfo();
-				businessCategoryBasicInfo.Bid = _ctx.IntegerValue("GetBusinessCategoryList.Data["+ i +"].Bid");
-				businessCategoryBasicInfo.ServiceType = _ctx.IntegerValue("GetBusinessCategoryList.Data["+ i +"].ServiceType");
 				businessCategoryBasicInfo.BusinessName = _ctx.StringValue("GetBusinessCategoryList.Data["+ i +"].BusinessName");
+				businessCategoryBasicInfo.ServiceType = _ctx.IntegerValue("GetBusinessCategoryList.Data["+ i +"].ServiceType");
+				businessCategoryBasicInfo.Bid = _ctx.IntegerValue("GetBusinessCategoryList.Data["+ i +"].Bid");
 
 				getBusinessCategoryListResponse_data.Add(businessCategoryBasicInfo);
 			}

@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			DelThesaurusForApiResponse delThesaurusForApiResponse = new DelThesaurusForApiResponse();
 
 			delThesaurusForApiResponse.HttpResponse = _ctx.HttpResponse;
-			delThesaurusForApiResponse.RequestId = _ctx.StringValue("DelThesaurusForApi.RequestId");
-			delThesaurusForApiResponse.Success = _ctx.BooleanValue("DelThesaurusForApi.Success");
 			delThesaurusForApiResponse.Code = _ctx.StringValue("DelThesaurusForApi.Code");
 			delThesaurusForApiResponse.Message = _ctx.StringValue("DelThesaurusForApi.Message");
+			delThesaurusForApiResponse.RequestId = _ctx.StringValue("DelThesaurusForApi.RequestId");
+			delThesaurusForApiResponse.Success = _ctx.BooleanValue("DelThesaurusForApi.Success");
         
 			return delThesaurusForApiResponse;
         }

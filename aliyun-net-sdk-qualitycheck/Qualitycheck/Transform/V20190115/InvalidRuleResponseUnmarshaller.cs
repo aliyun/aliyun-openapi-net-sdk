@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			InvalidRuleResponse invalidRuleResponse = new InvalidRuleResponse();
 
 			invalidRuleResponse.HttpResponse = _ctx.HttpResponse;
-			invalidRuleResponse.RequestId = _ctx.StringValue("InvalidRule.RequestId");
-			invalidRuleResponse.Success = _ctx.BooleanValue("InvalidRule.Success");
 			invalidRuleResponse.Code = _ctx.StringValue("InvalidRule.Code");
 			invalidRuleResponse.Message = _ctx.StringValue("InvalidRule.Message");
 			invalidRuleResponse.Data = _ctx.BooleanValue("InvalidRule.Data");
+			invalidRuleResponse.RequestId = _ctx.StringValue("InvalidRule.RequestId");
+			invalidRuleResponse.Success = _ctx.BooleanValue("InvalidRule.Success");
         
 			return invalidRuleResponse;
         }

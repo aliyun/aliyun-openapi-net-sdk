@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -33,11 +33,11 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 		private string message;
 
-		private int? count;
+		private int? pageNumber;
 
 		private int? pageSize;
 
-		private int? pageNumber;
+		private int? count;
 
 		private List<GetHitResult_ResultInfo> data;
 
@@ -89,15 +89,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			}
 		}
 
-		public int? Count
+		public int? PageNumber
 		{
 			get
 			{
-				return count;
+				return pageNumber;
 			}
 			set	
 			{
-				count = value;
+				pageNumber = value;
 			}
 		}
 
@@ -113,15 +113,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			}
 		}
 
-		public int? PageNumber
+		public int? Count
 		{
 			get
 			{
-				return pageNumber;
+				return count;
 			}
 			set	
 			{
-				pageNumber = value;
+				count = value;
 			}
 		}
 
@@ -140,21 +140,9 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 		public class GetHitResult_ResultInfo
 		{
 
-			private long? rid;
-
 			private string ruleName;
 
-			public long? Rid
-			{
-				get
-				{
-					return rid;
-				}
-				set	
-				{
-					rid = value;
-				}
-			}
+			private long? rid;
 
 			public string RuleName
 			{
@@ -165,6 +153,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				set	
 				{
 					ruleName = value;
+				}
+			}
+
+			public long? Rid
+			{
+				get
+				{
+					return rid;
+				}
+				set	
+				{
+					rid = value;
 				}
 			}
 		}

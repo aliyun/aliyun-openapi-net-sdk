@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -33,11 +33,11 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 		private string message;
 
-		private int? count;
+		private int? pageNumber;
 
 		private int? pageSize;
 
-		private int? pageNumber;
+		private int? count;
 
 		private List<ListRules_Rule> data;
 
@@ -89,15 +89,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			}
 		}
 
-		public int? Count
+		public int? PageNumber
 		{
 			get
 			{
-				return count;
+				return pageNumber;
 			}
 			set	
 			{
-				count = value;
+				pageNumber = value;
 			}
 		}
 
@@ -113,15 +113,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			}
 		}
 
-		public int? PageNumber
+		public int? Count
 		{
 			get
 			{
-				return pageNumber;
+				return count;
 			}
 			set	
 			{
-				pageNumber = value;
+				count = value;
 			}
 		}
 
@@ -140,33 +140,21 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 		public class ListRules_Rule
 		{
 
-			private string name;
-
 			private int? type;
 
-			private string comments;
+			private int? ruleType;
 
 			private string createTime;
 
+			private string comments;
+
 			private string typeName;
 
-			private int? ruleType;
+			private string name;
 
 			private long? rid;
 
 			private List<string> businessCategoryNameList;
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
 
 			public int? Type
 			{
@@ -180,15 +168,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public string Comments
+			public int? RuleType
 			{
 				get
 				{
-					return comments;
+					return ruleType;
 				}
 				set	
 				{
-					comments = value;
+					ruleType = value;
 				}
 			}
 
@@ -204,6 +192,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
+			public string Comments
+			{
+				get
+				{
+					return comments;
+				}
+				set	
+				{
+					comments = value;
+				}
+			}
+
 			public string TypeName
 			{
 				get
@@ -216,15 +216,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public int? RuleType
+			public string Name
 			{
 				get
 				{
-					return ruleType;
+					return name;
 				}
 				set	
 				{
-					ruleType = value;
+					name = value;
 				}
 			}
 

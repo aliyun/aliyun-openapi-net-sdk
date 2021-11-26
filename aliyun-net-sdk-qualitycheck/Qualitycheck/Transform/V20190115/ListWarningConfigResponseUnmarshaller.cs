@@ -31,19 +31,19 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			ListWarningConfigResponse listWarningConfigResponse = new ListWarningConfigResponse();
 
 			listWarningConfigResponse.HttpResponse = _ctx.HttpResponse;
-			listWarningConfigResponse.RequestId = _ctx.StringValue("ListWarningConfig.RequestId");
-			listWarningConfigResponse.Success = _ctx.BooleanValue("ListWarningConfig.Success");
 			listWarningConfigResponse.Code = _ctx.StringValue("ListWarningConfig.Code");
 			listWarningConfigResponse.Message = _ctx.StringValue("ListWarningConfig.Message");
+			listWarningConfigResponse.RequestId = _ctx.StringValue("ListWarningConfig.RequestId");
+			listWarningConfigResponse.Success = _ctx.BooleanValue("ListWarningConfig.Success");
 
 			List<ListWarningConfigResponse.ListWarningConfig_WarningConfigInfo> listWarningConfigResponse_data = new List<ListWarningConfigResponse.ListWarningConfig_WarningConfigInfo>();
 			for (int i = 0; i < _ctx.Length("ListWarningConfig.Data.Length"); i++) {
 				ListWarningConfigResponse.ListWarningConfig_WarningConfigInfo warningConfigInfo = new ListWarningConfigResponse.ListWarningConfig_WarningConfigInfo();
-				warningConfigInfo.ConfigId = _ctx.LongValue("ListWarningConfig.Data["+ i +"].ConfigId");
-				warningConfigInfo.ConfigName = _ctx.StringValue("ListWarningConfig.Data["+ i +"].ConfigName");
 				warningConfigInfo.Status = _ctx.IntegerValue("ListWarningConfig.Data["+ i +"].Status");
-				warningConfigInfo.CreateTime = _ctx.StringValue("ListWarningConfig.Data["+ i +"].CreateTime");
+				warningConfigInfo.ConfigName = _ctx.StringValue("ListWarningConfig.Data["+ i +"].ConfigName");
 				warningConfigInfo.UpdateTime = _ctx.StringValue("ListWarningConfig.Data["+ i +"].UpdateTime");
+				warningConfigInfo.ConfigId = _ctx.LongValue("ListWarningConfig.Data["+ i +"].ConfigId");
+				warningConfigInfo.CreateTime = _ctx.StringValue("ListWarningConfig.Data["+ i +"].CreateTime");
 
 				List<string> warningConfigInfo_ridList = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListWarningConfig.Data["+ i +"].RidList.Length"); j++) {
@@ -54,8 +54,8 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 				List<ListWarningConfigResponse.ListWarningConfig_WarningConfigInfo.ListWarningConfig_WarningRule> warningConfigInfo_ruleList = new List<ListWarningConfigResponse.ListWarningConfig_WarningConfigInfo.ListWarningConfig_WarningRule>();
 				for (int j = 0; j < _ctx.Length("ListWarningConfig.Data["+ i +"].RuleList.Length"); j++) {
 					ListWarningConfigResponse.ListWarningConfig_WarningConfigInfo.ListWarningConfig_WarningRule warningRule = new ListWarningConfigResponse.ListWarningConfig_WarningConfigInfo.ListWarningConfig_WarningRule();
-					warningRule.Rid = _ctx.LongValue("ListWarningConfig.Data["+ i +"].RuleList["+ j +"].Rid");
 					warningRule.RuleName = _ctx.StringValue("ListWarningConfig.Data["+ i +"].RuleList["+ j +"].RuleName");
+					warningRule.Rid = _ctx.LongValue("ListWarningConfig.Data["+ i +"].RuleList["+ j +"].Rid");
 
 					warningConfigInfo_ruleList.Add(warningRule);
 				}

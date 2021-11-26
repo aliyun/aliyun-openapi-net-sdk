@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			UpdateSyncQualityCheckDataResponse updateSyncQualityCheckDataResponse = new UpdateSyncQualityCheckDataResponse();
 
 			updateSyncQualityCheckDataResponse.HttpResponse = _ctx.HttpResponse;
-			updateSyncQualityCheckDataResponse.RequestId = _ctx.StringValue("UpdateSyncQualityCheckData.RequestId");
-			updateSyncQualityCheckDataResponse.Success = _ctx.BooleanValue("UpdateSyncQualityCheckData.Success");
 			updateSyncQualityCheckDataResponse.Code = _ctx.StringValue("UpdateSyncQualityCheckData.Code");
 			updateSyncQualityCheckDataResponse.Message = _ctx.StringValue("UpdateSyncQualityCheckData.Message");
+			updateSyncQualityCheckDataResponse.RequestId = _ctx.StringValue("UpdateSyncQualityCheckData.RequestId");
+			updateSyncQualityCheckDataResponse.Success = _ctx.BooleanValue("UpdateSyncQualityCheckData.Success");
 
 			UpdateSyncQualityCheckDataResponse.UpdateSyncQualityCheckData_Data data = new UpdateSyncQualityCheckDataResponse.UpdateSyncQualityCheckData_Data();
 			data.TaskId = _ctx.StringValue("UpdateSyncQualityCheckData.Data.TaskId");

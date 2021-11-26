@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			CreateWarningConfigResponse createWarningConfigResponse = new CreateWarningConfigResponse();
 
 			createWarningConfigResponse.HttpResponse = _ctx.HttpResponse;
-			createWarningConfigResponse.RequestId = _ctx.StringValue("CreateWarningConfig.RequestId");
-			createWarningConfigResponse.Success = _ctx.BooleanValue("CreateWarningConfig.Success");
 			createWarningConfigResponse.Code = _ctx.StringValue("CreateWarningConfig.Code");
 			createWarningConfigResponse.Message = _ctx.StringValue("CreateWarningConfig.Message");
 			createWarningConfigResponse.Data = _ctx.StringValue("CreateWarningConfig.Data");
+			createWarningConfigResponse.RequestId = _ctx.StringValue("CreateWarningConfig.RequestId");
+			createWarningConfigResponse.Success = _ctx.BooleanValue("CreateWarningConfig.Success");
         
 			return createWarningConfigResponse;
         }

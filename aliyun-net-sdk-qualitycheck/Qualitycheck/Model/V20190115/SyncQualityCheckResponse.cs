@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 	public class SyncQualityCheckResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private SyncQualityCheck_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public SyncQualityCheck_Data Data
 		{
 			get
@@ -100,11 +100,11 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 			private int? score;
 
+			private string taskId;
+
 			private string tid;
 
 			private long? beginTime;
-
-			private string taskId;
 
 			private List<SyncQualityCheck_RuleHitInfo> rules;
 
@@ -117,6 +117,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				set	
 				{
 					score = value;
+				}
+			}
+
+			public string TaskId
+			{
+				get
+				{
+					return taskId;
+				}
+				set	
+				{
+					taskId = value;
 				}
 			}
 
@@ -144,18 +156,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
-
 			public List<SyncQualityCheck_RuleHitInfo> Rules
 			{
 				get
@@ -171,23 +171,11 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			public class SyncQualityCheck_RuleHitInfo
 			{
 
-				private string rid;
-
 				private string ruleName;
 
-				private List<SyncQualityCheck_ConditionHitInfo> hit;
+				private string rid;
 
-				public string Rid
-				{
-					get
-					{
-						return rid;
-					}
-					set	
-					{
-						rid = value;
-					}
-				}
+				private List<SyncQualityCheck_ConditionHitInfo> hit;
 
 				public string RuleName
 				{
@@ -198,6 +186,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					set	
 					{
 						ruleName = value;
+					}
+				}
+
+				public string Rid
+				{
+					get
+					{
+						return rid;
+					}
+					set	
+					{
+						rid = value;
 					}
 				}
 
@@ -247,37 +247,25 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					public class SyncQualityCheck_HitKeyWord
 					{
 
-						private string val;
-
-						private int? pid;
+						private int? to;
 
 						private int? from;
 
-						private int? to;
+						private string val;
 
 						private int? cid;
 
-						public string Val
-						{
-							get
-							{
-								return val;
-							}
-							set	
-							{
-								val = value;
-							}
-						}
+						private int? pid;
 
-						public int? Pid
+						public int? To
 						{
 							get
 							{
-								return pid;
+								return to;
 							}
 							set	
 							{
-								pid = value;
+								to = value;
 							}
 						}
 
@@ -293,15 +281,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							}
 						}
 
-						public int? To
+						public string Val
 						{
 							get
 							{
-								return to;
+								return val;
 							}
 							set	
 							{
-								to = value;
+								val = value;
 							}
 						}
 
@@ -316,36 +304,48 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 								cid = value;
 							}
 						}
+
+						public int? Pid
+						{
+							get
+							{
+								return pid;
+							}
+							set	
+							{
+								pid = value;
+							}
+						}
 					}
 
 					public class SyncQualityCheck_Phrase
 					{
 
-						private string role;
+						private string words;
 
 						private string identity;
 
-						private string words;
-
 						private long? begin;
-
-						private long? end;
 
 						private int? emotionValue;
 
+						private long? end;
+
 						private int? speechRate;
+
+						private string role;
 
 						private int? silenceDuration;
 
-						public string Role
+						public string Words
 						{
 							get
 							{
-								return role;
+								return words;
 							}
 							set	
 							{
-								role = value;
+								words = value;
 							}
 						}
 
@@ -361,18 +361,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							}
 						}
 
-						public string Words
-						{
-							get
-							{
-								return words;
-							}
-							set	
-							{
-								words = value;
-							}
-						}
-
 						public long? Begin
 						{
 							get
@@ -382,18 +370,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							set	
 							{
 								begin = value;
-							}
-						}
-
-						public long? End
-						{
-							get
-							{
-								return end;
-							}
-							set	
-							{
-								end = value;
 							}
 						}
 
@@ -409,6 +385,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							}
 						}
 
+						public long? End
+						{
+							get
+							{
+								return end;
+							}
+							set	
+							{
+								end = value;
+							}
+						}
+
 						public int? SpeechRate
 						{
 							get
@@ -418,6 +406,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							set	
 							{
 								speechRate = value;
+							}
+						}
+
+						public string Role
+						{
+							get
+							{
+								return role;
+							}
+							set	
+							{
+								role = value;
 							}
 						}
 

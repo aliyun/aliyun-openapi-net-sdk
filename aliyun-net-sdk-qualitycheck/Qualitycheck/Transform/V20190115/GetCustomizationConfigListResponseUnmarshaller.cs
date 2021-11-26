@@ -31,20 +31,20 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			GetCustomizationConfigListResponse getCustomizationConfigListResponse = new GetCustomizationConfigListResponse();
 
 			getCustomizationConfigListResponse.HttpResponse = _ctx.HttpResponse;
-			getCustomizationConfigListResponse.RequestId = _ctx.StringValue("GetCustomizationConfigList.RequestId");
-			getCustomizationConfigListResponse.Success = _ctx.BooleanValue("GetCustomizationConfigList.Success");
 			getCustomizationConfigListResponse.Code = _ctx.StringValue("GetCustomizationConfigList.Code");
 			getCustomizationConfigListResponse.Message = _ctx.StringValue("GetCustomizationConfigList.Message");
+			getCustomizationConfigListResponse.RequestId = _ctx.StringValue("GetCustomizationConfigList.RequestId");
+			getCustomizationConfigListResponse.Success = _ctx.BooleanValue("GetCustomizationConfigList.Success");
 
 			List<GetCustomizationConfigListResponse.GetCustomizationConfigList_ModelCustomizationDataSetPo> getCustomizationConfigListResponse_data = new List<GetCustomizationConfigListResponse.GetCustomizationConfigList_ModelCustomizationDataSetPo>();
 			for (int i = 0; i < _ctx.Length("GetCustomizationConfigList.Data.Length"); i++) {
 				GetCustomizationConfigListResponse.GetCustomizationConfigList_ModelCustomizationDataSetPo modelCustomizationDataSetPo = new GetCustomizationConfigListResponse.GetCustomizationConfigList_ModelCustomizationDataSetPo();
-				modelCustomizationDataSetPo.ModelId = _ctx.LongValue("GetCustomizationConfigList.Data["+ i +"].ModelId");
-				modelCustomizationDataSetPo.ModeCustomizationId = _ctx.StringValue("GetCustomizationConfigList.Data["+ i +"].ModeCustomizationId");
-				modelCustomizationDataSetPo.ModelName = _ctx.StringValue("GetCustomizationConfigList.Data["+ i +"].ModelName");
-				modelCustomizationDataSetPo.ModelStatus = _ctx.IntegerValue("GetCustomizationConfigList.Data["+ i +"].ModelStatus");
 				modelCustomizationDataSetPo.TaskType = _ctx.IntegerValue("GetCustomizationConfigList.Data["+ i +"].TaskType");
 				modelCustomizationDataSetPo.CreateTime = _ctx.StringValue("GetCustomizationConfigList.Data["+ i +"].CreateTime");
+				modelCustomizationDataSetPo.ModelStatus = _ctx.IntegerValue("GetCustomizationConfigList.Data["+ i +"].ModelStatus");
+				modelCustomizationDataSetPo.ModelName = _ctx.StringValue("GetCustomizationConfigList.Data["+ i +"].ModelName");
+				modelCustomizationDataSetPo.ModelId = _ctx.LongValue("GetCustomizationConfigList.Data["+ i +"].ModelId");
+				modelCustomizationDataSetPo.ModeCustomizationId = _ctx.StringValue("GetCustomizationConfigList.Data["+ i +"].ModeCustomizationId");
 
 				getCustomizationConfigListResponse_data.Add(modelCustomizationDataSetPo);
 			}

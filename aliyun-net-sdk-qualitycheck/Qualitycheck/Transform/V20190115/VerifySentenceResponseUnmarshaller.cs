@@ -33,11 +33,11 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			verifySentenceResponse.HttpResponse = _ctx.HttpResponse;
 			verifySentenceResponse.RequestId = _ctx.StringValue("VerifySentence.RequestId");
 			verifySentenceResponse.Success = _ctx.BooleanValue("VerifySentence.Success");
+			verifySentenceResponse.IncorrectWords = _ctx.IntegerValue("VerifySentence.IncorrectWords");
+			verifySentenceResponse.TargetRole = _ctx.IntegerValue("VerifySentence.TargetRole");
 			verifySentenceResponse.Code = _ctx.StringValue("VerifySentence.Code");
 			verifySentenceResponse.Message = _ctx.StringValue("VerifySentence.Message");
 			verifySentenceResponse.SourceRole = _ctx.IntegerValue("VerifySentence.SourceRole");
-			verifySentenceResponse.TargetRole = _ctx.IntegerValue("VerifySentence.TargetRole");
-			verifySentenceResponse.IncorrectWords = _ctx.IntegerValue("VerifySentence.IncorrectWords");
 
 			List<VerifySentenceResponse.VerifySentence_Delta> verifySentenceResponse_data = new List<VerifySentenceResponse.VerifySentence_Delta>();
 			for (int i = 0; i < _ctx.Length("VerifySentence.Data.Length"); i++) {

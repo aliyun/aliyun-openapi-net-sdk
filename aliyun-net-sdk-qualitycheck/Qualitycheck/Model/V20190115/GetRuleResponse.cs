@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 	public class GetRuleResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private GetRule_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -115,83 +115,59 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			public class GetRule_RuleInfo
 			{
 
-				private string rid;
-
-				private string ruleLambda;
-
-				private string name;
+				private int? status;
 
 				private int? type;
 
-				private int? status;
+				private int? scoreSubId;
+
+				private int? isOnline;
+
+				private string createTime;
+
+				private string createEmpid;
+
+				private string lastUpdateEmpid;
 
 				private int? isDelete;
 
-				private string startTime;
+				private string rid;
+
+				private int? ruleScoreType;
 
 				private string endTime;
 
 				private string weight;
 
-				private int? isOnline;
+				private string startTime;
 
-				private string createEmpid;
-
-				private string createTime;
-
-				private string lastUpdateTime;
-
-				private string lastUpdateEmpid;
-
-				private string comments;
-
-				private int? autoReview;
-
-				private int? ruleScoreType;
-
-				private string scoreName;
+				private string ruleLambda;
 
 				private string scoreSubName;
 
-				private int? scoreId;
+				private int? autoReview;
 
-				private int? scoreSubId;
+				private string comments;
+
+				private string lastUpdateTime;
+
+				private string scoreName;
+
+				private string name;
+
+				private int? scoreId;
 
 				private List<string> businessCategoryNameList;
 
-				public string Rid
+				public int? Status
 				{
 					get
 					{
-						return rid;
+						return status;
 					}
 					set	
 					{
-						rid = value;
-					}
-				}
-
-				public string RuleLambda
-				{
-					get
-					{
-						return ruleLambda;
-					}
-					set	
-					{
-						ruleLambda = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
+						status = value;
 					}
 				}
 
@@ -207,15 +183,63 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					}
 				}
 
-				public int? Status
+				public int? ScoreSubId
 				{
 					get
 					{
-						return status;
+						return scoreSubId;
 					}
 					set	
 					{
-						status = value;
+						scoreSubId = value;
+					}
+				}
+
+				public int? IsOnline
+				{
+					get
+					{
+						return isOnline;
+					}
+					set	
+					{
+						isOnline = value;
+					}
+				}
+
+				public string CreateTime
+				{
+					get
+					{
+						return createTime;
+					}
+					set	
+					{
+						createTime = value;
+					}
+				}
+
+				public string CreateEmpid
+				{
+					get
+					{
+						return createEmpid;
+					}
+					set	
+					{
+						createEmpid = value;
+					}
+				}
+
+				public string LastUpdateEmpid
+				{
+					get
+					{
+						return lastUpdateEmpid;
+					}
+					set	
+					{
+						lastUpdateEmpid = value;
 					}
 				}
 
@@ -231,15 +255,27 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					}
 				}
 
-				public string StartTime
+				public string Rid
 				{
 					get
 					{
-						return startTime;
+						return rid;
 					}
 					set	
 					{
-						startTime = value;
+						rid = value;
+					}
+				}
+
+				public int? RuleScoreType
+				{
+					get
+					{
+						return ruleScoreType;
+					}
+					set	
+					{
+						ruleScoreType = value;
 					}
 				}
 
@@ -267,111 +303,27 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					}
 				}
 
-				public int? IsOnline
+				public string StartTime
 				{
 					get
 					{
-						return isOnline;
+						return startTime;
 					}
 					set	
 					{
-						isOnline = value;
+						startTime = value;
 					}
 				}
 
-				public string CreateEmpid
+				public string RuleLambda
 				{
 					get
 					{
-						return createEmpid;
+						return ruleLambda;
 					}
 					set	
 					{
-						createEmpid = value;
-					}
-				}
-
-				public string CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
-					}
-				}
-
-				public string LastUpdateTime
-				{
-					get
-					{
-						return lastUpdateTime;
-					}
-					set	
-					{
-						lastUpdateTime = value;
-					}
-				}
-
-				public string LastUpdateEmpid
-				{
-					get
-					{
-						return lastUpdateEmpid;
-					}
-					set	
-					{
-						lastUpdateEmpid = value;
-					}
-				}
-
-				public string Comments
-				{
-					get
-					{
-						return comments;
-					}
-					set	
-					{
-						comments = value;
-					}
-				}
-
-				public int? AutoReview
-				{
-					get
-					{
-						return autoReview;
-					}
-					set	
-					{
-						autoReview = value;
-					}
-				}
-
-				public int? RuleScoreType
-				{
-					get
-					{
-						return ruleScoreType;
-					}
-					set	
-					{
-						ruleScoreType = value;
-					}
-				}
-
-				public string ScoreName
-				{
-					get
-					{
-						return scoreName;
-					}
-					set	
-					{
-						scoreName = value;
+						ruleLambda = value;
 					}
 				}
 
@@ -387,6 +339,66 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					}
 				}
 
+				public int? AutoReview
+				{
+					get
+					{
+						return autoReview;
+					}
+					set	
+					{
+						autoReview = value;
+					}
+				}
+
+				public string Comments
+				{
+					get
+					{
+						return comments;
+					}
+					set	
+					{
+						comments = value;
+					}
+				}
+
+				public string LastUpdateTime
+				{
+					get
+					{
+						return lastUpdateTime;
+					}
+					set	
+					{
+						lastUpdateTime = value;
+					}
+				}
+
+				public string ScoreName
+				{
+					get
+					{
+						return scoreName;
+					}
+					set	
+					{
+						scoreName = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
 				public int? ScoreId
 				{
 					get
@@ -396,18 +408,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					set	
 					{
 						scoreId = value;
-					}
-				}
-
-				public int? ScoreSubId
-				{
-					get
-					{
-						return scoreSubId;
-					}
-					set	
-					{
-						scoreSubId = value;
 					}
 				}
 

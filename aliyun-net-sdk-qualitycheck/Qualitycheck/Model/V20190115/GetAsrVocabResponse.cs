@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 	public class GetAsrVocabResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private GetAsrVocab_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -129,21 +129,9 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			public class GetAsrVocab_Word
 			{
 
-				private string word;
-
 				private int? weight;
 
-				public string Word
-				{
-					get
-					{
-						return word;
-					}
-					set	
-					{
-						word = value;
-					}
-				}
+				private string word;
 
 				public int? Weight
 				{
@@ -154,6 +142,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					set	
 					{
 						weight = value;
+					}
+				}
+
+				public string Word
+				{
+					get
+					{
+						return word;
+					}
+					set	
+					{
+						word = value;
 					}
 				}
 			}

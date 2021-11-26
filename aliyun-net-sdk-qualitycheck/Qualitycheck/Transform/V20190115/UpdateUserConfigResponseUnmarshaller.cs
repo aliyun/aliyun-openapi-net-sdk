@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			UpdateUserConfigResponse updateUserConfigResponse = new UpdateUserConfigResponse();
 
 			updateUserConfigResponse.HttpResponse = _ctx.HttpResponse;
-			updateUserConfigResponse.RequestId = _ctx.StringValue("UpdateUserConfig.RequestId");
-			updateUserConfigResponse.Success = _ctx.BooleanValue("UpdateUserConfig.Success");
 			updateUserConfigResponse.Code = _ctx.StringValue("UpdateUserConfig.Code");
 			updateUserConfigResponse.Message = _ctx.StringValue("UpdateUserConfig.Message");
+			updateUserConfigResponse.RequestId = _ctx.StringValue("UpdateUserConfig.RequestId");
+			updateUserConfigResponse.Success = _ctx.BooleanValue("UpdateUserConfig.Success");
         
 			return updateUserConfigResponse;
         }

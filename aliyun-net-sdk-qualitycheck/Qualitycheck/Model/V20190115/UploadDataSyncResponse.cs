@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 	public class UploadDataSyncResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private List<UploadDataSync_ResultInfo> data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -143,25 +143,13 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			public class UploadDataSync_RuleHitInfo
 			{
 
-				private string rid;
-
 				private string tid;
+
+				private string rid;
 
 				private List<UploadDataSync_ConditionHitInfo> hit;
 
 				private List<UploadDataSync_ConditionBasicInfo> conditionInfo;
-
-				public string Rid
-				{
-					get
-					{
-						return rid;
-					}
-					set	
-					{
-						rid = value;
-					}
-				}
 
 				public string Tid
 				{
@@ -172,6 +160,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					set	
 					{
 						tid = value;
+					}
+				}
+
+				public string Rid
+				{
+					get
+					{
+						return rid;
+					}
+					set	
+					{
+						rid = value;
 					}
 				}
 
@@ -247,37 +247,25 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					public class UploadDataSync_HitKeyWord
 					{
 
-						private string val;
-
-						private int? pid;
+						private int? to;
 
 						private int? from;
 
-						private int? to;
+						private string val;
 
 						private string tid;
 
-						public string Val
-						{
-							get
-							{
-								return val;
-							}
-							set	
-							{
-								val = value;
-							}
-						}
+						private int? pid;
 
-						public int? Pid
+						public int? To
 						{
 							get
 							{
-								return pid;
+								return to;
 							}
 							set	
 							{
-								pid = value;
+								to = value;
 							}
 						}
 
@@ -293,15 +281,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							}
 						}
 
-						public int? To
+						public string Val
 						{
 							get
 							{
-								return to;
+								return val;
 							}
 							set	
 							{
-								to = value;
+								val = value;
 							}
 						}
 
@@ -316,32 +304,44 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 								tid = value;
 							}
 						}
+
+						public int? Pid
+						{
+							get
+							{
+								return pid;
+							}
+							set	
+							{
+								pid = value;
+							}
+						}
 					}
 
 					public class UploadDataSync_Phrase
 					{
 
-						private string role;
+						private string words;
 
 						private string identity;
 
-						private string words;
-
 						private long? begin;
-
-						private long? end;
 
 						private string beginTime;
 
-						public string Role
+						private long? end;
+
+						private string role;
+
+						public string Words
 						{
 							get
 							{
-								return role;
+								return words;
 							}
 							set	
 							{
-								role = value;
+								words = value;
 							}
 						}
 
@@ -357,18 +357,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							}
 						}
 
-						public string Words
-						{
-							get
-							{
-								return words;
-							}
-							set	
-							{
-								words = value;
-							}
-						}
-
 						public long? Begin
 						{
 							get
@@ -378,6 +366,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							set	
 							{
 								begin = value;
+							}
+						}
+
+						public string BeginTime
+						{
+							get
+							{
+								return beginTime;
+							}
+							set	
+							{
+								beginTime = value;
 							}
 						}
 
@@ -393,15 +393,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							}
 						}
 
-						public string BeginTime
+						public string Role
 						{
 							get
 							{
-								return beginTime;
+								return role;
 							}
 							set	
 							{
-								beginTime = value;
+								role = value;
 							}
 						}
 					}

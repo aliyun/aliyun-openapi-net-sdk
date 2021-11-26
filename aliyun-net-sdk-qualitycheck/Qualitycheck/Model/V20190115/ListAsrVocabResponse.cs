@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 	public class ListAsrVocabResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private List<ListAsrVocab_AsrVocab> data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public List<ListAsrVocab_AsrVocab> Data
 		{
 			get
@@ -98,25 +98,37 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 		public class ListAsrVocab_AsrVocab
 		{
 
-			private string id;
+			private string vocabularyId;
+
+			private string updateTime;
 
 			private string name;
 
 			private string createTime;
 
-			private string updateTime;
+			private string id;
 
-			private string vocabularyId;
-
-			public string Id
+			public string VocabularyId
 			{
 				get
 				{
-					return id;
+					return vocabularyId;
 				}
 				set	
 				{
-					id = value;
+					vocabularyId = value;
+				}
+			}
+
+			public string UpdateTime
+			{
+				get
+				{
+					return updateTime;
+				}
+				set	
+				{
+					updateTime = value;
 				}
 			}
 
@@ -144,27 +156,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public string UpdateTime
+			public string Id
 			{
 				get
 				{
-					return updateTime;
+					return id;
 				}
 				set	
 				{
-					updateTime = value;
-				}
-			}
-
-			public string VocabularyId
-			{
-				get
-				{
-					return vocabularyId;
-				}
-				set	
-				{
-					vocabularyId = value;
+					id = value;
 				}
 			}
 		}

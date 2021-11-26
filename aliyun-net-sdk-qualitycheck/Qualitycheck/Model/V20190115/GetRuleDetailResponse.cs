@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 	public class GetRuleDetailResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private GetRuleDetail_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public GetRuleDetail_Data Data
 		{
 			get
@@ -98,9 +98,51 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 		public class GetRuleDetail_Data
 		{
 
+			private int? pageSize;
+
+			private int? pageNumber;
+
+			private int? count;
+
 			private List<GetRuleDetail_ConditionBasicInfo> conditions;
 
 			private List<GetRuleDetail_RuleBasicInfo> rules;
+
+			public int? PageSize
+			{
+				get
+				{
+					return pageSize;
+				}
+				set	
+				{
+					pageSize = value;
+				}
+			}
+
+			public int? PageNumber
+			{
+				get
+				{
+					return pageNumber;
+				}
+				set	
+				{
+					pageNumber = value;
+				}
+			}
+
+			public int? Count
+			{
+				get
+				{
+					return count;
+				}
+				set	
+				{
+					count = value;
+				}
+			}
 
 			public List<GetRuleDetail_ConditionBasicInfo> Conditions
 			{
@@ -188,25 +230,13 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				public class GetRuleDetail_OperatorBasicInfo
 				{
 
-					private string oid;
-
 					private string type;
+
+					private string oid;
 
 					private string operName;
 
 					private GetRuleDetail_Param param;
-
-					public string Oid
-					{
-						get
-						{
-							return oid;
-						}
-						set	
-						{
-							oid = value;
-						}
-					}
 
 					public string Type
 					{
@@ -217,6 +247,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 						set	
 						{
 							type = value;
+						}
+					}
+
+					public string Oid
+					{
+						get
+						{
+							return oid;
+						}
+						set	
+						{
+							oid = value;
 						}
 					}
 
@@ -247,155 +289,67 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					public class GetRuleDetail_Param
 					{
 
-						private string regex;
-
-						private string phrase;
-
-						private int? interval;
-
-						private float? threshold;
-
-						private bool? inSentence;
-
-						private int? target;
-
-						private bool? fromEnd;
-
 						private bool? differentRole;
+
+						private string regex;
 
 						private string targetRole;
 
-						private int? score;
-
-						private bool? contextChatMatch;
-
-						private int? keywordMatchSize;
+						private int? velocityInMint;
 
 						private bool? average;
 
-						private int? velocityInMint;
-
-						private int? minWordSize;
-
 						private bool? keywordExtension;
 
-						private int? hitTime;
-
-						private int? from;
-
-						private string beginType;
-
-						private string compareOperator;
-
-						private int? checkType;
-
-						private int? maxEmotionChangeValue;
-
-						private int? checkType1;
-
-						private int? maxEmotionChangeValue2;
+						private int? score;
 
 						private string notRegex;
 
-						private float? similarity_threshold;
+						private string compareOperator;
 
 						private int? delayTime;
 
-						private List<string> operKeyWords;
+						private int? keywordMatchSize;
+
+						private int? hitTime;
+
+						private string beginType;
+
+						private int? target;
+
+						private int? maxEmotionChangeValue;
+
+						private float? threshold;
+
+						private int? from;
+
+						private bool? fromEnd;
+
+						private int? minWordSize;
+
+						private bool? inSentence;
+
+						private string phrase;
+
+						private float? similarity_threshold;
+
+						private int? checkType;
+
+						private int? interval;
+
+						private bool? contextChatMatch;
+
+						private List<string> excludes;
+
+						private List<string> antModelInfo;
+
+						private List<string> pvalues;
 
 						private List<string> references;
 
 						private List<string> similarlySentences;
 
-						private List<string> excludes;
-
-						private List<string> pvalues;
-
-						private List<string> antModelInfo;
-
-						public string Regex
-						{
-							get
-							{
-								return regex;
-							}
-							set	
-							{
-								regex = value;
-							}
-						}
-
-						public string Phrase
-						{
-							get
-							{
-								return phrase;
-							}
-							set	
-							{
-								phrase = value;
-							}
-						}
-
-						public int? Interval
-						{
-							get
-							{
-								return interval;
-							}
-							set	
-							{
-								interval = value;
-							}
-						}
-
-						public float? Threshold
-						{
-							get
-							{
-								return threshold;
-							}
-							set	
-							{
-								threshold = value;
-							}
-						}
-
-						public bool? InSentence
-						{
-							get
-							{
-								return inSentence;
-							}
-							set	
-							{
-								inSentence = value;
-							}
-						}
-
-						public int? Target
-						{
-							get
-							{
-								return target;
-							}
-							set	
-							{
-								target = value;
-							}
-						}
-
-						public bool? FromEnd
-						{
-							get
-							{
-								return fromEnd;
-							}
-							set	
-							{
-								fromEnd = value;
-							}
-						}
+						private List<string> operKeyWords;
 
 						public bool? DifferentRole
 						{
@@ -406,6 +360,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							set	
 							{
 								differentRole = value;
+							}
+						}
+
+						public string Regex
+						{
+							get
+							{
+								return regex;
+							}
+							set	
+							{
+								regex = value;
 							}
 						}
 
@@ -421,39 +387,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							}
 						}
 
-						public int? Score
+						public int? VelocityInMint
 						{
 							get
 							{
-								return score;
+								return velocityInMint;
 							}
 							set	
 							{
-								score = value;
-							}
-						}
-
-						public bool? ContextChatMatch
-						{
-							get
-							{
-								return contextChatMatch;
-							}
-							set	
-							{
-								contextChatMatch = value;
-							}
-						}
-
-						public int? KeywordMatchSize
-						{
-							get
-							{
-								return keywordMatchSize;
-							}
-							set	
-							{
-								keywordMatchSize = value;
+								velocityInMint = value;
 							}
 						}
 
@@ -469,30 +411,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							}
 						}
 
-						public int? VelocityInMint
-						{
-							get
-							{
-								return velocityInMint;
-							}
-							set	
-							{
-								velocityInMint = value;
-							}
-						}
-
-						public int? MinWordSize
-						{
-							get
-							{
-								return minWordSize;
-							}
-							set	
-							{
-								minWordSize = value;
-							}
-						}
-
 						public bool? KeywordExtension
 						{
 							get
@@ -505,99 +423,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							}
 						}
 
-						public int? HitTime
+						public int? Score
 						{
 							get
 							{
-								return hitTime;
+								return score;
 							}
 							set	
 							{
-								hitTime = value;
-							}
-						}
-
-						public int? From
-						{
-							get
-							{
-								return from;
-							}
-							set	
-							{
-								from = value;
-							}
-						}
-
-						public string BeginType
-						{
-							get
-							{
-								return beginType;
-							}
-							set	
-							{
-								beginType = value;
-							}
-						}
-
-						public string CompareOperator
-						{
-							get
-							{
-								return compareOperator;
-							}
-							set	
-							{
-								compareOperator = value;
-							}
-						}
-
-						public int? CheckType
-						{
-							get
-							{
-								return checkType;
-							}
-							set	
-							{
-								checkType = value;
-							}
-						}
-
-						public int? MaxEmotionChangeValue
-						{
-							get
-							{
-								return maxEmotionChangeValue;
-							}
-							set	
-							{
-								maxEmotionChangeValue = value;
-							}
-						}
-
-						public int? CheckType1
-						{
-							get
-							{
-								return checkType1;
-							}
-							set	
-							{
-								checkType1 = value;
-							}
-						}
-
-						public int? MaxEmotionChangeValue2
-						{
-							get
-							{
-								return maxEmotionChangeValue2;
-							}
-							set	
-							{
-								maxEmotionChangeValue2 = value;
+								score = value;
 							}
 						}
 
@@ -613,15 +447,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							}
 						}
 
-						public float? Similarity_threshold
+						public string CompareOperator
 						{
 							get
 							{
-								return similarity_threshold;
+								return compareOperator;
 							}
 							set	
 							{
-								similarity_threshold = value;
+								compareOperator = value;
 							}
 						}
 
@@ -637,15 +471,219 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							}
 						}
 
-						public List<string> OperKeyWords
+						public int? KeywordMatchSize
 						{
 							get
 							{
-								return operKeyWords;
+								return keywordMatchSize;
 							}
 							set	
 							{
-								operKeyWords = value;
+								keywordMatchSize = value;
+							}
+						}
+
+						public int? HitTime
+						{
+							get
+							{
+								return hitTime;
+							}
+							set	
+							{
+								hitTime = value;
+							}
+						}
+
+						public string BeginType
+						{
+							get
+							{
+								return beginType;
+							}
+							set	
+							{
+								beginType = value;
+							}
+						}
+
+						public int? Target
+						{
+							get
+							{
+								return target;
+							}
+							set	
+							{
+								target = value;
+							}
+						}
+
+						public int? MaxEmotionChangeValue
+						{
+							get
+							{
+								return maxEmotionChangeValue;
+							}
+							set	
+							{
+								maxEmotionChangeValue = value;
+							}
+						}
+
+						public float? Threshold
+						{
+							get
+							{
+								return threshold;
+							}
+							set	
+							{
+								threshold = value;
+							}
+						}
+
+						public int? From
+						{
+							get
+							{
+								return from;
+							}
+							set	
+							{
+								from = value;
+							}
+						}
+
+						public bool? FromEnd
+						{
+							get
+							{
+								return fromEnd;
+							}
+							set	
+							{
+								fromEnd = value;
+							}
+						}
+
+						public int? MinWordSize
+						{
+							get
+							{
+								return minWordSize;
+							}
+							set	
+							{
+								minWordSize = value;
+							}
+						}
+
+						public bool? InSentence
+						{
+							get
+							{
+								return inSentence;
+							}
+							set	
+							{
+								inSentence = value;
+							}
+						}
+
+						public string Phrase
+						{
+							get
+							{
+								return phrase;
+							}
+							set	
+							{
+								phrase = value;
+							}
+						}
+
+						public float? Similarity_threshold
+						{
+							get
+							{
+								return similarity_threshold;
+							}
+							set	
+							{
+								similarity_threshold = value;
+							}
+						}
+
+						public int? CheckType
+						{
+							get
+							{
+								return checkType;
+							}
+							set	
+							{
+								checkType = value;
+							}
+						}
+
+						public int? Interval
+						{
+							get
+							{
+								return interval;
+							}
+							set	
+							{
+								interval = value;
+							}
+						}
+
+						public bool? ContextChatMatch
+						{
+							get
+							{
+								return contextChatMatch;
+							}
+							set	
+							{
+								contextChatMatch = value;
+							}
+						}
+
+						public List<string> Excludes
+						{
+							get
+							{
+								return excludes;
+							}
+							set	
+							{
+								excludes = value;
+							}
+						}
+
+						public List<string> AntModelInfo
+						{
+							get
+							{
+								return antModelInfo;
+							}
+							set	
+							{
+								antModelInfo = value;
+							}
+						}
+
+						public List<string> Pvalues
+						{
+							get
+							{
+								return pvalues;
+							}
+							set	
+							{
+								pvalues = value;
 							}
 						}
 
@@ -673,39 +711,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							}
 						}
 
-						public List<string> Excludes
+						public List<string> OperKeyWords
 						{
 							get
 							{
-								return excludes;
+								return operKeyWords;
 							}
 							set	
 							{
-								excludes = value;
-							}
-						}
-
-						public List<string> Pvalues
-						{
-							get
-							{
-								return pvalues;
-							}
-							set	
-							{
-								pvalues = value;
-							}
-						}
-
-						public List<string> AntModelInfo
-						{
-							get
-							{
-								return antModelInfo;
-							}
-							set	
-							{
-								antModelInfo = value;
+								operKeyWords = value;
 							}
 						}
 					}
@@ -714,25 +728,13 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				public class GetRuleDetail_CheckRange
 				{
 
-					private string role;
-
 					private bool? absolute;
+
+					private string role;
 
 					private GetRuleDetail_Anchor anchor;
 
 					private GetRuleDetail_Range range;
-
-					public string Role
-					{
-						get
-						{
-							return role;
-						}
-						set	
-						{
-							role = value;
-						}
-					}
 
 					public bool? Absolute
 					{
@@ -743,6 +745,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 						set	
 						{
 							absolute = value;
+						}
+					}
+
+					public string Role
+					{
+						get
+						{
+							return role;
+						}
+						set	
+						{
+							role = value;
 						}
 					}
 
@@ -773,21 +787,21 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					public class GetRuleDetail_Anchor
 					{
 
-						private string anchorCid;
+						private int? hitTime;
 
 						private string location;
 
-						private int? hitTime;
+						private string anchorCid;
 
-						public string AnchorCid
+						public int? HitTime
 						{
 							get
 							{
-								return anchorCid;
+								return hitTime;
 							}
 							set	
 							{
-								anchorCid = value;
+								hitTime = value;
 							}
 						}
 
@@ -803,15 +817,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							}
 						}
 
-						public int? HitTime
+						public string AnchorCid
 						{
 							get
 							{
-								return hitTime;
+								return anchorCid;
 							}
 							set	
 							{
-								hitTime = value;
+								anchorCid = value;
 							}
 						}
 					}
@@ -819,21 +833,9 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					public class GetRuleDetail_Range
 					{
 
-						private int? from;
-
 						private int? to;
 
-						public int? From
-						{
-							get
-							{
-								return from;
-							}
-							set	
-							{
-								from = value;
-							}
-						}
+						private int? from;
 
 						public int? To
 						{
@@ -846,6 +848,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 								to = value;
 							}
 						}
+
+						public int? From
+						{
+							get
+							{
+								return from;
+							}
+							set	
+							{
+								from = value;
+							}
+						}
 					}
 				}
 			}
@@ -853,25 +867,13 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			public class GetRuleDetail_RuleBasicInfo
 			{
 
-				private string rid;
-
 				private string ruleLambda;
+
+				private string rid;
 
 				private List<GetRuleDetail_BusinessCategoryBasicInfo> businessCategories;
 
 				private List<string> triggers;
-
-				public string Rid
-				{
-					get
-					{
-						return rid;
-					}
-					set	
-					{
-						rid = value;
-					}
-				}
 
 				public string RuleLambda
 				{
@@ -882,6 +884,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					set	
 					{
 						ruleLambda = value;
+					}
+				}
+
+				public string Rid
+				{
+					get
+					{
+						return rid;
+					}
+					set	
+					{
+						rid = value;
 					}
 				}
 
@@ -912,21 +926,21 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				public class GetRuleDetail_BusinessCategoryBasicInfo
 				{
 
-					private int? bid;
+					private string businessName;
 
 					private int? serviceType;
 
-					private string businessName;
+					private int? bid;
 
-					public int? Bid
+					public string BusinessName
 					{
 						get
 						{
-							return bid;
+							return businessName;
 						}
 						set	
 						{
-							bid = value;
+							businessName = value;
 						}
 					}
 
@@ -942,15 +956,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 						}
 					}
 
-					public string BusinessName
+					public int? Bid
 					{
 						get
 						{
-							return businessName;
+							return bid;
 						}
 						set	
 						{
-							businessName = value;
+							bid = value;
 						}
 					}
 				}

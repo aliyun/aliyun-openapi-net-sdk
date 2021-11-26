@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 	public class GetPrecisionTaskResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private GetPrecisionTask_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public GetPrecisionTask_Data Data
 		{
 			get
@@ -98,99 +98,39 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 		public class GetPrecisionTask_Data
 		{
 
-			private string name;
-
-			private int? source;
-
-			private long? dataSetId;
-
-			private string dataSetName;
-
-			private string taskId;
-
-			private int? duration;
+			private int? status;
 
 			private string updateTime;
 
-			private int? status;
+			private int? incorrectWords;
 
-			private int? totalCount;
+			private long? dataSetId;
 
 			private int? verifiedCount;
 
-			private int? incorrectWords;
+			private int? duration;
+
+			private string dataSetName;
+
+			private int? totalCount;
+
+			private int? source;
+
+			private string name;
+
+			private string taskId;
 
 			private List<GetPrecisionTask_Precision> precisions;
 
-			public string Name
+			public int? Status
 			{
 				get
 				{
-					return name;
+					return status;
 				}
 				set	
 				{
-					name = value;
-				}
-			}
-
-			public int? Source
-			{
-				get
-				{
-					return source;
-				}
-				set	
-				{
-					source = value;
-				}
-			}
-
-			public long? DataSetId
-			{
-				get
-				{
-					return dataSetId;
-				}
-				set	
-				{
-					dataSetId = value;
-				}
-			}
-
-			public string DataSetName
-			{
-				get
-				{
-					return dataSetName;
-				}
-				set	
-				{
-					dataSetName = value;
-				}
-			}
-
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
-
-			public int? Duration
-			{
-				get
-				{
-					return duration;
-				}
-				set	
-				{
-					duration = value;
+					status = value;
 				}
 			}
 
@@ -206,27 +146,27 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public int? Status
+			public int? IncorrectWords
 			{
 				get
 				{
-					return status;
+					return incorrectWords;
 				}
 				set	
 				{
-					status = value;
+					incorrectWords = value;
 				}
 			}
 
-			public int? TotalCount
+			public long? DataSetId
 			{
 				get
 				{
-					return totalCount;
+					return dataSetId;
 				}
 				set	
 				{
-					totalCount = value;
+					dataSetId = value;
 				}
 			}
 
@@ -242,15 +182,75 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public int? IncorrectWords
+			public int? Duration
 			{
 				get
 				{
-					return incorrectWords;
+					return duration;
 				}
 				set	
 				{
-					incorrectWords = value;
+					duration = value;
+				}
+			}
+
+			public string DataSetName
+			{
+				get
+				{
+					return dataSetName;
+				}
+				set	
+				{
+					dataSetName = value;
+				}
+			}
+
+			public int? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
+				}
+			}
+
+			public int? Source
+			{
+				get
+				{
+					return source;
+				}
+				set	
+				{
+					source = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string TaskId
+			{
+				get
+				{
+					return taskId;
+				}
+				set	
+				{
+					taskId = value;
 				}
 			}
 
@@ -269,15 +269,27 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			public class GetPrecisionTask_Precision
 			{
 
+				private int? status;
+
 				private string modelName;
 
-				private long? modelId;
+				private string taskId;
 
 				private float? precision;
 
-				private int? status;
+				private long? modelId;
 
-				private string taskId;
+				public int? Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
 
 				public string ModelName
 				{
@@ -291,15 +303,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					}
 				}
 
-				public long? ModelId
+				public string TaskId
 				{
 					get
 					{
-						return modelId;
+						return taskId;
 					}
 					set	
 					{
-						modelId = value;
+						taskId = value;
 					}
 				}
 
@@ -315,27 +327,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					}
 				}
 
-				public int? Status
+				public long? ModelId
 				{
 					get
 					{
-						return status;
+						return modelId;
 					}
 					set	
 					{
-						status = value;
-					}
-				}
-
-				public string TaskId
-				{
-					get
-					{
-						return taskId;
-					}
-					set	
-					{
-						taskId = value;
+						modelId = value;
 					}
 				}
 			}

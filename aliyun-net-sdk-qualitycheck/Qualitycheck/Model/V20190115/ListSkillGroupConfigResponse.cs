@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 	public class ListSkillGroupConfigResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private List<ListSkillGroupConfig_SkillGroupConfig> data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public List<ListSkillGroupConfig_SkillGroupConfig> Data
 		{
 			get
@@ -98,43 +98,43 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 		public class ListSkillGroupConfig_SkillGroupConfig
 		{
 
-			private long? id;
-
-			private string instanceId;
-
-			private long? modelId;
-
-			private string modelName;
-
-			private string name;
-
-			private string rid;
-
-			private string skillGroupId;
-
-			private string skillGroupName;
+			private int? type;
 
 			private int? status;
 
-			private int? type;
-
-			private long? vocabId;
-
-			private string vocabName;
-
-			private string createTime;
-
 			private string updateTime;
-
-			private int? qualityCheckType;
 
 			private int? allContentQualityCheck;
 
-			private string allRids;
+			private string createTime;
+
+			private string skillGroupId;
+
+			private bool? screenSwitch;
+
+			private string instanceId;
+
+			private long? vocabId;
 
 			private int? skillGroupFrom;
 
-			private bool? screenSwitch;
+			private string rid;
+
+			private string skillGroupName;
+
+			private string modelName;
+
+			private string allRids;
+
+			private string name;
+
+			private long? modelId;
+
+			private long? id;
+
+			private int? qualityCheckType;
+
+			private string vocabName;
 
 			private List<ListSkillGroupConfig_RuleNameInfo> ruleList;
 
@@ -142,99 +142,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 			private List<ListSkillGroupConfig_SkillGroupScreen> skillGroupScreens;
 
-			public long? Id
+			public int? Type
 			{
 				get
 				{
-					return id;
+					return type;
 				}
 				set	
 				{
-					id = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public long? ModelId
-			{
-				get
-				{
-					return modelId;
-				}
-				set	
-				{
-					modelId = value;
-				}
-			}
-
-			public string ModelName
-			{
-				get
-				{
-					return modelName;
-				}
-				set	
-				{
-					modelName = value;
-				}
-			}
-
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
-
-			public string Rid
-			{
-				get
-				{
-					return rid;
-				}
-				set	
-				{
-					rid = value;
-				}
-			}
-
-			public string SkillGroupId
-			{
-				get
-				{
-					return skillGroupId;
-				}
-				set	
-				{
-					skillGroupId = value;
-				}
-			}
-
-			public string SkillGroupName
-			{
-				get
-				{
-					return skillGroupName;
-				}
-				set	
-				{
-					skillGroupName = value;
+					type = value;
 				}
 			}
 
@@ -250,54 +166,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public int? Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
-			}
-
-			public long? VocabId
-			{
-				get
-				{
-					return vocabId;
-				}
-				set	
-				{
-					vocabId = value;
-				}
-			}
-
-			public string VocabName
-			{
-				get
-				{
-					return vocabName;
-				}
-				set	
-				{
-					vocabName = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
-
 			public string UpdateTime
 			{
 				get
@@ -307,18 +175,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				set	
 				{
 					updateTime = value;
-				}
-			}
-
-			public int? QualityCheckType
-			{
-				get
-				{
-					return qualityCheckType;
-				}
-				set	
-				{
-					qualityCheckType = value;
 				}
 			}
 
@@ -334,15 +190,63 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public string AllRids
+			public string CreateTime
 			{
 				get
 				{
-					return allRids;
+					return createTime;
 				}
 				set	
 				{
-					allRids = value;
+					createTime = value;
+				}
+			}
+
+			public string SkillGroupId
+			{
+				get
+				{
+					return skillGroupId;
+				}
+				set	
+				{
+					skillGroupId = value;
+				}
+			}
+
+			public bool? ScreenSwitch
+			{
+				get
+				{
+					return screenSwitch;
+				}
+				set	
+				{
+					screenSwitch = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public long? VocabId
+			{
+				get
+				{
+					return vocabId;
+				}
+				set	
+				{
+					vocabId = value;
 				}
 			}
 
@@ -358,15 +262,111 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public bool? ScreenSwitch
+			public string Rid
 			{
 				get
 				{
-					return screenSwitch;
+					return rid;
 				}
 				set	
 				{
-					screenSwitch = value;
+					rid = value;
+				}
+			}
+
+			public string SkillGroupName
+			{
+				get
+				{
+					return skillGroupName;
+				}
+				set	
+				{
+					skillGroupName = value;
+				}
+			}
+
+			public string ModelName
+			{
+				get
+				{
+					return modelName;
+				}
+				set	
+				{
+					modelName = value;
+				}
+			}
+
+			public string AllRids
+			{
+				get
+				{
+					return allRids;
+				}
+				set	
+				{
+					allRids = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public long? ModelId
+			{
+				get
+				{
+					return modelId;
+				}
+				set	
+				{
+					modelId = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public int? QualityCheckType
+			{
+				get
+				{
+					return qualityCheckType;
+				}
+				set	
+				{
+					qualityCheckType = value;
+				}
+			}
+
+			public string VocabName
+			{
+				get
+				{
+					return vocabName;
+				}
+				set	
+				{
+					vocabName = value;
 				}
 			}
 
@@ -409,21 +409,9 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			public class ListSkillGroupConfig_RuleNameInfo
 			{
 
-				private long? rid;
-
 				private string ruleName;
 
-				public long? Rid
-				{
-					get
-					{
-						return rid;
-					}
-					set	
-					{
-						rid = value;
-					}
-				}
+				private long? rid;
 
 				public string RuleName
 				{
@@ -436,28 +424,40 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 						ruleName = value;
 					}
 				}
+
+				public long? Rid
+				{
+					get
+					{
+						return rid;
+					}
+					set	
+					{
+						rid = value;
+					}
+				}
 			}
 
 			public class ListSkillGroupConfig_SkillGroupScreen
 			{
 
-				private string name;
+				private string _value;
 
 				private int? dataType;
 
 				private int? symbol;
 
-				private string _value;
+				private string name;
 
-				public string Name
+				public string _Value
 				{
 					get
 					{
-						return name;
+						return _value;
 					}
 					set	
 					{
-						name = value;
+						_value = value;
 					}
 				}
 
@@ -485,15 +485,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					}
 				}
 
-				public string _Value
+				public string Name
 				{
 					get
 					{
-						return _value;
+						return name;
 					}
 					set	
 					{
-						_value = value;
+						name = value;
 					}
 				}
 			}

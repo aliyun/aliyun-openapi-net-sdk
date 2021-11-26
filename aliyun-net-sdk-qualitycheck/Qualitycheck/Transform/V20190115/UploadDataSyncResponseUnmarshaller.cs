@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			UploadDataSyncResponse uploadDataSyncResponse = new UploadDataSyncResponse();
 
 			uploadDataSyncResponse.HttpResponse = _ctx.HttpResponse;
-			uploadDataSyncResponse.RequestId = _ctx.StringValue("UploadDataSync.RequestId");
-			uploadDataSyncResponse.Success = _ctx.BooleanValue("UploadDataSync.Success");
 			uploadDataSyncResponse.Code = _ctx.StringValue("UploadDataSync.Code");
 			uploadDataSyncResponse.Message = _ctx.StringValue("UploadDataSync.Message");
+			uploadDataSyncResponse.RequestId = _ctx.StringValue("UploadDataSync.RequestId");
+			uploadDataSyncResponse.Success = _ctx.BooleanValue("UploadDataSync.Success");
 
 			List<UploadDataSyncResponse.UploadDataSync_ResultInfo> uploadDataSyncResponse_data = new List<UploadDataSyncResponse.UploadDataSync_ResultInfo>();
 			for (int i = 0; i < _ctx.Length("UploadDataSync.Data.Length"); i++) {
@@ -50,8 +50,8 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 				List<UploadDataSyncResponse.UploadDataSync_ResultInfo.UploadDataSync_RuleHitInfo> resultInfo_rules = new List<UploadDataSyncResponse.UploadDataSync_ResultInfo.UploadDataSync_RuleHitInfo>();
 				for (int j = 0; j < _ctx.Length("UploadDataSync.Data["+ i +"].Rules.Length"); j++) {
 					UploadDataSyncResponse.UploadDataSync_ResultInfo.UploadDataSync_RuleHitInfo ruleHitInfo = new UploadDataSyncResponse.UploadDataSync_ResultInfo.UploadDataSync_RuleHitInfo();
-					ruleHitInfo.Rid = _ctx.StringValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Rid");
 					ruleHitInfo.Tid = _ctx.StringValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Tid");
+					ruleHitInfo.Rid = _ctx.StringValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Rid");
 
 					List<UploadDataSyncResponse.UploadDataSync_ResultInfo.UploadDataSync_RuleHitInfo.UploadDataSync_ConditionHitInfo> ruleHitInfo_hit = new List<UploadDataSyncResponse.UploadDataSync_ResultInfo.UploadDataSync_RuleHitInfo.UploadDataSync_ConditionHitInfo>();
 					for (int k = 0; k < _ctx.Length("UploadDataSync.Data["+ i +"].Rules["+ j +"].Hit.Length"); k++) {
@@ -64,22 +64,22 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 						conditionHitInfo.HitCids = conditionHitInfo_hitCids;
 
 						UploadDataSyncResponse.UploadDataSync_ResultInfo.UploadDataSync_RuleHitInfo.UploadDataSync_ConditionHitInfo.UploadDataSync_Phrase phrase = new UploadDataSyncResponse.UploadDataSync_ResultInfo.UploadDataSync_RuleHitInfo.UploadDataSync_ConditionHitInfo.UploadDataSync_Phrase();
-						phrase.Role = _ctx.StringValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Role");
-						phrase.Identity = _ctx.StringValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Identity");
 						phrase.Words = _ctx.StringValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Words");
+						phrase.Identity = _ctx.StringValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Identity");
 						phrase.Begin = _ctx.LongValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Begin");
-						phrase.End = _ctx.LongValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.End");
 						phrase.BeginTime = _ctx.StringValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.BeginTime");
+						phrase.End = _ctx.LongValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.End");
+						phrase.Role = _ctx.StringValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].Phrase.Role");
 						conditionHitInfo.Phrase = phrase;
 
 						List<UploadDataSyncResponse.UploadDataSync_ResultInfo.UploadDataSync_RuleHitInfo.UploadDataSync_ConditionHitInfo.UploadDataSync_HitKeyWord> conditionHitInfo_hitKeyWords = new List<UploadDataSyncResponse.UploadDataSync_ResultInfo.UploadDataSync_RuleHitInfo.UploadDataSync_ConditionHitInfo.UploadDataSync_HitKeyWord>();
 						for (int l = 0; l < _ctx.Length("UploadDataSync.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords.Length"); l++) {
 							UploadDataSyncResponse.UploadDataSync_ResultInfo.UploadDataSync_RuleHitInfo.UploadDataSync_ConditionHitInfo.UploadDataSync_HitKeyWord hitKeyWord = new UploadDataSyncResponse.UploadDataSync_ResultInfo.UploadDataSync_RuleHitInfo.UploadDataSync_ConditionHitInfo.UploadDataSync_HitKeyWord();
-							hitKeyWord.Val = _ctx.StringValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].Val");
-							hitKeyWord.Pid = _ctx.IntegerValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].Pid");
-							hitKeyWord.From = _ctx.IntegerValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].From");
 							hitKeyWord.To = _ctx.IntegerValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].To");
+							hitKeyWord.From = _ctx.IntegerValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].From");
+							hitKeyWord.Val = _ctx.StringValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].Val");
 							hitKeyWord.Tid = _ctx.StringValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].Tid");
+							hitKeyWord.Pid = _ctx.IntegerValue("UploadDataSync.Data["+ i +"].Rules["+ j +"].Hit["+ k +"].HitKeyWords["+ l +"].Pid");
 
 							conditionHitInfo_hitKeyWords.Add(hitKeyWord);
 						}

@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			UpdateSubScoreForApiResponse updateSubScoreForApiResponse = new UpdateSubScoreForApiResponse();
 
 			updateSubScoreForApiResponse.HttpResponse = _ctx.HttpResponse;
-			updateSubScoreForApiResponse.RequestId = _ctx.StringValue("UpdateSubScoreForApi.RequestId");
-			updateSubScoreForApiResponse.Success = _ctx.BooleanValue("UpdateSubScoreForApi.Success");
 			updateSubScoreForApiResponse.Code = _ctx.StringValue("UpdateSubScoreForApi.Code");
 			updateSubScoreForApiResponse.Message = _ctx.StringValue("UpdateSubScoreForApi.Message");
+			updateSubScoreForApiResponse.RequestId = _ctx.StringValue("UpdateSubScoreForApi.RequestId");
+			updateSubScoreForApiResponse.Success = _ctx.BooleanValue("UpdateSubScoreForApi.Success");
         
 			return updateSubScoreForApiResponse;
         }

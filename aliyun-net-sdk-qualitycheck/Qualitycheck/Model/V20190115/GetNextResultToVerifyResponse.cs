@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 	public class GetNextResultToVerifyResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private GetNextResultToVerify_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public GetNextResultToVerify_Data Data
 		{
 			get
@@ -98,33 +98,45 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 		public class GetNextResultToVerify_Data
 		{
 
-			private int? status;
+			private int? index;
 
-			private string audioURL;
+			private int? status;
 
 			private string audioScheme;
 
-			private string fileName;
-
-			private string fileId;
-
-			private bool? verified;
-
-			private int? totalCount;
-
-			private int? verifiedCount;
-
-			private int? incorrectWords;
-
-			private float? precision;
+			private string audioURL;
 
 			private string updateTime;
 
+			private int? incorrectWords;
+
+			private int? verifiedCount;
+
+			private bool? verified;
+
+			private string fileName;
+
+			private int? totalCount;
+
+			private float? precision;
+
+			private string fileId;
+
 			private int? duration;
 
-			private int? index;
-
 			private List<GetNextResultToVerify_Dialogue> dialogues;
+
+			public int? Index
+			{
+				get
+				{
+					return index;
+				}
+				set	
+				{
+					index = value;
+				}
+			}
 
 			public int? Status
 			{
@@ -135,18 +147,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				set	
 				{
 					status = value;
-				}
-			}
-
-			public string AudioURL
-			{
-				get
-				{
-					return audioURL;
-				}
-				set	
-				{
-					audioURL = value;
 				}
 			}
 
@@ -162,87 +162,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public string FileName
+			public string AudioURL
 			{
 				get
 				{
-					return fileName;
+					return audioURL;
 				}
 				set	
 				{
-					fileName = value;
-				}
-			}
-
-			public string FileId
-			{
-				get
-				{
-					return fileId;
-				}
-				set	
-				{
-					fileId = value;
-				}
-			}
-
-			public bool? Verified
-			{
-				get
-				{
-					return verified;
-				}
-				set	
-				{
-					verified = value;
-				}
-			}
-
-			public int? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
-
-			public int? VerifiedCount
-			{
-				get
-				{
-					return verifiedCount;
-				}
-				set	
-				{
-					verifiedCount = value;
-				}
-			}
-
-			public int? IncorrectWords
-			{
-				get
-				{
-					return incorrectWords;
-				}
-				set	
-				{
-					incorrectWords = value;
-				}
-			}
-
-			public float? Precision
-			{
-				get
-				{
-					return precision;
-				}
-				set	
-				{
-					precision = value;
+					audioURL = value;
 				}
 			}
 
@@ -258,6 +186,90 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
+			public int? IncorrectWords
+			{
+				get
+				{
+					return incorrectWords;
+				}
+				set	
+				{
+					incorrectWords = value;
+				}
+			}
+
+			public int? VerifiedCount
+			{
+				get
+				{
+					return verifiedCount;
+				}
+				set	
+				{
+					verifiedCount = value;
+				}
+			}
+
+			public bool? Verified
+			{
+				get
+				{
+					return verified;
+				}
+				set	
+				{
+					verified = value;
+				}
+			}
+
+			public string FileName
+			{
+				get
+				{
+					return fileName;
+				}
+				set	
+				{
+					fileName = value;
+				}
+			}
+
+			public int? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
+				}
+			}
+
+			public float? Precision
+			{
+				get
+				{
+					return precision;
+				}
+				set	
+				{
+					precision = value;
+				}
+			}
+
+			public string FileId
+			{
+				get
+				{
+					return fileId;
+				}
+				set	
+				{
+					fileId = value;
+				}
+			}
+
 			public int? Duration
 			{
 				get
@@ -267,18 +279,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				set	
 				{
 					duration = value;
-				}
-			}
-
-			public int? Index
-			{
-				get
-				{
-					return index;
-				}
-				set	
-				{
-					index = value;
 				}
 			}
 
@@ -297,91 +297,43 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			public class GetNextResultToVerify_Dialogue
 			{
 
-				private long? begin;
-
-				private string beginTime;
-
-				private int? emotionValue;
-
-				private long? end;
-
-				private string hourMinSec;
+				private string words;
 
 				private string identity;
 
-				private string role;
+				private int? incorrectWords;
 
-				private string sourceRole;
-
-				private int? silenceDuration;
-
-				private int? speechRate;
-
-				private string words;
+				private string beginTime;
 
 				private string sourceWords;
 
-				private int? incorrectWords;
+				private long? end;
+
+				private int? speechRate;
+
+				private string hourMinSec;
+
+				private string sourceRole;
+
+				private long? begin;
+
+				private int? emotionValue;
+
+				private string role;
+
+				private int? silenceDuration;
 
 				private List<GetNextResultToVerify_Delta> deltas;
 
-				public long? Begin
+				public string Words
 				{
 					get
 					{
-						return begin;
+						return words;
 					}
 					set	
 					{
-						begin = value;
-					}
-				}
-
-				public string BeginTime
-				{
-					get
-					{
-						return beginTime;
-					}
-					set	
-					{
-						beginTime = value;
-					}
-				}
-
-				public int? EmotionValue
-				{
-					get
-					{
-						return emotionValue;
-					}
-					set	
-					{
-						emotionValue = value;
-					}
-				}
-
-				public long? End
-				{
-					get
-					{
-						return end;
-					}
-					set	
-					{
-						end = value;
-					}
-				}
-
-				public string HourMinSec
-				{
-					get
-					{
-						return hourMinSec;
-					}
-					set	
-					{
-						hourMinSec = value;
+						words = value;
 					}
 				}
 
@@ -397,63 +349,27 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					}
 				}
 
-				public string Role
+				public int? IncorrectWords
 				{
 					get
 					{
-						return role;
+						return incorrectWords;
 					}
 					set	
 					{
-						role = value;
+						incorrectWords = value;
 					}
 				}
 
-				public string SourceRole
+				public string BeginTime
 				{
 					get
 					{
-						return sourceRole;
+						return beginTime;
 					}
 					set	
 					{
-						sourceRole = value;
-					}
-				}
-
-				public int? SilenceDuration
-				{
-					get
-					{
-						return silenceDuration;
-					}
-					set	
-					{
-						silenceDuration = value;
-					}
-				}
-
-				public int? SpeechRate
-				{
-					get
-					{
-						return speechRate;
-					}
-					set	
-					{
-						speechRate = value;
-					}
-				}
-
-				public string Words
-				{
-					get
-					{
-						return words;
-					}
-					set	
-					{
-						words = value;
+						beginTime = value;
 					}
 				}
 
@@ -469,15 +385,99 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					}
 				}
 
-				public int? IncorrectWords
+				public long? End
 				{
 					get
 					{
-						return incorrectWords;
+						return end;
 					}
 					set	
 					{
-						incorrectWords = value;
+						end = value;
+					}
+				}
+
+				public int? SpeechRate
+				{
+					get
+					{
+						return speechRate;
+					}
+					set	
+					{
+						speechRate = value;
+					}
+				}
+
+				public string HourMinSec
+				{
+					get
+					{
+						return hourMinSec;
+					}
+					set	
+					{
+						hourMinSec = value;
+					}
+				}
+
+				public string SourceRole
+				{
+					get
+					{
+						return sourceRole;
+					}
+					set	
+					{
+						sourceRole = value;
+					}
+				}
+
+				public long? Begin
+				{
+					get
+					{
+						return begin;
+					}
+					set	
+					{
+						begin = value;
+					}
+				}
+
+				public int? EmotionValue
+				{
+					get
+					{
+						return emotionValue;
+					}
+					set	
+					{
+						emotionValue = value;
+					}
+				}
+
+				public string Role
+				{
+					get
+					{
+						return role;
+					}
+					set	
+					{
+						role = value;
+					}
+				}
+
+				public int? SilenceDuration
+				{
+					get
+					{
+						return silenceDuration;
+					}
+					set	
+					{
+						silenceDuration = value;
 					}
 				}
 

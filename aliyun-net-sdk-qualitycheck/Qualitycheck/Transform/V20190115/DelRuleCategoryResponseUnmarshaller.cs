@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			DelRuleCategoryResponse delRuleCategoryResponse = new DelRuleCategoryResponse();
 
 			delRuleCategoryResponse.HttpResponse = _ctx.HttpResponse;
-			delRuleCategoryResponse.RequestId = _ctx.StringValue("DelRuleCategory.RequestId");
-			delRuleCategoryResponse.Success = _ctx.BooleanValue("DelRuleCategory.Success");
 			delRuleCategoryResponse.Code = _ctx.StringValue("DelRuleCategory.Code");
 			delRuleCategoryResponse.Message = _ctx.StringValue("DelRuleCategory.Message");
+			delRuleCategoryResponse.RequestId = _ctx.StringValue("DelRuleCategory.RequestId");
+			delRuleCategoryResponse.Success = _ctx.BooleanValue("DelRuleCategory.Success");
 
 			DelRuleCategoryResponse.DelRuleCategory_Data data = new DelRuleCategoryResponse.DelRuleCategory_Data();
 			data.Select = _ctx.BooleanValue("DelRuleCategory.Data.Select");

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 	public class GetResultToReviewResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private GetResultToReview_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public GetResultToReview_Data Data
 		{
 			get
@@ -98,31 +98,31 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 		public class GetResultToReview_Data
 		{
 
-			private bool? audio;
+			private int? status;
 
 			private string audioScheme;
 
 			private string audioURL;
 
-			private int? businessType;
-
-			private bool? deleted;
-
-			private string fileMergeName;
-
 			private int? hitNumber;
 
-			private int? reviewNumber;
+			private bool? audio;
 
 			private int? totalScore;
 
-			private string vid;
-
-			private string comments;
+			private int? businessType;
 
 			private string fileId;
 
-			private int? status;
+			private string fileMergeName;
+
+			private string comments;
+
+			private bool? deleted;
+
+			private string vid;
+
+			private int? reviewNumber;
 
 			private List<GetResultToReview_Dialogue> dialogues;
 
@@ -134,15 +134,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 			private List<GetResultToReview_ReviewHistory> reviewHistoryList;
 
-			public bool? Audio
+			public int? Status
 			{
 				get
 				{
-					return audio;
+					return status;
 				}
 				set	
 				{
-					audio = value;
+					status = value;
 				}
 			}
 
@@ -170,42 +170,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public int? BusinessType
-			{
-				get
-				{
-					return businessType;
-				}
-				set	
-				{
-					businessType = value;
-				}
-			}
-
-			public bool? Deleted
-			{
-				get
-				{
-					return deleted;
-				}
-				set	
-				{
-					deleted = value;
-				}
-			}
-
-			public string FileMergeName
-			{
-				get
-				{
-					return fileMergeName;
-				}
-				set	
-				{
-					fileMergeName = value;
-				}
-			}
-
 			public int? HitNumber
 			{
 				get
@@ -218,15 +182,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public int? ReviewNumber
+			public bool? Audio
 			{
 				get
 				{
-					return reviewNumber;
+					return audio;
 				}
 				set	
 				{
-					reviewNumber = value;
+					audio = value;
 				}
 			}
 
@@ -242,27 +206,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public string Vid
+			public int? BusinessType
 			{
 				get
 				{
-					return vid;
+					return businessType;
 				}
 				set	
 				{
-					vid = value;
-				}
-			}
-
-			public string Comments
-			{
-				get
-				{
-					return comments;
-				}
-				set	
-				{
-					comments = value;
+					businessType = value;
 				}
 			}
 
@@ -278,15 +230,63 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public int? Status
+			public string FileMergeName
 			{
 				get
 				{
-					return status;
+					return fileMergeName;
 				}
 				set	
 				{
-					status = value;
+					fileMergeName = value;
+				}
+			}
+
+			public string Comments
+			{
+				get
+				{
+					return comments;
+				}
+				set	
+				{
+					comments = value;
+				}
+			}
+
+			public bool? Deleted
+			{
+				get
+				{
+					return deleted;
+				}
+				set	
+				{
+					deleted = value;
+				}
+			}
+
+			public string Vid
+			{
+				get
+				{
+					return vid;
+				}
+				set	
+				{
+					vid = value;
+				}
+			}
+
+			public int? ReviewNumber
+			{
+				get
+				{
+					return reviewNumber;
+				}
+				set	
+				{
+					reviewNumber = value;
 				}
 			}
 
@@ -353,6 +353,10 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			public class GetResultToReview_Dialogue
 			{
 
+				private string words;
+
+				private string identity;
+
 				private long? begin;
 
 				private string beginTime;
@@ -361,17 +365,37 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 				private long? end;
 
-				private string hourMinSec;
-
-				private string identity;
+				private int? speechRate;
 
 				private string role;
 
 				private int? silenceDuration;
 
-				private int? speechRate;
+				private string hourMinSec;
 
-				private string words;
+				public string Words
+				{
+					get
+					{
+						return words;
+					}
+					set	
+					{
+						words = value;
+					}
+				}
+
+				public string Identity
+				{
+					get
+					{
+						return identity;
+					}
+					set	
+					{
+						identity = value;
+					}
+				}
 
 				public long? Begin
 				{
@@ -421,27 +445,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					}
 				}
 
-				public string HourMinSec
+				public int? SpeechRate
 				{
 					get
 					{
-						return hourMinSec;
+						return speechRate;
 					}
 					set	
 					{
-						hourMinSec = value;
-					}
-				}
-
-				public string Identity
-				{
-					get
-					{
-						return identity;
-					}
-					set	
-					{
-						identity = value;
+						speechRate = value;
 					}
 				}
 
@@ -469,27 +481,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					}
 				}
 
-				public int? SpeechRate
+				public string HourMinSec
 				{
 					get
 					{
-						return speechRate;
+						return hourMinSec;
 					}
 					set	
 					{
-						speechRate = value;
-					}
-				}
-
-				public string Words
-				{
-					get
-					{
-						return words;
-					}
-					set	
-					{
-						words = value;
+						hourMinSec = value;
 					}
 				}
 			}
@@ -542,25 +542,25 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				public class GetResultToReview_ScoreParam
 				{
 
-					private int? hit;
+					private string scoreSubName;
 
 					private int? scoreNum;
 
-					private long? scoreSubId;
+					private int? hit;
 
-					private string scoreSubName;
+					private long? scoreSubId;
 
 					private int? scoreType;
 
-					public int? Hit
+					public string ScoreSubName
 					{
 						get
 						{
-							return hit;
+							return scoreSubName;
 						}
 						set	
 						{
-							hit = value;
+							scoreSubName = value;
 						}
 					}
 
@@ -576,6 +576,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 						}
 					}
 
+					public int? Hit
+					{
+						get
+						{
+							return hit;
+						}
+						set	
+						{
+							hit = value;
+						}
+					}
+
 					public long? ScoreSubId
 					{
 						get
@@ -585,18 +597,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 						set	
 						{
 							scoreSubId = value;
-						}
-					}
-
-					public string ScoreSubName
-					{
-						get
-						{
-							return scoreSubName;
-						}
-						set	
-						{
-							scoreSubName = value;
 						}
 					}
 
@@ -617,69 +617,33 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			public class GetResultToReview_HitRuleReviewInfo
 			{
 
-				private int? autoReview;
-
-				private long? rid;
-
-				private string ruleName;
-
 				private int? ruleScoreType;
 
 				private int? ruleType;
-
-				private long? scoreId;
-
-				private long? scoreSubId;
-
-				private int? totalNumber;
 
 				private string scoreSubName;
 
 				private int? scoreNum;
 
+				private int? autoReview;
+
+				private long? scoreSubId;
+
 				private bool? complainable;
+
+				private int? totalNumber;
+
+				private long? scoreId;
+
+				private string ruleName;
+
+				private long? rid;
 
 				private List<GetResultToReview_ConditionHitInfo> conditionHitInfoList;
 
 				private List<GetResultToReview_ComplainHistoriesItem> complainHistories;
 
 				private GetResultToReview_ReviewInfo reviewInfo;
-
-				public int? AutoReview
-				{
-					get
-					{
-						return autoReview;
-					}
-					set	
-					{
-						autoReview = value;
-					}
-				}
-
-				public long? Rid
-				{
-					get
-					{
-						return rid;
-					}
-					set	
-					{
-						rid = value;
-					}
-				}
-
-				public string RuleName
-				{
-					get
-					{
-						return ruleName;
-					}
-					set	
-					{
-						ruleName = value;
-					}
-				}
 
 				public int? RuleScoreType
 				{
@@ -702,42 +666,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					set	
 					{
 						ruleType = value;
-					}
-				}
-
-				public long? ScoreId
-				{
-					get
-					{
-						return scoreId;
-					}
-					set	
-					{
-						scoreId = value;
-					}
-				}
-
-				public long? ScoreSubId
-				{
-					get
-					{
-						return scoreSubId;
-					}
-					set	
-					{
-						scoreSubId = value;
-					}
-				}
-
-				public int? TotalNumber
-				{
-					get
-					{
-						return totalNumber;
-					}
-					set	
-					{
-						totalNumber = value;
 					}
 				}
 
@@ -765,6 +693,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					}
 				}
 
+				public int? AutoReview
+				{
+					get
+					{
+						return autoReview;
+					}
+					set	
+					{
+						autoReview = value;
+					}
+				}
+
+				public long? ScoreSubId
+				{
+					get
+					{
+						return scoreSubId;
+					}
+					set	
+					{
+						scoreSubId = value;
+					}
+				}
+
 				public bool? Complainable
 				{
 					get
@@ -774,6 +726,54 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					set	
 					{
 						complainable = value;
+					}
+				}
+
+				public int? TotalNumber
+				{
+					get
+					{
+						return totalNumber;
+					}
+					set	
+					{
+						totalNumber = value;
+					}
+				}
+
+				public long? ScoreId
+				{
+					get
+					{
+						return scoreId;
+					}
+					set	
+					{
+						scoreId = value;
+					}
+				}
+
+				public string RuleName
+				{
+					get
+					{
+						return ruleName;
+					}
+					set	
+					{
+						ruleName = value;
+					}
+				}
+
+				public long? Rid
+				{
+					get
+					{
+						return rid;
+					}
+					set	
+					{
+						rid = value;
 					}
 				}
 
@@ -861,17 +861,29 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					public class GetResultToReview_KeyWord
 					{
 
+						private int? from;
+
 						private string val;
 
 						private int? pid;
 
-						private int? from;
-
-						private int? to;
-
 						private string tid;
 
 						private string cid;
+
+						private int? to;
+
+						public int? From
+						{
+							get
+							{
+								return from;
+							}
+							set	
+							{
+								from = value;
+							}
+						}
 
 						public string Val
 						{
@@ -894,30 +906,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							set	
 							{
 								pid = value;
-							}
-						}
-
-						public int? From
-						{
-							get
-							{
-								return from;
-							}
-							set	
-							{
-								from = value;
-							}
-						}
-
-						public int? To
-						{
-							get
-							{
-								return to;
-							}
-							set	
-							{
-								to = value;
 							}
 						}
 
@@ -944,34 +932,58 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 								cid = value;
 							}
 						}
+
+						public int? To
+						{
+							get
+							{
+								return to;
+							}
+							set	
+							{
+								to = value;
+							}
+						}
 					}
 
 					public class GetResultToReview_Phrase
 					{
 
-						private string role;
-
-						private string identity;
-
-						private int? emotionValue;
-
 						private string words;
-
-						private long? end;
-
-						private int? pid;
 
 						private long? begin;
 
-						public string Role
+						private string identity;
+
+						private int? pid;
+
+						private int? emotionValue;
+
+						private long? end;
+
+						private string role;
+
+						public string Words
 						{
 							get
 							{
-								return role;
+								return words;
 							}
 							set	
 							{
-								role = value;
+								words = value;
+							}
+						}
+
+						public long? Begin
+						{
+							get
+							{
+								return begin;
+							}
+							set	
+							{
+								begin = value;
 							}
 						}
 
@@ -987,6 +999,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							}
 						}
 
+						public int? Pid
+						{
+							get
+							{
+								return pid;
+							}
+							set	
+							{
+								pid = value;
+							}
+						}
+
 						public int? EmotionValue
 						{
 							get
@@ -996,18 +1020,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							set	
 							{
 								emotionValue = value;
-							}
-						}
-
-						public string Words
-						{
-							get
-							{
-								return words;
-							}
-							set	
-							{
-								words = value;
 							}
 						}
 
@@ -1023,27 +1035,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 							}
 						}
 
-						public int? Pid
+						public string Role
 						{
 							get
 							{
-								return pid;
+								return role;
 							}
 							set	
 							{
-								pid = value;
-							}
-						}
-
-						public long? Begin
-						{
-							get
-							{
-								return begin;
-							}
-							set	
-							{
-								begin = value;
+								role = value;
 							}
 						}
 					}
@@ -1054,13 +1054,13 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 					private string comments;
 
-					private string operatorName;
-
 					private long? _operator;
+
+					private string operationTime;
 
 					private int? operationType;
 
-					private string operationTime;
+					private string operatorName;
 
 					public string Comments
 					{
@@ -1071,18 +1071,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 						set	
 						{
 							comments = value;
-						}
-					}
-
-					public string OperatorName
-					{
-						get
-						{
-							return operatorName;
-						}
-						set	
-						{
-							operatorName = value;
 						}
 					}
 
@@ -1098,6 +1086,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 						}
 					}
 
+					public string OperationTime
+					{
+						get
+						{
+							return operationTime;
+						}
+						set	
+						{
+							operationTime = value;
+						}
+					}
+
 					public int? OperationType
 					{
 						get
@@ -1110,15 +1110,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 						}
 					}
 
-					public string OperationTime
+					public string OperatorName
 					{
 						get
 						{
-							return operationTime;
+							return operatorName;
 						}
 						set	
 						{
-							operationTime = value;
+							operatorName = value;
 						}
 					}
 				}
@@ -1126,39 +1126,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				public class GetResultToReview_ReviewInfo
 				{
 
-					private string hitId;
-
-					private long? rid;
-
 					private int? reviewResult;
-
-					private string reviewer;
 
 					private string reviewTime;
 
-					public string HitId
-					{
-						get
-						{
-							return hitId;
-						}
-						set	
-						{
-							hitId = value;
-						}
-					}
+					private string hitId;
 
-					public long? Rid
-					{
-						get
-						{
-							return rid;
-						}
-						set	
-						{
-							rid = value;
-						}
-					}
+					private string reviewer;
+
+					private long? rid;
 
 					public int? ReviewResult
 					{
@@ -1169,6 +1145,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 						set	
 						{
 							reviewResult = value;
+						}
+					}
+
+					public string ReviewTime
+					{
+						get
+						{
+							return reviewTime;
+						}
+						set	
+						{
+							reviewTime = value;
+						}
+					}
+
+					public string HitId
+					{
+						get
+						{
+							return hitId;
+						}
+						set	
+						{
+							hitId = value;
 						}
 					}
 
@@ -1184,15 +1184,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 						}
 					}
 
-					public string ReviewTime
+					public long? Rid
 					{
 						get
 						{
-							return reviewTime;
+							return rid;
 						}
 						set	
 						{
-							reviewTime = value;
+							rid = value;
 						}
 					}
 				}
@@ -1201,41 +1201,17 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			public class GetResultToReview_ManualScoreInfo
 			{
 
-				private long? scoreId;
-
-				private long? scoreSubId;
-
 				private string scoreSubName;
-
-				private int? scoreNum;
 
 				private bool? complainable;
 
+				private int? scoreNum;
+
+				private long? scoreSubId;
+
+				private long? scoreId;
+
 				private List<GetResultToReview_ComplainHistoriesItem2> complainHistories1;
-
-				public long? ScoreId
-				{
-					get
-					{
-						return scoreId;
-					}
-					set	
-					{
-						scoreId = value;
-					}
-				}
-
-				public long? ScoreSubId
-				{
-					get
-					{
-						return scoreSubId;
-					}
-					set	
-					{
-						scoreSubId = value;
-					}
-				}
 
 				public string ScoreSubName
 				{
@@ -1246,6 +1222,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					set	
 					{
 						scoreSubName = value;
+					}
+				}
+
+				public bool? Complainable
+				{
+					get
+					{
+						return complainable;
+					}
+					set	
+					{
+						complainable = value;
 					}
 				}
 
@@ -1261,15 +1249,27 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					}
 				}
 
-				public bool? Complainable
+				public long? ScoreSubId
 				{
 					get
 					{
-						return complainable;
+						return scoreSubId;
 					}
 					set	
 					{
-						complainable = value;
+						scoreSubId = value;
+					}
+				}
+
+				public long? ScoreId
+				{
+					get
+					{
+						return scoreId;
+					}
+					set	
+					{
+						scoreId = value;
 					}
 				}
 
@@ -1290,13 +1290,13 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 					private string comments;
 
-					private string operatorName;
-
 					private long? _operator;
+
+					private string operationTime;
 
 					private int? operationType;
 
-					private string operationTime;
+					private string operatorName;
 
 					public string Comments
 					{
@@ -1307,18 +1307,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 						set	
 						{
 							comments = value;
-						}
-					}
-
-					public string OperatorName
-					{
-						get
-						{
-							return operatorName;
-						}
-						set	
-						{
-							operatorName = value;
 						}
 					}
 
@@ -1334,6 +1322,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 						}
 					}
 
+					public string OperationTime
+					{
+						get
+						{
+							return operationTime;
+						}
+						set	
+						{
+							operationTime = value;
+						}
+					}
+
 					public int? OperationType
 					{
 						get
@@ -1346,15 +1346,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 						}
 					}
 
-					public string OperationTime
+					public string OperatorName
 					{
 						get
 						{
-							return operationTime;
+							return operatorName;
 						}
 						set	
 						{
-							operationTime = value;
+							operatorName = value;
 						}
 					}
 				}
@@ -1363,11 +1363,13 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			public class GetResultToReview_ReviewHistory
 			{
 
-				private string timeStr;
+				private int? type;
 
 				private string operatorName;
 
-				private int? type;
+				private string timeStr;
+
+				private int? score;
 
 				private int? reviewResult;
 
@@ -1375,17 +1377,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 				private int? oldScore;
 
-				private int? score;
-
-				public string TimeStr
+				public int? Type
 				{
 					get
 					{
-						return timeStr;
+						return type;
 					}
 					set	
 					{
-						timeStr = value;
+						type = value;
 					}
 				}
 
@@ -1401,15 +1401,27 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					}
 				}
 
-				public int? Type
+				public string TimeStr
 				{
 					get
 					{
-						return type;
+						return timeStr;
 					}
 					set	
 					{
-						type = value;
+						timeStr = value;
+					}
+				}
+
+				public int? Score
+				{
+					get
+					{
+						return score;
+					}
+					set	
+					{
+						score = value;
 					}
 				}
 
@@ -1446,18 +1458,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					set	
 					{
 						oldScore = value;
-					}
-				}
-
-				public int? Score
-				{
-					get
-					{
-						return score;
-					}
-					set	
-					{
-						score = value;
 					}
 				}
 			}

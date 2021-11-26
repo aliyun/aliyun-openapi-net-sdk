@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			DeleteUserResponse deleteUserResponse = new DeleteUserResponse();
 
 			deleteUserResponse.HttpResponse = _ctx.HttpResponse;
-			deleteUserResponse.RequestId = _ctx.StringValue("DeleteUser.RequestId");
-			deleteUserResponse.Success = _ctx.BooleanValue("DeleteUser.Success");
 			deleteUserResponse.Code = _ctx.StringValue("DeleteUser.Code");
 			deleteUserResponse.Message = _ctx.StringValue("DeleteUser.Message");
+			deleteUserResponse.RequestId = _ctx.StringValue("DeleteUser.RequestId");
+			deleteUserResponse.Success = _ctx.BooleanValue("DeleteUser.Success");
         
 			return deleteUserResponse;
         }

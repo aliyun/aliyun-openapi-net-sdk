@@ -31,17 +31,17 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			RestartAsrTaskResponse restartAsrTaskResponse = new RestartAsrTaskResponse();
 
 			restartAsrTaskResponse.HttpResponse = _ctx.HttpResponse;
-			restartAsrTaskResponse.RequestId = _ctx.StringValue("RestartAsrTask.RequestId");
-			restartAsrTaskResponse.Success = _ctx.BooleanValue("RestartAsrTask.Success");
 			restartAsrTaskResponse.Code = _ctx.StringValue("RestartAsrTask.Code");
 			restartAsrTaskResponse.Message = _ctx.StringValue("RestartAsrTask.Message");
+			restartAsrTaskResponse.RequestId = _ctx.StringValue("RestartAsrTask.RequestId");
+			restartAsrTaskResponse.Success = _ctx.BooleanValue("RestartAsrTask.Success");
 
 			List<RestartAsrTaskResponse.RestartAsrTask_RestartResult> restartAsrTaskResponse_data = new List<RestartAsrTaskResponse.RestartAsrTask_RestartResult>();
 			for (int i = 0; i < _ctx.Length("RestartAsrTask.Data.Length"); i++) {
 				RestartAsrTaskResponse.RestartAsrTask_RestartResult restartResult = new RestartAsrTaskResponse.RestartAsrTask_RestartResult();
-				restartResult.Success = _ctx.BooleanValue("RestartAsrTask.Data["+ i +"].Success");
-				restartResult.Data = _ctx.StringValue("RestartAsrTask.Data["+ i +"].Data");
 				restartResult.Message = _ctx.StringValue("RestartAsrTask.Data["+ i +"].Message");
+				restartResult.Data = _ctx.StringValue("RestartAsrTask.Data["+ i +"].Data");
+				restartResult.Success = _ctx.BooleanValue("RestartAsrTask.Data["+ i +"].Success");
 
 				restartAsrTaskResponse_data.Add(restartResult);
 			}

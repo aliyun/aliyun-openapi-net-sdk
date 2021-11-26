@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			GetAsrVocabResponse getAsrVocabResponse = new GetAsrVocabResponse();
 
 			getAsrVocabResponse.HttpResponse = _ctx.HttpResponse;
-			getAsrVocabResponse.RequestId = _ctx.StringValue("GetAsrVocab.RequestId");
-			getAsrVocabResponse.Success = _ctx.BooleanValue("GetAsrVocab.Success");
 			getAsrVocabResponse.Code = _ctx.StringValue("GetAsrVocab.Code");
 			getAsrVocabResponse.Message = _ctx.StringValue("GetAsrVocab.Message");
+			getAsrVocabResponse.RequestId = _ctx.StringValue("GetAsrVocab.RequestId");
+			getAsrVocabResponse.Success = _ctx.BooleanValue("GetAsrVocab.Success");
 
 			GetAsrVocabResponse.GetAsrVocab_Data data = new GetAsrVocabResponse.GetAsrVocab_Data();
 			data.Name = _ctx.StringValue("GetAsrVocab.Data.Name");
@@ -42,8 +42,8 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			List<GetAsrVocabResponse.GetAsrVocab_Data.GetAsrVocab_Word> data_words = new List<GetAsrVocabResponse.GetAsrVocab_Data.GetAsrVocab_Word>();
 			for (int i = 0; i < _ctx.Length("GetAsrVocab.Data.Words.Length"); i++) {
 				GetAsrVocabResponse.GetAsrVocab_Data.GetAsrVocab_Word word = new GetAsrVocabResponse.GetAsrVocab_Data.GetAsrVocab_Word();
-				word.Word = _ctx.StringValue("GetAsrVocab.Data.Words["+ i +"].Word");
 				word.Weight = _ctx.IntegerValue("GetAsrVocab.Data.Words["+ i +"].Weight");
+				word.Word = _ctx.StringValue("GetAsrVocab.Data.Words["+ i +"].Word");
 
 				data_words.Add(word);
 			}

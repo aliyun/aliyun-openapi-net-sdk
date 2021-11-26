@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			CreateSkillGroupConfigResponse createSkillGroupConfigResponse = new CreateSkillGroupConfigResponse();
 
 			createSkillGroupConfigResponse.HttpResponse = _ctx.HttpResponse;
-			createSkillGroupConfigResponse.RequestId = _ctx.StringValue("CreateSkillGroupConfig.RequestId");
-			createSkillGroupConfigResponse.Success = _ctx.BooleanValue("CreateSkillGroupConfig.Success");
 			createSkillGroupConfigResponse.Code = _ctx.StringValue("CreateSkillGroupConfig.Code");
 			createSkillGroupConfigResponse.Message = _ctx.StringValue("CreateSkillGroupConfig.Message");
 			createSkillGroupConfigResponse.Data = _ctx.LongValue("CreateSkillGroupConfig.Data");
+			createSkillGroupConfigResponse.RequestId = _ctx.StringValue("CreateSkillGroupConfig.RequestId");
+			createSkillGroupConfigResponse.Success = _ctx.BooleanValue("CreateSkillGroupConfig.Success");
         
 			return createSkillGroupConfigResponse;
         }

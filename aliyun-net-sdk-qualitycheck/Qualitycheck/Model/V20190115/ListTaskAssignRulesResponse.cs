@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -140,33 +140,33 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 		public class ListTaskAssignRules_TaskAssignRuleInfo
 		{
 
-			private long? ruleId;
+			private string updateTime;
 
-			private int? enabled;
+			private string skillGroupsStr;
 
-			private int? callType;
-
-			private int? priority;
-
-			private int? durationMin;
+			private long? callTimeEnd;
 
 			private int? durationMax;
 
 			private string createTime;
 
-			private string updateTime;
+			private int? priority;
+
+			private int? durationMin;
 
 			private string agentsStr;
 
-			private string skillGroupsStr;
+			private string ruleName;
 
-			private long? callTimeStart;
-
-			private long? callTimeEnd;
+			private long? ruleId;
 
 			private int? assignmentType;
 
-			private string ruleName;
+			private int? callType;
+
+			private int? enabled;
+
+			private long? callTimeStart;
 
 			private List<ListTaskAssignRules_Agent> agents;
 
@@ -178,63 +178,39 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 			private ListTaskAssignRules_SamplingMode samplingMode;
 
-			public long? RuleId
+			public string UpdateTime
 			{
 				get
 				{
-					return ruleId;
+					return updateTime;
 				}
 				set	
 				{
-					ruleId = value;
+					updateTime = value;
 				}
 			}
 
-			public int? Enabled
+			public string SkillGroupsStr
 			{
 				get
 				{
-					return enabled;
+					return skillGroupsStr;
 				}
 				set	
 				{
-					enabled = value;
+					skillGroupsStr = value;
 				}
 			}
 
-			public int? CallType
+			public long? CallTimeEnd
 			{
 				get
 				{
-					return callType;
+					return callTimeEnd;
 				}
 				set	
 				{
-					callType = value;
-				}
-			}
-
-			public int? Priority
-			{
-				get
-				{
-					return priority;
-				}
-				set	
-				{
-					priority = value;
-				}
-			}
-
-			public int? DurationMin
-			{
-				get
-				{
-					return durationMin;
-				}
-				set	
-				{
-					durationMin = value;
+					callTimeEnd = value;
 				}
 			}
 
@@ -262,15 +238,27 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public string UpdateTime
+			public int? Priority
 			{
 				get
 				{
-					return updateTime;
+					return priority;
 				}
 				set	
 				{
-					updateTime = value;
+					priority = value;
+				}
+			}
+
+			public int? DurationMin
+			{
+				get
+				{
+					return durationMin;
+				}
+				set	
+				{
+					durationMin = value;
 				}
 			}
 
@@ -286,39 +274,27 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public string SkillGroupsStr
+			public string RuleName
 			{
 				get
 				{
-					return skillGroupsStr;
+					return ruleName;
 				}
 				set	
 				{
-					skillGroupsStr = value;
+					ruleName = value;
 				}
 			}
 
-			public long? CallTimeStart
+			public long? RuleId
 			{
 				get
 				{
-					return callTimeStart;
+					return ruleId;
 				}
 				set	
 				{
-					callTimeStart = value;
-				}
-			}
-
-			public long? CallTimeEnd
-			{
-				get
-				{
-					return callTimeEnd;
-				}
-				set	
-				{
-					callTimeEnd = value;
+					ruleId = value;
 				}
 			}
 
@@ -334,15 +310,39 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public string RuleName
+			public int? CallType
 			{
 				get
 				{
-					return ruleName;
+					return callType;
 				}
 				set	
 				{
-					ruleName = value;
+					callType = value;
+				}
+			}
+
+			public int? Enabled
+			{
+				get
+				{
+					return enabled;
+				}
+				set	
+				{
+					enabled = value;
+				}
+			}
+
+			public long? CallTimeStart
+			{
+				get
+				{
+					return callTimeStart;
+				}
+				set	
+				{
+					callTimeStart = value;
 				}
 			}
 
@@ -409,21 +409,9 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			public class ListTaskAssignRules_Agent
 			{
 
-				private string agentId;
-
 				private string agentName;
 
-				public string AgentId
-				{
-					get
-					{
-						return agentId;
-					}
-					set	
-					{
-						agentId = value;
-					}
-				}
+				private string agentId;
 
 				public string AgentName
 				{
@@ -436,26 +424,26 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 						agentName = value;
 					}
 				}
+
+				public string AgentId
+				{
+					get
+					{
+						return agentId;
+					}
+					set	
+					{
+						agentId = value;
+					}
+				}
 			}
 
 			public class ListTaskAssignRules_SkillGroup
 			{
 
-				private string skillId;
-
 				private string skillName;
 
-				public string SkillId
-				{
-					get
-					{
-						return skillId;
-					}
-					set	
-					{
-						skillId = value;
-					}
-				}
+				private string skillId;
 
 				public string SkillName
 				{
@@ -466,6 +454,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					set	
 					{
 						skillName = value;
+					}
+				}
+
+				public string SkillId
+				{
+					get
+					{
+						return skillId;
+					}
+					set	
+					{
+						skillId = value;
 					}
 				}
 			}
@@ -505,21 +505,9 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			public class ListTaskAssignRules_RuleBasicInfo
 			{
 
-				private string rid;
-
 				private string name;
 
-				public string Rid
-				{
-					get
-					{
-						return rid;
-					}
-					set	
-					{
-						rid = value;
-					}
-				}
+				private string rid;
 
 				public string Name
 				{
@@ -532,62 +520,38 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 						name = value;
 					}
 				}
+
+				public string Rid
+				{
+					get
+					{
+						return rid;
+					}
+					set	
+					{
+						rid = value;
+					}
+				}
 			}
 
 			public class ListTaskAssignRules_SamplingMode
 			{
 
-				private int? dimension;
-
-				private float? proportion;
-
-				private int? limit;
-
 				private int? numberOfDraws;
 
 				private int? anyNumberOfDraws;
+
+				private int? limit;
+
+				private float? proportion;
+
+				private int? dimension;
 
 				private bool? designated;
 
 				private int? randomInspectionNumber;
 
 				private List<ListTaskAssignRules_SamplingModeAgent> samplingModeAgents;
-
-				public int? Dimension
-				{
-					get
-					{
-						return dimension;
-					}
-					set	
-					{
-						dimension = value;
-					}
-				}
-
-				public float? Proportion
-				{
-					get
-					{
-						return proportion;
-					}
-					set	
-					{
-						proportion = value;
-					}
-				}
-
-				public int? Limit
-				{
-					get
-					{
-						return limit;
-					}
-					set	
-					{
-						limit = value;
-					}
-				}
 
 				public int? NumberOfDraws
 				{
@@ -610,6 +574,42 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 					set	
 					{
 						anyNumberOfDraws = value;
+					}
+				}
+
+				public int? Limit
+				{
+					get
+					{
+						return limit;
+					}
+					set	
+					{
+						limit = value;
+					}
+				}
+
+				public float? Proportion
+				{
+					get
+					{
+						return proportion;
+					}
+					set	
+					{
+						proportion = value;
+					}
+				}
+
+				public int? Dimension
+				{
+					get
+					{
+						return dimension;
+					}
+					set	
+					{
+						dimension = value;
 					}
 				}
 
@@ -652,21 +652,9 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				public class ListTaskAssignRules_SamplingModeAgent
 				{
 
-					private string agentId;
-
 					private string agentName;
 
-					public string AgentId
-					{
-						get
-						{
-							return agentId;
-						}
-						set	
-						{
-							agentId = value;
-						}
-					}
+					private string agentId;
 
 					public string AgentName
 					{
@@ -677,6 +665,18 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 						set	
 						{
 							agentName = value;
+						}
+					}
+
+					public string AgentId
+					{
+						get
+						{
+							return agentId;
+						}
+						set	
+						{
+							agentId = value;
 						}
 					}
 				}

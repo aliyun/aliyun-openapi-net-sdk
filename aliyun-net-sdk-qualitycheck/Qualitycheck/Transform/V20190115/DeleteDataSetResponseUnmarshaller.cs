@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			DeleteDataSetResponse deleteDataSetResponse = new DeleteDataSetResponse();
 
 			deleteDataSetResponse.HttpResponse = _ctx.HttpResponse;
-			deleteDataSetResponse.RequestId = _ctx.StringValue("DeleteDataSet.RequestId");
-			deleteDataSetResponse.Success = _ctx.BooleanValue("DeleteDataSet.Success");
 			deleteDataSetResponse.Code = _ctx.StringValue("DeleteDataSet.Code");
 			deleteDataSetResponse.Message = _ctx.StringValue("DeleteDataSet.Message");
+			deleteDataSetResponse.RequestId = _ctx.StringValue("DeleteDataSet.RequestId");
+			deleteDataSetResponse.Success = _ctx.BooleanValue("DeleteDataSet.Success");
         
 			return deleteDataSetResponse;
         }

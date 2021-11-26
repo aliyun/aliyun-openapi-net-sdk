@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			DeleteBusinessCategoryResponse deleteBusinessCategoryResponse = new DeleteBusinessCategoryResponse();
 
 			deleteBusinessCategoryResponse.HttpResponse = _ctx.HttpResponse;
-			deleteBusinessCategoryResponse.RequestId = _ctx.StringValue("DeleteBusinessCategory.RequestId");
-			deleteBusinessCategoryResponse.Success = _ctx.BooleanValue("DeleteBusinessCategory.Success");
 			deleteBusinessCategoryResponse.Code = _ctx.StringValue("DeleteBusinessCategory.Code");
 			deleteBusinessCategoryResponse.Message = _ctx.StringValue("DeleteBusinessCategory.Message");
 			deleteBusinessCategoryResponse.Data = _ctx.StringValue("DeleteBusinessCategory.Data");
+			deleteBusinessCategoryResponse.RequestId = _ctx.StringValue("DeleteBusinessCategory.RequestId");
+			deleteBusinessCategoryResponse.Success = _ctx.BooleanValue("DeleteBusinessCategory.Success");
         
 			return deleteBusinessCategoryResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -25,39 +25,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 	public class RestartAsrTaskResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
 		private string code;
 
 		private string message;
 
+		private string requestId;
+
+		private bool? success;
+
 		private List<RestartAsrTask_RestartResult> data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string Code
 		{
@@ -83,6 +59,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public List<RestartAsrTask_RestartResult> Data
 		{
 			get
@@ -98,21 +98,21 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 		public class RestartAsrTask_RestartResult
 		{
 
-			private bool? success;
+			private string message;
 
 			private string data;
 
-			private string message;
+			private bool? success;
 
-			public bool? Success
+			public string Message
 			{
 				get
 				{
-					return success;
+					return message;
 				}
 				set	
 				{
-					success = value;
+					message = value;
 				}
 			}
 
@@ -128,15 +128,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 				}
 			}
 
-			public string Message
+			public bool? Success
 			{
 				get
 				{
-					return message;
+					return success;
 				}
 				set	
 				{
-					message = value;
+					success = value;
 				}
 			}
 		}

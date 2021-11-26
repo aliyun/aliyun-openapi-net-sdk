@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Qualitycheck.Model.V20190115
@@ -29,15 +29,15 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 
 		private bool? success;
 
+		private int? incorrectWords;
+
+		private int? targetRole;
+
 		private string code;
 
 		private string message;
 
 		private int? sourceRole;
-
-		private int? targetRole;
-
-		private int? incorrectWords;
 
 		private List<VerifySentence_Delta> data;
 
@@ -62,6 +62,30 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public int? IncorrectWords
+		{
+			get
+			{
+				return incorrectWords;
+			}
+			set	
+			{
+				incorrectWords = value;
+			}
+		}
+
+		public int? TargetRole
+		{
+			get
+			{
+				return targetRole;
+			}
+			set	
+			{
+				targetRole = value;
 			}
 		}
 
@@ -98,30 +122,6 @@ namespace Aliyun.Acs.Qualitycheck.Model.V20190115
 			set	
 			{
 				sourceRole = value;
-			}
-		}
-
-		public int? TargetRole
-		{
-			get
-			{
-				return targetRole;
-			}
-			set	
-			{
-				targetRole = value;
-			}
-		}
-
-		public int? IncorrectWords
-		{
-			get
-			{
-				return incorrectWords;
-			}
-			set	
-			{
-				incorrectWords = value;
 			}
 		}
 

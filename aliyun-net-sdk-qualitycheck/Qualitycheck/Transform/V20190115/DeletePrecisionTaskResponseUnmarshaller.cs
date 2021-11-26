@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			DeletePrecisionTaskResponse deletePrecisionTaskResponse = new DeletePrecisionTaskResponse();
 
 			deletePrecisionTaskResponse.HttpResponse = _ctx.HttpResponse;
-			deletePrecisionTaskResponse.RequestId = _ctx.StringValue("DeletePrecisionTask.RequestId");
-			deletePrecisionTaskResponse.Success = _ctx.BooleanValue("DeletePrecisionTask.Success");
 			deletePrecisionTaskResponse.Code = _ctx.StringValue("DeletePrecisionTask.Code");
 			deletePrecisionTaskResponse.Message = _ctx.StringValue("DeletePrecisionTask.Message");
+			deletePrecisionTaskResponse.RequestId = _ctx.StringValue("DeletePrecisionTask.RequestId");
+			deletePrecisionTaskResponse.Success = _ctx.BooleanValue("DeletePrecisionTask.Success");
         
 			return deletePrecisionTaskResponse;
         }

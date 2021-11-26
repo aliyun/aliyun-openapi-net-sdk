@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			UpdateTaskAssignRuleResponse updateTaskAssignRuleResponse = new UpdateTaskAssignRuleResponse();
 
 			updateTaskAssignRuleResponse.HttpResponse = _ctx.HttpResponse;
-			updateTaskAssignRuleResponse.RequestId = _ctx.StringValue("UpdateTaskAssignRule.RequestId");
-			updateTaskAssignRuleResponse.Success = _ctx.BooleanValue("UpdateTaskAssignRule.Success");
 			updateTaskAssignRuleResponse.Code = _ctx.StringValue("UpdateTaskAssignRule.Code");
 			updateTaskAssignRuleResponse.Message = _ctx.StringValue("UpdateTaskAssignRule.Message");
+			updateTaskAssignRuleResponse.RequestId = _ctx.StringValue("UpdateTaskAssignRule.RequestId");
+			updateTaskAssignRuleResponse.Success = _ctx.BooleanValue("UpdateTaskAssignRule.Success");
         
 			return updateTaskAssignRuleResponse;
         }

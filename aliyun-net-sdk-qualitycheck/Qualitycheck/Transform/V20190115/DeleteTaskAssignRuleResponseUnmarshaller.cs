@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			DeleteTaskAssignRuleResponse deleteTaskAssignRuleResponse = new DeleteTaskAssignRuleResponse();
 
 			deleteTaskAssignRuleResponse.HttpResponse = _ctx.HttpResponse;
-			deleteTaskAssignRuleResponse.RequestId = _ctx.StringValue("DeleteTaskAssignRule.RequestId");
-			deleteTaskAssignRuleResponse.Success = _ctx.BooleanValue("DeleteTaskAssignRule.Success");
 			deleteTaskAssignRuleResponse.Code = _ctx.StringValue("DeleteTaskAssignRule.Code");
 			deleteTaskAssignRuleResponse.Message = _ctx.StringValue("DeleteTaskAssignRule.Message");
+			deleteTaskAssignRuleResponse.RequestId = _ctx.StringValue("DeleteTaskAssignRule.RequestId");
+			deleteTaskAssignRuleResponse.Success = _ctx.BooleanValue("DeleteTaskAssignRule.Success");
         
 			return deleteTaskAssignRuleResponse;
         }

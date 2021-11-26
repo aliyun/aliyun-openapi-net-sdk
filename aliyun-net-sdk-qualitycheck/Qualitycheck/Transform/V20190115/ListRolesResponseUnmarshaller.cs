@@ -31,20 +31,20 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			ListRolesResponse listRolesResponse = new ListRolesResponse();
 
 			listRolesResponse.HttpResponse = _ctx.HttpResponse;
-			listRolesResponse.RequestId = _ctx.StringValue("ListRoles.RequestId");
-			listRolesResponse.Success = _ctx.BooleanValue("ListRoles.Success");
 			listRolesResponse.Code = _ctx.StringValue("ListRoles.Code");
 			listRolesResponse.Message = _ctx.StringValue("ListRoles.Message");
+			listRolesResponse.RequestId = _ctx.StringValue("ListRoles.RequestId");
+			listRolesResponse.Success = _ctx.BooleanValue("ListRoles.Success");
 
 			List<ListRolesResponse.ListRoles_Role> listRolesResponse_data = new List<ListRolesResponse.ListRoles_Role>();
 			for (int i = 0; i < _ctx.Length("ListRoles.Data.Length"); i++) {
 				ListRolesResponse.ListRoles_Role role = new ListRolesResponse.ListRoles_Role();
-				role.Id = _ctx.LongValue("ListRoles.Data["+ i +"].Id");
-				role.Name = _ctx.StringValue("ListRoles.Data["+ i +"].Name");
 				role.DisplayName = _ctx.StringValue("ListRoles.Data["+ i +"].DisplayName");
-				role.Level = _ctx.IntegerValue("ListRoles.Data["+ i +"].Level");
-				role.CreateTime = _ctx.StringValue("ListRoles.Data["+ i +"].CreateTime");
 				role.UpdateTime = _ctx.StringValue("ListRoles.Data["+ i +"].UpdateTime");
+				role.CreateTime = _ctx.StringValue("ListRoles.Data["+ i +"].CreateTime");
+				role.Name = _ctx.StringValue("ListRoles.Data["+ i +"].Name");
+				role.Id = _ctx.LongValue("ListRoles.Data["+ i +"].Id");
+				role.Level = _ctx.IntegerValue("ListRoles.Data["+ i +"].Level");
 
 				listRolesResponse_data.Add(role);
 			}

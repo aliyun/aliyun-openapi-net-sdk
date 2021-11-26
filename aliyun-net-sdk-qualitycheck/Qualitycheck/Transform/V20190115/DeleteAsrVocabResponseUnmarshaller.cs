@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Qualitycheck.Transform.V20190115
 			DeleteAsrVocabResponse deleteAsrVocabResponse = new DeleteAsrVocabResponse();
 
 			deleteAsrVocabResponse.HttpResponse = _ctx.HttpResponse;
-			deleteAsrVocabResponse.RequestId = _ctx.StringValue("DeleteAsrVocab.RequestId");
-			deleteAsrVocabResponse.Success = _ctx.BooleanValue("DeleteAsrVocab.Success");
 			deleteAsrVocabResponse.Code = _ctx.StringValue("DeleteAsrVocab.Code");
 			deleteAsrVocabResponse.Message = _ctx.StringValue("DeleteAsrVocab.Message");
 			deleteAsrVocabResponse.Data = _ctx.StringValue("DeleteAsrVocab.Data");
+			deleteAsrVocabResponse.RequestId = _ctx.StringValue("DeleteAsrVocab.RequestId");
+			deleteAsrVocabResponse.Success = _ctx.BooleanValue("DeleteAsrVocab.Success");
         
 			return deleteAsrVocabResponse;
         }
