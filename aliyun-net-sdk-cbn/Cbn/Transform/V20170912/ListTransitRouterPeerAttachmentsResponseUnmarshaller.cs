@@ -55,6 +55,7 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				transitRouterAttachment.RegionId = _ctx.StringValue("ListTransitRouterPeerAttachments.TransitRouterAttachments["+ i +"].RegionId");
 				transitRouterAttachment.GeographicSpanId = _ctx.StringValue("ListTransitRouterPeerAttachments.TransitRouterAttachments["+ i +"].GeographicSpanId");
 				transitRouterAttachment.CenBandwidthPackageId = _ctx.StringValue("ListTransitRouterPeerAttachments.TransitRouterAttachments["+ i +"].CenBandwidthPackageId");
+				transitRouterAttachment.BandwidthType = _ctx.StringValue("ListTransitRouterPeerAttachments.TransitRouterAttachments["+ i +"].BandwidthType");
 
 				listTransitRouterPeerAttachmentsResponse_transitRouterAttachments.Add(transitRouterAttachment);
 			}

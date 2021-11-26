@@ -24,17 +24,16 @@ using Aliyun.Acs.Cbn.Model.V20170912;
 
 namespace Aliyun.Acs.Cbn.Transform.V20170912
 {
-    public class ModifyFlowLogAttributeResponseUnmarshaller
+    public class UpdateCenInterRegionTrafficQosQueueAttributeResponseUnmarshaller
     {
-        public static ModifyFlowLogAttributeResponse Unmarshall(UnmarshallerContext _ctx)
+        public static UpdateCenInterRegionTrafficQosQueueAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			ModifyFlowLogAttributeResponse modifyFlowLogAttributeResponse = new ModifyFlowLogAttributeResponse();
+			UpdateCenInterRegionTrafficQosQueueAttributeResponse updateCenInterRegionTrafficQosQueueAttributeResponse = new UpdateCenInterRegionTrafficQosQueueAttributeResponse();
 
-			modifyFlowLogAttributeResponse.HttpResponse = _ctx.HttpResponse;
-			modifyFlowLogAttributeResponse.Success = _ctx.StringValue("ModifyFlowLogAttribute.Success");
-			modifyFlowLogAttributeResponse.RequestId = _ctx.StringValue("ModifyFlowLogAttribute.RequestId");
+			updateCenInterRegionTrafficQosQueueAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			updateCenInterRegionTrafficQosQueueAttributeResponse.RequestId = _ctx.StringValue("UpdateCenInterRegionTrafficQosQueueAttribute.RequestId");
         
-			return modifyFlowLogAttributeResponse;
+			return updateCenInterRegionTrafficQosQueueAttributeResponse;
         }
     }
 }

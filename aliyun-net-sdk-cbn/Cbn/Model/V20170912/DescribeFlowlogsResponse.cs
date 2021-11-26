@@ -25,51 +25,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class DescribeFlowlogsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string success;
-
-		private string totalCount;
+		private string pageSize;
 
 		private string pageNumber;
 
-		private string pageSize;
+		private string requestId;
+
+		private string totalCount;
+
+		private string success;
 
 		private List<DescribeFlowlogs_FlowLog> flowLogs;
 
-		public string RequestId
+		public string PageSize
 		{
 			get
 			{
-				return requestId;
+				return pageSize;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
+				pageSize = value;
 			}
 		}
 
@@ -85,15 +61,39 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string PageSize
+		public string RequestId
 		{
 			get
 			{
-				return pageSize;
+				return requestId;
 			}
 			set	
 			{
-				pageSize = value;
+				requestId = value;
+			}
+		}
+
+		public string TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public string Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -112,33 +112,51 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class DescribeFlowlogs_FlowLog
 		{
 
-			private string flowLogId;
+			private string status;
+
+			private string creationTime;
 
 			private string flowLogName;
 
 			private string description;
 
-			private string creationTime;
+			private string projectName;
 
 			private string cenId;
 
-			private string projectName;
-
 			private string logStoreName;
-
-			private string status;
 
 			private string regionId;
 
-			public string FlowLogId
+			private string flowLogId;
+
+			private string peerRegionId;
+
+			private string transitRouterAttachmentId;
+
+			private long? interval;
+
+			public string Status
 			{
 				get
 				{
-					return flowLogId;
+					return status;
 				}
 				set	
 				{
-					flowLogId = value;
+					status = value;
+				}
+			}
+
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
 				}
 			}
 
@@ -166,15 +184,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string CreationTime
+			public string ProjectName
 			{
 				get
 				{
-					return creationTime;
+					return projectName;
 				}
 				set	
 				{
-					creationTime = value;
+					projectName = value;
 				}
 			}
 
@@ -190,18 +208,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string ProjectName
-			{
-				get
-				{
-					return projectName;
-				}
-				set	
-				{
-					projectName = value;
-				}
-			}
-
 			public string LogStoreName
 			{
 				get
@@ -214,18 +220,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
 			public string RegionId
 			{
 				get
@@ -235,6 +229,54 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string FlowLogId
+			{
+				get
+				{
+					return flowLogId;
+				}
+				set	
+				{
+					flowLogId = value;
+				}
+			}
+
+			public string PeerRegionId
+			{
+				get
+				{
+					return peerRegionId;
+				}
+				set	
+				{
+					peerRegionId = value;
+				}
+			}
+
+			public string TransitRouterAttachmentId
+			{
+				get
+				{
+					return transitRouterAttachmentId;
+				}
+				set	
+				{
+					transitRouterAttachmentId = value;
+				}
+			}
+
+			public long? Interval
+			{
+				get
+				{
+					return interval;
+				}
+				set	
+				{
+					interval = value;
 				}
 			}
 		}

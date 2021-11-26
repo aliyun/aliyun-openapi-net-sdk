@@ -24,17 +24,17 @@ using Aliyun.Acs.Cbn.Model.V20170912;
 
 namespace Aliyun.Acs.Cbn.Transform.V20170912
 {
-    public class ModifyFlowLogAttributeResponseUnmarshaller
+    public class OpenTransitRouterServiceResponseUnmarshaller
     {
-        public static ModifyFlowLogAttributeResponse Unmarshall(UnmarshallerContext _ctx)
+        public static OpenTransitRouterServiceResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			ModifyFlowLogAttributeResponse modifyFlowLogAttributeResponse = new ModifyFlowLogAttributeResponse();
+			OpenTransitRouterServiceResponse openTransitRouterServiceResponse = new OpenTransitRouterServiceResponse();
 
-			modifyFlowLogAttributeResponse.HttpResponse = _ctx.HttpResponse;
-			modifyFlowLogAttributeResponse.Success = _ctx.StringValue("ModifyFlowLogAttribute.Success");
-			modifyFlowLogAttributeResponse.RequestId = _ctx.StringValue("ModifyFlowLogAttribute.RequestId");
+			openTransitRouterServiceResponse.HttpResponse = _ctx.HttpResponse;
+			openTransitRouterServiceResponse.OrderId = _ctx.StringValue("OpenTransitRouterService.OrderId");
+			openTransitRouterServiceResponse.RequestId = _ctx.StringValue("OpenTransitRouterService.RequestId");
         
-			return modifyFlowLogAttributeResponse;
+			return openTransitRouterServiceResponse;
         }
     }
 }

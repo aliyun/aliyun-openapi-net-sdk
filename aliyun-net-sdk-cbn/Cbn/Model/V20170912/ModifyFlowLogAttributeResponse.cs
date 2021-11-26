@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class ModifyFlowLogAttributeResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string success;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string Success
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

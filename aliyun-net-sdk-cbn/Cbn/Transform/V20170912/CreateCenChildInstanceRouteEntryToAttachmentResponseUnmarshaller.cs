@@ -24,17 +24,16 @@ using Aliyun.Acs.Cbn.Model.V20170912;
 
 namespace Aliyun.Acs.Cbn.Transform.V20170912
 {
-    public class ModifyFlowLogAttributeResponseUnmarshaller
+    public class CreateCenChildInstanceRouteEntryToAttachmentResponseUnmarshaller
     {
-        public static ModifyFlowLogAttributeResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateCenChildInstanceRouteEntryToAttachmentResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			ModifyFlowLogAttributeResponse modifyFlowLogAttributeResponse = new ModifyFlowLogAttributeResponse();
+			CreateCenChildInstanceRouteEntryToAttachmentResponse createCenChildInstanceRouteEntryToAttachmentResponse = new CreateCenChildInstanceRouteEntryToAttachmentResponse();
 
-			modifyFlowLogAttributeResponse.HttpResponse = _ctx.HttpResponse;
-			modifyFlowLogAttributeResponse.Success = _ctx.StringValue("ModifyFlowLogAttribute.Success");
-			modifyFlowLogAttributeResponse.RequestId = _ctx.StringValue("ModifyFlowLogAttribute.RequestId");
+			createCenChildInstanceRouteEntryToAttachmentResponse.HttpResponse = _ctx.HttpResponse;
+			createCenChildInstanceRouteEntryToAttachmentResponse.RequestId = _ctx.StringValue("CreateCenChildInstanceRouteEntryToAttachment.RequestId");
         
-			return modifyFlowLogAttributeResponse;
+			return createCenChildInstanceRouteEntryToAttachmentResponse;
         }
     }
 }

@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class DescribeRouteServicesInCenResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeRouteServicesInCen_RouteServiceEntry> routeServiceEntries;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,33 +98,33 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class DescribeRouteServicesInCen_RouteServiceEntry
 		{
 
-			private string cenId;
+			private string status;
 
 			private string host;
 
-			private string hostRegionId;
-
-			private string accessRegionId;
-
-			private string updateInterval;
-
-			private string status;
+			private string description;
 
 			private string hostVpcId;
 
-			private string description;
+			private string cenId;
+
+			private string accessRegionId;
+
+			private string hostRegionId;
+
+			private string updateInterval;
 
 			private List<string> cidrs;
 
-			public string CenId
+			public string Status
 			{
 				get
 				{
-					return cenId;
+					return status;
 				}
 				set	
 				{
-					cenId = value;
+					status = value;
 				}
 			}
 
@@ -140,51 +140,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string HostRegionId
+			public string Description
 			{
 				get
 				{
-					return hostRegionId;
+					return description;
 				}
 				set	
 				{
-					hostRegionId = value;
-				}
-			}
-
-			public string AccessRegionId
-			{
-				get
-				{
-					return accessRegionId;
-				}
-				set	
-				{
-					accessRegionId = value;
-				}
-			}
-
-			public string UpdateInterval
-			{
-				get
-				{
-					return updateInterval;
-				}
-				set	
-				{
-					updateInterval = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
+					description = value;
 				}
 			}
 
@@ -200,15 +164,51 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string Description
+			public string CenId
 			{
 				get
 				{
-					return description;
+					return cenId;
 				}
 				set	
 				{
-					description = value;
+					cenId = value;
+				}
+			}
+
+			public string AccessRegionId
+			{
+				get
+				{
+					return accessRegionId;
+				}
+				set	
+				{
+					accessRegionId = value;
+				}
+			}
+
+			public string HostRegionId
+			{
+				get
+				{
+					return hostRegionId;
+				}
+				set	
+				{
+					hostRegionId = value;
+				}
+			}
+
+			public string UpdateInterval
+			{
+				get
+				{
+					return updateInterval;
+				}
+				set	
+				{
+					updateInterval = value;
 				}
 			}
 
