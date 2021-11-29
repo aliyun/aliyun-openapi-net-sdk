@@ -27,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DeleteLivePullStreamInfoConfigRequest : RpcAcsRequest<DeleteLivePullStreamInfoConfigResponse>
+    public class CreateLiveStreamMonitorRequest : RpcAcsRequest<CreateLiveStreamMonitorResponse>
     {
-        public DeleteLivePullStreamInfoConfigRequest()
-            : base("live", "2016-11-01", "DeleteLivePullStreamInfoConfig", "live", "openAPI")
+        public CreateLiveStreamMonitorRequest()
+            : base("live", "2016-11-01", "CreateLiveStreamMonitor", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,50 +40,82 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string appName;
+		private string monitorName;
 
-		private string streamName;
+		private string stream;
 
-		private string domainName;
+		private string outputTemplate;
+
+		private string app;
+
+		private string inputList;
 
 		private long? ownerId;
 
-		public string AppName
+		private string domain;
+
+		public string MonitorName
 		{
 			get
 			{
-				return appName;
+				return monitorName;
 			}
 			set	
 			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
+				monitorName = value;
+				DictionaryUtil.Add(QueryParameters, "MonitorName", value);
 			}
 		}
 
-		public string StreamName
+		public string Stream
 		{
 			get
 			{
-				return streamName;
+				return stream;
 			}
 			set	
 			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+				stream = value;
+				DictionaryUtil.Add(QueryParameters, "Stream", value);
 			}
 		}
 
-		public string DomainName
+		public string OutputTemplate
 		{
 			get
 			{
-				return domainName;
+				return outputTemplate;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				outputTemplate = value;
+				DictionaryUtil.Add(QueryParameters, "OutputTemplate", value);
+			}
+		}
+
+		public string App
+		{
+			get
+			{
+				return app;
+			}
+			set	
+			{
+				app = value;
+				DictionaryUtil.Add(QueryParameters, "App", value);
+			}
+		}
+
+		public string InputList
+		{
+			get
+			{
+				return inputList;
+			}
+			set	
+			{
+				inputList = value;
+				DictionaryUtil.Add(QueryParameters, "InputList", value);
 			}
 		}
 
@@ -100,9 +132,22 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-        public override DeleteLivePullStreamInfoConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Domain
+		{
+			get
+			{
+				return domain;
+			}
+			set	
+			{
+				domain = value;
+				DictionaryUtil.Add(QueryParameters, "Domain", value);
+			}
+		}
+
+        public override CreateLiveStreamMonitorResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteLivePullStreamInfoConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateLiveStreamMonitorResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

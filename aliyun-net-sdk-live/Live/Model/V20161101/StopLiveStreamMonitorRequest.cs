@@ -27,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DeleteLivePullStreamInfoConfigRequest : RpcAcsRequest<DeleteLivePullStreamInfoConfigResponse>
+    public class StopLiveStreamMonitorRequest : RpcAcsRequest<StopLiveStreamMonitorResponse>
     {
-        public DeleteLivePullStreamInfoConfigRequest()
-            : base("live", "2016-11-01", "DeleteLivePullStreamInfoConfig", "live", "openAPI")
+        public StopLiveStreamMonitorRequest()
+            : base("live", "2016-11-01", "StopLiveStreamMonitor", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,50 +40,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string appName;
-
-		private string streamName;
-
-		private string domainName;
+		private string monitorId;
 
 		private long? ownerId;
 
-		public string AppName
+		public string MonitorId
 		{
 			get
 			{
-				return appName;
+				return monitorId;
 			}
 			set	
 			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
-		public string StreamName
-		{
-			get
-			{
-				return streamName;
-			}
-			set	
-			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				monitorId = value;
+				DictionaryUtil.Add(QueryParameters, "MonitorId", value);
 			}
 		}
 
@@ -100,9 +70,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-        public override DeleteLivePullStreamInfoConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override StopLiveStreamMonitorResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteLivePullStreamInfoConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return StopLiveStreamMonitorResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -58,6 +58,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? beginOffset;
 
+		private int? fixedDelayDuration;
+
 		private string liveStreamUrl;
 
 		private string locationId;
@@ -182,6 +184,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				beginOffset = value;
 				DictionaryUtil.Add(QueryParameters, "BeginOffset", value.ToString());
+			}
+		}
+
+		public int? FixedDelayDuration
+		{
+			get
+			{
+				return fixedDelayDuration;
+			}
+			set	
+			{
+				fixedDelayDuration = value;
+				DictionaryUtil.Add(QueryParameters, "FixedDelayDuration", value.ToString());
 			}
 		}
 

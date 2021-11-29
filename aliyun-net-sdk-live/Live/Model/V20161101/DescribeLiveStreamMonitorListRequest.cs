@@ -27,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DeleteLivePullStreamInfoConfigRequest : RpcAcsRequest<DeleteLivePullStreamInfoConfigResponse>
+    public class DescribeLiveStreamMonitorListRequest : RpcAcsRequest<DescribeLiveStreamMonitorListResponse>
     {
-        public DeleteLivePullStreamInfoConfigRequest()
-            : base("live", "2016-11-01", "DeleteLivePullStreamInfoConfig", "live", "openAPI")
+        public DescribeLiveStreamMonitorListRequest()
+            : base("live", "2016-11-01", "DescribeLiveStreamMonitorList", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,50 +40,54 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string appName;
+		private string monitorId;
 
-		private string streamName;
+		private int? pageNum;
 
-		private string domainName;
+		private int? pageSize;
 
 		private long? ownerId;
 
-		public string AppName
+		private int? orderRule;
+
+		private int? status;
+
+		public string MonitorId
 		{
 			get
 			{
-				return appName;
+				return monitorId;
 			}
 			set	
 			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
+				monitorId = value;
+				DictionaryUtil.Add(QueryParameters, "MonitorId", value);
 			}
 		}
 
-		public string StreamName
+		public int? PageNum
 		{
 			get
 			{
-				return streamName;
+				return pageNum;
 			}
 			set	
 			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 
-		public string DomainName
+		public int? PageSize
 		{
 			get
 			{
-				return domainName;
+				return pageSize;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -100,9 +104,40 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-        public override DeleteLivePullStreamInfoConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? OrderRule
+		{
+			get
+			{
+				return orderRule;
+			}
+			set	
+			{
+				orderRule = value;
+				DictionaryUtil.Add(QueryParameters, "OrderRule", value.ToString());
+			}
+		}
+
+		public int? Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeLiveStreamMonitorListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteLivePullStreamInfoConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLiveStreamMonitorListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
