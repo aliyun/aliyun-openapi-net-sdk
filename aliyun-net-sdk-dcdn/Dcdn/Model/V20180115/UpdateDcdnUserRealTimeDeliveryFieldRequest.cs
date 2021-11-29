@@ -28,52 +28,34 @@ using Aliyun.Acs.dcdn.Transform.V20180115;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class SetDcdnDomainSMCertificateRequest : RpcAcsRequest<SetDcdnDomainSMCertificateResponse>
+    public class UpdateDcdnUserRealTimeDeliveryFieldRequest : RpcAcsRequest<UpdateDcdnUserRealTimeDeliveryFieldResponse>
     {
-        public SetDcdnDomainSMCertificateRequest()
-            : base("dcdn", "2018-01-15", "SetDcdnDomainSMCertificate")
+        public UpdateDcdnUserRealTimeDeliveryFieldRequest()
+            : base("dcdn", "2018-01-15", "UpdateDcdnUserRealTimeDeliveryField")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.dcdn.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.dcdn.Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
-		private string sSLProtocol;
-
-		private string domainName;
+		private string businessType;
 
 		private long? ownerId;
 
-		private string securityToken;
+		private string fields;
 
-		private string certIdentifier;
-
-		public string SSLProtocol
+		public string BusinessType
 		{
 			get
 			{
-				return sSLProtocol;
+				return businessType;
 			}
 			set	
 			{
-				sSLProtocol = value;
-				DictionaryUtil.Add(QueryParameters, "SSLProtocol", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				businessType = value;
+				DictionaryUtil.Add(QueryParameters, "BusinessType", value);
 			}
 		}
 
@@ -90,35 +72,22 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string SecurityToken
+		public string Fields
 		{
 			get
 			{
-				return securityToken;
+				return fields;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				fields = value;
+				DictionaryUtil.Add(QueryParameters, "Fields", value);
 			}
 		}
 
-		public string CertIdentifier
-		{
-			get
-			{
-				return certIdentifier;
-			}
-			set	
-			{
-				certIdentifier = value;
-				DictionaryUtil.Add(QueryParameters, "CertIdentifier", value);
-			}
-		}
-
-        public override SetDcdnDomainSMCertificateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateDcdnUserRealTimeDeliveryFieldResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetDcdnDomainSMCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateDcdnUserRealTimeDeliveryFieldResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

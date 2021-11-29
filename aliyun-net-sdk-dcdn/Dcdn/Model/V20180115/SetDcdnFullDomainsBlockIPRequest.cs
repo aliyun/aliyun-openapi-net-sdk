@@ -28,10 +28,10 @@ using Aliyun.Acs.dcdn.Transform.V20180115;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class SetDcdnDomainSMCertificateRequest : RpcAcsRequest<SetDcdnDomainSMCertificateResponse>
+    public class SetDcdnFullDomainsBlockIPRequest : RpcAcsRequest<SetDcdnFullDomainsBlockIPResponse>
     {
-        public SetDcdnDomainSMCertificateRequest()
-            : base("dcdn", "2018-01-15", "SetDcdnDomainSMCertificate")
+        public SetDcdnFullDomainsBlockIPRequest()
+            : base("dcdn", "2018-01-15", "SetDcdnFullDomainsBlockIP")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,39 +41,50 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			Method = MethodType.POST;
         }
 
-		private string sSLProtocol;
+		private string iPList;
 
-		private string domainName;
+		private int? blockInterval;
+
+		private string operationType;
 
 		private long? ownerId;
 
-		private string securityToken;
-
-		private string certIdentifier;
-
-		public string SSLProtocol
+		public string IPList
 		{
 			get
 			{
-				return sSLProtocol;
+				return iPList;
 			}
 			set	
 			{
-				sSLProtocol = value;
-				DictionaryUtil.Add(QueryParameters, "SSLProtocol", value);
+				iPList = value;
+				DictionaryUtil.Add(BodyParameters, "IPList", value);
 			}
 		}
 
-		public string DomainName
+		public int? BlockInterval
 		{
 			get
 			{
-				return domainName;
+				return blockInterval;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				blockInterval = value;
+				DictionaryUtil.Add(BodyParameters, "BlockInterval", value.ToString());
+			}
+		}
+
+		public string OperationType
+		{
+			get
+			{
+				return operationType;
+			}
+			set	
+			{
+				operationType = value;
+				DictionaryUtil.Add(BodyParameters, "OperationType", value);
 			}
 		}
 
@@ -90,35 +101,14 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string SecurityToken
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
+			return false;
 		}
 
-		public string CertIdentifier
-		{
-			get
-			{
-				return certIdentifier;
-			}
-			set	
-			{
-				certIdentifier = value;
-				DictionaryUtil.Add(QueryParameters, "CertIdentifier", value);
-			}
-		}
-
-        public override SetDcdnDomainSMCertificateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SetDcdnFullDomainsBlockIPResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetDcdnDomainSMCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetDcdnFullDomainsBlockIPResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

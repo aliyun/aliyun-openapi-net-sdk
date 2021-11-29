@@ -28,10 +28,10 @@ using Aliyun.Acs.dcdn.Transform.V20180115;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class SetDcdnDomainSMCertificateRequest : RpcAcsRequest<SetDcdnDomainSMCertificateResponse>
+    public class UpdateDcdnSLSRealtimeLogDeliveryRequest : RpcAcsRequest<UpdateDcdnSLSRealtimeLogDeliveryResponse>
     {
-        public SetDcdnDomainSMCertificateRequest()
-            : base("dcdn", "2018-01-15", "SetDcdnDomainSMCertificate")
+        public UpdateDcdnSLSRealtimeLogDeliveryRequest()
+            : base("dcdn", "2018-01-15", "UpdateDcdnSLSRealtimeLogDelivery")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,26 +41,71 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			Method = MethodType.POST;
         }
 
-		private string sSLProtocol;
+		private string sLSLogStore;
+
+		private string sLSProject;
+
+		private string sLSRegion;
+
+		private string projectName;
 
 		private string domainName;
 
+		private string samplingRate;
+
+		private string dataCenter;
+
 		private long? ownerId;
 
-		private string securityToken;
-
-		private string certIdentifier;
-
-		public string SSLProtocol
+		public string SLSLogStore
 		{
 			get
 			{
-				return sSLProtocol;
+				return sLSLogStore;
 			}
 			set	
 			{
-				sSLProtocol = value;
-				DictionaryUtil.Add(QueryParameters, "SSLProtocol", value);
+				sLSLogStore = value;
+				DictionaryUtil.Add(BodyParameters, "SLSLogStore", value);
+			}
+		}
+
+		public string SLSProject
+		{
+			get
+			{
+				return sLSProject;
+			}
+			set	
+			{
+				sLSProject = value;
+				DictionaryUtil.Add(BodyParameters, "SLSProject", value);
+			}
+		}
+
+		public string SLSRegion
+		{
+			get
+			{
+				return sLSRegion;
+			}
+			set	
+			{
+				sLSRegion = value;
+				DictionaryUtil.Add(BodyParameters, "SLSRegion", value);
+			}
+		}
+
+		public string ProjectName
+		{
+			get
+			{
+				return projectName;
+			}
+			set	
+			{
+				projectName = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectName", value);
 			}
 		}
 
@@ -73,7 +118,33 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			set	
 			{
 				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				DictionaryUtil.Add(BodyParameters, "DomainName", value);
+			}
+		}
+
+		public string SamplingRate
+		{
+			get
+			{
+				return samplingRate;
+			}
+			set	
+			{
+				samplingRate = value;
+				DictionaryUtil.Add(BodyParameters, "SamplingRate", value);
+			}
+		}
+
+		public string DataCenter
+		{
+			get
+			{
+				return dataCenter;
+			}
+			set	
+			{
+				dataCenter = value;
+				DictionaryUtil.Add(BodyParameters, "DataCenter", value);
 			}
 		}
 
@@ -90,35 +161,9 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string CertIdentifier
-		{
-			get
-			{
-				return certIdentifier;
-			}
-			set	
-			{
-				certIdentifier = value;
-				DictionaryUtil.Add(QueryParameters, "CertIdentifier", value);
-			}
-		}
-
-        public override SetDcdnDomainSMCertificateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateDcdnSLSRealtimeLogDeliveryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetDcdnDomainSMCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateDcdnSLSRealtimeLogDeliveryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -37,25 +37,25 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 			describeDcdnDomainWebsocketHttpCodeDataResponse.EndTime = _ctx.StringValue("DescribeDcdnDomainWebsocketHttpCodeData.EndTime");
 			describeDcdnDomainWebsocketHttpCodeDataResponse.DataInterval = _ctx.StringValue("DescribeDcdnDomainWebsocketHttpCodeData.DataInterval");
 
-			List<DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule> describeDcdnDomainWebsocketHttpCodeDataResponse_dataPerInterval = new List<DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule>();
-			for (int i = 0; i < _ctx.Length("DescribeDcdnDomainWebsocketHttpCodeData.DataPerInterval.Length"); i++) {
+			List<DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule> describeDcdnDomainWebsocketHttpCodeDataResponse_httpCodeDataPerInterval = new List<DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule>();
+			for (int i = 0; i < _ctx.Length("DescribeDcdnDomainWebsocketHttpCodeData.HttpCodeDataPerInterval.Length"); i++) {
 				DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule dataModule = new DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule();
-				dataModule.TimeStamp = _ctx.StringValue("DescribeDcdnDomainWebsocketHttpCodeData.DataPerInterval["+ i +"].TimeStamp");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDcdnDomainWebsocketHttpCodeData.HttpCodeDataPerInterval["+ i +"].TimeStamp");
 
-				List<DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule.DescribeDcdnDomainWebsocketHttpCodeData_HttpCodeDataModule> dataModule_websocketHttpCodeDataPerInterval = new List<DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule.DescribeDcdnDomainWebsocketHttpCodeData_HttpCodeDataModule>();
-				for (int j = 0; j < _ctx.Length("DescribeDcdnDomainWebsocketHttpCodeData.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval.Length"); j++) {
+				List<DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule.DescribeDcdnDomainWebsocketHttpCodeData_HttpCodeDataModule> dataModule_websocketHttpCode = new List<DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule.DescribeDcdnDomainWebsocketHttpCodeData_HttpCodeDataModule>();
+				for (int j = 0; j < _ctx.Length("DescribeDcdnDomainWebsocketHttpCodeData.HttpCodeDataPerInterval["+ i +"].WebsocketHttpCode.Length"); j++) {
 					DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule.DescribeDcdnDomainWebsocketHttpCodeData_HttpCodeDataModule httpCodeDataModule = new DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule.DescribeDcdnDomainWebsocketHttpCodeData_HttpCodeDataModule();
-					httpCodeDataModule.Code = _ctx.IntegerValue("DescribeDcdnDomainWebsocketHttpCodeData.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval["+ j +"].Code");
-					httpCodeDataModule.Proportion = _ctx.FloatValue("DescribeDcdnDomainWebsocketHttpCodeData.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval["+ j +"].Proportion");
-					httpCodeDataModule.Count = _ctx.FloatValue("DescribeDcdnDomainWebsocketHttpCodeData.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval["+ j +"].Count");
+					httpCodeDataModule.Code = _ctx.IntegerValue("DescribeDcdnDomainWebsocketHttpCodeData.HttpCodeDataPerInterval["+ i +"].WebsocketHttpCode["+ j +"].Code");
+					httpCodeDataModule.Proportion = _ctx.FloatValue("DescribeDcdnDomainWebsocketHttpCodeData.HttpCodeDataPerInterval["+ i +"].WebsocketHttpCode["+ j +"].Proportion");
+					httpCodeDataModule.Count = _ctx.FloatValue("DescribeDcdnDomainWebsocketHttpCodeData.HttpCodeDataPerInterval["+ i +"].WebsocketHttpCode["+ j +"].Count");
 
-					dataModule_websocketHttpCodeDataPerInterval.Add(httpCodeDataModule);
+					dataModule_websocketHttpCode.Add(httpCodeDataModule);
 				}
-				dataModule.WebsocketHttpCodeDataPerInterval = dataModule_websocketHttpCodeDataPerInterval;
+				dataModule.WebsocketHttpCode = dataModule_websocketHttpCode;
 
-				describeDcdnDomainWebsocketHttpCodeDataResponse_dataPerInterval.Add(dataModule);
+				describeDcdnDomainWebsocketHttpCodeDataResponse_httpCodeDataPerInterval.Add(dataModule);
 			}
-			describeDcdnDomainWebsocketHttpCodeDataResponse.DataPerInterval = describeDcdnDomainWebsocketHttpCodeDataResponse_dataPerInterval;
+			describeDcdnDomainWebsocketHttpCodeDataResponse.HttpCodeDataPerInterval = describeDcdnDomainWebsocketHttpCodeDataResponse_httpCodeDataPerInterval;
         
 			return describeDcdnDomainWebsocketHttpCodeDataResponse;
         }

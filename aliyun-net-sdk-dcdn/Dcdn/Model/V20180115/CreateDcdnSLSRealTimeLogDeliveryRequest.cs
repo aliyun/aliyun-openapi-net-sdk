@@ -28,10 +28,10 @@ using Aliyun.Acs.dcdn.Transform.V20180115;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class DeleteDcdnDomainRequest : RpcAcsRequest<DeleteDcdnDomainResponse>
+    public class CreateDcdnSLSRealTimeLogDeliveryRequest : RpcAcsRequest<CreateDcdnSLSRealTimeLogDeliveryResponse>
     {
-        public DeleteDcdnDomainRequest()
-            : base("dcdn", "2018-01-15", "DeleteDcdnDomain")
+        public CreateDcdnSLSRealTimeLogDeliveryRequest()
+            : base("dcdn", "2018-01-15", "CreateDcdnSLSRealTimeLogDelivery")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,37 +41,86 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			Method = MethodType.POST;
         }
 
-		private string securityToken;
+		private string sLSLogStore;
 
-		private string ownerAccount;
+		private string sLSProject;
+
+		private string businessType;
+
+		private string sLSRegion;
+
+		private string projectName;
 
 		private string domainName;
 
+		private string samplingRate;
+
+		private string dataCenter;
+
 		private long? ownerId;
 
-		public string SecurityToken
+		public string SLSLogStore
 		{
 			get
 			{
-				return securityToken;
+				return sLSLogStore;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				sLSLogStore = value;
+				DictionaryUtil.Add(BodyParameters, "SLSLogStore", value);
 			}
 		}
 
-		public string OwnerAccount
+		public string SLSProject
 		{
 			get
 			{
-				return ownerAccount;
+				return sLSProject;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				sLSProject = value;
+				DictionaryUtil.Add(BodyParameters, "SLSProject", value);
+			}
+		}
+
+		public string BusinessType
+		{
+			get
+			{
+				return businessType;
+			}
+			set	
+			{
+				businessType = value;
+				DictionaryUtil.Add(BodyParameters, "BusinessType", value);
+			}
+		}
+
+		public string SLSRegion
+		{
+			get
+			{
+				return sLSRegion;
+			}
+			set	
+			{
+				sLSRegion = value;
+				DictionaryUtil.Add(BodyParameters, "SLSRegion", value);
+			}
+		}
+
+		public string ProjectName
+		{
+			get
+			{
+				return projectName;
+			}
+			set	
+			{
+				projectName = value;
+				DictionaryUtil.Add(BodyParameters, "ProjectName", value);
 			}
 		}
 
@@ -84,7 +133,33 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			set	
 			{
 				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				DictionaryUtil.Add(BodyParameters, "DomainName", value);
+			}
+		}
+
+		public string SamplingRate
+		{
+			get
+			{
+				return samplingRate;
+			}
+			set	
+			{
+				samplingRate = value;
+				DictionaryUtil.Add(BodyParameters, "SamplingRate", value);
+			}
+		}
+
+		public string DataCenter
+		{
+			get
+			{
+				return dataCenter;
+			}
+			set	
+			{
+				dataCenter = value;
+				DictionaryUtil.Add(BodyParameters, "DataCenter", value);
 			}
 		}
 
@@ -101,9 +176,9 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-        public override DeleteDcdnDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateDcdnSLSRealTimeLogDeliveryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteDcdnDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDcdnSLSRealTimeLogDeliveryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

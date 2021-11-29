@@ -28,10 +28,10 @@ using Aliyun.Acs.dcdn.Transform.V20180115;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class SetDcdnDomainSMCertificateRequest : RpcAcsRequest<SetDcdnDomainSMCertificateResponse>
+    public class CreateSlrAndSlsProjectRequest : RpcAcsRequest<CreateSlrAndSlsProjectResponse>
     {
-        public SetDcdnDomainSMCertificateRequest()
-            : base("dcdn", "2018-01-15", "SetDcdnDomainSMCertificate")
+        public CreateSlrAndSlsProjectRequest()
+            : base("dcdn", "2018-01-15", "CreateSlrAndSlsProject")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,41 +41,9 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			Method = MethodType.POST;
         }
 
-		private string sSLProtocol;
-
-		private string domainName;
-
 		private long? ownerId;
 
-		private string securityToken;
-
-		private string certIdentifier;
-
-		public string SSLProtocol
-		{
-			get
-			{
-				return sSLProtocol;
-			}
-			set	
-			{
-				sSLProtocol = value;
-				DictionaryUtil.Add(QueryParameters, "SSLProtocol", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+		private string region;
 
 		public long? OwnerId
 		{
@@ -90,35 +58,22 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string SecurityToken
+		public string Region
 		{
 			get
 			{
-				return securityToken;
+				return region;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				region = value;
+				DictionaryUtil.Add(BodyParameters, "Region", value);
 			}
 		}
 
-		public string CertIdentifier
-		{
-			get
-			{
-				return certIdentifier;
-			}
-			set	
-			{
-				certIdentifier = value;
-				DictionaryUtil.Add(QueryParameters, "CertIdentifier", value);
-			}
-		}
-
-        public override SetDcdnDomainSMCertificateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateSlrAndSlsProjectResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetDcdnDomainSMCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateSlrAndSlsProjectResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

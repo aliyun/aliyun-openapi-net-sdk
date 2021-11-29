@@ -36,6 +36,10 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 			describeDcdnSMCertificateDetailResponse.EncryptCertificate = _ctx.StringValue("DescribeDcdnSMCertificateDetail.EncryptCertificate");
 			describeDcdnSMCertificateDetailResponse.CertIdentifier = _ctx.StringValue("DescribeDcdnSMCertificateDetail.CertIdentifier");
 			describeDcdnSMCertificateDetailResponse.CertName = _ctx.StringValue("DescribeDcdnSMCertificateDetail.CertName");
+			describeDcdnSMCertificateDetailResponse.CommonName = _ctx.StringValue("DescribeDcdnSMCertificateDetail.CommonName");
+			describeDcdnSMCertificateDetailResponse.Sans = _ctx.StringValue("DescribeDcdnSMCertificateDetail.Sans");
+			describeDcdnSMCertificateDetailResponse.CertOrg = _ctx.StringValue("DescribeDcdnSMCertificateDetail.CertOrg");
+			describeDcdnSMCertificateDetailResponse.CertExpireTime = _ctx.StringValue("DescribeDcdnSMCertificateDetail.CertExpireTime");
         
 			return describeDcdnSMCertificateDetailResponse;
         }
