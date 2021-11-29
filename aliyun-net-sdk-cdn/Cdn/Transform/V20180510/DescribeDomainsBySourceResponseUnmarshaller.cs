@@ -53,6 +53,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 					domainInfo.CreateTime = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].CreateTime");
 					domainInfo.UpdateTime = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].UpdateTime");
 					domainInfo.Status = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].Status");
+					domainInfo.CdnType = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].CdnType");
 
 					domainsData_domainInfos.Add(domainInfo);
 				}

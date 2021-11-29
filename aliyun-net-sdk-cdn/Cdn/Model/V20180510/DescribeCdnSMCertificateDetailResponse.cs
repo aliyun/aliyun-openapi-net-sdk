@@ -35,6 +35,14 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string certName;
 
+		private string commonName;
+
+		private string sans;
+
+		private string certOrg;
+
+		private string certExpireTime;
+
 		public string RequestId
 		{
 			get
@@ -92,6 +100,54 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				certName = value;
+			}
+		}
+
+		public string CommonName
+		{
+			get
+			{
+				return commonName;
+			}
+			set	
+			{
+				commonName = value;
+			}
+		}
+
+		public string Sans
+		{
+			get
+			{
+				return sans;
+			}
+			set	
+			{
+				sans = value;
+			}
+		}
+
+		public string CertOrg
+		{
+			get
+			{
+				return certOrg;
+			}
+			set	
+			{
+				certOrg = value;
+			}
+		}
+
+		public string CertExpireTime
+		{
+			get
+			{
+				return certExpireTime;
+			}
+			set	
+			{
+				certExpireTime = value;
 			}
 		}
 	}

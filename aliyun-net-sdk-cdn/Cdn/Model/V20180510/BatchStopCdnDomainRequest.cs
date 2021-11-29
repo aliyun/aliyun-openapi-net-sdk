@@ -43,9 +43,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string domainNames;
 
-		private long? ownerId;
-
 		private string securityToken;
+
+		private long? ownerId;
 
 		public string DomainNames
 		{
@@ -60,19 +60,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public string SecurityToken
 		{
 			get
@@ -83,6 +70,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

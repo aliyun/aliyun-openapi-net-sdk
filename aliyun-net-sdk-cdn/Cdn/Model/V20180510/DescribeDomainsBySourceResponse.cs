@@ -125,6 +125,8 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 				private string status;
 
+				private string cdnType;
+
 				public string DomainName
 				{
 					get
@@ -182,6 +184,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public string CdnType
+				{
+					get
+					{
+						return cdnType;
+					}
+					set	
+					{
+						cdnType = value;
 					}
 				}
 			}

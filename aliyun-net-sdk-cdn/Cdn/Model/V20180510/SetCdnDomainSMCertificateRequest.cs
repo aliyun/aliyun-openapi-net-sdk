@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			Method = MethodType.POST;
         }
 
+		private string sSLProtocol;
+
 		private string domainName;
 
 		private long? ownerId;
@@ -48,6 +50,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		private string securityToken;
 
 		private string certIdentifier;
+
+		public string SSLProtocol
+		{
+			get
+			{
+				return sSLProtocol;
+			}
+			set	
+			{
+				sSLProtocol = value;
+				DictionaryUtil.Add(QueryParameters, "SSLProtocol", value);
+			}
+		}
 
 		public string DomainName
 		{
