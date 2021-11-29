@@ -49,6 +49,7 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 				dBTaskSQLJobDetail.Skip = _ctx.BooleanValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].Skip");
 				dBTaskSQLJobDetail.SqlType = _ctx.StringValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].SqlType");
 				dBTaskSQLJobDetail.Status = _ctx.StringValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].Status");
+				dBTaskSQLJobDetail.Log = _ctx.StringValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].Log");
 
 				listDBTaskSQLJobDetailResponse_dBTaskSQLJobDetailList.Add(dBTaskSQLJobDetail);
 			}

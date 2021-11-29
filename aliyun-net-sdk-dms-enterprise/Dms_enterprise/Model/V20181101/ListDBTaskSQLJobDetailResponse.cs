@@ -136,6 +136,8 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string status;
 
+			private string log;
+
 			[JsonProperty(PropertyName = "JobDetailId")]
 			public long? JobDetailId
 			{
@@ -250,6 +252,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					status = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Log")]
+			public string Log
+			{
+				get
+				{
+					return log;
+				}
+				set	
+				{
+					log = value;
 				}
 			}
 		}
