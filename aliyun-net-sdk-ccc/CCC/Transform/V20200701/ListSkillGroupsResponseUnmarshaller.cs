@@ -44,13 +44,13 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			List<ListSkillGroupsResponse.ListSkillGroups_Data.ListSkillGroups_SkillGroup> data_list = new List<ListSkillGroupsResponse.ListSkillGroups_Data.ListSkillGroups_SkillGroup>();
 			for (int i = 0; i < _ctx.Length("ListSkillGroups.Data.List.Length"); i++) {
 				ListSkillGroupsResponse.ListSkillGroups_Data.ListSkillGroups_SkillGroup skillGroup = new ListSkillGroupsResponse.ListSkillGroups_Data.ListSkillGroups_SkillGroup();
-				skillGroup.Description = _ctx.StringValue("ListSkillGroups.Data.List["+ i +"].Description");
 				skillGroup.DisplayName = _ctx.StringValue("ListSkillGroups.Data.List["+ i +"].DisplayName");
-				skillGroup.InstanceId = _ctx.StringValue("ListSkillGroups.Data.List["+ i +"].InstanceId");
+				skillGroup.Description = _ctx.StringValue("ListSkillGroups.Data.List["+ i +"].Description");
 				skillGroup.PhoneNumberCount = _ctx.IntegerValue("ListSkillGroups.Data.List["+ i +"].PhoneNumberCount");
 				skillGroup.SkillGroupId = _ctx.StringValue("ListSkillGroups.Data.List["+ i +"].SkillGroupId");
 				skillGroup.SkillGroupName = _ctx.StringValue("ListSkillGroups.Data.List["+ i +"].SkillGroupName");
 				skillGroup.UserCount = _ctx.IntegerValue("ListSkillGroups.Data.List["+ i +"].UserCount");
+				skillGroup.InstanceId = _ctx.StringValue("ListSkillGroups.Data.List["+ i +"].InstanceId");
 
 				data_list.Add(skillGroup);
 			}

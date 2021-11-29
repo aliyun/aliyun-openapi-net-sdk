@@ -27,10 +27,10 @@ using Aliyun.Acs.CCC.Transform.V20200701;
 
 namespace Aliyun.Acs.CCC.Model.V20200701
 {
-    public class MakeCallRequest : RpcAcsRequest<MakeCallResponse>
+    public class ListSipTracesRequest : RpcAcsRequest<ListSipTracesResponse>
     {
-        public MakeCallRequest()
-            : base("CCC", "2020-07-01", "MakeCall", "CCC", "openAPI")
+        public ListSipTracesRequest()
+            : base("CCC", "2020-07-01", "ListSipTraces", "CCC", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,110 +40,20 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			Method = MethodType.POST;
         }
 
-		private string callee;
-
-		private string maskedCallee;
-
-		private string userId;
-
-		private string deviceId;
-
-		private string tags;
-
-		private int? timeoutSeconds;
-
-		private string caller;
+		private string callId;
 
 		private string instanceId;
 
-		public string Callee
+		public string CallId
 		{
 			get
 			{
-				return callee;
+				return callId;
 			}
 			set	
 			{
-				callee = value;
-				DictionaryUtil.Add(QueryParameters, "Callee", value);
-			}
-		}
-
-		public string MaskedCallee
-		{
-			get
-			{
-				return maskedCallee;
-			}
-			set	
-			{
-				maskedCallee = value;
-				DictionaryUtil.Add(QueryParameters, "MaskedCallee", value);
-			}
-		}
-
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
-			}
-		}
-
-		public string DeviceId
-		{
-			get
-			{
-				return deviceId;
-			}
-			set	
-			{
-				deviceId = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceId", value);
-			}
-		}
-
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
-		public int? TimeoutSeconds
-		{
-			get
-			{
-				return timeoutSeconds;
-			}
-			set	
-			{
-				timeoutSeconds = value;
-				DictionaryUtil.Add(QueryParameters, "TimeoutSeconds", value.ToString());
-			}
-		}
-
-		public string Caller
-		{
-			get
-			{
-				return caller;
-			}
-			set	
-			{
-				caller = value;
-				DictionaryUtil.Add(QueryParameters, "Caller", value);
+				callId = value;
+				DictionaryUtil.Add(QueryParameters, "CallId", value);
 			}
 		}
 
@@ -165,9 +75,9 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			return false;
 		}
 
-        public override MakeCallResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListSipTracesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return MakeCallResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListSipTracesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -157,11 +157,9 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			public class ListSkillGroups_SkillGroup
 			{
 
-				private string description;
-
 				private string displayName;
 
-				private string instanceId;
+				private string description;
 
 				private int? phoneNumberCount;
 
@@ -171,17 +169,7 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 				private int? userCount;
 
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
+				private string instanceId;
 
 				public string DisplayName
 				{
@@ -195,15 +183,15 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public string InstanceId
+				public string Description
 				{
 					get
 					{
-						return instanceId;
+						return description;
 					}
 					set	
 					{
-						instanceId = value;
+						description = value;
 					}
 				}
 
@@ -252,6 +240,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						userCount = value;
+					}
+				}
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
 					}
 				}
 			}

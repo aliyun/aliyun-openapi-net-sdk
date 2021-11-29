@@ -50,7 +50,6 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 				listItem.CasesAborted = _ctx.LongValue("ListCampaigns.Data.List["+ i +"].CasesAborted");
 				listItem.CasesUncompleted = _ctx.LongValue("ListCampaigns.Data.List["+ i +"].CasesUncompleted");
 				listItem.CasesConnected = _ctx.LongValue("ListCampaigns.Data.List["+ i +"].CasesConnected");
-				listItem.CompletedRate = _ctx.LongValue("ListCampaigns.Data.List["+ i +"].CompletedRate");
 				listItem.MaxAttemptCount = _ctx.LongValue("ListCampaigns.Data.List["+ i +"].MaxAttemptCount");
 				listItem.MinAttemptInterval = _ctx.LongValue("ListCampaigns.Data.List["+ i +"].MinAttemptInterval");
 				listItem.Name = _ctx.StringValue("ListCampaigns.Data.List["+ i +"].Name");

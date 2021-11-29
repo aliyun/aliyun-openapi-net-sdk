@@ -44,6 +44,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 		private string callee;
 
+		private string maskedCallee;
+
 		private string contactFlowVariables;
 
 		private string tags;
@@ -77,6 +79,19 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			{
 				callee = value;
 				DictionaryUtil.Add(QueryParameters, "Callee", value);
+			}
+		}
+
+		public string MaskedCallee
+		{
+			get
+			{
+				return maskedCallee;
+			}
+			set	
+			{
+				maskedCallee = value;
+				DictionaryUtil.Add(QueryParameters, "MaskedCallee", value);
 			}
 		}
 

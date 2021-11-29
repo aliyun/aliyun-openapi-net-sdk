@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20200701
 {
-	public class GetMonoRecordingResponse : AcsResponse
+	public class ListSipTracesResponse : AcsResponse
 	{
 
 		private string code;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 		private string requestId;
 
-		private GetMonoRecording_Data data;
+		private List<ListSipTraces_CallTraces> data;
 
 		public string Code
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			}
 		}
 
-		public GetMonoRecording_Data Data
+		public List<ListSipTraces_CallTraces> Data
 		{
 			get
 			{
@@ -95,34 +95,104 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			}
 		}
 
-		public class GetMonoRecording_Data
+		public class ListSipTraces_CallTraces
 		{
 
-			private string fileUrl;
+			private string callId;
 
-			private string fileName;
+			private string contactId;
 
-			public string FileUrl
+			private string firstLine;
+
+			private string destinationNodeIp;
+
+			private string sourceNodeIp;
+
+			private string payload;
+
+			private long? timestamp;
+
+			public string CallId
 			{
 				get
 				{
-					return fileUrl;
+					return callId;
 				}
 				set	
 				{
-					fileUrl = value;
+					callId = value;
 				}
 			}
 
-			public string FileName
+			public string ContactId
 			{
 				get
 				{
-					return fileName;
+					return contactId;
 				}
 				set	
 				{
-					fileName = value;
+					contactId = value;
+				}
+			}
+
+			public string FirstLine
+			{
+				get
+				{
+					return firstLine;
+				}
+				set	
+				{
+					firstLine = value;
+				}
+			}
+
+			public string DestinationNodeIp
+			{
+				get
+				{
+					return destinationNodeIp;
+				}
+				set	
+				{
+					destinationNodeIp = value;
+				}
+			}
+
+			public string SourceNodeIp
+			{
+				get
+				{
+					return sourceNodeIp;
+				}
+				set	
+				{
+					sourceNodeIp = value;
+				}
+			}
+
+			public string Payload
+			{
+				get
+				{
+					return payload;
+				}
+				set	
+				{
+					payload = value;
+				}
+			}
+
+			public long? Timestamp
+			{
+				get
+				{
+					return timestamp;
+				}
+				set	
+				{
+					timestamp = value;
 				}
 			}
 		}

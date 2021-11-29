@@ -146,6 +146,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 			private List<GetCallDetailRecord_QueueEventsItem> queueEvents;
 
+			private List<GetCallDetailRecord_CustomerEventsItem> customerEvents;
+
 			public string ReleaseInitiator
 			{
 				get
@@ -434,6 +436,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				}
 			}
 
+			public List<GetCallDetailRecord_CustomerEventsItem> CustomerEvents
+			{
+				get
+				{
+					return customerEvents;
+				}
+				set	
+				{
+					customerEvents = value;
+				}
+			}
+
 			public class GetCallDetailRecord_AgentEventsItem
 			{
 
@@ -664,6 +678,70 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				}
 
 				public class GetCallDetailRecord_EventSequenceItem4
+				{
+
+					private string _event;
+
+					private long? eventTime;
+
+					public string _Event
+					{
+						get
+						{
+							return _event;
+						}
+						set	
+						{
+							_event = value;
+						}
+					}
+
+					public long? EventTime
+					{
+						get
+						{
+							return eventTime;
+						}
+						set	
+						{
+							eventTime = value;
+						}
+					}
+				}
+			}
+
+			public class GetCallDetailRecord_CustomerEventsItem
+			{
+
+				private string customerId;
+
+				private List<GetCallDetailRecord_EventSequenceItem6> eventSequence5;
+
+				public string CustomerId
+				{
+					get
+					{
+						return customerId;
+					}
+					set	
+					{
+						customerId = value;
+					}
+				}
+
+				public List<GetCallDetailRecord_EventSequenceItem6> EventSequence5
+				{
+					get
+					{
+						return eventSequence5;
+					}
+					set	
+					{
+						eventSequence5 = value;
+					}
+				}
+
+				public class GetCallDetailRecord_EventSequenceItem6
 				{
 
 					private string _event;

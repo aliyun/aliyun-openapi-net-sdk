@@ -27,7 +27,7 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 		private string requestId;
 
-		private string campaignId;
+		private string data;
 
 		private string code;
 
@@ -47,15 +47,15 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			}
 		}
 
-		public string CampaignId
+		public string Data
 		{
 			get
 			{
-				return campaignId;
+				return data;
 			}
 			set	
 			{
-				campaignId = value;
+				data = value;
 			}
 		}
 

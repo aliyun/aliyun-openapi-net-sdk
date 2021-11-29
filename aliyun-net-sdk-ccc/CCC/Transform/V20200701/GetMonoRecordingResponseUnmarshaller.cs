@@ -37,8 +37,8 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			getMonoRecordingResponse.RequestId = _ctx.StringValue("GetMonoRecording.RequestId");
 
 			GetMonoRecordingResponse.GetMonoRecording_Data data = new GetMonoRecordingResponse.GetMonoRecording_Data();
-			data.FileName = _ctx.StringValue("GetMonoRecording.Data.FileName");
 			data.FileUrl = _ctx.StringValue("GetMonoRecording.Data.FileUrl");
+			data.FileName = _ctx.StringValue("GetMonoRecording.Data.FileName");
 			getMonoRecordingResponse.Data = data;
         
 			return getMonoRecordingResponse;

@@ -120,6 +120,25 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 				data_queueEvents.Add(queueEventsItem);
 			}
 			data.QueueEvents = data_queueEvents;
+
+			List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CustomerEventsItem> data_customerEvents = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CustomerEventsItem>();
+			for (int i = 0; i < _ctx.Length("GetCallDetailRecord.Data.CustomerEvents.Length"); i++) {
+				GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CustomerEventsItem customerEventsItem = new GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CustomerEventsItem();
+				customerEventsItem.CustomerId = _ctx.StringValue("GetCallDetailRecord.Data.CustomerEvents["+ i +"].CustomerId");
+
+				List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CustomerEventsItem.GetCallDetailRecord_EventSequenceItem6> customerEventsItem_eventSequence5 = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CustomerEventsItem.GetCallDetailRecord_EventSequenceItem6>();
+				for (int j = 0; j < _ctx.Length("GetCallDetailRecord.Data.CustomerEvents["+ i +"].EventSequence.Length"); j++) {
+					GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CustomerEventsItem.GetCallDetailRecord_EventSequenceItem6 eventSequenceItem6 = new GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_CustomerEventsItem.GetCallDetailRecord_EventSequenceItem6();
+					eventSequenceItem6._Event = _ctx.StringValue("GetCallDetailRecord.Data.CustomerEvents["+ i +"].EventSequence["+ j +"].Event");
+					eventSequenceItem6.EventTime = _ctx.LongValue("GetCallDetailRecord.Data.CustomerEvents["+ i +"].EventSequence["+ j +"].EventTime");
+
+					customerEventsItem_eventSequence5.Add(eventSequenceItem6);
+				}
+				customerEventsItem.EventSequence5 = customerEventsItem_eventSequence5;
+
+				data_customerEvents.Add(customerEventsItem);
+			}
+			data.CustomerEvents = data_customerEvents;
 			getCallDetailRecordResponse.Data = data;
         
 			return getCallDetailRecordResponse;

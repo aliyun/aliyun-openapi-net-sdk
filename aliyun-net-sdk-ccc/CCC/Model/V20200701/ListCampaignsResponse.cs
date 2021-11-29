@@ -181,8 +181,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 				private long? casesConnected;
 
-				private long? completedRate;
-
 				private long? maxAttemptCount;
 
 				private long? minAttemptInterval;
@@ -266,18 +264,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						casesConnected = value;
-					}
-				}
-
-				public long? CompletedRate
-				{
-					get
-					{
-						return completedRate;
-					}
-					set	
-					{
-						completedRate = value;
 					}
 				}
 

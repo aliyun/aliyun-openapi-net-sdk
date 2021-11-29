@@ -32,7 +32,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 
 			createCampaignResponse.HttpResponse = _ctx.HttpResponse;
 			createCampaignResponse.RequestId = _ctx.StringValue("CreateCampaign.RequestId");
-			createCampaignResponse.CampaignId = _ctx.StringValue("CreateCampaign.CampaignId");
+			createCampaignResponse.Data = _ctx.StringValue("CreateCampaign.Data");
 			createCampaignResponse.Code = _ctx.StringValue("CreateCampaign.Code");
 			createCampaignResponse.Message = _ctx.StringValue("CreateCampaign.Message");
 			createCampaignResponse.HttpStatusCode = _ctx.LongValue("CreateCampaign.HttpStatusCode");

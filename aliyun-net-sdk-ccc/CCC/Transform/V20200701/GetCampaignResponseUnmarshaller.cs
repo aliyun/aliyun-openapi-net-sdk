@@ -42,7 +42,6 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			data.CasesAborted = _ctx.LongValue("GetCampaign.Data.CasesAborted");
 			data.CasesUncompleted = _ctx.LongValue("GetCampaign.Data.CasesUncompleted");
 			data.CasesConnected = _ctx.LongValue("GetCampaign.Data.CasesConnected");
-			data.CompletedRate = _ctx.LongValue("GetCampaign.Data.CompletedRate");
 			data.MaxAttemptCount = _ctx.LongValue("GetCampaign.Data.MaxAttemptCount");
 			data.MinAttemptInterval = _ctx.LongValue("GetCampaign.Data.MinAttemptInterval");
 			data.Name = _ctx.StringValue("GetCampaign.Data.Name");
