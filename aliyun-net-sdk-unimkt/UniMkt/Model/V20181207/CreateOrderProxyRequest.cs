@@ -30,7 +30,7 @@ namespace Aliyun.Acs.UniMkt.Model.V20181207
     public class CreateOrderProxyRequest : RpcAcsRequest<CreateOrderProxyResponse>
     {
         public CreateOrderProxyRequest()
-            : base("UniMkt", "2018-12-07", "CreateOrderProxy", "uniMkt", "openAPI")
+            : base("UniMkt", "2018-12-07", "CreateOrderProxy", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

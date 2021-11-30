@@ -33,11 +33,11 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 			queryPromotionResponse.HttpResponse = _ctx.HttpResponse;
 			queryPromotionResponse.Status = _ctx.BooleanValue("QueryPromotion.Status");
 			queryPromotionResponse.Msg = _ctx.StringValue("QueryPromotion.Msg");
-			queryPromotionResponse.ErrorCode = _ctx.StringValue("QueryPromotion.ErrorCode");
 			queryPromotionResponse.RequestId = _ctx.StringValue("QueryPromotion.RequestId");
-			queryPromotionResponse.Url = _ctx.StringValue("QueryPromotion.Url");
+			queryPromotionResponse.ErrorCode = _ctx.StringValue("QueryPromotion.ErrorCode");
 			queryPromotionResponse.UnionAmount = _ctx.StringValue("QueryPromotion.UnionAmount");
 			queryPromotionResponse.NoPromotionUrl = _ctx.StringValue("QueryPromotion.NoPromotionUrl");
+			queryPromotionResponse.Url = _ctx.StringValue("QueryPromotion.Url");
         
 			return queryPromotionResponse;
         }

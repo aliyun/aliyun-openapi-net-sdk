@@ -30,7 +30,7 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
     public class ModifyTenantInfoRequest : RpcAcsRequest<ModifyTenantInfoResponse>
     {
         public ModifyTenantInfoRequest()
-            : base("UniMkt", "2018-12-12", "ModifyTenantInfo", "uniMkt", "openAPI")
+            : base("UniMkt", "2018-12-12", "ModifyTenantInfo", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

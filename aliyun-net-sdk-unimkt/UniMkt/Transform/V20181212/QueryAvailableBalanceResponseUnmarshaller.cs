@@ -32,10 +32,10 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 
 			queryAvailableBalanceResponse.HttpResponse = _ctx.HttpResponse;
 			queryAvailableBalanceResponse.Code = _ctx.IntegerValue("QueryAvailableBalance.Code");
-			queryAvailableBalanceResponse.Success = _ctx.BooleanValue("QueryAvailableBalance.Success");
+			queryAvailableBalanceResponse.Data = _ctx.LongValue("QueryAvailableBalance.Data");
 			queryAvailableBalanceResponse.ErrorMsg = _ctx.StringValue("QueryAvailableBalance.ErrorMsg");
 			queryAvailableBalanceResponse.RequestId = _ctx.StringValue("QueryAvailableBalance.RequestId");
-			queryAvailableBalanceResponse.Data = _ctx.LongValue("QueryAvailableBalance.Data");
+			queryAvailableBalanceResponse.Success = _ctx.BooleanValue("QueryAvailableBalance.Success");
         
 			return queryAvailableBalanceResponse;
         }

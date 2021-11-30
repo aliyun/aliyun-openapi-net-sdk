@@ -32,10 +32,10 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 
 			queryUnionContentInfoResponse.HttpResponse = _ctx.HttpResponse;
 			queryUnionContentInfoResponse.Code = _ctx.IntegerValue("QueryUnionContentInfo.Code");
-			queryUnionContentInfoResponse.Success = _ctx.BooleanValue("QueryUnionContentInfo.Success");
+			queryUnionContentInfoResponse.Data = _ctx.StringValue("QueryUnionContentInfo.Data");
 			queryUnionContentInfoResponse.ErrorMsg = _ctx.StringValue("QueryUnionContentInfo.ErrorMsg");
 			queryUnionContentInfoResponse.RequestId = _ctx.StringValue("QueryUnionContentInfo.RequestId");
-			queryUnionContentInfoResponse.Data = _ctx.StringValue("QueryUnionContentInfo.Data");
+			queryUnionContentInfoResponse.Success = _ctx.BooleanValue("QueryUnionContentInfo.Success");
         
 			return queryUnionContentInfoResponse;
         }

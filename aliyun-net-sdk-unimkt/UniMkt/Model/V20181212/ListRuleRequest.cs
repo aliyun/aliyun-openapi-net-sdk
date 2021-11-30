@@ -30,7 +30,7 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
     public class ListRuleRequest : RpcAcsRequest<ListRuleResponse>
     {
         public ListRuleRequest()
-            : base("UniMkt", "2018-12-12", "ListRule", "uniMkt", "openAPI")
+            : base("UniMkt", "2018-12-12", "ListRule", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,6 +49,8 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 		private string originSiteUserId;
 
 		private int? pageNumber;
+
+		private string mediaName;
 
 		private string appName;
 
@@ -73,6 +75,8 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 		private long? startCreateTime;
 
 		private string userSite;
+
+		private string adSlotName;
 
 		private string ruleId;
 
@@ -138,6 +142,19 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string MediaName
+		{
+			get
+			{
+				return mediaName;
+			}
+			set	
+			{
+				mediaName = value;
+				DictionaryUtil.Add(QueryParameters, "MediaName", value);
 			}
 		}
 
@@ -294,6 +311,19 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			{
 				userSite = value;
 				DictionaryUtil.Add(QueryParameters, "UserSite", value);
+			}
+		}
+
+		public string AdSlotName
+		{
+			get
+			{
+				return adSlotName;
+			}
+			set	
+			{
+				adSlotName = value;
+				DictionaryUtil.Add(QueryParameters, "AdSlotName", value);
 			}
 		}
 

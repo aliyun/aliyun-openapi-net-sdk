@@ -31,11 +31,11 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 			GetUnionTaskStatusResponse getUnionTaskStatusResponse = new GetUnionTaskStatusResponse();
 
 			getUnionTaskStatusResponse.HttpResponse = _ctx.HttpResponse;
-			getUnionTaskStatusResponse.Success = _ctx.BooleanValue("GetUnionTaskStatus.Success");
-			getUnionTaskStatusResponse.ErrorCode = _ctx.IntegerValue("GetUnionTaskStatus.ErrorCode");
+			getUnionTaskStatusResponse.RequestId = _ctx.StringValue("GetUnionTaskStatus.RequestId");
 			getUnionTaskStatusResponse.ErrorMessage = _ctx.StringValue("GetUnionTaskStatus.ErrorMessage");
 			getUnionTaskStatusResponse.Result = _ctx.BooleanValue("GetUnionTaskStatus.Result");
-			getUnionTaskStatusResponse.RequestId = _ctx.StringValue("GetUnionTaskStatus.RequestId");
+			getUnionTaskStatusResponse.ErrorCode = _ctx.IntegerValue("GetUnionTaskStatus.ErrorCode");
+			getUnionTaskStatusResponse.Success = _ctx.BooleanValue("GetUnionTaskStatus.Success");
         
 			return getUnionTaskStatusResponse;
         }

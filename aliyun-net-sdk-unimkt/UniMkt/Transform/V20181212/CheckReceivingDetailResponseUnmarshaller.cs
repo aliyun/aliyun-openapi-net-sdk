@@ -31,12 +31,13 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 			CheckReceivingDetailResponse checkReceivingDetailResponse = new CheckReceivingDetailResponse();
 
 			checkReceivingDetailResponse.HttpResponse = _ctx.HttpResponse;
-			checkReceivingDetailResponse.RequestId = _ctx.StringValue("CheckReceivingDetail.RequestId");
 			checkReceivingDetailResponse.Status = _ctx.BooleanValue("CheckReceivingDetail.Status");
 			checkReceivingDetailResponse.Msg = _ctx.StringValue("CheckReceivingDetail.Msg");
+			checkReceivingDetailResponse.RequestId = _ctx.StringValue("CheckReceivingDetail.RequestId");
 			checkReceivingDetailResponse.ErrorCode = _ctx.StringValue("CheckReceivingDetail.ErrorCode");
-			checkReceivingDetailResponse.HasPromotion = _ctx.BooleanValue("CheckReceivingDetail.HasPromotion");
 			checkReceivingDetailResponse.TradeOrderId = _ctx.StringValue("CheckReceivingDetail.TradeOrderId");
+			checkReceivingDetailResponse.HasPromotion = _ctx.BooleanValue("CheckReceivingDetail.HasPromotion");
+			checkReceivingDetailResponse.UnionAmount = _ctx.StringValue("CheckReceivingDetail.UnionAmount");
         
 			return checkReceivingDetailResponse;
         }

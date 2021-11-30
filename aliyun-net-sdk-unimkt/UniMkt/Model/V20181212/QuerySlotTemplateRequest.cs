@@ -30,7 +30,7 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
     public class QuerySlotTemplateRequest : RpcAcsRequest<QuerySlotTemplateResponse>
     {
         public QuerySlotTemplateRequest()
-            : base("UniMkt", "2018-12-12", "QuerySlotTemplate", "uniMkt", "openAPI")
+            : base("UniMkt", "2018-12-12", "QuerySlotTemplate", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

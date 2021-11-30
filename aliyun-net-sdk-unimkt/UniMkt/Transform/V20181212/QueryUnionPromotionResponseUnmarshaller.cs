@@ -31,10 +31,11 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 			QueryUnionPromotionResponse queryUnionPromotionResponse = new QueryUnionPromotionResponse();
 
 			queryUnionPromotionResponse.HttpResponse = _ctx.HttpResponse;
-			queryUnionPromotionResponse.ErrorCode = _ctx.IntegerValue("QueryUnionPromotion.ErrorCode");
-			queryUnionPromotionResponse.Success = _ctx.BooleanValue("QueryUnionPromotion.Success");
 			queryUnionPromotionResponse.ErrorMsg = _ctx.StringValue("QueryUnionPromotion.ErrorMsg");
 			queryUnionPromotionResponse.RequestId = _ctx.StringValue("QueryUnionPromotion.RequestId");
+			queryUnionPromotionResponse.BizErrorCode = _ctx.StringValue("QueryUnionPromotion.BizErrorCode");
+			queryUnionPromotionResponse.Success = _ctx.BooleanValue("QueryUnionPromotion.Success");
+			queryUnionPromotionResponse.ErrorCode = _ctx.IntegerValue("QueryUnionPromotion.ErrorCode");
 
 			List<Dictionary<string, string>> queryUnionPromotionResponse_result = new List<Dictionary<string, string>>();
 			for (int i = 0; i < _ctx.Length("QueryUnionPromotion.Result.Length"); i++) {

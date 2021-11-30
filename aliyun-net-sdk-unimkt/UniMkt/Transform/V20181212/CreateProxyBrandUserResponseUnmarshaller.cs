@@ -32,10 +32,10 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 
 			createProxyBrandUserResponse.HttpResponse = _ctx.HttpResponse;
 			createProxyBrandUserResponse.Code = _ctx.IntegerValue("CreateProxyBrandUser.Code");
-			createProxyBrandUserResponse.Success = _ctx.BooleanValue("CreateProxyBrandUser.Success");
+			createProxyBrandUserResponse.Data = _ctx.BooleanValue("CreateProxyBrandUser.Data");
 			createProxyBrandUserResponse.ErrorMsg = _ctx.StringValue("CreateProxyBrandUser.ErrorMsg");
 			createProxyBrandUserResponse.RequestId = _ctx.StringValue("CreateProxyBrandUser.RequestId");
-			createProxyBrandUserResponse.Data = _ctx.BooleanValue("CreateProxyBrandUser.Data");
+			createProxyBrandUserResponse.Success = _ctx.BooleanValue("CreateProxyBrandUser.Success");
         
 			return createProxyBrandUserResponse;
         }

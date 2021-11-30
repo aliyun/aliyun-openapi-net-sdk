@@ -30,7 +30,7 @@ namespace Aliyun.Acs.UniMkt.Model.V20181207
     public class BrandMessageMigrateRequest : RpcAcsRequest<BrandMessageMigrateResponse>
     {
         public BrandMessageMigrateRequest()
-            : base("UniMkt", "2018-12-07", "BrandMessageMigrate", "uniMkt", "openAPI")
+            : base("UniMkt", "2018-12-07", "BrandMessageMigrate", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
     public class QueryUnionChannelRequest : RpcAcsRequest<QueryUnionChannelResponse>
     {
         public QueryUnionChannelRequest()
-            : base("UniMkt", "2018-12-12", "QueryUnionChannel", "uniMkt", "openAPI")
+            : base("UniMkt", "2018-12-12", "QueryUnionChannel", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

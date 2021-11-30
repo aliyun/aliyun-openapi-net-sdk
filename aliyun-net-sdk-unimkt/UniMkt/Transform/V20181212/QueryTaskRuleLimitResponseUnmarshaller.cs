@@ -32,9 +32,9 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 
 			queryTaskRuleLimitResponse.HttpResponse = _ctx.HttpResponse;
 			queryTaskRuleLimitResponse.Code = _ctx.IntegerValue("QueryTaskRuleLimit.Code");
-			queryTaskRuleLimitResponse.Success = _ctx.BooleanValue("QueryTaskRuleLimit.Success");
 			queryTaskRuleLimitResponse.ErrorMsg = _ctx.StringValue("QueryTaskRuleLimit.ErrorMsg");
 			queryTaskRuleLimitResponse.RequestId = _ctx.StringValue("QueryTaskRuleLimit.RequestId");
+			queryTaskRuleLimitResponse.Success = _ctx.BooleanValue("QueryTaskRuleLimit.Success");
 
 			List<Dictionary<string, string>> queryTaskRuleLimitResponse_data = new List<Dictionary<string, string>>();
 			for (int i = 0; i < _ctx.Length("QueryTaskRuleLimit.Data.Length"); i++) {

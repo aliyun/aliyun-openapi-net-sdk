@@ -30,7 +30,7 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
     public class ListMediaNameRequest : RpcAcsRequest<ListMediaNameResponse>
     {
         public ListMediaNameRequest()
-            : base("UniMkt", "2018-12-12", "ListMediaName", "uniMkt", "openAPI")
+            : base("UniMkt", "2018-12-12", "ListMediaName", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,14 +40,6 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			Method = MethodType.POST;
         }
 
-		private long? endCreateTime;
-
-		private string business;
-
-		private string os;
-
-		private string mediaStatus;
-
 		private string userId;
 
 		private string originSiteUserId;
@@ -56,73 +48,33 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 
 		private string mediaName;
 
-		private string environment;
-
 		private string appName;
-
-		private long? startCreateTime;
 
 		private string tenantId;
 
 		private int? pageSize;
 
-		private string userSite;
-
-		private string mediaType;
-
 		private string accessStatus;
 
-		public long? EndCreateTime
-		{
-			get
-			{
-				return endCreateTime;
-			}
-			set	
-			{
-				endCreateTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndCreateTime", value.ToString());
-			}
-		}
+		private string firstScene;
 
-		public string Business
-		{
-			get
-			{
-				return business;
-			}
-			set	
-			{
-				business = value;
-				DictionaryUtil.Add(QueryParameters, "Business", value);
-			}
-		}
+		private long? endCreateTime;
 
-		public string Os
-		{
-			get
-			{
-				return os;
-			}
-			set	
-			{
-				os = value;
-				DictionaryUtil.Add(QueryParameters, "Os", value);
-			}
-		}
+		private string business;
 
-		public string MediaStatus
-		{
-			get
-			{
-				return mediaStatus;
-			}
-			set	
-			{
-				mediaStatus = value;
-				DictionaryUtil.Add(QueryParameters, "MediaStatus", value);
-			}
-		}
+		private string os;
+
+		private string mediaStatus;
+
+		private string environment;
+
+		private long? startCreateTime;
+
+		private string userSite;
+
+		private string secondScene;
+
+		private string mediaType;
 
 		public string UserId
 		{
@@ -176,19 +128,6 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			}
 		}
 
-		public string Environment
-		{
-			get
-			{
-				return environment;
-			}
-			set	
-			{
-				environment = value;
-				DictionaryUtil.Add(QueryParameters, "Environment", value);
-			}
-		}
-
 		public string AppName
 		{
 			get
@@ -199,19 +138,6 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			{
 				appName = value;
 				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
-		public long? StartCreateTime
-		{
-			get
-			{
-				return startCreateTime;
-			}
-			set	
-			{
-				startCreateTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartCreateTime", value.ToString());
 			}
 		}
 
@@ -241,6 +167,110 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			}
 		}
 
+		public string AccessStatus
+		{
+			get
+			{
+				return accessStatus;
+			}
+			set	
+			{
+				accessStatus = value;
+				DictionaryUtil.Add(QueryParameters, "AccessStatus", value);
+			}
+		}
+
+		public string FirstScene
+		{
+			get
+			{
+				return firstScene;
+			}
+			set	
+			{
+				firstScene = value;
+				DictionaryUtil.Add(QueryParameters, "FirstScene", value);
+			}
+		}
+
+		public long? EndCreateTime
+		{
+			get
+			{
+				return endCreateTime;
+			}
+			set	
+			{
+				endCreateTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndCreateTime", value.ToString());
+			}
+		}
+
+		public string Business
+		{
+			get
+			{
+				return business;
+			}
+			set	
+			{
+				business = value;
+				DictionaryUtil.Add(QueryParameters, "Business", value);
+			}
+		}
+
+		public string Os
+		{
+			get
+			{
+				return os;
+			}
+			set	
+			{
+				os = value;
+				DictionaryUtil.Add(QueryParameters, "Os", value);
+			}
+		}
+
+		public string MediaStatus
+		{
+			get
+			{
+				return mediaStatus;
+			}
+			set	
+			{
+				mediaStatus = value;
+				DictionaryUtil.Add(QueryParameters, "MediaStatus", value);
+			}
+		}
+
+		public string Environment
+		{
+			get
+			{
+				return environment;
+			}
+			set	
+			{
+				environment = value;
+				DictionaryUtil.Add(QueryParameters, "Environment", value);
+			}
+		}
+
+		public long? StartCreateTime
+		{
+			get
+			{
+				return startCreateTime;
+			}
+			set	
+			{
+				startCreateTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartCreateTime", value.ToString());
+			}
+		}
+
 		public string UserSite
 		{
 			get
@@ -254,6 +284,19 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			}
 		}
 
+		public string SecondScene
+		{
+			get
+			{
+				return secondScene;
+			}
+			set	
+			{
+				secondScene = value;
+				DictionaryUtil.Add(QueryParameters, "SecondScene", value);
+			}
+		}
+
 		public string MediaType
 		{
 			get
@@ -264,19 +307,6 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			{
 				mediaType = value;
 				DictionaryUtil.Add(QueryParameters, "MediaType", value);
-			}
-		}
-
-		public string AccessStatus
-		{
-			get
-			{
-				return accessStatus;
-			}
-			set	
-			{
-				accessStatus = value;
-				DictionaryUtil.Add(QueryParameters, "AccessStatus", value);
 			}
 		}
 

@@ -33,8 +33,8 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 			saveCpmTradeResponse.HttpResponse = _ctx.HttpResponse;
 			saveCpmTradeResponse.Status = _ctx.BooleanValue("SaveCpmTrade.Status");
 			saveCpmTradeResponse.Msg = _ctx.StringValue("SaveCpmTrade.Msg");
-			saveCpmTradeResponse.ErrorCode = _ctx.StringValue("SaveCpmTrade.ErrorCode");
 			saveCpmTradeResponse.RequestId = _ctx.StringValue("SaveCpmTrade.RequestId");
+			saveCpmTradeResponse.ErrorCode = _ctx.StringValue("SaveCpmTrade.ErrorCode");
         
 			return saveCpmTradeResponse;
         }

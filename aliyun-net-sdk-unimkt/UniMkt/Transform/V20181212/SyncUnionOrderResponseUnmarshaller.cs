@@ -31,11 +31,11 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 			SyncUnionOrderResponse syncUnionOrderResponse = new SyncUnionOrderResponse();
 
 			syncUnionOrderResponse.HttpResponse = _ctx.HttpResponse;
+			syncUnionOrderResponse.Status = _ctx.BooleanValue("SyncUnionOrder.Status");
 			syncUnionOrderResponse.Msg = _ctx.StringValue("SyncUnionOrder.Msg");
-			syncUnionOrderResponse.AliPayOrderId = _ctx.StringValue("SyncUnionOrder.AliPayOrderId");
 			syncUnionOrderResponse.RequestId = _ctx.StringValue("SyncUnionOrder.RequestId");
 			syncUnionOrderResponse.ErrorCode = _ctx.StringValue("SyncUnionOrder.ErrorCode");
-			syncUnionOrderResponse.Status = _ctx.BooleanValue("SyncUnionOrder.Status");
+			syncUnionOrderResponse.AliPayOrderId = _ctx.StringValue("SyncUnionOrder.AliPayOrderId");
         
 			return syncUnionOrderResponse;
         }

@@ -29,9 +29,9 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 
 		private string msg;
 
-		private string errorCode;
-
 		private string requestId;
+
+		private string errorCode;
 
 		public bool? Status
 		{
@@ -57,18 +57,6 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			}
 		}
 
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -78,6 +66,18 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 	}

@@ -25,29 +25,19 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 	public class CheckReceivingDetailResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? status;
 
 		private string msg;
 
-		private string errorCode;
+		private string requestId;
 
-		private bool? hasPromotion;
+		private string errorCode;
 
 		private string tradeOrderId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private bool? hasPromotion;
+
+		private string unionAmount;
 
 		public bool? Status
 		{
@@ -73,6 +63,18 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			}
 		}
 
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
 		public string ErrorCode
 		{
 			get
@@ -82,6 +84,18 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			set	
 			{
 				errorCode = value;
+			}
+		}
+
+		public string TradeOrderId
+		{
+			get
+			{
+				return tradeOrderId;
+			}
+			set	
+			{
+				tradeOrderId = value;
 			}
 		}
 
@@ -97,15 +111,15 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			}
 		}
 
-		public string TradeOrderId
+		public string UnionAmount
 		{
 			get
 			{
-				return tradeOrderId;
+				return unionAmount;
 			}
 			set	
 			{
-				tradeOrderId = value;
+				unionAmount = value;
 			}
 		}
 	}

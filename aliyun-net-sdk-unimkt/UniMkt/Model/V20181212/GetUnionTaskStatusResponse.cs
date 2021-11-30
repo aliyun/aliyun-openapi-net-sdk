@@ -25,37 +25,25 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 	public class GetUnionTaskStatusResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private int? errorCode;
+		private string requestId;
 
 		private string errorMessage;
 
 		private bool? result;
 
-		private string requestId;
+		private int? errorCode;
 
-		public bool? Success
+		private bool? success;
+
+		public string RequestId
 		{
 			get
 			{
-				return success;
+				return requestId;
 			}
 			set	
 			{
-				success = value;
-			}
-		}
-
-		public int? ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				requestId = value;
 			}
 		}
 
@@ -83,15 +71,27 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			}
 		}
 
-		public string RequestId
+		public int? ErrorCode
 		{
 			get
 			{
-				return requestId;
+				return errorCode;
 			}
 			set	
 			{
-				requestId = value;
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

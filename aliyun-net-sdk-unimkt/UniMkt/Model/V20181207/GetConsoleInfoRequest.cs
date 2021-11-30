@@ -30,7 +30,7 @@ namespace Aliyun.Acs.UniMkt.Model.V20181207
     public class GetConsoleInfoRequest : RpcAcsRequest<GetConsoleInfoResponse>
     {
         public GetConsoleInfoRequest()
-            : base("UniMkt", "2018-12-07", "GetConsoleInfo", "uniMkt", "openAPI")
+            : base("UniMkt", "2018-12-07", "GetConsoleInfo", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

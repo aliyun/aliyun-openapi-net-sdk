@@ -30,7 +30,7 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
     public class QueryRuleRequest : RpcAcsRequest<QueryRuleResponse>
     {
         public QueryRuleRequest()
-            : base("UniMkt", "2018-12-12", "QueryRule", "uniMkt", "openAPI")
+            : base("UniMkt", "2018-12-12", "QueryRule", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

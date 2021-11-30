@@ -30,7 +30,7 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
     public class CheckDeviceRequest : RpcAcsRequest<CheckDeviceResponse>
     {
         public CheckDeviceRequest()
-            : base("UniMkt", "2018-12-12", "CheckDevice", "uniMkt", "openAPI")
+            : base("UniMkt", "2018-12-12", "CheckDevice", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

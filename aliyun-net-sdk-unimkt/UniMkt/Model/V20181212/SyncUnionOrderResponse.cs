@@ -25,15 +25,27 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 	public class SyncUnionOrderResponse : AcsResponse
 	{
 
-		private string msg;
+		private bool? status;
 
-		private string aliPayOrderId;
+		private string msg;
 
 		private string requestId;
 
 		private string errorCode;
 
-		private bool? status;
+		private string aliPayOrderId;
+
+		public bool? Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+			}
+		}
 
 		public string Msg
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			set	
 			{
 				msg = value;
-			}
-		}
-
-		public string AliPayOrderId
-		{
-			get
-			{
-				return aliPayOrderId;
-			}
-			set	
-			{
-				aliPayOrderId = value;
 			}
 		}
 
@@ -83,15 +83,15 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			}
 		}
 
-		public bool? Status
+		public string AliPayOrderId
 		{
 			get
 			{
-				return status;
+				return aliPayOrderId;
 			}
 			set	
 			{
-				status = value;
+				aliPayOrderId = value;
 			}
 		}
 	}

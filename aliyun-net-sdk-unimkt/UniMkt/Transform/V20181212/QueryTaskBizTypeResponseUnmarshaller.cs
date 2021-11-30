@@ -32,9 +32,9 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 
 			queryTaskBizTypeResponse.HttpResponse = _ctx.HttpResponse;
 			queryTaskBizTypeResponse.Code = _ctx.IntegerValue("QueryTaskBizType.Code");
-			queryTaskBizTypeResponse.Success = _ctx.BooleanValue("QueryTaskBizType.Success");
 			queryTaskBizTypeResponse.ErrorMsg = _ctx.StringValue("QueryTaskBizType.ErrorMsg");
 			queryTaskBizTypeResponse.RequestId = _ctx.StringValue("QueryTaskBizType.RequestId");
+			queryTaskBizTypeResponse.Success = _ctx.BooleanValue("QueryTaskBizType.Success");
 
 			List<Dictionary<string, string>> queryTaskBizTypeResponse_data = new List<Dictionary<string, string>>();
 			for (int i = 0; i < _ctx.Length("QueryTaskBizType.Data.Length"); i++) {

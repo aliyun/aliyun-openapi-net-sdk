@@ -30,7 +30,7 @@ namespace Aliyun.Acs.UniMkt.Model.V20181207
     public class PopUpQuery2Request : RpcAcsRequest<PopUpQuery2Response>
     {
         public PopUpQuery2Request()
-            : base("UniMkt", "2018-12-07", "PopUpQuery2", "uniMkt", "openAPI")
+            : base("UniMkt", "2018-12-07", "PopUpQuery2", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -27,11 +27,11 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 
 		private int? code;
 
-		private bool? success;
-
 		private string errorMsg;
 
 		private string requestId;
+
+		private bool? success;
 
 		private List<Dictionary<string, string>> data;
 
@@ -44,18 +44,6 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			set	
 			{
 				code = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
 			}
 		}
 
@@ -80,6 +68,18 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 

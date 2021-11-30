@@ -27,13 +27,13 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 
 		private int? code;
 
-		private bool? success;
+		private string data;
 
 		private string errorMsg;
 
 		private string requestId;
 
-		private string data;
+		private bool? success;
 
 		public int? Code
 		{
@@ -47,15 +47,15 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			}
 		}
 
-		public bool? Success
+		public string Data
 		{
 			get
 			{
-				return success;
+				return data;
 			}
 			set	
 			{
-				success = value;
+				data = value;
 			}
 		}
 
@@ -83,15 +83,15 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			}
 		}
 
-		public string Data
+		public bool? Success
 		{
 			get
 			{
-				return data;
+				return success;
 			}
 			set	
 			{
-				data = value;
+				success = value;
 			}
 		}
 	}

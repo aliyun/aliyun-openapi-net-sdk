@@ -30,7 +30,7 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
     public class CreateUnionTaskRequest : RpcAcsRequest<CreateUnionTaskResponse>
     {
         public CreateUnionTaskRequest()
-            : base("UniMkt", "2018-12-12", "CreateUnionTask", "uniMkt", "openAPI")
+            : base("UniMkt", "2018-12-12", "CreateUnionTask", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,6 +41,8 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
         }
 
 		private string taskType;
+
+		private string customCreativeType;
 
 		private string taskBizType;
 
@@ -59,6 +61,8 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 		private string startTime;
 
 		private long? proxyUserId;
+
+		private string contentUrl;
 
 		private string taskRuleType;
 
@@ -82,6 +86,19 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			{
 				taskType = value;
 				DictionaryUtil.Add(QueryParameters, "TaskType", value);
+			}
+		}
+
+		public string CustomCreativeType
+		{
+			get
+			{
+				return customCreativeType;
+			}
+			set	
+			{
+				customCreativeType = value;
+				DictionaryUtil.Add(QueryParameters, "CustomCreativeType", value);
 			}
 		}
 
@@ -199,6 +216,19 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			{
 				proxyUserId = value;
 				DictionaryUtil.Add(QueryParameters, "ProxyUserId", value.ToString());
+			}
+		}
+
+		public string ContentUrl
+		{
+			get
+			{
+				return contentUrl;
+			}
+			set	
+			{
+				contentUrl = value;
+				DictionaryUtil.Add(QueryParameters, "ContentUrl", value);
 			}
 		}
 

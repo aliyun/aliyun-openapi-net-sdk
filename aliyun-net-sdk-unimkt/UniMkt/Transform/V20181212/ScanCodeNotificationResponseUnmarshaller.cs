@@ -33,8 +33,8 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 			scanCodeNotificationResponse.HttpResponse = _ctx.HttpResponse;
 			scanCodeNotificationResponse.Status = _ctx.BooleanValue("ScanCodeNotification.Status");
 			scanCodeNotificationResponse.Msg = _ctx.StringValue("ScanCodeNotification.Msg");
-			scanCodeNotificationResponse.ErrorCode = _ctx.StringValue("ScanCodeNotification.ErrorCode");
 			scanCodeNotificationResponse.RequestId = _ctx.StringValue("ScanCodeNotification.RequestId");
+			scanCodeNotificationResponse.ErrorCode = _ctx.StringValue("ScanCodeNotification.ErrorCode");
         
 			return scanCodeNotificationResponse;
         }

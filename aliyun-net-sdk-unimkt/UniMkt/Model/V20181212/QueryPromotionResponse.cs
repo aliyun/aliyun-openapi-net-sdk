@@ -29,15 +29,15 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 
 		private string msg;
 
-		private string errorCode;
-
 		private string requestId;
 
-		private string url;
+		private string errorCode;
 
 		private string unionAmount;
 
 		private string noPromotionUrl;
+
+		private string url;
 
 		public bool? Status
 		{
@@ -63,18 +63,6 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			}
 		}
 
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -87,15 +75,15 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			}
 		}
 
-		public string Url
+		public string ErrorCode
 		{
 			get
 			{
-				return url;
+				return errorCode;
 			}
 			set	
 			{
-				url = value;
+				errorCode = value;
 			}
 		}
 
@@ -120,6 +108,18 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			set	
 			{
 				noPromotionUrl = value;
+			}
+		}
+
+		public string Url
+		{
+			get
+			{
+				return url;
+			}
+			set	
+			{
+				url = value;
 			}
 		}
 	}

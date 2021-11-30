@@ -25,39 +25,17 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 	public class QueryUnionPromotionResponse : AcsResponse
 	{
 
-		private int? errorCode;
-
-		private bool? success;
-
 		private string errorMsg;
 
 		private string requestId;
 
+		private string bizErrorCode;
+
+		private bool? success;
+
+		private int? errorCode;
+
 		private List<Dictionary<string, string>> result;
-
-		public int? ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
 
 		public string ErrorMsg
 		{
@@ -80,6 +58,42 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string BizErrorCode
+		{
+			get
+			{
+				return bizErrorCode;
+			}
+			set	
+			{
+				bizErrorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public int? ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 

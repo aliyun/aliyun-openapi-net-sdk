@@ -30,7 +30,7 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
     public class QueryMediaRequest : RpcAcsRequest<QueryMediaResponse>
     {
         public QueryMediaRequest()
-            : base("UniMkt", "2018-12-12", "QueryMedia", "uniMkt", "openAPI")
+            : base("UniMkt", "2018-12-12", "QueryMedia", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

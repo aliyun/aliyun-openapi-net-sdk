@@ -30,7 +30,7 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
     public class QueryUnionPromotionRequest : RpcAcsRequest<QueryUnionPromotionResponse>
     {
         public QueryUnionPromotionRequest()
-            : base("UniMkt", "2018-12-12", "QueryUnionPromotion", "uniMkt", "openAPI")
+            : base("UniMkt", "2018-12-12", "QueryUnionPromotion", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,6 +41,8 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
         }
 
 		private string unionBizType;
+
+		private string proxyChannelId;
 
 		private string userNick;
 
@@ -62,6 +64,19 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			{
 				unionBizType = value;
 				DictionaryUtil.Add(QueryParameters, "UnionBizType", value);
+			}
+		}
+
+		public string ProxyChannelId
+		{
+			get
+			{
+				return proxyChannelId;
+			}
+			set	
+			{
+				proxyChannelId = value;
+				DictionaryUtil.Add(QueryParameters, "ProxyChannelId", value);
 			}
 		}
 

@@ -32,9 +32,9 @@ namespace Aliyun.Acs.UniMkt.Transform.V20181212
 
 			queryIndustryLabelBagResponse.HttpResponse = _ctx.HttpResponse;
 			queryIndustryLabelBagResponse.Code = _ctx.IntegerValue("QueryIndustryLabelBag.Code");
-			queryIndustryLabelBagResponse.Success = _ctx.BooleanValue("QueryIndustryLabelBag.Success");
 			queryIndustryLabelBagResponse.ErrorMsg = _ctx.StringValue("QueryIndustryLabelBag.ErrorMsg");
 			queryIndustryLabelBagResponse.RequestId = _ctx.StringValue("QueryIndustryLabelBag.RequestId");
+			queryIndustryLabelBagResponse.Success = _ctx.BooleanValue("QueryIndustryLabelBag.Success");
 
 			List<Dictionary<string, string>> queryIndustryLabelBagResponse_data = new List<Dictionary<string, string>>();
 			for (int i = 0; i < _ctx.Length("QueryIndustryLabelBag.Data.Length"); i++) {

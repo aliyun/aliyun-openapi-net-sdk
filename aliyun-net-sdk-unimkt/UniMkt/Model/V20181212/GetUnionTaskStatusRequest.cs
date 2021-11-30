@@ -30,7 +30,7 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
     public class GetUnionTaskStatusRequest : RpcAcsRequest<GetUnionTaskStatusResponse>
     {
         public GetUnionTaskStatusRequest()
-            : base("UniMkt", "2018-12-12", "GetUnionTaskStatus", "uniMkt", "openAPI")
+            : base("UniMkt", "2018-12-12", "GetUnionTaskStatus", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,6 +49,8 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 		private long? userId;
 
 		private long? taskId;
+
+		private string channelId;
 
 		public string UserNick
 		{
@@ -112,6 +114,19 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			{
 				taskId = value;
 				DictionaryUtil.Add(QueryParameters, "TaskId", value.ToString());
+			}
+		}
+
+		public string ChannelId
+		{
+			get
+			{
+				return channelId;
+			}
+			set	
+			{
+				channelId = value;
+				DictionaryUtil.Add(QueryParameters, "ChannelId", value);
 			}
 		}
 

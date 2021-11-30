@@ -30,7 +30,7 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
     public class QueryUnionTaskInfoRequest : RpcAcsRequest<QueryUnionTaskInfoResponse>
     {
         public QueryUnionTaskInfoRequest()
-            : base("UniMkt", "2018-12-12", "QueryUnionTaskInfo", "uniMkt", "openAPI")
+            : base("UniMkt", "2018-12-12", "QueryUnionTaskInfo", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

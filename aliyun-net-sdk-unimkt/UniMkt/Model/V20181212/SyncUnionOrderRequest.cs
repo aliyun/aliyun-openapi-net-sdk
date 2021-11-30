@@ -30,7 +30,7 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
     public class SyncUnionOrderRequest : RpcAcsRequest<SyncUnionOrderResponse>
     {
         public SyncUnionOrderRequest()
-            : base("UniMkt", "2018-12-12", "SyncUnionOrder", "uniMkt", "openAPI")
+            : base("UniMkt", "2018-12-12", "SyncUnionOrder", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,6 +39,8 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
             }
 			Method = MethodType.POST;
         }
+
+		private string proxyChannelId;
 
 		private string taskType;
 
@@ -62,9 +64,13 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 
 		private string taskRuleType;
 
+		private string v;
+
 		private int? industryLabelBagId;
 
 		private long? applyPrice;
+
+		private string tradeTimeString;
 
 		private string extendInfo;
 
@@ -75,6 +81,19 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 		private long? taskId;
 
 		private string status;
+
+		public string ProxyChannelId
+		{
+			get
+			{
+				return proxyChannelId;
+			}
+			set	
+			{
+				proxyChannelId = value;
+				DictionaryUtil.Add(QueryParameters, "ProxyChannelId", value);
+			}
+		}
 
 		public string TaskType
 		{
@@ -219,6 +238,19 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			}
 		}
 
+		public string V
+		{
+			get
+			{
+				return v;
+			}
+			set	
+			{
+				v = value;
+				DictionaryUtil.Add(QueryParameters, "V", value);
+			}
+		}
+
 		public int? IndustryLabelBagId
 		{
 			get
@@ -242,6 +274,19 @@ namespace Aliyun.Acs.UniMkt.Model.V20181212
 			{
 				applyPrice = value;
 				DictionaryUtil.Add(QueryParameters, "ApplyPrice", value.ToString());
+			}
+		}
+
+		public string TradeTimeString
+		{
+			get
+			{
+				return tradeTimeString;
+			}
+			set	
+			{
+				tradeTimeString = value;
+				DictionaryUtil.Add(QueryParameters, "TradeTimeString", value);
 			}
 		}
 
