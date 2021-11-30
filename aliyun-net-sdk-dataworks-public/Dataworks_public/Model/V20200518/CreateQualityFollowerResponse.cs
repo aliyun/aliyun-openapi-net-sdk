@@ -25,27 +25,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class CreateQualityFollowerResponse : AcsResponse
 	{
 
-		private string errorCode;
+		private int? httpStatusCode;
 
 		private int? data;
 
-		private bool? success;
-
 		private string errorMessage;
-
-		private int? httpStatusCode;
 
 		private string requestId;
 
-		public string ErrorCode
+		private string errorCode;
+
+		private bool? success;
+
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return errorCode;
+				return httpStatusCode;
 			}
 			set	
 			{
-				errorCode = value;
+				httpStatusCode = value;
 			}
 		}
 
@@ -61,18 +61,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
 		public string ErrorMessage
 		{
 			get
@@ -85,18 +73,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -106,6 +82,30 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

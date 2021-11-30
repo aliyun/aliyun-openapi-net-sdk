@@ -22,56 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-	public class UpdateQualityFollowerResponse : AcsResponse
+	public class CreateExportMigrationResponse : AcsResponse
 	{
-
-		private int? httpStatusCode;
-
-		private bool? data;
-
-		private string errorMessage;
 
 		private string requestId;
 
-		private string errorCode;
+		private long? data;
 
 		private bool? success;
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
-
-		public bool? Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
 
 		public string RequestId
 		{
@@ -85,15 +43,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public string ErrorCode
+		public long? Data
 		{
 			get
 			{
-				return errorCode;
+				return data;
 			}
 			set	
 			{
-				errorCode = value;
+				data = value;
 			}
 		}
 

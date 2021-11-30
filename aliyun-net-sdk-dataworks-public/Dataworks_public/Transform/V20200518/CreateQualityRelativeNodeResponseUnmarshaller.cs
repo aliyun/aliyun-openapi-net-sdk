@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			CreateQualityRelativeNodeResponse createQualityRelativeNodeResponse = new CreateQualityRelativeNodeResponse();
 
 			createQualityRelativeNodeResponse.HttpResponse = _ctx.HttpResponse;
-			createQualityRelativeNodeResponse.Success = _ctx.BooleanValue("CreateQualityRelativeNode.Success");
-			createQualityRelativeNodeResponse.ErrorCode = _ctx.StringValue("CreateQualityRelativeNode.ErrorCode");
-			createQualityRelativeNodeResponse.ErrorMessage = _ctx.StringValue("CreateQualityRelativeNode.ErrorMessage");
 			createQualityRelativeNodeResponse.HttpStatusCode = _ctx.IntegerValue("CreateQualityRelativeNode.HttpStatusCode");
 			createQualityRelativeNodeResponse.Data = _ctx.BooleanValue("CreateQualityRelativeNode.Data");
+			createQualityRelativeNodeResponse.ErrorMessage = _ctx.StringValue("CreateQualityRelativeNode.ErrorMessage");
 			createQualityRelativeNodeResponse.RequestId = _ctx.StringValue("CreateQualityRelativeNode.RequestId");
+			createQualityRelativeNodeResponse.Success = _ctx.BooleanValue("CreateQualityRelativeNode.Success");
+			createQualityRelativeNodeResponse.ErrorCode = _ctx.StringValue("CreateQualityRelativeNode.ErrorCode");
         
 			return createQualityRelativeNodeResponse;
         }

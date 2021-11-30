@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			CreateQualityRuleResponse createQualityRuleResponse = new CreateQualityRuleResponse();
 
 			createQualityRuleResponse.HttpResponse = _ctx.HttpResponse;
-			createQualityRuleResponse.ErrorCode = _ctx.StringValue("CreateQualityRule.ErrorCode");
-			createQualityRuleResponse.Data = _ctx.StringValue("CreateQualityRule.Data");
-			createQualityRuleResponse.Success = _ctx.BooleanValue("CreateQualityRule.Success");
-			createQualityRuleResponse.ErrorMessage = _ctx.StringValue("CreateQualityRule.ErrorMessage");
 			createQualityRuleResponse.HttpStatusCode = _ctx.IntegerValue("CreateQualityRule.HttpStatusCode");
+			createQualityRuleResponse.Data = _ctx.StringValue("CreateQualityRule.Data");
+			createQualityRuleResponse.ErrorMessage = _ctx.StringValue("CreateQualityRule.ErrorMessage");
 			createQualityRuleResponse.RequestId = _ctx.StringValue("CreateQualityRule.RequestId");
+			createQualityRuleResponse.ErrorCode = _ctx.StringValue("CreateQualityRule.ErrorCode");
+			createQualityRuleResponse.Success = _ctx.BooleanValue("CreateQualityRule.Success");
         
 			return createQualityRuleResponse;
         }

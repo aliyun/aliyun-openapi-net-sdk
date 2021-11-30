@@ -24,21 +24,18 @@ using Aliyun.Acs.dataworks_public.Model.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 {
-    public class CreateQualityFollowerResponseUnmarshaller
+    public class CreateExportMigrationResponseUnmarshaller
     {
-        public static CreateQualityFollowerResponse Unmarshall(UnmarshallerContext _ctx)
+        public static CreateExportMigrationResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CreateQualityFollowerResponse createQualityFollowerResponse = new CreateQualityFollowerResponse();
+			CreateExportMigrationResponse createExportMigrationResponse = new CreateExportMigrationResponse();
 
-			createQualityFollowerResponse.HttpResponse = _ctx.HttpResponse;
-			createQualityFollowerResponse.HttpStatusCode = _ctx.IntegerValue("CreateQualityFollower.HttpStatusCode");
-			createQualityFollowerResponse.Data = _ctx.IntegerValue("CreateQualityFollower.Data");
-			createQualityFollowerResponse.ErrorMessage = _ctx.StringValue("CreateQualityFollower.ErrorMessage");
-			createQualityFollowerResponse.RequestId = _ctx.StringValue("CreateQualityFollower.RequestId");
-			createQualityFollowerResponse.ErrorCode = _ctx.StringValue("CreateQualityFollower.ErrorCode");
-			createQualityFollowerResponse.Success = _ctx.BooleanValue("CreateQualityFollower.Success");
+			createExportMigrationResponse.HttpResponse = _ctx.HttpResponse;
+			createExportMigrationResponse.RequestId = _ctx.StringValue("CreateExportMigration.RequestId");
+			createExportMigrationResponse.Data = _ctx.LongValue("CreateExportMigration.Data");
+			createExportMigrationResponse.Success = _ctx.BooleanValue("CreateExportMigration.Success");
         
-			return createQualityFollowerResponse;
+			return createExportMigrationResponse;
         }
     }
 }

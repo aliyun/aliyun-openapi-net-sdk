@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			UpdateQualityFollowerResponse updateQualityFollowerResponse = new UpdateQualityFollowerResponse();
 
 			updateQualityFollowerResponse.HttpResponse = _ctx.HttpResponse;
-			updateQualityFollowerResponse.ErrorCode = _ctx.StringValue("UpdateQualityFollower.ErrorCode");
-			updateQualityFollowerResponse.Data = _ctx.BooleanValue("UpdateQualityFollower.Data");
-			updateQualityFollowerResponse.Success = _ctx.BooleanValue("UpdateQualityFollower.Success");
-			updateQualityFollowerResponse.ErrorMessage = _ctx.StringValue("UpdateQualityFollower.ErrorMessage");
 			updateQualityFollowerResponse.HttpStatusCode = _ctx.IntegerValue("UpdateQualityFollower.HttpStatusCode");
+			updateQualityFollowerResponse.Data = _ctx.BooleanValue("UpdateQualityFollower.Data");
+			updateQualityFollowerResponse.ErrorMessage = _ctx.StringValue("UpdateQualityFollower.ErrorMessage");
 			updateQualityFollowerResponse.RequestId = _ctx.StringValue("UpdateQualityFollower.RequestId");
+			updateQualityFollowerResponse.ErrorCode = _ctx.StringValue("UpdateQualityFollower.ErrorCode");
+			updateQualityFollowerResponse.Success = _ctx.BooleanValue("UpdateQualityFollower.Success");
         
 			return updateQualityFollowerResponse;
         }

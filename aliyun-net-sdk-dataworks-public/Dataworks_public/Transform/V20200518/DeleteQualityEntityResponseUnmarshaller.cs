@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			DeleteQualityEntityResponse deleteQualityEntityResponse = new DeleteQualityEntityResponse();
 
 			deleteQualityEntityResponse.HttpResponse = _ctx.HttpResponse;
-			deleteQualityEntityResponse.Success = _ctx.BooleanValue("DeleteQualityEntity.Success");
-			deleteQualityEntityResponse.ErrorCode = _ctx.StringValue("DeleteQualityEntity.ErrorCode");
-			deleteQualityEntityResponse.ErrorMessage = _ctx.StringValue("DeleteQualityEntity.ErrorMessage");
 			deleteQualityEntityResponse.HttpStatusCode = _ctx.IntegerValue("DeleteQualityEntity.HttpStatusCode");
 			deleteQualityEntityResponse.Data = _ctx.BooleanValue("DeleteQualityEntity.Data");
+			deleteQualityEntityResponse.ErrorMessage = _ctx.StringValue("DeleteQualityEntity.ErrorMessage");
 			deleteQualityEntityResponse.RequestId = _ctx.StringValue("DeleteQualityEntity.RequestId");
+			deleteQualityEntityResponse.Success = _ctx.BooleanValue("DeleteQualityEntity.Success");
+			deleteQualityEntityResponse.ErrorCode = _ctx.StringValue("DeleteQualityEntity.ErrorCode");
         
 			return deleteQualityEntityResponse;
         }

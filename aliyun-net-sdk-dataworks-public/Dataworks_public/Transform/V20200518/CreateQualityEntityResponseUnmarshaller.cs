@@ -31,12 +31,12 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			CreateQualityEntityResponse createQualityEntityResponse = new CreateQualityEntityResponse();
 
 			createQualityEntityResponse.HttpResponse = _ctx.HttpResponse;
-			createQualityEntityResponse.Success = _ctx.BooleanValue("CreateQualityEntity.Success");
-			createQualityEntityResponse.Data = _ctx.IntegerValue("CreateQualityEntity.Data");
-			createQualityEntityResponse.ErrorCode = _ctx.StringValue("CreateQualityEntity.ErrorCode");
-			createQualityEntityResponse.ErrorMessage = _ctx.StringValue("CreateQualityEntity.ErrorMessage");
 			createQualityEntityResponse.HttpStatusCode = _ctx.IntegerValue("CreateQualityEntity.HttpStatusCode");
+			createQualityEntityResponse.Data = _ctx.IntegerValue("CreateQualityEntity.Data");
+			createQualityEntityResponse.ErrorMessage = _ctx.StringValue("CreateQualityEntity.ErrorMessage");
 			createQualityEntityResponse.RequestId = _ctx.StringValue("CreateQualityEntity.RequestId");
+			createQualityEntityResponse.Success = _ctx.BooleanValue("CreateQualityEntity.Success");
+			createQualityEntityResponse.ErrorCode = _ctx.StringValue("CreateQualityEntity.ErrorCode");
         
 			return createQualityEntityResponse;
         }

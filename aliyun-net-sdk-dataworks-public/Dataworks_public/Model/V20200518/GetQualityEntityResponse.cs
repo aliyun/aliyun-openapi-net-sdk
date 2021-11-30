@@ -25,53 +25,17 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetQualityEntityResponse : AcsResponse
 	{
 
-		private bool? success;
-
-		private string errorCode;
-
-		private string errorMessage;
-
 		private int? httpStatusCode;
 
 		private string requestId;
 
+		private string errorMessage;
+
+		private string errorCode;
+
+		private bool? success;
+
 		private List<GetQualityEntity_EntityDto> data;
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-			}
-		}
-
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -97,6 +61,42 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
 		public List<GetQualityEntity_EntityDto> Data
 		{
 			get
@@ -112,205 +112,37 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetQualityEntity_EntityDto
 		{
 
-			private long? id;
-
-			private string projectName;
-
-			private string tableName;
-
-			private string envType;
-
-			private string matchExpression;
-
-			private int? entityLevel;
-
-			private string onDuty;
-
-			private string modifyUser;
-
-			private long? createTime;
-
-			private long? modifyTime;
-
-			private int? sql;
-
-			private int? task;
-
-			private string followers;
-
-			private bool? hasRelativeNode;
-
 			private string relativeNode;
 
 			private string onDutyAccountName;
 
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
+			private int? task;
 
-			public string ProjectName
-			{
-				get
-				{
-					return projectName;
-				}
-				set	
-				{
-					projectName = value;
-				}
-			}
+			private string tableName;
 
-			public string TableName
-			{
-				get
-				{
-					return tableName;
-				}
-				set	
-				{
-					tableName = value;
-				}
-			}
+			private string followers;
 
-			public string EnvType
-			{
-				get
-				{
-					return envType;
-				}
-				set	
-				{
-					envType = value;
-				}
-			}
+			private string onDuty;
 
-			public string MatchExpression
-			{
-				get
-				{
-					return matchExpression;
-				}
-				set	
-				{
-					matchExpression = value;
-				}
-			}
+			private string matchExpression;
 
-			public int? EntityLevel
-			{
-				get
-				{
-					return entityLevel;
-				}
-				set	
-				{
-					entityLevel = value;
-				}
-			}
+			private long? createTime;
 
-			public string OnDuty
-			{
-				get
-				{
-					return onDuty;
-				}
-				set	
-				{
-					onDuty = value;
-				}
-			}
+			private string projectName;
 
-			public string ModifyUser
-			{
-				get
-				{
-					return modifyUser;
-				}
-				set	
-				{
-					modifyUser = value;
-				}
-			}
+			private bool? hasRelativeNode;
 
-			public long? CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
-				}
-			}
+			private string envType;
 
-			public long? ModifyTime
-			{
-				get
-				{
-					return modifyTime;
-				}
-				set	
-				{
-					modifyTime = value;
-				}
-			}
+			private int? entityLevel;
 
-			public int? Sql
-			{
-				get
-				{
-					return sql;
-				}
-				set	
-				{
-					sql = value;
-				}
-			}
+			private string modifyUser;
 
-			public int? Task
-			{
-				get
-				{
-					return task;
-				}
-				set	
-				{
-					task = value;
-				}
-			}
+			private int? sql;
 
-			public string Followers
-			{
-				get
-				{
-					return followers;
-				}
-				set	
-				{
-					followers = value;
-				}
-			}
+			private long? id;
 
-			public bool? HasRelativeNode
-			{
-				get
-				{
-					return hasRelativeNode;
-				}
-				set	
-				{
-					hasRelativeNode = value;
-				}
-			}
+			private long? modifyTime;
 
 			public string RelativeNode
 			{
@@ -333,6 +165,174 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					onDutyAccountName = value;
+				}
+			}
+
+			public int? Task
+			{
+				get
+				{
+					return task;
+				}
+				set	
+				{
+					task = value;
+				}
+			}
+
+			public string TableName
+			{
+				get
+				{
+					return tableName;
+				}
+				set	
+				{
+					tableName = value;
+				}
+			}
+
+			public string Followers
+			{
+				get
+				{
+					return followers;
+				}
+				set	
+				{
+					followers = value;
+				}
+			}
+
+			public string OnDuty
+			{
+				get
+				{
+					return onDuty;
+				}
+				set	
+				{
+					onDuty = value;
+				}
+			}
+
+			public string MatchExpression
+			{
+				get
+				{
+					return matchExpression;
+				}
+				set	
+				{
+					matchExpression = value;
+				}
+			}
+
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string ProjectName
+			{
+				get
+				{
+					return projectName;
+				}
+				set	
+				{
+					projectName = value;
+				}
+			}
+
+			public bool? HasRelativeNode
+			{
+				get
+				{
+					return hasRelativeNode;
+				}
+				set	
+				{
+					hasRelativeNode = value;
+				}
+			}
+
+			public string EnvType
+			{
+				get
+				{
+					return envType;
+				}
+				set	
+				{
+					envType = value;
+				}
+			}
+
+			public int? EntityLevel
+			{
+				get
+				{
+					return entityLevel;
+				}
+				set	
+				{
+					entityLevel = value;
+				}
+			}
+
+			public string ModifyUser
+			{
+				get
+				{
+					return modifyUser;
+				}
+				set	
+				{
+					modifyUser = value;
+				}
+			}
+
+			public int? Sql
+			{
+				get
+				{
+					return sql;
+				}
+				set	
+				{
+					sql = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public long? ModifyTime
+			{
+				get
+				{
+					return modifyTime;
+				}
+				set	
+				{
+					modifyTime = value;
 				}
 			}
 		}
