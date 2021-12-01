@@ -16,69 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.saf.Model.V20190521;
 
-namespace Aliyun.Acs.saf.Model.V20190521
+namespace Aliyun.Acs.saf.Transform.V20190521
 {
-	public class ExecuteRequestMLResponse : AcsResponse
-	{
+    public class RequestDecisionResponseUnmarshaller
+    {
+        public static RequestDecisionResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			RequestDecisionResponse requestDecisionResponse = new RequestDecisionResponse();
 
-		private int? code;
-
-		private string message;
-
-		private string data;
-
-		private string requestId;
-
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public string Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			requestDecisionResponse.HttpResponse = _ctx.HttpResponse;
+			requestDecisionResponse.RequestId = _ctx.StringValue("RequestDecision.RequestId");
+			requestDecisionResponse.Code = _ctx.LongValue("RequestDecision.Code");
+			requestDecisionResponse.Message = _ctx.StringValue("RequestDecision.Message");
+			requestDecisionResponse.Data = _ctx.StringValue("RequestDecision.Data");
+        
+			return requestDecisionResponse;
+        }
+    }
 }

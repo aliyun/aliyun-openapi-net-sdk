@@ -25,25 +25,13 @@ namespace Aliyun.Acs.saf.Model.V20190521
 	public class ExecuteRequestResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? code;
 
 		private string message;
 
 		private string data;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public int? Code
 		{
@@ -78,6 +66,18 @@ namespace Aliyun.Acs.saf.Model.V20190521
 			set	
 			{
 				data = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.saf;
 using Aliyun.Acs.saf.Transform;
 using Aliyun.Acs.saf.Transform.V20190521;
 
@@ -30,12 +31,12 @@ namespace Aliyun.Acs.saf.Model.V20190521
     public class ExecuteRequestRequest : RpcAcsRequest<ExecuteRequestResponse>
     {
         public ExecuteRequestRequest()
-            : base("saf", "2019-05-21", "ExecuteRequest", "saf", "openAPI")
+            : base("saf", "2019-05-21", "ExecuteRequest")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.saf.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.saf.Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

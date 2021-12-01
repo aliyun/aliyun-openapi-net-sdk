@@ -22,34 +22,30 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.saf.Model.V20190521
 {
-	public class ExecuteExtendServiceResponse : AcsResponse
+	public class RequestDecisionResponse : AcsResponse
 	{
-
-		private string httpStatusCode;
-
-		private string code;
-
-		private string message;
 
 		private string requestId;
 
-		private bool? success;
+		private long? code;
 
-		private ExecuteExtendService_Data data;
+		private string message;
 
-		public string HttpStatusCode
+		private string data;
+
+		public string RequestId
 		{
 			get
 			{
-				return httpStatusCode;
+				return requestId;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				requestId = value;
 			}
 		}
 
-		public string Code
+		public long? Code
 		{
 			get
 			{
@@ -73,31 +69,7 @@ namespace Aliyun.Acs.saf.Model.V20190521
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public ExecuteExtendService_Data Data
+		public string Data
 		{
 			get
 			{
@@ -106,24 +78,6 @@ namespace Aliyun.Acs.saf.Model.V20190521
 			set	
 			{
 				data = value;
-			}
-		}
-
-		public class ExecuteExtendService_Data
-		{
-
-			private string invokeResult;
-
-			public string InvokeResult
-			{
-				get
-				{
-					return invokeResult;
-				}
-				set	
-				{
-					invokeResult = value;
-				}
 			}
 		}
 	}

@@ -28,25 +28,22 @@ using Aliyun.Acs.saf.Transform.V20190521;
 
 namespace Aliyun.Acs.saf.Model.V20190521
 {
-    public class ExecuteRequestMLRequest : RpcAcsRequest<ExecuteRequestMLResponse>
+    public class RequestDecisionRequest : RpcAcsRequest<RequestDecisionResponse>
     {
-        public ExecuteRequestMLRequest()
-            : base("saf", "2019-05-21", "ExecuteRequestML")
+        public RequestDecisionRequest()
+            : base("saf", "2019-05-21", "RequestDecision")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.saf.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.saf.Endpoint.endpointRegionalType, null);
             }
-			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
 		private string serviceParameters;
 
-		private string service;
-
-		private string lang;
+		private string eventCode;
 
 		public string ServiceParameters
 		{
@@ -61,29 +58,16 @@ namespace Aliyun.Acs.saf.Model.V20190521
 			}
 		}
 
-		public string Service
+		public string EventCode
 		{
 			get
 			{
-				return service;
+				return eventCode;
 			}
 			set	
 			{
-				service = value;
-				DictionaryUtil.Add(QueryParameters, "Service", value);
-			}
-		}
-
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				eventCode = value;
+				DictionaryUtil.Add(QueryParameters, "EventCode", value);
 			}
 		}
 
@@ -92,9 +76,9 @@ namespace Aliyun.Acs.saf.Model.V20190521
 			return false;
 		}
 
-        public override ExecuteRequestMLResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RequestDecisionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ExecuteRequestMLResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RequestDecisionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
