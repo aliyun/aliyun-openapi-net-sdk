@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private long? vbrInstanceOwnerId;
 
+		private bool? healthCheckOnly;
+
 		private string vbrInstanceRegionId;
 
 		private string resourceOwnerAccount;
@@ -126,6 +128,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				vbrInstanceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "VbrInstanceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? HealthCheckOnly
+		{
+			get
+			{
+				return healthCheckOnly;
+			}
+			set	
+			{
+				healthCheckOnly = value;
+				DictionaryUtil.Add(QueryParameters, "HealthCheckOnly", value.ToString());
 			}
 		}
 

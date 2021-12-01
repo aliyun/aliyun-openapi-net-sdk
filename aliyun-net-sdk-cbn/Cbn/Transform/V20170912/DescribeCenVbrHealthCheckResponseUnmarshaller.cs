@@ -31,24 +31,25 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			DescribeCenVbrHealthCheckResponse describeCenVbrHealthCheckResponse = new DescribeCenVbrHealthCheckResponse();
 
 			describeCenVbrHealthCheckResponse.HttpResponse = _ctx.HttpResponse;
-			describeCenVbrHealthCheckResponse.RequestId = _ctx.StringValue("DescribeCenVbrHealthCheck.RequestId");
-			describeCenVbrHealthCheckResponse.TotalCount = _ctx.IntegerValue("DescribeCenVbrHealthCheck.TotalCount");
-			describeCenVbrHealthCheckResponse.PageNumber = _ctx.IntegerValue("DescribeCenVbrHealthCheck.PageNumber");
 			describeCenVbrHealthCheckResponse.PageSize = _ctx.IntegerValue("DescribeCenVbrHealthCheck.PageSize");
+			describeCenVbrHealthCheckResponse.RequestId = _ctx.StringValue("DescribeCenVbrHealthCheck.RequestId");
+			describeCenVbrHealthCheckResponse.PageNumber = _ctx.IntegerValue("DescribeCenVbrHealthCheck.PageNumber");
+			describeCenVbrHealthCheckResponse.TotalCount = _ctx.IntegerValue("DescribeCenVbrHealthCheck.TotalCount");
 
 			List<DescribeCenVbrHealthCheckResponse.DescribeCenVbrHealthCheck_VbrHealthCheck> describeCenVbrHealthCheckResponse_vbrHealthChecks = new List<DescribeCenVbrHealthCheckResponse.DescribeCenVbrHealthCheck_VbrHealthCheck>();
 			for (int i = 0; i < _ctx.Length("DescribeCenVbrHealthCheck.VbrHealthChecks.Length"); i++) {
 				DescribeCenVbrHealthCheckResponse.DescribeCenVbrHealthCheck_VbrHealthCheck vbrHealthCheck = new DescribeCenVbrHealthCheckResponse.DescribeCenVbrHealthCheck_VbrHealthCheck();
-				vbrHealthCheck.CenId = _ctx.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].CenId");
-				vbrHealthCheck.VbrInstanceId = _ctx.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].VbrInstanceId");
-				vbrHealthCheck.LinkStatus = _ctx.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].LinkStatus");
-				vbrHealthCheck.PacketLoss = _ctx.LongValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].PacketLoss");
-				vbrHealthCheck.HealthCheckSourceIp = _ctx.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].HealthCheckSourceIp");
 				vbrHealthCheck.HealthCheckTargetIp = _ctx.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].HealthCheckTargetIp");
-				vbrHealthCheck.Delay = _ctx.LongValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].Delay");
-				vbrHealthCheck.HealthCheckInterval = _ctx.IntegerValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].HealthCheckInterval");
-				vbrHealthCheck.HealthyThreshold = _ctx.IntegerValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].HealthyThreshold");
+				vbrHealthCheck.VbrInstanceId = _ctx.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].VbrInstanceId");
 				vbrHealthCheck.VbrInstanceRegionId = _ctx.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].VbrInstanceRegionId");
+				vbrHealthCheck.Delay = _ctx.LongValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].Delay");
+				vbrHealthCheck.LinkStatus = _ctx.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].LinkStatus");
+				vbrHealthCheck.CenId = _ctx.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].CenId");
+				vbrHealthCheck.HealthyThreshold = _ctx.IntegerValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].HealthyThreshold");
+				vbrHealthCheck.HealthCheckInterval = _ctx.IntegerValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].HealthCheckInterval");
+				vbrHealthCheck.HealthCheckSourceIp = _ctx.StringValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].HealthCheckSourceIp");
+				vbrHealthCheck.PacketLoss = _ctx.LongValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].PacketLoss");
+				vbrHealthCheck.HealthCheckOnly = _ctx.BooleanValue("DescribeCenVbrHealthCheck.VbrHealthChecks["+ i +"].HealthCheckOnly");
 
 				describeCenVbrHealthCheckResponse_vbrHealthChecks.Add(vbrHealthCheck);
 			}

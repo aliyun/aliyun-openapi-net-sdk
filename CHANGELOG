@@ -1,3 +1,7 @@
+2021-12-01 Version: 1.0.11
+- Support not switching routes when VBR health check fails.
+- Support order type when cross-account authorization and display.
+
 2021-12-01 Version: 3.0.1
 - Supported RequestDecision For YN.
 

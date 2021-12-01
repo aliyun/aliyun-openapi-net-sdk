@@ -56,25 +56,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class DescribeGrantRulesToCen_GrantRule
 		{
 
-			private string cenId;
+			private string childInstanceType;
 
 			private string childInstanceRegionId;
 
-			private string childInstanceType;
+			private long? childInstanceOwnerId;
 
 			private string childInstanceId;
 
-			private long? childInstanceOwnerId;
+			private string cenId;
 
-			public string CenId
+			private string orderType;
+
+			public string ChildInstanceType
 			{
 				get
 				{
-					return cenId;
+					return childInstanceType;
 				}
 				set	
 				{
-					cenId = value;
+					childInstanceType = value;
 				}
 			}
 
@@ -90,15 +92,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string ChildInstanceType
+			public long? ChildInstanceOwnerId
 			{
 				get
 				{
-					return childInstanceType;
+					return childInstanceOwnerId;
 				}
 				set	
 				{
-					childInstanceType = value;
+					childInstanceOwnerId = value;
 				}
 			}
 
@@ -114,15 +116,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public long? ChildInstanceOwnerId
+			public string CenId
 			{
 				get
 				{
-					return childInstanceOwnerId;
+					return cenId;
 				}
 				set	
 				{
-					childInstanceOwnerId = value;
+					cenId = value;
+				}
+			}
+
+			public string OrderType
+			{
+				get
+				{
+					return orderType;
+				}
+				set	
+				{
+					orderType = value;
 				}
 			}
 		}

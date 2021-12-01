@@ -36,11 +36,12 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			List<DescribeGrantRulesToCenResponse.DescribeGrantRulesToCen_GrantRule> describeGrantRulesToCenResponse_grantRules = new List<DescribeGrantRulesToCenResponse.DescribeGrantRulesToCen_GrantRule>();
 			for (int i = 0; i < _ctx.Length("DescribeGrantRulesToCen.GrantRules.Length"); i++) {
 				DescribeGrantRulesToCenResponse.DescribeGrantRulesToCen_GrantRule grantRule = new DescribeGrantRulesToCenResponse.DescribeGrantRulesToCen_GrantRule();
-				grantRule.CenId = _ctx.StringValue("DescribeGrantRulesToCen.GrantRules["+ i +"].CenId");
-				grantRule.ChildInstanceRegionId = _ctx.StringValue("DescribeGrantRulesToCen.GrantRules["+ i +"].ChildInstanceRegionId");
 				grantRule.ChildInstanceType = _ctx.StringValue("DescribeGrantRulesToCen.GrantRules["+ i +"].ChildInstanceType");
-				grantRule.ChildInstanceId = _ctx.StringValue("DescribeGrantRulesToCen.GrantRules["+ i +"].ChildInstanceId");
+				grantRule.ChildInstanceRegionId = _ctx.StringValue("DescribeGrantRulesToCen.GrantRules["+ i +"].ChildInstanceRegionId");
 				grantRule.ChildInstanceOwnerId = _ctx.LongValue("DescribeGrantRulesToCen.GrantRules["+ i +"].ChildInstanceOwnerId");
+				grantRule.ChildInstanceId = _ctx.StringValue("DescribeGrantRulesToCen.GrantRules["+ i +"].ChildInstanceId");
+				grantRule.CenId = _ctx.StringValue("DescribeGrantRulesToCen.GrantRules["+ i +"].CenId");
+				grantRule.OrderType = _ctx.StringValue("DescribeGrantRulesToCen.GrantRules["+ i +"].OrderType");
 
 				describeGrantRulesToCenResponse_grantRules.Add(grantRule);
 			}

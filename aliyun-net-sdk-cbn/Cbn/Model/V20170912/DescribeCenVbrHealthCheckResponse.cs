@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class DescribeCenVbrHealthCheckResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeCenVbrHealthCheck_VbrHealthCheck> vbrHealthChecks;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,35 +98,37 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class DescribeCenVbrHealthCheck_VbrHealthCheck
 		{
 
-			private string cenId;
+			private string healthCheckTargetIp;
 
 			private string vbrInstanceId;
 
-			private string linkStatus;
-
-			private long? packetLoss;
-
-			private string healthCheckSourceIp;
-
-			private string healthCheckTargetIp;
+			private string vbrInstanceRegionId;
 
 			private long? delay;
 
-			private int? healthCheckInterval;
+			private string linkStatus;
+
+			private string cenId;
 
 			private int? healthyThreshold;
 
-			private string vbrInstanceRegionId;
+			private int? healthCheckInterval;
 
-			public string CenId
+			private string healthCheckSourceIp;
+
+			private long? packetLoss;
+
+			private bool? healthCheckOnly;
+
+			public string HealthCheckTargetIp
 			{
 				get
 				{
-					return cenId;
+					return healthCheckTargetIp;
 				}
 				set	
 				{
-					cenId = value;
+					healthCheckTargetIp = value;
 				}
 			}
 
@@ -142,51 +144,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string LinkStatus
+			public string VbrInstanceRegionId
 			{
 				get
 				{
-					return linkStatus;
+					return vbrInstanceRegionId;
 				}
 				set	
 				{
-					linkStatus = value;
-				}
-			}
-
-			public long? PacketLoss
-			{
-				get
-				{
-					return packetLoss;
-				}
-				set	
-				{
-					packetLoss = value;
-				}
-			}
-
-			public string HealthCheckSourceIp
-			{
-				get
-				{
-					return healthCheckSourceIp;
-				}
-				set	
-				{
-					healthCheckSourceIp = value;
-				}
-			}
-
-			public string HealthCheckTargetIp
-			{
-				get
-				{
-					return healthCheckTargetIp;
-				}
-				set	
-				{
-					healthCheckTargetIp = value;
+					vbrInstanceRegionId = value;
 				}
 			}
 
@@ -202,15 +168,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public int? HealthCheckInterval
+			public string LinkStatus
 			{
 				get
 				{
-					return healthCheckInterval;
+					return linkStatus;
 				}
 				set	
 				{
-					healthCheckInterval = value;
+					linkStatus = value;
+				}
+			}
+
+			public string CenId
+			{
+				get
+				{
+					return cenId;
+				}
+				set	
+				{
+					cenId = value;
 				}
 			}
 
@@ -226,15 +204,51 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string VbrInstanceRegionId
+			public int? HealthCheckInterval
 			{
 				get
 				{
-					return vbrInstanceRegionId;
+					return healthCheckInterval;
 				}
 				set	
 				{
-					vbrInstanceRegionId = value;
+					healthCheckInterval = value;
+				}
+			}
+
+			public string HealthCheckSourceIp
+			{
+				get
+				{
+					return healthCheckSourceIp;
+				}
+				set	
+				{
+					healthCheckSourceIp = value;
+				}
+			}
+
+			public long? PacketLoss
+			{
+				get
+				{
+					return packetLoss;
+				}
+				set	
+				{
+					packetLoss = value;
+				}
+			}
+
+			public bool? HealthCheckOnly
+			{
+				get
+				{
+					return healthCheckOnly;
+				}
+				set	
+				{
+					healthCheckOnly = value;
 				}
 			}
 		}
