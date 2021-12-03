@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Privatelink.Transform.V20200415
 				resource.ResourceId = _ctx.StringValue("ListVpcEndpointServiceResources.Resources["+ i +"].ResourceId");
 				resource.RegionId = _ctx.StringValue("ListVpcEndpointServiceResources.Resources["+ i +"].RegionId");
 				resource.RelatedEndpointCount = _ctx.LongValue("ListVpcEndpointServiceResources.Resources["+ i +"].RelatedEndpointCount");
+				resource.RelatedDeprecatedEndpointCount = _ctx.LongValue("ListVpcEndpointServiceResources.Resources["+ i +"].RelatedDeprecatedEndpointCount");
 				resource.AutoAllocatedEnabled = _ctx.BooleanValue("ListVpcEndpointServiceResources.Resources["+ i +"].AutoAllocatedEnabled");
 				resource.StatusInfo = _ctx.StringValue("ListVpcEndpointServiceResources.Resources["+ i +"].StatusInfo");
 

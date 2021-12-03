@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private string nextToken;
 
+		private string endpointType;
+
 		private string serviceName;
 
 		private string connectionStatus;
@@ -93,6 +95,19 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			{
 				nextToken = value;
 				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+			}
+		}
+
+		public string EndpointType
+		{
+			get
+			{
+				return endpointType;
+			}
+			set	
+			{
+				endpointType = value;
+				DictionaryUtil.Add(QueryParameters, "EndpointType", value);
 			}
 		}
 

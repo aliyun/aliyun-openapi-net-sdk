@@ -63,6 +63,8 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private bool? zoneAffinityEnabled;
 
+		private string privateServiceName;
+
 		public string Payer
 		{
 			get
@@ -288,6 +290,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			set	
 			{
 				zoneAffinityEnabled = value;
+			}
+		}
+
+		public string PrivateServiceName
+		{
+			get
+			{
+				return privateServiceName;
+			}
+			set	
+			{
+				privateServiceName = value;
 			}
 		}
 	}

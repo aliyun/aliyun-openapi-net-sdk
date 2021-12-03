@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private int? maxResults;
 
+		private string eniId;
+
 		private string serviceId;
 
 		public string EndpointId
@@ -115,6 +117,19 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			{
 				maxResults = value;
 				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
+		public string EniId
+		{
+			get
+			{
+				return eniId;
+			}
+			set	
+			{
+				eniId = value;
+				DictionaryUtil.Add(QueryParameters, "EniId", value);
 			}
 		}
 

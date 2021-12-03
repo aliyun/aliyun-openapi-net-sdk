@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Privatelink.Transform.V20200415
 			getVpcEndpointAttributeResponse.RegionId = _ctx.StringValue("GetVpcEndpointAttribute.RegionId");
 			getVpcEndpointAttributeResponse.ConnectionStatus = _ctx.StringValue("GetVpcEndpointAttribute.ConnectionStatus");
 			getVpcEndpointAttributeResponse.ZoneAffinityEnabled = _ctx.BooleanValue("GetVpcEndpointAttribute.ZoneAffinityEnabled");
+			getVpcEndpointAttributeResponse.PrivateServiceName = _ctx.StringValue("GetVpcEndpointAttribute.PrivateServiceName");
         
 			return getVpcEndpointAttributeResponse;
         }

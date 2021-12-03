@@ -53,6 +53,8 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private List<string> resources = new List<string>(){ };
 
+		private string serviceResourceType;
+
 		private string serviceDescription;
 
 		public bool? AutoAcceptEnabled
@@ -138,6 +140,19 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 						DictionaryUtil.Add(QueryParameters,"Resource." + (depth1 + 1), resources[depth1]);
 					}
 				}
+			}
+		}
+
+		public string ServiceResourceType
+		{
+			get
+			{
+				return serviceResourceType;
+			}
+			set	
+			{
+				serviceResourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceResourceType", value);
 			}
 		}
 

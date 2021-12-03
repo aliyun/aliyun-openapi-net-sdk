@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Privatelink.Transform.V20200415
 				service.ServiceId = _ctx.StringValue("ListVpcEndpointServicesByEndUser.Services["+ i +"].ServiceId");
 				service.ServiceName = _ctx.StringValue("ListVpcEndpointServicesByEndUser.Services["+ i +"].ServiceName");
 				service.ServiceType = _ctx.StringValue("ListVpcEndpointServicesByEndUser.Services["+ i +"].ServiceType");
+				service.ServiceDescription = _ctx.StringValue("ListVpcEndpointServicesByEndUser.Services["+ i +"].ServiceDescription");
+				service.PrivateServiceName = _ctx.StringValue("ListVpcEndpointServicesByEndUser.Services["+ i +"].PrivateServiceName");
 
 				List<string> service_zones = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListVpcEndpointServicesByEndUser.Services["+ i +"].Zones.Length"); j++) {

@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private string serviceName;
 
+		private string serviceType;
+
 		private int? maxResults;
 
 		private string serviceId;
@@ -72,6 +74,19 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			{
 				serviceName = value;
 				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
+			}
+		}
+
+		public string ServiceType
+		{
+			get
+			{
+				return serviceType;
+			}
+			set	
+			{
+				serviceType = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceType", value);
 			}
 		}
 

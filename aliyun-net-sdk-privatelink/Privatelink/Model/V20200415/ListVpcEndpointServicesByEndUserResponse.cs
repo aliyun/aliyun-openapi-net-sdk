@@ -94,6 +94,10 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 			private string serviceType;
 
+			private string serviceDescription;
+
+			private string privateServiceName;
+
 			private List<string> zones;
 
 			public string Payer
@@ -153,6 +157,30 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				set	
 				{
 					serviceType = value;
+				}
+			}
+
+			public string ServiceDescription
+			{
+				get
+				{
+					return serviceDescription;
+				}
+				set	
+				{
+					serviceDescription = value;
+				}
+			}
+
+			public string PrivateServiceName
+			{
+				get
+				{
+					return privateServiceName;
+				}
+				set	
+				{
+					privateServiceName = value;
 				}
 			}
 

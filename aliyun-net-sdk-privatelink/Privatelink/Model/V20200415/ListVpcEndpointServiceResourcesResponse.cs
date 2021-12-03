@@ -100,6 +100,8 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 			private long? relatedEndpointCount;
 
+			private long? relatedDeprecatedEndpointCount;
+
 			private bool? autoAllocatedEnabled;
 
 			private string statusInfo;
@@ -197,6 +199,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				set	
 				{
 					relatedEndpointCount = value;
+				}
+			}
+
+			public long? RelatedDeprecatedEndpointCount
+			{
+				get
+				{
+					return relatedDeprecatedEndpointCount;
+				}
+				set	
+				{
+					relatedDeprecatedEndpointCount = value;
 				}
 			}
 

@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private List<string> securityGroupIds = new List<string>(){ };
 
+		private string endpointType;
+
 		private List<string> zones = new List<string>(){ };
 
 		private string serviceName;
@@ -52,6 +54,8 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 		private bool? dryRun;
 
 		private string endpointDescription;
+
+		private long? zonePrivateIpAddressCount;
 
 		private string endpointName;
 
@@ -82,6 +86,19 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			set
 			{
 				securityGroupIds = value;
+			}
+		}
+
+		public string EndpointType
+		{
+			get
+			{
+				return endpointType;
+			}
+			set	
+			{
+				endpointType = value;
+				DictionaryUtil.Add(QueryParameters, "EndpointType", value);
 			}
 		}
 
@@ -143,6 +160,19 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			{
 				endpointDescription = value;
 				DictionaryUtil.Add(QueryParameters, "EndpointDescription", value);
+			}
+		}
+
+		public long? ZonePrivateIpAddressCount
+		{
+			get
+			{
+				return zonePrivateIpAddressCount;
+			}
+			set	
+			{
+				zonePrivateIpAddressCount = value;
+				DictionaryUtil.Add(QueryParameters, "ZonePrivateIpAddressCount", value.ToString());
 			}
 		}
 
