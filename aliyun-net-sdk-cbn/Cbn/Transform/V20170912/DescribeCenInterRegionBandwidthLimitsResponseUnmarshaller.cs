@@ -31,22 +31,22 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			DescribeCenInterRegionBandwidthLimitsResponse describeCenInterRegionBandwidthLimitsResponse = new DescribeCenInterRegionBandwidthLimitsResponse();
 
 			describeCenInterRegionBandwidthLimitsResponse.HttpResponse = _ctx.HttpResponse;
-			describeCenInterRegionBandwidthLimitsResponse.RequestId = _ctx.StringValue("DescribeCenInterRegionBandwidthLimits.RequestId");
-			describeCenInterRegionBandwidthLimitsResponse.TotalCount = _ctx.IntegerValue("DescribeCenInterRegionBandwidthLimits.TotalCount");
-			describeCenInterRegionBandwidthLimitsResponse.PageNumber = _ctx.IntegerValue("DescribeCenInterRegionBandwidthLimits.PageNumber");
 			describeCenInterRegionBandwidthLimitsResponse.PageSize = _ctx.IntegerValue("DescribeCenInterRegionBandwidthLimits.PageSize");
+			describeCenInterRegionBandwidthLimitsResponse.RequestId = _ctx.StringValue("DescribeCenInterRegionBandwidthLimits.RequestId");
+			describeCenInterRegionBandwidthLimitsResponse.PageNumber = _ctx.IntegerValue("DescribeCenInterRegionBandwidthLimits.PageNumber");
+			describeCenInterRegionBandwidthLimitsResponse.TotalCount = _ctx.IntegerValue("DescribeCenInterRegionBandwidthLimits.TotalCount");
 
 			List<DescribeCenInterRegionBandwidthLimitsResponse.DescribeCenInterRegionBandwidthLimits_CenInterRegionBandwidthLimit> describeCenInterRegionBandwidthLimitsResponse_cenInterRegionBandwidthLimits = new List<DescribeCenInterRegionBandwidthLimitsResponse.DescribeCenInterRegionBandwidthLimits_CenInterRegionBandwidthLimit>();
 			for (int i = 0; i < _ctx.Length("DescribeCenInterRegionBandwidthLimits.CenInterRegionBandwidthLimits.Length"); i++) {
 				DescribeCenInterRegionBandwidthLimitsResponse.DescribeCenInterRegionBandwidthLimits_CenInterRegionBandwidthLimit cenInterRegionBandwidthLimit = new DescribeCenInterRegionBandwidthLimitsResponse.DescribeCenInterRegionBandwidthLimits_CenInterRegionBandwidthLimit();
-				cenInterRegionBandwidthLimit.CenId = _ctx.StringValue("DescribeCenInterRegionBandwidthLimits.CenInterRegionBandwidthLimits["+ i +"].CenId");
-				cenInterRegionBandwidthLimit.LocalRegionId = _ctx.StringValue("DescribeCenInterRegionBandwidthLimits.CenInterRegionBandwidthLimits["+ i +"].LocalRegionId");
+				cenInterRegionBandwidthLimit.TransitRouterAttachmentId = _ctx.StringValue("DescribeCenInterRegionBandwidthLimits.CenInterRegionBandwidthLimits["+ i +"].TransitRouterAttachmentId");
+				cenInterRegionBandwidthLimit.Status = _ctx.StringValue("DescribeCenInterRegionBandwidthLimits.CenInterRegionBandwidthLimits["+ i +"].Status");
+				cenInterRegionBandwidthLimit.BandwidthPackageId = _ctx.StringValue("DescribeCenInterRegionBandwidthLimits.CenInterRegionBandwidthLimits["+ i +"].BandwidthPackageId");
 				cenInterRegionBandwidthLimit.OppositeRegionId = _ctx.StringValue("DescribeCenInterRegionBandwidthLimits.CenInterRegionBandwidthLimits["+ i +"].OppositeRegionId");
 				cenInterRegionBandwidthLimit.GeographicSpanId = _ctx.StringValue("DescribeCenInterRegionBandwidthLimits.CenInterRegionBandwidthLimits["+ i +"].GeographicSpanId");
+				cenInterRegionBandwidthLimit.CenId = _ctx.StringValue("DescribeCenInterRegionBandwidthLimits.CenInterRegionBandwidthLimits["+ i +"].CenId");
+				cenInterRegionBandwidthLimit.LocalRegionId = _ctx.StringValue("DescribeCenInterRegionBandwidthLimits.CenInterRegionBandwidthLimits["+ i +"].LocalRegionId");
 				cenInterRegionBandwidthLimit.BandwidthLimit = _ctx.LongValue("DescribeCenInterRegionBandwidthLimits.CenInterRegionBandwidthLimits["+ i +"].BandwidthLimit");
-				cenInterRegionBandwidthLimit.Status = _ctx.StringValue("DescribeCenInterRegionBandwidthLimits.CenInterRegionBandwidthLimits["+ i +"].Status");
-				cenInterRegionBandwidthLimit.TransitRouterAttachmentId = _ctx.StringValue("DescribeCenInterRegionBandwidthLimits.CenInterRegionBandwidthLimits["+ i +"].TransitRouterAttachmentId");
-				cenInterRegionBandwidthLimit.BandwidthPackageId = _ctx.StringValue("DescribeCenInterRegionBandwidthLimits.CenInterRegionBandwidthLimits["+ i +"].BandwidthPackageId");
 
 				describeCenInterRegionBandwidthLimitsResponse_cenInterRegionBandwidthLimits.Add(cenInterRegionBandwidthLimit);
 			}
