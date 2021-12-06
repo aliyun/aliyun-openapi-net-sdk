@@ -31,21 +31,22 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetMetaTableLineageResponse getMetaTableLineageResponse = new GetMetaTableLineageResponse();
 
 			getMetaTableLineageResponse.HttpResponse = _ctx.HttpResponse;
-			getMetaTableLineageResponse.RequestId = _ctx.StringValue("GetMetaTableLineage.RequestId");
-			getMetaTableLineageResponse.ErrorCode = _ctx.StringValue("GetMetaTableLineage.ErrorCode");
-			getMetaTableLineageResponse.ErrorMessage = _ctx.StringValue("GetMetaTableLineage.ErrorMessage");
 			getMetaTableLineageResponse.HttpStatusCode = _ctx.IntegerValue("GetMetaTableLineage.HttpStatusCode");
+			getMetaTableLineageResponse.ErrorMessage = _ctx.StringValue("GetMetaTableLineage.ErrorMessage");
+			getMetaTableLineageResponse.RequestId = _ctx.StringValue("GetMetaTableLineage.RequestId");
 			getMetaTableLineageResponse.Success = _ctx.BooleanValue("GetMetaTableLineage.Success");
+			getMetaTableLineageResponse.ErrorCode = _ctx.StringValue("GetMetaTableLineage.ErrorCode");
 
 			GetMetaTableLineageResponse.GetMetaTableLineage_Data data = new GetMetaTableLineageResponse.GetMetaTableLineage_Data();
-			data.HasNext = _ctx.BooleanValue("GetMetaTableLineage.Data.HasNext");
 			data.NextPrimaryKey = _ctx.StringValue("GetMetaTableLineage.Data.NextPrimaryKey");
+			data.HasNext = _ctx.BooleanValue("GetMetaTableLineage.Data.HasNext");
 
 			List<GetMetaTableLineageResponse.GetMetaTableLineage_Data.GetMetaTableLineage_DataEntityListItem> data_dataEntityList = new List<GetMetaTableLineageResponse.GetMetaTableLineage_Data.GetMetaTableLineage_DataEntityListItem>();
 			for (int i = 0; i < _ctx.Length("GetMetaTableLineage.Data.DataEntityList.Length"); i++) {
 				GetMetaTableLineageResponse.GetMetaTableLineage_Data.GetMetaTableLineage_DataEntityListItem dataEntityListItem = new GetMetaTableLineageResponse.GetMetaTableLineage_Data.GetMetaTableLineage_DataEntityListItem();
 				dataEntityListItem.TableName = _ctx.StringValue("GetMetaTableLineage.Data.DataEntityList["+ i +"].TableName");
 				dataEntityListItem.TableGuid = _ctx.StringValue("GetMetaTableLineage.Data.DataEntityList["+ i +"].TableGuid");
+				dataEntityListItem.CreateTimestamp = _ctx.LongValue("GetMetaTableLineage.Data.DataEntityList["+ i +"].CreateTimestamp");
 
 				data_dataEntityList.Add(dataEntityListItem);
 			}

@@ -31,29 +31,30 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			GetMetaTableColumnResponse getMetaTableColumnResponse = new GetMetaTableColumnResponse();
 
 			getMetaTableColumnResponse.HttpResponse = _ctx.HttpResponse;
-			getMetaTableColumnResponse.RequestId = _ctx.StringValue("GetMetaTableColumn.RequestId");
-			getMetaTableColumnResponse.ErrorCode = _ctx.StringValue("GetMetaTableColumn.ErrorCode");
-			getMetaTableColumnResponse.ErrorMessage = _ctx.StringValue("GetMetaTableColumn.ErrorMessage");
 			getMetaTableColumnResponse.HttpStatusCode = _ctx.IntegerValue("GetMetaTableColumn.HttpStatusCode");
+			getMetaTableColumnResponse.ErrorMessage = _ctx.StringValue("GetMetaTableColumn.ErrorMessage");
+			getMetaTableColumnResponse.RequestId = _ctx.StringValue("GetMetaTableColumn.RequestId");
 			getMetaTableColumnResponse.Success = _ctx.BooleanValue("GetMetaTableColumn.Success");
+			getMetaTableColumnResponse.ErrorCode = _ctx.StringValue("GetMetaTableColumn.ErrorCode");
 
 			GetMetaTableColumnResponse.GetMetaTableColumn_Data data = new GetMetaTableColumnResponse.GetMetaTableColumn_Data();
-			data.TotalCount = _ctx.LongValue("GetMetaTableColumn.Data.TotalCount");
 			data.PageNum = _ctx.IntegerValue("GetMetaTableColumn.Data.PageNum");
 			data.PageSize = _ctx.IntegerValue("GetMetaTableColumn.Data.PageSize");
+			data.TotalCount = _ctx.LongValue("GetMetaTableColumn.Data.TotalCount");
 
 			List<GetMetaTableColumnResponse.GetMetaTableColumn_Data.GetMetaTableColumn_ColumnListItem> data_columnList = new List<GetMetaTableColumnResponse.GetMetaTableColumn_Data.GetMetaTableColumn_ColumnListItem>();
 			for (int i = 0; i < _ctx.Length("GetMetaTableColumn.Data.ColumnList.Length"); i++) {
 				GetMetaTableColumnResponse.GetMetaTableColumn_Data.GetMetaTableColumn_ColumnListItem columnListItem = new GetMetaTableColumnResponse.GetMetaTableColumn_Data.GetMetaTableColumn_ColumnListItem();
-				columnListItem.ColumnName = _ctx.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].ColumnName");
 				columnListItem.ColumnGuid = _ctx.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].ColumnGuid");
-				columnListItem.Comment = _ctx.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].Comment");
-				columnListItem.IsPrimaryKey = _ctx.BooleanValue("GetMetaTableColumn.Data.ColumnList["+ i +"].IsPrimaryKey");
-				columnListItem.ColumnType = _ctx.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].ColumnType");
+				columnListItem.ColumnName = _ctx.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].ColumnName");
 				columnListItem.IsPartitionColumn = _ctx.BooleanValue("GetMetaTableColumn.Data.ColumnList["+ i +"].IsPartitionColumn");
-				columnListItem.IsForeignKey = _ctx.BooleanValue("GetMetaTableColumn.Data.ColumnList["+ i +"].IsForeignKey");
-				columnListItem.Caption = _ctx.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].Caption");
+				columnListItem.Comment = _ctx.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].Comment");
+				columnListItem.ColumnType = _ctx.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].ColumnType");
+				columnListItem.IsPrimaryKey = _ctx.BooleanValue("GetMetaTableColumn.Data.ColumnList["+ i +"].IsPrimaryKey");
 				columnListItem.Position = _ctx.IntegerValue("GetMetaTableColumn.Data.ColumnList["+ i +"].Position");
+				columnListItem.Caption = _ctx.StringValue("GetMetaTableColumn.Data.ColumnList["+ i +"].Caption");
+				columnListItem.IsForeignKey = _ctx.BooleanValue("GetMetaTableColumn.Data.ColumnList["+ i +"].IsForeignKey");
+				columnListItem.RelationCount = _ctx.LongValue("GetMetaTableColumn.Data.ColumnList["+ i +"].RelationCount");
 
 				data_columnList.Add(columnListItem);
 			}

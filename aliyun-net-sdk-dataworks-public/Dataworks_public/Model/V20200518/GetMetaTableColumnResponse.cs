@@ -25,39 +25,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class GetMetaTableColumnResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private string errorCode;
+		private int? httpStatusCode;
 
 		private string errorMessage;
 
-		private int? httpStatusCode;
+		private string requestId;
 
 		private bool? success;
 
+		private string errorCode;
+
 		private GetMetaTableColumn_Data data;
 
-		public string RequestId
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return requestId;
+				return httpStatusCode;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
+				httpStatusCode = value;
 			}
 		}
 
@@ -73,15 +61,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? HttpStatusCode
+		public string RequestId
 		{
 			get
 			{
-				return httpStatusCode;
+				return requestId;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				requestId = value;
 			}
 		}
 
@@ -94,6 +82,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
 			}
 		}
 
@@ -112,25 +112,13 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		public class GetMetaTableColumn_Data
 		{
 
-			private long? totalCount;
-
 			private int? pageNum;
 
 			private int? pageSize;
 
-			private List<GetMetaTableColumn_ColumnListItem> columnList;
+			private long? totalCount;
 
-			public long? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
+			private List<GetMetaTableColumn_ColumnListItem> columnList;
 
 			public int? PageNum
 			{
@@ -156,6 +144,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
+			public long? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
+				}
+			}
+
 			public List<GetMetaTableColumn_ColumnListItem> ColumnList
 			{
 				get
@@ -171,35 +171,25 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetMetaTableColumn_ColumnListItem
 			{
 
-				private string columnName;
-
 				private string columnGuid;
 
-				private string comment;
-
-				private bool? isPrimaryKey;
-
-				private string columnType;
+				private string columnName;
 
 				private bool? isPartitionColumn;
 
-				private bool? isForeignKey;
+				private string comment;
 
-				private string caption;
+				private string columnType;
+
+				private bool? isPrimaryKey;
 
 				private int? position;
 
-				public string ColumnName
-				{
-					get
-					{
-						return columnName;
-					}
-					set	
-					{
-						columnName = value;
-					}
-				}
+				private string caption;
+
+				private bool? isForeignKey;
+
+				private long? relationCount;
 
 				public string ColumnGuid
 				{
@@ -213,39 +203,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public string Comment
+				public string ColumnName
 				{
 					get
 					{
-						return comment;
+						return columnName;
 					}
 					set	
 					{
-						comment = value;
-					}
-				}
-
-				public bool? IsPrimaryKey
-				{
-					get
-					{
-						return isPrimaryKey;
-					}
-					set	
-					{
-						isPrimaryKey = value;
-					}
-				}
-
-				public string ColumnType
-				{
-					get
-					{
-						return columnType;
-					}
-					set	
-					{
-						columnType = value;
+						columnName = value;
 					}
 				}
 
@@ -261,15 +227,51 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public bool? IsForeignKey
+				public string Comment
 				{
 					get
 					{
-						return isForeignKey;
+						return comment;
 					}
 					set	
 					{
-						isForeignKey = value;
+						comment = value;
+					}
+				}
+
+				public string ColumnType
+				{
+					get
+					{
+						return columnType;
+					}
+					set	
+					{
+						columnType = value;
+					}
+				}
+
+				public bool? IsPrimaryKey
+				{
+					get
+					{
+						return isPrimaryKey;
+					}
+					set	
+					{
+						isPrimaryKey = value;
+					}
+				}
+
+				public int? Position
+				{
+					get
+					{
+						return position;
+					}
+					set	
+					{
+						position = value;
 					}
 				}
 
@@ -285,15 +287,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public int? Position
+				public bool? IsForeignKey
 				{
 					get
 					{
-						return position;
+						return isForeignKey;
 					}
 					set	
 					{
-						position = value;
+						isForeignKey = value;
+					}
+				}
+
+				public long? RelationCount
+				{
+					get
+					{
+						return relationCount;
+					}
+					set	
+					{
+						relationCount = value;
 					}
 				}
 			}
