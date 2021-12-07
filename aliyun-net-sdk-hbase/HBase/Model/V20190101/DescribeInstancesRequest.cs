@@ -50,6 +50,8 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private List<Tag> tags = new List<Tag>(){ };
 
+		private string clusterId;
+
 		private string dbType;
 
 		public string ClusterName
@@ -119,6 +121,19 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
 			}
 		}
 

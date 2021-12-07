@@ -25,15 +25,27 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 	public class DescribeInstancesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private long? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private long? totalCount;
 
 		private List<DescribeInstances_Instance> instances;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public long? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
-		public int? PageSize
+		public long? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,103 +98,91 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 		public class DescribeInstances_Instance
 		{
 
-			private string instanceId;
-
-			private string instanceName;
+			private string vpcId;
 
 			private string status;
 
-			private string payType;
-
-			private string createdTime;
-
-			private string expireTime;
-
-			private string majorVersion;
-
-			private string engine;
-
-			private bool? isHa;
-
-			private string networkType;
-
-			private string vpcId;
+			private int? moduleId;
 
 			private string vswitchId;
 
-			private string masterInstanceType;
+			private string backupStatus;
 
-			private int? masterNodeCount;
-
-			private string masterDiskType;
-
-			private int? masterDiskSize;
-
-			private string coreInstanceType;
-
-			private int? coreNodeCount;
+			private string payType;
 
 			private string coreDiskType;
 
-			private int? coreDiskSize;
+			private int? masterNodeCount;
 
-			private string regionId;
-
-			private string zoneId;
-
-			private string coldStorageStatus;
-
-			private string backupStatus;
-
-			private string clusterType;
+			private string networkType;
 
 			private string createdTimeUTC;
 
+			private string parentId;
+
 			private string expireTimeUTC;
+
+			private string instanceName;
+
+			private string masterInstanceType;
+
+			private string coreInstanceType;
+
+			private string createdTime;
+
+			private int? coreDiskSize;
 
 			private string clusterId;
 
-			private string clusterName;
+			private string expireTime;
+
+			private bool? isHa;
+
+			private string instanceId;
+
+			private string coldStorageStatus;
 
 			private bool? isDeletionProtection;
 
-			private string parentId;
+			private string regionId;
 
-			private int? moduleId;
+			private int? masterDiskSize;
 
-			private string moduleStackVersion;
-
-			private string coreDiskCount;
+			private string masterDiskType;
 
 			private bool? autoRenewal;
 
-			private int? duration;
+			private string clusterType;
 
 			private string resourceGroupId;
 
+			private string clusterName;
+
+			private string zoneId;
+
+			private int? duration;
+
+			private string moduleStackVersion;
+
+			private string engine;
+
+			private string majorVersion;
+
+			private string coreDiskCount;
+
+			private int? coreNodeCount;
+
 			private List<DescribeInstances_Tag> tags;
 
-			public string InstanceId
+			public string VpcId
 			{
 				get
 				{
-					return instanceId;
+					return vpcId;
 				}
 				set	
 				{
-					instanceId = value;
-				}
-			}
-
-			public string InstanceName
-			{
-				get
-				{
-					return instanceName;
-				}
-				set	
-				{
-					instanceName = value;
+					vpcId = value;
 				}
 			}
 
@@ -210,99 +198,15 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 				}
 			}
 
-			public string PayType
+			public int? ModuleId
 			{
 				get
 				{
-					return payType;
+					return moduleId;
 				}
 				set	
 				{
-					payType = value;
-				}
-			}
-
-			public string CreatedTime
-			{
-				get
-				{
-					return createdTime;
-				}
-				set	
-				{
-					createdTime = value;
-				}
-			}
-
-			public string ExpireTime
-			{
-				get
-				{
-					return expireTime;
-				}
-				set	
-				{
-					expireTime = value;
-				}
-			}
-
-			public string MajorVersion
-			{
-				get
-				{
-					return majorVersion;
-				}
-				set	
-				{
-					majorVersion = value;
-				}
-			}
-
-			public string Engine
-			{
-				get
-				{
-					return engine;
-				}
-				set	
-				{
-					engine = value;
-				}
-			}
-
-			public bool? IsHa
-			{
-				get
-				{
-					return isHa;
-				}
-				set	
-				{
-					isHa = value;
-				}
-			}
-
-			public string NetworkType
-			{
-				get
-				{
-					return networkType;
-				}
-				set	
-				{
-					networkType = value;
-				}
-			}
-
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
+					moduleId = value;
 				}
 			}
 
@@ -318,75 +222,27 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 				}
 			}
 
-			public string MasterInstanceType
+			public string BackupStatus
 			{
 				get
 				{
-					return masterInstanceType;
+					return backupStatus;
 				}
 				set	
 				{
-					masterInstanceType = value;
+					backupStatus = value;
 				}
 			}
 
-			public int? MasterNodeCount
+			public string PayType
 			{
 				get
 				{
-					return masterNodeCount;
+					return payType;
 				}
 				set	
 				{
-					masterNodeCount = value;
-				}
-			}
-
-			public string MasterDiskType
-			{
-				get
-				{
-					return masterDiskType;
-				}
-				set	
-				{
-					masterDiskType = value;
-				}
-			}
-
-			public int? MasterDiskSize
-			{
-				get
-				{
-					return masterDiskSize;
-				}
-				set	
-				{
-					masterDiskSize = value;
-				}
-			}
-
-			public string CoreInstanceType
-			{
-				get
-				{
-					return coreInstanceType;
-				}
-				set	
-				{
-					coreInstanceType = value;
-				}
-			}
-
-			public int? CoreNodeCount
-			{
-				get
-				{
-					return coreNodeCount;
-				}
-				set	
-				{
-					coreNodeCount = value;
+					payType = value;
 				}
 			}
 
@@ -402,75 +258,27 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 				}
 			}
 
-			public int? CoreDiskSize
+			public int? MasterNodeCount
 			{
 				get
 				{
-					return coreDiskSize;
+					return masterNodeCount;
 				}
 				set	
 				{
-					coreDiskSize = value;
+					masterNodeCount = value;
 				}
 			}
 
-			public string RegionId
+			public string NetworkType
 			{
 				get
 				{
-					return regionId;
+					return networkType;
 				}
 				set	
 				{
-					regionId = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-
-			public string ColdStorageStatus
-			{
-				get
-				{
-					return coldStorageStatus;
-				}
-				set	
-				{
-					coldStorageStatus = value;
-				}
-			}
-
-			public string BackupStatus
-			{
-				get
-				{
-					return backupStatus;
-				}
-				set	
-				{
-					backupStatus = value;
-				}
-			}
-
-			public string ClusterType
-			{
-				get
-				{
-					return clusterType;
-				}
-				set	
-				{
-					clusterType = value;
+					networkType = value;
 				}
 			}
 
@@ -486,6 +294,18 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 				}
 			}
 
+			public string ParentId
+			{
+				get
+				{
+					return parentId;
+				}
+				set	
+				{
+					parentId = value;
+				}
+			}
+
 			public string ExpireTimeUTC
 			{
 				get
@@ -495,6 +315,66 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 				set	
 				{
 					expireTimeUTC = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public string MasterInstanceType
+			{
+				get
+				{
+					return masterInstanceType;
+				}
+				set	
+				{
+					masterInstanceType = value;
+				}
+			}
+
+			public string CoreInstanceType
+			{
+				get
+				{
+					return coreInstanceType;
+				}
+				set	
+				{
+					coreInstanceType = value;
+				}
+			}
+
+			public string CreatedTime
+			{
+				get
+				{
+					return createdTime;
+				}
+				set	
+				{
+					createdTime = value;
+				}
+			}
+
+			public int? CoreDiskSize
+			{
+				get
+				{
+					return coreDiskSize;
+				}
+				set	
+				{
+					coreDiskSize = value;
 				}
 			}
 
@@ -510,15 +390,51 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 				}
 			}
 
-			public string ClusterName
+			public string ExpireTime
 			{
 				get
 				{
-					return clusterName;
+					return expireTime;
 				}
 				set	
 				{
-					clusterName = value;
+					expireTime = value;
+				}
+			}
+
+			public bool? IsHa
+			{
+				get
+				{
+					return isHa;
+				}
+				set	
+				{
+					isHa = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string ColdStorageStatus
+			{
+				get
+				{
+					return coldStorageStatus;
+				}
+				set	
+				{
+					coldStorageStatus = value;
 				}
 			}
 
@@ -534,51 +450,39 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 				}
 			}
 
-			public string ParentId
+			public string RegionId
 			{
 				get
 				{
-					return parentId;
+					return regionId;
 				}
 				set	
 				{
-					parentId = value;
+					regionId = value;
 				}
 			}
 
-			public int? ModuleId
+			public int? MasterDiskSize
 			{
 				get
 				{
-					return moduleId;
+					return masterDiskSize;
 				}
 				set	
 				{
-					moduleId = value;
+					masterDiskSize = value;
 				}
 			}
 
-			public string ModuleStackVersion
+			public string MasterDiskType
 			{
 				get
 				{
-					return moduleStackVersion;
+					return masterDiskType;
 				}
 				set	
 				{
-					moduleStackVersion = value;
-				}
-			}
-
-			public string CoreDiskCount
-			{
-				get
-				{
-					return coreDiskCount;
-				}
-				set	
-				{
-					coreDiskCount = value;
+					masterDiskType = value;
 				}
 			}
 
@@ -594,15 +498,15 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 				}
 			}
 
-			public int? Duration
+			public string ClusterType
 			{
 				get
 				{
-					return duration;
+					return clusterType;
 				}
 				set	
 				{
-					duration = value;
+					clusterType = value;
 				}
 			}
 
@@ -615,6 +519,102 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public string ClusterName
+			{
+				get
+				{
+					return clusterName;
+				}
+				set	
+				{
+					clusterName = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public int? Duration
+			{
+				get
+				{
+					return duration;
+				}
+				set	
+				{
+					duration = value;
+				}
+			}
+
+			public string ModuleStackVersion
+			{
+				get
+				{
+					return moduleStackVersion;
+				}
+				set	
+				{
+					moduleStackVersion = value;
+				}
+			}
+
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
+				}
+			}
+
+			public string MajorVersion
+			{
+				get
+				{
+					return majorVersion;
+				}
+				set	
+				{
+					majorVersion = value;
+				}
+			}
+
+			public string CoreDiskCount
+			{
+				get
+				{
+					return coreDiskCount;
+				}
+				set	
+				{
+					coreDiskCount = value;
+				}
+			}
+
+			public int? CoreNodeCount
+			{
+				get
+				{
+					return coreNodeCount;
+				}
+				set	
+				{
+					coreNodeCount = value;
 				}
 			}
 
