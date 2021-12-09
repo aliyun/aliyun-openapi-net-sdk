@@ -49,6 +49,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private int? currentPage;
 
+		private bool? reverse;
+
 		public string AppId
 		{
 			get
@@ -98,6 +100,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				currentPage = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public bool? Reverse
+		{
+			get
+			{
+				return reverse;
+			}
+			set	
+			{
+				reverse = value;
+				DictionaryUtil.Add(QueryParameters, "Reverse", value.ToString());
 			}
 		}
 

@@ -31,16 +31,16 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			CreateApplicationResponse createApplicationResponse = new CreateApplicationResponse();
 
 			createApplicationResponse.HttpResponse = _ctx.HttpResponse;
-			createApplicationResponse.Message = _ctx.StringValue("CreateApplication.Message");
 			createApplicationResponse.RequestId = _ctx.StringValue("CreateApplication.RequestId");
+			createApplicationResponse.Message = _ctx.StringValue("CreateApplication.Message");
 			createApplicationResponse.TraceId = _ctx.StringValue("CreateApplication.TraceId");
 			createApplicationResponse.ErrorCode = _ctx.StringValue("CreateApplication.ErrorCode");
 			createApplicationResponse.Code = _ctx.StringValue("CreateApplication.Code");
 			createApplicationResponse.Success = _ctx.BooleanValue("CreateApplication.Success");
 
 			CreateApplicationResponse.CreateApplication_Data data = new CreateApplicationResponse.CreateApplication_Data();
-			data.AppId = _ctx.StringValue("CreateApplication.Data.AppId");
 			data.ChangeOrderId = _ctx.StringValue("CreateApplication.Data.ChangeOrderId");
+			data.AppId = _ctx.StringValue("CreateApplication.Data.AppId");
 			createApplicationResponse.Data = data;
         
 			return createApplicationResponse;

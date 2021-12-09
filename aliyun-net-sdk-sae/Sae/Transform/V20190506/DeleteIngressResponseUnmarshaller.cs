@@ -32,11 +32,11 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			deleteIngressResponse.HttpResponse = _ctx.HttpResponse;
 			deleteIngressResponse.RequestId = _ctx.StringValue("DeleteIngress.RequestId");
-			deleteIngressResponse.Code = _ctx.StringValue("DeleteIngress.Code");
 			deleteIngressResponse.Message = _ctx.StringValue("DeleteIngress.Message");
-			deleteIngressResponse.Success = _ctx.BooleanValue("DeleteIngress.Success");
-			deleteIngressResponse.ErrorCode = _ctx.StringValue("DeleteIngress.ErrorCode");
 			deleteIngressResponse.TraceId = _ctx.StringValue("DeleteIngress.TraceId");
+			deleteIngressResponse.ErrorCode = _ctx.StringValue("DeleteIngress.ErrorCode");
+			deleteIngressResponse.Code = _ctx.StringValue("DeleteIngress.Code");
+			deleteIngressResponse.Success = _ctx.BooleanValue("DeleteIngress.Success");
 
 			DeleteIngressResponse.DeleteIngress_Data data = new DeleteIngressResponse.DeleteIngress_Data();
 			data.IngressId = _ctx.LongValue("DeleteIngress.Data.IngressId");

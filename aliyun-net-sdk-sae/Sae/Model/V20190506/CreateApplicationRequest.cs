@@ -43,9 +43,45 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string nasId;
 
-		private string webContainer;
-
 		private string jarStartArgs;
+
+		private string ossAkSecret;
+
+		private string mountHost;
+
+		private bool? autoConfig;
+
+		private string envs;
+
+		private string phpArmsConfigLocation;
+
+		private string customHostAlias;
+
+		private bool? deploy;
+
+		private string jarStartOptions;
+
+		private string appName;
+
+		private string namespaceId;
+
+		private string configMapMountDesc;
+
+		private string ossMountDescs;
+
+		private string preStop;
+
+		private int? cpu;
+
+		private string vSwitchId;
+
+		private string packageType;
+
+		private string postStart;
+
+		private bool? associateEip;
+
+		private string webContainer;
 
 		private int? memory;
 
@@ -59,55 +95,31 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string timezone;
 
-		private string mountHost;
-
-		private bool? autoConfig;
+		private string ossAkId;
 
 		private string liveness;
 
 		private string securityGroupId;
 
-		private string envs;
-
-		private string phpArmsConfigLocation;
-
 		private string packageVersion;
 
 		private string tomcatConfig;
 
-		private string customHostAlias;
-
-		private bool? deploy;
-
 		private string warStartOptions;
 
-		private string jarStartOptions;
-
 		private string edasContainerVersion;
-
-		private string appName;
-
-		private string namespaceId;
 
 		private string packageUrl;
 
 		private int? terminationGracePeriodSeconds;
 
-		private string configMapMountDesc;
-
 		private string phpConfig;
 
-		private string preStop;
-
 		private int? replicas;
-
-		private int? cpu;
 
 		private string command;
 
 		private string mountDesc;
-
-		private string vSwitchId;
 
 		private string jdk;
 
@@ -117,11 +129,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string imageUrl;
 
-		private string packageType;
-
 		private string phpConfigLocation;
-
-		private string postStart;
 
 		public string NasId
 		{
@@ -136,19 +144,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string WebContainer
-		{
-			get
-			{
-				return webContainer;
-			}
-			set	
-			{
-				webContainer = value;
-				DictionaryUtil.Add(QueryParameters, "WebContainer", value);
-			}
-		}
-
 		public string JarStartArgs
 		{
 			get
@@ -159,6 +154,253 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				jarStartArgs = value;
 				DictionaryUtil.Add(QueryParameters, "JarStartArgs", value);
+			}
+		}
+
+		public string OssAkSecret
+		{
+			get
+			{
+				return ossAkSecret;
+			}
+			set	
+			{
+				ossAkSecret = value;
+				DictionaryUtil.Add(BodyParameters, "OssAkSecret", value);
+			}
+		}
+
+		public string MountHost
+		{
+			get
+			{
+				return mountHost;
+			}
+			set	
+			{
+				mountHost = value;
+				DictionaryUtil.Add(QueryParameters, "MountHost", value);
+			}
+		}
+
+		public bool? AutoConfig
+		{
+			get
+			{
+				return autoConfig;
+			}
+			set	
+			{
+				autoConfig = value;
+				DictionaryUtil.Add(QueryParameters, "AutoConfig", value.ToString());
+			}
+		}
+
+		public string Envs
+		{
+			get
+			{
+				return envs;
+			}
+			set	
+			{
+				envs = value;
+				DictionaryUtil.Add(QueryParameters, "Envs", value);
+			}
+		}
+
+		public string PhpArmsConfigLocation
+		{
+			get
+			{
+				return phpArmsConfigLocation;
+			}
+			set	
+			{
+				phpArmsConfigLocation = value;
+				DictionaryUtil.Add(QueryParameters, "PhpArmsConfigLocation", value);
+			}
+		}
+
+		public string CustomHostAlias
+		{
+			get
+			{
+				return customHostAlias;
+			}
+			set	
+			{
+				customHostAlias = value;
+				DictionaryUtil.Add(QueryParameters, "CustomHostAlias", value);
+			}
+		}
+
+		public bool? Deploy
+		{
+			get
+			{
+				return deploy;
+			}
+			set	
+			{
+				deploy = value;
+				DictionaryUtil.Add(QueryParameters, "Deploy", value.ToString());
+			}
+		}
+
+		public string JarStartOptions
+		{
+			get
+			{
+				return jarStartOptions;
+			}
+			set	
+			{
+				jarStartOptions = value;
+				DictionaryUtil.Add(QueryParameters, "JarStartOptions", value);
+			}
+		}
+
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
+
+		public string NamespaceId
+		{
+			get
+			{
+				return namespaceId;
+			}
+			set	
+			{
+				namespaceId = value;
+				DictionaryUtil.Add(QueryParameters, "NamespaceId", value);
+			}
+		}
+
+		public string ConfigMapMountDesc
+		{
+			get
+			{
+				return configMapMountDesc;
+			}
+			set	
+			{
+				configMapMountDesc = value;
+				DictionaryUtil.Add(BodyParameters, "ConfigMapMountDesc", value);
+			}
+		}
+
+		public string OssMountDescs
+		{
+			get
+			{
+				return ossMountDescs;
+			}
+			set	
+			{
+				ossMountDescs = value;
+				DictionaryUtil.Add(BodyParameters, "OssMountDescs", value);
+			}
+		}
+
+		public string PreStop
+		{
+			get
+			{
+				return preStop;
+			}
+			set	
+			{
+				preStop = value;
+				DictionaryUtil.Add(QueryParameters, "PreStop", value);
+			}
+		}
+
+		public int? Cpu
+		{
+			get
+			{
+				return cpu;
+			}
+			set	
+			{
+				cpu = value;
+				DictionaryUtil.Add(QueryParameters, "Cpu", value.ToString());
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public string PackageType
+		{
+			get
+			{
+				return packageType;
+			}
+			set	
+			{
+				packageType = value;
+				DictionaryUtil.Add(QueryParameters, "PackageType", value);
+			}
+		}
+
+		public string PostStart
+		{
+			get
+			{
+				return postStart;
+			}
+			set	
+			{
+				postStart = value;
+				DictionaryUtil.Add(QueryParameters, "PostStart", value);
+			}
+		}
+
+		public bool? AssociateEip
+		{
+			get
+			{
+				return associateEip;
+			}
+			set	
+			{
+				associateEip = value;
+				DictionaryUtil.Add(BodyParameters, "AssociateEip", value.ToString());
+			}
+		}
+
+		public string WebContainer
+		{
+			get
+			{
+				return webContainer;
+			}
+			set	
+			{
+				webContainer = value;
+				DictionaryUtil.Add(QueryParameters, "WebContainer", value);
 			}
 		}
 
@@ -240,29 +482,16 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string MountHost
+		public string OssAkId
 		{
 			get
 			{
-				return mountHost;
+				return ossAkId;
 			}
 			set	
 			{
-				mountHost = value;
-				DictionaryUtil.Add(QueryParameters, "MountHost", value);
-			}
-		}
-
-		public bool? AutoConfig
-		{
-			get
-			{
-				return autoConfig;
-			}
-			set	
-			{
-				autoConfig = value;
-				DictionaryUtil.Add(QueryParameters, "AutoConfig", value.ToString());
+				ossAkId = value;
+				DictionaryUtil.Add(BodyParameters, "OssAkId", value);
 			}
 		}
 
@@ -292,32 +521,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string Envs
-		{
-			get
-			{
-				return envs;
-			}
-			set	
-			{
-				envs = value;
-				DictionaryUtil.Add(QueryParameters, "Envs", value);
-			}
-		}
-
-		public string PhpArmsConfigLocation
-		{
-			get
-			{
-				return phpArmsConfigLocation;
-			}
-			set	
-			{
-				phpArmsConfigLocation = value;
-				DictionaryUtil.Add(QueryParameters, "PhpArmsConfigLocation", value);
-			}
-		}
-
 		public string PackageVersion
 		{
 			get
@@ -344,32 +547,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string CustomHostAlias
-		{
-			get
-			{
-				return customHostAlias;
-			}
-			set	
-			{
-				customHostAlias = value;
-				DictionaryUtil.Add(QueryParameters, "CustomHostAlias", value);
-			}
-		}
-
-		public bool? Deploy
-		{
-			get
-			{
-				return deploy;
-			}
-			set	
-			{
-				deploy = value;
-				DictionaryUtil.Add(QueryParameters, "Deploy", value.ToString());
-			}
-		}
-
 		public string WarStartOptions
 		{
 			get
@@ -383,19 +560,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string JarStartOptions
-		{
-			get
-			{
-				return jarStartOptions;
-			}
-			set	
-			{
-				jarStartOptions = value;
-				DictionaryUtil.Add(QueryParameters, "JarStartOptions", value);
-			}
-		}
-
 		public string EdasContainerVersion
 		{
 			get
@@ -406,32 +570,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				edasContainerVersion = value;
 				DictionaryUtil.Add(QueryParameters, "EdasContainerVersion", value);
-			}
-		}
-
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
-		public string NamespaceId
-		{
-			get
-			{
-				return namespaceId;
-			}
-			set	
-			{
-				namespaceId = value;
-				DictionaryUtil.Add(QueryParameters, "NamespaceId", value);
 			}
 		}
 
@@ -461,19 +599,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string ConfigMapMountDesc
-		{
-			get
-			{
-				return configMapMountDesc;
-			}
-			set	
-			{
-				configMapMountDesc = value;
-				DictionaryUtil.Add(BodyParameters, "ConfigMapMountDesc", value);
-			}
-		}
-
 		public string PhpConfig
 		{
 			get
@@ -487,19 +612,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string PreStop
-		{
-			get
-			{
-				return preStop;
-			}
-			set	
-			{
-				preStop = value;
-				DictionaryUtil.Add(QueryParameters, "PreStop", value);
-			}
-		}
-
 		public int? Replicas
 		{
 			get
@@ -510,19 +622,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				replicas = value;
 				DictionaryUtil.Add(QueryParameters, "Replicas", value.ToString());
-			}
-		}
-
-		public int? Cpu
-		{
-			get
-			{
-				return cpu;
-			}
-			set	
-			{
-				cpu = value;
-				DictionaryUtil.Add(QueryParameters, "Cpu", value.ToString());
 			}
 		}
 
@@ -549,19 +648,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				mountDesc = value;
 				DictionaryUtil.Add(QueryParameters, "MountDesc", value);
-			}
-		}
-
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
 			}
 		}
 
@@ -617,19 +703,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public string PackageType
-		{
-			get
-			{
-				return packageType;
-			}
-			set	
-			{
-				packageType = value;
-				DictionaryUtil.Add(QueryParameters, "PackageType", value);
-			}
-		}
-
 		public string PhpConfigLocation
 		{
 			get
@@ -640,19 +713,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				phpConfigLocation = value;
 				DictionaryUtil.Add(QueryParameters, "PhpConfigLocation", value);
-			}
-		}
-
-		public string PostStart
-		{
-			get
-			{
-				return postStart;
-			}
-			set	
-			{
-				postStart = value;
-				DictionaryUtil.Add(QueryParameters, "PostStart", value);
 			}
 		}
 

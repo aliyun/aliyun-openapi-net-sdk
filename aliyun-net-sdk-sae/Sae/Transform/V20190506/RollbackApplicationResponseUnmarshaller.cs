@@ -31,8 +31,8 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			RollbackApplicationResponse rollbackApplicationResponse = new RollbackApplicationResponse();
 
 			rollbackApplicationResponse.HttpResponse = _ctx.HttpResponse;
-			rollbackApplicationResponse.Message = _ctx.StringValue("RollbackApplication.Message");
 			rollbackApplicationResponse.RequestId = _ctx.StringValue("RollbackApplication.RequestId");
+			rollbackApplicationResponse.Message = _ctx.StringValue("RollbackApplication.Message");
 			rollbackApplicationResponse.TraceId = _ctx.StringValue("RollbackApplication.TraceId");
 			rollbackApplicationResponse.ErrorCode = _ctx.StringValue("RollbackApplication.ErrorCode");
 			rollbackApplicationResponse.Code = _ctx.StringValue("RollbackApplication.Code");
@@ -40,6 +40,7 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			RollbackApplicationResponse.RollbackApplication_Data data = new RollbackApplicationResponse.RollbackApplication_Data();
 			data.ChangeOrderId = _ctx.StringValue("RollbackApplication.Data.ChangeOrderId");
+			data.IsNeedApproval = _ctx.BooleanValue("RollbackApplication.Data.IsNeedApproval");
 			rollbackApplicationResponse.Data = data;
         
 			return rollbackApplicationResponse;

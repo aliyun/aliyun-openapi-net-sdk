@@ -25,9 +25,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class ListApplicationsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string message;
+
+		private string requestId;
 
 		private string errorCode;
 
@@ -35,19 +35,13 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private bool? success;
 
-		private ListApplications_Data data;
+		private int? currentPage;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private int? totalSize;
+
+		private int? pageSize;
+
+		private ListApplications_Data data;
 
 		public string Message
 		{
@@ -58,6 +52,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -97,6 +103,42 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
+
+		public int? TotalSize
+		{
+			get
+			{
+				return totalSize;
+			}
+			set	
+			{
+				totalSize = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
 		public ListApplications_Data Data
 		{
 			get
@@ -112,25 +154,13 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class ListApplications_Data
 		{
 
-			private int? pageSize;
-
 			private int? currentPage;
 
 			private int? totalSize;
 
-			private List<ListApplications_Application> applications;
+			private int? pageSize;
 
-			public int? PageSize
-			{
-				get
-				{
-					return pageSize;
-				}
-				set	
-				{
-					pageSize = value;
-				}
-			}
+			private List<ListApplications_Application> applications;
 
 			public int? CurrentPage
 			{
@@ -156,6 +186,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
+			public int? PageSize
+			{
+				get
+				{
+					return pageSize;
+				}
+				set	
+				{
+					pageSize = value;
+				}
+			}
+
 			public List<ListApplications_Application> Applications
 			{
 				get
@@ -171,97 +213,37 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			public class ListApplications_Application
 			{
 
-				private int? instances;
-
-				private bool? scaleRuleEnabled;
-
-				private string appDescription;
-
-				private string appId;
-
-				private int? runningInstances;
-
-				private string regionId;
+				private string appName;
 
 				private string namespaceId;
 
-				private string scaleRuleType;
-
 				private bool? appDeletingStatus;
 
-				private string appName;
+				private string appId;
+
+				private bool? scaleRuleEnabled;
+
+				private string scaleRuleType;
+
+				private int? runningInstances;
+
+				private int? instances;
+
+				private string regionId;
+
+				private string appDescription;
 
 				private List<ListApplications_TagsItem> tags;
 
-				public int? Instances
+				public string AppName
 				{
 					get
 					{
-						return instances;
+						return appName;
 					}
 					set	
 					{
-						instances = value;
-					}
-				}
-
-				public bool? ScaleRuleEnabled
-				{
-					get
-					{
-						return scaleRuleEnabled;
-					}
-					set	
-					{
-						scaleRuleEnabled = value;
-					}
-				}
-
-				public string AppDescription
-				{
-					get
-					{
-						return appDescription;
-					}
-					set	
-					{
-						appDescription = value;
-					}
-				}
-
-				public string AppId
-				{
-					get
-					{
-						return appId;
-					}
-					set	
-					{
-						appId = value;
-					}
-				}
-
-				public int? RunningInstances
-				{
-					get
-					{
-						return runningInstances;
-					}
-					set	
-					{
-						runningInstances = value;
-					}
-				}
-
-				public string RegionId
-				{
-					get
-					{
-						return regionId;
-					}
-					set	
-					{
-						regionId = value;
+						appName = value;
 					}
 				}
 
@@ -277,18 +259,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string ScaleRuleType
-				{
-					get
-					{
-						return scaleRuleType;
-					}
-					set	
-					{
-						scaleRuleType = value;
-					}
-				}
-
 				public bool? AppDeletingStatus
 				{
 					get
@@ -301,15 +271,87 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string AppName
+				public string AppId
 				{
 					get
 					{
-						return appName;
+						return appId;
 					}
 					set	
 					{
-						appName = value;
+						appId = value;
+					}
+				}
+
+				public bool? ScaleRuleEnabled
+				{
+					get
+					{
+						return scaleRuleEnabled;
+					}
+					set	
+					{
+						scaleRuleEnabled = value;
+					}
+				}
+
+				public string ScaleRuleType
+				{
+					get
+					{
+						return scaleRuleType;
+					}
+					set	
+					{
+						scaleRuleType = value;
+					}
+				}
+
+				public int? RunningInstances
+				{
+					get
+					{
+						return runningInstances;
+					}
+					set	
+					{
+						runningInstances = value;
+					}
+				}
+
+				public int? Instances
+				{
+					get
+					{
+						return instances;
+					}
+					set	
+					{
+						instances = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
+
+				public string AppDescription
+				{
+					get
+					{
+						return appDescription;
+					}
+					set	
+					{
+						appDescription = value;
 					}
 				}
 
@@ -328,21 +370,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				public class ListApplications_TagsItem
 				{
 
-					private string _value;
-
 					private string key;
 
-					public string _Value
-					{
-						get
-						{
-							return _value;
-						}
-						set	
-						{
-							_value = value;
-						}
-					}
+					private string _value;
 
 					public string Key
 					{
@@ -353,6 +383,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 						set	
 						{
 							key = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
 						}
 					}
 				}

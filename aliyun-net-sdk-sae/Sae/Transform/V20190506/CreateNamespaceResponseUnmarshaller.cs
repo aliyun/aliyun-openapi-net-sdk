@@ -32,17 +32,17 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			createNamespaceResponse.HttpResponse = _ctx.HttpResponse;
 			createNamespaceResponse.RequestId = _ctx.StringValue("CreateNamespace.RequestId");
-			createNamespaceResponse.Code = _ctx.StringValue("CreateNamespace.Code");
-			createNamespaceResponse.ErrorCode = _ctx.StringValue("CreateNamespace.ErrorCode");
 			createNamespaceResponse.Message = _ctx.StringValue("CreateNamespace.Message");
-			createNamespaceResponse.Success = _ctx.BooleanValue("CreateNamespace.Success");
 			createNamespaceResponse.TraceId = _ctx.StringValue("CreateNamespace.TraceId");
+			createNamespaceResponse.ErrorCode = _ctx.StringValue("CreateNamespace.ErrorCode");
+			createNamespaceResponse.Code = _ctx.StringValue("CreateNamespace.Code");
+			createNamespaceResponse.Success = _ctx.BooleanValue("CreateNamespace.Success");
 
 			CreateNamespaceResponse.CreateNamespace_Data data = new CreateNamespaceResponse.CreateNamespace_Data();
-			data.RegionId = _ctx.StringValue("CreateNamespace.Data.RegionId");
+			data.NamespaceDescription = _ctx.StringValue("CreateNamespace.Data.NamespaceDescription");
 			data.NamespaceId = _ctx.StringValue("CreateNamespace.Data.NamespaceId");
 			data.NamespaceName = _ctx.StringValue("CreateNamespace.Data.NamespaceName");
-			data.NamespaceDescription = _ctx.StringValue("CreateNamespace.Data.NamespaceDescription");
+			data.RegionId = _ctx.StringValue("CreateNamespace.Data.RegionId");
 			createNamespaceResponse.Data = data;
         
 			return createNamespaceResponse;

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			BindSlbResponse bindSlbResponse = new BindSlbResponse();
 
 			bindSlbResponse.HttpResponse = _ctx.HttpResponse;
-			bindSlbResponse.Message = _ctx.StringValue("BindSlb.Message");
 			bindSlbResponse.RequestId = _ctx.StringValue("BindSlb.RequestId");
+			bindSlbResponse.Message = _ctx.StringValue("BindSlb.Message");
 			bindSlbResponse.TraceId = _ctx.StringValue("BindSlb.TraceId");
 			bindSlbResponse.ErrorCode = _ctx.StringValue("BindSlb.ErrorCode");
 			bindSlbResponse.Code = _ctx.StringValue("BindSlb.Code");

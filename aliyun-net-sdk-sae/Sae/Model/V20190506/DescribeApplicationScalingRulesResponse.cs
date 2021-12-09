@@ -70,25 +70,13 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class DescribeApplicationScalingRules_Data
 		{
 
-			private int? pageSize;
-
 			private int? currentPage;
 
 			private int? totalSize;
 
-			private List<DescribeApplicationScalingRules_ApplicationScalingRule> applicationScalingRules;
+			private int? pageSize;
 
-			public int? PageSize
-			{
-				get
-				{
-					return pageSize;
-				}
-				set	
-				{
-					pageSize = value;
-				}
-			}
+			private List<DescribeApplicationScalingRules_ApplicationScalingRule> applicationScalingRules;
 
 			public int? CurrentPage
 			{
@@ -114,6 +102,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
+			public int? PageSize
+			{
+				get
+				{
+					return pageSize;
+				}
+				set	
+				{
+					pageSize = value;
+				}
+			}
+
 			public List<DescribeApplicationScalingRules_ApplicationScalingRule> ApplicationScalingRules
 			{
 				get
@@ -129,45 +129,33 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			public class DescribeApplicationScalingRules_ApplicationScalingRule
 			{
 
-				private bool? scaleRuleEnabled;
-
-				private long? lastDisableTime;
+				private long? updateTime;
 
 				private string appId;
 
 				private long? createTime;
 
-				private long? updateTime;
+				private long? lastDisableTime;
 
-				private string scaleRuleName;
+				private bool? scaleRuleEnabled;
 
 				private string scaleRuleType;
+
+				private string scaleRuleName;
 
 				private DescribeApplicationScalingRules_Timer timer;
 
 				private DescribeApplicationScalingRules_Metric metric;
 
-				public bool? ScaleRuleEnabled
+				public long? UpdateTime
 				{
 					get
 					{
-						return scaleRuleEnabled;
+						return updateTime;
 					}
 					set	
 					{
-						scaleRuleEnabled = value;
-					}
-				}
-
-				public long? LastDisableTime
-				{
-					get
-					{
-						return lastDisableTime;
-					}
-					set	
-					{
-						lastDisableTime = value;
+						updateTime = value;
 					}
 				}
 
@@ -195,27 +183,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public long? UpdateTime
+				public long? LastDisableTime
 				{
 					get
 					{
-						return updateTime;
+						return lastDisableTime;
 					}
 					set	
 					{
-						updateTime = value;
+						lastDisableTime = value;
 					}
 				}
 
-				public string ScaleRuleName
+				public bool? ScaleRuleEnabled
 				{
 					get
 					{
-						return scaleRuleName;
+						return scaleRuleEnabled;
 					}
 					set	
 					{
-						scaleRuleName = value;
+						scaleRuleEnabled = value;
 					}
 				}
 
@@ -228,6 +216,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						scaleRuleType = value;
+					}
+				}
+
+				public string ScaleRuleName
+				{
+					get
+					{
+						return scaleRuleName;
+					}
+					set	
+					{
+						scaleRuleName = value;
 					}
 				}
 
@@ -258,25 +258,13 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				public class DescribeApplicationScalingRules_Timer
 				{
 
-					private string period;
-
 					private string endDate;
 
 					private string beginDate;
 
-					private List<DescribeApplicationScalingRules_Schedule> schedules;
+					private string period;
 
-					public string Period
-					{
-						get
-						{
-							return period;
-						}
-						set	
-						{
-							period = value;
-						}
-					}
+					private List<DescribeApplicationScalingRules_Schedule> schedules;
 
 					public string EndDate
 					{
@@ -302,6 +290,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 						}
 					}
 
+					public string Period
+					{
+						get
+						{
+							return period;
+						}
+						set	
+						{
+							period = value;
+						}
+					}
+
 					public List<DescribeApplicationScalingRules_Schedule> Schedules
 					{
 						get
@@ -317,9 +317,25 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					public class DescribeApplicationScalingRules_Schedule
 					{
 
+						private string atTime;
+
 						private int? targetReplicas;
 
-						private string atTime;
+						private long? maxReplicas;
+
+						private long? minReplicas;
+
+						public string AtTime
+						{
+							get
+							{
+								return atTime;
+							}
+							set	
+							{
+								atTime = value;
+							}
+						}
 
 						public int? TargetReplicas
 						{
@@ -333,15 +349,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 							}
 						}
 
-						public string AtTime
+						public long? MaxReplicas
 						{
 							get
 							{
-								return atTime;
+								return maxReplicas;
 							}
 							set	
 							{
-								atTime = value;
+								maxReplicas = value;
+							}
+						}
+
+						public long? MinReplicas
+						{
+							get
+							{
+								return minReplicas;
+							}
+							set	
+							{
+								minReplicas = value;
 							}
 						}
 					}
@@ -350,25 +378,17 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				public class DescribeApplicationScalingRules_Metric
 				{
 
-					private int? minReplicas;
-
 					private int? maxReplicas;
+
+					private int? minReplicas;
 
 					private List<DescribeApplicationScalingRules_Metric1> metrics;
 
 					private DescribeApplicationScalingRules_MetricsStatus metricsStatus;
 
-					public int? MinReplicas
-					{
-						get
-						{
-							return minReplicas;
-						}
-						set	
-						{
-							minReplicas = value;
-						}
-					}
+					private DescribeApplicationScalingRules_ScaleUpRules scaleUpRules;
+
+					private DescribeApplicationScalingRules_ScaleDownRules scaleDownRules;
 
 					public int? MaxReplicas
 					{
@@ -379,6 +399,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 						set	
 						{
 							maxReplicas = value;
+						}
+					}
+
+					public int? MinReplicas
+					{
+						get
+						{
+							return minReplicas;
+						}
+						set	
+						{
+							minReplicas = value;
 						}
 					}
 
@@ -406,24 +438,36 @@ namespace Aliyun.Acs.sae.Model.V20190506
 						}
 					}
 
+					public DescribeApplicationScalingRules_ScaleUpRules ScaleUpRules
+					{
+						get
+						{
+							return scaleUpRules;
+						}
+						set	
+						{
+							scaleUpRules = value;
+						}
+					}
+
+					public DescribeApplicationScalingRules_ScaleDownRules ScaleDownRules
+					{
+						get
+						{
+							return scaleDownRules;
+						}
+						set	
+						{
+							scaleDownRules = value;
+						}
+					}
+
 					public class DescribeApplicationScalingRules_Metric1
 					{
 
-						private string metricType;
-
 						private int? metricTargetAverageUtilization;
 
-						public string MetricType
-						{
-							get
-							{
-								return metricType;
-							}
-							set	
-							{
-								metricType = value;
-							}
-						}
+						private string metricType;
 
 						public int? MetricTargetAverageUtilization
 						{
@@ -436,6 +480,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 								metricTargetAverageUtilization = value;
 							}
 						}
+
+						public string MetricType
+						{
+							get
+							{
+								return metricType;
+							}
+							set	
+							{
+								metricType = value;
+							}
+						}
 					}
 
 					public class DescribeApplicationScalingRules_MetricsStatus
@@ -443,15 +499,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 						private long? desiredReplicas;
 
-						private long? currentReplicas;
-
 						private int? nextScaleTimePeriod;
+
+						private long? currentReplicas;
 
 						private string lastScaleTime;
 
-						private List<DescribeApplicationScalingRules_NextScaleMetric> nextScaleMetrics;
+						private long? maxReplicas;
+
+						private long? minReplicas;
 
 						private List<DescribeApplicationScalingRules_CurrentMetric> currentMetrics;
+
+						private List<DescribeApplicationScalingRules_NextScaleMetric> nextScaleMetrics;
 
 						public long? DesiredReplicas
 						{
@@ -462,18 +522,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 							set	
 							{
 								desiredReplicas = value;
-							}
-						}
-
-						public long? CurrentReplicas
-						{
-							get
-							{
-								return currentReplicas;
-							}
-							set	
-							{
-								currentReplicas = value;
 							}
 						}
 
@@ -489,6 +537,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 							}
 						}
 
+						public long? CurrentReplicas
+						{
+							get
+							{
+								return currentReplicas;
+							}
+							set	
+							{
+								currentReplicas = value;
+							}
+						}
+
 						public string LastScaleTime
 						{
 							get
@@ -501,15 +561,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 							}
 						}
 
-						public List<DescribeApplicationScalingRules_NextScaleMetric> NextScaleMetrics
+						public long? MaxReplicas
 						{
 							get
 							{
-								return nextScaleMetrics;
+								return maxReplicas;
 							}
 							set	
 							{
-								nextScaleMetrics = value;
+								maxReplicas = value;
+							}
+						}
+
+						public long? MinReplicas
+						{
+							get
+							{
+								return minReplicas;
+							}
+							set	
+							{
+								minReplicas = value;
 							}
 						}
 
@@ -525,49 +597,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 							}
 						}
 
-						public class DescribeApplicationScalingRules_NextScaleMetric
+						public List<DescribeApplicationScalingRules_NextScaleMetric> NextScaleMetrics
 						{
-
-							private int? nextScaleInAverageUtilization;
-
-							private string name;
-
-							private int? nextScaleOutAverageUtilization;
-
-							public int? NextScaleInAverageUtilization
+							get
 							{
-								get
-								{
-									return nextScaleInAverageUtilization;
-								}
-								set	
-								{
-									nextScaleInAverageUtilization = value;
-								}
+								return nextScaleMetrics;
 							}
-
-							public string Name
+							set	
 							{
-								get
-								{
-									return name;
-								}
-								set	
-								{
-									name = value;
-								}
-							}
-
-							public int? NextScaleOutAverageUtilization
-							{
-								get
-								{
-									return nextScaleOutAverageUtilization;
-								}
-								set	
-								{
-									nextScaleOutAverageUtilization = value;
-								}
+								nextScaleMetrics = value;
 							}
 						}
 
@@ -614,6 +652,144 @@ namespace Aliyun.Acs.sae.Model.V20190506
 								{
 									name = value;
 								}
+							}
+						}
+
+						public class DescribeApplicationScalingRules_NextScaleMetric
+						{
+
+							private int? nextScaleOutAverageUtilization;
+
+							private int? nextScaleInAverageUtilization;
+
+							private string name;
+
+							public int? NextScaleOutAverageUtilization
+							{
+								get
+								{
+									return nextScaleOutAverageUtilization;
+								}
+								set	
+								{
+									nextScaleOutAverageUtilization = value;
+								}
+							}
+
+							public int? NextScaleInAverageUtilization
+							{
+								get
+								{
+									return nextScaleInAverageUtilization;
+								}
+								set	
+								{
+									nextScaleInAverageUtilization = value;
+								}
+							}
+
+							public string Name
+							{
+								get
+								{
+									return name;
+								}
+								set	
+								{
+									name = value;
+								}
+							}
+						}
+					}
+
+					public class DescribeApplicationScalingRules_ScaleUpRules
+					{
+
+						private long? step;
+
+						private long? stabilizationWindowSeconds;
+
+						private bool? disabled;
+
+						public long? Step
+						{
+							get
+							{
+								return step;
+							}
+							set	
+							{
+								step = value;
+							}
+						}
+
+						public long? StabilizationWindowSeconds
+						{
+							get
+							{
+								return stabilizationWindowSeconds;
+							}
+							set	
+							{
+								stabilizationWindowSeconds = value;
+							}
+						}
+
+						public bool? Disabled
+						{
+							get
+							{
+								return disabled;
+							}
+							set	
+							{
+								disabled = value;
+							}
+						}
+					}
+
+					public class DescribeApplicationScalingRules_ScaleDownRules
+					{
+
+						private long? step;
+
+						private long? stabilizationWindowSeconds;
+
+						private bool? disabled;
+
+						public long? Step
+						{
+							get
+							{
+								return step;
+							}
+							set	
+							{
+								step = value;
+							}
+						}
+
+						public long? StabilizationWindowSeconds
+						{
+							get
+							{
+								return stabilizationWindowSeconds;
+							}
+							set	
+							{
+								stabilizationWindowSeconds = value;
+							}
+						}
+
+						public bool? Disabled
+						{
+							get
+							{
+								return disabled;
+							}
+							set	
+							{
+								disabled = value;
 							}
 						}
 					}

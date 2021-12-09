@@ -47,6 +47,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string appId;
 
+		private bool? autoEnableApplicationScalingRule;
+
 		public int? MinReadyInstances
 		{
 			get
@@ -83,6 +85,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				appId = value;
 				DictionaryUtil.Add(QueryParameters, "AppId", value);
+			}
+		}
+
+		public bool? AutoEnableApplicationScalingRule
+		{
+			get
+			{
+				return autoEnableApplicationScalingRule;
+			}
+			set	
+			{
+				autoEnableApplicationScalingRule = value;
+				DictionaryUtil.Add(QueryParameters, "AutoEnableApplicationScalingRule", value.ToString());
 			}
 		}
 

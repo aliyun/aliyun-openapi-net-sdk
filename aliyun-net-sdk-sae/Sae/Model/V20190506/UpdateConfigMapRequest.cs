@@ -69,7 +69,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				description = value;
-				DictionaryUtil.Add(BodyParameters, "Description", value);
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 

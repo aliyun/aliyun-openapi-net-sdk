@@ -25,9 +25,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class DeployApplicationResponse : AcsResponse
 	{
 
-		private string message;
-
 		private string requestId;
+
+		private string message;
 
 		private string traceId;
 
@@ -39,18 +39,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private DeployApplication_Data data;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -60,6 +48,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -126,9 +126,23 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class DeployApplication_Data
 		{
 
+			private string changeOrderId;
+
 			private string appId;
 
-			private string changeOrderId;
+			private bool? isNeedApproval;
+
+			public string ChangeOrderId
+			{
+				get
+				{
+					return changeOrderId;
+				}
+				set	
+				{
+					changeOrderId = value;
+				}
+			}
 
 			public string AppId
 			{
@@ -142,15 +156,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string ChangeOrderId
+			public bool? IsNeedApproval
 			{
 				get
 				{
-					return changeOrderId;
+					return isNeedApproval;
 				}
 				set	
 				{
-					changeOrderId = value;
+					isNeedApproval = value;
 				}
 			}
 		}

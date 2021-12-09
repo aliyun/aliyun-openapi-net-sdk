@@ -25,9 +25,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class DescribeChangeOrderResponse : AcsResponse
 	{
 
-		private string message;
-
 		private string requestId;
+
+		private string message;
 
 		private string traceId;
 
@@ -39,18 +39,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private DescribeChangeOrder_Data data;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -60,6 +48,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -128,33 +128,37 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private int? status;
 
-			private string description;
+			private int? subStatus;
 
-			private bool? supportAbortFreeze;
+			private string approvalId;
+
+			private string errorMessage;
+
+			private int? batchWaitTime;
 
 			private string createTime;
 
+			private int? batchCount;
+
+			private string coTypeCode;
+
+			private bool? supportAbortFreeze;
+
+			private bool? supportRollback;
+
 			private string changeOrderId;
+
+			private string appName;
 
 			private string batchType;
 
-			private string appName;
+			private string description;
+
+			private string coType;
 
 			private bool? auto;
 
 			private string currentPipelineId;
-
-			private string coTypeCode;
-
-			private bool? supportRollback;
-
-			private int? batchWaitTime;
-
-			private string errorMessage;
-
-			private string coType;
-
-			private int? batchCount;
 
 			private List<DescribeChangeOrder_Pipeline> pipelines;
 
@@ -172,27 +176,51 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string Description
+			public int? SubStatus
 			{
 				get
 				{
-					return description;
+					return subStatus;
 				}
 				set	
 				{
-					description = value;
+					subStatus = value;
 				}
 			}
 
-			public bool? SupportAbortFreeze
+			public string ApprovalId
 			{
 				get
 				{
-					return supportAbortFreeze;
+					return approvalId;
 				}
 				set	
 				{
-					supportAbortFreeze = value;
+					approvalId = value;
+				}
+			}
+
+			public string ErrorMessage
+			{
+				get
+				{
+					return errorMessage;
+				}
+				set	
+				{
+					errorMessage = value;
+				}
+			}
+
+			public int? BatchWaitTime
+			{
+				get
+				{
+					return batchWaitTime;
+				}
+				set	
+				{
+					batchWaitTime = value;
 				}
 			}
 
@@ -208,6 +236,54 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
+			public int? BatchCount
+			{
+				get
+				{
+					return batchCount;
+				}
+				set	
+				{
+					batchCount = value;
+				}
+			}
+
+			public string CoTypeCode
+			{
+				get
+				{
+					return coTypeCode;
+				}
+				set	
+				{
+					coTypeCode = value;
+				}
+			}
+
+			public bool? SupportAbortFreeze
+			{
+				get
+				{
+					return supportAbortFreeze;
+				}
+				set	
+				{
+					supportAbortFreeze = value;
+				}
+			}
+
+			public bool? SupportRollback
+			{
+				get
+				{
+					return supportRollback;
+				}
+				set	
+				{
+					supportRollback = value;
+				}
+			}
+
 			public string ChangeOrderId
 			{
 				get
@@ -217,6 +293,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					changeOrderId = value;
+				}
+			}
+
+			public string AppName
+			{
+				get
+				{
+					return appName;
+				}
+				set	
+				{
+					appName = value;
 				}
 			}
 
@@ -232,15 +320,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string AppName
+			public string Description
 			{
 				get
 				{
-					return appName;
+					return description;
 				}
 				set	
 				{
-					appName = value;
+					description = value;
+				}
+			}
+
+			public string CoType
+			{
+				get
+				{
+					return coType;
+				}
+				set	
+				{
+					coType = value;
 				}
 			}
 
@@ -265,78 +365,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					currentPipelineId = value;
-				}
-			}
-
-			public string CoTypeCode
-			{
-				get
-				{
-					return coTypeCode;
-				}
-				set	
-				{
-					coTypeCode = value;
-				}
-			}
-
-			public bool? SupportRollback
-			{
-				get
-				{
-					return supportRollback;
-				}
-				set	
-				{
-					supportRollback = value;
-				}
-			}
-
-			public int? BatchWaitTime
-			{
-				get
-				{
-					return batchWaitTime;
-				}
-				set	
-				{
-					batchWaitTime = value;
-				}
-			}
-
-			public string ErrorMessage
-			{
-				get
-				{
-					return errorMessage;
-				}
-				set	
-				{
-					errorMessage = value;
-				}
-			}
-
-			public string CoType
-			{
-				get
-				{
-					return coType;
-				}
-				set	
-				{
-					coType = value;
-				}
-			}
-
-			public int? BatchCount
-			{
-				get
-				{
-					return batchCount;
-				}
-				set	
-				{
-					batchCount = value;
 				}
 			}
 
@@ -369,17 +397,17 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 				private int? status;
 
-				private string pipelineName;
-
-				private int? parallelCount;
+				private long? startTime;
 
 				private long? updateTime;
 
-				private long? startTime;
+				private int? batchType;
+
+				private int? parallelCount;
+
+				private string pipelineName;
 
 				private string pipelineId;
-
-				private int? batchType;
 
 				public int? Status
 				{
@@ -390,42 +418,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						status = value;
-					}
-				}
-
-				public string PipelineName
-				{
-					get
-					{
-						return pipelineName;
-					}
-					set	
-					{
-						pipelineName = value;
-					}
-				}
-
-				public int? ParallelCount
-				{
-					get
-					{
-						return parallelCount;
-					}
-					set	
-					{
-						parallelCount = value;
-					}
-				}
-
-				public long? UpdateTime
-				{
-					get
-					{
-						return updateTime;
-					}
-					set	
-					{
-						updateTime = value;
 					}
 				}
 
@@ -441,15 +433,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string PipelineId
+				public long? UpdateTime
 				{
 					get
 					{
-						return pipelineId;
+						return updateTime;
 					}
 					set	
 					{
-						pipelineId = value;
+						updateTime = value;
 					}
 				}
 
@@ -462,6 +454,42 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						batchType = value;
+					}
+				}
+
+				public int? ParallelCount
+				{
+					get
+					{
+						return parallelCount;
+					}
+					set	
+					{
+						parallelCount = value;
+					}
+				}
+
+				public string PipelineName
+				{
+					get
+					{
+						return pipelineName;
+					}
+					set	
+					{
+						pipelineName = value;
+					}
+				}
+
+				public string PipelineId
+				{
+					get
+					{
+						return pipelineId;
+					}
+					set	
+					{
+						pipelineId = value;
 					}
 				}
 			}

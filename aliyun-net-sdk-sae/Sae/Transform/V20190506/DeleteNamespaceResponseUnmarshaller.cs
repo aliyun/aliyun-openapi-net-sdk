@@ -32,11 +32,11 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			deleteNamespaceResponse.HttpResponse = _ctx.HttpResponse;
 			deleteNamespaceResponse.RequestId = _ctx.StringValue("DeleteNamespace.RequestId");
-			deleteNamespaceResponse.Code = _ctx.StringValue("DeleteNamespace.Code");
-			deleteNamespaceResponse.ErrorCode = _ctx.StringValue("DeleteNamespace.ErrorCode");
 			deleteNamespaceResponse.Message = _ctx.StringValue("DeleteNamespace.Message");
-			deleteNamespaceResponse.Success = _ctx.BooleanValue("DeleteNamespace.Success");
 			deleteNamespaceResponse.TraceId = _ctx.StringValue("DeleteNamespace.TraceId");
+			deleteNamespaceResponse.ErrorCode = _ctx.StringValue("DeleteNamespace.ErrorCode");
+			deleteNamespaceResponse.Code = _ctx.StringValue("DeleteNamespace.Code");
+			deleteNamespaceResponse.Success = _ctx.BooleanValue("DeleteNamespace.Success");
         
 			return deleteNamespaceResponse;
         }

@@ -43,6 +43,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string scalingRuleName;
 
+		private bool? scalingRuleEnable;
+
 		private string scalingRuleTimer;
 
 		private string appId;
@@ -59,6 +61,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				scalingRuleName = value;
 				DictionaryUtil.Add(QueryParameters, "ScalingRuleName", value);
+			}
+		}
+
+		public bool? ScalingRuleEnable
+		{
+			get
+			{
+				return scalingRuleEnable;
+			}
+			set	
+			{
+				scalingRuleEnable = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingRuleEnable", value.ToString());
 			}
 		}
 

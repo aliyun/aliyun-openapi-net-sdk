@@ -31,16 +31,17 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			DeployApplicationResponse deployApplicationResponse = new DeployApplicationResponse();
 
 			deployApplicationResponse.HttpResponse = _ctx.HttpResponse;
-			deployApplicationResponse.Message = _ctx.StringValue("DeployApplication.Message");
 			deployApplicationResponse.RequestId = _ctx.StringValue("DeployApplication.RequestId");
+			deployApplicationResponse.Message = _ctx.StringValue("DeployApplication.Message");
 			deployApplicationResponse.TraceId = _ctx.StringValue("DeployApplication.TraceId");
 			deployApplicationResponse.ErrorCode = _ctx.StringValue("DeployApplication.ErrorCode");
 			deployApplicationResponse.Code = _ctx.StringValue("DeployApplication.Code");
 			deployApplicationResponse.Success = _ctx.BooleanValue("DeployApplication.Success");
 
 			DeployApplicationResponse.DeployApplication_Data data = new DeployApplicationResponse.DeployApplication_Data();
-			data.AppId = _ctx.StringValue("DeployApplication.Data.AppId");
 			data.ChangeOrderId = _ctx.StringValue("DeployApplication.Data.ChangeOrderId");
+			data.AppId = _ctx.StringValue("DeployApplication.Data.AppId");
+			data.IsNeedApproval = _ctx.BooleanValue("DeployApplication.Data.IsNeedApproval");
 			deployApplicationResponse.Data = data;
         
 			return deployApplicationResponse;

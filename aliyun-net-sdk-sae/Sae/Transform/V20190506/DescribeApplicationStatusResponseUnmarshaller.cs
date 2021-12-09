@@ -32,22 +32,25 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			describeApplicationStatusResponse.HttpResponse = _ctx.HttpResponse;
 			describeApplicationStatusResponse.RequestId = _ctx.StringValue("DescribeApplicationStatus.RequestId");
-			describeApplicationStatusResponse.Code = _ctx.StringValue("DescribeApplicationStatus.Code");
 			describeApplicationStatusResponse.Message = _ctx.StringValue("DescribeApplicationStatus.Message");
 			describeApplicationStatusResponse.TraceId = _ctx.StringValue("DescribeApplicationStatus.TraceId");
-			describeApplicationStatusResponse.Success = _ctx.BooleanValue("DescribeApplicationStatus.Success");
 			describeApplicationStatusResponse.ErrorCode = _ctx.StringValue("DescribeApplicationStatus.ErrorCode");
+			describeApplicationStatusResponse.Code = _ctx.StringValue("DescribeApplicationStatus.Code");
+			describeApplicationStatusResponse.Success = _ctx.BooleanValue("DescribeApplicationStatus.Success");
 
 			DescribeApplicationStatusResponse.DescribeApplicationStatus_Data data = new DescribeApplicationStatusResponse.DescribeApplicationStatus_Data();
-			data.AppId = _ctx.StringValue("DescribeApplicationStatus.Data.AppId");
-			data.LastChangeOrderId = _ctx.StringValue("DescribeApplicationStatus.Data.LastChangeOrderId");
-			data.LastChangeOrderStatus = _ctx.StringValue("DescribeApplicationStatus.Data.LastChangeOrderStatus");
-			data.LastChangeOrderRunning = _ctx.BooleanValue("DescribeApplicationStatus.Data.LastChangeOrderRunning");
-			data.CurrentStatus = _ctx.StringValue("DescribeApplicationStatus.Data.CurrentStatus");
-			data.ArmsApmInfo = _ctx.StringValue("DescribeApplicationStatus.Data.ArmsApmInfo");
-			data.RunningInstances = _ctx.IntegerValue("DescribeApplicationStatus.Data.RunningInstances");
 			data.ArmsAdvancedEnabled = _ctx.StringValue("DescribeApplicationStatus.Data.ArmsAdvancedEnabled");
+			data.LastChangeOrderId = _ctx.StringValue("DescribeApplicationStatus.Data.LastChangeOrderId");
+			data.ArmsApmInfo = _ctx.StringValue("DescribeApplicationStatus.Data.ArmsApmInfo");
 			data.CreateTime = _ctx.StringValue("DescribeApplicationStatus.Data.CreateTime");
+			data.CurrentStatus = _ctx.StringValue("DescribeApplicationStatus.Data.CurrentStatus");
+			data.AppId = _ctx.StringValue("DescribeApplicationStatus.Data.AppId");
+			data.LastChangeOrderRunning = _ctx.BooleanValue("DescribeApplicationStatus.Data.LastChangeOrderRunning");
+			data.RunningInstances = _ctx.IntegerValue("DescribeApplicationStatus.Data.RunningInstances");
+			data.LastChangeOrderStatus = _ctx.StringValue("DescribeApplicationStatus.Data.LastChangeOrderStatus");
+			data.SubStatus = _ctx.StringValue("DescribeApplicationStatus.Data.SubStatus");
+			data.EnableAgent = _ctx.BooleanValue("DescribeApplicationStatus.Data.EnableAgent");
+			data.FileSizeLimit = _ctx.LongValue("DescribeApplicationStatus.Data.FileSizeLimit");
 			describeApplicationStatusResponse.Data = data;
         
 			return describeApplicationStatusResponse;

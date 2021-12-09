@@ -31,43 +31,43 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			DescribePipelineResponse describePipelineResponse = new DescribePipelineResponse();
 
 			describePipelineResponse.HttpResponse = _ctx.HttpResponse;
-			describePipelineResponse.Message = _ctx.StringValue("DescribePipeline.Message");
 			describePipelineResponse.RequestId = _ctx.StringValue("DescribePipeline.RequestId");
+			describePipelineResponse.Message = _ctx.StringValue("DescribePipeline.Message");
 			describePipelineResponse.TraceId = _ctx.StringValue("DescribePipeline.TraceId");
 			describePipelineResponse.ErrorCode = _ctx.StringValue("DescribePipeline.ErrorCode");
 			describePipelineResponse.Code = _ctx.StringValue("DescribePipeline.Code");
 			describePipelineResponse.Success = _ctx.BooleanValue("DescribePipeline.Success");
 
 			DescribePipelineResponse.DescribePipeline_Data data = new DescribePipelineResponse.DescribePipeline_Data();
-			data.PipelineStatus = _ctx.IntegerValue("DescribePipeline.Data.PipelineStatus");
 			data.ShowBatch = _ctx.BooleanValue("DescribePipeline.Data.ShowBatch");
+			data.PipelineStatus = _ctx.IntegerValue("DescribePipeline.Data.PipelineStatus");
 			data.CurrentPoint = _ctx.IntegerValue("DescribePipeline.Data.CurrentPoint");
-			data.PipelineName = _ctx.StringValue("DescribePipeline.Data.PipelineName");
-			data.PipelineId = _ctx.StringValue("DescribePipeline.Data.PipelineId");
 			data.CurrentStageId = _ctx.StringValue("DescribePipeline.Data.CurrentStageId");
-			data.CoStatus = _ctx.StringValue("DescribePipeline.Data.CoStatus");
+			data.PipelineName = _ctx.StringValue("DescribePipeline.Data.PipelineName");
 			data.NextPipelineId = _ctx.StringValue("DescribePipeline.Data.NextPipelineId");
+			data.PipelineId = _ctx.StringValue("DescribePipeline.Data.PipelineId");
+			data.CoStatus = _ctx.StringValue("DescribePipeline.Data.CoStatus");
 
 			List<DescribePipelineResponse.DescribePipeline_Data.DescribePipeline_Stage> data_stageList = new List<DescribePipelineResponse.DescribePipeline_Data.DescribePipeline_Stage>();
 			for (int i = 0; i < _ctx.Length("DescribePipeline.Data.StageList.Length"); i++) {
 				DescribePipelineResponse.DescribePipeline_Data.DescribePipeline_Stage stage = new DescribePipelineResponse.DescribePipeline_Data.DescribePipeline_Stage();
 				stage.Status = _ctx.IntegerValue("DescribePipeline.Data.StageList["+ i +"].Status");
-				stage.StageName = _ctx.StringValue("DescribePipeline.Data.StageList["+ i +"].StageName");
-				stage.ExecutorType = _ctx.IntegerValue("DescribePipeline.Data.StageList["+ i +"].ExecutorType");
 				stage.StageId = _ctx.StringValue("DescribePipeline.Data.StageList["+ i +"].StageId");
+				stage.ExecutorType = _ctx.IntegerValue("DescribePipeline.Data.StageList["+ i +"].ExecutorType");
+				stage.StageName = _ctx.StringValue("DescribePipeline.Data.StageList["+ i +"].StageName");
 
 				List<DescribePipelineResponse.DescribePipeline_Data.DescribePipeline_Stage.DescribePipeline_Task> stage_taskList = new List<DescribePipelineResponse.DescribePipeline_Data.DescribePipeline_Stage.DescribePipeline_Task>();
 				for (int j = 0; j < _ctx.Length("DescribePipeline.Data.StageList["+ i +"].TaskList.Length"); j++) {
 					DescribePipelineResponse.DescribePipeline_Data.DescribePipeline_Stage.DescribePipeline_Task task = new DescribePipelineResponse.DescribePipeline_Data.DescribePipeline_Stage.DescribePipeline_Task();
 					task.Status = _ctx.IntegerValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].Status");
+					task.StageId = _ctx.StringValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].StageId");
+					task.ErrorMessage = _ctx.StringValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].ErrorMessage");
+					task.ErrorCode = _ctx.StringValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].ErrorCode");
+					task.TaskName = _ctx.StringValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].TaskName");
 					task.ErrorIgnore = _ctx.IntegerValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].ErrorIgnore");
-					task.TaskId = _ctx.StringValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].TaskId");
 					task.Message = _ctx.StringValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].Message");
 					task.ShowManualIgnore = _ctx.BooleanValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].ShowManualIgnore");
-					task.TaskName = _ctx.StringValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].TaskName");
-					task.StageId = _ctx.StringValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].StageId");
-					task.ErrorCode = _ctx.StringValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].ErrorCode");
-					task.ErrorMessage = _ctx.StringValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].ErrorMessage");
+					task.TaskId = _ctx.StringValue("DescribePipeline.Data.StageList["+ i +"].TaskList["+ j +"].TaskId");
 
 					stage_taskList.Add(task);
 				}

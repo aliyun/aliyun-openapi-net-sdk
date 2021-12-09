@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			RescaleApplicationResponse rescaleApplicationResponse = new RescaleApplicationResponse();
 
 			rescaleApplicationResponse.HttpResponse = _ctx.HttpResponse;
-			rescaleApplicationResponse.Code = _ctx.StringValue("RescaleApplication.Code");
 			rescaleApplicationResponse.Message = _ctx.StringValue("RescaleApplication.Message");
 			rescaleApplicationResponse.RequestId = _ctx.StringValue("RescaleApplication.RequestId");
-			rescaleApplicationResponse.Success = _ctx.BooleanValue("RescaleApplication.Success");
 			rescaleApplicationResponse.ErrorCode = _ctx.StringValue("RescaleApplication.ErrorCode");
+			rescaleApplicationResponse.Code = _ctx.StringValue("RescaleApplication.Code");
+			rescaleApplicationResponse.Success = _ctx.BooleanValue("RescaleApplication.Success");
 
 			RescaleApplicationResponse.RescaleApplication_Data data = new RescaleApplicationResponse.RescaleApplication_Data();
 			data.ChangeOrderId = _ctx.StringValue("RescaleApplication.Data.ChangeOrderId");

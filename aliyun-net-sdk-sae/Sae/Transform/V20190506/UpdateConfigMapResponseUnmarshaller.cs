@@ -32,10 +32,10 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 
 			updateConfigMapResponse.HttpResponse = _ctx.HttpResponse;
 			updateConfigMapResponse.RequestId = _ctx.StringValue("UpdateConfigMap.RequestId");
-			updateConfigMapResponse.Code = _ctx.StringValue("UpdateConfigMap.Code");
 			updateConfigMapResponse.Message = _ctx.StringValue("UpdateConfigMap.Message");
-			updateConfigMapResponse.ErrorCode = _ctx.StringValue("UpdateConfigMap.ErrorCode");
 			updateConfigMapResponse.TraceId = _ctx.StringValue("UpdateConfigMap.TraceId");
+			updateConfigMapResponse.ErrorCode = _ctx.StringValue("UpdateConfigMap.ErrorCode");
+			updateConfigMapResponse.Code = _ctx.StringValue("UpdateConfigMap.Code");
 			updateConfigMapResponse.Success = _ctx.BooleanValue("UpdateConfigMap.Success");
 
 			UpdateConfigMapResponse.UpdateConfigMap_Data data = new UpdateConfigMapResponse.UpdateConfigMap_Data();

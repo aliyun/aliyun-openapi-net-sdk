@@ -51,6 +51,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string slsConfigs;
 
+		private string ossAkSecret;
+
 		private string commandArgs;
 
 		private string acrAssumeRoleArn;
@@ -62,6 +64,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		private string mountHost;
 
 		private int? batchWaitTime;
+
+		private string ossAkId;
 
 		private string liveness;
 
@@ -87,9 +91,13 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string configMapMountDesc;
 
+		private string ossMountDescs;
+
 		private string phpConfig;
 
 		private string preStop;
+
+		private bool? enableGreyTagRoute;
 
 		private string command;
 
@@ -103,6 +111,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string changeOrderDesc;
 
+		private string acrInstanceId;
+
 		private string appId;
 
 		private string imageUrl;
@@ -112,6 +122,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		private string phpConfigLocation;
 
 		private string postStart;
+
+		private bool? associateEip;
 
 		public string NasId
 		{
@@ -175,6 +187,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				slsConfigs = value;
 				DictionaryUtil.Add(QueryParameters, "SlsConfigs", value);
+			}
+		}
+
+		public string OssAkSecret
+		{
+			get
+			{
+				return ossAkSecret;
+			}
+			set	
+			{
+				ossAkSecret = value;
+				DictionaryUtil.Add(BodyParameters, "OssAkSecret", value);
 			}
 		}
 
@@ -253,6 +278,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				batchWaitTime = value;
 				DictionaryUtil.Add(QueryParameters, "BatchWaitTime", value.ToString());
+			}
+		}
+
+		public string OssAkId
+		{
+			get
+			{
+				return ossAkId;
+			}
+			set	
+			{
+				ossAkId = value;
+				DictionaryUtil.Add(BodyParameters, "OssAkId", value);
 			}
 		}
 
@@ -412,6 +450,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public string OssMountDescs
+		{
+			get
+			{
+				return ossMountDescs;
+			}
+			set	
+			{
+				ossMountDescs = value;
+				DictionaryUtil.Add(BodyParameters, "OssMountDescs", value);
+			}
+		}
+
 		public string PhpConfig
 		{
 			get
@@ -435,6 +486,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				preStop = value;
 				DictionaryUtil.Add(QueryParameters, "PreStop", value);
+			}
+		}
+
+		public bool? EnableGreyTagRoute
+		{
+			get
+			{
+				return enableGreyTagRoute;
+			}
+			set	
+			{
+				enableGreyTagRoute = value;
+				DictionaryUtil.Add(QueryParameters, "EnableGreyTagRoute", value.ToString());
 			}
 		}
 
@@ -516,6 +580,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public string AcrInstanceId
+		{
+			get
+			{
+				return acrInstanceId;
+			}
+			set	
+			{
+				acrInstanceId = value;
+				DictionaryUtil.Add(BodyParameters, "AcrInstanceId", value);
+			}
+		}
+
 		public string AppId
 		{
 			get
@@ -578,6 +655,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				postStart = value;
 				DictionaryUtil.Add(QueryParameters, "PostStart", value);
+			}
+		}
+
+		public bool? AssociateEip
+		{
+			get
+			{
+				return associateEip;
+			}
+			set	
+			{
+				associateEip = value;
+				DictionaryUtil.Add(BodyParameters, "AssociateEip", value.ToString());
 			}
 		}
 

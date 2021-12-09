@@ -25,9 +25,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 	public class DescribePipelineResponse : AcsResponse
 	{
 
-		private string message;
-
 		private string requestId;
+
+		private string message;
 
 		private string traceId;
 
@@ -39,18 +39,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private DescribePipeline_Data data;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
 		public string RequestId
 		{
 			get
@@ -60,6 +48,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
 			}
 		}
 
@@ -126,35 +126,23 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class DescribePipeline_Data
 		{
 
-			private int? pipelineStatus;
-
 			private bool? showBatch;
+
+			private int? pipelineStatus;
 
 			private int? currentPoint;
 
-			private string pipelineName;
-
-			private string pipelineId;
-
 			private string currentStageId;
 
-			private string coStatus;
+			private string pipelineName;
 
 			private string nextPipelineId;
 
-			private List<DescribePipeline_Stage> stageList;
+			private string pipelineId;
 
-			public int? PipelineStatus
-			{
-				get
-				{
-					return pipelineStatus;
-				}
-				set	
-				{
-					pipelineStatus = value;
-				}
-			}
+			private string coStatus;
+
+			private List<DescribePipeline_Stage> stageList;
 
 			public bool? ShowBatch
 			{
@@ -165,6 +153,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					showBatch = value;
+				}
+			}
+
+			public int? PipelineStatus
+			{
+				get
+				{
+					return pipelineStatus;
+				}
+				set	
+				{
+					pipelineStatus = value;
 				}
 			}
 
@@ -180,6 +180,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
+			public string CurrentStageId
+			{
+				get
+				{
+					return currentStageId;
+				}
+				set	
+				{
+					currentStageId = value;
+				}
+			}
+
 			public string PipelineName
 			{
 				get
@@ -189,6 +201,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					pipelineName = value;
+				}
+			}
+
+			public string NextPipelineId
+			{
+				get
+				{
+					return nextPipelineId;
+				}
+				set	
+				{
+					nextPipelineId = value;
 				}
 			}
 
@@ -204,18 +228,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public string CurrentStageId
-			{
-				get
-				{
-					return currentStageId;
-				}
-				set	
-				{
-					currentStageId = value;
-				}
-			}
-
 			public string CoStatus
 			{
 				get
@@ -225,18 +237,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					coStatus = value;
-				}
-			}
-
-			public string NextPipelineId
-			{
-				get
-				{
-					return nextPipelineId;
-				}
-				set	
-				{
-					nextPipelineId = value;
 				}
 			}
 
@@ -257,11 +257,11 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 				private int? status;
 
-				private string stageName;
+				private string stageId;
 
 				private int? executorType;
 
-				private string stageId;
+				private string stageName;
 
 				private List<DescribePipeline_Task> taskList;
 
@@ -277,15 +277,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string StageName
+				public string StageId
 				{
 					get
 					{
-						return stageName;
+						return stageId;
 					}
 					set	
 					{
-						stageName = value;
+						stageId = value;
 					}
 				}
 
@@ -301,15 +301,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public string StageId
+				public string StageName
 				{
 					get
 					{
-						return stageId;
+						return stageName;
 					}
 					set	
 					{
-						stageId = value;
+						stageName = value;
 					}
 				}
 
@@ -330,21 +330,21 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 					private int? status;
 
-					private int? errorIgnore;
+					private string stageId;
 
-					private string taskId;
+					private string errorMessage;
+
+					private string errorCode;
+
+					private string taskName;
+
+					private int? errorIgnore;
 
 					private string message;
 
 					private bool? showManualIgnore;
 
-					private string taskName;
-
-					private string stageId;
-
-					private string errorCode;
-
-					private string errorMessage;
+					private string taskId;
 
 					public int? Status
 					{
@@ -358,6 +358,54 @@ namespace Aliyun.Acs.sae.Model.V20190506
 						}
 					}
 
+					public string StageId
+					{
+						get
+						{
+							return stageId;
+						}
+						set	
+						{
+							stageId = value;
+						}
+					}
+
+					public string ErrorMessage
+					{
+						get
+						{
+							return errorMessage;
+						}
+						set	
+						{
+							errorMessage = value;
+						}
+					}
+
+					public string ErrorCode
+					{
+						get
+						{
+							return errorCode;
+						}
+						set	
+						{
+							errorCode = value;
+						}
+					}
+
+					public string TaskName
+					{
+						get
+						{
+							return taskName;
+						}
+						set	
+						{
+							taskName = value;
+						}
+					}
+
 					public int? ErrorIgnore
 					{
 						get
@@ -367,18 +415,6 @@ namespace Aliyun.Acs.sae.Model.V20190506
 						set	
 						{
 							errorIgnore = value;
-						}
-					}
-
-					public string TaskId
-					{
-						get
-						{
-							return taskId;
-						}
-						set	
-						{
-							taskId = value;
 						}
 					}
 
@@ -406,51 +442,15 @@ namespace Aliyun.Acs.sae.Model.V20190506
 						}
 					}
 
-					public string TaskName
+					public string TaskId
 					{
 						get
 						{
-							return taskName;
+							return taskId;
 						}
 						set	
 						{
-							taskName = value;
-						}
-					}
-
-					public string StageId
-					{
-						get
-						{
-							return stageId;
-						}
-						set	
-						{
-							stageId = value;
-						}
-					}
-
-					public string ErrorCode
-					{
-						get
-						{
-							return errorCode;
-						}
-						set	
-						{
-							errorCode = value;
-						}
-					}
-
-					public string ErrorMessage
-					{
-						get
-						{
-							return errorMessage;
-						}
-						set	
-						{
-							errorMessage = value;
+							taskId = value;
 						}
 					}
 				}

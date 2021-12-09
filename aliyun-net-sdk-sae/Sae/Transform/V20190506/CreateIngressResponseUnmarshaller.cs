@@ -31,8 +31,8 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			CreateIngressResponse createIngressResponse = new CreateIngressResponse();
 
 			createIngressResponse.HttpResponse = _ctx.HttpResponse;
-			createIngressResponse.Message = _ctx.StringValue("CreateIngress.Message");
 			createIngressResponse.RequestId = _ctx.StringValue("CreateIngress.RequestId");
+			createIngressResponse.Message = _ctx.StringValue("CreateIngress.Message");
 			createIngressResponse.TraceId = _ctx.StringValue("CreateIngress.TraceId");
 			createIngressResponse.ErrorCode = _ctx.StringValue("CreateIngress.ErrorCode");
 			createIngressResponse.Code = _ctx.StringValue("CreateIngress.Code");
