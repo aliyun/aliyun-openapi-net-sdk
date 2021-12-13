@@ -42,9 +42,13 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
+		private string readonlyReplicas;
+
 		private string engineVersion;
 
 		private string shardsInfo;
+
+		private string replicationFactor;
 
 		private string securityToken;
 
@@ -75,6 +79,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string ReadonlyReplicas
+		{
+			get
+			{
+				return readonlyReplicas;
+			}
+			set	
+			{
+				readonlyReplicas = value;
+				DictionaryUtil.Add(QueryParameters, "ReadonlyReplicas", value);
+			}
+		}
+
 		public string EngineVersion
 		{
 			get
@@ -98,6 +115,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				shardsInfo = value;
 				DictionaryUtil.Add(QueryParameters, "ShardsInfo", value);
+			}
+		}
+
+		public string ReplicationFactor
+		{
+			get
+			{
+				return replicationFactor;
+			}
+			set	
+			{
+				replicationFactor = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicationFactor", value);
 			}
 		}
 

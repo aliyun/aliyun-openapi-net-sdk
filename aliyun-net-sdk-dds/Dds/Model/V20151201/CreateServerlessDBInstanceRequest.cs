@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			Method = MethodType.POST;
         }
 
+		private string capacityUnit;
+
 		private long? resourceOwnerId;
 
 		private int? dBInstanceStorage;
@@ -79,6 +81,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string vpcId;
 
 		private string zoneId;
+
+		public string CapacityUnit
+		{
+			get
+			{
+				return capacityUnit;
+			}
+			set	
+			{
+				capacityUnit = value;
+				DictionaryUtil.Add(QueryParameters, "CapacityUnit", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{

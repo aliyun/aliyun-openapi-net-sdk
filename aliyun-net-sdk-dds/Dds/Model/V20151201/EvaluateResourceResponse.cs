@@ -25,13 +25,37 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 	public class EvaluateResourceResponse : AcsResponse
 	{
 
+		private string dBInstanceAvailable;
+
+		private string engineVersion;
+
 		private string requestId;
 
 		private string engine;
 
-		private string engineVersion;
+		public string DBInstanceAvailable
+		{
+			get
+			{
+				return dBInstanceAvailable;
+			}
+			set	
+			{
+				dBInstanceAvailable = value;
+			}
+		}
 
-		private string dBInstanceAvailable;
+		public string EngineVersion
+		{
+			get
+			{
+				return engineVersion;
+			}
+			set	
+			{
+				engineVersion = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -54,30 +78,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				engine = value;
-			}
-		}
-
-		public string EngineVersion
-		{
-			get
-			{
-				return engineVersion;
-			}
-			set	
-			{
-				engineVersion = value;
-			}
-		}
-
-		public string DBInstanceAvailable
-		{
-			get
-			{
-				return dBInstanceAvailable;
-			}
-			set	
-			{
-				dBInstanceAvailable = value;
 			}
 		}
 	}
