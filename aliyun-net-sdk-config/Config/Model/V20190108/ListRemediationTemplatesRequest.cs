@@ -28,30 +28,46 @@ using Aliyun.Acs.Config.Transform.V20190108;
 
 namespace Aliyun.Acs.Config.Model.V20190108
 {
-    public class DescribeDeliveryChannelsRequest : RpcAcsRequest<DescribeDeliveryChannelsResponse>
+    public class ListRemediationTemplatesRequest : RpcAcsRequest<ListRemediationTemplatesResponse>
     {
-        public DescribeDeliveryChannelsRequest()
-            : base("Config", "2019-01-08", "DescribeDeliveryChannels")
+        public ListRemediationTemplatesRequest()
+            : base("Config", "2019-01-08", "ListRemediationTemplates")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Config.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Config.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string deliveryChannelIds;
+		private string managedRuleIdentifier;
 
-		public string DeliveryChannelIds
+		private string remediationType;
+
+		public string ManagedRuleIdentifier
 		{
 			get
 			{
-				return deliveryChannelIds;
+				return managedRuleIdentifier;
 			}
 			set	
 			{
-				deliveryChannelIds = value;
-				DictionaryUtil.Add(QueryParameters, "DeliveryChannelIds", value);
+				managedRuleIdentifier = value;
+				DictionaryUtil.Add(QueryParameters, "ManagedRuleIdentifier", value);
+			}
+		}
+
+		public string RemediationType
+		{
+			get
+			{
+				return remediationType;
+			}
+			set	
+			{
+				remediationType = value;
+				DictionaryUtil.Add(QueryParameters, "RemediationType", value);
 			}
 		}
 
@@ -60,9 +76,9 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			return false;
 		}
 
-        public override DescribeDeliveryChannelsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListRemediationTemplatesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDeliveryChannelsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListRemediationTemplatesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

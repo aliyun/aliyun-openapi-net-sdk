@@ -38,9 +38,9 @@ namespace Aliyun.Acs.Config.Transform.V20190108
 			List<StopConfigRulesResponse.StopConfigRules_OperateRuleResult.StopConfigRules_OperateRuleItem> operateRuleResult_operateRuleItemList = new List<StopConfigRulesResponse.StopConfigRules_OperateRuleResult.StopConfigRules_OperateRuleItem>();
 			for (int i = 0; i < _ctx.Length("StopConfigRules.OperateRuleResult.OperateRuleItemList.Length"); i++) {
 				StopConfigRulesResponse.StopConfigRules_OperateRuleResult.StopConfigRules_OperateRuleItem operateRuleItem = new StopConfigRulesResponse.StopConfigRules_OperateRuleResult.StopConfigRules_OperateRuleItem();
-				operateRuleItem.ConfigRuleId = _ctx.StringValue("StopConfigRules.OperateRuleResult.OperateRuleItemList["+ i +"].ConfigRuleId");
 				operateRuleItem.ErrorCode = _ctx.StringValue("StopConfigRules.OperateRuleResult.OperateRuleItemList["+ i +"].ErrorCode");
 				operateRuleItem.Success = _ctx.BooleanValue("StopConfigRules.OperateRuleResult.OperateRuleItemList["+ i +"].Success");
+				operateRuleItem.ConfigRuleId = _ctx.StringValue("StopConfigRules.OperateRuleResult.OperateRuleItemList["+ i +"].ConfigRuleId");
 
 				operateRuleResult_operateRuleItemList.Add(operateRuleItem);
 			}

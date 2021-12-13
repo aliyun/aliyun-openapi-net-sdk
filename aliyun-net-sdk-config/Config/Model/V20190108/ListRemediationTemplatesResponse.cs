@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Config.Model.V20190108
 {
-	public class GetDiscoveredResourceCountsResponse : AcsResponse
+	public class ListRemediationTemplatesResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private GetDiscoveredResourceCounts_GroupedResourceCounts groupedResourceCounts;
+		private List<ListRemediationTemplates_RemediationTemplate> remediationTemplates;
 
 		public string RequestId
 		{
@@ -41,78 +41,88 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			}
 		}
 
-		public GetDiscoveredResourceCounts_GroupedResourceCounts GroupedResourceCounts
+		public List<ListRemediationTemplates_RemediationTemplate> RemediationTemplates
 		{
 			get
 			{
-				return groupedResourceCounts;
+				return remediationTemplates;
 			}
 			set	
 			{
-				groupedResourceCounts = value;
+				remediationTemplates = value;
 			}
 		}
 
-		public class GetDiscoveredResourceCounts_GroupedResourceCounts
+		public class ListRemediationTemplates_RemediationTemplate
 		{
 
-			private string groupByKey;
+			private string compulsoryParameters;
 
-			private List<GetDiscoveredResourceCounts_GroupedResourceCount> groupedResourceCountList;
+			private string remediationType;
 
-			public string GroupByKey
+			private string templateIdentifier;
+
+			private string templateName;
+
+			private string templateDefinition;
+
+			public string CompulsoryParameters
 			{
 				get
 				{
-					return groupByKey;
+					return compulsoryParameters;
 				}
 				set	
 				{
-					groupByKey = value;
+					compulsoryParameters = value;
 				}
 			}
 
-			public List<GetDiscoveredResourceCounts_GroupedResourceCount> GroupedResourceCountList
+			public string RemediationType
 			{
 				get
 				{
-					return groupedResourceCountList;
+					return remediationType;
 				}
 				set	
 				{
-					groupedResourceCountList = value;
+					remediationType = value;
 				}
 			}
 
-			public class GetDiscoveredResourceCounts_GroupedResourceCount
+			public string TemplateIdentifier
 			{
-
-				private long? resourceCount;
-
-				private string groupName;
-
-				public long? ResourceCount
+				get
 				{
-					get
-					{
-						return resourceCount;
-					}
-					set	
-					{
-						resourceCount = value;
-					}
+					return templateIdentifier;
 				}
-
-				public string GroupName
+				set	
 				{
-					get
-					{
-						return groupName;
-					}
-					set	
-					{
-						groupName = value;
-					}
+					templateIdentifier = value;
+				}
+			}
+
+			public string TemplateName
+			{
+				get
+				{
+					return templateName;
+				}
+				set	
+				{
+					templateName = value;
+				}
+			}
+
+			public string TemplateDefinition
+			{
+				get
+				{
+					return templateDefinition;
+				}
+				set	
+				{
+					templateDefinition = value;
 				}
 			}
 		}

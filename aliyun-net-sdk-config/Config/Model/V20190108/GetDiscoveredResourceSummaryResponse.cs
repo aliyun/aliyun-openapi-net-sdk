@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Config.Model.V20190108
@@ -56,11 +56,23 @@ namespace Aliyun.Acs.Config.Model.V20190108
 		public class GetDiscoveredResourceSummary_DiscoveredResourceSummary
 		{
 
+			private int? regionCount;
+
 			private int? resourceCount;
 
 			private int? resourceTypeCount;
 
-			private int? regionCount;
+			public int? RegionCount
+			{
+				get
+				{
+					return regionCount;
+				}
+				set	
+				{
+					regionCount = value;
+				}
+			}
 
 			public int? ResourceCount
 			{
@@ -83,18 +95,6 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				set	
 				{
 					resourceTypeCount = value;
-				}
-			}
-
-			public int? RegionCount
-			{
-				get
-				{
-					return regionCount;
-				}
-				set	
-				{
-					regionCount = value;
 				}
 			}
 		}

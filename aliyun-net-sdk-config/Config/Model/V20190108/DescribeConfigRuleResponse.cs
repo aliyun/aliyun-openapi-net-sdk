@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Config.Model.V20190108
@@ -56,105 +56,47 @@ namespace Aliyun.Acs.Config.Model.V20190108
 		public class DescribeConfigRule_ConfigRule
 		{
 
-			private string configRuleArn;
-
-			private string configRuleId;
-
-			private string configRuleName;
-
-			private string configRuleState;
-
-			private long? createTimestamp;
-
-			private string description;
+			private int? riskLevel;
 
 			private string inputParameters;
 
-			private long? modifiedTimestamp;
-
-			private int? riskLevel;
+			private string configRuleState;
 
 			private string maximumExecutionFrequency;
 
-			private DescribeConfigRule_CreateBy createBy;
+			private bool? organizationRule;
 
-			private DescribeConfigRule_ConfigRuleEvaluationStatus configRuleEvaluationStatus;
+			private string configRuleArn;
 
-			private DescribeConfigRule_ManagedRule managedRule;
+			private string description;
+
+			private string configRuleName;
+
+			private string configRuleId;
+
+			private long? modifiedTimestamp;
+
+			private long? createTimestamp;
 
 			private DescribeConfigRule_Source source;
 
+			private DescribeConfigRule_ManagedRule managedRule;
+
+			private DescribeConfigRule_CreateBy createBy;
+
 			private DescribeConfigRule_Scope scope;
 
-			public string ConfigRuleArn
-			{
-				get
-				{
-					return configRuleArn;
-				}
-				set	
-				{
-					configRuleArn = value;
-				}
-			}
+			private DescribeConfigRule_ConfigRuleEvaluationStatus configRuleEvaluationStatus;
 
-			public string ConfigRuleId
+			public int? RiskLevel
 			{
 				get
 				{
-					return configRuleId;
+					return riskLevel;
 				}
 				set	
 				{
-					configRuleId = value;
-				}
-			}
-
-			public string ConfigRuleName
-			{
-				get
-				{
-					return configRuleName;
-				}
-				set	
-				{
-					configRuleName = value;
-				}
-			}
-
-			public string ConfigRuleState
-			{
-				get
-				{
-					return configRuleState;
-				}
-				set	
-				{
-					configRuleState = value;
-				}
-			}
-
-			public long? CreateTimestamp
-			{
-				get
-				{
-					return createTimestamp;
-				}
-				set	
-				{
-					createTimestamp = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
+					riskLevel = value;
 				}
 			}
 
@@ -170,27 +112,15 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				}
 			}
 
-			public long? ModifiedTimestamp
+			public string ConfigRuleState
 			{
 				get
 				{
-					return modifiedTimestamp;
+					return configRuleState;
 				}
 				set	
 				{
-					modifiedTimestamp = value;
-				}
-			}
-
-			public int? RiskLevel
-			{
-				get
-				{
-					return riskLevel;
-				}
-				set	
-				{
-					riskLevel = value;
+					configRuleState = value;
 				}
 			}
 
@@ -206,39 +136,87 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				}
 			}
 
-			public DescribeConfigRule_CreateBy CreateBy
+			public bool? OrganizationRule
 			{
 				get
 				{
-					return createBy;
+					return organizationRule;
 				}
 				set	
 				{
-					createBy = value;
+					organizationRule = value;
 				}
 			}
 
-			public DescribeConfigRule_ConfigRuleEvaluationStatus ConfigRuleEvaluationStatus
+			public string ConfigRuleArn
 			{
 				get
 				{
-					return configRuleEvaluationStatus;
+					return configRuleArn;
 				}
 				set	
 				{
-					configRuleEvaluationStatus = value;
+					configRuleArn = value;
 				}
 			}
 
-			public DescribeConfigRule_ManagedRule ManagedRule
+			public string Description
 			{
 				get
 				{
-					return managedRule;
+					return description;
 				}
 				set	
 				{
-					managedRule = value;
+					description = value;
+				}
+			}
+
+			public string ConfigRuleName
+			{
+				get
+				{
+					return configRuleName;
+				}
+				set	
+				{
+					configRuleName = value;
+				}
+			}
+
+			public string ConfigRuleId
+			{
+				get
+				{
+					return configRuleId;
+				}
+				set	
+				{
+					configRuleId = value;
+				}
+			}
+
+			public long? ModifiedTimestamp
+			{
+				get
+				{
+					return modifiedTimestamp;
+				}
+				set	
+				{
+					modifiedTimestamp = value;
+				}
+			}
+
+			public long? CreateTimestamp
+			{
+				get
+				{
+					return createTimestamp;
+				}
+				set	
+				{
+					createTimestamp = value;
 				}
 			}
 
@@ -254,6 +232,30 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				}
 			}
 
+			public DescribeConfigRule_ManagedRule ManagedRule
+			{
+				get
+				{
+					return managedRule;
+				}
+				set	
+				{
+					managedRule = value;
+				}
+			}
+
+			public DescribeConfigRule_CreateBy CreateBy
+			{
+				get
+				{
+					return createBy;
+				}
+				set	
+				{
+					createBy = value;
+				}
+			}
+
 			public DescribeConfigRule_Scope Scope
 			{
 				get
@@ -266,18 +268,410 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				}
 			}
 
+			public DescribeConfigRule_ConfigRuleEvaluationStatus ConfigRuleEvaluationStatus
+			{
+				get
+				{
+					return configRuleEvaluationStatus;
+				}
+				set	
+				{
+					configRuleEvaluationStatus = value;
+				}
+			}
+
+			public class DescribeConfigRule_Source
+			{
+
+				private string owner;
+
+				private string identifier;
+
+				private List<DescribeConfigRule_SourceDetailsItem> sourceDetails;
+
+				private List<DescribeConfigRule_SourceConditionsItem> sourceConditions;
+
+				public string Owner
+				{
+					get
+					{
+						return owner;
+					}
+					set	
+					{
+						owner = value;
+					}
+				}
+
+				public string Identifier
+				{
+					get
+					{
+						return identifier;
+					}
+					set	
+					{
+						identifier = value;
+					}
+				}
+
+				public List<DescribeConfigRule_SourceDetailsItem> SourceDetails
+				{
+					get
+					{
+						return sourceDetails;
+					}
+					set	
+					{
+						sourceDetails = value;
+					}
+				}
+
+				public List<DescribeConfigRule_SourceConditionsItem> SourceConditions
+				{
+					get
+					{
+						return sourceConditions;
+					}
+					set	
+					{
+						sourceConditions = value;
+					}
+				}
+
+				public class DescribeConfigRule_SourceDetailsItem
+				{
+
+					private string messageType;
+
+					private string eventSource;
+
+					private string maximumExecutionFrequency;
+
+					public string MessageType
+					{
+						get
+						{
+							return messageType;
+						}
+						set	
+						{
+							messageType = value;
+						}
+					}
+
+					public string EventSource
+					{
+						get
+						{
+							return eventSource;
+						}
+						set	
+						{
+							eventSource = value;
+						}
+					}
+
+					public string MaximumExecutionFrequency
+					{
+						get
+						{
+							return maximumExecutionFrequency;
+						}
+						set	
+						{
+							maximumExecutionFrequency = value;
+						}
+					}
+				}
+
+				public class DescribeConfigRule_SourceConditionsItem
+				{
+
+					private string desiredValue;
+
+					private bool? required;
+
+					private string tips;
+
+					private string _operator;
+
+					private string name;
+
+					private string selectPath;
+
+					public string DesiredValue
+					{
+						get
+						{
+							return desiredValue;
+						}
+						set	
+						{
+							desiredValue = value;
+						}
+					}
+
+					public bool? Required
+					{
+						get
+						{
+							return required;
+						}
+						set	
+						{
+							required = value;
+						}
+					}
+
+					public string Tips
+					{
+						get
+						{
+							return tips;
+						}
+						set	
+						{
+							tips = value;
+						}
+					}
+
+					public string _Operator
+					{
+						get
+						{
+							return _operator;
+						}
+						set	
+						{
+							_operator = value;
+						}
+					}
+
+					public string Name
+					{
+						get
+						{
+							return name;
+						}
+						set	
+						{
+							name = value;
+						}
+					}
+
+					public string SelectPath
+					{
+						get
+						{
+							return selectPath;
+						}
+						set	
+						{
+							selectPath = value;
+						}
+					}
+				}
+			}
+
+			public class DescribeConfigRule_ManagedRule
+			{
+
+				private string helpUrl;
+
+				private string description;
+
+				private string identifier;
+
+				private string optionalInputParameterDetails;
+
+				private string managedRuleName;
+
+				private string compulsoryInputParameterDetails;
+
+				private List<DescribeConfigRule_SourceDetailsItem2> sourceDetails1;
+
+				private List<string> labels;
+
+				public string HelpUrl
+				{
+					get
+					{
+						return helpUrl;
+					}
+					set	
+					{
+						helpUrl = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				public string Identifier
+				{
+					get
+					{
+						return identifier;
+					}
+					set	
+					{
+						identifier = value;
+					}
+				}
+
+				public string OptionalInputParameterDetails
+				{
+					get
+					{
+						return optionalInputParameterDetails;
+					}
+					set	
+					{
+						optionalInputParameterDetails = value;
+					}
+				}
+
+				public string ManagedRuleName
+				{
+					get
+					{
+						return managedRuleName;
+					}
+					set	
+					{
+						managedRuleName = value;
+					}
+				}
+
+				public string CompulsoryInputParameterDetails
+				{
+					get
+					{
+						return compulsoryInputParameterDetails;
+					}
+					set	
+					{
+						compulsoryInputParameterDetails = value;
+					}
+				}
+
+				public List<DescribeConfigRule_SourceDetailsItem2> SourceDetails1
+				{
+					get
+					{
+						return sourceDetails1;
+					}
+					set	
+					{
+						sourceDetails1 = value;
+					}
+				}
+
+				public List<string> Labels
+				{
+					get
+					{
+						return labels;
+					}
+					set	
+					{
+						labels = value;
+					}
+				}
+
+				public class DescribeConfigRule_SourceDetailsItem2
+				{
+
+					private string messageType;
+
+					private string eventSource;
+
+					private string maximumExecutionFrequency;
+
+					public string MessageType
+					{
+						get
+						{
+							return messageType;
+						}
+						set	
+						{
+							messageType = value;
+						}
+					}
+
+					public string EventSource
+					{
+						get
+						{
+							return eventSource;
+						}
+						set	
+						{
+							eventSource = value;
+						}
+					}
+
+					public string MaximumExecutionFrequency
+					{
+						get
+						{
+							return maximumExecutionFrequency;
+						}
+						set	
+						{
+							maximumExecutionFrequency = value;
+						}
+					}
+				}
+			}
+
 			public class DescribeConfigRule_CreateBy
 			{
+
+				private string configRuleSceneId;
+
+				private string creatorName;
 
 				private string creatorType;
 
 				private string creatorId;
 
-				private string creatorName;
-
-				private string configRuleSceneId;
-
 				private string configRuleSceneName;
+
+				public string ConfigRuleSceneId
+				{
+					get
+					{
+						return configRuleSceneId;
+					}
+					set	
+					{
+						configRuleSceneId = value;
+					}
+				}
+
+				public string CreatorName
+				{
+					get
+					{
+						return creatorName;
+					}
+					set	
+					{
+						creatorName = value;
+					}
+				}
 
 				public string CreatorType
 				{
@@ -303,30 +697,6 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					}
 				}
 
-				public string CreatorName
-				{
-					get
-					{
-						return creatorName;
-					}
-					set	
-					{
-						creatorName = value;
-					}
-				}
-
-				public string ConfigRuleSceneId
-				{
-					get
-					{
-						return configRuleSceneId;
-					}
-					set	
-					{
-						configRuleSceneId = value;
-					}
-				}
-
 				public string ConfigRuleSceneName
 				{
 					get
@@ -340,14 +710,50 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				}
 			}
 
+			public class DescribeConfigRule_Scope
+			{
+
+				private string complianceResourceId;
+
+				private List<string> complianceResourceTypes;
+
+				public string ComplianceResourceId
+				{
+					get
+					{
+						return complianceResourceId;
+					}
+					set	
+					{
+						complianceResourceId = value;
+					}
+				}
+
+				public List<string> ComplianceResourceTypes
+				{
+					get
+					{
+						return complianceResourceTypes;
+					}
+					set	
+					{
+						complianceResourceTypes = value;
+					}
+				}
+			}
+
 			public class DescribeConfigRule_ConfigRuleEvaluationStatus
 			{
+
+				private string lastErrorCode;
+
+				private long? lastSuccessfulEvaluationTimestamp;
 
 				private long? firstActivatedTimestamp;
 
 				private bool? firstEvaluationStarted;
 
-				private string lastErrorCode;
+				private long? lastSuccessfulInvocationTimestamp;
 
 				private string lastErrorMessage;
 
@@ -355,9 +761,29 @@ namespace Aliyun.Acs.Config.Model.V20190108
 
 				private long? lastFailedInvocationTimestamp;
 
-				private long? lastSuccessfulEvaluationTimestamp;
+				public string LastErrorCode
+				{
+					get
+					{
+						return lastErrorCode;
+					}
+					set	
+					{
+						lastErrorCode = value;
+					}
+				}
 
-				private long? lastSuccessfulInvocationTimestamp;
+				public long? LastSuccessfulEvaluationTimestamp
+				{
+					get
+					{
+						return lastSuccessfulEvaluationTimestamp;
+					}
+					set	
+					{
+						lastSuccessfulEvaluationTimestamp = value;
+					}
+				}
 
 				public long? FirstActivatedTimestamp
 				{
@@ -383,15 +809,15 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					}
 				}
 
-				public string LastErrorCode
+				public long? LastSuccessfulInvocationTimestamp
 				{
 					get
 					{
-						return lastErrorCode;
+						return lastSuccessfulInvocationTimestamp;
 					}
 					set	
 					{
-						lastErrorCode = value;
+						lastSuccessfulInvocationTimestamp = value;
 					}
 				}
 
@@ -428,418 +854,6 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					set	
 					{
 						lastFailedInvocationTimestamp = value;
-					}
-				}
-
-				public long? LastSuccessfulEvaluationTimestamp
-				{
-					get
-					{
-						return lastSuccessfulEvaluationTimestamp;
-					}
-					set	
-					{
-						lastSuccessfulEvaluationTimestamp = value;
-					}
-				}
-
-				public long? LastSuccessfulInvocationTimestamp
-				{
-					get
-					{
-						return lastSuccessfulInvocationTimestamp;
-					}
-					set	
-					{
-						lastSuccessfulInvocationTimestamp = value;
-					}
-				}
-			}
-
-			public class DescribeConfigRule_ManagedRule
-			{
-
-				private string managedRuleName;
-
-				private string description;
-
-				private string identifier;
-
-				private string compulsoryInputParameterDetails;
-
-				private string optionalInputParameterDetails;
-
-				private string helpUrl;
-
-				private List<DescribeConfigRule_SourceDetailsItem> sourceDetails;
-
-				private List<string> labels;
-
-				public string ManagedRuleName
-				{
-					get
-					{
-						return managedRuleName;
-					}
-					set	
-					{
-						managedRuleName = value;
-					}
-				}
-
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
-
-				public string Identifier
-				{
-					get
-					{
-						return identifier;
-					}
-					set	
-					{
-						identifier = value;
-					}
-				}
-
-				public string CompulsoryInputParameterDetails
-				{
-					get
-					{
-						return compulsoryInputParameterDetails;
-					}
-					set	
-					{
-						compulsoryInputParameterDetails = value;
-					}
-				}
-
-				public string OptionalInputParameterDetails
-				{
-					get
-					{
-						return optionalInputParameterDetails;
-					}
-					set	
-					{
-						optionalInputParameterDetails = value;
-					}
-				}
-
-				public string HelpUrl
-				{
-					get
-					{
-						return helpUrl;
-					}
-					set	
-					{
-						helpUrl = value;
-					}
-				}
-
-				public List<DescribeConfigRule_SourceDetailsItem> SourceDetails
-				{
-					get
-					{
-						return sourceDetails;
-					}
-					set	
-					{
-						sourceDetails = value;
-					}
-				}
-
-				public List<string> Labels
-				{
-					get
-					{
-						return labels;
-					}
-					set	
-					{
-						labels = value;
-					}
-				}
-
-				public class DescribeConfigRule_SourceDetailsItem
-				{
-
-					private string eventSource;
-
-					private string maximumExecutionFrequency;
-
-					private string messageType;
-
-					public string EventSource
-					{
-						get
-						{
-							return eventSource;
-						}
-						set	
-						{
-							eventSource = value;
-						}
-					}
-
-					public string MaximumExecutionFrequency
-					{
-						get
-						{
-							return maximumExecutionFrequency;
-						}
-						set	
-						{
-							maximumExecutionFrequency = value;
-						}
-					}
-
-					public string MessageType
-					{
-						get
-						{
-							return messageType;
-						}
-						set	
-						{
-							messageType = value;
-						}
-					}
-				}
-			}
-
-			public class DescribeConfigRule_Source
-			{
-
-				private string identifier;
-
-				private string owner;
-
-				private List<DescribeConfigRule_SourceConditionsItem> sourceConditions;
-
-				private List<DescribeConfigRule_SourceDetailsItem2> sourceDetails1;
-
-				public string Identifier
-				{
-					get
-					{
-						return identifier;
-					}
-					set	
-					{
-						identifier = value;
-					}
-				}
-
-				public string Owner
-				{
-					get
-					{
-						return owner;
-					}
-					set	
-					{
-						owner = value;
-					}
-				}
-
-				public List<DescribeConfigRule_SourceConditionsItem> SourceConditions
-				{
-					get
-					{
-						return sourceConditions;
-					}
-					set	
-					{
-						sourceConditions = value;
-					}
-				}
-
-				public List<DescribeConfigRule_SourceDetailsItem2> SourceDetails1
-				{
-					get
-					{
-						return sourceDetails1;
-					}
-					set	
-					{
-						sourceDetails1 = value;
-					}
-				}
-
-				public class DescribeConfigRule_SourceConditionsItem
-				{
-
-					private string desiredValue;
-
-					private string name;
-
-					private string _operator;
-
-					private bool? required;
-
-					private string selectPath;
-
-					private string tips;
-
-					public string DesiredValue
-					{
-						get
-						{
-							return desiredValue;
-						}
-						set	
-						{
-							desiredValue = value;
-						}
-					}
-
-					public string Name
-					{
-						get
-						{
-							return name;
-						}
-						set	
-						{
-							name = value;
-						}
-					}
-
-					public string _Operator
-					{
-						get
-						{
-							return _operator;
-						}
-						set	
-						{
-							_operator = value;
-						}
-					}
-
-					public bool? Required
-					{
-						get
-						{
-							return required;
-						}
-						set	
-						{
-							required = value;
-						}
-					}
-
-					public string SelectPath
-					{
-						get
-						{
-							return selectPath;
-						}
-						set	
-						{
-							selectPath = value;
-						}
-					}
-
-					public string Tips
-					{
-						get
-						{
-							return tips;
-						}
-						set	
-						{
-							tips = value;
-						}
-					}
-				}
-
-				public class DescribeConfigRule_SourceDetailsItem2
-				{
-
-					private string eventSource;
-
-					private string maximumExecutionFrequency;
-
-					private string messageType;
-
-					public string EventSource
-					{
-						get
-						{
-							return eventSource;
-						}
-						set	
-						{
-							eventSource = value;
-						}
-					}
-
-					public string MaximumExecutionFrequency
-					{
-						get
-						{
-							return maximumExecutionFrequency;
-						}
-						set	
-						{
-							maximumExecutionFrequency = value;
-						}
-					}
-
-					public string MessageType
-					{
-						get
-						{
-							return messageType;
-						}
-						set	
-						{
-							messageType = value;
-						}
-					}
-				}
-			}
-
-			public class DescribeConfigRule_Scope
-			{
-
-				private string complianceResourceId;
-
-				private List<string> complianceResourceTypes;
-
-				public string ComplianceResourceId
-				{
-					get
-					{
-						return complianceResourceId;
-					}
-					set	
-					{
-						complianceResourceId = value;
-					}
-				}
-
-				public List<string> ComplianceResourceTypes
-				{
-					get
-					{
-						return complianceResourceTypes;
-					}
-					set	
-					{
-						complianceResourceTypes = value;
 					}
 				}
 			}

@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Config.Model.V20190108
 {
-	public class DescribeDiscoveredResourceResponse : AcsResponse
+	public class GetAggregateDiscoveredResourceResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private DescribeDiscoveredResource_DiscoveredResourceDetail discoveredResourceDetail;
+		private GetAggregateDiscoveredResource_DiscoveredResourceDetail discoveredResourceDetail;
 
 		public string RequestId
 		{
@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			}
 		}
 
-		public DescribeDiscoveredResource_DiscoveredResourceDetail DiscoveredResourceDetail
+		public GetAggregateDiscoveredResource_DiscoveredResourceDetail DiscoveredResourceDetail
 		{
 			get
 			{
@@ -53,7 +53,7 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			}
 		}
 
-		public class DescribeDiscoveredResource_DiscoveredResourceDetail
+		public class GetAggregateDiscoveredResource_DiscoveredResourceDetail
 		{
 
 			private string availabilityZone;

@@ -28,10 +28,10 @@ using Aliyun.Acs.Config.Transform.V20190108;
 
 namespace Aliyun.Acs.Config.Model.V20190108
 {
-    public class DescribeEvaluationResultsRequest : RpcAcsRequest<DescribeEvaluationResultsResponse>
+    public class ListAggregateDiscoveredResourcesRequest : RpcAcsRequest<ListAggregateDiscoveredResourcesResponse>
     {
-        public DescribeEvaluationResultsRequest()
-            : base("Config", "2019-01-08", "DescribeEvaluationResults")
+        public ListAggregateDiscoveredResourcesRequest()
+            : base("Config", "2019-01-08", "ListAggregateDiscoveredResources")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,11 +40,17 @@ namespace Aliyun.Acs.Config.Model.V20190108
             }
         }
 
-		private string configRuleId;
+		private int? resourceDeleted;
 
-		private bool? multiAccount;
+		private long? resourceOwnerId;
+
+		private string regions;
+
+		private string aggregatorId;
 
 		private int? pageNumber;
+
+		private string folderId;
 
 		private int? pageSize;
 
@@ -52,33 +58,57 @@ namespace Aliyun.Acs.Config.Model.V20190108
 
 		private string resourceId;
 
-		private string resourceType;
+		private string resourceTypes;
 
-		private long? memberId;
-
-		public string ConfigRuleId
+		public int? ResourceDeleted
 		{
 			get
 			{
-				return configRuleId;
+				return resourceDeleted;
 			}
 			set	
 			{
-				configRuleId = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigRuleId", value);
+				resourceDeleted = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceDeleted", value.ToString());
 			}
 		}
 
-		public bool? MultiAccount
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return multiAccount;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				multiAccount = value;
-				DictionaryUtil.Add(QueryParameters, "MultiAccount", value.ToString());
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string Regions
+		{
+			get
+			{
+				return regions;
+			}
+			set	
+			{
+				regions = value;
+				DictionaryUtil.Add(QueryParameters, "Regions", value);
+			}
+		}
+
+		public string AggregatorId
+		{
+			get
+			{
+				return aggregatorId;
+			}
+			set	
+			{
+				aggregatorId = value;
+				DictionaryUtil.Add(QueryParameters, "AggregatorId", value);
 			}
 		}
 
@@ -92,6 +122,19 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string FolderId
+		{
+			get
+			{
+				return folderId;
+			}
+			set	
+			{
+				folderId = value;
+				DictionaryUtil.Add(QueryParameters, "FolderId", value);
 			}
 		}
 
@@ -134,29 +177,16 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			}
 		}
 
-		public string ResourceType
+		public string ResourceTypes
 		{
 			get
 			{
-				return resourceType;
+				return resourceTypes;
 			}
 			set	
 			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
-			}
-		}
-
-		public long? MemberId
-		{
-			get
-			{
-				return memberId;
-			}
-			set	
-			{
-				memberId = value;
-				DictionaryUtil.Add(QueryParameters, "MemberId", value.ToString());
+				resourceTypes = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceTypes", value);
 			}
 		}
 
@@ -165,9 +195,9 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			return false;
 		}
 
-        public override DescribeEvaluationResultsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListAggregateDiscoveredResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeEvaluationResultsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListAggregateDiscoveredResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

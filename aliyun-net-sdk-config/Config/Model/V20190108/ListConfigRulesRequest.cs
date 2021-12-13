@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Config;
 using Aliyun.Acs.Config.Transform;
 using Aliyun.Acs.Config.Transform.V20190108;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Config.Model.V20190108
     public class ListConfigRulesRequest : RpcAcsRequest<ListConfigRulesResponse>
     {
         public ListConfigRulesRequest()
-            : base("Config", "2019-01-08", "ListConfigRules", "Config", "openAPI")
+            : base("Config", "2019-01-08", "ListConfigRules")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,17 +42,19 @@ namespace Aliyun.Acs.Config.Model.V20190108
 
 		private bool? multiAccount;
 
-		private string messageType;
-
 		private string configRuleState;
 
 		private int? pageNumber;
 
 		private int? pageSize;
 
+		private string compliancePackId;
+
 		private string complianceType;
 
 		private int? riskLevel;
+
+		private string configRuleName;
 
 		private long? memberId;
 
@@ -65,19 +68,6 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			{
 				multiAccount = value;
 				DictionaryUtil.Add(QueryParameters, "MultiAccount", value.ToString());
-			}
-		}
-
-		public string MessageType
-		{
-			get
-			{
-				return messageType;
-			}
-			set	
-			{
-				messageType = value;
-				DictionaryUtil.Add(QueryParameters, "MessageType", value);
 			}
 		}
 
@@ -120,6 +110,19 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			}
 		}
 
+		public string CompliancePackId
+		{
+			get
+			{
+				return compliancePackId;
+			}
+			set	
+			{
+				compliancePackId = value;
+				DictionaryUtil.Add(QueryParameters, "CompliancePackId", value);
+			}
+		}
+
 		public string ComplianceType
 		{
 			get
@@ -143,6 +146,19 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			{
 				riskLevel = value;
 				DictionaryUtil.Add(QueryParameters, "RiskLevel", value.ToString());
+			}
+		}
+
+		public string ConfigRuleName
+		{
+			get
+			{
+				return configRuleName;
+			}
+			set	
+			{
+				configRuleName = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigRuleName", value);
 			}
 		}
 

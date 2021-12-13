@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Config.Model.V20190108
 {
-	public class ListDiscoveredResourcesResponse : AcsResponse
+	public class ListAggregateDiscoveredResourcesResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private ListDiscoveredResources_DiscoveredResourceProfiles discoveredResourceProfiles;
+		private ListAggregateDiscoveredResources_DiscoveredResourceProfiles discoveredResourceProfiles;
 
 		public string RequestId
 		{
@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			}
 		}
 
-		public ListDiscoveredResources_DiscoveredResourceProfiles DiscoveredResourceProfiles
+		public ListAggregateDiscoveredResources_DiscoveredResourceProfiles DiscoveredResourceProfiles
 		{
 			get
 			{
@@ -53,7 +53,7 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			}
 		}
 
-		public class ListDiscoveredResources_DiscoveredResourceProfiles
+		public class ListAggregateDiscoveredResources_DiscoveredResourceProfiles
 		{
 
 			private int? pageNumber;
@@ -62,7 +62,7 @@ namespace Aliyun.Acs.Config.Model.V20190108
 
 			private int? totalCount;
 
-			private List<ListDiscoveredResources_DiscoveredResourceProfile> discoveredResourceProfileList;
+			private List<ListAggregateDiscoveredResources_DiscoveredResourceProfile> discoveredResourceProfileList;
 
 			public int? PageNumber
 			{
@@ -100,7 +100,7 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				}
 			}
 
-			public List<ListDiscoveredResources_DiscoveredResourceProfile> DiscoveredResourceProfileList
+			public List<ListAggregateDiscoveredResources_DiscoveredResourceProfile> DiscoveredResourceProfileList
 			{
 				get
 				{
@@ -112,7 +112,7 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				}
 			}
 
-			public class ListDiscoveredResources_DiscoveredResourceProfile
+			public class ListAggregateDiscoveredResources_DiscoveredResourceProfile
 			{
 
 				private string resourceType;
@@ -132,6 +132,8 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				private int? resourceDeleted;
 
 				private string resourceStatus;
+
+				private long? resourceOwnerId;
 
 				public string ResourceType
 				{
@@ -238,6 +240,18 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					set	
 					{
 						resourceStatus = value;
+					}
+				}
+
+				public long? ResourceOwnerId
+				{
+					get
+					{
+						return resourceOwnerId;
+					}
+					set	
+					{
+						resourceOwnerId = value;
 					}
 				}
 			}

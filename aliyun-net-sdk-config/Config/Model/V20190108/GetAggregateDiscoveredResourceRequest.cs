@@ -28,10 +28,10 @@ using Aliyun.Acs.Config.Transform.V20190108;
 
 namespace Aliyun.Acs.Config.Model.V20190108
 {
-    public class DescribeDeliveryChannelsRequest : RpcAcsRequest<DescribeDeliveryChannelsResponse>
+    public class GetAggregateDiscoveredResourceRequest : RpcAcsRequest<GetAggregateDiscoveredResourceResponse>
     {
-        public DescribeDeliveryChannelsRequest()
-            : base("Config", "2019-01-08", "DescribeDeliveryChannels")
+        public GetAggregateDiscoveredResourceRequest()
+            : base("Config", "2019-01-08", "GetAggregateDiscoveredResource")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,18 +40,78 @@ namespace Aliyun.Acs.Config.Model.V20190108
             }
         }
 
-		private string deliveryChannelIds;
+		private string resourceId;
 
-		public string DeliveryChannelIds
+		private long? resourceOwnerId;
+
+		private string aggregatorId;
+
+		private string resourceType;
+
+		private string region;
+
+		public string ResourceId
 		{
 			get
 			{
-				return deliveryChannelIds;
+				return resourceId;
 			}
 			set	
 			{
-				deliveryChannelIds = value;
-				DictionaryUtil.Add(QueryParameters, "DeliveryChannelIds", value);
+				resourceId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
+			}
+		}
+
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string AggregatorId
+		{
+			get
+			{
+				return aggregatorId;
+			}
+			set	
+			{
+				aggregatorId = value;
+				DictionaryUtil.Add(QueryParameters, "AggregatorId", value);
+			}
+		}
+
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+			}
+		}
+
+		public string Region
+		{
+			get
+			{
+				return region;
+			}
+			set	
+			{
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 
@@ -60,9 +120,9 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			return false;
 		}
 
-        public override DescribeDeliveryChannelsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetAggregateDiscoveredResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDeliveryChannelsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetAggregateDiscoveredResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

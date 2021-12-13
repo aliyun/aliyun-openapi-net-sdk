@@ -41,22 +41,24 @@ namespace Aliyun.Acs.Config.Transform.V20190108
 			List<DescribeEvaluationResultsResponse.DescribeEvaluationResults_EvaluationResults.DescribeEvaluationResults_EvaluationResult> evaluationResults_evaluationResultList = new List<DescribeEvaluationResultsResponse.DescribeEvaluationResults_EvaluationResults.DescribeEvaluationResults_EvaluationResult>();
 			for (int i = 0; i < _ctx.Length("DescribeEvaluationResults.EvaluationResults.EvaluationResultList.Length"); i++) {
 				DescribeEvaluationResultsResponse.DescribeEvaluationResults_EvaluationResults.DescribeEvaluationResults_EvaluationResult evaluationResult = new DescribeEvaluationResultsResponse.DescribeEvaluationResults_EvaluationResults.DescribeEvaluationResults_EvaluationResult();
-				evaluationResult.Annotation = _ctx.StringValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].Annotation");
+				evaluationResult.RiskLevel = _ctx.IntegerValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].RiskLevel");
 				evaluationResult.ComplianceType = _ctx.StringValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].ComplianceType");
+				evaluationResult.ResultRecordedTimestamp = _ctx.LongValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].ResultRecordedTimestamp");
+				evaluationResult.Annotation = _ctx.StringValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].Annotation");
 				evaluationResult.ConfigRuleInvokedTimestamp = _ctx.LongValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].ConfigRuleInvokedTimestamp");
 				evaluationResult.InvokingEventMessageType = _ctx.StringValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].InvokingEventMessageType");
-				evaluationResult.ResultRecordedTimestamp = _ctx.LongValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].ResultRecordedTimestamp");
-				evaluationResult.RiskLevel = _ctx.IntegerValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].RiskLevel");
+				evaluationResult.RemediationEnabled = _ctx.BooleanValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].RemediationEnabled");
 
 				DescribeEvaluationResultsResponse.DescribeEvaluationResults_EvaluationResults.DescribeEvaluationResults_EvaluationResult.DescribeEvaluationResults_EvaluationResultIdentifier evaluationResultIdentifier = new DescribeEvaluationResultsResponse.DescribeEvaluationResults_EvaluationResults.DescribeEvaluationResults_EvaluationResult.DescribeEvaluationResults_EvaluationResultIdentifier();
 				evaluationResultIdentifier.OrderingTimestamp = _ctx.LongValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.OrderingTimestamp");
 
 				DescribeEvaluationResultsResponse.DescribeEvaluationResults_EvaluationResults.DescribeEvaluationResults_EvaluationResult.DescribeEvaluationResults_EvaluationResultIdentifier.DescribeEvaluationResults_EvaluationResultQualifier evaluationResultQualifier = new DescribeEvaluationResultsResponse.DescribeEvaluationResults_EvaluationResults.DescribeEvaluationResults_EvaluationResult.DescribeEvaluationResults_EvaluationResultIdentifier.DescribeEvaluationResults_EvaluationResultQualifier();
 				evaluationResultQualifier.ConfigRuleArn = _ctx.StringValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ConfigRuleArn");
-				evaluationResultQualifier.ConfigRuleId = _ctx.StringValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ConfigRuleId");
+				evaluationResultQualifier.ResourceType = _ctx.StringValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ResourceType");
 				evaluationResultQualifier.ConfigRuleName = _ctx.StringValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ConfigRuleName");
 				evaluationResultQualifier.ResourceId = _ctx.StringValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ResourceId");
-				evaluationResultQualifier.ResourceType = _ctx.StringValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ResourceType");
+				evaluationResultQualifier.ConfigRuleId = _ctx.StringValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ConfigRuleId");
+				evaluationResultQualifier.ResourceName = _ctx.StringValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.ResourceName");
 				evaluationResultQualifier.RegionId = _ctx.StringValue("DescribeEvaluationResults.EvaluationResults.EvaluationResultList["+ i +"].EvaluationResultIdentifier.EvaluationResultQualifier.RegionId");
 				evaluationResultIdentifier.EvaluationResultQualifier = evaluationResultQualifier;
 				evaluationResult.EvaluationResultIdentifier = evaluationResultIdentifier;

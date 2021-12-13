@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Config.Model.V20190108
@@ -115,29 +115,31 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			public class DescribeEvaluationResults_EvaluationResult
 			{
 
-				private string annotation;
+				private int? riskLevel;
 
 				private string complianceType;
+
+				private long? resultRecordedTimestamp;
+
+				private string annotation;
 
 				private long? configRuleInvokedTimestamp;
 
 				private string invokingEventMessageType;
 
-				private long? resultRecordedTimestamp;
-
-				private int? riskLevel;
+				private bool? remediationEnabled;
 
 				private DescribeEvaluationResults_EvaluationResultIdentifier evaluationResultIdentifier;
 
-				public string Annotation
+				public int? RiskLevel
 				{
 					get
 					{
-						return annotation;
+						return riskLevel;
 					}
 					set	
 					{
-						annotation = value;
+						riskLevel = value;
 					}
 				}
 
@@ -150,6 +152,30 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					set	
 					{
 						complianceType = value;
+					}
+				}
+
+				public long? ResultRecordedTimestamp
+				{
+					get
+					{
+						return resultRecordedTimestamp;
+					}
+					set	
+					{
+						resultRecordedTimestamp = value;
+					}
+				}
+
+				public string Annotation
+				{
+					get
+					{
+						return annotation;
+					}
+					set	
+					{
+						annotation = value;
 					}
 				}
 
@@ -177,27 +203,15 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					}
 				}
 
-				public long? ResultRecordedTimestamp
+				public bool? RemediationEnabled
 				{
 					get
 					{
-						return resultRecordedTimestamp;
+						return remediationEnabled;
 					}
 					set	
 					{
-						resultRecordedTimestamp = value;
-					}
-				}
-
-				public int? RiskLevel
-				{
-					get
-					{
-						return riskLevel;
-					}
-					set	
-					{
-						riskLevel = value;
+						remediationEnabled = value;
 					}
 				}
 
@@ -249,13 +263,15 @@ namespace Aliyun.Acs.Config.Model.V20190108
 
 						private string configRuleArn;
 
-						private string configRuleId;
+						private string resourceType;
 
 						private string configRuleName;
 
 						private string resourceId;
 
-						private string resourceType;
+						private string configRuleId;
+
+						private string resourceName;
 
 						private string regionId;
 
@@ -271,15 +287,15 @@ namespace Aliyun.Acs.Config.Model.V20190108
 							}
 						}
 
-						public string ConfigRuleId
+						public string ResourceType
 						{
 							get
 							{
-								return configRuleId;
+								return resourceType;
 							}
 							set	
 							{
-								configRuleId = value;
+								resourceType = value;
 							}
 						}
 
@@ -307,15 +323,27 @@ namespace Aliyun.Acs.Config.Model.V20190108
 							}
 						}
 
-						public string ResourceType
+						public string ConfigRuleId
 						{
 							get
 							{
-								return resourceType;
+								return configRuleId;
 							}
 							set	
 							{
-								resourceType = value;
+								configRuleId = value;
+							}
+						}
+
+						public string ResourceName
+						{
+							get
+							{
+								return resourceName;
+							}
+							set	
+							{
+								resourceName = value;
 							}
 						}
 

@@ -34,9 +34,9 @@ namespace Aliyun.Acs.Config.Transform.V20190108
 			getDiscoveredResourceSummaryResponse.RequestId = _ctx.StringValue("GetDiscoveredResourceSummary.RequestId");
 
 			GetDiscoveredResourceSummaryResponse.GetDiscoveredResourceSummary_DiscoveredResourceSummary discoveredResourceSummary = new GetDiscoveredResourceSummaryResponse.GetDiscoveredResourceSummary_DiscoveredResourceSummary();
+			discoveredResourceSummary.RegionCount = _ctx.IntegerValue("GetDiscoveredResourceSummary.DiscoveredResourceSummary.RegionCount");
 			discoveredResourceSummary.ResourceCount = _ctx.IntegerValue("GetDiscoveredResourceSummary.DiscoveredResourceSummary.ResourceCount");
 			discoveredResourceSummary.ResourceTypeCount = _ctx.IntegerValue("GetDiscoveredResourceSummary.DiscoveredResourceSummary.ResourceTypeCount");
-			discoveredResourceSummary.RegionCount = _ctx.IntegerValue("GetDiscoveredResourceSummary.DiscoveredResourceSummary.RegionCount");
 			getDiscoveredResourceSummaryResponse.DiscoveredResourceSummary = discoveredResourceSummary;
         
 			return getDiscoveredResourceSummaryResponse;
