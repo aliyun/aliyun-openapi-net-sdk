@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.gpdb;
 using Aliyun.Acs.gpdb.Transform;
 using Aliyun.Acs.gpdb.Transform.V20160503;
 
@@ -30,94 +31,33 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
     public class DescribeSQLLogRecordsRequest : RpcAcsRequest<DescribeSQLLogRecordsResponse>
     {
         public DescribeSQLLogRecordsRequest()
-            : base("gpdb", "2016-05-03", "DescribeSQLLogRecords", "gpdb", "openAPI")
+            : base("gpdb", "2016-05-03", "DescribeSQLLogRecords")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private string database;
-
-		private string form;
-
-		private int? pageSize;
-
-		private string endTime;
-
-		private string dBInstanceId;
-
 		private string startTime;
-
-		private string user;
 
 		private string queryKeywords;
 
 		private int? pageNumber;
 
-		private string accessKeyId;
+		private string database;
 
-		public string Database
-		{
-			get
-			{
-				return database;
-			}
-			set	
-			{
-				database = value;
-				DictionaryUtil.Add(QueryParameters, "Database", value);
-			}
-		}
+		private int? pageSize;
 
-		public string Form
-		{
-			get
-			{
-				return form;
-			}
-			set	
-			{
-				form = value;
-				DictionaryUtil.Add(QueryParameters, "Form", value);
-			}
-		}
+		private string dBInstanceId;
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+		private string endTime;
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
+		private string form;
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
+		private string user;
 
 		public string StartTime
 		{
@@ -129,19 +69,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string User
-		{
-			get
-			{
-				return user;
-			}
-			set	
-			{
-				user = value;
-				DictionaryUtil.Add(QueryParameters, "User", value);
 			}
 		}
 
@@ -171,16 +98,81 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public string AccessKeyId
+		public string Database
 		{
 			get
 			{
-				return accessKeyId;
+				return database;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				database = value;
+				DictionaryUtil.Add(QueryParameters, "Database", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string Form
+		{
+			get
+			{
+				return form;
+			}
+			set	
+			{
+				form = value;
+				DictionaryUtil.Add(QueryParameters, "Form", value);
+			}
+		}
+
+		public string User
+		{
+			get
+			{
+				return user;
+			}
+			set	
+			{
+				user = value;
+				DictionaryUtil.Add(QueryParameters, "User", value);
 			}
 		}
 

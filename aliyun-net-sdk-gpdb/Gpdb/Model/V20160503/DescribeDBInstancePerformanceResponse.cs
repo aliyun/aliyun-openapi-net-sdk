@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.gpdb.Model.V20160503
@@ -25,17 +25,29 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 	public class DescribeDBInstancePerformanceResponse : AcsResponse
 	{
 
+		private string endTime;
+
 		private string requestId;
 
 		private string dBInstanceId;
 
-		private string engine;
-
 		private string startTime;
 
-		private string endTime;
+		private string engine;
 
 		private List<string> performanceKeys;
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,18 +73,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-			}
-		}
-
 		public string StartTime
 		{
 			get
@@ -85,15 +85,15 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public string EndTime
+		public string Engine
 		{
 			get
 			{
-				return endTime;
+				return engine;
 			}
 			set	
 			{
-				endTime = value;
+				engine = value;
 			}
 		}
 

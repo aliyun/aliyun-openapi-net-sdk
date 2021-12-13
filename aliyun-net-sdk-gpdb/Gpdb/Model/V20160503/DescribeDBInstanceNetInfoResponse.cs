@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.gpdb.Model.V20160503
@@ -70,17 +70,33 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 		public class DescribeDBInstanceNetInfo_DBInstanceNetInfo
 		{
 
-			private string connectionString;
+			private string vSwitchId;
 
-			private string iPAddress;
+			private string connectionString;
 
 			private string iPType;
 
 			private string port;
 
+			private string vpcInstanceId;
+
 			private string vPCId;
 
-			private string vSwitchId;
+			private string iPAddress;
+
+			private string addressType;
+
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
 
 			public string ConnectionString
 			{
@@ -91,18 +107,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 				set	
 				{
 					connectionString = value;
-				}
-			}
-
-			public string IPAddress
-			{
-				get
-				{
-					return iPAddress;
-				}
-				set	
-				{
-					iPAddress = value;
 				}
 			}
 
@@ -130,6 +134,18 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 				}
 			}
 
+			public string VpcInstanceId
+			{
+				get
+				{
+					return vpcInstanceId;
+				}
+				set	
+				{
+					vpcInstanceId = value;
+				}
+			}
+
 			public string VPCId
 			{
 				get
@@ -142,15 +158,27 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 				}
 			}
 
-			public string VSwitchId
+			public string IPAddress
 			{
 				get
 				{
-					return vSwitchId;
+					return iPAddress;
 				}
 				set	
 				{
-					vSwitchId = value;
+					iPAddress = value;
+				}
+			}
+
+			public string AddressType
+			{
+				get
+				{
+					return addressType;
+				}
+				set	
+				{
+					addressType = value;
 				}
 			}
 		}

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.gpdb;
 using Aliyun.Acs.gpdb.Transform;
 using Aliyun.Acs.gpdb.Transform.V20160503;
 
@@ -30,30 +31,34 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
     public class DescribeSQLLogFilesRequest : RpcAcsRequest<DescribeSQLLogFilesResponse>
     {
         public DescribeSQLLogFilesRequest()
-            : base("gpdb", "2016-05-03", "DescribeSQLLogFiles", "gpdb", "openAPI")
+            : base("gpdb", "2016-05-03", "DescribeSQLLogFiles")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private string fileName;
+		private int? pageNumber;
 
 		private int? pageSize;
 
 		private string dBInstanceId;
 
-		private int? pageNumber;
+		private string fileName;
 
-		private string accessKeyId;
-
-		public string FileName
+		public int? PageNumber
 		{
 			get
 			{
-				return fileName;
+				return pageNumber;
 			}
 			set	
 			{
-				fileName = value;
-				DictionaryUtil.Add(QueryParameters, "FileName", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -83,29 +88,16 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public int? PageNumber
+		public string FileName
 		{
 			get
 			{
-				return pageNumber;
+				return fileName;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				fileName = value;
+				DictionaryUtil.Add(QueryParameters, "FileName", value);
 			}
 		}
 

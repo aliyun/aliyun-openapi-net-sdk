@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.gpdb;
 using Aliyun.Acs.gpdb.Transform;
 using Aliyun.Acs.gpdb.Transform.V20160503;
 
@@ -30,32 +31,23 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
     public class ModifySecurityIpsRequest : RpcAcsRequest<ModifySecurityIpsResponse>
     {
         public ModifySecurityIpsRequest()
-            : base("gpdb", "2016-05-03", "ModifySecurityIps", "gpdb", "openAPI")
+            : base("gpdb", "2016-05-03", "ModifySecurityIps")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string securityIPList;
 
 		private string dBInstanceIPArrayName;
 
-		private string dBInstanceIPArrayAttribute;
-
 		private string dBInstanceId;
 
-		private string accessKeyId;
+		private string securityIPList;
 
-		public string SecurityIPList
-		{
-			get
-			{
-				return securityIPList;
-			}
-			set	
-			{
-				securityIPList = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityIPList", value);
-			}
-		}
+		private string dBInstanceIPArrayAttribute;
 
 		public string DBInstanceIPArrayName
 		{
@@ -67,19 +59,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			{
 				dBInstanceIPArrayName = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceIPArrayName", value);
-			}
-		}
-
-		public string DBInstanceIPArrayAttribute
-		{
-			get
-			{
-				return dBInstanceIPArrayAttribute;
-			}
-			set	
-			{
-				dBInstanceIPArrayAttribute = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceIPArrayAttribute", value);
 			}
 		}
 
@@ -96,16 +75,29 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public string AccessKeyId
+		public string SecurityIPList
 		{
 			get
 			{
-				return accessKeyId;
+				return securityIPList;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				securityIPList = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityIPList", value);
+			}
+		}
+
+		public string DBInstanceIPArrayAttribute
+		{
+			get
+			{
+				return dBInstanceIPArrayAttribute;
+			}
+			set	
+			{
+				dBInstanceIPArrayAttribute = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceIPArrayAttribute", value);
 			}
 		}
 

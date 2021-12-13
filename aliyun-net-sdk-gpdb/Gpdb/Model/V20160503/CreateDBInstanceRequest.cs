@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.gpdb;
 using Aliyun.Acs.gpdb.Transform;
 using Aliyun.Acs.gpdb.Transform.V20160503;
 
@@ -30,23 +31,31 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
     public class CreateDBInstanceRequest : RpcAcsRequest<CreateDBInstanceResponse>
     {
         public CreateDBInstanceRequest()
-            : base("gpdb", "2016-05-03", "CreateDBInstance", "gpdb", "openAPI")
+            : base("gpdb", "2016-05-03", "CreateDBInstance")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string dBInstanceGroupCount;
-
-		private string period;
 
 		private string clientToken;
 
 		private string engineVersion;
 
+		private string engine;
+
+		private string dBInstanceDescription;
+
+		private string dBInstanceGroupCount;
+
+		private string period;
+
 		private long? ownerId;
 
 		private string usedTime;
-
-		private string accessKeyId;
 
 		private string dBInstanceClass;
 
@@ -56,45 +65,13 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 
 		private string privateIpAddress;
 
-		private string regionId;
-
-		private string engine;
-
 		private string vPCId;
 
 		private string zoneId;
 
-		private string dBInstanceDescription;
-
 		private string payType;
 
 		private string instanceNetworkType;
-
-		public string DBInstanceGroupCount
-		{
-			get
-			{
-				return dBInstanceGroupCount;
-			}
-			set	
-			{
-				dBInstanceGroupCount = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceGroupCount", value);
-			}
-		}
-
-		public string Period
-		{
-			get
-			{
-				return period;
-			}
-			set	
-			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value);
-			}
-		}
 
 		public string ClientToken
 		{
@@ -122,6 +99,58 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		public string DBInstanceDescription
+		{
+			get
+			{
+				return dBInstanceDescription;
+			}
+			set	
+			{
+				dBInstanceDescription = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceDescription", value);
+			}
+		}
+
+		public string DBInstanceGroupCount
+		{
+			get
+			{
+				return dBInstanceGroupCount;
+			}
+			set	
+			{
+				dBInstanceGroupCount = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceGroupCount", value);
+			}
+		}
+
+		public string Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -145,19 +174,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			{
 				usedTime = value;
 				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -213,32 +229,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
-			}
-		}
-
 		public string VPCId
 		{
 			get
@@ -262,19 +252,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public string DBInstanceDescription
-		{
-			get
-			{
-				return dBInstanceDescription;
-			}
-			set	
-			{
-				dBInstanceDescription = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceDescription", value);
 			}
 		}
 

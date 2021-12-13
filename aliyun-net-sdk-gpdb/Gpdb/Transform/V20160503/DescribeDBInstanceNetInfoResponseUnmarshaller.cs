@@ -26,23 +26,25 @@ namespace Aliyun.Acs.gpdb.Transform.V20160503
 {
     public class DescribeDBInstanceNetInfoResponseUnmarshaller
     {
-        public static DescribeDBInstanceNetInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDBInstanceNetInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDBInstanceNetInfoResponse describeDBInstanceNetInfoResponse = new DescribeDBInstanceNetInfoResponse();
 
-			describeDBInstanceNetInfoResponse.HttpResponse = context.HttpResponse;
-			describeDBInstanceNetInfoResponse.RequestId = context.StringValue("DescribeDBInstanceNetInfo.RequestId");
-			describeDBInstanceNetInfoResponse.InstanceNetworkType = context.StringValue("DescribeDBInstanceNetInfo.InstanceNetworkType");
+			describeDBInstanceNetInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeDBInstanceNetInfoResponse.RequestId = _ctx.StringValue("DescribeDBInstanceNetInfo.RequestId");
+			describeDBInstanceNetInfoResponse.InstanceNetworkType = _ctx.StringValue("DescribeDBInstanceNetInfo.InstanceNetworkType");
 
 			List<DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo> describeDBInstanceNetInfoResponse_dBInstanceNetInfos = new List<DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo>();
-			for (int i = 0; i < context.Length("DescribeDBInstanceNetInfo.DBInstanceNetInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDBInstanceNetInfo.DBInstanceNetInfos.Length"); i++) {
 				DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo dBInstanceNetInfo = new DescribeDBInstanceNetInfoResponse.DescribeDBInstanceNetInfo_DBInstanceNetInfo();
-				dBInstanceNetInfo.ConnectionString = context.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].ConnectionString");
-				dBInstanceNetInfo.IPAddress = context.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].IPAddress");
-				dBInstanceNetInfo.IPType = context.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].IPType");
-				dBInstanceNetInfo.Port = context.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].Port");
-				dBInstanceNetInfo.VPCId = context.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].VPCId");
-				dBInstanceNetInfo.VSwitchId = context.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].VSwitchId");
+				dBInstanceNetInfo.VSwitchId = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].VSwitchId");
+				dBInstanceNetInfo.ConnectionString = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].ConnectionString");
+				dBInstanceNetInfo.IPType = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].IPType");
+				dBInstanceNetInfo.Port = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].Port");
+				dBInstanceNetInfo.VpcInstanceId = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].VpcInstanceId");
+				dBInstanceNetInfo.VPCId = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].VPCId");
+				dBInstanceNetInfo.IPAddress = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].IPAddress");
+				dBInstanceNetInfo.AddressType = _ctx.StringValue("DescribeDBInstanceNetInfo.DBInstanceNetInfos["+ i +"].AddressType");
 
 				describeDBInstanceNetInfoResponse_dBInstanceNetInfos.Add(dBInstanceNetInfo);
 			}

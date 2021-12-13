@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.gpdb;
 using Aliyun.Acs.gpdb.Transform;
 using Aliyun.Acs.gpdb.Transform.V20160503;
 
@@ -30,9 +31,17 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
     public class ModifyDBInstanceNetworkTypeRequest : RpcAcsRequest<ModifyDBInstanceNetworkTypeResponse>
     {
         public ModifyDBInstanceNetworkTypeRequest()
-            : base("gpdb", "2016-05-03", "ModifyDBInstanceNetworkType", "gpdb", "openAPI")
+            : base("gpdb", "2016-05-03", "ModifyDBInstanceNetworkType")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
+
+		private string dBInstanceId;
 
 		private string vSwitchId;
 
@@ -40,11 +49,20 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 
 		private string vPCId;
 
-		private string dBInstanceId;
-
 		private string instanceNetworkType;
 
-		private string accessKeyId;
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
 
 		public string VSwitchId
 		{
@@ -85,19 +103,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
 		public string InstanceNetworkType
 		{
 			get
@@ -108,19 +113,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			{
 				instanceNetworkType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceNetworkType", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

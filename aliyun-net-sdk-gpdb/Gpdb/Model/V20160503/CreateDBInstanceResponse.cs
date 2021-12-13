@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.gpdb.Model.V20160503
@@ -29,11 +29,11 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 
 		private string dBInstanceId;
 
-		private string orderId;
+		private string port;
 
 		private string connectionString;
 
-		private string port;
+		private string orderId;
 
 		public string RequestId
 		{
@@ -59,15 +59,15 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public string OrderId
+		public string Port
 		{
 			get
 			{
-				return orderId;
+				return port;
 			}
 			set	
 			{
-				orderId = value;
+				port = value;
 			}
 		}
 
@@ -83,15 +83,15 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public string Port
+		public string OrderId
 		{
 			get
 			{
-				return port;
+				return orderId;
 			}
 			set	
 			{
-				port = value;
+				orderId = value;
 			}
 		}
 	}

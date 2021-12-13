@@ -26,12 +26,12 @@ namespace Aliyun.Acs.gpdb.Transform.V20160503
 {
     public class ModifyDBInstanceDescriptionResponseUnmarshaller
     {
-        public static ModifyDBInstanceDescriptionResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDBInstanceDescriptionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDBInstanceDescriptionResponse modifyDBInstanceDescriptionResponse = new ModifyDBInstanceDescriptionResponse();
 
-			modifyDBInstanceDescriptionResponse.HttpResponse = context.HttpResponse;
-			modifyDBInstanceDescriptionResponse.RequestId = context.StringValue("ModifyDBInstanceDescription.RequestId");
+			modifyDBInstanceDescriptionResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDBInstanceDescriptionResponse.RequestId = _ctx.StringValue("ModifyDBInstanceDescription.RequestId");
         
 			return modifyDBInstanceDescriptionResponse;
         }

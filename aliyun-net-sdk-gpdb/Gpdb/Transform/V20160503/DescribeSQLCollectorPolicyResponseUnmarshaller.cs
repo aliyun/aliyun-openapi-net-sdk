@@ -26,13 +26,13 @@ namespace Aliyun.Acs.gpdb.Transform.V20160503
 {
     public class DescribeSQLCollectorPolicyResponseUnmarshaller
     {
-        public static DescribeSQLCollectorPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSQLCollectorPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSQLCollectorPolicyResponse describeSQLCollectorPolicyResponse = new DescribeSQLCollectorPolicyResponse();
 
-			describeSQLCollectorPolicyResponse.HttpResponse = context.HttpResponse;
-			describeSQLCollectorPolicyResponse.RequestId = context.StringValue("DescribeSQLCollectorPolicy.RequestId");
-			describeSQLCollectorPolicyResponse.SQLCollectorStatus = context.StringValue("DescribeSQLCollectorPolicy.SQLCollectorStatus");
+			describeSQLCollectorPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			describeSQLCollectorPolicyResponse.RequestId = _ctx.StringValue("DescribeSQLCollectorPolicy.RequestId");
+			describeSQLCollectorPolicyResponse.SQLCollectorStatus = _ctx.StringValue("DescribeSQLCollectorPolicy.SQLCollectorStatus");
         
 			return describeSQLCollectorPolicyResponse;
         }

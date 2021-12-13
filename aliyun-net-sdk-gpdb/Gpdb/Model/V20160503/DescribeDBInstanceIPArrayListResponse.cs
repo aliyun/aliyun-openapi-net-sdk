@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.gpdb.Model.V20160503
@@ -58,9 +58,9 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 
 			private string dBInstanceIPArrayName;
 
-			private string dBInstanceIPArrayAttribute;
-
 			private string securityIPList;
+
+			private string dBInstanceIPArrayAttribute;
 
 			public string DBInstanceIPArrayName
 			{
@@ -74,18 +74,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 				}
 			}
 
-			public string DBInstanceIPArrayAttribute
-			{
-				get
-				{
-					return dBInstanceIPArrayAttribute;
-				}
-				set	
-				{
-					dBInstanceIPArrayAttribute = value;
-				}
-			}
-
 			public string SecurityIPList
 			{
 				get
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 				set	
 				{
 					securityIPList = value;
+				}
+			}
+
+			public string DBInstanceIPArrayAttribute
+			{
+				get
+				{
+					return dBInstanceIPArrayAttribute;
+				}
+				set	
+				{
+					dBInstanceIPArrayAttribute = value;
 				}
 			}
 		}

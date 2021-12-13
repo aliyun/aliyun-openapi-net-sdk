@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.gpdb;
 using Aliyun.Acs.gpdb.Transform;
 using Aliyun.Acs.gpdb.Transform.V20160503;
 
@@ -30,19 +31,23 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
     public class ModifyDBInstanceConnectionStringRequest : RpcAcsRequest<ModifyDBInstanceConnectionStringResponse>
     {
         public ModifyDBInstanceConnectionStringRequest()
-            : base("gpdb", "2016-05-03", "ModifyDBInstanceConnectionString", "gpdb", "openAPI")
+            : base("gpdb", "2016-05-03", "ModifyDBInstanceConnectionString")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string connectionStringPrefix;
-
-		private string port;
 
 		private string dBInstanceId;
 
 		private string currentConnectionString;
 
-		private string accessKeyId;
+		private string port;
 
 		public string ConnectionStringPrefix
 		{
@@ -54,19 +59,6 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			{
 				connectionStringPrefix = value;
 				DictionaryUtil.Add(QueryParameters, "ConnectionStringPrefix", value);
-			}
-		}
-
-		public string Port
-		{
-			get
-			{
-				return port;
-			}
-			set	
-			{
-				port = value;
-				DictionaryUtil.Add(QueryParameters, "Port", value);
 			}
 		}
 
@@ -96,16 +88,16 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public string AccessKeyId
+		public string Port
 		{
 			get
 			{
-				return accessKeyId;
+				return port;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				port = value;
+				DictionaryUtil.Add(QueryParameters, "Port", value);
 			}
 		}
 

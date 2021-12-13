@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.gpdb;
 using Aliyun.Acs.gpdb.Transform;
 using Aliyun.Acs.gpdb.Transform.V20160503;
 
@@ -30,30 +31,21 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
     public class AddBuDBInstanceRelationRequest : RpcAcsRequest<AddBuDBInstanceRelationResponse>
     {
         public AddBuDBInstanceRelationRequest()
-            : base("gpdb", "2016-05-03", "AddBuDBInstanceRelation", "gpdb", "openAPI")
+            : base("gpdb", "2016-05-03", "AddBuDBInstanceRelation")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.gpdb.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string businessUnit;
 
 		private string dBInstanceId;
 
 		private long? ownerId;
 
-		private string accessKeyId;
-
-		public string BusinessUnit
-		{
-			get
-			{
-				return businessUnit;
-			}
-			set	
-			{
-				businessUnit = value;
-				DictionaryUtil.Add(QueryParameters, "BusinessUnit", value);
-			}
-		}
+		private string businessUnit;
 
 		public string DBInstanceId
 		{
@@ -81,16 +73,16 @@ namespace Aliyun.Acs.gpdb.Model.V20160503
 			}
 		}
 
-		public string AccessKeyId
+		public string BusinessUnit
 		{
 			get
 			{
-				return accessKeyId;
+				return businessUnit;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				businessUnit = value;
+				DictionaryUtil.Add(QueryParameters, "BusinessUnit", value);
 			}
 		}
 
