@@ -40,30 +40,13 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			Method = MethodType.POST;
         }
 
-		private int? codeValue;
-
 		private string resourceGroupId;
+
+		private int? codeValue;
 
 		private string instanceId;
 
-		private string sourceIp;
-
 		private int? codeType;
-
-		private string lang;
-
-		public int? CodeValue
-		{
-			get
-			{
-				return codeValue;
-			}
-			set	
-			{
-				codeValue = value;
-				DictionaryUtil.Add(QueryParameters, "CodeValue", value.ToString());
-			}
-		}
 
 		public string ResourceGroupId
 		{
@@ -75,6 +58,19 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				resourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public int? CodeValue
+		{
+			get
+			{
+				return codeValue;
+			}
+			set	
+			{
+				codeValue = value;
+				DictionaryUtil.Add(QueryParameters, "CodeValue", value.ToString());
 			}
 		}
 
@@ -91,19 +87,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			}
 		}
 
-		public string SourceIp
-		{
-			get
-			{
-				return sourceIp;
-			}
-			set	
-			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
-			}
-		}
-
 		public int? CodeType
 		{
 			get
@@ -114,19 +97,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				codeType = value;
 				DictionaryUtil.Add(QueryParameters, "CodeType", value.ToString());
-			}
-		}
-
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 

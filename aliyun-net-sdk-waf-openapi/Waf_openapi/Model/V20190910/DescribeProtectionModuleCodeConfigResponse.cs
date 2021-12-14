@@ -25,21 +25,9 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 	public class DescribeProtectionModuleCodeConfigResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string codeConfigs;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string CodeConfigs
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			set	
 			{
 				codeConfigs = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}
