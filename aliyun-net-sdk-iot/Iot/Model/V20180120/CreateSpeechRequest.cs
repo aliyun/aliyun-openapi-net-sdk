@@ -50,7 +50,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string text;
 
+		private string soundCodeConfig;
+
 		private string speechType;
+
+		private bool? enableSoundCode;
 
 		private int? volume;
 
@@ -123,6 +127,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public string SoundCodeConfig
+		{
+			get
+			{
+				return soundCodeConfig;
+			}
+			set	
+			{
+				soundCodeConfig = value;
+				DictionaryUtil.Add(BodyParameters, "SoundCodeConfig", value);
+			}
+		}
+
 		public string SpeechType
 		{
 			get
@@ -133,6 +150,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				speechType = value;
 				DictionaryUtil.Add(BodyParameters, "SpeechType", value);
+			}
+		}
+
+		public bool? EnableSoundCode
+		{
+			get
+			{
+				return enableSoundCode;
+			}
+			set	
+			{
+				enableSoundCode = value;
+				DictionaryUtil.Add(BodyParameters, "EnableSoundCode", value.ToString());
 			}
 		}
 

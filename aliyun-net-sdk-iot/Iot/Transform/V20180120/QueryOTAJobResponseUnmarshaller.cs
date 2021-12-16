@@ -65,6 +65,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.GroupId = _ctx.StringValue("QueryOTAJob.Data.GroupId");
 			data.GroupName = _ctx.StringValue("QueryOTAJob.Data.GroupName");
 			data.DownloadProtocol = _ctx.StringValue("QueryOTAJob.Data.DownloadProtocol");
+			data.MultiModuleMode = _ctx.BooleanValue("QueryOTAJob.Data.MultiModuleMode");
 
 			List<string> data_srcVersions = new List<string>();
 			for (int i = 0; i < _ctx.Length("QueryOTAJob.Data.SrcVersions.Length"); i++) {

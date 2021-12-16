@@ -154,6 +154,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string downloadProtocol;
 
+			private bool? multiModuleMode;
+
 			private List<QueryOTAJob_OtaTagDTO> tags;
 
 			private List<string> srcVersions;
@@ -491,6 +493,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					downloadProtocol = value;
+				}
+			}
+
+			public bool? MultiModuleMode
+			{
+				get
+				{
+					return multiModuleMode;
+				}
+				set	
+				{
+					multiModuleMode = value;
 				}
 			}
 

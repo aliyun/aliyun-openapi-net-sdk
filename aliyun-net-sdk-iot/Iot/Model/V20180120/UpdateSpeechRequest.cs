@@ -46,6 +46,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string iotInstanceId;
 
+		private string soundCodeConfig;
+
+		private bool? enableSoundCode;
+
 		private int? volume;
 
 		private int? speechRate;
@@ -88,6 +92,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
+			}
+		}
+
+		public string SoundCodeConfig
+		{
+			get
+			{
+				return soundCodeConfig;
+			}
+			set	
+			{
+				soundCodeConfig = value;
+				DictionaryUtil.Add(BodyParameters, "SoundCodeConfig", value);
+			}
+		}
+
+		public bool? EnableSoundCode
+		{
+			get
+			{
+				return enableSoundCode;
+			}
+			set	
+			{
+				enableSoundCode = value;
+				DictionaryUtil.Add(BodyParameters, "EnableSoundCode", value.ToString());
 			}
 		}
 

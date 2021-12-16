@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private bool? multiModuleMode;
+
 		private int? retryCount;
 
 		private int? timeoutInMinutes;
@@ -81,6 +83,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private int? maximumPerMinute;
 
 		private List<string> targetDeviceNames = new List<string>(){ };
+
+		public bool? MultiModuleMode
+		{
+			get
+			{
+				return multiModuleMode;
+			}
+			set	
+			{
+				multiModuleMode = value;
+				DictionaryUtil.Add(QueryParameters, "MultiModuleMode", value.ToString());
+			}
+		}
 
 		public int? RetryCount
 		{

@@ -1,3 +1,6 @@
+2021-12-16 Version: 7.31.0
+- Update OTA API, including CreateOTADynamicUpgradeJob,CreateOTAStaticUpgradeJob,QueryOTAJob.
+
 2021-12-14 Version: 2.0.3
 - Support query resourceType.
 

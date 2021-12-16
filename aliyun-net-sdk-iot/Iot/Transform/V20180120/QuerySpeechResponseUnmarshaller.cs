@@ -45,6 +45,12 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.Text = _ctx.StringValue("QuerySpeech.Data.Text");
 			data.AudioFormat = _ctx.StringValue("QuerySpeech.Data.AudioFormat");
 			data.SpeechType = _ctx.StringValue("QuerySpeech.Data.SpeechType");
+			data.EnableSoundCode = _ctx.BooleanValue("QuerySpeech.Data.EnableSoundCode");
+
+			QuerySpeechResponse.QuerySpeech_Data.QuerySpeech_SoundCodeConfig soundCodeConfig = new QuerySpeechResponse.QuerySpeech_Data.QuerySpeech_SoundCodeConfig();
+			soundCodeConfig.AdditionalDuration = _ctx.IntegerValue("QuerySpeech.Data.SoundCodeConfig.AdditionalDuration");
+			soundCodeConfig.SoundCodeContent = _ctx.StringValue("QuerySpeech.Data.SoundCodeConfig.SoundCodeContent");
+			data.SoundCodeConfig = soundCodeConfig;
 			querySpeechResponse.Data = data;
         
 			return querySpeechResponse;

@@ -114,6 +114,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string speechType;
 
+			private bool? enableSoundCode;
+
+			private QuerySpeech_SoundCodeConfig soundCodeConfig;
+
 			public string SpeechCode
 			{
 				get
@@ -207,6 +211,62 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					speechType = value;
+				}
+			}
+
+			public bool? EnableSoundCode
+			{
+				get
+				{
+					return enableSoundCode;
+				}
+				set	
+				{
+					enableSoundCode = value;
+				}
+			}
+
+			public QuerySpeech_SoundCodeConfig SoundCodeConfig
+			{
+				get
+				{
+					return soundCodeConfig;
+				}
+				set	
+				{
+					soundCodeConfig = value;
+				}
+			}
+
+			public class QuerySpeech_SoundCodeConfig
+			{
+
+				private int? additionalDuration;
+
+				private string soundCodeContent;
+
+				public int? AdditionalDuration
+				{
+					get
+					{
+						return additionalDuration;
+					}
+					set	
+					{
+						additionalDuration = value;
+					}
+				}
+
+				public string SoundCodeContent
+				{
+					get
+					{
+						return soundCodeContent;
+					}
+					set	
+					{
+						soundCodeContent = value;
+					}
 				}
 			}
 		}

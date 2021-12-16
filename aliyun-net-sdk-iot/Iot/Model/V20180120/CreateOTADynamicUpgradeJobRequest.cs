@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private int? dynamicMode;
 
+		private bool? multiModuleMode;
+
 		private int? retryCount;
 
 		private int? timeoutInMinutes;
@@ -82,6 +84,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				dynamicMode = value;
 				DictionaryUtil.Add(QueryParameters, "DynamicMode", value.ToString());
+			}
+		}
+
+		public bool? MultiModuleMode
+		{
+			get
+			{
+				return multiModuleMode;
+			}
+			set	
+			{
+				multiModuleMode = value;
+				DictionaryUtil.Add(QueryParameters, "MultiModuleMode", value.ToString());
 			}
 		}
 

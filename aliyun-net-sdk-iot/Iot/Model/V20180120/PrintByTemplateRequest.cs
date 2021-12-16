@@ -40,32 +40,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string projectCode;
-
 		private string templateBizCode;
 
 		private string iotId;
 
 		private string iotInstanceId;
 
+		private bool? historyPrintTopic;
+
 		private string productKey;
 
 		private string paramsJsonString;
 
 		private string deviceName;
-
-		public string ProjectCode
-		{
-			get
-			{
-				return projectCode;
-			}
-			set	
-			{
-				projectCode = value;
-				DictionaryUtil.Add(BodyParameters, "ProjectCode", value);
-			}
-		}
 
 		public string TemplateBizCode
 		{
@@ -103,6 +90,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
+			}
+		}
+
+		public bool? HistoryPrintTopic
+		{
+			get
+			{
+				return historyPrintTopic;
+			}
+			set	
+			{
+				historyPrintTopic = value;
+				DictionaryUtil.Add(BodyParameters, "HistoryPrintTopic", value.ToString());
 			}
 		}
 

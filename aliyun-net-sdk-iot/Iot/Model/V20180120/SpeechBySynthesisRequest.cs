@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class ListSourceReplicaRequest : RpcAcsRequest<ListSourceReplicaResponse>
+    public class SpeechBySynthesisRequest : RpcAcsRequest<SpeechBySynthesisResponse>
     {
-        public ListSourceReplicaRequest()
-            : base("Iot", "2018-01-20", "ListSourceReplica", "iot", "openAPI")
+        public SpeechBySynthesisRequest()
+            : base("Iot", "2018-01-20", "SpeechBySynthesis", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,17 +40,77 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private string voice;
+
+		private string speechId;
+
+		private string audioFormat;
+
+		private string iotId;
+
 		private string iotInstanceId;
 
-		private string context;
+		private string text;
 
-		private int? pageSize;
+		private string productKey;
 
-		private string sourceType;
+		private int? volume;
 
-		private int? pageNo;
+		private string deviceName;
 
-		private string lpInstanceId;
+		private int? speechRate;
+
+		public string Voice
+		{
+			get
+			{
+				return voice;
+			}
+			set	
+			{
+				voice = value;
+				DictionaryUtil.Add(BodyParameters, "Voice", value);
+			}
+		}
+
+		public string SpeechId
+		{
+			get
+			{
+				return speechId;
+			}
+			set	
+			{
+				speechId = value;
+				DictionaryUtil.Add(BodyParameters, "SpeechId", value);
+			}
+		}
+
+		public string AudioFormat
+		{
+			get
+			{
+				return audioFormat;
+			}
+			set	
+			{
+				audioFormat = value;
+				DictionaryUtil.Add(BodyParameters, "AudioFormat", value);
+			}
+		}
+
+		public string IotId
+		{
+			get
+			{
+				return iotId;
+			}
+			set	
+			{
+				iotId = value;
+				DictionaryUtil.Add(BodyParameters, "IotId", value);
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -65,79 +125,74 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string Context
+		public string Text
 		{
 			get
 			{
-				return context;
+				return text;
 			}
 			set	
 			{
-				context = value;
-				DictionaryUtil.Add(BodyParameters, "Context", value);
+				text = value;
+				DictionaryUtil.Add(BodyParameters, "Text", value);
 			}
 		}
 
-		public int? PageSize
+		public string ProductKey
 		{
 			get
 			{
-				return pageSize;
+				return productKey;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				productKey = value;
+				DictionaryUtil.Add(BodyParameters, "ProductKey", value);
 			}
 		}
 
-		public string SourceType
+		public int? Volume
 		{
 			get
 			{
-				return sourceType;
+				return volume;
 			}
 			set	
 			{
-				sourceType = value;
-				DictionaryUtil.Add(QueryParameters, "SourceType", value);
+				volume = value;
+				DictionaryUtil.Add(BodyParameters, "Volume", value.ToString());
 			}
 		}
 
-		public int? PageNo
+		public string DeviceName
 		{
 			get
 			{
-				return pageNo;
+				return deviceName;
 			}
 			set	
 			{
-				pageNo = value;
-				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
+				deviceName = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceName", value);
 			}
 		}
 
-		public string LpInstanceId
+		public int? SpeechRate
 		{
 			get
 			{
-				return lpInstanceId;
+				return speechRate;
 			}
 			set	
 			{
-				lpInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "LpInstanceId", value);
+				speechRate = value;
+				DictionaryUtil.Add(BodyParameters, "SpeechRate", value.ToString());
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override ListSourceReplicaResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SpeechBySynthesisResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListSourceReplicaResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SpeechBySynthesisResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
