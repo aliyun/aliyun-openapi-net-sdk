@@ -73,6 +73,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 				callDetailRecord.SkillGroupIds = _ctx.StringValue("ListCallDetailRecords.Data.List["+ i +"].SkillGroupIds");
 				callDetailRecord.CallerLocation = _ctx.StringValue("ListCallDetailRecords.Data.List["+ i +"].CallerLocation");
 				callDetailRecord.CalleeLocation = _ctx.StringValue("ListCallDetailRecords.Data.List["+ i +"].CalleeLocation");
+				callDetailRecord.EarlyMediaState = _ctx.StringValue("ListCallDetailRecords.Data.List["+ i +"].EarlyMediaState");
 
 				data_list.Add(callDetailRecord);
 			}

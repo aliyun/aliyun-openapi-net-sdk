@@ -50,6 +50,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 		private int? pageNumber;
 
+		private string earlyMediaStateList;
+
 		private string calledNumber;
 
 		private string satisfactionList;
@@ -138,6 +140,19 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string EarlyMediaStateList
+		{
+			get
+			{
+				return earlyMediaStateList;
+			}
+			set	
+			{
+				earlyMediaStateList = value;
+				DictionaryUtil.Add(QueryParameters, "EarlyMediaStateList", value);
 			}
 		}
 

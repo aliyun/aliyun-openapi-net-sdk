@@ -215,6 +215,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 				private string calleeLocation;
 
+				private string earlyMediaState;
+
 				public string ContactDisposition
 				{
 					get
@@ -560,6 +562,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						calleeLocation = value;
+					}
+				}
+
+				public string EarlyMediaState
+				{
+					get
+					{
+						return earlyMediaState;
+					}
+					set	
+					{
+						earlyMediaState = value;
 					}
 				}
 			}

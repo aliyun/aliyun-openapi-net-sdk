@@ -56,6 +56,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 		private string instanceId;
 
+		private string skillGroupId;
+
 		public string ContactFlowId
 		{
 			get
@@ -157,6 +159,19 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string SkillGroupId
+		{
+			get
+			{
+				return skillGroupId;
+			}
+			set	
+			{
+				skillGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SkillGroupId", value);
 			}
 		}
 

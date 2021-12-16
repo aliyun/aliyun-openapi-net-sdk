@@ -58,6 +58,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			data.SkillGroupIds = _ctx.StringValue("GetCallDetailRecord.Data.SkillGroupIds");
 			data.CallerLocation = _ctx.StringValue("GetCallDetailRecord.Data.CallerLocation");
 			data.CalleeLocation = _ctx.StringValue("GetCallDetailRecord.Data.CalleeLocation");
+			data.EarlyMediaState = _ctx.StringValue("GetCallDetailRecord.Data.EarlyMediaState");
 
 			List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_AgentEventsItem> data_agentEvents = new List<GetCallDetailRecordResponse.GetCallDetailRecord_Data.GetCallDetailRecord_AgentEventsItem>();
 			for (int i = 0; i < _ctx.Length("GetCallDetailRecord.Data.AgentEvents.Length"); i++) {

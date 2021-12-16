@@ -140,6 +140,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 			private string calleeLocation;
 
+			private string earlyMediaState;
+
 			private List<GetCallDetailRecord_AgentEventsItem> agentEvents;
 
 			private List<GetCallDetailRecord_IvrEventsItem> ivrEvents;
@@ -397,6 +399,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				set	
 				{
 					calleeLocation = value;
+				}
+			}
+
+			public string EarlyMediaState
+			{
+				get
+				{
+					return earlyMediaState;
+				}
+				set	
+				{
+					earlyMediaState = value;
 				}
 			}
 
