@@ -57,6 +57,8 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 		private long? zonePrivateIpAddressCount;
 
+		private bool? protectedEnabled;
+
 		private string endpointName;
 
 		private string vpcId;
@@ -173,6 +175,19 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			{
 				zonePrivateIpAddressCount = value;
 				DictionaryUtil.Add(QueryParameters, "ZonePrivateIpAddressCount", value.ToString());
+			}
+		}
+
+		public bool? ProtectedEnabled
+		{
+			get
+			{
+				return protectedEnabled;
+			}
+			set	
+			{
+				protectedEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "ProtectedEnabled", value.ToString());
 			}
 		}
 
