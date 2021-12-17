@@ -26,12 +26,12 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 {
     public class RemoveClientFromBlackListResponseUnmarshaller
     {
-        public static RemoveClientFromBlackListResponse Unmarshall(UnmarshallerContext context)
+        public static RemoveClientFromBlackListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RemoveClientFromBlackListResponse removeClientFromBlackListResponse = new RemoveClientFromBlackListResponse();
 
-			removeClientFromBlackListResponse.HttpResponse = context.HttpResponse;
-			removeClientFromBlackListResponse.RequestId = context.StringValue("RemoveClientFromBlackList.RequestId");
+			removeClientFromBlackListResponse.HttpResponse = _ctx.HttpResponse;
+			removeClientFromBlackListResponse.RequestId = _ctx.StringValue("RemoveClientFromBlackList.RequestId");
         
 			return removeClientFromBlackListResponse;
         }

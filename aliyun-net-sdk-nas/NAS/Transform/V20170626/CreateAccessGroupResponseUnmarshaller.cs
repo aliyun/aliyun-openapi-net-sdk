@@ -26,13 +26,13 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 {
     public class CreateAccessGroupResponseUnmarshaller
     {
-        public static CreateAccessGroupResponse Unmarshall(UnmarshallerContext context)
+        public static CreateAccessGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateAccessGroupResponse createAccessGroupResponse = new CreateAccessGroupResponse();
 
-			createAccessGroupResponse.HttpResponse = context.HttpResponse;
-			createAccessGroupResponse.RequestId = context.StringValue("CreateAccessGroup.RequestId");
-			createAccessGroupResponse.AccessGroupName = context.StringValue("CreateAccessGroup.AccessGroupName");
+			createAccessGroupResponse.HttpResponse = _ctx.HttpResponse;
+			createAccessGroupResponse.RequestId = _ctx.StringValue("CreateAccessGroup.RequestId");
+			createAccessGroupResponse.AccessGroupName = _ctx.StringValue("CreateAccessGroup.AccessGroupName");
         
 			return createAccessGroupResponse;
         }

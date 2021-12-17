@@ -26,31 +26,43 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 {
     public class DescribeMountTargetsResponseUnmarshaller
     {
-        public static DescribeMountTargetsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeMountTargetsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeMountTargetsResponse describeMountTargetsResponse = new DescribeMountTargetsResponse();
 
-			describeMountTargetsResponse.HttpResponse = context.HttpResponse;
-			describeMountTargetsResponse.RequestId = context.StringValue("DescribeMountTargets.RequestId");
-			describeMountTargetsResponse.TotalCount = context.IntegerValue("DescribeMountTargets.TotalCount");
-			describeMountTargetsResponse.PageSize = context.IntegerValue("DescribeMountTargets.PageSize");
-			describeMountTargetsResponse.PageNumber = context.IntegerValue("DescribeMountTargets.PageNumber");
+			describeMountTargetsResponse.HttpResponse = _ctx.HttpResponse;
+			describeMountTargetsResponse.RequestId = _ctx.StringValue("DescribeMountTargets.RequestId");
+			describeMountTargetsResponse.TotalCount = _ctx.IntegerValue("DescribeMountTargets.TotalCount");
+			describeMountTargetsResponse.PageSize = _ctx.IntegerValue("DescribeMountTargets.PageSize");
+			describeMountTargetsResponse.PageNumber = _ctx.IntegerValue("DescribeMountTargets.PageNumber");
 
 			List<DescribeMountTargetsResponse.DescribeMountTargets_MountTarget> describeMountTargetsResponse_mountTargets = new List<DescribeMountTargetsResponse.DescribeMountTargets_MountTarget>();
-			for (int i = 0; i < context.Length("DescribeMountTargets.MountTargets.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeMountTargets.MountTargets.Length"); i++) {
 				DescribeMountTargetsResponse.DescribeMountTargets_MountTarget mountTarget = new DescribeMountTargetsResponse.DescribeMountTargets_MountTarget();
-				mountTarget.MountTargetDomain = context.StringValue("DescribeMountTargets.MountTargets["+ i +"].MountTargetDomain");
-				mountTarget.NetworkType = context.StringValue("DescribeMountTargets.MountTargets["+ i +"].NetworkType");
-				mountTarget.VpcId = context.StringValue("DescribeMountTargets.MountTargets["+ i +"].VpcId");
-				mountTarget.VswId = context.StringValue("DescribeMountTargets.MountTargets["+ i +"].VswId");
-				mountTarget.AccessGroup = context.StringValue("DescribeMountTargets.MountTargets["+ i +"].AccessGroup");
-				mountTarget.Status = context.StringValue("DescribeMountTargets.MountTargets["+ i +"].Status");
+				mountTarget.MountTargetDomain = _ctx.StringValue("DescribeMountTargets.MountTargets["+ i +"].MountTargetDomain");
+				mountTarget.NetworkType = _ctx.StringValue("DescribeMountTargets.MountTargets["+ i +"].NetworkType");
+				mountTarget.VpcId = _ctx.StringValue("DescribeMountTargets.MountTargets["+ i +"].VpcId");
+				mountTarget.VswId = _ctx.StringValue("DescribeMountTargets.MountTargets["+ i +"].VswId");
+				mountTarget.AccessGroup = _ctx.StringValue("DescribeMountTargets.MountTargets["+ i +"].AccessGroup");
+				mountTarget.Status = _ctx.StringValue("DescribeMountTargets.MountTargets["+ i +"].Status");
+				mountTarget.DualStackMountTargetDomain = _ctx.StringValue("DescribeMountTargets.MountTargets["+ i +"].DualStackMountTargetDomain");
+
+				List<DescribeMountTargetsResponse.DescribeMountTargets_MountTarget.DescribeMountTargets_ClientMasterNode> mountTarget_clientMasterNodes = new List<DescribeMountTargetsResponse.DescribeMountTargets_MountTarget.DescribeMountTargets_ClientMasterNode>();
+				for (int j = 0; j < _ctx.Length("DescribeMountTargets.MountTargets["+ i +"].ClientMasterNodes.Length"); j++) {
+					DescribeMountTargetsResponse.DescribeMountTargets_MountTarget.DescribeMountTargets_ClientMasterNode clientMasterNode = new DescribeMountTargetsResponse.DescribeMountTargets_MountTarget.DescribeMountTargets_ClientMasterNode();
+					clientMasterNode.EcsId = _ctx.StringValue("DescribeMountTargets.MountTargets["+ i +"].ClientMasterNodes["+ j +"].EcsId");
+					clientMasterNode.EcsIp = _ctx.StringValue("DescribeMountTargets.MountTargets["+ i +"].ClientMasterNodes["+ j +"].EcsIp");
+					clientMasterNode.DefaultPasswd = _ctx.StringValue("DescribeMountTargets.MountTargets["+ i +"].ClientMasterNodes["+ j +"].DefaultPasswd");
+
+					mountTarget_clientMasterNodes.Add(clientMasterNode);
+				}
+				mountTarget.ClientMasterNodes = mountTarget_clientMasterNodes;
 
 				List<DescribeMountTargetsResponse.DescribeMountTargets_MountTarget.DescribeMountTargets_Tag> mountTarget_tags = new List<DescribeMountTargetsResponse.DescribeMountTargets_MountTarget.DescribeMountTargets_Tag>();
-				for (int j = 0; j < context.Length("DescribeMountTargets.MountTargets["+ i +"].Tags.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeMountTargets.MountTargets["+ i +"].Tags.Length"); j++) {
 					DescribeMountTargetsResponse.DescribeMountTargets_MountTarget.DescribeMountTargets_Tag tag = new DescribeMountTargetsResponse.DescribeMountTargets_MountTarget.DescribeMountTargets_Tag();
-					tag.Key = context.StringValue("DescribeMountTargets.MountTargets["+ i +"].Tags["+ j +"].Key");
-					tag._Value = context.StringValue("DescribeMountTargets.MountTargets["+ i +"].Tags["+ j +"].Value");
+					tag.Key = _ctx.StringValue("DescribeMountTargets.MountTargets["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("DescribeMountTargets.MountTargets["+ i +"].Tags["+ j +"].Value");
 
 					mountTarget_tags.Add(tag);
 				}

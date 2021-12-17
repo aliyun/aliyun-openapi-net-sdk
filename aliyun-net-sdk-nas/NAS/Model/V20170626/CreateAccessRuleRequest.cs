@@ -34,9 +34,10 @@ namespace Aliyun.Acs.NAS.Model.V20170626
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.NAS.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.NAS.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string rWAccessType;
@@ -44,6 +45,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 		private string userAccessType;
 
 		private string fileSystemType;
+
+		private string ipv6SourceCidrIp;
 
 		private string sourceCidrIp;
 
@@ -87,6 +90,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				fileSystemType = value;
 				DictionaryUtil.Add(QueryParameters, "FileSystemType", value);
+			}
+		}
+
+		public string Ipv6SourceCidrIp
+		{
+			get
+			{
+				return ipv6SourceCidrIp;
+			}
+			set	
+			{
+				ipv6SourceCidrIp = value;
+				DictionaryUtil.Add(QueryParameters, "Ipv6SourceCidrIp", value);
 			}
 		}
 

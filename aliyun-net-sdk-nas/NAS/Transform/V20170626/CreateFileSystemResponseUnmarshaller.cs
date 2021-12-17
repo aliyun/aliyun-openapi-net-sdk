@@ -26,13 +26,13 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 {
     public class CreateFileSystemResponseUnmarshaller
     {
-        public static CreateFileSystemResponse Unmarshall(UnmarshallerContext context)
+        public static CreateFileSystemResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateFileSystemResponse createFileSystemResponse = new CreateFileSystemResponse();
 
-			createFileSystemResponse.HttpResponse = context.HttpResponse;
-			createFileSystemResponse.RequestId = context.StringValue("CreateFileSystem.RequestId");
-			createFileSystemResponse.FileSystemId = context.StringValue("CreateFileSystem.FileSystemId");
+			createFileSystemResponse.HttpResponse = _ctx.HttpResponse;
+			createFileSystemResponse.RequestId = _ctx.StringValue("CreateFileSystem.RequestId");
+			createFileSystemResponse.FileSystemId = _ctx.StringValue("CreateFileSystem.FileSystemId");
         
 			return createFileSystemResponse;
         }

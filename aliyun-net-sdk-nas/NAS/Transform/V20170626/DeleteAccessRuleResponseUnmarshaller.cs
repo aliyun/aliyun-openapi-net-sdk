@@ -26,12 +26,12 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 {
     public class DeleteAccessRuleResponseUnmarshaller
     {
-        public static DeleteAccessRuleResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteAccessRuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteAccessRuleResponse deleteAccessRuleResponse = new DeleteAccessRuleResponse();
 
-			deleteAccessRuleResponse.HttpResponse = context.HttpResponse;
-			deleteAccessRuleResponse.RequestId = context.StringValue("DeleteAccessRule.RequestId");
+			deleteAccessRuleResponse.HttpResponse = _ctx.HttpResponse;
+			deleteAccessRuleResponse.RequestId = _ctx.StringValue("DeleteAccessRule.RequestId");
         
 			return deleteAccessRuleResponse;
         }

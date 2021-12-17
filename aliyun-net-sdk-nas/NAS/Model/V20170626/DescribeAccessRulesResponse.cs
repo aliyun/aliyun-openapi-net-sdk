@@ -108,6 +108,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string userAccess;
 
+			private string ipv6SourceCidrIp;
+
 			public string SourceCidrIp
 			{
 				get
@@ -165,6 +167,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					userAccess = value;
+				}
+			}
+
+			public string Ipv6SourceCidrIp
+			{
+				get
+				{
+					return ipv6SourceCidrIp;
+				}
+				set	
+				{
+					ipv6SourceCidrIp = value;
 				}
 			}
 		}

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 {
     public class ModifyMountTargetResponseUnmarshaller
     {
-        public static ModifyMountTargetResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyMountTargetResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyMountTargetResponse modifyMountTargetResponse = new ModifyMountTargetResponse();
 
-			modifyMountTargetResponse.HttpResponse = context.HttpResponse;
-			modifyMountTargetResponse.RequestId = context.StringValue("ModifyMountTarget.RequestId");
+			modifyMountTargetResponse.HttpResponse = _ctx.HttpResponse;
+			modifyMountTargetResponse.RequestId = _ctx.StringValue("ModifyMountTarget.RequestId");
         
 			return modifyMountTargetResponse;
         }

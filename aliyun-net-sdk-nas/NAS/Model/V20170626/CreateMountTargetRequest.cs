@@ -34,20 +34,53 @@ namespace Aliyun.Acs.NAS.Model.V20170626
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.NAS.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.NAS.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private string securityGroupId;
+
+		private bool? enableIpv6;
 
 		private string networkType;
 
 		private string fileSystemId;
+
+		private bool? dryRun;
 
 		private string accessGroupName;
 
 		private string vSwitchId;
 
 		private string vpcId;
+
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
+			}
+		}
+
+		public bool? EnableIpv6
+		{
+			get
+			{
+				return enableIpv6;
+			}
+			set	
+			{
+				enableIpv6 = value;
+				DictionaryUtil.Add(QueryParameters, "EnableIpv6", value.ToString());
+			}
+		}
 
 		public string NetworkType
 		{
@@ -72,6 +105,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				fileSystemId = value;
 				DictionaryUtil.Add(QueryParameters, "FileSystemId", value);
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 

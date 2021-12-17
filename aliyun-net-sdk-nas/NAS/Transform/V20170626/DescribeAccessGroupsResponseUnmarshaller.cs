@@ -26,31 +26,31 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 {
     public class DescribeAccessGroupsResponseUnmarshaller
     {
-        public static DescribeAccessGroupsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAccessGroupsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAccessGroupsResponse describeAccessGroupsResponse = new DescribeAccessGroupsResponse();
 
-			describeAccessGroupsResponse.HttpResponse = context.HttpResponse;
-			describeAccessGroupsResponse.RequestId = context.StringValue("DescribeAccessGroups.RequestId");
-			describeAccessGroupsResponse.TotalCount = context.IntegerValue("DescribeAccessGroups.TotalCount");
-			describeAccessGroupsResponse.PageSize = context.IntegerValue("DescribeAccessGroups.PageSize");
-			describeAccessGroupsResponse.PageNumber = context.IntegerValue("DescribeAccessGroups.PageNumber");
+			describeAccessGroupsResponse.HttpResponse = _ctx.HttpResponse;
+			describeAccessGroupsResponse.RequestId = _ctx.StringValue("DescribeAccessGroups.RequestId");
+			describeAccessGroupsResponse.TotalCount = _ctx.IntegerValue("DescribeAccessGroups.TotalCount");
+			describeAccessGroupsResponse.PageSize = _ctx.IntegerValue("DescribeAccessGroups.PageSize");
+			describeAccessGroupsResponse.PageNumber = _ctx.IntegerValue("DescribeAccessGroups.PageNumber");
 
 			List<DescribeAccessGroupsResponse.DescribeAccessGroups_AccessGroup> describeAccessGroupsResponse_accessGroups = new List<DescribeAccessGroupsResponse.DescribeAccessGroups_AccessGroup>();
-			for (int i = 0; i < context.Length("DescribeAccessGroups.AccessGroups.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeAccessGroups.AccessGroups.Length"); i++) {
 				DescribeAccessGroupsResponse.DescribeAccessGroups_AccessGroup accessGroup = new DescribeAccessGroupsResponse.DescribeAccessGroups_AccessGroup();
-				accessGroup.AccessGroupName = context.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].AccessGroupName");
-				accessGroup.AccessGroupType = context.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].AccessGroupType");
-				accessGroup.RuleCount = context.IntegerValue("DescribeAccessGroups.AccessGroups["+ i +"].RuleCount");
-				accessGroup.MountTargetCount = context.IntegerValue("DescribeAccessGroups.AccessGroups["+ i +"].MountTargetCount");
-				accessGroup.Description = context.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].Description");
-				accessGroup.CreateTime = context.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].CreateTime");
+				accessGroup.AccessGroupName = _ctx.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].AccessGroupName");
+				accessGroup.AccessGroupType = _ctx.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].AccessGroupType");
+				accessGroup.RuleCount = _ctx.IntegerValue("DescribeAccessGroups.AccessGroups["+ i +"].RuleCount");
+				accessGroup.MountTargetCount = _ctx.IntegerValue("DescribeAccessGroups.AccessGroups["+ i +"].MountTargetCount");
+				accessGroup.Description = _ctx.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].Description");
+				accessGroup.CreateTime = _ctx.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].CreateTime");
 
 				List<DescribeAccessGroupsResponse.DescribeAccessGroups_AccessGroup.DescribeAccessGroups_Tag> accessGroup_tags = new List<DescribeAccessGroupsResponse.DescribeAccessGroups_AccessGroup.DescribeAccessGroups_Tag>();
-				for (int j = 0; j < context.Length("DescribeAccessGroups.AccessGroups["+ i +"].Tags.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeAccessGroups.AccessGroups["+ i +"].Tags.Length"); j++) {
 					DescribeAccessGroupsResponse.DescribeAccessGroups_AccessGroup.DescribeAccessGroups_Tag tag = new DescribeAccessGroupsResponse.DescribeAccessGroups_AccessGroup.DescribeAccessGroups_Tag();
-					tag.Key = context.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].Tags["+ j +"].Key");
-					tag._Value = context.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].Tags["+ j +"].Value");
+					tag.Key = _ctx.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].Tags["+ j +"].Key");
+					tag._Value = _ctx.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].Tags["+ j +"].Value");
 
 					accessGroup_tags.Add(tag);
 				}

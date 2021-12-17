@@ -26,17 +26,17 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 {
     public class DescribeLDAPConfigResponseUnmarshaller
     {
-        public static DescribeLDAPConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLDAPConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLDAPConfigResponse describeLDAPConfigResponse = new DescribeLDAPConfigResponse();
 
-			describeLDAPConfigResponse.HttpResponse = context.HttpResponse;
-			describeLDAPConfigResponse.RequestId = context.StringValue("DescribeLDAPConfig.RequestId");
+			describeLDAPConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeLDAPConfigResponse.RequestId = _ctx.StringValue("DescribeLDAPConfig.RequestId");
 
 			DescribeLDAPConfigResponse.DescribeLDAPConfig_Ldap ldap = new DescribeLDAPConfigResponse.DescribeLDAPConfig_Ldap();
-			ldap.BindDN = context.StringValue("DescribeLDAPConfig.Ldap.BindDN");
-			ldap.URI = context.StringValue("DescribeLDAPConfig.Ldap.URI");
-			ldap.SearchBase = context.StringValue("DescribeLDAPConfig.Ldap.SearchBase");
+			ldap.BindDN = _ctx.StringValue("DescribeLDAPConfig.Ldap.BindDN");
+			ldap.URI = _ctx.StringValue("DescribeLDAPConfig.Ldap.URI");
+			ldap.SearchBase = _ctx.StringValue("DescribeLDAPConfig.Ldap.SearchBase");
 			describeLDAPConfigResponse.Ldap = ldap;
         
 			return describeLDAPConfigResponse;

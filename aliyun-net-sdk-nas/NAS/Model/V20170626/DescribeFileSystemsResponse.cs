@@ -120,6 +120,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private long? meteredSize;
 
+			private long? meteredIASize;
+
 			private long? bandwidth;
 
 			private long? capacity;
@@ -132,9 +134,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private long? mountTargetCountLimit;
 
+			private string nasNamespaceId;
+
+			private string kMSKeyId;
+
+			private string version;
+
 			private List<DescribeFileSystems_MountTarget> mountTargets;
 
 			private List<DescribeFileSystems_Package> packages;
+
+			private List<DescribeFileSystems_Tag2> tags;
+
+			private List<string> supportedFeatures;
 
 			private DescribeFileSystems_Ldap ldap;
 
@@ -270,6 +282,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
+			public long? MeteredIASize
+			{
+				get
+				{
+					return meteredIASize;
+				}
+				set	
+				{
+					meteredIASize = value;
+				}
+			}
+
 			public long? Bandwidth
 			{
 				get
@@ -342,6 +366,42 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
+			public string NasNamespaceId
+			{
+				get
+				{
+					return nasNamespaceId;
+				}
+				set	
+				{
+					nasNamespaceId = value;
+				}
+			}
+
+			public string KMSKeyId
+			{
+				get
+				{
+					return kMSKeyId;
+				}
+				set	
+				{
+					kMSKeyId = value;
+				}
+			}
+
+			public string Version
+			{
+				get
+				{
+					return version;
+				}
+				set	
+				{
+					version = value;
+				}
+			}
+
 			public List<DescribeFileSystems_MountTarget> MountTargets
 			{
 				get
@@ -363,6 +423,30 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					packages = value;
+				}
+			}
+
+			public List<DescribeFileSystems_Tag2> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public List<string> SupportedFeatures
+			{
+				get
+				{
+					return supportedFeatures;
+				}
+				set	
+				{
+					supportedFeatures = value;
 				}
 			}
 
@@ -393,7 +477,11 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 				private string status;
 
-				private List<DescribeFileSystems_Tag> tags;
+				private string dualStackMountTargetDomain;
+
+				private List<DescribeFileSystems_ClientMasterNode> clientMasterNodes;
+
+				private List<DescribeFileSystems_Tag> tags1;
 
 				public string MountTargetDomain
 				{
@@ -467,15 +555,85 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 					}
 				}
 
-				public List<DescribeFileSystems_Tag> Tags
+				public string DualStackMountTargetDomain
 				{
 					get
 					{
-						return tags;
+						return dualStackMountTargetDomain;
 					}
 					set	
 					{
-						tags = value;
+						dualStackMountTargetDomain = value;
+					}
+				}
+
+				public List<DescribeFileSystems_ClientMasterNode> ClientMasterNodes
+				{
+					get
+					{
+						return clientMasterNodes;
+					}
+					set	
+					{
+						clientMasterNodes = value;
+					}
+				}
+
+				public List<DescribeFileSystems_Tag> Tags1
+				{
+					get
+					{
+						return tags1;
+					}
+					set	
+					{
+						tags1 = value;
+					}
+				}
+
+				public class DescribeFileSystems_ClientMasterNode
+				{
+
+					private string ecsId;
+
+					private string ecsIp;
+
+					private string defaultPasswd;
+
+					public string EcsId
+					{
+						get
+						{
+							return ecsId;
+						}
+						set	
+						{
+							ecsId = value;
+						}
+					}
+
+					public string EcsIp
+					{
+						get
+						{
+							return ecsIp;
+						}
+						set	
+						{
+							ecsIp = value;
+						}
+					}
+
+					public string DefaultPasswd
+					{
+						get
+						{
+							return defaultPasswd;
+						}
+						set	
+						{
+							defaultPasswd = value;
+						}
 					}
 				}
 
@@ -582,6 +740,38 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 					set	
 					{
 						expiredTime = value;
+					}
+				}
+			}
+
+			public class DescribeFileSystems_Tag2
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

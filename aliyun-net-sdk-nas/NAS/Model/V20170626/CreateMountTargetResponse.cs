@@ -29,6 +29,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 		private string mountTargetDomain;
 
+		private CreateMountTarget_MountTargetExtra mountTargetExtra;
+
 		public string RequestId
 		{
 			get
@@ -50,6 +52,36 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			set	
 			{
 				mountTargetDomain = value;
+			}
+		}
+
+		public CreateMountTarget_MountTargetExtra MountTargetExtra
+		{
+			get
+			{
+				return mountTargetExtra;
+			}
+			set	
+			{
+				mountTargetExtra = value;
+			}
+		}
+
+		public class CreateMountTarget_MountTargetExtra
+		{
+
+			private string dualStackMountTargetDomain;
+
+			public string DualStackMountTargetDomain
+			{
+				get
+				{
+					return dualStackMountTargetDomain;
+				}
+				set	
+				{
+					dualStackMountTargetDomain = value;
+				}
 			}
 		}
 	}

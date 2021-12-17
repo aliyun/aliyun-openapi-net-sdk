@@ -26,21 +26,21 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 {
     public class DescribeAutoSnapshotTasksResponseUnmarshaller
     {
-        public static DescribeAutoSnapshotTasksResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAutoSnapshotTasksResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAutoSnapshotTasksResponse describeAutoSnapshotTasksResponse = new DescribeAutoSnapshotTasksResponse();
 
-			describeAutoSnapshotTasksResponse.HttpResponse = context.HttpResponse;
-			describeAutoSnapshotTasksResponse.RequestId = context.StringValue("DescribeAutoSnapshotTasks.RequestId");
-			describeAutoSnapshotTasksResponse.TotalCount = context.IntegerValue("DescribeAutoSnapshotTasks.TotalCount");
-			describeAutoSnapshotTasksResponse.PageSize = context.IntegerValue("DescribeAutoSnapshotTasks.PageSize");
-			describeAutoSnapshotTasksResponse.PageNumber = context.IntegerValue("DescribeAutoSnapshotTasks.PageNumber");
+			describeAutoSnapshotTasksResponse.HttpResponse = _ctx.HttpResponse;
+			describeAutoSnapshotTasksResponse.RequestId = _ctx.StringValue("DescribeAutoSnapshotTasks.RequestId");
+			describeAutoSnapshotTasksResponse.TotalCount = _ctx.IntegerValue("DescribeAutoSnapshotTasks.TotalCount");
+			describeAutoSnapshotTasksResponse.PageSize = _ctx.IntegerValue("DescribeAutoSnapshotTasks.PageSize");
+			describeAutoSnapshotTasksResponse.PageNumber = _ctx.IntegerValue("DescribeAutoSnapshotTasks.PageNumber");
 
 			List<DescribeAutoSnapshotTasksResponse.DescribeAutoSnapshotTasks_AutoSnapshotTask> describeAutoSnapshotTasksResponse_autoSnapshotTasks = new List<DescribeAutoSnapshotTasksResponse.DescribeAutoSnapshotTasks_AutoSnapshotTask>();
-			for (int i = 0; i < context.Length("DescribeAutoSnapshotTasks.AutoSnapshotTasks.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeAutoSnapshotTasks.AutoSnapshotTasks.Length"); i++) {
 				DescribeAutoSnapshotTasksResponse.DescribeAutoSnapshotTasks_AutoSnapshotTask autoSnapshotTask = new DescribeAutoSnapshotTasksResponse.DescribeAutoSnapshotTasks_AutoSnapshotTask();
-				autoSnapshotTask.SourceFileSystemId = context.StringValue("DescribeAutoSnapshotTasks.AutoSnapshotTasks["+ i +"].SourceFileSystemId");
-				autoSnapshotTask.AutoSnapshotPolicyId = context.StringValue("DescribeAutoSnapshotTasks.AutoSnapshotTasks["+ i +"].AutoSnapshotPolicyId");
+				autoSnapshotTask.SourceFileSystemId = _ctx.StringValue("DescribeAutoSnapshotTasks.AutoSnapshotTasks["+ i +"].SourceFileSystemId");
+				autoSnapshotTask.AutoSnapshotPolicyId = _ctx.StringValue("DescribeAutoSnapshotTasks.AutoSnapshotTasks["+ i +"].AutoSnapshotPolicyId");
 
 				describeAutoSnapshotTasksResponse_autoSnapshotTasks.Add(autoSnapshotTask);
 			}
