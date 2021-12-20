@@ -138,6 +138,14 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string log;
 
+			private string startTime;
+
+			private string endTime;
+
+			private long? timeDelay;
+
+			private long? affectRows;
+
 			[JsonProperty(PropertyName = "JobDetailId")]
 			public long? JobDetailId
 			{
@@ -265,6 +273,58 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					log = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StartTime")]
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "EndTime")]
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TimeDelay")]
+			public long? TimeDelay
+			{
+				get
+				{
+					return timeDelay;
+				}
+				set	
+				{
+					timeDelay = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "AffectRows")]
+			public long? AffectRows
+			{
+				get
+				{
+					return affectRows;
+				}
+				set	
+				{
+					affectRows = value;
 				}
 			}
 		}

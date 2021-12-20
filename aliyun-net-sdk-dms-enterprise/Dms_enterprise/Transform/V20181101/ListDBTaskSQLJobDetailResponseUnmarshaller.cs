@@ -50,6 +50,10 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 				dBTaskSQLJobDetail.SqlType = _ctx.StringValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].SqlType");
 				dBTaskSQLJobDetail.Status = _ctx.StringValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].Status");
 				dBTaskSQLJobDetail.Log = _ctx.StringValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].Log");
+				dBTaskSQLJobDetail.StartTime = _ctx.StringValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].StartTime");
+				dBTaskSQLJobDetail.EndTime = _ctx.StringValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].EndTime");
+				dBTaskSQLJobDetail.TimeDelay = _ctx.LongValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].TimeDelay");
+				dBTaskSQLJobDetail.AffectRows = _ctx.LongValue("ListDBTaskSQLJobDetail.DBTaskSQLJobDetailList["+ i +"].AffectRows");
 
 				listDBTaskSQLJobDetailResponse_dBTaskSQLJobDetailList.Add(dBTaskSQLJobDetail);
 			}

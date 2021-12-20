@@ -46,6 +46,7 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 				logicDatabase.SchemaName = _ctx.StringValue("ListLogicDatabases.LogicDatabaseList["+ i +"].SchemaName");
 				logicDatabase.SearchName = _ctx.StringValue("ListLogicDatabases.LogicDatabaseList["+ i +"].SearchName");
 				logicDatabase.EnvType = _ctx.StringValue("ListLogicDatabases.LogicDatabaseList["+ i +"].EnvType");
+				logicDatabase.Alias = _ctx.StringValue("ListLogicDatabases.LogicDatabaseList["+ i +"].Alias");
 
 				List<string> logicDatabase_ownerIdList = new List<string>();
 				for (int j = 0; j < _ctx.Length("ListLogicDatabases.LogicDatabaseList["+ i +"].OwnerIdList.Length"); j++) {
