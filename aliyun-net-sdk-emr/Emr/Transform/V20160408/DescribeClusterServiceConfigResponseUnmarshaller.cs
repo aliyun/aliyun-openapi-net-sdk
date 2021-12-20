@@ -56,6 +56,7 @@ namespace Aliyun.Acs.Emr.Transform.V20160408
 					configItemValue._Value = _ctx.StringValue("DescribeClusterServiceConfig.Config.ConfigValueList["+ i +"].ConfigItemValueList["+ j +"].Value");
 					configItemValue.IsCustom = _ctx.BooleanValue("DescribeClusterServiceConfig.Config.ConfigValueList["+ i +"].ConfigItemValueList["+ j +"].IsCustom");
 					configItemValue.Description = _ctx.StringValue("DescribeClusterServiceConfig.Config.ConfigValueList["+ i +"].ConfigItemValueList["+ j +"].Description");
+					configItemValue.ValueScope = _ctx.StringValue("DescribeClusterServiceConfig.Config.ConfigValueList["+ i +"].ConfigItemValueList["+ j +"].ValueScope");
 
 					configValue_configItemValueList.Add(configItemValue);
 				}

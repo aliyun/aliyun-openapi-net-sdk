@@ -252,6 +252,8 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 
 					private string description;
 
+					private string valueScope;
+
 					public string ItemName
 					{
 						get
@@ -297,6 +299,18 @@ namespace Aliyun.Acs.Emr.Model.V20160408
 						set	
 						{
 							description = value;
+						}
+					}
+
+					public string ValueScope
+					{
+						get
+						{
+							return valueScope;
+						}
+						set	
+						{
+							valueScope = value;
 						}
 					}
 				}
