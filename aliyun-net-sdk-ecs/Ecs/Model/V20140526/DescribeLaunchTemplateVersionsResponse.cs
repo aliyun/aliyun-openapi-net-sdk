@@ -301,6 +301,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string zoneId;
 
+				private int? ipv6AddressCount;
+
 				private List<DescribeLaunchTemplateVersions_DataDisk> dataDisks;
 
 				private List<DescribeLaunchTemplateVersions_NetworkInterface> networkInterfaces;
@@ -750,6 +752,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						zoneId = value;
+					}
+				}
+
+				public int? Ipv6AddressCount
+				{
+					get
+					{
+						return ipv6AddressCount;
+					}
+					set	
+					{
+						ipv6AddressCount = value;
 					}
 				}
 

@@ -66,6 +66,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? period;
 
+		private int? ipv6AddressCount;
+
 		private string templateResourceGroupId;
 
 		private long? ownerId;
@@ -320,6 +322,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				period = value;
 				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+			}
+		}
+
+		public int? Ipv6AddressCount
+		{
+			get
+			{
+				return ipv6AddressCount;
+			}
+			set	
+			{
+				ipv6AddressCount = value;
+				DictionaryUtil.Add(QueryParameters, "Ipv6AddressCount", value.ToString());
 			}
 		}
 

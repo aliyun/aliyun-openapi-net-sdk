@@ -122,6 +122,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string totalAssuranceTimes;
 
+			private string instanceChargeType;
+
+			private string startTimeType;
+
 			private List<DescribeElasticityAssurances_AllocatedResource> allocatedResources;
 
 			private List<DescribeElasticityAssurances_Tag> tags;
@@ -267,6 +271,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					totalAssuranceTimes = value;
+				}
+			}
+
+			public string InstanceChargeType
+			{
+				get
+				{
+					return instanceChargeType;
+				}
+				set	
+				{
+					instanceChargeType = value;
+				}
+			}
+
+			public string StartTimeType
+			{
+				get
+				{
+					return startTimeType;
+				}
+				set	
+				{
+					startTimeType = value;
 				}
 			}
 

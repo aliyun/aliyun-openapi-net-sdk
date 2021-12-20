@@ -1228,6 +1228,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
 						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
 						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
+						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
+						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
+						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
+						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (depth1 + 1), networkInterfaces[depth1]);
 					}
 				}
 			}
@@ -1525,6 +1529,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private List<string> securityGroupIdss = new List<string>(){ };
 
+			private string networkInterfaceTrafficMode;
+
+			private long? queuePairNumber;
+
+			private string instanceType;
+
+			private long? ipv6AddressCount;
+
+			private List<string> ipv6Addresss = new List<string>(){ };
+
 			[JsonProperty(PropertyName = "VSwitchId")]
 			public string VSwitchId
 			{
@@ -1613,6 +1627,71 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					securityGroupIdss = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "NetworkInterfaceTrafficMode")]
+			public string NetworkInterfaceTrafficMode
+			{
+				get
+				{
+					return networkInterfaceTrafficMode;
+				}
+				set	
+				{
+					networkInterfaceTrafficMode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "QueuePairNumber")]
+			public long? QueuePairNumber
+			{
+				get
+				{
+					return queuePairNumber;
+				}
+				set	
+				{
+					queuePairNumber = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "InstanceType")]
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Ipv6AddressCount")]
+			public long? Ipv6AddressCount
+			{
+				get
+				{
+					return ipv6AddressCount;
+				}
+				set	
+				{
+					ipv6AddressCount = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Ipv6Address")]
+			public List<string> Ipv6Addresss
+			{
+				get
+				{
+					return ipv6Addresss;
+				}
+				set	
+				{
+					ipv6Addresss = value;
 				}
 			}
 		}

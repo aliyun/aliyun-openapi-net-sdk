@@ -329,6 +329,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private List<DescribeInstanceHistoryEvents_InactiveDisk> inactiveDisks;
 
+				private List<string> migrationOptions;
+
 				public string Device
 				{
 					get
@@ -386,6 +388,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						inactiveDisks = value;
+					}
+				}
+
+				public List<string> MigrationOptions
+				{
+					get
+					{
+						return migrationOptions;
+					}
+					set	
+					{
+						migrationOptions = value;
 					}
 				}
 

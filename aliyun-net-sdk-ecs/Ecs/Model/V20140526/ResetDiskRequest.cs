@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string diskId;
 
+		private bool? dryRun;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -92,6 +94,20 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				diskId = value;
 				DictionaryUtil.Add(QueryParameters, "DiskId", value);
+			}
+		}
+
+		[JsonProperty(PropertyName = "DryRun")]
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 

@@ -75,6 +75,27 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			attachment.MemberNetworkInterfaceIds = attachment_memberNetworkInterfaceIds;
 			describeNetworkInterfaceAttributeResponse.Attachment = attachment;
 
+			DescribeNetworkInterfaceAttributeResponse.DescribeNetworkInterfaceAttribute_BondInterfaceSpecification bondInterfaceSpecification = new DescribeNetworkInterfaceAttributeResponse.DescribeNetworkInterfaceAttribute_BondInterfaceSpecification();
+			bondInterfaceSpecification.BondMode = _ctx.StringValue("DescribeNetworkInterfaceAttribute.BondInterfaceSpecification.BondMode");
+
+			List<DescribeNetworkInterfaceAttributeResponse.DescribeNetworkInterfaceAttribute_BondInterfaceSpecification.DescribeNetworkInterfaceAttribute_SlaveInterfaceSpecificationSet> bondInterfaceSpecification_slaveInterfaceSpecification2 = new List<DescribeNetworkInterfaceAttributeResponse.DescribeNetworkInterfaceAttribute_BondInterfaceSpecification.DescribeNetworkInterfaceAttribute_SlaveInterfaceSpecificationSet>();
+			for (int i = 0; i < _ctx.Length("DescribeNetworkInterfaceAttribute.BondInterfaceSpecification.SlaveInterfaceSpecification.Length"); i++) {
+				DescribeNetworkInterfaceAttributeResponse.DescribeNetworkInterfaceAttribute_BondInterfaceSpecification.DescribeNetworkInterfaceAttribute_SlaveInterfaceSpecificationSet slaveInterfaceSpecificationSet = new DescribeNetworkInterfaceAttributeResponse.DescribeNetworkInterfaceAttribute_BondInterfaceSpecification.DescribeNetworkInterfaceAttribute_SlaveInterfaceSpecificationSet();
+				slaveInterfaceSpecificationSet.SlaveNetworkInterfaceId = _ctx.StringValue("DescribeNetworkInterfaceAttribute.BondInterfaceSpecification.SlaveInterfaceSpecification["+ i +"].SlaveNetworkInterfaceId");
+				slaveInterfaceSpecificationSet.WorkState = _ctx.StringValue("DescribeNetworkInterfaceAttribute.BondInterfaceSpecification.SlaveInterfaceSpecification["+ i +"].WorkState");
+				slaveInterfaceSpecificationSet.BondNetworkInterfaceId = _ctx.StringValue("DescribeNetworkInterfaceAttribute.BondInterfaceSpecification.SlaveInterfaceSpecification["+ i +"].BondNetworkInterfaceId");
+
+				bondInterfaceSpecification_slaveInterfaceSpecification2.Add(slaveInterfaceSpecificationSet);
+			}
+			bondInterfaceSpecification.SlaveInterfaceSpecification2 = bondInterfaceSpecification_slaveInterfaceSpecification2;
+			describeNetworkInterfaceAttributeResponse.BondInterfaceSpecification = bondInterfaceSpecification;
+
+			DescribeNetworkInterfaceAttributeResponse.DescribeNetworkInterfaceAttribute_SlaveInterfaceSpecification slaveInterfaceSpecification = new DescribeNetworkInterfaceAttributeResponse.DescribeNetworkInterfaceAttribute_SlaveInterfaceSpecification();
+			slaveInterfaceSpecification.SlaveNetworkInterfaceId = _ctx.StringValue("DescribeNetworkInterfaceAttribute.SlaveInterfaceSpecification.SlaveNetworkInterfaceId");
+			slaveInterfaceSpecification.WorkState = _ctx.StringValue("DescribeNetworkInterfaceAttribute.SlaveInterfaceSpecification.WorkState");
+			slaveInterfaceSpecification.BondNetworkInterfaceId = _ctx.StringValue("DescribeNetworkInterfaceAttribute.SlaveInterfaceSpecification.BondNetworkInterfaceId");
+			describeNetworkInterfaceAttributeResponse.SlaveInterfaceSpecification = slaveInterfaceSpecification;
+
 			List<DescribeNetworkInterfaceAttributeResponse.DescribeNetworkInterfaceAttribute_PrivateIpSet> describeNetworkInterfaceAttributeResponse_privateIpSets = new List<DescribeNetworkInterfaceAttributeResponse.DescribeNetworkInterfaceAttribute_PrivateIpSet>();
 			for (int i = 0; i < _ctx.Length("DescribeNetworkInterfaceAttribute.PrivateIpSets.Length"); i++) {
 				DescribeNetworkInterfaceAttributeResponse.DescribeNetworkInterfaceAttribute_PrivateIpSet privateIpSet = new DescribeNetworkInterfaceAttributeResponse.DescribeNetworkInterfaceAttribute_PrivateIpSet();

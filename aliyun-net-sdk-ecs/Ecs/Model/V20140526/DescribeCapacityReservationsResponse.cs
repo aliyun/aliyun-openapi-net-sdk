@@ -124,6 +124,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string platform;
 
+			private string startTimeType;
+
 			private List<DescribeCapacityReservations_AllocatedResource> allocatedResources;
 
 			private List<DescribeCapacityReservations_Tag> tags;
@@ -281,6 +283,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					platform = value;
+				}
+			}
+
+			public string StartTimeType
+			{
+				get
+				{
+					return startTimeType;
+				}
+				set	
+				{
+					startTimeType = value;
 				}
 			}
 

@@ -86,6 +86,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				launchTemplateData.ResourceGroupId = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ResourceGroupId");
 				launchTemplateData.InternetChargeType = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InternetChargeType");
 				launchTemplateData.ZoneId = _ctx.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ZoneId");
+				launchTemplateData.Ipv6AddressCount = _ctx.IntegerValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Ipv6AddressCount");
 
 				List<string> launchTemplateData_securityGroupIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SecurityGroupIds.Length"); j++) {

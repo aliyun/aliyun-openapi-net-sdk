@@ -66,6 +66,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string launchTemplateId;
 
+		private int? ipv6AddressCount;
+
 		private long? ownerId;
 
 		private string vSwitchId;
@@ -310,6 +312,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				launchTemplateId = value;
 				DictionaryUtil.Add(QueryParameters, "LaunchTemplateId", value);
+			}
+		}
+
+		public int? Ipv6AddressCount
+		{
+			get
+			{
+				return ipv6AddressCount;
+			}
+			set	
+			{
+				ipv6AddressCount = value;
+				DictionaryUtil.Add(QueryParameters, "Ipv6AddressCount", value.ToString());
 			}
 		}
 

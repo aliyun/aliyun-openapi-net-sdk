@@ -48,9 +48,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string eventTimeStart;
 
+		private string resourceGroupId;
+
 		private int? pageSize;
 
 		private List<string> diskIds = new List<string>(){ };
+
+		private List<string> tags = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -118,6 +122,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
 		public int? PageSize
 		{
 			get
@@ -141,6 +158,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				diskIds = value;
+			}
+		}
+
+		public List<string> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				if(tags != null)
+				{
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
+				}
 			}
 		}
 
@@ -232,6 +270,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				status = value;
 				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string key;
+
+			private string value_;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+
+			public string Value_
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
 		}
 

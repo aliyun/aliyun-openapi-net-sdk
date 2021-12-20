@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				elasticityAssuranceItem.Description = _ctx.StringValue("DescribeElasticityAssurances.ElasticityAssuranceSet["+ i +"].Description");
 				elasticityAssuranceItem.ResourceGroupId = _ctx.StringValue("DescribeElasticityAssurances.ElasticityAssuranceSet["+ i +"].ResourceGroupId");
 				elasticityAssuranceItem.TotalAssuranceTimes = _ctx.StringValue("DescribeElasticityAssurances.ElasticityAssuranceSet["+ i +"].TotalAssuranceTimes");
+				elasticityAssuranceItem.InstanceChargeType = _ctx.StringValue("DescribeElasticityAssurances.ElasticityAssuranceSet["+ i +"].InstanceChargeType");
+				elasticityAssuranceItem.StartTimeType = _ctx.StringValue("DescribeElasticityAssurances.ElasticityAssuranceSet["+ i +"].StartTimeType");
 
 				List<DescribeElasticityAssurancesResponse.DescribeElasticityAssurances_ElasticityAssuranceItem.DescribeElasticityAssurances_AllocatedResource> elasticityAssuranceItem_allocatedResources = new List<DescribeElasticityAssurancesResponse.DescribeElasticityAssurances_ElasticityAssuranceItem.DescribeElasticityAssurances_AllocatedResource>();
 				for (int j = 0; j < _ctx.Length("DescribeElasticityAssurances.ElasticityAssuranceSet["+ i +"].AllocatedResources.Length"); j++) {

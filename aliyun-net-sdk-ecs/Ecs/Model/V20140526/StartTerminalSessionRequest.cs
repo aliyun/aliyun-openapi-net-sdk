@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<string> instanceIds = new List<string>(){ };
 
+		private int? portNumber;
+
 		[JsonProperty(PropertyName = "ResourceOwnerId")]
 		public long? ResourceOwnerId
 		{
@@ -118,6 +120,20 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set
 			{
 				instanceIds = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PortNumber")]
+		public int? PortNumber
+		{
+			get
+			{
+				return portNumber;
+			}
+			set	
+			{
+				portNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PortNumber", value.ToString());
 			}
 		}
 

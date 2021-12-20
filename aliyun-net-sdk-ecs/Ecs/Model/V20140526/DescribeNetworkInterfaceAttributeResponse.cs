@@ -77,6 +77,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private DescribeNetworkInterfaceAttribute_Attachment attachment;
 
+		private DescribeNetworkInterfaceAttribute_BondInterfaceSpecification bondInterfaceSpecification;
+
+		private DescribeNetworkInterfaceAttribute_SlaveInterfaceSpecification slaveInterfaceSpecification;
+
 		public string CreationTime
 		{
 			get
@@ -389,6 +393,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public DescribeNetworkInterfaceAttribute_BondInterfaceSpecification BondInterfaceSpecification
+		{
+			get
+			{
+				return bondInterfaceSpecification;
+			}
+			set	
+			{
+				bondInterfaceSpecification = value;
+			}
+		}
+
+		public DescribeNetworkInterfaceAttribute_SlaveInterfaceSpecification SlaveInterfaceSpecification
+		{
+			get
+			{
+				return slaveInterfaceSpecification;
+			}
+			set	
+			{
+				slaveInterfaceSpecification = value;
+			}
+		}
+
 		public class DescribeNetworkInterfaceAttribute_PrivateIpSet
 		{
 
@@ -605,6 +633,130 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					memberNetworkInterfaceIds = value;
+				}
+			}
+		}
+
+		public class DescribeNetworkInterfaceAttribute_BondInterfaceSpecification
+		{
+
+			private string bondMode;
+
+			private List<DescribeNetworkInterfaceAttribute_SlaveInterfaceSpecificationSet> slaveInterfaceSpecification2;
+
+			public string BondMode
+			{
+				get
+				{
+					return bondMode;
+				}
+				set	
+				{
+					bondMode = value;
+				}
+			}
+
+			public List<DescribeNetworkInterfaceAttribute_SlaveInterfaceSpecificationSet> SlaveInterfaceSpecification2
+			{
+				get
+				{
+					return slaveInterfaceSpecification2;
+				}
+				set	
+				{
+					slaveInterfaceSpecification2 = value;
+				}
+			}
+
+			public class DescribeNetworkInterfaceAttribute_SlaveInterfaceSpecificationSet
+			{
+
+				private string slaveNetworkInterfaceId;
+
+				private string workState;
+
+				private string bondNetworkInterfaceId;
+
+				public string SlaveNetworkInterfaceId
+				{
+					get
+					{
+						return slaveNetworkInterfaceId;
+					}
+					set	
+					{
+						slaveNetworkInterfaceId = value;
+					}
+				}
+
+				public string WorkState
+				{
+					get
+					{
+						return workState;
+					}
+					set	
+					{
+						workState = value;
+					}
+				}
+
+				public string BondNetworkInterfaceId
+				{
+					get
+					{
+						return bondNetworkInterfaceId;
+					}
+					set	
+					{
+						bondNetworkInterfaceId = value;
+					}
+				}
+			}
+		}
+
+		public class DescribeNetworkInterfaceAttribute_SlaveInterfaceSpecification
+		{
+
+			private string slaveNetworkInterfaceId;
+
+			private string workState;
+
+			private string bondNetworkInterfaceId;
+
+			public string SlaveNetworkInterfaceId
+			{
+				get
+				{
+					return slaveNetworkInterfaceId;
+				}
+				set	
+				{
+					slaveNetworkInterfaceId = value;
+				}
+			}
+
+			public string WorkState
+			{
+				get
+				{
+					return workState;
+				}
+				set	
+				{
+					workState = value;
+				}
+			}
+
+			public string BondNetworkInterfaceId
+			{
+				get
+				{
+					return bondNetworkInterfaceId;
+				}
+				set	
+				{
+					bondNetworkInterfaceId = value;
 				}
 			}
 		}
