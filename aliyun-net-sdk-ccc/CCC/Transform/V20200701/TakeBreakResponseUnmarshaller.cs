@@ -43,18 +43,18 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			takeBreakResponse._Params = takeBreakResponse_params;
 
 			TakeBreakResponse.TakeBreak_Data data = new TakeBreakResponse.TakeBreak_Data();
-			data.BreakCode = _ctx.StringValue("TakeBreak.Data.BreakCode");
-			data.DeviceId = _ctx.StringValue("TakeBreak.Data.DeviceId");
 			data.Extension = _ctx.StringValue("TakeBreak.Data.Extension");
 			data.Heartbeat = _ctx.LongValue("TakeBreak.Data.Heartbeat");
-			data.InstanceId = _ctx.StringValue("TakeBreak.Data.InstanceId");
-			data.JobId = _ctx.StringValue("TakeBreak.Data.JobId");
-			data.Mobile = _ctx.StringValue("TakeBreak.Data.Mobile");
-			data.OutboundScenario = _ctx.BooleanValue("TakeBreak.Data.OutboundScenario");
-			data.Reserved = _ctx.LongValue("TakeBreak.Data.Reserved");
-			data.UserId = _ctx.StringValue("TakeBreak.Data.UserId");
-			data.UserState = _ctx.StringValue("TakeBreak.Data.UserState");
 			data.WorkMode = _ctx.StringValue("TakeBreak.Data.WorkMode");
+			data.DeviceId = _ctx.StringValue("TakeBreak.Data.DeviceId");
+			data.UserId = _ctx.StringValue("TakeBreak.Data.UserId");
+			data.Reserved = _ctx.LongValue("TakeBreak.Data.Reserved");
+			data.BreakCode = _ctx.StringValue("TakeBreak.Data.BreakCode");
+			data.InstanceId = _ctx.StringValue("TakeBreak.Data.InstanceId");
+			data.OutboundScenario = _ctx.BooleanValue("TakeBreak.Data.OutboundScenario");
+			data.Mobile = _ctx.StringValue("TakeBreak.Data.Mobile");
+			data.JobId = _ctx.StringValue("TakeBreak.Data.JobId");
+			data.UserState = _ctx.StringValue("TakeBreak.Data.UserState");
 
 			List<string> data_signedSkillGroupIdList = new List<string>();
 			for (int i = 0; i < _ctx.Length("TakeBreak.Data.SignedSkillGroupIdList.Length"); i++) {

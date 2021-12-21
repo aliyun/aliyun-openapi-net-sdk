@@ -43,15 +43,15 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			signInGroupResponse._Params = signInGroupResponse_params;
 
 			SignInGroupResponse.SignInGroup_Data data = new SignInGroupResponse.SignInGroup_Data();
-			data.BreakCode = _ctx.StringValue("SignInGroup.Data.BreakCode");
-			data.DeviceId = _ctx.StringValue("SignInGroup.Data.DeviceId");
 			data.Extension = _ctx.StringValue("SignInGroup.Data.Extension");
-			data.InstanceId = _ctx.StringValue("SignInGroup.Data.InstanceId");
-			data.JobId = _ctx.StringValue("SignInGroup.Data.JobId");
-			data.OutboundScenario = _ctx.BooleanValue("SignInGroup.Data.OutboundScenario");
-			data.UserId = _ctx.StringValue("SignInGroup.Data.UserId");
-			data.UserState = _ctx.StringValue("SignInGroup.Data.UserState");
 			data.WorkMode = _ctx.StringValue("SignInGroup.Data.WorkMode");
+			data.DeviceId = _ctx.StringValue("SignInGroup.Data.DeviceId");
+			data.JobId = _ctx.StringValue("SignInGroup.Data.JobId");
+			data.UserId = _ctx.StringValue("SignInGroup.Data.UserId");
+			data.BreakCode = _ctx.StringValue("SignInGroup.Data.BreakCode");
+			data.InstanceId = _ctx.StringValue("SignInGroup.Data.InstanceId");
+			data.OutboundScenario = _ctx.BooleanValue("SignInGroup.Data.OutboundScenario");
+			data.UserState = _ctx.StringValue("SignInGroup.Data.UserState");
 
 			List<string> data_signedSkillGroupIdList = new List<string>();
 			for (int i = 0; i < _ctx.Length("SignInGroup.Data.SignedSkillGroupIdList.Length"); i++) {

@@ -31,10 +31,10 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			RemoveSkillGroupsFromUserResponse removeSkillGroupsFromUserResponse = new RemoveSkillGroupsFromUserResponse();
 
 			removeSkillGroupsFromUserResponse.HttpResponse = _ctx.HttpResponse;
-			removeSkillGroupsFromUserResponse.Code = _ctx.StringValue("RemoveSkillGroupsFromUser.Code");
-			removeSkillGroupsFromUserResponse.Data = _ctx.StringValue("RemoveSkillGroupsFromUser.Data");
 			removeSkillGroupsFromUserResponse.HttpStatusCode = _ctx.IntegerValue("RemoveSkillGroupsFromUser.HttpStatusCode");
+			removeSkillGroupsFromUserResponse.Code = _ctx.StringValue("RemoveSkillGroupsFromUser.Code");
 			removeSkillGroupsFromUserResponse.Message = _ctx.StringValue("RemoveSkillGroupsFromUser.Message");
+			removeSkillGroupsFromUserResponse.Data = _ctx.StringValue("RemoveSkillGroupsFromUser.Data");
 			removeSkillGroupsFromUserResponse.RequestId = _ctx.StringValue("RemoveSkillGroupsFromUser.RequestId");
         
 			return removeSkillGroupsFromUserResponse;

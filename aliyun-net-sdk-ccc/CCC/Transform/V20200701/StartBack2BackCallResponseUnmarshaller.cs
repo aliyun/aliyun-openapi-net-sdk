@@ -52,19 +52,19 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			List<StartBack2BackCallResponse.StartBack2BackCall_Data.StartBack2BackCall_CallContext.StartBack2BackCall_ChannelContext> callContext_channelContexts = new List<StartBack2BackCallResponse.StartBack2BackCall_Data.StartBack2BackCall_CallContext.StartBack2BackCall_ChannelContext>();
 			for (int i = 0; i < _ctx.Length("StartBack2BackCall.Data.CallContext.ChannelContexts.Length"); i++) {
 				StartBack2BackCallResponse.StartBack2BackCall_Data.StartBack2BackCall_CallContext.StartBack2BackCall_ChannelContext channelContext = new StartBack2BackCallResponse.StartBack2BackCall_Data.StartBack2BackCall_CallContext.StartBack2BackCall_ChannelContext();
-				channelContext.AssociatedData = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].AssociatedData");
-				channelContext.CallType = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].CallType");
-				channelContext.ChannelFlags = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags");
-				channelContext.ChannelId = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].ChannelId");
+				channelContext.ReleaseInitiator = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].ReleaseInitiator");
 				channelContext.ChannelState = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].ChannelState");
 				channelContext.Destination = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].Destination");
-				channelContext.JobId = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].JobId");
-				channelContext.Originator = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].Originator");
-				channelContext.ReleaseInitiator = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].ReleaseInitiator");
-				channelContext.ReleaseReason = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason");
-				channelContext.Timestamp = _ctx.LongValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].Timestamp");
-				channelContext.UserExtension = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].UserExtension");
 				channelContext.UserId = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].UserId");
+				channelContext.ChannelFlags = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags");
+				channelContext.Timestamp = _ctx.LongValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].Timestamp");
+				channelContext.AssociatedData = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].AssociatedData");
+				channelContext.ReleaseReason = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason");
+				channelContext.CallType = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].CallType");
+				channelContext.JobId = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].JobId");
+				channelContext.ChannelId = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].ChannelId");
+				channelContext.Originator = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].Originator");
+				channelContext.UserExtension = _ctx.StringValue("StartBack2BackCall.Data.CallContext.ChannelContexts["+ i +"].UserExtension");
 
 				callContext_channelContexts.Add(channelContext);
 			}
@@ -72,20 +72,20 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			data.CallContext = callContext;
 
 			StartBack2BackCallResponse.StartBack2BackCall_Data.StartBack2BackCall_UserContext userContext = new StartBack2BackCallResponse.StartBack2BackCall_Data.StartBack2BackCall_UserContext();
-			userContext.BreakCode = _ctx.StringValue("StartBack2BackCall.Data.UserContext.BreakCode");
-			userContext.DeviceId = _ctx.StringValue("StartBack2BackCall.Data.UserContext.DeviceId");
-			userContext.DeviceState = _ctx.StringValue("StartBack2BackCall.Data.UserContext.DeviceState");
 			userContext.Extension = _ctx.StringValue("StartBack2BackCall.Data.UserContext.Extension");
 			userContext.Heartbeat = _ctx.LongValue("StartBack2BackCall.Data.UserContext.Heartbeat");
-			userContext.InstanceId = _ctx.StringValue("StartBack2BackCall.Data.UserContext.InstanceId");
-			userContext.JobId = _ctx.StringValue("StartBack2BackCall.Data.UserContext.JobId");
-			userContext.Mobile = _ctx.StringValue("StartBack2BackCall.Data.UserContext.Mobile");
-			userContext.OutboundScenario = _ctx.BooleanValue("StartBack2BackCall.Data.UserContext.OutboundScenario");
-			userContext.Reserved = _ctx.LongValue("StartBack2BackCall.Data.UserContext.Reserved");
-			userContext.Uri = _ctx.StringValue("StartBack2BackCall.Data.UserContext.Uri");
-			userContext.UserId = _ctx.StringValue("StartBack2BackCall.Data.UserContext.UserId");
-			userContext.UserState = _ctx.StringValue("StartBack2BackCall.Data.UserContext.UserState");
 			userContext.WorkMode = _ctx.StringValue("StartBack2BackCall.Data.UserContext.WorkMode");
+			userContext.DeviceId = _ctx.StringValue("StartBack2BackCall.Data.UserContext.DeviceId");
+			userContext.UserId = _ctx.StringValue("StartBack2BackCall.Data.UserContext.UserId");
+			userContext.Reserved = _ctx.LongValue("StartBack2BackCall.Data.UserContext.Reserved");
+			userContext.BreakCode = _ctx.StringValue("StartBack2BackCall.Data.UserContext.BreakCode");
+			userContext.InstanceId = _ctx.StringValue("StartBack2BackCall.Data.UserContext.InstanceId");
+			userContext.OutboundScenario = _ctx.BooleanValue("StartBack2BackCall.Data.UserContext.OutboundScenario");
+			userContext.Uri = _ctx.StringValue("StartBack2BackCall.Data.UserContext.Uri");
+			userContext.DeviceState = _ctx.StringValue("StartBack2BackCall.Data.UserContext.DeviceState");
+			userContext.Mobile = _ctx.StringValue("StartBack2BackCall.Data.UserContext.Mobile");
+			userContext.JobId = _ctx.StringValue("StartBack2BackCall.Data.UserContext.JobId");
+			userContext.UserState = _ctx.StringValue("StartBack2BackCall.Data.UserContext.UserState");
 
 			List<string> userContext_signedSkillGroupIdList = new List<string>();
 			for (int i = 0; i < _ctx.Length("StartBack2BackCall.Data.UserContext.SignedSkillGroupIdList.Length"); i++) {

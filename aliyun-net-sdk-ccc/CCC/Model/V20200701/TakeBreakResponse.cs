@@ -112,55 +112,31 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 		public class TakeBreak_Data
 		{
 
-			private string breakCode;
-
-			private string deviceId;
-
 			private string extension;
 
 			private long? heartbeat;
 
-			private string instanceId;
+			private string workMode;
 
-			private string jobId;
-
-			private string mobile;
-
-			private bool? outboundScenario;
-
-			private long? reserved;
+			private string deviceId;
 
 			private string userId;
 
+			private long? reserved;
+
+			private string breakCode;
+
+			private string instanceId;
+
+			private bool? outboundScenario;
+
+			private string mobile;
+
+			private string jobId;
+
 			private string userState;
 
-			private string workMode;
-
 			private List<string> signedSkillGroupIdList;
-
-			public string BreakCode
-			{
-				get
-				{
-					return breakCode;
-				}
-				set	
-				{
-					breakCode = value;
-				}
-			}
-
-			public string DeviceId
-			{
-				get
-				{
-					return deviceId;
-				}
-				set	
-				{
-					deviceId = value;
-				}
-			}
 
 			public string Extension
 			{
@@ -186,63 +162,27 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				}
 			}
 
-			public string InstanceId
+			public string WorkMode
 			{
 				get
 				{
-					return instanceId;
+					return workMode;
 				}
 				set	
 				{
-					instanceId = value;
+					workMode = value;
 				}
 			}
 
-			public string JobId
+			public string DeviceId
 			{
 				get
 				{
-					return jobId;
+					return deviceId;
 				}
 				set	
 				{
-					jobId = value;
-				}
-			}
-
-			public string Mobile
-			{
-				get
-				{
-					return mobile;
-				}
-				set	
-				{
-					mobile = value;
-				}
-			}
-
-			public bool? OutboundScenario
-			{
-				get
-				{
-					return outboundScenario;
-				}
-				set	
-				{
-					outboundScenario = value;
-				}
-			}
-
-			public long? Reserved
-			{
-				get
-				{
-					return reserved;
-				}
-				set	
-				{
-					reserved = value;
+					deviceId = value;
 				}
 			}
 
@@ -258,6 +198,78 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				}
 			}
 
+			public long? Reserved
+			{
+				get
+				{
+					return reserved;
+				}
+				set	
+				{
+					reserved = value;
+				}
+			}
+
+			public string BreakCode
+			{
+				get
+				{
+					return breakCode;
+				}
+				set	
+				{
+					breakCode = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public bool? OutboundScenario
+			{
+				get
+				{
+					return outboundScenario;
+				}
+				set	
+				{
+					outboundScenario = value;
+				}
+			}
+
+			public string Mobile
+			{
+				get
+				{
+					return mobile;
+				}
+				set	
+				{
+					mobile = value;
+				}
+			}
+
+			public string JobId
+			{
+				get
+				{
+					return jobId;
+				}
+				set	
+				{
+					jobId = value;
+				}
+			}
+
 			public string UserState
 			{
 				get
@@ -267,18 +279,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				set	
 				{
 					userState = value;
-				}
-			}
-
-			public string WorkMode
-			{
-				get
-				{
-					return workMode;
-				}
-				set	
-				{
-					workMode = value;
 				}
 			}
 

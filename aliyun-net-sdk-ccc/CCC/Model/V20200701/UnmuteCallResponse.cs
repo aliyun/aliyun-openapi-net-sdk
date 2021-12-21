@@ -202,81 +202,57 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				public class UnmuteCall_ChannelContext
 				{
 
-					private string associatedData;
+					private int? index;
 
-					private string callType;
-
-					private string channelFlags;
-
-					private string channelId;
+					private string releaseInitiator;
 
 					private string channelState;
 
 					private string destination;
 
-					private int? index;
+					private string userId;
 
-					private string jobId;
-
-					private string originator;
-
-					private string releaseInitiator;
-
-					private string releaseReason;
+					private string channelFlags;
 
 					private string skillGroupId;
 
 					private long? timestamp;
 
+					private string associatedData;
+
+					private string releaseReason;
+
+					private string callType;
+
+					private string jobId;
+
+					private string channelId;
+
 					private string userExtension;
 
-					private string userId;
+					private string originator;
 
-					public string AssociatedData
+					public int? Index
 					{
 						get
 						{
-							return associatedData;
+							return index;
 						}
 						set	
 						{
-							associatedData = value;
+							index = value;
 						}
 					}
 
-					public string CallType
+					public string ReleaseInitiator
 					{
 						get
 						{
-							return callType;
+							return releaseInitiator;
 						}
 						set	
 						{
-							callType = value;
-						}
-					}
-
-					public string ChannelFlags
-					{
-						get
-						{
-							return channelFlags;
-						}
-						set	
-						{
-							channelFlags = value;
-						}
-					}
-
-					public string ChannelId
-					{
-						get
-						{
-							return channelId;
-						}
-						set	
-						{
-							channelId = value;
+							releaseInitiator = value;
 						}
 					}
 
@@ -304,63 +280,27 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 						}
 					}
 
-					public int? Index
+					public string UserId
 					{
 						get
 						{
-							return index;
+							return userId;
 						}
 						set	
 						{
-							index = value;
+							userId = value;
 						}
 					}
 
-					public string JobId
+					public string ChannelFlags
 					{
 						get
 						{
-							return jobId;
+							return channelFlags;
 						}
 						set	
 						{
-							jobId = value;
-						}
-					}
-
-					public string Originator
-					{
-						get
-						{
-							return originator;
-						}
-						set	
-						{
-							originator = value;
-						}
-					}
-
-					public string ReleaseInitiator
-					{
-						get
-						{
-							return releaseInitiator;
-						}
-						set	
-						{
-							releaseInitiator = value;
-						}
-					}
-
-					public string ReleaseReason
-					{
-						get
-						{
-							return releaseReason;
-						}
-						set	
-						{
-							releaseReason = value;
+							channelFlags = value;
 						}
 					}
 
@@ -388,6 +328,66 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 						}
 					}
 
+					public string AssociatedData
+					{
+						get
+						{
+							return associatedData;
+						}
+						set	
+						{
+							associatedData = value;
+						}
+					}
+
+					public string ReleaseReason
+					{
+						get
+						{
+							return releaseReason;
+						}
+						set	
+						{
+							releaseReason = value;
+						}
+					}
+
+					public string CallType
+					{
+						get
+						{
+							return callType;
+						}
+						set	
+						{
+							callType = value;
+						}
+					}
+
+					public string JobId
+					{
+						get
+						{
+							return jobId;
+						}
+						set	
+						{
+							jobId = value;
+						}
+					}
+
+					public string ChannelId
+					{
+						get
+						{
+							return channelId;
+						}
+						set	
+						{
+							channelId = value;
+						}
+					}
+
 					public string UserExtension
 					{
 						get
@@ -400,15 +400,15 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 						}
 					}
 
-					public string UserId
+					public string Originator
 					{
 						get
 						{
-							return userId;
+							return originator;
 						}
 						set	
 						{
-							userId = value;
+							originator = value;
 						}
 					}
 				}
@@ -417,51 +417,39 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			public class UnmuteCall_UserContext
 			{
 
-				private string breakCode;
-
-				private string deviceId;
+				private long? heartbeat;
 
 				private string extension;
 
-				private long? heartbeat;
-
-				private string instanceId;
-
-				private string jobId;
+				private string workMode;
 
 				private string mobile;
 
-				private bool? outboundScenario;
+				private string deviceId;
+
+				private string jobId;
 
 				private string userId;
 
-				private string userState;
+				private string breakCode;
 
-				private string workMode;
+				private string instanceId;
+
+				private bool? outboundScenario;
+
+				private string userState;
 
 				private List<string> signedSkillGroupIdList;
 
-				public string BreakCode
+				public long? Heartbeat
 				{
 					get
 					{
-						return breakCode;
+						return heartbeat;
 					}
 					set	
 					{
-						breakCode = value;
-					}
-				}
-
-				public string DeviceId
-				{
-					get
-					{
-						return deviceId;
-					}
-					set	
-					{
-						deviceId = value;
+						heartbeat = value;
 					}
 				}
 
@@ -477,39 +465,15 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public long? Heartbeat
+				public string WorkMode
 				{
 					get
 					{
-						return heartbeat;
+						return workMode;
 					}
 					set	
 					{
-						heartbeat = value;
-					}
-				}
-
-				public string InstanceId
-				{
-					get
-					{
-						return instanceId;
-					}
-					set	
-					{
-						instanceId = value;
-					}
-				}
-
-				public string JobId
-				{
-					get
-					{
-						return jobId;
-					}
-					set	
-					{
-						jobId = value;
+						workMode = value;
 					}
 				}
 
@@ -525,15 +489,27 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
-				public bool? OutboundScenario
+				public string DeviceId
 				{
 					get
 					{
-						return outboundScenario;
+						return deviceId;
 					}
 					set	
 					{
-						outboundScenario = value;
+						deviceId = value;
+					}
+				}
+
+				public string JobId
+				{
+					get
+					{
+						return jobId;
+					}
+					set	
+					{
+						jobId = value;
 					}
 				}
 
@@ -549,6 +525,42 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					}
 				}
 
+				public string BreakCode
+				{
+					get
+					{
+						return breakCode;
+					}
+					set	
+					{
+						breakCode = value;
+					}
+				}
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
+
+				public bool? OutboundScenario
+				{
+					get
+					{
+						return outboundScenario;
+					}
+					set	
+					{
+						outboundScenario = value;
+					}
+				}
+
 				public string UserState
 				{
 					get
@@ -558,18 +570,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						userState = value;
-					}
-				}
-
-				public string WorkMode
-				{
-					get
-					{
-						return workMode;
-					}
-					set	
-					{
-						workMode = value;
 					}
 				}
 

@@ -60,6 +60,7 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 				userDetail.RoleName = _ctx.StringValue("ListUsers.Data.List["+ i +"].RoleName");
 				userDetail.RoleId = _ctx.StringValue("ListUsers.Data.List["+ i +"].RoleId");
 				userDetail.PrimaryAccount = _ctx.BooleanValue("ListUsers.Data.List["+ i +"].PrimaryAccount");
+				userDetail.RamId = _ctx.LongValue("ListUsers.Data.List["+ i +"].RamId");
 
 				List<ListUsersResponse.ListUsers_Data.ListUsers_UserDetail.ListUsers_PhoneNumber> userDetail_personalOutboundNumberList = new List<ListUsersResponse.ListUsers_Data.ListUsers_UserDetail.ListUsers_PhoneNumber>();
 				for (int j = 0; j < _ctx.Length("ListUsers.Data.List["+ i +"].PersonalOutboundNumberList.Length"); j++) {

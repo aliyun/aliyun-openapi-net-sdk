@@ -25,39 +25,15 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 	public class ModifyUserLevelsOfSkillGroupResponse : AcsResponse
 	{
 
-		private string code;
-
-		private string data;
-
 		private int? httpStatusCode;
+
+		private string code;
 
 		private string message;
 
+		private string data;
+
 		private string requestId;
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -71,6 +47,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			}
 		}
 
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
 		public string Message
 		{
 			get
@@ -80,6 +68,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
 			}
 		}
 

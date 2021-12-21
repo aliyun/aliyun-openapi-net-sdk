@@ -25,43 +25,19 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 	public class RemovePhoneNumbersResponse : AcsResponse
 	{
 
-		private string code;
-
-		private string data;
-
 		private int? httpStatusCode;
+
+		private string code;
 
 		private string message;
 
-		private string requestId;
+		private string data;
 
-		private List<string> _params;
+		private string requestId;
 
 		private List<string> failureList;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-			}
-		}
+		private List<string> _params;
 
 		public int? HttpStatusCode
 		{
@@ -72,6 +48,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			set	
 			{
 				httpStatusCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -87,6 +75,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			}
 		}
 
+		public string Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
 		public string RequestId
 		{
 			get
@@ -99,18 +99,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			}
 		}
 
-		public List<string> _Params
-		{
-			get
-			{
-				return _params;
-			}
-			set	
-			{
-				_params = value;
-			}
-		}
-
 		public List<string> FailureList
 		{
 			get
@@ -120,6 +108,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 			set	
 			{
 				failureList = value;
+			}
+		}
+
+		public List<string> _Params
+		{
+			get
+			{
+				return _params;
+			}
+			set	
+			{
+				_params = value;
 			}
 		}
 	}

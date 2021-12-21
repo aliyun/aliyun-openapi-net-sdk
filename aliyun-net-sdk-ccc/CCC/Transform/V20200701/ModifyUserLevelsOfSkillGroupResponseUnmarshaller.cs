@@ -31,10 +31,10 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			ModifyUserLevelsOfSkillGroupResponse modifyUserLevelsOfSkillGroupResponse = new ModifyUserLevelsOfSkillGroupResponse();
 
 			modifyUserLevelsOfSkillGroupResponse.HttpResponse = _ctx.HttpResponse;
-			modifyUserLevelsOfSkillGroupResponse.Code = _ctx.StringValue("ModifyUserLevelsOfSkillGroup.Code");
-			modifyUserLevelsOfSkillGroupResponse.Data = _ctx.StringValue("ModifyUserLevelsOfSkillGroup.Data");
 			modifyUserLevelsOfSkillGroupResponse.HttpStatusCode = _ctx.IntegerValue("ModifyUserLevelsOfSkillGroup.HttpStatusCode");
+			modifyUserLevelsOfSkillGroupResponse.Code = _ctx.StringValue("ModifyUserLevelsOfSkillGroup.Code");
 			modifyUserLevelsOfSkillGroupResponse.Message = _ctx.StringValue("ModifyUserLevelsOfSkillGroup.Message");
+			modifyUserLevelsOfSkillGroupResponse.Data = _ctx.StringValue("ModifyUserLevelsOfSkillGroup.Data");
 			modifyUserLevelsOfSkillGroupResponse.RequestId = _ctx.StringValue("ModifyUserLevelsOfSkillGroup.RequestId");
         
 			return modifyUserLevelsOfSkillGroupResponse;

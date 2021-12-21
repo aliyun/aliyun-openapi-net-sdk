@@ -112,35 +112,47 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 		public class SignInGroup_Data
 		{
 
-			private string breakCode;
-
-			private string deviceId;
-
 			private string extension;
-
-			private string instanceId;
-
-			private string jobId;
-
-			private bool? outboundScenario;
-
-			private string userId;
-
-			private string userState;
 
 			private string workMode;
 
+			private string deviceId;
+
+			private string jobId;
+
+			private string userId;
+
+			private string breakCode;
+
+			private string instanceId;
+
+			private bool? outboundScenario;
+
+			private string userState;
+
 			private List<string> signedSkillGroupIdList;
 
-			public string BreakCode
+			public string Extension
 			{
 				get
 				{
-					return breakCode;
+					return extension;
 				}
 				set	
 				{
-					breakCode = value;
+					extension = value;
+				}
+			}
+
+			public string WorkMode
+			{
+				get
+				{
+					return workMode;
+				}
+				set	
+				{
+					workMode = value;
 				}
 			}
 
@@ -156,30 +168,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				}
 			}
 
-			public string Extension
-			{
-				get
-				{
-					return extension;
-				}
-				set	
-				{
-					extension = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
 			public string JobId
 			{
 				get
@@ -189,18 +177,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				set	
 				{
 					jobId = value;
-				}
-			}
-
-			public bool? OutboundScenario
-			{
-				get
-				{
-					return outboundScenario;
-				}
-				set	
-				{
-					outboundScenario = value;
 				}
 			}
 
@@ -216,6 +192,42 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				}
 			}
 
+			public string BreakCode
+			{
+				get
+				{
+					return breakCode;
+				}
+				set	
+				{
+					breakCode = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public bool? OutboundScenario
+			{
+				get
+				{
+					return outboundScenario;
+				}
+				set	
+				{
+					outboundScenario = value;
+				}
+			}
+
 			public string UserState
 			{
 				get
@@ -225,18 +237,6 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 				set	
 				{
 					userState = value;
-				}
-			}
-
-			public string WorkMode
-			{
-				get
-				{
-					return workMode;
-				}
-				set	
-				{
-					workMode = value;
 				}
 			}
 

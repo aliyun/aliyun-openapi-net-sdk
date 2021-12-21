@@ -191,6 +191,8 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 
 				private bool? primaryAccount;
 
+				private long? ramId;
+
 				private List<ListUsers_PhoneNumber> personalOutboundNumberList;
 
 				private List<ListUsers_UserSkillLevel> skillLevelList;
@@ -312,6 +314,18 @@ namespace Aliyun.Acs.CCC.Model.V20200701
 					set	
 					{
 						primaryAccount = value;
+					}
+				}
+
+				public long? RamId
+				{
+					get
+					{
+						return ramId;
+					}
+					set	
+					{
+						ramId = value;
 					}
 				}
 

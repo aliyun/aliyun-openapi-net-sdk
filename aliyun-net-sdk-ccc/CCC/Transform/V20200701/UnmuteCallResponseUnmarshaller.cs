@@ -52,21 +52,21 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			List<UnmuteCallResponse.UnmuteCall_Data.UnmuteCall_CallContext.UnmuteCall_ChannelContext> callContext_channelContexts = new List<UnmuteCallResponse.UnmuteCall_Data.UnmuteCall_CallContext.UnmuteCall_ChannelContext>();
 			for (int i = 0; i < _ctx.Length("UnmuteCall.Data.CallContext.ChannelContexts.Length"); i++) {
 				UnmuteCallResponse.UnmuteCall_Data.UnmuteCall_CallContext.UnmuteCall_ChannelContext channelContext = new UnmuteCallResponse.UnmuteCall_Data.UnmuteCall_CallContext.UnmuteCall_ChannelContext();
-				channelContext.AssociatedData = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].AssociatedData");
-				channelContext.CallType = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].CallType");
-				channelContext.ChannelFlags = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags");
-				channelContext.ChannelId = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].ChannelId");
+				channelContext.Index = _ctx.IntegerValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].Index");
+				channelContext.ReleaseInitiator = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].ReleaseInitiator");
 				channelContext.ChannelState = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].ChannelState");
 				channelContext.Destination = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].Destination");
-				channelContext.Index = _ctx.IntegerValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].Index");
-				channelContext.JobId = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].JobId");
-				channelContext.Originator = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].Originator");
-				channelContext.ReleaseInitiator = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].ReleaseInitiator");
-				channelContext.ReleaseReason = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason");
+				channelContext.UserId = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].UserId");
+				channelContext.ChannelFlags = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].ChannelFlags");
 				channelContext.SkillGroupId = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].SkillGroupId");
 				channelContext.Timestamp = _ctx.LongValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].Timestamp");
+				channelContext.AssociatedData = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].AssociatedData");
+				channelContext.ReleaseReason = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].ReleaseReason");
+				channelContext.CallType = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].CallType");
+				channelContext.JobId = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].JobId");
+				channelContext.ChannelId = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].ChannelId");
 				channelContext.UserExtension = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].UserExtension");
-				channelContext.UserId = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].UserId");
+				channelContext.Originator = _ctx.StringValue("UnmuteCall.Data.CallContext.ChannelContexts["+ i +"].Originator");
 
 				callContext_channelContexts.Add(channelContext);
 			}
@@ -74,17 +74,17 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			data.CallContext = callContext;
 
 			UnmuteCallResponse.UnmuteCall_Data.UnmuteCall_UserContext userContext = new UnmuteCallResponse.UnmuteCall_Data.UnmuteCall_UserContext();
-			userContext.BreakCode = _ctx.StringValue("UnmuteCall.Data.UserContext.BreakCode");
-			userContext.DeviceId = _ctx.StringValue("UnmuteCall.Data.UserContext.DeviceId");
-			userContext.Extension = _ctx.StringValue("UnmuteCall.Data.UserContext.Extension");
 			userContext.Heartbeat = _ctx.LongValue("UnmuteCall.Data.UserContext.Heartbeat");
-			userContext.InstanceId = _ctx.StringValue("UnmuteCall.Data.UserContext.InstanceId");
-			userContext.JobId = _ctx.StringValue("UnmuteCall.Data.UserContext.JobId");
-			userContext.Mobile = _ctx.StringValue("UnmuteCall.Data.UserContext.Mobile");
-			userContext.OutboundScenario = _ctx.BooleanValue("UnmuteCall.Data.UserContext.OutboundScenario");
-			userContext.UserId = _ctx.StringValue("UnmuteCall.Data.UserContext.UserId");
-			userContext.UserState = _ctx.StringValue("UnmuteCall.Data.UserContext.UserState");
+			userContext.Extension = _ctx.StringValue("UnmuteCall.Data.UserContext.Extension");
 			userContext.WorkMode = _ctx.StringValue("UnmuteCall.Data.UserContext.WorkMode");
+			userContext.Mobile = _ctx.StringValue("UnmuteCall.Data.UserContext.Mobile");
+			userContext.DeviceId = _ctx.StringValue("UnmuteCall.Data.UserContext.DeviceId");
+			userContext.JobId = _ctx.StringValue("UnmuteCall.Data.UserContext.JobId");
+			userContext.UserId = _ctx.StringValue("UnmuteCall.Data.UserContext.UserId");
+			userContext.BreakCode = _ctx.StringValue("UnmuteCall.Data.UserContext.BreakCode");
+			userContext.InstanceId = _ctx.StringValue("UnmuteCall.Data.UserContext.InstanceId");
+			userContext.OutboundScenario = _ctx.BooleanValue("UnmuteCall.Data.UserContext.OutboundScenario");
+			userContext.UserState = _ctx.StringValue("UnmuteCall.Data.UserContext.UserState");
 
 			List<string> userContext_signedSkillGroupIdList = new List<string>();
 			for (int i = 0; i < _ctx.Length("UnmuteCall.Data.UserContext.SignedSkillGroupIdList.Length"); i++) {

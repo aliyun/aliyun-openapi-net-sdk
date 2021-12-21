@@ -43,18 +43,18 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			signOutGroupResponse._Params = signOutGroupResponse_params;
 
 			SignOutGroupResponse.SignOutGroup_Data data = new SignOutGroupResponse.SignOutGroup_Data();
-			data.BreakCode = _ctx.StringValue("SignOutGroup.Data.BreakCode");
-			data.DeviceId = _ctx.StringValue("SignOutGroup.Data.DeviceId");
 			data.Extension = _ctx.StringValue("SignOutGroup.Data.Extension");
 			data.Heartbeat = _ctx.LongValue("SignOutGroup.Data.Heartbeat");
-			data.InstanceId = _ctx.StringValue("SignOutGroup.Data.InstanceId");
-			data.JobId = _ctx.StringValue("SignOutGroup.Data.JobId");
-			data.Mobile = _ctx.StringValue("SignOutGroup.Data.Mobile");
-			data.OutboundScenario = _ctx.BooleanValue("SignOutGroup.Data.OutboundScenario");
-			data.Reserved = _ctx.LongValue("SignOutGroup.Data.Reserved");
-			data.UserId = _ctx.StringValue("SignOutGroup.Data.UserId");
-			data.UserState = _ctx.StringValue("SignOutGroup.Data.UserState");
 			data.WorkMode = _ctx.StringValue("SignOutGroup.Data.WorkMode");
+			data.DeviceId = _ctx.StringValue("SignOutGroup.Data.DeviceId");
+			data.UserId = _ctx.StringValue("SignOutGroup.Data.UserId");
+			data.Reserved = _ctx.LongValue("SignOutGroup.Data.Reserved");
+			data.BreakCode = _ctx.StringValue("SignOutGroup.Data.BreakCode");
+			data.InstanceId = _ctx.StringValue("SignOutGroup.Data.InstanceId");
+			data.OutboundScenario = _ctx.BooleanValue("SignOutGroup.Data.OutboundScenario");
+			data.Mobile = _ctx.StringValue("SignOutGroup.Data.Mobile");
+			data.JobId = _ctx.StringValue("SignOutGroup.Data.JobId");
+			data.UserState = _ctx.StringValue("SignOutGroup.Data.UserState");
 
 			List<string> data_signedSkillGroupIdList = new List<string>();
 			for (int i = 0; i < _ctx.Length("SignOutGroup.Data.SignedSkillGroupIdList.Length"); i++) {

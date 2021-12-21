@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CCC;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20200701;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.CCC.Model.V20200701
     public class SaveRTCStatsV2Request : RpcAcsRequest<SaveRTCStatsV2Response>
     {
         public SaveRTCStatsV2Request()
-            : base("CCC", "2020-07-01", "SaveRTCStatsV2", "CCC", "openAPI")
+            : base("CCC", "2020-07-01", "SaveRTCStatsV2")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

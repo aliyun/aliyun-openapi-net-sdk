@@ -43,15 +43,15 @@ namespace Aliyun.Acs.CCC.Transform.V20200701
 			resetAgentStateResponse._Params = resetAgentStateResponse_params;
 
 			ResetAgentStateResponse.ResetAgentState_Data data = new ResetAgentStateResponse.ResetAgentState_Data();
-			data.BreakCode = _ctx.StringValue("ResetAgentState.Data.BreakCode");
-			data.DeviceId = _ctx.StringValue("ResetAgentState.Data.DeviceId");
 			data.Extension = _ctx.StringValue("ResetAgentState.Data.Extension");
-			data.InstanceId = _ctx.StringValue("ResetAgentState.Data.InstanceId");
-			data.JobId = _ctx.StringValue("ResetAgentState.Data.JobId");
-			data.OutboundScenario = _ctx.BooleanValue("ResetAgentState.Data.OutboundScenario");
-			data.UserId = _ctx.StringValue("ResetAgentState.Data.UserId");
-			data.UserState = _ctx.StringValue("ResetAgentState.Data.UserState");
 			data.WorkMode = _ctx.StringValue("ResetAgentState.Data.WorkMode");
+			data.DeviceId = _ctx.StringValue("ResetAgentState.Data.DeviceId");
+			data.JobId = _ctx.StringValue("ResetAgentState.Data.JobId");
+			data.UserId = _ctx.StringValue("ResetAgentState.Data.UserId");
+			data.BreakCode = _ctx.StringValue("ResetAgentState.Data.BreakCode");
+			data.InstanceId = _ctx.StringValue("ResetAgentState.Data.InstanceId");
+			data.OutboundScenario = _ctx.BooleanValue("ResetAgentState.Data.OutboundScenario");
+			data.UserState = _ctx.StringValue("ResetAgentState.Data.UserState");
 
 			List<string> data_signedSkillGroupIdList = new List<string>();
 			for (int i = 0; i < _ctx.Length("ResetAgentState.Data.SignedSkillGroupIdList.Length"); i++) {
