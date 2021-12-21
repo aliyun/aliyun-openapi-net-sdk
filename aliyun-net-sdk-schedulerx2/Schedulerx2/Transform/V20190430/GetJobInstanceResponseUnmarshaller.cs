@@ -31,27 +31,27 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			GetJobInstanceResponse getJobInstanceResponse = new GetJobInstanceResponse();
 
 			getJobInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			getJobInstanceResponse.RequestId = _ctx.StringValue("GetJobInstance.RequestId");
 			getJobInstanceResponse.Code = _ctx.IntegerValue("GetJobInstance.Code");
 			getJobInstanceResponse.Message = _ctx.StringValue("GetJobInstance.Message");
+			getJobInstanceResponse.RequestId = _ctx.StringValue("GetJobInstance.RequestId");
 			getJobInstanceResponse.Success = _ctx.BooleanValue("GetJobInstance.Success");
 
 			GetJobInstanceResponse.GetJobInstance_Data data = new GetJobInstanceResponse.GetJobInstance_Data();
 
 			GetJobInstanceResponse.GetJobInstance_Data.GetJobInstance_JobInstanceDetail jobInstanceDetail = new GetJobInstanceResponse.GetJobInstance_Data.GetJobInstance_JobInstanceDetail();
-			jobInstanceDetail.InstanceId = _ctx.LongValue("GetJobInstance.Data.JobInstanceDetail.InstanceId");
-			jobInstanceDetail.JobId = _ctx.LongValue("GetJobInstance.Data.JobInstanceDetail.JobId");
 			jobInstanceDetail.Status = _ctx.IntegerValue("GetJobInstance.Data.JobInstanceDetail.Status");
-			jobInstanceDetail.StartTime = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.StartTime");
-			jobInstanceDetail.EndTime = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.EndTime");
-			jobInstanceDetail.ScheduleTime = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.ScheduleTime");
-			jobInstanceDetail.DataTime = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.DataTime");
-			jobInstanceDetail.Executor = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.Executor");
-			jobInstanceDetail.WorkAddr = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.WorkAddr");
-			jobInstanceDetail.Result = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.Result");
 			jobInstanceDetail.Progress = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.Progress");
+			jobInstanceDetail.Result = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.Result");
+			jobInstanceDetail.InstanceId = _ctx.LongValue("GetJobInstance.Data.JobInstanceDetail.InstanceId");
 			jobInstanceDetail.TimeType = _ctx.IntegerValue("GetJobInstance.Data.JobInstanceDetail.TimeType");
 			jobInstanceDetail.TriggerType = _ctx.IntegerValue("GetJobInstance.Data.JobInstanceDetail.TriggerType");
+			jobInstanceDetail.EndTime = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.EndTime");
+			jobInstanceDetail.StartTime = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.StartTime");
+			jobInstanceDetail.Executor = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.Executor");
+			jobInstanceDetail.JobId = _ctx.LongValue("GetJobInstance.Data.JobInstanceDetail.JobId");
+			jobInstanceDetail.ScheduleTime = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.ScheduleTime");
+			jobInstanceDetail.DataTime = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.DataTime");
+			jobInstanceDetail.WorkAddr = _ctx.StringValue("GetJobInstance.Data.JobInstanceDetail.WorkAddr");
 			data.JobInstanceDetail = jobInstanceDetail;
 			getJobInstanceResponse.Data = data;
         

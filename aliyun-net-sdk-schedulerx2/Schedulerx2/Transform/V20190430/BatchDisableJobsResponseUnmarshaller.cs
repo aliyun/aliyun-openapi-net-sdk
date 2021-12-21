@@ -31,10 +31,10 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			BatchDisableJobsResponse batchDisableJobsResponse = new BatchDisableJobsResponse();
 
 			batchDisableJobsResponse.HttpResponse = _ctx.HttpResponse;
-			batchDisableJobsResponse.RequestId = _ctx.StringValue("BatchDisableJobs.RequestId");
 			batchDisableJobsResponse.Code = _ctx.IntegerValue("BatchDisableJobs.Code");
-			batchDisableJobsResponse.Success = _ctx.BooleanValue("BatchDisableJobs.Success");
 			batchDisableJobsResponse.Message = _ctx.StringValue("BatchDisableJobs.Message");
+			batchDisableJobsResponse.RequestId = _ctx.StringValue("BatchDisableJobs.RequestId");
+			batchDisableJobsResponse.Success = _ctx.BooleanValue("BatchDisableJobs.Success");
         
 			return batchDisableJobsResponse;
         }

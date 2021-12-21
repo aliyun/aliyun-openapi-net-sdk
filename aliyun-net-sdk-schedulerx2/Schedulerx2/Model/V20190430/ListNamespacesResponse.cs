@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 	public class ListNamespacesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? code;
-
-		private bool? success;
 
 		private string message;
 
-		private ListNamespaces_Data data;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private bool? success;
+
+		private ListNamespaces_Data data;
 
 		public int? Code
 		{
@@ -59,18 +47,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
 		public string Message
 		{
 			get
@@ -80,6 +56,30 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -117,9 +117,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 				private string name;
 
-				private string uId;
-
 				private string description;
+
+				private string uId;
 
 				public string Name
 				{
@@ -133,18 +133,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
-				public string UId
-				{
-					get
-					{
-						return uId;
-					}
-					set	
-					{
-						uId = value;
-					}
-				}
-
 				public string Description
 				{
 					get
@@ -154,6 +142,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						description = value;
+					}
+				}
+
+				public string UId
+				{
+					get
+					{
+						return uId;
+					}
+					set	
+					{
+						uId = value;
 					}
 				}
 			}

@@ -28,17 +28,16 @@ using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
 {
-    public class BatchEnableJobsRequest : RpcAcsRequest<BatchEnableJobsResponse>
+    public class GetWorkFlowRequest : RpcAcsRequest<GetWorkFlowResponse>
     {
-        public BatchEnableJobsRequest()
-            : base("schedulerx2", "2019-04-30", "BatchEnableJobs")
+        public GetWorkFlowRequest()
+            : base("schedulerx2", "2019-04-30", "GetWorkFlow")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
 		private string namespaceSource;
@@ -47,7 +46,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string _namespace;
 
-		private List<string> jobIdLists = new List<string>(){ };
+		private long? workflowId;
 
 		public string NamespaceSource
 		{
@@ -88,16 +87,16 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public List<string> JobIdLists
+		public long? WorkflowId
 		{
 			get
 			{
-				return jobIdLists;
+				return workflowId;
 			}
-
-			set
+			set	
 			{
-				jobIdLists = value;
+				workflowId = value;
+				DictionaryUtil.Add(QueryParameters, "WorkflowId", value.ToString());
 			}
 		}
 
@@ -106,9 +105,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			return false;
 		}
 
-        public override BatchEnableJobsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetWorkFlowResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchEnableJobsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetWorkFlowResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

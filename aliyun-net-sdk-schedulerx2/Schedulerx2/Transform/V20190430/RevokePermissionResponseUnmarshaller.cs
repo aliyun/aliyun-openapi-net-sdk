@@ -31,10 +31,10 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			RevokePermissionResponse revokePermissionResponse = new RevokePermissionResponse();
 
 			revokePermissionResponse.HttpResponse = _ctx.HttpResponse;
-			revokePermissionResponse.RequestId = _ctx.StringValue("RevokePermission.RequestId");
 			revokePermissionResponse.Code = _ctx.IntegerValue("RevokePermission.Code");
-			revokePermissionResponse.Success = _ctx.BooleanValue("RevokePermission.Success");
 			revokePermissionResponse.Message = _ctx.StringValue("RevokePermission.Message");
+			revokePermissionResponse.RequestId = _ctx.StringValue("RevokePermission.RequestId");
+			revokePermissionResponse.Success = _ctx.BooleanValue("RevokePermission.Success");
         
 			return revokePermissionResponse;
         }

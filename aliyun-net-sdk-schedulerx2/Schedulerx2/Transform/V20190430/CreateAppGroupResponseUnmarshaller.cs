@@ -31,10 +31,10 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			CreateAppGroupResponse createAppGroupResponse = new CreateAppGroupResponse();
 
 			createAppGroupResponse.HttpResponse = _ctx.HttpResponse;
-			createAppGroupResponse.RequestId = _ctx.StringValue("CreateAppGroup.RequestId");
 			createAppGroupResponse.Code = _ctx.IntegerValue("CreateAppGroup.Code");
-			createAppGroupResponse.Success = _ctx.BooleanValue("CreateAppGroup.Success");
 			createAppGroupResponse.Message = _ctx.StringValue("CreateAppGroup.Message");
+			createAppGroupResponse.RequestId = _ctx.StringValue("CreateAppGroup.RequestId");
+			createAppGroupResponse.Success = _ctx.BooleanValue("CreateAppGroup.Success");
 
 			CreateAppGroupResponse.CreateAppGroup_Data data = new CreateAppGroupResponse.CreateAppGroup_Data();
 			data.AppGroupId = _ctx.LongValue("CreateAppGroup.Data.AppGroupId");

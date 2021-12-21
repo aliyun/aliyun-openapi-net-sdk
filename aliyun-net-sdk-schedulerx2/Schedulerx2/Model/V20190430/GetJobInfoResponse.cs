@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 	public class GetJobInfoResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? code;
 
 		private string message;
 
+		private string requestId;
+
 		private bool? success;
 
 		private GetJobInfo_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public int? Code
 		{
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -115,25 +115,25 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			public class GetJobInfo_JobConfigInfo
 			{
 
-				private string className;
-
-				private string jarUrl;
-
-				private string content;
-
-				private string name;
-
-				private string description;
-
 				private int? status;
-
-				private string executeMode;
 
 				private string parameters;
 
+				private string description;
+
+				private string executeMode;
+
 				private string maxConcurrency;
 
+				private string name;
+
 				private int? maxAttempt;
+
+				private string content;
+
+				private string jarUrl;
+
+				private string className;
 
 				private int? attemptInterval;
 
@@ -142,66 +142,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 				private GetJobInfo_TimeConfig timeConfig;
 
 				private GetJobInfo_JobMonitorInfo jobMonitorInfo;
-
-				public string ClassName
-				{
-					get
-					{
-						return className;
-					}
-					set	
-					{
-						className = value;
-					}
-				}
-
-				public string JarUrl
-				{
-					get
-					{
-						return jarUrl;
-					}
-					set	
-					{
-						jarUrl = value;
-					}
-				}
-
-				public string Content
-				{
-					get
-					{
-						return content;
-					}
-					set	
-					{
-						content = value;
-					}
-				}
-
-				public string Name
-				{
-					get
-					{
-						return name;
-					}
-					set	
-					{
-						name = value;
-					}
-				}
-
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
 
 				public int? Status
 				{
@@ -212,18 +152,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						status = value;
-					}
-				}
-
-				public string ExecuteMode
-				{
-					get
-					{
-						return executeMode;
-					}
-					set	
-					{
-						executeMode = value;
 					}
 				}
 
@@ -239,6 +167,30 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				public string ExecuteMode
+				{
+					get
+					{
+						return executeMode;
+					}
+					set	
+					{
+						executeMode = value;
+					}
+				}
+
 				public string MaxConcurrency
 				{
 					get
@@ -251,6 +203,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					}
 				}
 
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
 				public int? MaxAttempt
 				{
 					get
@@ -260,6 +224,42 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						maxAttempt = value;
+					}
+				}
+
+				public string Content
+				{
+					get
+					{
+						return content;
+					}
+					set	
+					{
+						content = value;
+					}
+				}
+
+				public string JarUrl
+				{
+					get
+					{
+						return jarUrl;
+					}
+					set	
+					{
+						jarUrl = value;
+					}
+				}
+
+				public string ClassName
+				{
+					get
+					{
+						return className;
+					}
+					set	
+					{
+						className = value;
 					}
 				}
 
@@ -314,7 +314,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 				public class GetJobInfo_MapTaskXAttrs
 				{
 
-					private int? pageSize;
+					private int? taskMaxAttempt;
+
+					private int? taskAttemptInterval;
 
 					private int? consumerSize;
 
@@ -322,19 +324,29 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 					private int? dispatcherSize;
 
-					private int? taskMaxAttempt;
+					private int? pageSize;
 
-					private int? taskAttemptInterval;
-
-					public int? PageSize
+					public int? TaskMaxAttempt
 					{
 						get
 						{
-							return pageSize;
+							return taskMaxAttempt;
 						}
 						set	
 						{
-							pageSize = value;
+							taskMaxAttempt = value;
+						}
+					}
+
+					public int? TaskAttemptInterval
+					{
+						get
+						{
+							return taskAttemptInterval;
+						}
+						set	
+						{
+							taskAttemptInterval = value;
 						}
 					}
 
@@ -374,27 +386,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 						}
 					}
 
-					public int? TaskMaxAttempt
+					public int? PageSize
 					{
 						get
 						{
-							return taskMaxAttempt;
+							return pageSize;
 						}
 						set	
 						{
-							taskMaxAttempt = value;
-						}
-					}
-
-					public int? TaskAttemptInterval
-					{
-						get
-						{
-							return taskAttemptInterval;
-						}
-						set	
-						{
-							taskAttemptInterval = value;
+							pageSize = value;
 						}
 					}
 				}
@@ -402,37 +402,13 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 				public class GetJobInfo_TimeConfig
 				{
 
-					private int? timeType;
-
-					private string timeExpression;
-
 					private string calendar;
+
+					private int? timeType;
 
 					private int? dataOffset;
 
-					public int? TimeType
-					{
-						get
-						{
-							return timeType;
-						}
-						set	
-						{
-							timeType = value;
-						}
-					}
-
-					public string TimeExpression
-					{
-						get
-						{
-							return timeExpression;
-						}
-						set	
-						{
-							timeExpression = value;
-						}
-					}
+					private string timeExpression;
 
 					public string Calendar
 					{
@@ -446,6 +422,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 						}
 					}
 
+					public int? TimeType
+					{
+						get
+						{
+							return timeType;
+						}
+						set	
+						{
+							timeType = value;
+						}
+					}
+
 					public int? DataOffset
 					{
 						get
@@ -455,6 +443,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 						set	
 						{
 							dataOffset = value;
+						}
+					}
+
+					public string TimeExpression
+					{
+						get
+						{
+							return timeExpression;
+						}
+						set	
+						{
+							timeExpression = value;
 						}
 					}
 				}
@@ -493,21 +493,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					public class GetJobInfo_ContactInfoItem
 					{
 
-						private string userName;
-
 						private string userPhone;
 
-						public string UserName
-						{
-							get
-							{
-								return userName;
-							}
-							set	
-							{
-								userName = value;
-							}
-						}
+						private string userName;
 
 						public string UserPhone
 						{
@@ -520,32 +508,32 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 								userPhone = value;
 							}
 						}
+
+						public string UserName
+						{
+							get
+							{
+								return userName;
+							}
+							set	
+							{
+								userName = value;
+							}
+						}
 					}
 
 					public class GetJobInfo_MonitorConfig
 					{
 
-						private bool? timeoutEnable;
-
 						private long? timeout;
-
-						private bool? timeoutKillEnable;
-
-						private bool? failEnable;
 
 						private string sendChannel;
 
-						public bool? TimeoutEnable
-						{
-							get
-							{
-								return timeoutEnable;
-							}
-							set	
-							{
-								timeoutEnable = value;
-							}
-						}
+						private bool? timeoutKillEnable;
+
+						private bool? timeoutEnable;
+
+						private bool? failEnable;
 
 						public long? Timeout
 						{
@@ -556,6 +544,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 							set	
 							{
 								timeout = value;
+							}
+						}
+
+						public string SendChannel
+						{
+							get
+							{
+								return sendChannel;
+							}
+							set	
+							{
+								sendChannel = value;
 							}
 						}
 
@@ -571,6 +571,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 							}
 						}
 
+						public bool? TimeoutEnable
+						{
+							get
+							{
+								return timeoutEnable;
+							}
+							set	
+							{
+								timeoutEnable = value;
+							}
+						}
+
 						public bool? FailEnable
 						{
 							get
@@ -580,18 +592,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 							set	
 							{
 								failEnable = value;
-							}
-						}
-
-						public string SendChannel
-						{
-							get
-							{
-								return sendChannel;
-							}
-							set	
-							{
-								sendChannel = value;
 							}
 						}
 					}

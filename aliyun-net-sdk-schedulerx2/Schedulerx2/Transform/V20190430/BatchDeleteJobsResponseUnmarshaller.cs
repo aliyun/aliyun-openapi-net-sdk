@@ -31,9 +31,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			BatchDeleteJobsResponse batchDeleteJobsResponse = new BatchDeleteJobsResponse();
 
 			batchDeleteJobsResponse.HttpResponse = _ctx.HttpResponse;
-			batchDeleteJobsResponse.RequestId = _ctx.StringValue("BatchDeleteJobs.RequestId");
 			batchDeleteJobsResponse.Code = _ctx.IntegerValue("BatchDeleteJobs.Code");
 			batchDeleteJobsResponse.Message = _ctx.StringValue("BatchDeleteJobs.Message");
+			batchDeleteJobsResponse.RequestId = _ctx.StringValue("BatchDeleteJobs.RequestId");
 			batchDeleteJobsResponse.Success = _ctx.BooleanValue("BatchDeleteJobs.Success");
         
 			return batchDeleteJobsResponse;

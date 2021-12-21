@@ -47,7 +47,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string _namespace;
 
-		private List<long?> jobIdLists = new List<long?>(){ };
+		private List<string> jobIdLists = new List<string>(){ };
 
 		public string NamespaceSource
 		{
@@ -88,7 +88,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public List<long?> JobIdLists
+		public List<string> JobIdLists
 		{
 			get
 			{
@@ -98,10 +98,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set
 			{
 				jobIdLists = value;
-				for (int i = 0; i < jobIdLists.Count; i++)
-				{
-					DictionaryUtil.Add(BodyParameters,"JobIdList." + (i + 1) , jobIdLists[i]);
-				}
 			}
 		}
 

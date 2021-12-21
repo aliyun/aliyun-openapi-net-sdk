@@ -31,10 +31,10 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			CreateJobResponse createJobResponse = new CreateJobResponse();
 
 			createJobResponse.HttpResponse = _ctx.HttpResponse;
-			createJobResponse.RequestId = _ctx.StringValue("CreateJob.RequestId");
 			createJobResponse.Code = _ctx.IntegerValue("CreateJob.Code");
-			createJobResponse.Success = _ctx.BooleanValue("CreateJob.Success");
 			createJobResponse.Message = _ctx.StringValue("CreateJob.Message");
+			createJobResponse.RequestId = _ctx.StringValue("CreateJob.RequestId");
+			createJobResponse.Success = _ctx.BooleanValue("CreateJob.Success");
 
 			CreateJobResponse.CreateJob_Data data = new CreateJobResponse.CreateJob_Data();
 			data.JobId = _ctx.LongValue("CreateJob.Data.JobId");

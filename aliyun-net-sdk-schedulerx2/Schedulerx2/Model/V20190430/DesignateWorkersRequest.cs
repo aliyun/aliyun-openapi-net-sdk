@@ -28,26 +28,33 @@ using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
 {
-    public class BatchEnableJobsRequest : RpcAcsRequest<BatchEnableJobsResponse>
+    public class DesignateWorkersRequest : RpcAcsRequest<DesignateWorkersResponse>
     {
-        public BatchEnableJobsRequest()
-            : base("schedulerx2", "2019-04-30", "BatchEnableJobs")
+        public DesignateWorkersRequest()
+            : base("schedulerx2", "2019-04-30", "DesignateWorkers")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.schedulerx2.Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
 		private string namespaceSource;
 
 		private string groupId;
 
+		private bool? transferable;
+
+		private string labels;
+
+		private int? designateType;
+
+		private long? jobId;
+
 		private string _namespace;
 
-		private List<string> jobIdLists = new List<string>(){ };
+		private string workers;
 
 		public string NamespaceSource
 		{
@@ -75,6 +82,58 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
+		public bool? Transferable
+		{
+			get
+			{
+				return transferable;
+			}
+			set	
+			{
+				transferable = value;
+				DictionaryUtil.Add(QueryParameters, "Transferable", value.ToString());
+			}
+		}
+
+		public string Labels
+		{
+			get
+			{
+				return labels;
+			}
+			set	
+			{
+				labels = value;
+				DictionaryUtil.Add(QueryParameters, "Labels", value);
+			}
+		}
+
+		public int? DesignateType
+		{
+			get
+			{
+				return designateType;
+			}
+			set	
+			{
+				designateType = value;
+				DictionaryUtil.Add(QueryParameters, "DesignateType", value.ToString());
+			}
+		}
+
+		public long? JobId
+		{
+			get
+			{
+				return jobId;
+			}
+			set	
+			{
+				jobId = value;
+				DictionaryUtil.Add(QueryParameters, "JobId", value.ToString());
+			}
+		}
+
 		public string _Namespace
 		{
 			get
@@ -88,16 +147,16 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public List<string> JobIdLists
+		public string Workers
 		{
 			get
 			{
-				return jobIdLists;
+				return workers;
 			}
-
-			set
+			set	
 			{
-				jobIdLists = value;
+				workers = value;
+				DictionaryUtil.Add(QueryParameters, "Workers", value);
 			}
 		}
 
@@ -106,9 +165,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			return false;
 		}
 
-        public override BatchEnableJobsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DesignateWorkersResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchEnableJobsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DesignateWorkersResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

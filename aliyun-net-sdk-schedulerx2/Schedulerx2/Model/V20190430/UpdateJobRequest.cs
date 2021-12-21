@@ -89,7 +89,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private bool? timeoutEnable;
 
-		private List<ContactInfo> contactInfos = new List<ContactInfo>(){ };
+		private List<string> contactInfos = new List<string>(){ };
 
 		private string name;
 
@@ -413,7 +413,7 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public List<ContactInfo> ContactInfos
+		public List<string> ContactInfos
 		{
 			get
 			{
@@ -423,10 +423,13 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set
 			{
 				contactInfos = value;
-				for (int i = 0; i < contactInfos.Count; i++)
+				if(contactInfos != null)
 				{
-					DictionaryUtil.Add(BodyParameters,"ContactInfo." + (i + 1) + ".UserPhone", contactInfos[i].UserPhone);
-					DictionaryUtil.Add(BodyParameters,"ContactInfo." + (i + 1) + ".UserName", contactInfos[i].UserName);
+					for (int depth1 = 0; depth1 < contactInfos.Count; depth1++)
+					{
+						DictionaryUtil.Add(BodyParameters,"ContactInfo." + (depth1 + 1), contactInfos[depth1]);
+						DictionaryUtil.Add(BodyParameters,"ContactInfo." + (depth1 + 1), contactInfos[depth1]);
+					}
 				}
 			}
 		}

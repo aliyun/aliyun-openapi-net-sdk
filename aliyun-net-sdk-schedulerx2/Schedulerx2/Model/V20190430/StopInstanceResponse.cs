@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
@@ -25,25 +25,13 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 	public class StopInstanceResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? code;
 
 		private string message;
 
-		private bool? success;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private bool? success;
 
 		public int? Code
 		{
@@ -66,6 +54,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

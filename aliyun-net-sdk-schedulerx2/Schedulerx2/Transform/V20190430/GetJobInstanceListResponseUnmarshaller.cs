@@ -31,9 +31,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			GetJobInstanceListResponse getJobInstanceListResponse = new GetJobInstanceListResponse();
 
 			getJobInstanceListResponse.HttpResponse = _ctx.HttpResponse;
-			getJobInstanceListResponse.RequestId = _ctx.StringValue("GetJobInstanceList.RequestId");
 			getJobInstanceListResponse.Code = _ctx.IntegerValue("GetJobInstanceList.Code");
 			getJobInstanceListResponse.Message = _ctx.StringValue("GetJobInstanceList.Message");
+			getJobInstanceListResponse.RequestId = _ctx.StringValue("GetJobInstanceList.RequestId");
 			getJobInstanceListResponse.Success = _ctx.BooleanValue("GetJobInstanceList.Success");
 
 			GetJobInstanceListResponse.GetJobInstanceList_Data data = new GetJobInstanceListResponse.GetJobInstanceList_Data();
@@ -41,19 +41,19 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			List<GetJobInstanceListResponse.GetJobInstanceList_Data.GetJobInstanceList_JobInstanceDetailsItem> data_jobInstanceDetails = new List<GetJobInstanceListResponse.GetJobInstanceList_Data.GetJobInstanceList_JobInstanceDetailsItem>();
 			for (int i = 0; i < _ctx.Length("GetJobInstanceList.Data.JobInstanceDetails.Length"); i++) {
 				GetJobInstanceListResponse.GetJobInstanceList_Data.GetJobInstanceList_JobInstanceDetailsItem jobInstanceDetailsItem = new GetJobInstanceListResponse.GetJobInstanceList_Data.GetJobInstanceList_JobInstanceDetailsItem();
-				jobInstanceDetailsItem.InstanceId = _ctx.LongValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].InstanceId");
-				jobInstanceDetailsItem.JobId = _ctx.LongValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].JobId");
 				jobInstanceDetailsItem.Status = _ctx.IntegerValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].Status");
-				jobInstanceDetailsItem.StartTime = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].StartTime");
-				jobInstanceDetailsItem.EndTime = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].EndTime");
-				jobInstanceDetailsItem.ScheduleTime = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].ScheduleTime");
-				jobInstanceDetailsItem.DataTime = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].DataTime");
-				jobInstanceDetailsItem.Executor = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].Executor");
-				jobInstanceDetailsItem.WorkAddr = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].WorkAddr");
-				jobInstanceDetailsItem.Result = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].Result");
 				jobInstanceDetailsItem.Progress = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].Progress");
+				jobInstanceDetailsItem.Result = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].Result");
+				jobInstanceDetailsItem.InstanceId = _ctx.LongValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].InstanceId");
 				jobInstanceDetailsItem.TimeType = _ctx.IntegerValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].TimeType");
 				jobInstanceDetailsItem.TriggerType = _ctx.IntegerValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].TriggerType");
+				jobInstanceDetailsItem.EndTime = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].EndTime");
+				jobInstanceDetailsItem.StartTime = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].StartTime");
+				jobInstanceDetailsItem.Executor = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].Executor");
+				jobInstanceDetailsItem.JobId = _ctx.LongValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].JobId");
+				jobInstanceDetailsItem.ScheduleTime = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].ScheduleTime");
+				jobInstanceDetailsItem.DataTime = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].DataTime");
+				jobInstanceDetailsItem.WorkAddr = _ctx.StringValue("GetJobInstanceList.Data.JobInstanceDetails["+ i +"].WorkAddr");
 
 				data_jobInstanceDetails.Add(jobInstanceDetailsItem);
 			}

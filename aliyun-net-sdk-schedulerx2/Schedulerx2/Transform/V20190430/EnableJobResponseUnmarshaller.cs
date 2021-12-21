@@ -31,10 +31,10 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			EnableJobResponse enableJobResponse = new EnableJobResponse();
 
 			enableJobResponse.HttpResponse = _ctx.HttpResponse;
-			enableJobResponse.RequestId = _ctx.StringValue("EnableJob.RequestId");
 			enableJobResponse.Code = _ctx.IntegerValue("EnableJob.Code");
-			enableJobResponse.Success = _ctx.BooleanValue("EnableJob.Success");
 			enableJobResponse.Message = _ctx.StringValue("EnableJob.Message");
+			enableJobResponse.RequestId = _ctx.StringValue("EnableJob.RequestId");
+			enableJobResponse.Success = _ctx.BooleanValue("EnableJob.Success");
         
 			return enableJobResponse;
         }

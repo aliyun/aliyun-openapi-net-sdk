@@ -31,10 +31,10 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			EnableWorkflowResponse enableWorkflowResponse = new EnableWorkflowResponse();
 
 			enableWorkflowResponse.HttpResponse = _ctx.HttpResponse;
-			enableWorkflowResponse.RequestId = _ctx.StringValue("EnableWorkflow.RequestId");
 			enableWorkflowResponse.Code = _ctx.IntegerValue("EnableWorkflow.Code");
-			enableWorkflowResponse.Success = _ctx.BooleanValue("EnableWorkflow.Success");
 			enableWorkflowResponse.Message = _ctx.StringValue("EnableWorkflow.Message");
+			enableWorkflowResponse.RequestId = _ctx.StringValue("EnableWorkflow.RequestId");
+			enableWorkflowResponse.Success = _ctx.BooleanValue("EnableWorkflow.Success");
         
 			return enableWorkflowResponse;
         }

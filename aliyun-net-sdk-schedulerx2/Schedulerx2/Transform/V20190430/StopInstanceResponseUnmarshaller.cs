@@ -31,9 +31,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			StopInstanceResponse stopInstanceResponse = new StopInstanceResponse();
 
 			stopInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			stopInstanceResponse.RequestId = _ctx.StringValue("StopInstance.RequestId");
 			stopInstanceResponse.Code = _ctx.IntegerValue("StopInstance.Code");
 			stopInstanceResponse.Message = _ctx.StringValue("StopInstance.Message");
+			stopInstanceResponse.RequestId = _ctx.StringValue("StopInstance.RequestId");
 			stopInstanceResponse.Success = _ctx.BooleanValue("StopInstance.Success");
         
 			return stopInstanceResponse;

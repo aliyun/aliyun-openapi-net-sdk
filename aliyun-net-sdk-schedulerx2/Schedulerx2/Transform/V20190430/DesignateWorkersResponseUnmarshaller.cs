@@ -24,19 +24,19 @@ using Aliyun.Acs.schedulerx2.Model.V20190430;
 
 namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 {
-    public class DeleteWorkflowResponseUnmarshaller
+    public class DesignateWorkersResponseUnmarshaller
     {
-        public static DeleteWorkflowResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DesignateWorkersResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DeleteWorkflowResponse deleteWorkflowResponse = new DeleteWorkflowResponse();
+			DesignateWorkersResponse designateWorkersResponse = new DesignateWorkersResponse();
 
-			deleteWorkflowResponse.HttpResponse = _ctx.HttpResponse;
-			deleteWorkflowResponse.Code = _ctx.IntegerValue("DeleteWorkflow.Code");
-			deleteWorkflowResponse.Message = _ctx.StringValue("DeleteWorkflow.Message");
-			deleteWorkflowResponse.RequestId = _ctx.StringValue("DeleteWorkflow.RequestId");
-			deleteWorkflowResponse.Success = _ctx.BooleanValue("DeleteWorkflow.Success");
+			designateWorkersResponse.HttpResponse = _ctx.HttpResponse;
+			designateWorkersResponse.RequestId = _ctx.StringValue("DesignateWorkers.RequestId");
+			designateWorkersResponse.Message = _ctx.StringValue("DesignateWorkers.Message");
+			designateWorkersResponse.Code = _ctx.IntegerValue("DesignateWorkers.Code");
+			designateWorkersResponse.Success = _ctx.BooleanValue("DesignateWorkers.Success");
         
-			return deleteWorkflowResponse;
+			return designateWorkersResponse;
         }
     }
 }

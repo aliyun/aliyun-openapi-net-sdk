@@ -31,9 +31,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			DeleteJobResponse deleteJobResponse = new DeleteJobResponse();
 
 			deleteJobResponse.HttpResponse = _ctx.HttpResponse;
-			deleteJobResponse.RequestId = _ctx.StringValue("DeleteJob.RequestId");
 			deleteJobResponse.Code = _ctx.IntegerValue("DeleteJob.Code");
 			deleteJobResponse.Message = _ctx.StringValue("DeleteJob.Message");
+			deleteJobResponse.RequestId = _ctx.StringValue("DeleteJob.RequestId");
 			deleteJobResponse.Success = _ctx.BooleanValue("DeleteJob.Success");
         
 			return deleteJobResponse;

@@ -31,9 +31,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			ExecuteJobResponse executeJobResponse = new ExecuteJobResponse();
 
 			executeJobResponse.HttpResponse = _ctx.HttpResponse;
-			executeJobResponse.RequestId = _ctx.StringValue("ExecuteJob.RequestId");
 			executeJobResponse.Code = _ctx.IntegerValue("ExecuteJob.Code");
 			executeJobResponse.Message = _ctx.StringValue("ExecuteJob.Message");
+			executeJobResponse.RequestId = _ctx.StringValue("ExecuteJob.RequestId");
 			executeJobResponse.Success = _ctx.BooleanValue("ExecuteJob.Success");
 
 			ExecuteJobResponse.ExecuteJob_Data data = new ExecuteJobResponse.ExecuteJob_Data();

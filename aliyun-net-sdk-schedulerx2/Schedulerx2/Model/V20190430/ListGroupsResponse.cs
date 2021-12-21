@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 	public class ListGroupsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? code;
 
 		private string message;
 
+		private string requestId;
+
 		private bool? success;
 
 		private ListGroups_Data data;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public int? Code
 		{
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -117,11 +117,11 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 				private string appName;
 
-				private string groupId;
-
 				private string appKey;
 
 				private string description;
+
+				private string groupId;
 
 				public string AppName
 				{
@@ -132,18 +132,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						appName = value;
-					}
-				}
-
-				public string GroupId
-				{
-					get
-					{
-						return groupId;
-					}
-					set	
-					{
-						groupId = value;
 					}
 				}
 
@@ -168,6 +156,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					set	
 					{
 						description = value;
+					}
+				}
+
+				public string GroupId
+				{
+					get
+					{
+						return groupId;
+					}
+					set	
+					{
+						groupId = value;
 					}
 				}
 			}

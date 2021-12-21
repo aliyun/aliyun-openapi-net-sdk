@@ -31,9 +31,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			ListGroupsResponse listGroupsResponse = new ListGroupsResponse();
 
 			listGroupsResponse.HttpResponse = _ctx.HttpResponse;
-			listGroupsResponse.RequestId = _ctx.StringValue("ListGroups.RequestId");
 			listGroupsResponse.Code = _ctx.IntegerValue("ListGroups.Code");
 			listGroupsResponse.Message = _ctx.StringValue("ListGroups.Message");
+			listGroupsResponse.RequestId = _ctx.StringValue("ListGroups.RequestId");
 			listGroupsResponse.Success = _ctx.BooleanValue("ListGroups.Success");
 
 			ListGroupsResponse.ListGroups_Data data = new ListGroupsResponse.ListGroups_Data();
@@ -42,9 +42,9 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 			for (int i = 0; i < _ctx.Length("ListGroups.Data.AppGroups.Length"); i++) {
 				ListGroupsResponse.ListGroups_Data.ListGroups_AppGroup appGroup = new ListGroupsResponse.ListGroups_Data.ListGroups_AppGroup();
 				appGroup.AppName = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].AppName");
-				appGroup.GroupId = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].GroupId");
 				appGroup.AppKey = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].AppKey");
 				appGroup.Description = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].Description");
+				appGroup.GroupId = _ctx.StringValue("ListGroups.Data.AppGroups["+ i +"].GroupId");
 
 				data_appGroups.Add(appGroup);
 			}

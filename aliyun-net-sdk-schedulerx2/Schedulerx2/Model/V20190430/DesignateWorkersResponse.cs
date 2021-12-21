@@ -22,26 +22,26 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
 {
-	public class DisableWorkflowResponse : AcsResponse
+	public class DesignateWorkersResponse : AcsResponse
 	{
-
-		private int? code;
-
-		private string message;
 
 		private string requestId;
 
+		private string message;
+
+		private int? code;
+
 		private bool? success;
 
-		public int? Code
+		public string RequestId
 		{
 			get
 			{
-				return code;
+				return requestId;
 			}
 			set	
 			{
-				code = value;
+				requestId = value;
 			}
 		}
 
@@ -57,15 +57,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public string RequestId
+		public int? Code
 		{
 			get
 			{
-				return requestId;
+				return code;
 			}
 			set	
 			{
-				requestId = value;
+				code = value;
 			}
 		}
 
