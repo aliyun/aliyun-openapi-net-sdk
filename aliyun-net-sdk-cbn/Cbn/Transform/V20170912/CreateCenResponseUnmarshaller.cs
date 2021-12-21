@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			CreateCenResponse createCenResponse = new CreateCenResponse();
 
 			createCenResponse.HttpResponse = _ctx.HttpResponse;
-			createCenResponse.RequestId = _ctx.StringValue("CreateCen.RequestId");
 			createCenResponse.CenId = _ctx.StringValue("CreateCen.CenId");
+			createCenResponse.RequestId = _ctx.StringValue("CreateCen.RequestId");
         
 			return createCenResponse;
         }

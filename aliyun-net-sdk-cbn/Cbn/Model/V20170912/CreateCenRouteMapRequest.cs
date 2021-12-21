@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class CreateCenRouteMapRequest : RpcAcsRequest<CreateCenRouteMapResponse>
     {
         public CreateCenRouteMapRequest()
-            : base("Cbn", "2017-09-12", "CreateCenRouteMap", "cbn", "openAPI")
+            : base("Cbn", "2017-09-12", "CreateCenRouteMap")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -54,7 +55,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private List<string> sourceRegionIdss = new List<string>(){ };
 
-		private List<long?> matchAsnss = new List<long?>(){ };
+		private List<string> matchAsnss = new List<string>(){ };
 
 		private int? preference;
 
@@ -94,7 +95,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private bool? destinationInstanceIdsReverseMatch;
 
-		private List<long?> prependAsPaths = new List<long?>(){ };
+		private List<string> prependAsPaths = new List<string>(){ };
 
 		private string asPathMatchMode;
 
@@ -164,10 +165,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				destinationCidrBlockss = value;
-				for (int i = 0; i < destinationCidrBlockss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DestinationCidrBlocks." + (i + 1) , destinationCidrBlockss[i]);
-				}
 			}
 		}
 
@@ -181,10 +178,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				sourceInstanceIdss = value;
-				for (int i = 0; i < sourceInstanceIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SourceInstanceIds." + (i + 1) , sourceInstanceIdss[i]);
-				}
 			}
 		}
 
@@ -198,14 +191,10 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				sourceRegionIdss = value;
-				for (int i = 0; i < sourceRegionIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SourceRegionIds." + (i + 1) , sourceRegionIdss[i]);
-				}
 			}
 		}
 
-		public List<long?> MatchAsnss
+		public List<string> MatchAsnss
 		{
 			get
 			{
@@ -215,10 +204,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				matchAsnss = value;
-				for (int i = 0; i < matchAsnss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"MatchAsns." + (i + 1) , matchAsnss[i]);
-				}
 			}
 		}
 
@@ -271,10 +256,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				destinationChildInstanceTypess = value;
-				for (int i = 0; i < destinationChildInstanceTypess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DestinationChildInstanceTypes." + (i + 1) , destinationChildInstanceTypess[i]);
-				}
 			}
 		}
 
@@ -288,10 +269,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				sourceRouteTableIdss = value;
-				for (int i = 0; i < sourceRouteTableIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SourceRouteTableIds." + (i + 1) , sourceRouteTableIdss[i]);
-				}
 			}
 		}
 
@@ -305,10 +282,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				sourceChildInstanceTypess = value;
-				for (int i = 0; i < sourceChildInstanceTypess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SourceChildInstanceTypes." + (i + 1) , sourceChildInstanceTypess[i]);
-				}
 			}
 		}
 
@@ -335,10 +308,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				operateCommunitySets = value;
-				for (int i = 0; i < operateCommunitySets.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"OperateCommunitySet." + (i + 1) , operateCommunitySets[i]);
-				}
 			}
 		}
 
@@ -352,10 +321,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				routeTypess = value;
-				for (int i = 0; i < routeTypess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RouteTypes." + (i + 1) , routeTypess[i]);
-				}
 			}
 		}
 
@@ -421,10 +386,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				destinationRouteTableIdss = value;
-				for (int i = 0; i < destinationRouteTableIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DestinationRouteTableIds." + (i + 1) , destinationRouteTableIdss[i]);
-				}
 			}
 		}
 
@@ -451,10 +412,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				destinationInstanceIdss = value;
-				for (int i = 0; i < destinationInstanceIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DestinationInstanceIds." + (i + 1) , destinationInstanceIdss[i]);
-				}
 			}
 		}
 
@@ -497,7 +454,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public List<long?> PrependAsPaths
+		public List<string> PrependAsPaths
 		{
 			get
 			{
@@ -507,10 +464,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				prependAsPaths = value;
-				for (int i = 0; i < prependAsPaths.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"PrependAsPath." + (i + 1) , prependAsPaths[i]);
-				}
 			}
 		}
 
@@ -537,10 +490,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				matchCommunitySets = value;
-				for (int i = 0; i < matchCommunitySets.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"MatchCommunitySet." + (i + 1) , matchCommunitySets[i]);
-				}
 			}
 		}
 

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class CreateTransitRouterVpcAttachmentRequest : RpcAcsRequest<CreateTransitRouterVpcAttachmentResponse>
     {
         public CreateTransitRouterVpcAttachmentRequest()
-            : base("Cbn", "2017-09-12", "CreateTransitRouterVpcAttachment", "cbn", "openAPI")
+            : base("Cbn", "2017-09-12", "CreateTransitRouterVpcAttachment")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -54,7 +55,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string resourceOwnerAccount;
 
-		private List<ZoneMappings> zoneMappingss = new List<ZoneMappings>(){ };
+		private List<string> zoneMappingss = new List<string>(){ };
 
 		private string ownerAccount;
 
@@ -159,7 +160,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public List<ZoneMappings> ZoneMappingss
+		public List<string> ZoneMappingss
 		{
 			get
 			{
@@ -169,10 +170,13 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				zoneMappingss = value;
-				for (int i = 0; i < zoneMappingss.Count; i++)
+				if(zoneMappingss != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"ZoneMappings." + (i + 1) + ".VSwitchId", zoneMappingss[i].VSwitchId);
-					DictionaryUtil.Add(QueryParameters,"ZoneMappings." + (i + 1) + ".ZoneId", zoneMappingss[i].ZoneId);
+					for (int depth1 = 0; depth1 < zoneMappingss.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"ZoneMappings." + (depth1 + 1), zoneMappingss[depth1]);
+						DictionaryUtil.Add(QueryParameters,"ZoneMappings." + (depth1 + 1), zoneMappingss[depth1]);
+					}
 				}
 			}
 		}

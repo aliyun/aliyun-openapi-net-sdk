@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			ActiveFlowLogResponse activeFlowLogResponse = new ActiveFlowLogResponse();
 
 			activeFlowLogResponse.HttpResponse = _ctx.HttpResponse;
-			activeFlowLogResponse.RequestId = _ctx.StringValue("ActiveFlowLog.RequestId");
 			activeFlowLogResponse.Success = _ctx.StringValue("ActiveFlowLog.Success");
+			activeFlowLogResponse.RequestId = _ctx.StringValue("ActiveFlowLog.RequestId");
         
 			return activeFlowLogResponse;
         }

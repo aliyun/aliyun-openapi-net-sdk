@@ -33,17 +33,17 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			listTransitRouterAvailableResourceResponse.HttpResponse = _ctx.HttpResponse;
 			listTransitRouterAvailableResourceResponse.RequestId = _ctx.StringValue("ListTransitRouterAvailableResource.RequestId");
 
-			List<string> listTransitRouterAvailableResourceResponse_masterZones = new List<string>();
-			for (int i = 0; i < _ctx.Length("ListTransitRouterAvailableResource.MasterZones.Length"); i++) {
-				listTransitRouterAvailableResourceResponse_masterZones.Add(_ctx.StringValue("ListTransitRouterAvailableResource.MasterZones["+ i +"]"));
-			}
-			listTransitRouterAvailableResourceResponse.MasterZones = listTransitRouterAvailableResourceResponse_masterZones;
-
 			List<string> listTransitRouterAvailableResourceResponse_slaveZones = new List<string>();
 			for (int i = 0; i < _ctx.Length("ListTransitRouterAvailableResource.SlaveZones.Length"); i++) {
 				listTransitRouterAvailableResourceResponse_slaveZones.Add(_ctx.StringValue("ListTransitRouterAvailableResource.SlaveZones["+ i +"]"));
 			}
 			listTransitRouterAvailableResourceResponse.SlaveZones = listTransitRouterAvailableResourceResponse_slaveZones;
+
+			List<string> listTransitRouterAvailableResourceResponse_masterZones = new List<string>();
+			for (int i = 0; i < _ctx.Length("ListTransitRouterAvailableResource.MasterZones.Length"); i++) {
+				listTransitRouterAvailableResourceResponse_masterZones.Add(_ctx.StringValue("ListTransitRouterAvailableResource.MasterZones["+ i +"]"));
+			}
+			listTransitRouterAvailableResourceResponse.MasterZones = listTransitRouterAvailableResourceResponse_masterZones;
         
 			return listTransitRouterAvailableResourceResponse;
         }

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class DescribeCenBandwidthPackagesRequest : RpcAcsRequest<DescribeCenBandwidthPackagesResponse>
     {
         public DescribeCenBandwidthPackagesRequest()
-            : base("Cbn", "2017-09-12", "DescribeCenBandwidthPackages", "cbn", "openAPI")
+            : base("Cbn", "2017-09-12", "DescribeCenBandwidthPackages")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -172,13 +173,12 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				filters = value;
-				for (int i = 0; i < filters.Count; i++)
+				if(filters != null)
 				{
-					for (int j = 0; j < filters[i].Values.Count; j++)
+					for (int depth1 = 0; depth1 < filters.Count; depth1++)
 					{
-						DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Value." +(j + 1), filters[i].Values[j]);
+						DictionaryUtil.Add(QueryParameters,"Filter." + (depth1 + 1), filters[depth1]);
 					}
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
 				}
 			}
 		}

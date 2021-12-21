@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			DescribeCenGeographicSpanRemainingBandwidthResponse describeCenGeographicSpanRemainingBandwidthResponse = new DescribeCenGeographicSpanRemainingBandwidthResponse();
 
 			describeCenGeographicSpanRemainingBandwidthResponse.HttpResponse = _ctx.HttpResponse;
-			describeCenGeographicSpanRemainingBandwidthResponse.RequestId = _ctx.StringValue("DescribeCenGeographicSpanRemainingBandwidth.RequestId");
 			describeCenGeographicSpanRemainingBandwidthResponse.RemainingBandwidth = _ctx.LongValue("DescribeCenGeographicSpanRemainingBandwidth.RemainingBandwidth");
+			describeCenGeographicSpanRemainingBandwidthResponse.RequestId = _ctx.StringValue("DescribeCenGeographicSpanRemainingBandwidth.RequestId");
         
 			return describeCenGeographicSpanRemainingBandwidthResponse;
         }

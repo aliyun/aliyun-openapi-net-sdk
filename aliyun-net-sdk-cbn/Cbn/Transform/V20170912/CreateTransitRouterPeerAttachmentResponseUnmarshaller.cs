@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			CreateTransitRouterPeerAttachmentResponse createTransitRouterPeerAttachmentResponse = new CreateTransitRouterPeerAttachmentResponse();
 
 			createTransitRouterPeerAttachmentResponse.HttpResponse = _ctx.HttpResponse;
-			createTransitRouterPeerAttachmentResponse.RequestId = _ctx.StringValue("CreateTransitRouterPeerAttachment.RequestId");
 			createTransitRouterPeerAttachmentResponse.TransitRouterAttachmentId = _ctx.StringValue("CreateTransitRouterPeerAttachment.TransitRouterAttachmentId");
+			createTransitRouterPeerAttachmentResponse.RequestId = _ctx.StringValue("CreateTransitRouterPeerAttachment.RequestId");
         
 			return createTransitRouterPeerAttachmentResponse;
         }

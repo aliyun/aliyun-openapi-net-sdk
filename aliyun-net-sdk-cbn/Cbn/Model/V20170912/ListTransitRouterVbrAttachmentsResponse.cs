@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class ListTransitRouterVbrAttachmentsResponse : AcsResponse
 	{
 
+		private string nextToken;
+
 		private string requestId;
 
 		private int? totalCount;
 
 		private int? maxResults;
 
-		private string nextToken;
-
 		private List<ListTransitRouterVbrAttachments_TransitRouterAttachment> transitRouterAttachments;
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -71,18 +83,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-			}
-		}
-
 		public List<ListTransitRouterVbrAttachments_TransitRouterAttachment> TransitRouterAttachments
 		{
 			get
@@ -98,27 +98,51 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class ListTransitRouterVbrAttachments_TransitRouterAttachment
 		{
 
+			private string creationTime;
+
+			private string status;
+
 			private string transitRouterAttachmentId;
+
+			private string transitRouterId;
+
+			private string resourceType;
 
 			private string vbrRegionId;
 
+			private string transitRouterAttachmentDescription;
+
 			private long? vbrOwnerId;
+
+			private bool? autoPublishRouteEnabled;
 
 			private string vbrId;
 
 			private string transitRouterAttachmentName;
 
-			private string resourceType;
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
+				}
+			}
 
-			private string status;
-
-			private string transitRouterAttachmentDescription;
-
-			private string creationTime;
-
-			private bool? autoPublishRouteEnabled;
-
-			private string transitRouterId;
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
 
 			public string TransitRouterAttachmentId
 			{
@@ -129,6 +153,30 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					transitRouterAttachmentId = value;
+				}
+			}
+
+			public string TransitRouterId
+			{
+				get
+				{
+					return transitRouterId;
+				}
+				set	
+				{
+					transitRouterId = value;
+				}
+			}
+
+			public string ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
 				}
 			}
 
@@ -144,6 +192,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
+			public string TransitRouterAttachmentDescription
+			{
+				get
+				{
+					return transitRouterAttachmentDescription;
+				}
+				set	
+				{
+					transitRouterAttachmentDescription = value;
+				}
+			}
+
 			public long? VbrOwnerId
 			{
 				get
@@ -153,6 +213,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					vbrOwnerId = value;
+				}
+			}
+
+			public bool? AutoPublishRouteEnabled
+			{
+				get
+				{
+					return autoPublishRouteEnabled;
+				}
+				set	
+				{
+					autoPublishRouteEnabled = value;
 				}
 			}
 
@@ -177,78 +249,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					transitRouterAttachmentName = value;
-				}
-			}
-
-			public string ResourceType
-			{
-				get
-				{
-					return resourceType;
-				}
-				set	
-				{
-					resourceType = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string TransitRouterAttachmentDescription
-			{
-				get
-				{
-					return transitRouterAttachmentDescription;
-				}
-				set	
-				{
-					transitRouterAttachmentDescription = value;
-				}
-			}
-
-			public string CreationTime
-			{
-				get
-				{
-					return creationTime;
-				}
-				set	
-				{
-					creationTime = value;
-				}
-			}
-
-			public bool? AutoPublishRouteEnabled
-			{
-				get
-				{
-					return autoPublishRouteEnabled;
-				}
-				set	
-				{
-					autoPublishRouteEnabled = value;
-				}
-			}
-
-			public string TransitRouterId
-			{
-				get
-				{
-					return transitRouterId;
-				}
-				set	
-				{
-					transitRouterId = value;
 				}
 			}
 		}

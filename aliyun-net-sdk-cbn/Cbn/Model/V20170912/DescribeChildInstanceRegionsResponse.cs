@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -56,21 +56,9 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class DescribeChildInstanceRegions_Region
 		{
 
-			private string regionId;
-
 			private string localName;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+			private string regionId;
 
 			public string LocalName
 			{
@@ -81,6 +69,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					localName = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 		}

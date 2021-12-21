@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class CreateFlowlogRequest : RpcAcsRequest<CreateFlowlogResponse>
     {
         public CreateFlowlogRequest()
-            : base("Cbn", "2017-09-12", "CreateFlowlog", "cbn", "openAPI")
+            : base("Cbn", "2017-09-12", "CreateFlowlog")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

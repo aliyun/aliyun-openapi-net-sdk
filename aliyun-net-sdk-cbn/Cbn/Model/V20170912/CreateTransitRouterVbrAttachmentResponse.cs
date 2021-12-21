@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class CreateTransitRouterVbrAttachmentResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string transitRouterAttachmentId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string TransitRouterAttachmentId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set	
 			{
 				transitRouterAttachmentId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

@@ -31,30 +31,30 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			DescribePublishedRouteEntriesResponse describePublishedRouteEntriesResponse = new DescribePublishedRouteEntriesResponse();
 
 			describePublishedRouteEntriesResponse.HttpResponse = _ctx.HttpResponse;
+			describePublishedRouteEntriesResponse.PageSize = _ctx.IntegerValue("DescribePublishedRouteEntries.PageSize");
 			describePublishedRouteEntriesResponse.RequestId = _ctx.StringValue("DescribePublishedRouteEntries.RequestId");
 			describePublishedRouteEntriesResponse.PageNumber = _ctx.IntegerValue("DescribePublishedRouteEntries.PageNumber");
 			describePublishedRouteEntriesResponse.TotalCount = _ctx.IntegerValue("DescribePublishedRouteEntries.TotalCount");
-			describePublishedRouteEntriesResponse.PageSize = _ctx.IntegerValue("DescribePublishedRouteEntries.PageSize");
 
 			List<DescribePublishedRouteEntriesResponse.DescribePublishedRouteEntries_PublishedRouteEntry> describePublishedRouteEntriesResponse_publishedRouteEntries = new List<DescribePublishedRouteEntriesResponse.DescribePublishedRouteEntries_PublishedRouteEntry>();
 			for (int i = 0; i < _ctx.Length("DescribePublishedRouteEntries.PublishedRouteEntries.Length"); i++) {
 				DescribePublishedRouteEntriesResponse.DescribePublishedRouteEntries_PublishedRouteEntry publishedRouteEntry = new DescribePublishedRouteEntriesResponse.DescribePublishedRouteEntries_PublishedRouteEntry();
-				publishedRouteEntry.DestinationCidrBlock = _ctx.StringValue("DescribePublishedRouteEntries.PublishedRouteEntries["+ i +"].DestinationCidrBlock");
+				publishedRouteEntry.NextHopId = _ctx.StringValue("DescribePublishedRouteEntries.PublishedRouteEntries["+ i +"].NextHopId");
+				publishedRouteEntry.PublishStatus = _ctx.StringValue("DescribePublishedRouteEntries.PublishedRouteEntries["+ i +"].PublishStatus");
 				publishedRouteEntry.ChildInstanceRouteTableId = _ctx.StringValue("DescribePublishedRouteEntries.PublishedRouteEntries["+ i +"].ChildInstanceRouteTableId");
 				publishedRouteEntry.NextHopType = _ctx.StringValue("DescribePublishedRouteEntries.PublishedRouteEntries["+ i +"].NextHopType");
-				publishedRouteEntry.RouteType = _ctx.StringValue("DescribePublishedRouteEntries.PublishedRouteEntries["+ i +"].RouteType");
-				publishedRouteEntry.NextHopId = _ctx.StringValue("DescribePublishedRouteEntries.PublishedRouteEntries["+ i +"].NextHopId");
 				publishedRouteEntry.OperationalMode = _ctx.BooleanValue("DescribePublishedRouteEntries.PublishedRouteEntries["+ i +"].OperationalMode");
-				publishedRouteEntry.PublishStatus = _ctx.StringValue("DescribePublishedRouteEntries.PublishedRouteEntries["+ i +"].PublishStatus");
+				publishedRouteEntry.DestinationCidrBlock = _ctx.StringValue("DescribePublishedRouteEntries.PublishedRouteEntries["+ i +"].DestinationCidrBlock");
+				publishedRouteEntry.RouteType = _ctx.StringValue("DescribePublishedRouteEntries.PublishedRouteEntries["+ i +"].RouteType");
 
 				List<DescribePublishedRouteEntriesResponse.DescribePublishedRouteEntries_PublishedRouteEntry.DescribePublishedRouteEntries_Conflict> publishedRouteEntry_conflicts = new List<DescribePublishedRouteEntriesResponse.DescribePublishedRouteEntries_PublishedRouteEntry.DescribePublishedRouteEntries_Conflict>();
 				for (int j = 0; j < _ctx.Length("DescribePublishedRouteEntries.PublishedRouteEntries["+ i +"].Conflicts.Length"); j++) {
 					DescribePublishedRouteEntriesResponse.DescribePublishedRouteEntries_PublishedRouteEntry.DescribePublishedRouteEntries_Conflict conflict = new DescribePublishedRouteEntriesResponse.DescribePublishedRouteEntries_PublishedRouteEntry.DescribePublishedRouteEntries_Conflict();
+					conflict.Status = _ctx.StringValue("DescribePublishedRouteEntries.PublishedRouteEntries["+ i +"].Conflicts["+ j +"].Status");
 					conflict.DestinationCidrBlock = _ctx.StringValue("DescribePublishedRouteEntries.PublishedRouteEntries["+ i +"].Conflicts["+ j +"].DestinationCidrBlock");
-					conflict.RegionId = _ctx.StringValue("DescribePublishedRouteEntries.PublishedRouteEntries["+ i +"].Conflicts["+ j +"].RegionId");
 					conflict.InstanceId = _ctx.StringValue("DescribePublishedRouteEntries.PublishedRouteEntries["+ i +"].Conflicts["+ j +"].InstanceId");
 					conflict.InstanceType = _ctx.StringValue("DescribePublishedRouteEntries.PublishedRouteEntries["+ i +"].Conflicts["+ j +"].InstanceType");
-					conflict.Status = _ctx.StringValue("DescribePublishedRouteEntries.PublishedRouteEntries["+ i +"].Conflicts["+ j +"].Status");
+					conflict.RegionId = _ctx.StringValue("DescribePublishedRouteEntries.PublishedRouteEntries["+ i +"].Conflicts["+ j +"].RegionId");
 
 					publishedRouteEntry_conflicts.Add(conflict);
 				}

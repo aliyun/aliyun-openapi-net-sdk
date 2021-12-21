@@ -31,22 +31,22 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			DescribeCensResponse describeCensResponse = new DescribeCensResponse();
 
 			describeCensResponse.HttpResponse = _ctx.HttpResponse;
-			describeCensResponse.RequestId = _ctx.StringValue("DescribeCens.RequestId");
-			describeCensResponse.TotalCount = _ctx.IntegerValue("DescribeCens.TotalCount");
-			describeCensResponse.PageNumber = _ctx.IntegerValue("DescribeCens.PageNumber");
 			describeCensResponse.PageSize = _ctx.IntegerValue("DescribeCens.PageSize");
+			describeCensResponse.RequestId = _ctx.StringValue("DescribeCens.RequestId");
+			describeCensResponse.PageNumber = _ctx.IntegerValue("DescribeCens.PageNumber");
+			describeCensResponse.TotalCount = _ctx.IntegerValue("DescribeCens.TotalCount");
 
 			List<DescribeCensResponse.DescribeCens_Cen> describeCensResponse_cens = new List<DescribeCensResponse.DescribeCens_Cen>();
 			for (int i = 0; i < _ctx.Length("DescribeCens.Cens.Length"); i++) {
 				DescribeCensResponse.DescribeCens_Cen cen = new DescribeCensResponse.DescribeCens_Cen();
-				cen.CenId = _ctx.StringValue("DescribeCens.Cens["+ i +"].CenId");
-				cen.Name = _ctx.StringValue("DescribeCens.Cens["+ i +"].Name");
-				cen.Description = _ctx.StringValue("DescribeCens.Cens["+ i +"].Description");
-				cen.ProtectionLevel = _ctx.StringValue("DescribeCens.Cens["+ i +"].ProtectionLevel");
 				cen.Status = _ctx.StringValue("DescribeCens.Cens["+ i +"].Status");
 				cen.CreationTime = _ctx.StringValue("DescribeCens.Cens["+ i +"].CreationTime");
 				cen.Ipv6Level = _ctx.StringValue("DescribeCens.Cens["+ i +"].Ipv6Level");
+				cen.Description = _ctx.StringValue("DescribeCens.Cens["+ i +"].Description");
 				cen.ResourceGroupId = _ctx.StringValue("DescribeCens.Cens["+ i +"].ResourceGroupId");
+				cen.CenId = _ctx.StringValue("DescribeCens.Cens["+ i +"].CenId");
+				cen.ProtectionLevel = _ctx.StringValue("DescribeCens.Cens["+ i +"].ProtectionLevel");
+				cen.Name = _ctx.StringValue("DescribeCens.Cens["+ i +"].Name");
 
 				List<string> cen_cenBandwidthPackageIds = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeCens.Cens["+ i +"].CenBandwidthPackageIds.Length"); j++) {

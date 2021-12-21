@@ -31,10 +31,10 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			DescribeGeographicRegionMembershipResponse describeGeographicRegionMembershipResponse = new DescribeGeographicRegionMembershipResponse();
 
 			describeGeographicRegionMembershipResponse.HttpResponse = _ctx.HttpResponse;
-			describeGeographicRegionMembershipResponse.RequestId = _ctx.StringValue("DescribeGeographicRegionMembership.RequestId");
-			describeGeographicRegionMembershipResponse.TotalCount = _ctx.IntegerValue("DescribeGeographicRegionMembership.TotalCount");
-			describeGeographicRegionMembershipResponse.PageNumber = _ctx.IntegerValue("DescribeGeographicRegionMembership.PageNumber");
 			describeGeographicRegionMembershipResponse.PageSize = _ctx.IntegerValue("DescribeGeographicRegionMembership.PageSize");
+			describeGeographicRegionMembershipResponse.RequestId = _ctx.StringValue("DescribeGeographicRegionMembership.RequestId");
+			describeGeographicRegionMembershipResponse.PageNumber = _ctx.IntegerValue("DescribeGeographicRegionMembership.PageNumber");
+			describeGeographicRegionMembershipResponse.TotalCount = _ctx.IntegerValue("DescribeGeographicRegionMembership.TotalCount");
 
 			List<DescribeGeographicRegionMembershipResponse.DescribeGeographicRegionMembership_RegionId> describeGeographicRegionMembershipResponse_regionIds = new List<DescribeGeographicRegionMembershipResponse.DescribeGeographicRegionMembership_RegionId>();
 			for (int i = 0; i < _ctx.Length("DescribeGeographicRegionMembership.RegionIds.Length"); i++) {

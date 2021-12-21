@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class DescribeCenRouteMapsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<DescribeCenRouteMaps_RouteMap> routeMaps;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,87 +98,75 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class DescribeCenRouteMaps_RouteMap
 		{
 
-			private string status;
-
 			private string routeMapId;
 
-			private string cenId;
-
-			private string cenRegionId;
-
-			private string description;
-
-			private string mapResult;
-
-			private int? priority;
-
-			private int? nextPriority;
-
-			private string cidrMatchMode;
-
-			private string asPathMatchMode;
-
-			private string communityMatchMode;
-
-			private string communityOperateMode;
-
-			private int? preference;
+			private string status;
 
 			private string transmitDirection;
 
 			private bool? sourceInstanceIdsReverseMatch;
 
-			private bool? destinationInstanceIdsReverseMatch;
+			private string cenRegionId;
 
-			private string gatewayZoneId;
+			private string cenId;
 
-			private string matchAddressType;
+			private int? priority;
 
 			private string transitRouterRouteTableId;
 
-			private List<string> sourceInstanceIds;
+			private string communityOperateMode;
 
-			private List<string> destinationInstanceIds;
+			private string mapResult;
 
-			private List<string> sourceRouteTableIds;
+			private string communityMatchMode;
 
-			private List<string> destinationRouteTableIds;
+			private string description;
+
+			private string asPathMatchMode;
+
+			private int? preference;
+
+			private bool? destinationInstanceIdsReverseMatch;
+
+			private string cidrMatchMode;
+
+			private int? nextPriority;
+
+			private string matchAddressType;
+
+			private string gatewayZoneId;
 
 			private List<string> sourceRegionIds;
 
 			private List<string> sourceChildInstanceTypes;
 
-			private List<string> destinationChildInstanceTypes;
+			private List<string> destinationRouteTableIds;
+
+			private List<string> sourceInstanceIds;
 
 			private List<string> destinationCidrBlocks;
 
-			private List<string> routeTypes;
+			private List<string> destinationRegionIds;
 
-			private List<string> matchAsns;
+			private List<string> sourceRouteTableIds;
 
 			private List<string> matchCommunitySet;
 
-			private List<string> operateCommunitySet;
-
 			private List<string> prependAsPath;
 
-			private List<string> destinationRegionIds;
+			private List<string> routeTypes;
 
 			private List<string> originalRouteTableIds;
 
-			private List<string> srcZoneIds;
+			private List<string> destinationChildInstanceTypes;
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+			private List<string> destinationInstanceIds;
+
+			private List<string> matchAsns;
+
+			private List<string> operateCommunitySet;
+
+			private List<string> srcZoneIds;
 
 			public string RouteMapId
 			{
@@ -192,135 +180,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string CenId
+			public string Status
 			{
 				get
 				{
-					return cenId;
+					return status;
 				}
 				set	
 				{
-					cenId = value;
-				}
-			}
-
-			public string CenRegionId
-			{
-				get
-				{
-					return cenRegionId;
-				}
-				set	
-				{
-					cenRegionId = value;
-				}
-			}
-
-			public string Description
-			{
-				get
-				{
-					return description;
-				}
-				set	
-				{
-					description = value;
-				}
-			}
-
-			public string MapResult
-			{
-				get
-				{
-					return mapResult;
-				}
-				set	
-				{
-					mapResult = value;
-				}
-			}
-
-			public int? Priority
-			{
-				get
-				{
-					return priority;
-				}
-				set	
-				{
-					priority = value;
-				}
-			}
-
-			public int? NextPriority
-			{
-				get
-				{
-					return nextPriority;
-				}
-				set	
-				{
-					nextPriority = value;
-				}
-			}
-
-			public string CidrMatchMode
-			{
-				get
-				{
-					return cidrMatchMode;
-				}
-				set	
-				{
-					cidrMatchMode = value;
-				}
-			}
-
-			public string AsPathMatchMode
-			{
-				get
-				{
-					return asPathMatchMode;
-				}
-				set	
-				{
-					asPathMatchMode = value;
-				}
-			}
-
-			public string CommunityMatchMode
-			{
-				get
-				{
-					return communityMatchMode;
-				}
-				set	
-				{
-					communityMatchMode = value;
-				}
-			}
-
-			public string CommunityOperateMode
-			{
-				get
-				{
-					return communityOperateMode;
-				}
-				set	
-				{
-					communityOperateMode = value;
-				}
-			}
-
-			public int? Preference
-			{
-				get
-				{
-					return preference;
-				}
-				set	
-				{
-					preference = value;
+					status = value;
 				}
 			}
 
@@ -348,39 +216,39 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public bool? DestinationInstanceIdsReverseMatch
+			public string CenRegionId
 			{
 				get
 				{
-					return destinationInstanceIdsReverseMatch;
+					return cenRegionId;
 				}
 				set	
 				{
-					destinationInstanceIdsReverseMatch = value;
+					cenRegionId = value;
 				}
 			}
 
-			public string GatewayZoneId
+			public string CenId
 			{
 				get
 				{
-					return gatewayZoneId;
+					return cenId;
 				}
 				set	
 				{
-					gatewayZoneId = value;
+					cenId = value;
 				}
 			}
 
-			public string MatchAddressType
+			public int? Priority
 			{
 				get
 				{
-					return matchAddressType;
+					return priority;
 				}
 				set	
 				{
-					matchAddressType = value;
+					priority = value;
 				}
 			}
 
@@ -396,51 +264,135 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public List<string> SourceInstanceIds
+			public string CommunityOperateMode
 			{
 				get
 				{
-					return sourceInstanceIds;
+					return communityOperateMode;
 				}
 				set	
 				{
-					sourceInstanceIds = value;
+					communityOperateMode = value;
 				}
 			}
 
-			public List<string> DestinationInstanceIds
+			public string MapResult
 			{
 				get
 				{
-					return destinationInstanceIds;
+					return mapResult;
 				}
 				set	
 				{
-					destinationInstanceIds = value;
+					mapResult = value;
 				}
 			}
 
-			public List<string> SourceRouteTableIds
+			public string CommunityMatchMode
 			{
 				get
 				{
-					return sourceRouteTableIds;
+					return communityMatchMode;
 				}
 				set	
 				{
-					sourceRouteTableIds = value;
+					communityMatchMode = value;
 				}
 			}
 
-			public List<string> DestinationRouteTableIds
+			public string Description
 			{
 				get
 				{
-					return destinationRouteTableIds;
+					return description;
 				}
 				set	
 				{
-					destinationRouteTableIds = value;
+					description = value;
+				}
+			}
+
+			public string AsPathMatchMode
+			{
+				get
+				{
+					return asPathMatchMode;
+				}
+				set	
+				{
+					asPathMatchMode = value;
+				}
+			}
+
+			public int? Preference
+			{
+				get
+				{
+					return preference;
+				}
+				set	
+				{
+					preference = value;
+				}
+			}
+
+			public bool? DestinationInstanceIdsReverseMatch
+			{
+				get
+				{
+					return destinationInstanceIdsReverseMatch;
+				}
+				set	
+				{
+					destinationInstanceIdsReverseMatch = value;
+				}
+			}
+
+			public string CidrMatchMode
+			{
+				get
+				{
+					return cidrMatchMode;
+				}
+				set	
+				{
+					cidrMatchMode = value;
+				}
+			}
+
+			public int? NextPriority
+			{
+				get
+				{
+					return nextPriority;
+				}
+				set	
+				{
+					nextPriority = value;
+				}
+			}
+
+			public string MatchAddressType
+			{
+				get
+				{
+					return matchAddressType;
+				}
+				set	
+				{
+					matchAddressType = value;
+				}
+			}
+
+			public string GatewayZoneId
+			{
+				get
+				{
+					return gatewayZoneId;
+				}
+				set	
+				{
+					gatewayZoneId = value;
 				}
 			}
 
@@ -468,15 +420,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public List<string> DestinationChildInstanceTypes
+			public List<string> DestinationRouteTableIds
 			{
 				get
 				{
-					return destinationChildInstanceTypes;
+					return destinationRouteTableIds;
 				}
 				set	
 				{
-					destinationChildInstanceTypes = value;
+					destinationRouteTableIds = value;
+				}
+			}
+
+			public List<string> SourceInstanceIds
+			{
+				get
+				{
+					return sourceInstanceIds;
+				}
+				set	
+				{
+					sourceInstanceIds = value;
 				}
 			}
 
@@ -492,27 +456,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public List<string> RouteTypes
+			public List<string> DestinationRegionIds
 			{
 				get
 				{
-					return routeTypes;
+					return destinationRegionIds;
 				}
 				set	
 				{
-					routeTypes = value;
+					destinationRegionIds = value;
 				}
 			}
 
-			public List<string> MatchAsns
+			public List<string> SourceRouteTableIds
 			{
 				get
 				{
-					return matchAsns;
+					return sourceRouteTableIds;
 				}
 				set	
 				{
-					matchAsns = value;
+					sourceRouteTableIds = value;
 				}
 			}
 
@@ -528,18 +492,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public List<string> OperateCommunitySet
-			{
-				get
-				{
-					return operateCommunitySet;
-				}
-				set	
-				{
-					operateCommunitySet = value;
-				}
-			}
-
 			public List<string> PrependAsPath
 			{
 				get
@@ -552,15 +504,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public List<string> DestinationRegionIds
+			public List<string> RouteTypes
 			{
 				get
 				{
-					return destinationRegionIds;
+					return routeTypes;
 				}
 				set	
 				{
-					destinationRegionIds = value;
+					routeTypes = value;
 				}
 			}
 
@@ -573,6 +525,54 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					originalRouteTableIds = value;
+				}
+			}
+
+			public List<string> DestinationChildInstanceTypes
+			{
+				get
+				{
+					return destinationChildInstanceTypes;
+				}
+				set	
+				{
+					destinationChildInstanceTypes = value;
+				}
+			}
+
+			public List<string> DestinationInstanceIds
+			{
+				get
+				{
+					return destinationInstanceIds;
+				}
+				set	
+				{
+					destinationInstanceIds = value;
+				}
+			}
+
+			public List<string> MatchAsns
+			{
+				get
+				{
+					return matchAsns;
+				}
+				set	
+				{
+					matchAsns = value;
+				}
+			}
+
+			public List<string> OperateCommunitySet
+			{
+				get
+				{
+					return operateCommunitySet;
+				}
+				set	
+				{
+					operateCommunitySet = value;
 				}
 			}
 

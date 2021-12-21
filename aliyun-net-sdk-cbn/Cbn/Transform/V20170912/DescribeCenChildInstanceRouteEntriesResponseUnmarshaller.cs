@@ -31,29 +31,23 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			DescribeCenChildInstanceRouteEntriesResponse describeCenChildInstanceRouteEntriesResponse = new DescribeCenChildInstanceRouteEntriesResponse();
 
 			describeCenChildInstanceRouteEntriesResponse.HttpResponse = _ctx.HttpResponse;
+			describeCenChildInstanceRouteEntriesResponse.PageSize = _ctx.IntegerValue("DescribeCenChildInstanceRouteEntries.PageSize");
 			describeCenChildInstanceRouteEntriesResponse.RequestId = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.RequestId");
 			describeCenChildInstanceRouteEntriesResponse.PageNumber = _ctx.IntegerValue("DescribeCenChildInstanceRouteEntries.PageNumber");
 			describeCenChildInstanceRouteEntriesResponse.TotalCount = _ctx.IntegerValue("DescribeCenChildInstanceRouteEntries.TotalCount");
-			describeCenChildInstanceRouteEntriesResponse.PageSize = _ctx.IntegerValue("DescribeCenChildInstanceRouteEntries.PageSize");
 
 			List<DescribeCenChildInstanceRouteEntriesResponse.DescribeCenChildInstanceRouteEntries_CenRouteEntry> describeCenChildInstanceRouteEntriesResponse_cenRouteEntries = new List<DescribeCenChildInstanceRouteEntriesResponse.DescribeCenChildInstanceRouteEntries_CenRouteEntry>();
 			for (int i = 0; i < _ctx.Length("DescribeCenChildInstanceRouteEntries.CenRouteEntries.Length"); i++) {
 				DescribeCenChildInstanceRouteEntriesResponse.DescribeCenChildInstanceRouteEntries_CenRouteEntry cenRouteEntry = new DescribeCenChildInstanceRouteEntriesResponse.DescribeCenChildInstanceRouteEntries_CenRouteEntry();
-				cenRouteEntry.DestinationCidrBlock = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].DestinationCidrBlock");
-				cenRouteEntry.Type = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].Type");
-				cenRouteEntry.NextHopInstanceId = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].NextHopInstanceId");
-				cenRouteEntry.NextHopType = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].NextHopType");
-				cenRouteEntry.NextHopRegionId = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].NextHopRegionId");
 				cenRouteEntry.Status = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].Status");
-				cenRouteEntry.OperationalMode = _ctx.BooleanValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].OperationalMode");
+				cenRouteEntry.Type = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].Type");
 				cenRouteEntry.PublishStatus = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].PublishStatus");
+				cenRouteEntry.NextHopType = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].NextHopType");
+				cenRouteEntry.OperationalMode = _ctx.BooleanValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].OperationalMode");
+				cenRouteEntry.NextHopRegionId = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].NextHopRegionId");
+				cenRouteEntry.NextHopInstanceId = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].NextHopInstanceId");
+				cenRouteEntry.DestinationCidrBlock = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].DestinationCidrBlock");
 				cenRouteEntry.RouteTableId = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].RouteTableId");
-
-				List<string> cenRouteEntry_asPaths = new List<string>();
-				for (int j = 0; j < _ctx.Length("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].AsPaths.Length"); j++) {
-					cenRouteEntry_asPaths.Add(_ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].AsPaths["+ j +"]"));
-				}
-				cenRouteEntry.AsPaths = cenRouteEntry_asPaths;
 
 				List<string> cenRouteEntry_communities = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].Communities.Length"); j++) {
@@ -61,11 +55,17 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				}
 				cenRouteEntry.Communities = cenRouteEntry_communities;
 
+				List<string> cenRouteEntry_asPaths = new List<string>();
+				for (int j = 0; j < _ctx.Length("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].AsPaths.Length"); j++) {
+					cenRouteEntry_asPaths.Add(_ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].AsPaths["+ j +"]"));
+				}
+				cenRouteEntry.AsPaths = cenRouteEntry_asPaths;
+
 				List<DescribeCenChildInstanceRouteEntriesResponse.DescribeCenChildInstanceRouteEntries_CenRouteEntry.DescribeCenChildInstanceRouteEntries_CenRouteMapRecord> cenRouteEntry_cenRouteMapRecords = new List<DescribeCenChildInstanceRouteEntriesResponse.DescribeCenChildInstanceRouteEntries_CenRouteEntry.DescribeCenChildInstanceRouteEntries_CenRouteMapRecord>();
 				for (int j = 0; j < _ctx.Length("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].CenRouteMapRecords.Length"); j++) {
 					DescribeCenChildInstanceRouteEntriesResponse.DescribeCenChildInstanceRouteEntries_CenRouteEntry.DescribeCenChildInstanceRouteEntries_CenRouteMapRecord cenRouteMapRecord = new DescribeCenChildInstanceRouteEntriesResponse.DescribeCenChildInstanceRouteEntries_CenRouteEntry.DescribeCenChildInstanceRouteEntries_CenRouteMapRecord();
-					cenRouteMapRecord.RegionId = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].CenRouteMapRecords["+ j +"].RegionId");
 					cenRouteMapRecord.RouteMapId = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].CenRouteMapRecords["+ j +"].RouteMapId");
+					cenRouteMapRecord.RegionId = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].CenRouteMapRecords["+ j +"].RegionId");
 
 					cenRouteEntry_cenRouteMapRecords.Add(cenRouteMapRecord);
 				}
@@ -74,11 +74,11 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				List<DescribeCenChildInstanceRouteEntriesResponse.DescribeCenChildInstanceRouteEntries_CenRouteEntry.DescribeCenChildInstanceRouteEntries_Conflict> cenRouteEntry_conflicts = new List<DescribeCenChildInstanceRouteEntriesResponse.DescribeCenChildInstanceRouteEntries_CenRouteEntry.DescribeCenChildInstanceRouteEntries_Conflict>();
 				for (int j = 0; j < _ctx.Length("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].Conflicts.Length"); j++) {
 					DescribeCenChildInstanceRouteEntriesResponse.DescribeCenChildInstanceRouteEntries_CenRouteEntry.DescribeCenChildInstanceRouteEntries_Conflict conflict = new DescribeCenChildInstanceRouteEntriesResponse.DescribeCenChildInstanceRouteEntries_CenRouteEntry.DescribeCenChildInstanceRouteEntries_Conflict();
+					conflict.Status = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].Conflicts["+ j +"].Status");
 					conflict.DestinationCidrBlock = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].Conflicts["+ j +"].DestinationCidrBlock");
-					conflict.RegionId = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].Conflicts["+ j +"].RegionId");
 					conflict.InstanceId = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].Conflicts["+ j +"].InstanceId");
 					conflict.InstanceType = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].Conflicts["+ j +"].InstanceType");
-					conflict.Status = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].Conflicts["+ j +"].Status");
+					conflict.RegionId = _ctx.StringValue("DescribeCenChildInstanceRouteEntries.CenRouteEntries["+ i +"].Conflicts["+ j +"].RegionId");
 
 					cenRouteEntry_conflicts.Add(conflict);
 				}

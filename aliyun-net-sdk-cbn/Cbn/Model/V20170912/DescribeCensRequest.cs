@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class DescribeCensRequest : RpcAcsRequest<DescribeCensResponse>
     {
         public DescribeCensRequest()
-            : base("Cbn", "2017-09-12", "DescribeCens", "cbn", "openAPI")
+            : base("Cbn", "2017-09-12", "DescribeCens")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -46,7 +47,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private int? pageSize;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private List<string> tags = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -95,7 +96,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public List<Tag> Tags
+		public List<string> Tags
 		{
 			get
 			{
@@ -105,10 +106,13 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				tags = value;
-				for (int i = 0; i < tags.Count; i++)
+				if(tags != null)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					for (int depth1 = 0; depth1 < tags.Count; depth1++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Tag." + (depth1 + 1), tags[depth1]);
+					}
 				}
 			}
 		}
@@ -162,13 +166,12 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				filters = value;
-				for (int i = 0; i < filters.Count; i++)
+				if(filters != null)
 				{
-					for (int j = 0; j < filters[i].Values.Count; j++)
+					for (int depth1 = 0; depth1 < filters.Count; depth1++)
 					{
-						DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Value." +(j + 1), filters[i].Values[j]);
+						DictionaryUtil.Add(QueryParameters,"Filter." + (depth1 + 1), filters[depth1]);
 					}
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
 				}
 			}
 		}
@@ -180,7 +183,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string key;
 
-			public string Value
+			public string Value_
 			{
 				get
 				{

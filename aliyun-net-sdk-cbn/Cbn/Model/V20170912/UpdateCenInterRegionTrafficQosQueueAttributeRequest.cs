@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class UpdateCenInterRegionTrafficQosQueueAttributeRequest : RpcAcsRequest<UpdateCenInterRegionTrafficQosQueueAttributeResponse>
     {
         public UpdateCenInterRegionTrafficQosQueueAttributeRequest()
-            : base("Cbn", "2017-09-12", "UpdateCenInterRegionTrafficQosQueueAttribute", "cbn", "openAPI")
+            : base("Cbn", "2017-09-12", "UpdateCenInterRegionTrafficQosQueueAttribute")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,7 +41,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			Method = MethodType.POST;
         }
 
-		private List<int?> dscpss = new List<int?>(){ };
+		private List<string> dscpss = new List<string>(){ };
 
 		private long? resourceOwnerId;
 
@@ -62,7 +63,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string qosQueueDescription;
 
-		public List<int?> Dscpss
+		public List<string> Dscpss
 		{
 			get
 			{
@@ -72,10 +73,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				dscpss = value;
-				for (int i = 0; i < dscpss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Dscps." + (i + 1) , dscpss[i]);
-				}
 			}
 		}
 

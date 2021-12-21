@@ -31,19 +31,19 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			DescribeRouteConflictResponse describeRouteConflictResponse = new DescribeRouteConflictResponse();
 
 			describeRouteConflictResponse.HttpResponse = _ctx.HttpResponse;
+			describeRouteConflictResponse.PageSize = _ctx.IntegerValue("DescribeRouteConflict.PageSize");
 			describeRouteConflictResponse.RequestId = _ctx.StringValue("DescribeRouteConflict.RequestId");
 			describeRouteConflictResponse.PageNumber = _ctx.IntegerValue("DescribeRouteConflict.PageNumber");
 			describeRouteConflictResponse.TotalCount = _ctx.IntegerValue("DescribeRouteConflict.TotalCount");
-			describeRouteConflictResponse.PageSize = _ctx.IntegerValue("DescribeRouteConflict.PageSize");
 
 			List<DescribeRouteConflictResponse.DescribeRouteConflict_RouteConflict> describeRouteConflictResponse_routeConflicts = new List<DescribeRouteConflictResponse.DescribeRouteConflict_RouteConflict>();
 			for (int i = 0; i < _ctx.Length("DescribeRouteConflict.RouteConflicts.Length"); i++) {
 				DescribeRouteConflictResponse.DescribeRouteConflict_RouteConflict routeConflict = new DescribeRouteConflictResponse.DescribeRouteConflict_RouteConflict();
+				routeConflict.Status = _ctx.StringValue("DescribeRouteConflict.RouteConflicts["+ i +"].Status");
 				routeConflict.DestinationCidrBlock = _ctx.StringValue("DescribeRouteConflict.RouteConflicts["+ i +"].DestinationCidrBlock");
-				routeConflict.RegionId = _ctx.StringValue("DescribeRouteConflict.RouteConflicts["+ i +"].RegionId");
 				routeConflict.InstanceId = _ctx.StringValue("DescribeRouteConflict.RouteConflicts["+ i +"].InstanceId");
 				routeConflict.InstanceType = _ctx.StringValue("DescribeRouteConflict.RouteConflicts["+ i +"].InstanceType");
-				routeConflict.Status = _ctx.StringValue("DescribeRouteConflict.RouteConflicts["+ i +"].Status");
+				routeConflict.RegionId = _ctx.StringValue("DescribeRouteConflict.RouteConflicts["+ i +"].RegionId");
 
 				describeRouteConflictResponse_routeConflicts.Add(routeConflict);
 			}

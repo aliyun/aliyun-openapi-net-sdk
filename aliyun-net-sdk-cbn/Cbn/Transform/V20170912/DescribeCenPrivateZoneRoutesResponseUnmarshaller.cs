@@ -32,19 +32,19 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 
 			describeCenPrivateZoneRoutesResponse.HttpResponse = _ctx.HttpResponse;
 			describeCenPrivateZoneRoutesResponse.RequestId = _ctx.StringValue("DescribeCenPrivateZoneRoutes.RequestId");
-			describeCenPrivateZoneRoutesResponse.CenId = _ctx.StringValue("DescribeCenPrivateZoneRoutes.CenId");
 			describeCenPrivateZoneRoutesResponse.PrivateZoneDnsServers = _ctx.StringValue("DescribeCenPrivateZoneRoutes.PrivateZoneDnsServers");
+			describeCenPrivateZoneRoutesResponse.CenId = _ctx.StringValue("DescribeCenPrivateZoneRoutes.CenId");
 			describeCenPrivateZoneRoutesResponse.PageNumber = _ctx.IntegerValue("DescribeCenPrivateZoneRoutes.PageNumber");
-			describeCenPrivateZoneRoutesResponse.TotalCount = _ctx.IntegerValue("DescribeCenPrivateZoneRoutes.TotalCount");
 			describeCenPrivateZoneRoutesResponse.PageSize = _ctx.IntegerValue("DescribeCenPrivateZoneRoutes.PageSize");
+			describeCenPrivateZoneRoutesResponse.TotalCount = _ctx.IntegerValue("DescribeCenPrivateZoneRoutes.TotalCount");
 
 			List<DescribeCenPrivateZoneRoutesResponse.DescribeCenPrivateZoneRoutes_PrivateZoneInfo> describeCenPrivateZoneRoutesResponse_privateZoneInfos = new List<DescribeCenPrivateZoneRoutesResponse.DescribeCenPrivateZoneRoutes_PrivateZoneInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeCenPrivateZoneRoutes.PrivateZoneInfos.Length"); i++) {
 				DescribeCenPrivateZoneRoutesResponse.DescribeCenPrivateZoneRoutes_PrivateZoneInfo privateZoneInfo = new DescribeCenPrivateZoneRoutesResponse.DescribeCenPrivateZoneRoutes_PrivateZoneInfo();
+				privateZoneInfo.Status = _ctx.StringValue("DescribeCenPrivateZoneRoutes.PrivateZoneInfos["+ i +"].Status");
 				privateZoneInfo.AccessRegionId = _ctx.StringValue("DescribeCenPrivateZoneRoutes.PrivateZoneInfos["+ i +"].AccessRegionId");
 				privateZoneInfo.HostRegionId = _ctx.StringValue("DescribeCenPrivateZoneRoutes.PrivateZoneInfos["+ i +"].HostRegionId");
 				privateZoneInfo.HostVpcId = _ctx.StringValue("DescribeCenPrivateZoneRoutes.PrivateZoneInfos["+ i +"].HostVpcId");
-				privateZoneInfo.Status = _ctx.StringValue("DescribeCenPrivateZoneRoutes.PrivateZoneInfos["+ i +"].Status");
 
 				describeCenPrivateZoneRoutesResponse_privateZoneInfos.Add(privateZoneInfo);
 			}

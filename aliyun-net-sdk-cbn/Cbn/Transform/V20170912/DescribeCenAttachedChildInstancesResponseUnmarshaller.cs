@@ -31,20 +31,20 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			DescribeCenAttachedChildInstancesResponse describeCenAttachedChildInstancesResponse = new DescribeCenAttachedChildInstancesResponse();
 
 			describeCenAttachedChildInstancesResponse.HttpResponse = _ctx.HttpResponse;
-			describeCenAttachedChildInstancesResponse.RequestId = _ctx.StringValue("DescribeCenAttachedChildInstances.RequestId");
-			describeCenAttachedChildInstancesResponse.TotalCount = _ctx.IntegerValue("DescribeCenAttachedChildInstances.TotalCount");
-			describeCenAttachedChildInstancesResponse.PageNumber = _ctx.IntegerValue("DescribeCenAttachedChildInstances.PageNumber");
 			describeCenAttachedChildInstancesResponse.PageSize = _ctx.IntegerValue("DescribeCenAttachedChildInstances.PageSize");
+			describeCenAttachedChildInstancesResponse.RequestId = _ctx.StringValue("DescribeCenAttachedChildInstances.RequestId");
+			describeCenAttachedChildInstancesResponse.PageNumber = _ctx.IntegerValue("DescribeCenAttachedChildInstances.PageNumber");
+			describeCenAttachedChildInstancesResponse.TotalCount = _ctx.IntegerValue("DescribeCenAttachedChildInstances.TotalCount");
 
 			List<DescribeCenAttachedChildInstancesResponse.DescribeCenAttachedChildInstances_ChildInstance> describeCenAttachedChildInstancesResponse_childInstances = new List<DescribeCenAttachedChildInstancesResponse.DescribeCenAttachedChildInstances_ChildInstance>();
 			for (int i = 0; i < _ctx.Length("DescribeCenAttachedChildInstances.ChildInstances.Length"); i++) {
 				DescribeCenAttachedChildInstancesResponse.DescribeCenAttachedChildInstances_ChildInstance childInstance = new DescribeCenAttachedChildInstancesResponse.DescribeCenAttachedChildInstances_ChildInstance();
-				childInstance.CenId = _ctx.StringValue("DescribeCenAttachedChildInstances.ChildInstances["+ i +"].CenId");
-				childInstance.ChildInstanceId = _ctx.StringValue("DescribeCenAttachedChildInstances.ChildInstances["+ i +"].ChildInstanceId");
 				childInstance.ChildInstanceType = _ctx.StringValue("DescribeCenAttachedChildInstances.ChildInstances["+ i +"].ChildInstanceType");
+				childInstance.Status = _ctx.StringValue("DescribeCenAttachedChildInstances.ChildInstances["+ i +"].Status");
 				childInstance.ChildInstanceRegionId = _ctx.StringValue("DescribeCenAttachedChildInstances.ChildInstances["+ i +"].ChildInstanceRegionId");
 				childInstance.ChildInstanceOwnerId = _ctx.LongValue("DescribeCenAttachedChildInstances.ChildInstances["+ i +"].ChildInstanceOwnerId");
-				childInstance.Status = _ctx.StringValue("DescribeCenAttachedChildInstances.ChildInstances["+ i +"].Status");
+				childInstance.ChildInstanceId = _ctx.StringValue("DescribeCenAttachedChildInstances.ChildInstances["+ i +"].ChildInstanceId");
+				childInstance.CenId = _ctx.StringValue("DescribeCenAttachedChildInstances.ChildInstances["+ i +"].CenId");
 				childInstance.ChildInstanceAttachTime = _ctx.StringValue("DescribeCenAttachedChildInstances.ChildInstances["+ i +"].ChildInstanceAttachTime");
 
 				describeCenAttachedChildInstancesResponse_childInstances.Add(childInstance);

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class CreateTrafficMarkingPolicyRequest : RpcAcsRequest<CreateTrafficMarkingPolicyResponse>
     {
         public CreateTrafficMarkingPolicyRequest()
-            : base("Cbn", "2017-09-12", "CreateTrafficMarkingPolicy", "cbn", "openAPI")
+            : base("Cbn", "2017-09-12", "CreateTrafficMarkingPolicy")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -139,22 +140,17 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				trafficMatchRuless = value;
-				for (int i = 0; i < trafficMatchRuless.Count; i++)
+				if(trafficMatchRuless != null)
 				{
-					for (int j = 0; j < trafficMatchRuless[i].DstPortRanges.Count; j++)
+					for (int depth1 = 0; depth1 < trafficMatchRuless.Count; depth1++)
 					{
-						DictionaryUtil.Add(QueryParameters,"TrafficMatchRules." + (i + 1) + ".DstPortRange." +(j + 1), trafficMatchRuless[i].DstPortRanges[j]);
+						DictionaryUtil.Add(QueryParameters,"TrafficMatchRules." + (depth1 + 1), trafficMatchRuless[depth1]);
+						DictionaryUtil.Add(QueryParameters,"TrafficMatchRules." + (depth1 + 1), trafficMatchRuless[depth1]);
+						DictionaryUtil.Add(QueryParameters,"TrafficMatchRules." + (depth1 + 1), trafficMatchRuless[depth1]);
+						DictionaryUtil.Add(QueryParameters,"TrafficMatchRules." + (depth1 + 1), trafficMatchRuless[depth1]);
+						DictionaryUtil.Add(QueryParameters,"TrafficMatchRules." + (depth1 + 1), trafficMatchRuless[depth1]);
+						DictionaryUtil.Add(QueryParameters,"TrafficMatchRules." + (depth1 + 1), trafficMatchRuless[depth1]);
 					}
-					DictionaryUtil.Add(QueryParameters,"TrafficMatchRules." + (i + 1) + ".MatchDscp", trafficMatchRuless[i].MatchDscp);
-					DictionaryUtil.Add(QueryParameters,"TrafficMatchRules." + (i + 1) + ".Protocol", trafficMatchRuless[i].Protocol);
-					DictionaryUtil.Add(QueryParameters,"TrafficMatchRules." + (i + 1) + ".TrafficMatchRuleDescription", trafficMatchRuless[i].TrafficMatchRuleDescription);
-					for (int j = 0; j < trafficMatchRuless[i].SrcPortRanges.Count; j++)
-					{
-						DictionaryUtil.Add(QueryParameters,"TrafficMatchRules." + (i + 1) + ".SrcPortRange." +(j + 1), trafficMatchRuless[i].SrcPortRanges[j]);
-					}
-					DictionaryUtil.Add(QueryParameters,"TrafficMatchRules." + (i + 1) + ".DstCidr", trafficMatchRuless[i].DstCidr);
-					DictionaryUtil.Add(QueryParameters,"TrafficMatchRules." + (i + 1) + ".TrafficMatchRuleName", trafficMatchRuless[i].TrafficMatchRuleName);
-					DictionaryUtil.Add(QueryParameters,"TrafficMatchRules." + (i + 1) + ".SrcCidr", trafficMatchRuless[i].SrcCidr);
 				}
 			}
 		}
@@ -240,7 +236,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class TrafficMatchRules
 		{
 
-			private List<int?> dstPortRanges = new List<int?>(){ };
+			private List<string> dstPortRanges = new List<string>(){ };
 
 			private int? matchDscp;
 
@@ -248,7 +244,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string trafficMatchRuleDescription;
 
-			private List<int?> srcPortRanges = new List<int?>(){ };
+			private List<string> srcPortRanges = new List<string>(){ };
 
 			private string dstCidr;
 
@@ -256,7 +252,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string srcCidr;
 
-			public List<int?> DstPortRanges
+			public List<string> DstPortRanges
 			{
 				get
 				{
@@ -304,7 +300,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public List<int?> SrcPortRanges
+			public List<string> SrcPortRanges
 			{
 				get
 				{

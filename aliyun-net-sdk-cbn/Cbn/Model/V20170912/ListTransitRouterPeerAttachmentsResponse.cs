@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class ListTransitRouterPeerAttachmentsResponse : AcsResponse
 	{
 
+		private string nextToken;
+
 		private string requestId;
 
 		private int? totalCount;
 
 		private int? maxResults;
 
-		private string nextToken;
-
 		private List<ListTransitRouterPeerAttachments_TransitRouterAttachment> transitRouterAttachments;
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -71,18 +83,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-			}
-		}
-
 		public List<ListTransitRouterPeerAttachments_TransitRouterAttachment> TransitRouterAttachments
 		{
 			get
@@ -98,109 +98,49 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class ListTransitRouterPeerAttachments_TransitRouterAttachment
 		{
 
-			private string transitRouterAttachmentId;
-
-			private string peerTransitRouterRegionId;
-
-			private long? peerTransitRouterOwnerId;
-
-			private string peerTransitRouterId;
-
-			private string transitRouterAttachmentName;
-
-			private string resourceType;
+			private string creationTime;
 
 			private string status;
 
-			private string transitRouterAttachmentDescription;
-
-			private string creationTime;
-
-			private bool? autoPublishRouteEnabled;
-
-			private string transitRouterId;
-
-			private int? bandwidth;
-
-			private string bandwidthPackageId;
-
-			private string regionId;
-
-			private string geographicSpanId;
-
-			private string cenBandwidthPackageId;
+			private string transitRouterAttachmentId;
 
 			private string bandwidthType;
 
-			public string TransitRouterAttachmentId
-			{
-				get
-				{
-					return transitRouterAttachmentId;
-				}
-				set	
-				{
-					transitRouterAttachmentId = value;
-				}
-			}
+			private string cenBandwidthPackageId;
 
-			public string PeerTransitRouterRegionId
-			{
-				get
-				{
-					return peerTransitRouterRegionId;
-				}
-				set	
-				{
-					peerTransitRouterRegionId = value;
-				}
-			}
+			private string transitRouterAttachmentDescription;
 
-			public long? PeerTransitRouterOwnerId
-			{
-				get
-				{
-					return peerTransitRouterOwnerId;
-				}
-				set	
-				{
-					peerTransitRouterOwnerId = value;
-				}
-			}
+			private string regionId;
 
-			public string PeerTransitRouterId
-			{
-				get
-				{
-					return peerTransitRouterId;
-				}
-				set	
-				{
-					peerTransitRouterId = value;
-				}
-			}
+			private string peerTransitRouterId;
 
-			public string TransitRouterAttachmentName
-			{
-				get
-				{
-					return transitRouterAttachmentName;
-				}
-				set	
-				{
-					transitRouterAttachmentName = value;
-				}
-			}
+			private string bandwidthPackageId;
 
-			public string ResourceType
+			private string transitRouterId;
+
+			private string peerTransitRouterRegionId;
+
+			private string resourceType;
+
+			private int? bandwidth;
+
+			private string geographicSpanId;
+
+			private long? peerTransitRouterOwnerId;
+
+			private bool? autoPublishRouteEnabled;
+
+			private string transitRouterAttachmentName;
+
+			public string CreationTime
 			{
 				get
 				{
-					return resourceType;
+					return creationTime;
 				}
 				set	
 				{
-					resourceType = value;
+					creationTime = value;
 				}
 			}
 
@@ -216,99 +156,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string TransitRouterAttachmentDescription
+			public string TransitRouterAttachmentId
 			{
 				get
 				{
-					return transitRouterAttachmentDescription;
+					return transitRouterAttachmentId;
 				}
 				set	
 				{
-					transitRouterAttachmentDescription = value;
+					transitRouterAttachmentId = value;
 				}
 			}
 
-			public string CreationTime
+			public string BandwidthType
 			{
 				get
 				{
-					return creationTime;
+					return bandwidthType;
 				}
 				set	
 				{
-					creationTime = value;
-				}
-			}
-
-			public bool? AutoPublishRouteEnabled
-			{
-				get
-				{
-					return autoPublishRouteEnabled;
-				}
-				set	
-				{
-					autoPublishRouteEnabled = value;
-				}
-			}
-
-			public string TransitRouterId
-			{
-				get
-				{
-					return transitRouterId;
-				}
-				set	
-				{
-					transitRouterId = value;
-				}
-			}
-
-			public int? Bandwidth
-			{
-				get
-				{
-					return bandwidth;
-				}
-				set	
-				{
-					bandwidth = value;
-				}
-			}
-
-			public string BandwidthPackageId
-			{
-				get
-				{
-					return bandwidthPackageId;
-				}
-				set	
-				{
-					bandwidthPackageId = value;
-				}
-			}
-
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
-
-			public string GeographicSpanId
-			{
-				get
-				{
-					return geographicSpanId;
-				}
-				set	
-				{
-					geographicSpanId = value;
+					bandwidthType = value;
 				}
 			}
 
@@ -324,15 +192,147 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string BandwidthType
+			public string TransitRouterAttachmentDescription
 			{
 				get
 				{
-					return bandwidthType;
+					return transitRouterAttachmentDescription;
 				}
 				set	
 				{
-					bandwidthType = value;
+					transitRouterAttachmentDescription = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string PeerTransitRouterId
+			{
+				get
+				{
+					return peerTransitRouterId;
+				}
+				set	
+				{
+					peerTransitRouterId = value;
+				}
+			}
+
+			public string BandwidthPackageId
+			{
+				get
+				{
+					return bandwidthPackageId;
+				}
+				set	
+				{
+					bandwidthPackageId = value;
+				}
+			}
+
+			public string TransitRouterId
+			{
+				get
+				{
+					return transitRouterId;
+				}
+				set	
+				{
+					transitRouterId = value;
+				}
+			}
+
+			public string PeerTransitRouterRegionId
+			{
+				get
+				{
+					return peerTransitRouterRegionId;
+				}
+				set	
+				{
+					peerTransitRouterRegionId = value;
+				}
+			}
+
+			public string ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
+				}
+			}
+
+			public int? Bandwidth
+			{
+				get
+				{
+					return bandwidth;
+				}
+				set	
+				{
+					bandwidth = value;
+				}
+			}
+
+			public string GeographicSpanId
+			{
+				get
+				{
+					return geographicSpanId;
+				}
+				set	
+				{
+					geographicSpanId = value;
+				}
+			}
+
+			public long? PeerTransitRouterOwnerId
+			{
+				get
+				{
+					return peerTransitRouterOwnerId;
+				}
+				set	
+				{
+					peerTransitRouterOwnerId = value;
+				}
+			}
+
+			public bool? AutoPublishRouteEnabled
+			{
+				get
+				{
+					return autoPublishRouteEnabled;
+				}
+				set	
+				{
+					autoPublishRouteEnabled = value;
+				}
+			}
+
+			public string TransitRouterAttachmentName
+			{
+				get
+				{
+					return transitRouterAttachmentName;
+				}
+				set	
+				{
+					transitRouterAttachmentName = value;
 				}
 			}
 		}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class ListTransitRoutersResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? pageSize;
 
-		private int? totalCount;
+		private string requestId;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private int? totalCount;
 
 		private List<ListTransitRouters_TransitRouter> transitRouters;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -44,18 +56,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -71,15 +71,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public int? PageSize
+		public int? TotalCount
 		{
 			get
 			{
-				return pageSize;
+				return totalCount;
 			}
 			set	
 			{
-				pageSize = value;
+				totalCount = value;
 			}
 		}
 
@@ -98,81 +98,33 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class ListTransitRouters_TransitRouter
 		{
 
-			private string transitRouterId;
-
-			private string status;
-
-			private string cenId;
-
-			private string regionId;
-
-			private long? aliUid;
+			private string creationTime;
 
 			private string type;
 
-			private string creationTime;
+			private string status;
 
-			private string transitRouterName;
+			private string transitRouterId;
 
 			private string transitRouterDescription;
 
-			public string TransitRouterId
-			{
-				get
-				{
-					return transitRouterId;
-				}
-				set	
-				{
-					transitRouterId = value;
-				}
-			}
+			private string transitRouterName;
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+			private string cenId;
 
-			public string CenId
-			{
-				get
-				{
-					return cenId;
-				}
-				set	
-				{
-					cenId = value;
-				}
-			}
+			private long? aliUid;
 
-			public string RegionId
-			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
-			}
+			private string regionId;
 
-			public long? AliUid
+			public string CreationTime
 			{
 				get
 				{
-					return aliUid;
+					return creationTime;
 				}
 				set	
 				{
-					aliUid = value;
+					creationTime = value;
 				}
 			}
 
@@ -188,15 +140,39 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string CreationTime
+			public string Status
 			{
 				get
 				{
-					return creationTime;
+					return status;
 				}
 				set	
 				{
-					creationTime = value;
+					status = value;
+				}
+			}
+
+			public string TransitRouterId
+			{
+				get
+				{
+					return transitRouterId;
+				}
+				set	
+				{
+					transitRouterId = value;
+				}
+			}
+
+			public string TransitRouterDescription
+			{
+				get
+				{
+					return transitRouterDescription;
+				}
+				set	
+				{
+					transitRouterDescription = value;
 				}
 			}
 
@@ -212,15 +188,39 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string TransitRouterDescription
+			public string CenId
 			{
 				get
 				{
-					return transitRouterDescription;
+					return cenId;
 				}
 				set	
 				{
-					transitRouterDescription = value;
+					cenId = value;
+				}
+			}
+
+			public long? AliUid
+			{
+				get
+				{
+					return aliUid;
+				}
+				set	
+				{
+					aliUid = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 		}

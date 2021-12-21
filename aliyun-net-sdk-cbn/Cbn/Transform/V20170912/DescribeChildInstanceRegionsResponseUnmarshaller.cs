@@ -36,8 +36,8 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			List<DescribeChildInstanceRegionsResponse.DescribeChildInstanceRegions_Region> describeChildInstanceRegionsResponse_regions = new List<DescribeChildInstanceRegionsResponse.DescribeChildInstanceRegions_Region>();
 			for (int i = 0; i < _ctx.Length("DescribeChildInstanceRegions.Regions.Length"); i++) {
 				DescribeChildInstanceRegionsResponse.DescribeChildInstanceRegions_Region region = new DescribeChildInstanceRegionsResponse.DescribeChildInstanceRegions_Region();
-				region.RegionId = _ctx.StringValue("DescribeChildInstanceRegions.Regions["+ i +"].RegionId");
 				region.LocalName = _ctx.StringValue("DescribeChildInstanceRegions.Regions["+ i +"].LocalName");
+				region.RegionId = _ctx.StringValue("DescribeChildInstanceRegions.Regions["+ i +"].RegionId");
 
 				describeChildInstanceRegionsResponse_regions.Add(region);
 			}

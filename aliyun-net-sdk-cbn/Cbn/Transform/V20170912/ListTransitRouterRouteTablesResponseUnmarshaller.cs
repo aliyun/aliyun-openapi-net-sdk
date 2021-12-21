@@ -31,20 +31,20 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			ListTransitRouterRouteTablesResponse listTransitRouterRouteTablesResponse = new ListTransitRouterRouteTablesResponse();
 
 			listTransitRouterRouteTablesResponse.HttpResponse = _ctx.HttpResponse;
+			listTransitRouterRouteTablesResponse.NextToken = _ctx.StringValue("ListTransitRouterRouteTables.NextToken");
 			listTransitRouterRouteTablesResponse.RequestId = _ctx.StringValue("ListTransitRouterRouteTables.RequestId");
 			listTransitRouterRouteTablesResponse.TotalCount = _ctx.IntegerValue("ListTransitRouterRouteTables.TotalCount");
 			listTransitRouterRouteTablesResponse.MaxResults = _ctx.IntegerValue("ListTransitRouterRouteTables.MaxResults");
-			listTransitRouterRouteTablesResponse.NextToken = _ctx.StringValue("ListTransitRouterRouteTables.NextToken");
 
 			List<ListTransitRouterRouteTablesResponse.ListTransitRouterRouteTables_TransitRouterRouteTable> listTransitRouterRouteTablesResponse_transitRouterRouteTables = new List<ListTransitRouterRouteTablesResponse.ListTransitRouterRouteTables_TransitRouterRouteTable>();
 			for (int i = 0; i < _ctx.Length("ListTransitRouterRouteTables.TransitRouterRouteTables.Length"); i++) {
 				ListTransitRouterRouteTablesResponse.ListTransitRouterRouteTables_TransitRouterRouteTable transitRouterRouteTable = new ListTransitRouterRouteTablesResponse.ListTransitRouterRouteTables_TransitRouterRouteTable();
 				transitRouterRouteTable.TransitRouterRouteTableStatus = _ctx.StringValue("ListTransitRouterRouteTables.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableStatus");
-				transitRouterRouteTable.TransitRouterRouteTableName = _ctx.StringValue("ListTransitRouterRouteTables.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableName");
-				transitRouterRouteTable.TransitRouterRouteTableId = _ctx.StringValue("ListTransitRouterRouteTables.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableId");
-				transitRouterRouteTable.TransitRouterRouteTableDescription = _ctx.StringValue("ListTransitRouterRouteTables.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableDescription");
 				transitRouterRouteTable.TransitRouterRouteTableType = _ctx.StringValue("ListTransitRouterRouteTables.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableType");
 				transitRouterRouteTable.CreateTime = _ctx.StringValue("ListTransitRouterRouteTables.TransitRouterRouteTables["+ i +"].CreateTime");
+				transitRouterRouteTable.TransitRouterRouteTableId = _ctx.StringValue("ListTransitRouterRouteTables.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableId");
+				transitRouterRouteTable.TransitRouterRouteTableName = _ctx.StringValue("ListTransitRouterRouteTables.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableName");
+				transitRouterRouteTable.TransitRouterRouteTableDescription = _ctx.StringValue("ListTransitRouterRouteTables.TransitRouterRouteTables["+ i +"].TransitRouterRouteTableDescription");
 
 				listTransitRouterRouteTablesResponse_transitRouterRouteTables.Add(transitRouterRouteTable);
 			}

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class ListTransitRouterRouteTablesResponse : AcsResponse
 	{
 
+		private string nextToken;
+
 		private string requestId;
 
 		private int? totalCount;
 
 		private int? maxResults;
 
-		private string nextToken;
-
 		private List<ListTransitRouterRouteTables_TransitRouterRouteTable> transitRouterRouteTables;
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -71,18 +83,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-			}
-		}
-
 		public List<ListTransitRouterRouteTables_TransitRouterRouteTable> TransitRouterRouteTables
 		{
 			get
@@ -100,15 +100,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string transitRouterRouteTableStatus;
 
-			private string transitRouterRouteTableName;
-
-			private string transitRouterRouteTableId;
-
-			private string transitRouterRouteTableDescription;
-
 			private string transitRouterRouteTableType;
 
 			private string createTime;
+
+			private string transitRouterRouteTableId;
+
+			private string transitRouterRouteTableName;
+
+			private string transitRouterRouteTableDescription;
 
 			public string TransitRouterRouteTableStatus
 			{
@@ -119,42 +119,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					transitRouterRouteTableStatus = value;
-				}
-			}
-
-			public string TransitRouterRouteTableName
-			{
-				get
-				{
-					return transitRouterRouteTableName;
-				}
-				set	
-				{
-					transitRouterRouteTableName = value;
-				}
-			}
-
-			public string TransitRouterRouteTableId
-			{
-				get
-				{
-					return transitRouterRouteTableId;
-				}
-				set	
-				{
-					transitRouterRouteTableId = value;
-				}
-			}
-
-			public string TransitRouterRouteTableDescription
-			{
-				get
-				{
-					return transitRouterRouteTableDescription;
-				}
-				set	
-				{
-					transitRouterRouteTableDescription = value;
 				}
 			}
 
@@ -179,6 +143,42 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			public string TransitRouterRouteTableId
+			{
+				get
+				{
+					return transitRouterRouteTableId;
+				}
+				set	
+				{
+					transitRouterRouteTableId = value;
+				}
+			}
+
+			public string TransitRouterRouteTableName
+			{
+				get
+				{
+					return transitRouterRouteTableName;
+				}
+				set	
+				{
+					transitRouterRouteTableName = value;
+				}
+			}
+
+			public string TransitRouterRouteTableDescription
+			{
+				get
+				{
+					return transitRouterRouteTableDescription;
+				}
+				set	
+				{
+					transitRouterRouteTableDescription = value;
 				}
 			}
 		}

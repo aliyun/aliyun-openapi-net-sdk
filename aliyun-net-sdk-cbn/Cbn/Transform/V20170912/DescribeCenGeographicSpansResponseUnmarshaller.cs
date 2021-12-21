@@ -31,16 +31,16 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			DescribeCenGeographicSpansResponse describeCenGeographicSpansResponse = new DescribeCenGeographicSpansResponse();
 
 			describeCenGeographicSpansResponse.HttpResponse = _ctx.HttpResponse;
-			describeCenGeographicSpansResponse.RequestId = _ctx.StringValue("DescribeCenGeographicSpans.RequestId");
-			describeCenGeographicSpansResponse.TotalCount = _ctx.IntegerValue("DescribeCenGeographicSpans.TotalCount");
-			describeCenGeographicSpansResponse.PageNumber = _ctx.IntegerValue("DescribeCenGeographicSpans.PageNumber");
 			describeCenGeographicSpansResponse.PageSize = _ctx.IntegerValue("DescribeCenGeographicSpans.PageSize");
+			describeCenGeographicSpansResponse.RequestId = _ctx.StringValue("DescribeCenGeographicSpans.RequestId");
+			describeCenGeographicSpansResponse.PageNumber = _ctx.IntegerValue("DescribeCenGeographicSpans.PageNumber");
+			describeCenGeographicSpansResponse.TotalCount = _ctx.IntegerValue("DescribeCenGeographicSpans.TotalCount");
 
 			List<DescribeCenGeographicSpansResponse.DescribeCenGeographicSpans_GeographicSpanModel> describeCenGeographicSpansResponse_geographicSpanModels = new List<DescribeCenGeographicSpansResponse.DescribeCenGeographicSpans_GeographicSpanModel>();
 			for (int i = 0; i < _ctx.Length("DescribeCenGeographicSpans.GeographicSpanModels.Length"); i++) {
 				DescribeCenGeographicSpansResponse.DescribeCenGeographicSpans_GeographicSpanModel geographicSpanModel = new DescribeCenGeographicSpansResponse.DescribeCenGeographicSpans_GeographicSpanModel();
-				geographicSpanModel.GeographicSpanId = _ctx.StringValue("DescribeCenGeographicSpans.GeographicSpanModels["+ i +"].GeographicSpanId");
 				geographicSpanModel.LocalGeoRegionId = _ctx.StringValue("DescribeCenGeographicSpans.GeographicSpanModels["+ i +"].LocalGeoRegionId");
+				geographicSpanModel.GeographicSpanId = _ctx.StringValue("DescribeCenGeographicSpans.GeographicSpanModels["+ i +"].GeographicSpanId");
 				geographicSpanModel.OppositeGeoRegionId = _ctx.StringValue("DescribeCenGeographicSpans.GeographicSpanModels["+ i +"].OppositeGeoRegionId");
 
 				describeCenGeographicSpansResponse_geographicSpanModels.Add(geographicSpanModel);

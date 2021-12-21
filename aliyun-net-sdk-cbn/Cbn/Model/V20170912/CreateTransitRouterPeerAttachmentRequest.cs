@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class CreateTransitRouterPeerAttachmentRequest : RpcAcsRequest<CreateTransitRouterPeerAttachmentResponse>
     {
         public CreateTransitRouterPeerAttachmentRequest()
-            : base("Cbn", "2017-09-12", "CreateTransitRouterPeerAttachment", "cbn", "openAPI")
+            : base("Cbn", "2017-09-12", "CreateTransitRouterPeerAttachment")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,6 +42,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
         }
 
 		private long? resourceOwnerId;
+
+		private string bandwidthType;
 
 		private string clientToken;
 
@@ -80,6 +83,19 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string BandwidthType
+		{
+			get
+			{
+				return bandwidthType;
+			}
+			set	
+			{
+				bandwidthType = value;
+				DictionaryUtil.Add(QueryParameters, "BandwidthType", value);
 			}
 		}
 

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			DeleteFlowlogResponse deleteFlowlogResponse = new DeleteFlowlogResponse();
 
 			deleteFlowlogResponse.HttpResponse = _ctx.HttpResponse;
-			deleteFlowlogResponse.RequestId = _ctx.StringValue("DeleteFlowlog.RequestId");
 			deleteFlowlogResponse.Success = _ctx.StringValue("DeleteFlowlog.Success");
+			deleteFlowlogResponse.RequestId = _ctx.StringValue("DeleteFlowlog.RequestId");
         
 			return deleteFlowlogResponse;
         }

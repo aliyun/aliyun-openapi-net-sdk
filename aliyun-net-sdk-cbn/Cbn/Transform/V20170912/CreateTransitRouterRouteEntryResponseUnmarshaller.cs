@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			CreateTransitRouterRouteEntryResponse createTransitRouterRouteEntryResponse = new CreateTransitRouterRouteEntryResponse();
 
 			createTransitRouterRouteEntryResponse.HttpResponse = _ctx.HttpResponse;
-			createTransitRouterRouteEntryResponse.RequestId = _ctx.StringValue("CreateTransitRouterRouteEntry.RequestId");
 			createTransitRouterRouteEntryResponse.TransitRouterRouteEntryId = _ctx.StringValue("CreateTransitRouterRouteEntry.TransitRouterRouteEntryId");
+			createTransitRouterRouteEntryResponse.RequestId = _ctx.StringValue("CreateTransitRouterRouteEntry.RequestId");
         
 			return createTransitRouterRouteEntryResponse;
         }

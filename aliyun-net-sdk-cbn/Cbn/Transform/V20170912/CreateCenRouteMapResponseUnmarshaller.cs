@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			CreateCenRouteMapResponse createCenRouteMapResponse = new CreateCenRouteMapResponse();
 
 			createCenRouteMapResponse.HttpResponse = _ctx.HttpResponse;
-			createCenRouteMapResponse.RequestId = _ctx.StringValue("CreateCenRouteMap.RequestId");
 			createCenRouteMapResponse.RouteMapId = _ctx.StringValue("CreateCenRouteMap.RouteMapId");
+			createCenRouteMapResponse.RequestId = _ctx.StringValue("CreateCenRouteMap.RequestId");
         
 			return createCenRouteMapResponse;
         }

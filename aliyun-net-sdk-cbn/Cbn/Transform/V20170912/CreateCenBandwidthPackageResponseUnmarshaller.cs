@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			CreateCenBandwidthPackageResponse createCenBandwidthPackageResponse = new CreateCenBandwidthPackageResponse();
 
 			createCenBandwidthPackageResponse.HttpResponse = _ctx.HttpResponse;
-			createCenBandwidthPackageResponse.RequestId = _ctx.StringValue("CreateCenBandwidthPackage.RequestId");
 			createCenBandwidthPackageResponse.CenBandwidthPackageId = _ctx.StringValue("CreateCenBandwidthPackage.CenBandwidthPackageId");
 			createCenBandwidthPackageResponse.CenBandwidthPackageOrderId = _ctx.StringValue("CreateCenBandwidthPackage.CenBandwidthPackageOrderId");
+			createCenBandwidthPackageResponse.RequestId = _ctx.StringValue("CreateCenBandwidthPackage.RequestId");
         
 			return createCenBandwidthPackageResponse;
         }

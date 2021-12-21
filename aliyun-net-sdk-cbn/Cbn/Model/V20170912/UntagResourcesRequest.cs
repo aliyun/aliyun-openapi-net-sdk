@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class UntagResourcesRequest : RpcAcsRequest<UntagResourcesResponse>
     {
         public UntagResourcesRequest()
-            : base("Cbn", "2017-09-12", "UntagResources", "cbn", "openAPI")
+            : base("Cbn", "2017-09-12", "UntagResources")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -92,10 +93,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				resourceIds = value;
-				for (int i = 0; i < resourceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
-				}
 			}
 		}
 
@@ -161,10 +158,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				tagKeys = value;
-				for (int i = 0; i < tagKeys.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TagKey." + (i + 1) , tagKeys[i]);
-				}
 			}
 		}
 

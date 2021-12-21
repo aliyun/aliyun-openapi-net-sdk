@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class ListTransitRouterRouteEntriesRequest : RpcAcsRequest<ListTransitRouterRouteEntriesResponse>
     {
         public ListTransitRouterRouteEntriesRequest()
-            : base("Cbn", "2017-09-12", "ListTransitRouterRouteEntries", "cbn", "openAPI")
+            : base("Cbn", "2017-09-12", "ListTransitRouterRouteEntries")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -163,10 +164,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				transitRouterRouteEntryNamess = value;
-				for (int i = 0; i < transitRouterRouteEntryNamess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TransitRouterRouteEntryNames." + (i + 1) , transitRouterRouteEntryNamess[i]);
-				}
 			}
 		}
 
@@ -180,10 +177,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				transitRouterRouteEntryIdss = value;
-				for (int i = 0; i < transitRouterRouteEntryIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TransitRouterRouteEntryIds." + (i + 1) , transitRouterRouteEntryIdss[i]);
-				}
 			}
 		}
 

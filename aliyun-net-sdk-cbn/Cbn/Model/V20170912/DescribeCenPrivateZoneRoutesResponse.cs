@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -27,15 +27,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string requestId;
 
-		private string cenId;
-
 		private string privateZoneDnsServers;
+
+		private string cenId;
 
 		private int? pageNumber;
 
-		private int? totalCount;
-
 		private int? pageSize;
+
+		private int? totalCount;
 
 		private List<DescribeCenPrivateZoneRoutes_PrivateZoneInfo> privateZoneInfos;
 
@@ -51,18 +51,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string CenId
-		{
-			get
-			{
-				return cenId;
-			}
-			set	
-			{
-				cenId = value;
-			}
-		}
-
 		public string PrivateZoneDnsServers
 		{
 			get
@@ -72,6 +60,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set	
 			{
 				privateZoneDnsServers = value;
+			}
+		}
+
+		public string CenId
+		{
+			get
+			{
+				return cenId;
+			}
+			set	
+			{
+				cenId = value;
 			}
 		}
 
@@ -87,18 +87,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -108,6 +96,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
 			}
 		}
 
@@ -126,13 +126,25 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class DescribeCenPrivateZoneRoutes_PrivateZoneInfo
 		{
 
+			private string status;
+
 			private string accessRegionId;
 
 			private string hostRegionId;
 
 			private string hostVpcId;
 
-			private string status;
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
 
 			public string AccessRegionId
 			{
@@ -167,18 +179,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					hostVpcId = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
 				}
 			}
 		}

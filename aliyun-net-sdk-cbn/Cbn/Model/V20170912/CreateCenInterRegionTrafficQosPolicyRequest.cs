@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class CreateCenInterRegionTrafficQosPolicyRequest : RpcAcsRequest<CreateCenInterRegionTrafficQosPolicyResponse>
     {
         public CreateCenInterRegionTrafficQosPolicyRequest()
-            : base("Cbn", "2017-09-12", "CreateCenInterRegionTrafficQosPolicy", "cbn", "openAPI")
+            : base("Cbn", "2017-09-12", "CreateCenInterRegionTrafficQosPolicy")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -98,15 +99,14 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				trafficQosQueuess = value;
-				for (int i = 0; i < trafficQosQueuess.Count; i++)
+				if(trafficQosQueuess != null)
 				{
-					for (int j = 0; j < trafficQosQueuess[i].Dscpss.Count; j++)
+					for (int depth1 = 0; depth1 < trafficQosQueuess.Count; depth1++)
 					{
-						DictionaryUtil.Add(QueryParameters,"TrafficQosQueues." + (i + 1) + ".Dscps." +(j + 1), trafficQosQueuess[i].Dscpss[j]);
+						DictionaryUtil.Add(QueryParameters,"TrafficQosQueues." + (depth1 + 1), trafficQosQueuess[depth1]);
+						DictionaryUtil.Add(QueryParameters,"TrafficQosQueues." + (depth1 + 1), trafficQosQueuess[depth1]);
+						DictionaryUtil.Add(QueryParameters,"TrafficQosQueues." + (depth1 + 1), trafficQosQueuess[depth1]);
 					}
-					DictionaryUtil.Add(QueryParameters,"TrafficQosQueues." + (i + 1) + ".QosQueueName", trafficQosQueuess[i].QosQueueName);
-					DictionaryUtil.Add(QueryParameters,"TrafficQosQueues." + (i + 1) + ".RemainBandwidthPercent", trafficQosQueuess[i].RemainBandwidthPercent);
-					DictionaryUtil.Add(QueryParameters,"TrafficQosQueues." + (i + 1) + ".QosQueueDescription", trafficQosQueuess[i].QosQueueDescription);
 				}
 			}
 		}
@@ -218,7 +218,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class TrafficQosQueues
 		{
 
-			private List<int?> dscpss = new List<int?>(){ };
+			private List<string> dscpss = new List<string>(){ };
 
 			private string qosQueueName;
 
@@ -226,7 +226,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string qosQueueDescription;
 
-			public List<int?> Dscpss
+			public List<string> Dscpss
 			{
 				get
 				{

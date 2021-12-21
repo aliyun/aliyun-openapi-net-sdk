@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -27,9 +27,9 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 		private string requestId;
 
-		private List<string> masterZones;
-
 		private List<string> slaveZones;
+
+		private List<string> masterZones;
 
 		public string RequestId
 		{
@@ -43,18 +43,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public List<string> MasterZones
-		{
-			get
-			{
-				return masterZones;
-			}
-			set	
-			{
-				masterZones = value;
-			}
-		}
-
 		public List<string> SlaveZones
 		{
 			get
@@ -64,6 +52,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set	
 			{
 				slaveZones = value;
+			}
+		}
+
+		public List<string> MasterZones
+		{
+			get
+			{
+				return masterZones;
+			}
+			set	
+			{
+				masterZones = value;
 			}
 		}
 	}

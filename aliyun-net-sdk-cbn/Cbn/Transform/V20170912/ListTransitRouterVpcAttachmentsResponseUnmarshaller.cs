@@ -31,24 +31,24 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			ListTransitRouterVpcAttachmentsResponse listTransitRouterVpcAttachmentsResponse = new ListTransitRouterVpcAttachmentsResponse();
 
 			listTransitRouterVpcAttachmentsResponse.HttpResponse = _ctx.HttpResponse;
+			listTransitRouterVpcAttachmentsResponse.NextToken = _ctx.StringValue("ListTransitRouterVpcAttachments.NextToken");
 			listTransitRouterVpcAttachmentsResponse.RequestId = _ctx.StringValue("ListTransitRouterVpcAttachments.RequestId");
 			listTransitRouterVpcAttachmentsResponse.TotalCount = _ctx.IntegerValue("ListTransitRouterVpcAttachments.TotalCount");
 			listTransitRouterVpcAttachmentsResponse.MaxResults = _ctx.IntegerValue("ListTransitRouterVpcAttachments.MaxResults");
-			listTransitRouterVpcAttachmentsResponse.NextToken = _ctx.StringValue("ListTransitRouterVpcAttachments.NextToken");
 
 			List<ListTransitRouterVpcAttachmentsResponse.ListTransitRouterVpcAttachments_TransitRouterAttachment> listTransitRouterVpcAttachmentsResponse_transitRouterAttachments = new List<ListTransitRouterVpcAttachmentsResponse.ListTransitRouterVpcAttachments_TransitRouterAttachment>();
 			for (int i = 0; i < _ctx.Length("ListTransitRouterVpcAttachments.TransitRouterAttachments.Length"); i++) {
 				ListTransitRouterVpcAttachmentsResponse.ListTransitRouterVpcAttachments_TransitRouterAttachment transitRouterAttachment = new ListTransitRouterVpcAttachmentsResponse.ListTransitRouterVpcAttachments_TransitRouterAttachment();
-				transitRouterAttachment.TransitRouterAttachmentId = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].TransitRouterAttachmentId");
-				transitRouterAttachment.VpcRegionId = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].VpcRegionId");
-				transitRouterAttachment.VpcOwnerId = _ctx.LongValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].VpcOwnerId");
-				transitRouterAttachment.VpcId = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].VpcId");
-				transitRouterAttachment.TransitRouterAttachmentName = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].TransitRouterAttachmentName");
-				transitRouterAttachment.ResourceType = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].ResourceType");
-				transitRouterAttachment.Status = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].Status");
-				transitRouterAttachment.TransitRouterAttachmentDescription = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].TransitRouterAttachmentDescription");
 				transitRouterAttachment.CreationTime = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].CreationTime");
+				transitRouterAttachment.Status = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].Status");
+				transitRouterAttachment.VpcId = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].VpcId");
+				transitRouterAttachment.TransitRouterAttachmentId = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].TransitRouterAttachmentId");
 				transitRouterAttachment.TransitRouterId = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].TransitRouterId");
+				transitRouterAttachment.ResourceType = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].ResourceType");
+				transitRouterAttachment.TransitRouterAttachmentDescription = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].TransitRouterAttachmentDescription");
+				transitRouterAttachment.VpcOwnerId = _ctx.LongValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].VpcOwnerId");
+				transitRouterAttachment.VpcRegionId = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].VpcRegionId");
+				transitRouterAttachment.TransitRouterAttachmentName = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].TransitRouterAttachmentName");
 
 				List<ListTransitRouterVpcAttachmentsResponse.ListTransitRouterVpcAttachments_TransitRouterAttachment.ListTransitRouterVpcAttachments_ZoneMapping> transitRouterAttachment_zoneMappings = new List<ListTransitRouterVpcAttachmentsResponse.ListTransitRouterVpcAttachments_TransitRouterAttachment.ListTransitRouterVpcAttachments_ZoneMapping>();
 				for (int j = 0; j < _ctx.Length("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].ZoneMappings.Length"); j++) {

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cbn;
 using Aliyun.Acs.Cbn.Transform;
 using Aliyun.Acs.Cbn.Transform.V20170912;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
     public class ResolveAndRouteServiceInCenRequest : RpcAcsRequest<ResolveAndRouteServiceInCenResponse>
     {
         public ResolveAndRouteServiceInCenRequest()
-            : base("Cbn", "2017-09-12", "ResolveAndRouteServiceInCen", "cbn", "openAPI")
+            : base("Cbn", "2017-09-12", "ResolveAndRouteServiceInCen")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -202,10 +203,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			set
 			{
 				accessRegionIdss = value;
-				for (int i = 0; i < accessRegionIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"AccessRegionIds." + (i + 1) , accessRegionIdss[i]);
-				}
 			}
 		}
 

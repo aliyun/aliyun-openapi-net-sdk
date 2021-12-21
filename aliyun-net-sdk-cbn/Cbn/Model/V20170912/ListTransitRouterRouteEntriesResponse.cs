@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -25,27 +25,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class ListTransitRouterRouteEntriesResponse : AcsResponse
 	{
 
-		private int? maxResults;
-
 		private string nextToken;
 
 		private string requestId;
 
 		private int? totalCount;
 
-		private List<ListTransitRouterRouteEntries_TransitRouterRouteEntry> transitRouterRouteEntries;
+		private int? maxResults;
 
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-			}
-		}
+		private List<ListTransitRouterRouteEntries_TransitRouterRouteEntry> transitRouterRouteEntries;
 
 		public string NextToken
 		{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+			}
+		}
+
 		public List<ListTransitRouterRouteEntries_TransitRouterRouteEntry> TransitRouterRouteEntries
 		{
 			get
@@ -98,47 +98,23 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class ListTransitRouterRouteEntries_TransitRouterRouteEntry
 		{
 
-			private string transitRouterRouteEntryDescription;
-
-			private string transitRouterRouteEntryDestinationCidrBlock;
-
 			private string transitRouterRouteEntryId;
 
-			private string transitRouterRouteEntryName;
-
-			private string transitRouterRouteEntryNextHopId;
-
-			private string transitRouterRouteEntryNextHopType;
-
-			private string transitRouterRouteEntryStatus;
+			private string transitRouterRouteEntryDestinationCidrBlock;
 
 			private string transitRouterRouteEntryType;
 
 			private string createTime;
 
-			public string TransitRouterRouteEntryDescription
-			{
-				get
-				{
-					return transitRouterRouteEntryDescription;
-				}
-				set	
-				{
-					transitRouterRouteEntryDescription = value;
-				}
-			}
+			private string transitRouterRouteEntryName;
 
-			public string TransitRouterRouteEntryDestinationCidrBlock
-			{
-				get
-				{
-					return transitRouterRouteEntryDestinationCidrBlock;
-				}
-				set	
-				{
-					transitRouterRouteEntryDestinationCidrBlock = value;
-				}
-			}
+			private string transitRouterRouteEntryStatus;
+
+			private string transitRouterRouteEntryNextHopType;
+
+			private string transitRouterRouteEntryNextHopId;
+
+			private string transitRouterRouteEntryDescription;
 
 			public string TransitRouterRouteEntryId
 			{
@@ -152,51 +128,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string TransitRouterRouteEntryName
+			public string TransitRouterRouteEntryDestinationCidrBlock
 			{
 				get
 				{
-					return transitRouterRouteEntryName;
+					return transitRouterRouteEntryDestinationCidrBlock;
 				}
 				set	
 				{
-					transitRouterRouteEntryName = value;
-				}
-			}
-
-			public string TransitRouterRouteEntryNextHopId
-			{
-				get
-				{
-					return transitRouterRouteEntryNextHopId;
-				}
-				set	
-				{
-					transitRouterRouteEntryNextHopId = value;
-				}
-			}
-
-			public string TransitRouterRouteEntryNextHopType
-			{
-				get
-				{
-					return transitRouterRouteEntryNextHopType;
-				}
-				set	
-				{
-					transitRouterRouteEntryNextHopType = value;
-				}
-			}
-
-			public string TransitRouterRouteEntryStatus
-			{
-				get
-				{
-					return transitRouterRouteEntryStatus;
-				}
-				set	
-				{
-					transitRouterRouteEntryStatus = value;
+					transitRouterRouteEntryDestinationCidrBlock = value;
 				}
 			}
 
@@ -221,6 +161,66 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			public string TransitRouterRouteEntryName
+			{
+				get
+				{
+					return transitRouterRouteEntryName;
+				}
+				set	
+				{
+					transitRouterRouteEntryName = value;
+				}
+			}
+
+			public string TransitRouterRouteEntryStatus
+			{
+				get
+				{
+					return transitRouterRouteEntryStatus;
+				}
+				set	
+				{
+					transitRouterRouteEntryStatus = value;
+				}
+			}
+
+			public string TransitRouterRouteEntryNextHopType
+			{
+				get
+				{
+					return transitRouterRouteEntryNextHopType;
+				}
+				set	
+				{
+					transitRouterRouteEntryNextHopType = value;
+				}
+			}
+
+			public string TransitRouterRouteEntryNextHopId
+			{
+				get
+				{
+					return transitRouterRouteEntryNextHopId;
+				}
+				set	
+				{
+					transitRouterRouteEntryNextHopId = value;
+				}
+			}
+
+			public string TransitRouterRouteEntryDescription
+			{
+				get
+				{
+					return transitRouterRouteEntryDescription;
+				}
+				set	
+				{
+					transitRouterRouteEntryDescription = value;
 				}
 			}
 		}

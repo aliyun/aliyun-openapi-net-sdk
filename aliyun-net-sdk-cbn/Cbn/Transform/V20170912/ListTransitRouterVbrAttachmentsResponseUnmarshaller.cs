@@ -31,25 +31,25 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			ListTransitRouterVbrAttachmentsResponse listTransitRouterVbrAttachmentsResponse = new ListTransitRouterVbrAttachmentsResponse();
 
 			listTransitRouterVbrAttachmentsResponse.HttpResponse = _ctx.HttpResponse;
+			listTransitRouterVbrAttachmentsResponse.NextToken = _ctx.StringValue("ListTransitRouterVbrAttachments.NextToken");
 			listTransitRouterVbrAttachmentsResponse.RequestId = _ctx.StringValue("ListTransitRouterVbrAttachments.RequestId");
 			listTransitRouterVbrAttachmentsResponse.TotalCount = _ctx.IntegerValue("ListTransitRouterVbrAttachments.TotalCount");
 			listTransitRouterVbrAttachmentsResponse.MaxResults = _ctx.IntegerValue("ListTransitRouterVbrAttachments.MaxResults");
-			listTransitRouterVbrAttachmentsResponse.NextToken = _ctx.StringValue("ListTransitRouterVbrAttachments.NextToken");
 
 			List<ListTransitRouterVbrAttachmentsResponse.ListTransitRouterVbrAttachments_TransitRouterAttachment> listTransitRouterVbrAttachmentsResponse_transitRouterAttachments = new List<ListTransitRouterVbrAttachmentsResponse.ListTransitRouterVbrAttachments_TransitRouterAttachment>();
 			for (int i = 0; i < _ctx.Length("ListTransitRouterVbrAttachments.TransitRouterAttachments.Length"); i++) {
 				ListTransitRouterVbrAttachmentsResponse.ListTransitRouterVbrAttachments_TransitRouterAttachment transitRouterAttachment = new ListTransitRouterVbrAttachmentsResponse.ListTransitRouterVbrAttachments_TransitRouterAttachment();
+				transitRouterAttachment.CreationTime = _ctx.StringValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].CreationTime");
+				transitRouterAttachment.Status = _ctx.StringValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].Status");
 				transitRouterAttachment.TransitRouterAttachmentId = _ctx.StringValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].TransitRouterAttachmentId");
+				transitRouterAttachment.TransitRouterId = _ctx.StringValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].TransitRouterId");
+				transitRouterAttachment.ResourceType = _ctx.StringValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].ResourceType");
 				transitRouterAttachment.VbrRegionId = _ctx.StringValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].VbrRegionId");
+				transitRouterAttachment.TransitRouterAttachmentDescription = _ctx.StringValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].TransitRouterAttachmentDescription");
 				transitRouterAttachment.VbrOwnerId = _ctx.LongValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].VbrOwnerId");
+				transitRouterAttachment.AutoPublishRouteEnabled = _ctx.BooleanValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].AutoPublishRouteEnabled");
 				transitRouterAttachment.VbrId = _ctx.StringValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].VbrId");
 				transitRouterAttachment.TransitRouterAttachmentName = _ctx.StringValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].TransitRouterAttachmentName");
-				transitRouterAttachment.ResourceType = _ctx.StringValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].ResourceType");
-				transitRouterAttachment.Status = _ctx.StringValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].Status");
-				transitRouterAttachment.TransitRouterAttachmentDescription = _ctx.StringValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].TransitRouterAttachmentDescription");
-				transitRouterAttachment.CreationTime = _ctx.StringValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].CreationTime");
-				transitRouterAttachment.AutoPublishRouteEnabled = _ctx.BooleanValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].AutoPublishRouteEnabled");
-				transitRouterAttachment.TransitRouterId = _ctx.StringValue("ListTransitRouterVbrAttachments.TransitRouterAttachments["+ i +"].TransitRouterId");
 
 				listTransitRouterVbrAttachmentsResponse_transitRouterAttachments.Add(transitRouterAttachment);
 			}

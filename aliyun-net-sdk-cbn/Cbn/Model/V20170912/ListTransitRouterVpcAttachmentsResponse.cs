@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class ListTransitRouterVpcAttachmentsResponse : AcsResponse
 	{
 
+		private string nextToken;
+
 		private string requestId;
 
 		private int? totalCount;
 
 		private int? maxResults;
 
-		private string nextToken;
-
 		private List<ListTransitRouterVpcAttachments_TransitRouterAttachment> transitRouterAttachments;
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -71,18 +83,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-			}
-		}
-
 		public List<ListTransitRouterVpcAttachments_TransitRouterAttachment> TransitRouterAttachments
 		{
 			get
@@ -98,97 +98,37 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class ListTransitRouterVpcAttachments_TransitRouterAttachment
 		{
 
-			private string transitRouterAttachmentId;
-
-			private string vpcRegionId;
-
-			private long? vpcOwnerId;
-
-			private string vpcId;
-
-			private string transitRouterAttachmentName;
-
-			private string resourceType;
+			private string creationTime;
 
 			private string status;
 
-			private string transitRouterAttachmentDescription;
+			private string vpcId;
 
-			private string creationTime;
+			private string transitRouterAttachmentId;
 
 			private string transitRouterId;
 
+			private string resourceType;
+
+			private string transitRouterAttachmentDescription;
+
+			private long? vpcOwnerId;
+
+			private string vpcRegionId;
+
+			private string transitRouterAttachmentName;
+
 			private List<ListTransitRouterVpcAttachments_ZoneMapping> zoneMappings;
 
-			public string TransitRouterAttachmentId
+			public string CreationTime
 			{
 				get
 				{
-					return transitRouterAttachmentId;
+					return creationTime;
 				}
 				set	
 				{
-					transitRouterAttachmentId = value;
-				}
-			}
-
-			public string VpcRegionId
-			{
-				get
-				{
-					return vpcRegionId;
-				}
-				set	
-				{
-					vpcRegionId = value;
-				}
-			}
-
-			public long? VpcOwnerId
-			{
-				get
-				{
-					return vpcOwnerId;
-				}
-				set	
-				{
-					vpcOwnerId = value;
-				}
-			}
-
-			public string VpcId
-			{
-				get
-				{
-					return vpcId;
-				}
-				set	
-				{
-					vpcId = value;
-				}
-			}
-
-			public string TransitRouterAttachmentName
-			{
-				get
-				{
-					return transitRouterAttachmentName;
-				}
-				set	
-				{
-					transitRouterAttachmentName = value;
-				}
-			}
-
-			public string ResourceType
-			{
-				get
-				{
-					return resourceType;
-				}
-				set	
-				{
-					resourceType = value;
+					creationTime = value;
 				}
 			}
 
@@ -204,27 +144,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string TransitRouterAttachmentDescription
+			public string VpcId
 			{
 				get
 				{
-					return transitRouterAttachmentDescription;
+					return vpcId;
 				}
 				set	
 				{
-					transitRouterAttachmentDescription = value;
+					vpcId = value;
 				}
 			}
 
-			public string CreationTime
+			public string TransitRouterAttachmentId
 			{
 				get
 				{
-					return creationTime;
+					return transitRouterAttachmentId;
 				}
 				set	
 				{
-					creationTime = value;
+					transitRouterAttachmentId = value;
 				}
 			}
 
@@ -237,6 +177,66 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					transitRouterId = value;
+				}
+			}
+
+			public string ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
+				}
+			}
+
+			public string TransitRouterAttachmentDescription
+			{
+				get
+				{
+					return transitRouterAttachmentDescription;
+				}
+				set	
+				{
+					transitRouterAttachmentDescription = value;
+				}
+			}
+
+			public long? VpcOwnerId
+			{
+				get
+				{
+					return vpcOwnerId;
+				}
+				set	
+				{
+					vpcOwnerId = value;
+				}
+			}
+
+			public string VpcRegionId
+			{
+				get
+				{
+					return vpcRegionId;
+				}
+				set	
+				{
+					vpcRegionId = value;
+				}
+			}
+
+			public string TransitRouterAttachmentName
+			{
+				get
+				{
+					return transitRouterAttachmentName;
+				}
+				set	
+				{
+					transitRouterAttachmentName = value;
 				}
 			}
 

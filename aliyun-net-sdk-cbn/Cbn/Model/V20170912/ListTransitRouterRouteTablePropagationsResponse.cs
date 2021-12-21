@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cbn.Model.V20170912
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 	public class ListTransitRouterRouteTablePropagationsResponse : AcsResponse
 	{
 
+		private string nextToken;
+
 		private string requestId;
 
 		private int? totalCount;
 
 		private int? maxResults;
 
-		private string nextToken;
-
 		private List<ListTransitRouterRouteTablePropagations_TransitRouterPropagation> transitRouterPropagations;
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -71,18 +83,6 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 			}
 		}
 
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-			}
-		}
-
 		public List<ListTransitRouterRouteTablePropagations_TransitRouterPropagation> TransitRouterPropagations
 		{
 			get
@@ -98,27 +98,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 		public class ListTransitRouterRouteTablePropagations_TransitRouterPropagation
 		{
 
-			private string status;
-
 			private string transitRouterAttachmentId;
 
-			private string transitRouterRouteTableId;
-
-			private string resourceId;
+			private string status;
 
 			private string resourceType;
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
+			private string resourceId;
+
+			private string transitRouterRouteTableId;
 
 			public string TransitRouterAttachmentId
 			{
@@ -132,15 +120,27 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string TransitRouterRouteTableId
+			public string Status
 			{
 				get
 				{
-					return transitRouterRouteTableId;
+					return status;
 				}
 				set	
 				{
-					transitRouterRouteTableId = value;
+					status = value;
+				}
+			}
+
+			public string ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
 				}
 			}
 
@@ -156,15 +156,15 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				}
 			}
 
-			public string ResourceType
+			public string TransitRouterRouteTableId
 			{
 				get
 				{
-					return resourceType;
+					return transitRouterRouteTableId;
 				}
 				set	
 				{
-					resourceType = value;
+					transitRouterRouteTableId = value;
 				}
 			}
 		}

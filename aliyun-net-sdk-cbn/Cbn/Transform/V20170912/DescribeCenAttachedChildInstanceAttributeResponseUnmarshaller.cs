@@ -31,16 +31,16 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			DescribeCenAttachedChildInstanceAttributeResponse describeCenAttachedChildInstanceAttributeResponse = new DescribeCenAttachedChildInstanceAttributeResponse();
 
 			describeCenAttachedChildInstanceAttributeResponse.HttpResponse = _ctx.HttpResponse;
-			describeCenAttachedChildInstanceAttributeResponse.RequestId = _ctx.StringValue("DescribeCenAttachedChildInstanceAttribute.RequestId");
-			describeCenAttachedChildInstanceAttributeResponse.CenId = _ctx.StringValue("DescribeCenAttachedChildInstanceAttribute.CenId");
-			describeCenAttachedChildInstanceAttributeResponse.ChildInstanceId = _ctx.StringValue("DescribeCenAttachedChildInstanceAttribute.ChildInstanceId");
+			describeCenAttachedChildInstanceAttributeResponse.Status = _ctx.StringValue("DescribeCenAttachedChildInstanceAttribute.Status");
 			describeCenAttachedChildInstanceAttributeResponse.ChildInstanceType = _ctx.StringValue("DescribeCenAttachedChildInstanceAttribute.ChildInstanceType");
 			describeCenAttachedChildInstanceAttributeResponse.ChildInstanceRegionId = _ctx.StringValue("DescribeCenAttachedChildInstanceAttribute.ChildInstanceRegionId");
+			describeCenAttachedChildInstanceAttributeResponse.RequestId = _ctx.StringValue("DescribeCenAttachedChildInstanceAttribute.RequestId");
 			describeCenAttachedChildInstanceAttributeResponse.ChildInstanceOwnerId = _ctx.LongValue("DescribeCenAttachedChildInstanceAttribute.ChildInstanceOwnerId");
-			describeCenAttachedChildInstanceAttributeResponse.Status = _ctx.StringValue("DescribeCenAttachedChildInstanceAttribute.Status");
+			describeCenAttachedChildInstanceAttributeResponse.ChildInstanceId = _ctx.StringValue("DescribeCenAttachedChildInstanceAttribute.ChildInstanceId");
+			describeCenAttachedChildInstanceAttributeResponse.CenId = _ctx.StringValue("DescribeCenAttachedChildInstanceAttribute.CenId");
 			describeCenAttachedChildInstanceAttributeResponse.ChildInstanceName = _ctx.StringValue("DescribeCenAttachedChildInstanceAttribute.ChildInstanceName");
-			describeCenAttachedChildInstanceAttributeResponse.ChildInstanceAttachTime = _ctx.StringValue("DescribeCenAttachedChildInstanceAttribute.ChildInstanceAttachTime");
 			describeCenAttachedChildInstanceAttributeResponse.Ipv6StatusInCen = _ctx.StringValue("DescribeCenAttachedChildInstanceAttribute.Ipv6StatusInCen");
+			describeCenAttachedChildInstanceAttributeResponse.ChildInstanceAttachTime = _ctx.StringValue("DescribeCenAttachedChildInstanceAttribute.ChildInstanceAttachTime");
 
 			List<DescribeCenAttachedChildInstanceAttributeResponse.DescribeCenAttachedChildInstanceAttribute_ChildInstanceRouteTable> describeCenAttachedChildInstanceAttributeResponse_childInstanceRouteTables = new List<DescribeCenAttachedChildInstanceAttributeResponse.DescribeCenAttachedChildInstanceAttribute_ChildInstanceRouteTable>();
 			for (int i = 0; i < _ctx.Length("DescribeCenAttachedChildInstanceAttribute.ChildInstanceRouteTables.Length"); i++) {

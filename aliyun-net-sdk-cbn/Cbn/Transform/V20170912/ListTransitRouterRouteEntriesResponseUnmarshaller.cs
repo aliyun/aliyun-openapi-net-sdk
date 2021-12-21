@@ -31,23 +31,23 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 			ListTransitRouterRouteEntriesResponse listTransitRouterRouteEntriesResponse = new ListTransitRouterRouteEntriesResponse();
 
 			listTransitRouterRouteEntriesResponse.HttpResponse = _ctx.HttpResponse;
-			listTransitRouterRouteEntriesResponse.MaxResults = _ctx.IntegerValue("ListTransitRouterRouteEntries.MaxResults");
 			listTransitRouterRouteEntriesResponse.NextToken = _ctx.StringValue("ListTransitRouterRouteEntries.NextToken");
 			listTransitRouterRouteEntriesResponse.RequestId = _ctx.StringValue("ListTransitRouterRouteEntries.RequestId");
 			listTransitRouterRouteEntriesResponse.TotalCount = _ctx.IntegerValue("ListTransitRouterRouteEntries.TotalCount");
+			listTransitRouterRouteEntriesResponse.MaxResults = _ctx.IntegerValue("ListTransitRouterRouteEntries.MaxResults");
 
 			List<ListTransitRouterRouteEntriesResponse.ListTransitRouterRouteEntries_TransitRouterRouteEntry> listTransitRouterRouteEntriesResponse_transitRouterRouteEntries = new List<ListTransitRouterRouteEntriesResponse.ListTransitRouterRouteEntries_TransitRouterRouteEntry>();
 			for (int i = 0; i < _ctx.Length("ListTransitRouterRouteEntries.TransitRouterRouteEntries.Length"); i++) {
 				ListTransitRouterRouteEntriesResponse.ListTransitRouterRouteEntries_TransitRouterRouteEntry transitRouterRouteEntry = new ListTransitRouterRouteEntriesResponse.ListTransitRouterRouteEntries_TransitRouterRouteEntry();
-				transitRouterRouteEntry.TransitRouterRouteEntryDescription = _ctx.StringValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryDescription");
-				transitRouterRouteEntry.TransitRouterRouteEntryDestinationCidrBlock = _ctx.StringValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryDestinationCidrBlock");
 				transitRouterRouteEntry.TransitRouterRouteEntryId = _ctx.StringValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryId");
-				transitRouterRouteEntry.TransitRouterRouteEntryName = _ctx.StringValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryName");
-				transitRouterRouteEntry.TransitRouterRouteEntryNextHopId = _ctx.StringValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryNextHopId");
-				transitRouterRouteEntry.TransitRouterRouteEntryNextHopType = _ctx.StringValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryNextHopType");
-				transitRouterRouteEntry.TransitRouterRouteEntryStatus = _ctx.StringValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryStatus");
+				transitRouterRouteEntry.TransitRouterRouteEntryDestinationCidrBlock = _ctx.StringValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryDestinationCidrBlock");
 				transitRouterRouteEntry.TransitRouterRouteEntryType = _ctx.StringValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryType");
 				transitRouterRouteEntry.CreateTime = _ctx.StringValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].CreateTime");
+				transitRouterRouteEntry.TransitRouterRouteEntryName = _ctx.StringValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryName");
+				transitRouterRouteEntry.TransitRouterRouteEntryStatus = _ctx.StringValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryStatus");
+				transitRouterRouteEntry.TransitRouterRouteEntryNextHopType = _ctx.StringValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryNextHopType");
+				transitRouterRouteEntry.TransitRouterRouteEntryNextHopId = _ctx.StringValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryNextHopId");
+				transitRouterRouteEntry.TransitRouterRouteEntryDescription = _ctx.StringValue("ListTransitRouterRouteEntries.TransitRouterRouteEntries["+ i +"].TransitRouterRouteEntryDescription");
 
 				listTransitRouterRouteEntriesResponse_transitRouterRouteEntries.Add(transitRouterRouteEntry);
 			}
