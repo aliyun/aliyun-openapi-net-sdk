@@ -33,6 +33,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			uploadStreamByURLResponse.HttpResponse = _ctx.HttpResponse;
 			uploadStreamByURLResponse.RequestId = _ctx.StringValue("UploadStreamByURL.RequestId");
 			uploadStreamByURLResponse.StreamJobId = _ctx.StringValue("UploadStreamByURL.StreamJobId");
+			uploadStreamByURLResponse.FileURL = _ctx.StringValue("UploadStreamByURL.FileURL");
+			uploadStreamByURLResponse.SourceURL = _ctx.StringValue("UploadStreamByURL.SourceURL");
         
 			return uploadStreamByURLResponse;
         }

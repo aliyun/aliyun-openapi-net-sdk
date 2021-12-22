@@ -29,6 +29,10 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string streamJobId;
 
+		private string fileURL;
+
+		private string sourceURL;
+
 		public string RequestId
 		{
 			get
@@ -50,6 +54,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				streamJobId = value;
+			}
+		}
+
+		public string FileURL
+		{
+			get
+			{
+				return fileURL;
+			}
+			set	
+			{
+				fileURL = value;
+			}
+		}
+
+		public string SourceURL
+		{
+			get
+			{
+				return sourceURL;
+			}
+			set	
+			{
+				sourceURL = value;
 			}
 		}
 	}

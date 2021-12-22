@@ -40,8 +40,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			List<GetMediaAuditAudioResultDetailResponse.GetMediaAuditAudioResultDetail_MediaAuditAudioResultDetail.GetMediaAuditAudioResultDetail_ListItem> mediaAuditAudioResultDetail_list = new List<GetMediaAuditAudioResultDetailResponse.GetMediaAuditAudioResultDetail_MediaAuditAudioResultDetail.GetMediaAuditAudioResultDetail_ListItem>();
 			for (int i = 0; i < _ctx.Length("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.List.Length"); i++) {
 				GetMediaAuditAudioResultDetailResponse.GetMediaAuditAudioResultDetail_MediaAuditAudioResultDetail.GetMediaAuditAudioResultDetail_ListItem listItem = new GetMediaAuditAudioResultDetailResponse.GetMediaAuditAudioResultDetail_MediaAuditAudioResultDetail.GetMediaAuditAudioResultDetail_ListItem();
-				listItem.StartTime = _ctx.LongValue("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.List["+ i +"].StartTime");
 				listItem.EndTime = _ctx.LongValue("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.List["+ i +"].EndTime");
+				listItem.StartTime = _ctx.LongValue("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.List["+ i +"].StartTime");
 				listItem.Text = _ctx.StringValue("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.List["+ i +"].Text");
 				listItem.Label = _ctx.StringValue("GetMediaAuditAudioResultDetail.MediaAuditAudioResultDetail.List["+ i +"].Label");
 
