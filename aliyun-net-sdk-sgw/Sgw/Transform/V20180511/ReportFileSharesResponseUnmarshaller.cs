@@ -31,10 +31,10 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			ReportFileSharesResponse reportFileSharesResponse = new ReportFileSharesResponse();
 
 			reportFileSharesResponse.HttpResponse = _ctx.HttpResponse;
-			reportFileSharesResponse.RequestId = _ctx.StringValue("ReportFileShares.RequestId");
-			reportFileSharesResponse.Success = _ctx.BooleanValue("ReportFileShares.Success");
-			reportFileSharesResponse.Code = _ctx.StringValue("ReportFileShares.Code");
 			reportFileSharesResponse.Message = _ctx.StringValue("ReportFileShares.Message");
+			reportFileSharesResponse.RequestId = _ctx.StringValue("ReportFileShares.RequestId");
+			reportFileSharesResponse.Code = _ctx.StringValue("ReportFileShares.Code");
+			reportFileSharesResponse.Success = _ctx.BooleanValue("ReportFileShares.Success");
         
 			return reportFileSharesResponse;
         }

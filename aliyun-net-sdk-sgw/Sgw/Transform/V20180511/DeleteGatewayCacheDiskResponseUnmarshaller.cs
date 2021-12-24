@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DeleteGatewayCacheDiskResponse deleteGatewayCacheDiskResponse = new DeleteGatewayCacheDiskResponse();
 
 			deleteGatewayCacheDiskResponse.HttpResponse = _ctx.HttpResponse;
-			deleteGatewayCacheDiskResponse.RequestId = _ctx.StringValue("DeleteGatewayCacheDisk.RequestId");
-			deleteGatewayCacheDiskResponse.Success = _ctx.BooleanValue("DeleteGatewayCacheDisk.Success");
-			deleteGatewayCacheDiskResponse.Code = _ctx.StringValue("DeleteGatewayCacheDisk.Code");
-			deleteGatewayCacheDiskResponse.Message = _ctx.StringValue("DeleteGatewayCacheDisk.Message");
 			deleteGatewayCacheDiskResponse.TaskId = _ctx.StringValue("DeleteGatewayCacheDisk.TaskId");
+			deleteGatewayCacheDiskResponse.Message = _ctx.StringValue("DeleteGatewayCacheDisk.Message");
+			deleteGatewayCacheDiskResponse.RequestId = _ctx.StringValue("DeleteGatewayCacheDisk.RequestId");
+			deleteGatewayCacheDiskResponse.Code = _ctx.StringValue("DeleteGatewayCacheDisk.Code");
+			deleteGatewayCacheDiskResponse.Success = _ctx.BooleanValue("DeleteGatewayCacheDisk.Success");
         
 			return deleteGatewayCacheDiskResponse;
         }

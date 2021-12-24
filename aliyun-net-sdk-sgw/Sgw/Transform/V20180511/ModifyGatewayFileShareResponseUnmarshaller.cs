@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			ModifyGatewayFileShareResponse modifyGatewayFileShareResponse = new ModifyGatewayFileShareResponse();
 
 			modifyGatewayFileShareResponse.HttpResponse = _ctx.HttpResponse;
-			modifyGatewayFileShareResponse.RequestId = _ctx.StringValue("ModifyGatewayFileShare.RequestId");
-			modifyGatewayFileShareResponse.Success = _ctx.BooleanValue("ModifyGatewayFileShare.Success");
-			modifyGatewayFileShareResponse.Code = _ctx.StringValue("ModifyGatewayFileShare.Code");
-			modifyGatewayFileShareResponse.Message = _ctx.StringValue("ModifyGatewayFileShare.Message");
 			modifyGatewayFileShareResponse.TaskId = _ctx.StringValue("ModifyGatewayFileShare.TaskId");
+			modifyGatewayFileShareResponse.Message = _ctx.StringValue("ModifyGatewayFileShare.Message");
+			modifyGatewayFileShareResponse.RequestId = _ctx.StringValue("ModifyGatewayFileShare.RequestId");
+			modifyGatewayFileShareResponse.Code = _ctx.StringValue("ModifyGatewayFileShare.Code");
+			modifyGatewayFileShareResponse.Success = _ctx.BooleanValue("ModifyGatewayFileShare.Success");
         
 			return modifyGatewayFileShareResponse;
         }

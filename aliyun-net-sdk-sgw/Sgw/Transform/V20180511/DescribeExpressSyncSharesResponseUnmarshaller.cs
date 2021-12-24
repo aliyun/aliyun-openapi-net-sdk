@@ -31,23 +31,23 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeExpressSyncSharesResponse describeExpressSyncSharesResponse = new DescribeExpressSyncSharesResponse();
 
 			describeExpressSyncSharesResponse.HttpResponse = _ctx.HttpResponse;
-			describeExpressSyncSharesResponse.RequestId = _ctx.StringValue("DescribeExpressSyncShares.RequestId");
-			describeExpressSyncSharesResponse.Success = _ctx.BooleanValue("DescribeExpressSyncShares.Success");
-			describeExpressSyncSharesResponse.Code = _ctx.StringValue("DescribeExpressSyncShares.Code");
 			describeExpressSyncSharesResponse.Message = _ctx.StringValue("DescribeExpressSyncShares.Message");
+			describeExpressSyncSharesResponse.RequestId = _ctx.StringValue("DescribeExpressSyncShares.RequestId");
+			describeExpressSyncSharesResponse.Code = _ctx.StringValue("DescribeExpressSyncShares.Code");
+			describeExpressSyncSharesResponse.Success = _ctx.BooleanValue("DescribeExpressSyncShares.Success");
 
 			List<DescribeExpressSyncSharesResponse.DescribeExpressSyncShares_Share> describeExpressSyncSharesResponse_shares = new List<DescribeExpressSyncSharesResponse.DescribeExpressSyncShares_Share>();
 			for (int i = 0; i < _ctx.Length("DescribeExpressSyncShares.Shares.Length"); i++) {
 				DescribeExpressSyncSharesResponse.DescribeExpressSyncShares_Share share = new DescribeExpressSyncSharesResponse.DescribeExpressSyncShares_Share();
+				share.MnsQueue = _ctx.StringValue("DescribeExpressSyncShares.Shares["+ i +"].MnsQueue");
+				share.ExpressSyncId = _ctx.StringValue("DescribeExpressSyncShares.Shares["+ i +"].ExpressSyncId");
 				share.GatewayId = _ctx.StringValue("DescribeExpressSyncShares.Shares["+ i +"].GatewayId");
-				share.StorageBundleId = _ctx.StringValue("DescribeExpressSyncShares.Shares["+ i +"].StorageBundleId");
+				share.ExpressSyncState = _ctx.StringValue("DescribeExpressSyncShares.Shares["+ i +"].ExpressSyncState");
 				share.GatewayName = _ctx.StringValue("DescribeExpressSyncShares.Shares["+ i +"].GatewayName");
+				share.StorageBundleId = _ctx.StringValue("DescribeExpressSyncShares.Shares["+ i +"].StorageBundleId");
+				share.SyncProgress = _ctx.IntegerValue("DescribeExpressSyncShares.Shares["+ i +"].SyncProgress");
 				share.GatewayRegion = _ctx.StringValue("DescribeExpressSyncShares.Shares["+ i +"].GatewayRegion");
 				share.ShareName = _ctx.StringValue("DescribeExpressSyncShares.Shares["+ i +"].ShareName");
-				share.ExpressSyncState = _ctx.StringValue("DescribeExpressSyncShares.Shares["+ i +"].ExpressSyncState");
-				share.ExpressSyncId = _ctx.StringValue("DescribeExpressSyncShares.Shares["+ i +"].ExpressSyncId");
-				share.MnsQueue = _ctx.StringValue("DescribeExpressSyncShares.Shares["+ i +"].MnsQueue");
-				share.SyncProgress = _ctx.IntegerValue("DescribeExpressSyncShares.Shares["+ i +"].SyncProgress");
 
 				describeExpressSyncSharesResponse_shares.Add(share);
 			}

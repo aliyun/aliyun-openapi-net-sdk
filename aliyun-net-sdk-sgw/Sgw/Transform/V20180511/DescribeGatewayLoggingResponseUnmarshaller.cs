@@ -31,13 +31,13 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeGatewayLoggingResponse describeGatewayLoggingResponse = new DescribeGatewayLoggingResponse();
 
 			describeGatewayLoggingResponse.HttpResponse = _ctx.HttpResponse;
+			describeGatewayLoggingResponse.SlsProject = _ctx.StringValue("DescribeGatewayLogging.SlsProject");
 			describeGatewayLoggingResponse.RequestId = _ctx.StringValue("DescribeGatewayLogging.RequestId");
-			describeGatewayLoggingResponse.Success = _ctx.BooleanValue("DescribeGatewayLogging.Success");
-			describeGatewayLoggingResponse.Code = _ctx.StringValue("DescribeGatewayLogging.Code");
 			describeGatewayLoggingResponse.Message = _ctx.StringValue("DescribeGatewayLogging.Message");
 			describeGatewayLoggingResponse.GatewayLoggingStatus = _ctx.StringValue("DescribeGatewayLogging.GatewayLoggingStatus");
-			describeGatewayLoggingResponse.SlsProject = _ctx.StringValue("DescribeGatewayLogging.SlsProject");
 			describeGatewayLoggingResponse.SlsLogstore = _ctx.StringValue("DescribeGatewayLogging.SlsLogstore");
+			describeGatewayLoggingResponse.Code = _ctx.StringValue("DescribeGatewayLogging.Code");
+			describeGatewayLoggingResponse.Success = _ctx.BooleanValue("DescribeGatewayLogging.Success");
         
 			return describeGatewayLoggingResponse;
         }

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,49 +25,27 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class CheckBlockVolumeNameResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
-		private string code;
+		private string isRequireRecovery;
 
 		private string message;
 
-		private string isRequireRecovery;
+		private string requestId;
 
-		public string RequestId
+		private string code;
+
+		private bool? success;
+
+		private bool? isAlreadyExist;
+
+		public string IsRequireRecovery
 		{
 			get
 			{
-				return requestId;
+				return isRequireRecovery;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
+				isRequireRecovery = value;
 			}
 		}
 
@@ -83,15 +61,51 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public string IsRequireRecovery
+		public string RequestId
 		{
 			get
 			{
-				return isRequireRecovery;
+				return requestId;
 			}
 			set	
 			{
-				isRequireRecovery = value;
+				requestId = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public bool? IsAlreadyExist
+		{
+			get
+			{
+				return isAlreadyExist;
+			}
+			set	
+			{
+				isAlreadyExist = value;
 			}
 		}
 	}

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			ModifyGatewayFileShareWatermarkResponse modifyGatewayFileShareWatermarkResponse = new ModifyGatewayFileShareWatermarkResponse();
 
 			modifyGatewayFileShareWatermarkResponse.HttpResponse = _ctx.HttpResponse;
-			modifyGatewayFileShareWatermarkResponse.RequestId = _ctx.StringValue("ModifyGatewayFileShareWatermark.RequestId");
-			modifyGatewayFileShareWatermarkResponse.Success = _ctx.BooleanValue("ModifyGatewayFileShareWatermark.Success");
-			modifyGatewayFileShareWatermarkResponse.Code = _ctx.StringValue("ModifyGatewayFileShareWatermark.Code");
-			modifyGatewayFileShareWatermarkResponse.Message = _ctx.StringValue("ModifyGatewayFileShareWatermark.Message");
 			modifyGatewayFileShareWatermarkResponse.TaskId = _ctx.StringValue("ModifyGatewayFileShareWatermark.TaskId");
+			modifyGatewayFileShareWatermarkResponse.Message = _ctx.StringValue("ModifyGatewayFileShareWatermark.Message");
+			modifyGatewayFileShareWatermarkResponse.RequestId = _ctx.StringValue("ModifyGatewayFileShareWatermark.RequestId");
+			modifyGatewayFileShareWatermarkResponse.Code = _ctx.StringValue("ModifyGatewayFileShareWatermark.Code");
+			modifyGatewayFileShareWatermarkResponse.Success = _ctx.BooleanValue("ModifyGatewayFileShareWatermark.Success");
         
 			return modifyGatewayFileShareWatermarkResponse;
         }

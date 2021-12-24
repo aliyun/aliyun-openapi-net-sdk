@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,122 +25,27 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeGatewayCredentialResponse : AcsResponse
 	{
 
+		private string vpcId;
+
 		private string requestId;
-
-		private bool? success;
-
-		private string code;
 
 		private string message;
 
-		private string ecsIp;
-
-		private string ecsPassword;
-
 		private string consoleUsername;
-
-		private string consolePassword;
-
-		private string vpcId;
 
 		private string vSwitchId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string ecsIp;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private string consolePassword;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private string ecsPassword;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+		private string code;
 
-		public string EcsIp
-		{
-			get
-			{
-				return ecsIp;
-			}
-			set	
-			{
-				ecsIp = value;
-			}
-		}
+		private bool? success;
 
-		public string EcsPassword
-		{
-			get
-			{
-				return ecsPassword;
-			}
-			set	
-			{
-				ecsPassword = value;
-			}
-		}
-
-		public string ConsoleUsername
-		{
-			get
-			{
-				return consoleUsername;
-			}
-			set	
-			{
-				consoleUsername = value;
-			}
-		}
-
-		public string ConsolePassword
-		{
-			get
-			{
-				return consolePassword;
-			}
-			set	
-			{
-				consolePassword = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "VpcId")]
 		public string VpcId
 		{
 			get
@@ -153,6 +58,46 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Message")]
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ConsoleUsername")]
+		public string ConsoleUsername
+		{
+			get
+			{
+				return consoleUsername;
+			}
+			set	
+			{
+				consoleUsername = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "VSwitchId")]
 		public string VSwitchId
 		{
 			get
@@ -162,6 +107,71 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set	
 			{
 				vSwitchId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "EcsIp")]
+		public string EcsIp
+		{
+			get
+			{
+				return ecsIp;
+			}
+			set	
+			{
+				ecsIp = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ConsolePassword")]
+		public string ConsolePassword
+		{
+			get
+			{
+				return consolePassword;
+			}
+			set	
+			{
+				consolePassword = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "EcsPassword")]
+		public string EcsPassword
+		{
+			get
+			{
+				return ecsPassword;
+			}
+			set	
+			{
+				ecsPassword = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

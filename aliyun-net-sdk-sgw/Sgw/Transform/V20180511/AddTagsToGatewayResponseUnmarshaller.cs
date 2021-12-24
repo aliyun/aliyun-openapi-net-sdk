@@ -31,10 +31,10 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			AddTagsToGatewayResponse addTagsToGatewayResponse = new AddTagsToGatewayResponse();
 
 			addTagsToGatewayResponse.HttpResponse = _ctx.HttpResponse;
-			addTagsToGatewayResponse.RequestId = _ctx.StringValue("AddTagsToGateway.RequestId");
-			addTagsToGatewayResponse.Success = _ctx.BooleanValue("AddTagsToGateway.Success");
-			addTagsToGatewayResponse.Code = _ctx.StringValue("AddTagsToGateway.Code");
 			addTagsToGatewayResponse.Message = _ctx.StringValue("AddTagsToGateway.Message");
+			addTagsToGatewayResponse.RequestId = _ctx.StringValue("AddTagsToGateway.RequestId");
+			addTagsToGatewayResponse.Code = _ctx.StringValue("AddTagsToGateway.Code");
+			addTagsToGatewayResponse.Success = _ctx.BooleanValue("AddTagsToGateway.Success");
         
 			return addTagsToGatewayResponse;
         }

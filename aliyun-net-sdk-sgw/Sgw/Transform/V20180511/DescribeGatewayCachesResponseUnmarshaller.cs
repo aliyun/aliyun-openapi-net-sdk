@@ -31,26 +31,26 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeGatewayCachesResponse describeGatewayCachesResponse = new DescribeGatewayCachesResponse();
 
 			describeGatewayCachesResponse.HttpResponse = _ctx.HttpResponse;
-			describeGatewayCachesResponse.RequestId = _ctx.StringValue("DescribeGatewayCaches.RequestId");
-			describeGatewayCachesResponse.Success = _ctx.BooleanValue("DescribeGatewayCaches.Success");
-			describeGatewayCachesResponse.Code = _ctx.StringValue("DescribeGatewayCaches.Code");
 			describeGatewayCachesResponse.Message = _ctx.StringValue("DescribeGatewayCaches.Message");
+			describeGatewayCachesResponse.RequestId = _ctx.StringValue("DescribeGatewayCaches.RequestId");
+			describeGatewayCachesResponse.Code = _ctx.StringValue("DescribeGatewayCaches.Code");
+			describeGatewayCachesResponse.Success = _ctx.BooleanValue("DescribeGatewayCaches.Success");
 
 			List<DescribeGatewayCachesResponse.DescribeGatewayCaches_Cache> describeGatewayCachesResponse_caches = new List<DescribeGatewayCachesResponse.DescribeGatewayCaches_Cache>();
 			for (int i = 0; i < _ctx.Length("DescribeGatewayCaches.Caches.Length"); i++) {
 				DescribeGatewayCachesResponse.DescribeGatewayCaches_Cache cache = new DescribeGatewayCachesResponse.DescribeGatewayCaches_Cache();
+				cache.PerformanceLevel = _ctx.StringValue("DescribeGatewayCaches.Caches["+ i +"].PerformanceLevel");
 				cache.SizeInGB = _ctx.LongValue("DescribeGatewayCaches.Caches["+ i +"].SizeInGB");
+				cache.BuyURL = _ctx.StringValue("DescribeGatewayCaches.Caches["+ i +"].BuyURL");
 				cache.Iops = _ctx.LongValue("DescribeGatewayCaches.Caches["+ i +"].Iops");
 				cache.CacheId = _ctx.StringValue("DescribeGatewayCaches.Caches["+ i +"].CacheId");
 				cache.CacheType = _ctx.StringValue("DescribeGatewayCaches.Caches["+ i +"].CacheType");
 				cache.IsUsed = _ctx.BooleanValue("DescribeGatewayCaches.Caches["+ i +"].IsUsed");
-				cache.LocalFilePath = _ctx.StringValue("DescribeGatewayCaches.Caches["+ i +"].LocalFilePath");
-				cache.RenewURL = _ctx.StringValue("DescribeGatewayCaches.Caches["+ i +"].RenewURL");
 				cache.ExpiredTime = _ctx.LongValue("DescribeGatewayCaches.Caches["+ i +"].ExpiredTime");
-				cache.ExpireStatus = _ctx.IntegerValue("DescribeGatewayCaches.Caches["+ i +"].ExpireStatus");
-				cache.PerformanceLevel = _ctx.StringValue("DescribeGatewayCaches.Caches["+ i +"].PerformanceLevel");
-				cache.BuyURL = _ctx.StringValue("DescribeGatewayCaches.Caches["+ i +"].BuyURL");
+				cache.LocalFilePath = _ctx.StringValue("DescribeGatewayCaches.Caches["+ i +"].LocalFilePath");
 				cache.SubscriptionInstanceId = _ctx.StringValue("DescribeGatewayCaches.Caches["+ i +"].SubscriptionInstanceId");
+				cache.ExpireStatus = _ctx.IntegerValue("DescribeGatewayCaches.Caches["+ i +"].ExpireStatus");
+				cache.RenewURL = _ctx.StringValue("DescribeGatewayCaches.Caches["+ i +"].RenewURL");
 
 				describeGatewayCachesResponse_caches.Add(cache);
 			}

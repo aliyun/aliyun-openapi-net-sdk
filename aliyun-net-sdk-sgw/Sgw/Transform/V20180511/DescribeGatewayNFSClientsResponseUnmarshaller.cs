@@ -31,24 +31,24 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeGatewayNFSClientsResponse describeGatewayNFSClientsResponse = new DescribeGatewayNFSClientsResponse();
 
 			describeGatewayNFSClientsResponse.HttpResponse = _ctx.HttpResponse;
-			describeGatewayNFSClientsResponse.RequestId = _ctx.StringValue("DescribeGatewayNFSClients.RequestId");
-			describeGatewayNFSClientsResponse.Success = _ctx.BooleanValue("DescribeGatewayNFSClients.Success");
-			describeGatewayNFSClientsResponse.Code = _ctx.StringValue("DescribeGatewayNFSClients.Code");
-			describeGatewayNFSClientsResponse.Message = _ctx.StringValue("DescribeGatewayNFSClients.Message");
-			describeGatewayNFSClientsResponse.TotalCount = _ctx.IntegerValue("DescribeGatewayNFSClients.TotalCount");
-			describeGatewayNFSClientsResponse.PageNumber = _ctx.IntegerValue("DescribeGatewayNFSClients.PageNumber");
-			describeGatewayNFSClientsResponse.PageSize = _ctx.IntegerValue("DescribeGatewayNFSClients.PageSize");
-			describeGatewayNFSClientsResponse.Version3Enabled = _ctx.BooleanValue("DescribeGatewayNFSClients.Version3Enabled");
 			describeGatewayNFSClientsResponse.Version40Enabled = _ctx.BooleanValue("DescribeGatewayNFSClients.Version40Enabled");
 			describeGatewayNFSClientsResponse.Version41Enabled = _ctx.BooleanValue("DescribeGatewayNFSClients.Version41Enabled");
+			describeGatewayNFSClientsResponse.TotalCount = _ctx.IntegerValue("DescribeGatewayNFSClients.TotalCount");
+			describeGatewayNFSClientsResponse.RequestId = _ctx.StringValue("DescribeGatewayNFSClients.RequestId");
+			describeGatewayNFSClientsResponse.Message = _ctx.StringValue("DescribeGatewayNFSClients.Message");
+			describeGatewayNFSClientsResponse.PageSize = _ctx.IntegerValue("DescribeGatewayNFSClients.PageSize");
+			describeGatewayNFSClientsResponse.PageNumber = _ctx.IntegerValue("DescribeGatewayNFSClients.PageNumber");
+			describeGatewayNFSClientsResponse.Version3Enabled = _ctx.BooleanValue("DescribeGatewayNFSClients.Version3Enabled");
+			describeGatewayNFSClientsResponse.Code = _ctx.StringValue("DescribeGatewayNFSClients.Code");
+			describeGatewayNFSClientsResponse.Success = _ctx.BooleanValue("DescribeGatewayNFSClients.Success");
 
 			List<DescribeGatewayNFSClientsResponse.DescribeGatewayNFSClients_ClientInfo> describeGatewayNFSClientsResponse_clientInfoList = new List<DescribeGatewayNFSClientsResponse.DescribeGatewayNFSClients_ClientInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeGatewayNFSClients.ClientInfoList.Length"); i++) {
 				DescribeGatewayNFSClientsResponse.DescribeGatewayNFSClients_ClientInfo clientInfo = new DescribeGatewayNFSClientsResponse.DescribeGatewayNFSClients_ClientInfo();
-				clientInfo.ClientIpAddr = _ctx.StringValue("DescribeGatewayNFSClients.ClientInfoList["+ i +"].ClientIpAddr");
-				clientInfo.HasNFSv3 = _ctx.BooleanValue("DescribeGatewayNFSClients.ClientInfoList["+ i +"].HasNFSv3");
 				clientInfo.HasNFSv40 = _ctx.BooleanValue("DescribeGatewayNFSClients.ClientInfoList["+ i +"].HasNFSv40");
 				clientInfo.HasNFSv41 = _ctx.BooleanValue("DescribeGatewayNFSClients.ClientInfoList["+ i +"].HasNFSv41");
+				clientInfo.HasNFSv3 = _ctx.BooleanValue("DescribeGatewayNFSClients.ClientInfoList["+ i +"].HasNFSv3");
+				clientInfo.ClientIpAddr = _ctx.StringValue("DescribeGatewayNFSClients.ClientInfoList["+ i +"].ClientIpAddr");
 
 				describeGatewayNFSClientsResponse_clientInfoList.Add(clientInfo);
 			}

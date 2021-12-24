@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DeleteElasticGatewayPrivateZoneResponse deleteElasticGatewayPrivateZoneResponse = new DeleteElasticGatewayPrivateZoneResponse();
 
 			deleteElasticGatewayPrivateZoneResponse.HttpResponse = _ctx.HttpResponse;
-			deleteElasticGatewayPrivateZoneResponse.RequestId = _ctx.StringValue("DeleteElasticGatewayPrivateZone.RequestId");
-			deleteElasticGatewayPrivateZoneResponse.Success = _ctx.BooleanValue("DeleteElasticGatewayPrivateZone.Success");
-			deleteElasticGatewayPrivateZoneResponse.Code = _ctx.StringValue("DeleteElasticGatewayPrivateZone.Code");
-			deleteElasticGatewayPrivateZoneResponse.Message = _ctx.StringValue("DeleteElasticGatewayPrivateZone.Message");
 			deleteElasticGatewayPrivateZoneResponse.TaskId = _ctx.StringValue("DeleteElasticGatewayPrivateZone.TaskId");
+			deleteElasticGatewayPrivateZoneResponse.Message = _ctx.StringValue("DeleteElasticGatewayPrivateZone.Message");
+			deleteElasticGatewayPrivateZoneResponse.RequestId = _ctx.StringValue("DeleteElasticGatewayPrivateZone.RequestId");
+			deleteElasticGatewayPrivateZoneResponse.Code = _ctx.StringValue("DeleteElasticGatewayPrivateZone.Code");
+			deleteElasticGatewayPrivateZoneResponse.Success = _ctx.BooleanValue("DeleteElasticGatewayPrivateZone.Success");
         
 			return deleteElasticGatewayPrivateZoneResponse;
         }

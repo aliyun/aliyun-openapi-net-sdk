@@ -31,10 +31,10 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			ValidateGatewayNameResponse validateGatewayNameResponse = new ValidateGatewayNameResponse();
 
 			validateGatewayNameResponse.HttpResponse = _ctx.HttpResponse;
-			validateGatewayNameResponse.RequestId = _ctx.StringValue("ValidateGatewayName.RequestId");
-			validateGatewayNameResponse.Success = _ctx.BooleanValue("ValidateGatewayName.Success");
-			validateGatewayNameResponse.Code = _ctx.StringValue("ValidateGatewayName.Code");
 			validateGatewayNameResponse.Message = _ctx.StringValue("ValidateGatewayName.Message");
+			validateGatewayNameResponse.RequestId = _ctx.StringValue("ValidateGatewayName.RequestId");
+			validateGatewayNameResponse.Code = _ctx.StringValue("ValidateGatewayName.Code");
+			validateGatewayNameResponse.Success = _ctx.BooleanValue("ValidateGatewayName.Success");
 			validateGatewayNameResponse.IsValid = _ctx.BooleanValue("ValidateGatewayName.IsValid");
         
 			return validateGatewayNameResponse;

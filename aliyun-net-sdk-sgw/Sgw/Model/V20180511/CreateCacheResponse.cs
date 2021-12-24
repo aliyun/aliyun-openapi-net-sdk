@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,17 +25,29 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class CreateCacheResponse : AcsResponse
 	{
 
+		private string buyURL;
+
 		private string requestId;
-
-		private bool? success;
-
-		private string code;
 
 		private string message;
 
 		private string cacheId;
 
-		private string buyURL;
+		private string code;
+
+		private bool? success;
+
+		public string BuyURL
+		{
+			get
+			{
+				return buyURL;
+			}
+			set	
+			{
+				buyURL = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -46,30 +58,6 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
 			}
 		}
 
@@ -97,15 +85,27 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public string BuyURL
+		public string Code
 		{
 			get
 			{
-				return buyURL;
+				return code;
 			}
 			set	
 			{
-				buyURL = value;
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

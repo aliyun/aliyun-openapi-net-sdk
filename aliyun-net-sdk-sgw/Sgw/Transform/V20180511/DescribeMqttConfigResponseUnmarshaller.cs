@@ -31,19 +31,19 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeMqttConfigResponse describeMqttConfigResponse = new DescribeMqttConfigResponse();
 
 			describeMqttConfigResponse.HttpResponse = _ctx.HttpResponse;
-			describeMqttConfigResponse.RequestId = _ctx.StringValue("DescribeMqttConfig.RequestId");
-			describeMqttConfigResponse.Success = _ctx.BooleanValue("DescribeMqttConfig.Success");
-			describeMqttConfigResponse.Code = _ctx.StringValue("DescribeMqttConfig.Code");
 			describeMqttConfigResponse.Message = _ctx.StringValue("DescribeMqttConfig.Message");
+			describeMqttConfigResponse.RequestId = _ctx.StringValue("DescribeMqttConfig.RequestId");
 			describeMqttConfigResponse.IsEnabled = _ctx.BooleanValue("DescribeMqttConfig.IsEnabled");
-			describeMqttConfigResponse.BrokerUrl = _ctx.StringValue("DescribeMqttConfig.BrokerUrl");
 			describeMqttConfigResponse.InternalBrokerUrl = _ctx.StringValue("DescribeMqttConfig.InternalBrokerUrl");
-			describeMqttConfigResponse.PublishTopic = _ctx.StringValue("DescribeMqttConfig.PublishTopic");
-			describeMqttConfigResponse.SubscribeTopic = _ctx.StringValue("DescribeMqttConfig.SubscribeTopic");
+			describeMqttConfigResponse.Code = _ctx.StringValue("DescribeMqttConfig.Code");
+			describeMqttConfigResponse.Success = _ctx.BooleanValue("DescribeMqttConfig.Success");
+			describeMqttConfigResponse.BrokerUrl = _ctx.StringValue("DescribeMqttConfig.BrokerUrl");
 			describeMqttConfigResponse.GroupId = _ctx.StringValue("DescribeMqttConfig.GroupId");
 			describeMqttConfigResponse.MqttInstanceId = _ctx.StringValue("DescribeMqttConfig.MqttInstanceId");
-			describeMqttConfigResponse.AuthType = _ctx.StringValue("DescribeMqttConfig.AuthType");
 			describeMqttConfigResponse.Username = _ctx.StringValue("DescribeMqttConfig.Username");
+			describeMqttConfigResponse.SubscribeTopic = _ctx.StringValue("DescribeMqttConfig.SubscribeTopic");
+			describeMqttConfigResponse.PublishTopic = _ctx.StringValue("DescribeMqttConfig.PublishTopic");
+			describeMqttConfigResponse.AuthType = _ctx.StringValue("DescribeMqttConfig.AuthType");
 			describeMqttConfigResponse.Password = _ctx.StringValue("DescribeMqttConfig.Password");
         
 			return describeMqttConfigResponse;

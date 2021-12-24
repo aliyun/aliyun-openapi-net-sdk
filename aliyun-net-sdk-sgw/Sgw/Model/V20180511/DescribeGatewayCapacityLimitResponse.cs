@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -39,6 +39,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 
 		private bool? success;
 
+		[JsonProperty(PropertyName = "FileSystemSizeInTB")]
 		public long? FileSystemSizeInTB
 		{
 			get
@@ -51,6 +52,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -63,6 +65,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -75,6 +78,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "IsMetadataSeparate")]
 		public bool? IsMetadataSeparate
 		{
 			get
@@ -87,6 +91,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "FileNumber")]
 		public long? FileNumber
 		{
 			get
@@ -99,6 +104,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -111,6 +117,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get

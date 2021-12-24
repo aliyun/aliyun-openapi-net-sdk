@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -56,6 +57,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 
 		private bool? isEnabled;
 
+		[JsonProperty(PropertyName = "IsTls")]
 		public bool? IsTls
 		{
 			get
@@ -69,6 +71,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "Password")]
 		public string Password
 		{
 			get
@@ -82,6 +85,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "RootDN")]
 		public string RootDN
 		{
 			get
@@ -95,6 +99,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityToken")]
 		public string SecurityToken
 		{
 			get
@@ -108,6 +113,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "ServerIp")]
 		public string ServerIp
 		{
 			get
@@ -121,6 +127,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "BaseDN")]
 		public string BaseDN
 		{
 			get
@@ -134,6 +141,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "GatewayId")]
 		public string GatewayId
 		{
 			get
@@ -147,6 +155,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "IsEnabled")]
 		public bool? IsEnabled
 		{
 			get

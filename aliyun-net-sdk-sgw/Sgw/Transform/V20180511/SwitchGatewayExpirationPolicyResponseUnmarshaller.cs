@@ -31,10 +31,10 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			SwitchGatewayExpirationPolicyResponse switchGatewayExpirationPolicyResponse = new SwitchGatewayExpirationPolicyResponse();
 
 			switchGatewayExpirationPolicyResponse.HttpResponse = _ctx.HttpResponse;
-			switchGatewayExpirationPolicyResponse.RequestId = _ctx.StringValue("SwitchGatewayExpirationPolicy.RequestId");
-			switchGatewayExpirationPolicyResponse.Success = _ctx.BooleanValue("SwitchGatewayExpirationPolicy.Success");
-			switchGatewayExpirationPolicyResponse.Code = _ctx.StringValue("SwitchGatewayExpirationPolicy.Code");
 			switchGatewayExpirationPolicyResponse.Message = _ctx.StringValue("SwitchGatewayExpirationPolicy.Message");
+			switchGatewayExpirationPolicyResponse.RequestId = _ctx.StringValue("SwitchGatewayExpirationPolicy.RequestId");
+			switchGatewayExpirationPolicyResponse.Code = _ctx.StringValue("SwitchGatewayExpirationPolicy.Code");
+			switchGatewayExpirationPolicyResponse.Success = _ctx.BooleanValue("SwitchGatewayExpirationPolicy.Success");
         
 			return switchGatewayExpirationPolicyResponse;
         }

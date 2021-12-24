@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			ModifyStorageBundleResponse modifyStorageBundleResponse = new ModifyStorageBundleResponse();
 
 			modifyStorageBundleResponse.HttpResponse = _ctx.HttpResponse;
-			modifyStorageBundleResponse.RequestId = _ctx.StringValue("ModifyStorageBundle.RequestId");
-			modifyStorageBundleResponse.Success = _ctx.BooleanValue("ModifyStorageBundle.Success");
-			modifyStorageBundleResponse.Code = _ctx.StringValue("ModifyStorageBundle.Code");
 			modifyStorageBundleResponse.Message = _ctx.StringValue("ModifyStorageBundle.Message");
+			modifyStorageBundleResponse.RequestId = _ctx.StringValue("ModifyStorageBundle.RequestId");
 			modifyStorageBundleResponse.StorageBundleId = _ctx.StringValue("ModifyStorageBundle.StorageBundleId");
+			modifyStorageBundleResponse.Code = _ctx.StringValue("ModifyStorageBundle.Code");
+			modifyStorageBundleResponse.Success = _ctx.BooleanValue("ModifyStorageBundle.Success");
         
 			return modifyStorageBundleResponse;
         }

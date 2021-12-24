@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			CreateExpressSyncResponse createExpressSyncResponse = new CreateExpressSyncResponse();
 
 			createExpressSyncResponse.HttpResponse = _ctx.HttpResponse;
-			createExpressSyncResponse.RequestId = _ctx.StringValue("CreateExpressSync.RequestId");
-			createExpressSyncResponse.Success = _ctx.BooleanValue("CreateExpressSync.Success");
-			createExpressSyncResponse.Code = _ctx.StringValue("CreateExpressSync.Code");
 			createExpressSyncResponse.Message = _ctx.StringValue("CreateExpressSync.Message");
+			createExpressSyncResponse.RequestId = _ctx.StringValue("CreateExpressSync.RequestId");
+			createExpressSyncResponse.Code = _ctx.StringValue("CreateExpressSync.Code");
 			createExpressSyncResponse.ExpressSyncId = _ctx.StringValue("CreateExpressSync.ExpressSyncId");
+			createExpressSyncResponse.Success = _ctx.BooleanValue("CreateExpressSync.Success");
         
 			return createExpressSyncResponse;
         }

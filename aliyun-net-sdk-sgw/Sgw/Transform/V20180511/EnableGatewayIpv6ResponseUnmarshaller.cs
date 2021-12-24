@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			EnableGatewayIpv6Response enableGatewayIpv6Response = new EnableGatewayIpv6Response();
 
 			enableGatewayIpv6Response.HttpResponse = _ctx.HttpResponse;
-			enableGatewayIpv6Response.RequestId = _ctx.StringValue("EnableGatewayIpv6.RequestId");
-			enableGatewayIpv6Response.Success = _ctx.BooleanValue("EnableGatewayIpv6.Success");
-			enableGatewayIpv6Response.Code = _ctx.StringValue("EnableGatewayIpv6.Code");
-			enableGatewayIpv6Response.Message = _ctx.StringValue("EnableGatewayIpv6.Message");
 			enableGatewayIpv6Response.TaskId = _ctx.StringValue("EnableGatewayIpv6.TaskId");
+			enableGatewayIpv6Response.Message = _ctx.StringValue("EnableGatewayIpv6.Message");
+			enableGatewayIpv6Response.RequestId = _ctx.StringValue("EnableGatewayIpv6.RequestId");
+			enableGatewayIpv6Response.Code = _ctx.StringValue("EnableGatewayIpv6.Code");
+			enableGatewayIpv6Response.Success = _ctx.BooleanValue("EnableGatewayIpv6.Success");
         
 			return enableGatewayIpv6Response;
         }

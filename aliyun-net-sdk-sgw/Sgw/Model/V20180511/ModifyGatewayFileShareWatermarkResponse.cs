@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,52 +25,30 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class ModifyGatewayFileShareWatermarkResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
-		private string code;
+		private string taskId;
 
 		private string message;
 
-		private string taskId;
+		private string requestId;
 
-		public string RequestId
+		private string code;
+
+		private bool? success;
+
+		[JsonProperty(PropertyName = "TaskId")]
+		public string TaskId
 		{
 			get
 			{
-				return requestId;
+				return taskId;
 			}
 			set	
 			{
-				requestId = value;
+				taskId = value;
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -83,15 +61,42 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public string TaskId
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return taskId;
+				return requestId;
 			}
 			set	
 			{
-				taskId = value;
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

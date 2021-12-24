@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeDashboardResponse describeDashboardResponse = new DescribeDashboardResponse();
 
 			describeDashboardResponse.HttpResponse = _ctx.HttpResponse;
-			describeDashboardResponse.RequestId = _ctx.StringValue("DescribeDashboard.RequestId");
-			describeDashboardResponse.Success = _ctx.BooleanValue("DescribeDashboard.Success");
-			describeDashboardResponse.Code = _ctx.StringValue("DescribeDashboard.Code");
 			describeDashboardResponse.Message = _ctx.StringValue("DescribeDashboard.Message");
+			describeDashboardResponse.RequestId = _ctx.StringValue("DescribeDashboard.RequestId");
 			describeDashboardResponse.Overview = _ctx.StringValue("DescribeDashboard.Overview");
+			describeDashboardResponse.Code = _ctx.StringValue("DescribeDashboard.Code");
+			describeDashboardResponse.Success = _ctx.BooleanValue("DescribeDashboard.Success");
         
 			return describeDashboardResponse;
         }

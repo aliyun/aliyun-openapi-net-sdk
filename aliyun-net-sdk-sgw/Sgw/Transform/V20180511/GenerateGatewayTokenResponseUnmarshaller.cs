@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			GenerateGatewayTokenResponse generateGatewayTokenResponse = new GenerateGatewayTokenResponse();
 
 			generateGatewayTokenResponse.HttpResponse = _ctx.HttpResponse;
-			generateGatewayTokenResponse.RequestId = _ctx.StringValue("GenerateGatewayToken.RequestId");
-			generateGatewayTokenResponse.Success = _ctx.BooleanValue("GenerateGatewayToken.Success");
-			generateGatewayTokenResponse.Code = _ctx.StringValue("GenerateGatewayToken.Code");
 			generateGatewayTokenResponse.Message = _ctx.StringValue("GenerateGatewayToken.Message");
+			generateGatewayTokenResponse.RequestId = _ctx.StringValue("GenerateGatewayToken.RequestId");
 			generateGatewayTokenResponse.Token = _ctx.StringValue("GenerateGatewayToken.Token");
+			generateGatewayTokenResponse.Code = _ctx.StringValue("GenerateGatewayToken.Code");
+			generateGatewayTokenResponse.Success = _ctx.BooleanValue("GenerateGatewayToken.Success");
         
 			return generateGatewayTokenResponse;
         }

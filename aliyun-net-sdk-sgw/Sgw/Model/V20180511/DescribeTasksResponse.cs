@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,70 +25,23 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeTasksResponse : AcsResponse
 	{
 
+		private int? totalCount;
+
 		private string requestId;
-
-		private bool? success;
-
-		private string code;
 
 		private string message;
 
-		private int? totalCount;
+		private int? pageSize;
 
 		private int? pageNumber;
 
-		private int? pageSize;
+		private string code;
+
+		private bool? success;
 
 		private List<DescribeTasks_SimpleTask> tasks;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TotalCount")]
 		public int? TotalCount
 		{
 			get
@@ -101,18 +54,33 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public int? PageNumber
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return pageNumber;
+				return requestId;
 			}
 			set	
 			{
-				pageNumber = value;
+				requestId = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageSize")]
 		public int? PageSize
 		{
 			get
@@ -125,6 +93,46 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "PageNumber")]
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Tasks")]
 		public List<DescribeTasks_SimpleTask> Tasks
 		{
 			get
@@ -140,84 +148,27 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 		public class DescribeTasks_SimpleTask
 		{
 
-			private string taskId;
-
-			private string name;
-
-			private long? createdTime;
-
-			private long? updatedTime;
+			private string stateCode;
 
 			private int? progress;
 
-			private string stateCode;
+			private string messageParams;
 
-			private string stageCode;
+			private long? updatedTime;
 
 			private string messageKey;
 
-			private string messageParams;
+			private string name;
 
-			public string TaskId
-			{
-				get
-				{
-					return taskId;
-				}
-				set	
-				{
-					taskId = value;
-				}
-			}
+			private string stageCode;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private long? createdTime;
 
-			public long? CreatedTime
-			{
-				get
-				{
-					return createdTime;
-				}
-				set	
-				{
-					createdTime = value;
-				}
-			}
+			private string taskId;
 
-			public long? UpdatedTime
-			{
-				get
-				{
-					return updatedTime;
-				}
-				set	
-				{
-					updatedTime = value;
-				}
-			}
+			private string relatedResourceId;
 
-			public int? Progress
-			{
-				get
-				{
-					return progress;
-				}
-				set	
-				{
-					progress = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "StateCode")]
 			public string StateCode
 			{
 				get
@@ -230,18 +181,46 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
-			public string StageCode
+			[JsonProperty(PropertyName = "Progress")]
+			public int? Progress
 			{
 				get
 				{
-					return stageCode;
+					return progress;
 				}
 				set	
 				{
-					stageCode = value;
+					progress = value;
 				}
 			}
 
+			[JsonProperty(PropertyName = "MessageParams")]
+			public string MessageParams
+			{
+				get
+				{
+					return messageParams;
+				}
+				set	
+				{
+					messageParams = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "UpdatedTime")]
+			public long? UpdatedTime
+			{
+				get
+				{
+					return updatedTime;
+				}
+				set	
+				{
+					updatedTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "MessageKey")]
 			public string MessageKey
 			{
 				get
@@ -254,15 +233,68 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
-			public string MessageParams
+			[JsonProperty(PropertyName = "Name")]
+			public string Name
 			{
 				get
 				{
-					return messageParams;
+					return name;
 				}
 				set	
 				{
-					messageParams = value;
+					name = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StageCode")]
+			public string StageCode
+			{
+				get
+				{
+					return stageCode;
+				}
+				set	
+				{
+					stageCode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CreatedTime")]
+			public long? CreatedTime
+			{
+				get
+				{
+					return createdTime;
+				}
+				set	
+				{
+					createdTime = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TaskId")]
+			public string TaskId
+			{
+				get
+				{
+					return taskId;
+				}
+				set	
+				{
+					taskId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "RelatedResourceId")]
+			public string RelatedResourceId
+			{
+				get
+				{
+					return relatedResourceId;
+				}
+				set	
+				{
+					relatedResourceId = value;
 				}
 			}
 		}

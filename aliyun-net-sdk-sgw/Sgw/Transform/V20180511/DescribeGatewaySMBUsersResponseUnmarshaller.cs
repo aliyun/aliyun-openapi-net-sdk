@@ -31,13 +31,13 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeGatewaySMBUsersResponse describeGatewaySMBUsersResponse = new DescribeGatewaySMBUsersResponse();
 
 			describeGatewaySMBUsersResponse.HttpResponse = _ctx.HttpResponse;
-			describeGatewaySMBUsersResponse.RequestId = _ctx.StringValue("DescribeGatewaySMBUsers.RequestId");
-			describeGatewaySMBUsersResponse.Success = _ctx.BooleanValue("DescribeGatewaySMBUsers.Success");
-			describeGatewaySMBUsersResponse.Code = _ctx.StringValue("DescribeGatewaySMBUsers.Code");
-			describeGatewaySMBUsersResponse.Message = _ctx.StringValue("DescribeGatewaySMBUsers.Message");
 			describeGatewaySMBUsersResponse.TotalCount = _ctx.IntegerValue("DescribeGatewaySMBUsers.TotalCount");
-			describeGatewaySMBUsersResponse.PageNumber = _ctx.IntegerValue("DescribeGatewaySMBUsers.PageNumber");
+			describeGatewaySMBUsersResponse.RequestId = _ctx.StringValue("DescribeGatewaySMBUsers.RequestId");
+			describeGatewaySMBUsersResponse.Message = _ctx.StringValue("DescribeGatewaySMBUsers.Message");
 			describeGatewaySMBUsersResponse.PageSize = _ctx.IntegerValue("DescribeGatewaySMBUsers.PageSize");
+			describeGatewaySMBUsersResponse.PageNumber = _ctx.IntegerValue("DescribeGatewaySMBUsers.PageNumber");
+			describeGatewaySMBUsersResponse.Code = _ctx.StringValue("DescribeGatewaySMBUsers.Code");
+			describeGatewaySMBUsersResponse.Success = _ctx.BooleanValue("DescribeGatewaySMBUsers.Success");
 
 			List<DescribeGatewaySMBUsersResponse.DescribeGatewaySMBUsers_User> describeGatewaySMBUsersResponse_users = new List<DescribeGatewaySMBUsersResponse.DescribeGatewaySMBUsers_User>();
 			for (int i = 0; i < _ctx.Length("DescribeGatewaySMBUsers.Users.Length"); i++) {

@@ -31,13 +31,13 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeBlockVolumeSnapshotsResponse describeBlockVolumeSnapshotsResponse = new DescribeBlockVolumeSnapshotsResponse();
 
 			describeBlockVolumeSnapshotsResponse.HttpResponse = _ctx.HttpResponse;
-			describeBlockVolumeSnapshotsResponse.RequestId = _ctx.StringValue("DescribeBlockVolumeSnapshots.RequestId");
-			describeBlockVolumeSnapshotsResponse.Success = _ctx.BooleanValue("DescribeBlockVolumeSnapshots.Success");
-			describeBlockVolumeSnapshotsResponse.Code = _ctx.StringValue("DescribeBlockVolumeSnapshots.Code");
-			describeBlockVolumeSnapshotsResponse.Message = _ctx.StringValue("DescribeBlockVolumeSnapshots.Message");
 			describeBlockVolumeSnapshotsResponse.TotalCount = _ctx.IntegerValue("DescribeBlockVolumeSnapshots.TotalCount");
-			describeBlockVolumeSnapshotsResponse.PageNumber = _ctx.IntegerValue("DescribeBlockVolumeSnapshots.PageNumber");
+			describeBlockVolumeSnapshotsResponse.RequestId = _ctx.StringValue("DescribeBlockVolumeSnapshots.RequestId");
+			describeBlockVolumeSnapshotsResponse.Message = _ctx.StringValue("DescribeBlockVolumeSnapshots.Message");
 			describeBlockVolumeSnapshotsResponse.PageSize = _ctx.IntegerValue("DescribeBlockVolumeSnapshots.PageSize");
+			describeBlockVolumeSnapshotsResponse.PageNumber = _ctx.IntegerValue("DescribeBlockVolumeSnapshots.PageNumber");
+			describeBlockVolumeSnapshotsResponse.Code = _ctx.StringValue("DescribeBlockVolumeSnapshots.Code");
+			describeBlockVolumeSnapshotsResponse.Success = _ctx.BooleanValue("DescribeBlockVolumeSnapshots.Success");
 
 			List<DescribeBlockVolumeSnapshotsResponse.DescribeBlockVolumeSnapshots_Snapshot> describeBlockVolumeSnapshotsResponse_snapshots = new List<DescribeBlockVolumeSnapshotsResponse.DescribeBlockVolumeSnapshots_Snapshot>();
 			for (int i = 0; i < _ctx.Length("DescribeBlockVolumeSnapshots.Snapshots.Length"); i++) {

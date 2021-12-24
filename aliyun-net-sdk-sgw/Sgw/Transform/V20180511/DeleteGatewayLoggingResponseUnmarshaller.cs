@@ -31,10 +31,10 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DeleteGatewayLoggingResponse deleteGatewayLoggingResponse = new DeleteGatewayLoggingResponse();
 
 			deleteGatewayLoggingResponse.HttpResponse = _ctx.HttpResponse;
-			deleteGatewayLoggingResponse.RequestId = _ctx.StringValue("DeleteGatewayLogging.RequestId");
-			deleteGatewayLoggingResponse.Success = _ctx.BooleanValue("DeleteGatewayLogging.Success");
-			deleteGatewayLoggingResponse.Code = _ctx.StringValue("DeleteGatewayLogging.Code");
 			deleteGatewayLoggingResponse.Message = _ctx.StringValue("DeleteGatewayLogging.Message");
+			deleteGatewayLoggingResponse.RequestId = _ctx.StringValue("DeleteGatewayLogging.RequestId");
+			deleteGatewayLoggingResponse.Code = _ctx.StringValue("DeleteGatewayLogging.Code");
+			deleteGatewayLoggingResponse.Success = _ctx.BooleanValue("DeleteGatewayLogging.Success");
         
 			return deleteGatewayLoggingResponse;
         }

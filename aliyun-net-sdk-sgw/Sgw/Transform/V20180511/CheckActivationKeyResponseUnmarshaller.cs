@@ -31,10 +31,10 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			CheckActivationKeyResponse checkActivationKeyResponse = new CheckActivationKeyResponse();
 
 			checkActivationKeyResponse.HttpResponse = _ctx.HttpResponse;
-			checkActivationKeyResponse.RequestId = _ctx.StringValue("CheckActivationKey.RequestId");
-			checkActivationKeyResponse.Success = _ctx.BooleanValue("CheckActivationKey.Success");
-			checkActivationKeyResponse.Code = _ctx.StringValue("CheckActivationKey.Code");
 			checkActivationKeyResponse.Message = _ctx.StringValue("CheckActivationKey.Message");
+			checkActivationKeyResponse.RequestId = _ctx.StringValue("CheckActivationKey.RequestId");
+			checkActivationKeyResponse.Code = _ctx.StringValue("CheckActivationKey.Code");
+			checkActivationKeyResponse.Success = _ctx.BooleanValue("CheckActivationKey.Success");
         
 			return checkActivationKeyResponse;
         }

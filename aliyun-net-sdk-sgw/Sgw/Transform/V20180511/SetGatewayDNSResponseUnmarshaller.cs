@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			SetGatewayDNSResponse setGatewayDNSResponse = new SetGatewayDNSResponse();
 
 			setGatewayDNSResponse.HttpResponse = _ctx.HttpResponse;
-			setGatewayDNSResponse.RequestId = _ctx.StringValue("SetGatewayDNS.RequestId");
-			setGatewayDNSResponse.Success = _ctx.BooleanValue("SetGatewayDNS.Success");
-			setGatewayDNSResponse.Code = _ctx.StringValue("SetGatewayDNS.Code");
-			setGatewayDNSResponse.Message = _ctx.StringValue("SetGatewayDNS.Message");
 			setGatewayDNSResponse.TaskId = _ctx.StringValue("SetGatewayDNS.TaskId");
+			setGatewayDNSResponse.Message = _ctx.StringValue("SetGatewayDNS.Message");
+			setGatewayDNSResponse.RequestId = _ctx.StringValue("SetGatewayDNS.RequestId");
+			setGatewayDNSResponse.Code = _ctx.StringValue("SetGatewayDNS.Code");
+			setGatewayDNSResponse.Success = _ctx.BooleanValue("SetGatewayDNS.Success");
         
 			return setGatewayDNSResponse;
         }

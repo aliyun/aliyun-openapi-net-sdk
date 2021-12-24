@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,52 +25,17 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeSharesBucketInfoForExpressSyncResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string message;
 
-		private bool? success;
+		private string requestId;
 
 		private string code;
 
-		private string message;
+		private bool? success;
 
 		private List<DescribeSharesBucketInfoForExpressSync_BucketInfo> bucketInfos;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -83,6 +48,46 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "BucketInfos")]
 		public List<DescribeSharesBucketInfoForExpressSync_BucketInfo> BucketInfos
 		{
 			get
@@ -98,24 +103,13 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 		public class DescribeSharesBucketInfoForExpressSync_BucketInfo
 		{
 
-			private string bucketRegion;
-
 			private string bucketName;
 
 			private string bucketPrefix;
 
-			public string BucketRegion
-			{
-				get
-				{
-					return bucketRegion;
-				}
-				set	
-				{
-					bucketRegion = value;
-				}
-			}
+			private string bucketRegion;
 
+			[JsonProperty(PropertyName = "BucketName")]
 			public string BucketName
 			{
 				get
@@ -128,6 +122,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "BucketPrefix")]
 			public string BucketPrefix
 			{
 				get
@@ -137,6 +132,19 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				set	
 				{
 					bucketPrefix = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "BucketRegion")]
+			public string BucketRegion
+			{
+				get
+				{
+					return bucketRegion;
+				}
+				set	
+				{
+					bucketRegion = value;
 				}
 			}
 		}

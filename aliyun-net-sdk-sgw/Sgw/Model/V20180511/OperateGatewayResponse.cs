@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,66 +25,32 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class OperateGatewayResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
-		private string code;
-
-		private string message;
+		private string buyURL;
 
 		private string taskId;
 
-		private string buyURL;
+		private string requestId;
 
-		public string RequestId
+		private string message;
+
+		private string code;
+
+		private bool? success;
+
+		[JsonProperty(PropertyName = "BuyURL")]
+		public string BuyURL
 		{
 			get
 			{
-				return requestId;
+				return buyURL;
 			}
 			set	
 			{
-				requestId = value;
+				buyURL = value;
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "TaskId")]
 		public string TaskId
 		{
 			get
@@ -97,15 +63,55 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public string BuyURL
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return buyURL;
+				return requestId;
 			}
 			set	
 			{
-				buyURL = value;
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Message")]
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeGatewayFileStatusResponse describeGatewayFileStatusResponse = new DescribeGatewayFileStatusResponse();
 
 			describeGatewayFileStatusResponse.HttpResponse = _ctx.HttpResponse;
-			describeGatewayFileStatusResponse.RequestId = _ctx.StringValue("DescribeGatewayFileStatus.RequestId");
-			describeGatewayFileStatusResponse.Success = _ctx.BooleanValue("DescribeGatewayFileStatus.Success");
-			describeGatewayFileStatusResponse.Code = _ctx.StringValue("DescribeGatewayFileStatus.Code");
-			describeGatewayFileStatusResponse.Message = _ctx.StringValue("DescribeGatewayFileStatus.Message");
 			describeGatewayFileStatusResponse.Status = _ctx.StringValue("DescribeGatewayFileStatus.Status");
+			describeGatewayFileStatusResponse.Message = _ctx.StringValue("DescribeGatewayFileStatus.Message");
+			describeGatewayFileStatusResponse.RequestId = _ctx.StringValue("DescribeGatewayFileStatus.RequestId");
+			describeGatewayFileStatusResponse.Code = _ctx.StringValue("DescribeGatewayFileStatus.Code");
+			describeGatewayFileStatusResponse.Success = _ctx.BooleanValue("DescribeGatewayFileStatus.Success");
         
 			return describeGatewayFileStatusResponse;
         }

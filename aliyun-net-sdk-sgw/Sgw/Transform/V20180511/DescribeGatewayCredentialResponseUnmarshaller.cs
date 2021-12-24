@@ -31,16 +31,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeGatewayCredentialResponse describeGatewayCredentialResponse = new DescribeGatewayCredentialResponse();
 
 			describeGatewayCredentialResponse.HttpResponse = _ctx.HttpResponse;
-			describeGatewayCredentialResponse.RequestId = _ctx.StringValue("DescribeGatewayCredential.RequestId");
-			describeGatewayCredentialResponse.Success = _ctx.BooleanValue("DescribeGatewayCredential.Success");
-			describeGatewayCredentialResponse.Code = _ctx.StringValue("DescribeGatewayCredential.Code");
-			describeGatewayCredentialResponse.Message = _ctx.StringValue("DescribeGatewayCredential.Message");
-			describeGatewayCredentialResponse.EcsIp = _ctx.StringValue("DescribeGatewayCredential.EcsIp");
-			describeGatewayCredentialResponse.EcsPassword = _ctx.StringValue("DescribeGatewayCredential.EcsPassword");
-			describeGatewayCredentialResponse.ConsoleUsername = _ctx.StringValue("DescribeGatewayCredential.ConsoleUsername");
-			describeGatewayCredentialResponse.ConsolePassword = _ctx.StringValue("DescribeGatewayCredential.ConsolePassword");
 			describeGatewayCredentialResponse.VpcId = _ctx.StringValue("DescribeGatewayCredential.VpcId");
+			describeGatewayCredentialResponse.RequestId = _ctx.StringValue("DescribeGatewayCredential.RequestId");
+			describeGatewayCredentialResponse.Message = _ctx.StringValue("DescribeGatewayCredential.Message");
+			describeGatewayCredentialResponse.ConsoleUsername = _ctx.StringValue("DescribeGatewayCredential.ConsoleUsername");
 			describeGatewayCredentialResponse.VSwitchId = _ctx.StringValue("DescribeGatewayCredential.VSwitchId");
+			describeGatewayCredentialResponse.EcsIp = _ctx.StringValue("DescribeGatewayCredential.EcsIp");
+			describeGatewayCredentialResponse.ConsolePassword = _ctx.StringValue("DescribeGatewayCredential.ConsolePassword");
+			describeGatewayCredentialResponse.EcsPassword = _ctx.StringValue("DescribeGatewayCredential.EcsPassword");
+			describeGatewayCredentialResponse.Code = _ctx.StringValue("DescribeGatewayCredential.Code");
+			describeGatewayCredentialResponse.Success = _ctx.BooleanValue("DescribeGatewayCredential.Success");
         
 			return describeGatewayCredentialResponse;
         }

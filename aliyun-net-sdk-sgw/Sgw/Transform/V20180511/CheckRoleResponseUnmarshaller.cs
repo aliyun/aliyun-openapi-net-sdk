@@ -31,10 +31,10 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			CheckRoleResponse checkRoleResponse = new CheckRoleResponse();
 
 			checkRoleResponse.HttpResponse = _ctx.HttpResponse;
-			checkRoleResponse.RequestId = _ctx.StringValue("CheckRole.RequestId");
-			checkRoleResponse.Success = _ctx.BooleanValue("CheckRole.Success");
-			checkRoleResponse.Code = _ctx.StringValue("CheckRole.Code");
 			checkRoleResponse.Message = _ctx.StringValue("CheckRole.Message");
+			checkRoleResponse.RequestId = _ctx.StringValue("CheckRole.RequestId");
+			checkRoleResponse.Code = _ctx.StringValue("CheckRole.Code");
+			checkRoleResponse.Success = _ctx.BooleanValue("CheckRole.Success");
         
 			return checkRoleResponse;
         }

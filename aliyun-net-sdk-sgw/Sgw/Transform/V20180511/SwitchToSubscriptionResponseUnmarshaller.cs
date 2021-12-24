@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			SwitchToSubscriptionResponse switchToSubscriptionResponse = new SwitchToSubscriptionResponse();
 
 			switchToSubscriptionResponse.HttpResponse = _ctx.HttpResponse;
-			switchToSubscriptionResponse.RequestId = _ctx.StringValue("SwitchToSubscription.RequestId");
-			switchToSubscriptionResponse.Success = _ctx.BooleanValue("SwitchToSubscription.Success");
-			switchToSubscriptionResponse.Code = _ctx.StringValue("SwitchToSubscription.Code");
-			switchToSubscriptionResponse.Message = _ctx.StringValue("SwitchToSubscription.Message");
 			switchToSubscriptionResponse.SubscriptionURL = _ctx.StringValue("SwitchToSubscription.SubscriptionURL");
+			switchToSubscriptionResponse.Message = _ctx.StringValue("SwitchToSubscription.Message");
+			switchToSubscriptionResponse.RequestId = _ctx.StringValue("SwitchToSubscription.RequestId");
+			switchToSubscriptionResponse.Code = _ctx.StringValue("SwitchToSubscription.Code");
+			switchToSubscriptionResponse.Success = _ctx.BooleanValue("SwitchToSubscription.Success");
         
 			return switchToSubscriptionResponse;
         }

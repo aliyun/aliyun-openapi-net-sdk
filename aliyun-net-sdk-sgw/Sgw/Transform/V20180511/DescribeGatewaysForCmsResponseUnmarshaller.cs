@@ -31,20 +31,20 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeGatewaysForCmsResponse describeGatewaysForCmsResponse = new DescribeGatewaysForCmsResponse();
 
 			describeGatewaysForCmsResponse.HttpResponse = _ctx.HttpResponse;
-			describeGatewaysForCmsResponse.RequestId = _ctx.StringValue("DescribeGatewaysForCms.RequestId");
-			describeGatewaysForCmsResponse.Success = _ctx.BooleanValue("DescribeGatewaysForCms.Success");
-			describeGatewaysForCmsResponse.Code = _ctx.StringValue("DescribeGatewaysForCms.Code");
-			describeGatewaysForCmsResponse.Message = _ctx.StringValue("DescribeGatewaysForCms.Message");
 			describeGatewaysForCmsResponse.TotalCount = _ctx.IntegerValue("DescribeGatewaysForCms.TotalCount");
-			describeGatewaysForCmsResponse.PageNumber = _ctx.IntegerValue("DescribeGatewaysForCms.PageNumber");
+			describeGatewaysForCmsResponse.RequestId = _ctx.StringValue("DescribeGatewaysForCms.RequestId");
+			describeGatewaysForCmsResponse.Message = _ctx.StringValue("DescribeGatewaysForCms.Message");
 			describeGatewaysForCmsResponse.PageSize = _ctx.IntegerValue("DescribeGatewaysForCms.PageSize");
+			describeGatewaysForCmsResponse.PageNumber = _ctx.IntegerValue("DescribeGatewaysForCms.PageNumber");
+			describeGatewaysForCmsResponse.Code = _ctx.StringValue("DescribeGatewaysForCms.Code");
+			describeGatewaysForCmsResponse.Success = _ctx.BooleanValue("DescribeGatewaysForCms.Success");
 
 			List<DescribeGatewaysForCmsResponse.DescribeGatewaysForCms_Gateway> describeGatewaysForCmsResponse_gateways = new List<DescribeGatewaysForCmsResponse.DescribeGatewaysForCms_Gateway>();
 			for (int i = 0; i < _ctx.Length("DescribeGatewaysForCms.Gateways.Length"); i++) {
 				DescribeGatewaysForCmsResponse.DescribeGatewaysForCms_Gateway gateway = new DescribeGatewaysForCmsResponse.DescribeGatewaysForCms_Gateway();
 				gateway.GatewayId = _ctx.StringValue("DescribeGatewaysForCms.Gateways["+ i +"].GatewayId");
-				gateway.Name = _ctx.StringValue("DescribeGatewaysForCms.Gateways["+ i +"].Name");
 				gateway.Description = _ctx.StringValue("DescribeGatewaysForCms.Gateways["+ i +"].Description");
+				gateway.Name = _ctx.StringValue("DescribeGatewaysForCms.Gateways["+ i +"].Name");
 
 				describeGatewaysForCmsResponse_gateways.Add(gateway);
 			}

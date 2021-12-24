@@ -32,11 +32,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 
 			describeGatewayAuthInfoResponse.HttpResponse = _ctx.HttpResponse;
 			describeGatewayAuthInfoResponse.RequestId = _ctx.StringValue("DescribeGatewayAuthInfo.RequestId");
-			describeGatewayAuthInfoResponse.Success = _ctx.BooleanValue("DescribeGatewayAuthInfo.Success");
-			describeGatewayAuthInfoResponse.Code = _ctx.StringValue("DescribeGatewayAuthInfo.Code");
 			describeGatewayAuthInfoResponse.Message = _ctx.StringValue("DescribeGatewayAuthInfo.Message");
 			describeGatewayAuthInfoResponse.PublicIp = _ctx.StringValue("DescribeGatewayAuthInfo.PublicIp");
 			describeGatewayAuthInfoResponse.Username = _ctx.StringValue("DescribeGatewayAuthInfo.Username");
+			describeGatewayAuthInfoResponse.Code = _ctx.StringValue("DescribeGatewayAuthInfo.Code");
+			describeGatewayAuthInfoResponse.Success = _ctx.BooleanValue("DescribeGatewayAuthInfo.Success");
 			describeGatewayAuthInfoResponse.Password = _ctx.StringValue("DescribeGatewayAuthInfo.Password");
         
 			return describeGatewayAuthInfoResponse;

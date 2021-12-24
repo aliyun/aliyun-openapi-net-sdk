@@ -32,11 +32,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 
 			checkMnsServiceResponse.HttpResponse = _ctx.HttpResponse;
 			checkMnsServiceResponse.RequestId = _ctx.StringValue("CheckMnsService.RequestId");
-			checkMnsServiceResponse.Success = _ctx.BooleanValue("CheckMnsService.Success");
-			checkMnsServiceResponse.Code = _ctx.StringValue("CheckMnsService.Code");
 			checkMnsServiceResponse.Message = _ctx.StringValue("CheckMnsService.Message");
 			checkMnsServiceResponse.IsEnabled = _ctx.BooleanValue("CheckMnsService.IsEnabled");
 			checkMnsServiceResponse.CheckMessage = _ctx.StringValue("CheckMnsService.CheckMessage");
+			checkMnsServiceResponse.Code = _ctx.StringValue("CheckMnsService.Code");
+			checkMnsServiceResponse.Success = _ctx.BooleanValue("CheckMnsService.Success");
         
 			return checkMnsServiceResponse;
         }

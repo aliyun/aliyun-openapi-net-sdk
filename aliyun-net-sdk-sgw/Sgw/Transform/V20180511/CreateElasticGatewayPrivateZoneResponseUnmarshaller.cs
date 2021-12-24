@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			CreateElasticGatewayPrivateZoneResponse createElasticGatewayPrivateZoneResponse = new CreateElasticGatewayPrivateZoneResponse();
 
 			createElasticGatewayPrivateZoneResponse.HttpResponse = _ctx.HttpResponse;
-			createElasticGatewayPrivateZoneResponse.RequestId = _ctx.StringValue("CreateElasticGatewayPrivateZone.RequestId");
-			createElasticGatewayPrivateZoneResponse.Success = _ctx.BooleanValue("CreateElasticGatewayPrivateZone.Success");
-			createElasticGatewayPrivateZoneResponse.Code = _ctx.StringValue("CreateElasticGatewayPrivateZone.Code");
-			createElasticGatewayPrivateZoneResponse.Message = _ctx.StringValue("CreateElasticGatewayPrivateZone.Message");
 			createElasticGatewayPrivateZoneResponse.TaskId = _ctx.StringValue("CreateElasticGatewayPrivateZone.TaskId");
+			createElasticGatewayPrivateZoneResponse.Message = _ctx.StringValue("CreateElasticGatewayPrivateZone.Message");
+			createElasticGatewayPrivateZoneResponse.RequestId = _ctx.StringValue("CreateElasticGatewayPrivateZone.RequestId");
+			createElasticGatewayPrivateZoneResponse.Code = _ctx.StringValue("CreateElasticGatewayPrivateZone.Code");
+			createElasticGatewayPrivateZoneResponse.Success = _ctx.BooleanValue("CreateElasticGatewayPrivateZone.Success");
         
 			return createElasticGatewayPrivateZoneResponse;
         }

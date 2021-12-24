@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -35,6 +35,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 
 		private List<DescribeGatewayFileShares_FileShare> fileShares;
 
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "Code")]
 		public string Code
 		{
 			get
@@ -71,6 +74,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "Success")]
 		public bool? Success
 		{
 			get
@@ -83,6 +87,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "FileShares")]
 		public List<DescribeGatewayFileShares_FileShare> FileShares
 		{
 			get
@@ -238,6 +243,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 
 			private bool? bypassCacheRead;
 
+			[JsonProperty(PropertyName = "SerialNumber")]
 			public string SerialNumber
 			{
 				get
@@ -250,6 +256,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "ClientSideCmk")]
 			public string ClientSideCmk
 			{
 				get
@@ -262,6 +269,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "PartialSyncPaths")]
 			public string PartialSyncPaths
 			{
 				get
@@ -274,6 +282,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "PathPrefix")]
 			public string PathPrefix
 			{
 				get
@@ -286,6 +295,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "BucketsStub")]
 			public bool? BucketsStub
 			{
 				get
@@ -298,6 +308,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "UploadQueue")]
 			public long? UploadQueue
 			{
 				get
@@ -310,6 +321,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "DiskId")]
 			public string DiskId
 			{
 				get
@@ -322,6 +334,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "OssUsed")]
 			public long? OssUsed
 			{
 				get
@@ -334,6 +347,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "DownloadQueue")]
 			public long? DownloadQueue
 			{
 				get
@@ -346,6 +360,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "ActiveMessages")]
 			public long? ActiveMessages
 			{
 				get
@@ -358,6 +373,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "IndexId")]
 			public string IndexId
 			{
 				get
@@ -370,6 +386,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "MnsHealth")]
 			public string MnsHealth
 			{
 				get
@@ -382,6 +399,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "AccessBasedEnumeration")]
 			public bool? AccessBasedEnumeration
 			{
 				get
@@ -394,6 +412,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "DownloadRate")]
 			public long? DownloadRate
 			{
 				get
@@ -406,6 +425,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "FeLimit")]
 			public int? FeLimit
 			{
 				get
@@ -418,6 +438,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "SupportArchive")]
 			public bool? SupportArchive
 			{
 				get
@@ -430,6 +451,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "OssEndpoint")]
 			public string OssEndpoint
 			{
 				get
@@ -442,6 +464,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "OssHealth")]
 			public string OssHealth
 			{
 				get
@@ -454,6 +477,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "OutRate")]
 			public long? OutRate
 			{
 				get
@@ -466,6 +490,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "ServerSideCmk")]
 			public string ServerSideCmk
 			{
 				get
@@ -478,6 +503,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "RwClientList")]
 			public string RwClientList
 			{
 				get
@@ -490,6 +516,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "State")]
 			public string State
 			{
 				get
@@ -502,6 +529,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "Protocol")]
 			public string Protocol
 			{
 				get
@@ -514,6 +542,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "OssBucketSsl")]
 			public bool? OssBucketSsl
 			{
 				get
@@ -526,6 +555,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "DownloadLimit")]
 			public int? DownloadLimit
 			{
 				get
@@ -538,6 +568,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "InPlace")]
 			public bool? InPlace
 			{
 				get
@@ -550,6 +581,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "RemoteSync")]
 			public bool? RemoteSync
 			{
 				get
@@ -562,6 +594,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "FileNumLimit")]
 			public long? FileNumLimit
 			{
 				get
@@ -574,6 +607,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "Squash")]
 			public string Squash
 			{
 				get
@@ -586,6 +620,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "NfsFullPath")]
 			public string NfsFullPath
 			{
 				get
@@ -598,6 +633,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "RemainingMetaSpace")]
 			public long? RemainingMetaSpace
 			{
 				get
@@ -610,6 +646,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "TransferAcceleration")]
 			public bool? TransferAcceleration
 			{
 				get
@@ -622,6 +659,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "Size")]
 			public long? Size
 			{
 				get
@@ -634,6 +672,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "ServerSideEncryption")]
 			public bool? ServerSideEncryption
 			{
 				get
@@ -646,6 +685,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "WindowsAcl")]
 			public bool? WindowsAcl
 			{
 				get
@@ -658,6 +698,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "RemoteSyncDownload")]
 			public bool? RemoteSyncDownload
 			{
 				get
@@ -670,6 +711,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "ClientSideEncryption")]
 			public bool? ClientSideEncryption
 			{
 				get
@@ -682,6 +724,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "BucketInfos")]
 			public string BucketInfos
 			{
 				get
@@ -694,6 +737,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "NfsV4Optimization")]
 			public bool? NfsV4Optimization
 			{
 				get
@@ -706,6 +750,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalUpload")]
 			public long? TotalUpload
 			{
 				get
@@ -718,6 +763,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "DiskType")]
 			public string DiskType
 			{
 				get
@@ -730,6 +776,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "Used")]
 			public long? Used
 			{
 				get
@@ -742,6 +789,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "IgnoreDelete")]
 			public bool? IgnoreDelete
 			{
 				get
@@ -754,6 +802,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "RoUserList")]
 			public string RoUserList
 			{
 				get
@@ -766,6 +815,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "FsSizeLimit")]
 			public long? FsSizeLimit
 			{
 				get
@@ -778,6 +828,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "TotalDownload")]
 			public long? TotalDownload
 			{
 				get
@@ -790,6 +841,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "Enabled")]
 			public bool? Enabled
 			{
 				get
@@ -802,6 +854,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "HighWatermark")]
 			public int? HighWatermark
 			{
 				get
@@ -814,6 +867,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "KmsRotatePeriod")]
 			public string KmsRotatePeriod
 			{
 				get
@@ -826,6 +880,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "Address")]
 			public string Address
 			{
 				get
@@ -838,6 +893,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "PollingInterval")]
 			public int? PollingInterval
 			{
 				get
@@ -850,6 +906,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "Name")]
 			public string Name
 			{
 				get
@@ -862,6 +919,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "OssBucketName")]
 			public string OssBucketName
 			{
 				get
@@ -874,6 +932,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "ExpressSyncId")]
 			public string ExpressSyncId
 			{
 				get
@@ -886,6 +945,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "LagPeriod")]
 			public long? LagPeriod
 			{
 				get
@@ -898,6 +958,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "DirectIO")]
 			public bool? DirectIO
 			{
 				get
@@ -910,6 +971,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "CacheMode")]
 			public string CacheMode
 			{
 				get
@@ -922,6 +984,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "InRate")]
 			public long? InRate
 			{
 				get
@@ -934,6 +997,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "LowWatermark")]
 			public int? LowWatermark
 			{
 				get
@@ -946,6 +1010,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "SyncProgress")]
 			public int? SyncProgress
 			{
 				get
@@ -958,6 +1023,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "ServerSideAlgorithm")]
 			public string ServerSideAlgorithm
 			{
 				get
@@ -970,6 +1036,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "ObsoleteBuckets")]
 			public string ObsoleteBuckets
 			{
 				get
@@ -982,6 +1049,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "BeLimit")]
 			public int? BeLimit
 			{
 				get
@@ -994,6 +1062,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "LocalPath")]
 			public string LocalPath
 			{
 				get
@@ -1006,6 +1075,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "RoClientList")]
 			public string RoClientList
 			{
 				get
@@ -1018,6 +1088,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "RwUserList")]
 			public string RwUserList
 			{
 				get
@@ -1030,6 +1101,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "FastReclaim")]
 			public bool? FastReclaim
 			{
 				get
@@ -1042,6 +1114,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "Browsable")]
 			public bool? Browsable
 			{
 				get
@@ -1054,6 +1127,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "Throttling")]
 			public bool? Throttling
 			{
 				get
@@ -1066,6 +1140,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "BypassCacheRead")]
 			public bool? BypassCacheRead
 			{
 				get

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			UploadGatewayLogResponse uploadGatewayLogResponse = new UploadGatewayLogResponse();
 
 			uploadGatewayLogResponse.HttpResponse = _ctx.HttpResponse;
-			uploadGatewayLogResponse.RequestId = _ctx.StringValue("UploadGatewayLog.RequestId");
-			uploadGatewayLogResponse.Success = _ctx.BooleanValue("UploadGatewayLog.Success");
-			uploadGatewayLogResponse.Code = _ctx.StringValue("UploadGatewayLog.Code");
-			uploadGatewayLogResponse.Message = _ctx.StringValue("UploadGatewayLog.Message");
 			uploadGatewayLogResponse.TaskId = _ctx.StringValue("UploadGatewayLog.TaskId");
+			uploadGatewayLogResponse.Message = _ctx.StringValue("UploadGatewayLog.Message");
+			uploadGatewayLogResponse.RequestId = _ctx.StringValue("UploadGatewayLog.RequestId");
+			uploadGatewayLogResponse.Code = _ctx.StringValue("UploadGatewayLog.Code");
+			uploadGatewayLogResponse.Success = _ctx.BooleanValue("UploadGatewayLog.Success");
         
 			return uploadGatewayLogResponse;
         }

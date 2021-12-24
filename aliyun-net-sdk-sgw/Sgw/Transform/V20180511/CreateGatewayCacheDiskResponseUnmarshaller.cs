@@ -31,12 +31,12 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			CreateGatewayCacheDiskResponse createGatewayCacheDiskResponse = new CreateGatewayCacheDiskResponse();
 
 			createGatewayCacheDiskResponse.HttpResponse = _ctx.HttpResponse;
-			createGatewayCacheDiskResponse.RequestId = _ctx.StringValue("CreateGatewayCacheDisk.RequestId");
-			createGatewayCacheDiskResponse.Success = _ctx.BooleanValue("CreateGatewayCacheDisk.Success");
-			createGatewayCacheDiskResponse.Code = _ctx.StringValue("CreateGatewayCacheDisk.Code");
-			createGatewayCacheDiskResponse.Message = _ctx.StringValue("CreateGatewayCacheDisk.Message");
-			createGatewayCacheDiskResponse.TaskId = _ctx.StringValue("CreateGatewayCacheDisk.TaskId");
 			createGatewayCacheDiskResponse.BuyURL = _ctx.StringValue("CreateGatewayCacheDisk.BuyURL");
+			createGatewayCacheDiskResponse.TaskId = _ctx.StringValue("CreateGatewayCacheDisk.TaskId");
+			createGatewayCacheDiskResponse.RequestId = _ctx.StringValue("CreateGatewayCacheDisk.RequestId");
+			createGatewayCacheDiskResponse.Message = _ctx.StringValue("CreateGatewayCacheDisk.Message");
+			createGatewayCacheDiskResponse.Code = _ctx.StringValue("CreateGatewayCacheDisk.Code");
+			createGatewayCacheDiskResponse.Success = _ctx.BooleanValue("CreateGatewayCacheDisk.Success");
         
 			return createGatewayCacheDiskResponse;
         }

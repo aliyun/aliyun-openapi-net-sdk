@@ -31,17 +31,17 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeSharesBucketInfoForExpressSyncResponse describeSharesBucketInfoForExpressSyncResponse = new DescribeSharesBucketInfoForExpressSyncResponse();
 
 			describeSharesBucketInfoForExpressSyncResponse.HttpResponse = _ctx.HttpResponse;
-			describeSharesBucketInfoForExpressSyncResponse.RequestId = _ctx.StringValue("DescribeSharesBucketInfoForExpressSync.RequestId");
-			describeSharesBucketInfoForExpressSyncResponse.Success = _ctx.BooleanValue("DescribeSharesBucketInfoForExpressSync.Success");
-			describeSharesBucketInfoForExpressSyncResponse.Code = _ctx.StringValue("DescribeSharesBucketInfoForExpressSync.Code");
 			describeSharesBucketInfoForExpressSyncResponse.Message = _ctx.StringValue("DescribeSharesBucketInfoForExpressSync.Message");
+			describeSharesBucketInfoForExpressSyncResponse.RequestId = _ctx.StringValue("DescribeSharesBucketInfoForExpressSync.RequestId");
+			describeSharesBucketInfoForExpressSyncResponse.Code = _ctx.StringValue("DescribeSharesBucketInfoForExpressSync.Code");
+			describeSharesBucketInfoForExpressSyncResponse.Success = _ctx.BooleanValue("DescribeSharesBucketInfoForExpressSync.Success");
 
 			List<DescribeSharesBucketInfoForExpressSyncResponse.DescribeSharesBucketInfoForExpressSync_BucketInfo> describeSharesBucketInfoForExpressSyncResponse_bucketInfos = new List<DescribeSharesBucketInfoForExpressSyncResponse.DescribeSharesBucketInfoForExpressSync_BucketInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeSharesBucketInfoForExpressSync.BucketInfos.Length"); i++) {
 				DescribeSharesBucketInfoForExpressSyncResponse.DescribeSharesBucketInfoForExpressSync_BucketInfo bucketInfo = new DescribeSharesBucketInfoForExpressSyncResponse.DescribeSharesBucketInfoForExpressSync_BucketInfo();
-				bucketInfo.BucketRegion = _ctx.StringValue("DescribeSharesBucketInfoForExpressSync.BucketInfos["+ i +"].BucketRegion");
 				bucketInfo.BucketName = _ctx.StringValue("DescribeSharesBucketInfoForExpressSync.BucketInfos["+ i +"].BucketName");
 				bucketInfo.BucketPrefix = _ctx.StringValue("DescribeSharesBucketInfoForExpressSync.BucketInfos["+ i +"].BucketPrefix");
+				bucketInfo.BucketRegion = _ctx.StringValue("DescribeSharesBucketInfoForExpressSync.BucketInfos["+ i +"].BucketRegion");
 
 				describeSharesBucketInfoForExpressSyncResponse_bucketInfos.Add(bucketInfo);
 			}

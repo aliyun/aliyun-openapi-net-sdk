@@ -31,10 +31,10 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeGatewaysTagsResponse describeGatewaysTagsResponse = new DescribeGatewaysTagsResponse();
 
 			describeGatewaysTagsResponse.HttpResponse = _ctx.HttpResponse;
-			describeGatewaysTagsResponse.RequestId = _ctx.StringValue("DescribeGatewaysTags.RequestId");
-			describeGatewaysTagsResponse.Success = _ctx.BooleanValue("DescribeGatewaysTags.Success");
-			describeGatewaysTagsResponse.Code = _ctx.StringValue("DescribeGatewaysTags.Code");
 			describeGatewaysTagsResponse.Message = _ctx.StringValue("DescribeGatewaysTags.Message");
+			describeGatewaysTagsResponse.RequestId = _ctx.StringValue("DescribeGatewaysTags.RequestId");
+			describeGatewaysTagsResponse.Code = _ctx.StringValue("DescribeGatewaysTags.Code");
+			describeGatewaysTagsResponse.Success = _ctx.BooleanValue("DescribeGatewaysTags.Success");
 
 			List<DescribeGatewaysTagsResponse.DescribeGatewaysTags_GatewayTag> describeGatewaysTagsResponse_gatewayTags = new List<DescribeGatewaysTagsResponse.DescribeGatewaysTags_GatewayTag>();
 			for (int i = 0; i < _ctx.Length("DescribeGatewaysTags.GatewayTags.Length"); i++) {
@@ -44,8 +44,8 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 				List<DescribeGatewaysTagsResponse.DescribeGatewaysTags_GatewayTag.DescribeGatewaysTags_Tag> gatewayTag_tags = new List<DescribeGatewaysTagsResponse.DescribeGatewaysTags_GatewayTag.DescribeGatewaysTags_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeGatewaysTags.GatewayTags["+ i +"].Tags.Length"); j++) {
 					DescribeGatewaysTagsResponse.DescribeGatewaysTags_GatewayTag.DescribeGatewaysTags_Tag tag = new DescribeGatewaysTagsResponse.DescribeGatewaysTags_GatewayTag.DescribeGatewaysTags_Tag();
-					tag.TagKey = _ctx.StringValue("DescribeGatewaysTags.GatewayTags["+ i +"].Tags["+ j +"].TagKey");
 					tag.TagValue = _ctx.StringValue("DescribeGatewaysTags.GatewayTags["+ i +"].Tags["+ j +"].TagValue");
+					tag.TagKey = _ctx.StringValue("DescribeGatewaysTags.GatewayTags["+ i +"].Tags["+ j +"].TagKey");
 
 					gatewayTag_tags.Add(tag);
 				}

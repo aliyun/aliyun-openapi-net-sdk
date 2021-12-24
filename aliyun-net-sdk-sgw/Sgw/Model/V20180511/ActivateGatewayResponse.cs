@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -27,15 +27,15 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 
 		private string requestId;
 
-		private bool? success;
-
-		private string code;
-
 		private string message;
+
+		private string regionId;
 
 		private string gatewayId;
 
-		private string regionId;
+		private string code;
+
+		private bool? success;
 
 		public string RequestId
 		{
@@ -46,30 +46,6 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
 			}
 		}
 
@@ -85,6 +61,18 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+			}
+		}
+
 		public string GatewayId
 		{
 			get
@@ -97,15 +85,27 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public string RegionId
+		public string Code
 		{
 			get
 			{
-				return regionId;
+				return code;
 			}
 			set	
 			{
-				regionId = value;
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

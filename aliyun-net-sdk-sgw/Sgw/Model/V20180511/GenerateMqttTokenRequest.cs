@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -46,6 +47,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 
 		private string gatewayId;
 
+		[JsonProperty(PropertyName = "ClientUUID")]
 		public string ClientUUID
 		{
 			get
@@ -59,6 +61,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityToken")]
 		public string SecurityToken
 		{
 			get
@@ -72,6 +75,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "GatewayId")]
 		public string GatewayId
 		{
 			get

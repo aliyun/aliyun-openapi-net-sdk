@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,11 +25,11 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class GenerateStsTokenResponse : AcsResponse
 	{
 
+		private string securityToken;
+
 		private string requestId;
 
-		private bool? success;
-
-		private string code;
+		private string supportBundleTarget;
 
 		private string message;
 
@@ -39,96 +39,13 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 
 		private string expiration;
 
-		private string securityToken;
-
-		private string supportBundleTarget;
-
 		private string environment;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string code;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private bool? success;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-			}
-		}
-
-		public string AccessKeySecret
-		{
-			get
-			{
-				return accessKeySecret;
-			}
-			set	
-			{
-				accessKeySecret = value;
-			}
-		}
-
-		public string Expiration
-		{
-			get
-			{
-				return expiration;
-			}
-			set	
-			{
-				expiration = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "SecurityToken")]
 		public string SecurityToken
 		{
 			get
@@ -141,6 +58,20 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SupportBundleTarget")]
 		public string SupportBundleTarget
 		{
 			get
@@ -153,6 +84,59 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "Message")]
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "AccessKeyId")]
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "AccessKeySecret")]
+		public string AccessKeySecret
+		{
+			get
+			{
+				return accessKeySecret;
+			}
+			set	
+			{
+				accessKeySecret = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Expiration")]
+		public string Expiration
+		{
+			get
+			{
+				return expiration;
+			}
+			set	
+			{
+				expiration = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Environment")]
 		public string Environment
 		{
 			get
@@ -162,6 +146,32 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set	
 			{
 				environment = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

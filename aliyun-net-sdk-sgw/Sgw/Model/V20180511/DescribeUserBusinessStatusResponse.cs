@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,94 +25,23 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeUserBusinessStatusResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
-		private string code;
-
-		private string message;
-
-		private bool? isEnabled;
-
-		private bool? isIndebted;
-
 		private bool? isIndebtedOverdue;
 
 		private bool? isRiskControl;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private string message;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private bool? isIndebted;
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
+		private bool? isEnabled;
 
-		public bool? IsEnabled
-		{
-			get
-			{
-				return isEnabled;
-			}
-			set	
-			{
-				isEnabled = value;
-			}
-		}
+		private string code;
 
-		public bool? IsIndebted
-		{
-			get
-			{
-				return isIndebted;
-			}
-			set	
-			{
-				isIndebted = value;
-			}
-		}
+		private bool? success;
 
+		[JsonProperty(PropertyName = "IsIndebtedOverdue")]
 		public bool? IsIndebtedOverdue
 		{
 			get
@@ -125,6 +54,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "IsRiskControl")]
 		public bool? IsRiskControl
 		{
 			get
@@ -134,6 +64,84 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set	
 			{
 				isRiskControl = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Message")]
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "IsIndebted")]
+		public bool? IsIndebted
+		{
+			get
+			{
+				return isIndebted;
+			}
+			set	
+			{
+				isIndebted = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "IsEnabled")]
+		public bool? IsEnabled
+		{
+			get
+			{
+				return isEnabled;
+			}
+			set	
+			{
+				isEnabled = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

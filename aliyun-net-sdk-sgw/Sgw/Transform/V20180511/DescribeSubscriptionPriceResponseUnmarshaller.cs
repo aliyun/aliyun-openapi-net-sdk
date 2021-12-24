@@ -32,11 +32,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 
 			describeSubscriptionPriceResponse.HttpResponse = _ctx.HttpResponse;
 			describeSubscriptionPriceResponse.RequestId = _ctx.StringValue("DescribeSubscriptionPrice.RequestId");
-			describeSubscriptionPriceResponse.Success = _ctx.BooleanValue("DescribeSubscriptionPrice.Success");
-			describeSubscriptionPriceResponse.Code = _ctx.StringValue("DescribeSubscriptionPrice.Code");
 			describeSubscriptionPriceResponse.Message = _ctx.StringValue("DescribeSubscriptionPrice.Message");
 			describeSubscriptionPriceResponse.Currency = _ctx.StringValue("DescribeSubscriptionPrice.Currency");
 			describeSubscriptionPriceResponse.TradePrice = _ctx.FloatValue("DescribeSubscriptionPrice.TradePrice");
+			describeSubscriptionPriceResponse.Code = _ctx.StringValue("DescribeSubscriptionPrice.Code");
+			describeSubscriptionPriceResponse.Success = _ctx.BooleanValue("DescribeSubscriptionPrice.Success");
         
 			return describeSubscriptionPriceResponse;
         }

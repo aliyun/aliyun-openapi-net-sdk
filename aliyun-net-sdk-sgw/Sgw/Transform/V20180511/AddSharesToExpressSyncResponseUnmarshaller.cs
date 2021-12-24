@@ -31,16 +31,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			AddSharesToExpressSyncResponse addSharesToExpressSyncResponse = new AddSharesToExpressSyncResponse();
 
 			addSharesToExpressSyncResponse.HttpResponse = _ctx.HttpResponse;
-			addSharesToExpressSyncResponse.RequestId = _ctx.StringValue("AddSharesToExpressSync.RequestId");
-			addSharesToExpressSyncResponse.Success = _ctx.BooleanValue("AddSharesToExpressSync.Success");
-			addSharesToExpressSyncResponse.Code = _ctx.StringValue("AddSharesToExpressSync.Code");
-			addSharesToExpressSyncResponse.Message = _ctx.StringValue("AddSharesToExpressSync.Message");
 			addSharesToExpressSyncResponse.TaskId = _ctx.StringValue("AddSharesToExpressSync.TaskId");
+			addSharesToExpressSyncResponse.RequestId = _ctx.StringValue("AddSharesToExpressSync.RequestId");
+			addSharesToExpressSyncResponse.Message = _ctx.StringValue("AddSharesToExpressSync.Message");
 			addSharesToExpressSyncResponse.MnsTopic = _ctx.StringValue("AddSharesToExpressSync.MnsTopic");
 			addSharesToExpressSyncResponse.MnsQueues = _ctx.StringValue("AddSharesToExpressSync.MnsQueues");
 			addSharesToExpressSyncResponse.MnsFullSyncDelay = _ctx.LongValue("AddSharesToExpressSync.MnsFullSyncDelay");
 			addSharesToExpressSyncResponse.MnsPublicEndpoint = _ctx.StringValue("AddSharesToExpressSync.MnsPublicEndpoint");
 			addSharesToExpressSyncResponse.MnsInnerEndpoint = _ctx.StringValue("AddSharesToExpressSync.MnsInnerEndpoint");
+			addSharesToExpressSyncResponse.Code = _ctx.StringValue("AddSharesToExpressSync.Code");
+			addSharesToExpressSyncResponse.Success = _ctx.BooleanValue("AddSharesToExpressSync.Success");
         
 			return addSharesToExpressSyncResponse;
         }

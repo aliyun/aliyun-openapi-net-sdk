@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			CreateGatewaySMBUserResponse createGatewaySMBUserResponse = new CreateGatewaySMBUserResponse();
 
 			createGatewaySMBUserResponse.HttpResponse = _ctx.HttpResponse;
-			createGatewaySMBUserResponse.RequestId = _ctx.StringValue("CreateGatewaySMBUser.RequestId");
-			createGatewaySMBUserResponse.Success = _ctx.BooleanValue("CreateGatewaySMBUser.Success");
-			createGatewaySMBUserResponse.Code = _ctx.StringValue("CreateGatewaySMBUser.Code");
-			createGatewaySMBUserResponse.Message = _ctx.StringValue("CreateGatewaySMBUser.Message");
 			createGatewaySMBUserResponse.TaskId = _ctx.StringValue("CreateGatewaySMBUser.TaskId");
+			createGatewaySMBUserResponse.Message = _ctx.StringValue("CreateGatewaySMBUser.Message");
+			createGatewaySMBUserResponse.RequestId = _ctx.StringValue("CreateGatewaySMBUser.RequestId");
+			createGatewaySMBUserResponse.Code = _ctx.StringValue("CreateGatewaySMBUser.Code");
+			createGatewaySMBUserResponse.Success = _ctx.BooleanValue("CreateGatewaySMBUser.Success");
         
 			return createGatewaySMBUserResponse;
         }

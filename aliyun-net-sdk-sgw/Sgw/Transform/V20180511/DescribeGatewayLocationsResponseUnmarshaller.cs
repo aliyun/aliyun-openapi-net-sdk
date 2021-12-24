@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeGatewayLocationsResponse describeGatewayLocationsResponse = new DescribeGatewayLocationsResponse();
 
 			describeGatewayLocationsResponse.HttpResponse = _ctx.HttpResponse;
-			describeGatewayLocationsResponse.RequestId = _ctx.StringValue("DescribeGatewayLocations.RequestId");
-			describeGatewayLocationsResponse.Success = _ctx.BooleanValue("DescribeGatewayLocations.Success");
-			describeGatewayLocationsResponse.Code = _ctx.StringValue("DescribeGatewayLocations.Code");
 			describeGatewayLocationsResponse.Message = _ctx.StringValue("DescribeGatewayLocations.Message");
+			describeGatewayLocationsResponse.RequestId = _ctx.StringValue("DescribeGatewayLocations.RequestId");
 			describeGatewayLocationsResponse.Locations = _ctx.StringValue("DescribeGatewayLocations.Locations");
+			describeGatewayLocationsResponse.Code = _ctx.StringValue("DescribeGatewayLocations.Code");
+			describeGatewayLocationsResponse.Success = _ctx.BooleanValue("DescribeGatewayLocations.Success");
         
 			return describeGatewayLocationsResponse;
         }

@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			ResetGatewayPasswordResponse resetGatewayPasswordResponse = new ResetGatewayPasswordResponse();
 
 			resetGatewayPasswordResponse.HttpResponse = _ctx.HttpResponse;
-			resetGatewayPasswordResponse.RequestId = _ctx.StringValue("ResetGatewayPassword.RequestId");
-			resetGatewayPasswordResponse.Success = _ctx.BooleanValue("ResetGatewayPassword.Success");
-			resetGatewayPasswordResponse.Code = _ctx.StringValue("ResetGatewayPassword.Code");
-			resetGatewayPasswordResponse.Message = _ctx.StringValue("ResetGatewayPassword.Message");
 			resetGatewayPasswordResponse.TaskId = _ctx.StringValue("ResetGatewayPassword.TaskId");
+			resetGatewayPasswordResponse.Message = _ctx.StringValue("ResetGatewayPassword.Message");
+			resetGatewayPasswordResponse.RequestId = _ctx.StringValue("ResetGatewayPassword.RequestId");
+			resetGatewayPasswordResponse.Code = _ctx.StringValue("ResetGatewayPassword.Code");
+			resetGatewayPasswordResponse.Success = _ctx.BooleanValue("ResetGatewayPassword.Success");
         
 			return resetGatewayPasswordResponse;
         }

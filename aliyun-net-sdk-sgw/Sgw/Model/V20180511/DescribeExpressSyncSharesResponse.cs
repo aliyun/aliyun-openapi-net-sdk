@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,52 +25,17 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeExpressSyncSharesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string message;
 
-		private bool? success;
+		private string requestId;
 
 		private string code;
 
-		private string message;
+		private bool? success;
 
 		private List<DescribeExpressSyncShares_Share> shares;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -83,6 +48,46 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Shares")]
 		public List<DescribeExpressSyncShares_Share> Shares
 		{
 			get
@@ -98,108 +103,25 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 		public class DescribeExpressSyncShares_Share
 		{
 
+			private string mnsQueue;
+
+			private string expressSyncId;
+
 			private string gatewayId;
+
+			private string expressSyncState;
+
+			private string gatewayName;
 
 			private string storageBundleId;
 
-			private string gatewayName;
+			private int? syncProgress;
 
 			private string gatewayRegion;
 
 			private string shareName;
 
-			private string expressSyncState;
-
-			private string expressSyncId;
-
-			private string mnsQueue;
-
-			private int? syncProgress;
-
-			public string GatewayId
-			{
-				get
-				{
-					return gatewayId;
-				}
-				set	
-				{
-					gatewayId = value;
-				}
-			}
-
-			public string StorageBundleId
-			{
-				get
-				{
-					return storageBundleId;
-				}
-				set	
-				{
-					storageBundleId = value;
-				}
-			}
-
-			public string GatewayName
-			{
-				get
-				{
-					return gatewayName;
-				}
-				set	
-				{
-					gatewayName = value;
-				}
-			}
-
-			public string GatewayRegion
-			{
-				get
-				{
-					return gatewayRegion;
-				}
-				set	
-				{
-					gatewayRegion = value;
-				}
-			}
-
-			public string ShareName
-			{
-				get
-				{
-					return shareName;
-				}
-				set	
-				{
-					shareName = value;
-				}
-			}
-
-			public string ExpressSyncState
-			{
-				get
-				{
-					return expressSyncState;
-				}
-				set	
-				{
-					expressSyncState = value;
-				}
-			}
-
-			public string ExpressSyncId
-			{
-				get
-				{
-					return expressSyncId;
-				}
-				set	
-				{
-					expressSyncId = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "MnsQueue")]
 			public string MnsQueue
 			{
 				get
@@ -212,6 +134,72 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "ExpressSyncId")]
+			public string ExpressSyncId
+			{
+				get
+				{
+					return expressSyncId;
+				}
+				set	
+				{
+					expressSyncId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "GatewayId")]
+			public string GatewayId
+			{
+				get
+				{
+					return gatewayId;
+				}
+				set	
+				{
+					gatewayId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ExpressSyncState")]
+			public string ExpressSyncState
+			{
+				get
+				{
+					return expressSyncState;
+				}
+				set	
+				{
+					expressSyncState = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "GatewayName")]
+			public string GatewayName
+			{
+				get
+				{
+					return gatewayName;
+				}
+				set	
+				{
+					gatewayName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "StorageBundleId")]
+			public string StorageBundleId
+			{
+				get
+				{
+					return storageBundleId;
+				}
+				set	
+				{
+					storageBundleId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "SyncProgress")]
 			public int? SyncProgress
 			{
 				get
@@ -221,6 +209,32 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				set	
 				{
 					syncProgress = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "GatewayRegion")]
+			public string GatewayRegion
+			{
+				get
+				{
+					return gatewayRegion;
+				}
+				set	
+				{
+					gatewayRegion = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ShareName")]
+			public string ShareName
+			{
+				get
+				{
+					return shareName;
+				}
+				set	
+				{
+					shareName = value;
 				}
 			}
 		}

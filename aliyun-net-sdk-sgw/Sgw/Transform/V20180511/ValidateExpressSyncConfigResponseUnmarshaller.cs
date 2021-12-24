@@ -32,11 +32,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 
 			validateExpressSyncConfigResponse.HttpResponse = _ctx.HttpResponse;
 			validateExpressSyncConfigResponse.RequestId = _ctx.StringValue("ValidateExpressSyncConfig.RequestId");
-			validateExpressSyncConfigResponse.Success = _ctx.BooleanValue("ValidateExpressSyncConfig.Success");
-			validateExpressSyncConfigResponse.Code = _ctx.StringValue("ValidateExpressSyncConfig.Code");
 			validateExpressSyncConfigResponse.Message = _ctx.StringValue("ValidateExpressSyncConfig.Message");
-			validateExpressSyncConfigResponse.IsValid = _ctx.BooleanValue("ValidateExpressSyncConfig.IsValid");
 			validateExpressSyncConfigResponse.ValidateMessage = _ctx.StringValue("ValidateExpressSyncConfig.ValidateMessage");
+			validateExpressSyncConfigResponse.Code = _ctx.StringValue("ValidateExpressSyncConfig.Code");
+			validateExpressSyncConfigResponse.Success = _ctx.BooleanValue("ValidateExpressSyncConfig.Success");
+			validateExpressSyncConfigResponse.IsValid = _ctx.BooleanValue("ValidateExpressSyncConfig.IsValid");
         
 			return validateExpressSyncConfigResponse;
         }

@@ -31,10 +31,10 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			ReportBlockVolumesResponse reportBlockVolumesResponse = new ReportBlockVolumesResponse();
 
 			reportBlockVolumesResponse.HttpResponse = _ctx.HttpResponse;
-			reportBlockVolumesResponse.RequestId = _ctx.StringValue("ReportBlockVolumes.RequestId");
-			reportBlockVolumesResponse.Success = _ctx.BooleanValue("ReportBlockVolumes.Success");
-			reportBlockVolumesResponse.Code = _ctx.StringValue("ReportBlockVolumes.Code");
 			reportBlockVolumesResponse.Message = _ctx.StringValue("ReportBlockVolumes.Message");
+			reportBlockVolumesResponse.RequestId = _ctx.StringValue("ReportBlockVolumes.RequestId");
+			reportBlockVolumesResponse.Code = _ctx.StringValue("ReportBlockVolumes.Code");
+			reportBlockVolumesResponse.Success = _ctx.BooleanValue("ReportBlockVolumes.Success");
         
 			return reportBlockVolumesResponse;
         }

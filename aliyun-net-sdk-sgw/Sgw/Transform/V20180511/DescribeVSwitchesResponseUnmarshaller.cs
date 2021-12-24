@@ -31,22 +31,22 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeVSwitchesResponse describeVSwitchesResponse = new DescribeVSwitchesResponse();
 
 			describeVSwitchesResponse.HttpResponse = _ctx.HttpResponse;
-			describeVSwitchesResponse.RequestId = _ctx.StringValue("DescribeVSwitches.RequestId");
-			describeVSwitchesResponse.Success = _ctx.BooleanValue("DescribeVSwitches.Success");
-			describeVSwitchesResponse.Code = _ctx.StringValue("DescribeVSwitches.Code");
-			describeVSwitchesResponse.Message = _ctx.StringValue("DescribeVSwitches.Message");
 			describeVSwitchesResponse.TotalCount = _ctx.IntegerValue("DescribeVSwitches.TotalCount");
-			describeVSwitchesResponse.PageNumber = _ctx.IntegerValue("DescribeVSwitches.PageNumber");
+			describeVSwitchesResponse.RequestId = _ctx.StringValue("DescribeVSwitches.RequestId");
+			describeVSwitchesResponse.Message = _ctx.StringValue("DescribeVSwitches.Message");
 			describeVSwitchesResponse.PageSize = _ctx.IntegerValue("DescribeVSwitches.PageSize");
+			describeVSwitchesResponse.PageNumber = _ctx.IntegerValue("DescribeVSwitches.PageNumber");
+			describeVSwitchesResponse.Code = _ctx.StringValue("DescribeVSwitches.Code");
+			describeVSwitchesResponse.Success = _ctx.BooleanValue("DescribeVSwitches.Success");
 
 			List<DescribeVSwitchesResponse.DescribeVSwitches_VSwitch> describeVSwitchesResponse_vSwitches = new List<DescribeVSwitchesResponse.DescribeVSwitches_VSwitch>();
 			for (int i = 0; i < _ctx.Length("DescribeVSwitches.VSwitches.Length"); i++) {
 				DescribeVSwitchesResponse.DescribeVSwitches_VSwitch vSwitch = new DescribeVSwitchesResponse.DescribeVSwitches_VSwitch();
+				vSwitch.IsDefault = _ctx.BooleanValue("DescribeVSwitches.VSwitches["+ i +"].IsDefault");
+				vSwitch.AvailableSelectionInfo = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].AvailableSelectionInfo");
+				vSwitch.ZoneId = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].ZoneId");
 				vSwitch.Name = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].Name");
 				vSwitch.Id = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].Id");
-				vSwitch.IsDefault = _ctx.BooleanValue("DescribeVSwitches.VSwitches["+ i +"].IsDefault");
-				vSwitch.ZoneId = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].ZoneId");
-				vSwitch.AvailableSelectionInfo = _ctx.StringValue("DescribeVSwitches.VSwitches["+ i +"].AvailableSelectionInfo");
 
 				describeVSwitchesResponse_vSwitches.Add(vSwitch);
 			}

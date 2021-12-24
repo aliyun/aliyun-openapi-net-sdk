@@ -31,12 +31,12 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			CreateGatewayResponse createGatewayResponse = new CreateGatewayResponse();
 
 			createGatewayResponse.HttpResponse = _ctx.HttpResponse;
+			createGatewayResponse.BuyURL = _ctx.StringValue("CreateGateway.BuyURL");
 			createGatewayResponse.RequestId = _ctx.StringValue("CreateGateway.RequestId");
-			createGatewayResponse.Success = _ctx.BooleanValue("CreateGateway.Success");
-			createGatewayResponse.Code = _ctx.StringValue("CreateGateway.Code");
 			createGatewayResponse.Message = _ctx.StringValue("CreateGateway.Message");
 			createGatewayResponse.GatewayId = _ctx.StringValue("CreateGateway.GatewayId");
-			createGatewayResponse.BuyURL = _ctx.StringValue("CreateGateway.BuyURL");
+			createGatewayResponse.Code = _ctx.StringValue("CreateGateway.Code");
+			createGatewayResponse.Success = _ctx.BooleanValue("CreateGateway.Success");
         
 			return createGatewayResponse;
         }

@@ -31,10 +31,10 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			RemoveTagsFromGatewayResponse removeTagsFromGatewayResponse = new RemoveTagsFromGatewayResponse();
 
 			removeTagsFromGatewayResponse.HttpResponse = _ctx.HttpResponse;
-			removeTagsFromGatewayResponse.RequestId = _ctx.StringValue("RemoveTagsFromGateway.RequestId");
-			removeTagsFromGatewayResponse.Success = _ctx.BooleanValue("RemoveTagsFromGateway.Success");
-			removeTagsFromGatewayResponse.Code = _ctx.StringValue("RemoveTagsFromGateway.Code");
 			removeTagsFromGatewayResponse.Message = _ctx.StringValue("RemoveTagsFromGateway.Message");
+			removeTagsFromGatewayResponse.RequestId = _ctx.StringValue("RemoveTagsFromGateway.RequestId");
+			removeTagsFromGatewayResponse.Code = _ctx.StringValue("RemoveTagsFromGateway.Code");
+			removeTagsFromGatewayResponse.Success = _ctx.BooleanValue("RemoveTagsFromGateway.Success");
         
 			return removeTagsFromGatewayResponse;
         }

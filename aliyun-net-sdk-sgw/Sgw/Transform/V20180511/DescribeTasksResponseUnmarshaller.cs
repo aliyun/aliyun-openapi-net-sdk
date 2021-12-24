@@ -31,26 +31,27 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeTasksResponse describeTasksResponse = new DescribeTasksResponse();
 
 			describeTasksResponse.HttpResponse = _ctx.HttpResponse;
-			describeTasksResponse.RequestId = _ctx.StringValue("DescribeTasks.RequestId");
-			describeTasksResponse.Success = _ctx.BooleanValue("DescribeTasks.Success");
-			describeTasksResponse.Code = _ctx.StringValue("DescribeTasks.Code");
-			describeTasksResponse.Message = _ctx.StringValue("DescribeTasks.Message");
 			describeTasksResponse.TotalCount = _ctx.IntegerValue("DescribeTasks.TotalCount");
-			describeTasksResponse.PageNumber = _ctx.IntegerValue("DescribeTasks.PageNumber");
+			describeTasksResponse.RequestId = _ctx.StringValue("DescribeTasks.RequestId");
+			describeTasksResponse.Message = _ctx.StringValue("DescribeTasks.Message");
 			describeTasksResponse.PageSize = _ctx.IntegerValue("DescribeTasks.PageSize");
+			describeTasksResponse.PageNumber = _ctx.IntegerValue("DescribeTasks.PageNumber");
+			describeTasksResponse.Code = _ctx.StringValue("DescribeTasks.Code");
+			describeTasksResponse.Success = _ctx.BooleanValue("DescribeTasks.Success");
 
 			List<DescribeTasksResponse.DescribeTasks_SimpleTask> describeTasksResponse_tasks = new List<DescribeTasksResponse.DescribeTasks_SimpleTask>();
 			for (int i = 0; i < _ctx.Length("DescribeTasks.Tasks.Length"); i++) {
 				DescribeTasksResponse.DescribeTasks_SimpleTask simpleTask = new DescribeTasksResponse.DescribeTasks_SimpleTask();
-				simpleTask.TaskId = _ctx.StringValue("DescribeTasks.Tasks["+ i +"].TaskId");
-				simpleTask.Name = _ctx.StringValue("DescribeTasks.Tasks["+ i +"].Name");
-				simpleTask.CreatedTime = _ctx.LongValue("DescribeTasks.Tasks["+ i +"].CreatedTime");
-				simpleTask.UpdatedTime = _ctx.LongValue("DescribeTasks.Tasks["+ i +"].UpdatedTime");
-				simpleTask.Progress = _ctx.IntegerValue("DescribeTasks.Tasks["+ i +"].Progress");
 				simpleTask.StateCode = _ctx.StringValue("DescribeTasks.Tasks["+ i +"].StateCode");
-				simpleTask.StageCode = _ctx.StringValue("DescribeTasks.Tasks["+ i +"].StageCode");
-				simpleTask.MessageKey = _ctx.StringValue("DescribeTasks.Tasks["+ i +"].MessageKey");
+				simpleTask.Progress = _ctx.IntegerValue("DescribeTasks.Tasks["+ i +"].Progress");
 				simpleTask.MessageParams = _ctx.StringValue("DescribeTasks.Tasks["+ i +"].MessageParams");
+				simpleTask.UpdatedTime = _ctx.LongValue("DescribeTasks.Tasks["+ i +"].UpdatedTime");
+				simpleTask.MessageKey = _ctx.StringValue("DescribeTasks.Tasks["+ i +"].MessageKey");
+				simpleTask.Name = _ctx.StringValue("DescribeTasks.Tasks["+ i +"].Name");
+				simpleTask.StageCode = _ctx.StringValue("DescribeTasks.Tasks["+ i +"].StageCode");
+				simpleTask.CreatedTime = _ctx.LongValue("DescribeTasks.Tasks["+ i +"].CreatedTime");
+				simpleTask.TaskId = _ctx.StringValue("DescribeTasks.Tasks["+ i +"].TaskId");
+				simpleTask.RelatedResourceId = _ctx.StringValue("DescribeTasks.Tasks["+ i +"].RelatedResourceId");
 
 				describeTasksResponse_tasks.Add(simpleTask);
 			}

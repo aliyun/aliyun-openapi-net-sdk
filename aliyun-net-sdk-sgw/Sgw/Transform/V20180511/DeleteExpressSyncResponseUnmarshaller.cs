@@ -32,10 +32,10 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 
 			deleteExpressSyncResponse.HttpResponse = _ctx.HttpResponse;
 			deleteExpressSyncResponse.TaskId = _ctx.StringValue("DeleteExpressSync.TaskId");
-			deleteExpressSyncResponse.RequestId = _ctx.StringValue("DeleteExpressSync.RequestId");
-			deleteExpressSyncResponse.Success = _ctx.BooleanValue("DeleteExpressSync.Success");
-			deleteExpressSyncResponse.Code = _ctx.StringValue("DeleteExpressSync.Code");
 			deleteExpressSyncResponse.Message = _ctx.StringValue("DeleteExpressSync.Message");
+			deleteExpressSyncResponse.RequestId = _ctx.StringValue("DeleteExpressSync.RequestId");
+			deleteExpressSyncResponse.Code = _ctx.StringValue("DeleteExpressSync.Code");
+			deleteExpressSyncResponse.Success = _ctx.BooleanValue("DeleteExpressSync.Success");
         
 			return deleteExpressSyncResponse;
         }

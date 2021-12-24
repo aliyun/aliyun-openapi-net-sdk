@@ -31,10 +31,10 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeKmsKeyResponse describeKmsKeyResponse = new DescribeKmsKeyResponse();
 
 			describeKmsKeyResponse.HttpResponse = _ctx.HttpResponse;
-			describeKmsKeyResponse.RequestId = _ctx.StringValue("DescribeKmsKey.RequestId");
-			describeKmsKeyResponse.Success = _ctx.BooleanValue("DescribeKmsKey.Success");
-			describeKmsKeyResponse.Code = _ctx.StringValue("DescribeKmsKey.Code");
 			describeKmsKeyResponse.Message = _ctx.StringValue("DescribeKmsKey.Message");
+			describeKmsKeyResponse.RequestId = _ctx.StringValue("DescribeKmsKey.RequestId");
+			describeKmsKeyResponse.Code = _ctx.StringValue("DescribeKmsKey.Code");
+			describeKmsKeyResponse.Success = _ctx.BooleanValue("DescribeKmsKey.Success");
 			describeKmsKeyResponse.IsValid = _ctx.BooleanValue("DescribeKmsKey.IsValid");
         
 			return describeKmsKeyResponse;

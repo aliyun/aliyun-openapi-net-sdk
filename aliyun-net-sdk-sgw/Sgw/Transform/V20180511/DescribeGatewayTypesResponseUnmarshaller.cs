@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeGatewayTypesResponse describeGatewayTypesResponse = new DescribeGatewayTypesResponse();
 
 			describeGatewayTypesResponse.HttpResponse = _ctx.HttpResponse;
-			describeGatewayTypesResponse.RequestId = _ctx.StringValue("DescribeGatewayTypes.RequestId");
-			describeGatewayTypesResponse.Success = _ctx.BooleanValue("DescribeGatewayTypes.Success");
-			describeGatewayTypesResponse.Code = _ctx.StringValue("DescribeGatewayTypes.Code");
-			describeGatewayTypesResponse.Message = _ctx.StringValue("DescribeGatewayTypes.Message");
 			describeGatewayTypesResponse.Types = _ctx.StringValue("DescribeGatewayTypes.Types");
+			describeGatewayTypesResponse.Message = _ctx.StringValue("DescribeGatewayTypes.Message");
+			describeGatewayTypesResponse.RequestId = _ctx.StringValue("DescribeGatewayTypes.RequestId");
+			describeGatewayTypesResponse.Code = _ctx.StringValue("DescribeGatewayTypes.Code");
+			describeGatewayTypesResponse.Success = _ctx.BooleanValue("DescribeGatewayTypes.Success");
         
 			return describeGatewayTypesResponse;
         }

@@ -32,13 +32,13 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 
 			describeGatewayADInfoResponse.HttpResponse = _ctx.HttpResponse;
 			describeGatewayADInfoResponse.RequestId = _ctx.StringValue("DescribeGatewayADInfo.RequestId");
-			describeGatewayADInfoResponse.Success = _ctx.BooleanValue("DescribeGatewayADInfo.Success");
-			describeGatewayADInfoResponse.Code = _ctx.StringValue("DescribeGatewayADInfo.Code");
 			describeGatewayADInfoResponse.Message = _ctx.StringValue("DescribeGatewayADInfo.Message");
-			describeGatewayADInfoResponse.Username = _ctx.StringValue("DescribeGatewayADInfo.Username");
-			describeGatewayADInfoResponse.ServerIp = _ctx.StringValue("DescribeGatewayADInfo.ServerIp");
 			describeGatewayADInfoResponse.DomainName = _ctx.StringValue("DescribeGatewayADInfo.DomainName");
 			describeGatewayADInfoResponse.IsEnabled = _ctx.BooleanValue("DescribeGatewayADInfo.IsEnabled");
+			describeGatewayADInfoResponse.Username = _ctx.StringValue("DescribeGatewayADInfo.Username");
+			describeGatewayADInfoResponse.ServerIp = _ctx.StringValue("DescribeGatewayADInfo.ServerIp");
+			describeGatewayADInfoResponse.Code = _ctx.StringValue("DescribeGatewayADInfo.Code");
+			describeGatewayADInfoResponse.Success = _ctx.BooleanValue("DescribeGatewayADInfo.Success");
         
 			return describeGatewayADInfoResponse;
         }

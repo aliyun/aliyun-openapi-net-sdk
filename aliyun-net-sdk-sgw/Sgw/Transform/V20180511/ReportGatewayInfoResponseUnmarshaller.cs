@@ -31,10 +31,10 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			ReportGatewayInfoResponse reportGatewayInfoResponse = new ReportGatewayInfoResponse();
 
 			reportGatewayInfoResponse.HttpResponse = _ctx.HttpResponse;
-			reportGatewayInfoResponse.RequestId = _ctx.StringValue("ReportGatewayInfo.RequestId");
-			reportGatewayInfoResponse.Success = _ctx.BooleanValue("ReportGatewayInfo.Success");
-			reportGatewayInfoResponse.Code = _ctx.StringValue("ReportGatewayInfo.Code");
 			reportGatewayInfoResponse.Message = _ctx.StringValue("ReportGatewayInfo.Message");
+			reportGatewayInfoResponse.RequestId = _ctx.StringValue("ReportGatewayInfo.RequestId");
+			reportGatewayInfoResponse.Code = _ctx.StringValue("ReportGatewayInfo.Code");
+			reportGatewayInfoResponse.Success = _ctx.BooleanValue("ReportGatewayInfo.Success");
         
 			return reportGatewayInfoResponse;
         }

@@ -31,10 +31,10 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeZonesResponse describeZonesResponse = new DescribeZonesResponse();
 
 			describeZonesResponse.HttpResponse = _ctx.HttpResponse;
-			describeZonesResponse.RequestId = _ctx.StringValue("DescribeZones.RequestId");
-			describeZonesResponse.Success = _ctx.BooleanValue("DescribeZones.Success");
-			describeZonesResponse.Code = _ctx.StringValue("DescribeZones.Code");
 			describeZonesResponse.Message = _ctx.StringValue("DescribeZones.Message");
+			describeZonesResponse.RequestId = _ctx.StringValue("DescribeZones.RequestId");
+			describeZonesResponse.Code = _ctx.StringValue("DescribeZones.Code");
+			describeZonesResponse.Success = _ctx.BooleanValue("DescribeZones.Success");
 
 			List<DescribeZonesResponse.DescribeZones_Zone> describeZonesResponse_zones = new List<DescribeZonesResponse.DescribeZones_Zone>();
 			for (int i = 0; i < _ctx.Length("DescribeZones.Zones.Length"); i++) {

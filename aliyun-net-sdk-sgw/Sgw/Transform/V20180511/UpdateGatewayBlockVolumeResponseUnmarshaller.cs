@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			UpdateGatewayBlockVolumeResponse updateGatewayBlockVolumeResponse = new UpdateGatewayBlockVolumeResponse();
 
 			updateGatewayBlockVolumeResponse.HttpResponse = _ctx.HttpResponse;
-			updateGatewayBlockVolumeResponse.RequestId = _ctx.StringValue("UpdateGatewayBlockVolume.RequestId");
-			updateGatewayBlockVolumeResponse.Success = _ctx.BooleanValue("UpdateGatewayBlockVolume.Success");
-			updateGatewayBlockVolumeResponse.Code = _ctx.StringValue("UpdateGatewayBlockVolume.Code");
-			updateGatewayBlockVolumeResponse.Message = _ctx.StringValue("UpdateGatewayBlockVolume.Message");
 			updateGatewayBlockVolumeResponse.TaskId = _ctx.StringValue("UpdateGatewayBlockVolume.TaskId");
+			updateGatewayBlockVolumeResponse.Message = _ctx.StringValue("UpdateGatewayBlockVolume.Message");
+			updateGatewayBlockVolumeResponse.RequestId = _ctx.StringValue("UpdateGatewayBlockVolume.RequestId");
+			updateGatewayBlockVolumeResponse.Code = _ctx.StringValue("UpdateGatewayBlockVolume.Code");
+			updateGatewayBlockVolumeResponse.Success = _ctx.BooleanValue("UpdateGatewayBlockVolume.Success");
         
 			return updateGatewayBlockVolumeResponse;
         }

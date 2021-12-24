@@ -32,12 +32,12 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 
 			describePayAsYouGoPriceResponse.HttpResponse = _ctx.HttpResponse;
 			describePayAsYouGoPriceResponse.RequestId = _ctx.StringValue("DescribePayAsYouGoPrice.RequestId");
-			describePayAsYouGoPriceResponse.Success = _ctx.BooleanValue("DescribePayAsYouGoPrice.Success");
-			describePayAsYouGoPriceResponse.Code = _ctx.StringValue("DescribePayAsYouGoPrice.Code");
 			describePayAsYouGoPriceResponse.Message = _ctx.StringValue("DescribePayAsYouGoPrice.Message");
 			describePayAsYouGoPriceResponse.Currency = _ctx.StringValue("DescribePayAsYouGoPrice.Currency");
-			describePayAsYouGoPriceResponse.GatewayClassPrice = _ctx.FloatValue("DescribePayAsYouGoPrice.GatewayClassPrice");
 			describePayAsYouGoPriceResponse.CacheCloudEfficiencySizePrice = _ctx.FloatValue("DescribePayAsYouGoPrice.CacheCloudEfficiencySizePrice");
+			describePayAsYouGoPriceResponse.GatewayClassPrice = _ctx.FloatValue("DescribePayAsYouGoPrice.GatewayClassPrice");
+			describePayAsYouGoPriceResponse.Code = _ctx.StringValue("DescribePayAsYouGoPrice.Code");
+			describePayAsYouGoPriceResponse.Success = _ctx.BooleanValue("DescribePayAsYouGoPrice.Success");
 			describePayAsYouGoPriceResponse.CacheCloudSSDSizePrice = _ctx.FloatValue("DescribePayAsYouGoPrice.CacheCloudSSDSizePrice");
         
 			return describePayAsYouGoPriceResponse;

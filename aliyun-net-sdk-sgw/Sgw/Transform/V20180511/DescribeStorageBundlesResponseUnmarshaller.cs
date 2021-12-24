@@ -31,24 +31,24 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeStorageBundlesResponse describeStorageBundlesResponse = new DescribeStorageBundlesResponse();
 
 			describeStorageBundlesResponse.HttpResponse = _ctx.HttpResponse;
-			describeStorageBundlesResponse.RequestId = _ctx.StringValue("DescribeStorageBundles.RequestId");
-			describeStorageBundlesResponse.Success = _ctx.BooleanValue("DescribeStorageBundles.Success");
-			describeStorageBundlesResponse.Code = _ctx.StringValue("DescribeStorageBundles.Code");
-			describeStorageBundlesResponse.Message = _ctx.StringValue("DescribeStorageBundles.Message");
 			describeStorageBundlesResponse.TotalCount = _ctx.IntegerValue("DescribeStorageBundles.TotalCount");
-			describeStorageBundlesResponse.PageNumber = _ctx.IntegerValue("DescribeStorageBundles.PageNumber");
+			describeStorageBundlesResponse.RequestId = _ctx.StringValue("DescribeStorageBundles.RequestId");
+			describeStorageBundlesResponse.Message = _ctx.StringValue("DescribeStorageBundles.Message");
 			describeStorageBundlesResponse.PageSize = _ctx.IntegerValue("DescribeStorageBundles.PageSize");
+			describeStorageBundlesResponse.PageNumber = _ctx.IntegerValue("DescribeStorageBundles.PageNumber");
+			describeStorageBundlesResponse.Code = _ctx.StringValue("DescribeStorageBundles.Code");
+			describeStorageBundlesResponse.Success = _ctx.BooleanValue("DescribeStorageBundles.Success");
 
 			List<DescribeStorageBundlesResponse.DescribeStorageBundles_StorageBundle> describeStorageBundlesResponse_storageBundles = new List<DescribeStorageBundlesResponse.DescribeStorageBundles_StorageBundle>();
 			for (int i = 0; i < _ctx.Length("DescribeStorageBundles.StorageBundles.Length"); i++) {
 				DescribeStorageBundlesResponse.DescribeStorageBundles_StorageBundle storageBundle = new DescribeStorageBundlesResponse.DescribeStorageBundles_StorageBundle();
-				storageBundle.StorageBundleId = _ctx.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].StorageBundleId");
-				storageBundle.Name = _ctx.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].Name");
 				storageBundle.Description = _ctx.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].Description");
 				storageBundle.BackendBucketRegionId = _ctx.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].BackendBucketRegionId");
-				storageBundle.Location = _ctx.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].Location");
-				storageBundle.CreatedTime = _ctx.LongValue("DescribeStorageBundles.StorageBundles["+ i +"].CreatedTime");
 				storageBundle.ResourceGroupId = _ctx.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].ResourceGroupId");
+				storageBundle.StorageBundleId = _ctx.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].StorageBundleId");
+				storageBundle.Name = _ctx.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].Name");
+				storageBundle.CreatedTime = _ctx.LongValue("DescribeStorageBundles.StorageBundles["+ i +"].CreatedTime");
+				storageBundle.Location = _ctx.StringValue("DescribeStorageBundles.StorageBundles["+ i +"].Location");
 
 				describeStorageBundlesResponse_storageBundles.Add(storageBundle);
 			}

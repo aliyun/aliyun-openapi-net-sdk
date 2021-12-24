@@ -31,12 +31,12 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			ExpandGatewayNetworkBandwidthResponse expandGatewayNetworkBandwidthResponse = new ExpandGatewayNetworkBandwidthResponse();
 
 			expandGatewayNetworkBandwidthResponse.HttpResponse = _ctx.HttpResponse;
-			expandGatewayNetworkBandwidthResponse.RequestId = _ctx.StringValue("ExpandGatewayNetworkBandwidth.RequestId");
-			expandGatewayNetworkBandwidthResponse.Success = _ctx.BooleanValue("ExpandGatewayNetworkBandwidth.Success");
-			expandGatewayNetworkBandwidthResponse.Code = _ctx.StringValue("ExpandGatewayNetworkBandwidth.Code");
-			expandGatewayNetworkBandwidthResponse.Message = _ctx.StringValue("ExpandGatewayNetworkBandwidth.Message");
-			expandGatewayNetworkBandwidthResponse.TaskId = _ctx.StringValue("ExpandGatewayNetworkBandwidth.TaskId");
 			expandGatewayNetworkBandwidthResponse.BuyURL = _ctx.StringValue("ExpandGatewayNetworkBandwidth.BuyURL");
+			expandGatewayNetworkBandwidthResponse.TaskId = _ctx.StringValue("ExpandGatewayNetworkBandwidth.TaskId");
+			expandGatewayNetworkBandwidthResponse.RequestId = _ctx.StringValue("ExpandGatewayNetworkBandwidth.RequestId");
+			expandGatewayNetworkBandwidthResponse.Message = _ctx.StringValue("ExpandGatewayNetworkBandwidth.Message");
+			expandGatewayNetworkBandwidthResponse.Code = _ctx.StringValue("ExpandGatewayNetworkBandwidth.Code");
+			expandGatewayNetworkBandwidthResponse.Success = _ctx.BooleanValue("ExpandGatewayNetworkBandwidth.Success");
         
 			return expandGatewayNetworkBandwidthResponse;
         }

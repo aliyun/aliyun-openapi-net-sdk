@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,15 +25,27 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class CreateStorageBundleResponse : AcsResponse
 	{
 
+		private string message;
+
 		private string requestId;
 
-		private bool? success;
+		private string storageBundleId;
 
 		private string code;
 
-		private string message;
+		private bool? success;
 
-		private string storageBundleId;
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -47,15 +59,15 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public bool? Success
+		public string StorageBundleId
 		{
 			get
 			{
-				return success;
+				return storageBundleId;
 			}
 			set	
 			{
-				success = value;
+				storageBundleId = value;
 			}
 		}
 
@@ -71,27 +83,15 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public string Message
+		public bool? Success
 		{
 			get
 			{
-				return message;
+				return success;
 			}
 			set	
 			{
-				message = value;
-			}
-		}
-
-		public string StorageBundleId
-		{
-			get
-			{
-				return storageBundleId;
-			}
-			set	
-			{
-				storageBundleId = value;
+				success = value;
 			}
 		}
 	}

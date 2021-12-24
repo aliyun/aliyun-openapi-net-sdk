@@ -32,12 +32,12 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 
 			activateAllInOneGatewayResponse.HttpResponse = _ctx.HttpResponse;
 			activateAllInOneGatewayResponse.RequestId = _ctx.StringValue("ActivateAllInOneGateway.RequestId");
-			activateAllInOneGatewayResponse.Success = _ctx.BooleanValue("ActivateAllInOneGateway.Success");
-			activateAllInOneGatewayResponse.Code = _ctx.StringValue("ActivateAllInOneGateway.Code");
 			activateAllInOneGatewayResponse.Message = _ctx.StringValue("ActivateAllInOneGateway.Message");
-			activateAllInOneGatewayResponse.GatewayId = _ctx.StringValue("ActivateAllInOneGateway.GatewayId");
 			activateAllInOneGatewayResponse.RegionId = _ctx.StringValue("ActivateAllInOneGateway.RegionId");
+			activateAllInOneGatewayResponse.GatewayId = _ctx.StringValue("ActivateAllInOneGateway.GatewayId");
 			activateAllInOneGatewayResponse.LicenseContent = _ctx.StringValue("ActivateAllInOneGateway.LicenseContent");
+			activateAllInOneGatewayResponse.Code = _ctx.StringValue("ActivateAllInOneGateway.Code");
+			activateAllInOneGatewayResponse.Success = _ctx.BooleanValue("ActivateAllInOneGateway.Success");
         
 			return activateAllInOneGatewayResponse;
         }

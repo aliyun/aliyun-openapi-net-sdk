@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,84 +25,25 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeGatewayLDAPInfoResponse : AcsResponse
 	{
 
+		private string rootDN;
+
 		private string requestId;
-
-		private bool? success;
-
-		private string code;
 
 		private string message;
 
-		private string baseDN;
+		private bool? isEnabled;
 
-		private string rootDN;
+		private string baseDN;
 
 		private string serverIp;
 
 		private bool? isTls;
 
-		private bool? isEnabled;
+		private string code;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private bool? success;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public string BaseDN
-		{
-			get
-			{
-				return baseDN;
-			}
-			set	
-			{
-				baseDN = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "RootDN")]
 		public string RootDN
 		{
 			get
@@ -115,6 +56,59 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Message")]
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "IsEnabled")]
+		public bool? IsEnabled
+		{
+			get
+			{
+				return isEnabled;
+			}
+			set	
+			{
+				isEnabled = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "BaseDN")]
+		public string BaseDN
+		{
+			get
+			{
+				return baseDN;
+			}
+			set	
+			{
+				baseDN = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ServerIp")]
 		public string ServerIp
 		{
 			get
@@ -127,6 +121,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "IsTls")]
 		public bool? IsTls
 		{
 			get
@@ -139,15 +134,29 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public bool? IsEnabled
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
 		{
 			get
 			{
-				return isEnabled;
+				return code;
 			}
 			set	
 			{
-				isEnabled = value;
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

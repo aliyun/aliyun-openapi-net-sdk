@@ -31,10 +31,10 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeRegionsResponse describeRegionsResponse = new DescribeRegionsResponse();
 
 			describeRegionsResponse.HttpResponse = _ctx.HttpResponse;
-			describeRegionsResponse.RequestId = _ctx.StringValue("DescribeRegions.RequestId");
-			describeRegionsResponse.Success = _ctx.BooleanValue("DescribeRegions.Success");
-			describeRegionsResponse.Code = _ctx.StringValue("DescribeRegions.Code");
 			describeRegionsResponse.Message = _ctx.StringValue("DescribeRegions.Message");
+			describeRegionsResponse.RequestId = _ctx.StringValue("DescribeRegions.RequestId");
+			describeRegionsResponse.Code = _ctx.StringValue("DescribeRegions.Code");
+			describeRegionsResponse.Success = _ctx.BooleanValue("DescribeRegions.Success");
 
 			List<DescribeRegionsResponse.DescribeRegions_Region> describeRegionsResponse_regions = new List<DescribeRegionsResponse.DescribeRegions_Region>();
 			for (int i = 0; i < _ctx.Length("DescribeRegions.Regions.Length"); i++) {

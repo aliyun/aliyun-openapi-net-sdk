@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeGatewayCategoriesResponse describeGatewayCategoriesResponse = new DescribeGatewayCategoriesResponse();
 
 			describeGatewayCategoriesResponse.HttpResponse = _ctx.HttpResponse;
-			describeGatewayCategoriesResponse.RequestId = _ctx.StringValue("DescribeGatewayCategories.RequestId");
-			describeGatewayCategoriesResponse.Success = _ctx.BooleanValue("DescribeGatewayCategories.Success");
-			describeGatewayCategoriesResponse.Code = _ctx.StringValue("DescribeGatewayCategories.Code");
 			describeGatewayCategoriesResponse.Message = _ctx.StringValue("DescribeGatewayCategories.Message");
+			describeGatewayCategoriesResponse.RequestId = _ctx.StringValue("DescribeGatewayCategories.RequestId");
 			describeGatewayCategoriesResponse.Categories = _ctx.StringValue("DescribeGatewayCategories.Categories");
+			describeGatewayCategoriesResponse.Code = _ctx.StringValue("DescribeGatewayCategories.Code");
+			describeGatewayCategoriesResponse.Success = _ctx.BooleanValue("DescribeGatewayCategories.Success");
         
 			return describeGatewayCategoriesResponse;
         }

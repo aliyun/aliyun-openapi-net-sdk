@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,124 +25,29 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeGatewayNFSClientsResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
-		private string code;
-
-		private string message;
-
-		private int? totalCount;
-
-		private int? pageNumber;
-
-		private int? pageSize;
-
-		private bool? version3Enabled;
-
 		private bool? version40Enabled;
 
 		private bool? version41Enabled;
 
+		private int? totalCount;
+
+		private string requestId;
+
+		private string message;
+
+		private int? pageSize;
+
+		private int? pageNumber;
+
+		private bool? version3Enabled;
+
+		private string code;
+
+		private bool? success;
+
 		private List<DescribeGatewayNFSClients_ClientInfo> clientInfoList;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public bool? Version3Enabled
-		{
-			get
-			{
-				return version3Enabled;
-			}
-			set	
-			{
-				version3Enabled = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Version40Enabled")]
 		public bool? Version40Enabled
 		{
 			get
@@ -155,6 +60,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "Version41Enabled")]
 		public bool? Version41Enabled
 		{
 			get
@@ -167,6 +73,111 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "TotalCount")]
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Message")]
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageSize")]
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PageNumber")]
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Version3Enabled")]
+		public bool? Version3Enabled
+		{
+			get
+			{
+				return version3Enabled;
+			}
+			set	
+			{
+				version3Enabled = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "ClientInfoList")]
 		public List<DescribeGatewayNFSClients_ClientInfo> ClientInfoList
 		{
 			get
@@ -182,38 +193,15 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 		public class DescribeGatewayNFSClients_ClientInfo
 		{
 
-			private string clientIpAddr;
-
-			private bool? hasNFSv3;
-
 			private bool? hasNFSv40;
 
 			private bool? hasNFSv41;
 
-			public string ClientIpAddr
-			{
-				get
-				{
-					return clientIpAddr;
-				}
-				set	
-				{
-					clientIpAddr = value;
-				}
-			}
+			private bool? hasNFSv3;
 
-			public bool? HasNFSv3
-			{
-				get
-				{
-					return hasNFSv3;
-				}
-				set	
-				{
-					hasNFSv3 = value;
-				}
-			}
+			private string clientIpAddr;
 
+			[JsonProperty(PropertyName = "HasNFSv40")]
 			public bool? HasNFSv40
 			{
 				get
@@ -226,6 +214,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "HasNFSv41")]
 			public bool? HasNFSv41
 			{
 				get
@@ -235,6 +224,32 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				set	
 				{
 					hasNFSv41 = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "HasNFSv3")]
+			public bool? HasNFSv3
+			{
+				get
+				{
+					return hasNFSv3;
+				}
+				set	
+				{
+					hasNFSv3 = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ClientIpAddr")]
+			public string ClientIpAddr
+			{
+				get
+				{
+					return clientIpAddr;
+				}
+				set	
+				{
+					clientIpAddr = value;
 				}
 			}
 		}

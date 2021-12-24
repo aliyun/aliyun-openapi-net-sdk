@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,52 +25,30 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class SwitchToSubscriptionResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
-		private string code;
+		private string subscriptionURL;
 
 		private string message;
 
-		private string subscriptionURL;
+		private string requestId;
 
-		public string RequestId
+		private string code;
+
+		private bool? success;
+
+		[JsonProperty(PropertyName = "SubscriptionURL")]
+		public string SubscriptionURL
 		{
 			get
 			{
-				return requestId;
+				return subscriptionURL;
 			}
 			set	
 			{
-				requestId = value;
+				subscriptionURL = value;
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -83,15 +61,42 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public string SubscriptionURL
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return subscriptionURL;
+				return requestId;
 			}
 			set	
 			{
-				subscriptionURL = value;
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

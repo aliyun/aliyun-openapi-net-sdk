@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DisableGatewayNFSVersionResponse disableGatewayNFSVersionResponse = new DisableGatewayNFSVersionResponse();
 
 			disableGatewayNFSVersionResponse.HttpResponse = _ctx.HttpResponse;
-			disableGatewayNFSVersionResponse.RequestId = _ctx.StringValue("DisableGatewayNFSVersion.RequestId");
-			disableGatewayNFSVersionResponse.Success = _ctx.BooleanValue("DisableGatewayNFSVersion.Success");
-			disableGatewayNFSVersionResponse.Code = _ctx.StringValue("DisableGatewayNFSVersion.Code");
-			disableGatewayNFSVersionResponse.Message = _ctx.StringValue("DisableGatewayNFSVersion.Message");
 			disableGatewayNFSVersionResponse.TaskId = _ctx.StringValue("DisableGatewayNFSVersion.TaskId");
+			disableGatewayNFSVersionResponse.Message = _ctx.StringValue("DisableGatewayNFSVersion.Message");
+			disableGatewayNFSVersionResponse.RequestId = _ctx.StringValue("DisableGatewayNFSVersion.RequestId");
+			disableGatewayNFSVersionResponse.Code = _ctx.StringValue("DisableGatewayNFSVersion.Code");
+			disableGatewayNFSVersionResponse.Success = _ctx.BooleanValue("DisableGatewayNFSVersion.Success");
         
 			return disableGatewayNFSVersionResponse;
         }

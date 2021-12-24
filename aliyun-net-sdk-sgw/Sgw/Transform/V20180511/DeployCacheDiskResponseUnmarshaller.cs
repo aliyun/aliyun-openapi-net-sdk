@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DeployCacheDiskResponse deployCacheDiskResponse = new DeployCacheDiskResponse();
 
 			deployCacheDiskResponse.HttpResponse = _ctx.HttpResponse;
-			deployCacheDiskResponse.RequestId = _ctx.StringValue("DeployCacheDisk.RequestId");
-			deployCacheDiskResponse.Success = _ctx.BooleanValue("DeployCacheDisk.Success");
-			deployCacheDiskResponse.Code = _ctx.StringValue("DeployCacheDisk.Code");
-			deployCacheDiskResponse.Message = _ctx.StringValue("DeployCacheDisk.Message");
 			deployCacheDiskResponse.TaskId = _ctx.StringValue("DeployCacheDisk.TaskId");
+			deployCacheDiskResponse.Message = _ctx.StringValue("DeployCacheDisk.Message");
+			deployCacheDiskResponse.RequestId = _ctx.StringValue("DeployCacheDisk.RequestId");
+			deployCacheDiskResponse.Code = _ctx.StringValue("DeployCacheDisk.Code");
+			deployCacheDiskResponse.Success = _ctx.BooleanValue("DeployCacheDisk.Success");
         
 			return deployCacheDiskResponse;
         }

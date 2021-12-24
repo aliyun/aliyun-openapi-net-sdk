@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeExpireCachesResponse describeExpireCachesResponse = new DescribeExpireCachesResponse();
 
 			describeExpireCachesResponse.HttpResponse = _ctx.HttpResponse;
-			describeExpireCachesResponse.RequestId = _ctx.StringValue("DescribeExpireCaches.RequestId");
-			describeExpireCachesResponse.Success = _ctx.BooleanValue("DescribeExpireCaches.Success");
-			describeExpireCachesResponse.Code = _ctx.StringValue("DescribeExpireCaches.Code");
 			describeExpireCachesResponse.Message = _ctx.StringValue("DescribeExpireCaches.Message");
+			describeExpireCachesResponse.RequestId = _ctx.StringValue("DescribeExpireCaches.RequestId");
 			describeExpireCachesResponse.CacheFilePaths = _ctx.StringValue("DescribeExpireCaches.CacheFilePaths");
+			describeExpireCachesResponse.Code = _ctx.StringValue("DescribeExpireCaches.Code");
+			describeExpireCachesResponse.Success = _ctx.BooleanValue("DescribeExpireCaches.Success");
         
 			return describeExpireCachesResponse;
         }

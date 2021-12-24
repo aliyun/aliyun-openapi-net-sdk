@@ -31,12 +31,12 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			CheckGatewayEssdSupportResponse checkGatewayEssdSupportResponse = new CheckGatewayEssdSupportResponse();
 
 			checkGatewayEssdSupportResponse.HttpResponse = _ctx.HttpResponse;
-			checkGatewayEssdSupportResponse.RequestId = _ctx.StringValue("CheckGatewayEssdSupport.RequestId");
-			checkGatewayEssdSupportResponse.Success = _ctx.BooleanValue("CheckGatewayEssdSupport.Success");
-			checkGatewayEssdSupportResponse.Code = _ctx.StringValue("CheckGatewayEssdSupport.Code");
-			checkGatewayEssdSupportResponse.Message = _ctx.StringValue("CheckGatewayEssdSupport.Message");
 			checkGatewayEssdSupportResponse.IsSupportEssd = _ctx.BooleanValue("CheckGatewayEssdSupport.IsSupportEssd");
+			checkGatewayEssdSupportResponse.RequestId = _ctx.StringValue("CheckGatewayEssdSupport.RequestId");
+			checkGatewayEssdSupportResponse.Message = _ctx.StringValue("CheckGatewayEssdSupport.Message");
 			checkGatewayEssdSupportResponse.IsServiceAffect = _ctx.BooleanValue("CheckGatewayEssdSupport.IsServiceAffect");
+			checkGatewayEssdSupportResponse.Code = _ctx.StringValue("CheckGatewayEssdSupport.Code");
+			checkGatewayEssdSupportResponse.Success = _ctx.BooleanValue("CheckGatewayEssdSupport.Success");
         
 			return checkGatewayEssdSupportResponse;
         }

@@ -31,12 +31,12 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			ModifyGatewayClassResponse modifyGatewayClassResponse = new ModifyGatewayClassResponse();
 
 			modifyGatewayClassResponse.HttpResponse = _ctx.HttpResponse;
-			modifyGatewayClassResponse.RequestId = _ctx.StringValue("ModifyGatewayClass.RequestId");
-			modifyGatewayClassResponse.Success = _ctx.BooleanValue("ModifyGatewayClass.Success");
-			modifyGatewayClassResponse.Code = _ctx.StringValue("ModifyGatewayClass.Code");
-			modifyGatewayClassResponse.Message = _ctx.StringValue("ModifyGatewayClass.Message");
-			modifyGatewayClassResponse.TaskId = _ctx.StringValue("ModifyGatewayClass.TaskId");
 			modifyGatewayClassResponse.BuyURL = _ctx.StringValue("ModifyGatewayClass.BuyURL");
+			modifyGatewayClassResponse.TaskId = _ctx.StringValue("ModifyGatewayClass.TaskId");
+			modifyGatewayClassResponse.RequestId = _ctx.StringValue("ModifyGatewayClass.RequestId");
+			modifyGatewayClassResponse.Message = _ctx.StringValue("ModifyGatewayClass.Message");
+			modifyGatewayClassResponse.Code = _ctx.StringValue("ModifyGatewayClass.Code");
+			modifyGatewayClassResponse.Success = _ctx.BooleanValue("ModifyGatewayClass.Success");
         
 			return modifyGatewayClassResponse;
         }

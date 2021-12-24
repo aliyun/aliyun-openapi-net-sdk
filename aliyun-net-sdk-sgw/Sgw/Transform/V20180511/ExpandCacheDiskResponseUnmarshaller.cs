@@ -31,12 +31,12 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			ExpandCacheDiskResponse expandCacheDiskResponse = new ExpandCacheDiskResponse();
 
 			expandCacheDiskResponse.HttpResponse = _ctx.HttpResponse;
-			expandCacheDiskResponse.RequestId = _ctx.StringValue("ExpandCacheDisk.RequestId");
-			expandCacheDiskResponse.Success = _ctx.BooleanValue("ExpandCacheDisk.Success");
-			expandCacheDiskResponse.Code = _ctx.StringValue("ExpandCacheDisk.Code");
-			expandCacheDiskResponse.Message = _ctx.StringValue("ExpandCacheDisk.Message");
-			expandCacheDiskResponse.TaskId = _ctx.StringValue("ExpandCacheDisk.TaskId");
 			expandCacheDiskResponse.BuyURL = _ctx.StringValue("ExpandCacheDisk.BuyURL");
+			expandCacheDiskResponse.TaskId = _ctx.StringValue("ExpandCacheDisk.TaskId");
+			expandCacheDiskResponse.RequestId = _ctx.StringValue("ExpandCacheDisk.RequestId");
+			expandCacheDiskResponse.Message = _ctx.StringValue("ExpandCacheDisk.Message");
+			expandCacheDiskResponse.Code = _ctx.StringValue("ExpandCacheDisk.Code");
+			expandCacheDiskResponse.Success = _ctx.BooleanValue("ExpandCacheDisk.Success");
         
 			return expandCacheDiskResponse;
         }

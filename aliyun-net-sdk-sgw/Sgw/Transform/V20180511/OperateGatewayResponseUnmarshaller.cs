@@ -31,12 +31,12 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			OperateGatewayResponse operateGatewayResponse = new OperateGatewayResponse();
 
 			operateGatewayResponse.HttpResponse = _ctx.HttpResponse;
-			operateGatewayResponse.RequestId = _ctx.StringValue("OperateGateway.RequestId");
-			operateGatewayResponse.Success = _ctx.BooleanValue("OperateGateway.Success");
-			operateGatewayResponse.Code = _ctx.StringValue("OperateGateway.Code");
-			operateGatewayResponse.Message = _ctx.StringValue("OperateGateway.Message");
-			operateGatewayResponse.TaskId = _ctx.StringValue("OperateGateway.TaskId");
 			operateGatewayResponse.BuyURL = _ctx.StringValue("OperateGateway.BuyURL");
+			operateGatewayResponse.TaskId = _ctx.StringValue("OperateGateway.TaskId");
+			operateGatewayResponse.RequestId = _ctx.StringValue("OperateGateway.RequestId");
+			operateGatewayResponse.Message = _ctx.StringValue("OperateGateway.Message");
+			operateGatewayResponse.Code = _ctx.StringValue("OperateGateway.Code");
+			operateGatewayResponse.Success = _ctx.BooleanValue("OperateGateway.Success");
         
 			return operateGatewayResponse;
         }

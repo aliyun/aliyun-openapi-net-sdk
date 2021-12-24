@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			SetGatewayLDAPInfoResponse setGatewayLDAPInfoResponse = new SetGatewayLDAPInfoResponse();
 
 			setGatewayLDAPInfoResponse.HttpResponse = _ctx.HttpResponse;
-			setGatewayLDAPInfoResponse.RequestId = _ctx.StringValue("SetGatewayLDAPInfo.RequestId");
-			setGatewayLDAPInfoResponse.Success = _ctx.BooleanValue("SetGatewayLDAPInfo.Success");
-			setGatewayLDAPInfoResponse.Code = _ctx.StringValue("SetGatewayLDAPInfo.Code");
-			setGatewayLDAPInfoResponse.Message = _ctx.StringValue("SetGatewayLDAPInfo.Message");
 			setGatewayLDAPInfoResponse.TaskId = _ctx.StringValue("SetGatewayLDAPInfo.TaskId");
+			setGatewayLDAPInfoResponse.Message = _ctx.StringValue("SetGatewayLDAPInfo.Message");
+			setGatewayLDAPInfoResponse.RequestId = _ctx.StringValue("SetGatewayLDAPInfo.RequestId");
+			setGatewayLDAPInfoResponse.Code = _ctx.StringValue("SetGatewayLDAPInfo.Code");
+			setGatewayLDAPInfoResponse.Success = _ctx.BooleanValue("SetGatewayLDAPInfo.Success");
         
 			return setGatewayLDAPInfoResponse;
         }

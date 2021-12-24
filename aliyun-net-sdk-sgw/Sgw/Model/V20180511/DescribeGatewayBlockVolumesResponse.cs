@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,52 +25,17 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeGatewayBlockVolumesResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string message;
 
-		private bool? success;
+		private string requestId;
 
 		private string code;
 
-		private string message;
+		private bool? success;
 
 		private List<DescribeGatewayBlockVolumes_BlockVolume> blockVolumes;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -83,6 +48,46 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "BlockVolumes")]
 		public List<DescribeGatewayBlockVolumes_BlockVolume> BlockVolumes
 		{
 			get
@@ -98,346 +103,59 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 		public class DescribeGatewayBlockVolumes_BlockVolume
 		{
 
-			private string name;
-
-			private string diskId;
-
-			private string diskType;
-
-			private string protocol;
-
-			private long? size;
-
-			private bool? enabled;
-
-			private string state;
-
-			private long? totalUpload;
-
-			private long? totalDownload;
-
-			private string ossBucketName;
-
-			private string ossEndpoint;
-
-			private bool? ossBucketSsl;
-
-			private string localPath;
-
-			private int? chunkSize;
-
-			private string cacheMode;
-
-			private string address;
+			private int? status;
 
 			private string serialNumber;
 
-			private string indexId;
+			private int? chunkSize;
 
-			private string target;
+			private long? totalUpload;
+
+			private string diskType;
+
+			private string diskId;
 
 			private int? port;
 
-			private int? lunId;
-
-			private bool? chapEnabled;
-
-			private string chapInUser;
+			private string indexId;
 
 			private string chapOutUser;
 
-			private int? status;
+			private long? totalDownload;
+
+			private bool? chapEnabled;
+
+			private bool? enabled;
+
+			private string address;
+
+			private string name;
+
+			private string target;
+
+			private string ossEndpoint;
+
+			private string ossBucketName;
+
+			private string cacheMode;
+
+			private string state;
+
+			private string protocol;
+
+			private int? lunId;
+
+			private bool? ossBucketSsl;
 
 			private int? volumeState;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string localPath;
 
-			public string DiskId
-			{
-				get
-				{
-					return diskId;
-				}
-				set	
-				{
-					diskId = value;
-				}
-			}
+			private string chapInUser;
 
-			public string DiskType
-			{
-				get
-				{
-					return diskType;
-				}
-				set	
-				{
-					diskType = value;
-				}
-			}
+			private long? size;
 
-			public string Protocol
-			{
-				get
-				{
-					return protocol;
-				}
-				set	
-				{
-					protocol = value;
-				}
-			}
-
-			public long? Size
-			{
-				get
-				{
-					return size;
-				}
-				set	
-				{
-					size = value;
-				}
-			}
-
-			public bool? Enabled
-			{
-				get
-				{
-					return enabled;
-				}
-				set	
-				{
-					enabled = value;
-				}
-			}
-
-			public string State
-			{
-				get
-				{
-					return state;
-				}
-				set	
-				{
-					state = value;
-				}
-			}
-
-			public long? TotalUpload
-			{
-				get
-				{
-					return totalUpload;
-				}
-				set	
-				{
-					totalUpload = value;
-				}
-			}
-
-			public long? TotalDownload
-			{
-				get
-				{
-					return totalDownload;
-				}
-				set	
-				{
-					totalDownload = value;
-				}
-			}
-
-			public string OssBucketName
-			{
-				get
-				{
-					return ossBucketName;
-				}
-				set	
-				{
-					ossBucketName = value;
-				}
-			}
-
-			public string OssEndpoint
-			{
-				get
-				{
-					return ossEndpoint;
-				}
-				set	
-				{
-					ossEndpoint = value;
-				}
-			}
-
-			public bool? OssBucketSsl
-			{
-				get
-				{
-					return ossBucketSsl;
-				}
-				set	
-				{
-					ossBucketSsl = value;
-				}
-			}
-
-			public string LocalPath
-			{
-				get
-				{
-					return localPath;
-				}
-				set	
-				{
-					localPath = value;
-				}
-			}
-
-			public int? ChunkSize
-			{
-				get
-				{
-					return chunkSize;
-				}
-				set	
-				{
-					chunkSize = value;
-				}
-			}
-
-			public string CacheMode
-			{
-				get
-				{
-					return cacheMode;
-				}
-				set	
-				{
-					cacheMode = value;
-				}
-			}
-
-			public string Address
-			{
-				get
-				{
-					return address;
-				}
-				set	
-				{
-					address = value;
-				}
-			}
-
-			public string SerialNumber
-			{
-				get
-				{
-					return serialNumber;
-				}
-				set	
-				{
-					serialNumber = value;
-				}
-			}
-
-			public string IndexId
-			{
-				get
-				{
-					return indexId;
-				}
-				set	
-				{
-					indexId = value;
-				}
-			}
-
-			public string Target
-			{
-				get
-				{
-					return target;
-				}
-				set	
-				{
-					target = value;
-				}
-			}
-
-			public int? Port
-			{
-				get
-				{
-					return port;
-				}
-				set	
-				{
-					port = value;
-				}
-			}
-
-			public int? LunId
-			{
-				get
-				{
-					return lunId;
-				}
-				set	
-				{
-					lunId = value;
-				}
-			}
-
-			public bool? ChapEnabled
-			{
-				get
-				{
-					return chapEnabled;
-				}
-				set	
-				{
-					chapEnabled = value;
-				}
-			}
-
-			public string ChapInUser
-			{
-				get
-				{
-					return chapInUser;
-				}
-				set	
-				{
-					chapInUser = value;
-				}
-			}
-
-			public string ChapOutUser
-			{
-				get
-				{
-					return chapOutUser;
-				}
-				set	
-				{
-					chapOutUser = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "Status")]
 			public int? Status
 			{
 				get
@@ -450,6 +168,280 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "SerialNumber")]
+			public string SerialNumber
+			{
+				get
+				{
+					return serialNumber;
+				}
+				set	
+				{
+					serialNumber = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ChunkSize")]
+			public int? ChunkSize
+			{
+				get
+				{
+					return chunkSize;
+				}
+				set	
+				{
+					chunkSize = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TotalUpload")]
+			public long? TotalUpload
+			{
+				get
+				{
+					return totalUpload;
+				}
+				set	
+				{
+					totalUpload = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DiskType")]
+			public string DiskType
+			{
+				get
+				{
+					return diskType;
+				}
+				set	
+				{
+					diskType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "DiskId")]
+			public string DiskId
+			{
+				get
+				{
+					return diskId;
+				}
+				set	
+				{
+					diskId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Port")]
+			public int? Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "IndexId")]
+			public string IndexId
+			{
+				get
+				{
+					return indexId;
+				}
+				set	
+				{
+					indexId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ChapOutUser")]
+			public string ChapOutUser
+			{
+				get
+				{
+					return chapOutUser;
+				}
+				set	
+				{
+					chapOutUser = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TotalDownload")]
+			public long? TotalDownload
+			{
+				get
+				{
+					return totalDownload;
+				}
+				set	
+				{
+					totalDownload = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ChapEnabled")]
+			public bool? ChapEnabled
+			{
+				get
+				{
+					return chapEnabled;
+				}
+				set	
+				{
+					chapEnabled = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Enabled")]
+			public bool? Enabled
+			{
+				get
+				{
+					return enabled;
+				}
+				set	
+				{
+					enabled = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Address")]
+			public string Address
+			{
+				get
+				{
+					return address;
+				}
+				set	
+				{
+					address = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Name")]
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Target")]
+			public string Target
+			{
+				get
+				{
+					return target;
+				}
+				set	
+				{
+					target = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OssEndpoint")]
+			public string OssEndpoint
+			{
+				get
+				{
+					return ossEndpoint;
+				}
+				set	
+				{
+					ossEndpoint = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OssBucketName")]
+			public string OssBucketName
+			{
+				get
+				{
+					return ossBucketName;
+				}
+				set	
+				{
+					ossBucketName = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "CacheMode")]
+			public string CacheMode
+			{
+				get
+				{
+					return cacheMode;
+				}
+				set	
+				{
+					cacheMode = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "State")]
+			public string State
+			{
+				get
+				{
+					return state;
+				}
+				set	
+				{
+					state = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Protocol")]
+			public string Protocol
+			{
+				get
+				{
+					return protocol;
+				}
+				set	
+				{
+					protocol = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LunId")]
+			public int? LunId
+			{
+				get
+				{
+					return lunId;
+				}
+				set	
+				{
+					lunId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "OssBucketSsl")]
+			public bool? OssBucketSsl
+			{
+				get
+				{
+					return ossBucketSsl;
+				}
+				set	
+				{
+					ossBucketSsl = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "VolumeState")]
 			public int? VolumeState
 			{
 				get
@@ -459,6 +451,45 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				set	
 				{
 					volumeState = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "LocalPath")]
+			public string LocalPath
+			{
+				get
+				{
+					return localPath;
+				}
+				set	
+				{
+					localPath = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "ChapInUser")]
+			public string ChapInUser
+			{
+				get
+				{
+					return chapInUser;
+				}
+				set	
+				{
+					chapInUser = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Size")]
+			public long? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
 				}
 			}
 		}

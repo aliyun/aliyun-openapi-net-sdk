@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			UpgradeGatewayResponse upgradeGatewayResponse = new UpgradeGatewayResponse();
 
 			upgradeGatewayResponse.HttpResponse = _ctx.HttpResponse;
-			upgradeGatewayResponse.RequestId = _ctx.StringValue("UpgradeGateway.RequestId");
-			upgradeGatewayResponse.Success = _ctx.BooleanValue("UpgradeGateway.Success");
-			upgradeGatewayResponse.Code = _ctx.StringValue("UpgradeGateway.Code");
-			upgradeGatewayResponse.Message = _ctx.StringValue("UpgradeGateway.Message");
 			upgradeGatewayResponse.TaskId = _ctx.StringValue("UpgradeGateway.TaskId");
+			upgradeGatewayResponse.Message = _ctx.StringValue("UpgradeGateway.Message");
+			upgradeGatewayResponse.RequestId = _ctx.StringValue("UpgradeGateway.RequestId");
+			upgradeGatewayResponse.Code = _ctx.StringValue("UpgradeGateway.Code");
+			upgradeGatewayResponse.Success = _ctx.BooleanValue("UpgradeGateway.Success");
         
 			return upgradeGatewayResponse;
         }

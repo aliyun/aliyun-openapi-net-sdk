@@ -31,10 +31,10 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			ReleaseServiceResponse releaseServiceResponse = new ReleaseServiceResponse();
 
 			releaseServiceResponse.HttpResponse = _ctx.HttpResponse;
-			releaseServiceResponse.RequestId = _ctx.StringValue("ReleaseService.RequestId");
-			releaseServiceResponse.Success = _ctx.BooleanValue("ReleaseService.Success");
-			releaseServiceResponse.Code = _ctx.StringValue("ReleaseService.Code");
 			releaseServiceResponse.Message = _ctx.StringValue("ReleaseService.Message");
+			releaseServiceResponse.RequestId = _ctx.StringValue("ReleaseService.RequestId");
+			releaseServiceResponse.Code = _ctx.StringValue("ReleaseService.Code");
+			releaseServiceResponse.Success = _ctx.BooleanValue("ReleaseService.Success");
         
 			return releaseServiceResponse;
         }

@@ -32,11 +32,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 
 			activateGatewayResponse.HttpResponse = _ctx.HttpResponse;
 			activateGatewayResponse.RequestId = _ctx.StringValue("ActivateGateway.RequestId");
-			activateGatewayResponse.Success = _ctx.BooleanValue("ActivateGateway.Success");
-			activateGatewayResponse.Code = _ctx.StringValue("ActivateGateway.Code");
 			activateGatewayResponse.Message = _ctx.StringValue("ActivateGateway.Message");
-			activateGatewayResponse.GatewayId = _ctx.StringValue("ActivateGateway.GatewayId");
 			activateGatewayResponse.RegionId = _ctx.StringValue("ActivateGateway.RegionId");
+			activateGatewayResponse.GatewayId = _ctx.StringValue("ActivateGateway.GatewayId");
+			activateGatewayResponse.Code = _ctx.StringValue("ActivateGateway.Code");
+			activateGatewayResponse.Success = _ctx.BooleanValue("ActivateGateway.Success");
         
 			return activateGatewayResponse;
         }

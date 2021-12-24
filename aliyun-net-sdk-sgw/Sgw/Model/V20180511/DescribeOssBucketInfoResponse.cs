@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -27,26 +27,27 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 
 		private string requestId;
 
-		private bool? success;
-
-		private string code;
-
 		private string message;
 
 		private bool? isArchive;
 
-		private bool? isBackToResource;
-
-		private int? pollingInterval;
+		private bool? isFresh;
 
 		private bool? isSupportServerSideEncryption;
-
-		private bool? isFresh;
 
 		private long? storageSize;
 
 		private bool? isVersioning;
 
+		private bool? isBackToResource;
+
+		private int? pollingInterval;
+
+		private string code;
+
+		private bool? success;
+
+		[JsonProperty(PropertyName = "RequestId")]
 		public string RequestId
 		{
 			get
@@ -59,30 +60,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -95,6 +73,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "IsArchive")]
 		public bool? IsArchive
 		{
 			get
@@ -107,42 +86,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public bool? IsBackToResource
-		{
-			get
-			{
-				return isBackToResource;
-			}
-			set	
-			{
-				isBackToResource = value;
-			}
-		}
-
-		public int? PollingInterval
-		{
-			get
-			{
-				return pollingInterval;
-			}
-			set	
-			{
-				pollingInterval = value;
-			}
-		}
-
-		public bool? IsSupportServerSideEncryption
-		{
-			get
-			{
-				return isSupportServerSideEncryption;
-			}
-			set	
-			{
-				isSupportServerSideEncryption = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "IsFresh")]
 		public bool? IsFresh
 		{
 			get
@@ -155,6 +99,20 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "IsSupportServerSideEncryption")]
+		public bool? IsSupportServerSideEncryption
+		{
+			get
+			{
+				return isSupportServerSideEncryption;
+			}
+			set	
+			{
+				isSupportServerSideEncryption = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "StorageSize")]
 		public long? StorageSize
 		{
 			get
@@ -167,6 +125,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "IsVersioning")]
 		public bool? IsVersioning
 		{
 			get
@@ -176,6 +135,58 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set	
 			{
 				isVersioning = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "IsBackToResource")]
+		public bool? IsBackToResource
+		{
+			get
+			{
+				return isBackToResource;
+			}
+			set	
+			{
+				isBackToResource = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PollingInterval")]
+		public int? PollingInterval
+		{
+			get
+			{
+				return pollingInterval;
+			}
+			set	
+			{
+				pollingInterval = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

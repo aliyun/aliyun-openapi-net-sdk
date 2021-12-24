@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			RestartFileSharesResponse restartFileSharesResponse = new RestartFileSharesResponse();
 
 			restartFileSharesResponse.HttpResponse = _ctx.HttpResponse;
-			restartFileSharesResponse.RequestId = _ctx.StringValue("RestartFileShares.RequestId");
-			restartFileSharesResponse.Success = _ctx.BooleanValue("RestartFileShares.Success");
-			restartFileSharesResponse.Code = _ctx.StringValue("RestartFileShares.Code");
-			restartFileSharesResponse.Message = _ctx.StringValue("RestartFileShares.Message");
 			restartFileSharesResponse.TaskId = _ctx.StringValue("RestartFileShares.TaskId");
+			restartFileSharesResponse.Message = _ctx.StringValue("RestartFileShares.Message");
+			restartFileSharesResponse.RequestId = _ctx.StringValue("RestartFileShares.RequestId");
+			restartFileSharesResponse.Code = _ctx.StringValue("RestartFileShares.Code");
+			restartFileSharesResponse.Success = _ctx.BooleanValue("RestartFileShares.Success");
         
 			return restartFileSharesResponse;
         }

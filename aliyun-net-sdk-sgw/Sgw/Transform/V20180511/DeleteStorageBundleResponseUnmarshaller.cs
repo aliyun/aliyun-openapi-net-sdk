@@ -31,10 +31,10 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DeleteStorageBundleResponse deleteStorageBundleResponse = new DeleteStorageBundleResponse();
 
 			deleteStorageBundleResponse.HttpResponse = _ctx.HttpResponse;
-			deleteStorageBundleResponse.RequestId = _ctx.StringValue("DeleteStorageBundle.RequestId");
-			deleteStorageBundleResponse.Success = _ctx.BooleanValue("DeleteStorageBundle.Success");
-			deleteStorageBundleResponse.Code = _ctx.StringValue("DeleteStorageBundle.Code");
 			deleteStorageBundleResponse.Message = _ctx.StringValue("DeleteStorageBundle.Message");
+			deleteStorageBundleResponse.RequestId = _ctx.StringValue("DeleteStorageBundle.RequestId");
+			deleteStorageBundleResponse.Code = _ctx.StringValue("DeleteStorageBundle.Code");
+			deleteStorageBundleResponse.Success = _ctx.BooleanValue("DeleteStorageBundle.Success");
         
 			return deleteStorageBundleResponse;
         }

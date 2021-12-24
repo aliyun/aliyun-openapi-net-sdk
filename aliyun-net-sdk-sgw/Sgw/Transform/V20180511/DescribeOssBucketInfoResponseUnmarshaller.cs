@@ -32,16 +32,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 
 			describeOssBucketInfoResponse.HttpResponse = _ctx.HttpResponse;
 			describeOssBucketInfoResponse.RequestId = _ctx.StringValue("DescribeOssBucketInfo.RequestId");
-			describeOssBucketInfoResponse.Success = _ctx.BooleanValue("DescribeOssBucketInfo.Success");
-			describeOssBucketInfoResponse.Code = _ctx.StringValue("DescribeOssBucketInfo.Code");
 			describeOssBucketInfoResponse.Message = _ctx.StringValue("DescribeOssBucketInfo.Message");
 			describeOssBucketInfoResponse.IsArchive = _ctx.BooleanValue("DescribeOssBucketInfo.IsArchive");
-			describeOssBucketInfoResponse.IsBackToResource = _ctx.BooleanValue("DescribeOssBucketInfo.IsBackToResource");
-			describeOssBucketInfoResponse.PollingInterval = _ctx.IntegerValue("DescribeOssBucketInfo.PollingInterval");
-			describeOssBucketInfoResponse.IsSupportServerSideEncryption = _ctx.BooleanValue("DescribeOssBucketInfo.IsSupportServerSideEncryption");
 			describeOssBucketInfoResponse.IsFresh = _ctx.BooleanValue("DescribeOssBucketInfo.IsFresh");
+			describeOssBucketInfoResponse.IsSupportServerSideEncryption = _ctx.BooleanValue("DescribeOssBucketInfo.IsSupportServerSideEncryption");
 			describeOssBucketInfoResponse.StorageSize = _ctx.LongValue("DescribeOssBucketInfo.StorageSize");
 			describeOssBucketInfoResponse.IsVersioning = _ctx.BooleanValue("DescribeOssBucketInfo.IsVersioning");
+			describeOssBucketInfoResponse.IsBackToResource = _ctx.BooleanValue("DescribeOssBucketInfo.IsBackToResource");
+			describeOssBucketInfoResponse.PollingInterval = _ctx.IntegerValue("DescribeOssBucketInfo.PollingInterval");
+			describeOssBucketInfoResponse.Code = _ctx.StringValue("DescribeOssBucketInfo.Code");
+			describeOssBucketInfoResponse.Success = _ctx.BooleanValue("DescribeOssBucketInfo.Success");
         
 			return describeOssBucketInfoResponse;
         }

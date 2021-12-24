@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DeleteGatewayFileSharesResponse deleteGatewayFileSharesResponse = new DeleteGatewayFileSharesResponse();
 
 			deleteGatewayFileSharesResponse.HttpResponse = _ctx.HttpResponse;
-			deleteGatewayFileSharesResponse.RequestId = _ctx.StringValue("DeleteGatewayFileShares.RequestId");
-			deleteGatewayFileSharesResponse.Success = _ctx.BooleanValue("DeleteGatewayFileShares.Success");
-			deleteGatewayFileSharesResponse.Code = _ctx.StringValue("DeleteGatewayFileShares.Code");
-			deleteGatewayFileSharesResponse.Message = _ctx.StringValue("DeleteGatewayFileShares.Message");
 			deleteGatewayFileSharesResponse.TaskId = _ctx.StringValue("DeleteGatewayFileShares.TaskId");
+			deleteGatewayFileSharesResponse.Message = _ctx.StringValue("DeleteGatewayFileShares.Message");
+			deleteGatewayFileSharesResponse.RequestId = _ctx.StringValue("DeleteGatewayFileShares.RequestId");
+			deleteGatewayFileSharesResponse.Code = _ctx.StringValue("DeleteGatewayFileShares.Code");
+			deleteGatewayFileSharesResponse.Success = _ctx.BooleanValue("DeleteGatewayFileShares.Success");
         
 			return deleteGatewayFileSharesResponse;
         }

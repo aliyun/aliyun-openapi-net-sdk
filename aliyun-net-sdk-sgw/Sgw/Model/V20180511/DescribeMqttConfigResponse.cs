@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,70 +25,35 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeMqttConfigResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
-		private string code;
-
 		private string message;
+
+		private string requestId;
 
 		private bool? isEnabled;
 
-		private string brokerUrl;
-
 		private string internalBrokerUrl;
 
-		private string publishTopic;
+		private string code;
 
-		private string subscribeTopic;
+		private bool? success;
+
+		private string brokerUrl;
 
 		private string groupId;
 
 		private string mqttInstanceId;
 
-		private string authType;
-
 		private string username;
+
+		private string subscribeTopic;
+
+		private string publishTopic;
+
+		private string authType;
 
 		private string password;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -101,6 +66,20 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "IsEnabled")]
 		public bool? IsEnabled
 		{
 			get
@@ -113,18 +92,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public string BrokerUrl
-		{
-			get
-			{
-				return brokerUrl;
-			}
-			set	
-			{
-				brokerUrl = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "InternalBrokerUrl")]
 		public string InternalBrokerUrl
 		{
 			get
@@ -137,30 +105,46 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public string PublishTopic
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
 		{
 			get
 			{
-				return publishTopic;
+				return code;
 			}
 			set	
 			{
-				publishTopic = value;
+				code = value;
 			}
 		}
 
-		public string SubscribeTopic
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
 		{
 			get
 			{
-				return subscribeTopic;
+				return success;
 			}
 			set	
 			{
-				subscribeTopic = value;
+				success = value;
 			}
 		}
 
+		[JsonProperty(PropertyName = "BrokerUrl")]
+		public string BrokerUrl
+		{
+			get
+			{
+				return brokerUrl;
+			}
+			set	
+			{
+				brokerUrl = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "GroupId")]
 		public string GroupId
 		{
 			get
@@ -173,6 +157,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "MqttInstanceId")]
 		public string MqttInstanceId
 		{
 			get
@@ -185,18 +170,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public string AuthType
-		{
-			get
-			{
-				return authType;
-			}
-			set	
-			{
-				authType = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Username")]
 		public string Username
 		{
 			get
@@ -209,6 +183,46 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "SubscribeTopic")]
+		public string SubscribeTopic
+		{
+			get
+			{
+				return subscribeTopic;
+			}
+			set	
+			{
+				subscribeTopic = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "PublishTopic")]
+		public string PublishTopic
+		{
+			get
+			{
+				return publishTopic;
+			}
+			set	
+			{
+				publishTopic = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "AuthType")]
+		public string AuthType
+		{
+			get
+			{
+				return authType;
+			}
+			set	
+			{
+				authType = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Password")]
 		public string Password
 		{
 			get

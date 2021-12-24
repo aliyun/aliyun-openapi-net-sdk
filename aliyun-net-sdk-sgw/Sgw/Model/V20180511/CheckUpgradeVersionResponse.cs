@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -27,15 +27,15 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 
 		private string requestId;
 
-		private bool? success;
-
-		private string code;
-
 		private string message;
+
+		private string latestVersion;
 
 		private string option;
 
-		private string latestVersion;
+		private string code;
+
+		private bool? success;
 
 		private List<CheckUpgradeVersion_Patch> patches;
 
@@ -51,30 +51,6 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public string Message
 		{
 			get
@@ -84,6 +60,18 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string LatestVersion
+		{
+			get
+			{
+				return latestVersion;
+			}
+			set	
+			{
+				latestVersion = value;
 			}
 		}
 
@@ -99,15 +87,27 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public string LatestVersion
+		public string Code
 		{
 			get
 			{
-				return latestVersion;
+				return code;
 			}
 			set	
 			{
-				latestVersion = value;
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 
@@ -126,13 +126,37 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 		public class CheckUpgradeVersion_Patch
 		{
 
+			private string internalUrl;
+
+			private string url;
+
 			private string name;
 
 			private string mD5;
 
-			private string url;
+			public string InternalUrl
+			{
+				get
+				{
+					return internalUrl;
+				}
+				set	
+				{
+					internalUrl = value;
+				}
+			}
 
-			private string internalUrl;
+			public string Url
+			{
+				get
+				{
+					return url;
+				}
+				set	
+				{
+					url = value;
+				}
+			}
 
 			public string Name
 			{
@@ -155,30 +179,6 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				set	
 				{
 					mD5 = value;
-				}
-			}
-
-			public string Url
-			{
-				get
-				{
-					return url;
-				}
-				set	
-				{
-					url = value;
-				}
-			}
-
-			public string InternalUrl
-			{
-				get
-				{
-					return internalUrl;
-				}
-				set	
-				{
-					internalUrl = value;
 				}
 			}
 		}

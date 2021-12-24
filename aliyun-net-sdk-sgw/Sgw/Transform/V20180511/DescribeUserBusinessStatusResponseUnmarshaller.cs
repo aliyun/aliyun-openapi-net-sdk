@@ -31,14 +31,14 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeUserBusinessStatusResponse describeUserBusinessStatusResponse = new DescribeUserBusinessStatusResponse();
 
 			describeUserBusinessStatusResponse.HttpResponse = _ctx.HttpResponse;
-			describeUserBusinessStatusResponse.RequestId = _ctx.StringValue("DescribeUserBusinessStatus.RequestId");
-			describeUserBusinessStatusResponse.Success = _ctx.BooleanValue("DescribeUserBusinessStatus.Success");
-			describeUserBusinessStatusResponse.Code = _ctx.StringValue("DescribeUserBusinessStatus.Code");
-			describeUserBusinessStatusResponse.Message = _ctx.StringValue("DescribeUserBusinessStatus.Message");
-			describeUserBusinessStatusResponse.IsEnabled = _ctx.BooleanValue("DescribeUserBusinessStatus.IsEnabled");
-			describeUserBusinessStatusResponse.IsIndebted = _ctx.BooleanValue("DescribeUserBusinessStatus.IsIndebted");
 			describeUserBusinessStatusResponse.IsIndebtedOverdue = _ctx.BooleanValue("DescribeUserBusinessStatus.IsIndebtedOverdue");
 			describeUserBusinessStatusResponse.IsRiskControl = _ctx.BooleanValue("DescribeUserBusinessStatus.IsRiskControl");
+			describeUserBusinessStatusResponse.RequestId = _ctx.StringValue("DescribeUserBusinessStatus.RequestId");
+			describeUserBusinessStatusResponse.Message = _ctx.StringValue("DescribeUserBusinessStatus.Message");
+			describeUserBusinessStatusResponse.IsIndebted = _ctx.BooleanValue("DescribeUserBusinessStatus.IsIndebted");
+			describeUserBusinessStatusResponse.IsEnabled = _ctx.BooleanValue("DescribeUserBusinessStatus.IsEnabled");
+			describeUserBusinessStatusResponse.Code = _ctx.StringValue("DescribeUserBusinessStatus.Code");
+			describeUserBusinessStatusResponse.Success = _ctx.BooleanValue("DescribeUserBusinessStatus.Success");
         
 			return describeUserBusinessStatusResponse;
         }

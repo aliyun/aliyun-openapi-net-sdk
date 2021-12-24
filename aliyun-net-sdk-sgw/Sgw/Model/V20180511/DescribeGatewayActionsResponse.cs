@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,52 +25,17 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeGatewayActionsResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string message;
 
-		private bool? success;
+		private string requestId;
 
 		private string code;
 
-		private string message;
+		private bool? success;
 
 		private List<DescribeGatewayActions_Action> actions;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -83,6 +48,46 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Actions")]
 		public List<DescribeGatewayActions_Action> Actions
 		{
 			get
@@ -98,82 +103,23 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 		public class DescribeGatewayActions_Action
 		{
 
+			private string smbUser;
+
+			private string adLdap;
+
 			private string gatewayId;
 
-			private string self;
-
 			private string monitor;
+
+			private string self;
 
 			private string disk;
 
 			private string cache;
 
-			private string smbUser;
-
-			private string adLdap;
-
 			private string target;
 
-			public string GatewayId
-			{
-				get
-				{
-					return gatewayId;
-				}
-				set	
-				{
-					gatewayId = value;
-				}
-			}
-
-			public string Self
-			{
-				get
-				{
-					return self;
-				}
-				set	
-				{
-					self = value;
-				}
-			}
-
-			public string Monitor
-			{
-				get
-				{
-					return monitor;
-				}
-				set	
-				{
-					monitor = value;
-				}
-			}
-
-			public string Disk
-			{
-				get
-				{
-					return disk;
-				}
-				set	
-				{
-					disk = value;
-				}
-			}
-
-			public string Cache
-			{
-				get
-				{
-					return cache;
-				}
-				set	
-				{
-					cache = value;
-				}
-			}
-
+			[JsonProperty(PropertyName = "SmbUser")]
 			public string SmbUser
 			{
 				get
@@ -186,6 +132,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "AdLdap")]
 			public string AdLdap
 			{
 				get
@@ -198,6 +145,72 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 				}
 			}
 
+			[JsonProperty(PropertyName = "GatewayId")]
+			public string GatewayId
+			{
+				get
+				{
+					return gatewayId;
+				}
+				set	
+				{
+					gatewayId = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Monitor")]
+			public string Monitor
+			{
+				get
+				{
+					return monitor;
+				}
+				set	
+				{
+					monitor = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Self")]
+			public string Self
+			{
+				get
+				{
+					return self;
+				}
+				set	
+				{
+					self = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Disk")]
+			public string Disk
+			{
+				get
+				{
+					return disk;
+				}
+				set	
+				{
+					disk = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Cache")]
+			public string Cache
+			{
+				get
+				{
+					return cache;
+				}
+				set	
+				{
+					cache = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "Target")]
 			public string Target
 			{
 				get

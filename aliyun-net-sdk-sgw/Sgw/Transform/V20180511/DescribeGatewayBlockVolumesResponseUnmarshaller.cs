@@ -31,40 +31,40 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeGatewayBlockVolumesResponse describeGatewayBlockVolumesResponse = new DescribeGatewayBlockVolumesResponse();
 
 			describeGatewayBlockVolumesResponse.HttpResponse = _ctx.HttpResponse;
-			describeGatewayBlockVolumesResponse.RequestId = _ctx.StringValue("DescribeGatewayBlockVolumes.RequestId");
-			describeGatewayBlockVolumesResponse.Success = _ctx.BooleanValue("DescribeGatewayBlockVolumes.Success");
-			describeGatewayBlockVolumesResponse.Code = _ctx.StringValue("DescribeGatewayBlockVolumes.Code");
 			describeGatewayBlockVolumesResponse.Message = _ctx.StringValue("DescribeGatewayBlockVolumes.Message");
+			describeGatewayBlockVolumesResponse.RequestId = _ctx.StringValue("DescribeGatewayBlockVolumes.RequestId");
+			describeGatewayBlockVolumesResponse.Code = _ctx.StringValue("DescribeGatewayBlockVolumes.Code");
+			describeGatewayBlockVolumesResponse.Success = _ctx.BooleanValue("DescribeGatewayBlockVolumes.Success");
 
 			List<DescribeGatewayBlockVolumesResponse.DescribeGatewayBlockVolumes_BlockVolume> describeGatewayBlockVolumesResponse_blockVolumes = new List<DescribeGatewayBlockVolumesResponse.DescribeGatewayBlockVolumes_BlockVolume>();
 			for (int i = 0; i < _ctx.Length("DescribeGatewayBlockVolumes.BlockVolumes.Length"); i++) {
 				DescribeGatewayBlockVolumesResponse.DescribeGatewayBlockVolumes_BlockVolume blockVolume = new DescribeGatewayBlockVolumesResponse.DescribeGatewayBlockVolumes_BlockVolume();
-				blockVolume.Name = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].Name");
-				blockVolume.DiskId = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].DiskId");
-				blockVolume.DiskType = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].DiskType");
-				blockVolume.Protocol = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].Protocol");
-				blockVolume.Size = _ctx.LongValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].Size");
-				blockVolume.Enabled = _ctx.BooleanValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].Enabled");
-				blockVolume.State = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].State");
-				blockVolume.TotalUpload = _ctx.LongValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].TotalUpload");
-				blockVolume.TotalDownload = _ctx.LongValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].TotalDownload");
-				blockVolume.OssBucketName = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].OssBucketName");
-				blockVolume.OssEndpoint = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].OssEndpoint");
-				blockVolume.OssBucketSsl = _ctx.BooleanValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].OssBucketSsl");
-				blockVolume.LocalPath = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].LocalPath");
-				blockVolume.ChunkSize = _ctx.IntegerValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].ChunkSize");
-				blockVolume.CacheMode = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].CacheMode");
-				blockVolume.Address = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].Address");
-				blockVolume.SerialNumber = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].SerialNumber");
-				blockVolume.IndexId = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].IndexId");
-				blockVolume.Target = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].Target");
-				blockVolume.Port = _ctx.IntegerValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].Port");
-				blockVolume.LunId = _ctx.IntegerValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].LunId");
-				blockVolume.ChapEnabled = _ctx.BooleanValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].ChapEnabled");
-				blockVolume.ChapInUser = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].ChapInUser");
-				blockVolume.ChapOutUser = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].ChapOutUser");
 				blockVolume.Status = _ctx.IntegerValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].Status");
+				blockVolume.SerialNumber = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].SerialNumber");
+				blockVolume.ChunkSize = _ctx.IntegerValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].ChunkSize");
+				blockVolume.TotalUpload = _ctx.LongValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].TotalUpload");
+				blockVolume.DiskType = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].DiskType");
+				blockVolume.DiskId = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].DiskId");
+				blockVolume.Port = _ctx.IntegerValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].Port");
+				blockVolume.IndexId = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].IndexId");
+				blockVolume.ChapOutUser = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].ChapOutUser");
+				blockVolume.TotalDownload = _ctx.LongValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].TotalDownload");
+				blockVolume.ChapEnabled = _ctx.BooleanValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].ChapEnabled");
+				blockVolume.Enabled = _ctx.BooleanValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].Enabled");
+				blockVolume.Address = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].Address");
+				blockVolume.Name = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].Name");
+				blockVolume.Target = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].Target");
+				blockVolume.OssEndpoint = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].OssEndpoint");
+				blockVolume.OssBucketName = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].OssBucketName");
+				blockVolume.CacheMode = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].CacheMode");
+				blockVolume.State = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].State");
+				blockVolume.Protocol = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].Protocol");
+				blockVolume.LunId = _ctx.IntegerValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].LunId");
+				blockVolume.OssBucketSsl = _ctx.BooleanValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].OssBucketSsl");
 				blockVolume.VolumeState = _ctx.IntegerValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].VolumeState");
+				blockVolume.LocalPath = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].LocalPath");
+				blockVolume.ChapInUser = _ctx.StringValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].ChapInUser");
+				blockVolume.Size = _ctx.LongValue("DescribeGatewayBlockVolumes.BlockVolumes["+ i +"].Size");
 
 				describeGatewayBlockVolumesResponse_blockVolumes.Add(blockVolume);
 			}

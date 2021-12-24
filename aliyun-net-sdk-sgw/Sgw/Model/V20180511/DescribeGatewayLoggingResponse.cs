@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,80 +25,21 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeGatewayLoggingResponse : AcsResponse
 	{
 
+		private string slsProject;
+
 		private string requestId;
-
-		private bool? success;
-
-		private string code;
 
 		private string message;
 
 		private string gatewayLoggingStatus;
 
-		private string slsProject;
-
 		private string slsLogstore;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string code;
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
+		private bool? success;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public string GatewayLoggingStatus
-		{
-			get
-			{
-				return gatewayLoggingStatus;
-			}
-			set	
-			{
-				gatewayLoggingStatus = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "SlsProject")]
 		public string SlsProject
 		{
 			get
@@ -111,6 +52,46 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Message")]
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "GatewayLoggingStatus")]
+		public string GatewayLoggingStatus
+		{
+			get
+			{
+				return gatewayLoggingStatus;
+			}
+			set	
+			{
+				gatewayLoggingStatus = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "SlsLogstore")]
 		public string SlsLogstore
 		{
 			get
@@ -120,6 +101,32 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set	
 			{
 				slsLogstore = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

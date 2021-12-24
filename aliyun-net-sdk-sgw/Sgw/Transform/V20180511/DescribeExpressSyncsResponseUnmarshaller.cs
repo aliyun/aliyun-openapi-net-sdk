@@ -31,21 +31,21 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeExpressSyncsResponse describeExpressSyncsResponse = new DescribeExpressSyncsResponse();
 
 			describeExpressSyncsResponse.HttpResponse = _ctx.HttpResponse;
-			describeExpressSyncsResponse.RequestId = _ctx.StringValue("DescribeExpressSyncs.RequestId");
-			describeExpressSyncsResponse.Success = _ctx.BooleanValue("DescribeExpressSyncs.Success");
-			describeExpressSyncsResponse.Code = _ctx.StringValue("DescribeExpressSyncs.Code");
 			describeExpressSyncsResponse.Message = _ctx.StringValue("DescribeExpressSyncs.Message");
+			describeExpressSyncsResponse.RequestId = _ctx.StringValue("DescribeExpressSyncs.RequestId");
+			describeExpressSyncsResponse.Code = _ctx.StringValue("DescribeExpressSyncs.Code");
+			describeExpressSyncsResponse.Success = _ctx.BooleanValue("DescribeExpressSyncs.Success");
 
 			List<DescribeExpressSyncsResponse.DescribeExpressSyncs_ExpressSync> describeExpressSyncsResponse_expressSyncs = new List<DescribeExpressSyncsResponse.DescribeExpressSyncs_ExpressSync>();
 			for (int i = 0; i < _ctx.Length("DescribeExpressSyncs.ExpressSyncs.Length"); i++) {
 				DescribeExpressSyncsResponse.DescribeExpressSyncs_ExpressSync expressSync = new DescribeExpressSyncsResponse.DescribeExpressSyncs_ExpressSync();
 				expressSync.ExpressSyncId = _ctx.StringValue("DescribeExpressSyncs.ExpressSyncs["+ i +"].ExpressSyncId");
-				expressSync.Name = _ctx.StringValue("DescribeExpressSyncs.ExpressSyncs["+ i +"].Name");
 				expressSync.Description = _ctx.StringValue("DescribeExpressSyncs.ExpressSyncs["+ i +"].Description");
-				expressSync.BucketRegion = _ctx.StringValue("DescribeExpressSyncs.ExpressSyncs["+ i +"].BucketRegion");
 				expressSync.BucketName = _ctx.StringValue("DescribeExpressSyncs.ExpressSyncs["+ i +"].BucketName");
+				expressSync.Name = _ctx.StringValue("DescribeExpressSyncs.ExpressSyncs["+ i +"].Name");
 				expressSync.BucketPrefix = _ctx.StringValue("DescribeExpressSyncs.ExpressSyncs["+ i +"].BucketPrefix");
 				expressSync.MnsTopic = _ctx.StringValue("DescribeExpressSyncs.ExpressSyncs["+ i +"].MnsTopic");
+				expressSync.BucketRegion = _ctx.StringValue("DescribeExpressSyncs.ExpressSyncs["+ i +"].BucketRegion");
 
 				describeExpressSyncsResponse_expressSyncs.Add(expressSync);
 			}

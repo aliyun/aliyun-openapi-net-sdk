@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DeleteGatewayResponse deleteGatewayResponse = new DeleteGatewayResponse();
 
 			deleteGatewayResponse.HttpResponse = _ctx.HttpResponse;
-			deleteGatewayResponse.RequestId = _ctx.StringValue("DeleteGateway.RequestId");
-			deleteGatewayResponse.Success = _ctx.BooleanValue("DeleteGateway.Success");
-			deleteGatewayResponse.Code = _ctx.StringValue("DeleteGateway.Code");
-			deleteGatewayResponse.Message = _ctx.StringValue("DeleteGateway.Message");
 			deleteGatewayResponse.TaskId = _ctx.StringValue("DeleteGateway.TaskId");
+			deleteGatewayResponse.Message = _ctx.StringValue("DeleteGateway.Message");
+			deleteGatewayResponse.RequestId = _ctx.StringValue("DeleteGateway.RequestId");
+			deleteGatewayResponse.Code = _ctx.StringValue("DeleteGateway.Code");
+			deleteGatewayResponse.Success = _ctx.BooleanValue("DeleteGateway.Success");
         
 			return deleteGatewayResponse;
         }

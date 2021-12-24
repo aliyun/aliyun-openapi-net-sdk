@@ -31,10 +31,10 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeOssBucketsResponse describeOssBucketsResponse = new DescribeOssBucketsResponse();
 
 			describeOssBucketsResponse.HttpResponse = _ctx.HttpResponse;
-			describeOssBucketsResponse.RequestId = _ctx.StringValue("DescribeOssBuckets.RequestId");
-			describeOssBucketsResponse.Success = _ctx.BooleanValue("DescribeOssBuckets.Success");
-			describeOssBucketsResponse.Code = _ctx.StringValue("DescribeOssBuckets.Code");
 			describeOssBucketsResponse.Message = _ctx.StringValue("DescribeOssBuckets.Message");
+			describeOssBucketsResponse.RequestId = _ctx.StringValue("DescribeOssBuckets.RequestId");
+			describeOssBucketsResponse.Code = _ctx.StringValue("DescribeOssBuckets.Code");
+			describeOssBucketsResponse.Success = _ctx.BooleanValue("DescribeOssBuckets.Success");
 
 			List<DescribeOssBucketsResponse.DescribeOssBuckets_Bucket> describeOssBucketsResponse_buckets = new List<DescribeOssBucketsResponse.DescribeOssBuckets_Bucket>();
 			for (int i = 0; i < _ctx.Length("DescribeOssBuckets.Buckets.Length"); i++) {

@@ -31,16 +31,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			GenerateStsTokenResponse generateStsTokenResponse = new GenerateStsTokenResponse();
 
 			generateStsTokenResponse.HttpResponse = _ctx.HttpResponse;
+			generateStsTokenResponse.SecurityToken = _ctx.StringValue("GenerateStsToken.SecurityToken");
 			generateStsTokenResponse.RequestId = _ctx.StringValue("GenerateStsToken.RequestId");
-			generateStsTokenResponse.Success = _ctx.BooleanValue("GenerateStsToken.Success");
-			generateStsTokenResponse.Code = _ctx.StringValue("GenerateStsToken.Code");
+			generateStsTokenResponse.SupportBundleTarget = _ctx.StringValue("GenerateStsToken.SupportBundleTarget");
 			generateStsTokenResponse.Message = _ctx.StringValue("GenerateStsToken.Message");
 			generateStsTokenResponse.AccessKeyId = _ctx.StringValue("GenerateStsToken.AccessKeyId");
 			generateStsTokenResponse.AccessKeySecret = _ctx.StringValue("GenerateStsToken.AccessKeySecret");
 			generateStsTokenResponse.Expiration = _ctx.StringValue("GenerateStsToken.Expiration");
-			generateStsTokenResponse.SecurityToken = _ctx.StringValue("GenerateStsToken.SecurityToken");
-			generateStsTokenResponse.SupportBundleTarget = _ctx.StringValue("GenerateStsToken.SupportBundleTarget");
 			generateStsTokenResponse.Environment = _ctx.StringValue("GenerateStsToken.Environment");
+			generateStsTokenResponse.Code = _ctx.StringValue("GenerateStsToken.Code");
+			generateStsTokenResponse.Success = _ctx.BooleanValue("GenerateStsToken.Success");
         
 			return generateStsTokenResponse;
         }

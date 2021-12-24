@@ -31,23 +31,23 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeGatewayImagesResponse describeGatewayImagesResponse = new DescribeGatewayImagesResponse();
 
 			describeGatewayImagesResponse.HttpResponse = _ctx.HttpResponse;
-			describeGatewayImagesResponse.RequestId = _ctx.StringValue("DescribeGatewayImages.RequestId");
-			describeGatewayImagesResponse.Success = _ctx.BooleanValue("DescribeGatewayImages.Success");
-			describeGatewayImagesResponse.Code = _ctx.StringValue("DescribeGatewayImages.Code");
 			describeGatewayImagesResponse.Message = _ctx.StringValue("DescribeGatewayImages.Message");
+			describeGatewayImagesResponse.RequestId = _ctx.StringValue("DescribeGatewayImages.RequestId");
+			describeGatewayImagesResponse.Code = _ctx.StringValue("DescribeGatewayImages.Code");
+			describeGatewayImagesResponse.Success = _ctx.BooleanValue("DescribeGatewayImages.Success");
 
 			List<DescribeGatewayImagesResponse.DescribeGatewayImages_Image> describeGatewayImagesResponse_images = new List<DescribeGatewayImagesResponse.DescribeGatewayImages_Image>();
 			for (int i = 0; i < _ctx.Length("DescribeGatewayImages.Images.Length"); i++) {
 				DescribeGatewayImagesResponse.DescribeGatewayImages_Image image = new DescribeGatewayImagesResponse.DescribeGatewayImages_Image();
-				image.Name = _ctx.StringValue("DescribeGatewayImages.Images["+ i +"].Name");
-				image.Description = _ctx.StringValue("DescribeGatewayImages.Images["+ i +"].Description");
-				image.Size = _ctx.LongValue("DescribeGatewayImages.Images["+ i +"].Size");
-				image.ModifiedDate = _ctx.StringValue("DescribeGatewayImages.Images["+ i +"].ModifiedDate");
-				image.Version = _ctx.StringValue("DescribeGatewayImages.Images["+ i +"].Version");
-				image.Title = _ctx.StringValue("DescribeGatewayImages.Images["+ i +"].Title");
 				image.Type = _ctx.StringValue("DescribeGatewayImages.Images["+ i +"].Type");
-				image.MD5 = _ctx.StringValue("DescribeGatewayImages.Images["+ i +"].MD5");
+				image.Description = _ctx.StringValue("DescribeGatewayImages.Images["+ i +"].Description");
+				image.Version = _ctx.StringValue("DescribeGatewayImages.Images["+ i +"].Version");
+				image.Size = _ctx.LongValue("DescribeGatewayImages.Images["+ i +"].Size");
 				image.Url = _ctx.StringValue("DescribeGatewayImages.Images["+ i +"].Url");
+				image.Title = _ctx.StringValue("DescribeGatewayImages.Images["+ i +"].Title");
+				image.MD5 = _ctx.StringValue("DescribeGatewayImages.Images["+ i +"].MD5");
+				image.Name = _ctx.StringValue("DescribeGatewayImages.Images["+ i +"].Name");
+				image.ModifiedDate = _ctx.StringValue("DescribeGatewayImages.Images["+ i +"].ModifiedDate");
 
 				describeGatewayImagesResponse_images.Add(image);
 			}

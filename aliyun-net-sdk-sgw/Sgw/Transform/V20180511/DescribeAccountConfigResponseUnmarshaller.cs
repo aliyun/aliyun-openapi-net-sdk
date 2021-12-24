@@ -32,12 +32,12 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 
 			describeAccountConfigResponse.HttpResponse = _ctx.HttpResponse;
 			describeAccountConfigResponse.RequestId = _ctx.StringValue("DescribeAccountConfig.RequestId");
-			describeAccountConfigResponse.Success = _ctx.BooleanValue("DescribeAccountConfig.Success");
-			describeAccountConfigResponse.Code = _ctx.StringValue("DescribeAccountConfig.Code");
 			describeAccountConfigResponse.Message = _ctx.StringValue("DescribeAccountConfig.Message");
 			describeAccountConfigResponse.IsSupportServerSideEncryption = _ctx.BooleanValue("DescribeAccountConfig.IsSupportServerSideEncryption");
 			describeAccountConfigResponse.IsSupportClientSideEncryption = _ctx.BooleanValue("DescribeAccountConfig.IsSupportClientSideEncryption");
+			describeAccountConfigResponse.Code = _ctx.StringValue("DescribeAccountConfig.Code");
 			describeAccountConfigResponse.IsSupportGatewayLogging = _ctx.BooleanValue("DescribeAccountConfig.IsSupportGatewayLogging");
+			describeAccountConfigResponse.Success = _ctx.BooleanValue("DescribeAccountConfig.Success");
 			describeAccountConfigResponse.IsSupportElasticGatewayBeta = _ctx.BooleanValue("DescribeAccountConfig.IsSupportElasticGatewayBeta");
         
 			return describeAccountConfigResponse;

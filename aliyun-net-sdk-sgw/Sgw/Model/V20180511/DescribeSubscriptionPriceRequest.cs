@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -52,6 +53,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 
 		private long? cacheCloudEfficiencySize;
 
+		[JsonProperty(PropertyName = "GatewayClass")]
 		public string GatewayClass
 		{
 			get
@@ -65,6 +67,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "CacheSSDSize")]
 		public long? CacheSSDSize
 		{
 			get
@@ -78,6 +81,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "PeriodUnit")]
 		public string PeriodUnit
 		{
 			get
@@ -91,6 +95,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "PeriodQuantity")]
 		public int? PeriodQuantity
 		{
 			get
@@ -104,6 +109,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "SecurityToken")]
 		public string SecurityToken
 		{
 			get
@@ -117,6 +123,7 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
+		[JsonProperty(PropertyName = "CacheCloudEfficiencySize")]
 		public long? CacheCloudEfficiencySize
 		{
 			get

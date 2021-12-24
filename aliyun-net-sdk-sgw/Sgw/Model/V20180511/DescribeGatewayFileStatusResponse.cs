@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,52 +25,30 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class DescribeGatewayFileStatusResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
-
-		private string code;
+		private string status;
 
 		private string message;
 
-		private string status;
+		private string requestId;
 
-		public string RequestId
+		private string code;
+
+		private bool? success;
+
+		[JsonProperty(PropertyName = "Status")]
+		public string Status
 		{
 			get
 			{
-				return requestId;
+				return status;
 			}
 			set	
 			{
-				requestId = value;
+				status = value;
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
+		[JsonProperty(PropertyName = "Message")]
 		public string Message
 		{
 			get
@@ -83,15 +61,42 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public string Status
+		[JsonProperty(PropertyName = "RequestId")]
+		public string RequestId
 		{
 			get
 			{
-				return status;
+				return requestId;
 			}
 			set	
 			{
-				status = value;
+				requestId = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Code")]
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		[JsonProperty(PropertyName = "Success")]
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

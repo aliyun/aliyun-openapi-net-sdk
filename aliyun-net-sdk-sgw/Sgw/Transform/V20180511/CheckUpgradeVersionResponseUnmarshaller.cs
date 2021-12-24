@@ -32,19 +32,19 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 
 			checkUpgradeVersionResponse.HttpResponse = _ctx.HttpResponse;
 			checkUpgradeVersionResponse.RequestId = _ctx.StringValue("CheckUpgradeVersion.RequestId");
-			checkUpgradeVersionResponse.Success = _ctx.BooleanValue("CheckUpgradeVersion.Success");
-			checkUpgradeVersionResponse.Code = _ctx.StringValue("CheckUpgradeVersion.Code");
 			checkUpgradeVersionResponse.Message = _ctx.StringValue("CheckUpgradeVersion.Message");
-			checkUpgradeVersionResponse.Option = _ctx.StringValue("CheckUpgradeVersion.Option");
 			checkUpgradeVersionResponse.LatestVersion = _ctx.StringValue("CheckUpgradeVersion.LatestVersion");
+			checkUpgradeVersionResponse.Option = _ctx.StringValue("CheckUpgradeVersion.Option");
+			checkUpgradeVersionResponse.Code = _ctx.StringValue("CheckUpgradeVersion.Code");
+			checkUpgradeVersionResponse.Success = _ctx.BooleanValue("CheckUpgradeVersion.Success");
 
 			List<CheckUpgradeVersionResponse.CheckUpgradeVersion_Patch> checkUpgradeVersionResponse_patches = new List<CheckUpgradeVersionResponse.CheckUpgradeVersion_Patch>();
 			for (int i = 0; i < _ctx.Length("CheckUpgradeVersion.Patches.Length"); i++) {
 				CheckUpgradeVersionResponse.CheckUpgradeVersion_Patch patch = new CheckUpgradeVersionResponse.CheckUpgradeVersion_Patch();
+				patch.InternalUrl = _ctx.StringValue("CheckUpgradeVersion.Patches["+ i +"].InternalUrl");
+				patch.Url = _ctx.StringValue("CheckUpgradeVersion.Patches["+ i +"].Url");
 				patch.Name = _ctx.StringValue("CheckUpgradeVersion.Patches["+ i +"].Name");
 				patch.MD5 = _ctx.StringValue("CheckUpgradeVersion.Patches["+ i +"].MD5");
-				patch.Url = _ctx.StringValue("CheckUpgradeVersion.Patches["+ i +"].Url");
-				patch.InternalUrl = _ctx.StringValue("CheckUpgradeVersion.Patches["+ i +"].InternalUrl");
 
 				checkUpgradeVersionResponse_patches.Add(patch);
 			}

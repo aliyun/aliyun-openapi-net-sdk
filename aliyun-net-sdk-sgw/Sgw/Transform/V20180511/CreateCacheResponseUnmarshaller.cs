@@ -31,12 +31,12 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			CreateCacheResponse createCacheResponse = new CreateCacheResponse();
 
 			createCacheResponse.HttpResponse = _ctx.HttpResponse;
+			createCacheResponse.BuyURL = _ctx.StringValue("CreateCache.BuyURL");
 			createCacheResponse.RequestId = _ctx.StringValue("CreateCache.RequestId");
-			createCacheResponse.Success = _ctx.BooleanValue("CreateCache.Success");
-			createCacheResponse.Code = _ctx.StringValue("CreateCache.Code");
 			createCacheResponse.Message = _ctx.StringValue("CreateCache.Message");
 			createCacheResponse.CacheId = _ctx.StringValue("CreateCache.CacheId");
-			createCacheResponse.BuyURL = _ctx.StringValue("CreateCache.BuyURL");
+			createCacheResponse.Code = _ctx.StringValue("CreateCache.Code");
+			createCacheResponse.Success = _ctx.BooleanValue("CreateCache.Success");
         
 			return createCacheResponse;
         }

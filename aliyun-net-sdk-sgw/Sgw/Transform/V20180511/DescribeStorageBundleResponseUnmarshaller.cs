@@ -31,17 +31,17 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeStorageBundleResponse describeStorageBundleResponse = new DescribeStorageBundleResponse();
 
 			describeStorageBundleResponse.HttpResponse = _ctx.HttpResponse;
+			describeStorageBundleResponse.Description = _ctx.StringValue("DescribeStorageBundle.Description");
+			describeStorageBundleResponse.CreatedTime = _ctx.LongValue("DescribeStorageBundle.CreatedTime");
 			describeStorageBundleResponse.RequestId = _ctx.StringValue("DescribeStorageBundle.RequestId");
-			describeStorageBundleResponse.Success = _ctx.BooleanValue("DescribeStorageBundle.Success");
-			describeStorageBundleResponse.Code = _ctx.StringValue("DescribeStorageBundle.Code");
+			describeStorageBundleResponse.ResourceGroupId = _ctx.StringValue("DescribeStorageBundle.ResourceGroupId");
 			describeStorageBundleResponse.Message = _ctx.StringValue("DescribeStorageBundle.Message");
 			describeStorageBundleResponse.StorageBundleId = _ctx.StringValue("DescribeStorageBundle.StorageBundleId");
-			describeStorageBundleResponse.Name = _ctx.StringValue("DescribeStorageBundle.Name");
-			describeStorageBundleResponse.Description = _ctx.StringValue("DescribeStorageBundle.Description");
 			describeStorageBundleResponse.BackendBucketRegionId = _ctx.StringValue("DescribeStorageBundle.BackendBucketRegionId");
+			describeStorageBundleResponse.Code = _ctx.StringValue("DescribeStorageBundle.Code");
+			describeStorageBundleResponse.Success = _ctx.BooleanValue("DescribeStorageBundle.Success");
+			describeStorageBundleResponse.Name = _ctx.StringValue("DescribeStorageBundle.Name");
 			describeStorageBundleResponse.Location = _ctx.StringValue("DescribeStorageBundle.Location");
-			describeStorageBundleResponse.CreatedTime = _ctx.LongValue("DescribeStorageBundle.CreatedTime");
-			describeStorageBundleResponse.ResourceGroupId = _ctx.StringValue("DescribeStorageBundle.ResourceGroupId");
         
 			return describeStorageBundleResponse;
         }

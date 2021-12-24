@@ -31,16 +31,16 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DescribeGatewayStockResponse describeGatewayStockResponse = new DescribeGatewayStockResponse();
 
 			describeGatewayStockResponse.HttpResponse = _ctx.HttpResponse;
-			describeGatewayStockResponse.RequestId = _ctx.StringValue("DescribeGatewayStock.RequestId");
-			describeGatewayStockResponse.Success = _ctx.BooleanValue("DescribeGatewayStock.Success");
-			describeGatewayStockResponse.Code = _ctx.StringValue("DescribeGatewayStock.Code");
 			describeGatewayStockResponse.Message = _ctx.StringValue("DescribeGatewayStock.Message");
+			describeGatewayStockResponse.RequestId = _ctx.StringValue("DescribeGatewayStock.RequestId");
+			describeGatewayStockResponse.Code = _ctx.StringValue("DescribeGatewayStock.Code");
+			describeGatewayStockResponse.Success = _ctx.BooleanValue("DescribeGatewayStock.Success");
 
 			List<DescribeGatewayStockResponse.DescribeGatewayStock_Stock> describeGatewayStockResponse_stocks = new List<DescribeGatewayStockResponse.DescribeGatewayStock_Stock>();
 			for (int i = 0; i < _ctx.Length("DescribeGatewayStock.Stocks.Length"); i++) {
 				DescribeGatewayStockResponse.DescribeGatewayStock_Stock stock = new DescribeGatewayStockResponse.DescribeGatewayStock_Stock();
-				stock.ZoneId = _ctx.StringValue("DescribeGatewayStock.Stocks["+ i +"].ZoneId");
 				stock.StockInfo = _ctx.StringValue("DescribeGatewayStock.Stocks["+ i +"].StockInfo");
+				stock.ZoneId = _ctx.StringValue("DescribeGatewayStock.Stocks["+ i +"].ZoneId");
 
 				describeGatewayStockResponse_stocks.Add(stock);
 			}

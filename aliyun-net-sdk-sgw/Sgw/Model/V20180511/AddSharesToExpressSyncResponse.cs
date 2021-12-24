@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sgw.Model.V20180511
@@ -25,15 +25,11 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 	public class AddSharesToExpressSyncResponse : AcsResponse
 	{
 
+		private string taskId;
+
 		private string requestId;
 
-		private bool? success;
-
-		private string code;
-
 		private string message;
-
-		private string taskId;
 
 		private string mnsTopic;
 
@@ -44,6 +40,22 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 		private string mnsPublicEndpoint;
 
 		private string mnsInnerEndpoint;
+
+		private string code;
+
+		private bool? success;
+
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -57,30 +69,6 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			}
 		}
 
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
 		public string Message
 		{
 			get
@@ -90,18 +78,6 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set	
 			{
 				message = value;
-			}
-		}
-
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
 			}
 		}
 
@@ -162,6 +138,30 @@ namespace Aliyun.Acs.sgw.Model.V20180511
 			set	
 			{
 				mnsInnerEndpoint = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 	}

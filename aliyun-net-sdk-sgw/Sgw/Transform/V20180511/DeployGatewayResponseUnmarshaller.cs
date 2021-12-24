@@ -31,11 +31,11 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			DeployGatewayResponse deployGatewayResponse = new DeployGatewayResponse();
 
 			deployGatewayResponse.HttpResponse = _ctx.HttpResponse;
-			deployGatewayResponse.RequestId = _ctx.StringValue("DeployGateway.RequestId");
-			deployGatewayResponse.Success = _ctx.BooleanValue("DeployGateway.Success");
-			deployGatewayResponse.Code = _ctx.StringValue("DeployGateway.Code");
-			deployGatewayResponse.Message = _ctx.StringValue("DeployGateway.Message");
 			deployGatewayResponse.TaskId = _ctx.StringValue("DeployGateway.TaskId");
+			deployGatewayResponse.Message = _ctx.StringValue("DeployGateway.Message");
+			deployGatewayResponse.RequestId = _ctx.StringValue("DeployGateway.RequestId");
+			deployGatewayResponse.Code = _ctx.StringValue("DeployGateway.Code");
+			deployGatewayResponse.Success = _ctx.BooleanValue("DeployGateway.Success");
         
 			return deployGatewayResponse;
         }

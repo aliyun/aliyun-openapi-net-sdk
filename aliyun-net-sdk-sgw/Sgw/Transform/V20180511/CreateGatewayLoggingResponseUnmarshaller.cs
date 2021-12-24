@@ -31,10 +31,10 @@ namespace Aliyun.Acs.sgw.Transform.V20180511
 			CreateGatewayLoggingResponse createGatewayLoggingResponse = new CreateGatewayLoggingResponse();
 
 			createGatewayLoggingResponse.HttpResponse = _ctx.HttpResponse;
-			createGatewayLoggingResponse.RequestId = _ctx.StringValue("CreateGatewayLogging.RequestId");
-			createGatewayLoggingResponse.Success = _ctx.BooleanValue("CreateGatewayLogging.Success");
-			createGatewayLoggingResponse.Code = _ctx.StringValue("CreateGatewayLogging.Code");
 			createGatewayLoggingResponse.Message = _ctx.StringValue("CreateGatewayLogging.Message");
+			createGatewayLoggingResponse.RequestId = _ctx.StringValue("CreateGatewayLogging.RequestId");
+			createGatewayLoggingResponse.Code = _ctx.StringValue("CreateGatewayLogging.Code");
+			createGatewayLoggingResponse.Success = _ctx.BooleanValue("CreateGatewayLogging.Success");
         
 			return createGatewayLoggingResponse;
         }
