@@ -125,6 +125,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string appDescription;
 
+		private string acrInstanceId;
+
 		private string vpcId;
 
 		private string imageUrl;
@@ -674,6 +676,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				appDescription = value;
 				DictionaryUtil.Add(QueryParameters, "AppDescription", value);
+			}
+		}
+
+		public string AcrInstanceId
+		{
+			get
+			{
+				return acrInstanceId;
+			}
+			set	
+			{
+				acrInstanceId = value;
+				DictionaryUtil.Add(BodyParameters, "AcrInstanceId", value);
 			}
 		}
 

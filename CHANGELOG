@@ -1,3 +1,6 @@
+2021-12-27 Version: 1.18.1
+- Support ACR EE, OSS, EIP for deploy.
+
 2021-12-27 Version: 3.6.3
 - DescribeDBInstances Add CapacityUnit.
 
