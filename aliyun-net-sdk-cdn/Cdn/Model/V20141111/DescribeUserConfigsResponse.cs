@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-	public class DescribeCdnDomainConfigsResponse : AcsResponse
+	public class DescribeUserConfigsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeCdnDomainConfigs_DomainConfig> domainConfigs;
+		private DescribeUserConfigs_Configs configs;
 
 		public string RequestId
 		{
@@ -41,105 +41,109 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<DescribeCdnDomainConfigs_DomainConfig> DomainConfigs
+		public DescribeUserConfigs_Configs Configs
 		{
 			get
 			{
-				return domainConfigs;
+				return configs;
 			}
 			set	
 			{
-				domainConfigs = value;
+				configs = value;
 			}
 		}
 
-		public class DescribeCdnDomainConfigs_DomainConfig
+		public class DescribeUserConfigs_Configs
 		{
 
-			private string functionName;
+			private DescribeUserConfigs_OssLogConfig ossLogConfig;
 
-			private string configId;
+			private DescribeUserConfigs_WafConfig wafConfig;
 
-			private string status;
-
-			private List<DescribeCdnDomainConfigs_FunctionArg> functionArgs;
-
-			public string FunctionName
+			public DescribeUserConfigs_OssLogConfig OssLogConfig
 			{
 				get
 				{
-					return functionName;
+					return ossLogConfig;
 				}
 				set	
 				{
-					functionName = value;
+					ossLogConfig = value;
 				}
 			}
 
-			public string ConfigId
+			public DescribeUserConfigs_WafConfig WafConfig
 			{
 				get
 				{
-					return configId;
+					return wafConfig;
 				}
 				set	
 				{
-					configId = value;
+					wafConfig = value;
 				}
 			}
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public List<DescribeCdnDomainConfigs_FunctionArg> FunctionArgs
-			{
-				get
-				{
-					return functionArgs;
-				}
-				set	
-				{
-					functionArgs = value;
-				}
-			}
-
-			public class DescribeCdnDomainConfigs_FunctionArg
+			public class DescribeUserConfigs_OssLogConfig
 			{
 
-				private string argName;
+				private string enable;
 
-				private string argValue;
+				private string bucket;
 
-				public string ArgName
+				private string prefix;
+
+				public string Enable
 				{
 					get
 					{
-						return argName;
+						return enable;
 					}
 					set	
 					{
-						argName = value;
+						enable = value;
 					}
 				}
 
-				public string ArgValue
+				public string Bucket
 				{
 					get
 					{
-						return argValue;
+						return bucket;
 					}
 					set	
 					{
-						argValue = value;
+						bucket = value;
+					}
+				}
+
+				public string Prefix
+				{
+					get
+					{
+						return prefix;
+					}
+					set	
+					{
+						prefix = value;
+					}
+				}
+			}
+
+			public class DescribeUserConfigs_WafConfig
+			{
+
+				private string enable;
+
+				public string Enable
+				{
+					get
+					{
+						return enable;
+					}
+					set	
+					{
+						enable = value;
 					}
 				}
 			}

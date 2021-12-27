@@ -20,9 +20,9 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cdn.Model.V20180510;
+using Aliyun.Acs.Cdn.Model.V20141111;
 
-namespace Aliyun.Acs.Cdn.Transform.V20180510
+namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeUserConfigsResponseUnmarshaller
     {

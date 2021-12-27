@@ -153,12 +153,6 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			macServiceConfig.Status = _ctx.StringValue("DescribeDomainConfigs.DomainConfigs.MacServiceConfig.Status");
 			domainConfigs.MacServiceConfig = macServiceConfig;
 
-			DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_GreenManagerConfig greenManagerConfig = new DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_GreenManagerConfig();
-			greenManagerConfig.Enabled = _ctx.StringValue("DescribeDomainConfigs.DomainConfigs.GreenManagerConfig.Enabled");
-			greenManagerConfig.ConfigId = _ctx.StringValue("DescribeDomainConfigs.DomainConfigs.GreenManagerConfig.ConfigId");
-			greenManagerConfig.Status = _ctx.StringValue("DescribeDomainConfigs.DomainConfigs.GreenManagerConfig.Status");
-			domainConfigs.GreenManagerConfig = greenManagerConfig;
-
 			DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_HttpsOptionConfig httpsOptionConfig = new DescribeDomainConfigsResponse.DescribeDomainConfigs_DomainConfigs.DescribeDomainConfigs_HttpsOptionConfig();
 			httpsOptionConfig.Http2 = _ctx.StringValue("DescribeDomainConfigs.DomainConfigs.HttpsOptionConfig.Http2");
 			httpsOptionConfig.ConfigId = _ctx.StringValue("DescribeDomainConfigs.DomainConfigs.HttpsOptionConfig.ConfigId");

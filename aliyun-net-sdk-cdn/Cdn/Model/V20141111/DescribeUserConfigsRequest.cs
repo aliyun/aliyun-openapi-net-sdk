@@ -28,10 +28,10 @@ using Aliyun.Acs.Cdn.Transform.V20141111;
 
 namespace Aliyun.Acs.Cdn.Model.V20141111
 {
-    public class DescribeCdnDomainConfigsRequest : RpcAcsRequest<DescribeCdnDomainConfigsResponse>
+    public class DescribeUserConfigsRequest : RpcAcsRequest<DescribeUserConfigsResponse>
     {
-        public DescribeCdnDomainConfigsRequest()
-            : base("Cdn", "2014-11-11", "DescribeCdnDomainConfigs")
+        public DescribeUserConfigsRequest()
+            : base("Cdn", "2014-11-11", "DescribeUserConfigs")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,39 +41,11 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			Method = MethodType.POST;
         }
 
-		private string functionNames;
-
-		private string domainName;
-
 		private long? ownerId;
 
 		private string securityToken;
 
-		public string FunctionNames
-		{
-			get
-			{
-				return functionNames;
-			}
-			set	
-			{
-				functionNames = value;
-				DictionaryUtil.Add(QueryParameters, "FunctionNames", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+		private string config;
 
 		public long? OwnerId
 		{
@@ -101,9 +73,22 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-        public override DescribeCdnDomainConfigsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Config
+		{
+			get
+			{
+				return config;
+			}
+			set	
+			{
+				config = value;
+				DictionaryUtil.Add(QueryParameters, "Config", value);
+			}
+		}
+
+        public override DescribeUserConfigsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCdnDomainConfigsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeUserConfigsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
