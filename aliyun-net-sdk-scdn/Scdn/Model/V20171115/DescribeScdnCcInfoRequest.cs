@@ -28,80 +28,19 @@ using Aliyun.Acs.scdn.Transform.V20171115;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
-    public class BatchSetScdnDomainConfigsRequest : RpcAcsRequest<BatchSetScdnDomainConfigsResponse>
+    public class DescribeScdnCcInfoRequest : RpcAcsRequest<DescribeScdnCcInfoResponse>
     {
-        public BatchSetScdnDomainConfigsRequest()
-            : base("scdn", "2017-11-15", "BatchSetScdnDomainConfigs")
+        public DescribeScdnCcInfoRequest()
+            : base("scdn", "2017-11-15", "DescribeScdnCcInfo")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.scdn.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.scdn.Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
-		private string functions;
-
-		private string domainNames;
-
-		private string securityToken;
-
-		private string ownerAccount;
-
 		private long? ownerId;
-
-		public string Functions
-		{
-			get
-			{
-				return functions;
-			}
-			set	
-			{
-				functions = value;
-				DictionaryUtil.Add(QueryParameters, "Functions", value);
-			}
-		}
-
-		public string DomainNames
-		{
-			get
-			{
-				return domainNames;
-			}
-			set	
-			{
-				domainNames = value;
-				DictionaryUtil.Add(QueryParameters, "DomainNames", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
 
 		public long? OwnerId
 		{
@@ -116,9 +55,9 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-        public override BatchSetScdnDomainConfigsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeScdnCcInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchSetScdnDomainConfigsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeScdnCcInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
