@@ -126,6 +126,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string capacityUnit;
 
+			private string cloudType;
+
 			private List<DescribeDBInstanceAttribute_ReplicaSet> replicaSets;
 
 			private List<DescribeDBInstanceAttribute_Tag> tags;
@@ -553,6 +555,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					capacityUnit = value;
+				}
+			}
+
+			public string CloudType
+			{
+				get
+				{
+					return cloudType;
+				}
+				set	
+				{
+					cloudType = value;
 				}
 			}
 

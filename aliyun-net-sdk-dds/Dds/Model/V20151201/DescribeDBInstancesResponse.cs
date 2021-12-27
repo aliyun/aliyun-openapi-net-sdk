@@ -126,8 +126,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private int? dBInstanceStorage;
 
-			private string capacityUnit;
-
 			private string resourceGroupId;
 
 			private string zoneId;
@@ -141,6 +139,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			private string replicationFactor;
 
 			private string kindCode;
+
+			private string cloudType;
+
+			private string capacityUnit;
 
 			private List<DescribeDBInstances_Tag> tags;
 
@@ -316,18 +318,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public string CapacityUnit
-			{
-				get
-				{
-					return capacityUnit;
-				}
-				set	
-				{
-					capacityUnit = value;
-				}
-			}
-
 			public string ResourceGroupId
 			{
 				get
@@ -409,6 +399,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					kindCode = value;
+				}
+			}
+
+			public string CloudType
+			{
+				get
+				{
+					return cloudType;
+				}
+				set	
+				{
+					cloudType = value;
+				}
+			}
+
+			public string CapacityUnit
+			{
+				get
+				{
+					return capacityUnit;
+				}
+				set	
+				{
+					capacityUnit = value;
 				}
 			}
 

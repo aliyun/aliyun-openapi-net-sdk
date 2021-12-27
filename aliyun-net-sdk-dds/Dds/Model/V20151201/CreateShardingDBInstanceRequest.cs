@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string storageEngine;
 
+		private string resourceGroupId;
+
 		private string securityToken;
 
 		private string engine;
@@ -171,6 +173,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				storageEngine = value;
 				DictionaryUtil.Add(QueryParameters, "StorageEngine", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

@@ -53,7 +53,6 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.DBInstanceStatus = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].DBInstanceStatus");
 				dBInstance.RegionId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].RegionId");
 				dBInstance.DBInstanceStorage = _ctx.IntegerValue("DescribeDBInstances.DBInstances["+ i +"].DBInstanceStorage");
-				dBInstance.CapacityUnit = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].CapacityUnit");
 				dBInstance.ResourceGroupId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].ResourceGroupId");
 				dBInstance.ZoneId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].ZoneId");
 				dBInstance.DBInstanceId = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].DBInstanceId");
@@ -61,6 +60,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.Engine = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].Engine");
 				dBInstance.ReplicationFactor = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].ReplicationFactor");
 				dBInstance.KindCode = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].KindCode");
+				dBInstance.CloudType = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].CloudType");
+				dBInstance.CapacityUnit = _ctx.StringValue("DescribeDBInstances.DBInstances["+ i +"].CapacityUnit");
 
 				List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_Tag> dBInstance_tags = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeDBInstances.DBInstances["+ i +"].Tags.Length"); j++) {

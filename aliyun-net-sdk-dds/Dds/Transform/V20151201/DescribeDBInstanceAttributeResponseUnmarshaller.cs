@@ -71,6 +71,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.ReplicationFactor = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplicationFactor");
 				dBInstance.KindCode = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].KindCode");
 				dBInstance.CapacityUnit = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].CapacityUnit");
+				dBInstance.CloudType = _ctx.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].CloudType");
 
 				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ReplicaSet> dBInstance_replicaSets = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ReplicaSet>();
 				for (int j = 0; j < _ctx.Length("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplicaSets.Length"); j++) {
