@@ -43,6 +43,10 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 
 		private string blockRemain;
 
+		private string regexQuota;
+
+		private string regexRemain;
+
 		public string RequestId
 		{
 			get
@@ -148,6 +152,30 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			set	
 			{
 				blockRemain = value;
+			}
+		}
+
+		public string RegexQuota
+		{
+			get
+			{
+				return regexQuota;
+			}
+			set	
+			{
+				regexQuota = value;
+			}
+		}
+
+		public string RegexRemain
+		{
+			get
+			{
+				return regexRemain;
+			}
+			set	
+			{
+				regexRemain = value;
 			}
 		}
 	}

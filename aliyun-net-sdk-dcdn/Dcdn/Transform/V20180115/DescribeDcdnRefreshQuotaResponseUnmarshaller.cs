@@ -39,7 +39,9 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 			describeDcdnRefreshQuotaResponse.PreloadQuota = _ctx.StringValue("DescribeDcdnRefreshQuota.PreloadQuota");
 			describeDcdnRefreshQuotaResponse.BlockQuota = _ctx.StringValue("DescribeDcdnRefreshQuota.BlockQuota");
 			describeDcdnRefreshQuotaResponse.PreloadRemain = _ctx.StringValue("DescribeDcdnRefreshQuota.PreloadRemain");
-			describeDcdnRefreshQuotaResponse.BlockRemain = _ctx.StringValue("DescribeDcdnRefreshQuota.blockRemain");
+			describeDcdnRefreshQuotaResponse.BlockRemain = _ctx.StringValue("DescribeDcdnRefreshQuota.BlockRemain");
+			describeDcdnRefreshQuotaResponse.RegexQuota = _ctx.StringValue("DescribeDcdnRefreshQuota.RegexQuota");
+			describeDcdnRefreshQuotaResponse.RegexRemain = _ctx.StringValue("DescribeDcdnRefreshQuota.RegexRemain");
         
 			return describeDcdnRefreshQuotaResponse;
         }

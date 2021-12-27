@@ -1,3 +1,6 @@
+2021-12-27 Version: 2.1.9
+- Add CreateDcdnSubTask.
+
 2021-12-27 Version: 2.2.7
 - Add DescribeScdnDomainCcInfo.
 
