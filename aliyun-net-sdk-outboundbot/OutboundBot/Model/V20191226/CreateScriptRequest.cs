@@ -48,13 +48,17 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string scene;
 
-		private string chatbotId;
-
-		private string instanceId;
-
 		private List<string> scriptWaveforms = new List<string>(){ };
 
 		private string asrConfig;
+
+		private bool? newBargeInEnable;
+
+		private bool? miniPlaybackEnable;
+
+		private string chatbotId;
+
+		private string instanceId;
 
 		private string scriptDescription;
 
@@ -112,32 +116,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string ChatbotId
-		{
-			get
-			{
-				return chatbotId;
-			}
-			set	
-			{
-				chatbotId = value;
-				DictionaryUtil.Add(QueryParameters, "ChatbotId", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
 		public List<string> ScriptWaveforms
 		{
 			get
@@ -165,6 +143,58 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				asrConfig = value;
 				DictionaryUtil.Add(QueryParameters, "AsrConfig", value);
+			}
+		}
+
+		public bool? NewBargeInEnable
+		{
+			get
+			{
+				return newBargeInEnable;
+			}
+			set	
+			{
+				newBargeInEnable = value;
+				DictionaryUtil.Add(QueryParameters, "NewBargeInEnable", value.ToString());
+			}
+		}
+
+		public bool? MiniPlaybackEnable
+		{
+			get
+			{
+				return miniPlaybackEnable;
+			}
+			set	
+			{
+				miniPlaybackEnable = value;
+				DictionaryUtil.Add(QueryParameters, "MiniPlaybackEnable", value.ToString());
+			}
+		}
+
+		public string ChatbotId
+		{
+			get
+			{
+				return chatbotId;
+			}
+			set	
+			{
+				chatbotId = value;
+				DictionaryUtil.Add(QueryParameters, "ChatbotId", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

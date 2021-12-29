@@ -40,11 +40,13 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			Method = MethodType.POST;
         }
 
+		private string recallStrategyJson;
+
 		private string description;
 
-		private List<string> callingNumbers = new List<string>(){ };
-
 		private string scriptId;
+
+		private List<string> callingNumbers = new List<string>(){ };
 
 		private string instanceId;
 
@@ -56,6 +58,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string scenarioId;
 
+		public string RecallStrategyJson
+		{
+			get
+			{
+				return recallStrategyJson;
+			}
+			set	
+			{
+				recallStrategyJson = value;
+				DictionaryUtil.Add(QueryParameters, "RecallStrategyJson", value);
+			}
+		}
+
 		public string Description
 		{
 			get
@@ -66,6 +81,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string ScriptId
+		{
+			get
+			{
+				return scriptId;
+			}
+			set	
+			{
+				scriptId = value;
+				DictionaryUtil.Add(QueryParameters, "ScriptId", value);
 			}
 		}
 
@@ -83,19 +111,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				{
 					DictionaryUtil.Add(QueryParameters,"CallingNumber." + (i + 1) , callingNumbers[i]);
 				}
-			}
-		}
-
-		public string ScriptId
-		{
-			get
-			{
-				return scriptId;
-			}
-			set	
-			{
-				scriptId = value;
-				DictionaryUtil.Add(QueryParameters, "ScriptId", value);
 			}
 		}
 

@@ -290,6 +290,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 					private bool? hasHangUpByRejection;
 
+					private bool? hasLastPlaybackCompleted;
+
 					private List<QueryJobsWithResult_Extra> extras;
 
 					private List<QueryJobsWithResult_TagHit> tagHits;
@@ -403,6 +405,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 						set	
 						{
 							hasHangUpByRejection = value;
+						}
+					}
+
+					public bool? HasLastPlaybackCompleted
+					{
+						get
+						{
+							return hasLastPlaybackCompleted;
+						}
+						set	
+						{
+							hasLastPlaybackCompleted = value;
 						}
 					}
 

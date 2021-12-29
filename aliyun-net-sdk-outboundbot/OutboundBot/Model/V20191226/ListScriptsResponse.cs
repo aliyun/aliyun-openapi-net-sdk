@@ -25,9 +25,9 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class ListScriptsResponse : AcsResponse
 	{
 
-		private string code;
-
 		private int? httpStatusCode;
+
+		private string code;
 
 		private string message;
 
@@ -36,18 +36,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private bool? success;
 
 		private ListScripts_Scripts scripts;
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
 
 		public int? HttpStatusCode
 		{
@@ -58,6 +46,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
 			}
 		}
 
@@ -171,139 +171,33 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			public class ListScripts_Script
 			{
 
-				private string debugStatus;
-
-				private string failReason;
-
-				private string industry;
-
-				private bool? isDebugDrafted;
-
-				private bool? isDrafted;
-
-				private string scene;
-
-				private string scriptDescription;
-
-				private string scriptId;
-
-				private string scriptName;
-
 				private string status;
 
 				private long? updateTime;
 
-				private string rejectReason;
+				private string scriptId;
+
+				private bool? isDebugDrafted;
+
+				private string industry;
+
+				private string scriptDescription;
+
+				private bool? isDrafted;
+
+				private string debugStatus;
 
 				private bool? miniPlaybackEnabled;
 
-				public string DebugStatus
-				{
-					get
-					{
-						return debugStatus;
-					}
-					set	
-					{
-						debugStatus = value;
-					}
-				}
+				private string rejectReason;
 
-				public string FailReason
-				{
-					get
-					{
-						return failReason;
-					}
-					set	
-					{
-						failReason = value;
-					}
-				}
+				private string failReason;
 
-				public string Industry
-				{
-					get
-					{
-						return industry;
-					}
-					set	
-					{
-						industry = value;
-					}
-				}
+				private string scene;
 
-				public bool? IsDebugDrafted
-				{
-					get
-					{
-						return isDebugDrafted;
-					}
-					set	
-					{
-						isDebugDrafted = value;
-					}
-				}
+				private string scriptName;
 
-				public bool? IsDrafted
-				{
-					get
-					{
-						return isDrafted;
-					}
-					set	
-					{
-						isDrafted = value;
-					}
-				}
-
-				public string Scene
-				{
-					get
-					{
-						return scene;
-					}
-					set	
-					{
-						scene = value;
-					}
-				}
-
-				public string ScriptDescription
-				{
-					get
-					{
-						return scriptDescription;
-					}
-					set	
-					{
-						scriptDescription = value;
-					}
-				}
-
-				public string ScriptId
-				{
-					get
-					{
-						return scriptId;
-					}
-					set	
-					{
-						scriptId = value;
-					}
-				}
-
-				public string ScriptName
-				{
-					get
-					{
-						return scriptName;
-					}
-					set	
-					{
-						scriptName = value;
-					}
-				}
+				private bool? newBargeInEnable;
 
 				public string Status
 				{
@@ -329,15 +223,75 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					}
 				}
 
-				public string RejectReason
+				public string ScriptId
 				{
 					get
 					{
-						return rejectReason;
+						return scriptId;
 					}
 					set	
 					{
-						rejectReason = value;
+						scriptId = value;
+					}
+				}
+
+				public bool? IsDebugDrafted
+				{
+					get
+					{
+						return isDebugDrafted;
+					}
+					set	
+					{
+						isDebugDrafted = value;
+					}
+				}
+
+				public string Industry
+				{
+					get
+					{
+						return industry;
+					}
+					set	
+					{
+						industry = value;
+					}
+				}
+
+				public string ScriptDescription
+				{
+					get
+					{
+						return scriptDescription;
+					}
+					set	
+					{
+						scriptDescription = value;
+					}
+				}
+
+				public bool? IsDrafted
+				{
+					get
+					{
+						return isDrafted;
+					}
+					set	
+					{
+						isDrafted = value;
+					}
+				}
+
+				public string DebugStatus
+				{
+					get
+					{
+						return debugStatus;
+					}
+					set	
+					{
+						debugStatus = value;
 					}
 				}
 
@@ -350,6 +304,66 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						miniPlaybackEnabled = value;
+					}
+				}
+
+				public string RejectReason
+				{
+					get
+					{
+						return rejectReason;
+					}
+					set	
+					{
+						rejectReason = value;
+					}
+				}
+
+				public string FailReason
+				{
+					get
+					{
+						return failReason;
+					}
+					set	
+					{
+						failReason = value;
+					}
+				}
+
+				public string Scene
+				{
+					get
+					{
+						return scene;
+					}
+					set	
+					{
+						scene = value;
+					}
+				}
+
+				public string ScriptName
+				{
+					get
+					{
+						return scriptName;
+					}
+					set	
+					{
+						scriptName = value;
+					}
+				}
+
+				public bool? NewBargeInEnable
+				{
+					get
+					{
+						return newBargeInEnable;
+					}
+					set	
+					{
+						newBargeInEnable = value;
 					}
 				}
 			}

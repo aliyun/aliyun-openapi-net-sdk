@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DescribeTTSDemoResponse describeTTSDemoResponse = new DescribeTTSDemoResponse();
 
 			describeTTSDemoResponse.HttpResponse = _ctx.HttpResponse;
+			describeTTSDemoResponse.HttpStatusCode = _ctx.IntegerValue("DescribeTTSDemo.HttpStatusCode");
 			describeTTSDemoResponse.RequestId = _ctx.StringValue("DescribeTTSDemo.RequestId");
 			describeTTSDemoResponse.Success = _ctx.BooleanValue("DescribeTTSDemo.Success");
 			describeTTSDemoResponse.Code = _ctx.StringValue("DescribeTTSDemo.Code");
 			describeTTSDemoResponse.Message = _ctx.StringValue("DescribeTTSDemo.Message");
-			describeTTSDemoResponse.HttpStatusCode = _ctx.IntegerValue("DescribeTTSDemo.HttpStatusCode");
 			describeTTSDemoResponse.AuditionUrl = _ctx.StringValue("DescribeTTSDemo.AuditionUrl");
         
 			return describeTTSDemoResponse;

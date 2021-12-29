@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			CreateBatchRepeatJobResponse createBatchRepeatJobResponse = new CreateBatchRepeatJobResponse();
 
 			createBatchRepeatJobResponse.HttpResponse = _ctx.HttpResponse;
-			createBatchRepeatJobResponse.RequestId = _ctx.StringValue("CreateBatchRepeatJob.RequestId");
-			createBatchRepeatJobResponse.Success = _ctx.BooleanValue("CreateBatchRepeatJob.Success");
+			createBatchRepeatJobResponse.HttpStatusCode = _ctx.IntegerValue("CreateBatchRepeatJob.HttpStatusCode");
 			createBatchRepeatJobResponse.Code = _ctx.StringValue("CreateBatchRepeatJob.Code");
 			createBatchRepeatJobResponse.Message = _ctx.StringValue("CreateBatchRepeatJob.Message");
-			createBatchRepeatJobResponse.HttpStatusCode = _ctx.IntegerValue("CreateBatchRepeatJob.HttpStatusCode");
+			createBatchRepeatJobResponse.RequestId = _ctx.StringValue("CreateBatchRepeatJob.RequestId");
+			createBatchRepeatJobResponse.Success = _ctx.BooleanValue("CreateBatchRepeatJob.Success");
 
 			CreateBatchRepeatJobResponse.CreateBatchRepeatJob_JobGroup jobGroup = new CreateBatchRepeatJobResponse.CreateBatchRepeatJob_JobGroup();
 			jobGroup.Id = _ctx.StringValue("CreateBatchRepeatJob.JobGroup.Id");

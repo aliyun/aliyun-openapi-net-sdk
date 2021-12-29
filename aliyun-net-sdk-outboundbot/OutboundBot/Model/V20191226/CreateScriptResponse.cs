@@ -25,11 +25,7 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class CreateScriptResponse : AcsResponse
 	{
 
-		private string code;
-
 		private int? httpStatusCode;
-
-		private string message;
 
 		private string requestId;
 
@@ -37,19 +33,11 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string chatbotId;
 
-		private CreateScript_Script script;
+		private string code;
 
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private string message;
+
+		private CreateScript_Script script;
 
 		public int? HttpStatusCode
 		{
@@ -60,18 +48,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				httpStatusCode = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -111,6 +87,30 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
 		public CreateScript_Script Script
 		{
 			get
@@ -126,121 +126,25 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		public class CreateScript_Script
 		{
 
-			private string debugStatus;
-
-			private string industry;
-
-			private bool? isDebugDrafted;
-
-			private bool? isDrafted;
-
-			private string scene;
-
-			private string scriptDescription;
-
-			private string scriptId;
-
-			private string scriptName;
-
 			private string status;
 
 			private long? updateTime;
 
-			public string DebugStatus
-			{
-				get
-				{
-					return debugStatus;
-				}
-				set	
-				{
-					debugStatus = value;
-				}
-			}
+			private string industry;
 
-			public string Industry
-			{
-				get
-				{
-					return industry;
-				}
-				set	
-				{
-					industry = value;
-				}
-			}
+			private string scriptDescription;
 
-			public bool? IsDebugDrafted
-			{
-				get
-				{
-					return isDebugDrafted;
-				}
-				set	
-				{
-					isDebugDrafted = value;
-				}
-			}
+			private bool? isDrafted;
 
-			public bool? IsDrafted
-			{
-				get
-				{
-					return isDrafted;
-				}
-				set	
-				{
-					isDrafted = value;
-				}
-			}
+			private string debugStatus;
 
-			public string Scene
-			{
-				get
-				{
-					return scene;
-				}
-				set	
-				{
-					scene = value;
-				}
-			}
+			private string scriptId;
 
-			public string ScriptDescription
-			{
-				get
-				{
-					return scriptDescription;
-				}
-				set	
-				{
-					scriptDescription = value;
-				}
-			}
+			private bool? isDebugDrafted;
 
-			public string ScriptId
-			{
-				get
-				{
-					return scriptId;
-				}
-				set	
-				{
-					scriptId = value;
-				}
-			}
+			private string scriptName;
 
-			public string ScriptName
-			{
-				get
-				{
-					return scriptName;
-				}
-				set	
-				{
-					scriptName = value;
-				}
-			}
+			private string scene;
 
 			public string Status
 			{
@@ -263,6 +167,102 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					updateTime = value;
+				}
+			}
+
+			public string Industry
+			{
+				get
+				{
+					return industry;
+				}
+				set	
+				{
+					industry = value;
+				}
+			}
+
+			public string ScriptDescription
+			{
+				get
+				{
+					return scriptDescription;
+				}
+				set	
+				{
+					scriptDescription = value;
+				}
+			}
+
+			public bool? IsDrafted
+			{
+				get
+				{
+					return isDrafted;
+				}
+				set	
+				{
+					isDrafted = value;
+				}
+			}
+
+			public string DebugStatus
+			{
+				get
+				{
+					return debugStatus;
+				}
+				set	
+				{
+					debugStatus = value;
+				}
+			}
+
+			public string ScriptId
+			{
+				get
+				{
+					return scriptId;
+				}
+				set	
+				{
+					scriptId = value;
+				}
+			}
+
+			public bool? IsDebugDrafted
+			{
+				get
+				{
+					return isDebugDrafted;
+				}
+				set	
+				{
+					isDebugDrafted = value;
+				}
+			}
+
+			public string ScriptName
+			{
+				get
+				{
+					return scriptName;
+				}
+				set	
+				{
+					scriptName = value;
+				}
+			}
+
+			public string Scene
+			{
+				get
+				{
+					return scene;
+				}
+				set	
+				{
+					scene = value;
 				}
 			}
 		}

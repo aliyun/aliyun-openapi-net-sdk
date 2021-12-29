@@ -25,39 +25,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 	public class CreateBatchRepeatJobResponse : AcsResponse
 	{
 
-		private string requestId;
-
-		private bool? success;
+		private int? httpStatusCode;
 
 		private string code;
 
 		private string message;
 
-		private int? httpStatusCode;
+		private string requestId;
+
+		private bool? success;
 
 		private CreateBatchRepeatJob_JobGroup jobGroup;
 
-		public string RequestId
+		public int? HttpStatusCode
 		{
 			get
 			{
-				return requestId;
+				return httpStatusCode;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
+				httpStatusCode = value;
 			}
 		}
 
@@ -85,15 +73,27 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public int? HttpStatusCode
+		public string RequestId
 		{
 			get
 			{
-				return httpStatusCode;
+				return requestId;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
 			}
 		}
 

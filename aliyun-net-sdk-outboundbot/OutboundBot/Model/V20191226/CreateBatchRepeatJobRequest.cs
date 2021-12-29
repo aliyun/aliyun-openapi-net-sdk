@@ -40,6 +40,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			Method = MethodType.POST;
         }
 
+		private string recallStrategyJson;
+
 		private string description;
 
 		private string scriptId;
@@ -55,6 +57,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private string name;
 
 		private string sourceGroupId;
+
+		public string RecallStrategyJson
+		{
+			get
+			{
+				return recallStrategyJson;
+			}
+			set	
+			{
+				recallStrategyJson = value;
+				DictionaryUtil.Add(QueryParameters, "RecallStrategyJson", value);
+			}
+		}
 
 		public string Description
 		{

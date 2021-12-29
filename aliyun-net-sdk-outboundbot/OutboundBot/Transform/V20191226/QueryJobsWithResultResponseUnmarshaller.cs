@@ -67,6 +67,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				latestTask.CallTime = _ctx.LongValue("QueryJobsWithResult.Jobs.List["+ i +"].LatestTask.CallTime");
 				latestTask.CallDurationDisplay = _ctx.StringValue("QueryJobsWithResult.Jobs.List["+ i +"].LatestTask.CallDurationDisplay");
 				latestTask.HasHangUpByRejection = _ctx.BooleanValue("QueryJobsWithResult.Jobs.List["+ i +"].LatestTask.HasHangUpByRejection");
+				latestTask.HasLastPlaybackCompleted = _ctx.BooleanValue("QueryJobsWithResult.Jobs.List["+ i +"].LatestTask.HasLastPlaybackCompleted");
 
 				QueryJobsWithResultResponse.QueryJobsWithResult_Jobs.QueryJobsWithResult_Job.QueryJobsWithResult_LatestTask.QueryJobsWithResult_Contact contact = new QueryJobsWithResultResponse.QueryJobsWithResult_Jobs.QueryJobsWithResult_Job.QueryJobsWithResult_LatestTask.QueryJobsWithResult_Contact();
 				contact.Round = _ctx.IntegerValue("QueryJobsWithResult.Jobs.List["+ i +"].LatestTask.Contact.Round");

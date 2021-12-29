@@ -31,12 +31,12 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			AssignJobsResponse assignJobsResponse = new AssignJobsResponse();
 
 			assignJobsResponse.HttpResponse = _ctx.HttpResponse;
-			assignJobsResponse.Code = _ctx.StringValue("AssignJobs.Code");
 			assignJobsResponse.HttpStatusCode = _ctx.IntegerValue("AssignJobs.HttpStatusCode");
 			assignJobsResponse.JobGroupId = _ctx.StringValue("AssignJobs.JobGroupId");
-			assignJobsResponse.Message = _ctx.StringValue("AssignJobs.Message");
 			assignJobsResponse.RequestId = _ctx.StringValue("AssignJobs.RequestId");
 			assignJobsResponse.Success = _ctx.BooleanValue("AssignJobs.Success");
+			assignJobsResponse.Code = _ctx.StringValue("AssignJobs.Code");
+			assignJobsResponse.Message = _ctx.StringValue("AssignJobs.Message");
 
 			List<string> assignJobsResponse_jobsId = new List<string>();
 			for (int i = 0; i < _ctx.Length("AssignJobs.JobsId.Length"); i++) {

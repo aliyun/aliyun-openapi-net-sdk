@@ -31,8 +31,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			ListScriptsResponse listScriptsResponse = new ListScriptsResponse();
 
 			listScriptsResponse.HttpResponse = _ctx.HttpResponse;
-			listScriptsResponse.Code = _ctx.StringValue("ListScripts.Code");
 			listScriptsResponse.HttpStatusCode = _ctx.IntegerValue("ListScripts.HttpStatusCode");
+			listScriptsResponse.Code = _ctx.StringValue("ListScripts.Code");
 			listScriptsResponse.Message = _ctx.StringValue("ListScripts.Message");
 			listScriptsResponse.RequestId = _ctx.StringValue("ListScripts.RequestId");
 			listScriptsResponse.Success = _ctx.BooleanValue("ListScripts.Success");
@@ -45,19 +45,20 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			List<ListScriptsResponse.ListScripts_Scripts.ListScripts_Script> scripts_list = new List<ListScriptsResponse.ListScripts_Scripts.ListScripts_Script>();
 			for (int i = 0; i < _ctx.Length("ListScripts.Scripts.List.Length"); i++) {
 				ListScriptsResponse.ListScripts_Scripts.ListScripts_Script script = new ListScriptsResponse.ListScripts_Scripts.ListScripts_Script();
-				script.DebugStatus = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].DebugStatus");
-				script.FailReason = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].FailReason");
-				script.Industry = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].Industry");
-				script.IsDebugDrafted = _ctx.BooleanValue("ListScripts.Scripts.List["+ i +"].IsDebugDrafted");
-				script.IsDrafted = _ctx.BooleanValue("ListScripts.Scripts.List["+ i +"].IsDrafted");
-				script.Scene = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].Scene");
-				script.ScriptDescription = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].ScriptDescription");
-				script.ScriptId = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].ScriptId");
-				script.ScriptName = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].ScriptName");
 				script.Status = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].Status");
 				script.UpdateTime = _ctx.LongValue("ListScripts.Scripts.List["+ i +"].UpdateTime");
-				script.RejectReason = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].RejectReason");
+				script.ScriptId = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].ScriptId");
+				script.IsDebugDrafted = _ctx.BooleanValue("ListScripts.Scripts.List["+ i +"].IsDebugDrafted");
+				script.Industry = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].Industry");
+				script.ScriptDescription = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].ScriptDescription");
+				script.IsDrafted = _ctx.BooleanValue("ListScripts.Scripts.List["+ i +"].IsDrafted");
+				script.DebugStatus = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].DebugStatus");
 				script.MiniPlaybackEnabled = _ctx.BooleanValue("ListScripts.Scripts.List["+ i +"].MiniPlaybackEnabled");
+				script.RejectReason = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].RejectReason");
+				script.FailReason = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].FailReason");
+				script.Scene = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].Scene");
+				script.ScriptName = _ctx.StringValue("ListScripts.Scripts.List["+ i +"].ScriptName");
+				script.NewBargeInEnable = _ctx.BooleanValue("ListScripts.Scripts.List["+ i +"].NewBargeInEnable");
 
 				scripts_list.Add(script);
 			}

@@ -31,24 +31,24 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			CreateScriptResponse createScriptResponse = new CreateScriptResponse();
 
 			createScriptResponse.HttpResponse = _ctx.HttpResponse;
-			createScriptResponse.Code = _ctx.StringValue("CreateScript.Code");
 			createScriptResponse.HttpStatusCode = _ctx.IntegerValue("CreateScript.HttpStatusCode");
-			createScriptResponse.Message = _ctx.StringValue("CreateScript.Message");
 			createScriptResponse.RequestId = _ctx.StringValue("CreateScript.RequestId");
 			createScriptResponse.Success = _ctx.BooleanValue("CreateScript.Success");
 			createScriptResponse.ChatbotId = _ctx.StringValue("CreateScript.ChatbotId");
+			createScriptResponse.Code = _ctx.StringValue("CreateScript.Code");
+			createScriptResponse.Message = _ctx.StringValue("CreateScript.Message");
 
 			CreateScriptResponse.CreateScript_Script script = new CreateScriptResponse.CreateScript_Script();
-			script.DebugStatus = _ctx.StringValue("CreateScript.Script.DebugStatus");
-			script.Industry = _ctx.StringValue("CreateScript.Script.Industry");
-			script.IsDebugDrafted = _ctx.BooleanValue("CreateScript.Script.IsDebugDrafted");
-			script.IsDrafted = _ctx.BooleanValue("CreateScript.Script.IsDrafted");
-			script.Scene = _ctx.StringValue("CreateScript.Script.Scene");
-			script.ScriptDescription = _ctx.StringValue("CreateScript.Script.ScriptDescription");
-			script.ScriptId = _ctx.StringValue("CreateScript.Script.ScriptId");
-			script.ScriptName = _ctx.StringValue("CreateScript.Script.ScriptName");
 			script.Status = _ctx.StringValue("CreateScript.Script.Status");
 			script.UpdateTime = _ctx.LongValue("CreateScript.Script.UpdateTime");
+			script.Industry = _ctx.StringValue("CreateScript.Script.Industry");
+			script.ScriptDescription = _ctx.StringValue("CreateScript.Script.ScriptDescription");
+			script.IsDrafted = _ctx.BooleanValue("CreateScript.Script.IsDrafted");
+			script.DebugStatus = _ctx.StringValue("CreateScript.Script.DebugStatus");
+			script.ScriptId = _ctx.StringValue("CreateScript.Script.ScriptId");
+			script.IsDebugDrafted = _ctx.BooleanValue("CreateScript.Script.IsDebugDrafted");
+			script.ScriptName = _ctx.StringValue("CreateScript.Script.ScriptName");
+			script.Scene = _ctx.StringValue("CreateScript.Script.Scene");
 			createScriptResponse.Script = script;
         
 			return createScriptResponse;
