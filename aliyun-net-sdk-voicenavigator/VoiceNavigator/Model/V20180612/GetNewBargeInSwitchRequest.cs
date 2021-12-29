@@ -27,10 +27,10 @@ using Aliyun.Acs.VoiceNavigator.Transform.V20180612;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 {
-    public class EndDialogueRequest : RpcAcsRequest<EndDialogueResponse>
+    public class GetNewBargeInSwitchRequest : RpcAcsRequest<GetNewBargeInSwitchResponse>
     {
-        public EndDialogueRequest()
-            : base("VoiceNavigator", "2018-06-12", "EndDialogue", "voicebot", "openAPI")
+        public GetNewBargeInSwitchRequest()
+            : base("VoiceNavigator", "2018-06-12", "GetNewBargeInSwitch", "voicebot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,39 +40,7 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			Method = MethodType.POST;
         }
 
-		private string conversationId;
-
-		private string hangUpParams;
-
 		private string instanceId;
-
-		private long? instanceOwnerId;
-
-		public string ConversationId
-		{
-			get
-			{
-				return conversationId;
-			}
-			set	
-			{
-				conversationId = value;
-				DictionaryUtil.Add(QueryParameters, "ConversationId", value);
-			}
-		}
-
-		public string HangUpParams
-		{
-			get
-			{
-				return hangUpParams;
-			}
-			set	
-			{
-				hangUpParams = value;
-				DictionaryUtil.Add(QueryParameters, "HangUpParams", value);
-			}
-		}
 
 		public string InstanceId
 		{
@@ -87,27 +55,14 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public long? InstanceOwnerId
-		{
-			get
-			{
-				return instanceOwnerId;
-			}
-			set	
-			{
-				instanceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceOwnerId", value.ToString());
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override EndDialogueResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetNewBargeInSwitchResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return EndDialogueResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetNewBargeInSwitchResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

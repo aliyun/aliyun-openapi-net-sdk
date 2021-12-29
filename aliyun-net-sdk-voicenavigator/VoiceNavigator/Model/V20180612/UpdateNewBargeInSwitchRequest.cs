@@ -27,10 +27,10 @@ using Aliyun.Acs.VoiceNavigator.Transform.V20180612;
 
 namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 {
-    public class EndDialogueRequest : RpcAcsRequest<EndDialogueResponse>
+    public class UpdateNewBargeInSwitchRequest : RpcAcsRequest<UpdateNewBargeInSwitchResponse>
     {
-        public EndDialogueRequest()
-            : base("VoiceNavigator", "2018-06-12", "EndDialogue", "voicebot", "openAPI")
+        public UpdateNewBargeInSwitchRequest()
+            : base("VoiceNavigator", "2018-06-12", "UpdateNewBargeInSwitch", "voicebot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,39 +40,9 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			Method = MethodType.POST;
         }
 
-		private string conversationId;
-
-		private string hangUpParams;
-
 		private string instanceId;
 
-		private long? instanceOwnerId;
-
-		public string ConversationId
-		{
-			get
-			{
-				return conversationId;
-			}
-			set	
-			{
-				conversationId = value;
-				DictionaryUtil.Add(QueryParameters, "ConversationId", value);
-			}
-		}
-
-		public string HangUpParams
-		{
-			get
-			{
-				return hangUpParams;
-			}
-			set	
-			{
-				hangUpParams = value;
-				DictionaryUtil.Add(QueryParameters, "HangUpParams", value);
-			}
-		}
+		private bool? enable;
 
 		public string InstanceId
 		{
@@ -87,16 +57,16 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			}
 		}
 
-		public long? InstanceOwnerId
+		public bool? Enable
 		{
 			get
 			{
-				return instanceOwnerId;
+				return enable;
 			}
 			set	
 			{
-				instanceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceOwnerId", value.ToString());
+				enable = value;
+				DictionaryUtil.Add(QueryParameters, "Enable", value.ToString());
 			}
 		}
 
@@ -105,9 +75,9 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			return false;
 		}
 
-        public override EndDialogueResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateNewBargeInSwitchResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return EndDialogueResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateNewBargeInSwitchResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

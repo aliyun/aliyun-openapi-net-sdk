@@ -114,6 +114,8 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 
 			private int? rounds;
 
+			private bool? hasLastPlaybackCompleted;
+
 			public long? EndTime
 			{
 				get
@@ -207,6 +209,18 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 				set	
 				{
 					rounds = value;
+				}
+			}
+
+			public bool? HasLastPlaybackCompleted
+			{
+				get
+				{
+					return hasLastPlaybackCompleted;
+				}
+				set	
+				{
+					hasLastPlaybackCompleted = value;
 				}
 			}
 		}
