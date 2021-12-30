@@ -24,17 +24,22 @@ using Aliyun.Acs.R_kvstore.Model.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
-    public class ReplaceUserClusterHostResponseUnmarshaller
+    public class DescribeEncryptionKeyListResponseUnmarshaller
     {
-        public static ReplaceUserClusterHostResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DescribeEncryptionKeyListResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			ReplaceUserClusterHostResponse replaceUserClusterHostResponse = new ReplaceUserClusterHostResponse();
+			DescribeEncryptionKeyListResponse describeEncryptionKeyListResponse = new DescribeEncryptionKeyListResponse();
 
-			replaceUserClusterHostResponse.HttpResponse = _ctx.HttpResponse;
-			replaceUserClusterHostResponse.RequestId = _ctx.StringValue("ReplaceUserClusterHost.RequestId");
-			replaceUserClusterHostResponse.NewHostId = _ctx.StringValue("ReplaceUserClusterHost.NewHostId");
+			describeEncryptionKeyListResponse.HttpResponse = _ctx.HttpResponse;
+			describeEncryptionKeyListResponse.RequestId = _ctx.StringValue("DescribeEncryptionKeyList.RequestId");
+
+			List<string> describeEncryptionKeyListResponse_keyIds = new List<string>();
+			for (int i = 0; i < _ctx.Length("DescribeEncryptionKeyList.KeyIds.Length"); i++) {
+				describeEncryptionKeyListResponse_keyIds.Add(_ctx.StringValue("DescribeEncryptionKeyList.KeyIds["+ i +"]"));
+			}
+			describeEncryptionKeyListResponse.KeyIds = describeEncryptionKeyListResponse_keyIds;
         
-			return replaceUserClusterHostResponse;
+			return describeEncryptionKeyListResponse;
         }
     }
 }

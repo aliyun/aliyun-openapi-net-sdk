@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class CreateUserClusterHostRequest : RpcAcsRequest<CreateUserClusterHostResponse>
+    public class ModifyInstanceTDERequest : RpcAcsRequest<ModifyInstanceTDEResponse>
     {
-        public CreateUserClusterHostRequest()
-            : base("R-kvstore", "2015-01-01", "CreateUserClusterHost", "redisa", "openAPI")
+        public ModifyInstanceTDERequest()
+            : base("R-kvstore", "2015-01-01", "ModifyInstanceTDE", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,37 +42,23 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private string couponNo;
-
 		private string securityToken;
-
-		private string engine;
-
-		private int? orderPeriod;
-
-		private string businessInfo;
-
-		private string agentId;
-
-		private string hostClass;
-
-		private bool? autoPay;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private int? orderNum;
-
-		private string clusterId;
+		private string encryptionKey;
 
 		private long? ownerId;
 
-		private bool? autoRenew;
+		private string encryptionName;
 
-		private string zoneId;
+		private string instanceId;
 
-		private string chargeType;
+		private string roleArn;
+
+		private string tDEStatus;
 
 		public long? ResourceOwnerId
 		{
@@ -87,19 +73,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string CouponNo
-		{
-			get
-			{
-				return couponNo;
-			}
-			set	
-			{
-				couponNo = value;
-				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
-			}
-		}
-
 		public string SecurityToken
 		{
 			get
@@ -110,84 +83,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
-			}
-		}
-
-		public int? OrderPeriod
-		{
-			get
-			{
-				return orderPeriod;
-			}
-			set	
-			{
-				orderPeriod = value;
-				DictionaryUtil.Add(QueryParameters, "OrderPeriod", value.ToString());
-			}
-		}
-
-		public string BusinessInfo
-		{
-			get
-			{
-				return businessInfo;
-			}
-			set	
-			{
-				businessInfo = value;
-				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
-			}
-		}
-
-		public string AgentId
-		{
-			get
-			{
-				return agentId;
-			}
-			set	
-			{
-				agentId = value;
-				DictionaryUtil.Add(QueryParameters, "AgentId", value);
-			}
-		}
-
-		public string HostClass
-		{
-			get
-			{
-				return hostClass;
-			}
-			set	
-			{
-				hostClass = value;
-				DictionaryUtil.Add(QueryParameters, "HostClass", value);
-			}
-		}
-
-		public bool? AutoPay
-		{
-			get
-			{
-				return autoPay;
-			}
-			set	
-			{
-				autoPay = value;
-				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
 			}
 		}
 
@@ -217,29 +112,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? OrderNum
+		public string EncryptionKey
 		{
 			get
 			{
-				return orderNum;
+				return encryptionKey;
 			}
 			set	
 			{
-				orderNum = value;
-				DictionaryUtil.Add(QueryParameters, "OrderNum", value.ToString());
-			}
-		}
-
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+				encryptionKey = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionKey", value);
 			}
 		}
 
@@ -256,42 +138,55 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public bool? AutoRenew
+		public string EncryptionName
 		{
 			get
 			{
-				return autoRenew;
+				return encryptionName;
 			}
 			set	
 			{
-				autoRenew = value;
-				DictionaryUtil.Add(QueryParameters, "AutoRenew", value.ToString());
+				encryptionName = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionName", value);
 			}
 		}
 
-		public string ZoneId
+		public string InstanceId
 		{
 			get
 			{
-				return zoneId;
+				return instanceId;
 			}
 			set	
 			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-		public string ChargeType
+		public string RoleArn
 		{
 			get
 			{
-				return chargeType;
+				return roleArn;
 			}
 			set	
 			{
-				chargeType = value;
-				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+				roleArn = value;
+				DictionaryUtil.Add(QueryParameters, "RoleArn", value);
+			}
+		}
+
+		public string TDEStatus
+		{
+			get
+			{
+				return tDEStatus;
+			}
+			set	
+			{
+				tDEStatus = value;
+				DictionaryUtil.Add(QueryParameters, "TDEStatus", value);
 			}
 		}
 
@@ -300,9 +195,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			return false;
 		}
 
-        public override CreateUserClusterHostResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyInstanceTDEResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateUserClusterHostResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyInstanceTDEResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

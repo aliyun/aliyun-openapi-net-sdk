@@ -36,10 +36,10 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			List<DescribeRegionsResponse.DescribeRegions_KVStoreRegion> describeRegionsResponse_regionIds = new List<DescribeRegionsResponse.DescribeRegions_KVStoreRegion>();
 			for (int i = 0; i < _ctx.Length("DescribeRegions.RegionIds.Length"); i++) {
 				DescribeRegionsResponse.DescribeRegions_KVStoreRegion kVStoreRegion = new DescribeRegionsResponse.DescribeRegions_KVStoreRegion();
+				kVStoreRegion.RegionEndpoint = _ctx.StringValue("DescribeRegions.RegionIds["+ i +"].RegionEndpoint");
+				kVStoreRegion.LocalName = _ctx.StringValue("DescribeRegions.RegionIds["+ i +"].LocalName");
 				kVStoreRegion.RegionId = _ctx.StringValue("DescribeRegions.RegionIds["+ i +"].RegionId");
 				kVStoreRegion.ZoneIds = _ctx.StringValue("DescribeRegions.RegionIds["+ i +"].ZoneIds");
-				kVStoreRegion.LocalName = _ctx.StringValue("DescribeRegions.RegionIds["+ i +"].LocalName");
-				kVStoreRegion.RegionEndpoint = _ctx.StringValue("DescribeRegions.RegionIds["+ i +"].RegionEndpoint");
 
 				List<string> kVStoreRegion_zoneIdList = new List<string>();
 				for (int j = 0; j < _ctx.Length("DescribeRegions.RegionIds["+ i +"].ZoneIdList.Length"); j++) {

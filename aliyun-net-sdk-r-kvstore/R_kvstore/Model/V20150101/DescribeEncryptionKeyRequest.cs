@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyUserClusterHostRequest : RpcAcsRequest<ModifyUserClusterHostResponse>
+    public class DescribeEncryptionKeyRequest : RpcAcsRequest<DescribeEncryptionKeyResponse>
     {
-        public ModifyUserClusterHostRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyUserClusterHost", "redisa", "openAPI")
+        public DescribeEncryptionKeyRequest()
+            : base("R-kvstore", "2015-01-01", "DescribeEncryptionKey", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,23 +42,17 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private string hostId;
-
 		private string securityToken;
-
-		private int? allocationStatus;
-
-		private string engine;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string clusterId;
+		private string encryptionKey;
 
 		private long? ownerId;
 
-		private string zoneId;
+		private string instanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -73,19 +67,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string HostId
-		{
-			get
-			{
-				return hostId;
-			}
-			set	
-			{
-				hostId = value;
-				DictionaryUtil.Add(QueryParameters, "HostId", value);
-			}
-		}
-
 		public string SecurityToken
 		{
 			get
@@ -96,32 +77,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public int? AllocationStatus
-		{
-			get
-			{
-				return allocationStatus;
-			}
-			set	
-			{
-				allocationStatus = value;
-				DictionaryUtil.Add(QueryParameters, "AllocationStatus", value.ToString());
-			}
-		}
-
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
 			}
 		}
 
@@ -151,16 +106,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string ClusterId
+		public string EncryptionKey
 		{
 			get
 			{
-				return clusterId;
+				return encryptionKey;
 			}
 			set	
 			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+				encryptionKey = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionKey", value);
 			}
 		}
 
@@ -177,27 +132,22 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string ZoneId
+		public string InstanceId
 		{
 			get
 			{
-				return zoneId;
+				return instanceId;
 			}
 			set	
 			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override ModifyUserClusterHostResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeEncryptionKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyUserClusterHostResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeEncryptionKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -50,6 +50,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string storageType;
 
+		private string resourceGroupId;
+
 		private string password;
 
 		private string securityToken;
@@ -164,6 +166,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				storageType = value;
 				DictionaryUtil.Add(QueryParameters, "StorageType", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

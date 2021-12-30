@@ -31,8 +31,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			CreateInstancesResponse createInstancesResponse = new CreateInstancesResponse();
 
 			createInstancesResponse.HttpResponse = _ctx.HttpResponse;
-			createInstancesResponse.RequestId = _ctx.StringValue("CreateInstances.RequestId");
 			createInstancesResponse.OrderId = _ctx.StringValue("CreateInstances.OrderId");
+			createInstancesResponse.RequestId = _ctx.StringValue("CreateInstances.RequestId");
 
 			List<string> createInstancesResponse_instanceIds = new List<string>();
 			for (int i = 0; i < _ctx.Length("CreateInstances.InstanceIds.Length"); i++) {

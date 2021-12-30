@@ -25,23 +25,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class DescribeBackupTasksResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string instanceId;
 
-		private List<DescribeBackupTasks_BackupJob> backupJobs;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeBackupTasks_BackupJob> backupJobs;
 
 		public string InstanceId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				instanceId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,19 +70,55 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeBackupTasks_BackupJob
 		{
 
+			private string startTime;
+
+			private string process;
+
+			private string jobMode;
+
 			private int? backupJobID;
 
 			private string backupProgressStatus;
 
-			private string jobMode;
-
-			private string process;
-
-			private string startTime;
+			private string nodeId;
 
 			private string taskAction;
 
-			private string nodeId;
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			public string Process
+			{
+				get
+				{
+					return process;
+				}
+				set	
+				{
+					process = value;
+				}
+			}
+
+			public string JobMode
+			{
+				get
+				{
+					return jobMode;
+				}
+				set	
+				{
+					jobMode = value;
+				}
+			}
 
 			public int? BackupJobID
 			{
@@ -108,39 +144,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string JobMode
+			public string NodeId
 			{
 				get
 				{
-					return jobMode;
+					return nodeId;
 				}
 				set	
 				{
-					jobMode = value;
-				}
-			}
-
-			public string Process
-			{
-				get
-				{
-					return process;
-				}
-				set	
-				{
-					process = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
+					nodeId = value;
 				}
 			}
 
@@ -153,18 +165,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					taskAction = value;
-				}
-			}
-
-			public string NodeId
-			{
-				get
-				{
-					return nodeId;
-				}
-				set	
-				{
-					nodeId = value;
 				}
 			}
 		}

@@ -16,26 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.R_kvstore.Model.V20150101;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.R_kvstore.Transform.V20150101
+namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class CreateUserClusterHostResponseUnmarshaller
-    {
-        public static CreateUserClusterHostResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			CreateUserClusterHostResponse createUserClusterHostResponse = new CreateUserClusterHostResponse();
+	public class ModifyInstanceTDEResponse : AcsResponse
+	{
 
-			createUserClusterHostResponse.HttpResponse = _ctx.HttpResponse;
-			createUserClusterHostResponse.RequestId = _ctx.StringValue("CreateUserClusterHost.RequestId");
-			createUserClusterHostResponse.ClusterId = _ctx.StringValue("CreateUserClusterHost.ClusterId");
-			createUserClusterHostResponse.HostId = _ctx.StringValue("CreateUserClusterHost.HostId");
-        
-			return createUserClusterHostResponse;
-        }
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

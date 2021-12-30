@@ -31,27 +31,27 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			CreateInstanceResponse createInstanceResponse = new CreateInstanceResponse();
 
 			createInstanceResponse.HttpResponse = _ctx.HttpResponse;
-			createInstanceResponse.RequestId = _ctx.StringValue("CreateInstance.RequestId");
-			createInstanceResponse.InstanceId = _ctx.StringValue("CreateInstance.InstanceId");
-			createInstanceResponse.InstanceName = _ctx.StringValue("CreateInstance.InstanceName");
-			createInstanceResponse.ConnectionDomain = _ctx.StringValue("CreateInstance.ConnectionDomain");
-			createInstanceResponse.Port = _ctx.IntegerValue("CreateInstance.Port");
-			createInstanceResponse.UserName = _ctx.StringValue("CreateInstance.UserName");
-			createInstanceResponse.InstanceStatus = _ctx.StringValue("CreateInstance.InstanceStatus");
-			createInstanceResponse.RegionId = _ctx.StringValue("CreateInstance.RegionId");
-			createInstanceResponse.Capacity = _ctx.LongValue("CreateInstance.Capacity");
-			createInstanceResponse.QPS = _ctx.LongValue("CreateInstance.QPS");
-			createInstanceResponse.Bandwidth = _ctx.LongValue("CreateInstance.Bandwidth");
-			createInstanceResponse.Connections = _ctx.LongValue("CreateInstance.Connections");
-			createInstanceResponse.ZoneId = _ctx.StringValue("CreateInstance.ZoneId");
-			createInstanceResponse.Config = _ctx.StringValue("CreateInstance.Config");
-			createInstanceResponse.ChargeType = _ctx.StringValue("CreateInstance.ChargeType");
-			createInstanceResponse.EndTime = _ctx.StringValue("CreateInstance.EndTime");
-			createInstanceResponse.NodeType = _ctx.StringValue("CreateInstance.NodeType");
-			createInstanceResponse.NetworkType = _ctx.StringValue("CreateInstance.NetworkType");
 			createInstanceResponse.VpcId = _ctx.StringValue("CreateInstance.VpcId");
+			createInstanceResponse.QPS = _ctx.LongValue("CreateInstance.QPS");
+			createInstanceResponse.Capacity = _ctx.LongValue("CreateInstance.Capacity");
+			createInstanceResponse.ConnectionDomain = _ctx.StringValue("CreateInstance.ConnectionDomain");
+			createInstanceResponse.ChargeType = _ctx.StringValue("CreateInstance.ChargeType");
+			createInstanceResponse.NetworkType = _ctx.StringValue("CreateInstance.NetworkType");
+			createInstanceResponse.InstanceId = _ctx.StringValue("CreateInstance.InstanceId");
+			createInstanceResponse.Port = _ctx.IntegerValue("CreateInstance.Port");
+			createInstanceResponse.Config = _ctx.StringValue("CreateInstance.Config");
+			createInstanceResponse.RegionId = _ctx.StringValue("CreateInstance.RegionId");
+			createInstanceResponse.EndTime = _ctx.StringValue("CreateInstance.EndTime");
 			createInstanceResponse.VSwitchId = _ctx.StringValue("CreateInstance.VSwitchId");
+			createInstanceResponse.RequestId = _ctx.StringValue("CreateInstance.RequestId");
+			createInstanceResponse.NodeType = _ctx.StringValue("CreateInstance.NodeType");
+			createInstanceResponse.Connections = _ctx.LongValue("CreateInstance.Connections");
+			createInstanceResponse.Bandwidth = _ctx.LongValue("CreateInstance.Bandwidth");
+			createInstanceResponse.InstanceName = _ctx.StringValue("CreateInstance.InstanceName");
+			createInstanceResponse.ZoneId = _ctx.StringValue("CreateInstance.ZoneId");
+			createInstanceResponse.InstanceStatus = _ctx.StringValue("CreateInstance.InstanceStatus");
 			createInstanceResponse.PrivateIpAddr = _ctx.StringValue("CreateInstance.PrivateIpAddr");
+			createInstanceResponse.UserName = _ctx.StringValue("CreateInstance.UserName");
         
 			return createInstanceResponse;
         }

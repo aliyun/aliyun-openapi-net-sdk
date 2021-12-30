@@ -31,8 +31,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			SwitchNetworkResponse switchNetworkResponse = new SwitchNetworkResponse();
 
 			switchNetworkResponse.HttpResponse = _ctx.HttpResponse;
-			switchNetworkResponse.RequestId = _ctx.StringValue("SwitchNetwork.RequestId");
 			switchNetworkResponse.TaskId = _ctx.StringValue("SwitchNetwork.TaskId");
+			switchNetworkResponse.RequestId = _ctx.StringValue("SwitchNetwork.RequestId");
         
 			return switchNetworkResponse;
         }

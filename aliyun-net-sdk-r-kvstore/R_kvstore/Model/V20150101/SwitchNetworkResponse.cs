@@ -25,21 +25,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class SwitchNetworkResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string taskId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string TaskId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				taskId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

@@ -98,17 +98,29 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeParameters_Parameter
 		{
 
+			private string checkingCode;
+
 			private string parameterName;
 
 			private string parameterValue;
 
-			private bool? modifiableStatus;
-
 			private bool? forceRestart;
 
-			private string checkingCode;
-
 			private string parameterDescription;
+
+			private bool? modifiableStatus;
+
+			public string CheckingCode
+			{
+				get
+				{
+					return checkingCode;
+				}
+				set	
+				{
+					checkingCode = value;
+				}
+			}
 
 			public string ParameterName
 			{
@@ -134,18 +146,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public bool? ModifiableStatus
-			{
-				get
-				{
-					return modifiableStatus;
-				}
-				set	
-				{
-					modifiableStatus = value;
-				}
-			}
-
 			public bool? ForceRestart
 			{
 				get
@@ -158,18 +158,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string CheckingCode
-			{
-				get
-				{
-					return checkingCode;
-				}
-				set	
-				{
-					checkingCode = value;
-				}
-			}
-
 			public string ParameterDescription
 			{
 				get
@@ -179,6 +167,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					parameterDescription = value;
+				}
+			}
+
+			public bool? ModifiableStatus
+			{
+				get
+				{
+					return modifiableStatus;
+				}
+				set	
+				{
+					modifiableStatus = value;
 				}
 			}
 		}

@@ -25,23 +25,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class CreateInstancesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string orderId;
 
-		private List<string> instanceIds;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<string> instanceIds;
 
 		public string OrderId
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				orderId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

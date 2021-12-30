@@ -31,8 +31,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			ModifyInstanceSpecResponse modifyInstanceSpecResponse = new ModifyInstanceSpecResponse();
 
 			modifyInstanceSpecResponse.HttpResponse = _ctx.HttpResponse;
-			modifyInstanceSpecResponse.RequestId = _ctx.StringValue("ModifyInstanceSpec.RequestId");
 			modifyInstanceSpecResponse.OrderId = _ctx.StringValue("ModifyInstanceSpec.OrderId");
+			modifyInstanceSpecResponse.RequestId = _ctx.StringValue("ModifyInstanceSpec.RequestId");
         
 			return modifyInstanceSpecResponse;
         }

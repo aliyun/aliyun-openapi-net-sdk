@@ -56,15 +56,39 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeRegions_KVStoreRegion
 		{
 
+			private string regionEndpoint;
+
+			private string localName;
+
 			private string regionId;
 
 			private string zoneIds;
 
-			private string localName;
-
-			private string regionEndpoint;
-
 			private List<string> zoneIdList;
+
+			public string RegionEndpoint
+			{
+				get
+				{
+					return regionEndpoint;
+				}
+				set	
+				{
+					regionEndpoint = value;
+				}
+			}
+
+			public string LocalName
+			{
+				get
+				{
+					return localName;
+				}
+				set	
+				{
+					localName = value;
+				}
+			}
 
 			public string RegionId
 			{
@@ -87,30 +111,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					zoneIds = value;
-				}
-			}
-
-			public string LocalName
-			{
-				get
-				{
-					return localName;
-				}
-				set	
-				{
-					localName = value;
-				}
-			}
-
-			public string RegionEndpoint
-			{
-				get
-				{
-					return regionEndpoint;
-				}
-				set	
-				{
-					regionEndpoint = value;
 				}
 			}
 

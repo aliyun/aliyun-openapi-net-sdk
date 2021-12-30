@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DescribeUserClusterHostInstanceRequest : RpcAcsRequest<DescribeUserClusterHostInstanceResponse>
+    public class DescribeInstancesOverviewRequest : RpcAcsRequest<DescribeInstancesOverviewResponse>
     {
-        public DescribeUserClusterHostInstanceRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeUserClusterHostInstance", "redisa", "openAPI")
+        public DescribeInstancesOverviewRequest()
+            : base("R-kvstore", "2015-01-01", "DescribeInstancesOverview", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,21 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private int? pageNumber;
+		private string searchKey;
+
+		private string networkType;
+
+		private string engineVersion;
+
+		private string instanceClass;
+
+		private string resourceGroupId;
 
 		private string securityToken;
 
-		private string engine;
+		private string instanceType;
+
+		private string editionType;
 
 		private string instanceStatus;
 
@@ -54,15 +64,21 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string ownerAccount;
 
-		private int? maxRecordsPerPage;
-
-		private string clusterId;
+		private string privateIp;
 
 		private long? ownerId;
 
+		private string vSwitchId;
+
 		private string instanceIds;
 
+		private string architectureType;
+
+		private string vpcId;
+
 		private string zoneId;
+
+		private string chargeType;
 
 		public long? ResourceOwnerId
 		{
@@ -77,16 +93,68 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? PageNumber
+		public string SearchKey
 		{
 			get
 			{
-				return pageNumber;
+				return searchKey;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				searchKey = value;
+				DictionaryUtil.Add(QueryParameters, "SearchKey", value);
+			}
+		}
+
+		public string NetworkType
+		{
+			get
+			{
+				return networkType;
+			}
+			set	
+			{
+				networkType = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+			}
+		}
+
+		public string EngineVersion
+		{
+			get
+			{
+				return engineVersion;
+			}
+			set	
+			{
+				engineVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
+
+		public string InstanceClass
+		{
+			get
+			{
+				return instanceClass;
+			}
+			set	
+			{
+				instanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceClass", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -103,16 +171,29 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string Engine
+		public string InstanceType
 		{
 			get
 			{
-				return engine;
+				return instanceType;
 			}
 			set	
 			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
+
+		public string EditionType
+		{
+			get
+			{
+				return editionType;
+			}
+			set	
+			{
+				editionType = value;
+				DictionaryUtil.Add(QueryParameters, "EditionType", value);
 			}
 		}
 
@@ -155,29 +236,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? MaxRecordsPerPage
+		public string PrivateIp
 		{
 			get
 			{
-				return maxRecordsPerPage;
+				return privateIp;
 			}
 			set	
 			{
-				maxRecordsPerPage = value;
-				DictionaryUtil.Add(QueryParameters, "MaxRecordsPerPage", value.ToString());
-			}
-		}
-
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+				privateIp = value;
+				DictionaryUtil.Add(QueryParameters, "PrivateIp", value);
 			}
 		}
 
@@ -194,6 +262,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
 		public string InstanceIds
 		{
 			get
@@ -204,6 +285,32 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceIds = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
+			}
+		}
+
+		public string ArchitectureType
+		{
+			get
+			{
+				return architectureType;
+			}
+			set	
+			{
+				architectureType = value;
+				DictionaryUtil.Add(QueryParameters, "ArchitectureType", value);
+			}
+		}
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
 			}
 		}
 
@@ -220,9 +327,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override DescribeUserClusterHostInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ChargeType
+		{
+			get
+			{
+				return chargeType;
+			}
+			set	
+			{
+				chargeType = value;
+				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeInstancesOverviewResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeUserClusterHostInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeInstancesOverviewResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -22,18 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-	public class DescribeInstancesResponse : AcsResponse
+	public class DescribeInstancesOverviewResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? pageNumber;
-
-		private int? pageSize;
-
 		private int? totalCount;
 
-		private List<DescribeInstances_KVStoreInstance> instances;
+		private List<DescribeInstancesOverview_KVStoreInstance> instances;
 
 		public string RequestId
 		{
@@ -44,30 +40,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
 			}
 		}
 
@@ -83,7 +55,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public List<DescribeInstances_KVStoreInstance> Instances
+		public List<DescribeInstancesOverview_KVStoreInstance> Instances
 		{
 			get
 			{
@@ -95,7 +67,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public class DescribeInstances_KVStoreInstance
+		public class DescribeInstancesOverview_KVStoreInstance
 		{
 
 			private string vpcId;
@@ -104,13 +76,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private long? capacity;
 
-			private string replacateId;
-
 			private string createTime;
 
 			private string connectionDomain;
-
-			private bool? isRds;
 
 			private string chargeType;
 
@@ -122,59 +90,29 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private long? port;
 
-			private string secondaryZoneId;
-
 			private string engineVersion;
-
-			private string packageType;
-
-			private string config;
-
-			private string vpcCloudInstanceId;
-
-			private long? bandwidth;
 
 			private string instanceName;
 
-			private int? shardCount;
-
-			private string userName;
-
 			private string globalInstanceId;
 
-			private long? qPS;
-
 			private string instanceClass;
-
-			private string destroyTime;
 
 			private string instanceId;
 
 			private string instanceType;
 
-			private bool? hasRenewChangeOrder;
-
 			private string regionId;
-
-			private string searchKey;
 
 			private string endTime;
 
 			private string vSwitchId;
-
-			private string nodeType;
-
-			private long? connections;
 
 			private string resourceGroupId;
 
 			private string zoneId;
 
 			private string instanceStatus;
-
-			private int? proxyCount;
-
-			private List<DescribeInstances_Tag> tags;
 
 			public string VpcId
 			{
@@ -212,18 +150,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string ReplacateId
-			{
-				get
-				{
-					return replacateId;
-				}
-				set	
-				{
-					replacateId = value;
-				}
-			}
-
 			public string CreateTime
 			{
 				get
@@ -245,18 +171,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					connectionDomain = value;
-				}
-			}
-
-			public bool? IsRds
-			{
-				get
-				{
-					return isRds;
-				}
-				set	
-				{
-					isRds = value;
 				}
 			}
 
@@ -320,18 +234,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string SecondaryZoneId
-			{
-				get
-				{
-					return secondaryZoneId;
-				}
-				set	
-				{
-					secondaryZoneId = value;
-				}
-			}
-
 			public string EngineVersion
 			{
 				get
@@ -341,54 +243,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					engineVersion = value;
-				}
-			}
-
-			public string PackageType
-			{
-				get
-				{
-					return packageType;
-				}
-				set	
-				{
-					packageType = value;
-				}
-			}
-
-			public string Config
-			{
-				get
-				{
-					return config;
-				}
-				set	
-				{
-					config = value;
-				}
-			}
-
-			public string VpcCloudInstanceId
-			{
-				get
-				{
-					return vpcCloudInstanceId;
-				}
-				set	
-				{
-					vpcCloudInstanceId = value;
-				}
-			}
-
-			public long? Bandwidth
-			{
-				get
-				{
-					return bandwidth;
-				}
-				set	
-				{
-					bandwidth = value;
 				}
 			}
 
@@ -404,30 +258,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public int? ShardCount
-			{
-				get
-				{
-					return shardCount;
-				}
-				set	
-				{
-					shardCount = value;
-				}
-			}
-
-			public string UserName
-			{
-				get
-				{
-					return userName;
-				}
-				set	
-				{
-					userName = value;
-				}
-			}
-
 			public string GlobalInstanceId
 			{
 				get
@@ -440,18 +270,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public long? QPS
-			{
-				get
-				{
-					return qPS;
-				}
-				set	
-				{
-					qPS = value;
-				}
-			}
-
 			public string InstanceClass
 			{
 				get
@@ -461,18 +279,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					instanceClass = value;
-				}
-			}
-
-			public string DestroyTime
-			{
-				get
-				{
-					return destroyTime;
-				}
-				set	
-				{
-					destroyTime = value;
 				}
 			}
 
@@ -500,18 +306,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public bool? HasRenewChangeOrder
-			{
-				get
-				{
-					return hasRenewChangeOrder;
-				}
-				set	
-				{
-					hasRenewChangeOrder = value;
-				}
-			}
-
 			public string RegionId
 			{
 				get
@@ -521,18 +315,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					regionId = value;
-				}
-			}
-
-			public string SearchKey
-			{
-				get
-				{
-					return searchKey;
-				}
-				set	
-				{
-					searchKey = value;
 				}
 			}
 
@@ -557,30 +339,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					vSwitchId = value;
-				}
-			}
-
-			public string NodeType
-			{
-				get
-				{
-					return nodeType;
-				}
-				set	
-				{
-					nodeType = value;
-				}
-			}
-
-			public long? Connections
-			{
-				get
-				{
-					return connections;
-				}
-				set	
-				{
-					connections = value;
 				}
 			}
 
@@ -617,62 +375,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					instanceStatus = value;
-				}
-			}
-
-			public int? ProxyCount
-			{
-				get
-				{
-					return proxyCount;
-				}
-				set	
-				{
-					proxyCount = value;
-				}
-			}
-
-			public List<DescribeInstances_Tag> Tags
-			{
-				get
-				{
-					return tags;
-				}
-				set	
-				{
-					tags = value;
-				}
-			}
-
-			public class DescribeInstances_Tag
-			{
-
-				private string key;
-
-				private string _value;
-
-				public string Key
-				{
-					get
-					{
-						return key;
-					}
-					set	
-					{
-						key = value;
-					}
-				}
-
-				public string _Value
-				{
-					get
-					{
-						return _value;
-					}
-					set	
-					{
-						_value = value;
-					}
 				}
 			}
 		}

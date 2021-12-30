@@ -16,24 +16,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.R_kvstore.Model.V20150101;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.R_kvstore.Transform.V20150101
+namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyUserClusterHostResponseUnmarshaller
-    {
-        public static ModifyUserClusterHostResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			ModifyUserClusterHostResponse modifyUserClusterHostResponse = new ModifyUserClusterHostResponse();
+	public class DescribeEncryptionKeyListResponse : AcsResponse
+	{
 
-			modifyUserClusterHostResponse.HttpResponse = _ctx.HttpResponse;
-			modifyUserClusterHostResponse.RequestId = _ctx.StringValue("ModifyUserClusterHost.RequestId");
-        
-			return modifyUserClusterHostResponse;
-        }
-    }
+		private string requestId;
+
+		private List<string> keyIds;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<string> KeyIds
+		{
+			get
+			{
+				return keyIds;
+			}
+			set	
+			{
+				keyIds = value;
+			}
+		}
+	}
 }

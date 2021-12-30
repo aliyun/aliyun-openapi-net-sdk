@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-	public class ReplaceUserClusterHostResponse : AcsResponse
+	public class DescribeInstanceTDEStatusResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string newHostId;
+		private string tDEStatus;
 
 		public string RequestId
 		{
@@ -41,15 +41,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string NewHostId
+		public string TDEStatus
 		{
 			get
 			{
-				return newHostId;
+				return tDEStatus;
 			}
 			set	
 			{
-				newHostId = value;
+				tDEStatus = value;
 			}
 		}
 	}

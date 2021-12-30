@@ -31,19 +31,19 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			DescribeBackupTasksResponse describeBackupTasksResponse = new DescribeBackupTasksResponse();
 
 			describeBackupTasksResponse.HttpResponse = _ctx.HttpResponse;
-			describeBackupTasksResponse.RequestId = _ctx.StringValue("DescribeBackupTasks.RequestId");
 			describeBackupTasksResponse.InstanceId = _ctx.StringValue("DescribeBackupTasks.InstanceId");
+			describeBackupTasksResponse.RequestId = _ctx.StringValue("DescribeBackupTasks.RequestId");
 
 			List<DescribeBackupTasksResponse.DescribeBackupTasks_BackupJob> describeBackupTasksResponse_backupJobs = new List<DescribeBackupTasksResponse.DescribeBackupTasks_BackupJob>();
 			for (int i = 0; i < _ctx.Length("DescribeBackupTasks.BackupJobs.Length"); i++) {
 				DescribeBackupTasksResponse.DescribeBackupTasks_BackupJob backupJob = new DescribeBackupTasksResponse.DescribeBackupTasks_BackupJob();
+				backupJob.StartTime = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].StartTime");
+				backupJob.Process = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].Process");
+				backupJob.JobMode = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].JobMode");
 				backupJob.BackupJobID = _ctx.IntegerValue("DescribeBackupTasks.BackupJobs["+ i +"].BackupJobID");
 				backupJob.BackupProgressStatus = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].BackupProgressStatus");
-				backupJob.JobMode = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].JobMode");
-				backupJob.Process = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].Process");
-				backupJob.StartTime = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].StartTime");
-				backupJob.TaskAction = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].TaskAction");
 				backupJob.NodeId = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].NodeId");
+				backupJob.TaskAction = _ctx.StringValue("DescribeBackupTasks.BackupJobs["+ i +"].TaskAction");
 
 				describeBackupTasksResponse_backupJobs.Add(backupJob);
 			}

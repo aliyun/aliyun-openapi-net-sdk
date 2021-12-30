@@ -48,6 +48,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string engineVersion;
 
+		private string resourceGroupId;
+
 		private string securityToken;
 
 		private bool? rebuildInstance;
@@ -115,6 +117,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				engineVersion = value;
 				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

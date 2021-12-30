@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DescribeUserClusterHostRequest : RpcAcsRequest<DescribeUserClusterHostResponse>
+    public class CheckCloudResourceAuthorizedRequest : RpcAcsRequest<CheckCloudResourceAuthorizedResponse>
     {
-        public DescribeUserClusterHostRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeUserClusterHost", "redisa", "openAPI")
+        public CheckCloudResourceAuthorizedRequest()
+            : base("R-kvstore", "2015-01-01", "CheckCloudResourceAuthorized", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,23 +42,17 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private int? pageNumber;
-
 		private string securityToken;
-
-		private string engine;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private int? maxRecordsPerPage;
-
-		private string clusterId;
-
 		private long? ownerId;
 
-		private string zoneId;
+		private string instanceId;
+
+		private string roleArn;
 
 		public long? ResourceOwnerId
 		{
@@ -73,19 +67,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string SecurityToken
 		{
 			get
@@ -96,19 +77,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
 			}
 		}
 
@@ -138,32 +106,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? MaxRecordsPerPage
-		{
-			get
-			{
-				return maxRecordsPerPage;
-			}
-			set	
-			{
-				maxRecordsPerPage = value;
-				DictionaryUtil.Add(QueryParameters, "MaxRecordsPerPage", value.ToString());
-			}
-		}
-
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -177,16 +119,29 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string ZoneId
+		public string InstanceId
 		{
 			get
 			{
-				return zoneId;
+				return instanceId;
 			}
 			set	
 			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string RoleArn
+		{
+			get
+			{
+				return roleArn;
+			}
+			set	
+			{
+				roleArn = value;
+				DictionaryUtil.Add(QueryParameters, "RoleArn", value);
 			}
 		}
 
@@ -195,9 +150,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			return false;
 		}
 
-        public override DescribeUserClusterHostResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CheckCloudResourceAuthorizedResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeUserClusterHostResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CheckCloudResourceAuthorizedResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -24,16 +24,17 @@ using Aliyun.Acs.R_kvstore.Model.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
-    public class DeleteUserClusterHostResponseUnmarshaller
+    public class DescribeInstanceTDEStatusResponseUnmarshaller
     {
-        public static DeleteUserClusterHostResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DescribeInstanceTDEStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DeleteUserClusterHostResponse deleteUserClusterHostResponse = new DeleteUserClusterHostResponse();
+			DescribeInstanceTDEStatusResponse describeInstanceTDEStatusResponse = new DescribeInstanceTDEStatusResponse();
 
-			deleteUserClusterHostResponse.HttpResponse = _ctx.HttpResponse;
-			deleteUserClusterHostResponse.RequestId = _ctx.StringValue("DeleteUserClusterHost.RequestId");
+			describeInstanceTDEStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeInstanceTDEStatusResponse.RequestId = _ctx.StringValue("DescribeInstanceTDEStatus.RequestId");
+			describeInstanceTDEStatusResponse.TDEStatus = _ctx.StringValue("DescribeInstanceTDEStatus.TDEStatus");
         
-			return deleteUserClusterHostResponse;
+			return describeInstanceTDEStatusResponse;
         }
     }
 }

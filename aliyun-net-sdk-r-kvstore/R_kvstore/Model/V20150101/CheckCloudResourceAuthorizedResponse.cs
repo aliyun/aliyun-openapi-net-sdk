@@ -22,10 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-	public class ModifyUserClusterHostResponse : AcsResponse
+	public class CheckCloudResourceAuthorizedResponse : AcsResponse
 	{
 
 		private string requestId;
+
+		private int? authorizationState;
 
 		public string RequestId
 		{
@@ -36,6 +38,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? AuthorizationState
+		{
+			get
+			{
+				return authorizationState;
+			}
+			set	
+			{
+				authorizationState = value;
 			}
 		}
 	}

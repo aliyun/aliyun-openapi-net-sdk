@@ -25,21 +25,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 	public class ModifyInstanceSpecResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private string orderId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public string OrderId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				orderId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

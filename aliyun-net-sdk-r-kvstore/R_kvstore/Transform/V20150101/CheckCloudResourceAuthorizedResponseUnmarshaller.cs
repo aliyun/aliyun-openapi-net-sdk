@@ -16,27 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.R_kvstore.Model.V20150101;
 
-namespace Aliyun.Acs.R_kvstore.Model.V20150101
+namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
-	public class DeleteUserClusterHostResponse : AcsResponse
-	{
+    public class CheckCloudResourceAuthorizedResponseUnmarshaller
+    {
+        public static CheckCloudResourceAuthorizedResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			CheckCloudResourceAuthorizedResponse checkCloudResourceAuthorizedResponse = new CheckCloudResourceAuthorizedResponse();
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			checkCloudResourceAuthorizedResponse.HttpResponse = _ctx.HttpResponse;
+			checkCloudResourceAuthorizedResponse.RequestId = _ctx.StringValue("CheckCloudResourceAuthorized.RequestId");
+			checkCloudResourceAuthorizedResponse.AuthorizationState = _ctx.IntegerValue("CheckCloudResourceAuthorized.AuthorizationState");
+        
+			return checkCloudResourceAuthorizedResponse;
+        }
+    }
 }
