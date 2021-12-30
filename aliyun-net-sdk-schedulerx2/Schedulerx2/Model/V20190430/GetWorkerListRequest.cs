@@ -28,10 +28,10 @@ using Aliyun.Acs.schedulerx2.Transform.V20190430;
 
 namespace Aliyun.Acs.schedulerx2.Model.V20190430
 {
-    public class ExecuteJobRequest : RpcAcsRequest<ExecuteJobResponse>
+    public class GetWorkerListRequest : RpcAcsRequest<GetWorkerListResponse>
     {
-        public ExecuteJobRequest()
-            : base("schedulerx2", "2019-04-30", "ExecuteJob")
+        public GetWorkerListRequest()
+            : base("schedulerx2", "2019-04-30", "GetWorkerList")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,21 +42,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string namespaceSource;
 
-		private bool? checkJobStatus;
-
 		private string groupId;
 
-		private string label;
-
-		private int? designateType;
-
-		private long? jobId;
-
 		private string _namespace;
-
-		private string worker;
-
-		private string instanceParameters;
 
 		public string NamespaceSource
 		{
@@ -68,19 +56,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				namespaceSource = value;
 				DictionaryUtil.Add(QueryParameters, "NamespaceSource", value);
-			}
-		}
-
-		public bool? CheckJobStatus
-		{
-			get
-			{
-				return checkJobStatus;
-			}
-			set	
-			{
-				checkJobStatus = value;
-				DictionaryUtil.Add(QueryParameters, "CheckJobStatus", value.ToString());
 			}
 		}
 
@@ -97,45 +72,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public string Label
-		{
-			get
-			{
-				return label;
-			}
-			set	
-			{
-				label = value;
-				DictionaryUtil.Add(QueryParameters, "Label", value);
-			}
-		}
-
-		public int? DesignateType
-		{
-			get
-			{
-				return designateType;
-			}
-			set	
-			{
-				designateType = value;
-				DictionaryUtil.Add(QueryParameters, "DesignateType", value.ToString());
-			}
-		}
-
-		public long? JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value.ToString());
-			}
-		}
-
 		public string _Namespace
 		{
 			get
@@ -149,40 +85,14 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public string Worker
-		{
-			get
-			{
-				return worker;
-			}
-			set	
-			{
-				worker = value;
-				DictionaryUtil.Add(QueryParameters, "Worker", value);
-			}
-		}
-
-		public string InstanceParameters
-		{
-			get
-			{
-				return instanceParameters;
-			}
-			set	
-			{
-				instanceParameters = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceParameters", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ExecuteJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetWorkerListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ExecuteJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetWorkerListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
