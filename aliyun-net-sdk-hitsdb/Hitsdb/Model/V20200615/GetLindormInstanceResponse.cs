@@ -25,133 +25,101 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 	public class GetLindormInstanceResponse : AcsResponse
 	{
 
-		private string requestId;
+		private string vpcId;
 
-		private string instanceId;
+		private string vswitchId;
 
-		private string instanceAlias;
-
-		private string regionId;
-
-		private string zoneId;
-
-		private string instanceStatus;
+		private string createTime;
 
 		private string payType;
 
 		private string networkType;
 
-		private string createTime;
-
-		private string expireTime;
-
-		private string instanceStorage;
-
-		private string vpcId;
-
-		private string vswitchId;
-
-		private bool? autoRenew;
-
-		private int? engineType;
-
 		private string serviceType;
-
-		private string deletionProtection;
-
-		private string diskCategory;
-
-		private int? coldStorage;
-
-		private bool? enableBDS;
-
-		private long? aliUid;
-
-		private bool? enableFS;
-
-		private bool? enablePhoenix;
-
-		private string diskUsage;
-
-		private string diskThreshold;
-
-		private long? createMilliseconds;
-
-		private long? expiredMilliseconds;
 
 		private bool? enableKms;
 
+		private string diskUsage;
+
+		private string diskCategory;
+
+		private string requestId;
+
+		private int? coldStorage;
+
+		private long? expiredMilliseconds;
+
+		private int? engineType;
+
+		private string expireTime;
+
+		private bool? autoRenew;
+
+		private string deletionProtection;
+
+		private string instanceStorage;
+
+		private long? aliUid;
+
+		private string instanceId;
+
+		private string regionId;
+
+		private bool? enableFS;
+
+		private long? createMilliseconds;
+
+		private string instanceAlias;
+
+		private bool? enableBDS;
+
+		private bool? enablePhoenix;
+
+		private string diskThreshold;
+
+		private string zoneId;
+
+		private string instanceStatus;
+
+		private bool? enableCompute;
+
+		private bool? enableSSL;
+
 		private List<GetLindormInstance_Engine> engineList;
 
-		public string RequestId
+		public string VpcId
 		{
 			get
 			{
-				return requestId;
+				return vpcId;
 			}
 			set	
 			{
-				requestId = value;
+				vpcId = value;
 			}
 		}
 
-		public string InstanceId
+		public string VswitchId
 		{
 			get
 			{
-				return instanceId;
+				return vswitchId;
 			}
 			set	
 			{
-				instanceId = value;
+				vswitchId = value;
 			}
 		}
 
-		public string InstanceAlias
+		public string CreateTime
 		{
 			get
 			{
-				return instanceAlias;
+				return createTime;
 			}
 			set	
 			{
-				instanceAlias = value;
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-			}
-		}
-
-		public string InstanceStatus
-		{
-			get
-			{
-				return instanceStatus;
-			}
-			set	
-			{
-				instanceStatus = value;
+				createTime = value;
 			}
 		}
 
@@ -179,90 +147,6 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
-		public string CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
-
-		public string ExpireTime
-		{
-			get
-			{
-				return expireTime;
-			}
-			set	
-			{
-				expireTime = value;
-			}
-		}
-
-		public string InstanceStorage
-		{
-			get
-			{
-				return instanceStorage;
-			}
-			set	
-			{
-				instanceStorage = value;
-			}
-		}
-
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-			}
-		}
-
-		public string VswitchId
-		{
-			get
-			{
-				return vswitchId;
-			}
-			set	
-			{
-				vswitchId = value;
-			}
-		}
-
-		public bool? AutoRenew
-		{
-			get
-			{
-				return autoRenew;
-			}
-			set	
-			{
-				autoRenew = value;
-			}
-		}
-
-		public int? EngineType
-		{
-			get
-			{
-				return engineType;
-			}
-			set	
-			{
-				engineType = value;
-			}
-		}
-
 		public string ServiceType
 		{
 			get
@@ -275,87 +159,15 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
-		public string DeletionProtection
+		public bool? EnableKms
 		{
 			get
 			{
-				return deletionProtection;
+				return enableKms;
 			}
 			set	
 			{
-				deletionProtection = value;
-			}
-		}
-
-		public string DiskCategory
-		{
-			get
-			{
-				return diskCategory;
-			}
-			set	
-			{
-				diskCategory = value;
-			}
-		}
-
-		public int? ColdStorage
-		{
-			get
-			{
-				return coldStorage;
-			}
-			set	
-			{
-				coldStorage = value;
-			}
-		}
-
-		public bool? EnableBDS
-		{
-			get
-			{
-				return enableBDS;
-			}
-			set	
-			{
-				enableBDS = value;
-			}
-		}
-
-		public long? AliUid
-		{
-			get
-			{
-				return aliUid;
-			}
-			set	
-			{
-				aliUid = value;
-			}
-		}
-
-		public bool? EnableFS
-		{
-			get
-			{
-				return enableFS;
-			}
-			set	
-			{
-				enableFS = value;
-			}
-		}
-
-		public bool? EnablePhoenix
-		{
-			get
-			{
-				return enablePhoenix;
-			}
-			set	
-			{
-				enablePhoenix = value;
+				enableKms = value;
 			}
 		}
 
@@ -371,27 +183,39 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
-		public string DiskThreshold
+		public string DiskCategory
 		{
 			get
 			{
-				return diskThreshold;
+				return diskCategory;
 			}
 			set	
 			{
-				diskThreshold = value;
+				diskCategory = value;
 			}
 		}
 
-		public long? CreateMilliseconds
+		public string RequestId
 		{
 			get
 			{
-				return createMilliseconds;
+				return requestId;
 			}
 			set	
 			{
-				createMilliseconds = value;
+				requestId = value;
+			}
+		}
+
+		public int? ColdStorage
+		{
+			get
+			{
+				return coldStorage;
+			}
+			set	
+			{
+				coldStorage = value;
 			}
 		}
 
@@ -407,15 +231,219 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			}
 		}
 
-		public bool? EnableKms
+		public int? EngineType
 		{
 			get
 			{
-				return enableKms;
+				return engineType;
 			}
 			set	
 			{
-				enableKms = value;
+				engineType = value;
+			}
+		}
+
+		public string ExpireTime
+		{
+			get
+			{
+				return expireTime;
+			}
+			set	
+			{
+				expireTime = value;
+			}
+		}
+
+		public bool? AutoRenew
+		{
+			get
+			{
+				return autoRenew;
+			}
+			set	
+			{
+				autoRenew = value;
+			}
+		}
+
+		public string DeletionProtection
+		{
+			get
+			{
+				return deletionProtection;
+			}
+			set	
+			{
+				deletionProtection = value;
+			}
+		}
+
+		public string InstanceStorage
+		{
+			get
+			{
+				return instanceStorage;
+			}
+			set	
+			{
+				instanceStorage = value;
+			}
+		}
+
+		public long? AliUid
+		{
+			get
+			{
+				return aliUid;
+			}
+			set	
+			{
+				aliUid = value;
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+			}
+		}
+
+		public bool? EnableFS
+		{
+			get
+			{
+				return enableFS;
+			}
+			set	
+			{
+				enableFS = value;
+			}
+		}
+
+		public long? CreateMilliseconds
+		{
+			get
+			{
+				return createMilliseconds;
+			}
+			set	
+			{
+				createMilliseconds = value;
+			}
+		}
+
+		public string InstanceAlias
+		{
+			get
+			{
+				return instanceAlias;
+			}
+			set	
+			{
+				instanceAlias = value;
+			}
+		}
+
+		public bool? EnableBDS
+		{
+			get
+			{
+				return enableBDS;
+			}
+			set	
+			{
+				enableBDS = value;
+			}
+		}
+
+		public bool? EnablePhoenix
+		{
+			get
+			{
+				return enablePhoenix;
+			}
+			set	
+			{
+				enablePhoenix = value;
+			}
+		}
+
+		public string DiskThreshold
+		{
+			get
+			{
+				return diskThreshold;
+			}
+			set	
+			{
+				diskThreshold = value;
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+			}
+		}
+
+		public string InstanceStatus
+		{
+			get
+			{
+				return instanceStatus;
+			}
+			set	
+			{
+				instanceStatus = value;
+			}
+		}
+
+		public bool? EnableCompute
+		{
+			get
+			{
+				return enableCompute;
+			}
+			set	
+			{
+				enableCompute = value;
+			}
+		}
+
+		public bool? EnableSSL
+		{
+			get
+			{
+				return enableSSL;
+			}
+			set	
+			{
+				enableSSL = value;
 			}
 		}
 
@@ -434,29 +462,19 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 		public class GetLindormInstance_Engine
 		{
 
-			private string engine;
-
 			private string version;
 
 			private string cpuCount;
 
-			private string memorySize;
-
 			private string coreCount;
+
+			private string engine;
+
+			private string memorySize;
 
 			private bool? isLastVersion;
 
-			public string Engine
-			{
-				get
-				{
-					return engine;
-				}
-				set	
-				{
-					engine = value;
-				}
-			}
+			private string latestVersion;
 
 			public string Version
 			{
@@ -482,18 +500,6 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 				}
 			}
 
-			public string MemorySize
-			{
-				get
-				{
-					return memorySize;
-				}
-				set	
-				{
-					memorySize = value;
-				}
-			}
-
 			public string CoreCount
 			{
 				get
@@ -506,6 +512,30 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 				}
 			}
 
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
+				}
+			}
+
+			public string MemorySize
+			{
+				get
+				{
+					return memorySize;
+				}
+				set	
+				{
+					memorySize = value;
+				}
+			}
+
 			public bool? IsLastVersion
 			{
 				get
@@ -515,6 +545,18 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 				set	
 				{
 					isLastVersion = value;
+				}
+			}
+
+			public string LatestVersion
+			{
+				get
+				{
+					return latestVersion;
+				}
+				set	
+				{
+					latestVersion = value;
 				}
 			}
 		}
