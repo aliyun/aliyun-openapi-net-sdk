@@ -50,6 +50,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				bgImageConfig.Id = _ctx.StringValue("DescribeStudioLayouts.StudioLayouts["+ i +"].BgImageConfig.Id");
 				bgImageConfig.MaterialId = _ctx.StringValue("DescribeStudioLayouts.StudioLayouts["+ i +"].BgImageConfig.MaterialId");
 				bgImageConfig.ImageUrl = _ctx.StringValue("DescribeStudioLayouts.StudioLayouts["+ i +"].BgImageConfig.ImageUrl");
+				bgImageConfig.LocationId = _ctx.StringValue("DescribeStudioLayouts.StudioLayouts["+ i +"].BgImageConfig.LocationId");
 				studioLayout.BgImageConfig = bgImageConfig;
 
 				List<DescribeStudioLayoutsResponse.DescribeStudioLayouts_StudioLayout.DescribeStudioLayouts_ScreenInputConfig> studioLayout_screenInputConfigList = new List<DescribeStudioLayoutsResponse.DescribeStudioLayouts_StudioLayout.DescribeStudioLayouts_ScreenInputConfig>();

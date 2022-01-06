@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-	public class DescribeLiveShiftConfigsResponse : AcsResponse
+	public class AddShowIntoShowListResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeLiveShiftConfigs_Config> content;
+		private string showId;
 
 		public string RequestId
 		{
@@ -41,89 +41,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public List<DescribeLiveShiftConfigs_Config> Content
+		public string ShowId
 		{
 			get
 			{
-				return content;
+				return showId;
 			}
 			set	
 			{
-				content = value;
-			}
-		}
-
-		public class DescribeLiveShiftConfigs_Config
-		{
-
-			private string appName;
-
-			private int? vision;
-
-			private string domainName;
-
-			private string streamName;
-
-			private bool? ignoreTranscode;
-
-			public string AppName
-			{
-				get
-				{
-					return appName;
-				}
-				set	
-				{
-					appName = value;
-				}
-			}
-
-			public int? Vision
-			{
-				get
-				{
-					return vision;
-				}
-				set	
-				{
-					vision = value;
-				}
-			}
-
-			public string DomainName
-			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
-			}
-
-			public string StreamName
-			{
-				get
-				{
-					return streamName;
-				}
-				set	
-				{
-					streamName = value;
-				}
-			}
-
-			public bool? IgnoreTranscode
-			{
-				get
-				{
-					return ignoreTranscode;
-				}
-				set	
-				{
-					ignoreTranscode = value;
-				}
+				showId = value;
 			}
 		}
 	}

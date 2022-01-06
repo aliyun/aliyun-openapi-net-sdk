@@ -529,6 +529,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string imageUrl;
 
+				private string locationId;
+
 				public string Id
 				{
 					get
@@ -562,6 +564,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						imageUrl = value;
+					}
+				}
+
+				public string LocationId
+				{
+					get
+					{
+						return locationId;
+					}
+					set	
+					{
+						locationId = value;
 					}
 				}
 			}

@@ -27,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeCastersRequest : RpcAcsRequest<DescribeCastersResponse>
+    public class ModifyShowListRequest : RpcAcsRequest<ModifyShowListResponse>
     {
-        public DescribeCastersRequest()
-            : base("live", "2016-11-01", "DescribeCasters", "live", "openAPI")
+        public ModifyShowListRequest()
+            : base("live", "2016-11-01", "ModifyShowList", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,75 +40,43 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string startTime;
+		private int? repeatTimes;
 
-		private int? pageNum;
-
-		private string casterName;
-
-		private int? pageSize;
+		private string highPriorityShowStartTime;
 
 		private string casterId;
 
-		private string endTime;
+		private string highPriorityShowId;
 
 		private long? ownerId;
 
-		private string orderByModifyAsc;
+		private string showId;
 
-		private int? chargeType;
+		private int? spot;
 
-		private int? status;
-
-		public string StartTime
+		public int? RepeatTimes
 		{
 			get
 			{
-				return startTime;
+				return repeatTimes;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				repeatTimes = value;
+				DictionaryUtil.Add(QueryParameters, "RepeatTimes", value.ToString());
 			}
 		}
 
-		public int? PageNum
+		public string HighPriorityShowStartTime
 		{
 			get
 			{
-				return pageNum;
+				return highPriorityShowStartTime;
 			}
 			set	
 			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
-		public string CasterName
-		{
-			get
-			{
-				return casterName;
-			}
-			set	
-			{
-				casterName = value;
-				DictionaryUtil.Add(QueryParameters, "CasterName", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				highPriorityShowStartTime = value;
+				DictionaryUtil.Add(QueryParameters, "HighPriorityShowStartTime", value);
 			}
 		}
 
@@ -125,16 +93,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string EndTime
+		public string HighPriorityShowId
 		{
 			get
 			{
-				return endTime;
+				return highPriorityShowId;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				highPriorityShowId = value;
+				DictionaryUtil.Add(QueryParameters, "HighPriorityShowId", value);
 			}
 		}
 
@@ -151,48 +119,35 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string OrderByModifyAsc
+		public string ShowId
 		{
 			get
 			{
-				return orderByModifyAsc;
+				return showId;
 			}
 			set	
 			{
-				orderByModifyAsc = value;
-				DictionaryUtil.Add(QueryParameters, "OrderByModifyAsc", value);
+				showId = value;
+				DictionaryUtil.Add(QueryParameters, "ShowId", value);
 			}
 		}
 
-		public int? ChargeType
+		public int? Spot
 		{
 			get
 			{
-				return chargeType;
+				return spot;
 			}
 			set	
 			{
-				chargeType = value;
-				DictionaryUtil.Add(QueryParameters, "ChargeType", value.ToString());
+				spot = value;
+				DictionaryUtil.Add(QueryParameters, "Spot", value.ToString());
 			}
 		}
 
-		public int? Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
-			}
-		}
-
-        public override DescribeCastersResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyShowListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCastersResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyShowListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

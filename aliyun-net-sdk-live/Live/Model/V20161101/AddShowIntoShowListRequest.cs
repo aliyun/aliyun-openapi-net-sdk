@@ -27,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeCastersRequest : RpcAcsRequest<DescribeCastersResponse>
+    public class AddShowIntoShowListRequest : RpcAcsRequest<AddShowIntoShowListResponse>
     {
-        public DescribeCastersRequest()
-            : base("live", "2016-11-01", "DescribeCasters", "live", "openAPI")
+        public AddShowIntoShowListRequest()
+            : base("live", "2016-11-01", "AddShowIntoShowList", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,75 +40,88 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private string startTime;
+		private int? liveInputType;
 
-		private int? pageNum;
+		private long? duration;
 
-		private string casterName;
+		private int? repeatTimes;
 
-		private int? pageSize;
+		private string showName;
+
+		private string resourceId;
 
 		private string casterId;
 
-		private string endTime;
-
 		private long? ownerId;
 
-		private string orderByModifyAsc;
+		private string resourceType;
 
-		private int? chargeType;
+		private string resourceUrl;
 
-		private int? status;
+		private int? spot;
 
-		public string StartTime
+		public int? LiveInputType
 		{
 			get
 			{
-				return startTime;
+				return liveInputType;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				liveInputType = value;
+				DictionaryUtil.Add(QueryParameters, "LiveInputType", value.ToString());
 			}
 		}
 
-		public int? PageNum
+		public long? Duration
 		{
 			get
 			{
-				return pageNum;
+				return duration;
 			}
 			set	
 			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+				duration = value;
+				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
 			}
 		}
 
-		public string CasterName
+		public int? RepeatTimes
 		{
 			get
 			{
-				return casterName;
+				return repeatTimes;
 			}
 			set	
 			{
-				casterName = value;
-				DictionaryUtil.Add(QueryParameters, "CasterName", value);
+				repeatTimes = value;
+				DictionaryUtil.Add(QueryParameters, "RepeatTimes", value.ToString());
 			}
 		}
 
-		public int? PageSize
+		public string ShowName
 		{
 			get
 			{
-				return pageSize;
+				return showName;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				showName = value;
+				DictionaryUtil.Add(QueryParameters, "ShowName", value);
+			}
+		}
+
+		public string ResourceId
+		{
+			get
+			{
+				return resourceId;
+			}
+			set	
+			{
+				resourceId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
 			}
 		}
 
@@ -125,19 +138,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -151,48 +151,48 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string OrderByModifyAsc
+		public string ResourceType
 		{
 			get
 			{
-				return orderByModifyAsc;
+				return resourceType;
 			}
 			set	
 			{
-				orderByModifyAsc = value;
-				DictionaryUtil.Add(QueryParameters, "OrderByModifyAsc", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
-		public int? ChargeType
+		public string ResourceUrl
 		{
 			get
 			{
-				return chargeType;
+				return resourceUrl;
 			}
 			set	
 			{
-				chargeType = value;
-				DictionaryUtil.Add(QueryParameters, "ChargeType", value.ToString());
+				resourceUrl = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceUrl", value);
 			}
 		}
 
-		public int? Status
+		public int? Spot
 		{
 			get
 			{
-				return status;
+				return spot;
 			}
 			set	
 			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
+				spot = value;
+				DictionaryUtil.Add(QueryParameters, "Spot", value.ToString());
 			}
 		}
 
-        public override DescribeCastersResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override AddShowIntoShowListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCastersResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AddShowIntoShowListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

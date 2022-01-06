@@ -27,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class OpenLiveShiftRequest : RpcAcsRequest<OpenLiveShiftResponse>
+    public class RemoveShowFromShowListRequest : RpcAcsRequest<RemoveShowFromShowListResponse>
     {
-        public OpenLiveShiftRequest()
-            : base("live", "2016-11-01", "OpenLiveShift", "live", "openAPI")
+        public RemoveShowFromShowListRequest()
+            : base("live", "2016-11-01", "RemoveShowFromShowList", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,82 +40,22 @@ namespace Aliyun.Acs.live.Model.V20161101
 			Method = MethodType.POST;
         }
 
-		private int? duration;
-
-		private string appName;
-
-		private string streamName;
-
-		private bool? ignoreTranscode;
-
-		private string domainName;
+		private string casterId;
 
 		private long? ownerId;
 
-		private int? vision;
+		private string showId;
 
-		public int? Duration
+		public string CasterId
 		{
 			get
 			{
-				return duration;
+				return casterId;
 			}
 			set	
 			{
-				duration = value;
-				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
-			}
-		}
-
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
-		public string StreamName
-		{
-			get
-			{
-				return streamName;
-			}
-			set	
-			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
-			}
-		}
-
-		public bool? IgnoreTranscode
-		{
-			get
-			{
-				return ignoreTranscode;
-			}
-			set	
-			{
-				ignoreTranscode = value;
-				DictionaryUtil.Add(QueryParameters, "IgnoreTranscode", value.ToString());
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				casterId = value;
+				DictionaryUtil.Add(QueryParameters, "CasterId", value);
 			}
 		}
 
@@ -132,22 +72,22 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? Vision
+		public string ShowId
 		{
 			get
 			{
-				return vision;
+				return showId;
 			}
 			set	
 			{
-				vision = value;
-				DictionaryUtil.Add(QueryParameters, "Vision", value.ToString());
+				showId = value;
+				DictionaryUtil.Add(QueryParameters, "ShowId", value);
 			}
 		}
 
-        public override OpenLiveShiftResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RemoveShowFromShowListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return OpenLiveShiftResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RemoveShowFromShowListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -41,6 +41,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				casterStream.SceneId = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].SceneId");
 				casterStream.StreamUrl = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].StreamUrl");
 				casterStream.RtmpUrl = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].RtmpUrl");
+				casterStream.RtsUrl = _ctx.StringValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].RtsUrl");
 				casterStream.OutputType = _ctx.IntegerValue("DescribeCasterStreamUrl.CasterStreams["+ i +"].OutputType");
 
 				List<DescribeCasterStreamUrlResponse.DescribeCasterStreamUrl_CasterStream.DescribeCasterStreamUrl_StreamInfo> casterStream_streamInfos = new List<DescribeCasterStreamUrlResponse.DescribeCasterStreamUrl_CasterStream.DescribeCasterStreamUrl_StreamInfo>();

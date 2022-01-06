@@ -48,6 +48,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				caster.ChargeType = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].ChargeType");
 				caster.CasterTemplate = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].CasterTemplate");
 				caster.ChannelEnable = _ctx.IntegerValue("DescribeCasters.CasterList["+ i +"].ChannelEnable");
+				caster.LastModified = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].LastModified");
+				caster.Duration = _ctx.StringValue("DescribeCasters.CasterList["+ i +"].Duration");
+				caster.RoomId = _ctx.IntegerValue("DescribeCasters.CasterList["+ i +"].RoomId");
 
 				describeCastersResponse_casterList.Add(caster);
 			}

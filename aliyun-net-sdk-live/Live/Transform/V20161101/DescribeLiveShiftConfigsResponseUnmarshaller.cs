@@ -36,10 +36,11 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			List<DescribeLiveShiftConfigsResponse.DescribeLiveShiftConfigs_Config> describeLiveShiftConfigsResponse_content = new List<DescribeLiveShiftConfigsResponse.DescribeLiveShiftConfigs_Config>();
 			for (int i = 0; i < _ctx.Length("DescribeLiveShiftConfigs.Content.Length"); i++) {
 				DescribeLiveShiftConfigsResponse.DescribeLiveShiftConfigs_Config config = new DescribeLiveShiftConfigsResponse.DescribeLiveShiftConfigs_Config();
-				config.DomainName = _ctx.StringValue("DescribeLiveShiftConfigs.Content["+ i +"].DomainName");
 				config.AppName = _ctx.StringValue("DescribeLiveShiftConfigs.Content["+ i +"].AppName");
-				config.StreamName = _ctx.StringValue("DescribeLiveShiftConfigs.Content["+ i +"].StreamName");
 				config.Vision = _ctx.IntegerValue("DescribeLiveShiftConfigs.Content["+ i +"].Vision");
+				config.DomainName = _ctx.StringValue("DescribeLiveShiftConfigs.Content["+ i +"].DomainName");
+				config.StreamName = _ctx.StringValue("DescribeLiveShiftConfigs.Content["+ i +"].StreamName");
+				config.IgnoreTranscode = _ctx.BooleanValue("DescribeLiveShiftConfigs.Content["+ i +"].IgnoreTranscode");
 
 				describeLiveShiftConfigsResponse_content.Add(config);
 			}
