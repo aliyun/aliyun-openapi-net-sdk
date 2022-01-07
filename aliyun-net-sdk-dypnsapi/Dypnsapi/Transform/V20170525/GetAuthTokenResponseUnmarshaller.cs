@@ -31,13 +31,13 @@ namespace Aliyun.Acs.Dypnsapi.Transform.V20170525
 			GetAuthTokenResponse getAuthTokenResponse = new GetAuthTokenResponse();
 
 			getAuthTokenResponse.HttpResponse = _ctx.HttpResponse;
+			getAuthTokenResponse.RequestId = _ctx.StringValue("GetAuthToken.RequestId");
 			getAuthTokenResponse.Code = _ctx.StringValue("GetAuthToken.Code");
 			getAuthTokenResponse.Message = _ctx.StringValue("GetAuthToken.Message");
-			getAuthTokenResponse.RequestId = _ctx.StringValue("GetAuthToken.RequestId");
 
 			GetAuthTokenResponse.GetAuthToken_TokenInfo tokenInfo = new GetAuthTokenResponse.GetAuthToken_TokenInfo();
-			tokenInfo.AccessToken = _ctx.StringValue("GetAuthToken.TokenInfo.AccessToken");
 			tokenInfo.JwtToken = _ctx.StringValue("GetAuthToken.TokenInfo.JwtToken");
+			tokenInfo.AccessToken = _ctx.StringValue("GetAuthToken.TokenInfo.AccessToken");
 			getAuthTokenResponse.TokenInfo = tokenInfo;
         
 			return getAuthTokenResponse;

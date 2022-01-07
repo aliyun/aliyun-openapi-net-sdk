@@ -31,13 +31,13 @@ namespace Aliyun.Acs.Dypnsapi.Transform.V20170525
 			VerifyMobileResponse verifyMobileResponse = new VerifyMobileResponse();
 
 			verifyMobileResponse.HttpResponse = _ctx.HttpResponse;
+			verifyMobileResponse.RequestId = _ctx.StringValue("VerifyMobile.RequestId");
 			verifyMobileResponse.Code = _ctx.StringValue("VerifyMobile.Code");
 			verifyMobileResponse.Message = _ctx.StringValue("VerifyMobile.Message");
-			verifyMobileResponse.RequestId = _ctx.StringValue("VerifyMobile.RequestId");
 
 			VerifyMobileResponse.VerifyMobile_GateVerifyResultDTO gateVerifyResultDTO = new VerifyMobileResponse.VerifyMobile_GateVerifyResultDTO();
-			gateVerifyResultDTO.VerifyResult = _ctx.StringValue("VerifyMobile.GateVerifyResultDTO.VerifyResult");
 			gateVerifyResultDTO.VerifyId = _ctx.StringValue("VerifyMobile.GateVerifyResultDTO.VerifyId");
+			gateVerifyResultDTO.VerifyResult = _ctx.StringValue("VerifyMobile.GateVerifyResultDTO.VerifyResult");
 			verifyMobileResponse.GateVerifyResultDTO = gateVerifyResultDTO;
         
 			return verifyMobileResponse;

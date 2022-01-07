@@ -28,10 +28,10 @@ using Aliyun.Acs.Dypnsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-    public class TwiceTelVerifyRequest : RpcAcsRequest<TwiceTelVerifyResponse>
+    public class QueryGateVerifyStatisticPublicRequest : RpcAcsRequest<QueryGateVerifyStatisticPublicResponse>
     {
-        public TwiceTelVerifyRequest()
-            : base("Dypnsapi", "2017-05-25", "TwiceTelVerify")
+        public QueryGateVerifyStatisticPublicRequest()
+            : base("Dypnsapi", "2017-05-25", "QueryGateVerifyStatisticPublic")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,13 +43,21 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 
 		private long? resourceOwnerId;
 
+		private int? authenticationType;
+
+		private string startDate;
+
+		private string sceneCode;
+
 		private string resourceOwnerAccount;
 
-		private string phoneNumber;
+		private string prodCode;
+
+		private string osType;
 
 		private long? ownerId;
 
-		private string since;
+		private string endDate;
 
 		public long? ResourceOwnerId
 		{
@@ -61,6 +69,45 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public int? AuthenticationType
+		{
+			get
+			{
+				return authenticationType;
+			}
+			set	
+			{
+				authenticationType = value;
+				DictionaryUtil.Add(QueryParameters, "AuthenticationType", value.ToString());
+			}
+		}
+
+		public string StartDate
+		{
+			get
+			{
+				return startDate;
+			}
+			set	
+			{
+				startDate = value;
+				DictionaryUtil.Add(QueryParameters, "StartDate", value);
+			}
+		}
+
+		public string SceneCode
+		{
+			get
+			{
+				return sceneCode;
+			}
+			set	
+			{
+				sceneCode = value;
+				DictionaryUtil.Add(QueryParameters, "SceneCode", value);
 			}
 		}
 
@@ -77,16 +124,29 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string PhoneNumber
+		public string ProdCode
 		{
 			get
 			{
-				return phoneNumber;
+				return prodCode;
 			}
 			set	
 			{
-				phoneNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
+				prodCode = value;
+				DictionaryUtil.Add(QueryParameters, "ProdCode", value);
+			}
+		}
+
+		public string OsType
+		{
+			get
+			{
+				return osType;
+			}
+			set	
+			{
+				osType = value;
+				DictionaryUtil.Add(QueryParameters, "OsType", value);
 			}
 		}
 
@@ -103,22 +163,27 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string Since
+		public string EndDate
 		{
 			get
 			{
-				return since;
+				return endDate;
 			}
 			set	
 			{
-				since = value;
-				DictionaryUtil.Add(QueryParameters, "Since", value);
+				endDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndDate", value);
 			}
 		}
 
-        public override TwiceTelVerifyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override QueryGateVerifyStatisticPublicResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TwiceTelVerifyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryGateVerifyStatisticPublicResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

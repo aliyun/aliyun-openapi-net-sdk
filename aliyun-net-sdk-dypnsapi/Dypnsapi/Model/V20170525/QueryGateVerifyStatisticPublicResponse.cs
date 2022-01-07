@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-	public class GetSmsAuthTokensResponse : AcsResponse
+	public class QueryGateVerifyStatisticPublicResponse : AcsResponse
 	{
 
 		private string code;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 
 		private string requestId;
 
-		private GetSmsAuthTokens_Data data;
+		private QueryGateVerifyStatisticPublic_Data data;
 
 		public string Code
 		{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public GetSmsAuthTokens_Data Data
+		public QueryGateVerifyStatisticPublic_Data Data
 		{
 			get
 			{
@@ -81,76 +81,136 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public class GetSmsAuthTokens_Data
+		public class QueryGateVerifyStatisticPublic_Data
 		{
 
-			private string bizToken;
+			private long? totalFail;
 
-			private string stsAccessKeySecret;
+			private long? total;
 
-			private string stsAccessKeyId;
+			private long? totalSuccess;
 
-			private long? expireTime;
+			private long? totalUnknown;
 
-			private string stsToken;
+			private List<QueryGateVerifyStatisticPublic_DayStatisticItem> dayStatistic;
 
-			public string BizToken
+			public long? TotalFail
 			{
 				get
 				{
-					return bizToken;
+					return totalFail;
 				}
 				set	
 				{
-					bizToken = value;
+					totalFail = value;
 				}
 			}
 
-			public string StsAccessKeySecret
+			public long? Total
 			{
 				get
 				{
-					return stsAccessKeySecret;
+					return total;
 				}
 				set	
 				{
-					stsAccessKeySecret = value;
+					total = value;
 				}
 			}
 
-			public string StsAccessKeyId
+			public long? TotalSuccess
 			{
 				get
 				{
-					return stsAccessKeyId;
+					return totalSuccess;
 				}
 				set	
 				{
-					stsAccessKeyId = value;
+					totalSuccess = value;
 				}
 			}
 
-			public long? ExpireTime
+			public long? TotalUnknown
 			{
 				get
 				{
-					return expireTime;
+					return totalUnknown;
 				}
 				set	
 				{
-					expireTime = value;
+					totalUnknown = value;
 				}
 			}
 
-			public string StsToken
+			public List<QueryGateVerifyStatisticPublic_DayStatisticItem> DayStatistic
 			{
 				get
 				{
-					return stsToken;
+					return dayStatistic;
 				}
 				set	
 				{
-					stsToken = value;
+					dayStatistic = value;
+				}
+			}
+
+			public class QueryGateVerifyStatisticPublic_DayStatisticItem
+			{
+
+				private string statisticDateStr;
+
+				private long? totalSuccess;
+
+				private long? totalFail;
+
+				private long? totalUnknown;
+
+				public string StatisticDateStr
+				{
+					get
+					{
+						return statisticDateStr;
+					}
+					set	
+					{
+						statisticDateStr = value;
+					}
+				}
+
+				public long? TotalSuccess
+				{
+					get
+					{
+						return totalSuccess;
+					}
+					set	
+					{
+						totalSuccess = value;
+					}
+				}
+
+				public long? TotalFail
+				{
+					get
+					{
+						return totalFail;
+					}
+					set	
+					{
+						totalFail = value;
+					}
+				}
+
+				public long? TotalUnknown
+				{
+					get
+					{
+						return totalUnknown;
+					}
+					set	
+					{
+						totalUnknown = value;
+					}
 				}
 			}
 		}

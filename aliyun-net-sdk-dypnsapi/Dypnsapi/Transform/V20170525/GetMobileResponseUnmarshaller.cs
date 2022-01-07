@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Dypnsapi.Transform.V20170525
 			GetMobileResponse getMobileResponse = new GetMobileResponse();
 
 			getMobileResponse.HttpResponse = _ctx.HttpResponse;
+			getMobileResponse.RequestId = _ctx.StringValue("GetMobile.RequestId");
 			getMobileResponse.Code = _ctx.StringValue("GetMobile.Code");
 			getMobileResponse.Message = _ctx.StringValue("GetMobile.Message");
-			getMobileResponse.RequestId = _ctx.StringValue("GetMobile.RequestId");
 
 			GetMobileResponse.GetMobile_GetMobileResultDTO getMobileResultDTO = new GetMobileResponse.GetMobile_GetMobileResultDTO();
 			getMobileResultDTO.Mobile = _ctx.StringValue("GetMobile.GetMobileResultDTO.Mobile");

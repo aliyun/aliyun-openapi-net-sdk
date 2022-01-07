@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
@@ -25,13 +25,25 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 	public class GetAuthTokenResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string code;
 
 		private string message;
 
-		private string requestId;
-
 		private GetAuthToken_TokenInfo tokenInfo;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string Code
 		{
@@ -57,18 +69,6 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
 		public GetAuthToken_TokenInfo TokenInfo
 		{
 			get
@@ -84,21 +84,9 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 		public class GetAuthToken_TokenInfo
 		{
 
-			private string accessToken;
-
 			private string jwtToken;
 
-			public string AccessToken
-			{
-				get
-				{
-					return accessToken;
-				}
-				set	
-				{
-					accessToken = value;
-				}
-			}
+			private string accessToken;
 
 			public string JwtToken
 			{
@@ -109,6 +97,18 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 				set	
 				{
 					jwtToken = value;
+				}
+			}
+
+			public string AccessToken
+			{
+				get
+				{
+					return accessToken;
+				}
+				set	
+				{
+					accessToken = value;
 				}
 			}
 		}

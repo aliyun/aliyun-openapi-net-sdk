@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
@@ -25,13 +25,25 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 	public class GetMobileResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private string code;
 
 		private string message;
 
-		private string requestId;
-
 		private GetMobile_GetMobileResultDTO getMobileResultDTO;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public string Code
 		{
@@ -54,18 +66,6 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			set	
 			{
 				message = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
 			}
 		}
 
