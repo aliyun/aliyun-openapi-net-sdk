@@ -1,3 +1,6 @@
+2022-01-07 Version: 1.18.15
+- Supported minReadyInstanceRatio parameter for deploy.
+
 2022-01-07 Version: 1.1.6
 - Support New API for Dypnsapi.
 

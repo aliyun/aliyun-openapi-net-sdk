@@ -27,53 +27,34 @@ using Aliyun.Acs.sae.Transform.V20190506;
 
 namespace Aliyun.Acs.sae.Model.V20190506
 {
-    public class RescaleApplicationRequest : RoaAcsRequest<RescaleApplicationResponse>
+    public class DescribeApplicationScalingRuleRequest : RoaAcsRequest<DescribeApplicationScalingRuleResponse>
     {
-        public RescaleApplicationRequest()
-            : base("sae", "2019-05-06", "RescaleApplication", "serverless", "openAPI")
+        public DescribeApplicationScalingRuleRequest()
+            : base("sae", "2019-05-06", "DescribeApplicationScalingRule", "serverless", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.sae.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/pop/v1/sam/app/rescaleApplication";
-			Method = MethodType.PUT;
+			UriPattern = "/pop/v1/sam/scale/applicationScalingRule";
+			Method = MethodType.GET;
         }
 
-		private int? minReadyInstances;
-
-		private int? replicas;
+		private string scalingRuleName;
 
 		private string appId;
 
-		private int? minReadyInstanceRatio;
-
-		private bool? autoEnableApplicationScalingRule;
-
-		public int? MinReadyInstances
+		public string ScalingRuleName
 		{
 			get
 			{
-				return minReadyInstances;
+				return scalingRuleName;
 			}
 			set	
 			{
-				minReadyInstances = value;
-				DictionaryUtil.Add(QueryParameters, "MinReadyInstances", value.ToString());
-			}
-		}
-
-		public int? Replicas
-		{
-			get
-			{
-				return replicas;
-			}
-			set	
-			{
-				replicas = value;
-				DictionaryUtil.Add(QueryParameters, "Replicas", value.ToString());
+				scalingRuleName = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingRuleName", value);
 			}
 		}
 
@@ -90,40 +71,14 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public int? MinReadyInstanceRatio
-		{
-			get
-			{
-				return minReadyInstanceRatio;
-			}
-			set	
-			{
-				minReadyInstanceRatio = value;
-				DictionaryUtil.Add(QueryParameters, "MinReadyInstanceRatio", value.ToString());
-			}
-		}
-
-		public bool? AutoEnableApplicationScalingRule
-		{
-			get
-			{
-				return autoEnableApplicationScalingRule;
-			}
-			set	
-			{
-				autoEnableApplicationScalingRule = value;
-				DictionaryUtil.Add(QueryParameters, "AutoEnableApplicationScalingRule", value.ToString());
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override RescaleApplicationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeApplicationScalingRuleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RescaleApplicationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeApplicationScalingRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

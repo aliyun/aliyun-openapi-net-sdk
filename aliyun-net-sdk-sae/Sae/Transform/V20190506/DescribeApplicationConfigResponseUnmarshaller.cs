@@ -58,6 +58,7 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			data.Replicas = _ctx.IntegerValue("DescribeApplicationConfig.Data.Replicas");
 			data.UpdateStrategy = _ctx.StringValue("DescribeApplicationConfig.Data.UpdateStrategy");
 			data.MinReadyInstances = _ctx.IntegerValue("DescribeApplicationConfig.Data.MinReadyInstances");
+			data.MinReadyInstanceRatio = _ctx.IntegerValue("DescribeApplicationConfig.Data.MinReadyInstanceRatio");
 			data.Memory = _ctx.IntegerValue("DescribeApplicationConfig.Data.Memory");
 			data.Php = _ctx.StringValue("DescribeApplicationConfig.Data.Php");
 			data.PhpConfig = _ctx.StringValue("DescribeApplicationConfig.Data.PhpConfig");

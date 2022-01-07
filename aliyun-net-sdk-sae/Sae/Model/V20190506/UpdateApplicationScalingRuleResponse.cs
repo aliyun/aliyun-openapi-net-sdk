@@ -70,45 +70,33 @@ namespace Aliyun.Acs.sae.Model.V20190506
 		public class UpdateApplicationScalingRule_Data
 		{
 
-			private bool? scaleRuleEnabled;
-
-			private long? lastDisableTime;
+			private long? updateTime;
 
 			private string appId;
 
 			private long? createTime;
 
-			private long? updateTime;
+			private long? lastDisableTime;
 
-			private string scaleRuleName;
+			private bool? scaleRuleEnabled;
 
 			private string scaleRuleType;
+
+			private string scaleRuleName;
 
 			private UpdateApplicationScalingRule_Timer timer;
 
 			private UpdateApplicationScalingRule_Metric metric;
 
-			public bool? ScaleRuleEnabled
+			public long? UpdateTime
 			{
 				get
 				{
-					return scaleRuleEnabled;
+					return updateTime;
 				}
 				set	
 				{
-					scaleRuleEnabled = value;
-				}
-			}
-
-			public long? LastDisableTime
-			{
-				get
-				{
-					return lastDisableTime;
-				}
-				set	
-				{
-					lastDisableTime = value;
+					updateTime = value;
 				}
 			}
 
@@ -136,27 +124,27 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				}
 			}
 
-			public long? UpdateTime
+			public long? LastDisableTime
 			{
 				get
 				{
-					return updateTime;
+					return lastDisableTime;
 				}
 				set	
 				{
-					updateTime = value;
+					lastDisableTime = value;
 				}
 			}
 
-			public string ScaleRuleName
+			public bool? ScaleRuleEnabled
 			{
 				get
 				{
-					return scaleRuleName;
+					return scaleRuleEnabled;
 				}
 				set	
 				{
-					scaleRuleName = value;
+					scaleRuleEnabled = value;
 				}
 			}
 
@@ -169,6 +157,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					scaleRuleType = value;
+				}
+			}
+
+			public string ScaleRuleName
+			{
+				get
+				{
+					return scaleRuleName;
+				}
+				set	
+				{
+					scaleRuleName = value;
 				}
 			}
 
@@ -199,25 +199,13 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			public class UpdateApplicationScalingRule_Timer
 			{
 
-				private string period;
-
 				private string endDate;
 
 				private string beginDate;
 
-				private List<UpdateApplicationScalingRule_Schedule> schedules;
+				private string period;
 
-				public string Period
-				{
-					get
-					{
-						return period;
-					}
-					set	
-					{
-						period = value;
-					}
-				}
+				private List<UpdateApplicationScalingRule_Schedule> schedules;
 
 				public string EndDate
 				{
@@ -243,6 +231,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
+				public string Period
+				{
+					get
+					{
+						return period;
+					}
+					set	
+					{
+						period = value;
+					}
+				}
+
 				public List<UpdateApplicationScalingRule_Schedule> Schedules
 				{
 					get
@@ -258,21 +258,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				public class UpdateApplicationScalingRule_Schedule
 				{
 
-					private int? targetReplicas;
-
 					private string atTime;
 
-					public int? TargetReplicas
-					{
-						get
-						{
-							return targetReplicas;
-						}
-						set	
-						{
-							targetReplicas = value;
-						}
-					}
+					private int? targetReplicas;
 
 					public string AtTime
 					{
@@ -285,29 +273,29 @@ namespace Aliyun.Acs.sae.Model.V20190506
 							atTime = value;
 						}
 					}
+
+					public int? TargetReplicas
+					{
+						get
+						{
+							return targetReplicas;
+						}
+						set	
+						{
+							targetReplicas = value;
+						}
+					}
 				}
 			}
 
 			public class UpdateApplicationScalingRule_Metric
 			{
 
-				private int? minReplicas;
-
 				private int? maxReplicas;
 
-				private List<UpdateApplicationScalingRule_Metric1> metrics;
+				private int? minReplicas;
 
-				public int? MinReplicas
-				{
-					get
-					{
-						return minReplicas;
-					}
-					set	
-					{
-						minReplicas = value;
-					}
-				}
+				private List<UpdateApplicationScalingRule_Metric1> metrics;
 
 				public int? MaxReplicas
 				{
@@ -318,6 +306,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					set	
 					{
 						maxReplicas = value;
+					}
+				}
+
+				public int? MinReplicas
+				{
+					get
+					{
+						return minReplicas;
+					}
+					set	
+					{
+						minReplicas = value;
 					}
 				}
 
@@ -336,21 +336,9 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				public class UpdateApplicationScalingRule_Metric1
 				{
 
-					private string metricType;
-
 					private int? metricTargetAverageUtilization;
 
-					public string MetricType
-					{
-						get
-						{
-							return metricType;
-						}
-						set	
-						{
-							metricType = value;
-						}
-					}
+					private string metricType;
 
 					public int? MetricTargetAverageUtilization
 					{
@@ -361,6 +349,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 						set	
 						{
 							metricTargetAverageUtilization = value;
+						}
+					}
+
+					public string MetricType
+					{
+						get
+						{
+							return metricType;
+						}
+						set	
+						{
+							metricType = value;
 						}
 					}
 				}

@@ -164,6 +164,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 			private int? minReadyInstances;
 
+			private int? minReadyInstanceRatio;
+
 			private int? memory;
 
 			private string php;
@@ -463,6 +465,18 @@ namespace Aliyun.Acs.sae.Model.V20190506
 				set	
 				{
 					minReadyInstances = value;
+				}
+			}
+
+			public int? MinReadyInstanceRatio
+			{
+				get
+				{
+					return minReadyInstanceRatio;
+				}
+				set	
+				{
+					minReadyInstanceRatio = value;
 				}
 			}
 

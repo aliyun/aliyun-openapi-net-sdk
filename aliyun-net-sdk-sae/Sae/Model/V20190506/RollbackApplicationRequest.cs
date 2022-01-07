@@ -49,6 +49,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private int? batchWaitTime;
 
+		private int? minReadyInstanceRatio;
+
 		private string autoEnableApplicationScalingRule;
 
 		private string updateStrategy;
@@ -102,6 +104,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				batchWaitTime = value;
 				DictionaryUtil.Add(QueryParameters, "BatchWaitTime", value.ToString());
+			}
+		}
+
+		public int? MinReadyInstanceRatio
+		{
+			get
+			{
+				return minReadyInstanceRatio;
+			}
+			set	
+			{
+				minReadyInstanceRatio = value;
+				DictionaryUtil.Add(QueryParameters, "MinReadyInstanceRatio", value.ToString());
 			}
 		}
 

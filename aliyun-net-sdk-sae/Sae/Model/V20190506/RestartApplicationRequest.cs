@@ -45,6 +45,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string appId;
 
+		private int? minReadyInstanceRatio;
+
 		public int? MinReadyInstances
 		{
 			get
@@ -68,6 +70,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				appId = value;
 				DictionaryUtil.Add(QueryParameters, "AppId", value);
+			}
+		}
+
+		public int? MinReadyInstanceRatio
+		{
+			get
+			{
+				return minReadyInstanceRatio;
+			}
+			set	
+			{
+				minReadyInstanceRatio = value;
+				DictionaryUtil.Add(QueryParameters, "MinReadyInstanceRatio", value.ToString());
 			}
 		}
 

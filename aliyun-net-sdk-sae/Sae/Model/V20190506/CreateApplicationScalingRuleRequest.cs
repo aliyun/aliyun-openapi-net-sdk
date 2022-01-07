@@ -43,11 +43,17 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string scalingRuleName;
 
+		private int? minReadyInstances;
+
 		private bool? scalingRuleEnable;
 
 		private string scalingRuleTimer;
 
+		private string scalingRuleMetric;
+
 		private string appId;
+
+		private int? minReadyInstanceRatio;
 
 		private string scalingRuleType;
 
@@ -61,6 +67,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				scalingRuleName = value;
 				DictionaryUtil.Add(QueryParameters, "ScalingRuleName", value);
+			}
+		}
+
+		public int? MinReadyInstances
+		{
+			get
+			{
+				return minReadyInstances;
+			}
+			set	
+			{
+				minReadyInstances = value;
+				DictionaryUtil.Add(QueryParameters, "MinReadyInstances", value.ToString());
 			}
 		}
 
@@ -90,6 +109,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
+		public string ScalingRuleMetric
+		{
+			get
+			{
+				return scalingRuleMetric;
+			}
+			set	
+			{
+				scalingRuleMetric = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingRuleMetric", value);
+			}
+		}
+
 		public string AppId
 		{
 			get
@@ -100,6 +132,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				appId = value;
 				DictionaryUtil.Add(QueryParameters, "AppId", value);
+			}
+		}
+
+		public int? MinReadyInstanceRatio
+		{
+			get
+			{
+				return minReadyInstanceRatio;
+			}
+			set	
+			{
+				minReadyInstanceRatio = value;
+				DictionaryUtil.Add(QueryParameters, "MinReadyInstanceRatio", value.ToString());
 			}
 		}
 

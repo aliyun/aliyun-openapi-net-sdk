@@ -117,6 +117,8 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private string imageUrl;
 
+		private int? minReadyInstanceRatio;
+
 		private bool? autoEnableApplicationScalingRule;
 
 		private string phpConfigLocation;
@@ -616,6 +618,19 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			{
 				imageUrl = value;
 				DictionaryUtil.Add(QueryParameters, "ImageUrl", value);
+			}
+		}
+
+		public int? MinReadyInstanceRatio
+		{
+			get
+			{
+				return minReadyInstanceRatio;
+			}
+			set	
+			{
+				minReadyInstanceRatio = value;
+				DictionaryUtil.Add(QueryParameters, "MinReadyInstanceRatio", value.ToString());
 			}
 		}
 
