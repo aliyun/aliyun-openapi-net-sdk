@@ -27,10 +27,10 @@ using Aliyun.Acs.Privatelink.Transform.V20200415;
 
 namespace Aliyun.Acs.Privatelink.Model.V20200415
 {
-    public class ListVpcEndpointConnectionsRequest : RpcAcsRequest<ListVpcEndpointConnectionsResponse>
+    public class DisableVpcEndpointZoneConnectionRequest : RpcAcsRequest<DisableVpcEndpointZoneConnectionResponse>
     {
-        public ListVpcEndpointConnectionsRequest()
-            : base("Privatelink", "2020-04-15", "ListVpcEndpointConnections", "privatelink", "openAPI")
+        public DisableVpcEndpointZoneConnectionRequest()
+            : base("Privatelink", "2020-04-15", "DisableVpcEndpointZoneConnection", "privatelink", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,23 +41,30 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			Method = MethodType.POST;
         }
 
+		private string clientToken;
+
 		private string endpointId;
 
-		private long? endpointOwnerId;
+		private bool? replacedResource;
 
-		private string replacedResourceId;
+		private bool? dryRun;
 
-		private string nextToken;
-
-		private string resourceId;
-
-		private string connectionStatus;
-
-		private int? maxResults;
-
-		private string eniId;
+		private string zoneId;
 
 		private string serviceId;
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
 
 		public string EndpointId
 		{
@@ -72,94 +79,42 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public long? EndpointOwnerId
+		public bool? ReplacedResource
 		{
 			get
 			{
-				return endpointOwnerId;
+				return replacedResource;
 			}
 			set	
 			{
-				endpointOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "EndpointOwnerId", value.ToString());
+				replacedResource = value;
+				DictionaryUtil.Add(QueryParameters, "ReplacedResource", value.ToString());
 			}
 		}
 
-		public string ReplacedResourceId
+		public bool? DryRun
 		{
 			get
 			{
-				return replacedResourceId;
+				return dryRun;
 			}
 			set	
 			{
-				replacedResourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ReplacedResourceId", value);
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 
-		public string NextToken
+		public string ZoneId
 		{
 			get
 			{
-				return nextToken;
+				return zoneId;
 			}
 			set	
 			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
-			}
-		}
-
-		public string ResourceId
-		{
-			get
-			{
-				return resourceId;
-			}
-			set	
-			{
-				resourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
-			}
-		}
-
-		public string ConnectionStatus
-		{
-			get
-			{
-				return connectionStatus;
-			}
-			set	
-			{
-				connectionStatus = value;
-				DictionaryUtil.Add(QueryParameters, "ConnectionStatus", value);
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
-			}
-		}
-
-		public string EniId
-		{
-			get
-			{
-				return eniId;
-			}
-			set	
-			{
-				eniId = value;
-				DictionaryUtil.Add(QueryParameters, "EniId", value);
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
@@ -181,9 +136,9 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			return false;
 		}
 
-        public override ListVpcEndpointConnectionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DisableVpcEndpointZoneConnectionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListVpcEndpointConnectionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DisableVpcEndpointZoneConnectionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

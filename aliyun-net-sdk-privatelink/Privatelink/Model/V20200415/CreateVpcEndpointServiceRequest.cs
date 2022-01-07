@@ -138,6 +138,7 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 					{
 						DictionaryUtil.Add(QueryParameters,"Resource." + (depth1 + 1), resources[depth1]);
 						DictionaryUtil.Add(QueryParameters,"Resource." + (depth1 + 1), resources[depth1]);
+						DictionaryUtil.Add(QueryParameters,"Resource." + (depth1 + 1), resources[depth1]);
 					}
 				}
 			}
@@ -176,6 +177,8 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 
 			private string resourceId;
 
+			private string zoneId;
+
 			public string ResourceType
 			{
 				get
@@ -197,6 +200,18 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 				set	
 				{
 					resourceId = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
 				}
 			}
 		}

@@ -27,10 +27,10 @@ using Aliyun.Acs.Privatelink.Transform.V20200415;
 
 namespace Aliyun.Acs.Privatelink.Model.V20200415
 {
-    public class ListVpcEndpointConnectionsRequest : RpcAcsRequest<ListVpcEndpointConnectionsResponse>
+    public class UpdateVpcEndpointZoneConnectionResourceAttributeRequest : RpcAcsRequest<UpdateVpcEndpointZoneConnectionResourceAttributeResponse>
     {
-        public ListVpcEndpointConnectionsRequest()
-            : base("Privatelink", "2020-04-15", "ListVpcEndpointConnections", "privatelink", "openAPI")
+        public UpdateVpcEndpointZoneConnectionResourceAttributeRequest()
+            : base("Privatelink", "2020-04-15", "UpdateVpcEndpointZoneConnectionResourceAttribute", "privatelink", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,23 +41,36 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			Method = MethodType.POST;
         }
 
+		private string clientToken;
+
 		private string endpointId;
-
-		private long? endpointOwnerId;
-
-		private string replacedResourceId;
-
-		private string nextToken;
 
 		private string resourceId;
 
-		private string connectionStatus;
+		private bool? dryRun;
 
-		private int? maxResults;
+		private string resourceAllocateMode;
 
-		private string eniId;
+		private string resourceType;
+
+		private string resourceReplaceMode;
+
+		private string zoneId;
 
 		private string serviceId;
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
 
 		public string EndpointId
 		{
@@ -69,45 +82,6 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			{
 				endpointId = value;
 				DictionaryUtil.Add(QueryParameters, "EndpointId", value);
-			}
-		}
-
-		public long? EndpointOwnerId
-		{
-			get
-			{
-				return endpointOwnerId;
-			}
-			set	
-			{
-				endpointOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "EndpointOwnerId", value.ToString());
-			}
-		}
-
-		public string ReplacedResourceId
-		{
-			get
-			{
-				return replacedResourceId;
-			}
-			set	
-			{
-				replacedResourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ReplacedResourceId", value);
-			}
-		}
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
@@ -124,42 +98,68 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			}
 		}
 
-		public string ConnectionStatus
+		public bool? DryRun
 		{
 			get
 			{
-				return connectionStatus;
+				return dryRun;
 			}
 			set	
 			{
-				connectionStatus = value;
-				DictionaryUtil.Add(QueryParameters, "ConnectionStatus", value);
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 
-		public int? MaxResults
+		public string ResourceAllocateMode
 		{
 			get
 			{
-				return maxResults;
+				return resourceAllocateMode;
 			}
 			set	
 			{
-				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+				resourceAllocateMode = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceAllocateMode", value);
 			}
 		}
 
-		public string EniId
+		public string ResourceType
 		{
 			get
 			{
-				return eniId;
+				return resourceType;
 			}
 			set	
 			{
-				eniId = value;
-				DictionaryUtil.Add(QueryParameters, "EniId", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+			}
+		}
+
+		public string ResourceReplaceMode
+		{
+			get
+			{
+				return resourceReplaceMode;
+			}
+			set	
+			{
+				resourceReplaceMode = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceReplaceMode", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
@@ -181,9 +181,9 @@ namespace Aliyun.Acs.Privatelink.Model.V20200415
 			return false;
 		}
 
-        public override ListVpcEndpointConnectionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateVpcEndpointZoneConnectionResourceAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListVpcEndpointConnectionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateVpcEndpointZoneConnectionResourceAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
