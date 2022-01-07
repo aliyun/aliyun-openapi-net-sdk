@@ -25,23 +25,11 @@ namespace Aliyun.Acs.quickbi_public.Model.V20200807
 	public class QueryWorksByWorkspaceResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private bool? success;
 
-		private QueryWorksByWorkspace_Result result;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private QueryWorksByWorkspace_Result result;
 
 		public bool? Success
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20200807
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,27 +70,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20200807
 		public class QueryWorksByWorkspace_Result
 		{
 
-			private int? totalNum;
-
 			private int? totalPages;
 
 			private int? pageNum;
 
 			private int? pageSize;
 
-			private List<QueryWorksByWorkspace_DataItem> data;
+			private int? totalNum;
 
-			public int? TotalNum
-			{
-				get
-				{
-					return totalNum;
-				}
-				set	
-				{
-					totalNum = value;
-				}
-			}
+			private List<QueryWorksByWorkspace_DataItem> data;
 
 			public int? TotalPages
 			{
@@ -128,6 +116,18 @@ namespace Aliyun.Acs.quickbi_public.Model.V20200807
 				}
 			}
 
+			public int? TotalNum
+			{
+				get
+				{
+					return totalNum;
+				}
+				set	
+				{
+					totalNum = value;
+				}
+			}
+
 			public List<QueryWorksByWorkspace_DataItem> Data
 			{
 				get
@@ -143,11 +143,23 @@ namespace Aliyun.Acs.quickbi_public.Model.V20200807
 			public class QueryWorksByWorkspace_DataItem
 			{
 
+				private int? status;
+
+				private string gmtModify;
+
+				private int? auth3rdFlag;
+
 				private string worksId;
 
 				private string workType;
 
-				private string workName;
+				private string ownerName;
+
+				private string workspaceName;
+
+				private string ownerId;
+
+				private string modifyName;
 
 				private string workspaceId;
 
@@ -155,23 +167,47 @@ namespace Aliyun.Acs.quickbi_public.Model.V20200807
 
 				private string description;
 
-				private string ownerId;
-
-				private string ownerName;
-
-				private string modifyName;
+				private string workName;
 
 				private string gmtCreate;
 
-				private string gmtModify;
-
-				private int? auth3rdFlag;
-
-				private int? status;
-
-				private string workspaceName;
-
 				private QueryWorksByWorkspace_Directory directory;
+
+				public int? Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string GmtModify
+				{
+					get
+					{
+						return gmtModify;
+					}
+					set	
+					{
+						gmtModify = value;
+					}
+				}
+
+				public int? Auth3rdFlag
+				{
+					get
+					{
+						return auth3rdFlag;
+					}
+					set	
+					{
+						auth3rdFlag = value;
+					}
+				}
 
 				public string WorksId
 				{
@@ -197,15 +233,51 @@ namespace Aliyun.Acs.quickbi_public.Model.V20200807
 					}
 				}
 
-				public string WorkName
+				public string OwnerName
 				{
 					get
 					{
-						return workName;
+						return ownerName;
 					}
 					set	
 					{
-						workName = value;
+						ownerName = value;
+					}
+				}
+
+				public string WorkspaceName
+				{
+					get
+					{
+						return workspaceName;
+					}
+					set	
+					{
+						workspaceName = value;
+					}
+				}
+
+				public string OwnerId
+				{
+					get
+					{
+						return ownerId;
+					}
+					set	
+					{
+						ownerId = value;
+					}
+				}
+
+				public string ModifyName
+				{
+					get
+					{
+						return modifyName;
+					}
+					set	
+					{
+						modifyName = value;
 					}
 				}
 
@@ -245,39 +317,15 @@ namespace Aliyun.Acs.quickbi_public.Model.V20200807
 					}
 				}
 
-				public string OwnerId
+				public string WorkName
 				{
 					get
 					{
-						return ownerId;
+						return workName;
 					}
 					set	
 					{
-						ownerId = value;
-					}
-				}
-
-				public string OwnerName
-				{
-					get
-					{
-						return ownerName;
-					}
-					set	
-					{
-						ownerName = value;
-					}
-				}
-
-				public string ModifyName
-				{
-					get
-					{
-						return modifyName;
-					}
-					set	
-					{
-						modifyName = value;
+						workName = value;
 					}
 				}
 
@@ -290,54 +338,6 @@ namespace Aliyun.Acs.quickbi_public.Model.V20200807
 					set	
 					{
 						gmtCreate = value;
-					}
-				}
-
-				public string GmtModify
-				{
-					get
-					{
-						return gmtModify;
-					}
-					set	
-					{
-						gmtModify = value;
-					}
-				}
-
-				public int? Auth3rdFlag
-				{
-					get
-					{
-						return auth3rdFlag;
-					}
-					set	
-					{
-						auth3rdFlag = value;
-					}
-				}
-
-				public int? Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
-					}
-				}
-
-				public string WorkspaceName
-				{
-					get
-					{
-						return workspaceName;
-					}
-					set	
-					{
-						workspaceName = value;
 					}
 				}
 
@@ -356,37 +356,13 @@ namespace Aliyun.Acs.quickbi_public.Model.V20200807
 				public class QueryWorksByWorkspace_Directory
 				{
 
-					private string id;
-
-					private string name;
-
 					private string pathId;
 
 					private string pathName;
 
-					public string Id
-					{
-						get
-						{
-							return id;
-						}
-						set	
-						{
-							id = value;
-						}
-					}
+					private string name;
 
-					public string Name
-					{
-						get
-						{
-							return name;
-						}
-						set	
-						{
-							name = value;
-						}
-					}
+					private string id;
 
 					public string PathId
 					{
@@ -409,6 +385,30 @@ namespace Aliyun.Acs.quickbi_public.Model.V20200807
 						set	
 						{
 							pathName = value;
+						}
+					}
+
+					public string Name
+					{
+						get
+						{
+							return name;
+						}
+						set	
+						{
+							name = value;
+						}
+					}
+
+					public string Id
+					{
+						get
+						{
+							return id;
+						}
+						set	
+						{
+							id = value;
 						}
 					}
 				}

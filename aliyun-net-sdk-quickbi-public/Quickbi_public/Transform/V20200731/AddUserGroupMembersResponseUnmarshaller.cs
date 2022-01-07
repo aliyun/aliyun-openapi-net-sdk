@@ -16,55 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.quickbi_public.Model.V20200731;
 
-namespace Aliyun.Acs.quickbi_public.Model.V20200807
+namespace Aliyun.Acs.quickbi_public.Transform.V20200731
 {
-	public class QueryEmbeddedStausResponse : AcsResponse
-	{
+    public class AddUserGroupMembersResponseUnmarshaller
+    {
+        public static AddUserGroupMembersResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			AddUserGroupMembersResponse addUserGroupMembersResponse = new AddUserGroupMembersResponse();
 
-		private string requestId;
-
-		private bool? result;
-
-		private bool? success;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Result
-		{
-			get
-			{
-				return result;
-			}
-			set	
-			{
-				result = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-	}
+			addUserGroupMembersResponse.HttpResponse = _ctx.HttpResponse;
+			addUserGroupMembersResponse.RequestId = _ctx.StringValue("AddUserGroupMembers.RequestId");
+			addUserGroupMembersResponse.Result = _ctx.BooleanValue("AddUserGroupMembers.Result");
+			addUserGroupMembersResponse.Success = _ctx.BooleanValue("AddUserGroupMembers.Success");
+        
+			return addUserGroupMembersResponse;
+        }
+    }
 }

@@ -20,9 +20,9 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.quickbi_public.Model.V20200807
+namespace Aliyun.Acs.quickbi_public.Model.V20200731
 {
-	public class QueryEmbeddedStausResponse : AcsResponse
+	public class AddUserGroupMembersResponse : AcsResponse
 	{
 
 		private string requestId;
