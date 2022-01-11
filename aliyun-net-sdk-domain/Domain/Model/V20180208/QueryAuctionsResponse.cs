@@ -25,17 +25,53 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 	public class QueryAuctionsResponse : AcsResponse
 	{
 
+		private int? currentPageNum;
+
+		private int? totalPageNum;
+
+		private int? pageSize;
+
 		private string requestId;
 
 		private int? totalItemNum;
 
-		private int? currentPageNum;
-
-		private int? pageSize;
-
-		private int? totalPageNum;
-
 		private List<QueryAuctions_AuctionDetail> data;
+
+		public int? CurrentPageNum
+		{
+			get
+			{
+				return currentPageNum;
+			}
+			set	
+			{
+				currentPageNum = value;
+			}
+		}
+
+		public int? TotalPageNum
+		{
+			get
+			{
+				return totalPageNum;
+			}
+			set	
+			{
+				totalPageNum = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -61,42 +97,6 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 			}
 		}
 
-		public int? CurrentPageNum
-		{
-			get
-			{
-				return currentPageNum;
-			}
-			set	
-			{
-				currentPageNum = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public int? TotalPageNum
-		{
-			get
-			{
-				return totalPageNum;
-			}
-			set	
-			{
-				totalPageNum = value;
-			}
-		}
-
 		public List<QueryAuctions_AuctionDetail> Data
 		{
 			get
@@ -112,39 +112,31 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 		public class QueryAuctions_AuctionDetail
 		{
 
-			private string domainName;
-
-			private string auctionId;
-
-			private string domainType;
-
-			private string bookedPartner;
-
-			private string partnerType;
-
-			private string currency;
-
-			private float? yourCurrentBid;
-
-			private float? yourMaxBid;
-
-			private float? highBid;
-
-			private float? nextValidBid;
+			private string status;
 
 			private bool? reserveMet;
 
+			private float? highBid;
+
+			private long? deliveryTime;
+
 			private float? transferInPrice;
 
-			private float? payPrice;
+			private float? nextValidBid;
+
+			private string produceStatus;
 
 			private string highBidder;
 
-			private string status;
+			private string bookedPartner;
 
-			private string payStatus;
+			private string currency;
 
-			private string produceStatus;
+			private string domainName;
+
+			private float? yourCurrentBid;
+
+			private string failCode;
 
 			private long? auctionEndTime;
 
@@ -152,127 +144,31 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 
 			private long? payEndTime;
 
-			private long? deliveryTime;
+			private string payStatus;
 
-			private string failCode;
+			private float? yourMaxBid;
 
-			public string DomainName
+			private float? payPrice;
+
+			private string auctionId;
+
+			private string partnerType;
+
+			private string domainType;
+
+			private long? reserveMin;
+
+			private long? reserveMax;
+
+			public string Status
 			{
 				get
 				{
-					return domainName;
+					return status;
 				}
 				set	
 				{
-					domainName = value;
-				}
-			}
-
-			public string AuctionId
-			{
-				get
-				{
-					return auctionId;
-				}
-				set	
-				{
-					auctionId = value;
-				}
-			}
-
-			public string DomainType
-			{
-				get
-				{
-					return domainType;
-				}
-				set	
-				{
-					domainType = value;
-				}
-			}
-
-			public string BookedPartner
-			{
-				get
-				{
-					return bookedPartner;
-				}
-				set	
-				{
-					bookedPartner = value;
-				}
-			}
-
-			public string PartnerType
-			{
-				get
-				{
-					return partnerType;
-				}
-				set	
-				{
-					partnerType = value;
-				}
-			}
-
-			public string Currency
-			{
-				get
-				{
-					return currency;
-				}
-				set	
-				{
-					currency = value;
-				}
-			}
-
-			public float? YourCurrentBid
-			{
-				get
-				{
-					return yourCurrentBid;
-				}
-				set	
-				{
-					yourCurrentBid = value;
-				}
-			}
-
-			public float? YourMaxBid
-			{
-				get
-				{
-					return yourMaxBid;
-				}
-				set	
-				{
-					yourMaxBid = value;
-				}
-			}
-
-			public float? HighBid
-			{
-				get
-				{
-					return highBid;
-				}
-				set	
-				{
-					highBid = value;
-				}
-			}
-
-			public float? NextValidBid
-			{
-				get
-				{
-					return nextValidBid;
-				}
-				set	
-				{
-					nextValidBid = value;
+					status = value;
 				}
 			}
 
@@ -288,6 +184,30 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 				}
 			}
 
+			public float? HighBid
+			{
+				get
+				{
+					return highBid;
+				}
+				set	
+				{
+					highBid = value;
+				}
+			}
+
+			public long? DeliveryTime
+			{
+				get
+				{
+					return deliveryTime;
+				}
+				set	
+				{
+					deliveryTime = value;
+				}
+			}
+
 			public float? TransferInPrice
 			{
 				get
@@ -300,15 +220,27 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 				}
 			}
 
-			public float? PayPrice
+			public float? NextValidBid
 			{
 				get
 				{
-					return payPrice;
+					return nextValidBid;
 				}
 				set	
 				{
-					payPrice = value;
+					nextValidBid = value;
+				}
+			}
+
+			public string ProduceStatus
+			{
+				get
+				{
+					return produceStatus;
+				}
+				set	
+				{
+					produceStatus = value;
 				}
 			}
 
@@ -324,39 +256,63 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 				}
 			}
 
-			public string Status
+			public string BookedPartner
 			{
 				get
 				{
-					return status;
+					return bookedPartner;
 				}
 				set	
 				{
-					status = value;
+					bookedPartner = value;
 				}
 			}
 
-			public string PayStatus
+			public string Currency
 			{
 				get
 				{
-					return payStatus;
+					return currency;
 				}
 				set	
 				{
-					payStatus = value;
+					currency = value;
 				}
 			}
 
-			public string ProduceStatus
+			public string DomainName
 			{
 				get
 				{
-					return produceStatus;
+					return domainName;
 				}
 				set	
 				{
-					produceStatus = value;
+					domainName = value;
+				}
+			}
+
+			public float? YourCurrentBid
+			{
+				get
+				{
+					return yourCurrentBid;
+				}
+				set	
+				{
+					yourCurrentBid = value;
+				}
+			}
+
+			public string FailCode
+			{
+				get
+				{
+					return failCode;
+				}
+				set	
+				{
+					failCode = value;
 				}
 			}
 
@@ -396,27 +352,99 @@ namespace Aliyun.Acs.Domain.Model.V20180208
 				}
 			}
 
-			public long? DeliveryTime
+			public string PayStatus
 			{
 				get
 				{
-					return deliveryTime;
+					return payStatus;
 				}
 				set	
 				{
-					deliveryTime = value;
+					payStatus = value;
 				}
 			}
 
-			public string FailCode
+			public float? YourMaxBid
 			{
 				get
 				{
-					return failCode;
+					return yourMaxBid;
 				}
 				set	
 				{
-					failCode = value;
+					yourMaxBid = value;
+				}
+			}
+
+			public float? PayPrice
+			{
+				get
+				{
+					return payPrice;
+				}
+				set	
+				{
+					payPrice = value;
+				}
+			}
+
+			public string AuctionId
+			{
+				get
+				{
+					return auctionId;
+				}
+				set	
+				{
+					auctionId = value;
+				}
+			}
+
+			public string PartnerType
+			{
+				get
+				{
+					return partnerType;
+				}
+				set	
+				{
+					partnerType = value;
+				}
+			}
+
+			public string DomainType
+			{
+				get
+				{
+					return domainType;
+				}
+				set	
+				{
+					domainType = value;
+				}
+			}
+
+			public long? ReserveMin
+			{
+				get
+				{
+					return reserveMin;
+				}
+				set	
+				{
+					reserveMin = value;
+				}
+			}
+
+			public long? ReserveMax
+			{
+				get
+				{
+					return reserveMax;
+				}
+				set	
+				{
+					reserveMax = value;
 				}
 			}
 		}
