@@ -49,12 +49,14 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				transitRouterAttachment.VpcOwnerId = _ctx.LongValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].VpcOwnerId");
 				transitRouterAttachment.VpcRegionId = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].VpcRegionId");
 				transitRouterAttachment.TransitRouterAttachmentName = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].TransitRouterAttachmentName");
+				transitRouterAttachment.ServiceMode = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].ServiceMode");
 
 				List<ListTransitRouterVpcAttachmentsResponse.ListTransitRouterVpcAttachments_TransitRouterAttachment.ListTransitRouterVpcAttachments_ZoneMapping> transitRouterAttachment_zoneMappings = new List<ListTransitRouterVpcAttachmentsResponse.ListTransitRouterVpcAttachments_TransitRouterAttachment.ListTransitRouterVpcAttachments_ZoneMapping>();
 				for (int j = 0; j < _ctx.Length("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].ZoneMappings.Length"); j++) {
 					ListTransitRouterVpcAttachmentsResponse.ListTransitRouterVpcAttachments_TransitRouterAttachment.ListTransitRouterVpcAttachments_ZoneMapping zoneMapping = new ListTransitRouterVpcAttachmentsResponse.ListTransitRouterVpcAttachments_TransitRouterAttachment.ListTransitRouterVpcAttachments_ZoneMapping();
 					zoneMapping.ZoneId = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].ZoneMappings["+ j +"].ZoneId");
 					zoneMapping.VSwitchId = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].ZoneMappings["+ j +"].VSwitchId");
+					zoneMapping.NetworkInterfaceId = _ctx.StringValue("ListTransitRouterVpcAttachments.TransitRouterAttachments["+ i +"].ZoneMappings["+ j +"].NetworkInterfaceId");
 
 					transitRouterAttachment_zoneMappings.Add(zoneMapping);
 				}

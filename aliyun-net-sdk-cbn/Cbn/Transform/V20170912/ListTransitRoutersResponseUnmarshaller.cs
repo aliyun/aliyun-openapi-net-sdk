@@ -48,6 +48,7 @@ namespace Aliyun.Acs.Cbn.Transform.V20170912
 				transitRouter.CenId = _ctx.StringValue("ListTransitRouters.TransitRouters["+ i +"].CenId");
 				transitRouter.AliUid = _ctx.LongValue("ListTransitRouters.TransitRouters["+ i +"].AliUid");
 				transitRouter.RegionId = _ctx.StringValue("ListTransitRouters.TransitRouters["+ i +"].RegionId");
+				transitRouter.ServiceMode = _ctx.StringValue("ListTransitRouters.TransitRouters["+ i +"].ServiceMode");
 
 				listTransitRoutersResponse_transitRouters.Add(transitRouter);
 			}

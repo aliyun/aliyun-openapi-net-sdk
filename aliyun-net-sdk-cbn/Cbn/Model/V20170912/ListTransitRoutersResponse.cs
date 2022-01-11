@@ -116,6 +116,8 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 
 			private string regionId;
 
+			private string serviceMode;
+
 			public string CreationTime
 			{
 				get
@@ -221,6 +223,18 @@ namespace Aliyun.Acs.Cbn.Model.V20170912
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string ServiceMode
+			{
+				get
+				{
+					return serviceMode;
+				}
+				set	
+				{
+					serviceMode = value;
 				}
 			}
 		}
