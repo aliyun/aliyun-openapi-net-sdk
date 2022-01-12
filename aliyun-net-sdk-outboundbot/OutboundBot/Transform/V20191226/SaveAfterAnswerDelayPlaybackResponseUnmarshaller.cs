@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			SaveAfterAnswerDelayPlaybackResponse saveAfterAnswerDelayPlaybackResponse = new SaveAfterAnswerDelayPlaybackResponse();
 
 			saveAfterAnswerDelayPlaybackResponse.HttpResponse = _ctx.HttpResponse;
-			saveAfterAnswerDelayPlaybackResponse.RequestId = _ctx.StringValue("SaveAfterAnswerDelayPlayback.RequestId");
-			saveAfterAnswerDelayPlaybackResponse.Success = _ctx.BooleanValue("SaveAfterAnswerDelayPlayback.Success");
+			saveAfterAnswerDelayPlaybackResponse.HttpStatusCode = _ctx.IntegerValue("SaveAfterAnswerDelayPlayback.HttpStatusCode");
 			saveAfterAnswerDelayPlaybackResponse.Code = _ctx.StringValue("SaveAfterAnswerDelayPlayback.Code");
 			saveAfterAnswerDelayPlaybackResponse.Message = _ctx.StringValue("SaveAfterAnswerDelayPlayback.Message");
-			saveAfterAnswerDelayPlaybackResponse.HttpStatusCode = _ctx.IntegerValue("SaveAfterAnswerDelayPlayback.HttpStatusCode");
+			saveAfterAnswerDelayPlaybackResponse.RequestId = _ctx.StringValue("SaveAfterAnswerDelayPlayback.RequestId");
+			saveAfterAnswerDelayPlaybackResponse.Success = _ctx.BooleanValue("SaveAfterAnswerDelayPlayback.Success");
         
 			return saveAfterAnswerDelayPlaybackResponse;
         }

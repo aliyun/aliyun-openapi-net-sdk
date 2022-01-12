@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			SaveMaxAttemptsPerDayResponse saveMaxAttemptsPerDayResponse = new SaveMaxAttemptsPerDayResponse();
 
 			saveMaxAttemptsPerDayResponse.HttpResponse = _ctx.HttpResponse;
-			saveMaxAttemptsPerDayResponse.RequestId = _ctx.StringValue("SaveMaxAttemptsPerDay.RequestId");
-			saveMaxAttemptsPerDayResponse.Success = _ctx.BooleanValue("SaveMaxAttemptsPerDay.Success");
+			saveMaxAttemptsPerDayResponse.HttpStatusCode = _ctx.IntegerValue("SaveMaxAttemptsPerDay.HttpStatusCode");
 			saveMaxAttemptsPerDayResponse.Code = _ctx.StringValue("SaveMaxAttemptsPerDay.Code");
 			saveMaxAttemptsPerDayResponse.Message = _ctx.StringValue("SaveMaxAttemptsPerDay.Message");
-			saveMaxAttemptsPerDayResponse.HttpStatusCode = _ctx.IntegerValue("SaveMaxAttemptsPerDay.HttpStatusCode");
+			saveMaxAttemptsPerDayResponse.RequestId = _ctx.StringValue("SaveMaxAttemptsPerDay.RequestId");
+			saveMaxAttemptsPerDayResponse.Success = _ctx.BooleanValue("SaveMaxAttemptsPerDay.Success");
         
 			return saveMaxAttemptsPerDayResponse;
         }

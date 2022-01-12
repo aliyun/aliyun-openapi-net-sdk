@@ -134,6 +134,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private string modifyTime;
 
+			private long? ringingDuration;
+
 			private List<string> callingNumbers;
 
 			private ModifyJobGroup_ExportProgress exportProgress;
@@ -271,6 +273,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					modifyTime = value;
+				}
+			}
+
+			public long? RingingDuration
+			{
+				get
+				{
+					return ringingDuration;
+				}
+				set	
+				{
+					ringingDuration = value;
 				}
 			}
 

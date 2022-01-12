@@ -50,6 +50,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			jobGroup.ScriptName = _ctx.StringValue("DescribeJobGroup.JobGroup.ScriptName");
 			jobGroup.ModifyTime = _ctx.StringValue("DescribeJobGroup.JobGroup.ModifyTime");
 			jobGroup.ScriptVersion = _ctx.StringValue("DescribeJobGroup.JobGroup.ScriptVersion");
+			jobGroup.RingingDuration = _ctx.LongValue("DescribeJobGroup.JobGroup.RingingDuration");
 
 			List<string> jobGroup_callingNumbers = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeJobGroup.JobGroup.CallingNumbers.Length"); i++) {

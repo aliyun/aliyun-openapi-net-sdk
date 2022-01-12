@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-	public class DescribeJobDataParsingTaskProgressResponse : AcsResponse
+	public class DescribeNumberDistrictInfoStatusResponse : AcsResponse
 	{
 
 		private int? httpStatusCode;
@@ -35,7 +35,11 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private bool? success;
 
-		private DescribeJobDataParsingTaskProgress_Progress progress;
+		private string status;
+
+		private DescribeNumberDistrictInfoStatus_AppliedVersion appliedVersion;
+
+		private DescribeNumberDistrictInfoStatus_ParsingVersion parsingVersion;
 
 		public int? HttpStatusCode
 		{
@@ -97,102 +101,144 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public DescribeJobDataParsingTaskProgress_Progress Progress
+		public string Status
 		{
 			get
 			{
-				return progress;
+				return status;
 			}
 			set	
 			{
-				progress = value;
+				status = value;
 			}
 		}
 
-		public class DescribeJobDataParsingTaskProgress_Progress
+		public DescribeNumberDistrictInfoStatus_AppliedVersion AppliedVersion
+		{
+			get
+			{
+				return appliedVersion;
+			}
+			set	
+			{
+				appliedVersion = value;
+			}
+		}
+
+		public DescribeNumberDistrictInfoStatus_ParsingVersion ParsingVersion
+		{
+			get
+			{
+				return parsingVersion;
+			}
+			set	
+			{
+				parsingVersion = value;
+			}
+		}
+
+		public class DescribeNumberDistrictInfoStatus_AppliedVersion
 		{
 
-			private string failErrorCode;
+			private string versionId;
 
-			private string status;
+			private string fileName;
 
-			private int? handledJobCount;
+			private long? fileSize;
 
-			private int? totalJobCount;
-
-			private string failReason;
-
-			private string feedbackUrl;
-
-			public string FailErrorCode
+			public string VersionId
 			{
 				get
 				{
-					return failErrorCode;
+					return versionId;
 				}
 				set	
 				{
-					failErrorCode = value;
+					versionId = value;
 				}
 			}
 
-			public string Status
+			public string FileName
 			{
 				get
 				{
-					return status;
+					return fileName;
 				}
 				set	
 				{
-					status = value;
+					fileName = value;
 				}
 			}
 
-			public int? HandledJobCount
+			public long? FileSize
 			{
 				get
 				{
-					return handledJobCount;
+					return fileSize;
 				}
 				set	
 				{
-					handledJobCount = value;
+					fileSize = value;
+				}
+			}
+		}
+
+		public class DescribeNumberDistrictInfoStatus_ParsingVersion
+		{
+
+			private string versionId;
+
+			private string fileName;
+
+			private long? fileSize;
+
+			private long? parseProgress;
+
+			public string VersionId
+			{
+				get
+				{
+					return versionId;
+				}
+				set	
+				{
+					versionId = value;
 				}
 			}
 
-			public int? TotalJobCount
+			public string FileName
 			{
 				get
 				{
-					return totalJobCount;
+					return fileName;
 				}
 				set	
 				{
-					totalJobCount = value;
+					fileName = value;
 				}
 			}
 
-			public string FailReason
+			public long? FileSize
 			{
 				get
 				{
-					return failReason;
+					return fileSize;
 				}
 				set	
 				{
-					failReason = value;
+					fileSize = value;
 				}
 			}
 
-			public string FeedbackUrl
+			public long? ParseProgress
 			{
 				get
 				{
-					return feedbackUrl;
+					return parseProgress;
 				}
 				set	
 				{
-					feedbackUrl = value;
+					parseProgress = value;
 				}
 			}
 		}

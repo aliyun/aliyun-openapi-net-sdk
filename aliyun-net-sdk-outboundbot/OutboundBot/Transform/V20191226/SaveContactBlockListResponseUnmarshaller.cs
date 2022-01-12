@@ -31,12 +31,12 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			SaveContactBlockListResponse saveContactBlockListResponse = new SaveContactBlockListResponse();
 
 			saveContactBlockListResponse.HttpResponse = _ctx.HttpResponse;
+			saveContactBlockListResponse.HttpStatusCode = _ctx.IntegerValue("SaveContactBlockList.HttpStatusCode");
 			saveContactBlockListResponse.RequestId = _ctx.StringValue("SaveContactBlockList.RequestId");
+			saveContactBlockListResponse.AffectedRows = _ctx.IntegerValue("SaveContactBlockList.AffectedRows");
 			saveContactBlockListResponse.Success = _ctx.BooleanValue("SaveContactBlockList.Success");
 			saveContactBlockListResponse.Code = _ctx.StringValue("SaveContactBlockList.Code");
 			saveContactBlockListResponse.Message = _ctx.StringValue("SaveContactBlockList.Message");
-			saveContactBlockListResponse.HttpStatusCode = _ctx.IntegerValue("SaveContactBlockList.HttpStatusCode");
-			saveContactBlockListResponse.AffectedRows = _ctx.IntegerValue("SaveContactBlockList.AffectedRows");
         
 			return saveContactBlockListResponse;
         }

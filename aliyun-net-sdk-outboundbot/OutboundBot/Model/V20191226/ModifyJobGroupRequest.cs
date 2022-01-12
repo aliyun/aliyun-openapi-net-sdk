@@ -46,17 +46,21 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string scriptId;
 
+		private string strategyJson;
+
+		private long? ringingDuration;
+
+		private string scenarioId;
+
+		private string jobGroupStatus;
+
 		private List<string> callingNumbers = new List<string>(){ };
 
 		private string instanceId;
 
-		private string strategyJson;
-
 		private string jobGroupId;
 
 		private string name;
-
-		private string scenarioId;
 
 		public string RecallStrategyJson
 		{
@@ -97,6 +101,58 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
+		public string StrategyJson
+		{
+			get
+			{
+				return strategyJson;
+			}
+			set	
+			{
+				strategyJson = value;
+				DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
+			}
+		}
+
+		public long? RingingDuration
+		{
+			get
+			{
+				return ringingDuration;
+			}
+			set	
+			{
+				ringingDuration = value;
+				DictionaryUtil.Add(QueryParameters, "RingingDuration", value.ToString());
+			}
+		}
+
+		public string ScenarioId
+		{
+			get
+			{
+				return scenarioId;
+			}
+			set	
+			{
+				scenarioId = value;
+				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
+			}
+		}
+
+		public string JobGroupStatus
+		{
+			get
+			{
+				return jobGroupStatus;
+			}
+			set	
+			{
+				jobGroupStatus = value;
+				DictionaryUtil.Add(QueryParameters, "JobGroupStatus", value);
+			}
+		}
+
 		public List<string> CallingNumbers
 		{
 			get
@@ -127,19 +183,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string StrategyJson
-		{
-			get
-			{
-				return strategyJson;
-			}
-			set	
-			{
-				strategyJson = value;
-				DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
-			}
-		}
-
 		public string JobGroupId
 		{
 			get
@@ -163,19 +206,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string ScenarioId
-		{
-			get
-			{
-				return scenarioId;
-			}
-			set	
-			{
-				scenarioId = value;
-				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
 			}
 		}
 

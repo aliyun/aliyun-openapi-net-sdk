@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			SuspendCallResponse suspendCallResponse = new SuspendCallResponse();
 
 			suspendCallResponse.HttpResponse = _ctx.HttpResponse;
-			suspendCallResponse.RequestId = _ctx.StringValue("SuspendCall.RequestId");
-			suspendCallResponse.Success = _ctx.BooleanValue("SuspendCall.Success");
+			suspendCallResponse.HttpStatusCode = _ctx.IntegerValue("SuspendCall.HttpStatusCode");
 			suspendCallResponse.Code = _ctx.StringValue("SuspendCall.Code");
 			suspendCallResponse.Message = _ctx.StringValue("SuspendCall.Message");
-			suspendCallResponse.HttpStatusCode = _ctx.IntegerValue("SuspendCall.HttpStatusCode");
+			suspendCallResponse.RequestId = _ctx.StringValue("SuspendCall.RequestId");
+			suspendCallResponse.Success = _ctx.BooleanValue("SuspendCall.Success");
         
 			return suspendCallResponse;
         }

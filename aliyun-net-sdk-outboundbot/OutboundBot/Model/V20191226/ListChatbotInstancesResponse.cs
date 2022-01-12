@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-	public class DescribeJobDataParsingTaskProgressResponse : AcsResponse
+	public class ListChatbotInstancesResponse : AcsResponse
 	{
 
 		private int? httpStatusCode;
@@ -35,7 +35,13 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private bool? success;
 
-		private DescribeJobDataParsingTaskProgress_Progress progress;
+		private long? pageSize;
+
+		private long? pageNumber;
+
+		private long? totalCount;
+
+		private List<ListChatbotInstances_Bot> bots;
 
 		public int? HttpStatusCode
 		{
@@ -97,102 +103,152 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public DescribeJobDataParsingTaskProgress_Progress Progress
+		public long? PageSize
 		{
 			get
 			{
-				return progress;
+				return pageSize;
 			}
 			set	
 			{
-				progress = value;
+				pageSize = value;
 			}
 		}
 
-		public class DescribeJobDataParsingTaskProgress_Progress
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public long? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public List<ListChatbotInstances_Bot> Bots
+		{
+			get
+			{
+				return bots;
+			}
+			set	
+			{
+				bots = value;
+			}
+		}
+
+		public class ListChatbotInstances_Bot
 		{
 
-			private string failErrorCode;
+			private string introduction;
 
-			private string status;
+			private string avatar;
 
-			private int? handledJobCount;
+			private string timeZone;
 
-			private int? totalJobCount;
+			private string createTime;
 
-			private string failReason;
+			private string languageCode;
 
-			private string feedbackUrl;
+			private string instanceId;
 
-			public string FailErrorCode
+			private string name;
+
+			public string Introduction
 			{
 				get
 				{
-					return failErrorCode;
+					return introduction;
 				}
 				set	
 				{
-					failErrorCode = value;
+					introduction = value;
 				}
 			}
 
-			public string Status
+			public string Avatar
 			{
 				get
 				{
-					return status;
+					return avatar;
 				}
 				set	
 				{
-					status = value;
+					avatar = value;
 				}
 			}
 
-			public int? HandledJobCount
+			public string TimeZone
 			{
 				get
 				{
-					return handledJobCount;
+					return timeZone;
 				}
 				set	
 				{
-					handledJobCount = value;
+					timeZone = value;
 				}
 			}
 
-			public int? TotalJobCount
+			public string CreateTime
 			{
 				get
 				{
-					return totalJobCount;
+					return createTime;
 				}
 				set	
 				{
-					totalJobCount = value;
+					createTime = value;
 				}
 			}
 
-			public string FailReason
+			public string LanguageCode
 			{
 				get
 				{
-					return failReason;
+					return languageCode;
 				}
 				set	
 				{
-					failReason = value;
+					languageCode = value;
 				}
 			}
 
-			public string FeedbackUrl
+			public string InstanceId
 			{
 				get
 				{
-					return feedbackUrl;
+					return instanceId;
 				}
 				set	
 				{
-					feedbackUrl = value;
+					instanceId = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 		}

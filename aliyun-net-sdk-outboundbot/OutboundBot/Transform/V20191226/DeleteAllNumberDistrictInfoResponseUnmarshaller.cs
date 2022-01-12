@@ -24,21 +24,20 @@ using Aliyun.Acs.OutboundBot.Model.V20191226;
 
 namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 {
-    public class SaveContactWhiteListResponseUnmarshaller
+    public class DeleteAllNumberDistrictInfoResponseUnmarshaller
     {
-        public static SaveContactWhiteListResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DeleteAllNumberDistrictInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			SaveContactWhiteListResponse saveContactWhiteListResponse = new SaveContactWhiteListResponse();
+			DeleteAllNumberDistrictInfoResponse deleteAllNumberDistrictInfoResponse = new DeleteAllNumberDistrictInfoResponse();
 
-			saveContactWhiteListResponse.HttpResponse = _ctx.HttpResponse;
-			saveContactWhiteListResponse.HttpStatusCode = _ctx.IntegerValue("SaveContactWhiteList.HttpStatusCode");
-			saveContactWhiteListResponse.RequestId = _ctx.StringValue("SaveContactWhiteList.RequestId");
-			saveContactWhiteListResponse.AffectedRows = _ctx.IntegerValue("SaveContactWhiteList.AffectedRows");
-			saveContactWhiteListResponse.Success = _ctx.BooleanValue("SaveContactWhiteList.Success");
-			saveContactWhiteListResponse.Code = _ctx.StringValue("SaveContactWhiteList.Code");
-			saveContactWhiteListResponse.Message = _ctx.StringValue("SaveContactWhiteList.Message");
+			deleteAllNumberDistrictInfoResponse.HttpResponse = _ctx.HttpResponse;
+			deleteAllNumberDistrictInfoResponse.HttpStatusCode = _ctx.IntegerValue("DeleteAllNumberDistrictInfo.HttpStatusCode");
+			deleteAllNumberDistrictInfoResponse.Code = _ctx.StringValue("DeleteAllNumberDistrictInfo.Code");
+			deleteAllNumberDistrictInfoResponse.Message = _ctx.StringValue("DeleteAllNumberDistrictInfo.Message");
+			deleteAllNumberDistrictInfoResponse.RequestId = _ctx.StringValue("DeleteAllNumberDistrictInfo.RequestId");
+			deleteAllNumberDistrictInfoResponse.Success = _ctx.BooleanValue("DeleteAllNumberDistrictInfo.Success");
         
-			return saveContactWhiteListResponse;
+			return deleteAllNumberDistrictInfoResponse;
         }
     }
 }

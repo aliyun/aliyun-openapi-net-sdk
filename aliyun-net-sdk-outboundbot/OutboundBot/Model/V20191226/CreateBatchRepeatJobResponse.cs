@@ -114,6 +114,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private string id;
 
+			private long? ringingDuration;
+
 			public string Id
 			{
 				get
@@ -123,6 +125,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					id = value;
+				}
+			}
+
+			public long? RingingDuration
+			{
+				get
+				{
+					return ringingDuration;
+				}
+				set	
+				{
+					ringingDuration = value;
 				}
 			}
 		}

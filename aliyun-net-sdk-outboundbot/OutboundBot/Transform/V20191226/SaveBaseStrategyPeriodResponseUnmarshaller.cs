@@ -31,11 +31,11 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			SaveBaseStrategyPeriodResponse saveBaseStrategyPeriodResponse = new SaveBaseStrategyPeriodResponse();
 
 			saveBaseStrategyPeriodResponse.HttpResponse = _ctx.HttpResponse;
-			saveBaseStrategyPeriodResponse.RequestId = _ctx.StringValue("SaveBaseStrategyPeriod.RequestId");
-			saveBaseStrategyPeriodResponse.Success = _ctx.BooleanValue("SaveBaseStrategyPeriod.Success");
+			saveBaseStrategyPeriodResponse.HttpStatusCode = _ctx.IntegerValue("SaveBaseStrategyPeriod.HttpStatusCode");
 			saveBaseStrategyPeriodResponse.Code = _ctx.StringValue("SaveBaseStrategyPeriod.Code");
 			saveBaseStrategyPeriodResponse.Message = _ctx.StringValue("SaveBaseStrategyPeriod.Message");
-			saveBaseStrategyPeriodResponse.HttpStatusCode = _ctx.IntegerValue("SaveBaseStrategyPeriod.HttpStatusCode");
+			saveBaseStrategyPeriodResponse.RequestId = _ctx.StringValue("SaveBaseStrategyPeriod.RequestId");
+			saveBaseStrategyPeriodResponse.Success = _ctx.BooleanValue("SaveBaseStrategyPeriod.Success");
         
 			return saveBaseStrategyPeriodResponse;
         }

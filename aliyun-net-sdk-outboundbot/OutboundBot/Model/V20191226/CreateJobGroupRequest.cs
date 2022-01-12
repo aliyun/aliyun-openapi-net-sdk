@@ -54,6 +54,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string strategyJson;
 
+		private long? ringingDuration;
+
 		private string scenarioId;
 
 		public string RecallStrategyJson
@@ -148,6 +150,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				strategyJson = value;
 				DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
+			}
+		}
+
+		public long? RingingDuration
+		{
+			get
+			{
+				return ringingDuration;
+			}
+			set	
+			{
+				ringingDuration = value;
+				DictionaryUtil.Add(QueryParameters, "RingingDuration", value.ToString());
 			}
 		}
 

@@ -31,18 +31,19 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			DescribeJobDataParsingTaskProgressResponse describeJobDataParsingTaskProgressResponse = new DescribeJobDataParsingTaskProgressResponse();
 
 			describeJobDataParsingTaskProgressResponse.HttpResponse = _ctx.HttpResponse;
-			describeJobDataParsingTaskProgressResponse.RequestId = _ctx.StringValue("DescribeJobDataParsingTaskProgress.RequestId");
-			describeJobDataParsingTaskProgressResponse.Success = _ctx.BooleanValue("DescribeJobDataParsingTaskProgress.Success");
+			describeJobDataParsingTaskProgressResponse.HttpStatusCode = _ctx.IntegerValue("DescribeJobDataParsingTaskProgress.HttpStatusCode");
 			describeJobDataParsingTaskProgressResponse.Code = _ctx.StringValue("DescribeJobDataParsingTaskProgress.Code");
 			describeJobDataParsingTaskProgressResponse.Message = _ctx.StringValue("DescribeJobDataParsingTaskProgress.Message");
-			describeJobDataParsingTaskProgressResponse.HttpStatusCode = _ctx.IntegerValue("DescribeJobDataParsingTaskProgress.HttpStatusCode");
+			describeJobDataParsingTaskProgressResponse.RequestId = _ctx.StringValue("DescribeJobDataParsingTaskProgress.RequestId");
+			describeJobDataParsingTaskProgressResponse.Success = _ctx.BooleanValue("DescribeJobDataParsingTaskProgress.Success");
 
 			DescribeJobDataParsingTaskProgressResponse.DescribeJobDataParsingTaskProgress_Progress progress = new DescribeJobDataParsingTaskProgressResponse.DescribeJobDataParsingTaskProgress_Progress();
-			progress.Status = _ctx.StringValue("DescribeJobDataParsingTaskProgress.Progress.Status");
 			progress.FailErrorCode = _ctx.StringValue("DescribeJobDataParsingTaskProgress.Progress.FailErrorCode");
-			progress.FailReason = _ctx.StringValue("DescribeJobDataParsingTaskProgress.Progress.FailReason");
-			progress.TotalJobCount = _ctx.IntegerValue("DescribeJobDataParsingTaskProgress.Progress.TotalJobCount");
+			progress.Status = _ctx.StringValue("DescribeJobDataParsingTaskProgress.Progress.Status");
 			progress.HandledJobCount = _ctx.IntegerValue("DescribeJobDataParsingTaskProgress.Progress.HandledJobCount");
+			progress.TotalJobCount = _ctx.IntegerValue("DescribeJobDataParsingTaskProgress.Progress.TotalJobCount");
+			progress.FailReason = _ctx.StringValue("DescribeJobDataParsingTaskProgress.Progress.FailReason");
+			progress.FeedbackUrl = _ctx.StringValue("DescribeJobDataParsingTaskProgress.Progress.FeedbackUrl");
 			describeJobDataParsingTaskProgressResponse.Progress = progress;
         
 			return describeJobDataParsingTaskProgressResponse;

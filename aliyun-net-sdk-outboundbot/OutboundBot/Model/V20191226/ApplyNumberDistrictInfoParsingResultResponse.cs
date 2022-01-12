@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-	public class SaveMaxAttemptsPerDayResponse : AcsResponse
+	public class ApplyNumberDistrictInfoParsingResultResponse : AcsResponse
 	{
 
 		private int? httpStatusCode;

@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.OutboundBot.Model.V20191226
 {
-	public class SaveMaxAttemptsPerDayResponse : AcsResponse
+	public class CreateNumberDistrictInfoDownloadUrlResponse : AcsResponse
 	{
 
 		private int? httpStatusCode;
@@ -34,6 +34,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private string requestId;
 
 		private bool? success;
+
+		private string fileHttpUrl;
 
 		public int? HttpStatusCode
 		{
@@ -92,6 +94,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string FileHttpUrl
+		{
+			get
+			{
+				return fileHttpUrl;
+			}
+			set	
+			{
+				fileHttpUrl = value;
 			}
 		}
 	}
