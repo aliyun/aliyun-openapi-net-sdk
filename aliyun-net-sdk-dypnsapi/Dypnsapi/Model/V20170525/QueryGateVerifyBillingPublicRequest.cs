@@ -41,30 +41,13 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			Method = MethodType.POST;
         }
 
-		private long? resourceOwnerId;
-
 		private int? authenticationType;
 
 		private string resourceOwnerAccount;
 
-		private string prodCode;
-
 		private long? ownerId;
 
 		private string month;
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
 
 		public int? AuthenticationType
 		{
@@ -89,19 +72,6 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string ProdCode
-		{
-			get
-			{
-				return prodCode;
-			}
-			set	
-			{
-				prodCode = value;
-				DictionaryUtil.Add(QueryParameters, "ProdCode", value);
 			}
 		}
 
