@@ -31,13 +31,13 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			TagResourcesResponse tagResourcesResponse = new TagResourcesResponse();
 
 			tagResourcesResponse.HttpResponse = _ctx.HttpResponse;
-			tagResourcesResponse.Code = _ctx.StringValue("TagResources.Code");
+			tagResourcesResponse.RequestId = _ctx.StringValue("TagResources.RequestId");
+			tagResourcesResponse.Message = _ctx.StringValue("TagResources.Message");
+			tagResourcesResponse.TraceId = _ctx.StringValue("TagResources.TraceId");
 			tagResourcesResponse.Data = _ctx.BooleanValue("TagResources.Data");
 			tagResourcesResponse.ErrorCode = _ctx.StringValue("TagResources.ErrorCode");
-			tagResourcesResponse.Message = _ctx.StringValue("TagResources.Message");
-			tagResourcesResponse.RequestId = _ctx.StringValue("TagResources.RequestId");
+			tagResourcesResponse.Code = _ctx.StringValue("TagResources.Code");
 			tagResourcesResponse.Success = _ctx.BooleanValue("TagResources.Success");
-			tagResourcesResponse.TraceId = _ctx.StringValue("TagResources.TraceId");
         
 			return tagResourcesResponse;
         }

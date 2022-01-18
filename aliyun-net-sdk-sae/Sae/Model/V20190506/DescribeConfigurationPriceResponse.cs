@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.sae.Model.V20190506
 {
-	public class QueryResourceStaticsResponse : AcsResponse
+	public class DescribeConfigurationPriceResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -37,7 +37,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 
 		private bool? success;
 
-		private QueryResourceStatics_Data data;
+		private DescribeConfigurationPrice_Data data;
 
 		public string RequestId
 		{
@@ -111,7 +111,7 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public QueryResourceStatics_Data Data
+		public DescribeConfigurationPrice_Data Data
 		{
 			get
 			{
@@ -123,57 +123,89 @@ namespace Aliyun.Acs.sae.Model.V20190506
 			}
 		}
 
-		public class QueryResourceStatics_Data
+		public class DescribeConfigurationPrice_Data
 		{
 
-			private string workload;
+			private List<DescribeConfigurationPrice_Rule> rules;
 
-			private QueryResourceStatics_Summary summary;
+			private DescribeConfigurationPrice_BagUsage bagUsage;
 
-			private QueryResourceStatics_RealTimeRes realTimeRes;
+			private DescribeConfigurationPrice_Order order;
 
-			public string Workload
+			public List<DescribeConfigurationPrice_Rule> Rules
 			{
 				get
 				{
-					return workload;
+					return rules;
 				}
 				set	
 				{
-					workload = value;
+					rules = value;
 				}
 			}
 
-			public QueryResourceStatics_Summary Summary
+			public DescribeConfigurationPrice_BagUsage BagUsage
 			{
 				get
 				{
-					return summary;
+					return bagUsage;
 				}
 				set	
 				{
-					summary = value;
+					bagUsage = value;
 				}
 			}
 
-			public QueryResourceStatics_RealTimeRes RealTimeRes
+			public DescribeConfigurationPrice_Order Order
 			{
 				get
 				{
-					return realTimeRes;
+					return order;
 				}
 				set	
 				{
-					realTimeRes = value;
+					order = value;
 				}
 			}
 
-			public class QueryResourceStatics_Summary
+			public class DescribeConfigurationPrice_Rule
+			{
+
+				private long? ruleDescId;
+
+				private string name;
+
+				public long? RuleDescId
+				{
+					get
+					{
+						return ruleDescId;
+					}
+					set	
+					{
+						ruleDescId = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+			}
+
+			public class DescribeConfigurationPrice_BagUsage
 			{
 
 				private float? cpu;
 
-				private float? memory;
+				private float? mem;
 
 				public float? Cpu
 				{
@@ -187,47 +219,75 @@ namespace Aliyun.Acs.sae.Model.V20190506
 					}
 				}
 
-				public float? Memory
+				public float? Mem
 				{
 					get
 					{
-						return memory;
+						return mem;
 					}
 					set	
 					{
-						memory = value;
+						mem = value;
 					}
 				}
 			}
 
-			public class QueryResourceStatics_RealTimeRes
+			public class DescribeConfigurationPrice_Order
 			{
 
-				private float? cpu;
+				private float? originalAmount;
 
-				private float? memory;
+				private float? discountAmount;
 
-				public float? Cpu
+				private float? tradeAmount;
+
+				private List<string> ruleIds;
+
+				public float? OriginalAmount
 				{
 					get
 					{
-						return cpu;
+						return originalAmount;
 					}
 					set	
 					{
-						cpu = value;
+						originalAmount = value;
 					}
 				}
 
-				public float? Memory
+				public float? DiscountAmount
 				{
 					get
 					{
-						return memory;
+						return discountAmount;
 					}
 					set	
 					{
-						memory = value;
+						discountAmount = value;
+					}
+				}
+
+				public float? TradeAmount
+				{
+					get
+					{
+						return tradeAmount;
+					}
+					set	
+					{
+						tradeAmount = value;
+					}
+				}
+
+				public List<string> RuleIds
+				{
+					get
+					{
+						return ruleIds;
+					}
+					set	
+					{
+						ruleIds = value;
 					}
 				}
 			}

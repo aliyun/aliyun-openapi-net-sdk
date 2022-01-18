@@ -31,13 +31,13 @@ namespace Aliyun.Acs.sae.Transform.V20190506
 			UntagResourcesResponse untagResourcesResponse = new UntagResourcesResponse();
 
 			untagResourcesResponse.HttpResponse = _ctx.HttpResponse;
-			untagResourcesResponse.Code = _ctx.StringValue("UntagResources.Code");
+			untagResourcesResponse.RequestId = _ctx.StringValue("UntagResources.RequestId");
+			untagResourcesResponse.Message = _ctx.StringValue("UntagResources.Message");
+			untagResourcesResponse.TraceId = _ctx.StringValue("UntagResources.TraceId");
 			untagResourcesResponse.Data = _ctx.BooleanValue("UntagResources.Data");
 			untagResourcesResponse.ErrorCode = _ctx.StringValue("UntagResources.ErrorCode");
-			untagResourcesResponse.Message = _ctx.StringValue("UntagResources.Message");
-			untagResourcesResponse.RequestId = _ctx.StringValue("UntagResources.RequestId");
+			untagResourcesResponse.Code = _ctx.StringValue("UntagResources.Code");
 			untagResourcesResponse.Success = _ctx.BooleanValue("UntagResources.Success");
-			untagResourcesResponse.TraceId = _ctx.StringValue("UntagResources.TraceId");
         
 			return untagResourcesResponse;
         }
