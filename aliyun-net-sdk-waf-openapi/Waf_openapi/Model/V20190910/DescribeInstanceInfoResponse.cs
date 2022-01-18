@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.waf_openapi.Model.V20190910
@@ -56,59 +56,35 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 		public class DescribeInstanceInfo_InstanceInfo
 		{
 
-			private int? inDebt;
-
-			private string instanceId;
-
-			private int? payType;
+			private int? status;
 
 			private long? endDate;
+
+			private string version;
 
 			private int? remainDay;
 
 			private string region;
 
-			private int? trial;
+			private int? payType;
 
-			private int? status;
+			private int? inDebt;
+
+			private string instanceId;
 
 			private string subscriptionType;
 
-			private string version;
+			private int? trial;
 
-			public int? InDebt
+			public int? Status
 			{
 				get
 				{
-					return inDebt;
+					return status;
 				}
 				set	
 				{
-					inDebt = value;
-				}
-			}
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public int? PayType
-			{
-				get
-				{
-					return payType;
-				}
-				set	
-				{
-					payType = value;
+					status = value;
 				}
 			}
 
@@ -121,6 +97,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				set	
 				{
 					endDate = value;
+				}
+			}
+
+			public string Version
+			{
+				get
+				{
+					return version;
+				}
+				set	
+				{
+					version = value;
 				}
 			}
 
@@ -148,27 +136,39 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				}
 			}
 
-			public int? Trial
+			public int? PayType
 			{
 				get
 				{
-					return trial;
+					return payType;
 				}
 				set	
 				{
-					trial = value;
+					payType = value;
 				}
 			}
 
-			public int? Status
+			public int? InDebt
 			{
 				get
 				{
-					return status;
+					return inDebt;
 				}
 				set	
 				{
-					status = value;
+					inDebt = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 
@@ -184,15 +184,15 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				}
 			}
 
-			public string Version
+			public int? Trial
 			{
 				get
 				{
-					return version;
+					return trial;
 				}
 				set	
 				{
-					version = value;
+					trial = value;
 				}
 			}
 		}

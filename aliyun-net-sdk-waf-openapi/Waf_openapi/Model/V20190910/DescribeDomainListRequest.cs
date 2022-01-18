@@ -64,10 +64,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			set
 			{
 				domainNamess = value;
-				for (int i = 0; i < domainNamess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DomainNames." + (i + 1) , domainNamess[i]);
-				}
 			}
 		}
 

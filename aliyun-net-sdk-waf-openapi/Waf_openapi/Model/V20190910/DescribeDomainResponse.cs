@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.waf_openapi.Model.V20190910
@@ -56,63 +56,51 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 		public class DescribeDomain_Domain
 		{
 
-			private int? ipFollowStatus;
-
 			private int? httpToUserIp;
 
-			private int? httpsRedirect;
-
-			private int? loadBalancing;
-
-			private string cname;
+			private int? sniStatus;
 
 			private int? isAccessProduct;
 
 			private int? accessHeaderMode;
 
+			private int? httpsRedirect;
+
+			private int? ipFollowStatus;
+
+			private int? loadBalancing;
+
+			private string accessType;
+
 			private long? version;
 
 			private int? clusterType;
-
-			private int? connectionTime;
 
 			private int? readTime;
 
 			private int? writeTime;
 
+			private string sniHost;
+
 			private string resourceGroupId;
 
-			private string accessType;
+			private string cname;
 
-			private int? sniStatus;
-
-			private string sniHost;
+			private int? connectionTime;
 
 			private List<DescribeDomain_LogHeader> logHeaders;
 
 			private List<DescribeDomain_CloudNativeInstancesItem> cloudNativeInstances;
 
-			private List<string> sourceIps;
+			private List<string> httpPort;
 
 			private List<string> http2Port;
 
-			private List<string> httpPort;
-
-			private List<string> accessHeaders;
+			private List<string> sourceIps;
 
 			private List<string> httpsPort;
 
-			public int? IpFollowStatus
-			{
-				get
-				{
-					return ipFollowStatus;
-				}
-				set	
-				{
-					ipFollowStatus = value;
-				}
-			}
+			private List<string> accessHeaders;
 
 			public int? HttpToUserIp
 			{
@@ -126,39 +114,15 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				}
 			}
 
-			public int? HttpsRedirect
+			public int? SniStatus
 			{
 				get
 				{
-					return httpsRedirect;
+					return sniStatus;
 				}
 				set	
 				{
-					httpsRedirect = value;
-				}
-			}
-
-			public int? LoadBalancing
-			{
-				get
-				{
-					return loadBalancing;
-				}
-				set	
-				{
-					loadBalancing = value;
-				}
-			}
-
-			public string Cname
-			{
-				get
-				{
-					return cname;
-				}
-				set	
-				{
-					cname = value;
+					sniStatus = value;
 				}
 			}
 
@@ -186,6 +150,54 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				}
 			}
 
+			public int? HttpsRedirect
+			{
+				get
+				{
+					return httpsRedirect;
+				}
+				set	
+				{
+					httpsRedirect = value;
+				}
+			}
+
+			public int? IpFollowStatus
+			{
+				get
+				{
+					return ipFollowStatus;
+				}
+				set	
+				{
+					ipFollowStatus = value;
+				}
+			}
+
+			public int? LoadBalancing
+			{
+				get
+				{
+					return loadBalancing;
+				}
+				set	
+				{
+					loadBalancing = value;
+				}
+			}
+
+			public string AccessType
+			{
+				get
+				{
+					return accessType;
+				}
+				set	
+				{
+					accessType = value;
+				}
+			}
+
 			public long? Version
 			{
 				get
@@ -207,18 +219,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				set	
 				{
 					clusterType = value;
-				}
-			}
-
-			public int? ConnectionTime
-			{
-				get
-				{
-					return connectionTime;
-				}
-				set	
-				{
-					connectionTime = value;
 				}
 			}
 
@@ -246,6 +246,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				}
 			}
 
+			public string SniHost
+			{
+				get
+				{
+					return sniHost;
+				}
+				set	
+				{
+					sniHost = value;
+				}
+			}
+
 			public string ResourceGroupId
 			{
 				get
@@ -258,39 +270,27 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				}
 			}
 
-			public string AccessType
+			public string Cname
 			{
 				get
 				{
-					return accessType;
+					return cname;
 				}
 				set	
 				{
-					accessType = value;
+					cname = value;
 				}
 			}
 
-			public int? SniStatus
+			public int? ConnectionTime
 			{
 				get
 				{
-					return sniStatus;
+					return connectionTime;
 				}
 				set	
 				{
-					sniStatus = value;
-				}
-			}
-
-			public string SniHost
-			{
-				get
-				{
-					return sniHost;
-				}
-				set	
-				{
-					sniHost = value;
+					connectionTime = value;
 				}
 			}
 
@@ -318,15 +318,15 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				}
 			}
 
-			public List<string> SourceIps
+			public List<string> HttpPort
 			{
 				get
 				{
-					return sourceIps;
+					return httpPort;
 				}
 				set	
 				{
-					sourceIps = value;
+					httpPort = value;
 				}
 			}
 
@@ -342,27 +342,15 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				}
 			}
 
-			public List<string> HttpPort
+			public List<string> SourceIps
 			{
 				get
 				{
-					return httpPort;
+					return sourceIps;
 				}
 				set	
 				{
-					httpPort = value;
-				}
-			}
-
-			public List<string> AccessHeaders
-			{
-				get
-				{
-					return accessHeaders;
-				}
-				set	
-				{
-					accessHeaders = value;
+					sourceIps = value;
 				}
 			}
 
@@ -378,24 +366,24 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				}
 			}
 
+			public List<string> AccessHeaders
+			{
+				get
+				{
+					return accessHeaders;
+				}
+				set	
+				{
+					accessHeaders = value;
+				}
+			}
+
 			public class DescribeDomain_LogHeader
 			{
 
-				private string v;
-
 				private string k;
 
-				public string V
-				{
-					get
-					{
-						return v;
-					}
-					set	
-					{
-						v = value;
-					}
-				}
+				private string v;
 
 				public string K
 				{
@@ -408,32 +396,32 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 						k = value;
 					}
 				}
+
+				public string V
+				{
+					get
+					{
+						return v;
+					}
+					set	
+					{
+						v = value;
+					}
+				}
 			}
 
 			public class DescribeDomain_CloudNativeInstancesItem
 			{
 
-				private string cloudNativeProductName;
-
 				private string redirectionTypeName;
+
+				private string cloudNativeProductName;
 
 				private string instanceId;
 
 				private string iPAddressList;
 
 				private List<DescribeDomain_ProtocolPortConfigsItem> protocolPortConfigs;
-
-				public string CloudNativeProductName
-				{
-					get
-					{
-						return cloudNativeProductName;
-					}
-					set	
-					{
-						cloudNativeProductName = value;
-					}
-				}
 
 				public string RedirectionTypeName
 				{
@@ -444,6 +432,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 					set	
 					{
 						redirectionTypeName = value;
+					}
+				}
+
+				public string CloudNativeProductName
+				{
+					get
+					{
+						return cloudNativeProductName;
+					}
+					set	
+					{
+						cloudNativeProductName = value;
 					}
 				}
 
@@ -486,21 +486,9 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				public class DescribeDomain_ProtocolPortConfigsItem
 				{
 
-					private string protocol;
-
 					private string ports;
 
-					public string Protocol
-					{
-						get
-						{
-							return protocol;
-						}
-						set	
-						{
-							protocol = value;
-						}
-					}
+					private string protocol;
 
 					public string Ports
 					{
@@ -511,6 +499,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 						set	
 						{
 							ports = value;
+						}
+					}
+
+					public string Protocol
+					{
+						get
+						{
+							return protocol;
+						}
+						set	
+						{
+							protocol = value;
 						}
 					}
 				}

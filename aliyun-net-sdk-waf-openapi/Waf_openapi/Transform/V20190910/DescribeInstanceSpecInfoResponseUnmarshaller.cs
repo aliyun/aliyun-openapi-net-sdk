@@ -33,14 +33,14 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 			describeInstanceSpecInfoResponse.HttpResponse = _ctx.HttpResponse;
 			describeInstanceSpecInfoResponse.RequestId = _ctx.StringValue("DescribeInstanceSpecInfo.RequestId");
 			describeInstanceSpecInfoResponse.InstanceId = _ctx.StringValue("DescribeInstanceSpecInfo.InstanceId");
-			describeInstanceSpecInfoResponse.Version = _ctx.StringValue("DescribeInstanceSpecInfo.Version");
 			describeInstanceSpecInfoResponse.ExpireTime = _ctx.LongValue("DescribeInstanceSpecInfo.ExpireTime");
+			describeInstanceSpecInfoResponse.Version = _ctx.StringValue("DescribeInstanceSpecInfo.Version");
 
 			List<DescribeInstanceSpecInfoResponse.DescribeInstanceSpecInfo_InstanceSpecInfo> describeInstanceSpecInfoResponse_instanceSpecInfos = new List<DescribeInstanceSpecInfoResponse.DescribeInstanceSpecInfo_InstanceSpecInfo>();
 			for (int i = 0; i < _ctx.Length("DescribeInstanceSpecInfo.InstanceSpecInfos.Length"); i++) {
 				DescribeInstanceSpecInfoResponse.DescribeInstanceSpecInfo_InstanceSpecInfo instanceSpecInfo = new DescribeInstanceSpecInfoResponse.DescribeInstanceSpecInfo_InstanceSpecInfo();
-				instanceSpecInfo._Value = _ctx.StringValue("DescribeInstanceSpecInfo.InstanceSpecInfos["+ i +"].Value");
 				instanceSpecInfo.Code = _ctx.StringValue("DescribeInstanceSpecInfo.InstanceSpecInfos["+ i +"].Code");
+				instanceSpecInfo._Value = _ctx.StringValue("DescribeInstanceSpecInfo.InstanceSpecInfos["+ i +"].Value");
 
 				describeInstanceSpecInfoResponse_instanceSpecInfos.Add(instanceSpecInfo);
 			}

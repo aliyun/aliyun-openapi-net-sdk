@@ -31,14 +31,14 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 			DescribeLogServiceStatusResponse describeLogServiceStatusResponse = new DescribeLogServiceStatusResponse();
 
 			describeLogServiceStatusResponse.HttpResponse = _ctx.HttpResponse;
-			describeLogServiceStatusResponse.RequestId = _ctx.StringValue("DescribeLogServiceStatus.RequestId");
 			describeLogServiceStatusResponse.TotalCount = _ctx.IntegerValue("DescribeLogServiceStatus.TotalCount");
+			describeLogServiceStatusResponse.RequestId = _ctx.StringValue("DescribeLogServiceStatus.RequestId");
 
 			List<DescribeLogServiceStatusResponse.DescribeLogServiceStatus_Status> describeLogServiceStatusResponse_domainStatus = new List<DescribeLogServiceStatusResponse.DescribeLogServiceStatus_Status>();
 			for (int i = 0; i < _ctx.Length("DescribeLogServiceStatus.DomainStatus.Length"); i++) {
 				DescribeLogServiceStatusResponse.DescribeLogServiceStatus_Status status = new DescribeLogServiceStatusResponse.DescribeLogServiceStatus_Status();
-				status.SlsLogActive = _ctx.IntegerValue("DescribeLogServiceStatus.DomainStatus["+ i +"].SlsLogActive");
 				status.Domain = _ctx.StringValue("DescribeLogServiceStatus.DomainStatus["+ i +"].Domain");
+				status.SlsLogActive = _ctx.IntegerValue("DescribeLogServiceStatus.DomainStatus["+ i +"].SlsLogActive");
 
 				describeLogServiceStatusResponse_domainStatus.Add(status);
 			}

@@ -31,8 +31,8 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 			DescribeDomainListResponse describeDomainListResponse = new DescribeDomainListResponse();
 
 			describeDomainListResponse.HttpResponse = _ctx.HttpResponse;
-			describeDomainListResponse.RequestId = _ctx.StringValue("DescribeDomainList.RequestId");
 			describeDomainListResponse.TotalCount = _ctx.IntegerValue("DescribeDomainList.TotalCount");
+			describeDomainListResponse.RequestId = _ctx.StringValue("DescribeDomainList.RequestId");
 
 			List<string> describeDomainListResponse_domainNames = new List<string>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainList.DomainNames.Length"); i++) {

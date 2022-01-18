@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.waf_openapi.Model.V20190910
@@ -56,27 +56,15 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 		public class DescribeCertificates_Certificate
 		{
 
-			private string commonName;
-
 			private bool? isUsing;
 
 			private string certificateName;
 
 			private long? certificateId;
 
-			private List<string> sans;
+			private string commonName;
 
-			public string CommonName
-			{
-				get
-				{
-					return commonName;
-				}
-				set	
-				{
-					commonName = value;
-				}
-			}
+			private List<string> sans;
 
 			public bool? IsUsing
 			{
@@ -111,6 +99,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				set	
 				{
 					certificateId = value;
+				}
+			}
+
+			public string CommonName
+			{
+				get
+				{
+					return commonName;
+				}
+				set	
+				{
+					commonName = value;
 				}
 			}
 

@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.waf_openapi.Model.V20190910
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 	public class DescribeDomainBasicConfigsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
 
-		private List<DescribeDomainBasicConfigs_DomainConfig> domainConfigs;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeDomainBasicConfigs_DomainConfig> domainConfigs;
 
 		public int? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,107 +70,35 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 		public class DescribeDomainBasicConfigs_DomainConfig
 		{
 
-			private string owner;
-
-			private int? wafStatus;
-
-			private int? ccStatus;
-
-			private int? ccMode;
-
-			private int? aclStatus;
-
-			private int? wafMode;
-
-			private long? version;
+			private int? status;
 
 			private string domain;
 
-			private int? status;
+			private string owner;
+
+			private int? ccMode;
+
+			private int? ccStatus;
 
 			private string accessType;
 
-			public string Owner
-			{
-				get
-				{
-					return owner;
-				}
-				set	
-				{
-					owner = value;
-				}
-			}
+			private long? version;
 
-			public int? WafStatus
-			{
-				get
-				{
-					return wafStatus;
-				}
-				set	
-				{
-					wafStatus = value;
-				}
-			}
+			private int? aclStatus;
 
-			public int? CcStatus
-			{
-				get
-				{
-					return ccStatus;
-				}
-				set	
-				{
-					ccStatus = value;
-				}
-			}
+			private int? wafStatus;
 
-			public int? CcMode
-			{
-				get
-				{
-					return ccMode;
-				}
-				set	
-				{
-					ccMode = value;
-				}
-			}
+			private int? wafMode;
 
-			public int? AclStatus
+			public int? Status
 			{
 				get
 				{
-					return aclStatus;
+					return status;
 				}
 				set	
 				{
-					aclStatus = value;
-				}
-			}
-
-			public int? WafMode
-			{
-				get
-				{
-					return wafMode;
-				}
-				set	
-				{
-					wafMode = value;
-				}
-			}
-
-			public long? Version
-			{
-				get
-				{
-					return version;
-				}
-				set	
-				{
-					version = value;
+					status = value;
 				}
 			}
 
@@ -186,15 +114,39 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				}
 			}
 
-			public int? Status
+			public string Owner
 			{
 				get
 				{
-					return status;
+					return owner;
 				}
 				set	
 				{
-					status = value;
+					owner = value;
+				}
+			}
+
+			public int? CcMode
+			{
+				get
+				{
+					return ccMode;
+				}
+				set	
+				{
+					ccMode = value;
+				}
+			}
+
+			public int? CcStatus
+			{
+				get
+				{
+					return ccStatus;
+				}
+				set	
+				{
+					ccStatus = value;
 				}
 			}
 
@@ -207,6 +159,54 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				set	
 				{
 					accessType = value;
+				}
+			}
+
+			public long? Version
+			{
+				get
+				{
+					return version;
+				}
+				set	
+				{
+					version = value;
+				}
+			}
+
+			public int? AclStatus
+			{
+				get
+				{
+					return aclStatus;
+				}
+				set	
+				{
+					aclStatus = value;
+				}
+			}
+
+			public int? WafStatus
+			{
+				get
+				{
+					return wafStatus;
+				}
+				set	
+				{
+					wafStatus = value;
+				}
+			}
+
+			public int? WafMode
+			{
+				get
+				{
+					return wafMode;
+				}
+				set	
+				{
+					wafMode = value;
 				}
 			}
 		}

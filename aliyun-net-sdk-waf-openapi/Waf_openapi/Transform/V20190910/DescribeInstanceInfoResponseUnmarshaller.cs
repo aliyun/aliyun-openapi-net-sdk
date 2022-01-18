@@ -34,16 +34,16 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 			describeInstanceInfoResponse.RequestId = _ctx.StringValue("DescribeInstanceInfo.RequestId");
 
 			DescribeInstanceInfoResponse.DescribeInstanceInfo_InstanceInfo instanceInfo = new DescribeInstanceInfoResponse.DescribeInstanceInfo_InstanceInfo();
-			instanceInfo.InDebt = _ctx.IntegerValue("DescribeInstanceInfo.InstanceInfo.InDebt");
-			instanceInfo.InstanceId = _ctx.StringValue("DescribeInstanceInfo.InstanceInfo.InstanceId");
-			instanceInfo.PayType = _ctx.IntegerValue("DescribeInstanceInfo.InstanceInfo.PayType");
+			instanceInfo.Status = _ctx.IntegerValue("DescribeInstanceInfo.InstanceInfo.Status");
 			instanceInfo.EndDate = _ctx.LongValue("DescribeInstanceInfo.InstanceInfo.EndDate");
+			instanceInfo.Version = _ctx.StringValue("DescribeInstanceInfo.InstanceInfo.Version");
 			instanceInfo.RemainDay = _ctx.IntegerValue("DescribeInstanceInfo.InstanceInfo.RemainDay");
 			instanceInfo.Region = _ctx.StringValue("DescribeInstanceInfo.InstanceInfo.Region");
-			instanceInfo.Trial = _ctx.IntegerValue("DescribeInstanceInfo.InstanceInfo.Trial");
-			instanceInfo.Status = _ctx.IntegerValue("DescribeInstanceInfo.InstanceInfo.Status");
+			instanceInfo.PayType = _ctx.IntegerValue("DescribeInstanceInfo.InstanceInfo.PayType");
+			instanceInfo.InDebt = _ctx.IntegerValue("DescribeInstanceInfo.InstanceInfo.InDebt");
+			instanceInfo.InstanceId = _ctx.StringValue("DescribeInstanceInfo.InstanceInfo.InstanceId");
 			instanceInfo.SubscriptionType = _ctx.StringValue("DescribeInstanceInfo.InstanceInfo.SubscriptionType");
-			instanceInfo.Version = _ctx.StringValue("DescribeInstanceInfo.InstanceInfo.Version");
+			instanceInfo.Trial = _ctx.IntegerValue("DescribeInstanceInfo.InstanceInfo.Trial");
 			describeInstanceInfoResponse.InstanceInfo = instanceInfo;
         
 			return describeInstanceInfoResponse;

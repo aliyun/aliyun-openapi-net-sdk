@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.waf_openapi.Model.V20190910
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 	public class DescribeDomainListResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
 
-		private List<string> domainNames;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<string> domainNames;
 
 		public int? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

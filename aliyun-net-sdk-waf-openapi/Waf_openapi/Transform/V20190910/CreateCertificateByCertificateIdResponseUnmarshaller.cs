@@ -31,8 +31,8 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 			CreateCertificateByCertificateIdResponse createCertificateByCertificateIdResponse = new CreateCertificateByCertificateIdResponse();
 
 			createCertificateByCertificateIdResponse.HttpResponse = _ctx.HttpResponse;
-			createCertificateByCertificateIdResponse.RequestId = _ctx.StringValue("CreateCertificateByCertificateId.RequestId");
 			createCertificateByCertificateIdResponse.CertificateId = _ctx.LongValue("CreateCertificateByCertificateId.CertificateId");
+			createCertificateByCertificateIdResponse.RequestId = _ctx.StringValue("CreateCertificateByCertificateId.RequestId");
         
 			return createCertificateByCertificateIdResponse;
         }

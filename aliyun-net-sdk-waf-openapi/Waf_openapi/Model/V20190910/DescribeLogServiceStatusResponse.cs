@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.waf_openapi.Model.V20190910
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 	public class DescribeLogServiceStatusResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
 
-		private List<DescribeLogServiceStatus_Status> domainStatus;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeLogServiceStatus_Status> domainStatus;
 
 		public int? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,21 +70,9 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 		public class DescribeLogServiceStatus_Status
 		{
 
-			private int? slsLogActive;
-
 			private string domain;
 
-			public int? SlsLogActive
-			{
-				get
-				{
-					return slsLogActive;
-				}
-				set	
-				{
-					slsLogActive = value;
-				}
-			}
+			private int? slsLogActive;
 
 			public string Domain
 			{
@@ -95,6 +83,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				set	
 				{
 					domain = value;
+				}
+			}
+
+			public int? SlsLogActive
+			{
+				get
+				{
+					return slsLogActive;
+				}
+				set	
+				{
+					slsLogActive = value;
 				}
 			}
 		}

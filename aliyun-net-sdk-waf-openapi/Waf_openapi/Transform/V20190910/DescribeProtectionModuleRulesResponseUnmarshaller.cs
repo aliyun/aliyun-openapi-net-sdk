@@ -31,17 +31,17 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 			DescribeProtectionModuleRulesResponse describeProtectionModuleRulesResponse = new DescribeProtectionModuleRulesResponse();
 
 			describeProtectionModuleRulesResponse.HttpResponse = _ctx.HttpResponse;
-			describeProtectionModuleRulesResponse.RequestId = _ctx.StringValue("DescribeProtectionModuleRules.RequestId");
 			describeProtectionModuleRulesResponse.TotalCount = _ctx.IntegerValue("DescribeProtectionModuleRules.TotalCount");
+			describeProtectionModuleRulesResponse.RequestId = _ctx.StringValue("DescribeProtectionModuleRules.RequestId");
 
 			List<DescribeProtectionModuleRulesResponse.DescribeProtectionModuleRules_Rule> describeProtectionModuleRulesResponse_rules = new List<DescribeProtectionModuleRulesResponse.DescribeProtectionModuleRules_Rule>();
 			for (int i = 0; i < _ctx.Length("DescribeProtectionModuleRules.Rules.Length"); i++) {
 				DescribeProtectionModuleRulesResponse.DescribeProtectionModuleRules_Rule rule = new DescribeProtectionModuleRulesResponse.DescribeProtectionModuleRules_Rule();
-				rule.RuleId = _ctx.LongValue("DescribeProtectionModuleRules.Rules["+ i +"].RuleId");
-				rule.Version = _ctx.LongValue("DescribeProtectionModuleRules.Rules["+ i +"].Version");
-				rule.Content = _ctx.StringValue("DescribeProtectionModuleRules.Rules["+ i +"].Content");
-				rule.Time = _ctx.LongValue("DescribeProtectionModuleRules.Rules["+ i +"].Time");
 				rule.Status = _ctx.LongValue("DescribeProtectionModuleRules.Rules["+ i +"].Status");
+				rule.Time = _ctx.LongValue("DescribeProtectionModuleRules.Rules["+ i +"].Time");
+				rule.Content = _ctx.StringValue("DescribeProtectionModuleRules.Rules["+ i +"].Content");
+				rule.Version = _ctx.LongValue("DescribeProtectionModuleRules.Rules["+ i +"].Version");
+				rule.RuleId = _ctx.LongValue("DescribeProtectionModuleRules.Rules["+ i +"].RuleId");
 
 				describeProtectionModuleRulesResponse_rules.Add(rule);
 			}

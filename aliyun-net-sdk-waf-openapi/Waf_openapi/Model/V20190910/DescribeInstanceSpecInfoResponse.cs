@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.waf_openapi.Model.V20190910
@@ -29,9 +29,9 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 		private string instanceId;
 
-		private string version;
-
 		private long? expireTime;
+
+		private string version;
 
 		private List<DescribeInstanceSpecInfo_InstanceSpecInfo> instanceSpecInfos;
 
@@ -59,18 +59,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			}
 		}
 
-		public string Version
-		{
-			get
-			{
-				return version;
-			}
-			set	
-			{
-				version = value;
-			}
-		}
-
 		public long? ExpireTime
 		{
 			get
@@ -80,6 +68,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			set	
 			{
 				expireTime = value;
+			}
+		}
+
+		public string Version
+		{
+			get
+			{
+				return version;
+			}
+			set	
+			{
+				version = value;
 			}
 		}
 
@@ -98,21 +98,9 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 		public class DescribeInstanceSpecInfo_InstanceSpecInfo
 		{
 
-			private string _value;
-
 			private string code;
 
-			public string _Value
-			{
-				get
-				{
-					return _value;
-				}
-				set	
-				{
-					_value = value;
-				}
-			}
+			private string _value;
 
 			public string Code
 			{
@@ -123,6 +111,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				set	
 				{
 					code = value;
+				}
+			}
+
+			public string _Value
+			{
+				get
+				{
+					return _value;
+				}
+				set	
+				{
+					_value = value;
 				}
 			}
 		}

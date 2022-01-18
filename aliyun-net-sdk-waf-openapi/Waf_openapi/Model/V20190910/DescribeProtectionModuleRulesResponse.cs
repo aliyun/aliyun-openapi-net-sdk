@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.waf_openapi.Model.V20190910
@@ -25,23 +25,11 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 	public class DescribeProtectionModuleRulesResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? totalCount;
 
-		private List<DescribeProtectionModuleRules_Rule> rules;
+		private string requestId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private List<DescribeProtectionModuleRules_Rule> rules;
 
 		public int? TotalCount
 		{
@@ -52,6 +40,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			set	
 			{
 				totalCount = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -70,49 +70,25 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 		public class DescribeProtectionModuleRules_Rule
 		{
 
-			private long? ruleId;
-
-			private long? version;
-
-			private string content;
+			private long? status;
 
 			private long? time;
 
-			private long? status;
+			private string content;
 
-			public long? RuleId
+			private long? version;
+
+			private long? ruleId;
+
+			public long? Status
 			{
 				get
 				{
-					return ruleId;
+					return status;
 				}
 				set	
 				{
-					ruleId = value;
-				}
-			}
-
-			public long? Version
-			{
-				get
-				{
-					return version;
-				}
-				set	
-				{
-					version = value;
-				}
-			}
-
-			public string Content
-			{
-				get
-				{
-					return content;
-				}
-				set	
-				{
-					content = value;
+					status = value;
 				}
 			}
 
@@ -128,15 +104,39 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				}
 			}
 
-			public long? Status
+			public string Content
 			{
 				get
 				{
-					return status;
+					return content;
 				}
 				set	
 				{
-					status = value;
+					content = value;
+				}
+			}
+
+			public long? Version
+			{
+				get
+				{
+					return version;
+				}
+				set	
+				{
+					version = value;
+				}
+			}
+
+			public long? RuleId
+			{
+				get
+				{
+					return ruleId;
+				}
+				set	
+				{
+					ruleId = value;
 				}
 			}
 		}

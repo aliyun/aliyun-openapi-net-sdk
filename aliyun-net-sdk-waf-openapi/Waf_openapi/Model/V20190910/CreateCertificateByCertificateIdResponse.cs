@@ -17,7 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
-
+using Newtonsoft.Json;
 using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.waf_openapi.Model.V20190910
@@ -25,21 +25,9 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 	public class CreateCertificateByCertificateIdResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private long? certificateId;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
+		private string requestId;
 
 		public long? CertificateId
 		{
@@ -50,6 +38,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			set	
 			{
 				certificateId = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}
