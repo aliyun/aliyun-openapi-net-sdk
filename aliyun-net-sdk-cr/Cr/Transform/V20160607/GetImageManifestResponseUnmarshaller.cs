@@ -26,11 +26,11 @@ namespace Aliyun.Acs.cr.Transform.V20160607
 {
     public class GetImageManifestResponseUnmarshaller
     {
-        public static GetImageManifestResponse Unmarshall(UnmarshallerContext context)
+        public static GetImageManifestResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetImageManifestResponse getImageManifestResponse = new GetImageManifestResponse();
 
-			getImageManifestResponse.HttpResponse = context.HttpResponse;
+			getImageManifestResponse.HttpResponse = _ctx.HttpResponse;
         
 			return getImageManifestResponse;
         }

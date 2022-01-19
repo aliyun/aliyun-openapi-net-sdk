@@ -27,18 +27,18 @@ using Aliyun.Acs.cr.Transform.V20160607;
 
 namespace Aliyun.Acs.cr.Model.V20160607
 {
-    public class StartImageScanRequest : RoaAcsRequest<StartImageScanResponse>
+    public class GetRepoTagRequest : RoaAcsRequest<GetRepoTagResponse>
     {
-        public StartImageScanRequest()
-            : base("cr", "2016-06-07", "StartImageScan", "acr", "openAPI")
+        public GetRepoTagRequest()
+            : base("cr", "2016-06-07", "GetRepoTag", "acr", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/scan";
-			Method = MethodType.PUT;
+			UriPattern = "/repos/[RepoNamespace]/[RepoName]/tags/[Tag]";
+			Method = MethodType.GET;
         }
 
 		private string repoNamespace;
@@ -86,9 +86,14 @@ namespace Aliyun.Acs.cr.Model.V20160607
 			}
 		}
 
-        public override StartImageScanResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override GetRepoTagResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StartImageScanResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetRepoTagResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

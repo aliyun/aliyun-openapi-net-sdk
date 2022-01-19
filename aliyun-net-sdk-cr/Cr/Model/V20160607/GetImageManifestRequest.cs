@@ -30,11 +30,18 @@ namespace Aliyun.Acs.cr.Model.V20160607
     public class GetImageManifestRequest : RoaAcsRequest<GetImageManifestResponse>
     {
         public GetImageManifestRequest()
-            : base("cr", "2016-06-07", "GetImageManifest", "cr", "openAPI")
+            : base("cr", "2016-06-07", "GetImageManifest", "acr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/manifest";
 			Method = MethodType.GET;
         }
+
+		private int? schemaVersion;
 
 		private string repoNamespace;
 
@@ -42,7 +49,18 @@ namespace Aliyun.Acs.cr.Model.V20160607
 
 		private string tag;
 
-		private int? schemaVersion;
+		public int? SchemaVersion
+		{
+			get
+			{
+				return schemaVersion;
+			}
+			set	
+			{
+				schemaVersion = value;
+				DictionaryUtil.Add(QueryParameters, "SchemaVersion", value.ToString());
+			}
+		}
 
 		public string RepoNamespace
 		{
@@ -80,19 +98,6 @@ namespace Aliyun.Acs.cr.Model.V20160607
 			{
 				tag = value;
 				DictionaryUtil.Add(PathParameters, "Tag", value);
-			}
-		}
-
-		public int? SchemaVersion
-		{
-			get
-			{
-				return schemaVersion;
-			}
-			set	
-			{
-				schemaVersion = value;
-				DictionaryUtil.Add(QueryParameters, "SchemaVersion", value.ToString());
 			}
 		}
 

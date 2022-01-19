@@ -30,8 +30,13 @@ namespace Aliyun.Acs.cr.Model.V20160607
     public class CreateRepoRequest : RoaAcsRequest<CreateRepoResponse>
     {
         public CreateRepoRequest()
-            : base("cr", "2016-06-07", "CreateRepo", "cr", "openAPI")
+            : base("cr", "2016-06-07", "CreateRepo", "acr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/repos";
 			Method = MethodType.PUT;
         }

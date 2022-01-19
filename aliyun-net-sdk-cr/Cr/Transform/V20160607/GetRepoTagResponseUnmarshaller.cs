@@ -24,15 +24,23 @@ using Aliyun.Acs.cr.Model.V20160607;
 
 namespace Aliyun.Acs.cr.Transform.V20160607
 {
-    public class CancelRepoBuildResponseUnmarshaller
+    public class GetRepoTagResponseUnmarshaller
     {
-        public static CancelRepoBuildResponse Unmarshall(UnmarshallerContext _ctx)
+        public static GetRepoTagResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CancelRepoBuildResponse cancelRepoBuildResponse = new CancelRepoBuildResponse();
+			GetRepoTagResponse getRepoTagResponse = new GetRepoTagResponse();
 
-			cancelRepoBuildResponse.HttpResponse = _ctx.HttpResponse;
+			getRepoTagResponse.HttpResponse = _ctx.HttpResponse;
+			getRepoTagResponse.RequestId = _ctx.StringValue("GetRepoTag.requestId");
+			getRepoTagResponse.Status = _ctx.StringValue("GetRepoTag.status");
+			getRepoTagResponse.Tag = _ctx.StringValue("GetRepoTag.tag");
+			getRepoTagResponse.Digest = _ctx.StringValue("GetRepoTag.digest");
+			getRepoTagResponse.ImageId = _ctx.StringValue("GetRepoTag.imageId");
+			getRepoTagResponse.ImageCreate = _ctx.LongValue("GetRepoTag.imageCreate");
+			getRepoTagResponse.ImageUpdate = _ctx.LongValue("GetRepoTag.imageUpdate");
+			getRepoTagResponse.ImageSize = _ctx.LongValue("GetRepoTag.imageSize");
         
-			return cancelRepoBuildResponse;
+			return getRepoTagResponse;
         }
     }
 }

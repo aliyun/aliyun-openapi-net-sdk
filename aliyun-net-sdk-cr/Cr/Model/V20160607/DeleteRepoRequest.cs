@@ -30,8 +30,13 @@ namespace Aliyun.Acs.cr.Model.V20160607
     public class DeleteRepoRequest : RoaAcsRequest<DeleteRepoResponse>
     {
         public DeleteRepoRequest()
-            : base("cr", "2016-06-07", "DeleteRepo", "cr", "openAPI")
+            : base("cr", "2016-06-07", "DeleteRepo", "acr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/repos/[RepoNamespace]/[RepoName]";
 			Method = MethodType.DELETE;
         }

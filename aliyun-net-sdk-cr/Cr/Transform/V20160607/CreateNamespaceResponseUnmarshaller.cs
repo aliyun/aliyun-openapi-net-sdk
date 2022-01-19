@@ -26,11 +26,11 @@ namespace Aliyun.Acs.cr.Transform.V20160607
 {
     public class CreateNamespaceResponseUnmarshaller
     {
-        public static CreateNamespaceResponse Unmarshall(UnmarshallerContext context)
+        public static CreateNamespaceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateNamespaceResponse createNamespaceResponse = new CreateNamespaceResponse();
 
-			createNamespaceResponse.HttpResponse = context.HttpResponse;
+			createNamespaceResponse.HttpResponse = _ctx.HttpResponse;
         
 			return createNamespaceResponse;
         }

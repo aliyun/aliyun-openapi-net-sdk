@@ -26,11 +26,11 @@ namespace Aliyun.Acs.cr.Transform.V20160607
 {
     public class GetRegionListResponseUnmarshaller
     {
-        public static GetRegionListResponse Unmarshall(UnmarshallerContext context)
+        public static GetRegionListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetRegionListResponse getRegionListResponse = new GetRegionListResponse();
 
-			getRegionListResponse.HttpResponse = context.HttpResponse;
+			getRegionListResponse.HttpResponse = _ctx.HttpResponse;
         
 			return getRegionListResponse;
         }

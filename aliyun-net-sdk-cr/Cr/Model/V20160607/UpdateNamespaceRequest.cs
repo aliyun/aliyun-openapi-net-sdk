@@ -30,8 +30,13 @@ namespace Aliyun.Acs.cr.Model.V20160607
     public class UpdateNamespaceRequest : RoaAcsRequest<UpdateNamespaceResponse>
     {
         public UpdateNamespaceRequest()
-            : base("cr", "2016-06-07", "UpdateNamespace", "cr", "openAPI")
+            : base("cr", "2016-06-07", "UpdateNamespace", "acr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/namespace/[Namespace]";
 			Method = MethodType.POST;
         }

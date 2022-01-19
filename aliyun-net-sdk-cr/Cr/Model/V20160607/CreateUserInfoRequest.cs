@@ -30,8 +30,13 @@ namespace Aliyun.Acs.cr.Model.V20160607
     public class CreateUserInfoRequest : RoaAcsRequest<CreateUserInfoResponse>
     {
         public CreateUserInfoRequest()
-            : base("cr", "2016-06-07", "CreateUserInfo", "cr", "openAPI")
+            : base("cr", "2016-06-07", "CreateUserInfo", "acr", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/users";
 			Method = MethodType.PUT;
         }

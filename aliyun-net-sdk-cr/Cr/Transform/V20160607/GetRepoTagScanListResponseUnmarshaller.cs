@@ -24,15 +24,15 @@ using Aliyun.Acs.cr.Model.V20160607;
 
 namespace Aliyun.Acs.cr.Transform.V20160607
 {
-    public class CancelRepoBuildResponseUnmarshaller
+    public class GetRepoTagScanListResponseUnmarshaller
     {
-        public static CancelRepoBuildResponse Unmarshall(UnmarshallerContext _ctx)
+        public static GetRepoTagScanListResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			CancelRepoBuildResponse cancelRepoBuildResponse = new CancelRepoBuildResponse();
+			GetRepoTagScanListResponse getRepoTagScanListResponse = new GetRepoTagScanListResponse();
 
-			cancelRepoBuildResponse.HttpResponse = _ctx.HttpResponse;
+			getRepoTagScanListResponse.HttpResponse = _ctx.HttpResponse;
         
-			return cancelRepoBuildResponse;
+			return getRepoTagScanListResponse;
         }
     }
 }

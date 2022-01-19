@@ -27,25 +27,44 @@ using Aliyun.Acs.cr.Transform.V20160607;
 
 namespace Aliyun.Acs.cr.Model.V20160607
 {
-    public class StartImageScanRequest : RoaAcsRequest<StartImageScanResponse>
+    public class GetRepoTagScanListRequest : RoaAcsRequest<GetRepoTagScanListResponse>
     {
-        public StartImageScanRequest()
-            : base("cr", "2016-06-07", "StartImageScan", "acr", "openAPI")
+        public GetRepoTagScanListRequest()
+            : base("cr", "2016-06-07", "GetRepoTagScanList", "acr", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.cr.Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/scan";
-			Method = MethodType.PUT;
+			UriPattern = "/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/scanResult";
+			Method = MethodType.GET;
         }
+
+		private string severity;
 
 		private string repoNamespace;
 
 		private string repoName;
 
+		private int? pageSize;
+
 		private string tag;
+
+		private int? page;
+
+		public string Severity
+		{
+			get
+			{
+				return severity;
+			}
+			set	
+			{
+				severity = value;
+				DictionaryUtil.Add(QueryParameters, "Severity", value);
+			}
+		}
 
 		public string RepoNamespace
 		{
@@ -73,6 +92,19 @@ namespace Aliyun.Acs.cr.Model.V20160607
 			}
 		}
 
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public string Tag
 		{
 			get
@@ -86,9 +118,22 @@ namespace Aliyun.Acs.cr.Model.V20160607
 			}
 		}
 
-        public override StartImageScanResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
+				DictionaryUtil.Add(QueryParameters, "Page", value.ToString());
+			}
+		}
+
+        public override GetRepoTagScanListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StartImageScanResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetRepoTagScanListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

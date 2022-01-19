@@ -16,23 +16,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
+
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.cr.Model.V20160607;
-
-namespace Aliyun.Acs.cr.Transform.V20160607
+namespace Aliyun.Acs.cr
 {
-    public class CancelRepoBuildResponseUnmarshaller
+    public class Endpoint
     {
-        public static CancelRepoBuildResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			CancelRepoBuildResponse cancelRepoBuildResponse = new CancelRepoBuildResponse();
+        public static Dictionary<string, string> endpointMap = new Dictionary<string, string>() 
+        {};
 
-			cancelRepoBuildResponse.HttpResponse = _ctx.HttpResponse;
-        
-			return cancelRepoBuildResponse;
-        }
+        public static string endpointRegionalType = "regional";
     }
 }

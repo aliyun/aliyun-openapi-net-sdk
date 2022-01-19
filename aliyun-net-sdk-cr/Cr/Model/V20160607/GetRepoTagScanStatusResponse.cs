@@ -16,23 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.cr.Model.V20160607;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.cr.Transform.V20160607
+namespace Aliyun.Acs.cr.Model.V20160607
 {
-    public class CancelRepoBuildResponseUnmarshaller
-    {
-        public static CancelRepoBuildResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			CancelRepoBuildResponse cancelRepoBuildResponse = new CancelRepoBuildResponse();
-
-			cancelRepoBuildResponse.HttpResponse = _ctx.HttpResponse;
-        
-			return cancelRepoBuildResponse;
-        }
-    }
+	public class GetRepoTagScanStatusResponse : AcsResponse
+	{
+	}
 }
