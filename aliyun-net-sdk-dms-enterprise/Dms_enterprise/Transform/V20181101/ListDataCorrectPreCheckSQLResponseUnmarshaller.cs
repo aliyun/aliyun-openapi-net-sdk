@@ -45,6 +45,7 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 				preCheckSQL.SQLReviewQueryKey = _ctx.StringValue("ListDataCorrectPreCheckSQL.PreCheckSQLList["+ i +"].SQLReviewQueryKey");
 				preCheckSQL.SqlReviewStatus = _ctx.StringValue("ListDataCorrectPreCheckSQL.PreCheckSQLList["+ i +"].SqlReviewStatus");
 				preCheckSQL.SqlType = _ctx.StringValue("ListDataCorrectPreCheckSQL.PreCheckSQLList["+ i +"].SqlType");
+				preCheckSQL.TableNames = _ctx.StringValue("ListDataCorrectPreCheckSQL.PreCheckSQLList["+ i +"].TableNames");
 
 				listDataCorrectPreCheckSQLResponse_preCheckSQLList.Add(preCheckSQL);
 			}

@@ -115,6 +115,8 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string sqlType;
 
+			private string tableNames;
+
 			[JsonProperty(PropertyName = "CheckSQL")]
 			public string CheckSQL
 			{
@@ -190,6 +192,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					sqlType = value;
+				}
+			}
+
+			[JsonProperty(PropertyName = "TableNames")]
+			public string TableNames
+			{
+				get
+				{
+					return tableNames;
+				}
+				set	
+				{
+					tableNames = value;
 				}
 			}
 		}
