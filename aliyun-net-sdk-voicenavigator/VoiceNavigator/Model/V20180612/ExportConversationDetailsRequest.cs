@@ -48,6 +48,8 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 
 		private long? beginTimeRightRange;
 
+		private List<string> optionss = new List<string>(){ };
+
 		public long? BeginTimeLeftRange
 		{
 			get
@@ -97,6 +99,23 @@ namespace Aliyun.Acs.VoiceNavigator.Model.V20180612
 			{
 				beginTimeRightRange = value;
 				DictionaryUtil.Add(QueryParameters, "BeginTimeRightRange", value.ToString());
+			}
+		}
+
+		public List<string> Optionss
+		{
+			get
+			{
+				return optionss;
+			}
+
+			set
+			{
+				optionss = value;
+				for (int i = 0; i < optionss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Options." + (i + 1) , optionss[i]);
+				}
 			}
 		}
 
