@@ -27,62 +27,48 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeDomainWithIntegrityRequest : RpcAcsRequest<DescribeDomainWithIntegrityResponse>
+    public class DescribeLiveStreamWatermarksRequest : RpcAcsRequest<DescribeLiveStreamWatermarksResponse>
     {
-        public DescribeDomainWithIntegrityRequest()
-            : base("live", "2016-11-01", "DescribeDomainWithIntegrity", "live", "openAPI")
+        public DescribeLiveStreamWatermarksRequest()
+            : base("live", "2016-11-01", "DescribeLiveStreamWatermarks", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.live.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.live.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string startTime;
+		private int? pageNumber;
 
-		private float? integrity;
-
-		private string endTime;
+		private int? pageSize;
 
 		private long? ownerId;
 
-		public string StartTime
+		public int? PageNumber
 		{
 			get
 			{
-				return startTime;
+				return pageNumber;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public float? Integrity
+		public int? PageSize
 		{
 			get
 			{
-				return integrity;
+				return pageSize;
 			}
 			set	
 			{
-				integrity = value;
-				DictionaryUtil.Add(QueryParameters, "Integrity", value.ToString());
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -99,14 +85,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override DescribeDomainWithIntegrityResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeLiveStreamWatermarksResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDomainWithIntegrityResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLiveStreamWatermarksResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

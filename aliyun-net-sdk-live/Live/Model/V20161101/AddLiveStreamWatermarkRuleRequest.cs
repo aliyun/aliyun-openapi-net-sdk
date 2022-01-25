@@ -27,62 +27,69 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeDomainWithIntegrityRequest : RpcAcsRequest<DescribeDomainWithIntegrityResponse>
+    public class AddLiveStreamWatermarkRuleRequest : RpcAcsRequest<AddLiveStreamWatermarkRuleResponse>
     {
-        public DescribeDomainWithIntegrityRequest()
-            : base("live", "2016-11-01", "DescribeDomainWithIntegrity", "live", "openAPI")
+        public AddLiveStreamWatermarkRuleRequest()
+            : base("live", "2016-11-01", "AddLiveStreamWatermarkRule", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.live.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.live.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string startTime;
+		private string description;
 
-		private float? integrity;
+		private string stream;
 
-		private string endTime;
+		private string app;
 
 		private long? ownerId;
 
-		public string StartTime
+		private string templateId;
+
+		private string domain;
+
+		private string name;
+
+		public string Description
 		{
 			get
 			{
-				return startTime;
+				return description;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
-		public float? Integrity
+		public string Stream
 		{
 			get
 			{
-				return integrity;
+				return stream;
 			}
 			set	
 			{
-				integrity = value;
-				DictionaryUtil.Add(QueryParameters, "Integrity", value.ToString());
+				stream = value;
+				DictionaryUtil.Add(QueryParameters, "Stream", value);
 			}
 		}
 
-		public string EndTime
+		public string App
 		{
 			get
 			{
-				return endTime;
+				return app;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				app = value;
+				DictionaryUtil.Add(QueryParameters, "App", value);
 			}
 		}
 
@@ -99,14 +106,48 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string TemplateId
 		{
-			return false;
+			get
+			{
+				return templateId;
+			}
+			set	
+			{
+				templateId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value);
+			}
 		}
 
-        public override DescribeDomainWithIntegrityResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Domain
+		{
+			get
+			{
+				return domain;
+			}
+			set	
+			{
+				domain = value;
+				DictionaryUtil.Add(QueryParameters, "Domain", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+        public override AddLiveStreamWatermarkRuleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDomainWithIntegrityResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AddLiveStreamWatermarkRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

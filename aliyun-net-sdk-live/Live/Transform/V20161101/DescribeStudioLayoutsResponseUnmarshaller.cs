@@ -65,6 +65,12 @@ namespace Aliyun.Acs.live.Transform.V20161101
 					screenInputConfig.PositionY = _ctx.StringValue("DescribeStudioLayouts.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].PositionY");
 					screenInputConfig.HeightNormalized = _ctx.FloatValue("DescribeStudioLayouts.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].HeightNormalized");
 					screenInputConfig.PortraitType = _ctx.IntegerValue("DescribeStudioLayouts.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].PortraitType");
+					screenInputConfig.OnlyAudio = _ctx.BooleanValue("DescribeStudioLayouts.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].OnlyAudio");
+
+					DescribeStudioLayoutsResponse.DescribeStudioLayouts_StudioLayout.DescribeStudioLayouts_ScreenInputConfig.DescribeStudioLayouts_AudioConfig audioConfig = new DescribeStudioLayoutsResponse.DescribeStudioLayouts_StudioLayout.DescribeStudioLayouts_ScreenInputConfig.DescribeStudioLayouts_AudioConfig();
+					audioConfig.VolumeRate = _ctx.FloatValue("DescribeStudioLayouts.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].AudioConfig.VolumeRate");
+					audioConfig.ValidChannel = _ctx.StringValue("DescribeStudioLayouts.StudioLayouts["+ i +"].ScreenInputConfigList["+ j +"].AudioConfig.ValidChannel");
+					screenInputConfig.AudioConfig = audioConfig;
 
 					studioLayout_screenInputConfigList.Add(screenInputConfig);
 				}

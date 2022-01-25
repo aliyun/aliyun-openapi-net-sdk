@@ -27,62 +27,33 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeDomainWithIntegrityRequest : RpcAcsRequest<DescribeDomainWithIntegrityResponse>
+    public class QuerySnapshotCallbackAuthRequest : RpcAcsRequest<QuerySnapshotCallbackAuthResponse>
     {
-        public DescribeDomainWithIntegrityRequest()
-            : base("live", "2016-11-01", "DescribeDomainWithIntegrity", "live", "openAPI")
+        public QuerySnapshotCallbackAuthRequest()
+            : base("live", "2016-11-01", "QuerySnapshotCallbackAuth", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.live.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.live.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string startTime;
-
-		private float? integrity;
-
-		private string endTime;
+		private string domainName;
 
 		private long? ownerId;
 
-		public string StartTime
+		public string DomainName
 		{
 			get
 			{
-				return startTime;
+				return domainName;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public float? Integrity
-		{
-			get
-			{
-				return integrity;
-			}
-			set	
-			{
-				integrity = value;
-				DictionaryUtil.Add(QueryParameters, "Integrity", value.ToString());
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -99,14 +70,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override DescribeDomainWithIntegrityResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QuerySnapshotCallbackAuthResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDomainWithIntegrityResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QuerySnapshotCallbackAuthResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

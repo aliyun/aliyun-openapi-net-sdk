@@ -203,6 +203,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private int? portraitType;
 
+				private bool? onlyAudio;
+
+				private DescribeStudioLayouts_AudioConfig audioConfig;
+
 				public string Id
 				{
 					get
@@ -308,6 +312,62 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						portraitType = value;
+					}
+				}
+
+				public bool? OnlyAudio
+				{
+					get
+					{
+						return onlyAudio;
+					}
+					set	
+					{
+						onlyAudio = value;
+					}
+				}
+
+				public DescribeStudioLayouts_AudioConfig AudioConfig
+				{
+					get
+					{
+						return audioConfig;
+					}
+					set	
+					{
+						audioConfig = value;
+					}
+				}
+
+				public class DescribeStudioLayouts_AudioConfig
+				{
+
+					private float? volumeRate;
+
+					private string validChannel;
+
+					public float? VolumeRate
+					{
+						get
+						{
+							return volumeRate;
+						}
+						set	
+						{
+							volumeRate = value;
+						}
+					}
+
+					public string ValidChannel
+					{
+						get
+						{
+							return validChannel;
+						}
+						set	
+						{
+							validChannel = value;
+						}
 					}
 				}
 			}

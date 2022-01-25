@@ -27,62 +27,50 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class DescribeDomainWithIntegrityRequest : RpcAcsRequest<DescribeDomainWithIntegrityResponse>
+    public class SetSnapshotCallbackAuthRequest : RpcAcsRequest<SetSnapshotCallbackAuthResponse>
     {
-        public DescribeDomainWithIntegrityRequest()
-            : base("live", "2016-11-01", "DescribeDomainWithIntegrity", "live", "openAPI")
+        public SetSnapshotCallbackAuthRequest()
+            : base("live", "2016-11-01", "SetSnapshotCallbackAuth", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.live.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.live.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string startTime;
+		private string callbackAuthKey;
 
-		private float? integrity;
-
-		private string endTime;
+		private string domainName;
 
 		private long? ownerId;
 
-		public string StartTime
+		private string callbackReqAuth;
+
+		public string CallbackAuthKey
 		{
 			get
 			{
-				return startTime;
+				return callbackAuthKey;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				callbackAuthKey = value;
+				DictionaryUtil.Add(QueryParameters, "CallbackAuthKey", value);
 			}
 		}
 
-		public float? Integrity
+		public string DomainName
 		{
 			get
 			{
-				return integrity;
+				return domainName;
 			}
 			set	
 			{
-				integrity = value;
-				DictionaryUtil.Add(QueryParameters, "Integrity", value.ToString());
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -99,14 +87,22 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string CallbackReqAuth
 		{
-			return false;
+			get
+			{
+				return callbackReqAuth;
+			}
+			set	
+			{
+				callbackReqAuth = value;
+				DictionaryUtil.Add(QueryParameters, "CallbackReqAuth", value);
+			}
 		}
 
-        public override DescribeDomainWithIntegrityResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SetSnapshotCallbackAuthResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDomainWithIntegrityResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetSnapshotCallbackAuthResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
