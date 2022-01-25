@@ -40,6 +40,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			CreateBatchRepeatJobResponse.CreateBatchRepeatJob_JobGroup jobGroup = new CreateBatchRepeatJobResponse.CreateBatchRepeatJob_JobGroup();
 			jobGroup.Id = _ctx.StringValue("CreateBatchRepeatJob.JobGroup.Id");
 			jobGroup.RingingDuration = _ctx.LongValue("CreateBatchRepeatJob.JobGroup.RingingDuration");
+			jobGroup.Priority = _ctx.StringValue("CreateBatchRepeatJob.JobGroup.Priority");
+			jobGroup.MinConcurrency = _ctx.LongValue("CreateBatchRepeatJob.JobGroup.MinConcurrency");
 			createBatchRepeatJobResponse.JobGroup = jobGroup;
         
 			return createBatchRepeatJobResponse;

@@ -50,6 +50,8 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 			jobGroup.ScriptVersion = _ctx.StringValue("CreateJobGroup.JobGroup.ScriptVersion");
 			jobGroup.ModifyTime = _ctx.StringValue("CreateJobGroup.JobGroup.ModifyTime");
 			jobGroup.RingingDuration = _ctx.LongValue("CreateJobGroup.JobGroup.RingingDuration");
+			jobGroup.Priority = _ctx.StringValue("CreateJobGroup.JobGroup.Priority");
+			jobGroup.MinConcurrency = _ctx.LongValue("CreateJobGroup.JobGroup.MinConcurrency");
 
 			List<string> jobGroup_callingNumbers = new List<string>();
 			for (int i = 0; i < _ctx.Length("CreateJobGroup.JobGroup.CallingNumbers.Length"); i++) {

@@ -138,6 +138,10 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 			private long? ringingDuration;
 
+			private string priority;
+
+			private long? minConcurrency;
+
 			private List<string> callingNumbers;
 
 			private DescribeJobGroup_ExportProgress exportProgress;
@@ -303,6 +307,30 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 				set	
 				{
 					ringingDuration = value;
+				}
+			}
+
+			public string Priority
+			{
+				get
+				{
+					return priority;
+				}
+				set	
+				{
+					priority = value;
+				}
+			}
+
+			public long? MinConcurrency
+			{
+				get
+				{
+					return minConcurrency;
+				}
+				set	
+				{
+					minConcurrency = value;
 				}
 			}
 

@@ -46,19 +46,23 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string scriptId;
 
-		private List<string> callingNumbers = new List<string>(){ };
-
-		private string instanceId;
-
 		private string filterStatus;
 
 		private string strategyJson;
+
+		private long? ringingDuration;
+
+		private string priority;
+
+		private List<string> callingNumbers = new List<string>(){ };
+
+		private string instanceId;
 
 		private string name;
 
 		private string sourceGroupId;
 
-		private long? ringingDuration;
+		private long? minConcurrency;
 
 		public string RecallStrategyJson
 		{
@@ -99,6 +103,58 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
+		public string FilterStatus
+		{
+			get
+			{
+				return filterStatus;
+			}
+			set	
+			{
+				filterStatus = value;
+				DictionaryUtil.Add(QueryParameters, "FilterStatus", value);
+			}
+		}
+
+		public string StrategyJson
+		{
+			get
+			{
+				return strategyJson;
+			}
+			set	
+			{
+				strategyJson = value;
+				DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
+			}
+		}
+
+		public long? RingingDuration
+		{
+			get
+			{
+				return ringingDuration;
+			}
+			set	
+			{
+				ringingDuration = value;
+				DictionaryUtil.Add(QueryParameters, "RingingDuration", value.ToString());
+			}
+		}
+
+		public string Priority
+		{
+			get
+			{
+				return priority;
+			}
+			set	
+			{
+				priority = value;
+				DictionaryUtil.Add(QueryParameters, "Priority", value);
+			}
+		}
+
 		public List<string> CallingNumbers
 		{
 			get
@@ -129,32 +185,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public string FilterStatus
-		{
-			get
-			{
-				return filterStatus;
-			}
-			set	
-			{
-				filterStatus = value;
-				DictionaryUtil.Add(QueryParameters, "FilterStatus", value);
-			}
-		}
-
-		public string StrategyJson
-		{
-			get
-			{
-				return strategyJson;
-			}
-			set	
-			{
-				strategyJson = value;
-				DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
-			}
-		}
-
 		public string Name
 		{
 			get
@@ -181,16 +211,16 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
-		public long? RingingDuration
+		public long? MinConcurrency
 		{
 			get
 			{
-				return ringingDuration;
+				return minConcurrency;
 			}
 			set	
 			{
-				ringingDuration = value;
-				DictionaryUtil.Add(QueryParameters, "RingingDuration", value.ToString());
+				minConcurrency = value;
+				DictionaryUtil.Add(QueryParameters, "MinConcurrency", value.ToString());
 			}
 		}
 

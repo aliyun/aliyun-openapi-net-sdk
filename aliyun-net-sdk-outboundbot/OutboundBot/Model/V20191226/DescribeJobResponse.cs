@@ -619,6 +619,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 				private string hangUpDirection;
 
+				private long? ringingDuration;
+
 				private List<DescribeJob_ConversationDetail> conversation;
 
 				private DescribeJob_Contact3 contact3;
@@ -800,6 +802,18 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 					set	
 					{
 						hangUpDirection = value;
+					}
+				}
+
+				public long? RingingDuration
+				{
+					get
+					{
+						return ringingDuration;
+					}
+					set	
+					{
+						ringingDuration = value;
 					}
 				}
 

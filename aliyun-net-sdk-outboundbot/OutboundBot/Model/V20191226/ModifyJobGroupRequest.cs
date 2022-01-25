@@ -54,6 +54,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string jobGroupStatus;
 
+		private string priority;
+
 		private List<string> callingNumbers = new List<string>(){ };
 
 		private string instanceId;
@@ -61,6 +63,8 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 		private string jobGroupId;
 
 		private string name;
+
+		private long? minConcurrency;
 
 		public string RecallStrategyJson
 		{
@@ -153,6 +157,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			}
 		}
 
+		public string Priority
+		{
+			get
+			{
+				return priority;
+			}
+			set	
+			{
+				priority = value;
+				DictionaryUtil.Add(QueryParameters, "Priority", value);
+			}
+		}
+
 		public List<string> CallingNumbers
 		{
 			get
@@ -206,6 +223,19 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public long? MinConcurrency
+		{
+			get
+			{
+				return minConcurrency;
+			}
+			set	
+			{
+				minConcurrency = value;
+				DictionaryUtil.Add(QueryParameters, "MinConcurrency", value.ToString());
 			}
 		}
 

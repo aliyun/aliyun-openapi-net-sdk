@@ -115,6 +115,7 @@ namespace Aliyun.Acs.OutboundBot.Transform.V20191226
 				task.Duration = _ctx.IntegerValue("DescribeJob.Job.Tasks["+ i +"].Duration");
 				task.TaskId = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].TaskId");
 				task.HangUpDirection = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].HangUpDirection");
+				task.RingingDuration = _ctx.LongValue("DescribeJob.Job.Tasks["+ i +"].RingingDuration");
 
 				DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_Contact3 contact3 = new DescribeJobResponse.DescribeJob_Job.DescribeJob_Task.DescribeJob_Contact3();
 				contact3.PhoneNumber = _ctx.StringValue("DescribeJob.Job.Tasks["+ i +"].Contact.PhoneNumber");

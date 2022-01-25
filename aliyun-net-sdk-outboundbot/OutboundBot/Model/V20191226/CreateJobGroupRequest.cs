@@ -42,21 +42,25 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 
 		private string recallStrategyJson;
 
-		private string jobGroupDescription;
-
 		private string jobGroupName;
 
 		private string scriptId;
-
-		private List<string> callingNumbers = new List<string>(){ };
-
-		private string instanceId;
 
 		private string strategyJson;
 
 		private long? ringingDuration;
 
 		private string scenarioId;
+
+		private string priority;
+
+		private string jobGroupDescription;
+
+		private List<string> callingNumbers = new List<string>(){ };
+
+		private string instanceId;
+
+		private long? minConcurrency;
 
 		public string RecallStrategyJson
 		{
@@ -68,19 +72,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				recallStrategyJson = value;
 				DictionaryUtil.Add(QueryParameters, "RecallStrategyJson", value);
-			}
-		}
-
-		public string JobGroupDescription
-		{
-			get
-			{
-				return jobGroupDescription;
-			}
-			set	
-			{
-				jobGroupDescription = value;
-				DictionaryUtil.Add(QueryParameters, "JobGroupDescription", value);
 			}
 		}
 
@@ -107,36 +98,6 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				scriptId = value;
 				DictionaryUtil.Add(QueryParameters, "ScriptId", value);
-			}
-		}
-
-		public List<string> CallingNumbers
-		{
-			get
-			{
-				return callingNumbers;
-			}
-
-			set
-			{
-				callingNumbers = value;
-				for (int i = 0; i < callingNumbers.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"CallingNumber." + (i + 1) , callingNumbers[i]);
-				}
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -176,6 +137,75 @@ namespace Aliyun.Acs.OutboundBot.Model.V20191226
 			{
 				scenarioId = value;
 				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
+			}
+		}
+
+		public string Priority
+		{
+			get
+			{
+				return priority;
+			}
+			set	
+			{
+				priority = value;
+				DictionaryUtil.Add(QueryParameters, "Priority", value);
+			}
+		}
+
+		public string JobGroupDescription
+		{
+			get
+			{
+				return jobGroupDescription;
+			}
+			set	
+			{
+				jobGroupDescription = value;
+				DictionaryUtil.Add(QueryParameters, "JobGroupDescription", value);
+			}
+		}
+
+		public List<string> CallingNumbers
+		{
+			get
+			{
+				return callingNumbers;
+			}
+
+			set
+			{
+				callingNumbers = value;
+				for (int i = 0; i < callingNumbers.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"CallingNumber." + (i + 1) , callingNumbers[i]);
+				}
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public long? MinConcurrency
+		{
+			get
+			{
+				return minConcurrency;
+			}
+			set	
+			{
+				minConcurrency = value;
+				DictionaryUtil.Add(QueryParameters, "MinConcurrency", value.ToString());
 			}
 		}
 
