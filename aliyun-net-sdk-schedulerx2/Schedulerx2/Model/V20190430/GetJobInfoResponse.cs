@@ -497,6 +497,10 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 						private string userName;
 
+						private string userMail;
+
+						private string ding;
+
 						public string UserPhone
 						{
 							get
@@ -520,6 +524,30 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 								userName = value;
 							}
 						}
+
+						public string UserMail
+						{
+							get
+							{
+								return userMail;
+							}
+							set	
+							{
+								userMail = value;
+							}
+						}
+
+						public string Ding
+						{
+							get
+							{
+								return ding;
+							}
+							set	
+							{
+								ding = value;
+							}
+						}
 					}
 
 					public class GetJobInfo_MonitorConfig
@@ -534,6 +562,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 						private bool? timeoutEnable;
 
 						private bool? failEnable;
+
+						private bool? missWorkerEnable;
 
 						public long? Timeout
 						{
@@ -592,6 +622,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 							set	
 							{
 								failEnable = value;
+							}
+						}
+
+						public bool? MissWorkerEnable
+						{
+							get
+							{
+								return missWorkerEnable;
+							}
+							set	
+							{
+								missWorkerEnable = value;
 							}
 						}
 					}

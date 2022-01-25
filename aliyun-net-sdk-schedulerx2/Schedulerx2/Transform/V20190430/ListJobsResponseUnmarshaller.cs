@@ -78,6 +78,7 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 				monitorConfig.TimeoutKillEnable = _ctx.BooleanValue("ListJobs.Data.Jobs["+ i +"].JobMonitorInfo.MonitorConfig.TimeoutKillEnable");
 				monitorConfig.TimeoutEnable = _ctx.BooleanValue("ListJobs.Data.Jobs["+ i +"].JobMonitorInfo.MonitorConfig.TimeoutEnable");
 				monitorConfig.FailEnable = _ctx.BooleanValue("ListJobs.Data.Jobs["+ i +"].JobMonitorInfo.MonitorConfig.FailEnable");
+				monitorConfig.MissWorkerEnable = _ctx.BooleanValue("ListJobs.Data.Jobs["+ i +"].JobMonitorInfo.MonitorConfig.MissWorkerEnable");
 				jobMonitorInfo.MonitorConfig = monitorConfig;
 
 				List<ListJobsResponse.ListJobs_Data.ListJobs_Job.ListJobs_JobMonitorInfo.ListJobs_ContactInfoItem> jobMonitorInfo_contactInfo = new List<ListJobsResponse.ListJobs_Data.ListJobs_Job.ListJobs_JobMonitorInfo.ListJobs_ContactInfoItem>();
@@ -85,6 +86,8 @@ namespace Aliyun.Acs.schedulerx2.Transform.V20190430
 					ListJobsResponse.ListJobs_Data.ListJobs_Job.ListJobs_JobMonitorInfo.ListJobs_ContactInfoItem contactInfoItem = new ListJobsResponse.ListJobs_Data.ListJobs_Job.ListJobs_JobMonitorInfo.ListJobs_ContactInfoItem();
 					contactInfoItem.UserPhone = _ctx.StringValue("ListJobs.Data.Jobs["+ i +"].JobMonitorInfo.ContactInfo["+ j +"].UserPhone");
 					contactInfoItem.UserName = _ctx.StringValue("ListJobs.Data.Jobs["+ i +"].JobMonitorInfo.ContactInfo["+ j +"].UserName");
+					contactInfoItem.Ding = _ctx.StringValue("ListJobs.Data.Jobs["+ i +"].JobMonitorInfo.ContactInfo["+ j +"].Ding");
+					contactInfoItem.UserMail = _ctx.StringValue("ListJobs.Data.Jobs["+ i +"].JobMonitorInfo.ContactInfo["+ j +"].UserMail");
 
 					jobMonitorInfo_contactInfo.Add(contactInfoItem);
 				}

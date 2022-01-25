@@ -75,6 +75,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private int? maxAttempt;
 
+		private bool? missWorkerEnable;
+
 		private int? dispatcherSize;
 
 		private int? taskAttemptInterval;
@@ -322,6 +324,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
+		public bool? MissWorkerEnable
+		{
+			get
+			{
+				return missWorkerEnable;
+			}
+			set	
+			{
+				missWorkerEnable = value;
+				DictionaryUtil.Add(BodyParameters, "MissWorkerEnable", value.ToString());
+			}
+		}
+
 		public int? DispatcherSize
 		{
 			get
@@ -429,6 +444,8 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 					{
 						DictionaryUtil.Add(BodyParameters,"ContactInfo." + (depth1 + 1), contactInfos[depth1]);
 						DictionaryUtil.Add(BodyParameters,"ContactInfo." + (depth1 + 1), contactInfos[depth1]);
+						DictionaryUtil.Add(BodyParameters,"ContactInfo." + (depth1 + 1), contactInfos[depth1]);
+						DictionaryUtil.Add(BodyParameters,"ContactInfo." + (depth1 + 1), contactInfos[depth1]);
 					}
 				}
 			}
@@ -502,9 +519,25 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 		public class ContactInfo
 		{
 
+			private string ding;
+
 			private string userPhone;
 
+			private string userMail;
+
 			private string userName;
+
+			public string Ding
+			{
+				get
+				{
+					return ding;
+				}
+				set	
+				{
+					ding = value;
+				}
+			}
 
 			public string UserPhone
 			{
@@ -515,6 +548,18 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 				set	
 				{
 					userPhone = value;
+				}
+			}
+
+			public string UserMail
+			{
+				get
+				{
+					return userMail;
+				}
+				set	
+				{
+					userMail = value;
 				}
 			}
 

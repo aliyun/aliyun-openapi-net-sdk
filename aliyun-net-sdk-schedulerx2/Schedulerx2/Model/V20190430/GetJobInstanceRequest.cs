@@ -41,28 +41,15 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private long? jobId;
-
 		private string namespaceSource;
 
 		private string groupId;
 
+		private long? jobId;
+
 		private string _namespace;
 
 		private long? jobInstanceId;
-
-		public long? JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value.ToString());
-			}
-		}
 
 		public string NamespaceSource
 		{
@@ -87,6 +74,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			{
 				groupId = value;
 				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public long? JobId
+		{
+			get
+			{
+				return jobId;
+			}
+			set	
+			{
+				jobId = value;
+				DictionaryUtil.Add(QueryParameters, "JobId", value.ToString());
 			}
 		}
 

@@ -45,9 +45,9 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 
 		private string groupId;
 
-		private string _namespace;
-
 		private List<string> jobIdLists = new List<string>(){ };
+
+		private string _namespace;
 
 		public string NamespaceSource
 		{
@@ -75,19 +75,6 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			}
 		}
 
-		public string _Namespace
-		{
-			get
-			{
-				return _namespace;
-			}
-			set	
-			{
-				_namespace = value;
-				DictionaryUtil.Add(QueryParameters, "Namespace", value);
-			}
-		}
-
 		public List<string> JobIdLists
 		{
 			get
@@ -98,6 +85,19 @@ namespace Aliyun.Acs.schedulerx2.Model.V20190430
 			set
 			{
 				jobIdLists = value;
+			}
+		}
+
+		public string _Namespace
+		{
+			get
+			{
+				return _namespace;
+			}
+			set	
+			{
+				_namespace = value;
+				DictionaryUtil.Add(QueryParameters, "Namespace", value);
 			}
 		}
 
