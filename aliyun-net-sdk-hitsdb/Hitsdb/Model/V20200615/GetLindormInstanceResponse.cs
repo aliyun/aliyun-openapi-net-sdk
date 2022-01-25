@@ -85,6 +85,8 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 
 		private bool? enableSSL;
 
+		private bool? enableCdc;
+
 		private List<GetLindormInstance_Engine> engineList;
 
 		public string VpcId
@@ -444,6 +446,18 @@ namespace Aliyun.Acs.hitsdb.Model.V20200615
 			set	
 			{
 				enableSSL = value;
+			}
+		}
+
+		public bool? EnableCdc
+		{
+			get
+			{
+				return enableCdc;
+			}
+			set	
+			{
+				enableCdc = value;
 			}
 		}
 
