@@ -48,6 +48,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private int? pageNumber;
 
+		private string dBNodeIds;
+
 		private string resourceGroupId;
 
 		private int? pageSize;
@@ -61,6 +63,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private long? ownerId;
 
 		private string dBType;
+
+		private string payType;
 
 		private string dBClusterIds;
 
@@ -113,6 +117,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string DBNodeIds
+		{
+			get
+			{
+				return dBNodeIds;
+			}
+			set	
+			{
+				dBNodeIds = value;
+				DictionaryUtil.Add(QueryParameters, "DBNodeIds", value);
 			}
 		}
 
@@ -209,6 +226,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				dBType = value;
 				DictionaryUtil.Add(QueryParameters, "DBType", value);
+			}
+		}
+
+		public string PayType
+		{
+			get
+			{
+				return payType;
+			}
+			set	
+			{
+				payType = value;
+				DictionaryUtil.Add(QueryParameters, "PayType", value);
 			}
 		}
 

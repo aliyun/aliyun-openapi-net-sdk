@@ -60,6 +60,10 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterAttributeResponse.ExpireTime = _ctx.StringValue("DescribeDBClusterAttribute.ExpireTime");
 			describeDBClusterAttributeResponse.SubCategory = _ctx.StringValue("DescribeDBClusterAttribute.SubCategory");
 			describeDBClusterAttributeResponse.IsProxyLatestVersion = _ctx.BooleanValue("DescribeDBClusterAttribute.IsProxyLatestVersion");
+			describeDBClusterAttributeResponse.StorageType = _ctx.StringValue("DescribeDBClusterAttribute.StorageType");
+			describeDBClusterAttributeResponse.ProxyCpuCores = _ctx.StringValue("DescribeDBClusterAttribute.ProxyCpuCores");
+			describeDBClusterAttributeResponse.ProxyType = _ctx.StringValue("DescribeDBClusterAttribute.ProxyType");
+			describeDBClusterAttributeResponse.ProxyStatus = _ctx.StringValue("DescribeDBClusterAttribute.ProxyStatus");
 
 			List<DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_DBNode> describeDBClusterAttributeResponse_dBNodes = new List<DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_DBNode>();
 			for (int i = 0; i < _ctx.Length("DescribeDBClusterAttribute.DBNodes.Length"); i++) {
@@ -73,6 +77,8 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				dBNode.MaxConnections = _ctx.IntegerValue("DescribeDBClusterAttribute.DBNodes["+ i +"].MaxConnections");
 				dBNode.DBNodeStatus = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].DBNodeStatus");
 				dBNode.DBNodeId = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].DBNodeId");
+				dBNode.ImciSwitch = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].ImciSwitch");
+				dBNode.HotReplicaMode = _ctx.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].HotReplicaMode");
 
 				describeDBClusterAttributeResponse_dBNodes.Add(dBNode);
 			}

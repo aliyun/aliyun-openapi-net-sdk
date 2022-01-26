@@ -83,6 +83,14 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private bool? isProxyLatestVersion;
 
+		private string storageType;
+
+		private string proxyCpuCores;
+
+		private string proxyType;
+
+		private string proxyStatus;
+
 		private List<DescribeDBClusterAttribute_DBNode> dBNodes;
 
 		private List<DescribeDBClusterAttribute_Tag> tags;
@@ -435,6 +443,54 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string StorageType
+		{
+			get
+			{
+				return storageType;
+			}
+			set	
+			{
+				storageType = value;
+			}
+		}
+
+		public string ProxyCpuCores
+		{
+			get
+			{
+				return proxyCpuCores;
+			}
+			set	
+			{
+				proxyCpuCores = value;
+			}
+		}
+
+		public string ProxyType
+		{
+			get
+			{
+				return proxyType;
+			}
+			set	
+			{
+				proxyType = value;
+			}
+		}
+
+		public string ProxyStatus
+		{
+			get
+			{
+				return proxyStatus;
+			}
+			set	
+			{
+				proxyStatus = value;
+			}
+		}
+
 		public List<DescribeDBClusterAttribute_DBNode> DBNodes
 		{
 			get
@@ -479,6 +535,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			private string dBNodeStatus;
 
 			private string dBNodeId;
+
+			private string imciSwitch;
+
+			private string hotReplicaMode;
 
 			public string CreationTime
 			{
@@ -585,6 +645,30 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					dBNodeId = value;
+				}
+			}
+
+			public string ImciSwitch
+			{
+				get
+				{
+					return imciSwitch;
+				}
+				set	
+				{
+					imciSwitch = value;
+				}
+			}
+
+			public string HotReplicaMode
+			{
+				get
+				{
+					return hotReplicaMode;
+				}
+				set	
+				{
+					hotReplicaMode = value;
 				}
 			}
 		}

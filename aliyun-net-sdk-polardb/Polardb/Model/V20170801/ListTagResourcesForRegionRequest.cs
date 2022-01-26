@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class CreateDBNodesRequest : RpcAcsRequest<CreateDBNodesResponse>
+    public class ListTagResourcesForRegionRequest : RpcAcsRequest<ListTagResourcesForRegionResponse>
     {
-        public CreateDBNodesRequest()
-            : base("polardb", "2017-08-01", "CreateDBNodes", "polardb", "openAPI")
+        public ListTagResourcesForRegionRequest()
+            : base("polardb", "2017-08-01", "ListTagResourcesForRegion", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,25 +42,13 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string clientToken;
-
-		private string endpointBindList;
-
-		private string plannedEndTime;
+		private string nextToken;
 
 		private string resourceOwnerAccount;
-
-		private string dBClusterId;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string plannedStartTime;
-
-		private List<DBNode> dBNodes = new List<DBNode>(){ };
-
-		private string imciSwitch;
 
 		public long? ResourceOwnerId
 		{
@@ -75,42 +63,16 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string ClientToken
+		public string NextToken
 		{
 			get
 			{
-				return clientToken;
+				return nextToken;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string EndpointBindList
-		{
-			get
-			{
-				return endpointBindList;
-			}
-			set	
-			{
-				endpointBindList = value;
-				DictionaryUtil.Add(QueryParameters, "EndpointBindList", value);
-			}
-		}
-
-		public string PlannedEndTime
-		{
-			get
-			{
-				return plannedEndTime;
-			}
-			set	
-			{
-				plannedEndTime = value;
-				DictionaryUtil.Add(QueryParameters, "PlannedEndTime", value);
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
@@ -124,19 +86,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string DBClusterId
-		{
-			get
-			{
-				return dBClusterId;
-			}
-			set	
-			{
-				dBClusterId = value;
-				DictionaryUtil.Add(QueryParameters, "DBClusterId", value);
 			}
 		}
 
@@ -166,85 +115,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string PlannedStartTime
-		{
-			get
-			{
-				return plannedStartTime;
-			}
-			set	
-			{
-				plannedStartTime = value;
-				DictionaryUtil.Add(QueryParameters, "PlannedStartTime", value);
-			}
-		}
-
-		public List<DBNode> DBNodes
-		{
-			get
-			{
-				return dBNodes;
-			}
-
-			set
-			{
-				dBNodes = value;
-				for (int i = 0; i < dBNodes.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DBNode." + (i + 1) + ".TargetClass", dBNodes[i].TargetClass);
-					DictionaryUtil.Add(QueryParameters,"DBNode." + (i + 1) + ".ZoneId", dBNodes[i].ZoneId);
-				}
-			}
-		}
-
-		public string ImciSwitch
-		{
-			get
-			{
-				return imciSwitch;
-			}
-			set	
-			{
-				imciSwitch = value;
-				DictionaryUtil.Add(QueryParameters, "ImciSwitch", value);
-			}
-		}
-
-		public class DBNode
-		{
-
-			private string targetClass;
-
-			private string zoneId;
-
-			public string TargetClass
-			{
-				get
-				{
-					return targetClass;
-				}
-				set	
-				{
-					targetClass = value;
-				}
-			}
-
-			public string ZoneId
-			{
-				get
-				{
-					return zoneId;
-				}
-				set	
-				{
-					zoneId = value;
-				}
-			}
-		}
-
-        public override CreateDBNodesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListTagResourcesForRegionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateDBNodesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListTagResourcesForRegionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
